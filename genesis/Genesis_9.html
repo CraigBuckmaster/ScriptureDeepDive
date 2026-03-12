@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 9 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#080e08; --poi-border:#2a5a2a; --poi-accent:#80d080;
+  --tl-bg:#0a0f18;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#80a8e0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(42,90,42,.12);}
+.anno-trigger.timeline{color:#80a8e0;border-color:#2a4a70;background:rgba(42,74,112,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#2a4a70;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#80a8e0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#80d080);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-icon{float:right;font-size:1.1rem;margin-left:.5rem;margin-top:.1rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+.timeline-wrap{width:100%;overflow-x:auto;margin:.5rem 0;-webkit-overflow-scrolling:touch;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Library
+  </a>
+  <div class="nav-center">
+    <span class="nav-book">Genesis</span>
+    <span class="nav-chapter">Chapter 9</span>
+  </div>
+  <div class="nav-arrows">
+    <a href="Genesis_8.html" class="nav-arrow" title="Genesis 8">&#8592;</a>
+    <a href="Genesis_10.html" class="nav-arrow" title="Genesis 10">&#8594;</a>
+  </div>
+</nav>
+<header>
+  <h1>Genesis 9</h1>
+  <p>NIV &middot; Scripture Study &middot; Hebrew &middot; Historical &middot; Places &middot; Timelines</p>
+</header>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+  <div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+  <div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+  <div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+  <div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+  <div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+</div>
+<main>
+
+<div class="section">
+  <div class="section-header">The Noahic Covenant &mdash; Verses 1&ndash;17</div>
+  <span class="verse-text">
+    <span class="verse-num">1</span> Then God blessed Noah and his sons, saying to them, &ldquo;Be fruitful and increase in number and fill the earth.
+    <span class="verse-num">2</span> The fear and dread of you will fall on all the beasts of the earth, and on all the birds in the sky, on every creature that moves along the ground, and on all the fish in the sea; they are given into your hands.
+    <span class="verse-num">3</span> Everything that lives and moves about will be food for you. Just as I gave you the green plants, I now give you everything.
+    <span class="verse-num">4</span> But you must not eat meat that has its lifeblood still in it.
+    <span class="verse-num">5</span> And for your lifeblood I will surely demand an accounting. I will demand an accounting from every animal. And from each human being, too, I will demand an accounting for the life of another human being.
+    <span class="verse-num">6</span> Whoever sheds human blood,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;by humans shall their blood be shed;<br>
+    for in the image of God<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;has God made mankind.<br>
+    <span class="verse-num">7</span> As for you, be fruitful and increase in number; multiply on the earth and increase upon it.&rdquo;<br><br>
+    <span class="verse-num">8</span> Then God said to Noah and to his sons with him:
+    <span class="verse-num">9</span> &ldquo;I now establish my covenant with you and with your descendants after you
+    <span class="verse-num">10</span> and with every living creature that was with you &mdash; the birds, the livestock and all the wild animals, all those that came out of the ark with you &mdash; every living creature on earth.
+    <span class="verse-num">11</span> I establish my covenant with you: Never again will all life be destroyed by the waters of a flood; never again will there be a flood to destroy the earth.&rdquo;<br><br>
+    <span class="verse-num">12</span> And God said, &ldquo;This is the sign of the covenant I am making between me and you and every living creature with you, a covenant for all generations to come:
+    <span class="verse-num">13</span> I have set my rainbow in the clouds, and it will be the sign of the covenant between me and the earth.
+    <span class="verse-num">14</span> Whenever I bring clouds over the earth and the rainbow appears in the clouds,
+    <span class="verse-num">15</span> I will remember my covenant between me and you and all living creatures of every kind. Never again will the waters become a flood to destroy all life.
+    <span class="verse-num">16</span> Whenever the rainbow appears in the clouds, I will see it and remember the everlasting covenant between God and all living creatures of every kind on the earth.&rdquo;
+    <span class="verse-num">17</span> So God said to Noah, &ldquo;This is the sign of the covenant I have established between me and all life on the earth.&rdquo;
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s1-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Berit olam</span> &mdash; &ldquo;Everlasting covenant&rdquo; (v.16). The Noahic covenant is the first formally ratified covenant in Scripture, and uniquely it is made not just with Noah&rsquo;s family but with &ldquo;every living creature&rdquo; &mdash; the only biblical covenant that includes animals and the whole earth. It is unconditional: God asks nothing of Noah in return. It rests entirely on divine commitment.</p><br>
+    <p><span class="tlit">Qeshet</span> &mdash; &ldquo;Rainbow.&rdquo; The Hebrew word is the same as the word for a warrior&rsquo;s bow. Some scholars suggest the image is of God hanging up his war-bow in the sky after the flood &mdash; a gesture of disarmament, a declaration that the war against human sin will not be prosecuted by cosmic flood again. The bow is pointed not at earth but at heaven, as if God turns his own weapon against himself &mdash; a motif that points toward the cross.</p><br>
+    <p><span class="tlit">Shofekh dam ha-adam ba-adam damo yishafekh</span> &mdash; &ldquo;Whoever sheds human blood, by humans shall their blood be shed&rdquo; (v.6). The first divine institution of capital punishment, grounded explicitly in the <span class="tlit">tselem Elohim</span> (image of God). To murder a human is to attack the image-bearer of God &mdash; an act of cosmic lese-majest&#xe9;. The severity of the punishment matches the severity of the offence.</p><br>
+    <p><span class="tlit">Dam</span> &mdash; &ldquo;Blood&rdquo; (v.4). The prohibition on eating blood (<span class="tlit">dam nefesh</span> &mdash; &ldquo;blood of life&rdquo;) is one of the oldest and most universal biblical laws &mdash; pre-Mosaic, pre-Sinai, applicable to all nations. Blood represents life itself, which belongs to God. This is why Leviticus centers so much on blood in sacrifice &mdash; life given back to God. The NT reads Christ&rsquo;s blood as the ultimate fulfilment of this logic.</p>
+  </div>
+  <div id="s1-hist" class="anno-panel hist">
+    <h4>Historical Context &mdash; The Covenant Structure</h4>
+    <p>The Noahic covenant follows the structure of ancient Near Eastern royal grants: a great king makes an unconditional promise to a vassal, confirmed by a visible sign. No obligations are placed on the recipient &mdash; the covenant is pure gift. This contrasts with the Mosaic covenant (bilateral &mdash; &ldquo;if you obey, I will bless&rdquo;) and resembles the Abrahamic and Davidic covenants in its unconditionality.</p><br>
+    <p>The permission to eat meat (v.3) represents a significant shift from the original vegetarian diet implied in Genesis 1:29&ndash;30. Post-flood human existence is harder and more provisional; God accommodates the new reality. The blood prohibition (v.4) becomes the basis for the kosher laws and is reaffirmed for Gentile believers in Acts 15:20 &mdash; one of the few Noahic laws carried into the NT explicitly.</p>
+  </div>
+  <div id="s1-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; A Universal Covenant</h4>
+    <p>The Noahic covenant is the theological foundation for all of human civilization. It is not made with Israel (who doesn&rsquo;t exist yet) but with all humanity, all animals, and the earth itself &mdash; every subsequent covenant (Abrahamic, Mosaic, Davidic, New) is built on top of this bedrock promise that the world will continue to exist. Without it, none of the others would be possible.</p><br>
+    <p>Genesis 9:6&rsquo;s grounding of human dignity in the Imago Dei is the source of what we now call universal human rights. If all people bear the image of God, then all human lives have intrinsic, inalienable worth that cannot be violated without offense to God. This is the biblical root of the legal and moral traditions that would eventually become the Geneva Conventions, the Universal Declaration of Human Rights, and the prohibition on genocide.</p>
+  </div>
+  <div id="s1-cross" class="anno-panel cross-ref">
+    <h4>Cross-References</h4>
+    <ul class="cross-ref-list">
+      <li><span class="ref-cite">Gen 1:28</span><span class="ref-text">The mandate to &ldquo;be fruitful and multiply and fill the earth&rdquo; is repeated almost verbatim in 9:1 &mdash; Noah receives the Adamic commission fresh, making him a second Adam.</span></li>
+      <li><span class="ref-cite">Acts 15:20</span><span class="ref-text">The Jerusalem Council requires Gentile believers to abstain from blood &mdash; carrying the Noahic prohibition (Gen 9:4) into the new covenant era as a universal moral law.</span></li>
+      <li><span class="ref-cite">Isa 54:9&ndash;10</span><span class="ref-text">God swears his covenant faithfulness to Israel &ldquo;as in the days of Noah&rdquo; &mdash; the Noahic covenant is the template for understanding God&rsquo;s unbreakable commitments.</span></li>
+      <li><span class="ref-cite">Rev 4:3</span><span class="ref-text">A rainbow encircles the throne of God in John&rsquo;s vision &mdash; the covenant sign of Genesis 9 frames the divine throne-room in eternity.</span></li>
+      <li><span class="ref-cite">Rom 13:4</span><span class="ref-text">Paul grounds the state&rsquo;s authority to bear the sword in the divine mandate of justice &mdash; rooted in the Noahic institution of Gen 9:6.</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">Noah&rsquo;s Vineyard &amp; the Curse of Canaan &mdash; Verses 18&ndash;29</div>
+  <span class="verse-text">
+    <span class="verse-num">18</span> The sons of Noah who came out of the ark were Shem, Ham and Japheth. (Ham was the father of Canaan.)
+    <span class="verse-num">19</span> These were the three sons of Noah, and from them came the people who were scattered over the whole earth.<br><br>
+    <span class="verse-num">20</span> Noah, a man of the soil, proceeded to plant a vineyard.
+    <span class="verse-num">21</span> When he drank some of its wine, he became drunk and lay uncovered inside his tent.
+    <span class="verse-num">22</span> Ham, the father of Canaan, saw his father naked and told his two brothers outside.
+    <span class="verse-num">23</span> But Shem and Japheth took a garment and laid it across their shoulders; then they walked in backward and covered their father&rsquo;s naked body. Their faces were turned the other way so that they would not see their father naked.<br><br>
+    <span class="verse-num">24</span> When Noah awoke from his wine and found out what his youngest son had done to him,
+    <span class="verse-num">25</span> he said, &ldquo;Cursed be Canaan! The lowest of slaves will he be to his brothers.&rdquo;<br><br>
+    <span class="verse-num">26</span> He also said,<br>
+    &nbsp;&nbsp;&ldquo;Praise be to the LORD, the God of Shem!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;May Canaan be the slave of Shem.<br>
+    <span class="verse-num">27</span> May God extend Japheth&rsquo;s territory;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;may Japheth live in the tents of Shem,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and may Canaan be the slave of Japheth.&rdquo;<br><br>
+    <span class="verse-num">28</span> After the flood Noah lived 350 years.
+    <span class="verse-num">29</span> Noah lived a total of 950 years, and then he died.
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s2-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s2-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Va-yar Ham et-ervat aviv</span> &mdash; &ldquo;Ham saw his father&rsquo;s nakedness&rdquo; (v.22). The phrase <span class="tlit">ervah</span> (nakedness) is used in Leviticus 18 as a euphemism for sexual violation. Some scholars argue that Ham&rsquo;s act was more than passive observation &mdash; that the phrase implies a sexual violation of his father. The severe curse on Canaan (not Ham himself) would be more proportionate to a serious violation than to simple embarrassment. The text is deliberately oblique. At minimum, Ham failed to cover and honour his father; at maximum, he may have done something far worse.</p><br>
+    <p><span class="tlit">Arur Kena&rsquo;an</span> &mdash; &ldquo;Cursed be Canaan.&rdquo; Noah curses Canaan (Ham&rsquo;s son), not Ham himself. This puzzles readers but may reflect: (1) Ham already being cursed implicitly through his offspring, (2) the curse functioning as prophetic narrative setting up Israel&rsquo;s later conflict with Canaan, (3) Canaan being responsible alongside Ham. Critically: this curse has nothing to do with race or skin colour. It is a prophetic statement about the Canaanite nations, which Israel would later conquer (Josh 9:23 uses almost identical language about the Gibeonites).</p><br>
+    <p><span class="tlit">Yaft Elohim le-Yefet</span> &mdash; &ldquo;May God extend Japheth&rsquo;s territory&rdquo; (v.27). A wordplay: <span class="tlit">yaft</span> (extend/enlarge) and <span class="tlit">Yefet</span> (Japheth). The three sons&rsquo; names are written into their blessings and curses. Noah&rsquo;s prophetic poem shapes the destiny of three civilizational streams.</p>
+  </div>
+  <div id="s2-hist" class="anno-panel hist">
+    <h4>Historical Context &mdash; The &ldquo;Curse of Ham&rdquo; Misuse</h4>
+    <p>This passage was grotesquely misused for centuries to justify African slavery &mdash; by falsely equating Ham with dark-skinned Africans and reading the &ldquo;curse of Ham&rdquo; as a divine sanction for enslavement. This interpretation is historically and textually wrong on every count: (1) the curse falls on Canaan, not Ham; (2) Canaan&rsquo;s descendants are Middle Eastern, not African; (3) Ham&rsquo;s other sons (Cush, Mizraim, Put) represent African and Egyptian peoples who are not under this curse; (4) no ancient interpreter before the medieval period made a racial application; (5) the passage concerns ancient Canaanite peoples, not race in any modern sense. The &ldquo;curse of Ham&rdquo; as a racial doctrine is a later fabrication with no exegetical basis.</p>
+  </div>
+  <div id="s2-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; The Second Adam Fails</h4>
+    <p>Noah was introduced as the man who would bring comfort from the cursed ground (5:29). He survived the flood by righteousness. He built the first altar and received God&rsquo;s covenant. And then he plants a vineyard, gets drunk, and lies uncovered &mdash; and sin re-enters human community through his tent. The pattern is devastating: Adam in a garden with forbidden fruit &rarr; Noah in a vineyard with forbidden excess. The second Adam repeats the first Adam&rsquo;s failure in miniature, and the consequences again fracture family.</p><br>
+    <p>This is not an accident. Genesis is making the theological point that the flood did not fix the human heart (as God himself stated in 8:21). A new world needs a new humanity &mdash; not just a fresh start but a transformed nature. The Noahic covenant is real and precious, but it cannot complete the work. The story continues past Noah.</p>
+  </div>
+</div>
+
+</main>
+<footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; Commentary for personal study<br>
+  Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
+</footer>
+<script>
+function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>
