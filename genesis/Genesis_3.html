@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -457,9 +475,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 3</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g3-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g3-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g3-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -552,7 +570,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #e87070;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#e87070;margin-bottom:.2rem;">Sin & Judgment &mdash; vv.14–19</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">The triple curse — serpent, woman, man — is the fullest statement of sin's consequences: enmity, pain, toil, death, exile. Every subsequent 'problem' in Scripture traces back to this chapter.</p>
@@ -566,46 +584,53 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g3-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g3-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g3-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g3-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g3-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 3</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 3</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Now the serpent was more crafty than any of the wild animals the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had made. He said to the woman, “Did <span class="dn-elohim">Elohim</span> really say, ‘You must not eat from any tree in the garden’?”</span></span>
-<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The woman said to the serpent, “We may eat fruit from the trees in the garden,</span></span>
-<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">but <span class="dn-elohim">Elohim</span> did say, ‘You must not eat fruit from the tree that is in the middle of the garden, and you must not touch it, or you will die.’”</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">“You will not certainly die,” the serpent said to the woman.</span></span>
-<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">“For <span class="dn-elohim">Elohim</span> knows that when you eat from it your eyes will be opened, and you will be like <span class="dn-elohim">Elohim</span>, knowing good and evil.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">When the woman saw that the fruit of the tree was good for food and pleasing to the eye, and also desirable for gaining wisdom, she took some and ate it. She also gave some to her husband, who was with her, and he ate it.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Now the serpent was more crafty than any of the wild animals <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had made. He said to the woa<span class="dn-ra">dam</span>, “Did Elohim really say, ‘You must not eat from any tree in <span class="dn-place">the gan</span>’?”</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The woa<span class="dn-ra">dam</span> said to the serpent, “We may eat fruit from the trees in <span class="dn-place">the gan</span>,</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">but <span class="dn-elohim">Elohim</span> did say, ‘You must not eat fruit from the tree that is in the middle of <span class="dn-place">the gan</span>, and you must not touch it, or you will die.’”</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">“You will not certainly die,” the serpent said to the woa<span class="dn-ra">dam</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">“For <span class="dn-elohim">Elohim</span> knows that when you eat from it your eyes will be opened, and you will be like Elohim, knowing <span class="dn-tov">tov</span> and <span class="dn-ra">ra</span>.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">When the woadam saw that the fruit of the tree was good for food and plea<span class="dn-ra">chet</span>g to the eye, and also desirable for gaining wisdom, she took some and ate it. She also gave some to her husband, who was with her, and he ate it.</span></span>
 <span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">Then the eyes of both of them were opened, and they realized they were naked; so they sewed fig leaves together and made coverings for themselves.</span></span>
-<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Then the man and his wife heard the sound of the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> as he was walking in the garden in the cool of the day, and they hid from the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> among the trees of the garden.</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">But the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> called to the man, “Where are you?”</span></span>
-<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">He answered, “I heard you in the garden, and I was afraid because I was naked; so I hid.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">And he said, “Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?”</span></span>
-<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">The man said, “The woman you put here with me — she gave me some fruit from the tree, and I ate it.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">Then the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said to the woman, “What is this you have done?” The woman said, “The serpent deceived me, and I ate.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">So the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said to the serpent, “Because you have done this, “Cursed are you above all livestock and all wild animals! You will crawl on your belly and you will eat dust all the days of your life.</span></span>
-<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">And I will put enmity between you and the woman, and between your offspring and hers; he will crush your head, and you will strike his heel.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">To the woman he said, “I will make your pains in childbearing very severe; with painful labor you will give birth to children. Your desire will be for your husband, and he will rule over you.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">To Adam he said, “Because you listened to your wife and ate fruit from the tree about which I commanded you, ‘You must not eat from it,’ “Cursed is the ground because of you; through painful toil you will eat food from it all the days of your life.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Then the a<span class="dn-ra">dam</span> and his wife heard the sound of <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> as he was walking in <span class="dn-place">the gan</span> in the cool of the day, and they hid from YHWH Elohim among the trees of the gan.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">But <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> called to the a<span class="dn-ra">dam</span>, “Where are you?”</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">He answered, “I heard you in <span class="dn-place">the gan</span>, and I was af<span class="dn-ra">ra</span>id because I was naked; so I hid.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">And he said, “Who told you that you were naked? Have you eaten from the tree that I coma<span class="dn-ra">dam</span>ded you not to eat from?”</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">The a<span class="dn-ra">dam</span> said, “The woadam you put here with me — she gave me some fruit from the tree, and I ate it.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">Then <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said to the woa<span class="dn-ra">dam</span>, “What is this you have done?” The woadam said, “The serpent deceived me, and I ate.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">So <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said to the serpent, “Because you have done this, “Cursed are you above all livestock and all wild animals! You will c<span class="dn-ra">ra</span>wl on your belly and you will eat <span class="dn-human">aphar</span> all the days of your life.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">And I will put enmity between you and the woa<span class="dn-ra">dam</span>, and between your offspring and hers; he will crush your head, and you will strike his heel.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">To the woa<span class="dn-ra">dam</span> he said, “I will make your pains in childbearing very severe; with painful labor you will give birth to children. Your desire will be for your husband, and he will rule over you.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">To A<span class="dn-ra">dam</span> he said, “Because you listened to your wife and ate fruit from the tree about which I comadamded you, ‘You must not eat from it,’ “Cursed is the <span class="dn-human">adamah</span> because of you; through painful toil you will eat food from it all the days of your life.</span></span>
 <span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">It will produce thorns and thistles for you, and you will eat the plants of the field.</span></span>
-<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">By the sweat of your brow you will eat your food until you return to the ground, since from it you were taken; for dust you are and to dust you will return.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">Adam named his wife Eve, because she would become the mother of all the living.</span></span>
-<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made garments of skin for Adam and his wife and clothed them.</span></span>
-<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">And the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said, “The man has now become like one of us, knowing good and evil. He must not be allowed to reach out his hand and take also from the tree of life and eat, and live forever.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">So the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> banished him from the Garden of Eden to work the ground from which he had been taken.</span></span>
-<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">After he drove the man out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the tree of life.</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">By the sweat of your brow you will eat your food until you return to the <span class="dn-human">adamah</span>, <span class="dn-ra">chet</span>ce from it you were taken; for aphar you are and to aphar you will return.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">A<span class="dn-ra">dam</span> named his wife Eve, because she would become the mother of all the living.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made garments of skin for A<span class="dn-ra">dam</span> and his wife and clothed them.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">And <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said, “The a<span class="dn-ra">dam</span> has now become like one of us, knowing <span class="dn-tov">tov</span> and ra. He must not be allowed to reach out his hand and take also from the <span class="dn-tree">ets chayyim</span> and eat, and live forever.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">So <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> banished him from the Garden of Eden to work the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> from which he had been taken.</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">After he drove the a<span class="dn-ra">dam</span> out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the <span class="dn-tree">ets chayyim</span>.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g3-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">5 canonical threads &mdash; 5 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -650,11 +675,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g3-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g3-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g3-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g3-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g3-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g3-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g3-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g3-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g3-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g3-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g3-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 3</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">The Serpent / Nahash</div><div class="person-role">The Tempter — vv.1–5,14</div><p class="person-text">Introduced as the craftiest (<span class='tlit'>'arum</span>) of God's creatures — not a fallen angel in the original text but an animal that speaks. Ancient readers would have recognized the serpent as an ANE symbol of wisdom, healing, and divine power (the Ningishzida serpent-deity; Egypt's uraeus). Genesis strips it of divine status: it is a creature, cursed like a creature, and it crawls. Its canonical identity as the adversary (satan) develops gradually: Wis 2:24 (intertestamental), Rev 12:9, and 20:2 make the identification explicit. The NT reads the Eden serpent as the vehicle of the personal adversary without Genesis itself requiring that identification.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Eve / Hawwah</div><div class="person-role">The First to Be Deceived — vv.1–6,13</div><p class="person-text">Eve's engagement with the serpent reveals a thoughtful, reasoning person — she does not naively grab and eat but evaluates three appeals (food, beauty, wisdom). Her theological error is subtle: she adds 'you must not touch it' to God's command (v.3), a slight over-restriction that suggests either misremembering or over-cautious elaboration. She is deceived (<span class='tlit'>nasha'</span> — thoroughly deceived, 2 Cor 11:3; 1 Tim 2:14) whereas Adam eats in apparent full awareness. Her naming as 'mother of all living' (3:20) immediately after the death sentence is Adam's act of faith in the promise of 3:15.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Adam</div><div class="person-role">The Silent Bystander — v.6,12,17</div><p class="person-text">Adam's role in the temptation is the most disturbing: he is 'with her' (v.6) throughout and says nothing. He does not intervene, does not recall the command, does not protect the sacred boundary he was charged to guard. When confronted, he blames Eve and implicitly God ('the woman you put here with me'). Paul places the primary covenantal weight on Adam's sin in Romans 5 — not because Eve is innocent but because Adam was the covenant head, the priest-guardian who abdicated. His are the most passive verbs in the passage: 'she gave... and he ate.'</p></div></div></div>
   <div id="g3-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 15 — The Protoevangelium</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>he will crush your head, and you will strike his heel</td></tr><tr><td class="t-label">ESV</td><td>he shall bruise your head, and you shall bruise his heel</td></tr><tr><td class="t-label">NASB</td><td>He shall bruise you on the head, and you shall bruise Him on the heel</td></tr><tr><td class="t-label">KJV</td><td>it shall bruise thy head, and thou shalt bruise his heel</td></tr><tr><td class="t-label">Vulgate (Latin)</td><td><em>ipsa conteret caput tuum</em> — 'she will crush your head' (feminine pronoun, referring to the woman, not her seed) — the basis of the Catholic Marian interpretation of this verse</td></tr><tr><td class="t-label">Note</td><td>The Hebrew pronoun is <span class='tlit'>hu'</span> (he/it) — masculine, referring to the seed. The Vulgate's <em>ipsa</em> (she) is a translation variant that significantly shaped Western Marian theology. The verb <span class='tlit'>shuph</span> is the same for both 'crush' and 'strike' — the difference is location: head vs. heel.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 16 — Desire and Rule</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Your desire will be for your husband, and he will rule over you</td></tr><tr><td class="t-label">ESV</td><td>Your desire will be for your husband, and he shall rule over you</td></tr><tr><td class="t-label">NASB</td><td>Yet your desire will be for your husband, and he will rule over you</td></tr><tr><td class="t-label">CSB</td><td>Your desire will be for your husband, yet he will rule over you</td></tr><tr><td class="t-label">Note</td><td><span class='tlit'>Teshuqah</span> (desire) is the crux: is this a description of how the fall distorts the relationship (both partners now seek to dominate — see 4:7 where sin 'desires to master' Cain), or a prescription of a new divinely-ordained order? Complementarians read v.16b as establishing male headship; egalitarians read the whole verse as describing sinful distortion that the gospel redeems. The Hebrew gives neither reading unambiguously.</td></tr></tbody></table></div>
@@ -668,7 +693,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────

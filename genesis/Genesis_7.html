@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -365,9 +383,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 7</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g7-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g7-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g7-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -460,7 +478,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #e87070;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#e87070;margin-bottom:.2rem;">Sin & Judgment &mdash; vv.17–24</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">The flood executes the judgment announced in ch.6. The de-creation mirrors Gen 1 in reverse — sin has unmade the world. This is the OT's paradigm of divine judgment on cosmic scale.</p>
@@ -474,46 +492,53 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g7-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g7-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g7-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g7-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g7-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 7</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 7</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">The <span class="dn-yhwh">YHWH</span> then said to Noah, “Go into the ark, you and your whole family, because I have found you righteous in this generation.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">The <span class="dn-yhwh">YHWH</span> then said to Noah, “Go into the <span class="dn-place">tevah</span>, you and your whole family, because I have found you righteous in this gene<span class="dn-ra">ra</span>tion.</span></span>
 <span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">Take with you seven pairs of every kind of clean animal, a male and its mate, and one pair of every kind of unclean animal, a male and its mate,</span></span>
-<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">Seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living creature I have made.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">And Noah did all that <span class="dn-yhwh">YHWH</span> commanded him.</span></span>
-<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">Noah was six hundred years old when the floodwaters came on the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">And Noah and his sons and his wife and his sons’ wives entered the ark to escape the waters of the flood.</span></span>
-<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Pairs of clean and unclean animals, of birds and of all creatures that move along the ground,</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">male and female, came to Noah and entered the ark, as <span class="dn-elohim">Elohim</span> had commanded Noah.</span></span>
-<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">And after the seven days the floodwaters came on the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">In the six hundredth year of Noah’s life, on the seventeenth day of the second month — on that day all the springs of the great deep burst forth, and the floodgates of the heavens were opened.</span></span>
-<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">And rain fell on the earth forty days and forty nights.</span></span>
-<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the ark.</span></span>
-<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the ground according to its kind and every bird according to its kind, everything with wings.</span></span>
-<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">Pairs of all creatures that have the breath of life in them came to Noah and entered the ark.</span></span>
-<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">The animals going in were male and female of every living thing, as <span class="dn-elohim">Elohim</span> had commanded Noah. Then <span class="dn-yhwh">YHWH</span> shut him in.</span></span>
-<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.</span></span>
-<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">They rose greatly on the earth, and all the high mountains under the entire heavens were covered.</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the <span class="dn-cosmos">eretz</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">Seven days from now I will send <span class="dn-ra">ra</span>in on the <span class="dn-cosmos">eretz</span> for forty days and forty nights, and I will wipe from the panim of the eretz every <span class="dn-human">nephesh chayyah</span> I have made.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">And Noah did all that <span class="dn-yhwh">YHWH</span> coma<span class="dn-ra">dam</span>ded him.</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">Noah was six hundred years old when the <span class="dn-cosmos">mabbul</span> came on the eretz.</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">And Noah and his sons and his wife and his sons’ wives entered the <span class="dn-place">tevah</span> to escape the mayim of the <span class="dn-cosmos">mabbul</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Pairs of clean and unclean animals, of birds and of all creatures that move along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span>,</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">male and female, came to Noah and entered the <span class="dn-place">tevah</span>, as <span class="dn-elohim">Elohim</span> had coma<span class="dn-ra">dam</span>ded Noah.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">And after the seven days the <span class="dn-cosmos">mabbul</span> came on the eretz.</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">In the six hundredth year of Noah’s life, on the seventeenth day of the second month — on that day all the springs of the great deep burst forth, and the mabbulgates of the <span class="dn-cosmos">shamayim</span> were opened.</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">And <span class="dn-ra">ra</span>in fell on the <span class="dn-cosmos">eretz</span> forty days and forty nights.</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the <span class="dn-place">tevah</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> according to its kind and every bird according to its kind, everything with wings.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">Pairs of all creatures that have <span class="dn-spirit">the nishmat chayyim</span> in them came to Noah and entered the <span class="dn-place">tevah</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">The animals going in were male and female of every living thing, as <span class="dn-elohim">Elohim</span> had coma<span class="dn-ra">dam</span>ded Noah. Then <span class="dn-yhwh">YHWH</span> shut him in.</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">For forty days the <span class="dn-cosmos">mabbul</span> kept coming on the eretz, and as the mayim increased they lifted the <span class="dn-place">tevah</span> high above the eretz.</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The waters rose and increased greatly on the <span class="dn-cosmos">eretz</span>, and the <span class="dn-place">tevah</span> floated on the surface of the water.</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">They rose greatly on the eretz, and all the high mountains under the entire <span class="dn-cosmos">shamayim</span>s were covered.</span></span>
 <span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">The waters rose and covered the mountains to a depth of more than fifteen cubits.</span></span>
-<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">Every living thing that moved on land perished — birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.</span></span>
-<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Everything on dry land that had the breath of life in its nostrils died.</span></span>
-<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.</span></span>
-<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">The waters flooded the earth for a hundred and fifty days.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">Every living thing that moved on land perished — birds, livestock, wild animals, all the creatures that swarm over the <span class="dn-cosmos">eretz</span>, and all <span class="dn-human">ha-a<span class="dn-ra">dam</span></span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Everything on dry land that had <span class="dn-spirit">the nishmat chayyim</span> in its nostrils died.</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">Every living thing on the panim of the <span class="dn-cosmos">eretz</span> was wiped out; people and animals and the creatures that move along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> and the birds were wiped from the eretz. Only Noah was left, and those with him in the <span class="dn-place">tevah</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">The waters flooded the <span class="dn-cosmos">eretz</span> for a hundred and fifty days.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g7-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">3 canonical threads &mdash; 2 forward (passages that echo this chapter) &nbsp;|&nbsp; 1 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -542,11 +567,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g7-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g7-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g7-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g7-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g7-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g7-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g7-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g7-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g7-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g7-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g7-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 7</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah's Family</div><div class="person-role">Eight Survivors — v.7,13</div><p class="person-text">The text carefully names all eight survivors: Noah, his wife, his three sons (Shem, Ham, Japheth), and their wives. Not one person is named outside the family. This is not incidental — the flood narrative frames Noah as a second Adam whose three sons will repopulate the entire earth (ch.10). The women are unnamed throughout, a feature consistent with much ancient narrative but increasingly noted by modern readers. Peter's reading (1 Pet 3:20) emphasizes the number eight as significant — eight people saved through water, paralleling baptism.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah as Second Adam</div><div class="person-role">The Obedient One — v.5,9,16</div><p class="person-text">Three times in ch.7 the narrator notes Noah's complete obedience: 'Noah did all that the LORD commanded him' (v.5); 'as God had commanded Noah' (v.9); 'as God had commanded' (v.16). This triple stress contrasts with Adam's single act of disobedience. Noah is the obedient man in whose day God hits the reset button on creation — but ch.9 will show the reset is incomplete. The deeper problem is not the world around humanity but the heart within it (8:21 confesses this explicitly after the flood).</p></div></div></div>
   <div id="g7-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 1 — Righteous before me</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Go into the ark, you and your whole family, because I have found you righteous in this generation</td></tr><tr><td class="t-label">ESV</td><td>Go into the ark, you and all your household, for I have seen that you are righteous before me in this generation</td></tr><tr><td class="t-label">NASB</td><td>Go into the ark, you and all your household, for you alone I have seen to be righteous before Me in this time</td></tr><tr><td class="t-label">Note</td><td>ESV adds 'before me' — translating <span class='tlit'>lefanai</span> which NIV omits. This is significant: righteousness is defined in relation to God, not merely in comparison to contemporaries. NASB 'you alone' emphasizes the singularity of Noah's distinction. The phrase 'in this generation' (<span class='tlit'>bador hazeh</span>) implies his righteousness is contextual and comparative, which some rabbinic readers used to question whether Noah would have been as distinguished in Abraham's generation.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 16 — The LORD shut him in</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Then the LORD shut him in</td></tr><tr><td class="t-label">ESV</td><td>And the LORD shut him in</td></tr><tr><td class="t-label">NASB</td><td>and the LORD closed it behind him</td></tr><tr><td class="t-label">KJV</td><td>and the LORD shut him in</td></tr><tr><td class="t-label">Note</td><td>A theologically pregnant verse that all translations render nearly identically. The divine locking of the door means: (1) the time of grace has ended — no one else can enter; (2) Noah is protected by God's own action, not by the door's engineering; (3) God is personally present at the flood's threshold. Jesus alludes to this in the parable of the ten virgins (Matt 25:10) when 'the door was shut' — the same theological logic of a fixed moment of grace.</td></tr></tbody></table></div>
@@ -560,7 +585,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────

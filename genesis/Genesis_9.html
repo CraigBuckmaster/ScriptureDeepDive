@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -386,9 +404,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 9</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g9-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g9-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g9-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -481,7 +499,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #58c8c0;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#58c8c0;margin-bottom:.2rem;">Covenant &mdash; vv.8–17</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;"><em>Berit olam</em> — the first formally ratified, unconditional, universal covenant. Its scope is all living creatures, not just Israel. Its sign (rainbow) is for God to see, not humanity to perform.</p>
@@ -498,51 +516,58 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g9-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g9-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g9-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g9-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g9-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 9</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 9</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> blessed Noah and his sons, saying to them, “Be fruitful and increase in number and fill the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The fear and dread of you will fall on all the beasts of the earth, and on all the birds in the sky, on every creature that moves along the ground, and on all the fish in the sea; they are given into your hands.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> blessed Noah and his sons, saying to them, “Be fruitful and increase in number and fill the <span class="dn-cosmos">eretz</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The fear and dread of you will fall on all the beasts of the eretz, and on all the birds in the <span class="dn-cosmos">shamayim</span>, on every creature that moves along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span>, and on all the fish in the sea; they are given into your hands.</span></span>
 <span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">Everything that lives and moves about will be food for you. Just as I gave you the green plants, I now give you everything.</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">But you must not eat meat that has its lifeblood still in it.</span></span>
-<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">And for your lifeblood I will surely demand an accounting. I will demand an accounting from every animal. And from each human being, too, I will demand an accounting for the life of another human being.</span></span>
-<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">Whoever sheds human blood, by humans shall their blood be shed; for in the image of <span class="dn-elohim">Elohim</span> has <span class="dn-elohim">Elohim</span> made mankind.</span></span>
-<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">As for you, be fruitful and increase in number; multiply on the earth and increase upon it.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">But you must not eat meat that has its life<span class="dn-ra">dam</span> still in it.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">And for your life<span class="dn-ra">dam</span> I will surely deadamd an <span class="dn-covenant">toledot</span>ing. I will deadamd an toledoting from every animal. And from each huadam <span class="dn-human">nephesh</span>, too, I will deadamd an toledoting for the life of another huadam nephesh.</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">Whoever sheds hua<span class="dn-ra">dam</span> dam, by huadams shall their dam be shed; for in the image of <span class="dn-elohim">Elohim</span> has Elohim made <span class="dn-human">ha-adam</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">As for you, be fruitful (pru) and increase in number; multiply on the <span class="dn-cosmos">eretz</span> and increase upon it.”</span></span>
 <span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said to Noah and to his sons with him:</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">“I now establish my covenant with you and with your descendants after you</span></span>
-<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">and with every living creature that was with you — the birds, the livestock and all the wild animals, all those that came out of the ark with you — every living creature on earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">I establish my covenant with you: Never again will all life be destroyed by the waters of a flood; never again will there be a flood to destroy the earth.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “This is the sign of the covenant I am making between me and you and every living creature with you, a covenant for all generations to come:</span></span>
-<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">I have set my rainbow in the clouds, and it will be the sign of the covenant between me and the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">Whenever I bring clouds over the earth and the rainbow appears in the clouds,</span></span>
-<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">I will remember my covenant between me and you and all living creatures of every kind. Never again will the waters become a flood to destroy all life.</span></span>
-<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">Whenever the rainbow appears in the clouds, I will see it and remember the everlasting covenant between <span class="dn-elohim">Elohim</span> and all living creatures of every kind on the earth.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> said to Noah, “This is the sign of the covenant I have established between me and all life on the earth.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The sons of Noah who came out of the ark were Shem, Ham and Japheth. (Ham was the father of Canaan.)</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">“I now establish my <span class="dn-covenant">berit</span> with you and with your descendants after you</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">and with every <span class="dn-human">nephesh chayyah</span> that was with you — the birds, the livestock and all the wild animals, all those that came out of the <span class="dn-place">tevah</span> with you — every nephesh chayyah on earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">I establish my <span class="dn-covenant">berit</span> with you: Never again will all life be destroyed by the mayim of a flood; never again will there be a flood to destroy the <span class="dn-cosmos">eretz</span>.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “This is the sign of the <span class="dn-covenant">berit</span> I am making between me and you and every <span class="dn-human">nephesh chayyah</span> with you, a berit for all gene<span class="dn-ra">ra</span>tions to come:</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">I have set my <span class="dn-ra">ra</span>inbow in the clouds, and it will be the sign of the <span class="dn-covenant">berit</span> between me and the <span class="dn-cosmos">eretz</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">Whenever I bring clouds over the <span class="dn-cosmos">eretz</span> and the <span class="dn-ra">ra</span>inbow appears in the clouds,</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">I will remember my <span class="dn-covenant">berit</span> between me and you and all <span class="dn-human">nephesh chayyah</span>s of every kind. Never again will the <span class="dn-cosmos">mayim</span> become a flood to destroy all life.</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">Whenever the <span class="dn-ra">ra</span>inbow appears in the clouds, I will see it and remember the everlasting <span class="dn-covenant">berit</span> between <span class="dn-elohim">Elohim</span> and all <span class="dn-human">nephesh chayyah</span>s of every kind on the <span class="dn-cosmos">eretz</span>.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> said to Noah, “This is the sign of the <span class="dn-covenant">berit</span> I have established between me and all life on the <span class="dn-cosmos">eretz</span>.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The sons of Noah who came out of the <span class="dn-place">tevah</span> were Shem, Ham and Japheth. (Ham was the father of Canaan.)</span></span>
 <span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">These were the three sons of Noah, and from them came the people who were scattered over the whole earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">Noah, a man of the soil, proceeded to plant a vineyard.</span></span>
-<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">When he drank some of its wine, he became drunk and lay uncovered inside his tent.</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">Noah, <span class="dn-human">an a<span class="dn-ra">dam</span></span> of the soil, proceeded to plant a vineyard.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">When he d<span class="dn-ra">ra</span>nk some of its wine, he became drunk and lay uncovered inside his tent.</span></span>
 <span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Ham, the father of Canaan, saw his father naked and told his two brothers outside.</span></span>
 <span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">But Shem and Japheth took a garment and laid it across their shoulders; then they walked in backward and covered their father’s naked body. Their faces were turned the other way so that they would not see their father naked.</span></span>
 <span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">When Noah awoke from his wine and found out what his youngest son had done to him,</span></span>
 <span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">he said, “Cursed be Canaan! The lowest of slaves will he be to his brothers.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">He also said, “Praise be to <span class="dn-yhwh">YHWH</span>, the <span class="dn-elohim">Elohim</span> of Shem! May Canaan be the slave of Shem.</span></span>
+<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">He also said, “P<span class="dn-ra">ra</span>ise be to <span class="dn-yhwh">YHWH</span>, the <span class="dn-elohim">Elohim</span> of Shem! May Canaan be the slave of Shem.</span></span>
 <span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">May <span class="dn-elohim">Elohim</span> extend Japheth’s territory; may Japheth live in the tents of Shem, and may Canaan be the slave of Japheth.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text">After the flood Noah lived 350 years.</span></span>
+<span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text">After the <span class="dn-cosmos">mabbul</span> Noah lived 350 years.</span></span>
 <span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">Noah lived a total of 950 years, and then he died.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g9-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">4 canonical threads &mdash; 4 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -579,11 +604,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g9-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g9-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g9-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g9-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g9-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g9-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g9-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g9-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g9-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g9-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g9-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 9</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah</div><div class="person-role">The Second Adam Who Falls — vv.20–21</div><p class="person-text">Noah plants a vineyard — the first farmer after the flood, as Adam was the first gardener before it. He gets drunk, lies uncovered in his tent. The parallel to Adam is precise: both are in a garden; both are exposed in nakedness; both bring shame into their households; both result in a curse on a son. But Noah's failure is post-covenant, post-rescue, post-divine promise. This is the author's point: even the best human, saved by grace, given a fresh start, cannot solve the problem of human nature. The solution to sin is not a better environment (Eden) or a catastrophic reset (the flood) — it requires something deeper.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Ham / Canaan</div><div class="person-role">The Act and Its Consequence — vv.22–25</div><p class="person-text">Ham 'saw the nakedness of his father' and told his brothers. What exactly this means has been debated: (1) simple voyeurism — he saw and gossiped; (2) sexual violation — some scholars read 'uncover nakedness' as a euphemism for incest (cf. Lev 18's 'uncover the nakedness of your father'); (3) a power-grab — taking a father's concubine established succession (cf. Absalom, Reuben). The curse falls on Canaan, not Ham — which puzzled ancient readers. Most likely explanation: the Canaanites are the people Israel is about to encounter, and this narrative grounds their moral reputation theologically. The curse is not a racial statement — it is a theological characterization of a specific historical people-group at a specific moment.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Shem and Japheth</div><div class="person-role">The Honourable Sons — vv.23,26–27</div><p class="person-text">Shem and Japheth walk backward with a garment to cover Noah — refusing to look, acting with deliberate honor. Their blessing is structured as a poem: Shem receives the most significant blessing (YHWH is 'the God of Shem' — a covenantal designation that anticipates the Abrahamic line); Japheth receives spatial blessing (expansion, dwelling in Shem's tents — possibly indicating future association with Israel's covenant). From Shem comes the Semitic peoples, the line of Abraham, and eventually Jesus (Luke 3:36 traces the genealogy through Shem). Shem's blessing is the thread connecting Noah to Abraham.</p></div></div></div>
   <div id="g9-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 6 — Shedding human blood</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Whoever sheds human blood, by humans shall their blood be shed; for in the image of God has God made mankind</td></tr><tr><td class="t-label">ESV</td><td>Whoever sheds the blood of man, by man shall his blood be shed, for God made man in his own image</td></tr><tr><td class="t-label">NASB</td><td>Whoever sheds man's blood, by man his blood shall be shed, for in the image of God He made man</td></tr><tr><td class="t-label">Note</td><td>This verse is rendered in Hebrew as a chiasm: <em>shofekh dam ha-adam / ba-adam damo yishafekh</em> — 'one who sheds blood of the human / by the human his blood shall be shed.' The literary mirroring enacts the principle of proportional justice. The grounding ('for God made man in his image') makes this the most theologically weighty capital punishment argument in Scripture — and simultaneously limits it: not all killing, but killing that violates the image of God.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 16 — The everlasting covenant</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Whenever the rainbow appears in the clouds, I will see it and remember the everlasting covenant</td></tr><tr><td class="t-label">ESV</td><td>When the bow is in the clouds, I will see it and remember the everlasting covenant</td></tr><tr><td class="t-label">NASB</td><td>when the bow is in the cloud, then I will look upon it, to remember the everlasting covenant</td></tr><tr><td class="t-label">Note</td><td><span class='tlit'>Berit olam</span> — everlasting/eternal covenant. The rainbow is a sign for <em>God</em> to see ('I will see it') — not primarily a display for humanity. God reminds himself of his promise every time it rains. This is a remarkable statement of divine self-commitment: God binds himself to a sign of his own keeping. The bow is also the Hebrew word for a warrior's bow (<span class='tlit'>qeshet</span>) — the divine warrior hangs up his war-bow, a symbol of ceasefire.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 25 — Cursed be Canaan</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Cursed be Canaan! The lowest of slaves will he be to his brothers</td></tr><tr><td class="t-label">ESV</td><td>Cursed be Canaan; a servant of servants shall he be to his brothers</td></tr><tr><td class="t-label">NASB</td><td>Cursed be Canaan; a servant of servants he shall be to his brothers</td></tr><tr><td class="t-label">Note</td><td>All translations render this similarly. The 'curse of Ham' is a historical misnomer — the text curses Canaan, not Ham, and Ham's other sons (Cush, Egypt, Put) are not cursed. The horrific use of this verse to justify African slavery (beginning with European colonialism in the 16th c.) represents one of the worst abuses of biblical interpretation in history. The verse concerns Israel's relationship to Canaanite peoples in the conquest period, not any racial group.</td></tr></tbody></table></div>
@@ -597,7 +622,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────

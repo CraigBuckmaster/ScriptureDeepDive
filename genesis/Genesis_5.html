@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -423,9 +441,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 5</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g5-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g5-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g5-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -518,7 +536,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #d4b060;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#d4b060;margin-bottom:.2rem;">Seed/Messiah &mdash; vv.3–32</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">The genealogy threads the image-bearing line from Adam through Seth to Noah — keeping alive the seed of 3:15 through the death refrain. Enoch's translation is the first rupture of death's dominion.</p>
@@ -532,22 +550,29 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g5-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g5-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g5-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g5-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g5-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 5</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 5</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">This is the written account of Adam’s family line. When <span class="dn-elohim">Elohim</span> created mankind, he made them in the likeness of <span class="dn-elohim">Elohim</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">This is the written <span class="dn-covenant">toledot</span> of A<span class="dn-ra">dam</span>’s family line. When <span class="dn-elohim">Elohim</span> created <span class="dn-human">ha-adam</span>, he made them in the likeness of Elohim.</span></span>
 <span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">He created them male and female and blessed them. And he named them “Mankind” when they were created.</span></span>
-<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">When Adam had lived 130 years, he had a son in his own likeness, in his own image; and he named him Seth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">After Seth was born, Adam lived 800 years and had other sons and daughters.</span></span>
-<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">Altogether, Adam lived a total of 930 years, and then he died.</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">When A<span class="dn-ra">dam</span> had lived 130 years, he had a son in his own likeness, in his own <span class="dn-key">tselem</span>; and he named him Seth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">After Seth was born, A<span class="dn-ra">dam</span> lived 800 years and had other sons and daughters.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">Altogether, A<span class="dn-ra">dam</span> lived a total of 930 years, and then he died.</span></span>
 <span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">When Seth had lived 105 years, he became the father of Enosh.</span></span>
 <span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">After he became the father of Enosh, Seth lived 807 years and had other sons and daughters.</span></span>
 <span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Altogether, Seth lived a total of 912 years, and then he died.</span></span>
@@ -566,20 +591,20 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">When Enoch had lived 65 years, he became the father of Methuselah.</span></span>
 <span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">After he became the father of Methuselah, Enoch walked faithfully with <span class="dn-elohim">Elohim</span> 300 years and had other sons and daughters.</span></span>
 <span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">Altogether, Enoch lived a total of 365 years.</span></span>
-<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">Enoch walked faithfully with <span class="dn-elohim">Elohim</span>; then he was no more, because <span class="dn-elohim">Elohim</span> took him.</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">Enoch walked faithfully with <span class="dn-elohim">Elohim</span>; then he was no more, because Elohim took him.</span></span>
 <span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">When Methuselah had lived 187 years, he became the father of Lamech.</span></span>
 <span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">After he became the father of Lamech, Methuselah lived 782 years and had other sons and daughters.</span></span>
 <span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">Altogether, Methuselah lived a total of 969 years, and then he died.</span></span>
 <span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text">When Lamech had lived 182 years, he had a son.</span></span>
-<span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">He named him Noah and said, “He will comfort us in the labor and painful toil of our hands caused by the ground <span class="dn-yhwh">YHWH</span> has cursed.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">He named him Noah and said, “He will comfort us in the labor and painful toil of our hands caused by the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> <span class="dn-yhwh">YHWH</span> has cursed.”</span></span>
 <span class="dn-verse"><span class="dn-vnum">30</span><span class="dn-text">After Noah was born, Lamech lived 595 years and had other sons and daughters.</span></span>
 <span class="dn-verse"><span class="dn-vnum">31</span><span class="dn-text">Altogether, Lamech lived a total of 777 years, and then he died.</span></span>
 <span class="dn-verse"><span class="dn-vnum">32</span><span class="dn-text">After Noah was 500 years old, he became the father of Shem, Ham and Japheth.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g5-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">4 canonical threads &mdash; 3 forward (passages that echo this chapter) &nbsp;|&nbsp; 1 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -616,17 +641,17 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g5-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g5-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g5-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g5-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g5-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g5-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g5-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g5-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g5-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g5-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g5-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 5</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Enoch</div><div class="person-role">The Exception — v.24</div><p class="person-text"><span class='tlit'>Hanok</span> — devoted, initiated. Seventh from Adam through Seth (mirroring Lamech's seventh place in Cain's line). While every other patriarch has the death refrain 'and he died,' Enoch's entry ends with <span class='tlit'>ve-einennu ki laqah oto Elohim</span> — 'he was not, for God took him.' This is the single rupture of the genealogy's drumbeat of death. He walked with God 365 years (matching the solar year — completeness) then was translated without dying. In the intertestamental period he became the subject of enormous literary expansion (1 Enoch, 2 Enoch, 3 Enoch). The NT cites him in Heb 11:5 as a model of faith and Jude 14 quotes his prophecy from 1 Enoch.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Methuselah</div><div class="person-role">Longest Life — v.27</div><p class="person-text">969 years — the oldest person in Scripture. His name is often read as <span class='tlit'>metu shelah</span> — 'his death shall bring it' — with 'it' being the flood. If the genealogical numbers are taken straightforwardly, Methuselah died the year the flood began (adding his age at Lamech's birth + Lamech's age at Noah's birth + Noah's age at the flood = 1656 years from creation; Methuselah's birth + 969 = exactly 1656). Whether the name etymology is ancient folk-memory or later scribal calculation, the convergence is striking. He is never given dialogue or deeds — his significance is entirely in his longevity and his death-timing.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah</div><div class="person-role">The Bridge — v.29</div><p class="person-text">Noah enters the genealogy last, named by his father Lamech with the hope: 'He will comfort us from our work and the painful toil of our hands caused by the ground YHWH has cursed.' The name <span class='tlit'>Noah</span> sounds like <span class='tlit'>nacham</span> (comfort) and <span class='tlit'>nuach</span> (rest). He is the hinge of the primeval history — everything from Adam to Noah (chs 1-5) leads to him; chs 6-9 are his story; ch.10 radiates from him. He is the second Adam: humanity gets a second start through him, with a renewed mandate (9:1) and a new covenant. His failure in ch.9 (the vineyard) underlines that the problem runs deeper than one man.</p></div></div></div>
   <div id="g5-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verse</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 24 — Enoch walked with God</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Enoch walked faithfully with God; then he was no more, because God took him away</td></tr><tr><td class="t-label">ESV</td><td>Enoch walked with God, and he was not, for God took him</td></tr><tr><td class="t-label">NASB</td><td>Enoch walked with God; and he was not, for God took him</td></tr><tr><td class="t-label">KJV</td><td>And Enoch walked with God: and he was not; for God took him</td></tr><tr><td class="t-label">LXX</td><td>Enoch was well-pleasing to God, and was not found, for God translated him</td></tr><tr><td class="t-label">Note</td><td>NIV adds 'faithfully' and 'away' — both interpretive additions not in the Hebrew. ESV/NASB/KJV preserve the mystery of 'he was not' (<span class='tlit'>einennu</span>). The LXX's 'well-pleasing' (<span class='tlit'>euarestesen</span>) is quoted directly in Heb 11:5, making the Greek the exegetical bridge for the NT reading. 'Translated' (LXX) becomes the technical term for Enoch's bodily transference — Heb 11:5 uses <span class='tlit'>metatithemi</span>, confirming this is not merely death described differently.</td></tr></tbody></table></div>
   <div id="g5-src" class="anno-panel src-panel"><h4>Ancient Source Texts — The Sumerian King List</h4><div class="source-block"><div class="source-title">The Sumerian King List (c. 2100 BCE)</div><div class="source-quote">When kingship was lowered from heaven, kingship was first in Eridu. In Eridu, Alulim became king; he ruled for 28,800 years. Alalgar ruled for 36,000 years... Then the flood swept over. After the flood had swept over, when kingship was lowered from heaven again, kingship was first in Kish.</div><p class="source-note">The Sumerian King List records 8 or 10 pre-flood kings ruling for impossibly long periods (up to 72,000 years each), followed by a flood, after which lifespans drop dramatically. The structural parallel to Genesis 5 is exact: long-lived pre-flood patriarchs → flood → post-flood lifespans declining toward normal. The numbers in both lists are schematic, not biographical. In the Sumerian system the numbers are multiples of 60 and 600 (the Babylonian sexagesimal system); in Genesis the numbers cluster around 7s and patterns meaningful in Hebrew numerology.</p></div><div class="source-block"><div class="source-title">Berossus — Babyloniaca (c. 290 BCE)</div><div class="source-quote">In the time before the flood there were ten kings who reigned for very many years... The years of all their reigns were 432,000 years. Then came the flood.</div><p class="source-note">Berossus, a Babylonian priest writing in Greek, lists exactly 10 pre-flood kings (matching Genesis's 10 patriarchs from Adam to Noah) reigning for a total of 432,000 years. The convergence on the number 10 is striking — it suggests both traditions draw on a shared ancient conviction that the pre-flood era had exactly 10 great figures. Genesis demythologizes: not divine kings but ordinary humans who walked (or failed to walk) with God.</p></div></div>
   <div id="g5-rec" class="anno-panel rec-panel"><h4>Reception History &mdash; Genesis 5</h4><div class="rec-block"><div class="rec-who">The Book of Jubilees (c. 160 BCE)</div><p class="rec-text">Jubilees, a Second Temple Jewish text, retells Genesis 5 with expanded detail. It synchronizes the patriarchal lifespans with a 49-year jubilee calendar, argues the long ages prove the patriarchs saw the entire pre-flood period personally, and expands Enoch's role enormously: he becomes the first human to write, the inventor of astronomy, and the heavenly scribe who records human sin. Jubilees' Enoch is the source of the vast Enochic literary tradition (1 Enoch, 2 Enoch) that would deeply influence Jewish apocalypticism and early Christianity.</p></div><div class="rec-block"><div class="rec-who">Jude and 2 Peter — Enoch as Prophetic Witness</div><p class="rec-text">Jude 14-15 quotes 1 Enoch 1:9 directly — the only NT citation of a pseudepigraphical text as prophetic Scripture. This has generated enormous scholarly debate about the canon. The citation validates Enoch as a historical figure and prophet while not necessarily endorsing all of 1 Enoch as canonical. 2 Peter 2:4-5 places Enoch's tradition (fallen angels, pre-flood judgment) in the same theological sequence as Noah, treating both as paradigms of divine judgment and rescue. The NT thus treats Genesis 5-6 as historically anchored, not merely allegorical.</p></div><div class="rec-block"><div class="rec-who">Early Church — Allegorical Name Meanings</div><p class="rec-text">A tradition preserved in early Christian preaching (found in various forms from Irenaeus onward) reads the name meanings of the Genesis 5 patriarchs as a hidden gospel message: Adam (man) Seth (appointed) Enosh (mortal) Kenan (sorrow) Mahalalel (the blessed God) Jared (shall come down) Enoch (teaching) Methuselah (his death shall bring) Lamech (the despairing) Noah (comfort/rest). Reading sequentially: 'Man appointed mortal sorrow; the blessed God shall come down teaching, his death shall bring the despairing comfort/rest.' Whether historically original or not, this reading became popular in evangelical preaching as a demonstration of embedded Messianic prophecy.</p></div></div>
-  <div id="g5-lit" class="anno-panel lit-panel"><h4>Literary Structure &mdash; The Death Refrain</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;color:#d8e0a8;margin-bottom:.8rem;">Genesis 5 is built on a rigidly repeated literary formula that functions like a drumbeat &mdash; nine times the same pattern, then one rupture:</p><div class="lit-diagram"><div class="lit-row"><span class="lit-label">1</span><span class="lit-text">When X had lived N years, he became the father of Y</span></div><div class="lit-row"><span class="lit-label">2</span><span class="lit-text">After that, X lived M years and had sons and daughters</span></div><div class="lit-row"><span class="lit-label">3</span><span class="lit-text">X lived a total of N+M years</span></div><div class="lit-center">&#x25B6; AND HE DIED</div><div class="lit-center">&mdash; repeated 8 times &mdash; then &mdash;</div><div class="lit-row"><span class="lit-label">✦</span><span class="lit-text">Enoch: walked with God... AND HE WAS NOT</span></div></div><p class="lit-note">The refrain &ldquo;and he died&rdquo; (<span class="tlit">va-yamot</span>) falls at the end of each entry like a hammer blow — the consequence of Genesis 3 made concrete in biography after biography. Enoch&rsquo;s missing death notice is one of the most arresting literary ruptures in all of Scripture. The reader who has heard the refrain eight times is stunned by its absence. The chapter is also numerically structured: 10 patriarchs (Adam to Noah), matching the 10 generations of the Sumerian King List and foreshadowing the 10 generations of Shem to Abraham in ch.11.</p></div>
+  <div id="g5-lit" class="anno-panel lit-panel"><h4>Literary Structure &mdash; The Death Refrain</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;color:#d8e0a8;margin-bottom:.8rem;">Genesis 5 is built on a rigidly repeated literary formula that functions like a drumbeat &mdash; nine times the same pattern, then one rupture:</p><div class="lit-diagram"><div class="lit-row"><span class="lit-label">1</span><span class="lit-text">When X had lived N years, he became the father of Y</span></div><div class="lit-row"><span class="lit-label">2</span><span class="lit-text">After that, X lived M years and had sons and daughters</span></div><div class="lit-row"><span class="lit-label">3</span><span class="lit-text">X lived a total of N+M years</span></div><div class="lit-center">AND HE DIED</div><div class="lit-center">&mdash; repeated 8 times &mdash; then &mdash;</div><div class="lit-row"><span class="lit-label">✦</span><span class="lit-text">Enoch: walked with God... AND HE WAS NOT</span></div></div><p class="lit-note">The refrain &ldquo;and he died&rdquo; (<span class="tlit">va-yamot</span>) falls at the end of each entry like a hammer blow — the consequence of Genesis 3 made concrete in biography after biography. Enoch&rsquo;s missing death notice is one of the most arresting literary ruptures in all of Scripture. The reader who has heard the refrain eight times is stunned by its absence. The chapter is also numerically structured: 10 patriarchs (Adam to Noah), matching the 10 generations of the Sumerian King List and foreshadowing the 10 generations of Shem to Abraham in ch.11.</p></div>
 </div>
 </main>
 <footer>
@@ -634,7 +659,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────
