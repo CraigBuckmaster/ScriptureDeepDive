@@ -268,73 +268,64 @@ function tog(btn,id){
 function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
 </script><script>
 (function(){
-var DIVINE={words:['God','LORD','Spirit'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-var PLACES={words:['Eden','heavens','earth','deep','waters','firmament','darkness','light','land','seas'],cls:'vhl-place',btn:['places']};
-var PEOPLE={words:['Adam','Eve','man','woman'],cls:'vhl-person',btn:['people']};
-var TIME={words:['evening','morning','night','day','days','season','seasons'],cls:'vhl-time',btn:['timeline']};
-var KEY={words:['image','likeness','holy','blessed','good','created','made','formed','void','formless'],cls:'vhl-key',btn:['literary','cross']};
-var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
-function escRe(s){return s.replace(/[-\/\^$*+?.()|[\]{}]/g,'\\$&');}
-function highlightNode(node){
-  var t=node.nodeValue;if(!t||!t.trim())return;
-  var parts=[{text:t,cls:null,btn:null}];
-  GROUPS.forEach(function(g){
-    var next=[];
-    parts.forEach(function(p){
-      if(p.cls){next.push(p);return;}
-      var re=new RegExp('\\b('+g.words.map(escRe).join('|')+')\\b','g');
-      var last=0,m;
-      while((m=re.exec(p.text))!==null){
-        if(m.index>last)next.push({text:p.text.slice(last,m.index),cls:null,btn:null});
-        next.push({text:m[0],cls:g.cls,btn:g.btn});
-        last=m.index+m[0].length;
+  var DIVINE={words:['God','LORD','Spirit'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Eden','heavens','earth','deep','waters','firmament','darkness','light','land','seas'],cls:'vhl-place',btn:['places']};
+  var PEOPLE={words:['Adam','Eve','man','woman'],cls:'vhl-person',btn:['people']};
+  var TIME={words:['evening','morning','night','day','days','season','seasons'],cls:'vhl-time',btn:['timeline']};
+  var KEY={words:['image','likeness','holy','blessed','good','created','made','formed','void','formless'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
       }
-      if(last<p.text.length)next.push({text:p.text.slice(last),cls:null,btn:null});
-    });
-    parts=next;
-  });
-  if(parts.length===1&&!parts[0].cls)return;
-  var frag=document.createDocumentFragment();
-  parts.forEach(function(p){
-    if(!p.cls){frag.appendChild(document.createTextNode(p.text));return;}
-    var s=document.createElement('span');
-    s.className='vhl '+p.cls;
-    s.textContent=p.text;
-    if(p.btn&&p.btn.length){s.dataset.btn=p.btn[0];s.dataset.vhlId='';}
-    frag.appendChild(s);
-  });
-  node.parentNode.replaceChild(frag,node);
-}
-function walkText(el){
-  var cn=el.childNodes;
-  for(var i=cn.length-1;i>=0;i--){
-    var n=cn[i];
-    if(n.nodeType===3)highlightNode(n);
-    else if(n.nodeType===1&&!/(script|style|button|h[1-6])/i.test(n.tagName))walkText(n);
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
   }
-}
-document.querySelectorAll('.verse-text').forEach(function(el){walkText(el);});
-var btnSections={};
-document.querySelectorAll('.btn-row').forEach(function(row){
-  var section=row.closest('.section');if(!section)return;
-  var btns={};
-  row.querySelectorAll('.anno-trigger').forEach(function(b){
-    Array.from(b.classList).forEach(function(c){if(c!=='anno-trigger')btns[c]=b.getAttribute('onclick');});
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
   });
-  section.querySelectorAll('.vhl[data-btn]').forEach(function(sp){
-    var btnClass=sp.dataset.btn;
-    if(btns[btnClass]){var m=btns[btnClass].match(/\'([^\']+)\'/);if(m)sp.dataset.vhlId=m[1];}
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
   });
-});
-document.addEventListener('click',function(e){
-  var sp=e.target.closest('.vhl[data-vhl-id]');
-  if(!sp||!sp.dataset.vhlId)return;
-  var pid=sp.dataset.vhlId;
-  var panel=document.getElementById(pid);if(!panel)return;
-  var row=panel.closest('.section');if(!row)return;
-  var btn=row.querySelector('.anno-trigger.'+sp.dataset.btn);
-  if(btn)btn.click();
-});
 })();
 </script><script>
 function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
