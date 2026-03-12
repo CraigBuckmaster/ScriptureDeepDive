@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -368,7 +386,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger history" onclick="tog(this,'s3-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger places" onclick="tog(this,'s3-poi')"><span>&#x1F4CD; Places</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger places" onclick="tog(this,'s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="s3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
@@ -388,7 +406,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <p>The command in v.15 &mdash; &ldquo;to work it and take care of it&rdquo; &mdash; uses <span class="tlit">&rsquo;avad</span> (serve/work, used for priestly temple service) and <span class="tlit">shamar</span> (guard/keep, used for keeping the covenant and guarding the sanctuary). Adam is the first priest, and Eden is the first temple. His failure is not just moral but priestly.</p>
   </div>
   <div id="s3-poi" class="anno-panel poi-panel">
-    <h4>&#x1F4CD; Places &mdash; The Four Rivers of Eden</h4>
+    <h4>Places &mdash; The Four Rivers of Eden</h4>
     <div class="poi-grid">
       <div class="poi-card" style="--dot-color:#70b8e8">
         <span class="poi-icon">&#x1F4A7;</span>
@@ -482,9 +500,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 2</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g2-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g2-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g2-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -577,7 +595,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #e890b8;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#e890b8;margin-bottom:.2rem;">Priesthood &mdash; v.15</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">Adam is placed in Eden <em>le'avdah ule'shomrah</em> — to serve and guard it. These are the precise terms for Levitical temple service (Num 3:7–8). The garden is a temple; Adam is its first priest.</p>
@@ -591,47 +609,54 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g2-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g2-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g2-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g2-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g2-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 2</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 2</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Thus the heavens and the earth were completed in all their vast array.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Thus the <span class="dn-cosmos">shamayim</span> and the eretz were completed in all their vast ar<span class="dn-ra">ra</span>y.</span></span>
 <span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">By the seventh day <span class="dn-elohim">Elohim</span> had finished the work he had been doing; so on the seventh day he rested from all his work.</span></span>
 <span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> blessed the seventh day and made it holy, because on it he rested from all the work of creating that he had done.</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">This is the account of the heavens and the earth when they were created, when the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made the earth and the heavens.</span></span>
-<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">Now no shrub had yet appeared on the earth and no plant had yet sprung up, for the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had not sent rain on the earth and there was no one to work the ground,</span></span>
-<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">but streams came up from the earth and watered the whole surface of the ground.</span></span>
-<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">Then the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being.</span></span>
-<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Now the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had planted a garden in the east, in Eden; and there he put the man he had formed.</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made all kinds of trees grow out of the ground — trees that were pleasing to the eye and good for food. In the middle of the garden were the tree of life and the tree of the knowledge of good and evil.</span></span>
-<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">A river watering the garden flowed from Eden; from there it was separated into four headwaters.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">This is the <span class="dn-covenant">toledot</span> of the <span class="dn-cosmos">shamayim</span> and the eretz when they were created, when <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made the eretz and the shamayim.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">Now no shrub had yet appeared on the <span class="dn-cosmos">eretz</span> and no plant had yet sprung up, for <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had not sent rain on the eretz and there was no one to work the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span>,</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">but streams came up from the <span class="dn-cosmos">eretz</span> and watered the whole surface of the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">Then <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> formed an a<span class="dn-ra">dam</span> from the aphar of the adamah and breathed into his nostrils <span class="dn-spirit">the nishmat chayyim</span>, and the adam became a living <span class="dn-human">nephesh</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Now <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had planted <span class="dn-place">a gan</span> in the east, in Eden; and there he put the a<span class="dn-ra">dam</span> he had formed.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made all kinds of trees grow out of the <span class="dn-human">adamah</span> — trees that were plea<span class="dn-ra">chet</span>g to the eye and good for food. In the middle of <span class="dn-place">the gan</span> were the ets chayyim and the <span class="dn-tree">ets ha-daat <span class="dn-tov">tov</span> and ra</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">A river watering <span class="dn-place">the gan</span> flowed from Eden; from there it was sepa<span class="dn-ra">ra</span>ted into four headwaters.</span></span>
 <span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">The name of the first is the Pishon; it winds through the entire land of Havilah, where there is gold.</span></span>
-<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">(The gold of that land is good; aromatic resin and onyx are also there.)</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">(The gold of that land is good; aromatic re<span class="dn-ra">chet</span> and onyx are also there.)</span></span>
 <span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">The name of the second river is the Gihon; it winds through the entire land of Cush.</span></span>
-<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">The name of the third river is the Tigris; it runs along the east side of Ashur. And the fourth river is the Euphrates.</span></span>
-<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> took the man and put him in the Garden of Eden to work it and take care of it.</span></span>
-<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">And the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> commanded the man, “You are free to eat from any tree in the garden;</span></span>
-<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">but you must not eat from the tree of the knowledge of good and evil, for when you eat from it you will certainly die.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said, “It is not good for the man to be alone. I will make a helper suitable for him.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">Now the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had formed out of the ground all the wild animals and all the birds in the sky. He brought them to the man to see what he would name them; and whatever the man called each living creature, that was its name.</span></span>
-<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">So the man gave names to all the livestock, the birds in the sky and all the wild animals. But for Adam no suitable helper was found.</span></span>
-<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">So the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> caused the man to fall into a deep sleep; and while he was sleeping, he took one of the man’s ribs and then closed up the place with flesh.</span></span>
-<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Then the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made a woman from the rib he had taken out of the man, and he brought her to the man.</span></span>
-<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">The man said, “This is now bone of my bones and flesh of my flesh; she shall be called ‘woman,’ for she was taken out of man.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">That is why a man leaves his father and mother and is united to his wife, and they become one flesh.</span></span>
-<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">Adam and his wife were both naked, and they felt no shame.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">The name of the third river is the Tigris; it runs along the east side of Ashur. And the fourth river is the Euph<span class="dn-ra">ra</span>tes.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> took the a<span class="dn-ra">dam</span> and put him in the Garden of Eden to work it and take care of it.</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">And <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> coma<span class="dn-ra">dam</span>ded the adam, “You are free to eat from any tree in <span class="dn-place">the gan</span>;</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">but you must not eat from the <span class="dn-tree">ets ha-daat <span class="dn-tov">tov</span> and <span class="dn-ra">ra</span></span>, for when you eat from it you will certainly die.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said, “It is not good for the a<span class="dn-ra">dam</span> to be alone. I will make a helper suitable for him.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">Now <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had formed out of the a<span class="dn-ra">dam</span>ah all the wild animals and all the birds in the <span class="dn-cosmos">shamayim</span>. He brought them to the adam to see what he would name them; and whatever the adam called each <span class="dn-human">nephesh chayyah</span>, that was its name.</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">So the a<span class="dn-ra">dam</span> gave names to all the livestock, the birds in the <span class="dn-cosmos">shamayim</span> and all the wild animals. But for Adam no suitable helper was found.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">So <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> caused the a<span class="dn-ra">dam</span> to fall into a deep sleep; and while he was sleeping, he took one of the adam’s ribs and then closed up the place with flesh.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Then <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made a woa<span class="dn-ra">dam</span> from the rib he had taken out of the adam, and he brought her to the adam.</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">The a<span class="dn-ra">dam</span> said, “This is now bone of my bones and flesh of my flesh; she shall be called ‘woadam,’ for she was taken out of adam.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">That is why <span class="dn-human">an a<span class="dn-ra">dam</span></span> leaves his father and mother and is united to his wife, and they become one flesh.</span></span>
+<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">A<span class="dn-ra">dam</span> and his wife were both naked, and they felt no shame.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g2-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">5 canonical threads &mdash; 5 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -676,11 +701,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g2-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g2-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g2-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g2-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g2-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g2-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g2-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g2-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g2-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g2-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g2-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 2</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Adam / Ha-Adam</div><div class="person-role">The First Human — vv.7,15,19,22,23</div><p class="person-text">Not a proper name in ch.2 but the title <span class='tlit'>ha-adam</span> (the human / the earthling). He becomes 'Adam' as a proper name only in 4:25. In ch.2 he is defined by his origin (<span class='tlit'>adamah</span> — ground), his vocation (priest-gardener), and his incompleteness without <span class='tlit'>'ishah</span>. His first recorded words are a love poem (v.23). His canonical arc: image-bearer → caretaker → naming-authority → husband → fall → exile → father of Seth. The NT identifies him as a 'type of the one to come' (Rom 5:14), with Christ as the last Adam who succeeds where the first failed (1 Cor 15:45).</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Eve / Hawwah</div><div class="person-role">Mother of All Living — v.22 (named in 3:20)</div><p class="person-text">Created from Adam's <span class='tlit'>tsela'</span> (rib/side) — the only creature not formed from the ground. Her name (<span class='tlit'>Hawwah</span>) is given in 3:20 after the fall, meaning 'life-giver' or 'living one.' In ch.2 she is introduced as <span class='tlit'>'ezer kenegdo</span> — a powerful ally who is Adam's mirror-complement. She is the first to speak to the serpent, the first to evaluate the tree's multiple appeals, and the first to eat. In the NT she is referenced by Paul in 1 Cor 11 and 1 Tim 2, and her deception is used as a warning (2 Cor 11:3). In typology she is read as a figure of the church, born from Christ's wounded side (John 19:34).</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">YHWH Elohim</div><div class="person-role">The Covenant Creator — throughout ch.2</div><p class="person-text">The double name <span class='tlit'>YHWH Elohim</span> appears 11 times in Gen 2–3 and almost nowhere else in the Pentateuch in this combination. It is the literary seam stitching the cosmic God of ch.1 (Elohim) to the personal covenant God of Israel (YHWH). In ch.2 he is portrayed with striking intimacy: forming Adam from clay with hands, breathing into his face, planting a garden, performing surgery, and making clothes. The transcendent creator of ch.1 is the same as the intimate companion of ch.2.</p></div></div></div>
   <div id="g2-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 7 — Breath of life</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>the LORD God formed a man from the dust of the ground and breathed into his nostrils the breath of life</td></tr><tr><td class="t-label">ESV</td><td>then the LORD God formed the man of dust from the ground and breathed into his nostrils the breath of life</td></tr><tr><td class="t-label">NASB</td><td>then the LORD God formed the man of dust from the ground, and breathed into his nostrils the breath of life</td></tr><tr><td class="t-label">KJV</td><td>And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life</td></tr><tr><td class="t-label">Note</td><td>All major translations agree closely here. The key theological word <span class='tlit'>nishmat hayyim</span> (breath of life) is always singular — one breath, one moment. <span class='tlit'>Nefesh hayyah</span> (living being/soul) is what results — not 'immortal soul' (a Greek concept) but an animated, integrated body-soul unity.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 18 — Helper suitable</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>I will make a helper suitable for him</td></tr><tr><td class="t-label">ESV</td><td>I will make him a helper fit for him</td></tr><tr><td class="t-label">NASB</td><td>I will make him a helper suitable for him</td></tr><tr><td class="t-label">KJV</td><td>I will make him an help meet for him</td></tr><tr><td class="t-label">Note</td><td>KJV's 'help meet' (two words) was later collapsed into 'helpmeet' and then 'helpmate' — a word that doesn't exist in the original. ESV 'fit for him' and NIV 'suitable for him' both render <span class='tlit'>kenegdo</span> (corresponding to / facing him / his equal opposite). The word 'helper' (<span class='tlit'>'ezer</span>) is never a diminutive in Hebrew — it is used 16 times of God himself.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 24 — One flesh</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>That is why a man leaves his father and mother and is united to his wife, and they become one flesh.</td></tr><tr><td class="t-label">ESV</td><td>Therefore a man shall leave his father and his mother and hold fast to his wife, and they shall become one flesh.</td></tr><tr><td class="t-label">NASB</td><td>For this reason a man shall leave his father and his mother, and be joined to his wife; and they shall become one flesh.</td></tr><tr><td class="t-label">Note</td><td>ESV 'hold fast' renders <span class='tlit'>davaq</span> more literally — a word of covenant adhesion used for Israel clinging to YHWH (Deut 10:20). NIV 'united' is smoother but loses the intensity. This verse is quoted verbatim by Jesus (Matt 19:5) and Paul (Eph 5:31) — the most-cited verse from Genesis 2 in the NT.</td></tr></tbody></table></div>
@@ -694,7 +719,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────

@@ -164,23 +164,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -253,18 +237,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -294,36 +312,36 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 <div class="authorship-banner">
   <button class="authorship-toggle" onclick="toggleAuth(this)">
-    <span>&#x270D; Who Wrote Genesis &amp; What Were They Going Through?</span>
+    <span>Who Wrote Genesis &amp; What Were They Going Through?</span>
     <span class="chev">&#9660;</span>
   </button>
   <div class="authorship-body">
     <div class="authorship-grid">
       <div class="auth-card">
-        <h3>&#x1F4DC; Traditional View &mdash; Moses</h3>
+        <h3>Traditional View &mdash; Moses</h3>
         <p>Jewish and Christian tradition holds that <strong>Moses</strong> wrote all five books of the Torah, likely during Israel&rsquo;s wilderness wandering, <strong>c.&nbsp;1446&ndash;1406&nbsp;BCE</strong>. Moses was leading a slave nation freshly liberated from Egypt and surrounded by Egyptian polytheism &mdash; Genesis answers who their God was and where they came from.</p>
         <div class="pull">&ldquo;If you believed Moses, you would believe me, for he wrote about me.&rdquo; &mdash; Jesus (John 5:46)</div>
       </div>
       <div class="auth-card">
-        <h3>&#x1F50D; Modern Scholarship &mdash; JEDP Theory</h3>
+        <h3>Modern Scholarship &mdash; JEDP Theory</h3>
         <p>Scholars identified four literary strands woven through the Torah. Genesis 1 is assigned to the <strong>Priestly (P) source</strong> &mdash; formal, structured, liturgical, using Elohim throughout. P is obsessed with order, ritual, and genealogy. The other sources (J, E, D) contribute different passages throughout Genesis.</p>
       </div>
       <div class="auth-card">
-        <h3>&#x1F6A8; The Crisis Behind Genesis 1</h3>
+        <h3>The Crisis Behind Genesis 1</h3>
         <p>The P source dates to the <strong>Babylonian exile (586&ndash;538&nbsp;BCE)</strong>. Nebuchadnezzar II destroyed Solomon&rsquo;s Temple, burned Jerusalem, and deported Israel&rsquo;s priests to Babylon. In ancient thinking, when a nation was conquered, its god had been defeated. The exiles faced a shattering question: <em>Has our God lost? Is Marduk more powerful?</em></p>
         <div class="pull">&ldquo;By the rivers of Babylon we sat and wept when we remembered Zion.&rdquo; &mdash; Psalm 137:1</div>
       </div>
       <div class="auth-card">
-        <h3>&#x1F4A1; Genesis 1 as Theological Response</h3>
+        <h3>Genesis 1 as Theological Response</h3>
         <p>Genesis 1 is the Priestly community&rsquo;s answer &mdash; written as captives in Babylon, surrounded by the Enuma Elish (recited publicly each New Year), the Esagila temple of Marduk, and daily pressure to assimilate. Their response: <em>Our God created everything &mdash; including what you worship. The sun and moon are just lamps He made. And we &mdash; not your king &mdash; bear His image.</em></p>
         <div class="pull">Written by a defeated, exiled people &mdash; it reads like a declaration of cosmic victory.</div>
       </div>
       <div class="auth-card">
-        <h3>&#x1F1EE;&#x1F1F6; Life in Babylonian Exile</h3>
+        <h3>Life in Babylonian Exile</h3>
         <p>The exiles weren&rsquo;t imprisoned &mdash; they were settled in communities along Babylonian canals (Ezekiel writes from &ldquo;Tel Aviv&rdquo; on the Chebar River). But they were foreigners with no Temple, no king, no homeland. Babylon was the greatest city on earth: the Ishtar Gate, the Esagila ziggurat, the Hanging Gardens. The exiles lived in its shadow every day.</p>
       </div>
       <div class="auth-card">
-        <h3>&#x1F4C5; Authorship Timeline</h3>
+        <h3>Authorship Timeline</h3>
         <p><strong>c.&nbsp;2000&ndash;1700&nbsp;BCE</strong> &mdash; Patriarchal period; oral traditions begin<br>
         <strong>c.&nbsp;1446 or 1290&nbsp;BCE</strong> &mdash; Mosaic authorship (traditional)<br>
         <strong>c.&nbsp;950&ndash;750&nbsp;BCE</strong> &mdash; J and E sources written down<br>
@@ -360,8 +378,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <button class="anno-trigger history" onclick="tog(this,'v1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger context" onclick="tog(this,'v1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger cross"   onclick="tog(this,'v1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger places"  onclick="tog(this,'v1-poi')"><span>&#x1F4CD; Places</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger timeline"onclick="tog(this,'v1-tl')"><span>&#x1F4C5; Timeline</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger places"  onclick="tog(this,'v1-poi')"><span>Places</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger timeline"onclick="tog(this,'v1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button>
   </div>
 
   <div id="v1-heb" class="anno-panel heb">
@@ -396,7 +414,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 
   <div id="v1-poi" class="anno-panel poi-panel">
-    <h4>&#x1F4CD; Key Places &mdash; The World of Genesis</h4>
+    <h4>Key Places &mdash; The World of Genesis</h4>
     <div class="poi-grid">
       <div class="poi-card" style="--dot-color:#ff7070">
         <span class="poi-icon">&#x1F3DB;</span>
@@ -423,7 +441,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
         <p class="poi-text">&ldquo;City of the Sun.&rdquo; Primary cult centre of Ra/Atum, Egypt&rsquo;s solar creator god. Joseph&rsquo;s father-in-law was its chief priest (Gen 41:45). Hebrew slaves knew this city well. The Pyramid Texts &mdash; the oldest religious writings on earth &mdash; originated from solar theology here.</p>
       </div>
       <div class="poi-card" style="--dot-color:#70b8e8">
-        <span class="poi-icon">&#x1F4DC;</span>
+        <span class="poi-icon"></span>
         <div class="poi-name">Ugarit</div>
         <div class="poi-region">Modern Ras Shamra, Syria</div>
         <p class="poi-text">Canaanite city whose tablet library was discovered in 1929. The tablets revealed that &ldquo;shemesh&rdquo; (sun) and &ldquo;yareach&rdquo; (moon) were divine names in Canaanite religion &mdash; the exact words Genesis 1 pointedly refuses to use, calling them only &ldquo;the greater light&rdquo; and &ldquo;the lesser light.&rdquo; The omission was deliberate.</p>
@@ -451,7 +469,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 
   <div id="v1-tl" class="anno-panel tl-panel">
-    <h4>&#x1F4C5; Timeline &mdash; From Oral Tradition to Final Text</h4>
+    <h4>Timeline &mdash; From Oral Tradition to Final Text</h4>
     <div class="timeline-wrap">
       <svg viewBox="0 0 540 175" width="540" height="175" xmlns="http://www.w3.org/2000/svg">
         <rect width="540" height="175" fill="#080c18" rx="6"/>
@@ -492,7 +510,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <button class="anno-trigger hebrew"  onclick="tog(this,'v3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger context" onclick="tog(this,'v3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger cross"   onclick="tog(this,'v3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger timeline"onclick="tog(this,'v3-tl')"><span>&#x1F4C5; 7-Day Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger timeline"onclick="tog(this,'v3-tl')"><span>7-Day Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="v3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
@@ -515,7 +533,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     </ul>
   </div>
   <div id="v3-tl" class="anno-panel tl-panel">
-    <h4>&#x1F4C5; The Literary Architecture of the 7 Days</h4>
+    <h4>The Literary Architecture of the 7 Days</h4>
     <div class="timeline-wrap">
       <svg viewBox="0 0 520 148" width="520" height="148" xmlns="http://www.w3.org/2000/svg">
         <rect width="520" height="148" fill="#080c18" rx="6"/>
@@ -592,7 +610,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v14-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger history" onclick="tog(this,'v14-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger places"  onclick="tog(this,'v14-poi')"><span>&#x1F4CD; Places &mdash; Solar Religion</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger places"  onclick="tog(this,'v14-poi')"><span>Places &mdash; Solar Religion</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="v14-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
@@ -604,7 +622,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <p>Solar worship was the most widespread religion in the ancient world: Ra/Atum in Egypt, Shamash in Babylon and Assyria, Shemesh in Canaan, Helios in Greece. Ezekiel 8:16 records Israelites bowing to the sun inside the Jerusalem Temple itself. The Israelite exile authors of Genesis 1 lived in Babylon &mdash; the very city whose Shamash temple at Sippar (the E-babbar, &ldquo;Shining House&rdquo;) was one of the most magnificent structures of the age.</p>
   </div>
   <div id="v14-poi" class="anno-panel poi-panel">
-    <h4>&#x1F4CD; Places &mdash; Sun &amp; Moon Worship Sites Surrounding Israel</h4>
+    <h4>Places &mdash; Sun &amp; Moon Worship Sites Surrounding Israel</h4>
     <div class="poi-grid">
       <div class="poi-card" style="--dot-color:#ffcc44">
         <span class="poi-icon">&#x2600;&#xFE0F;</span>
@@ -676,8 +694,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <button class="anno-trigger hebrew"  onclick="tog(this,'v26-heb')"><span>Hebrew &mdash; Imago Dei</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger context" onclick="tog(this,'v26-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger cross"   onclick="tog(this,'v26-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger places"  onclick="tog(this,'v26-poi')"><span>&#x1F4CD; Places &mdash; Eden Region</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger timeline"onclick="tog(this,'v26-tl')"><span>&#x1F4C5; Imago Dei History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger places"  onclick="tog(this,'v26-poi')"><span>Places &mdash; Eden Region</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger timeline"onclick="tog(this,'v26-tl')"><span>Imago Dei History</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="v26-heb" class="anno-panel heb">
     <h4>Hebrew Word Study &mdash; Imago Dei</h4>
@@ -705,7 +723,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     </ul>
   </div>
   <div id="v26-poi" class="anno-panel poi-panel">
-    <h4>&#x1F4CD; Places &mdash; The Eden Region (Genesis 2:10&ndash;14)</h4>
+    <h4>Places &mdash; The Eden Region (Genesis 2:10&ndash;14)</h4>
     <div class="poi-grid">
       <div class="poi-card" style="--dot-color:#80d080">
         <span class="poi-icon">&#x1F33F;</span>
@@ -759,7 +777,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <p class="poi-caption">The geography of Eden remains genuinely uncertain. The most plausible proposals all centre on the Tigris&ndash;Euphrates basin in modern Iraq &mdash; the same land where the exile authors of Genesis were living when they wrote it all down.</p>
   </div>
   <div id="v26-tl" class="anno-panel tl-panel">
-    <h4>&#x1F4C5; Imago Dei Through Theological History</h4>
+    <h4>Imago Dei Through Theological History</h4>
     <div class="timeline-wrap">
       <svg viewBox="0 0 560 175" width="560" height="175" xmlns="http://www.w3.org/2000/svg">
         <rect width="560" height="175" fill="#080c18" rx="6"/>
@@ -799,9 +817,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 1</div>
 
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g1-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g1-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g1-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -894,7 +912,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #e8a858;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#e8a858;margin-bottom:.2rem;">Imago Dei &mdash; v.26–27</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">Humanity created in God's image and likeness — the foundational statement of human dignity and vocation that will be tested (ch.3), reaffirmed (ch.9), and ultimately fulfilled in Christ (Col 1:15).</p>
@@ -908,53 +926,60 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g1-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g1-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g1-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g1-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g1-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 1</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 1</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">In the beginning <span class="dn-elohim">Elohim</span> created the heavens and the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of <span class="dn-elohim">Elohim</span> was hovering over the waters.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">In the beginning <span class="dn-elohim">Elohim</span> created the <span class="dn-cosmos">shamayim</span> and the eretz.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">Now the eretz was <span class="dn-cosmos">tohu wabohu</span>, darkness was over the surface of the tehom, and the Spirit of <span class="dn-elohim">Elohim</span> was hovering over the mayim.</span></span>
 <span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let there be light,” and there was light.</span></span>
-<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text"><span class="dn-elohim">Elohim</span> saw that the light was good, and he separated the light from the darkness.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text"><span class="dn-elohim">Elohim</span> saw that the light was good, and he sepa<span class="dn-ra">ra</span>ted the light from the darkness.</span></span>
 <span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text"><span class="dn-elohim">Elohim</span> called the light “day,” and the darkness he called “night.” And there was evening, and there was morning — the first day.</span></span>
-<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let there be a vault between the waters to separate water from water.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> made the vault and separated the water under the vault from the water above it. And it was so.</span></span>
-<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text"><span class="dn-elohim">Elohim</span> called the vault “sky.” And there was evening, and there was morning — the second day.</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the water under the sky be gathered to one place, and let dry ground appear.” And it was so.</span></span>
-<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text"><span class="dn-elohim">Elohim</span> called the dry ground “land,” and the gathered waters he called “seas.” And <span class="dn-elohim">Elohim</span> saw that it was good.</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let there be a vault between the <span class="dn-cosmos">mayim</span> to sepa<span class="dn-ra">ra</span>te water from water.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> made <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> and separated the water under the raqia from the water above it. And it was so.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text"><span class="dn-elohim">Elohim</span> called <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> “sky.” And there was evening, and there was morning — the second day.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the water under the <span class="dn-cosmos">shamayim</span> be gathered to one place, and let dry ground appear.” And it was so.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text"><span class="dn-elohim">Elohim</span> called the dry ground “land,” and the gathered waters he called “seas.” And Elohim saw that it was <span class="dn-tov">tov</span>.</span></span>
 <span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said, “Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.” And it was so.</span></span>
-<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And <span class="dn-elohim">Elohim</span> saw that it was good.</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And <span class="dn-elohim">Elohim</span> saw that it was <span class="dn-tov">tov</span>.</span></span>
 <span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">And there was evening, and there was morning — the third day.</span></span>
-<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years,</span></span>
-<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">and let them be lights in the vault of the sky to give light on the earth.” And it was so.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let there be lights in <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> of the shamayim to separate the day from the night, and let them serve as signs to mark sacred times, and days and years,</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">and let them be lights in <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> of the shamayim to give light on the eretz.” And it was so.</span></span>
 <span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text"><span class="dn-elohim">Elohim</span> made two great lights — the greater light to govern the day and the lesser light to govern the night. He also made the stars.</span></span>
-<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text"><span class="dn-elohim">Elohim</span> set them in the vault of the sky to give light on the earth,</span></span>
-<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">to govern the day and the night, and to separate light from darkness. And <span class="dn-elohim">Elohim</span> saw that it was good.</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text"><span class="dn-elohim">Elohim</span> set them in <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> of the shamayim to give light on the eretz,</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">to govern the day and the night, and to sepa<span class="dn-ra">ra</span>te light from darkness. And <span class="dn-elohim">Elohim</span> saw that it was <span class="dn-tov">tov</span>.</span></span>
 <span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">And there was evening, and there was morning — the fourth day.</span></span>
-<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And <span class="dn-elohim">Elohim</span> saw that it was good.</span></span>
-<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text"><span class="dn-elohim">Elohim</span> blessed them and said, “Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the water teem with <span class="dn-human">nephesh chayyah</span>s, and let birds fly above the eretz across <span class="dn-cosmos">the <span class="dn-ra">ra</span>qia</span> of the shamayim.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And Elohim saw that it was <span class="dn-tov">tov</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text"><span class="dn-elohim">Elohim</span> blessed them and said, “Be fruitful and increase in number and fill the water in the yamim, and let the birds increase on the <span class="dn-cosmos">eretz</span>.”</span></span>
 <span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">And there was evening, and there was morning — the fifth day.</span></span>
-<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.” And it was so.</span></span>
-<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text"><span class="dn-elohim">Elohim</span> made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And <span class="dn-elohim">Elohim</span> saw that it was good.</span></span>
-<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said, “Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> created mankind in his own image, in the image of <span class="dn-elohim">Elohim</span> he created them; male and female he created them.</span></span>
-<span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text"><span class="dn-elohim">Elohim</span> blessed them and said to them, “Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.”</span></span>
-<span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said, “I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food.</span></span>
-<span class="dn-verse"><span class="dn-vnum">30</span><span class="dn-text">And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground — everything that has the breath of life in it — I give every green plant for food.” And it was so.</span></span>
-<span class="dn-verse"><span class="dn-vnum">31</span><span class="dn-text"><span class="dn-elohim">Elohim</span> saw all that he had made, and it was very good. And there was evening, and there was morning — the sixth day.</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">And <span class="dn-elohim">Elohim</span> said, “Let the land produce <span class="dn-human">nephesh chayyah</span>s according to their kinds: the livestock, the creatures that move along the a<span class="dn-ra">dam</span>ah, and the wild animals, each according to its kind.” And it was so.</span></span>
+<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text"><span class="dn-elohim">Elohim</span> made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> according to their kinds. And Elohim saw that it was <span class="dn-tov">tov</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said, “Let us make <span class="dn-human">ha-a<span class="dn-ra">dam</span></span> <span class="dn-key">in our tselem, in our demut</span>, so that they may rule over the fish in the sea and the birds in the <span class="dn-cosmos">shamayim</span>, over the livestock and all the wild animals, and over all the creatures that move along the adamah.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">So <span class="dn-elohim">Elohim</span> created <span class="dn-human">ha-a<span class="dn-ra">dam</span></span> in his own <span class="dn-key">tselem</span>, in the image of Elohim he created them; male and female he created them.</span></span>
+<span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text"><span class="dn-elohim">Elohim</span> blessed them and said to them, “Be fruitful and increase in number; fill the eretz and subdue it. Rule over the fish in the sea and the birds in the <span class="dn-cosmos">shamayim</span> and over every <span class="dn-human">nephesh chayyah</span> that moves on the a<span class="dn-ra">dam</span>ah.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said, “I give you every seed-bearing plant on the panim of the whole earth and every tree that has fruit with seed in it. They will be yours for food.</span></span>
+<span class="dn-verse"><span class="dn-vnum">30</span><span class="dn-text">And to all the beasts of the eretz and all the birds in the <span class="dn-cosmos">shamayim</span> and all the creatures that move along the <span class="dn-human">a<span class="dn-ra">dam</span>ah</span> — everything that has <span class="dn-spirit">the nishmat chayyim</span> in it — I give every green plant for food.” And it was so.</span></span>
+<span class="dn-verse"><span class="dn-vnum">31</span><span class="dn-text"><span class="dn-elohim">Elohim</span> saw all that he had made, and it was <span class="dn-tov">tov meod</span>. And there was evening, and there was morning — the sixth day.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g1-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">6 canonical threads &mdash; 6 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -1007,11 +1032,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g1-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g1-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g1-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g1-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g1-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g1-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g1-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g1-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g1-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g1-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
 
   <div id="g1-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 1</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">God / Elohim</div><div class="person-role">Divine Actor &mdash; Sole Subject of Ch.1</div><p class="person-text"><span class='tlit'>Elohim</span> is a plural form used with singular verbs throughout ch.1 — the 'plural of majesty' or possibly a hint of inner-divine complexity. He speaks, evaluates, names, blesses. He never appears in physical form. Genesis 1's God is radically unlike ANE deities: he does not struggle against chaos, is not born, has no consort, needs nothing from creation. He creates by speech alone — <span class='tlit'>va-yomer Elohim</span> (and God said) occurs 10 times, matching the 10 commandments and the 10 plagues. The name Elohim is used exclusively in ch.1; YHWH Elohim begins only in ch.2.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">The Spirit / Ruah</div><div class="person-role">Divine Presence over the Waters — v.2</div><p class="person-text">The <span class='tlit'>ruah Elohim</span> (Spirit/Wind of God) hovering over the waters in v.2 is the first hint of inner-divine action beyond the singular speaking God. <span class='tlit'>Merahefet</span> (hovering/brooding) is used only one other time in the OT — Deut 32:11, where God hovers over Israel like an eagle over its nest. The Spirit is the creative, animating presence of God active within the created order. The NT identifies this presence with the Holy Spirit (Matt 3:16; John 1:32).</p></div></div></div>
@@ -1030,7 +1055,23 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
+function tog(btn,id){
+  const p=document.getElementById(id);
+  const willOpen=!p.classList.contains('open');
+  // Close every open panel + deactivate its button
+  document.querySelectorAll('.anno-panel.open').forEach(op=>{
+    op.classList.remove('open');
+  });
+  document.querySelectorAll('.anno-trigger.active').forEach(tb=>{
+    tb.classList.remove('active');
+  });
+  // Open/close the clicked one
+  if(willOpen){
+    p.classList.add('open');
+    btn.classList.add('active');
+  }
+}
 function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
 </script>
 <script>

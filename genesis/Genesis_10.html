@@ -145,23 +145,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{
-  color:#f5f0e0;
-  border-color:#7a6820;
-  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  font-style:italic;
-  letter-spacing:.09em;
-}
-.anno-trigger.hebrew-text:hover{
-  color:#fff8e0;
-  border-color:#c9a84c;
-  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
-}
-.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
-.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
+
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -234,18 +218,52 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
 
-/* Divine names reading */
-.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
-.dn-verse:last-child{border-bottom:none;}
-.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
-.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
-.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
-.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
-.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
-.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
-.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
+
+
+/* ── DIVINE NAMES BUTTON — burnished parchment, visually unique ────────── */
+.anno-trigger.hebrew-text {
+  color: #f0e6c0 !important;
+  border-color: #8a7228 !important;
+  background: linear-gradient(135deg, #2d2408 0%, #1a1504 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.14), 0 1px 4px rgba(0,0,0,.5) !important;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.anno-trigger.hebrew-text:hover {
+  color: #fff5d0 !important;
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #3d3210 0%, #252008 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,235,100,.22), 0 2px 10px rgba(180,140,40,.25) !important;
+}
+.anno-trigger.hebrew-text.active {
+  border-color: #c9a84c !important;
+  background: linear-gradient(135deg, #4a3c14 0%, #30280c 100%) !important;
+}
+
+/* ── DIVINE NAMES PANEL ─────────────────────────────────────────────────── */
+.dn-verse { display:flex; gap:.6rem; padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.04); align-items:baseline; }
+.dn-verse:last-child { border-bottom:none; }
+.dn-vnum { font-family:'Cinzel',serif; font-size:.6rem; font-weight:600; color:#6a5a18; min-width:1.6rem; flex-shrink:0; padding-top:.15rem; }
+.dn-text { font-family:'EB Garamond',serif; font-size:1rem; line-height:1.72; color:#d0c898; }
+/* Colour classes */
+.dn-yhwh         { color:#e8c060; font-weight:600; font-style:italic; }
+.dn-elohim       { color:#88c0f0; font-weight:600; font-style:italic; }
+.dn-yhwh-elohim  { color:#c098e8; font-weight:600; font-style:italic; }
+.dn-el-shaddai   { color:#e8a840; font-weight:600; font-style:italic; }
+.dn-spirit       { color:#80d8c0; font-style:italic; }
+.dn-cosmos       { color:#8098d0; font-style:italic; }
+.dn-human        { color:#d8a870; font-style:italic; }
+.dn-key          { color:#d8c060; font-weight:600; }
+.dn-covenant     { color:#a8d898; font-weight:600; }
+.dn-place        { color:#98d0a8; font-style:italic; }
+.dn-tree         { color:#b8e080; font-style:italic; }
+.dn-tov          { color:#a8e898; }
+.dn-ra           { color:#e89088; }
+/* Legend */
+.dn-legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-bottom:.85rem; padding-bottom:.65rem; border-bottom:1px solid rgba(100,80,20,.3); }
+.dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
+.dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
+.dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -333,7 +351,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger history" onclick="tog(this,'s2-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger places" onclick="tog(this,'s2-poi')"><span>&#x1F4CD; Places</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger places" onclick="tog(this,'s2-poi')"><span>Places</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="s2-heb" class="anno-panel heb">
     <h4>Hebrew Word Study &mdash; Nimrod</h4>
@@ -346,22 +364,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
     <p>Ham&rsquo;s family also includes Egypt (Mizraim &mdash; the land of slavery), the Philistines (Israel&rsquo;s persistent coastal enemies), the Hittites (a major ANE empire), Amorites, Jebusites (original inhabitants of Jerusalem), and Canaanites (the peoples Israel was called to displace). The narrative geography of Genesis 10 is the backstory to nearly every conflict in the rest of the OT.</p>
   </div>
   <div id="s2-poi" class="anno-panel poi-panel">
-    <h4>&#x1F4CD; Places &mdash; Cities of Nimrod</h4>
+    <h4>Places &mdash; Cities of Nimrod</h4>
     <div class="poi-grid">
       <div class="poi-card" style="--dot-color:#e8a040">
-        <span class="poi-icon">&#x1F3DB;&#xFE0F;</span>
+        <span class="poi-icon"></span>
         <div class="poi-name">Babylon (Babel)</div>
         <div class="poi-region">Central Iraq, near modern Hillah</div>
         <p class="poi-text">The first and greatest of Nimrod&rsquo;s cities; center of the Babylonian Empire. Excavated by Robert Koldewey (1899&ndash;1917), revealing the Ishtar Gate, massive ziggurats, and palaces. Babylon destroyed Jerusalem in 586 BCE and exiled the Jews &mdash; the defining trauma of OT history. In Revelation it becomes the symbolic name for the final anti-God empire.</p>
       </div>
       <div class="poi-card" style="--dot-color:#e8a040">
-        <span class="poi-icon">&#x1F3DB;&#xFE0F;</span>
+        <span class="poi-icon"></span>
         <div class="poi-name">Uruk (Erech)</div>
         <div class="poi-region">Southern Iraq, near modern Warka</div>
         <p class="poi-text">One of the world&rsquo;s first cities (c. 4000 BCE), home of the legendary king Gilgamesh. The Epic of Gilgamesh, containing the most detailed flood parallel to Genesis, originated here. Uruk may have had a population of 80,000 at its peak &mdash; enormous for the ancient world. Excavations have uncovered the world&rsquo;s earliest writing systems here.</p>
       </div>
       <div class="poi-card" style="--dot-color:#e8a040">
-        <span class="poi-icon">&#x1F3DB;&#xFE0F;</span>
+        <span class="poi-icon"></span>
         <div class="poi-name">Nineveh</div>
         <div class="poi-region">Northern Iraq, near modern Mosul</div>
         <p class="poi-text">Capital of the Assyrian Empire at its height (c. 700 BCE). Sennacherib built a &ldquo;palace without rival&rdquo; here. The Assyrians destroyed Israel&rsquo;s Northern Kingdom in 722 BCE and besieged Jerusalem under Hezekiah (Isa 36&ndash;37). Jonah was sent to preach here. Nahum prophesied its destruction, which came in 612 BCE when the Babylonians sacked it.</p>
@@ -483,9 +501,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 10</div>
   
-<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g10-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g10-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
 <div id="g10-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
-  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
+  <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
     <div><svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">
@@ -578,7 +596,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div></div>
   </div>
   <div style="margin-top:1.2rem;">
-    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">&#x25B6; Theme Moments This Chapter</div>
+    <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#7060a0;margin-bottom:.6rem;">Theme Moments This Chapter</div>
     <div style="background:#0c0c18;border-left:3px solid #80d080;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin-bottom:.6rem;">
   <div style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#80d080;margin-bottom:.2rem;">Land &mdash; vv.1–32</div>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8cce0;line-height:1.58;margin:0;">The Table of Nations is the most explicit land theology in Genesis: 70 nations, each with territory, language, clan. Land is divinely ordered, not merely conquered. Deut 32:8 (LXX) calls this God's own act.</p>
@@ -592,26 +610,33 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g10-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g10-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g10-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g10-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g10-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 10</h4>
+  <h4>Hebrew-Rooted Reading — Genesis 10</h4>
   <div class="dn-legend">
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
-    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> personal name of God</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> God / deity</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> compound name</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-spirit">ruach / nishmat</span> spirit / breath</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-cosmos">cosmos terms</span> shamayim, eretz, tehom…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-human">human terms</span> adam, nephesh, adamah…</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-key">tselem / demut</span> image / likeness</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-covenant">berit / toledot</span> covenant / generations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-tov">tov</span> good</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-ra">ra</span> evil / harm</span>
   </div>
   <div class="dn-chapter">
-<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">This is the account of Shem, Ham and Japheth, Noah’s sons, who themselves had sons after the flood.</span></span>
-<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshek and Tiras.</span></span>
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">This is the <span class="dn-covenant">toledot</span> of Shem, Ham and Japheth, Noah’s sons, who themselves had sons after the <span class="dn-cosmos">mabbul</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshek and Ti<span class="dn-ra">ra</span>s.</span></span>
 <span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">The sons of Gomer: Ashkenaz, Riphath and Togarmah.</span></span>
 <span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">The sons of Javan: Elishah, Tarshish, the Kittites and the Rodanites.</span></span>
 <span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">(From these the maritime peoples spread out into their territories by their clans within their nations, each with its own language.)</span></span>
 <span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">The sons of Ham: Cush, Egypt, Put and Canaan.</span></span>
 <span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">The sons of Cush: Seba, Havilah, Sabtah, Raamah and Sabteka. The sons of Raamah: Sheba and Dedan.</span></span>
-<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Cush was the father of Nimrod, who became a mighty warrior on the earth.</span></span>
-<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">He was a mighty hunter before <span class="dn-yhwh">YHWH</span>; that is why it is said, “Like Nimrod, a mighty hunter before <span class="dn-yhwh">YHWH</span>.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Cush was the father of Nimrod, who became a mighty warrior on the <span class="dn-cosmos">eretz</span>.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">He was a mighty hunter before <span class="dn-yhwh">YHWH</span>; that is why it is said, “Like Nimrod, a mighty hunter before YHWH.”</span></span>
 <span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">The first centers of his kingdom were Babylon, Uruk, Akkad and Kalneh, in Shinar.</span></span>
 <span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">From that land he went to Assyria, where he built Nineveh, Rehoboth Ir, Calah</span></span>
 <span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">and Resen, which is between Nineveh and Calah — which is the great city.</span></span>
@@ -621,25 +646,25 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">Jebusites, Amorites, Girgashites,</span></span>
 <span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">Hivites, Arkites, Sinites,</span></span>
 <span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">Arvadites, Zemarites and Hamathites. Later the Canaanite clans scattered</span></span>
-<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">and the borders of Canaan reached from Sidon toward Gerar as far as Gaza, and then toward Sodom, Gomorrah, Admah and Zeboyim, as far as Lasha.</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">and the borders of Canaan reached from Sidon toward Ge<span class="dn-ra">ra</span>r as far as Gaza, and then toward Sodom, Gomorrah, Admah and Zeboyim, as far as Lasha.</span></span>
 <span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">These are the sons of Ham by their clans and languages, in their territories and nations.</span></span>
 <span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">Sons were also born to Shem, whose older brother was Japheth; Shem was the ancestor of all the sons of Eber.</span></span>
-<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">The sons of Shem: Elam, Ashur, Arphaxad, Lud and Aram.</span></span>
-<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">The sons of Aram: Uz, Hul, Gether and Meshek.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">The sons of Shem: Elam, Ashur, Arphaxad, Lud and A<span class="dn-ra">ra</span>m.</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">The sons of A<span class="dn-ra">ra</span>m: Uz, Hul, Gether and Meshek.</span></span>
 <span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">Arphaxad was the father of Shelah, and Shelah the father of Eber.</span></span>
-<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">Two sons were born to Eber: One was named Peleg, because in his time the earth was divided; his brother was named Joktan.</span></span>
-<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">Joktan was the father of Almodad, Sheleph, Hazarmaveth, Jerah,</span></span>
-<span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">Hadoram, Uzal, Diklah,</span></span>
+<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">Two sons were born to Eber: One was named Peleg, because in his time the <span class="dn-cosmos">eretz</span> was divided; his brother was named Joktan.</span></span>
+<span class="dn-verse"><span class="dn-vnum">26</span><span class="dn-text">Joktan was the father of Almodad, Sheleph, Hazarmaveth, Je<span class="dn-ra">ra</span>h,</span></span>
+<span class="dn-verse"><span class="dn-vnum">27</span><span class="dn-text">Hado<span class="dn-ra">ra</span>m, Uzal, Diklah,</span></span>
 <span class="dn-verse"><span class="dn-vnum">28</span><span class="dn-text">Obal, Abimael, Sheba,</span></span>
 <span class="dn-verse"><span class="dn-vnum">29</span><span class="dn-text">Ophir, Havilah and Jobab. All these were sons of Joktan.</span></span>
 <span class="dn-verse"><span class="dn-vnum">30</span><span class="dn-text">The region where they lived stretched from Mesha toward Sephar, in the eastern hill country.</span></span>
 <span class="dn-verse"><span class="dn-vnum">31</span><span class="dn-text">These are the sons of Shem by their clans and languages, in their territories and nations.</span></span>
-<span class="dn-verse"><span class="dn-vnum">32</span><span class="dn-text">These are the clans of Noah’s sons, according to their lines of descent, within their nations. From these the nations spread out over the earth after the flood.</span></span>
+<span class="dn-verse"><span class="dn-vnum">32</span><span class="dn-text">These are the clans of Noah’s sons, according to their lines of descent, within their nations. From these the nations spread out over the eretz after the <span class="dn-cosmos">mabbul</span>.</span></span>
   </div>
-  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
+  <p class="dn-note">NIV base text with key Hebrew terms restored. Coloured terms carry theological weight often lost in translation.</p>
 </div>
 <div id="g10-thread" class="anno-panel thread-panel">
-  <h4>&#x21C4; Intertextual Threading</h4>
+  <h4>Intertextual Threading</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">4 canonical threads &mdash; 4 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
   <div class="thread-item forward">
   <div class="thread-header">
@@ -676,11 +701,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g10-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g10-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g10-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g10-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g10-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g10-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g10-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g10-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g10-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g10-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
   </div>
   <div id="g10-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 10</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Nimrod</div><div class="person-role">First Empire-Builder — vv.8–12</div><p class="person-text"><span class='tlit'>Nimrod</span> — possibly from <span class='tlit'>marad</span> (to rebel). He is the first person called a 'mighty warrior' (<span class='tlit'>gibbor</span>) on earth — the same word used of the Nephilim's offspring (6:4). He is described as a mighty hunter 'before YHWH' (<span class='tlit'>lifnei YHWH</span>) — a phrase that can mean 'in YHWH's presence' (approved) or 'in defiance of YHWH' (opposed). His cities: Babylon, Erech (Uruk), Akkad, Nineveh — every one of them becomes an oppressor of Israel in later biblical history. He is one of only two people in the table of nations given extended narrative description, which signals his theological importance as the proto-type of human imperial ambition.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Eber / Ever</div><div class="person-role">Father of the Hebrews — v.24-25</div><p class="person-text">Eber is the eponymous ancestor of the Hebrews (<span class='tlit'>Ivri</span> — one who crosses over). The name <span class='tlit'>Ever</span> may relate to <span class='tlit'>'avar</span> (to cross) — the Hebrews as those who crossed the Euphrates (cf. Josh 24:2-3). From Eber come two sons: Peleg (in whose days 'the earth was divided' — possibly a reference to Babel in ch.11) and Joktan (ancestor of Arabian tribes). Eber sits at the hinge between the table of nations (universal scope) and the narrowing to Abraham's line that begins in ch.11. The name 'Hebrew' — which will define a people through all of Scripture — begins here.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Shem</div><div class="person-role">Ancestor of the Covenant Line — vv.21–31</div><p class="person-text">Shem is listed last in ch.10 (though first in birth order) — a narrative technique of delayed focus that prepares for ch.11's genealogy which zooms in on his line to Abraham. He is introduced with an unusual honorific: 'the father of all the sons of Eber, the older brother of Japheth' (v.21) — the double identification signals he is the theologically primary son. His genealogy in ch.10 is then repeated and extended in 11:10-26, narrowing from 26 descendants to one: Abram. The table of nations radiates outward from Noah; the genealogy of Shem radiates inward toward one man.</p></div></div></div>
   <div id="g10-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 9 — A mighty hunter before the LORD</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>He was a mighty hunter before the LORD; that is why it is said, 'Like Nimrod, a mighty hunter before the LORD'</td></tr><tr><td class="t-label">ESV</td><td>He was a mighty hunter before the LORD. Therefore it is said, 'Like Nimrod a mighty hunter before the LORD'</td></tr><tr><td class="t-label">NASB</td><td>He was a mighty hunter before the LORD; therefore it is said, 'Like Nimrod a mighty hunter before the LORD'</td></tr><tr><td class="t-label">Note</td><td>The phrase <span class='tlit'>lifnei YHWH</span> (before/in the face of YHWH) is deeply ambiguous. In some contexts it means approved worship (e.g., Samuel ministering before YHWH). In others it carries a sense of defiance or challenge (cf. Babel in 11:4 where the city is built as a human achievement). Josephus (Antiquities 1.4.2) read Nimrod as explicitly defiant of God — a tyrant who led people away from dependence on God. The text preserves the ambiguity deliberately, letting the reader's knowledge of Babylon's later role fill in the judgment.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 25 — The earth was divided</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>One was named Peleg, because in his time the earth was divided</td></tr><tr><td class="t-label">ESV</td><td>One was named Peleg, for in his days the earth was divided</td></tr><tr><td class="t-label">NASB</td><td>The name of the one was Peleg, for in his days the earth was divided</td></tr><tr><td class="t-label">Note</td><td><span class='tlit'>Peleg</span> from <span class='tlit'>palag</span> (to split/divide). What division? Two main interpretations: (1) the division of nations at Babel (ch.11) — most likely given the literary context; (2) a geological continental division — a minority reading favored by some young-earth interpreters. The Babel reading is strongly supported by the deliberate placement of Peleg's note here in ch.10, before the Babel narrative of ch.11 — the author is providing a genealogical timestamp for the Babel event.</td></tr></tbody></table></div>
@@ -694,7 +719,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────
