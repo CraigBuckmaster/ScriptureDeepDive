@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -253,14 +256,14 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Cain &amp; Abel &mdash; Verses 1&ndash;8</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> Adam made love to his wife Eve, and she became pregnant and gave birth to Cain. She said, &ldquo;With the help of the LORD I have brought forth a man.&rdquo;
-    <span class="verse-num">2</span> Later she gave birth to his brother Abel. Now Abel kept flocks, and Cain worked the soil.<br><br>
-    <span class="verse-num">3</span> In the course of time Cain brought some of the fruits of the soil as an offering to the LORD.
-    <span class="verse-num">4</span> And Abel also brought an offering &mdash; fat portions from some of the firstborn of his flock. The LORD looked with favor on Abel and his offering,
-    <span class="verse-num">5</span> but on Cain and his offering he did not look with favor. So Cain was very angry, and his face was downcast.<br><br>
-    <span class="verse-num">6</span> Then the LORD said to Cain, &ldquo;Why are you angry? Why is your face downcast?
-    <span class="verse-num">7</span> If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at the door; it desires to have you, but you must rule over it.&rdquo;<br><br>
-    <span class="verse-num">8</span> Now Cain said to his brother Abel, &ldquo;Let&rsquo;s go out to the field.&rdquo; While they were in the field, Cain attacked his brother Abel and killed him.
+    <span id="v4-1" class="verse-num">1</span> Adam made love to his wife Eve, and she became pregnant and gave birth to Cain. She said, &ldquo;With the help of the LORD I have brought forth a man.&rdquo;
+    <span id="v4-2" class="verse-num">2</span> Later she gave birth to his brother Abel. Now Abel kept flocks, and Cain worked the soil.<br><br>
+    <span id="v4-3" class="verse-num">3</span> In the course of time Cain brought some of the fruits of the soil as an offering to the LORD.
+    <span id="v4-4" class="verse-num">4</span> And Abel also brought an offering &mdash; fat portions from some of the firstborn of his flock. The LORD looked with favor on Abel and his offering,
+    <span id="v4-5" class="verse-num">5</span> but on Cain and his offering he did not look with favor. So Cain was very angry, and his face was downcast.<br><br>
+    <span id="v4-6" class="verse-num">6</span> Then the LORD said to Cain, &ldquo;Why are you angry? Why is your face downcast?
+    <span id="v4-7" class="verse-num">7</span> If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at the door; it desires to have you, but you must rule over it.&rdquo;<br><br>
+    <span id="v4-8" class="verse-num">8</span> Now Cain said to his brother Abel, &ldquo;Let&rsquo;s go out to the field.&rdquo; While they were in the field, Cain attacked his brother Abel and killed him.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -300,14 +303,14 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Interrogation of Cain &mdash; Verses 9&ndash;16</div>
   <span class="verse-text">
-    <span class="verse-num">9</span> Then the LORD said to Cain, &ldquo;Where is your brother Abel?&rdquo; &ldquo;I don&rsquo;t know,&rdquo; he replied. &ldquo;Am I my brother&rsquo;s keeper?&rdquo;<br><br>
-    <span class="verse-num">10</span> The LORD said, &ldquo;What have you done? Listen! Your brother&rsquo;s blood cries out to me from the ground.
-    <span class="verse-num">11</span> Now you are under a curse and driven from the ground, which opened its mouth to receive your brother&rsquo;s blood from your hand.
-    <span class="verse-num">12</span> When you work the ground, it will no longer yield its crops for you. You will be a restless wanderer on the earth.&rdquo;<br><br>
-    <span class="verse-num">13</span> Cain said to the LORD, &ldquo;My punishment is more than I can bear.
-    <span class="verse-num">14</span> Today you are driving me from the land, and I will be hidden from your presence; I will be a restless wanderer on the earth, and whoever finds me will kill me.&rdquo;<br><br>
-    <span class="verse-num">15</span> But the LORD said to him, &ldquo;Not so; anyone who kills Cain will suffer vengeance seven times over.&rdquo; Then the LORD put a mark on Cain so that no one who found him would kill him.
-    <span class="verse-num">16</span> So Cain went out from the LORD&rsquo;s presence and lived in the land of Nod, east of Eden.
+    <span id="v4-9" class="verse-num">9</span> Then the LORD said to Cain, &ldquo;Where is your brother Abel?&rdquo; &ldquo;I don&rsquo;t know,&rdquo; he replied. &ldquo;Am I my brother&rsquo;s keeper?&rdquo;<br><br>
+    <span id="v4-10" class="verse-num">10</span> The LORD said, &ldquo;What have you done? Listen! Your brother&rsquo;s blood cries out to me from the ground.
+    <span id="v4-11" class="verse-num">11</span> Now you are under a curse and driven from the ground, which opened its mouth to receive your brother&rsquo;s blood from your hand.
+    <span id="v4-12" class="verse-num">12</span> When you work the ground, it will no longer yield its crops for you. You will be a restless wanderer on the earth.&rdquo;<br><br>
+    <span id="v4-13" class="verse-num">13</span> Cain said to the LORD, &ldquo;My punishment is more than I can bear.
+    <span id="v4-14" class="verse-num">14</span> Today you are driving me from the land, and I will be hidden from your presence; I will be a restless wanderer on the earth, and whoever finds me will kill me.&rdquo;<br><br>
+    <span id="v4-15" class="verse-num">15</span> But the LORD said to him, &ldquo;Not so; anyone who kills Cain will suffer vengeance seven times over.&rdquo; Then the LORD put a mark on Cain so that no one who found him would kill him.
+    <span id="v4-16" class="verse-num">16</span> So Cain went out from the LORD&rsquo;s presence and lived in the land of Nod, east of Eden.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -340,21 +343,21 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Line of Cain &amp; Seth &mdash; Verses 17&ndash;26</div>
   <span class="verse-text">
-    <span class="verse-num">17</span> Cain made love to his wife, and she became pregnant and gave birth to Enoch. Cain was then building a city, and he named it after his son Enoch.
-    <span class="verse-num">18</span> To Enoch was born Irad, and Irad was the father of Mehujael, and Mehujael was the father of Methushael, and Methushael was the father of Lamech.<br><br>
-    <span class="verse-num">19</span> Lamech married two women, one named Adah and the other Zillah.
-    <span class="verse-num">20</span> Adah gave birth to Jabal; he was the father of those who live in tents and raise livestock.
-    <span class="verse-num">21</span> His brother&rsquo;s name was Jubal; he was the father of all who play stringed instruments and pipes.
-    <span class="verse-num">22</span> Zillah also had a son, Tubal-Cain, who forged all kinds of tools out of bronze and iron. Tubal-Cain&rsquo;s sister was Naamah.<br><br>
-    <span class="verse-num">23</span> Lamech said to his wives,<br>
+    <span id="v4-17" class="verse-num">17</span> Cain made love to his wife, and she became pregnant and gave birth to Enoch. Cain was then building a city, and he named it after his son Enoch.
+    <span id="v4-18" class="verse-num">18</span> To Enoch was born Irad, and Irad was the father of Mehujael, and Mehujael was the father of Methushael, and Methushael was the father of Lamech.<br><br>
+    <span id="v4-19" class="verse-num">19</span> Lamech married two women, one named Adah and the other Zillah.
+    <span id="v4-20" class="verse-num">20</span> Adah gave birth to Jabal; he was the father of those who live in tents and raise livestock.
+    <span id="v4-21" class="verse-num">21</span> His brother&rsquo;s name was Jubal; he was the father of all who play stringed instruments and pipes.
+    <span id="v4-22" class="verse-num">22</span> Zillah also had a son, Tubal-Cain, who forged all kinds of tools out of bronze and iron. Tubal-Cain&rsquo;s sister was Naamah.<br><br>
+    <span id="v4-23" class="verse-num">23</span> Lamech said to his wives,<br>
     &nbsp;&nbsp;&ldquo;Adah and Zillah, listen to me;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;wives of Lamech, hear my words.<br>
     &nbsp;&nbsp;I have killed a man for wounding me,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;a young man for injuring me.<br>
-    <span class="verse-num">24</span> If Cain is avenged seven times,<br>
+    <span id="v4-24" class="verse-num">24</span> If Cain is avenged seven times,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;then Lamech seventy-seven times.&rdquo;<br><br>
-    <span class="verse-num">25</span> Adam made love to his wife again, and she gave birth to a son and named him Seth, saying, &ldquo;God has granted me another child in place of Abel, since Cain killed him.&rdquo;
-    <span class="verse-num">26</span> Seth also had a son, and he named him Enosh. At that time people began to call on the name of the LORD.
+    <span id="v4-25" class="verse-num">25</span> Adam made love to his wife again, and she gave birth to a son and named him Seth, saying, &ldquo;God has granted me another child in place of Abel, since Cain killed him.&rdquo;
+    <span id="v4-26" class="verse-num">26</span> Seth also had a son, and he named him Enosh. At that time people began to call on the name of the LORD.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -389,7 +392,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 4</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g4-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g4-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g4-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">

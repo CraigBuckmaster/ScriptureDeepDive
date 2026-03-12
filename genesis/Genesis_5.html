@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -253,11 +256,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">From Adam to Noah &mdash; Introduction &amp; Adam &middot; Verses 1&ndash;5</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> This is the written account of Adam&rsquo;s family line. When God created mankind, he made them in the likeness of God.
-    <span class="verse-num">2</span> He created them male and female and blessed them. And he named them &ldquo;Mankind&rdquo; when they were created.<br><br>
-    <span class="verse-num">3</span> When Adam had lived 130 years, he had a son in his own likeness, in his own image; and he named him Seth.
-    <span class="verse-num">4</span> After Seth was born, Adam lived 800 years and had other sons and daughters.
-    <span class="verse-num">5</span> Altogether, Adam lived a total of 930 years, and then he died.
+    <span id="v5-1" class="verse-num">1</span> This is the written account of Adam&rsquo;s family line. When God created mankind, he made them in the likeness of God.
+    <span id="v5-2" class="verse-num">2</span> He created them male and female and blessed them. And he named them &ldquo;Mankind&rdquo; when they were created.<br><br>
+    <span id="v5-3" class="verse-num">3</span> When Adam had lived 130 years, he had a son in his own likeness, in his own image; and he named him Seth.
+    <span id="v5-4" class="verse-num">4</span> After Seth was born, Adam lived 800 years and had other sons and daughters.
+    <span id="v5-5" class="verse-num">5</span> Altogether, Adam lived a total of 930 years, and then he died.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -285,21 +288,21 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Seth to Jared &mdash; Verses 6&ndash;20</div>
   <span class="verse-text">
-    <span class="verse-num">6</span> When Seth had lived 105 years, he became the father of Enosh.
-    <span class="verse-num">7</span> After he became the father of Enosh, Seth lived 807 years and had other sons and daughters.
-    <span class="verse-num">8</span> Altogether, Seth lived a total of 912 years, and then he died.<br><br>
-    <span class="verse-num">9</span> When Enosh had lived 90 years, he became the father of Kenan.
-    <span class="verse-num">10</span> After he became the father of Kenan, Enosh lived 815 years and had other sons and daughters.
-    <span class="verse-num">11</span> Altogether, Enosh lived a total of 905 years, and then he died.<br><br>
-    <span class="verse-num">12</span> When Kenan had lived 70 years, he became the father of Mahalalel.
-    <span class="verse-num">13</span> After he became the father of Mahalalel, Kenan lived 840 years and had other sons and daughters.
-    <span class="verse-num">14</span> Altogether, Kenan lived a total of 910 years, and then he died.<br><br>
-    <span class="verse-num">15</span> When Mahalalel had lived 65 years, he became the father of Jared.
-    <span class="verse-num">16</span> After he became the father of Jared, Mahalalel lived 830 years and had other sons and daughters.
-    <span class="verse-num">17</span> Altogether, Mahalalel lived a total of 895 years, and then he died.<br><br>
-    <span class="verse-num">18</span> When Jared had lived 162 years, he became the father of Enoch.
-    <span class="verse-num">19</span> After he became the father of Enoch, Jared lived 800 years and had other sons and daughters.
-    <span class="verse-num">20</span> Altogether, Jared lived a total of 962 years, and then he died.
+    <span id="v5-6" class="verse-num">6</span> When Seth had lived 105 years, he became the father of Enosh.
+    <span id="v5-7" class="verse-num">7</span> After he became the father of Enosh, Seth lived 807 years and had other sons and daughters.
+    <span id="v5-8" class="verse-num">8</span> Altogether, Seth lived a total of 912 years, and then he died.<br><br>
+    <span id="v5-9" class="verse-num">9</span> When Enosh had lived 90 years, he became the father of Kenan.
+    <span id="v5-10" class="verse-num">10</span> After he became the father of Kenan, Enosh lived 815 years and had other sons and daughters.
+    <span id="v5-11" class="verse-num">11</span> Altogether, Enosh lived a total of 905 years, and then he died.<br><br>
+    <span id="v5-12" class="verse-num">12</span> When Kenan had lived 70 years, he became the father of Mahalalel.
+    <span id="v5-13" class="verse-num">13</span> After he became the father of Mahalalel, Kenan lived 840 years and had other sons and daughters.
+    <span id="v5-14" class="verse-num">14</span> Altogether, Kenan lived a total of 910 years, and then he died.<br><br>
+    <span id="v5-15" class="verse-num">15</span> When Mahalalel had lived 65 years, he became the father of Jared.
+    <span id="v5-16" class="verse-num">16</span> After he became the father of Jared, Mahalalel lived 830 years and had other sons and daughters.
+    <span id="v5-17" class="verse-num">17</span> Altogether, Mahalalel lived a total of 895 years, and then he died.<br><br>
+    <span id="v5-18" class="verse-num">18</span> When Jared had lived 162 years, he became the father of Enoch.
+    <span id="v5-19" class="verse-num">19</span> After he became the father of Enoch, Jared lived 800 years and had other sons and daughters.
+    <span id="v5-20" class="verse-num">20</span> Altogether, Jared lived a total of 962 years, and then he died.
   </span>
   <div class="btn-row">
     <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
@@ -314,13 +317,13 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Enoch &mdash; The Exception &middot; Verses 21&ndash;27</div>
   <span class="verse-text">
-    <span class="verse-num">21</span> When Enoch had lived 65 years, he became the father of Methuselah.
-    <span class="verse-num">22</span> After he became the father of Methuselah, Enoch walked faithfully with God 300 years and had other sons and daughters.
-    <span class="verse-num">23</span> Altogether, Enoch lived a total of 365 years.
-    <span class="verse-num">24</span> Enoch walked faithfully with God; then he was no more, because God took him.<br><br>
-    <span class="verse-num">25</span> When Methuselah had lived 187 years, he became the father of Lamech.
-    <span class="verse-num">26</span> After he became the father of Lamech, Methuselah lived 782 years and had other sons and daughters.
-    <span class="verse-num">27</span> Altogether, Methuselah lived a total of 969 years, and then he died.
+    <span id="v5-21" class="verse-num">21</span> When Enoch had lived 65 years, he became the father of Methuselah.
+    <span id="v5-22" class="verse-num">22</span> After he became the father of Methuselah, Enoch walked faithfully with God 300 years and had other sons and daughters.
+    <span id="v5-23" class="verse-num">23</span> Altogether, Enoch lived a total of 365 years.
+    <span id="v5-24" class="verse-num">24</span> Enoch walked faithfully with God; then he was no more, because God took him.<br><br>
+    <span id="v5-25" class="verse-num">25</span> When Methuselah had lived 187 years, he became the father of Lamech.
+    <span id="v5-26" class="verse-num">26</span> After he became the father of Lamech, Methuselah lived 782 years and had other sons and daughters.
+    <span id="v5-27" class="verse-num">27</span> Altogether, Methuselah lived a total of 969 years, and then he died.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -354,11 +357,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Lamech &amp; Noah &mdash; Verses 28&ndash;32</div>
   <span class="verse-text">
-    <span class="verse-num">28</span> When Lamech had lived 182 years, he had a son.
-    <span class="verse-num">29</span> He named him Noah and said, &ldquo;He will comfort us in the labor and painful toil of our hands caused by the ground the LORD has cursed.&rdquo;
-    <span class="verse-num">30</span> After Noah was born, Lamech lived 595 years and had other sons and daughters.
-    <span class="verse-num">31</span> Altogether, Lamech lived a total of 777 years, and then he died.<br><br>
-    <span class="verse-num">32</span> After Noah was 500 years old, he became the father of Shem, Ham and Japheth.
+    <span id="v5-28" class="verse-num">28</span> When Lamech had lived 182 years, he had a son.
+    <span id="v5-29" class="verse-num">29</span> He named him Noah and said, &ldquo;He will comfort us in the labor and painful toil of our hands caused by the ground the LORD has cursed.&rdquo;
+    <span id="v5-30" class="verse-num">30</span> After Noah was born, Lamech lived 595 years and had other sons and daughters.
+    <span id="v5-31" class="verse-num">31</span> Altogether, Lamech lived a total of 777 years, and then he died.<br><br>
+    <span id="v5-32" class="verse-num">32</span> After Noah was 500 years old, he became the father of Shem, Ham and Japheth.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s4-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -392,7 +395,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 5</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g5-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g5-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g5-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">

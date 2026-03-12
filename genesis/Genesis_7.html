@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -252,16 +255,16 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Final Call &amp; Loading the Ark &mdash; Verses 1&ndash;10</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> The LORD then said to Noah, &ldquo;Go into the ark, you and your whole family, because I have found you righteous in this generation.
-    <span class="verse-num">2</span> Take with you seven pairs of every kind of clean animal, a male and its mate, and one pair of every kind of unclean animal, a male and its mate,
-    <span class="verse-num">3</span> and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the earth.
-    <span class="verse-num">4</span> Seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living creature I have made.&rdquo;
-    <span class="verse-num">5</span> And Noah did all that the LORD commanded him.<br><br>
-    <span class="verse-num">6</span> Noah was six hundred years old when the floodwaters came on the earth.
-    <span class="verse-num">7</span> And Noah and his sons and his wife and his sons&rsquo; wives entered the ark to escape the waters of the flood.
-    <span class="verse-num">8</span> Pairs of clean and unclean animals, of birds and of all creatures that move along the ground,
-    <span class="verse-num">9</span> male and female, came to Noah and entered the ark, as God had commanded Noah.
-    <span class="verse-num">10</span> And after the seven days the floodwaters came on the earth.
+    <span id="v7-1" class="verse-num">1</span> The LORD then said to Noah, &ldquo;Go into the ark, you and your whole family, because I have found you righteous in this generation.
+    <span id="v7-2" class="verse-num">2</span> Take with you seven pairs of every kind of clean animal, a male and its mate, and one pair of every kind of unclean animal, a male and its mate,
+    <span id="v7-3" class="verse-num">3</span> and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the earth.
+    <span id="v7-4" class="verse-num">4</span> Seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living creature I have made.&rdquo;
+    <span id="v7-5" class="verse-num">5</span> And Noah did all that the LORD commanded him.<br><br>
+    <span id="v7-6" class="verse-num">6</span> Noah was six hundred years old when the floodwaters came on the earth.
+    <span id="v7-7" class="verse-num">7</span> And Noah and his sons and his wife and his sons&rsquo; wives entered the ark to escape the waters of the flood.
+    <span id="v7-8" class="verse-num">8</span> Pairs of clean and unclean animals, of birds and of all creatures that move along the ground,
+    <span id="v7-9" class="verse-num">9</span> male and female, came to Noah and entered the ark, as God had commanded Noah.
+    <span id="v7-10" class="verse-num">10</span> And after the seven days the floodwaters came on the earth.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -287,20 +290,20 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Flood Unleashed &mdash; Verses 11&ndash;24</div>
   <span class="verse-text">
-    <span class="verse-num">11</span> In the six hundredth year of Noah&rsquo;s life, on the seventeenth day of the second month &mdash; on that day all the springs of the great deep burst forth, and the floodgates of the heavens were opened.
-    <span class="verse-num">12</span> And rain fell on the earth forty days and forty nights.<br><br>
-    <span class="verse-num">13</span> On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the ark.
-    <span class="verse-num">14</span> They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the ground according to its kind and every bird according to its kind, everything with wings.
-    <span class="verse-num">15</span> Pairs of all creatures that have the breath of life in them came to Noah and entered the ark.
-    <span class="verse-num">16</span> The animals going in were male and female of every living thing, as God had commanded Noah. Then the LORD shut him in.<br><br>
-    <span class="verse-num">17</span> For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.
-    <span class="verse-num">18</span> The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.
-    <span class="verse-num">19</span> They rose greatly on the earth, and all the high mountains under the entire heavens were covered.
-    <span class="verse-num">20</span> The waters rose and covered the mountains to a depth of more than fifteen cubits.
-    <span class="verse-num">21</span> Every living thing that moved on land perished &mdash; birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.
-    <span class="verse-num">22</span> Everything on dry land that had the breath of life in its nostrils died.
-    <span class="verse-num">23</span> Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.
-    <span class="verse-num">24</span> The waters flooded the earth for a hundred and fifty days.
+    <span id="v7-11" class="verse-num">11</span> In the six hundredth year of Noah&rsquo;s life, on the seventeenth day of the second month &mdash; on that day all the springs of the great deep burst forth, and the floodgates of the heavens were opened.
+    <span id="v7-12" class="verse-num">12</span> And rain fell on the earth forty days and forty nights.<br><br>
+    <span id="v7-13" class="verse-num">13</span> On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the ark.
+    <span id="v7-14" class="verse-num">14</span> They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the ground according to its kind and every bird according to its kind, everything with wings.
+    <span id="v7-15" class="verse-num">15</span> Pairs of all creatures that have the breath of life in them came to Noah and entered the ark.
+    <span id="v7-16" class="verse-num">16</span> The animals going in were male and female of every living thing, as God had commanded Noah. Then the LORD shut him in.<br><br>
+    <span id="v7-17" class="verse-num">17</span> For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.
+    <span id="v7-18" class="verse-num">18</span> The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.
+    <span id="v7-19" class="verse-num">19</span> They rose greatly on the earth, and all the high mountains under the entire heavens were covered.
+    <span id="v7-20" class="verse-num">20</span> The waters rose and covered the mountains to a depth of more than fifteen cubits.
+    <span id="v7-21" class="verse-num">21</span> Every living thing that moved on land perished &mdash; birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.
+    <span id="v7-22" class="verse-num">22</span> Everything on dry land that had the breath of life in its nostrils died.
+    <span id="v7-23" class="verse-num">23</span> Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.
+    <span id="v7-24" class="verse-num">24</span> The waters flooded the earth for a hundred and fifty days.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -334,7 +337,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 7</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g7-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g7-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g7-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">

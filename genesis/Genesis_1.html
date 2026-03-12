@@ -37,7 +37,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -233,6 +233,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -320,8 +323,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="day-section">
   <div class="day-header">In the Beginning &mdash; Verses 1&ndash;2</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> In the beginning God created the heavens and the earth.
-    <span class="verse-num" style="margin-left:.4rem">2</span> Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.
+    <span id="v1-1" class="verse-num">1</span> In the beginning God created the heavens and the earth.
+    <span id="v1-2" class="verse-num" style="margin-left:.4rem">2</span> Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -452,9 +455,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="day-section">
   <div class="day-header">Day One &mdash; Light &middot; Verses 3&ndash;5</div>
   <span class="verse-text">
-    <span class="verse-num">3</span> And God said, &ldquo;Let there be light,&rdquo; and there was light.
-    <span class="verse-num" style="margin-left:.4rem">4</span> God saw that the light was good, and he separated the light from the darkness.
-    <span class="verse-num" style="margin-left:.4rem">5</span> God called the light &ldquo;day,&rdquo; and the darkness he called &ldquo;night.&rdquo; And there was evening, and there was morning &mdash; the first day.
+    <span id="v1-3" class="verse-num">3</span> And God said, &ldquo;Let there be light,&rdquo; and there was light.
+    <span id="v1-4" class="verse-num" style="margin-left:.4rem">4</span> God saw that the light was good, and he separated the light from the darkness.
+    <span id="v1-5" class="verse-num" style="margin-left:.4rem">5</span> God called the light &ldquo;day,&rdquo; and the darkness he called &ldquo;night.&rdquo; And there was evening, and there was morning &mdash; the first day.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -522,14 +525,14 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="day-section">
   <div class="day-header">Day Two &mdash; Sky &amp; Waters &middot; Day Three &mdash; Land &amp; Plants &middot; Verses 6&ndash;13</div>
   <span class="verse-text">
-    <span class="verse-num">6</span> And God said, &ldquo;Let there be a vault between the waters to separate water from water.&rdquo;
-    <span class="verse-num">7</span> So God made the vault and separated the water under the vault from the water above it. And it was so.
-    <span class="verse-num">8</span> God called the vault &ldquo;sky.&rdquo; And there was evening, and there was morning &mdash; the second day.<br><br>
-    <span class="verse-num">9</span> And God said, &ldquo;Let the water under the sky be gathered to one place, and let dry ground appear.&rdquo; And it was so.
-    <span class="verse-num">10</span> God called the dry ground &ldquo;land,&rdquo; and the gathered waters he called &ldquo;seas.&rdquo; And God saw that it was good.<br><br>
-    <span class="verse-num">11</span> Then God said, &ldquo;Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.&rdquo; And it was so.
-    <span class="verse-num">12</span> The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And God saw that it was good.
-    <span class="verse-num">13</span> And there was evening, and there was morning &mdash; the third day.
+    <span id="v1-6" class="verse-num">6</span> And God said, &ldquo;Let there be a vault between the waters to separate water from water.&rdquo;
+    <span id="v1-7" class="verse-num">7</span> So God made the vault and separated the water under the vault from the water above it. And it was so.
+    <span id="v1-8" class="verse-num">8</span> God called the vault &ldquo;sky.&rdquo; And there was evening, and there was morning &mdash; the second day.<br><br>
+    <span id="v1-9" class="verse-num">9</span> And God said, &ldquo;Let the water under the sky be gathered to one place, and let dry ground appear.&rdquo; And it was so.
+    <span id="v1-10" class="verse-num">10</span> God called the dry ground &ldquo;land,&rdquo; and the gathered waters he called &ldquo;seas.&rdquo; And God saw that it was good.<br><br>
+    <span id="v1-11" class="verse-num">11</span> Then God said, &ldquo;Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.&rdquo; And it was so.
+    <span id="v1-12" class="verse-num">12</span> The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And God saw that it was good.
+    <span id="v1-13" class="verse-num">13</span> And there was evening, and there was morning &mdash; the third day.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v6-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -550,12 +553,12 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="day-section">
   <div class="day-header">Day Four &mdash; Sun, Moon &amp; Stars &middot; Verses 14&ndash;19</div>
   <span class="verse-text">
-    <span class="verse-num">14</span> And God said, &ldquo;Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years,
-    <span class="verse-num">15</span> and let them be lights in the vault of the sky to give light on the earth.&rdquo; And it was so.
-    <span class="verse-num">16</span> God made two great lights &mdash; the greater light to govern the day and the lesser light to govern the night. He also made the stars.
-    <span class="verse-num">17</span> God set them in the vault of the sky to give light on the earth,
-    <span class="verse-num">18</span> to govern the day and the night, and to separate light from darkness. And God saw that it was good.
-    <span class="verse-num">19</span> And there was evening, and there was morning &mdash; the fourth day.
+    <span id="v1-14" class="verse-num">14</span> And God said, &ldquo;Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years,
+    <span id="v1-15" class="verse-num">15</span> and let them be lights in the vault of the sky to give light on the earth.&rdquo; And it was so.
+    <span id="v1-16" class="verse-num">16</span> God made two great lights &mdash; the greater light to govern the day and the lesser light to govern the night. He also made the stars.
+    <span id="v1-17" class="verse-num">17</span> God set them in the vault of the sky to give light on the earth,
+    <span id="v1-18" class="verse-num">18</span> to govern the day and the night, and to separate light from darkness. And God saw that it was good.
+    <span id="v1-19" class="verse-num">19</span> And there was evening, and there was morning &mdash; the fourth day.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v14-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -625,20 +628,20 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="day-section">
   <div class="day-header">Day Five &mdash; Sea &amp; Sky Creatures &middot; Day Six &mdash; Land Animals &amp; Humanity &middot; Verses 20&ndash;31</div>
   <span class="verse-text">
-    <span class="verse-num">20</span> And God said, &ldquo;Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.&rdquo;
-    <span class="verse-num">21</span> So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good.
-    <span class="verse-num">22</span> God blessed them and said, &ldquo;Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.&rdquo;
-    <span class="verse-num">23</span> And there was evening, and there was morning &mdash; the fifth day.<br><br>
-    <span class="verse-num">24</span> And God said, &ldquo;Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.&rdquo; And it was so.
-    <span class="verse-num">25</span> God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good.<br><br>
-    <span class="verse-num">26</span> Then God said, &ldquo;Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.&rdquo;<br><br>
-    <span class="verse-num">27</span> So God created mankind in his own image,<br>
+    <span id="v1-20" class="verse-num">20</span> And God said, &ldquo;Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.&rdquo;
+    <span id="v1-21" class="verse-num">21</span> So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good.
+    <span id="v1-22" class="verse-num">22</span> God blessed them and said, &ldquo;Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.&rdquo;
+    <span id="v1-23" class="verse-num">23</span> And there was evening, and there was morning &mdash; the fifth day.<br><br>
+    <span id="v1-24" class="verse-num">24</span> And God said, &ldquo;Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.&rdquo; And it was so.
+    <span id="v1-25" class="verse-num">25</span> God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good.<br><br>
+    <span id="v1-26" class="verse-num">26</span> Then God said, &ldquo;Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.&rdquo;<br><br>
+    <span id="v1-27" class="verse-num">27</span> So God created mankind in his own image,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;in the image of God he created them;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;male and female he created them.<br><br>
-    <span class="verse-num">28</span> God blessed them and said to them, &ldquo;Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.&rdquo;<br><br>
-    <span class="verse-num">29</span> Then God said, &ldquo;I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food.
-    <span class="verse-num">30</span> And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground &mdash; everything that has the breath of life in it &mdash; I give every green plant for food.&rdquo; And it was so.<br><br>
-    <span class="verse-num">31</span> God saw all that he had made, and it was very good. And there was evening, and there was morning &mdash; the sixth day.
+    <span id="v1-28" class="verse-num">28</span> God blessed them and said to them, &ldquo;Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.&rdquo;<br><br>
+    <span id="v1-29" class="verse-num">29</span> Then God said, &ldquo;I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food.
+    <span id="v1-30" class="verse-num">30</span> And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground &mdash; everything that has the breath of life in it &mdash; I give every green plant for food.&rdquo; And it was so.<br><br>
+    <span id="v1-31" class="verse-num">31</span> God saw all that he had made, and it was very good. And there was evening, and there was morning &mdash; the sixth day.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew"  onclick="tog(this,'v26-heb')"><span>Hebrew &mdash; Imago Dei</span><span class="chev">&#9660;</span></button>
@@ -768,7 +771,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g1-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g1-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g1-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
