@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 14 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(26,96,40,.12);}
+.anno-trigger.timeline{color:#c0d8f0;border-color:#4a6888;background:rgba(74,104,136,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.authorship-content p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.65;margin-top:.75rem;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.qnav-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.qnav-overlay.open{display:flex;flex-direction:column;}
+.qnav-panel{background:#0d0b07;border-bottom:1px solid #3a2e18;max-height:82vh;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;}
+.qnav-header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-bottom:1px solid rgba(58,46,24,.5);position:sticky;top:0;background:#0d0b07;z-index:1;}
+.qnav-search-wrap{flex:1;position:relative;}
+.qnav-search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#5a4a30;font-size:.78rem;pointer-events:none;}
+.qnav-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(58,46,24,.8);border-radius:4px;padding:.42rem .75rem .42rem 2rem;color:#f0e8d8;font-family:'Source Sans 3',sans-serif;font-size:.88rem;outline:none;transition:border-color .15s;}
+.qnav-search:focus{border-color:#8b6914;}
+.qnav-search::placeholder{color:#4a3a22;}
+.qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
+.qnav-body{overflow-y:auto;}
+.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
+.qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
+.qnav-book-btn:hover{background:rgba(255,255,255,.04);}
+.qnav-book-name{font-family:'EB Garamond',serif;font-size:.98rem;color:#c8c0a0;text-align:left;display:flex;align-items:center;gap:.5rem;}
+.qnav-live-dot{width:6px;height:6px;border-radius:50%;background:#70d098;flex-shrink:0;box-shadow:0 0 5px rgba(112,208,152,.5);}
+.qnav-book-meta{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
+.qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
+.qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
+.qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
+.qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
+.qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
+.qnav-dismiss{flex:1;cursor:pointer;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 14</span></div>
+<div class="nav-arrows"><a href="Genesis_13.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_15.html" class="nav-arrow">&#8594;</a></div>
+</nav><main><header>
+<h1>Genesis 14</h1>
+<p>War of Kings & Melchizedek</p>
+</header>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+</div>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><p>Genesis 14 is among the most historically detailed passages in the patriarchal narratives, listing kings, cities, and battle routes that align with ANE geography. Critical scholars have puzzled over its unique style and vocabulary, leading some to suggest it is an ancient independent document incorporated by the author. The Melchizedek episode is of exceptional theological importance, cited in Psalm 110 and Hebrews 5–7.</p></div>
+</div><div class="section"><div class="section-header">Verses 1–12 — The War of Kings</div><span class="verse-text"><span class="verse-num">1</span>In the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of Goiim,</span><span class="verse-text"><span class="verse-num">2</span>these kings made war with Bera king of Sodom, Birsha king of Gomorrah, Shinab king of Admah, Shemeber king of Zeboiim, and the king of Bela (that is, Zoar).</span><span class="verse-text"><span class="verse-num">12</span>They also took Lot, the son of Abram's brother, who was dwelling in Sodom, and his possessions, and went their way.</span><div class="btn-row"><button class="anno-trigger history" onclick="tog(this,'g14-s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'g14-s1-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'g14-s1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button></div><div id="g14-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>The four-against-five-kings war is set in an era of Mesopotamian hegemony over Canaan, consistent with historical patterns in the early 2nd millennium BC. Chedorlaomer of Elam is particularly notable — Elamite power extended westward during the Isin-Larsa period. The cities of the plain (Sodom, Gomorrah, Admah, Zeboiim, Zoar) are also listed in Deuteronomy 29:23, confirming an established tradition.</p></div><div id="g14-s1-poi" class="anno-panel poi-panel"><h4>Places &amp; Geography</h4><div class="poi-grid"><div class="poi-card"><div class="poi-name">Valley of Siddim</div><div class="poi-region">Near the Dead Sea (possibly under water now)</div><div class="poi-text">The battleground for the war of kings. Ancient sources suggest the southern end of the Dead Sea was once above water — possibly the "cities of the plain" now lie submerged.</div></div><div class="poi-card"><div class="poi-name">Elam</div><div class="poi-region">Southwestern Iran</div><div class="poi-text">Home of Chedorlaomer, the dominant king. Elamite power in Mesopotamia and Canaan is historically attested in the early 2nd millennium BC.</div></div></div></div><div id="g14-s1-tl" class="anno-panel tl-panel"><h4>Timeline</h4><p><strong style="color:#c0d8f0;font-family:'Cinzel',serif;font-size:.7rem;">Early 2nd millennium BC</strong> — Elamite power extended into Mesopotamia — historical context for Chedorlaomer's hegemony</p><p><strong style="color:#c0d8f0;font-family:'Cinzel',serif;font-size:.7rem;">12 years</strong> — Cities served Chedorlaomer (v.4), rebelled in the 13th year, punished in the 14th</p><p><strong style="color:#c0d8f0;font-family:'Cinzel',serif;font-size:.7rem;">After battle</strong> — Lot is taken captive, triggering Abram's military intervention</p></div></div><div class="section"><div class="section-header">Verses 13–16 — Abram Rescues Lot</div><span class="verse-text"><span class="verse-num">13</span>Then one who had escaped came and told Abram the Hebrew, who was living by the oaks of Mamre the Amorite, brother of Eshcol and of Aner.</span><span class="verse-text"><span class="verse-num">14</span>When Abram heard that his kinsman had been taken captive, he led forth his trained men, born in his house, 318 of them, and went in pursuit as far as Dan.</span><span class="verse-text"><span class="verse-num">15</span>And he divided his forces against them by night, he and his servants, and defeated them and pursued them to Hobah, north of Damascus.</span><span class="verse-text"><span class="verse-num">16</span>Then he brought back all the possessions, and also brought back his kinsman Lot with his possessions, and the women and the people.</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'g14-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'g14-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="g14-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Abram's military rescue of Lot reveals a man of action and loyalty, not merely a passive recipient of promises. His 318 trained men ("born in his house") indicate he is a significant chieftain, not merely a wandering shepherd. Yet after the victory, he refuses any personal profit — setting up the Melchizedek scene as the proper response to military success.</p></div><div id="g14-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Heb 7:1–2</span><span class="ref-text">The author of Hebrews builds his entire Melchizedek theology on this single episode.</span></li><li><span class="ref-cite">Ps 110:4</span><span class="ref-text">"You are a priest forever after the order of Melchizedek" — the royal psalm applied to David's Lord, cited by Jesus (Matt 22:44) and Hebrews.</span></li></ul></div></div><div class="section"><div class="section-header">Verses 17–20 — Melchizedek</div><span class="verse-text"><span class="verse-num">18</span>And Melchizedek king of Salem brought out bread and wine. (He was priest of God Most High.)</span><span class="verse-text"><span class="verse-num">19</span>And he blessed him and said, "Blessed be Abram by God Most High, Possessor of heaven and earth;</span><span class="verse-text"><span class="verse-num">20</span>"and blessed be God Most High, who has delivered your enemies into your hand!" And Abram gave him a tenth of everything.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'g14-s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'g14-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'g14-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'g14-s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button></div><div id="g14-s3-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מַלְכִּי־צֶדֶק</span> <span class="tlit">malkî-ṣedeq</span> — <strong>Melchizedek</strong>: The name means "my king is righteousness" or "king of righteousness" — a throne name rather than a personal name, common in ANE royal titulary. Hebrews 7:2 exploits the etymological meaning.</p><p><span class="hebrew-word">שָׁלֵם</span> <span class="tlit">šālēm</span> — <strong>Salem</strong>: Identified with Jerusalem in Psalm 76:2 and by Josephus. The name means "peace" (šālôm) — "king of Salem" = "king of peace" (Heb 7:2).</p><p><span class="hebrew-word">אֵל עֶלְיוֹן</span> <span class="tlit">ʾēl ʿelyôn</span> — <strong>God Most High</strong>: A divine title combining the generic Semitic word for God (ʾēl) with the superlative ʿelyôn (Most High). Abram immediately identifies this with YHWH (v.22), showing he recognizes Melchizedek's God as his own.</p><p><span class="hebrew-word">מַעֲשֵׂר</span> <span class="tlit">maʿăśēr</span> — <strong>tenth / tithe</strong>: Abram spontaneously gives a tenth to the priest-king before any tithing law existed. This establishes the spiritual priority of the Melchizedekian order over the later Levitical priesthood (the argument of Heb 7:4–10).</p></div><div id="g14-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>Melchizedek appears from nowhere, has no genealogy (a significant omission in the genealogy-obsessed world of Genesis), pronounces blessing, receives a tithe, and disappears. He is simultaneously king of a city and priest of God Most High — a combination later forbidden in Israel (Uzziah was struck with leprosy for attempting it, 2 Chr 26:16–21). His appearance anticipates the royal-priestly office that Israel's system cannot sustain but that Christ embodies.</p></div><div id="g14-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 110:4</span><span class="ref-text">God swears to David's Lord: "You are a priest forever after the order of Melchizedek" — the Davidic king as eternal priest.</span></li><li><span class="ref-cite">Heb 5:6–10; 7:1–28</span><span class="ref-text">The most extensive NT treatment: Melchizedek's priesthood is superior to Aaron's because Abraham (ancestor of Levi) paid tithes to him. Christ is the fulfillment of this superior priesthood.</span></li><li><span class="ref-cite">Heb 7:3</span><span class="ref-text">Melchizedek is described as "without father or mother or genealogy, having neither beginning of days nor end of life" — not that he was supernatural, but that Scripture records none of these, making him a type of Christ's eternal priesthood.</span></li></ul></div><div id="g14-s3-poi" class="anno-panel poi-panel"><h4>Places &amp; Geography</h4><div class="poi-grid"><div class="poi-card"><div class="poi-name">Salem / Jerusalem</div><div class="poi-region">Site of later Jerusalem</div><div class="poi-text">The earliest reference to the city that becomes Jerusalem. Melchizedek's priesthood at Salem anticipates the Davidic covenant, the temple, and ultimately the heavenly Jerusalem of Revelation 21.</div></div></div></div></div><div class="section"><div class="section-header">Verses 21–24 — Abram Refuses Sodom's Reward</div><span class="verse-text"><span class="verse-num">21</span>And the king of Sodom said to Abram, "Give me the persons, but take the goods for yourself."</span><span class="verse-text"><span class="verse-num">22</span>But Abram said to the king of Sodom, "I have lifted my hand to the LORD, God Most High, Possessor of heaven and earth,</span><span class="verse-text"><span class="verse-num">23</span>"that I would not take a thread or a sandal strap or anything that is yours, lest you should say, 'I have made Abram rich.'"</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'g14-s4-ctx')"><span>Context</span><span class="chev">&#9660;</span></button></div><div id="g14-s4-ctx" class="anno-panel ctx"><h4>Context</h4><p>Abram's refusal of the Sodom king's offer is the moral climax of the chapter. He has just accepted bread, wine, and blessing from Melchizedek (priest of God Most High) but refuses any material gain from the king of the wicked city. The contrast is deliberate: Abram will receive wealth only from God, not from Sodom. This sets up the dramatic irony of ch.19, where Lot, who chose Sodom's wealth, loses everything.</p></div></div><div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'g14-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger translations" onclick="tog(this,'g14-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger sources" onclick="tog(this,'g14-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger reception" onclick="tog(this,'g14-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger literary" onclick="tog(this,'g14-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger hebrew-text" onclick="tog(this,'g14-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger threading" onclick="tog(this,'g14-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g14-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="g14-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Melchizedek</div><div class="person-role">King of Salem; Priest of God Most High</div><div class="person-text">The most theologically significant figure in the chapter. He appears without introduction, blesses Abram, receives a tithe, and vanishes — his lack of genealogy (unusual for Genesis) becomes the basis for Hebrews' typological argument about Christ's eternal priesthood.</div></div><div class="person-card"><div class="person-name">Abram</div><div class="person-role">Patriarch; Warrior; Man of integrity</div><div class="person-text">Revealed here as a military leader with 318 trained men. His refusal of the king of Sodom's offer demonstrates that his wealth will come from God alone — an act of faith that Hebrews reads as foundational.</div></div><div class="person-card"><div class="person-name">King of Sodom</div><div class="person-role">Unnamed; Morally corrupt city's ruler</div><div class="person-text">Offers Abram the spoils of war. His offer, rejected by Abram, is a test: will the patriarch allow a wicked king to claim credit for his prosperity? Abram's refusal protects the theological purity of his witness.</div></div></div></div><div id="g14-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Genesis 14:18–20</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Then Melchizedek king of Salem brought out bread and wine. He was priest of God Most High, and he blessed Abram, saying, 'Blessed be Abram by God Most High... and praise be to God Most High, who delivered your enemies into your hand.' Then Abram gave him a tenth of everything."</td></tr><tr><td class="t-label">ESV</td><td>"And Melchizedek king of Salem brought out bread and wine. (He was priest of God Most High.) And he blessed him and said, 'Blessed be Abram by God Most High...and blessed be God Most High... ' And Abram gave him a tenth of everything."</td></tr><tr><td class="t-label">KJV</td><td>"And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God. And he blessed him, and said, Blessed be Abram of the most high God, possessor of heaven and earth..."</td></tr></table></div><div id="g14-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Dead Sea Scrolls — 11QMelchizedek</div><div class="source-quote">A fragmentary Qumran text casts Melchizedek as a heavenly being who will execute judgment on the Day of Atonement. He is identified with the "elohim" of Psalm 82 and given a quasi-angelic status.</div><div class="source-note">Shows how Second Temple Judaism elevated Melchizedek far beyond the Genesis text, making the Hebrews author's careful typological reading a measured response to existing speculation.</div></div><div class="source-block"><div class="source-title">Josephus, Antiquities 1.10.2</div><div class="source-quote">Josephus identifies Salem with Jerusalem and Melchizedek as the first to build a temple there. He translates Melchizedek as "righteous king" and notes his priestly role.</div><div class="source-note">Josephus' geographical identification with Jerusalem became standard in Jewish and Christian tradition.</div></div></div><div id="g14-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Letter to the Hebrews, chapters 5–7</div><div class="rec-text">The NT's most extensive use of the OT interprets Melchizedek as the type whose antitype is Christ. Key moves: (1) his name = "king of righteousness"; (2) Salem = Jerusalem = "king of peace"; (3) no recorded genealogy = eternal priesthood; (4) Levi paid tithes through Abraham = Melchizedekian order superior to Levitical.</div></div><div class="rec-block"><div class="rec-who">Psalm 110 and David</div><div class="rec-text">Psalm 110:4 ("a priest forever after the order of Melchizedek") is the most-cited OT verse in the NT. Jesus uses it to stump the Pharisees (Matt 22:41–46); Hebrews builds a theology of Christ's priesthood on it.</div></div></div><div id="g14-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">A</span><span class="lit-text">War: four kings defeat five kings</span></div><div class="lit-row"><span class="lit-label">B</span><span class="lit-text">Lot captured</span></div><div class="lit-row"><span class="lit-label">C</span><span class="lit-text">Abram rescues Lot; military victory</span></div><div class="lit-center">CENTER: Melchizedek blesses Abram (vv.18–20)</div><div class="lit-row"><span class="lit-label">C'</span><span class="lit-text">King of Sodom offers reward</span></div><div class="lit-row"><span class="lit-label">B'</span><span class="lit-text">Abram refuses to be enriched by Sodom</span></div><div class="lit-row"><span class="lit-label">A'</span><span class="lit-text">Abram enriches only his allies (vv.24)</span></div><div class="lit-note">The Melchizedek episode stands at the exact center of the chapter — a literary signal of its theological priority. The war provides context, Lot's rescue provides occasion, but the central point is the encounter with the priest-king who blesses in God's name and receives the patriarch's tithe.</div></div></div><div id="g14-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#c8c0a0;line-height:1.9;"><span class="verse-num">18</span> And <span class="dn-human">Melchizedek</span> king of <span class="dn-place">Salem</span> [<em>šālēm</em>: peace] brought out bread and wine. (He was priest of <span class="dn-elohim">God</span> Most High [<em>ʾēl ʿelyôn</em>].) <span class="verse-num">19</span> And he <span class="dn-covenant">blessed</span> him and said, "Blessed be <span class="dn-human">Abram</span> by <span class="dn-elohim">God</span> Most High [<em>ʾēl ʿelyôn</em>], <span class="dn-key">Possessor</span> of heaven and earth; <span class="verse-num">20</span> and blessed be <span class="dn-elohim">God</span> Most High, who has delivered your enemies into your hand!" And <span class="dn-human">Abram</span> gave him a <span class="dn-key">tenth</span> [<em>maʿăśēr</em>] of everything.</p></div><div id="g14-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Gen 14:18</span><span class="thread-arrow">→</span><span class="thread-target">Ps 110:4</span><span class="thread-type fulfillment">Typology</span></div><div class="thread-text">The priest-king of Salem anticipates the Davidic king who is also priest "after the order of Melchizedek" — Jesus identifies himself as the fulfillment of Psalm 110.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Gen 14:18–20</span><span class="thread-arrow">→</span><span class="thread-target">Heb 7:1–10</span><span class="thread-type fulfillment">Fulfillment</span></div><div class="thread-text">Hebrews builds its entire high-priestly Christology on this 3-verse passage: Christ is the eternal Melchizedekian priest whose ministry surpasses the Levitical order.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Gen 14:22</span><span class="thread-arrow">→</span><span class="thread-target">Gen 12:2–3</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Abram refuses enrichment from Sodom's king because his wealth comes from YHWH alone — directly living out the Abrahamic covenant, where God provides the blessing.</div></div></div><div id="g14-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,103.0 164.2,94.5 164.2,145.5 120.0,205.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Creation Order</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Fall & Redemption</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Covenant</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faith & Obedience</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Providence</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Typology</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Genesis 14 contains the Bible's most mysterious figure: Melchizedek. His appearance without genealogy, his dual office of king and priest, his receipt of tithe from the patriarch, and his blessing — all point forward to Christ's eternal priesthood. The chapter is foundational for the Letter to the Hebrews' entire argument.</p></div>
+</div><footer>Genesis 14 · Scripture Walkthrough · &copy; 2026</footer></main><script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script><script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Babel','Ur','Haran','Canaan','Hebron','Mamre','Sodom','Gomorrah','Beersheba','Moriah','Machpelah','Negev','Egypt','Euphrates','Tigris','Shinar','Admah','Zeboiim','Zoar','Bela','Damascus'],cls:'vhl-place',btn:['places']};
+  var PEOPLE={words:['Abraham','Abram','Sarah','Sarai','Lot','Hagar','Ishmael','Isaac','Melchizedek','Abimelech','Rebekah','Eliezer','Esau','Jacob','Terah','Nahor','Milcah','Laban','Bethuel','Keturah','Nimrod'],cls:'vhl-person',btn:['people']};
+  var TIME={words:['evening','morning','night','year','years','month','months','days','season','seasons','hundred','seventy','forty','thirty'],cls:'vhl-time',btn:['timeline']};
+  var KEY={words:['covenant','blessing','blessed','curse','cursed','promise','altar','sacrifice','offering','faith','nations','seed','heir','circumcision','sojourn','stranger','land','inheritance'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script><script>
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
+function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
+function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(el)el.classList.toggle('open');}
+function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+</script><script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script><div class="qnav-overlay" id="qnav-overlay">
+<div class="qnav-panel">
+<div class="qnav-header">
+<div class="qnav-search-wrap"><span class="qnav-search-icon">&#128269;</span><input class="qnav-search" id="qnav-search-input" placeholder="Search books..." oninput="qnavFilter(this.value)"></div>
+<button class="qnav-close" onclick="closeQnav()">Close</button>
+</div>
+<div class="qnav-body">
+<div class="qnav-testament-header">Old Testament</div>
+<div class="qnav-book open" id="qnav-book-genesis">
+<button class="qnav-book-btn" onclick="qnavToggleBook('genesis')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Genesis</span>
+<span class="qnav-book-meta"><span class="qnav-ch-count">25 live</span><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="Genesis_1.html" class="qnav-ch-btn live">Ch 1</a><a href="Genesis_2.html" class="qnav-ch-btn live">Ch 2</a><a href="Genesis_3.html" class="qnav-ch-btn live">Ch 3</a><a href="Genesis_4.html" class="qnav-ch-btn live">Ch 4</a><a href="Genesis_5.html" class="qnav-ch-btn live">Ch 5</a><a href="Genesis_6.html" class="qnav-ch-btn live">Ch 6</a><a href="Genesis_7.html" class="qnav-ch-btn live">Ch 7</a><a href="Genesis_8.html" class="qnav-ch-btn live">Ch 8</a><a href="Genesis_9.html" class="qnav-ch-btn live">Ch 9</a><a href="Genesis_10.html" class="qnav-ch-btn live">Ch 10</a><a href="Genesis_11.html" class="qnav-ch-btn live">Ch 11</a><a href="Genesis_12.html" class="qnav-ch-btn live">Ch 12</a><a href="Genesis_13.html" class="qnav-ch-btn live">Ch 13</a><a href="Genesis_14.html" class="qnav-ch-btn live current">Ch 14</a><a href="Genesis_15.html" class="qnav-ch-btn live">Ch 15</a><a href="Genesis_16.html" class="qnav-ch-btn live">Ch 16</a><a href="Genesis_17.html" class="qnav-ch-btn live">Ch 17</a><a href="Genesis_18.html" class="qnav-ch-btn live">Ch 18</a><a href="Genesis_19.html" class="qnav-ch-btn live">Ch 19</a><a href="Genesis_20.html" class="qnav-ch-btn live">Ch 20</a><a href="Genesis_21.html" class="qnav-ch-btn live">Ch 21</a><a href="Genesis_22.html" class="qnav-ch-btn live">Ch 22</a><a href="Genesis_23.html" class="qnav-ch-btn live">Ch 23</a><a href="Genesis_24.html" class="qnav-ch-btn live">Ch 24</a><a href="Genesis_25.html" class="qnav-ch-btn live">Ch 25</a></div>
+</div>
+</div>
+</div>
+<div class="qnav-dismiss" onclick="closeQnav()"></div>
+</div>
+</body>
+</html>
