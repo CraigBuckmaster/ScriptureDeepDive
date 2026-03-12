@@ -1,17 +1,17 @@
-const CACHE = 'scripture-v3';
+const CACHE = 'scripture-v4';
 const CORE = [
   '/',
   '/index.html',
-  '/genesis/1.html',
-  '/genesis/2.html',
-  '/genesis/3.html',
-  '/genesis/4.html',
-  '/genesis/5.html',
-  '/genesis/6.html',
-  '/genesis/7.html',
-  '/genesis/8.html',
-  '/genesis/9.html',
-  '/genesis/10.html',
+  '/genesis/Genesis_1.html',
+  '/genesis/Genesis_2.html',
+  '/genesis/Genesis_3.html',
+  '/genesis/Genesis_4.html',
+  '/genesis/Genesis_5.html',
+  '/genesis/Genesis_6.html',
+  '/genesis/Genesis_7.html',
+  '/genesis/Genesis_8.html',
+  '/genesis/Genesis_9.html',
+  '/genesis/Genesis_10.html',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png'
