@@ -724,9 +724,9 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   const DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  const PLACES={words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'],cls:'vhl-place',btn:['places']};
-  const PEOPLE={words:['Adam','Eve','Cain','Abel','Seth','Enoch','Noah','Lamech','Methuselah','Japheth','Ham','Shem','Nimrod','Jubal','Jabal','Naamah'],cls:'vhl-person',btn:['people']};
-  const TIME={words:['evening','morning','night','year','years','season','seasons','month','months','forty','hundred'],cls:'vhl-time',btn:['timeline']};
+  const PLACES={words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'],cls:'vhl-place',btn:['places','context']};
+  const PEOPLE={words:['Adam','Eve','Cain','Abel','Seth','Enoch','Noah','Lamech','Methuselah','Japheth','Ham','Shem','Nimrod','Jubal','Jabal','Naamah'],cls:'vhl-person',btn:['people','context']};
+  const TIME={words:['evening','morning','night','year','years','season','seasons','month','months','forty','hundred'],cls:'vhl-time',btn:['timeline','context']};
   const KEY={words:['image','likeness','holy','sacred','covenant','generations','account','beginning','blessed','cursed','ark','flood'],cls:'vhl-key',btn:['literary','cross']};
   const GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(t=>row.querySelector('.anno-trigger.'+t));}

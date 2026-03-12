@@ -269,9 +269,9 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script><script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Eden','heavens','earth','deep','waters','firmament','darkness','light','land','seas'],cls:'vhl-place',btn:['places']};
-  var PEOPLE={words:['Adam','Eve','man','woman'],cls:'vhl-person',btn:['people']};
-  var TIME={words:['evening','morning','night','day','days','season','seasons'],cls:'vhl-time',btn:['timeline']};
+  var PLACES={words:['Eden','heavens','earth','deep','waters','firmament','darkness','light','land','seas'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Adam','Eve','man','woman'],cls:'vhl-person',btn:['people','context']};
+  var TIME={words:['evening','morning','night','day','days','season','seasons'],cls:'vhl-time',btn:['timeline','context']};
   var KEY={words:['image','likeness','holy','blessed','good','created','made','formed','void','formless'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
