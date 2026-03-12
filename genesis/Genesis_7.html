@@ -145,7 +145,23 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.hebrew-text{
+  color:#f5f0e0;
+  border-color:#7a6820;
+  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
+  text-shadow:0 1px 2px rgba(0,0,0,.5);
+  font-style:italic;
+  letter-spacing:.09em;
+}
+.anno-trigger.hebrew-text:hover{
+  color:#fff8e0;
+  border-color:#c9a84c;
+  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
+}
+.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
+.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -217,6 +233,19 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
+
+/* Divine names reading */
+.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
+.dn-verse:last-child{border-bottom:none;}
+.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
+.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
+.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
+.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
+.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
+.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -449,16 +478,39 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <button class="anno-trigger threading" onclick="tog(this,'g7-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g7-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
-  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> וַיֹּאמֶר יְהוָה לְנֹחַ בֹּא־אַתָּה וְכָל־בֵּיתְךָ אֶל־הַתֵּבָה כִּי־אֹתְךָ רָאִיתִי צַדִּיק לְפָנַי בַּדּוֹר הַזֶּה׃</span>
-<span class="heb-verse"><span class="heb-vnum">2</span> מִכֹּל הַבְּהֵמָה הַטְּהוֹרָה תִּקַּח־לְךָ שִׁבְעָה שִׁבְעָה אִישׁ וְאִשְׁתּוֹ וּמִן־הַבְּהֵמָה אֲשֶׁר לֹא טְהֹרָה הִוא שְׁנַיִם אִישׁ וְאִשְׁתּוֹ׃</span>
-<span class="heb-verse"><span class="heb-vnum">4</span> כִּי לְיָמִים עוֹד שִׁבְעָה אָנֹכִי מַמְטִיר עַל־הָאָרֶץ אַרְבָּעִים יוֹם וְאַרְבָּעִים לַיְלָה וּמָחִיתִי אֶת־כָּל־הַיְקוּם אֲשֶׁר עָשִׂיתִי מֵעַל פְּנֵי הָאֲדָמָה׃</span>
-<span class="heb-verse"><span class="heb-vnum">11</span> בִּשְׁנַת שֵׁשׁ־מֵאוֹת שָׁנָה לְחַיֵּי־נֹחַ בַּחֹדֶשׁ הַשֵּׁנִי בְּשִׁבְעָה־עָשָׂר יוֹם לַחֹדֶשׁ בַּיּוֹם הַזֶּה נִבְקְעוּ כָּל־מַעְיְנֹת תְּהוֹם רַבָּה וַאֲרֻבֹּת הַשָּׁמַיִם נִפְתָּחוּ׃</span>
-<span class="heb-verse"><span class="heb-vnum">16</span> וְהַבָּאִים זָכָר וּנְקֵבָה מִכָּל־בָּשָׂר בָּאוּ כַּאֲשֶׁר צִוָּה אֹתוֹ אֱלֹהִים וַיִּסְגֹּר יְהוָה בַּעֲדוֹ׃</span>
-<span class="heb-verse"><span class="heb-vnum">17</span> וַיְהִי הַמַּבּוּל אַרְבָּעִים יוֹם עַל־הָאָרֶץ וַיִּרְבּוּ הַמַּיִם וַיִּשְׂאוּ אֶת־הַתֵּבָה וַתָּרָם מֵעַל הָאָרֶץ׃</span>
-<span class="heb-verse"><span class="heb-vnum">24</span> וַיִּגְבְּרוּ הַמַּיִם עַל־הָאָרֶץ חֲמִשִּׁים וּמְאַת יוֹם׃</span>
-</div>
-  <p class="heb-note">Key verses shown (Westminster Leningrad Codex, public domain) — representative selection for shorter chapters. Reading right to left. Vowel points (niqqud) included.</p>
+  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 7</h4>
+  <div class="dn-legend">
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+  </div>
+  <div class="dn-chapter">
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">The <span class="dn-yhwh">YHWH</span> then said to Noah, “Go into the ark, you and your whole family, because I have found you righteous in this generation.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">Take with you seven pairs of every kind of clean animal, a male and its mate, and one pair of every kind of unclean animal, a male and its mate,</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">Seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living creature I have made.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">And Noah did all that <span class="dn-yhwh">YHWH</span> commanded him.</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">Noah was six hundred years old when the floodwaters came on the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">And Noah and his sons and his wife and his sons’ wives entered the ark to escape the waters of the flood.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Pairs of clean and unclean animals, of birds and of all creatures that move along the ground,</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">male and female, came to Noah and entered the ark, as <span class="dn-elohim">Elohim</span> had commanded Noah.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">And after the seven days the floodwaters came on the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">In the six hundredth year of Noah’s life, on the seventeenth day of the second month — on that day all the springs of the great deep burst forth, and the floodgates of the heavens were opened.</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">And rain fell on the earth forty days and forty nights.</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the ark.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the ground according to its kind and every bird according to its kind, everything with wings.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">Pairs of all creatures that have the breath of life in them came to Noah and entered the ark.</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">The animals going in were male and female of every living thing, as <span class="dn-elohim">Elohim</span> had commanded Noah. Then <span class="dn-yhwh">YHWH</span> shut him in.</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">They rose greatly on the earth, and all the high mountains under the entire heavens were covered.</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">The waters rose and covered the mountains to a depth of more than fifteen cubits.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">Every living thing that moved on land perished — birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Everything on dry land that had the breath of life in its nostrils died.</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">The waters flooded the earth for a hundred and fifty days.</span></span>
+  </div>
+  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
 </div>
 <div id="g7-thread" class="anno-panel thread-panel">
   <h4>&#x21C4; Intertextual Threading</h4>

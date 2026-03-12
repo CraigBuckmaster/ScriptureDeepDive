@@ -145,7 +145,23 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.hebrew-text{
+  color:#f5f0e0;
+  border-color:#7a6820;
+  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
+  text-shadow:0 1px 2px rgba(0,0,0,.5);
+  font-style:italic;
+  letter-spacing:.09em;
+}
+.anno-trigger.hebrew-text:hover{
+  color:#fff8e0;
+  border-color:#c9a84c;
+  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
+}
+.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
+.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -217,6 +233,19 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
+
+/* Divine names reading */
+.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
+.dn-verse:last-child{border-bottom:none;}
+.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
+.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
+.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
+.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
+.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
+.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -566,34 +595,40 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <button class="anno-trigger threading" onclick="tog(this,'g2-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g2-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
-  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> וַיְכֻלּוּ הַשָּׁמַיִם וְהָאָרֶץ וְכָל־צְבָאָם׃</span>
-<span class="heb-verse"><span class="heb-vnum">2</span> וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי מְלַאכְתּוֹ אֲשֶׁר עָשָׂה וַיִּשְׁבֹּת בַּיּוֹם הַשְּׁבִיעִי מִכָּל־מְלַאכְתּוֹ אֲשֶׁר עָשָׂה׃</span>
-<span class="heb-verse"><span class="heb-vnum">3</span> וַיְבָרֶךְ אֱלֹהִים אֶת־יוֹם הַשְּׁבִיעִי וַיְקַדֵּשׁ אֹתוֹ כִּי בוֹ שָׁבַת מִכָּל־מְלַאכְתּוֹ אֲשֶׁר־בָּרָא אֱלֹהִים לַעֲשׂוֹת׃</span>
-<span class="heb-verse"><span class="heb-vnum">4</span> אֵלֶּה תוֹלְדוֹת הַשָּׁמַיִם וְהָאָרֶץ בְּהִבָּרְאָם בְּיוֹם עֲשׂוֹת יְהוָה אֱלֹהִים אֶרֶץ וְשָׁמָיִם׃</span>
-<span class="heb-verse"><span class="heb-vnum">5</span> וְכֹל שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ וְכָל־עֵשֶׂב הַשָּׂדֶה טֶרֶם יִצְמָח כִּי לֹא הִמְטִיר יְהוָה אֱלֹהִים עַל־הָאָרֶץ וְאָדָם אַיִן לַעֲבֹד אֶת־הָאֲדָמָה׃</span>
-<span class="heb-verse"><span class="heb-vnum">6</span> וְאֵד יַעֲלֶה מִן־הָאָרֶץ וְהִשְׁקָה אֶת־כָּל־פְּנֵי הָאֲדָמָה׃</span>
-<span class="heb-verse"><span class="heb-vnum">7</span> וַיִּיצֶר יְהוָה אֱלֹהִים אֶת־הָאָדָם עָפָר מִן־הָאֲדָמָה וַיִּפַּח בְּאַפָּיו נִשְׁמַת חַיִּים וַיְהִי הָאָדָם לְנֶפֶשׁ חַיָּה׃</span>
-<span class="heb-verse"><span class="heb-vnum">8</span> וַיִּטַּע יְהוָה אֱלֹהִים גַּן־בְּעֵדֶן מִקֶּדֶם וַיָּשֶׂם שָׁם אֶת־הָאָדָם אֲשֶׁר יָצָר׃</span>
-<span class="heb-verse"><span class="heb-vnum">9</span> וַיַּצְמַח יְהוָה אֱלֹהִים מִן־הָאֲדָמָה כָּל־עֵץ נֶחְמָד לְמַרְאֶה וְטוֹב לְמַאֲכָל וְעֵץ הַחַיִּים בְּתוֹךְ הַגָּן וְעֵץ הַדַּעַת טוֹב וָרָע׃</span>
-<span class="heb-verse"><span class="heb-vnum">10</span> וְנָהָר יֹצֵא מֵעֵדֶן לְהַשְׁקוֹת אֶת־הַגָּן וּמִשָּׁם יִפָּרֵד וְהָיָה לְאַרְבָּעָה רָאשִׁים׃</span>
-<span class="heb-verse"><span class="heb-vnum">11</span> שֵׁם הָאֶחָד פִּישׁוֹן הוּא הַסֹּבֵב אֵת כָּל־אֶרֶץ הַחֲוִילָה אֲשֶׁר־שָׁם הַזָּהָב׃</span>
-<span class="heb-verse"><span class="heb-vnum">12</span> וּזְהַב הָאָרֶץ הַהִוא טוֹב שָׁם הַבְּדֹלַח וְאֶבֶן הַשֹּׁהַם׃</span>
-<span class="heb-verse"><span class="heb-vnum">13</span> וְשֵׁם־הַנָּהָר הַשֵּׁנִי גִּיחוֹן הוּא הַסּוֹבֵב אֵת כָּל־אֶרֶץ כּוּשׁ׃</span>
-<span class="heb-verse"><span class="heb-vnum">14</span> וְשֵׁם הַנָּהָר הַשְּׁלִישִׁי חִדֶּקֶל הוּא הַהֹלֵךְ קִדְמַת אַשּׁוּר וְהַנָּהָר הָרְבִיעִי הוּא פְרָת׃</span>
-<span class="heb-verse"><span class="heb-vnum">15</span> וַיִּקַּח יְהוָה אֱלֹהִים אֶת־הָאָדָם וַיַּנִּחֵהוּ בְגַן־עֵדֶן לְעָבְדָהּ וּלְשָׁמְרָהּ׃</span>
-<span class="heb-verse"><span class="heb-vnum">16</span> וַיְצַו יְהוָה אֱלֹהִים עַל־הָאָדָם לֵאמֹר מִכֹּל עֵץ־הַגָּן אָכֹל תֹּאכֵל׃</span>
-<span class="heb-verse"><span class="heb-vnum">17</span> וּמֵעֵץ הַדַּעַת טוֹב וָרָע לֹא תֹאכַל מִמֶּנּוּ כִּי בְּיוֹם אֲכָלְךָ מִמֶּנּוּ מוֹת תָּמוּת׃</span>
-<span class="heb-verse"><span class="heb-vnum">18</span> וַיֹּאמֶר יְהוָה אֱלֹהִים לֹא־טוֹב הֱיוֹת הָאָדָם לְבַדּוֹ אֶעֱשֶׂה־לּוֹ עֵזֶר כְּנֶגְדּוֹ׃</span>
-<span class="heb-verse"><span class="heb-vnum">19</span> וַיִּצֶר יְהוָה אֱלֹהִים מִן־הָאֲדָמָה כָּל־חַיַּת הַשָּׂדֶה וְאֵת כָּל־עוֹף הַשָּׁמַיִם וַיָּבֵא אֶל־הָאָדָם לִרְאוֹת מַה־יִּקְרָא־לוֹ וְכֹל אֲשֶׁר יִקְרָא־לוֹ הָאָדָם נֶפֶשׁ חַיָּה הוּא שְׁמוֹ׃</span>
-<span class="heb-verse"><span class="heb-vnum">20</span> וַיִּקְרָא הָאָדָם שֵׁמוֹת לְכָל־הַבְּהֵמָה וּלְעוֹף הַשָּׁמַיִם וּלְכֹל חַיַּת הַשָּׂדֶה וּלְאָדָם לֹא־מָצָא עֵזֶר כְּנֶגְדּוֹ׃</span>
-<span class="heb-verse"><span class="heb-vnum">21</span> וַיַּפֵּל יְהוָה אֱלֹהִים תַּרְדֵּמָה עַל־הָאָדָם וַיִּישָׁן וַיִּקַּח אַחַת מִצַּלְעֹתָיו וַיִּסְגֹּר בָּשָׂר תַּחְתֶּנָּה׃</span>
-<span class="heb-verse"><span class="heb-vnum">22</span> וַיִּבֶן יְהוָה אֱלֹהִים אֶת־הַצֵּלָע אֲשֶׁר־לָקַח מִן־הָאָדָם לְאִשָּׁה וַיְבִאֶהָ אֶל־הָאָדָם׃</span>
-<span class="heb-verse"><span class="heb-vnum">23</span> וַיֹּאמֶר הָאָדָם זֹאת הַפַּעַם עֶצֶם מֵעֲצָמַי וּבָשָׂר מִבְּשָׂרִי לְזֹאת יִקָּרֵא אִשָּׁה כִּי מֵאִישׁ לֻקֳחָה־זֹּאת׃</span>
-<span class="heb-verse"><span class="heb-vnum">24</span> עַל־כֵּן יַעֲזָב־אִישׁ אֶת־אָבִיו וְאֶת־אִמּוֹ וְדָבַק בְּאִשְׁתּוֹ וְהָיוּ לְבָשָׂר אֶחָד׃</span>
-<span class="heb-verse"><span class="heb-vnum">25</span> וַיִּהְיוּ שְׁנֵיהֶם עֲרוּמִּים הָאָדָם וְאִשְׁתּוֹ וְלֹא יִתְבֹּשָׁשׁוּ׃</span>
-</div>
-  <p class="heb-note">Full chapter text (Westminster Leningrad Codex, public domain). Reading right to left. Vowel points (niqqud) included.</p>
+  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 2</h4>
+  <div class="dn-legend">
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+  </div>
+  <div class="dn-chapter">
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">Thus the heavens and the earth were completed in all their vast array.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">By the seventh day <span class="dn-elohim">Elohim</span> had finished the work he had been doing; so on the seventh day he rested from all his work.</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> blessed the seventh day and made it holy, because on it he rested from all the work of creating that he had done.</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">This is the account of the heavens and the earth when they were created, when the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made the earth and the heavens.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">Now no shrub had yet appeared on the earth and no plant had yet sprung up, for the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had not sent rain on the earth and there was no one to work the ground,</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">but streams came up from the earth and watered the whole surface of the ground.</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">Then the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Now the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had planted a garden in the east, in Eden; and there he put the man he had formed.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made all kinds of trees grow out of the ground — trees that were pleasing to the eye and good for food. In the middle of the garden were the tree of life and the tree of the knowledge of good and evil.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">A river watering the garden flowed from Eden; from there it was separated into four headwaters.</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">The name of the first is the Pishon; it winds through the entire land of Havilah, where there is gold.</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">(The gold of that land is good; aromatic resin and onyx are also there.)</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">The name of the second river is the Gihon; it winds through the entire land of Cush.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">The name of the third river is the Tigris; it runs along the east side of Ashur. And the fourth river is the Euphrates.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> took the man and put him in the Garden of Eden to work it and take care of it.</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">And the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> commanded the man, “You are free to eat from any tree in the garden;</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">but you must not eat from the tree of the knowledge of good and evil, for when you eat from it you will certainly die.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">The <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> said, “It is not good for the man to be alone. I will make a helper suitable for him.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">Now the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> had formed out of the ground all the wild animals and all the birds in the sky. He brought them to the man to see what he would name them; and whatever the man called each living creature, that was its name.</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">So the man gave names to all the livestock, the birds in the sky and all the wild animals. But for Adam no suitable helper was found.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">So the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> caused the man to fall into a deep sleep; and while he was sleeping, he took one of the man’s ribs and then closed up the place with flesh.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">Then the <span class="dn-yhwh-elohim"><span class="dn-yhwh">YHWH</span> <span class="dn-elohim">Elohim</span></span> made a woman from the rib he had taken out of the man, and he brought her to the man.</span></span>
+<span class="dn-verse"><span class="dn-vnum">23</span><span class="dn-text">The man said, “This is now bone of my bones and flesh of my flesh; she shall be called ‘woman,’ for she was taken out of man.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">24</span><span class="dn-text">That is why a man leaves his father and mother and is united to his wife, and they become one flesh.</span></span>
+<span class="dn-verse"><span class="dn-vnum">25</span><span class="dn-text">Adam and his wife were both naked, and they felt no shame.</span></span>
+  </div>
+  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
 </div>
 <div id="g2-thread" class="anno-panel thread-panel">
   <h4>&#x21C4; Intertextual Threading</h4>
