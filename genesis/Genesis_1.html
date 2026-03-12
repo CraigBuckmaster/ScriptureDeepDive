@@ -1051,25 +1051,17 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
 </footer>
 <script>
-
 function tog(btn,id){
-  const p=document.getElementById(id);
-  const willOpen=!p.classList.contains('open');
-  // Close every open panel + deactivate its button
-  document.querySelectorAll('.anno-panel.open').forEach(op=>{
-    op.classList.remove('open');
-  });
-  document.querySelectorAll('.anno-trigger.active').forEach(tb=>{
-    tb.classList.remove('active');
-  });
-  // Open/close the clicked one
-  if(willOpen){
-    p.classList.add('open');
-    btn.classList.add('active');
-  }
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
 }
 function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-
+</script>
+<script>
 (function(){
   const DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
   const PLACES={words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'],cls:'vhl-place',btn:['places']};
@@ -1109,31 +1101,34 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 
   // Click-to-open: clicking a highlighted word opens the matching panel
   document.addEventListener('click', function(e) {
-    const sp = e.target.closest('.vhl[data-btn]');
+    const sp = e.target.closest ? e.target.closest('.vhl[data-btn]') : null;
     if (!sp) return;
-    const row = sp.dataset.row ? document.querySelector('.btn-row[data-vhl-id="'+sp.dataset.row+'"]') : null;
+    const rowId = sp.getAttribute('data-row');
+    if (!rowId) return;
+    const row = document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
     if (!row) return;
-    const types = sp.dataset.btn.split(',');
-    // Find the first matching button in this verse's btn-row
-    let btn = null;
-    for (const t of types) {
-      btn = row.querySelector('.anno-trigger.' + t);
+    const types = (sp.getAttribute('data-btn') || '').split(',');
+    var btn = null;
+    for (var i = 0; i < types.length; i++) {
+      btn = row.querySelector('.anno-trigger.' + types[i]);
       if (btn) break;
     }
     if (!btn) return;
+    // Extract panel id from onclick attr safely (no optional chaining)
+    var oc = btn.getAttribute('onclick') || '';
+    var m = oc.match(/'([^']+)'/);
+    var panelId = m ? m[1] : null;
+    if (!panelId) return;
     // Pulse the word
     sp.classList.remove('vhl-pulse');
-    void sp.offsetWidth; // reflow to restart animation
+    void sp.offsetWidth;
     sp.classList.add('vhl-pulse');
-    // Toggle the panel via tog()
-    tog(btn, btn.getAttribute('onclick').match(/'([^']+)'/)?.[1]);
-    // Scroll panel into view
-    const panelId = btn.getAttribute('onclick').match(/'([^']+)'/)?.[1];
-    if (panelId) {
-      const panel = document.getElementById(panelId);
-      if (panel && panel.classList.contains('open')) {
-        setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 80);
-      }
+    // Toggle the panel
+    tog(btn, panelId);
+    // Scroll into view if it opened
+    var panel = document.getElementById(panelId);
+    if (panel && panel.classList.contains('open')) {
+      setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 80);
     }
   });
 })();
