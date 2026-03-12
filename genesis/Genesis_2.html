@@ -140,6 +140,40 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+
+/* Hebrew text panel */
+--heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+/* Threading panel */
+--thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+/* Hebrew text display */
+.heb-chapter{direction:rtl;font-family:'EB Garamond',serif;font-size:1.12rem;line-height:2.0;color:#f0e0b0;background:#0d0b00;border:1px solid #3a2c00;border-radius:6px;padding:1.1rem 1.3rem;margin:.5rem 0;unicode-bidi:embed;}
+.heb-verse{display:block;padding:.12rem 0;}
+.heb-vnum{direction:ltr;display:inline-block;font-family:'Cinzel',serif;font-size:.58rem;color:#806020;letter-spacing:.08em;vertical-align:super;margin-left:.3rem;unicode-bidi:isolate;}
+.heb-note{font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#806040;direction:ltr;margin-top:.6rem;font-style:italic;}
+/* Threading display */
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward {border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo       {background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal   {background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast   {background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation  {background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion   {background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+
 </style>
 </head>
 <body>
@@ -371,7 +405,87 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 2</div>
-  <div class="btn-row">
+  
+<div class="btn-row">
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g2-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g2-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="g2-hebtext" class="anno-panel heb-text-panel">
+  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
+  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> וַיְכֻלּוּ הַשָּׁמַיִם וְהָאָרֶץ וְכָל־צְבָאָם׃</span>
+<span class="heb-verse"><span class="heb-vnum">2</span> וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי מְלַאכְתּוֹ אֲשֶׁר עָשָׂה וַיִּשְׁבֹּת בַּיּוֹם הַשְּׁבִיעִי מִכָּל־מְלַאכְתּוֹ אֲשֶׁר עָשָׂה׃</span>
+<span class="heb-verse"><span class="heb-vnum">3</span> וַיְבָרֶךְ אֱלֹהִים אֶת־יוֹם הַשְּׁבִיעִי וַיְקַדֵּשׁ אֹתוֹ כִּי בוֹ שָׁבַת מִכָּל־מְלַאכְתּוֹ אֲשֶׁר־בָּרָא אֱלֹהִים לַעֲשׂוֹת׃</span>
+<span class="heb-verse"><span class="heb-vnum">4</span> אֵלֶּה תוֹלְדוֹת הַשָּׁמַיִם וְהָאָרֶץ בְּהִבָּרְאָם בְּיוֹם עֲשׂוֹת יְהוָה אֱלֹהִים אֶרֶץ וְשָׁמָיִם׃</span>
+<span class="heb-verse"><span class="heb-vnum">5</span> וְכֹל שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ וְכָל־עֵשֶׂב הַשָּׂדֶה טֶרֶם יִצְמָח כִּי לֹא הִמְטִיר יְהוָה אֱלֹהִים עַל־הָאָרֶץ וְאָדָם אַיִן לַעֲבֹד אֶת־הָאֲדָמָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">6</span> וְאֵד יַעֲלֶה מִן־הָאָרֶץ וְהִשְׁקָה אֶת־כָּל־פְּנֵי הָאֲדָמָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">7</span> וַיִּיצֶר יְהוָה אֱלֹהִים אֶת־הָאָדָם עָפָר מִן־הָאֲדָמָה וַיִּפַּח בְּאַפָּיו נִשְׁמַת חַיִּים וַיְהִי הָאָדָם לְנֶפֶשׁ חַיָּה׃</span>
+<span class="heb-verse"><span class="heb-vnum">8</span> וַיִּטַּע יְהוָה אֱלֹהִים גַּן־בְּעֵדֶן מִקֶּדֶם וַיָּשֶׂם שָׁם אֶת־הָאָדָם אֲשֶׁר יָצָר׃</span>
+<span class="heb-verse"><span class="heb-vnum">9</span> וַיַּצְמַח יְהוָה אֱלֹהִים מִן־הָאֲדָמָה כָּל־עֵץ נֶחְמָד לְמַרְאֶה וְטוֹב לְמַאֲכָל וְעֵץ הַחַיִּים בְּתוֹךְ הַגָּן וְעֵץ הַדַּעַת טוֹב וָרָע׃</span>
+<span class="heb-verse"><span class="heb-vnum">10</span> וְנָהָר יֹצֵא מֵעֵדֶן לְהַשְׁקוֹת אֶת־הַגָּן וּמִשָּׁם יִפָּרֵד וְהָיָה לְאַרְבָּעָה רָאשִׁים׃</span>
+<span class="heb-verse"><span class="heb-vnum">11</span> שֵׁם הָאֶחָד פִּישׁוֹן הוּא הַסֹּבֵב אֵת כָּל־אֶרֶץ הַחֲוִילָה אֲשֶׁר־שָׁם הַזָּהָב׃</span>
+<span class="heb-verse"><span class="heb-vnum">12</span> וּזְהַב הָאָרֶץ הַהִוא טוֹב שָׁם הַבְּדֹלַח וְאֶבֶן הַשֹּׁהַם׃</span>
+<span class="heb-verse"><span class="heb-vnum">13</span> וְשֵׁם־הַנָּהָר הַשֵּׁנִי גִּיחוֹן הוּא הַסּוֹבֵב אֵת כָּל־אֶרֶץ כּוּשׁ׃</span>
+<span class="heb-verse"><span class="heb-vnum">14</span> וְשֵׁם הַנָּהָר הַשְּׁלִישִׁי חִדֶּקֶל הוּא הַהֹלֵךְ קִדְמַת אַשּׁוּר וְהַנָּהָר הָרְבִיעִי הוּא פְרָת׃</span>
+<span class="heb-verse"><span class="heb-vnum">15</span> וַיִּקַּח יְהוָה אֱלֹהִים אֶת־הָאָדָם וַיַּנִּחֵהוּ בְגַן־עֵדֶן לְעָבְדָהּ וּלְשָׁמְרָהּ׃</span>
+<span class="heb-verse"><span class="heb-vnum">16</span> וַיְצַו יְהוָה אֱלֹהִים עַל־הָאָדָם לֵאמֹר מִכֹּל עֵץ־הַגָּן אָכֹל תֹּאכֵל׃</span>
+<span class="heb-verse"><span class="heb-vnum">17</span> וּמֵעֵץ הַדַּעַת טוֹב וָרָע לֹא תֹאכַל מִמֶּנּוּ כִּי בְּיוֹם אֲכָלְךָ מִמֶּנּוּ מוֹת תָּמוּת׃</span>
+<span class="heb-verse"><span class="heb-vnum">18</span> וַיֹּאמֶר יְהוָה אֱלֹהִים לֹא־טוֹב הֱיוֹת הָאָדָם לְבַדּוֹ אֶעֱשֶׂה־לּוֹ עֵזֶר כְּנֶגְדּוֹ׃</span>
+<span class="heb-verse"><span class="heb-vnum">19</span> וַיִּצֶר יְהוָה אֱלֹהִים מִן־הָאֲדָמָה כָּל־חַיַּת הַשָּׂדֶה וְאֵת כָּל־עוֹף הַשָּׁמַיִם וַיָּבֵא אֶל־הָאָדָם לִרְאוֹת מַה־יִּקְרָא־לוֹ וְכֹל אֲשֶׁר יִקְרָא־לוֹ הָאָדָם נֶפֶשׁ חַיָּה הוּא שְׁמוֹ׃</span>
+<span class="heb-verse"><span class="heb-vnum">20</span> וַיִּקְרָא הָאָדָם שֵׁמוֹת לְכָל־הַבְּהֵמָה וּלְעוֹף הַשָּׁמַיִם וּלְכֹל חַיַּת הַשָּׂדֶה וּלְאָדָם לֹא־מָצָא עֵזֶר כְּנֶגְדּוֹ׃</span>
+<span class="heb-verse"><span class="heb-vnum">21</span> וַיַּפֵּל יְהוָה אֱלֹהִים תַּרְדֵּמָה עַל־הָאָדָם וַיִּישָׁן וַיִּקַּח אַחַת מִצַּלְעֹתָיו וַיִּסְגֹּר בָּשָׂר תַּחְתֶּנָּה׃</span>
+<span class="heb-verse"><span class="heb-vnum">22</span> וַיִּבֶן יְהוָה אֱלֹהִים אֶת־הַצֵּלָע אֲשֶׁר־לָקַח מִן־הָאָדָם לְאִשָּׁה וַיְבִאֶהָ אֶל־הָאָדָם׃</span>
+<span class="heb-verse"><span class="heb-vnum">23</span> וַיֹּאמֶר הָאָדָם זֹאת הַפַּעַם עֶצֶם מֵעֲצָמַי וּבָשָׂר מִבְּשָׂרִי לְזֹאת יִקָּרֵא אִשָּׁה כִּי מֵאִישׁ לֻקֳחָה־זֹּאת׃</span>
+<span class="heb-verse"><span class="heb-vnum">24</span> עַל־כֵּן יַעֲזָב־אִישׁ אֶת־אָבִיו וְאֶת־אִמּוֹ וְדָבַק בְּאִשְׁתּוֹ וְהָיוּ לְבָשָׂר אֶחָד׃</span>
+<span class="heb-verse"><span class="heb-vnum">25</span> וַיִּהְיוּ שְׁנֵיהֶם עֲרוּמִּים הָאָדָם וְאִשְׁתּוֹ וְלֹא יִתְבֹּשָׁשׁוּ׃</span>
+</div>
+  <p class="heb-note">Full chapter text (Westminster Leningrad Codex, public domain). Reading right to left. Vowel points (niqqud) included.</p>
+</div>
+<div id="g2-thread" class="anno-panel thread-panel">
+  <h4>&#x21C4; Intertextual Threading</h4>
+  <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">5 canonical threads &mdash; 5 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
+  <div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.7 — dust + breath</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">1 Cor 15:45–49</span>
+    <span class="thread-type fulfillment">Fulfillment</span>
+  </div>
+  <p class="thread-text">Paul explicitly contrasts the 'first Adam' (from the earth, a living being — <em>nefesh hayyah</em>, Gen 2:7) with the 'last Adam' (from heaven, a life-giving spirit — <em>pneuma zōopoioun</em>). The resurrection body inverts the Genesis formula: instead of dust animated by breath, it is spiritual life that transforms physicality. Gen 2:7 is Paul's baseline for understanding what the resurrection restores and transcends.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.15 — work and keep</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Num 3:7–8; 18:5–6</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">The identical Hebrew verbs <em>'abad</em> (work/serve) and <em>shamar</em> (keep/guard) are used in Numbers for the Levitical priests' duties in the tabernacle. Adam is thus the first priest of the cosmic temple — Eden. His failure to guard the boundary (the forbidden tree) is priestly dereliction. The Levitical system is the institutional recovery of the vocation Adam abandoned.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.18 — not good alone</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Eph 5:25–32</span>
+    <span class="thread-type fulfillment">Fulfillment</span>
+  </div>
+  <p class="thread-text">Paul reads the man-woman union of Gen 2 as a 'mystery' pointing to Christ and the church. Just as Eve is drawn from Adam's side (his <em>tsela'</em>), the church is born from Christ's wounded side (John 19:34). The 'leaving and cleaving' of 2:24 is fulfilled in Christ's incarnation (leaving the Father) and union with his bride (the church).</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.9 — tree of life</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Rev 2:7; 22:2,14</span>
+    <span class="thread-type fulfillment">Fulfillment</span>
+  </div>
+  <p class="thread-text">The tree of life, inaccessible after Gen 3:24, reappears at the end of the Bible: in the new Jerusalem it grows by the river of life, bearing fruit every month. Access is restored to those who 'overcome' (Rev 2:7) — what Eden's flaming sword denied, Christ's death unlocks. The tree of life is the Bible's first and last symbol of unobstructed divine life.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.24 — leave and cleave</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Mark 10:6–9; Matt 19:4–6</span>
+    <span class="thread-type quotation">Quotation</span>
+  </div>
+  <p class="thread-text">Jesus quotes Gen 2:24 verbatim in his teaching on divorce, grounding the permanence of marriage in the original creation order — before Moses, before the law, before the fall. He then adds his own interpretive gloss ('what God has joined together, let no one separate') as a dominical commentary on the creation text. Gen 2:24 becomes the normative definition of marriage in the NT.</p>
+</div>
+</div>
+<div class="btn-row">
     <button class="anno-trigger people" onclick="tog(this,'g2-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger translations" onclick="tog(this,'g2-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger sources" onclick="tog(this,'g2-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
