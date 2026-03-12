@@ -352,3 +352,35 @@ Full chapter/verse browser overlay. Triggered by 🔍 button. Includes book sele
 ## Word Lists for VHL (update when adding new books)
 When a new book introduces new significant names/places, add to the relevant GROUPS array in that book's chapter files. The Genesis lists are a good baseline; many names will carry forward (God, LORD, covenant, etc.) but place names and people will change per book.
 
+
+---
+
+## Navigation Checklist — Run on Every New Chapter or Book Deploy
+
+After adding any new chapter or book, verify all of the following:
+
+### Nav Arrows
+- [ ] New chapter's **left arrow** points to the correct previous chapter (or is dimmed if ch 1 / first chapter of a new book)
+- [ ] New chapter's **right arrow** points to the correct next chapter (or is dimmed if no next chapter exists yet)
+- [ ] The **previous chapter's right arrow** now points to the new chapter (was it dimmed or pointing to a dead link before?)
+- [ ] No arrow links to a file that doesn't exist — those must be dimmed `<span>` not `<a>`
+
+### Quick-Nav Overlay (all chapters in the book)
+- [ ] Every existing chapter in the book has its qnav overlay updated to include the new chapter(s) as live links
+- [ ] The new chapter shows the correct **"current"** highlight on its own button
+- [ ] The live count label (e.g. "25 live") is updated in every chapter's qnav overlay
+- [ ] No chapter still shows coming-soon `<span>` for a chapter that is now live
+
+### When adding a NEW BOOK (not just new chapters)
+- [ ] All existing chapters of all existing books need their qnav overlays updated to list the new book
+- [ ] The new book's chapters need qnav overlays that include all other live books
+
+### Quick verification command
+```bash
+# Check that no live chapter has a disabled/dead right arrow pointing to a live chapter
+for n in $(seq 1 $((LAST_LIVE - 1))); do
+  grep -c 'pointer-events:none.*&#8594;' genesis/Genesis_${n}.html && echo "WARNING: Ch${n} has disabled right arrow"
+done
+# Check live count in qnav matches actual live count
+grep -o '[0-9]* live' genesis/Genesis_1.html | head -1
+```
