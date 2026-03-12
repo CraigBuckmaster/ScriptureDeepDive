@@ -146,7 +146,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
 
-.anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
+.anno-trigger.threading {
+  color: #9090e0 !important;
+  border-color: #303070 !important;
+  background: rgba(48,48,112,.15) !important;
+}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
 .anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
@@ -264,6 +268,15 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .dn-legend-item { display:flex; align-items:center; gap:.3rem; font-family:'Source Sans 3',sans-serif; font-size:.65rem; color:#7a7040; }
 .dn-legend-swatch { font-family:'EB Garamond',serif; font-size:.82rem; font-style:italic; font-weight:600; }
 .dn-note { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:#5a5028; margin-top:.75rem; line-height:1.5; }
+
+/* ── VERSE WORD HIGHLIGHTS ──────────────────────────────────────────────── */
+.vhl { border-radius: 2px; transition: opacity .2s; }
+.vhl-divine  { color: #e8c070; }  /* divine names — warm gold */
+.vhl-place   { color: #80d080; }  /* place names — green */
+.vhl-person  { color: #e8a858; }  /* person names — amber */
+.vhl-time    { color: #80a8e0; }  /* time words — steel blue */
+.vhl-key     { color: #b8c858; }  /* key theological terms — lime */
+.vhl:hover   { opacity: 1; text-decoration: underline dotted; text-underline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -618,6 +631,38 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </footer>
 <script>
 
+
+(function(){
+  const DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  const PLACES={words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'],cls:'vhl-place',btn:['places']};
+  const PEOPLE={words:['Adam','Eve','Cain','Abel','Seth','Enoch','Noah','Lamech','Methuselah','Japheth','Ham','Shem','Nimrod','Jubal','Jabal','Naamah'],cls:'vhl-person',btn:['people']};
+  const TIME={words:['evening','morning','night','year','years','season','seasons','month','months','forty','hundred'],cls:'vhl-time',btn:['timeline']};
+  const KEY={words:['image','likeness','holy','sacred','covenant','generations','account','beginning','blessed','cursed','ark','flood'],cls:'vhl-key',btn:['literary','cross']};
+  const GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(t=>row.querySelector('.anno-trigger.'+t));}
+  function highlightNode(node,word,cls){
+    if(node.nodeType===3){
+      let nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      let b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/\w/.test(b))||(a!==undefined&&/\w/.test(a)))return;
+      let after=node.splitText(idx);after.splitText(word.length);
+      let sp=document.createElement('span');sp.className='vhl '+cls;
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      [...node.childNodes].forEach(c=>highlightNode(c,word,cls));
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(row=>{
+    let vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(g=>{
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(w=>highlightNode(vt,w,g.cls));
+    });
+  });
+})();
 </script>
 <script>
 // ── QUICK-NAV ─────────────────────────────────────────────────────────────
