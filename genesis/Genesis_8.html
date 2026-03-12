@@ -145,7 +145,23 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
 /* Threading panel */
 --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
-.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.hebrew-text{
+  color:#f5f0e0;
+  border-color:#7a6820;
+  background:linear-gradient(135deg,rgba(60,44,8,.9) 0%,rgba(40,30,5,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.12), 0 1px 3px rgba(0,0,0,.4);
+  text-shadow:0 1px 2px rgba(0,0,0,.5);
+  font-style:italic;
+  letter-spacing:.09em;
+}
+.anno-trigger.hebrew-text:hover{
+  color:#fff8e0;
+  border-color:#c9a84c;
+  background:linear-gradient(135deg,rgba(80,60,10,.9) 0%,rgba(55,40,8,.95) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,240,120,.2), 0 2px 8px rgba(201,168,76,.2);
+}
+.anno-trigger.hebrew-text .dn-label-yhwh{color:#e8d080;font-style:normal;font-weight:700;font-size:.7rem;}
+.anno-trigger.hebrew-text .dn-label-el{color:#a8c8f0;font-style:normal;font-weight:700;font-size:.7rem;}
 .anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
 .anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
 .anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
@@ -217,6 +233,19 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 .anno-panel.themes-panel{background:#08080f;border-color:#503080;}
 .anno-panel.themes-panel h4{color:#b090f0;}
+
+/* Divine names reading */
+.dn-verse{display:flex;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:baseline;}
+.dn-verse:last-child{border-bottom:none;}
+.dn-vnum{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:#7a6820;min-width:1.6rem;flex-shrink:0;padding-top:.2rem;}
+.dn-text{font-family:'EB Garamond',serif;font-size:1rem;line-height:1.7;color:#d8cfa8;}
+.dn-yhwh{color:#e8c060;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-elohim{color:#88c0f0;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-yhwh-elohim{color:#c0a8e8;font-weight:600;font-style:italic;letter-spacing:.04em;}
+.dn-legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(122,104,32,.3);}
+.dn-legend-item{display:flex;align-items:center;gap:.3rem;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#8a8060;}
+.dn-legend-swatch{font-family:'EB Garamond',serif;font-size:.85rem;font-style:italic;font-weight:600;}
+.dn-note{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#5a5030;margin-top:.8rem;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -475,17 +504,37 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <button class="anno-trigger threading" onclick="tog(this,'g8-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
 </div>
 <div id="g8-hebtext" class="anno-panel heb-text-panel">
-  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
-  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> וַיִּזְכֹּר אֱלֹהִים אֶת־נֹחַ וְאֵת כָּל־הַחַיָּה וְאֶת־כָּל־הַבְּהֵמָה אֲשֶׁר אִתּוֹ בַּתֵּבָה וַיַּעֲבֵר אֱלֹהִים רוּחַ עַל־הָאָרֶץ וַיָּשֹׁכּוּ הַמָּיִם׃</span>
-<span class="heb-verse"><span class="heb-vnum">6</span> וַיְהִי מִקֵּץ אַרְבָּעִים יוֹם וַיִּפְתַּח נֹחַ אֶת־חַלּוֹן הַתֵּבָה אֲשֶׁר עָשָׂה׃</span>
-<span class="heb-verse"><span class="heb-vnum">7</span> וַיְשַׁלַּח אֶת־הָעֹרֵב וַיֵּצֵא יָצוֹא וָשׁוֹב עַד־יְבֹשֶׁת הַמַּיִם מֵעַל הָאָרֶץ׃</span>
-<span class="heb-verse"><span class="heb-vnum">8</span> וַיְשַׁלַּח אֶת־הַיּוֹנָה מֵאִתּוֹ לִרְאוֹת הֲקַלּוּ הַמַּיִם מֵעַל פְּנֵי הָאֲדָמָה׃</span>
-<span class="heb-verse"><span class="heb-vnum">11</span> וַתָּבֹא אֵלָיו הַיּוֹנָה לְעֵת עֶרֶב וְהִנֵּה עֲלֵה־זַיִת טָרָף בְּפִיהָ וַיֵּדַע נֹחַ כִּי־קַלּוּ הַמַּיִם מֵעַל הָאָרֶץ׃</span>
-<span class="heb-verse"><span class="heb-vnum">20</span> וַיִּבֶן נֹחַ מִזְבֵּחַ לַיהוָה וַיִּקַּח מִכֹּל הַבְּהֵמָה הַטְּהֹרָה וּמִכֹּל הָעוֹף הַטָּהֹר וַיַּעַל עֹלֹת בַּמִּזְבֵּחַ׃</span>
-<span class="heb-verse"><span class="heb-vnum">21</span> וַיָּרַח יְהוָה אֶת־רֵיחַ הַנִּיחֹחַ וַיֹּאמֶר יְהוָה אֶל־לִבּוֹ לֹא־אֹסִף לְקַלֵּל עוֹד אֶת־הָאֲדָמָה בַּעֲבוּר הָאָדָם כִּי יֵצֶר לֵב הָאָדָם רַע מִנְּעֻרָיו וְלֹא־אֹסִף עוֹד לְהַכּוֹת אֶת־כָּל־חַי כַּאֲשֶׁר עָשִׂיתִי׃</span>
-<span class="heb-verse"><span class="heb-vnum">22</span> עֹד כָּל־יְמֵי הָאָרֶץ זֶרַע וְקָצִיר וְקֹר וָחֹם וְקַיִץ וָחֹרֶף וְיוֹם וָלַיְלָה לֹא יִשְׁבֹּתוּ׃</span>
-</div>
-  <p class="heb-note">Key verses shown (Westminster Leningrad Codex, public domain) — representative selection for shorter chapters. Reading right to left. Vowel points (niqqud) included.</p>
+  <h4>&#x5D0;&#x5D1; Divine Names Reading &mdash; Genesis 8</h4>
+  <div class="dn-legend">
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh">YHWH</span> &mdash; The personal name of God (tetragrammaton), often rendered LORD in translations</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-elohim">Elohim</span> &mdash; The generic word for God/deity, plural of majesty</span>
+    <span class="dn-legend-item"><span class="dn-legend-swatch dn-yhwh-elohim">YHWH Elohim</span> &mdash; The compound name used throughout Genesis 2–3</span>
+  </div>
+  <div class="dn-chapter">
+<span class="dn-verse"><span class="dn-vnum">1</span><span class="dn-text">But <span class="dn-elohim">Elohim</span> remembered Noah and all the wild animals and the livestock that were with him in the ark, and he sent a wind over the earth, and the waters receded.</span></span>
+<span class="dn-verse"><span class="dn-vnum">2</span><span class="dn-text">Now the springs of the deep and the floodgates of the heavens had been closed, and the rain had stopped falling from the sky.</span></span>
+<span class="dn-verse"><span class="dn-vnum">3</span><span class="dn-text">The water receded steadily from the earth. At the end of the hundred and fifty days the water had gone down,</span></span>
+<span class="dn-verse"><span class="dn-vnum">4</span><span class="dn-text">and on the seventeenth day of the seventh month the ark came to rest on the mountains of Ararat.</span></span>
+<span class="dn-verse"><span class="dn-vnum">5</span><span class="dn-text">The waters continued to recede until the tenth month, and on the first day of the tenth month the tops of the mountains became visible.</span></span>
+<span class="dn-verse"><span class="dn-vnum">6</span><span class="dn-text">After forty days Noah opened a window he had made in the ark</span></span>
+<span class="dn-verse"><span class="dn-vnum">7</span><span class="dn-text">and sent out a raven, and it kept flying back and forth until the water had dried up from the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">8</span><span class="dn-text">Then he sent out a dove to see if the water had receded from the surface of the ground.</span></span>
+<span class="dn-verse"><span class="dn-vnum">9</span><span class="dn-text">But the dove could find nowhere to perch because there was water over all the surface of the earth; so it returned to Noah in the ark. He reached out his hand and took the dove and brought it back to himself in the ark.</span></span>
+<span class="dn-verse"><span class="dn-vnum">10</span><span class="dn-text">He waited seven more days and again sent out the dove from the ark.</span></span>
+<span class="dn-verse"><span class="dn-vnum">11</span><span class="dn-text">When the dove returned to him in the evening, there in its beak was a freshly plucked olive leaf! Then Noah knew that the water had receded from the earth.</span></span>
+<span class="dn-verse"><span class="dn-vnum">12</span><span class="dn-text">He waited seven more days and sent the dove out again, but this time it did not return to him.</span></span>
+<span class="dn-verse"><span class="dn-vnum">13</span><span class="dn-text">By the first day of the first month of Noah’s six hundred and first year, the water had dried up from the earth. Noah then removed the covering of the ark and saw that the surface of the ground was dry.</span></span>
+<span class="dn-verse"><span class="dn-vnum">14</span><span class="dn-text">By the twenty-seventh day of the second month the earth was completely dry.</span></span>
+<span class="dn-verse"><span class="dn-vnum">15</span><span class="dn-text">Then <span class="dn-elohim">Elohim</span> said to Noah,</span></span>
+<span class="dn-verse"><span class="dn-vnum">16</span><span class="dn-text">“Come out of the ark, you and your wife and your sons and their wives.</span></span>
+<span class="dn-verse"><span class="dn-vnum">17</span><span class="dn-text">Bring out every kind of living creature that is with you — the birds, the animals, and all the creatures that move along the ground — so they can multiply on the earth and be fruitful and increase in number on it.”</span></span>
+<span class="dn-verse"><span class="dn-vnum">18</span><span class="dn-text">So Noah came out, together with his sons and his wife and his sons’ wives.</span></span>
+<span class="dn-verse"><span class="dn-vnum">19</span><span class="dn-text">All the animals and all the creatures that move along the ground and all the birds — everything that moves on land — came out of the ark, one kind after another.</span></span>
+<span class="dn-verse"><span class="dn-vnum">20</span><span class="dn-text">Then Noah built an altar to <span class="dn-yhwh">YHWH</span> and, taking some of all the clean animals and clean birds, he sacrificed burnt offerings on it.</span></span>
+<span class="dn-verse"><span class="dn-vnum">21</span><span class="dn-text">The <span class="dn-yhwh">YHWH</span> smelled the pleasing aroma and said in his heart: “Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood. And never again will I destroy all living creatures, as I have done.</span></span>
+<span class="dn-verse"><span class="dn-vnum">22</span><span class="dn-text">As long as the earth endures, seedtime and harvest, cold and heat, summer and winter, day and night will never cease.”</span></span>
+  </div>
+  <p class="dn-note">NIV text with divine names and key Hebrew terms restored. Where translations read "LORD" the Hebrew has the tetragrammaton (YHWH). Where they read "God" in most of Genesis 1, the Hebrew has Elohim.</p>
 </div>
 <div id="g8-thread" class="anno-panel thread-panel">
   <h4>&#x21C4; Intertextual Threading</h4>
