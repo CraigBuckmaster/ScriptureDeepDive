@@ -224,18 +224,7 @@ body {
 .ll-coming { background: #2a2010; border: 1px solid #3a3010; }
 
 /* Testament groups */
-.testament-group { margin-bottom: 3rem; }
-.testament-label {
-  font-family: 'Cinzel', serif;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding-bottom: .6rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 1rem;
-}
+
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -391,6 +380,135 @@ footer {
   color: var(--text-muted);
   border-top: 1px solid var(--border);
 }
+
+/* ── TESTAMENT COLLAPSIBLE ──────────────────── */
+.testament-group { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.testament-toggle {
+  width: 100%; background: var(--bg2); border: none; cursor: pointer;
+  padding: .9rem 1.1rem; display: flex; justify-content: space-between;
+  align-items: center; gap: .75rem; transition: background .15s;
+}
+.testament-toggle:hover { background: var(--bg3); }
+.testament-toggle-label {
+  font-family: 'Cinzel', serif; font-size: .82rem; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: .6rem;
+}
+.tt-icon { font-size: 1rem; }
+.tt-meta { display: flex; align-items: center; gap: .7rem; flex-shrink: 0; }
+.tt-count {
+  font-family: 'Source Sans 3', sans-serif; font-size: .65rem;
+  color: var(--text-muted); letter-spacing: .06em;
+}
+.tt-live-count {
+  font-family: 'Source Sans 3', sans-serif; font-size: .62rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--live);
+  background: rgba(112,208,152,.1); border: 1px solid var(--live-dim);
+  border-radius: 2px; padding: .05rem .35rem;
+}
+.tt-chev {
+  font-size: .52rem; color: var(--text-muted);
+  transition: transform .25s; flex-shrink: 0;
+}
+.testament-group.open .tt-chev { transform: rotate(180deg); }
+.testament-body { display: none; border-top: 1px solid var(--border); }
+.testament-group.open .testament-body { display: block; }
+.testament-body .books-grid { padding: .75rem .75rem; }
+
+/* ── QUICK-NAV OVERLAY (chapter pages) ──────── */
+.qnav-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.7); backdrop-filter: blur(3px);
+  animation: fadeIn .18s ease;
+}
+.qnav-overlay.open { display: flex; flex-direction: column; align-items: stretch; }
+.qnav-panel {
+  background: #0e0b06; border-bottom: 1px solid var(--border, #3a2e18);
+  max-height: 80vh; overflow-y: auto; overscroll-behavior: contain;
+  animation: slideDown .22s ease;
+}
+@keyframes slideDown { from{transform:translateY(-12px);opacity:0} to{transform:translateY(0);opacity:1} }
+.qnav-header {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .9rem 1.1rem; border-bottom: 1px solid rgba(58,46,24,.6);
+  position: sticky; top: 0; background: #0e0b06; z-index: 1;
+}
+.qnav-search {
+  flex: 1; background: rgba(255,255,255,.06); border: 1px solid rgba(58,46,24,.8);
+  border-radius: 4px; padding: .42rem .75rem .42rem 2rem;
+  color: #f0e8d8; font-family: 'Source Sans 3', sans-serif; font-size: .85rem;
+  outline: none; transition: border-color .15s;
+}
+.qnav-search:focus { border-color: var(--gold-dim, #8b6914); }
+.qnav-search::placeholder { color: #5a4a30; }
+.qnav-search-wrap { position: relative; flex: 1; }
+.qnav-search-icon {
+  position: absolute; left: .65rem; top: 50%; transform: translateY(-50%);
+  color: #5a4a30; font-size: .78rem; pointer-events: none;
+}
+.qnav-close {
+  background: none; border: 1px solid rgba(58,46,24,.6); border-radius: 4px;
+  color: #7a6a50; cursor: pointer; padding: .35rem .6rem;
+  font-size: .75rem; letter-spacing: .06em; font-family: 'Source Sans 3', sans-serif;
+  transition: all .15s; flex-shrink: 0;
+}
+.qnav-close:hover { border-color: var(--gold-dim); color: var(--gold-dim); }
+.qnav-testament {
+  padding: .5rem .85rem .3rem;
+  font-family: 'Cinzel', serif; font-size: .58rem; font-weight: 600;
+  letter-spacing: .25em; text-transform: uppercase; color: var(--gold-dim, #8b6914);
+  border-bottom: 1px solid rgba(58,46,24,.3); margin-top: .3rem;
+}
+.qnav-book { border-bottom: 1px solid rgba(58,46,24,.2); }
+.qnav-book-btn {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: .55rem .85rem; display: flex; justify-content: space-between;
+  align-items: center; gap: .5rem; transition: background .12s;
+}
+.qnav-book-btn:hover { background: rgba(255,255,255,.04); }
+.qnav-book-name {
+  font-family: 'EB Garamond', serif; font-size: .98rem;
+  color: #d0c8a8; text-align: left;
+}
+.qnav-book.has-live .qnav-book-name { color: #b0e0b8; }
+.qnav-book-meta { display: flex; align-items: center; gap: .4rem; flex-shrink:0; }
+.qnav-book-chev { font-size: .5rem; color: #5a4a30; transition: transform .2s; }
+.qnav-book.open .qnav-book-chev { transform: rotate(180deg); }
+.qnav-chapters {
+  display: none; padding: .4rem .85rem .65rem 1.4rem;
+  background: rgba(0,0,0,.2);
+}
+.qnav-book.open .qnav-chapters { display: flex; flex-wrap: wrap; gap: .3rem; }
+.qnav-ch {
+  font-family: 'Source Sans 3', sans-serif; font-size: .68rem; font-weight: 500;
+  padding: .2rem .38rem; border-radius: 3px; text-decoration: none;
+  transition: all .12s; cursor: pointer;
+}
+.qnav-ch.live {
+  color: var(--live, #70d098); background: rgba(112,208,152,.1);
+  border: 1px solid rgba(42,90,56,.8);
+}
+.qnav-ch.live:hover {
+  background: rgba(112,208,152,.2); border-color: var(--live);
+  transform: translateY(-1px);
+}
+.qnav-ch.coming {
+  color: #4a3a20; background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.05); cursor: default;
+}
+.qnav-dismiss { flex: 1; cursor: pointer; min-height: 3rem; }
+.nav-center-btn {
+  background: none; border: none; cursor: pointer; padding: .2rem .5rem;
+  border-radius: 4px; transition: background .15s; display: flex;
+  flex-direction: column; align-items: center; gap: .1rem;
+}
+.nav-center-btn:hover { background: rgba(255,255,255,.07); }
+.nav-center-btn .nav-book { color: var(--gold, #c9a84c); }
+.nav-center-btn .hint {
+  font-family: 'Source Sans 3', sans-serif; font-size: .52rem;
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(138,108,60,.6);
+  margin-top: .05rem;
+}
 </style>
 </head>
 <body>
@@ -464,7 +582,7 @@ footer {
     <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
   </div>
 
-<div class="testament-group"><div class="testament-label">Old Testament</div><div class="books-grid">
+<div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item" id="book-genesis">
   <button class="book-btn" onclick="toggleBook('genesis')">
     <span class="book-name">Genesis</span>
@@ -815,9 +933,8 @@ footer {
   <div class="chapter-list" id="chapters-malachi">
     <div class="chapter-grid"><span class="chapter-link coming" title="Malachi 1">Ch.1</span><span class="chapter-link coming" title="Malachi 2">Ch.2</span><span class="chapter-link coming" title="Malachi 3">Ch.3</span><span class="chapter-link coming" title="Malachi 4">Ch.4</span></div>
   </div>
-</div>
-</div></div>
-<div class="testament-group"><div class="testament-label">New Testament</div><div class="books-grid">
+</div></div></div>
+<div class="testament-group" id="tg-nt"><button class="testament-toggle" onclick="toggleTestament('tg-nt')"><span class="testament-toggle-label"><span class="tt-icon">✝</span>New Testament</span><span class="tt-meta"><span class="tt-count">27 books</span><span id="nt-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item" id="book-matthew">
   <button class="book-btn" onclick="toggleBook('matthew')">
     <span class="book-name">Matthew</span>
@@ -1061,7 +1178,7 @@ footer {
     <div class="chapter-grid"><span class="chapter-link coming" title="Revelation 1">Ch.1</span><span class="chapter-link coming" title="Revelation 2">Ch.2</span><span class="chapter-link coming" title="Revelation 3">Ch.3</span><span class="chapter-link coming" title="Revelation 4">Ch.4</span><span class="chapter-link coming" title="Revelation 5">Ch.5</span><span class="chapter-link coming" title="Revelation 6">Ch.6</span><span class="chapter-link coming" title="Revelation 7">Ch.7</span><span class="chapter-link coming" title="Revelation 8">Ch.8</span><span class="chapter-link coming" title="Revelation 9">Ch.9</span><span class="chapter-link coming" title="Revelation 10">Ch.10</span><span class="chapter-link coming" title="Revelation 11">Ch.11</span><span class="chapter-link coming" title="Revelation 12">Ch.12</span><span class="chapter-link coming" title="Revelation 13">Ch.13</span><span class="chapter-link coming" title="Revelation 14">Ch.14</span><span class="chapter-link coming" title="Revelation 15">Ch.15</span><span class="chapter-link coming" title="Revelation 16">Ch.16</span><span class="chapter-link coming" title="Revelation 17">Ch.17</span><span class="chapter-link coming" title="Revelation 18">Ch.18</span><span class="chapter-link coming" title="Revelation 19">Ch.19</span><span class="chapter-link coming" title="Revelation 20">Ch.20</span><span class="chapter-link coming" title="Revelation 21">Ch.21</span><span class="chapter-link coming" title="Revelation 22">Ch.22</span></div>
   </div>
 </div>
-</div></div>
+</div></div></div>
 
 </div>
 
@@ -1071,37 +1188,68 @@ footer {
 </footer>
 
 <script>
+// ── TESTAMENT TOGGLE ──────────────────────────────────────────────────────
+function toggleTestament(id) {
+  const group = document.getElementById(id);
+  group.classList.toggle('open');
+}
+
+// ── BOOK TOGGLE ───────────────────────────────────────────────────────────
 function toggleBook(id) {
   const item = document.getElementById('book-' + id);
   const wasOpen = item.classList.contains('open');
-  // Close all open books first
   document.querySelectorAll('.book-item.open').forEach(el => el.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
 }
 
+// ── SEARCH ────────────────────────────────────────────────────────────────
 function filterBooks(q) {
   q = q.toLowerCase().trim();
+  let hasAnyMatch = false;
   document.querySelectorAll('.book-item').forEach(item => {
     const name = item.querySelector('.book-name').textContent.toLowerCase();
-    item.style.display = name.includes(q) ? '' : 'none';
+    const match = name.includes(q);
+    item.style.display = match ? '' : 'none';
+    if (match) hasAnyMatch = true;
   });
-  // Show/hide testament labels if all books in group are hidden
+  // Auto-open testaments when searching so results are visible
   document.querySelectorAll('.testament-group').forEach(group => {
-    const visible = [...group.querySelectorAll('.book-item')].some(b => b.style.display !== 'none');
+    const visible = [...group.querySelectorAll('.book-item')]
+      .some(b => b.style.display !== 'none');
     group.style.display = visible ? '' : 'none';
+    if (q.length > 0 && visible) group.classList.add('open');
+    else if (q.length === 0) group.classList.remove('open');
   });
+  // Auto-open book if only one result
+  if (q.length > 1) {
+    const visible = [...document.querySelectorAll('.book-item')]
+      .filter(b => b.style.display !== 'none');
+    if (visible.length === 1) {
+      visible[0].classList.add('open');
+    }
+  }
 }
 
-// Mark books that have live content
+// ── INIT: mark live books ─────────────────────────────────────────────────
 document.querySelectorAll('.book-item').forEach(item => {
-  if (item.querySelector('.chapter-link.live')) {
-    item.classList.add('has-live');
-  }
+  if (item.querySelector('.chapter-link.live')) item.classList.add('has-live');
 });
 
-// Auto-open Genesis since it has live content
-const genesis = document.getElementById('book-genesis');
-if (genesis) genesis.classList.add('open');
+// Live chapter counts on testament badges
+function updateLiveBadge(testamentId, badgeId) {
+  const group = document.getElementById(testamentId);
+  if (!group) return;
+  const count = group.querySelectorAll('.chapter-link.live').length;
+  const badge = document.getElementById(badgeId);
+  if (badge && count > 0) {
+    badge.className = 'tt-live-count';
+    badge.textContent = count + ' live';
+  }
+}
+updateLiveBadge('tg-ot', 'ot-live-badge');
+updateLiveBadge('tg-nt', 'nt-live-badge');
+
+// All dropdowns closed by default — nothing auto-opens
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"))}</script>
 </body>
