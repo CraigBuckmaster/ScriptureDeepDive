@@ -146,15 +146,53 @@ e.g. `g1-s3-heb` = Genesis ch1, verse-section 3, Hebrew panel.
 
 ## Verse Word Highlighting (VHL)
 
-Five categories of words are highlighted inline in verse text, color-matched to their button:
+Five categories of words are highlighted inline in verse text, color-matched to their button.
+
+### ⚠️ CRITICAL: Row-Aware IIFE Architecture (NEVER use the old walkText version)
+
+The IIFE must use the **row-aware architecture** (`hasBtnType` + `data-row`). The old architecture (`walkText` + `data-vhl-id` assigned after the fact) is broken and must never be used in new chapters.
+
+**Canonical btn arrays** — these MUST include fallback button types so every highlighted word is clickable even in sections that lack the primary button type:
 
 ```js
-// In the IIFE — five word groups
-const DIVINE = {words:['God','LORD','Spirit','Angel','Lord'], cls:'vhl-divine', btn:['hebrew','hebrew-text','context']};
-const PLACES = {words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'], cls:'vhl-place', btn:['places']};
-const PEOPLE = {words:['Adam','Eve','Cain','Abel','Seth','Enoch','Noah','Lamech','Methuselah','Japheth','Ham','Shem','Nimrod','Jubal','Jabal','Naamah'], cls:'vhl-person', btn:['people']};
-const TIME   = {words:['evening','morning','night','year','years','season','seasons','month','months','forty','hundred'], cls:'vhl-time', btn:['timeline']};
-const KEY    = {words:['image','likeness','holy','sacred','covenant','generations','account','beginning','blessed','cursed','ark','flood'], cls:'vhl-key', btn:['literary','cross']};
+// CORRECT — with context fallbacks
+var DIVINE = {words:[...], cls:'vhl-divine', btn:['hebrew','hebrew-text','context']};
+var PLACES = {words:[...], cls:'vhl-place',  btn:['places','context']};
+var PEOPLE = {words:[...], cls:'vhl-person', btn:['people','context']};
+var TIME   = {words:[...], cls:'vhl-time',   btn:['timeline','context']};
+var KEY    = {words:[...], cls:'vhl-key',    btn:['literary','cross']};
+// KEY is fine without context — 'cross' is present in almost every section
+```
+
+**Why fallbacks matter:** `hasBtnType()` skips highlighting for any group whose btn type isn't present in a given row. Without fallbacks, words in sections lacking that button go un-highlighted and unclickable. With `context` as fallback, the word highlights and opens Context panel in sections that lack a dedicated Places/People/Timeline button.
+
+**After building any new chapter, run this audit:**
+```python
+import re
+with open('genesis/Genesis_N.html') as f: html = f.read()
+s = html.find('<script>
+(function(){')
+e = html.find('})();
+</script>', s) + 14
+iife = html[s:e]
+groups = re.findall(r"(?:var|const) (\w+)=\{words:\[.*?\],cls:'[^']+',btn:(\[[^\]]+\])\}", iife)
+main_end = html.find('class="scholarly-block"')
+btn_rows = re.findall(r'class="btn-row">(.*?)</div>', html[:main_end], re.DOTALL)
+for gname, arr in groups:
+    types = re.findall(r"'(\w+)'", arr)
+    ok = any(any(t in re.findall(r'anno-trigger (\w+)', row) for t in types) for row in btn_rows)
+    print(f'{gname}: {"OK" if ok else "ORPHANED — add context fallback"}')
+```
+
+### VHL word lists (update when adding new books)
+
+```js
+// In the IIFE — five word groups (sample from Genesis)
+var DIVINE = {words:['God','LORD','Spirit','Angel','Lord'], cls:'vhl-divine', btn:['hebrew','hebrew-text','context']};
+var PLACES = {words:['Eden','Nod','Ararat','Shinar','Babel','Tigris','Euphrates','Havilah','Cush','Asshur','Canaan','Sidon','Nineveh','Calah'], cls:'vhl-place', btn:['places','context']};
+var PEOPLE = {words:['Adam','Eve','Cain','Abel','Seth','Enoch','Noah','Lamech','Methuselah','Japheth','Ham','Shem','Nimrod','Jubal','Jabal','Naamah'], cls:'vhl-person', btn:['people','context']};
+var TIME   = {words:['evening','morning','night','year','years','season','seasons','month','months','forty','hundred'], cls:'vhl-time', btn:['timeline','context']};
+var KEY    = {words:['image','likeness','holy','sacred','covenant','generations','account','beginning','blessed','cursed','ark','flood'], cls:'vhl-key', btn:['literary','cross']};
 ```
 
 VHL CSS colors match button accents:
@@ -170,7 +208,7 @@ VHL CSS colors match button accents:
 @keyframes vhlPulse { 0%{opacity:1} 40%{opacity:.4} 100%{opacity:1} }
 ```
 
-**Click-to-open:** Clicking a highlighted word opens the matching panel. The IIFE injects `data-btn` and `data-vhl-id` attributes during highlight pass; a delegated click handler on `document` handles it.
+**Click-to-open:** Clicking a highlighted word opens the matching panel. The IIFE uses `data-btn` (comma-separated list of btn types) and `data-row` (links span back to its btn-row). Click handler picks the first matching btn type present in that row and opens its panel.
 
 ---
 
@@ -355,6 +393,50 @@ When a new book introduces new significant names/places, add to the relevant GRO
 
 ---
 
+## MacArthur Study Notes Panel
+
+Every verse section in every chapter gets a **MacArthur button** as the **last button** in its `btn-row`. This is a non-negotiable standard — new chapters must follow it.
+
+### Button
+```html
+<button class="anno-trigger macarthur" onclick="tog(this,'CHAPTER-SECTION-mac')">
+  <span>MacArthur</span><span class="chev">&#9660;</span>
+</button>
+```
+
+### Panel — use the `mac_panel()` helper
+```python
+mac_panel('g1-s1-mac', [
+    ('1:1', 'Paraphrased MacArthur note text for verse 1:1...'),
+    ('1:2', 'Paraphrased note for verse 1:2...'),
+])
+```
+
+### CSS (already in shared CSS — do not re-add)
+```css
+--com-bg:#110408; --com-border:#6a1828; --com-accent:#c04050;
+.anno-trigger.macarthur { color:var(--com-accent); border-color:var(--com-border); background:rgba(106,24,40,.12); }
+.anno-panel.com-panel   { background:var(--com-bg); border-color:var(--com-border); }
+.anno-panel.com-panel h4{ color:var(--com-accent); }
+.com-source { font-family:'Cinzel',serif; font-size:.58rem; ... }
+.com-note   { margin-bottom:1.1rem; border-bottom:1px solid rgba(106,24,40,.25); }
+.com-ref    { font-family:'Cinzel',serif; color:#e8c870; display:block; margin-bottom:.35rem; }
+.com-note p { font-family:'Source Sans 3',sans-serif; font-size:.86rem; color:#e8ccd0; }
+```
+
+### Content standard
+- Faithful **paraphrase** of MacArthur Study Bible notes — never verbatim reproduction
+- Panel header always: `MacArthur Study Notes`
+- Source attribution line: `MacArthur Study Bible — Faithful Paraphrase`
+- Notes keyed to specific verse references (e.g. `1:1`, `3:15`, `15:6`) not just section titles
+- Focus on: key Hebrew terms, theological significance, cross-references MacArthur highlights, doctrinal weight
+
+### VHL note
+`macarthur` is not a VHL target button type — it is not included in any GROUPS btn array. Do not add it to DIVINE/PLACES/PEOPLE/TIME/KEY btn arrays.
+
+
+---
+
 ## Navigation Checklist — Run on Every New Chapter or Book Deploy
 
 After adding any new chapter or book, verify all of the following:
@@ -384,3 +466,10 @@ done
 # Check live count in qnav matches actual live count
 grep -o '[0-9]* live' genesis/Genesis_1.html | head -1
 ```
+
+### VHL + MacArthur checklist
+- [ ] Every section has a MacArthur button (last in btn-row)
+- [ ] IIFE uses row-aware architecture (`hasBtnType` present, `walkText` absent)
+- [ ] All five VHL groups have btn fallbacks: PLACES/PEOPLE/TIME include `'context'`
+- [ ] Per-row audit passes: every group resolves in at least one btn-row in the chapter
+- [ ] `macarthur` class is NOT in any VHL group's btn array

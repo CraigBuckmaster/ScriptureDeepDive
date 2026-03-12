@@ -261,9 +261,9 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script><script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Babel','Ur','Haran','Canaan','Hebron','Mamre','Sodom','Gomorrah','Beersheba','Moriah','Machpelah','Negev','Egypt','Euphrates','Tigris','Shinar','Admah','Zeboiim','Zoar','Bela','Damascus'],cls:'vhl-place',btn:['places']};
-  var PEOPLE={words:['Abraham','Abram','Sarah','Sarai','Lot','Hagar','Ishmael','Isaac','Melchizedek','Abimelech','Rebekah','Eliezer','Esau','Jacob','Terah','Nahor','Milcah','Laban','Bethuel','Keturah','Nimrod'],cls:'vhl-person',btn:['people']};
-  var TIME={words:['evening','morning','night','year','years','month','months','days','season','seasons','hundred','seventy','forty','thirty'],cls:'vhl-time',btn:['timeline']};
+  var PLACES={words:['Babel','Ur','Haran','Canaan','Hebron','Mamre','Sodom','Gomorrah','Beersheba','Moriah','Machpelah','Negev','Egypt','Euphrates','Tigris','Shinar','Admah','Zeboiim','Zoar','Bela','Damascus'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Abraham','Abram','Sarah','Sarai','Lot','Hagar','Ishmael','Isaac','Melchizedek','Abimelech','Rebekah','Eliezer','Esau','Jacob','Terah','Nahor','Milcah','Laban','Bethuel','Keturah','Nimrod'],cls:'vhl-person',btn:['people','context']};
+  var TIME={words:['evening','morning','night','year','years','month','months','days','season','seasons','hundred','seventy','forty','thirty'],cls:'vhl-time',btn:['timeline','context']};
   var KEY={words:['covenant','blessing','blessed','curse','cursed','promise','altar','sacrifice','offering','faith','nations','seed','heir','circumcision','sojourn','stranger','land','inheritance'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
@@ -319,7 +319,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
     }
   });
 })();
-</script><script>
+</script>><script>
 function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(el)el.classList.toggle('open');}
