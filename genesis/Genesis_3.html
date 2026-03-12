@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 3 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#080e08; --poi-border:#2a5a2a; --poi-accent:#80d080;
+  --tl-bg:#0a0f18;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#80a8e0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(42,90,42,.12);}
+.anno-trigger.timeline{color:#80a8e0;border-color:#2a4a70;background:rgba(42,74,112,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#2a4a70;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#80a8e0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#80d080);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-icon{float:right;font-size:1.1rem;margin-left:.5rem;margin-top:.1rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+.timeline-wrap{width:100%;overflow-x:auto;margin:.5rem 0;-webkit-overflow-scrolling:touch;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Library
+  </a>
+  <div class="nav-center">
+    <span class="nav-book">Genesis</span>
+    <span class="nav-chapter">Chapter 3</span>
+  </div>
+  <div class="nav-arrows">
+    <a href="Genesis_2.html" class="nav-arrow" title="Genesis 2">&#8592;</a>
+    <a href="Genesis_4.html" class="nav-arrow" title="Genesis 4">&#8594;</a>
+  </div>
+</nav>
+<header>
+  <h1>Genesis 3</h1>
+  <p>NIV &middot; Scripture Study &middot; Hebrew &middot; Historical &middot; Places &middot; Timelines</p>
+</header>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+  <div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+  <div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+  <div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+  <div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+  <div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+</div>
+<main>
+
+<!-- SECTION 1: vv.1-7 -->
+<div class="section">
+  <div class="section-header">The Temptation &amp; The Fall &mdash; Verses 1&ndash;7</div>
+  <span class="verse-text">
+    <span class="verse-num">1</span> Now the serpent was more crafty than any of the wild animals the LORD God had made. He said to the woman, &ldquo;Did God really say, &lsquo;You must not eat from any tree in the garden&rsquo;?&rdquo;<br><br>
+    <span class="verse-num">2</span> The woman said to the serpent, &ldquo;We may eat fruit from the trees in the garden,
+    <span class="verse-num">3</span> but God did say, &lsquo;You must not eat fruit from the tree that is in the middle of the garden, and you must not touch it, or you will die.&rsquo;&rdquo;<br><br>
+    <span class="verse-num">4</span> &ldquo;You will not certainly die,&rdquo; the serpent said to the woman.
+    <span class="verse-num">5</span> &ldquo;For God knows that when you eat from it your eyes will be opened, and you will be like God, knowing good and evil.&rdquo;<br><br>
+    <span class="verse-num">6</span> When the woman saw that the fruit of the tree was good for food and pleasing to the eye, and also desirable for gaining wisdom, she took some and ate it. She also gave some to her husband, who was with her, and he ate it.
+    <span class="verse-num">7</span> Then the eyes of both of them were opened, and they realized they were naked; so they sewed fig leaves together and made coverings for themselves.
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s1-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="hebrew-word">&#x5E0;&#x5B8;&#x5D7;&#x5B8;&#x5E9;</span> <span class="tlit">Nahash</span> &mdash; &ldquo;Serpent.&rdquo; In its original context simply a creature &mdash; the most crafty of the animals God made. The identification with Satan comes later in Scripture (Rev 12:9; Wis 2:24). In Genesis 3, the serpent is a creature who tempts &mdash; the theological weight of a personal evil adversary behind the scene is developed across the canon.</p><br>
+    <p><span class="tlit">&rsquo;Arum</span> &mdash; &ldquo;Crafty.&rdquo; A wordplay with <span class="tlit">&rsquo;arummim</span> (naked) in 2:25. The humans are naked (<span class="tlit">&rsquo;arummim</span>) and unashamed; the serpent is crafty (<span class="tlit">&rsquo;arum</span>). The paronomasia signals the connection &mdash; their vulnerability and its cunning are linked from the start.</p><br>
+    <p><span class="tlit">&ldquo;Did God really say&hellip;&rdquo;</span> &mdash; The Hebrew is <span class="tlit">af ki&ndash;amar Elohim</span> &mdash; a rhetorical question designed to introduce doubt. The serpent doesn&rsquo;t deny God&rsquo;s word outright; it questions, exaggerates (&ldquo;any tree&rdquo;), and reframes. The first move in temptation is always to create uncertainty about what God actually said.</p><br>
+    <p><span class="tlit">Nekhmad lehaskil</span> &mdash; &ldquo;Desirable for gaining wisdom.&rdquo; Three things draw the woman: food (<span class="tlit">ma&rsquo;akhal</span>), aesthetics (<span class="tlit">ta&rsquo;avah le&rsquo;enayim</span>), and wisdom (<span class="tlit">sekhel</span>). John 2:16 mirrors this as &ldquo;the lust of the flesh, the lust of the eyes, and the pride of life.&rdquo; The same three appeared in Jesus&rsquo; wilderness temptation (Matt 4:1&ndash;11).</p>
+  </div>
+  <div id="s1-hist" class="anno-panel hist">
+    <h4>Historical Context</h4>
+    <p>Serpents were complex symbols in the ancient Near East &mdash; simultaneously associated with chaos and danger (the Leviathan myth), wisdom and healing (the Mesopotamian <em>Ningishzida</em> serpent-deity, the Caduceus), and divine power. Egypt&rsquo;s pharaoh wore the uraeus (cobra) on his crown. The bronze serpent Moses made (Num 21:8&ndash;9) healed the Israelites but was later destroyed because it had become an idol (2 Kgs 18:4). The serpent in Genesis combines these associations &mdash; it is the creature that appears to offer divine knowledge.</p>
+  </div>
+  <div id="s1-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; The Anatomy of Temptation</h4>
+    <p>The serpent&rsquo;s strategy follows a precise pattern that recurs throughout Scripture: (1) Question God&rsquo;s word, (2) Deny God&rsquo;s consequence, (3) Impugn God&rsquo;s motive. &ldquo;God knows&rdquo; (v.5) implies that God is withholding something good &mdash; that the prohibition is self-serving, not loving. The lie is not &ldquo;there is no God&rdquo; but &ldquo;God cannot be trusted.&rdquo;</p><br>
+    <p>Note v.6: Adam is &ldquo;with her.&rdquo; The silence of the man throughout the temptation is significant &mdash; he is present and does nothing. Both bear responsibility. The text says she &ldquo;gave some to her husband who was with her, and he ate it&rdquo; &mdash; a remarkably passive construction for a catastrophic act. Paul&rsquo;s theological summary in Romans 5 places the primary legal weight on Adam&rsquo;s act as the representative head of humanity.</p>
+  </div>
+  <div id="s1-cross" class="anno-panel cross-ref">
+    <h4>Cross-References</h4>
+    <ul class="cross-ref-list">
+      <li><span class="ref-cite">Rom 5:12&ndash;19</span><span class="ref-text">Paul&rsquo;s foundational theology of original sin: through one man sin entered the world. Adam&rsquo;s act is the &ldquo;trespass&rdquo; that brought condemnation on all; Christ&rsquo;s act reverses it.</span></li>
+      <li><span class="ref-cite">1 Cor 15:22</span><span class="ref-text">&ldquo;In Adam all die, so in Christ all will be made alive&rdquo; &mdash; the entire Adam/Christ typology rests on Genesis 3.</span></li>
+      <li><span class="ref-cite">Matt 4:1&ndash;11</span><span class="ref-text">Jesus&rsquo; wilderness temptation mirrors the three appeals of Gen 3:6 &mdash; bread/food, spectacle/aesthetics, kingdoms/pride &mdash; and reverses each with Scripture.</span></li>
+      <li><span class="ref-cite">2 Cor 11:3</span><span class="ref-text">Paul warns the Corinthians against being deceived as Eve was &mdash; the serpent&rsquo;s cunning as an ongoing spiritual danger.</span></li>
+      <li><span class="ref-cite">Rev 12:9</span><span class="ref-text">&ldquo;That ancient serpent called the devil&rdquo; &mdash; Revelation identifies the Genesis serpent with Satan explicitly.</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 2: vv.8-13 -->
+<div class="section">
+  <div class="section-header">God Confronts His Image-Bearers &mdash; Verses 8&ndash;13</div>
+  <span class="verse-text">
+    <span class="verse-num">8</span> Then the man and his wife heard the sound of the LORD God as he was walking in the garden in the cool of the day, and they hid from the LORD God among the trees of the garden.
+    <span class="verse-num">9</span> But the LORD God called to the man, &ldquo;Where are you?&rdquo;<br><br>
+    <span class="verse-num">10</span> He answered, &ldquo;I heard you in the garden, and I was afraid because I was naked; so I hid.&rdquo;<br><br>
+    <span class="verse-num">11</span> And he said, &ldquo;Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?&rdquo;<br><br>
+    <span class="verse-num">12</span> The man said, &ldquo;The woman you put here with me &mdash; she gave me some fruit from the tree, and I ate it.&rdquo;<br><br>
+    <span class="verse-num">13</span> Then the LORD God said to the woman, &ldquo;What is this you have done?&rdquo; The woman said, &ldquo;The serpent deceived me, and I ate.&rdquo;
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s2-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Leruah hayyom</span> &mdash; &ldquo;In the cool of the day&rdquo; (NIV), but literally &ldquo;in the wind/spirit of the day.&rdquo; The same word <span class="tlit">ruah</span> used for the Spirit hovering over the waters in 1:2. God&rsquo;s approach is announced by the wind &mdash; a theophanic element (cf. Elijah&rsquo;s &ldquo;still small voice&rdquo; after wind and earthquake, 1 Kgs 19).</p><br>
+    <p><span class="tlit">&ldquo;Where are you?&rdquo;</span> (<span class="tlit">Ayekkah</span>) &mdash; God&rsquo;s first question to humanity after the Fall. Not a request for information (God is not confused about location) but a pastoral summons &mdash; &ldquo;Come out. Be found. This relationship is not over.&rdquo; The question will echo through Scripture wherever God seeks the lost.</p><br>
+    <p><span class="tlit">&ldquo;I was afraid.&rdquo;</span> Fear enters the human experience here for the first time. Before the Fall: nakedness without shame. After: fear, hiding, blame-shifting. The Fall does not make humans less conscious; it distorts their consciousness &mdash; they now know themselves as exposed before a holy God.</p>
+  </div>
+  <div id="s2-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; The First Interrogation</h4>
+    <p>God&rsquo;s three questions &mdash; &ldquo;Where are you?&rdquo; (to Adam), &ldquo;Who told you?&rdquo; (to Adam), &ldquo;What is this you have done?&rdquo; (to Eve) &mdash; structure a formal investigation, not unlike a covenant lawsuit. The pattern appears again in Cain&rsquo;s interrogation (4:9&ndash;10) and at Sinai.</p><br>
+    <p>The blame-shift in v.12 is the first recorded instance of what might be called &ldquo;the social consequences of sin&rdquo;: Adam blames Eve, Eve blames the serpent, and &mdash; implicitly &mdash; Adam blames God (&ldquo;the woman <em>you put here</em>&rdquo;). Sin doesn&rsquo;t just break the human-God relationship; it immediately fractures the human-human relationship. The solidarity of 2:23 (&ldquo;bone of my bones&rdquo;) becomes the accusation of 3:12.</p>
+  </div>
+</div>
+
+<!-- SECTION 3: vv.14-19 -->
+<div class="section">
+  <div class="section-header">The Curses &mdash; Verses 14&ndash;19</div>
+  <span class="verse-text">
+    <span class="verse-num">14</span> So the LORD God said to the serpent, &ldquo;Because you have done this,<br>
+    &nbsp;&nbsp;&ldquo;Cursed are you above all livestock<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and all wild animals!<br>
+    &nbsp;&nbsp;You will crawl on your belly<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and you will eat dust<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;all the days of your life.<br>
+    <span class="verse-num">15</span> And I will put enmity<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;between you and the woman,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and between your offspring and hers;<br>
+    &nbsp;&nbsp;he will crush your head,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and you will strike his heel.&rdquo;<br><br>
+    <span class="verse-num">16</span> To the woman he said,<br>
+    &nbsp;&nbsp;&ldquo;I will make your pains in childbearing very severe;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;with painful labor you will give birth to children.<br>
+    &nbsp;&nbsp;Your desire will be for your husband,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and he will rule over you.&rdquo;<br><br>
+    <span class="verse-num">17</span> To Adam he said, &ldquo;Because you listened to your wife and ate fruit from the tree about which I commanded you, &lsquo;You must not eat from it,&rsquo;<br>
+    &nbsp;&nbsp;&ldquo;Cursed is the ground because of you;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;through painful toil you will eat food from it<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;all the days of your life.<br>
+    <span class="verse-num">18</span> It will produce thorns and thistles for you,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and you will eat the plants of the field.<br>
+    <span class="verse-num">19</span> By the sweat of your brow<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;you will eat your food<br>
+    &nbsp;&nbsp;until you return to the ground,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;since from it you were taken;<br>
+    &nbsp;&nbsp;for dust you are<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;and to dust you will return.&rdquo;
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s3-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study &mdash; The Protoevangelium</h4>
+    <p>Verse 15 is called the <em>Protoevangelium</em> &mdash; &ldquo;first gospel.&rdquo; <span class="tlit">Hu&rsquo; yeshufkha ro&rsquo;sh</span> &mdash; &ldquo;He will crush your head.&rdquo; The verb <span class="tlit">shuph</span> means to strike/bruise/crush. The serpent will strike the seed&rsquo;s heel; the seed will crush the serpent&rsquo;s head. A head wound is fatal; a heel wound is painful but not mortal. The cross and resurrection are the fulfilment: Christ is wounded but not destroyed; the enemy receives a deathblow.</p><br>
+    <p><span class="tlit">Teshuqah</span> &mdash; &ldquo;Desire&rdquo; (v.16). The same rare word appears in 4:7 where sin desires to master Cain, and in Song of Solomon 7:10 where the beloved&rsquo;s desire is for her lover. The meaning is debated &mdash; some read v.16 as a description (this is how the relationship will be distorted by the Fall), others as a prescription or judgment. The complementarian/egalitarian debate often pivots on this verse.</p><br>
+    <p><span class="tlit">&ldquo;Dust you are&rdquo;</span> &mdash; Hebrew: <span class="tlit">ki &rsquo;afar attah</span>. The words of Ash Wednesday come directly from here. The mortality embedded in creation (&ldquo;formed from dust,&rdquo; 2:7) is now activated as consequence. Death is not God&rsquo;s invention; it is the withdrawal of sustained life from creatures who chose independence.</p>
+  </div>
+  <div id="s3-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; Curse vs. Consequence</h4>
+    <p>Notably, God curses the serpent and the ground &mdash; but not the humans. The humans receive consequences, not curses. Pain in childbirth and toil in work are distortions of what were gifts (fruitfulness and gardening), not new punishments invented from scratch. The creation groans (Rom 8:22) but is not abandoned &mdash; God&rsquo;s first act after the Fall is to make clothes for the humans (v.21).</p><br>
+    <p>Verse 15 is the hinge of the entire Bible. The &ldquo;seed of the woman&rdquo; becomes the theological thread running from Eve to Mary, through Abel and Seth, through Abraham&rsquo;s &ldquo;seed&rdquo; (singular, Gal 3:16), through David&rsquo;s line, to Christ. The conflict between the two seeds structures the rest of Genesis &mdash; Cain vs. Abel, Ishmael vs. Isaac, Esau vs. Jacob.</p>
+  </div>
+  <div id="s3-cross" class="anno-panel cross-ref">
+    <h4>Cross-References</h4>
+    <ul class="cross-ref-list">
+      <li><span class="ref-cite">Gal 3:16</span><span class="ref-text">Paul reads &ldquo;seed&rdquo; (<span class="tlit">zera&rsquo;</span>) in Genesis as singular and applies it to Christ &mdash; the seed of Abraham in whom all nations are blessed.</span></li>
+      <li><span class="ref-cite">Rom 16:20</span><span class="ref-text">&ldquo;The God of peace will soon crush Satan under your feet&rdquo; &mdash; Paul applies the Protoevangelium to the church&rsquo;s eschatological victory.</span></li>
+      <li><span class="ref-cite">Rom 8:20&ndash;22</span><span class="ref-text">Creation was subjected to frustration because of the Fall; it waits in eager expectation for the children of God to be revealed &mdash; the ground&rsquo;s curse reversed.</span></li>
+      <li><span class="ref-cite">Heb 2:14</span><span class="ref-text">Christ shared in humanity so that by his death he might destroy the one who holds the power of death &mdash; the head-crushing of Gen 3:15 accomplished.</span></li>
+      <li><span class="ref-cite">Rev 12:17</span><span class="ref-text">The dragon wages war against the woman&rsquo;s offspring &mdash; Revelation frames the entire spiritual conflict in Gen 3:15 terms.</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 4: vv.20-24 -->
+<div class="section">
+  <div class="section-header">Exile from Eden &mdash; Verses 20&ndash;24</div>
+  <span class="verse-text">
+    <span class="verse-num">20</span> Adam named his wife Eve, because she would become the mother of all the living.<br><br>
+    <span class="verse-num">21</span> The LORD God made garments of skin for Adam and his wife and clothed them.<br><br>
+    <span class="verse-num">22</span> And the LORD God said, &ldquo;The man has now become like one of us, knowing good and evil. He must not be allowed to reach out his hand and take also from the tree of life and eat, and live forever.&rdquo;
+    <span class="verse-num">23</span> So the LORD God banished him from the Garden of Eden to work the ground from which he had been taken.
+    <span class="verse-num">24</span> After he drove the man out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the tree of life.
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s4-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s4-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s4-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s4-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="hebrew-word">&#x5D7;&#x5B7;&#x5D5;&#x5B8;&#x5D4;</span> <span class="tlit">Havvah</span> &mdash; &ldquo;Eve.&rdquo; From <span class="tlit">hayah</span> (to live) or a related root. Adam&rsquo;s naming of the woman &ldquo;mother of all the living&rdquo; immediately after the death sentence is an extraordinary act of faith &mdash; he hears the promise of 3:15 and responds by naming her for life, not death.</p><br>
+    <p><span class="tlit">Kotnot &rsquo;or</span> &mdash; &ldquo;Garments of skin.&rdquo; God clothes the humans before expelling them. The first act of atonement-covering in Scripture involves an animal death &mdash; skin requires a slaughtered animal. The theological shadow of sacrifice falls here, centuries before Leviticus. God himself is the first to shed blood to cover human shame.</p><br>
+    <p><span class="tlit">Keruvim</span> &mdash; &ldquo;Cherubim.&rdquo; Not the chubby Renaissance angels. Cherubim in the ancient world were hybrid creatures &mdash; lion body, eagle wings, human face &mdash; guardian beings that flanked thrones and temple entrances. They appear on the ark of the covenant (Ex 25:18&ndash;22) and in Ezekiel&rsquo;s visions. Guarding Eden&rsquo;s entrance, they are the first temple guardians.</p>
+  </div>
+  <div id="s4-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; Exile as Mercy</h4>
+    <p>The expulsion from Eden is typically read as pure punishment. But v.22 reveals the logic: if humans eat from the tree of life in their fallen state, they will &ldquo;live forever&rdquo; in that state. Immortal fallenness would be hell, not paradise. The exile is a mercy &mdash; it prevents humanity from being permanently fixed in brokenness. Death opens the possibility of redemption; immortal sinners would have no such possibility.</p><br>
+    <p>The cherubim guarding the way back to the tree of life become the architectural theme of the Tabernacle and Temple: cherubim are woven into the curtains (Ex 26:31), carved into the Temple walls (1 Kgs 6:29), and placed on the ark. The entire sacrificial system is the story of fallen humans seeking a way back through the cherubim-guarded entrance. The veil of the Temple tears at the crucifixion (Matt 27:51) &mdash; the way to the tree of life is opened.</p>
+  </div>
+  <div id="s4-cross" class="anno-panel cross-ref">
+    <h4>Cross-References</h4>
+    <ul class="cross-ref-list">
+      <li><span class="ref-cite">Matt 27:51</span><span class="ref-text">The Temple veil tears at Christ&rsquo;s death &mdash; the cherubim-guarded barrier between humanity and God&rsquo;s presence is removed.</span></li>
+      <li><span class="ref-cite">Rev 22:2,14</span><span class="ref-text">The tree of life reappears in the new Jerusalem, freely accessible to those who have washed their robes &mdash; exile reversed, Eden restored and surpassed.</span></li>
+      <li><span class="ref-cite">Ex 25:18&ndash;22</span><span class="ref-text">Cherubim on the ark of the covenant &mdash; the same guardians of Gen 3:24 now frame the mercy seat where God speaks to Israel.</span></li>
+      <li><span class="ref-cite">Heb 10:19&ndash;20</span><span class="ref-text">&ldquo;A new and living way opened for us through the curtain, that is, his body&rdquo; &mdash; the exile of Gen 3:24 explicitly reversed by the crucifixion.</span></li>
+    </ul>
+  </div>
+</div>
+
+</main>
+<footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; Commentary for personal study<br>
+  Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
+</footer>
+<script>
+function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>

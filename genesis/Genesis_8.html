@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 8 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#080e08; --poi-border:#2a5a2a; --poi-accent:#80d080;
+  --tl-bg:#0a0f18;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#80a8e0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(42,90,42,.12);}
+.anno-trigger.timeline{color:#80a8e0;border-color:#2a4a70;background:rgba(42,74,112,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#2a4a70;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#80a8e0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#80d080);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-icon{float:right;font-size:1.1rem;margin-left:.5rem;margin-top:.1rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+.timeline-wrap{width:100%;overflow-x:auto;margin:.5rem 0;-webkit-overflow-scrolling:touch;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Library
+  </a>
+  <div class="nav-center">
+    <span class="nav-book">Genesis</span>
+    <span class="nav-chapter">Chapter 8</span>
+  </div>
+  <div class="nav-arrows">
+    <a href="Genesis_7.html" class="nav-arrow" title="Genesis 7">&#8592;</a>
+    <a href="Genesis_9.html" class="nav-arrow" title="Genesis 9">&#8594;</a>
+  </div>
+</nav>
+<header>
+  <h1>Genesis 8</h1>
+  <p>NIV &middot; Scripture Study &middot; Hebrew &middot; Historical &middot; Places &middot; Timelines</p>
+</header>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+  <div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+  <div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+  <div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+  <div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+  <div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+</div>
+<main>
+
+<div class="section">
+  <div class="section-header">God Remembers Noah &mdash; Verses 1&ndash;5</div>
+  <span class="verse-text">
+    <span class="verse-num">1</span> But God remembered Noah and all the wild animals and the livestock that were with him in the ark, and he sent a wind over the earth, and the waters receded.
+    <span class="verse-num">2</span> Now the springs of the deep and the floodgates of the heavens had been closed, and the rain had stopped falling from the sky.
+    <span class="verse-num">3</span> The water receded steadily from the earth. At the end of the hundred and fifty days the water had gone down,
+    <span class="verse-num">4</span> and on the seventeenth day of the seventh month the ark came to rest on the mountains of Ararat.
+    <span class="verse-num">5</span> The waters continued to recede until the tenth month, and on the first day of the tenth month the tops of the mountains became visible.
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s1-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Vayizkor Elohim et-Noah</span> &mdash; &ldquo;But God remembered Noah.&rdquo; <span class="tlit">Zakhar</span> (remembered) is one of the most theologically loaded verbs in the OT. God &ldquo;remembering&rdquo; does not mean he forgot &mdash; it means he acts on a prior commitment. When God &ldquo;remembers&rdquo; his covenant, redemptive action follows (Ex 2:24 &mdash; God hears Israel&rsquo;s groaning and &ldquo;remembers his covenant with Abraham&rdquo;; Gen 19:29 &mdash; God &ldquo;remembered Abraham&rdquo; and saved Lot). The word inaugurates the turn from judgment to salvation.</p><br>
+    <p><span class="tlit">Ruah</span> &mdash; &ldquo;Wind&rdquo; (v.1). The same word as in Genesis 1:2 where the Spirit/wind of God hovered over the waters at creation. Now the ruah blows again over the flood-waters, beginning re-creation. The flood narrative is framed by the same divine breath &mdash; creation and re-creation share the same Spirit.</p><br>
+    <p><span class="tlit">Harare Ararat</span> &mdash; &ldquo;Mountains of Ararat.&rdquo; Ararat is the biblical name for the kingdom of Urartu, centered around modern eastern Turkey/Armenia near Lake Van. The text says &ldquo;mountains of Ararat&rdquo; (plural, a region), not a single peak. The traditional identification with Mount A&#x11F;r&#x131; (16,854 ft / 5,137 m) developed in medieval tradition; the biblical text is less specific.</p>
+  </div>
+  <div id="s1-hist" class="anno-panel hist">
+    <h4>Historical Context</h4>
+    <p>The chronology of the flood is remarkably precise: it begins on the 17th day of the 2nd month (7:11), lasts 40 days of rain (7:12), 150 days of high water (7:24), then the ark rests on the 17th day of the 7th month (8:4). The total duration from entry to exit is just over a year. This calendar precision &mdash; unusual in ancient flood narratives &mdash; signals that the author intends historical specificity, not just myth. The Gilgamesh flood lasts only seven days and nights. The biblical account&rsquo;s realism and calendar detail set it apart from its literary parallels.</p>
+  </div>
+  <div id="s1-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; Re-Creation Begins</h4>
+    <p>Genesis 8 is structured as a deliberate re-creation narrative, mirroring Genesis 1. Just as Genesis 1 began with formless waters and the Spirit/wind creating order, Genesis 8 begins with the Spirit/wind driving back the flood waters. The language tracks the reversal: waters gathered (1:9) &rarr; waters recede (8:3); dry land appeared (1:9) &rarr; tops of mountains visible (8:5); God surveys creation &ldquo;and it was good&rdquo; (1:31) &rarr; God sees the earth re-emerging. Noah is a second Adam, and the post-flood world is a second creation &mdash; with the same commission (9:1 repeats 1:28) and the same temptation to fail.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">The Birds &amp; the Waiting &mdash; Verses 6&ndash;14</div>
+  <span class="verse-text">
+    <span class="verse-num">6</span> After forty days Noah opened a window he had made in the ark
+    <span class="verse-num">7</span> and sent out a raven, and it kept flying back and forth until the water had dried up from the earth.
+    <span class="verse-num">8</span> Then he sent out a dove to see if the water had receded from the surface of the ground.
+    <span class="verse-num">9</span> But the dove could find nowhere to perch because there was water over all the surface of the earth; so it returned to Noah in the ark. He reached out his hand and took the dove and brought it back to himself in the ark.
+    <span class="verse-num">10</span> He waited seven more days and again sent out the dove from the ark.
+    <span class="verse-num">11</span> When the dove returned to him in the evening, there in its beak was a freshly plucked olive leaf! Then Noah knew that the water had receded from the earth.
+    <span class="verse-num">12</span> He waited seven more days and sent the dove out again, but this time it did not return to him.<br><br>
+    <span class="verse-num">13</span> By the first day of the first month of Noah&rsquo;s six hundred and first year, the water had dried up from the earth. Noah then removed the covering of the ark and saw that the surface of the ground was dry.
+    <span class="verse-num">14</span> By the twenty-seventh day of the second month the earth was completely dry.
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s2-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s2-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Orev</span> &mdash; &ldquo;Raven.&rdquo; An unclean bird (Lev 11:15). It does not return &mdash; a scavenger comfortable with death and decay, it finds enough to survive in the post-flood debris. The raven&rsquo;s fate is left unresolved, a narrative loose end that emphasises the dove&rsquo;s significance.</p><br>
+    <p><span class="tlit">Yonah</span> &mdash; &ldquo;Dove.&rdquo; A clean bird. Its three missions &mdash; return empty-handed, return with olive leaf, not return at all &mdash; mark the three stages of the land&rsquo;s recovery. The olive leaf becomes the universal symbol of peace and hope precisely because of this passage. Noah&rsquo;s act of reaching out his hand to bring the dove back (v.9) is one of the tenderest details in the chapter &mdash; the great survivor of the flood, reduced to hoping in a small bird.</p><br>
+    <p><span class="tlit">Seven days</span> &mdash; The repeated seven-day intervals (vv.10, 12) echo the seven-day creation week and the seven-day pre-flood warning (7:4). The world is being reconstructed in sabbatical rhythm.</p>
+  </div>
+  <div id="s2-hist" class="anno-panel hist">
+    <h4>Historical Context</h4>
+    <p>The Gilgamesh Epic describes Utnapishtim releasing three birds in sequence: a dove, a swallow, and a raven. The dove and swallow return; the raven does not, signalling dry land. Genesis reverses the order (raven first, then dove) and uses the dove&rsquo;s return with an olive branch &mdash; a detail absent from Gilgamesh &mdash; as the specific sign of new life. The modification transforms a navigation technique into a theological statement: life is returning; peace is possible; creation is healing.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">Leaving the Ark &amp; Noah&rsquo;s Altar &mdash; Verses 15&ndash;22</div>
+  <span class="verse-text">
+    <span class="verse-num">15</span> Then God said to Noah,
+    <span class="verse-num">16</span> &ldquo;Come out of the ark, you and your wife and your sons and their wives.
+    <span class="verse-num">17</span> Bring out every kind of living creature that is with you &mdash; the birds, the animals, and all the creatures that move along the ground &mdash; so they can multiply on the earth and be fruitful and increase in number on it.&rdquo;<br><br>
+    <span class="verse-num">18</span> So Noah came out, together with his sons and his wife and his sons&rsquo; wives.
+    <span class="verse-num">19</span> All the animals and all the creatures that move along the ground and all the birds &mdash; everything that moves on land &mdash; came out of the ark, one kind after another.<br><br>
+    <span class="verse-num">20</span> Then Noah built an altar to the LORD and, taking some of all the clean animals and clean birds, he sacrificed burnt offerings on it.
+    <span class="verse-num">21</span> The LORD smelled the pleasing aroma and said in his heart: &ldquo;Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood. And never again will I destroy all living creatures, as I have done.
+    <span class="verse-num">22</span> As long as the earth endures,<br>
+    &nbsp;&nbsp;seedtime and harvest,<br>
+    &nbsp;&nbsp;cold and heat,<br>
+    &nbsp;&nbsp;summer and winter,<br>
+    &nbsp;&nbsp;day and night<br>
+    will never cease.&rdquo;
+  </span>
+  <div class="btn-row">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="s3-heb" class="anno-panel heb">
+    <h4>Hebrew Word Study</h4>
+    <p><span class="tlit">Mizbeah</span> &mdash; &ldquo;Altar.&rdquo; The first altar in Scripture. Noah&rsquo;s first act on dry ground is not to build a house, plant crops, or gather food &mdash; it is worship. The Gilgamesh parallel has Utnapishtim offering incense, and the gods &ldquo;gathered like flies&rdquo; around the sacrifice &mdash; a scene of undignified divine hunger. In Genesis, God responds not from need but with grace, making a unilateral promise.</p><br>
+    <p><span class="tlit">Reach nihoah</span> &mdash; &ldquo;Pleasing aroma&rdquo; (literally &ldquo;soothing/restful smell&rdquo;). Derived from the same root as Noah&rsquo;s name (<span class="tlit">nuah</span> &mdash; rest). The aroma of Noah&rsquo;s sacrifice is a <span class="tlit">reach nihoah</span> &mdash; a &ldquo;Noah-smell,&rdquo; a restful smell. God finds rest in Noah&rsquo;s worship. The wordplay that began with his naming in 5:29 is finally resolved.</p><br>
+    <p><span class="tlit">Ki yetser lev ha-adam ra&rsquo; mine&rsquo;urav</span> &mdash; &ldquo;Even though every inclination of the human heart is evil from childhood.&rdquo; Compare 6:5 which uses almost identical language to justify the flood. Now the same diagnosis justifies the opposite action &mdash; mercy. The flood did not fix the human heart; grace accepts the human heart as it is and promises not to destroy it again. This is the logic of the cross: God takes on himself what he will not visit on us.</p>
+  </div>
+  <div id="s3-ctx" class="anno-panel ctx">
+    <h4>Deep Context &mdash; The Pivot of the Flood Narrative</h4>
+    <p>Verse 21 is the theological summit of the entire flood story. Before the flood: &ldquo;every inclination&hellip; was only evil all the time&rdquo; (6:5) &rarr; therefore destroy. After the flood: &ldquo;every inclination&hellip; is evil from childhood&rdquo; (8:21) &rarr; therefore never destroy again. The diagnosis is identical; the response is inverted. God&rsquo;s conclusion from human sinfulness shifts from judgment to mercy. This is not because sin is now acceptable but because God has absorbed the problem differently &mdash; a trajectory that finds its destination at Calvary.</p><br>
+    <p>Verse 22&rsquo;s poem &mdash; seedtime and harvest, cold and heat, summer and winter, day and night &mdash; is a promise of cosmic stability. The rhythm of creation will not again be interrupted. Scientific inquiry, agriculture, and civilization all rest on this promise of consistent natural order. The regularity that makes science possible is a covenant commitment.</p>
+  </div>
+  <div id="s3-cross" class="anno-panel cross-ref">
+    <h4>Cross-References</h4>
+    <ul class="cross-ref-list">
+      <li><span class="ref-cite">Gen 6:5</span><span class="ref-text">The diagnosis of v.21 is verbatim from 6:5 &mdash; but the conclusion reverses: same heart, opposite divine response. Mercy triumphs over judgment (James 2:13).</span></li>
+      <li><span class="ref-cite">Isa 54:9</span><span class="ref-text">&ldquo;As I swore that the waters of Noah would no more go over the earth, so I have sworn that I will not be angry with you.&rdquo; The flood-covenant becomes the template for God&rsquo;s covenant faithfulness to Israel.</span></li>
+      <li><span class="ref-cite">Eph 5:2</span><span class="ref-text">Christ&rsquo;s sacrifice is a &ldquo;fragrant offering&rdquo; (<span class="tlit">reach nihoah</span> in LXX) to God &mdash; the language of Noah&rsquo;s altar applied to the cross.</span></li>
+      <li><span class="ref-cite">Rom 8:20&ndash;22</span><span class="ref-text">Creation groans for liberation &mdash; the promise of Gen 8:22 (creation continues) points toward the hope of creation&rsquo;s renewal, not its abandonment.</span></li>
+    </ul>
+  </div>
+</div>
+
+</main>
+<footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; Commentary for personal study<br>
+  Hebrew transliterations are scholarly approximations &middot; Historical content draws on standard biblical scholarship
+</footer>
+<script>
+function tog(btn,id){const p=document.getElementById(id);const o=p.classList.contains('open');p.classList.toggle('open',!o);btn.classList.toggle('active',!o);}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>
