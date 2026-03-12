@@ -22,6 +22,11 @@
   --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
   --poi-bg:#080e08; --poi-border:#2a5a2a; --poi-accent:#80d080;
   --tl-bg:#0a0f18;
+  --ppl-bg:#1a1000;  --ppl-border:#7a4800; --ppl-accent:#e8a858;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#180a18;  --src-border:#6a2860; --src-accent:#c878b8;
+  --rec-bg:#0a1020;  --rec-border:#304870; --rec-accent:#88a8d8;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
@@ -92,6 +97,49 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
 .timeline-wrap{width:100%;overflow-x:auto;margin:.5rem 0;-webkit-overflow-scrolling:touch;}
 footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(122,72,0,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(106,40,96,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(48,72,112,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e8a858);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
 </style>
 </head>
 <body>
@@ -203,6 +251,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   </div>
 </div>
 
+
+<div class="section">
+  <div class="section-header">Supplementary Scholarship &mdash; Genesis 7</div>
+  <div class="btn-row">
+    <button class="anno-trigger people" onclick="tog(this,'g7-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g7-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g7-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g7-rec')"><span>&#x1F3DB;&#xFE0F; Reception History</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g7-lit')"><span>&#x2720; Literary Structure</span><span class="chev">&#9660;</span></button>
+  </div>
+  <div id="g7-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 7</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah's Family</div><div class="person-role">Eight Survivors — v.7,13</div><p class="person-text">The text carefully names all eight survivors: Noah, his wife, his three sons (Shem, Ham, Japheth), and their wives. Not one person is named outside the family. This is not incidental — the flood narrative frames Noah as a second Adam whose three sons will repopulate the entire earth (ch.10). The women are unnamed throughout, a feature consistent with much ancient narrative but increasingly noted by modern readers. Peter's reading (1 Pet 3:20) emphasizes the number eight as significant — eight people saved through water, paralleling baptism.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah as Second Adam</div><div class="person-role">The Obedient One — v.5,9,16</div><p class="person-text">Three times in ch.7 the narrator notes Noah's complete obedience: 'Noah did all that the LORD commanded him' (v.5); 'as God had commanded Noah' (v.9); 'as God had commanded' (v.16). This triple stress contrasts with Adam's single act of disobedience. Noah is the obedient man in whose day God hits the reset button on creation — but ch.9 will show the reset is incomplete. The deeper problem is not the world around humanity but the heart within it (8:21 confesses this explicitly after the flood).</p></div></div></div>
+  <div id="g7-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 1 — Righteous before me</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Go into the ark, you and your whole family, because I have found you righteous in this generation</td></tr><tr><td class="t-label">ESV</td><td>Go into the ark, you and all your household, for I have seen that you are righteous before me in this generation</td></tr><tr><td class="t-label">NASB</td><td>Go into the ark, you and all your household, for you alone I have seen to be righteous before Me in this time</td></tr><tr><td class="t-label">Note</td><td>ESV adds 'before me' — translating <span class='tlit'>lefanai</span> which NIV omits. This is significant: righteousness is defined in relation to God, not merely in comparison to contemporaries. NASB 'you alone' emphasizes the singularity of Noah's distinction. The phrase 'in this generation' (<span class='tlit'>bador hazeh</span>) implies his righteousness is contextual and comparative, which some rabbinic readers used to question whether Noah would have been as distinguished in Abraham's generation.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 16 — The LORD shut him in</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Then the LORD shut him in</td></tr><tr><td class="t-label">ESV</td><td>And the LORD shut him in</td></tr><tr><td class="t-label">NASB</td><td>and the LORD closed it behind him</td></tr><tr><td class="t-label">KJV</td><td>and the LORD shut him in</td></tr><tr><td class="t-label">Note</td><td>A theologically pregnant verse that all translations render nearly identically. The divine locking of the door means: (1) the time of grace has ended — no one else can enter; (2) Noah is protected by God's own action, not by the door's engineering; (3) God is personally present at the flood's threshold. Jesus alludes to this in the parable of the ten virgins (Matt 25:10) when 'the door was shut' — the same theological logic of a fixed moment of grace.</td></tr></tbody></table></div>
+  <div id="g7-src" class="anno-panel src-panel"><h4>Ancient Source Texts — The Flood Narrative</h4><div class="source-block"><div class="source-title">Gilgamesh Epic — Loading the Ark (Tablet XI)</div><div class="source-quote">Whatever I had of living beings I loaded upon her, I caused to go up into the ship all my family and relations, the beasts of the field, the animals of the field, all the craftsmen I caused to go up.</div><p class="source-note">Utnapishtim's ark loading parallels Noah's in remarkable detail: family, animals, craftsmen/provisions. The Gilgamesh version also specifies the ark's shape (a perfect cube — 120 cubits each side) versus Genesis's elongated boat proportions (300x50x30 cubits), which modern naval architects note are surprisingly seaworthy ratios. The Babylonian cube would be nautically absurd but cosmologically significant. Genesis's proportions suggest the author was describing a real vessel, not a mythological symbol.</p></div><div class="source-block"><div class="source-title">Atrahasis Epic — The Door Sealed (Tablet III)</div><div class="source-quote">He sent his family on board. They ate and they drank. But he went in and out, could not stay still or rest on his haunches... he cut through the mooring rope and cast off the boat.</div><p class="source-note">The Atrahasis flood hero cuts his own mooring rope — he controls his departure. In Genesis, God shuts the door (v.16) — Noah has no agency in the closure. This small difference encodes enormous theological meaning: in Mesopotamian tradition the flood hero is a capable agent who manages his own survival; in Genesis, Noah's survival is entirely in God's hands from beginning to end.</p></div></div>
+  <div id="g7-rec" class="anno-panel rec-panel"><h4>Reception History &mdash; Genesis 7</h4><div class="rec-block"><div class="rec-who">1 Peter 3:20–21 — Baptismal Typology</div><p class="rec-text">Peter's reading of the flood as a type of baptism became one of the most influential interpretations in Christian history. 'Corresponding to that, baptism now saves you — not the removal of dirt from the flesh, but an appeal to God for a good conscience — through the resurrection of Jesus Christ.' The flood water that destroyed the world simultaneously saved eight people; baptismal water enacts the same dual movement of judgment and rescue. This typological reading made Noah's ark a standard image for the church in early Christian art — over 100 ark images survive in the Roman catacombs.</p></div><div class="rec-block"><div class="rec-who">Chrysostom — Homily on 'The LORD shut him in'</div><p class="rec-text">Chrysostom preached extensively on v.16's divine door-closing: 'Do you see how He cared for the just man? The LORD shut him in — not with a lock and key but with His own power, making the ark unassailable from without and secure within.' He used this verse to argue that divine protection is not mechanical (the ark's engineering) but personal (God's presence). The sermon became a model for preaching divine providence — human preparation is necessary but God's direct action is what ultimately saves.</p></div><div class="rec-block"><div class="rec-who">Origen — The Ark as the Church</div><p class="rec-text">Origen systematized the typological reading: the ark is the church, outside of which there is no salvation during the flood of judgment. The eight saved correspond to those who enter through baptism (he connected eight with the eighth day — Sunday, resurrection day, the day beyond the seven-day week of this age). This 'ark = church' typology shaped the medieval theological maxim <em>extra ecclesiam nulla salus</em> (outside the church no salvation), though that formula carries more weight than Origen intended.</p></div></div>
+  <div id="g7-lit" class="anno-panel lit-panel"><h4>Literary Structure &mdash; The De-Creation Mirror</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;color:#d8e0a8;margin-bottom:.8rem;">Genesis 7 systematically reverses Genesis 1, day by day. The flood is a literary and theological <em>un-creation</em>:</p><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Gen 1:6-7</span><span class="lit-text">Waters separated — sky above, sea below</span></div><div class="lit-row"><span class="lit-label">Gen 7:11</span><span class="lit-text">Floodgates of sky &amp; springs of deep burst open — separation collapses</span></div><div class="lit-center">&mdash;</div><div class="lit-row"><span class="lit-label">Gen 1:9-10</span><span class="lit-text">Dry land appears — sea contained</span></div><div class="lit-row"><span class="lit-label">Gen 7:19-20</span><span class="lit-text">All high mountains covered — dry land disappears</span></div><div class="lit-center">&mdash;</div><div class="lit-row"><span class="lit-label">Gen 1:20-22</span><span class="lit-text">Birds and sea creatures fill their domains</span></div><div class="lit-row"><span class="lit-label">Gen 7:21-22</span><span class="lit-text">All creatures with breath of life perish</span></div><div class="lit-center">&mdash;</div><div class="lit-row"><span class="lit-label">Gen 1:28</span><span class="lit-text">Be fruitful and fill the earth</span></div><div class="lit-row"><span class="lit-label">Gen 7:23</span><span class="lit-text">Only Noah remained — and those with him in the ark</span></div></div><p class="lit-note">The flood narrative also uses precise chronological data (day 17 of the 2nd month; 40 days; 150 days) that is unique in the primeval history. Scholars have identified a 370-day flood chronology that mirrors a solar year &mdash; creation takes a week; un-creation and re-creation take a year. The precision is not incidental: it marks the flood as a cosmic liturgical event, not merely a natural disaster.</p></div>
+</div>
 </main>
 <footer>
   Scripture: Holy Bible, New International Version (NIV) &middot; Commentary for personal study<br>
