@@ -1,4 +1,4 @@
-const CACHE = 'scripture-v13';
+const CACHE = 'scripture-v14';
 const CORE = [
   '/',
   '/index.html',
@@ -12,6 +12,21 @@ const CORE = [
   '/genesis/Genesis_8.html',
   '/genesis/Genesis_9.html',
   '/genesis/Genesis_10.html',
+  '/genesis/Genesis_11.html',
+  '/genesis/Genesis_12.html',
+  '/genesis/Genesis_13.html',
+  '/genesis/Genesis_14.html',
+  '/genesis/Genesis_15.html',
+  '/genesis/Genesis_16.html',
+  '/genesis/Genesis_17.html',
+  '/genesis/Genesis_18.html',
+  '/genesis/Genesis_19.html',
+  '/genesis/Genesis_20.html',
+  '/genesis/Genesis_21.html',
+  '/genesis/Genesis_22.html',
+  '/genesis/Genesis_23.html',
+  '/genesis/Genesis_24.html',
+  '/genesis/Genesis_25.html',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png'
