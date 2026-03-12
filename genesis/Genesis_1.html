@@ -159,6 +159,40 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+
+/* Hebrew text panel */
+--heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+/* Threading panel */
+--thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+/* Hebrew text display */
+.heb-chapter{direction:rtl;font-family:'EB Garamond',serif;font-size:1.12rem;line-height:2.0;color:#f0e0b0;background:#0d0b00;border:1px solid #3a2c00;border-radius:6px;padding:1.1rem 1.3rem;margin:.5rem 0;unicode-bidi:embed;}
+.heb-verse{display:block;padding:.12rem 0;}
+.heb-vnum{direction:ltr;display:inline-block;font-family:'Cinzel',serif;font-size:.58rem;color:#806020;letter-spacing:.08em;vertical-align:super;margin-left:.3rem;unicode-bidi:isolate;}
+.heb-note{font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#806040;direction:ltr;margin-top:.6rem;font-style:italic;}
+/* Threading display */
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward {border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo       {background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal   {background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast   {background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation  {background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion   {background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+
 </style>
 </head>
 <body>
@@ -688,7 +722,101 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 1</div>
 
-  <div class="btn-row">
+  
+<div class="btn-row">
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g1-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g1-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="g1-hebtext" class="anno-panel heb-text-panel">
+  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
+  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">2</span> וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם׃</span>
+<span class="heb-verse"><span class="heb-vnum">3</span> וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר׃</span>
+<span class="heb-verse"><span class="heb-vnum">4</span> וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ׃</span>
+<span class="heb-verse"><span class="heb-vnum">5</span> וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד׃</span>
+<span class="heb-verse"><span class="heb-vnum">6</span> וַיֹּאמֶר אֱלֹהִים יְהִי רָקִיעַ בְּתוֹךְ הַמָּיִם וִיהִי מַבְדִּיל בֵּין מַיִם לָמָיִם׃</span>
+<span class="heb-verse"><span class="heb-vnum">7</span> וַיַּעַשׂ אֱלֹהִים אֶת־הָרָקִיעַ וַיַּבְדֵּל בֵּין הַמַּיִם אֲשֶׁר מִתַּחַת לָרָקִיעַ וּבֵין הַמַּיִם אֲשֶׁר מֵעַל לָרָקִיעַ וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">8</span> וַיִּקְרָא אֱלֹהִים לָרָקִיעַ שָׁמָיִם וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם שֵׁנִי׃</span>
+<span class="heb-verse"><span class="heb-vnum">9</span> וַיֹּאמֶר אֱלֹהִים יִקָּווּ הַמַּיִם מִתַּחַת הַשָּׁמַיִם אֶל־מָקוֹם אֶחָד וְתֵרָאֶה הַיַּבָּשָׁה וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">10</span> וַיִּקְרָא אֱלֹהִים לַיַּבָּשָׁה אֶרֶץ וּלְמִקְוֵה הַמַּיִם קָרָא יַמִּים וַיַּרְא אֱלֹהִים כִּי־טוֹב׃</span>
+<span class="heb-verse"><span class="heb-vnum">11</span> וַיֹּאמֶר אֱלֹהִים תַּדְשֵׁא הָאָרֶץ דֶּשֶׁא עֵשֶׂב מַזְרִיעַ זֶרַע עֵץ פְּרִי עֹשֶׂה פְּרִי לְמִינוֹ אֲשֶׁר זַרְעוֹ־בוֹ עַל־הָאָרֶץ וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">12</span> וַתּוֹצֵא הָאָרֶץ דֶּשֶׁא עֵשֶׂב מַזְרִיעַ זֶרַע לְמִינֵהוּ וְעֵץ עֹשֶׂה־פְּרִי אֲשֶׁר זַרְעוֹ־בוֹ לְמִינֵהוּ וַיַּרְא אֱלֹהִים כִּי־טוֹב׃</span>
+<span class="heb-verse"><span class="heb-vnum">13</span> וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם שְׁלִישִׁי׃</span>
+<span class="heb-verse"><span class="heb-vnum">14</span> וַיֹּאמֶר אֱלֹהִים יְהִי מְאֹרֹת בִּרְקִיעַ הַשָּׁמַיִם לְהַבְדִּיל בֵּין הַיּוֹם וּבֵין הַלָּיְלָה וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים וּלְיָמִים וְשָׁנִים׃</span>
+<span class="heb-verse"><span class="heb-vnum">15</span> וְהָיוּ לִמְאוֹרֹת בִּרְקִיעַ הַשָּׁמַיִם לְהָאִיר עַל־הָאָרֶץ וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">16</span> וַיַּעַשׂ אֱלֹהִים אֶת־שְׁנֵי הַמְּאֹרֹת הַגְּדֹלִים אֶת־הַמָּאוֹר הַגָּדֹל לְמֶמְשֶׁלֶת הַיּוֹם וְאֶת־הַמָּאוֹר הַקָּטֹן לְמֶמְשֶׁלֶת הַלַּיְלָה וְאֵת הַכּוֹכָבִים׃</span>
+<span class="heb-verse"><span class="heb-vnum">17</span> וַיִּתֵּן אֹתָם אֱלֹהִים בִּרְקִיעַ הַשָּׁמָיִם לְהָאִיר עַל־הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">18</span> וְלִמְשֹׁל בַּיּוֹם וּבַלַּיְלָה וּלְהַבְדִּיל בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ וַיַּרְא אֱלֹהִים כִּי־טוֹב׃</span>
+<span class="heb-verse"><span class="heb-vnum">19</span> וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם רְבִיעִי׃</span>
+<span class="heb-verse"><span class="heb-vnum">20</span> וַיֹּאמֶר אֱלֹהִים יִשְׁרְצוּ הַמַּיִם שֶׁרֶץ נֶפֶשׁ חַיָּה וְעוֹף יְעוֹפֵף עַל־הָאָרֶץ עַל־פְּנֵי רְקִיעַ הַשָּׁמָיִם׃</span>
+<span class="heb-verse"><span class="heb-vnum">21</span> וַיִּבְרָא אֱלֹהִים אֶת־הַתַּנִּינִם הַגְּדֹלִים וְאֵת כָּל־נֶפֶשׁ הַחַיָּה הָרֹמֶשֶׂת אֲשֶׁר שָׁרְצוּ הַמַּיִם לְמִינֵהֶם וְאֵת כָּל־עוֹף כָּנָף לְמִינֵהוּ וַיַּרְא אֱלֹהִים כִּי־טוֹב׃</span>
+<span class="heb-verse"><span class="heb-vnum">22</span> וַיְבָרֶךְ אֹתָם אֱלֹהִים לֵאמֹר פְּרוּ וּרְבוּ וּמִלְאוּ אֶת־הַמַּיִם בַּיַּמִּים וְהָעוֹף יִרֶב בָּאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">23</span> וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם חֲמִישִׁי׃</span>
+<span class="heb-verse"><span class="heb-vnum">24</span> וַיֹּאמֶר אֱלֹהִים תּוֹצֵא הָאָרֶץ נֶפֶשׁ חַיָּה לְמִינָהּ בְּהֵמָה וָרֶמֶשׂ וְחַיְתוֹ־אֶרֶץ לְמִינָהּ וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">25</span> וַיַּעַשׂ אֱלֹהִים אֶת־חַיַּת הָאָרֶץ לְמִינָהּ וְאֶת־הַבְּהֵמָה לְמִינָהּ וְאֵת כָּל־רֶמֶשׂ הָאֲדָמָה לְמִינֵהוּ וַיַּרְא אֱלֹהִים כִּי־טוֹב׃</span>
+<span class="heb-verse"><span class="heb-vnum">26</span> וַיֹּאמֶר אֱלֹהִים נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ כִּדְמוּתֵנוּ וְיִרְדּוּ בִדְגַת הַיָּם וּבְעוֹף הַשָּׁמַיִם וּבַבְּהֵמָה וּבְכָל־הָאָרֶץ וּבְכָל־הָרֶמֶשׂ הָרֹמֵשׂ עַל־הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">27</span> וַיִּבְרָא אֱלֹהִים אֶת־הָאָדָם בְּצַלְמוֹ בְּצֶלֶם אֱלֹהִים בָּרָא אֹתוֹ זָכָר וּנְקֵבָה בָּרָא אֹתָם׃</span>
+<span class="heb-verse"><span class="heb-vnum">28</span> וַיְבָרֶךְ אֹתָם אֱלֹהִים וַיֹּאמֶר לָהֶם אֱלֹהִים פְּרוּ וּרְבוּ וּמִלְאוּ אֶת־הָאָרֶץ וְכִבְשֻׁהָ וּרְדוּ בִּדְגַת הַיָּם וּבְעוֹף הַשָּׁמַיִם וּבְכָל־חַיָּה הָרֹמֶשֶׂת עַל־הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">29</span> וַיֹּאמֶר אֱלֹהִים הִנֵּה נָתַתִּי לָכֶם אֶת־כָּל־עֵשֶׂב זֹרֵעַ זֶרַע אֲשֶׁר עַל־פְּנֵי כָל־הָאָרֶץ וְאֶת־כָּל־הָעֵץ אֲשֶׁר־בּוֹ פְרִי־עֵץ זֹרֵעַ זָרַע לָכֶם יִהְיֶה לְאָכְלָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">30</span> וּלְכָל־חַיַּת הָאָרֶץ וּלְכָל־עוֹף הַשָּׁמַיִם וּלְכֹל רוֹמֵשׂ עַל־הָאָרֶץ אֲשֶׁר־בּוֹ נֶפֶשׁ חַיָּה אֶת־כָּל־יֶרֶק עֵשֶׂב לְאָכְלָה וַיְהִי־כֵן׃</span>
+<span class="heb-verse"><span class="heb-vnum">31</span> וַיַּרְא אֱלֹהִים אֶת־כָּל־אֲשֶׁר עָשָׂה וְהִנֵּה־טוֹב מְאֹד וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם הַשִּׁשִּׁי׃</span>
+</div>
+  <p class="heb-note">Full chapter text (Westminster Leningrad Codex, public domain). Reading right to left. Vowel points (niqqud) included.</p>
+</div>
+<div id="g1-thread" class="anno-panel thread-panel">
+  <h4>&#x21C4; Intertextual Threading</h4>
+  <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">6 canonical threads &mdash; 6 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
+  <div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">vv.1–2</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">John 1:1–3</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">John opens with <em>En archē</em> — 'In the beginning' — the exact LXX rendering of <em>bereshit</em>. He then identifies the pre-existent Word (Logos) as the agent of all creation: 'through him all things were made.' John's prologue is a deliberate new-Genesis, announcing that Jesus is the fulfillment of what Gen 1 began.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.2 — ruah over waters</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Matt 3:16; Luke 3:22</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">At Jesus's baptism, the Spirit of God descends like a dove over the water — recalling Gen 1:2's <em>ruah Elohim merahefet</em> (Spirit hovering over waters). Both scenes mark the beginning of a new creative act: Gen 1 = original creation; the baptism = new creation inaugurated through Christ.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.3 — Let there be light</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">2 Cor 4:6</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">Paul explicitly draws the parallel: 'God, who said, "Let light shine out of darkness," made his light shine in our hearts to give us the light of the knowledge of God's glory displayed in the face of Christ.' The new creation in Christ is Paul's direct theological extension of Gen 1:3.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.26 — Let us make</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Col 1:15–17</span>
+    <span class="thread-type fulfillment">Fulfillment</span>
+  </div>
+  <p class="thread-text">Paul identifies Christ as 'the image of the invisible God' and 'the firstborn over all creation,' through whom all things were created. The <em>tselem Elohim</em> (image of God) that humans bear imperfectly (Gen 1:26) finds its perfect expression in Christ — he is the true Image. The 'us' of Gen 1:26 receives its fullest meaning in Trinitarian theology.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.28 — Fill and subdue</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Rev 21–22</span>
+    <span class="thread-type fulfillment">Fulfillment</span>
+  </div>
+  <p class="thread-text">Revelation's new creation restores and completes the Gen 1 mandate. The curse (Gen 3) is explicitly reversed (Rev 22:3: 'No longer will there be any curse'). The fruitful city-garden of Rev 21–22 is Eden restored and escalated — the original mandate of Gen 1:28 finally fulfilled in the new heavens and earth.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">vv.1–31 — Creation pattern</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Exod 39–40</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">The construction of the tabernacle in Exodus 39–40 uses the identical sevenfold structure of Gen 1: seven divine speech acts, the work is 'completed' (same word: <em>vayekhal</em>), Moses 'sees' and approves (same verb as Gen 1's <em>vayar</em>), and blesses the people. The tabernacle is a portable Eden — a micro-cosmos. The OT authors understood creation and worship as structurally identical.</p>
+</div>
+</div>
+<div class="btn-row">
     <button class="anno-trigger people" onclick="tog(this,'g1-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger translations" onclick="tog(this,'g1-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger sources" onclick="tog(this,'g1-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>

@@ -140,6 +140,40 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
 .lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+
+/* Hebrew text panel */
+--heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+/* Threading panel */
+--thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:var(--heb-text-border);background:rgba(74,56,0,.15);}
+.anno-trigger.threading  {color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.12);}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel  {background:var(--thread-bg); border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+/* Hebrew text display */
+.heb-chapter{direction:rtl;font-family:'EB Garamond',serif;font-size:1.12rem;line-height:2.0;color:#f0e0b0;background:#0d0b00;border:1px solid #3a2c00;border-radius:6px;padding:1.1rem 1.3rem;margin:.5rem 0;unicode-bidi:embed;}
+.heb-verse{display:block;padding:.12rem 0;}
+.heb-vnum{direction:ltr;display:inline-block;font-family:'Cinzel',serif;font-size:.58rem;color:#806020;letter-spacing:.08em;vertical-align:super;margin-left:.3rem;unicode-bidi:isolate;}
+.heb-note{font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#806040;direction:ltr;margin-top:.6rem;font-style:italic;}
+/* Threading display */
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward {border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo       {background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal   {background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast   {background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation  {background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion   {background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+
 </style>
 </head>
 <body>
@@ -286,7 +320,76 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 6</div>
-  <div class="btn-row">
+  
+<div class="btn-row">
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g6-hebtext')"><span>&#x5D0;&#x5D1; Hebrew Text</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g6-thread')"><span>&#x21C4; Intertextual Threading</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="g6-hebtext" class="anno-panel heb-text-panel">
+  <h4>&#x5D1;&#x5E8;&#x5D0;&#x5E9;&#x5D9;&#x5EA; &mdash; Hebrew Text (WLC)</h4>
+  <div class="heb-chapter"><span class="heb-verse"><span class="heb-vnum">1</span> וַיְהִי כִּי־הֵחֵל הָאָדָם לָרֹב עַל־פְּנֵי הָאֲדָמָה וּבָנוֹת יֻלְּדוּ לָהֶם׃</span>
+<span class="heb-verse"><span class="heb-vnum">2</span> וַיִּרְאוּ בְנֵי־הָאֱלֹהִים אֶת־בְּנוֹת הָאָדָם כִּי טֹבֹת הֵנָּה וַיִּקְחוּ לָהֶם נָשִׁים מִכֹּל אֲשֶׁר בָּחָרוּ׃</span>
+<span class="heb-verse"><span class="heb-vnum">3</span> וַיֹּאמֶר יְהוָה לֹא־יָדוֹן רוּחִי בָאָדָם לְעֹלָם בְּשַׁגַּם הוּא בָשָׂר וְהָיוּ יָמָיו מֵאָה וְעֶשְׂרִים שָׁנָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">4</span> הַנְּפִלִים הָיוּ בָאָרֶץ בַּיָּמִים הָהֵם וְגַם אַחֲרֵי־כֵן אֲשֶׁר יָבֹאוּ בְּנֵי הָאֱלֹהִים אֶל־בְּנוֹת הָאָדָם וְיָלְדוּ לָהֶם הֵמָּה הַגִּבֹּרִים אֲשֶׁר מֵעוֹלָם אַנְשֵׁי הַשֵּׁם׃</span>
+<span class="heb-verse"><span class="heb-vnum">5</span> וַיַּרְא יְהוָה כִּי רַבָּה רָעַת הָאָדָם בָּאָרֶץ וְכָל־יֵצֶר מַחְשְׁבֹת לִבּוֹ רַק רַע כָּל־הַיּוֹם׃</span>
+<span class="heb-verse"><span class="heb-vnum">6</span> וַיִּנָּחֶם יְהוָה כִּי־עָשָׂה אֶת־הָאָדָם בָּאָרֶץ וַיִּתְעַצֵּב אֶל־לִבּוֹ׃</span>
+<span class="heb-verse"><span class="heb-vnum">7</span> וַיֹּאמֶר יְהוָה אֶמְחֶה אֶת־הָאָדָם אֲשֶׁר־בָּרָאתִי מֵעַל פְּנֵי הָאֲדָמָה מֵאָדָם עַד־בְּהֵמָה עַד־רֶמֶשׂ וְעַד־עוֹף הַשָּׁמָיִם כִּי נִחַמְתִּי כִּי עֲשִׂיתִם׃</span>
+<span class="heb-verse"><span class="heb-vnum">8</span> וְנֹחַ מָצָא חֵן בְּעֵינֵי יְהוָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">9</span> אֵלֶּה תּוֹלְדֹת נֹחַ נֹחַ אִישׁ צַדִּיק תָּמִים הָיָה בְּדֹרֹתָיו אֶת־הָאֱלֹהִים הִתְהַלֶּךְ־נֹחַ׃</span>
+<span class="heb-verse"><span class="heb-vnum">10</span> וַיּוֹלֶד נֹחַ שְׁלֹשָׁה בָנִים אֶת־שֵׁם אֶת־חָם וְאֶת־יָפֶת׃</span>
+<span class="heb-verse"><span class="heb-vnum">11</span> וַתִּשָּׁחֵת הָאָרֶץ לִפְנֵי הָאֱלֹהִים וַתִּמָּלֵא הָאָרֶץ חָמָס׃</span>
+<span class="heb-verse"><span class="heb-vnum">12</span> וַיַּרְא אֱלֹהִים אֶת־הָאָרֶץ וְהִנֵּה נִשְׁחָתָה כִּי־הִשְׁחִית כָּל־בָּשָׂר אֶת־דַּרְכּוֹ עַל־הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">13</span> וַיֹּאמֶר אֱלֹהִים לְנֹחַ קֵץ כָּל־בָּשָׂר בָּא לְפָנַי כִּי־מָלְאָה הָאָרֶץ חָמָס מִפְּנֵיהֶם וְהִנְנִי מַשְׁחִיתָם אֶת־הָאָרֶץ׃</span>
+<span class="heb-verse"><span class="heb-vnum">14</span> עֲשֵׂה לְךָ תֵּבַת עֲצֵי־גֹפֶר קִנִּים תַּעֲשֶׂה אֶת־הַתֵּבָה וְכָפַרְתָּ אֹתָהּ מִבַּיִת וּמִחוּץ בַּכֹּפֶר׃</span>
+<span class="heb-verse"><span class="heb-vnum">15</span> וְזֶה אֲשֶׁר תַּעֲשֶׂה אֹתָהּ שְׁלֹשׁ מֵאוֹת אַמָּה אֹרֶךְ הַתֵּבָה חֲמִשִּׁים אַמָּה רָחְבָּהּ וּשְׁלֹשִׁים אַמָּה קוֹמָתָהּ׃</span>
+<span class="heb-verse"><span class="heb-vnum">16</span> צֹהַר תַּעֲשֶׂה לַתֵּבָה וְאֶל־אַמָּה תְּכַלֶּנָּה מִלְמַעְלָה וּפֶתַח הַתֵּבָה בְּצִדָּהּ תָּשִׂים תַּחְתִּיִּם שְׁנִיִּם וּשְׁלִשִׁים תַּעֲשֶׂהָ׃</span>
+<span class="heb-verse"><span class="heb-vnum">17</span> וַאֲנִי הִנְנִי מֵבִיא אֶת־הַמַּבּוּל מַיִם עַל־הָאָרֶץ לְשַׁחֵת כָּל־בָּשָׂר אֲשֶׁר־בּוֹ רוּחַ חַיִּים מִתַּחַת הַשָּׁמָיִם כֹּל אֲשֶׁר־בָּאָרֶץ יִגְוָע׃</span>
+<span class="heb-verse"><span class="heb-vnum">18</span> וַהֲקִמֹתִי אֶת־בְּרִיתִי אִתָּךְ וּבָאתָ אֶל־הַתֵּבָה אַתָּה וּבָנֶיךָ וְאִשְׁתְּךָ וּנְשֵׁי־בָנֶיךָ אִתָּךְ׃</span>
+<span class="heb-verse"><span class="heb-vnum">19</span> וּמִכָּל־הָחַי מִכָּל־בָּשָׂר שְׁנַיִם מִכֹּל תָּבִיא אֶל־הַתֵּבָה לְהַחֲיֹת אִתָּךְ זָכָר וּנְקֵבָה יִהְיוּ׃</span>
+<span class="heb-verse"><span class="heb-vnum">20</span> מֵהָעוֹף לְמִינֵהוּ וּמִן־הַבְּהֵמָה לְמִינָהּ מִכֹּל רֶמֶשׂ הָאֲדָמָה לְמִינֵהוּ שְׁנַיִם מִכֹּל יָבֹאוּ אֵלֶיךָ לְהַחֲיוֹת׃</span>
+<span class="heb-verse"><span class="heb-vnum">21</span> וְאַתָּה קַח־לְךָ מִכָּל־מַאֲכָל אֲשֶׁר יֵאָכֵל וְאָסַפְתָּ אֵלֶיךָ וְהָיָה לְךָ וְלָהֶם לְאָכְלָה׃</span>
+<span class="heb-verse"><span class="heb-vnum">22</span> וַיַּעַשׂ נֹחַ כְּכֹל אֲשֶׁר צִוָּה אֹתוֹ אֱלֹהִים כֵּן עָשָׂה׃</span>
+</div>
+  <p class="heb-note">Full chapter text (Westminster Leningrad Codex, public domain). Reading right to left. Vowel points (niqqud) included.</p>
+</div>
+<div id="g6-thread" class="anno-panel thread-panel">
+  <h4>&#x21C4; Intertextual Threading</h4>
+  <p style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:#7070a0;margin-bottom:.8rem;">4 canonical threads &mdash; 4 forward (passages that echo this chapter) &nbsp;|&nbsp; 0 backward (texts this chapter echoes)</p>
+  <div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.8 — Noah found grace</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Eph 2:8–9; Rom 3:24</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">The first occurrence of <em>chen</em> (grace/favour) in Scripture is in the context of universal judgment. This establishes the theological pattern: grace appears not as a reward for virtue but as an act of unilateral divine favour in the face of deserved destruction. Paul's 'saved by grace through faith, not by works' (Eph 2:8) is the full articulation of what Gen 6:8 announces with two words.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">vv.11–12 — violence filling the earth</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Matt 24:37–39; Luke 17:26–27</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">Jesus uses the days of Noah as the paradigm for the end times: 'As it was in the days of Noah, so it will be at the coming of the Son of Man.' The flood narrative becomes the eschatological template — sudden judgment falling on a world carrying on normally, with only those prepared surviving. Gen 6's moral diagnosis ('filled with violence') is the condition Jesus identifies as the sign of the end.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.18 — covenant first occurrence</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Gen 9:9–17; 15:18; Jer 31:31</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">The first use of <em>berit</em> (covenant) in Scripture is God's promise to Noah (6:18) — before the rainbow, before Sinai, before Abraham. This establishes covenant as the fundamental framework of God's relationship with humanity. The Noahic → Abrahamic → Mosaic → Davidic → New Covenant sequence is all anticipated in this first <em>berit</em>.</p>
+</div><div class="thread-item forward">
+  <div class="thread-header">
+    <span class="thread-anchor">v.5 — every inclination evil</span>
+    <span class="thread-arrow">&#x2192;</span>
+    <span class="thread-target">Gen 8:21; Jer 17:9; Rom 3:10–18</span>
+    <span class="thread-type echo">Echo</span>
+  </div>
+  <p class="thread-text">God's diagnosis in 6:5 ('every inclination... only evil all the time') is repeated verbatim in 8:21 as the grounds for mercy rather than judgment — the same problem generates opposite responses. Jeremiah 17:9 ('the heart is deceitful above all things') echoes the same anthropological verdict. Paul's catena of OT quotations in Romans 3:10–18 builds the same case: universal human depravity as the precondition for universal grace.</p>
+</div>
+</div>
+<div class="btn-row">
     <button class="anno-trigger people" onclick="tog(this,'g6-ppl')"><span>&#x1F464; People</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger translations" onclick="tog(this,'g6-trans')"><span>&#x1F4D6; Translations</span><span class="chev">&#9660;</span></button>
     <button class="anno-trigger sources" onclick="tog(this,'g6-src')"><span>&#x1F4DC; Ancient Sources</span><span class="chev">&#9660;</span></button>
