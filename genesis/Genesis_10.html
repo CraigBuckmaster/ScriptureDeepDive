@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -252,11 +255,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Table of Nations &mdash; Introduction &middot; Verses 1&ndash;5</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> This is the account of Shem, Ham and Japheth, Noah&rsquo;s sons, who themselves had sons after the flood.<br><br>
-    <span class="verse-num">2</span> The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshek and Tiras.
-    <span class="verse-num">3</span> The sons of Gomer: Ashkenaz, Riphath and Togarmah.
-    <span class="verse-num">4</span> The sons of Javan: Elishah, Tarshish, the Kittites and the Rodanites.
-    <span class="verse-num">5</span> (From these the maritime peoples spread out into their territories by their clans within their nations, each with its own language.)
+    <span id="v10-1" class="verse-num">1</span> This is the account of Shem, Ham and Japheth, Noah&rsquo;s sons, who themselves had sons after the flood.<br><br>
+    <span id="v10-2" class="verse-num">2</span> The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshek and Tiras.
+    <span id="v10-3" class="verse-num">3</span> The sons of Gomer: Ashkenaz, Riphath and Togarmah.
+    <span id="v10-4" class="verse-num">4</span> The sons of Javan: Elishah, Tarshish, the Kittites and the Rodanites.
+    <span id="v10-5" class="verse-num">5</span> (From these the maritime peoples spread out into their territories by their clans within their nations, each with its own language.)
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -282,21 +285,21 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Line of Ham &mdash; Verses 6&ndash;20</div>
   <span class="verse-text">
-    <span class="verse-num">6</span> The sons of Ham: Cush, Egypt, Put and Canaan.
-    <span class="verse-num">7</span> The sons of Cush: Seba, Havilah, Sabtah, Raamah and Sabteka. The sons of Raamah: Sheba and Dedan.
-    <span class="verse-num">8</span> Cush was the father of Nimrod, who became a mighty warrior on the earth.
-    <span class="verse-num">9</span> He was a mighty hunter before the LORD; that is why it is said, &ldquo;Like Nimrod, a mighty hunter before the LORD.&rdquo;
-    <span class="verse-num">10</span> The first centers of his kingdom were Babylon, Uruk, Akkad and Kalneh, in Shinar.
-    <span class="verse-num">11</span> From that land he went to Assyria, where he built Nineveh, Rehoboth Ir, Calah
-    <span class="verse-num">12</span> and Resen, which is between Nineveh and Calah &mdash; which is the great city.<br><br>
-    <span class="verse-num">13</span> Egypt was the father of the Ludites, Anamites, Lehabites, Naphtuhites,
-    <span class="verse-num">14</span> Pathrusites, Kasluhites (from whom the Philistines came) and Caphtorites.<br><br>
-    <span class="verse-num">15</span> Canaan was the father of Sidon his firstborn, and of the Hittites,
-    <span class="verse-num">16</span> Jebusites, Amorites, Girgashites,
-    <span class="verse-num">17</span> Hivites, Arkites, Sinites,
-    <span class="verse-num">18</span> Arvadites, Zemarites and Hamathites. Later the Canaanite clans scattered
-    <span class="verse-num">19</span> and the borders of Canaan reached from Sidon toward Gerar as far as Gaza, and then toward Sodom, Gomorrah, Admah and Zeboyim, as far as Lasha.
-    <span class="verse-num">20</span> These are the sons of Ham by their clans and languages, in their territories and nations.
+    <span id="v10-6" class="verse-num">6</span> The sons of Ham: Cush, Egypt, Put and Canaan.
+    <span id="v10-7" class="verse-num">7</span> The sons of Cush: Seba, Havilah, Sabtah, Raamah and Sabteka. The sons of Raamah: Sheba and Dedan.
+    <span id="v10-8" class="verse-num">8</span> Cush was the father of Nimrod, who became a mighty warrior on the earth.
+    <span id="v10-9" class="verse-num">9</span> He was a mighty hunter before the LORD; that is why it is said, &ldquo;Like Nimrod, a mighty hunter before the LORD.&rdquo;
+    <span id="v10-10" class="verse-num">10</span> The first centers of his kingdom were Babylon, Uruk, Akkad and Kalneh, in Shinar.
+    <span id="v10-11" class="verse-num">11</span> From that land he went to Assyria, where he built Nineveh, Rehoboth Ir, Calah
+    <span id="v10-12" class="verse-num">12</span> and Resen, which is between Nineveh and Calah &mdash; which is the great city.<br><br>
+    <span id="v10-13" class="verse-num">13</span> Egypt was the father of the Ludites, Anamites, Lehabites, Naphtuhites,
+    <span id="v10-14" class="verse-num">14</span> Pathrusites, Kasluhites (from whom the Philistines came) and Caphtorites.<br><br>
+    <span id="v10-15" class="verse-num">15</span> Canaan was the father of Sidon his firstborn, and of the Hittites,
+    <span id="v10-16" class="verse-num">16</span> Jebusites, Amorites, Girgashites,
+    <span id="v10-17" class="verse-num">17</span> Hivites, Arkites, Sinites,
+    <span id="v10-18" class="verse-num">18</span> Arvadites, Zemarites and Hamathites. Later the Canaanite clans scattered
+    <span id="v10-19" class="verse-num">19</span> and the borders of Canaan reached from Sidon toward Gerar as far as Gaza, and then toward Sodom, Gomorrah, Admah and Zeboyim, as far as Lasha.
+    <span id="v10-20" class="verse-num">20</span> These are the sons of Ham by their clans and languages, in their territories and nations.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -347,18 +350,18 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Line of Shem &mdash; Verses 21&ndash;32</div>
   <span class="verse-text">
-    <span class="verse-num">21</span> Sons were also born to Shem, whose older brother was Japheth; Shem was the ancestor of all the sons of Eber.<br><br>
-    <span class="verse-num">22</span> The sons of Shem: Elam, Ashur, Arphaxad, Lud and Aram.
-    <span class="verse-num">23</span> The sons of Aram: Uz, Hul, Gether and Meshek.
-    <span class="verse-num">24</span> Arphaxad was the father of Shelah, and Shelah the father of Eber.
-    <span class="verse-num">25</span> Two sons were born to Eber: One was named Peleg, because in his time the earth was divided; his brother was named Joktan.
-    <span class="verse-num">26</span> Joktan was the father of Almodad, Sheleph, Hazarmaveth, Jerah,
-    <span class="verse-num">27</span> Hadoram, Uzal, Diklah,
-    <span class="verse-num">28</span> Obal, Abimael, Sheba,
-    <span class="verse-num">29</span> Ophir, Havilah and Jobab. All these were sons of Joktan.
-    <span class="verse-num">30</span> The region where they lived stretched from Mesha toward Sephar, in the eastern hill country.
-    <span class="verse-num">31</span> These are the sons of Shem by their clans and languages, in their territories and nations.<br><br>
-    <span class="verse-num">32</span> These are the clans of Noah&rsquo;s sons, according to their lines of descent, within their nations. From these the nations spread out over the earth after the flood.
+    <span id="v10-21" class="verse-num">21</span> Sons were also born to Shem, whose older brother was Japheth; Shem was the ancestor of all the sons of Eber.<br><br>
+    <span id="v10-22" class="verse-num">22</span> The sons of Shem: Elam, Ashur, Arphaxad, Lud and Aram.
+    <span id="v10-23" class="verse-num">23</span> The sons of Aram: Uz, Hul, Gether and Meshek.
+    <span id="v10-24" class="verse-num">24</span> Arphaxad was the father of Shelah, and Shelah the father of Eber.
+    <span id="v10-25" class="verse-num">25</span> Two sons were born to Eber: One was named Peleg, because in his time the earth was divided; his brother was named Joktan.
+    <span id="v10-26" class="verse-num">26</span> Joktan was the father of Almodad, Sheleph, Hazarmaveth, Jerah,
+    <span id="v10-27" class="verse-num">27</span> Hadoram, Uzal, Diklah,
+    <span id="v10-28" class="verse-num">28</span> Obal, Abimael, Sheba,
+    <span id="v10-29" class="verse-num">29</span> Ophir, Havilah and Jobab. All these were sons of Joktan.
+    <span id="v10-30" class="verse-num">30</span> The region where they lived stretched from Mesha toward Sephar, in the eastern hill country.
+    <span id="v10-31" class="verse-num">31</span> These are the sons of Shem by their clans and languages, in their territories and nations.<br><br>
+    <span id="v10-32" class="verse-num">32</span> These are the clans of Noah&rsquo;s sons, according to their lines of descent, within their nations. From these the nations spread out over the earth after the flood.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -452,7 +455,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 10</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g10-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g10-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g10-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">

@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -252,11 +255,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">God Remembers Noah &mdash; Verses 1&ndash;5</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> But God remembered Noah and all the wild animals and the livestock that were with him in the ark, and he sent a wind over the earth, and the waters receded.
-    <span class="verse-num">2</span> Now the springs of the deep and the floodgates of the heavens had been closed, and the rain had stopped falling from the sky.
-    <span class="verse-num">3</span> The water receded steadily from the earth. At the end of the hundred and fifty days the water had gone down,
-    <span class="verse-num">4</span> and on the seventeenth day of the seventh month the ark came to rest on the mountains of Ararat.
-    <span class="verse-num">5</span> The waters continued to recede until the tenth month, and on the first day of the tenth month the tops of the mountains became visible.
+    <span id="v8-1" class="verse-num">1</span> But God remembered Noah and all the wild animals and the livestock that were with him in the ark, and he sent a wind over the earth, and the waters receded.
+    <span id="v8-2" class="verse-num">2</span> Now the springs of the deep and the floodgates of the heavens had been closed, and the rain had stopped falling from the sky.
+    <span id="v8-3" class="verse-num">3</span> The water receded steadily from the earth. At the end of the hundred and fifty days the water had gone down,
+    <span id="v8-4" class="verse-num">4</span> and on the seventeenth day of the seventh month the ark came to rest on the mountains of Ararat.
+    <span id="v8-5" class="verse-num">5</span> The waters continued to recede until the tenth month, and on the first day of the tenth month the tops of the mountains became visible.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -282,15 +285,15 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Birds &amp; the Waiting &mdash; Verses 6&ndash;14</div>
   <span class="verse-text">
-    <span class="verse-num">6</span> After forty days Noah opened a window he had made in the ark
-    <span class="verse-num">7</span> and sent out a raven, and it kept flying back and forth until the water had dried up from the earth.
-    <span class="verse-num">8</span> Then he sent out a dove to see if the water had receded from the surface of the ground.
-    <span class="verse-num">9</span> But the dove could find nowhere to perch because there was water over all the surface of the earth; so it returned to Noah in the ark. He reached out his hand and took the dove and brought it back to himself in the ark.
-    <span class="verse-num">10</span> He waited seven more days and again sent out the dove from the ark.
-    <span class="verse-num">11</span> When the dove returned to him in the evening, there in its beak was a freshly plucked olive leaf! Then Noah knew that the water had receded from the earth.
-    <span class="verse-num">12</span> He waited seven more days and sent the dove out again, but this time it did not return to him.<br><br>
-    <span class="verse-num">13</span> By the first day of the first month of Noah&rsquo;s six hundred and first year, the water had dried up from the earth. Noah then removed the covering of the ark and saw that the surface of the ground was dry.
-    <span class="verse-num">14</span> By the twenty-seventh day of the second month the earth was completely dry.
+    <span id="v8-6" class="verse-num">6</span> After forty days Noah opened a window he had made in the ark
+    <span id="v8-7" class="verse-num">7</span> and sent out a raven, and it kept flying back and forth until the water had dried up from the earth.
+    <span id="v8-8" class="verse-num">8</span> Then he sent out a dove to see if the water had receded from the surface of the ground.
+    <span id="v8-9" class="verse-num">9</span> But the dove could find nowhere to perch because there was water over all the surface of the earth; so it returned to Noah in the ark. He reached out his hand and took the dove and brought it back to himself in the ark.
+    <span id="v8-10" class="verse-num">10</span> He waited seven more days and again sent out the dove from the ark.
+    <span id="v8-11" class="verse-num">11</span> When the dove returned to him in the evening, there in its beak was a freshly plucked olive leaf! Then Noah knew that the water had receded from the earth.
+    <span id="v8-12" class="verse-num">12</span> He waited seven more days and sent the dove out again, but this time it did not return to him.<br><br>
+    <span id="v8-13" class="verse-num">13</span> By the first day of the first month of Noah&rsquo;s six hundred and first year, the water had dried up from the earth. Noah then removed the covering of the ark and saw that the surface of the ground was dry.
+    <span id="v8-14" class="verse-num">14</span> By the twenty-seventh day of the second month the earth was completely dry.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -311,14 +314,14 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Leaving the Ark &amp; Noah&rsquo;s Altar &mdash; Verses 15&ndash;22</div>
   <span class="verse-text">
-    <span class="verse-num">15</span> Then God said to Noah,
-    <span class="verse-num">16</span> &ldquo;Come out of the ark, you and your wife and your sons and their wives.
-    <span class="verse-num">17</span> Bring out every kind of living creature that is with you &mdash; the birds, the animals, and all the creatures that move along the ground &mdash; so they can multiply on the earth and be fruitful and increase in number on it.&rdquo;<br><br>
-    <span class="verse-num">18</span> So Noah came out, together with his sons and his wife and his sons&rsquo; wives.
-    <span class="verse-num">19</span> All the animals and all the creatures that move along the ground and all the birds &mdash; everything that moves on land &mdash; came out of the ark, one kind after another.<br><br>
-    <span class="verse-num">20</span> Then Noah built an altar to the LORD and, taking some of all the clean animals and clean birds, he sacrificed burnt offerings on it.
-    <span class="verse-num">21</span> The LORD smelled the pleasing aroma and said in his heart: &ldquo;Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood. And never again will I destroy all living creatures, as I have done.
-    <span class="verse-num">22</span> As long as the earth endures,<br>
+    <span id="v8-15" class="verse-num">15</span> Then God said to Noah,
+    <span id="v8-16" class="verse-num">16</span> &ldquo;Come out of the ark, you and your wife and your sons and their wives.
+    <span id="v8-17" class="verse-num">17</span> Bring out every kind of living creature that is with you &mdash; the birds, the animals, and all the creatures that move along the ground &mdash; so they can multiply on the earth and be fruitful and increase in number on it.&rdquo;<br><br>
+    <span id="v8-18" class="verse-num">18</span> So Noah came out, together with his sons and his wife and his sons&rsquo; wives.
+    <span id="v8-19" class="verse-num">19</span> All the animals and all the creatures that move along the ground and all the birds &mdash; everything that moves on land &mdash; came out of the ark, one kind after another.<br><br>
+    <span id="v8-20" class="verse-num">20</span> Then Noah built an altar to the LORD and, taking some of all the clean animals and clean birds, he sacrificed burnt offerings on it.
+    <span id="v8-21" class="verse-num">21</span> The LORD smelled the pleasing aroma and said in his heart: &ldquo;Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood. And never again will I destroy all living creatures, as I have done.
+    <span id="v8-22" class="verse-num">22</span> As long as the earth endures,<br>
     &nbsp;&nbsp;seedtime and harvest,<br>
     &nbsp;&nbsp;cold and heat,<br>
     &nbsp;&nbsp;summer and winter,<br>
@@ -357,7 +360,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 8</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g8-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g8-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g8-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">

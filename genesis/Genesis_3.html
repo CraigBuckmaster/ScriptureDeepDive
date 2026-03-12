@@ -34,7 +34,7 @@ body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,se
 .nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
 .nav-back:hover{opacity:.7;}
 .nav-back svg{width:14px;height:14px;flex-shrink:0;}
-.nav-center{text-align:center;flex:1;padding:0 .5rem;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
@@ -214,6 +214,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
 .nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
 .nav-hint{font-family:'Source Sans 3',sans-serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.4);opacity:0;transition:opacity .2s;position:absolute;bottom:-10px;}
+
+.anno-panel.themes-panel{background:#08080f;border-color:#503080;}
+.anno-panel.themes-panel h4{color:#b090f0;}
 </style>
 </head>
 <body>
@@ -253,13 +256,13 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Temptation &amp; The Fall &mdash; Verses 1&ndash;7</div>
   <span class="verse-text">
-    <span class="verse-num">1</span> Now the serpent was more crafty than any of the wild animals the LORD God had made. He said to the woman, &ldquo;Did God really say, &lsquo;You must not eat from any tree in the garden&rsquo;?&rdquo;<br><br>
-    <span class="verse-num">2</span> The woman said to the serpent, &ldquo;We may eat fruit from the trees in the garden,
-    <span class="verse-num">3</span> but God did say, &lsquo;You must not eat fruit from the tree that is in the middle of the garden, and you must not touch it, or you will die.&rsquo;&rdquo;<br><br>
-    <span class="verse-num">4</span> &ldquo;You will not certainly die,&rdquo; the serpent said to the woman.
-    <span class="verse-num">5</span> &ldquo;For God knows that when you eat from it your eyes will be opened, and you will be like God, knowing good and evil.&rdquo;<br><br>
-    <span class="verse-num">6</span> When the woman saw that the fruit of the tree was good for food and pleasing to the eye, and also desirable for gaining wisdom, she took some and ate it. She also gave some to her husband, who was with her, and he ate it.
-    <span class="verse-num">7</span> Then the eyes of both of them were opened, and they realized they were naked; so they sewed fig leaves together and made coverings for themselves.
+    <span id="v3-1" class="verse-num">1</span> Now the serpent was more crafty than any of the wild animals the LORD God had made. He said to the woman, &ldquo;Did God really say, &lsquo;You must not eat from any tree in the garden&rsquo;?&rdquo;<br><br>
+    <span id="v3-2" class="verse-num">2</span> The woman said to the serpent, &ldquo;We may eat fruit from the trees in the garden,
+    <span id="v3-3" class="verse-num">3</span> but God did say, &lsquo;You must not eat fruit from the tree that is in the middle of the garden, and you must not touch it, or you will die.&rsquo;&rdquo;<br><br>
+    <span id="v3-4" class="verse-num">4</span> &ldquo;You will not certainly die,&rdquo; the serpent said to the woman.
+    <span id="v3-5" class="verse-num">5</span> &ldquo;For God knows that when you eat from it your eyes will be opened, and you will be like God, knowing good and evil.&rdquo;<br><br>
+    <span id="v3-6" class="verse-num">6</span> When the woman saw that the fruit of the tree was good for food and pleasing to the eye, and also desirable for gaining wisdom, she took some and ate it. She also gave some to her husband, who was with her, and he ate it.
+    <span id="v3-7" class="verse-num">7</span> Then the eyes of both of them were opened, and they realized they were naked; so they sewed fig leaves together and made coverings for themselves.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -299,12 +302,12 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">God Confronts His Image-Bearers &mdash; Verses 8&ndash;13</div>
   <span class="verse-text">
-    <span class="verse-num">8</span> Then the man and his wife heard the sound of the LORD God as he was walking in the garden in the cool of the day, and they hid from the LORD God among the trees of the garden.
-    <span class="verse-num">9</span> But the LORD God called to the man, &ldquo;Where are you?&rdquo;<br><br>
-    <span class="verse-num">10</span> He answered, &ldquo;I heard you in the garden, and I was afraid because I was naked; so I hid.&rdquo;<br><br>
-    <span class="verse-num">11</span> And he said, &ldquo;Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?&rdquo;<br><br>
-    <span class="verse-num">12</span> The man said, &ldquo;The woman you put here with me &mdash; she gave me some fruit from the tree, and I ate it.&rdquo;<br><br>
-    <span class="verse-num">13</span> Then the LORD God said to the woman, &ldquo;What is this you have done?&rdquo; The woman said, &ldquo;The serpent deceived me, and I ate.&rdquo;
+    <span id="v3-8" class="verse-num">8</span> Then the man and his wife heard the sound of the LORD God as he was walking in the garden in the cool of the day, and they hid from the LORD God among the trees of the garden.
+    <span id="v3-9" class="verse-num">9</span> But the LORD God called to the man, &ldquo;Where are you?&rdquo;<br><br>
+    <span id="v3-10" class="verse-num">10</span> He answered, &ldquo;I heard you in the garden, and I was afraid because I was naked; so I hid.&rdquo;<br><br>
+    <span id="v3-11" class="verse-num">11</span> And he said, &ldquo;Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?&rdquo;<br><br>
+    <span id="v3-12" class="verse-num">12</span> The man said, &ldquo;The woman you put here with me &mdash; she gave me some fruit from the tree, and I ate it.&rdquo;<br><br>
+    <span id="v3-13" class="verse-num">13</span> Then the LORD God said to the woman, &ldquo;What is this you have done?&rdquo; The woman said, &ldquo;The serpent deceived me, and I ate.&rdquo;
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -327,29 +330,29 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">The Curses &mdash; Verses 14&ndash;19</div>
   <span class="verse-text">
-    <span class="verse-num">14</span> So the LORD God said to the serpent, &ldquo;Because you have done this,<br>
+    <span id="v3-14" class="verse-num">14</span> So the LORD God said to the serpent, &ldquo;Because you have done this,<br>
     &nbsp;&nbsp;&ldquo;Cursed are you above all livestock<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and all wild animals!<br>
     &nbsp;&nbsp;You will crawl on your belly<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and you will eat dust<br>
     &nbsp;&nbsp;&nbsp;&nbsp;all the days of your life.<br>
-    <span class="verse-num">15</span> And I will put enmity<br>
+    <span id="v3-15" class="verse-num">15</span> And I will put enmity<br>
     &nbsp;&nbsp;&nbsp;&nbsp;between you and the woman,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and between your offspring and hers;<br>
     &nbsp;&nbsp;he will crush your head,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and you will strike his heel.&rdquo;<br><br>
-    <span class="verse-num">16</span> To the woman he said,<br>
+    <span id="v3-16" class="verse-num">16</span> To the woman he said,<br>
     &nbsp;&nbsp;&ldquo;I will make your pains in childbearing very severe;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;with painful labor you will give birth to children.<br>
     &nbsp;&nbsp;Your desire will be for your husband,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and he will rule over you.&rdquo;<br><br>
-    <span class="verse-num">17</span> To Adam he said, &ldquo;Because you listened to your wife and ate fruit from the tree about which I commanded you, &lsquo;You must not eat from it,&rsquo;<br>
+    <span id="v3-17" class="verse-num">17</span> To Adam he said, &ldquo;Because you listened to your wife and ate fruit from the tree about which I commanded you, &lsquo;You must not eat from it,&rsquo;<br>
     &nbsp;&nbsp;&ldquo;Cursed is the ground because of you;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;through painful toil you will eat food from it<br>
     &nbsp;&nbsp;&nbsp;&nbsp;all the days of your life.<br>
-    <span class="verse-num">18</span> It will produce thorns and thistles for you,<br>
+    <span id="v3-18" class="verse-num">18</span> It will produce thorns and thistles for you,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;and you will eat the plants of the field.<br>
-    <span class="verse-num">19</span> By the sweat of your brow<br>
+    <span id="v3-19" class="verse-num">19</span> By the sweat of your brow<br>
     &nbsp;&nbsp;&nbsp;&nbsp;you will eat your food<br>
     &nbsp;&nbsp;until you return to the ground,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;since from it you were taken;<br>
@@ -388,11 +391,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="section">
   <div class="section-header">Exile from Eden &mdash; Verses 20&ndash;24</div>
   <span class="verse-text">
-    <span class="verse-num">20</span> Adam named his wife Eve, because she would become the mother of all the living.<br><br>
-    <span class="verse-num">21</span> The LORD God made garments of skin for Adam and his wife and clothed them.<br><br>
-    <span class="verse-num">22</span> And the LORD God said, &ldquo;The man has now become like one of us, knowing good and evil. He must not be allowed to reach out his hand and take also from the tree of life and eat, and live forever.&rdquo;
-    <span class="verse-num">23</span> So the LORD God banished him from the Garden of Eden to work the ground from which he had been taken.
-    <span class="verse-num">24</span> After he drove the man out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the tree of life.
+    <span id="v3-20" class="verse-num">20</span> Adam named his wife Eve, because she would become the mother of all the living.<br><br>
+    <span id="v3-21" class="verse-num">21</span> The LORD God made garments of skin for Adam and his wife and clothed them.<br><br>
+    <span id="v3-22" class="verse-num">22</span> And the LORD God said, &ldquo;The man has now become like one of us, knowing good and evil. He must not be allowed to reach out his hand and take also from the tree of life and eat, and live forever.&rdquo;
+    <span id="v3-23" class="verse-num">23</span> So the LORD God banished him from the Garden of Eden to work the ground from which he had been taken.
+    <span id="v3-24" class="verse-num">24</span> After he drove the man out, he placed on the east side of the Garden of Eden cherubim and a flaming sword flashing back and forth to guard the way to the tree of life.
   </span>
   <div class="btn-row">
     <button class="anno-trigger hebrew" onclick="tog(this,'s4-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
@@ -426,7 +429,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 3</div>
   
 <button class="anno-trigger" style="color:#b090f0;border-color:#503080;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g3-themes')"><span>&#x25CE; Theological Themes</span><span class="chev">&#9660;</span></button>
-<div id="g3-themes" class="anno-panel" style="display:none;background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
+<div id="g3-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #503080;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#b090f0;">&#x25CE; Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;">
