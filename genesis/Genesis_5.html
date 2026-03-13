@@ -664,7 +664,7 @@ function tog(btn,id){
   var p=document.getElementById(id);
   if(!p)return;
   var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
   document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
   if(willOpen){p.classList.add('open');btn.classList.add('active');}
 }
