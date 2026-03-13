@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 39 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(26,96,40,.12);}
+.anno-trigger.timeline{color:#c0d8f0;border-color:#4a6888;background:rgba(74,104,136,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.authorship-content p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.65;margin-top:.75rem;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.qnav-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.qnav-overlay.open{display:flex;flex-direction:column;}
+.qnav-panel{background:#0d0b07;border-bottom:1px solid #3a2e18;max-height:82vh;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;}
+.qnav-header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-bottom:1px solid rgba(58,46,24,.5);position:sticky;top:0;background:#0d0b07;z-index:1;}
+.qnav-search-wrap{flex:1;position:relative;}
+.qnav-search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#5a4a30;font-size:.78rem;pointer-events:none;}
+.qnav-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(58,46,24,.8);border-radius:4px;padding:.42rem .75rem .42rem 2rem;color:#f0e8d8;font-family:'Source Sans 3',sans-serif;font-size:.88rem;outline:none;transition:border-color .15s;}
+.qnav-search:focus{border-color:#8b6914;}
+.qnav-search::placeholder{color:#4a3a22;}
+.qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
+.qnav-body{overflow-y:auto;}
+.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
+.qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
+.qnav-book-btn:hover{background:rgba(255,255,255,.04);}
+.qnav-book-name{font-family:'EB Garamond',serif;font-size:.98rem;color:#c8c0a0;text-align:left;display:flex;align-items:center;gap:.5rem;}
+.qnav-live-dot{width:6px;height:6px;border-radius:50%;background:#70d098;flex-shrink:0;box-shadow:0 0 5px rgba(112,208,152,.5);}
+.qnav-book-meta{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
+.qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
+.qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
+.qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
+.qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
+.qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
+.qnav-dismiss{flex:1;cursor:pointer;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 39</span></div>
+<div class="nav-arrows"><a href="Genesis_38.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_40.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<div class="qnav-overlay" id="qnav-overlay">
+<div class="qnav-panel">
+<div class="qnav-header">
+<div class="qnav-search-wrap"><span class="qnav-search-icon">&#128269;</span><input class="qnav-search" id="qnav-search-input" placeholder="Search books..." oninput="qnavFilter(this.value)"></div>
+<button class="qnav-close" onclick="closeQnav()">Close</button>
+</div>
+<div class="qnav-body">
+<div class="qnav-testament-header">Old Testament</div>
+<div class="qnav-book open" id="qnav-book-genesis">
+<button class="qnav-book-btn" onclick="qnavToggleBook('genesis')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Genesis</span>
+<span class="qnav-book-meta"><span class="qnav-ch-count">39 live</span><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="Genesis_1.html" class="qnav-ch-btn live">Ch 1</a><a href="Genesis_2.html" class="qnav-ch-btn live">Ch 2</a><a href="Genesis_3.html" class="qnav-ch-btn live">Ch 3</a><a href="Genesis_4.html" class="qnav-ch-btn live">Ch 4</a><a href="Genesis_5.html" class="qnav-ch-btn live">Ch 5</a><a href="Genesis_6.html" class="qnav-ch-btn live">Ch 6</a><a href="Genesis_7.html" class="qnav-ch-btn live">Ch 7</a><a href="Genesis_8.html" class="qnav-ch-btn live">Ch 8</a><a href="Genesis_9.html" class="qnav-ch-btn live">Ch 9</a><a href="Genesis_10.html" class="qnav-ch-btn live">Ch 10</a><a href="Genesis_11.html" class="qnav-ch-btn live">Ch 11</a><a href="Genesis_12.html" class="qnav-ch-btn live">Ch 12</a><a href="Genesis_13.html" class="qnav-ch-btn live">Ch 13</a><a href="Genesis_14.html" class="qnav-ch-btn live">Ch 14</a><a href="Genesis_15.html" class="qnav-ch-btn live">Ch 15</a><a href="Genesis_16.html" class="qnav-ch-btn live">Ch 16</a><a href="Genesis_17.html" class="qnav-ch-btn live">Ch 17</a><a href="Genesis_18.html" class="qnav-ch-btn live">Ch 18</a><a href="Genesis_19.html" class="qnav-ch-btn live">Ch 19</a><a href="Genesis_20.html" class="qnav-ch-btn live">Ch 20</a><a href="Genesis_21.html" class="qnav-ch-btn live">Ch 21</a><a href="Genesis_22.html" class="qnav-ch-btn live">Ch 22</a><a href="Genesis_23.html" class="qnav-ch-btn live">Ch 23</a><a href="Genesis_24.html" class="qnav-ch-btn live">Ch 24</a><a href="Genesis_25.html" class="qnav-ch-btn live">Ch 25</a><a href="Genesis_26.html" class="qnav-ch-btn live">Ch 26</a><a href="Genesis_27.html" class="qnav-ch-btn live">Ch 27</a><a href="Genesis_28.html" class="qnav-ch-btn live">Ch 28</a><a href="Genesis_29.html" class="qnav-ch-btn live">Ch 29</a><a href="Genesis_30.html" class="qnav-ch-btn live">Ch 30</a><a href="Genesis_31.html" class="qnav-ch-btn live">Ch 31</a><a href="Genesis_32.html" class="qnav-ch-btn live">Ch 32</a><a href="Genesis_33.html" class="qnav-ch-btn live">Ch 33</a><a href="Genesis_34.html" class="qnav-ch-btn live">Ch 34</a><a href="Genesis_35.html" class="qnav-ch-btn live">Ch 35</a><a href="Genesis_36.html" class="qnav-ch-btn live">Ch 36</a><a href="Genesis_37.html" class="qnav-ch-btn live">Ch 37</a><a href="Genesis_38.html" class="qnav-ch-btn live">Ch 38</a><a href="Genesis_39.html" class="qnav-ch-btn live current">Ch 39</a><span class="qnav-ch-btn coming">Ch 40</span><span class="qnav-ch-btn coming">Ch 41</span><span class="qnav-ch-btn coming">Ch 42</span><span class="qnav-ch-btn coming">Ch 43</span><span class="qnav-ch-btn coming">Ch 44</span><span class="qnav-ch-btn coming">Ch 45</span><span class="qnav-ch-btn coming">Ch 46</span><span class="qnav-ch-btn coming">Ch 47</span><span class="qnav-ch-btn coming">Ch 48</span><span class="qnav-ch-btn coming">Ch 49</span><span class="qnav-ch-btn coming">Ch 50</span></div>
+</div>
+</div>
+</div>
+<div class="qnav-dismiss" onclick="closeQnav()"></div>
+</div>
+<main>
+<header>
+<h1>Genesis 39</h1>
+<p>Joseph in Potiphar's House</p>
+</header>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+</div>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><p>Genesis 39 resumes the Joseph narrative after the Judah-Tamar interlude of ch.38. The contrast is intentional: where Judah compromises sexually with a Canaanite woman, Joseph refuses the advances of an Egyptian woman. The chapter's theological center is the repeated phrase "the LORD was with Joseph" (vv.2,3,21,23) — four times in twenty-three verses. Prosperity and adversity are both attributed to divine presence; Joseph's integrity is both the expression of and the occasion for God's blessing.</p></div>
+</div>
+<div class="section"><div class="section-header">Verses 1–6 — The LORD with Joseph; Potiphar's House</div><span class="verse-text"><span class="verse-num">1</span>Now Joseph had been brought down to Egypt, and Potiphar, an officer of Pharaoh, the captain of the guard, an Egyptian, had bought him from the Ishmaelites who had brought him down there.</span><span class="verse-text"><span class="verse-num">2</span>The LORD was with Joseph, and he became a successful man, and he was in the house of his Egyptian master.</span><span class="verse-text"><span class="verse-num">3</span>His master saw that the LORD was with him and that the LORD caused all that he did to succeed in his hands.</span><span class="verse-text"><span class="verse-num">4</span>So Joseph found favor in his sight and attended him, and he made him overseer of his house and put him in charge of all that he had.</span><span class="verse-text"><span class="verse-num">5</span>From the time that he made him overseer in his house and over all that he had, the LORD blessed the Egyptian's house for Joseph's sake; the blessing of the LORD was on all that he had, in house and field.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'g39-s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'g39-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'g39-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'g39-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g39-s1-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">יְהוָה הָיָה עִם</span> <span class="tlit">YHWH hāyāh ʿim</span> — <strong>the LORD was with</strong>: The phrase "the LORD was with Joseph" is the chapter's theological anchor (vv.2,3,21,23). The same formula appeared at Bethel (28:15: "I will be with you") and at Jacob's departure (31:3). It is the covenantal presence formula — God's personal accompaniment of the chosen servant.</p><p><span class="hebrew-word">מַצְלִיחַ</span> <span class="tlit">maṣlîaḥ</span> — <strong>successful / prosperous</strong>: From the root ṣālaḥ, "to advance, prosper, succeed." Prosperity in the Joseph narrative is always attributed to divine presence, not human skill — though Joseph's skill is real and visible.</p><p><span class="hebrew-word">מְשָׁרְתֵהוּ</span> <span class="tlit">mĕšārĕtēhû</span> — <strong>attended him / served him</strong>: The verb šārat (serve, minister) is used later for priestly service (Exod 28:35). Joseph's service of Potiphar is rendered with the full care and competence that would later characterize priestly ministry — he serves a pagan master as unto the LORD.</p></div><div id="g39-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The fourfold "LORD was with Joseph" in this chapter is the interpretive key to the entire Joseph narrative. Joseph does not explain his success through intelligence or initiative — the text consistently attributes it to divine presence. This presence is not conditional on circumstances: it operates in the house of a pagan, in the prison of a corrupt official, and eventually in the court of Pharaoh. The phrase links back to God's promise to Jacob at Bethel (28:15) and forward to the Exodus commission to Moses (Exod 3:12: "I will be with you").</p></div><div id="g39-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 28:15</span><span class="ref-text">God's promise: "I will be with you." Fulfilled first in Jacob's life, now operating through Joseph.</span></li><li><span class="ref-cite">Acts 7:9–10</span><span class="ref-text">Stephen: "God was with him" — the NT directly quotes Genesis 39 as the key to understanding Joseph's story.</span></li><li><span class="ref-cite">Matt 1:23</span><span class="ref-text">"God with us" (Emmanuel) is the terminal fulfillment of the "God was with him" formula — from Joseph's Potiphar's-house presence to the incarnation.</span></li></ul></div><div id="g39-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">39:2–3</span><p>The remarkable detail of v.3 is that Potiphar, a pagan Egyptian, could see that the LORD was with Joseph. Divine blessing is visible to unbelievers when it operates through a person of genuine integrity. Potiphar does not become a worshipper of YHWH, but he recognizes a category of divine favor that his own gods don't explain. The blessing of God on Joseph overflows to bless the entire Egyptian household (v.5) — the Abrahamic promise ("through you all the families of the earth will be blessed") is already operating in Potiphar's house.</p></div></div></div><div class="section"><div class="section-header">Verses 7–23 — Temptation Refused; Prison; God's Presence</div><span class="verse-text"><span class="verse-num">7</span>And after a time his master's wife cast her eyes on Joseph and said, "Lie with me."</span><span class="verse-text"><span class="verse-num">9</span>"He is not greater in this house than I am, nor has he kept back anything from me except you, because you are his wife. How then can I do this great wickedness and sin against God?"</span><span class="verse-text"><span class="verse-num">12</span>She caught him by his garment, saying, "Lie with me." But he left his garment in her hand and fled and got out of the house.</span><span class="verse-text"><span class="verse-num">20</span>And Joseph's master took him and put him into the prison, the place where the king's prisoners were confined, and he was there in prison.</span><span class="verse-text"><span class="verse-num">21</span>But the LORD was with Joseph and showed him steadfast love and gave him favor in the sight of the keeper of the prison.</span><span class="verse-text"><span class="verse-num">23</span>The keeper of the prison paid no attention to anything that was in Joseph's charge, because the LORD was with him. And whatever he did, the LORD made it succeed.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'g39-s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'g39-s2-hist')"><span>Historical</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'g39-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'g39-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'g39-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g39-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חֶסֶד</span> <span class="tlit">ḥesed</span> — <strong>steadfast love / lovingkindness</strong>: In v.21 the LORD shows Joseph ḥesed — the covenantal loyalty that undergirds all of God's dealings with his people. This is the first use of ḥesed in connection with Joseph — it will sustain him through prison.</p><p><span class="hebrew-word">הָרָעָה הַגְּדֹלָה</span> <span class="tlit">hārāʿāh haggĕdōlāh</span> — <strong>this great wickedness</strong>: Joseph's refusal frames the issue as theological: "how can I sin against God?" He does not primarily appeal to loyalty to Potiphar (though he mentions that too) — the ultimate ground of his refusal is the fear of God.</p><p><span class="hebrew-word">בִּגְדוֹ</span> <span class="tlit">bigdô</span> — <strong>his garment</strong>: The garment motif continues: Joseph's robe of many colors was used to deceive Jacob (ch.37); now his garment is used to falsely accuse him. The garment is again both evidence and instrument of his apparent undoing.</p></div><div id="g39-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>The motif of a false accusation of rape against a virtuous man by a spurned woman appears in Egyptian literature — notably the "Tale of Two Brothers" (c. 1200 BC), where Anubis's wife makes the same accusation against his brother Bata. This does not mean Joseph's story is derived from the Egyptian tale; rather, both reflect a known social dynamic in the ancient Near East. The parallel shows the realism of the Genesis account within its cultural context.</p></div><div id="g39-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Joseph's refusal is framed in explicitly theological terms: "How can I do this great wickedness and sin against God?" (v.9). He does not primarily say "it would betray Potiphar" — though that is mentioned — he says "it would be sin against God." This is the theology of integrity: behavior is governed by the vertical relationship, not only the horizontal. The prison (v.20) is Joseph's reward for righteousness — and God's "steadfast love" (ḥesed, v.21) meets him there. The pattern: integrity leads to suffering leads to elevation, repeated twice (house → prison → court).</p></div><div id="g39-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 105:18–19</span><span class="ref-text">The Psalm describes Joseph's prison time as divine testing: "his feet were hurt with fetters... until what he foretold came to pass, the word of the LORD tested him."</span></li><li><span class="ref-cite">Heb 11:24–26</span><span class="ref-text">Moses' choice to suffer with God's people rather than enjoy Egypt's pleasures echoes Joseph's refusal of short-term pleasure for long-term faithfulness.</span></li></ul></div><div id="g39-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">39:9</span><p>Joseph's response to Potiphar's wife is the moral centerpiece of the chapter. He does not appeal primarily to self-interest, to loyalty to Potiphar, or to the practical risks. He appeals to God: "How then can I do this great wickedness and sin against God?" This is the fear-of-God ethic — behavior governed by awareness of divine judgment rather than merely social consequences. Joseph in Egypt, stripped of every external support (family, homeland, freedom), has nothing left but God. That is precisely why he cannot sin against God: God is all he has.</p></div><div class="com-note"><span class="com-ref">39:20–21</span><p>Joseph is imprisoned for doing the right thing. His integrity costs him his position and his freedom. Then: "the LORD was with Joseph." The formula that explained his success in Potiphar's house (vv.2,3) now explains his survival in prison (vv.21,23). God's presence is not tied to Joseph's circumstances. It follows him into the pit, into the house, into the prison — wherever Joseph is, God is. This is the covenant promise of Bethel operative in every context.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'g39-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger translations" onclick="tog(this,'g39-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger sources" onclick="tog(this,'g39-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger reception" onclick="tog(this,'g39-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger literary" onclick="tog(this,'g39-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger hebrew-text" onclick="tog(this,'g39-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger threading" onclick="tog(this,'g39-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g39-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="g39-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Joseph</div><div class="person-role">The enslaved Hebrew, now overseer</div><div class="person-text">His integrity under temptation establishes the theological profile of the Joseph narrative: "the LORD was with him."</div></div><div class="person-card"><div class="person-name">Potiphar's Wife</div><div class="person-role">The accuser</div><div class="person-text">Her false accusation costs Joseph his freedom. She is unnamed — her function is structural rather than individualized.</div></div><div class="person-card"><div class="person-name">Potiphar</div><div class="person-role">Egyptian court official</div><div class="person-text">His response to his wife's accusation (prison rather than execution) may hint at doubt about her story — the captain of the guard knows what execution looks like.</div></div></div></div><div id="g39-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">39:9 — Joseph's Theological Refusal</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"How then can I do this great wickedness and sin against God?"</td></tr><tr><td class="t-label">NIV</td><td>"How then could I do such a wicked thing and sin against God?"</td></tr><tr><td class="t-label">KJV</td><td>"How then can I do this great wickedness, and sin against God?"</td></tr><tr><td class="t-label">NASB</td><td>"How then could I do this great evil and sin against God?"</td></tr></table></div><div id="g39-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Tale of Two Brothers (Egypt, c.1200 BC)</div><div class="source-quote">An Egyptian story where a wife falsely accuses her husband's brother of attempted rape after he rejects her advances — strikingly parallel to Genesis 39.</div><div class="source-note">The parallel demonstrates that the social dynamic of Genesis 39 was recognized in Egyptian culture; it does not imply literary dependence but cultural realism.</div></div><div class="source-block"><div class="source-title">Egyptian Prison Records</div><div class="source-quote">Papyri from the Middle Kingdom (c. 2000–1700 BC) document royal prison facilities where high-status prisoners were held — consistent with the "place where the king's prisoners were confined" (v.20).</div><div class="source-note">The administrative detail of v.20 is consistent with Egyptian records.</div></div></div><div id="g39-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Chrysostom, Homilies on Genesis</div><div class="rec-text">Joseph's flight from temptation is the model of Christian chastity — the refusal to remain in the presence of temptation, the literal fleeing. "He left his garment and fled."</div></div><div class="rec-block"><div class="rec-who">Calvin, Commentary</div><div class="rec-text">The fourfold "LORD was with Joseph" is for Calvin the chapter's sermon: divine presence is the explanation for both prosperity and survival in adversity. The believer is never alone.</div></div><div class="rec-block"><div class="rec-who">Joseph as type of Christ</div><div class="rec-text">Patristic and Reformed interpreters note the parallel: the beloved son, falsely accused, imprisoned, raised to rule and save. Joseph's integrity in the face of false accusation prefigures Christ before Pilate.</div></div></div><div id="g39-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">A — vv.1–6</span><span class="lit-text">LORD with Joseph: success in Potiphar's house</span></div><div class="lit-row"><span class="lit-label">B — vv.7–10</span><span class="lit-text">Temptation; repeated refusal; theological ground</span></div><div class="lit-row"><span class="lit-label">C — vv.11–12</span><span class="lit-text">The critical moment: garment seized; Joseph flees</span></div><div class="lit-row"><span class="lit-label">B' — vv.13–19</span><span class="lit-text">False accusation; garment as evidence</span></div><div class="lit-row"><span class="lit-label">A' — vv.20–23</span><span class="lit-text">LORD with Joseph: success in prison</span></div><div class="lit-note">The chapter mirrors itself around the central flight scene (v.12). The "LORD was with Joseph" formula at beginning and end (vv.2–3 / vv.21,23) shows that prison is not a departure from God's blessing — it is a continuation of it in a different context. The garment is the symbolic thread connecting prosperity and false accusation.</div></div></div><div id="g39-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">2</sup> <span class="dn-yhwh">The LORD</span> was with <span class="dn-human">Joseph</span>, and he became a successful man, and he was in the house of his Egyptian master. <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">9</sup> "How then can I do this great wickedness and sin against <span class="dn-elohim">God</span>?" <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">21</sup> But <span class="dn-yhwh">the LORD</span> was with <span class="dn-human">Joseph</span> and showed him <span class="dn-key">steadfast love</span> and gave him favor in the sight of the keeper of the prison.</p></div><div id="g39-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Gen 28:15</span><span class="thread-arrow">→</span><span class="thread-target">39:2,21</span><span class="thread-type fulfillment">Fulfillment</span></div><div class="thread-text">"I will be with you" (Bethel) → "the LORD was with Joseph" (four times). The covenant promise of divine presence is the operative force in Joseph's Egyptian captivity.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">39:2</span><span class="thread-arrow">→</span><span class="thread-target">Acts 7:9–10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Stephen quotes Genesis 39 in his sermon: "But God was with him and rescued him from all his troubles." The NT reads Joseph's story as a paradigm of God's faithfulness to the persecuted righteous.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">37:23</span><span class="thread-arrow">→</span><span class="thread-target">39:12</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Joseph's garment is taken by his brothers in ch.37 and by Potiphar's wife in ch.39. The garment motif — used as false evidence against Joseph — runs through the entire early Joseph narrative.</div></div></div><div id="g39-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Presence</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Integrity</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Suffering for Righteousness</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Providence</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Steadfast Love</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Typology</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Genesis 39 is the theological heart of the early Joseph narrative. The fourfold "LORD was with Joseph" declares that divine presence is not contingent on favorable circumstances — it accompanies the faithful servant into slavery, into temptation, and into prison. Joseph's integrity is not self-generated; it is the fruit of knowing that sin is primarily against God.</p></div>
+</div>
+</main>
+<footer><p>Genesis 39 — Joseph Resists Temptation; The LORD Was With Him. Scripture Deep Dive.</p></footer>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Canaan','Seir','Edom','Egypt','Goshen','Dothan','Shechem','Hebron','Beersheba','Bethel','Paddan','Aram','Gilead','Mizraim'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jacob','Israel','Joseph','Judah','Reuben','Simeon','Levi','Benjamin','Esau','Pharaoh','Potiphar','Rachel','Leah','Tamar','Onan','Er'],cls:'vhl-person',btn:['people','context']};
+  var TIME={words:['year','years','day','days','night','morning','evening','seven','two','three','forty','hundred'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY={words:['dream','blessing','birthright','covenant','altar','vow','promise','flock','pit','prison','garment','silver'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script>
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
+function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
+function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(el)el.classList.toggle('open');}
+function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+</body></html>
