@@ -592,50 +592,52 @@ footer {
 /* ── HERO CTA BUTTONS ─────────────────────────────────── */
 .hero-cta {
   display: flex;
-  gap: .75rem;
+  gap: .9rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 .cta-primary {
   font-family: 'Cinzel', serif;
-  font-size: .72rem;
+  font-size: .68rem;
   font-weight: 600;
-  letter-spacing: .18em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: #0c0a07;
-  background: var(--gold);
-  border: none;
-  border-radius: 3px;
-  padding: .7rem 1.6rem;
+  color: #0d0b08;
+  background: linear-gradient(135deg, #d4aa50 0%, #c9a84c 40%, #b8942e 100%);
+  border: 1px solid #a07820;
+  border-radius: 2px;
+  padding: .75rem 2rem;
   text-decoration: none;
-  transition: background .15s, transform .15s, box-shadow .15s;
+  transition: all .2s;
   cursor: pointer;
+  box-shadow: 0 1px 12px rgba(201,168,76,.18), inset 0 1px 0 rgba(255,255,255,.15);
 }
 .cta-primary:hover {
-  background: var(--gold-bright);
+  background: linear-gradient(135deg, #e0ba60 0%, #d4aa50 40%, #c49838 100%);
+  box-shadow: 0 3px 20px rgba(201,168,76,.32), inset 0 1px 0 rgba(255,255,255,.2);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(201,168,76,.3);
 }
 .cta-secondary {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: .75rem;
+  font-family: 'Cinzel', serif;
+  font-size: .65rem;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--gold-dim);
   background: transparent;
-  border: 1px solid var(--gold-dim);
-  border-radius: 3px;
-  padding: .68rem 1.4rem;
+  border: 1px solid rgba(122,96,32,.5);
+  border-radius: 2px;
+  padding: .73rem 1.6rem;
   text-decoration: none;
-  transition: all .15s;
+  transition: all .2s;
   cursor: pointer;
 }
 .cta-secondary:hover {
-  border-color: var(--gold);
+  border-color: var(--gold-dim);
   color: var(--gold);
-  background: rgba(201,168,76,.05);
+  background: rgba(201,168,76,.04);
+  box-shadow: 0 0 12px rgba(201,168,76,.08);
 }
 
 /* ── CONTINUE READING BAR ─────────────────────────────── */
@@ -722,9 +724,6 @@ footer {
     <input type="text" id="bookSearch" placeholder="Search books, verses, or text&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
   </div>
   <div class="unified-results" id="unified-results"></div>
-Available now</div>
-    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
-  </div>
 
 <div id="library-grid">
 <div class="testament-group open" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
@@ -2167,10 +2166,6 @@ footer {
     <input type="text" id="bookSearch" placeholder="Search books, verses, or text&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
   </div>
   <div class="unified-results" id="unified-results"></div>
-
-Available now</div>
-    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
-  </div>
 
 <div id="library-grid">
 <div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
