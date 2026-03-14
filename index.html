@@ -40,7 +40,12 @@ body {
   line-height: 1.75;
   min-height: 100vh;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
+.features-strip { order: 3; }
+.library { order: 2; }
+footer { order: 4; }
 
 /* ── HERO ─────────────────────────────────── */
 .hero {
@@ -549,6 +554,82 @@ footer {
 .verse-snippet em{color:var(--gold-bright);font-style:normal;font-weight:600;}
 .no-results-msg{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--text-muted);
   text-align:center;padding:1.2rem;font-style:italic;}
+
+/* ── HERO CTA BUTTONS ─────────────────────────────────────── */
+.hero-cta {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.cta-primary {
+  font-family: 'Cinzel', serif;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #0d0b08;
+  background: linear-gradient(180deg, #d4aa50 0%, #b8902a 100%);
+  border: 1px solid #8a6a18;
+  border-radius: 2px;
+  padding: .65rem 1.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .15s, transform .15s;
+  box-shadow: 0 1px 8px rgba(201,168,76,.2), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.cta-primary:hover { opacity: .88; transform: translateY(-1px); }
+.cta-secondary {
+  font-family: 'Cinzel', serif;
+  font-size: .63rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: transparent;
+  border: 1px solid #4a3810;
+  border-radius: 2px;
+  padding: .63rem 1.4rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.cta-secondary:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── CONTINUE READING BAR ─────────────────────────────────── */
+.continue-bar {
+  background: rgba(201,168,76,.05);
+  border: 1px solid #2e2008;
+  border-radius: 3px;
+  padding: .65rem .9rem;
+  margin-bottom: 1.2rem;
+}
+.continue-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  display: block;
+  margin-bottom: .45rem;
+}
+.continue-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+.continue-chip {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .71rem;
+  font-weight: 500;
+  color: var(--gold);
+  background: rgba(201,168,76,.08);
+  border: 1px solid #3a2808;
+  border-radius: 2px;
+  padding: .2rem .55rem;
+  text-decoration: none;
+  transition: background .12s, border-color .12s;
+  white-space: nowrap;
+}
+.continue-chip:hover { background: rgba(201,168,76,.16); border-color: var(--gold-dim); }
 </style>
 </head>
 <body>
@@ -568,9 +649,10 @@ footer {
     <span class="badge badge-place">&#x1F4CD; Key Places</span>
     <span class="badge badge-tl">&#x1F4C5; Timelines</span>
   </div>
-  <div class="scroll-cue">
-    <span>&#8595;</span>
-    <span style="font-size:.62rem;letter-spacing:.2em">Choose a Book</span>
+  <div class="hero-cta">
+    <a href="#library-section" class="cta-primary" id="cta-continue" style="display:none">Continue Reading</a>
+    <a href="#library-section" class="cta-primary" id="cta-begin">Begin Reading</a>
+    <a href="#library-section" class="cta-secondary">Browse All Books</a>
   </div>
 </div>
 
@@ -608,23 +690,23 @@ footer {
 </div>
 
 <!-- LIBRARY -->
-<div class="library">
+<div class="library" id="library-section">
   <p class="library-heading">The Library</p>
   <p class="library-sub">Select a book &mdash; then choose a chapter to begin</p>
 
+  <div class="continue-bar" id="continue-bar" style="display:none">
+    <span class="continue-label">Continue where you left off</span>
+    <div class="continue-chips" id="continue-chips"></div>
+  </div>
+
   <div class="search-bar">
     <span class="search-icon">&#x1F50D;</span>
-    <input type="text" id="bookSearch" placeholder="Search books or verses&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
+    <input type="text" id="bookSearch" placeholder="Search books, verses, or text&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
   </div>
   <div class="unified-results" id="unified-results"></div>
 
-  <div class="live-legend">
-    <div class="ll-item"><div class="ll-dot ll-live"></div>Available now</div>
-    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
-  </div>
-
 <div id="library-grid">
-<div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
+<div class="testament-group open" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item" id="book-genesis">
   <button class="book-btn" onclick="toggleBook('genesis')">
     <span class="book-name">Genesis</span>
@@ -1339,7 +1421,7 @@ function handleSearch(q) {
     html += `<div class="results-section">
       <div class="results-section-label">
         <span>&#x1F4DC; Verses</span>
-        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''} in Genesis 1–10</span>
+        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''}</span>
       </div>`;
     for (const v of verseMatches) {
       const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '…' : v.text;
@@ -1401,871 +1483,31 @@ function updateLiveBadge(id, badgeId) {
 updateLiveBadge('tg-ot', 'ot-live-badge');
 updateLiveBadge('tg-nt', 'nt-live-badge');
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"))}</script>
-</body>
-</html!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Scripture Walkthrough — Bible Study</title>
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Scripture">
-<meta name="theme-color" content="#0c0a07">
-<link rel="apple-touch-icon" href="icon-192.png">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-</head>
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <p class="hero-eyebrow">An Immersive Study Resource</p>
-  <h1 class="hero-title">Scripture<br>Walkthrough</h1>
-  <p class="hero-subtitle">Every Book &middot; Every Chapter &middot; Every Word</p>
-  <div class="hero-divider"></div>
-  <p class="hero-desc">A verse-by-verse journey through the Bible. Each chapter is unlocked with deep commentary drawing on Hebrew and Greek word studies, historical context, theology, cross-references, key places, and visual timelines &mdash; everything you need to read Scripture the way it was meant to be read.</p>
-  <div class="hero-badges">
-    <span class="badge badge-heb">&#x5D0; Hebrew &amp; Greek</span>
-    <span class="badge badge-hist">Historical Context</span>
-    <span class="badge badge-ctx">Deep Commentary</span>
-    <span class="badge badge-cross">Cross-References</span>
-    <span class="badge badge-place">&#x1F4CD; Key Places</span>
-    <span class="badge badge-tl">&#x1F4C5; Timelines</span>
-  </div>
-  <div class="scroll-cue">
-    <span>&#8595;</span>
-    <span style="font-size:.62rem;letter-spacing:.2em">Choose a Book</span>
-  </div>
-</div>
-
-<!-- FEATURES STRIP -->
-<div class="features-strip">
-  <div class="features-inner">
-    <p class="features-heading">What&rsquo;s Inside Each Chapter</p>
-    <div class="features-grid">
-      <div class="feature-card" style="--accent:#e890b8">
-        <h3>&#x5D0; Hebrew &amp; Greek</h3>
-        <p>Original language word studies with transliterations, roots, and the theological weight each word carries &mdash; things translations can&rsquo;t fully convey.</p>
-      </div>
-      <div class="feature-card" style="--accent:#70b8e8">
-        <h3>Historical Context</h3>
-        <p>What was happening in the ancient world when this was written? Who were Israel&rsquo;s neighbours, what did they believe, and how does this text respond to them?</p>
-      </div>
-      <div class="feature-card" style="--accent:#70d098">
-        <h3>Deep Commentary</h3>
-        <p>Theological deep dives, interpretive debates across traditions, and the big ideas each passage is wrestling with &mdash; from ancient rabbis to modern scholars.</p>
-      </div>
-      <div class="feature-card" style="--accent:#d4b060">
-        <h3>Cross-References</h3>
-        <p>See how each passage connects to the rest of Scripture &mdash; how the New Testament picks up Old Testament themes, and how the whole Bible holds together.</p>
-      </div>
-      <div class="feature-card" style="--accent:#80d080">
-        <h3>&#x1F4CD; Key Places</h3>
-        <p>Detailed cards on every significant location in the text &mdash; where it is today, why it mattered, and what was happening there in the ancient world.</p>
-      </div>
-      <div class="feature-card" style="--accent:#80a8e0">
-        <h3>&#x1F4C5; Timelines</h3>
-        <p>Visual timelines showing authorship, historical events, and how theological ideas developed across centuries of Scripture and church history.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LIBRARY -->
-<div class="library">
-  <p class="library-heading">The Library</p>
-  <p class="library-sub">Select a book &mdash; then choose a chapter to begin</p>
-
-  <div class="search-bar">
-    <span class="search-icon">&#x1F50D;</span>
-    <input type="text" id="bookSearch" placeholder="Search books or verses&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
-  </div>
-  <div class="unified-results" id="unified-results"></div>
-
-  <div class="live-legend">
-    <div class="ll-item"><div class="ll-dot ll-live"></div>Available now</div>
-    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
-  </div>
-
-<div id="library-grid">
-<div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
-<div class="book-item" id="book-genesis">
-  <button class="book-btn" onclick="toggleBook('genesis')">
-    <span class="book-name">Genesis</span>
-    <span class="book-meta"><span class="ch-count">50 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-genesis">
-    <div class="chapter-grid"><a href="genesis/Genesis_1.html" class="chapter-link live" title="Genesis 1">Ch.1</a><a href="genesis/Genesis_2.html" class="chapter-link live" title="Genesis 2">Ch.2</a><a href="genesis/Genesis_3.html" class="chapter-link live" title="Genesis 3">Ch.3</a><a href="genesis/Genesis_4.html" class="chapter-link live" title="Genesis 4">Ch.4</a><a href="genesis/Genesis_5.html" class="chapter-link live" title="Genesis 5">Ch.5</a><a href="genesis/Genesis_6.html" class="chapter-link live" title="Genesis 6">Ch.6</a><a href="genesis/Genesis_7.html" class="chapter-link live" title="Genesis 7">Ch.7</a><a href="genesis/Genesis_8.html" class="chapter-link live" title="Genesis 8">Ch.8</a><a href="genesis/Genesis_9.html" class="chapter-link live" title="Genesis 9">Ch.9</a><a href="genesis/Genesis_10.html" class="chapter-link live" title="Genesis 10">Ch.10</a><a href="genesis/Genesis_11.html" class="chapter-link live" title="Genesis 11">Ch.11</a><a href="genesis/Genesis_12.html" class="chapter-link live" title="Genesis 12">Ch.12</a><a href="genesis/Genesis_13.html" class="chapter-link live" title="Genesis 13">Ch.13</a><a href="genesis/Genesis_14.html" class="chapter-link live" title="Genesis 14">Ch.14</a><a href="genesis/Genesis_15.html" class="chapter-link live" title="Genesis 15">Ch.15</a><a href="genesis/Genesis_16.html" class="chapter-link live" title="Genesis 16">Ch.16</a><a href="genesis/Genesis_17.html" class="chapter-link live" title="Genesis 17">Ch.17</a><a href="genesis/Genesis_18.html" class="chapter-link live" title="Genesis 18">Ch.18</a><a href="genesis/Genesis_19.html" class="chapter-link live" title="Genesis 19">Ch.19</a><a href="genesis/Genesis_20.html" class="chapter-link live" title="Genesis 20">Ch.20</a><a href="genesis/Genesis_21.html" class="chapter-link live" title="Genesis 21">Ch.21</a><a href="genesis/Genesis_22.html" class="chapter-link live" title="Genesis 22">Ch.22</a><a href="genesis/Genesis_23.html" class="chapter-link live" title="Genesis 23">Ch.23</a><a href="genesis/Genesis_24.html" class="chapter-link live" title="Genesis 24">Ch.24</a><a href="genesis/Genesis_25.html" class="chapter-link live" title="Genesis 25">Ch.25</a><a href="genesis/Genesis_26.html" class="chapter-link live" title="Genesis 26">Ch.26</a><a href="genesis/Genesis_27.html" class="chapter-link live" title="Genesis 27">Ch.27</a><a href="genesis/Genesis_28.html" class="chapter-link live" title="Genesis 28">Ch.28</a><a href="genesis/Genesis_29.html" class="chapter-link live" title="Genesis 29">Ch.29</a><a href="genesis/Genesis_30.html" class="chapter-link live" title="Genesis 30">Ch.30</a><a href="genesis/Genesis_31.html" class="chapter-link live" title="Genesis 31">Ch.31</a><a href="genesis/Genesis_32.html" class="chapter-link live" title="Genesis 32">Ch.32</a><a href="genesis/Genesis_33.html" class="chapter-link live" title="Genesis 33">Ch.33</a><a href="genesis/Genesis_34.html" class="chapter-link live" title="Genesis 34">Ch.34</a><a href="genesis/Genesis_35.html" class="chapter-link live" title="Genesis 35">Ch.35</a><a href="genesis/Genesis_36.html" class="chapter-link live" title="Genesis 36">Ch.36</a><a href="genesis/Genesis_37.html" class="chapter-link live" title="Genesis 37">Ch.37</a><a href="genesis/Genesis_38.html" class="chapter-link live" title="Genesis 38">Ch.38</a><a href="genesis/Genesis_39.html" class="chapter-link live" title="Genesis 39">Ch.39</a><a href="genesis/Genesis_40.html" class="chapter-link live" title="Genesis 40">Ch.40</a><a href="genesis/Genesis_41.html" class="chapter-link live" title="Genesis 41">Ch.41</a><a href="genesis/Genesis_42.html" class="chapter-link live" title="Genesis 42">Ch.42</a><a href="genesis/Genesis_43.html" class="chapter-link live" title="Genesis 43">Ch.43</a><a href="genesis/Genesis_44.html" class="chapter-link live" title="Genesis 44">Ch.44</a><a href="genesis/Genesis_45.html" class="chapter-link live" title="Genesis 45">Ch.45</a><a href="genesis/Genesis_46.html" class="chapter-link live" title="Genesis 46">Ch.46</a><a href="genesis/Genesis_47.html" class="chapter-link live" title="Genesis 47">Ch.47</a><a href="genesis/Genesis_48.html" class="chapter-link live" title="Genesis 48">Ch.48</a><a href="genesis/Genesis_49.html" class="chapter-link live" title="Genesis 49">Ch.49</a><a href="genesis/Genesis_50.html" class="chapter-link live" title="Genesis 50">Ch.50</a></div>
-  </div>
-</div>
-<div class="book-item has-live" id="book-exodus">
-  <button class="book-btn" onclick="toggleBook('exodus')">
-    <span class="book-name">Exodus</span>
-    <span class="book-meta"><span class="ch-count">40 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-exodus">
-    <div class="chapter-grid"><a href="exodus/Exodus_1.html" class="chapter-link live" title="Exodus 1">Ch.1</a><a href="exodus/Exodus_2.html" class="chapter-link live" title="Exodus 2">Ch.2</a><a href="exodus/Exodus_3.html" class="chapter-link live" title="Exodus 3">Ch.3</a><a href="exodus/Exodus_4.html" class="chapter-link live" title="Exodus 4">Ch.4</a><a href="exodus/Exodus_5.html" class="chapter-link live" title="Exodus 5">Ch.5</a><a href="exodus/Exodus_6.html" class="chapter-link live" title="Exodus 6">Ch.6</a><a href="exodus/Exodus_7.html" class="chapter-link live" title="Exodus 7">Ch.7</a><a href="exodus/Exodus_8.html" class="chapter-link live" title="Exodus 8">Ch.8</a><a href="exodus/Exodus_9.html" class="chapter-link live" title="Exodus 9">Ch.9</a><a href="exodus/Exodus_10.html" class="chapter-link live" title="Exodus 10">Ch.10</a><a href="exodus/Exodus_11.html" class="chapter-link live" title="Exodus 11">Ch.11</a><a href="exodus/Exodus_12.html" class="chapter-link live" title="Exodus 12">Ch.12</a><a href="exodus/Exodus_13.html" class="chapter-link live" title="Exodus 13">Ch.13</a><a href="exodus/Exodus_14.html" class="chapter-link live" title="Exodus 14">Ch.14</a><a href="exodus/Exodus_15.html" class="chapter-link live" title="Exodus 15">Ch.15</a><a href="exodus/Exodus_16.html" class="chapter-link live" title="Exodus 16">Ch.16</a><a href="exodus/Exodus_17.html" class="chapter-link live" title="Exodus 17">Ch.17</a><a href="exodus/Exodus_18.html" class="chapter-link live" title="Exodus 18">Ch.18</a><a href="exodus/Exodus_19.html" class="chapter-link live" title="Exodus 19">Ch.19</a><a href="exodus/Exodus_20.html" class="chapter-link live" title="Exodus 20">Ch.20</a><a href="exodus/Exodus_21.html" class="chapter-link live" title="Exodus 21">Ch.21</a><a href="exodus/Exodus_22.html" class="chapter-link live" title="Exodus 22">Ch.22</a><a href="exodus/Exodus_23.html" class="chapter-link live" title="Exodus 23">Ch.23</a><a href="exodus/Exodus_24.html" class="chapter-link live" title="Exodus 24">Ch.24</a><a href="exodus/Exodus_25.html" class="chapter-link live" title="Exodus 25">Ch.25</a><a href="exodus/Exodus_26.html" class="chapter-link live" title="Exodus 26">Ch.26</a><a href="exodus/Exodus_27.html" class="chapter-link live" title="Exodus 27">Ch.27</a><a href="exodus/Exodus_28.html" class="chapter-link live" title="Exodus 28">Ch.28</a><a href="exodus/Exodus_29.html" class="chapter-link live" title="Exodus 29">Ch.29</a><a href="exodus/Exodus_30.html" class="chapter-link live" title="Exodus 30">Ch.30</a><a href="exodus/Exodus_31.html" class="chapter-link live" title="Exodus 31">Ch.31</a><a href="exodus/Exodus_32.html" class="chapter-link live" title="Exodus 32">Ch.32</a><a href="exodus/Exodus_33.html" class="chapter-link live" title="Exodus 33">Ch.33</a><a href="exodus/Exodus_34.html" class="chapter-link live" title="Exodus 34">Ch.34</a><a href="exodus/Exodus_35.html" class="chapter-link live" title="Exodus 35">Ch.35</a><a href="exodus/Exodus_36.html" class="chapter-link live" title="Exodus 36">Ch.36</a><a href="exodus/Exodus_37.html" class="chapter-link live" title="Exodus 37">Ch.37</a><a href="exodus/Exodus_38.html" class="chapter-link live" title="Exodus 38">Ch.38</a><a href="exodus/Exodus_39.html" class="chapter-link live" title="Exodus 39">Ch.39</a><a href="exodus/Exodus_40.html" class="chapter-link live" title="Exodus 40">Ch.40</a></div>
-  </div>
-</div>
-<div class="book-item" id="book-leviticus">
-  <button class="book-btn" onclick="toggleBook('leviticus')">
-    <span class="book-name">Leviticus</span>
-    <span class="book-meta"><span class="ch-count">27 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-leviticus">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Leviticus 1">Ch.1</span><span class="chapter-link coming" title="Leviticus 2">Ch.2</span><span class="chapter-link coming" title="Leviticus 3">Ch.3</span><span class="chapter-link coming" title="Leviticus 4">Ch.4</span><span class="chapter-link coming" title="Leviticus 5">Ch.5</span><span class="chapter-link coming" title="Leviticus 6">Ch.6</span><span class="chapter-link coming" title="Leviticus 7">Ch.7</span><span class="chapter-link coming" title="Leviticus 8">Ch.8</span><span class="chapter-link coming" title="Leviticus 9">Ch.9</span><span class="chapter-link coming" title="Leviticus 10">Ch.10</span><span class="chapter-link coming" title="Leviticus 11">Ch.11</span><span class="chapter-link coming" title="Leviticus 12">Ch.12</span><span class="chapter-link coming" title="Leviticus 13">Ch.13</span><span class="chapter-link coming" title="Leviticus 14">Ch.14</span><span class="chapter-link coming" title="Leviticus 15">Ch.15</span><span class="chapter-link coming" title="Leviticus 16">Ch.16</span><span class="chapter-link coming" title="Leviticus 17">Ch.17</span><span class="chapter-link coming" title="Leviticus 18">Ch.18</span><span class="chapter-link coming" title="Leviticus 19">Ch.19</span><span class="chapter-link coming" title="Leviticus 20">Ch.20</span><span class="chapter-link coming" title="Leviticus 21">Ch.21</span><span class="chapter-link coming" title="Leviticus 22">Ch.22</span><span class="chapter-link coming" title="Leviticus 23">Ch.23</span><span class="chapter-link coming" title="Leviticus 24">Ch.24</span><span class="chapter-link coming" title="Leviticus 25">Ch.25</span><span class="chapter-link coming" title="Leviticus 26">Ch.26</span><span class="chapter-link coming" title="Leviticus 27">Ch.27</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-numbers">
-  <button class="book-btn" onclick="toggleBook('numbers')">
-    <span class="book-name">Numbers</span>
-    <span class="book-meta"><span class="ch-count">36 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-numbers">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Numbers 1">Ch.1</span><span class="chapter-link coming" title="Numbers 2">Ch.2</span><span class="chapter-link coming" title="Numbers 3">Ch.3</span><span class="chapter-link coming" title="Numbers 4">Ch.4</span><span class="chapter-link coming" title="Numbers 5">Ch.5</span><span class="chapter-link coming" title="Numbers 6">Ch.6</span><span class="chapter-link coming" title="Numbers 7">Ch.7</span><span class="chapter-link coming" title="Numbers 8">Ch.8</span><span class="chapter-link coming" title="Numbers 9">Ch.9</span><span class="chapter-link coming" title="Numbers 10">Ch.10</span><span class="chapter-link coming" title="Numbers 11">Ch.11</span><span class="chapter-link coming" title="Numbers 12">Ch.12</span><span class="chapter-link coming" title="Numbers 13">Ch.13</span><span class="chapter-link coming" title="Numbers 14">Ch.14</span><span class="chapter-link coming" title="Numbers 15">Ch.15</span><span class="chapter-link coming" title="Numbers 16">Ch.16</span><span class="chapter-link coming" title="Numbers 17">Ch.17</span><span class="chapter-link coming" title="Numbers 18">Ch.18</span><span class="chapter-link coming" title="Numbers 19">Ch.19</span><span class="chapter-link coming" title="Numbers 20">Ch.20</span><span class="chapter-link coming" title="Numbers 21">Ch.21</span><span class="chapter-link coming" title="Numbers 22">Ch.22</span><span class="chapter-link coming" title="Numbers 23">Ch.23</span><span class="chapter-link coming" title="Numbers 24">Ch.24</span><span class="chapter-link coming" title="Numbers 25">Ch.25</span><span class="chapter-link coming" title="Numbers 26">Ch.26</span><span class="chapter-link coming" title="Numbers 27">Ch.27</span><span class="chapter-link coming" title="Numbers 28">Ch.28</span><span class="chapter-link coming" title="Numbers 29">Ch.29</span><span class="chapter-link coming" title="Numbers 30">Ch.30</span><span class="chapter-link coming" title="Numbers 31">Ch.31</span><span class="chapter-link coming" title="Numbers 32">Ch.32</span><span class="chapter-link coming" title="Numbers 33">Ch.33</span><span class="chapter-link coming" title="Numbers 34">Ch.34</span><span class="chapter-link coming" title="Numbers 35">Ch.35</span><span class="chapter-link coming" title="Numbers 36">Ch.36</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-deuteronomy">
-  <button class="book-btn" onclick="toggleBook('deuteronomy')">
-    <span class="book-name">Deuteronomy</span>
-    <span class="book-meta"><span class="ch-count">34 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-deuteronomy">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Deuteronomy 1">Ch.1</span><span class="chapter-link coming" title="Deuteronomy 2">Ch.2</span><span class="chapter-link coming" title="Deuteronomy 3">Ch.3</span><span class="chapter-link coming" title="Deuteronomy 4">Ch.4</span><span class="chapter-link coming" title="Deuteronomy 5">Ch.5</span><span class="chapter-link coming" title="Deuteronomy 6">Ch.6</span><span class="chapter-link coming" title="Deuteronomy 7">Ch.7</span><span class="chapter-link coming" title="Deuteronomy 8">Ch.8</span><span class="chapter-link coming" title="Deuteronomy 9">Ch.9</span><span class="chapter-link coming" title="Deuteronomy 10">Ch.10</span><span class="chapter-link coming" title="Deuteronomy 11">Ch.11</span><span class="chapter-link coming" title="Deuteronomy 12">Ch.12</span><span class="chapter-link coming" title="Deuteronomy 13">Ch.13</span><span class="chapter-link coming" title="Deuteronomy 14">Ch.14</span><span class="chapter-link coming" title="Deuteronomy 15">Ch.15</span><span class="chapter-link coming" title="Deuteronomy 16">Ch.16</span><span class="chapter-link coming" title="Deuteronomy 17">Ch.17</span><span class="chapter-link coming" title="Deuteronomy 18">Ch.18</span><span class="chapter-link coming" title="Deuteronomy 19">Ch.19</span><span class="chapter-link coming" title="Deuteronomy 20">Ch.20</span><span class="chapter-link coming" title="Deuteronomy 21">Ch.21</span><span class="chapter-link coming" title="Deuteronomy 22">Ch.22</span><span class="chapter-link coming" title="Deuteronomy 23">Ch.23</span><span class="chapter-link coming" title="Deuteronomy 24">Ch.24</span><span class="chapter-link coming" title="Deuteronomy 25">Ch.25</span><span class="chapter-link coming" title="Deuteronomy 26">Ch.26</span><span class="chapter-link coming" title="Deuteronomy 27">Ch.27</span><span class="chapter-link coming" title="Deuteronomy 28">Ch.28</span><span class="chapter-link coming" title="Deuteronomy 29">Ch.29</span><span class="chapter-link coming" title="Deuteronomy 30">Ch.30</span><span class="chapter-link coming" title="Deuteronomy 31">Ch.31</span><span class="chapter-link coming" title="Deuteronomy 32">Ch.32</span><span class="chapter-link coming" title="Deuteronomy 33">Ch.33</span><span class="chapter-link coming" title="Deuteronomy 34">Ch.34</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-joshua">
-  <button class="book-btn" onclick="toggleBook('joshua')">
-    <span class="book-name">Joshua</span>
-    <span class="book-meta"><span class="ch-count">24 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-joshua">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Joshua 1">Ch.1</span><span class="chapter-link coming" title="Joshua 2">Ch.2</span><span class="chapter-link coming" title="Joshua 3">Ch.3</span><span class="chapter-link coming" title="Joshua 4">Ch.4</span><span class="chapter-link coming" title="Joshua 5">Ch.5</span><span class="chapter-link coming" title="Joshua 6">Ch.6</span><span class="chapter-link coming" title="Joshua 7">Ch.7</span><span class="chapter-link coming" title="Joshua 8">Ch.8</span><span class="chapter-link coming" title="Joshua 9">Ch.9</span><span class="chapter-link coming" title="Joshua 10">Ch.10</span><span class="chapter-link coming" title="Joshua 11">Ch.11</span><span class="chapter-link coming" title="Joshua 12">Ch.12</span><span class="chapter-link coming" title="Joshua 13">Ch.13</span><span class="chapter-link coming" title="Joshua 14">Ch.14</span><span class="chapter-link coming" title="Joshua 15">Ch.15</span><span class="chapter-link coming" title="Joshua 16">Ch.16</span><span class="chapter-link coming" title="Joshua 17">Ch.17</span><span class="chapter-link coming" title="Joshua 18">Ch.18</span><span class="chapter-link coming" title="Joshua 19">Ch.19</span><span class="chapter-link coming" title="Joshua 20">Ch.20</span><span class="chapter-link coming" title="Joshua 21">Ch.21</span><span class="chapter-link coming" title="Joshua 22">Ch.22</span><span class="chapter-link coming" title="Joshua 23">Ch.23</span><span class="chapter-link coming" title="Joshua 24">Ch.24</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-judges">
-  <button class="book-btn" onclick="toggleBook('judges')">
-    <span class="book-name">Judges</span>
-    <span class="book-meta"><span class="ch-count">21 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-judges">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Judges 1">Ch.1</span><span class="chapter-link coming" title="Judges 2">Ch.2</span><span class="chapter-link coming" title="Judges 3">Ch.3</span><span class="chapter-link coming" title="Judges 4">Ch.4</span><span class="chapter-link coming" title="Judges 5">Ch.5</span><span class="chapter-link coming" title="Judges 6">Ch.6</span><span class="chapter-link coming" title="Judges 7">Ch.7</span><span class="chapter-link coming" title="Judges 8">Ch.8</span><span class="chapter-link coming" title="Judges 9">Ch.9</span><span class="chapter-link coming" title="Judges 10">Ch.10</span><span class="chapter-link coming" title="Judges 11">Ch.11</span><span class="chapter-link coming" title="Judges 12">Ch.12</span><span class="chapter-link coming" title="Judges 13">Ch.13</span><span class="chapter-link coming" title="Judges 14">Ch.14</span><span class="chapter-link coming" title="Judges 15">Ch.15</span><span class="chapter-link coming" title="Judges 16">Ch.16</span><span class="chapter-link coming" title="Judges 17">Ch.17</span><span class="chapter-link coming" title="Judges 18">Ch.18</span><span class="chapter-link coming" title="Judges 19">Ch.19</span><span class="chapter-link coming" title="Judges 20">Ch.20</span><span class="chapter-link coming" title="Judges 21">Ch.21</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-ruth">
-  <button class="book-btn" onclick="toggleBook('ruth')">
-    <span class="book-name">Ruth</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-ruth">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Ruth 1">Ch.1</span><span class="chapter-link coming" title="Ruth 2">Ch.2</span><span class="chapter-link coming" title="Ruth 3">Ch.3</span><span class="chapter-link coming" title="Ruth 4">Ch.4</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-samuel">
-  <button class="book-btn" onclick="toggleBook('1-samuel')">
-    <span class="book-name">1 Samuel</span>
-    <span class="book-meta"><span class="ch-count">31 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-samuel">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Samuel 1">Ch.1</span><span class="chapter-link coming" title="1 Samuel 2">Ch.2</span><span class="chapter-link coming" title="1 Samuel 3">Ch.3</span><span class="chapter-link coming" title="1 Samuel 4">Ch.4</span><span class="chapter-link coming" title="1 Samuel 5">Ch.5</span><span class="chapter-link coming" title="1 Samuel 6">Ch.6</span><span class="chapter-link coming" title="1 Samuel 7">Ch.7</span><span class="chapter-link coming" title="1 Samuel 8">Ch.8</span><span class="chapter-link coming" title="1 Samuel 9">Ch.9</span><span class="chapter-link coming" title="1 Samuel 10">Ch.10</span><span class="chapter-link coming" title="1 Samuel 11">Ch.11</span><span class="chapter-link coming" title="1 Samuel 12">Ch.12</span><span class="chapter-link coming" title="1 Samuel 13">Ch.13</span><span class="chapter-link coming" title="1 Samuel 14">Ch.14</span><span class="chapter-link coming" title="1 Samuel 15">Ch.15</span><span class="chapter-link coming" title="1 Samuel 16">Ch.16</span><span class="chapter-link coming" title="1 Samuel 17">Ch.17</span><span class="chapter-link coming" title="1 Samuel 18">Ch.18</span><span class="chapter-link coming" title="1 Samuel 19">Ch.19</span><span class="chapter-link coming" title="1 Samuel 20">Ch.20</span><span class="chapter-link coming" title="1 Samuel 21">Ch.21</span><span class="chapter-link coming" title="1 Samuel 22">Ch.22</span><span class="chapter-link coming" title="1 Samuel 23">Ch.23</span><span class="chapter-link coming" title="1 Samuel 24">Ch.24</span><span class="chapter-link coming" title="1 Samuel 25">Ch.25</span><span class="chapter-link coming" title="1 Samuel 26">Ch.26</span><span class="chapter-link coming" title="1 Samuel 27">Ch.27</span><span class="chapter-link coming" title="1 Samuel 28">Ch.28</span><span class="chapter-link coming" title="1 Samuel 29">Ch.29</span><span class="chapter-link coming" title="1 Samuel 30">Ch.30</span><span class="chapter-link coming" title="1 Samuel 31">Ch.31</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-samuel">
-  <button class="book-btn" onclick="toggleBook('2-samuel')">
-    <span class="book-name">2 Samuel</span>
-    <span class="book-meta"><span class="ch-count">24 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-samuel">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Samuel 1">Ch.1</span><span class="chapter-link coming" title="2 Samuel 2">Ch.2</span><span class="chapter-link coming" title="2 Samuel 3">Ch.3</span><span class="chapter-link coming" title="2 Samuel 4">Ch.4</span><span class="chapter-link coming" title="2 Samuel 5">Ch.5</span><span class="chapter-link coming" title="2 Samuel 6">Ch.6</span><span class="chapter-link coming" title="2 Samuel 7">Ch.7</span><span class="chapter-link coming" title="2 Samuel 8">Ch.8</span><span class="chapter-link coming" title="2 Samuel 9">Ch.9</span><span class="chapter-link coming" title="2 Samuel 10">Ch.10</span><span class="chapter-link coming" title="2 Samuel 11">Ch.11</span><span class="chapter-link coming" title="2 Samuel 12">Ch.12</span><span class="chapter-link coming" title="2 Samuel 13">Ch.13</span><span class="chapter-link coming" title="2 Samuel 14">Ch.14</span><span class="chapter-link coming" title="2 Samuel 15">Ch.15</span><span class="chapter-link coming" title="2 Samuel 16">Ch.16</span><span class="chapter-link coming" title="2 Samuel 17">Ch.17</span><span class="chapter-link coming" title="2 Samuel 18">Ch.18</span><span class="chapter-link coming" title="2 Samuel 19">Ch.19</span><span class="chapter-link coming" title="2 Samuel 20">Ch.20</span><span class="chapter-link coming" title="2 Samuel 21">Ch.21</span><span class="chapter-link coming" title="2 Samuel 22">Ch.22</span><span class="chapter-link coming" title="2 Samuel 23">Ch.23</span><span class="chapter-link coming" title="2 Samuel 24">Ch.24</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-kings">
-  <button class="book-btn" onclick="toggleBook('1-kings')">
-    <span class="book-name">1 Kings</span>
-    <span class="book-meta"><span class="ch-count">22 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-kings">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Kings 1">Ch.1</span><span class="chapter-link coming" title="1 Kings 2">Ch.2</span><span class="chapter-link coming" title="1 Kings 3">Ch.3</span><span class="chapter-link coming" title="1 Kings 4">Ch.4</span><span class="chapter-link coming" title="1 Kings 5">Ch.5</span><span class="chapter-link coming" title="1 Kings 6">Ch.6</span><span class="chapter-link coming" title="1 Kings 7">Ch.7</span><span class="chapter-link coming" title="1 Kings 8">Ch.8</span><span class="chapter-link coming" title="1 Kings 9">Ch.9</span><span class="chapter-link coming" title="1 Kings 10">Ch.10</span><span class="chapter-link coming" title="1 Kings 11">Ch.11</span><span class="chapter-link coming" title="1 Kings 12">Ch.12</span><span class="chapter-link coming" title="1 Kings 13">Ch.13</span><span class="chapter-link coming" title="1 Kings 14">Ch.14</span><span class="chapter-link coming" title="1 Kings 15">Ch.15</span><span class="chapter-link coming" title="1 Kings 16">Ch.16</span><span class="chapter-link coming" title="1 Kings 17">Ch.17</span><span class="chapter-link coming" title="1 Kings 18">Ch.18</span><span class="chapter-link coming" title="1 Kings 19">Ch.19</span><span class="chapter-link coming" title="1 Kings 20">Ch.20</span><span class="chapter-link coming" title="1 Kings 21">Ch.21</span><span class="chapter-link coming" title="1 Kings 22">Ch.22</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-kings">
-  <button class="book-btn" onclick="toggleBook('2-kings')">
-    <span class="book-name">2 Kings</span>
-    <span class="book-meta"><span class="ch-count">25 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-kings">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Kings 1">Ch.1</span><span class="chapter-link coming" title="2 Kings 2">Ch.2</span><span class="chapter-link coming" title="2 Kings 3">Ch.3</span><span class="chapter-link coming" title="2 Kings 4">Ch.4</span><span class="chapter-link coming" title="2 Kings 5">Ch.5</span><span class="chapter-link coming" title="2 Kings 6">Ch.6</span><span class="chapter-link coming" title="2 Kings 7">Ch.7</span><span class="chapter-link coming" title="2 Kings 8">Ch.8</span><span class="chapter-link coming" title="2 Kings 9">Ch.9</span><span class="chapter-link coming" title="2 Kings 10">Ch.10</span><span class="chapter-link coming" title="2 Kings 11">Ch.11</span><span class="chapter-link coming" title="2 Kings 12">Ch.12</span><span class="chapter-link coming" title="2 Kings 13">Ch.13</span><span class="chapter-link coming" title="2 Kings 14">Ch.14</span><span class="chapter-link coming" title="2 Kings 15">Ch.15</span><span class="chapter-link coming" title="2 Kings 16">Ch.16</span><span class="chapter-link coming" title="2 Kings 17">Ch.17</span><span class="chapter-link coming" title="2 Kings 18">Ch.18</span><span class="chapter-link coming" title="2 Kings 19">Ch.19</span><span class="chapter-link coming" title="2 Kings 20">Ch.20</span><span class="chapter-link coming" title="2 Kings 21">Ch.21</span><span class="chapter-link coming" title="2 Kings 22">Ch.22</span><span class="chapter-link coming" title="2 Kings 23">Ch.23</span><span class="chapter-link coming" title="2 Kings 24">Ch.24</span><span class="chapter-link coming" title="2 Kings 25">Ch.25</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-chronicles">
-  <button class="book-btn" onclick="toggleBook('1-chronicles')">
-    <span class="book-name">1 Chronicles</span>
-    <span class="book-meta"><span class="ch-count">29 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-chronicles">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Chronicles 1">Ch.1</span><span class="chapter-link coming" title="1 Chronicles 2">Ch.2</span><span class="chapter-link coming" title="1 Chronicles 3">Ch.3</span><span class="chapter-link coming" title="1 Chronicles 4">Ch.4</span><span class="chapter-link coming" title="1 Chronicles 5">Ch.5</span><span class="chapter-link coming" title="1 Chronicles 6">Ch.6</span><span class="chapter-link coming" title="1 Chronicles 7">Ch.7</span><span class="chapter-link coming" title="1 Chronicles 8">Ch.8</span><span class="chapter-link coming" title="1 Chronicles 9">Ch.9</span><span class="chapter-link coming" title="1 Chronicles 10">Ch.10</span><span class="chapter-link coming" title="1 Chronicles 11">Ch.11</span><span class="chapter-link coming" title="1 Chronicles 12">Ch.12</span><span class="chapter-link coming" title="1 Chronicles 13">Ch.13</span><span class="chapter-link coming" title="1 Chronicles 14">Ch.14</span><span class="chapter-link coming" title="1 Chronicles 15">Ch.15</span><span class="chapter-link coming" title="1 Chronicles 16">Ch.16</span><span class="chapter-link coming" title="1 Chronicles 17">Ch.17</span><span class="chapter-link coming" title="1 Chronicles 18">Ch.18</span><span class="chapter-link coming" title="1 Chronicles 19">Ch.19</span><span class="chapter-link coming" title="1 Chronicles 20">Ch.20</span><span class="chapter-link coming" title="1 Chronicles 21">Ch.21</span><span class="chapter-link coming" title="1 Chronicles 22">Ch.22</span><span class="chapter-link coming" title="1 Chronicles 23">Ch.23</span><span class="chapter-link coming" title="1 Chronicles 24">Ch.24</span><span class="chapter-link coming" title="1 Chronicles 25">Ch.25</span><span class="chapter-link coming" title="1 Chronicles 26">Ch.26</span><span class="chapter-link coming" title="1 Chronicles 27">Ch.27</span><span class="chapter-link coming" title="1 Chronicles 28">Ch.28</span><span class="chapter-link coming" title="1 Chronicles 29">Ch.29</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-chronicles">
-  <button class="book-btn" onclick="toggleBook('2-chronicles')">
-    <span class="book-name">2 Chronicles</span>
-    <span class="book-meta"><span class="ch-count">36 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-chronicles">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Chronicles 1">Ch.1</span><span class="chapter-link coming" title="2 Chronicles 2">Ch.2</span><span class="chapter-link coming" title="2 Chronicles 3">Ch.3</span><span class="chapter-link coming" title="2 Chronicles 4">Ch.4</span><span class="chapter-link coming" title="2 Chronicles 5">Ch.5</span><span class="chapter-link coming" title="2 Chronicles 6">Ch.6</span><span class="chapter-link coming" title="2 Chronicles 7">Ch.7</span><span class="chapter-link coming" title="2 Chronicles 8">Ch.8</span><span class="chapter-link coming" title="2 Chronicles 9">Ch.9</span><span class="chapter-link coming" title="2 Chronicles 10">Ch.10</span><span class="chapter-link coming" title="2 Chronicles 11">Ch.11</span><span class="chapter-link coming" title="2 Chronicles 12">Ch.12</span><span class="chapter-link coming" title="2 Chronicles 13">Ch.13</span><span class="chapter-link coming" title="2 Chronicles 14">Ch.14</span><span class="chapter-link coming" title="2 Chronicles 15">Ch.15</span><span class="chapter-link coming" title="2 Chronicles 16">Ch.16</span><span class="chapter-link coming" title="2 Chronicles 17">Ch.17</span><span class="chapter-link coming" title="2 Chronicles 18">Ch.18</span><span class="chapter-link coming" title="2 Chronicles 19">Ch.19</span><span class="chapter-link coming" title="2 Chronicles 20">Ch.20</span><span class="chapter-link coming" title="2 Chronicles 21">Ch.21</span><span class="chapter-link coming" title="2 Chronicles 22">Ch.22</span><span class="chapter-link coming" title="2 Chronicles 23">Ch.23</span><span class="chapter-link coming" title="2 Chronicles 24">Ch.24</span><span class="chapter-link coming" title="2 Chronicles 25">Ch.25</span><span class="chapter-link coming" title="2 Chronicles 26">Ch.26</span><span class="chapter-link coming" title="2 Chronicles 27">Ch.27</span><span class="chapter-link coming" title="2 Chronicles 28">Ch.28</span><span class="chapter-link coming" title="2 Chronicles 29">Ch.29</span><span class="chapter-link coming" title="2 Chronicles 30">Ch.30</span><span class="chapter-link coming" title="2 Chronicles 31">Ch.31</span><span class="chapter-link coming" title="2 Chronicles 32">Ch.32</span><span class="chapter-link coming" title="2 Chronicles 33">Ch.33</span><span class="chapter-link coming" title="2 Chronicles 34">Ch.34</span><span class="chapter-link coming" title="2 Chronicles 35">Ch.35</span><span class="chapter-link coming" title="2 Chronicles 36">Ch.36</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-ezra">
-  <button class="book-btn" onclick="toggleBook('ezra')">
-    <span class="book-name">Ezra</span>
-    <span class="book-meta"><span class="ch-count">10 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-ezra">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Ezra 1">Ch.1</span><span class="chapter-link coming" title="Ezra 2">Ch.2</span><span class="chapter-link coming" title="Ezra 3">Ch.3</span><span class="chapter-link coming" title="Ezra 4">Ch.4</span><span class="chapter-link coming" title="Ezra 5">Ch.5</span><span class="chapter-link coming" title="Ezra 6">Ch.6</span><span class="chapter-link coming" title="Ezra 7">Ch.7</span><span class="chapter-link coming" title="Ezra 8">Ch.8</span><span class="chapter-link coming" title="Ezra 9">Ch.9</span><span class="chapter-link coming" title="Ezra 10">Ch.10</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-nehemiah">
-  <button class="book-btn" onclick="toggleBook('nehemiah')">
-    <span class="book-name">Nehemiah</span>
-    <span class="book-meta"><span class="ch-count">13 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-nehemiah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Nehemiah 1">Ch.1</span><span class="chapter-link coming" title="Nehemiah 2">Ch.2</span><span class="chapter-link coming" title="Nehemiah 3">Ch.3</span><span class="chapter-link coming" title="Nehemiah 4">Ch.4</span><span class="chapter-link coming" title="Nehemiah 5">Ch.5</span><span class="chapter-link coming" title="Nehemiah 6">Ch.6</span><span class="chapter-link coming" title="Nehemiah 7">Ch.7</span><span class="chapter-link coming" title="Nehemiah 8">Ch.8</span><span class="chapter-link coming" title="Nehemiah 9">Ch.9</span><span class="chapter-link coming" title="Nehemiah 10">Ch.10</span><span class="chapter-link coming" title="Nehemiah 11">Ch.11</span><span class="chapter-link coming" title="Nehemiah 12">Ch.12</span><span class="chapter-link coming" title="Nehemiah 13">Ch.13</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-esther">
-  <button class="book-btn" onclick="toggleBook('esther')">
-    <span class="book-name">Esther</span>
-    <span class="book-meta"><span class="ch-count">10 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-esther">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Esther 1">Ch.1</span><span class="chapter-link coming" title="Esther 2">Ch.2</span><span class="chapter-link coming" title="Esther 3">Ch.3</span><span class="chapter-link coming" title="Esther 4">Ch.4</span><span class="chapter-link coming" title="Esther 5">Ch.5</span><span class="chapter-link coming" title="Esther 6">Ch.6</span><span class="chapter-link coming" title="Esther 7">Ch.7</span><span class="chapter-link coming" title="Esther 8">Ch.8</span><span class="chapter-link coming" title="Esther 9">Ch.9</span><span class="chapter-link coming" title="Esther 10">Ch.10</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-job">
-  <button class="book-btn" onclick="toggleBook('job')">
-    <span class="book-name">Job</span>
-    <span class="book-meta"><span class="ch-count">42 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-job">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Job 1">Ch.1</span><span class="chapter-link coming" title="Job 2">Ch.2</span><span class="chapter-link coming" title="Job 3">Ch.3</span><span class="chapter-link coming" title="Job 4">Ch.4</span><span class="chapter-link coming" title="Job 5">Ch.5</span><span class="chapter-link coming" title="Job 6">Ch.6</span><span class="chapter-link coming" title="Job 7">Ch.7</span><span class="chapter-link coming" title="Job 8">Ch.8</span><span class="chapter-link coming" title="Job 9">Ch.9</span><span class="chapter-link coming" title="Job 10">Ch.10</span><span class="chapter-link coming" title="Job 11">Ch.11</span><span class="chapter-link coming" title="Job 12">Ch.12</span><span class="chapter-link coming" title="Job 13">Ch.13</span><span class="chapter-link coming" title="Job 14">Ch.14</span><span class="chapter-link coming" title="Job 15">Ch.15</span><span class="chapter-link coming" title="Job 16">Ch.16</span><span class="chapter-link coming" title="Job 17">Ch.17</span><span class="chapter-link coming" title="Job 18">Ch.18</span><span class="chapter-link coming" title="Job 19">Ch.19</span><span class="chapter-link coming" title="Job 20">Ch.20</span><span class="chapter-link coming" title="Job 21">Ch.21</span><span class="chapter-link coming" title="Job 22">Ch.22</span><span class="chapter-link coming" title="Job 23">Ch.23</span><span class="chapter-link coming" title="Job 24">Ch.24</span><span class="chapter-link coming" title="Job 25">Ch.25</span><span class="chapter-link coming" title="Job 26">Ch.26</span><span class="chapter-link coming" title="Job 27">Ch.27</span><span class="chapter-link coming" title="Job 28">Ch.28</span><span class="chapter-link coming" title="Job 29">Ch.29</span><span class="chapter-link coming" title="Job 30">Ch.30</span><span class="chapter-link coming" title="Job 31">Ch.31</span><span class="chapter-link coming" title="Job 32">Ch.32</span><span class="chapter-link coming" title="Job 33">Ch.33</span><span class="chapter-link coming" title="Job 34">Ch.34</span><span class="chapter-link coming" title="Job 35">Ch.35</span><span class="chapter-link coming" title="Job 36">Ch.36</span><span class="chapter-link coming" title="Job 37">Ch.37</span><span class="chapter-link coming" title="Job 38">Ch.38</span><span class="chapter-link coming" title="Job 39">Ch.39</span><span class="chapter-link coming" title="Job 40">Ch.40</span><span class="chapter-link coming" title="Job 41">Ch.41</span><span class="chapter-link coming" title="Job 42">Ch.42</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-psalms">
-  <button class="book-btn" onclick="toggleBook('psalms')">
-    <span class="book-name">Psalms</span>
-    <span class="book-meta"><span class="ch-count">150 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-psalms">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Psalms 1">Ch.1</span><span class="chapter-link coming" title="Psalms 2">Ch.2</span><span class="chapter-link coming" title="Psalms 3">Ch.3</span><span class="chapter-link coming" title="Psalms 4">Ch.4</span><span class="chapter-link coming" title="Psalms 5">Ch.5</span><span class="chapter-link coming" title="Psalms 6">Ch.6</span><span class="chapter-link coming" title="Psalms 7">Ch.7</span><span class="chapter-link coming" title="Psalms 8">Ch.8</span><span class="chapter-link coming" title="Psalms 9">Ch.9</span><span class="chapter-link coming" title="Psalms 10">Ch.10</span><span class="chapter-link coming" title="Psalms 11">Ch.11</span><span class="chapter-link coming" title="Psalms 12">Ch.12</span><span class="chapter-link coming" title="Psalms 13">Ch.13</span><span class="chapter-link coming" title="Psalms 14">Ch.14</span><span class="chapter-link coming" title="Psalms 15">Ch.15</span><span class="chapter-link coming" title="Psalms 16">Ch.16</span><span class="chapter-link coming" title="Psalms 17">Ch.17</span><span class="chapter-link coming" title="Psalms 18">Ch.18</span><span class="chapter-link coming" title="Psalms 19">Ch.19</span><span class="chapter-link coming" title="Psalms 20">Ch.20</span><span class="chapter-link coming" title="Psalms 21">Ch.21</span><span class="chapter-link coming" title="Psalms 22">Ch.22</span><span class="chapter-link coming" title="Psalms 23">Ch.23</span><span class="chapter-link coming" title="Psalms 24">Ch.24</span><span class="chapter-link coming" title="Psalms 25">Ch.25</span><span class="chapter-link coming" title="Psalms 26">Ch.26</span><span class="chapter-link coming" title="Psalms 27">Ch.27</span><span class="chapter-link coming" title="Psalms 28">Ch.28</span><span class="chapter-link coming" title="Psalms 29">Ch.29</span><span class="chapter-link coming" title="Psalms 30">Ch.30</span><span class="chapter-link coming" title="Psalms 31">Ch.31</span><span class="chapter-link coming" title="Psalms 32">Ch.32</span><span class="chapter-link coming" title="Psalms 33">Ch.33</span><span class="chapter-link coming" title="Psalms 34">Ch.34</span><span class="chapter-link coming" title="Psalms 35">Ch.35</span><span class="chapter-link coming" title="Psalms 36">Ch.36</span><span class="chapter-link coming" title="Psalms 37">Ch.37</span><span class="chapter-link coming" title="Psalms 38">Ch.38</span><span class="chapter-link coming" title="Psalms 39">Ch.39</span><span class="chapter-link coming" title="Psalms 40">Ch.40</span><span class="chapter-link coming" title="Psalms 41">Ch.41</span><span class="chapter-link coming" title="Psalms 42">Ch.42</span><span class="chapter-link coming" title="Psalms 43">Ch.43</span><span class="chapter-link coming" title="Psalms 44">Ch.44</span><span class="chapter-link coming" title="Psalms 45">Ch.45</span><span class="chapter-link coming" title="Psalms 46">Ch.46</span><span class="chapter-link coming" title="Psalms 47">Ch.47</span><span class="chapter-link coming" title="Psalms 48">Ch.48</span><span class="chapter-link coming" title="Psalms 49">Ch.49</span><span class="chapter-link coming" title="Psalms 50">Ch.50</span><span class="chapter-link coming" title="Psalms 51">Ch.51</span><span class="chapter-link coming" title="Psalms 52">Ch.52</span><span class="chapter-link coming" title="Psalms 53">Ch.53</span><span class="chapter-link coming" title="Psalms 54">Ch.54</span><span class="chapter-link coming" title="Psalms 55">Ch.55</span><span class="chapter-link coming" title="Psalms 56">Ch.56</span><span class="chapter-link coming" title="Psalms 57">Ch.57</span><span class="chapter-link coming" title="Psalms 58">Ch.58</span><span class="chapter-link coming" title="Psalms 59">Ch.59</span><span class="chapter-link coming" title="Psalms 60">Ch.60</span><span class="chapter-link coming" title="Psalms 61">Ch.61</span><span class="chapter-link coming" title="Psalms 62">Ch.62</span><span class="chapter-link coming" title="Psalms 63">Ch.63</span><span class="chapter-link coming" title="Psalms 64">Ch.64</span><span class="chapter-link coming" title="Psalms 65">Ch.65</span><span class="chapter-link coming" title="Psalms 66">Ch.66</span><span class="chapter-link coming" title="Psalms 67">Ch.67</span><span class="chapter-link coming" title="Psalms 68">Ch.68</span><span class="chapter-link coming" title="Psalms 69">Ch.69</span><span class="chapter-link coming" title="Psalms 70">Ch.70</span><span class="chapter-link coming" title="Psalms 71">Ch.71</span><span class="chapter-link coming" title="Psalms 72">Ch.72</span><span class="chapter-link coming" title="Psalms 73">Ch.73</span><span class="chapter-link coming" title="Psalms 74">Ch.74</span><span class="chapter-link coming" title="Psalms 75">Ch.75</span><span class="chapter-link coming" title="Psalms 76">Ch.76</span><span class="chapter-link coming" title="Psalms 77">Ch.77</span><span class="chapter-link coming" title="Psalms 78">Ch.78</span><span class="chapter-link coming" title="Psalms 79">Ch.79</span><span class="chapter-link coming" title="Psalms 80">Ch.80</span><span class="chapter-link coming" title="Psalms 81">Ch.81</span><span class="chapter-link coming" title="Psalms 82">Ch.82</span><span class="chapter-link coming" title="Psalms 83">Ch.83</span><span class="chapter-link coming" title="Psalms 84">Ch.84</span><span class="chapter-link coming" title="Psalms 85">Ch.85</span><span class="chapter-link coming" title="Psalms 86">Ch.86</span><span class="chapter-link coming" title="Psalms 87">Ch.87</span><span class="chapter-link coming" title="Psalms 88">Ch.88</span><span class="chapter-link coming" title="Psalms 89">Ch.89</span><span class="chapter-link coming" title="Psalms 90">Ch.90</span><span class="chapter-link coming" title="Psalms 91">Ch.91</span><span class="chapter-link coming" title="Psalms 92">Ch.92</span><span class="chapter-link coming" title="Psalms 93">Ch.93</span><span class="chapter-link coming" title="Psalms 94">Ch.94</span><span class="chapter-link coming" title="Psalms 95">Ch.95</span><span class="chapter-link coming" title="Psalms 96">Ch.96</span><span class="chapter-link coming" title="Psalms 97">Ch.97</span><span class="chapter-link coming" title="Psalms 98">Ch.98</span><span class="chapter-link coming" title="Psalms 99">Ch.99</span><span class="chapter-link coming" title="Psalms 100">Ch.100</span><span class="chapter-link coming" title="Psalms 101">Ch.101</span><span class="chapter-link coming" title="Psalms 102">Ch.102</span><span class="chapter-link coming" title="Psalms 103">Ch.103</span><span class="chapter-link coming" title="Psalms 104">Ch.104</span><span class="chapter-link coming" title="Psalms 105">Ch.105</span><span class="chapter-link coming" title="Psalms 106">Ch.106</span><span class="chapter-link coming" title="Psalms 107">Ch.107</span><span class="chapter-link coming" title="Psalms 108">Ch.108</span><span class="chapter-link coming" title="Psalms 109">Ch.109</span><span class="chapter-link coming" title="Psalms 110">Ch.110</span><span class="chapter-link coming" title="Psalms 111">Ch.111</span><span class="chapter-link coming" title="Psalms 112">Ch.112</span><span class="chapter-link coming" title="Psalms 113">Ch.113</span><span class="chapter-link coming" title="Psalms 114">Ch.114</span><span class="chapter-link coming" title="Psalms 115">Ch.115</span><span class="chapter-link coming" title="Psalms 116">Ch.116</span><span class="chapter-link coming" title="Psalms 117">Ch.117</span><span class="chapter-link coming" title="Psalms 118">Ch.118</span><span class="chapter-link coming" title="Psalms 119">Ch.119</span><span class="chapter-link coming" title="Psalms 120">Ch.120</span><span class="chapter-link coming" title="Psalms 121">Ch.121</span><span class="chapter-link coming" title="Psalms 122">Ch.122</span><span class="chapter-link coming" title="Psalms 123">Ch.123</span><span class="chapter-link coming" title="Psalms 124">Ch.124</span><span class="chapter-link coming" title="Psalms 125">Ch.125</span><span class="chapter-link coming" title="Psalms 126">Ch.126</span><span class="chapter-link coming" title="Psalms 127">Ch.127</span><span class="chapter-link coming" title="Psalms 128">Ch.128</span><span class="chapter-link coming" title="Psalms 129">Ch.129</span><span class="chapter-link coming" title="Psalms 130">Ch.130</span><span class="chapter-link coming" title="Psalms 131">Ch.131</span><span class="chapter-link coming" title="Psalms 132">Ch.132</span><span class="chapter-link coming" title="Psalms 133">Ch.133</span><span class="chapter-link coming" title="Psalms 134">Ch.134</span><span class="chapter-link coming" title="Psalms 135">Ch.135</span><span class="chapter-link coming" title="Psalms 136">Ch.136</span><span class="chapter-link coming" title="Psalms 137">Ch.137</span><span class="chapter-link coming" title="Psalms 138">Ch.138</span><span class="chapter-link coming" title="Psalms 139">Ch.139</span><span class="chapter-link coming" title="Psalms 140">Ch.140</span><span class="chapter-link coming" title="Psalms 141">Ch.141</span><span class="chapter-link coming" title="Psalms 142">Ch.142</span><span class="chapter-link coming" title="Psalms 143">Ch.143</span><span class="chapter-link coming" title="Psalms 144">Ch.144</span><span class="chapter-link coming" title="Psalms 145">Ch.145</span><span class="chapter-link coming" title="Psalms 146">Ch.146</span><span class="chapter-link coming" title="Psalms 147">Ch.147</span><span class="chapter-link coming" title="Psalms 148">Ch.148</span><span class="chapter-link coming" title="Psalms 149">Ch.149</span><span class="chapter-link coming" title="Psalms 150">Ch.150</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-proverbs">
-  <button class="book-btn" onclick="toggleBook('proverbs')">
-    <span class="book-name">Proverbs</span>
-    <span class="book-meta"><span class="ch-count">31 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-proverbs">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Proverbs 1">Ch.1</span><span class="chapter-link coming" title="Proverbs 2">Ch.2</span><span class="chapter-link coming" title="Proverbs 3">Ch.3</span><span class="chapter-link coming" title="Proverbs 4">Ch.4</span><span class="chapter-link coming" title="Proverbs 5">Ch.5</span><span class="chapter-link coming" title="Proverbs 6">Ch.6</span><span class="chapter-link coming" title="Proverbs 7">Ch.7</span><span class="chapter-link coming" title="Proverbs 8">Ch.8</span><span class="chapter-link coming" title="Proverbs 9">Ch.9</span><span class="chapter-link coming" title="Proverbs 10">Ch.10</span><span class="chapter-link coming" title="Proverbs 11">Ch.11</span><span class="chapter-link coming" title="Proverbs 12">Ch.12</span><span class="chapter-link coming" title="Proverbs 13">Ch.13</span><span class="chapter-link coming" title="Proverbs 14">Ch.14</span><span class="chapter-link coming" title="Proverbs 15">Ch.15</span><span class="chapter-link coming" title="Proverbs 16">Ch.16</span><span class="chapter-link coming" title="Proverbs 17">Ch.17</span><span class="chapter-link coming" title="Proverbs 18">Ch.18</span><span class="chapter-link coming" title="Proverbs 19">Ch.19</span><span class="chapter-link coming" title="Proverbs 20">Ch.20</span><span class="chapter-link coming" title="Proverbs 21">Ch.21</span><span class="chapter-link coming" title="Proverbs 22">Ch.22</span><span class="chapter-link coming" title="Proverbs 23">Ch.23</span><span class="chapter-link coming" title="Proverbs 24">Ch.24</span><span class="chapter-link coming" title="Proverbs 25">Ch.25</span><span class="chapter-link coming" title="Proverbs 26">Ch.26</span><span class="chapter-link coming" title="Proverbs 27">Ch.27</span><span class="chapter-link coming" title="Proverbs 28">Ch.28</span><span class="chapter-link coming" title="Proverbs 29">Ch.29</span><span class="chapter-link coming" title="Proverbs 30">Ch.30</span><span class="chapter-link coming" title="Proverbs 31">Ch.31</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-ecclesiastes">
-  <button class="book-btn" onclick="toggleBook('ecclesiastes')">
-    <span class="book-name">Ecclesiastes</span>
-    <span class="book-meta"><span class="ch-count">12 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-ecclesiastes">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Ecclesiastes 1">Ch.1</span><span class="chapter-link coming" title="Ecclesiastes 2">Ch.2</span><span class="chapter-link coming" title="Ecclesiastes 3">Ch.3</span><span class="chapter-link coming" title="Ecclesiastes 4">Ch.4</span><span class="chapter-link coming" title="Ecclesiastes 5">Ch.5</span><span class="chapter-link coming" title="Ecclesiastes 6">Ch.6</span><span class="chapter-link coming" title="Ecclesiastes 7">Ch.7</span><span class="chapter-link coming" title="Ecclesiastes 8">Ch.8</span><span class="chapter-link coming" title="Ecclesiastes 9">Ch.9</span><span class="chapter-link coming" title="Ecclesiastes 10">Ch.10</span><span class="chapter-link coming" title="Ecclesiastes 11">Ch.11</span><span class="chapter-link coming" title="Ecclesiastes 12">Ch.12</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-song-of-solomon">
-  <button class="book-btn" onclick="toggleBook('song-of-solomon')">
-    <span class="book-name">Song of Solomon</span>
-    <span class="book-meta"><span class="ch-count">8 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-song-of-solomon">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Song of Solomon 1">Ch.1</span><span class="chapter-link coming" title="Song of Solomon 2">Ch.2</span><span class="chapter-link coming" title="Song of Solomon 3">Ch.3</span><span class="chapter-link coming" title="Song of Solomon 4">Ch.4</span><span class="chapter-link coming" title="Song of Solomon 5">Ch.5</span><span class="chapter-link coming" title="Song of Solomon 6">Ch.6</span><span class="chapter-link coming" title="Song of Solomon 7">Ch.7</span><span class="chapter-link coming" title="Song of Solomon 8">Ch.8</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-isaiah">
-  <button class="book-btn" onclick="toggleBook('isaiah')">
-    <span class="book-name">Isaiah</span>
-    <span class="book-meta"><span class="ch-count">66 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-isaiah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Isaiah 1">Ch.1</span><span class="chapter-link coming" title="Isaiah 2">Ch.2</span><span class="chapter-link coming" title="Isaiah 3">Ch.3</span><span class="chapter-link coming" title="Isaiah 4">Ch.4</span><span class="chapter-link coming" title="Isaiah 5">Ch.5</span><span class="chapter-link coming" title="Isaiah 6">Ch.6</span><span class="chapter-link coming" title="Isaiah 7">Ch.7</span><span class="chapter-link coming" title="Isaiah 8">Ch.8</span><span class="chapter-link coming" title="Isaiah 9">Ch.9</span><span class="chapter-link coming" title="Isaiah 10">Ch.10</span><span class="chapter-link coming" title="Isaiah 11">Ch.11</span><span class="chapter-link coming" title="Isaiah 12">Ch.12</span><span class="chapter-link coming" title="Isaiah 13">Ch.13</span><span class="chapter-link coming" title="Isaiah 14">Ch.14</span><span class="chapter-link coming" title="Isaiah 15">Ch.15</span><span class="chapter-link coming" title="Isaiah 16">Ch.16</span><span class="chapter-link coming" title="Isaiah 17">Ch.17</span><span class="chapter-link coming" title="Isaiah 18">Ch.18</span><span class="chapter-link coming" title="Isaiah 19">Ch.19</span><span class="chapter-link coming" title="Isaiah 20">Ch.20</span><span class="chapter-link coming" title="Isaiah 21">Ch.21</span><span class="chapter-link coming" title="Isaiah 22">Ch.22</span><span class="chapter-link coming" title="Isaiah 23">Ch.23</span><span class="chapter-link coming" title="Isaiah 24">Ch.24</span><span class="chapter-link coming" title="Isaiah 25">Ch.25</span><span class="chapter-link coming" title="Isaiah 26">Ch.26</span><span class="chapter-link coming" title="Isaiah 27">Ch.27</span><span class="chapter-link coming" title="Isaiah 28">Ch.28</span><span class="chapter-link coming" title="Isaiah 29">Ch.29</span><span class="chapter-link coming" title="Isaiah 30">Ch.30</span><span class="chapter-link coming" title="Isaiah 31">Ch.31</span><span class="chapter-link coming" title="Isaiah 32">Ch.32</span><span class="chapter-link coming" title="Isaiah 33">Ch.33</span><span class="chapter-link coming" title="Isaiah 34">Ch.34</span><span class="chapter-link coming" title="Isaiah 35">Ch.35</span><span class="chapter-link coming" title="Isaiah 36">Ch.36</span><span class="chapter-link coming" title="Isaiah 37">Ch.37</span><span class="chapter-link coming" title="Isaiah 38">Ch.38</span><span class="chapter-link coming" title="Isaiah 39">Ch.39</span><span class="chapter-link coming" title="Isaiah 40">Ch.40</span><span class="chapter-link coming" title="Isaiah 41">Ch.41</span><span class="chapter-link coming" title="Isaiah 42">Ch.42</span><span class="chapter-link coming" title="Isaiah 43">Ch.43</span><span class="chapter-link coming" title="Isaiah 44">Ch.44</span><span class="chapter-link coming" title="Isaiah 45">Ch.45</span><span class="chapter-link coming" title="Isaiah 46">Ch.46</span><span class="chapter-link coming" title="Isaiah 47">Ch.47</span><span class="chapter-link coming" title="Isaiah 48">Ch.48</span><span class="chapter-link coming" title="Isaiah 49">Ch.49</span><span class="chapter-link coming" title="Isaiah 50">Ch.50</span><span class="chapter-link coming" title="Isaiah 51">Ch.51</span><span class="chapter-link coming" title="Isaiah 52">Ch.52</span><span class="chapter-link coming" title="Isaiah 53">Ch.53</span><span class="chapter-link coming" title="Isaiah 54">Ch.54</span><span class="chapter-link coming" title="Isaiah 55">Ch.55</span><span class="chapter-link coming" title="Isaiah 56">Ch.56</span><span class="chapter-link coming" title="Isaiah 57">Ch.57</span><span class="chapter-link coming" title="Isaiah 58">Ch.58</span><span class="chapter-link coming" title="Isaiah 59">Ch.59</span><span class="chapter-link coming" title="Isaiah 60">Ch.60</span><span class="chapter-link coming" title="Isaiah 61">Ch.61</span><span class="chapter-link coming" title="Isaiah 62">Ch.62</span><span class="chapter-link coming" title="Isaiah 63">Ch.63</span><span class="chapter-link coming" title="Isaiah 64">Ch.64</span><span class="chapter-link coming" title="Isaiah 65">Ch.65</span><span class="chapter-link coming" title="Isaiah 66">Ch.66</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-jeremiah">
-  <button class="book-btn" onclick="toggleBook('jeremiah')">
-    <span class="book-name">Jeremiah</span>
-    <span class="book-meta"><span class="ch-count">52 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-jeremiah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Jeremiah 1">Ch.1</span><span class="chapter-link coming" title="Jeremiah 2">Ch.2</span><span class="chapter-link coming" title="Jeremiah 3">Ch.3</span><span class="chapter-link coming" title="Jeremiah 4">Ch.4</span><span class="chapter-link coming" title="Jeremiah 5">Ch.5</span><span class="chapter-link coming" title="Jeremiah 6">Ch.6</span><span class="chapter-link coming" title="Jeremiah 7">Ch.7</span><span class="chapter-link coming" title="Jeremiah 8">Ch.8</span><span class="chapter-link coming" title="Jeremiah 9">Ch.9</span><span class="chapter-link coming" title="Jeremiah 10">Ch.10</span><span class="chapter-link coming" title="Jeremiah 11">Ch.11</span><span class="chapter-link coming" title="Jeremiah 12">Ch.12</span><span class="chapter-link coming" title="Jeremiah 13">Ch.13</span><span class="chapter-link coming" title="Jeremiah 14">Ch.14</span><span class="chapter-link coming" title="Jeremiah 15">Ch.15</span><span class="chapter-link coming" title="Jeremiah 16">Ch.16</span><span class="chapter-link coming" title="Jeremiah 17">Ch.17</span><span class="chapter-link coming" title="Jeremiah 18">Ch.18</span><span class="chapter-link coming" title="Jeremiah 19">Ch.19</span><span class="chapter-link coming" title="Jeremiah 20">Ch.20</span><span class="chapter-link coming" title="Jeremiah 21">Ch.21</span><span class="chapter-link coming" title="Jeremiah 22">Ch.22</span><span class="chapter-link coming" title="Jeremiah 23">Ch.23</span><span class="chapter-link coming" title="Jeremiah 24">Ch.24</span><span class="chapter-link coming" title="Jeremiah 25">Ch.25</span><span class="chapter-link coming" title="Jeremiah 26">Ch.26</span><span class="chapter-link coming" title="Jeremiah 27">Ch.27</span><span class="chapter-link coming" title="Jeremiah 28">Ch.28</span><span class="chapter-link coming" title="Jeremiah 29">Ch.29</span><span class="chapter-link coming" title="Jeremiah 30">Ch.30</span><span class="chapter-link coming" title="Jeremiah 31">Ch.31</span><span class="chapter-link coming" title="Jeremiah 32">Ch.32</span><span class="chapter-link coming" title="Jeremiah 33">Ch.33</span><span class="chapter-link coming" title="Jeremiah 34">Ch.34</span><span class="chapter-link coming" title="Jeremiah 35">Ch.35</span><span class="chapter-link coming" title="Jeremiah 36">Ch.36</span><span class="chapter-link coming" title="Jeremiah 37">Ch.37</span><span class="chapter-link coming" title="Jeremiah 38">Ch.38</span><span class="chapter-link coming" title="Jeremiah 39">Ch.39</span><span class="chapter-link coming" title="Jeremiah 40">Ch.40</span><span class="chapter-link coming" title="Jeremiah 41">Ch.41</span><span class="chapter-link coming" title="Jeremiah 42">Ch.42</span><span class="chapter-link coming" title="Jeremiah 43">Ch.43</span><span class="chapter-link coming" title="Jeremiah 44">Ch.44</span><span class="chapter-link coming" title="Jeremiah 45">Ch.45</span><span class="chapter-link coming" title="Jeremiah 46">Ch.46</span><span class="chapter-link coming" title="Jeremiah 47">Ch.47</span><span class="chapter-link coming" title="Jeremiah 48">Ch.48</span><span class="chapter-link coming" title="Jeremiah 49">Ch.49</span><span class="chapter-link coming" title="Jeremiah 50">Ch.50</span><span class="chapter-link coming" title="Jeremiah 51">Ch.51</span><span class="chapter-link coming" title="Jeremiah 52">Ch.52</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-lamentations">
-  <button class="book-btn" onclick="toggleBook('lamentations')">
-    <span class="book-name">Lamentations</span>
-    <span class="book-meta"><span class="ch-count">5 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-lamentations">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Lamentations 1">Ch.1</span><span class="chapter-link coming" title="Lamentations 2">Ch.2</span><span class="chapter-link coming" title="Lamentations 3">Ch.3</span><span class="chapter-link coming" title="Lamentations 4">Ch.4</span><span class="chapter-link coming" title="Lamentations 5">Ch.5</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-ezekiel">
-  <button class="book-btn" onclick="toggleBook('ezekiel')">
-    <span class="book-name">Ezekiel</span>
-    <span class="book-meta"><span class="ch-count">48 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-ezekiel">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Ezekiel 1">Ch.1</span><span class="chapter-link coming" title="Ezekiel 2">Ch.2</span><span class="chapter-link coming" title="Ezekiel 3">Ch.3</span><span class="chapter-link coming" title="Ezekiel 4">Ch.4</span><span class="chapter-link coming" title="Ezekiel 5">Ch.5</span><span class="chapter-link coming" title="Ezekiel 6">Ch.6</span><span class="chapter-link coming" title="Ezekiel 7">Ch.7</span><span class="chapter-link coming" title="Ezekiel 8">Ch.8</span><span class="chapter-link coming" title="Ezekiel 9">Ch.9</span><span class="chapter-link coming" title="Ezekiel 10">Ch.10</span><span class="chapter-link coming" title="Ezekiel 11">Ch.11</span><span class="chapter-link coming" title="Ezekiel 12">Ch.12</span><span class="chapter-link coming" title="Ezekiel 13">Ch.13</span><span class="chapter-link coming" title="Ezekiel 14">Ch.14</span><span class="chapter-link coming" title="Ezekiel 15">Ch.15</span><span class="chapter-link coming" title="Ezekiel 16">Ch.16</span><span class="chapter-link coming" title="Ezekiel 17">Ch.17</span><span class="chapter-link coming" title="Ezekiel 18">Ch.18</span><span class="chapter-link coming" title="Ezekiel 19">Ch.19</span><span class="chapter-link coming" title="Ezekiel 20">Ch.20</span><span class="chapter-link coming" title="Ezekiel 21">Ch.21</span><span class="chapter-link coming" title="Ezekiel 22">Ch.22</span><span class="chapter-link coming" title="Ezekiel 23">Ch.23</span><span class="chapter-link coming" title="Ezekiel 24">Ch.24</span><span class="chapter-link coming" title="Ezekiel 25">Ch.25</span><span class="chapter-link coming" title="Ezekiel 26">Ch.26</span><span class="chapter-link coming" title="Ezekiel 27">Ch.27</span><span class="chapter-link coming" title="Ezekiel 28">Ch.28</span><span class="chapter-link coming" title="Ezekiel 29">Ch.29</span><span class="chapter-link coming" title="Ezekiel 30">Ch.30</span><span class="chapter-link coming" title="Ezekiel 31">Ch.31</span><span class="chapter-link coming" title="Ezekiel 32">Ch.32</span><span class="chapter-link coming" title="Ezekiel 33">Ch.33</span><span class="chapter-link coming" title="Ezekiel 34">Ch.34</span><span class="chapter-link coming" title="Ezekiel 35">Ch.35</span><span class="chapter-link coming" title="Ezekiel 36">Ch.36</span><span class="chapter-link coming" title="Ezekiel 37">Ch.37</span><span class="chapter-link coming" title="Ezekiel 38">Ch.38</span><span class="chapter-link coming" title="Ezekiel 39">Ch.39</span><span class="chapter-link coming" title="Ezekiel 40">Ch.40</span><span class="chapter-link coming" title="Ezekiel 41">Ch.41</span><span class="chapter-link coming" title="Ezekiel 42">Ch.42</span><span class="chapter-link coming" title="Ezekiel 43">Ch.43</span><span class="chapter-link coming" title="Ezekiel 44">Ch.44</span><span class="chapter-link coming" title="Ezekiel 45">Ch.45</span><span class="chapter-link coming" title="Ezekiel 46">Ch.46</span><span class="chapter-link coming" title="Ezekiel 47">Ch.47</span><span class="chapter-link coming" title="Ezekiel 48">Ch.48</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-daniel">
-  <button class="book-btn" onclick="toggleBook('daniel')">
-    <span class="book-name">Daniel</span>
-    <span class="book-meta"><span class="ch-count">12 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-daniel">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Daniel 1">Ch.1</span><span class="chapter-link coming" title="Daniel 2">Ch.2</span><span class="chapter-link coming" title="Daniel 3">Ch.3</span><span class="chapter-link coming" title="Daniel 4">Ch.4</span><span class="chapter-link coming" title="Daniel 5">Ch.5</span><span class="chapter-link coming" title="Daniel 6">Ch.6</span><span class="chapter-link coming" title="Daniel 7">Ch.7</span><span class="chapter-link coming" title="Daniel 8">Ch.8</span><span class="chapter-link coming" title="Daniel 9">Ch.9</span><span class="chapter-link coming" title="Daniel 10">Ch.10</span><span class="chapter-link coming" title="Daniel 11">Ch.11</span><span class="chapter-link coming" title="Daniel 12">Ch.12</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-hosea">
-  <button class="book-btn" onclick="toggleBook('hosea')">
-    <span class="book-name">Hosea</span>
-    <span class="book-meta"><span class="ch-count">14 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-hosea">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Hosea 1">Ch.1</span><span class="chapter-link coming" title="Hosea 2">Ch.2</span><span class="chapter-link coming" title="Hosea 3">Ch.3</span><span class="chapter-link coming" title="Hosea 4">Ch.4</span><span class="chapter-link coming" title="Hosea 5">Ch.5</span><span class="chapter-link coming" title="Hosea 6">Ch.6</span><span class="chapter-link coming" title="Hosea 7">Ch.7</span><span class="chapter-link coming" title="Hosea 8">Ch.8</span><span class="chapter-link coming" title="Hosea 9">Ch.9</span><span class="chapter-link coming" title="Hosea 10">Ch.10</span><span class="chapter-link coming" title="Hosea 11">Ch.11</span><span class="chapter-link coming" title="Hosea 12">Ch.12</span><span class="chapter-link coming" title="Hosea 13">Ch.13</span><span class="chapter-link coming" title="Hosea 14">Ch.14</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-joel">
-  <button class="book-btn" onclick="toggleBook('joel')">
-    <span class="book-name">Joel</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-joel">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Joel 1">Ch.1</span><span class="chapter-link coming" title="Joel 2">Ch.2</span><span class="chapter-link coming" title="Joel 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-amos">
-  <button class="book-btn" onclick="toggleBook('amos')">
-    <span class="book-name">Amos</span>
-    <span class="book-meta"><span class="ch-count">9 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-amos">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Amos 1">Ch.1</span><span class="chapter-link coming" title="Amos 2">Ch.2</span><span class="chapter-link coming" title="Amos 3">Ch.3</span><span class="chapter-link coming" title="Amos 4">Ch.4</span><span class="chapter-link coming" title="Amos 5">Ch.5</span><span class="chapter-link coming" title="Amos 6">Ch.6</span><span class="chapter-link coming" title="Amos 7">Ch.7</span><span class="chapter-link coming" title="Amos 8">Ch.8</span><span class="chapter-link coming" title="Amos 9">Ch.9</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-obadiah">
-  <button class="book-btn" onclick="toggleBook('obadiah')">
-    <span class="book-name">Obadiah</span>
-    <span class="book-meta"><span class="ch-count">1 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-obadiah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Obadiah 1">Ch.1</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-jonah">
-  <button class="book-btn" onclick="toggleBook('jonah')">
-    <span class="book-name">Jonah</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-jonah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Jonah 1">Ch.1</span><span class="chapter-link coming" title="Jonah 2">Ch.2</span><span class="chapter-link coming" title="Jonah 3">Ch.3</span><span class="chapter-link coming" title="Jonah 4">Ch.4</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-micah">
-  <button class="book-btn" onclick="toggleBook('micah')">
-    <span class="book-name">Micah</span>
-    <span class="book-meta"><span class="ch-count">7 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-micah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Micah 1">Ch.1</span><span class="chapter-link coming" title="Micah 2">Ch.2</span><span class="chapter-link coming" title="Micah 3">Ch.3</span><span class="chapter-link coming" title="Micah 4">Ch.4</span><span class="chapter-link coming" title="Micah 5">Ch.5</span><span class="chapter-link coming" title="Micah 6">Ch.6</span><span class="chapter-link coming" title="Micah 7">Ch.7</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-nahum">
-  <button class="book-btn" onclick="toggleBook('nahum')">
-    <span class="book-name">Nahum</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-nahum">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Nahum 1">Ch.1</span><span class="chapter-link coming" title="Nahum 2">Ch.2</span><span class="chapter-link coming" title="Nahum 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-habakkuk">
-  <button class="book-btn" onclick="toggleBook('habakkuk')">
-    <span class="book-name">Habakkuk</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-habakkuk">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Habakkuk 1">Ch.1</span><span class="chapter-link coming" title="Habakkuk 2">Ch.2</span><span class="chapter-link coming" title="Habakkuk 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-zephaniah">
-  <button class="book-btn" onclick="toggleBook('zephaniah')">
-    <span class="book-name">Zephaniah</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-zephaniah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Zephaniah 1">Ch.1</span><span class="chapter-link coming" title="Zephaniah 2">Ch.2</span><span class="chapter-link coming" title="Zephaniah 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-haggai">
-  <button class="book-btn" onclick="toggleBook('haggai')">
-    <span class="book-name">Haggai</span>
-    <span class="book-meta"><span class="ch-count">2 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-haggai">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Haggai 1">Ch.1</span><span class="chapter-link coming" title="Haggai 2">Ch.2</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-zechariah">
-  <button class="book-btn" onclick="toggleBook('zechariah')">
-    <span class="book-name">Zechariah</span>
-    <span class="book-meta"><span class="ch-count">14 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-zechariah">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Zechariah 1">Ch.1</span><span class="chapter-link coming" title="Zechariah 2">Ch.2</span><span class="chapter-link coming" title="Zechariah 3">Ch.3</span><span class="chapter-link coming" title="Zechariah 4">Ch.4</span><span class="chapter-link coming" title="Zechariah 5">Ch.5</span><span class="chapter-link coming" title="Zechariah 6">Ch.6</span><span class="chapter-link coming" title="Zechariah 7">Ch.7</span><span class="chapter-link coming" title="Zechariah 8">Ch.8</span><span class="chapter-link coming" title="Zechariah 9">Ch.9</span><span class="chapter-link coming" title="Zechariah 10">Ch.10</span><span class="chapter-link coming" title="Zechariah 11">Ch.11</span><span class="chapter-link coming" title="Zechariah 12">Ch.12</span><span class="chapter-link coming" title="Zechariah 13">Ch.13</span><span class="chapter-link coming" title="Zechariah 14">Ch.14</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-malachi">
-  <button class="book-btn" onclick="toggleBook('malachi')">
-    <span class="book-name">Malachi</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-malachi">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Malachi 1">Ch.1</span><span class="chapter-link coming" title="Malachi 2">Ch.2</span><span class="chapter-link coming" title="Malachi 3">Ch.3</span><span class="chapter-link coming" title="Malachi 4">Ch.4</span></div>
-  </div>
-</div></div></div>
-<div class="testament-group" id="tg-nt"><button class="testament-toggle" onclick="toggleTestament('tg-nt')"><span class="testament-toggle-label"><span class="tt-icon">✝</span>New Testament</span><span class="tt-meta"><span class="tt-count">27 books</span><span id="nt-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
-<div class="book-item" id="book-matthew">
-  <button class="book-btn" onclick="toggleBook('matthew')">
-    <span class="book-name">Matthew</span>
-    <span class="book-meta"><span class="ch-count">28 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-matthew">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Matthew 1">Ch.1</span><span class="chapter-link coming" title="Matthew 2">Ch.2</span><span class="chapter-link coming" title="Matthew 3">Ch.3</span><span class="chapter-link coming" title="Matthew 4">Ch.4</span><span class="chapter-link coming" title="Matthew 5">Ch.5</span><span class="chapter-link coming" title="Matthew 6">Ch.6</span><span class="chapter-link coming" title="Matthew 7">Ch.7</span><span class="chapter-link coming" title="Matthew 8">Ch.8</span><span class="chapter-link coming" title="Matthew 9">Ch.9</span><span class="chapter-link coming" title="Matthew 10">Ch.10</span><span class="chapter-link coming" title="Matthew 11">Ch.11</span><span class="chapter-link coming" title="Matthew 12">Ch.12</span><span class="chapter-link coming" title="Matthew 13">Ch.13</span><span class="chapter-link coming" title="Matthew 14">Ch.14</span><span class="chapter-link coming" title="Matthew 15">Ch.15</span><span class="chapter-link coming" title="Matthew 16">Ch.16</span><span class="chapter-link coming" title="Matthew 17">Ch.17</span><span class="chapter-link coming" title="Matthew 18">Ch.18</span><span class="chapter-link coming" title="Matthew 19">Ch.19</span><span class="chapter-link coming" title="Matthew 20">Ch.20</span><span class="chapter-link coming" title="Matthew 21">Ch.21</span><span class="chapter-link coming" title="Matthew 22">Ch.22</span><span class="chapter-link coming" title="Matthew 23">Ch.23</span><span class="chapter-link coming" title="Matthew 24">Ch.24</span><span class="chapter-link coming" title="Matthew 25">Ch.25</span><span class="chapter-link coming" title="Matthew 26">Ch.26</span><span class="chapter-link coming" title="Matthew 27">Ch.27</span><span class="chapter-link coming" title="Matthew 28">Ch.28</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-mark">
-  <button class="book-btn" onclick="toggleBook('mark')">
-    <span class="book-name">Mark</span>
-    <span class="book-meta"><span class="ch-count">16 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-mark">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Mark 1">Ch.1</span><span class="chapter-link coming" title="Mark 2">Ch.2</span><span class="chapter-link coming" title="Mark 3">Ch.3</span><span class="chapter-link coming" title="Mark 4">Ch.4</span><span class="chapter-link coming" title="Mark 5">Ch.5</span><span class="chapter-link coming" title="Mark 6">Ch.6</span><span class="chapter-link coming" title="Mark 7">Ch.7</span><span class="chapter-link coming" title="Mark 8">Ch.8</span><span class="chapter-link coming" title="Mark 9">Ch.9</span><span class="chapter-link coming" title="Mark 10">Ch.10</span><span class="chapter-link coming" title="Mark 11">Ch.11</span><span class="chapter-link coming" title="Mark 12">Ch.12</span><span class="chapter-link coming" title="Mark 13">Ch.13</span><span class="chapter-link coming" title="Mark 14">Ch.14</span><span class="chapter-link coming" title="Mark 15">Ch.15</span><span class="chapter-link coming" title="Mark 16">Ch.16</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-luke">
-  <button class="book-btn" onclick="toggleBook('luke')">
-    <span class="book-name">Luke</span>
-    <span class="book-meta"><span class="ch-count">24 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-luke">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Luke 1">Ch.1</span><span class="chapter-link coming" title="Luke 2">Ch.2</span><span class="chapter-link coming" title="Luke 3">Ch.3</span><span class="chapter-link coming" title="Luke 4">Ch.4</span><span class="chapter-link coming" title="Luke 5">Ch.5</span><span class="chapter-link coming" title="Luke 6">Ch.6</span><span class="chapter-link coming" title="Luke 7">Ch.7</span><span class="chapter-link coming" title="Luke 8">Ch.8</span><span class="chapter-link coming" title="Luke 9">Ch.9</span><span class="chapter-link coming" title="Luke 10">Ch.10</span><span class="chapter-link coming" title="Luke 11">Ch.11</span><span class="chapter-link coming" title="Luke 12">Ch.12</span><span class="chapter-link coming" title="Luke 13">Ch.13</span><span class="chapter-link coming" title="Luke 14">Ch.14</span><span class="chapter-link coming" title="Luke 15">Ch.15</span><span class="chapter-link coming" title="Luke 16">Ch.16</span><span class="chapter-link coming" title="Luke 17">Ch.17</span><span class="chapter-link coming" title="Luke 18">Ch.18</span><span class="chapter-link coming" title="Luke 19">Ch.19</span><span class="chapter-link coming" title="Luke 20">Ch.20</span><span class="chapter-link coming" title="Luke 21">Ch.21</span><span class="chapter-link coming" title="Luke 22">Ch.22</span><span class="chapter-link coming" title="Luke 23">Ch.23</span><span class="chapter-link coming" title="Luke 24">Ch.24</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-john">
-  <button class="book-btn" onclick="toggleBook('john')">
-    <span class="book-name">John</span>
-    <span class="book-meta"><span class="ch-count">21 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-john">
-    <div class="chapter-grid"><span class="chapter-link coming" title="John 1">Ch.1</span><span class="chapter-link coming" title="John 2">Ch.2</span><span class="chapter-link coming" title="John 3">Ch.3</span><span class="chapter-link coming" title="John 4">Ch.4</span><span class="chapter-link coming" title="John 5">Ch.5</span><span class="chapter-link coming" title="John 6">Ch.6</span><span class="chapter-link coming" title="John 7">Ch.7</span><span class="chapter-link coming" title="John 8">Ch.8</span><span class="chapter-link coming" title="John 9">Ch.9</span><span class="chapter-link coming" title="John 10">Ch.10</span><span class="chapter-link coming" title="John 11">Ch.11</span><span class="chapter-link coming" title="John 12">Ch.12</span><span class="chapter-link coming" title="John 13">Ch.13</span><span class="chapter-link coming" title="John 14">Ch.14</span><span class="chapter-link coming" title="John 15">Ch.15</span><span class="chapter-link coming" title="John 16">Ch.16</span><span class="chapter-link coming" title="John 17">Ch.17</span><span class="chapter-link coming" title="John 18">Ch.18</span><span class="chapter-link coming" title="John 19">Ch.19</span><span class="chapter-link coming" title="John 20">Ch.20</span><span class="chapter-link coming" title="John 21">Ch.21</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-acts">
-  <button class="book-btn" onclick="toggleBook('acts')">
-    <span class="book-name">Acts</span>
-    <span class="book-meta"><span class="ch-count">28 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-acts">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Acts 1">Ch.1</span><span class="chapter-link coming" title="Acts 2">Ch.2</span><span class="chapter-link coming" title="Acts 3">Ch.3</span><span class="chapter-link coming" title="Acts 4">Ch.4</span><span class="chapter-link coming" title="Acts 5">Ch.5</span><span class="chapter-link coming" title="Acts 6">Ch.6</span><span class="chapter-link coming" title="Acts 7">Ch.7</span><span class="chapter-link coming" title="Acts 8">Ch.8</span><span class="chapter-link coming" title="Acts 9">Ch.9</span><span class="chapter-link coming" title="Acts 10">Ch.10</span><span class="chapter-link coming" title="Acts 11">Ch.11</span><span class="chapter-link coming" title="Acts 12">Ch.12</span><span class="chapter-link coming" title="Acts 13">Ch.13</span><span class="chapter-link coming" title="Acts 14">Ch.14</span><span class="chapter-link coming" title="Acts 15">Ch.15</span><span class="chapter-link coming" title="Acts 16">Ch.16</span><span class="chapter-link coming" title="Acts 17">Ch.17</span><span class="chapter-link coming" title="Acts 18">Ch.18</span><span class="chapter-link coming" title="Acts 19">Ch.19</span><span class="chapter-link coming" title="Acts 20">Ch.20</span><span class="chapter-link coming" title="Acts 21">Ch.21</span><span class="chapter-link coming" title="Acts 22">Ch.22</span><span class="chapter-link coming" title="Acts 23">Ch.23</span><span class="chapter-link coming" title="Acts 24">Ch.24</span><span class="chapter-link coming" title="Acts 25">Ch.25</span><span class="chapter-link coming" title="Acts 26">Ch.26</span><span class="chapter-link coming" title="Acts 27">Ch.27</span><span class="chapter-link coming" title="Acts 28">Ch.28</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-romans">
-  <button class="book-btn" onclick="toggleBook('romans')">
-    <span class="book-name">Romans</span>
-    <span class="book-meta"><span class="ch-count">16 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-romans">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Romans 1">Ch.1</span><span class="chapter-link coming" title="Romans 2">Ch.2</span><span class="chapter-link coming" title="Romans 3">Ch.3</span><span class="chapter-link coming" title="Romans 4">Ch.4</span><span class="chapter-link coming" title="Romans 5">Ch.5</span><span class="chapter-link coming" title="Romans 6">Ch.6</span><span class="chapter-link coming" title="Romans 7">Ch.7</span><span class="chapter-link coming" title="Romans 8">Ch.8</span><span class="chapter-link coming" title="Romans 9">Ch.9</span><span class="chapter-link coming" title="Romans 10">Ch.10</span><span class="chapter-link coming" title="Romans 11">Ch.11</span><span class="chapter-link coming" title="Romans 12">Ch.12</span><span class="chapter-link coming" title="Romans 13">Ch.13</span><span class="chapter-link coming" title="Romans 14">Ch.14</span><span class="chapter-link coming" title="Romans 15">Ch.15</span><span class="chapter-link coming" title="Romans 16">Ch.16</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-corinthians">
-  <button class="book-btn" onclick="toggleBook('1-corinthians')">
-    <span class="book-name">1 Corinthians</span>
-    <span class="book-meta"><span class="ch-count">16 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-corinthians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Corinthians 1">Ch.1</span><span class="chapter-link coming" title="1 Corinthians 2">Ch.2</span><span class="chapter-link coming" title="1 Corinthians 3">Ch.3</span><span class="chapter-link coming" title="1 Corinthians 4">Ch.4</span><span class="chapter-link coming" title="1 Corinthians 5">Ch.5</span><span class="chapter-link coming" title="1 Corinthians 6">Ch.6</span><span class="chapter-link coming" title="1 Corinthians 7">Ch.7</span><span class="chapter-link coming" title="1 Corinthians 8">Ch.8</span><span class="chapter-link coming" title="1 Corinthians 9">Ch.9</span><span class="chapter-link coming" title="1 Corinthians 10">Ch.10</span><span class="chapter-link coming" title="1 Corinthians 11">Ch.11</span><span class="chapter-link coming" title="1 Corinthians 12">Ch.12</span><span class="chapter-link coming" title="1 Corinthians 13">Ch.13</span><span class="chapter-link coming" title="1 Corinthians 14">Ch.14</span><span class="chapter-link coming" title="1 Corinthians 15">Ch.15</span><span class="chapter-link coming" title="1 Corinthians 16">Ch.16</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-corinthians">
-  <button class="book-btn" onclick="toggleBook('2-corinthians')">
-    <span class="book-name">2 Corinthians</span>
-    <span class="book-meta"><span class="ch-count">13 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-corinthians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Corinthians 1">Ch.1</span><span class="chapter-link coming" title="2 Corinthians 2">Ch.2</span><span class="chapter-link coming" title="2 Corinthians 3">Ch.3</span><span class="chapter-link coming" title="2 Corinthians 4">Ch.4</span><span class="chapter-link coming" title="2 Corinthians 5">Ch.5</span><span class="chapter-link coming" title="2 Corinthians 6">Ch.6</span><span class="chapter-link coming" title="2 Corinthians 7">Ch.7</span><span class="chapter-link coming" title="2 Corinthians 8">Ch.8</span><span class="chapter-link coming" title="2 Corinthians 9">Ch.9</span><span class="chapter-link coming" title="2 Corinthians 10">Ch.10</span><span class="chapter-link coming" title="2 Corinthians 11">Ch.11</span><span class="chapter-link coming" title="2 Corinthians 12">Ch.12</span><span class="chapter-link coming" title="2 Corinthians 13">Ch.13</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-galatians">
-  <button class="book-btn" onclick="toggleBook('galatians')">
-    <span class="book-name">Galatians</span>
-    <span class="book-meta"><span class="ch-count">6 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-galatians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Galatians 1">Ch.1</span><span class="chapter-link coming" title="Galatians 2">Ch.2</span><span class="chapter-link coming" title="Galatians 3">Ch.3</span><span class="chapter-link coming" title="Galatians 4">Ch.4</span><span class="chapter-link coming" title="Galatians 5">Ch.5</span><span class="chapter-link coming" title="Galatians 6">Ch.6</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-ephesians">
-  <button class="book-btn" onclick="toggleBook('ephesians')">
-    <span class="book-name">Ephesians</span>
-    <span class="book-meta"><span class="ch-count">6 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-ephesians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Ephesians 1">Ch.1</span><span class="chapter-link coming" title="Ephesians 2">Ch.2</span><span class="chapter-link coming" title="Ephesians 3">Ch.3</span><span class="chapter-link coming" title="Ephesians 4">Ch.4</span><span class="chapter-link coming" title="Ephesians 5">Ch.5</span><span class="chapter-link coming" title="Ephesians 6">Ch.6</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-philippians">
-  <button class="book-btn" onclick="toggleBook('philippians')">
-    <span class="book-name">Philippians</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-philippians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Philippians 1">Ch.1</span><span class="chapter-link coming" title="Philippians 2">Ch.2</span><span class="chapter-link coming" title="Philippians 3">Ch.3</span><span class="chapter-link coming" title="Philippians 4">Ch.4</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-colossians">
-  <button class="book-btn" onclick="toggleBook('colossians')">
-    <span class="book-name">Colossians</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-colossians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Colossians 1">Ch.1</span><span class="chapter-link coming" title="Colossians 2">Ch.2</span><span class="chapter-link coming" title="Colossians 3">Ch.3</span><span class="chapter-link coming" title="Colossians 4">Ch.4</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-thessalonians">
-  <button class="book-btn" onclick="toggleBook('1-thessalonians')">
-    <span class="book-name">1 Thessalonians</span>
-    <span class="book-meta"><span class="ch-count">5 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-thessalonians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Thessalonians 1">Ch.1</span><span class="chapter-link coming" title="1 Thessalonians 2">Ch.2</span><span class="chapter-link coming" title="1 Thessalonians 3">Ch.3</span><span class="chapter-link coming" title="1 Thessalonians 4">Ch.4</span><span class="chapter-link coming" title="1 Thessalonians 5">Ch.5</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-thessalonians">
-  <button class="book-btn" onclick="toggleBook('2-thessalonians')">
-    <span class="book-name">2 Thessalonians</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-thessalonians">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Thessalonians 1">Ch.1</span><span class="chapter-link coming" title="2 Thessalonians 2">Ch.2</span><span class="chapter-link coming" title="2 Thessalonians 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-timothy">
-  <button class="book-btn" onclick="toggleBook('1-timothy')">
-    <span class="book-name">1 Timothy</span>
-    <span class="book-meta"><span class="ch-count">6 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-timothy">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Timothy 1">Ch.1</span><span class="chapter-link coming" title="1 Timothy 2">Ch.2</span><span class="chapter-link coming" title="1 Timothy 3">Ch.3</span><span class="chapter-link coming" title="1 Timothy 4">Ch.4</span><span class="chapter-link coming" title="1 Timothy 5">Ch.5</span><span class="chapter-link coming" title="1 Timothy 6">Ch.6</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-timothy">
-  <button class="book-btn" onclick="toggleBook('2-timothy')">
-    <span class="book-name">2 Timothy</span>
-    <span class="book-meta"><span class="ch-count">4 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-timothy">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Timothy 1">Ch.1</span><span class="chapter-link coming" title="2 Timothy 2">Ch.2</span><span class="chapter-link coming" title="2 Timothy 3">Ch.3</span><span class="chapter-link coming" title="2 Timothy 4">Ch.4</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-titus">
-  <button class="book-btn" onclick="toggleBook('titus')">
-    <span class="book-name">Titus</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-titus">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Titus 1">Ch.1</span><span class="chapter-link coming" title="Titus 2">Ch.2</span><span class="chapter-link coming" title="Titus 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-philemon">
-  <button class="book-btn" onclick="toggleBook('philemon')">
-    <span class="book-name">Philemon</span>
-    <span class="book-meta"><span class="ch-count">1 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-philemon">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Philemon 1">Ch.1</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-hebrews">
-  <button class="book-btn" onclick="toggleBook('hebrews')">
-    <span class="book-name">Hebrews</span>
-    <span class="book-meta"><span class="ch-count">13 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-hebrews">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Hebrews 1">Ch.1</span><span class="chapter-link coming" title="Hebrews 2">Ch.2</span><span class="chapter-link coming" title="Hebrews 3">Ch.3</span><span class="chapter-link coming" title="Hebrews 4">Ch.4</span><span class="chapter-link coming" title="Hebrews 5">Ch.5</span><span class="chapter-link coming" title="Hebrews 6">Ch.6</span><span class="chapter-link coming" title="Hebrews 7">Ch.7</span><span class="chapter-link coming" title="Hebrews 8">Ch.8</span><span class="chapter-link coming" title="Hebrews 9">Ch.9</span><span class="chapter-link coming" title="Hebrews 10">Ch.10</span><span class="chapter-link coming" title="Hebrews 11">Ch.11</span><span class="chapter-link coming" title="Hebrews 12">Ch.12</span><span class="chapter-link coming" title="Hebrews 13">Ch.13</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-james">
-  <button class="book-btn" onclick="toggleBook('james')">
-    <span class="book-name">James</span>
-    <span class="book-meta"><span class="ch-count">5 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-james">
-    <div class="chapter-grid"><span class="chapter-link coming" title="James 1">Ch.1</span><span class="chapter-link coming" title="James 2">Ch.2</span><span class="chapter-link coming" title="James 3">Ch.3</span><span class="chapter-link coming" title="James 4">Ch.4</span><span class="chapter-link coming" title="James 5">Ch.5</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-peter">
-  <button class="book-btn" onclick="toggleBook('1-peter')">
-    <span class="book-name">1 Peter</span>
-    <span class="book-meta"><span class="ch-count">5 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-peter">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 Peter 1">Ch.1</span><span class="chapter-link coming" title="1 Peter 2">Ch.2</span><span class="chapter-link coming" title="1 Peter 3">Ch.3</span><span class="chapter-link coming" title="1 Peter 4">Ch.4</span><span class="chapter-link coming" title="1 Peter 5">Ch.5</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-peter">
-  <button class="book-btn" onclick="toggleBook('2-peter')">
-    <span class="book-name">2 Peter</span>
-    <span class="book-meta"><span class="ch-count">3 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-peter">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 Peter 1">Ch.1</span><span class="chapter-link coming" title="2 Peter 2">Ch.2</span><span class="chapter-link coming" title="2 Peter 3">Ch.3</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-1-john">
-  <button class="book-btn" onclick="toggleBook('1-john')">
-    <span class="book-name">1 John</span>
-    <span class="book-meta"><span class="ch-count">5 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-1-john">
-    <div class="chapter-grid"><span class="chapter-link coming" title="1 John 1">Ch.1</span><span class="chapter-link coming" title="1 John 2">Ch.2</span><span class="chapter-link coming" title="1 John 3">Ch.3</span><span class="chapter-link coming" title="1 John 4">Ch.4</span><span class="chapter-link coming" title="1 John 5">Ch.5</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-2-john">
-  <button class="book-btn" onclick="toggleBook('2-john')">
-    <span class="book-name">2 John</span>
-    <span class="book-meta"><span class="ch-count">1 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-2-john">
-    <div class="chapter-grid"><span class="chapter-link coming" title="2 John 1">Ch.1</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-3-john">
-  <button class="book-btn" onclick="toggleBook('3-john')">
-    <span class="book-name">3 John</span>
-    <span class="book-meta"><span class="ch-count">1 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-3-john">
-    <div class="chapter-grid"><span class="chapter-link coming" title="3 John 1">Ch.1</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-jude">
-  <button class="book-btn" onclick="toggleBook('jude')">
-    <span class="book-name">Jude</span>
-    <span class="book-meta"><span class="ch-count">1 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-jude">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Jude 1">Ch.1</span></div>
-  </div>
-</div>
-<div class="book-item" id="book-revelation">
-  <button class="book-btn" onclick="toggleBook('revelation')">
-    <span class="book-name">Revelation</span>
-    <span class="book-meta"><span class="ch-count">22 ch</span><span class="book-chev">&#9660;</span></span>
-  </button>
-  <div class="chapter-list" id="chapters-revelation">
-    <div class="chapter-grid"><span class="chapter-link coming" title="Revelation 1">Ch.1</span><span class="chapter-link coming" title="Revelation 2">Ch.2</span><span class="chapter-link coming" title="Revelation 3">Ch.3</span><span class="chapter-link coming" title="Revelation 4">Ch.4</span><span class="chapter-link coming" title="Revelation 5">Ch.5</span><span class="chapter-link coming" title="Revelation 6">Ch.6</span><span class="chapter-link coming" title="Revelation 7">Ch.7</span><span class="chapter-link coming" title="Revelation 8">Ch.8</span><span class="chapter-link coming" title="Revelation 9">Ch.9</span><span class="chapter-link coming" title="Revelation 10">Ch.10</span><span class="chapter-link coming" title="Revelation 11">Ch.11</span><span class="chapter-link coming" title="Revelation 12">Ch.12</span><span class="chapter-link coming" title="Revelation 13">Ch.13</span><span class="chapter-link coming" title="Revelation 14">Ch.14</span><span class="chapter-link coming" title="Revelation 15">Ch.15</span><span class="chapter-link coming" title="Revelation 16">Ch.16</span><span class="chapter-link coming" title="Revelation 17">Ch.17</span><span class="chapter-link coming" title="Revelation 18">Ch.18</span><span class="chapter-link coming" title="Revelation 19">Ch.19</span><span class="chapter-link coming" title="Revelation 20">Ch.20</span><span class="chapter-link coming" title="Revelation 21">Ch.21</span><span class="chapter-link coming" title="Revelation 22">Ch.22</span></div>
-  </div>
-</div>
-</div></div></div>
-</div><!-- /library-grid -->
-
-</div>
-
-<footer>
-  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
-  Commentary for personal study &middot; Hebrew &amp; Greek transliterations are scholarly approximations
-</footer>
-
 <script>
-// ── BOOK DATA for matching ─────────────────────────────────────────────────
-// BOOK_DATA — built from DOM automatically.
-// Adding new books: just add them to the library-grid HTML with class="book-item".
-// When a chapter goes live, add class="live" to its chapter-link — search picks it up instantly.
-const BOOK_DATA = [];
-document.querySelectorAll('.book-item').forEach(item => {
-  const name = item.querySelector('.book-name')?.textContent?.trim() || '';
-  const liveLinks = item.querySelectorAll('.chapter-link.live');
-  const hasLive = liveLinks.length > 0;
-  const firstLive = liveLinks[0] || null;
-  BOOK_DATA.push({
-    name, hasLive, el: item,
-    url: firstLive ? firstLive.getAttribute('href') : null,
-    id: item.id.replace('book-', ''),
-    liveCount: liveLinks.length
-  });
-});
-
-// ── UNIFIED SEARCH ────────────────────────────────────────────────────────
-function handleSearch(q) {
-  const panel = document.getElementById('unified-results');
-  const libGrid = document.getElementById('library-grid');
-  q = q.trim();
-
-  if (!q) {
-    panel.classList.remove('visible');
-    panel.innerHTML = '';
-    libGrid.style.display = '';
-    // Reset book visibility
-    document.querySelectorAll('.book-item').forEach(b => b.style.display = '');
-    document.querySelectorAll('.testament-group').forEach(g => { g.style.display = ''; g.classList.remove('open'); });
-    return;
-  }
-
-  const ql = q.toLowerCase();
-  const words = ql.split(/\s+/).filter(w => w.length > 1);
-
-  // ── Book matches ──────────────────────────────────────────────────────
-  const bookMatches = BOOK_DATA.filter(b => b.name.toLowerCase().includes(ql));
-
-  // ── Verse matches ─────────────────────────────────────────────────────
-  const verseMatches = q.length >= 2 ? VERSES.map(v => {
-    const text = v.text.toLowerCase();
-    const ref  = v.ref.toLowerCase();
-    let score = 0;
-    for (const w of words) {
-      if (text.includes(w)) score += 2;
-      else if (ref.includes(w)) score += 1;
+// ── CONTINUE READING ─────────────────────────────────────────────────────
+(function() {
+  var KEY = 'sdw_recent';
+  try {
+    var hist = JSON.parse(localStorage.getItem(KEY) || '[]');
+    if (!hist.length) return;
+    var bar = document.getElementById('continue-bar');
+    var chips = document.getElementById('continue-chips');
+    var ctaContinue = document.getElementById('cta-continue');
+    var ctaBegin = document.getElementById('cta-begin');
+    if (!bar || !chips) return;
+    hist.forEach(function(item) {
+      var a = document.createElement('a');
+      a.href = item.url; a.className = 'continue-chip'; a.textContent = item.label;
+      chips.appendChild(a);
+    });
+    bar.style.display = 'block';
+    if (ctaContinue && ctaBegin) {
+      ctaContinue.href = hist[0].url;
+      ctaContinue.style.display = '';
+      ctaBegin.style.display = 'none';
     }
-    if (text.includes(ql)) score += 5;
-    return { ...v, score };
-  }).filter(v => v.score > 0).sort((a, b) => b.score - a.score).slice(0, 10) : [];
-
-  // ── Highlight helper ──────────────────────────────────────────────────
-  function hl(text, q, words) {
-    let out = text;
-    // Exact phrase first
-    if (q.length > 2) {
-      const rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-      out = out.replace(rx, '<em>$1</em>');
-    }
-    for (const w of words) {
-      if (out.toLowerCase().includes(w) && !out.includes('<em>' + w)) {
-        const rx = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-        out = out.replace(rx, '<em>$1</em>');
-      }
-    }
-    return out;
-  }
-
-  // ── Build results HTML ────────────────────────────────────────────────
-  let html = '';
-  const hasBooks  = bookMatches.length > 0;
-  const hasVerses = verseMatches.length > 0;
-
-  if (!hasBooks && !hasVerses) {
-    html = '<p class="no-results-msg">No books or verses found for &ldquo;' + q + '&rdquo;</p>';
-  }
-
-  if (hasBooks) {
-    html += `<div class="results-section">
-      <div class="results-section-label">
-        <span>&#x1F4D6; Books</span>
-        <span class="results-count">${bookMatches.length} match${bookMatches.length !== 1 ? 'es' : ''}</span>
-      </div>`;
-    for (const b of bookMatches) {
-      const hlName = hl(b.name, ql, words);
-      const liveBadge = b.hasLive ? '<span class="live-tag">&#x25CF; live</span>' : '';
-      if (b.hasLive && b.url) {
-        html += `<a href="${b.url}" class="book-result has-live" title="Open ${b.name}">
-          <span class="book-result-name">${hlName}</span>
-          <span class="book-result-meta">${liveBadge}</span>
-        </a>`;
-      } else {
-        html += `<div class="book-result" onclick="openBookFromSearch('${b.id}')" title="Browse ${b.name} chapters">
-          <span class="book-result-name">${hlName}</span>
-          <span class="book-result-meta">coming soon</span>
-        </div>`;
-      }
-    }
-    html += '</div>';
-  }
-
-  if (hasVerses) {
-    html += `<div class="results-section">
-      <div class="results-section-label">
-        <span>&#x1F4DC; Verses</span>
-        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''} in Genesis 1–10</span>
-      </div>`;
-    for (const v of verseMatches) {
-      const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '…' : v.text;
-      html += `<a href="${v.url}" class="verse-result" title="Open ${v.ref}">
-        <span class="verse-ref">${v.short}</span>
-        <span class="verse-snippet">${hl(snippet, ql, words)}</span>
-      </a>`;
-    }
-    html += '</div>';
-  }
-
-  panel.innerHTML = html;
-  panel.classList.add('visible');
-  // Hide library grid while results are showing
-  libGrid.style.display = 'none';
-}
-
-function openBookFromSearch(id) {
-  // Close search, scroll to book and open it
-  document.getElementById('bookSearch').value = '';
-  document.getElementById('unified-results').classList.remove('visible');
-  document.getElementById('library-grid').style.display = '';
-  document.querySelectorAll('.testament-group').forEach(g => g.classList.remove('open'));
-  // Open the relevant testament
-  const bookEl = document.getElementById('book-' + id);
-  if (bookEl) {
-    // Find parent testament and open it
-    const testament = bookEl.closest('.testament-group');
-    if (testament) testament.classList.add('open');
-    bookEl.classList.add('open');
-    setTimeout(() => bookEl.scrollIntoView({behavior:'smooth', block:'center'}), 100);
-  }
-}
-
-// ── TESTAMENT TOGGLE ──────────────────────────────────────────────────────
-function toggleTestament(id) {
-  document.getElementById(id).classList.toggle('open');
-}
-
-// ── BOOK TOGGLE ───────────────────────────────────────────────────────────
-function toggleBook(id) {
-  const item = document.getElementById('book-' + id);
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.book-item.open').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// ── INIT ──────────────────────────────────────────────────────────────────
-document.querySelectorAll('.book-item').forEach(item => {
-  if (item.querySelector('.chapter-link.live')) item.classList.add('has-live');
-});
-function updateLiveBadge(id, badgeId) {
-  const g = document.getElementById(id);
-  if (!g) return;
-  const n = g.querySelectorAll('.chapter-link.live').length;
-  const b = document.getElementById(badgeId);
-  if (b && n > 0) { b.className = 'tt-live-count'; b.textContent = n + ' live'; }
-}
-updateLiveBadge('tg-ot', 'ot-live-badge');
-updateLiveBadge('tg-nt', 'nt-live-badge');
+  } catch(e) {}
+})();
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"))}</script>
 </body>
