@@ -1,7 +1,8 @@
-const CACHE = 'scripture-v31';
+const CACHE = 'scripture-v32';
 const CORE = [
   '/',
   '/index.html',
+  '/verses.js',
   '/genesis/Genesis_1.html',
   '/genesis/Genesis_2.html',
   '/genesis/Genesis_3.html',
