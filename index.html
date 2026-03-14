@@ -1,45 +1,6 @@
-<
-
-// ── CONTINUE READING (localStorage history) ───────────────────────────────
-(function() {
-  var HISTORY_KEY = 'sdw_recent';
-  var MAX = 5;
-
-  function getHistory() {
-    try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch(e) { return []; }
-  }
-
-  function renderContinueBar() {
-    var hist = getHistory();
-    if (!hist.length) return;
-    var bar = document.getElementById('continue-bar');
-    var chips = document.getElementById('continue-chips');
-    if (!bar || !chips) return;
-    chips.innerHTML = '';
-    hist.forEach(function(item) {
-      var a = document.createElement('a');
-      a.href = item.url;
-      a.className = 'continue-chip';
-      a.textContent = item.label;
-      chips.appendChild(a);
-    });
-    bar.style.display = 'block';
-
-    // Show "Continue Reading" CTA, hide "Begin Reading"
-    var ctaContinue = document.getElementById('cta-continue');
-    var ctaBegin = document.getElementById('cta-begin');
-    if (ctaContinue && ctaBegin) {
-      ctaContinue.href = hist[0].url;
-      ctaContinue.style.display = '';
-      ctaBegin.style.display = 'none';
-    }
-  }
-
-  renderContinueBar();
-})();
-
-</script>
-<script>if("serviceWorker">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Scripture Walkthrough — Bible Study</title>
@@ -588,100 +549,6 @@ footer {
 .verse-snippet em{color:var(--gold-bright);font-style:normal;font-weight:600;}
 .no-results-msg{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--text-muted);
   text-align:center;padding:1.2rem;font-style:italic;}
-
-/* ── HERO CTA BUTTONS ─────────────────────────────────── */
-.hero-cta {
-  display: flex;
-  gap: .9rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
-}
-.cta-primary {
-  font-family: 'Cinzel', serif;
-  font-size: .68rem;
-  font-weight: 600;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: #0d0b08;
-  background: linear-gradient(135deg, #d4aa50 0%, #c9a84c 40%, #b8942e 100%);
-  border: 1px solid #a07820;
-  border-radius: 2px;
-  padding: .75rem 2rem;
-  text-decoration: none;
-  transition: all .2s;
-  cursor: pointer;
-  box-shadow: 0 1px 12px rgba(201,168,76,.18), inset 0 1px 0 rgba(255,255,255,.15);
-}
-.cta-primary:hover {
-  background: linear-gradient(135deg, #e0ba60 0%, #d4aa50 40%, #c49838 100%);
-  box-shadow: 0 3px 20px rgba(201,168,76,.32), inset 0 1px 0 rgba(255,255,255,.2);
-  transform: translateY(-1px);
-}
-.cta-secondary {
-  font-family: 'Cinzel', serif;
-  font-size: .65rem;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  background: transparent;
-  border: 1px solid rgba(122,96,32,.5);
-  border-radius: 2px;
-  padding: .73rem 1.6rem;
-  text-decoration: none;
-  transition: all .2s;
-  cursor: pointer;
-}
-.cta-secondary:hover {
-  border-color: var(--gold-dim);
-  color: var(--gold);
-  background: rgba(201,168,76,.04);
-  box-shadow: 0 0 12px rgba(201,168,76,.08);
-}
-
-/* ── CONTINUE READING BAR ─────────────────────────────── */
-.continue-bar {
-  background: rgba(201,168,76,.06);
-  border: 1px solid rgba(201,168,76,.15);
-  border-radius: 5px;
-  padding: .7rem 1rem;
-  margin-bottom: 1.5rem;
-}
-.continue-label {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  display: block;
-  margin-bottom: .55rem;
-}
-.continue-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-}
-.continue-chip {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: .73rem;
-  font-weight: 500;
-  color: var(--gold);
-  background: rgba(201,168,76,.1);
-  border: 1px solid rgba(201,168,76,.25);
-  border-radius: 3px;
-  padding: .28rem .65rem;
-  text-decoration: none;
-  transition: all .15s;
-  white-space: nowrap;
-}
-.continue-chip:hover {
-  background: rgba(201,168,76,.2);
-  border-color: var(--gold);
-  transform: translateY(-1px);
-}
-
 </style>
 </head>
 <body>
@@ -701,32 +568,63 @@ footer {
     <span class="badge badge-place">&#x1F4CD; Key Places</span>
     <span class="badge badge-tl">&#x1F4C5; Timelines</span>
   </div>
-  <div class="hero-cta">
-    <a href="#library-section" class="cta-primary" id="cta-continue" style="display:none">Continue Reading</a>
-    <a href="#library-section" class="cta-primary" id="cta-begin">Begin Reading</a>
-    <a href="#library-section" class="cta-secondary">Browse All Books</a>
+  <div class="scroll-cue">
+    <span>&#8595;</span>
+    <span style="font-size:.62rem;letter-spacing:.2em">Choose a Book</span>
+  </div>
+</div>
+
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+  <div class="features-inner">
+    <p class="features-heading">What&rsquo;s Inside Each Chapter</p>
+    <div class="features-grid">
+      <div class="feature-card" style="--accent:#e890b8">
+        <h3>&#x5D0; Hebrew &amp; Greek</h3>
+        <p>Original language word studies with transliterations, roots, and the theological weight each word carries &mdash; things translations can&rsquo;t fully convey.</p>
+      </div>
+      <div class="feature-card" style="--accent:#70b8e8">
+        <h3>Historical Context</h3>
+        <p>What was happening in the ancient world when this was written? Who were Israel&rsquo;s neighbours, what did they believe, and how does this text respond to them?</p>
+      </div>
+      <div class="feature-card" style="--accent:#70d098">
+        <h3>Deep Commentary</h3>
+        <p>Theological deep dives, interpretive debates across traditions, and the big ideas each passage is wrestling with &mdash; from ancient rabbis to modern scholars.</p>
+      </div>
+      <div class="feature-card" style="--accent:#d4b060">
+        <h3>Cross-References</h3>
+        <p>See how each passage connects to the rest of Scripture &mdash; how the New Testament picks up Old Testament themes, and how the whole Bible holds together.</p>
+      </div>
+      <div class="feature-card" style="--accent:#80d080">
+        <h3>&#x1F4CD; Key Places</h3>
+        <p>Detailed cards on every significant location in the text &mdash; where it is today, why it mattered, and what was happening there in the ancient world.</p>
+      </div>
+      <div class="feature-card" style="--accent:#80a8e0">
+        <h3>&#x1F4C5; Timelines</h3>
+        <p>Visual timelines showing authorship, historical events, and how theological ideas developed across centuries of Scripture and church history.</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- LIBRARY -->
-<div class="library" id="library-section">
+<div class="library">
   <p class="library-heading">The Library</p>
   <p class="library-sub">Select a book &mdash; then choose a chapter to begin</p>
 
-  <!-- Continue reading bar (shown when history exists) -->
-  <div class="continue-bar" id="continue-bar" style="display:none">
-    <span class="continue-label">Continue where you left off</span>
-    <div class="continue-chips" id="continue-chips"></div>
-  </div>
-
   <div class="search-bar">
     <span class="search-icon">&#x1F50D;</span>
-    <input type="text" id="bookSearch" placeholder="Search books, verses, or text&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
+    <input type="text" id="bookSearch" placeholder="Search books or verses&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
   </div>
   <div class="unified-results" id="unified-results"></div>
 
+  <div class="live-legend">
+    <div class="ll-item"><div class="ll-dot ll-live"></div>Available now</div>
+    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
+  </div>
+
 <div id="library-grid">
-<div class="testament-group open" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
+<div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item" id="book-genesis">
   <button class="book-btn" onclick="toggleBook('genesis')">
     <span class="book-name">Genesis</span>
@@ -1325,41 +1223,6 @@ footer {
 </div></div></div>
 </div><!-- /library-grid -->
 
-<!-- FEATURES STRIP -->
-<div class="features-strip">
-  <div class="features-inner">
-    <p class="features-heading">What&rsquo;s Inside Each Chapter</p>
-    <div class="features-grid">
-      <div class="feature-card" style="--accent:#e890b8">
-        <h3>&#x5D0; Hebrew &amp; Greek</h3>
-        <p>Original language word studies with transliterations, roots, and the theological weight each word carries &mdash; things translations can&rsquo;t fully convey.</p>
-      </div>
-      <div class="feature-card" style="--accent:#70b8e8">
-        <h3>Historical Context</h3>
-        <p>What was happening in the ancient world when this was written? Who were Israel&rsquo;s neighbours, what did they believe, and how does this text respond to them?</p>
-      </div>
-      <div class="feature-card" style="--accent:#70d098">
-        <h3>Deep Commentary</h3>
-        <p>Theological deep dives, interpretive debates across traditions, and the big ideas each passage is wrestling with &mdash; from ancient rabbis to modern scholars.</p>
-      </div>
-      <div class="feature-card" style="--accent:#d4b060">
-        <h3>Cross-References</h3>
-        <p>See how each passage connects to the rest of Scripture &mdash; how the New Testament picks up Old Testament themes, and how the whole Bible holds together.</p>
-      </div>
-      <div class="feature-card" style="--accent:#80d080">
-        <h3>&#x1F4CD; Key Places</h3>
-        <p>Detailed cards on every significant location in the text &mdash; where it is today, why it mattered, and what was happening there in the ancient world.</p>
-      </div>
-      <div class="feature-card" style="--accent:#80a8e0">
-        <h3>&#x1F4C5; Timelines</h3>
-        <p>Visual timelines showing authorship, historical events, and how theological ideas developed across centuries of Scripture and church history.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 </div>
 
 <footer>
@@ -1476,7 +1339,7 @@ function handleSearch(q) {
     html += `<div class="results-section">
       <div class="results-section-label">
         <span>&#x1F4DC; Verses</span>
-        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''}</span>
+        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''} in Genesis 1–10</span>
       </div>`;
     for (const v of verseMatches) {
       const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '…' : v.text;
@@ -1572,10 +1435,9 @@ updateLiveBadge('tg-nt', 'nt-live-badge');
     <span class="badge badge-place">&#x1F4CD; Key Places</span>
     <span class="badge badge-tl">&#x1F4C5; Timelines</span>
   </div>
-  <div class="hero-cta">
-    <a href="#library-section" class="cta-primary" id="cta-continue" style="display:none">Continue Reading</a>
-    <a href="#library-section" class="cta-primary" id="cta-begin">Begin Reading</a>
-    <a href="#library-section" class="cta-secondary">Browse All Books</a>
+  <div class="scroll-cue">
+    <span>&#8595;</span>
+    <span style="font-size:.62rem;letter-spacing:.2em">Choose a Book</span>
   </div>
 </div>
 
@@ -1617,17 +1479,16 @@ updateLiveBadge('tg-nt', 'nt-live-badge');
   <p class="library-heading">The Library</p>
   <p class="library-sub">Select a book &mdash; then choose a chapter to begin</p>
 
-  <!-- Continue reading bar (shown when history exists) -->
-  <div class="continue-bar" id="continue-bar" style="display:none">
-    <span class="continue-label">Continue where you left off</span>
-    <div class="continue-chips" id="continue-chips"></div>
-  </div>
-
   <div class="search-bar">
     <span class="search-icon">&#x1F50D;</span>
-    <input type="text" id="bookSearch" placeholder="Search books, verses, or text&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
+    <input type="text" id="bookSearch" placeholder="Search books or verses&hellip;" oninput="handleSearch(this.value)" autocomplete="off" spellcheck="false">
   </div>
   <div class="unified-results" id="unified-results"></div>
+
+  <div class="live-legend">
+    <div class="ll-item"><div class="ll-dot ll-live"></div>Available now</div>
+    <div class="ll-item"><div class="ll-dot ll-coming"></div>Coming soon</div>
+  </div>
 
 <div id="library-grid">
 <div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
@@ -2344,7 +2205,7 @@ function handleSearch(q) {
     html += `<div class="results-section">
       <div class="results-section-label">
         <span>&#x1F4DC; Verses</span>
-        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''}</span>
+        <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''} in Genesis 1–10</span>
       </div>`;
     for (const v of verseMatches) {
       const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '…' : v.text;
