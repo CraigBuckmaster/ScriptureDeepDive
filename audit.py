@@ -151,6 +151,22 @@ if missing_mac:
 else:
     ok('MacArthur CSS present in all chapters')
 
+# MacArthur panels must have actual content (com-note), not be empty shells
+empty_mac = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    panels = re.findall(r'class="anno-panel com-panel">(.*?)</div>\s*</div>', h, re.DOTALL)
+    for panel in panels:
+        if 'com-note' not in panel:
+            empty_mac.append(f'{book} {ch}')
+            break
+
+if empty_mac:
+    fail(f'Empty MacArthur panels (no com-note) in: ' +
+         ', '.join(empty_mac[:5]) + ('...' if len(empty_mac) > 5 else ''))
+else:
+    ok('All MacArthur panels have content')
+
 # ═══════════════════════════════════════════════════════════════════════════
 # 3. VERSES.JS — external only, no inline
 # ═══════════════════════════════════════════════════════════════════════════
