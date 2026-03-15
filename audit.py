@@ -32,6 +32,7 @@ def chapter_paths():
         ('genesis',  'Genesis',  range(1, 51)),
         ('exodus',   'Exodus',   range(1, 41)),
         ('proverbs', 'Proverbs', range(1, 32)),
+        ('matthew',  'Matthew',  range(1, 11)),
     ]:
         for ch in chapters:
             p = f'{REPO}/{book_dir}/{book_name}_{ch}.html'
@@ -83,6 +84,8 @@ EXPECTED = {
     ('Proverbs',24):34,('Proverbs',25):28,('Proverbs',26):28,
     ('Proverbs',27):27,('Proverbs',28):28,('Proverbs',29):27,
     ('Proverbs',30):33,('Proverbs',31):31,
+    ('Matthew', 1):25,('Matthew', 2):23,('Matthew', 3):17,('Matthew', 4):25,('Matthew', 5):48,
+    ('Matthew', 6):34,('Matthew', 7):29,('Matthew', 8):34,('Matthew', 9):38,('Matthew',10):42,
 }
 
 chapters = chapter_paths()
