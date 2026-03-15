@@ -105,29 +105,30 @@ footer { order: 4; }
   color: var(--text-dim);
   line-height: 1.85;
 }
-.hero-badges {
+.feature-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: .55rem;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 3rem;
+  gap: .4rem .2rem;
+  margin-bottom: 2.8rem;
 }
-.badge {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: .67rem;
-  font-weight: 600;
-  letter-spacing: .08em;
+.feature-item {
+  font-family: 'Cinzel', serif;
+  font-size: .6rem;
+  font-weight: 400;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  padding: .28rem .75rem;
-  border-radius: 2px;
-  border: 1px solid;
+  color: var(--gold-dim);
+  white-space: nowrap;
 }
-.badge-heb  { color: #e890b8; border-color: #7a3050; background: rgba(122,48,80,.1); }
-.badge-hist { color: #70b8e8; border-color: #2a5080; background: rgba(42,80,128,.1); }
-.badge-ctx  { color: #70d098; border-color: #2a6040; background: rgba(42,96,64,.1); }
-.badge-cross{ color: #d4b060; border-color: #6a4a00; background: rgba(106,74,0,.1); }
-.badge-place{ color: #80d080; border-color: #2a5a2a; background: rgba(42,90,42,.1); }
-.badge-tl   { color: #80a8e0; border-color: #2a4a70; background: rgba(42,74,112,.1); }
+.feature-sep {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .7rem;
+  color: var(--border);
+  line-height: 1;
+  padding: 0 .1rem;
+}
 
 .scroll-cue {
   font-family: 'Source Sans 3', sans-serif;
@@ -641,13 +642,18 @@ footer {
   <p class="hero-subtitle">Every Book &middot; Every Chapter &middot; Every Word</p>
   <div class="hero-divider"></div>
   <p class="hero-desc">A verse-by-verse journey through the Bible. Each chapter is unlocked with deep commentary drawing on Hebrew and Greek word studies, historical context, theology, cross-references, key places, and visual timelines &mdash; everything you need to read Scripture the way it was meant to be read.</p>
-  <div class="hero-badges">
-    <span class="badge badge-heb">&#x5D0; Hebrew &amp; Greek</span>
-    <span class="badge badge-hist">Historical Context</span>
-    <span class="badge badge-ctx">Deep Commentary</span>
-    <span class="badge badge-cross">Cross-References</span>
-    <span class="badge badge-place">&#x1F4CD; Key Places</span>
-    <span class="badge badge-tl">&#x1F4C5; Timelines</span>
+  <div class="feature-strip">
+    <span class="feature-item">Hebrew &amp; Greek Word Studies</span>
+    <span class="feature-sep">&middot;</span>
+    <span class="feature-item">Historical Context</span>
+    <span class="feature-sep">&middot;</span>
+    <span class="feature-item">Deep Commentary</span>
+    <span class="feature-sep">&middot;</span>
+    <span class="feature-item">Cross-References</span>
+    <span class="feature-sep">&middot;</span>
+    <span class="feature-item">Key Places &amp; Timelines</span>
+    <span class="feature-sep">&middot;</span>
+    <span class="feature-item">MacArthur Study Notes</span>
   </div>
   <div class="hero-cta">
     <a href="#library-section" class="cta-primary" id="cta-continue" style="display:none">Continue Reading</a>
