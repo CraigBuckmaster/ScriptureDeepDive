@@ -796,7 +796,7 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
   try {
     var KEY='sdw_recent', MAX=5;
     var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var url = window.location.pathname.replace(/.*\/([^/]+)$/,'$1');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
