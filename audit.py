@@ -75,6 +75,10 @@ EXPECTED = {
     ('Proverbs', 4):27,('Proverbs', 5):23,('Proverbs', 6):35,
     ('Proverbs', 7):27,('Proverbs', 8):36,('Proverbs', 9):18,
     ('Proverbs',10):32,
+    ('Proverbs',11):31,('Proverbs',12):28,('Proverbs',13):25,
+    ('Proverbs',14):35,('Proverbs',15):33,('Proverbs',16):33,
+    ('Proverbs',17):28,('Proverbs',18):24,('Proverbs',19):29,
+    ('Proverbs',20):30,
 }
 
 chapters = chapter_paths()
