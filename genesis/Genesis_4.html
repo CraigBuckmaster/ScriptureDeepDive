@@ -58,76 +58,157 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
-/* Verse-level — warm gold */
-.anno-trigger.hebrew,
-.anno-trigger.history,
-.anno-trigger.context,
-.anno-trigger.cross,
-.anno-trigger.places,
-.anno-trigger.timeline,
-.anno-trigger.hebrew:hover,
-.anno-trigger.history:hover,
-.anno-trigger.context:hover,
-.anno-trigger.cross:hover,
-.anno-trigger.places:hover,
-.anno-trigger.timeline:hover,
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
 .anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
-.anno-trigger.hebrew.active,
-.anno-trigger.history.active,
-.anno-trigger.context.active,
-.anno-trigger.cross.active,
-.anno-trigger.places.active,
-.anno-trigger.timeline.active,
-.anno-trigger.people.active{
-  color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);
-}
-
-/* MacArthur — crimson, kept distinct */
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
-/* Chapter-level scholarship — cool slate */
-.anno-trigger.people,
-.anno-trigger.translations,
-.anno-trigger.sources,
-.anno-trigger.reception,
-.anno-trigger.literary,
-.anno-trigger.hebrew-text,
-.anno-trigger.people:hover,
-.anno-trigger.translations:hover,
-.anno-trigger.sources:hover,
-.anno-trigger.reception:hover,
-.anno-trigger.literary:hover,
-.anno-trigger.hebrew-text:hover,
-.anno-trigger.threading:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
-.anno-trigger.people.active,
-.anno-trigger.translations.active,
-.anno-trigger.sources.active,
-.anno-trigger.reception.active,
-.anno-trigger.literary.active,
-.anno-trigger.hebrew-text.active,
-.anno-trigger.threading.active{
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);
-}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
 
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
@@ -226,11 +307,11 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 
 <!-- SECTION 1: vv.1-8 -->
 <div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; Cain and Abel: Two Offerings, One Murder</div><span class="verse-text"><span class="verse-num">1</span>Adam made love to his wife Eve, and she became pregnant and gave birth to Cain. She said, "With the help of the Lord I have brought forth a man."</span><span class="verse-text"><span class="verse-num">2</span>Later she gave birth to his brother Abel. Now Abel kept flocks, and Cain worked the soil.</span><span class="verse-text"><span class="verse-num">3</span>In the course of time Cain brought some of the fruits of the soil as an offering to the Lord.</span><span class="verse-text"><span class="verse-num">4</span>And Abel also brought an offering—fat portions from some of the firstborn of his flock. The Lord looked with favor on Abel and his offering,</span><span class="verse-text"><span class="verse-num">5</span>but on Cain and his offering he did not look with favor. So Cain was very angry, and his face was downcast.</span><span class="verse-text"><span class="verse-num">6</span>Then the Lord said to Cain, "Why are you angry? Why is your face downcast?</span><span class="verse-text"><span class="verse-num">7</span>If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at your door; it desires to have you, but you must rule over it."</span><span class="verse-text"><span class="verse-num">8</span>Now Cain said to his brother Abel, "Let's go out to the field." While they were in the field, Cain attacked his brother Abel and killed him.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g4-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:1–5</span><p>Cain brings "some of the fruits of the soil" — the Hebrew does not say the best or the firstfruits. Abel brings "fat portions from some of the firstborn of his flock" — the best, the firstfruits. The difference is not between vegetable and animal offerings (both were acceptable in the Mosaic law) but between the posture of the offerers: Abel brings the best; Cain brings what is convenient. God's acceptance of Abel and rejection of Cain is based on the quality of faith expressed in the offering, confirmed by Hebrews 11:4: "By faith Abel brought God a better offering." The heart behind the gift matters infinitely more than the gift itself.</p></div><div class="com-note"><span class="com-ref">4:7</span><p>"If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at the door; it desires to have you, but you must rule over it." The word "desires" (teshuqah) is the same word used in 3:16 of the woman's desire for her husband — a controlling, consuming desire. Sin is personified as a predator waiting at the threshold of the will. God's warning to Cain is gracious — the opportunity for repentance is explicitly offered before the murder. Cain's rejection of the warning makes his act fully premeditated and inexcusable.</p></div></div><div id="s1-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s1-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s1-mac')"><span>MacArthur</span></button></div><div id="g4-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:1–5</span><p>Cain brings "some of the fruits of the soil" — the Hebrew does not say the best or the firstfruits. Abel brings "fat portions from some of the firstborn of his flock" — the best, the firstfruits. The difference is not between vegetable and animal offerings (both were acceptable in the Mosaic law) but between the posture of the offerers: Abel brings the best; Cain brings what is convenient. God's acceptance of Abel and rejection of Cain is based on the quality of faith expressed in the offering, confirmed by Hebrews 11:4: "By faith Abel brought God a better offering." The heart behind the gift matters infinitely more than the gift itself.</p></div><div class="com-note"><span class="com-ref">4:7</span><p>"If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at the door; it desires to have you, but you must rule over it." The word "desires" (teshuqah) is the same word used in 3:16 of the woman's desire for her husband — a controlling, consuming desire. Sin is personified as a predator waiting at the threshold of the will. God's warning to Cain is gracious — the opportunity for repentance is explicitly offered before the murder. Cain's rejection of the warning makes his act fully premeditated and inexcusable.</p></div></div><div id="s1-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="hebrew-word">&#x5E7;&#x5B7;&#x5D9;&#x5B4;&#x5DF;</span> <span class="tlit">Qayin</span> &mdash; &ldquo;Cain.&rdquo; Eve&rsquo;s exclamation (<span class="tlit">qaniti</span> &mdash; &ldquo;I have acquired/created&rdquo;) suggests the name means &ldquo;acquired/gotten.&rdquo; Some ancient interpreters read &ldquo;with the help of the LORD&rdquo; as Eve believing Cain might be the promised seed of 3:15 who would crush the serpent&rsquo;s head. The irony is devastating.</p><br>
     <p><span class="hebrew-word">&#x5D4;&#x5B6;&#x5D1;&#x5B6;&#x5DC;</span> <span class="tlit">Hevel</span> &mdash; &ldquo;Abel.&rdquo; The Hebrew word for &ldquo;breath&rdquo; or &ldquo;vapour&rdquo; &mdash; the exact word used for emptiness in Ecclesiastes (<span class="tlit">hevel havalim</span>, &ldquo;vanity of vanities&rdquo;). His very name signals brevity and transience. He is the first person in the Bible to die, and his name means the shortest thing in creation.</p><br>
@@ -254,10 +335,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     </ul>
   </div></div>
 <div class="section"><div class="section-header">Verses 9&ndash;16 &mdash; God's Judgment on Cain; the Mark</div><span class="verse-text"><span class="verse-num">9</span>Then the Lord said to Cain, "Where is your brother Abel?" "I don't know," he replied. "Am I my brother's keeper?"</span><span class="verse-text"><span class="verse-num">10</span>The Lord said, "What have you done? Listen! Your brother's blood cries out to me from the ground.</span><span class="verse-text"><span class="verse-num">11</span>Now you are under a curse and driven from the ground, which opened its mouth to receive your brother's blood from your hand.</span><span class="verse-text"><span class="verse-num">12</span>When you work the ground, it will no longer yield its crops for you. You will be a restless wanderer on the earth."</span><span class="verse-text"><span class="verse-num">13</span>Cain said to the Lord, "My punishment is more than I can bear.</span><span class="verse-text"><span class="verse-num">14</span>Today you are driving me from the land, and I will be hidden from your presence; I will be a restless wanderer on the earth, and whoever finds me will kill me."</span><span class="verse-text"><span class="verse-num">15</span>But the Lord said to him, "Not so; anyone who kills Cain will suffer vengeance seven times over." Then the Lord put a mark on Cain so that no one who found him would kill him.</span><span class="verse-text"><span class="verse-num">16</span>So Cain went out from the Lord's presence and lived in the land of Nod, east of Eden.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g4-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:9–10</span><p>"Am I my brother's keeper?" — Cain's question is humanity's oldest evasion of moral responsibility. The answer implied by the entire narrative is yes. "Your brother's blood cries out to me from the ground" — the Hebrew is plural: bloods (damim), meaning not just Abel's life but all the descendants he would have had. The Talmud draws from this the principle that to destroy one life is to destroy a world; to save one life is to save a world. The blood crying from the ground is the precursor of the full biblical theology of blood-guilt and the demand for justice.</p></div><div class="com-note"><span class="com-ref">4:15–16</span><p>The mark of Cain is not identified — it is simply a protective sign, not a mark of shame or ethnicity. God's refusal to allow Cain's immediate death is not indulgence but the preservation of the possibility of repentance and the broader purposes of history. Cain goes out "from the LORD's presence" — the first recorded departure from God's presence, east of Eden, into the land of Nod ("wandering"). The geography of estrangement: every step away from God is a step east.</p></div></div><div id="s2-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s2-mac')"><span>MacArthur</span></button></div><div id="g4-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:9–10</span><p>"Am I my brother's keeper?" — Cain's question is humanity's oldest evasion of moral responsibility. The answer implied by the entire narrative is yes. "Your brother's blood cries out to me from the ground" — the Hebrew is plural: bloods (damim), meaning not just Abel's life but all the descendants he would have had. The Talmud draws from this the principle that to destroy one life is to destroy a world; to save one life is to save a world. The blood crying from the ground is the precursor of the full biblical theology of blood-guilt and the demand for justice.</p></div><div class="com-note"><span class="com-ref">4:15–16</span><p>The mark of Cain is not identified — it is simply a protective sign, not a mark of shame or ethnicity. God's refusal to allow Cain's immediate death is not indulgence but the preservation of the possibility of repentance and the broader purposes of history. Cain goes out "from the LORD's presence" — the first recorded departure from God's presence, east of Eden, into the land of Nod ("wandering"). The geography of estrangement: every step away from God is a step east.</p></div></div><div id="s2-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">&ldquo;Am I my brother&rsquo;s keeper?&rdquo;</span> &mdash; Cain&rsquo;s question becomes one of the defining ethical questions of Scripture. The word <span class="tlit">shomer</span> (keeper/guardian) is the same used for keeping the Torah, guarding the sanctuary, and the LORD himself being Israel&rsquo;s keeper (Ps 121:5 &mdash; <span class="tlit">YHWH shomrekha</span>). Cain&rsquo;s answer is implicitly &ldquo;no&rdquo; &mdash; but the entire arc of Scripture answers &ldquo;yes.&rdquo;</p><br>
     <p><span class="tlit">Demei ahikha</span> &mdash; &ldquo;Your brother&rsquo;s blood.&rdquo; The word is plural: &ldquo;bloods.&rdquo; Ancient rabbis read this as meaning not just Abel but all his potential descendants &mdash; every person who might have descended from Abel was destroyed by the murder. The Mishnah (Sanhedrin 4:5) states: &ldquo;Whoever destroys a single soul, Scripture accounts it as if he had destroyed an entire world.&rdquo;</p><br>
@@ -276,10 +357,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     </ul>
   </div></div>
 <div class="section"><div class="section-header">Verses 17&ndash;26 &mdash; The Line of Cain; Seth and the Name of the Lord</div><span class="verse-text"><span class="verse-num">17</span>Cain made love to his wife, and she became pregnant and gave birth to Enoch. Cain was then building a city, and he named it after his son Enoch.</span><span class="verse-text"><span class="verse-num">18</span>To Enoch was born Irad, and Irad was the father of Mehujael, and Mehujael was the father of Methushael, and Methushael was the father of Lamech.</span><span class="verse-text"><span class="verse-num">19</span>Lamech married two women, one named Adah and the other Zillah.</span><span class="verse-text"><span class="verse-num">20</span>Adah gave birth to Jabal; he was the father of those who live in tents and raise livestock.</span><span class="verse-text"><span class="verse-num">21</span>His brother's name was Jubal; he was the father of all who play stringed instruments and pipes.</span><span class="verse-text"><span class="verse-num">22</span>Zillah also had a son, Tubal-Cain, who forged all kinds of tools out of bronze and iron. Tubal-Cain's sister was Naamah.</span><span class="verse-text"><span class="verse-num">23</span>Lamech said to his wives, "Adah and Zillah, listen to me; wives of Lamech, hear my words. I have killed a man for wounding me, a young man for injuring me.</span><span class="verse-text"><span class="verse-num">24</span>If Cain is avenged seven times, then Lamech seventy-seven times."</span><span class="verse-text"><span class="verse-num">25</span>Adam made love to his wife again, and she gave birth to a son and named him Seth, saying, "God has granted me another child in place of Abel, since Cain killed him."</span><span class="verse-text"><span class="verse-num">26</span>Seth also had a son, and he named him Enosh. At that time people began to call on the name of the Lord.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s3-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g4-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:17–22</span><p>The line of Cain produces genuine cultural achievement: city-building (v.17), music (v.21), metallurgy (v.22). This is not incidental. Human creativity and cultural development are expressions of the image of God even in fallen humanity. Common grace means God permits the gifts of creation to operate even among those alienated from him. The cultural mandate of Genesis 1:28 is never revoked — even Cain's line participates in it. But culture without God is restless: Lamech's boast (vv.23–24) shows the line of Cain's violence escalating — seventy-sevenfold vengeance, the dark inversion of the sevenfold protection promised to Cain.</p></div><div class="com-note"><span class="com-ref">4:26</span><p>"At that time people began to call on the name of the LORD." The birth of Seth and his son Enosh marks a turning point — a community of worshippers begins to form. The Cain line builds a city and fills it with culture; the Seth line begins to worship. These two trajectories — human civilization without God versus human civilization oriented toward God — run through all subsequent history.</p></div></div><div id="s3-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g4-s3-mac')"><span>MacArthur</span></button></div><div id="g4-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">4:17–22</span><p>The line of Cain produces genuine cultural achievement: city-building (v.17), music (v.21), metallurgy (v.22). This is not incidental. Human creativity and cultural development are expressions of the image of God even in fallen humanity. Common grace means God permits the gifts of creation to operate even among those alienated from him. The cultural mandate of Genesis 1:28 is never revoked — even Cain's line participates in it. But culture without God is restless: Lamech's boast (vv.23–24) shows the line of Cain's violence escalating — seventy-sevenfold vengeance, the dark inversion of the sevenfold protection promised to Cain.</p></div><div class="com-note"><span class="com-ref">4:26</span><p>"At that time people began to call on the name of the LORD." The birth of Seth and his son Enosh marks a turning point — a community of worshippers begins to form. The Cain line builds a city and fills it with culture; the Seth line begins to worship. These two trajectories — human civilization without God versus human civilization oriented toward God — run through all subsequent history.</p></div></div><div id="s3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Lamech&rsquo;s Song</span> (vv.23&ndash;24) &mdash; The second poem in Genesis after Adam&rsquo;s love poem (2:23) is a war boast. The contrast is brutal. Humanity&rsquo;s first poem celebrated union and shared essence; the second celebrates disproportionate vengeance and self-glorification. The seven-fold protection God gave Cain (v.15) is weaponised by Lamech into seventy-seven-fold personal revenge. Culture advances (cities, music, metalwork); moral character regresses.</p><br>
     <p><span class="hebrew-word">&#x5E9;&#x5B5;&#x5EA;</span> <span class="tlit">Shet</span> &mdash; &ldquo;Seth.&rdquo; From <span class="tlit">shat</span> (appointed/placed). Eve&rsquo;s naming of Seth signals the beginning of hope &mdash; God has &ldquo;appointed&rdquo; another seed in place of Abel. The line through which the promise of 3:15 will travel shifts from Cain (who builds a godless city) to Seth (whose line calls on YHWH).</p><br>
@@ -301,7 +382,7 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 4</div>
   
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g4-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g4-themes')"><span>Theological Themes</span></button>
 <div id="g4-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
@@ -410,8 +491,8 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g4-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g4-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g4-hebtext')"><span>Hebrew Text</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g4-thread')"><span>Intertextual Threading</span></button>
 </div>
 <div id="g4-hebtext" class="anno-panel heb-text-panel">
   <h4>Hebrew-Rooted Reading — Genesis 4</h4>
@@ -495,11 +576,11 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g4-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g4-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g4-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g4-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g4-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g4-ppl')"><span>People</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g4-trans')"><span>Translations</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g4-src')"><span>Ancient Sources</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g4-rec')"><span>Reception History</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g4-lit')"><span>Literary Structure</span></button>
   </div>
   <div id="g4-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 4</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Cain / Qayin</div><div class="person-role">First Murderer — vv.1–16,25</div><p class="person-text">Eve names Cain with the exclamation <span class='tlit'>qaniti</span> (I have acquired/created), possibly believing he is the promised seed of 3:15 who will crush the serpent — tragic irony. Cain is a farmer (<span class='tlit'>'oved adamah</span> — worker of ground), continuing the cursed vocation of 3:17. His offering is rejected not because it is vegetable (the text never says this is the problem) but apparently because it lacks the firstfruits quality Abel's has. God's pastoral warning to him before the murder (4:6-7) makes Cain's act fully premeditated defiance. In the NT he is a type of godless religion (Jude 11), self-righteous externalism, and the first shedder of innocent blood (Matt 23:35; 1 John 3:12).</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Abel / Hevel</div><div class="person-role">The First Martyr — vv.2–8</div><p class="person-text">Abel's name means breath, vapour, vanity — the same word (<span class='tlit'>hevel</span>) Ecclesiastes uses for the transience of all things. He is the first person in the Bible to die, and his name means the shortest-lived thing in creation. He is never given dialogue — he is entirely passive even in his death. Yet Hebrews 11:4 says he still speaks through his faith. His blood cries from the ground (v.10) — establishing the principle that innocent blood has a voice before God that cannot be silenced by murder. Jesus names him the first righteous martyr (Matt 23:35) and Hebrews 12:24 says his blood called for vengeance, whereas Christ's blood speaks mercy.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Lamech (Cain's line)</div><div class="person-role">First Polygamist and Boaster — vv.19–24</div><p class="person-text">The seventh generation from Adam through Cain, Lamech is the culmination of the Cainite genealogy's moral descent. He introduces polygamy (two wives), boasts of disproportionate violence (killing a man for a wound — seventy-seven-fold revenge), and weaponizes the protective logic of Cain's mark. He is the dark mirror of the Seth-line Lamech (ch.5) who lives 777 years in covenant faithfulness. His 'Sword Song' (vv.23-24) is the oldest war boast in Scripture — and the foil Jesus directly reverses in Matt 18:22 with seventy-seven-fold forgiveness.</p></div></div></div>
   <div id="g4-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 7 — Sin crouching at the door</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>sin is crouching at the door; it desires to have you, but you must rule over it</td></tr><tr><td class="t-label">ESV</td><td>sin is crouching at the door. Its desire is contrary to you, but you must rule over it</td></tr><tr><td class="t-label">NASB</td><td>sin is lurking at the door; and its desire is for you, but you must master it</td></tr><tr><td class="t-label">KJV</td><td>sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him</td></tr><tr><td class="t-label">Note</td><td>ESV 'contrary to you' is a notable interpretive choice — reading <span class='tlit'>teshuqah</span> (desire) negatively, as hostile desire to dominate. NIV and NASB read it as simple desire/longing. The same word in 3:16 describes the woman's desire for her husband. KJV's masculine 'him' reflects an older reading of sin as a personified male figure. The Akkadian word <span class='tlit'>rabisu</span> (a crouching demon at doorways) may underlie the imagery.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 15 — The mark of Cain</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>the LORD put a mark on Cain so that no one who found him would kill him</td></tr><tr><td class="t-label">ESV</td><td>the LORD put a mark on Cain, lest any who found him should attack him</td></tr><tr><td class="t-label">NASB</td><td>the LORD appointed a sign for Cain, so that no one finding him would kill him</td></tr><tr><td class="t-label">Note</td><td>No translation specifies what the mark was — the Hebrew <span class='tlit'>ot</span> means sign or mark but gives no physical description. Ancient interpreters guessed: a letter on his forehead (Rashi), a horn (Targum), a dog companion, a trembling body. The text's silence is deliberate. The mark's function — protection, not punishment — is unambiguous in all versions.</td></tr></tbody></table></div>

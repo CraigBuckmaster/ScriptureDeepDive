@@ -58,76 +58,157 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
-/* Verse-level — warm gold */
-.anno-trigger.hebrew,
-.anno-trigger.history,
-.anno-trigger.context,
-.anno-trigger.cross,
-.anno-trigger.places,
-.anno-trigger.timeline,
-.anno-trigger.hebrew:hover,
-.anno-trigger.history:hover,
-.anno-trigger.context:hover,
-.anno-trigger.cross:hover,
-.anno-trigger.places:hover,
-.anno-trigger.timeline:hover,
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
 .anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
-.anno-trigger.hebrew.active,
-.anno-trigger.history.active,
-.anno-trigger.context.active,
-.anno-trigger.cross.active,
-.anno-trigger.places.active,
-.anno-trigger.timeline.active,
-.anno-trigger.people.active{
-  color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);
-}
-
-/* MacArthur — crimson, kept distinct */
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
-/* Chapter-level scholarship — cool slate */
-.anno-trigger.people,
-.anno-trigger.translations,
-.anno-trigger.sources,
-.anno-trigger.reception,
-.anno-trigger.literary,
-.anno-trigger.hebrew-text,
-.anno-trigger.people:hover,
-.anno-trigger.translations:hover,
-.anno-trigger.sources:hover,
-.anno-trigger.reception:hover,
-.anno-trigger.literary:hover,
-.anno-trigger.hebrew-text:hover,
-.anno-trigger.threading:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
-.anno-trigger.people.active,
-.anno-trigger.translations.active,
-.anno-trigger.sources.active,
-.anno-trigger.reception.active,
-.anno-trigger.literary.active,
-.anno-trigger.hebrew-text.active,
-.anno-trigger.threading.active{
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);
-}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
 
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
@@ -226,10 +307,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 
 <!-- SECTION 1: vv.1-5 -->
 <div class="section"><div class="section-header">Verses 1&ndash;5 &mdash; The Book of Adam's Descendants</div><span class="verse-text"><span class="verse-num">1</span>This is the written account of Adam's family line. When God created mankind, he made them in the likeness of God.</span><span class="verse-text"><span class="verse-num">2</span>He created them male and female and blessed them. And he named them "Mankind" when they were created.</span><span class="verse-text"><span class="verse-num">3</span>When Adam had lived 130 years, he had a son in his own likeness, in his own image; and he named him Seth.</span><span class="verse-text"><span class="verse-num">4</span>After Seth was born, Adam lived 800 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">5</span>Altogether, Adam lived a total of 930 years, and then he died.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g5-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:1–2</span><p>The toledot formula introduces the genealogy of Adam. Verse 1–2 recap the creation of humanity in God's image — deliberately echoing 1:26–27 — before tracing the transmission of that image through the generations. The image of God is transmitted through human reproduction (v.3: Adam "had a son in his own likeness, in his own image"). This is not the defacement of the image but its propagation, even in a fallen humanity. The image is marred but not destroyed by the fall — a distinction with enormous ethical implications.</p></div><div class="com-note"><span class="com-ref">5:5</span><p>The refrain "and he died" (wayyamot) sounds like a drumbeat through the genealogy — the fulfilment of God's warning in 2:17. Each great life ends in the same two words. The genealogy is a sustained meditation on mortality: however long the lifespan (Methuselah's 969 years is the record), death always comes. Death is not natural — it is the penalty for sin, the intruder that Genesis 3 introduced. The genealogy makes that reality inescapable.</p></div></div><div id="s1-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s1-mac')"><span>MacArthur</span></button></div><div id="g5-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:1–2</span><p>The toledot formula introduces the genealogy of Adam. Verse 1–2 recap the creation of humanity in God's image — deliberately echoing 1:26–27 — before tracing the transmission of that image through the generations. The image of God is transmitted through human reproduction (v.3: Adam "had a son in his own likeness, in his own image"). This is not the defacement of the image but its propagation, even in a fallen humanity. The image is marred but not destroyed by the fall — a distinction with enormous ethical implications.</p></div><div class="com-note"><span class="com-ref">5:5</span><p>The refrain "and he died" (wayyamot) sounds like a drumbeat through the genealogy — the fulfilment of God's warning in 2:17. Each great life ends in the same two words. The genealogy is a sustained meditation on mortality: however long the lifespan (Methuselah's 969 years is the record), death always comes. Death is not natural — it is the penalty for sin, the intruder that Genesis 3 introduced. The genealogy makes that reality inescapable.</p></div></div><div id="s1-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Sefer toledot Adam</span> &mdash; &ldquo;The written account of Adam&rsquo;s family line.&rdquo; <span class="tlit">Toledot</span> (generations/account) is the structural formula appearing 10 times throughout Genesis. <span class="tlit">Sefer</span> (scroll/book) implies a written source &mdash; an archival record, not just oral tradition. Genesis presents itself as drawing on documents.</p><br>
     <p><span class="tlit">Bidmut Elohim</span> &mdash; &ldquo;In the likeness of God.&rdquo; The creation account of chapter 1 is explicitly recalled here, anchoring the genealogy in the Imago Dei. Then v.3 echoes it: Seth is born &ldquo;in the likeness, in the image&rdquo; of <em>Adam</em>. The Imago Dei is transmitted through human generation &mdash; but so is fallen humanness. Seth is Adam&rsquo;s image-bearer as Adam is God&rsquo;s.</p><br>
@@ -243,16 +324,16 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     <p>The repetitive structure of chapter 5 is often treated as tedious genealogical filler. It is anything but. The chapter is a meditation on mortality. Each entry follows the same form: <em>X lived N years and had a son Y. After Y was born, X lived M more years and had other sons and daughters. Altogether X lived N+M years, and then he died.</em> The relentless &ldquo;and then he died&rdquo; is the chapter&rsquo;s theological point. The curse of chapter 3 is real, active, and without exception &mdash; until Enoch.</p>
   </div></div>
 <div class="section"><div class="section-header">Verses 6&ndash;20 &mdash; The Generations: Seth to Jared</div><span class="verse-text"><span class="verse-num">6</span>When Seth had lived 105 years, he became the father of Enosh.</span><span class="verse-text"><span class="verse-num">7</span>After he became the father of Enosh, Seth lived 807 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">8</span>Altogether, Seth lived a total of 912 years, and then he died.</span><span class="verse-text"><span class="verse-num">9</span>When Enosh had lived 90 years, he became the father of Kenan.</span><span class="verse-text"><span class="verse-num">10</span>After he became the father of Kenan, Enosh lived 815 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">11</span>Altogether, Enosh lived a total of 905 years, and then he died.</span><span class="verse-text"><span class="verse-num">12</span>When Kenan had lived 70 years, he became the father of Mahalalel.</span><span class="verse-text"><span class="verse-num">13</span>After he became the father of Mahalalel, Kenan lived 840 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">14</span>Altogether, Kenan lived a total of 910 years, and then he died.</span><span class="verse-text"><span class="verse-num">15</span>When Mahalalel had lived 65 years, he became the father of Jared.</span><span class="verse-text"><span class="verse-num">16</span>After he became the father of Jared, Mahalalel lived 830 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">17</span>Altogether, Mahalalel lived a total of 895 years, and then he died.</span><span class="verse-text"><span class="verse-num">18</span>When Jared had lived 162 years, he became the father of Enoch.</span><span class="verse-text"><span class="verse-num">19</span>After he became the father of Enoch, Jared lived 800 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">20</span>Altogether, Jared lived a total of 962 years, and then he died.</span><div class="btn-row">
-    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g5-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:6–20</span><p>The antediluvian lifespans — ranging from 365 to 969 years — have been explained in various ways: symbolic numbers, ancient near-eastern king list conventions, or literal pre-flood biology. MacArthur takes the position that these are literal historical lifespans, reflecting the original created vitality of humanity and the pre-flood environment. Whatever the mechanism, the theological point is clear: even with extraordinary longevity, the genealogy's refrain is unchanged. Years multiply; death still comes. The question each reader must ask: what did you do with the years you had?</p></div></div><div id="s2-ctx" class="anno-panel ctx">
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s2-mac')"><span>MacArthur</span></button></div><div id="g5-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:6–20</span><p>The antediluvian lifespans — ranging from 365 to 969 years — have been explained in various ways: symbolic numbers, ancient near-eastern king list conventions, or literal pre-flood biology. MacArthur takes the position that these are literal historical lifespans, reflecting the original created vitality of humanity and the pre-flood environment. Whatever the mechanism, the theological point is clear: even with extraordinary longevity, the genealogy's refrain is unchanged. Years multiply; death still comes. The question each reader must ask: what did you do with the years you had?</p></div></div><div id="s2-ctx" class="anno-panel ctx">
     <h4>The Names &amp; Their Meanings</h4>
     <p>Each name in the Seth genealogy carries meaning that, read together, forms a theological message. Various scholars have noted that the names &mdash; Adam (man), Seth (appointed), Enosh (mortal), Kenan (sorrow), Mahalalel (the blessed God), Jared (shall come down), Enoch (teaching/dedicated), Methuselah (his death shall bring), Lamech (despairing), Noah (rest/comfort) &mdash; form a sequence that reads: &ldquo;Man appointed mortal sorrow. The blessed God shall come down, teaching. His death shall bring the despairing rest.&rdquo; While this reading requires some caution about etymology, it has struck many as an extraordinary embedded gospel in the genealogy itself.</p>
   </div></div>
 <div class="section"><div class="section-header">Verses 21&ndash;27 &mdash; Enoch Walks with God; Methuselah</div><span class="verse-text"><span class="verse-num">21</span>When Enoch had lived 65 years, he became the father of Methuselah.</span><span class="verse-text"><span class="verse-num">22</span>After he became the father of Methuselah, Enoch walked faithfully with God 300 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">23</span>Altogether, Enoch lived a total of 365 years.</span><span class="verse-text"><span class="verse-num">24</span>Enoch walked faithfully with God; then he was no more, because God took him away.</span><span class="verse-text"><span class="verse-num">25</span>When Methuselah had lived 187 years, he became the father of Lamech.</span><span class="verse-text"><span class="verse-num">26</span>After he became the father of Lamech, Methuselah lived 782 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">27</span>Altogether, Methuselah lived a total of 969 years, and then he died.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s3-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g5-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:21–24</span><p>"Enoch walked with God; then he was no more, because God took him away." Two things distinguish Enoch: he "walked with God" — a phrase of intimate, sustained fellowship used elsewhere only of Noah (6:9) — and he did not die. The pattern of the genealogy is broken for the first time: no "and he died." God simply took him. The Hebrew word (laqach) is used of Elijah's translation (2 Kings 2:3, 5). Hebrews 11:5 confirms that Enoch was taken up without experiencing death because of his faith. Walking with God is the description of covenantal faithfulness: a life oriented toward God in every aspect, in every domain. Enoch is the first of two Old Testament figures who bypass death — both anticipations of the resurrection life that permanently conquers death.</p></div></div><div id="s3-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s3-mac')"><span>MacArthur</span></button></div><div id="g5-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:21–24</span><p>"Enoch walked with God; then he was no more, because God took him away." Two things distinguish Enoch: he "walked with God" — a phrase of intimate, sustained fellowship used elsewhere only of Noah (6:9) — and he did not die. The pattern of the genealogy is broken for the first time: no "and he died." God simply took him. The Hebrew word (laqach) is used of Elijah's translation (2 Kings 2:3, 5). Hebrews 11:5 confirms that Enoch was taken up without experiencing death because of his faith. Walking with God is the description of covenantal faithfulness: a life oriented toward God in every aspect, in every domain. Enoch is the first of two Old Testament figures who bypass death — both anticipations of the resurrection life that permanently conquers death.</p></div></div><div id="s3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Hithallek et ha&ndash;Elohim</span> &mdash; &ldquo;Walked faithfully with God.&rdquo; The verb <span class="tlit">halak</span> in the Hithpael (reflexive) form means an ongoing, habitual, intimate walk &mdash; a lifestyle of communion. The same phrase is used for Noah (6:9). Only these two figures in primeval history receive this description. It stands in stark contrast to the surrounding &ldquo;and then he died.&rdquo;</p><br>
     <p><span class="tlit">Ve&ndash;einennu ki laqah oto Elohim</span> &mdash; &ldquo;Then he was no more, because God took him.&rdquo; The most remarkable sentence in a chapter of death notices. No death. No funeral. No &ldquo;and then he died.&rdquo; The verb <span class="tlit">laqah</span> (took) is used elsewhere for divine translation: Elijah is &ldquo;taken up&rdquo; (2 Kgs 2:3, 5, 9, 10) with the same verb. Enoch is the first rapture &mdash; the first human to bypass death.</p><br>
@@ -272,10 +353,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     </ul>
   </div></div>
 <div class="section"><div class="section-header">Verses 28&ndash;32 &mdash; Lamech and the Birth of Noah</div><span class="verse-text"><span class="verse-num">28</span>When Lamech had lived 182 years, he had a son.</span><span class="verse-text"><span class="verse-num">29</span>He named him Noah and said, "He will comfort us in the labor and painful toil of our hands caused by the ground the Lord has cursed."</span><span class="verse-text"><span class="verse-num">30</span>After Noah was born, Lamech lived 595 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">31</span>Altogether, Lamech lived a total of 777 years, and then he died.</span><span class="verse-text"><span class="verse-num">32</span>After Noah was 500 years old, he became the father of Shem, Ham and Japheth.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s4-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s4-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s4-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s4-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g5-s4-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:29</span><p>Lamech names his son Noah (noach, "rest" or "comfort") with a prophetic word: "He will comfort us in the labour and painful toil of our hands caused by the ground the LORD has cursed." The explicit echo of 3:17–19 shows that the curse of the ground has been felt every generation since Adam. Lamech's prophecy points forward not just to Noah's flood story but to the deeper comfort from the curse that the seed of the woman (3:15) will ultimately bring. Noah's name is a signpost pointing through the flood to the redemption beyond it — and ultimately to the one who said, "Come to me, all you who are weary and burdened, and I will give you rest" (Matt 11:28).</p></div></div><div id="s4-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s4-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s4-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s4-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g5-s4-mac')"><span>MacArthur</span></button></div><div id="g5-s4-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:29</span><p>Lamech names his son Noah (noach, "rest" or "comfort") with a prophetic word: "He will comfort us in the labour and painful toil of our hands caused by the ground the LORD has cursed." The explicit echo of 3:17–19 shows that the curse of the ground has been felt every generation since Adam. Lamech's prophecy points forward not just to Noah's flood story but to the deeper comfort from the curse that the seed of the woman (3:15) will ultimately bring. Noah's name is a signpost pointing through the flood to the redemption beyond it — and ultimately to the one who said, "Come to me, all you who are weary and burdened, and I will give you rest" (Matt 11:28).</p></div></div><div id="s4-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="hebrew-word">&#x5E0;&#x5B9;&#x5D7;</span> <span class="tlit">Noah</span> &mdash; From <span class="tlit">nuah</span> (to rest) or <span class="tlit">naham</span> (to comfort). Lamech&rsquo;s naming speech in v.29 is a prophecy: <span class="tlit">yenah&rsquo;amenu</span> &mdash; &ldquo;he will comfort us.&rdquo; After generations under the curse of the ground, Lamech senses that something is about to change. Noah is named as the one who will bring relief from the cursed ground &mdash; a hope that Genesis 8 partially fulfils when Noah plants a vineyard and Genesis 9 when God lifts the ground-curse implicitly through the covenant.</p><br>
     <p><span class="tlit">777 years</span> &mdash; Lamech&rsquo;s lifespan. The number 7 is the number of completion and covenant throughout Scripture. Lamech (the Seth-line Lamech, not the Cain-line one) lives 777 years &mdash; triple-seven, a number of divine completeness &mdash; and dies seven years before the flood. The Cain-line Lamech boasted of 77-fold vengeance; the Seth-line Lamech lives 777 years. The numerical contrast is intentional.</p>
@@ -296,7 +377,7 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 5</div>
   
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g5-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g5-themes')"><span>Theological Themes</span></button>
 <div id="g5-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
@@ -405,8 +486,8 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g5-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g5-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g5-hebtext')"><span>Hebrew Text</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g5-thread')"><span>Intertextual Threading</span></button>
 </div>
 <div id="g5-hebtext" class="anno-panel heb-text-panel">
   <h4>Hebrew-Rooted Reading — Genesis 5</h4>
@@ -496,11 +577,11 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g5-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g5-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g5-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g5-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g5-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g5-ppl')"><span>People</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g5-trans')"><span>Translations</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g5-src')"><span>Ancient Sources</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g5-rec')"><span>Reception History</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g5-lit')"><span>Literary Structure</span></button>
   </div>
   <div id="g5-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 5</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Enoch</div><div class="person-role">The Exception — v.24</div><p class="person-text"><span class='tlit'>Hanok</span> — devoted, initiated. Seventh from Adam through Seth (mirroring Lamech's seventh place in Cain's line). While every other patriarch has the death refrain 'and he died,' Enoch's entry ends with <span class='tlit'>ve-einennu ki laqah oto Elohim</span> — 'he was not, for God took him.' This is the single rupture of the genealogy's drumbeat of death. He walked with God 365 years (matching the solar year — completeness) then was translated without dying. In the intertestamental period he became the subject of enormous literary expansion (1 Enoch, 2 Enoch, 3 Enoch). The NT cites him in Heb 11:5 as a model of faith and Jude 14 quotes his prophecy from 1 Enoch.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Methuselah</div><div class="person-role">Longest Life — v.27</div><p class="person-text">969 years — the oldest person in Scripture. His name is often read as <span class='tlit'>metu shelah</span> — 'his death shall bring it' — with 'it' being the flood. If the genealogical numbers are taken straightforwardly, Methuselah died the year the flood began (adding his age at Lamech's birth + Lamech's age at Noah's birth + Noah's age at the flood = 1656 years from creation; Methuselah's birth + 969 = exactly 1656). Whether the name etymology is ancient folk-memory or later scribal calculation, the convergence is striking. He is never given dialogue or deeds — his significance is entirely in his longevity and his death-timing.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah</div><div class="person-role">The Bridge — v.29</div><p class="person-text">Noah enters the genealogy last, named by his father Lamech with the hope: 'He will comfort us from our work and the painful toil of our hands caused by the ground YHWH has cursed.' The name <span class='tlit'>Noah</span> sounds like <span class='tlit'>nacham</span> (comfort) and <span class='tlit'>nuach</span> (rest). He is the hinge of the primeval history — everything from Adam to Noah (chs 1-5) leads to him; chs 6-9 are his story; ch.10 radiates from him. He is the second Adam: humanity gets a second start through him, with a renewed mandate (9:1) and a new covenant. His failure in ch.9 (the vineyard) underlines that the problem runs deeper than one man.</p></div></div></div>
   <div id="g5-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verse</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 24 — Enoch walked with God</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Enoch walked faithfully with God; then he was no more, because God took him away</td></tr><tr><td class="t-label">ESV</td><td>Enoch walked with God, and he was not, for God took him</td></tr><tr><td class="t-label">NASB</td><td>Enoch walked with God; and he was not, for God took him</td></tr><tr><td class="t-label">KJV</td><td>And Enoch walked with God: and he was not; for God took him</td></tr><tr><td class="t-label">LXX</td><td>Enoch was well-pleasing to God, and was not found, for God translated him</td></tr><tr><td class="t-label">Note</td><td>NIV adds 'faithfully' and 'away' — both interpretive additions not in the Hebrew. ESV/NASB/KJV preserve the mystery of 'he was not' (<span class='tlit'>einennu</span>). The LXX's 'well-pleasing' (<span class='tlit'>euarestesen</span>) is quoted directly in Heb 11:5, making the Greek the exegetical bridge for the NT reading. 'Translated' (LXX) becomes the technical term for Enoch's bodily transference — Heb 11:5 uses <span class='tlit'>metatithemi</span>, confirming this is not merely death described differently.</td></tr></tbody></table></div>
