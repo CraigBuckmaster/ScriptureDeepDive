@@ -58,76 +58,157 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
-/* Verse-level — warm gold */
-.anno-trigger.hebrew,
-.anno-trigger.history,
-.anno-trigger.context,
-.anno-trigger.cross,
-.anno-trigger.places,
-.anno-trigger.timeline,
-.anno-trigger.hebrew:hover,
-.anno-trigger.history:hover,
-.anno-trigger.context:hover,
-.anno-trigger.cross:hover,
-.anno-trigger.places:hover,
-.anno-trigger.timeline:hover,
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
 .anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
-.anno-trigger.hebrew.active,
-.anno-trigger.history.active,
-.anno-trigger.context.active,
-.anno-trigger.cross.active,
-.anno-trigger.places.active,
-.anno-trigger.timeline.active,
-.anno-trigger.people.active{
-  color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);
-}
-
-/* MacArthur — crimson, kept distinct */
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
-/* Chapter-level scholarship — cool slate */
-.anno-trigger.people,
-.anno-trigger.translations,
-.anno-trigger.sources,
-.anno-trigger.reception,
-.anno-trigger.literary,
-.anno-trigger.hebrew-text,
-.anno-trigger.people:hover,
-.anno-trigger.translations:hover,
-.anno-trigger.sources:hover,
-.anno-trigger.reception:hover,
-.anno-trigger.literary:hover,
-.anno-trigger.hebrew-text:hover,
-.anno-trigger.threading:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
-.anno-trigger.people.active,
-.anno-trigger.translations.active,
-.anno-trigger.sources.active,
-.anno-trigger.reception.active,
-.anno-trigger.literary.active,
-.anno-trigger.hebrew-text.active,
-.anno-trigger.threading.active{
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);
-}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
 
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
@@ -225,10 +306,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 
 <div class="section"><div class="section-header">Verses 1&ndash;5 &mdash; God Remembers Noah; the Waters Recede</div><span class="verse-text"><span class="verse-num">1</span>But God remembered Noah and all the wild animals and the livestock that were with him in the ark, and he sent a wind over the earth, and the waters receded.</span><span class="verse-text"><span class="verse-num">2</span>Now the springs of the deep and the floodgates of the heavens had been closed, and the rain had stopped falling from the sky.</span><span class="verse-text"><span class="verse-num">3</span>The water receded steadily from the earth. At the end of the hundred and fifty days the water had gone down,</span><span class="verse-text"><span class="verse-num">4</span>and on the seventeenth day of the seventh month the ark came to rest on the mountains of Ararat.</span><span class="verse-text"><span class="verse-num">5</span>The waters continued to recede until the tenth month, and on the first day of the tenth month the tops of the mountains became visible.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g8-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:1</span><p>"But God remembered Noah." The same verb (zakar) used of God remembering Rachel (30:22), remembering his covenant with Abraham (Exod 2:24), remembering Hannah (1 Sam 1:19). Divine remembering is not the recovery of forgotten information but the turning of active attention and covenantal commitment toward someone. When God "remembers," things move. The wind sent over the waters deliberately echoes the Spirit moving over the waters in 1:2 — the flood's aftermath is a new creation moment, a second Genesis.</p></div></div><div id="s1-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s1-mac')"><span>MacArthur</span></button></div><div id="g8-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:1</span><p>"But God remembered Noah." The same verb (zakar) used of God remembering Rachel (30:22), remembering his covenant with Abraham (Exod 2:24), remembering Hannah (1 Sam 1:19). Divine remembering is not the recovery of forgotten information but the turning of active attention and covenantal commitment toward someone. When God "remembers," things move. The wind sent over the waters deliberately echoes the Spirit moving over the waters in 1:2 — the flood's aftermath is a new creation moment, a second Genesis.</p></div></div><div id="s1-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Vayizkor Elohim et-Noah</span> &mdash; &ldquo;But God remembered Noah.&rdquo; <span class="tlit">Zakhar</span> (remembered) is one of the most theologically loaded verbs in the OT. God &ldquo;remembering&rdquo; does not mean he forgot &mdash; it means he acts on a prior commitment. When God &ldquo;remembers&rdquo; his covenant, redemptive action follows (Ex 2:24 &mdash; God hears Israel&rsquo;s groaning and &ldquo;remembers his covenant with Abraham&rdquo;; Gen 19:29 &mdash; God &ldquo;remembered Abraham&rdquo; and saved Lot). The word inaugurates the turn from judgment to salvation.</p><br>
     <p><span class="tlit">Ruah</span> &mdash; &ldquo;Wind&rdquo; (v.1). The same word as in Genesis 1:2 where the Spirit/wind of God hovered over the waters at creation. Now the ruah blows again over the flood-waters, beginning re-creation. The flood narrative is framed by the same divine breath &mdash; creation and re-creation share the same Spirit.</p><br>
@@ -241,9 +322,9 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     <p>Genesis 8 is structured as a deliberate re-creation narrative, mirroring Genesis 1. Just as Genesis 1 began with formless waters and the Spirit/wind creating order, Genesis 8 begins with the Spirit/wind driving back the flood waters. The language tracks the reversal: waters gathered (1:9) &rarr; waters recede (8:3); dry land appeared (1:9) &rarr; tops of mountains visible (8:5); God surveys creation &ldquo;and it was good&rdquo; (1:31) &rarr; God sees the earth re-emerging. Noah is a second Adam, and the post-flood world is a second creation &mdash; with the same commission (9:1 repeats 1:28) and the same temptation to fail.</p>
   </div></div>
 <div class="section"><div class="section-header">Verses 6&ndash;14 &mdash; The Raven and the Dove; Dry Ground</div><span class="verse-text"><span class="verse-num">6</span>After forty days Noah opened a window he had made in the ark</span><span class="verse-text"><span class="verse-num">7</span>and sent out a raven, and it kept flying back and forth until the water had dried up from the earth.</span><span class="verse-text"><span class="verse-num">8</span>Then he sent out a dove to see if the water had receded from the surface of the ground.</span><span class="verse-text"><span class="verse-num">9</span>But the dove could find nowhere to perch because there was water over all the surface of the earth; so it returned to Noah in the ark. He reached out his hand and took the dove and brought it back to himself in the ark.</span><span class="verse-text"><span class="verse-num">10</span>He waited seven more days and again sent out the dove from the ark.</span><span class="verse-text"><span class="verse-num">11</span>When the dove returned to him in the evening, there in its beak was a freshly plucked olive leaf! Then Noah knew that the water had receded from the earth.</span><span class="verse-text"><span class="verse-num">12</span>He waited seven more days and sent the dove out again, but this time it did not return to him.</span><span class="verse-text"><span class="verse-num">13</span>By the first day of the first month of Noah's six hundred and first year, the water had dried up from the earth. Noah then removed the covering from the ark and saw that the surface of the ground was dry.</span><span class="verse-text"><span class="verse-num">14</span>By the twenty-seventh day of the second month the earth was completely dry.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger history" onclick="tog(this,'s2-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g8-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:6–12</span><p>The raven and the dove serve as reconnaissance — practical wisdom in the absence of GPS. The raven (unclean, carnivorous) flies back and forth but never returns to stay; it can feed on the floating carcasses. The dove (clean, gentle) returns because it finds no resting place — the earth is not yet ready. The second sending of the dove returns with an olive leaf — the first sign of new life, renewed earth. The third time, the dove does not return: the earth is habitable. The patience and wisdom Noah shows in this waiting period is itself a model of faith: trusting God's timing, not forcing the exit before the time is right.</p></div></div><div id="s2-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s2-hist')"><span>Historical</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s2-mac')"><span>MacArthur</span></button></div><div id="g8-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:6–12</span><p>The raven and the dove serve as reconnaissance — practical wisdom in the absence of GPS. The raven (unclean, carnivorous) flies back and forth but never returns to stay; it can feed on the floating carcasses. The dove (clean, gentle) returns because it finds no resting place — the earth is not yet ready. The second sending of the dove returns with an olive leaf — the first sign of new life, renewed earth. The third time, the dove does not return: the earth is habitable. The patience and wisdom Noah shows in this waiting period is itself a model of faith: trusting God's timing, not forcing the exit before the time is right.</p></div></div><div id="s2-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Orev</span> &mdash; &ldquo;Raven.&rdquo; An unclean bird (Lev 11:15). It does not return &mdash; a scavenger comfortable with death and decay, it finds enough to survive in the post-flood debris. The raven&rsquo;s fate is left unresolved, a narrative loose end that emphasises the dove&rsquo;s significance.</p><br>
     <p><span class="tlit">Yonah</span> &mdash; &ldquo;Dove.&rdquo; A clean bird. Its three missions &mdash; return empty-handed, return with olive leaf, not return at all &mdash; mark the three stages of the land&rsquo;s recovery. The olive leaf becomes the universal symbol of peace and hope precisely because of this passage. Noah&rsquo;s act of reaching out his hand to bring the dove back (v.9) is one of the tenderest details in the chapter &mdash; the great survivor of the flood, reduced to hoping in a small bird.</p><br>
@@ -253,10 +334,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     <p>The Gilgamesh Epic describes Utnapishtim releasing three birds in sequence: a dove, a swallow, and a raven. The dove and swallow return; the raven does not, signalling dry land. Genesis reverses the order (raven first, then dove) and uses the dove&rsquo;s return with an olive branch &mdash; a detail absent from Gilgamesh &mdash; as the specific sign of new life. The modification transforms a navigation technique into a theological statement: life is returning; peace is possible; creation is healing.</p>
   </div></div>
 <div class="section"><div class="section-header">Verses 15&ndash;19 &mdash; God Commands the Departure</div><span class="verse-text"><span class="verse-num">15</span>Then God said to Noah,</span><span class="verse-text"><span class="verse-num">16</span>"Come out of the ark, you and your wife and your sons and their wives.</span><span class="verse-text"><span class="verse-num">17</span>Bring out every kind of living creature that is with you—the birds, the animals, and all the creatures that move along the ground—so they can multiply on the earth and be fruitful and increase in number on it."</span><span class="verse-text"><span class="verse-num">18</span>So Noah came out, together with his sons and his wife and his sons' wives.</span><span class="verse-text"><span class="verse-num">19</span>All the animals and all the creatures that move along the ground and all the birds—everything that moves on land—came out of the ark, one kind after another.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s3-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g8-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:20</span><p>Noah's first act on leaving the ark is to build an altar and offer burnt offerings from the clean animals. Before building shelter, planting crops, or establishing any human institution, he worships. The burnt offering (olah — wholly ascending) is the offering of total consecration: the entire animal consumed, symbolising complete self-giving to God. This is the correct response to salvation: worship before everything else. The precedent Noah sets here — the first act of the new world is worship — is the pattern for all of redeemed life.</p></div><div class="com-note"><span class="com-ref">8:21–22</span><p>"Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood." The flood did not change the human heart — the post-flood assessment of humanity is identical to the pre-flood one (6:5). What changed is God's response: not repeated catastrophe but covenantal patience, maintaining the creation order (seedtime, harvest, day, night, seasons) until the final judgment. Common grace sustains the world not because humanity deserves it but because God's redemptive purposes require time to unfold.</p></div></div><div id="s3-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s3-mac')"><span>MacArthur</span></button></div><div id="g8-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:20</span><p>Noah's first act on leaving the ark is to build an altar and offer burnt offerings from the clean animals. Before building shelter, planting crops, or establishing any human institution, he worships. The burnt offering (olah — wholly ascending) is the offering of total consecration: the entire animal consumed, symbolising complete self-giving to God. This is the correct response to salvation: worship before everything else. The precedent Noah sets here — the first act of the new world is worship — is the pattern for all of redeemed life.</p></div><div class="com-note"><span class="com-ref">8:21–22</span><p>"Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood." The flood did not change the human heart — the post-flood assessment of humanity is identical to the pre-flood one (6:5). What changed is God's response: not repeated catastrophe but covenantal patience, maintaining the creation order (seedtime, harvest, day, night, seasons) until the final judgment. Common grace sustains the world not because humanity deserves it but because God's redemptive purposes require time to unfold.</p></div></div><div id="s3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Mizbeah</span> &mdash; &ldquo;Altar.&rdquo; The first altar in Scripture. Noah&rsquo;s first act on dry ground is not to build a house, plant crops, or gather food &mdash; it is worship. The Gilgamesh parallel has Utnapishtim offering incense, and the gods &ldquo;gathered like flies&rdquo; around the sacrifice &mdash; a scene of undignified divine hunger. In Genesis, God responds not from need but with grace, making a unilateral promise.</p><br>
     <p><span class="tlit">Reach nihoah</span> &mdash; &ldquo;Pleasing aroma&rdquo; (literally &ldquo;soothing/restful smell&rdquo;). Derived from the same root as Noah&rsquo;s name (<span class="tlit">nuah</span> &mdash; rest). The aroma of Noah&rsquo;s sacrifice is a <span class="tlit">reach nihoah</span> &mdash; a &ldquo;Noah-smell,&rdquo; a restful smell. God finds rest in Noah&rsquo;s worship. The wordplay that began with his naming in 5:29 is finally resolved.</p><br>
@@ -275,10 +356,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     </ul>
   </div></div>
 <div class="section"><div class="section-header">Verses 20&ndash;22 &mdash; Noah's Altar; God's Promise</div><span class="verse-text"><span class="verse-num">20</span>Then Noah built an altar to the Lord and, taking some of all the clean animals and clean birds, he sacrificed burnt offerings on it.</span><span class="verse-text"><span class="verse-num">21</span>The Lord smelled the pleasing aroma and said in his heart: "Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood. And never again will I destroy all living creatures, as I have done.</span><span class="verse-text"><span class="verse-num">22</span>"As long as the earth endures, seedtime and harvest, cold and heat, summer and winter, day and night will never cease."</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s3-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g8-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:20</span><p>Noah's first act on leaving the ark is to build an altar and offer burnt offerings from the clean animals. Before building shelter, planting crops, or establishing any human institution, he worships. The burnt offering (olah — wholly ascending) is the offering of total consecration: the entire animal consumed, symbolising complete self-giving to God. This is the correct response to salvation: worship before everything else. The precedent Noah sets here — the first act of the new world is worship — is the pattern for all of redeemed life.</p></div><div class="com-note"><span class="com-ref">8:21–22</span><p>"Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood." The flood did not change the human heart — the post-flood assessment of humanity is identical to the pre-flood one (6:5). What changed is God's response: not repeated catastrophe but covenantal patience, maintaining the creation order (seedtime, harvest, day, night, seasons) until the final judgment. Common grace sustains the world not because humanity deserves it but because God's redemptive purposes require time to unfold.</p></div></div><div id="s3-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s3-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s3-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s3-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g8-s3-mac')"><span>MacArthur</span></button></div><div id="g8-s3-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:20</span><p>Noah's first act on leaving the ark is to build an altar and offer burnt offerings from the clean animals. Before building shelter, planting crops, or establishing any human institution, he worships. The burnt offering (olah — wholly ascending) is the offering of total consecration: the entire animal consumed, symbolising complete self-giving to God. This is the correct response to salvation: worship before everything else. The precedent Noah sets here — the first act of the new world is worship — is the pattern for all of redeemed life.</p></div><div class="com-note"><span class="com-ref">8:21–22</span><p>"Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood." The flood did not change the human heart — the post-flood assessment of humanity is identical to the pre-flood one (6:5). What changed is God's response: not repeated catastrophe but covenantal patience, maintaining the creation order (seedtime, harvest, day, night, seasons) until the final judgment. Common grace sustains the world not because humanity deserves it but because God's redemptive purposes require time to unfold.</p></div></div><div id="s3-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Mizbeah</span> &mdash; &ldquo;Altar.&rdquo; The first altar in Scripture. Noah&rsquo;s first act on dry ground is not to build a house, plant crops, or gather food &mdash; it is worship. The Gilgamesh parallel has Utnapishtim offering incense, and the gods &ldquo;gathered like flies&rdquo; around the sacrifice &mdash; a scene of undignified divine hunger. In Genesis, God responds not from need but with grace, making a unilateral promise.</p><br>
     <p><span class="tlit">Reach nihoah</span> &mdash; &ldquo;Pleasing aroma&rdquo; (literally &ldquo;soothing/restful smell&rdquo;). Derived from the same root as Noah&rsquo;s name (<span class="tlit">nuah</span> &mdash; rest). The aroma of Noah&rsquo;s sacrifice is a <span class="tlit">reach nihoah</span> &mdash; a &ldquo;Noah-smell,&rdquo; a restful smell. God finds rest in Noah&rsquo;s worship. The wordplay that began with his naming in 5:29 is finally resolved.</p><br>
@@ -299,7 +380,7 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 8</div>
   
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g8-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g8-themes')"><span>Theological Themes</span></button>
 <div id="g8-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
@@ -411,8 +492,8 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g8-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g8-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g8-hebtext')"><span>Hebrew Text</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g8-thread')"><span>Intertextual Threading</span></button>
 </div>
 <div id="g8-hebtext" class="anno-panel heb-text-panel">
   <h4>Hebrew-Rooted Reading — Genesis 8</h4>
@@ -492,11 +573,11 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g8-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g8-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g8-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g8-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g8-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g8-ppl')"><span>People</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g8-trans')"><span>Translations</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g8-src')"><span>Ancient Sources</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g8-rec')"><span>Reception History</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g8-lit')"><span>Literary Structure</span></button>
   </div>
   <div id="g8-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 8</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah the Worshipper</div><div class="person-role">First Altar-Builder — v.20</div><p class="person-text">Noah's first act upon leaving the ark is not to survey the land, build a shelter, or celebrate survival — it is to build an altar and offer burnt offerings. He is the first person in Scripture explicitly recorded building an altar (<span class='tlit'>mizbeah</span>). The sacrificial animals are drawn from the clean animals (hence the need for seven pairs in 7:2 — enough surplus for sacrifice). The sacrifice produces an aroma pleasing to God (<span class='tlit'>reach nihoah</span> — an aroma of rest/soothing), wordplaying on Noah's name. His priestly action, not his nautical competence, is the climax of his story.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">The Dove</div><div class="person-role">Theological Symbol — vv.8–12</div><p class="person-text">The dove sent three times becomes one of Scripture's most enduring images. Its first return (no landing place) signals judgment still active. Its second return with an olive leaf signals new life emerging — the olive is one of the first trees to recover after inundation. Its non-return signals the world is habitable — the bird has found its place. In the NT the dove descending on Jesus at his baptism (Matt 3:16) deliberately echoes both the Spirit hovering over the waters of Gen 1:2 and the dove of Gen 8 — Jesus's baptism is a new creation and a new flood emerging.</p></div></div></div>
   <div id="g8-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 1 — God remembered</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>But God remembered Noah and all the wild animals and the livestock that were with him in the ark</td></tr><tr><td class="t-label">ESV</td><td>But God remembered Noah and all the beasts and all the livestock that were with him in the ark</td></tr><tr><td class="t-label">NASB</td><td>But God remembered Noah and all the animals and all the cattle that were with him in the ark</td></tr><tr><td class="t-label">Note</td><td><span class='tlit'>Vayizkor Elohim</span> — 'and God remembered.' This is the chiastic center of the entire flood narrative. Divine remembering in the OT is never mere cognitive recollection — it is always active, salvific intervention. God remembered Rachel (Gen 30:22) and she conceived. God remembered his covenant (Exod 2:24) and sent Moses. The remembering is the turning point: from flood to recession, from judgment to rescue. Everything before 8:1 moves toward catastrophe; everything after moves toward restoration.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 21 — The pivotal promise</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Never again will I curse the ground because of humans, even though every inclination of the human heart is evil from childhood</td></tr><tr><td class="t-label">ESV</td><td>I will never again curse the ground because of man, for the intention of man's heart is evil from his youth</td></tr><tr><td class="t-label">NASB</td><td>I will never again curse the ground on account of man, for the intent of man's heart is evil from his youth</td></tr><tr><td class="t-label">Note</td><td>The most theologically stunning verse in the flood narrative. Before the flood God sent judgment <em>because</em> human hearts were evil (6:5). After the flood God promises mercy <em>despite</em> the same diagnosis. The problem hasn't changed — the response has. This is grace in its starkest form: not 'I will spare you because you've improved' but 'I will spare you even though you haven't.' The ground for mercy shifts entirely to God's character, not human performance.</td></tr></tbody></table></div>

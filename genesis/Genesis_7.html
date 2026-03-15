@@ -58,76 +58,157 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
-/* Verse-level — warm gold */
-.anno-trigger.hebrew,
-.anno-trigger.history,
-.anno-trigger.context,
-.anno-trigger.cross,
-.anno-trigger.places,
-.anno-trigger.timeline,
-.anno-trigger.hebrew:hover,
-.anno-trigger.history:hover,
-.anno-trigger.context:hover,
-.anno-trigger.cross:hover,
-.anno-trigger.places:hover,
-.anno-trigger.timeline:hover,
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
 .anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
-.anno-trigger.hebrew.active,
-.anno-trigger.history.active,
-.anno-trigger.context.active,
-.anno-trigger.cross.active,
-.anno-trigger.places.active,
-.anno-trigger.timeline.active,
-.anno-trigger.people.active{
-  color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);
-}
-
-/* MacArthur — crimson, kept distinct */
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
-/* Chapter-level scholarship — cool slate */
-.anno-trigger.people,
-.anno-trigger.translations,
-.anno-trigger.sources,
-.anno-trigger.reception,
-.anno-trigger.literary,
-.anno-trigger.hebrew-text,
-.anno-trigger.people:hover,
-.anno-trigger.translations:hover,
-.anno-trigger.sources:hover,
-.anno-trigger.reception:hover,
-.anno-trigger.literary:hover,
-.anno-trigger.hebrew-text:hover,
-.anno-trigger.threading:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
-.anno-trigger.people.active,
-.anno-trigger.translations.active,
-.anno-trigger.sources.active,
-.anno-trigger.reception.active,
-.anno-trigger.literary.active,
-.anno-trigger.hebrew-text.active,
-.anno-trigger.threading.active{
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);
-}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
 
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
@@ -225,10 +306,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 
 <div class="section"><div class="section-header">Verses 1&ndash;10 &mdash; The Call to Enter the Ark</div><span class="verse-text"><span class="verse-num">1</span>The Lord then said to Noah, "Go into the ark, you and your whole family, because I have found you righteous in this generation.</span><span class="verse-text"><span class="verse-num">2</span>Take with you seven pairs of every kind of clean animal, a male and its mate, and one pair of every kind of unclean animal, a male and its mate,</span><span class="verse-text"><span class="verse-num">3</span>and also seven pairs of every kind of bird, male and female, to keep their various kinds alive throughout the earth.</span><span class="verse-text"><span class="verse-num">4</span>Seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living creature I have made."</span><span class="verse-text"><span class="verse-num">5</span>And Noah did all that the Lord commanded him.</span><span class="verse-text"><span class="verse-num">6</span>Noah was six hundred years old when the floodwaters came on the earth.</span><span class="verse-text"><span class="verse-num">7</span>And Noah and his sons and his wife and his sons' wives entered the ark to escape the waters of the flood.</span><span class="verse-text"><span class="verse-num">8</span>Pairs of clean and unclean animals, of birds and of all creatures that move along the ground,</span><span class="verse-text"><span class="verse-num">9</span>male and female, came to Noah and entered the ark, as God had commanded Noah.</span><span class="verse-text"><span class="verse-num">10</span>And after the seven days the floodwaters came on the earth.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g7-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:1</span><p>"Go into the ark, you and your whole family, because I have found you righteous in this generation." The invitation to enter the ark before judgment falls is the pattern of all divine rescue: God calls his people out of and into safety before wrath is poured out. The seven-day waiting period (v.4) before the flood is itself a grace — one final week for any who would repent. No one comes. The door that God shuts (v.16) is shut from the outside, by God — not from the inside by Noah. The opportunity for entry had existed; now it closes.</p></div><div class="com-note"><span class="com-ref">7:2–3</span><p>Clean animals in sevens (or seven pairs), unclean in twos. The clean/unclean distinction exists before the Mosaic law — it is embedded in the creation order. The extra clean animals are for sacrifice (8:20) — Noah's post-flood worship was planned by God before the flood began. God's provision anticipates the needs of his redeemed people.</p></div></div><div id="s1-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s1-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger history" onclick="tog(this,'s1-hist')"><span>Historical</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s1-ctx')"><span>Context</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s1-mac')"><span>MacArthur</span></button></div><div id="g7-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:1</span><p>"Go into the ark, you and your whole family, because I have found you righteous in this generation." The invitation to enter the ark before judgment falls is the pattern of all divine rescue: God calls his people out of and into safety before wrath is poured out. The seven-day waiting period (v.4) before the flood is itself a grace — one final week for any who would repent. No one comes. The door that God shuts (v.16) is shut from the outside, by God — not from the inside by Noah. The opportunity for entry had existed; now it closes.</p></div><div class="com-note"><span class="com-ref">7:2–3</span><p>Clean animals in sevens (or seven pairs), unclean in twos. The clean/unclean distinction exists before the Mosaic law — it is embedded in the creation order. The extra clean animals are for sacrifice (8:20) — Noah's post-flood worship was planned by God before the flood began. God's provision anticipates the needs of his redeemed people.</p></div></div><div id="s1-heb" class="anno-panel heb">
     <h4>Hebrew Word Study</h4>
     <p><span class="tlit">Tahor / tame&rsquo;</span> &mdash; &ldquo;Clean / unclean.&rdquo; The distinction between clean and unclean animals appears here centuries before Leviticus 11. This implies Noah already operated within a sacrificial/priestly framework (confirmed in 8:20 when he offers burnt offerings). The Levitical categories are not an innovation of Moses but a formalisation of something already present in the primeval world.</p><br>
     <p><span class="tlit">Shiv&rsquo;ah shiv&rsquo;ah</span> &mdash; &ldquo;Seven pairs&rdquo; (literally &ldquo;seven seven&rdquo;). Clean animals are taken in sevens, unclean in pairs. After the flood, when Noah sacrifices (8:20), the extra clean animals mean the species are not depleted. The divine mathematics of the command looks ahead to its purpose.</p><br>
@@ -241,10 +322,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     <p>The repetition between Genesis 6 and 7 (animals entering the ark is described twice, in slightly different language) has long been noted by source critics as evidence of two interwoven sources (J and P). Rather than a problem, this repetition functions as literary intensification &mdash; the author is describing events of such cosmic magnitude that one telling is insufficient. The doubling creates a sense of solemn, inexorable movement. Noah &ldquo;did all that the LORD commanded him&rdquo; appears in 6:22 and again in 7:5 &mdash; the obedience is underscored twice because it is the pivot on which everything turns.</p>
   </div></div>
 <div class="section"><div class="section-header">Verses 11&ndash;16 &mdash; The Flood Begins; the Lord Shuts the Door</div><span class="verse-text"><span class="verse-num">11</span>In the six hundredth year of Noah's life, on the seventeenth day of the second month—on that day all the springs of the great deep burst forth, and the floodgates of the heavens were opened.</span><span class="verse-text"><span class="verse-num">12</span>And rain fell on the earth forty days and forty nights.</span><span class="verse-text"><span class="verse-num">13</span>On that very day Noah and his sons, Shem, Ham and Japheth, together with his wife and the wives of his three sons, entered the ark.</span><span class="verse-text"><span class="verse-num">14</span>They had with them every wild animal according to its kind, all livestock according to their kinds, every creature that moves along the ground according to its kind and every bird according to its kind, everything with wings.</span><span class="verse-text"><span class="verse-num">15</span>Pairs of all creatures that have the breath of life in them came to Noah and entered the ark.</span><span class="verse-text"><span class="verse-num">16</span>The animals going in were male and female of every living thing, as God had commanded Noah. Then the Lord shut him in.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g7-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:11</span><p>"All the springs of the great deep burst forth, and the floodgates of the heavens were opened." The flood is not merely heavy rainfall but a reversal of creation: the waters above and below (separated on days 2 and 3) are released to reclaim the earth. This is de-creation — the undoing of the ordered world to judge the beings who have defaced the image of God. The 40 days of rain, the 150 days of prevailing waters, and the 150 days of receding are all precise chronological markers signalling a historical event, not a theological symbol.</p></div><div class="com-note"><span class="com-ref">7:23</span><p>"Only Noah was left, and those with him in the ark." The compression of history's greatest catastrophe into a single clause. Every human being outside the ark — every descendant of Adam, every bearer of the image of God — died. The magnitude of God's judgment on sin is not to be softened: the flood is the most comprehensive act of divine judgment in the Old Testament, exceeded only by the final judgment. Peter uses it as the type of the coming judgment by fire (2 Pet 3:5–7). The ark is the type of salvation: being "in Christ" is the only safety from the coming wrath.</p></div></div><div id="s2-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s2-mac')"><span>MacArthur</span></button></div><div id="g7-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:11</span><p>"All the springs of the great deep burst forth, and the floodgates of the heavens were opened." The flood is not merely heavy rainfall but a reversal of creation: the waters above and below (separated on days 2 and 3) are released to reclaim the earth. This is de-creation — the undoing of the ordered world to judge the beings who have defaced the image of God. The 40 days of rain, the 150 days of prevailing waters, and the 150 days of receding are all precise chronological markers signalling a historical event, not a theological symbol.</p></div><div class="com-note"><span class="com-ref">7:23</span><p>"Only Noah was left, and those with him in the ark." The compression of history's greatest catastrophe into a single clause. Every human being outside the ark — every descendant of Adam, every bearer of the image of God — died. The magnitude of God's judgment on sin is not to be softened: the flood is the most comprehensive act of divine judgment in the Old Testament, exceeded only by the final judgment. Peter uses it as the type of the coming judgment by fire (2 Pet 3:5–7). The ark is the type of salvation: being "in Christ" is the only safety from the coming wrath.</p></div></div><div id="s2-heb" class="anno-panel heb">
     <h4>Hebrew Word Study &mdash; De-Creation Language</h4>
     <p><span class="tlit">Mayanot tehom rabbah</span> &mdash; &ldquo;Springs of the great deep.&rdquo; <span class="tlit">Tehom</span> is the deep waters of Genesis 1:2, over which the Spirit hovered at creation. The flood is not just rain &mdash; the <span class="tlit">tehom</span> bursts upward from below while the heavens open from above. The boundaries established at creation (waters above, waters below, dry land between &mdash; Genesis 1:6&ndash;10) are dissolved. This is de-creation, creation running in reverse.</p><br>
     <p><span class="tlit">Arubbot hashamayim</span> &mdash; &ldquo;Floodgates of the heavens&rdquo; (literally &ldquo;windows of the sky&rdquo;). The same &ldquo;windows&rdquo; that God &ldquo;opens&rdquo; in 2 Kings 7:2 &mdash; the firmament-windows that normally regulate rain. Here they are flung open in an act of cosmic undoing.</p><br>
@@ -263,10 +344,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
     </ul>
   </div></div>
 <div class="section"><div class="section-header">Verses 17&ndash;24 &mdash; The Waters Rise; All Life Perishes</div><span class="verse-text"><span class="verse-num">17</span>For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.</span><span class="verse-text"><span class="verse-num">18</span>The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.</span><span class="verse-text"><span class="verse-num">19</span>They rose greatly on the earth, and all the high mountains under the entire heavens were covered.</span><span class="verse-text"><span class="verse-num">20</span>The waters rose and covered the mountains to a depth of more than fifteen cubits.</span><span class="verse-text"><span class="verse-num">21</span>Every living thing that moved on land perished—birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.</span><span class="verse-text"><span class="verse-num">22</span>Everything on dry land that had the breath of life in its nostrils died.</span><span class="verse-text"><span class="verse-num">23</span>Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.</span><span class="verse-text"><span class="verse-num">24</span>The waters flooded the earth for a hundred and fifty days.</span><div class="btn-row">
-    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="g7-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:11</span><p>"All the springs of the great deep burst forth, and the floodgates of the heavens were opened." The flood is not merely heavy rainfall but a reversal of creation: the waters above and below (separated on days 2 and 3) are released to reclaim the earth. This is de-creation — the undoing of the ordered world to judge the beings who have defaced the image of God. The 40 days of rain, the 150 days of prevailing waters, and the 150 days of receding are all precise chronological markers signalling a historical event, not a theological symbol.</p></div><div class="com-note"><span class="com-ref">7:23</span><p>"Only Noah was left, and those with him in the ark." The compression of history's greatest catastrophe into a single clause. Every human being outside the ark — every descendant of Adam, every bearer of the image of God — died. The magnitude of God's judgment on sin is not to be softened: the flood is the most comprehensive act of divine judgment in the Old Testament, exceeded only by the final judgment. Peter uses it as the type of the coming judgment by fire (2 Pet 3:5–7). The ark is the type of salvation: being "in Christ" is the only safety from the coming wrath.</p></div></div><div id="s2-heb" class="anno-panel heb">
+    <button class="anno-trigger hebrew" onclick="tog(this,'s2-heb')"><span>Hebrew</span></button>
+    <button class="anno-trigger context" onclick="tog(this,'s2-ctx')"><span>Context</span></button>
+    <button class="anno-trigger cross" onclick="tog(this,'s2-cross')"><span>Cross-Ref</span></button>
+  <button class="anno-trigger macarthur" onclick="tog(this,'g7-s2-mac')"><span>MacArthur</span></button></div><div id="g7-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:11</span><p>"All the springs of the great deep burst forth, and the floodgates of the heavens were opened." The flood is not merely heavy rainfall but a reversal of creation: the waters above and below (separated on days 2 and 3) are released to reclaim the earth. This is de-creation — the undoing of the ordered world to judge the beings who have defaced the image of God. The 40 days of rain, the 150 days of prevailing waters, and the 150 days of receding are all precise chronological markers signalling a historical event, not a theological symbol.</p></div><div class="com-note"><span class="com-ref">7:23</span><p>"Only Noah was left, and those with him in the ark." The compression of history's greatest catastrophe into a single clause. Every human being outside the ark — every descendant of Adam, every bearer of the image of God — died. The magnitude of God's judgment on sin is not to be softened: the flood is the most comprehensive act of divine judgment in the Old Testament, exceeded only by the final judgment. Peter uses it as the type of the coming judgment by fire (2 Pet 3:5–7). The ark is the type of salvation: being "in Christ" is the only safety from the coming wrath.</p></div></div><div id="s2-heb" class="anno-panel heb">
     <h4>Hebrew Word Study &mdash; De-Creation Language</h4>
     <p><span class="tlit">Mayanot tehom rabbah</span> &mdash; &ldquo;Springs of the great deep.&rdquo; <span class="tlit">Tehom</span> is the deep waters of Genesis 1:2, over which the Spirit hovered at creation. The flood is not just rain &mdash; the <span class="tlit">tehom</span> bursts upward from below while the heavens open from above. The boundaries established at creation (waters above, waters below, dry land between &mdash; Genesis 1:6&ndash;10) are dissolved. This is de-creation, creation running in reverse.</p><br>
     <p><span class="tlit">Arubbot hashamayim</span> &mdash; &ldquo;Floodgates of the heavens&rdquo; (literally &ldquo;windows of the sky&rdquo;). The same &ldquo;windows&rdquo; that God &ldquo;opens&rdquo; in 2 Kings 7:2 &mdash; the firmament-windows that normally regulate rain. Here they are flung open in an act of cosmic undoing.</p><br>
@@ -287,7 +368,7 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 <div class="section">
   <div class="section-header">Supplementary Scholarship &mdash; Genesis 7</div>
   
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g7-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'g7-themes')"><span>Theological Themes</span></button>
 <div id="g7-themes" class="anno-panel themes-panel" style="background:#08080f;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;">
   <h4 style="font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;">Theological Themes Tracker</h4>
   <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:#6060a0;margin-bottom:1rem;line-height:1.5;">Where each major biblical theme stands cumulatively by the end of this chapter. Scale: Seed &rarr; Developing &rarr; Tested &rarr; Anticipating &rarr; Fulfilled.</p>
@@ -396,8 +477,8 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
   </div>
 </div>
 <div class="btn-row">
-  <button class="anno-trigger hebrew-text" onclick="tog(this,'g7-hebtext')"><span>Hebrew Text</span><span class="chev">&#9660;</span></button>
-  <button class="anno-trigger threading" onclick="tog(this,'g7-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+  <button class="anno-trigger hebrew-text" onclick="tog(this,'g7-hebtext')"><span>Hebrew Text</span></button>
+  <button class="anno-trigger threading" onclick="tog(this,'g7-thread')"><span>Intertextual Threading</span></button>
 </div>
 <div id="g7-hebtext" class="anno-panel heb-text-panel">
   <h4>Hebrew-Rooted Reading — Genesis 7</h4>
@@ -471,11 +552,11 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 </div>
 </div>
 <div class="btn-row">
-    <button class="anno-trigger people" onclick="tog(this,'g7-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger translations" onclick="tog(this,'g7-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger sources" onclick="tog(this,'g7-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger reception" onclick="tog(this,'g7-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-    <button class="anno-trigger literary" onclick="tog(this,'g7-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+    <button class="anno-trigger people" onclick="tog(this,'g7-ppl')"><span>People</span></button>
+    <button class="anno-trigger translations" onclick="tog(this,'g7-trans')"><span>Translations</span></button>
+    <button class="anno-trigger sources" onclick="tog(this,'g7-src')"><span>Ancient Sources</span></button>
+    <button class="anno-trigger reception" onclick="tog(this,'g7-rec')"><span>Reception History</span></button>
+    <button class="anno-trigger literary" onclick="tog(this,'g7-lit')"><span>Literary Structure</span></button>
   </div>
   <div id="g7-ppl" class="anno-panel ppl-panel"><h4>People &mdash; Genesis 7</h4><div class="person-grid"><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah's Family</div><div class="person-role">Eight Survivors — v.7,13</div><p class="person-text">The text carefully names all eight survivors: Noah, his wife, his three sons (Shem, Ham, Japheth), and their wives. Not one person is named outside the family. This is not incidental — the flood narrative frames Noah as a second Adam whose three sons will repopulate the entire earth (ch.10). The women are unnamed throughout, a feature consistent with much ancient narrative but increasingly noted by modern readers. Peter's reading (1 Pet 3:20) emphasizes the number eight as significant — eight people saved through water, paralleling baptism.</p></div><div class="person-card" style="--dot-color:#e8a858"><div class="person-name">Noah as Second Adam</div><div class="person-role">The Obedient One — v.5,9,16</div><p class="person-text">Three times in ch.7 the narrator notes Noah's complete obedience: 'Noah did all that the LORD commanded him' (v.5); 'as God had commanded Noah' (v.9); 'as God had commanded' (v.16). This triple stress contrasts with Adam's single act of disobedience. Noah is the obedient man in whose day God hits the reset button on creation — but ch.9 will show the reset is incomplete. The deeper problem is not the world around humanity but the heart within it (8:21 confesses this explicitly after the flood).</p></div></div></div>
   <div id="g7-trans" class="anno-panel trans-panel"><h4>Translation Comparison &mdash; Key Verses</h4><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 1 — Righteous before me</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Go into the ark, you and your whole family, because I have found you righteous in this generation</td></tr><tr><td class="t-label">ESV</td><td>Go into the ark, you and all your household, for I have seen that you are righteous before me in this generation</td></tr><tr><td class="t-label">NASB</td><td>Go into the ark, you and all your household, for you alone I have seen to be righteous before Me in this time</td></tr><tr><td class="t-label">Note</td><td>ESV adds 'before me' — translating <span class='tlit'>lefanai</span> which NIV omits. This is significant: righteousness is defined in relation to God, not merely in comparison to contemporaries. NASB 'you alone' emphasizes the singularity of Noah's distinction. The phrase 'in this generation' (<span class='tlit'>bador hazeh</span>) implies his righteousness is contextual and comparative, which some rabbinic readers used to question whether Noah would have been as distinguished in Abraham's generation.</td></tr></tbody></table><p style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);margin-bottom:.4rem;">Verse 16 — The LORD shut him in</p><table class="trans-table"><thead><tr><th>Version</th><th>Rendering</th></tr></thead><tbody><tr><td class="t-label">NIV</td><td>Then the LORD shut him in</td></tr><tr><td class="t-label">ESV</td><td>And the LORD shut him in</td></tr><tr><td class="t-label">NASB</td><td>and the LORD closed it behind him</td></tr><tr><td class="t-label">KJV</td><td>and the LORD shut him in</td></tr><tr><td class="t-label">Note</td><td>A theologically pregnant verse that all translations render nearly identically. The divine locking of the door means: (1) the time of grace has ended — no one else can enter; (2) Noah is protected by God's own action, not by the door's engineering; (3) God is personally present at the flood's threshold. Jesus alludes to this in the parable of the ten virgins (Matt 25:10) when 'the door was shut' — the same theological logic of a fixed moment of grace.</td></tr></tbody></table></div>
