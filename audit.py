@@ -29,8 +29,9 @@ def warn(msg):  print(f"  {WARN}  {msg}"); warnings.append(msg)
 def chapter_paths():
     paths = []
     for book_dir, book_name, chapters in [
-        ('genesis', 'Genesis', range(1, 51)),
-        ('exodus',  'Exodus',  range(1, 41)),
+        ('genesis',  'Genesis',  range(1, 51)),
+        ('exodus',   'Exodus',   range(1, 41)),
+        ('proverbs', 'Proverbs', range(1, 32)),
     ]:
         for ch in chapters:
             p = f'{REPO}/{book_dir}/{book_name}_{ch}.html'
@@ -69,6 +70,11 @@ EXPECTED = {
     ('Exodus',29):46,('Exodus',30):38,('Exodus',31):18,('Exodus',32):35,
     ('Exodus',33):23,('Exodus',34):35,('Exodus',35):35,('Exodus',36):38,
     ('Exodus',37):29,('Exodus',38):31,('Exodus',39):43,('Exodus',40):38,
+    # Proverbs — add as chapters go live
+    ('Proverbs', 1):33,('Proverbs', 2):22,('Proverbs', 3):35,
+    ('Proverbs', 4):27,('Proverbs', 5):23,('Proverbs', 6):35,
+    ('Proverbs', 7):27,('Proverbs', 8):36,('Proverbs', 9):18,
+    ('Proverbs',10):32,
 }
 
 chapters = chapter_paths()
