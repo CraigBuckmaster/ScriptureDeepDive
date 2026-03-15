@@ -32,6 +32,7 @@ def chapter_paths():
         ('genesis',  'Genesis',  range(1, 51)),
         ('exodus',   'Exodus',   range(1, 41)),
         ('proverbs', 'Proverbs', range(1, 32)),
+        ('ruth',     'Ruth',     range(1,  5)),
         ('matthew',  'Matthew',  range(1, 21)),
     ]:
         for ch in chapters:
@@ -72,6 +73,7 @@ EXPECTED = {
     ('Exodus',33):23,('Exodus',34):35,('Exodus',35):35,('Exodus',36):38,
     ('Exodus',37):29,('Exodus',38):31,('Exodus',39):43,('Exodus',40):38,
     # Proverbs — add as chapters go live
+    ('Ruth', 1):22,('Ruth', 2):23,('Ruth', 3):18,('Ruth', 4):22,
     ('Proverbs', 1):33,('Proverbs', 2):22,('Proverbs', 3):35,
     ('Proverbs', 4):27,('Proverbs', 5):23,('Proverbs', 6):35,
     ('Proverbs', 7):27,('Proverbs', 8):36,('Proverbs', 9):18,
