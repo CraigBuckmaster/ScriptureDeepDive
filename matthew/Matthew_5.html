@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Matthew 5 — Scripture Deep Dive</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(26,96,40,.12);}
+.anno-trigger.timeline{color:#c0d8f0;border-color:#4a6888;background:rgba(74,104,136,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.authorship-content p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.65;margin-top:.75rem;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.qnav-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.qnav-overlay.open{display:flex;flex-direction:column;}
+.qnav-panel{background:#0d0b07;border-bottom:1px solid #3a2e18;max-height:82vh;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;}
+.qnav-header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-bottom:1px solid rgba(58,46,24,.5);position:sticky;top:0;background:#0d0b07;z-index:1;}
+.qnav-search-wrap{flex:1;position:relative;}
+.qnav-search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#5a4a30;font-size:.78rem;pointer-events:none;}
+.qnav-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(58,46,24,.8);border-radius:4px;padding:.42rem .75rem .42rem 2rem;color:#f0e8d8;font-family:'Source Sans 3',sans-serif;font-size:.88rem;outline:none;transition:border-color .15s;}
+.qnav-search:focus{border-color:#8b6914;}
+.qnav-search::placeholder{color:#4a3a22;}
+.qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
+.qnav-body{overflow-y:auto;}
+.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
+.qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
+.qnav-book-btn:hover{background:rgba(255,255,255,.04);}
+.qnav-book-name{font-family:'EB Garamond',serif;font-size:.98rem;color:#c8c0a0;text-align:left;display:flex;align-items:center;gap:.5rem;}
+.qnav-live-dot{width:6px;height:6px;border-radius:50%;background:#70d098;flex-shrink:0;box-shadow:0 0 5px rgba(112,208,152,.5);}
+.qnav-book-meta{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
+.qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
+.qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
+.qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
+.qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
+.qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
+.qnav-dismiss{flex:1;cursor:pointer;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Matthew</span><span class="nav-chapter">Chapter 5</span></div>
+<div class="nav-arrows"><a href="Matthew_4.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Matthew_6.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<div class="qnav-overlay" id="qnav-overlay">
+<div class="qnav-panel">
+<div class="qnav-header">
+<div class="qnav-search-wrap"><span class="qnav-search-icon">&#128269;</span><input class="qnav-search" id="qnav-search-input" placeholder="Search books..." oninput="qnavFilter(this.value)"></div>
+<button class="qnav-close" onclick="closeQnav()">Close</button>
+</div>
+<div class="qnav-body">
+<div class="qnav-testament-header">Old Testament</div>
+<div class="qnav-book" id="qnav-book-genesis">
+<button class="qnav-book-btn" onclick="qnavToggleBook('genesis')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Genesis</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../genesis/Genesis_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../genesis/Genesis_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../genesis/Genesis_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../genesis/Genesis_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../genesis/Genesis_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../genesis/Genesis_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../genesis/Genesis_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../genesis/Genesis_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../genesis/Genesis_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../genesis/Genesis_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../genesis/Genesis_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../genesis/Genesis_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../genesis/Genesis_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../genesis/Genesis_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../genesis/Genesis_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../genesis/Genesis_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../genesis/Genesis_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../genesis/Genesis_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../genesis/Genesis_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../genesis/Genesis_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../genesis/Genesis_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../genesis/Genesis_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../genesis/Genesis_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../genesis/Genesis_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../genesis/Genesis_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../genesis/Genesis_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../genesis/Genesis_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../genesis/Genesis_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../genesis/Genesis_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../genesis/Genesis_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../genesis/Genesis_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../genesis/Genesis_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../genesis/Genesis_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../genesis/Genesis_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../genesis/Genesis_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../genesis/Genesis_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../genesis/Genesis_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../genesis/Genesis_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../genesis/Genesis_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../genesis/Genesis_40.html" class="qnav-ch-btn live">Ch 40</a><a href="../genesis/Genesis_41.html" class="qnav-ch-btn live">Ch 41</a><a href="../genesis/Genesis_42.html" class="qnav-ch-btn live">Ch 42</a><a href="../genesis/Genesis_43.html" class="qnav-ch-btn live">Ch 43</a><a href="../genesis/Genesis_44.html" class="qnav-ch-btn live">Ch 44</a><a href="../genesis/Genesis_45.html" class="qnav-ch-btn live">Ch 45</a><a href="../genesis/Genesis_46.html" class="qnav-ch-btn live">Ch 46</a><a href="../genesis/Genesis_47.html" class="qnav-ch-btn live">Ch 47</a><a href="../genesis/Genesis_48.html" class="qnav-ch-btn live">Ch 48</a><a href="../genesis/Genesis_49.html" class="qnav-ch-btn live">Ch 49</a><a href="../genesis/Genesis_50.html" class="qnav-ch-btn live">Ch 50</a></div>
+</div>
+<div class="qnav-book" id="qnav-book-exodus">
+<button class="qnav-book-btn" onclick="qnavToggleBook('exodus')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Exodus</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../exodus/Exodus_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../exodus/Exodus_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../exodus/Exodus_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../exodus/Exodus_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../exodus/Exodus_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../exodus/Exodus_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../exodus/Exodus_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../exodus/Exodus_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../exodus/Exodus_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../exodus/Exodus_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../exodus/Exodus_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../exodus/Exodus_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../exodus/Exodus_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../exodus/Exodus_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../exodus/Exodus_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../exodus/Exodus_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../exodus/Exodus_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../exodus/Exodus_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../exodus/Exodus_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../exodus/Exodus_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../exodus/Exodus_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../exodus/Exodus_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../exodus/Exodus_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../exodus/Exodus_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../exodus/Exodus_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../exodus/Exodus_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../exodus/Exodus_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../exodus/Exodus_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../exodus/Exodus_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../exodus/Exodus_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../exodus/Exodus_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../exodus/Exodus_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../exodus/Exodus_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../exodus/Exodus_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../exodus/Exodus_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../exodus/Exodus_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../exodus/Exodus_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../exodus/Exodus_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../exodus/Exodus_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../exodus/Exodus_40.html" class="qnav-ch-btn live">Ch 40</a></div>
+</div>
+<div class="qnav-book" id="qnav-book-proverbs">
+<button class="qnav-book-btn" onclick="qnavToggleBook('proverbs')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Proverbs</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../proverbs/Proverbs_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../proverbs/Proverbs_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../proverbs/Proverbs_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../proverbs/Proverbs_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../proverbs/Proverbs_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../proverbs/Proverbs_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../proverbs/Proverbs_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../proverbs/Proverbs_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../proverbs/Proverbs_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../proverbs/Proverbs_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../proverbs/Proverbs_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../proverbs/Proverbs_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../proverbs/Proverbs_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../proverbs/Proverbs_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../proverbs/Proverbs_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../proverbs/Proverbs_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../proverbs/Proverbs_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../proverbs/Proverbs_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../proverbs/Proverbs_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../proverbs/Proverbs_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../proverbs/Proverbs_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../proverbs/Proverbs_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../proverbs/Proverbs_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../proverbs/Proverbs_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../proverbs/Proverbs_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../proverbs/Proverbs_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../proverbs/Proverbs_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../proverbs/Proverbs_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../proverbs/Proverbs_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../proverbs/Proverbs_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../proverbs/Proverbs_31.html" class="qnav-ch-btn live">Ch 31</a></div>
+</div>
+<div class="qnav-testament-header">New Testament</div>
+<div class="qnav-book open" id="qnav-book-matthew">
+<button class="qnav-book-btn" onclick="qnavToggleBook('matthew')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Matthew</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../matthew/Matthew_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../matthew/Matthew_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../matthew/Matthew_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../matthew/Matthew_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../matthew/Matthew_5.html" class="qnav-ch-btn live current">Ch 5</a><a href="../matthew/Matthew_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../matthew/Matthew_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../matthew/Matthew_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../matthew/Matthew_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../matthew/Matthew_10.html" class="qnav-ch-btn live">Ch 10</a><span class="qnav-ch-btn coming">Ch 11</span><span class="qnav-ch-btn coming">Ch 12</span><span class="qnav-ch-btn coming">Ch 13</span><span class="qnav-ch-btn coming">Ch 14</span><span class="qnav-ch-btn coming">Ch 15</span><span class="qnav-ch-btn coming">Ch 16</span><span class="qnav-ch-btn coming">Ch 17</span><span class="qnav-ch-btn coming">Ch 18</span><span class="qnav-ch-btn coming">Ch 19</span><span class="qnav-ch-btn coming">Ch 20</span><span class="qnav-ch-btn coming">Ch 21</span><span class="qnav-ch-btn coming">Ch 22</span><span class="qnav-ch-btn coming">Ch 23</span><span class="qnav-ch-btn coming">Ch 24</span><span class="qnav-ch-btn coming">Ch 25</span><span class="qnav-ch-btn coming">Ch 26</span><span class="qnav-ch-btn coming">Ch 27</span><span class="qnav-ch-btn coming">Ch 28</span></div>
+</div>
+</div>
+</div>
+<div class="qnav-dismiss" onclick="closeQnav()"></div>
+</div>
+<main>
+<header>
+<h1>Matthew 5</h1>
+<p>The Beatitudes; Salt and Light; The Six Antitheses</p>
+</header>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot dot-hebrew"></div>Greek</div>
+<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+<div class="legend-item"><div class="legend-dot" style="background:#8840e0"></div>Themes</div>
+</div>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><p><strong>Author:</strong> Matthew (Levi) ben Alphaeus, c.AD 1–70. A tax collector (telōnēs) at the customs post in Capernaum — a Jew working for the Roman fiscal system, socially despised by his community. Called by Jesus while at work (Matt 9:9; Mark 2:14). One of the twelve apostles. The tradition identifying the apostle Matthew as the gospel's author is consistent from the 2nd century (Papias, Irenaeus, Origen) and has no early counter-tradition. Matthew's tax-collector background explains the gospel's distinctive precision with numbers, lists, and systematically organized material.
+
+<strong>When written:</strong> Most scholars date Matthew between AD 50–90, with significant debate. An early date (before AD 70) is supported by the gospel's apparent familiarity with pre-destruction Jerusalem. Matthew drew on Mark (the earliest gospel), a collection of Jesus' sayings known as Q, and material unique to Matthew (M source). The gospel was likely written in Syrian Antioch or Judea for a primarily Jewish-Christian community.
+
+<strong>What prompted it:</strong> Matthew writes for Jewish believers — people who knew their Torah, their prophets, and their Psalms — and demonstrates systematically that Jesus is the long-awaited Messiah of Israel. The governing question is: how does Jesus fulfil what Moses, David, and the prophets promised? The answer unfolds through five great discourse blocks (chs.5–7, 10, 13, 18, 23–25), mirroring the five books of Moses, and through Matthew's characteristic formula: "this took place to fulfil what was spoken by the prophet." Jesus is presented as the new Moses, the Son of David, and the Son of God — the convergence of every strand of Israel's hope.</p></div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;48 &mdash; The Beatitudes; Salt and Light; The Six Antitheses</div><span class="verse-text"><span class="verse-num">1</span>Now when Jesus saw the crowds, he went up on a mountainside and sat down. His disciples came to him,</span><span class="verse-text"><span class="verse-num">2</span>and he began to teach them. He said:</span><span class="verse-text"><span class="verse-num">3</span>"Blessed are the poor in spirit, for theirs is the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">4</span>Blessed are those who mourn, for they will be comforted.</span><span class="verse-text"><span class="verse-num">5</span>Blessed are the meek, for they will inherit the earth.</span><span class="verse-text"><span class="verse-num">6</span>Blessed are those who hunger and thirst for righteousness, for they will be filled.</span><span class="verse-text"><span class="verse-num">7</span>Blessed are the merciful, for they will be shown mercy.</span><span class="verse-text"><span class="verse-num">8</span>Blessed are the pure in heart, for they will see God.</span><span class="verse-text"><span class="verse-num">9</span>Blessed are the peacemakers, for they will be called children of God.</span><span class="verse-text"><span class="verse-num">10</span>Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">11</span>Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me.</span><span class="verse-text"><span class="verse-num">12</span>Rejoice and be glad, because great is your reward in heaven, for in the same way they persecuted the prophets who were before you.</span><span class="verse-text"><span class="verse-num">13</span>"You are the salt of the earth. But if the salt loses its saltiness, how can it be made salty again? It is no longer good for anything, except to be thrown out and trampled underfoot.</span><span class="verse-text"><span class="verse-num">14</span>"You are the light of the world. A town built on a hill cannot be hidden.</span><span class="verse-text"><span class="verse-num">15</span>Neither do people light a lamp and put it under a bowl. Instead they put it on its stand, and it gives light to everyone in the house.</span><span class="verse-text"><span class="verse-num">16</span>In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven.</span><span class="verse-text"><span class="verse-num">17</span>"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfil them.</span><span class="verse-text"><span class="verse-num">18</span>For truly I tell you, until heaven and earth disappear, not the smallest letter, not the least stroke of a pen, will by any means disappear from the Law until everything is accomplished.</span><span class="verse-text"><span class="verse-num">19</span>Therefore anyone who sets aside one of the least of these commands and teaches others accordingly will be called least in the kingdom of heaven, but whoever practices and teaches these commands will be called great in the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">20</span>For I tell you that unless your righteousness surpasses that of the Pharisees and teachers of the law, you will certainly not enter the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">21</span>"You have heard that it was said to the people long ago, 'Do not murder, and anyone who murders will be subject to judgment.'</span><span class="verse-text"><span class="verse-num">22</span>But I tell you that anyone who is angry with a brother or sister will be subject to judgment. Again, anyone who says to a brother or sister, 'Raca,' is answerable to the court. And anyone who says, 'You fool!' will be in danger of the fire of hell.</span><span class="verse-text"><span class="verse-num">23</span>Therefore, if you are offering your gift at the altar and there remember that your brother or sister has something against you,</span><span class="verse-text"><span class="verse-num">24</span>leave your gift there in front of the altar. First go and be reconciled to that person; then come and offer your gift.</span><span class="verse-text"><span class="verse-num">25</span>Settle matters quickly with your adversary who is taking you to court. Do it while you are still together on the way, or your adversary may hand you over to the judge, and the judge may hand you over to the officer, and you may be thrown into prison.</span><span class="verse-text"><span class="verse-num">26</span>Truly I tell you, you will not get out until you have paid the last penny.</span><span class="verse-text"><span class="verse-num">27</span>"You have heard that it was said, 'You shall not commit adultery.'</span><span class="verse-text"><span class="verse-num">28</span>But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.</span><span class="verse-text"><span class="verse-num">29</span>If your right eye causes you to stumble, gouge it out and throw it away. It is better for you to lose one part of your body than for your whole body to be thrown into hell.</span><span class="verse-text"><span class="verse-num">30</span>And if your right hand causes you to stumble, cut it off and throw it away. It is better for you to lose one part of your body than for your whole body to go into hell.</span><span class="verse-text"><span class="verse-num">31</span>"It has been said, 'Anyone who divorces his wife must give her a certificate of divorce.'</span><span class="verse-text"><span class="verse-num">32</span>But I tell you that anyone who divorces his wife, except for sexual immorality, makes her the victim of adultery, and anyone who marries a divorced woman commits adultery.</span><span class="verse-text"><span class="verse-num">33</span>"Again, you have heard that it was said to the people long ago, 'Do not break your oath, but fulfill to the Lord the vows you have made.'</span><span class="verse-text"><span class="verse-num">34</span>But I tell you, do not swear an oath at all: either by heaven, for it is God's throne;</span><span class="verse-text"><span class="verse-num">35</span>or by the earth, for it is his footstool; or by Jerusalem, for it is the city of the Great King.</span><span class="verse-text"><span class="verse-num">36</span>And do not swear by your head, for you cannot make even one hair white or black.</span><span class="verse-text"><span class="verse-num">37</span>All you need to say is simply 'Yes' or 'No'; anything beyond this comes from the evil one.</span><span class="verse-text"><span class="verse-num">38</span>"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.'</span><span class="verse-text"><span class="verse-num">39</span>But I tell you, do not resist an evil person. If anyone slaps you on the right cheek, turn to them the other cheek also.</span><span class="verse-text"><span class="verse-num">40</span>And if anyone wants to sue you and take your shirt, hand over your coat as well.</span><span class="verse-text"><span class="verse-num">41</span>If anyone forces you to go one mile, go with them two miles.</span><span class="verse-text"><span class="verse-num">42</span>Give to the one who asks you, and do not turn away from the one who wants to borrow from you.</span><span class="verse-text"><span class="verse-num">43</span>"You have heard that it was said, 'Love your neighbor and hate your enemy.'</span><span class="verse-text"><span class="verse-num">44</span>But I tell you, love your enemies and pray for those who persecute you,</span><span class="verse-text"><span class="verse-num">45</span>that you may be children of your Father in heaven. He causes his sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.</span><span class="verse-text"><span class="verse-num">46</span>If you love those who love you, what reward will you get? Are not even the tax collectors doing that?</span><span class="verse-text"><span class="verse-num">47</span>And if you greet only your own people, what are you doing more than others? Do not even pagans do that?</span><span class="verse-text"><span class="verse-num">48</span>Be perfect, therefore, as your heavenly Father is perfect.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'m5-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'m5-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'m5-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'m5-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="m5-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">μακάριος</span> <span class="tlit">makarios</span> — <strong>blessed/deeply flourishing</strong>: Not the religious word for "blessed" (eulogētos) but for deep-seated well-being — the state of genuine flourishing in God's eyes. The Beatitudes are declarations of surprising kingdom reality: the person who looks least blessed by the world's standards is most genuinely flourishing under God's reign.</p><p><span class="hebrew-word">πτωχοὶ τῷ πνεύματι</span> <span class="tlit">ptōchoi tō pneumati</span> — <strong>poor in spirit</strong>: Ptōchos = the absolutely destitute, begging-poor. "In spirit" — not material poverty but spiritual bankruptcy: the recognition that before God you have nothing to bring. The kingdom belongs to those who know they are bankrupt and therefore completely dependent on God.</p><p><span class="hebrew-word">ἐγὼ δὲ λέγω ὑμῖν</span> <span class="tlit">egō de legō hymin</span> — <strong>but I say to you</strong>: The formula appearing six times in vv.21–48. Moses said "thus says the LORD"; Jesus says "but I say to you." Jesus does not appeal to a higher authority — he is the authority. Either divine or arrogant. Matthew intends the former.</p><p><span class="hebrew-word">τέλειος</span> <span class="tlit">teleios</span> — <strong>perfect/complete/whole</strong>: V.48: complete in love, having reached its telos (purpose). Not sinless perfection but the full expression of God-like impartial love (v.45). The goal is imitatio Dei — love as God loves.</p></div><div id="m5-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Sermon on the Mount (chs.5–7) is Matthew's first of five great discourses — a deliberate echo of the five books of Moses. Jesus is the new Moses, giving new Torah on a mountain. But Moses received and mediated law; Jesus speaks with his own authority ("but I say to you"). The Beatitudes function as the preamble — describing not what kingdom citizens must do but what they are. The six antitheses (vv.21–48) show what "fulfilling the law" means: not external compliance but complete internalisation.</p></div><div id="m5-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 25:21–22</span><span class="ref-text">Love your enemies (v.44) → Proverbs: feed your enemy; heap burning coals. Jesus radicalises the OT principle into a positive command grounded in God's character.</span></li><li><span class="ref-cite">Lev 19:2</span><span class="ref-text">Background to v.48: "be holy as I the LORD your God am holy." Jesus replaces "holy" with "perfect" (teleios) — the same divine imitatio logic: imitate God's complete love.</span></li></ul></div><div id="m5-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:3–10</span><p>The Beatitudes are the most radical value inversion in human history. Every statement contradicts the world's wisdom: power-seekers not blessed; comfortable not blessed. Blessed are the destitute in spirit, the mourners, the meek. These describe the person who has abandoned all self-generated resources and become entirely dependent on God — and declares this the state of supreme well-being.</p></div><div class="com-note"><span class="com-ref">5:44</span><p>Love your enemies. The ethical climax. The reason is theological: God sends sun and rain on evil and good alike. The motive is imitatio Dei — become like your Father, who loves impartially. Grounded in God's character, not the enemy's merit.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'m5-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger translations" onclick="tog(this,'m5-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger sources" onclick="tog(this,'m5-src')"><span>Historical Sources</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger reception" onclick="tog(this,'m5-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger literary" onclick="tog(this,'m5-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger hebrew-text" onclick="tog(this,'m5-grktext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger threading" onclick="tog(this,'m5-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'m5-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="m5-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Jesus</div><div class="person-role">New Moses on a mountain</div><div class="person-text">Speaks with his own authority. Either divine or the greatest arrogance in history.</div></div><div class="person-card"><div class="person-name">The Pharisees</div><div class="person-role">Foil for "surpassing righteousness"</div><div class="person-text">External compliance; Jesus requires inward transformation.</div></div></div></div><div id="m5-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">5:17 — Fulfil the Law</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfil them."</td></tr><tr><td class="t-label">Note</td><td>Plērōsai — not relaxing the Law but bringing it to its deepest intended expression: complete obedience from a transformed heart.</td></tr></table></div><div id="m5-src" class="anno-panel src-panel"><h4>Historical Sources</h4><div class="source-block"><div class="source-title">Five Discourses</div><div class="source-quote">Matthew's five discourse structure (chs.5–7, 10, 13, 18, 23–25) parallels the five books of Moses. The Sermon is the first, on a mountain, with Jesus as the new Mosaic lawgiver.</div><div class="source-note">Matthew's most sustained literary architecture.</div></div><div class="source-block"><div class="source-title">Beatitudes and OT Background</div><div class="source-quote">Beatitudes echo Ps 37 (meek inherit the earth, v.5 = Ps 37:11), Isa 61:1–3 (good news to poor, comfort to mourners), Ps 24:3–4 (pure in heart see God). The Sermon is saturated with OT allusion.</div><div class="source-note">The Beatitudes are OT theology radicalised around Jesus.</div></div></div><div id="m5-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Augustine, De Sermone Domini</div><div class="rec-text">The first extended Sermon commentary. Augustine structured his political theology around v.9 (peacemakers = children of God).</div></div><div class="rec-block"><div class="rec-who">Tolstoy on 5:39</div><div class="rec-text">Vv.39–44 as the foundation for Christian non-resistance. Influenced Gandhi, Martin Luther King, and the entire non-violent resistance tradition.</div></div></div><div id="m5-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Beatitudes — vv.3–12</span><span class="lit-text">Eight declarations; kingdom brackets each end</span></div><div class="lit-row"><span class="lit-label">Salt and light — vv.13–16</span><span class="lit-text">Vocation: visible embodiment of kingdom life</span></div><div class="lit-row"><span class="lit-label">Fulfil the Law — vv.17–20</span><span class="lit-text">Not abolish; surpass Pharisaic righteousness</span></div><div class="lit-row"><span class="lit-label">Six antitheses — vv.21–47</span><span class="lit-text">Murder/anger; adultery/lust; divorce; oaths; retaliation; enemy love</span></div><div class="lit-row"><span class="lit-label">Climax — v.48</span><span class="lit-text">Teleios — perfect as your Father is perfect</span></div><div class="lit-note">Chapter 5 is the most theologically concentrated chapter in Matthew. The Beatitudes redefine blessedness; the antitheses redefine obedience as inward transformation; v.48 defines the goal as imitating God's perfect love.</div></div></div><div id="m5-grktext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">3</sup> "<span class="dn-key">Makarioi</span> hoi ptōchoi tō pneumati — <span class="dn-key">Blessed are the poor in spirit</span>, for theirs is the <span class="dn-key">kingdom of heaven</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">44</sup> "<span class="dn-key">Love your enemies</span>... that you may be children of your <span class="dn-divine">Father</span> in heaven."</p></div><div id="m5-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">5:5</span><span class="thread-arrow">→</span><span class="thread-target">Ps 37:11</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The meek inherit the earth — Psalm 37's promise to the humble.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">5:44</span><span class="thread-arrow">→</span><span class="thread-target">Prov 25:21–22</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Feed your enemy → love your enemies. Jesus intensifies the Proverbs principle.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">5:17</span><span class="thread-arrow">→</span><span class="thread-target">Matt 26:28</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Fulfil the Law → new covenant in his blood. Fulfilment culminates at the cross.</div></div></div><div id="m5-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Beatitudes</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Righteousness</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Fulfilment of Law</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Love Your Enemies</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">New Moses</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Kingdom Ethics</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 5 is the ethical heart of the gospel. The Beatitudes redefine blessedness upside-down; the antitheses redefine obedience as inward transformation; v.48 sets the goal as imitating God's perfect love. Everything flows from v.17: Jesus fulfils — brings to its deepest intended expression — the entire Law.</p></div>
+</div>
+</main>
+<footer><p>Matthew 5 — Beatitudes; Love Your Enemies; Fulfil the Law. Scripture Deep Dive.</p></footer>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','Lord','Jesus','Christ','Spirit','Holy Spirit','Father','Son','Kingdom'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Bethlehem','Galilee','Nazareth','Egypt','Jordan','Capernaum','Judea','Israel','Sea of Galilee','Jericho','Samaria','temple','synagogue'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','Peter','Andrew','James','John','Matthew','Herod','Joseph','Mary','John the Baptist','disciples','Pharisees','scribes','devil','Satan'],cls:'vhl-person',btn:['people','context']};
+  var TIME={words:['days','that day','hour','generations','age','then','afterward','immediately'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY={words:['fulfilled','kingdom','righteousness','faith','repent','baptize','gospel','sin','forgive','love','law','prophet','covenant','salvation','mercy'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../verses.js"></script>
+<script>
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
+function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
+function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var h1=document.querySelector('h1');
+    var sub=document.querySelector('header p');
+    var label=(h1?h1.textContent.trim():'')+(sub?' · '+sub.textContent.trim().slice(0,28):'');
+    var entry={url:url,label:label};
+    hist=hist.filter(function(x){return x.url!==url;});
+    hist.unshift(entry);
+    if(hist.length>MAX)hist=hist.slice(0,MAX);
+    localStorage.setItem(KEY,JSON.stringify(hist));
+  }catch(e){}
+})();
+</script>
+</body></html>
