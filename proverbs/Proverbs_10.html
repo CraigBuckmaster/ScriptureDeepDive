@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Proverbs 10 — Scripture Deep Dive</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.38rem;margin:.3rem 0 .5rem;}
+.anno-trigger{display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;background:none;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;}
+.anno-trigger.hebrew  {color:var(--heb-accent); border-color:var(--heb-border); background:rgba(122,48,80,.12);}
+.anno-trigger.history {color:var(--hist-accent);border-color:var(--hist-border);background:rgba(42,80,128,.12);}
+.anno-trigger.context {color:var(--ctx-accent); border-color:var(--ctx-border); background:rgba(42,96,64,.12);}
+.anno-trigger.cross   {color:var(--cross-accent);border-color:var(--cross-border);background:rgba(106,74,0,.15);}
+.anno-trigger.places  {color:var(--poi-accent); border-color:var(--poi-border); background:rgba(26,96,40,.12);}
+.anno-trigger.timeline{color:#c0d8f0;border-color:#4a6888;background:rgba(74,104,136,.12);}
+.anno-trigger:hover{opacity:.8;transform:translateY(-1px);}
+.anno-trigger.active{filter:brightness(1.3);}
+.anno-trigger .chev{font-size:.52rem;transition:transform .22s;line-height:1;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.authorship-content p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.65;margin-top:.75rem;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.qnav-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.qnav-overlay.open{display:flex;flex-direction:column;}
+.qnav-panel{background:#0d0b07;border-bottom:1px solid #3a2e18;max-height:82vh;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;}
+.qnav-header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-bottom:1px solid rgba(58,46,24,.5);position:sticky;top:0;background:#0d0b07;z-index:1;}
+.qnav-search-wrap{flex:1;position:relative;}
+.qnav-search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#5a4a30;font-size:.78rem;pointer-events:none;}
+.qnav-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(58,46,24,.8);border-radius:4px;padding:.42rem .75rem .42rem 2rem;color:#f0e8d8;font-family:'Source Sans 3',sans-serif;font-size:.88rem;outline:none;transition:border-color .15s;}
+.qnav-search:focus{border-color:#8b6914;}
+.qnav-search::placeholder{color:#4a3a22;}
+.qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
+.qnav-body{overflow-y:auto;}
+.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
+.qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
+.qnav-book-btn:hover{background:rgba(255,255,255,.04);}
+.qnav-book-name{font-family:'EB Garamond',serif;font-size:.98rem;color:#c8c0a0;text-align:left;display:flex;align-items:center;gap:.5rem;}
+.qnav-live-dot{width:6px;height:6px;border-radius:50%;background:#70d098;flex-shrink:0;box-shadow:0 0 5px rgba(112,208,152,.5);}
+.qnav-book-meta{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
+.qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
+.qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
+.qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
+.qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
+.qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
+.qnav-dismiss{flex:1;cursor:pointer;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center">
+<button class="nav-center-btn" onclick="openQnav()">
+<span class="nav-book">Proverbs</span>
+<span class="nav-chapter">Chapter 10</span>
+<span class="hint">tap to navigate</span>
+</button>
+</div>
+<div class="nav-arrows"><a href="Proverbs_9.html" class="nav-arrow prev">&#8592;</a><button onclick="openQnav()" class="nav-search-btn" aria-label="Search">&#128269;</button><a href="Proverbs_11.html" class="nav-arrow next">&#8594;</a></div>
+</nav>
+<div class="qnav-overlay" id="qnav-overlay">
+<div class="qnav-panel">
+<div class="qnav-header">
+<div class="qnav-search-wrap"><span class="qnav-search-icon">&#128269;</span><input class="qnav-search" id="qnav-search-input" placeholder="Search books..." oninput="qnavFilter(this.value)"></div>
+<button class="qnav-close" onclick="closeQnav()">Close</button>
+</div>
+<div class="qnav-body">
+<div class="qnav-testament-header">Old Testament</div>
+<div class="qnav-book" id="qnav-book-genesis">
+<button class="qnav-book-btn" onclick="qnavToggleBook('genesis')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Genesis</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../genesis/Genesis_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../genesis/Genesis_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../genesis/Genesis_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../genesis/Genesis_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../genesis/Genesis_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../genesis/Genesis_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../genesis/Genesis_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../genesis/Genesis_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../genesis/Genesis_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../genesis/Genesis_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../genesis/Genesis_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../genesis/Genesis_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../genesis/Genesis_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../genesis/Genesis_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../genesis/Genesis_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../genesis/Genesis_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../genesis/Genesis_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../genesis/Genesis_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../genesis/Genesis_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../genesis/Genesis_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../genesis/Genesis_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../genesis/Genesis_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../genesis/Genesis_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../genesis/Genesis_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../genesis/Genesis_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../genesis/Genesis_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../genesis/Genesis_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../genesis/Genesis_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../genesis/Genesis_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../genesis/Genesis_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../genesis/Genesis_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../genesis/Genesis_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../genesis/Genesis_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../genesis/Genesis_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../genesis/Genesis_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../genesis/Genesis_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../genesis/Genesis_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../genesis/Genesis_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../genesis/Genesis_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../genesis/Genesis_40.html" class="qnav-ch-btn live">Ch 40</a><a href="../genesis/Genesis_41.html" class="qnav-ch-btn live">Ch 41</a><a href="../genesis/Genesis_42.html" class="qnav-ch-btn live">Ch 42</a><a href="../genesis/Genesis_43.html" class="qnav-ch-btn live">Ch 43</a><a href="../genesis/Genesis_44.html" class="qnav-ch-btn live">Ch 44</a><a href="../genesis/Genesis_45.html" class="qnav-ch-btn live">Ch 45</a><a href="../genesis/Genesis_46.html" class="qnav-ch-btn live">Ch 46</a><a href="../genesis/Genesis_47.html" class="qnav-ch-btn live">Ch 47</a><a href="../genesis/Genesis_48.html" class="qnav-ch-btn live">Ch 48</a><a href="../genesis/Genesis_49.html" class="qnav-ch-btn live">Ch 49</a><a href="../genesis/Genesis_50.html" class="qnav-ch-btn live">Ch 50</a></div>
+</div>
+<div class="qnav-book" id="qnav-book-exodus">
+<button class="qnav-book-btn" onclick="qnavToggleBook('exodus')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Exodus</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../exodus/Exodus_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../exodus/Exodus_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../exodus/Exodus_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../exodus/Exodus_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../exodus/Exodus_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../exodus/Exodus_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../exodus/Exodus_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../exodus/Exodus_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../exodus/Exodus_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../exodus/Exodus_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../exodus/Exodus_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../exodus/Exodus_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../exodus/Exodus_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../exodus/Exodus_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../exodus/Exodus_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../exodus/Exodus_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../exodus/Exodus_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../exodus/Exodus_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../exodus/Exodus_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../exodus/Exodus_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../exodus/Exodus_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../exodus/Exodus_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../exodus/Exodus_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../exodus/Exodus_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../exodus/Exodus_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../exodus/Exodus_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../exodus/Exodus_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../exodus/Exodus_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../exodus/Exodus_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../exodus/Exodus_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../exodus/Exodus_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../exodus/Exodus_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../exodus/Exodus_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../exodus/Exodus_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../exodus/Exodus_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../exodus/Exodus_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../exodus/Exodus_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../exodus/Exodus_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../exodus/Exodus_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../exodus/Exodus_40.html" class="qnav-ch-btn live">Ch 40</a></div>
+</div>
+<div class="qnav-book open" id="qnav-book-proverbs">
+<button class="qnav-book-btn" onclick="qnavToggleBook('proverbs')">
+<span class="qnav-book-name"><span class="qnav-live-dot"></span>Proverbs</span>
+<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>
+</button>
+<div class="qnav-ch-grid"><a href="../proverbs/Proverbs_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../proverbs/Proverbs_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../proverbs/Proverbs_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../proverbs/Proverbs_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../proverbs/Proverbs_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../proverbs/Proverbs_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../proverbs/Proverbs_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../proverbs/Proverbs_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../proverbs/Proverbs_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../proverbs/Proverbs_10.html" class="qnav-ch-btn live current">Ch 10</a><span class="qnav-ch-btn coming">Ch 11</span><span class="qnav-ch-btn coming">Ch 12</span><span class="qnav-ch-btn coming">Ch 13</span><span class="qnav-ch-btn coming">Ch 14</span><span class="qnav-ch-btn coming">Ch 15</span><span class="qnav-ch-btn coming">Ch 16</span><span class="qnav-ch-btn coming">Ch 17</span><span class="qnav-ch-btn coming">Ch 18</span><span class="qnav-ch-btn coming">Ch 19</span><span class="qnav-ch-btn coming">Ch 20</span><span class="qnav-ch-btn coming">Ch 21</span><span class="qnav-ch-btn coming">Ch 22</span><span class="qnav-ch-btn coming">Ch 23</span><span class="qnav-ch-btn coming">Ch 24</span><span class="qnav-ch-btn coming">Ch 25</span><span class="qnav-ch-btn coming">Ch 26</span><span class="qnav-ch-btn coming">Ch 27</span><span class="qnav-ch-btn coming">Ch 28</span><span class="qnav-ch-btn coming">Ch 29</span><span class="qnav-ch-btn coming">Ch 30</span><span class="qnav-ch-btn coming">Ch 31</span></div>
+</div>
+</div>
+</div>
+<div class="qnav-dismiss" onclick="closeQnav()"></div>
+</div>
+<main>
+<header>
+<h1>Proverbs 10</h1>
+<p>The Proverb Collection Opens: Speech, Character, and Final Security</p>
+</header>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot dot-hebrew"></div>Hebrew</div>
+<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
+<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
+<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
+<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
+<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
+<div class="legend-item"><div class="legend-dot" style="background:#8840e0"></div>Themes</div>
+</div>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><p><strong>Author:</strong> Solomon ben David, c.990–931 BC. Israel's third king, son of David and Bathsheba. Credited by Scripture with 3,000 proverbs and 1,005 songs (1 Kgs 4:32). His wisdom was divinely given — not merely accumulated experience but a gift granted at Gibeon (1 Kgs 3:5–14). He built the Temple, forged commercial alliances across the ancient world, and attracted foreign dignitaries to Jerusalem including the Queen of Sheba (1 Kgs 10). Proverbs 1–9 are the most clearly Solomonic; chs. 25–29 were copied by the men of Hezekiah (25:1); chs. 30–31 are attributed to Agur and Lemuel respectively.
+
+<strong>When written:</strong> The core Solomonic material (chs. 1–9, 10–22:16) dates to Solomon's reign, c.970–931 BC. The final compilation and editing likely continued through the Hezekiah period (c.715–686 BC), when his scribes copied additional Solomonic proverbs (25:1). The book reached its present form sometime in the late monarchic or early post-exilic period.
+
+<strong>What prompted it:</strong> Proverbs is a father's sustained address to a son standing on the threshold of adult life. The driving question is: How does a young person navigate the real world — its temptations, its social pressures, its competing voices — without being destroyed? The book's answer is not a list of rules but a vision of reality: the world was made with Wisdom woven into it (ch. 8), and the person who aligns their life with that grain will flourish; the person who fights it will be broken by it. "The fear of the LORD is the beginning of wisdom" (1:7) is the thesis of the entire book.</p></div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;16 &mdash; The Proverb Collection Begins: Righteousness and Speech</div><span class="verse-text"><span class="verse-num">1</span>The proverbs of Solomon: A wise son brings joy to his father, but a foolish son brings grief to his mother.</span><span class="verse-text"><span class="verse-num">2</span>Ill-gotten treasures have no lasting value, but righteousness delivers from death.</span><span class="verse-text"><span class="verse-num">3</span>The LORD does not let the righteous go hungry, but he thwarts the craving of the wicked.</span><span class="verse-text"><span class="verse-num">4</span>Lazy hands make for poverty, but diligent hands bring wealth.</span><span class="verse-text"><span class="verse-num">5</span>He who gathers crops in summer is a prudent son, but he who sleeps during harvest is a disgraceful son.</span><span class="verse-text"><span class="verse-num">6</span>Blessings crown the head of the righteous, but violence overwhelms the mouth of the wicked.</span><span class="verse-text"><span class="verse-num">7</span>The name of the righteous is used in blessings, but the name of the wicked will rot.</span><span class="verse-text"><span class="verse-num">8</span>The wise in heart accept commands, but a chattering fool comes to ruin.</span><span class="verse-text"><span class="verse-num">9</span>Whoever walks in integrity walks securely, but whoever takes crooked paths will be found out.</span><span class="verse-text"><span class="verse-num">10</span>Whoever winks maliciously causes grief, and a chattering fool comes to ruin.</span><span class="verse-text"><span class="verse-num">11</span>The mouth of the righteous is a fountain of life, but the mouth of the wicked conceals violence.</span><span class="verse-text"><span class="verse-num">12</span>Hatred stirs up conflict, but love covers over all wrongs.</span><span class="verse-text"><span class="verse-num">13</span>Wisdom is found on the lips of the discerning, but a rod is for the back of one who has no sense.</span><span class="verse-text"><span class="verse-num">14</span>The wise store up knowledge, but the mouth of a fool invites ruin.</span><span class="verse-text"><span class="verse-num">15</span>The wealth of the rich is their fortified city, but poverty is the ruin of the poor.</span><span class="verse-text"><span class="verse-num">16</span>The wages of the righteous is life, but the earnings of the wicked are sin and death.</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'p10-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'p10-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p10-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="p10-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 10 marks the transition from extended instruction (chs.1–9) to the individual proverb collection (chs.10–22:16). The literary form changes completely: instead of sustained addresses, we now have self-contained two-line observations, almost all structured as antithetical parallelism (wise/fool, righteous/wicked). Chapter 10 is dominated by speech and character: the mouth of the righteous is a fountain of life; the wicked conceals violence. The collection's dominant concern is how wisdom and folly show up in the texture of everyday life.</p></div><div id="p10-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Jas 5:20</span><span class="ref-text">James quotes the principle behind v.12 ("love covers a multitude of sins") — Peter does the same in 1 Pet 4:8. Both NT letters preserve the Proverbs principle as settled teaching.</span></li><li><span class="ref-cite">Matt 12:34–37</span><span class="ref-text">Jesus' words about the mouth in Matthew echo the repeated emphasis of ch.10: "out of the overflow of the heart the mouth speaks... by your words you will be acquitted, and by your words you will be condemned."</span></li></ul></div><div id="p10-s1-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:1</span><p>The book's second superscription — "The proverbs of Solomon" — marks the beginning of the main collection. The first proverb returns to the father-son theme: the wise son makes his father glad; the foolish son is a sorrow to his mother. The entire preceding discourse (chs.1–9) is now condensed into a single observation: wisdom or folly will be visible in what you become, and your parents will know it.</p></div><div class="com-note"><span class="com-ref">10:12</span><p>"Hatred stirs up conflict, but love covers over all wrongs." The word "covers" (kāsāh) is significant — not ignorance or excuse but the deliberate act of covering, the way a sacrifice's blood covers sin. Love is the active force that absorbs and covers offence rather than inflaming it. James and Peter both quote this principle as definitive.</p></div></div></div><div class="section"><div class="section-header">Verses 17&ndash;32 &mdash; The Tongue; Standing Firm; Final Security</div><span class="verse-text"><span class="verse-num">17</span>Whoever heeds discipline shows the way to life, but whoever ignores correction leads others astray.</span><span class="verse-text"><span class="verse-num">18</span>Whoever conceals hatred with lying lips and spreads slander is a fool.</span><span class="verse-text"><span class="verse-num">19</span>Sin is not ended by multiplying words, but the prudent hold their tongues.</span><span class="verse-text"><span class="verse-num">20</span>The tongue of the righteous is choice silver, but the heart of the wicked is of little value.</span><span class="verse-text"><span class="verse-num">21</span>The lips of the righteous nourish many, but fools die for lack of sense.</span><span class="verse-text"><span class="verse-num">22</span>The blessing of the LORD brings wealth, without painful toil for it.</span><span class="verse-text"><span class="verse-num">23</span>A fool finds pleasure in wicked schemes, but a person of understanding delights in wisdom.</span><span class="verse-text"><span class="verse-num">24</span>What the wicked dread will overtake them; what the righteous desire will be granted.</span><span class="verse-text"><span class="verse-num">25</span>When the storm has swept by, the wicked are gone, but the righteous stand firm forever.</span><span class="verse-text"><span class="verse-num">26</span>As vinegar to the teeth and smoke to the eyes, so are sluggards to those who send them.</span><span class="verse-text"><span class="verse-num">27</span>The fear of the LORD adds length to life, but the years of the wicked are cut short.</span><span class="verse-text"><span class="verse-num">28</span>The prospect of the righteous is joy, but the hopes of the wicked come to nothing.</span><span class="verse-text"><span class="verse-num">29</span>The way of the LORD is a refuge for the blameless, but it is the ruin of those who do evil.</span><span class="verse-text"><span class="verse-num">30</span>The righteous will never be uprooted, but the wicked will not remain in the land.</span><span class="verse-text"><span class="verse-num">31</span>From the mouth of the righteous comes the fruit of wisdom, but a perverse tongue will be silenced.</span><span class="verse-text"><span class="verse-num">32</span>The lips of the righteous know what finds favor, but the mouth of the wicked only what is perverse.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'p10-s2-heb')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'p10-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p10-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="p10-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">כֶּסֶף נִבְחָר</span> <span class="tlit">kesep nibḥār</span> — <strong>choice silver</strong>: The tongue of the righteous is choice silver — nibḥār, carefully selected, of the highest quality. Speech, in Proverbs, is a form of wealth. The righteous person's words have genuine value; the wicked person's heart (not just words) is worth little. The comparison of speech to precious metal is the book's consistent valuation of what we say.</p><p><span class="hebrew-word">עֵץ חַיִּים</span> <span class="tlit">ʿēṣ ḥayyîm</span> — <strong>tree of life (implied)</strong>: V.21: "the lips of the righteous nourish many." The image of righteous speech as nourishment connects to the tree of life and to Wisdom's feast in ch.9. The righteous person, through their words, becomes a source of life for others.</p></div><div id="p10-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.10 continues the emphasis on speech (vv.18–21, 31–32) while introducing the stability contrast: the righteous stand firm forever (v.25); the wicked are swept away when the storm comes. This is not naive optimism about the short term but a claim about the ultimate structure of reality. The storm image is eschatological as well as temporal — in the final accounting, the righteous are rooted; the wicked are gone. V.27's "fear of the LORD adds length to life" returns the chapter to the book's governing principle.</p></div><div id="p10-s2-mac" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:19</span><p>"Sin is not ended by multiplying words, but the prudent hold their tongues." This is one of Proverbs' most practical insights. The one who speaks too much inevitably sins with their mouth — not because each word is carefully chosen to harm, but because volume creates opportunity for error. The wise person's self-restraint in speech is not timidity but precision.</p></div><div class="com-note"><span class="com-ref">10:25</span><p>"When the storm has swept by, the wicked are gone, but the righteous stand firm forever." The storm image carries eschatological weight. This is not a promise of worldly stability in every season — the righteous suffer too. It is a claim about the ultimate outcome. When everything is stripped away by the final storm, what remains? The person whose life was built on the fear of the LORD. This is the NT's "rock vs sand" parable (Matt 7:24–27) in condensed form.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'p10-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger translations" onclick="tog(this,'p10-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger sources" onclick="tog(this,'p10-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger reception" onclick="tog(this,'p10-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger literary" onclick="tog(this,'p10-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger hebrew-text" onclick="tog(this,'p10-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger threading" onclick="tog(this,'p10-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'p10-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+</div>
+<div id="p10-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">The dominant positive figure in ch.10</div><div class="person-text">Mouth = fountain of life, choice silver. They stand firm when the storm sweeps. Their name is used in blessings.</div></div><div class="person-card"><div class="person-name">The wicked</div><div class="person-role">The dominant negative figure</div><div class="person-text">Their mouth conceals violence. They are swept away by the storm. Their hopes come to nothing. Their years are cut short.</div></div></div></div><div id="p10-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">10:12 — Love Covers</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Hatred stirs up conflict, but love covers over all wrongs."</td></tr><tr><td class="t-label">ESV</td><td>"Hatred stirs up strife, but love covers all offenses."</td></tr><tr><td class="t-label">1 Pet 4:8</td><td>Peter quotes this as a principle for Christian community: "love covers over a multitude of sins." The Proverbs maxim became a foundational principle for Christian social ethics.</td></tr></table></div><div id="p10-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Antithetical Parallelism</div><div class="source-quote">The dominant form of chs.10–15 is antithetical parallelism: a positive statement followed by its negative contrast (wise/fool, righteous/wicked, diligent/lazy). This form does not merely state a difference — it creates the difference vividly in the mind of the hearer. The proverb is a rhetorical instrument that sharpens moral perception.</div><div class="source-note">Antithetical parallelism is the defining literary form of the Solomonic collection.</div></div><div class="source-block"><div class="source-title">Proverb Collections in ANE</div><div class="source-quote">Proverb collections structured as numbered sayings appear in Sumerian (Instructions of Shuruppak), Egyptian (Amenemope, Ptahhotep), and Aramaic (Ahiqar) traditions. The Solomonic collection in chs.10–22:16 is the most extensive wisdom collection in the OT and compares in scope with the largest ANE examples.</div><div class="source-note">The Solomonic collection is one of the longest wisdom collections known from the ancient world.</div></div></div><div id="p10-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Jas 5:20 / 1 Pet 4:8</div><div class="rec-text">Both NT letters quote the principle of v.12 ("love covers sins"). It became one of the most cited Proverbs in early Christian literature, applied to church discipline, forgiveness, and community life.</div></div><div class="rec-block"><div class="rec-who">Matt 7:24–27</div><div class="rec-text">The parable of the wise and foolish builders is the NT development of v.25: "when the storm has swept by, the wicked are gone, but the righteous stand firm forever." Jesus applies the storm image to the eschatological judgment.</div></div></div><div id="p10-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Transition — v.1</span><span class="lit-text">New superscription; first proverb: wise/foolish son</span></div><div class="lit-row"><span class="lit-label">Character and wealth — vv.2–7</span><span class="lit-text">Righteousness vs wickedness in material outcomes</span></div><div class="lit-row"><span class="lit-label">Speech cluster 1 — vv.8–14</span><span class="lit-text">Wise accept commands; mouth of righteous = fountain</span></div><div class="lit-row"><span class="lit-label">Poverty and wealth — vv.15–16</span><span class="lit-text">Wealth as city; wages of righteous = life</span></div><div class="lit-row"><span class="lit-label">Speech cluster 2 — vv.17–21</span><span class="lit-text">Prudent tongue; choice silver; lips that nourish</span></div><div class="lit-row"><span class="lit-label">Stability — vv.22–30</span><span class="lit-text">Fear of the LORD; storm and standing firm; eternal security</span></div><div class="lit-row"><span class="lit-label">Final speech — vv.31–32</span><span class="lit-text">Fruit of wisdom; perverse tongue silenced</span></div><div class="lit-note">The chapter is dominated by two themes: speech (the tongue/lips/mouth appear in nearly half the verses) and ultimate outcomes (who stands firm, whose years are long, whose hopes come to nothing). Both themes are grounded in the righteous/wicked distinction that runs through the entire collection.</div></div></div><div id="p10-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">11</sup> "The mouth of the <span class="dn-key">righteous</span> is a fountain of <span class="dn-key">life</span>, but the mouth of the wicked conceals violence." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">12</sup> "<span class="dn-key">Hatred</span> stirs up conflict, but <span class="dn-key">love</span> covers over all wrongs." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">25</sup> "When the storm has swept by, the wicked are gone, but the <span class="dn-key">righteous</span> stand firm forever."</p></div><div id="p10-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov 10:12</span><span class="thread-arrow">→</span><span class="thread-target">1 Pet 4:8; Jas 5:20</span><span class="thread-type fulfillment">Echo</span></div><div class="thread-text">"Love covers all wrongs" → quoted in both NT letters as settled Christian community principle.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">10:25</span><span class="thread-arrow">→</span><span class="thread-target">Matt 7:24–27</span><span class="thread-type echo">Echo</span></div><div class="thread-text">"Righteous stand firm when the storm sweeps" → the wise man who built on the rock.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">10:27</span><span class="thread-arrow">→</span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">"Fear of the LORD adds length to life" — the thesis of 1:7 and 9:10 now applied as a practical proverb in the collection. The governing principle is everywhere.</div></div></div><div id="p10-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,205.0 75.8,145.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Righteous vs Wicked</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Power of Speech</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Standing Firm</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Ultimate Outcomes</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligence</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Love Covers</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 10 opens the main proverb collection with its dominant themes: the tongue as a fountain of life or a concealer of violence; the righteous who stand firm when the storm sweeps; the wicked whose years are cut short. The fear of the LORD (v.27) grounds everything. The collection distils the wisdom of chs.1–9 into the texture of daily observation.</p></div>
+</div>
+</main>
+<footer><p>Proverbs 10 — The Solomonic Collection Begins; Righteous vs Wicked. Scripture Deep Dive.</p></footer>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['LORD','God','Spirit','Wisdom','King'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','gate','city','streets','market','town','house','palace'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Solomon','son','father','mother','woman','wife','men','young man','adulteress','stranger'],cls:'vhl-person',btn:['people','context']};
+  var TIME={words:['youth','age','years','day','night','morning','evening','life','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY={words:['wisdom','understanding','knowledge','instruction','fear','heart','path','way','life','death','fool','righteous','wicked'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../verses.js"></script>
+<script>
+function qnavFilter(q) {
+  q = q.trim().toLowerCase();
+  const words = q.split(/\s+/).filter(w => w.length > 1);
+  const panel = document.getElementById('qnav-search-results');
+
+  // If empty — show normal chapter grid, hide results
+  if (!q) {
+    if (panel) { panel.innerHTML = ''; panel.style.display = 'none'; }
+    document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = '');
+    document.querySelectorAll('.qnav-book').forEach(b => b.style.display = '');
+    return;
+  }
+
+  // Hide chapter grids while searching
+  document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = 'none');
+  document.querySelectorAll('.qnav-book').forEach(b => b.style.display = 'none');
+
+  // Verse matches
+  var verseMatches = q.length >= 2 ? VERSES.map(function(v) {
+    var text = v.text.toLowerCase();
+    var ref  = v.ref.toLowerCase();
+    var score = 0;
+    for (var i=0; i<words.length; i++) {
+      if (text.indexOf(words[i]) > -1) score += 2;
+      else if (ref.indexOf(words[i]) > -1) score += 1;
+    }
+    if (text.indexOf(q) > -1) score += 5;
+    return { ref:v.ref, short:v.short, text:v.text, url:v.url, score:score };
+  }).filter(function(v){ return v.score > 0; })
+    .sort(function(a,b){ return b.score - a.score; })
+    .slice(0, 12) : [];
+
+  function hl(text, q, words) {
+    var out = text;
+    if (q.length > 2) {
+      var rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+      out = out.replace(rx,'<em>$1</em>');
+    }
+    for (var i=0; i<words.length; i++) {
+      if (out.toLowerCase().indexOf(words[i]) > -1) {
+        var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+        out = out.replace(rx2,'<em>$1</em>');
+      }
+    }
+    return out;
+  }
+
+  var html = '';
+  if (verseMatches.length === 0) {
+    html = '<p class="qnav-no-results">No verses found for \u201c' + q + '\u201d</p>';
+  } else {
+    for (var i=0; i<verseMatches.length; i++) {
+      var v = verseMatches[i];
+      var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
+      // Path relative to current chapter page (../ prefix for chapter pages)
+      var href = '../' + v.url;
+      html += '<a href="' + href + '" class="qnav-verse-result">' +
+              '<span class="qnav-vref">' + v.short + '</span>' +
+              '<span class="qnav-vsnip">' + hl(snippet, q, words) + '</span>' +
+              '</a>';
+    }
+  }
+
+  if (!panel) {
+    var p = document.createElement('div');
+    p.id = 'qnav-search-results';
+    p.className = 'qnav-search-results';
+    var body = document.querySelector('.qnav-body');
+    if (body) body.insertBefore(p, body.firstChild);
+    p.innerHTML = html;
+    p.style.display = 'block';
+  } else {
+    panel.innerHTML = html;
+    panel.style.display = 'block';
+  }
+}
+</script>
+<script>
+</script>
+<script>
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('exodus');}
+function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
+function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(el)el.classList.toggle('open');}
+function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var h1=document.querySelector('h1');
+    var sub=document.querySelector('header p');
+    var label=(h1?h1.textContent.trim():'')+(sub?' · '+sub.textContent.trim().slice(0,28):'');
+    var entry={url:url,label:label};
+    hist=hist.filter(function(x){return x.url!==url;});
+    hist.unshift(entry);
+    if(hist.length>MAX)hist=hist.slice(0,MAX);
+    localStorage.setItem(KEY,JSON.stringify(hist));
+  }catch(e){}
+})();
+</script>
+</body></html>
