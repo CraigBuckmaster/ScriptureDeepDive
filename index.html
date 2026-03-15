@@ -400,7 +400,6 @@ footer {
   letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
   display: flex; align-items: center; gap: .6rem;
 }
-.tt-icon { font-size: 1rem; }
 .tt-meta { display: flex; align-items: center; gap: .7rem; flex-shrink: 0; }
 .tt-count {
   font-family: 'Source Sans 3', sans-serif; font-size: .65rem;
@@ -712,7 +711,7 @@ footer {
   <div class="unified-results" id="unified-results"></div>
 
 <div id="library-grid">
-<div class="testament-group open" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label"><span class="tt-icon">📖</span>Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
+<div class="testament-group" id="tg-ot"><button class="testament-toggle" onclick="toggleTestament('tg-ot')"><span class="testament-toggle-label">Old Testament</span><span class="tt-meta"><span class="tt-count">39 books</span><span id="ot-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item" id="book-genesis">
   <button class="book-btn" onclick="toggleBook('genesis')">
     <span class="book-name">Genesis</span>
@@ -1064,7 +1063,7 @@ footer {
     <div class="chapter-grid"><span class="chapter-link coming" title="Malachi 1">Ch.1</span><span class="chapter-link coming" title="Malachi 2">Ch.2</span><span class="chapter-link coming" title="Malachi 3">Ch.3</span><span class="chapter-link coming" title="Malachi 4">Ch.4</span></div>
   </div>
 </div></div></div>
-<div class="testament-group" id="tg-nt"><button class="testament-toggle" onclick="toggleTestament('tg-nt')"><span class="testament-toggle-label"><span class="tt-icon">✝</span>New Testament</span><span class="tt-meta"><span class="tt-count">27 books</span><span id="nt-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
+<div class="testament-group" id="tg-nt"><button class="testament-toggle" onclick="toggleTestament('tg-nt')"><span class="testament-toggle-label">New Testament</span><span class="tt-meta"><span class="tt-count">27 books</span><span id="nt-live-badge"></span><span class="tt-chev">&#9660;</span></span></button><div class="testament-body"><div class="books-grid">
 <div class="book-item has-live" id="book-matthew">
   <button class="book-btn" onclick="toggleBook('matthew')">
     <span class="book-name">Matthew</span>
