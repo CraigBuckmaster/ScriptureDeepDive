@@ -1,0 +1,13 @@
+{
+  "name": "scripture-deep-dive-tests",
+  "version": "1.0.0",
+  "description": "Playwright UI tests for Scripture Deep Dive",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:mobile": "npx playwright test --project=mobile"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}
