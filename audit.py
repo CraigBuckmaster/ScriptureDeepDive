@@ -306,10 +306,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('8. index.html')
 
-if 'testament-group open" id="tg-ot"' in idx:
-    ok('OT testament open by default')
-else:
-    warn('OT testament not set to open by default')
+# OT/NT both start collapsed by design
 
 for fn in ['handleSearch', 'VERSES.map']:
     if fn in idx: ok(f'{fn} present')
