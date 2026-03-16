@@ -16,6 +16,47 @@ def _bootstrap():
 
 CSS, TOG_JS, QNAV_JS, SW_JS = _bootstrap()
 
+# CSS for panel types added after the original Genesis_1.html template was frozen
+EXTRA_CSS = '''
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+'''
+
 REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT'),
     ('exodus',   'Exodus',    40, 40, 'OT'),
@@ -280,6 +321,7 @@ def head(book_name, book_dir, ch, is_nt=False):
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 {CSS}
+{EXTRA_CSS}
 </style>
 </head>
 <body>
@@ -392,6 +434,42 @@ def mac_panel(pid, notes):
     return (f'<div id="{pid}" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4>'
             f'<div class="com-source">MacArthur Study Bible \u2014 Faithful Paraphrase</div>{items}</div>')
 
+def textual_panel(pid, items):
+    """
+    Textual criticism panel. items = list of (verse_ref, issue_title, variants_html, significance).
+    variants_html may contain <span class="tx-ms">MT</span> <span class="tx-lxx">LXX</span> etc.
+    """
+    inner = ''
+    for ref, issue, variants, significance in items:
+        inner += (f'<div class="tx-item">'
+                  f'<div class="tx-header"><span class="tx-ref">{ref}</span>'
+                  f'<span class="tx-issue">{issue}</span></div>'
+                  f'<div class="tx-variants">{variants}</div>'
+                  f'<div class="tx-sig">{significance}</div></div>')
+    return (f'<div id="{pid}" class="anno-panel tx-panel"><h4>Textual Notes</h4>{inner}</div>')
+
+
+def debate_panel(pid, debates):
+    """
+    Scholarly debate panel. debates = list of (title, positions, synthesis).
+    positions = list of (position_name, proponents, argument).
+    synthesis = brief note on current scholarly consensus or where debate stands.
+    """
+    inner = ''
+    for title, positions, synthesis in debates:
+        pos_html = ''
+        for name, proponents, argument in positions:
+            pos_html += (f'<div class="db-position">'
+                         f'<div class="db-pos-name">{name}</div>'
+                         f'<div class="db-proponents">{proponents}</div>'
+                         f'<div class="db-argument">{argument}</div></div>')
+        inner += (f'<div class="db-debate">'
+                  f'<div class="db-title">{title}</div>'
+                  f'<div class="db-positions">{pos_html}</div>'
+                  f'<div class="db-synthesis">{synthesis}</div></div>')
+    return (f'<div id="{pid}" class="anno-panel db-panel"><h4>Scholarly Debates</h4>{inner}</div>')
+
+
 def themes_btn_panel(pid, theme_data, chapter_note):
     n = len(theme_data)
     cx, cy, r = 120, 120, 85
@@ -420,8 +498,15 @@ def themes_btn_panel(pid, theme_data, chapter_note):
              f'<p style="font-family:\'Source Sans 3\',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">{chapter_note}</p></div>')
     return btn, panel
 
-def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn, themes_panel_html, is_nt=False):
+def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn, themes_panel_html,
+                    is_nt=False, textual_h='', debate_h=''):
     lang_btn = 'Greek-Rooted Reading' if is_nt else 'Hebrew-Rooted Reading'
+    tx_btn = (f'<button class="anno-trigger textual" onclick="tog(this,\'{cid}-tx\')">'
+              f'<span>Textual Notes</span><span class="chev">&#9660;</span></button>'
+              if textual_h else '')
+    db_btn = (f'<button class="anno-trigger debate" onclick="tog(this,\'{cid}-debate\')">'
+              f'<span>Scholarly Debates</span><span class="chev">&#9660;</span></button>'
+              if debate_h else '')
     return f'''<div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
@@ -432,9 +517,9 @@ def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn,
 <button class="anno-trigger literary" onclick="tog(this,\'{cid}-lit\')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
 <button class="anno-trigger hebrew-text" onclick="tog(this,\'{cid}-hebtext\')"><span>{lang_btn}</span><span class="chev">&#9660;</span></button>
 <button class="anno-trigger threading" onclick="tog(this,\'{cid}-thread\')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-{themes_btn}
+{tx_btn}{db_btn}{themes_btn}
 </div>
-{ppl}{trans}{src}{rec}{lit}{hebtext}{thread}{themes_panel_html}
+{ppl}{trans}{src}{rec}{lit}{hebtext}{thread}{textual_h}{debate_h}{themes_panel_html}
 </div>'''
 
 def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_html,
@@ -475,6 +560,9 @@ def build_chapter(book_dir, ch, data):
       hebtext  str  -- raw HTML for the Hebrew/Greek reading panel
       thread   list of (dir_cls, anchor, arrow, target, type_cls, type_label, text)
       themes   (list of (label, score), chapter_note_str)
+      textual  list of (verse_ref, issue_title, variants_html, significance)  [OPTIONAL]
+      debate   list of (title, positions, synthesis)                           [OPTIONAL]
+               where positions = list of (name, proponents, argument)
 
     section dict keys:
       header   str
@@ -545,9 +633,12 @@ def build_chapter(book_dir, ch, data):
     hebt_h   = hebtext_panel(f'{cid}-hebtext', data['hebtext'], is_nt)
     thread_h = thread_panel(f'{cid}-thread', data['thread'])
     tb, tp   = themes_btn_panel(f'{cid}-themes', themes_data, themes_note)
+    tx_h     = textual_panel(f'{cid}-tx',    data['textual']) if 'textual' in data else ''
+    db_h     = debate_panel( f'{cid}-debate',data['debate'])  if 'debate'  in data else ''
 
     sch = scholarly_block(cid, ppl_h, trans_h, src_h, rec_h,
-                          lit_h, hebt_h, thread_h, tb, tp, is_nt)
+                          lit_h, hebt_h, thread_h, tb, tp, is_nt,
+                          textual_h=tx_h, debate_h=db_h)
 
     page(book_name, book_dir, ch, data['title'], meta['auth'],
          sections_html, sch,
