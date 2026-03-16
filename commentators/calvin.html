@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>John Calvin &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#7ba7cc; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="calvin.html" class="com-nav-item" style="color:#7ba7cc;border-bottom:2px solid #7ba7cc;">Calvin</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Reformed Theology &middot; 16th Century</p>
+    <h1 class="bio-name">John Calvin</h1>
+    <p class="bio-tradition">1509&ndash;1564 &middot; <span>Reformer &amp; Theologian</span> &middot; Geneva &middot; Pastor, Theologian, Biblical Commentator</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;Nearly all the wisdom we possess, that is to say, true and sound wisdom, consists of two parts: the knowledge of God and of ourselves.&rdquo;</p>
+    <cite>&mdash; John Calvin, Institutes of the Christian Religion, I.1.1</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>John Calvin was born in Noyon, France in 1509 and trained as a lawyer before the Protestant Reformation redirected his intellectual energies toward theology and Scripture. His conversion to Protestantism, which he described as a &ldquo;sudden conversion,&rdquo; occurred sometime around 1533. By 1536 he had published the first edition of his Institutes of the Christian Religion &mdash; a systematic exposition of Protestant theology that, in its final 1559 form, stands as the greatest work of the Reformation.</p>
+    <p>After a period in Basel and Strasbourg, Calvin settled in Geneva in 1541, where he spent the rest of his life as the city&rsquo;s preacher and theological voice. He preached through the entire Bible, often multiple times per week, and from those sermons grew his monumental series of biblical commentaries &mdash; covering the entire New Testament except Revelation, and most of the Old Testament.</p>
+    <p>Calvin died in 1564, having shaped Reformed theology in a way that still defines large portions of Presbyterianism, Congregationalism, and Reformed Baptist traditions worldwide. His commentaries were written in Latin and French and have been continuously in print since the 16th century.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Calvin&rsquo;s commentaries are distinguished by three principles that set him apart from both his medieval predecessors and many of his Protestant successors. First, brevitas et facilitas &mdash; brevity and clarity. Calvin deliberately rejected the encyclopedic method of medieval biblical commentary, which accumulated layers of citation and qualification. He wanted the reader to see the text, not a library about the text.</p>
+    <p>Second, the &ldquo;accommodation&rdquo; principle: God condescends to human capacity in the way Scripture speaks. When Moses describes the firmament or the size of the sun, he is not giving a cosmological treatise but a description suited to ordinary human perception. This hermeneutical move, which Calvin used consistently, anticipated later discussions of genre, phenomenological language, and the relationship between Scripture and natural science.</p>
+    <p>Third, the unity of the two Testaments. Calvin read the Old Testament not as a religion of works replacing by a religion of grace, but as the same covenant of grace expressed through different forms. Abraham was saved by faith in Christ, just as Paul was &mdash; the difference was in the clarity of the revelation, not the substance of the salvation. This gave his Old Testament commentary a christological depth that made him far more attentive to messianic themes than many modern historical-critical commentators.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Calvin is the founder of what became known as the Reformed or Calvinist tradition &mdash; a strand of Protestantism defined by its insistence on divine sovereignty in salvation (election, predestination), the supremacy of Scripture, the priesthood of all believers, and the radical sinfulness of human nature apart from grace. The Westminster Confession of Faith (1646), the Heidelberg Catechism (1563), and the Canons of Dort (1619) all represent the tradition Calvin founded, though none are simply identical with his own thought. His commentaries remain living documents in the Reformed community and are increasingly read by evangelicals of all traditions.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">Institutes of the Christian Religion (1536&ndash;1559)</span><span class="work-desc">The systematic theological masterwork of the Reformation. Four books covering the knowledge of God, the knowledge of humanity, the way of salvation in Christ, and the external means of grace.</span></li>
+      <li><span class="work-title">Commentaries on the Pentateuch (1554&ndash;1563)</span><span class="work-desc">His commentary on Genesis, Exodus, Leviticus, Numbers, and Deuteronomy. The primary source for Calvin notes in this tool. Public domain.</span></li>
+      <li><span class="work-title">Commentaries on the New Testament (1540&ndash;1556)</span><span class="work-desc">Covering all NT books except Revelation. Still read as models of exegetical commentary &mdash; precise, pastoral, and theologically substantial.</span></li>
+      <li><span class="work-title">Sermons on Genesis (1559&ndash;1561)</span><span class="work-desc">123 sermons preached through Genesis in Geneva. More expansive and pastoral than the commentary, giving insight into how he translated exegesis into proclamation.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Calvin notes currently appear in Genesis 1. Coverage will expand across Genesis, Exodus, and Matthew as the retrofit progresses.</p>
+    <div class="bio-appears">
+      <a href="../genesis/Genesis_1.html">Genesis 1</a>
+    </div>
+  </div>
+<div class="bio-others">
+<p class="bio-others-title">Other Scholars</p>
+<div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish / JPS Torah Commentary</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a></div>
+</div>
+</div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>
