@@ -112,7 +112,32 @@ EXTRA_CSS = '''
 .scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
 
 
-/* ── Textual Notes panel ─────────────────────────────── */
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
 .tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
 .tx-panel h4{color:var(--tx-accent);}
@@ -509,10 +534,31 @@ def thread_panel(pid, items):
                   f'<div class="thread-text">{txt}</div></div>')
     return f'<div id="{pid}" class="anno-panel thread-panel"><h4>Intertextual Threading</h4>{inner}</div>'
 
+def commentary_panel(pid, commentator_key, notes):
+    """
+    Generic commentary panel. commentator_key: 'macarthur' | 'sarna' | 'alter' | 'calvin'
+    notes = list of (verse_ref, text)
+    """
+    META = {
+        'macarthur': ('MacArthur Study Notes',    'MacArthur Study Bible \u2014 Faithful Paraphrase'),
+        'sarna':     ('Sarna \u2014 JPS Commentary',   'Nahum Sarna, JPS Torah Commentary \u2014 Scholarly Paraphrase'),
+        'alter':     ('Alter \u2014 Literary Reading', 'Robert Alter, The Hebrew Bible: A Translation with Commentary \u2014 Scholarly Paraphrase'),
+        'calvin':    ('Calvin\u2019s Commentary',      'John Calvin, Commentaries \u2014 Faithful Paraphrase'),
+    }
+    title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
+    items = ''.join(
+        f'<div class="com-note"><span class="com-ref">{ref}</span><p>{text}</p></div>'
+        for ref, text in notes)
+    return (f'<div id="{pid}" class="anno-panel com-panel com-{commentator_key}">'
+            f'<h4>{title}</h4>'
+            f'<div class="com-source">{source}</div>'
+            f'{items}</div>')
+
+
 def mac_panel(pid, notes):
-    items = ''.join(f'<div class="com-note"><span class="com-ref">{ref}</span><p>{text}</p></div>' for ref, text in notes)
-    return (f'<div id="{pid}" class="anno-panel com-panel"><h4>MacArthur Study Notes</h4>'
-            f'<div class="com-source">MacArthur Study Bible \u2014 Faithful Paraphrase</div>{items}</div>')
+    """Backward-compatible wrapper around commentary_panel."""
+    return commentary_panel(pid, 'macarthur', notes)
+
 
 def textual_panel(pid, items):
     """
@@ -673,14 +719,17 @@ def build_chapter(book_dir, ch, data):
 
         # --- buttons (presence of data key = presence of button) ---
         btns = []
-        if 'heb'        in sec: btns.append(('hebrew',    lang,      f'{sid}-grk'))
-        if 'places'     in sec: btns.append(('places',    'Places',  f'{sid}-places'))
-        if 'people_sec' in sec: btns.append(('people',    'People',  f'{sid}-ppl'))
-        if 'timeline'   in sec: btns.append(('timeline',  'Timeline',f'{sid}-tl'))
-        if 'hist'       in sec: btns.append(('history',   'History', f'{sid}-hist'))
-        if 'ctx'        in sec: btns.append(('context',   'Context', f'{sid}-ctx'))
+        if 'heb'        in sec: btns.append(('hebrew',    lang,       f'{sid}-grk'))
+        if 'places'     in sec: btns.append(('places',    'Places',   f'{sid}-places'))
+        if 'people_sec' in sec: btns.append(('people',    'People',   f'{sid}-ppl'))
+        if 'timeline'   in sec: btns.append(('timeline',  'Timeline', f'{sid}-tl'))
+        if 'hist'       in sec: btns.append(('history',   'History',  f'{sid}-hist'))
+        if 'ctx'        in sec: btns.append(('context',   'Context',  f'{sid}-ctx'))
         if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',f'{sid}-cross'))
         if 'mac'        in sec: btns.append(('macarthur', 'MacArthur',f'{sid}-mac'))
+        if 'sarna'      in sec: btns.append(('sarna',     'Sarna',    f'{sid}-sarna'))
+        if 'alter'      in sec: btns.append(('alter',     'Alter',    f'{sid}-alter'))
+        if 'calvin'     in sec: btns.append(('calvin',    'Calvin',   f'{sid}-calvin'))
         btn_html = btn_row(*btns)
 
         # --- panels ---
@@ -692,7 +741,10 @@ def build_chapter(book_dir, ch, data):
         if 'hist'       in sec: panels_html += hist_panel(f'{sid}-hist',   sec['hist'])
         if 'ctx'        in sec: panels_html += ctx_panel(f'{sid}-ctx',     sec['ctx'])
         if 'cross'      in sec: panels_html += cross_panel(f'{sid}-cross', sec['cross'])
-        if 'mac'        in sec: panels_html += mac_panel(f'{sid}-mac',     sec['mac'])
+        if 'mac'        in sec: panels_html += commentary_panel(f'{sid}-mac',   'macarthur', sec['mac'])
+        if 'sarna'      in sec: panels_html += commentary_panel(f'{sid}-sarna', 'sarna',     sec['sarna'])
+        if 'alter'      in sec: panels_html += commentary_panel(f'{sid}-alter', 'alter',     sec['alter'])
+        if 'calvin'     in sec: panels_html += commentary_panel(f'{sid}-calvin','calvin',    sec['calvin'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
