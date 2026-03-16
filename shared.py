@@ -316,10 +316,29 @@ BOOK_META = {
     },
     'matthew': {
         'is_nt': True,
-        'auth': ('<strong>Author:</strong> Matthew (Levi), tax collector and apostle.\n\n'
-                 '<strong>When written:</strong> c.AD 80-90, Antioch of Syria.\n\n'
-                 '<strong>What prompted it:</strong> To present Jesus as the fulfilment of '
-                 'Israel\'s Scripture and the promised Messiah, written primarily for a Jewish audience.'),
+        'auth': ('<strong>Author:</strong> Matthew (Levi) ben Alphaeus, a tax collector called by Jesus '
+                 'at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and '
+                 'an eyewitness to the ministry of Jesus. He would have been literate and numerate by '
+                 'profession — uniquely equipped to compose a carefully structured written account. '
+                 'Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that '
+                 '"Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as '
+                 'best he could." The Gospel as we have it is in polished literary Greek, suggesting '
+                 'either a Greek composition drawing on Aramaic sources, or a Greek original.\n\n'
+                 '<strong>When written:</strong> c.AD 80&ndash;90, traditionally associated with Antioch '
+                 'of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. '
+                 'The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages '
+                 '(Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark\'s '
+                 'Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). '
+                 'Matthew shapes his sources with a more formal, structured literary hand than any of the '
+                 'other evangelists.\n\n'
+                 '<strong>What prompted it:</strong> To present Jesus of Nazareth as the fulfilment of '
+                 'Israel\'s entire scriptural heritage — the promised Messiah, the new Moses, the true '
+                 'Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community '
+                 'navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula '
+                 'citations ("all this took place to fulfil what was spoken through the prophet") are the '
+                 'theological spine of the work: Israel\'s Scripture is not superseded but completed in '
+                 'Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that '
+                 'begins with Abraham and ends with all nations.'),
         'vhl_places': ['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives',
                        'Galilee','Capernaum','Nazareth','Jordan'],
         'vhl_people': ['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter',
