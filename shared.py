@@ -428,23 +428,11 @@ def head(book_name, book_dir, ch, is_nt=False):
 <body>
 {nav}'''
 
-def legend(is_nt=False):
-    lang = 'Greek' if is_nt else 'Hebrew'
-    return f'''<div class="legend">
-<div class="legend-item"><div class="legend-dot dot-hebrew"></div>{lang}</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>'''
-
 def chapter_header(book_name, ch, title, auth_text, is_nt=False):
     return f'''<header>
 <h1>{book_name} {ch}</h1>
 <p>{title}</p>
 </header>
-{legend(is_nt)}
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
 <div class="authorship-content">{auth_sections(auth_text)}</div>
