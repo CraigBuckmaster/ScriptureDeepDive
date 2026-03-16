@@ -1504,7 +1504,7 @@ updateLiveBadge('tg-nt', 'nt-live-badge');
     if (!bar || !chips) return;
     hist.forEach(function(item) {
       var a = document.createElement('a');
-      a.href = item.url; a.className = 'continue-chip'; a.textContent = (item.title || '') + (item.subtitle ? ' — ' + item.subtitle : '');
+      a.href = item.url; a.className = 'continue-chip'; a.textContent = item.label || ((item.title || '') + (item.subtitle ? ' · ' + item.subtitle.slice(0,30) : ''));
       chips.appendChild(a);
     });
     bar.style.display = 'block';
