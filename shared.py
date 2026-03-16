@@ -984,7 +984,7 @@ def update_homepage():
     return total_live
 
 
-
+def rebuild_verses_js():
     """Rebuild /verses.js from all live chapter HTML files. Call after every batch."""
     all_verses = []
     for book_dir, book_name, total, live, _ in REGISTRY:
