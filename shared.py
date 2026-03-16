@@ -138,6 +138,30 @@ EXTRA_CSS = '''
 .com-panel.com-calvin h4{color:#7ba7cc;}
 .com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
 
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
 .tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
 .tx-panel h4{color:var(--tx-accent);}
@@ -540,10 +564,13 @@ def commentary_panel(pid, commentator_key, notes):
     notes = list of (verse_ref, text)
     """
     META = {
-        'macarthur': ('MacArthur Study Notes',    'MacArthur Study Bible \u2014 Faithful Paraphrase'),
-        'sarna':     ('Sarna \u2014 JPS Commentary',   'Nahum Sarna, JPS Torah Commentary \u2014 Scholarly Paraphrase'),
-        'alter':     ('Alter \u2014 Literary Reading', 'Robert Alter, The Hebrew Bible: A Translation with Commentary \u2014 Scholarly Paraphrase'),
-        'calvin':    ('Calvin\u2019s Commentary',      'John Calvin, Commentaries \u2014 Faithful Paraphrase'),
+        'macarthur': ('MacArthur Study Notes',         'MacArthur Study Bible \u2014 Faithful Paraphrase'),
+        'sarna':     ('Sarna \u2014 JPS Commentary',  'Nahum Sarna, JPS Torah Commentary \u2014 Scholarly Paraphrase'),
+        'alter':     ('Alter \u2014 Literary Reading','Robert Alter, The Hebrew Bible: A Translation with Commentary \u2014 Scholarly Paraphrase'),
+        'calvin':    ('Calvin\u2019s Commentary',     'John Calvin, Commentaries \u2014 Faithful Paraphrase'),
+        'robertson': ('Robertson \u2014 Word Pictures','A.T. Robertson, Word Pictures in the New Testament \u2014 Public Domain'),
+        'catena':    ('Catena Aurea',                  'Thomas Aquinas (compiler), Catena Aurea \u2014 Patristic Commentary, Public Domain'),
+        'netbible':  ('NET Bible Notes',               'NET Bible Full Notes Edition \u2014 Biblical Studies Press'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -729,7 +756,10 @@ def build_chapter(book_dir, ch, data):
         if 'mac'        in sec: btns.append(('macarthur', 'MacArthur',f'{sid}-mac'))
         if 'sarna'      in sec: btns.append(('sarna',     'Sarna',    f'{sid}-sarna'))
         if 'alter'      in sec: btns.append(('alter',     'Alter',    f'{sid}-alter'))
-        if 'calvin'     in sec: btns.append(('calvin',    'Calvin',   f'{sid}-calvin'))
+        if 'calvin'     in sec: btns.append(('calvin',    'Calvin',    f'{sid}-calvin'))
+        if 'robertson'  in sec: btns.append(('robertson', 'Robertson', f'{sid}-robertson'))
+        if 'catena'     in sec: btns.append(('catena',    'Catena Aurea', f'{sid}-catena'))
+        if 'netbible'   in sec: btns.append(('netbible',  'NET Notes', f'{sid}-net'))
         btn_html = btn_row(*btns)
 
         # --- panels ---
@@ -744,7 +774,10 @@ def build_chapter(book_dir, ch, data):
         if 'mac'        in sec: panels_html += commentary_panel(f'{sid}-mac',   'macarthur', sec['mac'])
         if 'sarna'      in sec: panels_html += commentary_panel(f'{sid}-sarna', 'sarna',     sec['sarna'])
         if 'alter'      in sec: panels_html += commentary_panel(f'{sid}-alter', 'alter',     sec['alter'])
-        if 'calvin'     in sec: panels_html += commentary_panel(f'{sid}-calvin','calvin',    sec['calvin'])
+        if 'calvin'     in sec: panels_html += commentary_panel(f'{sid}-calvin',   'calvin',    sec['calvin'])
+        if 'robertson'  in sec: panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
+        if 'catena'     in sec: panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
+        if 'netbible'   in sec: panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
