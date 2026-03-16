@@ -1471,6 +1471,11 @@ function toggleTestament(id) {
 // ── BOOK TOGGLE ───────────────────────────────────────────────────────────
 function toggleBook(id) {
   const item = document.getElementById('book-' + id);
+  if (!item) return;
+  // Live books: navigate to first live chapter
+  const firstLive = item.querySelector('.chapter-link.live');
+  if (firstLive) { window.location.href = firstLive.getAttribute('href'); return; }
+  // Coming-soon books: toggle the chapter list
   const wasOpen = item.classList.contains('open');
   document.querySelectorAll('.book-item.open').forEach(el => el.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
