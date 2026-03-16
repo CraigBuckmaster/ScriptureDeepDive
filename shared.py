@@ -222,6 +222,37 @@ BOOK_PREFIX = {
     'matthew':  'mt',
 }
 
+# Scope rules for each commentator.
+# build_chapter() silently skips a commentator whose scope excludes the current book.
+# This means generator scripts never need to know "don't include Robertson in Genesis" —
+# the architecture handles it. Add new books to each scope as coverage expands.
+COMMENTATOR_SCOPE = {
+    # ── Universal — apply to every book ─────────────────────────────────────
+    'macarthur': 'all',   # MacArthur Study Bible covers entire canon
+    'calvin':    'all',   # Calvin's Commentaries cover entire Bible
+    'netbible':  'all',   # NET Bible Full Notes cover entire canon
+
+    # ── OT-only commentators ─────────────────────────────────────────────────
+    # Nahum Sarna — JPS Torah Commentary: Genesis, Exodus, Leviticus, Num, Deut
+    # (Ruth and Proverbs are not Torah — Sarna did not write on them)
+    'sarna':     ['genesis', 'exodus'],
+
+    # Robert Alter — The Hebrew Bible: A Translation with Commentary (2018)
+    # Covers the entire Hebrew Bible: Torah, Prophets, and Writings
+    # Add book names here as we build them out
+    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs'],
+    # Future: 'psalms', 'job', 'samuel', 'kings', 'isaiah', etc.
+
+    # ── NT-only commentators ─────────────────────────────────────────────────
+    # A.T. Robertson — Word Pictures in the New Testament (NT only)
+    'robertson': ['matthew'],
+    # Future: 'mark', 'luke', 'john', 'acts', 'romans', etc.
+
+    # Catena Aurea — Aquinas compilation on all four Gospels only
+    'catena':    ['matthew'],
+    # Future: 'mark', 'luke', 'john'
+}
+
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
 BOOK_META = {
     'genesis': {
@@ -667,26 +698,29 @@ def themes_btn_panel(pid, theme_data, chapter_note):
 
 def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn, themes_panel_html,
                     is_nt=False, textual_h='', debate_h=''):
+    """Render the chapter-level scholarly block. Any empty string argument suppresses
+    its button — so omitted data keys produce a clean block with no dead buttons."""
     lang_btn = 'Greek-Rooted Reading' if is_nt else 'Hebrew-Rooted Reading'
-    tx_btn = (f'<button class="anno-trigger textual" onclick="tog(this,\'{cid}-tx\')">'
-              f'<span>Textual Notes</span></button>'
-              if textual_h else '')
-    db_btn = (f'<button class="anno-trigger debate" onclick="tog(this,\'{cid}-debate\')">'
-              f'<span>Scholarly Debates</span></button>'
-              if debate_h else '')
+    # Conditional buttons — only rendered when the matching panel has content
+    ppl_btn    = f'<button class="anno-trigger people" onclick="tog(this,\'{cid}-ppl\')"><span>People</span></button>' if ppl else ''
+    trans_btn  = f'<button class="anno-trigger translations" onclick="tog(this,\'{cid}-trans\')"><span>Translations</span></button>' if trans else ''
+    src_btn    = f'<button class="anno-trigger sources" onclick="tog(this,\'{cid}-src\')"><span>Ancient Sources</span></button>' if src else ''
+    rec_btn    = f'<button class="anno-trigger reception" onclick="tog(this,\'{cid}-rec\')"><span>Reception History</span></button>' if rec else ''
+    lit_btn    = f'<button class="anno-trigger literary" onclick="tog(this,\'{cid}-lit\')"><span>Literary Structure</span></button>' if lit else ''
+    hebt_btn   = f'<button class="anno-trigger hebrew-text" onclick="tog(this,\'{cid}-hebtext\')"><span>{lang_btn}</span></button>' if hebtext else ''
+    thread_btn = f'<button class="anno-trigger threading" onclick="tog(this,\'{cid}-thread\')"><span>Intertextual Threading</span></button>' if thread else ''
+    tx_btn     = f'<button class="anno-trigger textual" onclick="tog(this,\'{cid}-tx\')"><span>Textual Notes</span></button>' if textual_h else ''
+    db_btn     = f'<button class="anno-trigger debate" onclick="tog(this,\'{cid}-debate\')"><span>Scholarly Debates</span></button>' if debate_h else ''
+    all_btns   = ''.join(filter(None, [ppl_btn, trans_btn, src_btn, rec_btn, lit_btn,
+                                       hebt_btn, thread_btn, tx_btn, db_btn, themes_btn]))
+    all_panels = ''.join(filter(None, [ppl, trans, src, rec, lit, hebtext, thread,
+                                       textual_h, debate_h, themes_panel_html]))
     return f'''<div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,\'{cid}-ppl\')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,\'{cid}-trans\')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,\'{cid}-src\')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,\'{cid}-rec\')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,\'{cid}-lit\')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,\'{cid}-hebtext\')"><span>{lang_btn}</span></button>
-<button class="anno-trigger threading" onclick="tog(this,\'{cid}-thread\')"><span>Intertextual Threading</span></button>
-{tx_btn}{db_btn}{themes_btn}
+{all_btns}
 </div>
-{ppl}{trans}{src}{rec}{lit}{hebtext}{thread}{textual_h}{debate_h}{themes_panel_html}
+{all_panels}
 </div>'''
 
 def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_html,
@@ -696,56 +730,82 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
         raise ValueError(f"{book_name} {ch}: only {sec_count} section(s) — need at least 2.")
     out_dir = f'/home/claude/ScriptureDeepDive/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
+    # Guard against None from _bootstrap() in case a script wasn't found
+    _tog      = TOG_JS       or ''
+    _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
+    _qnav     = QNAV_JS      or ''
+    _qctrl    = QNAV_CTRL_JS or ''
+    _sw       = SW_JS        or ''
     html = (head(book_name, book_dir, ch, is_nt) +
             '\n' + qnav_overlay(book_dir, ch) +
             '\n<main>\n' +
             chapter_header(book_name, ch, title, auth_text, is_nt) +
             '\n' + sections_html + '\n' + scholarly_html +
             '\n</main>\n' +
-            TOG_JS + '\n' +
-            vhl_js(vhl_places, vhl_people, vhl_time, vhl_key) + '\n' +
-            QNAV_JS + '\n' +
-            QNAV_CTRL_JS + '\n' +
+            _tog + '\n' +
+            _vhl + '\n' +
+            _qnav + '\n' +
+            _qctrl + '\n' +
             '<script src="../verses.js"></script>\n' +
-            SW_JS + '\n' + HISTORY_JS + '\n</body></html>')
+            _sw + '\n' + HISTORY_JS + '\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     return path
 
 def build_chapter(book_dir, ch, data):
     """
-    Build a chapter HTML file from a clean data dict.
-    All book constants come from BOOK_META; all panel IDs are auto-generated.
+    Build a chapter HTML file from a data dict and write it to disk.
+    All book constants (auth text, VHL lists, is_nt) come from BOOK_META.
+    All panel IDs are auto-generated.  Commentator scope is enforced automatically
+    via COMMENTATOR_SCOPE — generator scripts never need to filter by testament.
 
-    data keys:
-      title    str
-      sections list of section dicts (see below)
-      ppl      list of (name, role, text)
-      trans    (verse_ref_str, list of (version, text))
-      src      list of (title, quote, note)
-      rec      list of (title, text)
-      lit      (list of (label, vv, text, center), overall_note_str)
-      hebtext  str  -- raw HTML for the Hebrew/Greek reading panel
-      thread   list of (dir_cls, anchor, arrow, target, type_cls, type_label, text)
-      themes   (list of (label, score), chapter_note_str)
-      textual  list of (verse_ref, issue_title, variants_html, significance)  [OPTIONAL]
-      debate   list of (title, positions, synthesis)                           [OPTIONAL]
-               where positions = list of (name, proponents, argument)
+    ── REQUIRED TOP-LEVEL KEYS ─────────────────────────────────────────────
+      title    str           Chapter title for the header
+      sections list[dict]    2+ section dicts (see below)
 
-    section dict keys:
-      header   str
-      verses   list of (num, text)
-      heb      list of (word, translit, gloss, note)  -> Hebrew/Greek button + panel
-      ctx      str                                     -> Context button + panel
-      cross    list of (ref, text)                    -> Cross-Ref button + panel
-      mac      list of (ref, text)                    -> MacArthur button + panel
-      -- optional, presence drives button + panel --
-      hist     str                                     -> History button + panel
-      places   list of (name, region, text)           -> Places button + panel
-      people_sec list of (name, role, text)           -> People button + panel (section-level)
-      timeline list of (era, event)                   -> Timeline button + panel
+    ── OPTIONAL SCHOLARLY BLOCK KEYS ───────────────────────────────────────
+    All scholarly block keys are optional. Omit any that haven't been written
+    yet — the corresponding button and panel will simply not appear.
+      ppl      list[(name, role, text)]
+      trans    (verse_ref_str, list[(version, text)])
+      src      list[(title, quote, note)]
+      rec      list[(title, text)]
+      lit      (list[(label, vv, text, center)], overall_note_str)
+      hebtext  str   raw HTML for the Hebrew/Greek reading panel
+      thread   list[(dir_cls, anchor, arrow, target, type_cls, type_label, text)]
+      themes   (list[(label, score)], chapter_note_str)
+      textual  list[(verse_ref, issue_title, variants_html, significance)]
+      debate   list[(title, positions, synthesis)]
+               where positions = list[(name, proponents, argument)]
 
-    Button order: heb -> places -> people_sec -> timeline -> hist -> ctx -> cross -> mac
+    ── SECTION DICT KEYS ────────────────────────────────────────────────────
+    Presence of a key drives the corresponding button + panel automatically.
+    Button order in rendered HTML: heb → places → people_sec → timeline →
+                                   hist → ctx → cross → mac → sarna → alter →
+                                   calvin → netbible → robertson → catena
+      header      str                     e.g. 'Verses 1–5 — Title'
+      verses      list[(int, str)]        NIV verse tuples
+      heb         list[(word, translit, gloss, note)]   Hebrew/Greek word study
+      ctx         str                     Context note
+      cross       list[(ref, text)]       Cross-references
+      hist        str          [OPTIONAL] Historical background
+      places      list[(name, region, text)]  [OPTIONAL]
+      people_sec  list[(name, role, text)]    [OPTIONAL] Section-level people
+      timeline    list[(era, event)]          [OPTIONAL]
+      mac         list[(ref, text)]      MacArthur notes
+      sarna       list[(ref, text)]      Sarna/JPS notes      [scope: OT only]
+      alter       list[(ref, text)]      Alter literary notes [scope: OT prose]
+      calvin      list[(ref, text)]      Calvin notes
+      netbible    list[(ref, text)]      NET Bible notes
+      robertson   list[(ref, text)]      Robertson NT Greek   [scope: NT only]
+      catena      list[(ref, text)]      Catena Aurea         [scope: Gospels]
+
+    ── COMMENTATOR SCOPE ────────────────────────────────────────────────────
+    COMMENTATOR_SCOPE in this file defines which books each commentator covers.
+    build_chapter() silently skips any commentator whose scope excludes the
+    current book — even if data keys for that commentator are present in the
+    section dict. This means generator scripts never need to filter by testament.
+    Extend COMMENTATOR_SCOPE as coverage expands.
     """
     meta      = BOOK_META[book_dir]
     book_name = next(n for d,n,*_ in REGISTRY if d==book_dir)
@@ -754,6 +814,11 @@ def build_chapter(book_dir, ch, data):
     prefix    = BOOK_PREFIX[book_dir]
     cid       = f'{prefix}{ch}'
 
+    # Pre-compute which commentators are in scope for this book
+    def in_scope(key):
+        scope = COMMENTATOR_SCOPE.get(key, 'all')
+        return scope == 'all' or book_dir in scope
+
     sections_html = ''
     for i, sec in enumerate(data['sections']):
         sid = f'{cid}-s{i+1}'
@@ -761,25 +826,25 @@ def build_chapter(book_dir, ch, data):
         # --- verses ---
         verses_html = ''.join(verse(n, t) for n, t in sec['verses'])
 
-        # --- buttons (presence of data key = presence of button) ---
+        # --- buttons: presence of key + scope check drives inclusion ---
         btns = []
-        if 'heb'        in sec: btns.append(('hebrew',    lang,       f'{sid}-grk'))
-        if 'places'     in sec: btns.append(('places',    'Places',   f'{sid}-places'))
-        if 'people_sec' in sec: btns.append(('people',    'People',   f'{sid}-ppl'))
-        if 'timeline'   in sec: btns.append(('timeline',  'Timeline', f'{sid}-tl'))
-        if 'hist'       in sec: btns.append(('history',   'History',  f'{sid}-hist'))
-        if 'ctx'        in sec: btns.append(('context',   'Context',  f'{sid}-ctx'))
-        if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',f'{sid}-cross'))
-        if 'mac'        in sec: btns.append(('macarthur', 'MacArthur',f'{sid}-mac'))
-        if 'sarna'      in sec: btns.append(('sarna',     'Sarna',    f'{sid}-sarna'))
-        if 'alter'      in sec: btns.append(('alter',     'Alter',    f'{sid}-alter'))
-        if 'calvin'     in sec: btns.append(('calvin',    'Calvin',    f'{sid}-calvin'))
-        if 'robertson'  in sec: btns.append(('robertson', 'Robertson', f'{sid}-robertson'))
-        if 'catena'     in sec: btns.append(('catena',    'Catena Aurea', f'{sid}-catena'))
-        if 'netbible'   in sec: btns.append(('netbible',  'NET Notes', f'{sid}-net'))
+        if 'heb'        in sec: btns.append(('hebrew',    lang,           f'{sid}-grk'))
+        if 'places'     in sec: btns.append(('places',    'Places',       f'{sid}-places'))
+        if 'people_sec' in sec: btns.append(('people',    'People',       f'{sid}-ppl'))
+        if 'timeline'   in sec: btns.append(('timeline',  'Timeline',     f'{sid}-tl'))
+        if 'hist'       in sec: btns.append(('history',   'History',      f'{sid}-hist'))
+        if 'ctx'        in sec: btns.append(('context',   'Context',      f'{sid}-ctx'))
+        if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',    f'{sid}-cross'))
+        if 'mac'        in sec and in_scope('macarthur'):  btns.append(('macarthur', 'MacArthur',   f'{sid}-mac'))
+        if 'sarna'      in sec and in_scope('sarna'):      btns.append(('sarna',     'Sarna',       f'{sid}-sarna'))
+        if 'alter'      in sec and in_scope('alter'):      btns.append(('alter',     'Alter',       f'{sid}-alter'))
+        if 'calvin'     in sec and in_scope('calvin'):     btns.append(('calvin',    'Calvin',      f'{sid}-calvin'))
+        if 'netbible'   in sec and in_scope('netbible'):   btns.append(('netbible',  'NET Notes',   f'{sid}-net'))
+        if 'robertson'  in sec and in_scope('robertson'):  btns.append(('robertson', 'Robertson',   f'{sid}-robertson'))
+        if 'catena'     in sec and in_scope('catena'):     btns.append(('catena',    'Catena Aurea',f'{sid}-catena'))
         btn_html = btn_row(*btns)
 
-        # --- panels ---
+        # --- panels: same key + scope logic ---
         panels_html = ''
         if 'heb'        in sec: panels_html += heb_panel(f'{sid}-grk',    sec['heb'], is_nt)
         if 'places'     in sec: panels_html += poi_panel(f'{sid}-places',  sec['places'])
@@ -788,33 +853,29 @@ def build_chapter(book_dir, ch, data):
         if 'hist'       in sec: panels_html += hist_panel(f'{sid}-hist',   sec['hist'])
         if 'ctx'        in sec: panels_html += ctx_panel(f'{sid}-ctx',     sec['ctx'])
         if 'cross'      in sec: panels_html += cross_panel(f'{sid}-cross', sec['cross'])
-        if 'mac'        in sec: panels_html += commentary_panel(f'{sid}-mac',   'macarthur', sec['mac'])
-        if 'sarna'      in sec: panels_html += commentary_panel(f'{sid}-sarna', 'sarna',     sec['sarna'])
-        if 'alter'      in sec: panels_html += commentary_panel(f'{sid}-alter', 'alter',     sec['alter'])
-        if 'calvin'     in sec: panels_html += commentary_panel(f'{sid}-calvin',   'calvin',    sec['calvin'])
-        if 'robertson'  in sec: panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
-        if 'catena'     in sec: panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
-        if 'netbible'   in sec: panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
+        if 'mac'      in sec and in_scope('macarthur'): panels_html += commentary_panel(f'{sid}-mac',      'macarthur', sec['mac'])
+        if 'sarna'    in sec and in_scope('sarna'):     panels_html += commentary_panel(f'{sid}-sarna',    'sarna',     sec['sarna'])
+        if 'alter'    in sec and in_scope('alter'):     panels_html += commentary_panel(f'{sid}-alter',    'alter',     sec['alter'])
+        if 'calvin'   in sec and in_scope('calvin'):    panels_html += commentary_panel(f'{sid}-calvin',   'calvin',    sec['calvin'])
+        if 'netbible' in sec and in_scope('netbible'):  panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
+        if 'robertson' in sec and in_scope('robertson'): panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
+        if 'catena'   in sec and in_scope('catena'):    panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
                           f'{verses_html}{btn_html}{panels_html}</div>')
 
-    # --- scholarly block ---
-    trans_ref, trans_rows = data['trans']
-    lit_rows, lit_note    = data['lit']
-    themes_data, themes_note = data['themes']
-
-    ppl_h    = ppl_panel(   f'{cid}-ppl',    data['ppl'])
-    trans_h  = trans_panel( f'{cid}-trans',  trans_ref, trans_rows)
-    src_h    = src_panel(   f'{cid}-src',    data['src'])
-    rec_h    = rec_panel(   f'{cid}-rec',    data['rec'])
-    lit_h    = lit_panel(   f'{cid}-lit',    lit_rows, lit_note)
-    hebt_h   = hebtext_panel(f'{cid}-hebtext', data['hebtext'], is_nt)
-    thread_h = thread_panel(f'{cid}-thread', data['thread'])
-    tb, tp   = themes_btn_panel(f'{cid}-themes', themes_data, themes_note)
-    tx_h     = textual_panel(f'{cid}-tx',    data['textual']) if 'textual' in data else ''
-    db_h     = debate_panel( f'{cid}-debate',data['debate'])  if 'debate'  in data else ''
+    # --- scholarly block (all keys optional — omit any and its button disappears) ---
+    ppl_h    = ppl_panel(   f'{cid}-ppl',     data['ppl'])                       if 'ppl'     in data else ''
+    trans_h  = trans_panel( f'{cid}-trans',   *data['trans'])                    if 'trans'   in data else ''
+    src_h    = src_panel(   f'{cid}-src',     data['src'])                       if 'src'     in data else ''
+    rec_h    = rec_panel(   f'{cid}-rec',     data['rec'])                       if 'rec'     in data else ''
+    lit_h    = lit_panel(   f'{cid}-lit',     *data['lit'])                      if 'lit'     in data else ''
+    hebt_h   = hebtext_panel(f'{cid}-hebtext',data['hebtext'], is_nt)            if 'hebtext' in data else ''
+    thread_h = thread_panel(f'{cid}-thread',  data['thread'])                    if 'thread'  in data else ''
+    tx_h     = textual_panel(f'{cid}-tx',     data['textual'])                   if 'textual' in data else ''
+    db_h     = debate_panel( f'{cid}-debate', data['debate'])                    if 'debate'  in data else ''
+    tb, tp   = themes_btn_panel(f'{cid}-themes', *data['themes'])                if 'themes'  in data else ('', '')
 
     sch = scholarly_block(cid, ppl_h, trans_h, src_h, rec_h,
                           lit_h, hebt_h, thread_h, tb, tp, is_nt,
