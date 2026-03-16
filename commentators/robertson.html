@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A.T. Robertson &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#c8d870; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; min-height:100vh; }
+.com-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; }
+.com-nav-back, .com-nav-all { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items { display:flex; gap:.2rem; flex-wrap:wrap; justify-content:center; }
+.com-nav-item { font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; padding:.28rem .5rem; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
+.com-nav-item:hover { color:var(--text-dim); }
+.bio-wrap { max-width:800px; margin:0 auto; padding:3rem 1.5rem 6rem; }
+.bio-header { margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.bio-eyebrow { font-family:'Source Sans 3',sans-serif; font-size:.65rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:.8rem; }
+.bio-name { font-family:'Cinzel',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:500; color:var(--text); letter-spacing:.06em; line-height:1.15; margin-bottom:.5rem; }
+.bio-tradition { font-family:'Source Sans 3',sans-serif; font-size:.78rem; color:var(--text-muted); letter-spacing:.08em; }
+.bio-tradition span { color:var(--accent); }
+.bio-quote { margin:2rem 0; padding:1.2rem 1.4rem; border-left:3px solid var(--accent); background:rgba(0,0,0,.2); border-radius:0 4px 4px 0; }
+.bio-quote p { font-family:'EB Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--text-dim); line-height:1.7; margin-bottom:.5rem; }
+.bio-quote cite { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); font-style:normal; letter-spacing:.04em; }
+.bio-section { margin-bottom:2.5rem; }
+.bio-section-title { font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:.9rem; padding-bottom:.5rem; border-bottom:1px solid var(--border2); }
+.bio-section p { font-family:'EB Garamond',serif; font-size:1.05rem; color:var(--text-dim); line-height:1.8; margin-bottom:1rem; }
+.bio-section p:last-child { margin-bottom:0; }
+.bio-works { list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+.bio-works li { padding:.7rem 1rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--accent); border-radius:0 4px 4px 0; }
+.bio-works .work-title { font-family:'Cinzel',serif; font-size:.72rem; color:var(--text); letter-spacing:.06em; display:block; margin-bottom:.2rem; }
+.bio-works .work-desc { font-family:'Source Sans 3',sans-serif; font-size:.8rem; color:var(--text-muted); line-height:1.5; }
+.bio-appears { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.bio-appears a { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--accent); border:1px solid var(--accent); background:rgba(0,0,0,.2); padding:.2rem .55rem; border-radius:3px; text-decoration:none; opacity:.8; transition:opacity .15s; }
+.bio-appears a:hover { opacity:1; }
+.bio-others { margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); }
+.bio-others-title { font-family:'Source Sans 3',sans-serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; }
+.bio-others-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.6rem; }
+.bio-other-card { display:block; padding:.7rem .9rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--other-accent,var(--gold-dim)); border-radius:0 4px 4px 0; text-decoration:none; transition:border-color .15s; }
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--other-accent,var(--gold-dim)); display:block; margin-bottom:.2rem; }
+.bio-other-desc { font-family:'Source Sans 3',sans-serif; font-size:.68rem; color:var(--text-muted); line-height:1.4; }
+footer { padding:1.5rem; text-align:center; font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); border-top:1px solid var(--border2); line-height:1.7; }
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a><a href="robertson.html" class="com-nav-item" style="color:#c8d870;border-bottom:2px solid #c8d870;">Robertson</a><a href="catena.html" class="com-nav-item" style="">Catena</a><a href="netbible.html" class="com-nav-item" style="">NET Bible</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">NT Greek Scholarship &middot; Early 20th Century</p>
+    <h1 class="bio-name">A.T. Robertson</h1>
+    <p class="bio-tradition">1863&ndash;1934 &middot; <span>NT Greek Scholar</span> &middot; Southern Baptist Theological Seminary &middot; Louisville, Kentucky</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;The Greek of the New Testament is the most important variety of the Greek language, because of the contents of the New Testament itself.&rdquo;</p>
+    <cite>&mdash; A.T. Robertson, A Grammar of the Greek New Testament in the Light of Historical Research (1914)</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>Archibald Thomas Robertson was born in Cherryville, North Carolina in 1863 and spent virtually his entire academic career at Southern Baptist Theological Seminary in Louisville, Kentucky, where he taught New Testament Greek from 1888 until his death in 1934. He was arguably the greatest Greek grammarian in the history of American biblical scholarship.</p>
+    <p>His 1914 work, <em>A Grammar of the Greek New Testament in the Light of Historical Research</em>, runs to 1,454 pages and remains a standard reference work over a century later. It synthesised decades of advances in papyrology, koine Greek studies, and comparative linguistics into a comprehensive account of the Greek of the New Testament &mdash; demonstrating that it was not a corrupted form of classical Greek but the living vernacular of the Hellenistic Mediterranean world.</p>
+    <p>His six-volume <em>Word Pictures in the New Testament</em> (1930-1933), completed just before his death, brought that grammatical expertise to a wider audience: a verse-by-verse commentary through every New Testament book focused entirely on what the Greek is doing. It is now in the public domain and represents the most sustained grammatical commentary on the NT in English.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Robertson&rsquo;s approach is resolutely grammatical: his interest at every verse is the Greek itself &mdash; verb tenses, case functions, particle usage, wordplay, the difference between aorist and perfect, between indicative and subjunctive. He is not primarily interested in theology, application, or background (though he engages all three) &mdash; he wants the reader to see what the Greek is doing.</p>
+    <p>This makes Robertson an invaluable complement to commentators who focus on theology or background. Where MacArthur asks &ldquo;what does this verse mean for Christian life?&rdquo; and Sarna asks &ldquo;how does this text compare to its ANE environment?&rdquo;, Robertson asks &ldquo;what does this Greek word or construction actually say?&rdquo; His notes on Greek tense and case are often the most concise and accurate available in English.</p>
+    <p>He is strongest in the Pauline letters, Acts, and the Gospel of John, where the Greek is most complex and his grammatical precision yields the most insight. His notes are denser and more technically demanding than other commentators in this tool &mdash; but readers who engage with them gain direct access to what the original language is doing in ways no translation fully conveys.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Robertson was a conservative Southern Baptist who held to biblical inerrancy and evangelical orthodoxy. But his commentaries are less confessionally driven than those of MacArthur or Calvin &mdash; his primary interest is grammatical precision, not doctrinal exposition. He is one of the few commentators in this tool who can be profitably read by scholars of any theological persuasion, because the Greek is the Greek regardless of confessional commitments.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">Word Pictures in the New Testament (6 vols., 1930&ndash;1933)</span><span class="work-desc">The primary source for Robertson notes in this tool. Verse-by-verse grammatical commentary through every NT book. Public domain.</span></li>
+      <li><span class="work-title">A Grammar of the Greek New Testament in the Light of Historical Research (1914)</span><span class="work-desc">The magnum opus. 1,454 pages covering every aspect of Koine Greek grammar. Still a standard reference work.</span></li>
+      <li><span class="work-title">Studies in the Text of the New Testament (1926)</span><span class="work-desc">Essays on specific textual and grammatical questions in the NT, showing Robertson at his most precise.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Robertson notes apply to New Testament chapters only. Coverage begins with Matthew 1 and will expand as chapters are built out.</p>
+    <div class="bio-appears">
+      <a href="../matthew/Matthew_1.html">Matthew 1</a>
+    </div>
+  </div>
+<div class="bio-others"><p class="bio-others-title">Other Scholars</p><div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish / JPS Torah Commentary</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena Aurea</span><span class="bio-other-desc">Patristic / Aquinas compiler</span></a><a href="netbible.html" class="bio-other-card" style="--other-accent:#d8e8d0"><span class="bio-other-name">NET Bible</span><span class="bio-other-desc">Textual-critical notes</span></a></div></div></div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body></html>

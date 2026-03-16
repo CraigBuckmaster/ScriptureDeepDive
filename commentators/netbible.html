@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NET Bible Notes &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#d8e8d0; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; min-height:100vh; }
+.com-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; }
+.com-nav-back, .com-nav-all { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items { display:flex; gap:.2rem; flex-wrap:wrap; justify-content:center; }
+.com-nav-item { font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; padding:.28rem .5rem; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
+.com-nav-item:hover { color:var(--text-dim); }
+.bio-wrap { max-width:800px; margin:0 auto; padding:3rem 1.5rem 6rem; }
+.bio-header { margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.bio-eyebrow { font-family:'Source Sans 3',sans-serif; font-size:.65rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:.8rem; }
+.bio-name { font-family:'Cinzel',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:500; color:var(--text); letter-spacing:.06em; line-height:1.15; margin-bottom:.5rem; }
+.bio-tradition { font-family:'Source Sans 3',sans-serif; font-size:.78rem; color:var(--text-muted); letter-spacing:.08em; }
+.bio-tradition span { color:var(--accent); }
+.bio-quote { margin:2rem 0; padding:1.2rem 1.4rem; border-left:3px solid var(--accent); background:rgba(0,0,0,.2); border-radius:0 4px 4px 0; }
+.bio-quote p { font-family:'EB Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--text-dim); line-height:1.7; margin-bottom:.5rem; }
+.bio-quote cite { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); font-style:normal; letter-spacing:.04em; }
+.bio-section { margin-bottom:2.5rem; }
+.bio-section-title { font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:.9rem; padding-bottom:.5rem; border-bottom:1px solid var(--border2); }
+.bio-section p { font-family:'EB Garamond',serif; font-size:1.05rem; color:var(--text-dim); line-height:1.8; margin-bottom:1rem; }
+.bio-section p:last-child { margin-bottom:0; }
+.bio-works { list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+.bio-works li { padding:.7rem 1rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--accent); border-radius:0 4px 4px 0; }
+.bio-works .work-title { font-family:'Cinzel',serif; font-size:.72rem; color:var(--text); letter-spacing:.06em; display:block; margin-bottom:.2rem; }
+.bio-works .work-desc { font-family:'Source Sans 3',sans-serif; font-size:.8rem; color:var(--text-muted); line-height:1.5; }
+.bio-appears { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.bio-appears a { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--accent); border:1px solid var(--accent); background:rgba(0,0,0,.2); padding:.2rem .55rem; border-radius:3px; text-decoration:none; opacity:.8; transition:opacity .15s; }
+.bio-appears a:hover { opacity:1; }
+.bio-others { margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); }
+.bio-others-title { font-family:'Source Sans 3',sans-serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; }
+.bio-others-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.6rem; }
+.bio-other-card { display:block; padding:.7rem .9rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--other-accent,var(--gold-dim)); border-radius:0 4px 4px 0; text-decoration:none; transition:border-color .15s; }
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--other-accent,var(--gold-dim)); display:block; margin-bottom:.2rem; }
+.bio-other-desc { font-family:'Source Sans 3',sans-serif; font-size:.68rem; color:var(--text-muted); line-height:1.4; }
+footer { padding:1.5rem; text-align:center; font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); border-top:1px solid var(--border2); line-height:1.7; }
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a><a href="robertson.html" class="com-nav-item" style="">Robertson</a><a href="catena.html" class="com-nav-item" style="">Catena</a><a href="netbible.html" class="com-nav-item" style="color:#d8e8d0;border-bottom:2px solid #d8e8d0;">NET Bible</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Textual &amp; Translational Scholarship &middot; Contemporary</p>
+    <h1 class="bio-name">NET Bible Notes</h1>
+    <p class="bio-tradition">First published 2001, revised 2019 &middot; <span>Biblical Studies Press</span> &middot; Dallas, Texas &middot; Over 60,000 translator notes</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;Our goal has been to produce a translation that is both faithful to the meaning of the original texts and clear in contemporary English &mdash; and to document every significant translational decision in the notes, so that readers can see why we translated as we did.&rdquo;</p>
+    <cite>&mdash; NET Bible Translation Team, Preface to the NET Bible Full Notes Edition</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">What Are the NET Bible Notes?</h2>
+    <p>The NET Bible (New English Translation) was produced by a team of more than twenty-five biblical scholars associated with Dallas Theological Seminary and is unique among modern translations in the scale and transparency of its annotation apparatus. The <em>Full Notes Edition</em> contains over 60,000 translator notes that document the textual, translational, and exegetical decisions behind every verse of the translation.</p>
+    <p>These notes fall into three categories: <em>textual notes</em> document manuscript evidence and explain why one reading was chosen over another; <em>translational notes</em> explain why a Hebrew or Greek phrase was rendered a particular way and what alternative renderings are possible; and <em>exegetical notes</em> provide background information, cross-references, and interpretive context needed to understand a passage.</p>
+    <p>The result is something no other widely-used Bible translation provides: a publicly visible record of the scholarly reasoning behind every translational decision. The NET Bible notes make the translation process transparent in a way that reveals how much interpretive work is embedded in every English rendering of the original text.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Why NET Notes in This Tool?</h2>
+    <p>Most study Bible commentaries (including MacArthur&rsquo;s) focus on what a passage means theologically. The NET notes focus on a prior question: what does the original text actually say, and how certain are we about that? They document manuscript variants, discuss the semantic range of Hebrew and Greek words, and flag where translators made judgment calls that other scholars might make differently.</p>
+    <p>This makes NET notes an ideal complement to theological commentary. When MacArthur says &ldquo;this verse teaches X&rdquo;, the NET note often reveals whether &ldquo;this verse&rdquo; is itself a matter of textual uncertainty, or whether the translation he is commenting on obscures an ambiguity present in the original. Having this critical layer visible makes the tool more honest about the interpretive process.</p>
+    <p>The NET Bible notes are available under a Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows free use with attribution. Notes in this tool are faithful paraphrases with attribution, not verbatim quotations.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Scope and Limitation</h2>
+    <p>The NET notes are strongest on textual criticism and translational transparency. They are not devotional, not pastoral, and not primarily theological &mdash; they are the annotations of a translation team explaining their work. They do not have the literary sensitivity of Alter, the Jewish theological depth of Sarna, or the doctrinal richness of Calvin. But they provide a critical baseline that all other commentary in this tool rests on: a clear account of what the Hebrew and Greek actually say, and where we are and are not certain about it.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Publication</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">NET Bible Full Notes Edition (2001, revised 2019)</span><span class="work-desc">The primary source for NET notes in this tool. Over 60,000 translator notes covering the entire Bible. Available at netbible.org under CC BY 4.0. Notes are paraphrased with attribution.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">NET Bible notes will appear across all books and chapters, focusing on verses where translational choices significantly affect meaning or where textual uncertainty is significant.</p>
+    <div class="bio-appears">
+      <a href="../genesis/Genesis_1.html">Genesis 1</a>
+    </div>
+  </div>
+<div class="bio-others"><p class="bio-others-title">Other Scholars</p><div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish / JPS Torah Commentary</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a><a href="robertson.html" class="bio-other-card" style="--other-accent:#c8d870"><span class="bio-other-name">Robertson</span><span class="bio-other-desc">NT Greek / public domain</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena Aurea</span><span class="bio-other-desc">Patristic / Aquinas compiler</span></a></div></div></div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body></html>
