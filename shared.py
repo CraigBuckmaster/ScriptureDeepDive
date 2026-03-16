@@ -907,7 +907,84 @@ def build_chapter(book_dir, ch, data):
     print(f'Built {book_name} {ch}')
 
 
-def rebuild_verses_js():
+def update_homepage():
+    """
+    Sync index.html OT/NT library section with the actual state of chapter files on disk.
+    For each book in REGISTRY:
+      - Counts which chapter HTML files exist
+      - Rewrites the chapter-grid (live <a> vs coming <span>)
+      - Sets/removes has-live class on book-item
+      - Updates or removes the live-badge count
+      - Updates the REGISTRY live count in shared.py itself
+
+    Call this as part of the deploy checklist after every chapter batch,
+    alongside rebuild_verses_js(). It is idempotent — safe to run multiple times.
+    """
+    index_path = f'{_REPO}/index.html'
+    with open(index_path) as f: h = f.read()
+
+    for book_dir, book_name, total, _, testament in REGISTRY:
+        # Count which chapter files actually exist
+        live_chs = [ch for ch in range(1, total+1)
+                    if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')]
+        live_count = len(live_chs)
+
+        # Build the new chapter-grid HTML
+        links = []
+        for ch in range(1, total+1):
+            title = f'{book_name} {ch}'
+            if ch in live_chs:
+                href = f'{book_dir}/{book_name}_{ch}.html'
+                links.append(f'<a href="{href}" class="chapter-link live" title="{title}">Ch.{ch}</a>')
+            else:
+                links.append(f'<span class="chapter-link coming" title="{title}">Ch.{ch}</span>')
+        new_grid = '<div class="chapter-grid">' + ''.join(links) + '</div>'
+
+        # Build new book-item header
+        live_badge = f'<span class="live-badge">{live_count} live</span>' if live_count else ''
+        has_live   = ' has-live' if live_count else ''
+        new_item_open = (f'<div class="book-item{has_live}" id="book-{book_dir.lower().replace("_","-")}">\n'
+                         f'  <button class="book-btn" onclick="toggleBook(\'{book_dir.lower().replace("_","-")}\')">\n'
+                         f'    <span class="book-name">{book_name}</span>\n'
+                         f'    <span class="book-meta"><span class="ch-count">{total} ch</span>'
+                         f'{live_badge}<span class="book-chev">&#9660;</span></span>\n'
+                         f'  </button>')
+
+        # Find and replace the existing book-item block's header + chapter-grid
+        # Use the id to locate the block
+        book_id = book_dir.lower().replace('_', '-')
+        id_marker = f'id="book-{book_id}"'
+        idx = h.find(id_marker)
+        if idx == -1:
+            print(f'  WARNING: book-{book_id} not found in index.html')
+            continue
+
+        # Find the opening div of this book-item
+        div_start = h.rfind('<div class="book-item', 0, idx)
+
+        # Find the end of the opening button section (closing </button> tag)
+        btn_end = h.find('</button>', div_start) + 9
+
+        # Find the chapter-grid end
+        grid_start = h.find('<div class="chapter-grid">', btn_end)
+        grid_end   = h.find('</div>', grid_start) + 6
+
+        # Replace opening block (div through </button>) and the chapter-grid
+        h = h[:div_start] + new_item_open + h[btn_end:grid_start] + new_grid + h[grid_end:]
+
+    with open(index_path, 'w') as f: f.write(h)
+
+    # Report
+    total_live = sum(
+        len([ch for ch in range(1, total+1)
+             if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')])
+        for book_dir, book_name, total, _, _ in REGISTRY
+    )
+    print(f'index.html updated — {total_live} live chapters across {len(REGISTRY)} books')
+    return total_live
+
+
+
     """Rebuild /verses.js from all live chapter HTML files. Call after every batch."""
     all_verses = []
     for book_dir, book_name, total, live, _ in REGISTRY:
