@@ -341,6 +341,108 @@ else:
     ok('tog() correct in all chapters')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 10. PANEL CSS & JS — all critical blocks present
+# ═══════════════════════════════════════════════════════════════════════════
+section('10. Panel CSS & JS Completeness')
+
+missing_panel_css   = []
+missing_panel_open  = []
+missing_vhl         = []
+missing_qnav_filter = []
+has_togthemes       = []
+missing_label_js    = []
+missing_qnav_groups = []
+bad_btn_css         = []
+missing_scholarly   = []
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    css   = h[h.find('<style>'):h.find('</style>')]
+    label = f'{book} {ch}'
+
+    # anno-panel CSS must have display:none base rule
+    if '.anno-panel{display:none' not in css and '.anno-panel {display:none' not in css:
+        missing_panel_css.append(label)
+
+    # anno-panel.open must show panels
+    if '.anno-panel.open{display:block' not in css and '.anno-panel.open {display:block' not in css:
+        missing_panel_open.append(label)
+
+    # VHL IIFE — word highlighting
+    if 'DIVINE={' not in h and 'DIVINE ={' not in h:
+        missing_vhl.append(label)
+
+    # qnavFilter must be defined
+    if 'function qnavFilter' not in h:
+        missing_qnav_filter.append(label)
+
+    # togThemes must NOT appear — themes button must use tog()
+    if 'togThemes' in h:
+        has_togthemes.append(label)
+
+    # history JS must write label field
+    if 'var label' not in h and "'label'" not in h:
+        missing_label_js.append(label)
+
+    # qnav must have both testament groups
+    if 'id="qnav-t-ot"' not in h or 'id="qnav-t-nt"' not in h:
+        missing_qnav_groups.append(label)
+
+    # No duplicate anno-trigger base rules (old + new CSS collision)
+    # Old signature: letter-spacing:.07em in an anno-trigger rule
+    if re.search(r'\.anno-trigger\{[^}]*letter-spacing:\.07em', css):
+        bad_btn_css.append(label)
+
+    # scholarly-block must have anno-trigger buttons inside .scholarly-buttons
+    sch_match = re.search(r'class="scholarly-buttons">(.*?)</div>', h, re.DOTALL)
+    if sch_match and 'anno-trigger' not in sch_match.group(1):
+        missing_scholarly.append(label)
+
+checks_10 = [
+    (missing_panel_css,   'Missing .anno-panel display:none CSS'),
+    (missing_panel_open,  'Missing .anno-panel.open CSS'),
+    (missing_vhl,         'Missing VHL IIFE (DIVINE word highlighting)'),
+    (missing_qnav_filter, 'Missing qnavFilter function'),
+    (has_togthemes,       'togThemes() used — must use tog() instead'),
+    (missing_label_js,    'History JS missing label field'),
+    (missing_qnav_groups, 'Missing qnav OT/NT testament groups'),
+    (bad_btn_css,         'Duplicate/old anno-trigger CSS (letter-spacing:.07em)'),
+    (missing_scholarly,   'scholarly-buttons has no anno-trigger buttons'),
+]
+
+all_ok_10 = True
+for bad_list, msg in checks_10:
+    if bad_list:
+        fail(f'{msg}: {", ".join(bad_list[:3])}{"..." if len(bad_list) > 3 else ""}')
+        all_ok_10 = False
+
+if all_ok_10:
+    ok('All panel CSS, JS, and structural checks clean')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 11. HOMEPAGE STRUCTURAL CHECKS
+# ═══════════════════════════════════════════════════════════════════════════
+section('11. Homepage Structural Checks')
+
+# book-item.open .chapter-list must show chapters
+if '.book-item.open .chapter-list' not in idx:
+    fail('index.html: .book-item.open .chapter-list rule missing — book toggles will not open')
+else:
+    ok('.book-item.open .chapter-list rule present')
+
+# continue-reading chip must read item.label
+if 'item.label' not in idx:
+    fail('index.html: continue-reading chip does not read item.label — chips will be blank for old history')
+else:
+    ok('Continue-reading chip reads item.label')
+
+# testament toggle must only toggle self (not close others)
+if 'classList.toggle(\'open\')' in idx or 'classList.toggle("open")' in idx:
+    ok('toggleTestament uses classList.toggle (independent)')
+else:
+    warn('toggleTestament implementation unclear')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")
@@ -357,3 +459,4 @@ elif warnings:
 else:
     print(f'\033[92m  AUDIT PASSED — all checks clean. Safe to commit.\033[0m')
     sys.exit(0)
+
