@@ -398,7 +398,16 @@ for path, book, ch in chapters:
     if sch_match and 'anno-trigger' not in sch_match.group(1):
         missing_scholarly.append(label)
 
+# ── Also check section count ──────────────────────────────────────────────
+single_section = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    n = h.count('<div class="section">')
+    if n < 2:
+        single_section.append(f'{book} {ch} ({n} section)')
+
 checks_10 = [
+    (single_section,      'Single-section chapters (need ≥2 sections)'),
     (missing_panel_css,   'Missing .anno-panel display:none CSS'),
     (missing_panel_open,  'Missing .anno-panel.open CSS'),
     (missing_vhl,         'Missing VHL IIFE (DIVINE word highlighting)'),
