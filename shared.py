@@ -884,6 +884,17 @@ def build_chapter(book_dir, ch, data):
                           f'<div class="section-header">{sec["header"]}</div>'
                           f'{verses_html}{btn_html}{panels_html}</div>')
 
+    # --- hoist textual/debate from sections if accidentally placed there ---
+    for sec in data.get('sections', []):
+        if 'textual' in sec and 'textual' not in data:
+            data['textual'] = sec.pop('textual')
+        elif 'textual' in sec:
+            sec.pop('textual')
+        if 'debate' in sec and 'debate' not in data:
+            data['debate'] = sec.pop('debate')
+        elif 'debate' in sec:
+            sec.pop('debate')
+
     # --- scholarly block (all keys optional — omit any and its button disappears) ---
     ppl_h    = ppl_panel(   f'{cid}-ppl',     data['ppl'])                       if 'ppl'     in data else ''
     trans_h  = trans_panel( f'{cid}-trans',   *data['trans'])                    if 'trans'   in data else ''
