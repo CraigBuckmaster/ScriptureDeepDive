@@ -18,6 +18,66 @@ CSS, TOG_JS, QNAV_JS, SW_JS = _bootstrap()
 
 # CSS for panel types added after the original Genesis_1.html template was frozen
 EXTRA_CSS = '''
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — restore per-type colour identity
+      The existing .scholarly-buttons .anno-trigger rule sets
+      a uniform blue at specificity (0,2,0). These rules at
+      (0,3,0) beat it and restore each button's own colour.   */
+.scholarly-buttons .anno-trigger.people      {color:var(--ppl-accent)      !important;border-color:var(--ppl-border)    !important;background:rgba(120,48,12,.22)  !important;}
+.scholarly-buttons .anno-trigger.translations{color:var(--trans-accent)    !important;border-color:var(--trans-border)  !important;background:rgba(16,80,72,.22)   !important;}
+.scholarly-buttons .anno-trigger.sources     {color:#c070a8               !important;border-color:#743060             !important;background:rgba(100,40,80,.22)  !important;}
+.scholarly-buttons .anno-trigger.reception   {color:var(--rec-accent)      !important;border-color:var(--rec-border)   !important;background:rgba(100,20,48,.22)  !important;}
+.scholarly-buttons .anno-trigger.literary    {color:var(--lit-accent)      !important;border-color:var(--lit-border)   !important;background:rgba(64,72,8,.22)    !important;}
+.scholarly-buttons .anno-trigger.hebrew-text {color:var(--heb-text-accent) !important;border-color:#6a5010            !important;background:rgba(64,48,0,.22)    !important;}
+.scholarly-buttons .anno-trigger.threading   {color:var(--thread-accent)   !important;border-color:var(--thread-border)!important;background:rgba(40,40,100,.22)  !important;}
+.scholarly-buttons .anno-trigger.textual     {color:#70b8e8               !important;border-color:#2a4060            !important;background:rgba(32,64,100,.22)  !important;}
+.scholarly-buttons .anno-trigger.debate      {color:#a870e8               !important;border-color:#3a2060            !important;background:rgba(56,24,96,.22)   !important;}
+.scholarly-buttons .anno-trigger.macarthur   {color:#e05a6a               !important;border-color:#882030            !important;background:rgba(100,20,32,.22)  !important;}
+
+/* Themes button lives in scholarly-buttons but uses [onclick*="themes"] selector —
+   already high specificity, just ensure active state works correctly              */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{background:rgba(60,24,100,.22) !important;}
+
 /* ── Textual Notes panel ─────────────────────────────── */
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
 .tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
@@ -33,7 +93,6 @@ EXTRA_CSS = '''
        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
 .tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
         padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
-.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
 
 /* ── Scholarly Debates panel ─────────────────────────── */
 .db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
@@ -54,7 +113,6 @@ EXTRA_CSS = '''
 .db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
               background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
               padding:.4rem .6rem;line-height:1.55;}
-.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
 '''
 
 REGISTRY = [
