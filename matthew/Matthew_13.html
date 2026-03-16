@@ -424,12 +424,82 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 })();
 </script>
 <script>
-function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
+function qnavFilter(q) {
+  q = q.trim().toLowerCase();
+  const words = q.split(/\s+/).filter(w => w.length > 1);
+  const panel = document.getElementById('qnav-search-results');
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
-function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
-function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
-function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+  // If empty — show normal chapter grid, hide results
+  if (!q) {
+    if (panel) { panel.innerHTML = ''; panel.style.display = 'none'; }
+    document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = '');
+    document.querySelectorAll('.qnav-book').forEach(b => b.style.display = '');
+    return;
+  }
+
+  // Hide chapter grids while searching
+  document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = 'none');
+  document.querySelectorAll('.qnav-book').forEach(b => b.style.display = 'none');
+
+  // Verse matches
+  var verseMatches = q.length >= 2 ? VERSES.map(function(v) {
+    var text = v.text.toLowerCase();
+    var ref  = v.ref.toLowerCase();
+    var score = 0;
+    for (var i=0; i<words.length; i++) {
+      if (text.indexOf(words[i]) > -1) score += 2;
+      else if (ref.indexOf(words[i]) > -1) score += 1;
+    }
+    if (text.indexOf(q) > -1) score += 5;
+    return { ref:v.ref, short:v.short, text:v.text, url:v.url, score:score };
+  }).filter(function(v){ return v.score > 0; })
+    .sort(function(a,b){ return b.score - a.score; })
+    .slice(0, 12) : [];
+
+  function hl(text, q, words) {
+    var out = text;
+    if (q.length > 2) {
+      var rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+      out = out.replace(rx,'<em>$1</em>');
+    }
+    for (var i=0; i<words.length; i++) {
+      if (out.toLowerCase().indexOf(words[i]) > -1) {
+        var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+        out = out.replace(rx2,'<em>$1</em>');
+      }
+    }
+    return out;
+  }
+
+  var html = '';
+  if (verseMatches.length === 0) {
+    html = '<p class="qnav-no-results">No verses found for \u201c' + q + '\u201d</p>';
+  } else {
+    for (var i=0; i<verseMatches.length; i++) {
+      var v = verseMatches[i];
+      var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
+      // Path relative to current chapter page (../ prefix for chapter pages)
+      var href = '../' + v.url;
+      html += '<a href="' + href + '" class="qnav-verse-result">' +
+              '<span class="qnav-vref">' + v.short + '</span>' +
+              '<span class="qnav-vsnip">' + hl(snippet, q, words) + '</span>' +
+              '</a>';
+    }
+  }
+
+  if (!panel) {
+    var p = document.createElement('div');
+    p.id = 'qnav-search-results';
+    p.className = 'qnav-search-results';
+    var body = document.querySelector('.qnav-body');
+    if (body) body.insertBefore(p, body.firstChild);
+    p.innerHTML = html;
+    p.style.display = 'block';
+  } else {
+    panel.innerHTML = html;
+    panel.style.display = 'block';
+  }
+}
 </script>
 <script src="../verses.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
