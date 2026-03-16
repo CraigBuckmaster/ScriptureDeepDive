@@ -1,13 +1,20 @@
 """Scripture Deep Dive — unified shared helpers. All books use this."""
 import re, json, math, os
 
-with open('/tmp/exodus_template.json') as f:
-    T = json.load(f)
+_REPO = '/home/claude/ScriptureDeepDive'
 
-CSS    = T['css']
-TOG_JS = T['tog_js']
-QNAV_JS = T['qnav_js']
-SW_JS  = T['sw_js']
+def _bootstrap():
+    """Extract CSS and JS directly from Genesis_1.html — single source of truth."""
+    with open(f'{_REPO}/genesis/Genesis_1.html') as f:
+        g = f.read()
+    scripts = re.findall(r'<script[^>]*>(.*?)</script>', g, re.DOTALL)
+    css = g[g.find('<style>')+7:g.find('</style>')]
+    tog_js  = '<script>' + scripts[0] + '</script>'
+    qnav_js = next(('<script>'+s+'</script>' for s in scripts if 'verseMatches' in s), None)
+    sw_js   = '<script>' + scripts[-1] + '</script>'
+    return css, tog_js, qnav_js, sw_js
+
+CSS, TOG_JS, QNAV_JS, SW_JS = _bootstrap()
 
 REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT'),
@@ -16,6 +23,83 @@ REGISTRY = [
     ('proverbs', 'Proverbs',  31, 31, 'OT'),
     ('matthew',  'Matthew',   28, 28, 'NT'),
 ]
+
+# Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
+BOOK_PREFIX = {
+    'genesis':  'gen',
+    'exodus':   'ex',
+    'ruth':     'ru',
+    'proverbs': 'pr',
+    'matthew':  'mt',
+}
+
+# Book-level constants — AUTH text, IS_NT flag, VHL word lists
+BOOK_META = {
+    'genesis': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Moses, according to Jewish and Christian tradition, '
+                 'drawing on patriarchal records and divine revelation.\n\n'
+                 '<strong>When written:</strong> c.1445-1405 BC during the wilderness period.\n\n'
+                 '<strong>What prompted it:</strong> To record God\'s creation of the world and '
+                 'his covenant relationship with the patriarchs, culminating in Israel\'s formation as a people.'),
+        'vhl_places': ['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],
+        'vhl_people': ['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon',
+                       'Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],
+        'vhl_time':   ['day','days','night','year','years','generation','time','age'],
+        'vhl_key':    ['covenant','blessing','promise','God','LORD','Israel','faith','fear','firstborn','seed'],
+    },
+    'exodus': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Moses, according to Jewish and Christian tradition.\n\n'
+                 '<strong>When written:</strong> c.1445-1405 BC during the wilderness period.\n\n'
+                 '<strong>What prompted it:</strong> To record God\'s redemption of Israel from Egypt '
+                 'and the establishment of the covenant at Sinai.'),
+        'vhl_places': ['Egypt','Goshen','Sinai','Midian','wilderness','Canaan','mountain','tabernacle','Nile'],
+        'vhl_people': ['Moses','Aaron','Pharaoh','LORD','Miriam','Joshua','Bezalel','Israel','Israelites'],
+        'vhl_time':   ['day','days','night','morning','year','generation','Sabbath','Passover'],
+        'vhl_key':    ['covenant','commandment','law','holy','glory','tabernacle','sacrifice',
+                       'redeem','deliver','sign','wonder','plague'],
+    },
+    'ruth': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Unknown; Jewish tradition attributes authorship to Samuel.\n\n'
+                 '<strong>When written:</strong> c.1000 BC, possibly early monarchy period.\n\n'
+                 '<strong>What prompted it:</strong> To record God\'s providential care for a Moabite widow '
+                 'and her mother-in-law, and to trace the lineage of King David.'),
+        'vhl_places': ['Bethlehem','Moab','field','gate','threshing floor'],
+        'vhl_people': ['Ruth','Naomi','Boaz','Orpah','LORD','redeemer','kinsman'],
+        'vhl_time':   ['day','days','harvest','night','morning'],
+        'vhl_key':    ['kindness','hesed','redeemer','covenant','blessing','LORD','loyal','faithful'],
+    },
+    'proverbs': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Primarily Solomon son of David (chs.1-29), with additional '
+                 'contributions from Agur son of Jakeh (ch.30) and King Lemuel\'s mother (ch.31).\n\n'
+                 '<strong>When written:</strong> Core Solomonic material c.970-930 BC; final compilation '
+                 'under Hezekiah c.715-686 BC.\n\n'
+                 '<strong>What prompted it:</strong> To transmit the accumulated wisdom of Israel\'s sages '
+                 'to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.'),
+        'vhl_places': ['gate','city','market','field','house','street','court','path','way'],
+        'vhl_people': ['LORD','king','fool','wise','righteous','wicked','poor','rich','son','wife','neighbour'],
+        'vhl_time':   ['day','days','morning','evening','year','life','age','generation'],
+        'vhl_key':    ['wisdom','knowledge','understanding','fear','righteous','wicked',
+                       'heart','tongue','mouth','honour','pride','humility'],
+    },
+    'matthew': {
+        'is_nt': True,
+        'auth': ('<strong>Author:</strong> Matthew (Levi), tax collector and apostle.\n\n'
+                 '<strong>When written:</strong> c.AD 80-90, Antioch of Syria.\n\n'
+                 '<strong>What prompted it:</strong> To present Jesus as the fulfilment of '
+                 'Israel\'s Scripture and the promised Messiah, written primarily for a Jewish audience.'),
+        'vhl_places': ['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives',
+                       'Galilee','Capernaum','Nazareth','Jordan'],
+        'vhl_people': ['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter',
+                       'scribes','crowd','elders','John'],
+        'vhl_time':   ['day','days','night','morning','third day','hour','age','coming','generation'],
+        'vhl_key':    ['kingdom','covenant','blood','resurrection','Son of Man','Son of God',
+                       'authority','judgment','forgive','fulfil','law','gospel'],
+    },
+}
 
 def auth_sections(text):
     parts = re.split(r'<strong>(Author:|When written:|What prompted it:)</strong>', text)
@@ -374,5 +458,134 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     return path
+
+def build_chapter(book_dir, ch, data):
+    """
+    Build a chapter HTML file from a clean data dict.
+    All book constants come from BOOK_META; all panel IDs are auto-generated.
+
+    data keys:
+      title    str
+      sections list of section dicts (see below)
+      ppl      list of (name, role, text)
+      trans    (verse_ref_str, list of (version, text))
+      src      list of (title, quote, note)
+      rec      list of (title, text)
+      lit      (list of (label, vv, text, center), overall_note_str)
+      hebtext  str  -- raw HTML for the Hebrew/Greek reading panel
+      thread   list of (dir_cls, anchor, arrow, target, type_cls, type_label, text)
+      themes   (list of (label, score), chapter_note_str)
+
+    section dict keys:
+      header   str
+      verses   list of (num, text)
+      heb      list of (word, translit, gloss, note)  -> Hebrew/Greek button + panel
+      ctx      str                                     -> Context button + panel
+      cross    list of (ref, text)                    -> Cross-Ref button + panel
+      mac      list of (ref, text)                    -> MacArthur button + panel
+      -- optional, presence drives button + panel --
+      hist     str                                     -> History button + panel
+      places   list of (name, region, text)           -> Places button + panel
+      people_sec list of (name, role, text)           -> People button + panel (section-level)
+      timeline list of (era, event)                   -> Timeline button + panel
+
+    Button order: heb -> places -> people_sec -> timeline -> hist -> ctx -> cross -> mac
+    """
+    meta      = BOOK_META[book_dir]
+    book_name = next(n for d,n,*_ in REGISTRY if d==book_dir)
+    is_nt     = meta['is_nt']
+    lang      = 'Greek' if is_nt else 'Hebrew'
+    prefix    = BOOK_PREFIX[book_dir]
+    cid       = f'{prefix}{ch}'
+
+    sections_html = ''
+    for i, sec in enumerate(data['sections']):
+        sid = f'{cid}-s{i+1}'
+
+        # --- verses ---
+        verses_html = ''.join(verse(n, t) for n, t in sec['verses'])
+
+        # --- buttons (presence of data key = presence of button) ---
+        btns = []
+        if 'heb'        in sec: btns.append(('hebrew',    lang,      f'{sid}-grk'))
+        if 'places'     in sec: btns.append(('places',    'Places',  f'{sid}-places'))
+        if 'people_sec' in sec: btns.append(('people',    'People',  f'{sid}-ppl'))
+        if 'timeline'   in sec: btns.append(('timeline',  'Timeline',f'{sid}-tl'))
+        if 'hist'       in sec: btns.append(('history',   'History', f'{sid}-hist'))
+        if 'ctx'        in sec: btns.append(('context',   'Context', f'{sid}-ctx'))
+        if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',f'{sid}-cross'))
+        if 'mac'        in sec: btns.append(('macarthur', 'MacArthur',f'{sid}-mac'))
+        btn_html = btn_row(*btns)
+
+        # --- panels ---
+        panels_html = ''
+        if 'heb'        in sec: panels_html += heb_panel(f'{sid}-grk',    sec['heb'], is_nt)
+        if 'places'     in sec: panels_html += poi_panel(f'{sid}-places',  sec['places'])
+        if 'people_sec' in sec: panels_html += ppl_panel(f'{sid}-ppl',     sec['people_sec'])
+        if 'timeline'   in sec: panels_html += tl_panel( f'{sid}-tl',      sec['timeline'])
+        if 'hist'       in sec: panels_html += hist_panel(f'{sid}-hist',   sec['hist'])
+        if 'ctx'        in sec: panels_html += ctx_panel(f'{sid}-ctx',     sec['ctx'])
+        if 'cross'      in sec: panels_html += cross_panel(f'{sid}-cross', sec['cross'])
+        if 'mac'        in sec: panels_html += mac_panel(f'{sid}-mac',     sec['mac'])
+
+        sections_html += (f'<div class="section">'
+                          f'<div class="section-header">{sec["header"]}</div>'
+                          f'{verses_html}{btn_html}{panels_html}</div>')
+
+    # --- scholarly block ---
+    trans_ref, trans_rows = data['trans']
+    lit_rows, lit_note    = data['lit']
+    themes_data, themes_note = data['themes']
+
+    ppl_h    = ppl_panel(   f'{cid}-ppl',    data['ppl'])
+    trans_h  = trans_panel( f'{cid}-trans',  trans_ref, trans_rows)
+    src_h    = src_panel(   f'{cid}-src',    data['src'])
+    rec_h    = rec_panel(   f'{cid}-rec',    data['rec'])
+    lit_h    = lit_panel(   f'{cid}-lit',    lit_rows, lit_note)
+    hebt_h   = hebtext_panel(f'{cid}-hebtext', data['hebtext'], is_nt)
+    thread_h = thread_panel(f'{cid}-thread', data['thread'])
+    tb, tp   = themes_btn_panel(f'{cid}-themes', themes_data, themes_note)
+
+    sch = scholarly_block(cid, ppl_h, trans_h, src_h, rec_h,
+                          lit_h, hebt_h, thread_h, tb, tp, is_nt)
+
+    page(book_name, book_dir, ch, data['title'], meta['auth'],
+         sections_html, sch,
+         meta['vhl_places'], meta['vhl_people'], meta['vhl_time'], meta['vhl_key'],
+         is_nt)
+    print(f'Built {book_name} {ch}')
+
+
+def rebuild_verses_js():
+    """Rebuild /verses.js from all live chapter HTML files. Call after every batch."""
+    all_verses = []
+    for book_dir, book_name, total, live, _ in REGISTRY:
+        for ch in range(1, live+1):
+            path = f'{_REPO}/{book_dir}/{book_name}_{ch}.html'
+            if not os.path.exists(path): continue
+            with open(path) as f: html = f.read()
+            boundary = html.find('<div class="scholarly-block">')
+            if boundary == -1: boundary = html.rfind('</main>')
+            for v_num, text in re.findall(
+                r'<span class="verse-text"><span class="verse-num">(\d+)</span>(.*?)</span>',
+                html[:boundary], re.DOTALL):
+                text = re.sub(r'<[^>]+>', '', text).strip()
+                text = re.sub(r'\s+', ' ', text).strip()
+                if text:
+                    all_verses.append({
+                        'ref':   f'{book_name} {ch}:{v_num}',
+                        'short': f'{book_name[:3]} {ch}:{v_num}',
+                        'text':  text,
+                        'url':   f'{book_dir}/{book_name}_{ch}.html',
+                        'book':  book_name,
+                        'ch':    int(ch),
+                        'v':     int(v_num),
+                    })
+    out = f'{_REPO}/verses.js'
+    with open(out, 'w') as f:
+        f.write('const VERSES=' + json.dumps(all_verses, separators=(',',':')) + ';')
+    print(f'verses.js rebuilt: {len(all_verses)} verses')
+    return len(all_verses)
+
 
 print("Shared helpers loaded.")
