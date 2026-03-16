@@ -4,25 +4,32 @@ import re, json, math, os
 _REPO = '/home/claude/ScriptureDeepDive'
 
 def _bootstrap():
-    """Extract CSS directly from Genesis_1.html — single source of truth.
-    Strips any previously baked EXTRA_CSS (identified by sentinel or legacy
-    BUTTON SYSTEM header) so accumulated rules from old builds don't conflict."""
+    """Extract CSS and JS from Genesis_2.html (richer JS) + Genesis_1.html (base CSS).
+    Genesis 2 has the full qnav control script (openQnav, closeQnav, qnavToggleBook)
+    which Genesis 1 lost when rebuilt. Use Gen 2 for scripts, Gen 1 for CSS.
+    Strips any previously baked EXTRA_CSS so accumulated rules don't conflict."""
     with open(f'{_REPO}/genesis/Genesis_1.html') as f:
-        g = f.read()
-    scripts = re.findall(r'<script[^>]*>(.*?)</script>', g, re.DOTALL)
-    raw_css = g[g.find('<style>')+7:g.find('</style>')]
-    # Strip previously baked EXTRA_CSS — try sentinel first, then legacy header
+        g1 = f.read()
+    with open(f'{_REPO}/genesis/Genesis_2.html') as f:
+        g2 = f.read()
+
+    # CSS from Genesis 1 (base, stripped of EXTRA_CSS)
+    raw_css = g1[g1.find('<style>')+7:g1.find('</style>')]
     for marker in ('/* ==EXTRA_CSS_START== */', '/* \u2550\u2550\u2550\u2550'):
         if marker in raw_css:
             raw_css = raw_css[:raw_css.find(marker)]
             break
-    css     = raw_css
-    tog_js  = '<script>' + scripts[0] + '</script>'
-    qnav_js = next(('<script>'+s+'</script>' for s in scripts if 'verseMatches' in s), None)
-    sw_js   = '<script>' + scripts[-1] + '</script>'
-    return css, tog_js, qnav_js, sw_js
 
-CSS, TOG_JS, QNAV_JS, SW_JS = _bootstrap()
+    # Scripts from Genesis 2 (has the full qnav control block)
+    scripts2 = re.findall(r'<script[^>]*>(.*?)</script>', g2, re.DOTALL)
+    tog_js      = '<script>' + scripts2[0] + '</script>'
+    qnav_js     = next(('<script>'+s+'</script>' for s in scripts2 if 'verseMatches' in s), None)
+    qnav_ctrl   = next(('<script>'+s+'</script>' for s in scripts2 if 'openQnav' in s), None)
+    sw_js       = next(('<script>'+s+'</script>' for s in scripts2 if 'serviceWorker' in s), None)
+
+    return raw_css, tog_js, qnav_js, qnav_ctrl, sw_js
+
+CSS, TOG_JS, QNAV_JS, QNAV_CTRL_JS, SW_JS = _bootstrap()
 
 # CSS for panel types added after the original Genesis_1.html template was frozen
 EXTRA_CSS = '''
@@ -219,11 +226,20 @@ BOOK_PREFIX = {
 BOOK_META = {
     'genesis': {
         'is_nt': False,
-        'auth': ('<strong>Author:</strong> Moses, according to Jewish and Christian tradition, '
-                 'drawing on patriarchal records and divine revelation.\n\n'
-                 '<strong>When written:</strong> c.1445-1405 BC during the wilderness period.\n\n'
-                 '<strong>What prompted it:</strong> To record God\'s creation of the world and '
-                 'his covenant relationship with the patriarchs, culminating in Israel\'s formation as a people.'),
+        'auth': ('<strong>Author:</strong> Moses (Moshe ben Amram), c.1526&ndash;1406 BC. Born a Hebrew slave in Egypt, '
+                 'adopted into Pharaoh\'s household, educated in "all the wisdom of the Egyptians" (Acts 7:22). '
+                 'Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. '
+                 'Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel '
+                 'through the wilderness; died on Mount Nebo in sight of Canaan, age 120.\n\n'
+                 '<strong>When written:</strong> c.1445&ndash;1405 BC during the wilderness period, following the Exodus from Egypt. '
+                 'Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. '
+                 'The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT '
+                 '(Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).\n\n'
+                 '<strong>What prompted it:</strong> To record God\'s creation of the world and his covenant relationship '
+                 'with the patriarchs &mdash; Abraham, Isaac, Jacob, and Joseph &mdash; culminating in Israel\'s formation '
+                 'as a people chosen to carry the promise of blessing to all nations (Gen 12:1&ndash;3). '
+                 'Genesis answers the foundational questions: Who is God? Who are we? What went wrong? '
+                 'What is God doing about it?'),
         'vhl_places': ['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],
         'vhl_people': ['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon',
                        'Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],
@@ -689,6 +705,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             TOG_JS + '\n' +
             vhl_js(vhl_places, vhl_people, vhl_time, vhl_key) + '\n' +
             QNAV_JS + '\n' +
+            QNAV_CTRL_JS + '\n' +
             '<script src="../verses.js"></script>\n' +
             SW_JS + '\n' + HISTORY_JS + '\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
