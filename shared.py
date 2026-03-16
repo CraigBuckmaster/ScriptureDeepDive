@@ -4,11 +4,19 @@ import re, json, math, os
 _REPO = '/home/claude/ScriptureDeepDive'
 
 def _bootstrap():
-    """Extract CSS and JS directly from Genesis_1.html — single source of truth."""
+    """Extract CSS directly from Genesis_1.html — single source of truth.
+    Strips any previously baked EXTRA_CSS (identified by sentinel or legacy
+    BUTTON SYSTEM header) so accumulated rules from old builds don't conflict."""
     with open(f'{_REPO}/genesis/Genesis_1.html') as f:
         g = f.read()
     scripts = re.findall(r'<script[^>]*>(.*?)</script>', g, re.DOTALL)
-    css = g[g.find('<style>')+7:g.find('</style>')]
+    raw_css = g[g.find('<style>')+7:g.find('</style>')]
+    # Strip previously baked EXTRA_CSS — try sentinel first, then legacy header
+    for marker in ('/* ==EXTRA_CSS_START== */', '/* \u2550\u2550\u2550\u2550'):
+        if marker in raw_css:
+            raw_css = raw_css[:raw_css.find(marker)]
+            break
+    css     = raw_css
     tog_js  = '<script>' + scripts[0] + '</script>'
     qnav_js = next(('<script>'+s+'</script>' for s in scripts if 'verseMatches' in s), None)
     sw_js   = '<script>' + scripts[-1] + '</script>'
@@ -18,6 +26,7 @@ CSS, TOG_JS, QNAV_JS, SW_JS = _bootstrap()
 
 # CSS for panel types added after the original Genesis_1.html template was frozen
 EXTRA_CSS = '''
+/* ==EXTRA_CSS_START== */
 /* ════════════════════════════════════════════════════════
    BUTTON SYSTEM — corrected layer (overrides original CSS)
    ════════════════════════════════════════════════════════ */
