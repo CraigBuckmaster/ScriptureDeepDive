@@ -19,6 +19,7 @@
 
 
 
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -321,6 +322,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 
 
 
+
+
 /* ==EXTRA_CSS_START== */
 /* ════════════════════════════════════════════════════════
    BUTTON SYSTEM — corrected layer (overrides original CSS)
@@ -398,6 +401,13 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 /* Themes button — also gold in scholarly context, own colour outside */
 .anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
 .anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
 
 
 /* ── Textual Notes panel ─────────────────────────────── */

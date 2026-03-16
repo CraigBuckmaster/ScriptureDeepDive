@@ -104,6 +104,13 @@ EXTRA_CSS = '''
 .anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
 .anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
 
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
 
 /* ── Textual Notes panel ─────────────────────────────── */
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
