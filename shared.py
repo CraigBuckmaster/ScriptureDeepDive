@@ -67,59 +67,34 @@ EXTRA_CSS = '''
 .anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
                         background:rgba(100,40,80,.22) !important;}
 
-/* 5. SCHOLARLY BLOCK — restore per-type colour identity
-      The existing .scholarly-buttons .anno-trigger rule sets
-      a uniform blue at specificity (0,2,0). These rules at
-      (0,3,0) beat it and restore each button's own colour.   */
-.scholarly-buttons .anno-trigger.people      {color:var(--ppl-accent)      !important;border-color:var(--ppl-border)    !important;background:rgba(120,48,12,.22)  !important;}
-.scholarly-buttons .anno-trigger.translations{color:var(--trans-accent)    !important;border-color:var(--trans-border)  !important;background:rgba(16,80,72,.22)   !important;}
-.scholarly-buttons .anno-trigger.sources     {color:#c070a8               !important;border-color:#743060             !important;background:rgba(100,40,80,.22)  !important;}
-.scholarly-buttons .anno-trigger.reception   {color:var(--rec-accent)      !important;border-color:var(--rec-border)   !important;background:rgba(100,20,48,.22)  !important;}
-.scholarly-buttons .anno-trigger.literary    {color:var(--lit-accent)      !important;border-color:var(--lit-border)   !important;background:rgba(64,72,8,.22)    !important;}
-.scholarly-buttons .anno-trigger.hebrew-text {color:var(--heb-text-accent) !important;border-color:#6a5010            !important;background:rgba(64,48,0,.22)    !important;}
-.scholarly-buttons .anno-trigger.threading   {color:var(--thread-accent)   !important;border-color:var(--thread-border)!important;background:rgba(40,40,100,.22)  !important;}
-.scholarly-buttons .anno-trigger.textual     {color:#70b8e8               !important;border-color:#2a4060            !important;background:rgba(32,64,100,.22)  !important;}
-.scholarly-buttons .anno-trigger.debate      {color:#a870e8               !important;border-color:#3a2060            !important;background:rgba(56,24,96,.22)   !important;}
-.scholarly-buttons .anno-trigger.macarthur   {color:#e05a6a               !important;border-color:#882030            !important;background:rgba(100,20,32,.22)  !important;}
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
 
-/* Themes button — class-based (replaces old inline-style approach) */
-.anno-trigger.themes{color:#a070d8;border-color:#501890;background:rgba(72,32,120,.22);}
-.anno-trigger.themes:hover{border-color:#7848b8;background:rgba(72,32,120,.32);}
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
 
-/* 6. PER-TYPE HOVER for scholarly buttons
-      Without these, .scholarly-buttons .anno-trigger:hover (0,2,0)
-      would override our colour rules (0,3,0) on hover.             */
-.scholarly-buttons .anno-trigger.people:hover      {border-color:var(--ppl-border)    !important;background:rgba(120,48,12,.32)   !important;}
-.scholarly-buttons .anno-trigger.translations:hover{border-color:var(--trans-border)  !important;background:rgba(16,80,72,.32)    !important;}
-.scholarly-buttons .anno-trigger.sources:hover     {border-color:#743060             !important;background:rgba(100,40,80,.32)   !important;}
-.scholarly-buttons .anno-trigger.reception:hover   {border-color:var(--rec-border)   !important;background:rgba(100,20,48,.32)   !important;}
-.scholarly-buttons .anno-trigger.literary:hover    {border-color:var(--lit-border)   !important;background:rgba(64,72,8,.32)     !important;}
-.scholarly-buttons .anno-trigger.hebrew-text:hover {border-color:#6a5010            !important;background:rgba(64,48,0,.32)     !important;}
-.scholarly-buttons .anno-trigger.threading:hover   {border-color:var(--thread-border)!important;background:rgba(40,40,100,.32)   !important;}
-.scholarly-buttons .anno-trigger.textual:hover     {border-color:#2a4060            !important;background:rgba(32,64,100,.32)   !important;}
-.scholarly-buttons .anno-trigger.debate:hover      {border-color:#3a2060            !important;background:rgba(56,24,96,.32)    !important;}
-.scholarly-buttons .anno-trigger.macarthur:hover   {border-color:#882030            !important;background:rgba(100,20,32,.32)   !important;}
-.scholarly-buttons .anno-trigger.themes:hover      {border-color:#7848b8            !important;background:rgba(72,32,120,.32)   !important;}
-
-/* 7. SCHOLARLY ACTIVE STATE — left-bar indicator
-      Original .scholarly-buttons .anno-trigger.active is (0,3,0)
-      which beats our general .anno-trigger.active (0,2,0).
-      These rules at (0,4,0) restore the left-bar in the scholarly block. */
-.scholarly-buttons .anno-trigger.people.active      {box-shadow:inset 3px 0 0 var(--ppl-accent),    inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.translations.active{box-shadow:inset 3px 0 0 var(--trans-accent),  inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.sources.active     {box-shadow:inset 3px 0 0 #c070a8,              inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.reception.active   {box-shadow:inset 3px 0 0 var(--rec-accent),    inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.literary.active    {box-shadow:inset 3px 0 0 var(--lit-accent),    inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.hebrew-text.active {box-shadow:inset 3px 0 0 var(--heb-text-accent),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.threading.active   {box-shadow:inset 3px 0 0 var(--thread-accent), inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.textual.active     {box-shadow:inset 3px 0 0 #70b8e8,              inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.debate.active      {box-shadow:inset 3px 0 0 #a870e8,              inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.macarthur.active   {box-shadow:inset 3px 0 0 #e05a6a,              inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-.scholarly-buttons .anno-trigger.themes.active      {box-shadow:inset 3px 0 0 #a070d8,              inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.25);}
-
-/* Remove the old themes !important rules that targeted [onclick*="themes"] —
-   the class-based approach makes them redundant (they stay in original CSS
-   but are now beaten by .anno-trigger.themes rules above)                  */
 
 /* ── Textual Notes panel ─────────────────────────────── */
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
