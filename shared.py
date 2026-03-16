@@ -25,6 +25,14 @@ EXTRA_CSS = '''
 /* 1. Font size: .72rem → .8rem for readability + tap target */
 .anno-trigger{font-size:.8rem !important;}
 
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
 /* 2. Active state: clear left-bar indicator + brighter text
       Users can see at a glance which panels are open         */
 .anno-trigger.active{
@@ -583,7 +591,7 @@ def themes_btn_panel(pid, theme_data, chapter_note):
     svg = f'<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">{circles}{axis_lines}<polygon points="{poly}" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/>{axis_labels}</svg>'
     # Use class-based styling so EXTRA_CSS can control it consistently
     btn = (f'<button class="anno-trigger themes" onclick="tog(this,\'{pid}\')">'
-           f'<span>Theological Themes</span><span class="chev">&#9660;</span></button>')
+           f'<span>Theological Themes</span></button>')
     panel = (f'<div id="{pid}" class="themes-panel"><h4>Theological Themes Tracker</h4>'
              f'<div class="radar-wrap">{svg}</div>'
              f'<p style="font-family:\'Source Sans 3\',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">{chapter_note}</p></div>')
@@ -593,21 +601,21 @@ def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn,
                     is_nt=False, textual_h='', debate_h=''):
     lang_btn = 'Greek-Rooted Reading' if is_nt else 'Hebrew-Rooted Reading'
     tx_btn = (f'<button class="anno-trigger textual" onclick="tog(this,\'{cid}-tx\')">'
-              f'<span>Textual Notes</span><span class="chev">&#9660;</span></button>'
+              f'<span>Textual Notes</span></button>'
               if textual_h else '')
     db_btn = (f'<button class="anno-trigger debate" onclick="tog(this,\'{cid}-debate\')">'
-              f'<span>Scholarly Debates</span><span class="chev">&#9660;</span></button>'
+              f'<span>Scholarly Debates</span></button>'
               if debate_h else '')
     return f'''<div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,\'{cid}-ppl\')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,\'{cid}-trans\')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,\'{cid}-src\')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,\'{cid}-rec\')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,\'{cid}-lit\')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,\'{cid}-hebtext\')"><span>{lang_btn}</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,\'{cid}-thread\')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,\'{cid}-ppl\')"><span>People</span></button>
+<button class="anno-trigger translations" onclick="tog(this,\'{cid}-trans\')"><span>Translations</span></button>
+<button class="anno-trigger sources" onclick="tog(this,\'{cid}-src\')"><span>Ancient Sources</span></button>
+<button class="anno-trigger reception" onclick="tog(this,\'{cid}-rec\')"><span>Reception History</span></button>
+<button class="anno-trigger literary" onclick="tog(this,\'{cid}-lit\')"><span>Literary Structure</span></button>
+<button class="anno-trigger hebrew-text" onclick="tog(this,\'{cid}-hebtext\')"><span>{lang_btn}</span></button>
+<button class="anno-trigger threading" onclick="tog(this,\'{cid}-thread\')"><span>Intertextual Threading</span></button>
 {tx_btn}{db_btn}{themes_btn}
 </div>
 {ppl}{trans}{src}{rec}{lit}{hebtext}{thread}{textual_h}{debate_h}{themes_panel_html}
