@@ -22,11 +22,45 @@
 * { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; min-height:100vh; }
-.com-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; }
-.com-nav-back, .com-nav-all { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
 .com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
-.com-nav-items { display:flex; gap:.2rem; flex-wrap:wrap; justify-content:center; }
-.com-nav-item { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; padding:.3rem .6rem; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
 .com-nav-item:hover { color:var(--text-dim); }
 .bio-wrap { max-width:800px; margin:0 auto; padding:3rem 1.5rem 6rem; }
 .bio-header { margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
