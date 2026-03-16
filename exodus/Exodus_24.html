@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -270,6 +290,247 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -307,40 +568,24 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Exodus 24</h1>
-<p>Covenant Ratification; The Elders See God</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The Covenant Ratified with Blood; The Elders See God; Moses Enters the Cloud</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">
-<div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526–1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120. Moses is not only the principal character of Exodus — he is its author, and the events recorded are largely his own experience.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Composed during the wilderness period, c.1446–1406 BC. The events of Exodus span approximately 80 years (Moses's birth to the Tabernacle's completion), but the book itself was written after the fact — most likely during the years at Sinai and the wilderness wandering that followed. The Tabernacle instructions and legal material (chs.19–40) may have been committed to writing earliest, as they were immediately actionable.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Israel needed a founding narrative — a record of how God delivered them from 430 years of slavery, made them his covenant people at Sinai, and established the Tabernacle as his dwelling among them. Exodus is the story of liberation, but more than that, it is the story of covenant formation and divine habitation. It answers: How did God redeem us? What does he require of us? And how can a holy God dwell with a sinful people?</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses, according to Jewish and Christian tradition.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445-1405 BC during the wilderness period.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's redemption of Israel from Egypt and the establishment of the covenant at Sinai.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Covenant Ratified with Blood</div><span class="verse-text"><span class="verse-num">1</span>Then the Lord said to Moses, "Come up to the Lord, you and Aaron, Nadab and Abihu, and seventy of the elders of Israel. You are to worship at a distance,</span><span class="verse-text"><span class="verse-num">2</span>but Moses alone is to approach the Lord; the others must not come near. And the people may not come up with him."</span><span class="verse-text"><span class="verse-num">3</span>When Moses went and told the people all the Lord's words and laws, they responded with one voice, "Everything the Lord has said we will do."</span><span class="verse-text"><span class="verse-num">4</span>Moses then wrote down everything the Lord had said. He got up early the next morning and built an altar at the foot of the mountain and set up twelve stone pillars representing the twelve tribes of Israel.</span><span class="verse-text"><span class="verse-num">5</span>Then he sent young Israelite men, and they offered burnt offerings and sacrificed young bulls as fellowship offerings to the Lord.</span><span class="verse-text"><span class="verse-num">6</span>Moses took half of the blood and put it in bowls, and the other half he splashed against the altar.</span><span class="verse-text"><span class="verse-num">7</span>Then he took the Book of the Covenant and read it to the people. They responded, "We will do everything the Lord has said; we will obey."</span><span class="verse-text"><span class="verse-num">8</span>Moses then took the blood, sprinkled it on the people and said, "This is the blood of the covenant that the Lord has made with you in accordance with all these words."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'e24-s1-heb')"><span>Hebrew</span></button><button class="anno-trigger history" onclick="tog(this,'e24-s1-hist')"><span>Historical</span></button><button class="anno-trigger context" onclick="tog(this,'e24-s1-ctx')"><span>Context</span></button><button class="anno-trigger cross" onclick="tog(this,'e24-s1-cross')"><span>Cross-Ref</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e24-s1-mac')"><span>MacArthur</span></button></div><div id="e24-s1-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">דַּם הַבְּרִית</span> <span class="tlit">dam habbĕrît</span> — <strong>the blood of the covenant</strong>: Half thrown on the altar (God's side), half thrown on the people (their side). Blood is the most serious covenant-sealing material — it represents life, and declares that covenant-breaking deserves death.</p><p><span class="hebrew-word">נַעֲשֶׂה וְנִשְׁמָע</span> <span class="tlit">naʿăśeh wĕnišmāʿ</span> — <strong>we will do and we will obey</strong>: The people's double commitment. "We will do and we will hear/obey" — doing precedes understanding in covenant life. Famous in Jewish tradition as the supreme expression of covenant commitment.</p></div><div id="e24-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>Covenant-sealing with blood is attested across the ANE. The Sinai ceremony is distinctive: the entire people, not just the leadership, are covenant partners. The Book of the Covenant is read aloud and responded to — covenant is a community event, not a priestly transaction.</p></div><div id="e24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The double agreement (vv.3 and 7) and the blood thrown on the people create the most solemn covenant-sealing in the Pentateuch. When Jesus at the Last Supper says "this is the blood of the covenant," he deliberately echoes Moses' words here — the new covenant sealed in his blood, not the blood of bulls.</p></div><div id="e24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 26:28</span><span class="ref-text">"This is my blood of the covenant, which is poured out for many" — Jesus' explicit echo of Exod 24:8.</span></li><li><span class="ref-cite">Heb 9:18–20</span><span class="ref-text">The Hebrews author: "even the first covenant was not inaugurated without blood."</span></li><li><span class="ref-cite">Heb 12:24</span><span class="ref-text">"Jesus, the mediator of a new covenant, and to the sprinkled blood that speaks a better word."</span></li></ul></div><div id="e24-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:8</span><p>"Behold the blood of the covenant." The NT's language of Christ's blood is not metaphorical decoration — it is the exact language of covenant ratification. The new covenant is sealed in the same way as the old, but with blood that speaks a better word. When we take the cup at the Lord's Supper, we stand where Israel stood at the foot of Sinai.</p></div><div class="com-note"><span class="com-ref">24:3,7</span><p>Israel's double commitment — "All that the LORD has spoken we will do" — will not hold. Within forty days they worship the golden calf. But the covenant is not contingent on their faithfulness; it is grounded in God's. The blood that binds them is also the provision for when they break it.</p></div></div></div>
-<div class="section"><div class="section-header">Verses 9&ndash;18 &mdash; The Elders See God; Moses Enters the Cloud</div><span class="verse-text"><span class="verse-num">9</span>Moses and Aaron, Nadab and Abihu, and the seventy elders of Israel went up</span><span class="verse-text"><span class="verse-num">10</span>and saw the God of Israel. Under his feet was something like a pavement made of lapis lazuli, as bright blue as the sky.</span><span class="verse-text"><span class="verse-num">11</span>But God did not raise his hand against these leaders of the Israelites; they saw God, and they ate and drank.</span><span class="verse-text"><span class="verse-num">12</span>The Lord said to Moses, "Come up to me on the mountain and stay here, and I will give you the tablets of stone with the law and commandments I have written for their instruction."</span><span class="verse-text"><span class="verse-num">13</span>Then Moses set out with Joshua his aide, and Moses went up on the mountain of God.</span><span class="verse-text"><span class="verse-num">14</span>He said to the elders, "Wait here for us until we come back to you. Aaron and Hur are with you, and anyone involved in a dispute can go to them."</span><span class="verse-text"><span class="verse-num">15</span>When Moses went up on the mountain, the cloud covered it,</span><span class="verse-text"><span class="verse-num">16</span>and the glory of the Lord settled on Mount Sinai. For six days the cloud covered the mountain, and on the seventh day the Lord called to Moses from within the cloud.</span><span class="verse-text"><span class="verse-num">17</span>To the Israelites the glory of the Lord looked like a consuming fire on top of the mountain.</span><span class="verse-text"><span class="verse-num">18</span>Then Moses entered the cloud as he went on up the mountain. And he stayed on the mountain forty days and forty nights.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'e24-s2-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'e24-s2-ctx')"><span>Context</span></button><button class="anno-trigger cross" onclick="tog(this,'e24-s2-cross')"><span>Cross-Ref</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e24-s2-mac')"><span>MacArthur</span></button></div><div id="e24-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">וַיִּרְאוּ אֵת אֱלֹהֵי יִשְׂרָאֵל</span> <span class="tlit">wayyirʾû ʾēt ʾĕlōhê yiśrāʾēl</span> — <strong>and they saw the God of Israel</strong>: Seventy-four leaders see the God of Israel — described with restraint: the sapphire pavement beneath his feet, the heavenly clarity. No description of his face. The vision is real; its content deliberately limited.</p><p><span class="hebrew-word">וַיֹּאכְלוּ וַיִּשְׁתּוּ</span> <span class="tlit">wayyōʾkĕlû wayyištû</span> — <strong>and they ate and drank</strong>: The covenant meal in God's presence — communion before Communion. The eschatological banquet of Isa 25:6 and Rev 19:9 has its seed here. This is the high-water mark of OT access to God.</p></div><div id="e24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The theophany of the elders is the closest the OT comes to unmediated corporate communion with God. Yet even here Moses alone enters the cloud — the elders see from a distance. The contrast is instructive: the covenant creates access; only the mediator has full access. Hebrews resolves this tension: Christ, the ultimate mediator, gives the entire community the access Moses alone had.</p></div><div id="e24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rev 19:9</span><span class="ref-text">"Blessed are those invited to the marriage supper of the Lamb" — the eschatological fulfilment of the covenant meal.</span></li><li><span class="ref-cite">Matt 26:26–28</span><span class="ref-text">The Last Supper as the new covenant ratification meal — "this is my blood of the covenant."</span></li><li><span class="ref-cite">Heb 10:19–22</span><span class="ref-text">The veil torn; all believers now have the access Moses alone had on Sinai — "a new and living way."</span></li></ul></div><div id="e24-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:10–11</span><p>Seventy-four people saw God and did not die. The covenant blood (vv.6–8) had just been applied — the blood enables the vision; the atonement makes the presence bearable. This is the logic of the entire sacrificial system in a single scene: without blood, the Holy One cannot be approached; with blood, he can be seen, and you can eat at his table.</p></div><div class="com-note"><span class="com-ref">24:18</span><p>Moses alone enters the cloud for forty days and forty nights. The elders ate and drank at a distance; Moses disappears into the Presence itself. The access Christ gives is not forty days in the cloud — it is eternal sonship, permanent welcome, the torn veil that says: come in, and do not leave.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Covenant Ratified with Blood</div><span class="verse-text"><span class="verse-num">1</span>Then the Lord said to Moses, "Come up to the Lord, you and Aaron, Nadab and Abihu, and seventy of the elders of Israel. You are to worship at a distance,</span><span class="verse-text"><span class="verse-num">2</span>but Moses alone is to approach the Lord; the others must not come near. And the people may not come up with him."</span><span class="verse-text"><span class="verse-num">3</span>When Moses went and told the people all the Lord's words and laws, they responded with one voice, "Everything the Lord has said we will do."</span><span class="verse-text"><span class="verse-num">4</span>Moses then wrote down everything the Lord had said. He got up early the next morning and built an altar at the foot of the mountain and set up twelve stone pillars representing the twelve tribes of Israel.</span><span class="verse-text"><span class="verse-num">5</span>Then he sent young Israelite men, and they offered burnt offerings and sacrificed young bulls as fellowship offerings to the Lord.</span><span class="verse-text"><span class="verse-num">6</span>Moses took half of the blood and put it in bowls, and the other half he splashed against the altar.</span><span class="verse-text"><span class="verse-num">7</span>Then he took the Book of the Covenant and read it to the people. They responded, "We will do everything the Lord has said; we will obey."</span><span class="verse-text"><span class="verse-num">8</span>Moses then took the blood, sprinkled it on the people and said, "This is the blood of the covenant that the Lord has made with you in accordance with all these words."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex24-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex24-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex24-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex24-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex24-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'ex24-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ex24-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ex24-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ex24-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ex24-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">דַּם הַבְּרִית</span> <span class="tlit">dam habbĕrît</span> — <strong>the blood of the covenant</strong>: Half thrown on the altar (God's side), half thrown on the people (their side). Blood is the most serious covenant-sealing material — it represents life, and declares that covenant-breaking deserves death.</p><p><span class="hebrew-word">נַעֲשֶׂה וְנִשְׁמָע</span> <span class="tlit">naʿăśeh wĕnišmāʿ</span> — <strong>we will do and we will obey</strong>: The people's double commitment. "We will do and we will hear/obey" — doing precedes understanding in covenant life. Famous in Jewish tradition as the supreme expression of covenant commitment.</p></div><div id="ex24-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>Covenant-sealing with blood is attested across the ANE. The Sinai ceremony is distinctive: the entire people, not just the leadership, are covenant partners. The Book of the Covenant is read aloud and responded to — covenant is a community event, not a priestly transaction.</p></div><div id="ex24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The double agreement (vv.3 and 7) and the blood thrown on the people create the most solemn covenant-sealing in the Pentateuch. When Jesus at the Last Supper says "this is the blood of the covenant," he deliberately echoes Moses' words here — the new covenant sealed in his blood, not the blood of bulls.</p></div><div id="ex24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 26:28</span><span class="ref-text">"This is my blood of the covenant, which is poured out for many" — Jesus' explicit echo of Exod 24:8.</span></li><li><span class="ref-cite">Heb 9:18–20</span><span class="ref-text">The Hebrews author: "even the first covenant was not inaugurated without blood."</span></li><li><span class="ref-cite">Heb 12:24</span><span class="ref-text">"Jesus, the mediator of a new covenant, and to the sprinkled blood that speaks a better word."</span></li></ul></div><div id="ex24-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:8</span><p>"Behold the blood of the covenant." The NT's language of Christ's blood is not metaphorical decoration — it is the exact language of covenant ratification. The new covenant is sealed in the same way as the old, but with blood that speaks a better word. When we take the cup at the Lord's Supper, we stand where Israel stood at the foot of Sinai.</p></div><div class="com-note"><span class="com-ref">24:3,7</span><p>Israel's double commitment — "All that the LORD has spoken we will do" — will not hold. Within forty days they worship the golden calf. But the covenant is not contingent on their faithfulness; it is grounded in God's. The blood that binds them is also the provision for when they break it.</p></div><div class="com-note"><span class="com-ref">24:3</span><p>'We will do everything the LORD has said; we will obey.' The third covenant ratification by the people (cf. 19:8; 24:7) — three times Israel commits to the covenant before it is sealed with blood. The repetition is not liturgical redundancy; it is the narrative's insistence on the solemnity and full-knowledge quality of the commitment. Israel knows what they are agreeing to.</p></div><div class="com-note"><span class="com-ref">24:6–8</span><p>Moses takes the blood of the covenant sacrifices and divides it: half on the altar (representing God), half on the people. The blood of the covenant is the most solemn possible bond — life for life, the sacrificial animal's blood uniting God and people in a covenant that can only be broken by death. Jesus' words at the Last Supper — 'this is my blood of the covenant' — directly echo Moses' words at Sinai.</p></div><div class="com-note"><span class="com-ref">24:10–11</span><p>'They saw the God of Israel' — the elders of Israel eat and drink in the divine presence and 'God did not raise his hand against the nobles of Israel.' The expected outcome of unmediated divine encounter (death) does not occur. God permits this extraordinary access: the covenant-ratification meal is a meal with God. The scene anticipates the eschatological banquet (Isa 25:6; Rev 19:9).</p></div></div><div id="ex24-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:7</span><p>The 'Book of the Covenant' read to the people — and their response 'we will do and we will hear/obey' (na'aseh venishma) — is the formal acceptance of the covenant document. Sarna notes that in the ancient Near Eastern treaty tradition, the covenant document was read to the vassal, who formally accepted its terms. Israel's response is the treaty acceptance formula. The unusual word order ('do' before 'hear') is theologically significant: total commitment precedes full comprehension.</p></div><div class="com-note"><span class="com-ref">24:10</span><p>'Under his feet was something like a pavement made of sapphire, clear as the sky itself.' The throne-pavement vision is one of the OT's most striking divine throne descriptions, closely paralleled in Ezek 1:26 (the sapphire/lapis lazuli throne). Sarna notes that lapis lazuli was the most precious blue stone in the ancient world, associated with the sky and divine royalty. The vision does not describe God himself but the platform of his presence — the transcendent cannot be seen; only the approach can be described.</p></div></div><div id="ex24-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:6–8</span><p>The blood ceremony is the OT's most formally structured covenant-sealing ritual. Alter notes the precise symmetry: half the blood on the altar (God's side), half on the people (Israel's side). The blood connects the two parties physically — the same life-substance touches both. Moses' recitation — 'this is the blood of the covenant that the LORD has made with you' — is the covenant formula, the words that make the action a legal act.</p></div><div class="com-note"><span class="com-ref">24:9–11</span><p>The meal on the mountain is the chapter's most theologically astonishing moment — quietly narrated after the elaborate ritual. 'And they beheld God, and ate and drank.' Alter notes the simplicity of the statement is its power: the most sacred act in Israelite experience (standing in the divine presence) is described in the most mundane terms (eating and drinking). The extraordinary is normalised; the transcendent permits intimacy.</p></div></div><div id="ex24-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:8</span><p>Calvin on the blood of the covenant: 'The sprinkling of blood was a confirmation of the covenant, for the people were bound by it as by a solemn tie to God. And the covenant itself was consecrated with blood, to teach that men can only come to God by means of a sacrifice.' The Levitical sacrificial system is implicit in the Sinai blood ceremony: access to God requires atonement; the covenant is sealed with death. Hebrews 9:18–22 draws the explicit connection to Christ's blood.</p></div><div class="com-note"><span class="com-ref">24:10–11</span><p>Calvin on the vision of God: 'Though they saw God with their eyes, they did not perceive his essence, but only symbols which were accommodated to their capacity.' The vision is real but accommodated — what the elders saw was not the divine essence (which is invisible) but a divine self-accommodation to human perception. Calvin's doctrine of divine accommodation explains all theophanic visions: God presents himself in forms human perception can receive without perishing.</p></div></div><div id="ex24-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">24:8</span><p>The NET note on 'blood of the covenant' (dam habrit) notes that Heb 9:18–22 explicitly cites this passage and draws the connection to Christ's covenant blood. The note explains that in ancient Near Eastern treaties, blood oaths were the most solemn form of covenant commitment — often involving the parties passing between the cut halves of an animal (cf. Gen 15:17). The Sinai blood ceremony is the covenant's most solemn moment, exceeded only by the blood of the new covenant.</p></div><div class="com-note"><span class="com-ref">24:10</span><p>The NET note on the sapphire/lapis lazuli pavement discusses the parallel with Ezek 1:26 and the broader ancient Near Eastern tradition of divine throne descriptions using precious stones. The note also discusses the paradox of the passage: 'they saw the God of Israel' (v.10) but Moses is warned that no one can see God and live (33:20). The resolution: what is seen is the throne-platform, not the divine face — theophanic presence without full divine disclosure.</p></div></div></div><div class="section"><div class="section-header">Verses 9&ndash;18 &mdash; The Elders See God; Moses Enters the Cloud</div><span class="verse-text"><span class="verse-num">9</span>Moses and Aaron, Nadab and Abihu, and the seventy elders of Israel went up</span><span class="verse-text"><span class="verse-num">10</span>and saw the God of Israel. Under his feet was something like a pavement made of lapis lazuli, as bright blue as the sky.</span><span class="verse-text"><span class="verse-num">11</span>But God did not raise his hand against these leaders of the Israelites; they saw God, and they ate and drank.</span><span class="verse-text"><span class="verse-num">12</span>The Lord said to Moses, "Come up to me on the mountain and stay here, and I will give you the tablets of stone with the law and commandments I have written for their instruction."</span><span class="verse-text"><span class="verse-num">13</span>Then Moses set out with Joshua his aide, and Moses went up on the mountain of God.</span><span class="verse-text"><span class="verse-num">14</span>He said to the elders, "Wait here for us until we come back to you. Aaron and Hur are with you, and anyone involved in a dispute can go to them."</span><span class="verse-text"><span class="verse-num">15</span>When Moses went up on the mountain, the cloud covered it,</span><span class="verse-text"><span class="verse-num">16</span>and the glory of the Lord settled on Mount Sinai. For six days the cloud covered the mountain, and on the seventh day the Lord called to Moses from within the cloud.</span><span class="verse-text"><span class="verse-num">17</span>To the Israelites the glory of the Lord looked like a consuming fire on top of the mountain.</span><span class="verse-text"><span class="verse-num">18</span>Then Moses entered the cloud as he went on up the mountain. And he stayed on the mountain forty days and forty nights.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex24-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex24-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex24-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex24-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'ex24-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ex24-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ex24-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ex24-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ex24-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">וַיִּרְאוּ אֵת אֱלֹהֵי יִשְׂרָאֵל</span> <span class="tlit">wayyirʾû ʾēt ʾĕlōhê yiśrāʾēl</span> — <strong>and they saw the God of Israel</strong>: Seventy-four leaders see the God of Israel — described with restraint: the sapphire pavement beneath his feet, the heavenly clarity. No description of his face. The vision is real; its content deliberately limited.</p><p><span class="hebrew-word">וַיֹּאכְלוּ וַיִּשְׁתּוּ</span> <span class="tlit">wayyōʾkĕlû wayyištû</span> — <strong>and they ate and drank</strong>: The covenant meal in God's presence — communion before Communion. The eschatological banquet of Isa 25:6 and Rev 19:9 has its seed here. This is the high-water mark of OT access to God.</p></div><div id="ex24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The theophany of the elders is the closest the OT comes to unmediated corporate communion with God. Yet even here Moses alone enters the cloud — the elders see from a distance. The contrast is instructive: the covenant creates access; only the mediator has full access. Hebrews resolves this tension: Christ, the ultimate mediator, gives the entire community the access Moses alone had.</p></div><div id="ex24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rev 19:9</span><span class="ref-text">"Blessed are those invited to the marriage supper of the Lamb" — the eschatological fulfilment of the covenant meal.</span></li><li><span class="ref-cite">Matt 26:26–28</span><span class="ref-text">The Last Supper as the new covenant ratification meal — "this is my blood of the covenant."</span></li><li><span class="ref-cite">Heb 10:19–22</span><span class="ref-text">The veil torn; all believers now have the access Moses alone had on Sinai — "a new and living way."</span></li></ul></div><div id="ex24-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:10–11</span><p>Seventy-four people saw God and did not die. The covenant blood (vv.6–8) had just been applied — the blood enables the vision; the atonement makes the presence bearable. This is the logic of the entire sacrificial system in a single scene: without blood, the Holy One cannot be approached; with blood, he can be seen, and you can eat at his table.</p></div><div class="com-note"><span class="com-ref">24:18</span><p>Moses alone enters the cloud for forty days and forty nights. The elders ate and drank at a distance; Moses disappears into the Presence itself. The access Christ gives is not forty days in the cloud — it is eternal sonship, permanent welcome, the torn veil that says: come in, and do not leave.</p></div><div class="com-note"><span class="com-ref">24:12</span><p>'Come up to me on the mountain and stay here, and I will give you the tablets of stone with the law and commandments I have written for their instruction.' The written tablets are the covenant's permanent form — the Decalogue inscribed by God himself (31:18: 'written by the finger of God'). The permanence of the written form is the covenant's claim to authority: this is not oral tradition subject to variation but the fixed divine word.</p></div><div class="com-note"><span class="com-ref">24:15–18</span><p>Moses enters the cloud — the glory cloud that covered the mountain for six days before God called Moses on the seventh. The pattern of six-plus-one mirrors creation: six days of waiting, the seventh of entry. Moses remains in the cloud for forty days and nights — the period of the tabernacle instructions. The forty days is the covenant's deep-formation period: the full revelation of God's dwelling pattern will take as long as the flood preparation.</p></div></div><div id="ex24-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:12</span><p>The stone tablets are 'written by God' — the only object in the Pentateuch explicitly said to be of divine authorship. Sarna notes the theological weight: human writing transmits human words; these tablets transmit divine words in the most direct form available. When Moses later shatters the tablets (32:19), he is physically destroying the written covenant — an act of enormous theological significance that requires the covenant's rewriting in ch.34.</p></div><div class="com-note"><span class="com-ref">24:16–17</span><p>The glory (kavod) of the LORD settling on Sinai — appearing as a consuming fire — is the chapter's final theophanic image. Sarna notes the connection to the tabernacle: the same kavod that rests on Sinai will rest on the completed tabernacle (40:34–35). The tabernacle is a portable Sinai — the mountain's glory transferred to a structure Israel can carry. The forty days of tabernacle instruction (chs.25–31) will design the vessel for the glory.</p></div></div><div id="ex24-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:12–18</span><p>The ascent narrative frames the forty days of instruction as a moment outside normal time. Alter notes the deliberate cosmic framing: six days of cloud, seventh-day summons, forty days and nights in the cloud. The numbers are covenantally loaded (seven = completion, forty = formation). Moses in the cloud is removed from the narrative into the divine presence; the reader must wait through chs.25–31 for his return.</p></div></div><div id="ex24-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:12</span><p>Calvin on the written tablets: 'When God himself prescribes and writes the rule of a good and holy life, men are deprived of all excuse... the Law is no product of human reason or human will, but is the very voice of God.' The divine authorship of the tablets is Calvin's ground for the law's absolute authority. No human can edit, supplement, or revise what God has written. The permanence of the stone form is the permanence of the divine will.</p></div><div class="com-note"><span class="com-ref">24:18</span><p>On Moses' forty days in the cloud: 'God wished to exercise the faith and patience of his people by the long absence of their leader; and thus their fall into idolatry is rendered inexcusable.' The forty-day absence is a test of the covenant commitment they have just made. Israel will fail it within the forty days (ch.32: the golden calf). The covenant ratification of ch.24 and the covenant violation of ch.32 are the same distance apart as Moses' ascent and descent.</p></div></div><div id="ex24-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">24:17</span><p>The NET note on 'consuming fire' (esh okhlah) explains that the same phrase is used for the divine presence at the burning bush and for the divine glory in the tabernacle. The 'consuming' character of divine holiness is not destructive in these contexts but transformative — the mountain is not consumed; the tabernacle is not burned. The consuming fire imagery signals the absolute holiness of the divine presence without implying destruction of what it inhabits.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'e24-ppl')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'e24-trans')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'e24-src')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'e24-rec')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'e24-lit')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'e24-hebtext')"><span>Hebrew-Rooted Reading</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'e24-thread')"><span>Intertextual Threading</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'e24-themes')"><span>Theological Themes</span></button>
+<button class="anno-trigger people" onclick="tog(this,'ex24-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'ex24-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'ex24-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'ex24-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'ex24-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'ex24-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger themes" onclick="tog(this,'ex24-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="e24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Moses</div><div class="person-role">The blood-sprinkler and cloud-enterer</div><div class="person-text">Seals the covenant with blood, then disappears into God's presence for forty days. The mediator par excellence.</div></div><div class="person-card"><div class="person-name">The Seventy Elders</div><div class="person-role">The covenant witnesses</div><div class="person-text">See God and eat and drink — highest corporate access in the OT. Their meal is the type; the Lord's Supper is the fulfilment.</div></div><div class="person-card"><div class="person-name">Aaron and Hur</div><div class="person-role">Left in charge</div><div class="person-text">"Wait here for us until we return" — the community preserved in the mediator's absence.</div></div></div></div><div id="e24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">24:8 — The Blood of the Covenant</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"Behold the blood of the covenant that the LORD has made with you in accordance with all these words."</td></tr><tr><td class="t-label">NIV</td><td>"This is the blood of the covenant that the LORD has made with you in accordance with all these words."</td></tr><tr><td class="t-label">NASB</td><td>"Behold the blood of the covenant, which the LORD has made with you in accordance with all these words."</td></tr></table></div><div id="e24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Covenant Meals</div><div class="source-quote">ANE treaties were ratified with shared meals between covenant parties — shared eating signified peace established and covenant in force. Sinai gives unprecedented content to this known form: the suzerain is the God of the universe.</div><div class="source-note">The covenant meal participates in known ANE practice while transforming it completely.</div></div><div class="source-block"><div class="source-title">Sapphire Pavement</div><div class="source-quote">The sapphire-like pavement (v.10) echoes Ezekiel's throne vision (Ezek 1:26) and Revelation's sea of glass (Rev 4:6) — consistent theophanic imagery across the canon.</div><div class="source-note">The vision uses familiar imagery while remaining deliberately restrained about the divine form.</div></div></div><div id="e24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Hebrews 9:18–22</div><div class="rec-text">The sustained typological reading: "even the first covenant was not inaugurated without blood." Every element of the blood ceremony prefigures Christ's blood as inaugurator of the new covenant.</div></div><div class="rec-block"><div class="rec-who">Calvin</div><div class="rec-text">The covenant meal of the elders as the supreme OT foreshadowing of the Lord's Supper — they ate and drank in God's presence as we eat and drink in Christ's presence at his table.</div></div></div><div id="e24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Ascent — vv.1–2</span><span class="lit-text">Moses, Aaron, Nadab, Abihu, and seventy elders summoned to ascend</span></div><div class="lit-row"><span class="lit-label">Covenant reading — vv.3–7</span><span class="lit-text">Book of the Covenant read; people's double commitment</span></div><div class="lit-row"><span class="lit-label">Blood ceremony — v.8</span><span class="lit-text">"Behold the blood of the covenant" — sealed with life</span></div><div class="lit-row"><span class="lit-label">Theophany — vv.9–11</span><span class="lit-text">Seventy-four see God; sapphire pavement; covenant meal</span></div><div class="lit-row"><span class="lit-label">Moses ascends — vv.12–18</span><span class="lit-text">Moses alone enters the cloud; forty days and forty nights</span></div><div class="lit-note">The chapter moves from corporate commitment (vv.3–8) to corporate communion (vv.9–11) to the singular mediator's complete entrance into God's presence (vv.12–18). Pattern: all participate; the mediator goes furthest.</div></div></div><div id="e24-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">8</sup> "Behold the <span class="dn-key">blood of the covenant</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">10–11</sup> "They saw the <span class="dn-divine">God of Israel</span>... and they ate and drank." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">18</sup> "<span class="dn-human">Moses</span> was on the mountain forty days and forty nights."</p></div><div id="e24-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">24:8</span><span class="thread-arrow">→</span><span class="thread-target">Matt 26:28</span><span class="thread-type fulfillment">Fulfillment</span></div><div class="thread-text">"Blood of the covenant" → "This is my blood of the covenant." The Last Supper is the new covenant ratification ceremony, using Moses' own words.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">24:9–11</span><span class="thread-arrow">→</span><span class="thread-target">Rev 19:9</span><span class="thread-type echo">Type</span></div><div class="thread-text">Covenant meal in God's presence → the marriage supper of the Lamb. The type anticipates the antitype.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">24:18</span><span class="thread-arrow">→</span><span class="thread-target">Exod 32:1</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Moses absent forty days → golden calf constructed. The covenant's highest hour immediately precedes its greatest failure.</div></div></div><div id="e24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 46.4,162.5 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Covenant Blood</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Covenant Meal</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Theophany</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mediation</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Access to God</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Typology</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 24 is the peak of Old Covenant access — blood, vision, and the meal in God's presence. Yet even here the mediator goes alone into the cloud. Hebrews shows us the destination: the veil torn, the way opened, all believers welcomed with the access Moses alone had.</p></div>
+<div id="ex24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Moses</div><div class="person-role">The blood-sprinkler and cloud-enterer</div><div class="person-text">Seals the covenant with blood, then disappears into God's presence for forty days. The mediator par excellence.</div></div><div class="person-card"><div class="person-name">The Seventy Elders</div><div class="person-role">The covenant witnesses</div><div class="person-text">See God and eat and drink — highest corporate access in the OT. Their meal is the type; the Lord's Supper is the fulfilment.</div></div><div class="person-card"><div class="person-name">Aaron and Hur</div><div class="person-role">Left in charge</div><div class="person-text">"Wait here for us until we return" — the community preserved in the mediator's absence.</div></div></div></div><div id="ex24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Exod 24 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"Behold the blood of the covenant that the LORD has made with you in accordance with all these words."</td></tr><tr><td class="t-label">NIV</td><td>"This is the blood of the covenant that the LORD has made with you in accordance with all these words."</td></tr><tr><td class="t-label">NASB</td><td>"Behold the blood of the covenant, which the LORD has made with you in accordance with all these words."</td></tr></table></div><div id="ex24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Covenant Meals</div><div class="source-quote">ANE treaties were ratified with shared meals between covenant parties — shared eating signified peace established and covenant in force. Sinai gives unprecedented content to this known form: the suzerain is the God of the universe.</div><div class="source-note">The covenant meal participates in known ANE practice while transforming it completely.</div></div><div class="source-block"><div class="source-title">Sapphire Pavement</div><div class="source-quote">The sapphire-like pavement (v.10) echoes Ezekiel's throne vision (Ezek 1:26) and Revelation's sea of glass (Rev 4:6) — consistent theophanic imagery across the canon.</div><div class="source-note">The vision uses familiar imagery while remaining deliberately restrained about the divine form.</div></div></div><div id="ex24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Hebrews 9:18–22</div><div class="rec-text">The sustained typological reading: "even the first covenant was not inaugurated without blood." Every element of the blood ceremony prefigures Christ's blood as inaugurator of the new covenant.</div></div><div class="rec-block"><div class="rec-who">Calvin</div><div class="rec-text">The covenant meal of the elders as the supreme OT foreshadowing of the Lord's Supper — they ate and drank in God's presence as we eat and drink in Christ's presence at his table.</div></div></div><div id="ex24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The blood ceremony is the OT's most solemn covenant-sealing act — half on the altar (God), half on the people (Israel). The same life-substance touches both parties. Jesus' words at the Last Supper ('this is my blood of the covenant') directly echo Moses' formula, making the eucharist the new-covenant counterpart of the Sinai ratification ceremony. Blood is the substance of covenant union.</div><div class="lit-row"><span class="lit-label">The Meal with God — 24:9–11</span><span class="lit-text">The elders eat and drink in the presence of the God of Israel — the covenant ratification meal in the divine presence. The scene is the OT's most direct anticipation of the eschatological banquet (Isa 25:6; Rev 19:9) and the messianic table fellowship of the Gospels. The covenant community's ultimate destiny is to eat and drink with God — a destiny that Sinai enacts in anticipation.</span></div></div></div><div id="ex24-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('דַּם הַבְּרִית / Dam Habrit', "'Blood of the covenant' — the formula Moses speaks over the sprinkled blood (24:8). The same phrase appears in Zech 9:11 and in Jesus' words at the Last Supper (Matt 26:28; Mark 14:24). The blood-covenant is the most solemn form of ancient Near Eastern commitment — the parties are united by the sacrificial life. The new covenant is sealed with the same formula and a greater sacrifice."), ('כָּבוֹד / Kavod', "'Glory' — the visible manifestation of the divine presence (24:16–17). The kavod that rests on Sinai is the same kavod that will fill the tabernacle (40:34–35) and the temple (1 Kgs 8:11) and that Ezekiel sees departing in judgment (Ezek 10). The kavod is the covenant's physical signature — the visible form of the covenant God's presence among his people.")]</div><div id="ex24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 35.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Covenant Ratification</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Blood as Covenant Bond</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Vision</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Glory and Dwelling</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 24 is the Sinai covenant's formal ratification — the legal ceremony that seals what chs.19–23 have established. The blood ceremony, the covenant document reading, the elders' vision, and Moses' entry into the glory-cloud are a sequence of escalating intimacy: blood-union, formal acceptance, visual encounter, personal presence. The chapter closes with Moses in the cloud — the setup for the tabernacle instructions that will occupy the next seven chapters.</p></div>
 </div>
 </main>
-<footer><p>Exodus 24 — Blood of the Covenant; The Covenant Meal. Scripture Deep Dive.</p></footer>
 <script>
 function tog(btn,id){
   var p=document.getElementById(id);
@@ -354,11 +599,11 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script>
 <script>
 (function(){
-  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','I AM'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Egypt','Sinai','Midian','Goshen','Canaan','Nile','Red Sea','Horeb','Marah','Elim','Rephidim','Succoth','Etham','Pithom','Rameses','Zin'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Moses','Pharaoh','Aaron','Miriam','Jethro','Joshua','Zipporah','Israel','Israelites','Egyptians','Hobab','Hur'],cls:'vhl-person',btn:['people','context']};
-  var TIME={words:['day','days','night','morning','evening','year','years','forty','three','seven','month','generation','generations','hour'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY={words:['plague','signs','wonders','covenant','law','commandment','Passover','blood','sacrifice','holy','glory','cloud','fire','manna','sabbath','tabernacle'],cls:'vhl-key',btn:['literary','cross']};
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Goshen','Sinai','Midian','wilderness','Canaan','mountain','tabernacle','Nile'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Moses','Aaron','Pharaoh','LORD','Miriam','Joshua','Bezalel','Israel','Israelites'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','year','generation','Sabbath','Passover'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','commandment','law','holy','glory','tabernacle','sacrifice','redeem','deliver','sign','wonder','plague'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -414,7 +659,6 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
   });
 })();
 </script>
-<script src="../verses.js"></script>
 <script>
 function qnavFilter(q) {
   q = q.trim().toLowerCase();
@@ -496,12 +740,13 @@ function qnavFilter(q) {
 <script>
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -511,10 +756,9 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    var entry = {url: url, label: label};
     hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift(entry);
-    if(hist.length > MAX) hist = hist.slice(0, MAX);
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
   } catch(e){}
 })();
