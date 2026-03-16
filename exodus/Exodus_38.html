@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -270,6 +290,247 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -307,39 +568,24 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Exodus 38</h1>
-<p>Bronze Altar, Basin, Courtyard; the Materials Census</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Bronze Altar and Basin; the Courtyard; Materials Census</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">
-<div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526–1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120. Moses is not only the principal character of Exodus — he is its author, and the events recorded are largely his own experience.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Composed during the wilderness period, c.1446–1406 BC. The events of Exodus span approximately 80 years (Moses's birth to the Tabernacle's completion), but the book itself was written after the fact — most likely during the years at Sinai and the wilderness wandering that followed. The Tabernacle instructions and legal material (chs.19–40) may have been committed to writing earliest, as they were immediately actionable.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Israel needed a founding narrative — a record of how God delivered them from 430 years of slavery, made them his covenant people at Sinai, and established the Tabernacle as his dwelling among them. Exodus is the story of liberation, but more than that, it is the story of covenant formation and divine habitation. It answers: How did God redeem us? What does he require of us? And how can a holy God dwell with a sinful people?</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses, according to Jewish and Christian tradition.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445-1405 BC during the wilderness period.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's redemption of Israel from Egypt and the establishment of the covenant at Sinai.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Bronze Altar and Basin</div><span class="verse-text"><span class="verse-num">1</span>They built the altar of burnt offering of acacia wood, three cubits high; it was square, five cubits long and five cubits wide.</span><span class="verse-text"><span class="verse-num">2</span>They made a horn at each of the four corners, so that the horns and the altar were of one piece, and they overlaid it with bronze.</span><span class="verse-text"><span class="verse-num">3</span>They made all its utensils of bronze—its pots, shovels, sprinkling bowls, meat forks and firepans.</span><span class="verse-text"><span class="verse-num">4</span>They made a grating for the altar, a bronze network, to be under its ledge, halfway up the altar.</span><span class="verse-text"><span class="verse-num">5</span>They cast bronze rings to hold the poles for the four corners of the bronze grating.</span><span class="verse-text"><span class="verse-num">6</span>They made the poles of acacia wood and overlaid them with bronze.</span><span class="verse-text"><span class="verse-num">7</span>They inserted the poles into the rings so they would be on the sides of the altar for carrying it. They made it hollow, out of boards.</span><span class="verse-text"><span class="verse-num">8</span>They made the bronze basin and its bronze stand from the mirrors of the women who served at the entrance to the tent of meeting.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'e38-s1-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'e38-s1-ctx')"><span>Context</span></button><button class="anno-trigger cross" onclick="tog(this,'e38-s1-cross')"><span>Cross-Ref</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e38-s1-mac')"><span>MacArthur</span></button></div><div id="e38-s1-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מַרְאֹת הַצֹּבְאֹת</span> <span class="tlit">marʾōt haṣṣōbĕʾōt</span> — <strong>mirrors of the women who served</strong>: The bronze basin was made from the polished bronze mirrors of women who served at the Tabernacle entrance. The same objects used for personal appearance (mirrors reflect the human face) are melted down for the basin where priests are cleansed. Personal vanity transformed into priestly holiness.</p><p><span class="hebrew-word">הַצֹּבְאֹת</span> <span class="tlit">haṣṣōbĕʾōt</span> — <strong>who served / assembled</strong>: The participle means those who served/assembled — these women had a specific ministry at the tent of meeting. Their identity and precise role are not explained here but their devoted service is honoured by having the basin bear their name.</p></div><div id="e38-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The bronze basin from the women's mirrors (v.8) is one of the most unexpected details in the Tabernacle construction. These women gave their personal beauty objects — the mirrors that showed them their own faces — to make the basin where priests would wash before entering God's presence. Their sacrifice is both literal and symbolic: what serves self-reflection is given for holy service.</p></div><div id="e38-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">1 Sam 2:22</span><span class="ref-text">Hannah's son Samuel and the women who served at the entrance to the tent of meeting — the ministry of these women continued through the period of the judges.</span></li><li><span class="ref-cite">Luke 8:2–3</span><span class="ref-text">Women who served Jesus from their own resources — the same pattern of women's devoted practical service continuing in the NT.</span></li></ul></div><div id="e38-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">38:8</span><p>The women's mirrors made the basin. Their personal beauty objects — the tools of self-regard — became the instrument of priestly cleansing. This is a small, quiet sacrifice. These women are not named; their gift is mentioned in a subordinate clause. But the text notices it. God notices the quiet, specific, costly gifts that no one else marks. The basin that every priest used before approaching God was made from women's personal sacrifice.</p></div></div></div><div class="section"><div class="section-header">Verses 9&ndash;31 &mdash; The Courtyard; the Materials Census</div><span class="verse-text"><span class="verse-num">9</span>Next they made the courtyard. The south side was a hundred cubits long and had curtains of finely twisted linen,</span><span class="verse-text"><span class="verse-num">10</span>with twenty posts and twenty bronze bases, and with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">11</span>The north side was also a hundred cubits long and had twenty posts and twenty bronze bases, with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">12</span>The west end was fifty cubits wide and had curtains, with ten posts and ten bases, with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">13</span>The east end, toward the sunrise, was also fifty cubits wide.</span><span class="verse-text"><span class="verse-num">14</span>Curtains fifteen cubits long were on one side of the entrance, with three posts and three bases,</span><span class="verse-text"><span class="verse-num">15</span>and curtains fifteen cubits long were on the other side of the entrance to the courtyard, with three posts and three bases.</span><span class="verse-text"><span class="verse-num">16</span>All the curtains around the courtyard were of finely twisted linen.</span><span class="verse-text"><span class="verse-num">17</span>The bases for the posts were bronze. The hooks and bands on the posts were silver, and their tops were overlaid with silver; so all the posts of the courtyard had silver bands.</span><span class="verse-text"><span class="verse-num">18</span>The curtain for the entrance to the courtyard was of blue, purple and scarlet yarn and finely twisted linen—the work of an embroiderer. It was twenty cubits long and, like the curtains of the courtyard, five cubits high,</span><span class="verse-text"><span class="verse-num">19</span>with four posts and four bronze bases. Their hooks and bands were silver, and their tops were overlaid with silver.</span><span class="verse-text"><span class="verse-num">20</span>All the tent pegs of the tabernacle and of the surrounding courtyard were bronze.</span><span class="verse-text"><span class="verse-num">21</span>These are the amounts of the materials used for the tabernacle, the tabernacle of the covenant law, which were recorded at Moses's command by the Levites under the direction of Ithamar son of Aaron, the priest.</span><span class="verse-text"><span class="verse-num">22</span>(Bezalel son of Uri, the son of Hur, of the tribe of Judah, made everything the Lord commanded Moses;</span><span class="verse-text"><span class="verse-num">23</span>with him was Oholiab son of Ahisamak, of the tribe of Dan—an engraver and designer, and an embroiderer in blue, purple and scarlet yarn and fine linen.)</span><span class="verse-text"><span class="verse-num">24</span>The total amount of the gold from the wave offering used for all the work on the sanctuary was 29 talents and 730 shekels, according to the sanctuary shekel.</span><span class="verse-text"><span class="verse-num">25</span>The silver obtained from those of the community who were counted in the census was 100 talents and 1,775 shekels, according to the sanctuary shekel—</span><span class="verse-text"><span class="verse-num">26</span>one beka per person, that is, half a shekel, according to the sanctuary shekel, from everyone who had crossed over to those already counted, from twenty years old or more, a total of 603,550 men.</span><span class="verse-text"><span class="verse-num">27</span>The 100 talents of silver were used to cast the bases for the sanctuary and for the curtain—100 bases from the 100 talents, one talent for each base.</span><span class="verse-text"><span class="verse-num">28</span>The remaining 1,775 shekels he used to make the hooks for the posts, to overlay the tops of the posts, and to make their bands.</span><span class="verse-text"><span class="verse-num">29</span>The bronze from the wave offering was 70 talents and 2,400 shekels.</span><span class="verse-text"><span class="verse-num">30</span>With it he made the bases for the entrance to the tent of meeting, the bronze altar with its bronze grating and all its utensils,</span><span class="verse-text"><span class="verse-num">31</span>the bases for the surrounding courtyard and those for its entrance and all the tent pegs for the tabernacle and those for the surrounding courtyard.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'e38-s2-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'e38-s2-ctx')"><span>Context</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e38-s2-mac')"><span>MacArthur</span></button></div><div id="e38-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">בֶּקַע לַגֻּלְגֹּלֶת</span> <span class="tlit">beqaʿ laggulgōlet</span> — <strong>a beka per person / half a shekel per head</strong>: The census tax confirmed: one beka (half shekel) per counted man, 603,550 men. The silver bases of the Tabernacle rested on the ransom price of every male Israelite. The Tabernacle's foundation was literally the redemption price of the whole community.</p><p><span class="hebrew-word">פְּקוּדֵי הַמִּשְׁכָּן</span> <span class="tlit">pĕqûdê hammiškan</span> — <strong>the amounts of the materials / the census of the tabernacle</strong>: Pĕqûdîm means "numbered, accounted for, mustered." The same root as the census (pāqad). The materials audit uses the census vocabulary — the Tabernacle is inventoried as carefully as the people.</p></div><div id="e38-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The materials census (vv.21–31) is an act of covenantal accountability — everything given is accounted for, verified, and reported. The gold, silver, and bronze are all tallied. The 100 silver talents cast into 100 bases (v.27: one talent per base, one base per person counted) is the Tabernacle's most explicit connection between the ransom silver and the community's redemption. The Tabernacle stood on 603,550 people's atonement payments.</p></div><div id="e38-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">38:27</span><p>One hundred silver talents, one hundred bases, one talent per base. And where did the 100 talents come from? From the 603,550 men who each paid a half-shekel ransom. The Tabernacle's foundation rested on the ransom price of the whole community. Every time a priest stepped into the Tabernacle, he was stepping on the ground that Israel's atonement had paid for. This is the gospel in architecture: God's presence among his people is possible because their debt has been paid.</p></div><div class="com-note"><span class="com-ref">38:21</span><p>The materials are recorded "at Moses's command by the Levites under the direction of Ithamar." Accountability, transparency, and proper stewardship of God's resources — the Tabernacle project was managed with the same care as it was built. Generosity and accountability go together in God's community.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Bronze Altar and Basin</div><span class="verse-text"><span class="verse-num">1</span>They built the altar of burnt offering of acacia wood, three cubits high; it was square, five cubits long and five cubits wide.</span><span class="verse-text"><span class="verse-num">2</span>They made a horn at each of the four corners, so that the horns and the altar were of one piece, and they overlaid it with bronze.</span><span class="verse-text"><span class="verse-num">3</span>They made all its utensils of bronze—its pots, shovels, sprinkling bowls, meat forks and firepans.</span><span class="verse-text"><span class="verse-num">4</span>They made a grating for the altar, a bronze network, to be under its ledge, halfway up the altar.</span><span class="verse-text"><span class="verse-num">5</span>They cast bronze rings to hold the poles for the four corners of the bronze grating.</span><span class="verse-text"><span class="verse-num">6</span>They made the poles of acacia wood and overlaid them with bronze.</span><span class="verse-text"><span class="verse-num">7</span>They inserted the poles into the rings so they would be on the sides of the altar for carrying it. They made it hollow, out of boards.</span><span class="verse-text"><span class="verse-num">8</span>They made the bronze basin and its bronze stand from the mirrors of the women who served at the entrance to the tent of meeting.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex38-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex38-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex38-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex38-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex38-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex38-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מַרְאֹת הַצֹּבְאֹת</span> <span class="tlit">marʾōt haṣṣōbĕʾōt</span> — <strong>mirrors of the women who served</strong>: The bronze basin was made from the polished bronze mirrors of women who served at the Tabernacle entrance. The same objects used for personal appearance (mirrors reflect the human face) are melted down for the basin where priests are cleansed. Personal vanity transformed into priestly holiness.</p><p><span class="hebrew-word">הַצֹּבְאֹת</span> <span class="tlit">haṣṣōbĕʾōt</span> — <strong>who served / assembled</strong>: The participle means those who served/assembled — these women had a specific ministry at the tent of meeting. Their identity and precise role are not explained here but their devoted service is honoured by having the basin bear their name.</p></div><div id="ex38-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ex38-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The bronze basin from the women's mirrors (v.8) is one of the most unexpected details in the Tabernacle construction. These women gave their personal beauty objects — the mirrors that showed them their own faces — to make the basin where priests would wash before entering God's presence. Their sacrifice is both literal and symbolic: what serves self-reflection is given for holy service.</p></div><div id="ex38-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">1 Sam 2:22</span><span class="ref-text">Hannah's son Samuel and the women who served at the entrance to the tent of meeting — the ministry of these women continued through the period of the judges.</span></li><li><span class="ref-cite">Luke 8:2–3</span><span class="ref-text">Women who served Jesus from their own resources — the same pattern of women's devoted practical service continuing in the NT.</span></li></ul></div><div id="ex38-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">38:8</span><p>The women's mirrors made the basin. Their personal beauty objects — the tools of self-regard — became the instrument of priestly cleansing. This is a small, quiet sacrifice. These women are not named; their gift is mentioned in a subordinate clause. But the text notices it. God notices the quiet, specific, costly gifts that no one else marks. The basin that every priest used before approaching God was made from women's personal sacrifice.</p></div><div class="com-note"><span class="com-ref">38:8</span><p>The bronze basin is made from the mirrors of the women who served at the entrance to the tent of meeting. The personal vanity objects of the covenant women are transformed into the purification vessel of the priestly service. The giving is specifically personal: the most intimate possession repurposed for the most holy use.</p></div><div class="com-note"><span class="com-ref">38:21</span><p>The materials census documents every item given: the gold, silver, and bronze, the amount, and its use. The accountability of the tabernacle project is total — every half-shekel is documented. The covenant community's worship is also its public financial accountability.</p></div></div></div><div class="section"><div class="section-header">Verses 9&ndash;31 &mdash; The Courtyard; the Materials Census</div><span class="verse-text"><span class="verse-num">9</span>Next they made the courtyard. The south side was a hundred cubits long and had curtains of finely twisted linen,</span><span class="verse-text"><span class="verse-num">10</span>with twenty posts and twenty bronze bases, and with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">11</span>The north side was also a hundred cubits long and had twenty posts and twenty bronze bases, with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">12</span>The west end was fifty cubits wide and had curtains, with ten posts and ten bases, with silver hooks and bands on the posts.</span><span class="verse-text"><span class="verse-num">13</span>The east end, toward the sunrise, was also fifty cubits wide.</span><span class="verse-text"><span class="verse-num">14</span>Curtains fifteen cubits long were on one side of the entrance, with three posts and three bases,</span><span class="verse-text"><span class="verse-num">15</span>and curtains fifteen cubits long were on the other side of the entrance to the courtyard, with three posts and three bases.</span><span class="verse-text"><span class="verse-num">16</span>All the curtains around the courtyard were of finely twisted linen.</span><span class="verse-text"><span class="verse-num">17</span>The bases for the posts were bronze. The hooks and bands on the posts were silver, and their tops were overlaid with silver; so all the posts of the courtyard had silver bands.</span><span class="verse-text"><span class="verse-num">18</span>The curtain for the entrance to the courtyard was of blue, purple and scarlet yarn and finely twisted linen—the work of an embroiderer. It was twenty cubits long and, like the curtains of the courtyard, five cubits high,</span><span class="verse-text"><span class="verse-num">19</span>with four posts and four bronze bases. Their hooks and bands were silver, and their tops were overlaid with silver.</span><span class="verse-text"><span class="verse-num">20</span>All the tent pegs of the tabernacle and of the surrounding courtyard were bronze.</span><span class="verse-text"><span class="verse-num">21</span>These are the amounts of the materials used for the tabernacle, the tabernacle of the covenant law, which were recorded at Moses's command by the Levites under the direction of Ithamar son of Aaron, the priest.</span><span class="verse-text"><span class="verse-num">22</span>(Bezalel son of Uri, the son of Hur, of the tribe of Judah, made everything the Lord commanded Moses;</span><span class="verse-text"><span class="verse-num">23</span>with him was Oholiab son of Ahisamak, of the tribe of Dan—an engraver and designer, and an embroiderer in blue, purple and scarlet yarn and fine linen.)</span><span class="verse-text"><span class="verse-num">24</span>The total amount of the gold from the wave offering used for all the work on the sanctuary was 29 talents and 730 shekels, according to the sanctuary shekel.</span><span class="verse-text"><span class="verse-num">25</span>The silver obtained from those of the community who were counted in the census was 100 talents and 1,775 shekels, according to the sanctuary shekel—</span><span class="verse-text"><span class="verse-num">26</span>one beka per person, that is, half a shekel, according to the sanctuary shekel, from everyone who had crossed over to those already counted, from twenty years old or more, a total of 603,550 men.</span><span class="verse-text"><span class="verse-num">27</span>The 100 talents of silver were used to cast the bases for the sanctuary and for the curtain—100 bases from the 100 talents, one talent for each base.</span><span class="verse-text"><span class="verse-num">28</span>The remaining 1,775 shekels he used to make the hooks for the posts, to overlay the tops of the posts, and to make their bands.</span><span class="verse-text"><span class="verse-num">29</span>The bronze from the wave offering was 70 talents and 2,400 shekels.</span><span class="verse-text"><span class="verse-num">30</span>With it he made the bases for the entrance to the tent of meeting, the bronze altar with its bronze grating and all its utensils,</span><span class="verse-text"><span class="verse-num">31</span>the bases for the surrounding courtyard and those for its entrance and all the tent pegs for the tabernacle and those for the surrounding courtyard.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex38-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex38-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex38-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex38-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex38-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex38-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">בֶּקַע לַגֻּלְגֹּלֶת</span> <span class="tlit">beqaʿ laggulgōlet</span> — <strong>a beka per person / half a shekel per head</strong>: The census tax confirmed: one beka (half shekel) per counted man, 603,550 men. The silver bases of the Tabernacle rested on the ransom price of every male Israelite. The Tabernacle's foundation was literally the redemption price of the whole community.</p><p><span class="hebrew-word">פְּקוּדֵי הַמִּשְׁכָּן</span> <span class="tlit">pĕqûdê hammiškan</span> — <strong>the amounts of the materials / the census of the tabernacle</strong>: Pĕqûdîm means "numbered, accounted for, mustered." The same root as the census (pāqad). The materials audit uses the census vocabulary — the Tabernacle is inventoried as carefully as the people.</p></div><div id="ex38-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ex38-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The materials census (vv.21–31) is an act of covenantal accountability — everything given is accounted for, verified, and reported. The gold, silver, and bronze are all tallied. The 100 silver talents cast into 100 bases (v.27: one talent per base, one base per person counted) is the Tabernacle's most explicit connection between the ransom silver and the community's redemption. The Tabernacle stood on 603,550 people's atonement payments.</p></div><div id="ex38-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="ex38-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">38:27</span><p>One hundred silver talents, one hundred bases, one talent per base. And where did the 100 talents come from? From the 603,550 men who each paid a half-shekel ransom. The Tabernacle's foundation rested on the ransom price of the whole community. Every time a priest stepped into the Tabernacle, he was stepping on the ground that Israel's atonement had paid for. This is the gospel in architecture: God's presence among his people is possible because their debt has been paid.</p></div><div class="com-note"><span class="com-ref">38:21</span><p>The materials are recorded "at Moses's command by the Levites under the direction of Ithamar." Accountability, transparency, and proper stewardship of God's resources — the Tabernacle project was managed with the same care as it was built. Generosity and accountability go together in God's community.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'e38-ppl')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'e38-trans')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'e38-src')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'e38-rec')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'e38-lit')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'e38-hebtext')"><span>Hebrew-Rooted Reading</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'e38-thread')"><span>Intertextual Threading</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'e38-themes')"><span>Theological Themes</span></button>
+<button class="anno-trigger people" onclick="tog(this,'ex38-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'ex38-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'ex38-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'ex38-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'ex38-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'ex38-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'ex38-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'ex38-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'ex38-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="e38-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The serving women</div><div class="person-role">Anonymous donors</div><div class="person-text">Their mirrors made the basin — quiet, specific, costly sacrifice honoured by the text.</div></div><div class="person-card"><div class="person-name">Ithamar son of Aaron</div><div class="person-role">The accountant</div><div class="person-text">Supervised the materials census — covenantal accountability for everything given.</div></div><div class="person-card"><div class="person-name">Bezalel and Oholiab</div><div class="person-role">Named again</div><div class="person-text">Credited by name in the census summary — their leadership honoured.</div></div></div></div><div id="e38-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">38:26 — The Census Number</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"A beka a head (that is, half a shekel, by the shekel of the sanctuary), for everyone who was listed in the census, from twenty years old and upward, for 603,550 men."</td></tr><tr><td class="t-label">NIV</td><td>"One beka per person, that is, half a shekel, according to the sanctuary shekel, from everyone who had crossed over to those already counted, from twenty years old or more, a total of 603,550 men."</td></tr></table></div><div id="e38-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">603,550 Men</div><div class="source-quote">The census number here matches Numbers 1:46. The consistency across Exodus 38 and Numbers 1 is significant. Various interpretations exist for the large number: literal; ʾelep as "unit" rather than "thousand" (giving a much smaller total); symbolic for a great multitude.</div><div class="source-note">The number is consistent across texts; its interpretation remains debated.</div></div><div class="source-block"><div class="source-title">Materials Accounting</div><div class="source-quote">The detailed materials census has parallels in ancient building accounts — Egyptian and Mesopotamian building inscriptions often include detailed accounts of materials used. The Tabernacle census fits within this ancient tradition of temple accounting.</div><div class="source-note">Accountability for sacred materials was a universal ancient Near Eastern practice.</div></div></div><div id="e38-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Numbers 1:46</div><div class="rec-text">The census of 603,550 men reappears in Numbers 1 — confirming the connection between the Tabernacle's silver bases and the whole community's counted, ransomed lives.</div></div><div class="rec-block"><div class="rec-who">Stewardship tradition</div><div class="rec-text">The materials census of Exod 38 became the model for covenantal financial accountability — the principle that God's resources must be carefully accounted for, as exemplified in Nehemiah's rebuilding (Neh 7:70–73) and the NT church's collection for Jerusalem (2 Cor 8:20–21).</div></div></div><div id="e38-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Bronze altar — vv.1–7</span><span class="lit-text">Acacia/bronze; horns; grating; hollow</span></div><div class="lit-row"><span class="lit-label">Bronze basin — v.8</span><span class="lit-text">From the serving women's mirrors — personal sacrifice for priestly cleansing</span></div><div class="lit-row"><span class="lit-label">Courtyard — vv.9–20</span><span class="lit-text">100 x 50 cubits; linen curtains; one gate; bronze tent pegs</span></div><div class="lit-row"><span class="lit-label">Materials census — vv.21–31</span><span class="lit-text">Gold, silver, bronze tallied; 603,550 men; 100 silver bases on 100 talents ransom silver</span></div><div class="lit-note">The chapter closes the Tabernacle's outer construction and accounts for everything. The basin from women's mirrors and the bases from census silver are the two most theologically loaded construction details in the chapter — both connect the Tabernacle to the people's personal sacrifice and ransom.</div></div></div><div id="e38-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">8</sup> "They made the bronze basin... from the mirrors of the women who served at the entrance to the tent of meeting." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">26–27</sup> "603,550 men... 100 talents of silver were used to cast the bases — one talent for each base."</p></div><div id="e38-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Exod 30:12–16</span><span class="thread-arrow">→</span><span class="thread-target">38:25–27</span><span class="thread-type fulfillment">Fulfillment</span></div><div class="thread-text">Half-shekel census ransom commanded → 603,550 men paid; 100 talents cast into 100 bases. The Tabernacle rests on Israel's ransom.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">38:8</span><span class="thread-arrow">→</span><span class="thread-target">1 Sam 2:22</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The serving women at the tent entrance → women who served at the tent in Samuel's time. A tradition of women's ministry at God's dwelling continued.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Exod 27:9–19</span><span class="thread-arrow">→</span><span class="thread-target">38:9–20</span><span class="thread-type fulfillment">Execution</span></div><div class="thread-text">Courtyard commanded → executed exactly. The same precision throughout.</div></div></div><div id="e38-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,171.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sacrifice</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Atonement Foundation</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Accountability</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Women's Service</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Community Ransom</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Exact Obedience</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 38 closes the Tabernacle's outer construction with two extraordinary details: the basin made from women's mirrors (quiet personal sacrifice), and the silver bases cast from 603,550 men's ransom payments. The Tabernacle is built from personal sacrifice, rests on community ransom, and accounts for everything entrusted to it.</p></div>
+<div id="ex38-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The serving women</div><div class="person-role">Anonymous donors</div><div class="person-text">Their mirrors made the basin — quiet, specific, costly sacrifice honoured by the text.</div></div><div class="person-card"><div class="person-name">Ithamar son of Aaron</div><div class="person-role">The accountant</div><div class="person-text">Supervised the materials census — covenantal accountability for everything given.</div></div><div class="person-card"><div class="person-name">Bezalel and Oholiab</div><div class="person-role">Named again</div><div class="person-text">Credited by name in the census summary — their leadership honoured.</div></div></div></div><div id="ex38-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Exod 38 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"A beka a head (that is, half a shekel, by the shekel of the sanctuary), for everyone who was listed in the census, from twenty years old and upward, for 603,550 men."</td></tr><tr><td class="t-label">NIV</td><td>"One beka per person, that is, half a shekel, according to the sanctuary shekel, from everyone who had crossed over to those already counted, from twenty years old or more, a total of 603,550 men."</td></tr></table></div><div id="ex38-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">603,550 Men</div><div class="source-quote">The census number here matches Numbers 1:46. The consistency across Exodus 38 and Numbers 1 is significant. Various interpretations exist for the large number: literal; ʾelep as "unit" rather than "thousand" (giving a much smaller total); symbolic for a great multitude.</div><div class="source-note">The number is consistent across texts; its interpretation remains debated.</div></div><div class="source-block"><div class="source-title">Materials Accounting</div><div class="source-quote">The detailed materials census has parallels in ancient building accounts — Egyptian and Mesopotamian building inscriptions often include detailed accounts of materials used. The Tabernacle census fits within this ancient tradition of temple accounting.</div><div class="source-note">Accountability for sacred materials was a universal ancient Near Eastern practice.</div></div></div><div id="ex38-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Numbers 1:46</div><div class="rec-text">The census of 603,550 men reappears in Numbers 1 — confirming the connection between the Tabernacle's silver bases and the whole community's counted, ransomed lives.</div></div><div class="rec-block"><div class="rec-who">Stewardship tradition</div><div class="rec-text">The materials census of Exod 38 became the model for covenantal financial accountability — the principle that God's resources must be carefully accounted for, as exemplified in Nehemiah's rebuilding (Neh 7:70–73) and the NT church's collection for Jerusalem (2 Cor 8:20–21).</div></div></div><div id="ex38-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Sacred Accountability — 38:21–31</span><span class="lit-text">The tabernacle's materials census is one of the most detailed financial records in the Bible. The covenant community's worship is also its public accountability — every donated item documented, every use recorded. Sacred generosity and responsible stewardship are not alternatives but partners.</span></div></div></div><div id="ex38-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('כִּכַּר / Kikkar', "'Talent' — the largest unit of weight in ancient Israel, approximately 34 kg. The materials census uses kikkar to document the massive quantities of gold, silver, and bronze contributed. The scale of the giving matches the scale of the covenant God being worshipped.")]</div><div id="ex38-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">38:8</span><span class="tx-issue">The women who served at the entrance: who were they?</span></div><div class="tx-variants">MT: hanashim hatsov'ot asher tsav'u petach ohel moed (the women who served/ministered at the entrance of the tent of meeting). The verb tsava (to serve/minister) is unusual for women and is used elsewhere for Levitical service. The LXX renders ai nēsteuousai (the women who fasted).</div><div class="tx-sig">The identity and function of these women is debated: (1) women in regular liturgical service; (2) women performing acts of piety (prayer, fasting) at the tent entrance; (3) women involved in weaving/craftsmanship. The mirrors they gave (personal grooming objects) suggests they were real people with ordinary lives consecrating personal possessions. The LXX's 'fasting' interpretation is not supported by the MT.</div></div></div><div id="ex38-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Materials Census: Historical Record or Theological Testimony?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Historical record</div><div class="db-proponents">Kitchen, evangelical archaeologists</div><div class="db-argument">The census is a genuine financial record of the tabernacle project, consistent with ancient Near Eastern temple building records. Egyptian and Mesopotamian temple construction records routinely documented materials used.</div></div><div class="db-position"><div class="db-pos-name">Theological idealization</div><div class="db-proponents">Some critical scholars</div><div class="db-argument">The numbers are too precise and the totals too exact to be genuine historical records. They are a theological statement about the community's perfect obedience, not an accountant's ledger.</div></div></div><div class="db-synthesis">The numbers' internal consistency (603,550 men × half-shekel = 100 talents + 1,775 shekels) supports historical accuracy — a theological fabrication would not necessarily maintain this precision. The record is both historically accurate and theologically significant.</div></div></div><div id="ex38-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,154.0 61.1,154.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Complete Obedience</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sacred Accountability</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Community Investment</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 38 completes the courtyard furniture and provides the definitive financial accounting of the tabernacle project. The materials census confirms that the covenant community's investment was comprehensive and precisely documented — total giving matched by total accountability.</p></div>
 </div>
 </main>
-<footer><p>Exodus 38 — Bronze Altar; Women's Mirrors; Materials Census. Scripture Deep Dive.</p></footer>
 <script>
 function tog(btn,id){
   var p=document.getElementById(id);
@@ -353,11 +599,11 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script>
 <script>
 (function(){
-  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','I AM'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Egypt','Sinai','Midian','Goshen','Canaan','Nile','Red Sea','Horeb','Marah','Elim','Rephidim','Succoth','Etham','Pithom','Rameses','Zin'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Moses','Pharaoh','Aaron','Miriam','Jethro','Joshua','Zipporah','Israel','Israelites','Egyptians','Hobab','Hur'],cls:'vhl-person',btn:['people','context']};
-  var TIME={words:['day','days','night','morning','evening','year','years','forty','three','seven','month','generation','generations','hour'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY={words:['plague','signs','wonders','covenant','law','commandment','Passover','blood','sacrifice','holy','glory','cloud','fire','manna','sabbath','tabernacle'],cls:'vhl-key',btn:['literary','cross']};
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Goshen','Sinai','Midian','wilderness','Canaan','mountain','tabernacle','Nile'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Moses','Aaron','Pharaoh','LORD','Miriam','Joshua','Bezalel','Israel','Israelites'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','year','generation','Sabbath','Passover'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','commandment','law','holy','glory','tabernacle','sacrifice','redeem','deliver','sign','wonder','plague'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -413,7 +659,6 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
   });
 })();
 </script>
-<script src="../verses.js"></script>
 <script>
 function qnavFilter(q) {
   q = q.trim().toLowerCase();
@@ -495,12 +740,13 @@ function qnavFilter(q) {
 <script>
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -510,10 +756,9 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    var entry = {url: url, label: label};
     hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift(entry);
-    if(hist.length > MAX) hist = hist.slice(0, MAX);
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
   } catch(e){}
 })();
