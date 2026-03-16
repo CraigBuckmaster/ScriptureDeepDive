@@ -33,7 +33,7 @@ def chapter_paths():
         ('exodus',   'Exodus',   range(1, 41)),
         ('proverbs', 'Proverbs', range(1, 32)),
         ('ruth',     'Ruth',     range(1,  5)),
-        ('matthew',  'Matthew',  range(1, 21)),
+        ('matthew',  'Matthew',  range(1, 29)),
     ]:
         for ch in chapters:
             p = f'{REPO}/{book_dir}/{book_name}_{ch}.html'
