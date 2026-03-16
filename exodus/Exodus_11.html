@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,246 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,14 +568,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Exodus 11</h1>
-<p>The Tenth Plague Announced; Purpose of the Hardening</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The Tenth Plague Announced; Moses Departs in Anger</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
 <div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses, according to Jewish and Christian tradition.</p></div>
@@ -324,20 +577,13 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's redemption of Israel from Egypt and the establishment of the covenant at Sinai.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Tenth Plague Announced; Moses Departs in Anger</div><span class="verse-text"><span class="verse-num">1</span>Now the LORD had said to Moses, "I will bring one more plague on Pharaoh and on Egypt. After that, he will let you go from here, and when he does, he will drive you out completely.</span><span class="verse-text"><span class="verse-num">2</span>Tell the people that men and women alike are to ask their neighbors for articles of silver and gold."</span><span class="verse-text"><span class="verse-num">3</span>(The LORD made the Egyptians favorably disposed toward the people, and Moses himself was highly regarded in Egypt by Pharaoh's officials and by the people.)</span><span class="verse-text"><span class="verse-num">4</span>So Moses said, "This is what the LORD says: 'About midnight I will go through Egypt.</span><span class="verse-text"><span class="verse-num">5</span>Every firstborn son in Egypt will die, from the firstborn son of Pharaoh, who sits on the throne, to the firstborn son of the female slave, who is at her hand mill, and all the firstborn of the cattle as well.</span><span class="verse-text"><span class="verse-num">6</span>There will be loud wailing throughout Egypt-- worse than there has ever been or ever will be again.</span><span class="verse-text"><span class="verse-num">7</span>But among the Israelites not a dog will bark at any person or animal.' Then you will know that the LORD makes a distinction between Egypt and Israel.</span><span class="verse-text"><span class="verse-num">8</span>All these officials of yours will come to me, bowing down before me and saying, 'Go, you and all the people who follow you!' After that I will leave." Then Moses, hot with anger, left Pharaoh.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex11-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex11-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex11-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex11-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex11-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">bechor</span> <span class="tlit">bechor</span> — <strong>firstborn</strong>: V.5: every firstborn (bechor) from the firstborn of Pharaoh to the firstborn of the slave girl. The plague's scope is total and equal -- no Egyptian household exempt, no social status providing protection. The death of Egypt's firstborn is the direct reversal of Pharaoh's own decree to kill Israel's sons (1:22). What Pharaoh did to Israel, the LORD now does to Egypt.</p><p><span class="hebrew-word">yafle YHWH</span> <span class="tlit">yafle YHWH</span> — <strong>the LORD makes a distinction</strong>: V.7: literally "the LORD will set apart / make wonderful" -- yafle. The same root as "wonderful works" (pele). The distinction between Egypt and Israel is miraculous in its precision: not a dog barks among Israel while Egypt wails. The boundary of the plague is the boundary of the covenant.</p></div><div id="ex11-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Exodus 11 is the hinge chapter between the nine plagues and the final Passover plague. The chapter announces the tenth plague in advance, giving the reader (and Israel) the framework before Passover night unfolds in ch.12. The announcement moves from the LORD's private word to Moses (vv.1-3) to Moses's public proclamation to Pharaoh (vv.4-8). The silver and gold request (v.2) prefigures the Exodus as a kind of "back wages" for centuries of slavery (cf. Gen 15:14).</p></div><div id="ex11-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 15:14</span><span class="ref-text">They will come out with great possessions -- the silver and gold request (v.2) fulfils God's word to Abraham. The Exodus is not just liberation; it is compensation.</span></li><li><span class="ref-cite">Exod 4:22-23</span><span class="ref-text">Israel is my firstborn son... let my son go, so he may worship me. If you refuse, I will kill your firstborn son -- the tenth plague is the direct execution of the warning given before the plagues began. The firstborn logic has run from ch.4 to ch.11.</span></li></ul></div><div id="ex11-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:5</span><p>Every firstborn son in Egypt will die, from the firstborn of Pharaoh to the firstborn of the female slave. The plague makes no social distinctions. The highest and the lowest lose their firstborn. This is total divine judgment. The only distinction that exists is between Israel and Egypt -- between the people under the blood and the people not under it. Social status protects no one; covenant relationship protects everyone.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>Not a dog will bark at any person or animal among Israel. The contrast with v.6's loud wailing throughout Egypt is precise: total grief among the uncovered, total silence among the protected. The boundary of the plague is exact. This is not collateral damage; it is precise covenantal judgment.</p></div></div></div><div class="section"><div class="section-header">Verses 9&ndash;10 &mdash; The Purpose of the Hardening; Summary of the Plague Narrative</div><span class="verse-text"><span class="verse-num">9</span>The LORD had said to Moses, "Pharaoh will refuse to listen to you-- so that my wonders may be multiplied in Egypt."</span><span class="verse-text"><span class="verse-num">10</span>Moses and Aaron performed all these wonders before Pharaoh, but the LORD hardened Pharaoh's heart, and he would not let the Israelites go out of his land.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex11-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex11-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex11-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex11-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex11-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">yirbu mofetay</span> <span class="tlit">yirbu mofetay</span> — <strong>my wonders may be multiplied</strong>: V.9: the multiplication of wonders (mofetim) is a divine purpose in the hardening. God is not frustrated by Pharaoh's resistance; he is achieving something through it. The multiplied plagues are a multiplied testimony -- to Israel, to Egypt, and to the nations (cf. Josh 2:10; Ps 78). The hardening serves the proclamation.</p><p><span class="hebrew-word">vaychazzeq</span> <span class="tlit">vaychazzeq</span> — <strong>he hardened</strong>: V.10: the final hardening summary before the Passover. The narrative has been building to this: ten plagues, ten hardenings, one Passover. The hardening is simultaneously judicial (Pharaoh has repeatedly hardened his own heart) and providential (God is using Pharaoh's resistance to accomplish his purposes).</p></div><div id="ex11-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The two-verse closing of ch.11 provides the theological summary of the entire plague narrative: Pharaoh's refusal is within God's purposive will; the multiplication of wonders is intentional. The hardening of Pharaoh's heart is among the most theologically discussed passages in the OT -- simultaneously human responsibility (Pharaoh hardens himself, e.g. 8:15,32) and divine sovereignty (God hardens Pharaoh, e.g. 9:12; 10:1). Both are true; neither cancels the other.</p></div><div id="ex11-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 9:17</span><span class="ref-text">For Scripture says to Pharaoh: "I raised you up for this very purpose, that I might display my power in you and that my name might be proclaimed in all the earth" -- Paul cites the hardening as the paradigm of divine sovereignty and human responsibility in tension.</span></li><li><span class="ref-cite">Exod 9:16</span><span class="ref-text">I have raised you up for this very purpose, that I might show you my power and that my name might be proclaimed in all the earth -- the divine purpose stated before the final plagues.</span></li></ul></div><div id="ex11-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:9</span><p>So that my wonders may be multiplied in Egypt. The hardening is not the random obstruction of divine plans but the instrument of their fulfilment. More resistance = more plagues = more testimony. God's name would be proclaimed in every household of Egypt and carried to every nation by Egyptian witnesses. The ten plagues became the defining testimony of God's power for the ancient Near East.</p></div><div class="com-note"><span class="com-ref">11:10</span><p>Moses and Aaron performed all these wonders before Pharaoh, but the LORD hardened Pharaoh's heart. The summary verse before the Passover. All the wonders have been performed; the hardening has reached its final state. The door is now closed except for what the Passover blood will open. The tension between divine sovereignty and human responsibility reaches its maximum here -- and is held, not resolved.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;8 &mdash; The Tenth Plague Announced; Moses Departs in Anger</div><span class="verse-text"><span class="verse-num">1</span>Now the LORD had said to Moses, "I will bring one more plague on Pharaoh and on Egypt. After that, he will let you go from here, and when he does, he will drive you out completely.</span><span class="verse-text"><span class="verse-num">2</span>Tell the people that men and women alike are to ask their neighbors for articles of silver and gold."</span><span class="verse-text"><span class="verse-num">3</span>(The LORD made the Egyptians favorably disposed toward the people, and Moses himself was highly regarded in Egypt by Pharaoh's officials and by the people.)</span><span class="verse-text"><span class="verse-num">4</span>So Moses said, "This is what the LORD says: 'About midnight I will go through Egypt.</span><span class="verse-text"><span class="verse-num">5</span>Every firstborn son in Egypt will die, from the firstborn son of Pharaoh, who sits on the throne, to the firstborn son of the female slave, who is at her hand mill, and all the firstborn of the cattle as well.</span><span class="verse-text"><span class="verse-num">6</span>There will be loud wailing throughout Egypt-- worse than there has ever been or ever will be again.</span><span class="verse-text"><span class="verse-num">7</span>But among the Israelites not a dog will bark at any person or animal.' Then you will know that the LORD makes a distinction between Egypt and Israel.</span><span class="verse-text"><span class="verse-num">8</span>All these officials of yours will come to me, bowing down before me and saying, 'Go, you and all the people who follow you!' After that I will leave." Then Moses, hot with anger, left Pharaoh.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex11-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex11-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex11-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex11-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex11-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'ex11-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ex11-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ex11-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ex11-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ex11-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">bechor</span> <span class="tlit">bechor</span> — <strong>firstborn</strong>: V.5: every firstborn (bechor) from the firstborn of Pharaoh to the firstborn of the slave girl. The plague's scope is total and equal -- no Egyptian household exempt, no social status providing protection. The death of Egypt's firstborn is the direct reversal of Pharaoh's own decree to kill Israel's sons (1:22). What Pharaoh did to Israel, the LORD now does to Egypt.</p><p><span class="hebrew-word">yafle YHWH</span> <span class="tlit">yafle YHWH</span> — <strong>the LORD makes a distinction</strong>: V.7: literally "the LORD will set apart / make wonderful" -- yafle. The same root as "wonderful works" (pele). The distinction between Egypt and Israel is miraculous in its precision: not a dog barks among Israel while Egypt wails. The boundary of the plague is the boundary of the covenant.</p></div><div id="ex11-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ex11-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Exodus 11 is the hinge chapter between the nine plagues and the final Passover plague. The chapter announces the tenth plague in advance, giving the reader (and Israel) the framework before Passover night unfolds in ch.12. The announcement moves from the LORD's private word to Moses (vv.1-3) to Moses's public proclamation to Pharaoh (vv.4-8). The silver and gold request (v.2) prefigures the Exodus as a kind of "back wages" for centuries of slavery (cf. Gen 15:14).</p></div><div id="ex11-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 15:14</span><span class="ref-text">They will come out with great possessions -- the silver and gold request (v.2) fulfils God's word to Abraham. The Exodus is not just liberation; it is compensation.</span></li><li><span class="ref-cite">Exod 4:22-23</span><span class="ref-text">Israel is my firstborn son... let my son go, so he may worship me. If you refuse, I will kill your firstborn son -- the tenth plague is the direct execution of the warning given before the plagues began. The firstborn logic has run from ch.4 to ch.11.</span></li></ul></div><div id="ex11-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:5</span><p>Every firstborn son in Egypt will die, from the firstborn of Pharaoh to the firstborn of the female slave. The plague makes no social distinctions. The highest and the lowest lose their firstborn. This is total divine judgment. The only distinction that exists is between Israel and Egypt -- between the people under the blood and the people not under it. Social status protects no one; covenant relationship protects everyone.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>Not a dog will bark at any person or animal among Israel. The contrast with v.6's loud wailing throughout Egypt is precise: total grief among the uncovered, total silence among the protected. The boundary of the plague is exact. This is not collateral damage; it is precise covenantal judgment.</p></div><div class="com-note"><span class="com-ref">11:1</span><p>The announcement of the final plague — 'one more plague' — comes as a divine assurance after Moses has been expelled from Pharaoh's presence. The compression is striking: the most consequential of the ten plagues is announced in a single clause. The brevity after the elaborate buildup signals that the time for warnings and negotiations is over.</p></div><div class="com-note"><span class="com-ref">11:4–6</span><p>Moses' announcement of the death of the firstborn is delivered with prophetic gravity: 'About midnight I will go through Egypt. And every firstborn shall die.' The scope is absolute — from Pharaoh's firstborn to the prisoner's firstborn to the firstborn of livestock. There will be a cry such as there has never been and never will be. The specificity of the hour (midnight) marks the final plague as precisely timed divine action.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>'But against any of the people of Israel, not even a dog shall growl' — the most vivid expression of the discrimination in all the plague narrative. The contrast is absolute: the loudest cry in Egyptian history vs. a silence so complete that even dogs are undisturbed in Goshen. The distinction serves a theological purpose: 'that you may know that the LORD makes a distinction between Egypt and Israel.'</p></div></div><div id="ex11-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:2–3</span><p>The command to ask Egyptians for silver and gold items (cf. 3:21–22) is the fulfilment of the promise made at the burning bush. Sarna notes that the word translated 'borrow' (sha'al) actually means 'ask' or 'request' — there is no expectation of return implied. The Egyptians willingly give because Moses had 'great esteem in Egypt.' The wealth transfer is the spoiling of Egypt — fulfilment of Gen 15:14 ('they shall come out with great possessions').</p></div><div class="com-note"><span class="com-ref">11:4</span><p>Moses' announcement formula — 'Thus says the LORD: About midnight I will go out through Egypt' — returns to the prophetic messenger form of 5:1. After chapters of plague demonstrations, the final announcement has the weight of everything that has preceded it. Sarna notes the LORD himself going through Egypt (not an angel) is the most direct divine involvement yet: the God who has worked through signs and wonders now acts personally.</p></div></div><div id="ex11-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:4–8</span><p>Moses' announcement is delivered, the narrator tells us, while Moses was 'hot with anger' (v.8). This emotional specification — the only time Moses' anger is noted in the plague narrative — marks the announcement as personally weighted. Moses has spent multiple chapters in negotiation with a man who has repeatedly deceived him. The anger is not uncontrolled rage but the righteous fury of the prophet delivering final judgment. He leaves in anger; he will not return.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>The dog metaphor — not even a dog growling against Israel — is one of the Bible's most vivid expressions of protected silence. Alter notes the contrast it establishes: on one side, the greatest cry in human history; on the other, not even the ambient sound of a dog's response to disturbance. The discrimination is expressed not just in degree but in kind: death vs. absolute peace.</p></div></div><div id="ex11-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:5</span><p>Calvin on the death of the firstborn: 'The firstborn represented the whole nation; thus in the person of the firstborn the whole people is stricken.' The judgment is corporate through the representative — the firstborn carries the community's future. God's judgment on Pharaoh's firstborn is simultaneously a judgment on Egypt's entire claim to dominance over Israel. The one who refused to let God's firstborn (Israel, 4:22) go loses his own firstborn.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>Calvin on the distinction between Israel and Egypt: 'God thus distinguished his Church from the unbelievers, that even the dogs should enjoy peace in the dwellings of the Israelites, while Egypt was overwhelmed with mourning.' The silence in Goshen is Calvin's image of the peace that covenant membership brings — not exemption from all hardship but divine protection at the moments that matter most.</p></div></div><div id="ex11-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:4</span><p>The NET note on 'about midnight' (kachatsot halaylah) explains kachatsot as 'approximately midnight' or 'at the stroke of midnight.' The precision of the timing — announced in advance — is itself a sign: the God who announces 'midnight' and fulfils it at midnight demonstrates comprehensive control over time as well as nature. The note also discusses whether vv.4–8 were spoken to Pharaoh (before Moses' departure in 10:29) or narrated to the reader after the departure — the grammar is ambiguous.</p></div></div></div><div class="section"><div class="section-header">Verses 9&ndash;10 &mdash; The Purpose of the Hardening; Summary of the Plague Narrative</div><span class="verse-text"><span class="verse-num">9</span>The LORD had said to Moses, "Pharaoh will refuse to listen to you-- so that my wonders may be multiplied in Egypt."</span><span class="verse-text"><span class="verse-num">10</span>Moses and Aaron performed all these wonders before Pharaoh, but the LORD hardened Pharaoh's heart, and he would not let the Israelites go out of his land.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex11-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex11-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex11-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex11-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'ex11-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ex11-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ex11-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ex11-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ex11-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">yirbu mofetay</span> <span class="tlit">yirbu mofetay</span> — <strong>my wonders may be multiplied</strong>: V.9: the multiplication of wonders (mofetim) is a divine purpose in the hardening. God is not frustrated by Pharaoh's resistance; he is achieving something through it. The multiplied plagues are a multiplied testimony -- to Israel, to Egypt, and to the nations (cf. Josh 2:10; Ps 78). The hardening serves the proclamation.</p><p><span class="hebrew-word">vaychazzeq</span> <span class="tlit">vaychazzeq</span> — <strong>he hardened</strong>: V.10: the final hardening summary before the Passover. The narrative has been building to this: ten plagues, ten hardenings, one Passover. The hardening is simultaneously judicial (Pharaoh has repeatedly hardened his own heart) and providential (God is using Pharaoh's resistance to accomplish his purposes).</p></div><div id="ex11-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The two-verse closing of ch.11 provides the theological summary of the entire plague narrative: Pharaoh's refusal is within God's purposive will; the multiplication of wonders is intentional. The hardening of Pharaoh's heart is among the most theologically discussed passages in the OT -- simultaneously human responsibility (Pharaoh hardens himself, e.g. 8:15,32) and divine sovereignty (God hardens Pharaoh, e.g. 9:12; 10:1). Both are true; neither cancels the other.</p></div><div id="ex11-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 9:17</span><span class="ref-text">For Scripture says to Pharaoh: "I raised you up for this very purpose, that I might display my power in you and that my name might be proclaimed in all the earth" -- Paul cites the hardening as the paradigm of divine sovereignty and human responsibility in tension.</span></li><li><span class="ref-cite">Exod 9:16</span><span class="ref-text">I have raised you up for this very purpose, that I might show you my power and that my name might be proclaimed in all the earth -- the divine purpose stated before the final plagues.</span></li></ul></div><div id="ex11-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:9</span><p>So that my wonders may be multiplied in Egypt. The hardening is not the random obstruction of divine plans but the instrument of their fulfilment. More resistance = more plagues = more testimony. God's name would be proclaimed in every household of Egypt and carried to every nation by Egyptian witnesses. The ten plagues became the defining testimony of God's power for the ancient Near East.</p></div><div class="com-note"><span class="com-ref">11:10</span><p>Moses and Aaron performed all these wonders before Pharaoh, but the LORD hardened Pharaoh's heart. The summary verse before the Passover. All the wonders have been performed; the hardening has reached its final state. The door is now closed except for what the Passover blood will open. The tension between divine sovereignty and human responsibility reaches its maximum here -- and is held, not resolved.</p></div><div class="com-note"><span class="com-ref">11:9–10</span><p>The summary statement — 'the LORD said to Moses, Pharaoh will not listen to you, that my wonders may be multiplied in Egypt' — frames the entire plague narrative retrospectively. Every refusal was foreknown and purposeful. The multiplication of wonders served the multiplication of the divine revelation. Moses and Aaron did all these wonders; then the final act begins.</p></div></div><div id="ex11-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:9–10</span><p>The summary in vv.9–10 is a transitional statement linking the plague narrative (chs.7–11) to the Passover institution (ch.12). Sarna notes it serves as a colophon — a closing summary that frames what has preceded and prepares for what follows. The phrase 'Moses and Aaron did all these wonders' provides the human framing; the divine purpose ('that my wonders may be multiplied') provides the theological framing.</p></div></div><div id="ex11-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:9–10</span><p>The summary is brief and structural — it closes the plague narrative proper and opens the Passover section. Alter notes the chiastic frame: the section began with God telling Moses that Pharaoh would not listen (7:3–4) and ends with the same statement (11:9). The narrative loop is closed; everything that needed to be demonstrated has been demonstrated. The stage is cleared for the final act.</p></div></div><div id="ex11-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:9</span><p>Calvin on the purpose of multiplied wonders: 'God had a different object in view from what appears to human wisdom; for, though Pharaoh's obstinacy seemed to impede his work, God had it in his power to extract glory from his wickedness.' The apparent failure of each plague (Pharaoh still refuses) was always within the divine plan. The multiplication of refusals was the multiplication of opportunities for divine demonstration.</p></div></div><div id="ex11-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:10</span><p>The NET note on 'Moses and Aaron did all these wonders' explains this is a retrospective summary that encompasses chs.7–11. The note discusses the division of roles: Moses received the divine instructions and announcements; Aaron executed the staff-related signs; Moses announced the later plagues directly. The collaborative structure mirrors the prophet-spokesman arrangement established in ch.4.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'ex11-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'ex11-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'ex11-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'ex11-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'ex11-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'ex11-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'ex11-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'ex11-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'ex11-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'ex11-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'ex11-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'ex11-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'ex11-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'ex11-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger themes" onclick="tog(this,'ex11-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="ex11-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Moses</div><div class="person-role">Announces the tenth plague; departs in anger</div><div class="person-text">The anger of v.8 is prophetic, not personal. Moses leaves knowing the word has been spoken and will be fulfilled.</div></div><div class="person-card"><div class="person-name">Pharaoh</div><div class="person-role">Hardens; refuses; holds Israel</div><div class="person-text">His refusal is simultaneously his own act and within the divine purpose. The tension is held, not resolved.</div></div><div class="person-card"><div class="person-name">The firstborn of Egypt</div><div class="person-role">Every household, every social level</div><div class="person-text">The plague makes no social distinctions. Only covenant relationship distinguishes.</div></div></div></div><div id="ex11-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">11:7 -- The Distinction</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But among the Israelites not a dog will bark at any person or animal. Then you will know that the LORD makes a distinction between Egypt and Israel."</td></tr><tr><td class="t-label">Note</td><td>The boundary of the plague is the boundary of the covenant. Total wailing in Egypt; total silence in Israel. The precision is the testimony.</td></tr></table></div><div id="ex11-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Silver and gold from Egypt</div><div class="source-quote">V.2: the plundering of Egypt (Exod 12:35-36) fulfils Gen 15:14 ("they will come out with great possessions"). Israel is compensated for centuries of uncompensated labour. The liberation includes restitution.</div><div class="source-note">The silver and gold become the materials for the tabernacle (Exod 25:3).</div></div><div class="source-block"><div class="source-title">Firstborn theology</div><div class="source-quote">The firstborn represented the continuation of the family line and the focus of its inheritance. Killing the firstborn was the destruction of Egypt's future. The same logic explains why Israel's firstborn were redeemed (Exod 13:2) -- they belong to the LORD who spared them on Passover night.</div><div class="source-note">The firstborn motif runs from Exod 4:22 through ch.11 to ch.13.</div></div></div><div id="ex11-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Romans 9 and the hardening</div><div class="rec-text">Paul's discussion of divine sovereignty and human responsibility in Rom 9 is grounded entirely in the Exodus hardening narrative. He cites Exod 9:16 (v.17) and 4:21 as the paradigmatic texts.</div></div><div class="rec-block"><div class="rec-who">Passover and Easter</div><div class="rec-text">The tenth plague and the Passover (ch.12) became the foundational typology for Christian Easter -- the death of the firstborn passed over when covered by the blood, pointing to the death of Christ and the redemption of those under his blood.</div></div></div><div id="ex11-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Tenth plague announced; Moses departs — vv.1-8</span><span class="lit-text">One more plague; silver and gold; firstborn of all Egypt; not a dog barks; Moses angry</span></div><div class="lit-row"><span class="lit-label">Purpose of hardening; plague summary — vv.9-10</span><span class="lit-text">Wonders multiplied; hardened heart; all wonders performed</span></div><div class="lit-note">Exodus 11 is the hinge between the nine plagues and the final Passover. The chapter announces the judgment, states the divine purpose (multiplied wonders = multiplied testimony), and closes the plague narrative before Passover night begins.</div></div></div><div id="ex11-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">5</sup> "Every <span class="dn-key">firstborn</span> in Egypt will die." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">7</sup> "The <span class="dn-divine">LORD</span> makes a <span class="dn-key">distinction</span> between Egypt and Israel."</p></div><div id="ex11-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">11:5</span><span class="thread-arrow">-></span><span class="thread-target">Exod 4:22-23</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Israel is my firstborn; let my son go or I will kill your firstborn -- the warning of ch.4 executed in ch.11.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">11:2</span><span class="thread-arrow">-></span><span class="thread-target">Gen 15:14</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">They will come out with great possessions -- the silver and gold request fulfils Abraham's covenant promise.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">11:9-10</span><span class="thread-arrow">-></span><span class="thread-target">Rom 9:17</span><span class="thread-type echo">Echo</span></div><div class="thread-text">I raised you up for this very purpose -- Paul cites the hardening as the paradigm of divine sovereignty.</div></div></div><div id="ex11-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Final Plague</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Distinction</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Sovereignty</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Firstborn</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Hardening</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Multiplied Testimony</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 11 is the hinge before the Passover. The tenth plague announcement is simultaneously judgment (firstborn of Egypt) and grace (not a dog barks among Israel). The hardening is simultaneously human responsibility and divine purpose. The tension is held as the Passover approaches.</p></div>
+<div id="ex11-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Moses</div><div class="person-role">Announces the tenth plague; departs in anger</div><div class="person-text">The anger of v.8 is prophetic, not personal. Moses leaves knowing the word has been spoken and will be fulfilled.</div></div><div class="person-card"><div class="person-name">Pharaoh</div><div class="person-role">Hardens; refuses; holds Israel</div><div class="person-text">His refusal is simultaneously his own act and within the divine purpose. The tension is held, not resolved.</div></div><div class="person-card"><div class="person-name">The firstborn of Egypt</div><div class="person-role">Every household, every social level</div><div class="person-text">The plague makes no social distinctions. Only covenant relationship distinguishes.</div></div></div></div><div id="ex11-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Exod 11 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But among the Israelites not a dog will bark at any person or animal. Then you will know that the LORD makes a distinction between Egypt and Israel."</td></tr><tr><td class="t-label">Note</td><td>The boundary of the plague is the boundary of the covenant. Total wailing in Egypt; total silence in Israel. The precision is the testimony.</td></tr></table></div><div id="ex11-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Silver and gold from Egypt</div><div class="source-quote">V.2: the plundering of Egypt (Exod 12:35-36) fulfils Gen 15:14 ("they will come out with great possessions"). Israel is compensated for centuries of uncompensated labour. The liberation includes restitution.</div><div class="source-note">The silver and gold become the materials for the tabernacle (Exod 25:3).</div></div><div class="source-block"><div class="source-title">Firstborn theology</div><div class="source-quote">The firstborn represented the continuation of the family line and the focus of its inheritance. Killing the firstborn was the destruction of Egypt's future. The same logic explains why Israel's firstborn were redeemed (Exod 13:2) -- they belong to the LORD who spared them on Passover night.</div><div class="source-note">The firstborn motif runs from Exod 4:22 through ch.11 to ch.13.</div></div></div><div id="ex11-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Romans 9 and the hardening</div><div class="rec-text">Paul's discussion of divine sovereignty and human responsibility in Rom 9 is grounded entirely in the Exodus hardening narrative. He cites Exod 9:16 (v.17) and 4:21 as the paradigmatic texts.</div></div><div class="rec-block"><div class="rec-who">Passover and Easter</div><div class="rec-text">The tenth plague and the Passover (ch.12) became the foundational typology for Christian Easter -- the death of the firstborn passed over when covered by the blood, pointing to the death of Christ and the redemption of those under his blood.</div></div></div><div id="ex11-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">The Final Announcement — 11:1–8</span><span class="lit-text">Exodus 11 is the hinge chapter — brief, conclusive, prophetically charged. It announces the final plague with absolute precision (midnight, every firstborn, absolute discrimination) and closes Moses' face-to-face engagement with Pharaoh. The brevity after nine chapters of escalating negotiation is itself a rhetorical statement: the time for words is over.</span></div><div class="lit-center">The death of Egypt's firstborn is the inverse of Pharaoh's decree against Israel's infant sons (1:22). The equivalence is exact: Egypt killed Israel's sons; God strikes Egypt's firstborn. The theological principle — 'Israel is my firstborn son' (4:22) vs. the death of Pharaoh's firstborn — has been set up since chapter four. Chapter eleven delivers on it.</div></div></div><div id="ex11-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('בְּכוֹר / Bekhor', "'Firstborn' — the pivotal word of Exodus 11–12. The firstborn in ancient Israel carried the covenant inheritance, the double portion, the family identity. God's firstborn is Israel (4:22); Pharaoh refuses to release him; Pharaoh's firstborn dies. The word that carries the inheritance of life becomes the word of death for Egypt and the word of liberation for Israel.")]</div><div id="ex11-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 69.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Final Judgment</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Discrimination</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Corporate Justice</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Anger</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 11 is the shortest chapter in the plague narrative and the most decisive. The announcement of the tenth plague requires no elaboration — the nine preceding demonstrations have established everything that needs to be said. The chapter's compression is its power: the final act needs no preamble.</p></div>
 </div>
 </main>
 <script>
@@ -354,10 +600,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Egypt','Goshen','Nile','Pharaoh','Israel','land'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Moses','Pharaoh','LORD','Aaron','firstborn','servants'],cls:'vhl-person',btn:['people','context']};
-  var TIME  ={words:['day','night','midnight','morning','hour','plague'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['plague','firstborn','death','hardened','heart','signs','wonders','Passover','redeem','deliver'],cls:'vhl-key',btn:['literary','cross']};
+  var PLACES={words:['Egypt','Goshen','Sinai','Midian','wilderness','Canaan','mountain','tabernacle','Nile'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Moses','Aaron','Pharaoh','LORD','Miriam','Joshua','Bezalel','Israel','Israelites'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','year','generation','Sabbath','Passover'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','commandment','law','holy','glory','tabernacle','sacrifice','redeem','deliver','sign','wonder','plague'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -500,7 +746,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
