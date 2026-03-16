@@ -310,7 +310,7 @@ footer { order: 4; }
   padding: .7rem .8rem;
   background: rgba(0,0,0,.2);
 }
-.book-item.open
+.book-item.open .chapter-list { display: block; }
 
 .chapter-grid {
   display: flex;
@@ -1504,7 +1504,7 @@ updateLiveBadge('tg-nt', 'nt-live-badge');
     if (!bar || !chips) return;
     hist.forEach(function(item) {
       var a = document.createElement('a');
-      a.href = item.url; a.className = 'continue-chip'; a.textContent = item.label;
+      a.href = item.url; a.className = 'continue-chip'; a.textContent = (item.title || '') + (item.subtitle ? ' — ' + item.subtitle : '');
       chips.appendChild(a);
     });
     bar.style.display = 'block';
