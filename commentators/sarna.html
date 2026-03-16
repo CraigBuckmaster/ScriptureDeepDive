@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nahum Sarna &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#4ec9b0; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="color:#4ec9b0;border-bottom:2px solid #4ec9b0;">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Jewish &middot; Academic &middot; 20th Century</p>
+    <h1 class="bio-name">Nahum Sarna</h1>
+    <p class="bio-tradition">1923&ndash;2005 &middot; <span>Jewish Biblical Scholar</span> &middot; Brandeis University &middot; JPS Torah Commentary Series Editor</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;The Hebrew Bible is not only Israel&rsquo;s sacred Scripture but also the literary heritage of Western civilisation &mdash; and it rewards the reader who comes to it with both philological precision and historical imagination.&rdquo;</p>
+    <cite>&mdash; Nahum Sarna, Understanding Genesis (1966)</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>Nahum Sarna was born in London in 1923 and received his rabbinic ordination and academic training in England before emigrating to the United States. He earned his doctorate from Dropsie College (later merged into the University of Pennsylvania) and taught for many years at Brandeis University, where he became one of the most respected biblical scholars in North America.</p>
+    <p>Sarna was the general editor of the Jewish Publication Society Torah Commentary series &mdash; the most significant modern Jewish commentary on the Pentateuch in English. His own volumes on Genesis (1989) and Exodus (1991) in that series are considered landmarks of Jewish biblical scholarship: rigorous in philology, deeply informed by rabbinic tradition, and consistently attentive to the ancient Near Eastern world in which the text was composed.</p>
+    <p>He also wrote &ldquo;Understanding Genesis&rdquo; (1966) and &ldquo;Exploring Exodus&rdquo; (1986), accessible introductions to the theological and historical dimensions of the first two books of the Torah. These works brought serious scholarship to a broad audience without sacrificing depth.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Sarna reads the Hebrew Bible as a Jewish scholar formed by both the rabbinic tradition and modern historical-critical scholarship. He is exceptionally attentive to the Hebrew text itself &mdash; its vocabulary, syntax, wordplay, and the semantic range of key terms. He insists that the text must be understood first in its own linguistic and cultural context before any theological conclusions are drawn.</p>
+    <p>His distinctive contribution is the consistent situating of biblical texts within their ancient Near Eastern environment. Where a Babylonian creation myth or Egyptian administrative practice illuminates a biblical passage, Sarna brings that material to bear with precision. But he is equally careful to identify where the biblical text diverges from or polemicises against its surrounding culture &mdash; where Israel&rsquo;s theology is not merely parallel to but deliberately counter to the dominant cosmologies of its world.</p>
+    <p>Sarna also draws deeply on the Jewish interpretive tradition &mdash; rabbinic midrash, medieval commentators like Rashi and Nachmanides, and the accumulated insights of Jewish readers over two millennia. This gives his commentary a dimension entirely absent from most Christian scholarship: the voice of the tradition that has read this text as Scripture longer than any other.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Sarna writes from within the Conservative Jewish tradition, which combines commitment to the Torah as sacred Scripture with openness to historical-critical methods. He does not read the text as inerrant in the Protestant sense, but he reads it as authoritative, coherent, and theologically profound. His scholarship is neither purely academic nor narrowly confessional &mdash; it occupies the productive middle ground between devotion and rigour that characterises the best Jewish biblical scholarship.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">Genesis (JPS Torah Commentary, 1989)</span><span class="work-desc">His masterwork. Verse-by-verse commentary combining philology, ANE comparative study, and rabbinic tradition. The primary source for Sarna notes in this tool.</span></li>
+      <li><span class="work-title">Exodus (JPS Torah Commentary, 1991)</span><span class="work-desc">The companion volume, equally authoritative on the Exodus narrative and the Sinai legislation.</span></li>
+      <li><span class="work-title">Understanding Genesis (1966)</span><span class="work-desc">An accessible introduction to the theological and literary dimensions of Genesis, written for the intelligent general reader.</span></li>
+      <li><span class="work-title">Exploring Exodus (1986)</span><span class="work-desc">A thematic and theological survey of the Exodus narrative, particularly strong on the historical and cultural background.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Sarna notes currently appear in Genesis 1. Coverage of Genesis and Exodus will expand as the retrofit progresses.</p>
+    <div class="bio-appears">
+      <a href="../genesis/Genesis_1.html">Genesis 1</a>
+    </div>
+  </div>
+<div class="bio-others">
+<p class="bio-others-title">Other Scholars</p>
+<div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a></div>
+</div>
+</div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>

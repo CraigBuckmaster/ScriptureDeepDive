@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Robert Alter &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#d4a853; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="color:#d4a853;border-bottom:2px solid #d4a853;">Alter</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Literary Criticism &middot; Contemporary</p>
+    <h1 class="bio-name">Robert Alter</h1>
+    <p class="bio-tradition">b. 1935 &middot; <span>Literary Scholar</span> &middot; University of California, Berkeley &middot; Class of 1937 Professor of Hebrew and Comparative Literature</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;The ancient Hebrew writers were accomplished literary artists, and reading them as such &mdash; attending to their narrative technique, their poetic structure, their deployment of repetition and wordplay &mdash; is not an alternative to theological reading but its necessary precondition.&rdquo;</p>
+    <cite>&mdash; Robert Alter, The Art of Biblical Narrative (1981)</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>Robert Alter was born in New York City in 1935 and studied at Columbia University and Harvard, where he received his doctorate in comparative literature. He has taught at UC Berkeley since 1967, where he holds a chair in Hebrew and Comparative Literature &mdash; a unique appointment that reflects the distinctive combination of skills he brought to biblical studies: deep knowledge of modern literature, mastery of classical Hebrew, and sensitivity to the ways narrative art operates across cultures and centuries.</p>
+    <p>His 1981 book &ldquo;The Art of Biblical Narrative&rdquo; transformed the study of the Hebrew Bible in the English-speaking world. It demonstrated, with close textual argument, that the narrative techniques of Genesis, Samuel, and the other prose books were not primitive or merely functional but constituted a sophisticated literary system &mdash; comparable in artistry to Homer or Tolstoy, and demanding the same quality of readerly attention.</p>
+    <p>His later book &ldquo;The Art of Biblical Poetry&rdquo; (1985) did the same for the psalms, prophets, and wisdom literature. And his three-volume translation and commentary, &ldquo;The Hebrew Bible: A Translation with Commentary&rdquo; (2018), is the culmination of a fifty-year project &mdash; a fresh translation from the Hebrew that attempts to preserve the stylistic and rhythmic qualities of the original, accompanied by detailed literary and philological notes.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Alter reads the Hebrew Bible as literature &mdash; not in the reductive sense of &ldquo;merely&rdquo; literature, but in the sense that its literary choices are also its theological choices. The way a narrative is structured, what it repeats and what it omits, how it develops character through dialogue and action rather than description &mdash; these are not decorative features but the primary vehicles of meaning.</p>
+    <p>His most important insight is the concept of &ldquo;type scenes&rdquo; &mdash; conventional narrative patterns (the betrothal at a well, the annunciation of birth to a barren woman, the deathbed blessing) that the biblical writers use, vary, and play against expectation to create meaning. When Jacob meets Rachel at a well in Genesis 29, the reader familiar with the type scene knows something significant is happening &mdash; and the ways the story confirms or surprises those expectations carry theological weight.</p>
+    <p>He is also the finest English analyst of biblical Hebrew prose style: the deliberate use of repetition, the &ldquo;contrastive focus&rdquo; of parallel clauses, the extraordinary economy of description that forces meaning into gesture and dialogue. His translations try to preserve these features in ways the NIV, ESV, and other committee translations inevitably smooth away.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Alter is Jewish but writes from a secular-academic rather than a confessional perspective. He does not approach the text as divine revelation in the way MacArthur, Sarna, or Calvin do. But his literary attentiveness produces insights that deeply inform theological reading &mdash; because the literary choices of the biblical authors are often the precise mechanisms by which theological claims are made. To miss the art is to miss the theology it carries.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">The Art of Biblical Narrative (1981)</span><span class="work-desc">The foundational text of literary approaches to the Hebrew Bible. Changed how a generation of scholars and readers read Genesis and Samuel.</span></li>
+      <li><span class="work-title">The Art of Biblical Poetry (1985)</span><span class="work-desc">The companion volume for the poetic books &mdash; Psalms, Proverbs, Job, the prophets. Particularly powerful on the dynamics of biblical parallelism.</span></li>
+      <li><span class="work-title">The Hebrew Bible: A Translation with Commentary (3 vols., 2018)</span><span class="work-desc">A lifetime&rsquo;s work: fresh translation with extensive literary and philological notes. The primary source for Alter commentary in this tool.</span></li>
+      <li><span class="work-title">The David Story (1999)</span><span class="work-desc">Translation and commentary on Samuel &mdash; Alter&rsquo;s most sustained reading of a single narrative sequence, widely regarded as a masterpiece of biblical scholarship.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Alter notes currently appear in Genesis 1. Coverage will expand across Genesis and other narrative books as the retrofit progresses.</p>
+    <div class="bio-appears">
+      <a href="../genesis/Genesis_1.html">Genesis 1</a>
+    </div>
+  </div>
+<div class="bio-others">
+<p class="bio-others-title">Other Scholars</p>
+<div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish / JPS Torah Commentary</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a></div>
+</div>
+</div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>
