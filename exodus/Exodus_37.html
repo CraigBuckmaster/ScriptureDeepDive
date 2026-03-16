@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -270,6 +290,247 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -307,39 +568,24 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Exodus 37</h1>
-<p>The Ark, Mercy Seat, Table, Lampstand, and Incense Altar Constructed</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Ark; Mercy Seat; Table; Lampstand; Incense Altar</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">
-<div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526–1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120. Moses is not only the principal character of Exodus — he is its author, and the events recorded are largely his own experience.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Composed during the wilderness period, c.1446–1406 BC. The events of Exodus span approximately 80 years (Moses's birth to the Tabernacle's completion), but the book itself was written after the fact — most likely during the years at Sinai and the wilderness wandering that followed. The Tabernacle instructions and legal material (chs.19–40) may have been committed to writing earliest, as they were immediately actionable.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Israel needed a founding narrative — a record of how God delivered them from 430 years of slavery, made them his covenant people at Sinai, and established the Tabernacle as his dwelling among them. Exodus is the story of liberation, but more than that, it is the story of covenant formation and divine habitation. It answers: How did God redeem us? What does he require of us? And how can a holy God dwell with a sinful people?</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses, according to Jewish and Christian tradition.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445-1405 BC during the wilderness period.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's redemption of Israel from Egypt and the establishment of the covenant at Sinai.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;9 &mdash; The Ark and the Mercy Seat</div><span class="verse-text"><span class="verse-num">1</span>Bezalel made the ark of acacia wood—two and a half cubits long, a cubit and a half wide, and a cubit and a half high.</span><span class="verse-text"><span class="verse-num">2</span>He overlaid it with pure gold, both inside and out, and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">3</span>He cast four gold rings for it and fastened them to its four feet, with two rings on one side and two rings on the other.</span><span class="verse-text"><span class="verse-num">4</span>Then he made poles of acacia wood and overlaid them with gold.</span><span class="verse-text"><span class="verse-num">5</span>And he inserted the poles into the rings on the sides of the ark to carry it.</span><span class="verse-text"><span class="verse-num">6</span>He made the atonement cover of pure gold—two and a half cubits long and a cubit and a half wide.</span><span class="verse-text"><span class="verse-num">7</span>Then he made two cherubim out of hammered gold at the two ends of the cover.</span><span class="verse-text"><span class="verse-num">8</span>He made one cherub on one end and the second cherub on the other end; he made the cherubim of one piece with the cover, at the two ends.</span><span class="verse-text"><span class="verse-num">9</span>The cherubim had their wings spread upward, overshadowing the cover with them. The cherubim faced each other, looking toward the cover.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'e37-s1-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'e37-s1-ctx')"><span>Context</span></button><button class="anno-trigger cross" onclick="tog(this,'e37-s1-cross')"><span>Cross-Ref</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e37-s1-mac')"><span>MacArthur</span></button></div><div id="e37-s1-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">וַיַּעַשׂ בְּצַלְאֵל</span> <span class="tlit">wayyaʿaś bĕṣalʾēl</span> — <strong>Bezalel made</strong>: The subject is named — not anonymous craftsmen but Bezalel himself. The most sacred object in Israel's worship was made by the Spirit-filled craftsman by name. The ark is not just a product; it is a work of personal devotion by the most gifted person in the community.</p><p><span class="hebrew-word">כַּפֹּרֶת</span> <span class="tlit">kappōret</span> — <strong>atonement cover / mercy seat</strong>: From kāpar (to atone, cover). The lid of the ark is also the place of atonement — where blood is sprinkled on Yom Kippur. Paul identifies Christ as the hilastērion (Rom 3:25), the propitiation — the true mercy seat where God's wrath and mercy meet in blood.</p></div><div id="e37-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Bezalel made the ark himself (v.1). In the command section (Exod 25), God simply says "make" — no craftsman is named. In the execution section, Bezalel is specifically identified as the ark's maker. The most holy object was entrusted to the most Spirit-gifted person. The mercy seat — the place where God meets with Israel — was formed by human hands, hammered from a single piece of gold. The gold and the skill are both God's provision.</p></div><div id="e37-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 3:25</span><span class="ref-text">Christ presented as a "sacrifice of atonement" (hilastērion) — the mercy seat's function fulfilled in Christ's death.</span></li><li><span class="ref-cite">Heb 9:5</span><span class="ref-text">The author of Hebrews explicitly describes the mercy seat and its cherubim in the context of the old covenant's limitations — and their superseding by Christ.</span></li><li><span class="ref-cite">1 Sam 4:4</span><span class="ref-text">The ark as the seat of God's throne: "the Lord Almighty, who is enthroned between the cherubim."</span></li></ul></div><div id="e37-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">37:1</span><p>Bezalel made the ark. The most sacred object in Israel's worship — the dwelling place of God's Presence, the repository of the law, the site of atonement — was made by a human being, from materials that God gave, according to a pattern God showed, with skill that God supplied. This is the consistent pattern of divine-human collaboration in building God's dwelling: God provides everything; humans participate in everything. Neither makes the Tabernacle alone.</p></div><div class="com-note"><span class="com-ref">37:6</span><p>The mercy seat covers the law. The tablets of the covenant law (God's standard) lie inside the ark; the blood of atonement is sprinkled on the cover above them. God's holiness is not denied by atonement — it is satisfied. The blood covers the law not by removing it but by meeting its demands. Christ's atonement operates on the same logic.</p></div></div></div><div class="section"><div class="section-header">Verses 10&ndash;29 &mdash; The Table, Lampstand, and Incense Altar</div><span class="verse-text"><span class="verse-num">10</span>They made the table of acacia wood—two cubits long, a cubit wide and a cubit and a half high.</span><span class="verse-text"><span class="verse-num">11</span>Then they overlaid it with pure gold and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">12</span>They also made around it a rim a handbreadth wide and put a gold molding on the rim.</span><span class="verse-text"><span class="verse-num">13</span>They cast four gold rings for the table and fastened them to the four corners, where the four legs were.</span><span class="verse-text"><span class="verse-num">14</span>The rings were put close to the rim to hold the poles used in carrying the table.</span><span class="verse-text"><span class="verse-num">15</span>The poles for carrying the table were made of acacia wood and were overlaid with gold.</span><span class="verse-text"><span class="verse-num">16</span>And they made from pure gold the articles for the table—its plates and dishes and bowls and its pitchers for the pouring out of offerings.</span><span class="verse-text"><span class="verse-num">17</span>They made the lampstand of pure gold. They hammered out its base and shaft, and made its flowerlike cups, buds and blossoms of one piece with it.</span><span class="verse-text"><span class="verse-num">18</span>Six branches extended from the sides of the lampstand—three on one side and three on the other.</span><span class="verse-text"><span class="verse-num">19</span>Three cups shaped like almond flowers with buds and blossoms were on one branch, three on the next branch and the same for all six branches extending from the lampstand.</span><span class="verse-text"><span class="verse-num">20</span>And on the lampstand were four cups shaped like almond flowers with buds and blossoms.</span><span class="verse-text"><span class="verse-num">21</span>One bud was under the first pair of branches extending from the lampstand, a second bud under the second pair, and a third bud under the third pair—six branches in all.</span><span class="verse-text"><span class="verse-num">22</span>The buds and the branches were all of one piece with the lampstand, hammered out of pure gold.</span><span class="verse-text"><span class="verse-num">23</span>They made its seven lamps, as well as its wick trimmers and trays, of pure gold.</span><span class="verse-text"><span class="verse-num">24</span>They made the lampstand and all its accessories from one talent of pure gold.</span><span class="verse-text"><span class="verse-num">25</span>They made the altar of incense out of acacia wood. It was square, a cubit long and a cubit wide and two cubits high—its horns of one piece with it.</span><span class="verse-text"><span class="verse-num">26</span>They overlaid the top and all the sides and the horns with pure gold, and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">27</span>They made two gold rings below the molding—two on each of the opposite sides—to hold the poles used to carry it.</span><span class="verse-text"><span class="verse-num">28</span>They made the poles of acacia wood and overlaid them with gold.</span><span class="verse-text"><span class="verse-num">29</span>They also made the sacred anointing oil and the pure fragrant incense—the work of a perfumer.</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'e37-s2-ctx')"><span>Context</span></button><button class="anno-trigger macarthur" onclick="tog(this,'e37-s2-mac')"><span>MacArthur</span></button></div><div id="e37-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The table, lampstand, and incense altar form the Holy Place's complete furnishing. Their construction mirrors the instructions of Exod 25:23–40 and 30:1–10 with precision. The lampstand is particularly noted as hammered from one talent of pure gold — the heaviest investment in a single object. Its seven lamps provided the only light inside the Tabernacle, illuminating the table and its bread directly. The God who is light dwells in a place that is always lit.</p></div><div id="e37-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">37:17</span><p>The lampstand was hammered, not cast — a single piece of beaten gold shaped into a tree of light. The almond blossoms (Aaron's rod that budded, Num 17:8) and the seven lamps that never went out speak of the God whose life cannot be extinguished. In Revelation, the glorified Christ walks among seven golden lampstands — the Tabernacle's light now identified with the churches, tended by Christ himself.</p></div><div class="com-note"><span class="com-ref">37:29</span><p>The sacred anointing oil and incense are specifically noted as "the work of a perfumer." Even the sensory dimensions of worship — the fragrance that filled the Tabernacle — required skilled human artistry directed by divine instruction. Every sense is engaged; every skill is employed; nothing about God's dwelling is left to chance or improvisation.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;9 &mdash; The Ark and the Mercy Seat</div><span class="verse-text"><span class="verse-num">1</span>Bezalel made the ark of acacia wood—two and a half cubits long, a cubit and a half wide, and a cubit and a half high.</span><span class="verse-text"><span class="verse-num">2</span>He overlaid it with pure gold, both inside and out, and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">3</span>He cast four gold rings for it and fastened them to its four feet, with two rings on one side and two rings on the other.</span><span class="verse-text"><span class="verse-num">4</span>Then he made poles of acacia wood and overlaid them with gold.</span><span class="verse-text"><span class="verse-num">5</span>And he inserted the poles into the rings on the sides of the ark to carry it.</span><span class="verse-text"><span class="verse-num">6</span>He made the atonement cover of pure gold—two and a half cubits long and a cubit and a half wide.</span><span class="verse-text"><span class="verse-num">7</span>Then he made two cherubim out of hammered gold at the two ends of the cover.</span><span class="verse-text"><span class="verse-num">8</span>He made one cherub on one end and the second cherub on the other end; he made the cherubim of one piece with the cover, at the two ends.</span><span class="verse-text"><span class="verse-num">9</span>The cherubim had their wings spread upward, overshadowing the cover with them. The cherubim faced each other, looking toward the cover.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex37-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex37-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex37-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex37-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex37-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex37-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">וַיַּעַשׂ בְּצַלְאֵל</span> <span class="tlit">wayyaʿaś bĕṣalʾēl</span> — <strong>Bezalel made</strong>: The subject is named — not anonymous craftsmen but Bezalel himself. The most sacred object in Israel's worship was made by the Spirit-filled craftsman by name. The ark is not just a product; it is a work of personal devotion by the most gifted person in the community.</p><p><span class="hebrew-word">כַּפֹּרֶת</span> <span class="tlit">kappōret</span> — <strong>atonement cover / mercy seat</strong>: From kāpar (to atone, cover). The lid of the ark is also the place of atonement — where blood is sprinkled on Yom Kippur. Paul identifies Christ as the hilastērion (Rom 3:25), the propitiation — the true mercy seat where God's wrath and mercy meet in blood.</p></div><div id="ex37-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ex37-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Bezalel made the ark himself (v.1). In the command section (Exod 25), God simply says "make" — no craftsman is named. In the execution section, Bezalel is specifically identified as the ark's maker. The most holy object was entrusted to the most Spirit-gifted person. The mercy seat — the place where God meets with Israel — was formed by human hands, hammered from a single piece of gold. The gold and the skill are both God's provision.</p></div><div id="ex37-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 3:25</span><span class="ref-text">Christ presented as a "sacrifice of atonement" (hilastērion) — the mercy seat's function fulfilled in Christ's death.</span></li><li><span class="ref-cite">Heb 9:5</span><span class="ref-text">The author of Hebrews explicitly describes the mercy seat and its cherubim in the context of the old covenant's limitations — and their superseding by Christ.</span></li><li><span class="ref-cite">1 Sam 4:4</span><span class="ref-text">The ark as the seat of God's throne: "the Lord Almighty, who is enthroned between the cherubim."</span></li></ul></div><div id="ex37-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">37:1</span><p>Bezalel made the ark. The most sacred object in Israel's worship — the dwelling place of God's Presence, the repository of the law, the site of atonement — was made by a human being, from materials that God gave, according to a pattern God showed, with skill that God supplied. This is the consistent pattern of divine-human collaboration in building God's dwelling: God provides everything; humans participate in everything. Neither makes the Tabernacle alone.</p></div><div class="com-note"><span class="com-ref">37:6</span><p>The mercy seat covers the law. The tablets of the covenant law (God's standard) lie inside the ark; the blood of atonement is sprinkled on the cover above them. God's holiness is not denied by atonement — it is satisfied. The blood covers the law not by removing it but by meeting its demands. Christ's atonement operates on the same logic.</p></div><div class="com-note"><span class="com-ref">37:1</span><p>Bezalel makes the Ark — the most sacred object in Israelite religion — with his own hands. The craftsman who is filled with the Spirit of God makes the object that most directly represents the divine presence. Spirit-empowered human craftsmanship produces the vessel of the divine glory.</p></div><div class="com-note"><span class="com-ref">37:17</span><p>The lampstand — the most artistically elaborate object in the tabernacle — is hammered from a single piece of pure gold. The branches with their almond-blossom cups are the work of a single artisan working from a divine design.</p></div></div></div><div class="section"><div class="section-header">Verses 10&ndash;29 &mdash; The Table, Lampstand, and Incense Altar</div><span class="verse-text"><span class="verse-num">10</span>They made the table of acacia wood—two cubits long, a cubit wide and a cubit and a half high.</span><span class="verse-text"><span class="verse-num">11</span>Then they overlaid it with pure gold and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">12</span>They also made around it a rim a handbreadth wide and put a gold molding on the rim.</span><span class="verse-text"><span class="verse-num">13</span>They cast four gold rings for the table and fastened them to the four corners, where the four legs were.</span><span class="verse-text"><span class="verse-num">14</span>The rings were put close to the rim to hold the poles used in carrying the table.</span><span class="verse-text"><span class="verse-num">15</span>The poles for carrying the table were made of acacia wood and were overlaid with gold.</span><span class="verse-text"><span class="verse-num">16</span>And they made from pure gold the articles for the table—its plates and dishes and bowls and its pitchers for the pouring out of offerings.</span><span class="verse-text"><span class="verse-num">17</span>They made the lampstand of pure gold. They hammered out its base and shaft, and made its flowerlike cups, buds and blossoms of one piece with it.</span><span class="verse-text"><span class="verse-num">18</span>Six branches extended from the sides of the lampstand—three on one side and three on the other.</span><span class="verse-text"><span class="verse-num">19</span>Three cups shaped like almond flowers with buds and blossoms were on one branch, three on the next branch and the same for all six branches extending from the lampstand.</span><span class="verse-text"><span class="verse-num">20</span>And on the lampstand were four cups shaped like almond flowers with buds and blossoms.</span><span class="verse-text"><span class="verse-num">21</span>One bud was under the first pair of branches extending from the lampstand, a second bud under the second pair, and a third bud under the third pair—six branches in all.</span><span class="verse-text"><span class="verse-num">22</span>The buds and the branches were all of one piece with the lampstand, hammered out of pure gold.</span><span class="verse-text"><span class="verse-num">23</span>They made its seven lamps, as well as its wick trimmers and trays, of pure gold.</span><span class="verse-text"><span class="verse-num">24</span>They made the lampstand and all its accessories from one talent of pure gold.</span><span class="verse-text"><span class="verse-num">25</span>They made the altar of incense out of acacia wood. It was square, a cubit long and a cubit wide and two cubits high—its horns of one piece with it.</span><span class="verse-text"><span class="verse-num">26</span>They overlaid the top and all the sides and the horns with pure gold, and made a gold molding around it.</span><span class="verse-text"><span class="verse-num">27</span>They made two gold rings below the molding—two on each of the opposite sides—to hold the poles used to carry it.</span><span class="verse-text"><span class="verse-num">28</span>They made the poles of acacia wood and overlaid them with gold.</span><span class="verse-text"><span class="verse-num">29</span>They also made the sacred anointing oil and the pure fragrant incense—the work of a perfumer.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ex37-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ex37-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ex37-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ex37-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ex37-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="ex37-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4></div><div id="ex37-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ex37-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The table, lampstand, and incense altar form the Holy Place's complete furnishing. Their construction mirrors the instructions of Exod 25:23–40 and 30:1–10 with precision. The lampstand is particularly noted as hammered from one talent of pure gold — the heaviest investment in a single object. Its seven lamps provided the only light inside the Tabernacle, illuminating the table and its bread directly. The God who is light dwells in a place that is always lit.</p></div><div id="ex37-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="ex37-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">37:17</span><p>The lampstand was hammered, not cast — a single piece of beaten gold shaped into a tree of light. The almond blossoms (Aaron's rod that budded, Num 17:8) and the seven lamps that never went out speak of the God whose life cannot be extinguished. In Revelation, the glorified Christ walks among seven golden lampstands — the Tabernacle's light now identified with the churches, tended by Christ himself.</p></div><div class="com-note"><span class="com-ref">37:29</span><p>The sacred anointing oil and incense are specifically noted as "the work of a perfumer." Even the sensory dimensions of worship — the fragrance that filled the Tabernacle — required skilled human artistry directed by divine instruction. Every sense is engaged; every skill is employed; nothing about God's dwelling is left to chance or improvisation.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'e37-ppl')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'e37-trans')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'e37-src')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'e37-rec')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'e37-lit')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'e37-hebtext')"><span>Hebrew-Rooted Reading</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'e37-thread')"><span>Intertextual Threading</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'e37-themes')"><span>Theological Themes</span></button>
+<button class="anno-trigger people" onclick="tog(this,'ex37-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'ex37-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'ex37-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'ex37-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'ex37-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'ex37-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'ex37-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'ex37-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'ex37-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="e37-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Bezalel</div><div class="person-role">Named maker of the ark</div><div class="person-text">The Spirit-filled craftsman personally makes the most sacred object. Skill and consecration together.</div></div></div></div><div id="e37-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">37:1 — Bezalel Made the Ark</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"Bezalel made the ark of acacia wood."</td></tr><tr><td class="t-label">NIV</td><td>"Bezalel made the ark of acacia wood."</td></tr><tr><td class="t-label">Note</td><td>The naming of Bezalel as the ark's maker is theologically significant — the most sacred object was entrusted to the most Spirit-gifted craftsman.</td></tr></table></div><div id="e37-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Gold Lampstand</div><div class="source-quote">A gold seven-branched lampstand (menorah) is one of the most recognizable symbols of Judaism. The Temple menorah captured by Rome in 70 AD is depicted on the Arch of Titus in Rome.</div><div class="source-note">The menorah built in Exodus 37 initiated a tradition lasting over a millennium.</div></div><div class="source-block"><div class="source-title">ANE Sacred Objects</div><div class="source-quote">Gold-overlaid wooden sacred chests and furniture are well attested in Egyptian archaeology (Tutankhamun's tomb). The craftsmanship of Exod 37 fits within the known high-art tradition of ancient Near Eastern sacred objects.</div><div class="source-note">The Tabernacle furnishings are culturally intelligible within their ANE context.</div></div></div><div id="e37-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Rev 1:12–13</div><div class="rec-text">Christ walks among seven golden lampstands — the Tabernacle lampstand multiplied and transformed. The seven lamps of the Holy Place become the seven churches tended by Christ.</div></div><div class="rec-block"><div class="rec-who">Heb 9:2–5</div><div class="rec-text">The author of Hebrews systematically describes the Tabernacle furnishings — table, lampstand, ark, mercy seat — as the "copy and shadow" of the heavenly reality now accessed through Christ.</div></div></div><div id="e37-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">The ark — vv.1–5</span><span class="lit-text">Bezalel makes it; acacia/gold; poles permanent</span></div><div class="lit-row"><span class="lit-label">The mercy seat — vv.6–9</span><span class="lit-text">Pure gold; two cherubim; facing each other over the cover</span></div><div class="lit-row"><span class="lit-label">The table — vv.10–16</span><span class="lit-text">Acacia/gold; plates, dishes, bowls for the bread of the Presence</span></div><div class="lit-row"><span class="lit-label">The lampstand — vv.17–24</span><span class="lit-text">Pure gold; hammered; seven lamps; almond blossoms; one talent</span></div><div class="lit-row"><span class="lit-label">The incense altar — vv.25–28</span><span class="lit-text">Acacia/gold; inside the veil; horns</span></div><div class="lit-row"><span class="lit-label">Anointing oil and incense — v.29</span><span class="lit-text">Work of a perfumer — every sense consecrated</span></div><div class="lit-note">The chapter executes the innermost furnishings precisely. Bezalel is named as the ark's maker — the highest honour in the Tabernacle project. The most sacred object received the most gifted craftsman.</div></div></div><div id="e37-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">1</sup> "<span class="dn-human">Bezalel</span> made the <span class="dn-key">ark</span> of acacia wood." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">6</sup> "He made the <span class="dn-key">atonement cover</span> of pure gold." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">17</sup> "They made the <span class="dn-key">lampstand</span> of pure gold... hammered out of pure gold."</p></div><div id="e37-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Exod 25:10–22</span><span class="thread-arrow">→</span><span class="thread-target">37:1–9</span><span class="thread-type fulfillment">Execution</span></div><div class="thread-text">Ark and mercy seat commanded → Bezalel executes precisely. Every instruction followed.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">37:6</span><span class="thread-arrow">→</span><span class="thread-target">Rom 3:25</span><span class="thread-type fulfillment">Fulfillment</span></div><div class="thread-text">Mercy seat (kappōret) → Christ as hilastērion (propitiation/mercy seat). The true atonement cover.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">37:17–24</span><span class="thread-arrow">→</span><span class="thread-target">Rev 1:12–13</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Seven-branched lampstand → seven golden lampstands among which Christ walks. The Tabernacle light fulfilled in the churches.</div></div></div><div id="e37-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,188.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Atonement</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Presence</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Skilled Obedience</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Light</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Typology</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Prayer as Incense</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 37 is the execution of the Tabernacle's theology in gold and acacia wood. The mercy seat — where God's law and God's atonement meet — is made by human hands. The lampstand that never goes out is hammered from a single piece of gold. Bezalel makes the ark. The best craftsman makes the most sacred thing.</p></div>
+<div id="ex37-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Bezalel</div><div class="person-role">Named maker of the ark</div><div class="person-text">The Spirit-filled craftsman personally makes the most sacred object. Skill and consecration together.</div></div></div></div><div id="ex37-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Exod 37 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">ESV</td><td>"Bezalel made the ark of acacia wood."</td></tr><tr><td class="t-label">NIV</td><td>"Bezalel made the ark of acacia wood."</td></tr><tr><td class="t-label">Note</td><td>The naming of Bezalel as the ark's maker is theologically significant — the most sacred object was entrusted to the most Spirit-gifted craftsman.</td></tr></table></div><div id="ex37-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Gold Lampstand</div><div class="source-quote">A gold seven-branched lampstand (menorah) is one of the most recognizable symbols of Judaism. The Temple menorah captured by Rome in 70 AD is depicted on the Arch of Titus in Rome.</div><div class="source-note">The menorah built in Exodus 37 initiated a tradition lasting over a millennium.</div></div><div class="source-block"><div class="source-title">ANE Sacred Objects</div><div class="source-quote">Gold-overlaid wooden sacred chests and furniture are well attested in Egyptian archaeology (Tutankhamun's tomb). The craftsmanship of Exod 37 fits within the known high-art tradition of ancient Near Eastern sacred objects.</div><div class="source-note">The Tabernacle furnishings are culturally intelligible within their ANE context.</div></div></div><div id="ex37-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Rev 1:12–13</div><div class="rec-text">Christ walks among seven golden lampstands — the Tabernacle lampstand multiplied and transformed. The seven lamps of the Holy Place become the seven churches tended by Christ.</div></div><div class="rec-block"><div class="rec-who">Heb 9:2–5</div><div class="rec-text">The author of Hebrews systematically describes the Tabernacle furnishings — table, lampstand, ark, mercy seat — as the "copy and shadow" of the heavenly reality now accessed through Christ.</div></div></div><div id="ex37-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The Spirit-filled craftsman executes the divine design with perfect precision. The most sacred object in Israelite religion — the Ark — is made by human hands filled by divine Spirit working from divine pattern. The tabernacle is simultaneously God's work and humanity's work: a collaboration that anticipates the incarnation.</div></div></div><div id="ex37-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('שִׁטִּים / Shittim', "'Acacia wood' — the primary structural material of the tabernacle. Acacia trees grow in the Sinai Peninsula, confirming the tabernacle's wilderness provenance. The hard, rot-resistant wood of the acacia is the structural backbone of the portable sanctuary.")]</div><div id="ex37-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">37:1</span><span class="tx-issue">Who built the Ark: Bezalel or Moses?</span></div><div class="tx-variants">MT Exod 37:1: 'Bezalel made the ark.' Deut 10:3: 'I myself made the ark of acacia wood.' Moses speaks in first person of making the ark. The apparent contradiction has generated discussion.</div><div class="tx-sig">Most scholars resolve the tension by reading Deut 10:3 as Moses speaking from the perspective of authority/oversight — he oversaw the making, as the commissioned leader, even though Bezalel's hands did the work. The executive responsibility is attributed to the commissioning leader; the actual craftsmanship to the artisan.</div></div></div><div id="ex37-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Ark: Furniture or Throne?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Divine footstool/throne</div><div class="db-proponents">Most scholars (Mowinckel, Eichrodt, Sarna)</div><div class="db-argument">The Ark is the footstool of the invisible divine throne — the physical support below which God's feet would rest, with the cherubim forming the throne's arms above. God is enthroned above the cherubim (Ps 80:1; 99:1). The mercy seat is the meeting point between the footstool and the invisible enthroned presence.</div></div><div class="db-position"><div class="db-pos-name">Container for the covenant document</div><div class="db-proponents">Literalist reading</div><div class="db-argument">The Ark is primarily a storage chest for the covenant tablets. Its sacredness derives from what it contains. The throne imagery is secondary to the document-storage function.</div></div></div><div class="db-synthesis">Both functions are simultaneously true: the Ark contains the tablets and is the base of the divine throne. The two functions are theologically complementary: the covenant law is stored under the mercy seat/throne, encoding the relationship between divine rule and divine mercy.</div></div></div><div id="ex37-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,162.5 61.1,154.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sacred Craftsmanship</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Precise Execution</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Spirit-Empowered Work</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Exodus 37 documents the construction of the tabernacle's most sacred furnishings — the Ark, the mercy seat, the table, the lampstand, and the incense altar — with the same precision their design was specified. Bezalel's Spirit-filled hands execute the divine design for the objects that will be the centre of Israel's covenant worship.</p></div>
 </div>
 </main>
-<footer><p>Exodus 37 — Ark, Mercy Seat, Lampstand Built. Scripture Deep Dive.</p></footer>
 <script>
 function tog(btn,id){
   var p=document.getElementById(id);
@@ -353,11 +599,11 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script>
 <script>
 (function(){
-  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','I AM'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Egypt','Sinai','Midian','Goshen','Canaan','Nile','Red Sea','Horeb','Marah','Elim','Rephidim','Succoth','Etham','Pithom','Rameses','Zin'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Moses','Pharaoh','Aaron','Miriam','Jethro','Joshua','Zipporah','Israel','Israelites','Egyptians','Hobab','Hur'],cls:'vhl-person',btn:['people','context']};
-  var TIME={words:['day','days','night','morning','evening','year','years','forty','three','seven','month','generation','generations','hour'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY={words:['plague','signs','wonders','covenant','law','commandment','Passover','blood','sacrifice','holy','glory','cloud','fire','manna','sabbath','tabernacle'],cls:'vhl-key',btn:['literary','cross']};
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Goshen','Sinai','Midian','wilderness','Canaan','mountain','tabernacle','Nile'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Moses','Aaron','Pharaoh','LORD','Miriam','Joshua','Bezalel','Israel','Israelites'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','year','generation','Sabbath','Passover'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','commandment','law','holy','glory','tabernacle','sacrifice','redeem','deliver','sign','wonder','plague'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -413,7 +659,6 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
   });
 })();
 </script>
-<script src="../verses.js"></script>
 <script>
 function qnavFilter(q) {
   q = q.trim().toLowerCase();
@@ -495,12 +740,13 @@ function qnavFilter(q) {
 <script>
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -510,10 +756,9 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    var entry = {url: url, label: label};
     hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift(entry);
-    if(hist.length > MAX) hist = hist.slice(0, MAX);
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
   } catch(e){}
 })();
