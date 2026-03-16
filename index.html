@@ -197,6 +197,37 @@ a.feature-card {
   color: inherit;
 }
 
+/* Feature list — "What's Inside Each Chapter" section.
+   Flat stacked list, deliberately quieter than .feature-card. */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border2);
+  border-radius: 5px;
+  background: var(--bg3);
+  overflow: hidden;
+}
+.feature-list-item {
+  padding: .85rem 1rem;
+  border-top: 1px solid var(--border2);
+}
+.feature-list-item:first-child { border-top: none; }
+.feature-list-item h3 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: .3rem;
+}
+.feature-list-item p {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
 /* ── LIBRARY ───────────────────────────── */
 .library {
   max-width: 960px;
@@ -672,27 +703,27 @@ footer {
   <div class="features-inner">
     <p class="features-heading">What&rsquo;s Inside Each Chapter</p>
     <div class="features-list">
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Hebrew &amp; Greek</h3>
         <p>Original language word studies with transliterations, roots, and the theological weight each word carries &mdash; things translations can&rsquo;t fully convey.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Historical Context</h3>
         <p>What was happening in the ancient world when this was written? Who were Israel&rsquo;s neighbours, what did they believe, and how does this text respond to them?</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Deep Commentary</h3>
         <p>Theological deep dives, interpretive debates across traditions, and the big ideas each passage is wrestling with &mdash; from ancient rabbis to modern scholars.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Cross-References</h3>
         <p>See how each passage connects to the rest of Scripture &mdash; how the New Testament picks up Old Testament themes, and how the whole Bible holds together.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Key Places</h3>
         <p>Detailed cards on every significant location in the text &mdash; where it is today, why it mattered, and what was happening there in the ancient world.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-list-item">
         <h3>Timelines</h3>
         <p>Visual timelines showing authorship, historical events, and how theological ideas developed across centuries of Scripture and church history.</p>
       </div>
