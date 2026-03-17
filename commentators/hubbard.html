@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Robert Hubbard &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#a8c870; }
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; min-height:100vh; }
+.com-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+.com-nav-back, .com-nav-all { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items { display:flex; gap:.2rem; flex-wrap:wrap; justify-content:center; }
+.com-nav-item { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; padding:.3rem .6rem; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
+.com-nav-item:hover { color:var(--text-dim); }
+.bio-wrap { max-width:800px; margin:0 auto; padding:3rem 1.5rem 6rem; }
+.bio-header { margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.bio-eyebrow { font-family:'Source Sans 3',sans-serif; font-size:.65rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:.8rem; }
+.bio-name { font-family:'Cinzel',serif; font-size:clamp(1.8rem,5vw,2.8rem); font-weight:500; color:var(--text); letter-spacing:.06em; line-height:1.15; margin-bottom:.5rem; }
+.bio-tradition { font-family:'Source Sans 3',sans-serif; font-size:.78rem; color:var(--text-muted); letter-spacing:.08em; }
+.bio-tradition span { color:var(--accent); }
+.bio-quote { margin:2rem 0; padding:1.2rem 1.4rem; border-left:3px solid var(--accent); background:rgba(0,0,0,.2); border-radius:0 4px 4px 0; }
+.bio-quote p { font-family:'EB Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--text-dim); line-height:1.7; margin-bottom:.5rem; }
+.bio-quote cite { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); font-style:normal; letter-spacing:.04em; }
+.bio-section { margin-bottom:2.5rem; }
+.bio-section-title { font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:.9rem; padding-bottom:.5rem; border-bottom:1px solid var(--border2); }
+.bio-section p { font-family:'EB Garamond',serif; font-size:1.05rem; color:var(--text-dim); line-height:1.8; margin-bottom:1rem; }
+.bio-section p:last-child { margin-bottom:0; }
+.bio-works { list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+.bio-works li { padding:.7rem 1rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--accent); border-radius:0 4px 4px 0; }
+.bio-works .work-title { font-family:'Cinzel',serif; font-size:.72rem; color:var(--text); letter-spacing:.06em; display:block; margin-bottom:.2rem; }
+.bio-works .work-desc { font-family:'Source Sans 3',sans-serif; font-size:.8rem; color:var(--text-muted); line-height:1.5; }
+.bio-appears { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.bio-appears a { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--accent); border:1px solid var(--accent); background:rgba(0,0,0,.2); padding:.2rem .55rem; border-radius:3px; text-decoration:none; opacity:.8; transition:opacity .15s; }
+.bio-appears a:hover { opacity:1; }
+.bio-others { margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); }
+.bio-others-title { font-family:'Source Sans 3',sans-serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; }
+.bio-others-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.6rem; }
+.bio-other-card { display:block; padding:.7rem .9rem; background:var(--bg2); border:1px solid var(--border2); border-left:3px solid var(--other-accent,var(--gold-dim)); border-radius:0 4px 4px 0; text-decoration:none; transition:border-color .15s; }
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name { font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:var(--other-accent,var(--gold-dim)); display:block; margin-bottom:.2rem; }
+.bio-other-desc { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); line-height:1.4; }
+footer { padding:1.5rem; text-align:center; font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--text-muted); border-top:1px solid var(--border2); line-height:1.7; }
+</style>
+</head>
+<body>
+<nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="hubbard.html" class="com-nav-item" style="color:#a8c870;border-bottom:2px solid #a8c870;">Hubbard</a><a href="waltke.html" class="com-nav-item" style="">Waltke</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a><a href="robertson.html" class="com-nav-item" style="">Robertson</a><a href="catena.html" class="com-nav-item" style="">Catena</a><a href="netbible.html" class="com-nav-item" style="">NET Bible</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Evangelical &middot; NICOT &middot; OT Narrative</p>
+    <h1 class="bio-name">Robert L. Hubbard Jr.</h1>
+    <p class="bio-tradition">1943&ndash; &middot; <span>Evangelical Biblical Scholar</span> &middot; North Park Theological Seminary &middot; NICOT Commentary on Ruth</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;Ruth is a story about ordinary people doing extraordinary things for one another &mdash; and in so doing, living out the covenant loyalty that Israel&rsquo;s God himself embodies. Hesed is not an abstract theological concept in Ruth; it is the breath of every scene.&rdquo;</p>
+    <cite>&mdash; Robert L. Hubbard Jr., The Book of Ruth (NICOT, 1988)</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>Robert L. Hubbard Jr. is an American evangelical biblical scholar who taught Old Testament and Hebrew at North Park Theological Seminary in Chicago for many years. His 1988 commentary on Ruth in the New International Commentary on the Old Testament (NICOT) series is widely regarded as the definitive evangelical-scholarly treatment of the book &mdash; thorough in its philological analysis, careful in its engagement with ancient Near Eastern legal customs, and consistently attentive to the book&rsquo;s theological dimensions.</p>
+    <p>Hubbard brings to Ruth the same combination of linguistic precision and theological sensitivity that characterises the best of the NICOT series. He engages the major critical and interpretive debates &mdash; the date and provenance of the book, the nature of the go&rsquo;el institution, the relationship between the sandal ceremony and levirate law &mdash; while never losing sight of the narrative as a story about real human beings exercising covenant faithfulness.</p>
+    <p>Beyond Ruth, Hubbard has contributed to Old Testament studies through his work on the redemption motif across the Hebrew canon and his involvement in the New International Commentary series as a whole.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Hubbard reads Ruth as a carefully crafted literary unit whose artistry serves its theology. He is attentive to the book&rsquo;s narrative structure, its patterns of repetition and contrast (fullness and emptiness, loyalty and self-interest, insider and outsider), and its rich deployment of the hesed motif as both theme and characterising virtue.</p>
+    <p>His philological work on key terms &mdash; go&rsquo;el (kinsman-redeemer), hesed (covenant loyalty), and the sandal-removal ceremony &mdash; is foundational for any serious study of Ruth. He situates these terms within their ancient Near Eastern legal and social contexts while drawing out their theological significance within the OT canon.</p>
+    <p>Hubbard is particularly strong on the typological dimensions of the text: Boaz as a type of the divine redeemer, the hesed of Ruth as a mirror of the hesed of YHWH, and the genealogy&rsquo;s placement of the story within the Davidic&mdash;and ultimately messianic&mdash;line.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Hubbard writes from within the evangelical Protestant tradition, with commitments to the authority and coherence of the biblical text, historical-grammatical exegesis, and theological interpretation that situates Ruth within the larger biblical-theological narrative. He engages critical scholarship seriously without being governed by its methodological presuppositions.</p>
+    <p>His treatment of Ruth&rsquo;s Gentile status and her full inclusion in the covenant community is particularly sensitive &mdash; he reads the book not as an ethnic polemic but as a narrative demonstration that hesed is a covenant quality available to anyone willing to live by it.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works">
+      <li><span class="work-title">The Book of Ruth (NICOT, 1988)</span><span class="work-desc">The definitive evangelical commentary on Ruth. Combines thorough philological analysis of Hebrew terms with deep engagement with the book&rsquo;s narrative art and theological themes. The primary source for Hubbard notes in this tool.</span></li>
+      <li><span class="work-title">The Book of Ruth — Supplementary Literature</span><span class="work-desc">Hubbard&rsquo;s work on the go&rsquo;el institution and the redemption motif in the OT has appeared in JETS and other evangelical journals, extending the NICOT commentary&rsquo;s legal-historical analysis.</span></li>
+    </ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Hubbard notes appear throughout the Book of Ruth.</p>
+    <div class="bio-appears">
+      <a href="../ruth/Ruth_1.html">Ruth 1</a><a href="../ruth/Ruth_2.html">Ruth 2</a><a href="../ruth/Ruth_3.html">Ruth 3</a><a href="../ruth/Ruth_4.html">Ruth 4</a>
+    </div>
+  </div>
+<div class="bio-others">
+<p class="bio-others-title">Other Scholars</p>
+<div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish OT scholarship</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a><a href="waltke.html" class="bio-other-card" style="--other-accent:#e8a0b8"><span class="bio-other-name">Waltke</span><span class="bio-other-desc">Evangelical OT / Proverbs</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a><a href="robertson.html" class="bio-other-card" style="--other-accent:#c8d870"><span class="bio-other-name">Robertson</span><span class="bio-other-desc">NT Greek scholarship</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena</span><span class="bio-other-desc">Patristic compilation</span></a><a href="netbible.html" class="bio-other-card" style="--other-accent:#d8e8d0"><span class="bio-other-name">NET Bible</span><span class="bio-other-desc">Translation notes</span></a></div>
+</div>
+</div>
+<footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>
