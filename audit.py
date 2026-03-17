@@ -42,6 +42,7 @@ BOOK_ROSTER = [
     ('proverbs', 'Proverbs', range(1, 32)),
     ('ruth',     'Ruth',     range(1,  5)),
     ('matthew',  'Matthew',  range(1, 29)),
+    ('mark',     'Mark',     range(1, 17)),
 ]
 
 SCHOLAR_KEYS = {
