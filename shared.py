@@ -251,6 +251,7 @@ REGISTRY = [
     ('ruth',     'Ruth',       4,  4, 'OT'),
     ('proverbs', 'Proverbs',  31, 31, 'OT'),
     ('matthew',  'Matthew',   28, 28, 'NT'),
+    ('mark',     'Mark',      16, 16, 'NT'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -260,6 +261,7 @@ BOOK_PREFIX = {
     'ruth':     'ru',
     'proverbs': 'pr',
     'matthew':  'mt',
+    'mark':     'mk',
 }
 
 # ── Per-book commentary roster ────────────────────────────────────────────
@@ -423,6 +425,28 @@ BOOK_META = {
         'vhl_key':    ['kingdom','covenant','blood','resurrection','Son of Man','Son of God',
                        'authority','judgment','forgive','fulfil','law','gospel'],
     },
+    'mark': {
+        'is_nt': True,
+        'auth': ('<strong>Author:</strong> John Mark, companion of Peter and Paul. Early and unanimous '
+                 'tradition (Papias, c.AD 125; Irenaeus; Clement of Alexandria) identifies Mark as the '
+                 'interpreter of Peter — his Gospel preserves the apostle\'s eyewitness testimony in '
+                 'compressed, vivid narrative. Mark is mentioned in Acts 12:12, 25; 13:13; 15:37-39; '
+                 'Col 4:10; Phm 24; and 1 Pet 5:13 ("my son Mark"), confirming the Petrine connection. '
+                 'The Gospel\'s Latinisms, explanation of Jewish customs, and Roman audience markers '
+                 'support a Roman provenance.'),
+        'vhl_places': ['Galilee', 'Capernaum', 'Jerusalem', 'Judea', 'Jordan',
+                       'temple', 'Decapolis', 'Caesarea Philippi', 'Bethany',
+                       'Gethsemane', 'Golgotha', 'synagogue', 'wilderness'],
+        'vhl_people': ['Jesus', 'disciples', 'Pharisees', 'scribes', 'Peter',
+                       'John', 'James', 'crowd', 'demon', 'priest', 'Pilate',
+                       'Herod', 'elders', 'chief priests'],
+        'vhl_time':   ['day', 'days', 'night', 'morning', 'immediately',
+                       'straightway', 'hour', 'third day', 'evening', 'coming'],
+        'vhl_key':    ['kingdom', 'gospel', 'Son of God', 'Son of Man', 'faith',
+                       'authority', 'repent', 'blood', 'covenant', 'ransom',
+                       'Holy Spirit', 'forgive', 'power', 'immediately'],
+    },
+
 }
 
 def auth_sections(text):
@@ -906,6 +930,7 @@ def lit_panel(pid, rows, note=''):
             center = center_raw in (True,'true','True')
         else:
             lbl, txt, center = row
+            center = center in (True, 'true', 'True')
         if center:
             inner += f'<div class="lit-center">{txt}</div>'
         else:
