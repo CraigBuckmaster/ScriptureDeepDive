@@ -184,16 +184,22 @@ body {
 
 /* ── BIO PANEL ───────────────────────────────────────────────── */
 #bio-panel {
-  width: 340px;
+  width: 0;
+  min-width: 0;
   background: var(--bg2);
-  border-left: 1px solid var(--border);
+  border-left: 0px solid var(--border);
   display: flex;
   flex-direction: column;
-  transform: translateX(340px);
-  transition: transform .28s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  transition: width .28s cubic-bezier(.4,0,.2,1),
+              border-left-width .28s cubic-bezier(.4,0,.2,1);
+}
+#bio-panel.open {
+  width: 340px;
+  min-width: 340px;
+  border-left-width: 1px;
   overflow-y: auto;
 }
-#bio-panel.open { transform: translateX(0); }
 
 .bio-close {
   position: sticky;
@@ -414,8 +420,8 @@ body {
     </div>
   </div>
   <div id="bio-panel">
-    <div class="bio-close"><button onclick="closeBio()">✕ Close</button></div>
-    <div id="bio-content"></div>
+    <div class="bio-close" style="min-width:340px"><button onclick="closeBio()">✕ Close</button></div>
+    <div id="bio-content" style="min-width:340px"></div>
   </div>
 </div>
 
