@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 18</h1>
-<p>LORD's Name as Tower; Tongue's Power; Friend Closer than Brother</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The Fortified Tower; Deep Waters; Death and Life in the Tongue</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;13 &mdash; Name of the LORD: Fortified Tower; Deep Words; Listen Before Answering</div><span class="verse-text"><span class="verse-num">1</span>An unfriendly person pursues selfish ends and against all sound judgment starts quarrels.</span><span class="verse-text"><span class="verse-num">2</span>Fools find no pleasure in understanding but delight in airing their own opinions.</span><span class="verse-text"><span class="verse-num">3</span>When wickedness comes, so does contempt, and with shame comes reproach.</span><span class="verse-text"><span class="verse-num">4</span>The words of the mouth are deep waters, and the fountain of wisdom is a rushing stream.</span><span class="verse-text"><span class="verse-num">5</span>It is not good to be partial to the wicked and so deprive the innocent of justice.</span><span class="verse-text"><span class="verse-num">6</span>The lips of fools bring them strife, and their mouths invite a beating.</span><span class="verse-text"><span class="verse-num">7</span>The mouths of fools are their undoing, and their lips are a snare to their very lives.</span><span class="verse-text"><span class="verse-num">8</span>The words of a gossip are like choice morsels; they go down to the inmost parts.</span><span class="verse-text"><span class="verse-num">9</span>One who is slack in his work is brother to one who destroys.</span><span class="verse-text"><span class="verse-num">10</span>The name of the LORD is a fortified tower; the righteous run to it and are safe.</span><span class="verse-text"><span class="verse-num">11</span>The wealth of the rich is their fortified city; they imagine it a wall too high to scale.</span><span class="verse-text"><span class="verse-num">12</span>Before a downfall the heart is haughty, but humility comes before honor.</span><span class="verse-text"><span class="verse-num">13</span>To answer before listening-- that is folly and shame.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr18-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr18-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr18-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr18-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr18-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֵׁם יְהוָה</span> <span class="tlit">shem YHWH</span> — <strong>name of the LORD</strong>: V.10: the name of the LORD is a miḡdal-ʿōz — a strong tower. Into it the righteous run urgently and are set on high (niśgāḇ — inaccessibly high). The contrast with v.11's wealthy-man's city is pointed: wealth imagines itself a wall; the LORD's name is an actual tower.</p><p><span class="hebrew-word">מַיִם עֲמֻקִּים</span> <span class="tlit">mayim amuqqim</span> — <strong>deep waters</strong>: V.4: words of the mouth are deep waters — unfathomable depth, implications the speaker cannot fully anticipate. The fountain of wisdom, by contrast, is a rushing stream — overflowing, accessible, life-giving.</p></div><div id="pr18-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.18 addresses isolation (v.1), the fool's love of their own opinions (v.2), and speech dynamics (vv.4,6-8). V.10's fortified-tower saying is the theological centre: the LORD's name provides what wealth only imagines providing (v.11). V.13 is the chapter's most immediately practical saying: answering before listening is folly and shame.</p></div><div id="pr18-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 61:3</span><span class="ref-text">You have been my refuge, a strong tower against the foe — the same fortified-tower image.</span></li><li><span class="ref-cite">Jas 1:19</span><span class="ref-text">Quick to listen, slow to speak — the NT application of v.13's listening-before-answering principle.</span></li></ul></div><div id="pr18-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:10</span><p>The name of the LORD is a fortified tower; the righteous run to it and are safe. The image of running is urgent — not a leisurely retreat but an emergency dash. The wise person's instinctive response to danger is to flee to the LORD.</p></div><div class="com-note"><span class="com-ref">18:11</span><p>The wealth of the rich — they imagine it a wall. Wealth really does provide some protection. But the protection is finite and imagined; the protection of the LORD's name is real and inexhaustible.</p></div><div class="com-note"><span class="com-ref">18:13</span><p>To answer before listening — that is folly and shame. The person who forms their answer while others are still speaking has stopped listening. Wisdom waits for understanding before responding.</p></div></div></div><div class="section"><div class="section-header">Verses 14&ndash;24 &mdash; Death and Life in the Tongue; Cross-Examine First; Friend Closer than a Brother</div><span class="verse-text"><span class="verse-num">14</span>The human spirit can endure in sickness, but a crushed spirit who can bear?</span><span class="verse-text"><span class="verse-num">15</span>The heart of the discerning acquires knowledge, for the ears of the wise seek it out.</span><span class="verse-text"><span class="verse-num">16</span>A gift opens the way and ushers the giver into the presence of the great.</span><span class="verse-text"><span class="verse-num">17</span>In a lawsuit the first to speak seems right, until someone comes forward and cross-examines.</span><span class="verse-text"><span class="verse-num">18</span>Casting the lot settles disputes and keeps strong opponents apart.</span><span class="verse-text"><span class="verse-num">19</span>A brother wronged is more unyielding than a fortified city; disputes are like the barred gates of a citadel.</span><span class="verse-text"><span class="verse-num">20</span>From the fruit of their mouth a person's stomach is filled; with the harvest of their lips they are satisfied.</span><span class="verse-text"><span class="verse-num">21</span>The tongue has the power of life and death, and those who love it will eat its fruit.</span><span class="verse-text"><span class="verse-num">22</span>He who finds a wife finds what is good and receives favor from the LORD.</span><span class="verse-text"><span class="verse-num">23</span>The poor plead for mercy, but the rich answer harshly.</span><span class="verse-text"><span class="verse-num">24</span>One who has unreliable friends soon comes to ruin, but there is a friend who sticks closer than a brother.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr18-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr18-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr18-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr18-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr18-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מָוֶת וְחַיִּים בְּיַד לָשׁוֹן</span> <span class="tlit">mavet vechayyim beyad lashon</span> — <strong>death and life in the power of the tongue</strong>: V.21: the most explicit statement of the tongue's power in Proverbs. The tongue holds (bǝyaḏ — in the hand of) death and life. Those who love the tongue — who cultivate their speech — will eat its fruit. Speech is the most powerful tool under human control.</p><p><span class="hebrew-word">מָצָא אִשָּׁה</span> <span class="tlit">matsa ishah</span> — <strong>he who finds a wife</strong>: V.22: finds (māṣāʾ) has the same root as 8:35 — "whoever finds me finds life." The parallel is deliberate: finding a wife is structurally equivalent to finding wisdom. The wife who embodies wisdom (31:10-31) is the embodiment of the wisdom the whole book has been seeking.</p></div><div id="pr18-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains the chapter's most famous verse: death and life in the power of the tongue (v.21). Preceded by the legal principle that cross-examination is essential (v.17) and followed by the deep friendship saying (v.24). The chapter closes with the friend who sticks closer than a brother — pointing beyond itself to Christ.</p></div><div id="pr18-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 8:35</span><span class="ref-text">Whoever finds me finds life — the parallel structure to v.22 (finding a wife = finding what is good, receiving favour from the LORD).</span></li><li><span class="ref-cite">John 15:13-15</span><span class="ref-text">I call you friends — the friend closer than a brother (v.24) finds NT fulfilment in Jesus's friendship with his disciples.</span></li></ul></div><div id="pr18-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:17</span><p>In a lawsuit the first to speak seems right, until someone comes forward and cross-examines. Every one-sided presentation sounds compelling until the other side is heard. The wisdom argument for due process and patient hearing.</p></div><div class="com-note"><span class="com-ref">18:21</span><p>The tongue has the power of life and death. The most explicit statement of what the entire tongue cluster in Proverbs has been building toward. The wise person cultivates speech carefully: they are handling something with the force of a weapon or a medicine.</p></div><div class="com-note"><span class="com-ref">18:24</span><p>There is a friend who sticks closer than a brother. True friendship has a loyalty that surpasses the biological bond. For the Christian tradition, this is the text that points most directly to Christ — the friend whose loyalty was expressed by dying in the place of the friend.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;13 &mdash; Name of the LORD: Fortified Tower; Deep Words; Listen Before Answering</div><span class="verse-text"><span class="verse-num">1</span>An unfriendly person pursues selfish ends and against all sound judgment starts quarrels.</span><span class="verse-text"><span class="verse-num">2</span>Fools find no pleasure in understanding but delight in airing their own opinions.</span><span class="verse-text"><span class="verse-num">3</span>When wickedness comes, so does contempt, and with shame comes reproach.</span><span class="verse-text"><span class="verse-num">4</span>The words of the mouth are deep waters, and the fountain of wisdom is a rushing stream.</span><span class="verse-text"><span class="verse-num">5</span>It is not good to be partial to the wicked and so deprive the innocent of justice.</span><span class="verse-text"><span class="verse-num">6</span>The lips of fools bring them strife, and their mouths invite a beating.</span><span class="verse-text"><span class="verse-num">7</span>The mouths of fools are their undoing, and their lips are a snare to their very lives.</span><span class="verse-text"><span class="verse-num">8</span>The words of a gossip are like choice morsels; they go down to the inmost parts.</span><span class="verse-text"><span class="verse-num">9</span>One who is slack in his work is brother to one who destroys.</span><span class="verse-text"><span class="verse-num">10</span>The name of the LORD is a fortified tower; the righteous run to it and are safe.</span><span class="verse-text"><span class="verse-num">11</span>The wealth of the rich is their fortified city; they imagine it a wall too high to scale.</span><span class="verse-text"><span class="verse-num">12</span>Before a downfall the heart is haughty, but humility comes before honor.</span><span class="verse-text"><span class="verse-num">13</span>To answer before listening-- that is folly and shame.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr18-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr18-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr18-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr18-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr18-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr18-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr18-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr18-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr18-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֵׁם יְהוָה</span> <span class="tlit">shem YHWH</span> — <strong>name of the LORD</strong>: V.10: the name of the LORD is a miḡdal-ʿōz — a strong tower. Into it the righteous run urgently and are set on high (niśgāḇ — inaccessibly high). The contrast with v.11's wealthy-man's city is pointed: wealth imagines itself a wall; the LORD's name is an actual tower.</p><p><span class="hebrew-word">מַיִם עֲמֻקִּים</span> <span class="tlit">mayim amuqqim</span> — <strong>deep waters</strong>: V.4: words of the mouth are deep waters — unfathomable depth, implications the speaker cannot fully anticipate. The fountain of wisdom, by contrast, is a rushing stream — overflowing, accessible, life-giving.</p></div><div id="pr18-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.18 addresses isolation (v.1), the fool's love of their own opinions (v.2), and speech dynamics (vv.4,6-8). V.10's fortified-tower saying is the theological centre: the LORD's name provides what wealth only imagines providing (v.11). V.13 is the chapter's most immediately practical saying: answering before listening is folly and shame.</p></div><div id="pr18-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 61:3</span><span class="ref-text">You have been my refuge, a strong tower against the foe — the same fortified-tower image.</span></li><li><span class="ref-cite">Jas 1:19</span><span class="ref-text">Quick to listen, slow to speak — the NT application of v.13's listening-before-answering principle.</span></li></ul></div><div id="pr18-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:10</span><p>The name of the LORD is a fortified tower; the righteous run to it and are safe. The image of running is urgent — not a leisurely retreat but an emergency dash. The wise person's instinctive response to danger is to flee to the LORD.</p></div><div class="com-note"><span class="com-ref">18:11</span><p>The wealth of the rich — they imagine it a wall. Wealth really does provide some protection. But the protection is finite and imagined; the protection of the LORD's name is real and inexhaustible.</p></div><div class="com-note"><span class="com-ref">18:13</span><p>To answer before listening — that is folly and shame. The person who forms their answer while others are still speaking has stopped listening. Wisdom waits for understanding before responding.</p></div></div><div id="pr18-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">18:10–11</span><p>The LORD's name as tower vs. the rich man's wealth as fortified city — Alter notes the comparison is exact and pointed. Both are 'fortified' places of imagined security; one is real and one is a self-deception. The wise person knows the difference.</p></div><div class="com-note"><span class="com-ref">18:13</span><p>Alter notes that answering before listening is one of Proverbs' most practically observant instructions — it addresses the specific failure of hearing an account and forming a settled opinion before the other side has been presented. The legal and social contexts both require the discipline of hearing.</p></div></div><div id="pr18-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">18:10</span><p>The name-of-the-LORD as fortified tower is Proverbs' most concentrated statement of divine protection. Waltke notes the 'name' (shem) of the LORD encompasses his character, reputation, and covenant commitments. To run to his name is to take refuge in what God actually is.</p></div><div class="com-note"><span class="com-ref">18:13</span><p>To answer before listening is both folly and shame. Waltke notes the two consequences are social (shame before others) and cognitive (folly — actual failure of understanding). Premature judgment is not merely rude but epistemically defective.</p></div></div><div id="pr18-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:10</span><p>Calvin: 'The name of the LORD is a strong tower — our security is not in our own strength or wealth but in his character, his promise, and his faithfulness. To run to his name is to trust his character.'</p></div><div class="com-note"><span class="com-ref">18:13</span><p>Calvin: 'He who answers before hearing speaks from pride. The humble person listens because they know they might be wrong; the proud person speaks first because they have already decided.'</p></div></div><div id="pr18-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">18:10</span><p>The NET note on migdal oz (strong tower) traces the fortress imagery through Ps 46:1; 61:3; 91:2; 144:2. The 'name' encompasses character and covenant commitment — it is not merely a title but the reality of who God is.</p></div><div class="com-note"><span class="com-ref">18:12</span><p>The NET note connects 18:12 ('before honour is humility') to 16:18 (pride before destruction) and 15:33 (humility before honour), identifying this as a recurring structural principle in the moral order.</p></div></div></div><div class="section"><div class="section-header">Verses 14&ndash;24 &mdash; Death and Life in the Tongue; Cross-Examine First; Friend Closer than a Brother</div><span class="verse-text"><span class="verse-num">14</span>The human spirit can endure in sickness, but a crushed spirit who can bear?</span><span class="verse-text"><span class="verse-num">15</span>The heart of the discerning acquires knowledge, for the ears of the wise seek it out.</span><span class="verse-text"><span class="verse-num">16</span>A gift opens the way and ushers the giver into the presence of the great.</span><span class="verse-text"><span class="verse-num">17</span>In a lawsuit the first to speak seems right, until someone comes forward and cross-examines.</span><span class="verse-text"><span class="verse-num">18</span>Casting the lot settles disputes and keeps strong opponents apart.</span><span class="verse-text"><span class="verse-num">19</span>A brother wronged is more unyielding than a fortified city; disputes are like the barred gates of a citadel.</span><span class="verse-text"><span class="verse-num">20</span>From the fruit of their mouth a person's stomach is filled; with the harvest of their lips they are satisfied.</span><span class="verse-text"><span class="verse-num">21</span>The tongue has the power of life and death, and those who love it will eat its fruit.</span><span class="verse-text"><span class="verse-num">22</span>He who finds a wife finds what is good and receives favor from the LORD.</span><span class="verse-text"><span class="verse-num">23</span>The poor plead for mercy, but the rich answer harshly.</span><span class="verse-text"><span class="verse-num">24</span>One who has unreliable friends soon comes to ruin, but there is a friend who sticks closer than a brother.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr18-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr18-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr18-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr18-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr18-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr18-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr18-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr18-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr18-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מָוֶת וְחַיִּים בְּיַד לָשׁוֹן</span> <span class="tlit">mavet vechayyim beyad lashon</span> — <strong>death and life in the power of the tongue</strong>: V.21: the most explicit statement of the tongue's power in Proverbs. The tongue holds (bǝyaḏ — in the hand of) death and life. Those who love the tongue — who cultivate their speech — will eat its fruit. Speech is the most powerful tool under human control.</p><p><span class="hebrew-word">מָצָא אִשָּׁה</span> <span class="tlit">matsa ishah</span> — <strong>he who finds a wife</strong>: V.22: finds (māṣāʾ) has the same root as 8:35 — "whoever finds me finds life." The parallel is deliberate: finding a wife is structurally equivalent to finding wisdom. The wife who embodies wisdom (31:10-31) is the embodiment of the wisdom the whole book has been seeking.</p></div><div id="pr18-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains the chapter's most famous verse: death and life in the power of the tongue (v.21). Preceded by the legal principle that cross-examination is essential (v.17) and followed by the deep friendship saying (v.24). The chapter closes with the friend who sticks closer than a brother — pointing beyond itself to Christ.</p></div><div id="pr18-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 8:35</span><span class="ref-text">Whoever finds me finds life — the parallel structure to v.22 (finding a wife = finding what is good, receiving favour from the LORD).</span></li><li><span class="ref-cite">John 15:13-15</span><span class="ref-text">I call you friends — the friend closer than a brother (v.24) finds NT fulfilment in Jesus's friendship with his disciples.</span></li></ul></div><div id="pr18-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:17</span><p>In a lawsuit the first to speak seems right, until someone comes forward and cross-examines. Every one-sided presentation sounds compelling until the other side is heard. The wisdom argument for due process and patient hearing.</p></div><div class="com-note"><span class="com-ref">18:21</span><p>The tongue has the power of life and death. The most explicit statement of what the entire tongue cluster in Proverbs has been building toward. The wise person cultivates speech carefully: they are handling something with the force of a weapon or a medicine.</p></div><div class="com-note"><span class="com-ref">18:24</span><p>There is a friend who sticks closer than a brother. True friendship has a loyalty that surpasses the biological bond. For the Christian tradition, this is the text that points most directly to Christ — the friend whose loyalty was expressed by dying in the place of the friend.</p></div></div><div id="pr18-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">18:21</span><p>Death and life in the tongue — Alter notes the word order (death before life) is unusual and may signal that the negative consequence is the more immediate danger. Those who love to talk will eat whatever fruit their talk produces — a warning as much as a promise.</p></div><div class="com-note"><span class="com-ref">18:17</span><p>The first account always seems right — Alter notes this is Proverbs' most explicitly legal proverb. Applied beyond legal contexts: never form a final opinion on one party's account. The instruction is universally applicable.</p></div></div><div id="pr18-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">18:21</span><p>The tongue has power of life and death — Waltke notes this is Proverbs' most extreme speech-ethics statement. The claim is literal: words produce outcomes that extend to life and death, both the speaker's and the listener's. The 'fruit of the tongue' is the consequences of one's speech.</p></div><div class="com-note"><span class="com-ref">18:24</span><p>The friend who sticks closer than a brother — Waltke notes davaq (cling) is the covenant-loyalty word of Gen 2:24 and Ruth 1:14. The exceptional friend exercises the same kind of steadfast covenant-quality loyalty that marriage and Ruth's commitment to Naomi embody.</p></div></div><div id="pr18-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:21</span><p>Calvin: 'The tongue has power of life and death — Solomon is not hyperbolic. Words make friendships and break them, heal and destroy. James 3 is the NT commentary on this verse.'</p></div><div class="com-note"><span class="com-ref">18:24</span><p>Calvin on the friend who sticks closer than a brother: 'This points toward Christ, who is a better friend than any natural bond of blood. The natural brother may abandon you; the friend of this quality never does.'</p></div></div><div id="pr18-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">18:21</span><p>The NET note on mavet vechayyim beyad lashon (death and life in the hand of the tongue) discusses the instrumental beyad — the tongue wields its power as instruments in the speaker's hands. The note cites Jas 3:5–12 as the NT development.</p></div><div class="com-note"><span class="com-ref">18:24</span><p>The NET note on davaq (sticks closer) identifies the covenant-loyalty word from Gen 2:24 and Ruth 1:14. The exceptional friend exercises hesed-quality loyalty.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr18-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr18-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr18-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr18-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr18-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr18-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr18-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr18-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr18-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr18-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr18-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr18-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr18-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr18-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr18-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr18-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr18-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr18-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Run to the LORD's name</div><div class="person-text">The instinctive response to danger: flee to the real tower, not the imagined wealth-wall.</div></div><div class="person-card"><div class="person-name">The tongue-lover</div><div class="person-role">Eats its fruit — life or death</div><div class="person-text">Speech is cultivated; its harvest depends on how it is tended.</div></div><div class="person-card"><div class="person-name">The friend closer than a brother</div><div class="person-role">Sticks when others abandon</div><div class="person-text">The deepest human loyalty available.</div></div></div></div><div id="pr18-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">18:21 — Tongue's Power</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"The tongue has the power of life and death, and those who love it will eat its fruit."</td></tr><tr><td class="t-label">Note</td><td>The most explicit statement of speech's power in Proverbs. The tongue is not merely a social tool but a life-and-death instrument.</td></tr></table></div><div id="pr18-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Fortified tower</div><div class="source-quote">Miḡdal-ʿōz — the last refuge when a city falls. Running to it was the emergency action of a population under attack.</div><div class="source-note">The military metaphor grounds the theology in experiential urgency.</div></div><div class="source-block"><div class="source-title">Friend closer than a brother</div><div class="source-quote">Rēaʿ (friend) — a closer, more chosen relationship than the biological ʾāḥ (brother). The most intimate bond in wisdom's social vision.</div><div class="source-note">The saying has generated extensive theological reflection on divine friendship.</div></div></div><div id="pr18-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">18:21 in homiletics</div><div class="rec-text">Death and life in the power of the tongue — the most cited Proverbs verse in Christian preaching on speech ethics.</div></div><div class="rec-block"><div class="rec-who">18:24 in Christian friendship theology</div><div class="rec-text">Friend closer than a brother — cited by Augustine, Bernard of Clairvaux, and Aelred of Rievaulx, and applied Christologically throughout Christian devotional literature.</div></div></div><div id="pr18-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">LORD's tower; deep words; listen first — vv.1-13</span><span class="lit-text">Fortified tower; wealth imagines; deep waters; answer before listening is folly</span></div><div class="lit-row"><span class="lit-label">Tongue's power; cross-examine; closer friend — vv.14-24</span><span class="lit-text">Death and life in tongue; lawsuit cross-examination; friend closer than brother</span></div><div class="lit-note">Chapter 18: the chapter of ultimates — the ultimate tower (LORD's name), the ultimate power (tongue), the ultimate friend (closer than a brother).</div></div></div><div id="pr18-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">10</sup> "The name of the <span class="dn-divine">LORD</span> is a <span class="dn-key">fortified tower</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">21</sup> "The tongue has the power of <span class="dn-key">life and death</span>."</p></div><div id="pr18-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">18:10</span><span class="thread-arrow">-></span><span class="thread-target">Ps 61:3</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Strong tower against the foe — the Psalter and Proverbs share the fortress-of-God image.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">18:21</span><span class="thread-arrow">-></span><span class="thread-target">Prov 12:18</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Healing tongue — the full elaboration of what the healing-speech saying implied.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">18:24</span><span class="thread-arrow">-></span><span class="thread-target">John 15:13-15</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Friend closer than a brother — Christ as the friend whose loyalty was expressed by dying.</div></div></div><div id="pr18-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The LORD's Name</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Tongue's Power</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Listening</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Deep Friendship</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wealth vs God</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Due Process</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 18: the chapter of ultimates. The ultimate tower, the ultimate power, the ultimate friend. Every lesser version is found wanting.</p></div>
+<div id="pr18-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Run to the LORD's name</div><div class="person-text">The instinctive response to danger: flee to the real tower, not the imagined wealth-wall.</div></div><div class="person-card"><div class="person-name">The tongue-lover</div><div class="person-role">Eats its fruit — life or death</div><div class="person-text">Speech is cultivated; its harvest depends on how it is tended.</div></div><div class="person-card"><div class="person-name">The friend closer than a brother</div><div class="person-role">Sticks when others abandon</div><div class="person-text">The deepest human loyalty available.</div></div></div></div><div id="pr18-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 18 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"The tongue has the power of life and death, and those who love it will eat its fruit."</td></tr><tr><td class="t-label">Note</td><td>The most explicit statement of speech's power in Proverbs. The tongue is not merely a social tool but a life-and-death instrument.</td></tr></table></div><div id="pr18-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Fortified tower</div><div class="source-quote">Miḡdal-ʿōz — the last refuge when a city falls. Running to it was the emergency action of a population under attack.</div><div class="source-note">The military metaphor grounds the theology in experiential urgency.</div></div><div class="source-block"><div class="source-title">Friend closer than a brother</div><div class="source-quote">Rēaʿ (friend) — a closer, more chosen relationship than the biological ʾāḥ (brother). The most intimate bond in wisdom's social vision.</div><div class="source-note">The saying has generated extensive theological reflection on divine friendship.</div></div></div><div id="pr18-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">18:21 in homiletics</div><div class="rec-text">Death and life in the power of the tongue — the most cited Proverbs verse in Christian preaching on speech ethics.</div></div><div class="rec-block"><div class="rec-who">18:24 in Christian friendship theology</div><div class="rec-text">Friend closer than a brother — cited by Augustine, Bernard of Clairvaux, and Aelred of Rievaulx, and applied Christologically throughout Christian devotional literature.</div></div></div><div id="pr18-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The name-of-the-LORD as fortified tower is Proverbs' most concentrated statement of divine protection. The 'name' is the character — God's covenant commitments embodied. All human security resources (the rich man's wealth, v.11) are contrasted unfavourably with this.</div><div class="lit-row"><span class="lit-label">Death and Life in the Tongue — 18:21</span><span class="lit-text">The most extreme statement of Proverbs' speech ethics: the tongue literally wields life and death as instruments. The claim is structural — words produce outcomes that extend to life and death. The wise person handles their tongue as they would handle a weapon.</span></div></div></div><div id="pr18-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('מִגְדַּל עֹז / Migdal Oz', 'migdal oz', 'Fortified tower', "The LORD's name as protective tower (18:10). The 'strong tower' (migdal oz) is one of the Psalms' most common images for God (Ps 61:3; 144:2). In Proverbs, the fortified tower is the divine name — the character of God expressed in covenant commitments."), ('לָשׁוֹן / Lashon', 'lashon', 'Tongue', 'The instrument of life and death (18:21). The lashon appears throughout chs.10–22 as the primary instrument of wisdom or folly in social life. To have a wise lashon is to have character-formed speech; to have an unguarded lashon is to wield lethal power without direction.')]</div><div id="pr18-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">18:21</span><span class="tx-issue">'Death and life in the hand of the tongue'</span></div><div class="tx-variants">MT: mavet vechayyim beyad lashon (death and life in the hand of the tongue). The word order — death before life — is unusual. LXX: thanatos kai zōē en cheiri glōssēs — identical meaning.</div><div class="tx-sig">The verse's unqualified claim is Proverbs' most extreme speech statement. The 'fruit of the tongue' the tongue-lover eats encompasses both life-giving and death-dealing consequences. James 3:5–12 is the NT commentary.</div></div></div><div id="pr18-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">'The Friend Who Sticks Closer Than a Brother' — Christological Reference?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A rare but genuinely human friend, primarily</div><div class="db-proponents">Most commentators</div><div class="db-argument">The proverb describes an exceptional human friend whose loyalty exceeds even the primary blood-bond. The application to Christ is a legitimate homiletical extension of the primary meaning.</div></div><div class="db-position"><div class="db-pos-name">Points toward Christ; the ideal exceeds the human</div><div class="db-proponents">Calvin, some evangelical preachers</div><div class="db-argument">The friend who exceeds even a brother in closeness points beyond any human relationship to Christ, who never abandons. The ideal described exceeds what any human friend can fully achieve.</div></div></div><div class="db-synthesis">The primary meaning is exceptional human friendship. The Christological application is homiletically natural and theologically appropriate — a legitimate extension. Both readings are valid for different purposes: exegetical (human friendship) and devotional (Christ as ultimate friend).</div></div></div><div id="pr18-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The LORD's Name as True Security</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Death and Life in the Tongue</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Listening Before Judgment</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Exceptional Friendship</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 18 develops social dynamics with particular attention to speech and security. The most extreme observation — death and life in the tongue — is balanced by the most grounding — the LORD's name as fortified tower. Between these poles: listen before judging, hear both sides, and recognise that the tongue's power requires wisdom-formed governance.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
