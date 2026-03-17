@@ -235,7 +235,7 @@ COMMENTATOR_SCOPE = {
     # ── OT-only commentators ─────────────────────────────────────────────────
     # Nahum Sarna — JPS Torah Commentary: Genesis, Exodus, Leviticus, Num, Deut
     # (Ruth and Proverbs are not Torah — Sarna did not write on them)
-    'sarna':     ['genesis', 'exodus'],
+    'sarna':     ['genesis', 'exodus', 'ruth'],
 
     # Robert Alter — The Hebrew Bible: A Translation with Commentary (2018)
     # Covers the entire Hebrew Bible: Torah, Prophets, and Writings
