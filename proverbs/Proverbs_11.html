@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 11</h1>
-<p>Honest Scales; Humility; Generosity; Tree of Life</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Honest Scales; Pride and Humility; Community and Generosity</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; Honest Scales; Pride and Humility; Community Integrity</div><span class="verse-text"><span class="verse-num">1</span>Dishonest scales are an abomination to the LORD, but accurate weights find favor with him.</span><span class="verse-text"><span class="verse-num">2</span>When pride comes, then comes disgrace, but with humility comes wisdom.</span><span class="verse-text"><span class="verse-num">3</span>The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.</span><span class="verse-text"><span class="verse-num">4</span>Wealth is worthless in the day of wrath, but righteousness delivers from death.</span><span class="verse-text"><span class="verse-num">5</span>The righteousness of the blameless makes their paths straight, but the wicked are brought down by their own wickedness.</span><span class="verse-text"><span class="verse-num">6</span>The righteousness of the upright delivers them, but the unfaithful are trapped by evil desires.</span><span class="verse-text"><span class="verse-num">7</span>Hopes placed in mortals die with them; all the promise of their power comes to nothing.</span><span class="verse-text"><span class="verse-num">8</span>The righteous person is rescued from trouble, and it falls on the wicked instead.</span><span class="verse-text"><span class="verse-num">9</span>With their mouths the godless destroy their neighbors, but through knowledge the righteous escape.</span><span class="verse-text"><span class="verse-num">10</span>When the righteous prosper, the city rejoices; when the wicked perish, there are shouts of joy.</span><span class="verse-text"><span class="verse-num">11</span>Through the blessing of the upright a city is exalted, but by the mouth of the wicked it is destroyed.</span><span class="verse-text"><span class="verse-num">12</span>Whoever derides their neighbor has no sense, but the one who has understanding holds their tongue.</span><span class="verse-text"><span class="verse-num">13</span>A gossip betrays a confidence, but a trustworthy person keeps a secret.</span><span class="verse-text"><span class="verse-num">14</span>For lack of guidance a nation falls, but victory is won through many advisers.</span><span class="verse-text"><span class="verse-num">15</span>Whoever puts up security for a stranger will surely suffer, but whoever refuses to shake hands in pledge is safe.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr11-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr11-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr11-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr11-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr11-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">sheqel</span> <span class="tlit">sheqel</span> — <strong>dishonest scales</strong>: V.1: a false balance is an abomination (toebah) -- the strongest word of moral revulsion in Proverbs. Honest weights are a form of worship; commercial dishonesty is practical atheism.</p><p><span class="hebrew-word">zadon</span> <span class="tlit">zadon</span> — <strong>pride / presumption</strong>: V.2: pride leads to disgrace; humility leads to wisdom. The descent and the ascent are natural consequences, not arbitrary punishments.</p></div><div id="pr11-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Proverbs 11 opens with the marketplace (v.1) and the central contrast: upright versus wicked. The city's prosperity or destruction depends on the moral quality of its residents (vv.10-11). Wisdom is not private virtue but a public good.</p></div><div id="pr11-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Lev 19:35-36</span><span class="ref-text">Do not use dishonest standards -- the legal basis for v.1.</span></li><li><span class="ref-cite">Prov 16:18</span><span class="ref-text">Pride goes before destruction -- the same pride-disgrace sequence as v.2.</span></li></ul></div><div id="pr11-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:1</span><p>Dishonest scales are an abomination to the LORD. The marketplace is not a religion-free zone. Commercial dishonesty is practical atheism -- acting as if God were not watching.</p></div><div class="com-note"><span class="com-ref">11:2</span><p>With humility comes wisdom. The wise person knows their own limitations and therefore seeks counsel, listens, and adjusts.</p></div><div class="com-note"><span class="com-ref">11:14</span><p>Victory through many advisers. Every leader who surrounds themselves only with agreeable voices has removed the mechanism of self-correction.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;31 &mdash; Generosity's Paradox; Beauty Without Discretion; Tree of Life</div><span class="verse-text"><span class="verse-num">16</span>A kindhearted woman gains honor, but ruthless men gain only wealth.</span><span class="verse-text"><span class="verse-num">17</span>Those who are kind benefit themselves, but the cruel bring ruin on themselves.</span><span class="verse-text"><span class="verse-num">18</span>A wicked person earns deceptive wages, but the one who sows righteousness reaps a sure reward.</span><span class="verse-text"><span class="verse-num">19</span>Truly the righteous attain life, but whoever pursues evil finds death.</span><span class="verse-text"><span class="verse-num">20</span>The LORD detests those whose hearts are perverse, but he delights in those whose ways are blameless.</span><span class="verse-text"><span class="verse-num">21</span>Be sure of this: The wicked will not go unpunished, but those who are righteous will go free.</span><span class="verse-text"><span class="verse-num">22</span>Like a gold ring in a pig's snout is a beautiful woman who shows no discretion.</span><span class="verse-text"><span class="verse-num">23</span>The desire of the righteous ends only in good, but the hope of the wicked only in wrath.</span><span class="verse-text"><span class="verse-num">24</span>One person gives freely, yet gains even more; another withholds unduly, but comes to poverty.</span><span class="verse-text"><span class="verse-num">25</span>A generous person will prosper; whoever refreshes others will be refreshed.</span><span class="verse-text"><span class="verse-num">26</span>People curse the one who hoards grain, but they pray God's blessing on the one who is willing to sell.</span><span class="verse-text"><span class="verse-num">27</span>Whoever seeks good finds favor, but evil comes to one who searches for it.</span><span class="verse-text"><span class="verse-num">28</span>Those who trust in their riches will fall, but the righteous will thrive like a green leaf.</span><span class="verse-text"><span class="verse-num">29</span>Whoever brings ruin on their family will inherit only wind, and the fool will be servant to the wise.</span><span class="verse-text"><span class="verse-num">30</span>The fruit of the righteous is a tree of life, and the one who is wise saves lives.</span><span class="verse-text"><span class="verse-num">31</span>If the righteous receive their due on earth, how much more the ungodly and the sinner!</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr11-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr11-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr11-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr11-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr11-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">nedibah</span> <span class="tlit">nedibah</span> — <strong>generous / noble-spirited</strong>: V.24: one who gives freely yet gains more. The generous person participates in the community's life-giving rhythms rather than hoarding against them.</p><p><span class="hebrew-word">ets chayyim</span> <span class="tlit">ets chayyim</span> — <strong>tree of life</strong>: V.30: reclaimed from Gen 2-3. In Proverbs associated with wisdom (3:18), desire fulfilled (13:12), and now righteousness. The righteous person becomes a life-giving presence for others.</p></div><div id="pr11-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses the generous paradox (vv.24-26), wealth-trust (v.28), and the social fruitfulness of the righteous (vv.30-31). The gold-ring-in-a-pig's-snout image (v.22): beauty divorced from character is grotesque.</p></div><div id="pr11-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 2:9</span><span class="ref-text">The tree of life in Eden -- Proverbs reclaims this image for righteousness.</span></li><li><span class="ref-cite">2 Cor 9:6-7</span><span class="ref-text">The one who sows generously will reap generously -- NT application of v.24's generous paradox.</span></li></ul></div><div id="pr11-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:22</span><p>A gold ring in a pig's snout. Physical attractiveness without discretion is actively incongruous. Character is the fitting context for beauty.</p></div><div class="com-note"><span class="com-ref">11:24</span><p>One gives freely yet gains more. The person who holds nothing too tightly remains open to receive.</p></div><div class="com-note"><span class="com-ref">11:30</span><p>The fruit of the righteous is a tree of life. The righteous person becomes a source of life for others.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; Honest Scales; Pride and Humility; Community Integrity</div><span class="verse-text"><span class="verse-num">1</span>Dishonest scales are an abomination to the LORD, but accurate weights find favor with him.</span><span class="verse-text"><span class="verse-num">2</span>When pride comes, then comes disgrace, but with humility comes wisdom.</span><span class="verse-text"><span class="verse-num">3</span>The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.</span><span class="verse-text"><span class="verse-num">4</span>Wealth is worthless in the day of wrath, but righteousness delivers from death.</span><span class="verse-text"><span class="verse-num">5</span>The righteousness of the blameless makes their paths straight, but the wicked are brought down by their own wickedness.</span><span class="verse-text"><span class="verse-num">6</span>The righteousness of the upright delivers them, but the unfaithful are trapped by evil desires.</span><span class="verse-text"><span class="verse-num">7</span>Hopes placed in mortals die with them; all the promise of their power comes to nothing.</span><span class="verse-text"><span class="verse-num">8</span>The righteous person is rescued from trouble, and it falls on the wicked instead.</span><span class="verse-text"><span class="verse-num">9</span>With their mouths the godless destroy their neighbors, but through knowledge the righteous escape.</span><span class="verse-text"><span class="verse-num">10</span>When the righteous prosper, the city rejoices; when the wicked perish, there are shouts of joy.</span><span class="verse-text"><span class="verse-num">11</span>Through the blessing of the upright a city is exalted, but by the mouth of the wicked it is destroyed.</span><span class="verse-text"><span class="verse-num">12</span>Whoever derides their neighbor has no sense, but the one who has understanding holds their tongue.</span><span class="verse-text"><span class="verse-num">13</span>A gossip betrays a confidence, but a trustworthy person keeps a secret.</span><span class="verse-text"><span class="verse-num">14</span>For lack of guidance a nation falls, but victory is won through many advisers.</span><span class="verse-text"><span class="verse-num">15</span>Whoever puts up security for a stranger will surely suffer, but whoever refuses to shake hands in pledge is safe.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr11-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr11-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr11-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr11-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr11-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr11-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr11-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr11-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr11-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">sheqel</span> <span class="tlit">sheqel</span> — <strong>dishonest scales</strong>: V.1: a false balance is an abomination (toebah) -- the strongest word of moral revulsion in Proverbs. Honest weights are a form of worship; commercial dishonesty is practical atheism.</p><p><span class="hebrew-word">zadon</span> <span class="tlit">zadon</span> — <strong>pride / presumption</strong>: V.2: pride leads to disgrace; humility leads to wisdom. The descent and the ascent are natural consequences, not arbitrary punishments.</p></div><div id="pr11-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Proverbs 11 opens with the marketplace (v.1) and the central contrast: upright versus wicked. The city's prosperity or destruction depends on the moral quality of its residents (vv.10-11). Wisdom is not private virtue but a public good.</p></div><div id="pr11-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Lev 19:35-36</span><span class="ref-text">Do not use dishonest standards -- the legal basis for v.1.</span></li><li><span class="ref-cite">Prov 16:18</span><span class="ref-text">Pride goes before destruction -- the same pride-disgrace sequence as v.2.</span></li></ul></div><div id="pr11-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:1</span><p>Dishonest scales are an abomination to the LORD. The marketplace is not a religion-free zone. Commercial dishonesty is practical atheism -- acting as if God were not watching.</p></div><div class="com-note"><span class="com-ref">11:2</span><p>With humility comes wisdom. The wise person knows their own limitations and therefore seeks counsel, listens, and adjusts.</p></div><div class="com-note"><span class="com-ref">11:14</span><p>Victory through many advisers. Every leader who surrounds themselves only with agreeable voices has removed the mechanism of self-correction.</p></div></div><div id="pr11-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:1–9</span><p>The opening section of ch.11 moves rapidly across economic ethics (scales, v.1), character (pride/humility, v.2), integrity in crisis (v.3–5), righteousness in death (v.4), and sexual ethics (adultery, v.6). Alter notes this variety is not random — the proverbs are illustrations of the same underlying principle: covenant faithfulness produces life; covenant violation produces destruction, regardless of the domain.</p></div><div class="com-note"><span class="com-ref">11:8</span><p>'The righteous person is rescued from trouble, and it falls on the wicked instead.' This lex talionis proverb — the trouble meant for the righteous falls on the wicked instead — is characteristic of Proverbs' worldview. Alter notes the reversal pattern (the righteous delivered; the wicked get what was aimed at the righteous) is a compressed theodicy: God's moral order inverts human injustice.</p></div></div><div id="pr11-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:1–6</span><p>The honest-scales opening places covenant commerce at the heart of wisdom ethics. Waltke notes that dishonest weights were a form of economic violence against the poor and a theological offence against the God who is the standard of all measurement. The 'detestable' (to'evah) and 'delight' (ratson) language frames the economic ethics within the category of divine character — not merely illegal but an abomination.</p></div><div class="com-note"><span class="com-ref">11:2</span><p>'When pride comes, then comes disgrace, but with humility comes wisdom.' This is Proverbs' most direct statement of the pride-wisdom antithesis. Waltke notes 'pride' (zadon) is the arrogant self-assertion that refuses the epistemological submission that wisdom requires (3:5–7). Pride and wisdom are structurally incompatible: the proud person cannot receive wisdom because wisdom requires the acknowledgment of one's limitation.</p></div></div><div id="pr11-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:1</span><p>Calvin: 'God has appointed equal weights for commerce not as a mere legal requirement but because he is himself the standard of all justice. To defraud with false weights is not merely to cheat a customer but to defy the God who weighs all things in perfect balance. The merchant who falsifies his scales declares that his standard is better than God's.'</p></div><div class="com-note"><span class="com-ref">11:2</span><p>Calvin on humility: 'Wisdom is given to the humble because they are the only ones who can receive it. The proud man is already convinced he knows — so he cannot learn. The humble man acknowledges he does not know — and so can be taught. Humility is not a virtue added to wisdom; it is the posture that makes wisdom possible.'</p></div></div><div id="pr11-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:1</span><p>The NET note on 'honest scales are the LORD's delight; dishonest scales are his abomination' (to'avat YHWH mozen mirmah veeven shelemah retsono) discusses the ancient Near Eastern background: merchants carried two sets of weights — heavier ones when buying (to pay less) and lighter ones when selling (to receive more). Lev 19:35–36 and Deut 25:13–16 also prohibit this. The 'abomination' language places economic fraud in the same moral category as idolatry.</p></div><div class="com-note"><span class="com-ref">11:5</span><p>The NET note on 'the righteousness of the blameless person keeps his way straight' discusses 'blameless' (tamim, complete/whole, the same word used of Job). The blameless person is not sinlessly perfect but whole in their orientation — fully committed to covenant faithfulness rather than divided between wisdom and folly.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;31 &mdash; Generosity's Paradox; Beauty Without Discretion; Tree of Life</div><span class="verse-text"><span class="verse-num">16</span>A kindhearted woman gains honor, but ruthless men gain only wealth.</span><span class="verse-text"><span class="verse-num">17</span>Those who are kind benefit themselves, but the cruel bring ruin on themselves.</span><span class="verse-text"><span class="verse-num">18</span>A wicked person earns deceptive wages, but the one who sows righteousness reaps a sure reward.</span><span class="verse-text"><span class="verse-num">19</span>Truly the righteous attain life, but whoever pursues evil finds death.</span><span class="verse-text"><span class="verse-num">20</span>The LORD detests those whose hearts are perverse, but he delights in those whose ways are blameless.</span><span class="verse-text"><span class="verse-num">21</span>Be sure of this: The wicked will not go unpunished, but those who are righteous will go free.</span><span class="verse-text"><span class="verse-num">22</span>Like a gold ring in a pig's snout is a beautiful woman who shows no discretion.</span><span class="verse-text"><span class="verse-num">23</span>The desire of the righteous ends only in good, but the hope of the wicked only in wrath.</span><span class="verse-text"><span class="verse-num">24</span>One person gives freely, yet gains even more; another withholds unduly, but comes to poverty.</span><span class="verse-text"><span class="verse-num">25</span>A generous person will prosper; whoever refreshes others will be refreshed.</span><span class="verse-text"><span class="verse-num">26</span>People curse the one who hoards grain, but they pray God's blessing on the one who is willing to sell.</span><span class="verse-text"><span class="verse-num">27</span>Whoever seeks good finds favor, but evil comes to one who searches for it.</span><span class="verse-text"><span class="verse-num">28</span>Those who trust in their riches will fall, but the righteous will thrive like a green leaf.</span><span class="verse-text"><span class="verse-num">29</span>Whoever brings ruin on their family will inherit only wind, and the fool will be servant to the wise.</span><span class="verse-text"><span class="verse-num">30</span>The fruit of the righteous is a tree of life, and the one who is wise saves lives.</span><span class="verse-text"><span class="verse-num">31</span>If the righteous receive their due on earth, how much more the ungodly and the sinner!</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr11-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr11-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr11-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr11-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr11-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr11-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr11-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr11-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr11-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">nedibah</span> <span class="tlit">nedibah</span> — <strong>generous / noble-spirited</strong>: V.24: one who gives freely yet gains more. The generous person participates in the community's life-giving rhythms rather than hoarding against them.</p><p><span class="hebrew-word">ets chayyim</span> <span class="tlit">ets chayyim</span> — <strong>tree of life</strong>: V.30: reclaimed from Gen 2-3. In Proverbs associated with wisdom (3:18), desire fulfilled (13:12), and now righteousness. The righteous person becomes a life-giving presence for others.</p></div><div id="pr11-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses the generous paradox (vv.24-26), wealth-trust (v.28), and the social fruitfulness of the righteous (vv.30-31). The gold-ring-in-a-pig's-snout image (v.22): beauty divorced from character is grotesque.</p></div><div id="pr11-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 2:9</span><span class="ref-text">The tree of life in Eden -- Proverbs reclaims this image for righteousness.</span></li><li><span class="ref-cite">2 Cor 9:6-7</span><span class="ref-text">The one who sows generously will reap generously -- NT application of v.24's generous paradox.</span></li></ul></div><div id="pr11-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:22</span><p>A gold ring in a pig's snout. Physical attractiveness without discretion is actively incongruous. Character is the fitting context for beauty.</p></div><div class="com-note"><span class="com-ref">11:24</span><p>One gives freely yet gains more. The person who holds nothing too tightly remains open to receive.</p></div><div class="com-note"><span class="com-ref">11:30</span><p>The fruit of the righteous is a tree of life. The righteous person becomes a source of life for others.</p></div></div><div id="pr11-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:24–26</span><p>The generosity paradox (vv.24–26) is one of Proverbs' most counter-intuitive observations. Alter notes its structure: three proverbs in a row that all point to the same reversal — giving produces increase; hoarding produces decrease; blessing on the generous; curses on the hoarder. The cluster creates an economic principle that works against human instinct and for divine economy.</p></div><div class="com-note"><span class="com-ref">11:29–31</span><p>The closing proverbs of ch.11 return to the household (trouble in one's own house, v.29) and the community (fruit of the righteous, tree of life, v.30) before the final observation: 'if the righteous receive their due on earth, how much more the ungodly and the sinner!' Alter notes the argument a fortiori — if even the righteous experience consequence, the wicked's consequences will be greater.</p></div></div><div id="pr11-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:16–31</span><p>The second half of ch.11 develops the community-and-generosity theme. Waltke notes vv.24–26 form a paradox cluster: 'one person gives freely yet gains even more; another withholds unduly but comes to poverty.' This is Proverbs' most concentrated statement of generosity economics — the more you give, the more you have; the more you hoard, the less you have. It is both practical observation and theological claim about how God's moral order works.</p></div><div class="com-note"><span class="com-ref">11:30</span><p>'The fruit of the righteous is a tree of life, and the one who is wise saves lives.' The tree of life image (from Gen 2–3, explicitly) appears twice in Proverbs (11:30; 13:12; 15:4). Waltke notes Proverbs reclaims for wisdom the cosmic symbol of Eden's forbidden tree: wisdom produces what the unfaithful grasping of Genesis 3 sought to seize.</p></div></div><div id="pr11-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:24</span><p>Calvin on generous giving: 'This is the economy of grace — it is contrary to carnal reason, which says that the more we give the less we have. But God's ordering reverses this: he who distributes liberally is enriched; he who hoards for fear of want impoverishes himself. The difference is not in the mathematics but in whether God is involved.'</p></div><div class="com-note"><span class="com-ref">11:30</span><p>Calvin on the tree of life: 'The righteous person's fruit is not merely beneficial but life-giving in the deepest sense — it communicates the life of God. The wise man who saves souls is imitating God, who is himself the source of all life. To cultivate wisdom in others is to participate in the divine work of giving life.'</p></div></div><div id="pr11-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:24</span><p>The NET note on the liberality paradox ('one person gives freely yet gains even more') discusses the economic background: in ancient Israel, generous grain-lending during famines created social credit that was repaid multiply in good years. The 'gain even more' is not mystical multiplication but the social-economic reality of covenant community reciprocity.</p></div><div class="com-note"><span class="com-ref">11:30</span><p>The NET note on 'tree of life' (ets chayyim) traces the image from Gen 2:9 and 3:22–24 through Prov 3:18; 11:30; 13:12; 15:4 and into Rev 2:7; 22:2, 14. The tree of life is wisdom's symbol in Proverbs (3:18: 'she is a tree of life to those who take hold of her'). The righteous person whose life produces the tree of life is enacting what the original tree of life represents: access to the eternal life of the covenant God.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr11-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr11-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr11-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr11-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr11-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr11-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr11-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr11-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr11-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr11-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr11-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr11-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr11-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr11-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr11-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr11-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr11-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr11-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The upright</div><div class="person-role">Guide and delivered</div><div class="person-text">Their integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The generous person</div><div class="person-role">Gives and gains more</div><div class="person-text">Participates in the community's life-giving rhythms.</div></div></div></div><div id="pr11-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">11:24 -- Generous Paradox</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"One person gives freely, yet gains even more; another withholds unduly, but comes to poverty."</td></tr><tr><td class="t-label">Note</td><td>A description of moral ecology: open hands remain open to receive; closed fists close everything off.</td></tr></table></div><div id="pr11-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Commercial weights</div><div class="source-quote">Ancient merchants carried stone weights. Dishonest weights were a universal temptation.</div><div class="source-note">Archaeological evidence confirms ubiquity of dishonest weights.</div></div><div class="source-block"><div class="source-title">Tree of Life</div><div class="source-quote">Appears four times in Proverbs (3:18; 11:30; 13:12; 15:4), always associated with something that sustains life.</div><div class="source-note">Proverbs reclaims Eden's image for the wise life.</div></div></div><div id="pr11-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">11:14 in leadership</div><div class="rec-text">Many advisers -- widely cited as the wisdom rationale for diverse counsel and avoiding echo chambers.</div></div><div class="rec-block"><div class="rec-who">11:30 in evangelism</div><div class="rec-text">The one who is wise saves lives -- the life-giving vocation of the teacher.</div></div></div><div id="pr11-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Integrity and community — vv.1-15</span><span class="lit-text">Honest scales; pride-disgrace; city rejoices; many advisers</span></div><div class="lit-row"><span class="lit-label">Generosity and fruitfulness — vv.16-31</span><span class="lit-text">Gold ring; generous paradox; wealth-trust; tree of life</span></div><div class="lit-note">Chapter 11: wisdom is never merely private. Character has community consequences. The generous become trees of life.</div></div></div><div id="pr11-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">2</sup> "With <span class="dn-key">humility</span> comes wisdom." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">30</sup> "The fruit of the righteous is a <span class="dn-key">tree of life</span>."</p></div><div id="pr11-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">11:1</span><span class="thread-arrow">-></span><span class="thread-target">Lev 19:35-36</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Honest weights commanded in Torah; Proverbs gives the wisdom rationale.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">11:30</span><span class="thread-arrow">-></span><span class="thread-target">Gen 2:9</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Tree of life in Eden reclaimed for the righteous person's fruitfulness.</div></div></div><div id="pr11-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Commercial Integrity</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Pride vs Humility</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Community Consequences</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Generosity</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Tree of Life</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Self-Defeat of Wickedness</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 11: wisdom is never merely private. Honesty, speech, generosity, and integrity all shape the city's flourishing.</p></div>
+<div id="pr11-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The upright</div><div class="person-role">Guide and delivered</div><div class="person-text">Their integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The generous person</div><div class="person-role">Gives and gains more</div><div class="person-text">Participates in the community's life-giving rhythms.</div></div></div></div><div id="pr11-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 11 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"One person gives freely, yet gains even more; another withholds unduly, but comes to poverty."</td></tr><tr><td class="t-label">Note</td><td>A description of moral ecology: open hands remain open to receive; closed fists close everything off.</td></tr></table></div><div id="pr11-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Commercial weights</div><div class="source-quote">Ancient merchants carried stone weights. Dishonest weights were a universal temptation.</div><div class="source-note">Archaeological evidence confirms ubiquity of dishonest weights.</div></div><div class="source-block"><div class="source-title">Tree of Life</div><div class="source-quote">Appears four times in Proverbs (3:18; 11:30; 13:12; 15:4), always associated with something that sustains life.</div><div class="source-note">Proverbs reclaims Eden's image for the wise life.</div></div></div><div id="pr11-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">11:14 in leadership</div><div class="rec-text">Many advisers -- widely cited as the wisdom rationale for diverse counsel and avoiding echo chambers.</div></div><div class="rec-block"><div class="rec-who">11:30 in evangelism</div><div class="rec-text">The one who is wise saves lives -- the life-giving vocation of the teacher.</div></div></div><div id="pr11-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Three consecutive proverbs form Proverbs' most concentrated treatment of generosity economics: giving produces increase; hoarding produces decrease; blessing on the generous; curses on the grain-hoarder. The cluster is a sustained counter-cultural claim about how the moral order works — God's economy runs against human hoarding instinct.</div><div class="lit-row"><span class="lit-label">Pride and Wisdom: Structural Incompatibility — 11:2</span><span class="lit-text">Proverbs 11:2 states what chs.1–9 demonstrated: pride and wisdom cannot coexist because wisdom requires the epistemological submission (fear of the LORD) that pride structurally refuses. The proud person cannot receive wisdom because they have already decided they know. The antithesis is not merely moral but epistemological.</span></div></div></div><div id="pr11-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[("מֹאזְנֵי מִרְמָה / Mo'zenei Mirmah", "mo'zenei mirmah", 'Dishonest scales', "The opening phrase of Proverbs 11 — literally 'scales of deceit.' The use of to'evah (abomination) language for dishonest commercial practice places economic fraud in the same moral category as idolatry. Commerce is a covenant matter, not a neutral secular sphere. The LORD who weighs the heart (21:2) is the same LORD who detests dishonest weights."), ('זָדוֹן / Zadon', 'zadon', 'Pride / arrogance / insolence', "The specific term for pride in 11:2 — not merely self-confidence but the insolent self-assertion that refuses correction and submission. Zadon is the pride that says 'I know' when it should say 'I seek.' It is structurally incompatible with wisdom because wisdom begins where zadon ends: in the acknowledgment of one's own limitation before the wisdom of God.")]</div><div id="pr11-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">11:30</span><span class="tx-issue">'He who wins souls is wise'</span></div><div class="tx-variants">MT: velokheach nefashot chakham (and he who takes/wins souls is wise). The verb lakach (to take) with nefashot (souls/lives) can mean 'to win' (souls, evangelistically) or 'to take/save' (lives, practically). LXX reads differently. The NIV 'the one who is wise saves lives'; KJV 'he that winneth souls is wise' (used evangelistically in Protestant tradition).</div><div class="tx-sig">The verse is exegetically contested between an evangelistic reading (winning souls for wisdom/God) and a practical reading (the wise person saves lives through wise action). In its Proverbs context, the practical reading fits better: the righteous person's life is a tree of life that saves others practically. The evangelistic application (Prov 11:30 as a soul-winning text) is a legitimate extension that moves beyond the verse's immediate meaning.</div></div></div><div id="pr11-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Proverbs 11 and the Prosperity Gospel: Does Generosity Guarantee Material Return?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A general principle, not a transactional guarantee</div><div class="db-proponents">Waltke, most evangelical scholars</div><div class="db-argument">The liberality proverbs (11:24–26) describe God's moral order, not a transactional formula. Generally, generous community members receive more communal support; generally, hoarders lose social capital. This is observation, not promise. The prosperity gospel's transactional version ('give and God must give back materially') distorts Proverbs' observation into a manipulative formula.</div></div><div class="db-position"><div class="db-pos-name">A theological principle of divine economics</div><div class="db-proponents">Some Reformed scholars</div><div class="db-argument">The principle is genuinely theological — God's economy works differently from human calculation. The liberality proverbs are making a claim about how God orders material reality, not merely a sociological observation. The principle is real, even if its mechanism is not always visible and its timing is not always immediate.</div></div><div class="db-position"><div class="db-pos-name">A wisdom idealisation that experience sometimes contradicts</div><div class="db-proponents">Fox, Ecclesiastes tradition</div><div class="db-argument">Proverbs states the principle as generally true; experience sometimes contradicts it. Qohelet (Ecclesiastes) and Job both observe that the generous sometimes lose everything while the hoarders sometimes prosper. The principle needs to be held with epistemic humility.</div></div></div><div class="db-synthesis">The generalisation reading holds together the principle's reality and its limits. Proverbs makes genuine theological claims about how God's order works — and those claims are generally true. They are not transactional formulas that bind God to specific material responses on a timeline of human choosing.</div></div></div><div id="pr11-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,205.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Economic Ethics as Covenant Faithfulness</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Pride as Wisdom's Enemy</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Generosity as God's Economy</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Righteousness as Community-Sustaining Life</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 11 applies the righteousness-wisdom principle to economic life (honest scales, generous giving) and social character (pride vs. humility). Its most memorable contributions are the generosity paradox (the more you give, the more you have) and the pride-wisdom incompatibility (humility is the condition of wisdom's reception). Both observations are counter-intuitive by human calculation but true by God's ordering of reality.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
