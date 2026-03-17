@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 21</h1>
-<p>The LORD Weighs the Heart; Justice Over Sacrifice; Diligence</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The LORD Weighs the King's Heart; Justice over Sacrifice; Victory to the LORD</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom — teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; The LORD Weighs the King's Heart; Justice Over Sacrifice</div><span class="verse-text"><span class="verse-num">1</span>In the LORD's hand the king's heart is a stream of water that he channels toward all who please him.</span><span class="verse-text"><span class="verse-num">2</span>A person may think their own ways are right, but the LORD weighs the heart.</span><span class="verse-text"><span class="verse-num">3</span>To do what is right and just is more acceptable to the LORD than sacrifice.</span><span class="verse-text"><span class="verse-num">4</span>Haughty eyes and a proud heart— the unplowed field of the wicked— produce sin.</span><span class="verse-text"><span class="verse-num">5</span>The plans of the diligent lead to profit as surely as haste leads to poverty.</span><span class="verse-text"><span class="verse-num">6</span>A fortune made by a lying tongue is a fleeting vapor and a deadly snare.</span><span class="verse-text"><span class="verse-num">7</span>The violence of the wicked will drag them away, for they refuse to do what is right.</span><span class="verse-text"><span class="verse-num">8</span>The way of the guilty is devious, but the conduct of the innocent is upright.</span><span class="verse-text"><span class="verse-num">9</span>Better to live on a corner of the roof than share a house with a quarrelsome wife.</span><span class="verse-text"><span class="verse-num">10</span>The wicked crave evil; their neighbors get no mercy from them.</span><span class="verse-text"><span class="verse-num">11</span>When a mocker is punished, the simple gain wisdom; by paying attention to the wise they get knowledge.</span><span class="verse-text"><span class="verse-num">12</span>The Righteous One takes note of the house of the wicked and brings the wicked to ruin.</span><span class="verse-text"><span class="verse-num">13</span>Whoever shuts their ears to the cry of the poor will also cry out and not be answered.</span><span class="verse-text"><span class="verse-num">14</span>A gift given in secret soothes anger, and a bribe concealed in the cloak pacifies great wrath.</span><span class="verse-text"><span class="verse-num">15</span>When justice is done, it brings joy to the righteous but terror to evildoers.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr21-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr21-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr21-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr21-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr21-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חֵקֶר</span> <span class="tlit">cheqer</span> — <strong>weighs / plumbs</strong>: V.2: the LORD weighs (pōlēs) hearts. The same root as v.1's channels — the king's heart is in the LORD's hand like irrigation water, directed where he will. The divine assessment of motivation reaches what human judgment and self-assessment cannot.</p></div><div id="pr21-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.21 opens with the divine weighing of the king's heart (v.1) — establishing God's sovereignty over all earthly authority. V.3 is the chapter's moral centre: doing what is right and just is more acceptable to the LORD than sacrifice. The contrast between ritual compliance and genuine justice is the Proverbs echo of the great prophets (Isa 1:11–17; Amos 5:21–24).</p></div><div id="pr21-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 1:11–17</span><span class="ref-text">What to me is the multitude of your sacrifices? — the prophetic parallel to v.3. Justice is what the LORD requires; ritual cannot substitute for it.</span></li><li><span class="ref-cite">Prov 16:9</span><span class="ref-text">The LORD establishes steps — the same sovereignty theme as v.1's king-as-channel.</span></li></ul></div><div id="pr21-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>The king's heart is a stream of water in the LORD's hand. The most powerful human figure — the king — is still a river channel in God's irrigation system. Divine sovereignty is not in competition with human authority; it encompasses and directs it.</p></div><div class="com-note"><span class="com-ref">21:2</span><p>A person may think their own ways are right, but the LORD weighs the heart. The companion to 16:2. Subjective moral certainty is not the criterion; divine assessment is. The gap between self-perceived rightness and the LORD's weighing is the space where repentance is needed.</p></div><div class="com-note"><span class="com-ref">21:3</span><p>To do what is right and just is more acceptable to the LORD than sacrifice. The prophetic principle applied in wisdom's register: ritual without ethics is not acceptable. Sacrifice cannot substitute for justice.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;31 &mdash; Diligence; Pride Leads to Conflict; Wisdom Overcomes Strength</div><span class="verse-text"><span class="verse-num">16</span>Whoever strays from the path of prudence comes to rest in the company of the dead.</span><span class="verse-text"><span class="verse-num">17</span>Whoever loves pleasure will become poor; whoever loves wine and olive oil will never be rich.</span><span class="verse-text"><span class="verse-num">18</span>The wicked become a ransom for the righteous, and the unfaithful for the upright.</span><span class="verse-text"><span class="verse-num">19</span>Better to live in a desert than with a quarrelsome and nagging wife.</span><span class="verse-text"><span class="verse-num">20</span>The wise store up choice food and olive oil, but fools gulp theirs down.</span><span class="verse-text"><span class="verse-num">21</span>Whoever pursues righteousness and love finds life, prosperity and honor.</span><span class="verse-text"><span class="verse-num">22</span>One who is wise can go up against the city of the mighty and pull down the stronghold in which they trust.</span><span class="verse-text"><span class="verse-num">23</span>Those who guard their mouths and their tongues keep themselves from calamity.</span><span class="verse-text"><span class="verse-num">24</span>The proud and arrogant person— "Mocker" is their name— behaves with insolent fury.</span><span class="verse-text"><span class="verse-num">25</span>The craving of a sluggard will be the death of him, because his hands refuse to work.</span><span class="verse-text"><span class="verse-num">26</span>All day long he craves for more, but the righteous give without sparing.</span><span class="verse-text"><span class="verse-num">27</span>The sacrifice of the wicked is detestable— how much more so when brought with evil intent!</span><span class="verse-text"><span class="verse-num">28</span>A false witness will perish, but a careful listener will testify successfully.</span><span class="verse-text"><span class="verse-num">29</span>The wicked put up a bold front, but the upright give thought to their ways.</span><span class="verse-text"><span class="verse-num">30</span>There is no wisdom, no insight, no plan that can succeed against the LORD.</span><span class="verse-text"><span class="verse-num">31</span>The horse is made ready for the day of battle, but victory rests with the LORD.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr21-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr21-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr21-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr21-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr21-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֶׁמֶן נְאֶמָן</span> <span class="tlit">shemen neeman</span> — <strong>precious oil / choice ointment</strong>: V.20: treasure and oil in the dwelling of the wise — stored resources of the prudent. The fool consumes everything immediately. The wise person maintains reserves. Prudence is foresight about future need.</p></div><div id="pr21-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses diligence versus laziness (vv.25–26), pride as the source of conflict (v.24), and the chapter's climactic verse: no wisdom, insight, or plan can succeed against the LORD (v.30). The divine sovereignty that opened the chapter (v.1) closes it (vv.30–31): human preparation matters, but victory belongs to the LORD.</p></div><div id="pr21-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 33:17</span><span class="ref-text">A horse is a vain hope for deliverance — the exact parallel to v.31. The Psalmist and the sage both locate victory with the LORD, not with military preparation.</span></li><li><span class="ref-cite">Prov 16:18</span><span class="ref-text">Pride goes before destruction — the same pride-conflict connection as v.24.</span></li></ul></div><div id="pr21-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:24</span><p>The proud and arrogant person — "Mocker" is their name; they behave with insolent fury. Arrogance names itself through its behaviour. The mocker is not merely wrong; they are contemptuous of correction, which makes them unreachable by wisdom.</p></div><div class="com-note"><span class="com-ref">21:30</span><p>There is no wisdom, no insight, no plan that can succeed against the LORD. The chapter's final statement of divine sovereignty. Human wisdom, human intelligence, and human strategy are all real goods — but none of them can prevail if they are directed against the LORD's purpose.</p></div><div class="com-note"><span class="com-ref">21:31</span><p>The horse is made ready for the day of battle, but victory rests with the LORD. The most practical application of the sovereignty theology in ch.21. Preparation is obligatory; outcomes are not in human hands. The wise person prepares fully and trusts completely.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; The LORD Weighs the King's Heart; Justice Over Sacrifice</div><span class="verse-text"><span class="verse-num">1</span>In the LORD's hand the king's heart is a stream of water that he channels toward all who please him.</span><span class="verse-text"><span class="verse-num">2</span>A person may think their own ways are right, but the LORD weighs the heart.</span><span class="verse-text"><span class="verse-num">3</span>To do what is right and just is more acceptable to the LORD than sacrifice.</span><span class="verse-text"><span class="verse-num">4</span>Haughty eyes and a proud heart— the unplowed field of the wicked— produce sin.</span><span class="verse-text"><span class="verse-num">5</span>The plans of the diligent lead to profit as surely as haste leads to poverty.</span><span class="verse-text"><span class="verse-num">6</span>A fortune made by a lying tongue is a fleeting vapor and a deadly snare.</span><span class="verse-text"><span class="verse-num">7</span>The violence of the wicked will drag them away, for they refuse to do what is right.</span><span class="verse-text"><span class="verse-num">8</span>The way of the guilty is devious, but the conduct of the innocent is upright.</span><span class="verse-text"><span class="verse-num">9</span>Better to live on a corner of the roof than share a house with a quarrelsome wife.</span><span class="verse-text"><span class="verse-num">10</span>The wicked crave evil; their neighbors get no mercy from them.</span><span class="verse-text"><span class="verse-num">11</span>When a mocker is punished, the simple gain wisdom; by paying attention to the wise they get knowledge.</span><span class="verse-text"><span class="verse-num">12</span>The Righteous One takes note of the house of the wicked and brings the wicked to ruin.</span><span class="verse-text"><span class="verse-num">13</span>Whoever shuts their ears to the cry of the poor will also cry out and not be answered.</span><span class="verse-text"><span class="verse-num">14</span>A gift given in secret soothes anger, and a bribe concealed in the cloak pacifies great wrath.</span><span class="verse-text"><span class="verse-num">15</span>When justice is done, it brings joy to the righteous but terror to evildoers.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr21-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr21-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr21-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr21-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr21-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr21-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr21-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr21-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr21-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חֵקֶר</span> <span class="tlit">cheqer</span> — <strong>weighs / plumbs</strong>: V.2: the LORD weighs (pōlēs) hearts. The same root as v.1's channels — the king's heart is in the LORD's hand like irrigation water, directed where he will. The divine assessment of motivation reaches what human judgment and self-assessment cannot.</p></div><div id="pr21-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.21 opens with the divine weighing of the king's heart (v.1) — establishing God's sovereignty over all earthly authority. V.3 is the chapter's moral centre: doing what is right and just is more acceptable to the LORD than sacrifice. The contrast between ritual compliance and genuine justice is the Proverbs echo of the great prophets (Isa 1:11–17; Amos 5:21–24).</p></div><div id="pr21-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 1:11–17</span><span class="ref-text">What to me is the multitude of your sacrifices? — the prophetic parallel to v.3. Justice is what the LORD requires; ritual cannot substitute for it.</span></li><li><span class="ref-cite">Prov 16:9</span><span class="ref-text">The LORD establishes steps — the same sovereignty theme as v.1's king-as-channel.</span></li></ul></div><div id="pr21-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>The king's heart is a stream of water in the LORD's hand. The most powerful human figure — the king — is still a river channel in God's irrigation system. Divine sovereignty is not in competition with human authority; it encompasses and directs it.</p></div><div class="com-note"><span class="com-ref">21:2</span><p>A person may think their own ways are right, but the LORD weighs the heart. The companion to 16:2. Subjective moral certainty is not the criterion; divine assessment is. The gap between self-perceived rightness and the LORD's weighing is the space where repentance is needed.</p></div><div class="com-note"><span class="com-ref">21:3</span><p>To do what is right and just is more acceptable to the LORD than sacrifice. The prophetic principle applied in wisdom's register: ritual without ethics is not acceptable. Sacrifice cannot substitute for justice.</p></div></div><div id="pr21-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>The watercourse image — Alter notes the precision: irrigation channels can be directed in any direction. The king who thinks he acts from sovereign will is being channelled by a higher sovereignty.</p></div><div class="com-note"><span class="com-ref">21:9</span><p>Better a corner of the roof — Alter notes the extremity of the contrast makes the relational-peace point memorably. Even extreme physical discomfort is preferable to domestic strife.</p></div></div><div id="pr21-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>The king's heart in the LORD's hand like a watercourse — Waltke notes divine sovereignty over political power is comprehensive. Even the most powerful human will is redirectable, like an irrigation channel turned wherever the farmer chooses.</p></div><div class="com-note"><span class="com-ref">21:3</span><p>To do right and just is more acceptable than sacrifice — Waltke notes this is Proverbs' most striking ethical priority statement. Ethical righteousness is the substance that sacrifice expresses.</p></div></div><div id="pr21-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>Calvin: 'The king's heart is in the LORD's hand — comfort and warning simultaneously. No earthly power operates outside divine governance; those in power answer to the God who directs them.'</p></div><div class="com-note"><span class="com-ref">21:3</span><p>Calvin: 'Ritual without ethics is an offence, not an offering. The entire prophetic tradition agrees: righteousness and justice matter more than sacrifice.'</p></div></div><div id="pr21-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:1</span><p>The NET note traces the divine-governance-of-kings theme through Isa 10:5 and Dan 2:21.</p></div><div class="com-note"><span class="com-ref">21:3</span><p>The NET note connects to 1 Sam 15:22 and the sustained prophetic critique of empty ritual.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;31 &mdash; Diligence; Pride Leads to Conflict; Wisdom Overcomes Strength</div><span class="verse-text"><span class="verse-num">16</span>Whoever strays from the path of prudence comes to rest in the company of the dead.</span><span class="verse-text"><span class="verse-num">17</span>Whoever loves pleasure will become poor; whoever loves wine and olive oil will never be rich.</span><span class="verse-text"><span class="verse-num">18</span>The wicked become a ransom for the righteous, and the unfaithful for the upright.</span><span class="verse-text"><span class="verse-num">19</span>Better to live in a desert than with a quarrelsome and nagging wife.</span><span class="verse-text"><span class="verse-num">20</span>The wise store up choice food and olive oil, but fools gulp theirs down.</span><span class="verse-text"><span class="verse-num">21</span>Whoever pursues righteousness and love finds life, prosperity and honor.</span><span class="verse-text"><span class="verse-num">22</span>One who is wise can go up against the city of the mighty and pull down the stronghold in which they trust.</span><span class="verse-text"><span class="verse-num">23</span>Those who guard their mouths and their tongues keep themselves from calamity.</span><span class="verse-text"><span class="verse-num">24</span>The proud and arrogant person— "Mocker" is their name— behaves with insolent fury.</span><span class="verse-text"><span class="verse-num">25</span>The craving of a sluggard will be the death of him, because his hands refuse to work.</span><span class="verse-text"><span class="verse-num">26</span>All day long he craves for more, but the righteous give without sparing.</span><span class="verse-text"><span class="verse-num">27</span>The sacrifice of the wicked is detestable— how much more so when brought with evil intent!</span><span class="verse-text"><span class="verse-num">28</span>A false witness will perish, but a careful listener will testify successfully.</span><span class="verse-text"><span class="verse-num">29</span>The wicked put up a bold front, but the upright give thought to their ways.</span><span class="verse-text"><span class="verse-num">30</span>There is no wisdom, no insight, no plan that can succeed against the LORD.</span><span class="verse-text"><span class="verse-num">31</span>The horse is made ready for the day of battle, but victory rests with the LORD.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr21-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr21-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr21-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr21-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr21-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr21-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr21-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr21-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr21-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֶׁמֶן נְאֶמָן</span> <span class="tlit">shemen neeman</span> — <strong>precious oil / choice ointment</strong>: V.20: treasure and oil in the dwelling of the wise — stored resources of the prudent. The fool consumes everything immediately. The wise person maintains reserves. Prudence is foresight about future need.</p></div><div id="pr21-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses diligence versus laziness (vv.25–26), pride as the source of conflict (v.24), and the chapter's climactic verse: no wisdom, insight, or plan can succeed against the LORD (v.30). The divine sovereignty that opened the chapter (v.1) closes it (vv.30–31): human preparation matters, but victory belongs to the LORD.</p></div><div id="pr21-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 33:17</span><span class="ref-text">A horse is a vain hope for deliverance — the exact parallel to v.31. The Psalmist and the sage both locate victory with the LORD, not with military preparation.</span></li><li><span class="ref-cite">Prov 16:18</span><span class="ref-text">Pride goes before destruction — the same pride-conflict connection as v.24.</span></li></ul></div><div id="pr21-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:24</span><p>The proud and arrogant person — "Mocker" is their name; they behave with insolent fury. Arrogance names itself through its behaviour. The mocker is not merely wrong; they are contemptuous of correction, which makes them unreachable by wisdom.</p></div><div class="com-note"><span class="com-ref">21:30</span><p>There is no wisdom, no insight, no plan that can succeed against the LORD. The chapter's final statement of divine sovereignty. Human wisdom, human intelligence, and human strategy are all real goods — but none of them can prevail if they are directed against the LORD's purpose.</p></div><div class="com-note"><span class="com-ref">21:31</span><p>The horse is made ready for the day of battle, but victory rests with the LORD. The most practical application of the sovereignty theology in ch.21. Preparation is obligatory; outcomes are not in human hands. The wise person prepares fully and trusts completely.</p></div></div><div id="pr21-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:17</span><p>Alter notes these proverbs establish that poverty proceeds from character (the love of immediate pleasure) before circumstance.</p></div><div class="com-note"><span class="com-ref">21:31</span><p>Alter notes the military context makes the sovereignty principle more striking than in everyday planning. Battle is where human power is most concentrated — and even there, the outcome belongs to the LORD.</p></div></div><div id="pr21-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:17</span><p>The love-of-pleasure-to-poverty proverb grounds financial ruin in character before circumstance. Waltke notes wisdom's economics is patient diligence, not the pursuit of immediate pleasure.</p></div><div class="com-note"><span class="com-ref">21:31</span><p>The horse is prepared for battle but victory belongs to the LORD — the sovereignty principle applied to the extreme case of warfare. Human preparation is necessary; divine determination is final.</p></div></div><div id="pr21-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:26</span><p>Calvin: 'The righteous gives and does not hold back — this is the natural overflow of wisdom-formed character. Generosity is what the righteous person is, not merely what they do.'</p></div><div class="com-note"><span class="com-ref">21:31</span><p>Calvin: 'Use all lawful means (prepare the horse) and commit the outcome entirely to God (who gives victory). To use no means is presumption; to trust the means is idolatry.'</p></div></div><div id="pr21-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:17</span><p>The NET note on love-of-pleasure explains the wisdom tradition consistently connects desire for immediate sensory pleasure with financial ruin through the erosion of diligent habits.</p></div><div class="com-note"><span class="com-ref">21:31</span><p>The NET note on 'victory belongs to the LORD' identifies this as the extreme case of the planning-sovereignty principle from 16:9.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr21-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr21-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr21-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr21-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr21-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr21-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr21-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr21-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr21-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr21-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr21-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr21-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr21-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr21-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr21-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr21-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr21-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr21-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Guided by integrity, protected by wisdom.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Structurally unteachable; self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient productive work yields real gain.</div></div></div></div><div id="pr21-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">21:3 — Justice Over Sacrifice</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"To do what is right and just is more acceptable to the LORD than sacrifice."</td></tr><tr><td class="t-label">Note</td><td>The prophetic principle applied in wisdom's register. Ritual cannot substitute for justice.</td></tr></table></div><div id="pr21-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs.</div><div class="source-note">The editorial note is one of the most historically specific attributions in Proverbs.</div></div></div><div id="pr21-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Wisdom and virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics.</div></div><div class="rec-block"><div class="rec-who">Practical application</div><div class="rec-text">These chapters have been widely cited in ethics, economics, and social teaching.</div></div></div><div id="pr21-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-15</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.16ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 21: sovereignty brackets the chapter — the LORD directs the king's heart (v.1) and no plan succeeds against him (v.30). At the centre: justice over sacrifice (v.3).</div></div></div><div id="pr21-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"To do what is right and just is more acceptable to the LORD than sacrifice."</p></div><div id="pr21-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation that undergirds every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr21-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,188.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Sovereignty</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Justice Over Ritual</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Pride</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligence</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Human Plans</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Victory from God</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 21: sovereignty brackets the chapter — the LORD directs the king's heart (v.1) and no plan succeeds against him (v.30). At the centre: justice over sacrifice (v.3).</p></div>
+<div id="pr21-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Guided by integrity, protected by wisdom.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Structurally unteachable; self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient productive work yields real gain.</div></div></div></div><div id="pr21-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 21 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"To do what is right and just is more acceptable to the LORD than sacrifice."</td></tr><tr><td class="t-label">Note</td><td>The prophetic principle applied in wisdom's register. Ritual cannot substitute for justice.</td></tr></table></div><div id="pr21-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs.</div><div class="source-note">The editorial note is one of the most historically specific attributions in Proverbs.</div></div></div><div id="pr21-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Wisdom and virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics.</div></div><div class="rec-block"><div class="rec-who">Practical application</div><div class="rec-text">These chapters have been widely cited in ethics, economics, and social teaching.</div></div></div><div id="pr21-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The horse is prepared for battle but victory belongs to the LORD — the sovereignty principle at its most extreme. Prepare thoroughly; trust completely.</div><div class="lit-row"><span class="lit-label">Ethics over Ritual — 21:3</span><span class="lit-text">To do right and just is more acceptable than sacrifice — moral righteousness is the substance that ritual expresses. This is Proverbs' most direct engagement with Israel's cultic system.</span></div></div></div><div id="pr21-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('נָחַל מָיִם / Nachal Mayim', 'nachal mayim', 'Watercourse / irrigation channel', "The image for divine redirection of the king's heart (21:1). Human political power is real and active — and enclosed within divine governance that channels it purposefully."), ('צְדָקָה וּמִשְׁפָּט / Tsedaqah uMishpat', 'tsedaqah umishpat', 'Righteousness and justice', 'The pair that exceeds sacrifice (21:3). Together they constitute the covenant ethical life — the same pair appearing in Amos, Micah, and Isaiah as the heart of what God requires.')]</div><div id="pr21-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">21:3</span><span class="tx-issue">'More acceptable than sacrifice'</span></div><div class="tx-variants">MT: asot tsedaqah umishpat nivchar laYHWH mizevach. LXX: identical meaning.</div><div class="tx-sig">Ethics over cult is a consistent OT witness. Sacrifice without righteousness is hollow; righteousness is the substance sacrifice expresses.</div></div></div><div id="pr21-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Divine Sovereignty over Kings: Does It Include Evil Rulers?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Yes: sovereignty is comprehensive</div><div class="db-proponents">Calvin, Reformed tradition</div><div class="db-argument">Pharaoh, Nebuchadnezzar, Cyrus — God directs even pagan rulers toward his purposes. Human moral responsibility is not cancelled by divine governance.</div></div><div class="db-position"><div class="db-pos-name">God permits but does not directly cause evil rule</div><div class="db-proponents">Some Arminian readings</div><div class="db-argument">Sovereignty operates through permission and governance of consequences, not direct manipulation of the will.</div></div></div><div class="db-synthesis">The Reformed reading is most consistent with the breadth of OT teaching. Both divine sovereignty and human moral responsibility are fully true simultaneously.</div></div></div><div id="pr21-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,154.0 61.1,154.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Sovereignty in Human Affairs</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Ethics over Ritual</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligence and Character</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 21 applies divine sovereignty to every dimension of human endeavour — the king's decisions (v.1), individual economic choices (v.17), and military outcomes (v.31). Its most surprising observation is that doing right and just is more acceptable to the LORD than sacrifice.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
