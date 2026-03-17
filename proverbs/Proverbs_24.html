@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 24</h1>
-<p>Thirty Sayings: Strength in Crisis; Don't Envy Evil; Wisdom Builds the House</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Do Not Envy Evil; Rescue the Staggering; The Sluggard's Field</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;18 &mdash; Do Not Envy Evil; Rescue the Staggering; Wisdom Builds the House</div><span class="verse-text"><span class="verse-num">1</span>Do not envy the wicked, do not desire their company;</span><span class="verse-text"><span class="verse-num">2</span>for their hearts plot violence, and their lips talk about making trouble.</span><span class="verse-text"><span class="verse-num">3</span>By wisdom a house is built, and through understanding it is established;</span><span class="verse-text"><span class="verse-num">4</span>through knowledge its rooms are filled with rare and beautiful treasures.</span><span class="verse-text"><span class="verse-num">5</span>The wise prevail through great power, and those who have knowledge muster their strength.</span><span class="verse-text"><span class="verse-num">6</span>Surely you need guidance to wage war, and victory is won through many advisers.</span><span class="verse-text"><span class="verse-num">7</span>Wisdom is too high for scoffers; they cannot open their mouths in the gate.</span><span class="verse-text"><span class="verse-num">8</span>Whoever plots evil will be known as a schemer.</span><span class="verse-text"><span class="verse-num">9</span>The schemes of folly are sin, and people detest a mocker.</span><span class="verse-text"><span class="verse-num">10</span>If you falter in a time of trouble, how small is your strength!</span><span class="verse-text"><span class="verse-num">11</span>Rescue those being led away to death; hold back those staggering toward slaughter.</span><span class="verse-text"><span class="verse-num">12</span>If you say, "But we knew nothing about this," does not he who weighs the heart perceive it? Does not he who guards your life know it? Will he not repay everyone according to what they have done?</span><span class="verse-text"><span class="verse-num">13</span>Eat honey, my son, for it is good; honey from the comb is sweet to your taste.</span><span class="verse-text"><span class="verse-num">14</span>Know also that wisdom is like honey for you: If you find it, there is a future hope for you, and your hope will not be cut off.</span><span class="verse-text"><span class="verse-num">15</span>Do not lurk like a thief near the house of the righteous, do not plunder their dwelling place;</span><span class="verse-text"><span class="verse-num">16</span>for though the righteous fall seven times, they rise again, but the wicked stumble when calamity strikes.</span><span class="verse-text"><span class="verse-num">17</span>Do not gloat when your enemy falls; when they stumble, do not let your heart rejoice,</span><span class="verse-text"><span class="verse-num">18</span>or the LORD will see and disapprove and turn his wrath away from them.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr24-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr24-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr24-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr24-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr24-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חָכְמָה תִּבְנֶה</span> <span class="tlit">chochmah tivneh</span> — <strong>wisdom builds</strong>: V.3: by wisdom a house is built. The three-part formula — wisdom builds, understanding establishes, knowledge fills with treasure — is the Proverbs summary of how excellent human life is constructed. Not by brute force but by cultivated intelligence and relational knowledge.</p></div><div id="pr24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.24 contains the Thirty Sayings' wisdom-builds-the-house formula (v.3) and the obligation to rescue those staggering toward death (v.11). The honey-and-wisdom comparison (v.13-14) applies the sweetness metaphor: just as honey is good for the body, wisdom is good for the soul — with the same future-hope promise as 23:18.</p></div><div id="pr24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 9:1</span><span class="ref-text">Wisdom has built her house — the personified Wisdom of ch.9 builds; wisdom in v.3 is the principle by which all houses are properly built.</span></li><li><span class="ref-cite">Prov 14:4</span><span class="ref-text">Where there are no oxen the manger is clean, but abundant harvests come through the strength of an ox — the same diligence-requires-mess principle implicit in v.27.</span></li></ul></div><div id="pr24-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:3-4</span><p>By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures. The three-part wisdom formula is the Proverbs account of how excellent human life is constructed. Not by force but by cultivated wisdom.</p></div><div class="com-note"><span class="com-ref">24:11-12</span><p>Rescue those being led away to death; hold back those staggering toward slaughter. The obligation to intervene on behalf of the perishing is not optional. The Lord who weighs hearts knows whether the refusal to act was genuine ignorance or deliberate avoidance.</p></div><div class="com-note"><span class="com-ref">24:13-14</span><p>Eat honey, for it is good — know also that wisdom is sweet to your soul. If you find wisdom, there is a future hope for you. Wisdom is both pleasant in the present and securing of the future. The same future-hope promise as 23:18.</p></div></div></div><div class="section"><div class="section-header">Verses 19&ndash;34 &mdash; Do Not Fret Over Evildoers; The Field of the Sluggard; Second Collection Begins</div><span class="verse-text"><span class="verse-num">19</span>Do not fret because of evildoers or be envious of the wicked,</span><span class="verse-text"><span class="verse-num">20</span>for the evildoer has no future hope, and the lamp of the wicked will be snuffed out.</span><span class="verse-text"><span class="verse-num">21</span>Fear the LORD and the king, my son, and do not join with rebellious officials,</span><span class="verse-text"><span class="verse-num">22</span>for those two can send sudden destruction on you, and who knows what calamities they can bring?</span><span class="verse-text"><span class="verse-num">23</span>These also are sayings of the wise: To show partiality in judging is not good:</span><span class="verse-text"><span class="verse-num">24</span>Whoever says to the guilty, "You are innocent," will be cursed by peoples and denounced by nations.</span><span class="verse-text"><span class="verse-num">25</span>But it will go well with those who convict the guilty, and rich blessing will come on them.</span><span class="verse-text"><span class="verse-num">26</span>An honest answer is like a kiss on the lips.</span><span class="verse-text"><span class="verse-num">27</span>Put your outdoor work in order and get your fields ready; after that, build your house.</span><span class="verse-text"><span class="verse-num">28</span>Do not testify against your neighbor without cause— would you use your lips to mislead?</span><span class="verse-text"><span class="verse-num">29</span>Do not say, "I'll do to them as they have done to me; I'll pay them back for what they did."</span><span class="verse-text"><span class="verse-num">30</span>I went past the field of a sluggard, past the vineyard of someone who has no sense;</span><span class="verse-text"><span class="verse-num">31</span>thorns had come up everywhere, the ground was covered with weeds, and the stone wall was in ruins.</span><span class="verse-text"><span class="verse-num">32</span>I applied my heart to what I observed and learned a lesson from what I saw:</span><span class="verse-text"><span class="verse-num">33</span>A little sleep, a little slumber, a little folding of the hands to rest—</span><span class="verse-text"><span class="verse-num">34</span>and poverty will come on you like a thief and scarcity like an armed man.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr24-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr24-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr24-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr24-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr24-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מָעַד</span> <span class="tlit">maat</span> — <strong>stagger / falter</strong>: V.11: rescue those being led away to death — hold back those staggering toward slaughter. The word māʿaḏ means to stagger, to totter. The image is of a person on the edge — about to fall into death. The wise person's obligation is not merely to observe but to intervene.</p></div><div id="pr24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half includes more sayings from the supplementary collection (vv.23-29) and the extended parable of the sluggard's field (vv.30-34) — one of the most vivid portraits of lazy neglect in Proverbs. The field that produced only weeds because its owner loved sleep is the book's sharpest illustration of what happens when diligence is absent.</p></div><div id="pr24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 6:10-11</span><span class="ref-text">A little sleep, a little slumber — the sluggard passage of ch.6 is echoed and extended in vv.30-34.</span></li><li><span class="ref-cite">2 Thess 3:10</span><span class="ref-text">If anyone is not willing to work, let them not eat — the NT application of Proverbs' consistent diligence ethic.</span></li></ul></div><div id="pr24-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:17-18</span><p>Do not gloat when your enemy falls; when they stumble, do not let your heart rejoice, or the LORD will see and disapprove. The prohibition of schadenfreude — taking pleasure in an enemy's downfall — is among the most counter-intuitive commands in Proverbs. It applies the positive ethic of enemy-love to the wisdom tradition.</p></div><div class="com-note"><span class="com-ref">24:27</span><p>Put your outdoor work in order and get your fields ready; after that, build your house. The sequence: agricultural preparation before construction. Priorities matter: income-generating infrastructure before personal comfort.</p></div><div class="com-note"><span class="com-ref">24:30-34</span><p>I went past the field of a sluggard. A little sleep, a little slumber, a little folding of the hands to rest — and poverty will come on you like a thief. One of the most vivid portraits in Proverbs. The wise teacher draws the lesson personally (v.32: "I applied my heart to what I observed"). Direct observation produces wisdom.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;18 &mdash; Do Not Envy Evil; Rescue the Staggering; Wisdom Builds the House</div><span class="verse-text"><span class="verse-num">1</span>Do not envy the wicked, do not desire their company;</span><span class="verse-text"><span class="verse-num">2</span>for their hearts plot violence, and their lips talk about making trouble.</span><span class="verse-text"><span class="verse-num">3</span>By wisdom a house is built, and through understanding it is established;</span><span class="verse-text"><span class="verse-num">4</span>through knowledge its rooms are filled with rare and beautiful treasures.</span><span class="verse-text"><span class="verse-num">5</span>The wise prevail through great power, and those who have knowledge muster their strength.</span><span class="verse-text"><span class="verse-num">6</span>Surely you need guidance to wage war, and victory is won through many advisers.</span><span class="verse-text"><span class="verse-num">7</span>Wisdom is too high for scoffers; they cannot open their mouths in the gate.</span><span class="verse-text"><span class="verse-num">8</span>Whoever plots evil will be known as a schemer.</span><span class="verse-text"><span class="verse-num">9</span>The schemes of folly are sin, and people detest a mocker.</span><span class="verse-text"><span class="verse-num">10</span>If you falter in a time of trouble, how small is your strength!</span><span class="verse-text"><span class="verse-num">11</span>Rescue those being led away to death; hold back those staggering toward slaughter.</span><span class="verse-text"><span class="verse-num">12</span>If you say, "But we knew nothing about this," does not he who weighs the heart perceive it? Does not he who guards your life know it? Will he not repay everyone according to what they have done?</span><span class="verse-text"><span class="verse-num">13</span>Eat honey, my son, for it is good; honey from the comb is sweet to your taste.</span><span class="verse-text"><span class="verse-num">14</span>Know also that wisdom is like honey for you: If you find it, there is a future hope for you, and your hope will not be cut off.</span><span class="verse-text"><span class="verse-num">15</span>Do not lurk like a thief near the house of the righteous, do not plunder their dwelling place;</span><span class="verse-text"><span class="verse-num">16</span>for though the righteous fall seven times, they rise again, but the wicked stumble when calamity strikes.</span><span class="verse-text"><span class="verse-num">17</span>Do not gloat when your enemy falls; when they stumble, do not let your heart rejoice,</span><span class="verse-text"><span class="verse-num">18</span>or the LORD will see and disapprove and turn his wrath away from them.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr24-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr24-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr24-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr24-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr24-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr24-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr24-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr24-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr24-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חָכְמָה תִּבְנֶה</span> <span class="tlit">chochmah tivneh</span> — <strong>wisdom builds</strong>: V.3: by wisdom a house is built. The three-part formula — wisdom builds, understanding establishes, knowledge fills with treasure — is the Proverbs summary of how excellent human life is constructed. Not by brute force but by cultivated intelligence and relational knowledge.</p></div><div id="pr24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.24 contains the Thirty Sayings' wisdom-builds-the-house formula (v.3) and the obligation to rescue those staggering toward death (v.11). The honey-and-wisdom comparison (v.13-14) applies the sweetness metaphor: just as honey is good for the body, wisdom is good for the soul — with the same future-hope promise as 23:18.</p></div><div id="pr24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 9:1</span><span class="ref-text">Wisdom has built her house — the personified Wisdom of ch.9 builds; wisdom in v.3 is the principle by which all houses are properly built.</span></li><li><span class="ref-cite">Prov 14:4</span><span class="ref-text">Where there are no oxen the manger is clean, but abundant harvests come through the strength of an ox — the same diligence-requires-mess principle implicit in v.27.</span></li></ul></div><div id="pr24-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:3-4</span><p>By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures. The three-part wisdom formula is the Proverbs account of how excellent human life is constructed. Not by force but by cultivated wisdom.</p></div><div class="com-note"><span class="com-ref">24:11-12</span><p>Rescue those being led away to death; hold back those staggering toward slaughter. The obligation to intervene on behalf of the perishing is not optional. The Lord who weighs hearts knows whether the refusal to act was genuine ignorance or deliberate avoidance.</p></div><div class="com-note"><span class="com-ref">24:13-14</span><p>Eat honey, for it is good — know also that wisdom is sweet to your soul. If you find wisdom, there is a future hope for you. Wisdom is both pleasant in the present and securing of the future. The same future-hope promise as 23:18.</p></div></div><div id="pr24-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:11-12</span><p>Rescue those led to death — Alter notes this is Proverbs' most urgent social-justice instruction. The rhetorical question ('does not he who weighs the heart perceive it?') makes divine moral epistemology explicit.</p></div><div class="com-note"><span class="com-ref">24:5-6</span><p>Wisdom and knowledge increase strength — Alter notes the surprising inversion: wisdom produces a kind of power greater than physical force, not by replacing it but by directing and multiplying it.</p></div></div><div id="pr24-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:11-12</span><p>Rescue those led to death — Waltke notes the God who weighs the heart knows what was known. The disclaimer 'I did not know' is explicitly rejected. The obligation to act for others in mortal danger cannot be discharged by selective ignorance.</p></div><div class="com-note"><span class="com-ref">24:1</span><p>Do not envy evil men — Waltke notes the temporal reframe: the wicked have no future (v.20). Envy is stopped by seeing long-term reality clearly, not by denying present appearances.</p></div></div><div id="pr24-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:11</span><p>Calvin: 'Those who are able to rescue the innocent and do not, using the excuse of ignorance, are not acquitted — God who weighs the heart knows what they knew. The obligation to rescue is not cancelled by inconvenience.'</p></div><div class="com-note"><span class="com-ref">24:1</span><p>Calvin: 'We are not to envy the wicked for their seeming prosperity, for they have no future. The wise person takes the long view that human envy cannot sustain.'</p></div></div><div id="pr24-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">24:12</span><p>The NET note discusses the social justice obligation: rescuing others in danger is a positive duty, not merely permission. The disclaimer-rejection makes God the evaluator of what was known and what was withheld.</p></div><div class="com-note"><span class="com-ref">24:3-4</span><p>The NET note on 'by wisdom a house is built' identifies the house as both a literal household and a metaphor for any significant human project — all require wisdom, understanding, and knowledge to construct and sustain.</p></div></div></div><div class="section"><div class="section-header">Verses 19&ndash;34 &mdash; Do Not Fret Over Evildoers; The Field of the Sluggard; Second Collection Begins</div><span class="verse-text"><span class="verse-num">19</span>Do not fret because of evildoers or be envious of the wicked,</span><span class="verse-text"><span class="verse-num">20</span>for the evildoer has no future hope, and the lamp of the wicked will be snuffed out.</span><span class="verse-text"><span class="verse-num">21</span>Fear the LORD and the king, my son, and do not join with rebellious officials,</span><span class="verse-text"><span class="verse-num">22</span>for those two can send sudden destruction on you, and who knows what calamities they can bring?</span><span class="verse-text"><span class="verse-num">23</span>These also are sayings of the wise: To show partiality in judging is not good:</span><span class="verse-text"><span class="verse-num">24</span>Whoever says to the guilty, "You are innocent," will be cursed by peoples and denounced by nations.</span><span class="verse-text"><span class="verse-num">25</span>But it will go well with those who convict the guilty, and rich blessing will come on them.</span><span class="verse-text"><span class="verse-num">26</span>An honest answer is like a kiss on the lips.</span><span class="verse-text"><span class="verse-num">27</span>Put your outdoor work in order and get your fields ready; after that, build your house.</span><span class="verse-text"><span class="verse-num">28</span>Do not testify against your neighbor without cause— would you use your lips to mislead?</span><span class="verse-text"><span class="verse-num">29</span>Do not say, "I'll do to them as they have done to me; I'll pay them back for what they did."</span><span class="verse-text"><span class="verse-num">30</span>I went past the field of a sluggard, past the vineyard of someone who has no sense;</span><span class="verse-text"><span class="verse-num">31</span>thorns had come up everywhere, the ground was covered with weeds, and the stone wall was in ruins.</span><span class="verse-text"><span class="verse-num">32</span>I applied my heart to what I observed and learned a lesson from what I saw:</span><span class="verse-text"><span class="verse-num">33</span>A little sleep, a little slumber, a little folding of the hands to rest—</span><span class="verse-text"><span class="verse-num">34</span>and poverty will come on you like a thief and scarcity like an armed man.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr24-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr24-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr24-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr24-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr24-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr24-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr24-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr24-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr24-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">מָעַד</span> <span class="tlit">maat</span> — <strong>stagger / falter</strong>: V.11: rescue those being led away to death — hold back those staggering toward slaughter. The word māʿaḏ means to stagger, to totter. The image is of a person on the edge — about to fall into death. The wise person's obligation is not merely to observe but to intervene.</p></div><div id="pr24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half includes more sayings from the supplementary collection (vv.23-29) and the extended parable of the sluggard's field (vv.30-34) — one of the most vivid portraits of lazy neglect in Proverbs. The field that produced only weeds because its owner loved sleep is the book's sharpest illustration of what happens when diligence is absent.</p></div><div id="pr24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 6:10-11</span><span class="ref-text">A little sleep, a little slumber — the sluggard passage of ch.6 is echoed and extended in vv.30-34.</span></li><li><span class="ref-cite">2 Thess 3:10</span><span class="ref-text">If anyone is not willing to work, let them not eat — the NT application of Proverbs' consistent diligence ethic.</span></li></ul></div><div id="pr24-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:17-18</span><p>Do not gloat when your enemy falls; when they stumble, do not let your heart rejoice, or the LORD will see and disapprove. The prohibition of schadenfreude — taking pleasure in an enemy's downfall — is among the most counter-intuitive commands in Proverbs. It applies the positive ethic of enemy-love to the wisdom tradition.</p></div><div class="com-note"><span class="com-ref">24:27</span><p>Put your outdoor work in order and get your fields ready; after that, build your house. The sequence: agricultural preparation before construction. Priorities matter: income-generating infrastructure before personal comfort.</p></div><div class="com-note"><span class="com-ref">24:30-34</span><p>I went past the field of a sluggard. A little sleep, a little slumber, a little folding of the hands to rest — and poverty will come on you like a thief. One of the most vivid portraits in Proverbs. The wise teacher draws the lesson personally (v.32: "I applied my heart to what I observed"). Direct observation produces wisdom.</p></div></div><div id="pr24-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:13-14</span><p>Honey and wisdom — Alter notes the comparison is exact: honey is sweet (present pleasure) and wisdom is sweet to the soul (present satisfaction) and has a future/hope (long-term benefit).</p></div><div class="com-note"><span class="com-ref">24:30-34</span><p>The sluggard's field — Alter notes the extended first-person observation is unique in the proverb collections. The teacher narrates his own encounter, describes what he saw, reports his inner reflection, and draws the moral.</p></div></div><div id="pr24-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">24:13-14</span><p>Honey and wisdom — Waltke notes the comparison establishes that wisdom is genuinely pleasant (sweet to the soul) and has future consequences (there is a tomorrow for you). Folly's sweetness is only present.</p></div><div class="com-note"><span class="com-ref">24:30-34</span><p>The sluggard's field — Waltke notes the teacher observes, reflects, and draws the conclusion. The empirical method: wisdom can be read from the observable world if you pay attention.</p></div></div><div id="pr24-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:14</span><p>Calvin: 'If you find wisdom, there is a future for you and your hope will not be cut off — wisdom is distinguished from all other earthly goods by the permanence of its benefit.'</p></div><div class="com-note"><span class="com-ref">24:33</span><p>Calvin: 'A little sleep, a little slumber — the moderation of the laziness makes the warning more pointed. It is not gross idleness but comfortable small indulgence that destroys.'</p></div></div><div id="pr24-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">24:14</span><p>The NET note on 'there is a future for you' identifies wisdom's distinctive temporal promise: its benefits extend into the future without diminishment.</p></div><div class="com-note"><span class="com-ref">24:33</span><p>The NET note identifies the verbatim repetition of 6:10–11 as a literary device emphasising the chronic nature of the sluggard's self-deception.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr24-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr24-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr24-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr24-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr24-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr24-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr24-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr24-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr24-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr24-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr24-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr24-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr24-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr24-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr24-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr24-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr24-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">24:3-4 — Wisdom Builds</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures."</td></tr><tr><td class="t-label">Note</td><td>The Proverbs account of how excellent human life is constructed. Not by brute force but by cultivated intelligence and relational knowledge.</td></tr></table></div><div id="pr24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-18</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.19ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 24: wisdom builds the house (v.3), the wise person rescues those staggering toward death (v.11), and the sluggard's field is the chapter's most vivid portrait of what diligence prevented would have produced.</div></div></div><div id="pr24-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures."</p></div><div id="pr24-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation underlying every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,86.0 178.9,154.0 120.0,188.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wisdom Builds</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Rescue the Staggering</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Future Hope</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">No Gloating</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligence</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sluggard's Field</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 24: wisdom builds the house (v.3), the wise person rescues those staggering toward death (v.11), and the sluggard's field is the chapter's most vivid portrait of what diligence prevented would have produced.</p></div>
+<div id="pr24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 24 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"By wisdom a house is built, and through understanding it is established; through knowledge its rooms are filled with rare and beautiful treasures."</td></tr><tr><td class="t-label">Note</td><td>The Proverbs account of how excellent human life is constructed. Not by brute force but by cultivated intelligence and relational knowledge.</td></tr></table></div><div id="pr24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Intervene for those in mortal danger; do not hide behind ignorance. God weighs the heart and knows what was known. The obligation to act cannot be discharged by claiming not to know.</div><div class="lit-row"><span class="lit-label">The Sluggard's Field: Wisdom from Observation — 24:30-34</span><span class="lit-text">The extended first-person field observation exemplifies the empirical method. Wisdom can be read from the observable world — the neglected field teaches as effectively as any direct instruction.</span></div></div></div><div id="pr24-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('תּוֹכֵן לִבּוֹת / Tokhen Libot', 'tokhen libot', 'He who weighs hearts', 'The divine evaluator of 24:12. God weighs hearts, not just actions. No disclaimer withstands the evaluation of the one who sees the full interior reality of what was known and decided.'), ("חָכְמָה תָּעֹז / Chokhmah Ta'oz", 'chokhmah taoz', 'Wisdom strengthens', 'The principle of 24:5 — wisdom and knowledge increase strength. The wise person has more power than the physically strong because wisdom multiplies and directs force rather than merely applying it.')]</div><div id="pr24-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">24:12</span><span class="tx-issue">'Does not he who weighs the heart perceive it?'</span></div><div class="tx-variants">MT: halo tokhein libot hu yavin. The God who weighs (tokhen) the heart has access to what the person actually knew.</div><div class="tx-sig">Divine moral epistemology: God evaluates not just overt actions but the inner life — what was known, decided, and withheld. The ignorance-disclaimer is the evasion of someone who chose not to know.</div></div></div><div id="pr24-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Proverbs' Empirical Method: Is Observation a Valid Source of Wisdom?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Valid source alongside special revelation</div><div class="db-proponents">Waltke, most OT wisdom scholars</div><div class="db-argument">The sluggard's-field observation exemplifies the empirical method: observe carefully, draw theological conclusions. Observation-based wisdom complements special revelation.</div></div><div class="db-position"><div class="db-pos-name">Creation observation as general revelation</div><div class="db-proponents">Calvin, Reformed tradition</div><div class="db-argument">Wisdom read from creation expresses the natural law written into it. God's wisdom is embedded in the structure of things; wisdom observes and articulates it.</div></div></div><div class="db-synthesis">Both converge: the empirical method reads divine wisdom embedded in creation. Proverbs' observations are theological claims about moral reality, not merely pragmatic advice.</div></div></div><div id="pr24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 188.0,120.0 120.0,188.0 35.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Active Justice: Rescue the Staggering</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Theodicy-Envy: The Wicked Have No Future</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wisdom's Future Hope</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Empirical Wisdom: Observe and Learn</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 24 addresses wisdom's response to injustice, envy, and laziness. Its most searching instruction is the rejection of the ignorance-disclaimer: the God who weighs the heart knows what you knew and chose not to act on.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
