@@ -718,6 +718,35 @@ def poi_panel(pid, entries):
     return (f'<div id="{pid}" class="anno-panel poi-panel">'
             f'<h4>Places</h4>{inner}</div>')
 
+# ── Canonical timeline CSS ────────────────────────────────────────────────
+# Injected into chapters that receive tl-panels via patch scripts.
+# Values must match EXTRA_CSS above. Update both together.
+TL_CSS = (
+    '.tl-visual{position:relative;margin:.5rem 0 .3rem;}'
+    '.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;'
+    'background:linear-gradient(to bottom,transparent,#4a6888 6%,#4a6888 94%,transparent);pointer-events:none;}'
+    '.tl-event{position:relative;display:grid;grid-template-columns:130px 28px 1fr;'
+    'grid-template-rows:auto auto;align-items:start;padding:6px 0;}'
+    '.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:\'Cinzel\',serif;'
+    'font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:10px;white-space:nowrap;}'
+    '.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;'
+    'align-items:center;padding-top:4px;}'
+    '.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;'
+    'border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}'
+    '.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:12px;}'
+    '.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}'
+    '.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;'
+    'padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}'
+    '.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;'
+    'border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}'
+    '.tl-event.current .tl-date{color:#c0d8f0;}'
+    '.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}'
+    '.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}'
+    '.tl-range{display:flex;justify-content:space-between;font-size:.63rem;'
+    'color:var(--text-muted);font-style:italic;padding:.2rem 0 0 170px;}'
+    '.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}'
+)
+
 def tl_panel(pid, items, range_start=None, range_end=None, caption=None):
     """Build a visual proportional timeline panel.
 
