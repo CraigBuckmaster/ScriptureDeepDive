@@ -683,8 +683,20 @@ for path, book, ch in chapters:
             if 'class="tl-range"' not in sec:
                 tl_bad.append(f'{label}: tl-panel missing tl-range date labels')
 
+missing_tl_css  = []
+missing_poi_css = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    css = h[h.find('<style>'):h.find('</style>')]
+    if 'class="anno-panel tl-panel"' in h and 'tl-visual' not in css:
+        missing_tl_css.append(f'{book} {ch}')
+    if 'class="anno-panel poi-panel"' in h and 'poi-entry' not in css:
+        missing_poi_css.append(f'{book} {ch}')
+
 all_ok_15 = True
 for bad_list, label in [
+    (missing_tl_css,  'Timeline panel present but tl-visual CSS missing from <style>'),
+    (missing_poi_css, 'Places panel present but poi-entry CSS missing from <style>'),
     (poi_bad,   'Places panel structural issues'),
     (tl_bad,    'Timeline panel structural issues'),
     (tl_no_cur, 'Timeline panel missing/duplicate current event'),
