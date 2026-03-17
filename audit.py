@@ -623,9 +623,94 @@ if all_ok_14:
     ok('All com-source divs closed; no leaked com-notes')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 15. HOMEPAGE STRUCTURAL CHECKS
+# 15. PLACES & TIMELINE PANEL STRUCTURE
+# New checks: when a places/timeline panel exists, validate its internal HTML
 # ═══════════════════════════════════════════════════════════════════════════
-section('15. Homepage Structural Checks')
+section('15. Places & Timeline Panel Structure')
+
+poi_bad   = []  # poi-panel exists but malformed
+tl_bad    = []  # tl-panel exists but malformed
+tl_no_cur = []  # tl-panel exists but no current event
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    bnd = h.find('<div class="scholarly-block">'); body = h[:bnd]
+    secs = get_sections(body, bnd)
+
+    for si, (s_start, s_end) in enumerate(secs):
+        sec = body[s_start:s_end]
+        label = f'{book} {ch} s{si+1}'
+
+        # ── Places panel ────────────────────────────────────────────────
+        if 'class="anno-panel poi-panel"' in sec:
+            # Must have at least one poi-entry
+            if 'class="poi-entry"' not in sec:
+                poi_bad.append(f'{label}: poi-panel has no poi-entry divs')
+            # Must have poi-name and poi-text inside each entry
+            entries = re.findall(r'class="poi-entry"(.*?)(?=class="poi-entry"|</div>\s*</div>)',
+                                 sec, re.DOTALL)
+            for entry in entries:
+                if 'poi-name' not in entry:
+                    poi_bad.append(f'{label}: poi-entry missing poi-name')
+                    break
+                if 'poi-text' not in entry:
+                    poi_bad.append(f'{label}: poi-entry missing poi-text')
+                    break
+
+        # ── Timeline panel ───────────────────────────────────────────────
+        if 'class="anno-panel tl-panel"' in sec:
+            # Must have tl-visual spine
+            if 'class="tl-visual"' not in sec:
+                tl_bad.append(f'{label}: tl-panel missing tl-visual wrapper')
+            elif 'class="tl-spine"' not in sec:
+                tl_bad.append(f'{label}: tl-panel missing tl-spine')
+            # Must have at least 3 tl-event entries for useful context
+            elif len(re.findall(r'class="tl-event', sec)) < 3:
+                tl_bad.append(f'{label}: tl-panel has fewer than 3 events (insufficient context)')
+            # Must have exactly one current event
+            cur_events = re.findall(r'class="tl-event current"', sec)
+            if len(cur_events) == 0:
+                tl_no_cur.append(f'{label}: no current event marked')
+            elif len(cur_events) > 1:
+                tl_no_cur.append(f'{label}: {len(cur_events)} current events (should be 1)')
+            # Current event must have tl-text explanation
+            if len(cur_events) == 1:
+                cur_m = re.search(r'class="tl-event current"(.*?)(?=class="tl-event|</div>\s*</div>\s*</div>)',
+                                  sec, re.DOTALL)
+                if cur_m and 'class="tl-text"' not in cur_m.group(1):
+                    tl_bad.append(f'{label}: current tl-event has no tl-text explanation')
+            # tl-range and tl-caption should be present
+            if 'class="tl-range"' not in sec:
+                tl_bad.append(f'{label}: tl-panel missing tl-range date labels')
+
+all_ok_15 = True
+for bad_list, label in [
+    (poi_bad,   'Places panel structural issues'),
+    (tl_bad,    'Timeline panel structural issues'),
+    (tl_no_cur, 'Timeline panel missing/duplicate current event'),
+]:
+    if bad_list:
+        sample = ', '.join(bad_list[:3]) + ('...' if len(bad_list) > 3 else '')
+        fail(f'{label}: {sample}')
+        all_ok_15 = False
+
+# Count how many sections actually have these panels (informational)
+poi_count = sum(1 for p,b,c in chapters
+                for content in [open(p).read()]
+                for sec in [content[:content.find('<div class="scholarly-block">')]]
+                if 'class="anno-panel poi-panel"' in sec)
+tl_count  = sum(1 for p,b,c in chapters
+                for content in [open(p).read()]
+                for sec in [content[:content.find('<div class="scholarly-block">')]]
+                if 'class="anno-panel tl-panel"' in sec)
+
+if all_ok_15:
+    ok(f'All places/timeline panels valid ({poi_count} place panels, {tl_count} timeline panels)')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 16. HOMEPAGE STRUCTURAL CHECKS
+# ═══════════════════════════════════════════════════════════════════════════
+section('16. Homepage Structural Checks')
 
 if '.book-item.open .chapter-list' not in idx:
     fail('index.html: .book-item.open .chapter-list rule missing')
