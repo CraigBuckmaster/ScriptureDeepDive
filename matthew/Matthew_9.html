@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -58,22 +78,16 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
+.anno-trigger:active{transform:translateY(0);}
 .anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
 .anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
 .anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
@@ -84,12 +98,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
 .anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
 .anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
   color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
@@ -100,16 +112,15 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
 .scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
 .scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
 .anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
 .anno-panel.open{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
@@ -218,6 +229,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
 .vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
 @keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
 .authorship-toggle:hover{background:rgba(255,255,255,.03);}
@@ -249,7 +261,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
 .qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
 .qnav-body{overflow-y:auto;}
-.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-testament{border-bottom:1px solid rgba(58,46,24,.25);}.qnav-testament-btn{width:100%;background:transparent;border:none;cursor:pointer;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center;transition:background .12s;-webkit-appearance:none;}.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}.qnav-testament-label{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;}.qnav-testament-chev{font-size:.48rem;color:#c9a84c;transition:transform .2s;}.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}.qnav-testament-books{display:none;}.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
 .qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
 .qnav-book-btn:hover{background:rgba(255,255,255,.04);}
@@ -259,27 +271,282 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
 .qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
 .qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
-.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;}
 .qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
-.qnav-testament{border-bottom:1px solid rgba(58,46,24,.3);}
-.qnav-testament-btn{
-  width:100%;background:none;border:none;cursor:pointer;
-  padding:.5rem .9rem;display:flex;justify-content:space-between;align-items:center;
-  transition:background .12s;
-}
-.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}
-.qnav-testament-label{
-  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--gold-dim);
-}
-.qnav-testament-chev{font-size:.48rem;color:var(--gold-dim);transition:transform .2s;}
-.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}
-.qnav-testament-books{display:none;}
-.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
 .qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
 .qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
 .qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -317,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 9</h1>
-<p>Healing the Paralytic; Matthew Called; Raising the Dead; The Harvest</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Healing a Paralytic; Calling Matthew; Fasting; Raising the Dead; The Harvest</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, tax collector and apostle. Eyewitness to the events recorded. Unanimous early tradition attributes this gospel to him.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80–90. Written for a Jewish-Christian community, probably in Antioch of Syria, with a five-discourse structure echoing the Pentateuch.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as the fulfilment of Israel's Scripture — simultaneously Davidic Messiah, new Moses, Son of God, and Servant of Isaiah — and to commission his community for worldwide mission.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;17 &mdash; Healing the Paralytic; Matthew Called; New Wineskins</div><span class="verse-text"><span class="verse-num">1</span>Jesus stepped into a boat, crossed over and came to his own town.</span><span class="verse-text"><span class="verse-num">2</span>Some men brought to him a paralyzed man, lying on a mat. When Jesus saw their faith, he said to the man, "Take heart, son; your sins are forgiven."</span><span class="verse-text"><span class="verse-num">3</span>At this, some of the teachers of the law said to themselves, "This fellow is blaspheming!"</span><span class="verse-text"><span class="verse-num">4</span>Knowing their thoughts, Jesus said, "Why do you entertain evil thoughts in your hearts?</span><span class="verse-text"><span class="verse-num">5</span>Which is easier: to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?</span><span class="verse-text"><span class="verse-num">6</span>But I want you to know that the Son of Man has authority on earth to forgive sins." So he said to the paralyzed man, "Get up, take your mat and go home."</span><span class="verse-text"><span class="verse-num">7</span>Then the man got up and went home.</span><span class="verse-text"><span class="verse-num">8</span>When the crowd saw this, they were filled with awe; and they praised God, who had given such authority to human beings.</span><span class="verse-text"><span class="verse-num">9</span>As Jesus went on from there, he saw a man named Matthew sitting at the tax collector's booth. "Follow me," he told him, and Matthew got up and followed him.</span><span class="verse-text"><span class="verse-num">10</span>While Jesus was having dinner at Matthew's house, many tax collectors and sinners came and ate with him and his disciples.</span><span class="verse-text"><span class="verse-num">11</span>When the Pharisees saw this, they asked his disciples, "Why does your teacher eat with tax collectors and sinners?"</span><span class="verse-text"><span class="verse-num">12</span>On hearing this, Jesus said, "It is not the healthy who need a doctor, but the sick.</span><span class="verse-text"><span class="verse-num">13</span>But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."</span><span class="verse-text"><span class="verse-num">14</span>Then John's disciples came and asked him, "How is it that we and the Pharisees fast often, but your disciples do not fast?"</span><span class="verse-text"><span class="verse-num">15</span>Jesus answered, "How can the guests of the bridegroom mourn while he is with them? The time will come when the bridegroom will be taken from them; then they will fast.</span><span class="verse-text"><span class="verse-num">16</span>"No one sews a patch of unshrunk cloth on an old garment, for the patch will pull away from the garment, making the tear worse.</span><span class="verse-text"><span class="verse-num">17</span>Neither do people pour new wine into old wineskins. If they do, the skins will burst; the wine will run out and the wineskins will be ruined. No, they pour new wine into new wineskins, and both are preserved."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt9-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt9-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt9-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt9-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt9-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ἀφίενταί σου αἱ ἁμαρτίαι</span> <span class="tlit">aphientai sou hai hamartiai</span> — <strong>your sins are forgiven</strong>: V.2: the passive voice — a divine passive, God forgiving. The scribes immediately identify the problem (v.3): only God can forgive sins (Isa 43:25; Mark 2:7). Jesus does not correct their theology; he confirms it — then proves his authority to exercise it by healing the paralytic. The miracle is the apologetic for the forgiveness.</p><p><span class="hebrew-word">ἔλεος</span> <span class="tlit">eleos</span> — <strong>mercy</strong>: V.13: "I desire mercy, not sacrifice" — Hos 6:6, quoted twice in Matthew (here and 12:7). Eleos is the LXX equivalent of ḥesed — covenant loyalty expressed as compassion toward the vulnerable. Jesus applies it to his table practice: mercy for sinners is more consistent with God's character than the sacrificial purity system that excludes them.</p></div><div id="mt9-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.9 groups three controversy encounters around the theme of authority: forgiving sins (vv.1–8), eating with sinners (vv.9–13), and not fasting (vv.14–17). Each confronts the religious establishment's categories. The paralytic scene is the most theologically loaded — Jesus explicitly claims the Son of Man's authority to forgive sins on earth, which is either blasphemy (scribes' view) or the most significant claim in the chapter. The healing proves it is the latter.</p></div><div id="mt9-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Hos 6:6</span><span class="ref-text">I desire mercy, not sacrifice — the OT prophetic critique of ritual at the expense of compassion. Jesus applies it to his own ministry and will apply it again in 12:7. The pattern: mercy-not-sacrifice is Jesus's interpretive key for his unconventional behaviour.</span></li><li><span class="ref-cite">Isa 43:25</span><span class="ref-text">I, even I, am he who blots out your transgressions — divine prerogative. The scribes are correct that forgiveness of sins belongs to God alone. Jesus's healing confirms that he exercises it.</span></li></ul></div><div id="mt9-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">9:5–6</span><p>Which is easier — to say "your sins are forgiven" or "get up and walk"? The question is pedagogically precise. It is easier to say "your sins are forgiven" because it cannot be immediately verified. It is harder to say "get up and walk" because failure is instant and public. Jesus does the harder thing to prove he can do the invisible thing. The miracle is the apologetic.</p></div><div class="com-note"><span class="com-ref">9:9</span><p>Follow me — and Matthew got up. The identical call to ch.4's first disciples, with the identical immediate response. That Matthew records his own calling in this spare, unembarrassed way — without self-justification or celebration — is itself a testimony. The gospel was written by the man who left the tax booth.</p></div><div class="com-note"><span class="com-ref">9:17</span><p>New wine into new wineskins. The wineskin parable answers the fasting question by naming the real issue: Jesus is not a reform movement within Judaism but a new reality that cannot be contained in old structures. The new cloth and new wine are not improvements to the old but qualitatively new — requiring new containers. The parable is Matthew's most direct statement of the relationship between the old covenant and the new.</p></div></div></div><div class="section"><div class="section-header">Verses 18&ndash;38 &mdash; Raising the Dead; Sight for the Blind; The Harvest Prayer</div><span class="verse-text"><span class="verse-num">18</span>While he was saying this, a synagogue leader came and knelt before him and said, "My daughter has just died. But come and put your hand on her, and she will live."</span><span class="verse-text"><span class="verse-num">19</span>Jesus got up and went with him, and so did his disciples.</span><span class="verse-text"><span class="verse-num">20</span>Just then a woman who had been subject to bleeding for twelve years came up behind him and touched the edge of his cloak.</span><span class="verse-text"><span class="verse-num">21</span>She said to herself, "If I only touch his cloak, I will be healed."</span><span class="verse-text"><span class="verse-num">22</span>Jesus turned and saw her. "Take heart, daughter," he said, "your faith has healed you." And the woman was healed at that moment.</span><span class="verse-text"><span class="verse-num">23</span>When Jesus entered the synagogue leader's house and saw the noisy crowd and people playing pipes,</span><span class="verse-text"><span class="verse-num">24</span>he said, "Go away. The girl is not dead but asleep." But they laughed at him.</span><span class="verse-text"><span class="verse-num">25</span>After the crowd had been put outside, he went in and took the girl by the hand, and she got up.</span><span class="verse-text"><span class="verse-num">26</span>News of this spread through all that region.</span><span class="verse-text"><span class="verse-num">27</span>As Jesus went on from there, two blind men followed him, calling out, "Have mercy on us, Son of David!"</span><span class="verse-text"><span class="verse-num">28</span>When he had gone indoors, the blind men came to him, and he asked them, "Do you believe that I am able to do this?" "Yes, Lord," they answered.</span><span class="verse-text"><span class="verse-num">29</span>Then he touched their eyes and said, "According to your faith let it be done to you";</span><span class="verse-text"><span class="verse-num">30</span>and their sight was restored. Jesus warned them sternly, "See that no one knows about this."</span><span class="verse-text"><span class="verse-num">31</span>But they went out and spread the news about him all over that region.</span><span class="verse-text"><span class="verse-num">32</span>While they were going out, a man who was demon-possessed and could not talk was brought to Jesus.</span><span class="verse-text"><span class="verse-num">33</span>And when the demon was driven out, the man who had been mute spoke. The crowd was amazed and said, "Nothing like this has ever been seen in Israel."</span><span class="verse-text"><span class="verse-num">34</span>But the Pharisees said, "It is by the prince of demons that he drives out demons."</span><span class="verse-text"><span class="verse-num">35</span>Jesus went through all the towns and villages, teaching in their synagogues, proclaiming the good news of the kingdom and healing every disease and sickness.</span><span class="verse-text"><span class="verse-num">36</span>When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd.</span><span class="verse-text"><span class="verse-num">37</span>Then he said to his disciples, "The harvest is plentiful but the workers are few.</span><span class="verse-text"><span class="verse-num">38</span>Ask the Lord of the harvest, therefore, to send out workers into his harvest field."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt9-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt9-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt9-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt9-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt9-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">σπλαγχνίζομαι</span> <span class="tlit">splanchnizomai</span> — <strong>have compassion / be moved in one's bowels</strong>: V.36: the strongest Greek word for compassion — literally a gut-level response. Used four times in Matthew for Jesus's response to crowds (9:36; 14:14; 15:32; 20:34). The compassion is not sentiment but the motive for action. Sheep without a shepherd recalls Num 27:17 and Ezek 34 — God's people abandoned by their leaders. Jesus's gut-response to that sight is the origin of the mission.</p><p><span class="hebrew-word">υἱὸς Δαυίδ</span> <span class="tlit">huios Dauid</span> — <strong>Son of David</strong>: V.27: the two blind men's cry of faith — "Son of David!" The messianic title, first used as a cry for mercy. Those who cannot see recognise Jesus with greater clarity than the sighted religious establishment. The paradox of physical blindness and spiritual sight runs through Matthew 8–9: outsiders see what insiders miss.</p></div><div id="mt9-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.9 escalates the miracle sequence: a dead girl raised, a twelve-year haemorrhage healed, two blind men receiving sight, a mute man speaking. The sandwich structure (Jairus / bleeding woman / Jairus) is Matthew's way of combining two healings into one narrative — faith operating in parallel. The chapter closes with the ministry summary (v.35 = 4:23) and the harvest prayer (vv.36–38), which will be answered by the mission discourse of ch.10.</p></div><div id="mt9-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Num 27:17; Ezek 34:5</span><span class="ref-text">Sheep without a shepherd — Moses's prayer for a successor; Ezekiel's indictment of Israel's leaders. Jesus's compassion in v.36 reuses both passages to describe his response to leaderless Israel.</span></li><li><span class="ref-cite">Isa 35:5–6</span><span class="ref-text">The eyes of the blind shall be opened, and the ears of the deaf unstopped; the mute tongue shall shout for joy. The miracles of vv.27–33 fulfil Isaiah's vision of the messianic era.</span></li></ul></div><div id="mt9-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">9:22</span><p>Take heart, daughter; your faith has healed you. Two things: the address ("daughter" — relational, not clinical) and the attribution ("your faith"). The woman had been haemorrhaging for twelve years — Levitically unclean the entire time, excluded from communal worship. Her touch would have transmitted uncleanness; instead it received healing. Jesus names her faith as the instrument and welcomes her into relationship.</p></div><div class="com-note"><span class="com-ref">9:34</span><p>It is by the prince of demons that he drives out demons. The Pharisees' alternative explanation for the exorcisms — introduced here and developed fully in ch.12 (the Beelzebul controversy). The opposition has hardened from questioning (9:3,11,14) to accusation. The two responses to the same miracles — crowd amazement and Pharisee accusation — define the chapter's two trajectories.</p></div><div class="com-note"><span class="com-ref">9:37–38</span><p>The harvest is plentiful but the workers are few. The compassion of v.36 and the prayer of vv.37–38 are the psychological origin of ch.10. Jesus sees the need, feels it viscerally, names it as a harvest problem, and turns it into a prayer request. The disciples who pray the prayer are then sent to be its answer (10:1).</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;17 &mdash; Healing the Paralytic; Matthew Called; New Wineskins</div><span class="verse-text"><span class="verse-num">1</span>Jesus stepped into a boat, crossed over and came to his own town.</span><span class="verse-text"><span class="verse-num">2</span>Some men brought to him a paralyzed man, lying on a mat. When Jesus saw their faith, he said to the man, "Take heart, son; your sins are forgiven."</span><span class="verse-text"><span class="verse-num">3</span>At this, some of the teachers of the law said to themselves, "This fellow is blaspheming!"</span><span class="verse-text"><span class="verse-num">4</span>Knowing their thoughts, Jesus said, "Why do you entertain evil thoughts in your hearts?</span><span class="verse-text"><span class="verse-num">5</span>Which is easier: to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?</span><span class="verse-text"><span class="verse-num">6</span>But I want you to know that the Son of Man has authority on earth to forgive sins." So he said to the paralyzed man, "Get up, take your mat and go home."</span><span class="verse-text"><span class="verse-num">7</span>Then the man got up and went home.</span><span class="verse-text"><span class="verse-num">8</span>When the crowd saw this, they were filled with awe; and they praised God, who had given such authority to human beings.</span><span class="verse-text"><span class="verse-num">9</span>As Jesus went on from there, he saw a man named Matthew sitting at the tax collector's booth. "Follow me," he told him, and Matthew got up and followed him.</span><span class="verse-text"><span class="verse-num">10</span>While Jesus was having dinner at Matthew's house, many tax collectors and sinners came and ate with him and his disciples.</span><span class="verse-text"><span class="verse-num">11</span>When the Pharisees saw this, they asked his disciples, "Why does your teacher eat with tax collectors and sinners?"</span><span class="verse-text"><span class="verse-num">12</span>On hearing this, Jesus said, "It is not the healthy who need a doctor, but the sick.</span><span class="verse-text"><span class="verse-num">13</span>But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."</span><span class="verse-text"><span class="verse-num">14</span>Then John's disciples came and asked him, "How is it that we and the Pharisees fast often, but your disciples do not fast?"</span><span class="verse-text"><span class="verse-num">15</span>Jesus answered, "How can the guests of the bridegroom mourn while he is with them? The time will come when the bridegroom will be taken from them; then they will fast.</span><span class="verse-text"><span class="verse-num">16</span>"No one sews a patch of unshrunk cloth on an old garment, for the patch will pull away from the garment, making the tear worse.</span><span class="verse-text"><span class="verse-num">17</span>Neither do people pour new wine into old wineskins. If they do, the skins will burst; the wine will run out and the wineskins will be ruined. No, they pour new wine into new wineskins, and both are preserved."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt9-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt9-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt9-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt9-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt9-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt9-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt9-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt9-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt9-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt9-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt9-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.9 groups three controversy encounters around the theme of authority: forgiving sins (vv.1–8), eating with sinners (vv.9–13), and not fasting (vv.14–17). Each confronts the religious establishment's categories. The paralytic scene is the most theologically loaded — Jesus explicitly claims the Son of Man's authority to forgive sins on earth, which is either blasphemy (scribes' view) or the most significant claim in the chapter. The healing proves it is the latter.</p></div><div id="mt9-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Hos 6:6</span><span class="ref-text">I desire mercy, not sacrifice — the OT prophetic critique of ritual at the expense of compassion. Jesus applies it to his own ministry and will apply it again in 12:7. The pattern: mercy-not-sacrifice is Jesus's interpretive key for his unconventional behaviour.</span></li><li><span class="ref-cite">Isa 43:25</span><span class="ref-text">I, even I, am he who blots out your transgressions — divine prerogative. The scribes are correct that forgiveness of sins belongs to God alone. Jesus's healing confirms that he exercises it.</span></li></ul></div><div id="mt9-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">9:1-8</span><p>Calvin on the forgiveness of sins: The scribes were right that only God can forgive sins -- they were wrong to conclude that Jesus could not. The healing demonstrates his divine authority: the one who can command the paralytic to walk can certainly forgive his sins. The miracle is the verification of the claim that would otherwise require pure faith.</p></div><div class="com-note"><span class="com-ref">9:9-13</span><p>Calvin on calling Matthew: A tax collector, despised as a Roman collaborator, is called to the inner circle. This is the gospel's characteristic pattern: the most unlikely candidate is chosen, the most despised is honoured. The Pharisees' complaint that Jesus eats with sinners is precisely the point -- these are the people the physician came to heal.</p></div></div><div id="mt9-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">9:1-8</span><p>The NET note on 'son, your sins are forgiven' discusses the grammar: aphiontai is a divine passive present -- the sins are being forgiven by God. The scribes correctly understand the implicit Christological claim: only one with divine authority can pronounce forgiveness in this first-person way.</p></div><div class="com-note"><span class="com-ref">9:9-13</span><p>The NET note on Hos 6:6 discusses how Jesus applies this prophetic principle: the Pharisees' complaint about eating with sinners reveals that they value ritual separation (the form of holiness) over compassionate engagement with the lost (the substance of holiness).</p></div></div><div id="mt9-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">9:1-8</span><p>Robertson notes the paralytic's healing is linked to forgiveness of sins -- Jesus addresses the inner need before the outer. The scribes' accusation of blasphemy is theologically correct if Jesus is merely human -- only God can forgive sins. Jesus' response uses the healing as visible evidence for the invisible forgiveness.</p></div><div class="com-note"><span class="com-ref">9:9-13</span><p>Robertson identifies the citation of Hos 6:6 ('I desire mercy, not sacrifice') as Jesus' hermeneutical principle: ritual observance that does not express covenant faithfulness is not what God desires. The physician metaphor is the gospel's self-understanding: Jesus comes for the sick, not the healthy.</p></div></div><div id="mt9-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">9:1-8</span><p>Chrysostom on the paralytic: He first forgave the sins because that was the greater healing. The paralysis was the visible symptom; the sin was the deeper disease. Christ healed the root before the fruit. This is the pattern of all true healing: forgiveness of sins is not the addition to physical healing but its foundation.</p></div><div class="com-note"><span class="com-ref">9:9-13</span><p>Augustine on 'I desire mercy and not sacrifice': These words condemn all who love the form of religion more than its substance. Sacrifice without mercy is performance; mercy without sacrifice is formless. When mercy is absent, sacrifice is an offence. The Pharisees had the sacrifice; they lacked the mercy.</p></div></div></div><div class="section"><div class="section-header">Verses 18&ndash;38 &mdash; Raising the Dead; Sight for the Blind; The Harvest Prayer</div><span class="verse-text"><span class="verse-num">18</span>While he was saying this, a synagogue leader came and knelt before him and said, "My daughter has just died. But come and put your hand on her, and she will live."</span><span class="verse-text"><span class="verse-num">19</span>Jesus got up and went with him, and so did his disciples.</span><span class="verse-text"><span class="verse-num">20</span>Just then a woman who had been subject to bleeding for twelve years came up behind him and touched the edge of his cloak.</span><span class="verse-text"><span class="verse-num">21</span>She said to herself, "If I only touch his cloak, I will be healed."</span><span class="verse-text"><span class="verse-num">22</span>Jesus turned and saw her. "Take heart, daughter," he said, "your faith has healed you." And the woman was healed at that moment.</span><span class="verse-text"><span class="verse-num">23</span>When Jesus entered the synagogue leader's house and saw the noisy crowd and people playing pipes,</span><span class="verse-text"><span class="verse-num">24</span>he said, "Go away. The girl is not dead but asleep." But they laughed at him.</span><span class="verse-text"><span class="verse-num">25</span>After the crowd had been put outside, he went in and took the girl by the hand, and she got up.</span><span class="verse-text"><span class="verse-num">26</span>News of this spread through all that region.</span><span class="verse-text"><span class="verse-num">27</span>As Jesus went on from there, two blind men followed him, calling out, "Have mercy on us, Son of David!"</span><span class="verse-text"><span class="verse-num">28</span>When he had gone indoors, the blind men came to him, and he asked them, "Do you believe that I am able to do this?" "Yes, Lord," they answered.</span><span class="verse-text"><span class="verse-num">29</span>Then he touched their eyes and said, "According to your faith let it be done to you";</span><span class="verse-text"><span class="verse-num">30</span>and their sight was restored. Jesus warned them sternly, "See that no one knows about this."</span><span class="verse-text"><span class="verse-num">31</span>But they went out and spread the news about him all over that region.</span><span class="verse-text"><span class="verse-num">32</span>While they were going out, a man who was demon-possessed and could not talk was brought to Jesus.</span><span class="verse-text"><span class="verse-num">33</span>And when the demon was driven out, the man who had been mute spoke. The crowd was amazed and said, "Nothing like this has ever been seen in Israel."</span><span class="verse-text"><span class="verse-num">34</span>But the Pharisees said, "It is by the prince of demons that he drives out demons."</span><span class="verse-text"><span class="verse-num">35</span>Jesus went through all the towns and villages, teaching in their synagogues, proclaiming the good news of the kingdom and healing every disease and sickness.</span><span class="verse-text"><span class="verse-num">36</span>When he saw the crowds, he had compassion on them, because they were harassed and helpless, like sheep without a shepherd.</span><span class="verse-text"><span class="verse-num">37</span>Then he said to his disciples, "The harvest is plentiful but the workers are few.</span><span class="verse-text"><span class="verse-num">38</span>Ask the Lord of the harvest, therefore, to send out workers into his harvest field."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt9-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt9-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt9-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt9-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt9-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt9-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt9-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt9-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt9-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt9-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt9-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.9 escalates the miracle sequence: a dead girl raised, a twelve-year haemorrhage healed, two blind men receiving sight, a mute man speaking. The sandwich structure (Jairus / bleeding woman / Jairus) is Matthew's way of combining two healings into one narrative — faith operating in parallel. The chapter closes with the ministry summary (v.35 = 4:23) and the harvest prayer (vv.36–38), which will be answered by the mission discourse of ch.10.</p></div><div id="mt9-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Num 27:17; Ezek 34:5</span><span class="ref-text">Sheep without a shepherd — Moses's prayer for a successor; Ezekiel's indictment of Israel's leaders. Jesus's compassion in v.36 reuses both passages to describe his response to leaderless Israel.</span></li><li><span class="ref-cite">Isa 35:5–6</span><span class="ref-text">The eyes of the blind shall be opened, and the ears of the deaf unstopped; the mute tongue shall shout for joy. The miracles of vv.27–33 fulfil Isaiah's vision of the messianic era.</span></li></ul></div><div id="mt9-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">9:20-22</span><p>Calvin on the woman with the haemorrhage: Her faith was mingled with superstition -- she believed she could be healed by touching the hem of Christ's garment without him knowing. Christ draws out the genuine faith from within the imperfect expression and honours it. Grace works with what is genuinely present, not only with what is perfectly formed.</p></div><div class="com-note"><span class="com-ref">9:36-38</span><p>Calvin on the harvest and the labourers: The command to pray for labourers before the command to send them teaches that the mission is sustained by prayer, not by human recruitment strategies. The Lord of the harvest appoints the labourers; prayer is the means by which they are appointed.</p></div></div><div id="mt9-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">9:18-26</span><p>The NET note on 'she is not dead but sleeping' discusses the use of katheudei as a metaphor for death in the NT context. Jesus may be deliberately anticipating the resurrection that follows, treating the death as temporary from the perspective of his authority over it.</p></div><div class="com-note"><span class="com-ref">9:35-38</span><p>The NET note on splanchnistheis explains the visceral, gut-level compassion -- moved in the deepest centre of one's being. This word is used for Jesus more than any other individual in the Gospels. It describes not mild sympathy but gut-level engagement with human suffering that drives action.</p></div></div><div id="mt9-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">9:18-26</span><p>Robertson notes Jairus' daughter was 'just now' dead when he arrived -- the contrast with the woman with the haemorrhage is stark. The crowd's ridicule ('they laughed at him') meets Jesus' claim that she is 'sleeping.' His raising of the dead girl in the face of their ridicule is the first resurrection narrative in Matthew.</p></div><div class="com-note"><span class="com-ref">9:35-38</span><p>Robertson identifies 9:35 as the second occurrence of the ministry summary (first at 4:23) -- teaching, proclaiming, healing -- bracketing the Sermon on the Mount and the miracle narratives. The compassion (splanchnistheis) at the harassed crowd motivates the mission discourse of ch.10.</p></div></div><div id="mt9-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">9:18-26</span><p>Chrysostom: Christ permitted the death to occur so that the greater miracle could demonstrate greater faith. Had he come immediately the ruler might have thought the girl merely very sick. By allowing the death, Christ shows his authority over death itself, not merely over sickness.</p></div><div class="com-note"><span class="com-ref">9:27-31</span><p>Jerome on 'according to your faith let it be done to you': Not 'according to your merit' but 'according to your faith.' Faith is the appointed means through which divine power flows into human need. The blind men saw -- not because their eyes were healed but because they believed the Healer could heal them.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt9-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt9-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt9-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt9-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt9-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt9-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt9-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt9-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt9-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt9-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt9-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt9-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt9-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt9-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt9-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt9-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt9-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt9-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The paralytic</div><div class="person-role">Brought by friends</div><div class="person-text">Forgiveness before healing — Jesus addresses the deeper need first.</div></div><div class="person-card"><div class="person-name">Matthew</div><div class="person-role">Tax collector; called and followed</div><div class="person-text">Records his own calling without self-justification.</div></div><div class="person-card"><div class="person-name">The bleeding woman</div><div class="person-role">Twelve years excluded</div><div class="person-text">Her faith heals her; Jesus names her "daughter."</div></div><div class="person-card"><div class="person-name">The blind men</div><div class="person-role">Cry "Son of David"</div><div class="person-text">Those who cannot see recognise Jesus more clearly than the religious establishment.</div></div></div></div><div id="mt9-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">9:13 — Mercy, Not Sacrifice</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."</td></tr><tr><td class="t-label">Hos 6:6</td><td>Eleos — mercy / ḥesed. Quoted twice in Matthew (9:13; 12:7). The prophetic critique of ritual purity at the expense of compassion becomes Jesus's interpretive key for his unconventional ministry practice.</td></tr></table></div><div id="mt9-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Tax collectors</div><div class="source-quote">Contracted by Rome to collect taxes; the right to collect more than the required amount was built into the system. Uniformly despised as collaborators and extortioners.</div><div class="source-note">Matthew was one of these — his self-identification is unsparing.</div></div><div class="source-block"><div class="source-title">Twelve years</div><div class="source-quote">The bleeding woman's twelve-year condition matches Jairus's daughter's age (Luke 8:42). Matthew omits the age detail but the numerical parallel connects the two healings.</div><div class="source-note">The structural parallel links exclusion (the woman) and death (the girl) as twin conditions Jesus addresses.</div></div></div><div id="mt9-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The harvest metaphor</div><div class="rec-text">9:37–38 became the foundational text of the modern missionary movement — the same verse William Carey cited alongside 28:19. The harvest frame converts Jesus's compassion into a missional mandate.</div></div><div class="rec-block"><div class="rec-who">Hos 6:6 in Matthew</div><div class="rec-text">The double quotation of "I desire mercy, not sacrifice" (9:13; 12:7) marks Matthew's central critique of religious formalism. The Hosea passage connects Sermon on the Mount ethics (surpassing righteousness) to table practice and Sabbath observance.</div></div></div><div id="mt9-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Forgiveness, calling, new wine — vv.1–17</span><span class="lit-text">Paralytic; Matthew; fasting; wineskins</span></div><div class="lit-row"><span class="lit-label">Raising and restoring — vv.18–38</span><span class="lit-text">Dead girl; bleeding woman; blind men; mute man; harvest prayer</span></div><div class="lit-note">Chapter 9 completes the miracle section of Matthew 8–9. Authority over sin (v.6), social exclusion (v.10), physical death (v.25), blindness (v.30), and muteness (v.33) — the Servant's portfolio is complete. The chapter closes with the compassion that motivates mission and the prayer that generates sent workers.</div></div></div><div id="mt9-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">6</sup> "The Son of Man has <span class="dn-key">authority on earth to forgive sins</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">37</sup> "The <span class="dn-key">harvest</span> is plentiful but the workers are few."</p></div><div id="mt9-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">9:13</span><span class="thread-arrow">→</span><span class="thread-target">Hos 6:6</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">I desire mercy, not sacrifice — the prophetic critique becomes Jesus's table-fellowship principle.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">9:36</span><span class="thread-arrow">→</span><span class="thread-target">Num 27:17; Ezek 34:5</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Sheep without a shepherd — Moses's and Ezekiel's language for abandoned Israel applied to Jesus's compassion.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">9:37–38</span><span class="thread-arrow">→</span><span class="thread-target">Matt 10:1</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Harvest prayer → the disciples who pray are sent as the answer (ch.10).</div></div></div><div id="mt9-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Authority to Forgive</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mercy Over Sacrifice</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faith</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Compassion</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mission</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Son of David</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 9 is the chapter where authority meets compassion. The Son of Man's authority over sin and sickness (ch.8) is now paired with the gut-level compassion of v.36 that drives the mission. The harvest prayer is the chapter's practical conclusion: feel the need, name it, pray it, go.</p></div>
+<div id="mt9-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The paralytic</div><div class="person-role">Brought by friends</div><div class="person-text">Forgiveness before healing — Jesus addresses the deeper need first.</div></div><div class="person-card"><div class="person-name">Matthew</div><div class="person-role">Tax collector; called and followed</div><div class="person-text">Records his own calling without self-justification.</div></div><div class="person-card"><div class="person-name">The bleeding woman</div><div class="person-role">Twelve years excluded</div><div class="person-text">Her faith heals her; Jesus names her "daughter."</div></div><div class="person-card"><div class="person-name">The blind men</div><div class="person-role">Cry "Son of David"</div><div class="person-text">Those who cannot see recognise Jesus more clearly than the religious establishment.</div></div></div></div><div id="mt9-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 9 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."</td></tr><tr><td class="t-label">Hos 6:6</td><td>Eleos — mercy / ḥesed. Quoted twice in Matthew (9:13; 12:7). The prophetic critique of ritual purity at the expense of compassion becomes Jesus's interpretive key for his unconventional ministry practice.</td></tr></table></div><div id="mt9-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Tax collectors</div><div class="source-quote">Contracted by Rome to collect taxes; the right to collect more than the required amount was built into the system. Uniformly despised as collaborators and extortioners.</div><div class="source-note">Matthew was one of these — his self-identification is unsparing.</div></div><div class="source-block"><div class="source-title">Twelve years</div><div class="source-quote">The bleeding woman's twelve-year condition matches Jairus's daughter's age (Luke 8:42). Matthew omits the age detail but the numerical parallel connects the two healings.</div><div class="source-note">The structural parallel links exclusion (the woman) and death (the girl) as twin conditions Jesus addresses.</div></div></div><div id="mt9-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The harvest metaphor</div><div class="rec-text">9:37–38 became the foundational text of the modern missionary movement — the same verse William Carey cited alongside 28:19. The harvest frame converts Jesus's compassion into a missional mandate.</div></div><div class="rec-block"><div class="rec-who">Hos 6:6 in Matthew</div><div class="rec-text">The double quotation of "I desire mercy, not sacrifice" (9:13; 12:7) marks Matthew's central critique of religious formalism. The Hosea passage connects Sermon on the Mount ethics (surpassing righteousness) to table practice and Sabbath observance.</div></div></div><div id="mt9-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The paralytic receives forgiveness before healing. The physician metaphor explains: Jesus comes for the sick, not the healthy.</div><div class="lit-row"><span class="lit-label">Raising the Dead; Restoring Sight; Harvest — 9:18-38</span><span class="lit-text">The dead girl raised; the haemorrhaging woman healed; two blind men see; the harvest speech launched. The chapter concludes with the harvest's need -- setting up the mission discourse of ch.10.</span></div></div></div><div id="mt9-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[('splanchnizomai', 'splanchnizomai', 'Moved with compassion', "The visceral, gut-level compassion characterising Jesus' response to human suffering. Jesus is the most frequent subject of this word in the Gospels."), ('pistis2', 'pistis', 'Faith', "The thread connecting every healing: the woman touching in faith; Jairus coming; the blind men confessing. 'According to your faith let it be done' makes faith the appointed channel.")]</div><div id="mt9-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">9:13</span><span class="tx-issue">I desire mercy, not sacrifice (Hos 6:6)</span></div><div class="tx-variants">Exact citation of LXX Hos 6:6. Jesus quotes it twice (also 12:7) as his hermeneutical principle.</div><div class="tx-sig">Hosea 6:6 addresses Israel's substitute of ritual observance for covenant faithfulness. Jesus applies it to the Pharisees' ritual separation: they have chosen the form of holiness over its substance.</div></div></div><div id="mt9-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Matthew 9:18 vs. Mark 5:23 -- Was Jairus's Daughter Already Dead?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Matthew: already dead; Mark: dying but not yet dead</div><div class="db-proponents">Apparent discrepancy</div><div class="db-argument">Matthew reports the daughter as 'just now dead' when Jairus arrives; Mark has her still alive at the time of the request, dying during Jesus' travel.</div></div><div class="db-position"><div class="db-pos-name">Matthean compression of the narrative</div><div class="db-proponents">Standard harmonisation</div><div class="db-argument">Matthew regularly condenses narratives for theological purposes. Jairus may have reported her as practically dead. Matthew omits the messengers' arrival preserved in Mark 5:35.</div></div></div><div class="db-synthesis">The Matthean compression reading is most natural. Matthew regularly condenses narratives for theological rather than chronological purposes. The essential fact -- that Jesus raised a dead girl -- is consistent across all accounts.</div></div></div><div id="mt9-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Forgiveness as the Greater Healing</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Physician for the Sick</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faith as the Channel</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Harvest and Prayer for Labourers</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 9 extends the healing ministry into its theological depth: forgiveness is the greater miracle beneath the visible healings; the physician's purpose explains the call of Matthew and meals with sinners; the harvest speech transforms the accumulated healings into a missional commission.</p></div>
 </div>
 </main>
 <script>
@@ -362,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Galilee','Capernaum','Jordan','synagogue','temple','mountain','sea','Nazareth','Bethsaida','Chorazin'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','scribes','John','Peter','crowd','centurion','Herod','Satan','devil'],cls:'vhl-person',btn:['people','context']};
-  var TIME  ={words:['day','days','night','hour','kingdom','age','harvest','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','authority','healing','faith','repent','Son of Man','Son of God','forgive','Spirit','covenant'],cls:'vhl-key',btn:['literary','cross']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -508,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -517,8 +771,8 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    hist = hist.filter(function(h){ return h.url !== url; });
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
     hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
     if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));

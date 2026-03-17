@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -58,22 +78,16 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
+.anno-trigger:active{transform:translateY(0);}
 .anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
 .anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
 .anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
@@ -84,12 +98,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
 .anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
 .anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
   color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
@@ -100,16 +112,15 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
 .scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
 .scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
 .anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
 .anno-panel.open{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
@@ -218,6 +229,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
 .vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
 @keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
 .authorship-toggle:hover{background:rgba(255,255,255,.03);}
@@ -249,7 +261,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
 .qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
 .qnav-body{overflow-y:auto;}
-.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-testament{border-bottom:1px solid rgba(58,46,24,.25);}.qnav-testament-btn{width:100%;background:transparent;border:none;cursor:pointer;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center;transition:background .12s;-webkit-appearance:none;}.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}.qnav-testament-label{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;}.qnav-testament-chev{font-size:.48rem;color:#c9a84c;transition:transform .2s;}.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}.qnav-testament-books{display:none;}.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
 .qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
 .qnav-book-btn:hover{background:rgba(255,255,255,.04);}
@@ -259,27 +271,282 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
 .qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
 .qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
-.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;}
 .qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
-.qnav-testament{border-bottom:1px solid rgba(58,46,24,.3);}
-.qnav-testament-btn{
-  width:100%;background:none;border:none;cursor:pointer;
-  padding:.5rem .9rem;display:flex;justify-content:space-between;align-items:center;
-  transition:background .12s;
-}
-.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}
-.qnav-testament-label{
-  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--gold-dim);
-}
-.qnav-testament-chev{font-size:.48rem;color:var(--gold-dim);transition:transform .2s;}
-.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}
-.qnav-testament-books{display:none;}
-.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
 .qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
 .qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
 .qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -317,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 8</h1>
-<p>Three Healings; Discipleship Demands; Stilling the Storm</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Healing Ministry: The Leper, the Centurion, the Storm; Gadarene Demoniacs</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, tax collector and apostle. Eyewitness to the events recorded. Unanimous early tradition attributes this gospel to him.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80–90. Written for a Jewish-Christian community, probably in Antioch of Syria, with a five-discourse structure echoing the Pentateuch.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as the fulfilment of Israel's Scripture — simultaneously Davidic Messiah, new Moses, Son of God, and Servant of Isaiah — and to commission his community for worldwide mission.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;17 &mdash; Three Healings: Leper, Centurion's Servant, Peter's Mother-in-Law</div><span class="verse-text"><span class="verse-num">1</span>When Jesus came down from the mountainside, large crowds followed him.</span><span class="verse-text"><span class="verse-num">2</span>A man with leprosy came and knelt before him and said, "Lord, if you are willing, you can make me clean."</span><span class="verse-text"><span class="verse-num">3</span>Jesus reached out his hand and touched him. "I am willing," he said. "Be clean!" Immediately he was cleansed of his leprosy.</span><span class="verse-text"><span class="verse-num">4</span>Then Jesus said to him, "See that you don't tell anyone. But go, show yourself to the priest and offer the gift Moses commanded, as a testimony to them."</span><span class="verse-text"><span class="verse-num">5</span>When Jesus had entered Capernaum, a centurion came to him, asking for help.</span><span class="verse-text"><span class="verse-num">6</span>"Lord," he said, "my servant lies at home paralyzed, suffering terribly."</span><span class="verse-text"><span class="verse-num">7</span>Jesus said to him, "Shall I come and heal him?"</span><span class="verse-text"><span class="verse-num">8</span>The centurion replied, "Lord, I do not deserve to have you come under my roof. But just say the word, and my servant will be healed.</span><span class="verse-text"><span class="verse-num">9</span>For I myself am a man under authority, with soldiers under me. I tell this one, 'Go,' and he goes; and that one, 'Come,' and he comes. I say to my servant, 'Do this,' and he does it."</span><span class="verse-text"><span class="verse-num">10</span>When Jesus heard this, he was amazed and said to those following him, "Truly I tell you, I have not found anyone in Israel with such great faith.</span><span class="verse-text"><span class="verse-num">11</span>I say to you that many will come from the east and the west, and will take their places at the feast with Abraham, Isaac and Jacob in the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">12</span>But the subjects of the kingdom will be thrown outside, into the darkness, where there will be weeping and gnashing of teeth."</span><span class="verse-text"><span class="verse-num">13</span>Then Jesus said to the centurion, "Go! Let it be done just as you believed it would." And his servant was healed at that moment.</span><span class="verse-text"><span class="verse-num">14</span>When Jesus came into Peter's house, he saw Peter's mother-in-law lying in bed with a fever.</span><span class="verse-text"><span class="verse-num">15</span>He touched her hand and the fever left her, and she got up and began to wait on him.</span><span class="verse-text"><span class="verse-num">16</span>When evening came, many who were demon-possessed were brought to him, and he drove out the spirits with a word and healed all the sick.</span><span class="verse-text"><span class="verse-num">17</span>This was to fulfill what was spoken through the prophet Isaiah: "He took up our infirmities and bore our diseases."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt8-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger people" onclick="tog(this,'mt8-s1-ppl')"><span>People</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt8-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt8-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt8-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt8-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ἐξουσία</span> <span class="tlit">exousia</span> — <strong>authority</strong>: V.9: the centurion understands authority from military experience — commands that are obeyed because of the rank behind them. He recognises the same structure in Jesus: when Jesus speaks, reality obeys. This is why his faith astonishes Jesus (v.10) — a Gentile soldier grasps the nature of messianic authority more clearly than anyone in Israel has.</p><p><span class="hebrew-word">πιστεύω</span> <span class="tlit">pisteuō</span> — <strong>believe / trust / have faith</strong>: V.13: "as you believed it would be done." The healing is granted not as a reward but as a correspondence — faith receives what it trusts. The centurion's faith was not in a formula but in a person's word: "just say the word" (v.8). Faith here is confidence in Jesus's authority, not confidence in one's own worthiness.</p></div><div id="mt8-s1-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The leper</div><div class="person-role">Ritually excluded; comes kneeling</div><div class="person-text">Jesus touches the untouchable — the touch itself is the reversal of exclusion. The leper kneels with conditional faith ("if you are willing"); Jesus answers the condition.</div></div><div class="person-card"><div class="person-name">The centurion</div><div class="person-role">Roman officer; Gentile</div><div class="person-text">The greatest faith in Israel — from a Gentile. His authority-logic is the Sermon's most concrete application: he trusts Jesus's word without requiring his presence.</div></div><div class="person-card"><div class="person-name">Peter's mother-in-law</div><div class="person-role">Healed; immediately serves</div><div class="person-text">Wholeness expressed as service — the healed person's natural response to the one who healed her.</div></div></div></div><div id="mt8-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Matthew 8–9 is the miracle section of the first great block — the practised summary of 4:23 ("healing every disease and sickness") now filled with specific stories. The three healings of vv.1–17 are arranged to maximise social contrast: a Jewish leper (excluded by purity law), a Gentile centurion's servant (excluded by ethnicity), and Peter's female relative (excluded by gender norms). Jesus heals all three and touches the untouchable. The section closes with Isaiah 53:4, interpreting the healings as Servant fulfilment.</p></div><div id="mt8-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 53:4</span><span class="ref-text">He took up our infirmities and bore our diseases — quoted in v.17. The healings are not merely compassion; they are Servant-work, bearing human suffering rather than merely removing it.</span></li><li><span class="ref-cite">Matt 28:19</span><span class="ref-text">Many will come from east and west (v.11) — the eschatological table with Abraham anticipates the commission to all nations. The centurion's faith is the first instalment of the Gentile harvest.</span></li></ul></div><div id="mt8-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:3</span><p>Jesus reached out his hand and touched him. Under Levitical law, touching a leper transferred uncleanness to the toucher. Jesus reverses the direction: instead of becoming unclean, he makes the leper clean. His holiness is more powerful than the impurity. This is the Sermon's "surpassing righteousness" enacted in a gesture.</p></div><div class="com-note"><span class="com-ref">8:10</span><p>I have not found anyone in Israel with such great faith. The superlative is astonishing in context — Jesus is speaking to Israelites, people of the covenant, who have the Scriptures and the promises. The Gentile soldier outstrips them all. The commendation anticipates 28:19 and the worldwide mission.</p></div><div class="com-note"><span class="com-ref">8:17</span><p>He took up our infirmities. Matthew's use of Isa 53:4 is deliberately physical — not merely spiritual substitution but bodily engagement with human suffering. The healings are the Servant's bearing of disease, not merely its removal from a distance.</p></div></div></div><div class="section"><div class="section-header">Verses 18&ndash;34 &mdash; Discipleship Demands; Stilling the Storm; The Gadarenes</div><span class="verse-text"><span class="verse-num">18</span>When Jesus saw the crowd around him, he gave orders to cross to the other side of the lake.</span><span class="verse-text"><span class="verse-num">19</span>Then a teacher of the law came to him and said, "Teacher, I will follow you wherever you go."</span><span class="verse-text"><span class="verse-num">20</span>Jesus replied, "Foxes have dens and birds have nests, but the Son of Man has no place to lay his head."</span><span class="verse-text"><span class="verse-num">21</span>Another disciple said to him, "Lord, first let me go and bury my father."</span><span class="verse-text"><span class="verse-num">22</span>But Jesus told him, "Follow me, and let the dead bury their own dead."</span><span class="verse-text"><span class="verse-num">23</span>Then he got into the boat and his disciples followed him.</span><span class="verse-text"><span class="verse-num">24</span>Suddenly a furious storm came up on the lake, so that the waves swept over the boat. But Jesus was sleeping.</span><span class="verse-text"><span class="verse-num">25</span>The disciples went and woke him, saying, "Lord, save us! We're going to drown!"</span><span class="verse-text"><span class="verse-num">26</span>He replied, "You of little faith, why are you so afraid?" Then he got up and rebuked the wind and the waves, and it was completely calm.</span><span class="verse-text"><span class="verse-num">27</span>The men were amazed and asked, "What kind of man is this? Even the winds and the waves obey him!"</span><span class="verse-text"><span class="verse-num">28</span>When he arrived at the other side in the region of the Gadarenes, two demon-possessed men coming from the tombs met him. They were so violent that no one could pass that way.</span><span class="verse-text"><span class="verse-num">29</span>"What do you want with us, Son of God?" they shouted. "Have you come here to torture us before the appointed time?"</span><span class="verse-text"><span class="verse-num">30</span>Some distance from them a large herd of pigs was feeding.</span><span class="verse-text"><span class="verse-num">31</span>The demons begged Jesus, "If you drive us out, send us into the herd of pigs."</span><span class="verse-text"><span class="verse-num">32</span>He said to them, "Go!" So they came out and went into the pigs, and the whole herd rushed down the steep bank into the lake and died in the water.</span><span class="verse-text"><span class="verse-num">33</span>Those tending the pigs ran off, went into the town and reported all this, including what had happened to the demon-possessed men.</span><span class="verse-text"><span class="verse-num">34</span>Then the whole town came out to meet Jesus. And when they saw him, they pleaded with him to leave their region.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt8-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt8-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt8-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt8-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt8-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ὀλιγόπιστοι</span> <span class="tlit">oligopistoi</span> — <strong>you of little faith</strong>: V.26: the second occurrence of oligopistoi — Matthew's word for disciples under pressure. The disciples' faith is real (they cry to Jesus, not to no one) but insufficient (they interpret the storm as abandonment). Jesus rebukes the wind, then them. The storm tests the same faith the centurion displayed — and the disciples have less of it than the Gentile soldier.</p><p><span class="hebrew-word">υἱὸς τοῦ θεοῦ</span> <span class="tlit">huios tou theou</span> — <strong>Son of God</strong>: V.29: the demons' confession — "Son of God." They know who he is before the disciples do. The question of v.27 ("what kind of man is this?") is answered by the possessed men's involuntary confession. Demonic knowledge does not produce discipleship; only trust does.</p></div><div id="mt8-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.8 balances the miracle sequence with two discipleship sayings (vv.19–22) that set the cost before two nature miracles (vv.23–27, 28–34). The stilling of the storm demonstrates authority over creation — completing the Servant's authority portfolio (over disease, ethnicity, gender, demons, and now nature). The disciples' question ("what kind of man is this?") is the chapter's theological hinge, demanding an answer the rest of Matthew will provide.</p></div><div id="mt8-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 107:23–30</span><span class="ref-text">He stilled the storm to a whisper — the Psalter's language of God calming the sea applied to Jesus's act. The disciples' amazement is the appropriate response to a theophany.</span></li><li><span class="ref-cite">Job 38:8–11</span><span class="ref-text">Who shut up the sea behind doors? — God's speech from the whirlwind. Jesus's authority over wind and waves is presented in language reserved for God's creative sovereignty.</span></li></ul></div><div id="mt8-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:20</span><p>The Son of Man has no place to lay his head. The first "Son of Man" saying in Matthew — the Danielic figure of 7:13 applied to a homeless itinerant. The title combines transcendence (coming on clouds) with humiliation (no fixed dwelling). This tension is the pattern of the incarnation.</p></div><div class="com-note"><span class="com-ref">8:26</span><p>You of little faith, why are you so afraid? The rebuke is diagnostic: fear reveals the smallness of trust. The disciples have the right object for their faith (they call to Jesus) but not enough of it (they expect abandonment). The storm is a discipleship test, not merely a weather event.</p></div><div class="com-note"><span class="com-ref">8:34</span><p>They pleaded with him to leave. The Gadarenes' response to the most dramatic exorcism in the Synoptics is to ask Jesus to go away. They count the economic loss (pigs) greater than the liberation of two men. Jesus honours the request. His presence always confronts every community with the same choice: receive him or send him away.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;17 &mdash; Three Healings: Leper, Centurion's Servant, Peter's Mother-in-Law</div><span class="verse-text"><span class="verse-num">1</span>When Jesus came down from the mountainside, large crowds followed him.</span><span class="verse-text"><span class="verse-num">2</span>A man with leprosy came and knelt before him and said, "Lord, if you are willing, you can make me clean."</span><span class="verse-text"><span class="verse-num">3</span>Jesus reached out his hand and touched him. "I am willing," he said. "Be clean!" Immediately he was cleansed of his leprosy.</span><span class="verse-text"><span class="verse-num">4</span>Then Jesus said to him, "See that you don't tell anyone. But go, show yourself to the priest and offer the gift Moses commanded, as a testimony to them."</span><span class="verse-text"><span class="verse-num">5</span>When Jesus had entered Capernaum, a centurion came to him, asking for help.</span><span class="verse-text"><span class="verse-num">6</span>"Lord," he said, "my servant lies at home paralyzed, suffering terribly."</span><span class="verse-text"><span class="verse-num">7</span>Jesus said to him, "Shall I come and heal him?"</span><span class="verse-text"><span class="verse-num">8</span>The centurion replied, "Lord, I do not deserve to have you come under my roof. But just say the word, and my servant will be healed.</span><span class="verse-text"><span class="verse-num">9</span>For I myself am a man under authority, with soldiers under me. I tell this one, 'Go,' and he goes; and that one, 'Come,' and he comes. I say to my servant, 'Do this,' and he does it."</span><span class="verse-text"><span class="verse-num">10</span>When Jesus heard this, he was amazed and said to those following him, "Truly I tell you, I have not found anyone in Israel with such great faith.</span><span class="verse-text"><span class="verse-num">11</span>I say to you that many will come from the east and the west, and will take their places at the feast with Abraham, Isaac and Jacob in the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">12</span>But the subjects of the kingdom will be thrown outside, into the darkness, where there will be weeping and gnashing of teeth."</span><span class="verse-text"><span class="verse-num">13</span>Then Jesus said to the centurion, "Go! Let it be done just as you believed it would." And his servant was healed at that moment.</span><span class="verse-text"><span class="verse-num">14</span>When Jesus came into Peter's house, he saw Peter's mother-in-law lying in bed with a fever.</span><span class="verse-text"><span class="verse-num">15</span>He touched her hand and the fever left her, and she got up and began to wait on him.</span><span class="verse-text"><span class="verse-num">16</span>When evening came, many who were demon-possessed were brought to him, and he drove out the spirits with a word and healed all the sick.</span><span class="verse-text"><span class="verse-num">17</span>This was to fulfill what was spoken through the prophet Isaiah: "He took up our infirmities and bore our diseases."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt8-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt8-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt8-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt8-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt8-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt8-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt8-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt8-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt8-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt8-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt8-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Matthew 8–9 is the miracle section of the first great block — the practised summary of 4:23 ("healing every disease and sickness") now filled with specific stories. The three healings of vv.1–17 are arranged to maximise social contrast: a Jewish leper (excluded by purity law), a Gentile centurion's servant (excluded by ethnicity), and Peter's female relative (excluded by gender norms). Jesus heals all three and touches the untouchable. The section closes with Isaiah 53:4, interpreting the healings as Servant fulfilment.</p></div><div id="mt8-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 53:4</span><span class="ref-text">He took up our infirmities and bore our diseases — quoted in v.17. The healings are not merely compassion; they are Servant-work, bearing human suffering rather than merely removing it.</span></li><li><span class="ref-cite">Matt 28:19</span><span class="ref-text">Many will come from east and west (v.11) — the eschatological table with Abraham anticipates the commission to all nations. The centurion's faith is the first instalment of the Gentile harvest.</span></li></ul></div><div id="mt8-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:3</span><p>Calvin on Jesus touching the leper: Under the law, touching a leper communicated defilement. Christ reverses this by the power of his holiness -- he touches what is unclean and the unclean becomes clean. This is the pattern of the incarnation: he enters the domain of human sin without being contaminated; instead he purifies.</p></div><div class="com-note"><span class="com-ref">8:10-12</span><p>Calvin on the centurion's faith: This pagan soldier's faith shames Israel -- he who has received no covenant promise believes; they who have received all the promises do not. This is the mystery of grace: it operates where it will, not where it is expected.</p></div></div><div id="mt8-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">8:1-4</span><p>The NET note on 'show yourself to the priest' discusses the legal significance of the Leviticus 14 requirement. Jesus sends the healed leper to fulfil Torah's requirements -- the healing is real and publicly certified.</p></div><div class="com-note"><span class="com-ref">8:5-13</span><p>The NET note on 'I will come and heal him' discusses whether this is a statement or a question ('Shall I come and heal him?'). The interrogative reading heightens the Gentile-inclusion significance: Jesus offers to cross Jewish-Gentile social boundaries.</p></div></div><div id="mt8-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">8:1-4</span><p>Robertson notes the leper's address 'Lord, if you are willing' is the most perfect expression of faith in the Gospels -- total confidence in ability combined with total submission to will. The touching of the leper is the drama's peak: a leper was untouchable by law; Jesus touches him. The touch does not make Jesus unclean; it makes the leper clean.</p></div><div class="com-note"><span class="com-ref">8:5-13</span><p>Robertson draws attention to the centurion's theology of authority: he understands Jesus' word as having the same relationship to reality that a military command has to soldiers -- it is effective by its own authority. Robertson notes 'I have not found such great faith in anyone in Israel' is among Jesus' most astonishing statements.</p></div></div><div id="mt8-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">8:1-4</span><p>Chrysostom: Christ stretched out his hand and touched what was not to be touched, showing that holiness is stronger than uncleanness. By touching the impure he purified it -- this is the pattern of the incarnation itself: he enters the domain of human sin and death without being contaminated; instead he purifies.</p></div><div class="com-note"><span class="com-ref">8:5-13</span><p>Augustine on the centurion: He confessed himself unworthy that Christ should enter under his roof -- greater humility has never been spoken. His faith was measured not by years of instruction but by the depth of his recognition: this man's word is sovereign over disease as a military command is sovereign over soldiers.</p></div></div></div><div class="section"><div class="section-header">Verses 18&ndash;34 &mdash; Discipleship Demands; Stilling the Storm; The Gadarenes</div><span class="verse-text"><span class="verse-num">18</span>When Jesus saw the crowd around him, he gave orders to cross to the other side of the lake.</span><span class="verse-text"><span class="verse-num">19</span>Then a teacher of the law came to him and said, "Teacher, I will follow you wherever you go."</span><span class="verse-text"><span class="verse-num">20</span>Jesus replied, "Foxes have dens and birds have nests, but the Son of Man has no place to lay his head."</span><span class="verse-text"><span class="verse-num">21</span>Another disciple said to him, "Lord, first let me go and bury my father."</span><span class="verse-text"><span class="verse-num">22</span>But Jesus told him, "Follow me, and let the dead bury their own dead."</span><span class="verse-text"><span class="verse-num">23</span>Then he got into the boat and his disciples followed him.</span><span class="verse-text"><span class="verse-num">24</span>Suddenly a furious storm came up on the lake, so that the waves swept over the boat. But Jesus was sleeping.</span><span class="verse-text"><span class="verse-num">25</span>The disciples went and woke him, saying, "Lord, save us! We're going to drown!"</span><span class="verse-text"><span class="verse-num">26</span>He replied, "You of little faith, why are you so afraid?" Then he got up and rebuked the wind and the waves, and it was completely calm.</span><span class="verse-text"><span class="verse-num">27</span>The men were amazed and asked, "What kind of man is this? Even the winds and the waves obey him!"</span><span class="verse-text"><span class="verse-num">28</span>When he arrived at the other side in the region of the Gadarenes, two demon-possessed men coming from the tombs met him. They were so violent that no one could pass that way.</span><span class="verse-text"><span class="verse-num">29</span>"What do you want with us, Son of God?" they shouted. "Have you come here to torture us before the appointed time?"</span><span class="verse-text"><span class="verse-num">30</span>Some distance from them a large herd of pigs was feeding.</span><span class="verse-text"><span class="verse-num">31</span>The demons begged Jesus, "If you drive us out, send us into the herd of pigs."</span><span class="verse-text"><span class="verse-num">32</span>He said to them, "Go!" So they came out and went into the pigs, and the whole herd rushed down the steep bank into the lake and died in the water.</span><span class="verse-text"><span class="verse-num">33</span>Those tending the pigs ran off, went into the town and reported all this, including what had happened to the demon-possessed men.</span><span class="verse-text"><span class="verse-num">34</span>Then the whole town came out to meet Jesus. And when they saw him, they pleaded with him to leave their region.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt8-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt8-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt8-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt8-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt8-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt8-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt8-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt8-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt8-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt8-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt8-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.8 balances the miracle sequence with two discipleship sayings (vv.19–22) that set the cost before two nature miracles (vv.23–27, 28–34). The stilling of the storm demonstrates authority over creation — completing the Servant's authority portfolio (over disease, ethnicity, gender, demons, and now nature). The disciples' question ("what kind of man is this?") is the chapter's theological hinge, demanding an answer the rest of Matthew will provide.</p></div><div id="mt8-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 107:23–30</span><span class="ref-text">He stilled the storm to a whisper — the Psalter's language of God calming the sea applied to Jesus's act. The disciples' amazement is the appropriate response to a theophany.</span></li><li><span class="ref-cite">Job 38:8–11</span><span class="ref-text">Who shut up the sea behind doors? — God's speech from the whirlwind. Jesus's authority over wind and waves is presented in language reserved for God's creative sovereignty.</span></li></ul></div><div id="mt8-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:25-26</span><p>Calvin on 'you of little faith, why are you so afraid?': The rebuke is not for calling out -- that was right. The rebuke is for the panic implying he was unable to save them. Little faith calls to God in crisis but does not trust his ability or willingness. Great faith calls with confidence that his power and care are both sufficient and certain.</p></div><div class="com-note"><span class="com-ref">8:29</span><p>Calvin on the demons' question: The demons know the appointed day of judgment. They are not ignorant of their destiny; they seek only a temporary reprieve. Their acknowledgment of Christ as Son of God is forced confession, not worship.</p></div></div><div id="mt8-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">8:23-27</span><p>The NET note on 'what kind of man is this?' traces the disciples' growing Christological question through Matthew. The storm stilling is the first incident forcing it directly: no human being commands wind and sea.</p></div><div class="com-note"><span class="com-ref">8:28-34</span><p>The NET note on 'the appointed time' (kairos) that the demons reference discusses the eschatological dimension: the demons understand that the final judgment has a set time and that Jesus' arrival has not yet inaugurated it.</p></div></div><div id="mt8-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">8:23-27</span><p>Robertson notes the storm on the Galilean lake was a sudden, violent squall typical of the geography. The rebuke of the wind and sea uses epitimao -- the same word used for rebuking demons. The storm is treated as a personal hostile force.</p></div><div class="com-note"><span class="com-ref">8:28-34</span><p>Robertson identifies the demons' question -- 'Have you come to torment us before the appointed time?' -- as an acknowledgment of their defeat in advance. They have theological knowledge of who Jesus is and what the Judgment will mean for them.</p></div></div><div id="mt8-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">8:23-27</span><p>Chrysostom: Why did he allow them to be in danger? To exercise their faith. He permitted the trial so the disciples might cry out to him in helplessness and learn that their safety rests in him alone, not in their own seamanship.</p></div><div class="com-note"><span class="com-ref">8:28-34</span><p>Jerome on the demoniacs: The demons know who Jesus is before his disciples fully understand it. They call him Son of God and acknowledge the appointed time will bring their torment. This supernatural knowledge is not worship but terror.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt8-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt8-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt8-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt8-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt8-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt8-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt8-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt8-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt8-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt8-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt8-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt8-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt8-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt8-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt8-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt8-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt8-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt8-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The leper</div><div class="person-role">Excluded by purity law</div><div class="person-text">Jesus touches the untouchable. Holiness more powerful than impurity.</div></div><div class="person-card"><div class="person-name">The centurion</div><div class="person-role">Gentile; greatest faith in Israel</div><div class="person-text">Trusts Jesus's word without requiring his presence. Anticipates the Gentile mission.</div></div><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Little faith in the storm</div><div class="person-text">Real faith but insufficient. The test they fail the centurion passed.</div></div></div></div><div id="mt8-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">8:8 — Just Say the Word</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Lord, I do not deserve to have you come under my roof. But just say the word, and my servant will be healed."</td></tr><tr><td class="t-label">Note</td><td>The centurion's authority-logic: commands are obeyed because of the rank behind them. He applies this to Jesus — confidence in his word, not in his physical presence. This is the definition of faith in Matthew 8.</td></tr></table></div><div id="mt8-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Roman centurion</div><div class="source-quote">Commander of 80–100 soldiers, the backbone of the Roman army. That a centurion would appeal to a Jewish healer reflects both desperation and unusual openness.</div><div class="source-note">Centurions appear positively in Matthew (8:5–13) and Luke (7:1–10; 23:47) — their institutional role in the crucifixion and their positive personal responses create a studied contrast.</div></div><div class="source-block"><div class="source-title">The Sea of Galilee</div><div class="source-quote">Below sea level, surrounded by hills that funnel sudden storms down onto the lake. Furious squalls are historically documented.</div><div class="source-note">The geographical setting makes the storm narrative historically plausible.</div></div></div><div id="mt8-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Isa 53:4 in Matthew</div><div class="rec-text">Matthew's use of Isa 53:4 for physical healing (v.17) diverges from Paul's spiritual use (1 Pet 2:24). The difference reflects two dimensions of the Servant's work: physical restoration and spiritual atonement are both aspects of the one redemption.</div></div><div class="rec-block"><div class="rec-who">The centurion in liturgy</div><div class="rec-text">The centurion's words in v.8 are the basis for the Agnus Dei in Catholic/Anglican liturgy: "Lord, I am not worthy that thou shouldst come under my roof" — spoken before communion since at least the 8th century.</div></div></div><div id="mt8-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Three healings — vv.1–17</span><span class="lit-text">Leper; centurion's servant; Peter's mother-in-law; Isa 53:4</span></div><div class="lit-row"><span class="lit-label">Discipleship and nature miracles — vv.18–34</span><span class="lit-text">Cost of following; stilling the storm; Gadarene demoniacs</span></div><div class="lit-note">Chapter 8 fills in the summary of 4:23 with specific stories. The authority demonstrated covers social outsiders (leper, Gentile, woman), nature (storm), and the demonic (Gadarenes). The disciples' question — "what kind of man is this?" — is the chapter's theological centre.</div></div></div><div id="mt8-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">8</sup> "Just say the <span class="dn-key">word</span>, and my servant will be healed." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">27</sup> "What kind of man is this? Even the winds and the waves obey him!"</p></div><div id="mt8-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">8:17</span><span class="thread-arrow">→</span><span class="thread-target">Isa 53:4</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">He took up our infirmities — the Servant's bearing of human suffering enacted in the healings.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">8:26</span><span class="thread-arrow">→</span><span class="thread-target">Ps 107:29</span><span class="thread-type echo">Echo</span></div><div class="thread-text">He stilled the storm — God's act in the Psalter attributed to Jesus.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">8:10–11</span><span class="thread-arrow">→</span><span class="thread-target">Matt 28:19</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Faith from the Gentile centurion anticipates the harvest from all nations.</div></div></div><div id="mt8-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,188.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Messianic Authority</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faith</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Servant</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Gentile Inclusion</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Discipleship Cost</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Little Faith</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 8 is the authority chapter. Every miracle demonstrates exousia over a different domain: purity law (leper), ethnicity (centurion), sickness (mother-in-law), nature (storm), demonic (Gadarenes). The disciples' question — "what kind of man is this?" — awaits the answer the gospel is building toward.</p></div>
+<div id="mt8-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The leper</div><div class="person-role">Excluded by purity law</div><div class="person-text">Jesus touches the untouchable. Holiness more powerful than impurity.</div></div><div class="person-card"><div class="person-name">The centurion</div><div class="person-role">Gentile; greatest faith in Israel</div><div class="person-text">Trusts Jesus's word without requiring his presence. Anticipates the Gentile mission.</div></div><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Little faith in the storm</div><div class="person-text">Real faith but insufficient. The test they fail the centurion passed.</div></div></div></div><div id="mt8-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 8 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Lord, I do not deserve to have you come under my roof. But just say the word, and my servant will be healed."</td></tr><tr><td class="t-label">Note</td><td>The centurion's authority-logic: commands are obeyed because of the rank behind them. He applies this to Jesus — confidence in his word, not in his physical presence. This is the definition of faith in Matthew 8.</td></tr></table></div><div id="mt8-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Roman centurion</div><div class="source-quote">Commander of 80–100 soldiers, the backbone of the Roman army. That a centurion would appeal to a Jewish healer reflects both desperation and unusual openness.</div><div class="source-note">Centurions appear positively in Matthew (8:5–13) and Luke (7:1–10; 23:47) — their institutional role in the crucifixion and their positive personal responses create a studied contrast.</div></div><div class="source-block"><div class="source-title">The Sea of Galilee</div><div class="source-quote">Below sea level, surrounded by hills that funnel sudden storms down onto the lake. Furious squalls are historically documented.</div><div class="source-note">The geographical setting makes the storm narrative historically plausible.</div></div></div><div id="mt8-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Isa 53:4 in Matthew</div><div class="rec-text">Matthew's use of Isa 53:4 for physical healing (v.17) diverges from Paul's spiritual use (1 Pet 2:24). The difference reflects two dimensions of the Servant's work: physical restoration and spiritual atonement are both aspects of the one redemption.</div></div><div class="rec-block"><div class="rec-who">The centurion in liturgy</div><div class="rec-text">The centurion's words in v.8 are the basis for the Agnus Dei in Catholic/Anglican liturgy: "Lord, I am not worthy that thou shouldst come under my roof" — spoken before communion since at least the 8th century.</div></div></div><div id="mt8-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The leper is touched; the centurion's servant healed at a distance; Peter's mother-in-law healed by touch. Every mode of healing demonstrates the comprehensive authority.</div><div class="lit-row"><span class="lit-label">Two Demonstrations: Storm and Demons — 8:23-34</span><span class="lit-text">One word stills the storm; one word sends the demons into pigs. Nature and the demonic are both subject to the same authority. The disciples' question -- who is this? -- is the question the chapter presses.</span></div></div></div><div id="mt8-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[('kyrios', 'kyrios', 'Lord', 'The address of the leper, the centurion, and the disciples in the storm. In the LXX this is the word for YHWH. Those who encounter Jesus in need address him with the divine name.'), ('pistis', 'pistis', 'Faith / trust', "The centurion's faith is called great; the disciples' is called little. The difference is orientation: the centurion trusts Jesus' authority completely; the disciples' trust collapses under the storm.")]</div><div id="mt8-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">8:17</span><span class="tx-issue">He took up our infirmities and bore our diseases (Isa 53:4)</span></div><div class="tx-variants">Matthew applies Isa 53:4 to the healing ministry. Isaiah 53:4 in MT: aken cholayenu hu nasa.</div><div class="tx-sig">Matthew extends the Servant's bearing to physical disease as well as sin. The immediate fulfilment is the healing ministry; the ultimate fulfilment is the atonement addressing the root cause of all disease.</div></div></div><div id="mt8-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Does Matthew 8:17 Teach Physical Healing in the Atonement?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Yes -- Isaiah 53:4 applies to physical healing</div><div class="db-proponents">Word of Faith theology, some Pentecostals</div><div class="db-argument">Matthew's application of Isa 53:4 to physical healing establishes it as part of the atonement's provision.</div></div><div class="db-position"><div class="db-pos-name">No -- Matthew describes the ministry, not the atonement mechanism</div><div class="db-proponents">Reformed and most evangelical commentators</div><div class="db-argument">Matthew applies Isa 53:4 to the healing ministry as its own fulfilment. The atonement (Isa 53:5) addresses sin; the healing ministry (53:4) demonstrates compassionate bearing of human suffering.</div></div></div><div class="db-synthesis">The Reformed reading is most consistent with Matthew's context and with Peter's use of Isa 53:5 (not 53:4) for the atonement (1 Pet 2:24).</div></div></div><div id="mt8-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Comprehensive Healing Authority</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Centurion: Gentile Faith</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Storm Stilling: Natural Authority</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Demonic Deliverance</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 8 presents Jesus' authority across every domain: physical disease, distance, natural forces, and demonic power. The chapter's governing Christological question -- who is this man? -- is answered cumulatively by the evidence of authority that no human being possesses.</p></div>
 </div>
 </main>
 <script>
@@ -362,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Galilee','Capernaum','Jordan','synagogue','temple','mountain','sea','Nazareth','Bethsaida','Chorazin'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','scribes','John','Peter','crowd','centurion','Herod','Satan','devil'],cls:'vhl-person',btn:['people','context']};
-  var TIME  ={words:['day','days','night','hour','kingdom','age','harvest','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','authority','healing','faith','repent','Son of Man','Son of God','forgive','Spirit','covenant'],cls:'vhl-key',btn:['literary','cross']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -508,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -517,8 +771,8 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    hist = hist.filter(function(h){ return h.url !== url; });
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
     hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
     if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
