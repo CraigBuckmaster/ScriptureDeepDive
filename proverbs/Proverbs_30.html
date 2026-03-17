@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 30</h1>
-<p>The Words of Agur: I Am Weary; Add Nothing to His Words; The Four Things</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Agur's Confession; Every Word of God Flawless; Four Wonders</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; Agur's Confession; Add Nothing to God's Words; Remove Falsehood and Poverty</div><span class="verse-text"><span class="verse-num">1</span>The sayings of Agur son of Jakeh— an inspired utterance. This man's utterance to Ithiel: "I am weary, God, but I can prevail.</span><span class="verse-text"><span class="verse-num">2</span>"I am the most ignorant of men; I do not have human wisdom.</span><span class="verse-text"><span class="verse-num">3</span>I have not learned wisdom, nor have I attained to the knowledge of the Holy One.</span><span class="verse-text"><span class="verse-num">4</span>Who has gone up to heaven and come down? Whose hands have gathered up the wind? Who has wrapped up the waters in a cloak? Who has established all the ends of the earth? What is his name, and what is the name of his son? Surely you know!</span><span class="verse-text"><span class="verse-num">5</span>"Every word of God is flawless; he is a shield to those who take refuge in him.</span><span class="verse-text"><span class="verse-num">6</span>Do not add to his words, or he will rebuke you and prove you a liar.</span><span class="verse-text"><span class="verse-num">7</span>"Two things I ask of you, LORD; do not refuse me before I die:</span><span class="verse-text"><span class="verse-num">8</span>Keep falsehood and lies far from me; give me neither poverty nor riches, but give me only my daily bread.</span><span class="verse-text"><span class="verse-num">9</span>Otherwise, I may have too much and disown you and say, 'Who is the LORD?' Or I may become poor and steal, and so dishonor the name of my God.</span><span class="verse-text"><span class="verse-num">10</span>Do not slander a servant to their master, or the one who is wronged will curse you, and you will pay for it.</span><span class="verse-text"><span class="verse-num">11</span>There are those who curse their fathers and do not bless their mothers;</span><span class="verse-text"><span class="verse-num">12</span>those who are pure in their own eyes and yet are not cleansed of their filth;</span><span class="verse-text"><span class="verse-num">13</span>those who are haughty — oh how lofty are their eyes!</span><span class="verse-text"><span class="verse-num">14</span>those who have teeth like swords and whose jaws are set with knives to devour the poor from the earth and the needy from among mankind.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr30-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr30-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr30-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr30-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr30-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">נִלְאֵיתִי</span> <span class="tlit">nilaiti</span> — <strong>I am weary / I am exhausted</strong>: V.1: the words of Agur son of Jakeh — an utterance. "I am weary, O God; I am weary, O God, and worn out." Agur's opening confession is the most explicitly humble in the wisdom literature. He confesses intellectual exhaustion before the unfathomability of God. This is not false modesty but the genuine humility that precedes authentic wisdom.</p></div><div id="pr30-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.30 introduces a new voice: Agur son of Jakeh, who opens with an unprecedented confession of intellectual humility (vv.2-3) before asserting the sufficiency of God's word (v.5) and the prayer for neither poverty nor riches (vv.8-9). The numerical sayings begin (vv.11-14) with the four generations who curse or fail to honour.</p></div><div id="pr30-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Job 38-41</span><span class="ref-text">God's speech from the whirlwind — Agur's questions about who has gone up to heaven (v.4) echo the divine interrogation of Job. The unfathomability of God is the prerequisite for genuine humility.</span></li><li><span class="ref-cite">Prov 30:5-6</span><span class="ref-text">Every word of God is flawless; do not add to his words — the warning against supplementing God's word with human additions.</span></li></ul></div><div id="pr30-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:2-3</span><p>I am too stupid to be human; I do not have human understanding. I have not learned wisdom, nor have I attained to the knowledge of the Holy One. Agur's opening confession is the wisest statement in the book: genuine humility about one's limits is the prerequisite for genuine wisdom. This is the practised posture of the truly wise.</p></div><div class="com-note"><span class="com-ref">30:5-6</span><p>Every word of God is flawless; he is a shield to those who take refuge in him. Do not add to his words, or he will rebuke you and prove you a liar. The sufficiency of God's word is the answer to Agur's intellectual humility. He cannot attain to the Holy One by his own investigation, but God's word is flawless and sufficient. The prohibition against adding to it is the wisdom tradition's most explicit statement of sola scriptura.</p></div><div class="com-note"><span class="com-ref">30:8-9</span><p>Give me neither poverty nor riches, but give me only my daily bread. Otherwise, I may have too much and disown you, or I may become poor and steal. Agur's prayer for the middle way is the most psychologically honest assessment of wealth's spiritual danger in Proverbs. Both extremes are dangers; the wisdom prayer is for sufficiency without excess.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;33 &mdash; The Four Things; The Way of an Eagle; Locusts Without a King</div><span class="verse-text"><span class="verse-num">15</span>The leech has two daughters. "Give! Give!" they cry. "There are three things that are never satisfied, four that never say 'enough':</span><span class="verse-text"><span class="verse-num">16</span>the grave, the barren womb, land, which is never satisfied with water, and fire, which never says 'enough!'</span><span class="verse-text"><span class="verse-num">17</span>The eye that mocks a father, that scorns an aged mother, will be pecked out by the ravens of the valley, will be eaten by the vultures.</span><span class="verse-text"><span class="verse-num">18</span>There are three things that are too amazing for me, four that I do not understand:</span><span class="verse-text"><span class="verse-num">19</span>the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman.</span><span class="verse-text"><span class="verse-num">20</span>This is the way of an adulterous woman: She eats and wipes her mouth and says, 'I've done nothing wrong.'</span><span class="verse-text"><span class="verse-num">21</span>Under three things the earth trembles, under four it cannot bear up:</span><span class="verse-text"><span class="verse-num">22</span>a servant who becomes king, a godless fool who gets plenty to eat,</span><span class="verse-text"><span class="verse-num">23</span>a contemptible woman who gets married, and a servant who displaces her mistress.</span><span class="verse-text"><span class="verse-num">24</span>Four things on earth are small, yet they are extremely wise:</span><span class="verse-text"><span class="verse-num">25</span>Ants are creatures of little strength, yet they store up their food in the summer;</span><span class="verse-text"><span class="verse-num">26</span>hyraxes are creatures of little power, yet they make their home in the crags;</span><span class="verse-text"><span class="verse-num">27</span>locusts have no king, yet they advance together in ranks;</span><span class="verse-text"><span class="verse-num">28</span>a lizard can be caught with the hand, yet it is found in kings' palaces.</span><span class="verse-text"><span class="verse-num">29</span>There are three things that are stately in their stride, four that move with stately bearing:</span><span class="verse-text"><span class="verse-num">30</span>a lion, mighty among beasts, who retreats before nothing;</span><span class="verse-text"><span class="verse-num">31</span>a strutting rooster, a he-goat, and a king secure in his authority.</span><span class="verse-text"><span class="verse-num">32</span>If you play the fool and exalt yourself, or if you plan evil, clap your hand over your mouth!</span><span class="verse-text"><span class="verse-num">33</span>For as churning cream produces butter, and as twisting the nose produces blood, so stirring up anger produces strife.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr30-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr30-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr30-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr30-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr30-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">דֶּרֶךְ נֶשֶׁר</span> <span class="tlit">derech nesher</span> — <strong>way of an eagle</strong>: V.19: the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman. The four things too wonderful to understand — the common element is movement that leaves no trace. Wonder and mystery are as much a part of wisdom as proverbs and instruction.</p></div><div id="pr30-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.30 is dominated by the numerical sayings — the four things, the way of an eagle (vv.18-19), the earth shaking at four things (vv.21-23), the four small creatures who are wise (vv.24-28), and the four stately creatures (vv.29-31). The numerical form is a teaching device: cataloguing wisdom makes it memorable. The chapter closes with the warning against stirring up anger (v.33).</p></div><div id="pr30-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 6:6-8</span><span class="ref-text">Go to the ant, you sluggard — the ants as a wisdom example recurs in v.25. Small creatures with great wisdom are a consistent Proverbs motif.</span></li><li><span class="ref-cite">Matt 6:25-34</span><span class="ref-text">Do not worry about food and clothing — Jesus's teaching embodies the middle way between poverty and riches that Agur's prayer (vv.8-9) requests.</span></li></ul></div><div id="pr30-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:18-19</span><p>There are three things that are too amazing for me, four that I do not understand: the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman. Wonder is a category of wisdom. The things that cannot be fully understood or explained are not problems to be solved but mysteries to be honoured. The numerical sayings celebrate the inexhaustible richness of God's world.</p></div><div class="com-note"><span class="com-ref">30:24-28</span><p>Four things on earth are small, yet they are extremely wise: ants, hyraxes, locusts, lizards. The four small-but-wise creatures — all succeeding through wisdom rather than strength. Size and power are not the measure of effectiveness. The ant stores food; the hyrax builds in rock; the locust advances in ranks; the lizard enters the king's palace. Wisdom compensates for what strength lacks.</p></div><div class="com-note"><span class="com-ref">30:33</span><p>For as churning cream produces butter, and as twisting the nose produces blood, so stirring up anger produces strife. The chapter's closing proverb is both practical and final: churning produces something; twisting produces pain; stirring up anger produces strife. The mechanisms are inevitable. The wise person does not start what they cannot control.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; Agur's Confession; Add Nothing to God's Words; Remove Falsehood and Poverty</div><span class="verse-text"><span class="verse-num">1</span>The sayings of Agur son of Jakeh— an inspired utterance. This man's utterance to Ithiel: "I am weary, God, but I can prevail.</span><span class="verse-text"><span class="verse-num">2</span>"I am the most ignorant of men; I do not have human wisdom.</span><span class="verse-text"><span class="verse-num">3</span>I have not learned wisdom, nor have I attained to the knowledge of the Holy One.</span><span class="verse-text"><span class="verse-num">4</span>Who has gone up to heaven and come down? Whose hands have gathered up the wind? Who has wrapped up the waters in a cloak? Who has established all the ends of the earth? What is his name, and what is the name of his son? Surely you know!</span><span class="verse-text"><span class="verse-num">5</span>"Every word of God is flawless; he is a shield to those who take refuge in him.</span><span class="verse-text"><span class="verse-num">6</span>Do not add to his words, or he will rebuke you and prove you a liar.</span><span class="verse-text"><span class="verse-num">7</span>"Two things I ask of you, LORD; do not refuse me before I die:</span><span class="verse-text"><span class="verse-num">8</span>Keep falsehood and lies far from me; give me neither poverty nor riches, but give me only my daily bread.</span><span class="verse-text"><span class="verse-num">9</span>Otherwise, I may have too much and disown you and say, 'Who is the LORD?' Or I may become poor and steal, and so dishonor the name of my God.</span><span class="verse-text"><span class="verse-num">10</span>Do not slander a servant to their master, or the one who is wronged will curse you, and you will pay for it.</span><span class="verse-text"><span class="verse-num">11</span>There are those who curse their fathers and do not bless their mothers;</span><span class="verse-text"><span class="verse-num">12</span>those who are pure in their own eyes and yet are not cleansed of their filth;</span><span class="verse-text"><span class="verse-num">13</span>those who are haughty — oh how lofty are their eyes!</span><span class="verse-text"><span class="verse-num">14</span>those who have teeth like swords and whose jaws are set with knives to devour the poor from the earth and the needy from among mankind.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr30-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr30-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr30-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr30-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr30-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr30-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr30-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr30-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr30-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">נִלְאֵיתִי</span> <span class="tlit">nilaiti</span> — <strong>I am weary / I am exhausted</strong>: V.1: the words of Agur son of Jakeh — an utterance. "I am weary, O God; I am weary, O God, and worn out." Agur's opening confession is the most explicitly humble in the wisdom literature. He confesses intellectual exhaustion before the unfathomability of God. This is not false modesty but the genuine humility that precedes authentic wisdom.</p></div><div id="pr30-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.30 introduces a new voice: Agur son of Jakeh, who opens with an unprecedented confession of intellectual humility (vv.2-3) before asserting the sufficiency of God's word (v.5) and the prayer for neither poverty nor riches (vv.8-9). The numerical sayings begin (vv.11-14) with the four generations who curse or fail to honour.</p></div><div id="pr30-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Job 38-41</span><span class="ref-text">God's speech from the whirlwind — Agur's questions about who has gone up to heaven (v.4) echo the divine interrogation of Job. The unfathomability of God is the prerequisite for genuine humility.</span></li><li><span class="ref-cite">Prov 30:5-6</span><span class="ref-text">Every word of God is flawless; do not add to his words — the warning against supplementing God's word with human additions.</span></li></ul></div><div id="pr30-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:2-3</span><p>I am too stupid to be human; I do not have human understanding. I have not learned wisdom, nor have I attained to the knowledge of the Holy One. Agur's opening confession is the wisest statement in the book: genuine humility about one's limits is the prerequisite for genuine wisdom. This is the practised posture of the truly wise.</p></div><div class="com-note"><span class="com-ref">30:5-6</span><p>Every word of God is flawless; he is a shield to those who take refuge in him. Do not add to his words, or he will rebuke you and prove you a liar. The sufficiency of God's word is the answer to Agur's intellectual humility. He cannot attain to the Holy One by his own investigation, but God's word is flawless and sufficient. The prohibition against adding to it is the wisdom tradition's most explicit statement of sola scriptura.</p></div><div class="com-note"><span class="com-ref">30:8-9</span><p>Give me neither poverty nor riches, but give me only my daily bread. Otherwise, I may have too much and disown you, or I may become poor and steal. Agur's prayer for the middle way is the most psychologically honest assessment of wealth's spiritual danger in Proverbs. Both extremes are dangers; the wisdom prayer is for sufficiency without excess.</p></div></div><div id="pr30-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">30:4</span><p>Alter: The mention of God's son in the rhetorical questions is striking. It is unique in this form in the OT outside Messianic contexts.</p></div></div><div id="pr30-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">30:1-4</span><p>Waltke: Agur's confession of ignorance is the most radical epistemological humility in Proverbs. His cosmological questions — culminating in 'what is his name and what is the name of his son?' — are the deepest theological questions in the book.</p></div></div><div id="pr30-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:5</span><p>Calvin: 'Every word of God is flawless — God's word requires no supplement from human wisdom. It is a shield to those who take refuge in it.'</p></div></div><div id="pr30-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">30:4</span><p>The NET note discusses the Son question: evangelical scholars read Messianic anticipation; critical scholars read pure rhetorical emphasis on inscrutability.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;33 &mdash; The Four Things; The Way of an Eagle; Locusts Without a King</div><span class="verse-text"><span class="verse-num">15</span>The leech has two daughters. "Give! Give!" they cry. "There are three things that are never satisfied, four that never say 'enough':</span><span class="verse-text"><span class="verse-num">16</span>the grave, the barren womb, land, which is never satisfied with water, and fire, which never says 'enough!'</span><span class="verse-text"><span class="verse-num">17</span>The eye that mocks a father, that scorns an aged mother, will be pecked out by the ravens of the valley, will be eaten by the vultures.</span><span class="verse-text"><span class="verse-num">18</span>There are three things that are too amazing for me, four that I do not understand:</span><span class="verse-text"><span class="verse-num">19</span>the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman.</span><span class="verse-text"><span class="verse-num">20</span>This is the way of an adulterous woman: She eats and wipes her mouth and says, 'I've done nothing wrong.'</span><span class="verse-text"><span class="verse-num">21</span>Under three things the earth trembles, under four it cannot bear up:</span><span class="verse-text"><span class="verse-num">22</span>a servant who becomes king, a godless fool who gets plenty to eat,</span><span class="verse-text"><span class="verse-num">23</span>a contemptible woman who gets married, and a servant who displaces her mistress.</span><span class="verse-text"><span class="verse-num">24</span>Four things on earth are small, yet they are extremely wise:</span><span class="verse-text"><span class="verse-num">25</span>Ants are creatures of little strength, yet they store up their food in the summer;</span><span class="verse-text"><span class="verse-num">26</span>hyraxes are creatures of little power, yet they make their home in the crags;</span><span class="verse-text"><span class="verse-num">27</span>locusts have no king, yet they advance together in ranks;</span><span class="verse-text"><span class="verse-num">28</span>a lizard can be caught with the hand, yet it is found in kings' palaces.</span><span class="verse-text"><span class="verse-num">29</span>There are three things that are stately in their stride, four that move with stately bearing:</span><span class="verse-text"><span class="verse-num">30</span>a lion, mighty among beasts, who retreats before nothing;</span><span class="verse-text"><span class="verse-num">31</span>a strutting rooster, a he-goat, and a king secure in his authority.</span><span class="verse-text"><span class="verse-num">32</span>If you play the fool and exalt yourself, or if you plan evil, clap your hand over your mouth!</span><span class="verse-text"><span class="verse-num">33</span>For as churning cream produces butter, and as twisting the nose produces blood, so stirring up anger produces strife.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr30-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr30-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr30-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr30-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr30-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr30-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr30-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr30-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr30-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">דֶּרֶךְ נֶשֶׁר</span> <span class="tlit">derech nesher</span> — <strong>way of an eagle</strong>: V.19: the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman. The four things too wonderful to understand — the common element is movement that leaves no trace. Wonder and mystery are as much a part of wisdom as proverbs and instruction.</p></div><div id="pr30-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half of ch.30 is dominated by the numerical sayings — the four things, the way of an eagle (vv.18-19), the earth shaking at four things (vv.21-23), the four small creatures who are wise (vv.24-28), and the four stately creatures (vv.29-31). The numerical form is a teaching device: cataloguing wisdom makes it memorable. The chapter closes with the warning against stirring up anger (v.33).</p></div><div id="pr30-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 6:6-8</span><span class="ref-text">Go to the ant, you sluggard — the ants as a wisdom example recurs in v.25. Small creatures with great wisdom are a consistent Proverbs motif.</span></li><li><span class="ref-cite">Matt 6:25-34</span><span class="ref-text">Do not worry about food and clothing — Jesus's teaching embodies the middle way between poverty and riches that Agur's prayer (vv.8-9) requests.</span></li></ul></div><div id="pr30-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:18-19</span><p>There are three things that are too amazing for me, four that I do not understand: the way of an eagle in the sky, the way of a snake on a rock, the way of a ship on the high seas, and the way of a man with a young woman. Wonder is a category of wisdom. The things that cannot be fully understood or explained are not problems to be solved but mysteries to be honoured. The numerical sayings celebrate the inexhaustible richness of God's world.</p></div><div class="com-note"><span class="com-ref">30:24-28</span><p>Four things on earth are small, yet they are extremely wise: ants, hyraxes, locusts, lizards. The four small-but-wise creatures — all succeeding through wisdom rather than strength. Size and power are not the measure of effectiveness. The ant stores food; the hyrax builds in rock; the locust advances in ranks; the lizard enters the king's palace. Wisdom compensates for what strength lacks.</p></div><div class="com-note"><span class="com-ref">30:33</span><p>For as churning cream produces butter, and as twisting the nose produces blood, so stirring up anger produces strife. The chapter's closing proverb is both practical and final: churning produces something; twisting produces pain; stirring up anger produces strife. The mechanisms are inevitable. The wise person does not start what they cannot control.</p></div></div><div id="pr30-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">30:18-19</span><p>Alter: The four wonders share the quality of leaving no trace. The bond between man and woman — the fourth — is as inexplicable as the flight of an eagle.</p></div></div><div id="pr30-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">30:5</span><p>Waltke: Every word of God is flawless (tsrufah, refined as metal) — this is Proverbs' most direct statement on the authority and sufficiency of divine revelation.</p></div></div><div id="pr30-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">30:4</span><p>Calvin: 'What is his name, and what is the name of his son? — moved by the Spirit, this points mysteriously to the mystery of the Father and his eternal Son.'</p></div></div><div id="pr30-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">30:18-19</span><p>The NET note on the four too-wonderful things discusses what they share: movement that leaves no visible trace.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr30-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr30-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr30-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr30-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr30-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr30-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr30-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr30-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr30-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr30-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr30-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr30-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr30-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr30-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr30-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr30-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr30-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr30-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr30-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">30:8-9 — Neither Poverty Nor Riches</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Give me neither poverty nor riches, but give me only my daily bread."</td></tr><tr><td class="t-label">Note</td><td>Agur's prayer for the middle way — the most psychologically honest assessment of wealth's spiritual danger in Proverbs. Both extremes threaten the relationship with God.</td></tr></table></div><div id="pr30-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr30-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr30-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-14</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.15ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 30: Agur's opening confession of intellectual humility (v.2-3) is the wisest statement in the book. God's word is flawless and sufficient (vv.5-6). Agur's prayer for neither poverty nor riches (vv.8-9) is the most honest assessment of wealth's spiritual danger in Proverbs.</div></div></div><div id="pr30-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"Give me neither poverty nor riches, but give me only my daily bread."</p></div><div id="pr30-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation underlying every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr30-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,188.0 61.1,154.0 75.8,94.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Humble Before God</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sufficiency of God's Word</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Middle Way</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wonder and Mystery</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Small but Wise</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Numerical Sayings</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 30: Agur's opening confession of intellectual humility (v.2-3) is the wisest statement in the book. God's word is flawless and sufficient (vv.5-6). Agur's prayer for neither poverty nor riches (vv.8-9) is the most honest assessment of wealth's spiritual danger in Proverbs.</p></div>
+<div id="pr30-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr30-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 30 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Give me neither poverty nor riches, but give me only my daily bread."</td></tr><tr><td class="t-label">Note</td><td>Agur's prayer for the middle way — the most psychologically honest assessment of wealth's spiritual danger in Proverbs. Both extremes threaten the relationship with God.</td></tr></table></div><div id="pr30-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr30-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr30-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Agur's radical intellectual humility — the wisest epistemological posture in Proverbs. The cosmological questions show he is not literally ignorant but epistemologically humble before the infinite God.</div><div class="lit-row"><span class="lit-label">The Four Wonders: Mystery as Wisdom — 30:18-19</span><span class="lit-text">The four too-wonderful things celebrate mystery that exceeds rational explanation. Wisdom includes the capacity to wonder — not everything reduces to an explanation.</span></div></div></div><div id="pr30-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('אָגוּר / Agur', 'agur', 'Agur son of Jakeh', 'The author of ch.30 — an otherwise unknown sage whose confession of ignorance is the most theologically radical self-presentation in Proverbs. Genuine wisdom begins with acknowledged limitation.'), ('צְרוּפָה / Tsrufah', 'tsrufah', 'Refined / flawless (as metal)', "The quality of God's word (30:5). Tsaraf (to refine/test as metal) — God's word is like refined metal, tested and proved. The crucible metaphor of 17:3 applied now to divine speech itself.")]</div><div id="pr30-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">30:4</span><span class="tx-issue">'What is his name, and what is the name of his son?'</span></div><div class="tx-variants">MT: mah shemo uma shem beno ki teda. Part of Agur's rhetorical cosmological series.</div><div class="tx-sig">Evangelical scholars read Messianic anticipation; critical scholars read rhetorical emphasis on God's inscrutability. The question's striking nature is undeniable.</div></div></div><div id="pr30-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Proverbs 30:5-6 and the Sufficiency of Scripture</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A sufficiency statement</div><div class="db-proponents">Waltke, most evangelical scholars</div><div class="db-argument">'Do not add to his words' is a direct instruction about divine revelation's completeness and authority. The NT closes with the same instruction (Rev 22:18-19).</div></div><div class="db-position"><div class="db-pos-name">A warning about false prophecy, not a canon statement</div><div class="db-proponents">Some scholars</div><div class="db-argument">In context, the warning is about not putting words in God's mouth, not about a canon that did not yet exist as a defined entity.</div></div></div><div class="db-synthesis">Both applications are valid. The immediate context is anti-false-prophecy, but the principle it expresses — the sufficiency and authority of God's word — is the foundation of the canon-sufficiency doctrine.</div></div></div><div id="pr30-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Agur's Radical Humility</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sufficiency of God's Word</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Numerical Proverbs: Four Wonders</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mystery as Wisdom</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 30 is the book's strangest chapter — an outsider sage (Agur) whose confession of ignorance is its deepest epistemological statement. His four-wonders celebration of mystery is the complement to all the book's careful observations.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {

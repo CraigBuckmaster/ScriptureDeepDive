@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 29</h1>
-<p>Many Rebukes; Righteous Rule Rejoices; Vision and Torah</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Stiff-Necked; Where There Is No Vision; Fear of Man as Snare</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; Stubborn Neck; Righteous Rule; Wise Servant; Anger vs Self-Control</div><span class="verse-text"><span class="verse-num">1</span>Whoever remains stiff-necked after many rebukes will suddenly be destroyed—without remedy.</span><span class="verse-text"><span class="verse-num">2</span>When the righteous thrive, the people rejoice; when the wicked rule, the people groan.</span><span class="verse-text"><span class="verse-num">3</span>A man who loves wisdom brings joy to his father, but a companion of prostitutes squanders his wealth.</span><span class="verse-text"><span class="verse-num">4</span>By justice a king gives a country stability, but those who are greedy for bribes tear it down.</span><span class="verse-text"><span class="verse-num">5</span>Those who flatter their neighbors are spreading nets for their feet.</span><span class="verse-text"><span class="verse-num">6</span>Evildoers are snared by their own sin, but the righteous shout for joy and are glad.</span><span class="verse-text"><span class="verse-num">7</span>The righteous care about justice for the poor, but the wicked have no such concern.</span><span class="verse-text"><span class="verse-num">8</span>Mockers stir up a city, but the wise turn away anger.</span><span class="verse-text"><span class="verse-num">9</span>If a wise person goes to court with a fool, the fool rages and scoffs, and there is no peace.</span><span class="verse-text"><span class="verse-num">10</span>The bloodthirsty hate a person of integrity and seek to kill the upright.</span><span class="verse-text"><span class="verse-num">11</span>Fools give full vent to their rage, but the wise bring calm in the end.</span><span class="verse-text"><span class="verse-num">12</span>If a ruler listens to lies, all his officials become wicked.</span><span class="verse-text"><span class="verse-num">13</span>The poor and the oppressor have this in common: The LORD gives sight to the eyes of both.</span><span class="verse-text"><span class="verse-num">14</span>If a king judges the poor with fairness, his throne will be established forever.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr29-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr29-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr29-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr29-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr29-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">עֹרֶף</span> <span class="tlit">oref</span> — <strong>neck / stiff-necked</strong>: V.1: whoever remains stiff-necked after many rebukes will suddenly be destroyed — without remedy. The stiff neck (ʿōrep) is the OT's image for wilful resistance to correction — the neck that refuses to bow. The "many rebukes" are acts of grace: repeated invitations to course-correct. Their rejection leads to sudden, irremediable destruction.</p></div><div id="pr29-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.29 addresses governance and social order: stubborn resistance to correction (v.1), the rejoicing of a people under righteous rule (v.2), the king who loves justice (v.4), and the contrast between the hot-tempered fool and the self-controlled wise person (v.11).</p></div><div id="pr29-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Exod 32:25</span><span class="ref-text">Moses saw that the people had broken loose — 'pāraʿ' — the same word as v.18's "cast off restraint." Without the word of God, the people break loose as Israel did at Sinai.</span></li><li><span class="ref-cite">Prov 14:34</span><span class="ref-text">Righteousness exalts a nation — the same social-righteousness principle as the rejoicing under righteous rule (v.2).</span></li></ul></div><div id="pr29-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:1</span><p>Whoever remains stiff-necked after many rebukes will suddenly be destroyed — without remedy. The most sobering verse in ch.29. Many rebukes are grace; their repeated rejection makes the final destruction irremediable. The window for correction does not remain open indefinitely.</p></div><div class="com-note"><span class="com-ref">29:2</span><p>When the righteous thrive, the people rejoice; when the wicked rule, the people groan. The most direct statement in Proverbs of the social consequence of who governs. Good governance produces community rejoicing; wicked governance produces corporate groaning. Leadership quality is not a private matter.</p></div><div class="com-note"><span class="com-ref">29:11</span><p>Fools give full vent to their rage, but the wise bring calm in the end. The hot-tempered fool exhausts their anger in the moment; the wise person controls theirs. The self-control of v.11 produces the calm in the end — the relationship is not destroyed, the dispute is not escalated beyond repair.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;27 &mdash; Correction and Rest; Where There Is No Vision; Fear of Man Is a Snare</div><span class="verse-text"><span class="verse-num">15</span>A rod and a reprimand impart wisdom, but a child left undisciplined disgraces its mother.</span><span class="verse-text"><span class="verse-num">16</span>When the wicked thrive, so does sin, but the righteous will see their downfall.</span><span class="verse-text"><span class="verse-num">17</span>Discipline your children, and they will give you peace; they will bring you the delights you desire.</span><span class="verse-text"><span class="verse-num">18</span>Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction.</span><span class="verse-text"><span class="verse-num">19</span>Servants cannot be corrected by mere words; though they understand, they will not respond.</span><span class="verse-text"><span class="verse-num">20</span>Do you see someone who speaks in haste? There is more hope for a fool than for them.</span><span class="verse-text"><span class="verse-num">21</span>A servant pampered from youth will turn out to be insolent.</span><span class="verse-text"><span class="verse-num">22</span>An angry person stirs up conflict, and a hot-tempered person commits many sins.</span><span class="verse-text"><span class="verse-num">23</span>Pride brings a person low, but the lowly in spirit gain honor.</span><span class="verse-text"><span class="verse-num">24</span>The accomplices of thieves are their own enemies; they are put under oath and dare not testify.</span><span class="verse-text"><span class="verse-num">25</span>Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe.</span><span class="verse-text"><span class="verse-num">26</span>Many seek an audience with a ruler, but it is from the LORD that one gets justice.</span><span class="verse-text"><span class="verse-num">27</span>The righteous detest the dishonest; the wicked detest the upright.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr29-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr29-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr29-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr29-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr29-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חָזוֹן</span> <span class="tlit">chazon</span> — <strong>vision / revelation</strong>: V.18: where there is no revelation (ḥāzôn — prophetic vision, word from God), people cast off restraint; but blessed is the one who heeds wisdom's instruction. The verse is not about strategic planning vision but about the divine word that orders a community. Without the word of God, social chaos ensues. With it (and with the instruction of wisdom), blessing follows.</p></div><div id="pr29-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains the chapter's most famous verse (v.18 — where there is no vision) alongside the fear-of-man snare (v.25), and the chapter's closing observation: the LORD's judgments are compared to those of human authorities. The fear of the LORD overcomes the fear of man.</p></div><div id="pr29-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 14:26</span><span class="ref-text">Whoever fears the LORD has a secure fortress — the fear-of-man snare (v.25) is the negative counterpart to the fear-of-the-LORD security.</span></li><li><span class="ref-cite">Acts 5:29</span><span class="ref-text">We must obey God rather than human beings — the NT application of v.25's trust-in-the-LORD over fear-of-man principle.</span></li></ul></div><div id="pr29-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:18</span><p>Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction. The chapter's most famous verse. Ḥāzôn is prophetic vision — the word of God received through the prophetic channel. Without it, the people pāraʿ — break loose, become ungovernable. The word of God is the social ligament that holds community together.</p></div><div class="com-note"><span class="com-ref">29:25</span><p>Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe. Among the most liberating verses in Proverbs. The snare of human approval-seeking — adjusting one's life to the opinions and responses of others — is a trap. Trust in the LORD produces the safety that fear of man promises but cannot deliver.</p></div><div class="com-note"><span class="com-ref">29:27</span><p>The righteous detest the dishonest; the wicked detest the upright. The chapter's final verse is also its starkest: the moral opposition between the righteous and the wicked is not merely preferential but deep and mutual. This is not pessimism but realism about the nature of moral opposition.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; Stubborn Neck; Righteous Rule; Wise Servant; Anger vs Self-Control</div><span class="verse-text"><span class="verse-num">1</span>Whoever remains stiff-necked after many rebukes will suddenly be destroyed—without remedy.</span><span class="verse-text"><span class="verse-num">2</span>When the righteous thrive, the people rejoice; when the wicked rule, the people groan.</span><span class="verse-text"><span class="verse-num">3</span>A man who loves wisdom brings joy to his father, but a companion of prostitutes squanders his wealth.</span><span class="verse-text"><span class="verse-num">4</span>By justice a king gives a country stability, but those who are greedy for bribes tear it down.</span><span class="verse-text"><span class="verse-num">5</span>Those who flatter their neighbors are spreading nets for their feet.</span><span class="verse-text"><span class="verse-num">6</span>Evildoers are snared by their own sin, but the righteous shout for joy and are glad.</span><span class="verse-text"><span class="verse-num">7</span>The righteous care about justice for the poor, but the wicked have no such concern.</span><span class="verse-text"><span class="verse-num">8</span>Mockers stir up a city, but the wise turn away anger.</span><span class="verse-text"><span class="verse-num">9</span>If a wise person goes to court with a fool, the fool rages and scoffs, and there is no peace.</span><span class="verse-text"><span class="verse-num">10</span>The bloodthirsty hate a person of integrity and seek to kill the upright.</span><span class="verse-text"><span class="verse-num">11</span>Fools give full vent to their rage, but the wise bring calm in the end.</span><span class="verse-text"><span class="verse-num">12</span>If a ruler listens to lies, all his officials become wicked.</span><span class="verse-text"><span class="verse-num">13</span>The poor and the oppressor have this in common: The LORD gives sight to the eyes of both.</span><span class="verse-text"><span class="verse-num">14</span>If a king judges the poor with fairness, his throne will be established forever.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr29-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr29-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr29-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr29-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr29-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr29-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr29-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr29-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr29-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">עֹרֶף</span> <span class="tlit">oref</span> — <strong>neck / stiff-necked</strong>: V.1: whoever remains stiff-necked after many rebukes will suddenly be destroyed — without remedy. The stiff neck (ʿōrep) is the OT's image for wilful resistance to correction — the neck that refuses to bow. The "many rebukes" are acts of grace: repeated invitations to course-correct. Their rejection leads to sudden, irremediable destruction.</p></div><div id="pr29-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.29 addresses governance and social order: stubborn resistance to correction (v.1), the rejoicing of a people under righteous rule (v.2), the king who loves justice (v.4), and the contrast between the hot-tempered fool and the self-controlled wise person (v.11).</p></div><div id="pr29-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Exod 32:25</span><span class="ref-text">Moses saw that the people had broken loose — 'pāraʿ' — the same word as v.18's "cast off restraint." Without the word of God, the people break loose as Israel did at Sinai.</span></li><li><span class="ref-cite">Prov 14:34</span><span class="ref-text">Righteousness exalts a nation — the same social-righteousness principle as the rejoicing under righteous rule (v.2).</span></li></ul></div><div id="pr29-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:1</span><p>Whoever remains stiff-necked after many rebukes will suddenly be destroyed — without remedy. The most sobering verse in ch.29. Many rebukes are grace; their repeated rejection makes the final destruction irremediable. The window for correction does not remain open indefinitely.</p></div><div class="com-note"><span class="com-ref">29:2</span><p>When the righteous thrive, the people rejoice; when the wicked rule, the people groan. The most direct statement in Proverbs of the social consequence of who governs. Good governance produces community rejoicing; wicked governance produces corporate groaning. Leadership quality is not a private matter.</p></div><div class="com-note"><span class="com-ref">29:11</span><p>Fools give full vent to their rage, but the wise bring calm in the end. The hot-tempered fool exhausts their anger in the moment; the wise person controls theirs. The self-control of v.11 produces the calm in the end — the relationship is not destroyed, the dispute is not escalated beyond repair.</p></div></div><div id="pr29-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">29:1</span><p>Alter: The Exodus echo is almost certainly intentional. Obstinate rejection of correction positions the person for the same catastrophic fate as Israel at Sinai.</p></div></div><div id="pr29-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">29:1</span><p>Waltke: Stiff-necked resistance to correction is self-destruction deferred. The Exodus echo is deliberate — Israel at Sinai is the paradigm case.</p></div></div><div id="pr29-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:1</span><p>Calvin: 'The many rebukes that are rejected each represent a mercy withdrawn. The sudden destruction is all the rejected corrections arriving at once.'</p></div></div><div id="pr29-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">29:1</span><p>The NET note on stiff-necked resistance discusses the Exodus connection and explains that each rejected correction is itself a form of hardening.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;27 &mdash; Correction and Rest; Where There Is No Vision; Fear of Man Is a Snare</div><span class="verse-text"><span class="verse-num">15</span>A rod and a reprimand impart wisdom, but a child left undisciplined disgraces its mother.</span><span class="verse-text"><span class="verse-num">16</span>When the wicked thrive, so does sin, but the righteous will see their downfall.</span><span class="verse-text"><span class="verse-num">17</span>Discipline your children, and they will give you peace; they will bring you the delights you desire.</span><span class="verse-text"><span class="verse-num">18</span>Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction.</span><span class="verse-text"><span class="verse-num">19</span>Servants cannot be corrected by mere words; though they understand, they will not respond.</span><span class="verse-text"><span class="verse-num">20</span>Do you see someone who speaks in haste? There is more hope for a fool than for them.</span><span class="verse-text"><span class="verse-num">21</span>A servant pampered from youth will turn out to be insolent.</span><span class="verse-text"><span class="verse-num">22</span>An angry person stirs up conflict, and a hot-tempered person commits many sins.</span><span class="verse-text"><span class="verse-num">23</span>Pride brings a person low, but the lowly in spirit gain honor.</span><span class="verse-text"><span class="verse-num">24</span>The accomplices of thieves are their own enemies; they are put under oath and dare not testify.</span><span class="verse-text"><span class="verse-num">25</span>Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe.</span><span class="verse-text"><span class="verse-num">26</span>Many seek an audience with a ruler, but it is from the LORD that one gets justice.</span><span class="verse-text"><span class="verse-num">27</span>The righteous detest the dishonest; the wicked detest the upright.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr29-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr29-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr29-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr29-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr29-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr29-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr29-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr29-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr29-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חָזוֹן</span> <span class="tlit">chazon</span> — <strong>vision / revelation</strong>: V.18: where there is no revelation (ḥāzôn — prophetic vision, word from God), people cast off restraint; but blessed is the one who heeds wisdom's instruction. The verse is not about strategic planning vision but about the divine word that orders a community. Without the word of God, social chaos ensues. With it (and with the instruction of wisdom), blessing follows.</p></div><div id="pr29-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains the chapter's most famous verse (v.18 — where there is no vision) alongside the fear-of-man snare (v.25), and the chapter's closing observation: the LORD's judgments are compared to those of human authorities. The fear of the LORD overcomes the fear of man.</p></div><div id="pr29-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 14:26</span><span class="ref-text">Whoever fears the LORD has a secure fortress — the fear-of-man snare (v.25) is the negative counterpart to the fear-of-the-LORD security.</span></li><li><span class="ref-cite">Acts 5:29</span><span class="ref-text">We must obey God rather than human beings — the NT application of v.25's trust-in-the-LORD over fear-of-man principle.</span></li></ul></div><div id="pr29-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:18</span><p>Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction. The chapter's most famous verse. Ḥāzôn is prophetic vision — the word of God received through the prophetic channel. Without it, the people pāraʿ — break loose, become ungovernable. The word of God is the social ligament that holds community together.</p></div><div class="com-note"><span class="com-ref">29:25</span><p>Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe. Among the most liberating verses in Proverbs. The snare of human approval-seeking — adjusting one's life to the opinions and responses of others — is a trap. Trust in the LORD produces the safety that fear of man promises but cannot deliver.</p></div><div class="com-note"><span class="com-ref">29:27</span><p>The righteous detest the dishonest; the wicked detest the upright. The chapter's final verse is also its starkest: the moral opposition between the righteous and the wicked is not merely preferential but deep and mutual. This is not pessimism but realism about the nature of moral opposition.</p></div></div><div id="pr29-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">29:25</span><p>Alter: Fear of man as a snare — the trap is internal. The person governed by fear of human opinion has caught themselves.</p></div></div><div id="pr29-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">29:18</span><p>Waltke: Chazon is prophetic revelation, not personal goal-setting. Without divine prophetic guidance, communities run wild. The second half ('blessed is he who keeps the torah') specifies that divine instruction is the governing word.</p></div></div><div id="pr29-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:18</span><p>Calvin: 'Where there is no prophetic vision, the people cast off restraint. A community without divine revelation is ungoverned in the deepest sense, however many human laws it may have.'</p></div></div><div id="pr29-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">29:18</span><p>The NET note on chazon emphatically identifies this as prophetic revelation, not personal goal-setting, tracing chazon through Isa 1:1, Ezek 7:26, and Dan 1:17.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr29-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr29-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr29-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr29-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr29-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr29-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr29-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr29-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr29-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr29-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr29-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr29-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr29-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr29-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr29-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr29-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr29-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr29-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr29-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">29:18 — Where There Is No Vision</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction."</td></tr><tr><td class="t-label">Note</td><td>Ḥāzôn — prophetic vision, the word of God. Without it, community becomes ungovernable. With wisdom's instruction, blessing follows.</td></tr></table></div><div id="pr29-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr29-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr29-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-14</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.15ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 29: the word of God holds community together (v.18); its rejection leads to irremediable destruction (v.1). The fear-of-man snare (v.25) is overcome by trust in the LORD. Good governance makes the people rejoice (v.2).</div></div></div><div id="pr29-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction."</p></div><div id="pr29-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation underlying every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr29-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,205.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Word</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Righteous Governance</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Stiff Neck</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Fear of Man</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Self-Control</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Social Order</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 29: the word of God holds community together (v.18); its rejection leads to irremediable destruction (v.1). The fear-of-man snare (v.25) is overcome by trust in the LORD. Good governance makes the people rejoice (v.2).</p></div>
+<div id="pr29-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr29-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 29 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Where there is no revelation, people cast off restraint; but blessed is the one who heeds wisdom's instruction."</td></tr><tr><td class="t-label">Note</td><td>Ḥāzôn — prophetic vision, the word of God. Without it, community becomes ungovernable. With wisdom's instruction, blessing follows.</td></tr></table></div><div id="pr29-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr29-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr29-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Without prophetic revelation (chazon), communities run wild. The governing word of God is what makes genuine social order possible. The verse has nothing to do with personal goal-setting.</div><div class="lit-row"><span class="lit-label">Fear of Man as a Self-Set Snare — 29:25</span><span class="lit-text">The person governed by fear of human opinion has set a trap for themselves. Trust in the LORD is the only freedom from this internal trap.</span></div></div></div><div id="pr29-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('חָזוֹן / Chazon', 'chazon', 'Prophetic vision / revelation', 'The governing word of 29:18 — consistently used for divine revelatory vision throughout the OT. Never refers to personal goal-setting. The absent prophetic word leaves a community ungoverned.'), ('פַּחַד אָדָם / Pachad Adam', 'pachad adam', 'Fear of man', 'The self-set trap of 29:25. Dread directed at human beings enslaves — the person whose choices are governed by what others think has caught themselves. Trust in the LORD is the only freedom.')]</div><div id="pr29-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">29:18</span><span class="tx-issue">'Where there is no vision, the people perish'</span></div><div class="tx-variants">MT: be'ein chazon yipara am; vesho'mer torah ashrehu. Chazon = prophetic revelation. Yipara = run wild / cast off restraint (not 'perish').</div><div class="tx-sig">The verse is consistently misapplied as a statement about personal goal-setting. Chazon is always prophetic revelation in the OT. The community without prophetic guidance runs wild; the community that keeps the torah is blessed.</div></div></div><div id="pr29-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">'Where There Is No Vision': Prophetic Revelation or Personal Goals?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Prophetic revelation only — the only valid interpretation</div><div class="db-proponents">Waltke, all mainstream commentators</div><div class="db-argument">Chazon always refers to prophetic revelation. The popular business/motivational use is exegetically indefensible.</div></div><div class="db-position"><div class="db-pos-name">Personal vision — popular but mistaken</div><div class="db-proponents">Common usage</div><div class="db-argument">Used in leadership literature to mean 'without a goal, people lose direction.' This inverts the verse's actual meaning.</div></div></div><div class="db-synthesis">The popular business use is not merely imprecise but directly contrary to the verse's meaning. It is about the social consequence of absent prophetic revelation, not about personal goal-setting.</div></div></div><div id="pr29-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Prophetic Revelation as the Governing Word</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Fear of Man vs. Trust in the LORD</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Stiff-Necked Resistance</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Righteous Rule</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 29 closes the Solomonic collection with its most culturally pervasive verses — including the most consistently misread (29:18). Its deepest instruction is about governance: communities need the governing word of God.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {

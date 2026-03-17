@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 27</h1>
-<p>Don't Boast of Tomorrow; Iron Sharpens Iron; The Faithful Wounds of a Friend</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Do Not Boast of Tomorrow; Faithful Wounds; Iron Sharpens Iron; Know Your Flocks</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;12 &mdash; Don't Boast of Tomorrow; Faithful Wounds; Iron Sharpens Iron</div><span class="verse-text"><span class="verse-num">1</span>Do not boast about tomorrow, for you do not know what a day may bring.</span><span class="verse-text"><span class="verse-num">2</span>Let someone else praise you, and not your own mouth; an outsider, and not your own lips.</span><span class="verse-text"><span class="verse-num">3</span>Stone is heavy and sand a burden, but a fool's provocation is heavier than both.</span><span class="verse-text"><span class="verse-num">4</span>Anger is cruel and fury overwhelming, but who can stand before jealousy?</span><span class="verse-text"><span class="verse-num">5</span>Better is open rebuke than hidden love.</span><span class="verse-text"><span class="verse-num">6</span>Wounds from a friend can be trusted, but an enemy multiplies kisses.</span><span class="verse-text"><span class="verse-num">7</span>One who is full loathes honey from the comb, but to the hungry even what is bitter tastes sweet.</span><span class="verse-text"><span class="verse-num">8</span>Like a bird that flees its nest is anyone who flees from home.</span><span class="verse-text"><span class="verse-num">9</span>Perfume and incense bring joy to the heart, and the pleasantness of a friend springs from their heartfelt advice.</span><span class="verse-text"><span class="verse-num">10</span>Do not forsake your friend or a friend of your family, and do not go to your relative's house when disaster strikes you— better a neighbor nearby than a relative far away.</span><span class="verse-text"><span class="verse-num">11</span>Be wise, my son, and bring joy to my heart; then I can answer anyone who treats me with contempt.</span><span class="verse-text"><span class="verse-num">12</span>The prudent see danger and take refuge, but the simple keep going and pay the penalty.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr27-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr27-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr27-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr27-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr27-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">פֶּצַע אוֹהֵב</span> <span class="tlit">petsa ohev</span> — <strong>wounds of a friend</strong>: V.6: the wounds of a friend are faithful (neʾĕmānîm — trustworthy, reliable); the kisses of an enemy are deceitful. The friend's wound is the painful truth that serves the recipient's genuine good. The enemy's kiss is pleasant but treacherous. Proverbs consistently prefers the painful faithful over the pleasant unfaithful.</p></div><div id="pr27-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.27 contains three of Proverbs' most quoted relational sayings: the faithful wounds of a friend (v.6), iron sharpening iron (v.17), and the face-reflected-in-water metaphor for heart-knowledge through relationship (v.19).</p></div><div id="pr27-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 17:17</span><span class="ref-text">A friend loves at all times — the faithful-wounds proverb (v.6) specifies what that love sometimes requires: the wound that serves genuine good.</span></li><li><span class="ref-cite">Prov 13:20</span><span class="ref-text">Walk with the wise and become wise — the iron-sharpens-iron principle of v.17 is the mechanism behind this companionship proverb.</span></li></ul></div><div id="pr27-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:1</span><p>Do not boast about tomorrow, for you do not know what a day may bring. The most common wisdom against human presumption. Tomorrow is genuinely unknown. Plans are appropriate; certainty about tomorrow is not. Every boast about tomorrow carries the implicit claim to control what belongs to God.</p></div><div class="com-note"><span class="com-ref">27:6</span><p>The wounds of a friend are faithful, but the kisses of an enemy are deceitful. Among Proverbs' most psychologically astute observations about friendship. The test of genuine friendship is not whether the other person makes you feel good but whether they are willing to wound you with truth when truth requires wounding.</p></div><div class="com-note"><span class="com-ref">27:17</span><p>As iron sharpens iron, so one person sharpens another. The most vivid image of the formation value of genuine friendship. Sharpening requires friction. The relationship that never produces any discomfort may not be sharpening anything.</p></div></div></div><div class="section"><div class="section-header">Verses 13&ndash;27 &mdash; A Nagging Spouse; Know Your Flocks; Heart Shaped by What It Sees</div><span class="verse-text"><span class="verse-num">13</span>Take the garment of one who puts up security for a stranger; hold it in pledge if it is done for an outsider.</span><span class="verse-text"><span class="verse-num">14</span>If anyone loudly blesses their neighbor early in the morning, it will be taken as a curse.</span><span class="verse-text"><span class="verse-num">15</span>A quarrelsome wife is like the dripping of a leaky roof in a rainstorm;</span><span class="verse-text"><span class="verse-num">16</span>restraining her is like restraining the wind or grasping oil with the hand.</span><span class="verse-text"><span class="verse-num">17</span>As iron sharpens iron, so one person sharpens another.</span><span class="verse-text"><span class="verse-num">18</span>The one who tends a fig tree will eat its fruit, and whoever protects their master will be honored.</span><span class="verse-text"><span class="verse-num">19</span>As water reflects the face, so one's life reflects the heart.</span><span class="verse-text"><span class="verse-num">20</span>Death and Destruction are never satisfied, and neither are human eyes.</span><span class="verse-text"><span class="verse-num">21</span>The crucible for silver and the furnace for gold, but people are tested by their praise.</span><span class="verse-text"><span class="verse-num">22</span>Though you grind a fool in a mortar, grinding them like grain with a pestle, you will not remove their folly from them.</span><span class="verse-text"><span class="verse-num">23</span>Be sure you know the condition of your flocks, give careful attention to your herds;</span><span class="verse-text"><span class="verse-num">24</span>for riches do not endure forever, and a crown is not secure for all generations.</span><span class="verse-text"><span class="verse-num">25</span>When the hay is removed and new growth appears and the grass from the hills is gathered in,</span><span class="verse-text"><span class="verse-num">26</span>the lambs will provide you with clothing, and the goats with the price of a field.</span><span class="verse-text"><span class="verse-num">27</span>You will have plenty of goats' milk to feed your family and to nourish your female servants.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr27-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr27-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr27-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr27-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr27-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">פְּנֵי אִישׁ לְרֵעֵהוּ</span> <span class="tlit">penei ish lereeihu</span> — <strong>face of a person to their neighbour</strong>: V.19: as water reflects the face, so one person's heart reflects another. The image is of the mirror-function of genuine relationship: the person who truly knows you reflects back who you are. Human hearts are known through relationship, not through introspection alone.</p></div><div id="pr27-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses household management — the prudent wife (v.15-16), knowing your flocks and herds (vv.23-27) — and the chapter's closing observation: riches do not endure forever, but tending what you have does. The chapter is the most relationally focused in Hezekiah's collection.</p></div><div id="pr27-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 31:10-31</span><span class="ref-text">Know the condition of your flocks and herds (v.23) — the agricultural management wisdom that connects to the 'eshet ḥayil who manages the household economy.</span></li><li><span class="ref-cite">Phil 4:11</span><span class="ref-text">I have learned, in whatever state I am, to be content — the same contentment-through-diligent-management that vv.23-27 describe.</span></li></ul></div><div id="pr27-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:19</span><p>As water reflects the face, so one person's heart reflects another. The mirror-function of genuine relationship: you see yourself clearly when someone who truly knows you reflects you back. This is why isolation impoverishes self-knowledge.</p></div><div class="com-note"><span class="com-ref">27:21</span><p>The crucible for silver and the furnace for gold, but people are tested by their praise. The complement to the crucible metaphor of 17:3. There, testing came through adversity; here, testing comes through praise. How a person responds to flattery — whether they are inflated or remain grounded — reveals their character.</p></div><div class="com-note"><span class="com-ref">27:23-24</span><p>Be sure you know the condition of your flocks, give careful attention to your herds; for riches do not endure forever. The agricultural management wisdom is also spiritual counsel: attend to what is in your care; riches are transient, but the land faithfully worked feeds the household year after year.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;12 &mdash; Don't Boast of Tomorrow; Faithful Wounds; Iron Sharpens Iron</div><span class="verse-text"><span class="verse-num">1</span>Do not boast about tomorrow, for you do not know what a day may bring.</span><span class="verse-text"><span class="verse-num">2</span>Let someone else praise you, and not your own mouth; an outsider, and not your own lips.</span><span class="verse-text"><span class="verse-num">3</span>Stone is heavy and sand a burden, but a fool's provocation is heavier than both.</span><span class="verse-text"><span class="verse-num">4</span>Anger is cruel and fury overwhelming, but who can stand before jealousy?</span><span class="verse-text"><span class="verse-num">5</span>Better is open rebuke than hidden love.</span><span class="verse-text"><span class="verse-num">6</span>Wounds from a friend can be trusted, but an enemy multiplies kisses.</span><span class="verse-text"><span class="verse-num">7</span>One who is full loathes honey from the comb, but to the hungry even what is bitter tastes sweet.</span><span class="verse-text"><span class="verse-num">8</span>Like a bird that flees its nest is anyone who flees from home.</span><span class="verse-text"><span class="verse-num">9</span>Perfume and incense bring joy to the heart, and the pleasantness of a friend springs from their heartfelt advice.</span><span class="verse-text"><span class="verse-num">10</span>Do not forsake your friend or a friend of your family, and do not go to your relative's house when disaster strikes you— better a neighbor nearby than a relative far away.</span><span class="verse-text"><span class="verse-num">11</span>Be wise, my son, and bring joy to my heart; then I can answer anyone who treats me with contempt.</span><span class="verse-text"><span class="verse-num">12</span>The prudent see danger and take refuge, but the simple keep going and pay the penalty.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr27-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr27-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr27-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr27-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr27-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr27-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr27-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr27-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr27-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">פֶּצַע אוֹהֵב</span> <span class="tlit">petsa ohev</span> — <strong>wounds of a friend</strong>: V.6: the wounds of a friend are faithful (neʾĕmānîm — trustworthy, reliable); the kisses of an enemy are deceitful. The friend's wound is the painful truth that serves the recipient's genuine good. The enemy's kiss is pleasant but treacherous. Proverbs consistently prefers the painful faithful over the pleasant unfaithful.</p></div><div id="pr27-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.27 contains three of Proverbs' most quoted relational sayings: the faithful wounds of a friend (v.6), iron sharpening iron (v.17), and the face-reflected-in-water metaphor for heart-knowledge through relationship (v.19).</p></div><div id="pr27-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 17:17</span><span class="ref-text">A friend loves at all times — the faithful-wounds proverb (v.6) specifies what that love sometimes requires: the wound that serves genuine good.</span></li><li><span class="ref-cite">Prov 13:20</span><span class="ref-text">Walk with the wise and become wise — the iron-sharpens-iron principle of v.17 is the mechanism behind this companionship proverb.</span></li></ul></div><div id="pr27-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:1</span><p>Do not boast about tomorrow, for you do not know what a day may bring. The most common wisdom against human presumption. Tomorrow is genuinely unknown. Plans are appropriate; certainty about tomorrow is not. Every boast about tomorrow carries the implicit claim to control what belongs to God.</p></div><div class="com-note"><span class="com-ref">27:6</span><p>The wounds of a friend are faithful, but the kisses of an enemy are deceitful. Among Proverbs' most psychologically astute observations about friendship. The test of genuine friendship is not whether the other person makes you feel good but whether they are willing to wound you with truth when truth requires wounding.</p></div><div class="com-note"><span class="com-ref">27:17</span><p>As iron sharpens iron, so one person sharpens another. The most vivid image of the formation value of genuine friendship. Sharpening requires friction. The relationship that never produces any discomfort may not be sharpening anything.</p></div></div><div id="pr27-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:6</span><p>Alter: Faithful wounds of a friend — the inversion is exact. Wounds from a friend are reliable because they come from genuine concern. Kisses from an enemy are deceitful precisely because they come from self-interest.</p></div></div><div id="pr27-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:1</span><p>Waltke: Do not boast of tomorrow — temporal humility is the practical complement of divine sovereignty over the future. James 4:13-14 applies this directly.</p></div></div><div id="pr27-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:1</span><p>Calvin: 'The brevity and uncertainty of life should moderate all our plans. James applies this directly: you do not know what tomorrow holds. Plan with an open hand, not a clenched fist.'</p></div></div><div id="pr27-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">27:1</span><p>The NET note on 'do not boast of tomorrow' connects to Jas 4:13-14 and Prov 16:9. Temporal humility is the practical complement of the sovereignty proverbs.</p></div></div></div><div class="section"><div class="section-header">Verses 13&ndash;27 &mdash; A Nagging Spouse; Know Your Flocks; Heart Shaped by What It Sees</div><span class="verse-text"><span class="verse-num">13</span>Take the garment of one who puts up security for a stranger; hold it in pledge if it is done for an outsider.</span><span class="verse-text"><span class="verse-num">14</span>If anyone loudly blesses their neighbor early in the morning, it will be taken as a curse.</span><span class="verse-text"><span class="verse-num">15</span>A quarrelsome wife is like the dripping of a leaky roof in a rainstorm;</span><span class="verse-text"><span class="verse-num">16</span>restraining her is like restraining the wind or grasping oil with the hand.</span><span class="verse-text"><span class="verse-num">17</span>As iron sharpens iron, so one person sharpens another.</span><span class="verse-text"><span class="verse-num">18</span>The one who tends a fig tree will eat its fruit, and whoever protects their master will be honored.</span><span class="verse-text"><span class="verse-num">19</span>As water reflects the face, so one's life reflects the heart.</span><span class="verse-text"><span class="verse-num">20</span>Death and Destruction are never satisfied, and neither are human eyes.</span><span class="verse-text"><span class="verse-num">21</span>The crucible for silver and the furnace for gold, but people are tested by their praise.</span><span class="verse-text"><span class="verse-num">22</span>Though you grind a fool in a mortar, grinding them like grain with a pestle, you will not remove their folly from them.</span><span class="verse-text"><span class="verse-num">23</span>Be sure you know the condition of your flocks, give careful attention to your herds;</span><span class="verse-text"><span class="verse-num">24</span>for riches do not endure forever, and a crown is not secure for all generations.</span><span class="verse-text"><span class="verse-num">25</span>When the hay is removed and new growth appears and the grass from the hills is gathered in,</span><span class="verse-text"><span class="verse-num">26</span>the lambs will provide you with clothing, and the goats with the price of a field.</span><span class="verse-text"><span class="verse-num">27</span>You will have plenty of goats' milk to feed your family and to nourish your female servants.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr27-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr27-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr27-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr27-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr27-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr27-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr27-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr27-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr27-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">פְּנֵי אִישׁ לְרֵעֵהוּ</span> <span class="tlit">penei ish lereeihu</span> — <strong>face of a person to their neighbour</strong>: V.19: as water reflects the face, so one person's heart reflects another. The image is of the mirror-function of genuine relationship: the person who truly knows you reflects back who you are. Human hearts are known through relationship, not through introspection alone.</p></div><div id="pr27-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half addresses household management — the prudent wife (v.15-16), knowing your flocks and herds (vv.23-27) — and the chapter's closing observation: riches do not endure forever, but tending what you have does. The chapter is the most relationally focused in Hezekiah's collection.</p></div><div id="pr27-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 31:10-31</span><span class="ref-text">Know the condition of your flocks and herds (v.23) — the agricultural management wisdom that connects to the 'eshet ḥayil who manages the household economy.</span></li><li><span class="ref-cite">Phil 4:11</span><span class="ref-text">I have learned, in whatever state I am, to be content — the same contentment-through-diligent-management that vv.23-27 describe.</span></li></ul></div><div id="pr27-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:19</span><p>As water reflects the face, so one person's heart reflects another. The mirror-function of genuine relationship: you see yourself clearly when someone who truly knows you reflects you back. This is why isolation impoverishes self-knowledge.</p></div><div class="com-note"><span class="com-ref">27:21</span><p>The crucible for silver and the furnace for gold, but people are tested by their praise. The complement to the crucible metaphor of 17:3. There, testing came through adversity; here, testing comes through praise. How a person responds to flattery — whether they are inflated or remain grounded — reveals their character.</p></div><div class="com-note"><span class="com-ref">27:23-24</span><p>Be sure you know the condition of your flocks, give careful attention to your herds; for riches do not endure forever. The agricultural management wisdom is also spiritual counsel: attend to what is in your care; riches are transient, but the land faithfully worked feeds the household year after year.</p></div></div><div id="pr27-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:23-27</span><p>Alter: The extended agricultural instruction grounds wisdom in the most basic reality of sustained provision. Riches and crowns are impermanent; hay, grass, and lambs are reliable.</p></div></div><div id="pr27-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:17</span><p>Waltke: Iron sharpens iron — wisdom formation is relational. The friction of genuine encounter sharpens character. Comfortable isolation does not produce growth.</p></div></div><div id="pr27-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:6</span><p>Calvin: 'Faithful wounds — true friendship includes the willingness to tell painful truths. The person who only flatters is not a friend but a flatterer.'</p></div></div><div id="pr27-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">27:17</span><p>The NET note on iron sharpening iron discusses the metallurgical process: friction is essential. Without contact and resistance, no sharpening occurs.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr27-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr27-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr27-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr27-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr27-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr27-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr27-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr27-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr27-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr27-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr27-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr27-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr27-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr27-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr27-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr27-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr27-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr27-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr27-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">27:6 — Faithful Wounds</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"The wounds of a friend are faithful, but the kisses of an enemy are deceitful."</td></tr><tr><td class="t-label">Note</td><td>The test of genuine friendship is not whether the other person makes you feel good but whether they are willing to wound you with truth when truth requires wounding.</td></tr></table></div><div id="pr27-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr27-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr27-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-12</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.13ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 27 is Proverbs' most relationally focused chapter. Genuine friendship wounds faithfully (v.6), sharpens genuinely (v.17), and mirrors truthfully (v.19). The chapter closes with the diligent management of what is in your care.</div></div></div><div id="pr27-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"The wounds of a friend are faithful, but the kisses of an enemy are deceitful."</p></div><div id="pr27-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation underlying every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr27-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,188.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Relational Wisdom</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faithful Wounds</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Iron Sharpens Iron</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Heart Known Through Relationship</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Don't Boast of Tomorrow</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligent Stewardship</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 27 is Proverbs' most relationally focused chapter. Genuine friendship wounds faithfully (v.6), sharpens genuinely (v.17), and mirrors truthfully (v.19). The chapter closes with the diligent management of what is in your care.</p></div>
+<div id="pr27-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr27-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 27 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"The wounds of a friend are faithful, but the kisses of an enemy are deceitful."</td></tr><tr><td class="t-label">Note</td><td>The test of genuine friendship is not whether the other person makes you feel good but whether they are willing to wound you with truth when truth requires wounding.</td></tr></table></div><div id="pr27-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr27-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr27-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Faithful wounds from a friend are more trustworthy than deceitful kisses from an enemy. True friendship includes willingness to cause pain for the friend's welfare.</div><div class="lit-row"><span class="lit-label">Iron Sharpens Iron: Mutual Formation — 27:17</span><span class="lit-text">One person sharpens another — wisdom formation is relational, not solo. The friction of genuine encounter sharpens character that comfortable isolation cannot produce.</span></div></div></div><div id="pr27-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('פֶּצַע / Petsa', 'petsa', 'Wound / blow', "The faithful wound of the true friend (27:6). More valuable than an enemy's flattering kiss because it comes from genuine concern. The word is used for physical wounds — the friend's rebuke is as real."), ('בַּרְזֶל / Barzel', 'barzel', 'Iron', 'The sharpening agent of 27:17. The friction of iron-on-iron is essential — there is no sharpening without contact and resistance. The image for the mutual formation that genuine human encounter produces.')]</div><div id="pr27-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">27:6</span><span class="tx-issue">Faithful wounds of a friend</span></div><div class="tx-variants">MT: ne'emanim pitsei ohev venaarevot neshiqot soneh.</div><div class="tx-sig">The inversion — wounds as faithful; kisses as deceitful — is the most concentrated statement about true friendship. Genuine concern produces painful honesty; self-interest produces pleasant deception.</div></div></div><div id="pr27-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Does Iron Sharpening Iron Require Conflict?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Friction is essential</div><div class="db-proponents">Most commentators</div><div class="db-argument">No sharpening without contact and resistance. Comfortable relationships that avoid all challenge do not produce growth.</div></div><div class="db-position"><div class="db-pos-name">The image is about mutual benefit, not adversarial conflict</div><div class="db-proponents">Some readers</div><div class="db-argument">The friction is the friction of genuine engagement — substantive encounter with different perspectives, not necessarily conflict.</div></div></div><div class="db-synthesis">The metallurgical image requires friction — passive co-existence does not sharpen. But the friction need not be adversarial; genuine honest engagement is sufficient.</div></div></div><div id="pr27-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,205.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faithful Wounds: True Friendship</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Do Not Boast of Tomorrow</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Iron Sharpens Iron: Relational Formation</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Know Your Flocks: Stewardship</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 27 develops the wisdom of relationships and time. Its most memorable observations concern friendship (faithful wounds), temporality (do not boast of tomorrow), mutual formation (iron sharpens iron), and attentive stewardship.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {

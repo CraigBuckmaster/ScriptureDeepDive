@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 25</h1>
-<p>Hezekiah's Collection: Hidden Things; Right Speech; Coals of Fire</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>God's Hidden Things; Apples of Gold; Coals of Fire; Broken Walls</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; God's Hidden Things; King's Searched Heart; Timely Words</div><span class="verse-text"><span class="verse-num">1</span>These are more proverbs of Solomon, compiled by the men of Hezekiah king of Judah:</span><span class="verse-text"><span class="verse-num">2</span>It is the glory of God to conceal a matter; to search out a matter is the glory of kings.</span><span class="verse-text"><span class="verse-num">3</span>As the heavens are high and the earth is deep, so the hearts of kings are unsearchable.</span><span class="verse-text"><span class="verse-num">4</span>Remove the dross from the silver, and a silversmith can produce a vessel;</span><span class="verse-text"><span class="verse-num">5</span>remove wicked officials from the king's presence, and his throne will be established through righteousness.</span><span class="verse-text"><span class="verse-num">6</span>Do not exalt yourself in the king's presence, and do not claim a place among his great men;</span><span class="verse-text"><span class="verse-num">7</span>it is better to be humbled before a noble than to be exalted before a prince. What you have seen with your eyes</span><span class="verse-text"><span class="verse-num">8</span>do not bring hastily to court, for what will you do in the end if your neighbor puts you to shame?</span><span class="verse-text"><span class="verse-num">9</span>If you take your neighbor to court, do not betray another's confidence,</span><span class="verse-text"><span class="verse-num">10</span>or the one who hears it may shame you and the charge against you will stand.</span><span class="verse-text"><span class="verse-num">11</span>Like apples of gold in settings of silver is a ruling rightly given.</span><span class="verse-text"><span class="verse-num">12</span>Like an earring of gold or an ornament of fine gold is the rebuke of a wise judge to a listening ear.</span><span class="verse-text"><span class="verse-num">13</span>Like a snow-cooled drink at harvest time is a trustworthy messenger to the one who sends him; he refreshes the spirit of his master.</span><span class="verse-text"><span class="verse-num">14</span>Like clouds and wind without rain is one who boasts of gifts never given.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr25-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr25-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr25-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr25-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr25-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">כְּבוֹד אֱלֹהִים</span> <span class="tlit">kevod Elohim</span> — <strong>glory of God</strong>: V.2: it is the glory of God to conceal a matter; it is the glory of kings to search things out. The divine hiddenness and royal investigation are placed in deliberate parallel. God's glory is expressed in mystery; the king's glory is expressed in discernment. The chapter opens Hezekiah's collection (chs.25-29) with a theology of wisdom as royal investigation of divine concealment.</p></div><div id="pr25-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.25 opens Hezekiah's collection (25:1) with a theology of divine hiddenness and royal investigation (v.2). V.11's timely-word image is among the most beautiful in Proverbs: a word fitly spoken is like apples of gold in settings of silver. The chapter consistently addresses court life and the exercise of authority.</p></div><div id="pr25-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Deut 29:29</span><span class="ref-text">The secret things belong to the LORD our God, but the things revealed belong to us — the theological parallel to v.2's divine concealment.</span></li><li><span class="ref-cite">Prov 16:13</span><span class="ref-text">Kings take pleasure in honest lips — the royal-court wisdom of v.2's king-who-searches recurs throughout chs.25-29.</span></li></ul></div><div id="pr25-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:2</span><p>It is the glory of God to conceal a matter; to search out a matter is the glory of kings. Divine mystery and human investigation are not in tension — they are complementary glories. God's concealment invites royal (and human) discovery. Wisdom is the enterprise of searching out what God has hidden in creation and human experience.</p></div><div class="com-note"><span class="com-ref">25:11</span><p>A word fitly spoken is like apples of gold in a setting of silver. The most beautiful image for appropriate speech in Proverbs. The word's fittingness — its timing, its precision, its appropriateness — is the artistry. The setting is as important as the fruit.</p></div><div class="com-note"><span class="com-ref">25:14</span><p>Like clouds and wind without rain is one who boasts of gifts never given. The boaster of unprovided generosity is cloud without water. The promise of rain that never falls is not merely useless but actively disappointing.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;28 &mdash; Honey in Moderation; Coals of Fire; City Without Walls</div><span class="verse-text"><span class="verse-num">15</span>Through patience a ruler can be persuaded, and a gentle tongue can break a bone.</span><span class="verse-text"><span class="verse-num">16</span>If you find honey, eat just enough— too much of it, and you will vomit.</span><span class="verse-text"><span class="verse-num">17</span>Seldom set foot in your neighbor's house— too much of you, and they will hate you.</span><span class="verse-text"><span class="verse-num">18</span>Like a club or a sword or a sharp arrow is one who gives false testimony against a neighbor.</span><span class="verse-text"><span class="verse-num">19</span>Like a broken tooth or a lame foot is reliance on the unfaithful in a time of trouble.</span><span class="verse-text"><span class="verse-num">20</span>Like one who takes away a garment on a cold day, or like vinegar poured on a wound, is one who sings songs to a heavy heart.</span><span class="verse-text"><span class="verse-num">21</span>If your enemy is hungry, give him food to eat; if he is thirsty, give him water to drink.</span><span class="verse-text"><span class="verse-num">22</span>In doing this, you will heap burning coals on his head, and the LORD will reward you.</span><span class="verse-text"><span class="verse-num">23</span>Like a north wind that brings unexpected rain is a sly tongue— which provokes a horrified look.</span><span class="verse-text"><span class="verse-num">24</span>Better to live on a corner of the roof than share a house with a quarrelsome wife.</span><span class="verse-text"><span class="verse-num">25</span>Like cold water to a weary soul is good news from a distant land.</span><span class="verse-text"><span class="verse-num">26</span>Like a muddied spring or a polluted well are the righteous who give way to the wicked.</span><span class="verse-text"><span class="verse-num">27</span>It is not good to eat too much honey, nor is it honorable to search out matters that are too deep.</span><span class="verse-text"><span class="verse-num">28</span>Like a city whose walls are broken through is a person who lacks self-control.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr25-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr25-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr25-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr25-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr25-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">גֶּחָלִים</span> <span class="tlit">gechalim</span> — <strong>burning coals</strong>: V.22: if your enemy is hungry, give him food to eat; if he is thirsty, give him water to drink. In doing this, you will heap burning coals on his head. The burning coals (gᵉḥālîm) are almost certainly a metaphor for the burning shame of conscience — the enemy's realisation that their hostility has been met with unexpected kindness.</p></div><div id="pr25-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains Proverbs' most counter-cultural social ethic: feeding and watering your enemy (vv.21-22), paralleled by Paul in Romans 12:20. The city-without-walls image (v.28) closes the section: the person without self-control is as exposed and vulnerable as a city whose walls have been torn down.</p></div><div id="pr25-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 12:20</span><span class="ref-text">If your enemy is hungry, feed him; if he is thirsty, give him something to drink. In doing this, you will heap burning coals on his head — Paul quotes v.21-22 directly.</span></li><li><span class="ref-cite">Prov 16:32</span><span class="ref-text">Better a patient person than a warrior — the self-control of v.28's city-without-walls principle.</span></li></ul></div><div id="pr25-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:21-22</span><p>If your enemy is hungry, give him food to eat. In doing this, you will heap burning coals on his head. The most counter-intuitive social ethic in Proverbs. Kindness to an enemy — genuine, practical kindness — creates the conditions for their conscience to burn with the shame of having been an enemy to someone who treated them as a friend.</p></div><div class="com-note"><span class="com-ref">25:25</span><p>Like cold water to a weary soul is good news from a distant land. The relief of good news precisely timed — refreshing as cold water to the exhausted. The image is used for the gospel in its simplest form: genuinely good news that reaches the weary.</p></div><div class="com-note"><span class="com-ref">25:28</span><p>Like a city whose walls are broken through is a person who lacks self-control. The exposed city is the most vulnerable entity in the ancient world. The person without self-control is equally exposed: every impulse, every provocation, every temptation finds immediate entry.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;14 &mdash; God's Hidden Things; King's Searched Heart; Timely Words</div><span class="verse-text"><span class="verse-num">1</span>These are more proverbs of Solomon, compiled by the men of Hezekiah king of Judah:</span><span class="verse-text"><span class="verse-num">2</span>It is the glory of God to conceal a matter; to search out a matter is the glory of kings.</span><span class="verse-text"><span class="verse-num">3</span>As the heavens are high and the earth is deep, so the hearts of kings are unsearchable.</span><span class="verse-text"><span class="verse-num">4</span>Remove the dross from the silver, and a silversmith can produce a vessel;</span><span class="verse-text"><span class="verse-num">5</span>remove wicked officials from the king's presence, and his throne will be established through righteousness.</span><span class="verse-text"><span class="verse-num">6</span>Do not exalt yourself in the king's presence, and do not claim a place among his great men;</span><span class="verse-text"><span class="verse-num">7</span>it is better to be humbled before a noble than to be exalted before a prince. What you have seen with your eyes</span><span class="verse-text"><span class="verse-num">8</span>do not bring hastily to court, for what will you do in the end if your neighbor puts you to shame?</span><span class="verse-text"><span class="verse-num">9</span>If you take your neighbor to court, do not betray another's confidence,</span><span class="verse-text"><span class="verse-num">10</span>or the one who hears it may shame you and the charge against you will stand.</span><span class="verse-text"><span class="verse-num">11</span>Like apples of gold in settings of silver is a ruling rightly given.</span><span class="verse-text"><span class="verse-num">12</span>Like an earring of gold or an ornament of fine gold is the rebuke of a wise judge to a listening ear.</span><span class="verse-text"><span class="verse-num">13</span>Like a snow-cooled drink at harvest time is a trustworthy messenger to the one who sends him; he refreshes the spirit of his master.</span><span class="verse-text"><span class="verse-num">14</span>Like clouds and wind without rain is one who boasts of gifts never given.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr25-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr25-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr25-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr25-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr25-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr25-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr25-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr25-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr25-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">כְּבוֹד אֱלֹהִים</span> <span class="tlit">kevod Elohim</span> — <strong>glory of God</strong>: V.2: it is the glory of God to conceal a matter; it is the glory of kings to search things out. The divine hiddenness and royal investigation are placed in deliberate parallel. God's glory is expressed in mystery; the king's glory is expressed in discernment. The chapter opens Hezekiah's collection (chs.25-29) with a theology of wisdom as royal investigation of divine concealment.</p></div><div id="pr25-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half of ch.25 opens Hezekiah's collection (25:1) with a theology of divine hiddenness and royal investigation (v.2). V.11's timely-word image is among the most beautiful in Proverbs: a word fitly spoken is like apples of gold in settings of silver. The chapter consistently addresses court life and the exercise of authority.</p></div><div id="pr25-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Deut 29:29</span><span class="ref-text">The secret things belong to the LORD our God, but the things revealed belong to us — the theological parallel to v.2's divine concealment.</span></li><li><span class="ref-cite">Prov 16:13</span><span class="ref-text">Kings take pleasure in honest lips — the royal-court wisdom of v.2's king-who-searches recurs throughout chs.25-29.</span></li></ul></div><div id="pr25-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:2</span><p>It is the glory of God to conceal a matter; to search out a matter is the glory of kings. Divine mystery and human investigation are not in tension — they are complementary glories. God's concealment invites royal (and human) discovery. Wisdom is the enterprise of searching out what God has hidden in creation and human experience.</p></div><div class="com-note"><span class="com-ref">25:11</span><p>A word fitly spoken is like apples of gold in a setting of silver. The most beautiful image for appropriate speech in Proverbs. The word's fittingness — its timing, its precision, its appropriateness — is the artistry. The setting is as important as the fruit.</p></div><div class="com-note"><span class="com-ref">25:14</span><p>Like clouds and wind without rain is one who boasts of gifts never given. The boaster of unprovided generosity is cloud without water. The promise of rain that never falls is not merely useless but actively disappointing.</p></div></div><div id="pr25-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">25:2</span><p>Alter: The concealment-and-search pairing is exact: God's glory is in concealing; the king's glory is in searching. Two complementary glories.</p></div></div><div id="pr25-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">25:2</span><p>Waltke: God's concealing invites human investigation — the king's glory is in searching out what God has hidden. The concealment dignifies inquiry rather than discouraging it.</p></div></div><div id="pr25-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:2</span><p>Calvin: 'God conceals things to exercise our diligence in seeking. Those who investigate what God has hidden in creation and Scripture are participating in a divinely intended activity.'</p></div></div><div id="pr25-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">25:2</span><p>The NET note on 'the glory of God to conceal a matter' discusses the theological epistemology: divine concealment dignifies human investigation.</p></div></div></div><div class="section"><div class="section-header">Verses 15&ndash;28 &mdash; Honey in Moderation; Coals of Fire; City Without Walls</div><span class="verse-text"><span class="verse-num">15</span>Through patience a ruler can be persuaded, and a gentle tongue can break a bone.</span><span class="verse-text"><span class="verse-num">16</span>If you find honey, eat just enough— too much of it, and you will vomit.</span><span class="verse-text"><span class="verse-num">17</span>Seldom set foot in your neighbor's house— too much of you, and they will hate you.</span><span class="verse-text"><span class="verse-num">18</span>Like a club or a sword or a sharp arrow is one who gives false testimony against a neighbor.</span><span class="verse-text"><span class="verse-num">19</span>Like a broken tooth or a lame foot is reliance on the unfaithful in a time of trouble.</span><span class="verse-text"><span class="verse-num">20</span>Like one who takes away a garment on a cold day, or like vinegar poured on a wound, is one who sings songs to a heavy heart.</span><span class="verse-text"><span class="verse-num">21</span>If your enemy is hungry, give him food to eat; if he is thirsty, give him water to drink.</span><span class="verse-text"><span class="verse-num">22</span>In doing this, you will heap burning coals on his head, and the LORD will reward you.</span><span class="verse-text"><span class="verse-num">23</span>Like a north wind that brings unexpected rain is a sly tongue— which provokes a horrified look.</span><span class="verse-text"><span class="verse-num">24</span>Better to live on a corner of the roof than share a house with a quarrelsome wife.</span><span class="verse-text"><span class="verse-num">25</span>Like cold water to a weary soul is good news from a distant land.</span><span class="verse-text"><span class="verse-num">26</span>Like a muddied spring or a polluted well are the righteous who give way to the wicked.</span><span class="verse-text"><span class="verse-num">27</span>It is not good to eat too much honey, nor is it honorable to search out matters that are too deep.</span><span class="verse-text"><span class="verse-num">28</span>Like a city whose walls are broken through is a person who lacks self-control.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr25-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr25-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr25-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr25-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr25-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr25-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr25-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr25-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr25-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">גֶּחָלִים</span> <span class="tlit">gechalim</span> — <strong>burning coals</strong>: V.22: if your enemy is hungry, give him food to eat; if he is thirsty, give him water to drink. In doing this, you will heap burning coals on his head. The burning coals (gᵉḥālîm) are almost certainly a metaphor for the burning shame of conscience — the enemy's realisation that their hostility has been met with unexpected kindness.</p></div><div id="pr25-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains Proverbs' most counter-cultural social ethic: feeding and watering your enemy (vv.21-22), paralleled by Paul in Romans 12:20. The city-without-walls image (v.28) closes the section: the person without self-control is as exposed and vulnerable as a city whose walls have been torn down.</p></div><div id="pr25-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 12:20</span><span class="ref-text">If your enemy is hungry, feed him; if he is thirsty, give him something to drink. In doing this, you will heap burning coals on his head — Paul quotes v.21-22 directly.</span></li><li><span class="ref-cite">Prov 16:32</span><span class="ref-text">Better a patient person than a warrior — the self-control of v.28's city-without-walls principle.</span></li></ul></div><div id="pr25-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:21-22</span><p>If your enemy is hungry, give him food to eat. In doing this, you will heap burning coals on his head. The most counter-intuitive social ethic in Proverbs. Kindness to an enemy — genuine, practical kindness — creates the conditions for their conscience to burn with the shame of having been an enemy to someone who treated them as a friend.</p></div><div class="com-note"><span class="com-ref">25:25</span><p>Like cold water to a weary soul is good news from a distant land. The relief of good news precisely timed — refreshing as cold water to the exhausted. The image is used for the gospel in its simplest form: genuinely good news that reaches the weary.</p></div><div class="com-note"><span class="com-ref">25:28</span><p>Like a city whose walls are broken through is a person who lacks self-control. The exposed city is the most vulnerable entity in the ancient world. The person without self-control is equally exposed: every impulse, every provocation, every temptation finds immediate entry.</p></div></div><div id="pr25-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">25:21-22</span><p>Alter: Feed your enemy — wisdom's most counter-intuitive counsel. The unexpected generosity does what retaliation cannot.</p></div></div><div id="pr25-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">25:11</span><p>Waltke: A word aptly spoken is like apples of gold on a silver setting — aesthetic perfection is the standard for wise speech.</p></div></div><div id="pr25-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">25:22</span><p>Calvin: 'Overcome evil with good — this is the divine strategy. Generosity to an enemy disarms them more effectively than retaliation.'</p></div></div><div id="pr25-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">25:22</span><p>The NET note on heaping burning coals discusses the two interpretive options: shame/repentance or Egyptian reconciliation ritual. Rom 12:20 uses this in the overcome-evil-with-good framework.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr25-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr25-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr25-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr25-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr25-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr25-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr25-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr25-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr25-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr25-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr25-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr25-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr25-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr25-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr25-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr25-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr25-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr25-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr25-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">25:11 — A Word Fitly Spoken</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"A word fitly spoken is like apples of gold in a setting of silver."</td></tr><tr><td class="t-label">Note</td><td>The most beautiful image for appropriate speech in Proverbs. Timing, precision, and appropriateness make the ordinary extraordinary.</td></tr></table></div><div id="pr25-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr25-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr25-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">First section — vv.1-14</span><span class="lit-text">Character, speech, and the social consequences of wisdom and folly</span></div><div class="lit-row"><span class="lit-label">Second section — vv.15ff</span><span class="lit-text">Practical ethics: commerce, community, justice, and the fear of the LORD</span></div><div class="lit-note">Proverbs 25: Hezekiah's collection opens with divine mystery and royal discernment (v.2), peaks with the timely-word image (v.11), and closes with the most counter-cultural social ethic: feed your enemy (vv.21-22).</div></div></div><div id="pr25-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;">"A word fitly spoken is like apples of gold in a setting of silver."</p></div><div id="pr25-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 1:7</span><span class="thread-arrow">-></span><span class="thread-target">Prov 9:10</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The fear of the LORD is the beginning of wisdom — the foundation underlying every proverb.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5-7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The Sermon on the Mount embodies and radicalises Proverbs' wisdom ethics.</div></div></div><div id="pr25-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,86.0 193.6,162.5 120.0,205.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Hiddenness</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Royal Investigation</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Timely Speech</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Enemy Love</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Self-Control</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Good News</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 25: Hezekiah's collection opens with divine mystery and royal discernment (v.2), peaks with the timely-word image (v.11), and closes with the most counter-cultural social ethic: feed your enemy (vv.21-22).</p></div>
+<div id="pr25-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr25-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 25 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"A word fitly spoken is like apples of gold in a setting of silver."</td></tr><tr><td class="t-label">Note</td><td>The most beautiful image for appropriate speech in Proverbs. Timing, precision, and appropriateness make the ordinary extraordinary.</td></tr></table></div><div id="pr25-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr25-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr25-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The concealment-and-search pairing is Proverbs' most profound epistemological statement. God's glory is in concealing; the ruler's glory is in searching out what God has hidden. The hiddenness is a dignifying invitation.</div><div class="lit-row"><span class="lit-label">Coals of Fire: Counter-intuitive Generosity — 25:21-22</span><span class="lit-text">Feed your enemy — wisdom's most counter-intuitive counsel. Generosity to an enemy does what retaliation cannot. Paul quotes this directly (Rom 12:20).</span></div></div></div><div id="pr25-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('אֲפִיצֵי כֶסֶף / Apitsei Kesef', 'apitsei kesef', 'Settings of silver', "The image for the well-fitted word (25:11). Wise speech is not merely accurate but crafted, beautiful, precise — the aesthetic standard of the goldsmith's art applied to language."), ('רוּחַ / Ruach', 'ruach', 'Spirit / temper', "The self-governance capacity of 25:28. To govern one's ruach is to maintain the inner structural integrity that makes self-control possible.")]</div><div id="pr25-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">25:2</span><span class="tx-issue">'Glory of God to conceal; glory of kings to search'</span></div><div class="tx-variants">MT: kevod Elohim haster davar; ukevod melakhim chakor davar. Unique pairing in Proverbs.</div><div class="tx-sig">The concealment is purposeful — an invitation to investigation. The king's glory in searching participates in the divine ordering.</div></div></div><div id="pr25-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">What Does 'Heaping Burning Coals' Mean?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Shame leading to repentance</div><div class="db-proponents">Most evangelical commentators</div><div class="db-argument">The unexpected generosity produces burning shame in the enemy that may lead to reconciliation.</div></div><div class="db-position"><div class="db-pos-name">An Egyptian reconciliation ritual</div><div class="db-proponents">Some scholars</div><div class="db-argument">The image may refer to an Egyptian ceremony where a penitent carried burning coals as a sign of reconciliation.</div></div></div><div class="db-synthesis">In its NT context (Rom 12:20), Paul uses this in the overcome-evil-with-good framework. The burning coals are the consequence of unexpected generosity, whether shame or reconciliation.</div></div></div><div id="pr25-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">God's Hidden Things and Human Investigation</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Apt Speech as Craftsmanship</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Counter-intuitive Generosity to Enemies</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Self-Control as Structural Defence</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 25 opens with the book's most profound epistemological pairing — God conceals; kings search — then moves through images of apt speech (golden apples), counter-intuitive ethics (coals of fire), and the structural vulnerability of the self-uncontrolled (broken city walls).</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
