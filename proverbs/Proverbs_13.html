@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 13</h1>
-<p>Hope Deferred; Fountain of Life; Walk with the Wise</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Teachable Son; Speech that Preserves; Walk with the Wise</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29).</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
 <div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit Israel's accumulated wisdom -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;12 &mdash; Teachable Son; Speech that Preserves; Hope Deferred</div><span class="verse-text"><span class="verse-num">1</span>A wise son heeds his father's instruction, but a mocker does not respond to rebukes.</span><span class="verse-text"><span class="verse-num">2</span>From the fruit of their lips people enjoy good things, but the unfaithful have an appetite for violence.</span><span class="verse-text"><span class="verse-num">3</span>Those who guard their lips preserve their lives, but those who speak rashly will come to ruin.</span><span class="verse-text"><span class="verse-num">4</span>A sluggard's appetite is never filled, but the desires of the diligent are fully satisfied.</span><span class="verse-text"><span class="verse-num">5</span>The righteous hate what is false, but the wicked make themselves a stench and bring shame on themselves.</span><span class="verse-text"><span class="verse-num">6</span>Righteousness guards the person of integrity, but wickedness overthrows the sinner.</span><span class="verse-text"><span class="verse-num">7</span>One person pretends to be rich, yet has nothing; another pretends to be poor, yet has great wealth.</span><span class="verse-text"><span class="verse-num">8</span>A person's riches may ransom their life, but the poor cannot respond to threatening rebukes.</span><span class="verse-text"><span class="verse-num">9</span>The light of the righteous shines brightly, but the lamp of the wicked is snuffed out.</span><span class="verse-text"><span class="verse-num">10</span>Where there is strife, there is pride, but wisdom is found in those who take advice.</span><span class="verse-text"><span class="verse-num">11</span>Dishonest money dwindles away, but whoever gathers money little by little makes it grow.</span><span class="verse-text"><span class="verse-num">12</span>Hope deferred makes the heart sick, but a longing fulfilled is a tree of life.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr13-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr13-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr13-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr13-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr13-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">tocheleth</span> <span class="tlit">tocheleth</span> — <strong>hope / expectation</strong>: V.12: hope deferred (tocheleth memashecha) makes the heart sick. The verb means drawn out, prolonged. Prolonged disappointment produces a specific illness of the soul. A longing fulfilled is a tree of life.</p><p><span class="hebrew-word">menorat reshaim</span> <span class="tlit">menorat reshaim</span> — <strong>lamp of the wicked</strong>: V.9: the lamp of the wicked is snuffed out. The lamp is the ancient symbol of life and family continuity. A snuffed lamp means the end of the family line.</p></div><div id="pr13-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half addresses the teachable son versus the mocker (v.1), speech that preserves or destroys (vv.2-3), diligent versus sluggard (v.4), and the light/lamp contrast (v.9). V.12 is the section's emotional peak: wisdom acknowledges the real suffering of hope deferred before affirming that fulfilment is life-giving.</p></div><div id="pr13-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 11:30</span><span class="ref-text">Fruit of the righteous is a tree of life -- 13:12 is its second occurrence, now attached to fulfilled longing.</span></li><li><span class="ref-cite">Prov 10:1</span><span class="ref-text">A wise son makes a glad father -- the father-son relationship anchoring v.1.</span></li></ul></div><div id="pr13-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:3</span><p>Those who guard their lips preserve their lives. Reckless speech is not merely impolite -- it is life-threatening. Discretion is a survival skill.</p></div><div class="com-note"><span class="com-ref">13:11</span><p>Dishonest money dwindles away. Patient, incremental accumulation of honest gain has structural durability that shortcuts lack.</p></div><div class="com-note"><span class="com-ref">13:12</span><p>Hope deferred makes the heart sick. The wisdom tradition names the real suffering of waiting before affirming that fulfilment is life-giving.</p></div></div></div><div class="section"><div class="section-header">Verses 13&ndash;25 &mdash; Fountain of Life; Walk with the Wise; Spare the Rod</div><span class="verse-text"><span class="verse-num">13</span>Whoever scorns instruction will pay for it, but whoever respects a command is rewarded.</span><span class="verse-text"><span class="verse-num">14</span>The teaching of the wise is a fountain of life, turning a person from the snares of death.</span><span class="verse-text"><span class="verse-num">15</span>Good judgment wins favor, but the way of the unfaithful leads to their destruction.</span><span class="verse-text"><span class="verse-num">16</span>All who are prudent act with knowledge, but fools expose their folly.</span><span class="verse-text"><span class="verse-num">17</span>A wicked messenger falls into trouble, but a trustworthy envoy brings healing.</span><span class="verse-text"><span class="verse-num">18</span>Whoever disregards discipline comes to poverty and shame, but whoever heeds correction is honored.</span><span class="verse-text"><span class="verse-num">19</span>A longing fulfilled is sweet to the soul, but fools detest turning from evil.</span><span class="verse-text"><span class="verse-num">20</span>Walk with the wise and become wise, for a companion of fools suffers harm.</span><span class="verse-text"><span class="verse-num">21</span>Trouble pursues the sinner, but the righteous are rewarded with good things.</span><span class="verse-text"><span class="verse-num">22</span>A good person leaves an inheritance for their children's children, but a sinner's wealth is stored up for the righteous.</span><span class="verse-text"><span class="verse-num">23</span>An unplowed field produces food for the poor, but injustice sweeps it away.</span><span class="verse-text"><span class="verse-num">24</span>Whoever spares the rod hates their children, but the one who loves them is careful to discipline them.</span><span class="verse-text"><span class="verse-num">25</span>The righteous eat to their hearts' content, but the stomach of the wicked goes hungry.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr13-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr13-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr13-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr13-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="pr13-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">meqor chayyim</span> <span class="tlit">meqor chayyim</span> — <strong>fountain of life</strong>: V.14: the teaching of the wise is a spring of life that continuously turns people from death-traps (pache mavet). Wisdom's teaching is not a static deposit but a flowing source.</p><p><span class="hebrew-word">chosek shivto</span> <span class="tlit">chosek shivto</span> — <strong>sparing the rod</strong>: V.24: the rod (shevet) is the shepherd's staff -- the instrument of guidance and protection. The love that withholds correction is negligent: it hates the child by leaving them unformed.</p></div><div id="pr13-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains three of Proverbs' most quoted sayings: fountain of life (v.14), walk with the wise (v.20), and spare the rod (v.24). They share a common logic: formation requires active engagement with wisdom sources.</p></div><div id="pr13-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 14:27</span><span class="ref-text">Fear of the LORD is a fountain of life -- the teaching-of-the-wise (13:14) and the fear-of-the-LORD (14:27) are aligned sources.</span></li><li><span class="ref-cite">1 Cor 15:33</span><span class="ref-text">Bad company corrupts good character -- NT application of v.20's companion proverb.</span></li></ul></div><div id="pr13-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:20</span><p>Walk with the wise and become wise. Wisdom is transmitted person-to-person. The community of the wise is itself a formation environment.</p></div><div class="com-note"><span class="com-ref">13:22</span><p>A good person leaves an inheritance for their children's children. The multigenerational horizon of wisdom's ethics.</p></div><div class="com-note"><span class="com-ref">13:24</span><p>Whoever spares the rod hates their children. Love takes the long view of character formation; sentimentality takes the short view of immediate comfort.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;12 &mdash; Teachable Son; Speech that Preserves; Hope Deferred</div><span class="verse-text"><span class="verse-num">1</span>A wise son heeds his father's instruction, but a mocker does not respond to rebukes.</span><span class="verse-text"><span class="verse-num">2</span>From the fruit of their lips people enjoy good things, but the unfaithful have an appetite for violence.</span><span class="verse-text"><span class="verse-num">3</span>Those who guard their lips preserve their lives, but those who speak rashly will come to ruin.</span><span class="verse-text"><span class="verse-num">4</span>A sluggard's appetite is never filled, but the desires of the diligent are fully satisfied.</span><span class="verse-text"><span class="verse-num">5</span>The righteous hate what is false, but the wicked make themselves a stench and bring shame on themselves.</span><span class="verse-text"><span class="verse-num">6</span>Righteousness guards the person of integrity, but wickedness overthrows the sinner.</span><span class="verse-text"><span class="verse-num">7</span>One person pretends to be rich, yet has nothing; another pretends to be poor, yet has great wealth.</span><span class="verse-text"><span class="verse-num">8</span>A person's riches may ransom their life, but the poor cannot respond to threatening rebukes.</span><span class="verse-text"><span class="verse-num">9</span>The light of the righteous shines brightly, but the lamp of the wicked is snuffed out.</span><span class="verse-text"><span class="verse-num">10</span>Where there is strife, there is pride, but wisdom is found in those who take advice.</span><span class="verse-text"><span class="verse-num">11</span>Dishonest money dwindles away, but whoever gathers money little by little makes it grow.</span><span class="verse-text"><span class="verse-num">12</span>Hope deferred makes the heart sick, but a longing fulfilled is a tree of life.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr13-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr13-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr13-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr13-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr13-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr13-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr13-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr13-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr13-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">tocheleth</span> <span class="tlit">tocheleth</span> — <strong>hope / expectation</strong>: V.12: hope deferred (tocheleth memashecha) makes the heart sick. The verb means drawn out, prolonged. Prolonged disappointment produces a specific illness of the soul. A longing fulfilled is a tree of life.</p><p><span class="hebrew-word">menorat reshaim</span> <span class="tlit">menorat reshaim</span> — <strong>lamp of the wicked</strong>: V.9: the lamp of the wicked is snuffed out. The lamp is the ancient symbol of life and family continuity. A snuffed lamp means the end of the family line.</p></div><div id="pr13-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half addresses the teachable son versus the mocker (v.1), speech that preserves or destroys (vv.2-3), diligent versus sluggard (v.4), and the light/lamp contrast (v.9). V.12 is the section's emotional peak: wisdom acknowledges the real suffering of hope deferred before affirming that fulfilment is life-giving.</p></div><div id="pr13-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 11:30</span><span class="ref-text">Fruit of the righteous is a tree of life -- 13:12 is its second occurrence, now attached to fulfilled longing.</span></li><li><span class="ref-cite">Prov 10:1</span><span class="ref-text">A wise son makes a glad father -- the father-son relationship anchoring v.1.</span></li></ul></div><div id="pr13-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:3</span><p>Those who guard their lips preserve their lives. Reckless speech is not merely impolite -- it is life-threatening. Discretion is a survival skill.</p></div><div class="com-note"><span class="com-ref">13:11</span><p>Dishonest money dwindles away. Patient, incremental accumulation of honest gain has structural durability that shortcuts lack.</p></div><div class="com-note"><span class="com-ref">13:12</span><p>Hope deferred makes the heart sick. The wisdom tradition names the real suffering of waiting before affirming that fulfilment is life-giving.</p></div></div><div id="pr13-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">13:1–4</span><p>The first four proverbs of ch.13 create a character portrait by accumulation: the wise son accepts instruction; the good man eats well from his speech; the talkative person who guards his lips saves himself; the sluggard craves and gets nothing, the diligent is fully satisfied. Alter notes the accumulation method — multiple proverbs each adding a dimension — is the primary teaching strategy of the proverb collections.</p></div><div class="com-note"><span class="com-ref">13:20</span><p>'Walk with the wise and become wise, for a companion of fools suffers harm.' This is Proverbs' most direct social-formation proverb. Alter notes its mechanism: you become like the people you spend time with. Wisdom is transferable through proximity; folly is equally transferable. The choice of companions is therefore a wisdom decision of the first order.</p></div></div><div id="pr13-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">13:1–6</span><p>The teachable-son opening connects to 12:1's teachability theme. Waltke notes ch.13 develops the social consequences of wisdom and folly: the wise person builds social capital (v.2: fruit of one's mouth), while the violent reap destruction. Wisdom is not merely an internal virtue but a social force — it shapes relationships, reputation, and community.</p></div><div class="com-note"><span class="com-ref">13:12</span><p>'Hope deferred makes the heart sick, but a longing fulfilled is a tree of life.' Waltke notes this is one of Proverbs' most psychologically precise observations — the physiology of hope and its frustration. The 'tree of life' image for fulfilled longing places genuine satisfaction in the category of cosmic blessing: to receive what you have hoped for is to taste Eden's gift.</p></div></div><div id="pr13-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:7</span><p>Calvin: 'Some make themselves rich while having nothing; others make themselves poor while having great wealth. This is a paradox that ordinary accounting cannot explain — it is the spiritual arithmetic of covenant faithfulness. The man who gives generously appears to have little; he actually has much. The man who grasps for more appears rich; he is actually poor.'</p></div><div class="com-note"><span class="com-ref">13:24</span><p>Calvin on 'spare the rod, spoil the child': 'The father who refuses to discipline his son out of misplaced tenderness is not showing love but hatred — he is allowing his son to pursue the path that leads to destruction. True love for a child includes the willingness to cause pain for the sake of character formation.'</p></div></div><div id="pr13-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">13:12</span><p>The NET note on 'hope deferred makes the heart sick' discusses the word yachal (hope, wait expectantly). Deferred hope (mamshikhah, prolonged) produces sickness — a psychosomatic observation that is as accurate to modern experience as it was to ancient. The tree of life for fulfilled longing places emotional fulfilment within the cosmic framework of life and blessing.</p></div><div class="com-note"><span class="com-ref">13:20</span><p>The NET note on 'walk with the wise and become wise' (holekh et-chakhamim yechkam) discusses the sociological mechanism: wisdom is transferred through intentional association. The word 'walk with' (halakh et) means accompaniment — the regular, sustained companionship that shapes character over time. This is the positive version of the warning about companionship with sinners in 1:10–19.</p></div></div></div><div class="section"><div class="section-header">Verses 13&ndash;25 &mdash; Fountain of Life; Walk with the Wise; Spare the Rod</div><span class="verse-text"><span class="verse-num">13</span>Whoever scorns instruction will pay for it, but whoever respects a command is rewarded.</span><span class="verse-text"><span class="verse-num">14</span>The teaching of the wise is a fountain of life, turning a person from the snares of death.</span><span class="verse-text"><span class="verse-num">15</span>Good judgment wins favor, but the way of the unfaithful leads to their destruction.</span><span class="verse-text"><span class="verse-num">16</span>All who are prudent act with knowledge, but fools expose their folly.</span><span class="verse-text"><span class="verse-num">17</span>A wicked messenger falls into trouble, but a trustworthy envoy brings healing.</span><span class="verse-text"><span class="verse-num">18</span>Whoever disregards discipline comes to poverty and shame, but whoever heeds correction is honored.</span><span class="verse-text"><span class="verse-num">19</span>A longing fulfilled is sweet to the soul, but fools detest turning from evil.</span><span class="verse-text"><span class="verse-num">20</span>Walk with the wise and become wise, for a companion of fools suffers harm.</span><span class="verse-text"><span class="verse-num">21</span>Trouble pursues the sinner, but the righteous are rewarded with good things.</span><span class="verse-text"><span class="verse-num">22</span>A good person leaves an inheritance for their children's children, but a sinner's wealth is stored up for the righteous.</span><span class="verse-text"><span class="verse-num">23</span>An unplowed field produces food for the poor, but injustice sweeps it away.</span><span class="verse-text"><span class="verse-num">24</span>Whoever spares the rod hates their children, but the one who loves them is careful to discipline them.</span><span class="verse-text"><span class="verse-num">25</span>The righteous eat to their hearts' content, but the stomach of the wicked goes hungry.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr13-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr13-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr13-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr13-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr13-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr13-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr13-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr13-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr13-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">meqor chayyim</span> <span class="tlit">meqor chayyim</span> — <strong>fountain of life</strong>: V.14: the teaching of the wise is a spring of life that continuously turns people from death-traps (pache mavet). Wisdom's teaching is not a static deposit but a flowing source.</p><p><span class="hebrew-word">chosek shivto</span> <span class="tlit">chosek shivto</span> — <strong>sparing the rod</strong>: V.24: the rod (shevet) is the shepherd's staff -- the instrument of guidance and protection. The love that withholds correction is negligent: it hates the child by leaving them unformed.</p></div><div id="pr13-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains three of Proverbs' most quoted sayings: fountain of life (v.14), walk with the wise (v.20), and spare the rod (v.24). They share a common logic: formation requires active engagement with wisdom sources.</p></div><div id="pr13-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 14:27</span><span class="ref-text">Fear of the LORD is a fountain of life -- the teaching-of-the-wise (13:14) and the fear-of-the-LORD (14:27) are aligned sources.</span></li><li><span class="ref-cite">1 Cor 15:33</span><span class="ref-text">Bad company corrupts good character -- NT application of v.20's companion proverb.</span></li></ul></div><div id="pr13-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:20</span><p>Walk with the wise and become wise. Wisdom is transmitted person-to-person. The community of the wise is itself a formation environment.</p></div><div class="com-note"><span class="com-ref">13:22</span><p>A good person leaves an inheritance for their children's children. The multigenerational horizon of wisdom's ethics.</p></div><div class="com-note"><span class="com-ref">13:24</span><p>Whoever spares the rod hates their children. Love takes the long view of character formation; sentimentality takes the short view of immediate comfort.</p></div></div><div id="pr13-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">13:13–14</span><p>The fountain-of-life and snare-of-death imagery for the wise person's teaching appears here in summary form. Alter notes this pair (fountain of life; snare of death) distils the entire Proverbs project: wisdom leads to life; folly leads to death. The extremes — life and death, fountain and snare — are not rhetorical exaggeration but the genuine theological stakes of ordinary choices.</p></div><div class="com-note"><span class="com-ref">13:22</span><p>'A good person leaves an inheritance for their children's children, but a sinner's wealth is stored up for the righteous.' The three-generation perspective is rare in Proverbs. Alter notes the observation functions both as a general principle about wealth accumulation (the prudent build across generations) and as a theological promise (ultimately, the wicked's wealth doesn't stay with the wicked).</p></div></div><div id="pr13-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">13:13–25</span><p>The second section develops the long-term perspectives that wisdom maintains. Waltke notes vv.13–25 are held together by the theme of future-orientation: the wise person weighs consequences (v.13–14), hopes for fulfilled longing (v.12), builds wealth gradually (v.11), and disciplines children for their future (v.24). Wisdom lives with one eye on tomorrow.</p></div><div class="com-note"><span class="com-ref">13:24</span><p>'Whoever spares the rod hates their children, but the one who loves them is careful to discipline them.' Waltke notes 'careful to discipline' (meaher musaro) literally means 'seeks their discipline' — the loving parent is proactively looking for opportunities for character-forming correction, not merely responding to crises.</p></div></div><div id="pr13-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">13:13</span><p>Calvin: 'Those who despise the divine word are destroying themselves. The word of God is not merely advice to be accepted or rejected at pleasure — it is the expression of the divine will, and to treat it with contempt is to set oneself against the order of reality. The consequences are not arbitrary punishment but the natural outcome of choosing against the grain of how things actually are.'</p></div><div class="com-note"><span class="com-ref">13:25</span><p>Calvin: 'God takes care that the belly of the righteous is filled — not always with abundance, but with what is sufficient and appropriate. This is a covenant promise: the person who walks in covenant faithfulness will not be abandoned to starvation. The wicked may have abundance, but it is temporary and unblessed; the righteous may have little, but it is genuine and satisfying.'</p></div></div><div id="pr13-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">13:11</span><p>The NET note on 'wealth obtained by fraud dwindles, but whoever gathers money little by little makes it grow' discusses the Hebrew vathal (fraud, worthlessness, vanity) — the wealth gained by deceit or speculation. The note identifies this as a general economic observation: quick wealth gained dishonestly tends to disappear; patient accumulation tends to grow. The principle is both prudential and theological.</p></div><div class="com-note"><span class="com-ref">13:22</span><p>The NET note on 'a sinner's wealth is stored up for the righteous' (chote' tsafun letsadiq) discusses the eschatological resonance: the sinner accumulates wealth that ultimately transfers to the covenant community. The note cites Eccl 2:26 as a parallel (the sinner 'gathers and stores up wealth to hand it over to the one who pleases God') and Prov 28:8 as a third witness.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'pr13-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'pr13-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'pr13-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'pr13-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'pr13-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'pr13-hebtext')"><span>Hebrew-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'pr13-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'pr13-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr13-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr13-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr13-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr13-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr13-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr13-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr13-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr13-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr13-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="pr13-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The wise son</div><div class="person-role">Heeds instruction; walks with wise</div><div class="person-text">Formation happens through relationship with the wise.</div></div><div class="person-card"><div class="person-name">The mocker</div><div class="person-role">Scorns instruction</div><div class="person-text">Cannot be formed -- has closed the channel of correction.</div></div></div></div><div id="pr13-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">13:12 -- Hope Deferred</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Hope deferred makes the heart sick, but a longing fulfilled is a tree of life."</td></tr><tr><td class="t-label">Note</td><td>Among Proverbs' most psychologically acute observations. The heart's sickness from prolonged disappointment is real and named.</td></tr></table></div><div id="pr13-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Fountain of life</div><div class="source-quote">Meqor chayyim appears four times in Proverbs (10:11; 13:14; 14:27; 16:22). Always a flowing source that enables life and turns away death.</div><div class="source-note">The image emphasises wisdom as dynamic and life-giving.</div></div><div class="source-block"><div class="source-title">Spare the rod</div><div class="source-quote">The shevet (rod/staff) is the shepherd's instrument of guidance and protection.</div><div class="source-note">The rod is guidance more than punishment in its primary register.</div></div></div><div id="pr13-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">13:20 in discipleship</div><div class="rec-text">Walk with the wise -- the basis for mentoring and spiritual direction.</div></div><div class="rec-block"><div class="rec-who">13:24 in education history</div><div class="rec-text">Spare the rod -- among the most debated Proverbs texts in parenting literature.</div></div></div><div id="pr13-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Teachable son; hope deferred — vv.1-12</span><span class="lit-text">Speech preserves; sluggard vs diligent; lamp of righteous; tree of life</span></div><div class="lit-row"><span class="lit-label">Fountain; walk with wise; spare rod — vv.13-25</span><span class="lit-text">Fountain of life; walk with wise; multigenerational inheritance; discipline as love</span></div><div class="lit-note">Chapter 13: formation requires proximity -- to wise teachers, to corrective discipline, to the fountain of wisdom itself.</div></div></div><div id="pr13-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">12</sup> "<span class="dn-key">Hope deferred</span> makes the heart sick; a longing fulfilled is a <span class="dn-key">tree of life</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">20</sup> "Walk with the <span class="dn-key">wise</span> and become wise."</p></div><div id="pr13-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">13:12</span><span class="thread-arrow">-></span><span class="thread-target">Prov 11:30</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Tree of life -- fulfilled longing and righteous fruitfulness.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">13:14</span><span class="thread-arrow">-></span><span class="thread-target">Prov 14:27</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Fountain of life -- wise teaching and fear of the LORD aligned.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">13:20</span><span class="thread-arrow">-></span><span class="thread-target">1 Cor 15:33</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Walk with the wise -- bad company corrupts. NT applies the companion-formation proverb.</div></div></div><div id="pr13-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,86.0 193.6,162.5 120.0,188.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Formation</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Speech</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Hope</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Diligence</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Multigenerational</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Discipline</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 13: wisdom is transmitted person-to-person. The fountain, the wise companion, and the disciplining parent are all formation environments.</p></div>
+<div id="pr13-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The wise son</div><div class="person-role">Heeds instruction; walks with wise</div><div class="person-text">Formation happens through relationship with the wise.</div></div><div class="person-card"><div class="person-name">The mocker</div><div class="person-role">Scorns instruction</div><div class="person-text">Cannot be formed -- has closed the channel of correction.</div></div></div></div><div id="pr13-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 13 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Hope deferred makes the heart sick, but a longing fulfilled is a tree of life."</td></tr><tr><td class="t-label">Note</td><td>Among Proverbs' most psychologically acute observations. The heart's sickness from prolonged disappointment is real and named.</td></tr></table></div><div id="pr13-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Fountain of life</div><div class="source-quote">Meqor chayyim appears four times in Proverbs (10:11; 13:14; 14:27; 16:22). Always a flowing source that enables life and turns away death.</div><div class="source-note">The image emphasises wisdom as dynamic and life-giving.</div></div><div class="source-block"><div class="source-title">Spare the rod</div><div class="source-quote">The shevet (rod/staff) is the shepherd's instrument of guidance and protection.</div><div class="source-note">The rod is guidance more than punishment in its primary register.</div></div></div><div id="pr13-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">13:20 in discipleship</div><div class="rec-text">Walk with the wise -- the basis for mentoring and spiritual direction.</div></div><div class="rec-block"><div class="rec-who">13:24 in education history</div><div class="rec-text">Spare the rod -- among the most debated Proverbs texts in parenting literature.</div></div></div><div id="pr13-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Proverbs 13:20 is the book's clearest statement about social formation: you become like the people you spend time with. Wisdom is contagious through proximity; so is folly. The choice of companions is therefore one of wisdom's highest-stakes practical decisions — not merely about reputation but about character formation.</div><div class="lit-row"><span class="lit-label">Fulfilled Longing as Tree of Life — 13:12</span><span class="lit-text">The tree of life imagery for fulfilled longing (13:12) places emotional satisfaction in the category of cosmic blessing. To hope for something and receive it is not merely pleasant — it is a taste of Eden's gift, the original life-giving tree that the covenant restoration is working to restore. Proverbs' wisdom is not ascetic but eucharistic.</span></div></div></div><div id="pr13-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('אֲגֻרָּה / Agurah', 'agurah', 'Gathers gradually', "The verb describing patient wealth accumulation in 13:11 — gathering little by little (al-yad, literally 'by hand'). The contrast with fraud-wealth (vathal) is between the slow, honest accumulation of legitimate work and the quick, dishonest seizure of fraudulent gain. The little-by-little accumulation is sustainable; the fraud-wealth disappears. Wisdom's economics is patient."), ('שֵׁבֶט / Shevet', 'shevet', 'Rod / staff / scepter', "The discipline instrument of 13:24. The same word is used for a shepherd's staff, a ruler's scepter, and the 'rod' of Proverbs' disciplinary passages. The range of meanings is itself instructive: to discipline a child is to exercise the authority of a shepherd (guiding and protecting) and a ruler (governing for the community's welfare). The rod is not a punishment device but an authority instrument.")]</div><div id="pr13-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">13:24</span><span class="tx-issue">'Spare the rod, hate the child'</span></div><div class="tx-variants">MT: chosekh shivto soneh beno (he who spares his rod hates his son). The verse is unambiguous in the MT — sparing the rod = hatred; disciplining = love. LXX: ho pheidōmenos tēs bakterias misei ton huion autou — identical meaning. The rod (shevet) is the same word used for the shepherd's staff and the ruler's scepter.</div><div class="tx-sig">The verse states a principle about parental love that is counter-intuitive to modern sensibility: love is not the absence of discipline but its presence. The application of corporal punishment is culturally and contextually conditioned; the underlying principle — that genuine love for a child includes willingness to cause discomfort for character formation — is the durable core of the proverb.</div></div></div><div id="pr13-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Does Proverbs 13:24 Endorse Corporal Punishment?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Yes, within appropriate limits</div><div class="db-proponents">MacArthur, conservative evangelical scholars</div><div class="db-argument">The rod is a real rod, and the proverb is a real endorsement of corporal punishment as a legitimate tool of parental discipline. The multiple rod-passages in Proverbs (13:24; 22:15; 23:13–14; 29:15) form a consistent pattern that cannot be allegorised away. Applied wisely and in love, corporal discipline is the covenant parent's tool.</div></div><div class="db-position"><div class="db-pos-name">The rod is wisdom's authority, not necessarily a physical instrument</div><div class="db-proponents">Some evangelical scholars</div><div class="db-argument">The 'rod' in Proverbs represents the general authority and firmness of discipline, not necessarily a specific physical implement. Ancient shepherds used the rod to guide and correct sheep — the image is of authoritative, engaged, corrective guidance, which may or may not involve physical punishment depending on context.</div></div><div class="db-position"><div class="db-pos-name">Culturally conditioned; the principle (discipline in love) is universal</div><div class="db-proponents">Most contemporary evangelical scholars</div><div class="db-argument">The specific cultural practice (corporal punishment in a specific ancient Near Eastern context) is distinct from the universal principle (loving parental discipline is essential to character formation). The principle is non-negotiable; the specific application must be contextualised to contemporary understanding of child development and wellbeing.</div></div></div><div class="db-synthesis">The 'discipline in love' principle is universal and non-negotiable. The specific application of physical punishment is contextually conditioned. The most responsible pastoral reading takes the principle (loving parents discipline their children) with full seriousness while acknowledging that specific practices must be evaluated within our contemporary understanding of child psychology and the command 'do not exasperate your children' (Eph 6:4).</div></div></div><div id="pr13-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 188.0,120.0 120.0,205.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Social Formation: You Become Your Companions</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Future-Orientation as Wisdom Practice</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Discipline as Parental Love</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Hope, Longing, and the Tree of Life</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 13 develops the social and temporal dimensions of wisdom: who you walk with shapes who you become (v.20); how you discipline your children expresses whether you love them (v.24); how you acquire wealth determines whether you keep it (v.11). The chapter's most memorable observation is its most counter-intuitive: sparing discipline is a form of hatred, not love.</p></div>
 </div>
 </main>
 <script>
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
