@@ -1549,7 +1549,7 @@ function openBookFromSearch(id) {
     const testament = bookEl.closest('.testament-group');
     if (testament) testament.classList.add('open');
     bookEl.classList.add('open');
-    setTimeout(() => bookEl.scrollIntoView({behavior:'smooth', block:'center'}), 100);
+    setTimeout(() => bookEl.scrollIntoView({behavior:'smooth', block:'start'}), 100);
   }
 }
 
@@ -1563,7 +1563,13 @@ function toggleBook(id) {
   const item = document.getElementById('book-' + id);
   const wasOpen = item.classList.contains('open');
   document.querySelectorAll('.book-item.open').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  if (!wasOpen) {
+    item.classList.add('open');
+    setTimeout(() => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < 60) item.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 10);
+  }
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────
