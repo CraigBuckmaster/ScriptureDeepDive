@@ -750,6 +750,135 @@ def tl_panel(pid, items, range_start=None, range_end=None, caption=None):
             f'{cap_html}'
             f'</div>')
 
+
+def plan_section_panels(section_header, verse_range, section_text_sample=''):
+    """
+    PLANNING HELPER: call during chapter design, before writing data.
+    Evaluates a section and prints whether Places and Timeline panels add value.
+
+    Arguments:
+        section_header       str  e.g. 'Verses 1-9 — The Call of Abram'
+        verse_range          str  e.g. '1-9'
+        section_text_sample  str  optional: first sentence of section content
+
+    Returns dict: {places, timeline, reasons, notes} where values are YES/MAYBE/NO
+
+    PLACES YES when: named locations are CENTRAL to the section; travel/movement
+    shapes the theology; place names carry loaded covenant history (Bethel, Sinai,
+    Golgotha, Goshen etc.); geography is the stage (gate, threshing floor, tomb).
+    PLACES NO when: pure dialogue with no travel; law/aphorism; Proverbs (skip
+    entirely — no narrative geography); place named once as incidental backdrop.
+
+    TIMELINE YES when: age markers ('was 75 years old'); elapsed time ('after 7
+    years'); calendar dates; genealogies (ALWAYS); Passion Week (ALWAYS Matt 21-28);
+    named time spans ('40 years', '430 years', '3 days'); covenant-clock passages.
+    TIMELINE NO when: atemporal wisdom; law with no narrative time anchor; Proverbs.
+
+    SPAN: ~1000-year window. 4-5 context events (label-only) before/after the
+    highlighted passage. Current event MUST have tl-text (1-3 sentences on why
+    the timing matters theologically).
+    """
+    h = section_header.lower()
+    t = section_text_sample.lower()
+    combined = h + ' ' + t
+    reasons, notes = [], []
+
+    # Places signals
+    p_yes_words = ['went', 'came', 'fled', 'crossed', 'returned', 'traveled',
+                   'set out', 'entered', 'left', 'arrived', 'descended', 'ascended',
+                   'journey', 'road', 'route', 'wilderness', 'desert', 'mountain',
+                   'river', 'sea', 'egypt', 'canaan', 'sinai', 'moab', 'galilee',
+                   'jerusalem', 'bethlehem', 'capernaum', 'jericho', 'nazareth',
+                   'jordan', 'flight', 'exile', 'departure', 'camp', 'settlement',
+                   'city gate', 'gate', 'threshing floor', 'field', 'tomb', 'garden',
+                   'temple', 'tabernacle', 'horeb', 'bethel', 'hebron', 'goshen']
+    p_no_words  = ['proverb', 'blessed are', 'you have heard', 'do not', 'whoever',
+                   'a wise', 'the fool', 'like a', 'better than', 'the law says',
+                   'gentle answer', 'answer turns']
+    p_hits = [w for w in p_yes_words if w in combined]
+    p_veto = any(w in combined for w in p_no_words) and not p_hits
+
+    if p_veto:
+        places = 'NO';   reasons.append('Places NO: wisdom/law content — no narrative geography')
+    elif len(p_hits) >= 2:
+        places = 'YES';  reasons.append(f'Places YES: geography signals — {", ".join(p_hits[:3])}')
+        notes.append('Identify 2-4 locations central to this section (name, modern coords, theological significance)')
+    elif len(p_hits) == 1:
+        places = 'MAYBE'; reasons.append(f'Places MAYBE: one signal ({p_hits[0]}) — is it central or incidental?')
+    else:
+        places = 'NO';   reasons.append('Places NO: no travel or named geography signals')
+
+    # Timeline signals
+    genealogy = any(w in combined for w in ['genealogy', 'begot', 'begat', 'generations']) or combined.count('son of') >= 2
+    passion   = any(w in combined for w in ['passover', 'gethsemane', 'crucifixion', 'burial',
+                                             'resurrection', 'triumphal', 'that night', 'early morning'])
+    t_yes_words = ['years old', 'year old', 'forty years', 'seven years', 'three days',
+                   '40 days', '430 years', 'generation', 'first day', 'that day', 'morning',
+                   'from that time', 'two days', 'long time', 'how long', 'harvest', 'feast',
+                   'born', 'died at', 'age of']
+    t_hits = [w for w in t_yes_words if w in combined]
+    t_veto = any(w in combined for w in p_no_words) and not genealogy and not passion and not t_hits
+
+    if genealogy:
+        timeline = 'YES'; reasons.append('Timeline YES: genealogy — always include')
+        notes.append("Span the full generational range; highlight this section's key generation as current event")
+    elif passion:
+        timeline = 'YES'; reasons.append('Timeline YES: Passion Week — include day-by-day chronology')
+        notes.append('Use tight span (1-2 weeks); label Passion Week days precisely')
+    elif t_veto:
+        timeline = 'NO';  reasons.append('Timeline NO: wisdom/law — no chronological anchor')
+    elif len(t_hits) >= 2:
+        timeline = 'YES'; reasons.append(f'Timeline YES: time signals — {", ".join(t_hits[:3])}')
+        notes.append('~1000-year window; 4-5 context events label-only; current event needs tl-text explanation')
+    elif len(t_hits) == 1:
+        timeline = 'MAYBE'; reasons.append(f'Timeline MAYBE: one signal ({t_hits[0]}) — does context add value?')
+    else:
+        timeline = 'NO';  reasons.append('Timeline NO: no specific time markers')
+
+    result = {'places': places, 'timeline': timeline, 'reasons': reasons, 'notes': notes}
+    icons = {'YES': '\033[92m✓\033[0m', 'MAYBE': '\033[93m?\033[0m', 'NO': '\033[90m✗\033[0m'}
+    print(f'\n  {section_header} (vv.{verse_range})')
+    print(f'    Places   [{icons[places]}] {places}')
+    print(f'    Timeline [{icons[timeline]}] {timeline}')
+    for r in reasons: print(f'      • {r}')
+    for n in notes:   print(f'      → {n}')
+    return result
+
+
+def plan_chapter(book_name, chapter_num, sections):
+    """
+    CHAPTER PLANNING HELPER — call at the START of building a new chapter.
+    Pass a list of (header, verse_range, first_verse_sample) tuples and
+    receive a Places/Timeline recommendation for every section plus a summary.
+
+    Usage:
+        plan_chapter('Numbers', 13, [
+            ('Verses 1-25 — Twelve Spies Sent', '1-25',
+             'The LORD said to Moses, Send some men to explore the land of Canaan'),
+            ('Verses 26-33 — The Report and the Fear', '26-33',
+             'They came back to Moses and Aaron and the whole Israelite community'),
+        ])
+
+    After reviewing output, add places/timeline keys to sections that need them.
+    REMINDER: chapters with tl/poi panels need tl-visual + poi-entry CSS in their
+    <style> block. build_chapter() injects this via EXTRA_CSS automatically.
+    Manual patch scripts must inject it explicitly.
+    """
+    print(f'\n\033[96m{"="*58}\033[0m')
+    print(f'\033[96mCHAPTER PLAN: {book_name} {chapter_num}\033[0m')
+    print(f'\033[96m{"="*58}\033[0m')
+    results = [plan_section_panels(hdr, vr, samp) for hdr, vr, samp in sections]
+    y_p = sum(1 for r in results if r['places']   == 'YES')
+    y_t = sum(1 for r in results if r['timeline'] == 'YES')
+    m_p = sum(1 for r in results if r['places']   == 'MAYBE')
+    m_t = sum(1 for r in results if r['timeline'] == 'MAYBE')
+    print(f'\n  SUMMARY  Places: {y_p} YES, {m_p} MAYBE  |  Timeline: {y_t} YES, {m_t} MAYBE')
+    if y_p + m_p + y_t + m_t > 0:
+        print('  REMINDER: any chapter receiving tl/poi panels needs poi-entry + tl-visual CSS.')
+    print()
+    return results
+
+
 def ppl_panel(pid, people):
     cards = ''.join(f'<div class="person-card"><div class="person-name">{n}</div><div class="person-role">{r}</div><div class="person-text">{t}</div></div>' for n,r,t in people)
     return f'<div id="{pid}" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid">{cards}</div></div>'
@@ -984,13 +1113,26 @@ def build_chapter(book_dir, ch, data):
       ctx         str                     Context note
       cross       list[(ref, text)]       Cross-references
       hist        str          [OPTIONAL] Historical background
-      places      list[(name, region, text)]  [OPTIONAL]
+      places      list[(name, coords, text)]  [OPTIONAL]
+                  name=place name, coords=modern location, text=significance para
+                  INCLUDE when: named locations are CENTRAL to the section's meaning;
+                  geography shapes narrative or theology; movement between places
+                  matters; a place name carries loaded history (e.g. Bethel, Sinai,
+                  Golgotha). SKIP when: pure dialogue/law/aphorism; location is
+                  incidental backdrop; Proverbs-style wisdom (no narrative geography).
       people_sec  list[(name, role, text)]    [OPTIONAL] Section-level people
       timeline    list[dict]  [OPTIONAL]  Each dict: {date, name, text, current, year}
                   date=display string e.g.'c. 2091 BC', name=short event label,
                   text=explanatory note (shown only when current=True),
                   current=bool (True = highlighted as this passage),
-                  year=int negative=BC e.g. -2091 for proportional placement
+                  year=int negative=BC e.g. -2091 for proportional placement.
+                  INCLUDE when: section has specific time markers (ages, elapsed
+                  time, calendar dates, numbered days); genealogies (always);
+                  meaning improves with ~1000-year context window; Passion Week
+                  chronology. SKIP when: atemporal wisdom/law; time is irrelevant.
+                  SPAN: ~1000-year window around the passage. Include 4-5 context
+                  events. The current event MUST have a tl-text explanation (1-3
+                  sentences on why the timing matters). Other events label-only.
       mac         list[(ref, text)]      MacArthur notes
       sarna       list[(ref, text)]      Sarna/JPS notes      [scope: OT only]
       alter       list[(ref, text)]      Alter literary notes [scope: OT prose]
