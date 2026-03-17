@@ -219,6 +219,30 @@ EXTRA_CSS = '''
 .db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
               background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
               padding:.4rem .6rem;line-height:1.55;}
+
+/* ── Places (POI) section panel ─────────────────────────────── */
+.poi-entry{padding:.7rem 0;border-bottom:1px solid rgba(26,96,40,.35);}
+.poi-entry:last-child{border-bottom:none;}
+.poi-name{font-family:'Cinzel',serif;font-size:.8rem;color:var(--poi-accent);margin-bottom:.2rem;}
+.poi-coords{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-bottom:.35rem;}
+.poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
+
+/* ── Timeline section panel ─────────────────────────────────── */
+.tl-visual{position:relative;margin:.5rem 0 .3rem;}
+.tl-spine{position:absolute;left:72px;top:12px;bottom:12px;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 8%,#4a6888 92%,transparent);pointer-events:none;}
+.tl-event{position:relative;display:grid;grid-template-columns:64px 26px 1fr;grid-template-rows:auto auto;align-items:start;margin-bottom:0;padding:6px 0;}
+.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:'Cinzel',serif;font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:8px;white-space:nowrap;}
+.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;padding-top:4px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}
+.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:4px;}
+.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}
+.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}
+.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 '''
 
 REGISTRY = [
@@ -620,13 +644,111 @@ def cross_panel(pid, refs):
     items = ''.join(f'<li><span class="ref-cite">{c}</span><span class="ref-text">{t}</span></li>' for c,t in refs)
     return f'<div id="{pid}" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list">{items}</ul></div>'
 
-def poi_panel(pid, cards):
-    inner = ''.join(f'<div class="poi-card"><div class="poi-name">{n}</div><div class="poi-region">{r}</div><div class="poi-text">{t}</div></div>' for n,r,t in cards)
-    return f'<div id="{pid}" class="anno-panel poi-panel"><h4>Places &amp; Geography</h4><div class="poi-grid">{inner}</div></div>'
+def poi_panel(pid, entries):
+    """Build a Places panel.
 
-def tl_panel(pid, items):
-    rows = ''.join(f'<p><strong style="color:#c0d8f0;font-family:\'Cinzel\',serif;font-size:.7rem;">{e}</strong> — {ev}</p>' for e,ev in items)
-    return f'<div id="{pid}" class="anno-panel tl-panel"><h4>Timeline</h4>{rows}</div>'
+    entries — list of 3-tuples: (name, coords, text)
+        name    str  place name, e.g. 'Shechem'
+        coords  str  modern location / region, e.g. 'Central Canaan hill country'
+        text    str  explanatory paragraph
+    """
+    inner = ''.join(
+        f'<div class="poi-entry">'
+        f'<div class="poi-name">{n}</div>'
+        f'<div class="poi-coords">{c}</div>'
+        f'<div class="poi-text">{t}</div>'
+        f'</div>'
+        for n, c, t in entries
+    )
+    return (f'<div id="{pid}" class="anno-panel poi-panel">'
+            f'<h4>Places</h4>{inner}</div>')
+
+def tl_panel(pid, items, range_start=None, range_end=None, caption=None):
+    """Build a visual proportional timeline panel.
+
+    items — list of dicts or 5-tuples:
+        (date_label, name, text, is_current, year_for_pos)
+        • date_label  str   e.g. 'c. 2091 BC'
+        • name        str   short event label
+        • text        str   explanatory text (shown only for is_current=True entries, or pass '' to skip)
+        • is_current  bool  highlights this event as the passage being studied
+        • year_for_pos int  numeric year (positive=AD, negative=BC) for proportional placement;
+                           pass None to distribute events evenly
+
+    range_start, range_end — int years (negative=BC) for the range labels shown at bottom.
+        If omitted, derived from item years with 10% padding.
+    caption — optional italic note at bottom (e.g. 'Traditional chronology; dates approximate.')
+    """
+    # Normalise items to dicts
+    entries = []
+    for item in items:
+        if isinstance(item, dict):
+            entries.append(item)
+        else:
+            # Unpack tuple (date_label, name, text, is_current, year_for_pos)
+            dl, nm, tx, cur, yr = (list(item) + [None, None, False, None, None])[:5]
+            entries.append({'date': dl, 'name': nm, 'text': tx or '',
+                            'current': bool(cur), 'year': yr})
+
+    # Determine numeric years for positioning
+    years = [e.get('year') for e in entries]
+    if all(y is not None for y in years):
+        ys = sorted(years)
+        lo, hi = ys[0], ys[-1]
+        span = (hi - lo) or 1
+        pad = span * 0.10
+        r0 = lo - pad if range_start is None else range_start
+        r1 = hi + pad if range_end   is None else range_end
+        total = (r1 - r0) or 1
+        def pct(y): return round((y - r0) / total * 100, 1)
+        positions = [pct(e['year']) for e in entries]
+    else:
+        # Even distribution
+        n = len(entries)
+        positions = [round(i / max(n-1,1) * 100, 1) for i in range(n)]
+        r0 = range_start or 0
+        r1 = range_end   or 0
+
+    # Build event rows
+    rows_html = ''
+    for i, (e, pos) in enumerate(zip(entries, positions)):
+        cur_cls = ' current' if e.get('current') else ''
+        text_html = (f'<div class="tl-text">{e["text"]}</div>'
+                     if e.get('text') else '')
+        rows_html += (
+            f'<div class="tl-event{cur_cls}">'
+            f'<div class="tl-date">{e["date"]}</div>'
+            f'<div class="tl-dot-wrap"><div class="tl-dot"></div></div>'
+            f'<div class="tl-body">'
+            f'<div class="tl-name">{e["name"]}</div>'
+            f'{text_html}'
+            f'</div></div>\n'
+        )
+
+    # Range labels
+    def yr_label(y):
+        if y is None: return ''
+        yi = int(y)
+        return f'c. {abs(yi)} {"BC" if yi < 0 else "AD"}'
+
+    range_html = ''
+    if r0 != 0 or r1 != 0:
+        range_html = (f'<div class="tl-range">'
+                      f'<span>{yr_label(r0)}</span>'
+                      f'<span>{yr_label(r1)}</span>'
+                      f'</div>')
+
+    cap_html = f'<p class="tl-caption">{caption}</p>' if caption else ''
+
+    return (f'<div id="{pid}" class="anno-panel tl-panel">'
+            f'<h4>Timeline</h4>'
+            f'<div class="tl-visual">'
+            f'<div class="tl-spine"></div>'
+            f'{rows_html}'
+            f'</div>'
+            f'{range_html}'
+            f'{cap_html}'
+            f'</div>')
 
 def ppl_panel(pid, people):
     cards = ''.join(f'<div class="person-card"><div class="person-name">{n}</div><div class="person-role">{r}</div><div class="person-text">{t}</div></div>' for n,r,t in people)
@@ -864,7 +986,11 @@ def build_chapter(book_dir, ch, data):
       hist        str          [OPTIONAL] Historical background
       places      list[(name, region, text)]  [OPTIONAL]
       people_sec  list[(name, role, text)]    [OPTIONAL] Section-level people
-      timeline    list[(era, event)]          [OPTIONAL]
+      timeline    list[dict]  [OPTIONAL]  Each dict: {date, name, text, current, year}
+                  date=display string e.g.'c. 2091 BC', name=short event label,
+                  text=explanatory note (shown only when current=True),
+                  current=bool (True = highlighted as this passage),
+                  year=int negative=BC e.g. -2091 for proportional placement
       mac         list[(ref, text)]      MacArthur notes
       sarna       list[(ref, text)]      Sarna/JPS notes      [scope: OT only]
       alter       list[(ref, text)]      Alter literary notes [scope: OT prose]
