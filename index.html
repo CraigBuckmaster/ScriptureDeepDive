@@ -1555,7 +1555,14 @@ function openBookFromSearch(id) {
 
 // ── TESTAMENT TOGGLE ──────────────────────────────────────────────────────
 function toggleTestament(id) {
-  document.getElementById(id).classList.toggle('open');
+  const grp = document.getElementById(id);
+  grp.classList.toggle('open');
+  if (grp.classList.contains('open')) {
+    setTimeout(() => {
+      const rect = grp.getBoundingClientRect();
+      if (rect.top < 60) grp.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 10);
+  }
 }
 
 // ── BOOK TOGGLE ───────────────────────────────────────────────────────────
