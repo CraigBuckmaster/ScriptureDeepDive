@@ -184,6 +184,20 @@ EXTRA_CSS = '''
 .com-panel.com-netbible{background:#070e06;border-color:#688858;}
 .com-panel.com-netbible h4{color:#d8e8d0;}
 .com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+/* Marcus — Anchor Bible (teal-blue: historical-critical scholarship) */
+.anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
+.anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
+.anno-trigger.marcus.active{filter:brightness(1.25);}
+.com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
+.com-panel.com-marcus h4{color:#70d8d8;}
+.com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
+/* Rhoads — Mark as Story (amber-gold: narrative/literary criticism) */
+.anno-trigger.rhoads{color:#e8c060;border-color:#886020;background:rgba(80,56,12,.22);}
+.anno-trigger.rhoads:hover{border-color:#c8a040;background:rgba(80,56,12,.32);}
+.anno-trigger.rhoads.active{filter:brightness(1.25);}
+.com-panel.com-rhoads{background:#0e0900;border-color:#886020;}
+.com-panel.com-rhoads h4{color:#e8c060;}
+.com-panel.com-rhoads .com-source{color:#e8c060;border-bottom-color:rgba(136,96,32,.4);}
 
 .tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
 .tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
@@ -277,6 +291,8 @@ BOOK_PREFIX = {
 #  Proverbs    | Waltke (NICOT)       | Alter (Heb Bible)  | Calvin            | NET Bible
 #  Matthew     | — (NT, no Sarna)     | —                  | Calvin            | NET Bible
 #              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
+#  Mark        | Marcus (Anchor Bible)| Rhoads (Narrative) | Calvin            | NET Bible
+#              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
 #
 #  Hubbard: Robert Hubbard, NICOT Commentary on Ruth (1988). Evangelical-scholarly.
 #
@@ -323,12 +339,22 @@ COMMENTATOR_SCOPE = {
 
     # ── NT-only commentators ─────────────────────────────────────────────────
     # A.T. Robertson — Word Pictures in the New Testament (NT only)
-    'robertson': ['matthew'],
-    # Future: 'mark', 'luke', 'john', 'acts', 'romans', etc.
+    'robertson': ['matthew', 'mark'],
+    # Future: 'luke', 'john', 'acts', etc.
 
     # Catena Aurea — Aquinas compilation on all four Gospels only
-    'catena':    ['matthew'],
-    # Future: 'mark', 'luke', 'john'
+    'catena':    ['matthew', 'mark'],
+    # Future: 'luke', 'john'
+
+    # Joel Marcus — Anchor Bible Commentary on Mark (2 vols., 2000/2009)
+    # SCOPE: Mark only. Heavyweight historical-critical; strong on Jewish backgrounds,
+    # Dead Sea Scrolls parallels, and Roman imperial context.
+    'marcus':    ['mark'],
+
+    # Rhoads & Michie — Mark as Story (1982, updated 2012)
+    # SCOPE: Mark only. Founding text of Markan narrative criticism —
+    # narrator, characters, plot, rhetoric.
+    'rhoads':    ['mark'],
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -967,6 +993,8 @@ def commentary_panel(pid, commentator_key, notes):
         'robertson': ('Robertson \u2014 Word Pictures','A.T. Robertson, Word Pictures in the New Testament \u2014 Public Domain'),
         'catena':    ('Catena Aurea',                  'Thomas Aquinas (compiler), Catena Aurea \u2014 Patristic Commentary, Public Domain'),
         'netbible':  ('NET Bible Notes',               'NET Bible Full Notes Edition \u2014 Biblical Studies Press'),
+        'marcus':    ('Marcus \u2014 Anchor Bible',     'Joel Marcus, Mark 1\u20138 / 8\u201316, Anchor Bible (2000/2009) \u2014 Scholarly Paraphrase'),
+        'rhoads':    ('Rhoads \u2014 Mark as Story',   'David Rhoads & Donald Michie, Mark as Story (3rd ed., 2012) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1210,6 +1238,8 @@ def build_chapter(book_dir, ch, data):
         if 'netbible'   in sec and in_scope('netbible'):   btns.append(('netbible',  'NET Notes',   f'{sid}-net'))
         if 'robertson'  in sec and in_scope('robertson'):  btns.append(('robertson', 'Robertson',   f'{sid}-robertson'))
         if 'catena'     in sec and in_scope('catena'):     btns.append(('catena',    'Catena Aurea',f'{sid}-catena'))
+        if 'marcus'     in sec and in_scope('marcus'):     btns.append(('marcus',    'Marcus',      f'{sid}-marcus'))
+        if 'rhoads'     in sec and in_scope('rhoads'):     btns.append(('rhoads',    'Rhoads',      f'{sid}-rhoads'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -1230,6 +1260,8 @@ def build_chapter(book_dir, ch, data):
         if 'netbible' in sec and in_scope('netbible'):  panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
         if 'robertson' in sec and in_scope('robertson'): panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
         if 'catena'   in sec and in_scope('catena'):    panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
+        if 'marcus'   in sec and in_scope('marcus'):    panels_html += commentary_panel(f'{sid}-marcus',   'marcus',    sec['marcus'])
+        if 'rhoads'   in sec and in_scope('rhoads'):    panels_html += commentary_panel(f'{sid}-rhoads',   'rhoads',    sec['rhoads'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
