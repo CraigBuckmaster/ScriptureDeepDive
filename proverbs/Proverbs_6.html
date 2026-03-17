@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Proverbs 6 — Scripture Deep Dive</title>
+<title>Proverbs 6 — Scripture Walkthrough</title>
 <link rel="manifest" href="../manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -257,6 +277,276 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
 .qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
 .qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -294,40 +584,24 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 6</h1>
-<p>Four Warnings; Seven Abominations; Adultery's Cost</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-<div class="legend-item"><div class="legend-dot" style="background:#8840e0"></div>Themes</div>
-</div>
+<p>Four Warnings; Seven Abominations; The Cost of Adultery</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">
-<div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Solomon ben David, c.990–931 BC. Israel's third king, son of David and Bathsheba. Credited by Scripture with 3,000 proverbs and 1,005 songs (1 Kgs 4:32). His wisdom was divinely given — not merely accumulated experience but a gift granted at Gibeon (1 Kgs 3:5–14). He built the Temple, forged commercial alliances across the ancient world, and attracted foreign dignitaries to Jerusalem including the Queen of Sheba (1 Kgs 10). Proverbs 1–9 are the most clearly Solomonic; chs. 25–29 were copied by the men of Hezekiah (25:1); chs. 30–31 are attributed to Agur and Lemuel respectively.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">The core Solomonic material (chs. 1–9, 10–22:16) dates to Solomon's reign, c.970–931 BC. The final compilation and editing likely continued through the Hezekiah period (c.715–686 BC), when his scribes copied additional Solomonic proverbs (25:1). The book reached its present form sometime in the late monarchic or early post-exilic period.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Proverbs is a father's sustained address to a son standing on the threshold of adult life. The driving question is: How does a young person navigate the real world — its temptations, its social pressures, its competing voices — without being destroyed? The book's answer is not a list of rules but a vision of reality: the world was made with Wisdom woven into it (ch. 8), and the person who aligns their life with that grain will flourish; the person who fights it will be broken by it. "The fear of the LORD is the beginning of wisdom" (1:7) is the thesis of the entire book.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; Four Warnings: Surety, Laziness, and the Troublemaker</div><span class="verse-text"><span class="verse-num">1</span>My son, if you have put up security for your neighbor, if you have shaken hands in pledge for a stranger,</span><span class="verse-text"><span class="verse-num">2</span>you have been trapped by what you said, ensnared by the words of your mouth.</span><span class="verse-text"><span class="verse-num">3</span>So do this, my son, to free yourself, since you have fallen into your neighbor's hands: Go—to the point of exhaustion— and give your neighbor no rest!</span><span class="verse-text"><span class="verse-num">4</span>Allow no sleep to your eyes, no slumber to your eyelids.</span><span class="verse-text"><span class="verse-num">5</span>Free yourself, like a gazelle from the hand of the hunter, like a bird from the snare of the fowler.</span><span class="verse-text"><span class="verse-num">6</span>Go to the ant, you sluggard; consider its ways and be wise!</span><span class="verse-text"><span class="verse-num">7</span>It has no commander, no overseer or ruler,</span><span class="verse-text"><span class="verse-num">8</span>yet it stores its provisions in summer and gathers its food at harvest.</span><span class="verse-text"><span class="verse-num">9</span>How long will you lie there, you sluggard? When will you get up from your sleep?</span><span class="verse-text"><span class="verse-num">10</span>A little sleep, a little slumber, a little folding of the hands to rest—</span><span class="verse-text"><span class="verse-num">11</span>and poverty will come on you like a thief and scarcity like an armed man.</span><span class="verse-text"><span class="verse-num">12</span>A troublemaker and a villain, who goes about with a corrupt mouth,</span><span class="verse-text"><span class="verse-num">13</span>who winks maliciously with his eye, signals with his feet and motions with his fingers,</span><span class="verse-text"><span class="verse-num">14</span>who plots evil with deceit in his heart— he always stirs up conflict.</span><span class="verse-text"><span class="verse-num">15</span>Therefore disaster will overtake him in an instant; he will suddenly be destroyed—without remedy.</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'p6-s1-ctx')"><span>Context</span></button><button class="anno-trigger cross" onclick="tog(this,'p6-s1-cross')"><span>Cross-Ref</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p6-s1-mac')"><span>MacArthur</span></button></div><div id="p6-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 6 collects four distinct warnings: financial surety (vv.1–5), laziness (vv.6–11), the troublemaker (vv.12–15), and the seven abominations (vv.16–19), before returning to the adulteress (vv.20–35). The ant passage (vv.6–11) is one of Proverbs' most famous — wisdom observed in creation, not just received in instruction. The ant has no supervisor, yet acts with perfect diligence. The sluggard is not just lazy; he is refusing to read the lessons written into creation.</p></div><div id="p6-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 24:30–34</span><span class="ref-text">The second ant passage — an extended narrative version of vv.9–11: the narrator walks past the sluggard's field and sees the thorns and weeds, drawing the same conclusion.</span></li><li><span class="ref-cite">2 Thess 3:10</span><span class="ref-text">Paul's instruction: "the one who is unwilling to work shall not eat" echoes the Proverbs logic that diligence is connected to provision, and idleness to poverty.</span></li></ul></div><div id="p6-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:1–5</span><p>The surety warning is the first financial instruction in Proverbs. Pledging security for a stranger's debt was one of the most common paths to financial ruin in the ancient world. The advice is not uncharitable — it is realistic about human nature and the structure of social obligation. If you have done this, the instructions are urgent: go immediately, exhaust yourself in getting free, allow no rest until the obligation is resolved.</p></div><div class="com-note"><span class="com-ref">6:6–8</span><p>Wisdom from the ant. Proverbs regularly finds wisdom in creation — the ant, the badger, the lizard (30:24–28). This is not incidental. Wisdom is woven into creation; the observant person can read it from the world around them. The ant's wisdom is specifically: it acts without external compulsion (no commander) and it acts with long-range vision (stores food for winter during summer). The sluggard has both problems: he needs external pressure to act, and he cannot think beyond the present moment.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;35 &mdash; Seven Abominations; The Cost of Adultery</div><span class="verse-text"><span class="verse-num">16</span>There are six things the LORD hates, seven that are detestable to him:</span><span class="verse-text"><span class="verse-num">17</span>haughty eyes, a lying tongue, hands that shed innocent blood,</span><span class="verse-text"><span class="verse-num">18</span>a heart that devises wicked schemes, feet that are quick to rush into evil,</span><span class="verse-text"><span class="verse-num">19</span>a false witness who pours out lies and a person who stirs up conflict in the community.</span><span class="verse-text"><span class="verse-num">20</span>My son, keep your father's command and do not forsake your mother's teaching.</span><span class="verse-text"><span class="verse-num">21</span>Bind them always on your heart; fasten them around your neck.</span><span class="verse-text"><span class="verse-num">22</span>When you walk, they will guide you; when you sleep, they will watch over you; when you awake, they will speak to you.</span><span class="verse-text"><span class="verse-num">23</span>For this command is a lamp, this teaching is a light, and correction and instruction are the way to life,</span><span class="verse-text"><span class="verse-num">24</span>keeping you from your neighbor's wife, from the smooth talk of a wayward woman.</span><span class="verse-text"><span class="verse-num">25</span>Do not lust in your heart after her beauty or let her captivate you with her eyes.</span><span class="verse-text"><span class="verse-num">26</span>For a prostitute can be had for a loaf of bread, but another man's wife preys upon your very life.</span><span class="verse-text"><span class="verse-num">27</span>Can a man scoop fire into his lap without his clothes being burned?</span><span class="verse-text"><span class="verse-num">28</span>Can he walk on hot coals without his feet being scorched?</span><span class="verse-text"><span class="verse-num">29</span>So is he who sleeps with another man's wife; no one who touches her will go unpunished.</span><span class="verse-text"><span class="verse-num">30</span>People do not despise a thief if he steals to satisfy his hunger when he is starving.</span><span class="verse-text"><span class="verse-num">31</span>Yet if he is caught, he must pay sevenfold, though it costs him all the wealth of his house.</span><span class="verse-text"><span class="verse-num">32</span>But a man who commits adultery has no sense; whoever does so destroys himself.</span><span class="verse-text"><span class="verse-num">33</span>Blows and disgrace are his lot, and his shame will never be wiped away.</span><span class="verse-text"><span class="verse-num">34</span>For jealousy arouses a husband's fury, and he will show no mercy when he takes revenge.</span><span class="verse-text"><span class="verse-num">35</span>He will not accept any compensation; he will refuse a bribe, however great it is.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'p6-s2-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'p6-s2-ctx')"><span>Context</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p6-s2-mac')"><span>MacArthur</span></button></div><div id="p6-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֶׁבַע תּוֹעֵבוֹת</span> <span class="tlit">šebaʿ tôʿēbôt</span> — <strong>seven abominations/detestable things</strong>: Tôʿēbāh (abomination, detestable thing) is one of the strongest words in the Hebrew vocabulary of moral disgust — used for idolatry, sexual perversion, and now these seven things. The list is structured as six + seven (a Hebrew numerical device for "a complete set"): it climaxes with "one who stirs up conflict" — the person whose characteristic work is destroying community.</p><p><span class="hebrew-word">אֵין חֵקֶר</span> <span class="tlit">ʾên ḥēqer</span> — <strong>no sense/lacks judgment</strong>: The adulterer "has no sense" (ḥāsar lēb, literally "lacks heart/mind"). This is Proverbs' standard diagnosis of the fool: not primarily wickedness but profound stupidity about how reality works. He thinks he is gaining something; he is destroying himself.</p></div><div id="p6-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The seven abominations list (vv.16–19) is notable for what tops it — haughty eyes — and what ends it: "a person who stirs up conflict in the community." The list traces an inward-to-outward movement: eyes (attitude), tongue (words), hands (violence), heart (planning), feet (action), false witness (speech), community conflict (social destruction). The adulteress passage (vv.20–35) that follows uses fire imagery (vv.27–28) to make the point graphically: adultery is picking up fire in your lap and expecting not to be burned.</p></div><div id="p6-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:16–19</span><p>The seven abominations are united by their relationship to community: they destroy the social fabric — through pride, deception, violence, scheming, impetuosity, false witness, and strife. The list moves from individual character (haughty eyes) to community destruction (stirs up conflict). God's hatred is particularly strong for things that tear apart the covenant community.</p></div><div class="com-note"><span class="com-ref">6:32</span><p>"A man who commits adultery has no sense." The Hebrew is stark: ḥāsar lēb — he lacks a heart, lacks mind, lacks understanding. Proverbs doesn't primarily frame adultery as a crime (though it is); it frames it as supreme stupidity. The man who does it doesn't understand what he's doing to himself. This is consistent with the book's entire approach: the fool is fundamentally blind.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;15 &mdash; Four Warnings: Surety, Laziness, and the Troublemaker</div><span class="verse-text"><span class="verse-num">1</span>My son, if you have put up security for your neighbor, if you have shaken hands in pledge for a stranger,</span><span class="verse-text"><span class="verse-num">2</span>you have been trapped by what you said, ensnared by the words of your mouth.</span><span class="verse-text"><span class="verse-num">3</span>So do this, my son, to free yourself, since you have fallen into your neighbor's hands: Go—to the point of exhaustion— and give your neighbor no rest!</span><span class="verse-text"><span class="verse-num">4</span>Allow no sleep to your eyes, no slumber to your eyelids.</span><span class="verse-text"><span class="verse-num">5</span>Free yourself, like a gazelle from the hand of the hunter, like a bird from the snare of the fowler.</span><span class="verse-text"><span class="verse-num">6</span>Go to the ant, you sluggard; consider its ways and be wise!</span><span class="verse-text"><span class="verse-num">7</span>It has no commander, no overseer or ruler,</span><span class="verse-text"><span class="verse-num">8</span>yet it stores its provisions in summer and gathers its food at harvest.</span><span class="verse-text"><span class="verse-num">9</span>How long will you lie there, you sluggard? When will you get up from your sleep?</span><span class="verse-text"><span class="verse-num">10</span>A little sleep, a little slumber, a little folding of the hands to rest—</span><span class="verse-text"><span class="verse-num">11</span>and poverty will come on you like a thief and scarcity like an armed man.</span><span class="verse-text"><span class="verse-num">12</span>A troublemaker and a villain, who goes about with a corrupt mouth,</span><span class="verse-text"><span class="verse-num">13</span>who winks maliciously with his eye, signals with his feet and motions with his fingers,</span><span class="verse-text"><span class="verse-num">14</span>who plots evil with deceit in his heart— he always stirs up conflict.</span><span class="verse-text"><span class="verse-num">15</span>Therefore disaster will overtake him in an instant; he will suddenly be destroyed—without remedy.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr6-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr6-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr6-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr6-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr6-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr6-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr6-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr6-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr6-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4></div><div id="pr6-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 6 collects four distinct warnings: financial surety (vv.1–5), laziness (vv.6–11), the troublemaker (vv.12–15), and the seven abominations (vv.16–19), before returning to the adulteress (vv.20–35). The ant passage (vv.6–11) is one of Proverbs' most famous — wisdom observed in creation, not just received in instruction. The ant has no supervisor, yet acts with perfect diligence. The sluggard is not just lazy; he is refusing to read the lessons written into creation.</p></div><div id="pr6-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 24:30–34</span><span class="ref-text">The second ant passage — an extended narrative version of vv.9–11: the narrator walks past the sluggard's field and sees the thorns and weeds, drawing the same conclusion.</span></li><li><span class="ref-cite">2 Thess 3:10</span><span class="ref-text">Paul's instruction: "the one who is unwilling to work shall not eat" echoes the Proverbs logic that diligence is connected to provision, and idleness to poverty.</span></li></ul></div><div id="pr6-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:1–5</span><p>The surety warning is the first financial instruction in Proverbs. Pledging security for a stranger's debt was one of the most common paths to financial ruin in the ancient world. The advice is not uncharitable — it is realistic about human nature and the structure of social obligation. If you have done this, the instructions are urgent: go immediately, exhaust yourself in getting free, allow no rest until the obligation is resolved.</p></div><div class="com-note"><span class="com-ref">6:6–8</span><p>Wisdom from the ant. Proverbs regularly finds wisdom in creation — the ant, the badger, the lizard (30:24–28). This is not incidental. Wisdom is woven into creation; the observant person can read it from the world around them. The ant's wisdom is specifically: it acts without external compulsion (no commander) and it acts with long-range vision (stores food for winter during summer). The sluggard has both problems: he needs external pressure to act, and he cannot think beyond the present moment.</p></div></div><div id="pr6-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">6:6–11</span><p>The ant passage is one of Proverbs' most sustained examples of observation-based wisdom. Alter notes the method: watch the ant, consider her ways, become wise. The ant has no overseer, commander, or ruler yet works diligently. The observation grounds the ethical instruction in nature rather than divine command — wisdom can be read directly from the observable world.</p></div><div class="com-note"><span class="com-ref">6:16–19</span><p>The seven-abominations list is a numerical proverb — a 'x, yes x+1' structure (six things the LORD hates, yes seven). Alter notes this is a standard ancient Near Eastern numerical device that creates suspense: you expect six, you get seven, and the seventh is the climax. The final item — 'one who stirs up conflict in a community' — is surprisingly social: the greatest abomination is not personal vice but community destruction.</p></div></div><div id="pr6-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">6:1–5</span><p>The surety warning opens with a practical legal concern: going guarantor for a neighbour's debt. Waltke notes this is the book's least 'spiritual' instruction — but it is wisdom because financial over-commitment is a form of the pride that assumes one can guarantee what is not in one's control. The practical and the theological are never separate in Proverbs.</p></div><div class="com-note"><span class="com-ref">6:16–19</span><p>The seven abominations list is one of Proverbs' most memorable passages. Waltke notes the seven (a number of completeness) are structured from body-part to action: haughty eyes → lying tongue → hands that shed innocent blood → heart that devises evil → feet that run to evil → false witness → one who stirs up discord. The progression from inner attitude (eyes, heart) to outer action (hands, feet) encodes the Proverbs moral psychology: character is the source of conduct.</p></div></div><div id="pr6-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:6–8</span><p>Calvin on the ant: 'The ant, a tiny creature without intelligence or authority, accomplishes more by industry than many humans accomplish with all their resources. God shows us in this small creature our own condemnation — we have a Creator, a Redeemer, a spirit, a conscience, and yet are outworked by an insect.'</p></div><div class="com-note"><span class="com-ref">6:16–17</span><p>Calvin on 'haughty eyes': 'The eyes are mentioned first because pride first betrays itself through the look. The proud man cannot conceal his contempt for others — it appears in his very gaze. This is the first of the abominations and the root of most of the others that follow.'</p></div></div><div id="pr6-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">6:1</span><p>The NET note on 'if you have put up security for your neighbour' (im aravta lere'akha) explains the ancient Near Eastern surety system: a guarantor pledged their own assets against another person's debt. If the debtor defaulted, the guarantor was legally liable. The instruction is to extricate oneself from such commitments — the risk is disproportionate to the benefit.</p></div><div class="com-note"><span class="com-ref">6:16</span><p>The NET note on the 'six things the LORD hates, seven that are detestable to him' discusses the X / X+1 numerical pattern (also Prov 30:15–33; Amos 1–2; Job 5:19). The pattern suggests completeness with a climax — the seventh item is the culminating point. Here the social sin (sowing discord among brothers) is the apex of the list of individual sins.</p></div></div></div><div class="section"><div class="section-header">Verses 16&ndash;35 &mdash; Seven Abominations; The Cost of Adultery</div><span class="verse-text"><span class="verse-num">16</span>There are six things the LORD hates, seven that are detestable to him:</span><span class="verse-text"><span class="verse-num">17</span>haughty eyes, a lying tongue, hands that shed innocent blood,</span><span class="verse-text"><span class="verse-num">18</span>a heart that devises wicked schemes, feet that are quick to rush into evil,</span><span class="verse-text"><span class="verse-num">19</span>a false witness who pours out lies and a person who stirs up conflict in the community.</span><span class="verse-text"><span class="verse-num">20</span>My son, keep your father's command and do not forsake your mother's teaching.</span><span class="verse-text"><span class="verse-num">21</span>Bind them always on your heart; fasten them around your neck.</span><span class="verse-text"><span class="verse-num">22</span>When you walk, they will guide you; when you sleep, they will watch over you; when you awake, they will speak to you.</span><span class="verse-text"><span class="verse-num">23</span>For this command is a lamp, this teaching is a light, and correction and instruction are the way to life,</span><span class="verse-text"><span class="verse-num">24</span>keeping you from your neighbor's wife, from the smooth talk of a wayward woman.</span><span class="verse-text"><span class="verse-num">25</span>Do not lust in your heart after her beauty or let her captivate you with her eyes.</span><span class="verse-text"><span class="verse-num">26</span>For a prostitute can be had for a loaf of bread, but another man's wife preys upon your very life.</span><span class="verse-text"><span class="verse-num">27</span>Can a man scoop fire into his lap without his clothes being burned?</span><span class="verse-text"><span class="verse-num">28</span>Can he walk on hot coals without his feet being scorched?</span><span class="verse-text"><span class="verse-num">29</span>So is he who sleeps with another man's wife; no one who touches her will go unpunished.</span><span class="verse-text"><span class="verse-num">30</span>People do not despise a thief if he steals to satisfy his hunger when he is starving.</span><span class="verse-text"><span class="verse-num">31</span>Yet if he is caught, he must pay sevenfold, though it costs him all the wealth of his house.</span><span class="verse-text"><span class="verse-num">32</span>But a man who commits adultery has no sense; whoever does so destroys himself.</span><span class="verse-text"><span class="verse-num">33</span>Blows and disgrace are his lot, and his shame will never be wiped away.</span><span class="verse-text"><span class="verse-num">34</span>For jealousy arouses a husband's fury, and he will show no mercy when he takes revenge.</span><span class="verse-text"><span class="verse-num">35</span>He will not accept any compensation; he will refuse a bribe, however great it is.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr6-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr6-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr6-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr6-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr6-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr6-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr6-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr6-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr6-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">שֶׁבַע תּוֹעֵבוֹת</span> <span class="tlit">šebaʿ tôʿēbôt</span> — <strong>seven abominations/detestable things</strong>: Tôʿēbāh (abomination, detestable thing) is one of the strongest words in the Hebrew vocabulary of moral disgust — used for idolatry, sexual perversion, and now these seven things. The list is structured as six + seven (a Hebrew numerical device for "a complete set"): it climaxes with "one who stirs up conflict" — the person whose characteristic work is destroying community.</p><p><span class="hebrew-word">אֵין חֵקֶר</span> <span class="tlit">ʾên ḥēqer</span> — <strong>no sense/lacks judgment</strong>: The adulterer "has no sense" (ḥāsar lēb, literally "lacks heart/mind"). This is Proverbs' standard diagnosis of the fool: not primarily wickedness but profound stupidity about how reality works. He thinks he is gaining something; he is destroying himself.</p></div><div id="pr6-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The seven abominations list (vv.16–19) is notable for what tops it — haughty eyes — and what ends it: "a person who stirs up conflict in the community." The list traces an inward-to-outward movement: eyes (attitude), tongue (words), hands (violence), heart (planning), feet (action), false witness (speech), community conflict (social destruction). The adulteress passage (vv.20–35) that follows uses fire imagery (vv.27–28) to make the point graphically: adultery is picking up fire in your lap and expecting not to be burned.</p></div><div id="pr6-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="pr6-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:16–19</span><p>The seven abominations are united by their relationship to community: they destroy the social fabric — through pride, deception, violence, scheming, impetuosity, false witness, and strife. The list moves from individual character (haughty eyes) to community destruction (stirs up conflict). God's hatred is particularly strong for things that tear apart the covenant community.</p></div><div class="com-note"><span class="com-ref">6:32</span><p>"A man who commits adultery has no sense." The Hebrew is stark: ḥāsar lēb — he lacks a heart, lacks mind, lacks understanding. Proverbs doesn't primarily frame adultery as a crime (though it is); it frames it as supreme stupidity. The man who does it doesn't understand what he's doing to himself. This is consistent with the book's entire approach: the fool is fundamentally blind.</p></div></div><div id="pr6-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">6:27–29</span><p>The three comparisons (fire in bosom → burnt clothes; walking on coals → burnt feet; sleeping with neighbour's wife → not going unpunished) are one of Proverbs' finest sequences of analogical argument. Alter notes the first two are perfectly obvious physical causation; the third exploits the logical parallel. The obviousness of consequences 1 and 2 makes consequence 3 feel equally inevitable — which is the rhetorical point.</p></div><div class="com-note"><span class="com-ref">6:34–35</span><p>The husband's jealousy (qin'ah, zeal/jealousy) 'will not accept any compensation; he will refuse the bribe, however great it is.' Alter notes this is a surprising ending: throughout the chapter economic comparisons have governed the argument (surety, theft, value of wisdom). Now the one calculus that cannot be economic is the wronged husband's honour. No price can compensate it. The economic frame of the chapter breaks down at exactly the point where honour does.</p></div></div><div id="pr6-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">6:20–35</span><p>The adultery section of ch.6 (vv.20–35) is the most economically argued of the book's adultery warnings. Waltke notes the comparison structure: thieves steal from hunger (v.30) and are treated with more mercy than the adulterer; but the adulterer destroys a soul (v.32), and the wronged husband's jealousy is implacable (v.34–35). The calculation is precisely inverted from the adulteress's implied offer of easy pleasure.</p></div><div class="com-note"><span class="com-ref">6:32</span><p>'A man who commits adultery has no sense; whoever does so destroys himself.' The Hebrew for 'has no sense' (chasar-lev) is literally 'lacks heart/mind.' Waltke notes the characterisation of the adulterer as 'heartless' is deliberate: the 4:23 command to 'guard your heart' is answered here by the portrait of the man who has, in the deepest sense, failed to do so. He is heartless — lacking the wisdom-orientation that the heart represents.</p></div></div><div id="pr6-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:32</span><p>Calvin on 'destroys himself': 'The adulterer is not merely sinning against another but against his own soul — he is ruining the very faculty by which he could have chosen otherwise. This is the peculiar nature of sexual sin: it corrupts the judge (the heart) along with the action.' Calvin anticipates Paul's observation in 1 Cor 6:18 that sexual sin is uniquely self-destructive.</p></div><div class="com-note"><span class="com-ref">6:34</span><p>Calvin on the husband's jealousy: 'The wrath of the injured husband is a just and implacable anger — and this natural law of honour, which no bribe can satisfy, is itself a witness to the gravity of the sin. Even pagan law recognises what the adulterer pretends not to know: that this violation cannot be bought off.'</p></div></div><div id="pr6-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">6:23</span><p>The NET note on 'the reproofs of discipline are the way of life' (vetokhachot musar derekh chayyim) explains the word musar (discipline, instruction, correction) as the pathway — not merely a means to life but the road itself. Life is found in the disciplined process of wisdom formation, not at the end of it as a reward.</p></div><div class="com-note"><span class="com-ref">6:32</span><p>The NET note on chasar-lev ('lacking heart/mind') explains this is a standard Hebrew idiom for stupidity or moral obtuseness (also Prov 7:7; 9:4, 16; 10:13; 11:12; 12:11). The note traces the idiom: having a heart = wisdom orientation; lacking a heart = the absence of that orientation. The adulterer is not evil so much as fundamentally witless.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'p6-ppl')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'p6-trans')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'p6-src')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'p6-rec')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'p6-lit')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'p6-hebtext')"><span>Hebrew-Rooted Reading</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'p6-thread')"><span>Intertextual Threading</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'p6-themes')"><span>Theological Themes</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr6-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr6-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr6-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr6-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr6-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr6-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr6-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr6-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr6-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="p6-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The ant</div><div class="person-role">Wisdom from creation</div><div class="person-text">No commander but perfectly diligent. Represents the internalized wisdom of someone who acts rightly without external compulsion.</div></div><div class="person-card"><div class="person-name">The sluggard</div><div class="person-role">Negative example</div><div class="person-text">Refuses to observe creation's lessons. Defined by delay and self-deception about consequences.</div></div><div class="person-card"><div class="person-name">The troublemaker</div><div class="person-role">Social destroyer</div><div class="person-text">The villain who uses body language to plot — winks, signals, motions. His work is conflict; his end is sudden destruction.</div></div></div></div><div id="p6-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">6:16–19 — The Seven Abominations</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"There are six things the LORD hates, seven that are detestable to him: haughty eyes, a lying tongue, hands that shed innocent blood, a heart that devises wicked schemes, feet that are quick to rush into evil, a false witness who pours out lies and a person who stirs up conflict in the community."</td></tr><tr><td class="t-label">Note</td><td>The numerical device "six... seven" (×,×+1) is a common Hebrew literary form used in Amos 1–2, Job 5:19, and elsewhere. It does not mean there are exactly seven; it means "here is a representative, climactic list."</td></tr></table></div><div id="p6-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Numerical Sayings</div><div class="source-quote">The "x, x+1" numerical pattern appears widely in ANE and OT wisdom literature. Amos uses it in his oracle series; Job uses it; Proverbs uses it here and in 30:15–31. The form signals a climactic list — the final item is the key one. Here the climax is "one who stirs up conflict," suggesting that social destruction is the ultimate expression of the vices listed.</div><div class="source-note">The numerical form places this list within a well-established literary tradition.</div></div><div class="source-block"><div class="source-title">Fire Imagery</div><div class="source-quote">The fire imagery of vv.27–29 (scoop fire into lap, walk on hot coals) is one of Proverbs' most vivid rhetorical devices. It argues from obvious physical law to moral law: just as you cannot handle fire without being burned, you cannot commit adultery without being burned. The universe has a consistent structure.</div><div class="source-note">The fire argument functions as a physical analogy for moral law.</div></div></div><div id="p6-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Matt 5:28</div><div class="rec-text">Jesus' instruction on lust: "anyone who looks at a woman lustfully has already committed adultery with her in his heart." This deepens v.25's "do not lust in your heart after her beauty" — Jesus moves the prohibition from action to intention, consistent with his development of OT ethics throughout the Sermon on the Mount.</div></div><div class="rec-block"><div class="rec-who">2 Thess 3:10</div><div class="rec-text">Paul's "if a man will not work, he shall not eat" is the practical application of the ant/sluggard passage. The NT endorses Proverbs' connection of diligence to provision.</div></div></div><div id="p6-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Financial warning — vv.1–5</span><span class="lit-text">Surety: get free urgently</span></div><div class="lit-row"><span class="lit-label">Laziness warning — vv.6–11</span><span class="lit-text">Ant vs sluggard; poverty like a thief</span></div><div class="lit-row"><span class="lit-label">Troublemaker — vv.12–15</span><span class="lit-text">Body language of deceit; sudden destruction</span></div><div class="lit-row"><span class="lit-label">Seven abominations — vv.16–19</span><span class="lit-text">From haughty eyes to community strife</span></div><div class="lit-row"><span class="lit-label">Adultery warning — vv.20–35</span><span class="lit-text">Fire imagery; no compensation for the husband's fury</span></div><div class="lit-note">Chapter 6 is the most varied in topics so far — it reads like a collection of the father's most urgent warnings. The linking theme is self-destruction: the financially reckless, the lazy, the troublemaker, and the adulterer all share the same fundamental problem: they cannot see where their path leads.</div></div></div><div id="p6-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">6–8</sup> "Go to the ant, you sluggard; consider its ways and be wise! It has no commander... yet it stores its provisions in summer." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">16</sup> "There are six things the <span class="dn-divine">LORD</span> hates, seven that are <span class="dn-key">detestable</span> to him."</p></div><div id="p6-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">Prov 6:6–11</span><span class="thread-arrow">→</span><span class="thread-target">Prov 24:30–34</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The ant/sluggard lesson repeated and expanded — the narrator visits the sluggard's field.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">6:27–29</span><span class="thread-arrow">→</span><span class="thread-target">1 Cor 6:18</span><span class="thread-type echo">Echo</span></div><div class="thread-text">"Flee from sexual immorality" — Paul's instruction applies the same fire-in-lap logic: there is no such thing as controlled adultery.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">6:16–19</span><span class="thread-arrow">→</span><span class="thread-target">Prov 8:13</span><span class="thread-type echo">Echo</span></div><div class="thread-text">The LORD hates haughty eyes, lying tongue → Wisdom hates pride and arrogance. The moral character of God and Wisdom are identical.</div></div></div><div id="p6-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,52.0 178.9,86.0 164.2,145.5 120.0,205.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Seven Abominations</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Laziness</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Financial Wisdom</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Adultery's Cost</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Hatred of Evil</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Self-Destruction</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 6 collects the father's most urgent practical warnings. The unifying theme is self-destruction: surety, laziness, troublemaking, and adultery all share the same pattern — the person cannot see where their path leads. The ant sees; the sluggard does not. The adulterer thinks he is gaining; he is burning himself.</p></div>
+<div id="pr6-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The ant</div><div class="person-role">Wisdom from creation</div><div class="person-text">No commander but perfectly diligent. Represents the internalized wisdom of someone who acts rightly without external compulsion.</div></div><div class="person-card"><div class="person-name">The sluggard</div><div class="person-role">Negative example</div><div class="person-text">Refuses to observe creation's lessons. Defined by delay and self-deception about consequences.</div></div><div class="person-card"><div class="person-name">The troublemaker</div><div class="person-role">Social destroyer</div><div class="person-text">The villain who uses body language to plot — winks, signals, motions. His work is conflict; his end is sudden destruction.</div></div></div></div><div id="pr6-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 6 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"There are six things the LORD hates, seven that are detestable to him: haughty eyes, a lying tongue, hands that shed innocent blood, a heart that devises wicked schemes, feet that are quick to rush into evil, a false witness who pours out lies and a person who stirs up conflict in the community."</td></tr><tr><td class="t-label">Note</td><td>The numerical device "six... seven" (×,×+1) is a common Hebrew literary form used in Amos 1–2, Job 5:19, and elsewhere. It does not mean there are exactly seven; it means "here is a representative, climactic list."</td></tr></table></div><div id="pr6-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Numerical Sayings</div><div class="source-quote">The "x, x+1" numerical pattern appears widely in ANE and OT wisdom literature. Amos uses it in his oracle series; Job uses it; Proverbs uses it here and in 30:15–31. The form signals a climactic list — the final item is the key one. Here the climax is "one who stirs up conflict," suggesting that social destruction is the ultimate expression of the vices listed.</div><div class="source-note">The numerical form places this list within a well-established literary tradition.</div></div><div class="source-block"><div class="source-title">Fire Imagery</div><div class="source-quote">The fire imagery of vv.27–29 (scoop fire into lap, walk on hot coals) is one of Proverbs' most vivid rhetorical devices. It argues from obvious physical law to moral law: just as you cannot handle fire without being burned, you cannot commit adultery without being burned. The universe has a consistent structure.</div><div class="source-note">The fire argument functions as a physical analogy for moral law.</div></div></div><div id="pr6-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Matt 5:28</div><div class="rec-text">Jesus' instruction on lust: "anyone who looks at a woman lustfully has already committed adultery with her in his heart." This deepens v.25's "do not lust in your heart after her beauty" — Jesus moves the prohibition from action to intention, consistent with his development of OT ethics throughout the Sermon on the Mount.</div></div><div class="rec-block"><div class="rec-who">2 Thess 3:10</div><div class="rec-text">Paul's "if a man will not work, he shall not eat" is the practical application of the ant/sluggard passage. The NT endorses Proverbs' connection of diligence to provision.</div></div></div><div id="pr6-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">The Ant: Wisdom from Nature — 6:6–11</span><span class="lit-text">The ant passage is Proverbs' clearest example of its observational method: watch how the world works, extract the principle, apply it to human life. The ant has no overseer yet works; humans have a Creator, a conscience, and a community yet are often slothful. Wisdom observes the discrepancy and takes the lesser creature as teacher.</span></div><div class="lit-center">The description of the adulterer as 'lacking heart' (chasar-lev) is Proverbs' most damning characterisation of sexual folly. It answers 4:23's apex command ('guard your heart') with its anti-type: the man who commits adultery has demonstrably failed to guard the heart. He is 'heartless' — lacking the wisdom-orientation that makes a person truly human in the Proverbs sense.</div></div></div><div id="pr6-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('חֲסַר־לֵב / Chasar-Lev', 'chasar-lev', 'Lacking heart/mind (stupid)', "The idiom for moral and intellectual obtuseness (6:32). Literally 'lacking heart' — the absence of the wisdom-orientation that the heart represents. Used for the adulterer (6:32), the naive youth seduced by the Strange Woman (7:7), and the general fool (9:4). The opposite of lev-tov (a good heart) and lev-chakham (a wise heart). To 'lack heart' is to lack the integrating centre of human personhood."), ("תּוֹעֵבַת יְהוָה / To'evat YHWH", "to'evat YHWH", 'Abomination of the LORD', "The term for what the LORD finds detestable (6:16). The same word is used for idolatry (Deut 7:25–26), ritual impurity (Lev 7:18), and unjust weights (Prov 11:1; 20:10). In Proverbs, the to'evah list (6:16–19) grounds the book's ethics in divine character: these things are wrong not merely because they are socially destructive but because they are detestable to the God who defines reality.")]</div><div id="pr6-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">6:22</span><span class="tx-issue">'When you walk, they will guide you'</span></div><div class="tx-variants">MT: behistallekhkha tancheh otkha (when you walk, she/they will guide you). The pronoun is ambiguous — 'she' (referring to wisdom/the father's commands) or 'they' (referring to the commandments). LXX: when you go about, it will lead you. Most English versions take 'they' = the commands of vv.20–21.</div><div class="tx-sig">The ambiguity between wisdom personified (she) and the commands (they) is unlikely to be accidental — in Proverbs, keeping the commands and following Lady Wisdom are the same act. The grammatical ambiguity encodes the theological identification: to follow the commandments is to follow wisdom herself.</div></div></div><div id="pr6-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Seven Abominations: A Moral Hierarchy or Illustrative List?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Illustrative, not exhaustive or hierarchical</div><div class="db-proponents">Most commentators</div><div class="db-argument">The seven items are representative examples of the character dispositions the LORD finds detestable — not an exhaustive moral catalogue or a ranked hierarchy. The numerical structure (six/seven) signals completeness by example rather than completeness by enumeration.</div></div><div class="db-position"><div class="db-pos-name">The final item is the climax: communal sin is the greatest</div><div class="db-proponents">Waltke, some commentators</div><div class="db-argument">The X/X+1 structure places the final item (stirring up discord among brothers) as the climactic abomination. The movement from individual sins (lying, murder, deceit) to the communal sin of divisiveness suggests that covenant community destruction is worse than any individual sin — a counter-intuitive priority that Proverbs articulates in several places.</div></div></div><div class="db-synthesis">The numerical structure strongly supports reading the final item as a climax rather than an afterthought. Proverbs' consistent concern for community (the assembly, the neighbour, brothers) throughout the book makes the climactic placement of communal discord coherent with the book's broader social ethics. Individual sins are serious; sins that destroy the community are uniquely serious.</div></div></div><div id="pr6-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,52.0 205.0,120.0 120.0,188.0 35.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Practical Wisdom in Financial and Social Life</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Divine Character as the Ground of Ethics</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Ant: Creation as Wisdom's Teacher</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Adultery as Self-Destruction</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 6 is the book's most practically diverse chapter — surety, laziness, seven abominations, adultery — united by the underlying question: what does it look like to be truly foolish? The lazy man, the dishonest man, the community-destroyer, and the adulterer all share the 'chasar-lev' character: they lack the wisdom-orientation that the heart must be guarded for.</p></div>
 </div>
 </main>
-<footer><p>Proverbs 6 — The Ant; Seven Abominations; Adultery. Scripture Deep Dive.</p></footer>
 <script>
 function tog(btn,id){
   var p=document.getElementById(id);
@@ -341,11 +615,11 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script>
 <script>
 (function(){
-  var DIVINE={words:['LORD','God','Spirit','Wisdom','King'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','gate','city','streets','market','town','house','palace'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Solomon','son','father','mother','woman','wife','men','young man','adulteress','stranger'],cls:'vhl-person',btn:['people','context']};
-  var TIME={words:['youth','age','years','day','night','morning','evening','life','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY={words:['wisdom','understanding','knowledge','instruction','fear','heart','path','way','life','death','fool','righteous','wicked'],cls:'vhl-key',btn:['literary','cross']};
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['gate','city','market','field','house','street','court','path','way'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['LORD','king','fool','wise','righteous','wicked','poor','rich','son','wife','neighbour'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','morning','evening','year','life','age','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['wisdom','knowledge','understanding','fear','righteous','wicked','heart','tongue','mouth','honour','pride','humility'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -401,7 +675,6 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
   });
 })();
 </script>
-<script src="../verses.js"></script>
 <script>
 function qnavFilter(q) {
   q = q.trim().toLowerCase();
@@ -481,31 +754,29 @@ function qnavFilter(q) {
 }
 </script>
 <script>
-</script>
-<script>
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
     var KEY='sdw_recent', MAX=5;
-    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
     var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
-    var h1=document.querySelector('h1');
-    var sub=document.querySelector('header p');
-    var label=(h1?h1.textContent.trim():'')+(sub?' · '+sub.textContent.trim().slice(0,28):'');
-    var entry={url:url,label:label};
-    hist=hist.filter(function(x){return x.url!==url;});
-    hist.unshift(entry);
-    if(hist.length>MAX)hist=hist.slice(0,MAX);
-    localStorage.setItem(KEY,JSON.stringify(hist));
-  }catch(e){}
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
 })();
 </script>
 </body></html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Proverbs 7 — Scripture Deep Dive</title>
+<title>Proverbs 7 — Scripture Walkthrough</title>
 <link rel="manifest" href="../manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -257,6 +277,276 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
 .qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
 .qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -294,40 +584,24 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Proverbs 7</h1>
-<p>The Seduction Scene: A Young Man Without Sense</p>
-</header>Hebrew</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-<div class="legend-item"><div class="legend-dot" style="background:#8840e0"></div>Themes</div>
-</div>
+<p>Guard Wisdom Like Life; The Seduction Scene in Full</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">
-<div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Solomon ben David, c.990–931 BC. Israel's third king, son of David and Bathsheba. Credited by Scripture with 3,000 proverbs and 1,005 songs (1 Kgs 4:32). His wisdom was divinely given — not merely accumulated experience but a gift granted at Gibeon (1 Kgs 3:5–14). He built the Temple, forged commercial alliances across the ancient world, and attracted foreign dignitaries to Jerusalem including the Queen of Sheba (1 Kgs 10). Proverbs 1–9 are the most clearly Solomonic; chs. 25–29 were copied by the men of Hezekiah (25:1); chs. 30–31 are attributed to Agur and Lemuel respectively.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">The core Solomonic material (chs. 1–9, 10–22:16) dates to Solomon's reign, c.970–931 BC. The final compilation and editing likely continued through the Hezekiah period (c.715–686 BC), when his scribes copied additional Solomonic proverbs (25:1). The book reached its present form sometime in the late monarchic or early post-exilic period.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Proverbs is a father's sustained address to a son standing on the threshold of adult life. The driving question is: How does a young person navigate the real world — its temptations, its social pressures, its competing voices — without being destroyed? The book's answer is not a list of rules but a vision of reality: the world was made with Wisdom woven into it (ch. 8), and the person who aligns their life with that grain will flourish; the person who fights it will be broken by it. "The fear of the LORD is the beginning of wisdom" (1:7) is the thesis of the entire book.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;5 &mdash; Guard Wisdom Like the Apple of Your Eye</div><span class="verse-text"><span class="verse-num">1</span>My son, keep my words and store up my commands within you.</span><span class="verse-text"><span class="verse-num">2</span>Keep my commands and you will live; guard my teachings as the apple of your eye.</span><span class="verse-text"><span class="verse-num">3</span>Bind them on your fingers; write them on the tablet of your heart.</span><span class="verse-text"><span class="verse-num">4</span>Say to wisdom, "You are my sister," and to insight, "You are my relative."</span><span class="verse-text"><span class="verse-num">5</span>They will keep you from the adulterous woman, from the wayward woman with her seductive words.</span><div class="btn-row"><button class="anno-trigger context" onclick="tog(this,'p7-s1-ctx')"><span>Context</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p7-s1-mac')"><span>MacArthur</span></button></div><div id="p7-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The opening (vv.1–5) is the shortest instruction preamble in chs.1–9 — just five verses before the narrative begins. Its urgency is striking: "guard my teachings as the apple of your eye" (v.2). The "apple of your eye" (bābat ʿên, literally "daughter of the eye" — the pupil) is the most instinctively protected thing a person has. That is the level of vigilance required. Verse 4's instruction to call wisdom "sister" and insight "relative" is the positive alternative to the coming scene: if wisdom is your intimate, the adulteress has no hold.</p></div><div id="p7-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:4</span><p>Say to wisdom: "You are my sister." In the ancient world a sister is the woman closest to a man who is not sexually available. The instruction is: make wisdom your most intimate companion, your inner family. If you have that intimacy with wisdom, you will recognize the adulteress's approach for what it is — a counterfeit intimacy designed to destroy.</p></div></div></div><div class="section"><div class="section-header">Verses 6&ndash;27 &mdash; The Seduction Scene: Ox to the Slaughter</div><span class="verse-text"><span class="verse-num">6</span>At the window of my house I looked down through the lattice.</span><span class="verse-text"><span class="verse-num">7</span>I saw among the simple, I noticed among the young men, a youth who had no sense.</span><span class="verse-text"><span class="verse-num">8</span>He was going down the street near her corner, walking along in the direction of her house</span><span class="verse-text"><span class="verse-num">9</span>at twilight, as the day was fading, as the dark of night set in.</span><span class="verse-text"><span class="verse-num">10</span>Then out came a woman to meet him, dressed like a prostitute and with crafty intent.</span><span class="verse-text"><span class="verse-num">11</span>(She is unruly and defiant, her feet never stay at home;</span><span class="verse-text"><span class="verse-num">12</span>now in the street, now in the squares, at every corner she lurks.)</span><span class="verse-text"><span class="verse-num">13</span>She took hold of him and kissed him and with a brazen face she said:</span><span class="verse-text"><span class="verse-num">14</span>"Today I fulfilled my vows, and I have food from my fellowship offering at home.</span><span class="verse-text"><span class="verse-num">15</span>So I came out to meet you; I looked for you and have found you!</span><span class="verse-text"><span class="verse-num">16</span>I have covered my bed with colored linens from Egypt.</span><span class="verse-text"><span class="verse-num">17</span>I have perfumed my bed with myrrh, aloes and cinnamon.</span><span class="verse-text"><span class="verse-num">17</span>Come, let's drink deeply of love till morning; let's enjoy ourselves with love!</span><span class="verse-text"><span class="verse-num">19</span>My husband is not at home; he has gone on a long journey.</span><span class="verse-text"><span class="verse-num">20</span>He took his purse filled with money and will not be home till full moon."</span><span class="verse-text"><span class="verse-num">21</span>With persuasive words she led him astray; she seduced him with her smooth talk.</span><span class="verse-text"><span class="verse-num">22</span>All at once he followed her like an ox going to the slaughter, like a deer stepping into a noose</span><span class="verse-text"><span class="verse-num">23</span>till an arrow pierces his liver, like a bird darting into a snare, little knowing it will cost him his life.</span><span class="verse-text"><span class="verse-num">24</span>Now then, my sons, listen to me; pay attention to what I say.</span><span class="verse-text"><span class="verse-num">25</span>Do not let your heart turn to her ways or stray into her paths.</span><span class="verse-text"><span class="verse-num">26</span>Many are the victims she has brought down; her slain are a mighty throng.</span><span class="verse-text"><span class="verse-num">27</span>Her house is a highway to the grave, leading down to the chambers of death.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'p7-s2-heb')"><span>Hebrew</span></button><button class="anno-trigger context" onclick="tog(this,'p7-s2-ctx')"><span>Context</span></button><button class="anno-trigger macarthur" onclick="tog(this,'p7-s2-mac')"><span>MacArthur</span></button></div><div id="p7-s2-heb" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">בֵּין יַעַר</span> <span class="tlit">bên yaʿar</span> — <strong>young man without sense</strong>: Literally "lacking in heart/mind" — the same diagnosis as the adulterer in 6:32 and the fool throughout Proverbs. He is not malicious; he is obtuse. He does not read the situation he is walking into. His fatal characteristic is that he does not know.</p><p><span class="hebrew-word">בֵּין הָעַרְבַּיִם</span> <span class="tlit">bên hāʿarbayim</span> — <strong>at twilight / in the dark</strong>: The timing is morally significant. He is walking toward her house at dusk. The fading light is not incidental — it is the external embodiment of his spiritual condition. He is moving toward darkness, literally and figuratively.</p></div><div id="p7-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 7 is the literary masterpiece of Proverbs 1–9 — a detailed dramatic narrative rather than instruction or aphorism. The father observes a scene from his window (a narrator's device giving the reader an elevated viewpoint the youth lacks). The scene is structured as a seduction with three elements: the approach (setting and timing, vv.8–9), the method (physical initiation, religious claim, sensory appeal, husband's absence, vv.13–20), and the result (ox to slaughter, bird to snare, vv.21–23). The adulteress's use of religious language (vv.14–15: "I fulfilled my vows, I have fellowship offering food") is particularly chilling — she weaponises piety as a seduction technique.</p></div><div id="p7-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:6–9</span><p>The narrative eye: the father watches from his window. The youth is described as "having no sense" (ḥāsar lēb) — not evil, just profoundly unobservant. He is walking toward her house at twilight. The three danger signals are: (1) wrong place — her corner; (2) wrong direction — toward her house; (3) wrong time — twilight, when darkness is coming. He has positioned himself for disaster without recognising it.</p></div><div class="com-note"><span class="com-ref">7:14–15</span><p>The fellowship offering detail is psychologically precise. She has used a religious act — fulfilling her vows, offering sacrifices — as a pretext for a sexual invitation. "I have meat at home from my offering; I came looking for you." The piety is genuine and the perversion of it is deliberate. She is using covenant language to violate covenant. This is the deepest form of deception.</p></div><div class="com-note"><span class="com-ref">7:22–23</span><p>Ox to slaughter, deer to noose, bird to snare. Three animals caught; three images of death. The escalating imagery drives home the point: he follows "all at once" (pitʾōm — suddenly, without knowing it), and "little knowing it will cost him his life." The fool's defining characteristic is ignorance of his own situation.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;5 &mdash; Guard Wisdom Like the Apple of Your Eye</div><span class="verse-text"><span class="verse-num">1</span>My son, keep my words and store up my commands within you.</span><span class="verse-text"><span class="verse-num">2</span>Keep my commands and you will live; guard my teachings as the apple of your eye.</span><span class="verse-text"><span class="verse-num">3</span>Bind them on your fingers; write them on the tablet of your heart.</span><span class="verse-text"><span class="verse-num">4</span>Say to wisdom, "You are my sister," and to insight, "You are my relative."</span><span class="verse-text"><span class="verse-num">5</span>They will keep you from the adulterous woman, from the wayward woman with her seductive words.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr7-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr7-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr7-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr7-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr7-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr7-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr7-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr7-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr7-s1-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4></div><div id="pr7-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The opening (vv.1–5) is the shortest instruction preamble in chs.1–9 — just five verses before the narrative begins. Its urgency is striking: "guard my teachings as the apple of your eye" (v.2). The "apple of your eye" (bābat ʿên, literally "daughter of the eye" — the pupil) is the most instinctively protected thing a person has. That is the level of vigilance required. Verse 4's instruction to call wisdom "sister" and insight "relative" is the positive alternative to the coming scene: if wisdom is your intimate, the adulteress has no hold.</p></div><div id="pr7-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="pr7-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:4</span><p>Say to wisdom: "You are my sister." In the ancient world a sister is the woman closest to a man who is not sexually available. The instruction is: make wisdom your most intimate companion, your inner family. If you have that intimacy with wisdom, you will recognize the adulteress's approach for what it is — a counterfeit intimacy designed to destroy.</p></div></div><div id="pr7-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">7:1–5</span><p>The opening address is tighter and more urgent than ch.5's parallel opening. Alter notes the escalating intimacy: in ch.2 wisdom is sought 'like silver'; in ch.4 it is a 'garland'; in ch.7 it is to be called 'my sister' and 'my intimate friend.' The relationship to wisdom has become personal and familial — a closeness that the adulteress will attempt to counterfeit.</p></div><div class="com-note"><span class="com-ref">7:6–23</span><p>The seduction scene of vv.6–23 is one of the Hebrew Bible's most accomplished narrative passages. Alter identifies its literary technique: the narrator observes from a window, describes the setting (evening, dark night), then follows the young man's encounter with extraordinary psychological and temporal precision. The narrative shows rather than tells — the reader witnesses the seduction unfolding in real time.</p></div></div><div id="pr7-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">7:1–4</span><p>The opening command to 'bind wisdom on your fingers; write it on the tablet of your heart' is a wisdom version of Deut 6:8 (bind God's commands on your hands; write them on your doorposts). Waltke notes the deliberate echo: the same total embodiment commanded for the Torah is here commanded for wisdom. Wisdom is not a mental concept but a physically internalised orientation.</p></div><div class="com-note"><span class="com-ref">7:5</span><p>The purpose of all the instruction in vv.1–4 is stated in v.5: 'that they may keep you from the adulteress.' The entire wisdom-formation programme of chs.1–7 has this practical purpose. Wisdom is not theoretical philosophy but protective character-formation against the specific dangers that destroy young men (and by extension, all people).</p></div></div><div id="pr7-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:1–4</span><p>Calvin: 'The father urges his son to guard wisdom as the apple of his eye — meaning, to preserve it with the utmost care, as what is most precious and necessary for life. The instructions of God deserve this supreme care, since without them we perish.'</p></div><div class="com-note"><span class="com-ref">7:4</span><p>Calvin on calling wisdom 'my sister': 'This intimate address signifies that we ought to cherish wisdom with the same tenderness and love with which we cherish those who are nearest and dearest to us. Wisdom should not be a formal duty but a personal love.'</p></div></div><div id="pr7-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">7:2</span><p>The NET note on 'guard my commands as the apple of your eye' (ishon aynekha) explains ishon (pupil of the eye) — the most carefully protected part of the most important sensory organ. To guard the commands 'as the apple of your eye' is to protect them with instinctive, reflexive care. The same phrase appears in Deut 32:10 for God's care for Israel.</p></div><div class="com-note"><span class="com-ref">7:4</span><p>The NET note on 'say to wisdom: you are my sister' discusses the sister-term in ancient Near Eastern love poetry (Song of Songs 4:9–12; 5:1–2): 'sister' (achot) is an intimate address for a beloved woman, not a literal sibling. Calling wisdom 'my sister' places the relationship to wisdom in the register of devoted personal love.</p></div></div></div><div class="section"><div class="section-header">Verses 6&ndash;27 &mdash; The Seduction Scene: Ox to the Slaughter</div><span class="verse-text"><span class="verse-num">6</span>At the window of my house I looked down through the lattice.</span><span class="verse-text"><span class="verse-num">7</span>I saw among the simple, I noticed among the young men, a youth who had no sense.</span><span class="verse-text"><span class="verse-num">8</span>He was going down the street near her corner, walking along in the direction of her house</span><span class="verse-text"><span class="verse-num">9</span>at twilight, as the day was fading, as the dark of night set in.</span><span class="verse-text"><span class="verse-num">10</span>Then out came a woman to meet him, dressed like a prostitute and with crafty intent.</span><span class="verse-text"><span class="verse-num">11</span>(She is unruly and defiant, her feet never stay at home;</span><span class="verse-text"><span class="verse-num">12</span>now in the street, now in the squares, at every corner she lurks.)</span><span class="verse-text"><span class="verse-num">13</span>She took hold of him and kissed him and with a brazen face she said:</span><span class="verse-text"><span class="verse-num">14</span>"Today I fulfilled my vows, and I have food from my fellowship offering at home.</span><span class="verse-text"><span class="verse-num">15</span>So I came out to meet you; I looked for you and have found you!</span><span class="verse-text"><span class="verse-num">16</span>I have covered my bed with colored linens from Egypt.</span><span class="verse-text"><span class="verse-num">17</span>I have perfumed my bed with myrrh, aloes and cinnamon.</span><span class="verse-text"><span class="verse-num">17</span>Come, let's drink deeply of love till morning; let's enjoy ourselves with love!</span><span class="verse-text"><span class="verse-num">19</span>My husband is not at home; he has gone on a long journey.</span><span class="verse-text"><span class="verse-num">20</span>He took his purse filled with money and will not be home till full moon."</span><span class="verse-text"><span class="verse-num">21</span>With persuasive words she led him astray; she seduced him with her smooth talk.</span><span class="verse-text"><span class="verse-num">22</span>All at once he followed her like an ox going to the slaughter, like a deer stepping into a noose</span><span class="verse-text"><span class="verse-num">23</span>till an arrow pierces his liver, like a bird darting into a snare, little knowing it will cost him his life.</span><span class="verse-text"><span class="verse-num">24</span>Now then, my sons, listen to me; pay attention to what I say.</span><span class="verse-text"><span class="verse-num">25</span>Do not let your heart turn to her ways or stray into her paths.</span><span class="verse-text"><span class="verse-num">26</span>Many are the victims she has brought down; her slain are a mighty throng.</span><span class="verse-text"><span class="verse-num">27</span>Her house is a highway to the grave, leading down to the chambers of death.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr7-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr7-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr7-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr7-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr7-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr7-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr7-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr7-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr7-s2-grk" class="anno-panel heb"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">בֵּין יַעַר</span> <span class="tlit">bên yaʿar</span> — <strong>young man without sense</strong>: Literally "lacking in heart/mind" — the same diagnosis as the adulterer in 6:32 and the fool throughout Proverbs. He is not malicious; he is obtuse. He does not read the situation he is walking into. His fatal characteristic is that he does not know.</p><p><span class="hebrew-word">בֵּין הָעַרְבַּיִם</span> <span class="tlit">bên hāʿarbayim</span> — <strong>at twilight / in the dark</strong>: The timing is morally significant. He is walking toward her house at dusk. The fading light is not incidental — it is the external embodiment of his spiritual condition. He is moving toward darkness, literally and figuratively.</p></div><div id="pr7-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 7 is the literary masterpiece of Proverbs 1–9 — a detailed dramatic narrative rather than instruction or aphorism. The father observes a scene from his window (a narrator's device giving the reader an elevated viewpoint the youth lacks). The scene is structured as a seduction with three elements: the approach (setting and timing, vv.8–9), the method (physical initiation, religious claim, sensory appeal, husband's absence, vv.13–20), and the result (ox to slaughter, bird to snare, vv.21–23). The adulteress's use of religious language (vv.14–15: "I fulfilled my vows, I have fellowship offering food") is particularly chilling — she weaponises piety as a seduction technique.</p></div><div id="pr7-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="pr7-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:6–9</span><p>The narrative eye: the father watches from his window. The youth is described as "having no sense" (ḥāsar lēb) — not evil, just profoundly unobservant. He is walking toward her house at twilight. The three danger signals are: (1) wrong place — her corner; (2) wrong direction — toward her house; (3) wrong time — twilight, when darkness is coming. He has positioned himself for disaster without recognising it.</p></div><div class="com-note"><span class="com-ref">7:14–15</span><p>The fellowship offering detail is psychologically precise. She has used a religious act — fulfilling her vows, offering sacrifices — as a pretext for a sexual invitation. "I have meat at home from my offering; I came looking for you." The piety is genuine and the perversion of it is deliberate. She is using covenant language to violate covenant. This is the deepest form of deception.</p></div><div class="com-note"><span class="com-ref">7:22–23</span><p>Ox to slaughter, deer to noose, bird to snare. Three animals caught; three images of death. The escalating imagery drives home the point: he follows "all at once" (pitʾōm — suddenly, without knowing it), and "little knowing it will cost him his life." The fool's defining characteristic is ignorance of his own situation.</p></div></div><div id="pr7-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">7:10–21</span><p>The seductress's speech in vv.14–20 is the book's most psychologically acute portrait of manipulation. Alter notes she addresses every potential objection: the guilt of sleeping with a married woman (she has paid her vows, v.14); the availability of her husband (long journey, v.19); the abundance of the occasion (rich food, spices, v.17). She creates the illusion of safety and permission simultaneously.</p></div><div class="com-note"><span class="com-ref">7:22–27</span><p>The final movement from seduction to mortality (vv.22–27) is achieved through the animal similes (ox, deer, bird) followed by the direct statistical claim: 'many strong men have been slain by her; her house is a highway to the grave.' Alter notes the narrator abandons psychological observation for moral arithmetic — the individual story is subsumed into a pattern: she has done this many times; it always ends the same way.</p></div></div><div id="pr7-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">7:10–20</span><p>The seductress's speech is the book's most elaborately developed folly discourse. Waltke notes three features: (a) she initiates and speaks first (inverting the proper order of courtship); (b) she provides abundant practical justification ('I have made fellowship offerings; the meat is available'); (c) she offers total availability ('my husband is gone on a long journey'). Each element counters a potential resistance point.</p></div><div class="com-note"><span class="com-ref">7:22–23</span><p>The three animal similes for the youth's fate — ox to slaughter, deer to snare, bird to trap — form a descending sequence of agency: the ox goes, the deer springs, the bird hastens. Waltke notes the verbs describe the animal's own motion toward destruction. The youth is not dragged; he goes. The final simile ('arrow through his liver') makes the death precise and clinical — this is not romantic tragedy but predictable death.</p></div></div><div id="pr7-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:10</span><p>Calvin on 'dressed like a prostitute, with crafty intent': 'The evil woman does not announce her nature — she disguises it. The father warns his son to recognise her by her approach, not her appearance. This is the strategy of all temptation: to present itself in the most attractive possible form.'</p></div><div class="com-note"><span class="com-ref">7:26</span><p>Calvin on 'many are the victims she has brought down': 'The father appeals to experience — not just to principle but to the observable pattern of destruction. History is the teacher here: look at what this path has done to others. The wise man learns from others' destruction; the fool must experience his own.'</p></div></div><div id="pr7-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">7:14</span><p>The NET note on 'I have offered peace offerings; today I have paid my vows' explains that fellowship offerings (zevach shelamim) produced meat that had to be consumed within two days (Lev 7:15–18). The woman is using the religious calendar — she has offered a sacrifice and has abundant meat that must be eaten now — to create practical urgency and to give the encounter a quasi-religious legitimacy.</p></div><div class="com-note"><span class="com-ref">7:23</span><p>The NET note on 'an arrow pierces his liver' (chatsa bavedoh) explains the liver as the seat of vital life in Hebrew physiology (parallel to the heart). An arrow through the liver is a mortal wound. The clinical specificity of the body part — not just 'he dies' but a precise lethal injury — is characteristic of Proverbs' insistence on concrete consequences over abstract warnings.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'p7-ppl')"><span>People</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'p7-trans')"><span>Translations</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'p7-src')"><span>Ancient Sources</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'p7-rec')"><span>Reception History</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'p7-lit')"><span>Literary Structure</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'p7-hebtext')"><span>Hebrew-Rooted Reading</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'p7-thread')"><span>Intertextual Threading</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'p7-themes')"><span>Theological Themes</span></button>
+<button class="anno-trigger people" onclick="tog(this,'pr7-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr7-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr7-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr7-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr7-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr7-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr7-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr7-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr7-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="p7-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The youth</div><div class="person-role">The young man without sense</div><div class="person-text">Not named, not evil — just profoundly unobservant. He positions himself for disaster without recognising it.</div></div><div class="person-card"><div class="person-name">The adulteress</div><div class="person-role">Fully developed here</div><div class="person-text">Her technique: physical initiation, religious pretext, sensory appeal (bed, myrrh, cinnamon), husband's absence. Crafty intent with a brazen face.</div></div></div></div><div id="p7-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">7:22–23 — Ox to Slaughter</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"All at once he followed her like an ox going to the slaughter, like a deer stepping into a noose till an arrow pierces his liver, like a bird darting into a snare, little knowing it will cost him his life."</td></tr><tr><td class="t-label">ESV</td><td>"All at once he follows her, as an ox goes to the slaughter, or as a stag is caught fast till an arrow pierces its liver; as a bird rushes into a snare; he does not know that it will cost him his life."</td></tr><tr><td class="t-label">Note</td><td>The triple animal simile is a crescendo of helplessness: ox (large, slow to realise), deer (fast but caught), bird (darting directly into the trap). All three share the same quality: they do not know until it is too late.</td></tr></table></div><div id="p7-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Egyptian Love Poetry</div><div class="source-quote">The sensory details of vv.16–18 (coloured linens from Egypt, myrrh, aloes, cinnamon) parallel Egyptian love poetry. The Song of Songs uses similar imagery positively. Proverbs uses the same sensory richness to describe the seduction — acknowledging the reality of its appeal while exposing its lethal nature.</div><div class="source-note">The sensory language places the adulteress scene within the ancient love-poetry tradition it parodies.</div></div><div class="source-block"><div class="source-title">Narrative Wisdom</div><div class="source-quote">The shift from instruction to narrative in ch.7 is deliberate. Narrative engages moral imagination in a way that precept cannot. The reader is put in the observer's position (like the father at the window) and asked to see what the youth cannot see. This is wisdom education through narrative.</div><div class="source-note">The narrative form makes the reader a wiser observer than the protagonist.</div></div></div><div id="p7-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Thomas Aquinas</div><div class="rec-text">Used Prov 7 to illustrate the process of temptation: proximity to occasion of sin → engagement of the senses → capture of the will. The youth's three steps (wrong place, wrong direction, wrong time) became a standard analysis of how temptation operates.</div></div><div class="rec-block"><div class="rec-who">CS Lewis, The Screwtape Letters</div><div class="rec-text">The senior devil's advice to use legitimate religious language and social contexts to draw humans into sin mirrors the adulteress's use of her fellowship offering as a seduction tool.</div></div></div><div id="p7-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Preamble — vv.1–5</span><span class="lit-text">Guard wisdom as the apple of your eye; call her sister</span></div><div class="lit-row"><span class="lit-label">Setting — vv.6–9</span><span class="lit-text">Observer's window; youth without sense; twilight</span></div><div class="lit-row"><span class="lit-label">The adulteress — vv.10–20</span><span class="lit-text">Physical approach; religious pretext; sensory appeal; husband absent</span></div><div class="lit-row"><span class="lit-label">The capture — vv.21–23</span><span class="lit-text">Seduced by smooth talk; ox/deer/bird to slaughter</span></div><div class="lit-row"><span class="lit-label">Warning — vv.24–27</span><span class="lit-text">Highway to the grave; many victims</span></div><div class="lit-note">The chapter's genius is in its narrative form. It does not instruct — it shows. The reader sees what the youth cannot see: the whole scene from the elevated perspective of the father's window. The purpose is to give the reader's imagination the lens of wisdom before the situation arises.</div></div></div><div id="p7-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">4</sup> "Say to <span class="dn-key">wisdom</span>, 'You are my sister.'" <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">22–23</sup> "All at once he followed her like an ox going to the slaughter... little knowing it will cost him his <span class="dn-key">life</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">27</sup> "Her house is a <span class="dn-key">highway to the grave</span>."</p></div><div id="p7-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">Prov 7:3</span><span class="thread-arrow">→</span><span class="thread-target">Deut 6:8; 11:18</span><span class="thread-type echo">Echo</span></div><div class="thread-text">"Bind them on your fingers; write them on your heart" — the language of Deuteronomy applied to wisdom instruction. Torah language applied to the father's teaching.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">7:14–15</span><span class="thread-arrow">→</span><span class="thread-target">Matt 23:27–28</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Religious language used as cover for immorality → "whitewashed tombs, beautiful on the outside but full of dead men's bones." The adulteress's piety and the Pharisees' piety share the same structure.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">7:27</span><span class="thread-arrow">→</span><span class="thread-target">Prov 2:18</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Her house leads to death/Sheol — the same warning given in 2:18. The narrative of ch.7 is the dramatization of 2:18's brief warning.</div></div></div><div id="p7-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,188.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Adulteress</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Narrative Wisdom</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sensory Deception</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Twilight and Darkness</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Death Disguised as Pleasure</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wisdom as Protection</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 7 is the narrative climax of the adulteress sequence. It does what the earlier warnings described: it shows the seduction from start to finish, from wrong place to ox-to-slaughter. The chapter's wisdom is not in its conclusions (the adulteress leads to death — we knew this) but in its dramatisation: the reader sees what wisdom looks like when it is absent.</p></div>
+<div id="pr7-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The youth</div><div class="person-role">The young man without sense</div><div class="person-text">Not named, not evil — just profoundly unobservant. He positions himself for disaster without recognising it.</div></div><div class="person-card"><div class="person-name">The adulteress</div><div class="person-role">Fully developed here</div><div class="person-text">Her technique: physical initiation, religious pretext, sensory appeal (bed, myrrh, cinnamon), husband's absence. Crafty intent with a brazen face.</div></div></div></div><div id="pr7-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 7 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"All at once he followed her like an ox going to the slaughter, like a deer stepping into a noose till an arrow pierces his liver, like a bird darting into a snare, little knowing it will cost him his life."</td></tr><tr><td class="t-label">ESV</td><td>"All at once he follows her, as an ox goes to the slaughter, or as a stag is caught fast till an arrow pierces its liver; as a bird rushes into a snare; he does not know that it will cost him his life."</td></tr><tr><td class="t-label">Note</td><td>The triple animal simile is a crescendo of helplessness: ox (large, slow to realise), deer (fast but caught), bird (darting directly into the trap). All three share the same quality: they do not know until it is too late.</td></tr></table></div><div id="pr7-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Egyptian Love Poetry</div><div class="source-quote">The sensory details of vv.16–18 (coloured linens from Egypt, myrrh, aloes, cinnamon) parallel Egyptian love poetry. The Song of Songs uses similar imagery positively. Proverbs uses the same sensory richness to describe the seduction — acknowledging the reality of its appeal while exposing its lethal nature.</div><div class="source-note">The sensory language places the adulteress scene within the ancient love-poetry tradition it parodies.</div></div><div class="source-block"><div class="source-title">Narrative Wisdom</div><div class="source-quote">The shift from instruction to narrative in ch.7 is deliberate. Narrative engages moral imagination in a way that precept cannot. The reader is put in the observer's position (like the father at the window) and asked to see what the youth cannot see. This is wisdom education through narrative.</div><div class="source-note">The narrative form makes the reader a wiser observer than the protagonist.</div></div></div><div id="pr7-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Thomas Aquinas</div><div class="rec-text">Used Prov 7 to illustrate the process of temptation: proximity to occasion of sin → engagement of the senses → capture of the will. The youth's three steps (wrong place, wrong direction, wrong time) became a standard analysis of how temptation operates.</div></div><div class="rec-block"><div class="rec-who">CS Lewis, The Screwtape Letters</div><div class="rec-text">The senior devil's advice to use legitimate religious language and social contexts to draw humans into sin mirrors the adulteress's use of her fellowship offering as a seduction tool.</div></div></div><div id="pr7-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Proverbs 7's seduction scene is one of the Hebrew Bible's most accomplished narrative passages — the teacher does not lecture about adultery but shows it unfolding in real time. The reader witnesses the encounter from the narrator's window, hears the seductress's speech, watches the young man follow. The narrative method is itself the wisdom: seeing clearly what is happening is the beginning of resisting it.</div><div class="lit-row"><span class="lit-label">Call Wisdom My Sister: Intimacy as Defence — 7:4</span><span class="lit-text">The instruction to call wisdom 'my sister' and 'my intimate friend' places the relationship to wisdom in the register of devoted personal love. The defence against the seductress (who offers intimacy) is not cold detachment but a richer intimacy — the intimate friendship of wisdom that makes the seductress's counterfeit offer recognisable as exactly that.</span></div></div></div><div id="pr7-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('אִישׁוֹן עֵינֶיךָ / Ishon Einekha', 'ishon einekha', 'Apple of your eye (pupil)', "The pupil of the eye — the most carefully protected part of the most important organ. To guard the commands 'as the apple of your eye' (7:2) is to protect them with instinctive, reflexive, non-negotiable care. The same phrase describes God's care for Israel (Deut 32:10) and the psalmist's prayer for divine protection (Ps 17:8). Proverbs appropriates the most intimate divine-protection language for the protection of wisdom."), ("פִּתְאֹם / Pit'om", "pit'om", 'Suddenly', "The adverb describing the young man's following the seductress (7:22). The suddenness of moral failure — not gradual deliberation but abrupt decision — is part of the seduction scene's psychological realism. Temptation works quickly once the conditions are in place. The warning embedded in the adverb: by the time 'suddenly' arrives, the prior formation (7:1–4) must already be in place.")]</div><div id="pr7-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">7:22</span><span class="tx-issue">'Suddenly he followed her'</span></div><div class="tx-variants">MT: holekh achareyha pit'om (he went after her suddenly). LXX: akolouthei de aute kephalathoumenos (he followed her being stupefied/entrapped). The MT's pit'om (suddenly) indicates the abruptness of the decision — one moment resisting, the next following. LXX's 'stupefied' adds the sense of being overcome, not merely deciding quickly.</div><div class="tx-sig">The MT's 'suddenly' captures the psychological truth: the transition from contemplation to action in moral failure is often abrupt. This counters any narrative that portrays moral failure as gradual deliberation. The young man's destruction happens quickly once he is within the seductress's verbal reach. The suddenness is part of the warning.</div></div></div><div id="pr7-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Seductress of Proverbs 7: Moral Warning or Misogynist Portrait?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A genuine moral warning, not anti-woman</div><div class="db-proponents">Waltke, Fox, most evangelical commentators</div><div class="db-argument">The text addresses a specific social danger — the adulteress who preys on young men — and describes her methods with psychological precision. The father's purpose is protective, not misogynist. Lady Wisdom (ch.8) is the counter-figure, and she is also a woman. Proverbs does not associate women with danger but associates a specific moral choice (adultery) with danger for both parties.</div></div><div class="db-position"><div class="db-pos-name">A gendered discourse that encodes patriarchal anxiety</div><div class="db-proponents">Feminist scholars (Camp, Brenner)</div><div class="db-argument">The consistent portrayal of the threatening 'other' as a woman in chs.1–9 encodes a patriarchal anxiety about female sexuality and agency. The implied reader is male; danger is coded female; wisdom is domesticated as 'sister' or 'wife.' The gendered structure of chs.1–9 reflects the social arrangements of ancient patriarchy more than eternal moral truth.</div></div><div class="db-position"><div class="db-pos-name">Both concerns are legitimate and need holding together</div><div class="db-proponents">Longman, Yoder</div><div class="db-argument">The text has a genuine moral concern (adultery destroys) and a genuine gendered structure (the implied student is male, the threat is female). Both can be acknowledged: the moral concern is true regardless of the gendered framing; the gendered framing reflects its historical context without invalidating the moral point. Contemporary application requires both taking the moral concern seriously and reading the gendered framing contextually.</div></div></div><div class="db-synthesis">The 'both' position is most honest. The moral concern — that adultery destroys — is true and cross-culturally applicable. The gendered framing is genuinely patriarchal in its address (son, not daughter) and its imaging (female threat, male vulnerability). The wisest pastoral reading applies the moral principle universally while acknowledging the historical context of the literary form.</div></div></div><div id="pr7-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wisdom as Intimate Friend: The Counter-Seduction</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Seductress: Verbal Manipulation and Its Anatomy</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Seeing Clearly: Narrative as Wisdom Method</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Suddenness of Moral Failure</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 7 is the climactic development of the adulteress theme in chs.5–7. The chapter uses narrative technique rather than direct instruction — the reader watches the seduction unfold rather than being told about it. The method is the message: wisdom is the capacity to see clearly what is happening, to recognise the seductress's script, to have the prior formation (call wisdom 'my sister') that makes the counterfeit offer recognisable.</p></div>
 </div>
 </main>
-<footer><p>Proverbs 7 — The Adulteress Narrative; Ox to the Slaughter. Scripture Deep Dive.</p></footer>
 <script>
 function tog(btn,id){
   var p=document.getElementById(id);
@@ -341,11 +615,11 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 </script>
 <script>
 (function(){
-  var DIVINE={words:['LORD','God','Spirit','Wisdom','King'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','gate','city','streets','market','town','house','palace'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Solomon','son','father','mother','woman','wife','men','young man','adulteress','stranger'],cls:'vhl-person',btn:['people','context']};
-  var TIME={words:['youth','age','years','day','night','morning','evening','life','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY={words:['wisdom','understanding','knowledge','instruction','fear','heart','path','way','life','death','fool','righteous','wicked'],cls:'vhl-key',btn:['literary','cross']};
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['gate','city','market','field','house','street','court','path','way'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['LORD','king','fool','wise','righteous','wicked','poor','rich','son','wife','neighbour'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','morning','evening','year','life','age','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['wisdom','knowledge','understanding','fear','righteous','wicked','heart','tongue','mouth','honour','pride','humility'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -401,7 +675,6 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
   });
 })();
 </script>
-<script src="../verses.js"></script>
 <script>
 function qnavFilter(q) {
   q = q.trim().toLowerCase();
@@ -481,31 +754,29 @@ function qnavFilter(q) {
 }
 </script>
 <script>
-</script>
-<script>
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
     var KEY='sdw_recent', MAX=5;
-    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
     var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
-    var h1=document.querySelector('h1');
-    var sub=document.querySelector('header p');
-    var label=(h1?h1.textContent.trim():'')+(sub?' · '+sub.textContent.trim().slice(0,28):'');
-    var entry={url:url,label:label};
-    hist=hist.filter(function(x){return x.url!==url;});
-    hist.unshift(entry);
-    if(hist.length>MAX)hist=hist.slice(0,MAX);
-    localStorage.setItem(KEY,JSON.stringify(hist));
-  }catch(e){}
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
 })();
 </script>
 </body></html>
