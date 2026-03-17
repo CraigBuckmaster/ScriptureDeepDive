@@ -556,11 +556,17 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
 /* ── Timeline section panel ─────────────────────────────────── */
 .anno-panel.tl-panel{background:var(--tl-bg);border-color:#4a6888;}
-.tl-entry{padding:.7rem 0;border-bottom:1px solid rgba(74,104,136,.3);}
-.tl-entry:last-child{border-bottom:none;}
-.tl-marker{font-family:'Cinzel',serif;font-size:.75rem;color:#c0d8f0;margin-bottom:.15rem;}
-.tl-label{font-size:.8rem;color:#8ab8e0;font-weight:600;margin-bottom:.3rem;}
-.tl-text{font-size:.82rem;color:var(--text);line-height:1.65;}
+.tl-visual{position:relative;height:300px;margin:.6rem 0 .4rem;}
+.tl-spine{position:absolute;left:72px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 8%,#4a6888 92%,transparent);}
+.tl-event{position:absolute;left:0;right:0;display:flex;align-items:center;gap:0;}
+.tl-date{width:64px;text-align:right;font-family:'Cinzel',serif;font-size:.65rem;color:#7a9ab8;line-height:1.2;padding-right:8px;flex-shrink:0;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:#4a6888;border:2px solid #7aaac8;flex-shrink:0;margin:0 8px;position:relative;z-index:1;}
+.tl-event.current .tl-dot{width:14px;height:14px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 8px rgba(192,216,240,.6);margin:0 6px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.3;padding-left:2px;}
+.tl-range{display:flex;justify-content:space-between;font-size:.65rem;color:var(--text-muted);font-style:italic;padding-top:.3rem;}
+.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
 </style>
 </head>
 <body>
@@ -632,10 +638,41 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 </div>
 <div id="gen12-s1-tl" class="anno-panel tl-panel">
 <h4>Timeline</h4>
-<div class="tl-entry">
-  <div class="tl-marker">c. 2091 BC</div>
-  <div class="tl-label">Abram is 75</div>
-  <div class="tl-text">The call comes when Abram is 75 (v.4). He was born in 2166 BC by traditional chronology. The precision is unusual — Genesis rarely gives ages at non-covenant moments, which marks this call as a covenant-defining event.</div>
+<div class="tl-visual">
+  <div class="tl-spine"></div>
+  <div class="tl-event" style="top:calc(13.4% - 5px)">
+    <div class="tl-date">~2350 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">The Flood</div>
+  </div>
+  <div class="tl-event" style="top:calc(23.0% - 5px)">
+    <div class="tl-date">~2242 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">Tower of Babel; nations scattered</div>
+  </div>
+  <div class="tl-event current" style="top:calc(36.5% - 7px)">
+    <div class="tl-date">c. 2091 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">Abram called — this passage</div>
+  </div>
+  <div class="tl-event" style="top:calc(44.1% - 5px)">
+    <div class="tl-date">c. 2066 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">Isaac born</div>
+  </div>
+  <div class="tl-event" style="top:calc(55.7% - 5px)">
+    <div class="tl-date">c. 1876 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">Jacob's family enters Egypt</div>
+  </div>
+  <div class="tl-event" style="top:calc(94.1% - 5px)">
+    <div class="tl-date">c. 1446 BC</div>
+    <div class="tl-dot"></div>
+    <div class="tl-name">The Exodus</div>
+  </div>
+</div>
+<div class="tl-range"><span>c. 2500 BC</span><span>c. 1380 BC</span></div>
+<p class="tl-caption">Traditional OT chronology. Dates are approximate; scholarly estimates vary by up to 200 years.</p>
 </div>
 <div class="tl-entry">
   <div class="tl-marker">After Terah's death</div>
