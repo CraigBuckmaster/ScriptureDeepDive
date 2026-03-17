@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 23</h1>
-<p>Against the Pharisees; Seven Woes; Lament over Jerusalem</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Matthew 23</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi), tax collector and apostle.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80-90, Antioch of Syria.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as fulfilment of Israel's Scripture.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;22 &mdash; Moses' Seat; Servant Greatness; First Four Woes</div><span class="verse-text"><span class="verse-num">1</span>Then Jesus said to the crowds and to his disciples:</span><span class="verse-text"><span class="verse-num">2</span>"The teachers of the law and the Pharisees sit in Moses' seat.</span><span class="verse-text"><span class="verse-num">3</span>So you must be careful to do everything they tell you. But do not do what they do, for they do not practice what they preach.</span><span class="verse-text"><span class="verse-num">4</span>They tie up heavy, cumbersome loads and put them on other people's shoulders, but they themselves are not willing to lift a finger to move them.</span><span class="verse-text"><span class="verse-num">5</span>"Everything they do is done for people to see: They make their phylacteries wide and the tassels on their garments long;</span><span class="verse-text"><span class="verse-num">6</span>they love the place of honor at banquets and the most important seats in the synagogues;</span><span class="verse-text"><span class="verse-num">7</span>they love to be greeted with respect in the marketplaces and to be called 'Rabbi' by others.</span><span class="verse-text"><span class="verse-num">8</span>"But you are not to be called 'Rabbi,' for you have one Teacher, and you are all brothers.</span><span class="verse-text"><span class="verse-num">9</span>And do not call anyone on earth 'father,' for you have one Father, and he is in heaven.</span><span class="verse-text"><span class="verse-num">10</span>Nor are you to be called instructors, for you have one Instructor, the Messiah.</span><span class="verse-text"><span class="verse-num">11</span>The greatest among you will be your servant.</span><span class="verse-text"><span class="verse-num">12</span>For those who exalt themselves will be humbled, and those who humble themselves will be exalted.</span><span class="verse-text"><span class="verse-num">13</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You shut the door of the kingdom of heaven in people's faces. You yourselves do not enter, nor will you let those enter who are trying to.</span><span class="verse-text"><span class="verse-num">15</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You travel over land and sea to win a single convert, and when you have succeeded, you make them twice as much a child of hell as you are.</span><span class="verse-text"><span class="verse-num">16</span>"Woe to you, blind guides! You say, 'If anyone swears by the temple, it means nothing; but anyone who swears by the gold of the temple is bound by that oath.'</span><span class="verse-text"><span class="verse-num">17</span>You blind fools! Which is greater: the gold, or the temple that makes the gold sacred?</span><span class="verse-text"><span class="verse-num">18</span>You also say, 'If anyone swears by the altar, it means nothing; but anyone who swears by the gift on it is bound by that oath.'</span><span class="verse-text"><span class="verse-num">19</span>You blind men! Which is greater: the gift, or the altar that makes the gift sacred?</span><span class="verse-text"><span class="verse-num">20</span>Therefore, anyone who swears by the altar swears by it and by everything on it.</span><span class="verse-text"><span class="verse-num">21</span>And anyone who swears by the temple swears by it and by the one who dwells in it.</span><span class="verse-text"><span class="verse-num">22</span>And anyone who swears by heaven swears by God's throne and by the one who sits on it."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt23-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt23-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt23-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt23-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt23-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">οὐαί</span> <span class="tlit">ouai</span> — <strong>woe</strong>: V.13: the obverse of the Beatitudes. Ouai is simultaneously grief and warning -- the anguish of one who sees the inevitable consequence of a chosen path. The woes are love spoken in judgment's language.</p><p><span class="hebrew-word">ὑποκριτής</span> <span class="tlit">hypokrites</span> — <strong>hypocrite</strong>: Vv.13,15: theatrical term for an actor playing a role. Jesus's critique is not the content of Pharisaic teaching (v.3: "do what they tell you") but its audience: human approval rather than divine.</p></div><div id="mt23-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half moves from positive instruction (servant greatness; one Teacher/Father/Instructor, vv.1-12) to the first four woes (vv.13-22). The positive instruction of vv.8-12 is the community Jesus is forming: no human hierarchy, only one Teacher who is the Messiah.</p></div><div id="mt23-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 5:3-12</span><span class="ref-text">The Beatitudes -- blessing the humble. Matthew 23's woes are their exact inversion.</span></li><li><span class="ref-cite">Matt 6:1-18</span><span class="ref-text">Practice righteousness before your Father, not before others. The woes apply the same diagnostic: wrong audience, wrong reward.</span></li></ul></div><div id="mt23-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">23:3-4</span><p>They do not practice what they preach. The failure is volitional, not intellectual. They know the truth but will not live it. This is more culpable than ignorance.</p></div><div class="com-note"><span class="com-ref">23:11-12</span><p>The greatest among you will be your servant. The positive alternative to the woes.</p></div><div class="com-note"><span class="com-ref">23:13</span><p>You shut the door of the kingdom in people's faces. The most consequential woe -- not merely personal failure but obstruction of others. Leadership failure multiplies.</p></div></div></div><div class="section"><div class="section-header">Verses 23&ndash;39 &mdash; Three Woes; Whitewashed Tombs; Lament over Jerusalem</div><span class="verse-text"><span class="verse-num">23</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You give a tenth of your spices--mint, dill and cumin. But you have neglected the more important matters of the law--justice, mercy and faithfulness. You should have practiced the latter, without neglecting the former.</span><span class="verse-text"><span class="verse-num">24</span>You blind guides! You strain out a gnat but swallow a camel.</span><span class="verse-text"><span class="verse-num">25</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You clean the outside of the cup and dish, but inside they are full of greed and self-indulgence.</span><span class="verse-text"><span class="verse-num">26</span>Blind Pharisee! First clean the inside of the cup and dish, and then the outside also will be clean.</span><span class="verse-text"><span class="verse-num">27</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs, which look beautiful on the outside but on the inside are full of the bones of the dead and everything unclean.</span><span class="verse-text"><span class="verse-num">28</span>In the same way, on the outside you appear to people as righteous but on the inside you are full of hypocrisy and wickedness.</span><span class="verse-text"><span class="verse-num">29</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You build tombs for the prophets and decorate the graves of the righteous.</span><span class="verse-text"><span class="verse-num">30</span>And you say, 'If we had lived in the days of our ancestors, we would not have taken part with them in shedding the blood of the prophets.'</span><span class="verse-text"><span class="verse-num">31</span>So you testify against yourselves that you are the descendants of those who murdered the prophets.</span><span class="verse-text"><span class="verse-num">32</span>Go ahead, then, and complete what your ancestors started!</span><span class="verse-text"><span class="verse-num">33</span>"You snakes! You brood of vipers! How will you escape being condemned to hell?</span><span class="verse-text"><span class="verse-num">34</span>Therefore I am sending you prophets and sages and teachers. Some of them you will kill and crucify; others you will flog in your synagogues and pursue from town to town.</span><span class="verse-text"><span class="verse-num">35</span>And so upon you will come all the righteous blood that has been shed on earth, from the blood of righteous Abel to the blood of Zechariah son of Berekiah, whom you murdered between the temple and the altar.</span><span class="verse-text"><span class="verse-num">36</span>Truly I tell you, all this will come on this generation.</span><span class="verse-text"><span class="verse-num">37</span>"Jerusalem, Jerusalem, you who kill the prophets and stone those sent to you, how often I have longed to gather your children together, as a hen gathers her chicks under her wings, and you were not willing.</span><span class="verse-text"><span class="verse-num">38</span>Look, your house is left to you desolate.</span><span class="verse-text"><span class="verse-num">39</span>For I tell you, you will not see me again until you say, "Blessed is he who comes in the name of the Lord."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt23-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt23-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt23-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt23-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt23-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">τάφοις κεκονιαμένοις</span> <span class="tlit">taphois kekoniamenois</span> — <strong>whitewashed tombs</strong>: V.27: tombs whitewashed before Passover for visibility. The religious establishment's external purity system was itself a whitewash -- drawing attention to the very problem it claimed to solve.</p><p><span class="hebrew-word">ὀρνίς</span> <span class="tlit">ornis</span> — <strong>hen / bird</strong>: V.37: the only time Jesus uses a female image for himself. The hen cannot force her chicks -- she can only spread her wings and call. "You were not willing" is the tragedy of free refusal in the face of offered protection.</p></div><div id="mt23-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The final three woes (vv.23-32) target: tithing minor herbs while neglecting weightier matters, external purity masking internal corruption, and tomb-building that celebrates prophets they would have killed. The lament (vv.37-39) is the chapter's emotional truth: behind the seven woes is the grief of One who longed to gather Jerusalem and was refused.</p></div><div id="mt23-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Mic 6:8</span><span class="ref-text">Do justice, love mercy, walk humbly -- the prophetic tradition's summary. Jesus's "justice, mercy and faithfulness" echoes Micah's three.</span></li><li><span class="ref-cite">Ps 118:26</span><span class="ref-text">Blessed is he who comes -- v.39 quotes the entry psalm. The refused welcome points to the eschatological acclamation at the return.</span></li></ul></div><div id="mt23-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">23:23</span><p>You tithe mint, dill and cumin but neglect justice, mercy and faithfulness. Maximum precision on minor issues; maximum negligence on major ones.</p></div><div class="com-note"><span class="com-ref">23:27</span><p>Whitewashed tombs -- beautiful outside, dead inside. The purity system performing the function of the problem it claims to solve.</p></div><div class="com-note"><span class="com-ref">23:37</span><p>Jerusalem, Jerusalem -- after seven woes of judgment comes maternal grief. The judgment is real; so is the longing. Both are love. The tragedy is human refusal: "you were not willing."</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;22 &mdash; Moses' Seat; Servant Greatness; First Four Woes</div><span class="verse-text"><span class="verse-num">1</span>Then Jesus said to the crowds and to his disciples:</span><span class="verse-text"><span class="verse-num">2</span>"The teachers of the law and the Pharisees sit in Moses' seat.</span><span class="verse-text"><span class="verse-num">3</span>So you must be careful to do everything they tell you. But do not do what they do, for they do not practice what they preach.</span><span class="verse-text"><span class="verse-num">4</span>They tie up heavy, cumbersome loads and put them on other people's shoulders, but they themselves are not willing to lift a finger to move them.</span><span class="verse-text"><span class="verse-num">5</span>"Everything they do is done for people to see: They make their phylacteries wide and the tassels on their garments long;</span><span class="verse-text"><span class="verse-num">6</span>they love the place of honor at banquets and the most important seats in the synagogues;</span><span class="verse-text"><span class="verse-num">7</span>they love to be greeted with respect in the marketplaces and to be called 'Rabbi' by others.</span><span class="verse-text"><span class="verse-num">8</span>"But you are not to be called 'Rabbi,' for you have one Teacher, and you are all brothers.</span><span class="verse-text"><span class="verse-num">9</span>And do not call anyone on earth 'father,' for you have one Father, and he is in heaven.</span><span class="verse-text"><span class="verse-num">10</span>Nor are you to be called instructors, for you have one Instructor, the Messiah.</span><span class="verse-text"><span class="verse-num">11</span>The greatest among you will be your servant.</span><span class="verse-text"><span class="verse-num">12</span>For those who exalt themselves will be humbled, and those who humble themselves will be exalted.</span><span class="verse-text"><span class="verse-num">13</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You shut the door of the kingdom of heaven in people's faces. You yourselves do not enter, nor will you let those enter who are trying to.</span><span class="verse-text"><span class="verse-num">15</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You travel over land and sea to win a single convert, and when you have succeeded, you make them twice as much a child of hell as you are.</span><span class="verse-text"><span class="verse-num">16</span>"Woe to you, blind guides! You say, 'If anyone swears by the temple, it means nothing; but anyone who swears by the gold of the temple is bound by that oath.'</span><span class="verse-text"><span class="verse-num">17</span>You blind fools! Which is greater: the gold, or the temple that makes the gold sacred?</span><span class="verse-text"><span class="verse-num">18</span>You also say, 'If anyone swears by the altar, it means nothing; but anyone who swears by the gift on it is bound by that oath.'</span><span class="verse-text"><span class="verse-num">19</span>You blind men! Which is greater: the gift, or the altar that makes the gift sacred?</span><span class="verse-text"><span class="verse-num">20</span>Therefore, anyone who swears by the altar swears by it and by everything on it.</span><span class="verse-text"><span class="verse-num">21</span>And anyone who swears by the temple swears by it and by the one who dwells in it.</span><span class="verse-text"><span class="verse-num">22</span>And anyone who swears by heaven swears by God's throne and by the one who sits on it."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt23-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt23-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt23-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt23-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt23-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half moves from positive instruction (servant greatness; one Teacher/Father/Instructor, vv.1-12) to the first four woes (vv.13-22). The positive instruction of vv.8-12 is the community Jesus is forming: no human hierarchy, only one Teacher who is the Messiah.</p></div><div id="mt23-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 5:3-12</span><span class="ref-text">The Beatitudes -- blessing the humble. Matthew 23's woes are their exact inversion.</span></li><li><span class="ref-cite">Matt 6:1-18</span><span class="ref-text">Practice righteousness before your Father, not before others. The woes apply the same diagnostic: wrong audience, wrong reward.</span></li></ul></div></div><div class="section"><div class="section-header">Verses 23&ndash;39 &mdash; Three Woes; Whitewashed Tombs; Lament over Jerusalem</div><span class="verse-text"><span class="verse-num">23</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You give a tenth of your spices--mint, dill and cumin. But you have neglected the more important matters of the law--justice, mercy and faithfulness. You should have practiced the latter, without neglecting the former.</span><span class="verse-text"><span class="verse-num">24</span>You blind guides! You strain out a gnat but swallow a camel.</span><span class="verse-text"><span class="verse-num">25</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You clean the outside of the cup and dish, but inside they are full of greed and self-indulgence.</span><span class="verse-text"><span class="verse-num">26</span>Blind Pharisee! First clean the inside of the cup and dish, and then the outside also will be clean.</span><span class="verse-text"><span class="verse-num">27</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs, which look beautiful on the outside but on the inside are full of the bones of the dead and everything unclean.</span><span class="verse-text"><span class="verse-num">28</span>In the same way, on the outside you appear to people as righteous but on the inside you are full of hypocrisy and wickedness.</span><span class="verse-text"><span class="verse-num">29</span>"Woe to you, teachers of the law and Pharisees, you hypocrites! You build tombs for the prophets and decorate the graves of the righteous.</span><span class="verse-text"><span class="verse-num">30</span>And you say, 'If we had lived in the days of our ancestors, we would not have taken part with them in shedding the blood of the prophets.'</span><span class="verse-text"><span class="verse-num">31</span>So you testify against yourselves that you are the descendants of those who murdered the prophets.</span><span class="verse-text"><span class="verse-num">32</span>Go ahead, then, and complete what your ancestors started!</span><span class="verse-text"><span class="verse-num">33</span>"You snakes! You brood of vipers! How will you escape being condemned to hell?</span><span class="verse-text"><span class="verse-num">34</span>Therefore I am sending you prophets and sages and teachers. Some of them you will kill and crucify; others you will flog in your synagogues and pursue from town to town.</span><span class="verse-text"><span class="verse-num">35</span>And so upon you will come all the righteous blood that has been shed on earth, from the blood of righteous Abel to the blood of Zechariah son of Berekiah, whom you murdered between the temple and the altar.</span><span class="verse-text"><span class="verse-num">36</span>Truly I tell you, all this will come on this generation.</span><span class="verse-text"><span class="verse-num">37</span>"Jerusalem, Jerusalem, you who kill the prophets and stone those sent to you, how often I have longed to gather your children together, as a hen gathers her chicks under her wings, and you were not willing.</span><span class="verse-text"><span class="verse-num">38</span>Look, your house is left to you desolate.</span><span class="verse-text"><span class="verse-num">39</span>For I tell you, you will not see me again until you say, "Blessed is he who comes in the name of the Lord."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt23-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt23-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt23-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt23-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt23-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The final three woes (vv.23-32) target: tithing minor herbs while neglecting weightier matters, external purity masking internal corruption, and tomb-building that celebrates prophets they would have killed. The lament (vv.37-39) is the chapter's emotional truth: behind the seven woes is the grief of One who longed to gather Jerusalem and was refused.</p></div><div id="mt23-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Mic 6:8</span><span class="ref-text">Do justice, love mercy, walk humbly -- the prophetic tradition's summary. Jesus's "justice, mercy and faithfulness" echoes Micah's three.</span></li><li><span class="ref-cite">Ps 118:26</span><span class="ref-text">Blessed is he who comes -- v.39 quotes the entry psalm. The refused welcome points to the eschatological acclamation at the return.</span></li></ul></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt23-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt23-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt23-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt23-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt23-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt23-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt23-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt23-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt23-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt23-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt23-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt23-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt23-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt23-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt23-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt23-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt23-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt23-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The scribes and Pharisees</div><div class="person-role">Target of seven woes</div><div class="person-text">Their failure is wilful, not ignorant.</div></div><div class="person-card"><div class="person-name">Jerusalem</div><div class="person-role">Object of the lament</div><div class="person-text">The city that kills prophets -- about to kill the Son.</div></div></div></div><div id="mt23-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">23:37 -- The Lament</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Jerusalem, Jerusalem... how often I have longed to gather your children, as a hen gathers her chicks under her wings, and you were not willing."</td></tr><tr><td class="t-label">Note</td><td>The most tender verse in Matthew 23. Seven woes of judgment, then this. Both are love.</td></tr></table></div><div id="mt23-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Phylacteries</div><div class="source-quote">Small leather boxes worn during prayer. Making them wider was performative piety.</div><div class="source-note">Deut 6:8 commands them; 23:5 condemns enlarging them.</div></div><div class="source-block"><div class="source-title">Whitewashing tombs</div><div class="source-quote">Required before Passover. Immediately recognisable to a Jerusalem Passover crowd.</div><div class="source-note">The irony would be viscerally felt.</div></div></div><div id="mt23-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Anti-Judaism caution</div><div class="rec-text">Matthew 23 is intra-Jewish critique. The same diagnostic applies to every subsequent religious community including the church.</div></div><div class="rec-block"><div class="rec-who">23:23 and prophetic ethics</div><div class="rec-text">Justice, mercy and faithfulness echo Mic 6:8, Hos 6:6. Jesus stands in the prophetic tradition.</div></div></div><div id="mt23-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Moses' seat; four woes — vv.1-22</span><span class="lit-text">Servant greatest; shut the door; blind guides</span></div><div class="lit-row"><span class="lit-label">Three woes; lament — vv.23-39</span><span class="lit-text">Weightier matters; inside/outside; hen and chicks</span></div><div class="lit-note">Chapter 23: the anatomy of religious failure and its grief-stricken conclusion. Both the judgment and the lament are love.</div></div></div><div id="mt23-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">23</sup> "Neglecting <span class="dn-key">justice, mercy and faithfulness</span>." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">37</sup> "<span class="dn-divine">Jerusalem</span>... how often I have <span class="dn-key">longed to gather</span>."</p></div><div id="mt23-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">23:13-36</span><span class="thread-arrow">-></span><span class="thread-target">Matt 5:3-12</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Seven woes invert the eight Beatitudes.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">23:23</span><span class="thread-arrow">-></span><span class="thread-target">Mic 6:8; Hos 6:6</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Justice, mercy, faithfulness -- the prophetic tradition's summary.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">23:39</span><span class="thread-arrow">-></span><span class="thread-target">Matt 24:30; 26:64</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Blessed is he who comes -- the refused welcome points to the eschatological acclamation.</div></div></div><div id="mt23-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,205.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Hypocrisy</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Seven Woes</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Servant Greatness</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Weightier Matters</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Grief over Jerusalem</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Prophetic Pattern</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 23: the anatomy of religious failure. The seven woes and the lament are both love.</p></div>
+<div id="mt23-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The scribes and Pharisees</div><div class="person-role">Target of seven woes</div><div class="person-text">Their failure is wilful, not ignorant.</div></div><div class="person-card"><div class="person-name">Jerusalem</div><div class="person-role">Object of the lament</div><div class="person-text">The city that kills prophets -- about to kill the Son.</div></div></div></div><div id="mt23-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 23 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Jerusalem, Jerusalem... how often I have longed to gather your children, as a hen gathers her chicks under her wings, and you were not willing."</td></tr><tr><td class="t-label">Note</td><td>The most tender verse in Matthew 23. Seven woes of judgment, then this. Both are love.</td></tr></table></div><div id="mt23-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Phylacteries</div><div class="source-quote">Small leather boxes worn during prayer. Making them wider was performative piety.</div><div class="source-note">Deut 6:8 commands them; 23:5 condemns enlarging them.</div></div><div class="source-block"><div class="source-title">Whitewashing tombs</div><div class="source-quote">Required before Passover. Immediately recognisable to a Jerusalem Passover crowd.</div><div class="source-note">The irony would be viscerally felt.</div></div></div><div id="mt23-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Anti-Judaism caution</div><div class="rec-text">Matthew 23 is intra-Jewish critique. The same diagnostic applies to every subsequent religious community including the church.</div></div><div class="rec-block"><div class="rec-who">23:23 and prophetic ethics</div><div class="rec-text">Justice, mercy and faithfulness echo Mic 6:8, Hos 6:6. Jesus stands in the prophetic tradition.</div></div></div><div id="mt23-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"></div></div><div id="mt23-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[]</div><div id="mt23-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="mt23-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4></div><div id="mt23-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
 </div>
 </main>
 <script>
@@ -354,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd'],cls:'vhl-person',btn:['people','context']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
   var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment'],cls:'vhl-key',btn:['literary','cross']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {

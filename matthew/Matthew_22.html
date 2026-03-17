@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 22</h1>
-<p>Wedding Banquet; Taxes; Resurrection; Greatest Commandment</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Matthew 22</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi), tax collector and apostle.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80-90, Antioch of Syria.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as fulfilment of Israel's Scripture.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;22 &mdash; Wedding Banquet; Many Invited; Taxes to Caesar</div><span class="verse-text"><span class="verse-num">1</span>Jesus spoke to them again in parables, saying:</span><span class="verse-text"><span class="verse-num">2</span>"The kingdom of heaven is like a king who prepared a wedding banquet for his son.</span><span class="verse-text"><span class="verse-num">3</span>He sent his servants to those who had been invited to the banquet to tell them to come, but they refused to come.</span><span class="verse-text"><span class="verse-num">4</span>"Then he sent some more servants and said, 'Tell those who have been invited that I have prepared my dinner: My oxen and fattened cattle have been slaughtered, and everything is ready. Come to the wedding banquet.'</span><span class="verse-text"><span class="verse-num">5</span>"But they paid no attention and went off--one to his field, another to his business.</span><span class="verse-text"><span class="verse-num">6</span>The rest seized his servants, mistreated them and killed them.</span><span class="verse-text"><span class="verse-num">7</span>The king was enraged. He sent his army and destroyed those murderers and burned their city.</span><span class="verse-text"><span class="verse-num">8</span>"Then he said to his servants, 'The wedding banquet is ready, but those I invited did not deserve to come.</span><span class="verse-text"><span class="verse-num">9</span>So go to the street corners and invite to the banquet anyone you find.'</span><span class="verse-text"><span class="verse-num">10</span>"So the servants went out into the streets and gathered all the people they could find, the bad as well as the good, and the wedding hall was filled with guests.</span><span class="verse-text"><span class="verse-num">11</span>"But when the king came in to see the guests, he noticed a man there who was not wearing wedding clothes.</span><span class="verse-text"><span class="verse-num">12</span>He asked, 'How did you get in here without wedding clothes, friend?' The man was speechless.</span><span class="verse-text"><span class="verse-num">13</span>"Then the king told the attendants, 'Tie him hand and foot, and throw him outside, into the darkness, where there will be weeping and gnashing of teeth.'</span><span class="verse-text"><span class="verse-num">14</span>"For many are invited, but few are chosen."</span><span class="verse-text"><span class="verse-num">15</span>Then the Pharisees went out and laid plans to trap him in his words.</span><span class="verse-text"><span class="verse-num">16</span>They sent their disciples to him along with the Herodians. "Teacher," they said, "we know you are a man of integrity and that you teach the way of God in accordance with the truth. You aren't swayed by others, because you pay no attention to who they are.</span><span class="verse-text"><span class="verse-num">17</span>Tell us then, what is your opinion? Is it right to pay the imperial tax to Caesar or not?"</span><span class="verse-text"><span class="verse-num">18</span>But Jesus, knowing their evil intent, said, "You hypocrites, why are you trying to trap me?</span><span class="verse-text"><span class="verse-num">19</span>Show me the coin used for paying the tax." They brought him a denarius,</span><span class="verse-text"><span class="verse-num">20</span>and he asked them, "Whose image is this? And whose inscription?"</span><span class="verse-text"><span class="verse-num">21</span>"Caesar's," they replied. Then he said to them, "So give back to Caesar what is Caesar's, and to God what is God's."</span><span class="verse-text"><span class="verse-num">22</span>When they heard this, they were amazed. So they left him and went away.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt22-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt22-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt22-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt22-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt22-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">εἰκών</span> <span class="tlit">eikon</span> — <strong>image / likeness</strong>: V.20: the image on the coin -- Caesar's. The implied second question: whose image is on you? Gen 1:27 says humans are made in God's image. Give Caesar his coin; give God what bears his image -- which is you entirely. The real claim is about persons, not taxes.</p><p><span class="hebrew-word">κλητοί / ἐκλεκτοί</span> <span class="tlit">kletoi / eklektoi</span> — <strong>invited / chosen</strong>: V.14: many are invited but few are chosen. The wedding garment signals genuine transformation. "Few are chosen" is not predestination to rejection but the observation that many accept the place without accepting the host's terms.</p></div><div id="mt22-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The wedding banquet (vv.1-14) states the chapter's theme: the invitation is wide but presence requires transformation. The Pharisees + Herodians tax question (vv.15-22) is the first of three traps: they present a false dilemma (Caesar or God) that Jesus dissolves by distinguishing the two claims.</p></div><div id="mt22-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 25:6</span><span class="ref-text">A feast for all peoples -- the eschatological banquet. Jesus's wedding banquet draws on this tradition.</span></li><li><span class="ref-cite">Gen 1:27</span><span class="ref-text">Made in the image of God -- the implicit second half of the coin answer.</span></li></ul></div><div id="mt22-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">22:11-14</span><p>The man without wedding clothes. The banquet is free but requires transformation. Grace is free but not cheap -- it transforms those who receive it. His speechlessness is the silence of one with no defence, having chosen the place without accepting the host's terms.</p></div><div class="com-note"><span class="com-ref">22:21</span><p>Give to Caesar what is Caesar's and to God what is God's. The real claim is about humanity: you bear God's image and you belong entirely to him.</p></div></div></div><div class="section"><div class="section-header">Verses 23&ndash;46 &mdash; Resurrection; Greatest Commandment; David's Lord</div><span class="verse-text"><span class="verse-num">23</span>That same day the Sadducees, who say there is no resurrection, came to him with a question.</span><span class="verse-text"><span class="verse-num">24</span>"Teacher," they said, "Moses told us that if a man dies without having children, his brother must marry the widow and raise up offspring for him.</span><span class="verse-text"><span class="verse-num">25</span>Now there were seven brothers among us. The first one married and died, and since he had no children, he left his wife to his brother.</span><span class="verse-text"><span class="verse-num">26</span>The same thing happened to the second and third brother, right on down to the seventh.</span><span class="verse-text"><span class="verse-num">27</span>Finally, the woman died.</span><span class="verse-text"><span class="verse-num">28</span>Now then, at the resurrection, whose wife will she be of the seven, since all of them were married to her?"</span><span class="verse-text"><span class="verse-num">29</span>Jesus replied, "You are in error because you do not know the Scriptures or the power of God.</span><span class="verse-text"><span class="verse-num">30</span>At the resurrection people will neither marry nor give in marriage; they will be like the angels in heaven.</span><span class="verse-text"><span class="verse-num">31</span>But about the resurrection of the dead--have you not read what God said to you,</span><span class="verse-text"><span class="verse-num">32</span>"'I am the God of Abraham, the God of Isaac, and the God of Jacob'? He is not the God of the dead but of the living."</span><span class="verse-text"><span class="verse-num">33</span>When the crowds heard this, they were astonished at his teaching.</span><span class="verse-text"><span class="verse-num">34</span>Hearing that Jesus had silenced the Sadducees, the Pharisees got together.</span><span class="verse-text"><span class="verse-num">35</span>One of them, an expert in the law, tested him with this question:</span><span class="verse-text"><span class="verse-num">36</span>"Teacher, which is the greatest commandment in the Law?"</span><span class="verse-text"><span class="verse-num">37</span>Jesus replied: "'Love the Lord your God with all your heart and with all your soul and with all your mind.'</span><span class="verse-text"><span class="verse-num">38</span>This is the first and greatest commandment.</span><span class="verse-text"><span class="verse-num">39</span>And the second is like it: 'Love your neighbor as yourself.'</span><span class="verse-text"><span class="verse-num">40</span>All the Law and the Prophets hang on these two commandments."</span><span class="verse-text"><span class="verse-num">41</span>While the Pharisees were gathered together, Jesus asked them,</span><span class="verse-text"><span class="verse-num">42</span>"What do you think about the Messiah? Whose son is he?" "The son of David," they replied.</span><span class="verse-text"><span class="verse-num">43</span>"How is it then that David, speaking by the Spirit, calls him 'Lord'? For he says,</span><span class="verse-text"><span class="verse-num">44</span>"'The Lord said to my Lord: 'Sit at my right hand until I put your enemies under your feet.'"</span><span class="verse-text"><span class="verse-num">45</span>If then David calls him 'Lord,' how can he be his son?"</span><span class="verse-text"><span class="verse-num">46</span>No one could say a word in reply, and from that day on no one dared to ask him any more questions.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt22-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt22-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt22-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt22-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt22-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ἀγαπήσεις</span> <span class="tlit">agapeseis</span> — <strong>you shall love</strong>: Vv.37-39: Deut 6:5 and Lev 19:18 combined as the interpretive key to all Torah. Every commandment is a specification of love of God or love of neighbour.</p><p><span class="hebrew-word">κύριός μου</span> <span class="tlit">kyrios mou</span> — <strong>my Lord</strong>: V.44: Ps 110:1 -- David calls the Messiah "Lord," meaning the Messiah exceeds David, which is to say he is divine. The silence that follows is the sound of their categories breaking.</p></div><div id="mt22-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Three debates end the chapter: Sadducees on resurrection (vv.23-33), law expert on greatest commandment (vv.34-40), and Jesus's counter-question from Ps 110:1 (vv.41-46). Each ends with silencing. Jesus then poses the unanswerable question that exposes the inadequacy of "son of David" as a complete framework.</p></div><div id="mt22-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Exod 3:6</span><span class="ref-text">I am the God of Abraham -- present tense. If God is their God, they are alive to him. Resurrection follows from God's relational character.</span></li><li><span class="ref-cite">Deut 6:5; Lev 19:18</span><span class="ref-text">The double love command -- the Shema and the Holiness Code combined as Torah's interpretive key.</span></li><li><span class="ref-cite">Ps 110:1</span><span class="ref-text">The most-cited OT text in the NT. Messiah is both son and Lord of David.</span></li></ul></div><div id="mt22-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">22:29</span><p>You are in error because you do not know the Scriptures or the power of God. The double diagnosis: reduced Scripture + limited imagination of God's power. Twin sources of theological error in every generation.</p></div><div class="com-note"><span class="com-ref">22:40</span><p>All the Law and Prophets hang on these two. Not a replacement for Torah but its interpretive centre of gravity.</p></div><div class="com-note"><span class="com-ref">22:46</span><p>No one could say a word. The silence is the appropriate response to a question that has broken every framework they brought.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;22 &mdash; Wedding Banquet; Many Invited; Taxes to Caesar</div><span class="verse-text"><span class="verse-num">1</span>Jesus spoke to them again in parables, saying:</span><span class="verse-text"><span class="verse-num">2</span>"The kingdom of heaven is like a king who prepared a wedding banquet for his son.</span><span class="verse-text"><span class="verse-num">3</span>He sent his servants to those who had been invited to the banquet to tell them to come, but they refused to come.</span><span class="verse-text"><span class="verse-num">4</span>"Then he sent some more servants and said, 'Tell those who have been invited that I have prepared my dinner: My oxen and fattened cattle have been slaughtered, and everything is ready. Come to the wedding banquet.'</span><span class="verse-text"><span class="verse-num">5</span>"But they paid no attention and went off--one to his field, another to his business.</span><span class="verse-text"><span class="verse-num">6</span>The rest seized his servants, mistreated them and killed them.</span><span class="verse-text"><span class="verse-num">7</span>The king was enraged. He sent his army and destroyed those murderers and burned their city.</span><span class="verse-text"><span class="verse-num">8</span>"Then he said to his servants, 'The wedding banquet is ready, but those I invited did not deserve to come.</span><span class="verse-text"><span class="verse-num">9</span>So go to the street corners and invite to the banquet anyone you find.'</span><span class="verse-text"><span class="verse-num">10</span>"So the servants went out into the streets and gathered all the people they could find, the bad as well as the good, and the wedding hall was filled with guests.</span><span class="verse-text"><span class="verse-num">11</span>"But when the king came in to see the guests, he noticed a man there who was not wearing wedding clothes.</span><span class="verse-text"><span class="verse-num">12</span>He asked, 'How did you get in here without wedding clothes, friend?' The man was speechless.</span><span class="verse-text"><span class="verse-num">13</span>"Then the king told the attendants, 'Tie him hand and foot, and throw him outside, into the darkness, where there will be weeping and gnashing of teeth.'</span><span class="verse-text"><span class="verse-num">14</span>"For many are invited, but few are chosen."</span><span class="verse-text"><span class="verse-num">15</span>Then the Pharisees went out and laid plans to trap him in his words.</span><span class="verse-text"><span class="verse-num">16</span>They sent their disciples to him along with the Herodians. "Teacher," they said, "we know you are a man of integrity and that you teach the way of God in accordance with the truth. You aren't swayed by others, because you pay no attention to who they are.</span><span class="verse-text"><span class="verse-num">17</span>Tell us then, what is your opinion? Is it right to pay the imperial tax to Caesar or not?"</span><span class="verse-text"><span class="verse-num">18</span>But Jesus, knowing their evil intent, said, "You hypocrites, why are you trying to trap me?</span><span class="verse-text"><span class="verse-num">19</span>Show me the coin used for paying the tax." They brought him a denarius,</span><span class="verse-text"><span class="verse-num">20</span>and he asked them, "Whose image is this? And whose inscription?"</span><span class="verse-text"><span class="verse-num">21</span>"Caesar's," they replied. Then he said to them, "So give back to Caesar what is Caesar's, and to God what is God's."</span><span class="verse-text"><span class="verse-num">22</span>When they heard this, they were amazed. So they left him and went away.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt22-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt22-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt22-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt22-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt22-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The wedding banquet (vv.1-14) states the chapter's theme: the invitation is wide but presence requires transformation. The Pharisees + Herodians tax question (vv.15-22) is the first of three traps: they present a false dilemma (Caesar or God) that Jesus dissolves by distinguishing the two claims.</p></div><div id="mt22-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 25:6</span><span class="ref-text">A feast for all peoples -- the eschatological banquet. Jesus's wedding banquet draws on this tradition.</span></li><li><span class="ref-cite">Gen 1:27</span><span class="ref-text">Made in the image of God -- the implicit second half of the coin answer.</span></li></ul></div></div><div class="section"><div class="section-header">Verses 23&ndash;46 &mdash; Resurrection; Greatest Commandment; David's Lord</div><span class="verse-text"><span class="verse-num">23</span>That same day the Sadducees, who say there is no resurrection, came to him with a question.</span><span class="verse-text"><span class="verse-num">24</span>"Teacher," they said, "Moses told us that if a man dies without having children, his brother must marry the widow and raise up offspring for him.</span><span class="verse-text"><span class="verse-num">25</span>Now there were seven brothers among us. The first one married and died, and since he had no children, he left his wife to his brother.</span><span class="verse-text"><span class="verse-num">26</span>The same thing happened to the second and third brother, right on down to the seventh.</span><span class="verse-text"><span class="verse-num">27</span>Finally, the woman died.</span><span class="verse-text"><span class="verse-num">28</span>Now then, at the resurrection, whose wife will she be of the seven, since all of them were married to her?"</span><span class="verse-text"><span class="verse-num">29</span>Jesus replied, "You are in error because you do not know the Scriptures or the power of God.</span><span class="verse-text"><span class="verse-num">30</span>At the resurrection people will neither marry nor give in marriage; they will be like the angels in heaven.</span><span class="verse-text"><span class="verse-num">31</span>But about the resurrection of the dead--have you not read what God said to you,</span><span class="verse-text"><span class="verse-num">32</span>"'I am the God of Abraham, the God of Isaac, and the God of Jacob'? He is not the God of the dead but of the living."</span><span class="verse-text"><span class="verse-num">33</span>When the crowds heard this, they were astonished at his teaching.</span><span class="verse-text"><span class="verse-num">34</span>Hearing that Jesus had silenced the Sadducees, the Pharisees got together.</span><span class="verse-text"><span class="verse-num">35</span>One of them, an expert in the law, tested him with this question:</span><span class="verse-text"><span class="verse-num">36</span>"Teacher, which is the greatest commandment in the Law?"</span><span class="verse-text"><span class="verse-num">37</span>Jesus replied: "'Love the Lord your God with all your heart and with all your soul and with all your mind.'</span><span class="verse-text"><span class="verse-num">38</span>This is the first and greatest commandment.</span><span class="verse-text"><span class="verse-num">39</span>And the second is like it: 'Love your neighbor as yourself.'</span><span class="verse-text"><span class="verse-num">40</span>All the Law and the Prophets hang on these two commandments."</span><span class="verse-text"><span class="verse-num">41</span>While the Pharisees were gathered together, Jesus asked them,</span><span class="verse-text"><span class="verse-num">42</span>"What do you think about the Messiah? Whose son is he?" "The son of David," they replied.</span><span class="verse-text"><span class="verse-num">43</span>"How is it then that David, speaking by the Spirit, calls him 'Lord'? For he says,</span><span class="verse-text"><span class="verse-num">44</span>"'The Lord said to my Lord: 'Sit at my right hand until I put your enemies under your feet.'"</span><span class="verse-text"><span class="verse-num">45</span>If then David calls him 'Lord,' how can he be his son?"</span><span class="verse-text"><span class="verse-num">46</span>No one could say a word in reply, and from that day on no one dared to ask him any more questions.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt22-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt22-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt22-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt22-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt22-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Three debates end the chapter: Sadducees on resurrection (vv.23-33), law expert on greatest commandment (vv.34-40), and Jesus's counter-question from Ps 110:1 (vv.41-46). Each ends with silencing. Jesus then poses the unanswerable question that exposes the inadequacy of "son of David" as a complete framework.</p></div><div id="mt22-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Exod 3:6</span><span class="ref-text">I am the God of Abraham -- present tense. If God is their God, they are alive to him. Resurrection follows from God's relational character.</span></li><li><span class="ref-cite">Deut 6:5; Lev 19:18</span><span class="ref-text">The double love command -- the Shema and the Holiness Code combined as Torah's interpretive key.</span></li><li><span class="ref-cite">Ps 110:1</span><span class="ref-text">The most-cited OT text in the NT. Messiah is both son and Lord of David.</span></li></ul></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt22-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt22-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt22-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt22-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt22-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt22-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt22-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt22-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt22-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt22-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt22-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt22-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt22-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt22-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt22-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt22-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt22-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt22-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Pharisees + Herodians</div><div class="person-role">Political trap</div><div class="person-text">Unusual alliance united by opposition to Jesus.</div></div><div class="person-card"><div class="person-name">Sadducees</div><div class="person-role">Theological trap</div><div class="person-text">Their hypothetical reveals denial more than curiosity.</div></div><div class="person-card"><div class="person-name">The law expert</div><div class="person-role">Ethical trap</div><div class="person-text">Jesus answers and poses the unanswerable counter-question.</div></div></div></div><div id="mt22-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">22:37-39 -- The Double Love Command</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Love the Lord your God with all your heart... Love your neighbor as yourself."</td></tr><tr><td class="t-label">Note</td><td>Deut 6:5 and Lev 19:18 combined. The interpretive key to all Torah.</td></tr></table></div><div id="mt22-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The imperial tax</div><div class="source-quote">A poll tax on subjects of Rome. The question was a political trap: say yes (collaboration) or no (sedition). Jesus refuses both by relocating the question.</div><div class="source-note">Either answer could be used against him.</div></div><div class="source-block"><div class="source-title">Levirate marriage</div><div class="source-quote">Deut 25:5-10. The Sadducees construct a maximally absurd scenario to mock the resurrection.</div><div class="source-note">The hypothetical is deliberately extreme.</div></div></div><div id="mt22-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Church and State</div><div class="rec-text">22:21 is foundational for every Christian discussion of church-state relations.</div></div><div class="rec-block"><div class="rec-who">Ps 110 in early Christianity</div><div class="rec-text">Most-cited OT text in the NT. Acts 2:34-35, Heb 1:13, Rev 3:21.</div></div></div><div id="mt22-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Wedding banquet; Caesar — vv.1-22</span><span class="lit-text">Wide invitation; wedding garment; give to Caesar/God</span></div><div class="lit-row"><span class="lit-label">Resurrection; love command; David's Lord — vv.23-46</span><span class="lit-text">Sadducees silenced; double love; Ps 110 silences all</span></div><div class="lit-note">Chapter 22: three traps, three defeats, one counter-question that silences everyone.</div></div></div><div id="mt22-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">37-39</sup> "<span class="dn-key">Love God... love your neighbour</span> -- all the Law and Prophets hang on these." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">21</sup> "Give to <span class="dn-key">Caesar</span>... to <span class="dn-divine">God</span>."</p></div><div id="mt22-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">22:37-39</span><span class="thread-arrow">-></span><span class="thread-target">Deut 6:5; Lev 19:18</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">The Shema and Holiness Code combined as Torah's interpretive key.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">22:44</span><span class="thread-arrow">-></span><span class="thread-target">Ps 110:1</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">David's Lord -- most-cited OT text in the NT.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">22:32</span><span class="thread-arrow">-></span><span class="thread-target">Exod 3:6</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">I am the God of Abraham -- present tense implies they are alive.</div></div></div><div id="mt22-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 178.9,154.0 120.0,205.0 61.1,154.0 46.4,77.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Double Love Command</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Caesar and God</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Resurrection</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Messianic Identity</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wedding Banquet</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Silence of Opponents</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 22: three attempts to trap, three defeats, one question from Ps 110 that exposes the inadequacy of every framework brought.</p></div>
+<div id="mt22-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Pharisees + Herodians</div><div class="person-role">Political trap</div><div class="person-text">Unusual alliance united by opposition to Jesus.</div></div><div class="person-card"><div class="person-name">Sadducees</div><div class="person-role">Theological trap</div><div class="person-text">Their hypothetical reveals denial more than curiosity.</div></div><div class="person-card"><div class="person-name">The law expert</div><div class="person-role">Ethical trap</div><div class="person-text">Jesus answers and poses the unanswerable counter-question.</div></div></div></div><div id="mt22-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 22 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Love the Lord your God with all your heart... Love your neighbor as yourself."</td></tr><tr><td class="t-label">Note</td><td>Deut 6:5 and Lev 19:18 combined. The interpretive key to all Torah.</td></tr></table></div><div id="mt22-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The imperial tax</div><div class="source-quote">A poll tax on subjects of Rome. The question was a political trap: say yes (collaboration) or no (sedition). Jesus refuses both by relocating the question.</div><div class="source-note">Either answer could be used against him.</div></div><div class="source-block"><div class="source-title">Levirate marriage</div><div class="source-quote">Deut 25:5-10. The Sadducees construct a maximally absurd scenario to mock the resurrection.</div><div class="source-note">The hypothetical is deliberately extreme.</div></div></div><div id="mt22-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Church and State</div><div class="rec-text">22:21 is foundational for every Christian discussion of church-state relations.</div></div><div class="rec-block"><div class="rec-who">Ps 110 in early Christianity</div><div class="rec-text">Most-cited OT text in the NT. Acts 2:34-35, Heb 1:13, Rev 3:21.</div></div></div><div id="mt22-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"></div></div><div id="mt22-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[]</div><div id="mt22-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="mt22-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4></div><div id="mt22-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
 </div>
 </main>
 <script>
@@ -354,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd'],cls:'vhl-person',btn:['people','context']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
   var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment'],cls:'vhl-key',btn:['literary','cross']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {

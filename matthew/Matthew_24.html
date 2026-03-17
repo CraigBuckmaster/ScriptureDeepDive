@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 24</h1>
-<p>Signs of the End; Son of Man Coming; No One Knows</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>Matthew 24</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi), tax collector and apostle.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80-90, Antioch of Syria.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as fulfilment of Israel's Scripture.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;28 &mdash; Signs of the End; Abomination; Stand Firm</div><span class="verse-text"><span class="verse-num">1</span>Jesus left the temple and was walking away when his disciples came up to him to call his attention to its buildings.</span><span class="verse-text"><span class="verse-num">2</span>"Do you see all these things?" he asked. "Truly I tell you, not one stone here will be left on another; every one will be thrown down."</span><span class="verse-text"><span class="verse-num">3</span>As Jesus was sitting on the Mount of Olives, the disciples came to him privately. "Tell us," they said, "when will this happen, and what will be the sign of your coming and of the end of the age?"</span><span class="verse-text"><span class="verse-num">4</span>Jesus answered: "Watch out that no one deceives you.</span><span class="verse-text"><span class="verse-num">5</span>For many will come in my name, claiming, 'I am the Messiah,' and will deceive many.</span><span class="verse-text"><span class="verse-num">6</span>You will hear of wars and rumors of wars, but see to it that you are not alarmed. Such things must happen, but the end is still to come.</span><span class="verse-text"><span class="verse-num">7</span>Nation will rise against nation, and kingdom against kingdom. There will be famines and earthquakes in various places.</span><span class="verse-text"><span class="verse-num">8</span>All these are the beginning of birth pains.</span><span class="verse-text"><span class="verse-num">9</span>"Then you will be handed over to be persecuted and put to death, and you will be hated by all nations because of me.</span><span class="verse-text"><span class="verse-num">10</span>At that time many will turn away from the faith and will betray and hate each other,</span><span class="verse-text"><span class="verse-num">11</span>and many false prophets will appear and deceive many people.</span><span class="verse-text"><span class="verse-num">12</span>Because of the increase of wickedness, the love of most will grow cold,</span><span class="verse-text"><span class="verse-num">13</span>but the one who stands firm to the end will be saved.</span><span class="verse-text"><span class="verse-num">14</span>And this gospel of the kingdom will be preached in the whole world as a testimony to all nations, and then the end will come.</span><span class="verse-text"><span class="verse-num">15</span>"So when you see standing in the holy place 'the abomination that causes desolation,' spoken of through the prophet Daniel--let the reader understand--</span><span class="verse-text"><span class="verse-num">16</span>then let those who are in Judea flee to the mountains.</span><span class="verse-text"><span class="verse-num">17</span>Let no one on the housetop go down to take anything out of the house.</span><span class="verse-text"><span class="verse-num">18</span>Let no one in the field go back to get their cloak.</span><span class="verse-text"><span class="verse-num">19</span>How dreadful it will be in those days for pregnant women and nursing mothers!</span><span class="verse-text"><span class="verse-num">20</span>Pray that your flight will not take place in winter or on the Sabbath.</span><span class="verse-text"><span class="verse-num">21</span>For then there will be great distress, unequaled from the beginning of the world until now--and never to be equaled again.</span><span class="verse-text"><span class="verse-num">22</span>"If those days had not been cut short, no one would survive, but for the sake of the elect those days will be shortened.</span><span class="verse-text"><span class="verse-num">23</span>At that time if anyone says to you, 'Look, here is the Messiah!' or, 'There he is!' do not believe it.</span><span class="verse-text"><span class="verse-num">24</span>For false messiahs and false prophets will appear and perform great signs and wonders to deceive, if possible, even the elect.</span><span class="verse-text"><span class="verse-num">25</span>See, I have told you ahead of time.</span><span class="verse-text"><span class="verse-num">26</span>"So if anyone tells you, 'There he is, out in the wilderness,' do not go out; or, 'Here he is, in the inner rooms,' do not believe it.</span><span class="verse-text"><span class="verse-num">27</span>For as lightning that comes from the east is visible even in the west, so will be the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">28</span>Wherever there is a carcass, there the vultures will gather."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt24-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt24-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt24-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt24-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt24-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">παρουσία</span> <span class="tlit">parousia</span> — <strong>coming / arrival of a king</strong>: V.3: technical term for the official arrival of a king. The disciples conflate two questions: Jerusalem's fall and the end of the age. Jesus addresses both, interweaving near and far horizons throughout the discourse.</p><p><span class="hebrew-word">βδέλυγμα τῆς ἐρημώσεως</span> <span class="tlit">bdelygma tes eremoseos</span> — <strong>abomination of desolation</strong>: V.15: Daniel's phrase (9:27; 11:31), originally for Antiochus IV's desecration. Jesus applies it to the coming Roman desecration (AD 70) and/or a final eschatological event. "Let the reader understand" signals it requires interpretive attention.</p></div><div id="mt24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Olivet Discourse (chs.24-25) is Matthew's fifth and final discourse. The first half addresses signs preceding the end: birth pains (wars, famines, persecution), the abomination, the great distress, and false messiahs. The discourse interweaves near fulfilment (Jerusalem, AD 70) and far fulfilment (the Son of Man's return) simultaneously.</p></div><div id="mt24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 9:27; 11:31</span><span class="ref-text">The abomination of desolation -- Daniel's phrase applied to Jerusalem's coming desecration.</span></li><li><span class="ref-cite">Matt 28:19-20</span><span class="ref-text">Gospel preached to all nations (v.14) -- connecting eschatological promise directly to the Great Commission. Mission and eschatology are inseparable.</span></li></ul></div><div id="mt24-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:2</span><p>Not one stone on another. Fulfilled in AD 70 when Titus destroyed Jerusalem. Josephus confirms the specificity of the prediction.</p></div><div class="com-note"><span class="com-ref">24:13</span><p>The one who stands firm to the end will be saved. Endurance -- sustained faithfulness through persecution and the cooling of love -- is the quality commended.</p></div><div class="com-note"><span class="com-ref">24:14</span><p>Gospel preached to all nations -- and then the end. The church lives between resurrection and parousia in the time of worldwide mission.</p></div></div></div><div class="section"><div class="section-header">Verses 29&ndash;51 &mdash; Son of Man Coming; No One Knows; Keep Watch</div><span class="verse-text"><span class="verse-num">29</span>"Immediately after the distress of those days the sun will be darkened, and the moon will not give its light; the stars will fall from the sky, and the heavenly bodies will be shaken.</span><span class="verse-text"><span class="verse-num">30</span>"Then will appear the sign of the Son of Man in heaven. And then all the peoples of the earth will mourn when they see the Son of Man coming on the clouds of heaven, with power and great glory.</span><span class="verse-text"><span class="verse-num">31</span>And he will send his angels with a loud trumpet call, and they will gather his elect from the four winds, from one end of the heavens to the other.</span><span class="verse-text"><span class="verse-num">32</span>"Now learn this lesson from the fig tree: As soon as its twigs get tender and its leaves come out, you know that summer is near.</span><span class="verse-text"><span class="verse-num">33</span>Even so, when you see all these things, you know that it is near, right at the door.</span><span class="verse-text"><span class="verse-num">34</span>Truly I tell you, this generation will certainly not pass away until all these things have happened.</span><span class="verse-text"><span class="verse-num">35</span>Heaven and earth will pass away, but my words will never pass away.</span><span class="verse-text"><span class="verse-num">36</span>"But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father.</span><span class="verse-text"><span class="verse-num">37</span>As it was in the days of Noah, so it will be at the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">38</span>For in the days before the flood, people were eating and drinking, marrying and giving in marriage, up to the day Noah entered the ark;</span><span class="verse-text"><span class="verse-num">39</span>and they knew nothing about what would happen until the flood came and took them all away. That is how it will be at the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">40</span>Two men will be in the field; one will be taken and the other left.</span><span class="verse-text"><span class="verse-num">41</span>Two women will be grinding with a hand mill; one will be taken and the other left.</span><span class="verse-text"><span class="verse-num">42</span>"Therefore keep watch, because you do not know on what day your Lord will come.</span><span class="verse-text"><span class="verse-num">43</span>But understand this: If the owner of the house had known at what time of night the thief was coming, he would have kept watch and would not have let his house be broken into.</span><span class="verse-text"><span class="verse-num">44</span>So you also must be ready, because the Son of Man will come at an hour when you do not expect him.</span><span class="verse-text"><span class="verse-num">45</span>"Who then is the faithful and wise servant, whom the master has put in charge of the servants in his household to give them their food at the time?</span><span class="verse-text"><span class="verse-num">46</span>It will be good for that servant whose master finds him doing so when he returns.</span><span class="verse-text"><span class="verse-num">47</span>Truly I tell you, he will put him in charge of all his possessions.</span><span class="verse-text"><span class="verse-num">48</span>But suppose that servant is wicked and says to himself, 'My master is staying away a long time,'</span><span class="verse-text"><span class="verse-num">49</span>and he then begins to beat his fellow servants and to eat and drink with drunkards.</span><span class="verse-text"><span class="verse-num">50</span>The master of that servant will come on a day when he does not expect him and at an hour he is not aware of.</span><span class="verse-text"><span class="verse-num">51</span>He will cut him to pieces and assign him a place with the hypocrites, where there will be weeping and gnashing of teeth."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt24-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt24-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt24-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt24-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt24-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">γρηγορεῖτε</span> <span class="tlit">gregoreite</span> — <strong>keep watch / stay awake</strong>: V.42: the command closing the Olivet Discourse. Not "calculate the signs" but "keep watch" -- sustained, faithful presence rather than eschatological speculation.</p><p><span class="hebrew-word">οὐδεὶς οἶδεν</span> <span class="tlit">oudeis oiden</span> — <strong>no one knows</strong>: V.36: not the angels, not the Son -- only the Father. The unknown timing is a design feature producing permanent alertness in every generation. Every date-setter ignores this verse.</p></div><div id="mt24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half moves from signs to the Son of Man's unmistakable coming (vv.29-31), the fig tree lesson (vv.32-35), and the definitive unknown-timing statement (v.36). The Noah analogy is about surprise, not moral decline. The three applications (one taken, thief in the night, faithful servant) all make the same point: keep watch and do the master's work.</p></div><div id="mt24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 7:13-14</span><span class="ref-text">Son of Man coming on the clouds -- the Danielic vision applied to the final parousia.</span></li><li><span class="ref-cite">Gen 7</span><span class="ref-text">As in the days of Noah -- ordinary life until sudden catastrophe. The warning is about surprise.</span></li></ul></div><div id="mt24-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">24:36</span><p>No one knows that day or hour. The most important verse for eschatological humility. The unknown hour is a design feature producing permanent readiness in every generation.</p></div><div class="com-note"><span class="com-ref">24:42-44</span><p>Keep watch; be ready. You cannot protect your house by knowing when the thief comes -- you protect it by always being ready. The unknown hour produces permanent faithfulness.</p></div><div class="com-note"><span class="com-ref">24:45-47</span><p>The faithful servant doing the master's work when the master returns receives expanded responsibility. Faithfulness in the interim is the only appropriate response.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;28 &mdash; Signs of the End; Abomination; Stand Firm</div><span class="verse-text"><span class="verse-num">1</span>Jesus left the temple and was walking away when his disciples came up to him to call his attention to its buildings.</span><span class="verse-text"><span class="verse-num">2</span>"Do you see all these things?" he asked. "Truly I tell you, not one stone here will be left on another; every one will be thrown down."</span><span class="verse-text"><span class="verse-num">3</span>As Jesus was sitting on the Mount of Olives, the disciples came to him privately. "Tell us," they said, "when will this happen, and what will be the sign of your coming and of the end of the age?"</span><span class="verse-text"><span class="verse-num">4</span>Jesus answered: "Watch out that no one deceives you.</span><span class="verse-text"><span class="verse-num">5</span>For many will come in my name, claiming, 'I am the Messiah,' and will deceive many.</span><span class="verse-text"><span class="verse-num">6</span>You will hear of wars and rumors of wars, but see to it that you are not alarmed. Such things must happen, but the end is still to come.</span><span class="verse-text"><span class="verse-num">7</span>Nation will rise against nation, and kingdom against kingdom. There will be famines and earthquakes in various places.</span><span class="verse-text"><span class="verse-num">8</span>All these are the beginning of birth pains.</span><span class="verse-text"><span class="verse-num">9</span>"Then you will be handed over to be persecuted and put to death, and you will be hated by all nations because of me.</span><span class="verse-text"><span class="verse-num">10</span>At that time many will turn away from the faith and will betray and hate each other,</span><span class="verse-text"><span class="verse-num">11</span>and many false prophets will appear and deceive many people.</span><span class="verse-text"><span class="verse-num">12</span>Because of the increase of wickedness, the love of most will grow cold,</span><span class="verse-text"><span class="verse-num">13</span>but the one who stands firm to the end will be saved.</span><span class="verse-text"><span class="verse-num">14</span>And this gospel of the kingdom will be preached in the whole world as a testimony to all nations, and then the end will come.</span><span class="verse-text"><span class="verse-num">15</span>"So when you see standing in the holy place 'the abomination that causes desolation,' spoken of through the prophet Daniel--let the reader understand--</span><span class="verse-text"><span class="verse-num">16</span>then let those who are in Judea flee to the mountains.</span><span class="verse-text"><span class="verse-num">17</span>Let no one on the housetop go down to take anything out of the house.</span><span class="verse-text"><span class="verse-num">18</span>Let no one in the field go back to get their cloak.</span><span class="verse-text"><span class="verse-num">19</span>How dreadful it will be in those days for pregnant women and nursing mothers!</span><span class="verse-text"><span class="verse-num">20</span>Pray that your flight will not take place in winter or on the Sabbath.</span><span class="verse-text"><span class="verse-num">21</span>For then there will be great distress, unequaled from the beginning of the world until now--and never to be equaled again.</span><span class="verse-text"><span class="verse-num">22</span>"If those days had not been cut short, no one would survive, but for the sake of the elect those days will be shortened.</span><span class="verse-text"><span class="verse-num">23</span>At that time if anyone says to you, 'Look, here is the Messiah!' or, 'There he is!' do not believe it.</span><span class="verse-text"><span class="verse-num">24</span>For false messiahs and false prophets will appear and perform great signs and wonders to deceive, if possible, even the elect.</span><span class="verse-text"><span class="verse-num">25</span>See, I have told you ahead of time.</span><span class="verse-text"><span class="verse-num">26</span>"So if anyone tells you, 'There he is, out in the wilderness,' do not go out; or, 'Here he is, in the inner rooms,' do not believe it.</span><span class="verse-text"><span class="verse-num">27</span>For as lightning that comes from the east is visible even in the west, so will be the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">28</span>Wherever there is a carcass, there the vultures will gather."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt24-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt24-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt24-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt24-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt24-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Olivet Discourse (chs.24-25) is Matthew's fifth and final discourse. The first half addresses signs preceding the end: birth pains (wars, famines, persecution), the abomination, the great distress, and false messiahs. The discourse interweaves near fulfilment (Jerusalem, AD 70) and far fulfilment (the Son of Man's return) simultaneously.</p></div><div id="mt24-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 9:27; 11:31</span><span class="ref-text">The abomination of desolation -- Daniel's phrase applied to Jerusalem's coming desecration.</span></li><li><span class="ref-cite">Matt 28:19-20</span><span class="ref-text">Gospel preached to all nations (v.14) -- connecting eschatological promise directly to the Great Commission. Mission and eschatology are inseparable.</span></li></ul></div></div><div class="section"><div class="section-header">Verses 29&ndash;51 &mdash; Son of Man Coming; No One Knows; Keep Watch</div><span class="verse-text"><span class="verse-num">29</span>"Immediately after the distress of those days the sun will be darkened, and the moon will not give its light; the stars will fall from the sky, and the heavenly bodies will be shaken.</span><span class="verse-text"><span class="verse-num">30</span>"Then will appear the sign of the Son of Man in heaven. And then all the peoples of the earth will mourn when they see the Son of Man coming on the clouds of heaven, with power and great glory.</span><span class="verse-text"><span class="verse-num">31</span>And he will send his angels with a loud trumpet call, and they will gather his elect from the four winds, from one end of the heavens to the other.</span><span class="verse-text"><span class="verse-num">32</span>"Now learn this lesson from the fig tree: As soon as its twigs get tender and its leaves come out, you know that summer is near.</span><span class="verse-text"><span class="verse-num">33</span>Even so, when you see all these things, you know that it is near, right at the door.</span><span class="verse-text"><span class="verse-num">34</span>Truly I tell you, this generation will certainly not pass away until all these things have happened.</span><span class="verse-text"><span class="verse-num">35</span>Heaven and earth will pass away, but my words will never pass away.</span><span class="verse-text"><span class="verse-num">36</span>"But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father.</span><span class="verse-text"><span class="verse-num">37</span>As it was in the days of Noah, so it will be at the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">38</span>For in the days before the flood, people were eating and drinking, marrying and giving in marriage, up to the day Noah entered the ark;</span><span class="verse-text"><span class="verse-num">39</span>and they knew nothing about what would happen until the flood came and took them all away. That is how it will be at the coming of the Son of Man.</span><span class="verse-text"><span class="verse-num">40</span>Two men will be in the field; one will be taken and the other left.</span><span class="verse-text"><span class="verse-num">41</span>Two women will be grinding with a hand mill; one will be taken and the other left.</span><span class="verse-text"><span class="verse-num">42</span>"Therefore keep watch, because you do not know on what day your Lord will come.</span><span class="verse-text"><span class="verse-num">43</span>But understand this: If the owner of the house had known at what time of night the thief was coming, he would have kept watch and would not have let his house be broken into.</span><span class="verse-text"><span class="verse-num">44</span>So you also must be ready, because the Son of Man will come at an hour when you do not expect him.</span><span class="verse-text"><span class="verse-num">45</span>"Who then is the faithful and wise servant, whom the master has put in charge of the servants in his household to give them their food at the time?</span><span class="verse-text"><span class="verse-num">46</span>It will be good for that servant whose master finds him doing so when he returns.</span><span class="verse-text"><span class="verse-num">47</span>Truly I tell you, he will put him in charge of all his possessions.</span><span class="verse-text"><span class="verse-num">48</span>But suppose that servant is wicked and says to himself, 'My master is staying away a long time,'</span><span class="verse-text"><span class="verse-num">49</span>and he then begins to beat his fellow servants and to eat and drink with drunkards.</span><span class="verse-text"><span class="verse-num">50</span>The master of that servant will come on a day when he does not expect him and at an hour he is not aware of.</span><span class="verse-text"><span class="verse-num">51</span>He will cut him to pieces and assign him a place with the hypocrites, where there will be weeping and gnashing of teeth."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt24-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt24-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt24-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button></div><div id="mt24-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt24-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half moves from signs to the Son of Man's unmistakable coming (vv.29-31), the fig tree lesson (vv.32-35), and the definitive unknown-timing statement (v.36). The Noah analogy is about surprise, not moral decline. The three applications (one taken, thief in the night, faithful servant) all make the same point: keep watch and do the master's work.</p></div><div id="mt24-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 7:13-14</span><span class="ref-text">Son of Man coming on the clouds -- the Danielic vision applied to the final parousia.</span></li><li><span class="ref-cite">Gen 7</span><span class="ref-text">As in the days of Noah -- ordinary life until sudden catastrophe. The warning is about surprise.</span></li></ul></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt24-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt24-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt24-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt24-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt24-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt24-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt24-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt24-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt24-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt24-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt24-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt24-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt24-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt24-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt24-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt24-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt24-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Ask two questions; receive one answer</div><div class="person-text">Temple destruction and end of age answered together. Watchfulness is the conclusion.</div></div><div class="person-card"><div class="person-name">The faithful servant</div><div class="person-role">Works while master is away</div><div class="person-text">The eschatological ideal: doing the master's work regardless of when he returns.</div></div></div></div><div id="mt24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">24:36 -- No One Knows</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father."</td></tr><tr><td class="t-label">Note</td><td>The definitive eschatological humility text. The unknown timing is a design feature -- every generation in permanent alertness.</td></tr></table></div><div id="mt24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The fall of Jerusalem, AD 70</div><div class="source-quote">Josephus's Jewish War provides a harrowing account -- the abomination, the flight, the unequalled distress all have historical referents.</div><div class="source-note">Primary source for near fulfilment.</div></div><div class="source-block"><div class="source-title">Two-horizon interpretation</div><div class="source-quote">Most Matthew scholars favour a two-horizon reading: the discourse addresses both Jerusalem (near) and the final parousia (far).</div><div class="source-note">The interpretation affects eschatology but not the practical conclusion: keep watch.</div></div></div><div id="mt24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">24:36 and date-setting</div><div class="rec-text">Every generation produces date-setters who ignore 24:36. Augustine, Luther, Spurgeon all warned against it.</div></div><div class="rec-block"><div class="rec-who">24:14 and mission</div><div class="rec-text">Carey and the modern missionary movement cited 24:14 as the theological basis for global mission.</div></div></div><div id="mt24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Temple; birth pains; abomination — vv.1-28</span><span class="lit-text">Not one stone; wars/famines; stand firm; false messiahs</span></div><div class="lit-row"><span class="lit-label">Son of Man; no one knows — vv.29-51</span><span class="lit-text">Cosmic signs; lightning; fig tree; no one knows; keep watch; faithful servant</span></div><div class="lit-note">Chapter 24's practical conclusion is unambiguous regardless of interpretive position: keep watch, stand firm, do the master's work.</div></div></div><div id="mt24-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">14</sup> "Gospel to <span class="dn-key">all nations</span> -- then the end." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">36</sup> "No one knows -- not even the <span class="dn-divine">Son</span>, but only the <span class="dn-divine">Father</span>."</p></div><div id="mt24-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">24:15</span><span class="thread-arrow">-></span><span class="thread-target">Dan 9:27; 11:31</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Abomination of desolation -- Daniel's phrase applied to Jerusalem's desecration.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">24:30</span><span class="thread-arrow">-></span><span class="thread-target">Dan 7:13-14</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Son of Man on the clouds -- the Danielic vision of the final coming.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">24:14</span><span class="thread-arrow">-></span><span class="thread-target">Matt 28:19-20</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Gospel to all nations -> Great Commission. Eschatology and mission inseparable.</div></div></div><div id="mt24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Watchfulness</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">End of the Age</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Son of Man Coming</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">No One Knows</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Faithful Endurance</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mission</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 24: keep watch, stand firm, do the master's work. The unknown hour is a design feature producing permanent readiness.</p></div>
+<div id="mt24-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Ask two questions; receive one answer</div><div class="person-text">Temple destruction and end of age answered together. Watchfulness is the conclusion.</div></div><div class="person-card"><div class="person-name">The faithful servant</div><div class="person-role">Works while master is away</div><div class="person-text">The eschatological ideal: doing the master's work regardless of when he returns.</div></div></div></div><div id="mt24-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 24 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father."</td></tr><tr><td class="t-label">Note</td><td>The definitive eschatological humility text. The unknown timing is a design feature -- every generation in permanent alertness.</td></tr></table></div><div id="mt24-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The fall of Jerusalem, AD 70</div><div class="source-quote">Josephus's Jewish War provides a harrowing account -- the abomination, the flight, the unequalled distress all have historical referents.</div><div class="source-note">Primary source for near fulfilment.</div></div><div class="source-block"><div class="source-title">Two-horizon interpretation</div><div class="source-quote">Most Matthew scholars favour a two-horizon reading: the discourse addresses both Jerusalem (near) and the final parousia (far).</div><div class="source-note">The interpretation affects eschatology but not the practical conclusion: keep watch.</div></div></div><div id="mt24-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">24:36 and date-setting</div><div class="rec-text">Every generation produces date-setters who ignore 24:36. Augustine, Luther, Spurgeon all warned against it.</div></div><div class="rec-block"><div class="rec-who">24:14 and mission</div><div class="rec-text">Carey and the modern missionary movement cited 24:14 as the theological basis for global mission.</div></div></div><div id="mt24-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"></div></div><div id="mt24-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[]</div><div id="mt24-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="mt24-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4></div><div id="mt24-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
 </div>
 </main>
 <script>
@@ -354,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd'],cls:'vhl-person',btn:['people','context']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
   var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment'],cls:'vhl-key',btn:['literary','cross']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
