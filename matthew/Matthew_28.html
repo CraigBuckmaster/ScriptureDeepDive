@@ -13,6 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -272,6 +291,262 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
   padding:.5rem .65rem;text-align:center;}
 
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -309,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 28</h1>
-<p>The Empty Tomb; The Great Commission; I Am with You Always</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The Empty Tomb; He Has Risen; The Women Meet Jesus; The Guard's Bribe; The Great Commission</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi), tax collector and apostle.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80-90, Antioch of Syria.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus as fulfilment of Israel's Scripture.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;10 &mdash; The Empty Tomb; He Has Risen; The Women Meet Jesus</div><span class="verse-text"><span class="verse-num">1</span>After the Sabbath, at dawn on the first day of the week, Mary Magdalene and the other Mary went to look at the tomb.</span><span class="verse-text"><span class="verse-num">2</span>There was a violent earthquake, for an angel of the Lord came down from heaven and, going to the tomb, rolled back the stone and sat on it.</span><span class="verse-text"><span class="verse-num">3</span>His appearance was like lightning, and his clothes were white as snow.</span><span class="verse-text"><span class="verse-num">4</span>The guards were so afraid of him that they shook and became like dead men.</span><span class="verse-text"><span class="verse-num">5</span>The angel said to the women, "Do not be afraid, for I know that you are looking for Jesus, who was crucified.</span><span class="verse-text"><span class="verse-num">6</span>He is not here; he has risen, just as he said. Come and see the place where he lay.</span><span class="verse-text"><span class="verse-num">7</span>Then go quickly and tell his disciples: 'He has risen from the dead and is going ahead of you into Galilee. There you will see him.' Now I have told you."</span><span class="verse-text"><span class="verse-num">8</span>So the women hurried away from the tomb, afraid yet filled with joy, and ran to tell his disciples.</span><span class="verse-text"><span class="verse-num">9</span>Suddenly Jesus met them. "Greetings," he said. They came to him, clasped his feet and worshiped him.</span><span class="verse-text"><span class="verse-num">10</span>Then Jesus said to them, "Do not be afraid. Go and tell my brothers to go to Galilee; there they will see me."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt28-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt28-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt28-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt28-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt28-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ἠγέρθη</span> <span class="tlit">egerthe</span> — <strong>he has risen / he was raised</strong>: V.6: the divine passive -- he was raised by God. The resurrection's theological grammar: God acts, Jesus is raised. The empty tomb is the spatial argument (he is not here); the physical contact with the risen body is the relational argument (they clasped his feet, v.9). Together they constitute the earliest Christian proclamation.</p><p><span class="hebrew-word">χαίρετε</span> <span class="tlit">chairete</span> — <strong>Greetings / Rejoice</strong>: V.9: the ordinary Greek greeting -- but placed here it resonates with the joy of v.8 ("afraid yet filled with joy") and the Beatitudes' closing command (5:12 -- "rejoice and be glad"). The gospel that opened with the world stirred (2:3) closes with the women running with joy.</p></div><div id="mt28-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The empty tomb is announced by an angel and confirmed by the risen Jesus himself. The women are the first witnesses -- those who followed to the cross (27:55-56) and to the tomb (27:61) are the first to receive and transmit the resurrection announcement. The risen Jesus's words "go and tell my brothers" restore the family relationship the disciples' flight had broken.</p></div><div id="mt28-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 16:21; 17:23; 20:19</span><span class="ref-text">He has risen, just as he said (v.6) -- the three passion predictions all promised resurrection. The angel's "just as he said" is the confirmation that Jesus's word was trustworthy throughout.</span></li><li><span class="ref-cite">Matt 26:32</span><span class="ref-text">After I have risen, I will go ahead of you into Galilee -- predicted at the Last Supper. The angel (v.7) and Jesus himself (v.10) now fulfil it.</span></li></ul></div><div id="mt28-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:6</span><p>He is not here; he has risen, just as he said. The resurrection announced with the simplest, most concrete statement. The empty tomb is the spatial argument. "Just as he said" points to the three passion predictions -- his word was trustworthy. Come and see: the invitation is to verify, not merely believe on report.</p></div><div class="com-note"><span class="com-ref">28:9-10</span><p>They clasped his feet and worshiped him. The physical contact is the embodied argument: this is not a vision or ghost but the risen body. "Go and tell my brothers" restores the language of family for the disciples who fled. They are still brothers; the resurrection does not revoke belonging.</p></div></div></div><div class="section"><div class="section-header">Verses 11&ndash;20 &mdash; The Guard's Bribe; The Great Commission; I Am with You Always</div><span class="verse-text"><span class="verse-num">11</span>While the women were on their way, some of the guards came into the city and reported to the chief priests everything that had happened.</span><span class="verse-text"><span class="verse-num">12</span>When the chief priests had met with the elders and devised a plan, they gave the soldiers a large sum of money,</span><span class="verse-text"><span class="verse-num">13</span>telling them, "You are to say, 'His disciples came during the night and stole him away while we were asleep.'</span><span class="verse-text"><span class="verse-num">14</span>If this report gets to the governor, we will satisfy him and keep you out of trouble."</span><span class="verse-text"><span class="verse-num">15</span>So the soldiers took the money and did as they were instructed. And this story has been widely circulated among the Jews to this very day.</span><span class="verse-text"><span class="verse-num">16</span>Then the eleven disciples went to Galilee, to the mountain Jesus had told them about.</span><span class="verse-text"><span class="verse-num">17</span>When they saw him, they worshiped him; but some doubted.</span><span class="verse-text"><span class="verse-num">18</span>Then Jesus came to them and said, "All authority in heaven and on earth has been given to me.</span><span class="verse-text"><span class="verse-num">19</span>Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,</span><span class="verse-text"><span class="verse-num">20</span>and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt28-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt28-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt28-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt28-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt28-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ἐδόθη μοι πᾶσα ἐξουσία</span> <span class="tlit">edothe moi pasa exousia</span> — <strong>all authority has been given to me</strong>: V.18: the passive voice -- authority given by the Father. This is the Danielic language of 7:14 ("authority was given to him") now actualised in the risen Christ. The church does not go in its own authority but under the authority of the risen Lord who has received dominion over the entire cosmos.</p><p><span class="hebrew-word">ἐγὼ μεθ' ὑμῶν εἰμι</span> <span class="tlit">ego meth' hymon eimi</span> — <strong>I am with you</strong>: V.20: the Immanuel promise of 1:23 ("God with us") fulfilled in the risen Christ's permanent presence. The gospel that opened with Immanuel closes with "I am with you always." The bracket is complete.</p></div><div id="mt28-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Great Commission (vv.16-20) is the gospel's climax. The guard's bribe (vv.11-15) is Matthew's early apologetic: the officials who sealed the tomb are the first witnesses to its emptiness, and their explanation (theft) was publicly circulated when Matthew wrote. The Commission is built on three foundations: all authority (v.18), all nations (v.19), always with you (v.20).</p></div><div id="mt28-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 7:13-14</span><span class="ref-text">All authority given to him -- the Son of Man receiving dominion. The Great Commission is the actualisation of the Danielic vision in the risen Christ.</span></li><li><span class="ref-cite">Matt 1:23</span><span class="ref-text">Immanuel, God with us -- the gospel's opening promise. "I am with you always" (v.20) is the closing fulfilment. The bracket is the gospel's central claim.</span></li><li><span class="ref-cite">Gen 12:3</span><span class="ref-text">All peoples on earth blessed through you -- God's promise to Abraham. The Great Commission is its instrument.</span></li></ul></div><div id="mt28-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:17</span><p>When they saw him, they worshiped him; but some doubted. The most honest statement in the resurrection account. Doubt and worship coexist. Faith is not the absence of doubt but worship in the presence of it. The Great Commission is given to a group that includes doubters -- which is every group the church has ever comprised.</p></div><div class="com-note"><span class="com-ref">28:19-20</span><p>Go and make disciples of all nations. The grammar: the main verb is "make disciples" -- go, baptise, and teach are the participles that specify how. All nations -- the horizon the gospel has been pointing toward since the Magi (ch.2), the centurion (ch.8), the Canaanite woman (ch.15).</p></div><div class="com-note"><span class="com-ref">28:20</span><p>I am with you always, to the very end of the age. The final word of Matthew is presence. Not "I will return" but "I am with you always" -- continuous present, unlimited duration. Immanuel (1:23) is not a title of the baby Jesus but the permanent condition of the community he is forming.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;10 &mdash; The Empty Tomb; He Has Risen; The Women Meet Jesus</div><span class="verse-text"><span class="verse-num">1</span>After the Sabbath, at dawn on the first day of the week, Mary Magdalene and the other Mary went to look at the tomb.</span><span class="verse-text"><span class="verse-num">2</span>There was a violent earthquake, for an angel of the Lord came down from heaven and, going to the tomb, rolled back the stone and sat on it.</span><span class="verse-text"><span class="verse-num">3</span>His appearance was like lightning, and his clothes were white as snow.</span><span class="verse-text"><span class="verse-num">4</span>The guards were so afraid of him that they shook and became like dead men.</span><span class="verse-text"><span class="verse-num">5</span>The angel said to the women, "Do not be afraid, for I know that you are looking for Jesus, who was crucified.</span><span class="verse-text"><span class="verse-num">6</span>He is not here; he has risen, just as he said. Come and see the place where he lay.</span><span class="verse-text"><span class="verse-num">7</span>Then go quickly and tell his disciples: 'He has risen from the dead and is going ahead of you into Galilee. There you will see him.' Now I have told you."</span><span class="verse-text"><span class="verse-num">8</span>So the women hurried away from the tomb, afraid yet filled with joy, and ran to tell his disciples.</span><span class="verse-text"><span class="verse-num">9</span>Suddenly Jesus met them. "Greetings," he said. They came to him, clasped his feet and worshiped him.</span><span class="verse-text"><span class="verse-num">10</span>Then Jesus said to them, "Do not be afraid. Go and tell my brothers to go to Galilee; there they will see me."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt28-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt28-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt28-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt28-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt28-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt28-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt28-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt28-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt28-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt28-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The empty tomb is announced by an angel and confirmed by the risen Jesus himself. The women are the first witnesses -- those who followed to the cross (27:55-56) and to the tomb (27:61) are the first to receive and transmit the resurrection announcement. The risen Jesus's words "go and tell my brothers" restore the family relationship the disciples' flight had broken.</p></div><div id="mt28-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 16:21; 17:23; 20:19</span><span class="ref-text">He has risen, just as he said (v.6) -- the three passion predictions all promised resurrection. The angel's "just as he said" is the confirmation that Jesus's word was trustworthy throughout.</span></li><li><span class="ref-cite">Matt 26:32</span><span class="ref-text">After I have risen, I will go ahead of you into Galilee -- predicted at the Last Supper. The angel (v.7) and Jesus himself (v.10) now fulfil it.</span></li></ul></div><div id="mt28-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:6</span><p>He is not here; he has risen, just as he said. The resurrection announced with the simplest, most concrete statement. The empty tomb is the spatial argument. "Just as he said" points to the three passion predictions -- his word was trustworthy. Come and see: the invitation is to verify, not merely believe on report.</p></div><div class="com-note"><span class="com-ref">28:9-10</span><p>They clasped his feet and worshiped him. The physical contact is the embodied argument: this is not a vision or ghost but the risen body. "Go and tell my brothers" restores the language of family for the disciples who fled. They are still brothers; the resurrection does not revoke belonging.</p></div></div><div id="mt28-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:1-10</span><p>Calvin on the women's commission to tell the disciples: Christ appears first to Mary Magdalene and the other women and sends them as apostles to the apostles. This was divinely ordered: he chose to use the sex most despised to begin his gospel's announcement. The wisdom of God delights to overthrow human pride by choosing what the world despises.</p></div><div class="com-note"><span class="com-ref">28:18-20</span><p>Calvin on 'I am with you always, even to the end of the age' (v.20b): this promise is the foundation of the church's courage in every age. The command to make disciples of all nations would be terrifying without this assurance. With this assurance it becomes not a burden but an invitation: go because I am already there.</p></div></div><div id="mt28-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">28:1-10</span><p>The NET note on 'the first day of the week' (tei de miai ton sabbaton, v.1) discusses the theological significance of the day: the resurrection occurred on the first day, beginning a new creation week. Sunday worship in the early church originated in this first-day resurrection.</p></div><div class="com-note"><span class="com-ref">28:18-20</span><p>The NET note on 'all authority in heaven and on earth has been given to me' (v.18) discusses the background in Dan 7:13-14: the Son of Man is given authority, glory, and sovereign power. The Great Commission follows from this authority claim -- the risen Christ has received the universal authority the Danielic Son of Man was promised.</p></div></div><div id="mt28-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">28:1-10</span><p>Robertson on the angel's announcement (v.6: ouk estin hode -- he is not here): egerthe (has been raised) is a perfect passive -- raised by the Father and remaining in the state of resurrection. The angel's invitation 'come and see the place where he lay' is an empirical claim: the tomb is empty and inspectable. The first witnesses are women, whose testimony was least credible in the ancient world -- a detail that argues against invented legend.</p></div><div class="com-note"><span class="com-ref">28:11-20</span><p>Robertson on the Great Commission (v.18-20): edothe moi pasa exousia (all authority has been given to me) is an aorist passive -- the authority was given at the resurrection/ascension. The commission is structured as three participles modifying matheteusate (make disciples): going, baptising, and teaching serve the one goal of disciple-making.</p></div></div><div id="mt28-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">28:1-10</span><p>Chrysostom: the women who had not fled, who had remained at the cross and the tomb, are given the first announcement. God honours faithfulness with first witness. The apostles who had fled receive the news from those who had stayed -- the gospel's first heralds are those whose love overcame their fear.</p></div><div class="com-note"><span class="com-ref">28:18-20</span><p>The Catena traces the Trinitarian structure of the baptismal formula (v.19: into the name of the Father and of the Son and of the Holy Spirit) as the earliest explicit Trinitarian formula in Matthew. The singular onoma (name, not names) places all three persons within a single divine name -- the basis for later Trinitarian theology.</p></div></div></div><div class="section"><div class="section-header">Verses 11&ndash;20 &mdash; The Guard's Bribe; The Great Commission; I Am with You Always</div><span class="verse-text"><span class="verse-num">11</span>While the women were on their way, some of the guards came into the city and reported to the chief priests everything that had happened.</span><span class="verse-text"><span class="verse-num">12</span>When the chief priests had met with the elders and devised a plan, they gave the soldiers a large sum of money,</span><span class="verse-text"><span class="verse-num">13</span>telling them, "You are to say, 'His disciples came during the night and stole him away while we were asleep.'</span><span class="verse-text"><span class="verse-num">14</span>If this report gets to the governor, we will satisfy him and keep you out of trouble."</span><span class="verse-text"><span class="verse-num">15</span>So the soldiers took the money and did as they were instructed. And this story has been widely circulated among the Jews to this very day.</span><span class="verse-text"><span class="verse-num">16</span>Then the eleven disciples went to Galilee, to the mountain Jesus had told them about.</span><span class="verse-text"><span class="verse-num">17</span>When they saw him, they worshiped him; but some doubted.</span><span class="verse-text"><span class="verse-num">18</span>Then Jesus came to them and said, "All authority in heaven and on earth has been given to me.</span><span class="verse-text"><span class="verse-num">19</span>Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,</span><span class="verse-text"><span class="verse-num">20</span>and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt28-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt28-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt28-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt28-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt28-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt28-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt28-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt28-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt28-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt28-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Great Commission (vv.16-20) is the gospel's climax. The guard's bribe (vv.11-15) is Matthew's early apologetic: the officials who sealed the tomb are the first witnesses to its emptiness, and their explanation (theft) was publicly circulated when Matthew wrote. The Commission is built on three foundations: all authority (v.18), all nations (v.19), always with you (v.20).</p></div><div id="mt28-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Dan 7:13-14</span><span class="ref-text">All authority given to him -- the Son of Man receiving dominion. The Great Commission is the actualisation of the Danielic vision in the risen Christ.</span></li><li><span class="ref-cite">Matt 1:23</span><span class="ref-text">Immanuel, God with us -- the gospel's opening promise. "I am with you always" (v.20) is the closing fulfilment. The bracket is the gospel's central claim.</span></li><li><span class="ref-cite">Gen 12:3</span><span class="ref-text">All peoples on earth blessed through you -- God's promise to Abraham. The Great Commission is its instrument.</span></li></ul></div><div id="mt28-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:17</span><p>When they saw him, they worshiped him; but some doubted. The most honest statement in the resurrection account. Doubt and worship coexist. Faith is not the absence of doubt but worship in the presence of it. The Great Commission is given to a group that includes doubters -- which is every group the church has ever comprised.</p></div><div class="com-note"><span class="com-ref">28:19-20</span><p>Go and make disciples of all nations. The grammar: the main verb is "make disciples" -- go, baptise, and teach are the participles that specify how. All nations -- the horizon the gospel has been pointing toward since the Magi (ch.2), the centurion (ch.8), the Canaanite woman (ch.15).</p></div><div class="com-note"><span class="com-ref">28:20</span><p>I am with you always, to the very end of the age. The final word of Matthew is presence. Not "I will return" but "I am with you always" -- continuous present, unlimited duration. Immanuel (1:23) is not a title of the baby Jesus but the permanent condition of the community he is forming.</p></div></div><div id="mt28-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:11-15</span><p>Calvin on the bribery: God permits the lies of the enemies of the gospel so that through those very lies the resurrection might be more firmly established. Every attempt to suppress the news of the resurrection has had the effect of spreading it further: the lie confirms that the tomb was empty.</p></div><div class="com-note"><span class="com-ref">28:19-20</span><p>Calvin on baptism in the Trinitarian name: the commandment establishes forever that the one God is Father, Son, and Spirit. The singular name encompasses the three -- not three gods but the one God in three persons. The church's baptismal practice from the beginning has been the theological confession of the Trinity.</p></div></div><div id="mt28-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">28:11-15</span><p>The NET note on 'this story has been widely circulated among the Jews to this day' (v.15) discusses the apologetic context: Matthew is writing for a community in ongoing debate with Jewish interlocutors who know the stolen-body story.</p></div><div class="com-note"><span class="com-ref">28:19-20</span><p>The NET note on 'teaching them to obey everything I have commanded you' traces the pattern of Matthew's five discourses (chs.5-7; 10; 13; 18; 24-25): the Great Commission's teaching mandate encompasses all five. Matthew's gospel is itself the fulfillment of the teaching mandate -- the written form of what the disciples are commissioned to teach.</p></div></div><div id="mt28-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">28:11-15</span><p>Robertson on the guard's bribe (arguria hikana, sufficient money, v.12): hikana (sufficient) means an amount adequate to achieve the purpose -- buying the soldiers' silence and their willingness to report a lie. The judicial protection promised ('if the governor hears of this, we will protect you', v.14) is the Sanhedrin's acknowledgment that the story is implausible.</p></div><div class="com-note"><span class="com-ref">28:18-20</span><p>Robertson on the Great Commission's scope: panta ta ethne (all the nations) is the universal mission that the genealogy (including Gentiles), the narrative (the Magi, the centurion, the Canaanite woman, the sheep-and-goats universal judgment), and now the resurrection commission has been building toward.</p></div></div><div id="mt28-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">28:11-15</span><p>Chrysostom: if the disciples had stolen the body, the authorities would have produced the evidence -- the body or the disciples who carried it. They did not because they could not. The bribery is the historical admission that the tomb was empty; the story of theft is the alternative theory that the empty tomb required.</p></div><div class="com-note"><span class="com-ref">28:18-20</span><p>The Catena traces the Great Commission's Trinitarian structure: make disciples (the Father's mission), baptising in the Trinitarian name (the Son's authority over the church), teaching everything I have commanded (the Spirit's role in transmission). 'I am with you always' is the promise of the Spirit's continuing presence -- the risen Christ present through the Spirit until the end of the age.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt28-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt28-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt28-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt28-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt28-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt28-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt28-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt28-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt28-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt28-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt28-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt28-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt28-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt28-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt28-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt28-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt28-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt28-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Mary Magdalene and the other Mary</div><div class="person-role">First witnesses to the resurrection</div><div class="person-text">Those who followed to the cross and tomb are the first to receive and transmit the announcement.</div></div><div class="person-card"><div class="person-name">The eleven</div><div class="person-role">Worship and doubt</div><div class="person-text">Great Commission given to a group that includes doubters. Every generation of disciples qualifies.</div></div><div class="person-card"><div class="person-name">The risen Jesus</div><div class="person-role">Commissioning the community</div><div class="person-text">His final words are not a farewell but a permanent promise: I am with you always.</div></div></div></div><div id="mt28-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">28:19-20 -- The Great Commission</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."</td></tr><tr><td class="t-label">Note</td><td>Main verb: make disciples. Participles: go, baptise, teach. Grounded in all authority (v.18); sealed by always with you (v.20).</td></tr></table></div><div id="mt28-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The guard's bribe</div><div class="source-quote">Matthew's early apologetic against the "stolen body" theory. The officials who sealed the tomb are the first witnesses to its emptiness. Their explanation was publicly circulating when Matthew wrote.</div><div class="source-note">The existence of the counter-narrative confirms the empty tomb was not disputed.</div></div><div class="source-block"><div class="source-title">The Trinitarian formula</div><div class="source-quote">V.19: baptizing in the name of the Father, Son, and Holy Spirit -- the fullest Trinitarian formula in the Synoptics. Echoes the baptism of Jesus (3:16-17).</div><div class="source-note">The Trinitarian formula grounds Christian baptism in the Trinitarian self-disclosure of God.</div></div></div><div id="mt28-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Great Commission in mission history</div><div class="rec-text">28:18-20 is the founding text of the modern missionary movement. William Carey's 1792 "Enquiry" is structured around this passage.</div></div><div class="rec-block"><div class="rec-who">Easter and the resurrection</div><div class="rec-text">The resurrection is the central celebration of the Christian calendar. Early Christian worship on the first day of the week (Acts 20:7) commemorated it.</div></div></div><div id="mt28-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Empty tomb; risen Jesus — vv.1-10</span><span class="lit-text">He is not here; just as he said; afraid yet filled with joy; they worshiped him</span></div><div class="lit-row"><span class="lit-label">Guard's bribe; Great Commission — vv.11-20</span><span class="lit-text">Counter-narrative; all authority; all nations; I am with you always</span></div><div class="lit-note">Matthew 28 closes the gospel's bracket: Immanuel (1:23) -> I am with you always (28:20). The resurrection is not the epilogue but the engine: all authority in heaven and earth grounds the commission to make disciples of all nations.</div></div></div><div id="mt28-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">6</sup> "He is not here; he has <span class="dn-key">risen</span>, just as he said." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">20</sup> "<span class="dn-divine">I am with you always</span>, to the very end of the age."</p></div><div id="mt28-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">28:18</span><span class="thread-arrow">-></span><span class="thread-target">Dan 7:13-14</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">All authority given to him -- the Danielic Son of Man receiving universal dominion, now actualised.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">28:20</span><span class="thread-arrow">-></span><span class="thread-target">Matt 1:23</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">Immanuel, God with us -> I am with you always. The gospel's opening promise fulfilled in the closing verse.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">28:19</span><span class="thread-arrow">-></span><span class="thread-target">Gen 12:3; Isa 49:6</span><span class="thread-type fulfillment">Fulfilment</span></div><div class="thread-text">All nations blessed through Abraham; light to the Gentiles -- the commission is the instrument of both.</div></div></div><div id="mt28-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Resurrection</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">All Authority</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Great Commission</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">All Nations</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Immanuel Fulfilled</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Worship and Doubt</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 28 closes the bracket that 1:23 opened. The gospel of Immanuel ends with the permanent promise: I am with you always.</p></div>
+<div id="mt28-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Mary Magdalene and the other Mary</div><div class="person-role">First witnesses to the resurrection</div><div class="person-text">Those who followed to the cross and tomb are the first to receive and transmit the announcement.</div></div><div class="person-card"><div class="person-name">The eleven</div><div class="person-role">Worship and doubt</div><div class="person-text">Great Commission given to a group that includes doubters. Every generation of disciples qualifies.</div></div><div class="person-card"><div class="person-name">The risen Jesus</div><div class="person-role">Commissioning the community</div><div class="person-text">His final words are not a farewell but a permanent promise: I am with you always.</div></div></div></div><div id="mt28-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 28 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."</td></tr><tr><td class="t-label">Note</td><td>Main verb: make disciples. Participles: go, baptise, teach. Grounded in all authority (v.18); sealed by always with you (v.20).</td></tr></table></div><div id="mt28-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The guard's bribe</div><div class="source-quote">Matthew's early apologetic against the "stolen body" theory. The officials who sealed the tomb are the first witnesses to its emptiness. Their explanation was publicly circulating when Matthew wrote.</div><div class="source-note">The existence of the counter-narrative confirms the empty tomb was not disputed.</div></div><div class="source-block"><div class="source-title">The Trinitarian formula</div><div class="source-quote">V.19: baptizing in the name of the Father, Son, and Holy Spirit -- the fullest Trinitarian formula in the Synoptics. Echoes the baptism of Jesus (3:16-17).</div><div class="source-note">The Trinitarian formula grounds Christian baptism in the Trinitarian self-disclosure of God.</div></div></div><div id="mt28-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Great Commission in mission history</div><div class="rec-text">28:18-20 is the founding text of the modern missionary movement. William Carey's 1792 "Enquiry" is structured around this passage.</div></div><div class="rec-block"><div class="rec-who">Easter and the resurrection</div><div class="rec-text">The resurrection is the central celebration of the Christian calendar. Early Christian worship on the first day of the week (Acts 20:7) commemorated it.</div></div></div><div id="mt28-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Come and see the place where he lay. The first witnesses are women whose testimony was least credible in the ancient world -- a detail that argues against legend. The tomb is empty and inspectable.</div><div class="lit-row"><span class="lit-label">All Authority; Therefore All Nations — 28:18-20</span><span class="lit-text">The commission follows from the authority claim: the risen Christ who has all authority in heaven and on earth sends to all nations. The universal scope of the mission rests on the universal scope of the resurrection's authority.</span></div></div></div><div id="mt28-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[('matheteusate', 'matheteusate', 'Make disciples', "The main verb of the Great Commission (28:19). Going, baptising, and teaching are the three participles that serve this one goal. The church's whole activity is gathered into the one verb: disciple-making.")]</div><div id="mt28-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">28:19</span><span class="tx-issue">Into the name of the Father and of the Son and of the Holy Spirit</span></div><div class="tx-variants">Singular onoma (name, not names) encompasses all three persons. The Didache (c.AD 100) uses this formula for baptism, confirming its early liturgical use.</div><div class="tx-sig">The singular name with three persons is the earliest explicit Trinitarian formula in the NT. The resurrection commission is also the Trinitarian charter.</div></div></div><div id="mt28-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Was the Resurrected Christ's Body Physical or Spiritual?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Physical and recognisable, though transformed</div><div class="db-proponents">Evangelical consensus, most patristic interpreters</div><div class="db-argument">The women take hold of his feet (v.9); the disciples worship him. The resurrection body is the transformed version of the crucified body -- continuous but glorified, not a ghost.</div></div><div class="db-position"><div class="db-pos-name">Primarily spiritual/pneumatic</div><div class="db-proponents">Some liberal interpreters</div><div class="db-argument">The resurrection appearances are spiritual experiences of the disciples' faith in the living Christ, not physical encounters with a resurrected body.</div></div></div><div class="db-synthesis">Matthew's physical details (feet grasped, v.9; worship, v.17) support the physical resurrection. The appearances are presented as historical encounters, not interior spiritual experiences. The empty tomb ('come and see') grounds the resurrection in physical reality.</div></div></div><div id="mt28-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,205.0 35.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Empty Tomb: Physical Resurrection</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Guard's Bribe: Historical Proof</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Great Commission: All Authority; All Nations</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">I Am With You Always: The Presence Promise</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 28 is the gospel's resolution: the empty tomb, the risen Lord, and the universal commission. The resurrection answers the dereliction cry; the universal authority grounds the universal mission; the presence promise sustains the community that carries the commission to the end of the age. Matthew ends where it began: Emmanuel, God with us (1:23) -- I am with you always.</p></div>
 </div>
 </main>
 <script>
@@ -354,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders'],cls:'vhl-person',btn:['people','context']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
   var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive'],cls:'vhl-key',btn:['literary','cross']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -500,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
