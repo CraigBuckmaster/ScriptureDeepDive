@@ -744,6 +744,19 @@ if 'continue-bar' in idx:
 else:
     warn('Continue reading bar not found')
 
+# Testament + book dropdown scroll guards
+if "block:'start'" in idx and 'toggleTestament' in idx:
+    ok('toggleTestament scroll guard present (dropdowns open downward)')
+else:
+    fail("index.html: toggleTestament missing scroll guard — dropdowns may open off-screen upward. "
+         "Add: if (rect.top < 60) grp.scrollIntoView({behavior:'smooth', block:'start'})")
+
+if "block:'start'" in idx and 'toggleBook' in idx and 'getBoundingClientRect' in idx:
+    ok('toggleBook scroll guard present (chapter list opens downward)')
+else:
+    fail("index.html: toggleBook missing scroll guard — chapter list may open off-screen upward. "
+         "Add rect.top < 60 guard with scrollIntoView block:'start'")
+
 # ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
