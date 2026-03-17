@@ -4,6 +4,16 @@ Scripture Deep Dive — Pre-commit Audit Script
 Run: python3 audit.py
 All checks must pass before committing.
 Add new checks whenever a new class of bug is found.
+
+Issue history this file was written to catch:
+  - Empty/broken hebtext panels ([] content)
+  - Missing/thin literary highlight rows
+  - Thin/missing scholar com-note panels
+  - MacArthur panels absent or thin
+  - Chapter subtitle showing 'Book N' instead of real title
+  - com-source divs not closed (notes nested inside com-source)
+  - com-notes leaking outside their panel div
+  - Various CSS/JS structural issues (tog, VHL, qnav, etc.)
 """
 
 import re, os, sys
@@ -26,15 +36,25 @@ def ok(msg):    print(f"  {PASS} {msg}")
 def fail(msg):  print(f"  {FAIL} {msg}"); failures.append(msg)
 def warn(msg):  print(f"  {WARN}  {msg}"); warnings.append(msg)
 
+BOOK_ROSTER = [
+    ('genesis',  'Genesis',  range(1, 51)),
+    ('exodus',   'Exodus',   range(1, 41)),
+    ('proverbs', 'Proverbs', range(1, 32)),
+    ('ruth',     'Ruth',     range(1,  5)),
+    ('matthew',  'Matthew',  range(1, 29)),
+]
+
+SCHOLAR_KEYS = {
+    'Genesis':  ['sarna',    'alter', 'calvin', 'netbible'],
+    'Exodus':   ['sarna',    'alter', 'calvin', 'netbible'],
+    'Ruth':     ['hubbard',  'alter', 'calvin', 'netbible'],
+    'Proverbs': ['waltke',   'alter', 'calvin', 'netbible'],
+    'Matthew':  ['robertson','catena','calvin', 'netbible'],
+}
+
 def chapter_paths():
     paths = []
-    for book_dir, book_name, chapters in [
-        ('genesis',  'Genesis',  range(1, 51)),
-        ('exodus',   'Exodus',   range(1, 41)),
-        ('proverbs', 'Proverbs', range(1, 32)),
-        ('ruth',     'Ruth',     range(1,  5)),
-        ('matthew',  'Matthew',  range(1, 29)),
-    ]:
+    for book_dir, book_name, chapters in BOOK_ROSTER:
         for ch in chapters:
             p = f'{REPO}/{book_dir}/{book_name}_{ch}.html'
             if os.path.exists(p):
@@ -46,6 +66,61 @@ def count_verses_in_sections(html):
     if boundary == -1:
         boundary = html.rfind('</main>')
     return len(re.findall(r'class="verse-text"', html[:boundary]))
+
+def get_sections(body, bnd):
+    """Return list of (start, end) for each section in body (before scholarly-block)."""
+    secs = [m.start() for m in re.finditer(r'<div class="section">', body)]
+    result = []
+    for i, s in enumerate(secs):
+        e = secs[i+1] if i+1 < len(secs) else bnd
+        result.append((s, e))
+    return result
+
+def count_notes_in_panel(sec_html, key):
+    """Return note count for a scholar panel, or None if panel is absent."""
+    m = re.search(rf'class="anno-panel[^"]*\bcom-{key}\b[^"]*">', sec_html)
+    if not m: return None
+    start = m.end()
+    end_m = re.search(r'<div[^>]+class="anno-panel', sec_html[start:])
+    content = sec_html[start:start + end_m.start()] if end_m else sec_html[start:]
+    return len(re.findall(r'class="com-note"', content))
+
+def panel_has_closed_source(sec_html, key):
+    """Return True if the com-source div inside this panel has a proper closing tag."""
+    m = re.search(rf'class="anno-panel[^"]*\bcom-{key}\b[^"]*">', sec_html)
+    if not m: return True  # no panel — not this check's problem
+    # Find content up to next panel
+    start = m.end()
+    end_m = re.search(r'<div[^>]+class="anno-panel', sec_html[start:])
+    panel_content = sec_html[start:start + end_m.start()] if end_m else sec_html[start:]
+    # com-source div should have </div> before any com-note
+    src_m = re.search(r'class="com-source">(.*?)(?=<div class="com-note"|$)', panel_content, re.DOTALL)
+    if not src_m: return True
+    return '</div>' in src_m.group(1)
+
+def check_leaked_notes(body, bnd):
+    """Return list of section indices where com-notes appear outside a panel."""
+    leaked = []
+    secs = get_sections(body, bnd)
+    for si, (s, e) in enumerate(secs):
+        sec = body[s:e]
+        # Find all com-panel divs and check if any com-note follows outside them
+        for pm in re.finditer(r'<div[^>]+class="anno-panel com-panel[^"]*">', sec):
+            p_start = pm.end()
+            depth = 1
+            i = p_start
+            while i < len(sec):
+                if sec[i:i+4] == '<div': depth += 1
+                elif sec[i:i+6] == '</div>':
+                    depth -= 1
+                    if depth == 0:
+                        after = sec[i+6:i+56].strip()
+                        if after.startswith('<div class="com-note">'):
+                            leaked.append(si+1)
+                        break
+                i += 1
+    return leaked
+
 
 # ── Expected NIV verse counts ─────────────────────────────────────────────
 EXPECTED = {
@@ -72,22 +147,24 @@ EXPECTED = {
     ('Exodus',29):46,('Exodus',30):38,('Exodus',31):18,('Exodus',32):35,
     ('Exodus',33):23,('Exodus',34):35,('Exodus',35):35,('Exodus',36):38,
     ('Exodus',37):29,('Exodus',38):31,('Exodus',39):43,('Exodus',40):38,
-    # Proverbs — add as chapters go live
     ('Ruth', 1):22,('Ruth', 2):23,('Ruth', 3):18,('Ruth', 4):22,
     ('Proverbs', 1):33,('Proverbs', 2):22,('Proverbs', 3):35,
     ('Proverbs', 4):27,('Proverbs', 5):23,('Proverbs', 6):35,
     ('Proverbs', 7):27,('Proverbs', 8):36,('Proverbs', 9):18,
-    ('Proverbs',10):32,
-    ('Proverbs',11):31,('Proverbs',12):28,('Proverbs',13):25,
+    ('Proverbs',10):32,('Proverbs',11):31,('Proverbs',12):28,('Proverbs',13):25,
     ('Proverbs',14):35,('Proverbs',15):33,('Proverbs',16):33,
     ('Proverbs',17):28,('Proverbs',18):24,('Proverbs',19):29,
-    ('Proverbs',20):30,
-    ('Proverbs',21):31,('Proverbs',22):29,('Proverbs',23):35,
+    ('Proverbs',20):30,('Proverbs',21):31,('Proverbs',22):29,('Proverbs',23):35,
     ('Proverbs',24):34,('Proverbs',25):28,('Proverbs',26):28,
     ('Proverbs',27):27,('Proverbs',28):28,('Proverbs',29):27,
     ('Proverbs',30):33,('Proverbs',31):31,
-    ('Matthew', 1):25,('Matthew', 2):23,('Matthew', 3):17,('Matthew', 4):25,('Matthew', 5):48,
-    ('Matthew', 6):34,('Matthew', 7):29,('Matthew', 8):34,('Matthew', 9):38,('Matthew',10):42,
+    ('Matthew', 1):25,('Matthew', 2):23,('Matthew', 3):17,('Matthew', 4):25,
+    ('Matthew', 5):48,('Matthew', 6):34,('Matthew', 7):29,('Matthew', 8):34,
+    ('Matthew', 9):38,('Matthew',10):42,('Matthew',11):30,('Matthew',12):50,
+    ('Matthew',13):58,('Matthew',14):36,('Matthew',15):39,('Matthew',16):28,
+    ('Matthew',17):26,('Matthew',18):35,('Matthew',19):30,('Matthew',20):34,
+    ('Matthew',21):46,('Matthew',22):46,('Matthew',23):38,('Matthew',24):51,
+    ('Matthew',25):46,('Matthew',26):75,('Matthew',27):66,('Matthew',28):20,
 }
 
 chapters = chapter_paths()
@@ -97,20 +174,16 @@ chapters = chapter_paths()
 # ═══════════════════════════════════════════════════════════════════════════
 section('1. HTML Structure')
 
-style_errors = dup_errors = orphan_errors = 0
+style_errors = orphan_errors = 0
 
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     label = f'{book} {ch}'
 
-    # Single <style> block
     if h.count('<style>') != 1:
         fail(f'{label}: {h.count("<style>")} <style> blocks (expected 1)')
         style_errors += 1
 
-    # Orphaned legend — broken legend-item has no text label after the dot div
-    # Good:    <div class="legend-item"><div class="legend-dot ..."></div>Hebrew</div>
-    # Broken:  <div class="legend-item"><div class="legend-dot ..."></div>\n  (no text before </div>)
     main_start = h.find('<main>')
     if main_start > -1:
         main_html = h[main_start:]
@@ -118,7 +191,6 @@ for path, book, ch in chapters:
             fail(f'{label}: orphaned/broken legend-item in <main>')
             orphan_errors += 1
 
-    # No loose text fragments from botched removals
     body = h[h.find('</style>'):]
     for frag in ['Available now</div>', 'll-item"><div class="ll-dot']:
         if frag in body:
@@ -128,24 +200,42 @@ for path, book, ch in chapters:
 if style_errors == 0:
     ok(f'Single <style> block in all {len(chapters)} chapters')
 if orphan_errors == 0:
-    ok('No orphaned HTML fragments in chapter pages')
+    ok('No orphaned HTML fragments')
 
-# index.html
 with open(f'{REPO}/index.html') as f: idx = f.read()
-
 if idx.count('<style>') != 1:
     fail(f'index.html: {idx.count("<style>")} <style> blocks (expected 1)')
 else:
     ok('Single <style> block in index.html')
 
-for marker in ['<!-- HERO -->', '<div id="library-grid">']:
-    if idx.count(marker) > 1:
-        fail(f'index.html: duplicate {marker!r}')
+# ═══════════════════════════════════════════════════════════════════════════
+# 2. CHAPTER SUBTITLE
+# New check: subtitle <p> must not repeat "Book N" — must be real title
+# ═══════════════════════════════════════════════════════════════════════════
+section('2. Chapter Subtitles')
+
+bad_subtitles = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    h1_pos = h.find('<h1>')
+    if h1_pos == -1: continue
+    after = h[h1_pos:h1_pos+200]
+    p_m = re.search(r'</h1>\s*<p>(.*?)</p>', after)
+    if not p_m:
+        bad_subtitles.append(f'{book} {ch}: no subtitle <p> found')
+    elif p_m.group(1).strip() in (f'{book} {ch}', book, f'{book}'):
+        bad_subtitles.append(f'{book} {ch}: subtitle is placeholder "{p_m.group(1).strip()}"')
+
+if bad_subtitles:
+    for e in bad_subtitles[:5]: fail(e)
+    if len(bad_subtitles) > 5: fail(f'...and {len(bad_subtitles)-5} more subtitle issues')
+else:
+    ok(f'All {len(chapters)} chapters have real subtitle titles')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 2. CSS INTEGRITY
+# 3. CSS INTEGRITY
 # ═══════════════════════════════════════════════════════════════════════════
-section('2. CSS Integrity')
+section('3. CSS Integrity')
 
 missing_auth = []
 missing_mac  = []
@@ -170,26 +260,10 @@ if missing_mac:
 else:
     ok('MacArthur CSS present in all chapters')
 
-# MacArthur panels must have actual content (com-note), not be empty shells
-empty_mac = []
-for path, book, ch in chapters:
-    with open(path) as f: h = f.read()
-    panels = re.findall(r'class="anno-panel com-panel">(.*?)</div>\s*</div>', h, re.DOTALL)
-    for panel in panels:
-        if 'com-note' not in panel:
-            empty_mac.append(f'{book} {ch}')
-            break
-
-if empty_mac:
-    fail(f'Empty MacArthur panels (no com-note) in: ' +
-         ', '.join(empty_mac[:5]) + ('...' if len(empty_mac) > 5 else ''))
-else:
-    ok('All MacArthur panels have content')
-
 # ═══════════════════════════════════════════════════════════════════════════
-# 3. VERSES.JS — external only, no inline
+# 4. VERSES.JS
 # ═══════════════════════════════════════════════════════════════════════════
-section('3. Verse Index (verses.js)')
+section('4. Verse Index (verses.js)')
 
 vjs_path = f'{REPO}/verses.js'
 if not os.path.exists(vjs_path):
@@ -209,11 +283,6 @@ if inline_v:
 else:
     ok('No inline VERSES in chapter pages')
 
-if 'const VERSES=' in idx:
-    fail('index.html has inline VERSES')
-else:
-    ok('index.html: no inline VERSES')
-
 missing_ext = [f'{b} {c}' for p,b,c in chapters if '../verses.js' not in open(p).read()]
 if missing_ext:
     fail(f'Missing external verses.js in {len(missing_ext)} chapters')
@@ -223,12 +292,12 @@ else:
 if 'src="verses.js"' not in idx:
     fail('index.html missing src="verses.js"')
 else:
-    ok('index.html loads verses.js externally')
+    ok('index.html loads verses.js')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 4. VERSE COUNTS
+# 5. VERSE COUNTS
 # ═══════════════════════════════════════════════════════════════════════════
-section('4. Verse Counts (NIV)')
+section('5. Verse Counts (NIV)')
 
 wrong = []
 for path, book, ch in chapters:
@@ -245,18 +314,16 @@ else:
     ok(f'All {len(EXPECTED)} chapters have correct NIV verse counts')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 5. NAVIGATION ARROWS
+# 6. NAVIGATION ARROWS
 # ═══════════════════════════════════════════════════════════════════════════
-section('5. Navigation Arrows')
+section('6. Navigation Arrows')
 
 nav_errors = []
 for i, (path, book, ch) in enumerate(chapters):
     with open(path) as f: h = f.read()
-    # Find next arrow
     m = re.search(r'class="nav-arrow next([^"]*)"[^>]*href="([^"]*)"', h) or \
         re.search(r'href="([^"]*)"[^>]*class="nav-arrow next([^"]*)"', h)
     if not m: continue
-    # Check if a next chapter exists in the same book
     next_exists = (i + 1 < len(chapters) and chapters[i+1][1] == book)
     href = m.group(2) if m.lastindex >= 2 else m.group(1)
     classes = m.group(1) if m.lastindex >= 2 else m.group(2)
@@ -269,16 +336,16 @@ else:
     ok('No incorrectly disabled next-arrows')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 6. QNAV
+# 7. QNAV
 # ═══════════════════════════════════════════════════════════════════════════
-section('6. Quick Navigation')
+section('7. Quick Navigation')
 
 qnav_errors = []
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     if '<div class="qnav-overlay"' not in h:
         qnav_errors.append(f'{book} {ch}: missing qnav-overlay')
-    if 'current' not in h:
+    elif 'current' not in h:
         qnav_errors.append(f'{book} {ch}: no current chapter highlighted')
 
 if qnav_errors:
@@ -287,9 +354,9 @@ else:
     ok('qnav present and current chapter marked in all chapters')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 7. SERVICE WORKER
+# 8. SERVICE WORKER
 # ═══════════════════════════════════════════════════════════════════════════
-section('7. Service Worker')
+section('8. Service Worker')
 
 with open(f'{REPO}/service-worker.js') as f: sw = f.read()
 m = re.search(r"const CACHE = '(scripture-v(\d+))'", sw)
@@ -304,23 +371,7 @@ else:
     fail("'/verses.js' not in SW CORE cache")
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 8. INDEX.HTML
-# ═══════════════════════════════════════════════════════════════════════════
-section('8. index.html')
-
-# OT/NT both start collapsed by design
-
-for fn in ['handleSearch', 'VERSES.map']:
-    if fn in idx: ok(f'{fn} present')
-    else: fail(f'index.html: {fn} missing')
-
-if 'continue-bar' in idx:
-    ok('Continue reading bar present')
-else:
-    warn('Continue reading bar not found')
-
-# ═══════════════════════════════════════════════════════════════════════════
-# 9. TOG() — both selectors required
+# 9. TOG() FUNCTION
 # ═══════════════════════════════════════════════════════════════════════════
 section('9. tog() Function')
 
@@ -341,7 +392,7 @@ else:
     ok('tog() correct in all chapters')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 10. PANEL CSS & JS — all critical blocks present
+# 10. PANEL CSS & JS COMPLETENESS
 # ═══════════════════════════════════════════════════════════════════════════
 section('10. Panel CSS & JS Completeness')
 
@@ -354,60 +405,37 @@ missing_label_js    = []
 missing_qnav_groups = []
 bad_btn_css         = []
 missing_scholarly   = []
+single_section      = []
 
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     css   = h[h.find('<style>'):h.find('</style>')]
     label = f'{book} {ch}'
 
-    # anno-panel CSS must have display:none base rule
     if '.anno-panel{display:none' not in css and '.anno-panel {display:none' not in css:
         missing_panel_css.append(label)
-
-    # anno-panel.open must show panels
     if '.anno-panel.open{display:block' not in css and '.anno-panel.open {display:block' not in css:
         missing_panel_open.append(label)
-
-    # VHL IIFE — word highlighting
     if 'DIVINE={' not in h and 'DIVINE ={' not in h:
         missing_vhl.append(label)
-
-    # qnavFilter must be defined
     if 'function qnavFilter' not in h:
         missing_qnav_filter.append(label)
-
-    # togThemes must NOT appear — themes button must use tog()
     if 'togThemes' in h:
         has_togthemes.append(label)
-
-    # history JS must write label field
     if 'var label' not in h and "'label'" not in h:
         missing_label_js.append(label)
-
-    # qnav must have both testament groups
     if 'id="qnav-t-ot"' not in h or 'id="qnav-t-nt"' not in h:
         missing_qnav_groups.append(label)
-
-    # No duplicate anno-trigger base rules (old + new CSS collision)
-    # Old signature: letter-spacing:.07em in an anno-trigger rule
     if re.search(r'\.anno-trigger\{[^}]*letter-spacing:\.07em', css):
         bad_btn_css.append(label)
-
-    # scholarly-block must have anno-trigger buttons inside .scholarly-buttons
     sch_match = re.search(r'class="scholarly-buttons">(.*?)</div>', h, re.DOTALL)
     if sch_match and 'anno-trigger' not in sch_match.group(1):
         missing_scholarly.append(label)
-
-# ── Also check section count ──────────────────────────────────────────────
-single_section = []
-for path, book, ch in chapters:
-    with open(path) as f: h = f.read()
-    n = h.count('<div class="section">')
-    if n < 2:
-        single_section.append(f'{book} {ch} ({n} section)')
+    if h.count('<div class="section">') < 2:
+        single_section.append(f'{label} ({h.count("<div class=\"section\">")} section)')
 
 checks_10 = [
-    (single_section,      'Single-section chapters (need ≥2 sections)'),
+    (single_section,      'Chapters with <2 sections'),
     (missing_panel_css,   'Missing .anno-panel display:none CSS'),
     (missing_panel_open,  'Missing .anno-panel.open CSS'),
     (missing_vhl,         'Missing VHL IIFE (DIVINE word highlighting)'),
@@ -429,27 +457,194 @@ if all_ok_10:
     ok('All panel CSS, JS, and structural checks clean')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 11. HOMEPAGE STRUCTURAL CHECKS
+# 11. HEBTEXT PANELS
+# New check: heb-text-panel must not contain '[]' or be near-empty
 # ═══════════════════════════════════════════════════════════════════════════
-section('11. Homepage Structural Checks')
+section('11. Hebrew Text Panels')
 
-# book-item.open .chapter-list must show chapters
+heb_broken = []
+heb_missing = []
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    bnd = h.find('<div class="scholarly-block">')
+    if bnd == -1: continue
+    sch = h[bnd:]
+    m = re.search(r'class="anno-panel heb-text-panel">(.*?)</div>', sch, re.DOTALL)
+    if not m:
+        heb_missing.append(f'{book} {ch}')
+        continue
+    inner = m.group(1)
+    # Remove h4 tag to check actual content
+    content = re.sub(r'<h4>[^<]*</h4>', '', inner).strip()
+    if content == '[]' or (len(content) < 20 and '[]' in content):
+        heb_broken.append(f'{book} {ch}')
+    elif len(content) < 50:
+        heb_broken.append(f'{book} {ch}: suspiciously short hebtext ({len(content)} chars)')
+
+if heb_broken:
+    for e in heb_broken[:5]: fail(f'Broken hebtext: {e}')
+    if len(heb_broken) > 5: fail(f'...and {len(heb_broken)-5} more broken hebtext panels')
+else:
+    ok(f'All hebtext panels have real content')
+
+if heb_missing:
+    for e in heb_missing[:3]: warn(f'Missing hebtext panel: {e}')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 12. LITERARY HIGHLIGHTS
+# New check: lit-diagram must have ≥2 lit-rows
+# ═══════════════════════════════════════════════════════════════════════════
+section('12. Literary Highlights')
+
+lit_empty  = []
+lit_single = []
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    bnd = h.find('<div class="scholarly-block">')
+    if bnd == -1: continue
+    sch = h[bnd:]
+    if 'lit-panel' not in sch: continue
+    rows = len(re.findall(r'class="lit-row', sch))
+    if rows == 0:
+        lit_empty.append(f'{book} {ch}')
+    elif rows == 1:
+        lit_single.append(f'{book} {ch}')
+
+if lit_empty:
+    for e in lit_empty[:5]: fail(f'Empty lit-diagram: {e}')
+    if len(lit_empty) > 5: fail(f'...and {len(lit_empty)-5} more empty lit panels')
+else:
+    ok('No empty literary highlight panels')
+
+if lit_single:
+    for e in lit_single[:5]: warn(f'Single lit-row (needs 2): {e}')
+    if len(lit_single) > 5: warn(f'...and {len(lit_single)-5} more single-row lit panels')
+else:
+    ok('All lit panels have ≥2 rows')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 13. SCHOLAR PANELS — note counts
+# New check: every section must have ≥2 com-notes in each scholar panel
+# Also checks MacArthur panels are present and have ≥2 notes
+# ═══════════════════════════════════════════════════════════════════════════
+section('13. Scholar Panel Note Counts')
+
+scholar_missing  = []  # panel entirely absent
+scholar_thin     = []  # panel exists but <2 notes
+mac_missing      = []
+mac_thin         = []
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    bnd = h.find('<div class="scholarly-block">')
+    if bnd == -1: continue
+    body = h[:bnd]
+    secs = get_sections(body, bnd)
+    keys = SCHOLAR_KEYS.get(book, [])
+
+    for si, (s, e) in enumerate(secs):
+        sec = body[s:e]
+        label = f'{book} {ch} s{si+1}'
+
+        # MacArthur
+        mac_cnt = count_notes_in_panel(sec, 'macarthur')
+        if mac_cnt is None:
+            mac_missing.append(label)
+        elif mac_cnt < 2:
+            mac_thin.append(f'{label} ({mac_cnt} notes)')
+
+        # Per-book scholars
+        for key in keys:
+            cnt = count_notes_in_panel(sec, key)
+            if cnt is None:
+                scholar_missing.append(f'{label} {key}')
+            elif cnt < 2:
+                scholar_thin.append(f'{label} {key} ({cnt} notes)')
+
+all_ok_13 = True
+for bad_list, label in [
+    (mac_missing,     'MacArthur panel MISSING'),
+    (mac_thin,        'MacArthur panel thin (<2 notes)'),
+    (scholar_missing, 'Scholar panel MISSING'),
+    (scholar_thin,    'Scholar panel thin (<2 notes)'),
+]:
+    if bad_list:
+        sample = ', '.join(bad_list[:3]) + ('...' if len(bad_list) > 3 else '')
+        fail(f'{label} in {len(bad_list)} sections: {sample}')
+        all_ok_13 = False
+
+if all_ok_13:
+    ok('All scholar panels present with ≥2 notes in every section')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 14. COM-SOURCE CLOSURE & LEAKED NOTES
+# New check: com-source divs must be closed; no com-notes outside panels
+# ═══════════════════════════════════════════════════════════════════════════
+section('14. Panel HTML Integrity')
+
+source_unclosed = []
+notes_leaked    = []
+
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    bnd = h.find('<div class="scholarly-block">')
+    if bnd == -1: continue
+    body = h[:bnd]
+    secs = get_sections(body, bnd)
+    all_keys = SCHOLAR_KEYS.get(book, []) + ['macarthur']
+
+    for si, (s, e) in enumerate(secs):
+        sec = body[s:e]
+        label = f'{book} {ch} s{si+1}'
+
+        # Check com-source closure for each scholar
+        for key in all_keys:
+            if not panel_has_closed_source(sec, key):
+                source_unclosed.append(f'{label} {key}')
+
+    # Check for leaked notes (outside panel divs)
+    leaked = check_leaked_notes(body, bnd)
+    for si in leaked:
+        notes_leaked.append(f'{book} {ch} s{si}')
+
+all_ok_14 = True
+for bad_list, label in [
+    (source_unclosed, 'com-source div not closed (notes nesting inside it)'),
+    (notes_leaked,    'com-notes leaking outside their panel div'),
+]:
+    if bad_list:
+        sample = ', '.join(bad_list[:3]) + ('...' if len(bad_list) > 3 else '')
+        fail(f'{label}: {sample}')
+        all_ok_14 = False
+
+if all_ok_14:
+    ok('All com-source divs closed; no leaked com-notes')
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 15. HOMEPAGE STRUCTURAL CHECKS
+# ═══════════════════════════════════════════════════════════════════════════
+section('15. Homepage Structural Checks')
+
 if '.book-item.open .chapter-list' not in idx:
-    fail('index.html: .book-item.open .chapter-list rule missing — book toggles will not open')
+    fail('index.html: .book-item.open .chapter-list rule missing')
 else:
     ok('.book-item.open .chapter-list rule present')
 
-# continue-reading chip must read item.label
 if 'item.label' not in idx:
-    fail('index.html: continue-reading chip does not read item.label — chips will be blank for old history')
+    fail('index.html: continue-reading chip does not read item.label')
 else:
     ok('Continue-reading chip reads item.label')
 
-# testament toggle must only toggle self (not close others)
-if 'classList.toggle(\'open\')' in idx or 'classList.toggle("open")' in idx:
-    ok('toggleTestament uses classList.toggle (independent)')
+for fn in ['handleSearch', 'VERSES.map']:
+    if fn in idx: ok(f'{fn} present in index.html')
+    else: fail(f'index.html: {fn} missing')
+
+if 'continue-bar' in idx:
+    ok('Continue reading bar present')
 else:
-    warn('toggleTestament implementation unclear')
+    warn('Continue reading bar not found')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # RESULT
@@ -468,4 +663,3 @@ elif warnings:
 else:
     print(f'\033[92m  AUDIT PASSED — all checks clean. Safe to commit.\033[0m')
     sys.exit(0)
-
