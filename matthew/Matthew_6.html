@@ -12,6 +12,26 @@
 <link rel="apple-touch-icon" href="../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
   --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
@@ -58,22 +78,16 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
 .verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
 .btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
-
 .anno-trigger{
-  display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;
+  display:inline-flex;align-items:center;cursor:pointer;
   border:1px solid;border-radius:5px;
   font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
-  letter-spacing:.02em;text-transform:none;
-  padding:.28rem .68rem;
-  position:relative;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
   transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
 }
-.anno-trigger::after{content:'+';font-size:.7rem;font-weight:400;opacity:.6;line-height:1;transition:transform .2s,opacity .15s;}
-.anno-trigger.active::after{transform:rotate(45deg);opacity:.9;}
 .anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
-.anno-trigger:active{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 2px rgba(0,0,0,.4);}
-
+.anno-trigger:active{transform:translateY(0);}
 .anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
 .anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
 .anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
@@ -84,12 +98,10 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
 .anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
 .anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
 .anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
 .anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
   color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
@@ -100,16 +112,15 @@ main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
 .anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
   color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
 .scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
 .scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
-
 .scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
 .scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
 .anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
 .anno-panel.open{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
@@ -218,6 +229,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
 .vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
 @keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
 .authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
 .authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
 .authorship-toggle:hover{background:rgba(255,255,255,.03);}
@@ -249,7 +261,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
 .qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
 .qnav-body{overflow-y:auto;}
-.qnav-testament-header{padding:.5rem .9rem .3rem;font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a5a14;border-top:1px solid rgba(58,46,24,.4);margin-top:.25rem;}
+.qnav-testament{border-bottom:1px solid rgba(58,46,24,.25);}.qnav-testament-btn{width:100%;background:transparent;border:none;cursor:pointer;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center;transition:background .12s;-webkit-appearance:none;}.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}.qnav-testament-label{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;}.qnav-testament-chev{font-size:.48rem;color:#c9a84c;transition:transform .2s;}.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}.qnav-testament-books{display:none;}.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
 .qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
 .qnav-book-btn:hover{background:rgba(255,255,255,.04);}
@@ -259,27 +271,282 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
 .qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
 .qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
-.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;display:none;}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;}
 .qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
-.qnav-testament{border-bottom:1px solid rgba(58,46,24,.3);}
-.qnav-testament-btn{
-  width:100%;background:none;border:none;cursor:pointer;
-  padding:.5rem .9rem;display:flex;justify-content:space-between;align-items:center;
-  transition:background .12s;
-}
-.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}
-.qnav-testament-label{
-  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--gold-dim);
-}
-.qnav-testament-chev{font-size:.48rem;color:var(--gold-dim);transition:transform .2s;}
-.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}
-.qnav-testament-books{display:none;}
-.qnav-testament.open .qnav-testament-books{display:block;}
 .qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
 .qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
 .qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
 .qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
 </style>
 </head>
 <body>
@@ -317,35 +584,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <main>
 <header>
 <h1>Matthew 6</h1>
-<p>Almsgiving, Prayer, Fasting; Treasure and Anxiety</p>
-</header>Greek</div>
-<div class="legend-item"><div class="legend-dot dot-history"></div>Historical</div>
-<div class="legend-item"><div class="legend-dot dot-context"></div>Context</div>
-<div class="legend-item"><div class="legend-dot dot-cross"></div>Cross-Ref</div>
-<div class="legend-item"><div class="legend-dot dot-places"></div>Places</div>
-<div class="legend-item"><div class="legend-dot dot-timeline"></div>Timeline</div>
-</div>
+<p>The Lord's Prayer; Fasting and Rewards; Anxiety and Trust; Kingdom Priorities</p>
+</header>
 <div class="authorship-block">
 <button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9). One of the twelve apostles; eyewitness. Unanimous early tradition (Papias, c.AD 125) attributes this gospel to him.</p></div>
-<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80–90, though some date it before AD 70. Written for a Jewish-Christian audience, probably in Antioch of Syria. The five-discourse structure deliberately echoes the five books of Moses.</p></div>
-<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">A Jewish-Christian community needed a comprehensive account of Jesus as fulfilment of Israel's Scripture — simultaneously the Davidic Messiah, the new Moses, the Son of God, and the Servant of Isaiah. Matthew is the most Jewish of the four gospels, saturated with OT quotation, and closes with the Great Commission sending the message to all nations.</p></div>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
 </div>
 </div>
-<div class="section"><div class="section-header">Verses 1&ndash;18 &mdash; Almsgiving, Prayer, and Fasting: The Right Audience</div><span class="verse-text"><span class="verse-num">1</span>"Be careful not to practice your righteousness in front of others to be seen by them. If you do, you will have no reward from your Father in heaven.</span><span class="verse-text"><span class="verse-num">2</span>"So when you give to the needy, do not announce it with trumpets, as the hypocrites do in the synagogues and on the streets, to be honored by others. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">3</span>But when you give to the needy, do not let your left hand know what your right hand is doing,</span><span class="verse-text"><span class="verse-num">4</span>so that your giving may be in secret. Then your Father, who sees what is done in secret, will reward you.</span><span class="verse-text"><span class="verse-num">5</span>"And when you pray, do not be like the hypocrites, for they love to pray standing in the synagogues and on the street corners to be seen by others. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">6</span>But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you.</span><span class="verse-text"><span class="verse-num">7</span>And when you pray, do not keep on babbling like pagans, for they think they will be heard because of their many words.</span><span class="verse-text"><span class="verse-num">8</span>Do not be like them, for your Father knows what you need before you ask him.</span><span class="verse-text"><span class="verse-num">9</span>"This, then, is how you should pray: 'Our Father in heaven, hallowed be your name,</span><span class="verse-text"><span class="verse-num">10</span>your kingdom come, your will be done, on earth as it is in heaven.</span><span class="verse-text"><span class="verse-num">11</span>Give us today our daily bread.</span><span class="verse-text"><span class="verse-num">12</span>And forgive us our debts, as we also have forgiven our debtors.</span><span class="verse-text"><span class="verse-num">13</span>And lead us not into temptation, but deliver us from the evil one.'</span><span class="verse-text"><span class="verse-num">14</span>For if you forgive other people when they sin against you, your heavenly Father will also forgive you.</span><span class="verse-text"><span class="verse-num">15</span>But if you do not forgive others their sins, your Father will not forgive your sins.</span><span class="verse-text"><span class="verse-num">16</span>"When you fast, do not look somber as the hypocrites do, for they disfigure their faces to show others they are fasting. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">17</span>But when you fast, put oil on your head and wash your face,</span><span class="verse-text"><span class="verse-num">18</span>so that it will not be obvious to others that you are fasting, but only to your Father, who is unseen; and your Father, who sees what is done in secret, will reward you."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt6-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt6-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt6-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt6-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt6-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">ὑποκριτής</span> <span class="tlit">hypokritēs</span> — <strong>hypocrite</strong>: Vv.2,5,16: the theatrical term for an actor — one who plays a role for an audience. Jesus's fundamental critique of the three piety practices (almsgiving, prayer, fasting) is not their content but their audience. The hypocrites perform for human approval; Jesus's community performs for God alone. The diagnostic question for every religious act: who am I doing this for?</p><p><span class="hebrew-word">ἀπέχουσιν τὸν μισθὸν αὐτῶν</span> <span class="tlit">apechousin ton misthon autōn</span> — <strong>they have received their reward in full</strong>: Vv.2,5,16: a commercial banking term (apechō = to receive payment in full, to receipt a transaction). The hypocrites' reward is the human admiration they sought — and they have received it completely. There is nothing left to collect from God. The payment is already in full.</p></div><div id="mt6-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The three practices of Jewish piety — almsgiving, prayer, fasting — are structured by a single repeated diagnosis (don't perform for human approval) and a single repeated promise (your Father who sees in secret will reward you). The Lord's Prayer (vv.9–13) is set within the teaching on prayer as the positive model: brief, God-centred, community-shaped ("our Father," "our daily bread," "our debts"). It is not a formula to be recited but a pattern to be followed.</p></div><div id="mt6-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ezek 36:23</span><span class="ref-text">Let me show the holiness of my great name — "hallowed be your name" in the Lord's Prayer echoes Ezekiel's new covenant promise that God will hallow his own name through Israel's restoration.</span></li><li><span class="ref-cite">Isa 58:3–7</span><span class="ref-text">Why have we fasted and you have not seen it? — God's critique of fasting for show. Matthew 6:16–18 echoes Isaiah's critique of performative religiosity.</span></li></ul></div><div id="mt6-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:1</span><p>Practice your righteousness before your Father, not before others. The word translated "to be seen" (theathenai — to be theatred, put on display) gives us the theatrical root of "hypocrite." Jesus is not condemning public religion but the orientation of public religion toward human rather than divine approval.</p></div><div class="com-note"><span class="com-ref">6:9</span><p>Our Father in heaven. The address changes everything. The Gentiles babble many words because they are trying to get an unknown deity's attention. The disciple begins with the assurance of relationship: Father. The prayer that follows flows from this certainty, not toward it.</p></div><div class="com-note"><span class="com-ref">6:12</span><p>Forgive us our debts as we have forgiven our debtors. The only petition in the Lord's Prayer that is immediately unpacked (vv.14–15). Forgiveness received and forgiveness given are linked — not because our forgiveness earns God's, but because a person who has genuinely received God's forgiveness cannot refuse to extend it to others.</p></div></div></div><div class="section"><div class="section-header">Verses 19&ndash;34 &mdash; Treasure, Sight, and Freedom from Anxiety</div><span class="verse-text"><span class="verse-num">19</span>"Do not store up for yourselves treasures on earth, where moths and vermin destroy, and where thieves break in and steal.</span><span class="verse-text"><span class="verse-num">20</span>But store up for yourselves treasures in heaven, where moths and vermin do not destroy, and where thieves do not break in and steal.</span><span class="verse-text"><span class="verse-num">21</span>For where your treasure is, there your heart will be also.</span><span class="verse-text"><span class="verse-num">22</span>"The eye is the lamp of the body. If your eyes are healthy, your whole body will be full of light.</span><span class="verse-text"><span class="verse-num">23</span>But if your eyes are unhealthy, your whole body will be full of darkness. If then the light within you is darkness, how great is that darkness!</span><span class="verse-text"><span class="verse-num">24</span>"No one can serve two masters. Either you will hate the one and love the other, or you will be devoted to the one and despise the other. You cannot serve both God and money.</span><span class="verse-text"><span class="verse-num">25</span>"Therefore I tell you, do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?</span><span class="verse-text"><span class="verse-num">26</span>Look at the birds of the air; they do not sow or reap or store away in barns, and yet your heavenly Father feeds them. Are you not much more valuable than they?</span><span class="verse-text"><span class="verse-num">27</span>Can any one of you by worrying add a single hour to your life?</span><span class="verse-text"><span class="verse-num">28</span>And why do you worry about clothes? See how the flowers of the field grow. They do not labor or spin.</span><span class="verse-text"><span class="verse-num">29</span>Yet I tell you that not even Solomon in all his splendor was dressed like one of these.</span><span class="verse-text"><span class="verse-num">30</span>If that is how God clothes the grass of the field, which is here today and tomorrow is thrown into the fire, will he not much more clothe you—you of little faith?</span><span class="verse-text"><span class="verse-num">31</span>So do not worry, saying, "What shall we eat?" or "What shall we drink?" or "What shall we wear?"</span><span class="verse-text"><span class="verse-num">32</span>For the pagans run after all these things, and your heavenly Father knows that you need them.</span><span class="verse-text"><span class="verse-num">33</span>But seek first his kingdom and his righteousness, and all these things will be given to you as well.</span><span class="verse-text"><span class="verse-num">34</span>Therefore do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt6-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt6-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt6-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'mt6-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="mt6-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">μεριμνάω</span> <span class="tlit">merimnaō</span> — <strong>worry / be anxious</strong>: V.25,27,28,31,34: the word appears six times in vv.25–34. Merimnaō literally means to be pulled in different directions — the psychic experience of having your attention divided between present need and uncertain future. Jesus addresses the root of worry: a divided heart (v.24 — you cannot serve two masters). The antidote is not positive thinking but a re-ordered attachment: seek first the kingdom.</p><p><span class="hebrew-word">ὀλιγόπιστος</span> <span class="tlit">oligopistos</span> — <strong>little faith</strong>: V.30: Jesus's gentle rebuke — not "no faith" but "little faith." The disciples' anxiety reveals the smallness of their trust in the Father's provision, not its absence. This word (oligopistos) is Matthew's distinctive term for disciples under pressure (8:26; 14:31; 16:8) — faith that is real but insufficient for the circumstances. Jesus addresses it with argument and invitation, not condemnation.</p></div><div id="mt6-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second section of ch.6 moves from the three piety practices to the three anxieties: treasure (vv.19–21), sight (vv.22–23), and service (v.24) provide the theological diagnosis; the birds and flowers (vv.26–30) provide the analogical argument; and vv.31–34 provide the positive alternative — seek first the kingdom. The logic is: worry is the symptom of a heart whose treasure is on earth (v.21) and whose eye is single toward money (v.24). Re-order the heart and the worry is resolved.</p></div><div id="mt6-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">1 Kgs 10:1–7</span><span class="ref-text">Solomon in all his splendour (v.29). The flowers of the field exceed even the peak of human royal magnificence — God's artistry in creation exceeds human achievement.</span></li><li><span class="ref-cite">Ps 55:22</span><span class="ref-text">Cast your burden on the LORD and he will sustain you — the OT basis for the anxiety teaching. Jesus is extending the Psalmist's invitation into a sustained argument from God's faithfulness in creation.</span></li></ul></div><div id="mt6-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:21</span><p>Where your treasure is, there your heart will be also. The most psychologically acute observation in the Sermon. Jesus does not say: where your heart is, there your treasure will be — as if we first commit our heart and then allocate our resources accordingly. He reverses it: your heart follows your investment. You can redirect your heart by redirecting your treasure. This is the practical logic of discipleship: put your resources toward the kingdom and your heart will follow.</p></div><div class="com-note"><span class="com-ref">6:24</span><p>You cannot serve both God and money (mammon). The word mammon is Aramaic for wealth/property. Jesus does not say money is evil — he says it cannot be a master alongside God. The claim is absolute: there is no middle position. You are either serving God (with money as a tool) or serving money (with God as insurance). The divided service is not the problem — there is no divided service; there is only the question of which one rules.</p></div><div class="com-note"><span class="com-ref">6:33</span><p>Seek first his kingdom and his righteousness. The positive command at the centre of the anxiety teaching. The solution to divided treasure is not less concern for food and clothing but a re-ordered priority: the kingdom first. The promise attached is not that you will get everything you want but that "all these things will be given to you as well" — the necessities of life are in the Father's hands for those who seek his kingdom.</p></div></div></div>
+<div class="section"><div class="section-header">Verses 1&ndash;18 &mdash; Almsgiving, Prayer, and Fasting: The Right Audience</div><span class="verse-text"><span class="verse-num">1</span>"Be careful not to practice your righteousness in front of others to be seen by them. If you do, you will have no reward from your Father in heaven.</span><span class="verse-text"><span class="verse-num">2</span>"So when you give to the needy, do not announce it with trumpets, as the hypocrites do in the synagogues and on the streets, to be honored by others. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">3</span>But when you give to the needy, do not let your left hand know what your right hand is doing,</span><span class="verse-text"><span class="verse-num">4</span>so that your giving may be in secret. Then your Father, who sees what is done in secret, will reward you.</span><span class="verse-text"><span class="verse-num">5</span>"And when you pray, do not be like the hypocrites, for they love to pray standing in the synagogues and on the street corners to be seen by others. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">6</span>But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you.</span><span class="verse-text"><span class="verse-num">7</span>And when you pray, do not keep on babbling like pagans, for they think they will be heard because of their many words.</span><span class="verse-text"><span class="verse-num">8</span>Do not be like them, for your Father knows what you need before you ask him.</span><span class="verse-text"><span class="verse-num">9</span>"This, then, is how you should pray: 'Our Father in heaven, hallowed be your name,</span><span class="verse-text"><span class="verse-num">10</span>your kingdom come, your will be done, on earth as it is in heaven.</span><span class="verse-text"><span class="verse-num">11</span>Give us today our daily bread.</span><span class="verse-text"><span class="verse-num">12</span>And forgive us our debts, as we also have forgiven our debtors.</span><span class="verse-text"><span class="verse-num">13</span>And lead us not into temptation, but deliver us from the evil one.'</span><span class="verse-text"><span class="verse-num">14</span>For if you forgive other people when they sin against you, your heavenly Father will also forgive you.</span><span class="verse-text"><span class="verse-num">15</span>But if you do not forgive others their sins, your Father will not forgive your sins.</span><span class="verse-text"><span class="verse-num">16</span>"When you fast, do not look somber as the hypocrites do, for they disfigure their faces to show others they are fasting. Truly I tell you, they have received their reward in full.</span><span class="verse-text"><span class="verse-num">17</span>But when you fast, put oil on your head and wash your face,</span><span class="verse-text"><span class="verse-num">18</span>so that it will not be obvious to others that you are fasting, but only to your Father, who is unseen; and your Father, who sees what is done in secret, will reward you."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt6-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt6-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt6-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt6-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt6-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt6-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt6-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt6-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt6-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt6-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt6-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The three practices of Jewish piety — almsgiving, prayer, fasting — are structured by a single repeated diagnosis (don't perform for human approval) and a single repeated promise (your Father who sees in secret will reward you). The Lord's Prayer (vv.9–13) is set within the teaching on prayer as the positive model: brief, God-centred, community-shaped ("our Father," "our daily bread," "our debts"). It is not a formula to be recited but a pattern to be followed.</p></div><div id="mt6-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ezek 36:23</span><span class="ref-text">Let me show the holiness of my great name — "hallowed be your name" in the Lord's Prayer echoes Ezekiel's new covenant promise that God will hallow his own name through Israel's restoration.</span></li><li><span class="ref-cite">Isa 58:3–7</span><span class="ref-text">Why have we fasted and you have not seen it? — God's critique of fasting for show. Matthew 6:16–18 echoes Isaiah's critique of performative religiosity.</span></li></ul></div><div id="mt6-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:5-8</span><p>Calvin: Christ does not abolish public prayer but condemns the love of display that uses prayer as a vehicle for self-promotion. The person who prays to be seen has received their full reward -- human praise. The one who prays in secret receives what human praise can never provide: the Father's own attention and response.</p></div><div class="com-note"><span class="com-ref">6:9-13</span><p>Calvin on 'your kingdom come': This petition encompasses the destruction of Satan's kingdom and the establishment of God's reign in human hearts. It is not a prayer for geographical or political power but for the progressive realisation of covenant rule wherever human beings are brought under God's governance by the Spirit.</p></div></div><div id="mt6-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">6:1-4</span><p>The NET note on 'they have received their reward in full' explains apechein as commercial receipt language -- the transaction is complete, no further payment is due. The performer who gives for praise has been paid in full by the praise received. No further divine reward remains.</p></div><div class="com-note"><span class="com-ref">6:9-13</span><p>The NET note on epiousion (daily) surveys three interpretations: bread for today, bread for tomorrow, or bread that is sufficient/necessary. The petition is most naturally a prayer for present-moment provision, not eschatological bread -- the manna-provision theology of the wilderness.</p></div></div><div id="mt6-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">6:1-4</span><p>Robertson notes that hypokritas originally meant an actor playing a role. The alms-trumpeting in synagogues and streets is performance religion: the audience is human, the reward is human praise. All three practices (alms, prayer, fasting) come with a divine reward for the genuine practitioner and a human reward for the performer.</p></div><div class="com-note"><span class="com-ref">6:9-13</span><p>Robertson provides detailed lexical notes on the Lord's Prayer: hallowed (hagiastheto, aorist passive imperative); your kingdom come (eltheto, aorist imperative); daily bread (epiousion, a rare word, possibly 'for today'); forgive us our debts (opheilemata, literally financial debts used metaphorically for moral obligations).</p></div></div><div id="mt6-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">6:5-8</span><p>Chrysostom: Enter your inner room and shut your door -- this does not forbid public prayer but private posturing. The one who seeks human attention in prayer has received their reward. Prayer in the inner room is seen by the Father who sees in secret and rewards openly.</p></div><div class="com-note"><span class="com-ref">6:9-13</span><p>Augustine on the Lord's Prayer: Seven petitions -- three for eternal goods (hallowed be your name, your kingdom come, your will be done) and four for temporal goods (daily bread, forgiveness, deliverance from temptation, rescue from evil). The eternal goods are the foundation; the temporal goods are the scaffolding of our earthly journey.</p></div></div></div><div class="section"><div class="section-header">Verses 19&ndash;34 &mdash; Treasure, Sight, and Freedom from Anxiety</div><span class="verse-text"><span class="verse-num">19</span>"Do not store up for yourselves treasures on earth, where moths and vermin destroy, and where thieves break in and steal.</span><span class="verse-text"><span class="verse-num">20</span>But store up for yourselves treasures in heaven, where moths and vermin do not destroy, and where thieves do not break in and steal.</span><span class="verse-text"><span class="verse-num">21</span>For where your treasure is, there your heart will be also.</span><span class="verse-text"><span class="verse-num">22</span>"The eye is the lamp of the body. If your eyes are healthy, your whole body will be full of light.</span><span class="verse-text"><span class="verse-num">23</span>But if your eyes are unhealthy, your whole body will be full of darkness. If then the light within you is darkness, how great is that darkness!</span><span class="verse-text"><span class="verse-num">24</span>"No one can serve two masters. Either you will hate the one and love the other, or you will be devoted to the one and despise the other. You cannot serve both God and money.</span><span class="verse-text"><span class="verse-num">25</span>"Therefore I tell you, do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?</span><span class="verse-text"><span class="verse-num">26</span>Look at the birds of the air; they do not sow or reap or store away in barns, and yet your heavenly Father feeds them. Are you not much more valuable than they?</span><span class="verse-text"><span class="verse-num">27</span>Can any one of you by worrying add a single hour to your life?</span><span class="verse-text"><span class="verse-num">28</span>And why do you worry about clothes? See how the flowers of the field grow. They do not labor or spin.</span><span class="verse-text"><span class="verse-num">29</span>Yet I tell you that not even Solomon in all his splendor was dressed like one of these.</span><span class="verse-text"><span class="verse-num">30</span>If that is how God clothes the grass of the field, which is here today and tomorrow is thrown into the fire, will he not much more clothe you—you of little faith?</span><span class="verse-text"><span class="verse-num">31</span>So do not worry, saying, "What shall we eat?" or "What shall we drink?" or "What shall we wear?"</span><span class="verse-text"><span class="verse-num">32</span>For the pagans run after all these things, and your heavenly Father knows that you need them.</span><span class="verse-text"><span class="verse-num">33</span>But seek first his kingdom and his righteousness, and all these things will be given to you as well.</span><span class="verse-text"><span class="verse-num">34</span>Therefore do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt6-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt6-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt6-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt6-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt6-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt6-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt6-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt6-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt6-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4></div><div id="mt6-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt6-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second section of ch.6 moves from the three piety practices to the three anxieties: treasure (vv.19–21), sight (vv.22–23), and service (v.24) provide the theological diagnosis; the birds and flowers (vv.26–30) provide the analogical argument; and vv.31–34 provide the positive alternative — seek first the kingdom. The logic is: worry is the symptom of a heart whose treasure is on earth (v.21) and whose eye is single toward money (v.24). Re-order the heart and the worry is resolved.</p></div><div id="mt6-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">1 Kgs 10:1–7</span><span class="ref-text">Solomon in all his splendour (v.29). The flowers of the field exceed even the peak of human royal magnificence — God's artistry in creation exceeds human achievement.</span></li><li><span class="ref-cite">Ps 55:22</span><span class="ref-text">Cast your burden on the LORD and he will sustain you — the OT basis for the anxiety teaching. Jesus is extending the Psalmist's invitation into a sustained argument from God's faithfulness in creation.</span></li></ul></div><div id="mt6-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">6:24</span><p>Calvin on serving two masters: Wealth always wants to be the supreme good. The person who tries to serve both will inevitably find that one governs when interests conflict. The exclusive claim of covenant allegiance requires that money remain a servant, never a master.</p></div><div class="com-note"><span class="com-ref">6:25-34</span><p>Calvin on anxiety: Christ does not forbid prudent care for the future -- he forbids the anxious concern that treats earthly provisions as the foundation of security rather than the Father's provision. The distinguishing mark: does planning proceed from trust in the Father, or from the belief that security depends entirely on your own provision?</p></div></div><div id="mt6-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">6:24</span><p>The NET note on mammon traces the word to Aramaic mamon -- property, possessions, wealth. Mammon is treated as a quasi-divine power: a rival claimant to the loyalty that belongs to God alone. The two-masters structure identifies wealth as a rival deity, not merely a competing priority.</p></div><div class="com-note"><span class="com-ref">6:33</span><p>The NET note on 'seek first the kingdom of God and his righteousness' discusses whether dikaiosyne here is covenant righteousness (the character required of kingdom citizens) or imputed righteousness. In Matthew's usage, dikaiosyne consistently refers to covenantal conduct.</p></div></div><div id="mt6-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">6:19-21</span><p>Robertson notes 'rust' (brosis, literally eating/consuming) includes corrosion and the damage done by insects and rodents to stored goods. The treasure in heaven is not subject to any form of entropy. The heart-treasure link (v.21) is the chapter's psychological insight: where you invest is where you live.</p></div><div class="com-note"><span class="com-ref">6:25-34</span><p>Robertson observes that 'do not be anxious' (me merimnate) is a present imperative with the negative -- stop the ongoing practice of anxiety. The birds and lilies are providential arguments from the lesser to the greater: if God cares for them, how much more for those whose value infinitely exceeds theirs.</p></div></div><div id="mt6-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">6:19-21</span><p>Chrysostom: Where your treasure is, there your heart will be also -- this is the law of the spiritual life. The person invested in earthly things has an earthbound heart. The person invested in heaven has a heart that rises with their treasure. The command to store heavenly treasure is simultaneously a command about where your heart will live.</p></div><div class="com-note"><span class="com-ref">6:33</span><p>Augustine: Seek first the kingdom of God and his righteousness -- when the kingdom is first, all other things are received in their proper order. When anything else is first, even the other things are disordered. The right ordering of desire is the foundation of all Christian ethics.</p></div></div></div>
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
-<button class="anno-trigger people" onclick="tog(this,'mt6-ppl')"><span>People</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger translations" onclick="tog(this,'mt6-trans')"><span>Translations</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger sources" onclick="tog(this,'mt6-src')"><span>Ancient Sources</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger reception" onclick="tog(this,'mt6-rec')"><span>Reception History</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger literary" onclick="tog(this,'mt6-lit')"><span>Literary Structure</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger hebrew-text" onclick="tog(this,'mt6-hebtext')"><span>Greek-Rooted Reading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger threading" onclick="tog(this,'mt6-thread')"><span>Intertextual Threading</span><span class="chev">&#9660;</span></button>
-<button class="anno-trigger" style="color:#8840e0;border-color:#501890;background:rgba(80,48,128,.12);display:inline-flex;align-items:center;gap:.22rem;cursor:pointer;border:1px solid;font-family:'Source Sans 3',sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;transition:all .18s;" onclick="tog(this,'mt6-themes')"><span>Theological Themes</span><span class="chev">&#9660;</span></button>
+<button class="anno-trigger people" onclick="tog(this,'mt6-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt6-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt6-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt6-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt6-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt6-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt6-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt6-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt6-themes')"><span>Theological Themes</span></button>
 </div>
-<div id="mt6-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Addressed as "you" throughout</div><div class="person-text">The Sermon is addressed to the formed community — those who have left nets and followed. The demands presuppose the prior act of discipleship.</div></div></div></div><div id="mt6-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">6:9–13 — The Lord's Prayer</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Our Father in heaven, hallowed be your name, your kingdom come, your will be done, on earth as it is in heaven. Give us today our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from the evil one."</td></tr><tr><td class="t-label">Note</td><td>Not a formula to recite but a pattern to follow. Six petitions: three God-centred (name, kingdom, will) and three community-centred (bread, forgiveness, deliverance). The order matters: God's glory before human need.</td></tr></table></div><div id="mt6-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The Lord's Prayer in the early church</div><div class="source-quote">The Didache (c.AD 100) directs Christians to pray the Lord's Prayer three times daily — the earliest evidence of its liturgical use.</div><div class="source-note">The Prayer was embedded in worship practice within a generation of the Sermon.</div></div><div class="source-block"><div class="source-title">Mammon</div><div class="source-quote">An Aramaic loanword for wealth or property. Not inherently evil — the problem is making it a master. Paul's "the love of money is a root of all kinds of evil" (1 Tim 6:10) echoes the same concern.</div><div class="source-note">The Aramaic word shows the Sermon's Jewish oral tradition roots.</div></div></div><div id="mt6-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Lord's Prayer across traditions</div><div class="rec-text">The most universally memorised Christian text. Used in Eastern and Western liturgy, in private devotion, and as the model for Christian prayer since the first century.</div></div><div class="rec-block"><div class="rec-who">Seek first the kingdom</div><div class="rec-text">6:33 has been the foundational text for Christian social ethics and mission — the priority of God's kingdom over every other concern, and the promise that basic needs are within the Father's provision.</div></div></div><div id="mt6-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Three piety practices — vv.1–18</span><span class="lit-text">Almsgiving, prayer, fasting — the right audience; the Lord's Prayer as the model</span></div><div class="lit-row"><span class="lit-label">Treasure and anxiety — vv.19–34</span><span class="lit-text">Where is your treasure? Serve one master; birds and flowers; seek first the kingdom</span></div><div class="lit-note">Chapter 6 is the Sermon's interior — dealing with the hidden motivations of religious practice (audience) and the divided attachments that produce anxiety (treasure). The Lord's Prayer sits at the centre as the model of undivided, God-centred life.</div></div></div><div id="mt6-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#d4c090;line-height:1.75;"><sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">9–10</sup> "Our <span class="dn-divine">Father</span> in heaven — hallowed be your name, your <span class="dn-key">kingdom</span> come." <sup style="font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;">33</sup> "Seek first his <span class="dn-key">kingdom</span> and his righteousness."</p></div><div id="mt6-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">6:9</span><span class="thread-arrow">→</span><span class="thread-target">Ezek 36:23</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Hallowed be your name — God's promise to hallow his own name through his people's restoration.</div></div><div class="thread-item backward"><div class="thread-header"><span class="thread-anchor">6:29</span><span class="thread-arrow">→</span><span class="thread-target">1 Kgs 10:4–7</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Solomon in all his splendour — exceeded by the wildflowers. God's creation exceeds human achievement.</div></div><div class="thread-item forward"><div class="thread-header"><span class="thread-anchor">6:33</span><span class="thread-arrow">→</span><span class="thread-target">Matt 25:31–46</span><span class="thread-type echo">Echo</span></div><div class="thread-text">Seek first the kingdom → the kingdom is where the hungry are fed, the stranger welcomed. The prayer and the practice are inseparable.</div></div></div><div id="mt6-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 193.6,77.5 193.6,162.5 120.0,205.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Right Audience</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Prayer</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Undivided Heart</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Anxiety</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Kingdom First</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Providence</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 6 is the Sermon's heart: the question of audience (who are you doing this for?) and the question of treasure (where is your heart?). The Lord's Prayer answers both. Kingdom-first living (6:33) is the practical integration of everything in the chapter.</p></div>
+<div id="mt6-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Addressed as "you" throughout</div><div class="person-text">The Sermon is addressed to the formed community — those who have left nets and followed. The demands presuppose the prior act of discipleship.</div></div></div></div><div id="mt6-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 6 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Our Father in heaven, hallowed be your name, your kingdom come, your will be done, on earth as it is in heaven. Give us today our daily bread. And forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from the evil one."</td></tr><tr><td class="t-label">Note</td><td>Not a formula to recite but a pattern to follow. Six petitions: three God-centred (name, kingdom, will) and three community-centred (bread, forgiveness, deliverance). The order matters: God's glory before human need.</td></tr></table></div><div id="mt6-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The Lord's Prayer in the early church</div><div class="source-quote">The Didache (c.AD 100) directs Christians to pray the Lord's Prayer three times daily — the earliest evidence of its liturgical use.</div><div class="source-note">The Prayer was embedded in worship practice within a generation of the Sermon.</div></div><div class="source-block"><div class="source-title">Mammon</div><div class="source-quote">An Aramaic loanword for wealth or property. Not inherently evil — the problem is making it a master. Paul's "the love of money is a root of all kinds of evil" (1 Tim 6:10) echoes the same concern.</div><div class="source-note">The Aramaic word shows the Sermon's Jewish oral tradition roots.</div></div></div><div id="mt6-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Lord's Prayer across traditions</div><div class="rec-text">The most universally memorised Christian text. Used in Eastern and Western liturgy, in private devotion, and as the model for Christian prayer since the first century.</div></div><div class="rec-block"><div class="rec-who">Seek first the kingdom</div><div class="rec-text">6:33 has been the foundational text for Christian social ethics and mission — the priority of God's kingdom over every other concern, and the promise that basic needs are within the Father's provision.</div></div></div><div id="mt6-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">Almsgiving, prayer, and fasting all performed before God not men -- the reward-structure governs the practice. Human praise and divine attention are mutually exclusive rewards.</div><div class="lit-row"><span class="lit-label">Two Treasures, Two Masters, One Allegiance — 6:19-34</span><span class="lit-text">Store treasure in heaven; serve God not mammon; seek the kingdom first. The life oriented toward the eternal rather than the anxious management of the temporal.</span></div></div></div><div id="mt6-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[('hypokrites', 'hypokritēs', 'Hypocrite / actor', 'Originally a stage actor playing a role. In the Gospels: the person who performs religious practice for human approval. The hypocrite has chosen the wrong audience.'), ('epiousion', 'epiousion', 'Daily / for this day', "The hapax legomenon of the Lord's Prayer -- attested almost only in Matthew 6:11. Most likely meaning: the bread needed for today, present-moment provision.")]</div><div id="mt6-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">6:12</span><span class="tx-issue">Forgive us our debts as we have forgiven our debtors</span></div><div class="tx-variants">Matthew uses opheilemata (debts) where Luke uses hamartias (sins). The debt metaphor treats sin as a moral obligation unpaid.</div><div class="tx-sig">The reception of forgiveness is structurally connected to its extension. Neither is a condition for salvation; both are characteristics of the same transformed character.</div></div></div><div id="mt6-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Lord's Prayer: Model or Formula?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A model for the structure and content of prayer</div><div class="db-proponents">Most Protestants</div><div class="db-argument">Pray like this indicates a model, not a verbatim formula. The prayer teaches priorities, posture, and petitions appropriate to kingdom citizens.</div></div><div class="db-position"><div class="db-pos-name">A specific formula to be repeated</div><div class="db-proponents">Catholic and Anglican tradition</div><div class="db-argument">Pray like this combined with Luke's parallel ('when you pray, say') supports regular verbatim use as a liturgical prayer.</div></div></div><div class="db-synthesis">The two readings are complementary rather than contradictory. The prayer is both a model (structuring all prayer) and a liturgical formula (repeated in worship as a summary of Christian prayer).</div></div></div><div id="mt6-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 205.0,120.0 120.0,188.0 35.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Secret Practice, Open Reward</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Prayer: Kingdom Orientation</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Treasure in Heaven</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Anxiety vs. Trust</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 6 governs the interior life of kingdom citizens. The three practices must be directed toward the Father rather than performed for human approval. The kingdom-first orientation is the antidote to anxiety.</p></div>
 </div>
 </main>
 <script>
@@ -362,10 +616,10 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
-  var PLACES={words:['Jerusalem','Bethlehem','Egypt','Nazareth','Galilee','Jordan','wilderness','synagogue','temple','Capernaum','mountain'],cls:'vhl-place',btn:['places','context']};
-  var PEOPLE={words:['Jesus','John','disciples','Pharisees','scribes','Herod','magi','Peter','Andrew','James','Satan','devil'],cls:'vhl-person',btn:['people','context']};
-  var TIME  ={words:['day','days','night','hour','kingdom','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
-  var KEY   ={words:['kingdom','repent','fulfil','law','prophets','righteous','Son of God','Son of Man','heaven','Spirit'],cls:'vhl-key',btn:['literary','cross']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
   var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
   function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
   var vhlRowId=0;
@@ -508,7 +762,7 @@ function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!
 function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
 </script>
 <script src="../verses.js"></script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../service-worker.js");});}</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
 <script>
 (function(){
   try {
@@ -517,8 +771,8 @@ function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav
     var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    hist = hist.filter(function(h){ return h.url !== url; });
     var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
     hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
     if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
