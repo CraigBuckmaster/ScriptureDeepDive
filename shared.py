@@ -271,6 +271,7 @@ REGISTRY = [
     ('proverbs', 'Proverbs',  31, 31, 'OT'),
     ('matthew',  'Matthew',   28, 28, 'NT'),
     ('mark',     'Mark',      16, 16, 'NT'),
+    ('luke',     'Luke',      24, 24, 'NT'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -281,6 +282,7 @@ BOOK_PREFIX = {
     'proverbs': 'pr',
     'matthew':  'mt',
     'mark':     'mk',
+    'luke':     'lk',
 }
 
 # ── Per-book commentary roster ────────────────────────────────────────────
@@ -297,6 +299,8 @@ BOOK_PREFIX = {
 #  Matthew     | — (NT, no Sarna)     | —                  | Calvin            | NET Bible
 #              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
 #  Mark        | Marcus (Anchor Bible)| Rhoads (Narrative) | Calvin            | NET Bible
+#              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
+#  Luke        | Green (NICGT Luke)   | Bovon (Hermeneia)  | Calvin            | NET Bible
 #              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
 #
 #  Hubbard: Robert Hubbard, NICOT Commentary on Ruth (1988). Evangelical-scholarly.
@@ -344,12 +348,12 @@ COMMENTATOR_SCOPE = {
 
     # ── NT-only commentators ─────────────────────────────────────────────────
     # A.T. Robertson — Word Pictures in the New Testament (NT only)
-    'robertson': ['matthew', 'mark'],
-    # Future: 'luke', 'john', 'acts', etc.
+    'robertson': ['matthew', 'mark', 'luke'],
+    # Future: 'john', 'acts', etc.
 
     # Catena Aurea — Aquinas compilation on all four Gospels only
-    'catena':    ['matthew', 'mark'],
-    # Future: 'luke', 'john'
+    'catena':    ['matthew', 'mark', 'luke'],
+    # Future: 'john'
 
     # Joel Marcus — Anchor Bible Commentary on Mark (2 vols., 2000/2009)
     # SCOPE: Mark only. Heavyweight historical-critical; strong on Jewish backgrounds,
@@ -477,6 +481,27 @@ BOOK_META = {
                        'authority', 'repent', 'blood', 'covenant', 'ransom',
                        'Holy Spirit', 'forgive', 'power', 'immediately'],
     },
+    'luke': {
+        'is_nt': True,
+        'auth': ('<strong>Author:</strong> Luke, a physician (Col 4:14), Gentile companion of Paul '
+                 '(Phlm 24; 2 Tim 4:11), and the most literary writer in the NT. Early and unanimous '
+                 'tradition (Irenaeus, Clement, Origen, Eusebius) identifies Luke as the author of '
+                 'both the Gospel and Acts. The \'we\' passages in Acts (16:10-17; 20:5-15; '
+                 '21:1-18; 27:1-28:16) confirm a travelling companion of Paul who was present at '
+                 'key moments. Luke is the only Gentile NT author. His Greek is the most polished '
+                 'in the NT \u2014 he writes in the style of educated Hellenistic historians. '
+                 'He explicitly names his method: careful investigation, use of eyewitness sources, '
+                 'and orderly composition for a patron named Theophilus (1:1-4).'),
+        'vhl_places': ['Jerusalem', 'Galilee', 'Judea', 'Samaria', 'Nazareth', 'Capernaum',
+                       'Bethlehem', 'Jordan', 'temple', 'synagogue', 'road', 'Jericho'],
+        'vhl_people': ['Jesus', 'disciples', 'Pharisees', 'scribes', 'Peter', 'John', 'James',
+                       'crowd', 'elders', 'chief priests', 'Pilate', 'Herod', 'angel', 'women'],
+        'vhl_time':   ['day', 'days', 'night', 'morning', 'hour', 'today', 'year',
+                       'generation', 'coming', 'now', 'appointed time'],
+        'vhl_key':    ['kingdom', 'Son of Man', 'salvation', 'Spirit', 'repent', 'forgive',
+                       'grace', 'glory', 'faith', 'gospel', 'poor', 'joy', 'covenant', 'prophet'],
+    },
+
 
 }
 
