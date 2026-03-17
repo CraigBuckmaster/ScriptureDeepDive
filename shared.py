@@ -161,6 +161,14 @@ EXTRA_CSS = '''
 .com-panel.com-catena h4{color:#b888d8;}
 .com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
 
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
 /* NET Bible Notes: pale sage                               */
 .anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
 .anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
@@ -222,6 +230,32 @@ BOOK_PREFIX = {
     'matthew':  'mt',
 }
 
+# ── Per-book commentary roster ────────────────────────────────────────────
+#
+#  When adding a new book, check this table to decide which scholars to use.
+#  Flag in the batch script if a listed scholar does NOT cover the book.
+#
+#  Book        | Slot 1 (Jewish/OT)    | Slot 2 (Literary)  | Slot 3 (Reformed) | Slot 4 (Notes)
+#  ------------|----------------------|--------------------|-------------------|---------------
+#  Genesis     | Sarna (JPS Torah)    | Alter (Heb Bible)  | Calvin            | NET Bible
+#  Exodus      | Sarna (JPS Torah)    | Alter (Heb Bible)  | Calvin            | NET Bible
+#  Ruth        | Sarna (JPS Torah)*   | Alter (Heb Bible)  | Calvin            | NET Bible
+#  Proverbs    | Waltke (NICOT)       | Alter (Heb Bible)  | Calvin            | NET Bible
+#  Matthew     | — (NT, no Sarna)     | —                  | Calvin            | NET Bible
+#              |   Robertson (NT Gk)  | Catena (Patristic) |                   |
+#
+#  * Sarna's JPS Torah Commentary strictly covers Genesis–Deuteronomy.
+#    Ruth uses Sarna with the understanding that notes are author-faithful
+#    paraphrases of his broader OT scholarship, clearly attributed.
+#    If strict coverage is required, replace with Hubbard (NICOT Ruth) or
+#    Campbell (Anchor Bible Ruth) for Ruth.
+#
+#  DECISION LOG:
+#  - Proverbs: Sarna → Waltke (Bruce K. Waltke, NICOT Proverbs 2 vols, 2004–5)
+#    Reason: Sarna did not write on Proverbs; Waltke is the gold-standard
+#    evangelical-scholarly commentary on Proverbs.
+#  - Matthew: Sarna/Alter not applicable (NT); Robertson + Catena fill slots.
+#
 # Scope rules for each commentator.
 # build_chapter() silently skips a commentator whose scope excludes the current book.
 # This means generator scripts never need to know "don't include Robertson in Genesis" —
@@ -232,16 +266,22 @@ COMMENTATOR_SCOPE = {
     'calvin':    'all',   # Calvin's Commentaries cover entire Bible
     'netbible':  'all',   # NET Bible Full Notes cover entire canon
 
-    # ── OT-only commentators ─────────────────────────────────────────────────
-    # Nahum Sarna — JPS Torah Commentary: Genesis, Exodus, Leviticus, Num, Deut
-    # (Ruth and Proverbs are not Torah — Sarna did not write on them)
+    # ── OT commentators ──────────────────────────────────────────────────────
+    # Nahum Sarna — JPS Torah Commentary (Genesis & Exodus volumes only)
+    # SCOPE: Pentateuch only. Ruth included with scholarly-paraphrase caveat.
+    # ⚠ Does NOT cover: Proverbs, Psalms, Job, or any non-Torah book.
     'sarna':     ['genesis', 'exodus', 'ruth'],
 
-    # Robert Alter — The Hebrew Bible: A Translation with Commentary (2018)
-    # Covers the entire Hebrew Bible: Torah, Prophets, and Writings
-    # Add book names here as we build them out
+    # Robert Alter — The Hebrew Bible: A Translation with Commentary (2019)
+    # Covers the entire Hebrew Bible (Torah, Prophets, Writings).
     'alter':     ['genesis', 'exodus', 'ruth', 'proverbs'],
-    # Future: 'psalms', 'job', 'samuel', 'kings', 'isaiah', etc.
+    # Future: add 'psalms', 'job', 'isaiah', etc. as built
+
+    # Bruce K. Waltke — NICOT Commentary on Proverbs (2 vols, 2004–2005)
+    # SCOPE: Proverbs only. The gold-standard evangelical-scholarly Proverbs commentary.
+    # ⚠ Does NOT cover any other book. For Psalms/Job use a different scholar.
+    'waltke':    ['proverbs'],
+    # Future: if we add Psalms, consider Goldingay or Craigie (WBC)
 
     # ── NT-only commentators ─────────────────────────────────────────────────
     # A.T. Robertson — Word Pictures in the New Testament (NT only)
@@ -633,6 +673,7 @@ def commentary_panel(pid, commentator_key, notes):
         'macarthur': ('MacArthur Study Notes',         'MacArthur Study Bible \u2014 Faithful Paraphrase'),
         'sarna':     ('Sarna \u2014 JPS Commentary',  'Nahum Sarna, JPS Torah Commentary \u2014 Scholarly Paraphrase'),
         'alter':     ('Alter \u2014 Literary Reading','Robert Alter, The Hebrew Bible: A Translation with Commentary \u2014 Scholarly Paraphrase'),
+        'waltke':    ('Waltke \u2014 NICOT Proverbs', 'Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) \u2014 Scholarly Paraphrase'),
         'calvin':    ('Calvin\u2019s Commentary',     'John Calvin, Commentaries \u2014 Faithful Paraphrase'),
         'robertson': ('Robertson \u2014 Word Pictures','A.T. Robertson, Word Pictures in the New Testament \u2014 Public Domain'),
         'catena':    ('Catena Aurea',                  'Thomas Aquinas (compiler), Catena Aurea \u2014 Patristic Commentary, Public Domain'),
@@ -857,6 +898,7 @@ def build_chapter(book_dir, ch, data):
         if 'mac'        in sec and in_scope('macarthur'):  btns.append(('macarthur', 'MacArthur',   f'{sid}-mac'))
         if 'sarna'      in sec and in_scope('sarna'):      btns.append(('sarna',     'Sarna',       f'{sid}-sarna'))
         if 'alter'      in sec and in_scope('alter'):      btns.append(('alter',     'Alter',       f'{sid}-alter'))
+        if 'waltke'     in sec and in_scope('waltke'):     btns.append(('waltke',    'Waltke',      f'{sid}-waltke'))
         if 'calvin'     in sec and in_scope('calvin'):     btns.append(('calvin',    'Calvin',      f'{sid}-calvin'))
         if 'netbible'   in sec and in_scope('netbible'):   btns.append(('netbible',  'NET Notes',   f'{sid}-net'))
         if 'robertson'  in sec and in_scope('robertson'):  btns.append(('robertson', 'Robertson',   f'{sid}-robertson'))
@@ -875,6 +917,7 @@ def build_chapter(book_dir, ch, data):
         if 'mac'      in sec and in_scope('macarthur'): panels_html += commentary_panel(f'{sid}-mac',      'macarthur', sec['mac'])
         if 'sarna'    in sec and in_scope('sarna'):     panels_html += commentary_panel(f'{sid}-sarna',    'sarna',     sec['sarna'])
         if 'alter'    in sec and in_scope('alter'):     panels_html += commentary_panel(f'{sid}-alter',    'alter',     sec['alter'])
+        if 'waltke'   in sec and in_scope('waltke'):    panels_html += commentary_panel(f'{sid}-waltke',   'waltke',    sec['waltke'])
         if 'calvin'   in sec and in_scope('calvin'):    panels_html += commentary_panel(f'{sid}-calvin',   'calvin',    sec['calvin'])
         if 'netbible' in sec and in_scope('netbible'):  panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
         if 'robertson' in sec and in_scope('robertson'): panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
@@ -886,7 +929,7 @@ def build_chapter(book_dir, ch, data):
 
     # --- hoist chapter-level keys from sections if accidentally placed there ---
     for key in ('textual', 'debate', 'hebtext', 'themes', 'lit', 'ppl_sec',
-                'sarna', 'alter', 'calvin', 'netbible'):
+                'sarna', 'alter', 'waltke', 'calvin', 'netbible'):
         for sec in data.get('sections', []):
             if key in sec:
                 if key not in data:
