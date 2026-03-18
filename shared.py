@@ -273,6 +273,7 @@ REGISTRY = [
     ('mark',     'Mark',      16, 16, 'NT'),
     ('luke',     'Luke',      24, 24, 'NT'),
     ('john',     'John',      21, 21, 'NT'),
+    ('acts',     'Acts',      28,  4, 'NT'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -285,6 +286,7 @@ BOOK_PREFIX = {
     'mark':     'mk',
     'luke':     'lk',
     'john':     'jn',
+    'acts':     'ac',
 }
 
 # ── Per-book commentary roster ────────────────────────────────────────────
@@ -350,7 +352,7 @@ COMMENTATOR_SCOPE = {
 
     # ── NT-only commentators ─────────────────────────────────────────────────
     # A.T. Robertson — Word Pictures in the New Testament (NT only)
-    'robertson': ['matthew', 'mark', 'luke'],
+    'robertson': ['matthew', 'mark', 'luke', 'acts'],
     # Future: 'john', 'acts', etc.
 
     # Catena Aurea — Aquinas compilation on all four Gospels only
@@ -366,6 +368,7 @@ COMMENTATOR_SCOPE = {
     # SCOPE: Mark only. Founding text of Markan narrative criticism —
     # narrator, characters, plot, rhetoric.
     'rhoads':    ['mark'],
+    'keener':    ['acts'],
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists

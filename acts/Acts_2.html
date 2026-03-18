@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Acts 2 — Scripture Deep Dive</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+
+/* Keener button */
+.anno-trigger.keener{background:rgba(40,80,60,.22)!important;color:#8ecfb0!important;border-color:#2d6044!important;}
+/* Robertson button */  
+.anno-trigger.robertson{background:rgba(80,60,20,.22)!important;color:#d4b060!important;border-color:#6b4e18!important;}
+</style>
+</head>
+<body>
+<header>
+<h1>Acts 2</h1>
+<p class="chapter-subtitle">Pentecost — The Spirit Poured Out</p>
+</header>
+<div class="authorship-block"><button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button><div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Luke the physician (Col 4:14), a Gentile convert and close companion of Paul. Acts is the second volume of a two-part work addressed to Theophilus (Luke 1:3; Acts 1:1). The &ldquo;we&rdquo; sections (16:10&ndash;17; 20:5&ndash;21:18; 27:1&ndash;28:16) place Luke as an eyewitness participant in significant portions of the Pauline mission. Irenaeus, Clement of Alexandria, and the Muratorian Canon (c.&thinsp;AD&thinsp;170) unanimously identify Luke as author. His medical vocabulary (noted by Hobart, though debated), his literary polish, and his Hellenistic historiographical style are consistent with the educated Gentile physician of Colossians 4.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;62&ndash;64, most likely during Paul's Roman imprisonment (28:30&ndash;31). The abrupt ending &mdash; Paul under house arrest awaiting trial &mdash; is most naturally explained if Luke wrote before the trial's outcome was known. The silence about the destruction of Jerusalem (AD&thinsp;70) and about Paul's death (c.&thinsp;AD&thinsp;67) supports an early 60s date. Liberal scholarship often dates Acts c.&thinsp;AD&thinsp;80&ndash;90, largely on the assumption that Luke used Mark; the early date remains defensible and is preferred by a significant minority of critical scholars.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Luke states his purpose in the prologue: to provide an &ldquo;orderly account&rdquo; (Luke 1:3) of the origins and expansion of the Christian movement. Acts traces the Gospel from Jerusalem to Rome &mdash; geographically fulfilling the commission of 1:8 (&ldquo;you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth&rdquo;). Theologically, Acts defends the legitimacy of the Gentile mission, demonstrates the continuity of the church with Israel, and shows that the gospel's advance is providentially directed despite (and through) opposition, imprisonment, and persecution. It is the indispensable bridge between the Gospels and the Epistles.</p></div>
+</div></div>
+<nav class="chapter-nav">
+<a href="Acts_1.html" class="nav-arrow">&#8592;</a>
+<div class="nav-center">
+<button class="qnav-btn" onclick="openQnav()" title="Quick navigation">&#9776;</button>
+<span class="nav-title">Acts 2</span>
+</div>
+<a href="Acts_3.html" class="nav-arrow">&#8594;</a>
+</nav>
+<div id="qnav-overlay" class="qnav-overlay" onclick="closeQnav()"></div><div id="qnav" class="qnav-panel" style="display:none;"></div>
+<main>
+<div class="section"><div class="section-label">The Coming of the Holy Spirit</div><span class="verse-text"><span class="verse-num">1</span>When the day of Pentecost came, they were all together in one place.</span><span class="verse-text"><span class="verse-num">2</span>Suddenly a sound like the blowing of a violent wind came from heaven and filled the whole house where they were sitting.</span><span class="verse-text"><span class="verse-num">3</span>They saw what seemed to be tongues of fire that separated and came to rest on each of them.</span><span class="verse-text"><span class="verse-num">4</span>All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them.</span><span class="verse-text"><span class="verse-num">5</span>Now there were staying in Jerusalem God-fearing Jews from every nation under heaven.</span><span class="verse-text"><span class="verse-num">6</span>When they heard this sound, a crowd came together in bewilderment, because each one heard their own language being spoken.</span><span class="verse-text"><span class="verse-num">7</span>Utterly amazed, they asked: "Aren't all these who are speaking Galileans?</span><span class="verse-text"><span class="verse-num">8</span>Then how is it that each of us hears them in our native language?</span><span class="verse-text"><span class="verse-num">9</span>Parthians, Medes and Elamites; residents of Mesopotamia, Judea and Cappadocia, Pontus and Asia,</span><span class="verse-text"><span class="verse-num">10</span>Phrygia and Pamphylia, Egypt and the parts of Libya near Cyrene; visitors from Rome</span><span class="verse-text"><span class="verse-num">11</span>(both Jews and converts to Judaism); Cretans and Arabs — we hear them declaring the wonders of God in our own tongues!"</span><span class="verse-text"><span class="verse-num">12</span>Amazed and perplexed, they asked one another, "What does this mean?"</span><span class="verse-text"><span class="verse-num">13</span>Some, however, made fun of them and said, "They have had too much wine."</span><span class="verse-text"><span class="verse-num">14</span>Then Peter stood up with the Eleven, raised his voice and addressed the crowd: "Fellow Jews and all of you who live in Jerusalem, let me explain this to you; listen carefully to what I say.</span><span class="verse-text"><span class="verse-num">15</span>These people are not drunk, as you suppose. It's only nine in the morning!</span><span class="verse-text"><span class="verse-num">16</span>No, this is what was spoken by the prophet Joel:</span><span class="verse-text"><span class="verse-num">17</span>"'In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.</span><span class="verse-text"><span class="verse-num">18</span>Even on my servants, both men and women, I will pour out my Spirit in those days, and they will prophesy.</span><span class="verse-text"><span class="verse-num">19</span>I will show wonders in the heavens above and signs on the earth below, blood and fire and billows of smoke.</span><span class="verse-text"><span class="verse-num">20</span>The sun will be turned to darkness and the moon to blood before the coming of the great and glorious day of the Lord.</span><span class="verse-text"><span class="verse-num">21</span>And everyone who calls on the name of the Lord will be saved.'</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac2-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac2-s1-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac2-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac2-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac2-s1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger literary" onclick="tog(this,'ac2-s1-lit')"><span>Literary</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac2-s1-rob')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger keener" onclick="tog(this,'ac2-s1-keener')"><span>Keener</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac2-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac2-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac2-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ac2-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><div class="heb-row"><span class="heb-word">συμπληροῦσθαι (symplērousthai)</span><span class="heb-def">was being fulfilled/completed — the imperfect passive of symplēroō. Pentecost was being "fulfilled" — not just arriving. Luke uses a word that implies the feast day was itself a type now meeting its antitype.</span></div><div class="heb-row"><span class="heb-word">ὁμοῦ (homou)</span><span class="heb-def">together/in one place — some manuscripts read homothymadon ("with one accord"). Either way Luke emphasizes unity as the context for the Spirit's descent. The community's gathered oneness is the vessel for the outpouring.</span></div></div><div id="ac2-s1-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Jerusalem — Upper City</div><div class="poi-text">The house (oikos, v2) was likely in the upper city of Jerusalem, the wealthier residential district, possibly the same upper room of 1:13. The sound "filled the whole house" — a private dwelling, not the Temple, which had not yet opened.</div></div><div class="poi-entry"><div class="poi-name">The Temple Courts</div><div class="poi-text">By v46 the new community is meeting daily in the temple courts (hieron) — the open public areas including Solomon's Colonnade. The church is born inside Judaism, worshipping in the Temple, while also breaking bread privately in homes.</div></div></div><div id="ac2-s1-ctx" class="anno-panel ctx"><h4>Context</h4><div class="ctx-item"><div class="ctx-title">Pentecost — The Feast</div><p>Shavuot (Pentecost, "fiftieth day") was the Jewish harvest festival fifty days after Passover, also called the Feast of Weeks (Deut 16:9-12). By the first century it had also acquired associations with the giving of the Torah at Sinai. Luke's timing is not accidental: the Spirit comes at the festival that celebrated God's covenant word, now the new covenant Spirit replaces the law of stone with the law written on hearts (Jer 31:33; Ezek 36:27).</p></div><div class="ctx-item"><div class="ctx-title">The Diaspora Crowd</div><p>The list of nations in vv.9-11 is a kind of reverse-Babel: at Babel the nations were scattered by language; at Pentecost the nations are gathered by a unified message heard in every language. Luke's geographic sweep moves from east (Parthians, Medes) to west (Rome) to south (Libya, Crete, Arabs) — a picture of the whole inhabited world.</p></div></div><div id="ac2-s1-cross" class="anno-panel cross-ref"><h4>Cross-References</h4><div class="cross-item"><span class="cross-ref">Joel 2:28-32</span><p>Peter's extended quotation (vv.17-21) interprets Pentecost as Joel's "last days" fulfilment. The Spirit poured on all flesh, not just kings and prophets, marks the dawn of the messianic age.</p></div><div class="cross-item"><span class="cross-ref">Ezekiel 36:26-27</span><p>The promised new heart and the Spirit within Israel is the OT background to Acts 2 — the Spirit is not merely upon believers (OT pattern) but within them (new covenant reality).</p></div><div class="cross-item"><span class="cross-ref">Genesis 11:1-9</span><p>The reversal of Babel is the implicit theological background: languages scattered at judgment, language-barriers crossed at Pentecost.</p></div></div><div id="ac2-s1-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 1446 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Sinai — Torah Given</div><div class="tl-text">The giving of the Law at Sinai, traditionally associated with Shavuot. At Sinai, fire and wind accompanied God's descent (Exod 19:16-19). At Pentecost, wind and fire again — but now the Spirit, not the law, is written on human hearts.</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. AD 30</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Pentecost — Spirit Poured Out</div><div class="tl-text">Fifty days after the resurrection-Passover, the Spirit descends on 120 gathered disciples in Jerusalem. Three thousand are baptized. The church is born as the new covenant community.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 30-100</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Global Spread</div><div class="tl-text">The Pentecost diaspora carries the news home to Parthia, Mesopotamia, Egypt, Rome, and beyond. The list of nations in Acts 2:9-11 anticipates the global reach of Acts 28.</div></div></div>
+</div><div class="tl-range"><span>c. 2000 BC</span><span>c. AD 100</span></div></div><div id="ac2-s1-lit" class="anno-panel lit-panel"><h4>Literary Highlights</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Fire / Wind / Speech — Theophany Pattern</span><span class="lit-text">The three signs at Pentecost (wind, fire, tongues) echo OT theophanies: Elijah at Horeb (1 Kings 19:11-12 — wind and fire), Sinai (Exod 19:16-18 — thunder, fire, and God's voice). Luke uses the theophany template to present the Spirit's coming as a new covenant inauguration event, not merely a charismatic experience.</span></div><div class="lit-row"><span class="lit-label">Joel Quotation — Eschatological Framing</span><span class="lit-text">Peter does not say "this fulfils Joel" but "this is what was spoken by the prophet Joel" — a subtle but important distinction. The Spirit's coming inaugurates the "last days" but does not exhaust Joel's vision; the cosmic signs of vv.19-20 still await final fulfilment. Pentecost is the beginning of the end, not the end itself.</span></div></div></div><div id="ac2-s1-rob" class="anno-panel com-panel com-robertson"><h4>Robertson's Word Pictures</h4><div class="com-source">A.T. Robertson, <em>Word Pictures in the New Testament</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:2-4</span><p>Robertson notes the precise vocabulary: the sound was like wind (ēchos biaias pnoēs — a violent, driving wind) but the tongues were like fire (hōsei pyros). Luke uses similes, not identity — this is not literal wind or literal flame but phenomena resembling them. Robertson connects the fire to the Baptist's prediction that the Messiah would baptize "with the Holy Spirit and fire" (Luke 3:16).</p></div><div class="com-note"><span class="com-ref">2:4</span><p>"Other tongues" (heterais glōssais) — Robertson defends the view that these are genuine human languages (xenoglossy), not ecstatic utterance, on the grounds that the crowd immediately identifies their native languages (v8). The miracle is one of speaking, confirmed by miracles of hearing.</p></div></div><div id="ac2-s1-keener" class="anno-panel com-panel com-keener"><h4>Keener Commentary</h4><div class="com-source">Craig Keener, <em>Acts: An Exegetical Commentary</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:1-4</span><p>Keener provides extensive background on the Jewish celebration of Shavuot in the first century. By this period many Jews associated Pentecost with the Sinai covenant, and some texts (Jubilees; the Damascus Document from Qumran) treated it as a covenant-renewal festival. Luke's audience, familiar with these associations, would have heard in Pentecost a new covenant inauguration — the Spirit replacing the stone tablets.</p></div><div class="com-note"><span class="com-ref">2:9-11</span><p>Keener notes that the list of nations is not random but follows a roughly geographic sweep from east to west, consistent with how ancient geographers organized their lists of peoples. The presence of "visitors from Rome" (v10) foreshadows the book's destination: Rome is already represented at the birth of the church.</p></div></div><div id="ac2-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:1-4</span><p>MacArthur emphasizes that Pentecost was a one-time, non-repeatable event — the inauguration of the new covenant age, not a template for ongoing experience. Just as Calvary was once-for-all, so was Pentecost. The sign of tongues here serves an evangelistic purpose (Diaspora Jews heard in their native languages), not a devotional one.</p></div><div class="com-note"><span class="com-ref">2:38</span><p>MacArthur's careful exegesis of "repent and be baptized... for the forgiveness of your sins": the preposition eis (for/unto) can indicate result or basis. He argues it means "because of" or "in light of" forgiveness already granted by repentance and faith — not that baptism causes forgiveness. The parallel of Acts 3:19 (repent and turn, for forgiveness — no baptism) supports this reading.</p></div><div class="com-note"><span class="com-ref">2:42</span><p>The four marks of the early church — apostolic teaching, fellowship, breaking of bread, prayer — are, for MacArthur, the irreducible minimum of authentic church life. They are not four programs but four dimensions of a single organic life together.</p></div></div><div id="ac2-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin's Commentary</h4><div class="com-source">John Calvin, <em>Commentary on Acts</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:4</span><p>Calvin notes that the Spirit filling "all of them" — not just the apostles — fulfils the democratic vision of Numbers 11:29 where Moses wished that all the Lord's people were prophets. The new covenant reality is universal access to the Spirit, not confined to leaders or specialists.</p></div><div class="com-note"><span class="com-ref">2:38-39</span><p>Calvin on "the promise is for you and your children and for all who are far off": the covenantal logic is explicit. The promise follows the covenant structure — it extends to the community's children (not yet believers) and to the Gentiles (far off). Calvin uses this verse as a foundation for his defence of infant baptism, though the primary application is clearly to the expansion of the gospel community.</p></div></div><div id="ac2-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:17</span><p>The NET Bible notes that Peter's quotation of Joel 2:28 adds "in the last days" to Joel's "after these things," interpreting Joel's temporal marker as eschatological. This is a significant interpretive move: Peter identifies the present moment as the inauguration of the messianic last days, not a foretaste of them.</p></div><div class="com-note"><span class="com-ref">2:37</span><p>"Cut to the heart" (katenygēsan tēn kardian) — the NET notes this is a strong verb (only here in the NT) related to nyssō, to pierce. The crowd's response is not intellectual assent but a visceral, painful conviction — the kind that demands immediate response.</p></div></div></div><div class="section"><div class="section-label">Peter's Sermon and the Birth of the Church</div><span class="verse-text"><span class="verse-num">22</span>"Fellow Israelites, listen to this: Jesus of Nazareth was a man accredited by God to you by miracles, wonders and signs, which God did among you through him, as you yourselves know.</span><span class="verse-text"><span class="verse-num">23</span>This man was handed over to you by God's deliberate plan and foreknowledge; and you, with the help of wicked men, put him to death by nailing him to the cross.</span><span class="verse-text"><span class="verse-num">24</span>But God raised him from the dead, freeing him from the agony of death, because it was impossible for death to keep its hold on him.</span><span class="verse-text"><span class="verse-num">25</span>David said about him: ''I saw the Lord always before me. Because he is at my right hand, I will not be shaken.</span><span class="verse-text"><span class="verse-num">26</span>Therefore my heart is glad and my tongue rejoices; my body also will rest in hope,</span><span class="verse-text"><span class="verse-num">27</span>because you will not abandon me to the realm of the dead, you will not let your holy one see decay.</span><span class="verse-text"><span class="verse-num">28</span>You have made known to me the paths of life; you will fill me with joy in your presence.'</span><span class="verse-text"><span class="verse-num">29</span>"Fellow Israelites, I can tell you confidently that the patriarch David died and was buried, and his tomb is here to this day.</span><span class="verse-text"><span class="verse-num">30</span>But he was a prophet and knew that God had promised him on oath that he would place one of his descendants on his throne.</span><span class="verse-text"><span class="verse-num">31</span>Seeing what was to come, he spoke of the resurrection of the Messiah, that he was not abandoned to the realm of the dead, nor did his body see decay.</span><span class="verse-text"><span class="verse-num">32</span>God has raised this Jesus to life, and we are all witnesses of it.</span><span class="verse-text"><span class="verse-num">33</span>Exalted to the right hand of God, he has received from the Father the promised Holy Spirit and has poured out what you now see and hear.</span><span class="verse-text"><span class="verse-num">34</span>For David did not ascend to heaven, and yet he said, ''The Lord said to my Lord: "Sit at my right hand</span><span class="verse-text"><span class="verse-num">35</span>until I make your enemies a footstool for your feet."'</span><span class="verse-text"><span class="verse-num">36</span>"Therefore let all Israel be assured of this: God has made this Jesus, whom you crucified, both Lord and Messiah."</span><span class="verse-text"><span class="verse-num">37</span>When the people heard this, they were cut to the heart and said to Peter and the other apostles, "Brothers, what shall we do?"</span><span class="verse-text"><span class="verse-num">38</span>Peter replied, "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.</span><span class="verse-text"><span class="verse-num">39</span>The promise is for you and your children and for all who are far off — for all whom the Lord our God will call."</span><span class="verse-text"><span class="verse-num">40</span>With many other words he warned them; and he pleaded with them, "Save yourselves from this corrupt generation."</span><span class="verse-text"><span class="verse-num">41</span>Those who accepted his message were baptized, and about three thousand were added to their number that day.</span><span class="verse-text"><span class="verse-num">42</span>They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer.</span><span class="verse-text"><span class="verse-num">43</span>Everyone was filled with awe at the many wonders and signs performed by the apostles.</span><span class="verse-text"><span class="verse-num">44</span>All the believers were together and had everything in common.</span><span class="verse-text"><span class="verse-num">45</span>They sold property and possessions to give to anyone who had need.</span><span class="verse-text"><span class="verse-num">46</span>Every day they continued to meet together in the temple courts. They broke bread in their homes and ate together with glad and sincere hearts,</span><span class="verse-text"><span class="verse-num">47</span>praising God and enjoying the favor of all the people. And the Lord added to their number daily those who were being saved.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac2-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac2-s2-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac2-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac2-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac2-s2-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger literary" onclick="tog(this,'ac2-s2-lit')"><span>Literary</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac2-s2-rob')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger keener" onclick="tog(this,'ac2-s2-keener')"><span>Keener</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac2-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac2-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac2-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ac2-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><div class="heb-row"><span class="heb-word">κατενύγησαν (katenygesan)</span><span class="heb-def">were cut to the heart — a hapax legomenon in the NT. From nyssō (to pierce, to sting). The hearing of the gospel about the crucified Messiah produces a sharp, painful recognition of guilt — the beginning of true repentance.</span></div><div class="heb-row"><span class="heb-word">βαπτισθήτω (baptisthētō)</span><span class="heb-def">let him/her be baptized — third person singular aorist passive imperative. The passive construction is significant: baptism is something done to the believer, not something they do. It is the community's public act of incorporation.</span></div></div><div id="ac2-s2-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Solomon's Colonnade</div><div class="poi-text">The covered portico on the east side of the Temple Mount (v46, mentioned again 3:11; 5:12). A sheltered, public gathering space where the early church met regularly for teaching and fellowship — visible, audible, and impossible to ignore by the Jerusalem population.</div></div><div class="poi-entry"><div class="poi-name">House to House</div><div class="poi-text">The breaking of bread "in their homes" (v46, kat' oikon — home by home) indicates a network of household communities, not one central meeting place. The earliest church structure was the household, not the building. This pattern continues throughout Acts.</div></div></div><div id="ac2-s2-ctx" class="anno-panel ctx"><h4>Context</h4><div class="ctx-item"><div class="ctx-title">Three Thousand — Covenant Community</div><p>The number "about three thousand" (v41) is likely a deliberate Sinai echo: at the golden calf incident, three thousand were killed (Exod 32:28). On the day the Spirit-law is given, three thousand are given life. The contrast is the hinge between the two covenants.</p></div><div class="ctx-item"><div class="ctx-title">The Four Marks of the Church</div><p>The description of the Jerusalem community in vv.42-47 is Luke's idealized portrait of the early church: teaching, fellowship, breaking of bread, and prayer. These four activities are not a program but an organic portrait of a community centered on Christ. Later church orders (Didache, 1 Clement) draw on this passage as their normative baseline.</p></div></div><div id="ac2-s2-cross" class="anno-panel cross-ref"><h4>Cross-References</h4><div class="cross-item"><span class="cross-ref">Exodus 32:28</span><p>At Sinai after the golden calf, three thousand were killed. At Pentecost, three thousand receive life — Luke's implicit contrast between law that kills and Spirit that gives life (2 Cor 3:6).</p></div><div class="cross-item"><span class="cross-ref">Joel 2:32</span><p>Quoted in v21 — "Everyone who calls on the name of the Lord will be saved." Peter's sermon drives toward this promise, which he now fulfils in the invitation to repent and be baptized.</p></div><div class="cross-item"><span class="cross-ref">Isaiah 57:19</span><p>Paul quotes this in Eph 2:17 — "peace to those far and near." Peter's phrase "all who are far off" (v39) echoes Isaiah's promise of universal inclusion.</p></div></div><div id="ac2-s2-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event current"><div class="tl-date">c. AD 30</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Three Thousand Baptized</div><div class="tl-text">On the day of Pentecost, Peter's sermon leads to the baptism of about three thousand people. The Jerusalem church begins with this large, Diaspora-connected community — the seed of the global church.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 30-35</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Jerusalem Community</div><div class="tl-text">The early Jerusalem church practices communal sharing, daily temple worship, and house-to-house meals. This community will be scattered by persecution (Acts 8:1) but first matures in the capital.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 44</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Famine and Relief</div><div class="tl-text">The Jerusalem church faces severe famine under Claudius (Acts 11:28). The churches of Antioch and later the Pauline Gentile churches send relief — economic solidarity rooted in the sharing culture of Acts 2:44-45.</div></div></div>
+</div><div class="tl-range"><span>c. 2000 BC</span><span>c. AD 100</span></div></div><div id="ac2-s2-lit" class="anno-panel lit-panel"><h4>Literary Highlights</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Peter's Sermon — Chiastic Structure</span><span class="lit-text">The sermon (vv.14-36) is organized around three proof-texts (Joel 2, Psalm 16, Psalm 110) leading to a climactic declaration (v36: "God has made this Jesus... both Lord and Messiah"). Each OT text answers a question: What is happening now? (Joel) What was the resurrection? (Ps 16) What is his status now? (Ps 110). The structure is an argument, not merely an address.</span></div><div class="lit-row"><span class="lit-label">Lord and Christ — v36 as Climax</span><span class="lit-text">Peter's conclusion "God has made this Jesus... both Lord and Messiah" is the most compressed christological statement in Acts. Kyrios (Lord) was the LXX word for YHWH; Christos (Messiah/Christ) is the royal designation. Peter attributes both to the Jesus they crucified — the theological nerve-center of the entire sermon.</span></div></div></div><div id="ac2-s2-rob" class="anno-panel com-panel com-robertson"><h4>Robertson's Word Pictures</h4><div class="com-source">A.T. Robertson, <em>Word Pictures in the New Testament</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:38</span><p>Robertson gives careful attention to the grammar of eis aphesin hamartiōn (for/unto the forgiveness of sins). He notes that eis with the accusative can indicate aim/purpose but also basis/grounds; the parallel construction in Matthew 12:41 (they repented at/eis the preaching of Jonah) shows the word does not always indicate causation. The verse does not require baptismal regeneration.</p></div><div class="com-note"><span class="com-ref">2:42</span><p>The "breaking of bread" (klasis tou artou) — Robertson notes this phrase is used in Luke 24:35 for the Emmaus meal in which Christ was recognized, and appears to refer to the Lord's Supper in its early informal, meal-context form. The church's first act of worship was remembrance of Christ's death in the context of a shared meal.</p></div></div><div id="ac2-s2-keener" class="anno-panel com-panel com-keener"><h4>Keener Commentary</h4><div class="com-source">Craig Keener, <em>Acts: An Exegetical Commentary</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:41</span><p>Keener notes that the baptism of three thousand people on a single day raises a logistical question. Jerusalem had numerous ritual immersion pools (miqva'oth) — over forty have been excavated near the southern entrance to the Temple Mount. These pools, used for the purification required before entering the Temple, would have provided ample facilities for mass baptism.</p></div><div class="com-note"><span class="com-ref">2:44-45</span><p>The communal sharing of the Jerusalem church is sometimes compared to the Qumran community's common goods (1QS 6:19-20). Keener notes the differences: Jerusalem sharing is voluntary and family-based, not an entrance requirement; the Qumran rule demanded complete property surrender. Acts 5:4 confirms the voluntary nature: Ananias's sin was lying, not keeping property.</p></div></div><div id="ac2-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:42</span><p>MacArthur on the four marks: (1) Apostolic teaching — doctrinal instruction from the eyewitnesses; (2) Fellowship (koinōnia) — shared life, not mere sociability; (3) Breaking of bread — both ordinary meals and the Lord's Supper in household context; (4) Prayer — corporate, structured, persistent. The church's health is measured by all four, not by any single one.</p></div><div class="com-note"><span class="com-ref">2:46-47</span><p>The pattern of "temple courts plus homes" models the NT church structure: large gathered worship in a public space, intimate community in households. MacArthur notes that both dimensions are necessary — the public proclamation reaches the city; the household fellowship forms disciples. Neither alone constitutes the full NT church pattern.</p></div></div><div id="ac2-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin's Commentary</h4><div class="com-source">John Calvin, <em>Commentary on Acts</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:42</span><p>Calvin reads the four marks not as a description of the primitive church alone but as the permanent marks of the church in every age. Where these four are present — true doctrine, true communion, true sacraments, true prayer — there is the church. Where any are absent, the church is deficient. This becomes one of the key passages for Calvin's ecclesiology.</p></div><div class="com-note"><span class="com-ref">2:44-45</span><p>Calvin is careful not to establish a permanent communism from this passage. He notes it was a temporary, Jerusalem-specific measure in response to urgent need, not a universal economic model. The underlying principle — generous sharing with those in need — is permanent; the specific communal arrangement was circumstantial.</p></div></div><div id="ac2-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">2:46</span><p>The NET Bible notes that "breaking bread" (klōntes arton) without the article is used here, while "the breaking of bread" with the article appears in v42. Some scholars distinguish these: the articular form in v42 refers to the Lord's Supper; the anarthrous form in v46 to ordinary shared meals. Luke may be describing both the eucharistic practice and the communal table fellowship as expressions of a single community reality.</p></div><div class="com-note"><span class="com-ref">2:47</span><p>"The Lord added to their number daily those who were being saved" — the NET notes the passive "were being saved" (esōzomenous) indicates that salvation is God's act, not human decision alone. Luke's consistent use of the divine passive for salvation guards against a purely human-decision model of conversion.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-header">Vocabulary Highlights</div>
+<div class="scholarly-desc">Tap highlighted words to explore their significance.</div>
+<div class="scholarly-buttons">
+  <button class="anno-trigger hebrew" onclick="highlightClass('vhl-divine')"><span>Divine Names</span></button>
+  <button class="anno-trigger places" onclick="highlightClass('vhl-place')"><span>Places</span></button>
+  <button class="anno-trigger people" onclick="highlightClass('vhl-person')"><span>People</span></button>
+  <button class="anno-trigger timeline" onclick="highlightClass('vhl-time')"><span>Time</span></button>
+  <button class="anno-trigger cross" onclick="highlightClass('vhl-key')"><span>Key Terms</span></button>
+</div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+
+
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+var DIVINE={"words":["God", "Lord", "Spirit", "Holy Spirit", "Jesus", "Christ", "Father", "Lord Jesus", "Son", "Almighty", "Angel", "angel"],"cls":"vhl-divine","btn":["hebrew","hebrew-text","context"]};
+var PLACES={"words":["Jerusalem", "Antioch", "Rome", "Ephesus", "Corinth", "Philippi", "Athens", "Caesarea", "Damascus", "Samaria", "Judea", "Galatia", "synagogue", "temple", "Macedonia"],"cls":"vhl-place","btn":["places","context"]};
+var PEOPLE={"words":["Paul", "Peter", "Barnabas", "Stephen", "Philip", "James", "Silas", "Timothy", "Apollos", "Herod", "Felix", "Festus", "Agrippa", "disciples", "apostles", "elders", "Ananias", "Cornelius"],"cls":"vhl-person","btn":["people","context"]};
+var TIME_W={"words":["day", "days", "night", "morning", "hour", "years", "year", "suddenly", "at once", "three days", "sabbath", "Pentecost"],"cls":"vhl-time","btn":["timeline","context"]};
+var KEY_W  ={"words":["Spirit", "repentance", "baptized", "believe", "witness", "gospel", "resurrection", "kingdom", "salvation", "Holy Spirit", "boldly", "signs", "wonders", "name", "Word", "grace", "faith", "Gentiles"],"cls":"vhl-key","btn":["literary","cross"]};
+var VHL_SETS=[DIVINE,PLACES,PEOPLE,TIME_W,KEY_W];
+function highlightClass(cls){
+  document.querySelectorAll('.verse-text').forEach(function(s){
+    s.innerHTML=s.innerHTML.replace(/<span class="[^"]*vhl[^"]*">(.*?)<\/span>/g,'$1');
+  });
+  var set=VHL_SETS.find(function(x){return x.cls===cls;});
+  if(!set)return;
+  document.querySelectorAll('.verse-text').forEach(function(s){
+    set.words.forEach(function(w){
+      var re=new RegExp('\\b('+w+')\\b','g');
+      s.innerHTML=s.innerHTML.replace(re,'<span class="'+set.cls+' vhl-word">$1</span>');
+    });
+  });
+}
+</script>
+<script>
+(function(){
+  try{
+    var KEY='sdReading',MAX=20;
+    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var url='acts/Acts_2.html';
+    var title=document.querySelector('h1')?document.querySelector('h1').textContent.trim():'';
+    var subtitle=document.querySelector('header p')?document.querySelector('header p').textContent.trim():'';
+    var label=title+(subtitle?' · '+subtitle.slice(0,30):'');
+    hist=hist.filter(function(h){return h.url!==url;});
+    hist.unshift({url:url,label:label,title:title,subtitle:subtitle});
+    if(hist.length>MAX)hist=hist.slice(0,MAX);
+    localStorage.setItem(KEY,JSON.stringify(hist));
+  }catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="acts/Acts_2.html";</script>
+<script src="../verses.js"></script>
+<script src="../qnav.js"></script>
+</body>
+</html>
