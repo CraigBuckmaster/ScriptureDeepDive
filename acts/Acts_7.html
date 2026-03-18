@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Acts 7 — Scripture Deep Dive</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+
+/* Keener button */
+.anno-trigger.keener{background:rgba(40,80,60,.22)!important;color:#8ecfb0!important;border-color:#2d6044!important;}
+/* Robertson button */  
+.anno-trigger.robertson{background:rgba(80,60,20,.22)!important;color:#d4b060!important;border-color:#6b4e18!important;}
+</style>
+</head>
+<body>
+<header>
+<h1>Acts 7</h1>
+<p class="chapter-subtitle">Stephen's Defence and Martyrdom</p>
+</header>
+<div class="authorship-block"><button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button><div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Luke the physician (Col 4:14), a Gentile convert and close companion of Paul. Acts is the second volume of a two-part work addressed to Theophilus (Luke 1:3; Acts 1:1). The &ldquo;we&rdquo; sections (16:10&ndash;17; 20:5&ndash;21:18; 27:1&ndash;28:16) place Luke as an eyewitness participant in significant portions of the Pauline mission. Irenaeus, Clement of Alexandria, and the Muratorian Canon (c.&thinsp;AD&thinsp;170) unanimously identify Luke as author. His medical vocabulary (noted by Hobart, though debated), his literary polish, and his Hellenistic historiographical style are consistent with the educated Gentile physician of Colossians 4.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;62&ndash;64, most likely during Paul's Roman imprisonment (28:30&ndash;31). The abrupt ending &mdash; Paul under house arrest awaiting trial &mdash; is most naturally explained if Luke wrote before the trial's outcome was known. The silence about the destruction of Jerusalem (AD&thinsp;70) and about Paul's death (c.&thinsp;AD&thinsp;67) supports an early 60s date. Liberal scholarship often dates Acts c.&thinsp;AD&thinsp;80&ndash;90, largely on the assumption that Luke used Mark; the early date remains defensible and is preferred by a significant minority of critical scholars.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Luke states his purpose in the prologue: to provide an &ldquo;orderly account&rdquo; (Luke 1:3) of the origins and expansion of the Christian movement. Acts traces the Gospel from Jerusalem to Rome &mdash; geographically fulfilling the commission of 1:8 (&ldquo;you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth&rdquo;). Theologically, Acts defends the legitimacy of the Gentile mission, demonstrates the continuity of the church with Israel, and shows that the gospel's advance is providentially directed despite (and through) opposition, imprisonment, and persecution. It is the indispensable bridge between the Gospels and the Epistles.</p></div>
+</div></div>
+<nav class="chapter-nav">
+<a href="Acts_6.html" class="nav-arrow">&#8592;</a>
+<div class="nav-center">
+<button class="qnav-btn" onclick="openQnav()" title="Quick navigation">&#9776;</button>
+<span class="nav-title">Acts 7</span>
+</div>
+<a href="Acts_8.html" class="nav-arrow">&#8594;</a>
+</nav>
+<div id="qnav-overlay" class="qnav-overlay" onclick="closeQnav()"></div><div id="qnav" class="qnav-panel" style="display:none;"></div>
+<main>
+<div class="section"><div class="section-label">Stephen's Survey of Salvation History</div><span class="verse-text"><span class="verse-num">1</span>Then the high priest asked Stephen, "Are these charges true?"</span><span class="verse-text"><span class="verse-num">2</span>To this he replied: "Brothers and fathers, listen to me! The God of glory appeared to our father Abraham while he was still in Mesopotamia, before he lived in Harran.</span><span class="verse-text"><span class="verse-num">3</span>"Leave your country and your people," God said, "and go to the land I will show you."</span><span class="verse-text"><span class="verse-num">4</span>So he left the land of the Chaldeans and settled in Harran. After the death of his father, God sent him to this land where you are now living.</span><span class="verse-text"><span class="verse-num">5</span>He gave him no inheritance here, not even enough ground to set his foot on. But God promised him that he and his descendants after him would possess the land, even though at that time Abraham had no child.</span><span class="verse-text"><span class="verse-num">6</span>God spoke to him in this way: "For four hundred years your descendants will be strangers in a country not their own, and they will be enslaved and mistreated.</span><span class="verse-text"><span class="verse-num">7</span>But I will punish the nation they serve as slaves," God said, "and afterward they will come out of that nation and worship me in this place."</span><span class="verse-text"><span class="verse-num">8</span>Then he gave Abraham the covenant of circumcision. And Abraham became the father of Isaac and circumcised him eight days after his birth. Later Isaac became the father of Jacob, and Jacob became the father of the twelve patriarchs.</span><span class="verse-text"><span class="verse-num">9</span>Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him</span><span class="verse-text"><span class="verse-num">10</span>and rescued him from all his troubles. He gave Joseph wisdom and enabled him to gain the goodwill of Pharaoh king of Egypt. So Pharaoh made him ruler over Egypt and all his palace.</span><span class="verse-text"><span class="verse-num">11</span>Then a famine struck all Egypt and Canaan, bringing great suffering, and our ancestors could not find food.</span><span class="verse-text"><span class="verse-num">12</span>When Jacob heard that there was grain in Egypt, he sent our forefathers on their first visit.</span><span class="verse-text"><span class="verse-num">13</span>On their second visit, Joseph told his brothers who he was, and Pharaoh learned about Joseph's family.</span><span class="verse-text"><span class="verse-num">14</span>After this, Joseph sent for his father Jacob and his whole family, seventy-five in all.</span><span class="verse-text"><span class="verse-num">15</span>Then Jacob went down to Egypt, where he and our ancestors died.</span><span class="verse-text"><span class="verse-num">16</span>Their bodies were brought back to Shechem and placed in the tomb that Abraham had bought from the sons of Hamor at Shechem for a certain sum of money.</span><span class="verse-text"><span class="verse-num">17</span>As the time drew near for God to fulfill his promise to Abraham, the number of our people in Egypt had greatly increased.</span><span class="verse-text"><span class="verse-num">18</span>Then a new king, to whom Joseph meant nothing, came to power in Egypt.</span><span class="verse-text"><span class="verse-num">19</span>He dealt treacherously with our people and oppressed our ancestors by forcing them to throw out their newborn babies so that they would die.</span><span class="verse-text"><span class="verse-num">20</span>At that time Moses was born, and he was no ordinary child. For three months he was cared for by his family.</span><span class="verse-text"><span class="verse-num">21</span>When he was placed outside, Pharaoh's daughter took him and brought him up as her own son.</span><span class="verse-text"><span class="verse-num">22</span>Moses was educated in all the wisdom of the Egyptians and was powerful in speech and action.</span><span class="verse-text"><span class="verse-num">23</span>When Moses was forty years old, he decided to visit his own people, the Israelites.</span><span class="verse-text"><span class="verse-num">24</span>He saw one of them being mistreated by an Egyptian, so he went to his defense and avenged him by killing the Egyptian.</span><span class="verse-text"><span class="verse-num">25</span>Moses thought that his own people would realize that God was using him to rescue them, but they did not.</span><span class="verse-text"><span class="verse-num">26</span>The next day Moses came upon two Israelites who were fighting. He tried to reconcile them by saying, "Men, you are brothers; why do you want to hurt each other?"</span><span class="verse-text"><span class="verse-num">27</span>But the man who was mistreating the other pushed Moses aside and said, "Who made you ruler and judge over us?</span><span class="verse-text"><span class="verse-num">28</span>Are you thinking of killing me as you killed the Egyptian yesterday?"</span><span class="verse-text"><span class="verse-num">29</span>When Moses heard this, he fled to Midian, where he settled as a foreigner and had two sons.</span><span class="verse-text"><span class="verse-num">30</span>After forty years had passed, an angel appeared to Moses in the flames of a burning bush in the desert near Mount Sinai.</span><span class="verse-text"><span class="verse-num">31</span>When he saw this, he was amazed at the sight. As he went over to get a closer look, he heard the Lord say:</span><span class="verse-text"><span class="verse-num">32</span>"I am the God of your fathers, the God of Abraham, Isaac and Jacob." Moses trembled with fear and did not dare to look.</span><span class="verse-text"><span class="verse-num">33</span>"Then the Lord said to him, 'Take off your sandals, for the place where you are standing is holy ground.</span><span class="verse-text"><span class="verse-num">34</span>I have indeed seen the oppression of my people in Egypt. I have heard their groaning and have come down to set them free. Now come, I will send you back to Egypt."</span><span class="verse-text"><span class="verse-num">35</span>"This is the same Moses they had rejected with the words, 'Who made you ruler and judge?' He was sent to be their ruler and deliverer by God himself, through the angel who appeared to him in the bush.</span><span class="verse-text"><span class="verse-num">36</span>He led them out of Egypt and performed wonders and signs in Egypt, at the Red Sea and for forty years in the wilderness.</span><span class="verse-text"><span class="verse-num">37</span>"This is the Moses who told the Israelites, 'God will raise up for you a prophet like me from your own people.'</span><span class="verse-text"><span class="verse-num">38</span>He was in the assembly in the wilderness, with the angel who spoke to him on Mount Sinai, and with our ancestors; and he received living words to pass on to us.</span><span class="verse-text"><span class="verse-num">39</span>"But our ancestors refused to obey him. Instead, they rejected him and in their hearts turned back to Egypt.</span><span class="verse-text"><span class="verse-num">40</span>They told Aaron, 'Make us gods who will go before us. As for this fellow Moses who led us out of Egypt — we don't know what has happened to him!'</span><span class="verse-text"><span class="verse-num">41</span>That was the time they made an idol in the form of a calf. They brought sacrifices to it and reveled in what their own hands had made.</span><span class="verse-text"><span class="verse-num">42</span>But God turned away from them and gave them over to the worship of the sun, moon and stars. This agrees with what is written in the book of the prophets: 'Did you bring me sacrifices and offerings forty years in the wilderness, people of Israel?</span><span class="verse-text"><span class="verse-num">43</span>You have taken up the tabernacle of Molek and the star of your god Rephan, the idols you made to worship. Therefore I will send you into exile beyond Babylon.'</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac7-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac7-s1-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac7-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac7-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac7-s1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger literary" onclick="tog(this,'ac7-s1-lit')"><span>Literary</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac7-s1-rob')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger keener" onclick="tog(this,'ac7-s1-keener')"><span>Keener</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac7-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac7-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac7-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ac7-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><div class="heb-row"><span class="heb-word">δόξης (doxēs)</span><span class="heb-def">of glory — "The God of glory appeared to our father Abraham." The title connects the Sinai theophany language to the patriarchal call — God's glory is not confined to the Temple but preceded it by centuries. Stephen's argument begins with geography-transcending divine appearance.</span></div><div class="heb-row"><span class="heb-word">κατοικεῖν (katoikein)</span><span class="heb-def">to dwell/settle — Stephen traces Abraham's journey through Mesopotamia, Harran, and Canaan, noting at each stage that God was present and active. The God of the Bible is the God of the journey, not merely the God of the destination — a key plank of Stephen's Temple argument.</span></div></div><div id="ac7-s1-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Mesopotamia (Ur)</div><div class="poi-text">Abraham's origin — modern southern Iraq. God appeared to Abraham in Mesopotamia, before he left for Harran (Gen 11:31-12:1). The first divine appearance in Israel's covenant history occurs outside the promised land entirely — Stephen's geographic opening argument.</div></div><div class="poi-entry"><div class="poi-name">Harran</div><div class="poi-text">The city in northern Mesopotamia where Terah settled with Abraham and family. God's call to leave was given in Mesopotamia; Abraham completes the departure after Terah's death. Stephen tracks the movement precisely to show God's initiative operating across multiple geographies.</div></div></div><div id="ac7-s1-ctx" class="anno-panel ctx"><h4>Context</h4><div class="ctx-item"><div class="ctx-title">Stephen's Speech — Structure</div><p>Acts 7 is the longest speech in Acts (60 verses). It is organized as a survey of salvation history in three phases: the patriarchs (Abraham, Joseph, vv.2-16), Moses (vv.17-43), and the Tabernacle/Temple (vv.44-50), followed by a direct indictment (vv.51-53). The argument is: God has always worked outside Jerusalem and the Temple; Israel has always rejected his agents; you are doing it again.</p></div><div class="ctx-item"><div class="ctx-title">Abraham — Called Outside the Land</div><p>Stephen begins with God's call of Abraham in Mesopotamia — before circumcision, before Canaan, before the Temple. The point is theological: God's covenantal initiative precedes every Jewish institution. The covenant is older than the land, the law, and the Temple.</p></div></div><div id="ac7-s1-cross" class="anno-panel cross-ref"><h4>Cross-References</h4><div class="cross-item"><span class="cross-ref">Genesis 12:1-3</span><p>God's call of Abraham — the foundation of Stephen's argument. The covenant begins outside Canaan, with a God who is not confined to any geography.</p></div><div class="cross-item"><span class="cross-ref">Genesis 15:13-14</span><p>God's prediction of the Egyptian sojourn — cited in v6. Stephen shows that even the Exodus was pre-planned, woven into covenant history from the beginning.</p></div><div class="cross-item"><span class="cross-ref">Deuteronomy 18:15</span><p>The prophet-like-Moses prophecy — cited in v37 as fulfilled in Jesus. Stephen's survey culminates in this claim: the whole of Israel's history pointed to Jesus, whom they rejected.</p></div></div><div id="ac7-s1-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 2100-2000 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abraham — Called in Mesopotamia</div><div class="tl-text">God appears to Abraham in Ur of the Chaldeans (Mesopotamia) — not in Canaan, not in Jerusalem. Stephen's point: divine initiative precedes every institution. The God of the Bible is a traveling God before he is a temple God.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1876 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Jacob's Family in Egypt</div><div class="tl-text">Seventy-five family members descend to Egypt with Jacob. The covenant promise is maintained through four hundred years of sojourn and slavery — entirely outside the promised land and without a temple.</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 33-34 AD</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Stephen's Defence</div><div class="tl-text">Stephen's survey of salvation history before the Sanhedrin is the most comprehensive christological reading of the OT in Acts — and the most confrontational. His conclusion: Israel has always resisted the Holy Spirit.</div></div></div>
+</div><div class="tl-range"><span>c. 2000 BC</span><span>c. AD 100</span></div></div><div id="ac7-s1-lit" class="anno-panel lit-panel"><h4>Literary Highlights</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">The Rejection-Sending Pattern</span><span class="lit-text">Stephen's survey constructs a recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler; Moses rejected (twice) → becomes deliverer. The pattern builds relentlessly toward the climax: you rejected the Righteous One (v52) — the ultimate rejection.</span></div><div class="lit-row"><span class="lit-label">Three Acts of Salvation History</span><span class="lit-text">The speech is structured in three escalating movements: (1) Abraham and Joseph — God works outside the land; (2) Moses — the people repeatedly reject their deliverer; (3) Temple critique — God never needed the building you're defending. Each section answers a different aspect of the charges against Stephen.</span></div></div></div><div id="ac7-s1-rob" class="anno-panel com-panel com-robertson"><h4>Robertson's Word Pictures</h4><div class="com-source">A.T. Robertson, <em>Word Pictures in the New Testament</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:2</span><p>"The God of glory" — Robertson notes this unusual title appears here and in Psalm 29:3 (LXX: ho theos tēs doxēs). It frames the entire speech: God's glory is not temple-bound. The theophanic glory that appeared to Abraham in Mesopotamia is the same glory Stephen sees in heaven at the speech's end (7:55). Glory bookends the speech.</p></div><div class="com-note"><span class="com-ref">7:5</span><p>"He gave him no inheritance here, not even enough ground to set his foot on" — Robertson notes the pointed irony: the father of the Jewish nation did not own the land he lived in. The covenant was about promise and relationship, not property. Stephen's argument is that his accusers have confused the sign (the land and Temple) with the substance (the covenant relationship).</p></div></div><div id="ac7-s1-keener" class="anno-panel com-panel com-keener"><h4>Keener Commentary</h4><div class="com-source">Craig Keener, <em>Acts: An Exegetical Commentary</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:2-8</span><p>Keener situates Stephen's speech in the tradition of Hellenistic Jewish apologetics — particularly the tradition of retelling Israel's history to show its universal scope. Philo and Josephus both retell patriarchal history for Greek-speaking audiences, emphasizing the universality of God's working. Stephen uses the same tradition but arrives at a radical conclusion: the institutions of Jewish worship were always provisional, pointing beyond themselves.</p></div><div class="com-note"><span class="com-ref">7:6</span><p>The "400 years" of sojourn (citing Gen 15:13) versus the 430 years of Exod 12:40 is a longstanding exegetical puzzle. Keener follows the view that Stephen is using round numbers from Genesis; the Exodus figure is more precise. The theological point — God knew and planned the Egyptian sojourn — matters more than the arithmetic precision.</p></div></div><div id="ac7-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:2</span><p>MacArthur notes that Stephen's opening — "the God of glory appeared to our father Abraham while he was still in Mesopotamia" — directly refutes the premise of the temple charges. If God appeared to Abraham before the Temple existed, and if Israel was constituted as a people before they ever entered Canaan, then the Temple cannot be the prerequisite for God's presence. The Temple is the response to the covenant, not its foundation.</p></div><div class="com-note"><span class="com-ref">7:9-10</span><p>"God was with him" in Egypt — MacArthur uses this as a paradigm: the presence of God with Joseph in slavery and prison is the guarantee that God's covenant faithfulness is not geography-dependent. The same principle applies to the scattered, persecuted Jerusalem church: God is with them wherever they go.</p></div></div><div id="ac7-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin's Commentary</h4><div class="com-source">John Calvin, <em>Commentary on Acts</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:2-3</span><p>Calvin notes that Stephen begins with the word "glory" (doxa) to establish his thesis at the outset: the God of Israel is the God of majesty who cannot be confined. Every institution God establishes — law, tabernacle, temple — is a condescension to human weakness, not a limitation on divine freedom. Stephen will show that the institutions themselves pointed beyond themselves.</p></div><div class="com-note"><span class="com-ref">7:5</span><p>Calvin on "no inheritance, not even ground to set his foot on" — this detail demonstrates that the physical possession of Canaan was never the substance of the Abrahamic covenant but only its pledge. The patriarchs lived as strangers in the promised land because they understood that the true inheritance was spiritual and eschatological (Heb 11:9-16).</p></div></div><div id="ac7-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:4</span><p>The NET notes a textual issue: Genesis 11:26 says Terah was 70 when he fathered Abraham; Gen 11:32 says Terah died at 205; Acts 7:4 says Abraham left Harran after his father's death. If Abraham was born when Terah was 70, he would have left at 75 (Gen 12:4) — before Terah died at 205. Samaritan Pentateuch reads Terah's death at 145, resolving the chronology. Luke may follow a textual tradition different from the Masoretic Text, or Stephen is presenting a simplified narrative.</p></div><div class="com-note"><span class="com-ref">7:14</span><p>"Seventy-five in all" — the NET notes this follows the LXX (Gen 46:27; Exod 1:5 LXX) rather than the Hebrew text (which reads seventy). Luke uses the LXX, as do most NT authors when citing the OT. The difference reflects a variant tradition about how to count Jacob's descendants, not an error.</p></div></div></div><div class="section"><div class="section-label">The Temple Critique and Stephen's Death</div><span class="verse-text"><span class="verse-num">44</span>"Our ancestors had the tabernacle of the covenant law with them in the wilderness. It had been made as God directed Moses, according to the pattern he had seen.</span><span class="verse-text"><span class="verse-num">45</span>After receiving the tabernacle, our ancestors under Joshua brought it with them when they took the land from the nations God drove out before them. It remained in the land until the time of David,</span><span class="verse-text"><span class="verse-num">46</span>who enjoyed God's favor and asked that he might provide a dwelling place for the God of Jacob.</span><span class="verse-text"><span class="verse-num">47</span>But it was Solomon who built a house for him.</span><span class="verse-text"><span class="verse-num">48</span>However, the Most High does not live in houses made by human hands. As the prophet says:</span><span class="verse-text"><span class="verse-num">49</span>"'Heaven is my throne, and the earth is my footstool. What kind of house will you build for me? says the Lord. Or where will my resting place be?</span><span class="verse-text"><span class="verse-num">50</span>Has not my hand made all these things?'</span><span class="verse-text"><span class="verse-num">51</span>"You stiff-necked people! Your hearts and ears are still uncircumcised. You are just like your ancestors: You always resist the Holy Spirit!</span><span class="verse-text"><span class="verse-num">52</span>Was there ever a prophet your ancestors did not persecute? They even killed those who predicted the coming of the Righteous One. And now you have betrayed and murdered him —</span><span class="verse-text"><span class="verse-num">53</span>you who have received the law that was put into effect through angels but have not obeyed it."</span><span class="verse-text"><span class="verse-num">54</span>When the members of the Sanhedrin heard this, they were furious and gnashed their teeth at him.</span><span class="verse-text"><span class="verse-num">55</span>But Stephen, full of the Holy Spirit, looked up to heaven and saw the glory of God, and Jesus standing at the right hand of God.</span><span class="verse-text"><span class="verse-num">56</span>"Look," he said, "I see heaven open and the Son of Man standing at the right hand of God."</span><span class="verse-text"><span class="verse-num">57</span>At this they covered their ears and, yelling at the top of their voices, they all rushed at him,</span><span class="verse-text"><span class="verse-num">58</span>dragged him out of the city and began to stone him. Meanwhile, the witnesses laid their coats at the feet of a young man named Saul.</span><span class="verse-text"><span class="verse-num">59</span>While they were stoning him, Stephen prayed, "Lord Jesus, receive my spirit."</span><span class="verse-text"><span class="verse-num">60</span>Then he fell on his knees and cried out, "Lord, do not hold this sin against them." When he had said this, he fell asleep.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac7-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac7-s2-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac7-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac7-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac7-s2-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger literary" onclick="tog(this,'ac7-s2-lit')"><span>Literary</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac7-s2-rob')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger keener" onclick="tog(this,'ac7-s2-keener')"><span>Keener</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac7-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac7-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac7-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ac7-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><div class="heb-row"><span class="heb-word">σκληροτράχηλοι (sklērotracheloi)</span><span class="heb-def">stiff-necked — literally "hard-necked." A LXX term for Israel's stubbornness (Exod 33:3, 5; 34:9; Deut 9:6, 13). Stephen uses the very words God used to Israel in the wilderness — and applies them directly to the Sanhedrin. The accusation is devastating precisely because it uses their own scriptures.</span></div><div class="heb-row"><span class="heb-word">ἀπερίτμητοι (aperitmētoi)</span><span class="heb-def">uncircumcised — used of hearts and ears (v51). Circumcision of the heart is the Deuteronomic ideal (Deut 10:16; 30:6; Jer 4:4). Stephen accuses the circumcised defenders of the law of being uncircumcised where it actually matters — in heart and ear.</span></div></div><div id="ac7-s2-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Outside the City — Stoning Site</div><div class="poi-text">Stoning required taking the condemned outside the city walls (Lev 24:14; cf. Heb 13:12). Stephen was dragged "out of the city" (v58). The location is traditionally identified with an area north of the Damascus Gate. The detail that "witnesses" laid their coats at Saul's feet (v58) has legal significance: witnesses were required to throw the first stones.</div></div><div class="poi-entry"><div class="poi-name">Heaven Open — v56</div><div class="poi-text">"I see heaven open and the Son of Man standing at the right hand of God" (v56). Stephen's vision is the most explicit post-resurrection appearance of Jesus in Acts. The "standing" rather than sitting is often noted: the risen Lord stands in honor of his first martyr — a detail that marks the moment's solemnity.</div></div></div><div id="ac7-s2-ctx" class="anno-panel ctx"><h4>Context</h4><div class="ctx-item"><div class="ctx-title">The Temple Critique — vv.44-50</div><p>Stephen's direct argument is from Isaiah 66:1-2: heaven is God's throne, earth his footstool — what house could contain him? This is not anti-worship but anti-idolatry of the institution. The Temple was David's idea and Solomon's achievement (vv.46-47); God graciously occupied it, but never needed it. Stephen is making a point from within the tradition, not outside it.</p></div><div class="ctx-item"><div class="ctx-title">Always Resisting the Spirit</div><p>The accusation of v51 — "You always resist the Holy Spirit; as your fathers did, so do you" — is the thesis statement of the entire speech. Every example from Abraham through Moses was building to this: the pattern of rejection is not a recent aberration but the consistent posture of unfaithful Israel throughout its history.</p></div></div><div id="ac7-s2-cross" class="anno-panel cross-ref"><h4>Cross-References</h4><div class="cross-item"><span class="cross-ref">Isaiah 66:1-2</span><p>The direct quotation (vv.49-50) — the prophetic undermining of Temple theology from within the prophetic tradition. Stephen is using Israel's own prophets to make his case.</p></div><div class="cross-item"><span class="cross-ref">Deuteronomy 10:16</span><p>"Circumcise your hearts, therefore" — the OT basis for Stephen's accusation. He applies the Deuteronomic standard the Sanhedrin would claim to uphold.</p></div><div class="cross-item"><span class="cross-ref">Luke 23:34</span><p>"Father, forgive them, for they do not know what they are doing" — Jesus's dying prayer. Stephen's dying prayer (7:60: "Lord, do not hold this sin against them") deliberately echoes it. The first martyr follows the pattern of the first and only perfect martyr.</p></div></div><div id="ac7-s2-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 959 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Solomon's Temple Built</div><div class="tl-text">Solomon completes the Temple in Jerusalem — the culmination of David's desire and God's conditional permission (2 Sam 7:12-13). Stephen notes the progression: tabernacle (Moses, portable, functional) → Temple (Solomon, fixed, magnificent). God accommodated the permanence; he never required it.</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. AD 33-34</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Stephen Stoned</div><div class="tl-text">Stephen becomes the first Christian martyr, stoned outside Jerusalem's walls. His death triggers the first great persecution and the scattering that fulfils the 1:8 commission. Paul (Saul) is present as a consenting witness (8:1).</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 35</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Paul's Conversion</div><div class="tl-text">Saul's persecution of the church in the aftermath of Stephen's death leads him to Damascus — where the risen Jesus appears to him. The martyrdom Stephen underwent, and the forgiveness he prayed for his killers, may have been seeds in Saul's eventual conversion.</div></div></div>
+</div><div class="tl-range"><span>c. 2000 BC</span><span>c. AD 100</span></div></div><div id="ac7-s2-lit" class="anno-panel lit-panel"><h4>Literary Highlights</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Dying Prayers — Mirror of Christ</span><span class="lit-text">Stephen's two dying prayers (v59: "Lord Jesus, receive my spirit" / v60: "Lord, do not hold this sin against them") deliberately echo Jesus's two cross-words from Luke 23 (23:46: "Father, into your hands I commit my spirit" / 23:34: "Father, forgive them"). Luke constructed the parallel across his two volumes. The martyr's death is the disciple's greatest imitation of the Master.</span></div><div class="lit-row"><span class="lit-label">The Son of Man Standing</span><span class="lit-text">The only post-resurrection vision of Jesus as "Son of Man" in the NT. Daniel 7:13-14 had the Son of Man coming to the Ancient of Days; at the right hand means the session of authority (Ps 110:1) is established. That Jesus stands (not sits) at this moment is a detail Luke preserves as a mark of recognition — the heavenly court rises for its first martyr.</span></div></div></div><div id="ac7-s2-rob" class="anno-panel com-panel com-robertson"><h4>Robertson's Word Pictures</h4><div class="com-source">A.T. Robertson, <em>Word Pictures in the New Testament</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:48-50</span><p>Robertson notes that Stephen quotes Isaiah 66:1-2 to establish that the Temple was never God's ultimate dwelling — even Solomon's prayer at its dedication acknowledged this (1 Kings 8:27). Stephen is not rejecting worship but exposing the idolatry of treating the institution as ends rather than means. Robertson connects this to Jesus's conversation with the Samaritan woman (John 4:21-24).</p></div><div class="com-note"><span class="com-ref">7:55-56</span><p>"Jesus standing at the right hand of God" — Robertson notes that the only other NT text using this precise language is Hebrews 12:2 (seated at the right hand). The standing here may indicate that Jesus has risen from his throne in honor of his servant. Robertson accepts this interpretation as the most moving in the passage.</p></div></div><div id="ac7-s2-keener" class="anno-panel com-panel com-keener"><h4>Keener Commentary</h4><div class="com-source">Craig Keener, <em>Acts: An Exegetical Commentary</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:51-53</span><p>Keener notes the rhetorical shift in vv.51-53: after fifty verses of historical narration (defensive, epideictic), Stephen suddenly shifts to direct denunciation (prosecutorial). This reversal is deliberate — he has been building to this accusation throughout. The Sanhedrin expected to judge him; he turns the court around and judges them from their own history.</p></div><div class="com-note"><span class="com-ref">7:58</span><p>Saul holding the coats is not a minor detail for Keener. Ancient stoning procedure required the witnesses (who threw the first stones) to divest themselves of outer garments for ease of movement. Saul's function as coat-keeper indicates that he was present in an official or semi-official supervisory capacity — a young man of standing, not a mere bystander.</p></div></div><div id="ac7-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:55-56</span><p>MacArthur treats Stephen's vision as an actual, physical sight of the glorified Christ — not a metaphor or a psychological experience. He notes that this is one of the few post-Pentecost appearances of the risen Jesus recorded in Acts (alongside Paul's Damascus road encounter). The vision grounds Stephen's boldness: he is not facing death alone but is witnessing the living Lord's vindication of him.</p></div><div class="com-note"><span class="com-ref">7:60</span><p>MacArthur on Stephen's prayer for his killers: "Lord, do not hold this sin against them." The aorist (stēsēs — literally "do not set up against them") implies a legal accounting that Stephen prays will not be made. MacArthur notes that this prayer, coming from a dying man with every reason for resentment, is the most dramatic expression of the forgiveness ethic in the NT outside the cross itself.</p></div></div><div id="ac7-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin's Commentary</h4><div class="com-source">John Calvin, <em>Commentary on Acts</em> &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:48-50</span><p>Calvin on the Temple critique: Stephen is not abolishing worship but reforming its theology. The error of the Sanhedrin was not in valuing the Temple but in failing to understand what the Temple was for — to point beyond itself to the living God who inhabits eternity. Calvin uses this to warn against the same error in all ages: treating the means of grace as ends in themselves.</p></div><div class="com-note"><span class="com-ref">7:60</span><p>Calvin's commentary on Stephen's dying prayer is among his most moving: "This is the true mark of the children of God, that they pray for those who injure them." Calvin connects this directly to the Sermon on the Mount (Matt 5:44) and to the character of Christ: Stephen's prayer is possible because he is dying in Christ's pattern and by Christ's Spirit.</p></div></div><div id="ac7-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes &mdash; Faithful Paraphrase</div><div class="com-note"><span class="com-ref">7:55</span><p>The NET notes that "full of the Holy Spirit" (plērēs pneumatos hagiou) at v55 uses the adjective plērēs rather than the verbal form used elsewhere. The adjectival form describes a stable, ongoing state of being Spirit-filled — not a fresh infilling for this moment but the culmination of the Spirit-filled life described throughout the chapter (6:3, 5, 8, 10).</p></div><div class="com-note"><span class="com-ref">7:60</span><p>The NET notes "fell asleep" (ekoimetē) — Luke's euphemism for death that became the standard NT metaphor for a believer's death (1 Cor 15:6, 18, 20; 1 Thess 4:13-15). The metaphor carries resurrection hope: sleep ends in waking. Luke uses it for Stephen while using more direct death language (apethanen) elsewhere.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-header">Vocabulary Highlights</div>
+<div class="scholarly-desc">Tap highlighted words to explore their significance.</div>
+<div class="scholarly-buttons">
+  <button class="anno-trigger hebrew" onclick="highlightClass('vhl-divine')"><span>Divine Names</span></button>
+  <button class="anno-trigger places" onclick="highlightClass('vhl-place')"><span>Places</span></button>
+  <button class="anno-trigger people" onclick="highlightClass('vhl-person')"><span>People</span></button>
+  <button class="anno-trigger timeline" onclick="highlightClass('vhl-time')"><span>Time</span></button>
+  <button class="anno-trigger cross" onclick="highlightClass('vhl-key')"><span>Key Terms</span></button>
+</div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+
+
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+var DIVINE={"words":["God", "Lord", "Spirit", "Holy Spirit", "Jesus", "Christ", "Father", "Lord Jesus", "Son", "Almighty", "Angel", "angel"],"cls":"vhl-divine","btn":["hebrew","hebrew-text","context"]};
+var PLACES={"words":["Jerusalem", "Antioch", "Rome", "Ephesus", "Corinth", "Philippi", "Athens", "Caesarea", "Damascus", "Samaria", "Judea", "Galatia", "synagogue", "temple", "Macedonia"],"cls":"vhl-place","btn":["places","context"]};
+var PEOPLE={"words":["Paul", "Peter", "Barnabas", "Stephen", "Philip", "James", "Silas", "Timothy", "Apollos", "Herod", "Felix", "Festus", "Agrippa", "disciples", "apostles", "elders", "Ananias", "Cornelius"],"cls":"vhl-person","btn":["people","context"]};
+var TIME_W={"words":["day", "days", "night", "morning", "hour", "years", "year", "suddenly", "at once", "three days", "sabbath", "Pentecost"],"cls":"vhl-time","btn":["timeline","context"]};
+var KEY_W  ={"words":["Spirit", "repentance", "baptized", "believe", "witness", "gospel", "resurrection", "kingdom", "salvation", "Holy Spirit", "boldly", "signs", "wonders", "name", "Word", "grace", "faith", "Gentiles"],"cls":"vhl-key","btn":["literary","cross"]};
+var VHL_SETS=[DIVINE,PLACES,PEOPLE,TIME_W,KEY_W];
+function highlightClass(cls){
+  document.querySelectorAll('.verse-text').forEach(function(s){
+    s.innerHTML=s.innerHTML.replace(/<span class="[^"]*vhl[^"]*">(.*?)<\/span>/g,'$1');
+  });
+  var set=VHL_SETS.find(function(x){return x.cls===cls;});
+  if(!set)return;
+  document.querySelectorAll('.verse-text').forEach(function(s){
+    set.words.forEach(function(w){
+      var re=new RegExp('\\b('+w+')\\b','g');
+      s.innerHTML=s.innerHTML.replace(re,'<span class="'+set.cls+' vhl-word">$1</span>');
+    });
+  });
+}
+</script>
+<script>
+(function(){
+  try{
+    var KEY='sdReading',MAX=20;
+    var hist=JSON.parse(localStorage.getItem(KEY)||'[]');
+    var url='acts/Acts_7.html';
+    var title=document.querySelector('h1')?document.querySelector('h1').textContent.trim():'';
+    var subtitle=document.querySelector('header p')?document.querySelector('header p').textContent.trim():'';
+    var label=title+(subtitle?' · '+subtitle.slice(0,30):'');
+    hist=hist.filter(function(h){return h.url!==url;});
+    hist.unshift({url:url,label:label,title:title,subtitle:subtitle});
+    if(hist.length>MAX)hist=hist.slice(0,MAX);
+    localStorage.setItem(KEY,JSON.stringify(hist));
+  }catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="acts/Acts_7.html";</script>
+<script src="../verses.js"></script>
+<script src="../qnav.js"></script>
+</body>
+</html>
