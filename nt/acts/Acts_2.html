@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac2-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac2-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac2-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#peter" class="person-tree-link" title="View Peter in Genealogy Tree">Peter</a></div><div class="person-role">Apostle — first preacher at Pentecost</div><div class="person-text">Delivers the first Christian sermon to a Jerusalem crowd. His Pentecost sermon quotes Joel 2 and Ps 16/110 to identify Jesus as the fulfillment of Israel's hope. Three thousand respond.</div></div><div class="person-card"><div class="person-name">The Holy Spirit</div><div class="person-role">The promised Paraclete</div><div class="person-text">Poured out at Pentecost fulfilling Joel 2:28-32. Manifested in wind, fire, and polyglot speech, the Spirit empowers proclamation and constitutes the new community.</div></div><div class="person-card"><div class="person-name">The Jerusalem Crowd</div><div class="person-role">Diaspora Jews from every nation</div><div class="person-text">Pilgrimage Jews from 15 regions hear the Gospel in their own languages. Their question "What shall we do?" (v.37) receives the apostolic answer: repent, be baptized, receive the Spirit.</div></div></div></div>
 <div id="ac2-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Peter's Sermon — Chiastic Structure — vv.14–36</span><span class="lit-text">The sermon moves through three OT texts (Joel, Psalm 16, Psalm 110) each answering a different question about the present events. The structure is an argument, not merely an address, culminating in the double-title declaration of v36: Lord and Messiah simultaneously.</span></div><div class="lit-row"><span class="lit-label">Lord and Christ — v36 as Climax — v.36</span><span class="lit-text">"God has made this Jesus... both Lord and Messiah" is the most compressed Christological statement in Acts. Kyrios (Lord) was the LXX word for YHWH; Christos is the royal designation. Peter attributes both to the Jesus they crucified — the theological nerve-centre of the entire sermon and the ground of the 3,000 conversions that follow.</span></div><div class="lit-note">Acts 2 is the theological fulcrum of the entire book: the Spirit arrives, the church is born, the Gospel is proclaimed, and the new covenant community takes shape around four marks that will define it for all generations.</div></div></div>
 </div>
 </main>

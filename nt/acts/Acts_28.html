@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac28-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac28-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac28-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#paul" class="person-tree-link" title="View Paul in Genealogy Tree">Paul</a></div><div class="person-role">Apostle — Rome at last; unhindered proclamation</div><div class="person-text">Shakes off a viper on Malta, heals Publius's father and many others, walks into Rome, and immediately summons the Jewish leaders. Two years of house arrest become a mission centre: welcoming all, proclaiming the kingdom, teaching about Jesus "with all boldness and without any hindrance."</div></div><div class="person-card"><div class="person-name">The Maltese Islanders</div><div class="person-role">Pagan barbarians who show extraordinary kindness</div><div class="person-text">Build a fire, provide hospitality, and observe Paul with a curiosity that moves from "he must be a murderer" to "he must be a god." Their unprecedented philanthrōpia (literally "love for humanity") receives Paul and his 275 companions after the shipwreck.</div></div></div></div>
 <div id="ac28-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">"Without Any Hindrance" — The Final Word — v.31</span><span class="lit-text">Acts ends on akōlytōs — 'without any hindrance.' The entire book has been demonstrating this thesis: the Gospel advances through every opposition — the Sanhedrin, the synagogue, the mob, the governor, the storm, the shipwreck, the prison. The book does not end with Paul's fate because Paul's fate is not the point. The word's freedom is the point. Luke's final word is not a biography's conclusion but a theology's proof.</span></div><div class="lit-row"><span class="lit-label">The Three Turnings to the Gentiles — v.28</span><span class="lit-text">Acts 13:46–47, 18:6, and 28:28 each record Paul declaring 'I now turn to the Gentiles' at a critical juncture. Each follows the same pattern: Jewish community partially rejects; Paul declares the turning; Gentiles receive. The third and final turning in Rome — at the ends of the earth — is Acts' theological conclusion: the pattern that began in Pisidian Antioch is complete. The Gospel has reached every people.</span></div><div class="lit-note">Acts 28 completes Acts' geographical and theological mission: Rome is reached, the Gospel is proclaimed, and the final word — 'without any hindrance' — is Luke's thesis proven. The book ends not with Paul's biography but with the word's triumph. The commission of Acts 1:8 is fulfilled; the ends of the earth have heard.</div></div></div>
 </div>
 </main>

@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac7-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac7-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac7-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#stephen" class="person-tree-link" title="View Stephen in Genealogy Tree">Stephen</a></div><div class="person-role">Deacon — apologist before the Sanhedrin; first martyr</div><div class="person-text">Delivers the longest speech in Acts: a sweeping retelling of Israel's history showing that Israel repeatedly rejected God's messengers — culminating in the rejection and murder of "the Righteous One." He dies like Jesus: forgiving his killers, commending his spirit to God.</div></div><div class="person-card"><div class="person-name"><a href="../../people.html#paul" class="person-tree-link" title="View Paul (Saul) in Genealogy Tree">Paul (Saul)</a></div><div class="person-role">Pharisee — approves of Stephen's execution</div><div class="person-text">Mentioned for the first time: "the witnesses laid their coats at the feet of a young man named Saul." His approval of Stephen's death positions him as the anti-hero whose transformation in ch.9 will be the hinge of Acts.</div></div></div></div>
 <div id="ac7-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Rejection-Sending Pattern — vv.9–38</span><span class="lit-text">Stephen's survey constructs a recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler. Moses rejected twice → becomes deliverer. The pattern builds relentlessly toward the climax: you rejected the Righteous One (v52) — the ultimate rejection.</span></div><div class="lit-row"><span class="lit-label">Mirror Structure — Martyrdom as Passion — vv.55–60</span><span class="lit-text">Stephen's dying scene deliberately mirrors the crucifixion: heavenly vision, two prayers echoing Luke 23:34 and 23:46, dying outside the city. Luke constructed the parallel across his two volumes. The first martyr's death is shaped into the shape of the Master's death — the pattern of all subsequent Christian martyrdom.</span></div><div class="lit-note">Acts 7 is the theological watershed of the book: Stephen's speech completes the argument for the Gentile mission's legitimacy, his martyrdom triggers the scattering that fulfils the 1:8 commission, and his death introduces Saul — whose conversion will carry the mission to the ends of the earth.</div></div></div>
 </div>
 </main>

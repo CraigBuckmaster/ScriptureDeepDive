@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac22-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac22-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac22-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#paul" class="person-tree-link" title="View Paul in Genealogy Tree">Paul</a></div><div class="person-role">Apostle — autobiographical defense in Hebrew/Aramaic</div><div class="person-text">Speaks to the Jerusalem crowd from the steps of the Antonia Fortress. The most personal self-presentation in Acts: his Pharisaic credentials, his persecution of Christians, his Damascus road encounter, his temple vision, and his Gentile commission. The crowd listens until "Gentiles" — then riot.</div></div><div class="person-card"><div class="person-name">Ananias of Damascus</div><div class="person-role">Disciple who restored Paul's sight; here quoted</div><div class="person-text">Recalled in Paul's speech: his coming to Paul, "Brother Saul, receive your sight," and his theological framing of Paul's commission: "the God of our ancestors has chosen you to know his will."</div></div></div></div>
 <div id="ac22-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Three-Fold Damascus Retelling — Judicial Witness — chs.9, 22, 26</span><span class="lit-text">The Damascus road account is told three times in Acts — each tailored to its audience: ch.9 (Luke as narrator), ch.22 (Jewish crowd, emphasising Jewish credentials and Jerusalem vision), ch.26 (Roman governor and Jewish king, emphasising the prophetic commission). The three retellings function as the three witnesses required by Jewish legal tradition (Deut 19:15) — the apostolic testimony is presented as court-level evidence.</span></div><div class="lit-row"><span class="lit-label">The Single Word That Ended the Speech — 'Gentiles' — v.21</span><span class="lit-text">Paul spoke for twenty verses about his Jewish credentials, his conversion, his commission in the Jerusalem Temple — and the crowd listened in silence. One word ended the speech: 'Gentiles.' The theological offence is not Paul's past (he was a persecutor — they knew that) but God's future (Gentiles on equal terms). The riot reveals that the Gospel's most controversial claim is not the resurrection but the equal standing of all peoples before God.</span></div><div class="lit-note">Acts 22 is Paul's most personal defence — his autobiography in 21 verses, from Jerusalem student to persecutor to convert to Gentile missionary. The crowd's rage at the word 'Gentiles' reveals that the deepest resistance to the Gospel is not about Christ's identity but about the implications of that identity for human categories of exclusion.</div></div></div>
 </div>
 </main>
