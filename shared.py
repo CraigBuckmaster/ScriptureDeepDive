@@ -793,7 +793,7 @@ def verse(num, text):
 def heb_panel(pid, words, is_nt=False):
     label = 'Greek Word Study' if is_nt else 'Hebrew Word Study'
     rows = ''.join(f'<p><span class="hebrew-word">{h}</span> <span class="tlit">{t}</span> — <strong>{g}</strong>: {n}</p>' for h,t,g,n in words)
-    return f'<div id="{pid}" class="anno-panel heb"><h4>{label}</h4>{rows}</div>'
+    return f'<div id="{pid}" class="anno-panel heb-text-panel"><h4>{label}</h4>{rows}</div>'
 
 def hist_panel(pid, text):
     return f'<div id="{pid}" class="anno-panel hist"><h4>Historical Context</h4><p>{text}</p></div>'
