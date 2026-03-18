@@ -194,7 +194,7 @@ EXPECTED = {
     ('Acts', 9):43,('Acts',10):48,('Acts',11):30,('Acts',12):25,
     ('Acts',13):52,('Acts',14):28,('Acts',15):41,('Acts',16):40,
     ('Acts',17):34,('Acts',18):28,('Acts',19):41,('Acts',20):38,
-    ('Acts',21):40,('Acts',22):30,('Acts',23):35,('Acts',24):27,
+    ('Acts',21):40,('Acts',22):30,('Acts',23):35,('Acts',24):26,  # v7 is a Western text addition omitted in NIV
     ('Acts',25):27,('Acts',26):32,('Acts',27):44,('Acts',28):31,
 }
 

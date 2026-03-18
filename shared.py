@@ -273,7 +273,7 @@ REGISTRY = [
     ('mark',     'Mark',      16, 16, 'NT'),
     ('luke',     'Luke',      24, 24, 'NT'),
     ('john',     'John',      21, 21, 'NT'),
-    ('acts',     'Acts',      28, 20, 'NT'),
+    ('acts',     'Acts',      28, 24, 'NT'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
