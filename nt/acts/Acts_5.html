@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac5-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac5-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac5-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#peter" class="person-tree-link" title="View Peter in Genealogy Tree">Peter</a></div><div class="person-role">Apostle — judge and wonder-worker</div><div class="person-text">Pronounces divine judgment on Ananias and Sapphira for deceiving the Spirit. His miraculous shadow heals the sick. Imprisoned and miraculously freed, he defies the Sanhedrin: "We must obey God rather than human beings."</div></div><div class="person-card"><div class="person-name">Ananias and Sapphira</div><div class="person-role">Couple who lied to the Spirit</div><div class="person-text">Sell property but secretly withhold part of the proceeds while claiming to give all. Their death — not for the withholding but for the deception — establishes the Spirit's holiness and the gravity of hypocrisy in the new community.</div></div><div class="person-card"><div class="person-name">Gamaliel</div><div class="person-role">Pharisee and renowned teacher of the law</div><div class="person-text">Provides the unexpected defense of the apostles: if this movement is human, it will fail; if divine, the Sanhedrin cannot stop it. His pragmatic theology inadvertently echoes Luke's own narrative argument throughout Acts.</div></div></div></div>
 <div id="ac5-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Ananias/Sapphira as Anti-Barnabas — vv.1–11</span><span class="lit-text">Acts 4:36–37 introduced Barnabas as the exemplary giver; Acts 5:1–11 immediately introduces Ananias and Sapphira as his dark mirror. The contrast is Luke's literary device for presenting the community's standards: generosity is praised; hypocrisy is exposed. The pairing is deliberate and instructive.</span></div><div class="lit-row"><span class="lit-label">The Angel's Commission — "This New Life" — v.20</span><span class="lit-text">"Tell the people all about this new life" (ta rhēmata tēs zōēs tautēs — the words of this life). The angelic commission defines apostolic preaching: not primarily theological argument but the proclamation of a new order of existence — life as defined by resurrection. The phrase is the theological thesis of Acts.</span></div><div class="lit-note">Acts 5 presents the founding-moment judgment that defines the church's covenant identity, followed by the second Sanhedrin confrontation — establishing that no institutional opposition can stop the mission commissioned by the risen Lord.</div></div></div>
 </div>
 </main>

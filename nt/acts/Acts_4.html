@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac4-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac4-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac4-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#peter" class="person-tree-link" title="View Peter in Genealogy Tree">Peter</a></div><div class="person-role">Apostle — bold witness before the Sanhedrin</div><div class="person-text">Filled with the Holy Spirit, gives the most compressed Gospel statement in Acts: "salvation is found in no one else, for there is no other name" (v.12). Astonishes the educated Sanhedrin.</div></div><div class="person-card"><div class="person-name">John</div><div class="person-role">Apostle — co-defendant before the council</div><div class="person-text">Stands trial alongside Peter. Their courage astonishes the Sanhedrin who recognise they are "unschooled, ordinary men" — and note they had been with Jesus.</div></div><div class="person-card"><div class="person-name"><a href="../../people.html#barnabas" class="person-tree-link" title="View Barnabas in Genealogy Tree">Barnabas</a></div><div class="person-role">Levite from Cyprus; early generous disciple</div><div class="person-text">Named here for the first time. His act of selling a field and laying the proceeds at the apostles' feet models the radical generosity of the Jerusalem community and contrasts sharply with Ananias and Sapphira (ch.5).</div></div></div></div>
 <div id="ac4-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Cornerstone Irony — v.11</span><span class="lit-text">The quotation of Psalm 118:22 is addressed directly to the "builders" — the Sanhedrin, Israel's religious leadership. The irony is complete: the experts in building God's people have rejected the very stone God chose. Their expertise is their condemnation.</span></div><div class="lit-row"><span class="lit-label">Prayer Structure — Psalm 2 Application — vv.24–30</span><span class="lit-text">The community's prayer is a masterclass in applied Scripture. They do not pray for safety or revenge but for boldness and signs. The use of Psalm 2 reframes their situation from victims of circumstance to participants in cosmic drama. This reframing is itself theological courage — seeing persecution through the lens of God's sovereign plan.</span></div><div class="lit-note">Acts 4 introduces the first formal confrontation between the church and the Sanhedrin, establishing the apostolic pattern of bold proclamation, scriptural argumentation, and prayerful dependence that will characterize the entire mission.</div></div></div>
 </div>
 </main>

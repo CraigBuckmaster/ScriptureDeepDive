@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac1-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac1-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac1-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#peter" class="person-tree-link" title="View Peter in Genealogy Tree">Peter</a></div><div class="person-role">Apostle and leader</div><div class="person-text">Takes charge of the community after the Ascension. Identifies the scriptural necessity of replacing Judas (Ps 69, 109) and presides over the first post-resurrection community decision.</div></div><div class="person-card"><div class="person-name">Matthias</div><div class="person-role">Replacement apostle</div><div class="person-text">Chosen by lot to fill Judas's vacancy among the Twelve. One of two who had accompanied Jesus from his baptism through the resurrection appearances. Never named again in Acts.</div></div><div class="person-card"><div class="person-name"><a href="../../people.html#jesus" class="person-tree-link" title="View Jesus (the Ascended Lord) in Genealogy Tree">Jesus (the Ascended Lord)</a></div><div class="person-role">Risen and ascending Christ</div><div class="person-text">Appears to the disciples for 40 days after the resurrection, speaks about the kingdom, and ascends from the Mount of Olives. His last instruction — "you will be my witnesses" — defines the entire Acts narrative.</div></div></div></div>
 <div id="ac1-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Two-Volume Inclusio — vv.1–2</span><span class="lit-text">Acts opens with "what Jesus began to do and teach" (1:1) and closes with Paul "teaching about the Lord Jesus Christ" (28:31). The symmetry is deliberate: Jesus's ministry continues through the church by the same Spirit that empowered him. The word "began" frames Acts as the continuation, not the conclusion.</span></div><div class="lit-row"><span class="lit-label">Geographical Thesis — v8 — v.8</span><span class="lit-text">The commission of 1:8 is the book's own structural outline: Jerusalem (chs 1–7), Judea and Samaria (chs 8–12), ends of the earth (chs 13–28). Luke announces his entire plot in the mouth of Jesus — the reader knows the destination before the journey begins.</span></div><div class="lit-note">Acts 1 establishes both the theological foundation (Spirit-empowered witness) and the geographic program (Jerusalem to Rome) that the entire book will unfold.</div></div></div>
 </div>
 </main>

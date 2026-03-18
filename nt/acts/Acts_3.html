@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac3-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac3-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac3-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#peter" class="person-tree-link" title="View Peter in Genealogy Tree">Peter</a></div><div class="person-role">Apostle — healer and preacher</div><div class="person-text">Heals the lame man at the Beautiful Gate "in the name of Jesus Christ of Nazareth" and uses the crowd's astonishment as the occasion for the second major sermon, identifying Jesus as the prophet of Deut 18.</div></div><div class="person-card"><div class="person-name">John</div><div class="person-role">Apostle — witness alongside Peter</div><div class="person-text">Present with Peter at the gate and throughout the healing. The two function as a prophetic pair — Luke's first fulfillment of Jesus's "two witnesses" pattern (Luke 10:1).</div></div><div class="person-card"><div class="person-name">The Lame Man</div><div class="person-role">Recipient of apostolic healing</div><div class="person-text">Lame from birth, carried daily to the temple gate. His leaping and praising God echoes Isaiah 35:6's vision of the messianic age. Becomes the visible proof that Jesus's resurrection power continues.</div></div></div></div>
 <div id="ac3-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Silver and Gold — Economic Reversal — v.6</span><span class="lit-text">"Silver or gold I do not have, but what I do have I give you" contrasts the church's power with the Temple establishment's wealth. The healing economy operates on a completely different currency: authority in the name of the risen Christ rather than financial resources. This contrast will be pressed further in 4:13 — unschooled men with authority surpassing the authorities.</span></div><div class="lit-row"><span class="lit-label">Prophet Typology — Moses to Jesus — vv.22–26</span><span class="lit-text">Peter's sermon constructs a typological argument through Israel's history: Abraham's covenant → Moses's prophet-promise → Jesus. The argument builds relentlessly toward the conclusion: "when God raised up his servant, he sent him first to you to bless you." Israel's priority in the mission is not chauvinism but the logic of covenant fulfilment.</span></div><div class="lit-note">Acts 3 presents the first apostolic healing and the second public sermon — establishing the pattern of sign followed by proclamation that will characterise the entire Petrine mission.</div></div></div>
 </div>
 </main>

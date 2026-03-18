@@ -481,6 +481,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
 
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);transition:border-color .15s,color .15s;}.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -511,8 +512,10 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 <div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ac19-ppl')"><span>People</span></button>
 <button class="anno-trigger literary" onclick="tog(this,'ac19-lit')"><span>Literary Structure</span></button>
 </div>
+<div id="ac19-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name"><a href="../../people.html#paul" class="person-tree-link" title="View Paul in Genealogy Tree">Paul</a></div><div class="person-role">Apostle — 3-year Ephesian ministry; riot in the theater</div><div class="person-text">The longest single-city ministry in Acts: over two years, daily in the lecture hall of Tyrannus. Extraordinary miracles including healing through handkerchiefs. When Demetrius the silversmith organises a riot over lost idol trade, the city is in uproar.</div></div><div class="person-card"><div class="person-name">Demetrius the Silversmith</div><div class="person-role">Guild organiser; instigator of the Ephesian riot</div><div class="person-text">Stirs up his fellow craftsmen by appealing to both economic loss and civic-religious pride: Paul's preaching that "gods made by human hands are no gods at all" threatens the Artemis trade and Ephesus' prestige as temple-warden.</div></div></div></div>
 <div id="ac19-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">All of Asia Hears — The Ephesian Hub — v.10</span><span class="lit-text">The claim that 'all the Jews and Greeks who lived in the province of Asia heard the word of the Lord' (v.10) is Luke's most expansive mission summary. Ephesus was the province's hub — trade routes and networks radiated outward to every major city. Paul's daily teaching of a core community created an outward-spreading movement that he did not personally direct but whose momentum came from the word's own power.</span></div><div class="lit-row"><span class="lit-label">The Sons of Sceva — Name Without Relationship — vv.13–16</span><span class="lit-text">The failed exorcism of the seven sons of Sceva is Acts' most darkly comic scene — and its most theologically pointed lesson about the Gospel and magic. They attempt to use Jesus's name as a magical formula ('the Jesus whom Paul preaches') — and are overpowered. The lesson: the name carries authority only in the context of genuine relationship. Magic attempts to manipulate divine power; the Gospel receives it as gift.</span></div><div class="lit-note">Acts 19 presents the fullest picture of Paul's sustained urban ministry strategy — the Ephesian hub model that planted churches throughout an entire province through trained local converts — and the inevitable collision between the Gospel and the economic interests that depend on false religion.</div></div></div>
 </div>
 </main>
