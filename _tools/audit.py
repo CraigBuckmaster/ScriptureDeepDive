@@ -296,34 +296,41 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses.js)')
 
+# Check monolithic verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses.js'
 if not os.path.exists(vjs_path):
-    fail('verses.js missing')
+    fail('verses.js (full canon fallback) missing')
 else:
     with open(vjs_path) as f: vjs = f.read()
     vc = vjs.count('"ref":')
-    if vjs.startswith('const VERSES=[') and vjs.endswith('];'):
-        ok(f'verses.js valid — {vc} verses')
+    if 'VERSES_ALL=' in vjs:
+        ok(f'verses.js (full canon) valid — {vc} verses')
     else:
-        fail(f'verses.js malformed (starts={vjs[:14]!r}, ends={vjs[-2:]!r})')
+        fail(f'verses.js malformed (starts={vjs[:20]!r})')
 
-inline_v = [f'{b} {c}' for p,b,c in chapters
-            if 'const VERSES=' in open(p).read() or 'const VERSES =' in open(p).read()]
-if inline_v:
-    fail(f'Inline VERSES in {len(inline_v)} chapters: ' + ', '.join(inline_v[:3]))
+# Check per-book verse files exist
+missing_per_book = []
+for book_dir, book_name, ch_range in BOOK_ROSTER:
+    live = ch_range.stop - 1  # range(1,29) → 28 chapters
+    p = f'{REPO}/verses-{book_dir}.js'
+    if not os.path.exists(p):
+        missing_per_book.append(f'verses-{book_dir}.js')
+if missing_per_book:
+    fail(f'Missing per-book verse files: {", ".join(missing_per_book)}')
 else:
-    ok('No inline VERSES in chapter pages')
+    ok(f'All per-book verses-{{book}}.js files present')
 
-missing_ext = [f'{b} {c}' for p,b,c in chapters if '../verses.js' not in open(p).read()]
-if missing_ext:
-    fail(f'Missing external verses.js in {len(missing_ext)} chapters')
+# Check chapters load their own book's verse file (not monolithic verses.js)
+wrong_verses = []
+for p, b, c in chapters:
+    with open(p) as f: h = f.read()
+    book_dir_for_ch = os.path.basename(os.path.dirname(p))
+    if f'../verses-{book_dir_for_ch}.js' not in h:
+        wrong_verses.append(f'{b} {c}')
+if wrong_verses:
+    fail(f'{len(wrong_verses)} chapters missing per-book verses script: ' + ', '.join(wrong_verses[:3]))
 else:
-    ok('All chapters load verses.js externally')
-
-if 'src="verses.js"' not in idx:
-    fail('index.html missing src="verses.js"')
-else:
-    ok('index.html loads verses.js')
+    ok('All chapters load their per-book verses file')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 5. VERSE COUNTS
@@ -765,7 +772,7 @@ if 'item.label' not in idx:
 else:
     ok('Continue-reading chip reads item.label')
 
-for fn in ['handleSearch', 'VERSES.map']:
+for fn in ['handleSearch', 'VERSES_ALL']:
     if fn in idx: ok(f'{fn} present in index.html')
     else: fail(f'index.html: {fn} missing')
 

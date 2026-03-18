@@ -1330,7 +1330,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             _tog + '\n' +
             _vhl + '\n' +
             '<script src="../books.js"></script>\n' +
-            '<script src="../verses.js"></script>\n' +
+            f'<script src="../verses-{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir}/{book_name}_{ch}.html";</script>\n' +
             '<script src="../qnav.js"></script>\n</body></html>')
@@ -1787,10 +1787,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 def rebuild_verses_js():
-    """Rebuild /verses.js from all live chapter HTML files. Call after every batch."""
+    """
+    Rebuild per-book verse index files from all live chapter HTML files.
+
+    Generates one file per book: verses-genesis.js, verses-acts.js, etc.
+    Each declares:
+      var VERSES_BOOK = [...];   // verses for this specific book only
+      if (!window.VERSES_ALL) window.VERSES_ALL = [];
+      window.VERSES_ALL = window.VERSES_ALL.concat(VERSES_BOOK);
+
+    Also writes verses.js (full canon) kept for backward compatibility
+    and used by the search overlay when cross-book results are needed.
+
+    Chapter pages load only their own book file via books.js metadata.
+    qnav.js search reads window.VERSES_ALL which accumulates as files load.
+    """
     all_verses = []
+    total_count = 0
+
     for book_dir, book_name, total, live, _ in REGISTRY:
-        for ch in range(1, live+1):
+        book_verses = []
+        for ch in range(1, live + 1):
             path = f'{_REPO}/{book_dir}/{book_name}_{ch}.html'
             if not os.path.exists(path): continue
             with open(path) as f: html = f.read()
@@ -1802,7 +1819,7 @@ def rebuild_verses_js():
                 text = re.sub(r'<[^>]+>', '', text).strip()
                 text = re.sub(r'\s+', ' ', text).strip()
                 if text:
-                    all_verses.append({
+                    entry = {
                         'ref':   f'{book_name} {ch}:{v_num}',
                         'short': f'{book_name[:3]} {ch}:{v_num}',
                         'text':  text,
@@ -1810,12 +1827,28 @@ def rebuild_verses_js():
                         'book':  book_name,
                         'ch':    int(ch),
                         'v':     int(v_num),
-                    })
+                    }
+                    book_verses.append(entry)
+                    all_verses.append(entry)
+
+        # Write per-book file
+        out_path = f'{_REPO}/verses-{book_dir}.js'
+        payload = json.dumps(book_verses, separators=(',', ':'))
+        with open(out_path, 'w') as f:
+            f.write(f'var VERSES_{book_name.upper()}={payload};\n')
+            f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
+            f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper()});\n')
+        total_count += len(book_verses)
+        print(f'  verses-{book_dir}.js: {len(book_verses)} verses')
+
+    # Keep monolithic verses.js for backward compat (search needs full VERSES_ALL)
     out = f'{_REPO}/verses.js'
     with open(out, 'w') as f:
-        f.write('const VERSES=' + json.dumps(all_verses, separators=(',',':')) + ';')
-    print(f'verses.js rebuilt: {len(all_verses)} verses')
-    return len(all_verses)
+        f.write('// Full canon verse index — loaded lazily per book; this file is the complete fallback.\n')
+        f.write('var VERSES_ALL=' + json.dumps(all_verses, separators=(',', ':')) + ';\n')
+    print(f'verses.js (full): {total_count} verses total across {len(REGISTRY)} books')
+    return total_count
+
 
 
 print("Shared helpers loaded.")
