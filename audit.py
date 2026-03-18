@@ -45,6 +45,7 @@ BOOK_ROSTER = [
     ('mark',     'Mark',     range(1, 17)),
     ('luke',     'Luke',     range(1, 25)),
     ('john',     'John',     range(1, 22)),
+    ('acts',     'Acts',     range(1, 29)),
 ]
 
 SCHOLAR_KEYS = {
@@ -56,6 +57,7 @@ SCHOLAR_KEYS = {
     'Mark':     ['marcus',   'catena','calvin', 'netbible'],
     'Luke':     ['robertson','catena','calvin', 'netbible'],
     'John':     ['catena',   'calvin'],
+    'Acts':     ['robertson','keener'],
 }
 
 def chapter_paths():
@@ -187,6 +189,13 @@ EXPECTED = {
     ('John',13):38,('John',14):31,('John',15):27,('John',16):33,
     ('John',17):26,('John',18):40,('John',19):42,('John',20):31,
     ('John',21):25,
+    ('Acts', 1):26,('Acts', 2):47,('Acts', 3):26,('Acts', 4):37,
+    ('Acts', 5):42,('Acts', 6):15,('Acts', 7):60,('Acts', 8):40,
+    ('Acts', 9):43,('Acts',10):48,('Acts',11):30,('Acts',12):25,
+    ('Acts',13):52,('Acts',14):28,('Acts',15):41,('Acts',16):40,
+    ('Acts',17):34,('Acts',18):28,('Acts',19):41,('Acts',20):38,
+    ('Acts',21):40,('Acts',22):30,('Acts',23):35,('Acts',24):27,
+    ('Acts',25):27,('Acts',26):32,('Acts',27):44,('Acts',28):31,
 }
 
 chapters = chapter_paths()
