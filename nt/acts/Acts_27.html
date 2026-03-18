@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Acts 27 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+/* Marcus — Anchor Bible (teal-blue: historical-critical scholarship) */
+.anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
+.anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
+.anno-trigger.marcus.active{filter:brightness(1.25);}
+.com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
+.com-panel.com-marcus h4{color:#70d8d8;}
+.com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
+/* Rhoads — Mark as Story (amber-gold: narrative/literary criticism) */
+.anno-trigger.rhoads{color:#e8c060;border-color:#886020;background:rgba(80,56,12,.22);}
+.anno-trigger.rhoads:hover{border-color:#c8a040;background:rgba(80,56,12,.32);}
+.anno-trigger.rhoads.active{filter:brightness(1.25);}
+.com-panel.com-rhoads{background:#0e0900;border-color:#886020;}
+.com-panel.com-rhoads h4{color:#e8c060;}
+.com-panel.com-rhoads .com-source{color:#e8c060;border-bottom-color:rgba(136,96,32,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
+/* ── Places (POI) section panel ─────────────────────────────── */
+.poi-entry{padding:.7rem 0;border-bottom:1px solid rgba(26,96,40,.35);}
+.poi-entry:last-child{border-bottom:none;}
+.poi-name{font-family:'Cinzel',serif;font-size:.8rem;color:var(--poi-accent);margin-bottom:.2rem;}
+.poi-coords{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-bottom:.35rem;}
+.poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
+
+/* ── Timeline section panel ─────────────────────────────────── */
+.tl-visual{position:relative;margin:.5rem 0 .3rem;}
+.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 6%,#4a6888 94%,transparent);pointer-events:none;}
+.tl-event{position:relative;display:grid;grid-template-columns:130px 28px 1fr;grid-template-rows:auto auto;align-items:start;padding:6px 0;}
+.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:'Cinzel',serif;font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:10px;white-space:nowrap;}
+.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;padding-top:4px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}
+.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:12px;}
+.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}
+.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}
+.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 170px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
+
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Acts</span><span class="nav-chapter">Chapter 27</span></div>
+<div class="nav-arrows"><a href="Acts_26.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Acts_28.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Acts 27</h1>
+<p>The Voyage and Shipwreck</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Luke the physician (Col 4:14), a Gentile convert and travelling companion of Paul. Acts is the second volume of a two-part work addressed to Theophilus (Luke 1:3; Acts 1:1). The &ldquo;we&rdquo; sections (16:10&ndash;17; 20:5&ndash;21:18; 27:1&ndash;28:16) place Luke as an eyewitness participant in significant portions of the Pauline mission. Irenaeus, Clement of Alexandria, and the Muratorian Canon (c.&thinsp;AD&thinsp;170) unanimously identify Luke as author.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;62&ndash;64, most likely during Paul's Roman imprisonment (28:30&ndash;31). The abrupt ending &mdash; Paul awaiting trial &mdash; is most naturally explained if Luke wrote before the outcome was known. The silence about Jerusalem&rsquo;s destruction (AD&thinsp;70) and Paul&rsquo;s death (c.&thinsp;AD&thinsp;67) supports an early 60s date.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Luke traces the Gospel from Jerusalem to Rome, fulfilling the commission of 1:8 (&ldquo;you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth&rdquo;). Acts defends the legitimacy of the Gentile mission, demonstrates the continuity of the church with Israel, and shows that the gospel&rsquo;s advance is providentially directed through opposition, imprisonment, and persecution. It is the indispensable bridge between the Gospels and the Epistles.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–26 — Setting Sail; Storm Overwhelms the Ship</div><span class="verse-text"><span class="verse-num">1</span>When it was decided that we would sail for Italy, Paul and some other prisoners were handed over to a centurion named Julius, who belonged to the Imperial Regiment.</span><span class="verse-text"><span class="verse-num">2</span>We boarded a ship from Adramyttium about to sail for ports along the coast of the province of Asia, and we put out to sea. Aristarchus, a Macedonian from Thessalonica, was with us.</span><span class="verse-text"><span class="verse-num">3</span>The next day we landed at Sidon; and Julius, in kindness to Paul, allowed him to go to his friends so they could provide for his needs.</span><span class="verse-text"><span class="verse-num">4</span>From there we put out to sea again and passed to the lee of Cyprus because the winds were against us.</span><span class="verse-text"><span class="verse-num">5</span>When we had sailed across the open sea off the coast of Cilicia and Pamphylia, we landed at Myra in Lycia.</span><span class="verse-text"><span class="verse-num">6</span>There the centurion found an Alexandrian ship sailing for Italy and put us on board.</span><span class="verse-text"><span class="verse-num">7</span>We made slow headway for many days and had difficulty arriving off Cnidus. When the wind did not allow us to hold our course, we sailed to the lee of Crete, opposite Salmone.</span><span class="verse-text"><span class="verse-num">8</span>We moved along the coast with difficulty and came to a place called Fair Havens, near the town of Lasea.</span><span class="verse-text"><span class="verse-num">9</span>Much time had been lost, and sailing had already become dangerous because by now it was after the Day of Atonement. So Paul warned them,</span><span class="verse-text"><span class="verse-num">10</span>"Men, I can see that our voyage is going to be disastrous and bring great loss to ship and cargo, and to our own lives also."</span><span class="verse-text"><span class="verse-num">11</span>But the centurion, instead of listening to what Paul said, followed the advice of the pilot and of the owner of the ship.</span><span class="verse-text"><span class="verse-num">12</span>Since the harbor was unsuitable to winter in, the majority decided that we should sail on, hoping to reach Phoenix and winter there. This was a harbor in Crete, facing both southwest and northwest.</span><span class="verse-text"><span class="verse-num">13</span>When a gentle south wind began to blow, they thought they had obtained what they wanted; so they weighed anchor and sailed along the shore of Crete.</span><span class="verse-text"><span class="verse-num">14</span>Before very long, a wind of hurricane force, called the Northeaster, swept down from the island.</span><span class="verse-text"><span class="verse-num">15</span>The ship was caught by the storm and could not head into the wind; so we gave way to it and were driven along.</span><span class="verse-text"><span class="verse-num">16</span>As we passed to the lee of a small island called Cauda, we were hardly able to make the lifeboat secure,</span><span class="verse-text"><span class="verse-num">17</span>so the men hoisted it aboard. Then they passed ropes under the ship itself to hold it together. Because they were afraid they would run aground on the sandbars of Syrtis, they lowered the sea anchor and let the ship be driven along.</span><span class="verse-text"><span class="verse-num">18</span>We took such a violent battering from the storm that the next day they began to throw the cargo overboard.</span><span class="verse-text"><span class="verse-num">19</span>On the third day, they threw the ship's tackle overboard with their own hands.</span><span class="verse-text"><span class="verse-num">20</span>When neither sun nor stars appeared for many days and the storm continued raging, we finally gave up all hope of being saved.</span><span class="verse-text"><span class="verse-num">21</span>After they had gone a long time without food, Paul stood up before them and said: "Men, you should have taken my advice not to sail from Crete; then you would have spared yourselves this damage and loss.</span><span class="verse-text"><span class="verse-num">22</span>But now I urge you to keep up your courage, because not one of you will be lost; only the ship will be destroyed.</span><span class="verse-text"><span class="verse-num">23</span>Last night an angel of the God whose I am and whom I serve stood beside me</span><span class="verse-text"><span class="verse-num">24</span>and said, "Do not be afraid, Paul. You must stand trial before Caesar; and God has graciously given you the lives of all who sail with you."</span><span class="verse-text"><span class="verse-num">25</span>So keep up your courage, men, for I have faith in God that it will happen just as he told me.</span><span class="verse-text"><span class="verse-num">26</span>Nevertheless, we must run aground on some island."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac27-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac27-s1-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac27-s1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac27-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac27-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac27-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac27-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac27-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac27-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button></div><div id="ac27-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">Εὐρακύλων</span> <span class="tlit">Eurakulōn</span> — <strong>the Northeaster</strong>: the technical nautical term for the dreaded northeast Mediterranean storm (v.14). Ancient sailors knew this storm system by name: it blew from the northeast with hurricane force, making steering impossible. Luke's use of the precise technical term is one of many details confirming his eyewitness presence.</p><p><span class="hebrew-word">τοῦ θεοῦ οὗ εἰμι</span> <span class="tlit">tou theou hou eimi</span> — <strong>the God whose I am</strong>: Paul's identification in v.23 — 'the God whose I am and whom I serve.' The double claim of belonging and service is one of the most compact expressions of discipleship in the NT. Ownership precedes service; identity precedes activity.</p></div><div id="ac27-s1-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Fair Havens — Crete</div><div class="poi-coords">34.9333° N, 24.9833° E</div><div class="poi-text">The small harbour on Crete's south coast where Paul warns against continuing (vv.9–10). The Day of Atonement (Yom Kippur) falling in late September/early October places the scene in the dangerous late sailing season. Paul's maritime warning is ignored — which makes his subsequent angelic assurance all the more dramatic.</div></div><div class="poi-entry"><div class="poi-name">The Mediterranean — Open Sea</div><div class="poi-coords">35.0000° N, 14.5000° E</div><div class="poi-text">Acts 27 is one of antiquity's most detailed nautical narratives. The storm drives them from Crete toward Malta — roughly 900 km before the wind. Luke's precise technical vocabulary (frapping the hull, the sea anchor, soundings) confirms personal presence as an eyewitness.</div></div></div><div id="ac27-s1-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event current"><div class="tl-date">c. AD 60</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">The Storm — Two Weeks Adrift</div><div class="tl-text">Paul's voyage to Rome encounters a two-week Mediterranean storm that destroys the ship. An angel assures Paul that no lives will be lost — God has given him all 276 people on board. The ship's company survives because one man belongs to God and has an appointment in Rome.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 60</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Shipwreck at Malta</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 60–61</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Winter at Malta; Voyage to Rome</div></div></div>
+</div><div class="tl-range"><span>c. 59 AD</span><span>c. 61 AD</span></div></div><div id="ac27-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Acts 27 is one of the most detailed eyewitness voyage accounts in ancient literature — compared favourably by classicists to the best Greek and Roman seafaring narratives. But Luke's purpose is theological: the ship full of condemned prisoners is preserved because one man on board belongs to God and has an appointment in Rome. The angel's assurance (v.24: 'God has graciously given you the lives of all who sail with you') means 275 other people are kept alive by virtue of their association with Paul.</p></div><div id="ac27-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Acts 23:11</span><span class="ref-text">"You must stand trial before Caesar" — the Lord's promise that the angel echoes in v.24. The shipwreck is part of the route to Rome, not a setback to it.</span></li><li><span class="ref-cite">Jonah 1:1–16</span><span class="ref-text">The storm, the prophet on board, the endangered crew — the structural parallel with Jonah is intentional. Paul is the anti-Jonah: where Jonah fled his commission, Paul is fulfilling his; where Jonah endangered the ship, Paul's presence saves it.</span></li><li><span class="ref-cite">Psalm 107:23–30</span><span class="ref-text">"Some went out on the sea in ships... He stilled the storm... and he guided them to their desired haven" — the psalm of sea rescue that provides the theological framework.</span></li></ul></div><div id="ac27-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:23–24</span><p>MacArthur on Paul's speech during the storm: he does not simply offer comfort but grounds it in specific divine revelation. 'An angel of the God whose I am and whom I serve' — MacArthur notes the order: belonging precedes serving. Paul's authority to speak for God in the storm comes from his identity as God's possession.</p></div><div class="com-note"><span class="com-ref">27:24</span><p>"God has graciously given you the lives of all who sail with you" — MacArthur: God gives the 275 other lives to Paul specifically. The entire ship is preserved because of one man's divine mission — an illustration of how God's purposes for one person can overflow into blessing all who share their circumstances.</p></div></div><div id="ac27-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:22–24</span><p>Calvin on Paul's assurance during the storm: the contrast is deliberate — the crew threw cargo overboard in despair; the apostle delivers a divine promise with complete calm. Paul's calm is not temperament but faith: he has a specific promise and states it as settled fact. Faith-based courage is not the absence of fear but the presence of a better certainty.</p></div><div class="com-note"><span class="com-ref">27:9–10</span><p>Calvin on Paul's ignored advice: the one man on board with divine knowledge is the one whose judgment is disregarded. The word of God is routinely set aside in favour of the world's practical expertise — with predictable results.</p></div></div><div id="ac27-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">27:9</span><p>The NET notes that "the Fast" refers to Yom Kippur (Day of Atonement) — the only day in the Jewish calendar designated as a fast. It falls in late September or October, establishing the timing precisely and confirming Luke's attention to calendar detail.</p></div><div class="com-note"><span class="com-ref">27:17</span><p>The NET notes that "they passed ropes under the ship" (hypozōnnyntes to ploion) is frapping — a maritime practice of wrapping the hull with ropes to prevent planks from splitting under storm stress. The technical detail confirms Luke's eyewitness knowledge.</p></div></div><div id="ac27-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">27:10</span><p>"Men, I can see that our voyage is going to be disastrous" — Robertson notes Paul says "I can see," not "the Spirit tells me" — this is practical judgment from an experienced traveller who had already been shipwrecked three times (2 Cor 11:25). The advice is ignored, making his subsequent angelic assurance both more dramatic and more credible.</p></div><div class="com-note"><span class="com-ref">27:22</span><p>"Not one of you will be lost; only the ship will be destroyed" — Robertson notes the precision: lives preserved, ship lost. God's promises are specific, not general. Robertson: "Paul states it as settled fact — this is faith, not optimism."</p></div></div><div id="ac27-s1-keener" class="anno-panel com-panel com-keener"><h4>Keener — Acts Commentary</h4><div class="com-source">Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:9</span><p>Keener notes the navigation significance of 'the Day of Atonement': Yom Kippur falls in September/October — the period when the ancients considered Mediterranean sailing dangerous (approximately September 14 to November 11 was increasing-risk season). Paul's warning was maritimely sound as well as spiritually grounded.</p></div><div class="com-note"><span class="com-ref">27:14</span><p>Keener provides background on the Eurakulos (Northeaster). Pliny the Elder and other ancient writers describe this storm system. The storm's route — taking the ship from Crete toward Malta — is consistent with actual Mediterranean storm patterns, confirming the voyage's historicity.</p></div></div></div><div class="section"><div class="section-header">Verses 27–44 — Shipwreck at Malta; All 276 Saved</div><span class="verse-text"><span class="verse-num">27</span>On the fourteenth night we were still being driven across the Adriatic Sea, when about midnight the sailors sensed they were approaching land.</span><span class="verse-text"><span class="verse-num">28</span>They took soundings and found that the water was a hundred and twenty feet deep. A short time later they took soundings again and found it was ninety feet deep.</span><span class="verse-text"><span class="verse-num">29</span>Fearing that we would be dashed against the rocks, they dropped four anchors from the stern and prayed for daylight.</span><span class="verse-text"><span class="verse-num">30</span>In an attempt to escape from the ship, the sailors let the lifeboat down into the sea, pretending they were going to lower some anchors from the bow.</span><span class="verse-text"><span class="verse-num">31</span>Then Paul said to the centurion and the soldiers, "Unless these men stay with the ship, you cannot be saved."</span><span class="verse-text"><span class="verse-num">32</span>So the soldiers cut the ropes that held the lifeboat and let it drift away.</span><span class="verse-text"><span class="verse-num">33</span>Just before dawn Paul urged them all to eat. "For the last fourteen days," he said, "you have been in constant suspense and have gone without food — you haven't eaten anything.</span><span class="verse-text"><span class="verse-num">34</span>Now I urge you to take some food. You need it to survive. Not one of you will lose a single hair from his head."</span><span class="verse-text"><span class="verse-num">35</span>After he said this, he took some bread and gave thanks to God in front of them all. Then he broke it and began to eat.</span><span class="verse-text"><span class="verse-num">36</span>They were all encouraged and ate some food themselves.</span><span class="verse-text"><span class="verse-num">37</span>Altogether there were 276 of us on the ship.</span><span class="verse-text"><span class="verse-num">38</span>When they had eaten as much as they wanted, they lightened the ship by throwing the grain into the sea.</span><span class="verse-text"><span class="verse-num">39</span>When daylight came, they did not recognize the land, but they saw a bay with a sandy beach, where they decided to run the ship aground if they could.</span><span class="verse-text"><span class="verse-num">40</span>Cutting loose the anchors, they left them in the sea and at the same time untied the ropes that held the rudders. Then they hoisted the foresail to the wind and made for the beach.</span><span class="verse-text"><span class="verse-num">41</span>But the ship struck a sandbar and ran aground. The bow stuck fast and would not move, and the stern was broken to pieces by the pounding of the surf.</span><span class="verse-text"><span class="verse-num">42</span>The soldiers planned to kill the prisoners to prevent any of them from swimming away and escaping.</span><span class="verse-text"><span class="verse-num">43</span>But the centurion wanted to spare Paul's life and kept them from carrying out their plan. He ordered those who could swim to jump overboard first and get to land.</span><span class="verse-text"><span class="verse-num">44</span>The rest were to get there on planks or on other pieces of the ship. In this way everyone reached land safely.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ac27-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ac27-s2-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ac27-s2-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ac27-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ac27-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'ac27-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ac27-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ac27-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'ac27-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button></div><div id="ac27-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">εὐχαριστήσας τῷ θεῷ ἐνώπιον πάντων</span> <span class="tlit">eucharistēsas tō theō enōpion pantōn</span> — <strong>gave thanks to God in front of them all</strong>: Paul's bread-breaking in vv.35–36 — taking bread, giving thanks, breaking it — uses the same fourfold eucharistic action as the Last Supper (Luke 22:19) and Emmaus (Luke 24:30). The Gospel's table practice appears in the middle of a shipwreck, in front of 275 non-Christians.</p><p><span class="hebrew-word">διεσώθησαν πάντες</span> <span class="tlit">diesōthēsan pantes</span> — <strong>everyone reached land safely</strong>: v.44 — the fulfilment of the angel's promise (v.24). The passive 'were saved' (diesōthēsan) is Luke's theological signal: this was God's act. Every one of the 276 people on board survived — not one was lost.</p></div><div id="ac27-s2-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Malta</div><div class="poi-coords">35.9375° N, 14.3754° E</div><div class="poi-text">The island of Melita (Malta) — identified by ancient sources and modern geography as the shipwreck location. St. Paul's Bay on Malta's northeastern coast is the traditional site. Archaeological and navigational studies confirm that the ship's drift from Crete is consistent with Malta as the landfall.</div></div><div class="poi-entry"><div class="poi-name">St. Paul's Bay — Malta</div><div class="poi-coords">35.9500° N, 14.3950° E</div><div class="poi-text">The 'bay with a sandy beach' (v.39) where the ship ran aground. The description is consistent with Malta's northern coast. The centurion Julius — who protected Paul throughout the voyage (v.43) — here again uses his authority to ensure Paul's survival.</div></div></div><div id="ac27-s2-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event current"><div class="tl-date">c. AD 60</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Shipwreck at Malta — All 276 Saved</div><div class="tl-text">The ship runs aground at Malta. All 276 reach land safely — the exact fulfilment of the angel's promise. The centurion protects Paul from execution. The eucharistic bread-breaking before dawn is the spiritual climax of the voyage narrative.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 60–61</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Three Months on Malta</div></div></div>
+<div class="tl-event"><div class="tl-date">c. AD 61</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Arrival in Rome</div></div></div>
+</div><div class="tl-range"><span>c. 59 AD</span><span>c. 61 AD</span></div></div><div id="ac27-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The shipwreck narrative reaches its climax in Paul's eucharistic bread-breaking (vv.33–36) and the grounding that fulfils the angel's promise exactly (vv.41–44). The bread-breaking in front of all 276 people is the Gospel's table in the midst of disaster — the community of faith sharing food with those who do not yet share their faith. Every one of the 276 reaches land safely: the angel's specific promise is specifically kept.</p></div><div id="ac27-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Luke 22:19</span><span class="ref-text">"He took bread, gave thanks and broke it" — the Last Supper action that Paul replicates in vv.35–36.</span></li><li><span class="ref-cite">Luke 24:30–31</span><span class="ref-text">"He took bread, gave thanks, broke it and began to give it to them. Then their eyes were opened" — Luke consistently uses the eucharistic action as the moment of spiritual recognition.</span></li><li><span class="ref-cite">Acts 27:24</span><span class="ref-text">"God has graciously given you the lives of all who sail with you" — the promise fulfilled exactly in v.44: "everyone reached land safely."</span></li></ul></div><div id="ac27-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:33–36</span><p>MacArthur on Paul's bread-breaking: the eucharistic action in front of 275 non-Christians is a public act of faith. Paul visibly demonstrates that he trusts God by eating, inviting others to follow. The crew follows his lead (v.36). Faith is contagious when visibly demonstrated.</p></div><div class="com-note"><span class="com-ref">27:43–44</span><p>MacArthur on Julius's protection: Julius's repeated protection of Paul (v.3; v.43) is the human instrument of divine preservation. God's providential protection regularly operates through the actions of non-Christians who have no awareness of their role in his plan.</p></div></div><div id="ac27-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">27:34</span><p>"Not one of you will lose a single hair from his head" — Calvin: the divine promise is as specific as humanly possible. "Not a hair" echoes Luke 21:18. God's promises are not vague reassurances but specific commitments — and their fulfilment is equally specific.</p></div><div class="com-note"><span class="com-ref">27:44</span><p>Calvin on 'everyone reached land safely': the narrative proof of Paul's faith (v.25: 'I have faith in God that it will happen just as he told me'). Not faith that avoids danger but faith that walks through danger holding specific divine promises.</p></div></div><div id="ac27-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">27:35</span><p>The NET notes the debate about whether this is a formal Eucharist. The language parallels the Last Supper (Luke 22:19) and Emmaus meal (Luke 24:30). The NET suggests that while this may not be the formal sacrament, Luke deliberately uses eucharistic language — the meal carries the theology of the Lord's Table even if it is not the formal sacrament.</p></div><div class="com-note"><span class="com-ref">27:37</span><p>The NET notes the textual variant: most manuscripts read 276; a few read 76. The NET follows the majority reading of 276 as the harder reading — more likely to be accidentally reduced than inflated.</p></div></div><div id="ac27-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">27:35</span><p>"He took some bread and gave thanks to God in front of them all. Then he broke it" — Robertson notes the deliberate eucharistic language: the four verbs (took, gave thanks, broke, began to eat) are precisely the Last Supper verbs. Paul acts as the host of a meal of thanksgiving in the middle of a crisis — a visible demonstration of faith to 275 unbelievers.</p></div><div class="com-note"><span class="com-ref">27:44</span><p>"Everyone reached land safely" — Robertson on hapas (all, everyone) completing the promise of v.24. The angel's specific promise has been kept exactly. God's specific promises are specifically fulfilled.</p></div></div><div id="ac27-s2-keener" class="anno-panel com-panel com-keener"><h4>Keener — Acts Commentary</h4><div class="com-source">Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">27:28</span><p>Keener notes the navigational precision: the soundings of 120 feet, then 90 feet are consistent with the approach to Malta's northern coast. Modern hydrographic surveys of St. Paul's Bay confirm the depth contours match Luke's account exactly — powerful evidence of eyewitness accuracy.</p></div><div class="com-note"><span class="com-ref">27:37</span><p>Keener notes that 276 people on a grain ship is historically plausible. Josephus (Life 3.15) mentions a grain ship with 600 on board. The Alexandria-to-Rome grain route routinely carried large numbers; 276 is not exaggerated.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger literary" onclick="tog(this,'ac27-lit')"><span>Literary Structure</span></button>
+</div>
+<div id="ac27-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">The Anti-Jonah Narrative — ch.27</span><span class="lit-text">Acts 27 is constructed in deliberate parallel and contrast with Jonah: both involve a prophet on a ship in a storm; both involve endangered sailors; both are resolved by divine preservation. But Paul is the anti-Jonah: where Jonah fled his commission and endangered the ship, Paul is fulfilling his commission and his presence saves the ship. Where Jonah was thrown overboard, Paul's presence on board preserves all 276.</span></div><div class="lit-row"><span class="lit-label">The Eucharist in the Storm — vv.35–36</span><span class="lit-text">Paul's bread-breaking in front of 275 non-Christians during a two-week storm is Luke's most daring eucharistic moment. The four eucharistic verbs appear in the midst of the most secular narrative in Acts — surrounding sailors, soldiers, and prisoners in a broken ship at dawn. The Gospel's table does not wait for a sanctuary; it appears wherever one believer gives thanks to God in front of all.</span></div><div class="lit-note">Acts 27 is simultaneously the most detailed eyewitness voyage narrative in ancient literature and Luke's most sustained meditation on what it looks like for one person's relationship with God to overflow into the preservation of everyone around them. 276 lives are kept because one man on the ship belongs to God and has an appointment in Rome.</div></div></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Antioch','Rome','Ephesus','Corinth','Philippi','Athens','Caesarea','Damascus','Samaria','Judea','Galatia','synagogue','temple','Macedonia'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Paul','Peter','Barnabas','Stephen','Philip','James','Silas','Timothy','Apollos','Herod','Felix','Festus','Agrippa','disciples','apostles','elders','Ananias','Cornelius'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','hour','years','year','suddenly','at once','three days','sabbath','Pentecost'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['Spirit','repentance','baptized','believe','witness','gospel','resurrection','kingdom','salvation','Holy Spirit','boldly','signs','wonders','name','Word','grace','faith','Gentiles'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/nt/acts.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+<script>window.QNAV_CURRENT="nt/acts/Acts_27.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

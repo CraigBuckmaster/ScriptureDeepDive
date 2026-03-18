@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>John 10 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">John</span><span class="nav-chapter">Chapter 10</span></div>
+<div class="nav-arrows"><a href="John_9.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="John_11.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>John 10</h1>
+<p class="chapter-subtitle">The Good Shepherd</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">John the son of Zebedee &mdash; fisherman, apostle, and &ldquo;the disciple whom Jesus loved&rdquo; (John 13:23; 19:26; 20:2; 21:7, 20). The fourth Gospel never names its author directly, but the evidence converges on John: (1) The &ldquo;beloved disciple&rdquo; is an eyewitness (19:35; 21:24) present at the Last Supper, the cross, and the empty tomb. (2) Early and unanimous tradition: Irenaeus (c.&thinsp;AD&thinsp;180), Clement of Alexandria, Origen, and Eusebius all identify the author as John the apostle writing from Ephesus in old age. (3) The Gospel’s intimate knowledge of Jerusalem topography (Pool of Bethesda, Pool of Siloam, the Pavement/Gabbatha) is confirmed by archaeology. (4) The eyewitness claim of 19:35 and the closing verse of 21:24 point to direct authorial witness. Liberal scholarship has proposed an anonymous Johannine community or the Elder John of Ephesus; the traditional identification with the apostle remains the best-attested position.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;85&ndash;95, probably from Ephesus, making it the latest of the four Gospels. The Rylands Papyrus (P52, c.&thinsp;AD&thinsp;125) &mdash; the earliest surviving NT manuscript fragment &mdash; contains John 18:31-33, 37-38, confirming the Gospel was in circulation in Egypt by the early second century. A pre-AD&thinsp;70 date has been argued from the Temple language in chs 2, 5, and 10, which reads as description of a standing building; the majority of scholars favour a post-70 date for the final composition. The three Johannine letters and Revelation share vocabulary and theological concerns with the Gospel, suggesting a common Ephesian milieu.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">John states his purpose explicitly &mdash; a rarity in the Gospels: &ldquo;These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name&rdquo; (20:31). The Gospel was written to produce and sustain faith in the person of Jesus as divine Son. It supplements the Synoptics rather than duplicates them: John omits the Baptism, the Transfiguration, the Olivet Discourse, and the institution of the Lord’s Supper as a formal narrative, while providing material found nowhere else &mdash; the wedding at Cana, Nicodemus, the Samaritan woman, the raising of Lazarus, the Farewell Discourse (chs&thinsp;14&ndash;17), and the resurrection appearances to Mary Magdalene and Thomas. Its elevated Christology (&ldquo;In the beginning was the Word&rdquo;) addresses late first-century challenges to the full divinity of Christ and lays the foundation for all subsequent trinitarian theology.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–21 — The Good Shepherd Discourse</div><span class="verse-text"><span class="verse-num">1</span>"Very truly I tell you Pharisees, anyone who does not enter the sheep pen by the gate, but climbs in by some other way, is a thief and a robber.</span><span class="verse-text"><span class="verse-num">2</span>The one who enters by the gate is the shepherd of the sheep.</span><span class="verse-text"><span class="verse-num">3</span>The gatekeeper opens the gate for him, and the sheep listen to his voice. He calls his own sheep by name and leads them out.</span><span class="verse-text"><span class="verse-num">4</span>When he has brought out all his own, he goes on ahead of them, and his sheep follow him because they know his voice.</span><span class="verse-text"><span class="verse-num">5</span>But they will never follow a stranger; in fact, they will run away from him because they do not recognize a stranger's voice."</span><span class="verse-text"><span class="verse-num">6</span>Jesus used this figure of speech, but the Pharisees did not understand what he was telling them.</span><span class="verse-text"><span class="verse-num">7</span>Therefore Jesus said again, "Very truly I tell you, I am the gate for the sheep.</span><span class="verse-text"><span class="verse-num">8</span>All who have ever come before me are thieves and robbers, but the sheep have not listened to them.</span><span class="verse-text"><span class="verse-num">9</span>I am the gate; whoever enters through me will be saved. They will come in and go out, and find pasture.</span><span class="verse-text"><span class="verse-num">10</span>The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full.</span><span class="verse-text"><span class="verse-num">11</span>"I am the good shepherd. The good shepherd lays down his life for the sheep.</span><span class="verse-text"><span class="verse-num">12</span>The hired hand is not the shepherd and does not own the sheep. So when he sees the wolf coming, he abandons the sheep and runs away. Then the wolf attacks the flock and scatters it.</span><span class="verse-text"><span class="verse-num">13</span>The man runs away because he is a hired hand and cares nothing for the sheep.</span><span class="verse-text"><span class="verse-num">14</span>"I am the good shepherd; I know my sheep and my sheep know me —</span><span class="verse-text"><span class="verse-num">15</span>just as the Father knows me and I know the Father — and I lay down my life for the sheep.</span><span class="verse-text"><span class="verse-num">16</span>I have other sheep that are not of this sheep pen. I must bring them also. They too will listen to my voice, and there shall be one flock and one shepherd.</span><span class="verse-text"><span class="verse-num">17</span>The reason my Father loves me is that I lay down my life — only to take it up again.</span><span class="verse-text"><span class="verse-num">18</span>No one takes it from me, but I lay it down of my own accord. I have authority to lay it down and authority to take it up again. This command I received from my Father."</span><span class="verse-text"><span class="verse-num">19</span>The Jews who heard these words were again divided.</span><span class="verse-text"><span class="verse-num">20</span>Many of them said, "He is demon-possessed and raving mad. Why listen to him?"</span><span class="verse-text"><span class="verse-num">21</span>But others said, "These are not the sayings of a man possessed by a demon. Can a demon open the eyes of the blind?"</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn10-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn10-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn10-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn10-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn10-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn10-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn10-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn10-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">ho poimēn ho kalos</span> <span class="tlit">ho poi-MEN ho ka-LOS</span> — <strong>the good shepherd</strong>: Kalos means not merely morally good (agathos) but beautiful, noble, genuine, ideal — the shepherd who perfectly embodies what a shepherd should be. The OT is saturated with shepherd imagery for God (Ps 23; Ezek 34), Israel's leaders (Jer 23:1-4; Ezek 34:2-10), and the coming Messianic King (Ezek 34:23-24; Mic 5:4). Jesus claims this entire tradition for himself.</p><p><span class="hebrew-word">tithēmi tēn psychēn</span> <span class="tlit">ti-THE-mi tēn psy-CHEN</span> — <strong>lay down my life</strong>: The phrase occurs five times in the discourse (vv.11, 15, 17, 18 × 2). Tithēmi means to place, set down, deposit — a deliberate, voluntary act. Jesus does not say "lose" or "forfeit" his life but "lay it down" — as a deposit, with the intention of taking it up again (v.18). The voluntary, purposive character of the death is the discourse's central theological claim.</p></div><div id="jn10-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('Ezekiel 34 Background', "The Good Shepherd discourse is a sustained midrash on Ezekiel 34, where God condemns Israel's faithless shepherds (the leadership) and promises to come himself as the true shepherd of his people (34:11-16). Jesus identifies himself as the fulfilment of both dimensions: he is the true shepherd YHWH promised to be (implicitly claiming divine identity) and he is the Davidic king-shepherd YHWH promised to send (34:23-24). The Pharisees who have just thrown out the healed blind man (ch.9) are the hired hands who abandon the sheep."), ('"Other Sheep" — The Gentile Mission', 'The "other sheep that are not of this sheep pen" (v.16) — not of the Jewish fold — are the Gentiles who will hear Jesus\'s voice and be gathered into one flock. The one flock/one shepherd statement is the most explicit statement in John of the universal scope of Jesus\'s mission. "There shall be one flock" (not "one fold" as KJV) — one community, not one institution.')]</p></div><div id="jn10-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ezek 34:11-16</span><span class="ref-text">"I myself will search for my sheep and look after them... I will rescue them from all the places where they were scattered" — the divine shepherd promise Jesus claims to fulfil.</span></li><li><span class="ref-cite">Ps 23</span><span class="ref-text">"The Lord is my shepherd; I lack nothing" — the Psalm that provides the devotional register for Jesus's shepherd claim.</span></li><li><span class="ref-cite">Zech 13:7</span><span class="ref-text">"Strike the shepherd, and the sheep will be scattered" — the prophecy Jesus applies to his own death (Matt 26:31), the inverse of his promise to gather.</span></li></ul></div><div id="jn10-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:10</span><p>"The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full" — the contrast between the thieves and the good shepherd is made in terms of purpose and outcome. The thief's purpose is extraction and destruction; Jesus's purpose is life in abundance (perissōs — exceeding, overflowing). This is John's most explicit statement of the positive purpose of the Incarnation: not merely rescue from destruction but the gift of overflowing life.</p></div><div class="com-note"><span class="com-ref">10:11</span><p>"The good shepherd lays down his life for the sheep" — hyper tōn probatōn: on behalf of, in place of the sheep. The preposition hyper carries substitutionary weight: the shepherd dies so the sheep may live. This is the atonement stated in shepherd language, consistent with "Lamb of God, who takes away the sin of the world" (1:29).</p></div><div class="com-note"><span class="com-ref">10:17-18</span><p>"I lay down my life — only to take it up again... I have authority to lay it down and authority to take it up again" — the sovereign freedom of the cross. Jesus is not a victim of circumstances; he is the sovereign agent of his own death. His authority over his death is simultaneously authority over his resurrection. The Father's love (v.17) is provoked by this voluntary self-giving — not as its condition but as its response.</p></div><div class="com-note"><span class="com-ref">10:16</span><p>"There shall be one flock and one shepherd" — the eschatological gathering of all peoples under the one shepherd. This is not the abolition of ethnic identity but its transcendence. The "one flock" is not uniformity but unity — the diverse peoples gathered by the one voice into the one community.</p></div></div><div id="jn10-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:11</span><p>Calvin develops the substitutionary dimension of "laying down his life for the sheep": the shepherd's death is not merely exemplary (showing how to be self-sacrificing) but vicarious (dying in place of those who deserve to die). The shepherd enters the danger zone and takes the wolf's attack on himself so that the sheep may escape.</p></div><div class="com-note"><span class="com-ref">10:27-28</span><p>Though this passage is in the second section, Calvin's treatment of the whole discourse emphasises the security of the elect: those whom the Father gives to the Son will come; those who come will not be cast out; none of those the Father gives will be lost. The triple security (the Father gives, the Son receives, the Son loses none) is the foundation of assurance.</p></div></div><div id="jn10-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">10:8</span><p>"All who have ever come before me are thieves and robbers" — this does not mean the OT prophets and leaders were thieves. The context (the Pharisees who just expelled the blind man) and the subsequent development (the hired hand) suggest "those who come without proper authority," specifically the false shepherds of Ezek 34 and any would-be messiahs who do not enter through the proper gate (divine commission).</p></div><div class="com-note"><span class="com-ref">10:16</span><p>"One flock and one shepherd" — NIV correctly reads "one flock" (mia poimnē); KJV "one fold" reflects a Latin translation error (una ovile = one sheepfold, rather than unum grex = one flock). The distinction matters: one flock suggests a single community of diverse people; one fold suggests a single institutional enclosure.</p></div></div><div id="jn10-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">10:11</span><p>Chrysostom: "The good shepherd lays down his life for the sheep. What shepherd ever did this? No human shepherd, however devoted, died for his sheep. But this shepherd, to save not sheep but people — who were worth more and who had wandered further — gave his own life. This is love beyond all human precedent."</p></div><div class="com-note"><span class="com-ref">10:16</span><p>Augustine: "Other sheep I have, not of this fold. The Jewish people were this fold; the Gentiles are the other sheep. When will they become one flock? When the wall of partition is broken down (Eph 2:14). The shepherd is one; his voice is one; the pasture is one. The fold is different; the flock is one."</p></div></div></div><div class="section"><div class="section-header">Verses 22–42 — Feast of Dedication; I and the Father Are One</div><span class="verse-text"><span class="verse-num">22</span>Then came the Festival of Dedication at Jerusalem. It was winter,</span><span class="verse-text"><span class="verse-num">23</span>and Jesus was in the temple courts walking in Solomon's Colonnade.</span><span class="verse-text"><span class="verse-num">24</span>The Jews who were there gathered around him, saying, "How long will you keep us in suspense? If you are the Messiah, tell us plainly."</span><span class="verse-text"><span class="verse-num">25</span>Jesus answered, "I did tell you, but you do not believe. The works I do in my Father's name testify about me,</span><span class="verse-text"><span class="verse-num">26</span>but you do not believe because you are not my sheep.</span><span class="verse-text"><span class="verse-num">27</span>My sheep listen to my voice; I know them, and they follow me.</span><span class="verse-text"><span class="verse-num">28</span>I give them eternal life, and they shall never perish; no one will snatch them out of my hand.</span><span class="verse-text"><span class="verse-num">29</span>My Father, who has given them to me, is greater than all; no one can snatch them out of my Father's hand.</span><span class="verse-text"><span class="verse-num">30</span>I and the Father are one."</span><span class="verse-text"><span class="verse-num">31</span>Again his Jewish opponents picked up stones to stone him,</span><span class="verse-text"><span class="verse-num">32</span>but Jesus said to them, "I have shown you many good works from the Father. For which of these do you stone me?"</span><span class="verse-text"><span class="verse-num">33</span>"We are not stoning you for any good work," they replied, "but for blasphemy, because you, a mere man, claim to be God."</span><span class="verse-text"><span class="verse-num">34</span>Jesus answered them, "Is it not written in your Law, 'I said, you are gods'?</span><span class="verse-text"><span class="verse-num">35</span>If he called them 'gods,' to whom the word of God came — and Scripture cannot be set aside —</span><span class="verse-text"><span class="verse-num">36</span>what about the one whom the Father set apart as his very own and sent into the world? Why then do you accuse me of blasphemy because I said, 'I am God's Son'?</span><span class="verse-text"><span class="verse-num">37</span>Do not believe me unless I do what my Father does.</span><span class="verse-text"><span class="verse-num">38</span>But if I do it, even though you do not believe me, believe the works, that you may know and understand that the Father is in me, and I in the Father."</span><span class="verse-text"><span class="verse-num">39</span>Again they tried to seize him, but he escaped their grasp.</span><span class="verse-text"><span class="verse-num">40</span>Then Jesus went back across the Jordan to the place where John had been baptizing in the early days. There he stayed,</span><span class="verse-text"><span class="verse-num">41</span>and many people came to him. They said, "Though John never performed a sign, all that John said about this man was true."</span><span class="verse-text"><span class="verse-num">42</span>And in that place many believed in him.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn10-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'jn10-s2-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn10-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn10-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn10-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn10-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn10-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn10-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn10-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">hen esmen</span> <span class="tlit">hen ES-men</span> — <strong>we are one</strong>: The neuter hen (one thing, one reality) rather than the masculine heis (one person) — Jesus is not claiming to be the Father but claiming a unity of essence, purpose, and will with the Father. The opponents' response (stoning for blasphemy, v.31; "you claim to be God," v.33) confirms they heard a claim to divine nature, not mere agreement of purpose. The statement is the ontological basis for all the "I do what the Father does" language of ch.5.</p></div><div id="jn10-s2-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. Sept-Oct AD 29</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Feast of Tabernacles</div><div class="tl-text">Jesus at Jerusalem for Tabernacles — chs 7-9. Water of life declaration (7:37-38), I am the light of the world (8:12), man born blind healed (ch.9).</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. Dec AD 29</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Feast of Dedication (Hanukkah)</div><div class="tl-text">Jesus at Jerusalem for Hanukkah — ch.10. Good Shepherd discourse. I and the Father are one. Attempted stoning. Withdrawal beyond the Jordan.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. March AD 30</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Raising of Lazarus</div><div class="tl-text">Jesus returns to Bethany near Jerusalem to raise Lazarus — ch.11. The final sign before the Passion.</div></div></div>
+</div><div class="tl-range"><span>c. 28 AD</span><span>c. 30 AD</span></div></div><div id="jn10-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('Feast of Dedication (Hanukkah)', 'Hanukkah commemorated the rededication of the Temple by Judas Maccabeus in 164 BC after its desecration by Antiochus IV Epiphanes. The feast celebrated the miraculous burning of a single day\'s oil for eight days. Solomon\'s Colonnade — the covered eastern portico of the Temple Mount — provided shelter in winter. The setting of a feast celebrating the Temple\'s purification and rededication is the backdrop for Jesus\'s claim to be the one the Father "set apart" (consecrated, the same root as hanukkah = dedication, v.36).')]</p></div><div id="jn10-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 82:6</span><span class="ref-text">"I said, 'You are gods; you are all sons of the Most High'" — the Psalm Jesus cites in vv.34-35, arguing a fortiori: if judges exercising divine authority were called gods, how much more the one the Father actually consecrated and sent into the world.</span></li><li><span class="ref-cite">Deut 6:4</span><span class="ref-text">"Hear, O Israel: The Lord our God, the Lord is one" — the Shema, the foundational Jewish monotheism statement, which Jesus's "I and the Father are one" simultaneously affirms and complicates.</span></li></ul></div><div id="jn10-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:27-28</span><p>"My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them out of my hand" — the basis of assurance in John. Three dimensions: (1) identification — "I know them"; (2) security — "they shall never perish"; (3) protection — "no one will snatch them." The promise is absolute: ou mē apolōntai (double negative — they will absolutely not perish, ever).</p></div><div class="com-note"><span class="com-ref">10:29-30</span><p>The double security — no one can snatch from the Son's hand (v.28) AND no one can snatch from the Father's hand (v.29) — followed by "I and the Father are one" (v.30) reveals the logic: the double security is grounded in the unity. Because the Son and the Father are one, the one who is held by the Son is simultaneously held by the Father. The security is trinitarian.</p></div><div class="com-note"><span class="com-ref">10:33-36</span><p>Jesus's response to the blasphemy charge uses a qal wa-chomer (lesser to greater) argument from Ps 82:6. If the OT called human judges "gods" in a limited sense, and if "Scripture cannot be set aside" (v.35 — a remarkable aside affirming biblical authority), then the one uniquely consecrated and sent by God can certainly be called "Son of God" without blasphemy. The argument is not retracting the claim — it is demonstrating its consistency with Scripture.</p></div></div><div id="jn10-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">10:30</span><p>Calvin uses "I and the Father are one" as the foundational verse for trinitarian theology: the unity of substance (one) alongside the distinction of persons (I... the Father). He argues against both Sabellian confusion of persons (they are not the same person) and Arian subordination of substance (they share the same divine essence). The statement is the most economical expression of orthodox Trinitarianism in the NT.</p></div><div class="com-note"><span class="com-ref">10:34-36</span><p>Calvin notes that Jesus's appeal to Scripture ("Scripture cannot be set aside," v.35) is itself a significant authority claim: Jesus treats Scripture as self-evidently binding even on his opponents. The argument from Ps 82 is not a retreat from the divine claim but a demonstration that the Jewish Scripture itself used divine language for lesser figures — making the claim for the uniquely consecrated Son entirely consistent.</p></div></div><div id="jn10-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">10:22</span><p>The Festival of Dedication (Hanukkah) occurs in November/December — hence "it was winter" (v.22). This places the discourse roughly two months after the Feast of Tabernacles discourses of chs 7-9. The setting in Solomon's Colonnade on the eastern side of the Temple Mount is mentioned twice (10:23; Acts 3:11; 5:12) — a well-known gathering place in first-century Jerusalem.</p></div><div class="com-note"><span class="com-ref">10:36</span><p>"The one whom the Father set apart as his very own" — hēgiasen, from hagiazō: to consecrate, sanctify, set apart. The word is related to hagios (holy/saint) and to the concept of dedication/consecration behind Hanukkah itself. Jesus claims to be the one truly "dedicated" — the fulfilment of the feast's theme of Temple rededication.</p></div></div><div id="jn10-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">10:30</span><p>Augustine: "I and the Father are one. One what? One God, one substance, one nature. Not one person — for the Father is the Father and the Son is the Son. But one God, one divine substance, one omnipotence. And this is why those who tried to stone him were not wrong to understand it as a claim to be God — they were wrong only to reject it."</p></div><div class="com-note"><span class="com-ref">10:28</span><p>Chrysostom: "They shall never perish — not merely 'it is unlikely they will perish' or 'it is difficult for them to perish' — but 'they shall never perish.' This is certainty, not probability. And why? Because I give them eternal life — the life of God himself. Can God's life be taken away?"</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'jn10-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'jn10-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'jn10-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'jn10-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'jn10-lit')"><span>Literary Structure</span></button><button class="anno-trigger textual" onclick="tog(this,'jn10-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'jn10-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'jn10-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="jn10-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Jesus</div><div class="person-role">The Good Shepherd, Gate, and Son</div><div class="person-text">Three self-descriptions in one discourse: the Gate (v.7, 9), the Good Shepherd (v.11, 14), and the one who is one with the Father (v.30). Each deepens the previous: the gate provides access; the shepherd provides life; the unity with the Father grounds the eternal security of those who enter and are gathered.</div></div></div></div><div id="jn10-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">10:10, 11, 30</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">perissōs (10:10)</td><td>NIV: "to the full"; KJV: "more abundantly"; ESV: "abundantly"; NRSV: "abundantly". KJV's "more abundantly" preserves the superlative force.</td></tr><tr><td class="t-label">kalos (10:11)</td><td>NIV/ESV/NRSV: "good"; KJV: "good". The nuance of kalos (noble, beautiful, genuine) is lost in all English translations — "the ideal shepherd" would be more precise.</td></tr><tr><td class="t-label">hen (10:30)</td><td>NIV/KJV/ESV/NRSV: "one". Universal agreement. The neuter (one thing) rather than masculine (one person) is preserved in the translation — the theological distinction requires commentary, not different translation.</td></tr></table></div><div id="jn10-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ezekiel 34:11-24</div><div class="source-quote">"I myself will search for my sheep and look after them... I will save my flock... I will place over them one shepherd, my servant David."</div><div class="source-note">The foundational OT text for the Good Shepherd discourse — both the divine promise to be Israel's shepherd (fulfilled in Jesus as divine) and the Davidic king-shepherd promise (fulfilled in Jesus as messianic king).</div></div></div><div id="jn10-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Good Shepherd in Christian Art and Devotion</div><div class="rec-text">The Good Shepherd is the most common image of Jesus in the early church's art — appearing in the Roman catacombs from the 2nd century onward, always depicted carrying a sheep on his shoulders. The image was preferred over crucifixion imagery in the early centuries because it conveyed grace and salvation without the scandal of the cross to pagan onlookers. The shepherd image has shaped Christian pastoral theology: the word "pastor" (Latin: shepherd) derives directly from this discourse.</div></div><div class="rec-block"><div class="rec-who">"I and the Father Are One" in Trinitarian Theology</div><div class="rec-text">John 10:30 is the single most important verse in the NT for the Council of Nicaea's formulation of trinitarian theology. Athanasius's argument that the Son is homoousios (of one substance/essence) with the Father rests heavily on this verse. The Arian alternative (the Son is homoiousios — of similar but not identical substance) was rejected at Nicaea as failing to account for the full force of hen esmen.</div></div></div><div id="jn10-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Gate and Shepherd — vv.7-11</span><span class="lit-text">Jesus offers two consecutive I am sayings: I am the gate (v.7, 9) and I am the good shepherd (v.11, 14). The two images are complementary: the gate controls access; the shepherd provides care. Together they describe the complete provision of the messianic community: entry and sustenance, protection and life.</span><div class="lit-row"><span class="lit-label">Door/Shepherd Duality — vv.7-18</span><span class="lit-text">Jesus applies two distinct metaphors: Gate (vv.7-10) emphasizes access and security; Shepherd (vv.11-18) emphasizes sacrifice and intimacy. The movement from gate to shepherd mirrors John's broader pattern of Jesus first as the threshold (the way in) and then as the guide within.</span></div></div></div></div><div id="jn10-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">10:29</span><span class="tx-issue">"My Father who has given them to me is greater than all"</span></div><div class="tx-variants">Significant textual variant: some MSS read "what my Father has given me is greater than all" (neuter ho, referring to the gift); others read "my Father who has given them to me is greater than all" (masculine hos, referring to the Father). NA28 follows the latter as better attested. Either reading supports the ultimate security argument.</div><div class="tx-sig">The Father-as-subject reading (masculine relative pronoun) is better attested and makes the security argument more explicitly trinitarian.</div></div></div><div id="jn10-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">"I and the Father are one" — unity of essence or unity of purpose?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Unity of essence/nature (orthodox Trinitarianism)</div><div class="db-proponents">Athanasius, Calvin, MacArthur, most orthodox interpreters</div><div class="db-argument">The neuter hen asserts a unity of divine substance. The opponents' immediate response (stoning for blasphemy, "you claim to be God," v.33) confirms a divine nature claim. Jesus does not deny the charge; he defends the claim's consistency with Scripture.</div></div><div class="db-position"><div class="db-pos-name">Unity of purpose/will only</div><div class="db-proponents">Arianism, Jehovah's Witnesses, some liberal scholars</div><div class="db-argument">Hen refers to unity of purpose and mission, not ontological identity. The Father and Son work together as one. This reading cannot account for the stoning response or for John's prologue ("the Word was God").</div></div><div class="db-position"><div class="db-pos-name">Both — inseparable</div><div class="db-proponents">Most mainstream NT scholars</div><div class="db-argument">The unity of purpose (everything the Son does the Father does, ch.5) and the unity of essence are not separable in John's theology. The hen statement encompasses both, grounded in the ontological.</div></div></div><div class="db-synthesis">The ontological reading is overwhelmingly supported by the context (stoning for blasphemy), the grammar (neuter asserts quality), and the prologue's "the Word was God." The purpose-only reading cannot adequately explain the opponents' response.</div></div></div><div id="jn10-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,-1495.0 1489.2,-670.5 1518.6,927.5 120.0,1616.0 -1205.0,885.0 -1087.2,-577.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Shepherd</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Security</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Unity</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Voice</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Life</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Dedication</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">John 10 gives Jesus his most pastoral self-description (Good Shepherd) and his most ontologically dense claim (I and the Father are one). The two are inseparable: the shepherd's ability to give unloseable eternal life (vv.27-29) is grounded in his unity with the Father (v.30). The discourse moves from the image of the shepherd's care to the metaphysical ground of that care: the sheep are secure because the Shepherd is one with God.</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Galilee','Judea','Samaria','Bethany','Cana','Jordan','temple','synagogue','Capernaum'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','Jews','Peter','Thomas','Philip','Mary','Martha','Lazarus','Pilate','Nicodemus','crowd'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','hour','now','today','third day','abide','remain','eternal','before Abraham'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['Word','light','life','love','truth','glory','believe','sent','Father','Son','Spirit','witness','eternal life','sign'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/nt/john.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="nt/john/John_10.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

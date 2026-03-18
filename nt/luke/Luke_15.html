@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Luke 15 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Luke</span><span class="nav-chapter">Chapter 15</span></div>
+<div class="nav-arrows"><a href="Luke_14.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Luke_16.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Luke 15</h1>
+<p>The Lost Sheep, Lost Coin, and Prodigal Son</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Luke, a Gentile physician (Col 4:14) and the most accomplished literary stylist in the New Testament. His Greek is the most polished in the NT corpus &mdash; modelled on the style of educated Hellenistic historians such as Thucydides and Polybius. Early and unanimous church tradition (Irenaeus c.&thinsp;AD&thinsp;180, Clement of Alexandria, Origen, Eusebius, Jerome) identifies him as the author of both this Gospel and the Acts of the Apostles. He was a close companion of Paul (Phlm 24; 2 Tim 4:11, &ldquo;only Luke is with me&rdquo;), and the &ldquo;we&rdquo; passages in Acts (16:10&ndash;17; 20:5&ndash;15; 21:1&ndash;18; 27:1&ndash;28:16) confirm direct eyewitness participation in events he narrates. Luke is the only Gentile author in the canon. He explicitly describes his method in the prologue (1:1&ndash;4): careful investigation of all available tradition, consultation of eyewitnesses and ministers of the word, and orderly composition for a patron named Theophilus &mdash; a preface that conforms to the best conventions of Hellenistic historiography.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;62&ndash;70, most likely during Paul&rsquo;s two-year imprisonment in Caesarea (Acts 24:27, c.&thinsp;AD 57&ndash;59) or shortly thereafter, with publication before Acts (which presupposes it, Acts 1:1). A pre-AD&thinsp;70 date is supported by the absence of any reference to the destruction of Jerusalem as a past event; the Gospel&rsquo;s detailed prediction of the siege (21:20&ndash;24) reads as prophecy, not retrospective commentary. A minority of scholars favour AD&thinsp;70&ndash;85, arguing that the precision of 21:20 reflects post-event knowledge. The two-volume work (Luke&ndash;Acts) is approximately 27,000 words &mdash; the largest single contribution to the NT by word count.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">Luke writes for Theophilus (&ldquo;friend of God&rdquo;), probably a Gentile patron of high social standing (&ldquo;most excellent,&rdquo; Acts 1:1, a term used for Roman officials), who has already received some instruction in the faith but needs a reliable, ordered account to confirm its certainty (1:4). More broadly, Luke&rsquo;s two-volume work addresses the expanding Gentile mission: How does the story of a Jewish Messiah become good news for all nations? His Gospel foregrounds the inclusion of the poor, women, Samaritans, and Gentiles; his Acts shows the gospel moving from Jerusalem to Rome. Luke also addresses a pastoral crisis: the delay of the Parousia. His travel narrative (9:51&ndash;19:28) reframes discipleship as a sustained journey of formation, not merely expectation of an imminent end. The Gospel&rsquo;s persistent themes &mdash; prayer, joy, the Holy Spirit, reversal of fortune, universal salvation &mdash; all serve this dual apologetic and pastoral purpose.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–10 — The Lost Sheep and the Lost Coin</div><span class="verse-text"><span class="verse-num">1</span>Now the tax collectors and sinners were all gathering around to hear Jesus.</span><span class="verse-text"><span class="verse-num">2</span>But the Pharisees and the teachers of the law muttered, "This man welcomes sinners and eats with them."</span><span class="verse-text"><span class="verse-num">3</span>Then Jesus told them this parable:</span><span class="verse-text"><span class="verse-num">4</span>"Suppose one of you has a hundred sheep and loses one of them. Doesn't he leave the ninety-nine in the open country and go after the lost sheep until he finds it?</span><span class="verse-text"><span class="verse-num">5</span>And when he finds it, he joyfully puts it on his shoulders</span><span class="verse-text"><span class="verse-num">6</span>and goes home. Then he calls his friends and neighbors together and says, 'Rejoice with me; I have found my lost sheep.'</span><span class="verse-text"><span class="verse-num">7</span>I tell you that in the same way there will be more rejoicing in heaven over one sinner who repents than over ninety-nine righteous persons who do not need to repent.</span><span class="verse-text"><span class="verse-num">8</span>"Or suppose a woman has ten silver coins and loses one. Doesn't she light a lamp, sweep the house and search carefully until she finds it?</span><span class="verse-text"><span class="verse-num">9</span>And when she finds it, she calls her friends and neighbors together and says, 'Rejoice with me; I have found my lost coin.'</span><span class="verse-text"><span class="verse-num">10</span>In the same way, I tell you, there is rejoicing in the presence of the angels of God over one sinner who repents."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'lk15-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'lk15-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'lk15-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'lk15-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'lk15-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'lk15-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'lk15-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'lk15-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="lk15-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">apolōlos</span> <span class="tlit">a-po-LO-los</span> — <strong>lost</strong>: The same adjective describes the sheep (v.4), the coin (v.8), and the son (v.24, 32 — apolōlōs). Luke uses a single word to link the three parables into a triptych. What is lost has not ceased to exist — it has become separated from its proper place and owner.</p><p><span class="hebrew-word">chairete</span> <span class="tlit">CHAI-re-te</span> — <strong>rejoice / share in the joy</strong>: The command in both parables (vv.6, 9) is not merely "be happy" but "join in the joy." The finding creates a social event of celebration. The point is not just that the lost is found but that the joy is communal — as is the joy of heaven over one repentant sinner.</p></div><div id="lk15-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('The Setting: Tax Collectors and Sinners', 'Luke grounds the three parables in a specific social confrontation: tax collectors and sinners are gathering around Jesus; Pharisees and teachers are muttering. All three parables are Jesus\'s answer to the same objection — "This man welcomes sinners and eats with them." The parables do not defend Jesus\'s practice; they expose the muttering as a failure to understand God\'s character.'), ('The Female Image of God', "The woman in the coin parable (15:8-10) is one of several passages in Luke where God's action is imaged through a female figure (cf. 13:20-21, the woman with yeast). Luke's Jesus is unusual in the ancient world for using women as positive exemplars and images of divine activity without any qualification.")]</p></div><div id="lk15-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Matt 18:12-14</span><span class="ref-text">Matthew's parallel lost sheep parable, placed in the discourse on community care — the application is slightly different (care for straying community members) but the parable is the same.</span></li><li><span class="ref-cite">Ezek 34:11-16</span><span class="ref-text">"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them" — the OT background. Jesus's seeking of the lost is the fulfilment of YHWH's promise to be the shepherd Israel's leaders failed to be.</span></li><li><span class="ref-cite">Ps 119:176</span><span class="ref-text">"I have strayed like a lost sheep" — the Psalmist's self-description that provides the scriptural image of the lost condition.</span></li></ul></div><div id="lk15-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:4</span><p>"Leave the ninety-nine in the open country" — the shocking element of the parable. A responsible shepherd does not abandon 99 sheep for 1. But the parable describes God's priorities, not sound animal husbandry. The 99 are left — entrusted to each other, perhaps, or to other shepherds — because one lost sheep is worth the full expenditure of the shepherd's energy.</p></div><div class="com-note"><span class="com-ref">15:7</span><p>"More rejoicing in heaven over one sinner who repents than over ninety-nine righteous persons who do not need to repent" — the comparative is not a slight on the righteous but an expression of the intensity of joy over recovery. The ninety-nine are safe; the one was lost. Joy tracks the movement from danger to safety, from separation to reunion.</p></div><div class="com-note"><span class="com-ref">15:8-9</span><p>The woman's lamp, sweep, and search describe God's diligence in seeking the lost. The coin cannot cooperate — unlike the sheep which can be called and the son who must "come to his senses." God's seeking precedes and enables human response.</p></div><div class="com-note"><span class="com-ref">15:10</span><p>"Rejoicing in the presence of the angels of God" — not merely that angels rejoice but that there is rejoicing in the divine assembly at the news of one repentant sinner. Heaven's emotional economy is oriented toward recovery and return; what moves heaven is what should move the Pharisees.</p></div></div><div id="lk15-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:1-3</span><p>Calvin notes that the three parables are not abstract theology but a direct answer to the Pharisees' complaint. Jesus defends his table fellowship with sinners by arguing that this is precisely how God operates. The Pharisees have confused holiness (separation from the defiled) with the character of God (who seeks the defiled).</p></div><div class="com-note"><span class="com-ref">15:7</span><p>The "ninety-nine righteous persons who do not need to repent" is ironic: no one falls into that category. Jesus uses the Pharisees' self-description against them. If they think they do not need to repent, they are precisely the ninety-nine who are already safe in the fold — and therefore need not be the object of extraordinary seeking joy.</p></div></div><div id="lk15-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">15:4</span><p>"Leave the ninety-nine in the open country" — unlike Matthew's version ("on the hills"), Luke's "open country" (en tē erēmō) could mean wilderness or uninhabited country, suggesting a less safe situation for the remaining sheep and therefore a greater recklessness in the seeking.</p></div><div class="com-note"><span class="com-ref">15:8</span><p>Ten drachmas — equivalent to roughly ten days' wages. As a wedding dowry or family savings, this would be a significant sum. The coin's loss is not trivial; the diligence of the search is proportionate.</p></div></div><div id="lk15-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">15:4</span><p>Kataleipō — "leaves behind" with full knowledge; not abandons. The present active participle poreuetai describes the going as a continuous search. The shepherd does not give up; he searches "until he finds it" — the goal-oriented persistence is the point.</p></div><div class="com-note"><span class="com-ref">15:8</span><p>Drachma — a Greek silver coin roughly equivalent to a Roman denarius (a day's wage). Ten such coins might represent a significant portion of a family's savings. The woman's diligent search (light, sweep, search carefully) is proportionate to the real value of what is lost.</p></div></div><div id="lk15-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">15:4-5</span><p>Gregory the Great: "He who left the ninety-nine in the mountains to seek one lost sheep is our Lord, who left the angels in heaven to seek fallen humanity. And when he found it, he laid it on his shoulders — that is, he took our nature upon himself and carried our sins."</p></div><div class="com-note"><span class="com-ref">15:8</span><p>Ambrose: "The woman is the church. The ten coins are the ten commandments, or the ten nations of the world. The one lost coin is the sinner. She lights a lamp — the light of the gospel — and sweeps the house — that is, she searches everywhere within herself — until she finds what was lost."</p></div></div></div><div class="section"><div class="section-header">Verses 11–32 — The Prodigal Son and the Elder Brother</div><span class="verse-text"><span class="verse-num">11</span>Jesus continued: "There was a man who had two sons.</span><span class="verse-text"><span class="verse-num">12</span>The younger one said to his father, 'Father, give me my share of the estate.' So he divided his property between them.</span><span class="verse-text"><span class="verse-num">13</span>Not long after that, the younger son got together all he had, set off for a distant country and there squandered his wealth in wild living.</span><span class="verse-text"><span class="verse-num">14</span>After he had spent everything, there was a severe famine in that whole country, and he began to be in need.</span><span class="verse-text"><span class="verse-num">15</span>So he went and hired himself out to a citizen of that country, who sent him to his fields to feed pigs.</span><span class="verse-text"><span class="verse-num">16</span>He longed to fill his stomach with the pods that the pigs were eating, but no one gave him anything.</span><span class="verse-text"><span class="verse-num">17</span>"When he came to his senses, he said, 'How many of my father's hired servants have food to spare, and here I am starving to death!</span><span class="verse-text"><span class="verse-num">18</span>I will set out and go back to my father and say to him: Father, I have sinned against heaven and against you.</span><span class="verse-text"><span class="verse-num">19</span>I am no longer worthy to be called your son; make me like one of your hired servants.'</span><span class="verse-text"><span class="verse-num">20</span>So he got up and went to his father. But while he was still a long way off, his father saw him and was filled with compassion for him; he ran to him, threw his arms around him and kissed him.</span><span class="verse-text"><span class="verse-num">21</span>"The son said to him, 'Father, I have sinned against heaven and against you. I am no longer worthy to be called your son.'</span><span class="verse-text"><span class="verse-num">22</span>"But the father said to his servants, 'Quick! Bring the best robe and put it on him. Put a ring on his finger and sandals on his feet.</span><span class="verse-text"><span class="verse-num">23</span>Bring the fattened calf and kill it. Let's have a feast and celebrate.</span><span class="verse-text"><span class="verse-num">24</span>For this son of mine was dead and is alive again; he was lost and is found.' So they began to celebrate.</span><span class="verse-text"><span class="verse-num">25</span>"Meanwhile, the older son was in the field. When he came near the house, he heard music and dancing.</span><span class="verse-text"><span class="verse-num">26</span>So he called one of the servants and asked him what was going on.</span><span class="verse-text"><span class="verse-num">27</span>"Your brother has come," he replied, "and your father has killed the fattened calf because he has him back safe and sound."</span><span class="verse-text"><span class="verse-num">28</span>"The older brother became angry and refused to go in. So his father went out and pleaded with him.</span><span class="verse-text"><span class="verse-num">29</span>But he answered his father, 'Look! All these years I've been slaving for you and never disobeyed your orders. Yet you never gave me even a young goat so I could celebrate with my friends.</span><span class="verse-text"><span class="verse-num">30</span>But when this son of yours who has squandered your property with prostitutes comes home, you kill the fattened calf for him!'</span><span class="verse-text"><span class="verse-num">31</span>"My son," the father said, "you are always with me, and everything I have is yours.</span><span class="verse-text"><span class="verse-num">32</span>But we had to celebrate and be glad, because this brother of yours was dead and is alive again; he was lost and is found.'"</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'lk15-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'lk15-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'lk15-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'lk15-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'lk15-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'lk15-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'lk15-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'lk15-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="lk15-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">eis heauton de elthōn</span> <span class="tlit">eis heau-TON de el-THON</span> — <strong>coming to himself / when he came to his senses</strong>: The idiom (v.17) is Greek for regaining one's right mind — the moment of moral clarity that precedes repentance. The prodigal does not immediately repent; he first perceives his situation clearly. The movement is: see reality clearly → formulate a plan → act. Repentance begins with seeing.</p><p><span class="hebrew-word">splanchnistheis</span> <span class="tlit">splan-ch-NIS-theis</span> — <strong>filled with compassion / moved in his gut</strong>: The father's response (v.20) uses the most visceral Greek word for compassion — a stirring of the intestines, the seat of emotion in antiquity. The same word is used for Jesus's own compassion at healings (7:13; 10:33). The father's love is not cool benevolence but gut-wrenching tenderness.</p></div><div id="lk15-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>[("The Younger Son's Request", "In first-century Jewish culture, requesting the inheritance while the father was still alive was equivalent to wishing the father dead — a supreme act of dishonour. The father's compliance is equally scandalous: he divides the property (including the elder's share) without the family consultation that honour culture demanded. From the parable's first sentence, everything is upside-down."), ('Feeding Pigs', 'For a Jewish audience, feeding pigs was the ultimate humiliation: pigs were unclean animals, and caring for them in a Gentile country placed the prodigal in a state of maximum ritual impurity. "No one gave him anything" — even his Gentile employer offered nothing. He is at the bottom of every social, ritual, and economic ladder simultaneously.')]</p></div><div id="lk15-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Deut 21:17</span><span class="ref-text">The double portion for the eldest son in Jewish inheritance law — the context for the younger son's request. By asking for his portion early, he effectively claims what is not yet legally his and dishonours his father.</span></li><li><span class="ref-cite">2 Cor 5:17</span><span class="ref-text">"If anyone is in Christ, the new creation has come; the old has gone, the new is here!" — Paul's theological formulation of the same movement the prodigal embodies: death to the old life, new creation in the father's house.</span></li><li><span class="ref-cite">Ps 103:13</span><span class="ref-text">"As a father has compassion on his children, so the Lord has compassion on those who fear him" — the Psalm that provides the OT background for the father's compassion in the parable.</span></li></ul></div><div id="lk15-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:20</span><p>"While he was still a long way off, his father saw him" — the father is watching, waiting, looking. He has not written off the son. The "still a long way off" is the most grace-saturated detail in the parable: the father runs before the son has spoken a word of repentance. Grace precedes confession.</p></div><div class="com-note"><span class="com-ref">15:22-24</span><p>The three gifts — robe, ring, sandals — are restorations of status. The best robe replaces the rags; the ring restores legal authority (a signet ring could authenticate documents); the sandals distinguish son from slave (slaves went barefoot). The fatted calf signals a feast of maximum celebration. Nothing is held back; the restoration is total.</p></div><div class="com-note"><span class="com-ref">15:28-30</span><p>The elder brother's accusation is revealing: "this son of yours who has squandered your property with prostitutes" — he adds detail not in the narrative (prostitutes), showing that his imagination has been working overtime on his brother's behaviour. His complaint is not about the son's sin but about the differential treatment.</p></div><div class="com-note"><span class="com-ref">15:31-32</span><p>"You are always with me, and everything I have is yours" — the elder's inheritance is intact; the father has not given away his portion. The elder has been living in the father's house all this time without enjoying it. His obedience has been servile, not filial — he has been slaving (douleuō, v.29), not sonning. The parable ends without his decision: will he go in?</p></div></div><div id="lk15-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:17</span><p>"He came to himself" — Calvin sees in this phrase the beginnings of the work of the Holy Spirit, who illuminates the mind to see its own condition clearly. Repentance begins with clear-eyed acknowledgment of reality. The prodigal's calculation (my father's servants have bread; I am starving) is the beginning of wisdom.</p></div><div class="com-note"><span class="com-ref">15:28-32</span><p>Calvin notes that the parable ends without the elder son's decision — deliberately. Luke leaves the Pharisees in the position of the elder son: they have been in the father's house all along; the question is whether they will enter the feast or remain outside in their resentment. The parable is still open; their response is still possible.</p></div></div><div id="lk15-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">15:12</span><p>Under Jewish law (Num 27:8-11; Deut 21:17), the division of the property before the father's death was unusual but not illegal. Once given, the property belonged to the sons; what the younger son then did with it was his legal right. The father's acquiescence is remarkable, not his legal entitlement to refuse.</p></div><div class="com-note"><span class="com-ref">15:21</span><p>The prodigal's confession in v.21 is shorter than his rehearsed speech in vv.18-19 — he never gets to say "make me like one of your hired servants." The father interrupts with the restoration before the full confession is complete. The parable insists that God's grace outpaces human contrition.</p></div></div><div id="lk15-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">15:20</span><p>Edramen — aorist of trechō: "he ran." A dignified Middle Eastern patriarch did not run; running required gathering one's robes and was considered undignified. The father's running is itself a statement of his character — he abandons dignity to reach the son.</p></div><div class="com-note"><span class="com-ref">15:29</span><p>Douleuō — "I have been slaving for you." The elder uses the word for a slave's service, not a son's relationship. His self-description reveals that he has never understood the relationship he was in. He has lived in his father's house as a slave rather than a son.</p></div></div><div id="lk15-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">15:20</span><p>Tertullian: "Before the son had finished his confession, the father commanded the restoration of the garments of sonship. He did not wait; he did not require further evidence of repentance. The father ran. This is the image of God's mercy: it anticipates, it does not wait to be convinced."</p></div><div class="com-note"><span class="com-ref">15:28-32</span><p>Chrysostom: "The elder son represents those who serve God from duty and fear, not from love. His very obedience has become a wall between himself and his father's joy. To keep the commandments without sharing in the father's own heart is to be in the house but not of the family."</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'lk15-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'lk15-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'lk15-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'lk15-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'lk15-lit')"><span>Literary Structure</span></button><button class="anno-trigger textual" onclick="tog(this,'lk15-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'lk15-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'lk15-themes')"><span>Theological Themes</span></button>
+
+<button class="anno-trigger greek" onclick="tog(this,'lk15-hebtext')" data-panel="lk15-hebtext">Greek Words</button></div>
+<div id="lk15-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The Father</div><div class="person-role">Image of God</div><div class="person-text">The parable's theological centre. He divides the property without protest, watches for the son's return, runs to meet him, restores him fully, and then goes out to plead with the elder. Both sons misunderstand him; both receive his grace unconditionally.</div></div><div class="person-card"><div class="person-name">The Younger Son</div><div class="person-role">The Prodigal</div><div class="person-text">His journey traces the arc of sin and repentance: demand → departure → destitution → clarity → return → restoration. His repentance is genuine but his restored sonship comes faster than he expected — the father interrupts his confession.</div></div><div class="person-card"><div class="person-name">The Elder Son</div><div class="person-role">The Resentful Obedient</div><div class="person-text">The Pharisees' stand-in. His complaint is not theologically wrong — the younger son did wrong, the father's response seems disproportionate — but his resentment reveals that he has never understood what it means to live in the father's house as a son. He has been obedient but not loving.</div></div></div></div><div id="lk15-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">15:17, 20, 29</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">eis heauton de elthōn (15:17)</td><td>NIV: "he came to his senses"; KJV: "he came to himself"; ESV: "he came to himself"; NRSV: "he came to himself". The Greek is idiomatic — literally "coming into himself" — and all major versions render the idiom appropriately.</td></tr><tr><td class="t-label">splanchnistheis (15:20)</td><td>NIV: "filled with compassion"; KJV: "had compassion"; ESV: "felt compassion"; NRSV: "filled with compassion". The visceral force (literally: moved in his intestines) is softened in all translations.</td></tr><tr><td class="t-label">douleuō (15:29)</td><td>NIV: "slaving"; KJV: "do I serve"; ESV: "slaving"; NRSV: "working like a slave". NIV and ESV capture the slave-language the elder uses of his own service.</td></tr></table></div><div id="lk15-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ezekiel 34:11-16</div><div class="source-quote">"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them... I will search for the lost and bring back the strays."</div><div class="source-note">The OT promise of YHWH as the true shepherd of Israel, which Jesus fulfils in his seeking of the lost. The three parables of Luke 15 are the narrative enactment of Ezekiel's divine promise.</div></div><div class="source-block"><div class="source-title">Isaiah 49:15</div><div class="source-quote">"Can a mother forget the baby at her breast and have no compassion on the child she has borne? Though she may forget, I will not forget you!"</div><div class="source-note">The divine maternal compassion of Isaiah that provides background for the father's splanchnistheis (gut-wrenching compassion) in v.20. God's love exceeds even maternal instinct.</div></div></div><div id="lk15-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Prodigal Son in Art and Literature</div><div class="rec-text">No parable has inspired more art than the story of the prodigal son. Rembrandt's The Return of the Prodigal Son (c. 1669) — depicting the father's hands (one masculine, one feminine) resting on the kneeling son's back — is widely considered the most theologically profound painting in Western art. Henri Nouwen's meditation on the painting, The Return of the Prodigal Son (1992), has become a modern classic of spiritual reflection.</div></div><div class="rec-block"><div class="rec-who">The Waiting Father in Christian Theology</div><div class="rec-text">The image of the father who "while he was still a long way off... saw him and ran" has shaped Christian understandings of prevenient grace — the doctrine that God's love and seeking precede human repentance. Tertullian, Augustine, and Wesley all return to this passage as the clearest narrative expression of divine initiative in salvation.</div></div></div><div id="lk15-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Triptych — chs.15</span><span class="lit-text">Three parables of the lost, escalating in stakes and elaboration: one sheep from a hundred (1%) → one coin from ten (10%) → one son from two (50%). The percentage rises; the narrative detail expands; the emotional weight increases.</span></div><div class="lit-row"><span class="lit-label">Joy as Refrain</span><span class="lit-text">Each parable climaxes in communal rejoicing: "Rejoice with me" (v.6, 9); the father's feast (v.24, 32). The three-fold repetition of joy is the chapter's heartbeat — heaven's response to repentance is not relief but celebration. The lost sheep chapter (15) is itself framed by a joy that the Pharisees' grumbling (v.2) conspicuously lacks.</span></div>
+<div class="lit-center">The parable ends without the elder son's decision. He is standing outside; the father has pleaded; the music and dancing continue inside. The reader — particularly the Pharisees in Luke's setting — must decide which son they are and whether they will enter.</div></div></div><div id="lk15-hebtext" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">apollymi</span> <span class="tlit">a-POL-ly-mi</span> — <strong>lose / destroy / perish</strong>: The governing verb across all three parables: the lost sheep (v.4, 6), the lost coin (v.8-9), the lost son (v.24, 32). In each parable something of value is "lost" — apolesē / apololos — and then found. The word also appears in v.17 of the prodigal: "I am perishing (apollymai) with hunger." The lostness in the parables is not metaphorical but the concrete reality the father's love overcomes.</p><p><span class="hebrew-word">synechairō</span> <span class="tlit">syn-e-CHAI-ro</span> — <strong>rejoice together / share joy</strong>: The verb of the collective celebrations that close each parable (v.6, 9; the feast of v.23-24). Syn (together) + chairō (to rejoice): joy shared with a community. The shepherd calls friends and neighbours; the woman calls friends and neighbours; the father throws a feast. Each recovery of the lost produces not private relief but public, communal joy — which Jesus identifies as the response of heaven to repentance (v.7, 10).</p><p><span class="hebrew-word">nekros / zōn</span> <span class="tlit">NEK-ros / ZON</span> — <strong>dead / alive</strong>: The father's declaration over the returning son uses the resurrection vocabulary: "he was dead and is alive again" (v.24, 32). Nekros (dead) and zōn (living, present participle of zaō). The prodigal's return is not merely a moral reform but a resurrection — a return from death to life. Luke's parable is the closest pre-resurrection parallel to the resurrection narratives in the Gospel.</p></div><div id="lk15-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">15:21</span><span class="tx-issue">Prodigal's truncated confession</span></div><div class="tx-variants">The prodigal's rehearsed speech in vv.18-19 includes "make me like one of your hired servants"; v.21 omits this phrase. Some MSS include it in v.21, harmonising with the rehearsed version. NA28 follows the shorter form.</div><div class="tx-sig">The shorter form is almost certainly original — the father interrupts before the full confession is complete. This is theologically significant: grace precedes the completion of contrition. The longer harmonising reading removes this point.</div></div><div class="tx-item"><div class="tx-header"><span class="tx-ref">15:16</span><span class="tx-issue">The pods / carob pods</span></div><div class="tx-variants">Some MSS read "husks" (KJV); NA28 reads keratia (carob pods, the seed pods of the carob tree used as animal fodder). The carob reading is original; the vaguer "husks" is a later simplification.</div><div class="tx-sig">The carob detail grounds the parable in Palestinian agricultural reality and underlines the depth of the son's degradation — feeding pigs on food unfit for human consumption.</div></div></div><div id="lk15-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Is the Elder Son Condemned or Invited?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Elder son condemned</div><div class="db-proponents">Some patristic interpreters</div><div class="db-argument">The elder's resentment represents a fundamental failure of love that the parable exposes as disqualifying. He is the Pharisees; his exclusion from the feast is his own choice and its consequences are permanent.</div></div><div class="db-position"><div class="db-pos-name">Elder son invited, not condemned</div><div class="db-proponents">Bailey, Green, Fitzmyer</div><div class="db-argument">The parable does not end with the elder son refusing. The father goes out and pleads — as he went out to the younger. The open ending is an invitation: the Pharisees can still enter. The parable is evangelistic toward the elder son, not merely critical.</div></div></div><div class="db-synthesis">The majority reading favours the open-ending interpretation: the parable is addressed to the Pharisees as an invitation, not a verdict. The father's going out to the elder mirrors his watching for the younger — both are the object of the same seeking love.</div></div></div><div id="lk15-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,-1546.0 1445.0,-645.0 1474.5,902.0 120.0,1616.0 -1131.4,842.5 -1278.6,-687.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Grace</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Repentance</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Joy</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sonship</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Lostness</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Seeking</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Luke 15 is the theological centre of the travel narrative and perhaps of the entire Gospel. The three parables answer a single accusation — "this man welcomes sinners and eats with them" — by revealing the character of God: a God who seeks, who finds, who celebrates. The lost sheep, the lost coin, and the lost son are progressively more personal; the father's love in the third parable is the fullest portrait of divine grace in the Synoptic Gospels. The elder son's resentment is the parable's unresolved challenge: can the self-righteous enter the same feast?</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Galilee','Judea','Samaria','Nazareth','Capernaum','Bethlehem','Jordan','temple','synagogue','road','Jericho'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','scribes','Peter','John','James','crowd','elders','chief priests','Pilate','Herod','angel','women'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','hour','today','year','generation','coming','now','appointed time'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kingdom','Son of Man','salvation','Spirit','repent','forgive','grace','glory','faith','gospel','poor','joy','covenant','prophet'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/nt/luke.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="nt/luke/Luke_15.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>
