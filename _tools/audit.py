@@ -37,15 +37,15 @@ def fail(msg):  print(f"  {FAIL} {msg}"); failures.append(msg)
 def warn(msg):  print(f"  {WARN}  {msg}"); warnings.append(msg)
 
 BOOK_ROSTER = [
-    ('genesis',  'Genesis',  range(1, 51)),
-    ('exodus',   'Exodus',   range(1, 41)),
-    ('proverbs', 'Proverbs', range(1, 32)),
-    ('ruth',     'Ruth',     range(1,  5)),
-    ('matthew',  'Matthew',  range(1, 29)),
-    ('mark',     'Mark',     range(1, 17)),
-    ('luke',     'Luke',     range(1, 25)),
-    ('john',     'John',     range(1, 22)),
-    ('acts',     'Acts',     range(1, 29)),
+    ('genesis',  'Genesis',  range(1, 51), 'ot'),
+    ('exodus',   'Exodus',   range(1, 41), 'ot'),
+    ('proverbs', 'Proverbs', range(1, 32), 'ot'),
+    ('ruth',     'Ruth',     range(1,  5), 'ot'),
+    ('matthew',  'Matthew',  range(1, 29), 'nt'),
+    ('mark',     'Mark',     range(1, 17), 'nt'),
+    ('luke',     'Luke',     range(1, 25), 'nt'),
+    ('john',     'John',     range(1, 22), 'nt'),
+    ('acts',     'Acts',     range(1, 29), 'nt'),
 ]
 
 SCHOLAR_KEYS = {
@@ -62,9 +62,9 @@ SCHOLAR_KEYS = {
 
 def chapter_paths():
     paths = []
-    for book_dir, book_name, chapters in BOOK_ROSTER:
+    for book_dir, book_name, chapters, test_dir in BOOK_ROSTER:
         for ch in chapters:
-            p = f'{REPO}/{book_dir}/{book_name}_{ch}.html'
+            p = f'{REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html'
             if os.path.exists(p):
                 paths.append((p, book_name, ch))
     return paths
@@ -312,9 +312,8 @@ else:
 
 # Check per-book verse files in verses/ot/ and verses/nt/
 missing_per_book = []
-for book_dir, book_name, ch_range in BOOK_ROSTER:
-    test = 'ot' if book_dir in OT_BOOKS else 'nt'
-    p = f'{REPO}/verses/{test}/{book_dir}.js'
+for book_dir, book_name, ch_range, test_dir_v in BOOK_ROSTER:
+    p = f'{REPO}/verses/{test_dir_v}/{book_dir}.js'
     if not os.path.exists(p):
         missing_per_book.append(f'verses/{test}/{book_dir}.js')
 if missing_per_book:

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 28 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 28</span></div>
+<div class="nav-arrows"><a href="Genesis_27.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_29.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Genesis 28</h1>
+<p>Jacob's Ladder: The Dream at Bethel</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526&ndash;1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445&ndash;1405 BC during the wilderness period, following the Exodus from Egypt. Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT (Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's creation of the world and his covenant relationship with the patriarchs &mdash; Abraham, Isaac, Jacob, and Joseph &mdash; culminating in Israel's formation as a people chosen to carry the promise of blessing to all nations (Gen 12:1&ndash;3). Genesis answers the foundational questions: Who is God? Who are we? What went wrong? What is God doing about it?</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;9 &mdash; Isaac Sends Jacob to Paddan Aram</div><span class="verse-text"><span class="verse-num">1</span>So Isaac called for Jacob and blessed him. Then he commanded him: "Do not marry a Canaanite woman.</span><span class="verse-text"><span class="verse-num">2</span>Go at once to Paddan Aram, to the house of your mother's father Bethuel. Take a wife for yourself there, from among the daughters of Laban, your mother's brother.</span><span class="verse-text"><span class="verse-num">3</span>May God Almighty bless you and make you fruitful and increase your numbers until you become a community of peoples.</span><span class="verse-text"><span class="verse-num">4</span>May he give you and your descendants the blessing given to Abraham, so that you may take possession of the land where you now reside as a foreigner, the land God gave to Abraham."</span><span class="verse-text"><span class="verse-num">5</span>Then Isaac sent Jacob on his way, and he went to Paddan Aram, to Laban son of Bethuel the Aramean, the brother of Rebekah, who was the mother of Jacob and Esau.</span><span class="verse-text"><span class="verse-num">6</span>Now Esau learned that Isaac had blessed Jacob and had sent him to Paddan Aram to take a wife from there, and that when he blessed him he commanded him, "Do not marry a Canaanite woman,"</span><span class="verse-text"><span class="verse-num">7</span>and that Jacob had obeyed his father and mother and had gone to Paddan Aram.</span><span class="verse-text"><span class="verse-num">8</span>Esau then realized how displeasing the Canaanite women were to his father Isaac;</span><span class="verse-text"><span class="verse-num">9</span>so he went to Ishmael and married Mahalath, the sister of Nebaioth and daughter of Ishmael son of Abraham, in addition to the wives he already had.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen28-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen28-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen28-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen28-s1-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen28-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen28-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen28-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen28-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen28-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen28-s1-mac')">MacArthur</button></div><div id="gen28-s1-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Paddan Aram</div><div class="poi-coords">Upper Mesopotamia; Harran region</div><div class="poi-text">Isaac sends Jacob to Paddan Aram ("the plain of Aram") — the family's Mesopotamian homeland. The journey begins the longest geographical displacement in the patriarchal narrative: Jacob will be away from Canaan for twenty years.</div></div></div>
+<div id="gen28-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:1-5</span><p>MacArthur: Isaac deliberately blesses Jacob with the 'blessing of Abraham' and sends him to find a wife from Laban's daughters. The irony is complete: Isaac's blessing of Jacob at the end of ch.27 was accidental; the blessing he gives at the beginning of ch.28 is intentional. The covenant succession is now formally and consciously passed.</p></div><div class="com-note"><span class="com-ref">28:8-9</span><p>MacArthur: Esau, observing that Canaanite wives displeased his father, took an additional wife from Ishmael's daughters. The attempt to please Isaac by taking a wife from the Ishmaelite line rather than the Canaanite line reveals Esau's continued misunderstanding of what his parents valued. He is trying to correct his mistake with another marriage rather than with covenant character.</p></div></div><div id="gen28-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen28-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen28-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Jacob is at the lowest point of his life — fleeing his brother's murder threat, separated from his family for what will be twenty years, sleeping in the open with a stone for a pillow. It is precisely here that God appears. The Bethel vision is not a reward for virtue but an act of sheer grace: a terrified deceiver encounters the God of Abraham with a personal, direct promise of accompaniment. "I will not leave you" is the covenant's most intimate expression.</p></div><div id="gen28-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">John 1:51</span><span class="ref-text">Jesus explicitly applies the Bethel vision to himself: "You will see heaven opened and the angels of God ascending and descending on the Son of Man." Jacob's ladder is the type; Christ is the antitype — the true stairway between heaven and earth.</span></li><li><span class="ref-cite">Exod 20:2</span><span class="ref-text">The "I am the LORD your God" formula at Sinai echoes Bethel. The Sinai covenant expands what Bethel establishes: God's personal presence and protection.</span></li><li><span class="ref-cite">Matt 28:20</span><span class="ref-text">"I am with you always, to the end of the age" — Jesus' Great Commission promise echoes "I am with you and will keep you wherever you go." The Bethel promise is fulfilled in the risen Christ's abiding presence.</span></li></ul></div><div id="gen28-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">28:1-5</span><p>Isaac sends Jacob to Paddan Aram with an explicit covenant commission: "May God Almighty bless you and make you fruitful and increase your numbers... May he give you and your descendants the blessing given to Abraham." Sarna: "The formal sending of Jacob with the Abrahamic blessing is the transition point: Jacob leaves Canaan as the bearer of the covenant. The departure is simultaneously a flight from Esau and a divinely commissioned journey toward the fulfilment of the promise."</p></div><div class="com-note"><span class="com-ref">28:6-9</span><p>Esau observes that the daughters of Canaan displeased Isaac and goes to marry Ishmael's daughter. Sarna: "Esau's action is pathetically belated and theologically revealing: he tries to win his parents' approval by observing a rule he didn't know before. The action shows his fundamental incapacity to grasp what the covenant requires. Marrying Ishmael's daughter brings him closer to the covenant family but further from its spirit."</p></div></div><div id="gen28-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">28:6-9</span><p>Esau goes to add Ishmael's daughter to his wives. Alter: "The episode is told with characteristic brevity — three verses, no dialogue, no emotional response. But the poignancy is immense: Esau, who lost the birthright by not caring about it and lost the blessing by being deceived, now tries to compensate for his failures by marrying the right person. It is the action of a man who can see what he should have done but cannot understand why he failed."</p></div><div class="com-note"><span class="com-ref">28:6-9</span><p>Esau finally realises after all the deceptions that Canaanite wives displease his father. Alter notes Esau's response is to add yet another wife rather than to change himself. The person who learns the lesson too late and applies it inadequately is a recurring type in Genesis.</p></div></div><div id="gen28-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:1-4</span><p>Isaac blesses Jacob with the Abrahamic blessing consciously this time. Calvin: "Having before been deceived, Isaac now, in his right mind and with clear intention, confers the same blessing on Jacob. He makes no attempt to revoke the first blessing; rather, he confirms it. This shows that Isaac, whatever his initial confusion, ultimately yields to the divine will."</p></div><div class="com-note"><span class="com-ref">28:3-5</span><p>Calvin: Now Isaac blesses Jacob knowingly — the same blessing given unknowingly in ch.27 is confirmed deliberately. God used the deception to achieve what Isaac's intention had blocked; now Isaac's intention catches up with God's purpose.</p></div></div><div id="gen28-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">28:3</span><p>The NET note on El Shaddai (God Almighty) in Isaac's blessing connects to 17:1, where the same divine name was used in the covenant renewal with Abraham. The note observes the deliberate echo: the covenant that began with El Shaddai appearing to Abraham is now transmitted to Jacob under the same divine name.</p></div><div class="com-note"><span class="com-ref">28:4-5</span><p>The NET note on the Abrahamic blessing formula transmitted to Jacob (land, seed, descendants) observes Isaac uses the language of ch.17's covenant renewal — this is the most precise covenant language Isaac ever speaks.</p></div></div></div><div class="section"><div class="section-header">Verses 10&ndash;22 &mdash; Jacob's Dream at Bethel; the Vow</div><span class="verse-text"><span class="verse-num">10</span>Jacob left Beersheba and set out for Harran.</span><span class="verse-text"><span class="verse-num">11</span>When he reached a certain place, he stopped for the night because the sun had set. Taking one of the stones there, he put it under his head and lay down to sleep.</span><span class="verse-text"><span class="verse-num">12</span>He had a dream in which he saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it.</span><span class="verse-text"><span class="verse-num">13</span>There above it stood the Lord, and he said: "I am the Lord, the God of your father Abraham and the God of Isaac. I will give you and your descendants the land on which you are lying.</span><span class="verse-text"><span class="verse-num">14</span>Your descendants will be like the dust of the earth, and you will spread out to the west and to the east, to the north and to the south. All peoples on earth will be blessed through you and your offspring.</span><span class="verse-text"><span class="verse-num">15</span>I am with you and will watch over you wherever you go, and I will bring you back to this land. I will not leave you until I have done what I have promised you."</span><span class="verse-text"><span class="verse-num">16</span>When Jacob awoke from his sleep, he thought, "Surely the Lord is in this place, and I was not aware of it."</span><span class="verse-text"><span class="verse-num">17</span>He was afraid and said, "How awesome is this place! This is none other than the house of God; this is the gate of heaven."</span><span class="verse-text"><span class="verse-num">18</span>Early the next morning Jacob took the stone he had placed under his head and set it up as a pillar and poured oil on top of it.</span><span class="verse-text"><span class="verse-num">19</span>He called that place Bethel, though the city used to be called Luz.</span><span class="verse-text"><span class="verse-num">20</span>Then Jacob made a vow, saying, "If God will be with me and will watch over me on this journey I am taking and will give me food to eat and clothes to wear</span><span class="verse-text"><span class="verse-num">21</span>so that I return safely to my father's household, then the Lord will be my God</span><span class="verse-text"><span class="verse-num">22</span>and this stone that I have set up as a pillar will be God's house, and of all that you give me I will give you a tenth."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen28-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen28-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen28-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen28-s2-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen28-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen28-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen28-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen28-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen28-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen28-s2-mac')">MacArthur</button></div><div id="gen28-s2-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Bethel</div><div class="poi-coords">Central Canaan hill country</div><div class="poi-text">Jacob stops for the night at a "certain place" — unnamed until after the dream, when it receives the name Bethel (house of God). The unremarkable stopping point becomes the most theologically charged location in the Jacob story. The gate of heaven is not a shrine but a sleeping place that the divine chose.</div></div></div>
+<div id="gen28-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:16-17</span><p>MacArthur: 'Surely the LORD is in this place, and I was not aware of it' -- Jacob's response to the Bethel vision is awe at the unexpectedness of the divine presence. The holy dread (v.17: 'how awesome is this place') is the appropriate response to the realisation that the covenant God is present in an ordinary place, not only in designated sanctuaries.</p></div><div class="com-note"><span class="com-ref">28:20-22</span><p>MacArthur: Jacob's vow is conditional -- 'if God will be with me... then the LORD will be my God.' The conditionality is not unbelief but the beginning of covenant faith. The NT equivalent would be the young believer who is learning what it means to trust. God does not reject conditional faith; he works with it, as the twenty years of Jacob's life in Haran will demonstrate.</p></div></div><div id="gen28-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen28-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen28-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Jacob's response to the vision has three movements: fear ("How awesome is this place"), naming (Bethel), and consecration (the stone pillar). The sequence is the prototype of all later sanctuary construction — encountering the holy leads to marking the place and establishing a worship site. The stone Jacob used as a pillow becomes an altar. The ordinary becomes sacred by divine encounter.</p></div><div id="gen28-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="gen28-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">28:10-15</span><p>The Bethel dream is the most important divine communication to Jacob in his entire narrative. Sarna: "The ladder (or ramp) connecting heaven and earth with angels ascending and descending represents the continuous divine-human traffic of prayer and providence. The YHWH who stands above the ladder and speaks to Jacob is the same God of Abraham and Isaac — the covenant is personal, not merely institutional."</p></div><div class="com-note"><span class="com-ref">28:16-17</span><p>Jacob awakes and declares: "Surely the LORD is in this place, and I was not aware of it." Sarna: "The statement is theologically programmatic: the covenant God is present at unexpected places and times. The holiness of Bethel is not its own inherent quality but the divine presence that has manifested there. Jacob's fear — 'how awesome is this place!' — is the appropriate creaturely response to the presence of the holy."</p></div></div><div id="gen28-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">28:12</span><p>The ladder (sullam) with angels ascending and descending. Alter: "The image is one of the most visually memorable in the Bible — a bridge between earth and heaven, thronging with divine messengers. Alter notes that the angels ascend first and then descend, suggesting they are earth-based angels going up to receive instructions and returning — or simply that the vision presents continuous two-way divine-human communication."</p></div><div class="com-note"><span class="com-ref">28:20-22</span><p>Jacob's vow — "if God will be with me... then the LORD will be my God" — is conditional in a way that Abraham's responses to God were not. Alter: "Jacob bargains with God as he has bargained with everyone else. The conditionality of his vow — 'if' — is a characterological detail. He is the man of negotiation even in the presence of the divine. Yet the vow is genuine: he will build a house of God, and he will give a tenth."</p></div></div><div id="gen28-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">28:16</span><p>"Surely the LORD is in this place, and I was not aware of it." Calvin: "God reveals his presence in places and ways we do not expect. Jacob had fled from his father's house in fear and shame; yet the LORD meets him on the road. This teaches us that the presence of God is not confined to holy places but follows his people wherever they go." The ubiquity of the divine presence against the theology of sacred geography.</p></div><div class="com-note"><span class="com-ref">28:17</span><p>"This is none other than the house of God; this is the gate of heaven." Calvin: "Jacob calls Bethel the house of God and the gate of heaven — the place of divine access. This is the beginning of the sanctuary theology that will culminate in the tabernacle and temple. The place where God reveals himself becomes the place from which humans approach God."</p></div></div><div id="gen28-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">28:12</span><p>The NET note on sullam (ladder/stairway) discusses the etymology and parallel with Mesopotamian ziggurats, which were called "stairways to heaven." The note notes John 1:51 — Jesus saying "you will see heaven open, and the angels of God ascending and descending on the Son of Man" — which reads Jacob's ladder as a type of Christ himself as the mediator between heaven and earth.</p></div><div class="com-note"><span class="com-ref">28:22</span><p>The NET note on Jacob's vow to give a tenth discusses whether this constitutes the origin of tithing or simply reflects a pre-existing practice. The note connects to Abraham's tithe to Melchizedek (14:20) and the later Mosaic tithe law. The note observes that Jacob's vow is conditional — if God keeps his promises — which makes it more of a responsive pledge than an unconditional act of worship.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'gen28-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'gen28-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'gen28-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'gen28-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'gen28-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'gen28-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'gen28-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'gen28-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'gen28-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="gen28-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Jacob</div><div class="person-role">Fleeing deceiver; recipient of unmerited grace</div><div class="person-text">At his morally lowest point, he receives God's most intimate promise. This is the pattern of grace throughout Scripture — it meets people in flight, not in arrival. The Bethel encounter will define Jacob's identity for the rest of his life.</div></div></div></div><div id="gen28-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Gen 28 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"He had a dream in which he saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it."</td></tr><tr><td class="t-label">ESV</td><td>"And he dreamed, and behold, there was a ladder set up on the earth, and the top of it reached to heaven. And behold, the angels of God were ascending and descending on it!"</td></tr><tr><td class="t-label">KJV</td><td>"And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of God ascending and descending on it."</td></tr><tr><td class="t-label">NASB</td><td>"He had a dream, and behold, a ladder was set up on the earth with its top reaching to heaven; and behold, the angels of God were ascending and descending on it."</td></tr></table></div><div id="gen28-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Mesopotamian Ziggurat Architecture</div><div class="source-quote">The Babylonian ziggurat ("mountain of God") featured a monumental staircase connecting earth to the temple at the summit. The Sumerian word simmiltu (staircase/ramp) closely resembles Hebrew sullām. Jacob's vision may deliberately reframe the Babel/ziggurat imagery: not human ascent to the divine but divine descent to the human.</div><div class="source-note"></div></div><div class="source-block"><div class="source-title">Dead Sea Scrolls 4Q537</div><div class="source-quote">A fragmentary Aramaic text from Qumran describes Jacob's Bethel vision with additional angelic detail, showing the passage was extensively meditated upon in Second Temple Judaism.</div><div class="source-note"></div></div></div><div id="gen28-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">John 1:51</div><div class="rec-text">Jesus' direct application: "You will see heaven opened, and the angels of God ascending and descending on the Son of Man." The Bethel ladder is explicitly fulfilled in Christ. This is the most direct NT Christological reading of any Genesis passage apart from Genesis 22.</div></div><div class="rec-block"><div class="rec-who">Augustine, City of God XVI.38</div><div class="rec-text">Augustine read the Bethel stone as a type of Christ — the cornerstone rejected by builders — and the anointing oil as a type of Christ's anointing (Christos = "anointed one"). The stone becomes the foundation of the house of God.</div></div></div><div id="gen28-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Bethel: The Gate of Heaven</span><span class="lit-ref">28:16-17</span><span class="lit-text">Surely the LORD is in this place, and I was not aware of it. The divine presence does not announce itself; it is recognised in retrospect. Bethel (house of God) is named for the ordinary sleeping-place of a fugitive.</span></div><div class="lit-row"><span class="lit-label">The Conditional Vow: Faith at Its Beginning</span><span class="lit-ref">28:20-22</span><span class="lit-text">If God will be with me... then the LORD will be my God. The conditional form is honest: Jacob is at the beginning of his faith journey. The vow is not unbelief but the faith that has not yet grown beyond conditions.</span></div></div></div><div id="gen28-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#c8c0a0;line-height:1.9;"><span class="verse-num">12</span> He dreamed, and behold, there was a <span class="dn-key">stairway</span> [<em>sullām</em>] set up on the earth, and the top of it reached to heaven. And the <span class="dn-key">angels</span> [<em>malʾăkê</em>] of <span class="dn-elohim">God</span> were ascending and descending on it! <span class="verse-num">13</span> "<span class="dn-yhwh">I am the LORD</span> [<em>ʾănî YHWH</em>], the <span class="dn-elohim">God</span> of <span class="dn-human">Abraham</span> your father and the <span class="dn-elohim">God</span> of <span class="dn-human">Isaac</span>." <span class="verse-num">15</span> "Behold, I am with you and will <span class="dn-key">keep</span> [<em>šāmar</em>] you wherever you go... For I will not leave you until I have done what I have promised you." <span class="verse-num">19</span> He called the name of that place <span class="dn-place">Bethel</span> [<em>bêt ʾēl</em>: house of God].</p></div><div id="gen28-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="gen28-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Jacob's Vow (28:20-22): Conditional Faith or Genuine Commitment?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Conditional/bargaining</div><div class="db-proponents">von Rad, some critics</div><div class="db-argument">"If God does these things for me, then the LORD will be my God." The conditional structure (im... vehayyah YHWH li le'Elohim) suggests Jacob is negotiating rather than committing — a commercially minded response to a divine gift.</div></div><div class="db-position"><div class="db-pos-name">Authentic response to grace</div><div class="db-proponents">Sarna, Wenham, Hamilton</div><div class="db-argument">The vow follows the covenant promise (vv.13-15); it is a response to grace, not a precondition for it. The "if" clause restates the promise in Jacob's own words. The vow is the form in which ancient people expressed grateful commitment.</div></div></div><div class="db-synthesis">The conditional form is genuine but should not be read cynically. Ancient vow language regularly uses conditional structures even for deeply sincere commitments. The narrative subsequently treats the vow as binding (31:13; 35:1) and Jacob honours it. The vow is morally inferior to Abraham's immediate obedience but is a genuine — if tentative — act of faith.</div></div></div><div id="gen28-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon','Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','year','years','generation','time','age'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','blessing','promise','God','LORD','Israel','faith','fear','firstborn','seed'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/genesis.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/genesis/Genesis_28.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

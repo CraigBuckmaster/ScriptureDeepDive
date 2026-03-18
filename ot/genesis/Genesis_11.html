@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 11 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 11</span></div>
+<div class="nav-arrows"><a href="Genesis_10.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_12.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Genesis 11</h1>
+<p>The Tower of Babel; From Shem to Abram</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526&ndash;1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445&ndash;1405 BC during the wilderness period, following the Exodus from Egypt. Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT (Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's creation of the world and his covenant relationship with the patriarchs &mdash; Abraham, Isaac, Jacob, and Joseph &mdash; culminating in Israel's formation as a people chosen to carry the promise of blessing to all nations (Gen 12:1&ndash;3). Genesis answers the foundational questions: Who is God? Who are we? What went wrong? What is God doing about it?</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;9 &mdash; The Tower of Babel</div><span class="verse-text"><span class="verse-num">1</span>Now the whole world had one language and a common speech.</span><span class="verse-text"><span class="verse-num">2</span>As people moved eastward, they found a plain in Shinar and settled there.</span><span class="verse-text"><span class="verse-num">3</span>They said to each other, "Come, let's make bricks and bake them thoroughly." They used brick instead of stone, and tar for mortar.</span><span class="verse-text"><span class="verse-num">4</span>Then they said, "Come, let us build ourselves a city, with a tower that reaches to the heavens, so that we may make a name for ourselves; otherwise we will be scattered over the face of the whole earth."</span><span class="verse-text"><span class="verse-num">5</span>But the Lord came down to see the city and the tower the people were building.</span><span class="verse-text"><span class="verse-num">6</span>The Lord said, "If as one people speaking the same language they have begun to do this, then nothing they plan to do will be impossible for them.</span><span class="verse-text"><span class="verse-num">7</span>Come, let us go down and confuse their language so they will not understand each other."</span><span class="verse-text"><span class="verse-num">8</span>So the Lord scattered them from there over all the earth, and they stopped building the city.</span><span class="verse-text"><span class="verse-num">9</span>That is why it was called Babel—because there the Lord confused the language of the whole world. From there the Lord scattered them over the face of the whole earth.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen11-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen11-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen11-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen11-s1-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen11-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen11-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen11-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen11-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen11-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen11-s1-mac')">MacArthur</button></div><div id="gen11-s1-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Plain of Shinar</div><div class="poi-coords">Mesopotamia; region of modern Iraq</div><div class="poi-text">Shinar is the plain between the Tigris and Euphrates — the same region where Nimrod built his empire (10:10). The location is significant: Babel is built in the territory of the first empire-builder, fulfilling and extending the pattern established there.</div></div><div class="poi-entry"><div class="poi-name">Tower of Babel</div><div class="poi-coords">Babylon; ziggurat architecture</div><div class="poi-text">Ancient Babylon featured massive stepped temple-towers (ziggurats) with their tops reaching toward the sky. The excavated ziggurat at Ur demonstrates the architectural form. The narrative addresses the religious logic of such structures: reaching the divine through human construction.</div></div></div>
+<div id="gen11-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:1-4</span><p>MacArthur: The Tower of Babel narrative reveals three sinful motivations: to make a name for themselves (pride), to build a tower reaching to heaven (presumption), and to avoid being scattered (disobedience to the mandate to fill the earth). The tower is not merely architectural ambition but organised rebellion.</p></div><div class="com-note"><span class="com-ref">11:6-8</span><p>MacArthur: God's observation -- 'If as one people speaking the same language they have begun to do this, then nothing they plan to do will be impossible for them' (v.6) -- is not alarm but the recognition that united human rebellion against God can produce extraordinary evil. The confusion of language is an act of mercy that prevents greater judgment.</p></div></div><div id="gen11-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen11-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>The Babel narrative reflects Mesopotamian ziggurat culture. The Etemenanki ("house of the foundation of heaven and earth") in Babylon may be the specific referent — a massive 7-stage ziggurat dedicated to Marduk. Cuneiform texts describe these structures as cosmic mountains connecting heaven and earth. The use of fired brick and bitumen (rather than stone and mortar, as in Canaan) is archaeologically accurate for the Mesopotamian plain, confirmed by excavations at Ur and Uruk.</p></div><div id="gen11-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Babel story concludes the primeval history (Gen 1–11) by explaining the origin of language diversity. It stands in ironic contrast to Pentecost (Acts 2), where the Spirit reverses the confusion. The "one language" echoes the pre-fall unity of creation; the tower project is humanity's corporate attempt at self-deification — a societal Adam-and-Eve rebellion.</p></div><div id="gen11-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isaiah 14:13–14</span><span class="ref-text">The taunt against Babylon echoes Babel's ambition: "I will ascend to heaven… I will make myself like the Most High."</span></li><li><span class="ref-cite">Acts 2:4–11</span><span class="ref-text">Pentecost reverses Babel — one Spirit produces understanding across many languages.</span></li><li><span class="ref-cite">Rev 17–18</span><span class="ref-text">Babylon as eschatological symbol recapitulates Babel's rebellious city-building.</span></li></ul></div><div id="gen11-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:1-4</span><p>The Tower of Babel narrative is the narrative explanation of the linguistic diversity already described in chapter 10. Sarna: "The Table of Nations (ch.10) presupposes the dispersal; Babel (11:1-9) narrates it. The two passages are in logical order, but reversed chronological order — a common biblical technique." The tower is described as a ziggurat — the stepped temple-towers of Mesopotamia. The name "Babel" connects to Babylon; the builders are in Mesopotamia.</p></div><div class="com-note"><span class="com-ref">11:4</span><p>The dual motivation — "a tower that reaches to the heavens" and "let us make a name for ourselves lest we be scattered" — is the classic anatomy of hubris. Sarna: the first goal is vertical (reach heaven, breach the divine-human boundary); the second is horizontal (prevent dispersal, remain concentrated in defiance of the "fill the earth" mandate). Both motivations are inversions of the creation commission.</p></div></div><div id="gen11-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:1-4</span><p>Alter notes the irony of the narrative's opening: "the whole earth had one language" — and then immediately uses that unity for the most unified act of human rebellion. The single language is not an achievement to celebrate but a dangerous condition that concentrates human pride. The building project announces itself: "Come, let us build." The first word is an invitation — the same "come" that God used to Noah. Now humanity invites itself to build against God.</p></div><div class="com-note"><span class="com-ref">11:5</span><p>Vayered YHWH lirot — "the LORD came down to see." The divine condescension is exquisitely ironic: humanity builds a tower to reach heaven; God has to come down to see it. The tower so impressive to its builders is invisible from heaven without divine effort to notice it. The gap between human ambition and divine perspective could not be expressed more economically.</p></div></div><div id="gen11-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:4</span><p>The desire to "make a name" is the essence of pride — the desire for glory that belongs only to God. Calvin: "They wished to be celebrated to the utmost limits of the world, and to transmit their fame to the latest posterity. Thus insatiable is the ambition of the human mind." The tower is not primarily a building project but a naming project — the fallen human drive to establish one's own significance independent of God.</p></div><div class="com-note"><span class="com-ref">11:7</span><p>Calvin on the divine council ("Come, let us go down"): "God is not held in council with himself; but since the plural is used, he expresses something of the mystery of the Trinity. He is not speaking to angels — he speaks as the Father to the Son and Spirit." The "let us" of Babel mirrors the "let us make" of 1:26 — the Triune God acts in both creation and judgment.</p></div></div><div id="gen11-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:1</span><p>The NET note on "the whole earth had one language" discusses whether this means literally one language (pre-Babel) or one dialect (unified speech). The note favours the literal reading — a single human language before the confusion. The note acknowledges the linguistic and anthropological questions this raises but reads the text as a claim about a specific historical moment.</p></div><div class="com-note"><span class="com-ref">11:4</span><p>The NET note on "a tower that reaches to the heavens" observes this is an idiom for extreme height, not a claim that the tower literally reached the sky. The note identifies the building as a ziggurat — a terraced temple-tower — common in Mesopotamia. The "heavens" language may reflect the religious function of ziggurats as connections between heaven and earth, which makes the project an act of religious overreach as well as architectural ambition.</p></div></div></div><div class="section"><div class="section-header">Verses 10&ndash;26 &mdash; From Shem to Abram: The Genealogy of Promise</div><span class="verse-text"><span class="verse-num">10</span>This is the account of Shem's family line. Two years after the flood, when Shem was 100 years old, he became the father of Arphaxad.</span><span class="verse-text"><span class="verse-num">11</span>And after he became the father of Arphaxad, Shem lived 500 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">12</span>When Arphaxad had lived 35 years, he became the father of Shelah.</span><span class="verse-text"><span class="verse-num">13</span>And after he became the father of Shelah, Arphaxad lived 403 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">14</span>When Shelah had lived 30 years, he became the father of Eber.</span><span class="verse-text"><span class="verse-num">15</span>And after he became the father of Eber, Shelah lived 403 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">16</span>When Eber had lived 34 years, he became the father of Peleg.</span><span class="verse-text"><span class="verse-num">17</span>And after he became the father of Peleg, Eber lived 430 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">18</span>When Peleg had lived 30 years, he became the father of Reu.</span><span class="verse-text"><span class="verse-num">19</span>And after he became the father of Reu, Peleg lived 209 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">20</span>When Reu had lived 32 years, he became the father of Serug.</span><span class="verse-text"><span class="verse-num">21</span>And after he became the father of Serug, Reu lived 207 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">22</span>When Serug had lived 30 years, he became the father of Nahor.</span><span class="verse-text"><span class="verse-num">23</span>And after he became the father of Nahor, Serug lived 200 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">24</span>When Nahor had lived 29 years, he became the father of Terah.</span><span class="verse-text"><span class="verse-num">25</span>And after he became the father of Terah, Nahor lived 119 years and had other sons and daughters.</span><span class="verse-text"><span class="verse-num">26</span>After Terah had lived 70 years, he became the father of Abram, Nahor and Haran.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen11-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen11-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen11-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'gen11-s2-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen11-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen11-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen11-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen11-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen11-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen11-s2-mac')">MacArthur</button></div><div id="gen11-s2-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 2350 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">The Flood</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2242 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Tower of Babel</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2216 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Peleg born (earth divided)</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 2116 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Shem to Abram genealogy — this passage</div><div class="tl-text">Post-Flood lifespans fall rapidly: Shem 600, Arphaxad 438, Shelah 433, Eber 464, Peleg 239. The genealogy compresses the gap between Flood and Abraham. Terah's line narrows to Abram, Nahor, and Haran.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2166 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abram born</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2091 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abram called; leaves Haran</div></div></div>
+</div><div class="tl-range"><span>c. 2400 BC</span><span>c. 2050 BC</span></div><p class="tl-caption">Traditional OT chronology; dates approximate.</p></div>
+<div id="gen11-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:10-26</span><p>MacArthur: The Shemite genealogy from Shem to Abram narrows the narrative focus from all humanity to one family. The lifespans progressively shorten compared to the pre-Flood genealogy of ch.5, reflecting the changed conditions. The genealogy ends with Terah and his three sons, focusing on Abram.</p></div><div class="com-note"><span class="com-ref">11:26-32</span><p>MacArthur: The detail that Sarai was barren (v.30) is placed before the call narrative of ch.12 to establish the central obstacle to the covenant promises. The covenant heir will be born not to natural fertility but to supernatural provision -- establishing from the beginning that the promise is God's achievement, not Abraham's.</p></div></div><div id="gen11-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen11-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen11-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The divine "Let us go down" (v.7) echoes "Let us make man" (1:26), suggesting a divine council. God's response is not angry destruction but dispersal — the very thing the builders feared (v.4). The scattering enacts the Genesis 1 mandate to "fill the earth" which humanity was refusing. Judgment and creation-purpose converge.</p></div><div id="gen11-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 1:28</span><span class="ref-text">The "fill the earth" mandate — Babel is humanity's refusal of it; God enforces it through confusion.</span></li><li><span class="ref-cite">Deut 32:8</span><span class="ref-text">God fixed the borders of peoples according to "the number of the sons of Israel" — the nations table of Genesis 10 frames this scattering.</span></li><li><span class="ref-cite">Zeph 3:9</span><span class="ref-text">God promises to "restore to the peoples a pure language" — eschatological reversal of Babel.</span></li></ul></div><div id="gen11-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:10-26</span><p>The Shemite genealogy from Shem to Abram is structured identically to chapter 5 but with significantly shorter lifespans: the post-flood generations live 200-600 years, compared to 700-900 in chapter 5. Sarna notes the declining pattern: the flood has changed the conditions of human life. The genealogy functions as a bridge — it is not interesting in itself but essential for connecting the primeval history to the Abrahamic narrative.</p></div><div class="com-note"><span class="com-ref">11:27-32</span><p>The post-Babel genealogy narrows from seventy nations to one family in one generation. Sarna notes this is deliberate narrative strategy: the universal scope of chs.1-11 contracts to the particular story of one family. Blessing for all nations will come through this one particular family.</p></div></div><div id="gen11-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:10-26</span><p>The post-Babel genealogy is the most abbreviated in Genesis — no character notes, no stories, only the formulaic ages and deaths. Alter: "After the Tower of Babel, language is confused and humanity is dispersed. The genealogy that follows enacts this dispersal in miniature: names without stories, people without character, a sequence of births and deaths leading to the one name that will break the pattern — Abram."</p></div><div class="com-note"><span class="com-ref">11:27-30</span><p>Sarai's barrenness is the first thing we learn about Abraham's wife. Alter notes this establishes the central narrative tension immediately: the childless couple through whom nations will be blessed. The story of Abraham begins with the announcement of its greatest obstacle.</p></div></div><div id="gen11-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:10-26</span><p>Calvin on the declining lifespans: "The age of men was gradually shortened after the deluge; and this happened partly by the depriving men of those helps by which their former long life was sustained, and partly by God's determining to set limits to human life." The shortening of life is not arbitrary but a providential adjustment of human conditions after the flood.</p></div><div class="com-note"><span class="com-ref">11:31-32</span><p>Calvin on Terah's incomplete journey: Terah started well, leaving Ur and heading for Canaan, but settled short of the destination. Many begin the journey of faith with enthusiasm and settle before arriving. The call requires completion, not merely commencement.</p></div></div><div id="gen11-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:10-26</span><p>The NET notes on the post-flood genealogy acknowledge the significant differences between the MT, LXX, and Samaritan Pentateuch for these ages — similar to the discrepancies in chapter 5. The note observes that the declining lifespan pattern is consistent across all three textual traditions, even if the specific numbers differ, suggesting the pattern itself is original even if individual numbers were adjusted in transmission.</p></div><div class="com-note"><span class="com-ref">11:28-30</span><p>The NET note on Haran — both a city name and the name of Terah's dead son — suggests the father may have named the stopping place after his lost child. The geography and the grief are intertwined.</p></div></div></div><div class="section"><div class="section-header">Verses 27&ndash;32 &mdash; Terah's Family; the Journey to Harran</div><span class="verse-text"><span class="verse-num">27</span>This is the account of Terah's family line. Terah became the father of Abram, Nahor and Haran. And Haran became the father of Lot.</span><span class="verse-text"><span class="verse-num">28</span>While his father Terah was still alive, Haran died in Ur of the Chaldeans, in the land of his birth.</span><span class="verse-text"><span class="verse-num">29</span>Abram and Nahor both married. The name of Abram's wife was Sarai, and the name of Nahor's wife was Milkah; she was the daughter of Haran, the father of both Milkah and Iskah.</span><span class="verse-text"><span class="verse-num">30</span>Now Sarai was childless because she was not able to conceive.</span><span class="verse-text"><span class="verse-num">31</span>Terah took his son Abram, his grandson Lot son of Haran, and his daughter-in-law Sarai, the wife of his son Abram, and together they set out from Ur of the Chaldeans to go to Canaan. But when they came to Harran, they settled there.</span><span class="verse-text"><span class="verse-num">32</span>Terah lived 205 years, and he died in Harran.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen11-s3-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen11-s3-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen11-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'gen11-s3-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen11-s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen11-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen11-s3-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen11-s3-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen11-s3-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen11-s3-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen11-s3-mac')">MacArthur</button></div><div id="gen11-s3-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Ur of the Chaldeans</div><div class="poi-coords">Southern Mesopotamia; modern Tell el-Muqayyar, Iraq</div><div class="poi-text">Ur was one of the largest cities of the ancient world — a sophisticated urban centre with temples, scribal schools, and trade networks. Abraham's origins are not rural or nomadic but metropolitan. The call to leave is a call away from civilization's centre.</div></div><div class="poi-entry"><div class="poi-name">Harran</div><div class="poi-coords">Upper Mesopotamia; modern SE Turkey</div><div class="poi-text">Harran sits on the trade route between Mesopotamia and Canaan. Terah stops here rather than continuing to Canaan. The incomplete journey will be completed by Abram after Terah's death. Harran will remain the family's Mesopotamian base — Jacob will return here for his wives.</div></div></div>
+<div id="gen11-s3-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 2242 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Tower of Babel — nations scatter</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2166 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abram born in Ur</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 2116 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Terah leads family from Ur — this passage</div><div class="tl-text">Terah intended to go to Canaan but stopped at Harran, where he died at 205. Stephen (Acts 7) treats Terah's incomplete journey as the precondition for Abram's call.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2091 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abram called; leaves Harran at age 75</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2066 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Isaac born</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1876 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Jacob's family enters Egypt</div></div></div>
+</div><div class="tl-range"><span>c. 2300 BC</span><span>c. 1800 BC</span></div><p class="tl-caption">Traditional OT chronology; dates approximate.</p></div>
+<div id="gen11-s3-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:27-32</span><p>MacArthur: Terah began the journey to Canaan but stopped in Haran and died there (v.31-32). The incomplete obedience of the father becomes the background against which the son's complete obedience (12:4: 'so Abram went') is highlighted. God's call accomplishes what human initiative left incomplete.</p></div><div class="com-note"><span class="com-ref">11:31</span><p>MacArthur: Ur of the Chaldeans was one of the most sophisticated cities of the ancient world. Abraham's call to leave Ur was a call to leave security, culture, and social standing. The NT (Heb 11:8) emphasises that he went 'even though he did not know where he was going' -- faith is demonstrated by movement without full information.</p></div></div><div id="gen11-s3-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen11-s3-hist" class="anno-panel hist"><h4>Historical Context</h4><p>Archaeological excavations at Ur (modern Tell el-Muqayyar, Iraq) by Leonard Woolley (1920s–30s) revealed a sophisticated city of 65,000+ people with advanced art, writing, and ziggurat worship of the moon-god Nanna. The patriarchal migration from Ur to Haran to Canaan follows documented trade and migration routes of the early 2nd millennium BC. Haran (Harran) served as a major node on the Fertile Crescent trade network.</p></div><div id="gen11-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>None</p></div><div id="gen11-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Josh 24:2</span><span class="ref-text">Joshua reminds Israel: "Your fathers lived beyond the Euphrates…and they served other gods" — Abram came from an idolatrous context.</span></li><li><span class="ref-cite">Acts 7:2–4</span><span class="ref-text">Stephen's speech: "The God of glory appeared to our father Abraham when he was in Mesopotamia, before he lived in Haran."</span></li><li><span class="ref-cite">Heb 11:8</span><span class="ref-text">Abraham obeyed "not knowing where he was going" — the genealogy sets up the radical call of chapter 12.</span></li></ul></div><div id="gen11-s3-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:27-32</span><p>The family of Terah introduces the cast of the Abraham narrative. Sarna notes several details: (1) Haran (Abram's brother) dies in Ur before the migration — the first recorded death of a son before his father. (2) Sarai is described as "barren" immediately — the narrative tension of the Abraham story (will the promise be fulfilled?) is established before Abraham receives the promise. (3) The family migrates from Ur to Haran — already en route to Canaan before God's call.</p></div><div class="com-note"><span class="com-ref">11:31</span><p>Ur of the Chaldeans: Sarna identifies this as the great Sumerian city of Ur in southern Mesopotamia — one of the most sophisticated urban centres of the ancient world. Abraham's origins are not in a primitive setting but in the most advanced civilisation of his era. The call to leave Ur is a call from the centre of civilisation to the margins of Canaan.</p></div></div><div id="gen11-s3-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">11:27-32</span><p>The Terah genealogy is the last passage in the primeval history and the first passage of the patriarchal history — it belongs to both. Alter: "The transition from primeval history to patriarchal narrative is managed through a family introduction: we are given the names and relationships before the divine call is issued. The reader meets Abram as a member of a family before meeting him as the recipient of a divine vocation."</p></div><div class="com-note"><span class="com-ref">11:30-32</span><p>Sarai's barrenness and Terah's stopping in Haran are held in tension: both represent incompleteness. Alter notes the origin of the journey is hidden; only its direction is apparent. We learn retrospectively that God's call came — the full story requires the next chapter to understand the previous one.</p></div></div><div id="gen11-s3-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">11:31</span><p>Calvin on Terah's migration: "Terah, moved by the oracle, had already left his own country; but, having been delayed in Haran, had rested there. Thus it often happens that those who have begun well, stop midway; and though they have the good intention of proceeding, yet they are unable to finish." The incomplete migration of Terah is a foil for the complete obedience of Abram — same destination, different faith.</p></div><div class="com-note"><span class="com-ref">11:27-32</span><p>Calvin: Moses begins a special recording of one family line because in this family the redemptive promise was being preserved. The narrowing of focus is the narrowing of grace working through particularity — blessing for all nations will come through these specific people.</p></div></div><div id="gen11-s3-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">11:28</span><p>The NET note on "Ur of the Chaldeans" discusses the identification of Ur. The note acknowledges the scholarly debate about whether this is the Sumerian Ur (southern Mesopotamia) or a northern Ur near Haran. The majority view identifies it with the well-excavated Sumerian city; the note notes that "Chaldeans" is an anachronistic identifier (Chaldeans were not in the region until much later) that may reflect the perspective of the text's later audience.</p></div><div class="com-note"><span class="com-ref">11:31</span><p>The NET note on Terah's migration traces the northern route from Ur to Haran along the Euphrates — approximately 1,100 kilometres. The route had water, pasture, and trade networks, which is why the patriarchs followed it rather than crossing the desert directly.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'gen11-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'gen11-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'gen11-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'gen11-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'gen11-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'gen11-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'gen11-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'gen11-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'gen11-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="gen11-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Terah</div><div class="person-role">Patriarch; Father of Abram, Nahor, Haran</div><div class="person-text">Initiated the journey from Ur but stopped short in Haran, dying there at 205. His name may connect to the Hebrew word for moon worship (yārēaḥ-related). He is the last patriarch of the old world and the first of the new.</div></div><div class="person-card"><div class="person-name">Abram (Abraham)</div><div class="person-role">Son of Terah; Patriarch of Israel</div><div class="person-text">Introduced here without fanfare — just one more name in a genealogy. The abruptness sets up the explosive call of chapter 12. His wife Sarai is noted as barren, raising the question that will drive Genesis 12–25.</div></div><div class="person-card"><div class="person-name">Sarai</div><div class="person-role">Wife of Abram; Later Sarah</div><div class="person-text">Introduced with her barrenness as the defining fact: "Sarai was barren; she had no child" (v.30). This is not incidental detail — it is the theological problem that chapter 12 onward will address.</div></div><div class="person-card"><div class="person-name">Lot</div><div class="person-role">Son of Haran; Nephew of Abram</div><div class="person-text">Orphaned early (father Haran died in Ur), Lot will travel with Abram to Canaan and become a foil to Abraham's faith throughout Genesis 13–19.</div></div></div></div><div id="gen11-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Gen 11 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Come, let us build ourselves a city, with a tower that reaches to the heavens, so that we may make a name for ourselves; otherwise we will be scattered over the face of the whole earth."</td></tr><tr><td class="t-label">ESV</td><td>"Come, let us build ourselves a city and a tower with its top in the heavens, and let us make a name for ourselves, lest we be dispersed over the face of the whole earth."</td></tr><tr><td class="t-label">KJV</td><td>"Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth."</td></tr><tr><td class="t-label">NASB</td><td>"Come, let us build for ourselves a city, and a tower whose top will reach into heaven, and let us make for ourselves a name, otherwise we will be scattered abroad over the face of the whole earth."</td></tr></table></div><div id="gen11-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Enuma Elish (Babylonian Creation Epic)</div><div class="source-quote">The Babylonian creation myth describes Marduk building Babylon and the Esagila temple as a cosmic center — precisely the kind of "name-making" city building that Genesis 11 critiques. The biblical account inverts the Babylonian theology: God, not Marduk, controls the ordering of humanity.</div><div class="source-note">The parallel is deliberately polemical — Israel's scripture answers Babylon's self-aggrandizing mythology.</div></div><div class="source-block"><div class="source-title">Jubilees 10:18–26 (2nd c. BC)</div><div class="source-quote">The Book of Jubilees elaborates the Babel story: Mastema (the adversary) assists the builders; the confusion of languages involves angels speaking different tongues to different groups.</div><div class="source-note">Shows how Second Temple Judaism found the Babel story generative for angelology and the theology of the nations.</div></div><div class="source-block"><div class="source-title">Josephus, Antiquities 1.4.3</div><div class="source-quote">Josephus identifies Nimrod (Gen 10:8–10) as the instigator of the Babel project, building the tower as a monument against another flood. He describes the tower as being made of baked brick with bitumen for mortar — matching the Genesis account precisely.</div><div class="source-note">Josephus's retelling shows the story was read historically in the 1st century, not as myth.</div></div></div><div id="gen11-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Augustine, City of God XIX</div><div class="rec-text">Augustine saw Babel as the foundational text for understanding the earthly city — humanity organized around self-love rather than love of God. Babylon becomes his paradigm for all human civilization oriented away from the divine.</div></div><div class="rec-block"><div class="rec-who">John Calvin, Commentary on Genesis</div><div class="rec-text">Calvin emphasized God's providential use of the scattering: what humanity feared (dispersion) became the mechanism by which the earth was populated per Gen 1:28. Judgment and blessing intertwine.</div></div><div class="rec-block"><div class="rec-who">Modern Scholarship</div><div class="rec-text">Claus Westermann and others see the Babel story as an etiology for language diversity with no necessary historical claim. Evangelical scholars like Kenneth Mathews and Bruce Waltke argue the narrative is historically grounded while carrying profound theological weight about human rebellion.</div></div></div><div id="gen11-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Babel: Language Scattered, Nations Formed</span><span class="lit-ref">11:1-9</span><span class="lit-text">The tower narrative inverts the creation mandate (fill the earth, 1:28). The builders seek to stay together and make a name; God scatters them and gives them names/nations instead. Judgment achieves what command had not.</span></div><div class="lit-row"><span class="lit-label">Narrowing to Abram: Universal to Particular</span><span class="lit-ref">11:27-32</span><span class="lit-text">The post-Babel genealogy contracts from seventy nations to one family in one generation. Sarai's barrenness is the first sentence -- the covenant's central obstacle placed immediately before the covenant call.</span></div></div></div><div id="gen11-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#c8c0a0;line-height:1.8;"><span class="verse-num">1</span> Now the whole earth had one <span class="dn-key">language</span> [<em>śāpāh</em>: lip] and the same words. <span class="verse-num">4</span> And they said, "Come, let us build ourselves a city and a tower… and let us make a <span class="dn-key">name</span> [<em>šēm</em>] for ourselves, lest we be dispersed." <span class="verse-num">5</span> And <span class="dn-yhwh">the LORD</span> [<em>YHWH</em>] came down to see the city and the tower. <span class="verse-num">7</span> "Come, let us go down and <span class="dn-key">confuse</span> [<em>bālal</em>] their <span class="dn-key">language</span> [<em>śāpāh</em>]." <span class="verse-num">9</span> Therefore its name was called <span class="dn-place">Babel</span> [<em>Bāḇel</em>], because there <span class="dn-yhwh">the LORD</span> <span class="dn-key">confused</span> [<em>bālal</em>] the language of all the earth.</p></div><div id="gen11-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="gen11-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Genesis 1-11: Primeval History and Historical Narrative</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Historical narrative throughout</div><div class="db-proponents">Mathews, Collins, Wenham</div><div class="db-argument">Genesis 1-11 is intended as historical narrative — the author presents these events as real history, which the genealogies (connecting Adam to Abraham) confirm. The genre is "primeval history" — history of a different kind than what follows, but still history.</div></div><div class="db-position"><div class="db-pos-name">Myth/Legend in chs. 1-11, history from ch. 12</div><div class="db-proponents">von Rad, Brueggemann</div><div class="db-argument">Genesis 1-11 is "primeval history" in the form of myth/legend — theological reflection on universal human experience using ancient narrative conventions. Chapter 12 marks the transition to historical narrative with the call of Abraham.</div></div><div class="db-position"><div class="db-pos-name">Theological narrative with historical core</div><div class="db-proponents">Longman, Enns, Sparks</div><div class="db-argument">Genesis 1-11 uses ancient Near Eastern literary conventions (similar to surrounding literature) to convey theological truths. Whether it is "historical" in the modern sense is less important than whether it is true.</div></div></div><div class="db-synthesis">The genre of Genesis 1-11 remains one of the most contested questions in OT scholarship. The genealogical connections to historical Abraham (with chronological data) support a historical framework while the literary similarities to ANE myth suggest a different kind of historical presentation than modern biography.</div></div><div class="db-debate"><div class="db-title">Historical and Literary Status of the Tower Narrative</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Historical-geographical</div><div class="db-proponents">Speiser, Wenham, Sarna</div><div class="db-argument">The city-tower description matches Mesopotamian ziggurats. Plausible historical memory of early Mesopotamian urbanisation and the cultural prestige of Babylon.</div></div><div class="db-position"><div class="db-pos-name">Aetiological</div><div class="db-proponents">Gunkel, von Rad</div><div class="db-argument">An etiology explaining language diversity and the origins of Babel/Babylon. Historical kernel shaped as theological reflection on hubris.</div></div><div class="db-position"><div class="db-pos-name">Theological polemic</div><div class="db-proponents">Sarna, Hamilton, Walton</div><div class="db-argument">Structured as counterpoint to Babylonian pride. Bab-il = "gate of God"; the narrator's bavel = "confusion." Complete theological inversion.</div></div></div><div class="db-synthesis">The three readings are complementary. Most contemporary scholarship accepts all three: historical reference point (Mesopotamian urbanism), aetiological function (language diversity), and theological purpose (indicting pride, asserting divine sovereignty).</div></div></div><div id="gen11-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon','Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','year','years','generation','time','age'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','blessing','promise','God','LORD','Israel','faith','fear','firstborn','seed'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/genesis.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/genesis/Genesis_11.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>
