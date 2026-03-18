@@ -1113,14 +1113,32 @@ function render(filterEra) {
   const nodeById = {};
   root.descendants().forEach(n => { nodeById[n.data.id] = n; });
 
+  // Group spouses by their partner id so we can space multiple wives/husbands
+  const spouseGroups = {};  // partnerId -> [nodeList]
   root.descendants().forEach(n => {
     const sid = n.data.spouseOf;
     if (!sid) return;
-    const partner = nodeById[sid];
+    if (!spouseGroups[sid]) spouseGroups[sid] = [];
+    spouseGroups[sid].push(n);
+  });
+
+  // Position each group: single spouse level, multiple spouses stagger vertically
+  Object.entries(spouseGroups).forEach(([partnerId, spouseNodes]) => {
+    const partner = nodeById[partnerId];
     if (!partner) return;
-    // Place spouse at same vertical level, offset to the right
-    n.x = partner.x + 88;
-    n.y = partner.y;
+    const count = spouseNodes.length;
+    const xOffset = 88;
+    const ySpread = 58; // vertical gap between multiple spouses
+    spouseNodes.forEach((n, i) => {
+      n.x = partner.x + xOffset;
+      if (count === 1) {
+        n.y = partner.y;
+      } else {
+        // Spread symmetrically: -ySpread/2, +ySpread/2 for 2 spouses; etc.
+        const offset = (i - (count - 1) / 2) * ySpread;
+        n.y = partner.y + offset;
+      }
+    });
   });
 
   // Filter nodes
@@ -1168,6 +1186,23 @@ function render(filterEra) {
       .attr('x2', mx + 3).attr('y2', y + 5)
       .attr('stroke', 'var(--gold-dim)')
       .attr('stroke-width', 1.2)
+      .attr('opacity', dimmed ? 0.1 : 0.5);
+  });
+
+  // Vertical connector on partner side when 2+ spouses (e.g. Jacob ↔ Rachel+Leah)
+  Object.entries(spouseGroups).forEach(([partnerId, spouseNodes]) => {
+    if (spouseNodes.length < 2) return;
+    const partner = nodeById[partnerId];
+    if (!partner) return;
+    const ys = spouseNodes.map(n => n.y).sort((a,b) => a - b);
+    const x = partner.x + 7; // right edge of partner circle
+    const dimmed = activeEra && spouseNodes.every(n => n.data.era !== activeEra)
+                             && partner.data.era !== activeEra;
+    marryG.append('line')
+      .attr('x1', x).attr('y1', ys[0])
+      .attr('x2', x).attr('y2', ys[ys.length - 1])
+      .attr('stroke', 'var(--gold-dim)')
+      .attr('stroke-width', 1.5)
       .attr('opacity', dimmed ? 0.1 : 0.5);
   });
 
