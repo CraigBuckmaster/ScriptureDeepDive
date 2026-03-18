@@ -1495,8 +1495,15 @@ def update_homepage():
       - Updates or removes the live-badge count
       - Updates the REGISTRY live count in shared.py itself
 
-    Call this as part of the deploy checklist after every chapter batch,
-    alongside rebuild_verses_js(). It is idempotent — safe to run multiple times.
+    ── DEPLOY CHECKLIST (run after every batch) ─────────────────────────────
+      1. build_chapter() for each new chapter
+      2. update_homepage()          — syncs index.html chapter counts / badges
+      3. rebuild_qnav_js()          — adds new chapters to the shared qnav panel
+      4. rebuild_verses_js()        — indexes verse text for search
+      5. Bump service-worker.js version string
+      6. git add -A && git commit && git push
+
+    All three rebuild functions are idempotent — safe to run multiple times.
     """
     index_path = f'{_REPO}/index.html'
     with open(index_path) as f: h = f.read()
@@ -1560,6 +1567,166 @@ def update_homepage():
     )
     print(f'index.html updated — {total_live} live chapters across {len(REGISTRY)} books')
     return total_live
+
+
+def rebuild_qnav_js():
+    """
+    Regenerate /qnav.js from the current REGISTRY.
+
+    MUST be called whenever:
+      - A new book is added to REGISTRY
+      - A book's live chapter count changes (new batch deployed)
+
+    The generated file injects the qnav overlay HTML dynamically at runtime.
+    Every chapter page loads it via <script src="../qnav.js"> and sets
+    window.QNAV_CURRENT to its own path so the panel can highlight the
+    current chapter. The CSS and qnavFilter/openQnav/closeQnav functions
+    are preserved verbatim from the existing file — only the HTML blob
+    (book/chapter list) is regenerated from REGISTRY.
+    """
+    import re as _re
+
+    # ── 1. Preserve CSS and global JS from the existing qnav.js ─────────
+    qnav_path = f'{_REPO}/qnav.js'
+    with open(qnav_path) as f:
+        existing = f.read()
+
+    css_start = existing.find("style.textContent = '") + len("style.textContent = '")
+    css_end   = existing.find("';\n  document.head")
+    css_blob  = existing[css_start:css_end]  # preserve exactly
+
+    global_js = existing[existing.find('// ── Global qnav functions'):]
+
+    # ── 2. Build the HTML panel from REGISTRY ───────────────────────────
+    def ch_links(book_dir, book_name, total, live):
+        links = []
+        for i in range(1, total + 1):
+            if i <= live:
+                links.append(
+                    f'<a href="../{book_dir}/{book_name}_{i}.html" '
+                    f'class="qnav-ch-btn live">Ch {i}</a>'
+                )
+        return ''.join(links)
+
+    def book_div(book_dir, book_name, total, live):
+        grid = ch_links(book_dir, book_name, total, live)
+        if not grid:
+            return ''
+        return (
+            f'<div class="qnav-book" id="qnav-book-{book_dir}">'
+            f'<button class="qnav-book-btn" onclick="qnavToggleBook(\'{book_dir}\')">'
+            f'<span class="qnav-book-name"><span class="qnav-live-dot"></span>{book_name}</span>'
+            f'<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>'
+            f'</button>'
+            f'<div class="qnav-ch-grid">{grid}</div>'
+            f'</div>'
+        )
+
+    ot_html = ''.join(
+        book_div(d, n, t, l)
+        for d, n, t, l, test in REGISTRY if test == 'OT'
+    )
+    nt_html = ''.join(
+        book_div(d, n, t, l)
+        for d, n, t, l, test in REGISTRY if test == 'NT'
+    )
+
+    panel_html = (
+        '<div class="qnav-overlay" id="qnav-overlay">\\n'
+        '<div class="qnav-panel">\\n'
+        '<div class="qnav-header">\\n'
+        '<div class="qnav-search-wrap">'
+        '<span class="qnav-search-icon">&#128269;</span>'
+        '<input class="qnav-search" id="qnav-search-input" '
+        'placeholder="Search books..." oninput="qnavFilter(this.value)">'
+        '</div>\\n'
+        '<button class="qnav-close" onclick="closeQnav()">Close</button>\\n'
+        '</div>\\n'
+        '<div class="qnav-body">\\n'
+        '<div class="qnav-search-results" id="qnav-search-results" style="display:none"></div>\\n'
+        '<div class="qnav-testament" id="qnav-t-ot">\\n'
+        '<button class="qnav-testament-btn" onclick="qnavToggleTestament(\'ot\')">\\n'
+        '<span class="qnav-testament-label">Old Testament</span>\\n'
+        '<span class="qnav-testament-chev">&#9660;</span>\\n'
+        '</button>\\n'
+        f'<div class="qnav-testament-books">{ot_html}</div>\\n'
+        '</div>\\n'
+        '<div class="qnav-testament open" id="qnav-t-nt">\\n'
+        '<button class="qnav-testament-btn" onclick="qnavToggleTestament(\'nt\')">\\n'
+        '<span class="qnav-testament-label">New Testament</span>\\n'
+        '<span class="qnav-testament-chev">&#9660;</span>\\n'
+        '</button>\\n'
+        f'<div class="qnav-testament-books">{nt_html}</div>\\n'
+        '</div>\\n'
+        '</div>\\n'
+        '</div>\\n'
+        '<div class="qnav-dismiss" onclick="closeQnav()"></div>\\n'
+        '</div>'
+    )
+
+    # ── 3. Build the QNAV_CURRENT highlighting script ───────────────────
+    current_js = """
+// ── Highlight current chapter and open its book on page load ────────────
+document.addEventListener('DOMContentLoaded', function() {
+  var cur = window.QNAV_CURRENT || '';
+  if (!cur) return;
+  // cur = 'acts/Acts_5.html'  →  book_dir='acts', book_name='Acts', ch='5'
+  var parts = cur.split('/');
+  if (parts.length < 2) return;
+  var bookDir = parts[0];
+  var fname   = parts[1];                          // e.g. Acts_5.html
+  var chNum   = fname.replace(/^.*_(\\d+)\\.html$/, '$1');
+  var chUrl   = '../' + cur;
+
+  // Mark the current chapter button
+  document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
+    if (btn.getAttribute('href') === chUrl) {
+      btn.classList.add('current');
+    }
+  });
+
+  // Open the current book's grid
+  var bookEl = document.getElementById('qnav-book-' + bookDir);
+  if (bookEl) {
+    bookEl.classList.add('open');
+    // Open the parent testament section too
+    var testamentDiv = bookEl.closest('.qnav-testament');
+    if (testamentDiv && !testamentDiv.classList.contains('open')) {
+      testamentDiv.classList.add('open');
+    }
+  }
+});
+"""
+
+    # ── 4. Assemble the file ─────────────────────────────────────────────
+    output = (
+        "// qnav.js — shared quick-navigation panel for Scripture Deep Dive\n"
+        "// Auto-generated by rebuild_qnav_js() in shared.py — do not edit manually\n"
+        "// Regenerate: python3 -c \"exec(open('shared.py').read()); rebuild_qnav_js()\"\n"
+        "\n"
+        "(function() {\n"
+        "  // ── Inject CSS ──────────────────────────────────────────────────────────\n"
+        "  var style = document.createElement('style');\n"
+        f"  style.textContent = '{css_blob}';\n"
+        "  document.head.appendChild(style);\n"
+        "\n"
+        "  // ── Inject HTML ─────────────────────────────────────────────────────────\n"
+        "  var div = document.createElement('div');\n"
+        f"  div.innerHTML = '{panel_html}';\n"
+        "  document.body.appendChild(div.firstChild);\n"
+        "})();\n"
+        "\n"
+        + global_js.rstrip()
+        + "\n"
+        + current_js
+    )
+
+    with open(qnav_path, 'w') as f:
+        f.write(output)
+
+    total_live = sum(l for _, _, _, l, _ in REGISTRY)
+    total_chs  = sum(t for _, _, t, _, _ in REGISTRY)
+    print(f'qnav.js rebuilt: {len(REGISTRY)} books, {total_live}/{total_chs} chapters live')
 
 
 def rebuild_verses_js():
