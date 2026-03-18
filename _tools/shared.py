@@ -8,9 +8,9 @@ def _bootstrap():
     Genesis 2 has the full qnav control script (openQnav, closeQnav, qnavToggleBook)
     which Genesis 1 lost when rebuilt. Use Gen 2 for scripts, Gen 1 for CSS.
     Strips any previously baked EXTRA_CSS so accumulated rules don't conflict."""
-    with open(f'{_REPO}/genesis/Genesis_1.html') as f:
+    with open(f'{_REPO}/ot/genesis/Genesis_1.html') as f:
         g1 = f.read()
-    with open(f'{_REPO}/genesis/Genesis_2.html') as f:
+    with open(f'{_REPO}/ot/genesis/Genesis_2.html') as f:
         g2 = f.read()
 
     # CSS from Genesis 1 (base, stripped of EXTRA_CSS)
@@ -1311,7 +1311,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     sec_count = sections_html.count('<div class="section">')
     if sec_count < 2:
         raise ValueError(f"{book_name} {ch}: only {sec_count} section(s) — need at least 2.")
-    out_dir = f'{_REPO}/{book_dir}'
+    out_dir = f'{_REPO}/{book_dir_test}/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
     # Guard against None from _bootstrap() in case a script wasn't found
     _tog      = TOG_JS       or ''
@@ -1333,7 +1333,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../books.js"></script>\n' +
             f'<script src="../verses/{book_dir_test}/{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
-            f'<script>window.QNAV_CURRENT="{book_dir}/{book_name}_{ch}.html";</script>\n' +
+            f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name}_{ch}.html";</script>\n' +
             '<script src="../qnav.js"></script>\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -1535,10 +1535,10 @@ def update_homepage():
     index_path = f'{_REPO}/index.html'
     with open(index_path) as f: h = f.read()
 
-    for book_dir, book_name, total, _, testament, *_ in REGISTRY:
+    for book_dir, book_name, total, _, testament, test_dir in REGISTRY:
         # Count which chapter files actually exist
         live_chs = [ch for ch in range(1, total+1)
-                    if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')]
+                    if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html')]
         live_count = len(live_chs)
 
         # Build the new chapter-grid HTML
@@ -1546,7 +1546,7 @@ def update_homepage():
         for ch in range(1, total+1):
             title = f'{book_name} {ch}'
             if ch in live_chs:
-                href = f'{book_dir}/{book_name}_{ch}.html'
+                href = f'{test_dir}/{book_dir}/{book_name}_{ch}.html'
                 links.append(f'<a href="{href}" class="chapter-link live" title="{title}">Ch.{ch}</a>')
             else:
                 links.append(f'<span class="chapter-link coming" title="{title}">Ch.{ch}</span>')
@@ -1656,18 +1656,18 @@ def rebuild_qnav_js():
     global_js = existing[existing.find('// ── Global qnav functions'):]
 
     # ── 2. Build the HTML panel from REGISTRY ───────────────────────────
-    def ch_links(book_dir, book_name, total, live):
+    def ch_links(book_dir, book_name, total, live, test_dir):
         links = []
         for i in range(1, total + 1):
             if i <= live:
                 links.append(
-                    f'<a href="../{book_dir}/{book_name}_{i}.html" '
+                    f'<a href="../../{test_dir}/{book_dir}/{book_name}_{i}.html" '
                     f'class="qnav-ch-btn live">Ch {i}</a>'
                 )
         return ''.join(links)
 
-    def book_div(book_dir, book_name, total, live):
-        grid = ch_links(book_dir, book_name, total, live)
+    def book_div(book_dir, book_name, total, live, test_dir):
+        grid = ch_links(book_dir, book_name, total, live, test_dir)
         if not grid:
             return ''
         return (
@@ -1681,12 +1681,12 @@ def rebuild_qnav_js():
         )
 
     ot_html = ''.join(
-        book_div(d, n, t, l)
-        for d, n, t, l, test, *_ in REGISTRY if test == 'OT'
+        book_div(d, n, t, l, td)
+        for d, n, t, l, test, td in REGISTRY if test == 'OT'
     )
     nt_html = ''.join(
-        book_div(d, n, t, l)
-        for d, n, t, l, test, *_ in REGISTRY if test == 'NT'
+        book_div(d, n, t, l, td)
+        for d, n, t, l, test, td in REGISTRY if test == 'NT'
     )
 
     panel_html = (
@@ -1810,7 +1810,7 @@ def rebuild_verses_js():
         book_verses = []
         test_dir = test_dir.lower()
         for ch in range(1, live + 1):
-            path = f'{_REPO}/{book_dir}/{book_name}_{ch}.html'
+            path = f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html'
             if not os.path.exists(path): continue
             with open(path) as f: html = f.read()
             boundary = html.find('<div class="scholarly-block">')

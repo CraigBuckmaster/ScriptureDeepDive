@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 15 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 15</span></div>
+<div class="nav-arrows"><a href="Genesis_14.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_16.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Genesis 15</h1>
+<p>The Abrahamic Covenant Ratified</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526&ndash;1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445&ndash;1405 BC during the wilderness period, following the Exodus from Egypt. Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT (Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's creation of the world and his covenant relationship with the patriarchs &mdash; Abraham, Isaac, Jacob, and Joseph &mdash; culminating in Israel's formation as a people chosen to carry the promise of blessing to all nations (Gen 12:1&ndash;3). Genesis answers the foundational questions: Who is God? Who are we? What went wrong? What is God doing about it?</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;6 &mdash; Abram's Faith Credited as Righteousness</div><span class="verse-text"><span class="verse-num">1</span>After this, the word of the Lord came to Abram in a vision: "Do not be afraid, Abram. I am your shield, your very great reward."</span><span class="verse-text"><span class="verse-num">2</span>But Abram said, "Sovereign Lord, what can you give me since I remain childless and the one who will inherit my estate is Eliezer of Damascus?"</span><span class="verse-text"><span class="verse-num">3</span>And Abram said, "You have given me no children; so a servant in my household will be my heir."</span><span class="verse-text"><span class="verse-num">4</span>Then the word of the Lord came to him: "This man will not be your heir, but a son who is your own flesh and blood will be your heir."</span><span class="verse-text"><span class="verse-num">5</span>He took him outside and said, "Look up at the sky and count the stars—if indeed you can count them." Then he said to him, "So shall your offspring be."</span><span class="verse-text"><span class="verse-num">6</span>Abram believed the Lord, and he credited it to him as righteousness.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen15-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen15-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen15-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen15-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen15-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen15-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen15-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen15-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen15-s1-mac')">MacArthur</button></div><div id="gen15-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:1</span><p>MacArthur: 'Do not be afraid, Abram. I am your shield; your very great reward.' God speaks after Abraham's refusal of Sodom's king's offer. The divine assurance addresses both the vulnerability created by military action and the financial cost of refusing the plunder. God himself replaces what Abraham refused.</p></div><div class="com-note"><span class="com-ref">15:5-6</span><p>MacArthur: God takes Abraham outside and says 'Look up at the sky and count the stars -- if indeed you can count them. So shall your offspring be.' Abraham believed the LORD, and he credited it to him as righteousness. This is the most theologically significant verse in the patriarch narratives -- Paul's foundation text for justification by faith (Rom 4:3; Gal 3:6).</p></div></div><div id="gen15-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen15-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen15-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Genesis 15:6 is arguably the most theologically significant verse in the entire Old Testament. Paul quotes it three times (Rom 4:3, 9, 22; Gal 3:6) to establish that justification has always been by faith, not works. This is not a NT innovation — it is the foundational principle of how God has always related to humanity. Abram's faith is the pattern; his righteousness is the prototype of what Paul calls "the righteousness of God."</p></div><div id="gen15-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 4:1–25</span><span class="ref-text">Paul's full exposition: Abraham was justified before circumcision (ch.15 precedes ch.17), proving that faith, not law or circumcision, is the basis of righteousness.</span></li><li><span class="ref-cite">Gal 3:6–9</span><span class="ref-text">The Abrahamic faith-righteousness is the basis of Gentile justification: "those who are of faith are blessed along with Abraham, the man of faith."</span></li><li><span class="ref-cite">Heb 11:11–12</span><span class="ref-text">Abraham's faith in the impossible promise is the model for faith as "the assurance of things hoped for."</span></li><li><span class="ref-cite">Jas 2:21–23</span><span class="ref-text">James (using the same verse!) argues that Abraham's faith was "completed" by his works — not contradicting Paul but emphasizing genuine faith produces action.</span></li></ul></div><div id="gen15-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:1</span><p>The divine word comes to Abram in a vision: "Do not be afraid, Abram. I am your shield; your very great reward." Sarna notes this is the first vision formula in the Bible — "the word of the LORD came to Abram in a vision." The promise of divine protection ("shield") may respond to anxiety after the battle of chapter 14 — having made enemies of the eastern kings, Abram faces potential retaliation.</p></div><div class="com-note"><span class="com-ref">15:6</span><p>Ve'he'emin baYHWH vayyachshoveha lo tsedaqah — "and he believed the LORD, and he counted it to him as righteousness." Sarna: "This is one of the most theologically momentous verses in the entire Old Testament. Faith — trust in God's word — is credited as righteousness. The theological weight Paul places on this verse (Romans 4; Galatians 3) is already present in the Hebrew: Abram did not earn righteousness by works but received it through faith."</p></div></div><div id="gen15-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:1-3</span><p>Abram's response to the divine promise is remarkably direct: "You have given me no children; so a servant in my household will be my heir." Alter: "Abram does not simply receive the promise with silent faith; he argues with God. The patriarch's response to divine address is frank, even bold — he names the problem that makes the promise seem empty. This kind of covenantal frankness characterises the patriarchal dialogues with God."</p></div><div class="com-note"><span class="com-ref">15:6</span><p>The verse is a narrative comment, not direct speech. Alter: "The narrator's statement — 'he believed' — is deceptively simple. The Hebrew word heemin (believed/trusted) has the root aman — the firmness, stability, reliability from which 'amen' derives. Abram's belief is not an emotion but a settled, stable trust in God's word against all visible evidence."</p></div></div><div id="gen15-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:6</span><p>Romans 4 and this verse together are the foundation of Calvin's doctrine of justification by faith. Calvin: "Moses declares that Abram obtained righteousness by faith. Righteousness is not imputed to him because of his own merit, but because he embraced the grace of God by faith. Paul correctly deduces from this that righteousness is not of works but of faith alone." The doctrine of imputed righteousness is grounded in this single narrative statement.</p></div><div class="com-note"><span class="com-ref">15:2-3</span><p>Abram's complaint — "you have given me no children" — is not unbelief but a frank statement of the problem that makes the promise seem impossible. Calvin: "We see that Abram did not rashly pretend to believe more than he felt; but, just as he was perplexed about the manner of the fulfilment, so he honestly uttered what was pressing upon him." Honest wrestling with God's promises is not opposed to faith but is a form of it.</p></div></div><div id="gen15-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">15:6</span><p>The NET note on "credited it to him as righteousness" (wayyachshoveha lo tsedaqah) gives extensive treatment to the verb chashav (reckon, credit, account). The note observes this is an accounting term — God puts righteousness to Abram's account. The note connects to Paul's use in Romans 4:3,22 and Galatians 3:6 and to James 2:23, discussing how the three NT authors use the same verse for complementary purposes (Paul: faith not works; James: faith demonstrated in action).</p></div><div class="com-note"><span class="com-ref">15:2-5</span><p>The NET note on Abram's question discusses the covenant lawsuit form: Abram is pressing God to fulfil his stated promise, not expressing unbelief. The servant-of-the-house reference (Eliezer of Damascus) reflects an ancient Near Eastern practice where a servant could inherit from a childless master.</p></div></div></div><div class="section"><div class="section-header">Verses 7&ndash;11 &mdash; The Covenant Ceremony Prepared</div><span class="verse-text"><span class="verse-num">7</span>He also said to him, "I am the Lord, who brought you out of Ur of the Chaldeans to give you this land to take possession of it."</span><span class="verse-text"><span class="verse-num">8</span>But Abram said, "Sovereign Lord, how can I know that I will gain possession of it?"</span><span class="verse-text"><span class="verse-num">9</span>So the Lord said to him, "Bring me a heifer, a goat and a ram, each three years old, along with a dove and a young pigeon."</span><span class="verse-text"><span class="verse-num">10</span>Abram brought all these to him, cut them in two and arranged the halves opposite each other; the birds, however, he did not cut in half.</span><span class="verse-text"><span class="verse-num">11</span>Then birds of prey came down on the carcasses, but Abram drove them away.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen15-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen15-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen15-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen15-s2-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen15-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen15-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen15-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen15-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen15-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen15-s2-mac')">MacArthur</button></div><div id="gen15-s2-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Between the pieces</div><div class="poi-coords">A ritual space, no specific location given</div><div class="poi-text">The covenant ceremony uses the ancient vassal-treaty form: both parties pass between slaughtered animals, invoking the same fate if the covenant is broken. But only God (as fire and smoke) passes through. The place is sanctified by the presence of the divine, not by geography.</div></div></div>
+<div id="gen15-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:7-11</span><p>MacArthur: The covenant ceremony uses the standard ancient Near Eastern ritual of cutting animals in half so that covenant parties walk between the pieces -- invoking a self-curse: 'may this happen to me if I break the covenant.' God initiates and commands the ceremony; Abraham prepares it but does not yet pass through.</p></div><div class="com-note"><span class="com-ref">15:11</span><p>MacArthur: Abraham drove away the birds of prey from the carcasses -- a detail that signals his watchful attention during the covenant preparation. The birds of prey attempting to consume the sacrifices may symbolise the hostile forces that will threaten the covenant promise during the coming centuries of Egyptian bondage (vv.13-16).</p></div></div><div id="gen15-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen15-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: "May what happened to these animals happen to the one who breaks this covenant." The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.</p></div><div id="gen15-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The one-sided nature of this covenant is theologically explosive. Abram is put into a "deep sleep" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the "new covenant" of Hebrews, where God's own Son bears the covenant curse on the cross.</p></div><div id="gen15-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Jer 34:18–20</span><span class="ref-text">When Israelites "cut a covenant" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony.</span></li><li><span class="ref-cite">Gal 3:15–17</span><span class="ref-text">Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later.</span></li><li><span class="ref-cite">Heb 6:13–18</span><span class="ref-text">God swore by himself because there was no greater (v.13) — the basis of "two unchangeable things" (promise + oath) giving "strong encouragement" to those who flee to Christ.</span></li></ul></div><div id="gen15-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:7-11</span><p>The covenant ceremony of the animal halves is an ancient Near Eastern ratification ritual — a self-maledictory oath in which the parties pass between the divided animals, invoking the fate of the animals on themselves if they break the covenant. Sarna: "Archaeological evidence from Mari and other sites confirms that the 'cutting' of animals in covenant ceremonies was a standard ancient Near Eastern practice. The Hebrew idiom for making a covenant — karat berith (cut a covenant) — reflects this practice."</p></div><div class="com-note"><span class="com-ref">15:12-17</span><p>The deep sleep (tardemah) that falls on Abram echoes Adam's deep sleep in 2:21. Sarna notes both accompany a divine creative act: in ch.2, the creation of woman; here, the creation of the covenant. The human is passive while the divine acts — the covenant's unilateral character is dramatised in Abram's unconsciousness.</p></div></div><div id="gen15-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:8-11</span><p>Abram asks "how can I know that I will gain possession of it?" — the same frank questioning as v.2. Alter: "Abram wants a sign, a confirmation of the promise. God provides one — but the sign is entirely divine: a ritual that Abram prepares but does not participate in (he falls into a deep sleep). The covenant is confirmed unilaterally. Abram's question receives an answer that removes him from the ratification process entirely."</p></div><div class="com-note"><span class="com-ref">15:12-17</span><p>The smoking firepot and blazing torch pass between the pieces without Abram passing through. Alter notes the asymmetry: in normal covenant ceremonies both parties walked between the pieces. Here only God walks through — the covenant is entirely his undertaking, not a bilateral agreement.</p></div></div><div id="gen15-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:9-11</span><p>The preparation of the covenant animals is an act of obedience — Abram follows the divine instruction precisely. Calvin: "Abram did not require a further sign because he was destitute of faith, but that he might more certainly confirm it to himself." The request for a sign is not unbelief but the desire for greater assurance — which God graciously provides.</p></div><div class="com-note"><span class="com-ref">15:7-11</span><p>Calvin: The division of animals was a ceremony used among ancient nations when forming a league — both parties passed between the pieces. God condescends to make his covenant in this human form, showing that he accommodates himself to our capacity.</p></div></div><div id="gen15-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">15:9-10</span><p>The NET note on the covenant ceremony explains the ancient ritual of cutting animals and passing between the halves. The note cites Jeremiah 34:18-20, where the same ritual is described and its self-maledictory meaning is explicit: those who pass between the halves are invoking the same fate on themselves if they break the covenant. The note observes that in Genesis 15, only God passes through — the covenant is entirely unilateral.</p></div><div class="com-note"><span class="com-ref">15:17-21</span><p>The NET note on the covenant-of-the-pieces traces its parallel in Jeremiah 34:18-19, where breaking the covenant is described as being like the cut animals. The oath-curse: if you break this covenant, may you be divided like these animals.</p></div></div></div><div class="section"><div class="section-header">Verses 12&ndash;21 &mdash; The Covenant Ratified; the Prophecy of Egypt</div><span class="verse-text"><span class="verse-num">12</span>As the sun was setting, Abram fell into a deep sleep, and a thick and dreadful darkness came over him.</span><span class="verse-text"><span class="verse-num">13</span>Then the Lord said to him, "Know for certain that for four hundred years your descendants will be strangers in a country not their own and that they will be enslaved and mistreated there.</span><span class="verse-text"><span class="verse-num">14</span>But I will punish the nation they serve as slaves, and afterward they will come out with great possessions.</span><span class="verse-text"><span class="verse-num">15</span>You, however, will go to your ancestors in peace and be buried at a good old age.</span><span class="verse-text"><span class="verse-num">16</span>In the fourth generation your descendants will come back here, for the sin of the Amorites has not yet reached its full measure."</span><span class="verse-text"><span class="verse-num">17</span>When the sun had set and darkness had fallen, a smoking firepot with a blazing torch appeared and passed between the pieces.</span><span class="verse-text"><span class="verse-num">18</span>On that day the Lord made a covenant with Abram and said, "To your descendants I give this land, from the Wadi of Egypt to the great river, the Euphrates—</span><span class="verse-text"><span class="verse-num">19</span>the land of the Kenites, Kenizzites, Kadmonites,</span><span class="verse-text"><span class="verse-num">20</span>Hittites, Perizzites, Rephaites,</span><span class="verse-text"><span class="verse-num">21</span>Amorites, Canaanites, Girgashites and Jebusites."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen15-s3-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen15-s3-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen15-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'gen15-s3-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen15-s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen15-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen15-s3-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen15-s3-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen15-s3-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen15-s3-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen15-s3-mac')">MacArthur</button></div><div id="gen15-s3-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Land of Promise: Nile to Euphrates</div><div class="poi-coords">Entire Fertile Crescent</div><div class="poi-text">The promised land is defined as stretching from "the river of Egypt" (Wadi el-Arish or the Nile) to the Euphrates. This is the maximum extent — never fully realized in any historical period but briefly approximated under Solomon. The promise is larger than any fulfilment to date.</div></div></div>
+<div id="gen15-s3-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 2091 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">The call of Abram</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2066 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Isaac born — 25 years after call</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 2050 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Covenant at the pieces — this passage</div><div class="tl-text">God's prophecy: the seed will sojourn 400 years in a land not their own. Paul (Gal 3:17) counts 430 years from this covenant to Sinai. The covenant clock starts here.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1876 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Jacob's family enters Egypt</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1446 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">The Exodus — 430 years fulfilled</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1406 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Conquest of Canaan begins</div></div></div>
+</div><div class="tl-range"><span>c. 2100 BC</span><span>c. 1380 BC</span></div><p class="tl-caption">Traditional OT chronology; dates approximate.</p></div>
+<div id="gen15-s3-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:12-16</span><p>MacArthur: In a deep sleep, Abraham receives a prophetic vision of the 400-year Egyptian bondage. The precision of the prophecy -- nation, slavery, affliction, judgment on the oppressor, fourth generation return -- establishes God's sovereign foreknowledge of the entire redemption history before it occurs.</p></div><div class="com-note"><span class="com-ref">15:17-18</span><p>MacArthur: God alone passes between the pieces as 'a smoking firepot with a blazing torch' -- divine symbols throughout the OT (Ex 13:21; 19:18). The covenant is unconditional and unilateral: God incurs the self-curse, not Abraham. On that day the LORD made a covenant with Abram -- the formal covenant ratification is now complete.</p></div></div><div id="gen15-s3-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen15-s3-hist" class="anno-panel hist"><h4>Historical Context</h4><p>The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: "May what happened to these animals happen to the one who breaks this covenant." The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.</p></div><div id="gen15-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>The one-sided nature of this covenant is theologically explosive. Abram is put into a "deep sleep" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the "new covenant" of Hebrews, where God's own Son bears the covenant curse on the cross.</p></div><div id="gen15-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Jer 34:18–20</span><span class="ref-text">When Israelites "cut a covenant" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony.</span></li><li><span class="ref-cite">Gal 3:15–17</span><span class="ref-text">Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later.</span></li><li><span class="ref-cite">Heb 6:13–18</span><span class="ref-text">God swore by himself because there was no greater (v.13) — the basis of "two unchangeable things" (promise + oath) giving "strong encouragement" to those who flee to Christ.</span></li></ul></div><div id="gen15-s3-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:12-21</span><p>The deep sleep (tardemah) that falls on Abram during the covenant ratification is the same word used for Adam's sleep in 2:21 — a divinely induced unconsciousness during a divine act. Sarna: "Abram is passive during the covenant's ratification — he watches, but does not participate. The smoking firepot and blazing torch (symbols of the divine presence — cf. Exod 3:2; 13:21) pass between the animal pieces alone. God alone takes the covenant oath."</p></div><div class="com-note"><span class="com-ref">15:18-21</span><p>The land promise is now specified with territorial boundaries: "from the Wadi of Egypt to the great river, the Euphrates." Sarna notes this is the most expansive description of the promised land in the entire Abraham narrative. The list of peoples occupying the land (ten nations) is the most comprehensive in the Bible — emphasising that the fulfilment is not imminent but will require divine displacement of established peoples.</p></div></div><div id="gen15-s3-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">15:17</span><p>The smoking firepot and blazing torch passing between the animal pieces is the climax of the covenant ceremony. Alter: "The divine presence manifests as fire — not to consume but to covenant. The fire moves between the pieces that Abram has prepared. God passes through the self-maledictory oath alone, binding himself unilaterally to the fulfilment of his promise. Abram, asleep and terrified, is present but passive. This is covenant entirely from the divine side."</p></div><div class="com-note"><span class="com-ref">15:13-14</span><p>The prediction of 400 years of slavery in Egypt within the covenant ratification is striking. Alter: "The promise of land comes wrapped in the prediction of dispossession — before the land can be possessed, the people will be enslaved elsewhere. The covenant looks four centuries forward and tells Abram that the fulfilment will come through suffering, not around it."</p></div></div><div id="gen15-s3-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">15:12</span><p>The deep sleep and the "thick and dreadful darkness" that settles on Abram are appropriate responses to the divine presence. Calvin: "Moses here describes the circumstances of the vision, to inform us that Abram was fully awakened, and that there was no delusion about it. The terror and darkness indicate the gravity of what is being communicated — the people of God will suffer greatly before the promise is fulfilled."</p></div><div class="com-note"><span class="com-ref">15:17-18</span><p>The divine fire passing between the covenant pieces is God swearing by himself. Calvin: "God here binds himself, as it were, by a solemn oath, to Abraham's posterity. He did not merely promise, but added an oath — and that oath was not by another but by his own being. The smoking firepot and blazing torch are the divine presence, enacting the covenant."</p></div></div><div id="gen15-s3-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">15:12</span><p>The NET note on tardemah (deep sleep) connects to 2:21 (Adam's sleep) and 1 Samuel 26:12, where the word describes a divinely induced unconsciousness. The note observes that Abram's passive state during the covenant ratification is theologically significant: the covenant is enacted by God alone while Abram sleeps. This makes the Abrahamic covenant a grant covenant — not contingent on human faithfulness.</p></div><div class="com-note"><span class="com-ref">15:17</span><p>The NET note on the smoking firepot and blazing torch identifies these as theophanic symbols of the divine presence, comparing Exodus 3:2 (burning bush), 13:21 (pillar of fire), and 19:18 (Sinai's smoke). The note emphasises the exclusively divine passage between the animal pieces — establishing the Abrahamic covenant as unconditional and unilateral.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'gen15-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'gen15-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'gen15-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'gen15-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'gen15-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'gen15-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'gen15-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'gen15-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'gen15-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="gen15-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Abram</div><div class="person-role">Patriarch; First justified-by-faith believer</div><div class="person-text">His faith in the face of an impossible promise — childless at advanced age — becomes the paradigmatic act of faith in the Bible. Paul calls him "the father of all who believe" (Rom 4:11).</div></div><div class="person-card"><div class="person-name">Eliezer of Damascus</div><div class="person-role">Abram's servant; default heir</div><div class="person-text">Mentioned only here in the Bible. As Abram's chief servant and potential heir under the custom of adoption-for-inheritance (attested in Nuzi texts), his existence represents the human "solution" that God overrules.</div></div></div></div><div id="gen15-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Gen 15 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Abram believed the LORD, and he credited it to him as righteousness."</td></tr><tr><td class="t-label">ESV</td><td>"And he believed the LORD, and he counted it to him as righteousness."</td></tr><tr><td class="t-label">KJV</td><td>"And he believed in the LORD; and he counted it to him for righteousness."</td></tr><tr><td class="t-label">NASB</td><td>"Then he believed in the LORD; and He credited it to him as righteousness."</td></tr><tr><td class="t-label">NLT</td><td>"And Abram believed the LORD, and the LORD counted him as righteous because of his faith."</td></tr><tr><td class="t-label">MSG</td><td>"And he believed! Believed God! God declared him 'Set-Right-with-God.'"</td></tr></table></div><div id="gen15-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Nuzi Tablets (15th c. BC)</div><div class="source-quote">Cuneiform tablets from Nuzi (northeastern Iraq) document the custom of adopting a servant as heir when a man had no son — exactly Abram's situation with Eliezer. The tablets show that a subsequently born natural son would supersede the adopted heir.</div><div class="source-note">Provides direct cultural background for Abram's anxiety about Eliezer and the legal framework God's promise overrides.</div></div><div class="source-block"><div class="source-title">LXX (Septuagint) Genesis 15:6</div><div class="source-quote">The Greek translation renders "counted/reckoned" (ḥāšaḇ) as elogisthē — the same word Paul uses throughout Romans 4. This linguistic bridge directly enabled Paul's theological argument about imputed righteousness.</div><div class="source-note">The LXX translation choice becomes a key link in the NT's theological use of this verse.</div></div></div><div id="gen15-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Martin Luther, Lectures on Genesis (1535–45)</div><div class="rec-text">Luther called Genesis 15:6 "the foremost passage in the entire Old Testament" and the foundation of his reformation doctrine of justification sola fide. He argued it proved that righteousness before God has always been by faith alone, not merit.</div></div><div class="rec-block"><div class="rec-who">N.T. Wright, Paul and the Faithfulness of God</div><div class="rec-text">Wright nuances the traditional reading: Abraham's faithfulness (as well as God's) is in view — the verse is about covenant loyalty, not merely individual forensic justification. His reading sparks the "New Perspective on Paul" debate, one of the most significant theological controversies of the late 20th century.</div></div></div><div id="gen15-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Faith Credited as Righteousness</span><span class="lit-ref">15:6</span><span class="lit-text">One of the OT's most theologically concentrated sentences. Paul (Rom 4) and James (2:23) both expound this verse -- the ground of justification by faith.</span></div><div class="lit-row"><span class="lit-label">The Covenant of the Pieces: God Alone Passes Through</span><span class="lit-ref">15:17-18</span><span class="lit-text">Only God passes between the animal halves. The covenant's asymmetry is structural: God alone incurs the self-curse of the ceremony. The covenant is not bilateral but unilateral -- God binds himself; Abram sleeps.</span></div></div></div><div id="gen15-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#c8c0a0;line-height:1.9;"><span class="verse-num">1</span> After these things the <span class="dn-key">word</span> [<em>dāḇār</em>] of <span class="dn-yhwh">the LORD</span> [<em>YHWH</em>] came to <span class="dn-human">Abram</span> in a vision [<em>maḥăzeh</em>]... <span class="verse-num">5</span> "Look toward heaven, and number the stars, if you are able to number them...So shall your <span class="dn-key">offspring</span> [<em>zeraʿ</em>] be." <span class="verse-num">6</span> And he <span class="dn-key">believed</span> [<em>heʾĕmîn</em>] <span class="dn-yhwh">the LORD</span>, and he <span class="dn-key">counted</span> [<em>ḥāšaḇ</em>] it to him as <span class="dn-key">righteousness</span> [<em>ṣĕdāqāh</em>]. <span class="verse-num">17</span> A smoking fire pot and a flaming torch passed between these pieces. <span class="verse-num">18</span> On that day <span class="dn-yhwh">the LORD</span> <span class="dn-covenant">cut</span> [<em>kārat</em>] a <span class="dn-covenant">covenant</span> [<em>bĕrît</em>] with <span class="dn-human">Abram</span>.</p></div><div id="gen15-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="gen15-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The "400 Years" of Oppression (15:13): Chronology</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Literal 400 years</div><div class="db-proponents">Sarna, Wenham</div><div class="db-argument">Exod 12:40 gives 430 years from the entry into Egypt (or from Abraham's call, per LXX and Gal 3:17). The 400 years is approximate; the 430 is more precise.</div></div><div class="db-position"><div class="db-pos-name">Schematic round number</div><div class="db-proponents">Kitchen, Hoffmeier</div><div class="db-argument">400 is a schematic number in ancient Near Eastern texts for a very long but not precisely defined period. The theological point is "four generations of affliction" rather than a precise 400 solar years.</div></div></div><div class="db-synthesis">The chronological details of the Egyptian sojourn have generated sustained scholarly debate. The key synchronisms (the Exodus date, pharaoh identification) remain disputed. Most evangelical scholars accept a 15th century Exodus (early date) or 13th century (late date). The 400/430 year figure is genuine historical memory regardless of the resolution.</div></div></div><div id="gen15-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon','Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','year','years','generation','time','age'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','blessing','promise','God','LORD','Israel','faith','fear','firstborn','seed'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/genesis.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/genesis/Genesis_15.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

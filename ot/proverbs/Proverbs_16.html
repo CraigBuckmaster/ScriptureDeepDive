@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Proverbs 16 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Proverbs</span><span class="nav-chapter">Chapter 16</span></div>
+<div class="nav-arrows"><a href="Proverbs_15.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Proverbs_17.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Proverbs 16</h1>
+<p>Divine Sovereignty in Human Planning; Pride Before a Fall; Gracious Words</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–17 — Divine Sovereignty in Human Planning; Better than Gold</div><span class="verse-text"><span class="verse-num">1</span>To humans belong the plans of the heart, but from the LORD comes the proper answer of the tongue.</span><span class="verse-text"><span class="verse-num">2</span>All a person's ways seem pure to them, but motives are weighed by the LORD.</span><span class="verse-text"><span class="verse-num">3</span>Commit to the LORD whatever you do, and he will establish your plans.</span><span class="verse-text"><span class="verse-num">4</span>The LORD works out everything to its proper end-- even the wicked for a day of disaster.</span><span class="verse-text"><span class="verse-num">5</span>The LORD detests all the proud of heart. Be sure of this: They will not go unpunished.</span><span class="verse-text"><span class="verse-num">6</span>Through love and faithfulness sin is atoned for; through the fear of the LORD evil is avoided.</span><span class="verse-text"><span class="verse-num">7</span>When the LORD takes pleasure in anyone's way, he causes their enemies to make peace with them.</span><span class="verse-text"><span class="verse-num">8</span>Better a little with righteousness than much gain with injustice.</span><span class="verse-text"><span class="verse-num">9</span>In their hearts humans plan their course, but the LORD establishes their steps.</span><span class="verse-text"><span class="verse-num">10</span>The lips of a king speak as an oracle, and his mouth should not betray justice.</span><span class="verse-text"><span class="verse-num">11</span>Honest scales and balances belong to the LORD; all the weights in the bag are of his making.</span><span class="verse-text"><span class="verse-num">12</span>Kings detest wrongdoing, for a throne is established through righteousness.</span><span class="verse-text"><span class="verse-num">13</span>Kings take pleasure in honest lips; they value the one who speaks what is right.</span><span class="verse-text"><span class="verse-num">14</span>A king's wrath is a messenger of death, but the wise will appease it.</span><span class="verse-text"><span class="verse-num">15</span>When a king's face is bright, it means life; his favor is like a rain cloud in spring.</span><span class="verse-text"><span class="verse-num">16</span>How much better to get wisdom than gold, to get insight rather than silver!</span><span class="verse-text"><span class="verse-num">17</span>The highway of the upright avoids evil; those who guard their ways preserve their lives.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr16-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr16-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr16-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr16-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr16-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr16-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr16-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr16-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="pr16-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The first half contains the most concentrated theology of divine sovereignty in Proverbs. Vv.1-9 form a unit: human plans, divine outcomes, committed works, proper ends, weighed motives. The king section (vv.10-15) applies this to political authority.</p></div><div id="pr16-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Ps 37:5</span><span class="ref-text">Commit your way to the LORD — the same gālaḵ verb as v.3.</span></li><li><span class="ref-cite">Prov 19:21</span><span class="ref-text">Many are the plans in a person's heart, but it is the LORD's purpose that prevails.</span></li></ul></div><div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">16:1-16</span><p>MacArthur: To humans belong the plans of the heart, but from the LORD comes the proper answer of the tongue (v.1). The cluster of sovereignty proverbs in vv.1-9 is one of Proverbs' most theologically concentrated passages. Human planning is real; divine governance is ultimate. Both are affirmed; neither cancels the other.</p></div><div class="com-note"><span class="com-ref">16:9</span><p>MacArthur: In their hearts humans plan their course, but the LORD establishes their steps. The tension between human planning and divine governance is not resolved by eliminating one of the poles. Plan as if the outcome depends on you; trust as if it depends entirely on God. Wisdom holds both.</p></div></div><div id="pr16-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">16:1–9</span><p>The divine-sovereignty cluster of vv.1–9 is the theological climax of Proverbs' treatment of the relationship between human planning and divine governance. Alter notes the cluster does not resolve the tension but holds it: humans plan (vv.1, 3, 9); the LORD determines (vv.1, 3, 9). The same human activity appears in both halves — planning — and the theological claim is that it occurs within and is governed by divine sovereignty, not that it is replaced by it.</p></div><div class="com-note"><span class="com-ref">16:9</span><p>'A person plans their steps, but the LORD establishes their direction.' Alter notes the precise complementarity of this verse: human planning is not invalidated but directed. The person plans (the activity is real and proper); the LORD establishes (the ultimate determination is divine). This is the Proverbs version of what Paul articulates in Phil 2:12–13: 'work out your salvation... for it is God who works in you.'</p></div></div><div id="pr16-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">16:1–9</span><p>Proverbs 16 opens with the most concentrated cluster of divine-sovereignty proverbs in the book. Waltke notes vv.1–9 form a theological unit: all human planning is enclosed within divine sovereignty. V.1 (human heart plans; the tongue's answer is from the LORD), v.3 (commit to the LORD; plans will succeed), v.9 (human heart devises the way; the LORD directs the steps). The sovereignty is not fatalistic but covenantal: the human plans; God determines the outcome.</p></div><div class="com-note"><span class="com-ref">16:5</span><p>'The LORD detests all the proud of heart. Be sure of this: they will not go unpunished.' The divine hatred of pride reappears here as the theological ground of the pride-falls-before-destruction proverb (v.18). Waltke notes that pride (ge'eh lev, proud of heart) is the root form of the zadon (arrogance) that 11:2 identified as wisdom's enemy. The repetition across chapters ensures the reader internalises the connection.</p></div></div><div id="pr16-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">16:3</span><p>Calvin: 'Commit your work to the LORD — this is not an excuse for idleness but the posture of trust that enables genuine effort. The person who commits their work to God is free to work wholeheartedly, trusting that the outcome is in better hands than their own. The person who trusts only in their own effort is burdened with a governance responsibility they cannot bear.'</p></div><div class="com-note"><span class="com-ref">16:9</span><p>Calvin: 'This is one of Proverbs' most profound theological observations: the same verse teaches both human responsibility (the person plans) and divine sovereignty (the LORD directs). Both are true simultaneously. The mystery of Providence is not that God overrides human choice but that he governs human choice from within, directing what the person genuinely plans.')</p></div></div><div id="pr16-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">16:1</span><p>The NET note on 'from the LORD comes the proper answer of the tongue' (umi'YHWH ma'aneh halashon) discusses the interpretive options: (a) God ultimately controls what people say; (b) the wise answer to any question comes from divine wisdom. The note favours (b) in the context of the chapter's divine-sovereignty cluster: the human tongue's wisest responses derive from the wisdom that God provides.</p></div><div class="com-note"><span class="com-ref">16:9</span><p>The NET note on 'a person plans their course, but the LORD establishes their steps' discusses yakhon (establishes, makes firm, directs). The note traces this sovereignty vocabulary through the chapter (v.1: ma'aneh lashon from the LORD; v.3: plans established; v.9: steps directed) to identify the consistent claim: human agency is real and productive within divine sovereignty that encloses and governs it.</p></div></div></div><div class="section"><div class="section-header">Verses 18–33 — Pride Before a Fall; Gracious Words like Honey; Patient Over Warrior</div><span class="verse-text"><span class="verse-num">18</span>Pride goes before destruction, a haughty spirit before a fall.</span><span class="verse-text"><span class="verse-num">19</span>Better to be lowly in spirit along with the oppressed than to share plunder with the proud.</span><span class="verse-text"><span class="verse-num">20</span>Whoever gives heed to instruction prospers, and blessed is the one who trusts in the LORD.</span><span class="verse-text"><span class="verse-num">21</span>The wise in heart are called discerning, and gracious words promote instruction.</span><span class="verse-text"><span class="verse-num">22</span>Prudence is a fountain of life to the one who has it, but folly brings punishment to fools.</span><span class="verse-text"><span class="verse-num">23</span>The hearts of the wise make their mouths prudent, and their lips promote instruction.</span><span class="verse-text"><span class="verse-num">24</span>Gracious words are a honeycomb, sweet to the soul and healing to the bones.</span><span class="verse-text"><span class="verse-num">25</span>There is a way that appears to be right, but in the end it leads to death.</span><span class="verse-text"><span class="verse-num">26</span>The appetite of laborers works for them; their hunger drives them on.</span><span class="verse-text"><span class="verse-num">27</span>A scoundrel plots evil, and on their lips it is like a scorching fire.</span><span class="verse-text"><span class="verse-num">28</span>A perverse person stirs up conflict, and a gossip separates close friends.</span><span class="verse-text"><span class="verse-num">29</span>A violent person entices their neighbor and leads them down a path that is not good.</span><span class="verse-text"><span class="verse-num">30</span>Whoever winks with their eye is plotting perversity; whoever purses their lips is bent on evil.</span><span class="verse-text"><span class="verse-num">31</span>Gray hair is a crown of splendor; it is attained in the way of righteousness.</span><span class="verse-text"><span class="verse-num">32</span>Better a patient person than a warrior, one with self-control than one who takes a city.</span><span class="verse-text"><span class="verse-num">33</span>The lot is cast into the lap, but its every decision is from the LORD.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr16-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr16-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr16-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr16-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr16-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr16-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr16-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr16-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="pr16-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The second half contains pride before a fall (v.18) and better patient than a warrior (v.32). The repeated "way seeming right" (v.25 = 14:12) signals its importance. V.33 returns to the opening sovereignty theme: even the lot is the LORD's.</p></div><div id="pr16-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Prov 14:12</span><span class="ref-text">Way that appears right but leads to death — the exact repetition signals this is among Proverbs' most crucial warnings.</span></li><li><span class="ref-cite">Jas 4:6</span><span class="ref-text">God opposes the proud but gives grace to the humble — v.18 is the negative side of this principle.</span></li></ul></div><div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">16:18-33</span><p>MacArthur: Pride goes before destruction, a haughty spirit before a fall (v.18). One of Proverbs' most cited verses, and one of its most misquoted. The original does not say pride comes before a fall — it says pride comes before destruction. The sequence is: pride, then the destruction that makes the fall possible.</p></div><div class="com-note"><span class="com-ref">16:33</span><p>MacArthur: The lot is cast into the lap, but its every decision is from the LORD. The chapter closes with the sovereignty proverb that brackets it: even the apparently random outcomes of the lot are governed by God. Proverbs affirms both the reality of chance and the sovereignty that governs what appears to be chance.</p></div></div><div id="pr16-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">16:18</span><p>'Pride goes before destruction, a haughty spirit before a fall.' Alter notes the grammar: 'goes before' means 'leads to,' not merely 'precedes.' Pride is the condition that makes destruction inevitable — not because God is sending it as punishment, but because the proud person has positioned themselves outside the reality-orientation that wisdom provides. The fall is the natural consequence of the epistemological failure that pride represents.</p></div><div class="com-note"><span class="com-ref">16:24</span><p>'Gracious words are a honeycomb, sweet to the soul and healing to the bones.' The honeycomb image for speech is one of Proverbs' most sensory. Alter notes the dual register: sweet to the soul (psychological) and healing to the bones (physical). Gracious speech heals the whole person — not merely the feeling but the body. The claim is physiological: good words have physical consequences.</p></div></div><div id="pr16-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">16:18–33</span><p>The second section moves from divine sovereignty to pride's consequences and to the social ethics that follow from right orientation. Waltke notes 16:18 ('pride goes before destruction, a haughty spirit before a fall') is the book's most quoted proverb. It is the concentrated summary of what the pride-humility antithesis has been building through the chapters: pride positions you for the fall that reveals your limitations.</p></div><div class="com-note"><span class="com-ref">16:32</span><p>'Better a patient person than a warrior, one with self-control than one who takes a city.' This is Proverbs' most counter-military value-judgment. Waltke notes the comparison deliberately inverts the warrior honour that ancient Near Eastern cultures celebrated: the highest human achievement is not military victory but self-control. Controlling yourself is greater than conquering others.</p></div></div><div id="pr16-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">16:18</span><p>Calvin: 'Pride goes before destruction — this is one of those proverbs that observation and experience confirm so regularly that it has become a byword. The proud man has made himself the measure of all things; and reality, which does not adjust itself to human pride, eventually breaks in and reminds him that he is not the measure of all things.'</p></div><div class="com-note"><span class="com-ref">16:32</span><p>Calvin on better than a warrior: 'This is a direct reversal of the world's honours. The world gives its crowns to those who take cities; God gives his honour to those who govern themselves. The man who is his own master is greater than the man who is master of others — because self-governance is more difficult than military victory and more lasting in its benefit.'</p></div></div><div id="pr16-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">16:18</span><p>The NET note on 'pride goes before destruction' (lifney shever gaon) discusses the sequence: gaon (pride, swelling, exaltation) goes lifney (before, in front of) shever (destruction, breaking). The spatial metaphor (pride walking ahead of destruction) implies that pride is the vanguard of its own destruction — it leads the way to the consequence it cannot see coming.</p></div><div class="com-note"><span class="com-ref">16:24</span><p>The NET note on 'gracious words are a honeycomb' (tsuf devash imrei-no'am) discusses the medical claim: 'healing to the bones' (marpe leatsamot). Atsamot (bones) represents the inner structural reality of the body — bones are what you are when everything superficial is stripped away. Gracious speech heals at the deepest structural level, not merely the surface feeling.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'pr16-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr16-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr16-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr16-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr16-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr16-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr16-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr16-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr16-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="pr16-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The human planner</div><div class="person-role">Plans; the LORD establishes</div><div class="person-text">Partnership of human planning and divine sovereignty.</div></div><div class="person-card"><div class="person-name">The proud</div><div class="person-role">Go before destruction</div><div class="person-text">Pride removes its own protection mechanisms.</div></div><div class="person-card"><div class="person-name">The patient person</div><div class="person-role">Better than a warrior</div><div class="person-text">Self-control surpasses military conquest.</div></div></div></div><div id="pr16-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 16 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"In their hearts humans plan their course, but the LORD establishes their steps."</td></tr><tr><td class="t-label">Note</td><td>Plan carefully, hold loosely. The most balanced statement of human responsibility and divine sovereignty in Proverbs.</td></tr></table></div><div id="pr16-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Lot-casting</div><div class="source-quote">Urim and Thummim were the sacred lots. V.33 grounds this in the LORD's sovereignty over all apparent randomness.</div><div class="source-note">The practice was common across the ancient Near East.</div></div><div class="source-block"><div class="source-title">Honeycomb</div><div class="source-quote">Nōpet ṣûpîm — dripping honeycomb, the sweetest available substance.</div><div class="source-note">Honey was the ancient world's primary sweetener and also medicinal.</div></div></div><div id="pr16-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">16:18 in Western culture</div><div class="rec-text">Pride goes before a fall — the most cited proverb in English literature, politics, and sport.</div></div><div class="rec-block"><div class="rec-who">16:32 in virtue ethics</div><div class="rec-text">Better patient than a warrior — cited as the biblical priority of self-mastery.</div></div></div><div id="pr16-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">The King's Heart as Watercourse</span><span class="lit-ref">16:1-9</span><span class="lit-text">The plans of the heart belong to humans, but the answer of the tongue is from the LORD. The cluster of sovereignty proverbs (vv.1-9) is the chapter's theological centre: human planning and divine governance are both real, and neither eliminates the other.</span></div><div class="lit-row"><span class="lit-label">Pride Before the Fall</span><span class="lit-ref">16:18-19</span><span class="lit-text">Pride goes before destruction, a haughty spirit before a fall. One of Proverbs' most cited verses -- and most misquoted. The sequence is structural: pride is not the consequence of destruction but its precondition.</span></div></div></div><div id="pr16-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('לֵב אָדָם יְחַשֵּׁב דַּרְכּוֹ / Lev Adam Yechasshev Darko', 'lev adam yechasshev darko', 'A person plans their course', "The human side of the sovereignty proverb (16:9). The lev (heart) plans (chasav, schemes, devises, plans deliberately) the derekh (way, path, course of life). Human planning is deliberate, intelligent, and real — Proverbs does not dismiss it. The divine complement ('but the LORD establishes their steps') does not cancel the planning but governs its outcome."), ('גָּאוֹן / Gaon', 'gaon', 'Pride / haughtiness / excellence', "The pride that goes before destruction (16:18). Gaon can be positive (the 'pride' of Jacob, meaning its grandeur) or negative (haughty pride). In the context of 16:18, gaon is the negative self-exaltation that positions the person for the fall. The same root produces the positive form of 'the pride of Israel' (the excellency/glory of Israel) — showing that the word describes a quality whose moral valence depends entirely on where it is directed.")]</div><div id="pr16-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="pr16-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Divine Sovereignty and Human Responsibility in Proverbs 16</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Compatible: both fully true simultaneously</div><div class="db-proponents">Calvin, Reformed evangelical scholars</div><div class="db-argument">Proverbs 16:1–9 teaches both full human responsibility (the person genuinely plans, genuinely commits, genuinely devises) and full divine sovereignty (the LORD determines the tongue's answer, establishes the plans, directs the steps). These are not competing claims but complementary truths that hold simultaneously without reducing either.</div></div><div class="db-position"><div class="db-pos-name">Sequential: humans plan; God redirects</div><div class="db-proponents">Some Arminian readings</div><div class="db-argument">Human planning is primary and genuine; God then redirects or adjusts the outcome according to his larger purposes. The sovereignty is supervisory and corrective rather than comprehensive. This reading preserves maximal human responsibility but may understate divine sovereignty.</div></div><div class="db-position"><div class="db-pos-name">Practical wisdom: plan well, trust God</div><div class="db-proponents">Some pragmatic readings</div><div class="db-argument">The proverbs are not making a systematic theological claim about the relationship of divine sovereignty and human agency — they are making the practical wisdom observation that planning and trust belong together. The wisest person commits their work to God and works diligently. The theological resolution is a practical one, not a philosophical one.</div></div></div><div class="db-synthesis">The Reformed compatible-causality position is most consistent with the breadth of the passage. Proverbs 16:1–9 holds together human planning (not just mentioned but commanded — v.3: commit your work) and divine governance (explicitly stated as governing the outcome) without attempting to resolve the philosophical tension. The practical wisdom reading and the theological reading are both correct and complementary.</div></div></div><div id="pr16-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['gate','city','market','field','house','street','court','path','way'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['LORD','king','fool','wise','righteous','wicked','poor','rich','son','wife','neighbour'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','morning','evening','year','life','age','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['wisdom','knowledge','understanding','fear','righteous','wicked','heart','tongue','mouth','honour','pride','humility'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/proverbs.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/proverbs/Proverbs_16.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

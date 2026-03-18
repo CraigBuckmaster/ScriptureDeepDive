@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ruth 1 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Ruth</span><span class="nav-chapter">Chapter 1</span></div>
+<div class="nav-arrows"><a href="../../ot/exodus/Exodus_40.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Ruth_2.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Ruth 1</h1>
+<p>Naomi's Loss; the Road; Ruth's Loyalty; Return to Bethlehem</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Unknown; Jewish tradition attributes authorship to Samuel.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1000 BC, possibly early monarchy period.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's providential care for a Moabite widow and her mother-in-law, and to trace the lineage of King David.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;7 &mdash; A Family in Moab: Famine, Migration, and Loss</div><span class="verse-text"><span class="verse-num">1</span>In the days when the judges ruled, there was a famine in the land. So a man from Bethlehem in Judah, together with his wife and two sons, went to live for a while in the country of Moab.</span><span class="verse-text"><span class="verse-num">2</span>The man's name was Elimelek, his wife's name was Naomi, and the names of his two sons were Mahlon and Kilion. They were Ephrathites from Bethlehem, Judah. And they went to Moab and lived there.</span><span class="verse-text"><span class="verse-num">3</span>Now Elimelek, Naomi's husband, died, and she was left with her two sons.</span><span class="verse-text"><span class="verse-num">4</span>They married Moabite women, one named Orpah and the other Ruth. After they had lived there about ten years,</span><span class="verse-text"><span class="verse-num">5</span>both Mahlon and Kilion also died, and Naomi was left without her two sons and her husband.</span><span class="verse-text"><span class="verse-num">6</span>When Naomi heard in Moab that the LORD had come to the aid of his people by providing food for them, she and her daughters-in-law prepared to return home from there.</span><span class="verse-text"><span class="verse-num">7</span>With her two daughters-in-law she left the place where she had been living and set out on the road that would take them back to the land of Judah.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ru1-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ru1-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ru1-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ruth1-s1-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ruth1-s1-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ru1-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ru1-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger hubbard" onclick="tog(this,'ru1-s1-hubbard')"><span>Hubbard</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ru1-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ru1-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ru1-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="ru1-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ru1-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The opening seven verses establish maximum loss in minimum space: homeland, husband, sons. The setting in "the days when the judges ruled" (Israel's most faithless era) makes the ḥesed that follows all the more striking. The LORD's provision of food in v.6 is the first divine action in the book — and it is what sets the whole redemption plot in motion.</p></div><div id="ru1-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="ruth1-s1-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Bethlehem</div><div class="poi-coords">Judean hill country, c.8km south of Jerusalem</div><div class="poi-text">Bethlehem means "house of bread" — ironic when famine drives the family away. It will be David's birthplace and Jesus's birthplace. The covenant lineage that Ruth joins is geographically rooted in this one Judean town.</div></div><div class="poi-entry"><div class="poi-name">Moab</div><div class="poi-coords">Transjordan; east of the Dead Sea</div><div class="poi-text">Moab is Lot's descendant territory — outside the covenant but related. Israel's wilderness temptation at Peor was Moabite. Elimelech's move to Moab for survival is a move away from the covenant land into an ambiguous border territory.</div></div></div>
+<div id="ruth1-s1-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event current"><div class="tl-date">c. 1200 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Period of the Judges — this passage</div><div class="tl-text">The book opens "in the days when the judges ruled" — a period of covenant instability. The famine is consistent with Deuteronomy's covenant-curse pattern. The family's move to Moab reflects the period's characteristic drift away from covenant faithfulness.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1190 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Elimelech, Mahlon, Chilion die in Moab</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1180 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Naomi returns to Bethlehem with Ruth</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1085 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Obed born (Ruth and Boaz's son)</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1040 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">David born (Obed's grandson)</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1010 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">David becomes king of Israel</div></div></div>
+</div><div class="tl-range"><span>c. 1250 BC</span><span>c. 970 BC</span></div><p class="tl-caption">Period of the Judges; exact dating disputed.</p></div>
+<div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:1-7</span><p>MacArthur: The famine that drives Elimelech to Moab sets the narrative's moral geography: Israel's covenant land is experiencing covenant curse (Deut 28), while Moab represents the world outside the covenant. The family's departure is not rebellion but desperation — and it will cost them.</p></div><div class="com-note"><span class="com-ref">1:3-5</span><p>MacArthur: Three deaths in Moab — Elimelech, Mahlon, Chilion — strip Naomi of every male protector. The ancient world measured a woman's security by the men attached to her. Naomi is left with nothing: no husband, no sons, no grandchildren, no prospects. The book opens in absolute desolation to make its ending's restoration all the more stunning.</p></div></div><div id="ru1-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:1–5</span><p>Alter notes the opening five verses constitute one of the most concentrated sequences of death in biblical narrative — four deaths (famine, Elimelech, Mahlon, Chilion) in five verses. The compression is rhetorical: the narrative establishes absolute destitution before it shows how that destitution will be reversed. The darker the opening, the more complete the eventual restoration.</p></div><div class="com-note"><span class="com-ref">1:3–5</span><p>The rapid succession of deaths — Elimelech, then the two sons — strips the narrative of every possible male protector before a word of dialogue is spoken. Alter notes this is the narrative's way of zeroing out all human resources before the story of hesed begins. What follows will be entirely grace, not recovery of former assets.</p></div></div><div id="ru1-s1-hubbard" class="anno-panel com-panel com-hubbard"><h4>Hubbard — NICOT Ruth</h4><div class="com-source">Robert L. Hubbard Jr., NICOT Commentary on Ruth (1988) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:1</span><p>Hubbard notes the Book of Ruth's careful historical positioning. The 'days of the judges' invokes an era of covenant unfaithfulness (cf. Judg 21:25: 'everyone did what was right in his own eyes'). Ruth is a story of covenant faithfulness — hesed — set against the backdrop of its absence. The contrast is programmatic: what Israel's leaders failed to provide, a Moabite woman embodies.</p></div><div class="com-note"><span class="com-ref">1:4</span><p>The marriage of Mahlon and Chilion to Moabite women is narrated without moral comment. Hubbard notes this is deliberate — the narrator does not condemn the marriages (as Ezra-Nehemiah's post-exilic context might). The marriages are simply facts that enable the story. Ruth's Moabite identity becomes the vehicle of hesed, not an obstacle to it.</p></div></div><div id="ru1-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:1</span><p>Calvin on the famine: 'God often chastises whole nations for the sins of a few, or for the purpose of exercising the faith and patience of his people.' The famine is not random natural disaster but providential pressure. Elimelech's response — flight to Moab — is Calvin's negative example: he abandoned the covenant land rather than enduring the discipline within it.</p></div><div class="com-note"><span class="com-ref">1:3</span><p>Calvin on Elimelech's death in Moab: 'God punished his unfaithfulness in leaving the inheritance of his fathers and taking refuge among idolaters.' The punishment is not certain — the narrator does not say so — but Calvin reads the sequence as moral pattern: departure from the covenant community followed by loss. The return will require Naomi to make the same journey back that Elimelech refused.</p></div></div><div id="ru1-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">1:1</span><p>The NET note on 'when the judges ruled' (bishfot hashoftim) discusses the period's historical range (c.1380–1050 BC) and the narrative's deliberate vagueness about which specific judge's era is meant. The vagueness universalises the story — Ruth is not tied to a single historical moment but belongs to the entire period of pre-monarchic Israel.</p></div><div class="com-note"><span class="com-ref">1:4</span><p>The NET note on 'Moabite women' discusses the later prohibition of Moabites from the assembly (Deut 23:3) and how Ruth's integration contradicts it. The note explains the rabbinic solution: Deut 23:3 says 'Moabite,' meaning male Moabites only, not females. Ruth's integration is not a violation but a demonstration that the spirit of the law is covenant faithfulness, not ethnic exclusion.</p></div></div></div><div class="section"><div class="section-header">Verses 8&ndash;18 &mdash; The Road: Orpah Departs; Ruth Clings</div><span class="verse-text"><span class="verse-num">8</span>Then Naomi said to her two daughters-in-law, "Go back, each of you, to your mother's home. May the LORD show you kindness, as you have shown kindness to your dead husbands and to me.</span><span class="verse-text"><span class="verse-num">9</span>May the LORD grant that each of you will find rest in the home of another husband." Then she kissed them goodbye and they wept aloud</span><span class="verse-text"><span class="verse-num">10</span>and said to her, "We will go back with you to your people."</span><span class="verse-text"><span class="verse-num">11</span>But Naomi said, "Return home, my daughters. Why would you come with me? Am I going to have any more sons, who could become your husbands?</span><span class="verse-text"><span class="verse-num">12</span>Return home, my daughters; I am too old to have another husband. Even if I thought there was still hope for me—even if I had a husband tonight and then gave birth to sons—</span><span class="verse-text"><span class="verse-num">13</span>would you wait until they grew up? Would you remain unmarried for them? No, my daughters. It is more bitter for me than for you, because the LORD's hand has turned against me!"</span><span class="verse-text"><span class="verse-num">14</span>At this they wept aloud again. Then Orpah kissed her mother-in-law goodbye, but Ruth clung to her.</span><span class="verse-text"><span class="verse-num">15</span>"Look," said Naomi, "your sister-in-law is going back to her people and her gods. Go back with her."</span><span class="verse-text"><span class="verse-num">16</span>But Ruth replied, "Don't urge me to leave you or to turn back from you. Where you go I will go, and where you stay I will stay. Your people will be my people and your God will be my God.</span><span class="verse-text"><span class="verse-num">17</span>Where you die I will die, and there I will be buried. May the LORD deal with me, be it ever so severely, if even death separates you and me."</span><span class="verse-text"><span class="verse-num">18</span>When Naomi realized that Ruth was determined to go with her, she stopped urging her.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ru1-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ru1-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ru1-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ruth1-s2-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ru1-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ru1-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger hubbard" onclick="tog(this,'ru1-s2-hubbard')"><span>Hubbard</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ru1-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ru1-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ru1-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="ru1-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ru1-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The road scene is the dramatic heart of chapter 1. Naomi's speech invoking the levirate impossibility (vv.11–13) is legally precise and emotionally honest. Orpah's departure is not condemned — she makes the sensible choice. Ruth's clinging is extraordinary precisely because it is not sensible. The declaration of vv.16–17 is structured as three intensifying couplets, closing with a self-imprecatory oath — the strongest form of promise available in the ancient world.</p></div><div id="ru1-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 2:24</span><span class="ref-text">A man shall leave his father and mother and cling (dābaq) to his wife. Ruth performs this act toward Naomi — the covenant-clinging of marriage applied to loyalty between women.</span></li><li><span class="ref-cite">Deut 10:20</span><span class="ref-text">Hold fast (dābaq) to the LORD your God. Ruth's clinging to Naomi is simultaneously clinging to Naomi's God — which is exactly what v.16 makes explicit.</span></li></ul></div><div id="ruth1-s2-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Road from Moab to Judah</div><div class="poi-coords">Transjordan to Jordan ford to Judean hills</div><div class="poi-text">The road from Moab to Bethlehem crosses the Jordan and ascends the Judean hill country. Ruth's commitment is made on this literal road between two worlds. Orpah turns back on the same road. The physical journey is the spiritual decision.</div></div></div>
+<div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:8-17</span><p>MacArthur: Orpah's return is described without condemnation — she does what is culturally expected and what Naomi urged. Ruth's clinging goes beyond all social expectation. The word for clung (dabaq) is the same used in Gen 2:24 for the husband cleaving to his wife. Ruth's covenant loyalty is described in the language of marriage.</p></div><div class="com-note"><span class="com-ref">1:16-17</span><p>MacArthur: Where you go I will go — the most complete expression of hesed loyalty in the OT. Ruth commits to people, place, community, and God in one speech. Notably, she commits to Naomi's God (your God shall be my God) before she has any prospect of material benefit. The commitment is to the covenant, not to the covenant's rewards.</p></div></div><div id="ru1-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:8–13</span><p>Naomi's three-fold attempt to send her daughters-in-law back is a masterpiece of narrative structure. Alter notes Naomi uses legal, emotional, and theological arguments — the women can remarry (legal), Naomi is too old to provide husbands (personal), the LORD's hand is against her (theological). She is releasing them with every legitimate argument available. Their resistance to being released is the measure of their loyalty.</p></div><div class="com-note"><span class="com-ref">1:14</span><p>Orpah's departure and Ruth's clinging are narrated in a single sentence — 'Orpah kissed her mother-in-law goodbye, but Ruth clung to her.' Alter notes the contrast is achieved without moral judgment of Orpah. She does the reasonable thing; Ruth does the extraordinary thing. The narrative holds both choices without condemning the first, which makes the second even more remarkable.</p></div></div><div id="ru1-s2-hubbard" class="anno-panel com-panel com-hubbard"><h4>Hubbard — NICOT Ruth</h4><div class="com-source">Robert L. Hubbard Jr., NICOT Commentary on Ruth (1988) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:8</span><p>The word hesed (loyal love, lovingkindness) appears three times in Ruth (1:8; 2:20; 3:10) and is the book's theological keyword. Hubbard notes that Naomi prays YHWH will show hesed to her daughters-in-law because she herself can no longer do so. The hesed she cannot provide, she prays God will supply. The book traces that prayer's answer through Boaz.</p></div><div class="com-note"><span class="com-ref">1:16–17</span><p>Ruth's declaration (vv.16–17) is the Book of Ruth's theological summit. Hubbard notes the declaration is structured as a tricolon of commitment (go/lodge/die) with a theological capstone ('your God my God') and a death-oath ('the LORD deal with me'). Ruth is not merely expressing affection; she is making a legally binding covenant declaration — the same structure as covenant oaths throughout the OT.</p></div></div><div id="ru1-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:16</span><p>Calvin on Ruth's declaration: 'Ruth, by following her mother-in-law, gave proof of remarkable piety toward God, since she preferred the worship of God and fellowship with his people to her native country, her kindred, and all earthly advantages.' The declaration is fundamentally theological — the family loyalty is the form that covenant commitment takes.</p></div><div class="com-note"><span class="com-ref">1:17</span><p>Calvin on the death-oath: 'Death alone shall separate us — and not even death, for I wish to be buried in the same place.' Ruth's commitment extends beyond death. Calvin reads this as a figure of the believer's union with the covenant people — a commitment that no circumstance, however extreme, can dissolve.</p></div></div><div id="ru1-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">1:16</span><p>The NET note on 'your God will be my God' explains that Ruth's declaration constitutes a formal conversion — she is adopting YHWH as her deity and Israel as her people. The formula parallels covenant-making language throughout the OT (Gen 17:7–8; Exod 6:7; Jer 31:33). Ruth is not making a social choice but a theological one.</p></div><div class="com-note"><span class="com-ref">1:14</span><p>The NET note on 'Ruth clung to her' (davqah bo) uses the same verb (davaq) as Gen 2:24 ('a man shall... cling to his wife') and Deut 10:20 ('hold fast to him'). The note identifies the word as covenant-loyalty language — Ruth's clinging to Naomi echoes Israel's commanded clinging to YHWH. The family loyalty and the theological commitment are inseparable.</p></div></div></div><div class="section"><div class="section-header">Verses 19&ndash;22 &mdash; Arrival in Bethlehem: Naomi's Lament; Harvest Begins</div><span class="verse-text"><span class="verse-num">19</span>So the two women went on until they came to Bethlehem. When they arrived in Bethlehem, the whole town was stirred because of them, and the women exclaimed, "Can this be Naomi?"</span><span class="verse-text"><span class="verse-num">20</span>"Don't call me Naomi," she told them. "Call me Mara, because the Almighty has made my life very bitter.</span><span class="verse-text"><span class="verse-num">21</span>I went away full, but the LORD has brought me back empty. Why call me Naomi? The LORD has afflicted me; the Almighty has brought misfortune upon me."</span><span class="verse-text"><span class="verse-num">22</span>So Naomi returned from Moab accompanied by Ruth the Moabite, her daughter-in-law, arriving in Bethlehem as the barley harvest was beginning.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'ru1-s3-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'ru1-s3-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'ru1-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'ruth1-s3-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'ruth1-s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'ru1-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'ru1-s3-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger hubbard" onclick="tog(this,'ru1-s3-hubbard')"><span>Hubbard</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'ru1-s3-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'ru1-s3-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="ru1-s3-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="ru1-s3-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="ru1-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>The arrival scene is brief but theologically precise. Naomi's lament (vv.20–21) is not apostasy — it is honest prayer, the language of the lament psalms. She names God as the agent of her affliction using his most sovereign title (Shaddai) — which is also faith. The chapter's final verse holds the whole reversal in two details: Ruth the Moabite (her ethnic identity, which makes everything that follows remarkable) and the barley harvest beginning (the physical mechanism of God's provision about to begin).</p></div><div id="ru1-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Exod 15:23</span><span class="ref-text">Marah — the bitter waters. Naomi's self-naming draws on exodus vocabulary of wilderness suffering. As Marah was transformed (Exod 15:25), so will Naomi's bitterness be.</span></li><li><span class="ref-cite">Ruth 3:17</span><span class="ref-text">Don't go back to your mother-in-law empty-handed. The direct reversal of rēqām — Boaz's gift is the beginning of the answer to Naomi's lament.</span></li></ul></div><div id="ruth1-s3-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Bethlehem</div><div class="poi-coords">Judean hill country</div><div class="poi-text">The whole town is stirred by their arrival. Naomi is returning to a community that remembers her — the town's reaction confirms this is a homecoming, not an arrival. The barley harvest timing places them in spring: the narrator signals that providence has positioned them correctly.</div></div></div>
+<div id="ruth1-s3-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 1200 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Elimelech's family leaves Bethlehem</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1190 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Elimelech and sons die in Moab</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 1180 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Naomi returns at barley harvest — this passage</div><div class="tl-text">Naomi returns empty — widowed, childless, accompanied only by her Moabite daughter-in-law. The barley harvest (spring, Nisan) timing is the narrator's first signal of providential positioning. Emptiness arrives at the season of fullness.</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1179 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Ruth gleans through harvest season</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1179 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Threshing floor encounter; legal redemption</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 1085 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Obed born; line to David continues</div></div></div>
+</div><div class="tl-range"><span>c. 1210 BC</span><span>c. 1050 BC</span></div><p class="tl-caption">Traditional OT chronology; dates approximate.</p></div>
+<div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:20-21</span><p>MacArthur: Call me Mara — Naomi's name change is theological confession: she attributes her suffering directly to the LORD. This is not despair but robust covenant theology. She believes God governs her circumstances; she simply cannot yet see his purpose. Her theology is sound; her circumstances will validate it.</p></div><div class="com-note"><span class="com-ref">1:22</span><p>MacArthur: They arrived at the beginning of the barley harvest — the narrator's temporal marker is also providential signal. The harvest season was the context of gleaning rights (Lev 19:9-10), which will drive the next chapter's encounter. The timing that seems coincidental is the covenant God positioning his provision.</p></div></div><div id="ru1-s3-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:20–21</span><p>Naomi's lament is structured as a double contrast: 'I went out full, but the LORD has brought me back empty.' The Hebrew is exact — male'ah (full) and reqam (empty). Alter notes this is the book's central antithesis, which ch.4 will reverse: 'Naomi has a son' (4:17). The woman who returned empty will be filled — but by a Moabite daughter-in-law, not by a direct divine miracle.</p></div><div class="com-note"><span class="com-ref">1:20-21</span><p>Naomi's lament is compressed into one perfectly balanced sentence: 'I went out full — the LORD has brought me back empty.' Alter notes the antithesis of male'ah (full) and reqam (empty) is the book's structural pivot. The rest of the book is the narrative of how the empty woman is filled.</p></div></div><div id="ru1-s3-hubbard" class="anno-panel com-panel com-hubbard"><h4>Hubbard — NICOT Ruth</h4><div class="com-source">Robert L. Hubbard Jr., NICOT Commentary on Ruth (1988) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">1:20</span><p>Naomi's renaming from 'Pleasant' to 'Bitter' (Mara) is a formal act of self-identification with her condition. Hubbard notes the name change echoes Jacob's wrestling renaming (Gen 32) and Abraham's renaming (Gen 17) — names in the OT encode identity and destiny. Naomi claims a new identity that the rest of the book will then reverse: the woman who calls herself Bitter will be filled.</p></div><div class="com-note"><span class="com-ref">1:22</span><p>The harvest notice that closes ch.1 is carefully placed. Hubbard notes that the agricultural calendar creates the story's timeline: barley harvest begins the provision that will fill Naomi. The emptiness of v.21 and the full fields of v.22 are deliberately juxtaposed. The reader sees what Naomi cannot yet see: the answer to her complaint is already in the ground.</p></div></div><div id="ru1-s3-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">1:20</span><p>Calvin on Naomi's complaint: 'She did not complain against God with murmuring and impatience, but acknowledged that he was the author of her afflictions. Such acknowledgment, however bitter the feeling, is the beginning of true faith's response to suffering.' Naomi's theology is intact even while her circumstance is broken. She accuses God accurately — and that accuracy is itself a form of trust.</p></div><div class="com-note"><span class="com-ref">1:20-21</span><p>Calvin: Naomi does not attribute her suffering to chance or to enemy malice but directly to the LORD. Her theology is intact even while her circumstances are broken. This honest acknowledgment of divine agency — however painful — is the beginning of genuine faith's response to suffering.</p></div></div><div id="ru1-s3-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">1:20</span><p>The NET note on Shaddai (El Shaddai, 'God Almighty') discusses the divine name used twice in Naomi's lament (vv.20–21). The name emphasises divine power and sufficiency. Naomi uses it deliberately — she is not complaining against a weak god who failed her but against the Almighty who chose to afflict her. The complaint is theologically precise.</p></div><div class="com-note"><span class="com-ref">1:20-22</span><p>The NET note on Naomi's arrival in Bethlehem 'as the barley harvest was beginning' explains the agricultural calendar's theological function: Naomi returns in the season of potential provision. The harvest beginning at the chapter's close is the narrative's quiet announcement that the emptying is not the end.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'ru1-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'ru1-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'ru1-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'ru1-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'ru1-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'ru1-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'ru1-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'ru1-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'ru1-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="ru1-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Naomi</div><div class="person-role">Bethlehemite widow</div><div class="person-text">Her name means "pleasant"; she renames herself "bitter." The narrative will restore her original name through Ruth's faithfulness.</div></div><div class="person-card"><div class="person-name">Ruth</div><div class="person-role">Moabite daughter-in-law</div><div class="person-text">Chooses Naomi's God and people before she has any reason to expect reward.</div></div><div class="person-card"><div class="person-name">Orpah</div><div class="person-role">Moabite daughter-in-law</div><div class="person-text">Returns to Moab — not villainous, simply reasonable. Ruth makes the extraordinary choice.</div></div><div class="person-card"><div class="person-name">Elimelek</div><div class="person-role">Naomi's husband, now dead</div><div class="person-text">His departure from Bethlehem during famine frames the question: what does covenant faithfulness look like under pressure?</div></div></div></div><div id="ru1-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Ruth 1 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Where you go I will go, and where you stay I will stay. Your people will be my people and your God will be my God."</td></tr><tr><td class="t-label">Structure</td><td>Three couplets, each intensifying: go/stay, people/God, die/buried. The final clause is a self-imprecatory oath — the strongest form of binding promise.</td></tr></table></div><div id="ru1-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Levirate law</div><div class="source-quote">Deut 25:5–10 — a brother-in-law marrying a childless widow. Naomi's argument (vv.11–13) correctly notes she has no more sons to provide this. The legal context gives weight to her despair.</div><div class="source-note">Sets up the gōʾēl plot of chs.2–4.</div></div><div class="source-block"><div class="source-title">Moab and Israel</div><div class="source-quote">Moabites excluded from the assembly (Deut 23:3). Ruth's inclusion is a deliberate narrative challenge to ethnic exclusivism — ḥesed transcends ethnic law.</div><div class="source-note">The geographic and ethnic tension is essential to the story's theological argument.</div></div></div><div id="ru1-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Shavuot reading</div><div class="rec-text">Ruth is read at the Feast of Weeks (Shavuot) — the harvest festival — connecting the barley harvest of the story to the giving of Torah at Sinai.</div></div><div class="rec-block"><div class="rec-who">Conversion paradigm</div><div class="rec-text">Ruth's declaration became the model for Jewish proselyte liturgy: the foreigner who chooses Israel's people and God is welcomed into the covenant community.</div></div></div><div id="ru1-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Two Widows, One Decision</span><span class="lit-ref">1:8-18</span><span class="lit-text">Orpah's kiss and return is honourable; Ruth's clinging is extraordinary. The contrast is not condemnation but revelation: Ruth's hesed exceeds what loyalty requires. Where you go I will go is the OT's most complete expression of covenant love between two people.</span></div><div class="lit-row"><span class="lit-label">Naomi's Lament: From Full to Empty</span><span class="lit-ref">1:20-21</span><span class="lit-text">I went out full -- the LORD has brought me back empty. Do not call me Naomi (pleasant); call me Mara (bitter). The lament is theologically precise: Naomi does not attribute her suffering to chance but directly to the LORD. Her theology is intact even while her circumstances are broken.</span></div></div></div><div id="ru1-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('חֶסֶד / Hesed', 'hesed', 'Loyal love / lovingkindness', 'The theological keyword of Ruth, appearing three times (1:8; 2:20; 3:10). Hesed is covenant loyalty that goes beyond legal obligation — love that keeps faith when it has no obligation to. Naomi prays YHWH will show hesed to her daughters-in-law; the book traces how YHWH answers that prayer through Boaz.'), ('שׁוּב / Shuv', 'shuv', 'Return', "The dominant verb of ch.1, appearing twelve times. 'Return' is simultaneously physical (to Bethlehem) and theological (to YHWH's covenant land and people). Naomi's return is the first movement of restoration; Ruth's accompanying return — as a Moabite — is the theological surprise at the chapter's centre.")]</div><div id="ru1-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="ru1-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Date of Ruth: Pre-Exilic or Post-Exilic Composition?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Pre-exilic, possibly Solomonic era</div><div class="db-proponents">Most evangelical scholars (Block, Bush, Hubbard)</div><div class="db-argument">The archaic legal practices described (the sandal-removal ceremony, the kinsman-redeemer institution) fit the pre-monarchic or early monarchic period. The book's positive portrayal of Moabites would be unusual in the post-exilic period (cf. Ezra-Nehemiah's harsh stance). The genealogy ending with David (4:17–22) suggests composition shortly after David's rise.</div></div><div class="db-position"><div class="db-pos-name">Post-exilic, composed as a counter-narrative to Ezra-Nehemiah</div><div class="db-proponents">Many critical scholars (Würthwein, Sasson)</div><div class="db-argument">Ruth's positive portrayal of a Moabite woman and her integration into Israel counters the Ezra-Nehemiah programme of expelling foreign wives. The book is a literary argument for inclusion, composed after Ezra's reforms to challenge their rigidity.</div></div><div class="db-position"><div class="db-pos-name">Persian period, but not as Ezra-Nehemiah polemic</div><div class="db-proponents">Some scholars (Hubbard partial)</div><div class="db-argument">The language shows some late features but the legal customs appear archaic. The book may have been composed or heavily edited in the Persian period without being directly polemical.</div></div></div><div class="db-synthesis">The question remains open. The archaic legal customs, the early genealogy reference, and the book's positive OT theological themes are consistent with pre-exilic composition. The post-exilic polemic reading is possible but requires reading the book as primarily argumentative rather than primarily narrative. Most evangelical scholars prefer a pre-exilic date.</div></div></div><div id="ru1-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Bethlehem','Moab','field','gate','threshing floor'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Ruth','Naomi','Boaz','Orpah','LORD','redeemer','kinsman'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','harvest','night','morning'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kindness','hesed','redeemer','covenant','blessing','LORD','loyal','faithful'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/ruth.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/ruth/Ruth_1.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

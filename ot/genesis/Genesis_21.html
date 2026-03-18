@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Genesis 21 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Genesis</span><span class="nav-chapter">Chapter 21</span></div>
+<div class="nav-arrows"><a href="Genesis_20.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Genesis_22.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Genesis 21</h1>
+<p>The Birth of Isaac; Hagar Expelled; Treaty at Beersheba</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Moses (Moshe ben Amram), c.1526&ndash;1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh's household, educated in "all the wisdom of the Egyptians" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.1445&ndash;1405 BC during the wilderness period, following the Exodus from Egypt. Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT (Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To record God's creation of the world and his covenant relationship with the patriarchs &mdash; Abraham, Isaac, Jacob, and Joseph &mdash; culminating in Israel's formation as a people chosen to carry the promise of blessing to all nations (Gen 12:1&ndash;3). Genesis answers the foundational questions: Who is God? Who are we? What went wrong? What is God doing about it?</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;7 &mdash; The Birth of Isaac</div><span class="verse-text"><span class="verse-num">1</span>Now the Lord was gracious to Sarah as he had said, and the Lord did for Sarah what he had promised.</span><span class="verse-text"><span class="verse-num">2</span>Sarah became pregnant and bore a son to Abraham in his old age, at the very time God had promised him.</span><span class="verse-text"><span class="verse-num">3</span>Abraham gave the name Isaac to the son Sarah bore him.</span><span class="verse-text"><span class="verse-num">4</span>When his son Isaac was eight days old, Abraham circumcised him, as God commanded him.</span><span class="verse-text"><span class="verse-num">5</span>Abraham was a hundred years old when his son Isaac was born to him.</span><span class="verse-text"><span class="verse-num">6</span>Sarah said, "God has brought me laughter, and everyone who hears about this will laugh with me."</span><span class="verse-text"><span class="verse-num">7</span>And she added, "Who would have said to Abraham that Sarah would nurse children? Yet I have borne him a son in his old age."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen21-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen21-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen21-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen21-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen21-s1-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen21-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen21-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen21-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen21-s1-mac')">MacArthur</button></div><div id="gen21-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:1-3</span><p>MacArthur: 'The LORD was gracious to Sarah as he had said, and the LORD did for Sarah what he had promised' -- the double emphasis on the word/promise of the LORD marks Isaac's birth as the fulfilment of a divine commitment, not the result of natural processes. Sarah's conception at 90 is a miracle of sovereign grace.</p></div><div class="com-note"><span class="com-ref">21:6-7</span><p>MacArthur: Sarah's laughter (v.6) is now the laughter of fulfilled joy rather than incredulous doubt (18:12). 'Who would have said to Abraham that Sarah would nurse children?' -- the rhetorical question captures the utter unexpectedness of what God has done. The impossible has happened; the covenant promise is now a nursing child.</p></div></div><div id="gen21-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen21-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen21-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>None</p></div><div id="gen21-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gen 17:17–19</span><span class="ref-text">Abraham laughed when Isaac was first promised — now that laughter is answered with laughter of fulfillment.</span></li><li><span class="ref-cite">Heb 11:11</span><span class="ref-text">Sarah's faith enabled conception — "she considered him faithful who had promised."</span></li><li><span class="ref-cite">Gal 4:28</span><span class="ref-text">Paul: "Now you, brothers, like Isaac, are children of promise" — Christians share Isaac's identity as miracle children of divine fulfillment.</span></li></ul></div><div id="gen21-s1-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:1-7</span><p>The birth of Isaac is the fulfilment of the most repeated promise in the Abraham narrative. Sarna: "'The LORD did for Sarah what he had promised' (v.1) — the emphasis is entirely on divine initiative. The vocabulary deliberately echoes the previous promises: the same verbs (pakad, to visit/act; asah, to do; diber, to speak) that appeared in the promises now appear in the fulfilment. The narrative matches word to word."</p></div><div class="com-note"><span class="com-ref">21:6-7</span><p>Sarah's laughter at Isaac's birth — 'God has brought me laughter' — is the resolution of all the previous laughter. Sarna: "The laughter of incredulity (18:12) is transformed into the laughter of joy (21:6). The same word (tsachaq, laugh) that gave Isaac his name and that Sarah denied having performed now becomes her hymn of praise. The narrative traces a complete arc of unbelief transformed into joy."</p></div></div><div id="gen21-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:2</span><p>The three qualifications — "at the very time God had promised him" — stress the precision of divine fulfilment. Alter: "The birth narrative is extremely sparse — no description of the birth itself, no labour, no midwives. All the weight falls on the theological statement: God did what God said, when God said. The fulfilment is reported as a fact, not dramatised. The drama was in the promise; the fulfilment simply arrives."</p></div><div class="com-note"><span class="com-ref">21:5-7</span><p>Sarah's speech at Isaac's birth reverses her earlier laughing denial. Alter notes the same laughter (tsachaq) she denied in 18:15 she now claims joyfully in 21:6-7 — incredulous laughter has become joyful laughter, and the name of the child encodes both.</p></div></div><div id="gen21-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:1</span><p>The birth of Isaac is the first resurrection in the Bible — not literally, but typologically. Calvin: "The birth of Isaac was, in a manner, a resurrection from the dead (cf. Heb 11:12). The very body of Abraham was already dead with respect to the power of begetting children; the womb of Sarah was also dead. From these two dead bodies God brought forth life."</p></div><div class="com-note"><span class="com-ref">21:4-7</span><p>Calvin: Abraham had been long without a son — now one is given, and he does not delay but circumcises him on the eighth day. The prompt obedience models the covenant response: grace received calls immediately for the covenant sign.</p></div></div><div id="gen21-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:1</span><p>The NET note on "the LORD visited Sarah" (pakad — to attend to, act on behalf of) observes that pakad is the covenantal term of divine action on behalf of the elect (cf. Gen 50:24-25; Exod 3:16; 4:31). The note connects this to the larger biblical pattern of divine visitation as the trigger for covenant fulfilment.</p></div><div class="com-note"><span class="com-ref">21:3-6</span><p>The NET note on Isaac's name discusses the triple wordplay: laughter at the announcement (18:12-15), the promise of the laughing child (17:19), and Sarah's joyful invitation for all to laugh with her (21:6). The name weaves incredulity, promise, and fulfilment into a single arc.</p></div></div></div><div class="section"><div class="section-header">Verses 8&ndash;21 &mdash; Hagar and Ishmael Sent Away</div><span class="verse-text"><span class="verse-num">8</span>The child grew and was weaned, and on the day Isaac was weaned Abraham held a great feast.</span><span class="verse-text"><span class="verse-num">9</span>But Sarah saw that the son whom Hagar the Egyptian had borne to Abraham was mocking,</span><span class="verse-text"><span class="verse-num">10</span>and she said to Abraham, "Get rid of that slave woman and her son, for that woman's son will never share in the inheritance with my son Isaac."</span><span class="verse-text"><span class="verse-num">11</span>The matter distressed Abraham greatly because it concerned his son.</span><span class="verse-text"><span class="verse-num">12</span>But God said to him, "Do not be so distressed about the boy and your slave woman. Listen to whatever Sarah tells you, because it is through Isaac that your offspring will be reckoned.</span><span class="verse-text"><span class="verse-num">13</span>I will make the son of the slave into a nation also, because he is your offspring."</span><span class="verse-text"><span class="verse-num">14</span>Early the next morning Abraham took some food and a skin of water and gave them to Hagar. He set them on her shoulders and then sent her off with the boy. She went on her way and wandered in the Desert of Beersheba.</span><span class="verse-text"><span class="verse-num">15</span>When the water in the skin was gone, she put the boy under one of the bushes.</span><span class="verse-text"><span class="verse-num">16</span>Then she went off and sat down about a bowshot away, for she thought, "I cannot watch the boy die." And as she sat there, she began to sob.</span><span class="verse-text"><span class="verse-num">17</span>God heard the boy crying, and the angel of God called to Hagar from heaven and said to her, "What is the matter, Hagar? Do not be afraid; God has heard the boy crying as he lies there.</span><span class="verse-text"><span class="verse-num">18</span>Lift the boy up and take him by the hand, for I will make him into a great nation."</span><span class="verse-text"><span class="verse-num">19</span>Then God opened her eyes and she saw a well of water. So she went and filled the skin with water and gave the boy a drink.</span><span class="verse-text"><span class="verse-num">20</span>God was with the boy as he grew up. He lived in the desert and became an archer.</span><span class="verse-text"><span class="verse-num">21</span>While he was living in the Desert of Paran, his mother got a wife for him from Egypt.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen21-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen21-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen21-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen21-s2-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen21-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen21-s2-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen21-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen21-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen21-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen21-s2-mac')">MacArthur</button></div><div id="gen21-s2-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Desert of Beersheba</div><div class="poi-coords">Northern Negev desert</div><div class="poi-text">Hagar wanders in the Desert of Beersheba after being expelled. The same semi-arid region where Abraham will make his treaty (v.22-34). The well that appears when her eyes are opened was there before she saw it — providence operates in the same geography as the covenant.</div></div></div>
+<div id="gen21-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:9-11</span><p>MacArthur: Ishmael's mocking (metsacheq -- from the same root as Isaac's name) triggers the crisis. Sarah's demand that Hagar and Ishmael be expelled is harsh but receives divine validation (v.12). Paul interprets the two sons as an allegory of law and grace, bondage and freedom (Gal 4:21-31).</p></div><div class="com-note"><span class="com-ref">21:17-19</span><p>MacArthur: God heard the boy crying -- the specific attention to Ishmael's distress reflects God's care for the child born outside the covenant line. The angel's reassurance, the opened eyes to see the well, the promise of a great nation -- God's covenant with Ishmael (17:20) is honoured even as Isaac receives the primary covenant inheritance.</p></div></div><div id="gen21-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen21-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen21-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The expulsion of Hagar and Ishmael is among the most emotionally painful narratives in Genesis. Sarah's demand is harsh; Abraham is "very displeased" (v.11). Yet God endorses it (v.12) and personally cares for Hagar in the wilderness — opening her eyes to a well. The episode repeats the structure of ch.16: human rejection, divine encounter, divine provision. God's care for Ishmael does not diminish but is expressed differently from his care for Isaac.</p></div><div id="gen21-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gal 4:30</span><span class="ref-text">Paul quotes Sarah's words ("Cast out the slave woman") as a metaphor for the obsolescence of the Mosaic covenant in relation to the new covenant freedom.</span></li><li><span class="ref-cite">Gen 16:13</span><span class="ref-text">Hagar's second divine encounter parallels the first — God sees and hears Ishmael in the wilderness, repeating the "El Roi" (God who sees) dynamic of ch.16.</span></li></ul></div><div id="gen21-s2-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:9-10</span><p>Ishmael "mocking" (metsachaq — piel of tsachaq) at the feast celebrating Isaac's weaning. Sarna: "The verb is significant: Ishmael uses a form of the same root that gives Isaac his name. The 'laughter-son' is being laughed at by the one whose name means 'God hears.' Sarah's response — 'get rid of that slave woman and her son' — is harsh, but Paul's reading (Gal 4:29-30) gives it theological grounding: the bond woman and her son cannot share the inheritance with the free woman's son."</p></div><div class="com-note"><span class="com-ref">21:17-19</span><p>God hears Ishmael's cry — the name Ishmael means 'God hears' — and provides the well. Sarna: "The second Hagar narrative (ch.21) parallels the first (ch.16): Hagar in the wilderness, divine messenger, promise for Ishmael, provision of water. The pattern is deliberate. God's care for Ishmael does not diminish the covenant priority of Isaac; both lines receive divine attention."</p></div></div><div id="gen21-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:15-16</span><p>Hagar places the child under a shrub and sits at a distance, "for she thought 'I cannot watch the boy die.'" Alter: "The maternal grief is unbearable to witness — the mother who cannot watch her child die, placing him at arm's length so she will not have to see the moment. The scene is one of the most emotionally devastating in the entire Abraham narrative."</p></div><div class="com-note"><span class="com-ref">21:17-21</span><p>The divine voice calling to Hagar echoes the divine call to Abraham in moments of crisis. Alter notes that Hagar — an Egyptian slave — is the recipient of a direct divine appearance and a covenant-style promise ('I will make him into a great nation'). The covenant community's boundaries are more porous than its internal narratives suggest.</p></div></div><div id="gen21-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:9-10</span><p>Sarah's demand is harsh, but Calvin defends it: "Although Sarah was carried beyond due bounds by the heat of her anger, yet the substance of the demand was approved by God. The casting out of the bondwoman and her son was necessary for the preservation of the covenant line." The harshness of the means does not negate the validity of the distinction being maintained.</p></div><div class="com-note"><span class="com-ref">21:14-19</span><p>Calvin: The well was there all along — Hagar could not see it. God opens her eyes to what had been present but unseen. This teaches that our extremity is not the absence of divine provision but our own blindness to it.</p></div></div><div id="gen21-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:9</span><p>The NET note on metsachaq (mocking/playing) observes this is a piel stem of the same root tsachaq that gives Isaac his name. The note surveys the range of meaning: laughing at, playing, mocking. The note acknowledges the ambiguity — the action may have been mere play that Sarah interpreted as mockery, or genuine derision. Paul's use in Gal 4:29 reads it as persecution.</p></div><div class="com-note"><span class="com-ref">21:15-19</span><p>The NET note on the water running out discusses the survival timeline: perhaps two or three days without water in the desert. The theology: both Hagar's cry (v.16) and Ishmael's cry (v.17) are heard — the divine response addresses the child's need first, consistent with the promise to his mother in ch.16.</p></div></div></div><div class="section"><div class="section-header">Verses 22&ndash;34 &mdash; The Treaty at Beersheba</div><span class="verse-text"><span class="verse-num">22</span>At that time Abimelek and Phicol the commander of his forces said to Abraham, "God is with you in everything you do.</span><span class="verse-text"><span class="verse-num">23</span>Now swear to me here before God that you will not deal falsely with me or my children or my descendants. Show to me and the country where you now reside as a foreigner the same kindness I have shown to you."</span><span class="verse-text"><span class="verse-num">24</span>Abraham said, "I swear it."</span><span class="verse-text"><span class="verse-num">25</span>Then Abraham complained to Abimelek about a well of water that Abimelek's servants had seized.</span><span class="verse-text"><span class="verse-num">26</span>But Abimelek said, "I don't know who has done this. You did not tell me, and I heard about it only today."</span><span class="verse-text"><span class="verse-num">27</span>So Abraham brought sheep and cattle and gave them to Abimelek, and the two men made a treaty.</span><span class="verse-text"><span class="verse-num">28</span>Abraham set apart seven ewe lambs from the flock,</span><span class="verse-text"><span class="verse-num">29</span>and Abimelek asked Abraham, "What is the meaning of these seven ewe lambs you have set apart by themselves?"</span><span class="verse-text"><span class="verse-num">30</span>He replied, "Accept these seven lambs from my hand as a witness that I dug this well."</span><span class="verse-text"><span class="verse-num">31</span>So that place was called Beersheba, because the two men swore an oath there.</span><span class="verse-text"><span class="verse-num">32</span>After the treaty had been made at Beersheba, Abimelek and Phicol the commander of his forces returned to the land of the Philistines.</span><span class="verse-text"><span class="verse-num">33</span>Abraham planted a tamarisk tree in Beersheba, and there he called on the name of the Lord, the Eternal God.</span><span class="verse-text"><span class="verse-num">34</span>And Abraham stayed in the land of the Philistines for a long time.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'gen21-s3-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'gen21-s3-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'gen21-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger timeline" onclick="tog(this,'gen21-s3-tl')"><span>Timeline</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'gen21-s3-poi')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'gen21-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger sarna" onclick="tog(this,'gen21-s3-sarna')"><span>Sarna</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'gen21-s3-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'gen21-s3-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'gen21-s3-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog('gen21-s3-mac')">MacArthur</button></div><div id="gen21-s3-poi" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Beersheba</div><div class="poi-coords">Southern Canaan; major well site</div><div class="poi-text">Beersheba means either "well of seven" or "well of the oath" — the etymology is preserved in both directions. Abraham plants a tamarisk tree here and calls on the name of the LORD: Beersheba becomes a covenant worship site. It will be the southern anchor of the land ("from Dan to Beersheba").</div></div></div>
+<div id="gen21-s3-tl" class="anno-panel tl-panel"><h4>Timeline</h4><div class="tl-visual"><div class="tl-spine"></div><div class="tl-event"><div class="tl-date">c. 2091 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Abraham called (age 75)</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2066 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Isaac born (Abraham age 100)</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2063 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Hagar and Ishmael sent away</div></div></div>
+<div class="tl-event current"><div class="tl-date">c. 2060 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Treaty at Beersheba — this passage</div><div class="tl-text">Abraham plants a tamarisk tree at Beersheba and calls on the name of the LORD. "Abraham stayed in the land of the Philistines for a long time."</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2029 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Sarah dies; Machpelah purchased</div></div></div>
+<div class="tl-event"><div class="tl-date">c. 2026 BC</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-name">Isaac and Rebekah marry</div></div></div>
+</div><div class="tl-range"><span>c. 2100 BC</span><span>c. 2000 BC</span></div><p class="tl-caption">Traditional OT chronology; dates approximate.</p></div>
+<div id="gen21-s3-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:22-24</span><p>MacArthur: Abimelech's observation -- 'God is with you in everything you do' -- is the pagan king's acknowledgment of the covenant presence. The treaty Abraham makes with Abimelech is the first recorded covenant between the covenant people and a Gentile nation. The covenant man becomes a treaty partner with the nations around him.</p></div><div class="com-note"><span class="com-ref">21:33</span><p>MacArthur: Abraham planted a tamarisk tree at Beersheba and called on the name of the LORD, the Eternal God (El Olam). The divine name El Olam is used here for the first time -- God's eternal, unchanging character is the theological foundation on which the covenant oaths are made. Covenant-keeping requires an eternal God who cannot change.</p></div></div><div id="gen21-s3-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4></div><div id="gen21-s3-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="gen21-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>The expulsion of Hagar and Ishmael is among the most emotionally painful narratives in Genesis. Sarah's demand is harsh; Abraham is "very displeased" (v.11). Yet God endorses it (v.12) and personally cares for Hagar in the wilderness — opening her eyes to a well. The episode repeats the structure of ch.16: human rejection, divine encounter, divine provision. God's care for Ishmael does not diminish but is expressed differently from his care for Isaac.</p></div><div id="gen21-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Gal 4:30</span><span class="ref-text">Paul quotes Sarah's words ("Cast out the slave woman") as a metaphor for the obsolescence of the Mosaic covenant in relation to the new covenant freedom.</span></li><li><span class="ref-cite">Gen 16:13</span><span class="ref-text">Hagar's second divine encounter parallels the first — God sees and hears Ishmael in the wilderness, repeating the "El Roi" (God who sees) dynamic of ch.16.</span></li></ul></div><div id="gen21-s3-sarna" class="anno-panel com-panel com-sarna"><h4>Sarna — JPS Commentary</h4><div class="com-source">Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:22-34</span><p>The treaty at Beersheba with Abimelech is Abraham's first formal legal agreement with the inhabitants of Canaan. Sarna: "The treaty establishes Abraham's legal standing in the land he has been promised but does not yet possess. He is recognised by the regional king as a man of God's favour. The well — the subject of the treaty — becomes the site of worship (v.33) and the place from which Abraham will operate for some time."</p></div><div class="com-note"><span class="com-ref">21:33</span><p>Abraham plants a tamarisk tree and calls on "the LORD, the Eternal God" (El Olam). Sarna: "El Olam — the Eternal God — appears only here and in Isaiah 40:28. The name connects the eternal nature of God to the eternal covenant promise. Abraham plants a tree that will outlive him, in a land he does not yet own, and calls on the God of eternity."</p></div></div><div id="gen21-s3-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">21:22</span><p>Abimelech says to Abraham: "God is with you in everything you do." Alter: "The pagan king's testimony is the clearest possible external validation of divine favour on Abraham. Throughout the Abraham narrative, Abraham's character is often compromised; but the divine favour that surrounds him is consistently visible to outsiders. The covenant blessings have made Abraham recognizable as a man of God even to those outside the covenant."</p></div><div class="com-note"><span class="com-ref">21:30-31</span><p>Beersheba's etymology carries two meanings simultaneously — 'well of seven' (sheva) or 'well of oath' (shvua). Alter notes biblical place-name etymologies typically work at multiple levels without resolving the ambiguity; both meanings are active.</p></div></div><div id="gen21-s3-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:33</span><p>The planting of the tamarisk tree and calling on El Olam: Calvin: "Abraham, having obtained the possession of a well by lawful agreement, offers thanks to God, and calls upon him by a new name. He consecrates this place to the service of God, that it may remain as a monument that God had kept his promise. The eternal God is invoked precisely at the point where the eternal covenant is finding its first geographical foothold in Canaan."</p></div><div class="com-note"><span class="com-ref">21:33</span><p>Calvin: Abraham planted a tree that would endure long after him — the act of a man who believes the promise. He plants for his descendants. The tamarisk tree is the physical sign of faith in the covenant's long-term reality.</p></div></div><div id="gen21-s3-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:33</span><p>The NET note on El Olam ("the Eternal God" or "the Everlasting God") notes this divine title appears only here in Genesis and connects to Isaiah 40:28. The note discusses whether "eternal" refers to God's existence (without beginning or end) or to his covenant faithfulness (everlasting in its commitments). The note favours the latter in this context — Abraham invokes God as the one whose promises are eternally reliable.</p></div><div class="com-note"><span class="com-ref">21:25-31</span><p>The NET note on the Beersheba treaty identifies the formal elements: grievance stated, acknowledgment made, witnesses invoked, oath sworn, gifts exchanged. The ancient Near Eastern treaty form is present in condensed form.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'gen21-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'gen21-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'gen21-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'gen21-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'gen21-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'gen21-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'gen21-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'gen21-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'gen21-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="gen21-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Isaac</div><div class="person-role">Son of Abraham and Sarah; covenant heir</div><div class="person-text">Born at the exact moment God promised. His name embodies the laughter of fulfilled promise. He will be the "only son" whom Abraham will be asked to sacrifice (ch.22), the covenant heir through whom all the promises flow.</div></div><div class="person-card"><div class="person-name">Hagar</div><div class="person-role">Egyptian slave; second divine encounter</div><div class="person-text">Again in the wilderness, again heard by God, again given a promise for her son. This second encounter confirms that Genesis 16 was not an anomaly — God's care for Hagar and Ishmael is consistent and personal.</div></div><div class="person-card"><div class="person-name">Ishmael</div><div class="person-role">Son of Abraham; expelled but blessed</div><div class="person-text">Heard by God in the wilderness ("God heard" = the meaning of his name, vindicated). He will become "a great nation" (v.18). Later he and Isaac will bury their father together (25:9) — a poignant image of the half-brothers' relationship.</div></div></div></div><div id="gen21-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Gen 21 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Now the LORD was gracious to Sarah as he had said, and the LORD did for Sarah what he had promised."</td></tr><tr><td class="t-label">ESV</td><td>"The LORD visited Sarah as he had said, and the LORD did to Sarah as he had promised."</td></tr><tr><td class="t-label">KJV</td><td>"And the LORD visited Sarah as he had said, and the LORD did unto Sarah as he had spoken."</td></tr><tr><td class="t-label">NASB</td><td>"Then the LORD took note of Sarah as He had said, and the LORD did for Sarah as He had promised."</td></tr></table></div><div id="gen21-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Dead Sea Scrolls — Genesis Apocryphon</div><div class="source-quote">The Aramaic paraphrase of Genesis expands on Isaac's birth with additional detail about the joy of the occasion and the fulfillment of the divine promise.</div><div class="source-note"></div></div></div><div id="gen21-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Chrysostom, Homilies on Genesis</div><div class="rec-text">Chrysostom celebrated Isaac's birth as a lesson in patience: God waited until all natural hope was gone so that the miracle would be unmistakable. The delay was pedagogical — teaching Abraham and Sarah to trust in divine power, not human biology.</div></div><div class="rec-block"><div class="rec-who">Paul, Galatians 4:21–31</div><div class="rec-text">Paul's allegory reads Hagar/Ishmael as Sinai/law and Sarah/Isaac as Jerusalem above/Spirit. The expulsion becomes a metaphor for the supersession of law by gospel. The reading has been criticized for its effect on Hagar's reputation, but Paul's concern is covenant typology, not Hagar's character.</div></div></div><div id="gen21-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Isaac: Incredulity Becomes Delight</span><span class="lit-ref">21:1-7</span><span class="lit-text">Sarah's laughter at ninety -- ridicule that becomes delight. The three-part wordplay (tsachaq) runs from incredulity (18:12) through the promised name (17:19) to joyful laughter (21:6). The name Isaac encodes the whole journey.</span></div><div class="lit-row"><span class="lit-label">The Well Appears: Providence Pre-Exists the Crisis</span><span class="lit-ref">21:14-19</span><span class="lit-text">Hagar's eyes are opened to a well that was already there. God's provision pre-exists the crisis; prayer opens eyes to receive what grace has already placed. The water existed before the prayer.</span></div></div></div><div id="gen21-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><p style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#c8c0a0;line-height:1.9;"><span class="verse-num">1</span> <span class="dn-yhwh">The LORD</span> visited <span class="dn-human">Sarah</span> as he had said... <span class="verse-num">3</span> <span class="dn-human">Abraham</span> called the name of his son <span class="dn-human">Isaac</span> [<em>yiṣḥāq</em>: laughter]. <span class="verse-num">17</span> <span class="dn-elohim">God</span> heard [<em>šāmaʿ</em>] the voice of the boy [Ishmael = "God hears"]... "What troubles you, <span class="dn-human">Hagar</span>? Fear not." <span class="verse-num">19</span> <span class="dn-elohim">God</span> opened her eyes, and she saw a well of water.</p></div><div id="gen21-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="gen21-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Hagar's Expulsion: Moral Problem or Providential Design?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Moral problem</div><div class="db-proponents">Trible (Texts of Terror), feminist readings</div><div class="db-argument">The expulsion of Hagar and Ishmael is ethnic cleansing motivated by Sarah's jealousy. Abraham's compliance is morally culpable. The text records without approving.</div></div><div class="db-position"><div class="db-pos-name">Providential design</div><div class="db-proponents">Sarna, Hamilton, Paul in Gal 4</div><div class="db-argument">God explicitly authorises the expulsion (21:12: "listen to whatever Sarah tells you") and provides for Hagar in the wilderness (21:17-19). The separation is not cruelty but covenant necessity — and God cares for both lines.</div></div></div><div class="db-synthesis">Both dimensions are present. God's authorisation and provision for Hagar does not eliminate the narrative's pathos. Abraham's distress (21:11) is genuine; Hagar's suffering is real. The text holds divine sovereignty and human suffering together without resolving the tension.</div></div></div><div id="gen21-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Egypt','Canaan','Goshen','Bethel','Beersheba','Shechem','Hebron','Jordan','Mamre','Haran'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jacob','Joseph','Israel','Pharaoh','Judah','Benjamin','Reuben','Simeon','Isaac','Abraham','Sarah','Rebekah','Rachel','Leah','Laban','Esau'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','year','years','generation','time','age'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','blessing','promise','God','LORD','Israel','faith','fear','firstborn','seed'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/genesis.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/genesis/Genesis_21.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Proverbs 8 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Proverbs</span><span class="nav-chapter">Chapter 8</span></div>
+<div class="nav-arrows"><a href="Proverbs_7.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Proverbs_9.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Proverbs 8</h1>
+<p>Wisdom's Identity; Wisdom at Creation; The Final Invitation</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel's mother (ch.31).</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To transmit the accumulated wisdom of Israel's sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;21 &mdash; Wisdom's Public Address: Character, Value, and Love</div><span class="verse-text"><span class="verse-num">1</span>Does not wisdom call out? Does not understanding raise her voice?</span><span class="verse-text"><span class="verse-num">2</span>At the highest point along the way, where the paths meet, she takes her stand;</span><span class="verse-text"><span class="verse-num">3</span>beside the gate leading into the city, at the entrance, she cries aloud:</span><span class="verse-text"><span class="verse-num">4</span>"To you, O people, I call out; I raise my voice to all mankind.</span><span class="verse-text"><span class="verse-num">5</span>You who are simple, gain prudence; you who are foolish, set your hearts on it.</span><span class="verse-text"><span class="verse-num">6</span>Listen, for I have trustworthy things to say; I open my lips to speak what is right.</span><span class="verse-text"><span class="verse-num">7</span>My mouth speaks what is true, for my lips detest wickedness.</span><span class="verse-text"><span class="verse-num">8</span>All the words of my mouth are just; none of them is crooked or perverse.</span><span class="verse-text"><span class="verse-num">9</span>To the discerning all of them are right; they are upright to those who have found knowledge.</span><span class="verse-text"><span class="verse-num">10</span>Choose my instruction instead of silver, knowledge rather than choice gold,</span><span class="verse-text"><span class="verse-num">11</span>for wisdom is more precious than rubies, and nothing you desire can compare with her.</span><span class="verse-text"><span class="verse-num">12</span>"I, wisdom, dwell together with prudence; I possess knowledge and discretion.</span><span class="verse-text"><span class="verse-num">13</span>To fear the LORD is to hate evil; I hate pride and arrogance, evil behavior and perverse speech.</span><span class="verse-text"><span class="verse-num">14</span>Counsel and sound judgment are mine; I have insight, I have power.</span><span class="verse-text"><span class="verse-num">15</span>By me kings reign and rulers issue decrees that are just;</span><span class="verse-text"><span class="verse-num">16</span>by me princes govern, and nobles—all who rule on earth.</span><span class="verse-text"><span class="verse-num">17</span>I love those who love me, and those who seek me find me.</span><span class="verse-text"><span class="verse-num">18</span>With me are riches and honor, enduring wealth and prosperity.</span><span class="verse-text"><span class="verse-num">19</span>My fruit is better than fine gold; what I yield surpasses choice silver.</span><span class="verse-text"><span class="verse-num">20</span>I walk in the way of righteousness, along the paths of justice,</span><span class="verse-text"><span class="verse-num">21</span>bestowing a rich inheritance on those who love me and making their treasuries full.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr8-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr8-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr8-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr8-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr8-s1-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr8-s1-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr8-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr8-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr8-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">חָכְמָה תָּקְרָא</span> <span class="tlit">ḥokmāh tāqrāʾ</span> — <strong>wisdom calls out</strong>: Unlike the adulteress who lurks and entraps (7:12), Wisdom calls openly at the highest point, the crossroads, the city gate — the most public, accessible places. The contrast is total: Folly operates in darkness and ambush; Wisdom operates in full light and public invitation.</p><p><span class="hebrew-word">בִּי מְלָכִים יִמְלֹכוּ</span> <span class="tlit">bî mĕlākîm yimlōkû</span> — <strong>by me kings reign</strong>: All legitimate governance rests on Wisdom. Kings rule well when they rule by Wisdom; they fail when they abandon it. This is not merely political advice; it is a cosmological claim: the universe is ordered by Wisdom, and all human authority that works is participating in that order.</p></div><div id="pr8-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 8 is the theological summit of Proverbs — Wisdom's autobiography, climaxing in her account of being present at the creation of the universe (vv.22–31). The chapter opens with Wisdom's public address (vv.1–21) before moving to the cosmic claim (vv.22–31) and closing with the final invitation and warning (vv.32–36). The public address of vv.1–21 establishes Wisdom's character (truthful, just, righteous), her value (better than gold, silver, rubies), and her intimacy with those who seek her ("I love those who love me").</p></div><div id="pr8-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"></ul></div><div id="pr8-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:1–3</span><p>Wisdom at the crossroads, the gate, the highest point. She is accessible to everyone. The crossroads is where decisions are made, where paths diverge. Wisdom takes her stand precisely there — at the moment and place of choice. This is where she offers what the adulteress also offers at key moments: but Wisdom's offer leads to life.</p></div><div class="com-note"><span class="com-ref">8:13</span><p>Wisdom defines herself partly negatively: "I hate pride and arrogance, evil behaviour and perverse speech." The moral character of Wisdom is identical to the moral character of the LORD (6:16–19 began with "haughty eyes"). Wisdom is not a neutral technique for success — she is morally shaped by the God who created the world with her.</p></div></div><div id="pr8-s1-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">8:1–11</span><p>Ch.8's opening contrasts with ch.7's seductress: both address passers-by from elevated positions; both use elaborate speech; both offer intimacy and benefit. Alter notes the structural parallel is deliberate — wisdom and folly address the same person from the same physical positions using the same rhetorical forms. The difference is in the content and the destination.</p></div><div class="com-note"><span class="com-ref">8:22–31</span><p>The cosmological hymn in vv.22–31 is the Hebrew Bible's most concentrated statement about the place of wisdom in the creative order. Alter notes the repeated 'I was there' assertions (vv.27–29) create a litany of presence: at the founding of the deep, the marking of the horizon, the setting of the foundations of the earth — wisdom was present as witness or participant at every foundational creative act.</p></div></div><div id="pr8-s1-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">8:1–11</span><p>Wisdom's public address in ch.8 is the book's theological centrepiece. Waltke notes four features that distinguish it from ch.1's address: (a) her character is more fully developed (noble things, right things, v.6); (b) she is worth more than silver, gold, and rubies — a claim that 3:14–15 made but ch.8 grounds in her cosmic origins; (c) she speaks in the first person throughout; (d) her offer is addressed to all humanity, not just Israel. The universality is significant.</p></div><div class="com-note"><span class="com-ref">8:12–21</span><p>The self-description in vv.12–21 identifies wisdom with the classic royal virtues: counsel, sound judgment, understanding, power (v.14). Waltke notes these are the same qualities attributed to the ideal king in Isa 11:2 and to Solomon in 1 Kgs 3:12. Wisdom is not merely personal virtue but the governing principle of all legitimate authority — kings reign by wisdom (v.15).</p></div></div><div id="pr8-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:15–16</span><p>Calvin on kings reigning by wisdom: 'All authority that does not flow from God's wisdom is tyranny, not government. The implication is that any ruler, any judge, any person in authority who acts without wisdom — which is to say, without the fear of the LORD — is acting outside their legitimate authority, however legally constituted.'</p></div><div class="com-note"><span class="com-ref">8:22–25</span><p>Calvin on 'the LORD possessed me at the beginning': 'The Son of God is described here — not the human nature of Christ but the eternal Wisdom which was before the world was made. The same Wisdom that spoke at creation is the Wisdom that became flesh.' Calvin's Christological reading of Prov 8 is a foundational text for his doctrine of the eternal Son.</p></div></div><div id="pr8-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">8:11</span><p>The NET note on 'wisdom is better than rubies' (tova hokhmah mipeniniyim) discusses the rubies/pearls identification (peniyim may mean corals, pearls, or rubies — the exact gem is uncertain) and the comparison formula that is used throughout Proverbs for wisdom's incomparable value. The consistent comparison to precious metals and gems establishes wisdom as the ultimate economic value — the resource that enables the proper use of all other resources.</p></div><div class="com-note"><span class="com-ref">8:22</span><p>The NET note on 'the LORD possessed/created me at the beginning' discusses the crucial qanah debate: does qanah mean 'to possess' (wisdom is an eternal attribute of God) or 'to create' (wisdom is the first created being)? LXX translates ektisen (created). The Arian controversy turned on this verse. Most evangelical scholars follow the 'possessed/begot' reading (Waltke) as more consistent with the book's theology of wisdom as divine attribute.</p></div></div></div><div class="section"><div class="section-header">Verses 22&ndash;36 &mdash; Wisdom at Creation; The Final Invitation</div><span class="verse-text"><span class="verse-num">22</span>The LORD brought me forth as the first of his works, before his deeds of old;</span><span class="verse-text"><span class="verse-num">23</span>I was formed long ages ago, at the very beginning, when the world came to be.</span><span class="verse-text"><span class="verse-num">24</span>When there were no watery depths, I was given birth, when there were no springs overflowing with water;</span><span class="verse-text"><span class="verse-num">25</span>before the mountains were settled in place, before the hills, I was given birth,</span><span class="verse-text"><span class="verse-num">26</span>before he made the world or its fields or any of the dust of the earth.</span><span class="verse-text"><span class="verse-num">27</span>I was there when he set the heavens in place, when he marked out the horizon on the face of the deep,</span><span class="verse-text"><span class="verse-num">28</span>when he established the clouds above and fixed securely the fountains of the deep,</span><span class="verse-text"><span class="verse-num">29</span>when he gave the sea its boundary so the waters would not overstep his command, and when he marked out the foundations of the earth.</span><span class="verse-text"><span class="verse-num">30</span>Then I was constantly at his side. I was filled with delight day after day, rejoicing always in his presence,</span><span class="verse-text"><span class="verse-num">31</span>rejoicing in his whole world and delighting in mankind.</span><span class="verse-text"><span class="verse-num">32</span>Now then, my children, listen to me; blessed are those who keep my ways.</span><span class="verse-text"><span class="verse-num">33</span>Listen to my instruction and be wise; do not disregard it.</span><span class="verse-text"><span class="verse-num">34</span>Blessed is the one who listens to me, watching daily at my doors, waiting at my doorway.</span><span class="verse-text"><span class="verse-num">35</span>For those who find me find life and receive favor from the LORD.</span><span class="verse-text"><span class="verse-num">36</span>But those who fail to find me harm themselves; all who hate me love death."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'pr8-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'pr8-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'pr8-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'pr8-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger alter" onclick="tog(this,'pr8-s2-alter')"><span>Alter</span><span class="chev">&#9660;</span></button><button class="anno-trigger waltke" onclick="tog(this,'pr8-s2-waltke')"><span>Waltke</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'pr8-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'pr8-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button></div><div id="pr8-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">אָמוֹן</span> <span class="tlit">ʾāmôn</span> — <strong>master craftsman / artisan / one brought up</strong>: The most debated word in Proverbs 8. In v.30 ("I was constantly at his side") the Hebrew ʾāmôn can mean: (1) craftsman/master artisan (Wisdom as God's co-worker in creation), (2) ward/nursling (Wisdom as the child God delighted in), or (3) faithful/reliable one. The LXX translated it as "harmozousa" (fitting together) — an artisan image. Most modern translations choose "craftsman" or "at his side." Either reading makes Wisdom's relationship to creation intimate and structural.</p><p><span class="hebrew-word">קָנָה</span> <span class="tlit">qānāh</span> — <strong>brought me forth / possessed / created</strong>: The first verb in v.22 is also debated: qānāh can mean "to possess," "to create," or "to acquire." Arius used the "created" reading to argue Wisdom/Christ was a created being. Athanasius argued against this. The OT context suggests priority and intimacy with God rather than ontological subordination — Wisdom is before all else, the first of God's works.</p></div><div id="pr8-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>None</p></div><div id="pr8-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">John 1:1–3</span><span class="ref-text">"In the beginning was the Word, and the Word was with God... through him all things were made." John's prologue is a deliberate echo of Prov 8:22–31. The Logos who was "with God" in creation mirrors Wisdom who was "constantly at his side" (v.30). The NT identifies personified Wisdom with Christ.</span></li><li><span class="ref-cite">Col 1:15–17</span><span class="ref-text">"The firstborn over all creation... in him all things were created... he is before all things, and in him all things hold together." Paul's Christ hymn maps directly to Wisdom's self-description in ch.8.</span></li><li><span class="ref-cite">1 Cor 1:24</span><span class="ref-text">Christ is "the wisdom of God" — Paul's explicit identification of the personified Wisdom with Jesus.</span></li></ul></div><div id="pr8-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:22–31</span><p>The cosmic autobiography. Wisdom was before the mountains, before the seas, before the dust of the earth. She was present as God laid the foundations of creation. And then: "I was constantly at his side. I was filled with delight day after day, rejoicing always in his presence" (vv.30–31). This is the most intimate language in the book — a picture of Wisdom as the joyful companion of God in creation, delighting in both God and in the world God made. The NT sees this fulfilled in Christ (John 1, Col 1:15–17, 1 Cor 1:24).</p></div><div class="com-note"><span class="com-ref">8:35–36</span><p>The final inversion: "those who find me find life... all who hate me love death." This is not metaphor for a bad outcome; it is an ontological claim. To choose against Wisdom is to choose against the structure of reality. It is to choose death — not as a punishment imposed from outside, but as the inevitable consequence of fighting against the grain of the universe.</p></div></div><div id="pr8-s2-alter" class="anno-panel com-panel com-alter"><h4>Alter — Literary Reading</h4><div class="com-source">Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">8:30–31</span><p>The closing of the creation hymn — wisdom 'rejoicing before him always, rejoicing in his inhabited world and delighting in the children of man' — is one of the Hebrew Bible's most exuberant passages. Alter notes the double 'rejoicing' (meshacheqet) and the delight directed both to God and to humanity: wisdom is not merely cosmic but personal, relational, delighting in the creation it helped fashion.</p></div><div class="com-note"><span class="com-ref">8:32–36</span><p>The final invitation of ch.8 echoes and surpasses ch.1's invitation: the blessing of 'watching daily at my gates' (v.34) is domestic and persistent — not a one-time crisis decision but a daily orientation. Alter notes the dual ending — 'those who find me find life... those who fail to find me injure themselves; all who hate me love death' — is Proverbs' starkest statement of the binary stakes of the wisdom choice.</p></div></div><div id="pr8-s2-waltke" class="anno-panel com-panel com-waltke"><h4>Waltke — NICOT Proverbs</h4><div class="com-source">Bruce K. Waltke, NICOT Commentary on Proverbs (2 vols.) — Scholarly Paraphrase</div><div class="com-note"><span class="com-ref">8:22–31</span><p>The creation wisdom hymn is the theological summit of Proverbs and one of the most debated passages in the entire OT. Waltke argues that Wisdom here is not a separate created being but the personification of God's own wisdom as it was active in creation. The language of 'being brought forth/born' (vv.24–25) is the language of divine begetting applied to an attribute — the Wisdom that was 'beside God' at creation (v.30) is the wisdom of God, not a second divine being.</p></div><div class="com-note"><span class="com-ref">8:30–31</span><p>The word 'amon in v.30 ('beside him as a master craftsman/little child/confidant') is one of the most debated words in Proverbs. Waltke argues for 'master craftsman' (amon = craftsman): Wisdom was God's skilled artisan at creation, delighting in the work. This reading is behind the NT's identification of Christ as the one through whom all things were made (John 1:3; Col 1:16).</p></div></div><div id="pr8-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">8:30</span><p>Calvin on wisdom as 'master craftsman': 'The Son of God, the eternal Wisdom, was the architect of the world — by him all things were made, as John's Gospel declares. To seek wisdom is therefore to seek alignment with the principle by which reality itself is structured. The Christian who pursues wisdom is not pursuing an external virtue but the very nature of the God revealed in Christ.'</p></div><div class="com-note"><span class="com-ref">8:35–36</span><p>Calvin on finding life and loving death: 'To find wisdom is to find life itself — not mere temporal prosperity but the life that comes from relationship with the living God. To reject wisdom is to embrace death — for what is death but the rejection of God who is the source and ground of all life?'</p></div></div><div id="pr8-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">8:30</span><p>The NET note on 'amon (craftsman, little child, or confidant) surveys the three main interpretations: (a) craftsman (amon/uman = artisan) — wisdom was God's skilled worker at creation; (b) little child (amon = nursing/beloved child) — wisdom was cared for by God like a child; (c) confidant (amon = trusted one) — wisdom was God's intimate companion. The note favours 'craftsman' as linguistically strongest, connecting to the John 1 and Col 1 material.</p></div><div class="com-note"><span class="com-ref">8:22</span><p>The NET note on the Arian controversy over 8:22 explains that Arius used the LXX's 'created me' to argue that the Son was a created being. Athanasius responded that even if Wisdom is described as 'created,' this refers to the incarnation (the wisdom of God taking human nature), not the eternal Son's origin. The note explains that the evangelical reading takes 8:22 as personalised divine attribute language rather than literal cosmological history.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'pr8-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'pr8-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'pr8-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'pr8-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'pr8-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'pr8-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'pr8-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'pr8-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'pr8-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="pr8-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Lady Wisdom</div><div class="person-role">Reaches her fullest development here</div><div class="person-text">Present at creation, delighting in God and humanity, issuing the final invitation. The NT identifies her with Christ.</div></div><div class="person-card"><div class="person-name">The LORD</div><div class="person-role">Creator who works with Wisdom</div><div class="person-text">The relationship between God and Wisdom in vv.22–31 is one of the most intimate pictures of God in the OT — daily delight, presence, co-working.</div></div></div></div><div id="pr8-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 8 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Then I was constantly at his side. I was filled with delight day after day, rejoicing always in his presence."</td></tr><tr><td class="t-label">ESV</td><td>"then I was beside him, like a master workman, and I was daily his delight, rejoicing before him always."</td></tr><tr><td class="t-label">Note</td><td>ESV's "master workman" translates ʾāmôn as artisan; NIV's "constantly at his side" is more ambiguous. The key difference: is Wisdom God's co-worker (artisan) or God's beloved child (nursling)? Most likely both ideas are present.</td></tr></table></div><div id="pr8-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Wisdom Christology</div><div class="source-quote">The identification of Lady Wisdom with Christ is one of the most significant hermeneutical moves in NT theology. Justin Martyr, Origen, Athanasius, and Augustine all read Prov 8 as pointing to the pre-existent Christ. John's Logos prologue (John 1:1–14) is the most explicit NT development of this identification.</div><div class="source-note">Prov 8 became the primary OT text for early Christian Wisdom Christology.</div></div><div class="source-block"><div class="source-title">Arian Controversy</div><div class="source-quote">Arius (c.250–336) used Prov 8:22 ("the LORD brought me forth as the first of his works") to argue that the Son was a created being. Athanasius's response established the orthodox position: 'brought forth' describes relationship and priority, not ontological creation. The Council of Nicaea (325 AD) was in part a resolution of competing interpretations of Prov 8.</div><div class="source-note">Prov 8:22 was at the centre of the most important theological controversy in early church history.</div></div></div><div id="pr8-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">John 1:1–14</div><div class="rec-text">The most direct NT use of Prov 8 — the Logos prologue deliberately echoes the Wisdom autobiography. "In the beginning was the Word" mirrors "I was at the very beginning." "Through him all things were made" mirrors "I was there when he set the heavens in place."</div></div><div class="rec-block"><div class="rec-who">Augustine, De Trinitate</div><div class="rec-text">Augustine's extensive reflection on Wisdom in creation (drawing on Prov 8) shaped his understanding of the eternal generation of the Son and the role of wisdom in Trinitarian theology.</div></div></div><div id="pr8-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The creation hymn of Prov 8:22–31 is the Hebrew Bible's most concentrated theology of wisdom's cosmic role. Wisdom was present at every founding creative act; she was beside God as craftsman and delight. The passage is simultaneously a theological claim about God's rationality and a Christological anticipation — the Wisdom who was 'beside God' at creation is the same Wisdom incarnate in Christ.<div class="lit-row"><span class="lit-label">Wisdom's Pre-Creation Presence</span><span class="lit-ref">8:22-31</span><span class="lit-text">I was there when he set the heavens in place. Wisdom's pre-creation presence is the chapter's theological summit: wisdom was not invented for humanity but was the mode of creation itself.</span><div class="lit-row"><span class="lit-label">Wisdom's Pre-Creation Presence</span><span class="lit-ref">8:22-31</span><span class="lit-text">I was there when he set the heavens in place. Wisdom's pre-creation presence is the chapter's theological summit: wisdom was not invented for humanity but was the mode of creation itself.</span></div></div></div><div class="lit-row"><span class="lit-label">Two Women, Same Street Corner: Wisdom and the Seductress — 8:1–11</span><span class="lit-text">Proverbs 8's Lady Wisdom and Proverbs 7's seductress occupy the same literary space: both address passers-by from public elevated positions; both speak at length; both offer intimacy and benefit. The structural parallel is deliberate — wisdom and folly are competing voices making competing offers to the same person. Ch.8 is the answer to ch.7.</span></div></div></div><div id="pr8-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('אָמוֹן / Amon', 'amon', 'Master craftsman / confidant / beloved child', "The most debated word in Proverbs (8:30). Three main interpretations: (a) craftsman/artisan (wisdom as God's skilled worker at creation); (b) nursling/beloved child (wisdom as God's cherished companion); (c) confidant (wisdom as God's intimate). Waltke favours 'craftsman' (amon/uman), connecting to John 1:3 and Col 1:16. The word's ambiguity may be intentional — wisdom is simultaneously skilled craftsman, beloved companion, and delighting presence."), ('קָנָה / Qanah', 'qanah', 'Possessed / acquired / created', "The verb at the center of the Arian controversy (8:22). Can mean 'to possess,' 'to acquire,' or (rarely) 'to create/beget.' The LXX chose 'created' (ektisen); evangelical scholarship generally prefers 'possessed/begot' as more consistent with treating wisdom as eternal divine attribute. The word's semantic range encapsulates the entire debate about wisdom's ontological status.")]</div><div id="pr8-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">8:22</span><span class="tx-issue">Qanah: 'possessed' or 'created'?</span></div><div class="tx-variants">MT: YHWH qanani reshit darko (the LORD possessed/acquired/created me as the beginning of his way). LXX: Kyrios ektisen me archēn hodōn autou (the Lord created me at the beginning of his ways). The Hebrew qanah means both 'to acquire/possess' and occasionally 'to create/beget.' Both meanings are attested in the OT. The Samaritan Pentateuch and Targum preserve qanah without variant.</div><div class="tx-sig">This is the most theologically consequential textual-interpretive question in Proverbs. The LXX 'created' reading fed directly into Arianism; Athanasius's response appealed to the MT 'possessed' reading as evidence that Wisdom (= the Son) is eternal, not created. Evangelical scholarship generally favours 'possessed/begot' (Waltke) as consistent with the book's treatment of wisdom as divine attribute. The incarnation interpretation (Athanasius) is a sophisticated option: even if 'created,' it refers to Christ taking human nature, not the eternal Son's origin.</div></div></div><div id="pr8-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Is the Wisdom of Proverbs 8 the Pre-Existent Christ?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Yes: explicit Christological anticipation</div><div class="db-proponents">Calvin, Waltke, most evangelical scholars</div><div class="db-argument">Prov 8 is the OT's fullest pre-incarnate portrait of the second person of the Trinity. The NT is explicit: John 1:1–3 (In the beginning was the Word... through him all things were made) and Col 1:15–17 (the firstborn of all creation... all things were created through him) develop the cosmic wisdom of Prov 8 into Christology. 'Wisdom' in Prov 8 is not identical to Christ but is the divine attribute that becomes incarnate in Christ.</div></div><div class="db-position"><div class="db-pos-name">A personified divine attribute, not a separate person</div><div class="db-proponents">Most Jewish scholars, some Christian</div><div class="db-argument">Wisdom in Prov 8 is the personification of God's own creative intelligence — a literary and theological device, not a separate divine hypostasis. The NT's appropriation of the language to describe Christ is a legitimate Christian theological development, but it reads back into Proverbs a Trinitarian framework the text does not itself contain.</div></div><div class="db-position"><div class="db-pos-name">The figure points toward but does not constitute Christology</div><div class="db-proponents">Some evangelical scholars</div><div class="db-argument">Prov 8 provides the conceptual and verbal resources that the NT authors used to articulate Christology, without itself being Christology in a strict sense. The passage is a genuine anticipation (type) of what is fulfilled in Christ, not a direct portrait.</div></div></div><div class="db-synthesis">The evangelical consensus is that Prov 8 is the strongest OT Christological anticipation — not a direct prophecy but a theological portrait of the divine Wisdom that becomes incarnate in Jesus. The NT authors (John, Paul, the writer to the Hebrews) treat it exactly this way. The Arian controversy established that 8:22 cannot be read as teaching a created Logos without doing violence to the overall biblical theology of the divine Son.</div></div></div><div id="pr8-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="205.0" y2="120.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="35.0" y2="120.0" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 188.0,120.0 120.0,205.0 52.0,120.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Wisdom as the Principle of Created Order</text><text x="223.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">The Universal Offer of Wisdom</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Christological Anticipation</text><text x="17.0" y="120.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Kings and Rulers Governed by Wisdom</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Proverbs 8 is the book's theological summit. Lady Wisdom's public address reveals her identity: not merely a virtue or a teaching but the cosmic principle present at creation, the divine rationality by which all things were made, now publicly offering herself to all who will seek her. The chapter is simultaneously the OT's fullest portrait of personified wisdom and the richest pre-incarnate Christological anticipation in the Hebrew canon.</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['gate','city','market','field','house','street','court','path','way'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['LORD','king','fool','wise','righteous','wicked','poor','rich','son','wife','neighbour'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','morning','evening','year','life','age','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['wisdom','knowledge','understanding','fear','righteous','wicked','heart','tongue','mouth','honour','pride','humility'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/ot/proverbs.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="ot/proverbs/Proverbs_8.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>
