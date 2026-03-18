@@ -767,7 +767,7 @@ HISTORY_JS = '''<script>
   try {
     var KEY='sdw_recent', MAX=5;
     var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
     var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
     var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
     var label = title + (subtitle ? ' \xb7 ' + subtitle.slice(0,30) : '');
