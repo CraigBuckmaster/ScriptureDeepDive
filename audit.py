@@ -44,6 +44,7 @@ BOOK_ROSTER = [
     ('matthew',  'Matthew',  range(1, 29)),
     ('mark',     'Mark',     range(1, 17)),
     ('luke',     'Luke',     range(1, 25)),
+    ('john',     'John',     range(1, 22)),
 ]
 
 SCHOLAR_KEYS = {
@@ -52,6 +53,9 @@ SCHOLAR_KEYS = {
     'Ruth':     ['hubbard',  'alter', 'calvin', 'netbible'],
     'Proverbs': ['waltke',   'alter', 'calvin', 'netbible'],
     'Matthew':  ['robertson','catena','calvin', 'netbible'],
+    'Mark':     ['marcus',   'catena','calvin', 'netbible'],
+    'Luke':     ['robertson','catena','calvin', 'netbible'],
+    'John':     ['catena',   'calvin'],
 }
 
 def chapter_paths():
@@ -167,6 +171,22 @@ EXPECTED = {
     ('Matthew',17):26,('Matthew',18):35,('Matthew',19):30,('Matthew',20):34,
     ('Matthew',21):46,('Matthew',22):46,('Matthew',23):38,('Matthew',24):51,
     ('Matthew',25):46,('Matthew',26):75,('Matthew',27):66,('Matthew',28):20,
+    ('Mark', 1):45,('Mark', 2):28,('Mark', 3):35,('Mark', 4):41,
+    ('Mark', 5):43,('Mark', 6):56,('Mark', 7):36,('Mark', 8):38,
+    ('Mark', 9):48,('Mark',10):52,('Mark',11):32,('Mark',12):44,
+    ('Mark',13):37,('Mark',14):72,('Mark',15):46,('Mark',16):20,
+    ('Luke', 1):80,('Luke', 2):52,('Luke', 3):38,('Luke', 4):44,
+    ('Luke', 5):39,('Luke', 6):49,('Luke', 7):50,('Luke', 8):56,
+    ('Luke', 9):62,('Luke',10):42,('Luke',11):54,('Luke',12):59,
+    ('Luke',13):35,('Luke',14):35,('Luke',15):32,('Luke',16):31,
+    ('Luke',17):37,('Luke',18):43,('Luke',19):48,('Luke',20):47,
+    ('Luke',21):38,('Luke',22):71,('Luke',23):56,('Luke',24):53,
+    ('John', 1):51,('John', 2):25,('John', 3):36,('John', 4):54,
+    ('John', 5):47,('John', 6):71,('John', 7):53,('John', 8):59,
+    ('John', 9):41,('John',10):42,('John',11):57,('John',12):50,
+    ('John',13):38,('John',14):31,('John',15):27,('John',16):33,
+    ('John',17):26,('John',18):40,('John',19):42,('John',20):31,
+    ('John',21):25,
 }
 
 chapters = chapter_paths()
@@ -222,7 +242,7 @@ for path, book, ch in chapters:
     h1_pos = h.find('<h1>')
     if h1_pos == -1: continue
     after = h[h1_pos:h1_pos+200]
-    p_m = re.search(r'</h1>\s*<p>(.*?)</p>', after)
+    p_m = re.search(r'</h1>\s*<p[^>]*>(.*?)</p>', after)
     if not p_m:
         bad_subtitles.append(f'{book} {ch}: no subtitle <p> found')
     elif p_m.group(1).strip() in (f'{book} {ch}', book, f'{book}'):
