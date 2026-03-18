@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>John 21 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">John</span><span class="nav-chapter">Chapter 21</span></div>
+<div class="nav-arrows"><a href="John_20.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="../../nt/acts/Acts_1.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>John 21</h1>
+<p class="chapter-subtitle">The Risen Jesus Appears and Restores Peter</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">John the son of Zebedee &mdash; fisherman, apostle, and &ldquo;the disciple whom Jesus loved&rdquo; (John 13:23; 19:26; 20:2; 21:7, 20). The fourth Gospel never names its author directly, but the evidence converges on John: (1) The &ldquo;beloved disciple&rdquo; is an eyewitness (19:35; 21:24) present at the Last Supper, the cross, and the empty tomb. (2) Early and unanimous tradition: Irenaeus (c.&thinsp;AD&thinsp;180), Clement of Alexandria, Origen, and Eusebius all identify the author as John the apostle writing from Ephesus in old age. (3) The Gospel’s intimate knowledge of Jerusalem topography (Pool of Bethesda, Pool of Siloam, the Pavement/Gabbatha) is confirmed by archaeology. (4) The eyewitness claim of 19:35 and the closing verse of 21:24 point to direct authorial witness. Liberal scholarship has proposed an anonymous Johannine community or the Elder John of Ephesus; the traditional identification with the apostle remains the best-attested position.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;85&ndash;95, probably from Ephesus, making it the latest of the four Gospels. The Rylands Papyrus (P52, c.&thinsp;AD&thinsp;125) &mdash; the earliest surviving NT manuscript fragment &mdash; contains John 18:31-33, 37-38, confirming the Gospel was in circulation in Egypt by the early second century. A pre-AD&thinsp;70 date has been argued from the Temple language in chs 2, 5, and 10, which reads as description of a standing building; the majority of scholars favour a post-70 date for the final composition. The three Johannine letters and Revelation share vocabulary and theological concerns with the Gospel, suggesting a common Ephesian milieu.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">John states his purpose explicitly &mdash; a rarity in the Gospels: &ldquo;These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name&rdquo; (20:31). The Gospel was written to produce and sustain faith in the person of Jesus as divine Son. It supplements the Synoptics rather than duplicates them: John omits the Baptism, the Transfiguration, the Olivet Discourse, and the institution of the Lord’s Supper as a formal narrative, while providing material found nowhere else &mdash; the wedding at Cana, Nicodemus, the Samaritan woman, the raising of Lazarus, the Farewell Discourse (chs&thinsp;14&ndash;17), and the resurrection appearances to Mary Magdalene and Thomas. Its elevated Christology (&ldquo;In the beginning was the Word&rdquo;) addresses late first-century challenges to the full divinity of Christ and lays the foundation for all subsequent trinitarian theology.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–14 — Appearance at the Sea of Tiberias; The Great Catch</div><span class="verse-text"><span class="verse-num">1</span>Afterward Jesus appeared again to his disciples, by the Sea of Tiberias. It happened this way:</span><span class="verse-text"><span class="verse-num">2</span>Simon Peter, Thomas (also known as Didymus), Nathanael from Cana in Galilee, the sons of Zebedee, and two other disciples were together.</span><span class="verse-text"><span class="verse-num">3</span>"I'm going out to fish," Simon Peter said to them, and they said, "We'll go with you." So they went out and got into the boat, but that night they caught nothing.</span><span class="verse-text"><span class="verse-num">4</span>Early in the morning, Jesus stood on the shore, but the disciples did not realize that it was Jesus.</span><span class="verse-text"><span class="verse-num">5</span>He called out to them, "Friends, haven't you any fish?" "No," they answered.</span><span class="verse-text"><span class="verse-num">6</span>He said, "Throw your net on the right side of the boat and you will find some." When they did, they were unable to haul the net in because of the large number of fish.</span><span class="verse-text"><span class="verse-num">7</span>Then the disciple whom Jesus loved said to Peter, "It is the Lord!" As soon as Simon Peter heard him say, "It is the Lord," he jumped into the water.</span><span class="verse-text"><span class="verse-num">8</span>The other disciples followed in the boat, towing the net full of fish, for they were not far from shore, about a hundred yards.</span><span class="verse-text"><span class="verse-num">9</span>When they landed, they saw a fire of burning coals there with fish on it, and some bread.</span><span class="verse-text"><span class="verse-num">10</span>Jesus said to them, "Bring some of the fish you have just caught."</span><span class="verse-text"><span class="verse-num">11</span>So Simon Peter climbed back into the boat and dragged the net ashore. It was full of large fish, 153, but even with so many the net was not torn.</span><span class="verse-text"><span class="verse-num">12</span>Jesus said to them, "Come and have breakfast." None of the disciples dared ask him, "Who are you?" They knew it was the Lord.</span><span class="verse-text"><span class="verse-num">13</span>Jesus came, took the bread and gave it to them, and did the same with the fish.</span><span class="verse-text"><span class="verse-num">14</span>This was now the third time Jesus appeared to his disciples after he was raised from the dead.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn21-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'jn21-s1-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn21-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn21-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn21-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn21-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn21-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn21-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn21-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">anthrakia</span> <span class="tlit">an-THRAX-ia</span> — <strong>charcoal fire</strong>: John specifies "a fire of burning coals" (anthrakia, v.9) — the same word used for the charcoal fire in the high priest's courtyard where Peter warmed himself as he denied Jesus (18:18). The verbal echo is deliberate: the restoration of Peter (vv.15-19) takes place beside the same kind of fire as the scene of his failure. The charcoal fire is the site of both the denial and the restoration, connecting them as a deliberate act of memory and grace.</p><p><span class="hebrew-word">ischysan autous helkysai</span> <span class="tlit">is-KHY-san au-TOUS hel-KY-sai</span> — <strong>they were not able to haul it in</strong>: The catch of 153 large fish that does not tear the net (v.11) — a net that could not hold the weight but did not break — has generated extensive allegorical interpretation: 153 = all the species of fish known to ancient natural history (Jerome's tradition), or a triangular number (1+2+3...+17=153), or the numerical value of certain Hebrew phrases. More importantly, the unbroken net is a sign of the resurrection community: the net that holds all peoples gathered by the risen Lord does not break.</p></div><div id="jn21-s1-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Sea of Galilee / Sea of Tiberias</div><div class="poi-coords">32.8208° N, 35.5847° E</div><div class="poi-text">The Gospel's final appearance takes place on the same lake where Jesus walked on water (6:19), where Peter and Andrew were called (Matt 4:18-19), and where the disciples spent so much of their time during the Galilean ministry. The return to Galilee after the resurrection is the return to the beginning — the mission is recommissioned from where it started. The north shore of the lake, where Capernaum, Bethsaida, and the traditional site of Peter's restoration (Church of the Primacy of Peter at Tabgha) are located, is the setting for this final chapter.</div></div></div><div id="jn21-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('The Charcoal Fire', "The only two uses of anthrakia (charcoal fire) in the NT are in John 18:18 (Peter's denial) and John 21:9 (the breakfast). The verbal echo is John's most subtle narrative connection. The scene of Peter's restoration is deliberately set beside the same kind of fire as his failure — not accidentally but as Jesus's pastoral genius: the restoration is staged to match the failure in every relevant detail, giving Peter the opportunity to replace the three denials with three affirmations."), ('153 Fish', "The number 153 (v.11) is the only specific number in John's resurrection appearances. Ancient interpreters tried to find symbolic meaning (Jerome: 153 = number of fish species; Augustine: triangular number 1-17; Gregory: perfect number). Modern interpreters are more cautious. What John emphasises is not the number but the two accompanying details: large fish and the net not torn. The size (large) and the intact net together suggest abundance without loss — the mission's full harvest gathered without the breaking of the community.")]</p></div><div id="jn21-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Luke 5:4-7</span><span class="ref-text">The miraculous catch at the beginning of Jesus's ministry — Peter told to cast his nets, an overwhelming catch, Peter's "go away from me, Lord; I am a sinful man!" The Galilee appearance mirrors the call — the mission is being re-commissioned after the resurrection.</span></li><li><span class="ref-cite">Ezek 47:10</span><span class="ref-text">"Fishermen will stand along the shore; from En Gedi to En Eglaim there will be places for spreading nets. The fish will be of many kinds — like the fish of the Mediterranean Sea" — the eschatological fishing scene that the 153-fish catch evokes.</span></li><li><span class="ref-cite">Matt 4:19</span><span class="ref-text">"Come, follow me, and I will send you out to fish for people" — the original call, which the Sea of Galilee appearance recommissions.</span></li></ul></div><div id="jn21-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:3</span><p>"I'm going out to fish" — Peter's return to fishing after the resurrection has been read as despondency (he's given up on the mission), as practical provision (they needed food and income), or simply as not knowing what to do in the interval between resurrection and Pentecost. John does not indicate despondency; the disciples simply go fishing — and the risen Jesus meets them exactly where they are, in a boat, doing what they know.</p></div><div class="com-note"><span class="com-ref">21:6-7</span><p>The beloved disciple recognises Jesus first; Peter acts first. The same pattern as 20:4-6 (the beloved disciple reaches the tomb first; Peter enters first). The disciple who loves most sees most clearly; the man of action is moved by what the loving disciple sees. Together they embody the full response to the risen Lord: perception and passionate action.</p></div><div class="com-note"><span class="com-ref">21:9</span><p>"A fire of burning coals there with fish on it, and some bread" — the risen Jesus has been cooking breakfast for his disciples. This is one of the most domestic scenes in the resurrection narratives: the Lord of creation, risen from the dead, making breakfast on a charcoal fire by the lake. The intimacy of the provision — not a vision, not a theological discourse, but breakfast made with care for specific people he knows are cold and hungry from fishing all night — is the resurrection's most tender detail.</p></div><div class="com-note"><span class="com-ref">21:11-12</span><p>"153 large fish, but the net was not torn... Come and have breakfast" — the impossible abundance (153 large fish in one haul) followed by the simplest possible invitation (breakfast). The miracle and the meal belong together: the missionary abundance and the pastoral intimacy. Jesus provides overwhelmingly and then sits down to share the meal with his disciples.</p></div></div><div id="jn21-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:6</span><p>Calvin uses the net-on-the-right-side command to illustrate the dependence of all fruitful ministry on Christ's direction. The disciples had fished all night without result; a single word from Jesus produces an overwhelming catch. The principle: human effort in ministry — however skilled and diligent — is without fruit until directed by Christ. The productive cast is made on his word, not on the fishermen's experience.</p></div><div class="com-note"><span class="com-ref">21:11</span><p>Calvin resists allegorical readings of 153 but draws the pastoral conclusion from the unbroken net: the church gathered by the gospel does not lose its members through the pressure of numbers. The net that holds 153 large fish without tearing is a sign of the mission's success under Christ's protection — the elect are gathered and none lost (17:12).</p></div></div><div id="jn21-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:11</span><p>153 — the number has generated more commentary than almost any other detail in John. The three main interpretive approaches: (1) The number of known fish species (Jerome, following ancient natural history lists) symbolising the universal mission; (2) The triangular number 17×18/2=153 (Augustine), representing the perfection of law and grace; (3) The actual number of fish caught, recorded precisely because John was present. The last is the simplest and most plausible. The symbolic readings may be secondary meanings John intended to evoke.</p></div><div class="com-note"><span class="com-ref">21:3</span><p>"That night they caught nothing" — the night/nothing contrast with the morning/abundance sets up the appearance: it is only when the risen Jesus speaks that the empty effort becomes fruitful. The pattern mirrors the wedding at Cana ("they have no wine" → abundance), the feeding of five thousand ("only five loaves" → twelve baskets), and the foot-washing ("you do not understand now" → understanding after resurrection).</p></div></div><div id="jn21-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">21:12</span><p>Augustine: "Come and have breakfast. The risen Lord invites them to eat with him. He who fed five thousand from five loaves now provides breakfast for seven disciples from one fire. The same hand that multiplied the loaves breaks the bread again beside the lake. Resurrection does not end the table fellowship; it transforms it."</p></div><div class="com-note"><span class="com-ref">21:9</span><p>Chrysostom: "He had prepared fire, and fish laid on it, and bread. He who said 'I am the bread of life' now bakes bread on a fire. He who turned water into wine now grills fish. The Lord of all things serves his disciples breakfast. What humility! What love! Even after the resurrection, he takes care of their physical needs."</p></div></div></div><div class="section"><div class="section-header">Verses 15–25 — Peter Restored; Peter's Death Foretold; The Author</div><span class="verse-text"><span class="verse-num">15</span>When they had finished eating, Jesus said to Simon Peter, "Simon son of John, do you love me more than these?" "Yes, Lord," he said, "you know that I love you." Jesus said, "Feed my lambs."</span><span class="verse-text"><span class="verse-num">16</span>Again Jesus said, "Simon son of John, do you love me?" He answered, "Yes, Lord, you know that I love you." Jesus said, "Take care of my sheep."</span><span class="verse-text"><span class="verse-num">17</span>The third time he said to him, "Simon son of John, do you love me?" Peter was hurt because Jesus asked him the third time, "Do you love me?" He said, "Lord, you know all things; you know that I love you." Jesus said, "Feed my sheep."</span><span class="verse-text"><span class="verse-num">18</span>"Very truly I tell you, when you were younger you used to dress yourself and go where you wanted; but when you are old you will stretch out your hands, and someone else will dress you and lead you where you do not want to go."</span><span class="verse-text"><span class="verse-num">19</span>Jesus said this to indicate the kind of death by which Peter would glorify God. Then he said to him, "Follow me!"</span><span class="verse-text"><span class="verse-num">20</span>Peter turned and saw that the disciple whom Jesus loved was following them. (This was the one who had leaned back against Jesus at the supper and had asked, "Lord, who is going to betray you?")</span><span class="verse-text"><span class="verse-num">21</span>When Peter saw him, he asked, "Lord, what about him?"</span><span class="verse-text"><span class="verse-num">22</span>Jesus answered, "If I want him to remain alive until I come, what is that to you? You must follow me."</span><span class="verse-text"><span class="verse-num">23</span>Because of this, the saying spread among the believers that this disciple would not die. But Jesus did not say that he would not die; he only said, "If I want him to remain alive until I come, what is that to you?"</span><span class="verse-text"><span class="verse-num">24</span>This is the disciple who testifies to these things and who wrote them down. We know that his testimony is true.</span><span class="verse-text"><span class="verse-num">25</span>Jesus did many other things as well. If every one of them were written down, I suppose that even the whole world would not have room for the books that would be written.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn21-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn21-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn21-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn21-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn21-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn21-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn21-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn21-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">agapas me / philō se</span> <span class="tlit">a-GA-pas me / phi-LO se</span> — <strong>Do you love me? / I love you</strong>: The threefold question and answer (vv.15-17) uses two different Greek verbs: Jesus asks agapas (do you love with self-giving love?) twice; Peter answers philō (I love you with brotherly affection). Jesus asks a third time using philō — meeting Peter at his own level. Interpretations differ: (1) John uses the two words interchangeably throughout his Gospel (a common John stylistic pattern); (2) the shift is deliberate — Jesus finally accepting Peter's more modest word rather than demanding the higher. Either way, three affirmations address three denials.</p><p><span class="hebrew-word">boske / poimaine</span> <span class="tlit">BOS-ke / poi-MAI-ne</span> — <strong>feed (lambs) / tend, shepherd (sheep)</strong>: The three commission formulas vary: "Feed my lambs" (boske arnia, v.15), "Take care of my sheep" (poimaine probata, v.16), "Feed my sheep" (boske probata, v.17). The variation in both verb and noun is deliberate: boske (feed, provide food) and poimaine (shepherd, lead, care for) together encompass the full pastoral office. Both lambs (young, vulnerable) and sheep (mature) are included. The triple commission mirrors and reverses the triple denial.</p></div><div id="jn21-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('The Triple Restoration', 'The three questions are the most explicit pastoral act of restoration in the Gospels. Three denials at a charcoal fire in the courtyard (ch.18) are met by three affirmations at a charcoal fire by the lake (ch.21). Jesus does not refer to the denials; he asks about love, giving Peter the opportunity to replace what he said with what he means. The hurt Peter feels at the third question (v.17) shows that he has understood the connection — the question cuts because it echoes the three-fold failure. The restoration is complete when Jesus commissions Peter to shepherd the flock he had abandoned.'), ("Peter's Martyrdom Predicted", 'Jesus predicts Peter\'s death in v.18-19 — specifically by crucifixion (stretching out the hands) and under compulsion (led where he does not want to go). John\'s editorial comment (v.19: "Jesus said this to indicate the kind of death by which Peter would glorify God") confirms the prediction was fulfilled. Tradition records Peter\'s martyrdom by crucifixion under Nero (c. AD 64-68), reportedly upside down at his own request, which is consistent with "glorifying God" through the same death as his Lord.')]</p></div><div id="jn21-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Luke 22:32</span><span class="ref-text">"I have prayed for you, Simon, that your faith may not fail. And when you have turned back, strengthen your brothers" — Jesus's pre-denial commission to Peter, fulfilled in the post-resurrection restoration.</span></li><li><span class="ref-cite">Matt 16:18-19</span><span class="ref-text">"You are Peter, and on this rock I will build my church" — the original commissioning of Peter that his denial appeared to undo, now renewed.</span></li><li><span class="ref-cite">Acts 2:14-36</span><span class="ref-text">Peter's Pentecost sermon — the fulfilment of "feed my sheep." The shepherd who denied three times is the preacher who brings 3,000 people to faith on the first day.</span></li></ul></div><div id="jn21-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:15-17</span><p>"Simon, son of John, do you love me?" — Jesus uses the pre-call name (Simon) rather than the post-call name (Peter) in all three questions. He is addressing the Peter who denied him, not the Peter who confessed him. The pastoral genius: he does not pretend the failure did not happen; he addresses it at its root (love) and at its foundation (identity). After three affirmations, he will restore the name and the calling: "follow me" (v.19).</p></div><div class="com-note"><span class="com-ref">21:15</span><p>"Do you love me more than these?" — the comparison may be with the other disciples ("more than these disciples love me?") or with the fishing gear and boats ("more than these things?"). If the former, it reminds Peter of his boast ("even if all fall away, I will not," Matt 26:33). If the latter, it asks whether Peter loves Jesus more than the career he has just returned to. Either way, the question goes to the root: is Jesus the supreme love of Peter's life?</p></div><div class="com-note"><span class="com-ref">21:18-19</span><p>"When you are old you will stretch out your hands, and someone else will dress you and lead you where you do not want to go" — the prediction of martyrdom is also a prediction of the manner: "stretch out your hands" is the posture of crucifixion. Then: "Follow me!" The call with which Peter's discipleship began (1:43) is renewed at the end — this time with the knowledge of where following leads. Peter will follow Jesus to his own cross.</p></div><div class="com-note"><span class="com-ref">21:22</span><p>"If I want him to remain alive until I come, what is that to you? You must follow me" — the repeated command strips away comparison. Peter's question about the beloved disciple is not wrong but irrelevant: each disciple has their own path of following. The command is personal and non-comparative: "you must follow me" — not the beloved disciple, not anyone else. The community of the Resurrection is not a community of identical stories but of a single command received and obeyed differently by each.</p></div></div><div id="jn21-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">21:15-17</span><p>Calvin insists that the love Jesus asks for is the foundation of all genuine ministry. The question "do you love me?" before "feed my sheep" establishes the order: the pastor who feeds the flock out of duty or ambition or self-interest is not fulfilling Jesus's commission; only the one who feeds out of love for Jesus is. Ministry that is not an expression of love for Christ is not Christian ministry.</p></div><div class="com-note"><span class="com-ref">21:22</span><p>Calvin uses "what is that to you?" to warn against the sin of spiritual comparison — measuring one's own calling against another's. Each believer has their own path of following. The beloved disciple's path (apparently natural death and long life) is not Peter's path (martyrdom). Neither is superior; both are "follow me." The comparison that diminishes one calling in favour of another is a failure to hear the personal "you must follow me."</p></div></div><div id="jn21-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">21:15-17</span><p>The agapaō/phileō question — whether John uses them interchangeably or distinguishably. Most modern scholars (Carson, Ridderbos, Keener) argue John uses them as synonyms throughout his Gospel (cf. 3:35 and 5:20 use both for the Father's love of the Son). The shift in v.17 to Jesus using phileō may be intentional (meeting Peter at his level) or stylistic variation. The debate has been ongoing for centuries; neither side can be certain.</p></div><div class="com-note"><span class="com-ref">21:24</span><p>"This is the disciple who testifies to these things and who wrote them down. We know that his testimony is true" — the final editorial note identifying the beloved disciple as the author. The "we know" suggests the final chapter (or the book) was edited or attested by a community that knew the author — perhaps the Johannine community at Ephesus. This is consistent with the hypothesis that John the apostle wrote the Gospel and a disciple or community of disciples provided the final edition.</p></div></div><div id="jn21-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">21:15-17</span><p>Augustine: "Three times he denied; three times he confessed. The crowing of the cock woke him to weeping; the three questions of his Shepherd wake him to love. He denied out of fear; he confesses out of love. The restoration is as deliberate as the failure was accidental. Christ does not pass over the wound; he opens it, cleans it, and heals it."</p></div><div class="com-note"><span class="com-ref">21:19</span><p>Chrysostom: "Follow me. The same words with which he first called him at the beginning of the Gospel. After all that has happened — the calling, the walking on water, the confession at Caesarea Philippi, the transfiguration, the boast, the denial, the weeping — the word is the same: follow me. Everything else changes; the call does not."</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'jn21-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'jn21-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'jn21-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'jn21-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'jn21-lit')"><span>Literary Structure</span></button><button class="anno-trigger textual" onclick="tog(this,'jn21-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'jn21-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'jn21-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="jn21-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Peter</div><div class="person-role">Restored and Recommissioned</div><div class="person-text">His trajectory in John: fisherman called (1:42) → confessor ("We believe and know," 6:69) → denier (18:15-27) → restored and commissioned ("Feed my sheep," 21:15-17) → martyr predicted ("stretch out your hands," 21:18). Three denials met by three affirmations; a charcoal fire of failure met by a charcoal fire of restoration. The man who said "even if I have to die with you, I will never disown you" is the man whose death Jesus predicts — and who follows him to it.</div></div><div class="person-card"><div class="person-name">The Beloved Disciple</div><div class="person-role">The Author, Attested by the Community</div><div class="person-text">His final appearance (vv.20-24) reveals his identity as the Gospel's author — "the disciple who testifies to these things and who wrote them down." He follows Jesus (v.20) even as Peter follows Jesus (v.19) — the two paths of discipleship, different in form and outcome, both faithful. The Gospel ends where it began: with a disciple following Jesus, and the author bearing witness.</div></div></div></div><div id="jn21-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">21:15-17, 24</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">agapas/philō (21:15-17)</td><td>NIV: "love/love" (no distinction); KJV: "lovest/love" (no distinction); ESV: "love/love" (no distinction); NRSV: "love/love" (no distinction). All major translations treat them as synonyms in this passage. The distinction is a commentator's debate, not a translator's choice.</td></tr><tr><td class="t-label">egrapse (21:24)</td><td>NIV: "wrote"; KJV: "wrote"; ESV: "wrote"; NRSV: "wrote". All agree. The aorist (wrote, past tense) indicates the Gospel is complete at the time of this note.</td></tr></table></div><div id="jn21-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Luke 5:1-11</div><div class="source-quote">"When Simon Peter saw this, he fell at Jesus' knees and said, 'Go away from me, Lord; I am a sinful man!'"</div><div class="source-note">The miraculous catch at the beginning of Peter's discipleship — mirrored by the miraculous catch at its restoration. The Gospel of John ends where Luke's Gospel begins: beside the Sea of Galilee, a net full of fish, and a call to follow.</div></div><div class="source-block"><div class="source-title">Ezekiel 34:23</div><div class="source-quote">"I will place over them one shepherd, my servant David, and he will tend them; he will tend them and be their shepherd."</div><div class="source-note">The Davidic shepherd promise fulfilled in Jesus commissioning Peter to feed and tend the flock — passing on the shepherd's office to the first under-shepherd.</div></div></div><div id="jn21-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">"Do You Love Me?" — The Question at the Root of Ministry</div><div class="rec-text">John 21:15-17 is the foundational text for Christian pastoral theology. The sequence — "do you love me?" three times, then "feed my sheep" — establishes that ministry is rooted in love for Christ, not competence, ambition, or duty. Every ordination service, every pastoral charge, every commissioning of Christian workers returns to this scene. The question is not "are you qualified?" or "are you experienced?" or even "have you repented?" — it is "do you love me?" The restoration is not conditional on Peter's confessing the denials but on his affirming his love.</div></div><div class="rec-block"><div class="rec-who">The Unbroken Net — 153 Fish — in Mission Theology</div><div class="rec-text">The 153-fish catch with the unbroken net has been a persistent image in Christian mission theology. The interpretation of 153 as all the species of fish (therefore all the nations) was standard from Jerome through the medieval period. Whether or not this was John's intention, the image has generated the claim that the church's mission is universal in scope and that the net that gathers all peoples does not break under the weight of diversity. The Church of the Primacy of Peter at Tabgha on the Sea of Galilee marks the traditional site of the breakfast and Peter's restoration.</div></div></div><div id="jn21-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The charcoal fire at the restoration mirrors the charcoal fire at the denial — John's most deliberate narrative echo. Peter failed beside a charcoal fire; he is restored beside one. The setting is the grace: the risen Jesus chooses the location that will remind Peter of his failure and transform the memory through restoration.</div><div class="lit-center">The structural parallel between the three denials (18:17, 25, 27) and the three commissions (21:15-17) is John's most extended narrative inclusio within the passion and resurrection sequence. The number three is not coincidental — it is the precise number required to address each denial with an affirmation.</div><div class="lit-row"><span class="lit-label">The Gospel's Closing Hyperbole — v.25</span><span class="lit-text">"Even the whole world would not have room for the books that would be written" — the rhetorical flourish that closes the Gospel. John does not claim to have told everything; he claims that what he has told is sufficient for the purpose (20:31). The inexhaustible Jesus exceeds all record; the record that exists is enough.</span><div class="lit-row"><span class="lit-label">Seven / Three Symbolic Numbers</span><span class="lit-text">The chapter's numbers are deliberate: seven disciples (v2), seven as completeness; 153 fish (v11, a number with multiple interpretive traditions — Jerome: sum of 1-17; a gematria for "the Church of God"; a large triangular number); and three questions to Peter (vv.15-17) reversing the three denials of 18:15-27.</span></div><div class="lit-row"><span class="lit-label">Charcoal Fire Inclusio — 18:18 / 21:9</span><span class="lit-text">John is the only evangelist to note that both the denial scene (18:18) and the restoration scene (21:9) involve a charcoal fire (anthrakia — used only here and 18:18 in the NT). The word is rare enough to be unmistakably deliberate, binding Peter's lowest moment and his restoration into a single literary bracket.</span></div></div></div></div><div id="jn21-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">21:15</span><span class="tx-issue">"More than these" — what does "these" refer to?</span></div><div class="tx-variants">"Do you love me more than these?" — the antecedent of "these" (toutōn) is disputed: (1) more than these disciples love me? (2) more than you love these things (boats, fish, fishing life)? NA28 does not resolve the ambiguity; the Greek allows both. The first reading connects to Peter's boast (Matt 26:33); the second connects to the return to fishing in v.3.</div><div class="tx-sig">The boast-comparison reading has the stronger contextual support (Peter had specifically claimed superior commitment). Both readings are legitimate; John may have intended the ambiguity.</div></div><div class="tx-item"><div class="tx-header"><span class="tx-ref">21:25</span><span class="tx-issue">The closing hyperbole</span></div><div class="tx-variants">No textual variant. The statement is authentic to John. It is one of the few clearly hyperbolic statements in the Gospel — used to close with a gesture toward the inexhaustibility of Jesus that no record could capture.</div><div class="tx-sig">The hyperbole is original and deliberate. John is aware of the incompleteness of any record of Jesus — the Gospel he has written is sufficient for its purpose (20:31) but not exhaustive.</div></div></div><div id="jn21-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Is John 21 original to the Gospel or a later addition?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A later addition by the same author or a disciple</div><div class="db-proponents">Many critical scholars (Bultmann, Brown)</div><div class="db-argument">Chapter 20:30-31 reads as a conclusion; chapter 21 is an appendix. The different location (Galilee vs Jerusalem) and the note about the beloved disciple's death rumour (v.23) suggest it was added after the author's death, possibly by the Johannine community. The style is consistent with the rest of the Gospel.</div></div><div class="db-position"><div class="db-pos-name">Original, integral part of the Gospel</div><div class="db-proponents">Carson, Morris, Keener</div><div class="db-argument">No manuscript of John lacks ch.21; it was always part of the Gospel. Chapter 20:30-31 is not a "conclusion" but a purpose statement that can appear at the end of a major section (as Paul puts purpose statements mid-letter). Chapter 21 provides the necessary rehabilitation of Peter and the identification of the author.</div></div><div class="db-position"><div class="db-pos-name">Added by the same author as an epilogue</div><div class="db-proponents">Majority scholarly position</div><div class="db-argument">The style is authentically Johannine; the content (Peter's restoration, author identification) is necessary for the Gospel's completeness. The author added it after the main body was complete, perhaps after the death of the beloved disciple prompted the clarification of v.23.</div></div></div><div class="db-synthesis">The "integral epilogue" position is most widely held: ch.21 is authentically Johannine (same style, same theology, all manuscripts include it) but was added as an epilogue after the main narrative concluded at 20:31. It rounds out the Gospel with the restoration of Peter and the identification of the author.</div></div></div><div id="jn21-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,-1529.0 1518.6,-687.5 1548.1,944.5 120.0,1701.0 -1205.0,885.0 -1131.4,-602.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Restoration</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Commission</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Love</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Following</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mission</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Authorship</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">John 21 is the epilogue that makes the Gospel complete. The miraculous catch recommissions the disciples for mission from the beginning-place (Galilee, by the lake). The breakfast beside the charcoal fire restores Peter from the failure-place (charcoal fire, three denials). The three questions replace the three denials not by erasing them but by overwriting them with love. And the final command — "follow me" — is the same word Jesus spoke when Peter first left his nets by this same lake. The Gospel that began with disciples coming to see where Jesus stays (1:38-39) ends with the command to follow where Jesus leads. The last word of the Gospel is "follow."</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Galilee','Judea','Samaria','Bethany','Cana','Jordan','temple','synagogue','Capernaum'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','Jews','Peter','Thomas','Philip','Mary','Martha','Lazarus','Pilate','Nicodemus','crowd'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','hour','now','today','third day','abide','remain','eternal','before Abraham'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['Word','light','life','love','truth','glory','believe','sent','Father','Son','Spirit','witness','eternal life','sign'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/nt/john.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="nt/john/John_21.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

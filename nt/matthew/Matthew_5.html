@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Matthew 5 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Matthew</span><span class="nav-chapter">Chapter 5</span></div>
+<div class="nav-arrows"><a href="Matthew_4.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Matthew_6.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Matthew 5</h1>
+<p>The Beatitudes; Salt and Light; The Law Fulfilled; The Antitheses</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that "Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could." The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.AD 80&ndash;90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark's Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">To present Jesus of Nazareth as the fulfilment of Israel's entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations ("all this took place to fulfil what was spoken through the prophet") are the theological spine of the work: Israel's Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1&ndash;12 &mdash; The Beatitudes: Kingdom Character</div><span class="verse-text"><span class="verse-num">1</span>Now when Jesus saw the crowds, he went up on a mountainside and sat down. His disciples came to him,</span><span class="verse-text"><span class="verse-num">2</span>and he began to teach them.</span><span class="verse-text"><span class="verse-num">3</span>"Blessed are the poor in spirit, for theirs is the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">4</span>Blessed are those who mourn, for they will be comforted.</span><span class="verse-text"><span class="verse-num">5</span>Blessed are the meek, for they will inherit the earth.</span><span class="verse-text"><span class="verse-num">6</span>Blessed are those who hunger and thirst for righteousness, for they will be filled.</span><span class="verse-text"><span class="verse-num">7</span>Blessed are the merciful, for they will be shown mercy.</span><span class="verse-text"><span class="verse-num">8</span>Blessed are the pure in heart, for they will see God.</span><span class="verse-text"><span class="verse-num">9</span>Blessed are the peacemakers, for they will be called children of God.</span><span class="verse-text"><span class="verse-num">10</span>Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">11</span>"Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me.</span><span class="verse-text"><span class="verse-num">12</span>Rejoice and be glad, because great is your reward in heaven, for in the same way they persecuted the prophets who were before you."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt5-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt5-s1-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt5-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt5-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt5-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt5-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt5-s1-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt5-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt5-s1-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4></div><div id="mt5-s1-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt5-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>The Sermon on the Mount (chs.5–7) is the first of Matthew's five discourses — the new Torah delivered by the new Moses from a mountain (echoing Sinai). The Beatitudes function as the preamble to the sermon: they describe the character of the community Jesus is forming, not a programme for earning kingdom status. The eight Beatitudes are arranged chiastically, with the first and eighth sharing the same promise (kingdom of heaven), and the fourth (hunger and thirst for righteousness) at the centre.</p></div><div id="mt5-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 61:1–3</span><span class="ref-text">The Spirit of the Lord is on me... to proclaim good news to the poor, to bind up the broken-hearted. The Beatitudes echo Isaiah's Servant mission — the poor, the mourning, the meek are the recipients of God's kingdom.</span></li><li><span class="ref-cite">Ps 37:11</span><span class="ref-text">The meek will inherit the earth — the exact language of Beatitude 3. Jesus is citing the Psalter as the portrait of kingdom character.</span></li><li><span class="ref-cite">Matt 23:13–29</span><span class="ref-text">The Seven Woes are the exact inversion of the Eight Beatitudes — blessed/woe, kingdom/condemnation.</span></li></ul></div><div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:1-12</span><p>MacArthur: The Beatitudes describe kingdom citizens as they are, not as they are commanded to be. Blessed are the poor in spirit does not command poverty of spirit but declares that those who are poor in spirit belong to the kingdom. The Beatitudes are descriptions before they are aspirations.</p></div><div class="com-note"><span class="com-ref">5:3-6</span><p>MacArthur: The first four Beatitudes — poor in spirit, mourning, meek, hungering for righteousness — all describe a posture of need. The kingdom belongs to those who know they need it. Spiritual poverty, grief over sin, meekness before God, and desperate hunger for righteousness are the conditions of kingdom receptivity.</p></div></div><div id="mt5-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:3-12</span><p>Calvin: The Beatitudes describe those who are broken before God and in the world. The world counts the poor in spirit unfortunate; Christ calls them blessed. These Beatitudes reverse every worldly valuation of blessedness — they describe the character that is formed by the kingdom's arrival, not the effort that produces admission to it.</p></div><div class="com-note"><span class="com-ref">5:21-22</span><p>Calvin on the first Antithesis: Christ goes beyond the letter to the spirit. The law says do not murder; Christ says do not hate. He does not contradict the law but extends it to its full demand — what the law forbade externally, Christ forbids internally. He is not adding to the law; he is uncovering what it always meant.</p></div></div><div id="mt5-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">5:3-10</span><p>The NET note on the Beatitudes discusses makarios and its relationship to Hebrew ashre (the happiness of the righteous person in Pss 1:1; 32:1). Each Beatitude describes a present character and promises a future reality — the kingdom belongs to the poor in spirit (present) and they shall see God (future).</p></div><div class="com-note"><span class="com-ref">5:17-20</span><p>The NET note on plēroō traces the term through Matthew (1:22; 2:15, 17, 23; 3:15; 4:14) — consistently used for the completion/realisation of OT anticipation. Jesus understands his life as the filling-full of everything the OT pointed toward, including the law's deepest demands.</p></div></div><div id="mt5-s1-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">5:3-12</span><p>Robertson notes that makarios (blessed) in classical Greek described the happy state of the gods — untouched by mortal cares. The Beatitudes apply this word to the poor in spirit, the mourners, the meek — the opposite of the world's candidates for divine happiness. He identifies eight Beatitudes (vv.11-12 expand v.10) describing the character of kingdom citizens, not the conditions for entering.</p></div><div class="com-note"><span class="com-ref">5:17-20</span><p>Robertson observes that 'fulfil' (plērōsai) means to bring to complete expression — Jesus does not cancel the law but brings out its full meaning and demand. The Pharisees' righteousness is inadequate not because it is too rigorous but because it is not rigorous enough at the level of the heart.</p></div></div><div id="mt5-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">5:3-6</span><p>Augustine on the Beatitudes: The poor in spirit are those not puffed up with vain pride. The mourners grieve for sins — their own or others. The meek do not resist injuries but overcome evil with good. The hungry for righteousness love what is just for its own sake. Each Beatitude describes a different dimension of the same life of humility before God.</p></div><div class="com-note"><span class="com-ref">5:17-18</span><p>Chrysostom: He says he came to fulfil the law — not to add to it as if deficient, but to complete it as if unfinished. The law was a seed; the gospel is the fruit. The law pointed forward; the gospel is the arrival of what it pointed to. Not one iota shall pass — the moral law is permanent under its gospel fulfilment.</p></div></div></div><div class="section"><div class="section-header">Verses 13&ndash;20 &mdash; Salt, Light, and the Fulfilment of the Law</div><span class="verse-text"><span class="verse-num">13</span>"You are the salt of the earth. But if the salt loses its saltiness, how can it be made salty again? It is no longer good for anything, except to be thrown out and trampled underfoot.</span><span class="verse-text"><span class="verse-num">14</span>"You are the light of the world. A town built on a hill cannot be hidden.</span><span class="verse-text"><span class="verse-num">15</span>Neither do people light a lamp and put it under a bowl. Instead they put it on its stand, and it gives light to everyone in the house.</span><span class="verse-text"><span class="verse-num">16</span>In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven.</span><span class="verse-text"><span class="verse-num">17</span>"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them.</span><span class="verse-text"><span class="verse-num">18</span>For truly I tell you, until heaven and earth disappear, not the smallest letter, not the least stroke of a pen, will by any means disappear from the Law until everything is accomplished.</span><span class="verse-text"><span class="verse-num">19</span>Therefore anyone who sets aside one of the least of these commands and teaches others accordingly will be called least in the kingdom of heaven, but whoever practices and teaches these commands will be called great in the kingdom of heaven.</span><span class="verse-text"><span class="verse-num">20</span>For I tell you that unless your righteousness surpasses that of the Pharisees and teachers of the law, you will certainly not enter the kingdom of heaven."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt5-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt5-s2-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt5-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt5-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'mt5-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'mt5-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog(this,'mt5-s2-robertson')"><span>Robertson</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'mt5-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="mt5-s2-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4></div><div id="mt5-s2-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt5-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>Vv.13–16 apply the Beatitudes to the community's social function: salt preserving, light illuminating. Both metaphors describe the kingdom community as functioning for the sake of the world, not merely for itself. Vv.17–20 establish the relationship between Jesus and Torah: fulfilment, not abolition. The startling claim of v.20 — surpassing Pharisaic righteousness — sets up the six antitheses that follow by asking: what does a deeper righteousness look like in practice?</p></div><div id="mt5-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 42:6; 49:6</span><span class="ref-text">A light for the Gentiles — the Servant's calling applied to Jesus's community. The "light of the world" metaphor connects the disciples' calling to the Servant's mission.</span></li><li><span class="ref-cite">Deut 4:2</span><span class="ref-text">Do not add to or subtract from what I command you. Jesus's statement about the Law's permanence echoes Deuteronomy's same insistence on Torah's integrity.</span></li></ul></div><div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:13-20</span><p>MacArthur: You are the salt of the earth; you are the light of the world — both statements are indicative, not imperative. Jesus does not say become salt and light but you are. The kingdom community's function is being, and being faithfully leads naturally to the influence the metaphors describe.</p></div><div class="com-note"><span class="com-ref">5:17-18</span><p>MacArthur: Do not think I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them. The fulfillment is not mere compliance but completion — Jesus brings the law to its intended fullness. The Sermon on the Mount is not a new law but the law read at maximum depth.</p></div></div><div id="mt5-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:38-42</span><p>Calvin on the non-resistance passages: Christ is not establishing civil law or governing society. He is governing the disposition of the Christian's heart. The magistrate must use the sword; the soldier must fight. But in personal relationships the Christian's spirit is to absorb injury rather than retaliate. Institutional and personal are distinct spheres.</p></div><div class="com-note"><span class="com-ref">5:43-48</span><p>Calvin on 'be perfect as your heavenly Father is perfect': This perfection is not sinless perfection — none achieve it in this life. It is the perfection of the will's direction: the heart wholly oriented toward God and neighbour rather than self. The standard governs the present as the goal the sanctified life moves toward.</p></div></div><div id="mt5-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">5:38-48</span><p>The NET note on 'you have heard... but I say' discusses whether Jesus corrects misunderstanding of the OT or extends its own demands. The antitheses deepen rather than contradict: the OT's external prohibitions always implied internal demands (do not murder implies do not hate). Jesus makes the implication explicit.</p></div><div class="com-note"><span class="com-ref">5:48</span><p>The NET note on teleios (perfect/complete) traces its LXX usage for the wholeness/integrity of the covenant person (Gen 6:9 — Noah was blameless/complete). It identifies qualitative completeness — the total orientation of the whole person toward God — not sinless moral perfection.</p></div></div><div id="mt5-s2-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson — Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament — Public Domain</div><div class="com-note"><span class="com-ref">5:38-42</span><p>Robertson identifies the six Antitheses as Jesus' authoritative interpretation of Torah. The authority formula 'but I say to you' (egō de legō hymin) has no parallel in rabbinic literature — rabbis always argued from precedent. Jesus speaks in his own name with the authority of the covenant lawgiver.</p></div><div class="com-note"><span class="com-ref">5:43-48</span><p>Robertson notes 'love your enemies' has no precise OT citation — no text says 'hate your enemy,' though the culture of exclusion had developed this implication from nationalist readings. The command to perfection is the section's summary: the standard is the character of God, not legal minimums.</p></div></div><div id="mt5-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">5:38-42</span><p>Chrysostom on turning the other cheek: This is not cowardice — it is the strength of the person who does not need to defend their honour because their honour rests with God, not human opinion. The non-retaliating disciple is free from the tyranny of requiring vindication from other people.</p></div><div class="com-note"><span class="com-ref">5:43-48</span><p>Augustine: Be perfect as your Father in heaven is perfect — not to love only those who love us is the minimum; to love enemies is the maximum. The Father sends rain on just and unjust alike — his love is not conditioned on response. To love this way is to participate in the divine character.</p></div></div></div><div class="section"><div class="section-header">Verses 21&ndash;48 &mdash; The Six Antitheses: You Have Heard... But I Say</div><span class="verse-text"><span class="verse-num">21</span>"You have heard that it was said to the people long ago, 'Do not murder, and anyone who murders will be subject to judgment.'</span><span class="verse-text"><span class="verse-num">22</span>But I tell you that anyone who is angry with a brother or sister will be subject to judgment. Again, anyone who says to a brother or sister, 'Raca,' is answerable to the court. And anyone who says, 'You fool!' will be in danger of the fire of hell.</span><span class="verse-text"><span class="verse-num">23</span>"Therefore, if you are offering your gift at the altar and there remember that your brother or sister has something against you,</span><span class="verse-text"><span class="verse-num">24</span>leave your gift there in front of the altar. First go and be reconciled to that person; then come and offer your gift.</span><span class="verse-text"><span class="verse-num">25</span>"Settle matters quickly with your adversary who is taking you to court. Do it while you are still together on the way, because your adversary may hand you over to the judge, and the judge may hand you over to the officer, and you may be thrown into prison.</span><span class="verse-text"><span class="verse-num">26</span>Truly I tell you, you will not get out until you have paid the last penny.</span><span class="verse-text"><span class="verse-num">27</span>"You have heard that it was said, 'Do not commit adultery.'</span><span class="verse-text"><span class="verse-num">28</span>But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.</span><span class="verse-text"><span class="verse-num">29</span>If your right eye causes you to stumble, gouge it out and throw it away. It is better for you to lose one part of your body than for your whole body to be thrown into hell.</span><span class="verse-text"><span class="verse-num">30</span>And if your right hand causes you to stumble, cut it off and throw it away. It is better for you to lose one part of your body than for your whole body to go into hell.</span><span class="verse-text"><span class="verse-num">31</span>"It has been said, 'Anyone who divorces his wife must give her a certificate of divorce.'</span><span class="verse-text"><span class="verse-num">32</span>But I tell you that anyone who divorces his wife, except for sexual immorality, makes her commit adultery, and anyone who marries the divorced woman commits adultery.</span><span class="verse-text"><span class="verse-num">33</span>"Again, you have heard that it was said to the people long ago, 'Do not break your oath, but fulfill to the Lord the vows you have made.'</span><span class="verse-text"><span class="verse-num">34</span>But I tell you, do not swear an oath at all: either by heaven, for it is God's throne;</span><span class="verse-text"><span class="verse-num">35</span>or by the earth, for it is his footstool; or by Jerusalem, for it is the city of the Great King.</span><span class="verse-text"><span class="verse-num">36</span>And do not swear by your head, for you cannot make even one hair white or black.</span><span class="verse-text"><span class="verse-num">37</span>All you need to say is simply 'Yes' or 'No'; anything beyond this comes from the evil one.</span><span class="verse-text"><span class="verse-num">38</span>"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.'</span><span class="verse-text"><span class="verse-num">39</span>But I tell you, do not resist an evil person. If anyone slaps you on the right cheek, turn to them the other cheek also.</span><span class="verse-text"><span class="verse-num">40</span>And if anyone wants to sue you and take your shirt, hand over your coat as well.</span><span class="verse-text"><span class="verse-num">41</span>If anyone forces you to go one mile, go with them two miles.</span><span class="verse-text"><span class="verse-num">42</span>Give to the one who asks you, and do not turn away from the one who wants to borrow from you.</span><span class="verse-text"><span class="verse-num">43</span>"You have heard that it was said, 'Love your neighbor and hate your enemy.'</span><span class="verse-text"><span class="verse-num">44</span>But I tell you, love your enemies and pray for those who persecute you,</span><span class="verse-text"><span class="verse-num">45</span>that you may be children of your Father in heaven. He causes his sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.</span><span class="verse-text"><span class="verse-num">46</span>If you love those who love you, what reward will you get? Are not even the tax collectors doing that?</span><span class="verse-text"><span class="verse-num">47</span>And if you greet only your own people, what are you doing more than others? Do not even pagans do that?</span><span class="verse-text"><span class="verse-num">48</span>Be perfect, therefore, as your heavenly Father is perfect."</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'mt5-s3-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger history" onclick="tog(this,'mt5-s3-hist')"><span>History</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'mt5-s3-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'mt5-s3-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger robertson" onclick="tog('mt5-s3-robertson')">Robertson</button><button class="anno-trigger catena" onclick="tog('mt5-s3-catena')">Catena Aurea</button><button class="anno-trigger calvin" onclick="tog('mt5-s3-calvin')">Calvin</button><button class="anno-trigger netbible" onclick="tog('mt5-s3-netbible')">NET Notes</button></div><div class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible -- Faithful Paraphrase</div><div class="com-note"><span class="com-ref">5:21-48</span><p>MacArthur: The six antitheses (you have heard... but I say) do not contradict the OT but penetrate beneath its surface to the heart-level demand. Murder begins with anger; adultery begins with lust; oath-breaking begins with the habit of deception. Jesus's ethic is not stricter legislation but the exposure of the interior reality legislation could only address externally.</p></div><div class="com-note"><span class="com-ref">5:48</span><p>MacArthur: Be perfect, therefore, as your heavenly Father is perfect. The command is not a counsel of perfectionism but the declaration of the standard that defines the direction. The heavenly Father is the measure; the disciple moves toward that measure. Perfect (teleios) means complete, mature, whole — not flawless performance.</p></div></div><div id="mt5-s3-robertson" class="anno-panel com-panel com-robertson"><h4>Robertson -- Word Pictures</h4><div class="com-source">A.T. Robertson, Word Pictures in the New Testament -- Public Domain</div><div class="com-note"><span class="com-ref">5:21-48</span><p>Robertson on the antitheses structure: you have heard... but I say to you. Robertson notes that Jesus does not quote Moses and then agree with him; he quotes the tradition's reading of Moses and then deepens or corrects it. The authority claim is Christological: I say to you has no parallel in rabbinic teaching.</p></div><div class="com-note"><span class="com-ref">5:43-48</span><p>Robertson on love your enemies (v.44): the command to love enemies is uniquely Christian and uniquely demanding. Robertson traces the Greek agapate (love with agape, covenant love) as distinct from the natural affection that even pagans show to friends. The imitation-of-the-Father ground (v.45) is the command's theological foundation.</p></div></div><div id="mt5-s3-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea -- Catena Aurea</h4><div class="com-source">Thomas Aquinas, Catena Aurea (Golden Chain) -- Public Domain</div><div class="com-note"><span class="com-ref">5:21-26</span><p>The Catena records Chrysostom's treatment of the first antithesis (murder/anger): the law prohibited the act; Jesus prohibits the inner state that produces it. Chrysostom: anger is the seed of murder; by addressing the root, Christ heals what the law could only punish at the fruit.</p></div><div class="com-note"><span class="com-ref">5:43-48</span><p>The Catena traces the patristic development of love your enemies as the summary of Christian ethics. Chrysostom: love for enemies is the distinguishing mark of the Christian community -- any group loves its friends. The imitation of the Father (v.45) makes enemy-love a participation in divine perfection.</p></div></div><div id="mt5-s3-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin -- Commentary</h4><div class="com-source">John Calvin, Commentary on the Harmony of the Evangelists -- Public Domain</div><div class="com-note"><span class="com-ref">5:21-48</span><p>Calvin on the antitheses: Christ is not abolishing the law but exposing the Pharisees' superficial reading of it. The law always required the inner disposition; the tradition had reduced it to external compliance. Christ restores the law's full demand.</p></div><div class="com-note"><span class="com-ref">5:44-48</span><p>Calvin on be perfect as your heavenly Father is perfect (v.48): this is not a command to sinless perfection but to the completeness of covenant love that the Father shows. The Father's perfection is his comprehensive love -- love extended even to enemies. That completeness is the standard.</p></div></div><div id="mt5-s3-netbible" class="anno-panel com-panel com-netbible"><h4>NET Notes -- Commentary</h4><div class="com-source">NET Bible Notes -- Scripture quotations marked (NET) are from the NET Bible</div><div class="com-note"><span class="com-ref">5:21-48</span><p>The NET note on the antithesis formula (you have heard... but I say) discusses whether Jesus is contrasting his teaching with Moses or with the Pharisaic interpretation of Moses. The note traces the scholarly debate and concludes that Jesus is deepening and radicalising the law, not replacing it.</p></div><div class="com-note"><span class="com-ref">5:45-48</span><p>The NET note on be perfect (teleios, v.48) discusses the semantic range: complete, mature, whole, fully developed. The note traces the parallel in Luke 6:36 (be merciful) and identifies the Matthean perfection as covenant completeness -- the love that holds nothing back.</p></div></div><div id="mt5-s3-grk" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4></div><div id="mt5-s3-hist" class="anno-panel hist"><h4>Historical Context</h4><p>None</p></div><div id="mt5-s3-ctx" class="anno-panel ctx"><h4>Context</h4><p>The six antitheses (vv.21–48) are the demonstration of what "surpassing righteousness" (v.20) and "fulfilment" (v.17) look like in practice. Each follows the pattern: "You have heard... but I say." The pairs are: murder/anger, adultery/lust, divorce, oaths, retaliation/non-resistance, neighbour love/enemy love. The progression moves from the visible act to the invisible intention, and from the management of harm to the active creation of good.</p></div><div id="mt5-s3-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Lev 19:17–18</span><span class="ref-text">Do not hate your brother in your heart... love your neighbour. Jesus's antithesis on anger extends Leviticus's own inward dimension of the command.</span></li><li><span class="ref-cite">Lev 19:2</span><span class="ref-text">Be holy because I, the LORD your God, am holy. The command to be perfect as God is perfect (v.48) echoes the Holiness Code's foundational imperative.</span></li></ul></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'mt5-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'mt5-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'mt5-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'mt5-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'mt5-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'mt5-hebtext')"><span>Greek-Rooted Reading</span></button><button class="anno-trigger textual" onclick="tog(this,'mt5-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'mt5-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'mt5-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="mt5-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Jesus</div><div class="person-role">New Moses; teacher on the mountain</div><div class="person-text">Teaches with authority (7:29) — his own authority, not citing tradition. The Sermon is simultaneously Torah and its fulfilment.</div></div><div class="person-card"><div class="person-name">The disciples</div><div class="person-role">Primary audience</div><div class="person-text">Seated at his feet on the mountain — the posture of Torah students before their rabbi.</div></div></div></div><div id="mt5-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Matt 5 — Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them."</td></tr><tr><td class="t-label">Note</td><td>Plēroō — the same word used for OT fulfilment throughout Matthew. Jesus does not set aside Torah; he brings it to its complete intended meaning, driving to the heart-level intention behind every commandment.</td></tr></table></div><div id="mt5-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">The Sermon on the Mount</div><div class="source-quote">Chs.5–7 are Matthew's first great discourse — the new Torah given on a mountain by the new Moses. The five discourses of Matthew (chs.5–7, 10, 13, 18, 23–25) mirror the five books of Moses.</div><div class="source-note">The structural parallel to the Pentateuch is deliberate.</div></div><div class="source-block"><div class="source-title">Antithesis structure</div><div class="source-quote">You have heard... but I say. This formula was used by rabbis to contrast opinions. Jesus uses his own authority ("I say") rather than citing tradition ("Rabbi X says"), which explains the crowds' astonishment in 7:29.</div><div class="source-note">The authority claim is the most radical feature of the antitheses.</div></div></div><div id="mt5-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">The Sermon in church history</div><div class="rec-text">The most commented-upon passage in the NT. Augustine's "Our Lord's Sermon on the Mount" (c.AD 395) established the pattern of reading it as a moral charter. Luther read it as a mirror to show sin; Bonhoeffer (Cost of Discipleship) read it as a literal call.</div></div><div class="rec-block"><div class="rec-who">The Beatitudes and the Psalms</div><div class="rec-text">The Beatitudes are saturated with Psalm language — Ps 37 (meek inherit the earth), Ps 24:3–6 (pure in heart see God), Ps 51 (mourning). The Sermon is a new Psalter for the new covenant community.</div></div></div><div id="mt5-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">The Beatitudes describe the character of kingdom citizens, not conditions for entry. The world considers these people unfortunate; Jesus calls them blessed. The character is formed by the kingdom's arrival.<div class="lit-row"><span class="lit-label">The Beatitudes: Kingdom Character in Eight Portraits</span><span class="lit-ref">5:3-12</span><span class="lit-text">Blessed are the poor in spirit... the mourning... the meek. The eight Beatitudes are not eight commandments but eight character portraits. They describe what kingdom citizens look like, not what they must achieve.</span><div class="lit-row"><span class="lit-label">The Beatitudes: Kingdom Character in Eight Portraits</span><span class="lit-ref">5:3-12</span><span class="lit-text">Blessed are the poor in spirit... the mourning... the meek. The eight Beatitudes are not eight commandments but eight character portraits. They describe what kingdom citizens look like, not what they must achieve.</span></div></div></div><div class="lit-row"><span class="lit-label">The Antitheses: The Law's Full Demand — 5:21-48</span><span class="lit-text">You have heard... but I say: six times Jesus moves from external prohibition to the internal reality it implies. The standard is not legal minimalism but the character of God himself: be perfect as your Father is perfect.</span></div></div></div><div id="mt5-hebtext" class="anno-panel heb-text-panel"><h4>Greek-Rooted Reading</h4>[('μακάριος / Makarios', 'makarios', 'Blessed / happy', "In classical Greek, the happiness of the gods. In the Beatitudes, applied to the poor in spirit, mourners, meek — the world's opposite of divine happiness. The Beatitudes turn every worldly valuation upside down."), ('πληρόω / Plēroō', 'plēroō', 'Fulfil / fill full', "Matthew's key word for Jesus's relationship to the OT. To fulfil is to bring to complete expression what was partial, to realise what was anticipated. Jesus does not replace the OT; he is what it was pointing toward.")]</div><div id="mt5-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">5:5</span><span class="tx-issue">'Blessed are the meek, for they will inherit the earth' (Ps 37:11)</span></div><div class="tx-variants">MT Ps 37:11: vaanivim yirshu eretz. Exact LXX quotation in Matthew 5:5.</div><div class="tx-sig">The Ps 37 context contrasts the wicked who flourish temporarily with the meek who wait for YHWH and will inherit the land permanently. Jesus quotes the psalm's conclusion as a Beatitude — covenant land promise becomes eschatological new creation promise for kingdom citizens.</div></div></div><div id="mt5-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Antitheses: Contradiction or Deepening of Torah?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Deepening and completing — not contradicting</div><div class="db-proponents">Most evangelical commentators</div><div class="db-argument">Jesus brings out the fullest meaning of the OT. The six antitheses uncover internal demands that external commands always implied.</div></div><div class="db-position"><div class="db-pos-name">Some antitheses represent genuine modification</div><div class="db-proponents">Some NT scholars</div><div class="db-argument">The divorce and oath antitheses represent genuine modifications of Mosaic permission (Deut 24:1-4; Num 30) rather than mere deepening.</div></div></div><div class="db-synthesis">The majority reading is most consistent with 5:17-19. Where Jesus appears to modify Mosaic law (divorce, oaths), he is restoring the creation intention that the Mosaic accommodation temporarily relaxed — going behind Moses to the Creator's original design.</div></div></div><div id="mt5-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,35.0 178.9,154.0 46.4,162.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Beatitudes: Reversal of Values</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Salt and Light: Kingdom Visibility</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Antitheses: Heart-Level Demand</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Matthew 5 opens the Sermon on the Mount with the Beatitudes' comprehensive character description and the Antitheses' comprehensive demand. The governing principle: fulfilment means the law's full internal demand, not its external minimum. The standard is the character of God himself.</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Bethany','Gethsemane','Golgotha','temple','Mount of Olives','Galilee','Capernaum','Nazareth','Jordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','chief priests','Pilate','Judas','Peter','scribes','crowd','elders','John'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','third day','hour','age','coming','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['kingdom','covenant','blood','resurrection','Son of Man','Son of God','authority','judgment','forgive','fulfil','law','gospel'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/nt/matthew.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+
+<script>window.QNAV_CURRENT="nt/matthew/Matthew_5.html";</script>
+<script src="../../qnav.js"></script>
+</body></html>

@@ -1589,8 +1589,8 @@ def update_homepage():
     # Report
     total_live = sum(
         len([ch for ch in range(1, total+1)
-             if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')])
-        for book_dir, book_name, total, *_ in REGISTRY
+             if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html')])
+        for book_dir, book_name, total, _, _, test_dir in REGISTRY
     )
     print(f'index.html updated — {total_live} live chapters across {len(REGISTRY)} books')
     return total_live
