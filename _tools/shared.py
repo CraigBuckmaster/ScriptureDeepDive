@@ -1311,7 +1311,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     sec_count = sections_html.count('<div class="section">')
     if sec_count < 2:
         raise ValueError(f"{book_name} {ch}: only {sec_count} section(s) — need at least 2.")
-    out_dir = f'/home/claude/ScriptureDeepDive/{book_dir}'
+    out_dir = f'{_REPO}/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
     # Guard against None from _bootstrap() in case a script wasn't found
     _tog      = TOG_JS       or ''

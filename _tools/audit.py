@@ -18,7 +18,7 @@ Issue history this file was written to catch:
 
 import re, os, sys
 
-REPO = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PASS  = '\033[92m✓\033[0m'
 FAIL  = '\033[91m✗\033[0m'

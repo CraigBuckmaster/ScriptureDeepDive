@@ -2,9 +2,11 @@
 inject_tx_db.py  —  Surgical injector for Textual Notes and Scholarly Debates panels.
 Uses depth-counting HTML extraction (not regex) for safe removal of existing panels.
 """
-import re, sys
-sys.path.insert(0, '/home/claude/ScriptureDeepDive')
-exec(open('/home/claude/ScriptureDeepDive/shared.py').read())
+import re, sys, os
+_TOOLS = os.path.dirname(os.path.abspath(__file__))
+_REPO  = os.path.dirname(_TOOLS)
+sys.path.insert(0, _TOOLS)
+exec(open(os.path.join(_TOOLS, 'shared.py')).read())
 
 def _cid_from_path(path):
     import os
@@ -81,7 +83,7 @@ def inject(path, textual_data=None, debate_data=None):
     print(f'  {cid}: {", ".join(panels) or "nothing"}')
 
 def inject_book(book, ch, textual_data, debate_data):
-    repo = '/home/claude/ScriptureDeepDive'
+    repo = _REPO
     path = f'{repo}/{book}/{book.capitalize()}_{ch}.html'
     inject(path, textual_data, debate_data)
 
