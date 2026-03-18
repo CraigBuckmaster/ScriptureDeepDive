@@ -321,13 +321,65 @@ body {
   color: var(--gold-dim);
   font-family: 'Source Sans 3', sans-serif;
 }
-.bio-family {
-  padding: 0 1.2rem .8rem;
-  font-size: .82rem;
-  color: var(--text-dim);
-  line-height: 1.6;
+.bio-family-block {
+  margin: 0 1.2rem .9rem;
+  padding: .65rem .8rem;
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
 }
-.bio-family span { color: var(--text-muted); font-size: .75rem; display: block; margin-bottom: .1rem; }
+.bio-fam-row {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+.bio-fam-label {
+  flex-shrink: 0;
+  width: 58px;
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-top: .15rem;
+}
+.bio-fam-val {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  flex: 1;
+}
+.bio-family-link {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .78rem;
+  padding: .1rem .45rem;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: filter .15s, background .15s;
+  background: rgba(255,255,255,.03);
+  white-space: nowrap;
+}
+.bio-family-link:hover {
+  filter: brightness(1.4);
+  background: rgba(255,255,255,.07);
+}
+.bio-scripture-role {
+  font-size: .86rem;
+  line-height: 1.65;
+  color: var(--text-dim);
+  padding: 0 1.2rem .8rem;
+  border-left: 2px solid var(--gold-dim);
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-bottom: .8rem;
+  padding-left: .8rem;
+}
 .bio-chapter-link {
   display: block;
   margin: .5rem 1.2rem 1.2rem;
@@ -538,7 +590,8 @@ const PEOPLE = [
   era:'primeval',
   dates:'c. 4000 BC (trad.)',
   role:'First Man',
-  bio:'Created by God from the dust of the ground and given the breath of life (Gen 2:7). Named the animals and tended the Garden of Eden. His disobedience introduced sin and death (Gen 3; Rom 5:12-21). Father of the human race.',
+  bio:'The first human, formed from the dust of the ground and animated by God\'s own breath (Gen 2:7). Adam was placed in the Garden of Eden as its keeper and given dominion over creation. God brought all the creatures to him to be named — an act of creative authority that reflects his image-bearing dignity. He was given one prohibition: not to eat from the tree of the knowledge of good and evil. Deceived by the serpent\'s logic and Eve\'s example, he ate. The consequences were immediate and vast: guilt, broken relationship with God, expulsion from Eden, and the entry of death into human experience. Paul uses Adam as the foil for Christ in Romans 5 and 1 Corinthians 15: as Adam brought sin and death through one act of disobedience, Christ brought righteousness and life through one act of obedience. Adam\'s failure is not merely individual history but the catastrophe that defines all subsequent Scripture as the story of God\'s rescue.',
+  scriptureRole:'Adam is the theological starting point of the entire biblical narrative. Paul\'s Adam-Christ typology (Rom 5:12-21; 1 Cor 15:45-49) is foundational to NT soteriology. Jesus traces his genealogy through Adam (Luke 3:38), establishing continuity between creation and redemption. The doctrine of original sin, the necessity of atonement, and the promise of new creation all hinge on Adam\'s story.',
   refs:['Gen 1-3','Rom 5:12-21','1 Cor 15:22','Luke 3:38'],
   chapter:'ot/genesis/Genesis_2.html'
 },
@@ -553,7 +606,8 @@ const PEOPLE = [
   era:'primeval',
   dates:'c. 4000 BC (trad.)',
   role:'First Woman; Mother of all the living',
-  bio:'Created from Adam\'s rib (Gen 2:22). First to eat the forbidden fruit. Name means "life-giver." Promised that her offspring would crush the serpent\'s head (Gen 3:15) — the proto-evangelion.',
+  bio:'Formed from Adam\'s side while he slept — the most intimate act of creation in Genesis — Eve was designed as his equal and complement, \'bone of my bones and flesh of my flesh\' (Gen 2:23). She was also the first to be deceived by the serpent, whose argument was subtle: God\'s prohibition was evidence of withholding, not protection. Her eating preceded Adam\'s, but Paul notes that Adam sinned with full knowledge while Eve was deceived (1 Tim 2:14). In Gen 3:15, God addressed the serpent with a promise directed at Eve: her offspring would crush the serpent\'s head. This first messianic prophecy — the protevangelion — plants the seed of the entire redemptive story in her very curse. She named her firstborn Cain saying \'I have acquired a man with the LORD\'s help\' — hope amid the aftermath of the fall.'s rib (Gen 2:22). First to eat the forbidden fruit. Name means "life-giver." Promised that her offspring would crush the serpent\'s head (Gen 3:15) — the proto-evangelion.',
+  scriptureRole:'Eve is the recipient of the first messianic prophecy (Gen 3:15), making her theologically central to the redemption narrative. Paul cites her deception in 1 Tim 2:13-14 and 2 Cor 11:3 as a warning against false teaching. \'The mother of all the living\' — her name encodes the hope of life persisting through death\'s entry.',
   refs:['Gen 2:18-25','Gen 3','2 Cor 11:3'],
   chapter:'ot/genesis/Genesis_2.html'
 },
@@ -718,7 +772,8 @@ const PEOPLE = [
   era:'primeval',
   dates:'c. 2950-2000 BC (trad.)',
   role:'Builder of the Ark; survivor of the Flood',
-  bio:'"A righteous man, blameless among the people of his time" who "walked faithfully with God" (Gen 6:9). Built the ark by faith. After the Flood, God established the rainbow covenant with all creation.',
+  bio:'Noah was singled out from a generation described as wholly corrupt: \'every inclination of the human heart was only evil all the time\' (Gen 6:5). Into this darkness God came with both judgment and grace — judgment on the world, grace to Noah whom he found \'righteous and blameless among the people of his time.\' God commissioned the ark: a massive wooden vessel, specific in its dimensions (300 × 50 × 30 cubits), over 100 years in the building — an act of sustained, costly obedience in the face of a world that saw no reason to believe him. The Flood itself killed every air-breathing creature outside the ark. When the waters receded, Noah\'s first act was to build an altar and sacrifice burnt offerings. God\'s response was a covenant: never again to destroy all life by flood, sealed with the rainbow. Noah then became the first to plant a vineyard, got drunk, and exposed himself — a cautionary collapse after his great faithfulness. His three sons became the founders of all post-flood nations (Gen 10).',
+  scriptureRole:'Noah is the bridge between the pre-flood and post-flood worlds. The Noahic covenant (Gen 9) is the first formal covenant in redemptive history — unconditional and universal. Peter uses Noah as the type of those saved through water at baptism (1 Pet 3:20-21). Hebrews 11:7 calls him a \'herald of righteousness.\' Jesus uses Noah\'s generation as a warning image for the unexpectedness of the Last Day (Matt 24:37-39). The \'days of Noah\' frame apocalyptic expectation across the NT.',
   refs:['Gen 6-9','Heb 11:7','1 Pet 3:20'],
   chapter:'ot/genesis/Genesis_6.html'
 },
@@ -1153,7 +1208,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 2166-1991 BC (trad.)',
   role:'Father of the faith; receiver of the covenant',
-  bio:'Originally Abram, renamed Abraham (\'father of many nations\') at 99. Called from Ur; promised land and descendants as numerous as stars. The three-part covenant (Gen 12, 15, 17) makes him the cornerstone of Judaism, Christianity, and Islam. His offering of Isaac on Moriah is the supreme OT act of faith (Heb 11:17-19).',
+  bio:'Abram of Ur of the Chaldeans was already 75 when God\'s voice broke into his life with an unconditional command and an impossible promise: leave everything, go to an unknown land, and from you will come a great nation through which all peoples on earth will be blessed (Gen 12:1-3). He went. What followed was a 25-year journey of deepening faith punctuated by spectacular failures: he lied about Sarah being his wife (twice), he fathered Ishmael as an attempt to manufacture the promise\'s fulfillment, and yet at each crisis God reaffirmed and expanded the covenant. At age 99, God changed his name from Abram (\'exalted father\') to Abraham (\'father of many nations\') and instituted circumcision as the covenant sign. The birth of Isaac at 100 to a barren 90-year-old was the miraculous hinge of history. The test of Mount Moriah — God\'s command to offer Isaac as a burnt offering — is the supreme act of faith in the OT. Abraham\'s hand was stayed at the last moment; God provided a ram. The NT authors see this as a prefiguring of the Father\'s own sacrifice of his Son. Abraham died at 175, having seen the promise only from a distance.'father of many nations\') at 99. Called from Ur; promised land and descendants as numerous as stars. The three-part covenant (Gen 12, 15, 17) makes him the cornerstone of Judaism, Christianity, and Islam. His offering of Isaac on Moriah is the supreme OT act of faith (Heb 11:17-19).',
+  scriptureRole:'Abraham is cited more often in the NT than any other OT figure except Moses. Paul builds his doctrine of justification by faith entirely on Abraham as its exhibit A (Rom 4; Gal 3). James uses Abraham\'s near-sacrifice of Isaac as proof that faith without works is dead (Jas 2:21-24). Hebrews 11 gives him more space than any other person. John 8:56 records Jesus\'s claim: \'Abraham rejoiced to see my day; he saw it and was glad.\' The Abrahamic covenant (Gen 12, 15, 17) is the backbone of the entire OT and the premise of the NT gospel.',
   refs:['Gen 12-25','Rom 4','Gal 3:6-9','Heb 11:8-19'],
   chapter:'ot/genesis/Genesis_12.html'
 },
@@ -1168,7 +1224,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 2156-2029 BC (trad.)',
   role:'Mother of Isaac; princess of the covenant',
-  bio:'Originally Sarai, renamed Sarah at 89. Barren until miraculously conceiving Isaac at 90. The only woman in the Bible whose age at death is recorded (127 years). 1 Pet 3:6 holds her up as a model of faith.',
+  bio:'Sarah\'s story spans 90 years of barrenness and one year of miraculous motherhood. She was Abram\'s half-sister (Gen 20:12) and accompanied him from Ur to Canaan, through Egypt, through Canaan again. Twice she was passed off as his sister rather than his wife to protect Abraham, and twice she was taken into a foreign ruler\'s household — protected by God each time, but at an untold personal cost. When the three visitors told Abraham she would conceive within a year, she laughed from inside the tent — a laugh of incredulity and, perhaps, pain. God heard: \'Why did Sarah laugh?\' She denied it. He pressed: \'Yes, you did laugh.\' Her laughter became Isaac\'s name — \'he laughs.\' She bore him at 90. Her one act of cruelty was demanding Hagar and Ishmael\'s expulsion, which was harsh — and which God honored, sending Hagar away with provision. She died at 127, and Abraham mourned her and buried her in the cave of Machpelah, the family tomb.',
+  scriptureRole:'Sarah is named in Heb 11:11 as a woman of faith — she \'considered him faithful who had made the promise.\' Peter uses her as the model of a wife whose beauty is the imperishable beauty of a gentle spirit, calling her Abraham\'s wife who \'called him lord\' (1 Pet 3:5-6). Paul uses her as the allegory of the covenant of promise over against Hagar\'s covenant of law (Gal 4:22-31): Sarah represents the Jerusalem above, the free woman, the mother of all who are Christ\'s.',
   refs:['Gen 11:29','Gen 17-18','Gen 21','Heb 11:11','1 Pet 3:6'],
   chapter:'ot/genesis/Genesis_17.html'
 },
@@ -1243,7 +1300,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 2066-1886 BC (trad.)',
   role:'Son of Promise; the silent patriarch',
-  bio:'The miracle child born to elderly Abraham and Sarah. On Mount Moriah he was bound and offered — a type of Christ (Heb 11:19). The covenant promise passes through him.',
+  bio:'Isaac is the most passive of the three patriarchs — things happen to him more than through him. He was born to a 100-year-old father and 90-year-old mother as the literal impossibility that proved God\'s promise. As a young man he was laid on an altar by his father and bound, a knife raised over him, before the angel stopped the hand: \'Now I know that you fear God.\' He lay down willingly; he did not resist. He was 40 when Abraham\'s servant brought Rebekah from Paddan-Aram; he brought her into his mother\'s tent and was comforted after Sarah\'s death. He and Rebekah were 20 years childless before she conceived — another barrenness, another prayer, another miracle. The twins Jacob and Esau divided his house: he preferred Esau, Rebekah Jacob. His blessing of Jacob — thinking he was Esau, deceived by the goat skin and the savory stew — was given in full form and could not be recalled even when the deception was discovered. His final act was to bless Jacob again, deliberately, charging him to find a wife from Laban\'s daughters. He died at 180 — the only patriarch to outlive the age of his parents.',
+  scriptureRole:'Isaac is the supreme type of Christ as the willing sacrificial offering. Hebrews 11:17-19 reads the Moriah episode as Abraham\'s faith in resurrection: \'Abraham reasoned that God could even raise the dead, and so in a manner of speaking he did receive Isaac back from death.\' Paul uses the Isaac-Ishmael contrast in Gal 4:21-31: Isaac is the child of promise, born of the Spirit (the free covenant), as against Ishmael born of the flesh (the covenant of law). Isaac, like Christ, was the only begotten, the beloved son, offered on a mountain — and received back.',
   refs:['Gen 21-28','Rom 9:7','Heb 11:17-20','Gal 4:28'],
   chapter:'ot/genesis/Genesis_22.html'
 },
@@ -1258,7 +1316,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 2026 BC (trad.)',
   role:'Wife of Isaac; mother of Jacob and Esau',
-  bio:'Daughter of Bethuel. Chosen through providential signs. Her decisive action drives the narrative. The oracle she received — \'the older will serve the younger\' (Gen 25:23) — becomes the key to election in Rom 9:10-13.',
+  bio:'Rebekah was a woman of instant decisiveness in a culture that valued patient consultation. When Abraham\'s servant arrived and asked if he could spend the night, she answered before consulting anyone — and her family agreed. When the servant asked to leave immediately and her family requested ten days\' grace, they put the question to her: \'Will you go with this man?\' \'I will go,\' she said. At the well she had drawn water not just for the servant but for all ten camels — one of the defining acts of hospitality in the entire OT. She was beautiful, a virgin, a hard worker, and brave. When pregnant with twins, she received a divine oracle: \'Two nations are in your womb, and two peoples from within you will be separated; one people will be stronger than the other, and the older will serve the younger.\' This shaped her preference for Jacob over Esau — she was acting on a word from God, however imperfectly. Her orchestration of the deception of Isaac (Gen 27) was pragmatic and risky, driven by the oracle she had received, and she took full responsibility: \'Let the curse fall on me.\' She outlived Isaac but was not present at Jacob\'s return.'the older will serve the younger\' (Gen 25:23) — becomes the key to election in Rom 9:10-13.',
+  scriptureRole:'Paul makes Rebekah the pivot of his argument about election in Rom 9:10-13: \'before the twins were born or had done anything good or bad — in order that God\'s purpose in election might stand: not by works but by him who calls — she was told, the older will serve the younger.\' The divine oracle she received before birth becomes the OT ground for unconditional election.',
   refs:['Gen 24','Gen 25:19-28','Gen 27','Rom 9:10-13'],
   chapter:'ot/genesis/Genesis_24.html'
 },
@@ -1303,7 +1362,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 2006-1859 BC (trad.)',
   role:'Patriarch; renamed Israel; father of the Twelve',
-  bio:'Supplanted Esau at birth and by stratagem. Worked 14 years for his wives. Wrestled with the divine figure at Jabbok and received the name Israel. His 12 sons became the 12 tribes.',
+  bio:'Jacob\'s story is one of the most psychologically complex in Genesis — a man defined by his name (\'he grasps the heel / he supplants\') who spent his life grasping at things God had already promised him. He bought Esau\'s birthright for lentil stew when his brother came in starving; he obtained Isaac\'s blessing through a disguise his mother engineered; he fled to Paddan-Aram with nothing. There, the deceiver met his match in Laban, who substituted Leah for Rachel on the wedding night after Jacob had worked seven years. He worked another seven for Rachel, and six more for livestock — emerging with two wives, two concubines, twelve children, and enormous wealth. The encounter at Jabbok — wrestling through the night with a divine figure, refusing to let go without a blessing, having his hip dislocated — is the OT\'s defining image of persistent prayer. God changed his name to Israel: \'You have struggled with God and with humans and have overcome\' (Gen 32:28). The rest of his story is largely the story of his sons — Joseph\'s near-death and Egyptian rise, the famine, the reunion. His final blessing of the twelve sons in Gen 49 is a prophetic poem that shapes the character of each tribe.',
+  scriptureRole:'Jacob/Israel is the ancestor of all twelve tribes — his name is the nation\'s name. God repeatedly identifies himself as \'the God of Abraham, Isaac, and Jacob,\' making the patriarchal triad the fundamental divine self-introduction across both Testaments (Exod 3:6; Matt 22:32). Paul uses the pre-birth oracle (\'the older will serve the younger,\' Gen 25:23) as his primary proof text for unconditional election (Rom 9:10-13). Hebrews 11:21 honors him for blessing Joseph\'s sons by faith on his deathbed.',
   refs:['Gen 25-50','Rom 9:13','Heb 11:20-21'],
   chapter:'ot/genesis/Genesis_25.html'
 },
@@ -1543,7 +1603,8 @@ const PEOPLE = [
   era:'patriarch',
   dates:'c. 1915-1805 BC (trad.)',
   role:'Beloved son; Egypt\'s prime minister; type of Christ',
-  bio:'Eleventh son of Jacob, firstborn of Rachel. Sold into Egyptian slavery at 17. Falsely imprisoned; interpreted Pharaoh\'s dreams; elevated to second-in-command. \'You intended to harm me, but God intended it for good\' (Gen 50:20).',
+  bio:'Joseph was the eleventh of Jacob\'s sons, the firstborn of the beloved Rachel, and his father\'s clear favorite — the technicolor coat was a visible statement of preference that his brothers could not ignore. Their hatred festered until they found him alone in Dothan and threw him into an empty cistern. They sold him to Ishmaelite traders for twenty pieces of silver, dipped his coat in goat\'s blood, and told Jacob that a wild animal had killed him. Joseph arrived in Egypt as a slave in Potiphar\'s household. He rose to manage the entire estate — then was falsely accused of attempted rape by Potiphar\'s wife and thrown into prison. In prison he interpreted the dreams of the king\'s cupbearer and baker: one would be restored in three days, one executed. The cupbearer forgot him for two years. Then Pharaoh dreamed of seven fat cows and seven thin ones, and the cupbearer remembered the young Hebrew. Joseph interpreted: seven years of abundance followed by seven years of famine. Pharaoh made him second-in-command of all Egypt. When the famine came, his brothers arrived to buy grain — twice, with Benjamin the second time. Joseph\'s revelation of himself — weeping so loudly the Egyptians could hear him — and his words \'You intended to harm me, but God intended it for good to accomplish what is now being done, the saving of many lives\' (Gen 50:20) are one of Scripture\'s most profound statements about divine sovereignty through human evil.'s dreams; elevated to second-in-command. \'You intended to harm me, but God intended it for good\' (Gen 50:20).',
+  scriptureRole:'Joseph is the OT\'s most fully developed type of Christ: beloved son, rejected by his brothers, sold for silver, falsely condemned, elevated to a throne, bringing salvation to the very ones who betrayed him, and forgiving them completely. Stephen in Acts 7:9-16 retells his story as a pattern of Israel\'s repeated rejection of God\'s chosen deliverers. Hebrews 11:22 honors his faith in instructing about his bones being carried back to Canaan — faith in a promise centuries away from fulfillment.',
   refs:['Gen 37-50','Acts 7:9-14','Heb 11:22'],
   chapter:'ot/genesis/Genesis_37.html'
 },
@@ -1813,7 +1874,8 @@ const PEOPLE = [
   era:'exodus',
   dates:'c. 1533-1406 BC (trad.)',
   role:'Prophet; leader; Moses\'s sister',
-  bio:'Elder sister of Moses and Aaron. Watched over the infant Moses. Led the women in the Song of the Sea (Exod 15:20-21). Struck with leprosy for seven days after challenging Moses\'s leadership. Died at Kadesh.',
+  bio:'Miriam is the first female prophet named in the OT, and the first to lead corporate worship. She was the unnamed sister who watched over the infant Moses in his basket among the Nile reeds and arranged for Jochebed to nurse him — a quick-thinking act that reunited the family. After the Red Sea crossing, \'Miriam the prophet, Aaron\'s sister, took a timbrel in her hand, and all the women followed her, with timbrels and dancing. Miriam sang to them: Sing to the LORD, for he is highly exalted\' (Exod 15:20-21) — the Song of the Sea\'s refrain preserved as a distinct liturgical piece. Her crisis came in Numbers 12: she and Aaron spoke against Moses for his Cushite wife and challenged his exclusive authority. \'Has the LORD spoken only through Moses? Hasn\'t he also spoken through us?\' God\'s anger burned against her; she was struck with leprosy. Moses prayed for her immediately — \'Please, God, heal her!\' — and she was restored after seven days outside the camp. The entire community waited for her. She died at Kadesh.'s leadership. Died at Kadesh.',
+  scriptureRole:'Miriam is one of three figures Micah names as Israel\'s liberators: \'I sent Moses to lead you, also Aaron and Miriam\' (Mic 6:4). Her song (Exod 15:21) is one of the oldest preserved poetic texts in the OT and the refrain of the fuller Song of Moses (Exod 15:1-18). Her priestly and prophetic leadership made her a significant figure in Israel\'s founding generation. Numbers 12 raises the theological question of authority in the community that the rest of the Pentateuch addresses.',
   refs:['Exod 2:4-8','Exod 15:20-21','Num 12','Mic 6:4'],
   chapter:'ot/exodus/Exodus_2.html'
 },
@@ -1828,7 +1890,8 @@ const PEOPLE = [
   era:'exodus',
   dates:'c. 1526-1406 BC (trad.)',
   role:'Lawgiver; Mediator of the Covenant; Prophet par excellence',
-  bio:'Drawn from the Nile as an infant, raised in Pharaoh\'s court, fled to Midian. Called at the burning bush at 80. Led the ten plagues, the Exodus, and 40 years of wilderness wandering. Received the Torah on Sinai. Died on Mount Nebo. \'Since then, no prophet has risen in Israel like Moses\' (Deut 34:10).',
+  bio:'Moses was born under a death sentence — Pharaoh\'s decree that all Hebrew infant boys be drowned in the Nile — and survived because of his mother\'s faith and a providential chain of events that placed him in Pharaoh\'s own household. He was educated in all the wisdom of Egypt (Acts 7:22) yet killed an Egyptian taskmaster in a moment of misguided solidarity, fled to Midian, married Zipporah, and spent 40 years as a shepherd — apparently forgotten. At 80, God appeared to him at the burning bush with a name (\'I AM WHO I AM\') and a commission. Moses resisted every step: he was not eloquent, no one would believe him, please send someone else. But he went. What followed was the most dramatic display of divine power in the OT: ten plagues dismantling each major Egyptian deity, the Passover night, the parting of the Red Sea, and the desert provision of manna, quail, and water from a rock. At Sinai he received the Torah in direct communion with God — \'face to face, as one speaks with a friend\' (Exod 33:11). His face shone afterward. His failure came in striking the rock rather than speaking to it (Num 20), an act of faithlessness that cost him entry to Canaan. He died on Mount Nebo at 120, his eyes still clear, having seen the Promised Land from a distance. His burial place was never found.'s court, fled to Midian. Called at the burning bush at 80. Led the ten plagues, the Exodus, and 40 years of wilderness wandering. Received the Torah on Sinai. Died on Mount Nebo. \'Since then, no prophet has risen in Israel like Moses\' (Deut 34:10).',
+  scriptureRole:'Moses is the human author of the Pentateuch — the foundational five books of Scripture — making him the most prolific contributor to the biblical canon by word count. He is the paradigm prophet: Deut 18:15-18 predicts a prophet \'like Moses\' to come, which the NT applies to Jesus (Acts 3:22; 7:37). He appears with Elijah at the Transfiguration representing the Law and the Prophets (Matt 17:3). Paul uses the old covenant mediated through Moses as the foil for the new covenant in Christ (2 Cor 3; Gal 3). Hebrews 3 contrasts him as \'servant in God\'s house\' with Christ as \'Son over God\'s house.\' John 1:17: \'the law was given through Moses; grace and truth came through Jesus Christ.\'',
   refs:['Exod 1-Deut 34','Acts 7:20-44','Heb 11:24-28'],
   chapter:'ot/exodus/Exodus_1.html'
 },
@@ -1873,7 +1936,8 @@ const PEOPLE = [
   era:'exodus',
   dates:'c. 1529-1407 BC (trad.)',
   role:'First High Priest; Moses\'s spokesman',
-  bio:'Moses\'s older brother and spokesman. Made the golden calf while Moses was on the mountain — the great betrayal — yet interceded for. His staff budded overnight confirming his priesthood (Num 17). Died on Mount Hor; Eleazar succeeded him.',
+  bio:'Aaron was three years older than Moses and his divinely appointed spokesman — \'He will speak to the people for you, and it will be as if he were your mouth\' (Exod 4:16). He performed the signs before Pharaoh, stretched out his staff to initiate the first three plagues, and stood alongside Moses through the entirety of the Exodus. His greatest failure was the golden calf. While Moses was on Sinai receiving the Torah, the impatient people asked Aaron for gods to lead them, and he complied — taking their gold earrings, fashioning a calf, and announcing \'Tomorrow there will be a festival to the LORD.\' Moses returned in fury and demanded an explanation; Aaron\'s response was almost comically weak: \'I threw the gold into the fire, and out came this calf.\' He was not punished — Moses interceded — but the theological damage was done: the very priest who was to maintain Israel\'s holiness before God had led the most comprehensive idolatry of the wilderness period. Yet God\'s grace persisted. At Sinai, Aaron was consecrated as High Priest with extraordinary ceremony (Lev 8-9), anointed, robed in the priestly garments, and ordained to intercede for Israel. His staff that budded, bloomed, and bore almonds overnight (Num 17) was the divine confirmation of his God-chosen priesthood over all challengers.'s older brother and spokesman. Made the golden calf while Moses was on the mountain — the great betrayal — yet interceded for. His staff budded overnight confirming his priesthood (Num 17). Died on Mount Hor; Eleazar succeeded him.',
+  scriptureRole:'Aaron is the prototype of the entire Levitical priesthood that organized Israel\'s worship for over a thousand years. Hebrews 5:1-4 uses him to define high-priesthood — appointed by God, offering sacrifices for others\' sins — and then systematically demonstrates Christ\'s superiority: Christ was appointed by God, offered himself, and holds an eternal priesthood after the order of Melchizedek rather than Aaron. The contrast between Aaron\'s succession-based mortal priesthood and Christ\'s permanent priesthood is the central argument of Hebrews 7.',
   refs:['Exod 4-40','Lev 8','Num 17','Num 20:22-29','Heb 5:1-4'],
   chapter:'ot/exodus/Exodus_4.html'
 },
@@ -2098,7 +2162,8 @@ const PEOPLE = [
   era:'judges',
   dates:'c. 1140 BC (trad.)',
   role:'Ruth\'s mother-in-law; restored widow',
-  bio:'Israelite from Bethlehem who lost husband and both sons in Moab. Renamed herself \'Mara\' (bitter). Her restoration is complete when she nurses Obed, the child born to Ruth and Boaz.',
+  bio:'Naomi\'s story is the human frame around Ruth\'s, and it is a story of desolation transformed into fullness. She left Bethlehem (\'house of bread\') with her husband Elimelech and two sons during a famine. All three men died in Moab. She returned with nothing — not even the respectability of a son. \'Don\'t call me Naomi (pleasant); call me Mara (bitter), because the Almighty has made my life very bitter\' (Ruth 1:20). She was a woman who had lost everything: husband, sons, homeland, future. Yet even in her emptiness, her influence shaped Ruth\'s colossal decision to accompany her. And when Boaz noticed Ruth in his field, it was Naomi who recognized the providential hand: \'That man is our close relative; he is one of our kinsman-redeemers\' (2:20). She orchestrated the next steps with quiet, experienced wisdom. When Obed was born, the women said \'Naomi has a son!\' — her name restored, her bitterness ended, her emptiness filled.'Mara\' (bitter). Her restoration is complete when she nurses Obed, the child born to Ruth and Boaz.',
+  scriptureRole:'Naomi\'s arc from emptiness to fullness, from Mara to Naomi, is a microcosm of the broader biblical pattern: God\'s redemption restoring what was lost. Her role in directing Ruth to Boaz places her at the strategic center of the genealogical chain that leads to David and Christ. Her openness to a Moabite as a \'daughter\' models the boundary-crossing grace that Ruth 4:18-22 seals into the royal lineage.',
   refs:['Ruth 1-4'],
   chapter:'ot/ruth/Ruth_1.html'
 },
@@ -2113,7 +2178,8 @@ const PEOPLE = [
   era:'judges',
   dates:'c. 1120 BC (trad.)',
   role:'Moabite widow; model of covenant loyalty',
-  bio:'\'Where you go I will go... your God my God\' (1:16). A Moabite who chose loyalty to Naomi over return to her own people. Her hesed elevated her from foreign widow to ancestor of King David.',
+  bio:'Ruth was a Moabite — from a nation Israel had long regarded with suspicion, descended from Lot\'s incestuous union with his daughter, excluded from the assembly of Israel to the tenth generation (Deut 23:3). She had married one of Naomi\'s sons in Moab. When both her husband and Naomi\'s other son died, Naomi urged both daughters-in-law to return to their own families and gods. Orpah wept and went. Ruth clung. Her speech of loyalty — \'Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God. Where you die I will die, and there I will be buried\' (Ruth 1:16-17) — is not merely beautiful sentiment; it was a declaration of covenant transfer. She arrived in Bethlehem at the beginning of the barley harvest and went to glean in Boaz\'s fields. Her humility, her devotion to Naomi, and her work ethic caught Boaz\'s eye. When Naomi recognized Boaz as a kinsman-redeemer, Ruth followed Naomi\'s risky instructions to the letter: she uncovered Boaz\'s feet at night on the threshing floor and lay down — a bold, culturally coded act requesting his protection and marriage. Boaz honored it with complete integrity. After securing the legal right from the nearer kinsman, he married Ruth. Their son Obed was Naomi\'s restoration and David\'s grandfather.'Where you go I will go... your God my God\' (1:16). A Moabite who chose loyalty to Naomi over return to her own people. Her hesed elevated her from foreign widow to ancestor of King David.',
+  scriptureRole:'Ruth is one of only five women in Matthew\'s genealogy of Jesus (1:5), alongside Tamar, Rahab, Bathsheba, and Mary. Her inclusion as a Moabite in the royal-Messianic line is a deliberate statement: God\'s redemptive purpose crosses ethnic boundaries. The book of Ruth illustrates hesed (covenant loyalty) as both a human and divine virtue. Boaz\'s role as kinsman-redeemer (go\'el) became the primary OT category for understanding Christ\'s redemptive work.',
   refs:['Ruth 1-4','Matt 1:5'],
   chapter:'ot/ruth/Ruth_1.html'
 },
@@ -2128,7 +2194,8 @@ const PEOPLE = [
   era:'judges',
   dates:'c. 1120 BC (trad.)',
   role:'Kinsman-redeemer; great-grandfather of David',
-  bio:'A wealthy landowner of Bethlehem, relative of Elimelech. Showed extraordinary hesed to Ruth by granting gleaning rights, then accepted the role of kinsman-redeemer. A type of Christ as the willing redeemer.',
+  bio:'Boaz was a man of standing in Bethlehem, a relative of Elimelech, who embodied hesed — covenant loyalty — in every encounter. When he arrived at his field and saw a woman gleaning that he did not recognize, he inquired about her and was told her story. His response was immediate and generous: \'Stay here in my field... I have told the men not to touch you... help yourself to water... eat with us.\' When his workers asked why, he explained: \'She said, I will stay with Naomi.\' He secretly instructed his workers to let extra grain fall in her path. When Naomi heard who had noticed Ruth, she said \'That man is our close relative; he is one of our kinsman-redeemers.\' Ruth\'s approach to Boaz at the threshing floor — laying down at his feet and asking him to spread the corner of his garment over her — was a marriage proposal in cultural code. Boaz\'s response was all dignity: he praised her loyalty, protected her reputation, told her to stay until morning, sent her home laden with barley, and the very next morning settled the legal transaction at the gate. The nearer kinsman declined when he discovered a Moabite wife was involved. Boaz took the sandal, married Ruth, and Obed was born.',
+  scriptureRole:'Boaz is the most fully developed OT type of Christ as kinsman-redeemer (go\'el). He was able to redeem (he had the means), willing to redeem (he chose to), and legally qualified (he was a close relative). His redemption of Ruth the outsider — at personal cost and against social convention — is the paradigm for Christ\'s redemption of a foreign and undeserving people. The go\'el concept shapes Paul\'s understanding of redemption (Gal 4:4-5; Tit 2:14) and Peter\'s (1 Pet 1:18-19).',
   refs:['Ruth 2-4','Matt 1:5'],
   chapter:'ot/ruth/Ruth_2.html'
 },
@@ -2278,7 +2345,8 @@ const PEOPLE = [
   era:'kingdom',
   dates:'c. 1040-970 BC',
   role:'Shepherd-King; man after God\'s own heart; ancestor of Jesus',
-  bio:'Youngest of Jesse\'s eight sons, chosen when his brothers were passed over. Killed Goliath; spent years as a fugitive before becoming king of Judah then all Israel. The Davidic Covenant (2 Sam 7) promises an eternal throne. His psalms remain the devotional backbone of Judaism and Christianity.',
+  bio:'David entered the story as an afterthought — when Samuel came to anoint a king from Jesse\'s sons, seven were presented before the youngest was remembered from the fields. He was ruddy, handsome, and shepherding sheep. The Spirit of the LORD came on him powerfully from that day on. His rise was breathtaking: he killed Goliath with a sling stone while Saul\'s army trembled, entered the king\'s service, became Saul\'s armour-bearer, and fell into a friendship with Jonathan so deep it would define the meaning of loyalty. His years as a fugitive — fleeing Saul\'s jealousy through the wilderness of Judah and the court of a Philistine king — produced some of the Psalms\' most searching cries to God. After Saul\'s death, David was anointed first over Judah at Hebron (seven years and six months) then over all Israel at Jerusalem. He brought the Ark to Jerusalem, danced before it with abandon, and desired to build God a permanent house. God\'s response — the Davidic Covenant of 2 Samuel 7 — reversed the offer: God would build David a house, a dynasty, a throne that would last forever. Then came Bathsheba. The rape-by-power of another man\'s wife, the murder of Uriah to cover it, Nathan\'s parable and David\'s shattering confrontation with his own sin, the child\'s death, Absalom\'s rebellion — the second half of David\'s story is one of Scripture\'s most unflinching examinations of the consequences of sin in a leader\'s family. Yet he was never abandoned.'s eight sons, chosen when his brothers were passed over. Killed Goliath; spent years as a fugitive before becoming king of Judah then all Israel. The Davidic Covenant (2 Sam 7) promises an eternal throne. His psalms remain the devotional backbone of Judaism and Christianity.',
+  scriptureRole:'The Davidic Covenant (2 Sam 7) is the structural backbone of all subsequent OT prophecy and of the NT\'s understanding of Jesus. \'Son of David\' is the primary Messianic title in Matthew. David is the human author of at least 73 Psalms — the devotional and liturgical heart of Scripture used by Jesus, Paul, and the early church. \'He is the man after God\'s own heart\' (1 Sam 13:14; Acts 13:22). His life prefigures Christ at every point: shepherd, anointed king, fugitive, triumphant, reigning. The genealogy of Jesus opens Matthew\'s Gospel: \'the Messiah, the Son of David\' (Matt 1:1).',
   refs:['1 Sam 16-2 Sam 24','Acts 13:22','Matt 1:1-6'],
   chapter:'ot/ruth/Ruth_4.html'
 },
@@ -2383,7 +2451,8 @@ const PEOPLE = [
   era:'kingdom',
   dates:'c. 990-930 BC',
   role:'King of wisdom and wealth; temple builder',
-  bio:'David and Bathsheba\'s son. Chose wisdom at Gibeon. Built the Temple in 7 years. But 700 wives and 300 concubines led to idolatry. The kingdom divided under his son Rehoboam. His wisdom literature (Proverbs, Ecclesiastes, Song of Songs) remains canonical.',
+  bio:'Solomon inherited from his father David the most powerful kingdom Israel had ever seen and the covenant promise of an eternal throne. He began well: at Gibeon, God appeared to him in a dream and offered him anything. He asked for \'a discerning heart to govern your people and to distinguish between right and wrong\' (1 Kgs 3:9). God gave him wisdom beyond measure — and wealth, and honor besides. His wisdom was proverbial: the story of the two women claiming the same infant demonstrates the psychological precision of his judgment. The building of the Temple — seven years, the greatest architectural undertaking in Israel\'s history — was the apex of his reign. His dedication prayer (1 Kgs 8) is one of the most theologically rich prayers in Scripture. Then the cracks appeared. Seven hundred wives and 300 concubines, many from the nations God had explicitly prohibited marriage with, \'turned his heart after other gods\' (1 Kgs 11:4). He built high places for Chemosh, Molech, and Ashtoreth. God announced the kingdom would be divided after his death. Solomon reigned 40 years and died at peace — but the seeds of division had been sown.'s son. Chose wisdom at Gibeon. Built the Temple in 7 years. But 700 wives and 300 concubines led to idolatry. The kingdom divided under his son Rehoboam. His wisdom literature (Proverbs, Ecclesiastes, Song of Songs) remains canonical.',
+  scriptureRole:'Solomon is the primary human author of three canonical books: Proverbs (at least the core, chs 10-22:16 and 25-29), Ecclesiastes (as \'the Teacher, son of David, king in Jerusalem\'), and Song of Songs. His building of the Temple is the fulfillment of a promise first made to David and the type of the new Temple that is Christ\'s body (John 2:19-21). Jesus appeals to \'Solomon in all his splendor\' to illustrate the far greater glory of God\'s provision (Matt 6:29). \'One greater than Solomon is here\' (Matt 12:42) — Jesus applies this to himself.',
   refs:['1 Kgs 1-11','2 Chr 1-9','Prov 1:1','Matt 12:42'],
   chapter:null
 },
@@ -2458,7 +2527,8 @@ const PEOPLE = [
   era:'prophets',
   dates:'c. 739-687 BC',
   role:'Greatest reforming king of Judah',
-  bio:'Destroyed the high places. Resisted Sennacherib — 185,000 Assyrians struck down overnight (Isa 37). Received 15 extra years after prayer. His tunnel in Jerusalem still survives.',
+  bio:'Hezekiah became king at 25 and ruled Judah for 29 years — \'He did what was right in the eyes of the LORD, just as his father David had done\' (2 Kgs 18:3). He removed the high places, smashed the sacred stones, cut down the Asherah poles, and even broke in pieces the bronze serpent Moses had made, because the people had been burning incense to it. When the Assyrian king Sennacherib surrounded Jerusalem with 185,000 troops, Hezekiah spread his letter of threats before the LORD in the Temple and prayed: \'Open your eyes and see all the words Sennacherib has sent to insult the living God.\' That night the angel of the LORD struck down 185,000 in the Assyrian camp. Sennacherib withdrew. Later, when Hezekiah fell ill and was told he would die, he turned his face to the wall and wept, and God granted him 15 more years — confirmed by the shadow going back ten steps on Ahaz\'s sundial. His tunnel, carved through 533 meters of solid rock to bring water into Jerusalem before the Assyrian siege, was rediscovered in 1880 with the workers\' own inscription describing meeting in the middle.',
+  scriptureRole:'Isaiah 36-39 parallels 2 Kgs 18-20 almost verbatim — Hezekiah is the only Judean king whose story is preserved in two canonical books. His prayer (Isa 37:14-20) models turning a written threat over to God. His pride in showing the Babylonian envoys everything in his treasury (Isa 39) draws Isaiah\'s prophecy of the Babylonian exile — making his moment of vanity a prophetic hinge in the narrative. Psalm 46 may reflect the Assyrian deliverance.',
   refs:['2 Kgs 18-20','2 Chr 29-32','Isa 36-39','Matt 1:9-10'],
   chapter:null
 },
@@ -2488,7 +2558,8 @@ const PEOPLE = [
   era:'prophets',
   dates:'c. 875-845 BC',
   role:'The Tishbite prophet; forerunner of the Messiah',
-  bio:'Appeared suddenly before Ahab. Confronted 450 Baal prophets on Carmel in the fire contest. Fled Jezebel into the wilderness; sustained by an angel under the juniper tree. Carried to heaven in a chariot of fire. Appears at the Transfiguration. Malachi: his return before \'the great day of the LORD\' — fulfilled in John the Baptist.',
+  bio:'Elijah appeared from nowhere — his genealogy is simply \'Elijah the Tishbite, from Tishbe in Gilead\' — and stood before Ahab to announce a drought as a consequence of Israel\'s Baal worship. The drought lasted three years and six months. During this time he was fed by ravens at the Kerith Ravine and sustained by a widow\'s miraculous jar of flour and jug of oil at Zarephath, where he also raised her son from death. The confrontation on Mount Carmel — 450 Baal prophets vs. one prophet of the LORD — is one of the OT\'s most dramatic moments: two altars, two bulls, the fire contest. Elijah\'s prayer: \'Let it be known today that you are God in Israel and that I am your servant.\' The fire fell. Then immediately afterward, in the wilderness under a broom tree, he collapsed in suicidal depression: \'I have had enough, LORD. Take my life.\' An angel came twice with food and water: \'the journey is too much for you.\' At Horeb (Sinai) he heard God not in the wind or earthquake or fire but in a gentle whisper, and received his commission to anoint two kings and one prophet. His final act was to cast his cloak over Elisha. He was taken to heaven in a chariot of fire without dying — one of two people in the OT (with Enoch) who bypassed death.'the great day of the LORD\' — fulfilled in John the Baptist.',
+  scriptureRole:'Elijah is the representative figure of \'the Prophets\' alongside Moses (\'the Law\'). He appears with Moses at the Transfiguration (Matt 17:3-4), confirming Jesus as the fulfillment of both. Malachi\'s closing prophecy — \'I will send you the prophet Elijah before the great and dreadful day of the LORD\' (Mal 4:5) — became one of the most potent messianic expectations in Second Temple Judaism. Jesus identifies John the Baptist as Elijah who was to come (Matt 11:14; 17:12). James 5:17-18 uses Elijah\'s prayer as the model for effective intercession: \'The prayer of a righteous person is powerful and effective.\'',
   refs:['1 Kgs 17-2 Kgs 2','Mal 4:5','Matt 11:14','Matt 17:3','Jas 5:17-18'],
   chapter:null
 },
@@ -2503,7 +2574,8 @@ const PEOPLE = [
   era:'prophets',
   dates:'c. 845-800 BC',
   role:'Elijah\'s successor; miracle-worker',
-  bio:'Asked for a double portion of Elijah\'s spirit. More miracles than any other OT prophet: purified water, multiplied oil, raised the Shunammite\'s son, healed Naaman\'s leprosy. Even dead, a corpse thrown into his tomb revived on contact (2 Kgs 13:21).',
+  bio:'Elisha was plowing with twelve yoke of oxen when Elijah threw his cloak over him — the prophetic act of commissioning that required no words. He slaughtered his oxen, burned his equipment, and followed. When the time of Elijah\'s translation came and Elisha would not leave his side at Gilgal, Bethel, Jericho, or the Jordan, Elisha\'s request was bold: \'Let me inherit a double portion of your spirit.\' \'You have asked a difficult thing,\' Elijah said — but if Elisha saw him taken, he would have it. He saw him: the chariot and horses of fire, the whirlwind. He tore his garment in two and took up Elijah\'s cloak. Then he struck the Jordan — \'Where now is the LORD, the God of Elijah?\' — and the waters parted. His ministry lasted roughly 60 years, from Ahab\'s reign to Joash\'s. Where Elijah was fire and confrontation, Elisha was nurturing and accessible: he purified a spring, multiplied a widow\'s oil, raised the Shunammite\'s son from death, healed Naaman\'s leprosy (and refused to take payment), fed 100 men with 20 loaves, made an axe head float, and saw a heavenly army surrounding the besieged city when his servant panicked. Even after his death, a corpse thrown into his tomb revived on contact with his bones.'s spirit. More miracles than any other OT prophet: purified water, multiplied oil, raised the Shunammite\'s son, healed Naaman\'s leprosy. Even dead, a corpse thrown into his tomb revived on contact (2 Kgs 13:21).',
+  scriptureRole:'Jesus explicitly compares his own reception by Gentiles to Elisha\'s healing of Naaman the Syrian: \'there were many in Israel with leprosy in the time of Elisha the prophet, yet not one of them was cleansed — only Naaman the Syrian\' (Luke 4:27). This comparison so enraged the Nazareth synagogue that they tried to throw him off a cliff. Elisha\'s multiplication of 20 loaves for 100 men (2 Kgs 4:42-44) is the direct OT type behind Jesus\'s feeding of the multitudes.',
   refs:['1 Kgs 19:19-21','2 Kgs 2-13','Luke 4:27'],
   chapter:null
 },
@@ -2518,7 +2590,8 @@ const PEOPLE = [
   era:'prophets',
   dates:'c. 760-680 BC',
   role:'The evangelical prophet; "the fifth gospel"',
-  bio:'Son of Amoz. His Temple vision (Isa 6) — \'Holy, holy, holy\' — defines the prophetic tradition. Chapters 40-55: the Servant Songs, the deepest OT Messianic prophecy. Jesus read Isa 61:1-2 to inaugurate his ministry. NT quotes Isaiah more than any other OT prophet.',
+  bio:'Isaiah son of Amoz ministered in Jerusalem under four kings — Uzziah, Jotham, Ahaz, and Hezekiah — across some 40 years of tumultuous history that saw the fall of the northern kingdom to Assyria (722 BC) and Sennacherib\'s siege of Jerusalem (701 BC). His call vision (Isa 6) is the most theologically rich in the entire prophetic corpus: in the year of Uzziah\'s death, he saw the LORD high and lifted up, the seraphim crying \'Holy, holy, holy,\' the threshold shaking, the smoke filling the Temple. His own response — \'Woe to me! I am ruined! For I am a man of unclean lips\' — and God\'s cleansing of his lips with a coal, set the template for prophetic vocation. His oracles fall into two movements: judgment on Israel, Judah, and surrounding nations (chs 1-39), and then the astonishing comfort of chs 40-66, which open with \'Comfort, comfort my people, says your God.\' These later chapters contain the four Servant Songs (42:1-7; 49:1-6; 50:4-9; 52:13-53:12), especially the fourth — the Suffering Servant of ch 53 — which the NT quotes more than any other OT text. Tradition records that he was sawn in two under Manasseh (Heb 11:37).'Holy, holy, holy\' — defines the prophetic tradition. Chapters 40-55: the Servant Songs, the deepest OT Messianic prophecy. Jesus read Isa 61:1-2 to inaugurate his ministry. NT quotes Isaiah more than any other OT prophet.',
+  scriptureRole:'Isaiah is the most quoted OT prophet in the NT by a wide margin. All four Gospels use Isa 40:3 to introduce John the Baptist. Matthew quotes Isaiah more than ten times. Paul\'s missionary theology draws on Isaiah extensively (Isa 49:6 in Acts 13:47; Isa 65:1 in Rom 10:20). The book of Revelation is saturated with Isaianic imagery. Philip the Evangelist opens Isa 53 to the Ethiopian official (Acts 8:32-35). Jesus himself opened the Isaiah scroll to Isa 61:1-2 to inaugurate his ministry at Nazareth (Luke 4:18-19).',
   refs:['Isa 6','Isa 40-55','Isa 61:1-2','Luke 4:18-19'],
   chapter:null
 },
@@ -2533,7 +2606,8 @@ const PEOPLE = [
   era:'prophets',
   dates:'c. 650-580 BC',
   role:'The weeping prophet; prophet of the New Covenant',
-  bio:'Called before birth. Forbidden to marry. Suffered stocks, prison, the cistern. The New Covenant prophecy (Jer 31:31-34) — "I will write it on their hearts" — is the most directly quoted OT passage in the NT (Heb 8:8-12).',
+  bio:'Jeremiah was called to prophecy before his birth, commissioned against his explicit protest (\'I do not know how to speak; I am too young\'), and spent his entire ministry speaking to people who did not want to hear him. Active from c. 627 BC through the fall of Jerusalem in 587 BC and into the Egyptian exile, he watched the last kings of Judah disregard every warning he was given to deliver. He was placed in stocks, thrown into a cistern of mud, had his scroll burned by King Jehoiakim, was arrested as a traitor, and endured the weight of a vocation he seemed to constantly wish he could resign. His \'confessions\' — raw personal laments addressed to God (11:18-12:6; 15:10-21; 17:14-18; 18:18-23; 20:7-18) — are the most intimate prophetic self-disclosure in the OT. His final \'why\' (20:14-18) — \'Cursed be the day I was born\' — is matched only by Job. Yet he continued. His greatest legacy was the New Covenant oracle of Jer 31:31-34: God would write his law on human hearts, forgive sins, and establish a relationship so direct that \'no longer will they teach their neighbor... because they will all know me.\' This became the theological charter of the NT.',
+  scriptureRole:'The New Covenant prophecy (Jer 31:31-34) is quoted in full in Heb 8:8-12 — the longest OT quotation in the NT — and is the theological basis of the Lord\'s Supper (\'this cup is the new covenant in my blood,\' 1 Cor 11:25; Luke 22:20). Jeremiah\'s suffering servant-figure prefigures Christ: the weeping prophet who was rejected and killed. Matthew 2:18 quotes Jer 31:15 (\'Rachel weeping for her children\') to interpret the slaughter of the innocents. Jeremiah is traditionally held to have authored Lamentations as well.',
   refs:['Jer 1','Jer 20','Jer 31:31-34','Heb 8:8-12'],
   chapter:null
 },
@@ -2548,7 +2622,8 @@ const PEOPLE = [
   era:'exile',
   dates:'c. 623-571 BC',
   role:'Priest-prophet of the exile; vision of restored glory',
-  bio:'Son of Buzi, deported to Babylon in 597 BC. Visions of staggering complexity: the chariot-throne, the valley of dry bones, the new Temple. His wife died on the day Jerusalem was besieged and he was forbidden to mourn — a living sign.',
+  bio:'Ezekiel son of Buzi was a priest-in-training when he was deported to Babylon in the second deportation of 597 BC, never to return. He settled at Tel-Abib by the Chebar River and began receiving visions five years into the exile. His inaugural vision is the most visually extravagant in the OT: four living creatures, four wheels full of eyes, spinning within wheels, a crystal expanse, and above it all the likeness of a throne with \'a figure like that of a man\' — God\'s chariot-throne, the merkabah. He was called \'son of man\' 93 times — an emphatic marker of human creatureliness before the divine. His prophetic acts were radical body-language: lying on his left side for 390 days and his right for 40 to symbolize Israel\'s and Judah\'s exile; eating bread cooked on dung; shaving his head and beard and dividing the hair among fire, sword, and wind. When Jerusalem fell on January 15, 588 BC, his wife — \'the delight of your eyes\' — died, and he was forbidden to mourn as a living sign of God\'s withdrawal from the Temple. His later visions are among the most hope-filled in Scripture: the valley of dry bones vivified by the Spirit (ch 37), the shepherd king David who would tend the scattered flock (ch 34), and the vast restoration Temple of chapters 40-48, with a river flowing from its threshold that grew from ankle-deep to swimming depth.',
+  scriptureRole:'Ezekiel\'s four living creatures (Ezek 1; 10) are the source for the four living creatures in Rev 4:6-8 — which became the symbols of the four Evangelists in Christian iconography (eagle, ox, lion, man). His \'Son of Man\' address established the phrase as a biblical idiom for human creatureliness that Jesus deliberately adopted and reloaded. Ezekiel 37\'s valley of dry bones became the paradigmatic OT vision of resurrection. His restored-Temple vision (Ezek 40-48) is the interpretive key to Revelation 21-22.',
   refs:['Ezek 1','Ezek 24:15-24','Ezek 37','Ezek 40-48'],
   chapter:null
 },
@@ -2563,7 +2638,8 @@ const PEOPLE = [
   era:'exile',
   dates:'c. 620-530 BC',
   role:'Statesman-prophet in Babylon; interpreter of dreams',
-  bio:'Deported to Babylon in 605 BC. Refused the king\'s food. Interpreted Nebuchadnezzar\'s dreams; survived the lion\'s den. \'Son of Man coming with the clouds\' (Dan 7:13-14) is Jesus\'s primary self-identification as Son of Man.',
+  bio:'Daniel was a young Judean nobleman deported to Babylon in the first deportation of 605 BC, along with Hananiah, Mishael, and Azariah (Shadrach, Meshach, and Abednego). In Nebuchadnezzar\'s court they were given Babylonian names and a Babylonian education, but they refused the king\'s food and were sustained by God on vegetables and water — emerging healthier than those who ate the royal rations. Daniel was given the gift of interpreting dreams and visions. He interpreted Nebuchadnezzar\'s dream of the statue of metals, the dream of the great tree, and was placed over the wise men of Babylon. Under Belshazzar he read the handwriting on the wall (MENE, MENE, TEKEL, PARSIN) on the night of the feast — and Belshazzar was killed that night. Under Darius the Mede, rival administrators had him thrown into the lions\' den for praying toward Jerusalem — and he was unharmed. His later chapters (7-12) contain the most developed apocalyptic visions in the OT: the four beasts, the Ancient of Days, the Son of Man receiving an eternal kingdom, the 70 weeks, the great tribulation, and the resurrection of the dead.'s food. Interpreted Nebuchadnezzar\'s dreams; survived the lion\'s den. \'Son of Man coming with the clouds\' (Dan 7:13-14) is Jesus\'s primary self-identification as Son of Man.',
+  scriptureRole:'Daniel\'s \'Son of Man\' vision (Dan 7:13-14) is the primary source for Jesus\'s most common self-designation. Jesus quotes Daniel 9:27 and 12:1 in the Olivet Discourse (Matt 24:15; Luke 21:20). The book of Revelation draws more heavily on Daniel than on any other OT book. The 70-weeks prophecy (Dan 9:24-27) has been central to messianic chronology across all Christian traditions. Paul\'s eschatological teaching (1 Thess 4; 2 Thess 2) draws on Danielic categories.',
   refs:['Dan 1-12','Matt 24:15','Luke 21:20'],
   chapter:null
 },
@@ -2593,7 +2669,8 @@ const PEOPLE = [
   era:'exile',
   dates:'c. 484 BC',
   role:'Queen who saved her people',
-  bio:'Jewish orphan raised by Mordecai. Chosen as queen by Ahasuerus. When Haman plotted genocide, Mordecai urged her: \'Who knows but that you have come for such a time as this?\' Her courage reversed the genocidal decree.',
+  bio:'Esther (Hadassah) was a Jewish orphan in Susa, raised by her older cousin Mordecai after her parents died. She was taken into Ahasuerus\'s harem as part of his empire-wide search for a new queen after Vashti\'s dismissal. She won the favor of the eunuch Hegai, then of the king himself, and was made queen — but kept her Jewish identity hidden on Mordecai\'s instruction. When Haman, the king\'s chief minister, was enraged by Mordecai\'s refusal to bow and obtained the king\'s seal to exterminate all Jews throughout the Persian Empire, Mordecai pressed Esther with one of Scripture\'s great challenges: \'Who knows but that you have come to your royal position for such a time as this?\' (Esth 4:14). Esther\'s response was courageous: she called the Jewish community to fast three days, then approached the king unsummoned — a capital offense unless the king extended his scepter. He did. She invited him to two banquets, drawing the moment out with studied patience, before making her accusation. The reversal was complete: Haman was hanged on the very gallows he had built for Mordecai, the Jews were given the right to defend themselves, and the feast of Purim was established to commemorate the deliverance. God\'s name does not appear in the book, but his providential hand is visible in every coincidence.'Who knows but that you have come for such a time as this?\' Her courage reversed the genocidal decree.',
+  scriptureRole:'Esther is one of two books in the OT that do not mention God explicitly (the other is Song of Songs). This has been noted since antiquity — the Talmud and early church debates about canonicity reflect the difficulty. Yet the book illustrates divine providence operating through human courage and political circumstance. The feast of Purim (Esth 9:20-32) became one of the most widely observed Jewish festivals, and Esther\'s story of Jewish survival against imperial power became paradigmatic for Jewish communities under threat across the centuries.',
   refs:['Est 1-10'],
   chapter:null
 },
@@ -2638,7 +2715,8 @@ const PEOPLE = [
   era:'exile',
   dates:'c. 445-420 BC',
   role:'Cupbearer of the king; Jerusalem\'s wall rebuilder',
-  bio:'Cupbearer to Artaxerxes I. Wept on hearing Jerusalem\'s walls were ruins. Completed the walls in 52 days under constant threat. His \'arrow prayers\' throughout the book model prayerful leadership.',
+  bio:'Nehemiah was the cupbearer to Artaxerxes I — a position of extraordinary intimacy and trust in the Persian court, one that made his grief over Jerusalem\'s condition visible in a way he could not hide. The king noticed his sadness, asked why, and Nehemiah — with a quick silent prayer — made his request: send me to rebuild Jerusalem. The king agreed and gave him letters of authority and an escort. Nehemiah arrived in Jerusalem at night, rode around the broken walls alone before revealing his mission, then summoned the people: \'You see the trouble we are in: Jerusalem lies in ruins, and its gates have been burned with fire. Come, let us rebuild the wall of Jerusalem, and we will no longer be in disgrace.\' The wall was rebuilt in 52 days despite sustained opposition — threats, ridicule, conspiracy — as the workers built with one hand and held a weapon with the other. His memoir (Neh 1-7; 11-13) is the most personal narrative account of any OT figure outside the Psalms — full of arrow prayers, honest frustrations, and direct address to God. His social reforms included debt cancellation, confrontation of Sabbath-breaking merchants, and the dissolution of mixed marriages. His prayer \'Remember me, O my God, for what I have done for these people\' recurs like a refrain.'s walls were ruins. Completed the walls in 52 days under constant threat. His \'arrow prayers\' throughout the book model prayerful leadership.',
+  scriptureRole:'Nehemiah\'s memoir is one of the most historically specific texts in the OT and the closest thing to a personal diary in the biblical canon. Together with Ezra, it provides the canonical account of the post-exilic restoration and the reconstitution of the Jewish community around Torah. Ezra 8 and Nehemiah 8 describe the great public reading of the Law — what scholars call the first Torah service — which directly established the synagogue tradition that both Jesus and Paul participated in.',
   refs:['Neh 1-13'],
   chapter:null
 },
@@ -2684,7 +2762,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. 6 BC – AD 29',
   role:'Forerunner of the Messiah; voice in the wilderness',
-  bio:'Born to elderly Zechariah and Elizabeth. Lived as a Nazirite in the Judean wilderness. Baptised Jesus, declaring "Look, the Lamb of God" (John 1:29). Imprisoned by Herod Antipas. Executed at Herodias\'s daughter\'s request. Jesus: "Among those born of women there has not risen anyone greater than John" (Matt 11:11).',
+  bio:'The son of an elderly priest and his barren wife, John was conceived as a sign and set apart before birth as a Nazirite. He grew up in the wilderness of Judea and began his public ministry around AD 26 — preaching repentance at the Jordan River in the spirit and power of Elijah, wearing camel-hair clothing and eating locusts and wild honey, crowds streaming out from Jerusalem and all Judea. His baptism was a new ritual, unprecedented in Judaism, that dramatized repentance and the washing away of sin. When Jesus came from Galilee to be baptised, John recognized him — \'Look, the Lamb of God, who takes away the sin of the world!\' (John 1:29) — and protested that he needed to be baptised by Jesus, not the reverse. The voice from heaven and the descending Spirit confirmed what John had sensed. He famously said of himself: \'He must increase; I must decrease\' (John 3:30). His undoing was his integrity: he publicly rebuked Herod Antipas for marrying Herodias, his brother Philip\'s wife. He was imprisoned in the fortress of Machaerus. At a birthday banquet, Herodias\'s daughter danced and Herod offered anything — Herodias said: the head of John the Baptist on a platter. Jesus\'s eulogy was absolute: \'Among those born of women there has not risen anyone greater than John the Baptist\' (Matt 11:11). Yet the kingdom that John announced was greater still.'s daughter\'s request. Jesus: "Among those born of women there has not risen anyone greater than John" (Matt 11:11).',
+  scriptureRole:'John the Baptist is explicitly identified as the fulfillment of Malachi\'s prophecy of the returning Elijah (Matt 11:14; 17:10-13; Mal 4:5). Isaiah 40:3 — \'a voice calling in the wilderness, prepare the way of the LORD\' — is applied to him by all four Gospels. Luke gives him a birth narrative parallel to Jesus\'s, underscoring his role as co-inaugurator of the redemptive age. Acts records that his baptism became a distinct theological category requiring supplementation by Spirit-baptism (Acts 19:1-7).',
   refs:['Matt 3','Matt 11:2-19','Luke 1:5-25,57-80','John 1:19-34'],
   chapter:'nt/luke/Luke_1.html'
 },
@@ -2715,7 +2794,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. 18 BC – AD 50+',
   role:'Mother of Jesus; Theotokos ("God-bearer")',
-  bio:'A young woman of Nazareth. Visited by Gabriel announcing she would conceive the Son of God. Her response — "I am the Lord\'s servant" — models faith-in-surrender. Sang the Magnificat. Present at the cross. Entrusted to John\'s care by the dying Jesus.',
+  bio:'A young woman of Nazareth, almost certainly a teenager, betrothed to a carpenter named Joseph. The angel Gabriel\'s greeting — \'Greetings, you who are highly favored! The Lord is with you\' — was entirely unexpected. What followed was the most extraordinary announcement in human history: she would conceive by the Holy Spirit and bear the Son of God. Her response — \'I am the Lord\'s servant. May your word to me be fulfilled\' (Luke 1:38) — is the model of human response to divine initiative. She then composed the Magnificat (Luke 1:46-55), a poem that draws on Hannah\'s prayer, the Psalms, and Isaiah with extraordinary depth, reversing all human expectations about power and status. She raised Jesus in Nazareth alongside Joseph, presented him at the Temple, found him there at 12 in conversation with the teachers, and \'treasured all these things in her heart.\' At the cross, when all the male disciples had fled, she stood there — with Mary Magdalene, Salome, and the beloved disciple. Jesus entrusted her to John\'s care with his dying breath. She was present in the upper room at Pentecost (Acts 1:14). Church tradition affirms her perpetual virginity and bodily assumption; these are not taught in Scripture, which preserves a dignified silence about her later life.'s servant" — models faith-in-surrender. Sang the Magnificat. Present at the cross. Entrusted to John\'s care by the dying Jesus.',
+  scriptureRole:'Mary\'s Magnificat (Luke 1:46-55) is almost certainly the first extended piece of NT composition — written or spoken before the birth of Christ and preserved as Scripture. Her \'yes\' to the angel is the hinge of human history. She is the Theotokos — the God-bearer — a title affirmed at the Council of Ephesus (AD 431) as a statement about Christ\'s identity rather than about her. Elizabeth\'s Spirit-filled greeting to her (Luke 1:41-45) is both the first recognition of Jesus\'s identity and the basis of the Ave Maria.',
   refs:['Luke 1:26-56','Luke 2','John 19:25-27','Acts 1:14'],
   chapter:'nt/luke/Luke_1.html'
 },
@@ -2730,7 +2810,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. 6/5 BC – AD 30/33',
   role:'The Christ; Son of God; Saviour of the world',
-  bio:'Born in Bethlehem, of the line of David. Baptised by John; tempted 40 days; gathered twelve disciples; taught in parables; healed the sick; raised the dead. Crucified on Golgotha, buried, rose on the third day, appeared to over 500 people (1 Cor 15:6). "The Word became flesh and made his dwelling among us" (John 1:14).',
+  bio:'The Gospels present Jesus of Nazareth as the intersection of all Scripture\'s lines: the Seed of the woman (Gen 3:15), the offspring of Abraham (Gal 3:16), the Son of David (Matt 1:1), the Prophet like Moses (Acts 3:22), the Servant of Isaiah 53, the Son of Man of Daniel 7, and the eternal Word of God made flesh (John 1:14). Born in Bethlehem during Herod\'s reign, he grew up in Nazareth and entered public ministry around age 30 at his baptism by John. His three-year ministry centered in Galilee and culminated in Jerusalem. His teaching was authoritative unlike the scribes, his miracles undeniable, his claims unprecedented: \'Before Abraham was, I am\' (John 8:58); \'I and the Father are one\' (John 10:30); \'I am the resurrection and the life\' (John 11:25). He was betrayed by one of his twelve, tried by two high priests and by two Roman officials who both found him innocent, flogged, crowned with thorns, and crucified at Golgotha — the Place of the Skull — on the eve of Passover. Buried in a borrowed tomb, he rose on the third day — witnessed by Mary Magdalene, by the twelve, by more than 500 people, and by Paul (1 Cor 15:3-8). He appeared to his disciples for 40 days before ascending from the Mount of Olives. He promised the Holy Spirit, the growth of the church to the ends of the earth, and his own return.',
+  scriptureRole:'Jesus is both the subject and the interpreter of all Scripture. Luke 24:27 — \'beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself.\' He personally authored no scriptural text, but he is the Word of God incarnate (John 1:1-14), the living fulfillment of every type, shadow, and prophecy in the OT. He is the hermeneutical key that unlocks the canon. The 27 books of the NT exist entirely because of him — to proclaim, explain, and apply his person and work.',
   refs:['Matt-John','Acts 1:1-11','1 Cor 15:3-8','Phil 2:5-11'],
   chapter:'nt/luke/Luke_4.html'
 },
@@ -2761,7 +2842,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. AD 1-68',
   role:'Chief apostle; rock of the church',
-  bio:'Fisherman from Bethsaida, brother of Andrew. Renamed by Jesus. First to confess Jesus as Messiah (Matt 16:16). Denied Jesus three times but was restored with "Do you love me?" × 3. Preached at Pentecost; opened the church to Gentiles through Cornelius. Tradition: crucified upside down in Rome c. AD 64-68.',
+  bio:'Simon bar Jonah was a fisherman from Bethsaida, living in Capernaum with his wife and mother-in-law, when his brother Andrew brought him to Jesus with the words \'We have found the Messiah.\' Jesus looked at him and renamed him: \'You will be called Cephas\' — Rock. The name was prophetic of what he would become, not what he was. He was impulsive, brash, and courageous to the point of foolishness: he walked on water until he looked at the waves; he rebuked Jesus when he predicted his death; he drew a sword in Gethsemane and cut off a man\'s ear; and then, three times that same night, he denied he ever knew him. Each failure was met with grace and restoration. His Pentecost sermon preached to the Jerusalem crowd was the church\'s founding proclamation — 3,000 were baptised. His vision of the sheet with clean and unclean animals, and his subsequent willingness to enter a Gentile home and baptise Cornelius, were pivotal moments in the church\'s self-understanding as open to all nations. Even so, Paul had to rebuke him publicly at Antioch for withdrawing from Gentile table fellowship under pressure from Jerusalem (Gal 2:11-14).',
+  scriptureRole:'Peter is the human author of 1 and 2 Peter, and the primary source behind Mark\'s Gospel (according to Papias c. AD 125: \'Mark became Peter\'s interpreter\'). His speech at Pentecost (Acts 2) is the church\'s first sermon. His confession — \'You are the Messiah, the Son of the living God\' (Matt 16:16) — is the rock on which the church is founded according to Jesus\'s own words. His sermon to Cornelius\'s household (Acts 10) inaugurated the Gentile mission.',
   refs:['Matt 16:13-20','Luke 22:54-62','John 21:15-19','Acts 2','Acts 10'],
   chapter:'nt/luke/Luke_5.html'
 },
@@ -2921,7 +3003,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. AD 5-67',
   role:'Apostle to the Gentiles; author of 13 epistles',
-  bio:'A Pharisee of Benjamin, Roman citizen, trained under Gamaliel. Witnessed and approved Stephen\'s stoning. On the Damascus road encountered the risen Jesus (Acts 9). The former persecutor became Christianity\'s greatest missionary. Three journeys; planted churches across the Mediterranean. 13 letters form the foundation of Christian doctrine. Tradition: martyred in Rome under Nero c. AD 67.',
+  bio:'Saul of Tarsus was simultaneously the most unlikely and the most qualified person to become the apostle to the Gentiles. A Pharisee of Pharisees (Phil 3:5), trained under Gamaliel, a Roman citizen by birth, zealous enough for the law to hunt down and kill Christians — he was present at Stephen\'s stoning, approvingly holding the coats. Then, on the road to Damascus with arrest warrants in hand, a light from heaven struck him blind and a voice spoke: \'Saul, Saul, why do you persecute me? I am Jesus, whom you are persecuting.\' Three days blind and fasting, he was found by the reluctant Ananias who addressed him as \'Brother Saul.\' He spent years in Arabia and Damascus before returning to Jerusalem, then went largely silent for a decade before Barnabas retrieved him from Tarsus. His three missionary journeys — roughly AD 46-57 — planted churches across Cyprus, Galatia, Macedonia, Achaia, and Asia Minor. He was beaten with rods three times, shipwrecked three times, stoned once (left for dead), imprisoned repeatedly, and lived with \'a thorn in the flesh.\' Imprisoned in Caesarea for two years, then Rome for two more, he used both imprisonments to write. His final letter (2 Timothy) is a testament written from a Roman cell: \'I have fought the good fight, I have finished the race, I have kept the faith.\''s stoning. On the Damascus road encountered the risen Jesus (Acts 9). The former persecutor became Christianity\'s greatest missionary. Three journeys; planted churches across the Mediterranean. 13 letters form the foundation of Christian doctrine. Tradition: martyred in Rome under Nero c. AD 67.',
+  scriptureRole:'Paul is the human author of 13 NT letters — Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians, 1-2 Timothy, Titus, and Philemon — which together constitute the doctrinal foundation of Christian theology. Romans alone contains the fullest exposition of justification by faith, the problem of sin, the role of Israel, the ethics of grace, and the sovereignty of God in election that exists in any single document. His letters were recognized as Scripture in his own lifetime (2 Pet 3:15-16). No other human author has shaped Christian thought as deeply.',
   refs:['Acts 9','Acts 13-28','Gal 1-2','Phil 3:4-11'],
   chapter:'nt/acts/Acts_9.html'
 },
@@ -3034,7 +3117,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. AD 18–36',
   role:'High Priest; orchestrated Jesus\'s trial',
-  bio:'Son-in-law of Annas; High Priest AD 18–36. Presided over the Sanhedrin\'s decision to kill Jesus: \'It is better for you that one man die for the people\' (John 11:50) — a prophetic irony John highlights. His tomb and ossuary were discovered in Jerusalem in 1990. Interrogated Jesus during the night trial.',
+  bio:'Joseph Caiaphas served as High Priest from approximately AD 18 to 36 — an exceptionally long tenure achieved by navigating Roman politics with skill. He was son-in-law to Annas, the former High Priest who retained enormous influence. When Lazarus\'s resurrection caused a surge in Jesus\'s following, it was Caiaphas who convened the Sanhedrin and argued with chilling pragmatism: \'It is better for you that one man die for the people than that the whole nation perish\' (John 11:50). John notes that this was prophetic beyond its speaker\'s intention: \'He prophesied that Jesus would die for the Jewish nation, and not only for that nation but also for the scattered children of God.\' He presided over the night trial at which Jesus was questioned about his Messianic identity, heard the words \'You will see the Son of Man sitting at the right hand of the Mighty One and coming on the clouds of heaven,\' tore his robes and declared it blasphemy. The verdict: death. His ossuary — a limestone bone box inscribed \'Joseph son of Caiaphas\' — was discovered in Jerusalem in 1990, providing one of the most significant archaeological confirmations of a NT figure.'s decision to kill Jesus: \'It is better for you that one man die for the people\' (John 11:50) — a prophetic irony John highlights. His tomb and ossuary were discovered in Jerusalem in 1990. Interrogated Jesus during the night trial.',
+  scriptureRole:'Caiaphas\'s accidental prophecy (John 11:50-52) is one of Scripture\'s great ironies: the man who orchestrated the crucifixion articulated its meaning more precisely than he knew. John draws explicit attention to it: \'He did not say this on his own, but as high priest that year he prophesied.\' His tearing of his robes at Jesus\'s claim to be the Son of Man is a precise fulfillment of Daniel 7:13-14, which Jesus quoted in response to his direct question.',
   refs:['Matt 26:3,57-68','John 11:49-52','John 18:13-28','Acts 4:6'],
   chapter:null
 },
@@ -3178,7 +3262,8 @@ const PEOPLE = [
   era:'nt',
   dates:'c. AD 26–36',
   role:'Roman governor of Judea; condemned Jesus',
-  bio:'Roman prefect of Judea under Tiberius, AD 26–36. Tried Jesus, declared him innocent three times, yet caved to crowd pressure and handed him over to be crucified. \'What is truth?\' His wife warned him in a dream. Historical records: Josephus, Tacitus, and a stone inscription found at Caesarea Maritima (1961) confirming his role.',
+  bio:'Pontius Pilate served as prefect (later titled procurator) of Judea from AD 26 to 36. He was recalled after a brutal suppression of a Samaritan uprising and disappears from history. During his tenure, Jesus was the most famous case to come before him. His examination of Jesus was thorough: he found no basis for a charge, sent him to Herod Antipas and received him back with the same verdict, tried three times to release him — offering a Passover prisoner exchange, having him flogged (hoping to satisfy the crowd\'s desire for blood without execution), and presenting him to the crowd as \'the man\' (\'Ecce homo\'). Each time the crowd and the chief priests pressed harder. His wife sent a note: \'Don\'t have anything to do with that innocent man, for I have suffered a great deal today in a dream because of him.\' Finally the threat that releasing Jesus would make him \'no friend of Caesar\' broke Pilate\'s resistance. He washed his hands in a theatrical gesture, declared his innocence, and handed Jesus over. The inscription he put on the cross — \'Jesus of Nazareth, the King of the Jews\' — was written in Hebrew, Latin, and Greek, and when the chief priests objected he famously said: \'What I have written, I have written.\''What is truth?\' His wife warned him in a dream. Historical records: Josephus, Tacitus, and a stone inscription found at Caesarea Maritima (1961) confirming his role.',
+  scriptureRole:'Pilate\'s declaration of Jesus\'s innocence — five times across the Gospels — serves a major theological function: the sinless one was condemned not by justice but by political cowardice, explicitly fulfilling the Suffering Servant pattern of Isa 53 (\'by oppression and judgment he was taken away\'). His name is the only human name (besides Mary) in the Apostles\' Creed: \'suffered under Pontius Pilate\' — anchoring the incarnation to datable history. Tacitus\'s independent reference to his execution of \'Christus\' (Annals 15.44) makes Jesus among the most historically corroborated figures in the ancient world.',
   refs:['Matt 27:1-26','John 18:28-19:22','Acts 4:27'],
   chapter:null
 },
@@ -3565,6 +3650,37 @@ function showBio(d) {
   const color = ERA_COLORS[d.era] || '#888';
   const eraName = ERA_NAMES[d.era] || d.era;
 
+  // ── Build family connections dynamically from PEOPLE array ──────────────
+  const allPeople = PEOPLE;
+  const byId = {};
+  allPeople.forEach(p => byId[p.id] = p);
+
+  // Parents
+  const parents = [];
+  if (d.father && byId[d.father]) parents.push({ rel: 'Father', p: byId[d.father] });
+  if (d.mother && byId[d.mother]) parents.push({ rel: 'Mother', p: byId[d.mother] });
+
+  // Spouses — find all who have spouseOf:d.id
+  const spouses = allPeople.filter(p => p.spouseOf === d.id)
+    .map(p => ({ rel: 'Spouse', p }));
+  // Also handle if this person's spouseOf points to someone else
+  if (d.spouseOf && byId[d.spouseOf]) {
+    const partner = byId[d.spouseOf];
+    // Only add if not already listed (avoid duplicates)
+    if (!spouses.some(s => s.p.id === partner.id)) {
+      spouses.unshift({ rel: 'Spouse', p: partner });
+    }
+  }
+
+  // Children — find all who have father:d.id OR mother:d.id
+  const children = allPeople.filter(p => p.father === d.id || p.mother === d.id);
+
+  // ── Render HTML ───────────────────────────────────────────────────────────
+  function personLink(p) {
+    const pColor = ERA_COLORS[p.era] || '#888';
+    return `<span class="bio-family-link" onclick="showBio(PEOPLE.find(x=>x.id==='${p.id}'))" style="border-color:${pColor}55;color:${pColor}">${p.name}</span>`;
+  }
+
   let html = `
     <div class="bio-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">
       ${eraName}
@@ -3573,24 +3689,44 @@ function showBio(d) {
     <div class="bio-dates">${d.dates || ''}</div>
     <div class="bio-divider"></div>
     <div class="bio-role">${d.role}</div>
-    <div class="bio-text">${d.bio}</div>
   `;
 
+  // Family block
+  const familyRows = [];
+  if (parents.length) {
+    familyRows.push(`<div class="bio-fam-row"><span class="bio-fam-label">${parents.length > 1 ? 'Parents' : parents[0].rel}</span><span class="bio-fam-val">${parents.map(x => personLink(x.p)).join(' &amp; ')}</span></div>`);
+  }
+  if (spouses.length) {
+    const label = spouses.length === 1 ? 'Spouse' : 'Spouses';
+    familyRows.push(`<div class="bio-fam-row"><span class="bio-fam-label">${label}</span><span class="bio-fam-val">${spouses.map(x => personLink(x.p)).join(', ')}</span></div>`);
+  }
+  if (children.length) {
+    const label = children.length === 1 ? 'Child' : 'Children';
+    familyRows.push(`<div class="bio-fam-row"><span class="bio-fam-label">${label}</span><span class="bio-fam-val">${children.map(personLink).join(', ')}</span></div>`);
+  }
+
+  if (familyRows.length) {
+    html += `<div class="bio-family-block">${familyRows.join('')}</div>`;
+  }
+
+  // Biography
+  html += `<div class="bio-text">${d.bio}</div>`;
+
+  // Scripture impact / writing
+  if (d.scriptureRole) {
+    html += `<div class="bio-section-head">Role in Scripture</div>
+    <div class="bio-scripture-role">${d.scriptureRole}</div>`;
+  }
+
+  // Key references
   if (d.refs && d.refs.length) {
     html += `<div class="bio-section-head">Key References</div>
     <div class="bio-refs">${d.refs.map(r => `<span class="bio-ref">${r}</span>`).join('')}</div>`;
   }
 
-  if (d.family && Object.keys(d.family).length) {
-    const familyLines = Object.entries(d.family)
-      .map(([k,v]) => `<span>${k.replace(/_/g,' ')}:</span> ${v}`)
-      .join('<br>');
-    html += `<div class="bio-section-head">Family</div>
-    <div class="bio-family">${familyLines}</div>`;
-  }
-
+  // Chapter link
   if (d.chapter) {
-    html += `<a href="${d.chapter}" class="bio-chapter-link">Read in Scripture Walkthrough →</a>`;
+    html += `<a href="${d.chapter}" class="bio-chapter-link">Read in Scripture Deep Dive →</a>`;
   }
 
   document.getElementById('bio-content').innerHTML = html;
