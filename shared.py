@@ -587,6 +587,44 @@ BOOK_META = {
     },
 
 
+    'acts': {
+        'is_nt': True,
+        'auth': (
+            '<strong>Author:</strong> Luke the physician (Col 4:14), a Gentile convert and '
+            'travelling companion of Paul. Acts is the second volume of a two-part work addressed '
+            'to Theophilus (Luke 1:3; Acts 1:1). The &ldquo;we&rdquo; sections (16:10&ndash;17; '
+            '20:5&ndash;21:18; 27:1&ndash;28:16) place Luke as an eyewitness participant in '
+            'significant portions of the Pauline mission. Irenaeus, Clement of Alexandria, '
+            'and the Muratorian Canon (c.&thinsp;AD&thinsp;170) unanimously identify Luke as author.'
+            '\n\n'
+            '<strong>When written:</strong> c.&thinsp;AD&thinsp;62&ndash;64, most likely during '
+            "Paul's Roman imprisonment (28:30&ndash;31). The abrupt ending &mdash; Paul awaiting "
+            'trial &mdash; is most naturally explained if Luke wrote before the outcome was known. '
+            'The silence about Jerusalem&rsquo;s destruction (AD&thinsp;70) and Paul&rsquo;s death '
+            '(c.&thinsp;AD&thinsp;67) supports an early 60s date.'
+            '\n\n'
+            '<strong>What prompted it:</strong> Luke traces the Gospel from Jerusalem to Rome, '
+            'fulfilling the commission of 1:8 (&ldquo;you will be my witnesses in Jerusalem, and '
+            'in all Judea and Samaria, and to the ends of the earth&rdquo;). Acts defends the '
+            'legitimacy of the Gentile mission, demonstrates the continuity of the church with '
+            'Israel, and shows that the gospel&rsquo;s advance is providentially directed through '
+            'opposition, imprisonment, and persecution. It is the indispensable bridge between '
+            'the Gospels and the Epistles.'
+        ),
+        'vhl_places': ['Jerusalem','Antioch','Rome','Ephesus','Corinth','Philippi',
+                       'Athens','Caesarea','Damascus','Samaria','Judea','Galatia',
+                       'synagogue','temple','Macedonia'],
+        'vhl_people': ['Paul','Peter','Barnabas','Stephen','Philip','James','Silas',
+                       'Timothy','Apollos','Herod','Felix','Festus','Agrippa',
+                       'disciples','apostles','elders','Ananias','Cornelius'],
+        'vhl_time':   ['day','days','night','morning','hour','years','year',
+                       'suddenly','at once','three days','sabbath','Pentecost'],
+        'vhl_key':    ['Spirit','repentance','baptized','believe','witness','gospel',
+                       'resurrection','kingdom','salvation','Holy Spirit','boldly',
+                       'signs','wonders','name','Word','grace','faith','Gentiles'],
+    },
+
+
 }
 
 def auth_sections(text):
@@ -1138,6 +1176,7 @@ def commentary_panel(pid, commentator_key, notes):
         'netbible':  ('NET Bible Notes',               'NET Bible Full Notes Edition \u2014 Biblical Studies Press'),
         'marcus':    ('Marcus \u2014 Anchor Bible',     'Joel Marcus, Mark 1\u20138 / 8\u201316, Anchor Bible (2000/2009) \u2014 Scholarly Paraphrase'),
         'rhoads':    ('Rhoads \u2014 Mark as Story',   'David Rhoads & Donald Michie, Mark as Story (3rd ed., 2012) \u2014 Scholarly Paraphrase'),
+        'keener':    ('Keener \u2014 Acts Commentary',  'Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012\u20132015) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1267,7 +1306,9 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             _qnav + '\n' +
             _qctrl + '\n' +
             '<script src="../verses.js"></script>\n' +
-            _sw + '\n' + HISTORY_JS + '\n</body></html>')
+            _sw + '\n' + HISTORY_JS + '\n' +
+            f'<script>window.QNAV_CURRENT="{book_dir}/{book_name}_{ch}.html";</script>\n' +
+            '<script src="../qnav.js"></script>\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     return path
@@ -1405,6 +1446,7 @@ def build_chapter(book_dir, ch, data):
         if 'catena'   in sec and in_scope('catena'):    panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
         if 'marcus'   in sec and in_scope('marcus'):    panels_html += commentary_panel(f'{sid}-marcus',   'marcus',    sec['marcus'])
         if 'rhoads'   in sec and in_scope('rhoads'):    panels_html += commentary_panel(f'{sid}-rhoads',   'rhoads',    sec['rhoads'])
+        if 'keener'   in sec and in_scope('keener'):    panels_html += commentary_panel(f'{sid}-keener',   'keener',    sec['keener'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
