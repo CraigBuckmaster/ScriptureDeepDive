@@ -318,19 +318,49 @@ body {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: rgba(12,10,7,.85);
+  background: rgba(12,10,7,.92);
   border: 1px solid var(--border);
   border-radius: 5px;
-  padding: .6rem .8rem;
-  pointer-events: none;
+  overflow: hidden;
+  pointer-events: all;
+  user-select: none;
+  min-width: 210px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.5);
 }
+.legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .55rem .8rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border2);
+  transition: background .15s;
+}
+.legend-header:hover { background: rgba(255,255,255,.03); }
 .legend-title {
   font-family: 'Cinzel', serif;
-  font-size: .55rem;
+  font-size: .58rem;
   letter-spacing: .18em;
   text-transform: uppercase;
+  color: var(--gold-dim);
+}
+.legend-chev {
+  font-size: .65rem;
   color: var(--text-muted);
-  margin-bottom: .5rem;
+  transition: transform .22s;
+}
+.legend.collapsed .legend-chev { transform: rotate(-90deg); }
+.legend-body {
+  padding: .55rem .8rem .6rem;
+  transition: max-height .25s cubic-bezier(.4,0,.2,1),
+              padding .25s cubic-bezier(.4,0,.2,1);
+  max-height: 300px;
+  overflow: hidden;
+}
+.legend.collapsed .legend-body {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .legend-item {
   display: flex;
@@ -340,6 +370,7 @@ body {
   font-size: .7rem;
   color: var(--text-muted);
 }
+.legend-item:last-child { margin-bottom: 0; }
 .legend-dot {
   width: 8px;
   height: 8px;
@@ -400,22 +431,27 @@ body {
   <div id="tree-panel">
     <svg id="tree-svg"></svg>
     <div class="tree-hint" id="tree-hint">Scroll to zoom &middot; Drag to pan &middot; Click a name to read biography</div>
-    <div class="legend">
-      <div class="legend-title">Legend</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div> Genealogical spine (Adam–Jesus)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval History</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal Period</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Egypt &amp; Exodus</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Conquest &amp; Judges</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> United Kingdom</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Divided Kingdom &amp; Prophets</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile &amp; Return</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
-      <div class="legend-item">
-        <div class="legend-line" style="background:var(--gold-dim)"></div> Direct descent
+    <div class="legend" id="legend">
+      <div class="legend-header" onclick="toggleLegend()">
+        <span class="legend-title">Legend</span>
+        <span class="legend-chev">&#9660;</span>
       </div>
-      <div class="legend-item">
-        <div class="legend-line" style="background:var(--border); background: repeating-linear-gradient(90deg, var(--text-muted) 0 4px, transparent 4px 7px)"></div> Era contemporary
+      <div class="legend-body">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div> Genealogical spine (Adam–Jesus)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval History</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal Period</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Egypt &amp; Exodus</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Conquest &amp; Judges</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> United Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Divided Kingdom &amp; Prophets</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile &amp; Return</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
+        <div class="legend-item" style="margin-top:.4rem">
+          <div class="legend-line" style="background:var(--gold-dim)"></div> Direct descent
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background: repeating-linear-gradient(90deg, var(--text-muted) 0 4px, transparent 4px 7px)"></div> Era contemporary
+        </div>
       </div>
     </div>
   </div>
@@ -1156,6 +1192,11 @@ document.querySelectorAll('.era-btn').forEach(btn => {
     render(currentEra);
   });
 });
+
+// ── LEGEND TOGGLE ─────────────────────────────────────────────────────────
+function toggleLegend() {
+  document.getElementById('legend').classList.toggle('collapsed');
+}
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 window.addEventListener('resize', () => render(currentEra));

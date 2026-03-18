@@ -1,4 +1,4 @@
-const CACHE = 'scripture-v194';
+const CACHE = 'scripture-v195';
 const CORE = [
   '/',
   '/index.html',
