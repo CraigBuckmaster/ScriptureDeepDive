@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>John 18 — Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.qnav-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.qnav-overlay.open{display:flex;flex-direction:column;}
+.qnav-panel{background:#0d0b07;border-bottom:1px solid #3a2e18;max-height:82vh;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;}
+.qnav-header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-bottom:1px solid rgba(58,46,24,.5);position:sticky;top:0;background:#0d0b07;z-index:1;}
+.qnav-search-wrap{flex:1;position:relative;}
+.qnav-search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#5a4a30;font-size:.78rem;pointer-events:none;}
+.qnav-search{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(58,46,24,.8);border-radius:4px;padding:.42rem .75rem .42rem 2rem;color:#f0e8d8;font-family:'Source Sans 3',sans-serif;font-size:.88rem;outline:none;transition:border-color .15s;}
+.qnav-search:focus{border-color:#8b6914;}
+.qnav-search::placeholder{color:#4a3a22;}
+.qnav-close{background:none;border:1px solid rgba(58,46,24,.6);border-radius:4px;color:#7a6a50;cursor:pointer;padding:.35rem .65rem;font-size:.72rem;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.qnav-close:hover{border-color:#8b6914;color:#c9a84c;}
+.qnav-body{overflow-y:auto;}
+.qnav-testament{border-bottom:1px solid rgba(58,46,24,.25);}.qnav-testament-btn{width:100%;background:transparent;border:none;cursor:pointer;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center;transition:background .12s;-webkit-appearance:none;}.qnav-testament-btn:hover{background:rgba(255,255,255,.03);}.qnav-testament-label{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;}.qnav-testament-chev{font-size:.48rem;color:#c9a84c;transition:transform .2s;}.qnav-testament.open .qnav-testament-chev{transform:rotate(180deg);}.qnav-testament-books{display:none;}.qnav-testament.open .qnav-testament-books{display:block;}
+.qnav-book{border-bottom:1px solid rgba(58,46,24,.18);}
+.qnav-book-btn{width:100%;background:none;border:none;cursor:pointer;padding:.48rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;transition:background .12s;}
+.qnav-book-btn:hover{background:rgba(255,255,255,.04);}
+.qnav-book-name{font-family:'EB Garamond',serif;font-size:.98rem;color:#c8c0a0;text-align:left;display:flex;align-items:center;gap:.5rem;}
+.qnav-live-dot{width:6px;height:6px;border-radius:50%;background:#70d098;flex-shrink:0;box-shadow:0 0 5px rgba(112,208,152,.5);}
+.qnav-book-meta{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.qnav-ch-count{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:#4a3a22;letter-spacing:.04em;}
+.qnav-book-chev{font-size:.5rem;color:#4a3a22;transition:transform .2s;}
+.qnav-book.open .qnav-book-chev{transform:rotate(180deg);}
+.qnav-ch-grid{display:none;padding:.4rem .9rem .7rem;}
+.qnav-book.open .qnav-ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:.3rem;}
+.qnav-ch-btn{background:rgba(255,255,255,.04);border:1px solid rgba(58,46,24,.4);border-radius:3px;color:#c8c0a0;font-family:'Source Sans 3',sans-serif;font-size:.72rem;padding:.3rem .4rem;text-align:center;text-decoration:none;transition:all .12s;display:block;}
+.qnav-ch-btn:hover,.qnav-ch-btn.live{border-color:#8b6914;color:#c9a84c;}
+.qnav-ch-btn.current{background:rgba(201,168,76,.15);border-color:#c9a84c;color:#e8c870;font-weight:600;}
+.qnav-dismiss{flex:1;cursor:pointer;}
+
+.qnav-search-results{padding:.4rem .5rem;max-height:420px;overflow-y:auto;}
+.qnav-verse-result{display:flex;flex-direction:column;gap:.2rem;padding:.5rem .65rem;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;
+  margin-bottom:.3rem;text-decoration:none;transition:background .12s;cursor:pointer;}
+.qnav-verse-result:hover{background:rgba(201,168,76,.08);border-color:var(--gold-dim);}
+.qnav-vref{font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;}
+.qnav-vsnip{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-dim);
+  line-height:1.45;}
+.qnav-vsnip em{color:var(--gold-bright);font-style:normal;font-weight:600;}
+.qnav-no-results{font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:var(--text-muted);
+  padding:.5rem .65rem;text-align:center;}
+
+
+/* ── Textual Notes panel ─────────────────────────────── */
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.anno-trigger.textual{color:#70b8e8;border-color:#2a4060;background:rgba(42,64,96,.12);}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+.anno-trigger.debate{color:#a870e8;border-color:#3a2060;background:rgba(58,32,96,.12);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+/* Marcus — Anchor Bible (teal-blue: historical-critical scholarship) */
+.anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
+.anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
+.anno-trigger.marcus.active{filter:brightness(1.25);}
+.com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
+.com-panel.com-marcus h4{color:#70d8d8;}
+.com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
+/* Rhoads — Mark as Story (amber-gold: narrative/literary criticism) */
+.anno-trigger.rhoads{color:#e8c060;border-color:#886020;background:rgba(80,56,12,.22);}
+.anno-trigger.rhoads:hover{border-color:#c8a040;background:rgba(80,56,12,.32);}
+.anno-trigger.rhoads.active{filter:brightness(1.25);}
+.com-panel.com-rhoads{background:#0e0900;border-color:#886020;}
+.com-panel.com-rhoads h4{color:#e8c060;}
+.com-panel.com-rhoads .com-source{color:#e8c060;border-bottom-color:rgba(136,96,32,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
+/* ── Places (POI) section panel ─────────────────────────────── */
+.poi-entry{padding:.7rem 0;border-bottom:1px solid rgba(26,96,40,.35);}
+.poi-entry:last-child{border-bottom:none;}
+.poi-name{font-family:'Cinzel',serif;font-size:.8rem;color:var(--poi-accent);margin-bottom:.2rem;}
+.poi-coords{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-bottom:.35rem;}
+.poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
+
+/* ── Timeline section panel ─────────────────────────────────── */
+.tl-visual{position:relative;margin:.5rem 0 .3rem;}
+.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 6%,#4a6888 94%,transparent);pointer-events:none;}
+.tl-event{position:relative;display:grid;grid-template-columns:130px 28px 1fr;grid-template-rows:auto auto;align-items:start;padding:6px 0;}
+.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:'Cinzel',serif;font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:10px;white-space:nowrap;}
+.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;padding-top:4px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}
+.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:12px;}
+.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}
+.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}
+.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 170px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
+
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">John</span><span class="nav-chapter">Chapter 18</span></div>
+<div class="nav-arrows"><a href="John_17.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="John_19.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<div class="qnav-overlay" id="qnav-overlay">
+<div class="qnav-panel">
+<div class="qnav-header">
+<div class="qnav-search-wrap"><span class="qnav-search-icon">&#128269;</span><input class="qnav-search" id="qnav-search-input" placeholder="Search books..." oninput="qnavFilter(this.value)"></div>
+<button class="qnav-close" onclick="closeQnav()">Close</button>
+</div>
+<div class="qnav-body">
+<div class="qnav-search-results" id="qnav-search-results" style="display:none"></div>
+<div class="qnav-testament" id="qnav-t-ot">
+<button class="qnav-testament-btn" onclick="qnavToggleTestament('ot')">
+<span class="qnav-testament-label">Old Testament</span>
+<span class="qnav-testament-chev">&#9660;</span>
+</button>
+<div class="qnav-testament-books"><div class="qnav-book" id="qnav-book-genesis"><button class="qnav-book-btn" onclick="qnavToggleBook('genesis')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Genesis</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../genesis/Genesis_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../genesis/Genesis_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../genesis/Genesis_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../genesis/Genesis_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../genesis/Genesis_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../genesis/Genesis_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../genesis/Genesis_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../genesis/Genesis_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../genesis/Genesis_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../genesis/Genesis_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../genesis/Genesis_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../genesis/Genesis_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../genesis/Genesis_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../genesis/Genesis_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../genesis/Genesis_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../genesis/Genesis_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../genesis/Genesis_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../genesis/Genesis_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../genesis/Genesis_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../genesis/Genesis_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../genesis/Genesis_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../genesis/Genesis_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../genesis/Genesis_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../genesis/Genesis_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../genesis/Genesis_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../genesis/Genesis_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../genesis/Genesis_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../genesis/Genesis_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../genesis/Genesis_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../genesis/Genesis_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../genesis/Genesis_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../genesis/Genesis_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../genesis/Genesis_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../genesis/Genesis_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../genesis/Genesis_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../genesis/Genesis_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../genesis/Genesis_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../genesis/Genesis_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../genesis/Genesis_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../genesis/Genesis_40.html" class="qnav-ch-btn live">Ch 40</a><a href="../genesis/Genesis_41.html" class="qnav-ch-btn live">Ch 41</a><a href="../genesis/Genesis_42.html" class="qnav-ch-btn live">Ch 42</a><a href="../genesis/Genesis_43.html" class="qnav-ch-btn live">Ch 43</a><a href="../genesis/Genesis_44.html" class="qnav-ch-btn live">Ch 44</a><a href="../genesis/Genesis_45.html" class="qnav-ch-btn live">Ch 45</a><a href="../genesis/Genesis_46.html" class="qnav-ch-btn live">Ch 46</a><a href="../genesis/Genesis_47.html" class="qnav-ch-btn live">Ch 47</a><a href="../genesis/Genesis_48.html" class="qnav-ch-btn live">Ch 48</a><a href="../genesis/Genesis_49.html" class="qnav-ch-btn live">Ch 49</a><a href="../genesis/Genesis_50.html" class="qnav-ch-btn live">Ch 50</a></div></div><div class="qnav-book" id="qnav-book-exodus"><button class="qnav-book-btn" onclick="qnavToggleBook('exodus')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Exodus</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../exodus/Exodus_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../exodus/Exodus_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../exodus/Exodus_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../exodus/Exodus_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../exodus/Exodus_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../exodus/Exodus_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../exodus/Exodus_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../exodus/Exodus_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../exodus/Exodus_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../exodus/Exodus_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../exodus/Exodus_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../exodus/Exodus_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../exodus/Exodus_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../exodus/Exodus_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../exodus/Exodus_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../exodus/Exodus_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../exodus/Exodus_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../exodus/Exodus_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../exodus/Exodus_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../exodus/Exodus_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../exodus/Exodus_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../exodus/Exodus_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../exodus/Exodus_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../exodus/Exodus_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../exodus/Exodus_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../exodus/Exodus_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../exodus/Exodus_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../exodus/Exodus_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../exodus/Exodus_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../exodus/Exodus_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../exodus/Exodus_31.html" class="qnav-ch-btn live">Ch 31</a><a href="../exodus/Exodus_32.html" class="qnav-ch-btn live">Ch 32</a><a href="../exodus/Exodus_33.html" class="qnav-ch-btn live">Ch 33</a><a href="../exodus/Exodus_34.html" class="qnav-ch-btn live">Ch 34</a><a href="../exodus/Exodus_35.html" class="qnav-ch-btn live">Ch 35</a><a href="../exodus/Exodus_36.html" class="qnav-ch-btn live">Ch 36</a><a href="../exodus/Exodus_37.html" class="qnav-ch-btn live">Ch 37</a><a href="../exodus/Exodus_38.html" class="qnav-ch-btn live">Ch 38</a><a href="../exodus/Exodus_39.html" class="qnav-ch-btn live">Ch 39</a><a href="../exodus/Exodus_40.html" class="qnav-ch-btn live">Ch 40</a></div></div><div class="qnav-book" id="qnav-book-ruth"><button class="qnav-book-btn" onclick="qnavToggleBook('ruth')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Ruth</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../ruth/Ruth_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../ruth/Ruth_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../ruth/Ruth_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../ruth/Ruth_4.html" class="qnav-ch-btn live">Ch 4</a></div></div><div class="qnav-book" id="qnav-book-proverbs"><button class="qnav-book-btn" onclick="qnavToggleBook('proverbs')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Proverbs</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../proverbs/Proverbs_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../proverbs/Proverbs_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../proverbs/Proverbs_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../proverbs/Proverbs_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../proverbs/Proverbs_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../proverbs/Proverbs_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../proverbs/Proverbs_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../proverbs/Proverbs_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../proverbs/Proverbs_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../proverbs/Proverbs_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../proverbs/Proverbs_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../proverbs/Proverbs_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../proverbs/Proverbs_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../proverbs/Proverbs_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../proverbs/Proverbs_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../proverbs/Proverbs_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../proverbs/Proverbs_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../proverbs/Proverbs_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../proverbs/Proverbs_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../proverbs/Proverbs_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../proverbs/Proverbs_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../proverbs/Proverbs_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../proverbs/Proverbs_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../proverbs/Proverbs_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../proverbs/Proverbs_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../proverbs/Proverbs_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../proverbs/Proverbs_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../proverbs/Proverbs_28.html" class="qnav-ch-btn live">Ch 28</a><a href="../proverbs/Proverbs_29.html" class="qnav-ch-btn live">Ch 29</a><a href="../proverbs/Proverbs_30.html" class="qnav-ch-btn live">Ch 30</a><a href="../proverbs/Proverbs_31.html" class="qnav-ch-btn live">Ch 31</a></div></div></div>
+</div>
+<div class="qnav-testament open" id="qnav-t-nt">
+<button class="qnav-testament-btn" onclick="qnavToggleTestament('nt')">
+<span class="qnav-testament-label">New Testament</span>
+<span class="qnav-testament-chev">&#9660;</span>
+</button>
+<div class="qnav-testament-books"><div class="qnav-book" id="qnav-book-matthew"><button class="qnav-book-btn" onclick="qnavToggleBook('matthew')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Matthew</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../matthew/Matthew_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../matthew/Matthew_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../matthew/Matthew_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../matthew/Matthew_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../matthew/Matthew_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../matthew/Matthew_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../matthew/Matthew_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../matthew/Matthew_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../matthew/Matthew_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../matthew/Matthew_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../matthew/Matthew_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../matthew/Matthew_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../matthew/Matthew_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../matthew/Matthew_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../matthew/Matthew_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../matthew/Matthew_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../matthew/Matthew_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../matthew/Matthew_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../matthew/Matthew_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../matthew/Matthew_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../matthew/Matthew_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../matthew/Matthew_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../matthew/Matthew_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../matthew/Matthew_24.html" class="qnav-ch-btn live">Ch 24</a><a href="../matthew/Matthew_25.html" class="qnav-ch-btn live">Ch 25</a><a href="../matthew/Matthew_26.html" class="qnav-ch-btn live">Ch 26</a><a href="../matthew/Matthew_27.html" class="qnav-ch-btn live">Ch 27</a><a href="../matthew/Matthew_28.html" class="qnav-ch-btn live">Ch 28</a></div></div><div class="qnav-book" id="qnav-book-mark"><button class="qnav-book-btn" onclick="qnavToggleBook('mark')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Mark</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../mark/Mark_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../mark/Mark_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../mark/Mark_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../mark/Mark_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../mark/Mark_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../mark/Mark_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../mark/Mark_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../mark/Mark_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../mark/Mark_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../mark/Mark_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../mark/Mark_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../mark/Mark_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../mark/Mark_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../mark/Mark_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../mark/Mark_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../mark/Mark_16.html" class="qnav-ch-btn live">Ch 16</a></div></div><div class="qnav-book" id="qnav-book-luke"><button class="qnav-book-btn" onclick="qnavToggleBook('luke')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>Luke</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../luke/Luke_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../luke/Luke_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../luke/Luke_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../luke/Luke_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../luke/Luke_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../luke/Luke_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../luke/Luke_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../luke/Luke_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../luke/Luke_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../luke/Luke_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../luke/Luke_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../luke/Luke_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../luke/Luke_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../luke/Luke_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../luke/Luke_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../luke/Luke_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../luke/Luke_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../luke/Luke_18.html" class="qnav-ch-btn live">Ch 18</a><a href="../luke/Luke_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../luke/Luke_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../luke/Luke_21.html" class="qnav-ch-btn live">Ch 21</a><a href="../luke/Luke_22.html" class="qnav-ch-btn live">Ch 22</a><a href="../luke/Luke_23.html" class="qnav-ch-btn live">Ch 23</a><a href="../luke/Luke_24.html" class="qnav-ch-btn live">Ch 24</a></div></div><div class="qnav-book open" id="qnav-book-john"><button class="qnav-book-btn" onclick="qnavToggleBook('john')"><span class="qnav-book-name"><span class="qnav-live-dot"></span>John</span><span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span></button><div class="qnav-ch-grid"><a href="../john/John_1.html" class="qnav-ch-btn live">Ch 1</a><a href="../john/John_2.html" class="qnav-ch-btn live">Ch 2</a><a href="../john/John_3.html" class="qnav-ch-btn live">Ch 3</a><a href="../john/John_4.html" class="qnav-ch-btn live">Ch 4</a><a href="../john/John_5.html" class="qnav-ch-btn live">Ch 5</a><a href="../john/John_6.html" class="qnav-ch-btn live">Ch 6</a><a href="../john/John_7.html" class="qnav-ch-btn live">Ch 7</a><a href="../john/John_8.html" class="qnav-ch-btn live">Ch 8</a><a href="../john/John_9.html" class="qnav-ch-btn live">Ch 9</a><a href="../john/John_10.html" class="qnav-ch-btn live">Ch 10</a><a href="../john/John_11.html" class="qnav-ch-btn live">Ch 11</a><a href="../john/John_12.html" class="qnav-ch-btn live">Ch 12</a><a href="../john/John_13.html" class="qnav-ch-btn live">Ch 13</a><a href="../john/John_14.html" class="qnav-ch-btn live">Ch 14</a><a href="../john/John_15.html" class="qnav-ch-btn live">Ch 15</a><a href="../john/John_16.html" class="qnav-ch-btn live">Ch 16</a><a href="../john/John_17.html" class="qnav-ch-btn live">Ch 17</a><a href="../john/John_18.html" class="qnav-ch-btn live current">Ch 18</a><a href="../john/John_19.html" class="qnav-ch-btn live">Ch 19</a><a href="../john/John_20.html" class="qnav-ch-btn live">Ch 20</a><a href="../john/John_21.html" class="qnav-ch-btn live">Ch 21</a></div></div></div>
+</div>
+</div>
+</div>
+<div class="qnav-dismiss" onclick="closeQnav()"></div>
+</div>
+<main>
+<header>
+<h1>John 18</h1>
+<p>John 18</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><span class="auth-label">Author</span><p class="auth-text">John the son of Zebedee &mdash; fisherman, apostle, and &ldquo;the disciple whom Jesus loved&rdquo; (John 13:23; 19:26; 20:2; 21:7, 20). The fourth Gospel never names its author directly, but the evidence converges on John: (1) The &ldquo;beloved disciple&rdquo; is an eyewitness (19:35; 21:24) present at the Last Supper, the cross, and the empty tomb. (2) Early and unanimous tradition: Irenaeus (c.&thinsp;AD&thinsp;180), Clement of Alexandria, Origen, and Eusebius all identify the author as John the apostle writing from Ephesus in old age. (3) The Gospel’s intimate knowledge of Jerusalem topography (Pool of Bethesda, Pool of Siloam, the Pavement/Gabbatha) is confirmed by archaeology. (4) The eyewitness claim of 19:35 and the closing verse of 21:24 point to direct authorial witness. Liberal scholarship has proposed an anonymous Johannine community or the Elder John of Ephesus; the traditional identification with the apostle remains the best-attested position.</p></div>
+<div class="auth-section"><span class="auth-label">When written</span><p class="auth-text">c.&thinsp;AD&thinsp;85&ndash;95, probably from Ephesus, making it the latest of the four Gospels. The Rylands Papyrus (P52, c.&thinsp;AD&thinsp;125) &mdash; the earliest surviving NT manuscript fragment &mdash; contains John 18:31-33, 37-38, confirming the Gospel was in circulation in Egypt by the early second century. A pre-AD&thinsp;70 date has been argued from the Temple language in chs 2, 5, and 10, which reads as description of a standing building; the majority of scholars favour a post-70 date for the final composition. The three Johannine letters and Revelation share vocabulary and theological concerns with the Gospel, suggesting a common Ephesian milieu.</p></div>
+<div class="auth-section"><span class="auth-label">What prompted it</span><p class="auth-text">John states his purpose explicitly &mdash; a rarity in the Gospels: &ldquo;These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name&rdquo; (20:31). The Gospel was written to produce and sustain faith in the person of Jesus as divine Son. It supplements the Synoptics rather than duplicates them: John omits the Baptism, the Transfiguration, the Olivet Discourse, and the institution of the Lord’s Supper as a formal narrative, while providing material found nowhere else &mdash; the wedding at Cana, Nicodemus, the Samaritan woman, the raising of Lazarus, the Farewell Discourse (chs&thinsp;14&ndash;17), and the resurrection appearances to Mary Magdalene and Thomas. Its elevated Christology (&ldquo;In the beginning was the Word&rdquo;) addresses late first-century challenges to the full divinity of Christ and lays the foundation for all subsequent trinitarian theology.</p></div>
+</div>
+</div>
+<div class="section"><div class="section-header">Verses 1–27 — Arrest; Peter's Denial; Jewish Trial</div><span class="verse-text"><span class="verse-num">1</span>When he had finished praying, Jesus left with his disciples and crossed the Kidron Valley. On the other side there was a garden, and he and his disciples went into it.</span><span class="verse-text"><span class="verse-num">2</span>Now Judas, who betrayed him, knew the place, because Jesus had often met there with his disciples.</span><span class="verse-text"><span class="verse-num">3</span>So Judas came to the garden, guiding a detachment of soldiers and some officials from the chief priests and the Pharisees. They were carrying torches, lanterns and weapons.</span><span class="verse-text"><span class="verse-num">4</span>Jesus, knowing all that was going to happen to him, went out and asked them, "Who is it you want?"</span><span class="verse-text"><span class="verse-num">5</span>"Jesus of Nazareth," they replied. "I am he," Jesus said. (And Judas the traitor was standing there with them.)</span><span class="verse-text"><span class="verse-num">6</span>When Jesus said, "I am he," they drew back and fell to the ground.</span><span class="verse-text"><span class="verse-num">7</span>Again he asked them, "Who is it you want?" "Jesus of Nazareth," they said.</span><span class="verse-text"><span class="verse-num">8</span>Jesus answered, "I told you that I am he. If you are looking for me, then let these men go."</span><span class="verse-text"><span class="verse-num">9</span>This happened so that the words he had spoken would be fulfilled: "I have not lost one of those you gave me."</span><span class="verse-text"><span class="verse-num">10</span>Then Simon Peter, who had a sword, drew it and struck the high priest's servant, cutting off his right ear. (The servant's name was Malchus.)</span><span class="verse-text"><span class="verse-num">11</span>Jesus commanded Peter, "Put your sword away! Shall I not drink the cup the Father has given me?"</span><span class="verse-text"><span class="verse-num">12</span>Then the detachment of soldiers with its commander and the Jewish officials arrested Jesus. They bound him</span><span class="verse-text"><span class="verse-num">13</span>and brought him first to Annas, who was the father-in-law of Caiaphas, the high priest that year.</span><span class="verse-text"><span class="verse-num">14</span>Caiaphas was the one who had advised the Jewish leaders that it would be good if one man died for the people.</span><span class="verse-text"><span class="verse-num">15</span>Simon Peter and another disciple were following Jesus. Because this disciple was known to the high priest, he went with Jesus into the high priest's courtyard,</span><span class="verse-text"><span class="verse-num">16</span>but Peter had to wait outside at the door. The other disciple, who was known to the high priest, came back, spoke to the servant girl on duty there and brought Peter in.</span><span class="verse-text"><span class="verse-num">17</span>"You aren't one of this man's disciples too, are you?" she asked Peter. He replied, "I am not."</span><span class="verse-text"><span class="verse-num">18</span>It was cold, and the servants and officials stood around a fire they had made to keep warm. Peter also was standing with them, warming himself.</span><span class="verse-text"><span class="verse-num">19</span>Meanwhile, the high priest questioned Jesus about his disciples and his teaching.</span><span class="verse-text"><span class="verse-num">20</span>"I have spoken openly to the world," Jesus replied. "I always taught in synagogues or at the temple, where all the Jews come together. I said nothing in secret.</span><span class="verse-text"><span class="verse-num">21</span>Why question me? Ask those who heard me. Surely they know what I said."</span><span class="verse-text"><span class="verse-num">22</span>When Jesus said this, one of the officials nearby slapped him in the face. "Is this the way you answer the high priest?" he demanded.</span><span class="verse-text"><span class="verse-num">23</span>"If I said something wrong," Jesus replied, "testify as to what is wrong. But if I spoke the truth, why did you strike me?"</span><span class="verse-text"><span class="verse-num">24</span>Then Annas sent him bound to Caiaphas the high priest.</span><span class="verse-text"><span class="verse-num">25</span>Meanwhile, Simon Peter was still standing there warming himself. So they asked him, "You aren't one of his disciples too, are you?" He denied it, saying, "I am not."</span><span class="verse-text"><span class="verse-num">26</span>One of the high priest's servants, a relative of the man whose ear Peter had cut off, challenged him, "Didn't I see you with him in the garden?"</span><span class="verse-text"><span class="verse-num">27</span>Again Peter denied it, and at that moment a rooster began to crow.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn18-s1-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger places" onclick="tog(this,'jn18-s1-places')"><span>Places</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn18-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn18-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn18-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn18-s1-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn18-s1-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn18-s1-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn18-s1-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">egō eimi</span> <span class="tlit">e-GO ei-MI</span> — <strong>I am he / I am</strong>: In v.5-6 the egō eimi causes the armed detachment to fall to the ground — a theophanic response. John's passion narrative begins with a display of divine power so overwhelming that trained soldiers collapse before Jesus. He is not arrested; he surrenders. The "I am" that was used to claim the divine name (8:58) now functions as the word that lays low an armed cohort. The cross is not defeat; it is sovereign self-giving.</p><p><span class="hebrew-word">potērion</span> <span class="tlit">po-TE-ri-on</span> — <strong>cup</strong>: "Shall I not drink the cup the Father has given me?" (v.11) — the cup is the OT metaphor for God's wrath poured out in judgment (Ps 75:8; Isa 51:17; Jer 25:15; Ezek 23:32-34). Jesus does not merely suffer; he drinks the cup of divine wrath that sinners deserve. The willingness to drink the cup is John's equivalent of Gethsemane: the agonised prayer of the Synoptics is here compressed into one rhetorical question that contains the whole of substitutionary atonement.</p></div><div id="jn18-s1-places" class="anno-panel poi-panel"><h4>Places</h4><div class="poi-entry"><div class="poi-name">Garden of Gethsemane</div><div class="poi-coords">31.7792° N, 35.2397° E</div><div class="poi-text">Across the Kidron Valley from Jerusalem on the western slope of the Mount of Olives. The name Gethsemane means "olive press" — the garden contained an olive grove and oil press. Jesus regularly met with his disciples here (v.2), making it a natural location for Judas to bring the soldiers. Ancient olive trees still stand at the site, though they postdate Jesus's time; the site has been venerated since the 4th century. The Church of All Nations (Basilica of the Agony) was built over the traditional rock of prayer in 1924.</div></div><div class="poi-entry"><div class="poi-name">House of Annas / Caiaphas</div><div class="poi-coords">31.7697° N, 35.2285° E</div><div class="poi-text">Likely in the upper city (wealthy Herodian neighbourhood) on the western hill of Jerusalem. The Palatial Mansion excavated in the Jewish Quarter of the Old City may be the house of a member of the high priestly family. Jesus is taken here for the pre-trial hearing. The traditional "House of Caiaphas" is now the Church of St Peter in Gallicantu (Peter at the Cock-crow), marking the site of Peter's denial and the rooster's crow.</div></div></div><div id="jn18-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('The Garden Arrest in John', 'John omits the Gethsemane prayer (Matt 26:36-46; Mark 14:32-42; Luke 22:39-46) but contains its theological equivalent in the "cup" question of v.11. He also uniquely records: the soldiers falling (vv.5-6), Jesus\'s protective request for the disciples (vv.8-9), the name of Malchus (v.10), and the detailed structure of the Jewish pre-trial before Annas (vv.12-24) before Caiaphas. John\'s eyewitness detail — the name of the servant, the detail that Peter was warming himself, the servant who challenged Peter being related to Malchus — suggests the beloved disciple (v.15: "another disciple... known to the high priest") as the source.'), ("Peter's Three Denials", "John structures the three denials carefully: (1) at the door with the servant girl (v.17); (2) at the fire with the servants (v.25); (3) with the relative of Malchus in the courtyard (v.26). Each one escalates: first a casual question answered casually, then a group challenge, then a direct personal challenge from someone who was present in the garden. The rooster's crow (v.27) is the signal that Jesus's prediction (13:38) has been fulfilled exactly.")]</p></div><div id="jn18-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 51:17</span><span class="ref-text">"Awake, awake! Rise up, Jerusalem, you who have drunk from the hand of the Lord the cup of his wrath" — the OT cup-of-wrath imagery Jesus invokes in v.11.</span></li><li><span class="ref-cite">Ps 41:9</span><span class="ref-text">"Even my close friend, someone I trusted, one who shared my bread, has turned against me" — fulfilled in Judas leading the soldiers to the garden where Jesus regularly met with his disciples.</span></li><li><span class="ref-cite">Luke 22:39-46</span><span class="ref-text">The Gethsemane prayer — the Synoptic parallel to John's "shall I not drink the cup?" (v.11).</span></li></ul></div><div id="jn18-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:4-6</span><p>"Jesus, knowing all that was going to happen to him, went out" — the sovereign initiative is John's signature. He does not wait to be found; he goes out to meet them. The "I am he" that fells the soldiers is the most compressed theophany in the passion narratives: these are soldiers (Roman cohort = 600 men) with weapons, lanterns, and torches — and a single word from Jesus puts them on the ground. He is not arrested; he chooses to be apprehended.</p></div><div class="com-note"><span class="com-ref">18:8-9</span><p>"Let these men go. This happened so that the words he had spoken would be fulfilled: 'I have not lost one of those you gave me'" — the protective concern for the disciples at the moment of his own arrest. John connects the physical protection at Gethsemane to the eternal protection of 17:12. Jesus's care for the eleven at the arrest is the enactment of the prayer he had just prayed: "protect them."</p></div><div class="com-note"><span class="com-ref">18:11</span><p>"Shall I not drink the cup the Father has given me?" — the cup is not merely suffering but wrath. The question is rhetorical — of course he will drink it; he came for this. But the question reveals the weight of what is being accepted: not just death but the Father's wrath against sin, fully and voluntarily absorbed. Peter's sword is well-intentioned but theologically catastrophic: if he prevents the arrest, he prevents the atonement.</p></div><div class="com-note"><span class="com-ref">18:20-23</span><p>Jesus before Annas: his response to the high priest's questions is a model of truthful self-defence. He does not deny his teaching (he spoke openly, v.20) but he refuses to incriminate himself by speculating about what his teaching meant. When struck, he does not retaliate but demands due process: "if I said something wrong, testify as to what is wrong." He models dignity under injustice — the innocent party demanding the procedure its accusers claim to represent.</p></div></div><div id="jn18-s1-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:6</span><p>Calvin uses the falling of the soldiers to establish the voluntary character of the passion: Jesus could have destroyed his captors with a word; he chose instead to surrender. The cross is not the defeat of the Son of God but the sovereign execution of the plan of salvation. This is why the cross is simultaneously the greatest display of human wickedness and the greatest display of divine love.</p></div><div class="com-note"><span class="com-ref">18:20</span><p>Calvin notes that Jesus's defence before Annas ("I said nothing in secret") is an appeal to the public record — the Pharisees' own witnesses could testify to his teaching. This is not evasion but the demand for due process that Jewish law required. The illegal midnight examination, the prejudged verdict, and the physical abuse all violate the law in the name of the law — the supreme irony of the Jewish trial.</p></div></div><div id="jn18-s1-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">18:3</span><p>"A detachment of soldiers" — speira, a Roman military unit (cohort = 600 men, though possibly a maniple = 200). The presence of Roman soldiers alongside temple officials indicates the involvement of the Roman military in the arrest — suggesting Pilate had been informed and had authorised the use of force. The scale of the operation (torches, weapons, a military unit) reflects how seriously the authorities took the threat Jesus represented.</p></div><div class="com-note"><span class="com-ref">18:13</span><p>"Brought him first to Annas" — Annas had been high priest AD 6-15. Five of his sons and son-in-law Caiaphas all held the high priesthood. The pre-trial before Annas is unique to John, consistent with eyewitness knowledge of Jerusalem politics.</p></div></div><div id="jn18-s1-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">18:4-5</span><p>Augustine: "Jesus went out to meet those who came to take him. He went out — not dragged, not surprised, not fleeing, but going forward. He is not seized; he gives himself. The arrest is his act, not theirs. He who could have called twelve legions of angels chose instead to call out: Who do you seek? — and to answer: I am he."</p></div><div class="com-note"><span class="com-ref">18:11</span><p>Chrysostom: "Shall I not drink the cup the Father has given me? The cup is the Father's gift. Suffering from the Father's hand is different from suffering from human injustice — it is received as a gift. Not 'the cup the enemies force on me' but 'the cup the Father has given me.' This is the transformation of all suffering for the believer: it comes through human hands but from the Father's."</p></div></div></div><div class="section"><div class="section-header">Verses 28–40 — Jesus Before Pilate: What Is Truth?</div><span class="verse-text"><span class="verse-num">28</span>Then the Jewish leaders took Jesus from Caiaphas to the palace of the Roman governor. By now it was early morning, and to avoid ceremonial uncleanness they did not enter the palace, because they wanted to be able to eat the Passover.</span><span class="verse-text"><span class="verse-num">29</span>So Pilate came out to them and asked, "What charges are you bringing against this man?"</span><span class="verse-text"><span class="verse-num">30</span>"If he were not a criminal," they replied, "we would not have handed him over to you."</span><span class="verse-text"><span class="verse-num">31</span>Pilate said, "Take him yourselves and judge him by your own law." "But we have no right to execute anyone," they objected.</span><span class="verse-text"><span class="verse-num">32</span>This happened so that the words Jesus had spoken indicating the kind of death he was going to die would be fulfilled.</span><span class="verse-text"><span class="verse-num">33</span>Pilate then went back inside the palace, summoned Jesus and asked him, "Are you the king of the Jews?"</span><span class="verse-text"><span class="verse-num">34</span>"Is that your own idea," Jesus asked, "or did others talk to you about me?"</span><span class="verse-text"><span class="verse-num">35</span>"Am I a Jew?" Pilate replied. "Your own people and chief priests handed you over to me. What is it you have done?"</span><span class="verse-text"><span class="verse-num">36</span>Jesus said, "My kingdom is not of this world. If it were, my servants would fight to prevent my arrest by the Jewish leaders. But now my kingdom is from another place."</span><span class="verse-text"><span class="verse-num">37</span>"You are a king, then!" said Pilate. "You say that I am a king. In fact, the reason I was born and came into the world is to testify to the truth. Everyone on the side of truth listens to me."</span><span class="verse-text"><span class="verse-num">38</span>"What is truth?" retorted Pilate. And with that he went out again to the Jews gathered there and announced, "I find no basis for a charge against him.</span><span class="verse-text"><span class="verse-num">39</span>But it is your custom for me to release to you one prisoner at the time of the Passover. Do you want me to release 'the king of the Jews'?"</span><span class="verse-text"><span class="verse-num">40</span>They shouted back, "No, not him! Give us Barabbas!" Now Barabbas had taken part in an uprising.</span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'jn18-s2-grk')"><span>Greek</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'jn18-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'jn18-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'jn18-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button><button class="anno-trigger calvin" onclick="tog(this,'jn18-s2-calvin')"><span>Calvin</span><span class="chev">&#9660;</span></button><button class="anno-trigger netbible" onclick="tog(this,'jn18-s2-net')"><span>NET Notes</span><span class="chev">&#9660;</span></button><button class="anno-trigger catena" onclick="tog(this,'jn18-s2-catena')"><span>Catena Aurea</span><span class="chev">&#9660;</span></button></div><div id="jn18-s2-grk" class="anno-panel heb"><h4>Greek Word Study</h4><p><span class="hebrew-word">basileia</span> <span class="tlit">ba-si-LEI-a</span> — <strong>kingdom</strong>: "My kingdom is not of this world" (v.36) — not "not in this world" (Jesus's kingdom is present in the world) but "not of this world" (it does not originate from or operate by the world's power structures). The distinction is source and method, not location. The kingdom's validation does not come through military force ("my servants would not fight") but through truth-speaking (v.37). Pilate cannot categorise this kingdom because it operates by principles he has no framework for.</p><p><span class="hebrew-word">alētheia</span> <span class="tlit">a-LE-thei-a</span> — <strong>truth</strong>: The word that has run through John's Gospel from the prologue ("grace and truth came through Jesus Christ," 1:17) reaches its ironic climax here. Pilate's "what is truth?" (v.38) is the question of a man who has the Truth standing in front of him and cannot recognise it. Whether his question is cynical dismissal, weary scepticism, or genuine philosophical inquiry, he walks away without waiting for the answer — the most tragic missed opportunity in the Gospel.</p></div><div id="jn18-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>[('The Passover Irony', 'John\'s careful note (v.28) that the Jewish leaders would not enter the praetorium "to avoid ceremonial uncleanness so that they could eat the Passover" is one of the most devastating ironies in the Gospel. They are scrupulously observing the purity requirements for the Passover feast — while simultaneously engineering the murder of the Passover Lamb. They will eat the lamb that night; they are killing the Lamb in the morning.'), ('"What Is Truth?" — Pilate\'s Question', "Pilate's question has been interpreted as: (1) cynical dismissal — he doesn't care about truth, only about political stability; (2) weary relativism — a Greco-Roman governor who has seen too much to believe in objective truth; (3) genuine philosophical inquiry, deflected by the pressure of the crowd. The narrative context (he immediately goes out without waiting for an answer) supports readings 1 or 2. The dramatic irony is that the answer to his question is standing in front of him.")]</p></div><div id="jn18-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Isa 53:7</span><span class="ref-text">"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter" — the Servant's silence before his accusers, which John's Jesus does not entirely replicate (he speaks) but which frames the scene.</span></li><li><span class="ref-cite">Dan 7:13-14</span><span class="ref-text">"There before me was one like a son of man... He was given authority, glory and sovereign power" — the kingdom-not-of-this-world that Jesus describes to Pilate is the kingdom Daniel saw given to the Son of Man.</span></li><li><span class="ref-cite">Ps 2:6</span><span class="ref-text">"I have installed my king on Zion, my holy mountain" — the divine king whom the nations resist, as Pilate and the chief priests resist Jesus.</span></li></ul></div><div id="jn18-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:28</span><p>The Passover irony: they will not defile themselves by entering a Gentile's house, while they are plotting the murder of the one who is himself the Passover. The scrupulosity about ritual defilement in the service of judicial murder is the supreme example of majoring on minors while missing the main thing — a pattern Jesus had identified throughout his ministry (Matt 23:23-24).</p></div><div class="com-note"><span class="com-ref">18:36</span><p>"My kingdom is not of this world" — this is not a statement of otherworldliness (the kingdom is irrelevant to this world) but of origin and method. The kingdom's origin is heaven, not human politics; its method is truth-speaking, not force. The contrast is between earthly kingdoms (established and maintained by coercion) and Jesus's kingdom (established by testimony to truth and maintained by those who respond to truth).</p></div><div class="com-note"><span class="com-ref">18:37-38</span><p>The juxtaposition of "Everyone on the side of truth listens to me" and "What is truth?" is John's sharpest dramatic irony. Jesus has just given Pilate the criterion for being on the side of truth — listening to him — and Pilate's immediate response is to ask whether truth even exists. He is simultaneously hearing the criterion for recognising truth and demonstrating that he does not meet it.</p></div></div><div id="jn18-s2-calvin" class="anno-panel com-panel com-calvin"><h4>Calvin’s Commentary</h4><div class="com-source">John Calvin, Commentaries — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">18:36</span><p>Calvin insists on the "not of this world" as a description of the kingdom's origin and power, not its location or relevance. The kingdom is engaged with the world — through truth, preaching, and the Spirit — but it does not operate by the world's categories of power. This is why Pilate cannot categorise Jesus: he is a king with no army, no territory, and no political programme, yet his claim is the most comprehensive sovereignty imaginable.</p></div><div class="com-note"><span class="com-ref">18:28</span><p>Calvin's satirical observation on the Jewish leaders' Passover scrupulosity: they strain out a gnat (Gentile defilement) while swallowing a camel (judicial murder). The scrupulosity is not merely hypocritical but the symptom of a religion that has become entirely about external form while losing its moral substance.</p></div></div><div id="jn18-s2-net" class="anno-panel com-panel com-netbible"><h4>NET Bible Notes</h4><div class="com-source">NET Bible Full Notes Edition — Biblical Studies Press</div><div class="com-note"><span class="com-ref">18:31</span><p>"We have no right to execute anyone" — this statement has been debated by historians: did the Romans restrict Jewish capital punishment? The evidence suggests the Sanhedrin could execute for certain religious offences (e.g., Gentile entry into the inner Temple courts) but required Roman authorisation for capital punishment in general. John's note is historically plausible.</p></div><div class="com-note"><span class="com-ref">18:38</span><p>"What is truth?" — The question has been asked by every generation since. Three major interpretations: (1) Cynical dismissal (he doesn't care about truth); (2) Philosophical relativism (a Roman governor who has seen too many competing truth-claims); (3) Genuine inquiry, but deflected by political pressure. The narrative makes 1 or 2 most plausible — his immediate exit without waiting for an answer makes genuine inquiry unlikely.</p></div></div><div id="jn18-s2-catena" class="anno-panel com-panel com-catena"><h4>Catena Aurea</h4><div class="com-source">Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain</div><div class="com-note"><span class="com-ref">18:36</span><p>Augustine: "My kingdom is not of this world. It is in this world, but not from this world. His servants do not fight — not because the kingdom is powerless, but because its power is not of the sword. The kingdom that conquers the world conquers it by truth, not by force; by the cross, not by armies."</p></div><div class="com-note"><span class="com-ref">18:38</span><p>Chrysostom: "What is truth? And without waiting for an answer he went out. A man who could not endure to hear the answer went out. He asked about truth but did not stay for it. So it is with all who ask the great questions but cannot bear the answers they would receive."</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'jn18-ppl')"><span>People</span></button><button class="anno-trigger translations" onclick="tog(this,'jn18-trans')"><span>Translations</span></button><button class="anno-trigger sources" onclick="tog(this,'jn18-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'jn18-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'jn18-lit')"><span>Literary Structure</span></button><button class="anno-trigger textual" onclick="tog(this,'jn18-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'jn18-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'jn18-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="jn18-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Pontius Pilate</div><div class="person-role">The Man Who Had the Truth Before Him</div><div class="person-text">Roman prefect of Judea (AD 26-36), historically attested in Josephus, Philo, Tacitus, and the Caesarea Maritima inscription. His conversation with Jesus is the longest recorded dialogue between Jesus and a non-disciple in the passion narratives. He knows Jesus is innocent (v.38: "I find no basis for a charge"), and still condemns him — making him the representative of power that yields to crowd pressure over justice.</div></div><div class="person-card"><div class="person-name">Barabbas</div><div class="person-role">The One Released in Place of the Innocent</div><div class="person-text">His name (bar-Abbas = son of the father) is one of John's characteristic ironies: the crowd chooses "son of the father" (Barabbas, a criminal) over the true Son of the Father (Jesus). He is released; the innocent one is condemned. He is the first beneficiary of the substitutionary death — a criminal freed because the innocent one takes his place.</div></div><div class="person-card"><div class="person-name">Peter</div><div class="person-role">The Confident Denier</div><div class="person-text">His three denials (vv.17, 25, 27) fulfil Jesus's precise prediction (13:38). The descent is rapid: warming himself at the enemy's fire (v.18), denying first at the door (v.17), then at the fire (v.25), then under direct personal challenge (v.26). The rooster's crow is the sound of his failure — and of Jesus's perfect foreknowledge.</div></div></div></div><div id="jn18-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">18:11, 36, 38</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">potērion (18:11)</td><td>NIV: "cup"; KJV: "cup"; ESV: "cup"; NRSV: "cup". Universal agreement. The theological weight (cup of wrath) is a commentary point.</td></tr><tr><td class="t-label">ek tou kosmou toutou (18:36)</td><td>NIV: "of this world"; KJV: "of this world"; ESV: "of this world"; NRSV: "from this world". NRSV's "from" captures the origin nuance better than "of." The kingdom's origin is not from the world; this is different from saying it is not in or for the world.</td></tr><tr><td class="t-label">ti estin alētheia (18:38)</td><td>NIV: "What is truth?"; KJV: "What is truth?"; ESV: "What is truth?"; NRSV: "What is truth?" Universal agreement on perhaps the most famous question in the Gospel.</td></tr></table></div><div id="jn18-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Isaiah 53:7</div><div class="source-quote">"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter, and as a sheep before its shearers is silent, so he did not open his mouth."</div><div class="source-note">The Suffering Servant's silence before accusers — the OT background for the passion narrative's portrayal of Jesus as the Lamb who does not resist.</div></div><div class="source-block"><div class="source-title">Daniel 7:13-14</div><div class="source-quote">"There before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power; all nations and peoples of every language worshipped him."</div><div class="source-note">The Son of Man's kingdom — "not of this world" but given by the Ancient of Days — which Jesus describes to Pilate.</div></div></div><div id="jn18-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">"What Is Truth?" — Pilate's Question in Western Culture</div><div class="rec-text">Pilate's question has achieved a cultural life far beyond the Gospel narrative. Francis Bacon's essay "Of Truth" (1597) opens with it. It became a trope of Renaissance scepticism, Enlightenment epistemology, and postmodern relativism — each era reading its own philosophical concerns back into Pilate's words. Christians have consistently responded: the answer was standing in front of him. The question marks not intellectual sophistication but the tragedy of proximity to truth without recognition.</div></div><div class="rec-block"><div class="rec-who">"My Kingdom Is Not of This World" in Political Theology</div><div class="rec-text">John 18:36 has been one of the most contested verses in the history of Christian political thought. The Lutheran two-kingdoms doctrine, the Anabaptist withdrawal from politics, the Calvinist theocratic aspiration, and the Catholic principle of subsidiarity all appeal to it. Does "not of this world" mean the church should stay out of politics, or that the church engages politics by different means (truth, not force)? The mainstream answer is the latter: the kingdom is present in and for the world, operating by the Spirit and truth rather than coercion.</div></div></div><div id="jn18-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-center">John's Pilate narrative is structured as seven alternating scenes (inside/outside the praetorium): outside (18:28-32), inside (18:33-38a), outside (18:38b-40), inside (19:1-3), outside (19:4-8), inside (19:9-11), outside (19:12-16). The alternation creates a dramatic rhythm and highlights Pilate's inability to commit to either the Jewish leaders (outside) or Jesus (inside).</div><div class="lit-row"><span class="lit-label">Irony of the Passover Scrupulosity — v.28</span><span class="lit-text">The Jewish leaders avoid Pilate's house to remain ceremonially clean for the Passover — while orchestrating the death of the Passover Lamb. The ritual scrupulosity that excludes them from the praetorium does not exclude them from the murder. The irony is the sharpest in the passion narrative and one of the sharpest in the entire Gospel.</span></div></div></div><div id="jn18-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">18:5-6</span><span class="tx-issue">"I am he" and the soldiers falling</span></div><div class="tx-variants">No textual variant. The falling (epesan chamai) is secure in all manuscripts. The theological interpretation — whether this is a full theophany or simply the soldiers being startled and losing their footing — is the exegetical question.</div><div class="tx-sig">The text is not disputed; the interpretation is. The parallel with OT theophanies (Dan 10:9; Rev 1:17) and the overall Johannine context strongly favour reading the falling as a theophanic response to the divine name.</div></div></div><div id="jn18-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Does "my kingdom is not of this world" teach political quietism?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Yes: the church should not engage in political power</div><div class="db-proponents">Anabaptist, Mennonite, some Pietist traditions</div><div class="db-argument">"Not of this world" means Jesus's kingdom operates by entirely different means than earthly kingdoms. The church that seeks political power has misunderstood its king.</div></div><div class="db-position"><div class="db-pos-name">No: the kingdom engages the world by different means</div><div class="db-proponents">Most mainstream Catholic, Reformed, and evangelical scholars</div><div class="db-argument">"Not of this world" refers to origin and method, not location or relevance. The kingdom is present in and working through the world — through truth-bearing, justice-seeking, mercy-giving — but by the Spirit's power rather than coercion. The church engages political life by Christ's means: truth, love, and service.</div></div><div class="db-position"><div class="db-pos-name">The kingdom will eventually transform political structures</div><div class="db-proponents">Post-millennial, Kuyperian Reformed, Catholic social teaching</div><div class="db-argument">The kingdom's "not-of-this-world" character does not prevent it from reshaping earthly institutions over time through the Spirit's work in history.</div></div></div><div class="db-synthesis">The "different means, not absent from the world" reading has the broadest scholarly support. The verse does not mandate political withdrawal but defines the church's distinctive mode of engagement: truth-speaking rather than power-seeking.</div></div></div><div id="jn18-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,-1376.0 1518.6,-687.5 1445.0,885.0 120.0,1684.0 -1278.6,927.5 -1175.6,-628.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Arrest</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Sovereignty</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Denial</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Kingdom</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Truth</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Passover</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">John 18 is the passion narrative's first movement: the sovereign surrender of the Son of God. Everything John has established about Jesus's identity — the I AM who fells soldiers, the king whose kingdom is not of this world, the Lamb who willingly drinks the cup — is displayed in this chapter's series of encounters. The contrast between Peter (denying) and Jesus (affirming his identity under pressure) is the chapter's sharpest human drama. Pilate's "what is truth?" frames the whole: the Truth is on trial before a man who cannot recognise it.</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Jerusalem','Galilee','Judea','Samaria','Bethany','Cana','Jordan','temple','synagogue','Capernaum'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Jesus','disciples','Pharisees','Jews','Peter','Thomas','Philip','Mary','Martha','Lazarus','Pilate','Nicodemus','crowd'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','hour','now','today','third day','abide','remain','eternal','before Abraham'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['Word','light','life','love','truth','glory','believe','sent','Father','Son','Spirit','witness','eternal life','sign'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script>
+function qnavFilter(q) {
+  q = q.trim().toLowerCase();
+  const words = q.split(/\s+/).filter(w => w.length > 1);
+  const panel = document.getElementById('qnav-search-results');
+
+  // If empty — show normal chapter grid, hide results
+  if (!q) {
+    if (panel) { panel.innerHTML = ''; panel.style.display = 'none'; }
+    document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = '');
+    document.querySelectorAll('.qnav-book').forEach(b => b.style.display = '');
+    return;
+  }
+
+  // Hide chapter grids while searching
+  document.querySelectorAll('.qnav-ch-grid').forEach(g => g.style.display = 'none');
+  document.querySelectorAll('.qnav-book').forEach(b => b.style.display = 'none');
+
+  // Verse matches
+  var verseMatches = q.length >= 2 ? VERSES.map(function(v) {
+    var text = v.text.toLowerCase();
+    var ref  = v.ref.toLowerCase();
+    var score = 0;
+    for (var i=0; i<words.length; i++) {
+      if (text.indexOf(words[i]) > -1) score += 2;
+      else if (ref.indexOf(words[i]) > -1) score += 1;
+    }
+    if (text.indexOf(q) > -1) score += 5;
+    return { ref:v.ref, short:v.short, text:v.text, url:v.url, score:score };
+  }).filter(function(v){ return v.score > 0; })
+    .sort(function(a,b){ return b.score - a.score; })
+    .slice(0, 12) : [];
+
+  function hl(text, q, words) {
+    var out = text;
+    if (q.length > 2) {
+      var rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+      out = out.replace(rx,'<em>$1</em>');
+    }
+    for (var i=0; i<words.length; i++) {
+      if (out.toLowerCase().indexOf(words[i]) > -1) {
+        var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+        out = out.replace(rx2,'<em>$1</em>');
+      }
+    }
+    return out;
+  }
+
+  var html = '';
+  if (verseMatches.length === 0) {
+    html = '<p class="qnav-no-results">No verses found for \u201c' + q + '\u201d</p>';
+  } else {
+    for (var i=0; i<verseMatches.length; i++) {
+      var v = verseMatches[i];
+      var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
+      // Path relative to current chapter page (../ prefix for chapter pages)
+      var href = '../' + v.url;
+      html += '<a href="' + href + '" class="qnav-verse-result">' +
+              '<span class="qnav-vref">' + v.short + '</span>' +
+              '<span class="qnav-vsnip">' + hl(snippet, q, words) + '</span>' +
+              '</a>';
+    }
+  }
+
+  if (!panel) {
+    var p = document.createElement('div');
+    p.id = 'qnav-search-results';
+    p.className = 'qnav-search-results';
+    var body = document.querySelector('.qnav-body');
+    if (body) body.insertBefore(p, body.firstChild);
+    p.innerHTML = html;
+    p.style.display = 'block';
+  } else {
+    panel.innerHTML = html;
+    panel.style.display = 'block';
+  }
+}
+</script>
+<script>
+function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
+
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
+function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
+function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
+function qnavFilter(q){q=q.toLowerCase().trim();document.querySelectorAll('.qnav-book').forEach(function(b){var name=b.querySelector('.qnav-book-name');if(!name)return;b.style.display=(!q||name.textContent.toLowerCase().includes(q))?'':'none';});}
+</script>
+<script src="../verses.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-2).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+</body></html>
