@@ -14,7 +14,11 @@
     function chGrid(b) {
       var h = '';
       for (var i = 1; i <= b.live; i++) {
-        h += '<a href="../' + b.dir + '/' + b.name + '_' + i + '.html' +
+        // depth 1: chapter at /book/Name_N.html  → prefix '../'
+        // depth 2: chapter at /testament/book/Name_N.html → prefix '../../'
+        var depth = (window.QNAV_CURRENT||'').split('/').length - 1;
+        var pfx = depth >= 2 ? '../../' : '../';
+        h += '<a href="' + pfx + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name + '_' + i + '.html' +
              ' class="qnav-ch-btn live">Ch ' + i + '</a>';
       }
       return h;
@@ -142,7 +146,7 @@ function qnavFilter(q) {
       var v = verseMatches[i];
       var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
       // Path relative to current chapter page (../ prefix for chapter pages)
-      var href = '../' + v.url;
+      var href = v.url;  // url is absolute: /ot/genesis/Genesis_1.html
       html += '<a href="' + href + '" class="qnav-verse-result">' +
               '<span class="qnav-vref">' + v.short + '</span>' +
               '<span class="qnav-vsnip">' + hl(snippet, q, words) + '</span>' +
