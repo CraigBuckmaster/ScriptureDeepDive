@@ -42,6 +42,7 @@
            '<input class="qnav-search" id="qnav-search-input" placeholder="Search verses..." oninput="qnavFilter(this.value)">' +
            '</div>' +
            '<button class="qnav-close" onclick="closeQnav()">Close</button>' +
+           '</div>' +
            '<div class="qnav-body">' +
            '<div class="qnav-search-results" id="qnav-search-results" style="display:none"></div>' +
            '<div class="qnav-testament" id="qnav-t-ot">' +
@@ -50,7 +51,10 @@
            '<div class="qnav-testament open" id="qnav-t-nt">' +
            '<button class="qnav-testament-btn" onclick="qnavToggleTestament(\'nt\')"><span class="qnav-testament-label">New Testament</span><span class="qnav-testament-chev">&#9660;</span></button>' +
            '<div class="qnav-testament-books">' + ntHtml + '</div></div>' +
-           '</div></div><div class="qnav-dismiss" onclick="closeQnav()"></div></div>';
+           '</div>' +
+           '</div>' +
+           '<div class="qnav-dismiss" onclick="closeQnav()"></div>' +
+           '</div>';
   }
 
   // ── Inject panel (books.js loads before qnav.js) ───────────────────────
