@@ -262,6 +262,11 @@ EXTRA_CSS = '''
 .tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
 .tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
 .tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
+
+/* ── People tree link in person cards ─────────────────────────────────── */
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);
+  transition:border-color .15s,color .15s;}
+.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
 '''
 
 REGISTRY = [
