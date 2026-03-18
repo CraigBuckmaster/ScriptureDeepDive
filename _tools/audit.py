@@ -376,6 +376,69 @@ if nav_errors:
 else:
     ok('No incorrectly disabled next-arrows')
 
+# Verify cross-book nav arrows use ../../ testament-prefixed paths
+REGISTRY_ORDER = [
+    ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
+    ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('matthew','Matthew','nt'), ('mark','Mark','nt'),
+    ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
+]
+LIVE_CHS = {bd: ch_range.stop-1 for bd,bn,ch_range,_ in BOOK_ROSTER}
+cross_errors = []
+for i,(bd,bn,td) in enumerate(REGISTRY_ORDER):
+    if i > 0:  # check first chapter's prev arrow
+        pbd,pbn,ptd = REGISTRY_ORDER[i-1]
+        pl = LIVE_CHS[pbd]
+        path = f'{REPO}/{td}/{bd}/{bn}_1.html'
+        if os.path.exists(path):
+            with open(path) as f: h = f.read()
+            expected = f'../../{ptd}/{pbd}/{pbn}_{pl}.html'
+            if expected not in h:
+                cross_errors.append(f'{bn} 1: prev cross-book href wrong (expected {expected})')
+    if i < len(REGISTRY_ORDER)-1:  # check last chapter's next arrow
+        nbd,nbn,ntd = REGISTRY_ORDER[i+1]
+        ll = LIVE_CHS[bd]
+        path = f'{REPO}/{td}/{bd}/{bn}_{ll}.html'
+        if os.path.exists(path):
+            with open(path) as f: h = f.read()
+            expected = f'../../{ntd}/{nbd}/{nbn}_1.html'
+            if expected not in h:
+                cross_errors.append(f'{bn} {ll}: next cross-book href wrong (expected {expected})')
+if cross_errors:
+    for e in cross_errors: fail(e)
+else:
+    ok('All 8 cross-book nav boundaries correct')
+
+# Verify QNAV_CURRENT values use testament/book/Name_N.html format
+qnav_cur_errors = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    m = re.search(r'QNAV_CURRENT="([^"]+)"', h)
+    if not m:
+        qnav_cur_errors.append(f'{book} {ch}: no QNAV_CURRENT')
+    else:
+        val = m.group(1)
+        if not (val.startswith('ot/') or val.startswith('nt/')):
+            qnav_cur_errors.append(f'{book} {ch}: QNAV_CURRENT not testament-prefixed: {val!r}')
+if qnav_cur_errors:
+    fail(f'{len(qnav_cur_errors)} chapters with bad QNAV_CURRENT: ' + ', '.join(qnav_cur_errors[:3]))
+else:
+    ok('All chapters have testament-prefixed QNAV_CURRENT')
+
+# Verify no chapter still uses depth-1 ../ for root assets
+root_assets = ['books.js','qnav.js','index.html','manifest.json','icon-192.png']
+depth_errors = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    for asset in root_assets:
+        if f'"../{asset}"' in h:
+            depth_errors.append(f'{book} {ch}: ../{asset} should be ../../{asset}')
+            break
+if depth_errors:
+    fail(f'{len(depth_errors)} chapters have depth-1 asset paths: ' + ', '.join(depth_errors[:3]))
+else:
+    ok('All chapters use correct depth-2 (../../) asset paths')
+
 # ═══════════════════════════════════════════════════════════════════════════
 # 7. QNAV
 # ═══════════════════════════════════════════════════════════════════════════
@@ -410,6 +473,23 @@ if "'/verses/verses.js'" in sw:
     ok('verses/verses.js in SW CORE cache')
 else:
     fail("'/verses/verses.js' not in SW CORE cache")
+
+# Verify SW registration in chapters uses ../../ (depth-2) not ../
+bad_sw_reg = [f'{b} {c}' for p,b,c in chapters
+              if '"../service-worker.js"' in open(p).read()]
+if bad_sw_reg:
+    fail(f'{len(bad_sw_reg)} chapters register SW at wrong depth (../): ' + ', '.join(bad_sw_reg[:3]))
+else:
+    ok('All chapters register service worker at correct depth (../../)')
+
+# Verify SW CORE cache uses /ot/ and /nt/ prefixed paths
+old_flat = re.findall(r"'/(genesis|exodus|ruth|proverbs|matthew|mark|luke|john|acts)/[^']+\.html'", sw)
+if old_flat:
+    fail(f'SW CORE has {len(old_flat)} flat (pre-restructure) chapter paths')
+else:
+    nt_count = sw.count("'/nt/")
+    ot_count = sw.count("'/ot/")
+    ok(f'SW CORE chapter paths correct: {ot_count} OT, {nt_count} NT entries')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 9. TOG() FUNCTION
