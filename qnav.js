@@ -14,11 +14,7 @@
     function chGrid(b) {
       var h = '';
       for (var i = 1; i <= b.live; i++) {
-        // depth 1: chapter at /book/Name_N.html  → prefix '../'
-        // depth 2: chapter at /testament/book/Name_N.html → prefix '../../'
-        var depth = (window.QNAV_CURRENT||'').split('/').length - 1;
-        var pfx = depth >= 2 ? '../../' : '../';
-        h += '<a href="' + pfx + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name + '_' + i + '.html' +
+        h += '<a href="../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name + '_' + i + '.html' +
              ' class="qnav-ch-btn live">Ch ' + i + '</a>';
       }
       return h;
