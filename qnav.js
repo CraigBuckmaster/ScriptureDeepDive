@@ -63,10 +63,27 @@
   else { window.addEventListener('load', injectPanel); }
 })();
 
+
+// ── Lazy-load verse files for all books (called when qnav opens) ─────────
+var _versesLoaded = {};
+function loadAllVerses() {
+  var books = window.BOOKS || [];
+  for (var i = 0; i < books.length; i++) {
+    var b = books[i];
+    if (_versesLoaded[b.dir]) continue;
+    _versesLoaded[b.dir] = true;
+    (function(dir) {
+      var s = document.createElement('script');
+      s.src = '../verses-' + dir + '.js';
+      document.head.appendChild(s);
+    })(b.dir);
+  }
+}
+
 // ── Global qnav functions (called from onclick= in HTML) ─────────────────
 function qnavToggleTestament(id){var el=document.getElementById('qnav-t-'+id);if(!el)return;el.classList.toggle('open');}
 
-function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
+function openQnav(){var ol=document.getElementById('qnav-overlay');ol.classList.add('open');document.body.style.overflow='hidden';loadAllVerses();setTimeout(function(){var s=document.getElementById('qnav-search-input');if(s)s.focus();},80);var gen=document.getElementById('qnav-book-genesis');if(gen&&!gen.classList.contains('open'))qnavToggleBook('genesis');}
 function closeQnav(){document.getElementById('qnav-overlay').classList.remove('open');document.body.style.overflow='';var s=document.getElementById('qnav-search-input');if(s){s.value='';qnavFilter('');}}
 function qnavToggleBook(id){var el=document.getElementById('qnav-book-'+id);if(!el)return;var wasOpen=el.classList.contains('open');document.querySelectorAll('.qnav-book').forEach(function(b){b.classList.remove('open');});if(!wasOpen)el.classList.add('open');}
 
@@ -88,7 +105,7 @@ function qnavFilter(q) {
   document.querySelectorAll('.qnav-book').forEach(b => b.style.display = 'none');
 
   // Verse matches
-  var verseMatches = q.length >= 2 ? VERSES.map(function(v) {
+  var verseMatches = q.length >= 2 ? (window.VERSES_ALL||[]).map(function(v) {
     var text = v.text.toLowerCase();
     var ref  = v.ref.toLowerCase();
     var score = 0;

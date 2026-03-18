@@ -1,8 +1,19 @@
-const CACHE = 'scripture-2.31';
+const CACHE = 'scripture-2.32';
 const CORE = [
   '/',
   '/index.html',
   '/verses.js',
+  '/books.js',
+  '/qnav.js',
+  '/verses-genesis.js',
+  '/verses-exodus.js',
+  '/verses-ruth.js',
+  '/verses-proverbs.js',
+  '/verses-matthew.js',
+  '/verses-mark.js',
+  '/verses-luke.js',
+  '/verses-john.js',
+  '/verses-acts.js',
   '/genesis/Genesis_1.html',
   '/genesis/Genesis_2.html',
   '/genesis/Genesis_3.html',

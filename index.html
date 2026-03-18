@@ -1422,7 +1422,7 @@ function handleSearch(q) {
   const bookMatches = BOOK_DATA.filter(b => b.name.toLowerCase().includes(ql));
 
   // ── Verse matches ─────────────────────────────────────────────────────
-  const verseMatches = q.length >= 2 ? VERSES.map(v => {
+  const verseMatches = q.length >= 2 ? (window.VERSES_ALL||[]).map(v => {
     const text = v.text.toLowerCase();
     const ref  = v.ref.toLowerCase();
     let score = 0;
