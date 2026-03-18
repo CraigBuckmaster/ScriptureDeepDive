@@ -142,7 +142,7 @@ function qnavFilter(q) {
       var v = verseMatches[i];
       var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
       // Path relative to current chapter page (../ prefix for chapter pages)
-      var href = v.url;  // url is absolute: /ot/genesis/Genesis_1.html
+      var href = '../../' + v.url;  // url relative: ot/genesis/Genesis_1.html
       html += '<a href="' + href + '" class="qnav-verse-result">' +
               '<span class="qnav-vref">' + v.short + '</span>' +
               '<span class="qnav-vsnip">' + hl(snippet, q, words) + '</span>' +
