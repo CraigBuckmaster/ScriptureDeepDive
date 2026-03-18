@@ -272,6 +272,7 @@ REGISTRY = [
     ('matthew',  'Matthew',   28, 28, 'NT'),
     ('mark',     'Mark',      16, 16, 'NT'),
     ('luke',     'Luke',      24, 24, 'NT'),
+    ('john',     'John',      21, 21, 'NT'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -283,6 +284,7 @@ BOOK_PREFIX = {
     'matthew':  'mt',
     'mark':     'mk',
     'luke':     'lk',
+    'john':     'jn',
 }
 
 # ── Per-book commentary roster ────────────────────────────────────────────
@@ -352,7 +354,7 @@ COMMENTATOR_SCOPE = {
     # Future: 'john', 'acts', etc.
 
     # Catena Aurea — Aquinas compilation on all four Gospels only
-    'catena':    ['matthew', 'mark', 'luke'],
+    'catena':    ['matthew', 'mark', 'luke', 'john'],
     # Future: 'john'
 
     # Joel Marcus — Anchor Bible Commentary on Mark (2 vols., 2000/2009)
@@ -530,6 +532,55 @@ BOOK_META = {
                        'generation', 'coming', 'now', 'appointed time'],
         'vhl_key':    ['kingdom', 'Son of Man', 'salvation', 'Spirit', 'repent', 'forgive',
                        'grace', 'glory', 'faith', 'gospel', 'poor', 'joy', 'covenant', 'prophet'],
+    },
+
+    'john': {
+        'is_nt': True,
+        'auth': (
+            '<strong>Author:</strong> John the son of Zebedee &mdash; fisherman, apostle, '
+            'and &ldquo;the disciple whom Jesus loved&rdquo; (John 13:23; 19:26; 20:2; 21:7, 20). '
+            'The fourth Gospel never names its author directly, but the evidence converges on John: '
+            '(1) The &ldquo;beloved disciple&rdquo; is an eyewitness (19:35; 21:24) present at the '
+            'Last Supper, the cross, and the empty tomb. (2) Early and unanimous tradition: Irenaeus '
+            '(c.&thinsp;AD&thinsp;180), Clement of Alexandria, Origen, and Eusebius all identify '
+            'the author as John the apostle writing from Ephesus in old age. (3) The Gospel\u2019s '
+            'intimate knowledge of Jerusalem topography (Pool of Bethesda, Pool of Siloam, '
+            'the Pavement/Gabbatha) is confirmed by archaeology. (4) The eyewitness claim of 19:35 '
+            'and the closing verse of 21:24 point to direct authorial witness. Liberal scholarship '
+            'has proposed an anonymous Johannine community or the Elder John of Ephesus; the '
+            'traditional identification with the apostle remains the best-attested position.'
+            '\n\n'
+            '<strong>When written:</strong> c.&thinsp;AD&thinsp;85&ndash;95, probably from Ephesus, '
+            'making it the latest of the four Gospels. The Rylands Papyrus (P52, '
+            'c.&thinsp;AD&thinsp;125) &mdash; the earliest surviving NT manuscript fragment &mdash; '
+            'contains John 18:31-33, 37-38, confirming the Gospel was in circulation in Egypt by the '
+            'early second century. A pre-AD&thinsp;70 date has been argued from the Temple language '
+            'in chs 2, 5, and 10, which reads as description of a standing building; the majority '
+            'of scholars favour a post-70 date for the final composition. The three Johannine '
+            'letters and Revelation share vocabulary and theological concerns with the Gospel, '
+            'suggesting a common Ephesian milieu.'
+            '\n\n'
+            '<strong>What prompted it:</strong> John states his purpose explicitly &mdash; a rarity '
+            'in the Gospels: &ldquo;These are written that you may believe that Jesus is the '
+            'Messiah, the Son of God, and that by believing you may have life in his '
+            'name&rdquo; (20:31). The Gospel was written to produce and sustain faith in the person '
+            'of Jesus as divine Son. It supplements the Synoptics rather than duplicates them: John '
+            'omits the Baptism, the Transfiguration, the Olivet Discourse, and the institution of '
+            'the Lord\u2019s Supper as a formal narrative, while providing material found nowhere else '
+            '&mdash; the wedding at Cana, Nicodemus, the Samaritan woman, the raising of Lazarus, '
+            'the Farewell Discourse (chs&thinsp;14&ndash;17), and the resurrection appearances to '
+            'Mary Magdalene and Thomas. Its elevated Christology (&ldquo;In the beginning was the '
+            'Word&rdquo;) addresses late first-century challenges to the full divinity of Christ and '
+            'lays the foundation for all subsequent trinitarian theology.'
+        ),
+        'vhl_places': ['Jerusalem', 'Galilee', 'Judea', 'Samaria', 'Bethany', 'Cana',
+                       'Jordan', 'temple', 'synagogue', 'Capernaum'],
+        'vhl_people': ['Jesus', 'disciples', 'Pharisees', 'Jews', 'Peter', 'Thomas', 'Philip',
+                       'Mary', 'Martha', 'Lazarus', 'Pilate', 'Nicodemus', 'crowd'],
+        'vhl_time':   ['day', 'days', 'night', 'morning', 'hour', 'now', 'today', 'third day',
+                       'abide', 'remain', 'eternal', 'before Abraham'],
+        'vhl_key':    ['Word', 'light', 'life', 'love', 'truth', 'glory', 'believe', 'sent',
+                       'Father', 'Son', 'Spirit', 'witness', 'eternal life', 'sign'],
     },
 
 
