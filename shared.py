@@ -1292,19 +1292,19 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     # Guard against None from _bootstrap() in case a script wasn't found
     _tog      = TOG_JS       or ''
     _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
-    _qnav     = QNAV_JS      or ''
-    _qctrl    = QNAV_CTRL_JS or ''
     _sw       = SW_JS        or ''
+    # NOTE: qnav panel HTML is NOT baked inline here.
+    # qnav.js (loaded at the bottom) dynamically injects the full panel at
+    # runtime and is always current. The QNAV_CURRENT var tells it which
+    # chapter to highlight as active. This is the single shared approach
+    # used by every book — never use qnav_overlay() inside page().
     html = (head(book_name, book_dir, ch, is_nt) +
-            '\n' + qnav_overlay(book_dir, ch) +
             '\n<main>\n' +
             chapter_header(book_name, ch, title, auth_text, is_nt) +
             '\n' + sections_html + '\n' + scholarly_html +
             '\n</main>\n' +
             _tog + '\n' +
             _vhl + '\n' +
-            _qnav + '\n' +
-            _qctrl + '\n' +
             '<script src="../verses.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir}/{book_name}_{ch}.html";</script>\n' +
