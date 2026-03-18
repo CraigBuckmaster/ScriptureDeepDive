@@ -345,10 +345,10 @@ section('7. Quick Navigation')
 qnav_errors = []
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
-    if '<div class="qnav-overlay"' not in h:
-        qnav_errors.append(f'{book} {ch}: missing qnav-overlay')
-    elif 'current' not in h:
-        qnav_errors.append(f'{book} {ch}: no current chapter highlighted')
+    if 'qnav.js' not in h:
+        qnav_errors.append(f'{book} {ch}: missing qnav.js reference')
+    elif 'QNAV_CURRENT' not in h:
+        qnav_errors.append(f'{book} {ch}: missing QNAV_CURRENT')
 
 if qnav_errors:
     for e in qnav_errors[:5]: fail(e)
@@ -420,13 +420,13 @@ for path, book, ch in chapters:
         missing_panel_open.append(label)
     if 'DIVINE={' not in h and 'DIVINE ={' not in h:
         missing_vhl.append(label)
-    if 'function qnavFilter' not in h:
+    if 'qnav.js' not in h and 'function qnavFilter' not in h:
         missing_qnav_filter.append(label)
     if 'togThemes' in h:
         has_togthemes.append(label)
     if 'var label' not in h and "'label'" not in h:
         missing_label_js.append(label)
-    if 'id="qnav-t-ot"' not in h or 'id="qnav-t-nt"' not in h:
+    if 'qnav.js' not in h and ('id="qnav-t-ot"' not in h or 'id="qnav-t-nt"' not in h):
         missing_qnav_groups.append(label)
     if re.search(r'\.anno-trigger\{[^}]*letter-spacing:\.07em', css):
         bad_btn_css.append(label)
@@ -690,9 +690,9 @@ missing_poi_css = []
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     css = h[h.find('<style>'):h.find('</style>')]
-    if 'class="anno-panel tl-panel"' in h and 'tl-visual' not in css:
+    if 'class="anno-panel tl-panel"' in h and 'tl-visual' not in css and 'tl-visual' not in open('qnav.js').read():
         missing_tl_css.append(f'{book} {ch}')
-    if 'class="anno-panel poi-panel"' in h and 'poi-entry' not in css:
+    if 'class="anno-panel poi-panel"' in h and 'poi-entry' not in css and 'poi-entry' not in open('qnav.js').read():
         missing_poi_css.append(f'{book} {ch}')
 
 all_ok_15 = True
