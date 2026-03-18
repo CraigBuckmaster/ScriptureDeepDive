@@ -45,43 +45,72 @@ body {
 }
 
 /* ── HEADER ─────────────────────────────────────────────────── */
-.page-header {
-  background: linear-gradient(180deg, #100e08 0%, var(--bg) 100%);
-  border-bottom: 1px solid var(--border);
-  padding: 1.4rem 1.5rem 1.2rem;
+.site-nav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: space-between;
+  background: #0e0c09;
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.25rem;
+  height: 46px;
+  flex-shrink: 0;
+  gap: 1rem;
 }
-.back-link {
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
   font-family: 'Cinzel', serif;
   font-size: .6rem;
-  letter-spacing: .2em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--gold-dim);
   text-decoration: none;
-  padding: .35rem .7rem;
-  border: 1px solid var(--border);
-  border-radius: 3px;
   white-space: nowrap;
-  transition: color .15s, border-color .15s;
+  transition: color .15s;
 }
-.back-link:hover { color: var(--gold); border-color: var(--gold-dim); }
-.header-titles { flex: 1; }
-.header-titles h1 {
+.nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
+.nav-back:hover { color: var(--gold); }
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .05rem;
+  flex: 1;
+}
+.nav-title {
   font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  letter-spacing: .2em;
+  font-size: .78rem;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--gold-bright);
   font-weight: 400;
 }
-.header-titles p {
-  font-size: .78rem;
+.nav-sub {
+  font-size: .65rem;
   color: var(--text-muted);
-  margin-top: .15rem;
   font-family: 'Source Sans 3', sans-serif;
+  letter-spacing: .04em;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+.nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: .3rem .65rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+.nav-link:hover { color: var(--gold-dim); border-color: var(--border); }
 
 /* ── ERA FILTERS ─────────────────────────────────────────────── */
 .era-filters {
@@ -404,13 +433,20 @@ body {
 <body>
 
 <!-- HEADER -->
-<div class="page-header">
-  <a href="index.html" class="back-link">← Home</a>
-  <div class="header-titles">
-    <h1>People of the Bible</h1>
-    <p>~105 major figures from Adam to Paul &middot; Genealogical spine with era-grouped contemporaries</p>
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
+    Library
+  </a>
+  <div class="nav-center">
+    <span class="nav-title">People of the Bible</span>
+    <span class="nav-sub">~105 major figures &middot; Adam to Paul</span>
   </div>
-</div>
+  <div class="nav-links">
+    <a href="commentators/index.html" class="nav-link">Scholars</a>
+    <a href="index.html" class="nav-link">Home</a>
+  </div>
+</nav>
 
 <!-- ERA FILTERS -->
 <div class="era-filters">
@@ -451,6 +487,10 @@ body {
         </div>
         <div class="legend-item">
           <div class="legend-line" style="background: repeating-linear-gradient(90deg, var(--text-muted) 0 4px, transparent 4px 7px)"></div> Era contemporary
+        </div>
+        <div class="legend-item" style="margin-top:.4rem">
+          <svg width="22" height="10" style="flex-shrink:0"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--gold-dim)" stroke-width="1.5" opacity=".7"/><line x1="8" y1="1" x2="8" y2="9" stroke="var(--gold-dim)" stroke-width="1.2" opacity=".7"/><line x1="14" y1="1" x2="14" y2="9" stroke="var(--gold-dim)" stroke-width="1.2" opacity=".7"/></svg>
+          Married
         </div>
       </div>
     </div>
@@ -634,7 +674,7 @@ const PEOPLE = [
     chapter:'luke/Luke_4.html' },
 
   // ── SATELLITES: PRIMEVAL ────────────────────────────────────────────
-  { id:'eve', name:'Eve', era:'primeval', type:'satellite', parent:'adam',
+  { id:'eve', spouseOf:'adam', name:'Eve', era:'primeval', type:'satellite', parent:'adam',
     dates:'c. 4000 BC (traditional)',
     role:'First Woman; mother of all the living',
     bio:'Created by God from Adam\'s rib as his equal partner and companion — "bone of my bones and flesh of my flesh" (Gen 2:23). Her name (Havvah) means "life-giver" or "mother of all living." She was the first to be deceived by the serpent and to eat the forbidden fruit, and her act dragged Adam into the Fall (Gen 3). Yet she also received the first messianic promise: her offspring would crush the serpent\'s head (Gen 3:15). Paul uses her deception as a warning about false teaching (2 Cor 11:3; 1 Tim 2:13-14).',
@@ -691,7 +731,7 @@ const PEOPLE = [
     chapter:null },
 
   // ── SATELLITES: PATRIARCHAL ─────────────────────────────────────────
-  { id:'sarah', name:'Sarah', era:'patriarch', type:'satellite', parent:'abraham',
+  { id:'sarah', spouseOf:'abraham', name:'Sarah', era:'patriarch', type:'satellite', parent:'abraham',
     dates:'c. 2000–1875 BC',
     role:'Wife of Abraham; mother of Isaac',
     bio:'Born Sarai, her name was changed to Sarah ("princess") when God confirmed his covenant with Abraham. Her barrenness was the extended test of the covenant promise — she would bear the child of promise despite being beyond childbearing age. Her laughter at the announcement (Gen 18:12) was both incredulity and, ultimately, fulfilled joy (Isaac = "he laughs"). Her impatience led to the Hagar arrangement that produced Ishmael, creating generations of conflict. Peter holds her up as a model of wifely trust and strength (1 Pet 3:6); Paul uses her as a type of the covenant of grace (Gal 4:21-31).',
@@ -715,7 +755,7 @@ const PEOPLE = [
     family:{ parents:'Abraham and Hagar', children:'12 princes' },
     chapter:null },
 
-  { id:'rebekah', name:'Rebekah', era:'patriarch', type:'satellite', parent:'isaac',
+  { id:'rebekah', spouseOf:'isaac', name:'Rebekah', era:'patriarch', type:'satellite', parent:'isaac',
     dates:'c. 1890 BC',
     role:'Wife of Isaac; mother of Jacob and Esau',
     bio:'Chosen through providential circumstances as Isaac\'s wife by Abraham\'s servant (Gen 24), Rebekah\'s willingness to leave immediately was itself a mark of faith. She was barren until Isaac prayed, then conceived twins — and God told her directly that "the older will serve the younger" (Gen 25:23). She favoured Jacob and engineered the deception by which Jacob received Isaac\'s blessing, an action whose motives were complex: she believed God\'s word about Jacob\'s election but chose human manipulation to achieve the divine end.',
@@ -731,7 +771,7 @@ const PEOPLE = [
     family:{ parents:'Isaac and Rebekah', children:'The Edomite clans' },
     chapter:'genesis/Genesis_25.html' },
 
-  { id:'rachel', name:'Rachel', era:'patriarch', type:'satellite', parent:'jacob',
+  { id:'rachel', spouseOf:'jacob', name:'Rachel', era:'patriarch', type:'satellite', parent:'jacob',
     dates:'c. 1770 BC',
     role:'Beloved wife of Jacob; mother of Joseph and Benjamin',
     bio:'The younger daughter of Laban and Jacob\'s beloved — he worked seven years for her and they "seemed like only a few days to him because of his love for her" (Gen 29:20). Deceived into marrying Leah first, he then worked seven more years for Rachel. Like Sarah and Rebekah before her, she was initially barren while her sister Leah bore son after son. Her eventual pregnancy with Joseph was answered prayer; she died in childbirth with Benjamin on the road to Bethlehem.',
@@ -747,7 +787,7 @@ const PEOPLE = [
     family:{ parents:'Jacob and Rachel', spouse:'Asenath', children:'Ephraim, Manasseh' },
     chapter:'genesis/Genesis_37.html' },
 
-  { id:'leah', name:'Leah', era:'patriarch', type:'satellite', parent:'jacob',
+  { id:'leah', spouseOf:'jacob', name:'Leah', era:'patriarch', type:'satellite', parent:'jacob',
     dates:'c. 1770 BC',
     role:'Elder wife of Jacob; mother of six sons including Judah',
     bio:'The elder daughter of Laban who was substituted for Rachel on Jacob\'s wedding night in a deception that mirrored Jacob\'s own deception of Isaac. Though unloved by Jacob, she was fruitful where Rachel was barren, and God "saw that Leah was not loved" and opened her womb (Gen 29:31). She bore Reuben, Simeon, Levi, and Judah — the last being the ancestor of the Davidic and messianic line. Her son Levi became the priestly tribe; her son Judah the royal tribe.',
@@ -829,7 +869,7 @@ const PEOPLE = [
     family:{ parents:'Manoah and his unnamed wife', Philistine_wife:'Unnamed', lover:'Delilah' },
     chapter:null },
 
-  { id:'ruth', name:'Ruth', era:'judges', type:'satellite', parent:'boaz',
+  { id:'ruth', spouseOf:'boaz', name:'Ruth', era:'judges', type:'satellite', parent:'boaz',
     dates:'c. 1100 BC',
     role:'Moabite widow; great-grandmother of David',
     bio:'A Moabite woman who chose to remain with her mother-in-law Naomi after both their husbands died, Ruth\'s declaration — "Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God" (Ruth 1:16) — is one of Scripture\'s most celebrated statements of loyalty. Her gleaning in Boaz\'s fields, his notice of her character (her hesed to Naomi, Ruth 2:11), and their marriage under the kinsman-redeemer provision secured the continuation of the family line and placed a Gentile woman in the genealogy of Jesus.',
@@ -870,7 +910,7 @@ const PEOPLE = [
     family:{ father:'Saul', son:'Mephibosheth' },
     chapter:null },
 
-  { id:'bathsheba', name:'Bathsheba', era:'kingdom', type:'satellite', parent:'david',
+  { id:'bathsheba', spouseOf:'david', name:'Bathsheba', era:'kingdom', type:'satellite', parent:'david',
     dates:'c. 1010 BC',
     role:'Wife of Uriah; wife of David; mother of Solomon',
     bio:'Bathsheba was bathing when David saw her from his roof and sent for her — an act of royal abuse of power that cascades into adultery, deception, and Uriah\'s arranged death. Her first child by David died as a consequence of his sin. But she became David\'s queen and the mother of Solomon, who would build the Temple. Her intervention when David was dying — securing Solomon\'s coronation over Adonijah — was decisive. Matthew\'s genealogy refers to her as "she who had been Uriah\'s wife" (Matt 1:6), preserving the moral complexity of the line.',
@@ -961,7 +1001,7 @@ const PEOPLE = [
     chapter:null },
 
   // ── SATELLITES: NEW TESTAMENT ───────────────────────────────────────
-  { id:'mary', name:'Mary (Mother of Jesus)', era:'nt', type:'satellite', parent:'jesus',
+  { id:'mary', spouseOf:'joseph-nt', name:'Mary (Mother of Jesus)', era:'nt', type:'satellite', parent:'jesus',
     dates:'c. 20 BC–AD 50',
     role:'Mother of Jesus; Theotokos',
     bio:'A young woman ("virgin," parthenos) from Nazareth betrothed to Joseph, Mary received the annunciation from the angel Gabriel that she would conceive by the Holy Spirit and bear the Son of God. Her response — "I am the Lord\'s servant... may your word to me be fulfilled" (Luke 1:38) — is the New Testament\'s most perfect human response to divine calling. Her Magnificat (Luke 1:46-55) is the NT\'s richest piece of OT theology, weaving together Samuel\'s prayer, Psalm 113, and the reversal theme of the prophets. She was present at the cross (John 19:26-27) and in the upper room at Pentecost (Acts 1:14).',
@@ -1070,6 +1110,20 @@ function render(filterEra) {
 
   treeLayout(root);
 
+  // ── SPOUSE POSITIONING: snap spouses to same y as their partner ──────────
+  const nodeById = {};
+  root.descendants().forEach(n => { nodeById[n.data.id] = n; });
+
+  root.descendants().forEach(n => {
+    const sid = n.data.spouseOf;
+    if (!sid) return;
+    const partner = nodeById[sid];
+    if (!partner) return;
+    // Place spouse at same vertical level, offset to the right
+    n.x = partner.x + 88;
+    n.y = partner.y;
+  });
+
   // Filter nodes
   const allNodes = root.descendants();
   const activeEra = filterEra === 'all' ? null : filterEra;
@@ -1083,7 +1137,45 @@ function render(filterEra) {
 
   // Draw links
   const links = g.append('g').attr('class', 'links');
+
+  // Marriage bars (horizontal double-tick lines between spouses)
+  const marryG = g.append('g').attr('class', 'marriages');
+  root.descendants().forEach(n => {
+    const sid = n.data.spouseOf;
+    if (!sid) return;
+    const partner = nodeById[sid];
+    if (!partner) return;
+    const dimmed = activeEra && n.data.era !== activeEra && partner.data.era !== activeEra;
+    const x1 = partner.x + 7;   // right edge of partner circle
+    const x2 = n.x - 5;          // left edge of spouse circle
+    const y  = n.y;
+    const mx = (x1 + x2) / 2;
+    // Horizontal marriage line
+    marryG.append('line')
+      .attr('x1', x1).attr('y1', y)
+      .attr('x2', x2).attr('y2', y)
+      .attr('stroke', 'var(--gold-dim)')
+      .attr('stroke-width', 1.5)
+      .attr('opacity', dimmed ? 0.1 : 0.5);
+    // Small vertical ticks at midpoint (marriage symbol)
+    marryG.append('line')
+      .attr('x1', mx - 3).attr('y1', y - 5)
+      .attr('x2', mx - 3).attr('y2', y + 5)
+      .attr('stroke', 'var(--gold-dim)')
+      .attr('stroke-width', 1.2)
+      .attr('opacity', dimmed ? 0.1 : 0.5);
+    marryG.append('line')
+      .attr('x1', mx + 3).attr('y1', y - 5)
+      .attr('x2', mx + 3).attr('y2', y + 5)
+      .attr('stroke', 'var(--gold-dim)')
+      .attr('stroke-width', 1.2)
+      .attr('opacity', dimmed ? 0.1 : 0.5);
+  });
+
   root.links().forEach(link => {
+    // Skip the tree link for spouses — they get a marriage bar instead
+    if (link.target.data.spouseOf) return;
+
     const isSpineLink = link.source.data.type === 'spine' && link.target.data.type === 'spine';
     const dimmed = activeEra && (link.source.data.era !== activeEra && link.target.data.era !== activeEra);
     links.append('path')
