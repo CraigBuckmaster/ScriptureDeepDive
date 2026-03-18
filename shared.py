@@ -780,12 +780,36 @@ HISTORY_JS = '''<script>
 </script>'''
 
 def head(book_name, book_dir, ch, is_nt=False):
-    rec = next((r for r in REGISTRY if r[0]==book_dir), None)
-    live = rec[3] if rec else ch
-    prev = (f'<a href="{book_name}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
-            if ch > 1 else '<span class="nav-arrow disabled">&#8592;</span>')
-    nxt  = (f'<a href="{book_name}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
-            if ch < live else '<span class="nav-arrow disabled">&#8594;</span>')
+    rec      = next((r for r in REGISTRY if r[0]==book_dir), None)
+    live     = rec[3] if rec else ch
+    idx      = next((i for i,r in enumerate(REGISTRY) if r[0]==book_dir), None)
+
+    # ── Previous arrow ────────────────────────────────────────────────────
+    if ch > 1:
+        # Within same book
+        prev = f'<a href="{book_name}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
+    elif idx is not None and idx > 0:
+        # Cross-book: go to last live chapter of the previous book
+        pd, pn, _, pl, _ = REGISTRY[idx - 1]
+        prev = f'<a href="../{pd}/{pn}_{pl}.html" class="nav-arrow">&#8592;</a>'
+    else:
+        # First chapter of the entire canon
+        prev = '<span class="nav-arrow disabled">&#8592;</span>'
+
+    # ── Next arrow ────────────────────────────────────────────────────────
+    if ch < live:
+        # Within same book
+        nxt = f'<a href="{book_name}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
+    elif idx is not None and idx < len(REGISTRY) - 1:
+        # Cross-book: go to chapter 1 of the next book
+        nd, nn, _, nl, _ = REGISTRY[idx + 1]
+        if nl > 0:
+            nxt = f'<a href="../{nd}/{nn}_1.html" class="nav-arrow">&#8594;</a>'
+        else:
+            nxt = '<span class="nav-arrow disabled">&#8594;</span>'
+    else:
+        # Last chapter of the entire canon
+        nxt = '<span class="nav-arrow disabled">&#8594;</span>'
     nav = f'''<nav class="chapter-nav">
 <a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
 <div class="nav-center"><span class="nav-book">{book_name}</span><span class="nav-chapter">Chapter {ch}</span></div>
