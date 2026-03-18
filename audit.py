@@ -381,7 +381,7 @@ else:
 section('8. Service Worker')
 
 with open(f'{REPO}/service-worker.js') as f: sw = f.read()
-m = re.search(r"const CACHE = '(scripture-v(\d+))'", sw)
+m = re.search(r"const CACHE = '(scripture-[\d.v]+)'", sw)
 if not m:
     fail('Cannot find SW CACHE version string')
 else:
