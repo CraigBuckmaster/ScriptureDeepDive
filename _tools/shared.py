@@ -1825,7 +1825,7 @@ def rebuild_verses_js():
                         'ref':   f'{book_name} {ch}:{v_num}',
                         'short': f'{book_name[:3]} {ch}:{v_num}',
                         'text':  text,
-                        'url':   f'/{test_dir}/{book_dir}/{book_name}_{ch}.html',
+                        'url':   f'{test_dir}/{book_dir}/{book_name}_{ch}.html',
                         'book':  book_name,
                         'ch':    int(ch),
                         'v':     int(v_num),
