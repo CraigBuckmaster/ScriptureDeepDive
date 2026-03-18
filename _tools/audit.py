@@ -294,44 +294,48 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 # 4. VERSES.JS
 # ═══════════════════════════════════════════════════════════════════════════
-section('4. Verse Index (verses.js)')
+section('4. Verse Index (verses/)')
 
-# Check monolithic verses.js (full canon fallback)
-vjs_path = f'{REPO}/verses.js'
+OT_BOOKS = ['genesis','exodus','ruth','proverbs']
+
+# Check monolithic verses/verses.js (full canon fallback)
+vjs_path = f'{REPO}/verses/verses.js'
 if not os.path.exists(vjs_path):
-    fail('verses.js (full canon fallback) missing')
+    fail('verses/verses.js (full canon fallback) missing')
 else:
     with open(vjs_path) as f: vjs = f.read()
     vc = vjs.count('"ref":')
     if 'VERSES_ALL=' in vjs:
-        ok(f'verses.js (full canon) valid — {vc} verses')
+        ok(f'verses/verses.js (full canon) valid — {vc} verses')
     else:
-        fail(f'verses.js malformed (starts={vjs[:20]!r})')
+        fail(f'verses/verses.js malformed (starts={vjs[:20]!r})')
 
-# Check per-book verse files exist
+# Check per-book verse files in verses/ot/ and verses/nt/
 missing_per_book = []
 for book_dir, book_name, ch_range in BOOK_ROSTER:
-    live = ch_range.stop - 1  # range(1,29) → 28 chapters
-    p = f'{REPO}/verses-{book_dir}.js'
+    test = 'ot' if book_dir in OT_BOOKS else 'nt'
+    p = f'{REPO}/verses/{test}/{book_dir}.js'
     if not os.path.exists(p):
-        missing_per_book.append(f'verses-{book_dir}.js')
+        missing_per_book.append(f'verses/{test}/{book_dir}.js')
 if missing_per_book:
     fail(f'Missing per-book verse files: {", ".join(missing_per_book)}')
 else:
-    ok(f'All per-book verses-{{book}}.js files present')
+    ok('All per-book verses/{testament}/{book}.js files present')
 
-# Check chapters load their own book's verse file (not monolithic verses.js)
+# Check chapters load their own book's verse file from verses/ subdir
 wrong_verses = []
 for p, b, c in chapters:
     with open(p) as f: h = f.read()
     book_dir_for_ch = os.path.basename(os.path.dirname(p))
-    if f'../verses-{book_dir_for_ch}.js' not in h:
+    test = 'ot' if book_dir_for_ch in OT_BOOKS else 'nt'
+    expected_d1 = f'../verses/{test}/{book_dir_for_ch}.js'
+    expected_d2 = f'../../verses/{test}/{book_dir_for_ch}.js'
+    if expected_d1 not in h and expected_d2 not in h:
         wrong_verses.append(f'{b} {c}')
 if wrong_verses:
     fail(f'{len(wrong_verses)} chapters missing per-book verses script: ' + ', '.join(wrong_verses[:3]))
 else:
     ok('All chapters load their per-book verses file')
-
 # ═══════════════════════════════════════════════════════════════════════════
 # 5. VERSE COUNTS
 # ═══════════════════════════════════════════════════════════════════════════
@@ -403,10 +407,10 @@ if not m:
 else:
     ok(f'SW version: {m.group(1)}')
 
-if "'/verses.js'" in sw:
-    ok('verses.js in SW CORE cache')
+if "'/verses/verses.js'" in sw:
+    ok('verses/verses.js in SW CORE cache')
 else:
-    fail("'/verses.js' not in SW CORE cache")
+    fail("'/verses/verses.js' not in SW CORE cache")
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 9. TOG() FUNCTION

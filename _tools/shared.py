@@ -265,15 +265,15 @@ EXTRA_CSS = '''
 '''
 
 REGISTRY = [
-    ('genesis',  'Genesis',   50, 50, 'OT'),
-    ('exodus',   'Exodus',    40, 40, 'OT'),
-    ('ruth',     'Ruth',       4,  4, 'OT'),
-    ('proverbs', 'Proverbs',  31, 31, 'OT'),
-    ('matthew',  'Matthew',   28, 28, 'NT'),
-    ('mark',     'Mark',      16, 16, 'NT'),
-    ('luke',     'Luke',      24, 24, 'NT'),
-    ('john',     'John',      21, 21, 'NT'),
-    ('acts',     'Acts',      28, 28, 'NT'),
+    ('genesis',  'Genesis',   50, 50, 'OT', 'ot'),
+    ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
+    ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
+    ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
+    ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
+    ('mark',     'Mark',      16, 16, 'NT', 'nt'),
+    ('luke',     'Luke',      24, 24, 'NT', 'nt'),
+    ('john',     'John',      21, 21, 'NT', 'nt'),
+    ('acts',     'Acts',      28, 28, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -1315,6 +1315,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     os.makedirs(out_dir, exist_ok=True)
     # Guard against None from _bootstrap() in case a script wasn't found
     _tog      = TOG_JS       or ''
+    book_dir_test = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
     _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
     _sw       = SW_JS        or ''
     # NOTE: qnav panel HTML is NOT baked inline here.
@@ -1330,7 +1331,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             _tog + '\n' +
             _vhl + '\n' +
             '<script src="../books.js"></script>\n' +
-            f'<script src="../verses-{book_dir}.js"></script>\n' +
+            f'<script src="../verses/{book_dir_test}/{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir}/{book_name}_{ch}.html";</script>\n' +
             '<script src="../qnav.js"></script>\n</body></html>')
@@ -1534,7 +1535,7 @@ def update_homepage():
     index_path = f'{_REPO}/index.html'
     with open(index_path) as f: h = f.read()
 
-    for book_dir, book_name, total, _, testament in REGISTRY:
+    for book_dir, book_name, total, _, testament, *_ in REGISTRY:
         # Count which chapter files actually exist
         live_chs = [ch for ch in range(1, total+1)
                     if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')]
@@ -1589,7 +1590,7 @@ def update_homepage():
     total_live = sum(
         len([ch for ch in range(1, total+1)
              if os.path.exists(f'{_REPO}/{book_dir}/{book_name}_{ch}.html')])
-        for book_dir, book_name, total, _, _ in REGISTRY
+        for book_dir, book_name, total, *_ in REGISTRY
     )
     print(f'index.html updated — {total_live} live chapters across {len(REGISTRY)} books')
     return total_live
@@ -1608,7 +1609,7 @@ def rebuild_books_js():
     MUST be called in the deploy checklist alongside rebuild_qnav_js().
     """
     rows = []
-    for book_dir, book_name, total, live, testament in REGISTRY:
+    for book_dir, book_name, total, live, testament, *_ in REGISTRY:
         rows.append(
             f'  {{dir:"{book_dir}",name:"{book_name}",'
             f'total:{total},live:{live},testament:"{testament}"}}'
@@ -1681,11 +1682,11 @@ def rebuild_qnav_js():
 
     ot_html = ''.join(
         book_div(d, n, t, l)
-        for d, n, t, l, test in REGISTRY if test == 'OT'
+        for d, n, t, l, test, *_ in REGISTRY if test == 'OT'
     )
     nt_html = ''.join(
         book_div(d, n, t, l)
-        for d, n, t, l, test in REGISTRY if test == 'NT'
+        for d, n, t, l, test, *_ in REGISTRY if test == 'NT'
     )
 
     panel_html = (
@@ -1805,8 +1806,9 @@ def rebuild_verses_js():
     all_verses = []
     total_count = 0
 
-    for book_dir, book_name, total, live, _ in REGISTRY:
+    for book_dir, book_name, total, live, _, test_dir in REGISTRY:
         book_verses = []
+        test_dir = test_dir.lower()
         for ch in range(1, live + 1):
             path = f'{_REPO}/{book_dir}/{book_name}_{ch}.html'
             if not os.path.exists(path): continue
@@ -1823,7 +1825,7 @@ def rebuild_verses_js():
                         'ref':   f'{book_name} {ch}:{v_num}',
                         'short': f'{book_name[:3]} {ch}:{v_num}',
                         'text':  text,
-                        'url':   f'{book_dir}/{book_name}_{ch}.html',
+                        'url':   f'/{test_dir}/{book_dir}/{book_name}_{ch}.html',
                         'book':  book_name,
                         'ch':    int(ch),
                         'v':     int(v_num),
@@ -1831,22 +1833,23 @@ def rebuild_verses_js():
                     book_verses.append(entry)
                     all_verses.append(entry)
 
-        # Write per-book file
-        out_path = f'{_REPO}/verses-{book_dir}.js'
+        # Write per-book file into verses/{testament}/{book_dir}.js
+        test_dir = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
+        out_path = f'{_REPO}/verses/{test_dir}/{book_dir}.js'
         payload = json.dumps(book_verses, separators=(',', ':'))
         with open(out_path, 'w') as f:
             f.write(f'var VERSES_{book_name.upper()}={payload};\n')
             f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
             f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper()});\n')
         total_count += len(book_verses)
-        print(f'  verses-{book_dir}.js: {len(book_verses)} verses')
+        print(f'  verses/{test_dir}/{book_dir}.js: {len(book_verses)} verses')
 
     # Keep monolithic verses.js for backward compat (search needs full VERSES_ALL)
-    out = f'{_REPO}/verses.js'
+    out = f'{_REPO}/verses/verses.js'
     with open(out, 'w') as f:
         f.write('// Full canon verse index — loaded lazily per book; this file is the complete fallback.\n')
         f.write('var VERSES_ALL=' + json.dumps(all_verses, separators=(',', ':')) + ';\n')
-    print(f'verses.js (full): {total_count} verses total across {len(REGISTRY)} books')
+    print(f'verses/verses.js (full): {total_count} verses total across {len(REGISTRY)} books')
     return total_count
 
 
