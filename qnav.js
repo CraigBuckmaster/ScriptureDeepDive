@@ -14,7 +14,7 @@
     function chGrid(b) {
       var h = '';
       for (var i = 1; i <= b.live; i++) {
-        h += '<a href="../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name + '_' + i + '.html' +
+        h += '<a href="../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name + '_' + i + '.html"' +
              ' class="qnav-ch-btn live">Ch ' + i + '</a>';
       }
       return h;
@@ -40,7 +40,8 @@
            '<div class="qnav-search-wrap">' +
            '<span class="qnav-search-icon">&#128269;</span>' +
            '<input class="qnav-search" id="qnav-search-input" placeholder="Search verses..." oninput="qnavFilter(this.value)">' +
-           '<button class="qnav-close" onclick="closeQnav()">Close</button></div>' +
+           '</div>' +
+           '<button class="qnav-close" onclick="closeQnav()">Close</button>' +
            '<div class="qnav-body">' +
            '<div class="qnav-search-results" id="qnav-search-results" style="display:none"></div>' +
            '<div class="qnav-testament" id="qnav-t-ot">' +
@@ -72,11 +73,11 @@ function loadAllVerses() {
     var b = books[i];
     if (_versesLoaded[b.dir]) continue;
     _versesLoaded[b.dir] = true;
-    (function(dir) {
+    (function(dir, test) {
       var s = document.createElement('script');
-      s.src = '../verses-' + dir + '.js';
+      s.src = '../../verses/' + test.toLowerCase() + '/' + dir + '.js';
       document.head.appendChild(s);
-    })(b.dir);
+    })(b.dir, b.testament);
   }
 }
 
@@ -169,9 +170,9 @@ function highlightCurrent() {
   var cur = window.QNAV_CURRENT || '';
   if (!cur) return;
   var parts = cur.split('/');
-  if (parts.length < 2) return;
-  var bookDir = parts[0];
-  var chUrl = '../' + cur;
+  if (parts.length < 3) return;
+  var bookDir = parts[1];  // 'ot/genesis/Genesis_1.html' → parts[1]='genesis'
+  var chUrl = '../../' + cur;
   document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
     if (btn.getAttribute('href') === chUrl) btn.classList.add('current');
   });
