@@ -1,3 +1,4 @@
+import glob
 """Scripture Deep Dive — unified shared helpers. All books use this."""
 import re, json, math, os
 
@@ -1462,19 +1463,8 @@ def ensure_tx_book_var(book_name):
 
 def auto_scholarly(data, book_dir, ch):
     """
-    Auto-generate all 9 chapter-level scholarly panels from section content
-    and verse files. Called by build_chapter for any missing scholarly keys.
-
-    Panels generated:
-      hebtext  — Key Hebrew/Greek word studies from all heb[] entries
-      lit      — Literary structure from section headers
-      themes   — Theological theme radar (keyword scored)
-      ppl      — People of the chapter (from ctx + notes text)
-      trans    — NIV vs ESV translation comparison for key verses
-      src      — Ancient sources relevant to the chapter
-      rec      — Reception history (scholars already cited in chapter)
-      textual  — Textual notes (LXX/MT variants for the book)
-      debate   — Scholarly debates (from milgrom/sarna commentary notes)
+    Auto-generate all 9 chapter-level scholarly panels from section content.
+    Generates: hebtext, lit, themes, ppl, trans, src, rec, textual, debate, thread.
     """
     import re as _re
     meta     = BOOK_META.get(book_dir, {})
@@ -1483,12 +1473,12 @@ def auto_scholarly(data, book_dir, ch):
     title    = data.get('title', '')
     result   = {}
 
-    # ── Aggregate all text from sections ─────────────────────────────────
+    # ── Aggregate text ────────────────────────────────────────────────────
     all_ctx   = ' '.join(sec.get('ctx','') for sec in sections)
     all_notes = ' '.join(
         n[1] for sec in sections
         for key in ('mac','milgrom','sarna','alter','ashley','calvin','netbible',
-                    'hubbard','waltke','marcus','rhoads','keener','robertson','catena')
+                    'hubbard','waltke','marcus','keener','robertson','catena')
         for n in sec.get(key,[]) if len(n) >= 2
     )
     all_text  = (title + ' ' + all_ctx + ' ' + all_notes).lower()
@@ -1516,9 +1506,22 @@ def auto_scholarly(data, book_dir, ch):
     if len(headers) >= 2:
         rows = []
         for hdr in headers:
-            m = _re.match(r'(Verses?\s+[0-9\u2013\u2014\-]+)\s*[\u2014\u2013\-]+\s*(.*)', hdr)
-            rows.append((m.group(1), m.group(2), False) if m else (hdr, '', False))
-        result['lit'] = (rows, f'Structure of {title}')
+            m = _re.match(r'(Verses?\s+[\d\u2013\u2014\-]+)\s*[\u2014\u2013\-]+\s*(.*)', hdr)
+            if m:
+                vv, desc = m.group(1), m.group(2)
+                # Add context snippet as structural note
+                for sec in sections:
+                    if sec.get('header','') == hdr:
+                        ctx = sec.get('ctx','')
+                        snippet = ctx[:120].rstrip() + '\u2026' if ctx else ''
+                        rows.append((vv, desc, snippet, False))
+                        break
+                else:
+                    rows.append((vv, desc, '', False))
+            else:
+                rows.append((hdr[:60], '', '', False))
+        # Use 4-tuple form that lit_panel accepts
+        result['lit'] = ([(lbl, vv, txt, ctr) for lbl, vv, txt, ctr in rows], f'Structure of {title}')
 
     # ── 3. THEMES ─────────────────────────────────────────────────────────
     if is_nt:
@@ -1539,93 +1542,81 @@ def auto_scholarly(data, book_dir, ch):
             ('Redemption',  ['redeem','deliver','exodus','freedom','ransom','save','liberat']),
             ('Worship',     ['worship','praise','feast','sabbath','prayer','tabernacle','sanctuary']),
         ]
-    scores = []
     tlen = max(1, len(all_text) / 80)
-    for label, kws in theme_defs:
-        raw = sum(all_text.count(kw) for kw in kws)
-        scores.append((label, min(5, max(1, round(1 + raw*4/tlen)))))
-    if any(v > 1 for _,v in scores):
+    scores = [(label, min(5, max(1, round(1 + sum(all_text.count(kw) for kw in kws)*4/tlen))))
+              for label, kws in theme_defs]
+    if scores:  # always include themes if we have text to score
         result['themes'] = (scores, title)
 
     # ── 4. PPL ────────────────────────────────────────────────────────────
-    # Extract names mentioned in cross-refs and commentary
     known_names = meta.get('vhl_people', [])
-    # Find which names actually appear in chapter content
     mentioned = [n for n in known_names
                  if n.lower() in all_text or
                  any(n.lower() in sec.get('ctx','').lower() for sec in sections)]
     if not mentioned:
-        mentioned = known_names[:6]  # fallback: all from meta
+        mentioned = known_names[:6]
+    roles = {
+        'Moses':'Prophet and lawgiver','Aaron':'High priest','Miriam':'Prophetess',
+        'Caleb':'Faithful spy','Joshua':'Military leader','Korah':'Rebel Levite',
+        'Balaam':'Foreign prophet','Balak':'King of Moab','Phinehas':'Priestly zealot',
+        'Zelophehad':'Father of daughters','Nadab':'Son of Aaron','Abihu':'Son of Aaron',
+        'Eleazar':"Aaron’s son",'Ithamar':"Aaron’s son",'Dathan':'Reubenite rebel',
+        'Abiram':'Reubenite rebel','Peter':'Apostle and leader','Paul':'Apostle to the Gentiles',
+        'Barnabas':'Paul’s missionary partner','Stephen':'First martyr',
+        'Philip':'Evangelist','Cornelius':'First Gentile convert','Silas':'Paul’s companion',
+        'Timothy':'Paul’s protégé','James':'Brother of Jesus, Jerusalem leader',
+        'Agrippa':'Herodian king','Felix':'Roman governor','Festus':'Roman governor',
+        'Luke':'Author and companion of Paul','Priscilla':'Teacher and co-worker',
+        'Aquila':'Tentmaker and co-worker','Apollos':'Eloquent teacher',
+    }
     if mentioned:
-        # Build person cards with roles derived from book context
-        roles = {
-            'Moses': 'Prophet and lawgiver', 'Aaron': 'High priest',
-            'Miriam': 'Prophetess', 'Caleb': 'Faithful spy',
-            'Joshua': 'Military leader', 'Korah': 'Rebel Levite',
-            'Balaam': 'Foreign prophet', 'Balak': 'King of Moab',
-            'Phinehas': 'Priestly zealot', 'Zelophehad': 'Father of daughters',
-            'Nadab': 'Son of Aaron', 'Abihu': 'Son of Aaron',
-            'Eleazar': "Aaron's son", 'Ithamar': "Aaron's son",
-            'Dathan': 'Reubenite rebel', 'Abiram': 'Reubenite rebel',
-        }
         ppl = []
+        ctx_combined = ' '.join(sec.get('ctx','') for sec in sections)
         for name in mentioned[:8]:
-            role = roles.get(name, f'Figure in {title}')
-            # Find a description from context
-            ctx_combined = ' '.join(sec.get('ctx','') for sec in sections)
-            # Extract sentence containing the name
+            role = roles.get(name, f'Key figure in {title}')
             sentences = ctx_combined.split('.')
-            desc = next((s.strip() for s in sentences if name in s and len(s.strip()) > 20), '')
-            desc = desc[:200] if desc else f'Key figure in this chapter.'
+            desc = next((sent.strip() for sent in sentences
+                        if name in sent and len(sent.strip()) > 25), '')
+            desc = (desc[:200] + '…') if len(desc) > 200 else (desc or f'Key figure in this chapter.')
             ppl.append((name, role, desc))
         if ppl:
             result['ppl'] = ppl
 
     # ── 5. TRANS ─────────────────────────────────────────────────────────
-    # Compare NIV vs ESV for a key verse (first verse with meaningful difference)
-    td = 'ot' if not is_nt else 'nt'
+    td = 'nt' if is_nt else 'ot'
     niv_path = os.path.join(_REPO, 'verses', 'niv', td, f'{book_dir}.js')
     esv_path = os.path.join(_REPO, 'verses', 'esv', td, f'{book_dir}.js')
     if os.path.exists(niv_path) and os.path.exists(esv_path):
-        def _get_verses(path, bk, chapter, vlist):
+        def _get_vv(path, bk, chapter, vlist):
             with open(path) as f: raw = f.read()
-            pattern = rf'"ref":"{bk} {chapter}:(\d+)","short":"[^"]+","text":"([^"]+)"'
-            return {int(v): t for v, t in _re.findall(pattern, raw)
-                    if int(v) in vlist}
+            pat = rf'"ref":"{bk} {chapter}:(\d+)","short":"[^"]+","text":"([^"]+)"'
+            return {int(v): t for v, t in _re.findall(pat, raw) if int(v) in vlist}
         bk_name = next((r[1] for r in REGISTRY if r[0]==book_dir), book_dir.capitalize())
-        vlist = [1, 2, 3, 4, 5]
         try:
-            niv_vv = _get_verses(niv_path, bk_name, ch, vlist)
-            esv_vv = _get_verses(esv_path, bk_name, ch, vlist)
-            # Find verse where NIV and ESV differ meaningfully
-            key_v = next((v for v in vlist
-                         if v in niv_vv and v in esv_vv
-                         and niv_vv[v].lower() != esv_vv[v].lower()), vlist[0])
-            if key_v and key_v in niv_vv and key_v in esv_vv:
-                # Also add verse 4 if present and different (atonement/kippēr is always interesting)
-                rows = [('NIV', niv_vv[key_v]), ('ESV', esv_vv[key_v])]
-                # Add a second verse if meaningfully different
-                for v2 in vlist:
-                    if v2 != key_v and v2 in niv_vv and v2 in esv_vv:
-                        if niv_vv[v2] != esv_vv[v2] and abs(len(niv_vv[v2])-len(esv_vv[v2])) > 3:
-                            rows += [('NIV', niv_vv[v2]), ('ESV', esv_vv[v2])]
-                            key_v = f'{bk_name} {ch}:{key_v} and {ch}:{v2}'
-                            break
-                    else:
-                        break
-                if len(rows) == 2:
-                    key_v = f'{bk_name} {ch}:{key_v}'
-                result['trans'] = (f'Key verses in {title}', rows)
+            vlist = list(range(1, 10))
+            niv_vv = _get_vv(niv_path, bk_name, ch, vlist)
+            esv_vv = _get_vv(esv_path, bk_name, ch, vlist)
+            # Find most divergent verse pair
+            diffs = [(abs(len(niv_vv.get(v,'')) - len(esv_vv.get(v,''))), v)
+                     for v in vlist if v in niv_vv and v in esv_vv
+                     and niv_vv[v].lower() != esv_vv[v].lower()]
+            diffs.sort(reverse=True)
+            rows, key_label = [], f'{bk_name} {ch}:1'
+            for _, v in diffs[:2]:
+                if v in niv_vv and v in esv_vv:
+                    rows += [('NIV', niv_vv[v]), ('ESV', esv_vv[v])]
+                    key_label = f'{bk_name} {ch}:{v}'
+            if len(rows) >= 2:
+                result['trans'] = (f'Comparing translations in {title}', rows)
         except Exception:
             pass
 
-    # ── 6. SRC (Ancient Sources) ─────────────────────────────────────────
-    # Generate book-appropriate ANE / patristic sources for this chapter
+    # ── 6. SRC ────────────────────────────────────────────────────────────
     src_data = _auto_src(book_dir, ch, title, all_text)
     if src_data:
         result['src'] = src_data
 
-    # ── 7. REC (Reception History) ───────────────────────────────────────
+    # ── 7. REC ────────────────────────────────────────────────────────────
     rec_data = _auto_rec(book_dir, ch, title, sections)
     if rec_data:
         result['rec'] = rec_data
@@ -1635,139 +1626,227 @@ def auto_scholarly(data, book_dir, ch):
     if tx_data:
         result['textual'] = tx_data
 
-    # ── 9. DEBATE ─────────────────────────────────────────────────────────
+    # ── 9. DEBATE ────────────────────────────────────────────────────────
     debate_data = _auto_debate(book_dir, ch, title, sections)
     if debate_data:
         result['debate'] = debate_data
 
+    # ── 10. THREAD ───────────────────────────────────────────────────────
+    thread_data = _auto_thread(book_dir, ch, title, sections, is_nt)
+    if thread_data:
+        result['thread'] = thread_data
+
     return result
 
 
+
+def _auto_thread(book_dir, ch, title, sections, is_nt):
+    """Generate Intertextual Threading panel from cross[] entries."""
+    items = []
+    arrow = '→'
+    for sec in sections:
+        for ref, note in sec.get('cross', []):
+            if not ref or not note:
+                continue
+            # Parse: "Book Ch:v" as anchor; derive target from note
+            # Format for thread_panel: (dc, anchor, arrow, target, tc, tl, text)
+            # dc = 'fulfilment'/'echo'/'type'/'allusion' based on keywords
+            note_lower = note.lower()
+            if any(k in note_lower for k in ['fulfil', 'quotes', 'apply', 'interprets as']):
+                dc, tc, tl = 'fulfilment', 'type-ful', 'Fulfilment'
+            elif any(k in note_lower for k in ['type', 'prefigure', 'foreshadow', 'anticipat']):
+                dc, tc, tl = 'type', 'type-typ', 'Type→Antitype'
+            elif any(k in note_lower for k in ['echo', 'allud', 'parallel', 'mirrors', 'recall']):
+                dc, tc, tl = 'echo', 'type-ech', 'Echo'
+            else:
+                dc, tc, tl = 'connection', 'type-con', 'Connection'
+            # anchor = source (current chapter reference)
+            anchor = f'{title.split(":")[0]}'
+            target = ref
+            text = note[:250] + ('…' if len(note) > 250 else '')
+            items.append((dc, anchor, arrow, target, tc, tl, text))
+    return items[:6] if items else []
+
+
 def _auto_src(book_dir, ch, title, all_text):
-    """Generate Ancient Sources panel — ANE parallels and patristic references."""
-    # Book-specific ANE sources relevant to key topics
+    """Generate Ancient Sources panel."""
     ane_map = {
         'leviticus': [
             ('Ugaritic Sacrifice Texts (KTU 1.40)',
-             'Ritual texts from Ugarit describe similar categories of burnt, peace, and purification offerings with corresponding priestly procedures.',
-             'Demonstrates that Israel’s sacrificial vocabulary was shared with the wider ancient Near East, while the theological rationale (holiness, atonement) was distinctively Israelite.'),
+             'Ritual texts from Ugarit describe burnt, peace, and purification offerings with comparable priestly procedures and gradations.',
+             'Demonstrates that Israel’s sacrificial vocabulary was shared with the wider ancient Near East, while the theological rationale — holiness, atonement, covenant — was distinctively Israelite.'),
             ('Hittite Ritual Texts',
-             'Hittite purification rituals describe graduated offerings for different levels of transgression, paralleling the Levitical sin-offering gradations (Lev 4).',
-             'The structural parallels illuminate the Levitical system’s ANE context while highlighting Israel’s distinctive theology of intentionality and atonement.'),
-            ('Philo of Alexandria, De Specialibus Legibus',
-             'Philo’s allegorical commentary on the Levitical laws interprets each offering as symbolic of the soul’s approach to God — the burnt offering as total consecration of the rational soul.',
-             'Influential on early Christian interpretation; Origen and Clement drew heavily on Philo’s allegorical method for the sacrificial laws.'),
+             'Hittite purification rituals describe graduated offerings for different levels of transgression, paralleling the Levitical sin-offering gradations of Lev 4–5.',
+             'The structural parallels illuminate the Levitical system’s ANE context while highlighting Israel’s distinctive theology of intentionality and priestly atonement.'),
+            ('Philo of Alexandria, De Specialibus Legibus (1st c. AD)',
+             'Philo’s allegorical commentary interprets each offering as symbolic of the soul’s approach to God — the burnt offering as total consecration of the rational soul.',
+             'Influential on early Christian interpretation; Origen and Clement drew heavily on Philo’s allegorical reading of the Levitical laws.'),
         ],
         'numbers': [
-            ('Mari Texts and Census Records',
-             'Administrative texts from Mari (c.1800 BC) record comparable tribal musters and census-taking procedures for military organisation.',
-             'Confirms that the Numbers census methodology reflects genuine Bronze Age administrative practice, not later literary invention.'),
-            ('Ugaritic and Phoenician Priestly Texts',
-             'Priestly archive texts describe comparable sanctuary service rosters, offering procedures, and sacred precincts — illuminating the social organisation of ancient Near Eastern sanctuaries.',
-             'The Levitical service organisation described in Num 3–4 reflects authentic priestly administrative structures known from the broader ANE.'),
-            ('Balaam Texts from Deir Alla',
-             'A plaster inscription from Deir Alla (c.800 BC) describes a seer named "Balaam son of Beor" who receives a divine night vision — the same figure as Numbers 22–24.',
-             'Confirms Balaam as a historical figure known in ancient Transjordanian tradition, lending historical credibility to the Numbers account.'),
+            ('Mari Texts and Census Records (c.1800 BC)',
+             'Administrative texts from Mari record comparable tribal musters, census-taking procedures, and military organisation strikingly similar to Numbers 1–4.',
+             'Confirms that the Numbers census methodology reflects genuine Bronze Age administrative practice rather than later literary invention.'),
+            ('Balaam Texts from Deir Alla (c.800 BC)',
+             'A plaster inscription found at Deir Alla in Jordan describes a seer named "Balaam son of Beor" who receives divine night visions — the same figure as Numbers 22–24.',
+             'The extra-biblical attestation of Balaam confirms him as a historical figure known in ancient Transjordanian tradition, lending credibility to the Numbers narrative.'),
+            ('Ugaritic Priestly Archive Texts',
+             'Sanctuary service rosters and offering procedures from Ugarit illuminate the social organisation of ancient Near Eastern priesthoods, paralleling the Levitical organisation of Num 3–4.',
+             'The Levitical clan structure and service rotations reflect authentic Bronze Age priestly administrative structures known across the ancient Near East.'),
+        ],
+        'acts': [
+            ('Josephus, Antiquities of the Jews (c.93 AD)',
+             'Josephus provides extensive first-century background for the political, religious, and social conditions described in Acts — the Herodian family, Pharisees and Sadducees, Roman provincial governance.',
+             'Acts’ historical details consistently align with Josephus’s independent account of the same period, supporting the narrative’s historical credibility.'),
+            ('Dead Sea Scrolls (1QS, 1QM)',
+             'The Qumran community texts illuminate the diversity of Second Temple Judaism from which Christianity emerged — their eschatological expectations, community rules, and temple criticism parallel aspects of the early church.',
+             'The Scrolls demonstrate that the early church’s practices (community meals, shared goods, eschatological expectation) were not unprecedented within Jewish renewal movements.'),
+            ('Greco-Roman Travel Literature and Epistolary Conventions',
+             'Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.',
+             'The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography.'),
         ],
     }
-    sources = ane_map.get(book_dir, [])
-    if not sources:
-        return []
-    # Return 2-3 relevant sources (all if ≤ 3)
-    return sources[:3]
+    return ane_map.get(book_dir, [])[:3]
 
 
 def _auto_rec(book_dir, ch, title, sections):
-    """Generate Reception History panel from scholars cited in the chapter."""
-    # Build from commentary scholars already in the chapter
-    scholars_seen = []
+    """Generate Reception History panel from scholars cited + historical tradition."""
     scholar_map = {
-        'mac':       ('John MacArthur', 'Evangelical / Reformed / Dispensationalist'),
-        'milgrom':   ('Jacob Milgrom', 'Jewish critical scholarship, 20th–21st c.'),
-        'sarna':     ('Nahum Sarna', 'Jewish scholarship / JPS tradition'),
-        'alter':     ('Robert Alter', 'Literary-critical approach'),
-        'ashley':    ('Timothy Ashley', 'Evangelical / NICOT tradition'),
-        'calvin':    ('John Calvin', 'Reformed / 16th c. Reformation'),
-        'netbible':  ('NET Bible translators', 'Text-critical / evangelical scholarship'),
-        'hubbard':   ('David Hubbard', 'Evangelical / NICOT'),
-        'waltke':    ('Bruce Waltke', 'Evangelical / Reformed'),
-        'marcus':    ('Joel Marcus', 'Historical-critical / Anchor Bible'),
-        'keener':    ('Craig Keener', 'Evangelical / socio-historical'),
-        'robertson': ('A.T. Robertson', 'Baptist / early 20th c.'),
-        'catena':    ('Thomas Aquinas, Catena Aurea', 'Medieval Catholic synthesis'),
+        'mac':       ('John MacArthur', 'Evangelical / Reformed', '20th–21st c.'),
+        'milgrom':   ('Jacob Milgrom', 'Critical Jewish scholarship', '20th–21st c.'),
+        'sarna':     ('Nahum Sarna', 'JPS / Modern Jewish scholarship', '20th c.'),
+        'alter':     ('Robert Alter', 'Literary-critical approach', '20th–21st c.'),
+        'ashley':    ('Timothy Ashley', 'Evangelical / NICOT', '20th c.'),
+        'calvin':    ('John Calvin', 'Reformed / Reformation', '16th c.'),
+        'netbible':  ('NET Bible translators', 'Text-critical evangelical', '21st c.'),
+        'hubbard':   ('David Hubbard', 'Evangelical / NICOT', '20th c.'),
+        'waltke':    ('Bruce Waltke', 'Evangelical / Reformed', '20th–21st c.'),
+        'marcus':    ('Joel Marcus', 'Historical-critical', '20th–21st c.'),
+        'keener':    ('Craig Keener', 'Evangelical / Socio-historical', '21st c.'),
     }
+    seen = []
     for sec in sections:
-        for key, (name, tradition) in scholar_map.items():
-            if key in sec and name not in [s[0] for s in scholars_seen]:
+        for key, (name, tradition, era) in scholar_map.items():
+            if key in sec and name not in [x[0] for x in seen]:
                 notes = sec[key]
-                if notes:
-                    text = notes[0][1] if len(notes[0]) >= 2 else ''
-                    scholars_seen.append((name, tradition, text[:200] + ('…' if len(text)>200 else '')))
-    if not scholars_seen:
-        return []
-    # Format as rec_panel blocks: (title, quote, note)
-    return [(name, f'"{text}"' if text else f'Commentary on {title}', f'Tradition: {trad}')
-            for name, trad, text in scholars_seen[:4]]
+                if notes and len(notes[0]) >= 2:
+                    text = notes[0][1]
+                    seen.append((name, tradition, era, text[:200] + ('…' if len(text)>200 else '')))
+    # Also add a patristic or classical reference based on book
+    classics = {
+        'leviticus': ('Origen, Homilies on Leviticus (c.240 AD)',
+                      'Patristic exegesis / Allegorical',
+                      'Early',
+                      'Origen’s homilies on Leviticus are among the most extensive patristic readings of the book, interpreting the sacrificial system allegorically as prefiguring Christ’s work.'),
+        'numbers':   ('Origen, Homilies on Numbers (c.240 AD)',
+                      'Patristic exegesis / Allegorical',
+                      'Early',
+                      'Origen’s homilies treat the wilderness journey as a spiritual allegory for the soul’s journey toward God, reading each campsite as a stage in spiritual formation.'),
+        'acts':      ('John Chrysostom, Homilies on Acts (c.400 AD)',
+                      'Patristic exegesis / Antiochene school',
+                      'Early',
+                      'Chrysostom’s 55 homilies on Acts are the most thorough patristic commentary, emphasising the Spirit’s active role and the apostles’ moral example for the church.'),
+    }
+    if book_dir in classics:
+        name, trad, era, text = classics[book_dir]
+        if name not in [x[0] for x in seen]:
+            seen.insert(0, (name, trad, era, text))
+    blocks = [(name, f'"{text}"', f'{tradition} — {era}')
+              for name, tradition, era, text in seen[:4]]
+    return blocks
 
 
 def _auto_textual(book_dir, ch, title):
-    """Generate Textual Notes panel — LXX/MT variants for the book."""
-    # Book-level textual issues, applied to every chapter
-    tx_map = {
+    """Generate Textual Notes panel with book-specific LXX/MT content."""
+    tx_books = {
         'leviticus': [
-            (f'Lev {ch}:1', 'Divine speech formula', 
-             '<span class="tx-mt">MT</span> wayyiqraʾ ("and he called") — <span class="tx-lxx">LXX</span> kai eklēsen ("and he called"), matching MT closely. LXX occasionally smooths difficult MT constructions.',
-             'The LXX Leviticus is generally a close translation; most variants are stylistic rather than reflecting a different Hebrew Vorlage.'),
+            (f'Lev {ch}:1',
+             'LXX rendering of the divine speech formula',
+             '<span class="tx-mt">MT</span> <em>wayyiqraʾ</em> ("and he called") — <span class="tx-lxx">LXX</span> <em>kai eklēsen</em> closely follows MT. The LXX Leviticus is generally a close translation with stylistic smoothing.',
+             'The LXX Leviticus rarely reflects a divergent Hebrew Vorlage; most variants are stylistic. The Qumran Leviticus scrolls (4QLevᵃᵇ) largely confirm the MT tradition.'),
+            (f'Lev {ch} (general)',
+             'Samaritan Pentateuch variants',
+             '<span class="tx-mt">MT</span> is the primary witness; <span class="tx-sp">SP</span> (Samaritan Pentateuch) occasionally harmonises with Exodus parallels and preserves some archaic forms absent from MT.',
+             'For Leviticus, the SP variants are minor. The most significant differences involve the location of worship — Gerizim vs Jerusalem — which affects passages relating to the chosen place of sacrifice.'),
         ],
         'numbers': [
-            (f'Num {ch}:1', 'Census and narrative variants',
-             '<span class="tx-mt">MT</span> and <span class="tx-lxx">LXX</span> agree closely in Numbers narrative sections. The LXX occasionally adds explanatory phrases absent from MT.',
-             'Numbers has fewer major MT/LXX divergences than books like Jeremiah or Samuel. The Qumran Numbers scrolls (4QNumb) confirm MT in most places.'),
+            (f'Num {ch}:1',
+             'LXX expansion and MT alignment',
+             '<span class="tx-mt">MT</span> and <span class="tx-lxx">LXX</span> agree closely in Numbers narrative. The LXX occasionally adds explanatory glosses, particularly in the census and itinerary sections.',
+             'The Qumran Numbers scroll (4QNumb) is the most important textual witness, confirming MT in most passages while occasionally aligning with LXX against MT in minor details.'),
+            (f'Num {ch} (general)',
+             'Samaritan Pentateuch and Qumran',
+             '<span class="tx-sp">SP</span> Numbers preserves significant expansions at several points (notably Num 21, 27) that align with Deuteronomy — harmonistic editing for worship at Gerizim.',
+             'The Dead Sea Scrolls (4QNumb) represent a text-type distinct from both MT and SP, confirming the diversity of the Numbers textual tradition in the Second Temple period.'),
+        ],
+        'acts': [
+            (f'Acts {ch}',
+             'Western text (Codex Bezae D) vs Alexandrian text',
+             '<span class="tx-mt">Alexandrian</span> (P45, P74, א, B) is the primary scholarly text. <span class="tx-lxx">Western</span> (Codex Bezae D) is 10–15% longer, with additions that appear to expand and harmonise.',
+             'Acts has the most significant NT textual variation. The Western text of Acts is not simply corrupt but may preserve early oral expansions. Most scholars follow the shorter Alexandrian text as more original.'),
+            (f'Acts {ch} (general)',
+             'P45 and early papyrus witnesses',
+             'The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.',
+             'The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation.'),
         ],
     }
-    return tx_map.get(book_dir, [])
+    return tx_books.get(book_dir, [])
 
 
 def _auto_debate(book_dir, ch, title, sections):
-    """Generate Scholarly Debates panel from milgrom/sarna notes that flag debates."""
+    """Generate Scholarly Debates panel."""
     debates = []
-    debate_keywords = ['debate', 'disputed', 'various', 'scholars argue', 'question',
-                       'interpretation', 'alternatively', 'milgrom', 'some hold']
-    
+    debate_kws = ['debate','disputed','question','alternatively','scholars','interpret','source','date','author']
     for sec in sections:
-        # Find milgrom notes that discuss debates
-        for key in ('milgrom', 'sarna', 'ashley', 'netbible'):
+        for key in ('milgrom','sarna','ashley','netbible','marcus','keener'):
             for note in sec.get(key, []):
                 if len(note) < 2: continue
-                text = note[1].lower()
-                if any(kw in text for kw in debate_keywords):
-                    # Extract a debate title from the note
-                    ref = note[0] if note[0] else sec.get('header', '')[:30]
-                    full_text = note[1]
-                    if len(debates) < 3:
-                        debates.append((
-                            f'Interpretive Question: {ref}',
-                            [('Milgrom / critical scholarship', full_text[:150] + '…',
-                              'Emphasises ritual-theological function over allegorical interpretation.'),
-                             ('Traditional / Reformed reading', 
-                              'Sees the text as foreshadowing Christ’s priestly work and the theology of substitutionary atonement.',
-                              'Represented by Calvin, MacArthur, and the evangelical tradition.')],
-                            'Both readings engage the text seriously; they differ primarily in their hermeneutical starting points.'
-                        ))
-                    break
-    
+                if any(kw in note[1].lower() for kw in debate_kws) and len(debates) < 2:
+                    ref = note[0] if note[0] else sec.get('header','')[:30]
+                    full = note[1]
+                    debates.append((
+                        f'Interpretive Question: {ref}',
+                        [('Critical/Analytical scholarship', full[:150]+'…',
+                          'Emphasises historical-critical, literary, or text-critical analysis.'),
+                         ('Traditional/Confessional reading',
+                          f'Reads {title.split(":")[0]} within the canonical framework of fulfilled prophecy and covenant theology.',
+                          'Represented by Calvin, MacArthur, and the evangelical tradition.')],
+                        'Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context.'
+                    ))
     if not debates:
-        # Generic debate for the chapter if no specific one found
-        debates = [(
-            f'Historical Context of {title}',
-            [('Documentary / source-critical view', 
-              f'Scholars in the tradition of Wellhausen assign {title.split(":")[0]} to the Priestly (P) source, dating it to the post-exilic period.',
-              'This view treats the Levitical legislation as developing over centuries of priestly tradition.'),
-             ('Unified / Mosaic authorship',
-              f'Conservative scholarship argues that {title.split(":")[0]} reflects authentic Mosaic-period legislation consistent with second millennium BCE practice.',
-              'Milgrom’s detailed ANE parallels support the antiquity and coherence of the material.')],
-            'The dating question does not affect the text’s canonical authority or theological meaning, but informs how one reads its historical setting.'
-        )]
+        book_debates = {
+            'leviticus': (
+                f'Source and Date of {title.split(":")[0]}',
+                [('Documentary hypothesis (Wellhausen, Noth)',
+                  f'Assigns {title.split(":")[0]} to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.',
+                  'This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.'),
+                 ('Unified authorship (Milgrom, Wenham, conservative scholarship)',
+                  f'Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for {title.split(":")[0]}.',
+                  'Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.')],
+                'The dating question does not determine the text’s canonical authority or theological meaning, but significantly affects its historical interpretation and setting.'
+            ),
+            'numbers': (
+                f'Historical and Literary Integrity of {title.split(":")[0]}',
+                [('Critical scholarship (Noth, Gray)',
+                  f'Identifies {title.split(":")[0]} as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.',
+                  'The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.'),
+                 ('Literary and canonical unity (Milgrom, Ashley)',
+                  f'Reads {title.split(":")[0]} as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.',
+                  'The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.')],
+                'The source debate is ongoing; its resolution affects historical reconstruction more than theological interpretation.'
+            ),
+            'acts': (
+                f'Authorship and Historicity of {title.split(":")[0]}',
+                [('Traditional Lukan authorship (Hengel, Keener, classical scholarship)',
+                  f'Attributes Acts to Luke the physician (Col 4:14), a companion of Paul, on the basis of the "we" passages, historical accuracy, and early church tradition.',
+                  'Luke’s medical vocabulary (noted by Hobart) and the detailed geographical and political accuracy of Acts support the traditional attribution.'),
+                 ('Anonymous/secondary authorship (Haenchen, Conzelmann)',
+                  f'Questions Lukan authorship on the basis of discrepancies between Acts’ Paul and the Pauline letters, suggesting a later author using Lukan sources.',
+                  'This view notes that Acts does not always match Paul’s letters precisely, and argues the "we" passages may be a literary device rather than eyewitness markers.')],
+                'The authorship question remains open; most scholars accept that Acts was composed within a generation of the events described and reflects genuine historical tradition.'
+            ),
+        }
+        if book_dir in book_debates:
+            debates.append(book_debates[book_dir])
     return debates
 
 
@@ -2137,7 +2216,13 @@ def rebuild_sw_js():
                 esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.js',")
 
     # Extract chapter HTML entries from old CORE (keep them all)
-    chapter_lines = re.findall(r"  '/(?:ot|nt)/[^']+\.html',", old_core)
+    # Scan disk for ALL chapter HTML files
+    chapter_lines = []
+    for _p in sorted(glob.glob(os.path.join(_REPO, 'ot', '*', '*.html')) +
+                     glob.glob(os.path.join(_REPO, 'nt', '*', '*.html'))):
+        if re.search(r'_\d+\.html$', _p):
+            _rel = '/' + os.path.relpath(_p, _REPO).replace(os.sep, '/')
+            chapter_lines.append(f"  '{_rel}',")
 
     all_lines = static_preserved + niv_lines + esv_lines + chapter_lines
     new_core = "\n" + "\n".join(all_lines) + "\n"
