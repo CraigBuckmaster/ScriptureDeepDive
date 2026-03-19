@@ -458,14 +458,15 @@ function yearToX(year) {
 
 // ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
 const TL = {
-  H:          521,    // tall canvas for 12-lane event layout
+  H:          515,
   ERA_TOP:    10,
   ERA_BAR_Y:  30,
   ERA_BAR_H:  26,     // era bar bottom = y 56
-  LANES:      [73, 90, 107, 124, 141, 158, 175, 192, 209, 226, 243, 260],
-  AXIS_Y:     291,
-  PEOPLE_Y:   371,
-  HIST_Y:     461,
+  LANES:      [73, 88, 103, 118, 133, 148, 163, 178, 193, 208, 223, 238],
+  MARKER_Y:   265,   // all triangle markers on this single row
+  AXIS_Y:     285,
+  PEOPLE_Y:   365,
+  HIST_Y:     455,
   GRAIN_Y:    0,
 };
 
@@ -1146,82 +1147,86 @@ function renderEvents(g) {
   const dimAll = currentEra !== 'all';
   const ERA_BAR_BOTTOM = TL.ERA_BAR_Y + TL.ERA_BAR_H;  // y=56
 
-  // ── GREEDY 4-LANE ASSIGNMENT ──────────────────────────────────────────
-  // Sort events by pixel x so we assign left-to-right
+  // ── GREEDY LANE ASSIGNMENT (labels only) ─────────────────────────────
   const positioned = EVENTS.map(ev => ({
     ev,
     x: yearToX(ev.year),
-    labelW: Math.max(ev.name.length * 6.5 + 16, 50),  // estimated px width
+    labelW: Math.max(ev.name.length * 6.5 + 16, 50),
   })).sort((a, b) => a.x - b.x);
 
   const N_LANES = TL.LANES.length;
-  const laneLastX = new Array(N_LANES).fill(-9999);  // rightmost edge used per lane
+  const laneLastX = new Array(N_LANES).fill(-9999);
 
   positioned.forEach(item => {
-    // Find first lane with enough clearance (14px padding each side)
     let lane = -1;
     for (let t = 0; t < N_LANES; t++) {
-      if (item.x - 6 >= laneLastX[t] + 14) {
-        lane = t;
-        break;
-      }
+      if (item.x - 6 >= laneLastX[t] + 14) { lane = t; break; }
     }
-    // Fallback: use lane with most clearance
-    if (lane === -1) {
-      lane = laneLastX.indexOf(Math.min(...laneLastX));
-    }
+    if (lane === -1) lane = laneLastX.indexOf(Math.min(...laneLastX));
     laneLastX[lane] = item.x + item.labelW / 2;
     item.lane = lane;
   });
 
-  // ── DRAW each event ───────────────────────────────────────────────────
+  // ── DRAW: stem → label → connector → marker ──────────────────────────
+  const TRI_H = 9, TRI_W = 8;
+
   positioned.forEach(({ ev, x, lane }) => {
     const color = ERA_HEX[ev.era] || '#8b6914';
     const dimmed = dimAll && ev.era !== currentEra;
-    const laneY = TL.LANES[lane];
+    const labelY = TL.LANES[lane];    // y baseline of the label text
+    const labelTop = labelY - 11;     // approximate top of 10px text
+    const markerY = TL.MARKER_Y;
 
-    // Vertical stem: era bar bottom → just above the lane triangle
-    const TRI_H = 9;
-    const stemBot = laneY - TRI_H;
+    // 1. Thick stem: era bar bottom → top of label text
     svgEl_('line', {
       x1: x, y1: ERA_BAR_BOTTOM,
-      x2: x, y2: stemBot,
-      stroke: color, 'stroke-width': '1',
-      opacity: dimmed ? '0.15' : '0.5',
+      x2: x, y2: labelTop - 2,
+      stroke: color, 'stroke-width': '1.2',
+      opacity: dimmed ? '0.12' : '0.45',
     }, gEvents);
 
-    // Triangle marker pointing down at laneY
-    const tw = 8;
+    // 2. Label (in its greedy-assigned lane)
+    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    textEl.setAttribute('x', x);
+    textEl.setAttribute('y', labelY);
+    textEl.setAttribute('text-anchor', 'middle');
+    textEl.setAttribute('font-family', "'Cinzel', serif");
+    textEl.setAttribute('font-size', '10');
+    textEl.setAttribute('font-weight', '700');
+    textEl.setAttribute('fill', '#1a1006');
+    textEl.setAttribute('opacity', dimmed ? '0.15' : '1');
+    textEl.setAttribute('pointer-events', 'none');
+    textEl.setAttribute('paint-order', 'stroke');
+    textEl.setAttribute('stroke', `${color}88`);
+    textEl.setAttribute('stroke-width', '3.5');
+    textEl.setAttribute('stroke-linejoin', 'round');
+    textEl.textContent = ev.name;
+    gEvents.appendChild(textEl);
+
+    // 3. Thin dotted connector: bottom of label → top of marker triangle
+    svgEl_('line', {
+      x1: x, y1: labelY + 3,
+      x2: x, y2: markerY - TRI_H - 1,
+      stroke: color, 'stroke-width': '0.8',
+      'stroke-dasharray': '3,3',
+      opacity: dimmed ? '0.1' : '0.4',
+    }, gEvents);
+
+    // 4. Triangle marker on dedicated MARKER_Y row — never overlaps labels
     const tri = svgEl_('polygon', {
-      points: `${x},${laneY} ${x - tw},${laneY - TRI_H} ${x + tw},${laneY - TRI_H}`,
-      fill: color, opacity: dimmed ? '0.15' : '0.9',
+      points: `${x},${markerY} ${x-TRI_W},${markerY-TRI_H} ${x+TRI_W},${markerY-TRI_H}`,
+      fill: color,
+      opacity: dimmed ? '0.15' : '0.9',
       'data-clickable': '1', style: 'cursor:pointer',
     }, gEvents);
     tri.addEventListener('click', () => openDetail(ev));
 
-    // Hit target
+    // 5. Wide invisible hit target on marker
     const hit = svgEl_('rect', {
-      x: x - 14, y: laneY - TRI_H - 4, width: 28, height: TRI_H + 8,
+      x: x - 14, y: markerY - TRI_H - 4, width: 28, height: TRI_H + 10,
       fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
     }, gEvents);
     hit.addEventListener('click', () => openDetail(ev));
-
-    // Label just below the triangle, dark ink + coloured halo
-    const labelY = laneY + 12;
-    svgEl_('text', {
-      x, y: labelY,
-      'text-anchor': 'middle',
-      'font-family': "'Cinzel', serif",
-      'font-size': '10',
-      'font-weight': '700',
-      fill: '#1a1006',
-      opacity: dimmed ? '0.15' : '1',
-      'pointer-events': 'none',
-      'paint-order': 'stroke',
-      stroke: `${color}88`,
-      'stroke-width': '3.5',
-      'stroke-linejoin': 'round',
-    }, gEvents).textContent = ev.name;
   });
 }
 
