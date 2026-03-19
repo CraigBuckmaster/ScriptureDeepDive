@@ -586,6 +586,7 @@ function renderContent(g, W, H) {
         'text-anchor': 'middle',
         'font-family': "'Cinzel', serif",
         'font-size': '11',
+      'font-weight': '700',
         fill: '#ffffff',
         opacity: '0.95',
         'pointer-events': 'none',
@@ -651,8 +652,10 @@ function renderContent(g, W, H) {
     x2: xZero, y2: TL.HIST_Y + 50,
     stroke: '#5a3808', 'stroke-width': '1.5', 'stroke-dasharray': '5,4', opacity: '0.6',
   }, g);
-  svgText('BC', { x: xZero - 10, y: TL.AXIS_Y - 18, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'10', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
-  svgText('AD', { x: xZero + 10, y: TL.AXIS_Y - 18, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'10', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
+  svgText('BC', { x: xZero - 10, y: TL.AXIS_Y - 18, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'10',
+      'font-weight': '700', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
+  svgText('AD', { x: xZero + 10, y: TL.AXIS_Y - 18, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'10',
+      'font-weight': '700', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
 
   svgEl_('g', { id:'g-events' }, g);
   svgEl_('g', { id:'g-people', opacity: showPeople ? '1' : '0' }, g);
@@ -1182,6 +1185,7 @@ function renderEvents(g) {
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
       'font-size': '10',
+      'font-weight': '700',
       fill: '#1a1006',
       opacity: dimmed ? '0.2' : '1',
       'pointer-events': 'none',
@@ -1379,6 +1383,7 @@ function renderPeopleLayer(g) {
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
       'font-size': '9',
+      'font-weight': '700',
       fill: '#1a1006',
       opacity: dimmed ? '0.15' : '1',
       'pointer-events': 'none',
@@ -1535,6 +1540,7 @@ function renderHistoryLayer(g) {
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
       'font-size': '9',
+      'font-weight': '700',
       fill: '#0a1a2a',
       opacity: '0.88',
       'pointer-events': 'none',
