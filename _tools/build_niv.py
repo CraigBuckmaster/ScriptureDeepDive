@@ -149,57 +149,74 @@ OUTPUT_DIR = os.path.join(REPO_ROOT, 'verses', 'niv')
 
 def fetch_chapter_verses(book_id, chapter, api_key):
     """
-    Fetch all verses for one chapter from Scripture API Bible.
+    Fetch all verses for one chapter as plain text (single API request).
     Returns list of (verse_num, text) tuples.
     """
-    # Get verse list for the chapter
     chapter_id = f'{book_id}.{chapter}'
-    url = f'{API_BASE}/bibles/{NIV_BIBLE_ID}/chapters/{chapter_id}/verses'
+    # Fetch whole chapter as plain text with verse numbers included
+    url = (f'{API_BASE}/bibles/{NIV_BIBLE_ID}/chapters/{chapter_id}'
+           f'?content-type=text'
+           f'&include-verse-numbers=true'
+           f'&include-titles=false'
+           f'&include-chapter-numbers=false'
+           f'&include-verse-spans=false')
     req = urllib.request.Request(url, headers={'api-key': api_key})
 
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode('utf-8'))
-            verse_list = data.get('data', [])
+            content = data.get('data', {}).get('content', '')
     except urllib.error.HTTPError as e:
-        print(f'    HTTP {e.code} fetching verse list for {book_id} {chapter}: {e.reason}')
+        print(f'    HTTP {e.code} for {book_id} {chapter}: {e.reason}')
         return None
     except Exception as e:
-        print(f'    Error fetching verse list for {book_id} {chapter}: {e}')
+        print(f'    Error for {book_id} {chapter}: {e}')
         return None
 
+    if not content:
+        return []
+
+    # The API returns text with verse numbers like "[ 1 ]" or "[1]" or "\n1\n"
+    # Try multiple patterns to parse verse numbers
     verses = []
-    for verse_meta in verse_list:
-        verse_id = verse_meta['id']          # e.g. "GEN.1.1"
-        # Parse verse number from the ID (last segment) — more reliable than 'number' field
-        try:
-            v_num = int(verse_id.split('.')[-1])
-        except (ValueError, IndexError):
-            v_num = int(verse_meta.get('number', verse_meta.get('verseNumber', 0)))
-        if v_num == 0:
-            continue  # skip unparseable entries
 
-        # Fetch individual verse text (plain text, no markup)
-        v_url = (f'{API_BASE}/bibles/{NIV_BIBLE_ID}/verses/{verse_id}'
-                 f'?content-type=text&include-verse-numbers=false'
-                 f'&include-titles=false&include-chapter-numbers=false')
-        v_req = urllib.request.Request(v_url, headers={'api-key': api_key})
+    # Pattern 1: "[N]" or "[ N ]" markers (common in scripture APIs)
+    parts = re.split(r'\[\s*(\d+)\s*\]', content)
+    if len(parts) > 1:
+        i = 1
+        while i < len(parts) - 1:
+            v_num = int(parts[i])
+            text = re.sub(r'\s+', ' ', parts[i+1]).strip()
+            # Strip trailing copyright/reference
+            text = re.sub(r'\s*\(NIV\)\s*$', '', text).strip()
+            if text:
+                verses.append((v_num, text))
+            i += 2
+        if verses:
+            return verses
 
-        try:
-            with urllib.request.urlopen(v_req, timeout=15) as v_resp:
-                v_data = json.loads(v_resp.read().decode('utf-8'))
-                text   = v_data['data']['content']
-                # Clean: collapse whitespace, strip leading/trailing
-                text   = re.sub(r'\s+', ' ', text).strip()
-                if text:
+    # Pattern 2: verse numbers appear as standalone digits on lines
+    # e.g. "\n1\nIn the beginning...\n2\nNow the earth..."
+    parts2 = re.split(r'(?:^|\n)(\d+)(?:\n|\s)', content, flags=re.MULTILINE)
+    if len(parts2) > 1:
+        i = 1
+        while i < len(parts2) - 1:
+            try:
+                v_num = int(parts2[i])
+                text = re.sub(r'\s+', ' ', parts2[i+1]).strip()
+                text = re.sub(r'\s*\(NIV\)\s*$', '', text).strip()
+                if text and v_num > 0:
                     verses.append((v_num, text))
-            time.sleep(0.15)  # brief pause between verse fetches within chapter
-        except urllib.error.HTTPError as e:
-            print(f'    HTTP {e.code} fetching {verse_id}: {e.reason}')
-        except Exception as e:
-            print(f'    Error fetching {verse_id}: {e}')
+            except ValueError:
+                pass
+            i += 2
+        if verses:
+            return verses
 
-    return verses
+    # Fallback: return empty (caller will log the failure)
+    print(f'    Could not parse verse structure for {book_id} {chapter}')
+    print(f'    Content sample: {repr(content[:200])}')
+    return []
 
 
 def build_verse_objects(book_name, testament, chapter, verse_tuples):
