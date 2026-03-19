@@ -1455,6 +1455,119 @@ const STORIES = [
     ],
     paths:[]
   },
+
+  // ── CONQUEST / JUDGES ────────────────────────────────────────────────────
+  {
+    id:'conquest', era:'judges', name:"Joshua's Conquest",
+    ref:'Joshua 1–12',
+    chapter:'nt/acts/Acts_7.html',
+    summary:'Moses died on Mount Nebo within sight of Canaan. Joshua took command. God\'s first instruction was stark: be strong and courageous; do not be afraid. At the Jordan — in flood season — the priests stepped in carrying the ark, and the waters piled up upstream as Israel crossed on dry ground. Jericho fell not to siege weapons but to seven days of marching and a shout: the walls collapsed. Ai followed after an initial failure due to Achan\'s sin revealed and dealt with. The Gibeonites tricked Israel into a peace treaty; five southern kings attacked Gibeon and Joshua defeated them in a battle where the sun stood still at Gibeon and the moon at the Valley of Aijalon. He swept north to defeat Hazor and its coalition. By the end of Joshua 12, thirty-one kings had been defeated. The land was allocated to the twelve tribes by lot. The promise to Abraham was taking territorial shape.',
+    places:['jordan-r','jericho','ai','gibeon','hazor','shechem','dead-sea'],
+    regions:[
+      { coords:[[34,30.5],[36.5,30.5],[36.5,33.5],[34,33.5],[34,30.5]], color:'#8a6a2a', label:'Canaan — Conquered Territory' }
+    ],
+    paths:[
+      { coords:[[35.6,32.0],[35.4,31.9]], dashed:false, label:'Jordan crossing' },
+      { coords:[[35.4,31.9],[35.3,31.9]], dashed:false, label:'Jericho' },
+      { coords:[[35.3,31.9],[35.2,31.8],[35.0,32.7],[35.6,33.0]], dashed:false, label:'Northern campaign' }
+    ]
+  },
+  {
+    id:'judges-cycle', era:'judges', name:'Period of the Judges',
+    ref:'Judges 1–21',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'The pattern of the book of Judges is relentless: Israel abandoned God, God withdrew protection, a foreign oppressor subjugated them, they cried out, God raised a judge-deliverer, peace followed — then the cycle repeated. Deborah and Barak defeated Sisera\'s nine hundred iron chariots in the plain of Jezreel; Sisera fled on foot and was killed by Jael with a tent peg. Gideon reduced his army from thirty-two thousand to three hundred by God\'s instruction, then routed the Midianites at night with trumpets and torches. Jephthah delivered Israel from the Ammonites at the cost of a rash vow. Samson — the Nazirite who was the living embodiment of the cycle, strong and weak, faithful and faithless — terrorised the Philistines in the lowlands for twenty years, died pulling the pillars of the temple of Dagon down on three thousand gathered Philistines. The period ended with Israel\'s darkest moment: civil war against Benjamin over the atrocity at Gibeah.',
+    places:['jezreel','megiddo','shechem','hazor'],
+    regions:[
+      { coords:[[34,30.5],[36.5,30.5],[36.5,33.5],[34,33.5],[34,30.5]], color:'#8a6a2a', label:'Israel under the Judges' }
+    ],
+    paths:[]
+  },
+
+  // ── KINGDOM ───────────────────────────────────────────────────────────────
+  {
+    id:'david-rise', era:'kingdom', name:"David's Rise",
+    ref:'1 Samuel 16 – 2 Samuel 7',
+    chapter:'ot/ruth/Ruth_4.html',
+    summary:'Samuel came to Bethlehem and anointed the youngest son of Jesse while his seven brothers stood by. The Spirit of the LORD came upon David powerfully. He entered Saul\'s service as a musician, became his armour-bearer, and killed Goliath of Gath with a single stone — a moment that instantly made him a national hero. Saul\'s jealousy curdled into murderous obsession. David fled, gathered a band of followers in the cave of Adullam, served briefly as a mercenary under Achish the Philistine king, twice spared Saul\'s life when he had the opportunity to kill him. After Saul\'s death at Gilboa, David was anointed king over Judah at Hebron. Seven years and six months later, all Israel came to him at Hebron. He captured Jerusalem from the Jebusites, renamed it the City of David, brought the ark there in a procession of dancing and celebration — and then received the Davidic Covenant: God would build him a house; a son would sit on his throne forever.',
+    places:['bethlehem','hebron','jerusalem','ziklag','gibeah'],
+    regions:[
+      { coords:[[34,30.5],[36.5,30.5],[36.5,33.5],[34,33.5],[34,30.5]], color:'#5a7a9a', label:'United Kingdom of Israel' }
+    ],
+    paths:[
+      { coords:[[35.2,31.7],[35.1,31.5]], dashed:false, label:'Bethlehem to Hebron' },
+      { coords:[[35.1,31.5],[35.2,31.8]], dashed:false, label:'Hebron to Jerusalem' }
+    ]
+  },
+  {
+    id:'solomon-temple', era:'kingdom', name:"Solomon's Temple",
+    ref:'1 Kings 5–11',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'Solomon\'s forty-year reign saw Israel at its greatest geographic and commercial extent — from the Euphrates to Egypt. His building projects transformed Jerusalem: the Temple took seven years, the royal palace complex thirteen more. The Temple itself was built on Mount Moriah, the same ridge where Abraham had offered Isaac. Cedar and cypress came from Lebanon by sea; stones were quarried and dressed at the source so that no hammer or chisel was heard on the building site. At the dedication, Solomon prayed one of the most theologically comprehensive prayers in Scripture: that God would hear prayer from this place, extend grace to foreigners, forgive sin when Israel repented. When he finished, fire came down from heaven and the glory of the LORD filled the Temple so that the priests could not stand to minister. Then came the cracks: seven hundred wives, three hundred concubines, high places for Chemosh and Molech. God announced the kingdom would be divided after his death. He died at peace; the seeds were sown.',
+    places:['jerusalem','moriah'],
+    regions:[
+      { coords:[[34,29],[38,29],[38,34],[34,34],[34,29]], color:'#5a7a9a', label:'Solomon\'s Kingdom' }
+    ],
+    paths:[]
+  },
+
+  // ── PROPHETS ──────────────────────────────────────────────────────────────
+  {
+    id:'elijah', era:'prophets', name:"Elijah's Ministry",
+    ref:'1 Kings 17–19; 2 Kings 1–2',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'Elijah appeared from nowhere to announce a three-year drought to Ahab of Israel. He was fed by ravens at the Kerith Ravine east of the Jordan, then sustained by a widow at Zarephath in Phoenicia — outside Israel\'s borders, where he also raised the widow\'s son from death. The confrontation on Mount Carmel — Elijah alone against 450 prophets of Baal — is one of Scripture\'s most dramatic moments. Two altars, two bulls, a divine fire contest. Elijah\'s prayer was simple and confident; the fire fell and consumed the sacrifice, the wood, the stones, the soil, and the water in the trench. The prophets of Baal were killed. Then rain came. Then Jezebel\'s death threat. Elijah fled to the wilderness, collapsed under a broom tree and asked to die. An angel fed him twice. He walked forty days to Horeb — Sinai — and heard God not in wind, earthquake, or fire but in a gentle whisper: "What are you doing here, Elijah?" He was commissioned to anoint two kings and one prophet. He cast his cloak on Elisha. At the end he was taken to heaven in a chariot of fire without dying.',
+    places:['mt-carmel','zarephath','jezreel','samaria'],
+    regions:[],
+    paths:[
+      { coords:[[35.0,32.7],[33.5,33.5]], dashed:false, label:'Carmel to Zarephath' },
+      { coords:[[33.5,33.5],[34.8,30.8]], dashed:true, label:'South to Horeb' },
+      { coords:[[34.8,30.8],[33.97,28.54]], dashed:true, label:'To Horeb (Sinai)' }
+    ]
+  },
+
+  // ── EXILE & RETURN ────────────────────────────────────────────────────────
+  {
+    id:'exile-assyria', era:'exile', name:'Assyrian Exile',
+    ref:'2 Kings 17; Isaiah 36–37',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'The northern kingdom of Israel had forsaken the LORD and worshipped the golden calves at Dan and Bethel for two centuries. God sent prophet after prophet — Amos, Hosea — warning them. The warnings went unheeded. In 722 BC, Shalmaneser V and then Sargon II of Assyria besieged Samaria for three years, captured it, and deported twenty-seven thousand Israelites to Halah, Gozan, and the cities of the Medes. The northern kingdom ceased to exist as a political entity. Foreigners were brought in to replace the population — they became the ancestors of the Samaritans. The kingdom of Judah survived under Hezekiah: when Sennacherib\'s massive army surrounded Jerusalem and the Rabshakeh delivered his psychological warfare speech, Hezekiah spread the letter before the LORD in the Temple. The angel of the LORD struck down 185,000 Assyrians in a single night. Sennacherib withdrew. But the lesson of the north was not forgotten: judgment was postponed for Judah, not cancelled.',
+    places:['samaria','nineveh','assyria'],
+    regions:[
+      { coords:[[40,35],[47,35],[47,38],[40,38],[40,35]], color:'#4a7a8a', label:'Assyrian Empire' }
+    ],
+    paths:[
+      { coords:[[35.2,32.3],[43.1,36.4]], dashed:false, label:'Northern tribes to Assyria' }
+    ]
+  },
+  {
+    id:'exile-babylon', era:'exile', name:'Babylonian Exile',
+    ref:'2 Kings 24–25; Daniel 1; Jeremiah 39–52',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'Three deportations drained Jerusalem of its best people. In 605 BC Nebuchadnezzar took Daniel and the first group of nobles. In 597 BC he returned, deported ten thousand — including the craftsmen, soldiers, and the young King Jehoiachin — and installed the puppet king Zedekiah. In 587 BC, after Zedekiah\'s rebellion, Nebuchadnezzar besieged Jerusalem for eighteen months. The walls were breached, the Temple burned, the palace destroyed. Zedekiah\'s sons were killed before his eyes; then his eyes were put out. Jerusalem\'s population was deported to Babylon. Jeremiah, left behind with the poorest of the land, lamented the city\'s desolation in the book of Lamentations. The Psalms capture the anguish: "By the rivers of Babylon we sat and wept when we remembered Zion." Only in Babylon did Israel begin to understand what it meant to maintain identity without land, Temple, or king — a transformation that shaped Judaism permanently.',
+    places:['jerusalem','babylon','lachish'],
+    regions:[
+      { coords:[[40,30],[55,30],[55,37],[40,37],[40,30]], color:'#4a7a8a', label:'Neo-Babylonian Empire' }
+    ],
+    paths:[
+      { coords:[[35.2,31.8],[44.4,32.5]], dashed:false, label:'Jerusalem to Babylon' }
+    ]
+  },
+  {
+    id:'ezra-return', era:'exile', name:'Return from Exile',
+    ref:'Ezra 1–10; Nehemiah 1–13',
+    chapter:'ot/genesis/Genesis_1.html',
+    summary:'In 539 BC, Cyrus the Great of Persia conquered Babylon — fulfilling Isaiah\'s prophecy naming him by name two centuries before his birth. His first year decree authorised the Jewish exiles to return to Jerusalem and rebuild the Temple. The first group — some fifty thousand — returned under Zerubbabel. They rebuilt the altar immediately and laid the foundation of the Temple amid weeping from those who remembered the first Temple\'s glory. Opposition from surrounding peoples halted the work for fifteen years. The prophets Haggai and Zechariah reinvigorated the builders; the Temple was completed in 516 BC. A second wave came under Ezra the scribe, who carried the Torah back to the heart of community life. A third wave came under Nehemiah, cupbearer to Artaxerxes I, who rebuilt the walls of Jerusalem in fifty-two days despite sustained opposition — workers building with one hand and holding a weapon with the other. At the great assembly, Ezra read the Law publicly for seven days. Israel was reconstituted around Torah.',
+    places:['babylon','jerusalem','susa','persia'],
+    regions:[
+      { coords:[[35,30],[65,30],[65,40],[35,40],[35,30]], color:'#4a7a8a', label:'Persian Empire' }
+    ],
+    paths:[
+      { coords:[[44.4,32.5],[35.2,31.8]], dashed:false, label:'Return to Jerusalem' },
+      { coords:[[48.2,32.2],[35.2,31.8]], dashed:true, label:'Nehemiah\'s journey' }
+    ]
+  },
+
 ];
 
 
