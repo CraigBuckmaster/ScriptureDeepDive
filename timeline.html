@@ -476,15 +476,17 @@ const TOTAL_WIDTH = 9000;
 
 // 12 label lanes
 const TL = {
-  H: 560,
+  H: 620,
   ERA_BAR_Y: 30, ERA_BAR_H: 26,
   // Event label lanes (12), 15px spacing, era bar bottom = y56
   LANES: [71,86,101,116,131,146,161,176,191,206,221,236],
   AXIS_Y: 261,
-  // People label lanes (10), 15px spacing, starting below axis
-  PEOPLE_LANES: [291,306,321,336,351,366,381,396,411,426],
-  // History label lanes (3), 15px spacing, starting below people
-  HIST_LANES: [461,476,491],
+  // People label lanes (10), 15px spacing
+  // Axis labels sit at AXIS_Y+22=283 — start people at 323 for 40px clear gap
+  PEOPLE_LANES: [323,338,353,368,383,398,413,428,443,458],
+  // History label lanes (3), 15px spacing
+  // People bottom = 458 — start history at 503 for 45px clear gap
+  HIST_LANES: [503,518,533],
 };
 // Label metrics (same for all layers)
 const LABEL_CHAR_W = 9.5;   // conservative for Cinzel Bold
