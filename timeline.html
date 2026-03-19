@@ -617,43 +617,85 @@ function drawBackground(g){
 }
 
 // ── EVENTS: greedy 12-lane layout ──────────────────────────────────────────
-function drawEvents(g){
-  const gEv=el('g',{id:'g-events'},g);
-  const dimAll=currentEra!=='all';
-  const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
-  const N=TL.LANES.length;
+function drawEvents(g) {
+  // Remove existing events group if present
+  const old = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
+  if (old) old.parentNode.removeChild(old);
 
-  // Sort by x then assign lanes greedily
-  const items=EVENTS.map(ev=>({ev,x:yearToX(ev.year),lw:Math.max(ev.name.length*6.5+16,50)}))
-    .sort((a,b)=>a.x-b.x);
-  const lastX=new Array(N).fill(-9999);
-  items.forEach(item=>{
-    let lane=lastX.findIndex((_,t)=>item.x-6>=lastX[t]+14);
-    if(lane===-1) lane=lastX.indexOf(Math.min(...lastX));
-    lastX[lane]=item.x+item.lw/2;
-    item.lane=lane;
+  const gEv = el('g', {id:'g-events'}, g);
+  // Insert before people/history groups
+  const gp = document.getElementById('g-people');
+  if (gp) g.insertBefore(gEv, gp);
+
+  const dimAll = currentEra !== 'all';
+  const ERA_BOT = TL.ERA_BAR_Y + TL.ERA_BAR_H;
+  const N = TL.LANES.length;
+
+  // ── GREEDY LANE ASSIGNMENT (fixed: uses half-width for clearance) ──────
+  const positioned = EVENTS.map(ev => {
+    const lw = Math.max(ev.name.length * LABEL_CHAR_W + LABEL_PAD, 60);
+    return { ev, x: yearToX(ev.year), lw, half: lw / 2 };
+  }).sort((a, b) => a.x - b.x);
+
+  const laneRight = new Array(N).fill(-9999); // tracks RIGHT EDGE of last label per lane
+
+  positioned.forEach(item => {
+    const leftEdge = item.x - item.half;
+    // Find first lane where our left edge clears the previous right edge + gap
+    let lane = laneRight.findIndex(r => leftEdge >= r + LABEL_GAP);
+    if (lane === -1) lane = laneRight.indexOf(Math.min(...laneRight)); // least-used lane
+    laneRight[lane] = item.x + item.half;
+    item.lane = lane;
   });
 
-  items.forEach(({ev,x,lane})=>{
-    const color=ERA_HEX[ev.era]||'#523d0b';
-    const dim=dimAll&&ev.era!==currentEra;
-    const laneY=TL.LANES[lane];
-    const op=dim?'0.15':'1';
+  // ── DRAW: stem + inverse-scaled label ─────────────────────────────────
+  positioned.forEach(({ ev, x, lane }) => {
+    const color = ERA_HEX[ev.era] || '#523d0b';
+    const dim = dimAll && ev.era !== currentEra;
+    const laneY = TL.LANES[lane];
 
-    // Stem: era bar → label top
-    el('line',{x1:x,y1:ERA_BOT,x2:x,y2:laneY-12,
-      stroke:color,'stroke-width':'1.2',opacity:dim?'0.12':'0.45'},gEv);
+    // Thin stem from era bar to label
+    el('line', {
+      x1:x, y1:ERA_BOT, x2:x, y2:laneY - 12,
+      stroke:color, 'stroke-width':'1.2',
+      opacity: dim ? '0.12' : '0.45',
+    }, gEv);
 
-    // Label — clickable directly
-    const t=txt(ev.name,{
-      x,y:laneY,'text-anchor':'middle',
-      'font-family':"'Cinzel',serif",'font-size':'10','font-weight':'700',
-      fill:'#1a1006',opacity:op,style:'cursor:pointer',
-      'paint-order':'stroke',stroke:`${color}88`,'stroke-width':'3.5','stroke-linejoin':'round',
-    },gEv);
-    t.addEventListener('click',()=>openDetail(ev));
+    // Label group with inverse-scale so it stays constant screen size on zoom
+    // translateX(x) centres the group on the event x
+    // scale(1/scaleX, 1) cancels the parent transform's x-scale
+    // translateX(-x) moves back so the label position is correct
+    const lg = el('g', {
+      class: 'tl-label',
+      'data-x': x,
+      transform: `translate(${x},0) scale(${1/scaleX},1) translate(${-x},0)`,
+    }, gEv);
 
+    const t = el('text', {
+      x, y: laneY,
+      'text-anchor': 'middle',
+      'font-family': "'Cinzel', serif",
+      'font-size': '10',
+      'font-weight': '700',
+      fill: '#1a1006',
+      opacity: dim ? '0.15' : '1',
+      style: 'cursor:pointer',
+      'paint-order': 'stroke',
+      stroke: `${color}88`,
+      'stroke-width': '3.5',
+      'stroke-linejoin': 'round',
+    }, lg);
+    t.textContent = ev.name;
+    t.addEventListener('click', () => openDetail(ev));
+  });
+}
 
+// Call after every zoom to keep inverse-scale accurate
+function refreshLabelScales() {
+  document.querySelectorAll('.tl-label').forEach(lg => {
+    const x = parseFloat(lg.dataset.x);
+    lg.setAttribute('transform',
+      `translate(${x},0) scale(${1/scaleX},1) translate(${-x},0)`);
   });
 }
 
@@ -682,12 +724,17 @@ function drawPeople(){
     hit.addEventListener('click',()=>openPersonDetail(person));
 
     const nameY=i%2===0?TL.PEOPLE_Y-12:TL.PEOPLE_Y+20;
-    txt(person.name,{
+    const plg = el('g',{
+      class:'tl-label','data-x':x,
+      transform:`translate(${x},0) scale(${1/scaleX},1) translate(${-x},0)`,
+    },gp);
+    const pt=el('text',{
       x,y:nameY,'text-anchor':'middle',
       'font-family':"'Cinzel',serif",'font-size':'9','font-weight':'700',
       fill:'#1a1006',opacity:dim?'0.15':'1','pointer-events':'none',
       'paint-order':'stroke',stroke:`${color}99`,'stroke-width':'3','stroke-linejoin':'round',
-    },gp);
+    },plg);
+    pt.textContent=person.name;
   });
 }
 
@@ -715,12 +762,17 @@ function drawHistory(){
     hit.addEventListener('click',()=>openHistoryDetail(ev));
 
     const labelY=i%2===0?TL.HIST_Y+dw+14:TL.HIST_Y+dw+26;
-    txt(ev.name,{
+    const hlg=el('g',{
+      class:'tl-label','data-x':x,
+      transform:`translate(${x},0) scale(${1/scaleX},1) translate(${-x},0)`,
+    },gh);
+    const ht=el('text',{
       x,y:labelY,'text-anchor':'middle',
       'font-family':"'Cinzel',serif",'font-size':'9','font-weight':'700',
       fill:'#0a1a2a',opacity:'0.88','pointer-events':'none',
       'paint-order':'stroke',stroke:'rgba(150,190,220,0.7)','stroke-width':'3','stroke-linejoin':'round',
-    },gh);
+    },hlg);
+    ht.textContent=ev.name;
   });
 }
 
@@ -770,6 +822,7 @@ function zoomAround(factor,screenX,g){
   scaleX=Math.min(8,Math.max(0.3,scaleX*factor));
   translateX=screenX-contentX*scaleX;
   applyTransform(g||document.getElementById('g-inner'));
+  refreshLabelScales();
 }
 
 function zoomTimeline(f){ zoomAround(f,document.getElementById('timeline-panel').clientWidth/2); }
