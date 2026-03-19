@@ -1727,6 +1727,85 @@ def rebuild_books_js():
     print(f'books.js rebuilt: {len(REGISTRY)} books')
 
 
+def rebuild_sw_js():
+    """
+    Regenerate the CORE array in service-worker.js to include all live NIV
+    and ESV verse files, plus bump the SW version number.
+
+    Call this in the deploy checklist whenever:
+      - A new book is added to REGISTRY
+      - New ESV verse files are built
+      - Chapter HTML files are added or removed
+
+    The function rebuilds the verse-file section of CORE from REGISTRY,
+    preserving the chapter HTML entries already present.
+    """
+    sw_path = os.path.join(_REPO, 'service-worker.js')
+    if not os.path.exists(sw_path):
+        print('service-worker.js not found — skipping')
+        return
+
+    with open(sw_path, encoding='utf-8') as f:
+        sw = f.read()
+
+    core_match = re.search(r'(const CORE = \[)(.*?)(\];)', sw, re.DOTALL)
+    if not core_match:
+        print('CORE array not found in service-worker.js')
+        return
+
+    old_core = core_match.group(2)
+
+    # Static pages — preserve as-is
+    static_lines = [
+        "  '/';",
+        "  '/index.html',",
+        "  '/people.html',",
+        "  '/map.html',",
+        "  '/timeline.html',",
+        "  '/books.js',",
+        "  '/qnav.js',",
+        "  '/translation.js',",
+    ]
+
+    # Extract static pages from old CORE (in case new ones were added)
+    static_entries = re.findall(r"  '/[^/][^']*\.(html|js)',", old_core)
+    # Keep everything that isn't a chapter or verse file
+    static_preserved = [
+        e for e in re.findall(r"  '[^']+',", old_core)
+        if '/ot/' not in e and '/nt/' not in e and '/verses/' not in e
+    ]
+
+    # Build verse entries from REGISTRY
+    niv_lines = ["  '/verses/niv/verses.js',"]
+    for book_dir, book_name, total, live, testament, subdir in REGISTRY:
+        niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.js',")
+
+    esv_lines = []
+    esv_all = os.path.join(_REPO, 'verses', 'esv', 'verses.js')
+    if os.path.exists(esv_all):
+        esv_lines.append("  '/verses/esv/verses.js',")
+        for book_dir, book_name, total, live, testament, subdir in REGISTRY:
+            esv_path = os.path.join(_REPO, 'verses', 'esv', subdir, f'{book_dir}.js')
+            if os.path.exists(esv_path):
+                esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.js',")
+
+    # Extract chapter HTML entries from old CORE (keep them all)
+    chapter_lines = re.findall(r"  '/(?:ot|nt)/[^']+\.html',", old_core)
+
+    all_lines = static_preserved + niv_lines + esv_lines + chapter_lines
+    new_core = "\n" + "\n".join(all_lines) + "\n"
+
+    new_sw = sw[:core_match.start(1)] + "const CORE = [" + new_core + "];" + sw[core_match.end(3):]
+
+    with open(sw_path, 'w', encoding='utf-8') as f:
+        f.write(new_sw)
+
+    niv_count = len(niv_lines)
+    esv_count = len(esv_lines)
+    ch_count  = len(chapter_lines)
+    print(f'service-worker.js CORE rebuilt: {niv_count} NIV + {esv_count} ESV verse files, {ch_count} chapter pages')
+
+
 def rebuild_qnav_js():
     """
     Regenerate /qnav.js from the current REGISTRY.
