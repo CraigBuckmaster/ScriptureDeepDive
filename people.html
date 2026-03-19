@@ -526,6 +526,9 @@ body {
 #mobile-controls {
   display: none; /* hidden on desktop */
 }
+#legend-mobile-wrap {
+  display: none; /* hidden on desktop */
+}
 
 /* ═══════════════════════════════════════════════════════════════
    MOBILE — breakpoint ≤ 768px
@@ -595,13 +598,7 @@ body {
   .bio-section-head { padding: .4rem .8rem .2rem; }
   .bio-chapter-link { margin: .4rem .8rem 1rem; }
 
-  /* Legend: smaller, collapsed by default handled in JS */
-  .legend {
-    bottom: .5rem;
-    left: .5rem;
-    min-width: 170px;
-    font-size: .8rem;
-  }
+
 
   /* Tree hint: pinch language */
   .tree-hint { font-size: .65rem; top: .5rem; }
@@ -609,6 +606,15 @@ body {
   /* Jump-to-era button: visible on mobile */
   #jump-btn { display: block; }
 }
+
+  /* Show mobile-only elements */
+  /* Show mobile-only elements */
+  #mobile-controls {
+    display: flex;
+  }
+  #legend-mobile-wrap {
+    display: block;
+  }
 
   /* Mobile controls bar */
   #mobile-controls {
@@ -651,13 +657,34 @@ body {
     text-transform: uppercase;
   }
 
-  /* Hide old absolute-positioned jump btn and reposition legend on mobile */
+  /* Hide old absolute-positioned jump btn */
   #jump-btn { display: none !important; }
-  .legend {
-    bottom: auto;
-    top: .5rem;
-    left: .5rem;
+
+  /* Desktop legend: hide on mobile */
+  #tree-panel .legend { display: none; }
+
+  /* Mobile legend wrap: show below controls bar */
+  #legend-mobile-wrap {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border2);
   }
+  #legend-mobile-wrap .legend {
+    position: static;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border2);
+    box-shadow: none;
+    min-width: 0;
+    width: 100%;
+    background: var(--bg2);
+  }
+  #legend-mobile-wrap .legend-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem .7rem;
+    padding: .5rem .8rem .6rem;
+  }
+  #legend-mobile-wrap .legend-item { margin-bottom: 0; }
 
 /* Very small screens */
 @media (max-width: 380px) {
@@ -702,7 +729,7 @@ body {
 
 <!-- MOBILE CONTROLS BAR (hidden on desktop) -->
 <div id="mobile-controls">
-  <button id="mobile-legend-btn" onclick="toggleLegend()">
+  <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
       <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
       <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
@@ -719,6 +746,33 @@ body {
     Centre
   </button>
 </div>
+<div id="legend-mobile-wrap"><div class="legend" id="legend-mobile">
+      <div class="legend-header" onclick="toggleMobileLegend()">
+        <span class="legend-title">Legend</span>
+        <span class="legend-chev">&#9660;</span>
+      </div>
+      <div class="legend-body">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div> Genealogical spine (Adam–Jesus)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval History</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal Period</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Egypt &amp; Exodus</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Conquest &amp; Judges</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> United Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Divided Kingdom &amp; Prophets</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile &amp; Return</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
+        <div class="legend-item" style="margin-top:.4rem">
+          <div class="legend-line" style="background:var(--gold-dim)"></div> Direct descent
+        </div>
+        <div class="legend-item">
+          <div class="legend-line" style="background: repeating-linear-gradient(90deg, var(--text-muted) 0 4px, transparent 4px 7px)"></div> Era contemporary
+        </div>
+        <div class="legend-item" style="margin-top:.4rem">
+          <svg width="22" height="10" style="flex-shrink:0"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--gold-dim)" stroke-width="1.5" opacity=".7"/><line x1="8" y1="1" x2="8" y2="9" stroke="var(--gold-dim)" stroke-width="1.2" opacity=".7"/><line x1="14" y1="1" x2="14" y2="9" stroke="var(--gold-dim)" stroke-width="1.2" opacity=".7"/></svg>
+          Married
+        </div>
+      </div>
+    </div></div>
 
 <!-- MAIN LAYOUT -->
 <div class="main-layout">
@@ -726,6 +780,8 @@ body {
     <svg id="tree-svg"></svg>
     <button id="jump-btn" onclick="jumpToCurrentEra()" title="Jump to current era">⌖ Jump</button>
     <div class="tree-hint" id="tree-hint">Scroll to zoom &middot; Drag to pan &middot; Click a name to read biography</div>
+    
+  
     <div class="legend" id="legend">
       <div class="legend-header" onclick="toggleLegend()">
         <span class="legend-title">Legend</span>
@@ -3698,6 +3754,9 @@ const svg = d3.select('#tree-svg');
 const panel = document.getElementById('tree-panel');
 const bioPanel = document.getElementById('bio-panel');
 
+// Module-level zoom — shared between render() and jumpToCurrentEra()
+let zoomBehavior = null;
+
 function render(filterEra) {
   svg.selectAll('*').remove();
 
@@ -3707,10 +3766,10 @@ function render(filterEra) {
   const g = svg.append('g');
 
   // Pan + zoom
-  const zoom = d3.zoom()
+  zoomBehavior = d3.zoom()
     .scaleExtent([0.15, 3])
     .on('zoom', e => g.attr('transform', e.transform));
-  svg.call(zoom);
+  svg.call(zoomBehavior);
 
   // Build hierarchy
   const root = d3.hierarchy(buildHierarchy());
@@ -3874,7 +3933,7 @@ function render(filterEra) {
     const initialScale = isMobile ? 0.45 : 0.75;
     const initialX = W / 2 - adamNode.x;
     const initialY = (isMobile ? 40 : 60) - adamNode.y;
-    svg.call(zoom.transform, d3.zoomIdentity.translate(initialX, initialY).scale(initialScale));
+    svg.call(zoomBehavior.transform, d3.zoomIdentity.translate(initialX, initialY).scale(initialScale));
   }
 
   // Mobile: update hint text
@@ -3985,17 +4044,16 @@ function closeBio() {
 
 // ── JUMP TO CURRENT ERA (mobile helper) ──────────────────────────────────
 function jumpToCurrentEra() {
+  if (!zoomBehavior) return;
   const panel = document.getElementById('tree-panel');
-  const svg = d3.select('#tree-svg');
+  const svgEl = document.getElementById('tree-svg');
+  const svg = d3.select(svgEl);
   const W = panel.clientWidth;
   const H = panel.clientHeight;
 
-  // Collect all visible nodes for the current era
-  const svgEl = document.getElementById('tree-svg');
-  const allCircles = svgEl.querySelectorAll('.node circle:not([r="18"])');
+  // Collect transform coordinates of all visible (non-dimmed) nodes
   const transforms = [];
-  svgEl.querySelectorAll('.node').forEach(node => {
-    const era = node.classList[1]; // second class is the era/type
+  svgEl.querySelectorAll('.node:not(.dimmed)').forEach(node => {
     const t = node.getAttribute('transform');
     if (t) {
       const m = t.match(/translate\(([^,]+),([^)]+)\)/);
@@ -4005,21 +4063,21 @@ function jumpToCurrentEra() {
 
   if (!transforms.length) return;
 
-  // Find centroid of current transform
+  // Bounding box centroid of visible nodes
   const xs = transforms.map(t => t.x);
   const ys = transforms.map(t => t.y);
   const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
   const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
 
-  // Get current zoom transform
-  const zoom = d3.zoom().scaleExtent([0.15, 3]);
-  const currentTransform = d3.zoomTransform(svgEl);
-  const scale = currentTransform.k;
+  // Keep current scale, just re-centre on the centroid
+  const currentScale = d3.zoomTransform(svgEl).k;
 
-  svg.transition().duration(600)
+  svg.transition().duration(500)
     .call(
-      d3.zoom().scaleExtent([0.15, 3]).transform,
-      d3.zoomIdentity.translate(W / 2 - cx * scale, H / 2 - cy * scale).scale(scale)
+      zoomBehavior.transform,
+      d3.zoomIdentity
+        .translate(W / 2 - cx * currentScale, H / 2 - cy * currentScale)
+        .scale(currentScale)
     );
 }
 
@@ -4060,6 +4118,9 @@ document.querySelectorAll('.era-btn').forEach(btn => {
 function toggleLegend() {
   document.getElementById('legend').classList.toggle('collapsed');
 }
+function toggleMobileLegend() {
+  document.getElementById('legend-mobile').classList.toggle('collapsed');
+}
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 window.addEventListener('resize', () => render(currentEra));
@@ -4088,6 +4149,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 768) {
     const leg = document.getElementById('legend');
     if (leg) leg.classList.add('collapsed');
+    const legM = document.getElementById('legend-mobile');
+    if (legM) legM.classList.add('collapsed');
   }
   render();
   handleHash();
