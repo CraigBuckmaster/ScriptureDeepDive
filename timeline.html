@@ -544,9 +544,18 @@ function initTimeline(){
   applyTransform(g);
 
   drawBackground(g);
-  drawEvents(g);
+  // Create all layer groups first (drawEvents appends g-events at end)
   el('g',{id:'g-people',opacity:showPeople?'1':'0'},g);
   el('g',{id:'g-history',opacity:showHistory?'1':'0'},g);
+  // Now draw events — g-events appended after people/history groups
+  // (visually it's behind them since SVG renders in document order,
+  //  but for this timeline events should be above people/history,
+  //  so we insert before g-people using insertBefore)
+  drawEvents(g);
+  // Move g-events before g-people so it renders above background but below people layer
+  const gEvNew = document.getElementById('g-events');
+  const gpNew  = document.getElementById('g-people');
+  if (gEvNew && gpNew) g.insertBefore(gEvNew, gpNew);
 
   // Re-render toggleable layers if they were on
   peopleRendered=false; historyRendered=false;
@@ -618,61 +627,53 @@ function drawBackground(g){
 
 // ── EVENTS: greedy 12-lane layout ──────────────────────────────────────────
 function drawEvents(g) {
-  // Remove existing events group if present
-  const old = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
-  if (old) old.parentNode.removeChild(old);
-
-  const gEv = el('g', {id:'g-events'}, g);
-  // Insert before people/history groups
-  const gp = document.getElementById('g-people');
-  if (gp) g.insertBefore(gEv, gp);
-
   const dimAll = currentEra !== 'all';
   const ERA_BOT = TL.ERA_BAR_Y + TL.ERA_BAR_H;
   const N = TL.LANES.length;
 
-  // ── GREEDY LANE ASSIGNMENT (fixed: uses half-width for clearance) ──────
+  // Create fresh g-events group appended to g
+  const gEv = el('g', {id:'g-events'}, g);
+
+  // ── GREEDY LANE ASSIGNMENT (correct: uses half-width for clearance) ────
   const positioned = EVENTS.map(ev => {
     const lw = Math.max(ev.name.length * LABEL_CHAR_W + LABEL_PAD, 60);
     return { ev, x: yearToX(ev.year), lw, half: lw / 2 };
   }).sort((a, b) => a.x - b.x);
 
-  const laneRight = new Array(N).fill(-9999); // tracks RIGHT EDGE of last label per lane
-
+  // laneRight tracks the RIGHT EDGE of the last placed label in each lane
+  const laneRight = new Array(N).fill(-9999);
   positioned.forEach(item => {
     const leftEdge = item.x - item.half;
-    // Find first lane where our left edge clears the previous right edge + gap
+    // Place in first lane where our left edge clears previous right edge + gap
     let lane = laneRight.findIndex(r => leftEdge >= r + LABEL_GAP);
-    if (lane === -1) lane = laneRight.indexOf(Math.min(...laneRight)); // least-used lane
+    if (lane === -1) lane = laneRight.indexOf(Math.min(...laneRight));
     laneRight[lane] = item.x + item.half;
     item.lane = lane;
   });
 
-  // ── DRAW: stem + inverse-scaled label ─────────────────────────────────
+  // ── DRAW stem + inverse-scaled clickable label ─────────────────────────
   positioned.forEach(({ ev, x, lane }) => {
     const color = ERA_HEX[ev.era] || '#523d0b';
     const dim = dimAll && ev.era !== currentEra;
     const laneY = TL.LANES[lane];
 
-    // Thin stem from era bar to label
+    // Thin stem: era bar bottom → top of label
     el('line', {
-      x1:x, y1:ERA_BOT, x2:x, y2:laneY - 12,
-      stroke:color, 'stroke-width':'1.2',
+      x1: x, y1: ERA_BOT, x2: x, y2: laneY - 12,
+      stroke: color, 'stroke-width': '1.2',
       opacity: dim ? '0.12' : '0.45',
     }, gEv);
 
-    // Label group with inverse-scale so it stays constant screen size on zoom
-    // translateX(x) centres the group on the event x
-    // scale(1/scaleX, 1) cancels the parent transform's x-scale
-    // translateX(-x) moves back so the label position is correct
+    // Wrapper group with inverse-scale so label stays constant screen size
+    // at any zoom level (cancels the parent g-inner scale transform)
     const lg = el('g', {
       class: 'tl-label',
-      'data-x': x,
-      transform: `translate(${x},0) scale(${1/scaleX},1) translate(${-x},0)`,
+      'data-x': String(x),
+      transform: `translate(${x},0) scale(${1 / scaleX},1) translate(${-x},0)`,
     }, gEv);
 
     const t = el('text', {
-      x, y: laneY,
+      x: String(x), y: String(laneY),
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
       'font-size': '10',
@@ -690,7 +691,7 @@ function drawEvents(g) {
   });
 }
 
-// Call after every zoom to keep inverse-scale accurate
+
 function refreshLabelScales() {
   document.querySelectorAll('.tl-label').forEach(lg => {
     const x = parseFloat(lg.dataset.x);
@@ -957,14 +958,13 @@ document.querySelectorAll('.era-btn').forEach(btn=>{
     // Re-render events with new dimming, then jump
     const g=document.getElementById('g-inner');
     if(g){
+      // Remove old g-events, redraw, reposition before g-people
       const gEv=document.getElementById('g-events');
       if(gEv) gEv.parentNode.removeChild(gEv);
-      // Re-insert before people and history groups
-      const gp=document.getElementById('g-people');
       drawEvents(g);
-      // Move newly created g-events before g-people
       const newEv=document.getElementById('g-events');
-      if(newEv&&gp) g.insertBefore(newEv,gp);
+      const gpEra=document.getElementById('g-people');
+      if(newEv&&gpEra) g.insertBefore(newEv,gpEra);
     }
     // Reset toggleable layers so they re-render with new dimming
     peopleRendered=false; historyRendered=false;
