@@ -174,10 +174,11 @@
     var bookVar = detectBookVar();
     if (!bookVar) return; // not a chapter page
 
-    // Cache the pre-loaded NIV data (comes from the <script src> tag)
+    // Cache the pre-loaded NIV data — deep copy so ESV loading can't overwrite it
+    // (ESV matthew.js also declares var VERSES_MATTHEW which would clobber the reference)
     var initData = window[bookVar];
     if (initData) {
-      _cache['niv'] = initData;
+      _cache['niv'] = initData.slice(); // copy the array
 
       // If user prefers a different translation, switch immediately
       if (current !== 'niv') {
@@ -199,17 +200,18 @@
       }
     }
 
-    // Build and insert toggle into chapter nav bar (right of arrows)
+    // Insert toggle after the Library back-link (left side of nav)
     var toggle = buildToggle();
     if (toggle) {
-      // Try chapter nav first (most visible location)
       var nav = document.querySelector('.chapter-nav');
       if (nav) {
-        nav.appendChild(toggle);
-      } else {
-        // Fallback: after h1 in header
-        var header = document.querySelector('main > header, header');
-        if (header) header.appendChild(toggle);
+        // Insert after nav-back (Library link), before nav-center
+        var navCenter = nav.querySelector('.nav-center');
+        if (navCenter) {
+          nav.insertBefore(toggle, navCenter);
+        } else {
+          nav.appendChild(toggle);
+        }
       }
     }
   });
