@@ -84,6 +84,7 @@ body {
   position: relative; overflow: hidden;
   background: var(--tl-bg);
   cursor: grab;
+  touch-action: none;   /* prevent browser scroll from intercepting */
 }
 #timeline-panel:active { cursor: grabbing; }
 #timeline-panel.panning { cursor: grabbing; user-select: none; }
@@ -457,14 +458,14 @@ function yearToX(year) {
 
 // ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
 const TL = {
-  H:          380,    // total SVG height
-  ERA_TOP:    10,     // top of era band labels
-  ERA_BAR_Y:  38,     // y of era colour bar top
-  ERA_BAR_H:  18,     // height of era colour bar
-  AXIS_Y:     160,    // y of the main date axis line
-  EVENT_STEM: 100,    // y where event stems start (below era bar)
-  PEOPLE_Y:   220,    // y of person nodes
-  HIST_Y:     280,    // y of historical event markers
+  H:          460,    // total SVG height — taller for readability
+  ERA_TOP:    10,
+  ERA_BAR_Y:  30,     // era colour bar — moved down from top
+  ERA_BAR_H:  26,     // taller band so text fits
+  AXIS_Y:     185,    // axis moved down — more room for event stems
+  EVENT_STEM: 120,    // stems reach further below era bar
+  PEOPLE_Y:   265,    // people nodes sit below event stems
+  HIST_Y:     350,    // history events at bottom with room for labels
   GRAIN_Y:    0,
 };
 
@@ -567,30 +568,40 @@ function renderContent(g, W, H) {
     const x0 = yearToX(y0);
     const x1 = yearToX(y1);
     const color = ERA_HEX[era] || '#888';
-    // Band background
+    const bandW = x1 - x0;
+
+    // Band — deeper opacity so era colour is unmistakeable
     svgEl_('rect', {
       x: x0, y: TL.ERA_BAR_Y,
-      width: x1 - x0, height: TL.ERA_BAR_H,
-      fill: color, opacity: '0.35',
+      width: bandW, height: TL.ERA_BAR_H,
+      fill: color, opacity: '0.55',
     }, g);
-    // Era name label — centred in band
+
+    // Era name — WHITE text on coloured band, large enough to read
     const mx = (x0 + x1) / 2;
-    const txt = svgText(ERA_NAMES[era] || era, {
-      x: mx, y: TL.ERA_BAR_Y + TL.ERA_BAR_H - 4,
-      'text-anchor': 'middle',
-      'font-family': "'Cinzel', serif",
-      'font-size': '9',
-      fill: color,
-      opacity: '0.9',
-      'pointer-events': 'none',
-    }, g);
+    // Only render if band is wide enough
+    if (bandW > 60) {
+      svgText(ERA_NAMES[era] || era, {
+        x: mx, y: TL.ERA_BAR_Y + TL.ERA_BAR_H - 5,
+        'text-anchor': 'middle',
+        'font-family': "'Cinzel', serif",
+        'font-size': '11',
+        fill: '#ffffff',
+        opacity: '0.95',
+        'pointer-events': 'none',
+        'paint-order': 'stroke',
+        stroke: color,
+        'stroke-width': '3',
+        'stroke-linejoin': 'round',
+      }, g);
+    }
   }
 
   // ── Axis line ─────────────────────────────────────────────────────────
   svgEl_('line', {
     x1: 0, y1: TL.AXIS_Y,
     x2: TOTAL_WIDTH, y2: TL.AXIS_Y,
-    stroke: '#4a3418', 'stroke-width': '1.5', opacity: '0.8',
+    stroke: '#3a2808', 'stroke-width': '2', opacity: '0.9',
   }, g);
 
   // ── Year tick marks ───────────────────────────────────────────────────
@@ -605,22 +616,30 @@ function renderContent(g, W, H) {
   for (const yr of tickYears) {
     const x = yearToX(yr);
     const isMajor = yr % 500 === 0 || yr === 0 || yr === 33;
-    const tickH = isMajor ? 10 : 6;
+    const tickH = isMajor ? 14 : 8;
     svgEl_('line', {
       x1: x, y1: TL.AXIS_Y - tickH/2,
       x2: x, y2: TL.AXIS_Y + tickH/2,
-      stroke: '#4a3418', 'stroke-width': isMajor ? '1.2' : '0.7', opacity: '0.7',
+      stroke: '#3a2808', 'stroke-width': isMajor ? '2' : '1', opacity: '0.8',
     }, g);
 
-    if (isMajor || yr % 100 === 0) {
-      const label = yr === 0 ? 'AD / BC' : yr < 0 ? `${Math.abs(yr)} BC` : `AD ${yr}`;
+    // Year label — dark ink, legible size
+    if (isMajor || yr % 100 === 0 || Math.abs(yr) < 100) {
+      const label = yr === 0 ? 'AD·BC' : yr < 0 ? `${Math.abs(yr)} BC` : `AD ${yr}`;
+      const sz = isMajor ? '12' : yr === 33 ? '11' : '9';
+      // White halo behind text for contrast against any background
       svgText(label, {
-        x, y: TL.AXIS_Y + 18,
+        x, y: TL.AXIS_Y + 22,
         'text-anchor': 'middle',
         'font-family': "'Cinzel', serif",
-        'font-size': isMajor ? '8' : '6.5',
-        fill: '#5a4020', opacity: '0.85',
+        'font-size': sz,
+        fill: '#2a1a06',
+        opacity: '0.95',
         'pointer-events': 'none',
+        'paint-order': 'stroke',
+        stroke: 'rgba(210,180,110,0.85)',
+        'stroke-width': '3',
+        'stroke-linejoin': 'round',
       }, g);
     }
   }
@@ -628,15 +647,13 @@ function renderContent(g, W, H) {
   // BC/AD divider line
   const xZero = yearToX(0);
   svgEl_('line', {
-    x1: xZero, y1: TL.ERA_BAR_Y,
-    x2: xZero, y2: TL.HIST_Y + 40,
-    stroke: '#8a6020', 'stroke-width': '1', 'stroke-dasharray': '4,3', opacity: '0.5',
+    x1: xZero, y1: TL.ERA_BAR_Y - 4,
+    x2: xZero, y2: TL.HIST_Y + 50,
+    stroke: '#5a3808', 'stroke-width': '1.5', 'stroke-dasharray': '5,4', opacity: '0.6',
   }, g);
-  svgText('BC', { x: xZero - 8, y: TL.AXIS_Y - 14, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'7', fill:'#7a6030', opacity:'0.7', 'pointer-events':'none' }, g);
-  svgText('AD', { x: xZero + 8, y: TL.AXIS_Y - 14, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'7', fill:'#7a6030', opacity:'0.7', 'pointer-events':'none' }, g);
+  svgText('BC', { x: xZero - 10, y: TL.AXIS_Y - 18, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'10', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
+  svgText('AD', { x: xZero + 10, y: TL.AXIS_Y - 18, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'10', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
 
-  // Events, people, history — added in later batches
-  // Placeholder groups for Batch 2+
   svgEl_('g', { id:'g-events' }, g);
   svgEl_('g', { id:'g-people', opacity: showPeople ? '1' : '0' }, g);
   svgEl_('g', { id:'g-history', opacity: showHistory ? '1' : '0' }, g);
@@ -1157,17 +1174,21 @@ function renderEvents(g) {
     }, gEvents);
     hit.addEventListener('click', () => openDetail(ev));
 
-    // Label — stagger alternately above/below the stem midpoint to reduce overlap
+    // Label — two stagger rows, dark ink with coloured halo for contrast
     const evIndex = EVENTS.indexOf(ev);
-    const labelY = stemTop + (evIndex % 2 === 0 ? 18 : 34);
-    const labelEl = svgText(ev.name, {
+    const labelY = stemTop + (evIndex % 2 === 0 ? 20 : 38);
+    svgText(ev.name, {
       x, y: labelY,
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
-      'font-size': '7.5',
-      fill: color,
-      opacity: dimmed ? '0.2' : '0.82',
+      'font-size': '10',
+      fill: '#1a1006',
+      opacity: dimmed ? '0.2' : '1',
       'pointer-events': 'none',
+      'paint-order': 'stroke',
+      stroke: `${color}88`,
+      'stroke-width': '3.5',
+      'stroke-linejoin': 'round',
     }, gEvents);
   });
 }
@@ -1349,17 +1370,22 @@ function renderPeopleLayer(g) {
     }, gPeople);
     hit.addEventListener('click', () => openPersonDetail(person));
 
-    // Name label — alternate above/below to reduce stacking
+    // Name label — alternate above/below, dark ink with era-colour halo
     const nameY = i % 2 === 0
-      ? TL.PEOPLE_Y - 10
-      : TL.PEOPLE_Y + 18;
+      ? TL.PEOPLE_Y - 12
+      : TL.PEOPLE_Y + 20;
     svgText(person.name, {
       x, y: nameY,
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
-      'font-size': '7',
-      fill: color, opacity: dimmed ? '0.15' : '0.82',
+      'font-size': '9',
+      fill: '#1a1006',
+      opacity: dimmed ? '0.15' : '1',
       'pointer-events': 'none',
+      'paint-order': 'stroke',
+      stroke: `${color}99`,
+      'stroke-width': '3',
+      'stroke-linejoin': 'round',
     }, gPeople);
   });
 }
@@ -1500,17 +1526,22 @@ function renderHistoryLayer(g) {
     }, gHist);
     hit.addEventListener('click', () => openHistoryDetail(ev));
 
-    // Label — alternate two rows
+    // Label — alternate two rows, legible dark ink
     const labelY = i % 2 === 0
-      ? TL.HIST_Y + dw + 12
-      : TL.HIST_Y + dw + 22;
+      ? TL.HIST_Y + dw + 14
+      : TL.HIST_Y + dw + 26;
     svgText(ev.name, {
       x, y: labelY,
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
-      'font-size': '6.5',
-      fill: HIST_COLOR, opacity: '0.78',
+      'font-size': '9',
+      fill: '#0a1a2a',
+      opacity: '0.88',
       'pointer-events': 'none',
+      'paint-order': 'stroke',
+      stroke: 'rgba(150,190,220,0.7)',
+      'stroke-width': '3',
+      'stroke-linejoin': 'round',
     }, gHist);
   });
 }
