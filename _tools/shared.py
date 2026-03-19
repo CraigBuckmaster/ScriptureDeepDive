@@ -363,8 +363,7 @@ COMMENTATOR_SCOPE = {
 
     # ── NT-only commentators ─────────────────────────────────────────────────
     # A.T. Robertson — Word Pictures in the New Testament (NT only)
-    'robertson': ['matthew', 'mark', 'luke', 'acts'],
-    # Future: 'john', 'acts', etc.
+    'robertson': ['matthew', 'mark', 'luke', 'john', 'acts'],
 
     # Catena Aurea — Aquinas compilation on all four Gospels only
     'catena':    ['matthew', 'mark', 'luke', 'john'],
@@ -1388,7 +1387,8 @@ def build_chapter(book_dir, ch, data):
     Presence of a key drives the corresponding button + panel automatically.
     Button order in rendered HTML: heb → places → people_sec → timeline →
                                    hist → ctx → cross → mac → sarna → alter →
-                                   calvin → netbible → robertson → catena
+                                   hubbard → waltke → calvin → netbible →
+                                   robertson → catena → marcus → rhoads → keener
       header      str                     e.g. 'Verses 1–5 — Title'
       verses      list[(int, str)]        NIV verse tuples
       heb         list[(word, translit, gloss, note)]   Hebrew/Greek word study
