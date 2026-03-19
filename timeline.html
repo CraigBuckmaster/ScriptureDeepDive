@@ -779,6 +779,8 @@ function toggleMobileLegend() {
 // ══════════════════════════════════════════════════════════════════════════
 // DETAIL PANEL
 // ══════════════════════════════════════════════════════════════════════════
+const PERSON_NAMES = {"adam": "Adam", "eve": "Eve", "cain": "Cain", "abel": "Abel", "enoch-g": "Enoch", "noah": "Noah", "abraham": "Abraham", "sarah": "Sarah", "isaac": "Isaac", "jacob": "Jacob", "joseph-ot": "Joseph", "moses": "Moses", "miriam": "Miriam", "aaron": "Aaron", "deborah": "Deborah", "gideon": "Gideon", "samson": "Samson", "ruth": "Ruth", "naomi": "Naomi", "boaz": "Boaz", "samuel": "Samuel", "saul": "Saul", "david": "David", "solomon": "Solomon", "elijah": "Elijah", "elisha": "Elisha", "isaiah": "Isaiah", "jeremiah": "Jeremiah", "ezekiel": "Ezekiel", "daniel": "Daniel", "ezra": "Ezra", "nehemiah": "Nehemiah", "hezekiah": "Hezekiah", "jesus": "Jesus", "mary": "Mary", "joseph-nt": "Joseph", "john-baptist": "John the Baptist", "peter": "Peter", "paul": "Paul", "barnabas": "Barnabas", "john-ap": "John", "lazarus": "Lazarus", "martha": "Martha", "mary-bethany": "Mary of Bethany", "pilate": "Pontius Pilate", "caiaphas": "Caiaphas", "herod-great": "Herod the Great", "mary-magdalene": "Mary Magdalene", "zechariah-nt": "Zechariah", "elizabeth": "Elizabeth"};
+
 function openDetail(ev) {
   currentEvent = ev;
   const color = ERA_HEX[ev.era] || '#888';
@@ -797,9 +799,10 @@ function openDetail(ev) {
 
   if (ev.people && ev.people.length) {
     html += `<div class="detail-section-head">People</div><div class="detail-people">`;
-    html += ev.people.map(pid =>
-      `<a href="people.html#${pid}" target="_blank" class="detail-person-chip">${pid.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a>`
-    ).join('');
+    html += ev.people.map(pid => {
+      const name = PERSON_NAMES[pid] || pid.replace(/-/g,' ').replace(/\w/g,c=>c.toUpperCase());
+      return `<a href="people.html#${pid}" target="_blank" class="detail-person-chip">${name}</a>`;
+    }).join('');
     html += `</div>`;
   }
 
@@ -856,6 +859,344 @@ function reinitIfResized() {
 window.addEventListener('resize', reinitIfResized);
 
 // ── INIT ───────────────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════
+// BIBLICAL EVENTS — Batch 2
+// ══════════════════════════════════════════════════════════════════════════
+const EVENTS = [
+
+// ── PRIMEVAL ──────────────────────────────────────────────────────────────
+{ id:'creation', era:'primeval', name:'Creation', year:-4000, ref:'Genesis 1–2', chapter:'ot/genesis/Genesis_1.html', people:['adam','eve'],
+  summary:'In six days God speaks the cosmos into existence — light from darkness, sea from sky, land from water, living creatures from the earth, and finally humanity formed in the divine image. The seventh day is blessed and set apart as sacred rest. The creation account is not merely cosmology but theology: existence is intentional, ordered, and declared good by its Maker.' },
+
+{ id:'fall', era:'primeval', name:'The Fall', year:-3900, ref:'Genesis 3', chapter:'ot/genesis/Genesis_3.html', people:['adam','eve'],
+  summary:'The serpent\'s logic was subtle: God\'s prohibition was evidence of withholding. Eve ate, Adam ate, innocence shattered. The consequences were immediate and cosmic — shame, broken relationship with God, cursed ground, pain in childbirth, death. But God\'s response was also the first promise of redemption: the woman\'s offspring would crush the serpent\'s head (Gen 3:15), the protevangelion that seeds the entire biblical story.' },
+
+{ id:'cain-abel', era:'primeval', name:'Cain and Abel', year:-3800, ref:'Genesis 4', chapter:'ot/genesis/Genesis_4.html', people:['cain','abel'],
+  summary:'The first brothers, the first murder. Cain\'s offering of crops was rejected; Abel\'s firstborn sheep was accepted. God\'s warning to Cain — "sin is crouching at your door; it desires to have you, but you must rule over it" — went unheeded. He killed his brother in a field. God\'s mark on Cain was both judgment and protection. The pattern of the firstborn being passed over for the younger, chosen one begins here.' },
+
+{ id:'enoch-taken', era:'primeval', name:'Enoch Taken by God', year:-3400, ref:'Genesis 5:24', chapter:'ot/genesis/Genesis_5.html', people:['enoch-g'],
+  summary:'"Enoch walked faithfully with God; then he was no more, because God took him away." Seven generations from Adam, in the midst of the genealogy of death ("and he died... and he died..."), Enoch simply does not die. He walked with God for 300 years and was taken. This solitary exception in the pre-flood genealogy points to the possibility of an unbroken relationship with God and anticipates the resurrection hope of the NT.' },
+
+{ id:'flood', era:'primeval', name:"Noah's Flood", year:-2350, yearEnd:-2349, ref:'Genesis 6–9', chapter:'ot/genesis/Genesis_6.html', people:['noah'],
+  summary:'The earth had filled with violence. God announced a global flood, commissioned an ark, and placed his trust in one righteous man. The rain fell for forty days; the waters prevailed for 150. Every air-breathing creature outside the ark perished. When the waters receded, Noah built an altar and God made the first formal covenant in redemptive history: never again a worldwide flood, sealed with the rainbow. The Noahic covenant is universal and unconditional — a foundation of cosmic grace.' },
+
+{ id:'babel', era:'primeval', name:'Tower of Babel', year:-2200, ref:'Genesis 11:1–9', chapter:'ot/genesis/Genesis_11.html', people:[],
+  summary:'One language, one people, one ambition: build a city and a tower to the heavens to make a name for themselves. God came down, confused their language, and scattered them across the earth. The city was called Babel — confusion. The story explains linguistic diversity and delivers a theological verdict on human empire-building: defiant unity ends in divinely ordered scattering. Pentecost (Acts 2) reverses Babel, reuniting all languages under one gospel.' },
+
+// ── PATRIARCHAL ───────────────────────────────────────────────────────────
+{ id:'call-abram', era:'patriarch', name:"God Calls Abram", year:-2091, ref:'Genesis 12:1–3', chapter:'ot/genesis/Genesis_12.html', people:['abraham','sarah'],
+  summary:'"Leave your country, your people, and your father\'s household and go to the land I will show you. I will make you into a great nation..." This unconditional call to a 75-year-old man with a barren wife was the founding moment of redemptive history. Abraham left Ur and went. His journey from Mesopotamia to Canaan inaugurated the covenant line that would produce Israel, the Law, the Prophets, and ultimately Christ himself.' },
+
+{ id:'covenant-abram', era:'patriarch', name:'Abrahamic Covenant', year:-2081, ref:'Genesis 15; 17', chapter:'ot/genesis/Genesis_15.html', people:['abraham'],
+  summary:'God ratified his covenant with Abram through a smoking firepot and blazing torch passing between split animal halves — the covenant-making ritual of the ancient Near East, here performed by God alone, making the covenant unilateral and unconditional. Later God instituted circumcision as the covenant sign and changed his name to Abraham: "father of many nations." The covenant promised land, descendants, and universal blessing.' },
+
+{ id:'sodom-destroyed', era:'patriarch', name:'Sodom Destroyed', year:-2067, ref:'Genesis 18–19', chapter:'ot/genesis/Genesis_18.html', people:['abraham'],
+  summary:'Abraham interceded for the righteous in Sodom with remarkable boldness, negotiating God from fifty righteous to ten. There were not ten. Lot and his daughters fled while burning sulphur rained on Sodom and Gomorrah. Lot\'s wife looked back and became a pillar of salt. Jesus uses Sodom\'s judgment as a warning image for the unexpected Last Day (Luke 17:28-32). Peter and Jude cite it as the paradigm of divine judgment on the ungodly (2 Pet 2:6; Jude 7).' },
+
+{ id:'isaac-born', era:'patriarch', name:'Isaac Born', year:-2066, ref:'Genesis 21', chapter:'ot/genesis/Genesis_21.html', people:['isaac','sarah','abraham'],
+  summary:'At 100 years old — Abraham at one hundred, Sarah at ninety — the impossible child arrived. His name means "he laughs," tracing back to Sarah\'s incredulous laughter when told she would conceive. His birth was the fulfillment of the covenant promise that God had made twenty-five years earlier. He was circumcised on the eighth day, the firstborn of promise, whose genealogy would lead directly to David and to Christ.' },
+
+{ id:'binding-isaac', era:'patriarch', name:'Binding of Isaac', year:-2050, ref:'Genesis 22', chapter:'ot/genesis/Genesis_22.html', people:['isaac','abraham'],
+  summary:'God commanded Abraham to offer his beloved son Isaac as a burnt offering on Mount Moriah. Abraham rose early, saddled his donkey, and went. His words to his servants — "We will come back to you" — Hebrews 11 interprets as faith in resurrection. The knife was raised; the angel of the LORD called: "Do not lay a hand on the boy." A ram caught in the thicket by its horns became the substitute. God reaffirmed the covenant with oath. The Moriah site later became the location of Solomon\'s Temple.' },
+
+{ id:'jacob-born', era:'patriarch', name:'Jacob and Esau Born', year:-2006, ref:'Genesis 25:19–28', chapter:'ot/genesis/Genesis_25.html', people:['jacob'],
+  summary:'Twin sons born to Isaac and Rebekah after twenty years of barrenness. Even in the womb they struggled. God\'s oracle to Rebekah: "Two nations are in your womb... the older will serve the younger." The birth was dramatic — Esau came first, red and hairy; Jacob came immediately after, grasping Esau\'s heel. Their names encoded their characters: Esau (hairy) and Jacob (he grasps the heel / he supplants). The pre-birth oracle becomes Paul\'s proof text for unconditional election (Rom 9:10-13).' },
+
+{ id:'jacob-covenant', era:'patriarch', name:"Jacob's Covenant at Bethel", year:-1928, ref:'Genesis 28:10–22', chapter:'ot/genesis/Genesis_28.html', people:['jacob'],
+  summary:'Fleeing from Esau\'s wrath, Jacob stopped for the night at a place he did not know was sacred. He dreamed of a stairway to heaven with angels ascending and descending, and God stood above it renewing the Abrahamic promises to him specifically. He awoke in fear: "Surely the LORD is in this place, and I was not aware of it." He set up the stone he had slept on as a pillar, poured oil on it, named the place Bethel (House of God), and vowed his allegiance. Jesus identifies himself as the true stairway (John 1:51).' },
+
+{ id:'joseph-sold', era:'patriarch', name:'Joseph Sold into Slavery', year:-1898, ref:'Genesis 37', chapter:'ot/genesis/Genesis_37.html', people:['joseph-ot'],
+  summary:'Sold by his brothers for twenty pieces of silver to Ishmaelite traders at Dothan, Joseph arrived in Egypt as a slave in Potiphar\'s household. False accusation from Potiphar\'s wife landed him in prison. Two years of forgotten faithfulness followed. But behind every event was divine providence steering toward a purpose his brothers had tried to abort. "You intended to harm me, but God intended it for good" (Gen 50:20). The Joseph narrative is the OT\'s most complete narrative anticipation of Christ.' },
+
+{ id:'joseph-prime-minister', era:'patriarch', name:'Joseph Rules Egypt', year:-1884, ref:'Genesis 41', chapter:'ot/genesis/Genesis_41.html', people:['joseph-ot'],
+  summary:'When Pharaoh dreamed of seven fat cows and seven thin ones, Joseph was recalled from prison to interpret. Seven years of abundance, seven of famine. Pharaoh made him second in command of all Egypt at age thirty. He gathered grain in the years of plenty until it was beyond measure, then sold it during the famine — drawing not only Egypt but the whole ancient Near East, including his own brothers, to his storehouses. His family of seventy settled in Goshen; the Hebrew people were in Egypt.' },
+
+{ id:'jacob-dies', era:'patriarch', name:'Jacob Dies in Egypt', year:-1859, ref:'Genesis 49–50', chapter:'ot/genesis/Genesis_49.html', people:['jacob'],
+  summary:'At 147 years old, Jacob gathered his sons and delivered the prophetic blessing of Genesis 49 — a poem that encoded the character and destiny of each of the twelve tribes. To Judah: "The scepter will not depart from Judah... until he to whom it belongs shall come and the obedience of the nations shall be his" (49:10) — the Messianic promise embedded in the tribal blessing. He was buried in the cave of Machpelah with Abraham, Sarah, Isaac, and Rebekah.' },
+
+// ── EXODUS ────────────────────────────────────────────────────────────────
+{ id:'moses-born', era:'exodus', name:'Moses Born', year:-1526, ref:'Exodus 1–2', chapter:'ot/exodus/Exodus_2.html', people:['moses','miriam'],
+  summary:'Born under Pharaoh\'s death sentence for Hebrew infant boys, Moses survived because of his mother\'s faith and a providential chain: a reed basket, the Nile, Pharaoh\'s daughter, his own sister\'s quick thinking, and his mother as wet nurse. He grew up educated in all the wisdom of Egypt, killed an Egyptian taskmaster in misguided solidarity, fled to Midian, and spent forty years as a shepherd. The man whom God would use to deliver a nation was first thoroughly broken of self-reliance.' },
+
+{ id:'burning-bush', era:'exodus', name:'Burning Bush', year:-1446, ref:'Exodus 3–4', chapter:'ot/exodus/Exodus_3.html', people:['moses'],
+  summary:'At eighty years old, tending sheep on Mount Horeb, Moses saw a bush burning that was not consumed. "Take off your sandals, for the place where you are standing is holy ground." God revealed his name — I AM WHO I AM — and commissioned Moses to lead Israel out of Egypt. Moses resisted every step. God met every objection: Aaron as spokesman, signs to demonstrate divine authority, and the promise that this mountain would again be holy ground when the people worshipped there.' },
+
+{ id:'plagues', era:'exodus', name:'Ten Plagues', year:-1446, ref:'Exodus 7–12', chapter:'ot/exodus/Exodus_7.html', people:['moses','aaron'],
+  summary:'Ten plagues dismantling each of Egypt\'s major deities: the Nile turned to blood (Nile god Hapi), frogs (goddess Heqet), gnats, flies, livestock disease, boils, hail, locusts, darkness (sun god Ra), and finally the death of every firstborn. Pharaoh\'s heart hardened after each early plague — both his own choice and divine sovereign hardening — until the final plague broke him. The plagues were not mere disasters but a systematic theological demonstration: "I will bring judgment on all the gods of Egypt. I am the LORD" (Exod 12:12).' },
+
+{ id:'passover', era:'exodus', name:'The First Passover', year:-1446, ref:'Exodus 12', chapter:'ot/exodus/Exodus_12.html', people:['moses'],
+  summary:'On the night of the tenth plague, every household in Egypt that did not have the blood of a unblemished lamb on its doorposts lost its firstborn. Israel was protected by the blood. They ate the lamb with unleavened bread and bitter herbs, dressed and ready to leave. The annual Passover feast became the central liturgical act of Israelite identity, celebrated ever since. Paul declares that "Christ, our Passover lamb, has been sacrificed" (1 Cor 5:7), making the Exodus the type of redemption fulfilled at the cross.' },
+
+{ id:'exodus', era:'exodus', name:'The Exodus from Egypt', year:-1446, ref:'Exodus 13–14', chapter:'ot/exodus/Exodus_13.html', people:['moses','miriam'],
+  summary:'Six hundred thousand men — plus women, children, and a mixed multitude — left Egypt in a night. God led them by a pillar of cloud by day and fire by night. At the Red Sea, Pharaoh\'s army pursued. Moses raised his staff; God drove the sea back with a strong east wind all night. Israel crossed on dry ground. When the Egyptians followed, the waters returned. Not one of them survived. Moses and Miriam led the whole assembly in the Song of the Sea. The Exodus became Israel\'s defining event — the lens through which they interpreted every subsequent act of God.' },
+
+{ id:'sinai-covenant', era:'exodus', name:'The Sinai Covenant', year:-1446, ref:'Exodus 19–24', chapter:'ot/exodus/Exodus_19.html', people:['moses','aaron'],
+  summary:'At the foot of a smoking, quaking mountain, God spoke the Ten Commandments to the whole assembly. The people were terrified and begged Moses to be their mediator. Moses entered the thick darkness where God was and received the full covenant law over forty days. The Ten Commandments were written by the finger of God on two stone tablets. The people responded: "Everything the LORD has said we will do." Moses sprinkled blood on them — "the blood of the covenant." The entire legal and ritual system of Israel was grounded in this mountain encounter.' },
+
+{ id:'tabernacle', era:'exodus', name:'Tabernacle Completed', year:-1445, ref:'Exodus 40', chapter:'ot/exodus/Exodus_40.html', people:['moses','aaron'],
+  summary:'Exactly one year after the Exodus, the Tabernacle was erected — God\'s portable dwelling, built precisely to the design revealed on Sinai. When it was completed, the cloud covered it and the glory of the LORD filled it so that Moses could not enter. God had moved from mountain to tent, from Sinai to the center of the camp. The Tabernacle\'s structure — outer court, Holy Place, Most Holy Place — prefigured the progressive access to God restored through Christ, who is simultaneously the new Tabernacle (John 1:14), the new Priest, and the new sacrifice.' },
+
+{ id:'golden-calf', era:'exodus', name:'Golden Calf', year:-1445, ref:'Exodus 32', chapter:'ot/exodus/Exodus_32.html', people:['moses','aaron'],
+  summary:'While Moses was on Sinai receiving the Torah, the impatient people demanded gods from Aaron. He took their gold earrings, fashioned a calf, and announced a festival to the LORD. Moses came down and shattered the tablets. Three thousand people died by the sword of the Levites. Moses returned to Sinai to intercede — offering to be blotted from God\'s book in their place. God relented from destroying the nation, but sent a plague. The golden calf defined the failure of Aaronic leadership and the necessity of a better mediator.' },
+
+{ id:'wilderness-wandering', era:'exodus', name:'Wilderness Wandering', year:-1444, yearEnd:-1406, ref:'Numbers 14', chapter:'ot/exodus/Exodus_16.html', people:['moses'],
+  summary:'At Kadesh-Barnea, the twelve spies returned from Canaan. Ten gave a fearful report; Caleb and Joshua alone urged faith. The people wept and wanted to return to Egypt. God declared that every adult of that generation — except Caleb and Joshua — would die in the wilderness. They wandered for forty years in the Sinai until the faithless generation was gone. The wilderness years also included divine provision of manna and quail, water from a rock, bronze serpent healing, and the Levitical priestly system fully established.' },
+
+// ── CONQUEST / JUDGES ─────────────────────────────────────────────────────
+{ id:'moses-dies', era:'judges', name:'Moses Dies on Nebo', year:-1406, ref:'Deuteronomy 34', chapter:'ot/exodus/Exodus_40.html', people:['moses'],
+  summary:'At 120 years old, his eyes still clear and his strength undiminished, Moses climbed Mount Nebo and God showed him the whole Promised Land — from Dan to the Negev, from the western sea to the Jordan Valley and Jericho. Then he died there, and God buried him in Moab. "No one knows where his grave is" (Deut 34:6). Israel mourned thirty days. Joshua son of Nun was filled with the spirit of wisdom because Moses had laid his hands on him.' },
+
+{ id:'jordan-crossing', era:'judges', name:'Jordan Crossing', year:-1406, ref:'Joshua 3–4', chapter:'nt/acts/Acts_7.html', people:[],
+  summary:'In flood season, the priests stepped into the Jordan carrying the ark of the covenant. The waters piled up upstream as if held back by a dam; Israel crossed on dry ground. Twelve stones were taken from the riverbed — a permanent memorial. The Jordan crossing deliberately echoed the Red Sea: the same God who rescued them from Egypt was bringing them into the land. God\'s first words to Joshua: "As I was with Moses, so I will be with you; I will never leave you nor forsake you" (Josh 1:5).' },
+
+{ id:'jericho-falls', era:'judges', name:'Fall of Jericho', year:-1406, ref:'Joshua 6', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'March around the city once a day for six days. On the seventh day, march seven times. Then the priests blow their trumpets and all the people shout. The walls of Jericho — fortified and shut up because of Israel — collapsed. Israel charged straight in. Only Rahab\'s household was spared, marked by the scarlet cord in her window — the same cord that had saved the spies she had sheltered. The entire city was devoted to the LORD. Jericho\'s fall demonstrated that Israel\'s conquest was God\'s battle, not military superiority.' },
+
+{ id:'deborah', era:'judges', name:'Deborah Judges Israel', year:-1200, ref:'Judges 4–5', chapter:'ot/genesis/Genesis_1.html', people:['deborah'],
+  summary:'Deborah, a prophet, was judging Israel under a palm tree in the hill country of Ephraim. She summoned Barak to lead an army of ten thousand against Sisera\'s nine hundred iron chariots in the plain of Jezreel. Barak would only go if she came with him. She agreed, but prophesied that the credit would go to a woman. Sisera\'s army was routed. He fled on foot to the tent of Jael, who drove a tent peg through his head while he slept. Deborah\'s Song (Judges 5) is one of the oldest preserved poems in the Hebrew Bible.' },
+
+{ id:'gideon', era:'judges', name:'Gideon\'s Three Hundred', year:-1162, ref:'Judges 6–8', chapter:'ot/genesis/Genesis_1.html', people:['gideon'],
+  summary:'God reduced Gideon\'s army from thirty-two thousand to three hundred by design — so Israel could not claim the credit for the victory. On the night of the battle, the three hundred men surrounded the Midianite camp with torches hidden in clay jars and trumpets. They smashed the jars, raised the torches, blew the trumpets, and shouted. God caused the Midianites to turn on each other. Gideon\'s fleece test earlier — asking God for dew on the fleece but dry ground, then the reverse — became the idiom for seeking divine confirmation.' },
+
+{ id:'samson', era:'judges', name:'Samson\'s Ministry', year:-1100, yearEnd:-1080, ref:'Judges 13–16', chapter:'ot/genesis/Genesis_1.html', people:['samson'],
+  summary:'Born as a Nazirite consecrated to God, Samson was the embodiment of the Judges cycle in one person: anointed with the Spirit, called to deliver Israel, morally inconsistent, disastrously attracted to Philistine women, yet used by God despite his failures. His final act — pushing apart the pillars of the temple of Dagon where three thousand Philistines had gathered to celebrate his capture — killed more in his death than in his life. "He called on the LORD: let me die with the Philistines."' },
+
+{ id:'ruth', era:'judges', name:'Ruth and Boaz', year:-1100, ref:'Ruth 1–4', chapter:'ot/ruth/Ruth_1.html', people:['ruth','naomi','boaz'],
+  summary:'A Moabite widow\'s extraordinary covenant loyalty — "Where you go I will go, your people shall be my people, your God my God" — brought her to glean in the fields of Boaz, a kinsman-redeemer of her mother-in-law Naomi\'s family. Boaz noticed her, protected her, and eventually legally redeemed both Naomi\'s land and Ruth as wife. Their son Obed became the grandfather of David. Ruth is one of only five women in Jesus\'s genealogy (Matt 1:5) — a Moabite outsider in the royal-Messianic line.' },
+
+// ── UNITED KINGDOM ────────────────────────────────────────────────────────
+{ id:'samuel-anoints-saul', era:'kingdom', name:'Saul Anointed King', year:-1051, ref:'1 Samuel 8–10', chapter:'ot/ruth/Ruth_4.html', people:['samuel','saul'],
+  summary:'Israel demanded a king like all the other nations. Samuel warned them: a king would take their sons for his army, their daughters as servants, the best of their fields and vineyards. God told Samuel to give them what they asked — their rejection of human leadership was ultimately rejection of divine kingship. Saul of Benjamin, a head taller than anyone else, was anointed, publicly chosen by lot, and acclaimed. He began well, but his disobedience at Gilgal and against the Amalekites cost him the dynasty.' },
+
+{ id:'david-anointed', era:'kingdom', name:'David Anointed', year:-1025, ref:'1 Samuel 16', chapter:'ot/ruth/Ruth_4.html', people:['david','samuel'],
+  summary:'Samuel came to Bethlehem and anointed the youngest of Jesse\'s eight sons while his brothers stood by. "The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart." David was ruddy and handsome; but more than that, the Spirit of the LORD came on him powerfully from that day on. He entered Saul\'s service, killed Goliath, rose to national hero status, and spent years as a fugitive in the wilderness before becoming king.' },
+
+{ id:'david-jerusalem', era:'kingdom', name:'David Captures Jerusalem', year:-1004, ref:'2 Samuel 5–7', chapter:'ot/ruth/Ruth_4.html', people:['david'],
+  summary:'David was anointed king over all Israel at age thirty after seven and a half years as king of Judah. He captured Jerusalem from the Jebusites and named it the City of David. He brought the ark of the covenant there in a joyful procession and danced before it with abandon. When he desired to build God a house, God reversed the offer: I will build you a house. The Davidic Covenant (2 Sam 7) promised David a son whose throne would be established forever — the covenant that defines all subsequent Messianic expectation.' },
+
+{ id:'solomon-temple', era:'kingdom', name:'Temple Completed', year:-959, ref:'1 Kings 6–8', chapter:'ot/genesis/Genesis_1.html', people:['solomon'],
+  summary:'Seven years in construction, the Temple stood as the architectural wonder of its age. At its dedication, Solomon prayed one of the most theologically comprehensive prayers in Scripture — that God would hear from this place, extend grace to foreigners, forgive when Israel repented. When he finished, fire came down from heaven and the glory of the LORD filled the Temple so that the priests could not enter. The cloud of divine presence had moved from Sinai to Tabernacle to Temple — a trajectory that would culminate in the incarnation.' },
+
+{ id:'kingdom-divides', era:'kingdom', name:'Kingdom Divides', year:-930, ref:'1 Kings 12', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'Solomon\'s son Rehoboam ignored the advice of the elders and threatened to increase the people\'s burden. Ten tribes seceded under Jeroboam I, forming the northern kingdom of Israel. Rehoboam was left with Judah and Benjamin. Jeroboam immediately established golden calves at Bethel and Dan to prevent his people worshipping in Jerusalem — "Here are your gods, Israel, who brought you up out of Egypt." The northern kingdom never had a righteous king. The split fulfilled the prophecy given to Solomon after his apostasy.' },
+
+// ── PROPHETS / DIVIDED KINGDOM ────────────────────────────────────────────
+{ id:'elijah-carmel', era:'prophets', name:'Elijah on Mount Carmel', year:-869, ref:'1 Kings 18', chapter:'ot/genesis/Genesis_1.html', people:['elijah'],
+  summary:'Four hundred and fifty prophets of Baal versus one prophet of the LORD. Two altars, two bulls, fire from heaven to be the verdict. From morning until noon the Baal prophets cried out and slashed themselves. Silence. Elijah taunted them: "Shout louder! Surely he is a god! Perhaps he is deep in thought, or busy, or traveling. Maybe he is sleeping and must be awakened." Then Elijah repaired the altar, drenched it with twelve jars of water, and prayed simply. Fire fell and consumed the sacrifice, the wood, the stones, the soil, and the water. "The LORD — he is God!"' },
+
+{ id:'amos-prophesies', era:'prophets', name:'Amos Prophesies', year:-760, ref:'Amos 1–9', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'A shepherd and fig-grower from Tekoa — not a professional prophet — was sent to the northern kingdom during a time of prosperity and social injustice. "They sell the righteous for silver and the needy for a pair of sandals. They trample on the heads of the poor... and deny justice to the oppressed." Amos announced the Day of the LORD as coming darkness, not light, for an unfaithful people. He also spoke of restoration: a fallen David\'s tent rebuilt so that the remnant of humanity might seek the LORD (Amos 9:11-12), which James quotes at the Jerusalem Council (Acts 15:16-18).' },
+
+{ id:'isaiah-call', era:'prophets', name:'Isaiah\'s Call', year:-740, ref:'Isaiah 6', chapter:'ot/genesis/Genesis_1.html', people:['isaiah'],
+  summary:'In the year that King Uzziah died, Isaiah saw the LORD seated on a throne, high and exalted, the train of his robe filling the Temple. Seraphim cried "Holy, holy, holy is the LORD Almighty; the whole earth is full of his glory." The doorposts shook; smoke filled the Temple. Isaiah cried: "Woe to me! I am ruined! For I am a man of unclean lips." A seraph touched his lips with a burning coal. Then the voice: "Whom shall I send? And who will go for us?" Isaiah: "Here am I. Send me." Isaiah prophesied for approximately 40 years under four kings.' },
+
+{ id:'hosea-prophesies', era:'prophets', name:'Hosea\'s Marriage Prophecy', year:-750, ref:'Hosea 1–14', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'God told Hosea to marry a woman who would be unfaithful, then to take her back after her adultery — as a living metaphor of God\'s covenant love for adulterous Israel. Hosea\'s marriage to Gomer became the enacted prophecy: Israel had been unfaithful to its covenant God, pursuing Baals; God would discipline but also pursue, betroth Israel to himself again in righteousness and love. "My people are destroyed from lack of knowledge." Hosea contains some of the most tender divine language in the OT: "I led them with cords of human kindness, with ties of love."' },
+
+{ id:'fall-north', era:'prophets', name:'Fall of Northern Kingdom', year:-722, ref:'2 Kings 17', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'After two centuries of apostasy, the northern kingdom of Israel was conquered by Assyria. Shalmaneser V besieged Samaria for three years; Sargon II captured it in 722 BC and deported 27,290 Israelites to Halah, Gozan, and the cities of the Medes. The northern kingdom ceased to exist. Foreigners resettled the land; the population that remained intermarried with them and became the Samaritans. The ten tribes were effectively lost. The biblical explanation (2 Kings 17) is unflinching: "This happened because the Israelites sinned against the LORD their God, who had brought them up out of Egypt."' },
+
+{ id:'hezekiah-assyria', era:'prophets', name:'Assyrian Siege of Jerusalem', year:-701, ref:'2 Kings 18–19; Isaiah 36–37', chapter:'ot/genesis/Genesis_1.html', people:['hezekiah'],
+  summary:'Sennacherib\'s massive army surrounded Jerusalem. His general delivered a speech designed to break morale: "On what are you basing this confidence of yours?... Do not let Hezekiah deceive you." Hezekiah took Sennacherib\'s letter and spread it before the LORD in the Temple: "Open your eyes, LORD, and see... listen to the words Sennacherib has sent to ridicule the living God." Isaiah delivered God\'s response. That night the angel of the LORD struck down 185,000 in the Assyrian camp. Sennacherib withdrew and was later assassinated by his own sons.' },
+
+{ id:'josiah-reform', era:'prophets', name:'Josiah\'s Reformation', year:-621, ref:'2 Kings 22–23', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'During Temple repairs, the Book of the Law was found. When it was read to Josiah, he tore his robes — he recognized how far Israel had strayed. He summoned all the people to Jerusalem, read the entire Book of the Covenant aloud, and renewed the covenant. He tore down every high place, smashed every Asherah pole, burned the bones of the pagan priests on their altars, and destroyed the altar at Bethel that Jeroboam had built. "Neither before nor after Josiah was there a king like him who turned to the LORD as he did" (2 Kgs 23:25). He died in battle at Megiddo at age thirty-nine.' },
+
+// ── EXILE & RETURN ────────────────────────────────────────────────────────
+{ id:'jeremiah-call', era:'exile', name:'Jeremiah Called', year:-627, ref:'Jeremiah 1', chapter:'ot/genesis/Genesis_1.html', people:['jeremiah'],
+  summary:'"Before I formed you in the womb I knew you, before you were born I set you apart; I appointed you as a prophet to the nations." Jeremiah protested: he did not know how to speak, he was too young. God touched his mouth and put his words in it. He prophesied for forty years under the last kings of Judah — watching every warning go unheeded, experiencing imprisonment, a cistern, and mockery. His confessions (Jer 11–20) are the most intimate prophetic self-disclosure in the OT. His greatest legacy: the New Covenant oracle of Jer 31:31-34.' },
+
+{ id:'first-deportation', era:'exile', name:'First Babylonian Deportation', year:-605, ref:'Daniel 1; 2 Kings 24', chapter:'ot/genesis/Genesis_1.html', people:['daniel'],
+  summary:'Nebuchadnezzar of Babylon came to Jerusalem in the third year of Jehoiakim\'s reign and besieged the city. He took Daniel, his three companions, and other young Judean nobles to Babylon for training in Babylonian wisdom. This first deportation began the seventy-year exile that Jeremiah had predicted. Daniel and his friends resolved not to defile themselves with the royal food and wine — and were found healthier than those who ate the royal rations. God gave Daniel the gift of interpreting visions and dreams.' },
+
+{ id:'first-temple-destroyed', era:'exile', name:'Temple Destroyed', year:-587, ref:'2 Kings 25; Lamentations', chapter:'ot/genesis/Genesis_1.html', people:['jeremiah'],
+  summary:'After Zedekiah\'s rebellion, Nebuchadnezzar besieged Jerusalem for eighteen months. The walls were breached, the Temple burned, the palace destroyed. Zedekiah\'s sons were executed before his eyes; then his eyes were put out, and he was taken to Babylon in chains. Jerusalem\'s population was deported. Jeremiah lamented in the book that bears his sorrow. The Psalms capture the exile\'s grief: "By the rivers of Babylon we sat and wept when we remembered Zion." The Ark of the Covenant was never seen again.' },
+
+{ id:'daniel-lions', era:'exile', name:'Daniel in the Lions\' Den', year:-539, ref:'Daniel 6', chapter:'ot/genesis/Genesis_1.html', people:['daniel'],
+  summary:'Under Darius the Mede, rival administrators had Daniel thrown into the lions\' den for praying toward Jerusalem. The king spent a sleepless night fasting. At dawn he ran to the den: "Daniel, servant of the living God, has your God, whom you serve continually, been able to rescue you from the lions?" Daniel was unharmed. The administrators who had accused him were thrown in and killed before they reached the floor. The king issued a decree that throughout his kingdom people must fear the God of Daniel.' },
+
+{ id:'cyrus-decree', era:'exile', name:'Cyrus Decree — Return Permitted', year:-539, ref:'Ezra 1; Isaiah 44:28', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'Cyrus the Great of Persia conquered Babylon and in his first year issued a decree: "The LORD, the God of heaven, has given me all the kingdoms of the earth and he has appointed me to build a temple for him at Jerusalem in Judah. Any of his people among you may go up..." This fulfilled Isaiah\'s prophecy written 150 years earlier naming Cyrus before his birth (Isa 44:28; 45:1). Around fifty thousand returned under Zerubbabel. The decree is confirmed in the Cyrus Cylinder discovered in 1879 — one of the great corroborations of biblical history.' },
+
+{ id:'temple-rebuilt', era:'exile', name:'Second Temple Completed', year:-516, ref:'Ezra 6; Haggai; Zechariah', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'The Temple foundation had been laid in 536 BC but work halted for fifteen years due to opposition. The prophets Haggai and Zechariah reinvigorated the builders. Haggai\'s message: "Is it a time for you yourselves to be living in your paneled houses, while this house remains a ruin?" The Temple was completed in 516 BC, exactly seventy years after the destruction of Solomon\'s Temple. The older men who had seen the first Temple wept at the comparison; the younger people shouted for joy.' },
+
+{ id:'ezra-torah', era:'exile', name:'Ezra Reads the Torah', year:-458, ref:'Nehemiah 8', chapter:'ot/genesis/Genesis_1.html', people:['ezra'],
+  summary:'Ezra the scribe stood on a wooden platform before the Water Gate and read the Book of the Law from daybreak till noon to all who could understand. The Levites explained the reading so the people understood. The entire assembly wept when they heard it. Nehemiah and Ezra said: "This day is holy to the LORD your God. Do not mourn or weep." For the first time in centuries, the Feast of Tabernacles was celebrated as prescribed. This public Torah reading is effectively the founding of the synagogue tradition.' },
+
+{ id:'nehemiah-wall', era:'exile', name:'Walls of Jerusalem Rebuilt', year:-445, ref:'Nehemiah 1–7', chapter:'ot/genesis/Genesis_1.html', people:['nehemiah'],
+  summary:'Nehemiah, cupbearer to Artaxerxes I, received permission and resources to rebuild Jerusalem\'s walls. He arrived secretly, surveyed the ruins by night, and rallied the people. The wall was rebuilt in fifty-two days despite sustained opposition — Sanballat\'s mockery, Tobiah\'s threats, a conspiracy to assassinate Nehemiah. Workers built with one hand and held a weapon with the other. When enemies heard it was done, "they were afraid and lost their self-confidence, because they realized that this work had been done with the help of our God" (Neh 6:16).' },
+
+// ── INTERTESTAMENTAL ──────────────────────────────────────────────────────
+{ id:'malachi', era:'intertestamental', name:'Malachi — Last OT Prophet', year:-432, ref:'Malachi 1–4', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'The final prophet of the OT canon addressed a community grown weary and cynical — priests who despised the altar, people who withheld tithes, husbands who divorced their wives, doubters who asked "Where is the God of justice?" Malachi\'s closing verses became the Old Testament\'s final words: God would send Elijah before the great and dreadful Day of the LORD. Then four centuries of prophetic silence. The NT identifies John the Baptist as the fulfillment (Matt 11:14; 17:12). Malachi\'s closing promise is the hinge on which both Testaments turn.' },
+
+{ id:'alexander-conquests', era:'intertestamental', name:'Alexander Conquers Persia', year:-334, ref:'Daniel 8 (prefigured)', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'Alexander the Great of Macedon swept through the Persian Empire in just thirteen years, from Greece through Anatolia, the Levant, Egypt, Persia, and into Central Asia. He died in Babylon at thirty-two. His conquests spread Greek language and culture — Hellenism — across the entire ancient world, creating the lingua franca (Koine Greek) in which the NT would be written four centuries later. Daniel 8\'s vision of a male goat from the west is widely interpreted as prefiguring Alexander\'s rapid conquests.' },
+
+{ id:'maccabean-revolt', era:'intertestamental', name:'Maccabean Revolt', year:-167, yearEnd:-164, ref:'1 Maccabees; Daniel 11', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'Antiochus IV Epiphanes ("God Manifest") desecrated the Jerusalem Temple — erecting an altar to Zeus and offering a pig — and banned Sabbath observance and circumcision on pain of death. The Maccabean family (Hasmoneans) led a guerrilla revolt. Three years later, Judas Maccabeus recaptured the Temple and rededicated it (165 BC) — the event celebrated by the feast of Hanukkah. The Maccabean period produced the expectation of bodily resurrection (2 Macc 7) and shaped the apocalyptic literature that provides the context for much of the NT.' },
+
+{ id:'rome-conquers-judea', era:'intertestamental', name:'Rome Conquers Judea', year:-63, ref:'Historical context', chapter:'ot/genesis/Genesis_1.html', people:[],
+  summary:'The Roman general Pompey entered Jerusalem, took the Hasmonean king Aristobulus II prisoner, and entered the Most Holy Place — though he did not loot the Temple treasury. Judea became a Roman client state. This inaugurated the Roman period in which the entire NT was written and the life of Jesus played out. Augustus\'s census (Luke 2:1), Herod\'s Temple renovation, the Pax Romana enabling Paul\'s missionary journeys, Roman roads, the crucifixion as a Roman execution method — all flow from this moment.' },
+
+{ id:'herod-temple', era:'intertestamental', name:'Herod\'s Temple Begun', year:-20, ref:'John 2:20', chapter:'nt/john/John_2.html', people:['herod-great'],
+  summary:'Herod the Great began a massive renovation of the Second Temple in approximately 20 BC, transforming it into one of the architectural wonders of the ancient world. The Temple Mount was expanded to 35 acres. The sanctuary itself was covered in gold and white marble, visible from miles away. Herod\'s Temple was still under construction when Jesus walked its courts — the disciples\' amazement ("What massive stones! What magnificent buildings!") and Jesus\'s response ("Not one stone here will be left on another; every one will be thrown down") frames the Olivet Discourse. The Temple was completed around AD 64 — only six years before its destruction.' },
+
+// ── NEW TESTAMENT ─────────────────────────────────────────────────────────
+{ id:'john-born', era:'nt', name:'John the Baptist Born', year:-5, ref:'Luke 1:5–25, 57–80', chapter:'nt/luke/Luke_1.html', people:['john-baptist','zechariah-nt','elizabeth'],
+  summary:'An elderly priest named Zechariah was chosen by lot to enter the Temple and burn incense. The angel Gabriel appeared and announced that his barren wife Elizabeth would bear a son — to be named John, filled with the Holy Spirit from birth, going before the Lord in the spirit and power of Elijah. Zechariah doubted and was struck mute until the birth. When he wrote "His name is John" on a tablet, his tongue was loosed. John was set apart as a Nazirite from birth, the last OT prophet and the herald of the Messiah.' },
+
+{ id:'jesus-born', era:'nt', name:'Jesus Born in Bethlehem', year:-5, ref:'Matthew 1–2; Luke 1–2', chapter:'nt/luke/Luke_2.html', people:['jesus','mary','joseph-nt'],
+  summary:'The eternal Word became flesh in a stable in Bethlehem. Augustus\'s census brought Joseph and Mary from Nazareth to the city of David. No room in the inn; a feeding trough for a cradle. Shepherds in fields nearby received the angelic announcement and came to verify it. Magi from the east followed a star, offered gold, frankincense, and myrrh, and were warned in a dream not to return to Herod. The family fled to Egypt; Herod massacred the infants of Bethlehem. When Herod died, they returned — to Nazareth, not Judea, in fulfillment of prophecy.' },
+
+{ id:'jesus-baptism', era:'nt', name:'Baptism of Jesus', year:27, ref:'Matthew 3; Mark 1; Luke 3; John 1', chapter:'nt/matthew/Matthew_3.html', people:['jesus','john-baptist'],
+  summary:'Jesus came from Galilee to be baptised by John. John protested — he needed to be baptised by Jesus. Jesus insisted: "It is proper for us to do this to fulfill all righteousness." When Jesus came up from the water, the Spirit descended on him like a dove, and a voice from heaven: "This is my Son, whom I love; with him I am well pleased." The Trinity was present and active at the inauguration of Jesus\'s public ministry. The Spirit then immediately led him into the wilderness for forty days of temptation.' },
+
+{ id:'sermon-mount', era:'nt', name:'Sermon on the Mount', year:28, ref:'Matthew 5–7', chapter:'nt/matthew/Matthew_5.html', people:['jesus'],
+  summary:'On a hillside overlooking the Sea of Galilee, Jesus delivered the charter of the kingdom of God. The Beatitudes reversed every human expectation of blessing. The antitheses ("You have heard it said... but I tell you") deepened the Torah to its intended heart-level demands. The Lord\'s Prayer gave the pattern of all Christian prayer. "Ask, seek, knock." "Do unto others as you would have them do to you." "Build on the rock, not on the sand." The crowds were amazed because he taught as one who had authority, not as their teachers of the law.' },
+
+{ id:'peter-confession', era:'nt', name:'Peter\'s Confession', year:29, ref:'Matthew 16:13–20', chapter:'nt/matthew/Matthew_16.html', people:['jesus','peter'],
+  summary:'"Who do people say the Son of Man is?" Elijah, John the Baptist, Jeremiah, one of the prophets. "But what about you — who do you say I am?" Peter: "You are the Messiah, the Son of the living God." Jesus: "Blessed are you, Simon son of Jonah, for this was not revealed to you by flesh and blood, but by my Father in heaven." On this rock — this confession — Jesus declared he would build his church and the gates of Hades would not overcome it. From this point Jesus began to teach explicitly about his coming death and resurrection.' },
+
+{ id:'transfiguration', era:'nt', name:'Transfiguration', year:29, ref:'Matthew 17:1–13', chapter:'nt/matthew/Matthew_17.html', people:['jesus','peter','moses'],
+  summary:'Jesus took Peter, James, and John up a high mountain. His face shone like the sun; his clothes became as white as light. Moses and Elijah appeared and talked with him — the Law and the Prophets bearing witness to the Son. A bright cloud enveloped them and God\'s voice spoke: "This is my Son, whom I love; with him I am well pleased. Listen to him!" The disciples fell face down in terror. When they looked up, they saw only Jesus. "Tell no one what you have seen until the Son of Man is raised from the dead."' },
+
+{ id:'lazarus-raised', era:'nt', name:'Lazarus Raised', year:30, ref:'John 11', chapter:'nt/john/John_11.html', people:['jesus','lazarus','martha','mary-bethany'],
+  summary:'"I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die. Do you believe this?" He wept. Then he called into the tomb: "Lazarus, come out!" The dead man came out, still wrapped in burial cloths. Many Jews believed; many reported it to the Pharisees. The Sanhedrin convened that very day: this man is performing many signs — if we let him go on, everyone will believe in him. From that day on they plotted to take his life.' },
+
+{ id:'triumphal-entry', era:'nt', name:'Triumphal Entry', year:30, ref:'Matthew 21; John 12', chapter:'nt/matthew/Matthew_21.html', people:['jesus'],
+  summary:'Jesus entered Jerusalem on a donkey — deliberately fulfilling Zechariah 9:9 — while the crowd spread cloaks and palm branches and shouted Hosanna to the Son of David. The Pharisees told him to rebuke the crowds. He replied: "If they keep quiet, the stones will cry out." He drove the money-changers from the Temple: "My house will be called a house of prayer, but you are making it a den of robbers." He taught in the Temple courts daily; the chief priests and teachers of the law looked for a way to kill him, but were afraid of the people.' },
+
+{ id:'last-supper', era:'nt', name:'The Last Supper', year:30, ref:'Matthew 26; Luke 22; 1 Corinthians 11', chapter:'nt/matthew/Matthew_26.html', people:['jesus','peter'],
+  summary:'On the night before his death, Jesus shared a final Passover meal with his twelve disciples. He took bread and broke it: "This is my body given for you; do this in remembrance of me." He took a cup: "This cup is the new covenant in my blood, which is poured out for you." He washed his disciples\' feet as a model of servant leadership. He promised the Holy Spirit as another Advocate. "Greater love has no one than this: to lay down one\'s life for one\'s friends." Then he prayed the longest prayer recorded in the Gospels (John 17).' },
+
+{ id:'crucifixion', era:'nt', name:'Crucifixion and Death', year:30, ref:'Matthew 27; Mark 15; Luke 23; John 19', chapter:'nt/matthew/Matthew_27.html', people:['jesus','pilate','caiaphas'],
+  summary:'Tried by Annas, Caiaphas, Herod Antipas, and Pontius Pilate — declared innocent three times by Pilate — Jesus was flogged, crowned with thorns, and led to Golgotha. He was crucified at nine in the morning between two criminals. Darkness covered the land from noon to three. At three he cried "My God, my God, why have you forsaken me?" and died. The Temple curtain tore from top to bottom. The centurion: "Surely he was the Son of God." Joseph of Arimathea laid him in a new tomb before sundown. The debt of humanity was paid. The ransom was complete.' },
+
+{ id:'resurrection', era:'nt', name:'The Resurrection', year:30, ref:'Matthew 28; Mark 16; Luke 24; John 20', chapter:'nt/matthew/Matthew_28.html', people:['jesus','mary-magdalene','peter'],
+  summary:'On the first day of the week, Mary Magdalene and the other women went to the tomb and found the stone rolled away. An angel: "He is not here; he has risen, just as he said." He appeared to Mary Magdalene, to two on the Emmaus road, to the eleven, to Peter specifically (Luke 24:34; 1 Cor 15:5), and over a period of forty days to more than five hundred people (1 Cor 15:6). The resurrection is the ground of the entire Christian gospel: "If Christ has not been raised, your faith is futile; you are still in your sins" (1 Cor 15:17).' },
+
+{ id:'ascension', era:'nt', name:'The Ascension', year:30, ref:'Acts 1:1–11; Luke 24:50–53', chapter:'nt/acts/Acts_1.html', people:['jesus'],
+  summary:'Forty days after the resurrection, on the Mount of Olives, Jesus was lifted up and a cloud took him from their sight. Two angels appeared: "This same Jesus, who has been taken from you into heaven, will come back in the same way you have seen him go into heaven." The disciples returned to Jerusalem with great joy and were continually at the Temple praising God. The ascension was not abandonment but enthronement — Jesus took his seat at the right hand of the Father as the exalted Lord of the universe.' },
+
+{ id:'pentecost', era:'nt', name:'Pentecost — Church Born', year:30, ref:'Acts 2', chapter:'nt/acts/Acts_2.html', people:['peter'],
+  summary:'Fifty days after Passover, the disciples were together when a sound like a violent wind filled the house and tongues of fire rested on each of them. They were filled with the Holy Spirit and began speaking in other languages. The crowds from every nation heard them in their own tongue. Peter stood and preached: Jesus of Nazareth, handed over by God\'s set purpose, killed by lawless men, but raised by God. "Therefore let all Israel be assured of this: God has made this Jesus, whom you crucified, both Lord and Messiah." Three thousand believed and were baptised.' },
+
+{ id:'paul-conversion', era:'nt', name:'Paul\'s Conversion', year:34, ref:'Acts 9; Galatians 1', chapter:'nt/acts/Acts_9.html', people:['paul'],
+  summary:'Saul of Tarsus was traveling to Damascus with letters authorizing him to arrest Christians when a light from heaven struck him to the ground. A voice: "Saul, Saul, why do you persecute me?" "Who are you, Lord?" "I am Jesus, whom you are persecuting." He was blind for three days, fasting, until Ananias came, called him "Brother Saul," and his sight was restored. He was baptised, immediately began proclaiming Jesus in the synagogues, and retreated to Arabia for an unknown period. The most effective opponent of the church became its most effective missionary.' },
+
+{ id:'jerusalem-council', era:'nt', name:'Jerusalem Council', year:49, ref:'Acts 15; Galatians 2', chapter:'nt/acts/Acts_15.html', people:['paul','peter','barnabas'],
+  summary:'The question threatening to fracture the early church: must Gentile converts be circumcised and keep the Law of Moses? The Jerusalem Council was convened. Peter testified to the Holy Spirit falling on Cornelius\'s household without circumcision. Paul and Barnabas reported signs and wonders among the Gentiles. James gave the judgment: do not make it difficult for Gentiles turning to God — only abstain from food sacrificed to idols, blood, strangled meat, and sexual immorality. The decision ratified the universal scope of the gospel and freed the Gentile mission.' },
+
+{ id:'pauls-letters', era:'nt', name:'Paul Writes His Letters', year:49, yearEnd:67, ref:'Romans–Philemon', chapter:'nt/acts/Acts_13.html', people:['paul'],
+  summary:'From approximately AD 49 to 67, Paul wrote the thirteen letters preserved in the NT — some from prison (Ephesians, Philippians, Colossians, Philemon), some from the field of missionary work (Galatians, 1-2 Thessalonians, 1-2 Corinthians), some as pastoral instruction (Romans, Titus, 1-2 Timothy). Romans alone contains the fullest exposition of justification, sin, Israel, ethics, and election in any single ancient document. Peter recognized these letters as Scripture in his own lifetime (2 Pet 3:15-16). No human author has shaped Christian thought as deeply.' },
+
+{ id:'temple-destroyed', era:'nt', name:'Temple Destroyed', year:70, ref:'Matthew 24; Luke 19:41–44', chapter:'nt/matthew/Matthew_24.html', people:[],
+  summary:'Forty years after Jesus\'s prophecy — "Not one stone here will be left on another; every one will be thrown down" — the Roman general Titus besieged Jerusalem for five months. Over a million people died in the siege, by Josephus\'s account. The Temple was burned in August AD 70 and systematically dismantled. The Arch of Titus in Rome still depicts the menorah and Temple treasures being carried in triumph. The sacrificial system ceased permanently. The church, scattered across the Roman world, survived. The destruction fulfilled every prediction Jesus had made in the Olivet Discourse.' },
+
+{ id:'revelation', era:'nt', name:'Revelation Written', year:95, ref:'Revelation 1–22', chapter:'nt/acts/Acts_28.html', people:['john-ap'],
+  summary:'The apostle John, exiled on the island of Patmos under Domitian\'s persecution, received a series of visions from the risen, glorified Christ. Seven letters to seven churches. Four living creatures and twenty-four elders. Seals, trumpets, bowls. The great dragon and the Lamb. Babylon the Great and the New Jerusalem. "I am the Alpha and the Omega, the First and the Last, the Beginning and the End." The Scriptures that began with creation end with new creation: "He who was seated on the throne said, \'I am making everything new!\' ... It is done." The entire biblical narrative arrives at its intended destination.' },
+];
+
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// EVENT RENDERING — Batch 2
+// ══════════════════════════════════════════════════════════════════════════
+
+function renderEvents(g) {
+  const gEvents = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
+  if (!gEvents) return;
+  // Clear
+  while (gEvents.firstChild) gEvents.removeChild(gEvents.firstChild);
+
+  const dimAll = currentEra !== 'all';
+
+  EVENTS.forEach(ev => {
+    const x = yearToX(ev.year);
+    const color = ERA_HEX[ev.era] || '#8b6914';
+    const dimmed = dimAll && ev.era !== currentEra;
+
+    // Vertical stem from era bar down to just above axis
+    const stemTop = TL.ERA_BAR_Y + TL.ERA_BAR_H;
+    const stemBot = TL.EVENT_STEM;
+
+    svgEl_('line', {
+      x1: x, y1: stemTop, x2: x, y2: stemBot,
+      stroke: color, 'stroke-width': '0.8',
+      opacity: dimmed ? '0.2' : '0.55',
+    }, gEvents);
+
+    // Triangle marker (pointing down toward axis)
+    const tw = 7, th = 8;
+    const tri = svgEl_('polygon', {
+      points: `${x},${stemBot} ${x-tw},${stemBot-th} ${x+tw},${stemBot-th}`,
+      fill: color, opacity: dimmed ? '0.15' : '0.88',
+      'data-clickable': '1', style: 'cursor:pointer',
+    }, gEvents);
+    tri.addEventListener('click', () => openDetail(ev));
+
+    // Invisible wide hit target
+    const hit = svgEl_('rect', {
+      x: x - 12, y: stemBot - th - 4, width: 24, height: th + 8,
+      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
+    }, gEvents);
+    hit.addEventListener('click', () => openDetail(ev));
+
+    // Label — stagger alternately above/below the stem midpoint to reduce overlap
+    const evIndex = EVENTS.indexOf(ev);
+    const labelY = stemTop + (evIndex % 2 === 0 ? 18 : 34);
+    const labelEl = svgText(ev.name, {
+      x, y: labelY,
+      'text-anchor': 'middle',
+      'font-family': "'Cinzel', serif",
+      'font-size': '7.5',
+      fill: color,
+      opacity: dimmed ? '0.2' : '0.82',
+      'pointer-events': 'none',
+    }, gEvents);
+  });
+}
+
+// Patch initTimeline to call renderEvents after renderContent
+const _origInit = initTimeline;
+initTimeline = function() {
+  _origInit.call(this);
+  // renderContent created g-events — now populate it
+  const gInner = document.getElementById('g-inner');
+  if (gInner) renderEvents(gInner);
+};
+
+// Patch jumpToEra to dim events outside era
+const _origJump = jumpToEra;
+jumpToEra = function(era) {
+  _origJump.call(this, era);
+  // Re-render events with current era dimming
+  const gInner = document.getElementById('g-inner');
+  if (gInner) setTimeout(() => renderEvents(gInner), 10);
+};
+
+// Hash deep-link support
+function handleTimelineHash() {
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+  const ev = EVENTS.find(e => e.id === hash);
+  if (!ev) return;
+  // Jump to that era and open the detail
+  const eraBtn = document.querySelector(`.era-btn[data-era="${ev.era}"]`);
+  if (eraBtn) {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    eraBtn.classList.add('active');
+    currentEra = ev.era;
+  }
+  setTimeout(() => {
+    jumpToEra(ev.era);
+    setTimeout(() => openDetail(ev), 500);
+  }, 200);
+}
+
+
 window.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 768) {
     document.getElementById('legend-mobile')?.classList.add('collapsed');
@@ -864,7 +1205,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   initTimeline();
 
-  // Hash deep-link — handled in Batch 2 once events exist
+  handleTimelineHash();
 });
 </script>
 </body>
