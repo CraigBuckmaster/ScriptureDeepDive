@@ -3847,6 +3847,8 @@ const bioPanel = document.getElementById('bio-panel');
 
 // Module-level zoom — shared between render() and jumpToCurrentEra()
 let zoomBehavior = null;
+let _initialRenderDone = false; // guard: only auto-centre on Adam once
+let _savedTransform = null; // preserved across resize re-renders
 
 function render(filterEra) {
   svg.selectAll('*').remove();
@@ -4018,14 +4020,21 @@ function render(filterEra) {
       .text(d.name);
   });
 
-  // Auto-centre on Adam initially
+  // Auto-centre on Adam only on the VERY FIRST render.
+  // On subsequent renders (resize, era-switch) preserve the current
+  // zoom/pan so the user's position doesn't reset to Adam.
   const adamNode = allNodes.find(n => n.data.id === 'adam');
-  if (adamNode) {
+  if (adamNode && !_initialRenderDone) {
+    _initialRenderDone = true;
     const isMobile = window.innerWidth <= 768;
     const initialScale = isMobile ? 0.45 : 0.75;
     const initialX = W / 2 - adamNode.x;
     const initialY = (isMobile ? 40 : 60) - adamNode.y;
     svg.call(zoomBehavior.transform, d3.zoomIdentity.translate(initialX, initialY).scale(initialScale));
+  } else if (_initialRenderDone && _savedTransform) {
+    // Restore the saved transform so nodes stay where the user left them
+    svg.call(zoomBehavior.transform, _savedTransform);
+    _savedTransform = null;
   }
 
   // Mobile: update hint text
@@ -4341,7 +4350,12 @@ function toggleMobileLegend() {
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────
-window.addEventListener('resize', () => render(currentEra));
+window.addEventListener('resize', () => {
+  // Save current transform before re-render so we can restore it
+  const svgNode = document.getElementById('tree-svg');
+  _savedTransform = svgNode ? d3.zoomTransform(svgNode) : null;
+  render(currentEra);
+});
 render('all');
 // ── Deep-link support: people.html#person-id opens bio directly ──────────
 function openPersonById(id) {
