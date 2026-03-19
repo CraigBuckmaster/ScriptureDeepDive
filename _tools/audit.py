@@ -327,8 +327,8 @@ for p, b, c in chapters:
     with open(p) as f: h = f.read()
     book_dir_for_ch = os.path.basename(os.path.dirname(p))
     test = 'ot' if book_dir_for_ch in OT_BOOKS else 'nt'
-    expected_d1 = f'../verses/{test}/{book_dir_for_ch}.js'
-    expected_d2 = f'../../verses/{test}/{book_dir_for_ch}.js'
+    expected_d1 = f'../verses/niv/{test}/{book_dir_for_ch}.js'
+    expected_d2 = f'../../verses/niv/{test}/{book_dir_for_ch}.js'
     if expected_d1 not in h and expected_d2 not in h:
         wrong_verses.append(f'{b} {c}')
 if wrong_verses:
@@ -469,7 +469,7 @@ if not m:
 else:
     ok(f'SW version: {m.group(1)}')
 
-if "'/verses/verses.js'" in sw:
+if "'/verses/niv/verses.js'" in sw:
     ok('verses/verses.js in SW CORE cache')
 else:
     fail("'/verses/verses.js' not in SW CORE cache")
