@@ -857,7 +857,15 @@ def btn_row(*btns):
         for cls, lbl, pid in btns)
     return f'<div class="btn-row">{inner}</div>'
 
-def verse(num, text):
+def verse(num, text, book='', ch=0):
+    """Generate a verse span. If book+ch provided, text is stored in data attrs
+    and rendered by translation.js. Otherwise falls back to inline text."""
+    if book and ch:
+        return (f'<span class="verse-text">'
+                f'<span class="verse-num">{num}</span>'
+                f'<span class="verse-body" data-book="{book}" data-ch="{ch}" data-v="{num}"></span>'
+                f'</span>')
+    # Fallback: hardcoded text (for backwards compatibility)
     return f'<span class="verse-text"><span class="verse-num">{num}</span>{text}</span>'
 
 def heb_panel(pid, words, is_nt=False):
