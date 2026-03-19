@@ -280,6 +280,7 @@ REGISTRY = [
     ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
+    ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
     ('luke',     'Luke',      24, 24, 'NT', 'nt'),
@@ -293,6 +294,7 @@ BOOK_PREFIX = {
     'exodus':   'ex',
     'ruth':     'ru',
     'proverbs': 'pr',
+    'leviticus':'lev',
     'matthew':  'mt',
     'mark':     'mk',
     'luke':     'lk',
@@ -379,6 +381,7 @@ COMMENTATOR_SCOPE = {
     # narrator, characters, plot, rhetoric.
     'rhoads':    ['mark'],
     'keener':    ['acts'],
+    'milgrom':   ['leviticus'],  # Jacob Milgrom, Anchor Bible Leviticus (3 vols., 1991–2001)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -416,6 +419,26 @@ BOOK_META = {
         'vhl_time':   ['day','days','night','morning','year','generation','Sabbath','Passover'],
         'vhl_key':    ['covenant','commandment','law','holy','glory','tabernacle','sacrifice',
                        'redeem','deliver','sign','wonder','plague'],
+    },
+    'leviticus': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Moses, c.1446&ndash;1406 BC. Leviticus records the laws '
+                 'given to Israel at Sinai immediately after the tabernacle was erected (Exod 40). '
+                 'The Hebrew title <em>Wayyiqraʾ</em> (“And He called”) captures the book’s '
+                 'essence: God summons Israel into a priestly relationship. The book covers '
+                 'approximately one month at Sinai between Exodus 40:17 and Numbers 1:1.<br><br>'
+                 '<strong>Date:</strong> c.1446 BC (early Exodus date). The priestly legislation '
+                 'is internally coherent and reflects detailed tabernacle-era conditions.<br><br>'
+                 '<strong>Theme:</strong> Holiness — <em>qādōš</em> (holy) appears 87 times. '
+                 'The governing call: “Be holy, for I the Lord your God am holy” (19:2). '
+                 'Leviticus teaches Israel to approach a holy God through the sacrificial system, '
+                 'maintain covenant purity, and embody holiness in every dimension of life.'),
+        'vhl_places': [],
+        'vhl_people': ['Aaron', 'Moses', 'Nadab', 'Abihu', 'Eleazar', 'Ithamar'],
+        'vhl_time':   [],
+        'vhl_key':    ['holy', 'holiness', 'atonement', 'offering', 'blood', 'clean', 'unclean',
+                       'priest', 'sacrifice', 'burnt offering', 'sin offering', 'guilt offering',
+                       'fellowship offering', 'grain offering', 'tabernacle', 'tent of meeting'],
     },
     'ruth': {
         'is_nt': False,
@@ -1225,6 +1248,7 @@ def commentary_panel(pid, commentator_key, notes):
         'marcus':    ('Marcus \u2014 Anchor Bible',     'Joel Marcus, Mark 1\u20138 / 8\u201316, Anchor Bible (2000/2009) \u2014 Scholarly Paraphrase'),
         'rhoads':    ('Rhoads \u2014 Mark as Story',   'David Rhoads & Donald Michie, Mark as Story (3rd ed., 2012) \u2014 Scholarly Paraphrase'),
         'keener':    ('Keener \u2014 Acts Commentary',  'Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012\u20132015) \u2014 Scholarly Paraphrase'),
+        'milgrom':   ('Milgrom \u2014 Anchor Bible',    'Jacob Milgrom, Leviticus 1\u20136 / 17\u201322 / 23\u201327, Anchor Bible (1991\u20132001) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1479,6 +1503,7 @@ def build_chapter(book_dir, ch, data):
         if 'catena'     in sec and in_scope('catena'):     btns.append(('catena',    'Catena Aurea',f'{sid}-catena'))
         if 'marcus'     in sec and in_scope('marcus'):     btns.append(('marcus',    'Marcus',      f'{sid}-marcus'))
         if 'rhoads'     in sec and in_scope('rhoads'):     btns.append(('rhoads',    'Rhoads',      f'{sid}-rhoads'))
+        if 'milgrom'    in sec and in_scope('milgrom'):    btns.append(('milgrom',   'Milgrom',     f'{sid}-milgrom'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -1502,6 +1527,7 @@ def build_chapter(book_dir, ch, data):
         if 'marcus'   in sec and in_scope('marcus'):    panels_html += commentary_panel(f'{sid}-marcus',   'marcus',    sec['marcus'])
         if 'rhoads'   in sec and in_scope('rhoads'):    panels_html += commentary_panel(f'{sid}-rhoads',   'rhoads',    sec['rhoads'])
         if 'keener'   in sec and in_scope('keener'):    panels_html += commentary_panel(f'{sid}-keener',   'keener',    sec['keener'])
+        if 'milgrom'  in sec and in_scope('milgrom'):   panels_html += commentary_panel(f'{sid}-milgrom',  'milgrom',   sec['milgrom'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
