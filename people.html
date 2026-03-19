@@ -522,6 +522,11 @@ body {
 }
 .tree-hint.hidden { opacity: 0; }
 
+/* ── MOBILE CONTROLS BAR ───────────────────────────────────────── */
+#mobile-controls {
+  display: none; /* hidden on desktop */
+}
+
 /* ═══════════════════════════════════════════════════════════════
    MOBILE — breakpoint ≤ 768px
    ═══════════════════════════════════════════════════════════════ */
@@ -605,6 +610,55 @@ body {
   #jump-btn { display: block; }
 }
 
+  /* Mobile controls bar */
+  #mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .8rem;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border2);
+    gap: .5rem;
+    flex-shrink: 0;
+  }
+  #mobile-controls button {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    color: var(--gold-dim);
+    font-family: 'Cinzel', serif;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    padding: .35rem .6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  #mobile-controls button:active {
+    background: rgba(201,168,76,.12);
+    color: var(--gold);
+  }
+  #mobile-era-label {
+    font-family: 'Cinzel', serif;
+    font-size: .6rem;
+    letter-spacing: .1em;
+    color: var(--text-muted);
+    text-align: center;
+    flex: 1;
+    text-transform: uppercase;
+  }
+
+  /* Hide old absolute-positioned jump btn and reposition legend on mobile */
+  #jump-btn { display: none !important; }
+  .legend {
+    bottom: auto;
+    top: .5rem;
+    left: .5rem;
+  }
+
 /* Very small screens */
 @media (max-width: 380px) {
   .era-btn {
@@ -644,6 +698,26 @@ body {
   <button class="era-btn" data-era="prophets">Divided Kingdom</button>
   <button class="era-btn" data-era="exile">Exile &amp; Return</button>
   <button class="era-btn" data-era="nt">New Testament</button>
+</div>
+
+<!-- MOBILE CONTROLS BAR (hidden on desktop) -->
+<div id="mobile-controls">
+  <button id="mobile-legend-btn" onclick="toggleLegend()">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
+      <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
+    </svg>
+    Legend
+  </button>
+  <span id="mobile-era-label">All Eras</span>
+  <button id="mobile-jump-btn" onclick="jumpToCurrentEra()">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="7" cy="7" r="2.5"/>
+      <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
+      <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
+    </svg>
+    Centre
+  </button>
 </div>
 
 <!-- MAIN LAYOUT -->
@@ -3973,6 +4047,12 @@ document.querySelectorAll('.era-btn').forEach(btn => {
     btn.classList.add('active');
     currentEra = btn.dataset.era;
     render(currentEra);
+    // Update mobile era label
+    const mobileLabel = document.getElementById('mobile-era-label');
+    if (mobileLabel) {
+      mobileLabel.textContent = currentEra === 'all' ? 'All Eras'
+        : (ERA_NAMES[currentEra] || currentEra);
+    }
   });
 });
 
