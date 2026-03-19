@@ -267,6 +267,12 @@ EXTRA_CSS = '''
 .person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);
   transition:border-color .15s,color .15s;}
 .person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
+/* ── Translation toggle ──────────────────────────────────────────── */
+.translation-toggle{display:inline-flex;gap:.25rem;align-items:center;margin-left:.5rem;}
+.translation-btn{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .5rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+.translation-btn:hover{color:var(--gold);border-color:var(--gold-dim);}
+.translation-btn.active{background:rgba(201,168,76,.15);border-color:var(--gold-dim);color:var(--gold);}
+.verse-body{display:inline;}
 '''
 
 REGISTRY = [
@@ -1347,7 +1353,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             f'<script src="../verses/{book_dir_test}/{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name}_{ch}.html";</script>\n' +
-            '<script src="../qnav.js"></script>\n</body></html>')
+            '<script src="../qnav.js"></script>\n<script src="../translation.js"></script>\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     return path
