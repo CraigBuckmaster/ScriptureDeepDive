@@ -10,221 +10,299 @@
 <style>
 /* ── TOKENS ───────────────────────────────────────────────────────── */
 :root {
-  --bg:      #0c0a07; --bg2: #141008; --bg3: #1a1508;
-  --border:  #332810; --border2: #2a2010;
-  --gold:    #c9a84c; --gold-dim: #7a6020; --gold-bright: #e8c870;
-  --text:    #f0e8d8; --text-dim: #b8a880; --text-muted: #6a5a38;
+  --bg:#0c0a07; --bg2:#141008; --bg3:#1a1508;
+  --border:#332810; --border2:#2a2010;
+  --gold:#c9a84c; --gold-dim:#7a6020; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a880; --text-muted:#6a5a38;
   /* Era colours — all ≥4.5:1 contrast on parchment #c8a86a */
-  --era-primeval:  #523d0b; --era-patriarch: #4b395f;
-  --era-exodus:    #26472e; --era-judges:    #503d18;
-  --era-kingdom:   #304153; --era-prophets:  #653030;
-  --era-exile:     #29444d; --era-nt:        #46370f;
-  --era-intertestamental: #4a3e27;
-
-  /* Timeline canvas colours */
-  --tl-bg:    #d4b483;
-  --tl-bg2:   #c8a46a;
-  --tl-ink:   #3a2a10;
-  --tl-ink2:  #5a4020;
-  --tl-axis:  #4a3418;
+  --era-primeval:#523d0b; --era-patriarch:#4b395f;
+  --era-exodus:#26472e;   --era-judges:#503d18;
+  --era-kingdom:#304153;  --era-prophets:#653030;
+  --era-exile:#29444d;    --era-nt:#46370f;
+  --era-intertestamental:#4a3e27;
+  /* Timeline canvas */
+  --tl-bg:#d4b483; --tl-bg2:#c8a46a;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { height: 100%; }
-body {
-  height: 100%; overflow: hidden;
-  background: var(--bg); color: var(--text);
-  font-family: 'Source Sans 3', sans-serif;
-  display: flex; flex-direction: column;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{
+  height:100%;overflow:hidden;
+  background:var(--bg);color:var(--text);
+  font-family:'Source Sans 3',sans-serif;
+  display:flex;flex-direction:column;
 }
 
-/* ── SITE NAV ─────────────────────────────────────────────────────── */
-.site-nav {
-  display: flex; align-items: center; padding: .6rem 1rem;
-  border-bottom: 1px solid var(--border); background: var(--bg2);
-  flex-shrink: 0; gap: 1rem; height: 44px;
+/* ── CANONICAL NAV/BUTTON STYLES ─────────────────────────────────── */
+.site-nav{
+  display:flex;align-items:center;padding:.6rem 1rem;
+  border-bottom:1px solid var(--border);background:var(--bg2);
+  flex-shrink:0;gap:1rem;height:44px;
 }
-.nav-back {
-  display: flex; align-items: center; gap: .4rem; color: var(--text-muted);
-  text-decoration: none; font-family: 'Cinzel', serif; font-size: .6rem;
-  letter-spacing: .14em; text-transform: uppercase; transition: color .15s;
+.nav-back{
+  display:flex;align-items:center;gap:.4rem;
+  color:var(--text-dim);text-decoration:none;
+  font-family:'Cinzel',serif;font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;transition:color .15s;
 }
-.nav-back:hover { color: var(--gold); }
-.nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
-.nav-center { flex: 1; text-align: center; }
-.nav-title { font-family: 'Cinzel', serif; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dim); }
-.nav-links { display: flex; gap: .8rem; }
-.nav-link { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color .15s; }
-.nav-link:hover { color: var(--gold); }
+.nav-back:hover{color:var(--gold);}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;}
+.nav-center{flex:1;text-align:center;}
+.nav-title{
+  font-family:'Cinzel',serif;font-size:.75rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);
+}
+.nav-links{display:flex;gap:.5rem;}
+.nav-link{
+  font-family:'Cinzel',serif;font-size:.58rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-dim);text-decoration:none;
+  padding:.28rem .6rem;border:1px solid transparent;
+  border-radius:4px;white-space:nowrap;
+  transition:color .15s,border-color .15s;
+}
+.nav-link:hover{color:var(--gold);border-color:var(--border);}
 
 /* ── ERA FILTER STRIP ─────────────────────────────────────────────── */
-.era-filters {
-  padding: .6rem 1.2rem; border-bottom: 1px solid var(--border2);
-  display: flex; flex-wrap: wrap; gap: .3rem;
-  align-items: center; background: var(--bg2); flex-shrink: 0;
+.era-filters{
+  padding:.55rem 1.2rem;border-bottom:1px solid var(--border2);
+  display:flex;flex-wrap:wrap;gap:.3rem;
+  align-items:center;background:var(--bg2);flex-shrink:0;
 }
-.filter-label { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); margin-right: .2rem; flex-shrink: 0; }
-.era-btn {
-  font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .1em;
-  text-transform: uppercase; padding: .26rem .65rem; border-radius: 3px;
-  border: 1px solid var(--border); background: transparent; color: var(--text-dim);
-  cursor: pointer; white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
+.filter-label{
+  font-family:'Cinzel',serif;font-size:.55rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-muted);margin-right:.2rem;flex-shrink:0;
 }
-.era-btn:hover { border-color: var(--border2); color: var(--text); }
-.era-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
+.era-btn{
+  font-family:'Cinzel',serif;font-size:.58rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.26rem .65rem;border-radius:4px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--text-dim);cursor:pointer;white-space:nowrap;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.era-btn:hover{border-color:var(--border2);color:var(--text);}
+.era-btn.active{
+  background:rgba(201,168,76,.12);
+  border-color:var(--gold-dim);color:var(--gold);
+}
 
-/* ── MOBILE CONTROLS BAR ──────────────────────────────────────────── */
-#mobile-controls { display: none; }
-#legend-mobile-wrap { display: none; }
+/* ── MOBILE CONTROLS ──────────────────────────────────────────────── */
+#mobile-controls{display:none;}
+#legend-mobile-wrap{display:none;}
 
 /* ── MAIN LAYOUT ──────────────────────────────────────────────────── */
-.main-layout { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+.main-layout{display:flex;flex:1;overflow:hidden;min-height:0;}
 
 /* ── TIMELINE PANEL ───────────────────────────────────────────────── */
-#timeline-panel {
-  flex: 1; min-height: 0; min-width: 0;
-  position: relative; overflow: hidden;
-  background: var(--tl-bg);
-  cursor: grab;
-  touch-action: none;   /* prevent browser scroll from intercepting */
+#timeline-panel{
+  flex:1;min-height:0;min-width:0;
+  position:relative;overflow:hidden;
+  background:var(--tl-bg);
+  cursor:grab;touch-action:none;
 }
-#timeline-panel:active { cursor: grabbing; }
-#timeline-panel.panning { cursor: grabbing; user-select: none; }
+#timeline-panel:active{cursor:grabbing;}
+#timeline-panel.panning{cursor:grabbing;user-select:none;}
+#timeline-svg{position:absolute;inset:0;touch-action:none;}
 
-/* The SVG fills the panel absolutely — same trick as map */
-#timeline-svg {
-  position: absolute;
-  inset: 0;
-  touch-action: none;
+/* ── FLOAT CONTROLS ───────────────────────────────────────────────── */
+.tl-float-controls{
+  position:absolute;bottom:1.2rem;right:1rem;
+  display:flex;flex-direction:column;gap:.4rem;z-index:50;
 }
+.tl-float-btn{
+  background:rgba(12,10,7,.92);border:1px solid var(--border);
+  color:var(--text-dim);font-family:'Cinzel',serif;font-size:.58rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.38rem .7rem;border-radius:4px;cursor:pointer;
+  white-space:nowrap;transition:background .15s,color .15s,border-color .15s;
+  display:flex;align-items:center;gap:.32rem;
+  box-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.tl-float-btn:hover{background:#1a1508;color:var(--gold);border-color:var(--gold-dim);}
+.tl-float-btn.active{color:var(--gold);border-color:var(--gold-dim);background:rgba(201,168,76,.1);}
 
-/* ── FLOATING CONTROLS (desktop) ──────────────────────────────────── */
-.tl-float-controls {
-  position: absolute; bottom: 1.2rem; right: 1rem;
-  display: flex; flex-direction: column; gap: .4rem; z-index: 50;
-  pointer-events: all;
+/* ── ZOOM BUTTONS ─────────────────────────────────────────────────── */
+.tl-zoom-controls{
+  position:absolute;bottom:1.2rem;left:1rem;
+  display:flex;gap:.3rem;z-index:50;
 }
-.tl-float-btn {
-  background: rgba(12,10,7,.9); border: 1px solid var(--border);
-  color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: .58rem;
-  letter-spacing: .1em; padding: .38rem .65rem; border-radius: 4px; cursor: pointer;
-  white-space: nowrap; transition: background .15s, color .15s;
-  display: flex; align-items: center; gap: .32rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+.tl-zoom-btn{
+  background:rgba(12,10,7,.92);border:1px solid var(--border);
+  color:var(--text-dim);font-family:'Cinzel',serif;font-size:.8rem;
+  width:30px;height:30px;border-radius:4px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+  box-shadow:0 2px 12px rgba(0,0,0,.5);
 }
-.tl-float-btn:hover { background: #1a1508; color: var(--gold); }
-.tl-float-btn.active { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,.1); }
-
-/* Zoom buttons */
-.tl-zoom-controls {
-  position: absolute; bottom: 1.2rem; left: 1rem;
-  display: flex; gap: .3rem; z-index: 50;
-}
-.tl-zoom-btn {
-  background: rgba(12,10,7,.9); border: 1px solid var(--border);
-  color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: .8rem;
-  width: 30px; height: 30px; border-radius: 4px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background .15s, color .15s;
-  box-shadow: 0 2px 12px rgba(0,0,0,.5);
-}
-.tl-zoom-btn:hover { background: #1a1508; color: var(--gold); }
+.tl-zoom-btn:hover{background:#1a1508;color:var(--gold);}
 
 /* ── DESKTOP LEGEND ───────────────────────────────────────────────── */
-.legend {
-  position: absolute; top: 1rem; left: 1rem;
-  background: rgba(12,10,7,.93); border: 1px solid var(--border);
-  border-radius: 5px; overflow: hidden; pointer-events: all; user-select: none;
-  min-width: 185px; box-shadow: 0 4px 18px rgba(0,0,0,.55); z-index: 50;
+.legend{
+  position:absolute;top:1rem;left:1rem;
+  background:rgba(12,10,7,.93);border:1px solid var(--border);
+  border-radius:5px;overflow:hidden;pointer-events:all;user-select:none;
+  min-width:185px;box-shadow:0 4px 18px rgba(0,0,0,.55);z-index:50;
 }
-.legend-header { display: flex; align-items: center; justify-content: space-between; padding: .48rem .8rem; cursor: pointer; border-bottom: 1px solid var(--border2); transition: background .15s; }
-.legend-header:hover { background: rgba(255,255,255,.03); }
-.legend-title { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim); }
-.legend-chev { font-size: .6rem; color: var(--text-muted); transition: transform .22s; }
-.legend.collapsed .legend-chev { transform: rotate(-90deg); }
-.legend-body { padding: .48rem .8rem .52rem; transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1); max-height: 220px; overflow: hidden; }
-.legend.collapsed .legend-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
-.legend-item { display: flex; align-items: center; gap: .38rem; margin-bottom: .26rem; font-size: .66rem; color: var(--text-muted); }
-.legend-item:last-child { margin-bottom: 0; }
-.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.legend-sym { font-size: .7rem; flex-shrink: 0; width: 14px; text-align: center; }
-
-/* ── EVENT DETAIL PANEL ───────────────────────────────────────────── */
-#detail-panel {
-  width: 0; min-width: 0; background: var(--bg2);
-  border-left: 0px solid var(--border);
-  display: flex; flex-direction: column; overflow: hidden;
-  transition: width .28s cubic-bezier(.4,0,.2,1), border-left-width .28s cubic-bezier(.4,0,.2,1);
+.legend-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.48rem .8rem;cursor:pointer;
+  border-bottom:1px solid var(--border2);transition:background .15s;
 }
-#detail-panel.open { width: 340px; min-width: 340px; border-left-width: 1px; overflow-y: auto; }
-.detail-close { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; padding: .6rem .7rem .3rem; background: var(--bg2); flex-shrink: 0; }
-.detail-close button { background: none; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; font-size: .72rem; padding: .22rem .55rem; border-radius: 3px; font-family: 'Source Sans 3', sans-serif; transition: color .15s, border-color .15s; }
-.detail-close button:hover { color: var(--text); border-color: var(--border2); }
-#detail-content { padding: 0 1.2rem 1.5rem; flex: 1; }
-.detail-era-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 10px; margin: 0 0 .5rem; }
-.detail-name { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: .06em; color: var(--gold-bright); margin-bottom: .12rem; line-height: 1.3; }
-.detail-date { font-size: .78rem; color: var(--text-muted); font-style: italic; margin-bottom: .2rem; }
-.detail-ref { font-size: .72rem; color: var(--gold-dim); font-family: 'Cinzel', serif; letter-spacing: .05em; margin-bottom: .7rem; }
-.detail-divider { height: 1px; background: var(--border); margin-bottom: .8rem; }
-.detail-text { font-size: .9rem; line-height: 1.7; color: var(--text-dim); margin-bottom: 1rem; }
-.detail-section-head { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); padding: .4rem 0 .22rem; border-top: 1px solid var(--border2); margin-bottom: .4rem; }
-.detail-people { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .8rem; }
-.detail-person-chip { font-size: .72rem; padding: .18rem .5rem; border: 1px solid var(--border); border-radius: 3px; color: var(--gold-dim); cursor: pointer; text-decoration: none; display: inline-block; transition: background .15s, color .15s; }
-.detail-person-chip:hover { background: rgba(201,168,76,.1); color: var(--gold); }
-.detail-chapter-link { display: block; margin-top: .8rem; padding: .55rem .9rem; background: rgba(201,168,76,.08); border: 1px solid var(--gold-dim); border-radius: 4px; text-decoration: none; font-size: .75rem; color: var(--gold-dim); font-family: 'Cinzel', serif; letter-spacing: .08em; text-align: center; transition: background .15s, color .15s; }
-.detail-chapter-link:hover { background: rgba(201,168,76,.15); color: var(--gold); }
-.detail-handle { display: none; justify-content: center; align-items: center; padding: .5rem 0 .2rem; cursor: pointer; touch-action: none; flex-shrink: 0; }
-.detail-handle-pill { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
-
-/* ═══════════════════════════════════════════════════
-   MOBILE ≤ 768px
-   ═══════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .era-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .7rem; gap: .28rem; scrollbar-width: none; }
-  .era-filters::-webkit-scrollbar { display: none; }
-  .filter-label { display: none; }
-  .main-layout { flex-direction: column; }
-  #timeline-panel { flex: 1; }
-
-  #mobile-controls {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: .38rem .8rem; background: var(--bg2);
-    border-bottom: 1px solid var(--border2); gap: .5rem; flex-shrink: 0;
-  }
-  #mobile-controls button {
-    display: flex; align-items: center; gap: .3rem;
-    background: rgba(255,255,255,.04); border: 1px solid var(--border);
-    color: var(--gold-dim); font-family: 'Cinzel', serif;
-    font-size: .54rem; letter-spacing: .08em; padding: .3rem .52rem;
-    border-radius: 4px; cursor: pointer; white-space: nowrap;
-    transition: background .15s, color .15s;
-  }
-  #mobile-controls button:active, #mobile-controls button.active {
-    background: rgba(201,168,76,.12); color: var(--gold); border-color: var(--gold-dim);
-  }
-  #mobile-era-label { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .08em; color: var(--text-muted); text-align: center; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-  #legend-mobile-wrap { display: block; background: var(--bg2); overflow: hidden; }
-  #legend-mobile-wrap .legend { position: static; border-radius: 0; border: none; box-shadow: none; min-width: 0; width: 100%; background: var(--bg2); overflow: hidden; }
-  #legend-mobile-wrap .legend-body { display: flex; flex-wrap: wrap; gap: .28rem .6rem; padding: .42rem .8rem .48rem; border-bottom: 1px solid var(--border2); }
-  #legend-mobile-wrap .legend-item { margin-bottom: 0; }
-  #legend-mobile-wrap .legend.collapsed .legend-body { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; border-bottom-width: 0 !important; }
-
-  .tl-float-controls { display: none; }
-  .tl-zoom-controls { bottom: .7rem; left: .5rem; }
-  .legend { display: none; }
-
-  #detail-panel { width: 100% !important; min-width: 0 !important; border-left: none !important; border-top: 1px solid var(--border2); height: 0; max-height: 0; overflow: hidden; transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
-  #detail-panel.open { width: 100% !important; min-width: 0 !important; height: 52vh; max-height: 52vh; overflow-y: auto; border-left-width: 0 !important; }
-  .detail-handle { display: flex; }
-  .detail-text { font-size: .86rem; }
-  #detail-content { padding: 0 .9rem 1.2rem; }
+.legend-header:hover{background:rgba(255,255,255,.03);}
+.legend-title{
+  font-family:'Cinzel',serif;font-size:.56rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);
 }
-@media (max-width: 380px) { .era-btn { font-size: .5rem; padding: .2rem .42rem; } }
+.legend-chev{font-size:.6rem;color:var(--text-muted);transition:transform .22s;}
+.legend.collapsed .legend-chev{transform:rotate(-90deg);}
+.legend-body{
+  padding:.48rem .8rem .52rem;
+  transition:max-height .25s cubic-bezier(.4,0,.2,1),padding .25s cubic-bezier(.4,0,.2,1);
+  max-height:220px;overflow:hidden;
+}
+.legend.collapsed .legend-body{max-height:0;padding-top:0;padding-bottom:0;}
+.legend-item{
+  display:flex;align-items:center;gap:.38rem;
+  margin-bottom:.26rem;font-size:.66rem;color:var(--text-dim);
+}
+.legend-item:last-child{margin-bottom:0;}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── DETAIL PANEL ─────────────────────────────────────────────────── */
+#detail-panel{
+  width:0;min-width:0;background:var(--bg2);
+  border-left:0px solid var(--border);
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:width .28s cubic-bezier(.4,0,.2,1),border-left-width .28s cubic-bezier(.4,0,.2,1);
+}
+#detail-panel.open{width:340px;min-width:340px;border-left-width:1px;overflow-y:auto;}
+.detail-close{
+  position:sticky;top:0;z-index:2;display:flex;justify-content:flex-end;
+  padding:.6rem .7rem .3rem;background:var(--bg2);flex-shrink:0;
+}
+.detail-close button{
+  background:none;border:1px solid var(--border);color:var(--text-dim);
+  cursor:pointer;font-size:.72rem;padding:.22rem .55rem;border-radius:3px;
+  font-family:'Source Sans 3',sans-serif;transition:color .15s,border-color .15s;
+}
+.detail-close button:hover{color:var(--text);border-color:var(--border2);}
+#detail-content{padding:0 1.2rem 1.5rem;flex:1;}
+.detail-era-badge{
+  display:inline-block;font-family:'Cinzel',serif;font-size:.52rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:.18rem .55rem;border-radius:10px;margin:0 0 .5rem;
+}
+.detail-name{
+  font-family:'Cinzel',serif;font-size:1.1rem;
+  letter-spacing:.06em;color:var(--gold-bright);margin-bottom:.12rem;line-height:1.3;
+}
+.detail-date{font-size:.78rem;color:var(--text-muted);font-style:italic;margin-bottom:.2rem;}
+.detail-ref{font-size:.72rem;color:var(--gold-dim);font-family:'Cinzel',serif;letter-spacing:.05em;margin-bottom:.7rem;}
+.detail-divider{height:1px;background:var(--border);margin-bottom:.8rem;}
+.detail-text{font-size:.9rem;line-height:1.7;color:var(--text-dim);margin-bottom:1rem;}
+.detail-section-head{
+  font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-muted);
+  padding:.4rem 0 .22rem;border-top:1px solid var(--border2);margin-bottom:.4rem;
+}
+.detail-people{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.8rem;}
+.detail-person-chip{
+  font-size:.72rem;padding:.18rem .5rem;border:1px solid var(--border);
+  border-radius:3px;color:var(--gold-dim);cursor:pointer;text-decoration:none;
+  display:inline-block;transition:background .15s,color .15s;
+}
+.detail-person-chip:hover{background:rgba(201,168,76,.1);color:var(--gold);}
+.detail-chapter-link{
+  display:block;margin-top:.8rem;padding:.55rem .9rem;
+  background:rgba(201,168,76,.08);border:1px solid var(--gold-dim);
+  border-radius:4px;text-decoration:none;font-size:.75rem;
+  color:var(--gold-dim);font-family:'Cinzel',serif;
+  letter-spacing:.08em;text-align:center;transition:background .15s,color .15s;
+}
+.detail-chapter-link:hover{background:rgba(201,168,76,.15);color:var(--gold);}
+.detail-handle{
+  display:none;justify-content:center;align-items:center;
+  padding:.5rem 0 .2rem;cursor:pointer;touch-action:none;flex-shrink:0;
+}
+.detail-handle-pill{width:36px;height:4px;background:var(--border);border-radius:2px;}
+
+/* ── CROSS-LINKS FROM CHAPTERS ────────────────────────────────────── */
+.tl-event-link{
+  display:inline-flex;align-items:center;gap:.3rem;
+  margin:.5rem 0 .8rem;padding:.3rem .65rem;
+  background:rgba(90,122,154,.1);border:1px solid rgba(90,122,154,.4);
+  border-radius:3px;color:#5a7a9a;font-family:'Cinzel',serif;
+  font-size:.6rem;letter-spacing:.08em;text-decoration:none;
+  transition:background .15s,color .15s;
+}
+.tl-event-link:hover{background:rgba(90,122,154,.22);color:#7a9aba;}
+.tl-event-link svg{width:12px;height:12px;flex-shrink:0;}
+
+/* ═══════════════ MOBILE ≤768px ═══════════════════════════════════ */
+@media(max-width:768px){
+  .era-filters{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.48rem .7rem;gap:.25rem;scrollbar-width:none;}
+  .era-filters::-webkit-scrollbar{display:none;}
+  .filter-label{display:none;}
+  .main-layout{flex-direction:column;}
+  #timeline-panel{flex:1;}
+  #mobile-controls{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.38rem .8rem;background:var(--bg2);
+    border-bottom:1px solid var(--border2);gap:.5rem;flex-shrink:0;
+  }
+  #mobile-controls button{
+    display:flex;align-items:center;gap:.3rem;
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    color:var(--text-dim);font-family:'Cinzel',serif;
+    font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.3rem .52rem;border-radius:4px;cursor:pointer;white-space:nowrap;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  #mobile-controls button:active,#mobile-controls button.active{
+    background:rgba(201,168,76,.12);color:var(--gold);border-color:var(--gold-dim);
+  }
+  #mobile-era-label{
+    font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.1em;
+    color:var(--text-dim);text-align:center;flex:1;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  #legend-mobile-wrap{display:block;background:var(--bg2);overflow:hidden;}
+  #legend-mobile-wrap .legend{
+    position:static;border-radius:0;border:none;box-shadow:none;
+    min-width:0;width:100%;background:var(--bg2);overflow:hidden;
+  }
+  #legend-mobile-wrap .legend-body{
+    display:flex;flex-wrap:wrap;gap:.28rem .6rem;
+    padding:.42rem .8rem .48rem;border-bottom:1px solid var(--border2);
+  }
+  #legend-mobile-wrap .legend-item{margin-bottom:0;}
+  #legend-mobile-wrap .legend.collapsed .legend-body{
+    max-height:0!important;padding-top:0!important;
+    padding-bottom:0!important;border-bottom-width:0!important;
+  }
+  .tl-float-controls{display:none;}
+  .legend{display:none;}
+  #detail-panel{
+    width:100%!important;min-width:0!important;border-left:none!important;
+    border-top:1px solid var(--border2);height:0;max-height:0;overflow:hidden;
+    transition:height .3s cubic-bezier(.4,0,.2,1),max-height .3s cubic-bezier(.4,0,.2,1);
+    flex-shrink:0;
+  }
+  #detail-panel.open{
+    width:100%!important;min-width:0!important;height:52vh;max-height:52vh;
+    overflow-y:auto;border-left-width:0!important;
+  }
+  .detail-handle{display:flex;}
+  .detail-text{font-size:.86rem;}
+  #detail-content{padding:0 .9rem 1.2rem;}
+  .tl-zoom-controls{bottom:.7rem;left:.5rem;}
+}
+@media(max-width:380px){.era-btn{font-size:.5rem;padding:.2rem .42rem;}}
 </style>
 </head>
 <body>
 
-<!-- SITE NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-back">
     <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
@@ -238,7 +316,6 @@ body {
   </div>
 </nav>
 
-<!-- ERA FILTER STRIP -->
 <div class="era-filters">
   <span class="filter-label">Era</span>
   <button class="era-btn active" data-era="all">All</button>
@@ -253,7 +330,6 @@ body {
   <button class="era-btn" data-era="nt">New Testament</button>
 </div>
 
-<!-- MOBILE CONTROLS BAR -->
 <div id="mobile-controls">
   <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -261,16 +337,16 @@ body {
       <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
     </svg>
     Legend
-    <span id="legend-btn-chev" style="font-size:.56rem;transition:transform .22s;display:inline-block;">&#9660;</span>
+    <span id="legend-btn-chev" style="font-size:.52rem;transition:transform .22s;display:inline-block;">&#9660;</span>
   </button>
   <span id="mobile-era-label">All Eras</span>
-  <button id="mobile-people-btn" onclick="togglePeople()" title="Show people">
+  <button id="mobile-people-btn" onclick="togglePeople()">
     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
       <circle cx="7" cy="5" r="2.5"/><path d="M2 13c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
     </svg>
     People
   </button>
-  <button id="mobile-history-btn" onclick="toggleHistory()" title="Show world history">
+  <button id="mobile-history-btn" onclick="toggleHistory()">
     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
       <circle cx="7" cy="7" r="5"/><polyline points="7,4 7,7 9,9"/>
     </svg>
@@ -278,7 +354,6 @@ body {
   </button>
 </div>
 
-<!-- MOBILE LEGEND DROPDOWN -->
 <div id="legend-mobile-wrap">
   <div class="legend collapsed" id="legend-mobile">
     <div class="legend-body">
@@ -290,32 +365,14 @@ body {
       <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Prophets</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>NT</div>
-      <div class="legend-item">
-        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><polygon points="5,1 9,9 1,9" fill="#4a3a20" opacity="0.85"/></svg>
-        Biblical event
-      </div>
-      <div class="legend-item">
-        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><polygon points="5,1 9,5 5,9 1,5" fill="#3a5a7a" opacity="0.8"/></svg>
-        World history
-      </div>
-      <div class="legend-item">
-        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><circle cx="5" cy="5" r="3.5" fill="var(--era-patriarch)" stroke="rgba(200,169,110,.6)" stroke-width="1"/></svg>
-        Person
-      </div>
     </div>
   </div>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="main-layout">
-
-  <!-- TIMELINE PANEL -->
   <div id="timeline-panel">
-
-    <!-- SVG canvas — position:absolute+inset:0 for guaranteed real height -->
     <svg id="timeline-svg" xmlns="http://www.w3.org/2000/svg"></svg>
 
-    <!-- Desktop floating toggle buttons -->
     <div class="tl-float-controls">
       <button class="tl-float-btn" id="people-toggle-btn" onclick="togglePeople()">
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -331,7 +388,6 @@ body {
       </button>
     </div>
 
-    <!-- Zoom buttons -->
     <div class="tl-zoom-controls">
       <button class="tl-zoom-btn" onclick="zoomTimeline(1.4)" title="Zoom in">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -345,7 +401,6 @@ body {
       </button>
     </div>
 
-    <!-- Desktop legend -->
     <div class="legend" id="legend">
       <div class="legend-header" onclick="toggleLegend()">
         <span class="legend-title">Legend</span>
@@ -361,23 +416,21 @@ body {
         <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile &amp; Return</div>
         <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>New Testament</div>
         <div class="legend-item" style="margin-top:.3rem">
-          <svg width="10" height="9" viewBox="0 0 10 9"><polygon points="5,0 10,9 0,9" fill="#4a3a20" opacity="0.85"/></svg>
+          <svg width="10" height="9" viewBox="0 0 10 9"><polygon points="5,0 10,9 0,9" fill="#503d18" opacity="0.85"/></svg>
           Biblical event
         </div>
         <div class="legend-item">
-          <svg width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,5 5,9 1,5" fill="#3a5a7a" opacity="0.8"/></svg>
-          World history event
+          <svg width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,5 5,9 1,5" fill="#1e3548" opacity="0.8"/></svg>
+          World history
         </div>
         <div class="legend-item">
           <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="var(--era-patriarch)" stroke="rgba(200,169,110,.7)" stroke-width="1.2"/></svg>
-          Person (toggleable)
+          Person (toggle)
         </div>
       </div>
     </div>
+  </div>
 
-  </div><!-- #timeline-panel -->
-
-  <!-- EVENT DETAIL PANEL -->
   <div id="detail-panel">
     <div class="detail-handle" id="detail-handle" onclick="closeDetail()">
       <div class="detail-handle-pill"></div>
@@ -385,525 +438,530 @@ body {
     <div class="detail-close"><button onclick="closeDetail()">&#10005; Close</button></div>
     <div id="detail-content">
       <p style="color:var(--text-muted);font-size:.82rem;padding-top:.5rem;">
-        Select an era above or click any event to explore.
+        Select an era or click any event to explore.
       </p>
     </div>
   </div>
-
-</div><!-- .main-layout -->
+</div>
 
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(() => {});
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('service-worker.js',{scope:'./'}).catch(()=>{});
 }
 
-// ── ERA CONFIG ─────────────────────────────────────────────────────────────
+// ── CONSTANTS ──────────────────────────────────────────────────────────────
 const ERA_HEX = {
-  // All colors verified ≥4.5:1 contrast on parchment background ~#c8a86a
-  primeval:         '#523d0b',  // deep amber-brown
-  patriarch:        '#4b395f',  // deep indigo-plum
-  exodus:           '#26472e',  // deep forest green
-  judges:           '#503d18',  // dark saddle-brown
-  kingdom:          '#304153',  // deep slate-blue
-  prophets:         '#653030',  // deep crimson
-  exile:            '#29444d',  // dark teal
-  intertestamental: '#4a3e27',  // dark umber
-  nt:               '#46370f',  // deep warm gold-brown  // deep warm gold-brown
+  primeval:'#523d0b', patriarch:'#4b395f', exodus:'#26472e',
+  judges:'#503d18',   kingdom:'#304153',   prophets:'#653030',
+  exile:'#29444d',    intertestamental:'#4a3e27', nt:'#46370f',
 };
 const ERA_NAMES = {
-  primeval:'Primeval History', patriarch:'Patriarchal Period',
-  exodus:'Egypt & Exodus', judges:'Conquest & Judges',
-  kingdom:'United Kingdom', prophets:'Divided Kingdom & Prophets',
-  exile:'Exile & Return', intertestamental:'Intertestamental',
+  primeval:'Primeval History',  patriarch:'Patriarchal Period',
+  exodus:'Egypt & Exodus',      judges:'Conquest & Judges',
+  kingdom:'United Kingdom',     prophets:'Divided Kingdom & Prophets',
+  exile:'Exile & Return',       intertestamental:'Intertestamental',
   nt:'New Testament',
 };
-
-// ── ERA YEAR RANGES [startYear, endYear] ───────────────────────────────────
 const ERA_RANGES = {
-  primeval:          [-4000, -2200],
-  patriarch:         [-2200,  -1800],
-  exodus:            [-1800,  -1400],
-  judges:            [-1400,  -1050],
-  kingdom:           [-1050,   -930],
-  prophets:          [ -930,   -722],
-  exile:             [ -722,   -432],
-  intertestamental:  [ -432,     -5],
-  nt:                [   -5,     95],
+  primeval:[-4000,-2200], patriarch:[-2200,-1800], exodus:[-1800,-1400],
+  judges:[-1400,-1050],   kingdom:[-1050,-930],    prophets:[-930,-722],
+  exile:[-722,-432],      intertestamental:[-432,-5], nt:[-5,95],
 };
 
-// ── TIMELINE SCALE ─────────────────────────────────────────────────────────
-// Full span: -4000 to +95. Total: 4095 years.
-// Base pixels per year — compressed for ancient, generous for NT.
-// We use a piecewise linear scale with breakpoints.
-
 const SCALE_BREAKPOINTS = [
-  // [year, cumulative_px]  — linear between each pair
-  [-4000,     0],
-  [-2200,  1400],  // primeval: 1400px / 1800yr = 0.78px/yr
-  [-1800,  2000],  // patriarch: 600px / 400yr = 1.5px/yr
-  [-1400,  2800],  // exodus: 800px / 400yr = 2px/yr
-  [-1050,  3700],  // judges: 900px / 350yr = 2.57px/yr
-  [ -930,  4100],  // united kingdom: 400px / 120yr = 3.3px/yr
-  [ -722,  4780],  // prophets: 680px / 208yr = 3.27px/yr
-  [ -432,  6500],  // exile+return: 1720px / 290yr = 5.9px/yr
-  [    0,  8000],  // intertestamental: 1500px / 432yr = 3.47px/yr
-  [   95,  9000],  // NT: 1000px / 95yr = 10.5px/yr (generous)
+  [-4000,0],[-2200,1400],[-1800,2000],[-1400,2800],
+  [-1050,3700],[-930,4100],[-722,4780],[-432,6500],[0,8000],[95,9000]
 ];
-const TOTAL_WIDTH = 9000; // base SVG content width
+const TOTAL_WIDTH = 9000;
 
-function yearToX(year) {
-  for (let i = 0; i < SCALE_BREAKPOINTS.length - 1; i++) {
-    const [y0, x0] = SCALE_BREAKPOINTS[i];
-    const [y1, x1] = SCALE_BREAKPOINTS[i + 1];
-    if (year >= y0 && year <= y1) {
-      const t = (year - y0) / (y1 - y0);
-      return x0 + t * (x1 - x0);
-    }
-  }
-  if (year < -4000) return 0;
-  return TOTAL_WIDTH;
-}
-
-// ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
+// 12 label lanes, MARKER_OFFSET below each label
 const TL = {
-  H:          510,
-  ERA_TOP:    10,
-  ERA_BAR_Y:  30,
-  ERA_BAR_H:  26,     // era bar bottom = y 56
-  LANES:      [73, 88, 103, 118, 133, 148, 163, 178, 193, 208, 223, 238],
-  MARKER_OFFSET: 18,  // marker sits this far below its label baseline
-  AXIS_Y:     275,
-  PEOPLE_Y:   355,
-  HIST_Y:     445,
-  GRAIN_Y:    0,
+  H:510, ERA_BAR_Y:30, ERA_BAR_H:26,
+  LANES:[73,88,103,118,133,148,163,178,193,208,223,238],
+  MARKER_OFFSET:18,
+  AXIS_Y:275, PEOPLE_Y:355, HIST_Y:445,
 };
 
 // ── STATE ──────────────────────────────────────────────────────────────────
-let svgEl, gContent;
-let translateX = 0;
-let scaleX = 1;       // horizontal zoom
-let currentEra = 'all';
-let showPeople = false;
-let showHistory = false;
-let currentEvent = null;
-let isPanning = false;
-let panStartX = 0;
-let panStartTranslate = 0;
-let lastPinchDist = 0;
+let translateX=0, scaleX=1;
+let currentEra='all', showPeople=false, showHistory=false;
+let isPanning=false, panStartX=0, panStartTranslate=0, lastPinchDist=0;
+let peopleRendered=false, historyRendered=false;
 
-// ══════════════════════════════════════════════════════════════════════════
-// SVG HELPERS
-// ══════════════════════════════════════════════════════════════════════════
-function svgEl_(tag, attrs = {}, parent = null) {
-  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
-  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
-  if (parent) parent.appendChild(el);
-  return el;
-}
-function svgText(txt, attrs = {}, parent = null) {
-  const el = svgEl_('text', attrs, parent);
-  el.textContent = txt;
-  return el;
-}
-
-// ══════════════════════════════════════════════════════════════════════════
-// RENDER
-// ══════════════════════════════════════════════════════════════════════════
-function initTimeline() {
-  svgEl = document.getElementById('timeline-svg');
-  const panel = document.getElementById('timeline-panel');
-  const W = panel.clientWidth;
-  const H = panel.clientHeight;
-
-  svgEl.setAttribute('width', W);
-  svgEl.setAttribute('height', H);
-  svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
-
-  // Clear
-  while (svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
-
-  // ── Parchment background ────────────────────────────────────────────
-  const defs = svgEl_('defs', {}, svgEl);
-
-  // Paper grain filter
-  const flt = svgEl_('filter', { id:'grain', x:'0%', y:'0%', width:'100%', height:'100%' }, defs);
-  svgEl_('feTurbulence', { type:'fractalNoise', baseFrequency:'0.72', numOctaves:'3', stitchTiles:'stitch', result:'noise' }, flt);
-  svgEl_('feColorMatrix', { type:'saturate', values:'0', in:'noise', result:'grey' }, flt);
-  svgEl_('feBlend', { in:'SourceGraphic', in2:'grey', mode:'multiply' }, flt);
-
-  // Subtle vertical gradient for depth
-  const grad = svgEl_('linearGradient', { id:'tlBg', x1:'0', y1:'0', x2:'0', y2:'1' }, defs);
-  svgEl_('stop', { offset:'0%', 'stop-color':'#ddc080' }, grad);
-  svgEl_('stop', { offset:'50%', 'stop-color':'#c8a86a' }, grad);
-  svgEl_('stop', { offset:'100%', 'stop-color':'#b89050' }, grad);
-
-  // Background rect
-  svgEl_('rect', { width:W, height:H, fill:'url(#tlBg)' }, svgEl);
-  // Grain overlay
-  svgEl_('rect', { width:W, height:H, fill:'#8a6020', opacity:'0.06', filter:'url(#grain)' }, svgEl);
-
-  // Clip content to panel
-  const clipId = 'tlClip';
-  const clip = svgEl_('clipPath', { id: clipId }, defs);
-  svgEl_('rect', { width:W, height:H }, clip);
-
-  // ── Main scrollable group ────────────────────────────────────────────
-  gContent = svgEl_('g', { 'clip-path':`url(#${clipId})` }, svgEl);
-  const gInner = svgEl_('g', { id:'g-inner' }, gContent);
-
-  // Position initial view: centre on AD 0 at start
-  const centreYear = currentEra === 'all' ? -1500 : (ERA_RANGES[currentEra][0] + ERA_RANGES[currentEra][1]) / 2;
-  const centreX = yearToX(centreYear) * scaleX;
-  translateX = W / 2 - centreX;
-  applyTransform(gInner);
-
-  renderContent(gInner, W, H);
-  setupInteraction(svgEl, gInner);
-}
-
-function applyTransform(g) {
-  // Clamp so we don't scroll off the ends
-  const panel = document.getElementById('timeline-panel');
-  const W = panel.clientWidth;
-  const maxX = 60;
-  const minX = W - TOTAL_WIDTH * scaleX - 60;
-  translateX = Math.min(maxX, Math.max(minX, translateX));
-  g.setAttribute('transform', `translate(${translateX},0) scale(${scaleX},1)`);
-}
-
-function renderContent(g, W, H) {
-  // ── Era colour bands ──────────────────────────────────────────────────
-  for (const [era, [y0, y1]] of Object.entries(ERA_RANGES)) {
-    const x0 = yearToX(y0);
-    const x1 = yearToX(y1);
-    const color = ERA_HEX[era] || '#888';
-    const bandW = x1 - x0;
-
-    // Band — deeper opacity so era colour is unmistakeable
-    svgEl_('rect', {
-      x: x0, y: TL.ERA_BAR_Y,
-      width: bandW, height: TL.ERA_BAR_H,
-      fill: color, opacity: '0.75',
-    }, g);
-
-    // Era name — WHITE text on coloured band, large enough to read
-    const mx = (x0 + x1) / 2;
-    // Only render if band is wide enough
-    if (bandW > 60) {
-      svgText(ERA_NAMES[era] || era, {
-        x: mx, y: TL.ERA_BAR_Y + TL.ERA_BAR_H - 5,
-        'text-anchor': 'middle',
-        'font-family': "'Cinzel', serif",
-        'font-size': '11',
-      'font-weight': '700',
-        fill: '#ffffff',
-        opacity: '0.95',
-        'pointer-events': 'none',
-        'paint-order': 'stroke',
-        stroke: color,
-        'stroke-width': '3',
-        'stroke-linejoin': 'round',
-      }, g);
-    }
+// ── SCALE HELPER ───────────────────────────────────────────────────────────
+function yearToX(year){
+  for(let i=0;i<SCALE_BREAKPOINTS.length-1;i++){
+    const[y0,x0]=SCALE_BREAKPOINTS[i],[y1,x1]=SCALE_BREAKPOINTS[i+1];
+    if(year>=y0&&year<=y1) return x0+(year-y0)/(y1-y0)*(x1-x0);
   }
-
-  // ── Axis line ─────────────────────────────────────────────────────────
-  svgEl_('line', {
-    x1: 0, y1: TL.AXIS_Y,
-    x2: TOTAL_WIDTH, y2: TL.AXIS_Y,
-    stroke: '#3a2808', 'stroke-width': '2', opacity: '0.9',
-  }, g);
-
-  // ── Year tick marks ───────────────────────────────────────────────────
-  const tickYears = [
-    -4000, -3500, -3000, -2500, -2000, -1900, -1800, -1700, -1600,
-    -1500, -1400, -1300, -1200, -1100, -1000, -900, -800, -750,
-    -700, -650, -600, -550, -500, -450, -400, -350, -300,
-    -250, -200, -150, -100, -63, -27, -5,
-    0, 10, 20, 30, 33, 40, 50, 60, 70, 80, 90, 95,
-  ];
-
-  for (const yr of tickYears) {
-    const x = yearToX(yr);
-    const isMajor = yr % 500 === 0 || yr === 0 || yr === 33;
-    const tickH = isMajor ? 14 : 8;
-    svgEl_('line', {
-      x1: x, y1: TL.AXIS_Y - tickH/2,
-      x2: x, y2: TL.AXIS_Y + tickH/2,
-      stroke: '#3a2808', 'stroke-width': isMajor ? '2' : '1', opacity: '0.8',
-    }, g);
-
-    // Year label — dark ink, legible size
-    if (isMajor || yr % 100 === 0 || Math.abs(yr) < 100) {
-      const label = yr === 0 ? 'AD·BC' : yr < 0 ? `${Math.abs(yr)} BC` : `AD ${yr}`;
-      const sz = isMajor ? '12' : yr === 33 ? '11' : '9';
-      // White halo behind text for contrast against any background
-      svgText(label, {
-        x, y: TL.AXIS_Y + 22,
-        'text-anchor': 'middle',
-        'font-family': "'Cinzel', serif",
-        'font-size': sz,
-        fill: '#2a1a06',
-        opacity: '0.95',
-        'pointer-events': 'none',
-        'paint-order': 'stroke',
-        stroke: 'rgba(210,180,110,0.85)',
-        'stroke-width': '3',
-        'stroke-linejoin': 'round',
-      }, g);
-    }
-  }
-
-  // BC/AD divider line
-  const xZero = yearToX(0);
-  svgEl_('line', {
-    x1: xZero, y1: TL.ERA_BAR_Y - 4,
-    x2: xZero, y2: TL.HIST_Y + 50,
-    stroke: '#5a3808', 'stroke-width': '1.5', 'stroke-dasharray': '5,4', opacity: '0.6',
-  }, g);
-  svgText('BC', { x: xZero - 10, y: TL.AXIS_Y - 18, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'10',
-      'font-weight': '700', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
-  svgText('AD', { x: xZero + 10, y: TL.AXIS_Y - 18, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'10',
-      'font-weight': '700', fill:'#3a2808', opacity:'0.75', 'pointer-events':'none' }, g);
-
-  svgEl_('g', { id:'g-events' }, g);
-  svgEl_('g', { id:'g-people', opacity: showPeople ? '1' : '0' }, g);
-  svgEl_('g', { id:'g-history', opacity: showHistory ? '1' : '0' }, g);
+  return year<-4000?0:TOTAL_WIDTH;
 }
 
-// ══════════════════════════════════════════════════════════════════════════
-// PAN + ZOOM INTERACTION
-// ══════════════════════════════════════════════════════════════════════════
-function setupInteraction(svg, g) {
-  const panel = document.getElementById('timeline-panel');
-
-  // ── POINTER drag ──────────────────────────────────────────────────────
-  svg.addEventListener('pointerdown', e => {
-    if (e.target.closest('[data-clickable]')) return; // let event clicks through
-    isPanning = true;
-    panStartX = e.clientX;
-    panStartTranslate = translateX;
-    panel.classList.add('panning');
-    svg.setPointerCapture(e.pointerId);
-  });
-
-  svg.addEventListener('pointermove', e => {
-    if (!isPanning) return;
-    const dx = e.clientX - panStartX;
-    translateX = panStartTranslate + dx;
-    applyTransform(g);
-  });
-
-  svg.addEventListener('pointerup', e => {
-    isPanning = false;
-    panel.classList.remove('panning');
-  });
-  svg.addEventListener('pointercancel', () => {
-    isPanning = false;
-    panel.classList.remove('panning');
-  });
-
-  // ── WHEEL zoom ────────────────────────────────────────────────────────
-  svg.addEventListener('wheel', e => {
-    e.preventDefault();
-    const factor = e.deltaY < 0 ? 1.15 : 0.87;
-    const rect = svg.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left; // pixel position in panel
-    zoomAroundPoint(factor, mouseX, g);
-  }, { passive: false });
-
-  // ── PINCH zoom ────────────────────────────────────────────────────────
-  svg.addEventListener('touchstart', e => {
-    if (e.touches.length === 2) {
-      lastPinchDist = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-    }
-  }, { passive: true });
-
-  svg.addEventListener('touchmove', e => {
-    if (e.touches.length === 2) {
-      e.preventDefault();
-      const dist = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      const factor = dist / lastPinchDist;
-      lastPinchDist = dist;
-      const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-      const rect = svg.getBoundingClientRect();
-      zoomAroundPoint(factor, cx - rect.left, g);
-    }
-  }, { passive: false });
+// ── SVG HELPERS ────────────────────────────────────────────────────────────
+function el(tag,attrs,parent){
+  const e=document.createElementNS('http://www.w3.org/2000/svg',tag);
+  for(const[k,v] of Object.entries(attrs)) e.setAttribute(k,v);
+  if(parent) parent.appendChild(e);
+  return e;
 }
-
-function zoomAroundPoint(factor, screenX, g) {
-  const contentX = (screenX - translateX) / scaleX; // x in content coords before zoom
-  scaleX = Math.min(8, Math.max(0.3, scaleX * factor));
-  translateX = screenX - contentX * scaleX;
-  applyTransform(g || document.getElementById('g-inner'));
+function txt(text,attrs,parent){
+  const e=el('text',attrs,parent);
+  e.textContent=text;
+  return e;
 }
-
-function zoomTimeline(factor) {
-  const panel = document.getElementById('timeline-panel');
-  zoomAroundPoint(factor, panel.clientWidth / 2);
-}
-
-// ── Jump to era ────────────────────────────────────────────────────────────
-function jumpToEra(era) {
-  const panel = document.getElementById('timeline-panel');
-  const W = panel.clientWidth;
-  const g = document.getElementById('g-inner');
-  let targetYear;
-  if (era === 'all') {
-    targetYear = -1500;
-  } else {
-    const [y0, y1] = ERA_RANGES[era] || [-1500, -1000];
-    targetYear = (y0 + y1) / 2;
-  }
-  const targetX = yearToX(targetYear) * scaleX;
-  // Animate
-  const startX = translateX;
-  const endX = W / 2 - targetX;
-  const duration = 400;
-  const start = performance.now();
-  function step(now) {
-    const t = Math.min(1, (now - start) / duration);
-    const ease = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
-    translateX = startX + (endX - startX) * ease;
-    applyTransform(g);
-    if (t < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// ══════════════════════════════════════════════════════════════════════════
-// TOGGLES
-// ══════════════════════════════════════════════════════════════════════════
-function togglePeople() {
-  showPeople = !showPeople;
-  const g = document.getElementById('g-people');
-  if (g) g.setAttribute('opacity', showPeople ? '1' : '0');
-  document.getElementById('people-toggle-btn')?.classList.toggle('active', showPeople);
-  document.getElementById('mobile-people-btn')?.classList.toggle('active', showPeople);
-}
-
-function toggleHistory() {
-  showHistory = !showHistory;
-  const g = document.getElementById('g-history');
-  if (g) g.setAttribute('opacity', showHistory ? '1' : '0');
-  document.getElementById('history-toggle-btn')?.classList.toggle('active', showHistory);
-  document.getElementById('mobile-history-btn')?.classList.toggle('active', showHistory);
-}
-
-function toggleLegend() { document.getElementById('legend')?.classList.toggle('collapsed'); }
-function toggleMobileLegend() {
-  const leg = document.getElementById('legend-mobile');
-  leg?.classList.toggle('collapsed');
-  const chev = document.getElementById('legend-btn-chev');
-  if (chev) chev.style.transform = leg?.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
-}
-
-// ══════════════════════════════════════════════════════════════════════════
-// DETAIL PANEL
-// ══════════════════════════════════════════════════════════════════════════
-const PERSON_NAMES = {"adam": "Adam", "eve": "Eve", "cain": "Cain", "abel": "Abel", "enoch-g": "Enoch", "noah": "Noah", "abraham": "Abraham", "sarah": "Sarah", "isaac": "Isaac", "jacob": "Jacob", "joseph-ot": "Joseph", "moses": "Moses", "miriam": "Miriam", "aaron": "Aaron", "deborah": "Deborah", "gideon": "Gideon", "samson": "Samson", "ruth": "Ruth", "naomi": "Naomi", "boaz": "Boaz", "samuel": "Samuel", "saul": "Saul", "david": "David", "solomon": "Solomon", "elijah": "Elijah", "elisha": "Elisha", "isaiah": "Isaiah", "jeremiah": "Jeremiah", "ezekiel": "Ezekiel", "daniel": "Daniel", "ezra": "Ezra", "nehemiah": "Nehemiah", "hezekiah": "Hezekiah", "jesus": "Jesus", "mary": "Mary", "joseph-nt": "Joseph", "john-baptist": "John the Baptist", "peter": "Peter", "paul": "Paul", "barnabas": "Barnabas", "john-ap": "John", "lazarus": "Lazarus", "martha": "Martha", "mary-bethany": "Mary of Bethany", "pilate": "Pontius Pilate", "caiaphas": "Caiaphas", "herod-great": "Herod the Great", "mary-magdalene": "Mary Magdalene", "zechariah-nt": "Zechariah", "elizabeth": "Elizabeth"};
-
-function openDetail(ev) {
-  currentEvent = ev;
-  const color = ERA_HEX[ev.era] || '#888';
-  const eraName = ERA_NAMES[ev.era] || ev.era;
-  const dateStr = ev.year < 0 ? `c. ${Math.abs(ev.year)} BC` : ev.year === 0 ? 'c. AD 1' : `c. AD ${ev.year}`;
-
-  let html = `
-    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
-    <div class="detail-name">${ev.name}</div>
-    <div class="detail-date">${dateStr}${ev.yearEnd ? ` – ${ev.yearEnd < 0 ? Math.abs(ev.yearEnd)+' BC' : 'AD '+ev.yearEnd}` : ''}</div>
-    ${ev.ref ? `<div class="detail-ref">${ev.ref}</div>` : ''}
-    ${ev.significance ? `<div class="detail-ref" style="color:var(--text-muted)">${ev.significance}</div>` : ''}
-    <div class="detail-divider"></div>
-    <div class="detail-text">${ev.summary}</div>
-  `;
-
-  if (ev.people && ev.people.length) {
-    html += `<div class="detail-section-head">People</div><div class="detail-people">`;
-    html += ev.people.map(pid => {
-      const name = PERSON_NAMES[pid] || pid.replace(/-/g,' ').replace(/\w/g,c=>c.toUpperCase());
-      return `<a href="people.html#${pid}" target="_blank" class="detail-person-chip">${name}</a>`;
-    }).join('');
-    html += `</div>`;
-  }
-
-  if (ev.chapter) {
-    html += `<a href="${ev.chapter}" class="detail-chapter-link">Read in Scripture Deep Dive</a>`;
-  }
-
-  document.getElementById('detail-content').innerHTML = html;
-  document.getElementById('detail-panel').classList.add('open');
-  history.replaceState(null, '', '#' + ev.id);
-}
-
-function closeDetail() {
-  document.getElementById('detail-panel').classList.remove('open');
-  currentEvent = null;
-  history.replaceState(null, '', location.pathname);
-  // Re-render SVG at new (wider) width after panel closes
-  setTimeout(() => {
-    const panel = document.getElementById('timeline-panel');
-    const svg = document.getElementById('timeline-svg');
-    if (svg && panel) {
-      svg.setAttribute('width', panel.clientWidth);
-      svg.setAttribute('height', panel.clientHeight);
-      svg.setAttribute('viewBox', `0 0 ${panel.clientWidth} ${panel.clientHeight}`);
-    }
-    const gInner = document.getElementById('g-inner');
-    if (gInner) renderEvents(gInner);
-    if (showPeople) { const gp = document.getElementById('g-people'); if (gp) renderPeopleLayer(gp); }
-    if (showHistory) { const gh = document.getElementById('g-history'); if (gh) renderHistoryLayer(gh); }
-  }, 320);
-}
-
-// ── Swipe to close ─────────────────────────────────────────────────────────
-(function() {
-  let sy = 0;
-  const h = document.getElementById('detail-handle');
-  if (!h) return;
-  h.addEventListener('touchstart', e => { sy = e.touches[0].clientY; }, { passive: true });
-  h.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - sy > 40) closeDetail(); }, { passive: true });
-})();
-
-// ── Keyboard ───────────────────────────────────────────────────────────────
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeDetail();
-  if (e.key === 'ArrowLeft')  zoomAroundPoint(1, document.getElementById('timeline-panel').clientWidth/2);
-  if (e.key === 'ArrowRight') zoomAroundPoint(1, document.getElementById('timeline-panel').clientWidth/2);
-});
-
-// ── ERA FILTER ─────────────────────────────────────────────────────────────
-document.querySelectorAll('.era-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentEra = btn.dataset.era;
-    const lbl = document.getElementById('mobile-era-label');
-    if (lbl) lbl.textContent = currentEra === 'all' ? 'All Eras' : (ERA_NAMES[currentEra] || currentEra);
-    jumpToEra(currentEra);
-  });
-});
-
-// ── RESIZE ─────────────────────────────────────────────────────────────────
-let resizeTimer;
-function reinitIfResized() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(initTimeline, 150);
-}
-window.addEventListener('resize', reinitIfResized);
 
 // ── INIT ───────────────────────────────────────────────────────────────────
-// ══════════════════════════════════════════════════════════════════════════
-// BIBLICAL EVENTS — Batch 2
-// ══════════════════════════════════════════════════════════════════════════
+function initTimeline(){
+  const panel=document.getElementById('timeline-panel');
+  const svgEl=document.getElementById('timeline-svg');
+  const W=panel.clientWidth, H=panel.clientHeight;
+
+  svgEl.setAttribute('width',W);
+  svgEl.setAttribute('height',H);
+  svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  while(svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
+
+  // Parchment background
+  const defs=el('defs',{},svgEl);
+  const flt=el('filter',{id:'grain',x:'0%',y:'0%',width:'100%',height:'100%'},defs);
+  el('feTurbulence',{type:'fractalNoise',baseFrequency:'0.72',numOctaves:'3',stitchTiles:'stitch',result:'noise'},flt);
+  el('feColorMatrix',{type:'saturate',values:'0',in:'noise',result:'grey'},flt);
+  el('feBlend',{in:'SourceGraphic',in2:'grey',mode:'multiply'},flt);
+  const grad=el('linearGradient',{id:'tlBg',x1:'0',y1:'0',x2:'0',y2:'1'},defs);
+  el('stop',{offset:'0%','stop-color':'#ddc080'},grad);
+  el('stop',{offset:'50%','stop-color':'#c8a86a'},grad);
+  el('stop',{offset:'100%','stop-color':'#b89050'},grad);
+  el('rect',{width:W,height:H,fill:'url(#tlBg)'},svgEl);
+  el('rect',{width:W,height:H,fill:'#8a6020',opacity:'0.06',filter:'url(#grain)'},svgEl);
+
+  const clip=el('clipPath',{id:'tlClip'},defs);
+  el('rect',{width:W,height:H},clip);
+  const gWrap=el('g',{'clip-path':'url(#tlClip)'},svgEl);
+  const g=el('g',{id:'g-inner'},gWrap);
+
+  // Centre view
+  const centreYear=currentEra==='all'?-1500:(ERA_RANGES[currentEra][0]+ERA_RANGES[currentEra][1])/2;
+  translateX=W/2-yearToX(centreYear)*scaleX;
+  applyTransform(g);
+
+  drawBackground(g);
+  drawEvents(g);
+  el('g',{id:'g-people',opacity:showPeople?'1':'0'},g);
+  el('g',{id:'g-history',opacity:showHistory?'1':'0'},g);
+
+  // Re-render toggleable layers if they were on
+  peopleRendered=false; historyRendered=false;
+  if(showPeople){ drawPeople(); }
+  if(showHistory){ drawHistory(); }
+
+  setupInteraction(svgEl,g);
+}
+
+// ── BACKGROUND: era bands + axis ───────────────────────────────────────────
+function drawBackground(g){
+  const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
+
+  // Era bands
+  for(const[era,[y0,y1]] of Object.entries(ERA_RANGES)){
+    const x0=yearToX(y0), x1=yearToX(y1), w=x1-x0;
+    const color=ERA_HEX[era]||'#523d0b';
+    el('rect',{x:x0,y:TL.ERA_BAR_Y,width:w,height:TL.ERA_BAR_H,fill:color,opacity:'0.75'},g);
+    if(w>60){
+      txt(ERA_NAMES[era]||era,{
+        x:(x0+x1)/2, y:TL.ERA_BAR_Y+TL.ERA_BAR_H-5,
+        'text-anchor':'middle','font-family':"'Cinzel',serif",
+        'font-size':'11','font-weight':'700',fill:'#ffffff',opacity:'0.95',
+        'pointer-events':'none','paint-order':'stroke',
+        stroke:color,'stroke-width':'3','stroke-linejoin':'round',
+      },g);
+    }
+  }
+
+  // Axis
+  el('line',{x1:0,y1:TL.AXIS_Y,x2:TOTAL_WIDTH,y2:TL.AXIS_Y,stroke:'#3a2808','stroke-width':'2',opacity:'0.9'},g);
+
+  // Tick marks + year labels
+  const ticks=[-4000,-3500,-3000,-2500,-2000,-1900,-1800,-1700,-1600,
+    -1500,-1400,-1300,-1200,-1100,-1000,-900,-800,-750,
+    -700,-650,-600,-550,-500,-450,-400,-350,-300,
+    -250,-200,-150,-100,-63,-27,-5,
+    0,10,20,30,33,40,50,60,70,80,90,95];
+
+  for(const yr of ticks){
+    const x=yearToX(yr);
+    const major=yr%500===0||yr===0||yr===33;
+    const th=major?14:8;
+    el('line',{x1:x,y1:TL.AXIS_Y-th/2,x2:x,y2:TL.AXIS_Y+th/2,
+      stroke:'#3a2808','stroke-width':major?'2':'1',opacity:'0.8'},g);
+    if(major||yr%100===0||Math.abs(yr)<100){
+      const label=yr===0?'AD·BC':yr<0?`${Math.abs(yr)} BC`:`AD ${yr}`;
+      txt(label,{
+        x,y:TL.AXIS_Y+22,'text-anchor':'middle',
+        'font-family':"'Cinzel',serif",'font-size':major?'12':yr===33?'11':'9',
+        'font-weight':'700',fill:'#2a1a06',opacity:'0.95',
+        'pointer-events':'none','paint-order':'stroke',
+        stroke:'rgba(210,180,110,0.85)','stroke-width':'3','stroke-linejoin':'round',
+      },g);
+    }
+  }
+
+  // BC/AD divider
+  const xZ=yearToX(0);
+  el('line',{x1:xZ,y1:TL.ERA_BAR_Y-4,x2:xZ,y2:TL.HIST_Y+50,
+    stroke:'#5a3808','stroke-width':'1.5','stroke-dasharray':'5,4',opacity:'0.6'},g);
+  txt('BC',{x:xZ-10,y:TL.AXIS_Y-18,'text-anchor':'end',
+    'font-family':"'Cinzel',serif",'font-size':'10','font-weight':'700',
+    fill:'#3a2808',opacity:'0.75','pointer-events':'none'},g);
+  txt('AD',{x:xZ+10,y:TL.AXIS_Y-18,'text-anchor':'start',
+    'font-family':"'Cinzel',serif",'font-size':'10','font-weight':'700',
+    fill:'#3a2808',opacity:'0.75','pointer-events':'none'},g);
+}
+
+// ── EVENTS: greedy 12-lane layout ──────────────────────────────────────────
+function drawEvents(g){
+  const gEv=el('g',{id:'g-events'},g);
+  const dimAll=currentEra!=='all';
+  const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
+  const N=TL.LANES.length, TRI_H=9, TRI_W=8, MOFF=TL.MARKER_OFFSET;
+
+  // Sort by x then assign lanes greedily
+  const items=EVENTS.map(ev=>({ev,x:yearToX(ev.year),lw:Math.max(ev.name.length*6.5+16,50)}))
+    .sort((a,b)=>a.x-b.x);
+  const lastX=new Array(N).fill(-9999);
+  items.forEach(item=>{
+    let lane=lastX.findIndex((_,t)=>item.x-6>=lastX[t]+14);
+    if(lane===-1) lane=lastX.indexOf(Math.min(...lastX));
+    lastX[lane]=item.x+item.lw/2;
+    item.lane=lane;
+  });
+
+  items.forEach(({ev,x,lane})=>{
+    const color=ERA_HEX[ev.era]||'#523d0b';
+    const dim=dimAll&&ev.era!==currentEra;
+    const laneY=TL.LANES[lane];
+    const markerY=laneY+MOFF;
+    const op=dim?'0.15':'1';
+
+    // Stem: era bar → label top
+    el('line',{x1:x,y1:ERA_BOT,x2:x,y2:laneY-12,
+      stroke:color,'stroke-width':'1.2',opacity:dim?'0.12':'0.45'},gEv);
+
+    // Label
+    const t=txt(ev.name,{
+      x,y:laneY,'text-anchor':'middle',
+      'font-family':"'Cinzel',serif",'font-size':'10','font-weight':'700',
+      fill:'#1a1006',opacity:op,'pointer-events':'none',
+      'paint-order':'stroke',stroke:`${color}88`,'stroke-width':'3.5','stroke-linejoin':'round',
+    },gEv);
+
+    // Triangle marker directly below label
+    const tri=el('polygon',{
+      points:`${x},${markerY} ${x-TRI_W},${markerY-TRI_H} ${x+TRI_W},${markerY-TRI_H}`,
+      fill:color,opacity:dim?'0.15':'0.9',style:'cursor:pointer',
+    },gEv);
+    tri.addEventListener('click',()=>openDetail(ev));
+
+    // Generous hit target
+    const hit=el('rect',{
+      x:x-16,y:markerY-TRI_H-6,width:32,height:TRI_H+12,
+      fill:'transparent',style:'cursor:pointer',
+    },gEv);
+    hit.addEventListener('click',()=>openDetail(ev));
+  });
+}
+
+// ── PEOPLE LAYER ───────────────────────────────────────────────────────────
+function drawPeople(){
+  const gp=document.getElementById('g-people');
+  if(!gp||peopleRendered) return;
+  peopleRendered=true;
+  const dimAll=currentEra!=='all';
+  const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
+
+  TIMELINE_PEOPLE.forEach((person,i)=>{
+    const x=yearToX(person.year);
+    const color=ERA_HEX[person.era]||'#523d0b';
+    const dim=dimAll&&person.era!==currentEra;
+    const op=dim?'0.15':'0.9';
+
+    el('line',{x1:x,y1:ERA_BOT,x2:x,y2:TL.PEOPLE_Y-9,
+      stroke:color,'stroke-width':'0.7','stroke-dasharray':'3,3',opacity:dim?'0.1':'0.35'},gp);
+
+    const dot=el('circle',{cx:x,cy:TL.PEOPLE_Y,r:'5',fill:color,
+      stroke:'rgba(200,169,110,0.6)','stroke-width':'1.2',opacity:op,style:'cursor:pointer'},gp);
+    dot.addEventListener('click',()=>openPersonDetail(person));
+
+    const hit=el('circle',{cx:x,cy:TL.PEOPLE_Y,r:'12',fill:'transparent',style:'cursor:pointer'},gp);
+    hit.addEventListener('click',()=>openPersonDetail(person));
+
+    const nameY=i%2===0?TL.PEOPLE_Y-12:TL.PEOPLE_Y+20;
+    txt(person.name,{
+      x,y:nameY,'text-anchor':'middle',
+      'font-family':"'Cinzel',serif",'font-size':'9','font-weight':'700',
+      fill:'#1a1006',opacity:dim?'0.15':'1','pointer-events':'none',
+      'paint-order':'stroke',stroke:`${color}99`,'stroke-width':'3','stroke-linejoin':'round',
+    },gp);
+  });
+}
+
+// ── HISTORY LAYER ──────────────────────────────────────────────────────────
+function drawHistory(){
+  const gh=document.getElementById('g-history');
+  if(!gh||historyRendered) return;
+  historyRendered=true;
+  const HIST_COLOR='#1e3548';
+  const dw=6, DH=6;
+
+  WORLD_EVENTS.forEach((ev,i)=>{
+    const x=yearToX(ev.year);
+    el('line',{x1:x,y1:TL.AXIS_Y,x2:x,y2:TL.HIST_Y-9,
+      stroke:HIST_COLOR,'stroke-width':'0.7',opacity:'0.45'},gh);
+
+    const d=el('polygon',{
+      points:`${x},${TL.HIST_Y-dw} ${x+dw},${TL.HIST_Y} ${x},${TL.HIST_Y+dw} ${x-dw},${TL.HIST_Y}`,
+      fill:HIST_COLOR,opacity:'0.82',style:'cursor:pointer',
+    },gh);
+    d.addEventListener('click',()=>openHistoryDetail(ev));
+
+    const hit=el('rect',{x:x-12,y:TL.HIST_Y-dw-4,width:24,height:dw*2+8,
+      fill:'transparent',style:'cursor:pointer'},gh);
+    hit.addEventListener('click',()=>openHistoryDetail(ev));
+
+    const labelY=i%2===0?TL.HIST_Y+dw+14:TL.HIST_Y+dw+26;
+    txt(ev.name,{
+      x,y:labelY,'text-anchor':'middle',
+      'font-family':"'Cinzel',serif",'font-size':'9','font-weight':'700',
+      fill:'#0a1a2a',opacity:'0.88','pointer-events':'none',
+      'paint-order':'stroke',stroke:'rgba(150,190,220,0.7)','stroke-width':'3','stroke-linejoin':'round',
+    },gh);
+  });
+}
+
+// ── PAN / ZOOM ──────────────────────────────────────────────────────────────
+function applyTransform(g){
+  const W=document.getElementById('timeline-panel').clientWidth;
+  translateX=Math.min(60,Math.max(W-TOTAL_WIDTH*scaleX-60,translateX));
+  g.setAttribute('transform',`translate(${translateX},0) scale(${scaleX},1)`);
+}
+
+function setupInteraction(svg,g){
+  const panel=document.getElementById('timeline-panel');
+  svg.addEventListener('pointerdown',e=>{
+    if(e.target.closest('[style*="cursor:pointer"]')) return;
+    isPanning=true; panStartX=e.clientX; panStartTranslate=translateX;
+    panel.classList.add('panning'); svg.setPointerCapture(e.pointerId);
+  });
+  svg.addEventListener('pointermove',e=>{
+    if(!isPanning) return;
+    translateX=panStartTranslate+(e.clientX-panStartX);
+    applyTransform(g);
+  });
+  const endPan=()=>{ isPanning=false; panel.classList.remove('panning'); };
+  svg.addEventListener('pointerup',endPan);
+  svg.addEventListener('pointercancel',endPan);
+  svg.addEventListener('wheel',e=>{
+    e.preventDefault();
+    zoomAround(e.deltaY<0?1.15:0.87,e.clientX-svg.getBoundingClientRect().left,g);
+  },{passive:false});
+  svg.addEventListener('touchstart',e=>{
+    if(e.touches.length===2) lastPinchDist=Math.hypot(
+      e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+  },{passive:true});
+  svg.addEventListener('touchmove',e=>{
+    if(e.touches.length===2){
+      e.preventDefault();
+      const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      const cx=(e.touches[0].clientX+e.touches[1].clientX)/2-svg.getBoundingClientRect().left;
+      zoomAround(d/lastPinchDist,cx,g);
+      lastPinchDist=d;
+    }
+  },{passive:false});
+}
+
+function zoomAround(factor,screenX,g){
+  const contentX=(screenX-translateX)/scaleX;
+  scaleX=Math.min(8,Math.max(0.3,scaleX*factor));
+  translateX=screenX-contentX*scaleX;
+  applyTransform(g||document.getElementById('g-inner'));
+}
+
+function zoomTimeline(f){ zoomAround(f,document.getElementById('timeline-panel').clientWidth/2); }
+
+// ── ERA JUMP ────────────────────────────────────────────────────────────────
+function jumpToEra(era){
+  const W=document.getElementById('timeline-panel').clientWidth;
+  const g=document.getElementById('g-inner');
+  const yr=era==='all'?-1500:(ERA_RANGES[era][0]+ERA_RANGES[era][1])/2;
+  const start=translateX, end=W/2-yearToX(yr)*scaleX;
+  const t0=performance.now();
+  (function step(now){
+    const t=Math.min(1,(now-t0)/400), e=t<.5?2*t*t:-1+(4-2*t)*t;
+    translateX=start+(end-start)*e;
+    applyTransform(g);
+    if(t<1) requestAnimationFrame(step);
+  })(t0);
+}
+
+// ── TOGGLES ─────────────────────────────────────────────────────────────────
+function togglePeople(){
+  showPeople=!showPeople;
+  const gp=document.getElementById('g-people');
+  if(gp){ gp.setAttribute('opacity',showPeople?'1':'0'); if(showPeople) drawPeople(); }
+  document.getElementById('people-toggle-btn')?.classList.toggle('active',showPeople);
+  document.getElementById('mobile-people-btn')?.classList.toggle('active',showPeople);
+}
+function toggleHistory(){
+  showHistory=!showHistory;
+  const gh=document.getElementById('g-history');
+  if(gh){ gh.setAttribute('opacity',showHistory?'1':'0'); if(showHistory) drawHistory(); }
+  document.getElementById('history-toggle-btn')?.classList.toggle('active',showHistory);
+  document.getElementById('mobile-history-btn')?.classList.toggle('active',showHistory);
+}
+function toggleLegend(){ document.getElementById('legend')?.classList.toggle('collapsed'); }
+function toggleMobileLegend(){
+  const leg=document.getElementById('legend-mobile');
+  leg?.classList.toggle('collapsed');
+  const chev=document.getElementById('legend-btn-chev');
+  if(chev) chev.style.transform=leg?.classList.contains('collapsed')?'rotate(-90deg)':'';
+}
+
+// ── DETAIL PANEL ─────────────────────────────────────────────────────────────
+const PERSON_NAMES={
+  adam:'Adam',eve:'Eve',cain:'Cain',abel:'Abel','enoch-g':'Enoch',
+  noah:'Noah',abraham:'Abraham',sarah:'Sarah',isaac:'Isaac',
+  jacob:'Jacob','joseph-ot':'Joseph',moses:'Moses',miriam:'Miriam',
+  aaron:'Aaron',deborah:'Deborah',gideon:'Gideon',samson:'Samson',
+  ruth:'Ruth',naomi:'Naomi',boaz:'Boaz',samuel:'Samuel',
+  saul:'Saul',david:'David',solomon:'Solomon',elijah:'Elijah',
+  jeremiah:'Jeremiah',ezekiel:'Ezekiel',daniel:'Daniel',
+  ezra:'Ezra',nehemiah:'Nehemiah',hezekiah:'Hezekiah',
+  jesus:'Jesus',mary:'Mary','joseph-nt':'Joseph',
+  'john-baptist':'John the Baptist',peter:'Peter',paul:'Paul',
+  barnabas:'Barnabas','john-ap':'John',lazarus:'Lazarus',
+  martha:'Martha','mary-bethany':'Mary of Bethany',
+  pilate:'Pontius Pilate',caiaphas:'Caiaphas',
+  'herod-great':'Herod the Great','mary-magdalene':'Mary Magdalene',
+  'zechariah-nt':'Zechariah',elizabeth:'Elizabeth',isaiah:'Isaiah',
+  moses:'Moses',
+};
+
+function openDetail(ev){
+  const color=ERA_HEX[ev.era]||'#523d0b';
+  const eraName=ERA_NAMES[ev.era]||ev.era;
+  const dateStr=ev.year<0?`c. ${Math.abs(ev.year)} BC`:ev.year===0?'c. AD 1':`c. AD ${ev.year}`;
+  let html=`
+    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
+    <div class="detail-name">${ev.name}</div>
+    <div class="detail-date">${dateStr}${ev.yearEnd?` – ${ev.yearEnd<0?Math.abs(ev.yearEnd)+' BC':'AD '+ev.yearEnd}`:''}</div>
+    ${ev.ref?`<div class="detail-ref">${ev.ref}</div>`:''}
+    <div class="detail-divider"></div>
+    <div class="detail-text">${ev.summary}</div>`;
+  if(ev.people&&ev.people.length){
+    html+=`<div class="detail-section-head">People</div><div class="detail-people">`;
+    html+=ev.people.map(pid=>{
+      const name=PERSON_NAMES[pid]||pid.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+      return `<a href="people.html#${pid}" target="_blank" class="detail-person-chip">${name}</a>`;
+    }).join('');
+    html+=`</div>`;
+  }
+  if(ev.chapter) html+=`<a href="${ev.chapter}" class="detail-chapter-link">Read in Scripture Deep Dive</a>`;
+  document.getElementById('detail-content').innerHTML=html;
+  document.getElementById('detail-panel').classList.add('open');
+  history.replaceState(null,'','#'+ev.id);
+}
+
+function openPersonDetail(person){
+  const color=ERA_HEX[person.era]||'#523d0b';
+  const dateStr=person.year<0?`c. ${Math.abs(person.year)} BC`:`c. AD ${person.year}`;
+  document.getElementById('detail-content').innerHTML=`
+    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${ERA_NAMES[person.era]||person.era}</div>
+    <div class="detail-name">${person.name}</div>
+    <div class="detail-date">${dateStr}</div>
+    <div class="detail-divider"></div>
+    <div class="detail-text">View the full biography, family connections, and scripture role for ${person.name} in the People of the Bible tree.</div>
+    <a href="people.html#${person.id}" target="_blank" class="detail-chapter-link">View Biography in People of the Bible</a>`;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+function openHistoryDetail(ev){
+  const C='#1e3548';
+  const dateStr=ev.year<0?`c. ${Math.abs(ev.year)} BC`:`c. AD ${ev.year}`;
+  document.getElementById('detail-content').innerHTML=`
+    <div class="detail-era-badge" style="background:${C}22;border:1px solid ${C}66;color:${C}">World History</div>
+    <div class="detail-name">${ev.name}</div>
+    <div class="detail-date">${dateStr}</div>
+    ${ev.region?`<div class="detail-ref" style="color:var(--text-muted)">${ev.region}</div>`:''}
+    <div class="detail-divider"></div>
+    <div class="detail-text">${ev.summary}</div>`;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+function closeDetail(){
+  document.getElementById('detail-panel').classList.remove('open');
+  history.replaceState(null,'',location.pathname);
+  setTimeout(()=>{
+    const panel=document.getElementById('timeline-panel');
+    const svg=document.getElementById('timeline-svg');
+    if(svg&&panel){ svg.setAttribute('width',panel.clientWidth); svg.setAttribute('height',panel.clientHeight); }
+  },320);
+}
+
+// ── ERA FILTER ────────────────────────────────────────────────────────────
+document.querySelectorAll('.era-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.era-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentEra=btn.dataset.era;
+    const lbl=document.getElementById('mobile-era-label');
+    if(lbl) lbl.textContent=currentEra==='all'?'All Eras':(ERA_NAMES[currentEra]||currentEra);
+    // Re-render events with new dimming, then jump
+    const g=document.getElementById('g-inner');
+    if(g){
+      const gEv=document.getElementById('g-events');
+      if(gEv) gEv.parentNode.removeChild(gEv);
+      // Re-insert before people and history groups
+      const gp=document.getElementById('g-people');
+      drawEvents(g);
+      // Move newly created g-events before g-people
+      const newEv=document.getElementById('g-events');
+      if(newEv&&gp) g.insertBefore(newEv,gp);
+    }
+    // Reset toggleable layers so they re-render with new dimming
+    peopleRendered=false; historyRendered=false;
+    if(showPeople){ const gp=document.getElementById('g-people'); if(gp){ while(gp.firstChild)gp.removeChild(gp.firstChild); } drawPeople(); }
+    if(showHistory){ const gh=document.getElementById('g-history'); if(gh){ while(gh.firstChild)gh.removeChild(gh.firstChild); } drawHistory(); }
+    setTimeout(()=>jumpToEra(currentEra),80);
+  });
+});
+
+// ── KEYBOARD ─────────────────────────────────────────────────────────────
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDetail(); });
+
+// ── SWIPE DOWN TO CLOSE ──────────────────────────────────────────────────
+(function(){
+  let sy=0;
+  const h=document.getElementById('detail-handle');
+  if(!h) return;
+  h.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true});
+  h.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-sy>40)closeDetail();},{passive:true});
+})();
+
+// ── HASH DEEP-LINK ────────────────────────────────────────────────────────
+function handleHash(){
+  const id=location.hash.replace('#','');
+  if(!id) return;
+  const ev=EVENTS.find(e=>e.id===id);
+  if(!ev) return;
+  const eraBtn=document.querySelector(`.era-btn[data-era="${ev.era}"]`);
+  if(eraBtn){ document.querySelectorAll('.era-btn').forEach(b=>b.classList.remove('active')); eraBtn.classList.add('active'); currentEra=ev.era; }
+  setTimeout(()=>{ jumpToEra(ev.era); setTimeout(()=>openDetail(ev),500); },200);
+}
+
+// ── RESIZE ────────────────────────────────────────────────────────────────
+let resizeTimer;
+window.addEventListener('resize',()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(initTimeline,150); });
+
+// ── DATA ──────────────────────────────────────────────────────────────────
 const EVENTS = [
 
 // ── PRIMEVAL ──────────────────────────────────────────────────────────────
@@ -1141,142 +1199,6 @@ const EVENTS = [
   summary:'The apostle John, exiled on the island of Patmos under Domitian\'s persecution, received a series of visions from the risen, glorified Christ. Seven letters to seven churches. Four living creatures and twenty-four elders. Seals, trumpets, bowls. The great dragon and the Lamb. Babylon the Great and the New Jerusalem. "I am the Alpha and the Omega, the First and the Last, the Beginning and the End." The Scriptures that began with creation end with new creation: "He who was seated on the throne said, \'I am making everything new!\' ... It is done." The entire biblical narrative arrives at its intended destination.' },
 ];
 
-
-
-// ══════════════════════════════════════════════════════════════════════════
-// EVENT RENDERING — Batch 2
-// ═════════════════════════════════════════════════════════════════════function renderEvents(g) {
-  const gEvents = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
-  if (!gEvents) return;
-  while (gEvents.firstChild) gEvents.removeChild(gEvents.firstChild);
-
-  const dimAll = currentEra !== 'all';
-  const ERA_BAR_BOTTOM = TL.ERA_BAR_Y + TL.ERA_BAR_H;  // y=56
-  const TRI_H = 9, TRI_W = 8;
-  const MARKER_OFFSET = TL.MARKER_OFFSET; // px below label baseline
-
-  // ── GREEDY LANE ASSIGNMENT ────────────────────────────────────────────
-  const positioned = EVENTS.map(ev => ({
-    ev,
-    x: yearToX(ev.year),
-    labelW: Math.max(ev.name.length * 6.5 + 16, 50),
-  })).sort((a, b) => a.x - b.x);
-
-  const N_LANES = TL.LANES.length;
-  const laneLastX = new Array(N_LANES).fill(-9999);
-
-  positioned.forEach(item => {
-    let lane = -1;
-    for (let t = 0; t < N_LANES; t++) {
-      if (item.x - 6 >= laneLastX[t] + 14) { lane = t; break; }
-    }
-    if (lane === -1) lane = laneLastX.indexOf(Math.min(...laneLastX));
-    laneLastX[lane] = item.x + item.labelW / 2;
-    item.lane = lane;
-  });
-
-  // ── DRAW: stem → label → marker directly below label ─────────────────
-  positioned.forEach(({ ev, x, lane }) => {
-    const color = ERA_HEX[ev.era] || '#8b6914';
-    const dimmed = dimAll && ev.era !== currentEra;
-    const labelY  = TL.LANES[lane];          // label baseline
-    const labelTop = labelY - 11;             // approx top of 10px text
-    const markerY  = labelY + MARKER_OFFSET;  // marker directly below label
-
-    // 1. Thin stem: era bar bottom → top of label
-    svgEl_('line', {
-      x1: x, y1: ERA_BAR_BOTTOM,
-      x2: x, y2: labelTop - 3,
-      stroke: color, 'stroke-width': '1.2',
-      opacity: dimmed ? '0.12' : '0.45',
-    }, gEvents);
-
-    // 2. Label
-    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textEl.setAttribute('x', x);
-    textEl.setAttribute('y', labelY);
-    textEl.setAttribute('text-anchor', 'middle');
-    textEl.setAttribute('font-family', "'Cinzel', serif");
-    textEl.setAttribute('font-size', '10');
-    textEl.setAttribute('font-weight', '700');
-    textEl.setAttribute('fill', '#1a1006');
-    textEl.setAttribute('opacity', dimmed ? '0.15' : '1');
-    textEl.setAttribute('pointer-events', 'none');
-    textEl.setAttribute('paint-order', 'stroke');
-    textEl.setAttribute('stroke', `${color}88`);
-    textEl.setAttribute('stroke-width', '3.5');
-    textEl.setAttribute('stroke-linejoin', 'round');
-    textEl.textContent = ev.name;
-    gEvents.appendChild(textEl);
-
-    // 3. Triangle marker — directly below its own label, never overlaps text
-    const tri = svgEl_('polygon', {
-      points: `${x},${markerY} ${x-TRI_W},${markerY-TRI_H} ${x+TRI_W},${markerY-TRI_H}`,
-      fill: color,
-      opacity: dimmed ? '0.15' : '0.9',
-      'data-clickable': '1', style: 'cursor:pointer',
-    }, gEvents);
-    tri.addEventListener('click', () => openDetail(ev));
-
-    // 4. Generous hit target (larger than marker for easy tapping)
-    const hit = svgEl_('rect', {
-      x: x - 16, y: markerY - TRI_H - 6, width: 32, height: TRI_H + 12,
-      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
-    }, gEvents);
-    hit.addEventListener('click', () => openDetail(ev));
-  });
-}
-
-// Patch initTimeline to call renderEvents after renderContent
-const _origInit = initTimeline;
-initTimeline = function() {
-  _origInit.call(this);
-  // renderContent created g-events — now populate it
-  const gInner = document.getElementById('g-inner');
-  if (gInner) renderEvents(gInner);
-};
-
-// Patch jumpToEra to dim events outside era
-const _origJump = jumpToEra;
-jumpToEra = function(era) {
-  _origJump.call(this, era);
-  // Re-render events with current era dimming
-  const gInner = document.getElementById('g-inner');
-  if (gInner) setTimeout(() => {
-    renderEvents(gInner);
-    if (showPeople) {
-      const gp = document.getElementById('g-people');
-      if (gp) renderPeopleLayer(gp);
-    }
-  }, 10);
-};
-
-// Hash deep-link support
-function handleTimelineHash() {
-  const hash = location.hash.replace('#', '');
-  if (!hash) return;
-  const ev = EVENTS.find(e => e.id === hash);
-  if (!ev) return;
-  // Jump to that era and open the detail
-  const eraBtn = document.querySelector(`.era-btn[data-era="${ev.era}"]`);
-  if (eraBtn) {
-    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
-    eraBtn.classList.add('active');
-    currentEra = ev.era;
-  }
-  setTimeout(() => {
-    jumpToEra(ev.era);
-    setTimeout(() => openDetail(ev), 500);
-  }, 200);
-}
-
-
-
-// ══════════════════════════════════════════════════════════════════════════
-// PEOPLE LAYER — Batch 3
-// ~90 significant people with approximate birth years
-// ══════════════════════════════════════════════════════════════════════════
-
 const TIMELINE_PEOPLE = [
   // Primeval
   { id:'adam',      name:'Adam',          year:-4000, era:'primeval'  },
@@ -1367,104 +1289,6 @@ const TIMELINE_PEOPLE = [
   { id:'caiaphas',     name:'Caiaphas',   year:-18,  era:'nt'        },
 ];
 
-function renderPeopleLayer(g) {
-  const gPeople = document.getElementById('g-people');
-  if (!gPeople) return;
-  while (gPeople.firstChild) gPeople.removeChild(gPeople.firstChild);
-
-  const dimAll = currentEra !== 'all';
-
-  TIMELINE_PEOPLE.forEach((person, i) => {
-    const x = yearToX(person.year);
-    const color = ERA_HEX[person.era] || '#888';
-    const dimmed = dimAll && person.era !== currentEra;
-    const op = dimmed ? '0.15' : '0.9';
-
-    // Vertical dashed line from person dot up to era bar
-    svgEl_('line', {
-      x1: x, y1: TL.ERA_BAR_Y + TL.ERA_BAR_H,
-      x2: x, y2: TL.PEOPLE_Y - 8,
-      stroke: color, 'stroke-width': '0.7',
-      'stroke-dasharray': '3,3', opacity: dimmed ? '0.1' : '0.35',
-    }, gPeople);
-
-    // Person dot
-    const dot = svgEl_('circle', {
-      cx: x, cy: TL.PEOPLE_Y,
-      r: '5', fill: color,
-      stroke: 'rgba(200,169,110,0.6)', 'stroke-width': '1.2',
-      opacity: op, 'data-clickable': '1', style: 'cursor:pointer',
-    }, gPeople);
-    dot.addEventListener('click', () => openPersonDetail(person));
-
-    // Hit target
-    const hit = svgEl_('circle', {
-      cx: x, cy: TL.PEOPLE_Y, r: '12',
-      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
-    }, gPeople);
-    hit.addEventListener('click', () => openPersonDetail(person));
-
-    // Name label — alternate above/below, dark ink with era-colour halo
-    const nameY = i % 2 === 0
-      ? TL.PEOPLE_Y - 12
-      : TL.PEOPLE_Y + 20;
-    svgText(person.name, {
-      x, y: nameY,
-      'text-anchor': 'middle',
-      'font-family': "'Cinzel', serif",
-      'font-size': '9',
-      'font-weight': '700',
-      fill: '#1a1006',
-      opacity: dimmed ? '0.15' : '1',
-      'pointer-events': 'none',
-      'paint-order': 'stroke',
-      stroke: `${color}99`,
-      'stroke-width': '3',
-      'stroke-linejoin': 'round',
-    }, gPeople);
-  });
-}
-
-function openPersonDetail(person) {
-  const color = ERA_HEX[person.era] || '#888';
-  const eraName = ERA_NAMES[person.era] || person.era;
-  const dateStr = person.year < 0 ? `c. ${Math.abs(person.year)} BC` : `c. AD ${person.year}`;
-  document.getElementById('detail-content').innerHTML = `
-    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
-    <div class="detail-name">${person.name}</div>
-    <div class="detail-date">${dateStr}</div>
-    <div class="detail-divider"></div>
-    <div class="detail-text" style="margin-bottom:.5rem">
-      View the full biography, family connections, and scripture role for this person in the People of the Bible tree.
-    </div>
-    <a href="people.html#${person.id}" target="_blank" class="detail-chapter-link">
-      View Biography in People of the Bible
-    </a>
-  `;
-  document.getElementById('detail-panel').classList.add('open');
-}
-
-// Patch togglePeople to also render the layer
-const _origTogglePeople = togglePeople;
-togglePeople = function() {
-  showPeople = !showPeople;
-  const gp = document.getElementById('g-people');
-  if (gp) gp.setAttribute('opacity', showPeople ? '1' : '0');
-  // Render people layer on first toggle ON
-  if (showPeople && gp && gp.childElementCount === 0) {
-    renderPeopleLayer(gp);
-  }
-  document.getElementById('people-toggle-btn')?.classList.toggle('active', showPeople);
-  document.getElementById('mobile-people-btn')?.classList.toggle('active', showPeople);
-};
-
-
-
-// ══════════════════════════════════════════════════════════════════════════
-// WORLD HISTORY LAYER — Batch 4
-// Major secular events contemporaneous with biblical history
-// ══════════════════════════════════════════════════════════════════════════
-
 const WORLD_EVENTS = [
   { id:'wh-stonehenge-begin', name:'Stonehenge begun', year:-3000, region:'Britain',
     summary:'Construction of Stonehenge begins on Salisbury Plain in what is now England. The monument was built in several phases over 1,500 years. Contemporary with early patriarchal period.' },
@@ -1528,97 +1352,15 @@ const WORLD_EVENTS = [
     summary:'The Essene community at Qumran is established near the Dead Sea, copying and preserving the Hebrew scriptures. Their library — discovered in caves in 1947 as the Dead Sea Scrolls — includes the oldest surviving manuscripts of almost every OT book, proving the remarkable accuracy of textual transmission over a thousand years.' },
 ];
 
-function renderHistoryLayer(g) {
-  const gHist = document.getElementById('g-history');
-  if (!gHist) return;
-  while (gHist.firstChild) gHist.removeChild(gHist.firstChild);
-
-  const HIST_COLOR = '#1e3548'; // muted steel blue — distinct from biblical events
-
-  WORLD_EVENTS.forEach((ev, i) => {
-    const x = yearToX(ev.year);
-
-    // Stem from axis down to marker
-    svgEl_('line', {
-      x1: x, y1: TL.AXIS_Y,
-      x2: x, y2: TL.HIST_Y - 8,
-      stroke: HIST_COLOR, 'stroke-width': '0.7', opacity: '0.45',
-    }, gHist);
-
-    // Diamond marker (pointing up)
-    const dw = 6;
-    const diamond = svgEl_('polygon', {
-      points: `${x},${TL.HIST_Y-dw} ${x+dw},${TL.HIST_Y} ${x},${TL.HIST_Y+dw} ${x-dw},${TL.HIST_Y}`,
-      fill: HIST_COLOR, opacity: '0.82',
-      'data-clickable': '1', style: 'cursor:pointer',
-    }, gHist);
-    diamond.addEventListener('click', () => openHistoryDetail(ev));
-
-    // Hit target
-    const hit = svgEl_('rect', {
-      x: x - 12, y: TL.HIST_Y - dw - 4, width: 24, height: dw * 2 + 8,
-      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
-    }, gHist);
-    hit.addEventListener('click', () => openHistoryDetail(ev));
-
-    // Label — alternate two rows, legible dark ink
-    const labelY = i % 2 === 0
-      ? TL.HIST_Y + dw + 14
-      : TL.HIST_Y + dw + 26;
-    svgText(ev.name, {
-      x, y: labelY,
-      'text-anchor': 'middle',
-      'font-family': "'Cinzel', serif",
-      'font-size': '9',
-      'font-weight': '700',
-      fill: '#0a1a2a',
-      opacity: '0.88',
-      'pointer-events': 'none',
-      'paint-order': 'stroke',
-      stroke: 'rgba(150,190,220,0.7)',
-      'stroke-width': '3',
-      'stroke-linejoin': 'round',
-    }, gHist);
-  });
-}
-
-function openHistoryDetail(ev) {
-  const HIST_COLOR = '#1e3548';
-  const dateStr = ev.year < 0 ? `c. ${Math.abs(ev.year)} BC` : `c. AD ${ev.year}`;
-  document.getElementById('detail-content').innerHTML = `
-    <div class="detail-era-badge" style="background:${HIST_COLOR}22;border:1px solid ${HIST_COLOR}66;color:${HIST_COLOR}">World History</div>
-    <div class="detail-name">${ev.name}</div>
-    <div class="detail-date">${dateStr}</div>
-    ${ev.region ? `<div class="detail-ref" style="color:var(--text-muted)">${ev.region}</div>` : ''}
-    <div class="detail-divider"></div>
-    <div class="detail-text">${ev.summary}</div>
-  `;
-  document.getElementById('detail-panel').classList.add('open');
-}
-
-// Patch toggleHistory to render on first use
-const _origToggleHistory = toggleHistory;
-toggleHistory = function() {
-  showHistory = !showHistory;
-  const gh = document.getElementById('g-history');
-  if (gh) gh.setAttribute('opacity', showHistory ? '1' : '0');
-  if (showHistory && gh && gh.childElementCount === 0) {
-    renderHistoryLayer(gh);
-  }
-  document.getElementById('history-toggle-btn')?.classList.toggle('active', showHistory);
-  document.getElementById('mobile-history-btn')?.classList.toggle('active', showHistory);
-};
-
-
-window.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 768) {
+// ── BOOT ──────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded',()=>{
+  if(window.innerWidth<=768){
     document.getElementById('legend-mobile')?.classList.add('collapsed');
-    const chev = document.getElementById('legend-btn-chev');
-    if (chev) chev.style.transform = 'rotate(-90deg)';
+    const chev=document.getElementById('legend-btn-chev');
+    if(chev) chev.style.transform='rotate(-90deg)';
   }
   initTimeline();
-
-  handleTimelineHash();
+  handleHash();
 });
 </script>
 </body>
