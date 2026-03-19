@@ -584,6 +584,21 @@ body {
 @media (max-width: 380px) {
   .era-btn { font-size: .52rem; padding: .22rem .45rem; }
 }
+
+/* ── PLACE TOOLTIP ───────────────────────────────────────────── */
+.place-tooltip { }
+.tip-ancient {
+  font-family: 'Cinzel', serif;
+  font-size: .72rem;
+  color: var(--gold);
+  letter-spacing: .06em;
+  margin-bottom: .15rem;
+}
+.tip-modern {
+  font-size: .68rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -896,6 +911,9 @@ function renderMap() {
   g.append('g').attr('class', 'story-paths');
   g.append('g').attr('class', 'story-places');
 
+  // ── PLACE NAME LAYER ──────────────────────────────────────────────────
+  renderPlaces(g, projection, null); // show all places on load
+
   // ── VIGNETTE OVERLAY ────────────────────────────────────────────────
   svg.append('rect')
     .attr('width', W).attr('height', H)
@@ -938,11 +956,15 @@ function toggleNames() {
     btn.textContent = showModernNames ? '⇄ Modern Names' : '⇄ Ancient Names';
     btn.classList.toggle('active', showModernNames);
   }
-  // Toggle label visibility — populated in Batch 2
-  document.querySelectorAll('.ancient-label').forEach(el =>
-    el.style.display = showModernNames ? 'none' : '');
-  document.querySelectorAll('.modern-label').forEach(el =>
-    el.style.display = showModernNames ? '' : 'none');
+  // Toggle SVG text labels
+  d3.selectAll('.ancient-label').style('display', showModernNames ? 'none' : null);
+  d3.selectAll('.modern-label').style('display', showModernNames ? null : 'none');
+  // Update button text
+  const btn = document.getElementById('names-toggle-btn');
+  if (btn) btn.innerHTML = showModernNames
+    ? '⇄&nbsp;Modern Names'
+    : '⇄&nbsp;Ancient Names';
+  if (btn) btn.classList.toggle('active', showModernNames);
 }
 
 function toggleLegend() {
@@ -990,6 +1012,238 @@ function closeStory() {
     if (e.changedTouches[0].clientY - startY > 40) closeStory();
   }, { passive: true });
 })();
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// PLACES DATA — Batch 2
+// Each place: id, ancient name, modern name/location, [lon, lat], type
+// types: city | region | mountain | water | site
+// ══════════════════════════════════════════════════════════════════════════
+const PLACES = [
+
+  // ── PRIMEVAL ────────────────────────────────────────────────────────────
+  { id:'eden',       ancient:'Garden of Eden',  modern:'Near ancient Mesopotamia (trad.)', lon:44.4, lat:31.5, type:'site',    stories:['eden'] },
+  { id:'ararat',     ancient:'Mt. Ararat',      modern:'Mt. Ararat, Turkey',              lon:44.5, lat:39.7, type:'mountain', stories:['flood'] },
+  { id:'babel',      ancient:'Babel',           modern:'Babylon, Iraq',                   lon:44.4, lat:32.5, type:'city',    stories:['babel','exile-babylon'] },
+  { id:'shinar',     ancient:'Land of Shinar',  modern:'Southern Iraq',                   lon:44.5, lat:32.0, type:'region',  stories:['babel'] },
+
+  // ── PATRIARCHAL ─────────────────────────────────────────────────────────
+  { id:'ur',         ancient:'Ur of the Chaldeans', modern:'Tell el-Muqayyar, Iraq',     lon:46.1, lat:30.9, type:'city',    stories:['abram-call'] },
+  { id:'haran',      ancient:'Haran',           modern:'Harran, Turkey',                  lon:38.9, lat:36.8, type:'city',    stories:['abram-call','jacob-journey'] },
+  { id:'shechem',    ancient:'Shechem',         modern:'Nablus, West Bank',               lon:35.3, lat:32.2, type:'city',    stories:['abram-call','conquest','judges-cycle'] },
+  { id:'bethel',     ancient:'Bethel',          modern:'Beitin, West Bank',               lon:35.2, lat:31.9, type:'city',    stories:['abram-call','jacob-journey'] },
+  { id:'hebron',     ancient:'Hebron',          modern:'Hebron, West Bank',               lon:35.1, lat:31.5, type:'city',    stories:['abram-call','sodom','david-rise'] },
+  { id:'negev',      ancient:'The Negev',       modern:'Negev Desert, Israel',            lon:34.8, lat:30.8, type:'region',  stories:['abram-call','abram-egypt'] },
+  { id:'egypt',      ancient:'Egypt',           modern:'Egypt',                           lon:31.2, lat:28.5, type:'region',  stories:['abram-egypt','joseph-egypt','exodus-plagues','nativity'] },
+  { id:'nile-delta', ancient:'Nile Delta',      modern:'Nile Delta, Egypt',               lon:31.0, lat:31.0, type:'region',  stories:['abram-egypt','exodus-plagues'] },
+  { id:'sodom',      ancient:'Sodom',           modern:'S. of Dead Sea (trad.)',          lon:35.5, lat:31.0, type:'city',    stories:['sodom'] },
+  { id:'dead-sea',   ancient:'Salt Sea',        modern:'Dead Sea',                        lon:35.5, lat:31.4, type:'water',   stories:['sodom','conquest'] },
+  { id:'moriah',     ancient:'Mt. Moriah',      modern:'Temple Mount, Jerusalem',         lon:35.2, lat:31.8, type:'mountain', stories:['isaac-birth','solomon-temple'] },
+  { id:'beersheba',  ancient:'Beersheba',       modern:'Be\'er Sheva, Israel',            lon:34.8, lat:31.2, type:'city',    stories:['isaac-birth','abram-call'] },
+  { id:'paddan-aram',ancient:'Paddan-Aram',     modern:'N. Syria / SE Turkey',            lon:38.5, lat:36.5, type:'region',  stories:['jacob-journey'] },
+  { id:'peniel',     ancient:'Peniel',          modern:'Near Jabbok River, Jordan',       lon:35.8, lat:32.3, type:'site',    stories:['jacob-journey'] },
+  { id:'dothan',     ancient:'Dothan',          modern:'Tell Dothan, West Bank',          lon:35.2, lat:32.4, type:'city',    stories:['joseph-egypt'] },
+  { id:'goshen',     ancient:'Land of Goshen',  modern:'Nile Delta region, Egypt',       lon:31.8, lat:30.8, type:'region',  stories:['joseph-egypt'] },
+  { id:'memphis',    ancient:'Memphis (Noph)',  modern:'Mit Rahina, Egypt',               lon:31.2, lat:29.8, type:'city',    stories:['joseph-egypt'] },
+  { id:'on',         ancient:'On (Heliopolis)', modern:'Cairo, Egypt',                    lon:31.3, lat:30.1, type:'city',    stories:['joseph-egypt'] },
+
+  // ── EXODUS ──────────────────────────────────────────────────────────────
+  { id:'rameses',    ancient:'Rameses',         modern:'Tell el-Dab\'a, Egypt',           lon:31.8, lat:30.8, type:'city',    stories:['exodus-plagues'] },
+  { id:'pithom',     ancient:'Pithom',          modern:'Tell el-Maskhuta, Egypt',         lon:32.1, lat:30.6, type:'city',    stories:['exodus-plagues'] },
+  { id:'red-sea',    ancient:'Red Sea',         modern:'Red Sea / Gulf of Suez',          lon:32.5, lat:29.5, type:'water',   stories:['exodus-plagues','wilderness'] },
+  { id:'sinai',      ancient:'Mt. Sinai (Horeb)', modern:'Jebel Musa, Sinai Peninsula', lon:33.97, lat:28.54, type:'mountain', stories:['sinai','wilderness'] },
+  { id:'kadesh',     ancient:'Kadesh-Barnea',   modern:'\'Ein el-Qudeirat, Sinai',        lon:34.4, lat:30.7, type:'site',    stories:['wilderness'] },
+  { id:'sinai-pen',  ancient:'Wilderness of Sinai', modern:'Sinai Peninsula, Egypt',     lon:33.5, lat:29.5, type:'region',  stories:['wilderness','sinai'] },
+  { id:'jordan-r',   ancient:'Jordan River',    modern:'Jordan River',                   lon:35.6, lat:32.0, type:'water',   stories:['conquest','baptism-temptation'] },
+
+  // ── CONQUEST / JUDGES ───────────────────────────────────────────────────
+  { id:'jericho',    ancient:'Jericho',         modern:'Jericho, West Bank',              lon:35.4, lat:31.9, type:'city',    stories:['conquest','final-week'] },
+  { id:'ai',         ancient:'Ai',              modern:'Et-Tell, West Bank',              lon:35.3, lat:31.9, type:'city',    stories:['conquest'] },
+  { id:'gibeon',     ancient:'Gibeon',          modern:'El-Jib, West Bank',               lon:35.2, lat:31.8, type:'city',    stories:['conquest'] },
+  { id:'hazor',      ancient:'Hazor',           modern:'Tell Hazor, Israel',              lon:35.6, lat:33.0, type:'city',    stories:['conquest','judges-cycle'] },
+  { id:'megiddo',    ancient:'Megiddo',         modern:'Tel Megiddo, Israel',             lon:35.2, lat:32.6, type:'city',    stories:['judges-cycle'] },
+  { id:'jezreel',    ancient:'Valley of Jezreel', modern:'Jezreel Valley, Israel',       lon:35.2, lat:32.6, type:'region',  stories:['judges-cycle','elijah'] },
+
+  // ── KINGDOM ─────────────────────────────────────────────────────────────
+  { id:'bethlehem',  ancient:'Bethlehem',       modern:'Bethlehem, West Bank',            lon:35.2, lat:31.7, type:'city',    stories:['david-rise','nativity'] },
+  { id:'jerusalem',  ancient:'Jerusalem',       modern:'Jerusalem',                       lon:35.2, lat:31.8, type:'city',    stories:['david-rise','solomon-temple','final-week','exile-babylon'] },
+  { id:'ziklag',     ancient:'Ziklag',          modern:'Tell esh-Shari\'a, Israel',       lon:34.6, lat:31.5, type:'city',    stories:['david-rise'] },
+  { id:'gibeah',     ancient:'Gibeah (Saul)',   modern:'Tell el-Ful, W. Bank',            lon:35.2, lat:31.8, type:'city',    stories:['david-rise'] },
+  { id:'mt-carmel',  ancient:'Mt. Carmel',      modern:'Mt. Carmel, Israel',              lon:35.0, lat:32.7, type:'mountain', stories:['elijah'] },
+  { id:'zarephath',  ancient:'Zarephath',       modern:'Sarafand, Lebanon',               lon:35.3, lat:33.5, type:'city',    stories:['elijah'] },
+
+  // ── PROPHETS / EXILE ────────────────────────────────────────────────────
+  { id:'samaria',    ancient:'Samaria',         modern:'Sebastiya, West Bank',            lon:35.2, lat:32.3, type:'city',    stories:['exile-assyria','elijah'] },
+  { id:'nineveh',    ancient:'Nineveh',         modern:'Mosul, Iraq',                     lon:43.1, lat:36.4, type:'city',    stories:['exile-assyria'] },
+  { id:'assyria',    ancient:'Assyria',         modern:'N. Iraq / SE Turkey',             lon:43.0, lat:36.5, type:'region',  stories:['exile-assyria'] },
+  { id:'babylon',    ancient:'Babylon',         modern:'Hillah, Iraq',                    lon:44.4, lat:32.5, type:'city',    stories:['exile-babylon','ezra-return'] },
+  { id:'lachish',    ancient:'Lachish',         modern:'Tell Lachish, Israel',            lon:34.8, lat:31.6, type:'city',    stories:['exile-babylon'] },
+  { id:'persia',     ancient:'Persia',          modern:'Iran',                            lon:53.0, lat:32.0, type:'region',  stories:['ezra-return'] },
+  { id:'susa',       ancient:'Susa',            modern:'Shush, Iran',                     lon:48.2, lat:32.2, type:'city',    stories:['ezra-return'] },
+
+  // ── NEW TESTAMENT ────────────────────────────────────────────────────────
+  { id:'nazareth',   ancient:'Nazareth',        modern:'Nazareth, Israel',                lon:35.3, lat:32.7, type:'city',    stories:['nativity','galilee-ministry'] },
+  { id:'capernaum',  ancient:'Capernaum',       modern:'Kfar Nahum, Israel',              lon:35.6, lat:32.9, type:'city',    stories:['galilee-ministry'] },
+  { id:'galilee-sea',ancient:'Sea of Galilee',  modern:'Sea of Galilee (Kinneret)',       lon:35.6, lat:32.8, type:'water',   stories:['galilee-ministry'] },
+  { id:'caesarea-p', ancient:'Caesarea Philippi', modern:'Banias, Israel',               lon:35.7, lat:33.2, type:'city',    stories:['galilee-ministry'] },
+  { id:'cana',       ancient:'Cana',            modern:'Kafr Kanna, Israel',              lon:35.3, lat:32.8, type:'city',    stories:['galilee-ministry'] },
+  { id:'judean-wild',ancient:'Judean Wilderness', modern:'Judean Desert, W. Bank',       lon:35.4, lat:31.7, type:'region',  stories:['baptism-temptation'] },
+  { id:'gethsemane', ancient:'Gethsemane',      modern:'Garden of Gethsemane, Jerusalem', lon:35.2, lat:31.8, type:'site',   stories:['final-week'] },
+  { id:'golgotha',   ancient:'Golgotha',        modern:'Church of Holy Sepulchre, Jerusalem', lon:35.2, lat:31.8, type:'site', stories:['final-week'] },
+  { id:'antioch-s',  ancient:'Antioch (Syria)', modern:'Antakya, Turkey',                lon:36.2, lat:36.2, type:'city',    stories:['paul-journey1','paul-journey2','paul-journey3'] },
+  { id:'cyprus',     ancient:'Cyprus',          modern:'Cyprus',                          lon:33.4, lat:35.1, type:'region',  stories:['paul-journey1'] },
+  { id:'lystra',     ancient:'Lystra',          modern:'Hatunsaray, Turkey',              lon:32.5, lat:37.6, type:'city',    stories:['paul-journey1'] },
+  { id:'derbe',      ancient:'Derbe',           modern:'Kerti Höyük, Turkey',             lon:33.4, lat:37.4, type:'city',    stories:['paul-journey1'] },
+  { id:'iconium',    ancient:'Iconium',         modern:'Konya, Turkey',                   lon:32.5, lat:37.9, type:'city',    stories:['paul-journey1'] },
+  { id:'antioch-p',  ancient:'Antioch (Pisidia)', modern:'Yalvaç, Turkey',               lon:31.2, lat:38.3, type:'city',    stories:['paul-journey1'] },
+  { id:'philippi',   ancient:'Philippi',        modern:'Filippoi, Greece',                lon:24.3, lat:41.0, type:'city',    stories:['paul-journey2'] },
+  { id:'thessalonica',ancient:'Thessalonica',   modern:'Thessaloniki, Greece',            lon:22.9, lat:40.6, type:'city',    stories:['paul-journey2'] },
+  { id:'athens',     ancient:'Athens',          modern:'Athens, Greece',                  lon:23.7, lat:37.9, type:'city',    stories:['paul-journey2'] },
+  { id:'corinth',    ancient:'Corinth',         modern:'Corinth, Greece',                 lon:22.9, lat:37.9, type:'city',    stories:['paul-journey2','paul-journey3'] },
+  { id:'ephesus',    ancient:'Ephesus',         modern:'Selçuk, Turkey',                  lon:27.3, lat:37.9, type:'city',    stories:['paul-journey3'] },
+  { id:'caesarea-m', ancient:'Caesarea Maritima', modern:'Caesarea, Israel',             lon:34.9, lat:32.5, type:'city',    stories:['paul-journey3','paul-rome'] },
+  { id:'malta',      ancient:'Melita (Malta)',  modern:'Malta',                           lon:14.4, lat:35.9, type:'region',  stories:['paul-rome'] },
+  { id:'rome',       ancient:'Rome',            modern:'Rome, Italy',                     lon:12.5, lat:41.9, type:'city',    stories:['paul-rome'] },
+  { id:'troas',      ancient:'Troas',           modern:'Dalyan, Turkey',                  lon:26.3, lat:39.8, type:'city',    stories:['paul-journey2','paul-journey3'] },
+];
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// PLACE RENDERING — Batch 2
+// ══════════════════════════════════════════════════════════════════════════
+
+// Symbol shapes per type
+const PLACE_SYMBOLS = {
+  city:     { shape: 'circle', r: 4,   labelOffset: [0, -10] },
+  region:   { shape: 'none',   r: 0,   labelOffset: [0,   0] },
+  mountain: { shape: 'path',   r: 5,   labelOffset: [0, -12] },
+  water:    { shape: 'none',   r: 0,   labelOffset: [0,   0] },
+  site:     { shape: 'star',   r: 5,   labelOffset: [0, -12] },
+};
+
+function renderPlaces(g, projection, activeStoryIds) {
+  // Remove old place layer
+  g.selectAll('.places-layer').remove();
+  const layer = g.append('g').attr('class', 'places-layer');
+
+  const visible = activeStoryIds === null
+    ? PLACES
+    : PLACES.filter(p => p.stories.some(s => activeStoryIds.includes(s)));
+
+  visible.forEach(place => {
+    const xy = projection([place.lon, place.lat]);
+    if (!xy) return;
+    const [x, y] = xy;
+    const sym = PLACE_SYMBOLS[place.type] || PLACE_SYMBOLS.city;
+
+    const grp = layer.append('g')
+      .attr('class', `place place-${place.type}`)
+      .attr('transform', `translate(${x},${y})`)
+      .style('cursor', 'pointer')
+      .on('click', () => showPlaceTooltip(place, x, y));
+
+    // Symbol
+    if (place.type === 'city') {
+      grp.append('circle')
+        .attr('r', sym.r)
+        .attr('fill', '#3a2a10')
+        .attr('stroke', '#d4b483')
+        .attr('stroke-width', 1.2)
+        .attr('opacity', 0.85);
+    } else if (place.type === 'mountain') {
+      grp.append('path')
+        .attr('d', 'M0,-8 L5,2 L-5,2 Z')
+        .attr('fill', '#5a3e1c')
+        .attr('stroke', '#d4b483')
+        .attr('stroke-width', 0.8)
+        .attr('opacity', 0.8);
+    } else if (place.type === 'site') {
+      // Small gold diamond
+      grp.append('path')
+        .attr('d', 'M0,-6 L4,0 L0,6 L-4,0 Z')
+        .attr('fill', '#c9a84c')
+        .attr('stroke', '#3a2a10')
+        .attr('stroke-width', 0.8)
+        .attr('opacity', 0.85);
+    }
+
+    // Hit target (invisible, larger for touch)
+    grp.append('circle')
+      .attr('r', 14)
+      .attr('fill', 'transparent')
+      .attr('stroke', 'none');
+
+    const loff = sym.labelOffset;
+
+    // Ancient label
+    grp.append('text')
+      .attr('class', 'ancient-label place-label')
+      .attr('x', loff[0]).attr('y', loff[1])
+      .attr('text-anchor', 'middle')
+      .attr('font-family', "'Cinzel', serif")
+      .attr('font-size', place.type === 'region' || place.type === 'water' ? '8px' : '7.5px')
+      .attr('fill', place.type === 'water' ? '#3a5a70' : '#2a1a08')
+      .attr('font-style', place.type === 'water' ? 'italic' : 'normal')
+      .attr('opacity', 0.9)
+      .attr('pointer-events', 'none')
+      .text(place.ancient);
+
+    // Modern label (hidden by default)
+    grp.append('text')
+      .attr('class', 'modern-label place-label')
+      .attr('x', loff[0]).attr('y', loff[1])
+      .attr('text-anchor', 'middle')
+      .attr('font-family', "'Source Sans 3', sans-serif")
+      .attr('font-size', '7px')
+      .attr('fill', '#1a3a50')
+      .attr('opacity', 0.85)
+      .attr('pointer-events', 'none')
+      .style('display', 'none')
+      .text(place.modern);
+  });
+}
+
+// ── PLACE TOOLTIP ──────────────────────────────────────────────────────────
+let tooltipEl = null;
+
+function showPlaceTooltip(place, x, y) {
+  clearPlaceTooltip();
+  const svgEl = document.getElementById('map-svg');
+  const rect = svgEl.getBoundingClientRect();
+  const transform = d3.zoomTransform(svgEl);
+  const screenX = transform.applyX(x) + rect.left;
+  const screenY = transform.applyY(y) + rect.top;
+
+  const tip = document.createElement('div');
+  tip.className = 'place-tooltip';
+  tip.innerHTML = `
+    <div class="tip-ancient">${place.ancient}</div>
+    <div class="tip-modern">${place.modern}</div>
+  `;
+  tip.style.cssText = `
+    position:fixed;
+    left:${Math.min(screenX + 10, window.innerWidth - 200)}px;
+    top:${Math.max(screenY - 50, 10)}px;
+    z-index:100;
+    background:rgba(12,10,7,.95);
+    border:1px solid #332810;
+    border-radius:4px;
+    padding:.4rem .6rem;
+    pointer-events:none;
+  `;
+  document.body.appendChild(tip);
+  tooltipEl = tip;
+
+  // Auto-dismiss
+  setTimeout(clearPlaceTooltip, 3000);
+}
+
+function clearPlaceTooltip() {
+  if (tooltipEl) { tooltipEl.remove(); tooltipEl = null; }
+}
+
+// Close tooltip on map interaction
+document.addEventListener('pointerdown', () => clearPlaceTooltip());
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
