@@ -20,6 +20,8 @@ Usage:
 
 Get a free API key at:
     https://scripture.api.bible/
+
+API endpoint: https://rest.api.bible
     (Sign up -> My Apps -> Add App -> copy the API key)
 
 The NIV Bible ID on Scripture API Bible is:
@@ -56,7 +58,7 @@ if sys.platform == 'win32':
 # NIV Bible ID on Scripture API Bible
 NIV_BIBLE_ID = '78a9f6124f344018-01'
 
-API_BASE = 'https://api.scripture.api.bible/v1'
+API_BASE = 'https://rest.api.bible/v1'
 
 # Book metadata: (display_name, testament, total_chapters, book_id_on_api)
 # Book IDs follow the USFM standard used by Scripture API Bible.
@@ -297,7 +299,28 @@ def main():
                         help='Show what would be fetched without calling the API')
     parser.add_argument('--rebuild-index', action='store_true',
                         help='Rebuild verses/niv/verses.js from all existing files only')
+    parser.add_argument('--find-bibles', action='store_true',
+                        help='List all English Bibles available on the API (find the NIV ID)')
     args = parser.parse_args()
+
+    # Find bibles mode
+    if args.find_bibles:
+        api_key = args.key or os.environ.get('API_BIBLE_KEY', '')
+        if not api_key:
+            print('ERROR: --key required for --find-bibles')
+            sys.exit(1)
+        url = f'{API_BASE}/bibles?language=eng'
+        req = urllib.request.Request(url, headers={'api-key': api_key})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = json.loads(r.read())
+                bibles = data.get('data', [])
+                print(f'Available English Bibles ({len(bibles)}):')
+                for b in bibles:
+                    print(f'  {b["id"]:40}  {b.get("abbreviationLocal",""):8}  {b["name"]}')
+        except Exception as e:
+            print(f'Error: {e}')
+        return
 
     # List books mode
     if args.list_books:
@@ -315,7 +338,7 @@ def main():
         print(f'\nDone. {total} total verses -> {path}')
         return
 
-    api_key = args.key or os.environ.get('API_BIBLE_KEY', '')
+    api_key = args.key or os.environ.get('API_BIBLE_KEY', '') or os.environ.get('API_BIBLE_KEY', '')
     if not api_key and not args.dry_run:
         print('ERROR: API key required.')
         print('  Set API_BIBLE_KEY env var or use --key YOUR_KEY')
