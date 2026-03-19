@@ -4182,15 +4182,23 @@ function centreOnPerson(personId) {
   const panel = document.getElementById('tree-panel');
   const W = panel.clientWidth;
   const H = panel.clientHeight;
+  const isMobile = window.innerWidth <= 768;
 
-  // Find the node in the rendered SVG
+  // Open bio first so the panel width is included in the layout
+  const person = PEOPLE.find(p => p.id === personId);
+  if (person) showBio(person);
+  clearSearch();
+
+  // Find the node
   let targetNode = null;
   svgEl.querySelectorAll('.node').forEach(node => {
-    const cls = Array.from(node.classList);
-    // node id is stored in the data — find via transform match
-    // We use the node's data-id attribute set during render
     if (node.dataset.id === personId) targetNode = node;
   });
+
+  // Use a comfortable zoom level — not too close, not too far
+  // 0.9 on desktop gives a good view with the bio panel open
+  // 0.65 on mobile leaves space for the bottom sheet
+  const targetScale = isMobile ? 0.65 : 0.9;
 
   if (targetNode) {
     const t = targetNode.getAttribute('transform');
@@ -4198,19 +4206,34 @@ function centreOnPerson(personId) {
     if (m) {
       const nx = parseFloat(m[1]);
       const ny = parseFloat(m[2]);
-      const scale = Math.max(d3.zoomTransform(svgEl).k, 1.2);
-      svg.transition().duration(600).call(
-        zoomBehavior.transform,
-        d3.zoomIdentity
-          .translate(W / 2 - nx * scale, H / 2 - ny * scale)
-          .scale(scale)
-      );
+
+      // On desktop the bio panel (340px) opens on the right, shifting the
+      // visible canvas left. Compensate so the node stays visually centred.
+      const bioPanelOffset = isMobile ? 0 : 170; // half of 340px panel
+      const centreX = (W - (isMobile ? 0 : 340)) / 2 - bioPanelOffset;
+
+      // Delay slightly so the bio panel has started opening
+      setTimeout(() => {
+        svg.transition().duration(550).call(
+          zoomBehavior.transform,
+          d3.zoomIdentity
+            .translate(centreX - nx * targetScale, H / 2 - ny * targetScale)
+            .scale(targetScale)
+        );
+      }, 60);
+      return;
     }
   }
-  // Open bio regardless (works even if node is dimmed)
-  const person = PEOPLE.find(p => p.id === personId);
-  if (person) showBio(person);
-  clearSearch();
+
+  // Node not found (e.g. different era filtered) — just zoom out to show tree
+  setTimeout(() => {
+    const currentX = d3.zoomTransform(svgEl).x;
+    const currentY = d3.zoomTransform(svgEl).y;
+    svg.transition().duration(400).call(
+      zoomBehavior.transform,
+      d3.zoomIdentity.translate(currentX, currentY).scale(targetScale)
+    );
+  }, 60);
 }
 
 function clearSearch() {
