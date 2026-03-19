@@ -171,7 +171,13 @@ def fetch_chapter_verses(book_id, chapter, api_key):
     verses = []
     for verse_meta in verse_list:
         verse_id = verse_meta['id']          # e.g. "GEN.1.1"
-        v_num    = int(verse_meta['number'])  # e.g. 1
+        # Parse verse number from the ID (last segment) — more reliable than 'number' field
+        try:
+            v_num = int(verse_id.split('.')[-1])
+        except (ValueError, IndexError):
+            v_num = int(verse_meta.get('number', verse_meta.get('verseNumber', 0)))
+        if v_num == 0:
+            continue  # skip unparseable entries
 
         # Fetch individual verse text (plain text, no markup)
         v_url = (f'{API_BASE}/bibles/{NIV_BIBLE_ID}/verses/{verse_id}'
