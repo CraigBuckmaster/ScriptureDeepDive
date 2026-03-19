@@ -40,7 +40,7 @@ BOOK_ROSTER = [
     ('genesis',  'Genesis',  range(1, 51), 'ot'),
     ('exodus',   'Exodus',   range(1, 41), 'ot'),
     ('proverbs', 'Proverbs', range(1, 32), 'ot'),
-    ('leviticus','Leviticus',range(1,  8), 'ot'),
+    ('leviticus','Leviticus',range(1, 28), 'ot'),
     ('ruth',     'Ruth',     range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),

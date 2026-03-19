@@ -1138,3 +1138,892 @@ lev(15, {
 })
 
 print("LEV-3 complete: Leviticus 11–15 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEV-4: Chapters 16–17 — The Day of Atonement; Blood Prohibition
+# ─────────────────────────────────────────────────────────────────────────────
+
+lev(16, {
+    'title': 'The Day of Atonement: The Great Annual Purging',
+    'sections': [
+        {
+            'header': 'Verses 1–19 — The High Priest Enters the Most Holy Place',
+            'verses': verse_range(1, 19),
+            'heb': [
+                ('yôm hakkippurîm', 'Yom HaKippurim', 'Day of Atonements / Day of Purgings', 'The most solemn day in Israel\'s calendar. Kippurîm is plural — a plural of intensity or comprehensiveness. On this one day per year, the high priest enters the Most Holy Place to purge the entire sanctuary of the accumulated impurities of the year.'),
+                ('ʿăzāʾzēl', 'azazel', 'scapegoat / for Azazel / for complete removal', 'One of the most debated terms in Leviticus. Options: (1) a place name (a remote desert); (2) a demon to whom the goat is symbolically sent; (3) an abstract noun meaning "complete removal." Milgrom argues for "complete removal" — the goat carries the sins of Israel to a place of no return.'),
+            ],
+            'ctx': 'Yom Kippur is the theological summit of Leviticus — the annual reset of the entire covenant relationship. The high priest performs a unique sequence: sin offering for himself (vv.6, 11–14), sin offering for the people (vv.15–16), and the scapegoat rite (vv.20–22). The key innovation: the high priest enters the Most Holy Place — the inner sanctum where the ark and the mercy seat reside — not just once but twice: once with the bull\'s blood (vv.14–16) and once with the goat\'s blood (v.15). He sprinkles blood on the mercy seat and before it seven times — purging not just the outer altar but the innermost sanctuary. The whole tabernacle is cleansed from top to bottom.',
+            'cross': [
+                ('Heb 9:7–12', '"But only the high priest entered the inner room, and that only once a year, and never without blood… But when Christ came as high priest… he entered the Most Holy Place once for all by his own blood, thus obtaining eternal redemption."'),
+                ('Heb 9:25–26', '"Nor did he enter heaven to offer himself again and again, the way the high priest enters the Most Holy Place every year with blood that is not his own… But he has appeared once for all at the culmination of the ages to do away with sin by the sacrifice of himself."'),
+                ('Rom 3:25', '"God presented Christ as a sacrifice of atonement (hilastērion — mercy seat) through the shedding of his blood." Paul uses the LXX word for the mercy seat/atonement cover — the very surface Aaron sprinkled on Yom Kippur.'),
+            ],
+            'mac': [
+                ('16:2–4', 'MacArthur: The elaborate preparation required before the high priest can enter the Most Holy Place — bathing, donning the plain linen garments (not the gold vestments), offering a personal sin offering — underscores the absolute holiness of the divine presence. The ornate garments are set aside; no human glory can be brought into the divine glory.'),
+                ('16:12–14', 'MacArthur: The cloud of incense that the high priest must create before entering the Most Holy Place provides a "cover" for the mercy seat — protecting even the high priest from the direct sight of God. The incense is not an aesthetic choice but a protective necessity: no human eye can see the unmediated divine glory and live.'),
+                ('16:16–19', 'MacArthur: The blood application to the mercy seat, then the incense altar, then the outer altar purges the entire sanctuary from outer to inner. Milgrom\'s spatial theology is confirmed here: the sanctuary absorbs impurity throughout the year; Yom Kippur purges it all simultaneously.'),
+            ],
+            'milgrom': [
+                ('16:2', 'Milgrom: The prohibition on Aaron entering the Most Holy Place "whenever he chooses" directly recalls the death of Nadab and Abihu (Lev 10:1–2) — the sons who approached without divine authorisation. Yom Kippur provides the one annual authorised entry. Outside of this day, the Most Holy Place is absolutely closed.'),
+                ('16:16', 'Milgrom: The blood application to the mercy seat purges (kipper) the sanctuary from the uncleannesses (tumʾōt) of the Israelites — both ritual impurities and moral transgressions (pešāʿîm). Yom Kippur addresses two categories simultaneously: the accumulated ritual impurity that defiled the sanctuary throughout the year, and the deliberate sins that threatened to sever the covenant.'),
+            ],
+            'sarna': [
+                ('16:1–4', 'Sarna: The chapter\'s opening — "After the death of the two sons of Aaron" — places Yom Kippur directly in the aftermath of Nadab and Abihu\'s death. Their fatal approach without authorisation motivates the entire elaborate Yom Kippur procedure: there is a right way and a wrong way to enter the divine presence, and the difference is lethal.'),
+            ],
+            'alter': [
+                ('16:12–13', 'Alter: The high priest enters the Most Holy Place shrouded in fragrant smoke — a man disappearing into a cloud of incense before the ark. The visual is overwhelming: the holiest person in Israel, stripped of his golden vestments, wearing plain linen, hidden in incense smoke, approaching the mercy seat that represents the divine throne. No image in Leviticus is more awesome.'),
+            ],
+            'calvin': [
+                ('16:2–14', 'Calvin: The elaborate preparation of Yom Kippur teaches the absolute holiness of God and the absolute unworthiness of humanity. No human being can approach God on their own terms — not even the high priest in his most solemn moment. Christ alone enters without preparation, without a veil of smoke, without another\'s blood — he enters by his own blood, in his own perfection, into the immediate presence of the Father.'),
+            ],
+            'netbible': [
+                ('16:2', 'NET Note: "The atonement cover" (kappōret) — the golden lid of the ark, flanked by the two cherubim. The LXX translates it hilastērion ("place of propitiation/mercy seat"), the same word Paul uses in Rom 3:25. The mercy seat is the earthly focal point of the divine presence; it is the precise surface that the Yom Kippur blood purges.'),
+            ],
+        },
+        {
+            'header': 'Verses 20–34 — The Scapegoat; The Annual Statute',
+            'verses': verse_range(20, 34),
+            'heb': [
+                ('wĕsāmak ʾahărōn ʾet-šĕtê yādāyw', 'wesamach Aharon et-shetei yadav', 'and Aaron shall lay both his hands', 'The double hand-laying (both hands, not the single hand of Lev 1:4) intensifies the transfer. Aaron confesses all Israel\'s sins over the live goat, transferring the full weight of the nation\'s transgressions onto the animal.'),
+                ('ʿiwwāh ʿāwōnōt pĕšāʿîm ḥaṭṭāʾōt', 'avonot, pesha\'im, chatta\'ot', 'iniquities, transgressions, sins', 'The triple designation in v.21 is comprehensive — all three Hebrew words for moral failure are named. Yom Kippur addresses the complete range of human wrongdoing: ʿāwōn (iniquity/guilt), peša (rebellion/transgression), and ḥaṭṭāʾt (sin/missing the mark).'),
+            ],
+            'ctx': 'The scapegoat rite (vv.20–22) is the second half of the two-goat ritual. After the sanctuary has been purged with blood, Aaron lays both hands on the live goat and confesses all Israel\'s sins, transferring them to the animal. A designated man leads it into the wilderness — "a remote place" (ʾereṣ gĕzērāh, a land of cutting off) — where it is released, never to return. The sins are not merely forgiven but removed — carried into the irretrievable wilderness. The chapter closes (vv.29–34) with the permanent statute: Yom Kippur on the 10th of the 7th month (Tishri), a sabbath of rest, fasting, and complete cessation from work. The whole congregation — Israelite and resident foreigner — observes it.',
+            'cross': [
+                ('Isa 53:6', '"We all, like sheep, have gone astray, each of us has turned to our own way; and the Lord has laid on him the iniquity of us all." Isaiah\'s Servant bears the sins in the scapegoat\'s place — the ʿāwōn of all is laid on one.'),
+                ('Heb 13:11–13', '"The high priest carries the blood of animals into the Most Holy Place as a sin offering, but the bodies are burned outside the camp. And so Jesus also suffered outside the city gate to make the people holy through his own blood."'),
+                ('Ps 103:12', '"As far as the east is from the west, so far has he removed our transgressions from us." The scapegoat disappears into the wilderness; the Psalm celebrates the permanent removal of sins — the same theological movement.'),
+            ],
+            'mac': [
+                ('16:20–22', 'MacArthur: The double hand-laying and comprehensive confession — "all the wickedness and rebellion of the Israelites — all their sins" — is the most extensive priestly confession in the Torah. The scapegoat bears not just ritual impurity but moral transgression: rebellion (peša) against God\'s authority, iniquity (ʿāwōn) in its guilt-aspect, and sin (ḥaṭṭāʾt) in its general sense.'),
+                ('16:29–34', 'MacArthur: Yom Kippur is the only day in the entire Levitical calendar that requires fasting (ʿinnâ nepeš — afflicting the soul). All other feasts are celebrations; this one is marked by self-denial. The people do not feast on this day because the high priest is making atonement before God for them — it is a day of waiting, not celebrating.'),
+            ],
+            'milgrom': [
+                ('16:20–22', 'Milgrom: The scapegoat does not receive the blood of the sin offering — it receives the confession of sins. The two goats together accomplish what one cannot: the blood goat purges the sanctuary (impurity); the scapegoat removes the moral transgressions (sins). Yom Kippur addresses both the ritual and the moral dimensions of Israel\'s covenant failure simultaneously.'),
+                ('16:34', 'Milgrom: "This is to be a lasting ordinance for you: Atonement is to be made once a year for all the sins of the Israelites." The once-yearly rhythm is deliberate — the accumulated impurity and sin of an entire year is addressed in a single, comprehensive act. The clean slate is reset annually.'),
+            ],
+            'sarna': [
+                ('16:29', 'Sarna: The inclusion of the resident foreigner (ger) in the Yom Kippur obligation is significant — even non-Israelites living among Israel must observe the fast. The day affects the entire community dwelling in the covenant land, not just the ethnic Israelite. The covenant\'s reach extends to all who live within its territory.'),
+            ],
+            'alter': [
+                ('16:22', 'Alter: "The goat will carry on itself all their sins to a remote place" — the image is stark: a single animal laden with the accumulated moral weight of an entire nation, walking into the wilderness to disappear. The finality of the act is built into the geography: the ʾereṣ gĕzērāh (land of cutting off) is the place of no return. The sins go and do not come back.'),
+            ],
+            'calvin': [
+                ('16:20–22', 'Calvin: The scapegoat is among the most vivid types of Christ in the entire Torah. The double hand-laying, the comprehensive confession, the goat bearing the nation\'s sins away — all fulfilled in Christ, who bore our iniquities into the wilderness of death and did not return under their weight, but rose victorious. The sins are gone because the one who bore them overcame the wilderness.'),
+            ],
+            'netbible': [
+                ('16:22', 'NET Note: "A remote place" (ʾereṣ gĕzērāh) — literally "a land of separation/cutting off." The precise location is unspecified; the point is distance and irreversibility. The Mishnah (Yoma 6:4–8) later specified a cliff near Jerusalem from which the scapegoat was pushed; the biblical text simply requires the wilderness removal.'),
+            ],
+        },
+    ],
+})
+
+lev(17, {
+    'title': 'The Blood Prohibition: Life Belongs to God',
+    'sections': [
+        {
+            'header': 'Verses 1–9 — All Slaughter at the Tent; No Independent Sacrifice',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('šāḥaṭ', 'shachat', 'to slaughter / to kill an animal', 'The technical term for the prescribed killing of animals for food or sacrifice. Lev 17:3 extends the requirement that all slaughter must occur at the tent of meeting — essentially prohibiting secular meat-eating for the wilderness period. Every meal involving meat is also a sacrifice.'),
+                ('dām yēḥāšēb', 'dam yechashev', 'blood shall be charged / blood-guilt', 'The formula for capital-equivalent guilt: the person who slaughters outside the camp has shed "blood-guilt" — they are morally equivalent to a murderer. The blood of the animal, not properly offered, cries out as Abel\'s blood did.'),
+            ],
+            'ctx': 'Leviticus 17 is a bridge chapter — it addresses both the sacrificial system (vv.1–9) and the blood prohibition (vv.10–16) that will govern Israelite life in Canaan. The requirement that all slaughter occur at the tent of meeting (vv.3–7) is a wilderness regulation — Deut 12:15–16 relaxes this for life in the land where the sanctuary is distant. The purpose is twofold: to prevent sacrifice to field-demons (śĕʿîrîm, v.7 — goat-demons associated with Canaanite wilderness spirits) and to ensure that all animal life is presented to God before being used by humans.',
+            'cross': [
+                ('Acts 15:20', 'The Jerusalem Council\'s requirement that Gentile believers abstain from blood — "from the meat of strangled animals and from blood" — directly applies the Lev 17 blood prohibition in the new covenant context.'),
+                ('John 6:53–54', '"Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you. Whoever eats my flesh and drinks my blood has eternal life." The shock of this statement depends entirely on the Levitical blood prohibition — blood is never consumed because life belongs to God. Jesus inverting this is the inversion of the entire covenant order.'),
+            ],
+            'mac': [
+                ('17:3–7', 'MacArthur: The prohibition on slaughtering animals outside the tabernacle is one of Leviticus\'s most totalising regulations — it collapses the distinction between sacred and secular. In the wilderness camp, every meal involving meat is a liturgical act. The separation between "ordinary" and "religious" life that modern culture assumes is dismantled.'),
+                ('17:7', 'MacArthur: "They must no longer offer any of their sacrifices to the goat idols (śĕʿîrîm) to whom they prostitute themselves." The prohibition on field-slaughter is not merely ritual but anti-idolatrous — Israel had been offering to wilderness spirits in Egypt or in the desert. Every unregulated sacrifice is potentially an act of spiritual adultery.'),
+            ],
+            'milgrom': [
+                ('17:3–4', 'Milgrom: The wilderness regulation requiring all slaughter at the tent is an anti-idolatry measure — it brings the entire food supply under priestly oversight, preventing any animal\'s death from becoming an unsupervised sacrifice to a foreign deity. In Canaan, where the tent is distant, the requirement is modified (Deut 12:15) but the blood prohibition remains absolute.'),
+            ],
+            'sarna': [
+                ('17:7', 'Sarna: The term śĕʿîrîm (goat-demons, satyrs) is rare but revealing — it suggests that some Israelites were offering unofficial sacrifices to wilderness spirits, likely blending YHWH-worship with Canaanite magical practice. Lev 17\'s centralisation requirement is designed to eliminate this syncretism by making all sacrificial activity visible and supervised.'),
+            ],
+            'alter': [
+                ('17:3–5', 'Alter: The extension of sacrifice to cover all killing creates a world in which no animal can be consumed without a priestly dimension. The chapter imagines an Israel in which the boundary between eating and worshipping has been erased — every meat-meal is a form of acknowledgment that life belongs to the one who gave it.'),
+            ],
+            'calvin': [
+                ('17:3–9', 'Calvin: The centralisation of sacrifice teaches the unity of worship — there is one God, one sanctuary, one prescribed way of approach. The proliferation of altars leads inevitably to the proliferation of gods. The NT equivalent: there is one Lord, one faith, one baptism (Eph 4:5). Christian worship is not a private arrangement between the individual and a deity of their choosing.'),
+            ],
+            'netbible': [
+                ('17:7', 'NET Note: "Goat-demons" (śĕʿîrîm) — the same term describes the hairy demons Isaiah mentions inhabiting the desolate Babylon (Isa 13:21). The word\'s root (śāʿar, hairy) connects to goats. Ancient Israelite folk religion appears to have included offerings to wilderness spirits associated with goat-forms — a practice Lev 17 definitively outlaws.'),
+            ],
+        },
+        {
+            'header': 'Verses 10–16 — The Blood Prohibition: Life Is in the Blood',
+            'verses': verse_range(10, 16),
+            'heb': [
+                ('kî-hannepeš habāśār baddām hîʾ', 'ki-hanefesh habasar badam hi', 'for the life of the flesh is in the blood', 'The most explicit theological rationale for any Levitical prohibition. Blood = life (nepeš). Since life belongs to God, blood belongs to God. To consume blood is to claim the life-force that is God\'s exclusive possession.'),
+                ('wĕʾanî nĕtattîw lākem', 'I have given it to you', 'to make atonement on the altar', 'The blood is both inalienably God\'s AND graciously given by God for Israel\'s atonement. The sacrificial blood does not come from Israel\'s own resources — God provides, from his own domain, the means of Israel\'s atonement.'),
+            ],
+            'ctx': 'Verses 11 and 14 contain the most profound theological statement about blood in the entire Bible: "For the life (nepeš) of a creature is in the blood, and I have given it to you to make atonement for yourselves on the altar; it is the blood that makes atonement for one\'s life." Three claims: (1) blood = life; (2) life = God\'s domain; (3) God graciously designated blood as the atoning medium. The prohibition is therefore not arbitrary — it is grounded in the deepest reality of creation and covenant: life belongs to the Creator, and the Creator has given the blood-life to cover Israel\'s debt. To consume blood is to consume what God has reserved for atonement.',
+            'cross': [
+                ('John 1:29', '"Look, the Lamb of God, who takes away the sin of the world!" John the Baptist\'s declaration applies the Levitical blood-atonement logic to Christ: the life in his blood is the life that atones.'),
+                ('1 Pet 1:18–19', '"You were redeemed… with the precious blood of Christ, a lamb without blemish or defect." The blood of Christ is precious precisely because the life is in the blood — and his life is the divine life, infinitely valuable.'),
+                ('Heb 9:22', '"Without the shedding of blood there is no forgiveness." The writer of Hebrews states the Lev 17:11 principle as a universal axiom governing the entire economy of atonement.'),
+            ],
+            'mac': [
+                ('17:11', 'MacArthur: Leviticus 17:11 is the theological key to the entire sacrificial system: "It is the blood that makes atonement for one\'s life." The atoning blood is not a human offering — it is God\'s own provision. He designates the blood as the medium of atonement; the worshipper brings it but does not own it. The entire sacrificial system is grace — God providing for human approach to God.'),
+                ('17:13–14', 'MacArthur: The blood prohibition extends to game animals — when a hunter kills a wild animal, the blood must be poured out and covered with earth (v.13). The act of covering the blood with earth echoes the ground receiving Abel\'s blood (Gen 4:10). Blood poured out is returned to the earth from which it came; it acknowledges that the life-force belongs to the ground and to God, not to the hunter.'),
+            ],
+            'milgrom': [
+                ('17:11', 'Milgrom: This verse is the pivotal statement of Levitical theology. The logic: life (nepeš) = blood; blood = God\'s property; therefore blood = atonement medium. The one offering blood is not giving his own property — he is presenting God\'s designated atonement token back to God. Milgrom argues this makes the entire sacrificial system a divine gift, not a human achievement.'),
+                ('17:14', 'Milgrom: The twofold repetition of the blood-life equation (vv.11 and 14) with the repeated prohibition creates a rhetorical intensity: the blood prohibition is among the Torah\'s most absolute. Its violation — like the violation of the fat prohibition — incurs kārēt.'),
+            ],
+            'sarna': [
+                ('17:11', 'Sarna: The formulation "I have given it to you" positions God as the gracious donor of the atonement mechanism. Israel did not invent blood sacrifice; God designated it. This transforms the sacrificial system from a human attempt to appease a deity into a divine provision for human restoration — a fundamentally different theological register.'),
+            ],
+            'alter': [
+                ('17:11', 'Alter: "For the life of the flesh is in the blood, and I have given it to you upon the altar to make atonement for your lives." The syntactic structure is remarkable: the prohibition\'s rationale and the gracious provision are stated in the same breath. God forbids consuming blood AND simultaneously gives blood its sacred purpose. The same substance that is prohibited for food is given for atonement.'),
+            ],
+            'calvin': [
+                ('17:10–14', 'Calvin: The blood prohibition teaches the profound reverence we owe to the life that God has given. Every living creature\'s blood is a sacrament of the life that belongs to its Creator. When Christ spills his blood, he is giving the ultimate life — his own divine-human life — as the final and definitive atonement. The Levitical prohibition is the grammar that makes the cross intelligible.'),
+            ],
+            'netbible': [
+                ('17:11', 'NET Note: "Nepeš" (life/soul/self) is typically translated "life" in this context. The equation nepeš = blood = atonement has generated extensive theological debate. The text does not say blood is the nepeš, but that the nepeš of the flesh is "in" (bĕ) the blood — a locative, not an identity statement. The life-force resides in the blood; blood is the carrier and symbol of life, not life itself.'),
+            ],
+        },
+    ],
+})
+
+print("LEV-4 complete: Leviticus 16–17 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEV-5: Chapters 18–22 — The Holiness Code (First Part)
+# ─────────────────────────────────────────────────────────────────────────────
+
+lev(18, {
+    'title': 'Sexual Ethics: You Shall Not Do as They Do',
+    'sections': [
+        {
+            'header': 'Verses 1–18 — Prohibited Marriages and Sexual Relations',
+            'verses': verse_range(1, 18),
+            'heb': [
+                ('qĕdōšîm tihyû', 'qedoshim tihyu', 'you shall be holy', 'The repeated imperative of the Holiness Code (Lev 17–26). Holiness is not an aspiration but a covenant obligation. The phrase frames the entire ethical section: Israel\'s conduct must reflect the character of the God who chose them.'),
+                ('kĕmaʿăśēh ʾereṣ-miṣrayim', 'kema\'aseh eretz-Mitzrayim', 'according to the deeds of Egypt', 'The negative frame for the sexual ethics: Israel must not replicate the practices of Egypt (the land they left) or Canaan (the land they are entering). The holiness code is explicitly counter-cultural.'),
+            ],
+            'ctx': 'Leviticus 18 opens the Holiness Code (Lev 17–26) with an extensive list of prohibited sexual relationships. The structure: introduction (vv.1–5, do not do as Egypt and Canaan do), prohibited family relationships (vv.6–18), prohibited acts (vv.19–23), theological rationale and warning (vv.24–30). The family prohibitions are graduated: parent, stepparent, sibling, half-sibling, grandchild, aunt, uncle\'s wife, daughter-in-law, sister-in-law, a woman and her daughter. The common thread is kinship — the sexual act creates a "one flesh" bond that, within the family, would create destructive boundary-crossing.',
+            'cross': [
+                ('1 Cor 5:1', '"It is actually reported that there is sexual immorality among you, and of a kind that even pagans do not tolerate: A man is sleeping with his father\'s wife." Paul applies Lev 18:8 directly to the Corinthian situation.'),
+                ('Matt 5:27–28', '"You have heard that it was said, \'You shall not commit adultery.\' But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart." Jesus deepens the Levitical sexual ethics from act to motive.'),
+                ('1 Thess 4:3–5', '"It is God\'s will that you should be sanctified: that you should avoid sexual immorality; that each of you should learn to control your own body in a way that is holy and honourable."'),
+            ],
+            'mac': [
+                ('18:1–5', 'MacArthur: The framing — "do not do as Egypt, do not do as Canaan" — establishes the sexual ethics as counter-cultural identity markers. Israel\'s sexual boundaries are not merely prudential rules but covenant obligations that distinguish them from the nations. The Holiness Code assumes that the surrounding cultures have abandoned divine order; Israel is called back to creation norms.'),
+                ('18:6–18', 'MacArthur: The prohibited family relationships are comprehensive and graduated because the family is the basic covenant unit. Sexual violation within the family destroys the primary institution of covenant life. The catalogue from parent to daughter-in-law covers every significant kinship relationship — the family network is to be a domain of protection, not exploitation.'),
+            ],
+            'milgrom': [
+                ('18:6', 'Milgrom: The phrase "to uncover nakedness" (gālāh ʿerwāh) is a euphemism for sexual intercourse. It also carries a legal resonance — uncovering one\'s relative\'s nakedness exposes and dishonours the family as a whole. The act is both sexual and social: it violates both the individual and the family\'s integrity.'),
+                ('18:24–25', 'Milgrom: The theological rationale for the sexual ethics is stark: the land itself vomits out inhabitants who defile it with these acts. Milgrom notes that the land is pictured as a moral subject — capable of being defiled and capable of rejecting its inhabitants. This is not superstition but a sophisticated metaphor for the moral consequences built into creation itself.'),
+            ],
+            'sarna': [
+                ('18:3–5', 'Sarna: The life/practices contrast — "keep my decrees and laws… the person who obeys them will live by them" — is one of the most important ethical formulas in the Torah. Life-by-obedience is not salvation by works but covenant vitality: those who live within God\'s order flourish; those who transgress it destroy themselves.'),
+            ],
+            'alter': [
+                ('18:6', 'Alter: "None of you shall approach any close relative to uncover nakedness" — the initial prohibition covers all cases, then the specific cases follow. The rhetorical structure is deductive: the general principle first, the specific applications second. This is characteristic of the Holiness Code\'s legislative style.'),
+            ],
+            'calvin': [
+                ('18:6–18', 'Calvin: The prohibited family relationships reflect the divine design for the family as a protected sphere of unconditional care. Where sexuality enters, the unconditional quality of family love is corrupted — the family member becomes an object of desire rather than a subject of care. The prohibitions protect the family as a domain of covenant faithfulness.'),
+            ],
+            'netbible': [
+                ('18:5', 'NET Note: "The person who obeys them will live by them" (ʾăšer yaʿăśeh ʾōtām hāʾādām wāḥay bāhem) — Paul quotes this verse in Rom 10:5 and Gal 3:12 in his argument about law and faith. He does not deny the life-giving quality of obedience but argues that no human being consistently obeys, making the law\'s life-promise unattainable apart from Christ.'),
+            ],
+        },
+        {
+            'header': 'Verses 19–30 — Further Prohibitions; the Land\'s Warning',
+            'verses': verse_range(19, 30),
+            'heb': [
+                ('wĕlōʾ-tittēn miṣzarʿăkā', 'you shall not give your seed', 'lĕhaʿăbîr lammōlek — to Molech', 'The Molech prohibition appears here in the sexual ethics section — child sacrifice is treated as a form of sexual-religious transgression, a desecration of the offspring (zeraʿ, seed) that belongs to God.'),
+                ('tôʿēbāh', 'to\'evah', 'abomination / detestable thing', 'The strongest Hebrew term of moral revulsion — used for practices that are fundamentally incompatible with the covenant order. In Lev 18–20 it applies to prohibited sexual acts and idolatry.'),
+            ],
+            'ctx': 'Verses 19–23 add four further prohibitions: menstrual intercourse (v.19), adultery (v.20), Molech child sacrifice (v.21), and male homosexual intercourse (v.22), and bestiality (v.23). The Molech prohibition is striking in this context — child sacrifice is not primarily addressed as a homicide but as a sexual-covenantal transgression: you are giving your "seed" (zeraʿ, the same word for semen/offspring) to a foreign deity. The chapter closes (vv.24–30) with the theological rationale: the Canaanites committed these acts and the land vomited them out. Israel will face the same fate if they follow the same path.',
+            'cross': [
+                ('Rom 1:24–27', '"Therefore God gave them over in the sinful desires of their hearts to sexual impurity… Even their women exchanged natural sexual relations for unnatural ones. In the same way the men also abandoned natural relations with women and were inflamed with lust for one another." Paul situates sexual disorder as a consequence of idolatry — the same theological connection Lev 18:21–22 makes.'),
+                ('2 Kgs 23:10', '"He desecrated Topheth, which was in the Valley of Ben Hinnom, so no one could use it to sacrifice their son or daughter in the fire to Molek." Josiah\'s reform directly addresses the Molech prohibition of Lev 18:21.'),
+            ],
+            'mac': [
+                ('18:21', 'MacArthur: The Molech prohibition connects child sacrifice to sexual sin because both represent the misuse of the generative power God has given. "Your seed" (zeraʿ) is your offspring — given by God, belonging to God. To give it to Molech is to desecrate the covenant by directing what is holy to what is abominable.'),
+                ('18:24–30', 'MacArthur: The warning that the land "vomited out" its inhabitants (vv.25, 28) is one of the most graphic images in Leviticus. The land is not merely a physical space but a moral environment — it reacts to moral contamination. Israel is warned explicitly: what happened to the Canaanites will happen to them if they adopt Canaanite practices.'),
+            ],
+            'milgrom': [
+                ('18:22', 'Milgrom: The male homosexual prohibition is stated baldly — "Do not lie with a man as one lies with a woman; it is tôʿēbāh." Milgrom notes the term tôʿēbāh is reserved for acts that violate the created order — the same term applied to idolatry (Deut 7:25). The act is categorised as a creation-order violation, not merely a social infraction.'),
+                ('18:24–28', 'Milgrom: The land-vomiting metaphor is unique to Lev 18 in the Torah. Milgrom\'s analysis: the land is imaged as a digestible organism — it ingests its inhabitants, and if they corrupt it with these acts, it ejects them. The metaphor is both ecological and covenantal: the land and the covenant are bound together.'),
+            ],
+            'sarna': [
+                ('18:24–30', 'Sarna: The explicit comparison to the Canaanites is a form of historical argument: this is not new legislation but a recognition of the natural law that has always governed human sexuality. The Canaanites were expelled not because they violated Israelite law but because they violated the creation order that precedes and underlies all covenant law.'),
+            ],
+            'alter': [
+                ('18:28', 'Alter: "And so the land will not vomit you out when you defile it, as it vomited out the nations that were before you." The subjunctive ("so that it will not") contains the warning: the vomiting is not inevitable but contingent on Israel\'s conduct. The land has a choice; so does Israel. The chapter is as much threat as prohibition.'),
+            ],
+            'calvin': [
+                ('18:24–30', 'Calvin: The land-vomiting metaphor teaches that the moral order is not merely legal but ontological — built into the structure of creation. Societies that systematically violate sexual ethics destroy themselves; they are "vomited out" by the creation order they have violated. History confirms this repeatedly. The laws of Lev 18 are not arbitrary cultural norms but reflections of the created order.'),
+            ],
+            'netbible': [
+                ('18:21', 'NET Note: "Molech" (hammolek) — a deity associated with child sacrifice, worshipped in the Valley of Hinnom (Topheth). The identity of Molech is debated: a specific Canaanite deity, a general term for a type of votive offering, or a vocalization of "king" (melek) with the vowels of "shame" (bōšet). The practice is condemned throughout the OT (Lev 20:2–5; 2 Kgs 16:3; 21:6; 23:10; Jer 32:35).'),
+            ],
+        },
+    ],
+})
+
+lev(19, {
+    'title': 'The Holiness of Daily Life: Love Your Neighbour',
+    'sections': [
+        {
+            'header': 'Verses 1–18 — Love of God and Neighbour in Daily Conduct',
+            'verses': verse_range(1, 18),
+            'heb': [
+                ('wĕʾāhabtā lĕrēʿăkā kāmōkā', 'veahavta lere\'acha kamocha', 'you shall love your neighbour as yourself', 'The famous summary verse (v.18b) is embedded in a list of specific laws about harvest gleanings, theft, lying, worker\'s wages, the disabled, justice, and gossip. Love of neighbour is not abstract sentiment but specific practice.'),
+                ('ʾănî yhwh', 'ani YHWH', 'I am the Lord', 'The formula appears 16 times in Lev 19 — after almost every commandment. The divine self-identification is both warrant and motivation: God\'s own character grounds each requirement. Israel must be honest because God is faithful; must be just because God is just.'),
+            ],
+            'ctx': 'Leviticus 19 is the ethical heart of the Holiness Code and arguably the most concentrated ethical teaching in the Torah. It opens with the Holiness Formula ("be holy because I, the Lord your God, am holy") and then proceeds through an extraordinary range of practical commands: leaving harvest edges for the poor (vv.9–10), honest weights (v.35–36), no gossip (v.16), rising before the elderly (v.32), welcoming the foreigner (vv.33–34), and the climax: "love your neighbour as yourself" (v.18). The chapter spans ritual (Sabbath, idolatry, sacrificial regulations) and ethical (theft, lying, justice, wages) without distinction — both are expressions of the one holiness.',
+            'cross': [
+                ('Matt 22:39', '"And the second is like it: Love your neighbour as yourself." Jesus identifies Lev 19:18 as the second greatest commandment. All the Law and the Prophets hang on this and the Shema.'),
+                ('Rom 13:9', '"The commandments… are summed up in this one command: \'Love your neighbour as yourself.\'"'),
+                ('Jas 2:8', '"If you really keep the royal law found in Scripture, \'Love your neighbour as yourself,\' you are doing right."'),
+            ],
+            'mac': [
+                ('19:2', 'MacArthur: The Holiness Formula — "be holy because I, the Lord your God, am holy" — is the governing principle of the entire chapter. Every specific command that follows (gleaning laws, honest weights, care for the disabled) is grounded in God\'s own character. Ethics in Leviticus is not rule-following but character-formation: becoming like the God who gave the commands.'),
+                ('19:9–10', 'MacArthur: The gleaning laws are one of the OT\'s most practical provisions for the poor. The farmer does not harvest to the edge or pick up fallen grain — the poor and the foreigner have a right to glean what remains. This is not charity (optional generosity) but justice (mandated provision). The poor have a legal claim on the margins of Israel\'s prosperity.'),
+            ],
+            'milgrom': [
+                ('19:18', 'Milgrom: "Love your neighbour as yourself" in context means: love one who is a member of your covenant community as you love yourself — do not take revenge or bear a grudge (vv.17–18a), but actively seek the good of the other as you seek your own. The extension to the foreigner (v.34, "love him as yourself") universalises the principle.'),
+                ('19:1–2', 'Milgrom: The Holiness Formula in Lev 19:2 is unique in that it addresses the entire congregation ("speak to all the congregation of Israel"), not just Aaron or the priests. The call to holiness in Lev 19 is democratic — every Israelite, not only the priesthood, is called to embody God\'s character.'),
+            ],
+            'sarna': [
+                ('19:9–10', 'Sarna: The gleaning laws (peʾāh, the corner of the field, and leftovers) institutionalise care for the poor as a legal right rather than a voluntary act. The farmer does not own the corners of his field — the poor have a prior claim. This is one of the Torah\'s most concrete expressions of the principle that private property has social obligations.'),
+            ],
+            'alter': [
+                ('19:18', 'Alter: "Love your neighbour as yourself" appears at the climax of a series of prohibitions: no revenge, no grudge-bearing, rebuke your fellow rather than carry silent resentment. The love commanded is not emotional sentiment but active loyalty — the same practical commitment to another\'s flourishing that we naturally bring to our own welfare.'),
+            ],
+            'calvin': [
+                ('19:9–18', 'Calvin: Leviticus 19 demonstrates that the law of holiness and the law of love are inseparable. The same chapter that commands "be holy" also commands gleaning laws, fair wages, care for the disabled, honest weights, and love of neighbour. Holiness is not ritual purity alone but the entire character of a life conformed to God\'s own generous, just, faithful nature.'),
+            ],
+            'netbible': [
+                ('19:18', 'NET Note: "Your neighbour" (rēʿăkā) in v.18 is contextually an Israelite covenant-member; "the foreigner residing among you" (gēr) in v.34 receives the same command. The scope of "neighbour" is extended across the chapter. Jesus\'s parable of the Good Samaritan (Luke 10:25–37) shows that the extension continues: neighbour is whoever is in need before you.'),
+            ],
+        },
+        {
+            'header': 'Verses 19–37 — Practical Holiness: Mixtures, Morality, and the Foreigner',
+            'verses': verse_range(19, 37),
+            'heb': [
+                ('kilʾayim', 'kilayim', 'mixture / two kinds', 'The prohibition on mixing: two kinds of animals mating, two kinds of seed in one field, two kinds of fabric in one garment. The kilʾayim laws enact the creation order — God separated (bādal) the kinds in Gen 1; Israel must maintain those separations.'),
+                ('gēr', 'ger', 'foreigner / resident alien', 'The person who is not ethnic Israelite but lives within the covenant community. Lev 19:33–34 is one of the most radical passages in the ancient world: the foreigner receives the same love-command as the native-born. The memory of Egypt grounds the obligation.'),
+            ],
+            'ctx': 'The second half of Lev 19 extends the holiness vision across a wider range of life: mixture prohibitions (v.19) that maintain creation order; sexual exploitation laws (vv.20–22) for enslaved women; first-fruit timing requirements (vv.23–25); prohibitions on mourning-body-marking (vv.27–28) that distance Israel from Canaanite death-cult practices; respect for mediums (v.31) and the elderly (v.32); equal justice for the foreigner (vv.33–34); and honest weights (vv.35–36). The chapter closes with the Exodus motivation: "I am the Lord your God, who brought you out of Egypt."',
+            'cross': [
+                ('Gal 3:28', '"There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus." The foreigner-inclusion of Lev 19:33–34 reaches its fulfilment in the unity of all peoples in Christ.'),
+                ('Amos 8:5', '"Skimping on the measure, boosting the price and cheating with dishonest scales." Amos indicts Israel for violating the honest weights law of Lev 19:35–36 — the prophets hold Israel accountable to the Holiness Code.'),
+            ],
+            'mac': [
+                ('19:33–34', 'MacArthur: The foreigner-love command — "love him as yourself, for you were foreigners in Egypt" — is the most expansive neighbourliness law in the Torah. The memory of Egyptian oppression becomes the motivation for Israeli generosity: you know what it is to be vulnerable in a foreign land; do not treat others as Egypt treated you. Redemptive history creates ethical obligation.'),
+                ('19:35–36', 'MacArthur: Honest weights and measures are among the most frequently violated economic laws in Israel\'s history (Amos 8:5; Mic 6:11; Prov 11:1). The specification of ephah (dry measure), hin (liquid measure), and shekel (weight) covers the full range of commercial transactions. Economic honesty is holiness.'),
+            ],
+            'milgrom': [
+                ('19:19', 'Milgrom: The mixture prohibitions (kilʾayim) are among the most puzzling laws in Leviticus. Milgrom\'s analysis: they maintain the categories established in creation (Gen 1\'s \'according to their kind\'). To hybridise is to undo the created order. The prohibitions are not about practical harm but about theological order: the created distinctions are sacred.'),
+                ('19:34', 'Milgrom: "For you were foreigners in Egypt" — this is the only place where the Exodus experience is cited as the direct motivation for a Lev 19 command. Elsewhere the formula is \'I am the Lord your God.\'  Here the motivation is empathetic memory: your historical experience of vulnerability obligates you to protect others\' vulnerability.'),
+            ],
+            'sarna': [
+                ('19:32', 'Sarna: "Rise in the presence of the aged, show respect for the elderly" — one of the most specific honour commands in the Torah. The Hebrew literally means \'you shall rise before the white hair\' (šêbāh). The obligation is bodily — a physical act of deference that signals the entire community\'s value of wisdom and accumulated experience.'),
+            ],
+            'alter': [
+                ('19:34', 'Alter: "The foreigner residing among you must be treated as your native-born. Love him as yourself, for you were foreigners in Egypt. I am the Lord your God." Five clauses building on each other: command, equivalent status, motivation (shared experience), command intensified (as yourself), divine self-identification. The foreigner is not to be tolerated but loved.'),
+            ],
+            'calvin': [
+                ('19:35–36', 'Calvin: The honest weights and measures laws demonstrate that commerce is a theological matter. Every transaction in which someone cheats on measure is a lie about reality — a violation of the truthfulness that God\'s own character demands. The merchant who uses false weights is not merely breaking a commercial rule; they are defaming the God of truth in whom they claim to believe.'),
+            ],
+            'netbible': [
+                ('19:27', 'NET Note: "Do not cut the hair at the sides of your head or clip off the edges of your beard" — the prohibition targets specific Canaanite mourning practices associated with the dead (cf. Deut 14:1; Jer 16:6). The body-marking associated with death-cult religion (tattoos, v.28; consulting the dead, v.31) would blur the boundary between Israel and the surrounding death-religion cultures.'),
+            ],
+        },
+    ],
+})
+
+lev(20, {
+    'title': 'Penalties for Violations: The Holiness Code Enforced',
+    'sections': [
+        {
+            'header': 'Verses 1–16 — Death Penalties: Molech, Mediums, Sexual Violations',
+            'verses': verse_range(1, 16),
+            'heb': [
+                ('môt yûmāt', 'mot yumat', 'he shall surely be put to death', 'The double verb of absolute certainty — the infinitive absolute intensifying the finite verb. "He shall surely die." The death penalty formula appears 7 times in Lev 20. The repetition signals that these are the most serious covenant violations.'),
+                ('wĕkārettî ʾōtô', 'vechareti oto', 'I will cut him off', 'The divine kārēt — executed by God rather than the community. Some violations receive human death penalty; others receive divine cutting off. Milgrom distinguishes: human execution for public violations; divine kārēt for violations difficult to witness or prove.'),
+            ],
+            'ctx': 'Leviticus 20 is the penal companion to Lev 18–19 — it specifies the consequences for the acts prohibited in the earlier chapters. The structure moves from most severe (death: Molech sacrifice, v.2; mediums, v.6; parent-cursing, v.9; adultery, v.10) through graduated sexual violations to the holiness summary (vv.22–26). The chapter confronts modern readers most directly at vv.13 (male homosexual intercourse) and v.15–16 (bestiality) — both receive death penalties. The theological logic: these acts are tôʿēbāh (abomination) — fundamentally incompatible with the covenant order, not merely culturally offensive.',
+            'cross': [
+                ('Matt 15:4', '"God said, \'Honour your father and mother\' and \'Anyone who curses their father or mother is to be put to death.\'" Jesus quotes Lev 20:9 to confront the Pharisees who allowed legal loopholes to dishonour parents.'),
+                ('1 Cor 6:9–11', '"Do you not know that wrongdoers will not inherit the kingdom of God?… And that is what some of you were. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ." Paul lists violations of Lev 20\'s sexual ethics and then pronounces the gospel: transformation is possible.'),
+            ],
+            'mac': [
+                ('20:1–5', 'MacArthur: The death penalty for Molech-sacrifice (v.2 — stoning by the community) is the highest public enforcement in Leviticus. The community itself executes the penalty — they are all implicated in maintaining covenant holiness. If the community fails to act, God himself will act against both the perpetrator and those who "close their eyes" to the sin (v.4).'),
+                ('20:10', 'MacArthur: The death penalty for adultery (both parties) reflects the gravity of covenant betrayal — adultery destroys the family unit, which is the basic covenant institution, and violates the one-flesh bond created by God. The NT does not prescribe execution for adultery, but Jesus\'s teaching on the permanence of marriage (Matt 19:6) maintains the theological weight of the covenant.'),
+            ],
+            'milgrom': [
+                ('20:2–5', 'Milgrom: The Molech penalty — stoning by the community — is the same as for murder (Num 35:16–21). Child sacrifice is categorised as equivalent to murder in the Levitical system. The community\'s responsibility to execute the penalty is a collective covenant obligation: tolerating Molech worship is not neutrality but complicity.'),
+                ('20:13', 'Milgrom: The death penalty for male homosexual intercourse is the same as for adultery (v.10) — both are treated as capital covenant violations. Milgrom\'s analysis: the act violates the created order (Gen 1:27–28\'s male-female complementarity and the mandate to fill the earth) and is categorised as tôʿēbāh — abomination — the same term as in 18:22.'),
+            ],
+            'sarna': [
+                ('20:9', 'Sarna: The parent-cursing penalty (death) reflects the Torah\'s elevation of parental honour to near-divine status. Parents represent the chain of covenant transmission — they are the immediate source of the child\'s life and covenant identity. To curse them is to curse the covenant itself.'),
+            ],
+            'alter': [
+                ('20:7–8', 'Alter: "Consecrate yourselves and be holy, because I am the Lord your God. Keep my decrees and follow them. I am the Lord, who makes you holy." The chapter begins and ends with the Holiness Formula. The penalties are framed by theology — they are not arbitrary punishments but the covenant\'s protective response to acts that threaten the community\'s holy identity.'),
+            ],
+            'calvin': [
+                ('20:1–16', 'Calvin: The severity of the penalties in Lev 20 teaches that God does not treat covenant violations lightly. The same gracious God who provided the sacrificial system and the Day of Atonement also established consequences for deliberate, persistent covenant breach. Grace does not abolish accountability; it provides the only path through it.'),
+            ],
+            'netbible': [
+                ('20:2', 'NET Note: "The people of the land shall stone him" — the death penalty for Molech sacrifice is carried out by the community, not by the priests or a designated executioner. The community\'s collective action signals collective responsibility: covenant holiness is a communal project, not a matter of individual private faith.'),
+            ],
+        },
+        {
+            'header': 'Verses 17–27 — Further Sexual Violations; The Holiness Summary',
+            'verses': verse_range(17, 27),
+            'heb': [
+                ('ḥesed hûʾ', 'chesed hu', 'it is a disgrace / it is a reproach', 'Used in v.17 for sibling incest — the only place in Lev 20 where this term appears instead of tôʿēbāh or death penalty. The word ḥesed usually means lovingkindness; here in a negative construction it means its opposite — a social shame, a public disgrace.'),
+                ('wĕhāyîtem lî qĕdōšîm', 'vehayitem li qedoshim', 'you shall be holy to me', 'The chapter\'s summary formula — not merely "be holy" but "be holy to me" (lî). Holiness is relational; it is not an abstract quality but a covenantal orientation toward the God who chose Israel.'),
+            ],
+            'ctx': 'The second half of Lev 20 continues the sexual violation penalties at lower levels: kārēt for aunt-uncle incest (vv.17–21), childlessness as divine penalty (vv.20–21), exile for mediums (v.27). The theological summary (vv.22–26) restates the Leviticus themes: the land will vomit you out if you defile it; I am the Lord who separated you from the nations as I separated clean from unclean animals. The separation language explicitly links Israel\'s ethical distinctiveness to the purity system of Lev 11: just as Israel distinguishes clean from unclean in diet, so they must distinguish holy from common in conduct.',
+            'cross': [
+                ('1 Pet 2:9', '"But you are a chosen people, a royal priesthood, a holy nation, God\'s special possession, that you may declare the praises of him who called you out of darkness into his wonderful light." Peter applies the Lev 20:26 separation language to the church: set apart as Israel was set apart.'),
+                ('2 Cor 6:17', '"\'Come out from them and be separate,\' says the Lord." Paul echoes the Levitical separation call for the NT community.'),
+            ],
+            'mac': [
+                ('20:22–26', 'MacArthur: The holiness summary at Lev 20\'s close is the most comprehensive statement of the relationship between ethics and election in the Holiness Code. God separated Israel from the nations as he separated clean from unclean animals — the same verb (bādal) used in Gen 1 for God\'s creative separations. Israel\'s moral distinctiveness is grounded in the doctrine of election and the structure of creation.'),
+            ],
+            'milgrom': [
+                ('20:22–26', 'Milgrom: The summary equation — "I have set you apart from the nations to be my own, just as I have set apart clean animals from unclean ones" — is the hermeneutical key to the entire purity-ethics complex of Lev 11–20. The same God who structured the created order (clean/unclean) also structured the social order (holy Israel/the nations). Both reflect divine bādal (separation).'),
+            ],
+            'sarna': [
+                ('20:26', 'Sarna: "You are to be holy to me because I, the Lord, am holy, and I have set you apart from the nations to be my own." The chain: God is holy → Israel is to be holy → therefore Israel is separated. Holiness is not self-generated but derived — Israel\'s distinctiveness flows from the character of the God who chose them.'),
+            ],
+            'alter': [
+                ('20:26', 'Alter: "I have set you apart from the nations to be my own." The verb qādaš (to be holy, to set apart) connects Israel\'s ethical call to the priestly vocabulary of consecration. Israel as a people is consecrated — "holy to the Lord" — the same formula used for priests and the first-born. The entire nation is a priestly people.'),
+            ],
+            'calvin': [
+                ('20:22–26', 'Calvin: The holiness summary teaches that Christian distinctiveness is not cultural preference but theological necessity. As Israel was to be different from Egypt and Canaan, the church is to be different from the world — not in withdrawal but in the quality of its life together. The church\'s ethics are a form of witness: they declare the character of the God who has separated his people to himself.'),
+            ],
+            'netbible': [
+                ('20:26', 'NET Note: "I have set you apart from the nations to be my own" — the Hiphil of bādal, the same verb God uses in Gen 1 to separate light from darkness, water from water, land from sea. Israel\'s election is portrayed as a creative act analogous to the ordering of creation. Their distinctiveness is cosmological, not merely cultural.'),
+            ],
+        },
+    ],
+})
+
+lev(21, {
+    'title': 'The Holiness of the Priests: Higher Standards for Higher Calling',
+    'sections': [
+        {
+            'header': 'Verses 1–15 — Mourning Restrictions and Marriage Requirements for Priests',
+            'verses': verse_range(1, 15),
+            'heb': [
+                ('lōʾ yiṭṭammāʾ', 'lo yittama', 'he shall not make himself unclean', 'The Hithpael reflexive — deliberately incurring impurity. Ordinary Israelites incur impurity involuntarily (contact with a corpse); priests are prohibited even from the voluntary mourning practices that would incur corpse-impurity. Their proximity to the holy demands greater separation from the impure.'),
+                ('qĕdōšô lēlōhāyw', 'qedosho lElohav', 'holy to his God', 'The phrase applied to the priest in v.7 and v.8 — the priest is "holy to his God" in a heightened sense. His holiness is greater than the ordinary Israelite\'s holiness, because he ministers in the holy place. Higher access to the holy requires higher separation from the impure.'),
+            ],
+            'ctx': 'Leviticus 21 applies the holiness logic to the priesthood specifically — priests must observe stricter purity requirements than ordinary Israelites because they minister in the sanctuary. Ordinary priests: may mourn only immediate family members (vv.1–4); may not marry divorced women or prostitutes (v.7). The high priest: must not mourn even his parents (v.11); must marry a virgin from his own people (v.13–14). The principle is graduated holiness: the closer the approach to the divine presence, the greater the separation from impurity required. The high priest represents Israel before God at its most intimate — his entire personal life must reflect that calling.',
+            'cross': [
+                ('Heb 7:26', '"Such a high priest truly meets our need — one who is holy, blameless, pure, set apart from sinners, exalted above the heavens." The writer of Hebrews describes Christ using the vocabulary of priestly qualification — he is the ultimate realisation of Lev 21\'s high-priestly ideal.'),
+                ('1 Tim 3:2–7', 'Paul\'s qualifications for church overseers — "above reproach, faithful to his wife… self-controlled, respectable… not given to drunkenness" — follow the Levitical pattern: higher leadership requires higher character.'),
+            ],
+            'mac': [
+                ('21:1–4', 'MacArthur: The restriction on priestly mourning is not a denial of grief but a recognition that priestly service cannot be interrupted. Death creates impurity; the priest who incurs impurity cannot minister. The law creates a tragic hierarchy: for the ordinary priest, only parents, children, siblings, and unmarried sister may be mourned; for the high priest (v.11), not even these. The demand of the holy supersedes the demands of grief.'),
+                ('21:13–15', 'MacArthur: The high priest\'s marriage requirements — a virgin, from his own people (v.13–15) — are the most restrictive in Israel. The high priest\'s household is to be beyond reproach: no divorce, no prostitution, no widow. The logic: the high priest\'s offspring continue the priestly line; the holiness of the priesthood must be reproduced in each generation.'),
+            ],
+            'milgrom': [
+                ('21:1–4', 'Milgrom: The graduated mourning restrictions reveal the layered holiness structure of Israel: lay Israelite (no mourning restrictions), ordinary priest (restricted to immediate family), high priest (no mourning at all). This ladder of holiness corresponds inversely to proximity to the divine presence — the closer to God, the greater the separation from death.'),
+                ('21:7', 'Milgrom: The priest\'s marriage restriction — not a prostitute, not a divorced woman — serves the same holiness logic as the mourning restrictions. The priest\'s household is an extension of his priestly identity; its moral status reflects on his fitness for service. A priest whose household is disordered brings that disorder into the sanctuary.'),
+            ],
+            'sarna': [
+                ('21:10–12', 'Sarna: The high priest\'s prohibition on all mourning — even for his father or mother — is the most demanding personal requirement in the entire Levitical system. His function as the representative of all Israel before God is so total that it supersedes even the most basic human obligations. The high priest\'s life is entirely consumed by his office.'),
+            ],
+            'alter': [
+                ('21:10–12', 'Alter: The high priest "must not leave the sanctuary of his God or desecrate it" even when a family member dies. The phrase "desecrate his God\'s sanctuary" reveals the high priest\'s unique status: his person is identified with the sanctuary. His mourning would be its defilement; his grief would be its dishonour. He is the sanctuary made flesh.'),
+            ],
+            'calvin': [
+                ('21:1–15', 'Calvin: The priestly holiness requirements teach that spiritual leadership imposes genuine constraints on personal freedom — the leader\'s private life is not separate from their public office. Ministers of the gospel are called to the same accountability: their households, their grief, their marriages, their conduct all speak about the God they serve. The pastor\'s life is a sermon.'),
+            ],
+            'netbible': [
+                ('21:4', 'NET Note: "He must not make himself unclean for people related to him by marriage, and so defile himself" — this awkward phrase is variously interpreted. Most likely: the priest may not mourn in-laws (the "bĕ-ammāyw" — \'among his people\' referring to his wife\'s family). The restriction keeps mourning-impurity strictly within his birth family.'),
+            ],
+        },
+        {
+            'header': 'Verses 16–24 — Physical Disqualifications for Priestly Service',
+            'verses': verse_range(16, 24),
+            'heb': [
+                ('mûm', 'mum', 'defect / blemish / imperfection', 'Any physical condition that is less than complete wholeness. The same term used for the sacrificial animals (Lev 1:3, "without defect"). The priest who offers must be as whole as the animal he offers — the principle of correspondence between offerer and offering.'),
+            ],
+            'ctx': 'The list of disqualifying conditions for priestly service (vv.18–20) is extensive: blindness, lameness, disfigured face, limb too short or too long, broken foot or hand, hunchback, dwarf, eye defect, festering sore, scabs, crushed testicles. These physical conditions do not exclude the person from the covenant community or from eating the sacred portions (v.22) — only from officiating at the altar. The logic: the priest who presents offerings before God must embody the wholeness (tāmîm) required of the offerings themselves. The correspondence principle: complete offering, complete offerer.',
+            'cross': [
+                ('2 Cor 4:7', '"But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us." Paul\'s contrast — the treasure in clay jars — reflects the priestly ideal: the visible vessel must be worthy of the content it carries. The NT inverts this: God deliberately chooses weakness as the vessel (1 Cor 1:27).'),
+                ('Heb 4:15', '"We do not have a high priest who is unable to empathise with our weaknesses, but we have one who has been tempted in every way, just as we are — yet he did not sin." Christ, the eternal high priest, has no physical blemish AND perfectly embodies the moral wholeness the priestly law required.'),
+            ],
+            'mac': [
+                ('21:16–24', 'MacArthur: The physical disqualification list is often misunderstood as discriminatory. Its logic is theological, not social: the priest approaching the altar represents the wholeness of the covenant community before God. Physical completeness (tāmîm) in both sacrifice and priest signals the wholeness of the offering being made. The NT fulfilment: Christ, the sinless and physically perfect high priest, offers himself without blemish.'),
+                ('21:22–23', 'MacArthur: The physically disqualified priest retains full covenant status — he may eat the holy portions (v.22) and is not excluded from the priestly community. The restriction is functional, not ontological. He is still a priest; he simply cannot officiate at the altar. The disability affects office, not identity.'),
+            ],
+            'milgrom': [
+                ('21:17–23', 'Milgrom: The disqualification of physically imperfect priests reflects the purity system\'s consistent logic: wholeness (tāmîm) is the hallmark of holiness. Damaged animals cannot be offered; priests with physical blemishes cannot offer. The principle is completeness — nothing partial or diminished can stand before the divine holiness in a representative capacity.'),
+            ],
+            'sarna': [
+                ('21:22', 'Sarna: "He may eat the most holy food of his God, as well as the holy food" — the disqualified priest retains full access to the priestly portions. His exclusion from altar service does not diminish his covenant identity or his share in the sacred provisions. The law is about functional fitness for a specific role, not about human worth.'),
+            ],
+            'alter': [
+                ('21:18–20', 'Alter: The list of physical disqualifications is the most anatomically detailed in Leviticus — a catalogue of human physical imperfection. Its very specificity is part of its logic: wholeness is not vague but particular. Each item named represents a departure from the completeness that the altar demands. The priestly ideal is a complete human body, wholly devoted, wholly intact, wholly offered.'),
+            ],
+            'calvin': [
+                ('21:16–24', 'Calvin: The disqualification of physically imperfect priests from altar service is a shadow of the requirement for moral perfection. No human priest meets the standard completely — they all offer with "blemishes" of sin and weakness. Christ alone fulfils the priestly ideal: without blemish of sin, he offers the perfect sacrifice. His high priesthood is the reality these shadows obscured.'),
+            ],
+            'netbible': [
+                ('21:23', 'NET Note: The disqualified priest "shall not come near the veil or approach the altar, because he has a defect" — his exclusion is spatial, not social. He stands at the threshold of the altar but cannot approach it. He participates in the priestly community fully (eating the holy food) but cannot perform the representative act of approach before God.'),
+            ],
+        },
+    ],
+})
+
+lev(22, {
+    'title': 'The Holiness of the Offerings: Guard What Is Holy',
+    'sections': [
+        {
+            'header': 'Verses 1–16 — Who May Eat the Sacred Portions',
+            'verses': verse_range(1, 16),
+            'heb': [
+                ('yinnāzĕrû', 'yinnazeru', 'they shall keep away / separate themselves', 'Hiphil of nāzar — to separate, to dedicate. The same root as Nazirite. The priests must "nazarite themselves" from the holy things when they are impure — the requirement of ritual purity as the condition for access to the sacred portions.'),
+                ('zār', 'zar', 'outsider / unauthorised person', 'Anyone who is not a priest or a member of a priest\'s household. Access to the sacred portions is restricted; consumption by an outsider incurs guilt and requires restitution. The holy food carries holiness-charge; unauthorized consumption defiles both the person and the sanctuary.'),
+            ],
+            'ctx': 'Leviticus 22 governs access to the sacred portions of the offerings — who may eat them and under what conditions. The principle is straightforward: the holy food must be consumed in a state of purity by those authorised to receive it. An impure priest must wait; a foreigner, hired servant, or even a divorced daughter returned to her father\'s house cannot eat the priestly portions. However, a priest\'s slave (v.11) and a priest\'s daughter who has not married (vv.12–13) may eat. The regulations define the boundaries of the "priestly household" as the domain within which the sacred portions circulate.',
+            'cross': [
+                ('1 Cor 11:27–29', '"Whoever eats the bread or drinks the cup of the Lord in an unworthy manner will be guilty of sinning against the body and blood of the Lord… Anyone who eats and drinks without discerning the body of Christ eats and drinks judgment on themselves." Paul applies the Levitical sacred-portions logic to the Lord\'s Supper.'),
+                ('Matt 7:6', '"Do not give dogs what is sacred; do not throw your pearls to pigs." Jesus\'s saying uses the Levitical logic of holy things requiring proper recipients.'),
+            ],
+            'mac': [
+                ('22:3–9', 'MacArthur: The priest who approaches the sacred portions in a state of impurity "shall be cut off from my presence" (v.3). The kārēt penalty for casual treatment of holy food signals that the sacred portions are not merely priestly food but extensions of the divine presence. To eat them unworthily is to treat God himself with contempt.'),
+                ('22:14–16', 'MacArthur: The provision for accidental consumption of sacred food by an outsider — restitution of the value plus 20% — applies the guilt-offering logic of Lev 5:14–16 to the sacred portions. Even unintentional violation of the holy requires restitution. The law makes holiness concrete: it has measurable value that must be compensated when violated.'),
+            ],
+            'milgrom': [
+                ('22:3', 'Milgrom: The kārēt penalty for an impure priest approaching the sacred portions is the divine enforcement mechanism for priestly purity. Where human courts cannot enforce — since impurity is often invisible — God himself enforces. The holy things are self-protecting: they punish those who approach them without the proper status.'),
+                ('22:10–13', 'Milgrom: The definition of the priestly household (priest, wife, children, slaves, but not hired servant or resident alien) is more inclusive than the ethnic priestly line but more exclusive than the general community. The sacred portions circulate within a defined circle of priestly dependents — those whose welfare is bound to the priest\'s own.'),
+            ],
+            'sarna': [
+                ('22:14', 'Sarna: The 20% surcharge for accidental consumption of sacred food by an outsider parallels the guilt-offering provision of Lev 5:16. The consistency of the 20% penalty across different contexts (sacred property, sacred food) reflects the Torah\'s systematic coherence: violations of the holy consistently incur a one-fifth supplement as acknowledgment of the sacred\'s premium value.'),
+            ],
+            'alter': [
+                ('22:1–3', 'Alter: The chapter opens with the divine address to "Aaron and his sons" — the second-generation priestly establishment, no longer Moses alone. The instruction has now been fully institutionalised: the priests are its ongoing custodians, not merely its first recipients. The Levitical system is designed for perpetuation, not just for the wilderness generation.'),
+            ],
+            'calvin': [
+                ('22:1–16', 'Calvin: The sacred portions\' access restrictions teach the principle of worthy reception — coming to the holy in appropriate condition. The Christian application is not to restrict the Lord\'s Table arbitrarily but to come with genuine self-examination (1 Cor 11:28): not with the body but with the heart in a state of purity before God.'),
+            ],
+            'netbible': [
+                ('22:9', 'NET Note: "They must keep my requirements so that they do not become guilty and die because they profane them" — the priestly responsibility is not merely personal but custodial. Priests are guardians of the sacred order; their laxity contaminates both themselves and the system they maintain. Priestly failures are institutionally dangerous.'),
+            ],
+        },
+        {
+            'header': 'Verses 17–33 — Acceptable and Unacceptable Offerings',
+            'verses': verse_range(17, 33),
+            'heb': [
+                ('lirṣōnkem', 'lirtsonchem', 'for your acceptance / to be accepted on your behalf', 'The offering must be without defect "for acceptance" — the divine verdict of reception is the goal. An offering presented with a defect is not accepted; the worshipper has wasted their approach. The without-defect requirement protects both the worshipper\'s access and the integrity of the system.'),
+                ('ûqiddaštěm', 'uqidashtem', 'you shall consecrate / you shall keep holy', 'The closing command of Lev 22:32 — "you shall consecrate my name." The entire offering system exists to hallow the divine name. Every perfect offering, every kept requirement, is an act of sanctifying God before the congregation.'),
+            ],
+            'ctx': 'The second half of Lev 22 addresses the quality of offerings — the same without-defect requirement as Lev 1:3 but now spelled out in explicit exclusions: blind, injured, maimed, infected, scabbed, diseased animals (v.22); crushed, bruised, torn, or cut animals (v.24). The reason is consistent: a blemished offering fails to honour the God it is presented to. The chapter closes (vv.31–33) with the Holiness Summary in its most comprehensive form: "Keep my commands and follow them. I am the Lord. Do not profane my holy name, for I must be acknowledged as holy by the Israelites. I am the Lord, who made you holy and who brought you out of Egypt to be your God."',
+            'cross': [
+                ('Mal 1:8', '"When you bring blind animals for sacrifice, is that not wrong? When you sacrifice lame or diseased animals, is that not wrong?… Try offering them to your governor! Would he be pleased with you?" Malachi quotes Lev 22:20–22 against the post-exilic priests who presented blemished offerings.'),
+                ('1 Pet 1:19', '"With the precious blood of Christ, a lamb without blemish or defect." Peter applies the Lev 22 offering requirement directly to the atonement — Christ is the ʿōlāh without mûm.'),
+            ],
+            'mac': [
+                ('22:17–25', 'MacArthur: The detailed list of unacceptable animals reflects the principle of correspondence: what is offered to God must be the best available, not the culled or the inferior. The worshipper who brings a lame or diseased animal is not saving money on a sacrifice — they are insulting the God they claim to worship. Malachi\'s stinging indictment (1:6–14) is grounded in exactly these verses.'),
+                ('22:31–33', 'MacArthur: The closing summary of the Holiness Code — "I am the Lord who made you holy and who brought you out of Egypt to be your God" — unites sanctification and redemption. God\'s holiness-making and God\'s redemptive act are one: the same God who freed Israel from Egypt is the one who consecrates them. Holiness is not separate from salvation; it is its fruit.'),
+            ],
+            'milgrom': [
+                ('22:32', 'Milgrom: "Do not profane my holy name, for I must be acknowledged as holy by the Israelites" — the concept of ḥillûl haShem (profaning God\'s name) and qiddûš haShem (sanctifying God\'s name) are introduced here. Israel\'s obedience or disobedience directly affects the reputation of God among the nations. Covenant ethics is not only about Israel\'s welfare but about God\'s glory in the world.'),
+            ],
+            'sarna': [
+                ('22:26–28', 'Sarna: The prohibition on slaughtering a cow or sheep and its young on the same day (v.28) reflects the same humane concern as the prohibition on boiling a kid in its mother\'s milk (Exod 23:19). The Torah\'s care for animal welfare is not sentimental but theological: creation belongs to God; the lives of animals have dignity before him.'),
+            ],
+            'alter': [
+                ('22:32', 'Alter: "I am the Lord who makes you holy" — the Qal participle měqaddēškem, "the one who makes you holy." The divine name is attached to the act of sanctification itself. God does not merely command holiness; he is its agent. Israel cannot make themselves holy; they can only receive and embody the holiness God continuously imparts.'),
+            ],
+            'calvin': [
+                ('22:31–33', 'Calvin: The chapter\'s closing summary is the Holiness Code\'s crowning statement: obedience is both the response to redemption ("I brought you out of Egypt") and the expression of consecration ("I am the Lord who makes you holy"). The Christian life is identical in structure: the cross is the motive, holiness is the fruit, and the sanctifying Spirit is the agent.'),
+            ],
+            'netbible': [
+                ('22:32', 'NET Note: "I must be acknowledged as holy" — the Niphal of qādaš, literally "I will be hallowed/sanctified." God\'s holiness is not diminished by Israel\'s failures, but it is dishonoured before the watching nations. The concept of ḥillûl haShem (name-profaning) becomes central in Ezekiel\'s theology of exile (Ezek 36:20–23): Israel\'s unfaithfulness caused God\'s name to be profaned among the nations.'),
+            ],
+        },
+    ],
+})
+
+print("LEV-5 complete: Leviticus 18–22 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEV-6: Chapters 23–27 — Feasts, Jubilee, Vows, and Tithes
+# ─────────────────────────────────────────────────────────────────────────────
+
+lev(23, {
+    'title': 'The Sacred Calendar: The Feasts of the Lord',
+    'sections': [
+        {
+            'header': 'Verses 1–22 — The Weekly Sabbath and Spring Feasts',
+            'verses': verse_range(1, 22),
+            'heb': [
+                ('môʿădê yhwh', "mo'adei YHWH", 'appointed times of the Lord / sacred assemblies', 'From yāʿad, to meet by appointment. The feasts are not Israel\'s festivals but God\'s — times he has set to meet with his people. The calendar is theo-centric: the rhythm of Israel\'s year is ordered by divine appointment, not agricultural convenience or royal decree.'),
+                ('šabbātôn', 'shabbaton', 'sabbath rest / complete rest', 'An intensive form of šabbāt — a complete, total cessation. Applied to the weekly Sabbath and to the great annual sabbaths (Passover, Day of Atonement). The word signals that these are not merely days off but covenantal rest — participation in God\'s own rest.'),
+            ],
+            'ctx': 'Leviticus 23 gives the complete sacred calendar: (1) the weekly Sabbath (v.3); (2) Passover and Unleavened Bread (vv.4–8, 14 Nisan); (3) Firstfruits/Omer (vv.9–14, first Sunday after Passover); (4) Weeks/Pentecost/Shavuot (vv.15–21, 50 days after Firstfruits). The spring feasts are a theological narrative: Passover = redemption from Egypt; Unleavened Bread = separation from corruption; Firstfruits = resurrection and new life; Weeks = the Spirit\'s harvest. Paul reads them as a typological sequence that Christ fulfils: "Christ, our Passover lamb, has been sacrificed" (1 Cor 5:7); "Christ, the firstfruits" (1 Cor 15:20); Pentecost as the Spirit\'s outpouring (Acts 2).',
+            'cross': [
+                ('1 Cor 5:7–8', '"For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival, not with the old bread leavened with malice and wickedness, but with the unleavened bread of sincerity and truth."'),
+                ('1 Cor 15:20', '"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep." The Firstfruits feast (v.10) is fulfilled in the resurrection.'),
+                ('Acts 2:1–4', '"When the day of Pentecost came… all of them were filled with the Holy Spirit." Pentecost — the Feast of Weeks — is the appointed time when God pours out his Spirit.'),
+            ],
+            'mac': [
+                ('23:1–3', 'MacArthur: The weekly Sabbath heads the entire sacred calendar — before any annual feast is named, the Sabbath is established as the foundational sacred time. All other appointed times are extensions of the Sabbath principle: regular, covenantal cessation from labour as an act of trust in the God who provides.'),
+                ('23:10–14', 'MacArthur: The Firstfruits offering (the first sheaf of the grain harvest) could not be eaten until it was presented before the Lord — no bread, roasted grain, or new wine until the firstfruits were waved. The principle is prior dedication: God receives the first before Israel eats. This is the agricultural expression of the principle Christ enacts in resurrection: he rises first, then we follow (1 Cor 15:23).'),
+            ],
+            'milgrom': [
+                ('23:4–8', 'Milgrom: The Passover-Unleavened Bread complex (14–21 Nisan) is the foundational historical feast — it commemorates the Exodus event. Milgrom notes that Passover is a home ritual (not a sanctuary sacrifice) while Unleavened Bread involves sanctuary service (vv.7–8). The combination creates a liturgical week that moves from household to communal worship.'),
+                ('23:15–21', 'Milgrom: The counting of the Omer (50 days from Firstfruits to Weeks) creates a liturgical arc between the grain harvest\'s beginning and its completion. The number 50 (from ḥǎmiššîm, fifty) gives Pentecost its Greek name. The feast is both agricultural (completion of harvest) and historical — later tradition associates it with the Sinai covenant.'),
+            ],
+            'sarna': [
+                ('23:3', 'Sarna: The Sabbath\'s placement at the head of the sacred calendar (before Passover, before any annual feast) signals its priority. The feasts commemorate historical events; the Sabbath commemorates creation. The annual rhythm is grounded in the weekly rhythm; the historical is grounded in the creational.'),
+            ],
+            'alter': [
+                ('23:10', 'Alter: "When you enter the land I am going to give you and you reap its harvest, bring to the priest a sheaf of the first grain you harvest." The feast legislation is future-oriented — pointing Israel toward a land they have not yet entered. The sacred calendar is given in the wilderness for a settled agricultural life. The liturgy anticipates the promise.'),
+            ],
+            'calvin': [
+                ('23:4–22', 'Calvin: The spring feasts form a typological sequence whose fulfilment Calvin sees in Christ: Passover = Christ\'s death; Unleavened Bread = the purged life of the redeemed; Firstfruits = Christ\'s resurrection; Weeks = the gift of the Spirit. The feasts are not abolished but fulfilled — their substance has come in Christ; their shadow remains as a reminder of what has been accomplished.'),
+            ],
+            'netbible': [
+                ('23:11', 'NET Note: "The day after the Sabbath" for the Firstfruits wave offering (v.11) is debated between Pharisaic interpretation (the day after the first annual sabbath of Unleavened Bread, i.e. 16 Nisan) and Sadducean/Karaite interpretation (the day after the weekly Sabbath during Unleavened Bread, i.e. a Sunday). The debate has implications for the calculation of Pentecost.'),
+            ],
+        },
+        {
+            'header': 'Verses 23–44 — The Autumn Feasts: Trumpets, Atonement, Tabernacles',
+            'verses': verse_range(23, 44),
+            'heb': [
+                ('sukkōt', 'sukkot', 'booths / tabernacles / shelters', 'Temporary structures made of branches in which Israel dwells for seven days (vv.42–43) — a reenactment of the wilderness journey. The feast celebrates both the harvest\'s completion and the wilderness period when God provided for Israel in portable shelters.'),
+                ('yôm tĕrûʿāh', 'yom teruah', 'day of trumpet blowing / day of alarm', 'The Feast of Trumpets (Rosh Hashanah) on 1 Tishri — the blast of the šôpār (ram\'s horn) that inaugurates the autumn season and calls Israel to assembly. The trumpet-call is both announcement and summons.'),
+            ],
+            'ctx': 'The autumn feasts complete the sacred year: Trumpets (1 Tishri, vv.24–25) — the šôpār blast inaugurating the month; Day of Atonement (10 Tishri, vv.26–32) — the great fast and sanctuary purging of Lev 16; Tabernacles (15–21 Tishri, vv.33–43) — a seven-day harvest festival in booths, followed by a solemn assembly (šĕmînî ʿaṣeret, "eighth-day assembly," v.36). The autumn feasts follow the same theological logic as the spring: Trumpets = eschatological summons; Atonement = final judgement/cleansing; Tabernacles = eschatological feast in God\'s presence. Revelation\'s imagery of trumpets, judgement, and the great harvest draws extensively on this autumn feast sequence.',
+            'cross': [
+                ('Rev 8:2', '"And I saw the seven angels who stand before God, and seven trumpets were given to them." The seven trumpet-blasts of Revelation draw on the Yom Teruah trumpet-theology.'),
+                ('Zech 14:16–19', '"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles." Tabernacles is the eschatological feast — the nations join Israel in celebrating God\'s harvest.'),
+                ('John 7:37–38', '"On the last and greatest day of the festival, Jesus stood and said in a loud voice, \'Let anyone who is thirsty come to me and drink.\'" Jesus\'s water-of-life declaration on the last day of Tabernacles claims to fulfil the feast\'s deepest longing.'),
+            ],
+            'mac': [
+                ('23:33–36', 'MacArthur: Tabernacles is the most joyful feast in the Levitical calendar — a seven-day harvest celebration in temporary shelters, followed by the šĕmînî ʿaṣeret (eighth-day assembly). The eighth day again signals new beginning: beyond the completion of the harvest week, into the eschatological rest. The booth-dwelling reenacts the wilderness journey — God dwelt with Israel in temporary structures; they dwell in temporary structures in gratitude.'),
+                ('23:26–32', 'MacArthur: The Day of Atonement (Yom Kippur) appears in the feast calendar between Trumpets and Tabernacles. The sequence is intentional: the šôpār call (Trumpets) summons Israel to account; Atonement provides the purging; Tabernacles celebrates the restored fellowship. The eschatological reading: the trumpet announces judgement, atonement provides the solution, the feast follows.'),
+            ],
+            'milgrom': [
+                ('23:39–43', 'Milgrom: The booth-dwelling commandment (vv.42–43) is given a dual rationale: (1) harvest celebration (the booths are built from harvest vegetation); (2) memorial of the wilderness journey ("so your descendants will know that I made the Israelites live in temporary shelters"). The feast holds together present gratitude and historical memory.'),
+            ],
+            'sarna': [
+                ('23:40', 'Sarna: "The fruit of majestic trees, branches of palm trees, boughs of leafy trees, and willows of the brook" — the four species of Sukkot (later codified as etrog, lulav, hadassim, aravot). The lush vegetation waved before God is a celebration of the harvest\'s abundance — a joyful acknowledgment that the land and its fruit belong to the God who gave them.'),
+            ],
+            'alter': [
+                ('23:42–43', 'Alter: "Live in temporary shelters for seven days… so your descendants will know that I had the Israelites live in temporary shelters when I brought them out of Egypt." The feast\'s embodied dimension — actually dwelling in booths — is pedagogical. The body is the classroom; the physical experience of temporary shelter teaches the theology of wilderness dependence and divine provision.'),
+            ],
+            'calvin': [
+                ('23:33–43', 'Calvin: Tabernacles points to the eternal feast — the great gathering of all God\'s people at the end of the age, dwelling in God\'s presence not temporarily but forever. The booth is the symbol of our present condition: pilgrims in temporary dwellings, awaiting the permanent city whose builder and maker is God (Heb 11:10). The feast calls Israel — and us — to hold the present lightly and the future firmly.'),
+            ],
+            'netbible': [
+                ('23:36', 'NET Note: "On the eighth day hold a sacred assembly and present a food offering to the Lord. It is the closing special assembly; do no regular work" — the šĕmînî ʿaṣeret ("eighth-day restraint") is a separate feast appended to Tabernacles. Rabbinic tradition treats it as a distinct holiday (eventually becoming Simchat Torah in diaspora Judaism). Its significance: the number eight signals new creation beyond the seven-day week.'),
+            ],
+        },
+    ],
+})
+
+lev(24, {
+    'title': 'The Lampstand, the Bread, and the Blasphemer',
+    'sections': [
+        {
+            'header': 'Verses 1–9 — The Lampstand and the Bread of the Presence',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('lĕhaʿălōt nēr tāmîd', "leha'alot ner tamid", 'to keep the lamps burning continually', 'The perpetual lamp — tāmîd (continuous/perpetual) is the same word as the perpetual altar fire (Lev 6:13). The lampstand burns continuously as the altar burns continuously: both are signs of uninterrupted divine presence and permanent priestly attention.'),
+                ('leḥem happānîm', 'lechem hapanim', 'bread of the presence / showbread / bread of the face', 'Twelve loaves representing the twelve tribes, set before the Lord permanently on the gold table in the holy place. "Bread of the face" — placed before God\'s face, renewed each Sabbath, eaten by the priests in the holy place. A perpetual covenant meal.'),
+            ],
+            'ctx': 'Leviticus 24 begins with two standing orders for the sanctuary\'s interior: the lampstand (vv.1–4) and the bread of the presence (vv.5–9). Both are tāmîd — perpetual. The lampstand of pure gold burns through every night; the twelve loaves are replaced each Sabbath, the old ones eaten by the priests. Together they represent the two aspects of uninterrupted covenant: God\'s light (presence/guidance) and Israel\'s sustenance (his provision). The lampstand is kept burning by Israel\'s olive oil; the bread is renewed weekly. Human faithfulness maintains the signs of divine presence.',
+            'cross': [
+                ('John 8:12', '"I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life." Jesus declares himself the fulfilment of the perpetual lampstand — the eternal, never-extinguished light.'),
+                ('John 6:35', '"I am the bread of life." Jesus is the antetype of the bread of the presence — the true bread placed before God on behalf of all humanity.'),
+                ('Rev 1:20', '"The mystery of the seven stars that you saw in my right hand and of the seven golden lampstands is this: The seven stars are the angels of the seven churches, and the seven lampstands are the seven churches." The church inherits the lampstand imagery — a perpetual light in the darkness.'),
+            ],
+            'mac': [
+                ('24:1–4', 'MacArthur: The lampstand burning through every night from evening to morning — maintained by Aaron and his sons — is the priestly task that most directly mirrors the divine activity. God is the light of the world; the priests maintain the representation of that light in the sanctuary. The oil burned is olive oil — the best, the purest — pressed to give light, not kept for eating.'),
+                ('24:5–9', 'MacArthur: The twelve loaves represent the twelve tribes before God permanently — Israel is always present at the divine table. The weekly replacement on the Sabbath means that each week Israel\'s covenant presence is renewed before God. The priests eat the old loaves in the holy place — they eat at God\'s table, sustained by what was presented to him. The priestly meal is a form of fellowship with God.'),
+            ],
+            'milgrom': [
+                ('24:2–4', 'Milgrom: The perpetual lamp (nēr tāmîd) parallels the perpetual fire (ʾēš tāmîd, Lev 6:13) and the perpetual bread (leḥem tāmîd, Num 4:7). The tāmîd principle — uninterrupted continuity — is central to the sanctuary\'s theology. The divine presence is never dormant, never inattentive; the sanctuary\'s lights and breads signal that God\'s engagement with Israel is permanent.'),
+                ('24:8', 'Milgrom: The weekly bread renewal "on behalf of the Israelites as a lasting covenant" (v.8) frames the bread of presence as a covenant sign. The twelve loaves are not food for God (he does not eat) but a permanent covenant token — Israel\'s twelve tribes perpetually before God\'s face, acknowledged by him, belonging to him.'),
+            ],
+            'sarna': [
+                ('24:5–7', 'Sarna: The twelve loaves in two rows of six, with frankincense on each row, placed on the gold table — the spatial arrangement is precise and significant. Twelve = the full number of the tribes; two rows = perhaps the two tablets of the covenant or the two kingdoms. The frankincense burned as the ʾazkārāh (memorial portion) makes the bread-presentation a weekly act of covenant remembrance.'),
+            ],
+            'alter': [
+                ('24:8–9', 'Alter: "This bread is to be set out before the Lord regularly, Sabbath after Sabbath, on behalf of the Israelites, as a lasting covenant. It belongs to Aaron and his sons, who are to eat it in the sanctuary area." The bread moves from the divine table to the priestly table — from the presence of God to the mouths of his servants. The cycle of covenant provision is complete.'),
+            ],
+            'calvin': [
+                ('24:1–9', 'Calvin: The perpetual lamp and the bread of presence teach that the covenant relationship requires ongoing maintenance — it is not a once-for-all transaction but a living relationship that must be tended. Oil must be pressed and supplied; loaves must be baked and renewed. The NT equivalent: "Do not let the fire go out" (1 Thess 5:19); "pray without ceasing" (1 Thess 5:17). The perpetual disciplines sustain the perpetual presence.'),
+            ],
+            'netbible': [
+                ('24:5', 'NET Note: "Take the finest flour and bake twelve loaves of bread" — the twelve loaves are baked from sōlet, the finest wheat flour (the same as the grain offering, Lev 2:1). Only the best sustains the covenant token. The requirement for fine flour elevates the bread from ordinary food to sacred symbol — the highest-quality product of Israel\'s agricultural work placed before God.'),
+            ],
+        },
+        {
+            'header': 'Verses 10–23 — The Blasphemer: Law of Talion Applied',
+            'verses': verse_range(10, 23),
+            'heb': [
+                ('wayyiqqōb wayyĕqallēl', 'wayyiqqov wayyeqallel', 'he blasphemed and cursed', 'Two verbs: nāqab (to pierce/specify — naming the divine name explicitly in a curse) and qālal (to make light, to curse). The combination signals the gravest verbal offence: using the sacred name as the instrument of a curse.'),
+                ('ʿayin taḥat ʿayin', 'ayin tachat ayin', 'eye for eye', 'The lex talionis — the law of proportional retaliation. It is not a mandate for revenge but a limit on it: the punishment must not exceed the offence. The same measure applies to native and foreigner alike (v.22) — equal justice regardless of origin.'),
+            ],
+            'ctx': 'The narrative break in Lev 24 is jarring — from the ordered sanctuary regulations to a specific incident: the son of an Israelite mother and Egyptian father blasphemes during a fight, is put in custody, and God pronounces the death penalty by stoning. The incident (vv.10–16, 23) frames the lex talionis (vv.17–22): life for life, eye for eye, tooth for tooth, fracture for fracture. The same law applies to native and foreigner — equal justice is the covenant\'s requirement. The blasphemer is executed outside the camp; the entire community participates in the stoning.',
+            'cross': [
+                ('Matt 5:38–39', '"You have heard that it was said, \'An eye for an eye and a tooth for a tooth.\' But I tell you, do not resist an evil person." Jesus does not abolish the lex talionis but exceeds it: the new covenant standard is not equal retaliation but gracious non-retaliation.'),
+                ('Lev 19:18', 'The lex talionis (equal retaliation) and the love command (Lev 19:18) exist in tension that the NT resolves: the justice principle is satisfied by Christ (bearing the full penalty); those in Christ are freed to absorb injustice rather than perpetuate it.'),
+            ],
+            'mac': [
+                ('24:10–16', 'MacArthur: The blasphemer\'s case is a narrative illustration of the principle that the divine name is not to be used lightly (Exod 20:7). The man who uses God\'s name as a curse-instrument — weaponising the sacred — forfeits his life. The penalty is not disproportionate; it is proportional to the offence: the name that creates the world (Gen 1) cannot be deployed for its destruction without consequence.'),
+                ('24:17–22', 'MacArthur: The lex talionis is not barbaric but civilising — it limits punishment to the measure of the offence, preventing cycles of escalating revenge. In the ancient world, bloodfeuds typically multiplied: one injury leading to ten in retaliation. The \'eye for eye\' principle caps the cycle: no more than was taken may be taken. The same standard applies to the foreigner (v.22) — equal justice is a universal covenant obligation.'),
+            ],
+            'milgrom': [
+                ('24:10–16', 'Milgrom: The placement of the blasphemy narrative between the sanctuary regulations and the Holiness Code summary is intentional. Blasphemy — profaning the divine name — is the verbal equivalent of what the sexual and cultic violations of Lev 18–22 enact behaviourally. The name and the sanctuary are both expressions of the divine presence; both must be protected from profanation.'),
+                ('24:22', 'Milgrom: "You are to have the same law for the foreigner and the native-born" — the equal justice principle is one of Leviticus\'s most radical statements. In the ancient Near East, legal systems routinely differentiated penalties by social status and ethnic origin. Leviticus insists on uniform application: the same law for all who live within the covenant community.'),
+            ],
+            'sarna': [
+                ('24:17–21', 'Sarna: The lex talionis sequence (life, eye, tooth, hand, foot, bruise) is not a license for private vengeance but a judicial standard. The punishment must be administered by the community (vv.14, 16, 23 — the whole assembly stoning the offender), not by the victim or their family. The law is court-administered, not self-administered.'),
+            ],
+            'alter': [
+                ('24:10', 'Alter: The blasphemer is identified as "the son of an Israelite woman and an Egyptian father" — a detail that establishes him as a person of mixed origin, liminally positioned between Israel and Egypt. His offence occurs in the context of a fight (bĕtôk — in the midst of), suggesting social tension. The narrative is a test case for how the covenant community handles dangerous speech at its social margins.'),
+            ],
+            'calvin': [
+                ('24:17–22', 'Calvin: The lex talionis teaches the fundamental equality of all persons before the law — the same penalty applies regardless of status or origin. This principle, extended by Christ, becomes the foundation of Christian ethics: every human being bears the image of God and deserves equal dignity and equal justice. The NT deepens this: not merely equal retaliation but equal love (Matt 5:44–45).'),
+            ],
+            'netbible': [
+                ('24:16', 'NET Note: "Anyone who blasphemes the name of the Lord is to be put to death. The entire assembly must stone them." The community\'s collective participation in the execution is deliberate — blasphemy is an offence against the whole covenant community, not merely against the individual God. The community that tolerates blasphemy shares its guilt (cf. Lev 20:4–5).'),
+            ],
+        },
+    ],
+})
+
+lev(25, {
+    'title': 'The Sabbath Year and Jubilee: Creation\'s Rest and Freedom',
+    'sections': [
+        {
+            'header': 'Verses 1–28 — The Sabbath Year and the Year of Jubilee',
+            'verses': verse_range(1, 28),
+            'heb': [
+                ('šĕmîṭṭāh', 'shemittah', 'release / Sabbath year', 'Every seventh year the land rests — no sowing, pruning, or harvest. What grows of itself may be eaten by all (owners, servants, foreigners, animals). The land is released from agricultural service; Israel is reminded that the land belongs to God, not to them.'),
+                ('yôbēl', 'yovel', 'Jubilee / ram\'s horn', 'The fiftieth year — the year following seven sabbath-years. The šôpār (ram\'s horn) is blown on Yom Kippur of the 49th year, announcing the Jubilee. Land returns to original family; Hebrew slaves are freed; debts are restructured. Yôbēl may derive from the ram\'s horn or from the concept of "bringing back."'),
+            ],
+            'ctx': 'Leviticus 25 is the Torah\'s most radical economic legislation. The sabbath year (every seventh) rests the land and releases agricultural debts; the Jubilee (every fiftieth, announced on Yom Kippur of the 49th year) does three things: (1) releases all Hebrew slaves (vv.39–55); (2) returns all land to its ancestral family (vv.13–28); (3) cannot therefore involve permanent land sales — only the use of the land until the next Jubilee can be sold. The theological ground (v.23): "The land must not be sold permanently, because the land is mine and you reside in my land as foreigners and strangers." God owns the land; Israel are his tenants. The Jubilee enacts this truth economically.',
+            'cross': [
+                ('Luke 4:18–21', '"The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners… to proclaim the year of the Lord\'s favour." Jesus opens his ministry by reading Isa 61:1–2, which is itself a Jubilee text. He declares himself the fulfilment of the Jubilee.'),
+                ('Isa 61:1–2', '"To proclaim the year of the Lord\'s favour" — the Jubilee language applied to the eschatological age of redemption. The Jubilee becomes a messianic metaphor: the ultimate release, return, and restoration.'),
+                ('Rom 8:21', '"That the creation itself will be liberated from its bondage to decay." The Jubilee\'s land-release is the type of the eschatological liberation of the whole creation from its bondage.'),
+            ],
+            'mac': [
+                ('25:8–17', 'MacArthur: The Jubilee is announced on Yom Kippur — the Day of Atonement — of the 49th year. The connection is deliberate: the great release follows the great atonement. Only a community that has been atoned for can live in the freedom the Jubilee prescribes. The economic restructuring presupposes the spiritual restoration. The NT order is identical: atonement in Christ is the basis for the new community\'s economic ethics.'),
+                ('25:23', 'MacArthur: "The land must not be sold permanently, because the land is mine and you reside in my land as foreigners and strangers." This verse is the theological foundation of the entire chapter. Permanent accumulation of land is impossible when you acknowledge that you are a tenant, not an owner. The Jubilee is the institutional expression of this theology.'),
+            ],
+            'milgrom': [
+                ('25:10', 'Milgrom: "Proclaim liberty throughout the land to all its inhabitants" (ûqĕrātem dĕrôr bāʾāreṣ) — this verse is inscribed on the Liberty Bell in Philadelphia. Dĕrôr is specifically the release of debt-slaves — not a general "freedom" but the specific freedom of those enslaved by economic misfortune. The Jubilee is an anti-poverty programme built into the covenant calendar.'),
+                ('25:25–28', 'Milgrom: The land-redemption provisions (vv.25–28) give the Jubilee a built-in redemption mechanism before the 50th year: a family member (gōʾēl, kinsman-redeemer) may buy back land sold in hardship. This creates a graduated safety net: family redemption first, then Jubilee return. The system assumes community responsibility for its economically vulnerable members.'),
+            ],
+            'sarna': [
+                ('25:23', 'Sarna: The theological rationale for the Jubilee — "the land is mine" — places the entire economic system of Israel on a theological foundation. Private property is real but derivative: Israel holds the land as stewards, not as ultimate owners. Every economic transaction takes place within the covenant framework of divine ownership and tenant obligation.'),
+            ],
+            'alter': [
+                ('25:10', 'Alter: "Consecrate the fiftieth year and proclaim liberty throughout the land to all its inhabitants. It shall be a jubilee for you; each of you is to return to your family property and to your own clan." The Jubilee is a great homecoming — not merely economic reset but social restoration. Families separated by poverty are reunited; ancestral lands are returned; the community is reconstituted.'),
+            ],
+            'calvin': [
+                ('25:8–17', 'Calvin: The Jubilee is the clearest OT type of the gospel\'s liberty. The good news of Christ is the announcement of a permanent Jubilee: slaves freed (from sin), land returned (the inheritance of eternal life), debts cancelled (sins forgiven). Every Jubilee in Israel\'s history was a shadow of the one proclamation Jesus makes in Luke 4: the year of the Lord\'s favour has come.'),
+            ],
+            'netbible': [
+                ('25:10', 'NET Note: "Return to your family property and to your own clan" — the Jubilee presupposes a stable ancestral land allocation (the original tribal division of Canaan in Josh 13–19). The economic safety net only functions if the original just distribution is maintained. The Jubilee is not merely redistributive but restorative — it returns to the original just order.'),
+            ],
+        },
+        {
+            'header': 'Verses 29–55 — Redemption of Houses, Poverty Provisions, and Slavery',
+            'verses': verse_range(29, 55),
+            'heb': [
+                ('gōʾēl', 'go\'el', 'kinsman-redeemer / redeemer', 'The family member obligated to redeem a relative\'s land, freedom, or honour. The gōʾēl pays the redemption price to restore what was lost. The concept becomes the OT\'s primary metaphor for God\'s own redemptive action: God is Israel\'s gōʾēl (Isa 43:14; 44:6).'),
+                ('kî-ʿăbādāy hēm', "ki-avadai hem", 'for they are my servants', 'The ground for the prohibition on permanent Israelite enslavement (v.42, 55): Israel belongs to God — they were redeemed from Egypt to be his servants. An Israelite cannot be permanently enslaved because they are already owned by God. Prior divine ownership prevents human permanent ownership.'),
+            ],
+            'ctx': 'The second half of Lev 25 applies the Jubilee principles to specific cases: walled-city houses (one-year redemption window, not subject to Jubilee, vv.29–31); Levitical cities (always redeemable and return at Jubilee, vv.32–34); poverty support loans (no interest among brothers, vv.35–38); Israelite debt-slavery (must be treated as a hired worker, released at Jubilee, vv.39–55). The repeated refrain "for they are my servants whom I brought out of Egypt" (vv.42, 55) grounds the entire economic ethics in the Exodus: God\'s redemptive act creates social obligation. Those whom God freed cannot be permanently enslaved by other humans.',
+            'cross': [
+                ('Rom 6:22', '"But now that you have been set free from sin and have become slaves of God, the benefit you reap leads to holiness, and the result is eternal life." Paul applies the "servants of God" principle to the new covenant: those redeemed by Christ belong to him, not to sin\'s slavery.'),
+                ('Gal 5:1', '"It is for freedom that Christ has set us free. Stand firm, then, and do not let yourselves be burdened again by a yoke of slavery." The NT Jubilee: Christ\'s redemption creates permanent freedom; returning to slavery (of any kind) is a covenant contradiction.'),
+                ('Ruth 4:4–6', 'Boaz as gōʾēl for Ruth and Naomi — the kinsman-redeemer concept of Lev 25:25 enacted in narrative. Boaz redeems Elimelech\'s land and takes Ruth as wife, restoring the family to its inheritance.'),
+            ],
+            'mac': [
+                ('25:35–38', 'MacArthur: The prohibition on charging interest to a poor Israelite brother is one of the most countercultural economic laws in the ancient world — and in the modern. The logic: when your brother is impoverished, the goal is restoration, not profit. Lending to a poor covenant brother at interest converts his misfortune into your gain — a form of exploitation that violates the "love your neighbour" principle of Lev 19:18.'),
+                ('25:39–55', 'MacArthur: The debt-slavery regulations insist that an Israelite enslaved by poverty must be treated "as a hired worker, not as a slave" (v.40). He is to be treated with dignity, released at Jubilee, and his family is to go with him (v.41). The reason given twice: "they are my servants." Divine ownership provides the foundation for human dignity.'),
+            ],
+            'milgrom': [
+                ('25:42', 'Milgrom: "For they are my servants, whom I brought out of Egypt; they must not be sold as slaves." This is the Jubilee\'s theological capstone. The Exodus is the inalienable datum: God owns Israel; no human can claim permanent ownership over what God has redeemed. Permanent enslavement of an Israelite is a theological affront to the Exodus event.'),
+                ('25:35–37', 'Milgrom: The no-interest loan requirement (vv.36–37) covers both monetary loans (nešek) and food loans (tarbît/marbît). Both forms of increase from a poor brother\'s loan are prohibited. The distinction is: lending to a commercial partner may include interest; lending to a destitute brother may not. The poverty of the recipient determines the ethical category.'),
+            ],
+            'sarna': [
+                ('25:47–55', 'Sarna: The case of an Israelite sold to a wealthy foreigner (vv.47–55) is the chapter\'s most complex provision. The kinsman-redeemer may buy him back at a graduated price (years of service remaining); if not redeemed, he is freed at Jubilee. Even in the most degraded situation — an Israelite owned by a non-Israelite within the land — the Jubilee guarantee holds. The divine ownership cannot be permanently alienated.'),
+            ],
+            'alter': [
+                ('25:55', 'Alter: "For the Israelites belong to me as servants. They are my servants, whom I brought out of Egypt. I am the Lord your God." The chapter closes with the divine self-identification that grounds everything: I am the Lord. The Exodus is the event; the LORD is the actor; Israel\'s freedom is the consequence. Every economic law in this chapter is a footnote to this theological statement.'),
+            ],
+            'calvin': [
+                ('25:35–55', 'Calvin: The poverty provisions of Lev 25 challenge the church in every generation. The no-interest loan, the Jubilee release, the kinsman-redeemer obligation — these are not merely ancient regulations but expressions of the covenant ethic of solidarity. Those who have been redeemed by God are obligated to act redemptively toward their neighbours. The gospel creates economic ethics.'),
+            ],
+            'netbible': [
+                ('25:36', 'NET Note: "Do not take interest or any profit from them" — nešek (literally "bite," interest on money) and tarbît/marbît (increase, interest on food) are both prohibited. The two terms together cover all forms of profit from loans to the poor. This absolute prohibition on poverty-lending interest is unique in the ancient Near East, where interest rates of 20–33% were common.'),
+            ],
+        },
+    ],
+})
+
+lev(26, {
+    'title': 'Blessings and Curses: The Covenant\'s Two Paths',
+    'sections': [
+        {
+            'header': 'Verses 1–26 — Covenant Blessings and the First Stages of Curse',
+            'verses': verse_range(1, 26),
+            'heb': [
+                ('bĕrākāh / qĕlālāh', 'berachah / qelalah', 'blessing / curse', 'The two paths of the Deuteronomic covenant structure, present here in their earliest Levitical form. Obedience → blessing (rain, harvest, peace, victory, divine presence); disobedience → curse (terror, disease, drought, defeat, exile). The covenant has real consequences built into its structure.'),
+                ('ʿim-bĕḥuqqōtay tēlēkû', 'im-bechukotai telechu', 'if you walk in my statutes', 'The conditional \'if\' frames both paths. The covenant is not unconditional — it is a treaty with stipulations and consequences. Blessings and curses are both real possibilities; which Israel experiences depends on which path they choose.'),
+            ],
+            'ctx': 'Leviticus 26 is the Holiness Code\'s peroratio — the great covenant speech that seals the entire legislative section (Lev 17–26). Its structure mirrors the ancient Near Eastern suzerainty treaty: introduction (vv.1–2), blessings for obedience (vv.3–13), curses for disobedience in graduated stages (vv.14–39), and a concluding promise of restoration (vv.40–45). The blessings are rich (rain, harvest, peace, defeat of enemies, divine walking among the people); the curses are escalating and specific: terror and wasting disease (vv.14–17), seven-times multiplication (vv.18–20), plague and wild animals (vv.21–22), destruction and famine (vv.23–26). The sevenfold multiplication of punishment signals the covenant\'s gravity.',
+            'cross': [
+                ('Deut 28', 'The parallel blessing-curse passage in Deuteronomy is more extensive but follows the same structure and language as Lev 26. Both are expressions of the Sinaitic covenant\'s conditional character.'),
+                ('Gal 3:13', '"Christ redeemed us from the curse of the law by becoming a curse for us, for it is written: \'Cursed is everyone who is hung on a pole.\'" Paul\'s redemption from the covenant curse (Lev 26\'s qĕlālāh) is through Christ bearing the curse himself.'),
+                ('Rev 6:5–8', 'The four horsemen — conquest, war, famine, death — are the covenant curses of Lev 26:23–26 applied eschatologically. The seals of Revelation draw directly on the Levitical curse vocabulary.'),
+            ],
+            'mac': [
+                ('26:3–13', 'MacArthur: The blessings of covenant obedience are comprehensive and material — rain, harvest, peace, victory, population growth, and the supreme blessing: "I will walk among you and be your God, and you will be my people" (v.12). The immanuel promise — God dwelling with his people — is the climax of the blessing list. All material blessings are shadows of this one supreme blessing.'),
+                ('26:14–26', 'MacArthur: The escalating curses follow a logic: each stage is worse than the previous; each stage is described as God\'s response to Israel\'s continued stubbornness ("if you remain hostile to me," vv.21, 23, 27). The sevenfold multiplication (vv.18, 21, 24, 28) signals not mathematical precision but covenant totality: the full weight of the violated covenant falls on those who persist in rebellion.'),
+            ],
+            'milgrom': [
+                ('26:3–13', 'Milgrom: The blessing list is dominated by agricultural and military flourishing — rain in season, abundant harvests, peace from enemies. Milgrom notes that these are the very blessings Israel experienced under David and Solomon, and the very losses they experienced in the exile. The covenant blessings and curses have a historical track record that makes Lev 26 retrospectively compelling.'),
+                ('26:11–12', 'Milgrom: "I will put my dwelling place among you… I will walk among you and be your God" — the immanuel promise. Milgrom\'s observation: the priestly language of God "walking among" (hithallēk) Israel recalls the garden-walking of Gen 3:8. Lev 26 promises a restoration of Eden — God present with his people without barrier.'),
+            ],
+            'sarna': [
+                ('26:1–2', 'Sarna: The chapter opens with two prohibitions — no idols or sacred stones (v.1), observe the Sabbath and revere the sanctuary (v.2). These are the twin foundations of the covenant: exclusive loyalty to YHWH (no idols) and the covenant\'s temporal-spatial axis (Sabbath and sanctuary). All the blessings and curses that follow presuppose these two foundations.'),
+            ],
+            'alter': [
+                ('26:12', 'Alter: "I will walk among you and be your God, and you will be my people" — this verse is the covenant formula in its most concise and beautiful form. Walking (hithallēk) is an intimacy metaphor: God and Israel moving through life together, companions in the covenant journey. The formula recurs throughout the prophets and reaches its fullest expression in Rev 21:3.'),
+            ],
+            'calvin': [
+                ('26:3–13', 'Calvin: The covenant blessings teach that obedience is not a path to earning God\'s favour but the condition for enjoying it. God has already declared himself Israel\'s God; the blessings are the expression of that relationship when it is honoured. Similarly, the Christian who walks faithfully does not earn grace but enjoys its fruits — peace, fruitfulness, the felt presence of God.'),
+            ],
+            'netbible': [
+                ('26:12', 'NET Note: "I will walk among you" (wĕhithallaktî bĕtôkĕkem) — the Hithpael of hālak, a reflexive/intensive form suggesting active, continuous movement. God does not merely reside among Israel but actively moves among them. The same form appears in Gen 3:8 for God\'s walking in the garden. The covenant promise is a return to Eden-intimacy.'),
+            ],
+        },
+        {
+            'header': 'Verses 27–46 — The Final Curses, Exile, and the Promise of Restoration',
+            'verses': verse_range(27, 46),
+            'heb': [
+                ('wĕzākartî ʾet-bĕrîtî yaʿăqôb', 'vezacharti et-beriti Yaakov', 'and I will remember my covenant with Jacob', 'The turning point of the chapter — in the midst of the curse\'s severest stage, God announces that he will remember (zākar) the patriarchal covenant. Divine memory is not passive recollection but active intervention. The covenant cannot be finally broken because God will not forget.'),
+                ('šabbĕtāh ʾet-šabbĕtōtêhā', 'shabtetah et-shabbetoteiha', 'she shall enjoy her sabbaths', 'During the exile, the land lies desolate and "makes up" (resting) for the sabbath years Israel failed to observe. The land\'s enforced rest is the covenant\'s ironic fulfilment: what Israel refused to grant voluntarily, God enforces through exile.'),
+            ],
+            'ctx': 'The most severe curses (vv.27–39) describe the exile in graphic detail: cannibalism in the siege (v.29), destruction of the high places (v.30), devastation of cities (v.31), scattering among the nations (v.33), hearts filled with fear in enemy lands (vv.36–39). Yet the chapter\'s final movement (vv.40–45) is not despair but hope: if Israel confesses their sin and humbles their uncircumcised hearts, God will remember the Abrahamic covenant. The exile is penultimate; the covenant is final. Leviticus ends not with threat but with promise — the same God who curses for covenant breach will restore for covenant repentance.',
+            'cross': [
+                ('Dan 9:4–19', 'Daniel\'s great prayer of confession explicitly applies Lev 26\'s curse language to the Babylonian exile — "the curses and sworn judgments written in the Law of Moses" (v.11). He pleads for the restoration promised in vv.40–45.'),
+                ('Neh 1:5–11', 'Nehemiah\'s prayer also draws on Lev 26:40–45 — confession, return, and the promise that God will gather his scattered people.'),
+                ('Rev 21:3–4', '"And I heard a loud voice from the throne saying, \'Look! God\'s dwelling place is now among the people and he will dwell with them.\'" The covenant formula of Lev 26:12 reaches its final fulfilment — God walking among his people permanently, all curses ended forever.'),
+            ],
+            'mac': [
+                ('26:40–45', 'MacArthur: The restoration promise at the chapter\'s close is the most important theological statement in Lev 26. Despite the sevenfold curse, despite exile, despite complete covenant failure — God will remember the Abrahamic covenant. The basis of restoration is not Israel\'s improved performance but God\'s prior unconditional promise to Abraham. The Sinaitic covenant has conditions; the Abrahamic covenant is the bedrock beneath it.'),
+                ('26:34–35', 'MacArthur: "The land will rest and enjoy its sabbaths" during the exile — the land receives the sabbath years Israel refused to give it. The Chronicler applies this directly: "The land enjoyed its sabbath rests; all the time of its desolation it rested, until the seventy years were completed" (2 Chr 36:21). The exile is the Sabbath year the land was owed.'),
+            ],
+            'milgrom': [
+                ('26:44–45', 'Milgrom: "Yet in spite of this, when they are in the land of their enemies, I will not reject them or abhor them so as to destroy them completely, breaking my covenant with them. I am the Lord their God." The unconditional preservation promise is the theological apex of the entire Holiness Code. The Sinaitic covenant has conditions; God\'s commitment to Israel\'s ultimate preservation does not. The covenant may be suspended in punishment; it cannot be annulled.'),
+            ],
+            'sarna': [
+                ('26:40–42', 'Sarna: The restoration conditions are three: confession of iniquity, confession of the iniquity of their ancestors, and humbling the uncircumcised heart. The generational dimension (confessing ancestral sin) reflects the covenant\'s corporate nature — Israel is a community across time, not merely individuals in the present. The restoration is also corporate: the whole people returns, not merely the penitent individual.'),
+            ],
+            'alter': [
+                ('26:42', 'Alter: "I will remember my covenant with Jacob and my covenant with Isaac and my covenant with Abraham, and I will remember the land." The triple patriarchal covenant-remembrance — Jacob, then Isaac, then Abraham — is a rhetorical inversion (youngest to oldest) that emphasises the deep roots of the promise. God\'s memory extends back to the very foundation of Israel\'s existence. No exile can reach deeper than that.'),
+            ],
+            'calvin': [
+                ('26:40–45', 'Calvin: The restoration promise at the end of the curse section teaches that divine judgment is always penultimate and divine mercy is always ultimate. God\'s anger is for a moment; his favour is for a lifetime (Ps 30:5). The exile is not God\'s last word; the covenant is. The NT equivalent: even in the depths of human sin, Christ is the gōʾēl who redeems and restores. The last word of the covenant is always grace.'),
+            ],
+            'netbible': [
+                ('26:45', 'NET Note: "For their sake I will remember the covenant with their ancestors whom I brought out of Egypt in the sight of the nations to be their God." The Exodus remains the covenant\'s anchor even in the depths of the exile curse. The God who brought Israel out of Egypt will bring them out of Babylon. The first Exodus grounds the promise of the second.'),
+            ],
+        },
+    ],
+})
+
+lev(27, {
+    'title': 'Vows and Dedications: Offerings Made Holy',
+    'sections': [
+        {
+            'header': 'Verses 1–25 — Valuation of Vows: Persons, Animals, and Property',
+            'verses': verse_range(1, 25),
+            'heb': [
+                ('neder', 'neder', 'vow', 'A voluntary, binding promise to God — typically made in a time of crisis or gratitude. The vow creates an obligation; once made, it cannot be broken without the prescribed redemption. Numbers 30 and Deut 23:21–23 emphasise: if you vow, you must pay.'),
+                ('ʿerekĕkā', 'erecha', 'your valuation / the assessed value', 'The priest\'s assessed monetary value of a vowed person — a sliding scale based on age and sex. This is not the person\'s worth as a human being but the monetary equivalent for the redemption of a vow when the person cannot fulfil it in person. The values are fixed by divine decree, not market rate.'),
+            ],
+            'ctx': 'The final chapter of Leviticus addresses the technical procedures for fulfilling vows of dedication — when someone vows a person, animal, house, or field to the Lord. Each category has a procedure: persons are redeemed at assessed monetary values (vv.2–8); clean animals that are vowed cannot be substituted and must be given (vv.9–13); houses and fields are assessed and may be redeemed at assessed value plus 20% (vv.14–25). The purpose is to regulate the vow system — ensuring that what is dedicated to God is either given or properly redeemed, and that the process is orderly and financially specified.',
+            'cross': [
+                ('Eccl 5:4–5', '"When you make a vow to God, do not delay to fulfil it. He has no pleasure in fools; fulfil your vow. It is better not to make a vow than to make one and not fulfil it."'),
+                ('Matt 5:33–37', '"You have heard that it was said to the people long ago, \'Do not break your oath, but fulfil to the Lord the vows you have made.\' But I tell you, do not swear an oath at all… All you need to say is simply \'Yes\' or \'No\'." Jesus does not abolish the vow principle but elevates its standard: the Christian\'s word should itself be as reliable as a vow.'),
+                ('Acts 18:18', 'Paul cuts his hair because of a vow — the voluntary vow system of Lev 27 continues into the NT period as an expression of personal devotion.'),
+            ],
+            'mac': [
+                ('27:1–8', 'MacArthur: The assessed values for persons (adult male 50 shekels, adult female 30 shekels, etc.) are not statements of human worth — they are functional equivalents for commuting a vow when the person cannot literally serve in the sanctuary. The higher values for males in prime working years reflect the economic capacity for tabernacle service, not inherent human worth.'),
+                ('27:9–13', 'MacArthur: The prohibition on substituting a clean animal once vowed — even a better animal for a lesser one — reflects the principle that the sacred cannot be bargained with. What is dedicated belongs to God; to substitute is to try to renegotiate the terms of a gift already given. The sanctity of the vow is its irrevocability.'),
+            ],
+            'milgrom': [
+                ('27:2–8', 'Milgrom: The sliding scale for assessed values (youth, working-age adult, elderly) reflects the Jubilee year\'s economic logic: value is calculated according to years of service remaining. The person vowed to the sanctuary is commuted to a monetary equivalent — the years of service they would provide converted to shekels. The scale is an actuarial table, not a moral hierarchy.'),
+                ('27:14–25', 'Milgrom: The house and field redemptions (vv.14–25) apply the 20% surcharge (already familiar from Lev 5:16 and 22:14) to the redemption of dedicated property. The consistent 20% across multiple contexts suggests a standard covenant surcharge for the retrieval of holy things. The one-fifth addition signals the premium that holiness carries.'),
+            ],
+            'sarna': [
+                ('27:9–10', 'Sarna: "If what he vowed is an animal that is acceptable as an offering to the Lord, such an animal given to the Lord becomes holy." The act of vowing transforms the animal\'s status — it crosses from the ordinary to the holy. This irreversibility is the vow system\'s theological core: dedication is ontological, not merely transactional.'),
+            ],
+            'alter': [
+                ('27:1–8', 'Alter: The opening of the final chapter with the vow-assessment scale is characteristically anticlimactic — after the cosmic covenant speech of Lev 26, we return to actuarial tables. But this is the priestly writers\' wisdom: the covenant is not only expressed in grand pronouncements but in the mundane specifics of everyday religious life. The sacred permeates the ordinary.'),
+            ],
+            'calvin': [
+                ('27:1–25', 'Calvin: The vow regulations teach that promises made to God must be honoured — and that God has provided a mechanism for those who cannot literally fulfil their vow. The provision of monetary redemption is grace: God does not demand the impossible but provides the possible. The Christian equivalent: when we commit ourselves to God in consecration, he does not demand perfection but provides the Spirit to fulfil what we have promised.'),
+            ],
+            'netbible': [
+                ('27:2', 'NET Note: "If anyone makes a special vow to dedicate a person to the Lord" — the Levitical vow system is voluntary and applies to extraordinary commitments beyond the required offerings. The most famous example: Hannah\'s vow to dedicate Samuel to lifelong sanctuary service (1 Sam 1:11). The Nazirite vow (Num 6) is the most common OT application.'),
+            ],
+        },
+        {
+            'header': 'Verses 26–34 — What Cannot Be Dedicated; the Tithe',
+            'verses': verse_range(26, 34),
+            'heb': [
+                ('ḥērem', 'cherem', 'devoted thing / set apart for destruction / irrevocably dedicated', 'The most extreme form of dedication — totally given to God, unredeemable. What is ḥērem belongs absolutely to God; it cannot be redeemed or sold. The Canaanite cities under ḥērem in the conquest must be totally destroyed; the spoils belong to God, not to Israel.'),
+                ('kol-maʿśar hāʾāreṣ', 'kol-ma\'asar ha\'aretz', 'all the tithe of the land', 'The closing tithe legislation (vv.30–33): one-tenth of grain, fruit, and every tenth animal belongs to the Lord. What belongs to the Lord may be redeemed (adding 20%) or simply given. The tithe is not a vow but a covenant obligation — a permanent claim of the divine owner on one-tenth of all produce.'),
+            ],
+            'ctx': 'The final section distinguishes between what can and cannot be dedicated: firstborn animals already belong to God (v.26) — you cannot vow what already belongs to God. The ḥērem (devoted thing, v.28) is the most absolute dedication — once ḥērem, always ḥērem, unredeemable. The tithe (vv.30–33) closes the book: the land\'s produce is subject to a mandatory one-tenth dedication. The final verse (v.34) is the book\'s colophon: "These are the commands the Lord gave Moses at Mount Sinai for the Israelites." Leviticus is sealed as a Sinaitic document.',
+            'cross': [
+                ('Mal 3:10', '"Bring the whole tithe into the storehouse, that there may be food in my house. \'Test me in this,\' says the Lord Almighty, \'and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it.\'" The Lev 27 tithe becomes in Malachi the test of covenant faithfulness.'),
+                ('Heb 7:8–9', '"In the one case, the tenth is collected by people who die; but in the other case, by him who is declared to be living. One might even say that Levi, who collects the tenth, paid the tenth through Abraham, since when Melchizedek met Abraham, Levi was still in the body of his ancestor." The author of Hebrews uses the tithe to establish the superiority of Christ\'s Melchizedekian priesthood.'),
+                ('Matt 23:23', '"You give a tenth of your spices — mint, dill and cumin. But you have neglected the more important matters of the law — justice, mercy and faithfulness." Jesus affirms the tithe while insisting it is incomplete without the weightier ethical obligations of the covenant.'),
+            ],
+            'mac': [
+                ('27:28–29', 'MacArthur: The ḥērem is the most radical form of dedication in the Levitical system — it is absolute and irrevocable. No human redemption is possible. Achan\'s sin (Josh 7) was precisely the appropriation of ḥērem goods from Jericho; he treated the absolutely-holy as available for human use, and the covenant\'s judgment was severe. The ḥērem is not a human gift to God — it is a divine sequestration.'),
+                ('27:30–33', 'MacArthur: The tithe closes Leviticus. Every tenth of the land\'s produce and every tenth animal belongs to the Lord — not as a gift but as a covenant obligation. The tithe is not charity (discretionary) but acknowledgment (covenantal): one-tenth is God\'s because the land is God\'s. The farmer who tithes acknowledges the divine landlord; the farmer who withholds the tithe is embezzling from the covenant.'),
+            ],
+            'milgrom': [
+                ('27:30–33', 'Milgrom: The tithe of animals is struck every tenth as they pass under the shepherd\'s staff — the tenth that passes out regardless of quality becomes holy. No substitution is allowed; if substitution is attempted, both the original and the substitute become holy. The tithe\'s randomness (it takes whatever is tenth) protects against the tendency to give the worst tenth to God.'),
+                ('27:34', 'Milgrom: The colophon — "These are the commands the Lord gave Moses at Mount Sinai for the Israelites" — is identical in structure to the Exodus colophon (Exod 31:18) and the Numbers introduction (Num 1:1). It seals Leviticus as a Sinaitic document: everything within it has the authority of the Sinai revelation. No subsequent generation may set it aside as merely Moses\'s opinion.'),
+            ],
+            'sarna': [
+                ('27:34', 'Sarna: The book\'s closing formula — at Mount Sinai, for the Israelites — grounds Leviticus in both a specific historical moment (Sinai) and a specific community (Israel). The legislation is neither universal human ethics (though much of it embodies universal principles) nor mere cultural convention, but a specific covenant document binding a specific people to a specific God at a specific moment that was nevertheless determinative for all time.'),
+            ],
+            'alter': [
+                ('27:34', 'Alter: "These are the commands the Lord gave Moses at Mount Sinai for the Israelites." After 27 chapters of sacrifice law, purity law, ordination narrative, holiness code, sacred calendar, covenant blessings and curses, and vow regulations — this spare colophon seals it all. The entire edifice of Levitical law rests on one foundation: the divine word at Sinai, given through Moses, for Israel. The book\'s final word is its first word: revelation.'),
+            ],
+            'calvin': [
+                ('27:30–34', 'Calvin: The tithe closes Leviticus with the reminder that covenant living is comprehensive — even the harvest\'s arithmetic is theological. One-tenth is the Lord\'s because all is the Lord\'s; the tithe is a visible expression of the invisible truth that the covenant community owns nothing absolutely. The closing colophon — "at Mount Sinai" — seals the book\'s authority: not human legislation, not priestly tradition, but divine command. Leviticus is God\'s word for God\'s people.'),
+            ],
+            'netbible': [
+                ('27:34', 'NET Note: The Sinaitic colophon ("at Mount Sinai") closes not just Lev 27 but the entire book. It distinguishes Leviticus\'s legislation from Sinai-period ordinances from post-Sinai legislation (which receives different introductory formulas). The colophon is an editorial claim: every regulation in this book was received at the mountain of revelation. It is the priestly writers\' equivalent of "thus says the Lord."'),
+            ],
+        },
+    ],
+})
+
+print("LEV-6 complete: Leviticus 23–27 built.")
