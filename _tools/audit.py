@@ -299,7 +299,7 @@ section('4. Verse Index (verses/)')
 OT_BOOKS = ['genesis','exodus','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
-vjs_path = f'{REPO}/verses/verses.js'
+vjs_path = f'{REPO}/verses/niv/verses.js'
 if not os.path.exists(vjs_path):
     fail('verses/verses.js (full canon fallback) missing')
 else:
@@ -313,7 +313,7 @@ else:
 # Check per-book verse files in verses/ot/ and verses/nt/
 missing_per_book = []
 for book_dir, book_name, ch_range, test_dir_v in BOOK_ROSTER:
-    p = f'{REPO}/verses/{test_dir_v}/{book_dir}.js'
+    p = f'{REPO}/verses/niv/{test_dir_v}/{book_dir}.js'
     if not os.path.exists(p):
         missing_per_book.append(f'verses/niv/{test_dir_v}/{book_dir}.js')
 if missing_per_book:
