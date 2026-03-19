@@ -557,3 +557,227 @@ lev(7, {
 })
 
 print("LEV-1 complete: Leviticus 1–7 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEV-2: Chapters 8–10 — The Ordination of Aaron; Nadab and Abihu
+# ─────────────────────────────────────────────────────────────────────────────
+
+lev(8, {
+    'title': 'The Ordination of Aaron: Clothed, Anointed, Consecrated',
+    'sections': [
+        {
+            'header': 'Verses 1–17 — The Washing, Clothing, and Anointing',
+            'verses': verse_range(1, 17),
+            'heb': [
+                ('qiddēš', 'qiddesh', 'to consecrate / to make holy', 'Piel of qādaš — causative holiness. Moses acts as the agent who transfers God\'s holiness to Aaron and the sanctuary furnishings. Consecration is divinely initiated; humanly enacted.'),
+                ('miṣwāh', 'mitzvah', 'commandment / command', 'Seven times in Lev 8–9 the formula appears: "as the Lord commanded Moses." The ordination is not priestly invention but divine choreography — every movement ordered from Sinai.'),
+            ],
+            'ctx': 'Leviticus 8 enacts what Exodus 28–29 prescribed — the actual ordination ceremony now that the tabernacle is complete and the sacrificial law delivered. The sequence is precise: assembly of the congregation at the tent entrance (v.3) → Moses washes Aaron and sons (v.6) → dresses Aaron in the high-priestly garments (vv.7–9) → anoints the tabernacle and its contents (v.10) → anoints Aaron (v.12) → dresses Aaron\'s sons (v.13) → sin offering (vv.14–17) → burnt offering (vv.18–21) → ordination offering/ram of installation (vv.22–30) → seven-day confinement. The ceremony takes seven days — the number of completeness — before Aaron can minister.',
+            'cross': [
+                ('Heb 5:4–5', '"No one takes this honour on himself; he must be called by God, just as Aaron was. In the same way, Christ did not take on himself the glory of becoming a high priest." Aaron\'s call through Moses typifies Christ\'s appointment by the Father.'),
+                ('Heb 7:26–27', '"Such a high priest truly meets our need — one who is holy, blameless, pure… Unlike the other high priests, he does not need to offer sacrifices day after day… he sacrificed for their sins once for all when he offered himself."'),
+                ('1 Pet 2:9', '"You are a royal priesthood." The NT church participates in the priestly vocation, grounded in the ordination of the one true high priest.'),
+            ],
+            'mac': [
+                ('8:1–5', 'MacArthur: The public nature of the ordination — "assemble the entire community at the entrance to the tent of meeting" — is significant. Priestly authority is not self-appointed but publicly witnessed. The whole congregation testifies to the legitimacy of Aaron\'s ministry.'),
+                ('8:6–9', 'MacArthur: The dressing of Aaron follows the exact sequence of Exodus 28 — linen tunic, sash, robe, ephod, breastpiece, Urim and Thummim, turban, gold plate. Each garment speaks: the linen = purity; the ephod\'s twelve stones = representing the twelve tribes before God; the "HOLY TO THE LORD" plate = the high priest bears Israel\'s name into the divine presence.'),
+                ('8:10–12', 'MacArthur: The anointing oil is poured generously — "streaming down on Aaron\'s beard" (Ps 133:2). The tabernacle furnishings are anointed before Aaron, establishing that the sanctuary\'s holiness derives from God\'s designation, not from Aaron\'s ministry. Aaron steps into an already-holy space.'),
+            ],
+            'milgrom': [
+                ('8:1–5', 'Milgrom: The ordination ceremony is a liturgical drama with three acts: purification (washing), investiture (clothing), and sanctification (anointing). Together they transfer the candidate from the profane realm into the holy order — a boundary crossing that cannot be reversed except by death or defilement.'),
+                ('8:10–12', 'Milgrom: The anointing of the tabernacle before Aaron (v.10 precedes v.12) is theologically deliberate. The sanctuary\'s holiness is objective and prior — Aaron is inducted into a holiness that already exists. He does not generate it; he serves within it.'),
+            ],
+            'sarna': [
+                ('8:6–9', 'Sarna: The detailed vestment sequence mirrors the creation narrative\'s orderly completeness. Each garment named, each accessory specified — the priestly investiture is a liturgical creation, bringing ordered sacred function out of the formless common.'),
+            ],
+            'alter': [
+                ('8:7–9', 'Alter: The clothing of Aaron is rendered with unusual specificity — each garment\'s name, each placement described. The priestly narrative\'s aesthetic of accumulative precision reaches its zenith here: putting on the garments is an act of transformation, each layer adding sacred identity until the man disappears into the office.'),
+            ],
+            'calvin': [
+                ('8:6–12', 'Calvin: The washing, clothing, and anointing of Aaron are shadows pointing to Christ, our true high priest. The washing prefigures baptism; the garments prefigure his perfect righteousness; the oil prefigures the Spirit without measure. Aaron is the type; Christ is the substance.'),
+            ],
+            'netbible': [
+                ('8:8', 'NET Note: The Urim and Thummim — mysterious objects kept in the breastpiece used for divine consultation (1 Sam 14:41–42; 28:6). Their exact nature is unknown; they functioned as a binary oracle. The high priest carried Israel\'s need for divine guidance into the holy of holies.'),
+            ],
+        },
+        {
+            'header': 'Verses 18–36 — The Burnt Offering, the Ram of Ordination, and the Seven Days',
+            'verses': verse_range(18, 36),
+            'heb': [
+                ('milluʾîm', 'milluim', 'ordination / installation / filling', 'From mālaʾ, to fill. The ordination offering is literally a "filling" offering — filling Aaron\'s hands with the portions he will subsequently offer. "Filling the hands" is the idiom for induction into priestly office.'),
+                ('šebaʿat yāmîm', 'shevat yamim', 'seven days', 'The complete time of ordination — seven as the number of wholeness and completion. Aaron and sons must remain at the tent entrance for the full seven days or they will die (v.35). The threshold is holy; the transition takes the full liturgical week.'),
+            ],
+            'ctx': 'The ordination offering (ram of installation, vv.22–30) is the most distinctive element: Moses applies blood to Aaron\'s right earlobe, right thumb, and right big toe — the same points applied later to the healed leper (Lev 14:14–17). The ear = consecrated to hear God\'s word; the thumb = consecrated hands for holy work; the toe = consecrated walk before God. Then Moses waves the fat portions and the bread before the Lord — the "wave offering" (tĕnûpāh) — and burns them on the altar. The oil-and-blood mixture is sprinkled on Aaron and his sons, completing the consecration. The seven-day confinement (vv.33–36) creates a liminal period — the priests are neither fully in the common world nor fully active in the sacred. The eighth day (Lev 9) will be the breakthrough.',
+            'cross': [
+                ('Lev 14:14–17', 'The leper\'s cleansing uses identical blood application points (ear, thumb, toe) as Aaron\'s ordination. The healed leper is symbolically re-inducted into covenant life — restored to the priestly dignity all Israel shares.'),
+                ('Jas 1:22–25', '"Do not merely listen to the word… Do what it says." The consecrated ear (hearing) and consecrated hand (doing) together constitute active discipleship — the ordination pattern applied to all believers.'),
+            ],
+            'mac': [
+                ('8:22–24', 'MacArthur: The blood on the earlobe, thumb, and toe consecrates the whole man: the faculty of hearing (word received), the hand (work done), and the walk (life lived). The high priest\'s entire person — input, output, direction — is claimed for sacred use.'),
+                ('8:33–36', 'MacArthur: "Do not leave the entrance to the tent of meeting for seven days… or you will die." The penalty underscores the gravity of the transition. To leave prematurely is to treat the holy as ordinary — to cross back across the boundary before the consecration is complete. The seven days are not a ceremony but a transformation.'),
+            ],
+            'milgrom': [
+                ('8:22–30', 'Milgrom: The wave offering (tĕnûpāh) is a presentation gesture — the portions are elevated before the deity and then given to the priest. The combination of Moses\'s role (he waves, then burns) with Aaron\'s role (he receives) dramatises the transfer of priestly function: from the mediator who installed the system to the permanent officiant who will run it.'),
+                ('8:33–36', 'Milgrom: The seven-day liminality period is paralleled in ancient Near Eastern ordination rites. The candidate is "betwixt and between" — no longer common, not yet fully holy. The eighth day marks emergence into full priestly function, a threshold moment Lev 9 will dramatise with fire from heaven.'),
+            ],
+            'sarna': [
+                ('8:22–30', 'Sarna: The "filling" of Aaron\'s hands (vv.27–28) — placing the portions in his hands for him to wave — is the literal act that gives the ceremony its Hebrew name. The hands that will henceforth manage Israel\'s approach to God are formally "filled" with the first sacred portion they will ever handle.'),
+            ],
+            'alter': [
+                ('8:23', 'Alter: The tripartite blood application — earlobe, thumb-tip, big toe — is one of the most arresting ritual gestures in Leviticus. The body is mapped as a sacred instrument: the point of hearing, the point of making, the point of walking. Each node is marked with blood — the covenant substance — as if the body itself signs the contract.'),
+            ],
+            'calvin': [
+                ('8:33–36', 'Calvin: The seven-day confinement teaches that entry into sacred ministry is not instantaneous. The candidate must dwell in the threshold, separated from the common life, before assuming holy office. There is no quick path to spiritual leadership — the formation takes time, and rushing it is spiritually fatal.'),
+            ],
+            'netbible': [
+                ('8:23', 'NET Note: The right extremities — earlobe, thumb, toe — are the most exposed points of the body, those most likely to be touched and contaminated. Consecrating these specific points claims the most vulnerable areas for holiness. The same logic governs their use in the leper\'s purification (Lev 14:14).'),
+            ],
+        },
+    ],
+})
+
+lev(9, {
+    'title': 'The Eighth Day: Fire from Heaven',
+    'sections': [
+        {
+            'header': 'Verses 1–21 — The First Offerings of the Newly Ordained Priesthood',
+            'verses': verse_range(1, 21),
+            'heb': [
+                ('bayyôm haššĕmînî', 'bayyom hashemini', 'on the eighth day', 'The ordinal "eighth" signals new beginning — beyond the seven of completeness, into a new order. The eighth day is the day of circumcision (Lev 12:3), of the leper\'s final purification (Lev 14:23), and here of the priesthood\'s inauguration. Eight = the day beyond the sabbatical week, the day of new creation.'),
+                ('kābôd yhwh', 'kevod YHWH', 'the glory of the Lord', 'The divine presence in its visible, weighty, luminous manifestation. It "appeared to all the people" (v.23) at the climax of the chapter — the payoff for the entire sacrificial legislation from Lev 1 onward.'),
+            ],
+            'ctx': 'The eighth day is the inaugural moment of Israel\'s priesthood — the first time Aaron (not Moses) officiates at the altar. The sequence mirrors the Lev 1–7 sacrifice order: sin offering first (vv.8–11), burnt offering (vv.12–14), then the people\'s sin and burnt offering (vv.15–16), grain offering (v.17), fellowship offering (vv.18–21). Aaron fulfils every command precisely as Moses instructs. The climax is devastating in its beauty: Moses and Aaron enter the tent of meeting, come out, bless the people — "and the glory of the Lord appeared to all the people. Fire came out from the presence of the Lord and consumed the burnt offering and fat portions on the altar." The fire that will burn continuously from this moment forward (Lev 6:13) is divinely kindled. The people shout and fall facedown.',
+            'cross': [
+                ('2 Chr 7:1–3', 'At the dedication of Solomon\'s temple the same event: "fire came down from heaven and consumed the burnt offering… When all the Israelites saw the fire coming down and the glory of the Lord above the temple, they knelt on the pavement… they worshipped and gave thanks to the Lord." The pattern repeats across centuries.'),
+                ('Rev 19:4', '"The twenty-four elders and the four living creatures fell down and worshipped God." The prostration of Israel before the divine fire (v.24) prefigures the universal worship of the Lamb.'),
+                ('Acts 2:3', '"They saw what seemed to be tongues of fire that separated and came to rest on each of them." Pentecost replicates the tabernacle inauguration: divine fire descends on God\'s new dwelling — the body of Christ.'),
+            ],
+            'mac': [
+                ('9:1–7', 'MacArthur: Moses\'s instruction to Aaron — "come near to the altar and sacrifice your sin offering and your burnt offering and make atonement for yourself and the people" — establishes the order: priest atones for himself first, then for the people. The high priest who cannot approach God for himself cannot intercede for others. This is the fundamental limitation the letter to the Hebrews presses: only a sinless high priest can make effective intercession.'),
+                ('9:22–24', 'MacArthur: The divine fire consuming the altar is God\'s acceptance receipt — proof that the sacrificial system, the ordination, and the priestly service are divinely endorsed. The glory appeared "to all the people" — not to the priesthood alone but to the entire congregation. The covenant between God and Israel is publicly ratified by fire.'),
+            ],
+            'milgrom': [
+                ('9:1', 'Milgrom: "The eighth day" is a liturgical new beginning. Milgrom notes the structural parallel: just as the world was created in seven days and the eighth day inaugurated human history, so the tabernacle was consecrated in seven days and the eighth inaugurated the worship of Israel. The ordination ceremony is a liturgical creation account.'),
+                ('9:23–24', 'Milgrom: The divine fire is the theological climax of the entire first nine chapters of Leviticus. The entire sacrificial system exists for this moment — the manifest presence of God dwelling among his people. The fire is not merely supernatural pyrotechnics but the proof of divine acceptance: YHWH has come to live in the tent.'),
+            ],
+            'sarna': [
+                ('9:22–24', 'Sarna: Aaron\'s blessing and Moses\'s blessing together bracket the priestly service — the human mediators frame the divine response. God\'s acceptance comes only after the full human obedience is rendered. The sequence — serve faithfully, then receive the glory — is the Levitical pattern for encountering the divine.'),
+            ],
+            'alter': [
+                ('9:24', 'Alter: "When all the people saw it, they shouted for joy and fell facedown." The Hebrew wayyāronnu wayyippĕlû ʿal-pĕnêhem — joy and prostration simultaneously. The two responses are not contradictory but complementary: the holy provokes both exultation and awe, delight and terror. Rudolf Otto\'s mysterium tremendum et fascinans is enacted in a single verse.'),
+            ],
+            'calvin': [
+                ('9:23–24', 'Calvin: The fire from God\'s presence teaches that acceptable worship is not generated by human effort but ignited by divine grace. Israel did not light the altar fire — God did. This pattern governs all worship: we prepare the offering, but God must kindle it. The Reformation principle that true worship is divinely initiated finds its OT type in the fire from heaven.'),
+            ],
+            'netbible': [
+                ('9:24', 'NET Note: "Shouted for joy" (wayyāronnu) — the verb rānan describes a piercing cry of joy used in worship (Ps 33:1; 98:4). The same verb is used for the shouts at the laying of the Second Temple\'s foundation (Ezra 3:12). The divine fire provokes the most intense liturgical cry the Hebrew vocabulary possesses.'),
+            ],
+        },
+        {
+            'header': 'Verses 22–24 — The Glory Appears; Fire from the Presence of the Lord',
+            'verses': verse_range(22, 24),
+            'heb': [
+                ('wattēṣēʾ ʾēš', 'wattetzeh esh', 'and fire came out', 'The fire is not a burning coal carried by a priest but a direct emanation from the divine presence — initiating the perpetual altar fire of 6:13. No human hand kindled it. It is God\'s own response to obedient priestly service.'),
+            ],
+            'ctx': 'These three verses are the climax of Leviticus 1–9 — nine chapters of instruction, ordination, and preparation all pointing to this moment: the glory of the Lord appearing to the whole congregation, and fire coming from his presence to consume the offering. The people\'s response — shouting and falling facedown — is the first recorded congregational act of worship at the tabernacle. The fire that descends here is the same fire that must never go out (6:13). It is the fire of divine presence permanently resident among Israel.',
+            'cross': [
+                ('Exod 40:34–35', 'The cloud covering the tent and the glory filling the tabernacle at its completion — now followed by the fire of acceptance. The glory comes first to dwell (Exod 40); then the fire confirms the acceptance of service (Lev 9).'),
+                ('John 1:14', '"The Word became flesh and made his dwelling (eskēnōsen — tabernacled) among us. We have seen his glory." The incarnation is the ultimate tabernacle inauguration; Christ is the true dwelling of God\'s glory.'),
+            ],
+            'mac': [
+                ('9:22–24', 'MacArthur: Aaron\'s raised hands in blessing (v.22) — the priestly blessing posture of Num 6:24–26 — anticipates the Aaronic blessing that will shape Israel\'s worship for millennia. The high priest raises his hands over the people in the gesture of bestowing what only God can give: peace, grace, and the turned face of God himself.'),
+            ],
+            'milgrom': [
+                ('9:22–24', 'Milgrom: The glory-fire sequence completes Leviticus\'s foundational theological statement: YHWH accepts the priestly service, ratifies the sacrificial system, and takes up residence in the midst of Israel. This is the payoff of the entire Sinai revelation — not primarily ethical commandment but the establishment of divine habitation among human beings.'),
+            ],
+            'sarna': [
+                ('9:23', 'Sarna: Moses and Aaron entering the tent together (v.23) and emerging to bless the people represents the transfer of priestly authority. Moses, who has acted as priest throughout the ordination week, formally hands off the office to Aaron. The blessing they give together marks the last joint action of the two; henceforth Aaron presides at the altar.'),
+            ],
+            'alter': [
+                ('9:22–24', 'Alter: The three-verse climax is Leviticus at its most dramatic — the entire preceding liturgical legislation compressed into a single incandescent moment. Blessing, glory, fire, shout, prostration: five events in rapid succession, each building on the last, each unavailable without all that precedes it in chapters 1–9.'),
+            ],
+            'calvin': [
+                ('9:22–24', 'Calvin: The people falling facedown is the appropriate response to unveiled holiness. We are trained in our age to treat God with familiarity; Leviticus teaches the other dimension — the holy provokes awe, even terror. The fire is not comfortable but consuming; the glory is not decorative but overwhelming. Both responses — joy and prostration — are necessary for full-orbed worship.'),
+            ],
+            'netbible': [
+                ('9:23', 'NET Note: Moses and Aaron entering together then emerging together models the partnership of prophetic and priestly mediation in Israel — Moses the lawgiver and Aaron the priest together represent the two modes of God\'s approach to Israel: word and rite, teaching and sacrifice. Their joint blessing seals the inaugural day.'),
+            ],
+        },
+    ],
+})
+
+lev(10, {
+    'title': 'Nadab and Abihu: Strange Fire Before the Lord',
+    'sections': [
+        {
+            'header': 'Verses 1–11 — The Death of Nadab and Abihu; Aaron\'s Silence',
+            'verses': verse_range(1, 11),
+            'heb': [
+                ('ʾēš zārāh', 'esh zarah', 'unauthorised fire / strange fire / foreign fire', 'Zār means foreign, strange, alien — that which does not belong. The fire they offered was "not commanded" (v.1b) — it lacked divine authorisation. Precisely what they did wrong is debated (wrong time? wrong coals? drunk? adding their own incense?), but the essential offence is clear: they substituted human initiative for divine command.'),
+                ('ʾăšer lōʾ ṣiwwāh', 'asher lo tsiwwah', 'which he had not commanded', 'The death sentence is attached to this phrase. In Leviticus, the fatal line is this: doing what God has not commanded. The priestly system is not a canvas for creative worship but a precise divine prescription. Additions are as dangerous as subtractions.'),
+                ('wayyiddōm ʾahărōn', 'wayyiddom aharon', 'and Aaron was silent', 'From dāmam, to be silent, to cease. Aaron\'s silence in the face of the death of his two sons is one of the most haunting moments in the Torah. Moses speaks; Aaron says nothing. His silence has been read as grief, as acceptance, as shock, and as the deepest possible priestly response: the service of God continues.'),
+            ],
+            'ctx': 'The death of Nadab and Abihu is the most shocking event in Leviticus — coming on the heels of the chapter 9 glory-fire, it is the shadow side of the divine fire. The same fire that consumed the offering in acceptance (9:24) now consumes Nadab and Abihu in judgment. Moses\'s response to Aaron (v.3) is a terse theological commentary: "Among those who approach me I will be proved holy; in the sight of all the people I will be honoured." Holiness and honour require boundary maintenance. God is not indifferent to how he is approached. Moses forbids Aaron and the remaining sons from mourning publicly (vv.6–7) — the priestly service continues even in the face of death. The following laws (vv.8–11) — no wine or strong drink before entering — may explain the offence: Nadab and Abihu may have been drunk.',
+            'cross': [
+                ('2 Sam 6:6–7', 'Uzzah touched the ark to steady it and died immediately. The pattern: approaching the sacred with presumptuousness, however well-intentioned, invites judgment. Divine holiness is not suspended by good motives.'),
+                ('1 Cor 11:29–30', '"Whoever eats and drinks without discerning the body of Christ eats and drinks judgment on themselves. That is why many among you are weak and sick, and a number of you have fallen asleep." The NT carries forward the principle: careless approach to the holy has consequences.'),
+                ('Acts 5:1–11', 'Ananias and Sapphira — sudden death for profaning the worship of the early church. The pattern of Nadab and Abihu continues in the new covenant community.'),
+            ],
+            'mac': [
+                ('10:1–2', 'MacArthur: The fire that killed Nadab and Abihu was the same divine fire that had just ratified the sacrificial system (9:24). The people had fallen facedown in awe before it; the two priests had apparently grown casual about it. Familiarity with the sacred is not the same as intimacy with the holy — the former breeds contempt; the latter sustains reverence.'),
+                ('10:3', 'MacArthur: "Aaron was silent" is one of the most theologically profound phrases in the Torah. Aaron had just lost two sons. Moses speaks the theological interpretation; Aaron accepts it without protest. His silence is not numbness but submission — the deepest priestly act of the chapter.'),
+                ('10:8–11', 'MacArthur: The prohibition of wine before entering the tent, given immediately after the deaths, strongly implies intoxication as a contributing cause. The priest must enter the holy place with unimpaired judgment — able to distinguish between the holy and the common, between the clean and the unclean. Impaired worship is disqualified worship.'),
+            ],
+            'milgrom': [
+                ('10:1', 'Milgrom: The phrase "not commanded" (lōʾ ṣiwwāh) is the key. The offence is not any specific ritual error (though Milgrom suggests the wrong coals or wrong time) but the category violation: innovation in the priestly system is forbidden. The cult is a closed system; its boundaries are the divine commands. Nadab and Abihu stepped outside those boundaries and into the holy — with fatal consequences.'),
+                ('10:2', 'Milgrom: The fire that consumed them was the same fire from 9:24 — the divine fire that has taken up residence on the altar. It is not an exceptional act of judgment but the normal operation of divine holiness: the holy consumes what is incompatible with it. The sacred fire does not know intention; it knows only authorisation.'),
+            ],
+            'sarna': [
+                ('10:3', 'Sarna: Moses\'s citation — "Among those who approach me I will be proved holy" — is either a direct quotation from an otherwise unrecorded divine utterance, or a theological summary Moses draws from the event. Either way, it is the hermeneutical key: proximity to God intensifies both blessing and danger. Those who approach most closely bear the greatest responsibility.'),
+            ],
+            'alter': [
+                ('10:3', 'Alter: "Wayyiddōm ʾahărōn" — and Aaron was silent. Three Hebrew words. In the entire Torah there is no more pregnant silence. Every reader must supply its content. There is no gloss, no editorial comment, no divine consolation offered to Aaron. His sons are dead; the service continues; Aaron says nothing.'),
+            ],
+            'calvin': [
+                ('10:1–3', 'Calvin: The death of Nadab and Abihu teaches that God is not a constitutional monarch who must accept whatever worship his subjects choose to offer. He is the sovereign who defines the terms of approach. The Reformers drew on this principle against the Roman addition of unscriptural ceremonies: only what God has commanded is acceptable — everything else is ʾēš zārāh, strange fire.'),
+            ],
+            'netbible': [
+                ('10:1', 'NET Note: "Unauthorised fire" — the Hebrew ʾēš zārāh offers no further specification. Ancient interpreters and modern scholars propose: wrong coals (from outside the altar), wrong time (not the scheduled incense offering hour), wrong censer, or intoxication (suggested by vv.8–11). The ambiguity may be deliberate — the offence is the category (unauthorised), not a specific ritual error.'),
+            ],
+        },
+        {
+            'header': 'Verses 12–20 — The Priestly Portions; Moses\'s Anger; Aaron\'s Defence',
+            'verses': verse_range(12, 20),
+            'heb': [
+                ('wayyiḥar lĕmōšeh', 'wayyichar leMoshe', 'and Moses was angry', 'The Qal of ḥārāh — to burn, to be hot with anger. Moses is furious that the sin offering was burned rather than eaten (as required by Lev 6:26). But Aaron\'s explanation wins him over — and the chapter ends not with divine judgment but with Moses\'s acceptance of a legitimate priestly decision.'),
+            ],
+            'ctx': 'The chapter\'s second half (vv.12–20) turns from death to the ongoing priestly service — life goes on at the altar even on the worst day. Moses instructs Eleazar and Ithamar (the surviving sons) about their portions of the grain offering and the sin offering. Then he discovers that the sin offering goat has been burned rather than eaten and confronts them angrily. Aaron responds: in the circumstances of this day — two sons dead, themselves in mourning — how could eating the sin offering be pleasing to the Lord? Moses accepts this reasoning. The passage is remarkable: a priest makes a situational judgement that diverges from the written rule, gives his reasoning, and is vindicated. Priestly authority includes contextual discernment.',
+            'cross': [
+                ('Matt 12:3–7', '"Haven\'t you read what David did when he and his companions were hungry? He entered the house of God and ate the consecrated bread — which was not lawful for him to eat… If you had known what these words mean, \'I desire mercy, not sacrifice,\' you would not have condemned the innocent." Jesus defends David\'s action using the same logic Aaron uses here: extraordinary circumstances can legitimately modify ritual prescription when the intent remains faithful.'),
+                ('Hos 6:6', '"I desire mercy, not sacrifice." The tension between rule and context that Aaron navigates here runs through the OT prophetic tradition and into Jesus\'s own teaching.'),
+            ],
+            'mac': [
+                ('10:16–18', 'MacArthur: Moses\'s anger — a rare display for the usually patient lawgiver — reflects his deep investment in the correct operation of the priestly system he has just spent chapters installing. The sin offering must be eaten by the priests; that is its prescribed purpose. To burn it is to waste the holy food.'),
+                ('10:19–20', 'MacArthur: Aaron\'s defence is a masterpiece of pastoral theology: the rule exists to serve the covenant relationship, not to override it. On a day when two sons have been consumed by divine fire, eating the sin offering before the Lord would have been a grotesque performance, not a faithful act. Moses recognises the wisdom and is satisfied. The law has a spirit as well as a letter.'),
+            ],
+            'milgrom': [
+                ('10:19', 'Milgrom: Aaron\'s response is the earliest recorded instance of rabbinic-style legal reasoning: applying the principle behind a law to a case the law does not explicitly address. The sin offering\'s purpose is to make atonement; eating it in mourning clothes on the day of your sons\' deaths would not achieve that purpose. Aaron grasps the law\'s telos and acts accordingly. Moses cannot fault the reasoning.'),
+                ('10:20', 'Milgrom: "When Moses heard this, he was satisfied" — the Hebrew wayyîṭab bĕʿênāyw, literally "it was good in his eyes." This is a significant concession: the ordained law has a measure of flexibility when the priest responsible for implementing it makes a reasoned case. The priestly system is not mechanical.'),
+            ],
+            'sarna': [
+                ('10:16–20', 'Sarna: The episode is a coda on the nature of priestly authority. Aaron, fresh from the worst day of his life, does not grovel before Moses but gives a clear-eyed theological argument for his decision. Moses, the lawgiver, accepts it. The scene establishes that priestly wisdom — contextual, pastoral, responsive to the moment — is a legitimate form of Torah interpretation.'),
+            ],
+            'alter': [
+                ('10:19', 'Alter: Aaron speaks for the first and only time in chapter 10 — not about his sons\' deaths, but about the sin offering. His two-clause argument is quiet and devastating: these things happened to me today; if I had eaten the sin offering today, would it have been good in the Lord\'s eyes? He has already absorbed the blow of his sons\' deaths; now he defends the integrity of his remaining service. It is a portrait of a priest continuing to function under unbearable conditions.'),
+            ],
+            'calvin': [
+                ('10:19–20', 'Calvin: Aaron\'s answer reveals that even the most exact ceremonies must yield to the spirit of the law when circumstances demand. God is not served by rigid external performance that ignores the interior condition of the worshipper. The priests mourning their brothers could not have eaten the sacrifice with the joy and gratitude that its proper reception required. Moses recognises this — and so must we in our own worship.'),
+            ],
+            'netbible': [
+                ('10:19', 'NET Note: Aaron\'s defence turns on the word "today" (hayyôm). The sin offering is to be eaten "on the day it is offered" (6:26) — and today is the day his sons were killed by divine fire. On that specific day, he argues, eating it would have been ritually and theologically impossible. The contextual qualifier "today" appears twice in his two-clause argument.'),
+            ],
+        },
+    ],
+})
+
+print("LEV-2 complete: Leviticus 8–10 built.")
