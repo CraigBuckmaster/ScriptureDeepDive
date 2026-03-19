@@ -228,10 +228,20 @@ def main():
                 if os.path.exists(existing):
                     print(f'  {book}: skipping (already exists)')
                     with open(existing, encoding='utf-8') as f: raw = f.read()
-                    m = re.search(r'var VERSES_\w+=(\[.*\]);', raw, re.DOTALL)
-                    if m:
-                        book_verses = json.loads(m.group(1))
-                        all_verses.extend(book_verses)
+                    start = raw.find('[')
+                    if start != -1:
+                        depth = 0
+                        end = start
+                        for i in range(start, len(raw)):
+                            if raw[i] == '[': depth += 1
+                            elif raw[i] == ']':
+                                depth -= 1
+                                if depth == 0: end = i + 1; break
+                        try:
+                            book_verses = json.loads(raw[start:end])
+                            all_verses.extend(book_verses)
+                        except Exception:
+                            pass
                     continue
                 # File doesn't exist, stop skipping
                 resuming = False
