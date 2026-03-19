@@ -694,6 +694,14 @@ body {
     <span id="legend-btn-chev" style="font-size:.58rem;transition:transform .22s;display:inline-block;">&#9660;</span>
   </button>
   <span id="mobile-story-label">Select a Story</span>
+  <button id="mobile-names-btn" onclick="toggleNames()">
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <text x="1" y="9" font-size="6" fill="currentColor" stroke="none" font-family="serif" font-style="italic">A</text>
+      <line x1="6" y1="7" x2="12" y2="7" stroke-width="1.2"/>
+      <polyline points="9,4 12,7 9,10" stroke-width="1.2"/>
+    </svg>
+    Names
+  </button>
   <button id="mobile-centre-btn" onclick="centreMap()">
     <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
       <circle cx="7" cy="7" r="2.5"/>
@@ -1005,12 +1013,24 @@ function toggleNames() {
   // Toggle SVG text labels
   d3.selectAll('.ancient-label').style('display', showModernNames ? 'none' : null);
   d3.selectAll('.modern-label').style('display', showModernNames ? null : 'none');
-  // Update button text
+  // Update desktop button text
   const btn = document.getElementById('names-toggle-btn');
   if (btn) btn.innerHTML = showModernNames
     ? '⇄&nbsp;Modern Names'
     : '⇄&nbsp;Ancient Names';
   if (btn) btn.classList.toggle('active', showModernNames);
+  // Update mobile controls bar toggle btn
+  const mBtn = document.getElementById('mobile-names-btn');
+  if (mBtn) mBtn.classList.toggle('active', showModernNames);
+  // Refresh story panel place chips if open
+  if (currentStory) {
+    document.querySelectorAll('.story-place-chip').forEach(chip => {
+      const pid = chip.dataset.pid;
+      if (!pid) return;
+      const p = PLACES.find(x => x.id === pid);
+      if (p) chip.textContent = showModernNames ? p.modern : p.ancient;
+    });
+  }
 }
 
 function toggleLegend() {
@@ -1058,6 +1078,27 @@ function closeStory() {
     if (e.changedTouches[0].clientY - startY > 40) closeStory();
   }, { passive: true });
 })();
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeStory();
+    // Clear active btn and hash
+    document.querySelectorAll('.story-btn').forEach(b => b.classList.remove('active'));
+    history.replaceState(null, '', location.pathname);
+  }
+  // Left/Right arrow: step through visible story buttons
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    const btns = [...document.querySelectorAll('.story-btn')];
+    if (!btns.length) return;
+    const activeIdx = btns.findIndex(b => b.classList.contains('active'));
+    const next = e.key === 'ArrowRight'
+      ? (activeIdx + 1) % btns.length
+      : (activeIdx - 1 + btns.length) % btns.length;
+    btns[next].click();
+    btns[next].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+});
 
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -1714,7 +1755,7 @@ function showStory(story) {
           const p = PLACES.find(x => x.id === pid);
           if (!p) return '';
           const label = showModernNames ? p.modern : p.ancient;
-          return `<span class="story-place-chip"
+          return `<span class="story-place-chip" data-pid="${pid}"
             onclick="panToPlace('${pid}')">${label}</span>`;
         }).join('')}
       </div>` : ''}
@@ -1735,6 +1776,7 @@ function showStory(story) {
 function closeStory() {
   document.getElementById('story-panel').classList.remove('open');
   clearStoryOverlays();
+  document.querySelectorAll('.story-btn').forEach(b => b.classList.remove('active'));
   const lbl = document.getElementById('mobile-story-label');
   if (lbl) lbl.textContent = currentEra === 'all' ? 'Select a Story' : (ERA_NAMES[currentEra] || currentEra);
   currentStory = null;
@@ -1855,11 +1897,23 @@ function buildStoryPicker(era) {
   const container = document.getElementById('story-picker');
   if (!container) return;
   const filtered = era === 'all' ? STORIES : STORIES.filter(s => s.era === era);
-  container.innerHTML = filtered.map(s =>
-    `<button class="story-btn" data-id="${s.id}" onclick="showStory(STORIES.find(x=>x.id==='${s.id}'))">
-      ${s.name}
-    </button>`
-  ).join('');
+  container.innerHTML = filtered.length
+    ? filtered.map(s =>
+        `<button class="story-btn" data-id="${s.id}"
+          onclick="selectStory('${s.id}')">${s.name}</button>`
+      ).join('')
+    : '<span style="color:var(--text-muted);font-size:.7rem;font-family:'Cinzel',serif;letter-spacing:.08em">No stories for this era</span>';
+}
+
+function selectStory(id) {
+  const story = STORIES.find(s => s.id === id);
+  if (!story) return;
+  // Mark active btn
+  document.querySelectorAll('.story-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.id === id));
+  showStory(story);
+  // Update URL hash without scrolling
+  history.replaceState(null, '', '#' + id);
 }
 
 // ── AUTO-CENTRE ON STORY ──────────────────────────────────────────────────
@@ -1903,6 +1957,23 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   buildStoryPicker('all');
   renderMap();
+  // Deep-link: map.html#story-id
+  const hash = location.hash.replace('#', '');
+  if (hash) {
+    const story = STORIES.find(s => s.id === hash);
+    if (story) {
+      // Switch era filter to match
+      const eraBtn = document.querySelector(`.era-btn[data-era="${story.era}"]`);
+      if (eraBtn) {
+        document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+        eraBtn.classList.add('active');
+        currentEra = story.era;
+        buildStoryPicker(story.era);
+      }
+      // Small delay to let renderMap complete
+      setTimeout(() => selectStory(story.id), 150);
+    }
+  }
 
   // Re-render on resize
   let resizeTimer;
