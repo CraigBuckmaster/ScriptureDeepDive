@@ -1,159 +1,167 @@
-// translation.js — verse translation system
+// translation.js — verse translation system v2
 // Manages swapping between Bible translations on chapter pages.
-// Loaded by every chapter page. Works with verses/niv/, verses/esv/, etc.
-// Translation preference persists across all pages via localStorage.
+// Translation preference persists via localStorage.
+// Verse files are static — no API keys at runtime.
 
 (function() {
   'use strict';
 
   // ── REGISTRY ─────────────────────────────────────────────────────────────
-  // Add new translations here when their verse files are available
+  // Set available:true when the verse files are in the repo
   var TRANSLATIONS = {
     niv: { label: 'NIV', name: 'New International Version', available: true },
-    esv: { label: 'ESV', name: 'English Standard Version', available: false },
-    kjv: { label: 'KJV', name: 'King James Version', available: false },
+    esv: { label: 'ESV', name: 'English Standard Version',  available: false },
+    kjv: { label: 'KJV', name: 'King James Version',        available: false },
   };
 
-  var DEFAULT_TRANSLATION = 'niv';
+  var DEFAULT    = 'niv';
   var STORAGE_KEY = 'sdd_translation';
 
-  // ── STATE ─────────────────────────────────────────────────────────────────
-  var currentTranslation = localStorage.getItem(STORAGE_KEY) || DEFAULT_TRANSLATION;
-  if (!TRANSLATIONS[currentTranslation] || !TRANSLATIONS[currentTranslation].available) {
-    currentTranslation = DEFAULT_TRANSLATION;
-  }
-  window.CURRENT_TRANSLATION = currentTranslation;
+  // ── CACHE: loaded verse arrays keyed by slug ──────────────────────────────
+  // Prevents re-fetching when switching back to a previously loaded translation
+  var _cache = {};
 
-  // ── DETECT BOOK FROM CHAPTER PAGE ────────────────────────────────────────
-  // Chapter pages already load their book's verse file via <script src="...">
-  // e.g. ../../verses/niv/ot/genesis.js  → sets window.VERSES_GENESIS
-  // We detect which variable name was set and use that as our source.
+  // ── STATE ─────────────────────────────────────────────────────────────────
+  var current = localStorage.getItem(STORAGE_KEY) || DEFAULT;
+  if (!TRANSLATIONS[current] || !TRANSLATIONS[current].available) current = DEFAULT;
+  window.CURRENT_TRANSLATION = current;
+
+  // ── DETECT BOOK VAR ───────────────────────────────────────────────────────
+  var BOOK_VARS = [
+    'VERSES_GENESIS','VERSES_EXODUS','VERSES_RUTH','VERSES_PROVERBS',
+    'VERSES_MATTHEW','VERSES_MARK','VERSES_LUKE','VERSES_JOHN','VERSES_ACTS'
+  ];
 
   function detectBookVar() {
-    // Check for each possible book variable
-    var bookVars = [
-      'VERSES_GENESIS','VERSES_EXODUS','VERSES_RUTH','VERSES_PROVERBS',
-      'VERSES_MATTHEW','VERSES_MARK','VERSES_LUKE','VERSES_JOHN','VERSES_ACTS'
-    ];
-    for (var i = 0; i < bookVars.length; i++) {
-      if (window[bookVars[i]] && window[bookVars[i]].length > 0) {
-        return bookVars[i];
-      }
+    for (var i = 0; i < BOOK_VARS.length; i++) {
+      if (window[BOOK_VARS[i]] && window[BOOK_VARS[i]].length > 0) return BOOK_VARS[i];
     }
     return null;
   }
 
   // ── FILL VERSE BODIES ─────────────────────────────────────────────────────
-  // Called after a translation's verse data is loaded.
-  // Fills every <span class="verse-body"> element on the page.
   function fillVerses(verseData) {
-    if (!verseData) return;
-
-    // Build a lookup: "Book 1:1" → text
+    if (!verseData) return 0;
     var lookup = {};
     for (var i = 0; i < verseData.length; i++) {
       var v = verseData[i];
       lookup[v.book + ' ' + v.ch + ':' + v.v] = v.text;
     }
-
     var bodies = document.querySelectorAll('.verse-body');
     var filled = 0;
     bodies.forEach(function(span) {
       var key = span.dataset.book + ' ' + span.dataset.ch + ':' + span.dataset.v;
-      if (lookup[key] !== undefined) {
-        span.textContent = lookup[key];
-        filled++;
-      }
+      if (lookup[key] !== undefined) { span.textContent = lookup[key]; filled++; }
     });
-
     return filled;
   }
 
-  // ── LOAD A TRANSLATION FILE ───────────────────────────────────────────────
+  // ── REBUILD QNAV SEARCH INDEX ──────────────────────────────────────────────
+  function rebuildSearchIndex(verseData) {
+    if (!window.VERSES_ALL || !verseData) return;
+    var bookName = verseData[0] && verseData[0].book;
+    if (!bookName) return;
+    for (var i = 0; i < verseData.length; i++) {
+      var v = verseData[i];
+      var idx = window.VERSES_ALL.findIndex(function(x) {
+        return x.book === v.book && x.ch === v.ch && x.v === v.v;
+      });
+      if (idx > -1) window.VERSES_ALL[idx].text = v.text;
+    }
+  }
+
+  // ── LOAD TRANSLATION FILE (with cache) ───────────────────────────────────
   function loadTranslation(slug, bookVar, callback) {
-    // Derive the path to the book's verse file for this translation
-    // We know the current src path from the existing script tag
+    // Serve from cache if already loaded
+    if (_cache[slug]) { callback(_cache[slug]); return; }
+
+    // Derive path from existing verse script tag
     var existingScript = document.querySelector('script[src*="/verses/"]');
     if (!existingScript) { callback(null); return; }
 
-    var currentSrc = existingScript.getAttribute('src');
-    // Replace /niv/ (or current translation) with /slug/
-    var newSrc = currentSrc.replace('/verses/niv/', '/verses/' + slug + '/')
-                            .replace('/verses/esv/', '/verses/' + slug + '/')
-                            .replace('/verses/kjv/', '/verses/' + slug + '/');
+    var src = existingScript.getAttribute('src');
+    // Replace /verses/{any-slug}/ with /verses/{slug}/
+    var newSrc = src.replace(/\/verses\/[^\/]+\//, '/verses/' + slug + '/');
 
-    // Load script dynamically
     var s = document.createElement('script');
     s.src = newSrc;
     s.onload = function() {
       var data = window[bookVar] || null;
+      if (data) _cache[slug] = data;
       callback(data);
     };
     s.onerror = function() { callback(null); };
     document.head.appendChild(s);
   }
 
+  // ── UPDATE COPYRIGHT NOTICE ───────────────────────────────────────────────
+  var ESV_COPYRIGHT = 'Scripture quotations are from the ESV\u00ae Bible (The Holy Bible, English Standard Version\u00ae), copyright \u00a9 2001 by Crossway. Used by permission. All rights reserved.';
+  var NIV_COPYRIGHT = 'Scripture quotations taken from The Holy Bible, New International Version\u00ae NIV\u00ae Copyright \u00a9 1973 1978 1984 2011 by Biblica, Inc. Used with permission. All rights reserved.';
+  var COPYRIGHT_MAP = { esv: ESV_COPYRIGHT, niv: NIV_COPYRIGHT, kjv: '' };
+
+  function updateCopyright(slug) {
+    var notice = document.getElementById('translation-copyright');
+    var text = COPYRIGHT_MAP[slug] || '';
+    if (!notice) {
+      if (!text) return;
+      notice = document.createElement('p');
+      notice.id = 'translation-copyright';
+      notice.style.cssText = 'font-size:.62rem;color:var(--text-muted,#6a5a38);margin-top:1.5rem;padding-top:.8rem;border-top:1px solid var(--border,#332810);line-height:1.5;font-style:italic;';
+      var main = document.querySelector('main');
+      if (main) main.appendChild(notice);
+    }
+    notice.textContent = text;
+    notice.style.display = text ? '' : 'none';
+  }
+
   // ── SWITCH TRANSLATION ────────────────────────────────────────────────────
   function switchTranslation(slug) {
     if (!TRANSLATIONS[slug] || !TRANSLATIONS[slug].available) return;
-    if (slug === currentTranslation) return;
+    if (slug === current) return;
 
     var bookVar = detectBookVar();
     if (!bookVar) return;
 
-    // Immediately show loading state on verses
-    document.querySelectorAll('.verse-body').forEach(function(s) {
-      s.style.opacity = '0.4';
-    });
+    // Dim verses while loading
+    document.querySelectorAll('.verse-body').forEach(function(s) { s.style.opacity = '0.35'; });
 
-    currentTranslation = slug;
+    current = slug;
     window.CURRENT_TRANSLATION = slug;
     localStorage.setItem(STORAGE_KEY, slug);
 
-    // Update toggle button states
+    // Update toggle state
     document.querySelectorAll('.translation-btn').forEach(function(btn) {
       btn.classList.toggle('active', btn.dataset.slug === slug);
     });
 
-    // Load the translation's verse file then fill
     loadTranslation(slug, bookVar, function(data) {
       if (data) {
         fillVerses(data);
-        // Rebuild qnav search index for the new translation
-        if (window.VERSES_ALL) {
-          // Replace book entries in VERSES_ALL with new translation
-          for (var i = 0; i < data.length; i++) {
-            var v = data[i];
-            var idx = window.VERSES_ALL.findIndex(function(x) {
-              return x.book === v.book && x.ch === v.ch && x.v === v.v;
-            });
-            if (idx > -1) window.VERSES_ALL[idx].text = v.text;
-          }
-        }
+        rebuildSearchIndex(data);
       }
-      document.querySelectorAll('.verse-body').forEach(function(s) {
-        s.style.opacity = '';
-      });
+      document.querySelectorAll('.verse-body').forEach(function(s) { s.style.opacity = ''; });
+      updateCopyright(slug);
     });
   }
 
   // ── BUILD TOGGLE UI ───────────────────────────────────────────────────────
   function buildToggle() {
-    // Only show if there are multiple available translations
-    var available = Object.entries(TRANSLATIONS).filter(function(e) { return e[1].available; });
+    var available = Object.keys(TRANSLATIONS).filter(function(k) {
+      return TRANSLATIONS[k].available;
+    });
     if (available.length < 2) return null;
 
     var wrap = document.createElement('span');
     wrap.className = 'translation-toggle';
+    wrap.setAttribute('aria-label', 'Bible translation');
 
-    available.forEach(function(entry) {
-      var slug = entry[0], info = entry[1];
+    available.forEach(function(slug) {
       var btn = document.createElement('button');
       btn.className = 'translation-btn';
       btn.dataset.slug = slug;
-      btn.textContent = info.label;
-      btn.title = info.name;
-      if (slug === currentTranslation) btn.classList.add('active');
+      btn.textContent = TRANSLATIONS[slug].label;
+      btn.title = TRANSLATIONS[slug].name;
+      btn.classList.toggle('active', slug === current);
       btn.addEventListener('click', function() { switchTranslation(slug); });
       wrap.appendChild(btn);
     });
@@ -166,23 +174,45 @@
     var bookVar = detectBookVar();
     if (!bookVar) return; // not a chapter page
 
-    // Fill verses from the pre-loaded NIV data (already in page via script tag)
+    // Cache the pre-loaded NIV data (comes from the <script src> tag)
     var initData = window[bookVar];
-    if (initData) fillVerses(initData);
+    if (initData) {
+      _cache['niv'] = initData;
 
-    // Build toggle and insert into chapter header if multiple translations available
+      // If user prefers a different translation, switch immediately
+      if (current !== 'niv') {
+        // Load and fill preferred translation
+        loadTranslation(current, bookVar, function(data) {
+          if (data) { fillVerses(data); rebuildSearchIndex(data); }
+          else {
+            // Fallback to NIV if preferred translation fails to load
+            fillVerses(initData);
+            current = 'niv';
+            window.CURRENT_TRANSLATION = 'niv';
+            localStorage.setItem(STORAGE_KEY, 'niv');
+          }
+          updateCopyright(current);
+        });
+      } else {
+        fillVerses(initData);
+        updateCopyright('niv');
+      }
+    }
+
+    // Build and insert toggle
     var toggle = buildToggle();
     if (toggle) {
-      var header = document.querySelector('main > header, article > header, .chapter-header');
+      var header = document.querySelector('main > header');
       if (header) header.appendChild(toggle);
     }
   });
 
   // Expose for external use
   window.TRANSLATION = {
-    current: function() { return currentTranslation; },
-    switch: switchTranslation,
-    fill: fillVerses,
+    current: function() { return current; },
+    switch:  switchTranslation,
+    fill:    fillVerses,
+    cache:   function() { return _cache; },
   };
 
 })();
