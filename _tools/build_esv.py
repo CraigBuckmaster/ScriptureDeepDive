@@ -46,6 +46,7 @@ import argparse
 LIVE_BOOKS = [
     ('Genesis',    'ot', 50),
     ('Exodus',     'ot', 40),
+    ('Leviticus',  'ot', 27),
     ('Ruth',       'ot',  4),
     ('Proverbs',   'ot', 31),
     ('Matthew',    'nt', 28),
@@ -164,6 +165,15 @@ def write_book_file(book, testament, verses):
         f.write(f'var {var_name}={payload};\n')
         f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
         f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat({var_name});\n')
+
+    # Auto-register in translation.js BOOK_VARS
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(__file__))
+        from shared import ensure_tx_book_var
+        ensure_tx_book_var(book)
+    except Exception as _e:
+        print(f'  [translation.js] Could not auto-update: {_e}')
 
     return out_path
 
