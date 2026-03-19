@@ -474,11 +474,10 @@ const SCALE_BREAKPOINTS = [
 ];
 const TOTAL_WIDTH = 9000;
 
-// 12 label lanes, MARKER_OFFSET below each label
+// 12 label lanes
 const TL = {
   H:510, ERA_BAR_Y:30, ERA_BAR_H:26,
   LANES:[73,88,103,118,133,148,163,178,193,208,223,238],
-  MARKER_OFFSET:18,
   AXIS_Y:275, PEOPLE_Y:355, HIST_Y:445,
 };
 
@@ -622,7 +621,7 @@ function drawEvents(g){
   const gEv=el('g',{id:'g-events'},g);
   const dimAll=currentEra!=='all';
   const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
-  const N=TL.LANES.length, TRI_H=9, TRI_W=8, MOFF=TL.MARKER_OFFSET;
+  const N=TL.LANES.length;
 
   // Sort by x then assign lanes greedily
   const items=EVENTS.map(ev=>({ev,x:yearToX(ev.year),lw:Math.max(ev.name.length*6.5+16,50)}))
@@ -639,34 +638,22 @@ function drawEvents(g){
     const color=ERA_HEX[ev.era]||'#523d0b';
     const dim=dimAll&&ev.era!==currentEra;
     const laneY=TL.LANES[lane];
-    const markerY=laneY+MOFF;
     const op=dim?'0.15':'1';
 
     // Stem: era bar → label top
     el('line',{x1:x,y1:ERA_BOT,x2:x,y2:laneY-12,
       stroke:color,'stroke-width':'1.2',opacity:dim?'0.12':'0.45'},gEv);
 
-    // Label
+    // Label — clickable directly
     const t=txt(ev.name,{
       x,y:laneY,'text-anchor':'middle',
       'font-family':"'Cinzel',serif",'font-size':'10','font-weight':'700',
-      fill:'#1a1006',opacity:op,'pointer-events':'none',
+      fill:'#1a1006',opacity:op,style:'cursor:pointer',
       'paint-order':'stroke',stroke:`${color}88`,'stroke-width':'3.5','stroke-linejoin':'round',
     },gEv);
+    t.addEventListener('click',()=>openDetail(ev));
 
-    // Triangle marker directly below label
-    const tri=el('polygon',{
-      points:`${x},${markerY} ${x-TRI_W},${markerY-TRI_H} ${x+TRI_W},${markerY-TRI_H}`,
-      fill:color,opacity:dim?'0.15':'0.9',style:'cursor:pointer',
-    },gEv);
-    tri.addEventListener('click',()=>openDetail(ev));
 
-    // Generous hit target
-    const hit=el('rect',{
-      x:x-16,y:markerY-TRI_H-6,width:32,height:TRI_H+12,
-      fill:'transparent',style:'cursor:pointer',
-    },gEv);
-    hit.addEventListener('click',()=>openDetail(ev));
   });
 }
 
