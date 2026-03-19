@@ -261,11 +261,11 @@ def main():
         out_path = write_book_file(book, testament, book_verses)
         all_verses.extend(book_verses)
         total_verses += len(book_verses)
-        print(f'  → Wrote {out_path} ({len(book_verses)} verses)\n')
+        print(f'  -> Wrote {out_path} ({len(book_verses)} verses)\n')
 
     # Write combined index
     idx_path = write_combined_index(all_verses)
-    print(f'→ Wrote {idx_path} ({total_verses} total verses)')
+    print(f'Wrote {idx_path} ({total_verses} total verses)')
     print()
     print('Done. Next steps:')
     print('  1. Review a few verse files in verses/esv/')
