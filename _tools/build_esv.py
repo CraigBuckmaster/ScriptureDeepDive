@@ -72,7 +72,7 @@ ESV_PARAMS = (
 
 REPO_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(REPO_ROOT, 'verses', 'esv')
-DELAY_SEC  = 0.4   # polite delay between API requests
+DELAY_SEC  = 1.2   # polite delay between API requests
 
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -252,8 +252,8 @@ def main():
         for ch in range(1, chapter_count + 1):
             raw = fetch_chapter(book, ch, api_key)
             if raw is None:
-                print(f'  Chapter {ch}: FAILED — retrying once...')
-                time.sleep(2)
+                print(f'  Chapter {ch}: FAILED (rate limit) — waiting 15s then retrying...')
+                time.sleep(15)
                 raw = fetch_chapter(book, ch, api_key)
                 if raw is None:
                     print(f'  Chapter {ch}: FAILED twice — skipping. Run with --resume {book} to retry.')
