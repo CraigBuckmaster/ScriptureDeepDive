@@ -666,23 +666,31 @@ body {
   /* Mobile legend wrap: show below controls bar */
   #legend-mobile-wrap {
     background: var(--bg2);
-    border-bottom: 1px solid var(--border2);
+    overflow: hidden; /* clip everything when body collapses */
   }
   #legend-mobile-wrap .legend {
     position: static;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid var(--border2);
     box-shadow: none;
     min-width: 0;
     width: 100%;
     background: var(--bg2);
+    overflow: hidden;
   }
   #legend-mobile-wrap .legend-body {
     display: flex;
     flex-wrap: wrap;
     gap: .35rem .7rem;
     padding: .5rem .8rem .6rem;
+    border-bottom: 1px solid var(--border2); /* border on body so it hides when collapsed */
+  }
+  /* Override specificity — ensure collapsed state fully zeros height+padding */
+  #legend-mobile-wrap .legend.collapsed .legend-body {
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom-width: 0 !important;
   }
   #legend-mobile-wrap .legend-item { margin-bottom: 0; }
 
