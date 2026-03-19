@@ -199,11 +199,18 @@
       }
     }
 
-    // Build and insert toggle
+    // Build and insert toggle into chapter nav bar (right of arrows)
     var toggle = buildToggle();
     if (toggle) {
-      var header = document.querySelector('main > header');
-      if (header) header.appendChild(toggle);
+      // Try chapter nav first (most visible location)
+      var nav = document.querySelector('.chapter-nav');
+      if (nav) {
+        nav.appendChild(toggle);
+      } else {
+        // Fallback: after h1 in header
+        var header = document.querySelector('main > header, header');
+        if (header) header.appendChild(toggle);
+      }
     }
   });
 
