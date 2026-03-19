@@ -1469,3 +1469,1287 @@ num(19, {
 })
 
 print("NUM-4 complete: Numbers 15–19 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-5: Chapters 20–25 — Water from Rock; Bronze Serpent; Balaam; Baal Peor
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(20, {
+    'title': 'The Waters of Meribah: Moses’s Failure at the Threshold',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — Miriam Dies; Water from the Rock; Moses’s Sin',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('ṣar', 'tzar', 'adversity / distress / trouble', 'The communal distress that drives Israel to assemble against Moses and Aaron. The same word used for the Egyptian oppression. Israel has traded Egyptian slavery for wilderness hardship and perceives no difference.'),
+                ('yakol’ti lāṟekem', "yakol'ti lahem", 'to bring out water for them', 'God’s command to Moses: speak to the rock. The contrast with Exod 17 is significant — there God commanded Moses to strike the rock; here he commands speech. Moses strikes twice instead. The failure is one of disobedience in method, not in faith in God’s provision.'),
+            ],
+            'ctx': 'Numbers 20 is one of the Torah’s most theologically dense chapters. Three events in rapid succession: Miriam’s death (v.1 — two words in Hebrew, no mourning recorded), the water crisis at Kadesh (vv.2–13), and Aaron’s death at Mount Hor (vv.22–29). The water crisis produces Moses’s sin — he strikes the rock twice and says "Must we bring you water?" (v.10), taking credit for God’s provision. God’s verdict: "Because you did not trust me enough to honour me as holy in the sight of the Israelites, you will not bring this community into the land." The greatest leader in Israel’s history is disqualified from the promised land for one act of public unbelief. The place is named Meribah — "quarrelling."',
+            'cross': [
+                ('Heb 3:16–4:2', '"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?" Moses’s disqualification and the generation’s disqualification share the same root: unbelief that dishonours God’s holiness at the critical moment.'),
+                ('1 Cor 10:4', '"They drank from the spiritual rock that accompanied them, and that rock was Christ." Paul identifies the water-giving rock as a type of Christ — the one struck for Israel’s sake whose provision follows them through the wilderness.'),
+                ('Ps 106:32–33', '"By the waters of Meribah they angered the Lord, and trouble came to Moses because of them; for they rebelled against the Spirit of God, and rash words came from Moses’ lips."'),
+            ],
+            'mac': [
+                ('20:10–11', 'MacArthur: Moses’s sin has three components: striking instead of speaking (disobedience of method), striking twice (suggesting anger or lack of trust), and saying "Must we bring you water?" (attributing the miracle to himself and Aaron rather than to God). Any one alone might not have been disqualifying; together they constitute a public failure to honour God as holy before the congregation.'),
+                ('20:12', 'MacArthur: "Because you did not trust me enough to honour me as holy" — the verdict reveals that Moses’s sin was fundamentally about the representation of God’s character. Moses is Israel’s representative before God; when he misrepresents God’s holiness publicly, the consequences must be proportional to the public nature of the office.'),
+            ],
+            'milgrom': [
+                ('20:2–13', 'Milgrom: The rabbis debated exactly what Moses’s sin was — striking instead of speaking, striking twice, losing his temper, or saying "we." Milgrom’s analysis: the sin was the failure to "sanctify" (qiddash) God — the same root as "holiness." Moses’s public role required public sanctification of God’s name; his angry, self-referential action desanctified it instead.'),
+                ('20:13', 'Milgrom: The name Meribah ("quarrelling") recurs throughout the OT as a memorial of covenant failure at the threshold of fulfilment. The site becomes a theological shorthand: the place where Israel quarrelled with God and where even Moses stumbled — a permanent reminder that no human leader is above covenant accountability.'),
+            ],
+            'ashley': [
+                ('20:1– 3', 'Ashley: The juxtaposition of Miriam’s death (v.1) with the immediate water crisis (v.2) is theologically stark. The greatest woman in Israel’s history dies without recorded mourning, and the community’s first response is complaint. The wilderness generation has not changed; they are still the people who cannot receive God’s servants’ deaths without making them about themselves.'),
+            ],
+            'sarna': [
+                ('20:10', 'Sarna: "Must we bring you water out of this rock?" — the use of "we" (Moses and Aaron) rather than "he" (God) is the crux of the transgression. Moses has inserted himself as the agent of the miracle rather than God. The representative of God before Israel has represented himself instead.'),
+            ],
+            'alter': [
+                ('20:10–11', 'Alter: Two verbs — "he raised his arm and struck the rock twice" — carry the weight of the greatest failure in the Torah. The twice-striking is an act of frustrated repetition, the gesture of a man who has lost his composure and his theological clarity simultaneously. Water flows nonetheless: God’s provision survives Moses’s failure, but Moses does not survive its consequences.'),
+            ],
+            'calvin': [
+                ('20:12', 'Calvin: Moses’s disqualification teaches that proximity to God intensifies rather than reduces accountability. Those who have seen God most clearly are most responsible for representing him accurately. The higher the office, the more costly the public failure. This principle governs ministerial accountability in every age: those who speak for God bear the greatest responsibility for how they do so.'),
+            ],
+            'netbible': [
+                ('20:8', 'NET Note: "Speak to that rock" — the difference between the Exod 17 command (strike, Exod 17:6) and this command (speak) may signal an escalation in the covenant relationship: what required force in the early wilderness period now requires only word. Moses’s regression to striking is a failure to grow with the covenant.'),
+            ],
+        },
+        {
+            'header': 'Verses 14–29 — Edom’s Refusal; Aaron’s Death',
+            'verses': verse_range(14, 29),
+            'heb': [
+                ('ʾl-tiqraʾ ʾlēnû', "al-tiqra elenu", 'do not come against us', 'Edom’s refusal to grant passage — a family betrayal. Edom is Israel’s brother (Esau’s descendants); their refusal to help their kin in the wilderness is a covenant of kinship broken, a theme the prophets will return to repeatedly (Amos 1:11; Obad 10–14).'),
+            ],
+            'ctx': 'Israel requests permission to pass through Edom on the King’s Highway. Moses’s message to Edom (vv.14–17) is a masterpiece of diplomatic humility: "your brother Israel," a summary of the Egyptian suffering, a promise not to use fields or water, an offer to pay for anything consumed. Edom refuses, threatens with the sword, and Israel turns away. Then Aaron dies on Mount Hor — stripped of his priestly garments, which are transferred to Eleazar his son. Aaron dies clothed in his office’s absence; Eleazar inherits the office stripped from his father. The chapter ends in mourning: "the whole house of Israel mourned for Aaron thirty days."',
+            'cross': [
+                ('Obad 10–14', '"Because of the violence against your brother Jacob, you will be covered with shame; you will be destroyed forever." Obadiah’s prophecy against Edom directly addresses the Num 20 refusal and its generational consequences.'),
+                ('Heb 7:23–24', '"Now there have been many of those priests, since death prevented them from continuing in office; but because Jesus lives forever, he has a permanent priesthood." The transfer from Aaron to Eleazar (death preventing continuation) is the type of the contrast with Christ’s permanent priesthood.'),
+            ],
+            'mac': [
+                ('20:28–29', 'MacArthur: The stripping of Aaron’s priestly garments on Mount Hor and their transfer to Eleazar is the most solemn succession ceremony in the Torah. Aaron does not simply hand over his vestments — Moses removes them and places them on Eleazar in Aaron’s presence and before Aaron’s death. Aaron dies seeing his son clothed in his office. The priestly line continues; the individual gives way.'),
+            ],
+            'milgrom': [
+                ('20:22–29', 'Milgrom: Aaron’s death on Mount Hor, with the explicit transfer of garments to Eleazar, ensures the unbroken continuity of the Aaronic priesthood. Milgrom notes that the vestment-transfer ceremony is the priestly equivalent of the succession narratives for civil leadership — the office is not buried with the man but transferred to the next generation.'),
+            ],
+            'ashley': [
+                ('20:14–21', 'Ashley: Edom’s refusal demonstrates that the promised land journey will not be simply a march. Every negotiation, every detour around hostile kin, every refusal adds to the wilderness formation of Israel. The long way around Edom is not a detour from God’s plan but part of it.'),
+            ],
+            'sarna': [
+                ('20:14', 'Sarna: "Your brother Israel" — Moses appeals to the Esau-Jacob kinship as the basis for diplomatic courtesy. The appeal to brotherhood is both genuine (Edom and Israel are descended from twin brothers) and tactically shrewd. That Edom refuses even this appeal is a measure of how completely the fraternal covenant has been broken.'),
+            ],
+            'alter': [
+                ('20:29', 'Alter: "When the whole Israelite community learned that Aaron had died, all the Israelites mourned for him thirty days." Thirty days — the same period of mourning prescribed for Moses (Deut 34:8). Aaron, the priest of the golden calf, the one who challenged Moses’s authority, the one who lost two sons to divine fire — is mourned by all Israel for a month. The covenant community’s grief for their high priest is unqualified.'),
+            ],
+            'calvin': [
+                ('20:22–29', 'Calvin: Aaron’s death on Mount Hor, transferred from his garments to his son, models the principle that priestly office outlives any individual officiant. The vestments are not buried; they are transferred. The church’s ministry is not dependent on any one person’s continuation; it is carried by the office, which belongs to God and is given to successors in each generation.'),
+            ],
+            'netbible': [
+                ('20:28', 'NET Note: "Moses removed Aaron’s garments and put them on his son Eleazar" — the investiture sequence mirrors the original ordination of Lev 8. Moses is again the officiating agent, as he was at Aaron’s original ordination. The symmetry is deliberate: the one who installed Aaron removes his vestments; the priestly succession is bookended by Moses.'),
+            ],
+        },
+    ],
+})
+
+num(21, {
+    'title': 'The Bronze Serpent: Judgment, Petition, and the Look of Faith',
+    'sections': [
+        {
+            'header': 'Verses 1–9 — Arad Defeated; the Bronze Serpent',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('nehāš haqqĕdōšim', 'nachash haqedoshim', 'the fiery serpents / the burning serpents', 'From šārap (to burn) — the serpents’ bites cause burning. The same root gives us seraphim (the burning ones of Isa 6). The judgment instrument is serpentine fire — the wilderness becomes a place of fiery death for those who speak against God.'),
+                ('nĕšet', 'nechoshet', 'bronze / copper', 'The bronze serpent (nēšet nehāš — a Hebrew wordplay) is made from the same material as the altar of burnt offering. Looking at the bronze serpent does not cure the bite physiologically; it is an act of faith directed toward the divine provision.'),
+            ],
+            'ctx': 'Numbers 21 records Israel’s most direct engagement with judgment and the look of faith. The Canaanite king of Arad attacks and takes captives; Israel vows total destruction (ḥerem) if God gives them victory — and wins (vv.1–3). Then Israel complains again — against God and against Moses, about the lack of water and food, calling the manna "miserable food." God sends fiery serpents; many die. The people confess, Moses intercedes, God commands: make a bronze serpent and mount it on a pole. Anyone bitten who looks at it lives. The mechanism is faith — not medicine but directed trust. The chapter closes with the march to the plains of Moab, defeating Sihon and Og.',
+            'cross': [
+                ('John 3:14–15', '"Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes may have eternal life in him." Jesus applies the bronze serpent directly to his crucifixion — the look of faith toward the lifted serpent is the type of faith in the crucified Christ.'),
+                ('2 Kgs 18:4', '"He removed the high places, smashed the sacred stones and cut down the Asherah poles. He broke into pieces the bronze snake Moses had made, for up to that time the Israelites had been burning incense to it." Hezekiah destroys the Nehushtan when it becomes an idol — the instrument of faith corrupted into an object of worship.'),
+            ],
+            'mac': [
+                ('21:6–9', 'MacArthur: The bronze serpent is one of the most theologically instructive episodes in the wilderness narrative. God uses the very instrument of judgment (the serpent form) as the instrument of salvation — the judging thing becomes the saving thing when lifted up and looked at in faith. Jesus applies this directly: he who bore our sin-curse ("became a curse for us," Gal 3:13) is simultaneously the instrument of our salvation when we look to him in faith.'),
+                ('21:8–9', 'MacArthur: "Anyone who is bitten can look at it and live" — the provision is universal and uncomplicated. No elaborate ritual, no payment, no special qualification — only look. The simplicity of the provision is the point. Salvation by looking — the act of desperate, faith-directed attention toward the divine provision — is the OT type of justification by faith alone.'),
+            ],
+            'milgrom': [
+                ('21:4–9', 'Milgrom: The bronze serpent episode is unique in the wilderness narratives: this is the only instance where God provides a material object as the instrument of healing rather than a direct divine act. The object mediates the divine power; the faith-act (looking) activates the mediation. Milgrom notes this anticipates the theological structure of the tabernacle itself — material objects mediating the divine presence to the community.'),
+            ],
+            'ashley': [
+                ('21:8–9', 'Ashley: The bronze serpent is not magic — the healing comes from God, not from the metal. The serpent is a faith-object: it directs the bitten person’s attention toward the God who provides. The act of looking is the act of trust. This is the theological logic Jesus applies in John 3:14–15: looking to the lifted Christ is looking to the God who provides salvation through the instrument of judgment.'),
+            ],
+            'sarna': [
+                ('21:9', 'Sarna: "Moses made a bronze snake and put it up on a pole. Then when anyone was bitten by a snake and looked at the bronze snake, they lived." The four-beat sequence — made, put up, bitten, looked, lived — is compressed to its essentials. The narrative efficiency is the theological precision: the mechanism is simple, the provision immediate, the condition singular.'),
+            ],
+            'alter': [
+                ('21:8', 'Alter: "Make a fiery serpent and set it on a standard, and it will be that everyone who is bitten — when he looks at it he will live." The divine instruction reverses the normal logic: the serpent that kills becomes the serpent that heals; the instrument of divine anger becomes the instrument of divine mercy. The reversal is the signature of grace throughout the biblical narrative.'),
+            ],
+            'calvin': [
+                ('21:8–9', 'Calvin: The bronze serpent is one of the clearest OT types of Christ because Jesus himself interprets it. The looked-at serpent = the lifted Christ; the venomous bite = the mortal wound of sin; looking = faith. Calvin notes that the look required nothing of the bitten person except turning their eyes toward what God had provided. Salvation is entirely divine initiative; faith is the human reception of that initiative, not a contribution to it.'),
+            ],
+            'netbible': [
+                ('21:8', 'NET Note: "Make a fiery snake" — the image of a serpent mounted on a pole has ANE parallels: bronze serpents on poles appear in Egyptian and Canaanite contexts as symbols of healing and divine power. God uses a culturally legible symbol and fills it with covenant content, redirecting the common ANE healing-serpent image toward trust in YHWH alone.'),
+            ],
+        },
+        {
+            'header': 'Verses 10–35 — The March to Moab; Sihon and Og Defeated',
+            'verses': verse_range(10, 35),
+            'heb': [
+                ('bēʾēr', 'be\'er', 'well / cistern', 'The well at which God commands "Gather the people together and I will give them water" (v.16) — followed immediately by Israel’s well-song ("Spring up, O well!"). After Meribah’s failure, a well is given with a song. The wilderness journey is not uniform suffering; it contains genuine moments of provision and joy.'),
+            ],
+            'ctx': 'The march itinerary (vv.10–20) moves Israel from the Red Sea route toward Moab. The well-song (vv.17–18) is one of Numbers’ few lyric passages — Israel singing to the water, the leaders digging, the nobles providing. Then two decisive military victories: Sihon king of the Amorites refuses passage (unlike Edom, Sihon attacks) and is defeated; Og king of Bashan is defeated. These victories east of the Jordan give Israel a foothold that will serve as the base for the Canaan crossing. The conquest has begun.',
+            'cross': [
+                ('Deut 2:24–37', 'Moses’s retrospective account of the Sihon victory emphasises that God hardened Sihon’s spirit to refuse — his military aggression was divinely ordered to give Israel both land and confidence before the Jordan crossing.'),
+                ('Ps 135:11', '"Sihon king of the Amorites and Og king of Bashan and all the kings of Canaan" — the Sihon and Og victories become a standard element of Israel’s praise liturgy, rehearsed as evidence of YHWH’s military faithfulness.'),
+            ],
+            'mac': [
+                ('21:21–25', 'MacArthur: Sihon’s refusal to grant passage triggers his destruction — unlike Edom (which Israel circumnavigated), Sihon attacks and forfeits his territory. The contrast is instructive: Edom’s refusal was hostile but not aggressive; Sihon’s refusal became invasion. God permits Israel to suffer some rebuffs (Edom) while using others as occasions for the conquest’s beginning (Sihon, Og).'),
+            ],
+            'milgrom': [
+                ('21:17–18', 'Milgrom: The well-song is the wilderness narrative’s most joyful passage — Israel singing to the water, the leaders and nobles cooperating to provide it. The song’s context (after the bronze serpent healing and before the military victories) places it at a moment of renewed covenant confidence. The same people who complained about water at Meribah now sing to the well that God gives them.'),
+            ],
+            'ashley': [
+                ('21:33–35', 'Ashley: The defeat of Og king of Bashan — a giant (Deut 3:11, his iron bed measured 9 cubits) — continues the pattern of God defeating what Israel fears most. The spy report’s grasshopper complex (Num 13) is systematically dismantled: first Sihon (Amorite king), then Og (the giant). By the time Israel reaches the Jordan, the generation who said "we cannot" has been replaced by a generation that has watched God defeat the very enemies their parents feared.'),
+            ],
+            'sarna': [
+                ('21:27–30', 'Sarna: The taunt-song against Sihon (vv.27–30) is an ancient poem quoted in Numbers as evidence of Sihon’s own military prowess — the Amorites themselves boasted of their victory over Moab. That Israel defeats the very people who wrote the victory poem demonstrates that Israel’s God is greater than the military achievements the Amorites celebrated.'),
+            ],
+            'alter': [
+                ('21:17–18', 'Alter: "Spring up, O well! Sing to it!" — Israel singing to the water, the leaders digging with their staffs. The song is brief, ecstatic, communal. After chapters of complaint, murmuring, and plague, the wilderness community sings. The well-song is Numbers’ most spontaneous moment of worship — unordered, unstructured, arising directly from the experience of provision.'),
+            ],
+            'calvin': [
+                ('21:21–35', 'Calvin: The military victories over Sihon and Og are the first fruits of the conquest — and they come to the new generation, not the old. The people who received the forty-year sentence have died; their children fight. The covenant promise is not cancelled by one generation’s failure; it is delayed and transferred. God’s faithfulness outlasts human unfaithfulness.'),
+            ],
+            'netbible': [
+                ('21:14', 'NET Note: "The Book of the Wars of the Lord" — a reference to an ancient Israelite anthology of war poetry, now lost, that apparently recorded early Israelite military victories. Its citation here suggests the compiler of Numbers had access to a wider body of Israelite historical literature. The Torah is not the only ancient Israelite document; it cites others.'),
+            ],
+        },
+    ],
+})
+
+num(22, {
+    'title': 'Balak Summons Balaam: The Prophet Who Cannot Curse What God Has Blessed',
+    'sections': [
+        {
+            'header': 'Verses 1–35 — Balak’s Embassy; the Donkey and the Angel',
+            'verses': verse_range(1, 35),
+            'heb': [
+                ('bārak', 'barak', 'to bless', 'The root of Balaam’s dilemma: God has blessed Israel (bārak) and Balaam cannot curse (qābab) what God has blessed. The entire Balaam narrative turns on the immovability of the divine blessing — Balak’s money cannot purchase a reversal of what God has established.'),
+                ('’ātōn', 'aton', 'female donkey / she-donkey', 'The donkey who sees the angel of the Lord and speaks is one of the Torah’s most memorable narrative devices. The prophet who is supposed to see divine things is blind to what his donkey perceives. The animal’s vision shames the seer’s blindness.'),
+            ],
+            'ctx': 'Numbers 22 begins the Balaam cycle (chs.22–24) — one of the most extraordinary extended narratives in the Pentateuch. Balak king of Moab, terrified by Israel’s military victories, hires the renowned seer Balaam to curse Israel. God twice forbids Balaam to go; on the third summons (with greater incentives), God permits it with the instruction: "do only what I tell you." The donkey episode (vv.21–35) is theologically central: Balaam’s prophetic vision is so dulled by desire that his donkey sees the angel he cannot. The angel’s rebuke and Balaam’s submission set up the oracles: Balaam arrives with Balak’s money but God’s words.',
+            'cross': [
+                ('2 Pet 2:15–16', '"They have left the straight way and wandered off to follow the way of Balaam son of Bezer, who loved the wages of wickedness. But he was rebuked for his wrongdoing by a donkey — an animal without speech — who spoke with a human voice and restrained the prophet’s madness."'),
+                ('Jude 11', '"They have rushed for profit into Balaam’s error." Balaam’s willingness to sell his prophetic gift becomes the NT’s standard example of mercenary ministry.'),
+                ('Rev 2:14', '"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality." The Balaam connection to Baal Peor (Num 25, 31:16) is the basis for this NT allusion.'),
+            ],
+            'mac': [
+                ('22:12', 'MacArthur: God’s first word to Balaam is unambiguous: "Do not go with them. You must not put a curse on those people, because they are blessed." The divine prohibition is clear. Balaam’s subsequent attempts to find a loophole — asking again when offered more money — reveal that he wants to go, which is why the donkey episode is necessary: God must physically restrain a prophet whose heart has already departed.'),
+                ('22:28–30', 'MacArthur: The speaking donkey is one of Scripture’s most dramatic moments of divine communication. God uses the most unlikely instrument — a beast of burden — to shame the professional prophet. The donkey saw what Balaam could not because Balaam’s spiritual perception was blinded by greed. Animal clarity rebukes human blindness.'),
+            ],
+            'milgrom': [
+                ('22:20–22', 'Milgrom: "God was very angry when he went" (v.22) — yet God himself had said "go" in v.20. The apparent contradiction is resolved by understanding that God’s permission was reluctant and conditional: "do only what I tell you." Balaam’s eagerness to go despite God’s clear reluctance is what provokes the anger. Permission given against God’s preference is not the same as God’s positive endorsement.'),
+                ('22:28', 'Milgrom: The donkey’s speech is the Torah’s only example of direct animal speech after the serpent in Gen 3. The parallel is deliberate: as the serpent spoke to undermine the divine word, the donkey speaks to support it. The Torah’s two speaking animals bracket the range of talking-animal episodes: one destructive (Gen 3), one redemptive (Num 22).'),
+            ],
+            'ashley': [
+                ('22:1–14', 'Ashley: The Balaam narrative introduces a non-Israelite prophet of genuine stature — one whom even God addresses directly (v.9, 12, 20). This is remarkable in Numbers: God speaks to a pagan seer as directly as to Moses. The implication is that God’s communicative reach extends beyond Israel’s covenant community, even using non-Israelite prophetic figures to serve his purposes for Israel.'),
+            ],
+            'sarna': [
+                ('22:5', 'Sarna: Balaam is identified as from "Pethor, which is near the Euphrates River" — northern Mesopotamia. The Deir Alla inscription (c.800 BC) mentioning "Balaam son of Beor" confirms Balaam as a figure known in ancient Transjordanian tradition. The Numbers narrative is not legendary invention but engages a historically attested prophetic tradition.'),
+            ],
+            'alter': [
+                ('22:22–35', 'Alter: The donkey episode is one of the Torah’s finest comic-ironic passages. Three times the donkey sees the angel and turns aside; three times Balaam beats her; then she speaks. The scene inverts the professional seer’s claim to special vision: his animal has better prophetic sight than he does. The comedy carries a serious theological point — Balaam’s spiritual blindness is a function of his willingness to be bought.'),
+            ],
+            'calvin': [
+                ('22:38', 'Calvin: "I must speak only what God puts in my mouth" — Balaam’s statement to Balak, however hypocritically arrived at, articulates the essential principle of biblical prophecy. No prophet speaks their own words; every prophet is a mouthpiece of divine communication. Balaam’s mouth will be constrained to speak what he does not want to say — a vivid illustration of the irresistibility of divine inspiration.'),
+            ],
+            'netbible': [
+                ('22:20', 'NET Note: "Since these men have come to summon you, rise and go with them; but you must do only what I tell you to do" — the conditional permission creates the narrative tension of the following chapters. God permits what he does not prefer, but constrains the outcome. Balaam’s freedom of movement and the divine constraint on his speech are both real; their combination drives the plot of chs.22–24.'),
+            ],
+        },
+        {
+            'header': 'Verses 36–41 — Balak Meets Balaam; Preparation for the Oracles',
+            'verses': verse_range(36, 41),
+            'heb': [
+                ('mā ’ākaltī lēḥābed lĕkā', "ma achalti lehaved lecha", 'am I really able to say anything? / what power do I have to say anything?', 'Balaam’s question to Balak upon arrival — "do I have any power to say anything?" The rhetorical question undermines Balak’s expectations from the outset. Balaam arrives knowing he cannot deliver what Balak paid for.'),
+            ],
+            'ctx': 'Balak’s angry question to Balaam — "Why didn’t you come when I first summoned you? Did I not say I would reward you well?" — reveals the transactional nature of his request. He expects that money and status can purchase prophetic output. Balaam’s response is gentle but determinative: "I can’t say whatever I please. I must speak only what God puts in my mouth." The seven altars, seven bulls, and seven rams prepared at Bamoth Baal establish the setting for the four oracles that will follow — each oracle more expansive and more Israel-favouring than the last.',
+            'cross': [
+                ('Num 23:1–2', '"Build me seven altars here, and prepare seven bulls and seven rams for me." The elaborate sacrificial preparation cannot purchase a curse — it only provides a platform from which God’s blessing will be pronounced more publicly.'),
+                ('Acts 8:18–20', '"Simon offered them money and said, ‘Give me also this ability.’… Peter answered: ‘May your money perish with you, because you thought you could buy the gift of God with money!’" The Simon Magus episode is the NT parallel to Balak’s attempt to purchase prophetic output.'),
+            ],
+            'mac': [
+                ('22:36–41', 'MacArthur: Balak’s sacrifice of seven bulls and seven rams on seven altars is an attempt to leverage religious activity in service of political goals. The elaborate ritual is designed to create the conditions for Balaam’s curse. But the covenant God cannot be manipulated by ritual preparation that is divorced from covenant relationship. Religious performance in service of covenant-hostile purposes is not worship — it is attempted coercion.'),
+            ],
+            'milgrom': [
+                ('22:38–41', 'Milgrom: The seven-altar structure mirrors the seven-altar arrangement of legitimate Israelite sacrifice — a parody of covenant worship. Balak’s attempts to create a sacrificial context for the curse reflects the ancient Near Eastern belief that prophecy and divination operate within ritual frameworks. What Balak cannot know is that YHWH operates outside those frameworks, using them only when he chooses.'),
+            ],
+            'ashley': [
+                ('22:36–41', 'Ashley: The chapter’s closing verses set up the oracles with deliberate narrative irony: Balak has spent enormous resources (the repeated embassy, the seven altars, the sacrifices) to create conditions for a curse, and Balaam arrives already knowing he cannot curse what God has blessed. The gap between Balak’s expectations and Balaam’s constraint is the dramatic engine of chapters 23–24.'),
+            ],
+            'sarna': [
+                ('22:41', 'Sarna: "The next morning Balak took Balaam up to Bamoth Baal, and from there he could see the outskirts of the Israelite camp." Balak brings Balaam to a high place where he can see Israel — the assumption being that the prophet needs to see his target. But the view of Israel becomes the context for blessing, not cursing; proximity to the covenant community reveals their indomitable character to the prophet.'),
+            ],
+            'alter': [
+                ('22:38', 'Alter: Balaam’s response — "the word God puts in my mouth, that I must speak" — is spoken to Balak as a warning but functions for the reader as a theological announcement. What follows in chapters 23–24 is not Balaam’s professional output but divine compulsion. The oracles are not Balaam’s art; they are God’s word in an unwilling prophet’s mouth.'),
+            ],
+            'calvin': [
+                ('22:36–41', 'Calvin: The elaborate sacrificial preparation cannot change what God has already determined — Israel is blessed and no curse can reverse that. Calvin sees in this episode a profound comfort for the church: when enemies seek to curse God’s people through religious, political, or military means, they are working against an already-established divine blessing that no human power can reverse.'),
+            ],
+            'netbible': [
+                ('22:41', 'NET Note: "Bamoth Baal" — literally "high places of Baal." Balak brings Balaam to a pagan high place to invoke a pagan curse. The irony of the oracle cycle: the high places of Baal become the locations from which YHWH’s blessing of Israel is proclaimed. God appropriates pagan sacred space for covenant proclamation.'),
+            ],
+        },
+    ],
+})
+
+num(23, {
+    'title': 'The First and Second Oracles of Balaam',
+    'sections': [
+        {
+            'header': 'Verses 1–12 — The First Oracle: A People Who Cannot Be Cursed',
+            'verses': verse_range(1, 12),
+            'heb': [
+                ('mâ ʾqqōb lōʾ qabbāh ʾēl', "ma eqqov lo qabbah El", 'how can I curse whom God has not cursed?', 'The rhetorical impossibility at the heart of the first oracle: Balaam cannot curse what God has not cursed; cannot denounce what God has not denounced. The curse Balak purchased is theologically impossible — God’s prior blessing renders any human curse void.'),
+                ('yiškōn lēbādād', 'yishkon levadad', 'a people who dwell alone / who live apart', 'Israel’s distinctive characteristic in the first oracle — they are “a people who live apart and do not consider themselves one of the nations.” The apartness is covenant isolation: not cultural arrogance but divine designation.'),
+            ],
+            'ctx': 'The first oracle (vv.7–10) is delivered from Bamoth Baal after Balaam encounters God (v.4) and receives the divine word. The oracle has four rhetorical moves: (1) Balak summoned me, but God has not cursed Israel — I cannot (vv.7–8); (2) Israel is a people apart, uncountable in their blessing (v.9); (3) who can count the dust of Jacob? — the Abrahamic promise (v.10a); (4) let me die the death of the righteous (v.10b). Balak’s furious response — "What have you done to me? I brought you here to curse my enemies, but you have done nothing but bless them!" — sets up the second oracle.',
+            'cross': [
+                ('Gen 13:16', '"I will make your offspring like the dust of the earth, so that if anyone could count the dust, then your offspring could be counted." Balaam’s "who can count the dust of Jacob?" (v.10) directly quotes the Abrahamic promise — the blessing Balak paid to reverse is the promise God made to Abraham that cannot be reversed.'),
+                ('Rom 8:31', '"If God is for us, who can be against us?" The theological logic of the first oracle: God’s prior blessing renders all human opposition ineffective. Paul’s rhetorical question is the NT distillation of Balaam’s reluctant proclamation.'),
+            ],
+            'mac': [
+                ('23:8–10', 'MacArthur: The first oracle establishes the foundational principle of the entire Balaam cycle: God’s blessing precedes and overrides human cursing. Balak paid for the reversal of a divine decree — which is theologically impossible regardless of the prophet’s fee. The oracle teaches that the covenant people’s security rests not on their own strength but on the prior word of God that established their blessing.'),
+            ],
+            'milgrom': [
+                ('23:9', 'Milgrom: "A people who live apart and do not consider themselves one of the nations" — Israel’s apartness (bādad) is not isolation as weakness but isolation as distinction. The covenant community is not like the nations because it is constituted differently — by divine election, not by ethnicity or territory alone. Balaam sees this from the outside and reports it accurately.'),
+            ],
+            'ashley': [
+                ('23:10', 'Ashley: "Let me die the death of the righteous, and may my final end be like theirs!" — Balaam’s personal response to what he sees is astonishing. He wishes to participate in Israel’s destiny. The professional curser is converted by his own oracle into an admirer of the people he was hired to destroy. The divine word works on the speaker as well as the audience.'),
+            ],
+            'sarna': [
+                ('23:7', 'Sarna: The oracle’s opening — "Balak brought me from Aram, the king of Moab from the eastern mountains" — situates Balaam’s geography and commission. The distance and expense of the summons underscore Balak’s desperation and the covenant community’s threat to surrounding nations.'),
+            ],
+            'alter': [
+                ('23:10', 'Alter: "Let me die the death of the upright, let my end be like his." The final line of the first oracle is Balaam’s personal confession — the professional curser desires the death of the blessed. The oracle that begins with rhetorical impossibility ends with personal longing. Balaam, the instrument of God’s blessing, is himself moved by what he must proclaim.'),
+            ],
+            'calvin': [
+                ('23:8–10', 'Calvin: The first oracle demonstrates that no prayer, ritual, or money can reverse what God has established. Balak assembles every instrument of ancient Near Eastern religious power — altars, sacrifices, a renowned prophet — and produces a blessing. The lesson for the church: its enemies’ most concentrated efforts against God’s people cannot undo what God has spoken over them.'),
+            ],
+            'netbible': [
+                ('23:10', 'NET Note: "Who can count the dust of Jacob" — the phrase echoes Gen 13:16 ("your offspring like the dust of the earth") and Gen 28:14 ("your descendants will be like the dust of the earth"). Balaam’s oracle is saturated with Abrahamic covenant language, confirming that Israel’s blessing is rooted in the patriarchal promises that precede and ground the Sinaitic covenant.'),
+            ],
+        },
+        {
+            'header': 'Verses 13–30 — The Second Oracle: God Is Not a Man Who Lies',
+            'verses': verse_range(13, 30),
+            'heb': [
+                ('lōʾ ʾîš ʾēl wîkazzēb', "lo ish El viykazev", 'God is not a man that he should lie', 'The second oracle’s theological centre: God’s word is not like human speech — it cannot be retracted, revised, or reversed. What God has spoken over Israel is irrevocable because God’s character is immutable. The oracle is a declaration of divine immutability in the context of prophetic compulsion.'),
+            ],
+            'ctx': 'Balak moves Balaam to a different vantage point (Zophim on Pisgah — from where he can see only part of Israel) in hopes that a different view will produce a different result. The second oracle (vv.18–24) is more expansive than the first. Its structure: (1) God is not a man who lies or changes his mind; (2) I was told to bless, and I cannot reverse it; (3) God has seen no iniquity in Jacob that would disqualify the blessing; (4) God who brought Israel out of Egypt is like a wild ox in their midst; (5) no sorcery or divination can work against Jacob — God himself is their announcement. Balak’s response: "At least don’t curse them at all." He has retreated from asking for a curse to asking for no blessing.',
+            'cross': [
+                ('Heb 6:17–18', '"God wanted to make the unchanging nature of his purpose very clear to the heirs of what was promised, he confirmed it with an oath. God did this so that, by two unchangeable things in which it is impossible for God to lie, we who have fled to take hold of the hope set before us may be greatly encouraged." The immutability of God’s covenant word — the second oracle’s central claim — is the Hebrews’ ground for assurance.'),
+                ('1 Sam 15:29', '"He who is the Glory of Israel does not lie or change his mind; for he is not a human being, that he should change his mind." Samuel quotes the second oracle’s theology directly when addressing Saul’s rejection.'),
+            ],
+            'mac': [
+                ('23:19–20', 'MacArthur: "God is not human, that he should lie, not a human being, that he should change his mind. Does he speak and then not act? Does he promise and not fulfil?" — the second oracle’s most important verses. The divine immutability that Balak hoped would bend (perhaps God could be persuaded to reconsider) is precisely what cannot bend. The blessing is irrevocable because the character behind it is unchanging.'),
+            ],
+            'milgrom': [
+                ('23:19', 'Milgrom: The contrast between divine and human speech is the second oracle’s theological core: human words can be retracted; divine words cannot. Balak’s entire enterprise rests on the assumption that prophetic speech can override divine speech — that Balaam’s curse can neutralise God’s blessing. The second oracle demolishes that assumption philosophically before demolishing it practically.'),
+            ],
+            'ashley': [
+                ('23:21', 'Ashley: "No misfortune is seen in Jacob, no misery observed in Israel; the Lord their God is with them" — the second oracle’s pastoral centre. God sees no disqualifying condition in Israel. From Balak’s perspective, Israel is a terrifying military threat; from God’s perspective, Israel is his covenant people in whom no curse-worthy condition exists.'),
+            ],
+            'sarna': [
+                ('23:23', 'Sarna: "There is no divination against Jacob, no evil omens against Israel" — the oracle explicitly addresses the world of divination and omen-reading in which Balak operates. Within that world, the oracle declares: the tools of the diviner do not work against the covenant community. YHWH himself is the only announcement relevant to Israel.'),
+            ],
+            'alter': [
+                ('23:19', 'Alter: "God is not a man that he should lie, nor a son of man that he should repent." The oracle’s pivotal verse is grammatically and theologically precise: the triple negative (not a man, not a son of man, not a liar, not a repenter) builds a rhetorical wall around the immutability of the divine word. Balak has come to the wrong prophet — the prophet’s God cannot be manipulated by any human mechanism.'),
+            ],
+            'calvin': [
+                ('23:19', 'Calvin: "God is not a man that he should lie" is one of the OT’s clearest statements of divine immutability and veracity. The assurance of salvation rests precisely on this: God’s promises cannot be revoked because God’s character cannot change. Balaam’s reluctant proclamation becomes one of the OT’s most comforting theological affirmations.'),
+            ],
+            'netbible': [
+                ('23:21', 'NET Note: "The Lord their God is with them; the shout of the King is among them" — the "shout of the King" (tĕrûʿat melek) refers to the battle cry or acclamation of a divine king present with his army. The same root (tĕrûʿāh) is used for the Feast of Trumpets (Num 29:1) and the ark-cry of Num 10:35. The covenant community’s military victories are grounded in the presence of the divine king.'),
+            ],
+        },
+    ],
+})
+
+num(24, {
+    'title': 'The Third and Fourth Oracles: The Star from Jacob',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — The Third Oracle: How Beautiful Are Your Tents, O Jacob',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('nǝʾum', "ne'um", 'utterance / oracle / declaration', 'The prophetic formula introducing the third and fourth oracles: nĕʾum bileʿām (oracle of Balaam) combined with nĕʾum šōmēaʿ ʾimrê ʾēl (oracle of one who hears the words of God). The formula claims direct divine reception — not divination or omen-reading but genuine prophetic hearing.'),
+                ('mah-ṭōbû ʾohalêkā yaʿăqōb', "ma tovu ohaleicha Ya'akov", 'how beautiful are your tents, O Jacob', 'The opening of the third oracle — one of the most beloved phrases in Jewish liturgy, sung at the beginning of morning synagogue service. The aesthetic beauty of Israel’s dwelling places expresses the covenant flourishing that Balak’s curse was meant to destroy.'),
+            ],
+            'ctx': 'The third oracle breaks new ground: Balaam abandons divination entirely and simply opens his eyes to see Israel (v.2) — the Spirit of God comes upon him. The oracle (vv.5–9) is the most lyrical of the four: Israel’s tents like valleys spread out, like gardens by the river, like aloes planted by God, like cedars beside waters. The king shall be greater than Agag; the kingdom shall be exalted. Blessed are those who bless Israel; cursed are those who curse Israel (reversing Balak’s request completely). Balak’s furious dismissal: he strikes his hands together and sends Balaam away without the promised payment. Balaam’s response: "Even if you gave me all the silver and gold in your palace, I could not do anything to go beyond the command of God."',
+            'cross': [
+                ('Gen 12:3', '"I will bless those who bless you, and whoever curses you I will curse." The third oracle’s closing formula (v.9b: "Blessed is everyone who blesses you and cursed is everyone who curses you") quotes the Abrahamic covenant directly — Balak hired Balaam to reverse the Abrahamic promise and instead received its reaffirmation.'),
+                ('Rev 22:1–2', '"The river of the water of life, as clear as crystal, flowing from the throne of God… On each side of the river stood the tree of life." The garden imagery of the third oracle (tents like gardens by a river, vv.5–6) prefigures the eschatological garden-city of Revelation.'),
+            ],
+            'mac': [
+                ('24:5–6', 'MacArthur: "How beautiful are your tents, O Jacob, your dwelling places, O Israel! Like valleys they spread out, like gardens beside a river, like aloes planted by the Lord, like cedars beside the waters." The lyric beauty of the third oracle contrasts sharply with Balak’s military terror of Israel. What Balak sees as a threatening army, Balaam sees (under prophetic inspiration) as a flourishing garden. The covenant community’s true identity is aesthetic and fruitful, not merely military.'),
+                ('24:9', 'MacArthur: "Blessed is everyone who blesses you and cursed is everyone who curses you" — the Abrahamic formula reaffirmed at the very moment Balak expected its reversal. The money paid to produce a curse has produced the deepest blessing of all: the covenant promise reconfirmed by a pagan prophet in an enemy king’s presence.'),
+            ],
+            'milgrom': [
+                ('24:2–3', 'Milgrom: The shift from divination (chs.22–23) to direct Spirit-reception (ch.24) marks the escalation of the oracle cycle. Balaam abandons his divinatory techniques and simply receives — "the Spirit of God came on him." The move from technique to reception is the move from pagan prophetism to genuine prophecy. Even Balaam, in his best moments, operates in the mode of Israel’s prophets.'),
+            ],
+            'ashley': [
+                ('24:10–11', 'Ashley: Balak’s physical gesture — striking his hands together in fury — and his dismissal of Balaam without payment is the comic climax of the oracle cycle. The most expensive prophetic consultation in ancient Near Eastern history has produced exactly the opposite of what was commissioned. The money that was meant to purchase a curse has funded a threefold blessing of Israel.'),
+            ],
+            'sarna': [
+                ('24:5', 'Sarna: "Mah tovu ohaleicha Yaaqov" — "How beautiful are your tents, O Jacob." This verse became the opening of Jewish morning prayers because it represents the Gentile perspective on Israel’s covenant beauty: even a pagan prophet, compelled by God, recognises the loveliness of the covenant community. The prayer begins by hearing Israel through Balaam’s reluctant eyes.'),
+            ],
+            'alter': [
+                ('24:5–6', 'Alter: The garden imagery — valleys, gardens by a river, aloes planted by God, cedars beside waters — is the most lyrically accomplished passage in Numbers. The wilderness people described in terms of garden abundance: the covenant promise of land and flourishing breaking into the desert narrative. The beauty is prophetic — Balaam sees what is not yet fully visible.'),
+            ],
+            'calvin': [
+                ('24:9', 'Calvin: The Abrahamic formula pronounced by Balaam confirms that the covenant promises are irreversible. Even the most sophisticated human attempt to reverse them — professional prophecy, elaborate ritual, royal resources — produces their reconfirmation. The church’s enemies who work to undo God’s purposes among his people are working against the grain of an established divine word.'),
+            ],
+            'netbible': [
+                ('24:5', 'NET Note: "How beautiful are your tents, O Jacob, your dwelling places, O Israel!" — The phrase became the opening of Jewish shacharit (morning prayer). The use of a pagan prophet’s words as a liturgical opening is theologically striking: Israel begins each day’s worship by hearing itself described through the eyes of an outsider compelled by God to see Israel’s covenant beauty.'),
+            ],
+        },
+        {
+            'header': 'Verses 14–25 — The Fourth Oracle: A Star Shall Come from Jacob',
+            'verses': verse_range(14, 25),
+            'heb': [
+                ('dārak kôkāb miyyaʿăqōb', 'darah kochav miYaakov', 'a star shall come from Jacob', 'The messianic oracle of Balaam — the most explicitly royal-messianic prophecy in Numbers. The star (kôkāb) and the sceptre (šēbeṭ) from Jacob/Israel will crush Moab and all the sons of Seth. The language of crushing (māḥaṣ) and ruling (rādāh) is the language of the Davidic monarchy and ultimately of the Messiah.'),
+            ],
+            'ctx': 'The fourth oracle (vv.15–19) is the most elevated of the four — and the most explicitly eschatological. The seer who "sees the vision of the Almighty" (v.4, 16) looks to the far future: "I see him, but not now; I behold him, but not near." A star from Jacob, a sceptre from Israel, will crush Moab’s temples and destroy all the sons of Seth. Edom will be conquered; Israel will gain strength; a ruler will arise from Jacob. The four brief oracles against Amalek, the Kenites, Asshur, and Eber follow, and Balaam departs. The oracle cycle closes without any curse; Balaam returns to his home, and Balak is left with nothing.',
+            'cross': [
+                ('Matt 2:2', '"Where is the one who has been born king of the Jews? We saw his star when it rose and have come to worship him." The Magi’s star — almost certainly informed by Balaam’s oracle — represents the fulfilment of the star-from-Jacob prophecy. Non-Israelite observers of astronomical signs seek the messianic king, just as a non-Israelite prophet announced him centuries earlier.'),
+                ('Rev 22:16', '"I am the Root and the Offspring of David, and the bright Morning Star." Jesus applies Balaam’s star imagery to himself in Revelation’s closing chapter.'),
+                ('Gen 49:10', '"The sceptre will not depart from Judah, nor the ruler’s staff from between his feet, until he to whom it belongs shall come." Balaam’s sceptre-from-Israel oracle parallels Jacob’s blessing of Judah — both prophesying a messianic ruler from the covenant people.'),
+            ],
+            'mac': [
+                ('24:17', 'MacArthur: "A star will come out of Jacob; a sceptre will rise out of Israel. He will crush the foreheads of Moab, the skulls of all the people of Sheth." The star-and-sceptre oracle is Numbers’ most explicit messianic prophecy — and it comes from a pagan prophet’s mouth, in an enemy king’s presence, as the climactic conclusion of a failed curse attempt. The Messiah’s coming is announced by the most unlikely instrument, in the most ironic circumstances, as the ultimate answer to all efforts to curse the covenant people.'),
+                ('24:16', 'MacArthur: Balaam describes himself as "one who hears the words of God, who has knowledge from the Most High, who sees a vision from the Almighty, who falls prostrate, and whose eyes are opened." The qualifications are those of a genuine prophet. Even Balaam, compromised by greed and morally flawed, experiences authentic prophetic reception when God speaks through him. God’s word is not limited by the quality of its human instrument.'),
+            ],
+            'milgrom': [
+                ('24:17', 'Milgrom: The star-and-sceptre oracle was understood messianically in the Second Temple period and the NT. Bar Kokhba ("son of a star") took his messianic title from this verse. The Dead Sea Scrolls’ Damascus Document also interprets it messianically. The oracle’s reach across history — from Balaam’s mouth to the Magi’s journey to Jesus’s self-identification in Rev 22:16 — is one of the most remarkable trajectories in biblical literature.'),
+            ],
+            'ashley': [
+                ('24:14–17', 'Ashley: The fourth oracle’s temporal frame — "what this people will do to your people in days to come" — explicitly projects beyond the immediate historical moment into eschatological time. Balaam is not prophesying about the conquest of Canaan alone but about something beyond it: a royal figure from Israel who will exercise universal dominion. The oracle’s scope exceeds any historical Israelite king.'),
+            ],
+            'sarna': [
+                ('24:17', 'Sarna: "A star will come out of Jacob; a sceptre will rise out of Israel." The parallelism (star/sceptre, Jacob/Israel) is characteristic of ancient Near Eastern poetry. The star is a royal symbol in the ANE; the sceptre is the standard symbol of royal authority in the OT. Together they describe the coming of Israel’s definitive king — one who will fulfil what the Davidic monarchy only partially achieved.'),
+            ],
+            'alter': [
+                ('24:17', 'Alter: "I see him, but not now; I behold him, but not near. A star shall come from Jacob, a sceptre shall rise from Israel." The temporal dislocation — seen but not yet present, beheld but distant — is prophetic vision at its most characteristic: the prophet sees across time, reporting the future as if present but acknowledging its distance. The star-oracle is the most far-seeing vision in Numbers.'),
+            ],
+            'calvin': [
+                ('24:17', 'Calvin: The star-and-sceptre oracle is fulfilled in David proximately and in Christ ultimately. Calvin follows the standard interpretive tradition: the oracle’s language (crushing the foreheads of Moab, dominating the sons of Seth) exceeds what any Israelite king accomplished and points to the universal dominion of the one who was announced by the Magi’s star (Matt 2:2) and who calls himself the Morning Star (Rev 22:16).'),
+            ],
+            'netbible': [
+                ('24:17', 'NET Note: "He will crush the foreheads of Moab, the skulls of all the sons of Sheth" — the violent imagery reflects the complete subjugation of Israel’s enemies by the messianic king. "Sons of Sheth" (bĕnê-šēt) is debated — possibly a reference to all humanity (if Sheth = Seth, Gen 4:25) or to a specific people group. If the universal reading is correct, the oracle claims universal dominion for the star from Jacob.'),
+            ],
+        },
+    ],
+})
+
+num(25, {
+    'title': 'Baal Peor: The Seduction That Killed Twenty-Four Thousand',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — Israel Joins Baal Peor; Phinehas’s Zeal',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('wayāḥel haʿam lizānôt', 'wayachel ha\'am liznot', 'the people began to commit sexual immorality', 'The verb ḥālal (begin) marks a new phase of degradation. The sexual immorality (zānāh, the root of zonah/harlot) is inseparable from the idolatrous worship — the Moabite women invited Israel to their sacrifices, which included sexual rites. Spiritual and sexual unfaithfulness are intertwined.'),
+                ('qinʾh', "qin'ah", 'zeal / jealousy / passionate devotion', 'Phinehas’s act is described as qinʾh (zeal/jealousy) — the same root as God’s jealousy for Israel in Exod 20:5 ("I, the Lord your God, am a jealous God"). Phinehas acts with divine jealousy because Israel’s unfaithfulness has provoked the divine jealousy that defends the covenant.'),
+            ],
+            'ctx': 'Numbers 25 is the darkest chapter in the Balaam cycle’s aftermath. Balak could not curse Israel through Balaam; according to Num 31:16 and Rev 2:14, Balaam advised Balak to seduce Israel into covenant violation through the Midianite/Moabite women. The plan works: Israel worships Baal of Peor; God commands the execution of the leaders; a plague begins; a plague of 24,000 breaks out. At the height of the plague, an Israelite man brazenly brings a Midianite woman into the camp before Moses and the weeping congregation. Phinehas (Aaron’s grandson) takes a spear and drives it through both of them in the tent. The plague stops. God grants Phinehas a "covenant of a lasting priesthood" for his zeal.',
+            'cross': [
+                ('1 Cor 10:8', '"We should not commit sexual immorality, as some of them did — and in one day twenty-three thousand of them died." Paul references Baal Peor as a warning for NT believers — the number differs slightly from Num 25 (24,000), possibly because Paul counts only the plague deaths or rounds differently.'),
+                ('Ps 106:28–31', '"They yoked themselves to the Baal of Peor and ate sacrifices offered to lifeless gods… But Phinehas stood up and intervened, and the plague was checked. This was credited to him as righteousness for endless generations to come."'),
+                ('Rev 2:14', '"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality."'),
+            ],
+            'mac': [
+                ('25:1–3', 'MacArthur: The Baal Peor apostasy is the logical endpoint of everything Numbers 11–25 has been building toward: a community that has complained about provision, challenged authority, rejected the promised land, and now capitulates to the sexual-religious practices of the surrounding nations. The apostasy begins with eating (v.2 — the Moabite women invite them to their sacrifices) and expands to worship. The sequence — table fellowship leading to cultic participation leading to spiritual adultery — is a consistent biblical pattern.'),
+                ('25:11–13', 'MacArthur: Phinehas’s grant of a "covenant of a lasting priesthood" (bĕrît kĕhunnat ʿôlām) for his act of violent zeal is one of the most striking divine rewards in the Torah. God does not merely commend Phinehas; he makes a covenant with him personally. The zeal that drove Phinehas to act was not human anger but divine jealousy (qinʾat ʾĕlōhîm) — and God recognises and rewards the alignment of the priest’s jealousy with his own.'),
+            ],
+            'milgrom': [
+                ('25:6–9', 'Milgrom: The act of the unnamed Israelite — bringing the Midianite woman "into his brothers’ presence" while Moses and the congregation wept at the tent entrance — is an act of calculated brazenness, not reckless passion. He knows what he is doing; he does it publicly. This is the bĕyad rāmāh (high-handed defiance) of Num 15:30 enacted at the worst possible moment.'),
+                ('25:13', 'Milgrom: The "covenant of a lasting priesthood" granted to Phinehas is interpreted in later tradition as the establishment of the Zadokite priestly line. Milgrom traces the Zadokite claim to Phinehas’s lineage as the theological foundation of Second Temple priestly authority.'),
+            ],
+            'ashley': [
+                ('25:1–16', 'Ashley: The Baal Peor episode completes the Balaam narrative’s irony: Balaam could not curse Israel with his mouth, so he devised a way to entice Israel into self-destruction through covenant violation. The enemy’s most effective weapon against the covenant community is not military force but the seductive offer of religious-sexual accommodation. Israel’s greatest danger is internal, not external.'),
+            ],
+            'sarna': [
+                ('25:3', 'Sarna: "Israel joined in worshipping the Baal of Peor" — the verb ṣāmad (to be joined, yoked) carries connotations of yoke-attachment, as between animals. Israel has yoked itself to a foreign deity — the same language Paul will use for being "yoked together with unbelievers" (2 Cor 6:14). The covenant community’s self-yoking to what opposes it is the deepest form of self-betrayal.'),
+            ],
+            'alter': [
+                ('25:6–8', 'Alter: The moment is precisely framed: the congregation weeping at the tent entrance, Moses and the leaders weeping, and one man walking past all of them with a Midianite woman, openly, into the tent. The juxtaposition of communal grief and individual brazenness is the episode’s dramatic centrepiece. Phinehas’s response — taking the spear, following them into the tent — is the act of a man who understands that public sin in the covenant community requires a public response.'),
+            ],
+            'calvin': [
+                ('25:11–13', 'Calvin: Phinehas’s zeal models the principle that there are moments when the defence of God’s honour requires decisive action rather than patient tolerance. The covenant community cannot passively accommodate public, brazen covenant violation — not because of human anger but because of alignment with divine jealousy. The NT equivalent is Paul’s instruction to remove the immoral person from the church (1 Cor 5:2–5) for the community’s protection and the individual’s potential restoration.'),
+            ],
+            'netbible': [
+                ('25:13', 'NET Note: "A covenant of a lasting priesthood" — the phrase is unique in the Torah, paralleling the "covenant of salt" (Num 18:19) and the "covenant of peace" (Num 25:12). Phinehas’s descendants are confirmed in the Aaronic priestly line through this personal covenant grant. The Zadokites (Ezek 44:15) and later the Maccabean priest-kings traced their legitimacy to Phinehas.'),
+            ],
+        },
+        {
+            'header': 'Verses 14–18 — The Offenders Named; the Midianite Command',
+            'verses': verse_range(14, 18),
+            'heb': [
+                ('ṣōrēb', 'tzorev', 'pierced through / skewered', 'Phinehas’s spear pierces both offenders simultaneously through their bodies. The graphic detail is not gratuitous but judicial: the execution is public, undeniable, and immediately visible to the congregation. The plague stops at this moment.'),
+            ],
+            'ctx': 'The offenders are named (vv.14–15): the Israelite man is Zimri son of Salu, a leader of a Simeonite family; the Midianite woman is Cozbi daughter of Zur, a Midianite tribal chief. Both are of high status — this is not a case of marginal individuals but of prominent community leaders engaging in public covenant violation. The chapter closes (vv.16–18) with God’s command to treat the Midianites as enemies because of the Baal Peor seduction and because of Cozbi’s role. The Midianite war of Num 31 will execute this command.',
+            'cross': [
+                ('Num 31:7–8', '"They fought against Midian, as the Lord commanded Moses, and killed every man… They also killed Balaam son of Beor with the sword." The Midianite war executes the command of Num 25:17, and Balaam’s death confirms the connection between his counsel and the Baal Peor apostasy (31:16).'),
+                ('1 Kgs 18:40', '"Then Elijah commanded them, ‘Seize the prophets of Baal. Don’t let anyone get away!’ They seized them, and Elijah had them brought down to the Kishon Valley and slaughtered there." Elijah’s zeal against Baal worship mirrors Phinehas’s zeal at Baal Peor — both act with divine jealousy against covenant idolatry.'),
+            ],
+            'mac': [
+                ('25:14–15', 'MacArthur: The naming of both offenders — Zimri, a Simeonite leader, and Cozbi, a Midianite chief’s daughter — gives the episode its full weight. This was not an impulsive encounter between anonymous individuals but a deliberate, high-status act of covenant contempt at the most public possible moment. The naming also establishes the judicial record: the covenant community knows who did this and knows that it was judged.'),
+            ],
+            'milgrom': [
+                ('25:16–18', 'Milgrom: The command to treat the Midianites as enemies (v.17) because of the Peor seduction and Cozbi’s role establishes the theological rationale for the Midianite war of Num 31. The war is not ethnic cleansing but covenant justice: Midian used its women as a weapon against the covenant community and must face the consequences. The war is framed as a religious response to a religious attack.'),
+            ],
+            'ashley': [
+                ('25:14–18', 'Ashley: The naming of Zimri and Cozbi closes the Baal Peor episode with judicial specificity: the record stands, the identities are known, the judgment is documented. The broader command against Midian (vv.16–18) extends the response from the individual execution to the national level — the seduction at Peor was not an accident but a strategy (Num 31:16), and the response must be proportional.'),
+            ],
+            'sarna': [
+                ('25:14', 'Sarna: Zimri son of Salu is described as "a leader of a Simeonite family" — his status makes his act worse, not better. Leaders bear heavier covenant responsibility; their public violations have greater public impact. The Simeonite tribe, already diminished since the Levi-Simeon violence of Gen 34, loses further numbers in the plague at Baal Peor (the second census of Num 26 will show Simeon’s dramatic reduction).'),
+            ],
+            'alter': [
+                ('25:18', 'Alter: "Treat the Midianites as enemies and kill them, because they treated you as enemies when they deceived you in the Peor incident." The verb nkl (to deceive, treat cunningly) reveals the strategic character of the seduction: Midian used the women of Cozbi’s class as agents of deliberate covenant destruction. The covenant community’s response is proportional to the attack’s intentionality.'),
+            ],
+            'calvin': [
+                ('25:16–18', 'Calvin: The command against Midian closes the Balaam cycle’s moral: the enemy that could not curse Israel from without devised a strategy to destroy Israel from within. The covenant community faces its greatest danger not from military assault but from cultural and religious seduction. The NT equivalent: "Do not be conformed to this world" (Rom 12:2) — the world’s most effective weapon is accommodation, not attack.'),
+            ],
+            'netbible': [
+                ('25:18', 'NET Note: "Because of the matter of Peor and because of Cozbi, the daughter of the prince of Midian" — the two grounds for the anti-Midian command: the ideological seduction (Peor) and its personal embodiment (Cozbi). The double ground establishes that the judgment is not arbitrary but specifically responsive to Midian’s deliberate use of religious-sexual seduction against Israel’s covenant fidelity.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-5 complete: Numbers 20–25 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-6a: Chapters 26–30 — Second Census; Zelophehad; Joshua; Feasts; Vows
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(26, {
+    'title': 'The Second Census: A New Generation Counted',
+    'sections': [
+        {
+            'header': 'Verses 1–51 — The Census of the New Generation',
+            'verses': verse_range(1, 51),
+            'heb': [
+                ('kol-yotsē tsāvā', 'kol-yotze tzava', 'all who go out to war', 'The same military census formula as Num 1:3. The new generation is counted by the same standard as the old — but the numbers belong to those who grew up watching their parents die, and now stand ready to enter.'),
+            ],
+            'ctx': 'Numbers 26 is the structural hinge of the book: the first census (ch.1) counted the generation sentenced to die; the second counts their children. The total is nearly identical — 601,730 vs 603,550 — the covenant community survived forty years at almost exactly the same size. The closing note (vv.63-65) delivers the verdict: not one man from the original census remains except Caleb and Joshua. The word of God was fulfilled with complete precision.',
+            'cross': [
+                ('Josh 14:1', '"These are the areas the Israelites received as an inheritance in the land of Canaan, which Eleazar the priest, Joshua son of Nun and the heads of the tribal clans of Israel allotted to them." The second census land-allocation function (Num 26:52-56) is fulfilled in Joshua.'),
+                ('Heb 3:17-19', '"With whom was he angry for forty years? Was it not with those who sinned, whose bodies perished in the wilderness?... So we see that they were not able to enter, because of their unbelief."'),
+            ],
+            'mac': [
+                ('26:63-65', 'MacArthur: The census closes with the most devastating summary in Numbers: "Not one of them was among those counted by Moses and Aaron the priest when they counted the Israelites in the Desert of Sinai. For the Lord had told them they would surely die in the wilderness, and not one of them was left except Caleb son of Jephunneh and Joshua son of Nun." Forty years. 603,550 men. All dead. The word of God proved precisely accurate.'),
+                ('26:52-56', 'MacArthur: The census is taken for land allocation — larger tribes receive larger portions, but the specific land is determined by lot. The combination of population size and divine lot ensures both proportional justice and divine sovereignty in the inheritance distribution.'),
+            ],
+            'milgrom': [
+                ('26:1-4', 'Milgrom: The second census immediately follows the Baal Peor plague — a transition from judgment to preparation. The new count establishes who remains and who is eligible for the conquest. The census is a theological reset: the generation of judgment fully accounted for; the generation of promise beginning its official muster.'),
+                ('26:52-56', 'Milgrom: The land allocation by lot (goral) ensures that no human preference or political negotiation determines the inheritance. The lot is a divine instrument — the decision belongs to God. Tribal competition for prime territories is eliminated before it can arise.'),
+            ],
+            'ashley': [
+                ('26:64-65', 'Ashley: The census closing note — "Not one of them was among those counted by Moses and Aaron" — is the fulfilment of Num 14:29-32 with mathematical precision. Every man numbered in the first census who was over 20 is absent from the second. The covenant word has been executed completely.'),
+            ],
+            'sarna': [
+                ('26:55-56', 'Sarna: The land by lot (goral) removes human ambition from the equation. The same word for lot (goral) also means destiny — one\'s inheritance is God\'s ordained portion. Proverbs 16:33: "The lot is cast into the lap, but its every decision is from the Lord."'),
+            ],
+            'alter': [
+                ('26:64-65', 'Alter: "Not one of them was left except Caleb son of Jephunneh and Joshua son of Nun." The entire book of Numbers has been moving toward this sentence. The census that opened Numbers (ch.1) has produced its one remaining result: two men. Everyone else is gone. The forty years are complete, documented, acknowledged. The new chapter begins.'),
+            ],
+            'calvin': [
+                ('26:63-65', 'Calvin: The census\'s closing note is the most sobering data point in the Torah. Forty years of divine faithfulness matched by forty years of human faithlessness. Yet the community survives, the covenant endures, and the new generation stands at the threshold. God\'s purposes are not defeated by human failure; they are delayed and then fulfilled in the next generation.'),
+            ],
+            'netbible': [
+                ('26:55', 'NET Note: "The land is to be divided by lot" — the lot (goral) expresses the theological claim that land distribution is ultimately God\'s decision, not Israel\'s. Proportional justice (larger tribes get more) and divine sovereignty (where each tribe lives is God\'s choice) operate simultaneously.'),
+            ],
+        },
+        {
+            'header': 'Verses 52–65 — Land Allocation Principles; the Census Conclusion',
+            'verses': verse_range(52, 65),
+            'heb': [
+                ('goral', 'goral', 'lot / portion / destiny', 'The lot determines specific land boundaries for each tribe. Casting it expresses that land allocation is a divine decision. The same word for lot also means destiny — inheritance is God\'s ordained portion for each community.'),
+            ],
+            'ctx': 'The allocation principles (vv.52-56) balance tribal size and divine lot. The Levites are excluded — God is their inheritance. The chapter\'s final verses deliver the theological verdict: of the original census, only Caleb and Joshua survive. The forty-year sentence has been executed with complete precision.',
+            'cross': [
+                ('Ps 16:5-6', '"Lord, you alone are my portion and my cup; you make my lot secure. The boundary lines have fallen for me in pleasant places; surely I have a delightful inheritance." The Psalmist applies the Numbers land-lot theology to spiritual inheritance.'),
+                ('Acts 1:17', 'The word "share" (kleros) derives from the LXX goral of Numbers — the NT community inherits the language of lot-determined portions for ministry roles.'),
+            ],
+            'mac': [
+                ('26:52-56', 'MacArthur: The two-factor allocation — tribal size for amount, divine lot for location — is a masterpiece of covenant governance. Human proportionality is honoured; divine sovereignty is preserved. Neither pure equality nor pure lottery — a synthesis reflecting the covenant\'s character throughout: order and grace together.'),
+            ],
+            'milgrom': [
+                ('26:62', 'Milgrom: The Levites are counted separately (23,000) but receive no land portion — "They received no inheritance among the Israelites." Their inheritance is the priestly portions and the tithe. God himself is their portion (Num 18:20).'),
+            ],
+            'ashley': [
+                ('26:52-56', 'Ashley: The land-by-lot system reflects Numbers\' entire theology: the land is God\'s gift, distributed by his choice. Israel has not conquered on their own terms — they receive on God\'s terms, through military action he superintends and divine lot he determines. The inheritance is grace from start to finish.'),
+            ],
+            'sarna': [
+                ('26:55-56', 'Sarna: The prime agricultural land, strategic valleys, and coastal plains are all distributed by divine decision — removing the source of potential inter-tribal conflict before it arises. The lot system prevents the strongest tribes from claiming the best land by force or negotiation.'),
+            ],
+            'alter': [
+                ('26:52-56', 'Alter: The allocation formula — larger group, larger inheritance; smaller group, smaller inheritance — is a principle of proportional justice. But the qualifier (by lot) ensures that proportional justice does not become human favouritism. Structured yet sovereign: the Numbers system at its most characteristic.'),
+            ],
+            'calvin': [
+                ('26:52-56', 'Calvin: The lot teaches that covenant inheritance is not earned by military achievement but given by sovereign divine choice. The lot removes human ambition. The NT equivalent: our inheritance in Christ is "not from works, so that no one can boast" (Eph 2:9) — sovereignly assigned, graciously given.'),
+            ],
+            'netbible': [
+                ('26:65', 'NET Note: "Not one of them was left except Caleb son of Jephunneh and Joshua son of Nun" — fulfilment of the specific exception clause of Num 14:30. The forty-year wilderness period executed the covenant verdict with exact precision. The exception was promised; the exception was fulfilled.'),
+            ],
+        },
+    ],
+})
+
+num(27, {
+    'title': 'The Daughters of Zelophehad; Joshua Appointed',
+    'sections': [
+        {
+            'header': 'Verses 1–11 — The Daughters of Zelophehad: A Legal Precedent',
+            'verses': verse_range(1, 11),
+            'heb': [
+                ('lamah yiggara shem-avinu', 'lamah yiggara shem avinu', 'why should our father\'s name disappear?', 'The daughters\' legal argument: their father\'s name and inheritance should not be lost because he died without male heirs. The appeal is to covenant family continuity — no Israelite household should be extinguished from the inheritance.'),
+            ],
+            'ctx': 'The five daughters of Zelophehad (Mahlah, Noah, Hoglah, Milcah, Tirzah) bring their case to Moses, Eleazar, and the whole assembly: their father died without male heirs. They request his inheritance pass to them. Moses brings it to God; God rules in their favour and establishes new law — daughters inherit when there are no sons. The ruling establishes a comprehensive inheritance priority: son, daughter, brothers, father\'s brothers, nearest clan relative.',
+            'cross': [
+                ('Josh 17:3-4', '"Zelophehad had no sons but only daughters, whose names were Mahlah, Noah, Hoglah, Milcah and Tirzah. They went to Eleazar the priest, Joshua son of Nun, and the leaders and said, \'The Lord commanded Moses to give us an inheritance among our brothers.\' So Joshua gave them an inheritance among their father\'s brothers."'),
+                ('Gal 3:28', '"There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus." The NT principle of equality in inheritance finds OT anticipation in the Zelophehad ruling.'),
+            ],
+            'mac': [
+                ('27:1-7', 'MacArthur: The daughters demonstrate that the covenant system is responsive to cases it has not explicitly anticipated. They do not rebel; they petition. They appeal to the covenant principle of family continuity and receive a judicial ruling that extends the law\'s application. This is case law development at its most faithful: pressing established principles into new situations through legitimate petition.'),
+                ('27:8-11', 'MacArthur: The inheritance priority list (son, daughter, brothers, father\'s brothers, nearest relative) is one of the Torah\'s most systematic legal codifications. It ensures Israelite inheritance remains within the clan structure that maintains both land distribution and covenant family identity.'),
+            ],
+            'milgrom': [
+                ('27:5-7', 'Milgrom: "Moses brought their case before the Lord. And the Lord said to Moses, \'What Zelophehad\'s daughters are saying is right.\'" God affirms the daughters\' legal reasoning directly. This is one of the rare cases where God endorses human legal argument rather than simply promulgating law. The daughters\' argument is sound, and God says so.'),
+            ],
+            'ashley': [
+                ('27:1-7', 'Ashley: Five women address the entire male leadership of Israel with a legal argument — and win. The case demonstrates that the covenant system is responsive to equity claims. Where existing law produces unjust outcomes, legitimate petition can produce new precedent. The covenant is not rigidly patriarchal but responsive to justice.'),
+            ],
+            'sarna': [
+                ('27:4', 'Sarna: "Why should our father\'s name disappear from his clan because he had no son?" The daughters frame their claim in terms of their father\'s covenant status, not personal desire for property. They ask for the law\'s own logic to be applied consistently — covenant family continuity demands it.'),
+            ],
+            'alter': [
+                ('27:1-7', 'Alter: Five women stand before the entire Israelite assembly and make a legal argument. The narrative gives their names, their genealogy, and their argument in full. The detail is not decorative: these are real women making a real legal claim, and the text honours them by recording both their names and their successful argument.'),
+            ],
+            'calvin': [
+                ('27:5-7', 'Calvin: God\'s direct ruling demonstrates that the covenant legal system is not a closed code but a living system responsive to equity. When written law does not address a case, the covenant community may petition the lawgiver. The NT equivalent is prayer for wisdom (Jas 1:5) — bringing unaddressed cases to the one whose law always serves justice.'),
+            ],
+            'netbible': [
+                ('27:8', 'NET Note: "Tell the Israelites, \'If a man dies and leaves no son, give his inheritance to his daughter.\'" The ruling establishes a permanent legal principle (chuqqat mishpat — a judicial statute) that extends to all Israel, not just Zelophehad\'s daughters. The individual case becomes universal law.'),
+            ],
+        },
+        {
+            'header': 'Verses 12–23 — Moses Shown the Land; Joshua Commissioned',
+            'verses': verse_range(12, 23),
+            'heb': [
+                ('wesamachta et-yadcha alav', 'vesamachta et-yadcha alav', 'you shall lay your hand on him', 'The commissioning gesture for Joshua — the same hand-laying used for ordination (Lev 8) and substitution (Num 8). Moses transfers his authority to Joshua through the physical gesture before Eleazar and the whole assembly.'),
+            ],
+            'ctx': 'God shows Moses the land from Mount Abarim — he will see it but not enter it. Moses\'s response is entirely pastoral: his first concern is not his own fate but the community\'s future. "May the Lord appoint a man over this community so that they will not be like sheep without a shepherd." God appoints Joshua — "a man in whom is the spirit" — and Moses commissions him before Eleazar and the whole assembly through hand-laying and public authorisation.',
+            'cross': [
+                ('Deut 34:9', '"Now Joshua son of Nun was filled with the spirit of wisdom because Moses had laid his hands on him. So the Israelites listened to him and did what the Lord had commanded Moses."'),
+                ('John 10:11', '"I am the good shepherd. The good shepherd lays down his life for the sheep." Moses\'s prayer for a shepherd-leader (v.17) is answered first by Joshua and ultimately by Christ — the shepherd who not only guides but dies for the flock.'),
+            ],
+            'mac': [
+                ('27:15-17', 'MacArthur: Moses\'s prayer for a successor — "May the Lord appoint a man over this community so that they will not be like sheep without a shepherd" — is the prayer of a true shepherd. He does not grieve his own exclusion from the promised land; he grieves the community\'s potential leaderlessness. The mark of genuine leadership is that the community\'s welfare supersedes the leader\'s legacy.'),
+                ('27:18-23', 'MacArthur: The public commissioning of Joshua before Eleazar and the whole assembly ensures transparent succession. Covenant leadership transitions are not private arrangements but public commissionings, accountable to the community and its covenant authority structure.'),
+            ],
+            'milgrom': [
+                ('27:18-20', 'Milgrom: "So Moses did as the Lord commanded him. He took Joshua and had him stand before Eleazar the priest and the whole assembly. Then he laid his hands on him and commissioned him." The compliance formula is precise: Moses does exactly as commanded, in the prescribed order. The succession is covenantally ordered, not improvised.'),
+            ],
+            'ashley': [
+                ('27:12-14', 'Ashley: God\'s reminder to Moses of his sin at Meribah grounds his exclusion in consequence rather than arbitrariness. Moses needs to understand why he cannot enter. This understanding is what enables his pastoral response: knowing why he cannot go, he can still pray for the people who will.'),
+            ],
+            'sarna': [
+                ('27:17', 'Sarna: "So the Lord\'s people will not be like sheep without a shepherd" — the shepherd metaphor for leadership receives here its most pastoral expression in the Torah. Moses prays not for a general or a judge but for a shepherd. The request defines what covenant leadership fundamentally is.'),
+            ],
+            'alter': [
+                ('27:18', 'Alter: "Take Joshua son of Nun, a man in whom is the spirit, and lay your hand on him." The three qualifications — genealogy (son of Nun), divine qualification (the spirit), and public installation (the gesture) — together establish Joshua\'s legitimate authority. The succession is simultaneously human and divine.'),
+            ],
+            'calvin': [
+                ('27:15-17', 'Calvin: Moses\'s prayer for a shepherd-leader models the first principle of pastoral intercession: pray for the community\'s need before your own. Moses has just been told he will die without entering the promised land, and his response is not grief for himself but prayer for the people. This is the shepherd\'s heart.'),
+            ],
+            'netbible': [
+                ('27:20', 'NET Note: "Give him some of your authority so the whole Israelite community will obey him" — the Hebrew hod (authority, splendour) is the word used for the divine radiance. Moses transfers a portion of his covenant authority to Joshua — enough for public recognition. The community must see the transfer to accept it.'),
+            ],
+        },
+    ],
+})
+
+num(28, {
+    'title': 'The Offering Calendar: Daily, Weekly, Monthly',
+    'sections': [
+        {
+            'header': 'Verses 1–15 — The Tamid, Sabbath, and New Moon Offerings',
+            'verses': verse_range(1, 15),
+            'heb': [
+                ('tamid', 'tamid', 'continual / perpetual / regular', 'The foundational principle of Israel\'s public worship: two lambs every morning and evening sustain the covenant relationship without interruption. The altar never goes cold; the covenant is never suspended. Tamid is the pulse of Israel\'s daily life with God.'),
+            ],
+            'ctx': 'Numbers 28-29 provide the most comprehensive listing of Israel\'s public offering calendar in the Torah. The system operates at four time scales: daily (twice-daily tamid), weekly (Sabbath — double the daily), monthly (new moon), and annual (seven feasts). The tamid is the baseline: two unblemished lambs every day without exception, with grain and drink offerings. The Sabbath offering doubles the tamid; the new moon adds bulls and rams. Each higher time-unit builds on the daily foundation.',
+            'cross': [
+                ('Heb 10:11', '"Day after day every priest stands and performs his religious duties; again and again he offers the same sacrifices, which can never take away sins." The writer contrasts the repetitive tamid with Christ\'s once-for-all sacrifice — the perpetual offering points to its own insufficiency and the need for a final, unrepeatable sacrifice.'),
+                ('Rev 8:3-4', '"Another angel, who had a golden censer, came and stood at the altar. He was given much incense to offer, with the prayers of all God\'s people, on the golden altar in front of the throne." The heavenly altar of perpetual incense fulfils the tamid theology.'),
+            ],
+            'mac': [
+                ('28:1-8', 'MacArthur: The tamid — two lambs every morning and evening — is the heartbeat of Israel\'s worship. The regular, rhythmic sacrifice establishes that covenant relationship is not episodic (maintained only at festivals) but constant. The altar is never cold. The priests\' daily duty of maintaining the tamid is the most foundational act of Israelite worship.'),
+                ('28:9-10', 'MacArthur: The Sabbath offering doubles the tamid — four lambs instead of two, plus additional grain and drink offerings. The Sabbath is not a day of reduced worship but of intensified worship: more is offered to God on the day of rest, not less. The Sabbath amplifies the covenant\'s material expression.'),
+            ],
+            'milgrom': [
+                ('28:1-8', 'Milgrom: The comprehensive public offering calendar of Num 28-29 is unique in the Pentateuch for its systematic completeness. Where Lev 23 lists the feasts with their dates and theological character, Num 28-29 specifies the exact offerings for each occasion. The two texts are complementary: Leviticus provides the theological framework; Numbers provides the liturgical manual.'),
+            ],
+            'ashley': [
+                ('28:1-8', 'Ashley: The tamid establishes that Israel\'s relationship with God is maintained through regular, unfailing covenant acts, not merely through emotional response or crisis-driven devotion. The morning and evening lambs are offered whether Israel feels spiritually alive or dead, whether the day is exceptional or ordinary. Covenant faithfulness is expressed through regularity, not intensity.'),
+            ],
+            'sarna': [
+                ('28:9-10', 'Sarna: The Sabbath offering — "in addition to the regular burnt offering and its drink offering" — is built upon the tamid, not substituted for it. The Sabbath does not replace ordinary worship; it adds to it. Each special occasion adds to, not replaces, the baseline. Covenant worship has both a steady pulse and periodic intensifications.'),
+            ],
+            'alter': [
+                ('28:1-3', 'Alter: "Make sure that you present to me at the appointed time my food offerings, as an aroma pleasing to me." The divine first-person framing — "my food offerings," "to me," "pleasing to me" — positions the public offering system as a covenant meal relationship. The tamid feeds the covenant relationship.'),
+            ],
+            'calvin': [
+                ('28:1-15', 'Calvin: The tamid calendar teaches that covenant worship requires discipline, not merely inspiration. The daily, weekly, monthly offerings are not dependent on the worshipper\'s mood or Israel\'s national circumstances. The NT equivalent is the instruction to pray without ceasing (1 Thess 5:17) and to gather regularly (Heb 10:25): covenant faithfulness is maintained through regularity.'),
+            ],
+            'netbible': [
+                ('28:4', 'NET Note: "Prepare one lamb in the morning and the other at twilight" — the morning offering preceded the daily work; the evening offering concluded it. The day is bracketed by covenant sacrifice. The tamid creates a liturgical frame for every day of Israelite life, making each day a covenant day rather than a secular interval.'),
+            ],
+        },
+        {
+            'header': 'Verses 16–31 — Passover, Unleavened Bread, and Feast of Weeks',
+            'verses': verse_range(16, 31),
+            'heb': [
+                ('bikkurim', 'bikkurim', 'firstfruits', 'The offering at the beginning of the wheat harvest — the firstfruits principle applied to the grain harvest\'s completion. Two loaves of leavened bread presented as firstfruits, plus an elaborate burnt offering sequence.'),
+            ],
+            'ctx': 'The annual feast offerings: Passover and Unleavened Bread (vv.16-25) receive extensive offering sequences for all seven days; the Feast of Weeks/Pentecost (vv.26-31) adds a special burnt offering for its single day. Each feast\'s offering follows the same pattern: burnt offerings (bulls, rams, lambs), sin offering (male goat), plus grain and drink offerings. The accumulation across the festival calendar communicates the covenant\'s concentrated devotion.',
+            'cross': [
+                ('1 Cor 15:20', '"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep." Paul applies the firstfruits theology of Num 28:26 to the resurrection — Christ is the first of the harvest of resurrection.'),
+                ('Acts 2:1', '"When the day of Pentecost came, they were all together in one place." The Feast of Weeks — specified in Num 28:26-31 — is the day of the Spirit\'s outpouring, connecting agricultural firstfruits to the eschatological harvest of the new covenant community.'),
+            ],
+            'mac': [
+                ('28:16-25', 'MacArthur: The Passover and Unleavened Bread offering sequence — two young bulls, one ram, seven male lambs per day, plus a sin offering goat, for seven days — is the most elaborate offering complex in the Numbers calendar. The feast that commemorates Israel\'s foundational redemptive event receives the most sustained sacrificial attention. The redemption event is never routine.'),
+                ('28:26-31', 'MacArthur: The Feast of Weeks firstfruits offering acknowledges that the harvest\'s completion is God\'s gift and that its first and best belong to him before Israel eats of the new wheat. Prosperity and abundance are occasions for intensified worship, not reduced worship.'),
+            ],
+            'milgrom': [
+                ('28:16-25', 'Milgrom: The Passover offering complex in Num 28 is more elaborate than the Lev 23 listing — it specifies exact animal counts and grain and drink accompaniments for each of the seven days. The elaboration reflects the Numbers offering calendar\'s purpose as a priestly manual rather than a theological summary. Lev 23 tells Israel what to observe; Num 28-29 tells the priests what to offer.'),
+            ],
+            'ashley': [
+                ('28:26-31', 'Ashley: The Feast of Weeks offering brings together two theological streams: agricultural firstfruits (the first of the wheat harvest belongs to God) and historical covenant (fifty days after Passover). Numbers 28\'s offering calendar links the agricultural and historical dimensions of Israel\'s covenant calendar into a single liturgical unity.'),
+            ],
+            'sarna': [
+                ('28:16', 'Sarna: The placement of Passover instructions in the offering calendar confirms that the Passover is both a historical commemoration and a liturgical event requiring priestly management. Personal redemption (Passover) and communal covenant worship (the sacrificial calendar) are inseparable in Israel\'s theology.'),
+            ],
+            'alter': [
+                ('28:16-25', 'Alter: The seven-day Unleavened Bread offering sequence — the same animals each day, repeated seven times — embodies the covenant\'s consistency. The feast is not one dramatic gesture but a sustained, daily covenant act. Covenant faithfulness as regular discipline rather than periodic intensity.'),
+            ],
+            'calvin': [
+                ('28:26-31', 'Calvin: The Feast of Weeks offering, given at the harvest\'s completion, teaches that prosperity and abundance are occasions for intensified worship. The more God gives, the more Israel returns. The NT equivalent: "Command those who are rich in this present world to be generous and willing to share" (1 Tim 6:17-18).'),
+            ],
+            'netbible': [
+                ('28:26', 'NET Note: The Feast of Weeks marks the completion of the spring grain harvest, fifty days after the Passover firstfruits offering. The fifty-day counting period (the Omer) creates a liturgical arc between Passover (barley harvest) and Weeks (wheat harvest) — the entire spring harvest season is covenant time.'),
+            ],
+        },
+    ],
+})
+
+num(29, {
+    'title': 'The Autumn Feasts: Trumpets, Atonement, and Tabernacles',
+    'sections': [
+        {
+            'header': 'Verses 1–11 — Feast of Trumpets and Day of Atonement',
+            'verses': verse_range(1, 11),
+            'heb': [
+                ('yom teruah', 'yom teruah', 'day of trumpet blasting / day of the alarm', 'The alarm-blast that inaugurates the seventh month and calls Israel to assembly. The same teruah vocabulary appears in the Ark Prayer of Num 10:35 and in eschatological trumpet passages throughout the OT.'),
+            ],
+            'ctx': 'Numbers 29 provides the autumn feast offerings: the Feast of Trumpets (1 Tishri), the Day of Atonement (10 Tishri — with fasting), and the Feast of Tabernacles (15-22 Tishri — the most elaborate offering sequence in the entire calendar). The autumn feasts form a theological sequence: Trumpets (summons), Atonement (cleansing), Tabernacles (celebration in restored fellowship). The seventh month is the most liturgically dense period of Israel\'s year.',
+            'cross': [
+                ('Lev 23:27-32', 'The Lev 23 Yom Kippur commands (fasting, no work, the high priest\'s entry) are the foundation; Num 29:7-11 specifies the public offerings for that day — complementary texts providing the complete Yom Kippur requirement.'),
+                ('Rev 8:2', '"And I saw the seven angels who stand before God, and seven trumpets were given to them." The seven eschatological trumpets draw on the Yom Teruah theology — the final trumpet summons of the covenant community.'),
+            ],
+            'mac': [
+                ('29:1-6', 'MacArthur: The Feast of Trumpets opens the sacred seventh month. The trumpets summon; Atonement cleanses; Tabernacles celebrates. The sequence is the covenant\'s annual narrative arc: call, purification, and restored fellowship. The same arc governs individual salvation: call, justification, sanctification.'),
+                ('29:7-11', 'MacArthur: The Day of Atonement public offerings are the communal counterpart to the high priest\'s sanctuary ministry of Lev 16. The public offerings acknowledge the community\'s sinfulness; the high priestly ministry purges the sanctuary of accumulated defilement. Both are necessary; together they constitute the annual covenant reset.'),
+            ],
+            'milgrom': [
+                ('29:1', 'Milgrom: The Feast of Trumpets announces the sacred month — containing Atonement and Tabernacles. The trumpets are a month-long prologue: "prepare — the great days are coming." Only in later rabbinic tradition does 1 Tishri become the Jewish New Year (Rosh Hashanah); in Numbers, it is simply the beginning of the sacred seventh month.'),
+            ],
+            'ashley': [
+                ('29:7-11', 'Ashley: The Day of Atonement\'s two-part structure — fasting (self-denial) and elaborate public offering — combines inward and outward covenant response. Fasting expresses the community\'s recognition of sin and dependence; the offerings provide the covenantal mechanism for addressing that sin. Neither alone is sufficient.'),
+            ],
+            'sarna': [
+                ('29:1', 'Sarna: The Feast of Trumpets is described as a "day of teruah" — the alarm-blast rather than the assembly-blast. Its placement ten days before Atonement creates a ten-day period of preparation and self-examination before the covenant\'s most solemn day.'),
+            ],
+            'alter': [
+                ('29:7-11', 'Alter: The Day of Atonement offering list is identical in structure to the Trumpets offering, confirming that the two feasts of the seventh month share the same sacrificial weight. The similarity underscores their belonging together: summons and atonement are inseparable in the autumn sequence.'),
+            ],
+            'calvin': [
+                ('29:7-11', 'Calvin: The commanded fasting of Yom Kippur teaches that the covenant requires periodic, concentrated corporate self-examination. The NT church does not observe the Levitical calendar, but the principle of regular intentional self-examination — "Let a person examine themselves" (1 Cor 11:28) — is the NT counterpart of the Yom Kippur fasting requirement.'),
+            ],
+            'netbible': [
+                ('29:7', 'NET Note: "Deny yourselves" — the Hiphil of anah, to humble or afflict oneself. The reflexive construction indicates voluntary self-denial, not external imposition. Yom Kippur is the only legally mandated fast in the Torah — the fasting is not optional piety but covenant obligation.'),
+            ],
+        },
+        {
+            'header': 'Verses 12–40 — The Feast of Tabernacles: Seventy Bulls',
+            'verses': verse_range(12, 40),
+            'heb': [
+                ('Sukkot', 'Sukkot', 'Tabernacles / Booths / temporary shelters', 'The seven-day harvest festival of dwelling in temporary shelters — commemorating the wilderness period. The Tabernacles offering sequence is the most elaborate in the calendar: 70 bulls over seven days (decreasing from 13 to 7), plus rams and lambs, then a solemn assembly on the eighth day.'),
+            ],
+            'ctx': 'The Feast of Tabernacles receives the most elaborate offering sequence in Numbers 28-29. Days 1-7 feature decreasing burnt offerings: 13 bulls (day 1), 12, 11, 10, 9, 8, 7 — 70 bulls total, associated in rabbinic tradition with the 70 nations of Genesis 10. The eighth day (shemini atzeret) is a separate solemn assembly with a dramatically reduced offering (1 bull, 1 ram, 7 lambs) — as if God is calling the community to stay one more day in intimate fellowship after the great feast.',
+            'cross': [
+                ('John 7:37-38', '"On the last and greatest day of the festival, Jesus stood and said in a loud voice, \'Let anyone who is thirsty come to me and drink.\'" Jesus\' declaration on the last day of Tabernacles claims to fulfil the feast\'s deepest longing.'),
+                ('Zech 14:16', '"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles." Tabernacles is the eschatological feast — the nations joining Israel in the final celebration.'),
+            ],
+            'mac': [
+                ('29:12-34', 'MacArthur: The seventy bulls of Tabernacles\' seven days are the most discussed feature of the festival offering. Rabbinic tradition associates them with the seventy nations of Genesis 10 — Israel offering intercession for all humanity at its greatest feast. The covenant community\'s blessing is intended to overflow to all nations (Gen 12:3).'),
+                ('29:35-38', 'MacArthur: The eighth-day assembly\'s dramatically reduced offering — from Tabernacles\' elaborate sequence down to one bull, one ram, seven lambs — is interpreted in rabbinic tradition as an intimate private dinner after the great public feast. God calls his people to linger, to stay, to be present with him one more day.'),
+            ],
+            'milgrom': [
+                ('29:12-38', 'Milgrom: The Tabernacles offering sequence\'s decreasing bull count (13, 12, 11, 10, 9, 8, 7 = 70 total) is one of Numbers\' most mathematically distinctive features. The descending count creates a liturgical arc within the feast week: each day slightly less than the previous, building anticipation for the eighth day\'s quiet close.'),
+            ],
+            'ashley': [
+                ('29:35-38', 'Ashley: The shemini atzeret (eighth-day assembly) is structurally distinct from Tabernacles — Lev 23:36 and Num 29:35 both treat it as a separate feast. Its minimal offering after the week\'s extravagance creates a theological contrast: the great public celebration followed by a simple, intimate gathering. The eighth day signals what lies beyond the seven — the eschatological rest that follows the full week of covenant celebration.'),
+            ],
+            'sarna': [
+                ('29:12', 'Sarna: "On the fifteenth day of the seventh month, hold a sacred assembly and do no regular work. Celebrate a festival to the Lord for seven days." The seventh month contains three feasts compressed into its first three weeks — the most liturgically dense period of Israel\'s year, Israel\'s most sustained engagement with the covenant worship calendar.'),
+            ],
+            'alter': [
+                ('29:35-38', 'Alter: The eighth day\'s reduced offering — one bull, one ram, seven lambs — is a striking diminuendo after the Tabernacles crescendo. The feast week builds to 70 bulls and falls back to 1. The liturgical shape of a great celebration followed by intimate closure: the party ends, the guests depart, but God asks his people to stay one more day in quiet fellowship.'),
+            ],
+            'calvin': [
+                ('29:12-40', 'Calvin: The Feast of Tabernacles\' seven-day duration and booth-dwelling teach that covenant joy is both extended and embodied. The Christian is called not to brief moments of spiritual intensity but to sustained orientation of joy in God\'s presence. The eighth day\'s intimate assembly models the contemplative dimension of covenant life: after the public celebration, private fellowship.'),
+            ],
+            'netbible': [
+                ('29:35', 'NET Note: The shemini atzeret (eighth-day restraint) is a distinct feast appended to Tabernacles. In later rabbinic practice it became Simchat Torah (rejoicing in the Torah). The eighth day\'s significance: beyond the seven of completeness, the eighth signals new creation — rest beyond rest, the eschatological Sabbath.'),
+            ],
+        },
+    ],
+})
+
+num(30, {
+    'title': 'The Law of Vows: Accountability and Release',
+    'sections': [
+        {
+            'header': 'Verses 1–8 — Men\'s Vows; Daughters\' Vows',
+            'verses': verse_range(1, 8),
+            'heb': [
+                ('neder', 'neder', 'vow', 'A voluntary, binding promise to God. Once made it cannot be broken (v.2: "he must not break his word but must do everything he said"). The vow is a self-imposed covenant obligation; breaking it is a form of covenant infidelity toward God himself.'),
+                ('hepher', 'hepher', 'annul / nullify / revoke', 'The technical term for the father\'s or husband\'s right to nullify a woman\'s vow. Appears only in covenant-revocation contexts — the most formal possible cancellation of a binding obligation. Silence ratifies; explicit revocation nullifies.'),
+            ],
+            'ctx': 'Numbers 30 addresses vows within the household authority structure of ancient Israel. Men\'s vows are unconditional and binding (v.2). Women\'s vows have two levels: an unmarried daughter under her father (vv.3-5) and a married woman under her husband (vv.6-15). In both cases, the male authority figure has the right to nullify — but only immediately upon hearing the vow. Silence is ratification; delay removes the right to revoke. The vow law protects both the innocent woman (she can be released from rash vows) and the covenant (all voluntary commitments carry binding force).',
+            'cross': [
+                ('Matt 5:33-37', '"Do not swear an oath at all... All you need to say is simply \'Yes\' or \'No\'." Jesus elevates the vow principle beyond the Levitical system: the Christian\'s ordinary word should be as reliable as a sworn vow.'),
+                ('Eccl 5:4-5', '"When you make a vow to God, do not delay to fulfil it... It is better not to make a vow than to make one and not fulfil it." Ecclesiastes applies the Num 30 principle directly.'),
+            ],
+            'mac': [
+                ('30:1-2', 'MacArthur: "A man who makes a vow to the Lord or takes an oath to obligate himself by a pledge must not break his word." Once made, the vow shares the binding force of God\'s own commands. Breaking a vow is not merely failing to follow through — it is covenant infidelity. The voluntary becomes obligatory.'),
+                ('30:3-5', 'MacArthur: The father\'s authority over his daughter\'s vows is protective: a daughter who makes a rash vow she cannot fulfil can be released by her father\'s timely revocation. But the father must act immediately. Procrastination eliminates the protective option. Authority structures are meant to protect, not control.'),
+            ],
+            'milgrom': [
+                ('30:3-5', 'Milgrom: The vow law\'s household authority structure reflects the legal reality that women\'s covenant obligations in ancient Israel were embedded in family structures. The father\'s right to revoke is not a denigration of the daughter\'s agency but recognition that her vows could create obligations affecting the entire household.'),
+            ],
+            'ashley': [
+                ('30:1-15', 'Ashley: The vow law\'s careful attention to household authority and gender is characteristic of Numbers\' pastoral concern for practical covenant living. It does not simply command "keep your vows"; it provides for the complexity of vows made within family structures, with authority relationships that affect what obligations are binding and what relief is available.'),
+            ],
+            'sarna': [
+                ('30:2', 'Sarna: "He must not break his word" — literally "he shall not defile his word" (lo yachel devaro). The verb chalal (to defile, profane) is the same root as profaning God\'s name (Lev 22:32). Breaking a personal vow defiles one\'s own integrity and by extension the covenant God in whose name the vow was made.'),
+            ],
+            'alter': [
+                ('30:3-5', 'Alter: The father\'s right to nullify is hedged with two conditions: he must hear the vow (he cannot revoke what he does not know), and he must act on the day of hearing (delay forfeits the right). The temporal precision is the law\'s elegant protection against both arbitrary authority and arbitrary commitment.'),
+            ],
+            'calvin': [
+                ('30:1-2', 'Calvin: The vow law\'s binding character teaches that voluntary covenant commitments carry real weight. The Christian who takes membership vows, baptismal vows, or marriage vows has made a voluntary binding commitment that partakes of the same seriousness as Israel\'s formal vows. Casual treatment of such vows is covenant infidelity in NT terms as surely as in OT terms.'),
+            ],
+            'netbible': [
+                ('30:5', 'NET Note: "Her father may nullify any vow she has made... and the Lord will release her from it" — the divine release is explicit. When the father properly revokes the vow, God himself releases the obligation. The authority structure is not merely social but covenantally sanctioned.'),
+            ],
+        },
+        {
+            'header': 'Verses 9–16 — Widows\', Divorced Women\'s, and Married Women\'s Vows',
+            'verses': verse_range(9, 16),
+            'heb': [
+                ('gerushah', 'gerushah', 'divorced woman / sent away', 'A woman who has been sent away from her husband. Her vow is fully binding — she has no male authority figure to revoke it on her behalf. Her covenant obligations are her own, and she bears full accountability for them as a direct covenant agent.'),
+            ],
+            'ctx': 'Widows and divorced women (v.9) bear full, unconditional covenant accountability for their vows — no male authority figure can revoke on their behalf. Married women\'s vows (vv.10-15) carry the husband\'s right to revoke (same-day, on hearing), but late revocation transfers guilt from the wife to the husband. The pattern is consistent: where a male authority figure is present and hearing, he has a time-limited right to revoke; where none exists, the woman bears full covenant accountability. The law is not about women\'s capacity for covenant but about household structures of accountability.',
+            'cross': [
+                ('1 Cor 7:34', '"An unmarried woman or virgin is concerned about the Lord\'s affairs: her aim is to be devoted to the Lord in both body and spirit." The unmarried woman\'s undivided devotion draws on the vow law\'s logic: she bears her covenant obligations directly, without mediation.'),
+                ('Ruth 1:16-17', '"Where you go I will go... May the Lord deal with me, be it ever so severely, if even death separates you and me." Ruth\'s oath is a widow\'s vow — fully binding under Num 30:9.'),
+            ],
+            'mac': [
+                ('30:9', 'MacArthur: The widow and divorced woman\'s vow is unconditionally binding — full covenant accountability. The absence of a male authority figure does not diminish their obligation; it simply means there is no revocation mechanism. Their vows are as binding as any man\'s. The law treats them as fully responsible covenant agents.'),
+                ('30:15', 'MacArthur: The husband who allows his wife\'s vow to stand and then revokes it later bears her guilt. This guilt-transfer provision makes capricious authority-exercise costly. Authority structures carry accountability, not just privilege.'),
+            ],
+            'milgrom': [
+                ('30:9', 'Milgrom: The equal binding force of widows\' and divorced women\'s vows reflects a consistent legal principle: covenant accountability is proportional to covenant agency. Where there is no male authority figure to provide oversight, the woman stands as a full covenant agent accountable directly to God.'),
+            ],
+            'ashley': [
+                ('30:10-15', 'Ashley: The married woman\'s vow law creates a careful balance: the husband has authority to revoke, but it is bounded (same-day, on hearing) and carries consequences (guilt-transfer if misused). Authority in the covenant community is always accountable authority.'),
+            ],
+            'sarna': [
+                ('30:9', 'Sarna: Widows and divorcees are treated identically — both women without a current male authority structure, both bearing full unbounded covenant accountability. Loss of the marriage relationship (whether through death or divorce) places women in the same legal position of direct accountability before God.'),
+            ],
+            'alter': [
+                ('30:15', 'Alter: "If he nullifies them after he has heard them, then he will be responsible for her guilt" — the guilt-transfer clause is the vow law\'s most sophisticated provision. Authority is not a one-way power to revoke; it carries the obligation to act timely and the consequences of acting improperly.'),
+            ],
+            'calvin': [
+                ('30:9-16', 'Calvin: The widow and divorcee\'s fully binding vows teach that no external authority structure can substitute for personal covenant accountability. Each believer stands directly before God for the commitments they have made, regardless of social circumstances. God is the ultimate recipient and enforcer of every covenant promise.'),
+            ],
+            'netbible': [
+                ('30:15', 'NET Note: "He will be responsible for her guilt" — the Hebrew yissa et-avonah (he will bear her iniquity) uses the same guilt-bearing language as the priests\' bearing of Israel\'s iniquity (Num 18:1). The husband who improperly revokes becomes an unwilling guilt-bearer — a sobering reminder that authority in the covenant community always carries corresponding responsibility.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-6a complete: Numbers 26-30 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-6b: Chapters 31–36 — Midianite War; Transjordan; Itinerary; Boundaries;
+#          Cities of Refuge; Zelophehad Marriage Restriction
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(31, {
+    'title': 'The War Against Midian: Covenant Justice and Its Aftermath',
+    'sections': [
+        {
+            'header': 'Verses 1–24 — The Midianite War; Balaam\'s Death',
+            'verses': verse_range(1, 24),
+            'heb': [
+                ('neqam', 'neqam', 'vengeance / covenant justice', 'The war against Midian is explicitly framed as divine neqam (vengeance / retributive justice) for the Baal Peor seduction. This is not ethnic warfare but covenant justice: Midian attacked Israel\'s covenant faithfulness through religious-sexual seduction, and the response is proportional covenant judgment.'),
+            ],
+            'ctx': 'Numbers 31 executes the command of Num 25:17-18: war against Midian for the Baal Peor seduction. Israel defeats Midian, killing all the men including five Midianite kings and Balaam. Moses is furious that the women were spared — they were the Peor seduction\'s agents (v.16). Only the virgin girls are spared. The chapter provides extensive purity requirements for returning soldiers and a detailed spoil-distribution formula. The war\'s theological purpose is the elimination of the specific religious-sexual threat that nearly destroyed Israel at Peor.',
+            'cross': [
+                ('Rev 19:11-15', '"I saw heaven standing open and there before me was a white horse, whose rider is called Faithful and True. With justice he judges and wages war." The divine-warrior imagery of Num 31 finds its eschatological fulfilment — covenant warfare reaches its ultimate expression.'),
+                ('Num 25:17-18', '"Treat the Midianites as enemies and kill them, because they treated you as enemies when they deceived you in the Peor incident." The Midianite war executes this specific command — it is not impulsive violence but the fulfilment of a covenant instruction.'),
+            ],
+            'mac': [
+                ('31:1-8', 'MacArthur: The Midianite war\'s theological rationale — covenant justice for the Baal Peor seduction — is established in Num 25:17-18. The war is not ethnic aggression but the execution of a specific divine command in response to a specific covenant attack. Balaam\'s death (v.8) confirms his role: the oracle-seller who counselled Israel\'s destruction perishes by the sword of the people he tried to destroy.'),
+                ('31:19-24', 'MacArthur: The purification requirements for returning soldiers apply the red heifer theology of Num 19 to a military context. Even justified warfare creates impurity; even covenant justice requires subsequent purification. The warrior who kills for God must still be cleansed before re-entering the covenant community.'),
+            ],
+            'milgrom': [
+                ('31:14-18', 'Milgrom: Moses\'s fury at the returning soldiers for sparing the women is grounded in v.16: "They were the ones who followed Balaam\'s advice and enticed the Israelites to be unfaithful to the Lord in the Peor incident." The women who survived were the specific agents of the seduction that killed 24,000 Israelites.'),
+            ],
+            'ashley': [
+                ('31:1-2', 'Ashley: "The Lord said to Moses, \'Take vengeance on the Midianites for the Israelites.\'" The divine first-person command grounds the war in covenant justice, not human aggression. The chapter is morally uncomfortable for modern readers, but the war is a direct response to a direct covenant attack, executed under explicit divine command.'),
+            ],
+            'sarna': [
+                ('31:7-8', 'Sarna: "They fought against Midian, as the Lord commanded Moses, and killed every man. Among their victims were Evi, Rekem, Zur, Hur and Reba — the five kings of Midian. They also killed Balaam son of Beor with the sword." Balaam\'s death closes the theological loop of chs.22-25: the prophet who counselled Israel\'s destruction perishes in the war his counsel provoked.'),
+            ],
+            'alter': [
+                ('31:14-16', 'Alter: Moses\'s anger at the returning soldiers — "Have you allowed all the women to live?" — is the chapter\'s moral centre. The women Moses condemns are specifically the Peor agents. His anger is not bloodthirst but covenant consistency: the war was for elimination of the specific threat; returning with that threat intact defeats the war\'s purpose.'),
+            ],
+            'calvin': [
+                ('31:1-2', 'Calvin: The Midianite war is a covenant war — commanded by God, executed for covenant justice, subject to covenant rules (purification required even for justified killing). The NT does not sanction holy war for the church; the covenant community\'s warfare is now spiritual (Eph 6:10-18), not military.'),
+            ],
+            'netbible': [
+                ('31:16', 'NET Note: "They were the ones who followed Balaam\'s advice and enticed the Israelites to be unfaithful to the Lord in the Peor incident" — Balaam\'s role in the Baal Peor seduction, only hinted at in Num 25, is made explicit here. Balaam could not curse Israel prophetically, so he devised a strategy of seduction (cf. Rev 2:14).'),
+            ],
+        },
+        {
+            'header': 'Verses 25–54 — Division of Spoil; the Warrior\'s Offering',
+            'verses': verse_range(25, 54),
+            'heb': [
+                ('kipper', 'kipper', 'make atonement / atone for', 'The voluntary warrior\'s offering (vv.48-54) is described as making atonement — unusual since no specific sin is confessed. The atonement appears to be a general acknowledgment that even covenant warriors who survived a divinely commanded war stand before God in need of his mercy, not self-congratulation.'),
+            ],
+            'ctx': 'The spoil division (vv.25-47) distributes equally between soldiers and community, with a levy from each half going to the Lord (via priests and Levites). The warriors\' voluntary additional offering (vv.48-54) — 16,750 shekels of gold jewellery — is given because not one Israelite soldier died in the battle (v.49). The offering is presented as atonement and memorial. The war\'s final accounting is theological: the community received everything; not one life was lost; the gold offering acknowledges that God fought for them.',
+            'cross': [
+                ('2 Sam 8:11-12', '"King David dedicated these articles to the Lord, as he had done with the silver and gold from all the nations he had subdued." David\'s practice of consecrating war spoil reflects the principle established in the warrior\'s offering of Num 31.'),
+                ('1 Sam 30:24', '"The share of the man who stayed with the supplies is to be the same as that of him who went down to the battle." David codifies the equal-spoil-distribution principle of Num 31:27.'),
+            ],
+            'mac': [
+                ('31:48-54', 'MacArthur: The voluntary gold offering of 16,750 shekels — given because not one Israelite soldier died — is one of Numbers\' most theologically significant moments. The officers acknowledge the victory was not their achievement: "to make atonement for ourselves before the Lord." Even legitimate warfare requires atonement; even a divinely commanded victory is received with humility.'),
+            ],
+            'milgrom': [
+                ('31:25-47', 'Milgrom: The equal division of spoil (half to soldiers, half to community) with proportional levies to the Lord is a sophisticated covenant economic arrangement. The soldiers who risk their lives receive no more than those who stayed behind — the principle of equal covenant benefit regardless of role.'),
+            ],
+            'ashley': [
+                ('31:49', 'Ashley: "Not one of us is missing" — the chapter\'s theological summit. The entire military force returned alive from a war against five kings. The miraculous preservation was not the soldiers\' achievement; it was God\'s. The gold offering acknowledges this: atonement for themselves, because they know the victory was not their doing.'),
+            ],
+            'sarna': [
+                ('31:50', 'Sarna: The specific list of jewellery items — armbands, bracelets, signet rings, earrings, necklaces — is the most detailed inventory of personal adornment in Numbers. The voluntary offering of personal jewellery that came through Midianite women is simultaneously a material gift and a symbolic purification from the seduction.'),
+            ],
+            'alter': [
+                ('31:49', 'Alter: "Your servants have counted the soldiers under our command, and not one is missing." After the complex moral difficulties of the Midianite war, this single sentence of complete divine protection reorients everything: God kept faith with his covenant army. Not one life lost. The gold offering is the only appropriate response to such preservation.'),
+            ],
+            'calvin': [
+                ('31:48-54', 'Calvin: The warriors\' voluntary offering — acknowledging that even a divinely commanded war requires atonement — models the principle that proximity to legitimate violence requires cleansing before God. The Christian\'s entire life requires continuous covenant cleansing, not because warfare is inherently sinful, but because every human act stands under God\'s holiness.'),
+            ],
+            'netbible': [
+                ('31:50', 'NET Note: "To make atonement for ourselves before the Lord" — the voluntary gold offering is described as atonement (kipper) with no specific sin stated. The atonement appears to be a general acknowledgment: even covenant warriors who survived a divinely commanded war stand before God in need of his mercy rather than self-congratulation.'),
+            ],
+        },
+    ],
+})
+
+num(32, {
+    'title': 'The Transjordan Tribes: Settlement Before the Jordan Crossing',
+    'sections': [
+        {
+            'header': 'Verses 1–27 — Reuben and Gad\'s Request; Moses\'s Rebuke and Negotiation',
+            'verses': verse_range(1, 27),
+            'heb': [
+                ('pen-teniu et-lev', "pen-teniu et-lev", 'lest you discourage the hearts', 'Moses\'s initial rebuke invokes the Kadesh crisis: if Reuben and Gad settle east of the Jordan before the conquest, the rest of Israel will lose heart — just as the spy report discouraged the previous generation. The echo of Num 13-14 is intentional and pointed.'),
+            ],
+            'ctx': 'Reuben, Gad, and half-Manasseh have large livestock herds and find the east-Jordan territories ideal. They request to settle there rather than crossing into Canaan. Moses\'s reaction invokes the spy crisis: "Should your fellow Israelites go to war while you sit here?" The tribes propose a compromise: their families settle in east-Jordan cities, but all fighting men cross with Israel and fight until every tribe has its inheritance. Moses accepts with a conditional oath: fulfil the military obligation, receive the east-Jordan land; fail, receive inheritance in Canaan like everyone else.',
+            'cross': [
+                ('Josh 22:1-4', '"Then Joshua summoned the Reubenites, the Gadites and the half-tribe of Manasseh and said to them, \'You have done all that Moses the servant of the Lord commanded, and you have obeyed me in everything I commanded.\'" The Num 32 commitment is honoured completely in Joshua.'),
+                ('Heb 6:12', '"We do not want you to become lazy, but to imitate those who through faith and patience inherit what has been promised." The east-Jordan tribes\' commitment (fight first, then inherit) models the principle that covenant inheritance requires active participation in the community\'s mission.'),
+            ],
+            'mac': [
+                ('32:6-9', 'MacArthur: Moses\'s invocation of the Kadesh crisis — "Why do you want to discourage the Israelites from crossing over?" — reveals his awareness that the new generation could repeat the old generation\'s failure. Covenant leadership means watching for the patterns that have destroyed communities before and naming them before they repeat.'),
+                ('32:20-24', 'MacArthur: The conditional oath Moses extracts models the principle of corporate covenant obligation. Personal settlement does not release individuals from community responsibility. The east-Jordan tribes cannot enjoy their inheritance while their brothers fight without them.'),
+            ],
+            'milgrom': [
+                ('32:6-15', 'Milgrom: Moses\'s extensive rehearsal of the Kadesh crisis (vv.6-15) is a direct accusation: "you are doing what your fathers did." The new generation, standing at the threshold of the promised land, is about to repeat the old generation\'s fatal self-interest. The Reubenite/Gadite proposal must be reframed before it destroys the community\'s momentum.'),
+            ],
+            'ashley': [
+                ('32:16-19', 'Ashley: The tribes\' counter-proposal — "we will build pens for our livestock and cities for our women and children, but we will arm ourselves and go ahead of the Israelites" — transforms a potentially self-serving request into a covenantal contribution. They will go ahead (before the Israelites), not merely alongside. The proposal becomes an act of covenant leadership.'),
+            ],
+            'sarna': [
+                ('32:1', 'Sarna: "The Reubenites and Gadites, who had very large herds and flocks, saw that the lands of Jazer and Gilead were suitable for livestock." Economic observation is not sin — the problem is the potential covenant consequence of acting on it without considering community obligations.'),
+            ],
+            'alter': [
+                ('32:16-17', 'Alter: The tribes\' offer is carefully worded: families stay behind (Moses\'s concern addressed) but warriors go ahead (his deeper concern — military desertion — addressed). The negotiation produces a covenant-consistent solution to a legitimate need. Both parties\' concerns are resolved without compromising covenant obligations.'),
+            ],
+            'calvin': [
+                ('32:6-9', 'Calvin: Moses\'s rebuke models the responsibility of covenant leaders to interrupt potentially catastrophic patterns. The Reubenite and Gadite request, however reasonable in livestock terms, could become the new spy crisis if not properly negotiated. Moses has seen this story before and will not let it repeat.'),
+            ],
+            'netbible': [
+                ('32:17', 'NET Note: "We will arm ourselves quickly and go ahead of the Israelites" — the word "quickly" (chushim) emphasises urgency. The tribes are not looking for an excuse to delay; they are volunteering to be the vanguard. This reframes their request entirely: not "let us stay behind" but "let us go first, so we can return to our families."'),
+            ],
+        },
+        {
+            'header': 'Verses 28–42 — The Agreement Formalised; the Transjordan Settlement',
+            'verses': verse_range(28, 42),
+            'heb': [
+                ('im-lo yaavru chaluzim', "im-lo yaavru chaluzim ittechem", 'if they do not cross over armed with you', 'The conditional clause of the oath — if the tribes fail to cross with the armed force, the east-Jordan settlement is forfeit and they receive their inheritance in Canaan. The condition is public, specific, and enforceable.'),
+            ],
+            'ctx': 'Moses formalises the agreement before Eleazar, Joshua, and the tribal leaders — ensuring it survives his death. The conditional terms are clear: cross armed with Israel, fight until the land is subdued, then return to the east-Jordan inheritance. Failure means Canaan inheritance with everyone else. The chapter closes with the cities being built and additional Manassite territories conquered. The Transjordan settlement begins; the covenant agreement is in force.',
+            'cross': [
+                ('Josh 1:12-15', '"But to the Reubenites, the Gadites and the half-tribe of Manasseh, Joshua said, \'Remember the command that Moses the servant of the Lord gave you...\'" Joshua enforces the Num 32 agreement at the Jordan crossing.'),
+                ('Josh 22:2-3', '"You have kept all that Moses the servant of the Lord commanded you. You have obeyed me in everything I commanded. For a long time now you have not deserted your fellow Israelites but have carried out the mission the Lord your God gave you."'),
+            ],
+            'mac': [
+                ('32:28-32', 'MacArthur: The formalisation before Eleazar and Joshua ensures continuity beyond Moses\'s death. The agreement becomes institutionally binding — not dependent on Moses\'s personal authority but embedded in the covenant community\'s public record. Commitments that extend beyond an individual\'s lifetime must be publicly witnessed and institutionally embedded.'),
+            ],
+            'milgrom': [
+                ('32:33-42', 'Milgrom: The rebuilding of cities begins immediately after the agreement is formalised — before the fighting men cross the Jordan. The families need settled, defensible cities while the warriors are away. The practical urgency confirms that the east-Jordan settlement was not a fantasy but a carefully planned covenant arrangement.'),
+            ],
+            'ashley': [
+                ('32:28-32', 'Ashley: The agreement\'s formalisation ensures that no future generation can claim the east-Jordan tribes settled without covenant basis. Their legitimacy within the covenant community is publicly established — they are not deserters but warriors who fulfilled their obligations and then received their promised portion.'),
+            ],
+            'sarna': [
+                ('32:33', 'Sarna: The addition of half-Manasseh to the Reuben and Gad agreement — introduced without prior mention in the negotiations — reflects Manasseh\'s military successes in Gilead (vv.39-42). The covenant arrangement is flexible enough to accommodate additional participants whose contributions earn them a share.'),
+            ],
+            'alter': [
+                ('32:29-30', 'Alter: Moses\'s conditional oath is the most precise covenant conditional in Numbers. The condition is fair, the alternatives are clear, the enforcement is public. The covenant community\'s social contract is expressed with legal exactitude.'),
+            ],
+            'calvin': [
+                ('32:28-42', 'Calvin: The Transjordan settlement models the principle that geographic separation does not release covenant community members from shared obligations. The east-Jordan tribes\' families live in a different land; their warriors fight on the western side of the Jordan. Physical distance does not dissolve covenant solidarity.'),
+            ],
+            'netbible': [
+                ('32:33', 'NET Note: "Then Moses gave to the Gadites, the Reubenites, and the half-tribe of Manasseh... the kingdom of Sihon king of the Amorites and the kingdom of Og king of Bashan" — the territories given are the recently conquered kingdoms of Num 21. The east-Jordan settlement is built on Israel\'s military victories, not on dispossessing a non-hostile people.'),
+            ],
+        },
+    ],
+})
+
+num(33, {
+    'title': 'The Wilderness Itinerary: Forty Years in Forty-Two Stages',
+    'sections': [
+        {
+            'header': 'Verses 1–49 — The Journey from Egypt to Moab',
+            'verses': verse_range(1, 49),
+            'heb': [
+                ('massa', "massa", 'journey / stage / setting out', 'Each wilderness stop is a massa — a journey-stage, a setting-out. The word occurs 42 times in the itinerary, once for each stage. The wilderness is not a featureless void but a sequence of precisely remembered divine appointments. Each campsite is a moment in God\'s covenant choreography.'),
+            ],
+            'ctx': 'Numbers 33 is the Torah\'s wilderness travel log — 42 campsite names from Rameses to the plains of Moab. The list names places mentioned elsewhere in Exodus-Numbers and many mentioned nowhere else. Theologically, it proves that God\'s forty-year custody of Israel was precise, intentional, and remembered. Not a single stage is unnamed or forgotten. The wilderness was not chaos but a divinely orchestrated sequence of divine meetings. The chapter closes (vv.50-56) with the conquest command: drive out the inhabitants, destroy their religious sites, possess the land by lot.',
+            'cross': [
+                ('Acts 7:36-38', '"He led them out of Egypt and performed wonders and signs in Egypt, at the Red Sea and for forty years in the wilderness." Stephen\'s speech summarises the wilderness period as a single, divinely led journey — the same theology of the Num 33 itinerary.'),
+                ('Heb 3:7-4:2', 'The writer of Hebrews interprets the wilderness journey as a warning pattern for the NT community — the places of failure (Meribah, Kadesh) are the itinerary\'s theological landmarks.'),
+            ],
+            'mac': [
+                ('33:1-2', 'MacArthur: "Moses recorded the stages in their journey at the Lord\'s command." The itinerary is divine historical record, not human memoir. Every campsite name is a divine acknowledgment: Israel was there, God was there with them. The wilderness was not formless suffering but a precisely remembered sequence of divine accompaniment.'),
+                ('33:3-9', 'MacArthur: The itinerary begins at Rameses on the fifteenth of Nisan, "while the Egyptians were burying all their firstborn." The departure is timed against Egypt\'s grief. Every Israelite reading this itinerary knows its first step: from the land of death, on the morning after redemption.'),
+            ],
+            'milgrom': [
+                ('33:1-9', 'Milgrom: The wilderness itinerary is a priestly compilation of genuine historical records — an administrative travel log preserved because it documented the covenant community\'s actual journey under God\'s guidance. The comprehensiveness and detail argue against literary invention; the precision argues for genuine archival material.'),
+            ],
+            'ashley': [
+                ('33:1-49', 'Ashley: The itinerary\'s 42 stages has attracted symbolic interpretation: 42 is 6 times 7 (the number before completion). Whether or not this is the compiler\'s intent, the list presents Israel\'s wilderness journey as a precisely bounded, divinely completed sequence — not chaotic wandering but purposeful formation.'),
+            ],
+            'sarna': [
+                ('33:2', 'Sarna: "Moses recorded the stages in their journey at the Lord\'s command" — the divine command to record establishes the itinerary\'s authority. This is the official covenant community\'s record of its formative journey. The wilderness years are not to be blurred into generic suffering; they are to be precisely remembered as the specific locations of God\'s faithfulness.'),
+            ],
+            'alter': [
+                ('33:3-9', 'Alter: The itinerary\'s opening — "They set out from Rameses on the fifteenth day of the first month, the day after the Passover, marching out defiantly while all the Egyptians were burying their firstborn" — is one of the most cinematically powerful sentences in Numbers. The contrast is total: Egypt buries its dead; Israel marches out boldly. The wilderness journey begins at Egypt\'s maximum grief and Israel\'s maximum deliverance.'),
+            ],
+            'calvin': [
+                ('33:1-49', 'Calvin: The divine command to record the itinerary teaches that God\'s guidance of his people through difficult times is meant to be remembered. The wilderness journey — with all its failures and faithful provisions — is not to be forgotten but documented. "Do this in remembrance of me" (Luke 22:19); "Remember what you were taught" (Col 3:16). The covenant community\'s history is covenant theology.'),
+            ],
+            'netbible': [
+                ('33:3', 'NET Note: "They marched out boldly in plain view of all the Egyptians" — literally "with a high hand" (beyad ramah), the same phrase as Exod 14:8 for Israel\'s departure. The "high hand" of covenant courage here contrasts with the "high hand" of covenant defiance in Num 15:30. The same posture can express either covenant courage or covenant arrogance.'),
+            ],
+        },
+        {
+            'header': 'Verses 50–56 — The Conquest Command: Drive Out the Inhabitants',
+            'verses': verse_range(50, 56),
+            'heb': [
+                ('wehorashtem et-kol-yoshvei ha\'aretz', "wehorashtem kol yoshvei", 'you shall drive out all the inhabitants of the land', 'The conquest command issued at the journey\'s end — remove the Canaanite religious infrastructure (carved images, molten idols, high places) and possess the land by divine assignment. The command is comprehensive and non-negotiable.'),
+            ],
+            'ctx': 'The wilderness itinerary closes (v.49) and immediately the conquest command issues (vv.50-56): drive out all inhabitants, destroy their religious sites, take possession by lot. The warning is pointed: if the inhabitants are not driven out, those who remain will become "barbs in your eyes and thorns in your sides." The land belongs to God; he is giving it to Israel; Israel must receive it on his terms. Incomplete obedience will produce incomplete blessing — the Judges narrative will prove this with devastating thoroughness.',
+            'cross': [
+                ('Judg 2:1-3', '"I said, \'I will never break my covenant with you, and you shall not make a covenant with the people of this land...\' But you have disobeyed me. Why have you done this? And I have also said, \'They will become traps for you, and their gods will become snares to you.\'" Judges fulfils the Num 33:55 warning exactly.'),
+                ('2 Cor 10:3-5', '"For though we live in the world, we do not wage war as the world does... We demolish arguments and every pretension that sets itself up against the knowledge of God." Paul\'s spiritual warfare language echoes the Num 33 conquest command, applied to the Christian\'s interior conquest of opposing thought.'),
+            ],
+            'mac': [
+                ('33:51-53', 'MacArthur: The conquest command is comprehensive: drive out all inhabitants, destroy all idolatrous infrastructure (carved images, molten idols, high places), take possession of the land. The comprehensiveness is necessary — partial obedience in a covenant war produces the Judges narrative: the inhabitants who remain become exactly the "thorns and barbs" the warning predicted.'),
+                ('33:55-56', 'MacArthur: "Those you allow to remain will become barbs in your eyes and thorns in your sides." Barbs in the eyes impair vision; thorns in the side cause constant pain. Tolerated Canaanite religious presence will distort Israel\'s spiritual vision and create perpetual covenantal discomfort. The Judges narrative proves this warning with precise historical fulfilment.'),
+            ],
+            'milgrom': [
+                ('33:50-56', 'Milgrom: The conquest command\'s placement at the end of the wilderness itinerary is theologically deliberate: the 42-stage journey through the wilderness has been preparation for this moment. Israel arrives as a community formed by divine guidance, not as a newly assembled army. The formation precedes the command.'),
+            ],
+            'ashley': [
+                ('33:51-56', 'Ashley: The command to destroy Canaanite religious infrastructure before addressing people\'s residences is significant: the religious threat is addressed first, the social reality second. The Canaanite cult — not the Canaanite people per se — is the primary danger to Israel\'s covenant faithfulness. The conquest is a religious act as much as a military one.'),
+            ],
+            'sarna': [
+                ('33:55', 'Sarna: "Those you allow to remain will become barbs in your eyes and thorns in your sides" — the agricultural metaphors evoke the curse of Gen 3:18 ("thorns and thistles it will produce for you"). The Canaanite residue in the land will reproduce the curse-dynamic in Israel\'s covenantal experience.'),
+            ],
+            'alter': [
+                ('33:52-53', 'Alter: The destruction command targets three categories of Canaanite religious presence: the portable (carved images), the cast (molten idols), and the architectural (high places). The comprehensiveness ensures that no category of Canaanite religious infrastructure survives to contaminate Israel\'s covenant worship.'),
+            ],
+            'calvin': [
+                ('33:55', 'Calvin: The warning — "those you allow to remain will become thorns in your sides" — is the OT\'s clearest statement that incomplete sanctification produces ongoing spiritual suffering. The Christian who tolerates sin does not achieve stable compromise but chronic spiritual impairment. The thorns and barbs of incomplete obedience are more costly than the initial discomfort of complete surrender.'),
+            ],
+            'netbible': [
+                ('33:52', 'NET Note: "Demolish all their high places" (bamot) — open-air shrines used for Canaanite worship. Israelite history confirms that every preserved high place became a site of syncretism — the prophets and reforming kings repeatedly address the high places as the persistent source of Israelite apostasy.'),
+            ],
+        },
+    ],
+})
+
+num(34, {
+    'title': 'The Boundaries of the Promised Land',
+    'sections': [
+        {
+            'header': 'Verses 1–15 — The Four Boundaries of Canaan',
+            'verses': verse_range(1, 15),
+            'heb': [
+                ('gevul', 'gevul', 'border / boundary / territory', 'The word that structures the entire chapter — appears 14 times. The land\'s boundaries are divinely specified with geographic precision: southern boundary (Negev and Sinai), western boundary (Mediterranean coast), northern boundary (Lebo Hamath), eastern boundary (Jordan River and Sea of Kinnereth).'),
+            ],
+            'ctx': 'Numbers 34 provides the geographical boundaries of the promised land — specification unique in its geographic precision. The boundaries define the territory between the Jordan River (east), the Mediterranean (west), Lebo Hamath (north), and the Negev and Sinai (south). The east-Jordan territory already assigned to Reuben, Gad, and Manasseh is explicitly noted as outside these boundaries (vv.14-15). The land God promises has specific, mappable boundaries that are both theological (this is what I am giving you) and practical (this is what you must take).',
+            'cross': [
+                ('Gen 15:18-21', '"On that day the Lord made a covenant with Abram and said, \'To your descendants I give this land, from the Wadi of Egypt to the great river, the Euphrates.\'" The Num 34 boundaries are the practical territorial specification of the Abrahamic land promise.'),
+                ('Josh 13:1-7', '"When Joshua had grown old, the Lord said to him, \'You are now very old, and there are still very large areas of land to be taken over.\'" The Num 34 boundaries were not fully possessed in Joshua\'s lifetime — the land promise extends beyond the conquest generation.'),
+            ],
+            'mac': [
+                ('34:1-12', 'MacArthur: The specific boundary descriptions — named wadis, mountains, cities, seas — ground the land promise in concrete geography. This is not a vague spiritual blessing but a specific, mappable territory. God\'s promises are not abstractions; they are attached to specific realities that can be traced on a map. The theological truth is expressed through geographical precision.'),
+                ('34:13-15', 'MacArthur: The explicit exclusion of the east-Jordan territories from the Canaan boundaries confirms that the Reuben and Gad and Manasseh settlement was a legitimate covenant arrangement, not a second-class inheritance. All Israel has its inheritance; the boundaries distinguish which territory belongs to which part of the community.'),
+            ],
+            'milgrom': [
+                ('34:1-12', 'Milgrom: The land boundaries of Num 34 correspond closely to the Egyptian administrative province of Canaan in the Late Bronze Age (c.1550-1200 BC). This archaeological correlation supports the antiquity of the boundary descriptions and their rooting in genuine historical-geographical knowledge rather than later literary invention.'),
+            ],
+            'ashley': [
+                ('34:1-12', 'Ashley: The precision of the land boundaries is itself a theological statement: the promised land is a real place, not a spiritual metaphor. God does not promise Israel vague spiritual abundance; he promises specific geography. The boundary descriptions ground the covenant promise in verifiable, tangible reality — the same theological move as the incarnation.'),
+            ],
+            'sarna': [
+                ('34:6', 'Sarna: "Your western boundary will be the coast of the Mediterranean Sea. This will be your boundary on the west." The Mediterranean as the western boundary is one of the covenant\'s most enduring geographical markers. The sea that Israel never crossed (in the sense of colonising) is the consistent western edge of the divine gift.'),
+            ],
+            'alter': [
+                ('34:1-12', 'Alter: The boundary chapter\'s detailed geographical specifications are Numbers at its most administrative. But the administrative detail is the theological content: God knows every wadi, every mountain pass, every city that marks the edge of his gift. The land that Israel is about to receive is a specific place that God knows precisely and gives intentionally.'),
+            ],
+            'calvin': [
+                ('34:1-12', 'Calvin: The specific land boundaries teach that God\'s gifts are particular, not generic. He does not give Israel "land" in the abstract; he gives these boundaries, this territory. The NT equivalent: God does not give believers vague spiritual blessing but specific gifts (1 Cor 12:7-11), specific callings (Eph 4:11), specific communities (Acts 2:47). God\'s grace is always particular.'),
+            ],
+            'netbible': [
+                ('34:3', 'NET Note: "Your southern side will include some of the Desert of Zin along the border of Edom" — the Negev and Sinai boundary marks the edge of the territory Israel will receive as gift. The territory south of this line — through which Israel wandered for forty years — is not part of the promise. The wilderness is formation; Canaan is destination.'),
+            ],
+        },
+        {
+            'header': 'Verses 16–29 — The Land Distribution Leaders',
+            'verses': verse_range(16, 29),
+            'heb': [
+                ('nesi\'im', "nesi'im", 'leaders / princes / chieftains', 'The same term as in Num 1-2 for the tribal census leaders. Now the same tribal authority structure is commissioned for land distribution. The covenant community\'s administrative structure — established at Sinai — functions across the generational transition.'),
+            ],
+            'ctx': 'God appoints the men who will administer the land distribution: Eleazar (high priest) and Joshua (military leader) as co-administrators, plus one designated leader from each of the ten tribes receiving Canaan inheritance (Reuben, Gad, and half-Manasseh already have their east-Jordan portions). The list parallels the census leaders of Num 1 but with entirely different men — the Num 1 leaders have all died. New leaders for a new generation, tasked with distributing the gift their parents forfeited.',
+            'cross': [
+                ('Josh 14:1', '"These are the areas the Israelites received as an inheritance in the land of Canaan, which Eleazar the priest, Joshua son of Nun and the heads of the tribal clans of Israel allotted to them." The Num 34 appointment is fulfilled precisely in Joshua.'),
+                ('Acts 1:26', '"Then they cast lots, and the lot fell to Matthias; so he was added to the eleven apostles." The NT parallel: new leaders appointed by divine guidance for the new covenant community\'s governance.'),
+            ],
+            'mac': [
+                ('34:16-29', 'MacArthur: The appointment of specific men for land distribution ensures accountability and transparency. The land allocation is not left to improvisation or military spoils; it is administered by named, appointed, publicly known leaders. The covenant community\'s inheritance is distributed with the same administrative care as its census and its offerings.'),
+            ],
+            'milgrom': [
+                ('34:17', 'Milgrom: Eleazar and Joshua as co-administrators reflect the dual authority structure throughout Numbers: the priestly dimension (Eleazar) ensures the land distribution honours the covenant\'s sacred character; the military dimension (Joshua) ensures practical administrative competence. Neither alone suffices.'),
+            ],
+            'ashley': [
+                ('34:16-29', 'Ashley: The appointment of new distribution leaders from the new generation is a sign of covenant continuity across the generational transition. The administrative structure that organised the wilderness generation continues into the settlement generation. The covenant community\'s institutional memory survives the forty-year interruption.'),
+            ],
+            'sarna': [
+                ('34:17', 'Sarna: "Eleazar the priest and Joshua son of Nun" — the pairing of priest and civil leader mirrors the pairing of Aaron and Moses for the wilderness generation. The covenant community always requires both dimensions of leadership: the priestly (representing the covenant\'s sacred character) and the civil and military (representing its practical governance).'),
+            ],
+            'alter': [
+                ('34:16-29', 'Alter: The list of distribution leaders replicates the structure of Num 1\'s census leaders. The repetition of the leadership-list form signals continuity: the covenant community\'s governance structure is preserved across the generational transition. The form is the same; the names are all new.'),
+            ],
+            'calvin': [
+                ('34:16-29', 'Calvin: The appointment of specific, accountable leaders for land distribution models the principle that God\'s gifts to the community require careful, accountable administration. The land is God\'s gift; its distribution must honour that gift through ordered, just administration — as must the church\'s administration of material and spiritual gifts.'),
+            ],
+            'netbible': [
+                ('34:29', 'NET Note: "These are the men the Lord commanded to assign the inheritance to the Israelites in the land of Canaan" — the divine passive confirms that the distribution leaders are God\'s appointees, not tribal political selections. The land that belongs to God is distributed by leaders he has designated.'),
+            ],
+        },
+    ],
+})
+
+num(35, {
+    'title': 'Cities of Refuge: The Levitical Towns and the Law of Homicide',
+    'sections': [
+        {
+            'header': 'Verses 1–15 — Levitical Towns and the Six Cities of Refuge',
+            'verses': verse_range(1, 15),
+            'heb': [
+                ('ir miqlet', 'ir miklat', 'city of refuge / city of asylum', 'From kalat (to absorb, take in). The six cities of refuge provide asylum for the unintentional killer against the goel hadam (avenger of blood / nearest kinsman). The city of refuge is not an amnesty for murder but a haven from blood vengeance for those who kill without intent.'),
+                ('goel hadam', 'goel hadam', 'avenger of blood / redeemer of blood / kinsman-redeemer', 'The nearest male relative who had both the right and the obligation to avenge a murdered kinsman. The cities of refuge provide a legal check on the goel\'s vengeance by distinguishing murder (no refuge) from manslaughter (refuge available).'),
+            ],
+            'ctx': 'Numbers 35 addresses two interconnected provisions: the Levitical towns (vv.1-8) and the cities of refuge (vv.9-34). Since the Levites receive no land inheritance, 48 towns with surrounding pastureland are distributed among them from each tribe\'s territory. Six of these 48 are designated cities of refuge — three on each side of the Jordan, accessible to any unintentional killer (Israelite, resident alien, or foreigner). The city of refuge provides asylum until the high priest\'s death; the killer may then return home without fear of the blood avenger. The chapter closes with the principle that blood defiles the land, and only the killer\'s blood can purge that defilement.',
+            'cross': [
+                ('Josh 20:7-9', '"So they set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath Arba (that is, Hebron) in the hill country of Judah... These towns were designated for all the Israelites and for the foreigners residing among them." The Num 35 command is fulfilled in Joshua.'),
+                ('Heb 6:18-20', '"We who have fled to take hold of the hope set before us may be greatly encouraged. We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where our forerunner, Jesus, has entered on our behalf." The writer of Hebrews applies the city of refuge imagery to Christ — the believer fleeing to him for refuge finds safety in the inner sanctuary he has opened.'),
+            ],
+            'mac': [
+                ('35:1-8', 'MacArthur: The Levitical towns distribute the priestly tribe throughout Israel\'s territory — ensuring that every region has access to priestly teaching and ministry. The Levites without land serve as the covenant community\'s distributed pastoral infrastructure. No Israelite lives too far from Levitical presence and instruction.'),
+                ('35:9-15', 'MacArthur: The six cities of refuge — three on each side of the Jordan, accessible to all — reflect the covenant\'s concern for justice that distinguishes murder from manslaughter. The blood-avenger system, left unchecked, could execute the innocent (those who killed unintentionally). The cities provide a legal mechanism for determining guilt before the execution of justice.'),
+            ],
+            'milgrom': [
+                ('35:9-15', 'Milgrom: The cities of refuge are accessible to resident aliens and foreigners as well as Israelites — covenant justice is not ethnically restricted. Anyone who kills unintentionally deserves the protection of legal process. The inclusion of non-Israelites reflects the covenant\'s underlying principle that justice is universal, not tribal.'),
+                ('35:28', 'Milgrom: "The accused must stay in his city of refuge until the death of the high priest; only after the death of the high priest may he return to his own property." The high priest\'s death serves as a kind of general amnesty — the most significant interpretive question is why. Milgrom\'s answer: the high priest\'s death expiates the blood-guilt of his generation, allowing those in the cities of refuge to return clean.'),
+            ],
+            'ashley': [
+                ('35:9-15', 'Ashley: The six cities of refuge reflect the covenant\'s recognition that human society inevitably produces unintentional killing. The law does not pretend this can be eliminated; it provides a legal institution for managing it justly. The covenant law is realistic about human fallibility and pastoral in its provision for those caught in its consequences.'),
+            ],
+            'sarna': [
+                ('35:6', 'Sarna: "Among the towns you give the Levites there are to be six cities of refuge, to which a person who has killed someone may flee." Six of the 48 Levitical towns become cities of refuge — the priestly infrastructure serves the function of legal asylum as well as religious instruction. The overlap of priestly and judicial functions is consistent with the Levitical vocation throughout Numbers.'),
+            ],
+            'alter': [
+                ('35:9-15', 'Alter: The cities of refuge are equally distributed — three on each side of the Jordan — ensuring geographic accessibility. No unintentional killer should have to travel so far that the blood avenger overtakes them before they reach safety. The legal institution is designed to be practically accessible, not merely theoretically available.'),
+            ],
+            'calvin': [
+                ('35:9-15', 'Calvin: The cities of refuge provided to unintentional killers model the principle of mercy within justice. The law distinguishes between murder (which cannot be redeemed by flight) and manslaughter (which can). Calvin sees in this distinction a type of the gospel: the gospel does not excuse all sin indiscriminately but provides a refuge for the repentant who have sinned without full deliberate intent against God\'s covenant.'),
+            ],
+            'netbible': [
+                ('35:15', 'NET Note: "These six towns will be a place of refuge for Israelites and for foreigners and temporary residents among them, so that anyone who has killed another person accidentally may flee there." The three-fold inclusion — Israelites, foreigners, temporary residents — makes the cities of refuge the most universally accessible legal institution in the Torah. The city of refuge knows no ethnic restriction.'),
+            ],
+        },
+        {
+            'header': 'Verses 16–34 — Murder vs Manslaughter; Blood Defiles the Land',
+            'verses': verse_range(16, 34),
+            'heb': [
+                ('betzad', 'betzad', 'intentionally / with premeditation / designedly', 'The key distinguishing term between murder (premeditated, intentional) and manslaughter (accidental). The cities of refuge provide asylum for the belo-da\'at (without knowledge/intent) killer; the intentional murderer finds no refuge and must die.'),
+            ],
+            'ctx': 'The homicide law (vv.16-34) distinguishes murder from manslaughter through four criteria: the weapon used (iron, stone, or wood capable of killing — vv.16-18), the relationship (lying in wait or enmity — v.20), the prior relationship (hatred — v.20-21), and the circumstances (sudden, without enmity, without seeing — vv.22-23). The congregation adjudicates the case; the city of refuge provides sanctuary pending trial. The chapter closes with the land-defilement principle (vv.33-34): blood defiles the land, and only the killer\'s blood expiates blood-guilt. The land cannot be purged of blood except by the blood of the one who shed it.',
+            'cross': [
+                ('Matt 5:21-22', '"You have heard that it was said to the people long ago, \'You shall not murder.\' But I tell you that anyone who is angry with a brother or sister will be subject to judgment." Jesus extends the Num 35 murder category to include the anger and contempt that produce murder — the NT interiorises the OT distinction.'),
+                ('Rom 13:4', '"For the one in authority is God\'s servant for your good. But if you do wrong, be afraid, for rulers do not bear the sword for no reason." Paul\'s affirmation of capital punishment for murder reflects the Num 35 principle that intentional killing requires the ultimate sanction.'),
+            ],
+            'mac': [
+                ('35:16-21', 'MacArthur: The homicide law\'s criteria for distinguishing murder from manslaughter — weapon type, prior relationship, lying in wait, acting from hatred — reflect sophisticated legal reasoning. The Torah is not a simplistic blood-vengeance code but a nuanced legal system that protects the innocent from vigilante justice while ensuring that genuine murder receives its proper consequence.'),
+                ('35:33-34', 'MacArthur: "Do not pollute the land where you are. Bloodshed pollutes the land, and atonement cannot be made for the land on which blood has been shed, except by the blood of the one who shed it." The land-defilement principle reflects the covenant\'s understanding that the created order participates in moral reality. Innocent blood shed on the land creates a moral pollution that only justice can resolve.'),
+            ],
+            'milgrom': [
+                ('35:33-34', 'Milgrom: The blood-defiles-the-land principle is the closest the Torah comes to an ecological theology of covenant justice. The land is not morally neutral; it responds to the moral condition of its inhabitants. Innocent blood creates a defilement in the created order that only justice resolves. The Torah\'s environmental ethics are grounded in covenant theology.'),
+            ],
+            'ashley': [
+                ('35:22-25', 'Ashley: The congregation\'s role in adjudicating homicide cases — receiving the accused, judging between murderer and blood-avenger — makes the entire community responsible for covenant justice. Capital punishment in Israel is not a personal transaction between families but a communal act of covenant justice administered by the congregation.'),
+            ],
+            'sarna': [
+                ('35:30', 'Sarna: "No one is to be put to death on the testimony of only one witness." The two-witness requirement for capital punishment is one of the Torah\'s most important legal protections. The irreversibility of execution demands the highest evidentiary standard. No single testimony, however credible, can justify taking a life.'),
+            ],
+            'alter': [
+                ('35:33-34', 'Alter: "Do not pollute the land where you are, for blood pollutes the land." The land is not a morally inert surface on which human events occur; it participates in the moral-covenantal order. The Torah\'s final word on the homicide law is not legal procedure but cosmic moral ecology: innocent blood mars the created world, and only justice restores it.'),
+            ],
+            'calvin': [
+                ('35:33-34', 'Calvin: The land-defilement principle teaches that sin has effects beyond the sinner — it corrupts the created environment. Calvin sees in this a preview of Romans 8:20-22: "The creation was subjected to frustration... in hope that the creation itself will be liberated from its bondage to decay." Covenant sin defiles the land; the new creation will restore the land to its original moral integrity.'),
+            ],
+            'netbible': [
+                ('35:30', 'NET Note: "Anyone who kills a person is to be put to death as a murderer only on the testimony of witnesses. But no one is to be put to death on the testimony of only one witness." The two-witness rule for capital cases is among the Torah\'s most significant procedural protections. It appears in Deut 17:6 and 19:15, forms the basis of NT church discipline (Matt 18:16; 2 Cor 13:1), and reflects the irreversible nature of execution.'),
+            ],
+        },
+    ],
+})
+
+num(36, {
+    'title': 'The Daughters of Zelophehad: The Marriage Restriction',
+    'sections': [
+        {
+            'header': 'Verses 1\u20139 \u2014 The Manassite Concern; God\u2019s Ruling',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('lo-titassev nachalah', "lo-titassev nachalah", 'the inheritance must not pass from tribe to tribe', 'The qualification on the ch.27 Zelophehad ruling: daughters who inherit must marry within their own tribe, otherwise land would transfer between tribes through marriage, disrupting the divinely-determined land allocation. Individual equity (ch.27) is balanced by communal land integrity (ch.36).'),
+            ],
+            'ctx': 'The leaders of Manasseh bring a new concern to Moses: if the daughters marry outside their tribe, their inherited land will transfer to their husbands\u2019 tribe at the next Jubilee, permanently reducing Manasseh\u2019s inheritance. God\u2019s ruling: daughters who inherit must marry within their own tribe. The two rulings together constitute a complete and balanced covenant legal provision: individual equity and communal integrity are both preserved.',
+            'cross': [
+                ('Josh 17:3\u20136', '"Zelophehad son of Hepher had no sons but only daughters... and their father\u2019s brothers\u2019 sons married them. These girls married cousins on their father\u2019s side." The Num 36 ruling is fulfilled in Joshua.'),
+                ('1 Cor 7:39', '"A woman is bound to her husband as long as he lives... but if her husband dies, she is free to marry anyone she wishes, but he must belong to the Lord." Paul\u2019s "in the Lord" qualification echoes the Num 36 within-tribe principle: covenant community defines the context for marriage.'),
+            ],
+            'mac': [
+                ('36:1\u20139', 'MacArthur: The Manassite leaders\u2019 concern is legitimate: the Zelophehad ruling, taken alone, would create a mechanism for tribal land erosion through marriage. God\u2019s qualification preserves both equities \u2014 the daughters receive their father\u2019s inheritance (ch.27 stands) and the tribal land allocation remains intact (ch.36 qualification added). The two rulings model the covenant\u2019s care for both individual equity and communal integrity.'),
+                ('36:8\u20139', 'MacArthur: "Every daughter who inherits land in any Israelite tribe must marry someone in her father\u2019s tribal clan" \u2014 the rule applies to every inheriting daughter in Israel, not only Zelophehad\u2019s five. The Zelophehad case produces universal law. Individual legal situations repeatedly generate covenant principles for the whole community.'),
+            ],
+            'milgrom': [
+                ('36:1\u20139', 'Milgrom: The Num 36 ruling is a sophisticated legal qualification that preserves both the individual equity of the ch.27 ruling and the communal land integrity of the tribal inheritance system. Neither ruling cancels the other; together they constitute a complete and balanced covenant legal provision for the unique case of daughters who inherit.'),
+            ],
+            'ashley': [
+                ('36:5\u20139', 'Ashley: God\u2019s endorsement of the Manassite concern \u2014 "What the tribe of Manasseh is saying is right" \u2014 confirms that communal land integrity is a legitimate covenant value. The Zelophehad daughters\u2019 individual equity did not exhaust the relevant legal considerations; the tribal community\u2019s concern for its inheritance is equally valid and equally addressed.'),
+            ],
+            'sarna': [
+                ('36:6', 'Sarna: The qualification \u2014 marrying within the tribe \u2014 is described as a "command of the Lord," not merely a pragmatic compromise. The land allocation of Num 26 and 34 is a divine distribution; its disruption through unregulated inter-tribal marriage would undermine the divine order of Israel\u2019s territorial covenant. The marriage restriction protects the covenant\u2019s spatial theology.'),
+            ],
+            'alter': [
+                ('36:7', 'Alter: "No inheritance in Israel is to pass from tribe to tribe, for every Israelite shall keep the tribal inheritance of their ancestors." The inheritance principle is absolute: the divine land distribution, fixed by lot in the second census, is permanent. Inter-tribal inheritance transfer would introduce a randomness into the divine allocation that the lot\u2019s sovereignty was designed to prevent.'),
+            ],
+            'calvin': [
+                ('36:6\u20139', 'Calvin: The marriage restriction teaches that individual freedom operates within communal covenant structures. The daughters have genuine freedom to marry \u2014 but within the tribe. The restriction is not arbitrary but serves the communal good of preserving the divine land distribution. Individual rights in the covenant community are real but not unlimited.'),
+            ],
+            'netbible': [
+                ('36:9', 'NET Note: "No inheritance may pass from one tribe to another, for each Israelite tribe is to keep the land it inherits" \u2014 the principle is stated twice (vv.7 and 9) for emphasis. The double statement signals a foundational principle, not merely a specific ruling: the tribal land allocations of Num 26\u201334 are permanent covenant arrangements, not provisional arrangements subject to erosion through ordinary social and economic processes.'),
+            ],
+        },
+        {
+            'header': 'Verses 10\u201313 \u2014 The Daughters\u2019 Compliance; Numbers Concludes',
+            'verses': verse_range(10, 13),
+            'heb': [
+                ('ken asuu', "ken asu", 'so they did / thus they obeyed', 'The compliance formula that closes the Zelophehad story and Numbers itself: the daughters heard the command and did it. The same verb (asah \u2014 to do, to act) runs throughout Numbers\u2019 compliance formulas. Numbers ends where it must: with hearing and doing.'),
+            ],
+            'ctx': 'The daughters comply: Mahlah, Tirzah, Hoglah, Milcah, and Noah \u2014 all five named again \u2014 marry their cousins within Manasseh\u2019s clans. The Zelophehad daughters\u2019 story is complete: they sought justice (ch.27), received it, and lived by the covenant qualification that accompanied it (ch.36). Numbers then closes with its final formula: "These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho." The book that began with a census at Sinai ends with covenant compliance at the Jordan. The promised land is one crossing away.',
+            'cross': [
+                ('Deut 1:1', '"These are the words Moses spoke to all Israel in the wilderness east of the Jordan \u2014 that is, in the Arabah." Deuteronomy begins where Numbers ends: Moses speaking to all Israel on the plains of Moab, across from Jericho. The two books form a continuous narrative seam.'),
+                ('Josh 1:2', '"Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give to them." Joshua picks up precisely where Numbers leaves off \u2014 the covenant community poised at the Jordan.'),
+            ],
+            'mac': [
+                ('36:10\u201312', 'MacArthur: "So Zelophehad\u2019s daughters did as the Lord commanded Moses. Mahlah, Tirzah, Hoglah, Milcah and Noah married their cousins on their father\u2019s side." Five women named, five acts of obedient compliance. The daughters who brought the original case honour the qualification with the same covenant faithfulness with which they pursued the original ruling. Numbers ends on a note of covenant obedience.'),
+                ('36:13', 'MacArthur: "These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho." The closing formula is simultaneously legal (commands and regulations), geographical (plains of Moab), and eschatological (across from Jericho). Numbers ends at the edge of the promise. Everything the book prepared for is one crossing away.'),
+            ],
+            'milgrom': [
+                ('36:13', 'Milgrom: The closing formula echoes Lev 27:34 ("These are the commands the Lord gave Moses at Mount Sinai for the Israelites"). Numbers is the Sinai laws applied to the journey and extended to the plains of Moab. The book\u2019s legal corpus is complete; Deuteronomy will be Moses\u2019s final address from the same location before the crossing.'),
+            ],
+            'ashley': [
+                ('36:10\u201312', 'Ashley: The daughters\u2019 compliance is narrated with the same careful name-by-name detail as their original petition. All five are named again; all five comply. The narrative honours their covenant faithfulness at the book\u2019s close as it honoured their legal courage at the Zelophehad story\u2019s beginning. Numbers closes with five women who sought justice, received it, and lived by it.'),
+            ],
+            'sarna': [
+                ('36:13', 'Sarna: "These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho." The closing formula is geographical and covenantal simultaneously. The Jordan crossing from Jericho is the threshold of Canaan. Numbers ends at the edge of the promise. Everything that follows \u2014 the crossing, the conquest, the settlement \u2014 is Deuteronomy and Joshua. Numbers\u2019 final word is the word of a community standing ready.'),
+            ],
+            'alter': [
+                ('36:13', 'Alter: Numbers opens with Israel\u2019s organised muster at Sinai and closes with Israel organised, instructed, and waiting at the Jordan. The book is a record of formation: the generation that refused to enter has been replaced by the generation that is ready. The forty years between ch.1 and ch.36 are the distance between refusal and readiness. Numbers is the book of the wilderness that produced the people capable of the crossing.'),
+            ],
+            'calvin': [
+                ('36:10\u201313', 'Calvin: The daughters\u2019 obedient compliance \u2014 marrying within the tribe as God commanded \u2014 models the final covenant posture that Numbers seeks to instil: hearing and doing. The book that began with a generation that heard and did not do ends with five women who heard and did. The contrast is Numbers\u2019 theological arc in miniature: from Kadesh-barnea\u2019s refusal to the daughters of Zelophehad\u2019s compliance. The covenant community is ready to cross.'),
+            ],
+            'netbible': [
+                ('36:13', 'NET Note: "These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho" \u2014 the closing formula is the editorial colophon of Numbers, parallel to Lev 27:34. Numbers is the Sinai laws applied to the journey and extended to the plains of Moab. Deuteronomy will be Moses\u2019s final address from the same location. Numbers ends where Deuteronomy begins.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-6b complete: Numbers 31-36 built.")
