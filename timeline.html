@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Timeline — Scripture Deep Dive</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ───────────────────────────────────────────────────────── */
+:root {
+  --bg:      #0c0a07; --bg2: #141008; --bg3: #1a1508;
+  --border:  #332810; --border2: #2a2010;
+  --gold:    #c9a84c; --gold-dim: #7a6020; --gold-bright: #e8c870;
+  --text:    #f0e8d8; --text-dim: #b8a880; --text-muted: #6a5a38;
+  --era-primeval:  #8b6914; --era-patriarch: #7a5c9a;
+  --era-exodus:    #4a8a5a; --era-judges:    #8a6a2a;
+  --era-kingdom:   #5a7a9a; --era-prophets:  #9a4a4a;
+  --era-exile:     #4a7a8a; --era-nt:        #c9a84c;
+  --era-intertestamental: #6a5a38;
+
+  /* Timeline canvas colours */
+  --tl-bg:    #d4b483;
+  --tl-bg2:   #c8a46a;
+  --tl-ink:   #3a2a10;
+  --tl-ink2:  #5a4020;
+  --tl-axis:  #4a3418;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  font-family: 'Source Sans 3', sans-serif;
+  display: flex; flex-direction: column;
+}
+
+/* ── SITE NAV ─────────────────────────────────────────────────────── */
+.site-nav {
+  display: flex; align-items: center; padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border); background: var(--bg2);
+  flex-shrink: 0; gap: 1rem; height: 44px;
+}
+.nav-back {
+  display: flex; align-items: center; gap: .4rem; color: var(--text-muted);
+  text-decoration: none; font-family: 'Cinzel', serif; font-size: .6rem;
+  letter-spacing: .14em; text-transform: uppercase; transition: color .15s;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
+.nav-center { flex: 1; text-align: center; }
+.nav-title { font-family: 'Cinzel', serif; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dim); }
+.nav-links { display: flex; gap: .8rem; }
+.nav-link { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color .15s; }
+.nav-link:hover { color: var(--gold); }
+
+/* ── ERA FILTER STRIP ─────────────────────────────────────────────── */
+.era-filters {
+  padding: .6rem 1.2rem; border-bottom: 1px solid var(--border2);
+  display: flex; flex-wrap: wrap; gap: .3rem;
+  align-items: center; background: var(--bg2); flex-shrink: 0;
+}
+.filter-label { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); margin-right: .2rem; flex-shrink: 0; }
+.era-btn {
+  font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .1em;
+  text-transform: uppercase; padding: .26rem .65rem; border-radius: 3px;
+  border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+  cursor: pointer; white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
+}
+.era-btn:hover { border-color: var(--border2); color: var(--text-dim); }
+.era-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── MOBILE CONTROLS BAR ──────────────────────────────────────────── */
+#mobile-controls { display: none; }
+#legend-mobile-wrap { display: none; }
+
+/* ── MAIN LAYOUT ──────────────────────────────────────────────────── */
+.main-layout { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+
+/* ── TIMELINE PANEL ───────────────────────────────────────────────── */
+#timeline-panel {
+  flex: 1; min-height: 0; min-width: 0;
+  position: relative; overflow: hidden;
+  background: var(--tl-bg);
+  cursor: grab;
+}
+#timeline-panel:active { cursor: grabbing; }
+#timeline-panel.panning { cursor: grabbing; user-select: none; }
+
+/* The SVG fills the panel absolutely — same trick as map */
+#timeline-svg {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+}
+
+/* ── FLOATING CONTROLS (desktop) ──────────────────────────────────── */
+.tl-float-controls {
+  position: absolute; bottom: 1.2rem; right: 1rem;
+  display: flex; flex-direction: column; gap: .4rem; z-index: 50;
+  pointer-events: all;
+}
+.tl-float-btn {
+  background: rgba(12,10,7,.9); border: 1px solid var(--border);
+  color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .1em; padding: .38rem .65rem; border-radius: 4px; cursor: pointer;
+  white-space: nowrap; transition: background .15s, color .15s;
+  display: flex; align-items: center; gap: .32rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.tl-float-btn:hover { background: #1a1508; color: var(--gold); }
+.tl-float-btn.active { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,.1); }
+
+/* Zoom buttons */
+.tl-zoom-controls {
+  position: absolute; bottom: 1.2rem; left: 1rem;
+  display: flex; gap: .3rem; z-index: 50;
+}
+.tl-zoom-btn {
+  background: rgba(12,10,7,.9); border: 1px solid var(--border);
+  color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: .8rem;
+  width: 30px; height: 30px; border-radius: 4px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.tl-zoom-btn:hover { background: #1a1508; color: var(--gold); }
+
+/* ── DESKTOP LEGEND ───────────────────────────────────────────────── */
+.legend {
+  position: absolute; top: 1rem; left: 1rem;
+  background: rgba(12,10,7,.93); border: 1px solid var(--border);
+  border-radius: 5px; overflow: hidden; pointer-events: all; user-select: none;
+  min-width: 185px; box-shadow: 0 4px 18px rgba(0,0,0,.55); z-index: 50;
+}
+.legend-header { display: flex; align-items: center; justify-content: space-between; padding: .48rem .8rem; cursor: pointer; border-bottom: 1px solid var(--border2); transition: background .15s; }
+.legend-header:hover { background: rgba(255,255,255,.03); }
+.legend-title { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim); }
+.legend-chev { font-size: .6rem; color: var(--text-muted); transition: transform .22s; }
+.legend.collapsed .legend-chev { transform: rotate(-90deg); }
+.legend-body { padding: .48rem .8rem .52rem; transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1); max-height: 220px; overflow: hidden; }
+.legend.collapsed .legend-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
+.legend-item { display: flex; align-items: center; gap: .38rem; margin-bottom: .26rem; font-size: .66rem; color: var(--text-muted); }
+.legend-item:last-child { margin-bottom: 0; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-sym { font-size: .7rem; flex-shrink: 0; width: 14px; text-align: center; }
+
+/* ── EVENT DETAIL PANEL ───────────────────────────────────────────── */
+#detail-panel {
+  width: 0; min-width: 0; background: var(--bg2);
+  border-left: 0px solid var(--border);
+  display: flex; flex-direction: column; overflow: hidden;
+  transition: width .28s cubic-bezier(.4,0,.2,1), border-left-width .28s cubic-bezier(.4,0,.2,1);
+}
+#detail-panel.open { width: 340px; min-width: 340px; border-left-width: 1px; overflow-y: auto; }
+.detail-close { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; padding: .6rem .7rem .3rem; background: var(--bg2); flex-shrink: 0; }
+.detail-close button { background: none; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; font-size: .72rem; padding: .22rem .55rem; border-radius: 3px; font-family: 'Source Sans 3', sans-serif; transition: color .15s, border-color .15s; }
+.detail-close button:hover { color: var(--text); border-color: var(--border2); }
+#detail-content { padding: 0 1.2rem 1.5rem; flex: 1; }
+.detail-era-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 10px; margin: 0 0 .5rem; }
+.detail-name { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: .06em; color: var(--gold-bright); margin-bottom: .12rem; line-height: 1.3; }
+.detail-date { font-size: .78rem; color: var(--text-muted); font-style: italic; margin-bottom: .2rem; }
+.detail-ref { font-size: .72rem; color: var(--gold-dim); font-family: 'Cinzel', serif; letter-spacing: .05em; margin-bottom: .7rem; }
+.detail-divider { height: 1px; background: var(--border); margin-bottom: .8rem; }
+.detail-text { font-size: .9rem; line-height: 1.7; color: var(--text-dim); margin-bottom: 1rem; }
+.detail-section-head { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); padding: .4rem 0 .22rem; border-top: 1px solid var(--border2); margin-bottom: .4rem; }
+.detail-people { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .8rem; }
+.detail-person-chip { font-size: .72rem; padding: .18rem .5rem; border: 1px solid var(--border); border-radius: 3px; color: var(--gold-dim); cursor: pointer; text-decoration: none; display: inline-block; transition: background .15s, color .15s; }
+.detail-person-chip:hover { background: rgba(201,168,76,.1); color: var(--gold); }
+.detail-chapter-link { display: block; margin-top: .8rem; padding: .55rem .9rem; background: rgba(201,168,76,.08); border: 1px solid var(--gold-dim); border-radius: 4px; text-decoration: none; font-size: .75rem; color: var(--gold-dim); font-family: 'Cinzel', serif; letter-spacing: .08em; text-align: center; transition: background .15s, color .15s; }
+.detail-chapter-link:hover { background: rgba(201,168,76,.15); color: var(--gold); }
+.detail-handle { display: none; justify-content: center; align-items: center; padding: .5rem 0 .2rem; cursor: pointer; touch-action: none; flex-shrink: 0; }
+.detail-handle-pill { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE ≤ 768px
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .era-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .7rem; gap: .28rem; scrollbar-width: none; }
+  .era-filters::-webkit-scrollbar { display: none; }
+  .filter-label { display: none; }
+  .main-layout { flex-direction: column; }
+  #timeline-panel { flex: 1; }
+
+  #mobile-controls {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .38rem .8rem; background: var(--bg2);
+    border-bottom: 1px solid var(--border2); gap: .5rem; flex-shrink: 0;
+  }
+  #mobile-controls button {
+    display: flex; align-items: center; gap: .3rem;
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    color: var(--gold-dim); font-family: 'Cinzel', serif;
+    font-size: .54rem; letter-spacing: .08em; padding: .3rem .52rem;
+    border-radius: 4px; cursor: pointer; white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  #mobile-controls button:active, #mobile-controls button.active {
+    background: rgba(201,168,76,.12); color: var(--gold); border-color: var(--gold-dim);
+  }
+  #mobile-era-label { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .08em; color: var(--text-muted); text-align: center; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  #legend-mobile-wrap { display: block; background: var(--bg2); overflow: hidden; }
+  #legend-mobile-wrap .legend { position: static; border-radius: 0; border: none; box-shadow: none; min-width: 0; width: 100%; background: var(--bg2); overflow: hidden; }
+  #legend-mobile-wrap .legend-body { display: flex; flex-wrap: wrap; gap: .28rem .6rem; padding: .42rem .8rem .48rem; border-bottom: 1px solid var(--border2); }
+  #legend-mobile-wrap .legend-item { margin-bottom: 0; }
+  #legend-mobile-wrap .legend.collapsed .legend-body { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; border-bottom-width: 0 !important; }
+
+  .tl-float-controls { display: none; }
+  .tl-zoom-controls { bottom: .7rem; left: .5rem; }
+  .legend { display: none; }
+
+  #detail-panel { width: 100% !important; min-width: 0 !important; border-left: none !important; border-top: 1px solid var(--border2); height: 0; max-height: 0; overflow: hidden; transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
+  #detail-panel.open { width: 100% !important; min-width: 0 !important; height: 52vh; max-height: 52vh; overflow-y: auto; border-left-width: 0 !important; }
+  .detail-handle { display: flex; }
+  .detail-text { font-size: .86rem; }
+  #detail-content { padding: 0 .9rem 1.2rem; }
+}
+@media (max-width: 380px) { .era-btn { font-size: .5rem; padding: .2rem .42rem; } }
+</style>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
+    Library
+  </a>
+  <div class="nav-center"><span class="nav-title">Bible Timeline</span></div>
+  <div class="nav-links">
+    <a href="people.html" class="nav-link">People</a>
+    <a href="map.html" class="nav-link">Map</a>
+    <a href="commentators/index.html" class="nav-link">Scholars</a>
+  </div>
+</nav>
+
+<!-- ERA FILTER STRIP -->
+<div class="era-filters">
+  <span class="filter-label">Era</span>
+  <button class="era-btn active" data-era="all">All</button>
+  <button class="era-btn" data-era="primeval">Primeval</button>
+  <button class="era-btn" data-era="patriarch">Patriarchal</button>
+  <button class="era-btn" data-era="exodus">Exodus</button>
+  <button class="era-btn" data-era="judges">Judges</button>
+  <button class="era-btn" data-era="kingdom">Kingdom</button>
+  <button class="era-btn" data-era="prophets">Prophets</button>
+  <button class="era-btn" data-era="exile">Exile &amp; Return</button>
+  <button class="era-btn" data-era="intertestamental">Intertestamental</button>
+  <button class="era-btn" data-era="nt">New Testament</button>
+</div>
+
+<!-- MOBILE CONTROLS BAR -->
+<div id="mobile-controls">
+  <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
+      <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
+    </svg>
+    Legend
+    <span id="legend-btn-chev" style="font-size:.56rem;transition:transform .22s;display:inline-block;">&#9660;</span>
+  </button>
+  <span id="mobile-era-label">All Eras</span>
+  <button id="mobile-people-btn" onclick="togglePeople()" title="Show people">
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="7" cy="5" r="2.5"/><path d="M2 13c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+    </svg>
+    People
+  </button>
+  <button id="mobile-history-btn" onclick="toggleHistory()" title="Show world history">
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="7" cy="7" r="5"/><polyline points="7,4 7,7 9,9"/>
+    </svg>
+    History
+  </button>
+</div>
+
+<!-- MOBILE LEGEND DROPDOWN -->
+<div id="legend-mobile-wrap">
+  <div class="legend collapsed" id="legend-mobile">
+    <div class="legend-body">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Exodus</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Judges</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>Kingdom</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Prophets</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>NT</div>
+      <div class="legend-item">
+        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><polygon points="5,1 9,9 1,9" fill="#4a3a20" opacity="0.85"/></svg>
+        Biblical event
+      </div>
+      <div class="legend-item">
+        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><polygon points="5,1 9,5 5,9 1,5" fill="#3a5a7a" opacity="0.8"/></svg>
+        World history
+      </div>
+      <div class="legend-item">
+        <svg width="10" height="10" viewBox="0 0 10 10" class="legend-sym"><circle cx="5" cy="5" r="3.5" fill="var(--era-patriarch)" stroke="rgba(200,169,110,.6)" stroke-width="1"/></svg>
+        Person
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-layout">
+
+  <!-- TIMELINE PANEL -->
+  <div id="timeline-panel">
+
+    <!-- SVG canvas — position:absolute+inset:0 for guaranteed real height -->
+    <svg id="timeline-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <!-- Desktop floating toggle buttons -->
+    <div class="tl-float-controls">
+      <button class="tl-float-btn" id="people-toggle-btn" onclick="togglePeople()">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="7" cy="5" r="2.5"/><path d="M2 13c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+        </svg>
+        People
+      </button>
+      <button class="tl-float-btn" id="history-toggle-btn" onclick="toggleHistory()">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="7" cy="7" r="5"/><polyline points="7,4 7,7 9,9"/>
+        </svg>
+        World History
+      </button>
+    </div>
+
+    <!-- Zoom buttons -->
+    <div class="tl-zoom-controls">
+      <button class="tl-zoom-btn" onclick="zoomTimeline(1.4)" title="Zoom in">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/>
+        </svg>
+      </button>
+      <button class="tl-zoom-btn" onclick="zoomTimeline(0.714)" title="Zoom out">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="2" y1="6" x2="10" y2="6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop legend -->
+    <div class="legend" id="legend">
+      <div class="legend-header" onclick="toggleLegend()">
+        <span class="legend-title">Legend</span>
+        <span class="legend-chev">&#9660;</span>
+      </div>
+      <div class="legend-body">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval History</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal Period</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Egypt &amp; Exodus</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Conquest &amp; Judges</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>United Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Divided Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile &amp; Return</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>New Testament</div>
+        <div class="legend-item" style="margin-top:.3rem">
+          <svg width="10" height="9" viewBox="0 0 10 9"><polygon points="5,0 10,9 0,9" fill="#4a3a20" opacity="0.85"/></svg>
+          Biblical event
+        </div>
+        <div class="legend-item">
+          <svg width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,5 5,9 1,5" fill="#3a5a7a" opacity="0.8"/></svg>
+          World history event
+        </div>
+        <div class="legend-item">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="var(--era-patriarch)" stroke="rgba(200,169,110,.7)" stroke-width="1.2"/></svg>
+          Person (toggleable)
+        </div>
+      </div>
+    </div>
+
+  </div><!-- #timeline-panel -->
+
+  <!-- EVENT DETAIL PANEL -->
+  <div id="detail-panel">
+    <div class="detail-handle" id="detail-handle" onclick="closeDetail()">
+      <div class="detail-handle-pill"></div>
+    </div>
+    <div class="detail-close"><button onclick="closeDetail()">&#10005; Close</button></div>
+    <div id="detail-content">
+      <p style="color:var(--text-muted);font-size:.82rem;padding-top:.5rem;">
+        Select an era above or click any event to explore.
+      </p>
+    </div>
+  </div>
+
+</div><!-- .main-layout -->
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(() => {});
+}
+
+// ── ERA CONFIG ─────────────────────────────────────────────────────────────
+const ERA_HEX = {
+  primeval:'#8b6914', patriarch:'#7a5c9a', exodus:'#4a8a5a',
+  judges:'#8a6a2a', kingdom:'#5a7a9a', prophets:'#9a4a4a',
+  exile:'#4a7a8a', intertestamental:'#6a5a38', nt:'#c9a84c',
+};
+const ERA_NAMES = {
+  primeval:'Primeval History', patriarch:'Patriarchal Period',
+  exodus:'Egypt & Exodus', judges:'Conquest & Judges',
+  kingdom:'United Kingdom', prophets:'Divided Kingdom & Prophets',
+  exile:'Exile & Return', intertestamental:'Intertestamental',
+  nt:'New Testament',
+};
+
+// ── ERA YEAR RANGES [startYear, endYear] ───────────────────────────────────
+const ERA_RANGES = {
+  primeval:          [-4000, -2200],
+  patriarch:         [-2200,  -1800],
+  exodus:            [-1800,  -1400],
+  judges:            [-1400,  -1050],
+  kingdom:           [-1050,   -930],
+  prophets:          [ -930,   -722],
+  exile:             [ -722,   -432],
+  intertestamental:  [ -432,     -5],
+  nt:                [   -5,     95],
+};
+
+// ── TIMELINE SCALE ─────────────────────────────────────────────────────────
+// Full span: -4000 to +95. Total: 4095 years.
+// Base pixels per year — compressed for ancient, generous for NT.
+// We use a piecewise linear scale with breakpoints.
+
+const SCALE_BREAKPOINTS = [
+  // [year, cumulative_px]  — linear between each pair
+  [-4000,     0],
+  [-2200,  1400],  // primeval: 1400px / 1800yr = 0.78px/yr
+  [-1800,  2000],  // patriarch: 600px / 400yr = 1.5px/yr
+  [-1400,  2800],  // exodus: 800px / 400yr = 2px/yr
+  [-1050,  3700],  // judges: 900px / 350yr = 2.57px/yr
+  [ -930,  4100],  // united kingdom: 400px / 120yr = 3.3px/yr
+  [ -722,  4780],  // prophets: 680px / 208yr = 3.27px/yr
+  [ -432,  6500],  // exile+return: 1720px / 290yr = 5.9px/yr
+  [    0,  8000],  // intertestamental: 1500px / 432yr = 3.47px/yr
+  [   95,  9000],  // NT: 1000px / 95yr = 10.5px/yr (generous)
+];
+const TOTAL_WIDTH = 9000; // base SVG content width
+
+function yearToX(year) {
+  for (let i = 0; i < SCALE_BREAKPOINTS.length - 1; i++) {
+    const [y0, x0] = SCALE_BREAKPOINTS[i];
+    const [y1, x1] = SCALE_BREAKPOINTS[i + 1];
+    if (year >= y0 && year <= y1) {
+      const t = (year - y0) / (y1 - y0);
+      return x0 + t * (x1 - x0);
+    }
+  }
+  if (year < -4000) return 0;
+  return TOTAL_WIDTH;
+}
+
+// ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
+const TL = {
+  H:          380,    // total SVG height
+  ERA_TOP:    10,     // top of era band labels
+  ERA_BAR_Y:  38,     // y of era colour bar top
+  ERA_BAR_H:  18,     // height of era colour bar
+  AXIS_Y:     160,    // y of the main date axis line
+  EVENT_STEM: 100,    // y where event stems start (below era bar)
+  PEOPLE_Y:   220,    // y of person nodes
+  HIST_Y:     280,    // y of historical event markers
+  GRAIN_Y:    0,
+};
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let svgEl, gContent;
+let translateX = 0;
+let scaleX = 1;       // horizontal zoom
+let currentEra = 'all';
+let showPeople = false;
+let showHistory = false;
+let currentEvent = null;
+let isPanning = false;
+let panStartX = 0;
+let panStartTranslate = 0;
+let lastPinchDist = 0;
+
+// ══════════════════════════════════════════════════════════════════════════
+// SVG HELPERS
+// ══════════════════════════════════════════════════════════════════════════
+function svgEl_(tag, attrs = {}, parent = null) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  if (parent) parent.appendChild(el);
+  return el;
+}
+function svgText(txt, attrs = {}, parent = null) {
+  const el = svgEl_('text', attrs, parent);
+  el.textContent = txt;
+  return el;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════════════════════
+function initTimeline() {
+  svgEl = document.getElementById('timeline-svg');
+  const panel = document.getElementById('timeline-panel');
+  const W = panel.clientWidth;
+  const H = panel.clientHeight;
+
+  svgEl.setAttribute('width', W);
+  svgEl.setAttribute('height', H);
+  svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  // Clear
+  while (svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
+
+  // ── Parchment background ────────────────────────────────────────────
+  const defs = svgEl_('defs', {}, svgEl);
+
+  // Paper grain filter
+  const flt = svgEl_('filter', { id:'grain', x:'0%', y:'0%', width:'100%', height:'100%' }, defs);
+  svgEl_('feTurbulence', { type:'fractalNoise', baseFrequency:'0.72', numOctaves:'3', stitchTiles:'stitch', result:'noise' }, flt);
+  svgEl_('feColorMatrix', { type:'saturate', values:'0', in:'noise', result:'grey' }, flt);
+  svgEl_('feBlend', { in:'SourceGraphic', in2:'grey', mode:'multiply' }, flt);
+
+  // Subtle vertical gradient for depth
+  const grad = svgEl_('linearGradient', { id:'tlBg', x1:'0', y1:'0', x2:'0', y2:'1' }, defs);
+  svgEl_('stop', { offset:'0%', 'stop-color':'#ddc080' }, grad);
+  svgEl_('stop', { offset:'50%', 'stop-color':'#c8a86a' }, grad);
+  svgEl_('stop', { offset:'100%', 'stop-color':'#b89050' }, grad);
+
+  // Background rect
+  svgEl_('rect', { width:W, height:H, fill:'url(#tlBg)' }, svgEl);
+  // Grain overlay
+  svgEl_('rect', { width:W, height:H, fill:'#8a6020', opacity:'0.06', filter:'url(#grain)' }, svgEl);
+
+  // Clip content to panel
+  const clipId = 'tlClip';
+  const clip = svgEl_('clipPath', { id: clipId }, defs);
+  svgEl_('rect', { width:W, height:H }, clip);
+
+  // ── Main scrollable group ────────────────────────────────────────────
+  gContent = svgEl_('g', { 'clip-path':`url(#${clipId})` }, svgEl);
+  const gInner = svgEl_('g', { id:'g-inner' }, gContent);
+
+  // Position initial view: centre on AD 0 at start
+  const centreYear = currentEra === 'all' ? -1500 : (ERA_RANGES[currentEra][0] + ERA_RANGES[currentEra][1]) / 2;
+  const centreX = yearToX(centreYear) * scaleX;
+  translateX = W / 2 - centreX;
+  applyTransform(gInner);
+
+  renderContent(gInner, W, H);
+  setupInteraction(svgEl, gInner);
+}
+
+function applyTransform(g) {
+  // Clamp so we don't scroll off the ends
+  const panel = document.getElementById('timeline-panel');
+  const W = panel.clientWidth;
+  const maxX = 60;
+  const minX = W - TOTAL_WIDTH * scaleX - 60;
+  translateX = Math.min(maxX, Math.max(minX, translateX));
+  g.setAttribute('transform', `translate(${translateX},0) scale(${scaleX},1)`);
+}
+
+function renderContent(g, W, H) {
+  // ── Era colour bands ──────────────────────────────────────────────────
+  for (const [era, [y0, y1]] of Object.entries(ERA_RANGES)) {
+    const x0 = yearToX(y0);
+    const x1 = yearToX(y1);
+    const color = ERA_HEX[era] || '#888';
+    // Band background
+    svgEl_('rect', {
+      x: x0, y: TL.ERA_BAR_Y,
+      width: x1 - x0, height: TL.ERA_BAR_H,
+      fill: color, opacity: '0.35',
+    }, g);
+    // Era name label — centred in band
+    const mx = (x0 + x1) / 2;
+    const txt = svgText(ERA_NAMES[era] || era, {
+      x: mx, y: TL.ERA_BAR_Y + TL.ERA_BAR_H - 4,
+      'text-anchor': 'middle',
+      'font-family': "'Cinzel', serif",
+      'font-size': '9',
+      fill: color,
+      opacity: '0.9',
+      'pointer-events': 'none',
+    }, g);
+  }
+
+  // ── Axis line ─────────────────────────────────────────────────────────
+  svgEl_('line', {
+    x1: 0, y1: TL.AXIS_Y,
+    x2: TOTAL_WIDTH, y2: TL.AXIS_Y,
+    stroke: '#4a3418', 'stroke-width': '1.5', opacity: '0.8',
+  }, g);
+
+  // ── Year tick marks ───────────────────────────────────────────────────
+  const tickYears = [
+    -4000, -3500, -3000, -2500, -2000, -1900, -1800, -1700, -1600,
+    -1500, -1400, -1300, -1200, -1100, -1000, -900, -800, -750,
+    -700, -650, -600, -550, -500, -450, -400, -350, -300,
+    -250, -200, -150, -100, -63, -27, -5,
+    0, 10, 20, 30, 33, 40, 50, 60, 70, 80, 90, 95,
+  ];
+
+  for (const yr of tickYears) {
+    const x = yearToX(yr);
+    const isMajor = yr % 500 === 0 || yr === 0 || yr === 33;
+    const tickH = isMajor ? 10 : 6;
+    svgEl_('line', {
+      x1: x, y1: TL.AXIS_Y - tickH/2,
+      x2: x, y2: TL.AXIS_Y + tickH/2,
+      stroke: '#4a3418', 'stroke-width': isMajor ? '1.2' : '0.7', opacity: '0.7',
+    }, g);
+
+    if (isMajor || yr % 100 === 0) {
+      const label = yr === 0 ? 'AD / BC' : yr < 0 ? `${Math.abs(yr)} BC` : `AD ${yr}`;
+      svgText(label, {
+        x, y: TL.AXIS_Y + 18,
+        'text-anchor': 'middle',
+        'font-family': "'Cinzel', serif",
+        'font-size': isMajor ? '8' : '6.5',
+        fill: '#5a4020', opacity: '0.85',
+        'pointer-events': 'none',
+      }, g);
+    }
+  }
+
+  // BC/AD divider line
+  const xZero = yearToX(0);
+  svgEl_('line', {
+    x1: xZero, y1: TL.ERA_BAR_Y,
+    x2: xZero, y2: TL.HIST_Y + 40,
+    stroke: '#8a6020', 'stroke-width': '1', 'stroke-dasharray': '4,3', opacity: '0.5',
+  }, g);
+  svgText('BC', { x: xZero - 8, y: TL.AXIS_Y - 14, 'text-anchor':'end', 'font-family':"'Cinzel',serif", 'font-size':'7', fill:'#7a6030', opacity:'0.7', 'pointer-events':'none' }, g);
+  svgText('AD', { x: xZero + 8, y: TL.AXIS_Y - 14, 'text-anchor':'start', 'font-family':"'Cinzel',serif", 'font-size':'7', fill:'#7a6030', opacity:'0.7', 'pointer-events':'none' }, g);
+
+  // Events, people, history — added in later batches
+  // Placeholder groups for Batch 2+
+  svgEl_('g', { id:'g-events' }, g);
+  svgEl_('g', { id:'g-people', opacity: showPeople ? '1' : '0' }, g);
+  svgEl_('g', { id:'g-history', opacity: showHistory ? '1' : '0' }, g);
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PAN + ZOOM INTERACTION
+// ══════════════════════════════════════════════════════════════════════════
+function setupInteraction(svg, g) {
+  const panel = document.getElementById('timeline-panel');
+
+  // ── POINTER drag ──────────────────────────────────────────────────────
+  svg.addEventListener('pointerdown', e => {
+    if (e.target.closest('[data-clickable]')) return; // let event clicks through
+    isPanning = true;
+    panStartX = e.clientX;
+    panStartTranslate = translateX;
+    panel.classList.add('panning');
+    svg.setPointerCapture(e.pointerId);
+  });
+
+  svg.addEventListener('pointermove', e => {
+    if (!isPanning) return;
+    const dx = e.clientX - panStartX;
+    translateX = panStartTranslate + dx;
+    applyTransform(g);
+  });
+
+  svg.addEventListener('pointerup', e => {
+    isPanning = false;
+    panel.classList.remove('panning');
+  });
+  svg.addEventListener('pointercancel', () => {
+    isPanning = false;
+    panel.classList.remove('panning');
+  });
+
+  // ── WHEEL zoom ────────────────────────────────────────────────────────
+  svg.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.15 : 0.87;
+    const rect = svg.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left; // pixel position in panel
+    zoomAroundPoint(factor, mouseX, g);
+  }, { passive: false });
+
+  // ── PINCH zoom ────────────────────────────────────────────────────────
+  svg.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      lastPinchDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+    }
+  }, { passive: true });
+
+  svg.addEventListener('touchmove', e => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const factor = dist / lastPinchDist;
+      lastPinchDist = dist;
+      const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const rect = svg.getBoundingClientRect();
+      zoomAroundPoint(factor, cx - rect.left, g);
+    }
+  }, { passive: false });
+}
+
+function zoomAroundPoint(factor, screenX, g) {
+  const contentX = (screenX - translateX) / scaleX; // x in content coords before zoom
+  scaleX = Math.min(8, Math.max(0.3, scaleX * factor));
+  translateX = screenX - contentX * scaleX;
+  applyTransform(g || document.getElementById('g-inner'));
+}
+
+function zoomTimeline(factor) {
+  const panel = document.getElementById('timeline-panel');
+  zoomAroundPoint(factor, panel.clientWidth / 2);
+}
+
+// ── Jump to era ────────────────────────────────────────────────────────────
+function jumpToEra(era) {
+  const panel = document.getElementById('timeline-panel');
+  const W = panel.clientWidth;
+  const g = document.getElementById('g-inner');
+  let targetYear;
+  if (era === 'all') {
+    targetYear = -1500;
+  } else {
+    const [y0, y1] = ERA_RANGES[era] || [-1500, -1000];
+    targetYear = (y0 + y1) / 2;
+  }
+  const targetX = yearToX(targetYear) * scaleX;
+  // Animate
+  const startX = translateX;
+  const endX = W / 2 - targetX;
+  const duration = 400;
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const ease = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+    translateX = startX + (endX - startX) * ease;
+    applyTransform(g);
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// TOGGLES
+// ══════════════════════════════════════════════════════════════════════════
+function togglePeople() {
+  showPeople = !showPeople;
+  const g = document.getElementById('g-people');
+  if (g) g.setAttribute('opacity', showPeople ? '1' : '0');
+  document.getElementById('people-toggle-btn')?.classList.toggle('active', showPeople);
+  document.getElementById('mobile-people-btn')?.classList.toggle('active', showPeople);
+}
+
+function toggleHistory() {
+  showHistory = !showHistory;
+  const g = document.getElementById('g-history');
+  if (g) g.setAttribute('opacity', showHistory ? '1' : '0');
+  document.getElementById('history-toggle-btn')?.classList.toggle('active', showHistory);
+  document.getElementById('mobile-history-btn')?.classList.toggle('active', showHistory);
+}
+
+function toggleLegend() { document.getElementById('legend')?.classList.toggle('collapsed'); }
+function toggleMobileLegend() {
+  const leg = document.getElementById('legend-mobile');
+  leg?.classList.toggle('collapsed');
+  const chev = document.getElementById('legend-btn-chev');
+  if (chev) chev.style.transform = leg?.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// DETAIL PANEL
+// ══════════════════════════════════════════════════════════════════════════
+function openDetail(ev) {
+  currentEvent = ev;
+  const color = ERA_HEX[ev.era] || '#888';
+  const eraName = ERA_NAMES[ev.era] || ev.era;
+  const dateStr = ev.year < 0 ? `c. ${Math.abs(ev.year)} BC` : ev.year === 0 ? 'c. AD 1' : `c. AD ${ev.year}`;
+
+  let html = `
+    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
+    <div class="detail-name">${ev.name}</div>
+    <div class="detail-date">${dateStr}${ev.yearEnd ? ` – ${ev.yearEnd < 0 ? Math.abs(ev.yearEnd)+' BC' : 'AD '+ev.yearEnd}` : ''}</div>
+    ${ev.ref ? `<div class="detail-ref">${ev.ref}</div>` : ''}
+    ${ev.significance ? `<div class="detail-ref" style="color:var(--text-muted)">${ev.significance}</div>` : ''}
+    <div class="detail-divider"></div>
+    <div class="detail-text">${ev.summary}</div>
+  `;
+
+  if (ev.people && ev.people.length) {
+    html += `<div class="detail-section-head">People</div><div class="detail-people">`;
+    html += ev.people.map(pid =>
+      `<a href="people.html#${pid}" target="_blank" class="detail-person-chip">${pid.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a>`
+    ).join('');
+    html += `</div>`;
+  }
+
+  if (ev.chapter) {
+    html += `<a href="${ev.chapter}" class="detail-chapter-link">Read in Scripture Deep Dive</a>`;
+  }
+
+  document.getElementById('detail-content').innerHTML = html;
+  document.getElementById('detail-panel').classList.add('open');
+  history.replaceState(null, '', '#' + ev.id);
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+  currentEvent = null;
+  history.replaceState(null, '', location.pathname);
+  setTimeout(() => reinitIfResized(), 300);
+}
+
+// ── Swipe to close ─────────────────────────────────────────────────────────
+(function() {
+  let sy = 0;
+  const h = document.getElementById('detail-handle');
+  if (!h) return;
+  h.addEventListener('touchstart', e => { sy = e.touches[0].clientY; }, { passive: true });
+  h.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - sy > 40) closeDetail(); }, { passive: true });
+})();
+
+// ── Keyboard ───────────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDetail();
+  if (e.key === 'ArrowLeft')  zoomAroundPoint(1, document.getElementById('timeline-panel').clientWidth/2);
+  if (e.key === 'ArrowRight') zoomAroundPoint(1, document.getElementById('timeline-panel').clientWidth/2);
+});
+
+// ── ERA FILTER ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.era-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentEra = btn.dataset.era;
+    const lbl = document.getElementById('mobile-era-label');
+    if (lbl) lbl.textContent = currentEra === 'all' ? 'All Eras' : (ERA_NAMES[currentEra] || currentEra);
+    jumpToEra(currentEra);
+  });
+});
+
+// ── RESIZE ─────────────────────────────────────────────────────────────────
+let resizeTimer;
+function reinitIfResized() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(initTimeline, 150);
+}
+window.addEventListener('resize', reinitIfResized);
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 768) {
+    document.getElementById('legend-mobile')?.classList.add('collapsed');
+    const chev = document.getElementById('legend-btn-chev');
+    if (chev) chev.style.transform = 'rotate(-90deg)';
+  }
+  initTimeline();
+
+  // Hash deep-link — handled in Batch 2 once events exist
+});
+</script>
+</body>
+</html>
