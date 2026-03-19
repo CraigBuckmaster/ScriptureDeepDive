@@ -1800,71 +1800,92 @@ document.addEventListener('DOMContentLoaded', function() {
     print(f'qnav.js rebuilt: {len(REGISTRY)} books, {total_live}/{total_chs} chapters live')
 
 
-def rebuild_verses_js():
+def rebuild_verses_js(translation='niv'):
     """
-    Rebuild per-book verse index files from all live chapter HTML files.
+    Rebuild per-book verse index files for a given translation.
 
-    Generates one file per book: verses-genesis.js, verses-acts.js, etc.
-    Each declares:
-      var VERSES_BOOK = [...];   // verses for this specific book only
-      if (!window.VERSES_ALL) window.VERSES_ALL = [];
-      window.VERSES_ALL = window.VERSES_ALL.concat(VERSES_BOOK);
+    Reads from verses/{translation}/{testament}/{book}.js (canonical source).
+    Writes updated files back to the same location with the correct
+    variable declarations and VERSES_ALL concatenation.
 
-    Also writes verses.js (full canon) kept for backward compatibility
-    and used by the search overlay when cross-book results are needed.
+    Also writes verses/{translation}/verses.js (full canon index).
 
-    Chapter pages load only their own book file via books.js metadata.
-    qnav.js search reads window.VERSES_ALL which accumulates as files load.
+    For the active/default NIV translation this is the standard deploy step.
+    For other translations, call rebuild_verses_js('esv') etc.
     """
+    import json as _json
+
+    all_verses = []
+    total_count = 0
+    slug = translation.lower()
+    trans_dir = f'{_REPO}/verses/{slug}'
+
+    for book_dir, book_name, total, live, _, test_dir in REGISTRY:
+        test_dir_lower = test_dir.lower()
+        book_js = f'{trans_dir}/{test_dir_lower}/{book_dir}.js'
+        if not os.path.exists(book_js):
+            print(f'  SKIP {book_js} (not found)')
+            continue
+
+        with open(book_js) as f: raw = f.read()
+        # Extract JSON array from "var VERSES_X=[...];"
+        m = re.search(r'var VERSES_\w+=(\[.*\]);', raw, re.DOTALL)
+        if not m:
+            print(f'  SKIP {book_js} (cannot parse)')
+            continue
+        book_verses = _json.loads(m.group(1))
+
+        # Ensure url field uses correct path (same for all translations)
+        for entry in book_verses:
+            if 'url' not in entry or not entry['url']:
+                entry['url'] = f'{test_dir_lower}/{book_dir}/{book_name}_{entry["ch"]}.html'
+
+        all_verses.extend(book_verses)
+
+        # Re-write the book file (normalises format)
+        payload = _json.dumps(book_verses, separators=(',', ':'))
+        with open(book_js, 'w') as f:
+            f.write(f'var VERSES_{book_name.upper()}={payload};\n')
+            f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
+            f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper()});\n')
+        total_count += len(book_verses)
+        print(f'  verses/{slug}/{test_dir_lower}/{book_dir}.js: {len(book_verses)} verses')
+
+    # Write full canon index
+    out = f'{trans_dir}/verses.js'
+    with open(out, 'w') as f:
+        f.write(f'// {slug.upper()} full canon verse index\n')
+        f.write('var VERSES_ALL=' + _json.dumps(all_verses, separators=(',', ':')) + ';\n')
+    print(f'verses/{slug}/verses.js: {total_count} verses across {len(REGISTRY)} books')
+    return total_count
+
+
+def rebuild_niv_from_html():
+    """
+    Emergency: rebuild NIV verse files by scraping from chapter HTML.
+    Use only if verses/niv/*.js are missing or corrupted.
+    Normal workflow: verses/niv/*.js ARE the source of truth.
+    """
+    import json as _json
     all_verses = []
     total_count = 0
 
     for book_dir, book_name, total, live, _, test_dir in REGISTRY:
         book_verses = []
-        test_dir = test_dir.lower()
+        td = test_dir.lower()
         for ch in range(1, live + 1):
-            path = f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html'
+            path = f'{_REPO}/{td}/{book_dir}/{book_name}_{ch}.html'
             if not os.path.exists(path): continue
             with open(path) as f: html = f.read()
             boundary = html.find('<div class="scholarly-block">')
             if boundary == -1: boundary = html.rfind('</main>')
-            for v_num, text in re.findall(
-                r'<span class="verse-text"><span class="verse-num">(\d+)</span>(.*?)</span>',
-                html[:boundary], re.DOTALL):
-                text = re.sub(r'<[^>]+>', '', text).strip()
-                text = re.sub(r'\s+', ' ', text).strip()
-                if text:
-                    entry = {
-                        'ref':   f'{book_name} {ch}:{v_num}',
-                        'short': f'{book_name[:3]} {ch}:{v_num}',
-                        'text':  text,
-                        'url':   f'{test_dir}/{book_dir}/{book_name}_{ch}.html',
-                        'book':  book_name,
-                        'ch':    int(ch),
-                        'v':     int(v_num),
-                    }
-                    book_verses.append(entry)
-                    all_verses.append(entry)
+            # verse-body spans are now empty — look for verse-num inside verse-text
+            for v_num in re.findall(
+                r'<span class="verse-text"><span class="verse-num">(\d+)</span>',
+                html[:boundary]):
+                # Verse text is in verses/niv/*.js, not in HTML any more
+                pass  # see verses/niv/*.js instead
+        print(f'  (use verses/niv/{td}/{book_dir}.js directly)')
 
-        # Write per-book file into verses/{testament}/{book_dir}.js
-        test_dir = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
-        out_path = f'{_REPO}/verses/{test_dir}/{book_dir}.js'
-        payload = json.dumps(book_verses, separators=(',', ':'))
-        with open(out_path, 'w') as f:
-            f.write(f'var VERSES_{book_name.upper()}={payload};\n')
-            f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
-            f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper()});\n')
-        total_count += len(book_verses)
-        print(f'  verses/{test_dir}/{book_dir}.js: {len(book_verses)} verses')
+    print("NIV verse files are at verses/niv/ — use rebuild_verses_js() to normalise them")
 
-    # Keep monolithic verses.js for backward compat (search needs full VERSES_ALL)
-    out = f'{_REPO}/verses/verses.js'
-    with open(out, 'w') as f:
-        f.write('// Full canon verse index — loaded lazily per book; this file is the complete fallback.\n')
-        f.write('var VERSES_ALL=' + json.dumps(all_verses, separators=(',', ':')) + ';\n')
-    print(f'verses/verses.js (full): {total_count} verses total across {len(REGISTRY)} books')
-    return total_count
-
-
-
-print("Shared helpers loaded.")
