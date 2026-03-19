@@ -1387,7 +1387,48 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
+    ensure_tx_book_var(book_name)
     return path
+
+def ensure_tx_book_var(book_name):
+    """Ensure translation.js BOOK_VARS contains VERSES_BOOKNAME for this book.
+    Called automatically by build_chapter. Idempotent.
+    """
+    tx_path = os.path.join(_REPO, "translation.js")
+    if not os.path.exists(tx_path):
+        return
+
+    var_name = "VERSES_" + book_name.upper()
+    quoted   = chr(39) + var_name + chr(39)
+
+    with open(tx_path, encoding="utf-8") as f:
+        tx = f.read()
+
+    if quoted in tx:
+        return  # already present
+
+    bv_match = re.search(r"var BOOK_VARS\s*=\s*\[([^\]]+)\];", tx, re.DOTALL)
+    if not bv_match:
+        print("  [translation.js] BOOK_VARS not found")
+        return
+
+    reg_vars = ["VERSES_" + r[1].upper() for r in REGISTRY]
+    existing = re.findall(r"VERSES_[A-Z_]+", bv_match.group(1))
+    combined = list(dict.fromkeys(existing + [var_name]))
+    ordered  = [v for v in reg_vars if v in combined]
+    for v in combined:
+        if v not in ordered:
+            ordered.append(v)
+
+    chunks   = [ordered[i:i+5] for i in range(0, len(ordered), 5)]
+    rows     = ["    " + ",".join(chr(39)+v+chr(39) for v in chunk) for chunk in chunks]
+    inner    = ",\n".join(rows)
+    new_block = "var BOOK_VARS = [\n" + inner + "\n  ];"
+
+    with open(tx_path, "w", encoding="utf-8") as f:
+        f.write(tx[:bv_match.start()] + new_block + tx[bv_match.end():])
+    print("  [translation.js] Added " + quoted + " to BOOK_VARS")
+
 
 def build_chapter(book_dir, ch, data):
     """
