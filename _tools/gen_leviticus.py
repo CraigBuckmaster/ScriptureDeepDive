@@ -781,3 +781,360 @@ lev(10, {
 })
 
 print("LEV-2 complete: Leviticus 8–10 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEV-3: Chapters 11–15 — The Purity System
+# ─────────────────────────────────────────────────────────────────────────────
+
+lev(11, {
+    'title': 'Clean and Unclean Animals: The Theology of Distinction',
+    'sections': [
+        {
+            'header': 'Verses 1–23 — Land Animals, Sea Creatures, and Birds',
+            'verses': verse_range(1, 23),
+            'heb': [
+                ('ṭāhôr / ṭāmēʾ', 'tahor / tame', 'clean / unclean', 'The fundamental binary of Levitical purity. These are ritual-status categories, not moral ones — an unclean animal is not sinful; it simply cannot be eaten or its carcass touched without incurring ritual impurity. The clean/unclean distinction structures Israel\'s interface with the created world.'),
+                ('šereṣ', 'sherets', 'swarming things / teeming creatures', 'The lowest category of creatures — those that swarm on the earth (land and water). They generate the highest level of impurity: contact defiles immediately. The category maps roughly to creatures associated with death and decay.'),
+            ],
+            'ctx': 'The food laws of Lev 11 are not primarily about hygiene (though some unclean animals do carry pathogens) but about boundary maintenance — both theological (Israel distinct from the nations) and ontological (the clean world ordered, complete, whole). Milgrom\'s influential analysis: clean animals are those fully adapted to their habitat (land animals with cloven hooves that chew the cud; sea creatures with fins AND scales; birds that are not birds of prey). Animals that cross boundaries or occupy ambiguous niches (pigs: hooves but no cud; shellfish: water but no fins-and-scales) are unclean. The dietary laws enact the creation order at every meal.',
+            'cross': [
+                ('Acts 10:9–16', 'Peter\'s vision — the sheet lowered from heaven, the voice: "Do not call anything impure that God has made clean." The food laws are declared fulfilled in Christ; the barrier between clean and unclean Jew and Gentile is dismantled.'),
+                ('Mark 7:18–19', '"Don\'t you see that nothing that enters a person from the outside can defile them?… In saying this, Jesus declared all foods clean." The food laws served their pedagogical purpose; their dissolution signals the arrival of the new covenant.'),
+                ('Col 2:16–17', '"Do not let anyone judge you by what you eat or drink… These are a shadow of the things that were to come; the reality, however, is found in Christ."'),
+            ],
+            'mac': [
+                ('11:1–8', 'MacArthur: The two-part requirement for clean land animals — split hooves AND chews the cud — means no one characteristic is sufficient. The pig (split hoof, no cud) and the camel (chews cud, no split hoof) are equally disqualified. The laws resist simple analogical reading; they demand binary compliance.'),
+                ('11:20–23', 'MacArthur: The prohibition on most winged insects is broken by the exception for locusts, katydids, crickets, and grasshoppers — the very insects John the Baptist ate (Matt 3:4). The exception is not arbitrary; these insects walk on their legs (not "crawl on all fours") and have jointed rear legs for leaping. They belong fully to their element; they do not cross categories.'),
+            ],
+            'milgrom': [
+                ('11:1–23', 'Milgrom: The dietary laws encode a theology of creation order. Clean animals are those fully adapted to their ecological niche — defined by their primary mode of locomotion and environment. Animals that "cheat" their habitat categories (amphibious creatures, bottom-feeders, carrion birds) are unclean. Eating only clean animals means aligning the diet with creation\'s structure.'),
+                ('11:44–45', 'Milgrom: The dietary laws\' theological rationale is stated explicitly: "Be holy because I, the Lord your God, am holy." The clean/unclean distinction is not merely practical but participatory — Israel\'s diet enacts the divine distinction between holy and common.'),
+            ],
+            'sarna': [
+                ('11:1–23', 'Sarna: The food laws are one of Israel\'s most distinctive cultural markers. They function sociologically to prevent assimilation — a people who cannot share a meal with their neighbours will maintain their identity. The laws create a community of practice sustained by daily embodied behaviour.'),
+            ],
+            'alter': [
+                ('11:3–8', 'Alter: The chiastic structure of the animal taxonomy — split hoof AND cud (clean), split hoof NOT cud / cud NOT split hoof (unclean), neither (unclean) — reflects the priestly writers\' taxonomic method. Classification is the mode of holiness; the ordered table of creatures reflects the ordered creation of Gen 1.'),
+            ],
+            'calvin': [
+                ('11:44–45', 'Calvin: The food laws teach that God\'s holiness must permeate every area of life — including the table. What we eat is a theological statement. The Christian is not bound by these specific laws, but the principle remains: our bodies, our appetites, and our daily practices are to be shaped by the holiness of God who indwells us.'),
+            ],
+            'netbible': [
+                ('11:3', 'NET Note: "Chews the cud" (maʿăleh gērāh) — ruminants. "Completely divided hoof" (parsāh pĕrusāh) — ungulates with cleft hooves. Both conditions must be met. The double requirement prevents extending the category to ambiguous cases — a safeguard against the boundaries being blurred.'),
+            ],
+        },
+        {
+            'header': 'Verses 24–47 — Carcass Defilement; Summary: Holy to the Lord',
+            'verses': verse_range(24, 47),
+            'heb': [
+                ('nĕbēlāh', 'nevelah', 'carcass / dead body of an animal', 'An animal that died naturally or was killed by another animal — not slaughtered by the prescribed method. Contact with a carcass generates impurity until evening even for clean animals. Death itself carries a kind of impurity in Leviticus.'),
+                ('wĕhithqaddištěm', 'wehithqadishshem', 'consecrate yourselves / make yourselves holy', 'Hithpael reflexive of qādaš — to make oneself holy. The food laws are not merely prohibitions but positive acts of self-consecration. Every compliant meal is a minor liturgical act.'),
+            ],
+            'ctx': 'The chapter\'s second half (vv.24–47) addresses carcass-defilement — touching the carcass of any unclean animal, or even of clean animals that died naturally, generates impurity until evening and requires washing. Vessels that are touched must be cleaned or broken (earthenware). The principle: death is the domain of impurity; holiness is the domain of life. The chapter closes with the explicit theological rationale (vv.44–45): "Be holy, because I am holy." The dietary laws are not arbitrary — they are participatory in God\'s own holiness.',
+            'cross': [
+                ('Heb 9:14', '"How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death." The NT\'s language of purification from "dead works" draws directly on Levitical categories.'),
+                ('1 Pet 1:15–16', '"Just as he who called you is holy, so be holy in all you do; for it is written: \'Be holy, because I am holy.\'" Peter quotes Lev 11:44–45 as a living NT imperative. The theological core of the dietary laws survives their abrogation.'),
+            ],
+            'mac': [
+                ('11:44–47', 'MacArthur: The summary of chapter 11 states the purpose of the entire purity system: "to distinguish between the unclean and the clean, between living creatures that may be eaten and those that may not be eaten." The dietary laws are a daily, embodied practice of distinction-making — teaching Israel that God is different, that Israel is called to be different, and that the created order reflects the divine holiness.'),
+            ],
+            'milgrom': [
+                ('11:24–40', 'Milgrom: The carcass-defilement laws reveal an important principle: death generates impurity even in clean animals. The distinction is not clean vs. unclean animal as such, but life-force vs. death-force. Clean animals can be eaten when slaughtered; their carcasses (death-state) still defile. This supports Milgrom\'s thesis that the purity system fundamentally maps the life-death polarity onto the clean-unclean binary.'),
+            ],
+            'sarna': [
+                ('11:44–45', 'Sarna: The explicit theological rationale — "I am the Lord your God; consecrate yourselves and be holy, because I am holy" — is unique among the food law passages. Elsewhere the laws are given without rationale; here the reason is stated: Israel\'s dietary practice is an extension of the divine holiness that defines their covenant identity.'),
+            ],
+            'alter': [
+                ('11:44', 'Alter: "For I am the Lord your God, consecrate yourselves and be holy for I am holy" — the divine self-identification and the imperative it grounds. The food laws are not culture but ontology: what Israel eats participates in who God is. The meal table is a theological instrument.'),
+            ],
+            'calvin': [
+                ('11:24–40', 'Calvin: The defilement from carcass contact teaches the believer to maintain separation from spiritual death — the corruption of the world, the deadness of false religion, the decay of sin. Though the specific laws are fulfilled, the principle of avoiding contamination by what is spiritually "dead" applies to the Christian life.'),
+            ],
+            'netbible': [
+                ('11:45', 'NET Note: "I brought you up out of Egypt to be your God" — the Exodus is cited as the ground of the holiness imperative. Redemption creates obligation. Because YHWH acted to deliver Israel, Israel owes him holy living. The food laws are not a burden but a response to grace.'),
+            ],
+        },
+    ],
+})
+
+lev(12, {
+    'title': 'Purification After Childbirth',
+    'sections': [
+        {
+            'header': 'Verses 1–5 — The Purification Periods: Son and Daughter',
+            'verses': verse_range(1, 5),
+            'heb': [
+                ('niddāh', 'niddah', 'menstrual impurity / separation', 'The same term used for menstrual impurity (Lev 15:19–24) and applied here to the bleeding after childbirth. The impurity is not moral — childbirth is blessed by God — but ritual: the blood-flow creates a state that temporarily restricts access to the sanctuary.'),
+                ('yāmîm', 'yamim', 'days', 'The purification periods — 33 days for a boy (total 40), 66 days for a girl (total 80) — are liturgical durations, not medical prescriptions. The doubled period for a girl has been much discussed; no fully satisfying explanation has emerged.'),
+            ],
+            'ctx': 'Leviticus 12 is brief (8 verses) but theologically dense. Childbirth is not sin — the mother is not guilty of anything. Yet the blood flow associated with birth creates a state of ritual impurity similar to menstrual impurity (niddāh). The purification period has two phases: the first (7 days for boy/14 for girl) she is like during menstruation — full impurity; the second (33/66 days) she is "continuing in the blood of her purification" — lesser impurity. At the end she brings a burnt offering and a sin offering. The sin offering (ḥaṭṭāʾt) here is not for a sin committed but for the transition from an impure state back to the holy — the same logic as the purification offering throughout Leviticus.',
+            'cross': [
+                ('Luke 2:22–24', '"When the time came for the purification rites required by the Law of Moses, Joseph and Mary took him to Jerusalem." Mary brought the bird offering (v.8) — the poor person\'s provision. The Son of God entered the world under the full weight of the Levitical purity system, born of a woman under the law.'),
+                ('Gal 4:4–5', '"God sent his Son, born of a woman, born under the law, to redeem those under the law." The incarnation is defined by entry under Levitical obligation.'),
+                ('Ps 51:5', '"Surely I was sinful at birth, sinful from the time my mother conceived me." The childbirth-impurity law gave David the vocabulary for his meditation on original sinfulness — not that birth causes sin, but that the impurity system maps onto the human condition of needing purification.'),
+            ],
+            'mac': [
+                ('12:1–5', 'MacArthur: The mother\'s ritual impurity after childbirth is not a condemnation of childbirth or of the female body — God commanded childbearing (Gen 1:28) and blessed it throughout Scripture. The impurity arises from the blood-flow, not from the act of birth itself. The law is pastorally designed: it gives the new mother a period of seclusion and recovery before she resumes full cultic participation.'),
+                ('12:6–8', 'MacArthur: The provision of birds for mothers who cannot afford a lamb (v.8) is one of Leviticus\'s recurring pastoral accommodations. Mary\'s offering of turtledoves at Jesus\'s presentation (Luke 2:24) is a window into the holy family\'s economic circumstances — and a reminder that the law of God is attentive to the poor.'),
+            ],
+            'milgrom': [
+                ('12:1–5', 'Milgrom: The doubled purification period for a girl (80 days vs 40 for a boy) has generated extensive debate. Milgrom\'s suggestion: the female child herself will eventually be subject to the niddāh impurity, so her arrival brings a doubled impurity potential. Other scholars simply acknowledge the text\'s silence on the rationale.'),
+                ('12:6–8', 'Milgrom: The ḥaṭṭāʾt at the end of the purification period is a "purification offering" (Milgrom\'s preferred translation) — it purges the sanctuary of whatever residual impurity the mother\'s condition may have generated, even at a distance. The offering is not for sin; it marks the transition from impure state to clean.'),
+            ],
+            'sarna': [
+                ('12:3', 'Sarna: The eighth-day circumcision mandate, embedded in the childbirth laws, connects the birth of a boy to the covenant of Abraham (Gen 17:12). The purity system and the covenant identity system are linked: the boy enters the covenant on the same day the impurity period\'s most intense phase ends.'),
+            ],
+            'alter': [
+                ('12:1–5', 'Alter: The brevity of this chapter — eight verses for a topic that touches birth, blood, gender, and purification — is striking. The priestly writers do not linger; they legislate. The law is a frame around the experience of birth, not a meditation on it. What the frame accomplishes — temporary seclusion, formal re-entry, the guarantee that every birth is accompanied by priestly ritual — is the point.'),
+            ],
+            'calvin': [
+                ('12:6–8', 'Calvin: The requirement that even a mother who has done nothing wrong must bring a sin offering teaches that we are in a state of impurity not only from our actions but from our condition. The need for purification is universal. Only in Christ do we find a purification that addresses not just acts but the state of our nature.'),
+            ],
+            'netbible': [
+                ('12:8', 'NET Note: The bird provision (two turtledoves or two young pigeons) is the same graduated poverty provision as in Lev 5:7–10. Its appearance here confirms that the entire purity system is designed with economic accessibility in mind — no Israelite woman, however poor, is excluded from formal re-entry into the covenant community after childbirth.'),
+            ],
+        },
+        {
+            'header': 'Verses 6–8 — The Purification Offerings: Lamb or Birds',
+            'verses': verse_range(6, 8),
+            'heb': [
+                ('olah / chatat', 'olah / chatat', 'burnt offering / sin offering', 'The two-offering combination marking re-entry. The burnt offering expresses total consecration; the sin offering purges residual impurity. Together they formally restore the mother to full covenant worship.'),
+            ],
+            'ctx': "The purification offerings mark the transition from impure state back to full covenant life. The prescribed offering is a year-old lamb plus a bird. The poverty provision — two turtledoves or two pigeons — is the offering Mary brought at Jesus's presentation (Luke 2:24), revealing the holy family's economic situation. The priest declares the mother clean — not because she sinned in giving birth, but because the blood-flow impurity is formally resolved and she is re-integrated into the covenant community.",
+            'cross': [
+                ('Luke 2:22–24', "Joseph and Mary brought the poverty provision of v.8 — a pair of turtledoves. The Son of God entered under the full weight of the Levitical system, born of a woman under the law."),
+                ('Heb 9:12–14', "He entered the Most Holy Place once for all by his own blood — the fulfillment of every ḥaṭṭāʾt offering."),
+            ],
+            'mac': [
+                ('12:6–8', "MacArthur: The bird provision is the poorest-tier option throughout Leviticus. Mary's use of it at Jesus's presentation (Luke 2:24) locates the incarnation among the economically marginal. The one who would declare all foods clean and all people welcome entered the world under the laws that most restricted the poor."),
+                ('12:6–7', "MacArthur: The mother's purification offerings complete the liturgical cycle that began with birth. The burnt offering signifies her complete re-dedication to God; the sin offering restores her full access to the sanctuary. Dedication and purification together characterise the entire Levitical worship system."),
+            ],
+            'milgrom': [
+                ('12:6–7', "Milgrom: The ḥaṭṭāʾt here is not for sin but for transition from impurity to purity. Milgrom's consistent interpretation: it purges the sanctuary of whatever impurity the mother's state generated at a distance. The offering marks formal re-entry, not expiation of guilt."),
+            ],
+            'sarna': [
+                ('12:6–8', "Sarna: The graduated offering provision is consistent with the Torah's pastoral concern throughout Leviticus. No Israelite woman, however poor, is denied the formal re-entry ceremony after childbirth."),
+            ],
+            'alter': [
+                ('12:8', "Alter: The final verse of chapter 12 — a single, economically calibrated provision — settles the entire matter of a woman's post-partum re-entry into the covenant community. The legislative compression is characteristic of the priestly style."),
+            ],
+            'calvin': [
+                ('12:6–8', "Calvin: The sin offering at the end of the purification period teaches the universal need for mediation between fallen humanity and holy God. Every return to full covenant standing requires atonement — Christ is that covering, once for all."),
+            ],
+            'netbible': [
+                ('12:8', "NET Note: 'If she cannot afford a lamb' — the poverty provision appears in Lev 5:7 and 14:21–22 also. It is a recurring structural element of the purity legislation, ensuring full access to purification for the poorest members of the covenant community."),
+            ],
+        }
+    ],
+})
+lev(13, {
+    'title': 'Skin Diseases and Mould: The Priest as Diagnostician',
+    'sections': [
+        {
+            'header': 'Verses 1–46 — The Examination and Diagnosis of Skin Conditions',
+            'verses': verse_range(1, 46),
+            'heb': [
+                ('ṣāraʿat', 'tsara\'at', 'skin disease / scale disease / traditionally "leprosy"', 'The English "leprosy" (Hansen\'s disease) is almost certainly a mistranslation. Ṣāraʿat covers a wide range of scale-like, spreading skin conditions — psoriasis, vitiligo, impetigo, eczema, fungal infections. The priest\'s role is diagnostic-ritual, not medical; he declares status, not disease.'),
+                ('ṭāmēʾ / ṭāhôr', 'tame / tahor', 'unclean / clean', 'The priest\'s verdict is a binary ritual declaration, not a medical diagnosis. The same physical condition may be declared clean or unclean depending on its appearance, spread, and associated signs. The criteria are liturgical, not pathological.'),
+            ],
+            'ctx': 'Leviticus 13 is the longest chapter in the book (59 verses) — a detailed diagnostic manual for the priest examining skin conditions. The logic throughout is consistent: a condition that has completely turned white and is not spreading may be clean (completeness even in the extreme = the skin has reached a stable state); a raw patch, spreading discolouration, or white hair in the mark = unclean. The person must present themselves twice (after seven days, sometimes a second seven days) before a final verdict is given. If declared unclean, the person tears their clothes, leaves hair dishevelled, covers their upper lip, and calls out "Unclean! Unclean!" — they are quarantined outside the camp.',
+            'cross': [
+                ('Luke 17:11–19', '"Ten men who had leprosy met him. They called out in a loud voice, \'Jesus, Master, have pity on us!\' When he saw them, he said, \'Go, show yourselves to the priests.\'" Jesus follows the Levitical procedure — the priest\'s declaration of clean is required for re-entry into community. He fulfils, not abolishes, the system.'),
+                ('Num 12:9–15', 'Miriam struck with ṣāraʿat for speaking against Moses — quarantined outside the camp for seven days, then readmitted. The entire nation waited for her (v.15). The social dimension of the purity law: the community halts for one member\'s restoration.'),
+                ('Isa 53:4', '"Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted." The Servant\'s suffering is described using ṣāraʿat language — "stricken" (nāgûaʿ) is the word for the ṣāraʿat-sufferer. Christ bears the ultimate exile.'),
+            ],
+            'mac': [
+                ('13:1–8', 'MacArthur: The priest\'s role in skin disease assessment is entirely ritual, not medical. He does not treat; he declares. The seven-day quarantine (v.4) is precautionary — allowing time for the condition to declare itself before a verdict is rendered. The system is designed for accuracy: premature declaration could exclude a healthy person; delay could allow a spreading condition to defile the camp.'),
+                ('13:45–46', 'MacArthur: The exclusion from the camp is not primarily punitive but protective — both of the community and of the sacred space. The ṣāraʿat-sufferer\'s distinctive appearance (torn clothes, dishevelled hair, covered lip) and warning cry ("Unclean! Unclean!") serve as a system of public health communication. The person is not condemned; they are quarantined.'),
+            ],
+            'milgrom': [
+                ('13:2–8', 'Milgrom: The diagnostic criteria in Lev 13 are liturgical, not dermatological. The priest is not a physician; he is a boundary official. His task is to determine whether a person\'s skin condition requires exclusion from the sacred community. The criteria are designed to catch spreading, active conditions — signs of life invading the skin from outside — while permitting stable, bounded conditions.'),
+                ('13:45–46', 'Milgrom: The ṣāraʿat-sufferer\'s required appearance (torn garment, loosened hair, covered lip) mirrors the mourning rituals of the bereaved. Milgrom\'s observation: the ṣāraʿat-sufferer is treated as one who is socially dead — excluded from the living community. This confirms the link between impurity and death that runs through Lev 11–15.'),
+            ],
+            'sarna': [
+                ('13:1–3', 'Sarna: The opening of Lev 13 positions it as divine instruction rather than folk custom — "the Lord said to Moses and Aaron." The purity laws are not Israelite cultural development but covenantal legislation. Their authority derives from Sinai, not from ANE medical practice, however parallel some of the symptomology may be.'),
+            ],
+            'alter': [
+                ('13:3', 'Alter: The priest\'s examination is described with clinical detachment: "he shall examine the sore on the skin." The vocabulary of looking, examining, and declaring creates a ritual gaze — the priest\'s eyes become the instrument of communal boundary maintenance. Seeing is a priestly act.'),
+            ],
+            'calvin': [
+                ('13:45–46', 'Calvin: The ṣāraʿat laws teach that sin, like a skin disease, must be examined, declared, and addressed before restoration can occur. The church has a duty of church discipline analogous to the priest\'s function: naming what is wrong, temporarily excluding what is dangerous, and providing a path to restoration. The goal is always readmission (Lev 14), not permanent exclusion.'),
+            ],
+            'netbible': [
+                ('13:3', 'NET Note: "White hair in the sore" is the key sign of active ṣāraʿat — depigmented hair in a depigmented patch signals that the condition has affected the deeper layers of skin. This is more consistent with psoriasis or vitiligo than with Hansen\'s disease (leprosy), which typically does not cause white hair.'),
+            ],
+        },
+        {
+            'header': 'Verses 47–59 — Mould in Fabric and Leather',
+            'verses': verse_range(47, 59),
+            'heb': [
+                ('negaʿ ṣāraʿat', 'nega tsara\'at', 'mark/disease of ṣāraʿat', 'The same term applied to skin disease is used for spreading mould/mildew on fabric (vv.47–59) and on buildings (Lev 14:33–57). Ṣāraʿat is not a single disease but a category: spreading, boundary-violating contamination in skin, fabric, or stone.'),
+            ],
+            'ctx': 'The chapter extends the ṣāraʿat category from human skin to fabric and leather — woolly garments, linen items, and leather goods. The diagnostic process mirrors the skin disease procedure: quarantine for seven days (v.50), re-examine, wash if the spread has stopped, re-quarantine a second seven days if ambiguous, burn if it spreads. The application of ṣāraʿat to inanimate objects confirms that it is a ritual category (boundary-violating contamination) rather than a medical one.',
+            'cross': [
+                ('Rev 3:4', '"You have a few people in Sardis who have not soiled their garments; they will walk with me, dressed in white, for they are worthy." The language of pure/soiled garments extends the Levitical fabric-purity metaphor into the NT eschatological register.'),
+                ('Jude 23', '"Save others by snatching them from the fire; to others show mercy, mixed with fear — hating even the clothing stained by corrupted flesh." Jude borrows the ṣāraʿat-in-fabric logic to describe moral contamination.'),
+            ],
+            'mac': [
+                ('13:47–59', 'MacArthur: The extension of ṣāraʿat to fabric is not a concession to primitive superstition but a theological consistency: the same principles of boundary and spread that govern skin disease govern everything in the Israelite world. Contamination is not confined to bodies; it pervades the material environment. The priest must manage the entire cosmos of the camp.'),
+            ],
+            'milgrom': [
+                ('13:47–59', 'Milgrom: The fabric-ṣāraʿat passages demonstrate that ṣāraʿat is a ritual-taxonomic category, not a medical one. No modern fungal, mould, or mildew condition exactly matches the described symptoms. The category captures the idea of spreading contamination — things that violate boundaries, proliferate, and threaten to spread to the human community.'),
+            ],
+            'sarna': [
+                ('13:51', 'Sarna: "A malignant ṣāraʿat" (ṣāraʿat mamaʿeret, a spreading disease) — the diagnostic criterion for condemning fabric is the same as for skin: active spread. The system is consistent across its domains. What is stable and bounded may be clean; what is spreading and boundary-violating must be addressed.'),
+            ],
+            'alter': [
+                ('13:47–59', 'Alter: The fabric legislation is the priestly system at its most consistent and its most alien to modern sensibility. The same diagnostic gaze — examination, quarantine, re-examination — applied to a rash on human skin is now applied to a stain on a garment. The created world is one continuous field of holiness and impurity; the priest must manage all of it.'),
+            ],
+            'calvin': [
+                ('13:47–59', 'Calvin: The extension of the purity laws to garments teaches that no material thing is beyond the reach of holiness or contamination. The Christian is called not only to personal holiness but to maintain a holy environment — "hating even the garment stained by the flesh" (Jude 23). The whole material life is a spiritual concern.'),
+            ],
+            'netbible': [
+                ('13:51', 'NET Note: "Spreading ṣāraʿat" in fabric is likely a mould or mildew condition — perhaps Aspergillus or similar fungi that spread through organic material. The green and reddish coloration (v.49) matches some mould species. The category is taxonomically consistent with skin disease: spreading, boundary-violating contamination.'),
+            ],
+        },
+    ],
+})
+
+lev(14, {
+    'title': 'The Purification of Skin Disease: Restored to the Community',
+    'sections': [
+        {
+            'header': 'Verses 1–32 — The Two-Stage Purification Ritual',
+            'verses': verse_range(1, 32),
+            'heb': [
+                ('ṭāhēr', 'taher', 'to declare clean / to purify', 'The priest\'s declaration of clean after inspection — a ritual verdict that restores the person to community. The same word used for the initial clean declaration; here it follows purification rather than initial assessment.'),
+                ('ʿēṣ ʾerez', 'ets erez', 'cedar wood', 'Part of the purification bundle (cedar, scarlet yarn, hyssop) used to sprinkle the healed person. Cedar is fragrant, resistant to decay — associated with life and vitality. Its use signals restoration to the realm of the living.'),
+            ],
+            'ctx': 'The purification of a healed ṣāraʿat-sufferer is the most elaborate ritual in Leviticus outside the Day of Atonement. Two stages: the first ceremony (vv.4–9) is performed outside the camp — two birds, cedar, scarlet yarn, hyssop. One bird is killed over fresh water; the live bird is dipped in the blood-water mixture and released (like the scapegoat in Lev 16). The person is sprinkled seven times, declared clean, washes clothes and hair, and waits seven days outside before full re-entry. The second stage (vv.10–32) — on the eighth day — mirrors the priestly ordination of Lev 8: blood on the right earlobe, thumb, and big toe; oil over the blood; sin offering, guilt offering, burnt offering. The healed person is, in effect, re-ordained into full covenant life.',
+            'cross': [
+                ('Luke 5:12–14', '"Jesus reached out his hand and touched the man. \'I am willing,\' he said. \'Be clean!\' And immediately the leprosy left him. Then Jesus ordered him… \'go, show yourself to the priest and offer the sacrifices that Moses commanded.\'" Jesus pronounces clean and then sends to the priest for the Levitical purification process.'),
+                ('Heb 9:19', '"When Moses had proclaimed every command of the law to all the people, he took the blood of calves… together with scarlet wool and branches of hyssop, and sprinkled the scroll and all the people." The hyssop and scarlet of Lev 14 appear throughout the purification rituals of Hebrews as types of Christ\'s blood.'),
+            ],
+            'mac': [
+                ('14:4–9', 'MacArthur: The two-bird ritual enacts the logic of substitution and release: one bird dies, its blood mingled with water; the live bird carries the blood into the open fields, symbolically bearing away the impurity. The same drama as the two goats of Yom Kippur (Lev 16): death and expulsion together accomplish the purification.'),
+                ('14:10–20', 'MacArthur: The earlobe, thumb, and toe anointing (v.14) is the identical procedure as Aaron\'s ordination (8:23). The healed person is not merely returned to their former status — they are, in effect, re-consecrated, re-inducted into the covenant community. Restoration is more than recovery; it is re-creation.'),
+            ],
+            'milgrom': [
+                ('14:4–7', 'Milgrom: The two-bird ritual reverses the status of the ṣāraʿat-sufferer who was effectively treated as dead (outside the camp, mourning gestures). The dead bird in the bowl of water = death has been enacted; the released bird carrying the blood = the death has been expelled, reversed. The person is re-entered into the category of the living.'),
+                ('14:14', 'Milgrom: The earlobe-thumb-toe blood application for the healed person is one of Milgrom\'s key pieces of evidence that Lev 8 and Lev 14 share a common ritual logic: the re-consecration of the whole person for covenant service. Healing and ordination share the same liturgical grammar.'),
+            ],
+            'sarna': [
+                ('14:10–18', 'Sarna: The graduated offering provision (lamb and oil for the standard case; birds and oil for the poor, vv.21–32) demonstrates that the purification system is accessible regardless of economic status. The poor receive a fully valid purification — the theological content is identical; only the animal substituted differs.'),
+            ],
+            'alter': [
+                ('14:4–7', 'Alter: The two-bird ritual is among the most visually striking in the Torah: one bird killed over a clay pot with fresh water, blood mixed with water, live bird dipped in the mixture and released to fly away over open country. The released bird, blood-stained but alive, is a remarkable image — impurity transported beyond the camp\'s boundaries into the free expanse of the world outside.'),
+            ],
+            'calvin': [
+                ('14:1–20', 'Calvin: The elaborate purification of the healed person teaches that restoration to God\'s community requires more than physical recovery — it requires formal, priestly re-entry. The church has a corresponding responsibility: not merely to welcome the repentant but to formally receive them, to mark their re-entry with the rituals of the community, to ensure they are genuinely restored rather than simply tolerated.'),
+            ],
+            'netbible': [
+                ('14:4', 'NET Note: "Two live clean birds" — the use of two birds parallels the two-goat ritual of Yom Kippur (Lev 16:7–10). In both cases, one dies (bearing impurity/sin) and one is released (expelling what was borne). The ritual logic is consistent: purgation of the impurity requires both its death and its expulsion from the camp.'),
+            ],
+        },
+        {
+            'header': 'Verses 33–57 — Mould in Houses; Summary of Purification Laws',
+            'verses': verse_range(33, 57),
+            'heb': [
+                ('negaʿ babbāyit', 'nega babayit', 'mark/disease in the house', 'The ṣāraʿat category extended to stone buildings. A spreading mould/fungal growth in a house may require quarantine, removal of affected stones, replastering — or demolition if it persists. The same ritual logic as skin disease and fabric contamination.'),
+            ],
+            'ctx': 'The house-ṣāraʿat section (vv.33–53) mirrors the fabric-ṣāraʿat of Lev 13: quarantine, inspection, removal of affected stones, replastering. If it persists, demolition. The purification of a healed house (vv.48–53) mirrors the purification of a healed person (Lev 14:4–7) — the same two-bird ritual. The chapter closes (vv.54–57) with a summary of all the ṣāraʿat laws (skin disease, fabric, house), framing the entire Lev 13–14 unit as a unified legislation for "the law for any infectious skin disease."',
+            'cross': [
+                ('1 Cor 5:6–7', '"Don\'t you know that a little yeast leavens the whole batch of dough? Get rid of the old yeast." Paul uses the spreading-contamination logic of ṣāraʿat directly — the church community is like the house that must be cleared of spreading corruption.'),
+                ('Rev 21:27', '"Nothing impure will ever enter it, nor will anyone who does what is shameful or deceitful." The new Jerusalem is the ultimate clean house — no ṣāraʿat, no contamination, no need for a diagnostic priest.'),
+            ],
+            'mac': [
+                ('14:33–42', 'MacArthur: The house-ṣāraʿat regulations anticipate Israel\'s entry into Canaan — the chapter opens, "When you enter the land of Canaan that I am giving you as your possession" (v.34). God is preparing Israel to manage not just their bodies and garments but their permanent dwellings as holy spaces. The covenant encompasses the home.'),
+            ],
+            'milgrom': [
+                ('14:34', 'Milgrom: "I will put a spreading mould in a house" — God is described as the agent of the house ṣāraʿat. This is not demonic attack but divine testing or discipline. The house is part of the covenant domain; its contamination, like skin disease, requires priestly attention and, ultimately, either purification or removal.'),
+            ],
+            'sarna': [
+                ('14:54–57', 'Sarna: The summary formula — "these are the regulations for any infectious skin disease, for a mildew in a garment or in a house, and for a swelling, a rash or a bright spot, to determine when something is clean or unclean" — is an editorial marker concluding the Lev 13–14 unit. The priestly writers are systematic: they conclude each legislative block with a summary that names its scope.'),
+            ],
+            'alter': [
+                ('14:33–53', 'Alter: The house-ṣāraʿat section is the purest expression of the priestly-taxonomic project: the same diagnostic gaze, the same quarantine procedure, the same purification ritual — now applied to stone and plaster. The priestly system aspires to complete coverage of the material world: body, cloth, house.'),
+            ],
+            'calvin': [
+                ('14:33–53', 'Calvin: The house-ṣāraʿat laws teach that no sphere of human life is exempt from the concern for holiness. The home, no less than the body, is subject to divine scrutiny. The Christian is called to maintain holy homes — not merely in ritual purity but in the absence of corruption, falsehood, and moral contamination.'),
+            ],
+            'netbible': [
+                ('14:34', 'NET Note: "I will put a spreading mould in a house" — the divine first-person is striking and unusual. It suggests that house ṣāraʿat is not merely natural mould but a divinely permitted condition requiring priestly attention. The theological frame: Israel\'s material world is under covenant governance, not merely natural law.'),
+            ],
+        },
+    ],
+})
+
+lev(15, {
+    'title': 'Bodily Discharges: The Purity of the Body\'s Boundaries',
+    'sections': [
+        {
+            'header': 'Verses 1–18 — Male Discharges',
+            'verses': verse_range(1, 18),
+            'heb': [
+                ('zûb', 'zuv', 'discharge / flow', 'The root means to flow or ooze. It applies to both chronic discharges (vv.2–15: a persistent discharge from the male genitalia) and normal emissions (v.16: seminal emission). The bodily discharge creates impurity not only in the person but in everything they touch — bed, chair, saddle, clothing.'),
+                ('yĕqabbēs bigdāyw', 'yeqabbes bigdav', 'he shall wash his clothes', 'The standard purification formula for minor impurity throughout Lev 11–15: washing clothes + bathing in water + waiting until evening. No sacrifice required for most contact impurities; water and time suffice.'),
+            ],
+            'ctx': 'Leviticus 15 addresses bodily discharges — the final section of the Lev 11–15 purity block. Chronic male discharge (vv.2–15) and chronic female discharge (vv.25–30) are the most severe: extensive contamination rules, seven-day counting after cessation, bird offering. Normal seminal emission (vv.16–18) and menstrual impurity (vv.19–24) are less severe: the person and their partner are impure until evening. The underlying principle across all four cases: bodily fluids associated with the generative function create impurity — not because reproduction is sinful but because the life-force in its most raw state (semen, menstrual blood) is holy and must be handled with ritual care.',
+            'cross': [
+                ('Mark 5:25–34', 'The woman with the chronic blood discharge — twelve years (cf. Lev 15:25–30 for chronic female discharge). She was continuously unclean, excluded from full worship, unable to touch anyone without making them unclean. She touches Jesus\'s cloak; instead of his becoming unclean, she becomes clean. The reversal is complete.'),
+                ('Ezek 36:25', '"I will sprinkle clean water on you, and you will be clean; I will cleanse you from all your impurities." Ezekiel\'s new covenant promise uses the Lev 15 purification language — complete cleansing from all zûb-impurity.'),
+            ],
+            'mac': [
+                ('15:2–12', 'MacArthur: The chronic discharge (likely gonorrhoea or another genital infection) creates extensive contamination: everything the person sits on, lies on, or touches becomes impure — and those who touch those objects are also impure until evening. The quarantine logic is similar to skin disease: the condition spreads its impurity to the entire environment.'),
+                ('15:16–18', 'MacArthur: The normal seminal emission creates impurity until evening — not because sexuality is sinful but because the seed of life carries a holiness that requires ritual management. The couple who have sexual relations together are both impure until evening — a gentle boundary around marital intimacy that keeps it within a framework of holiness.'),
+            ],
+            'milgrom': [
+                ('15:2–15', 'Milgrom: The chronic discharge impurity is the most extensive in Lev 15 because it is the most threatening to the community\'s holy status. Milgrom\'s analysis: all discharge impurities relate to the body\'s boundary — fluids that emerge from the body cross the inner/outer boundary, generating impurity. The more chronic and uncontrolled the discharge, the greater the impurity.'),
+                ('15:16–18', 'Milgrom: The seminal emission impurity (until evening) is the mildest in the entire purity system. Its brevity signals that normal sexuality is not problematic — only temporarily impurity-generating. The system carefully distinguishes between pathological discharge (major, seven-day, offering required) and normal emission (minor, until evening, water sufficient).'),
+            ],
+            'sarna': [
+                ('15:1–15', 'Sarna: The parallel structure of Lev 15 — chronic male discharge (vv.2–15), normal male emission (vv.16–18), menstrual impurity (vv.19–24), chronic female discharge (vv.25–30) — is deliberately symmetrical. Male and female experience the same categories of impurity in the same order. The system is gender-symmetric in its basic logic, even where the specifics differ.'),
+            ],
+            'alter': [
+                ('15:4–12', 'Alter: The contamination cascade from the person with chronic discharge — bed, chair, saddle, objects touched, persons touching those objects — creates an ever-widening circle of impurity. The priestly imagination maps impurity spatially: it radiates outward from the afflicted body into the surrounding environment and requires constant management.'),
+            ],
+            'calvin': [
+                ('15:1–18', 'Calvin: The discharge laws teach that the body itself is subject to God\'s governance — its functions, its flows, its boundaries. The NT equivalent is Paul\'s instruction to "honour God with your bodies" (1 Cor 6:20). While the specific ceremonies are fulfilled in Christ, the principle of bodily holiness — that the physical self is a temple of the Holy Spirit — derives directly from the Levitical logic.'),
+            ],
+            'netbible': [
+                ('15:13', 'NET Note: The seven-day waiting period after the chronic discharge stops (v.13) parallels the seven-day period after ṣāraʿat-related symptoms abate (Lev 13:4–6). The seven-day structure recurs throughout Lev 12–15 as the standard "observation period" ensuring that a condition has fully resolved before declaring clean.'),
+            ],
+        },
+        {
+            'header': 'Verses 19–33 — Female Discharges; Summary of Purity Laws',
+            'verses': verse_range(19, 33),
+            'heb': [
+                ('niddāh', 'niddah', 'menstrual impurity / menstruation / separation', 'The state of ritual impurity during menstruation (7 days). The same term used for childbirth impurity (Lev 12:2). Everything the woman touches during niddāh becomes impure; anyone who touches those things is impure until evening.'),
+                ('wĕhizzartem ʾet-bĕnê yiśrāʾēl', 'wehizzartem et-benei yisrael', 'you shall keep the people of Israel separate', 'The purpose of the entire Lev 11–15 purity system: to separate (nāzar) Israel from their impurities so they do not defile the tabernacle in their midst. The purity laws are fundamentally about maintaining the divine dwelling.'),
+            ],
+            'ctx': 'The female counterparts mirror the male: menstrual impurity (7 days, vv.19–24) mirrors normal male emission; chronic blood discharge (vv.25–30) mirrors chronic male discharge. The chapter closes with the theological rationale (vv.31–33): "You must keep the Israelites separate from things that make them unclean, so they will not die in their uncleanness for defiling my dwelling place." The purity laws exist for one reason: to protect the divine presence that dwells among Israel. Impurity is not sin, but unmanaged impurity threatens the holy space.',
+            'cross': [
+                ('Mark 5:25–29', 'The woman with twelve-year discharge spent her life under the chronic female discharge rules of Lev 15:25–30 — permanently impure, isolated. When she touches Jesus, the flow stops immediately. Jesus does not become impure; she becomes clean. He is the living anti-ṣāraʿat, the one who purifies rather than being defiled.'),
+                ('Rev 22:14–15', '"Blessed are those who wash their robes, that they may have the right to the tree of life… Outside are the dogs, those who practise magic arts, the sexually immoral." The new creation\'s inside/outside binary draws on the Levitical camp structure: clean inside, unclean outside.'),
+            ],
+            'mac': [
+                ('15:31', 'MacArthur: "You must keep the Israelites separate from things that make them unclean, so they will not die in their uncleanness for defiling my dwelling place." This verse is the hermeneutical key to the entire purity system of Lev 11–15. The laws are not about hygiene or moral condemnation — they are about protecting the divine presence. God dwells among Israel; impurity, if unmanaged, contaminates the tabernacle.'),
+            ],
+            'milgrom': [
+                ('15:31', 'Milgrom: This verse is the programmatic statement Milgrom uses to construct his entire theory of the purity system. The impurity laws exist to protect the sanctuary from contamination. Unmanaged impurity "defiles" (ṭimmēʾ) the sanctuary even from a distance — the holy place absorbs the moral and ritual impurity of the camp. The Day of Atonement (Lev 16) will address the accumulated defilement.'),
+                ('15:32–33', 'Milgrom: The summary of Lev 15 enumerates: seminal discharge, skin discharge, seminal emission, menstrual impurity, and intercourse with a menstrual woman. The categories are precisely ordered and symmetrical. The priestly writers are systematic legislators, not random collectors of taboos.'),
+            ],
+            'sarna': [
+                ('15:19–24', 'Sarna: The menstrual impurity laws are among the most culturally sensitive in Leviticus. They are not a condemnation of women or of female physiology — they are a ritual management of a natural process. The same God who declared the human body "very good" (Gen 1:31) requires its monthly cycle to be managed with ritual care.'),
+            ],
+            'alter': [
+                ('15:31', 'Alter: The closing rationale — "that they do not defile my tabernacle that is in their midst" — reveals the entire logic of Lev 11–15. The purity laws are not about the body for its own sake but about the body\'s relationship to the divine dwelling. Israel lives with God\'s presence literally in their camp; their bodies must be managed accordingly.'),
+            ],
+            'calvin': [
+                ('15:19–30', 'Calvin: The menstrual impurity laws have been misused to condemn women throughout history. Calvin understood them correctly: they are ritual provisions, not moral condemnations. The woman\'s body is no more "sinful" than the man\'s discharge. Both require the same courtesy of ritual management, the same acknowledgment that even natural processes must be brought within the framework of holiness.'),
+            ],
+            'netbible': [
+                ('15:31', 'NET Note: "So they will not die in their uncleanness" — the penalty for defiling the sanctuary through unmanaged impurity is death. This is consistent with the death of Nadab and Abihu (Lev 10) and with the warning of Lev 22:3. The divine presence is not merely culturally present but lethally holy; its mismanagement is fatal.'),
+            ],
+        },
+    ],
+})
+
+print("LEV-3 complete: Leviticus 11–15 built.")
