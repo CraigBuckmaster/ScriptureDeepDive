@@ -1174,7 +1174,13 @@ jumpToEra = function(era) {
   _origJump.call(this, era);
   // Re-render events with current era dimming
   const gInner = document.getElementById('g-inner');
-  if (gInner) setTimeout(() => renderEvents(gInner), 10);
+  if (gInner) setTimeout(() => {
+    renderEvents(gInner);
+    if (showPeople) {
+      const gp = document.getElementById('g-people');
+      if (gp) renderPeopleLayer(gp);
+    }
+  }, 10);
 };
 
 // Hash deep-link support
@@ -1195,6 +1201,188 @@ function handleTimelineHash() {
     setTimeout(() => openDetail(ev), 500);
   }, 200);
 }
+
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// PEOPLE LAYER — Batch 3
+// ~90 significant people with approximate birth years
+// ══════════════════════════════════════════════════════════════════════════
+
+const TIMELINE_PEOPLE = [
+  // Primeval
+  { id:'adam',      name:'Adam',          year:-4000, era:'primeval'  },
+  { id:'eve',       name:'Eve',           year:-4000, era:'primeval'  },
+  { id:'cain',      name:'Cain',          year:-3900, era:'primeval'  },
+  { id:'abel',      name:'Abel',          year:-3880, era:'primeval'  },
+  { id:'enoch-g',   name:'Enoch',         year:-3382, era:'primeval'  },
+  { id:'methuselah',name:'Methuselah',    year:-3317, era:'primeval'  },
+  { id:'noah',      name:'Noah',          year:-2948, era:'primeval'  },
+  { id:'shem',      name:'Shem',          year:-2446, era:'primeval'  },
+  // Patriarchal
+  { id:'abraham',   name:'Abraham',       year:-2166, era:'patriarch' },
+  { id:'sarah',     name:'Sarah',         year:-2156, era:'patriarch' },
+  { id:'lot',       name:'Lot',           year:-2150, era:'patriarch' },
+  { id:'hagar',     name:'Hagar',         year:-2100, era:'patriarch' },
+  { id:'ishmael',   name:'Ishmael',       year:-2080, era:'patriarch' },
+  { id:'isaac',     name:'Isaac',         year:-2066, era:'patriarch' },
+  { id:'rebekah',   name:'Rebekah',       year:-2026, era:'patriarch' },
+  { id:'jacob',     name:'Jacob',         year:-2006, era:'patriarch' },
+  { id:'esau',      name:'Esau',          year:-2006, era:'patriarch' },
+  { id:'leah',      name:'Leah',          year:-1978, era:'patriarch' },
+  { id:'rachel',    name:'Rachel',        year:-1975, era:'patriarch' },
+  { id:'joseph-ot', name:'Joseph',        year:-1915, era:'patriarch' },
+  { id:'judah',     name:'Judah',         year:-1930, era:'patriarch' },
+  { id:'levi',      name:'Levi',          year:-1928, era:'patriarch' },
+  { id:'benjamin',  name:'Benjamin',      year:-1900, era:'patriarch' },
+  // Exodus
+  { id:'jochebed',  name:'Jochebed',      year:-1560, era:'exodus'    },
+  { id:'moses',     name:'Moses',         year:-1526, era:'exodus'    },
+  { id:'miriam',    name:'Miriam',        year:-1533, era:'exodus'    },
+  { id:'aaron',     name:'Aaron',         year:-1529, era:'exodus'    },
+  { id:'zipporah',  name:'Zipporah',      year:-1520, era:'exodus'    },
+  { id:'caleb',     name:'Caleb',         year:-1486, era:'exodus'    },
+  { id:'joshua',    name:'Joshua',        year:-1480, era:'exodus'    },
+  { id:'eleazar',   name:'Eleazar',       year:-1490, era:'exodus'    },
+  // Judges
+  { id:'rahab',     name:'Rahab',         year:-1406, era:'judges'    },
+  { id:'deborah',   name:'Deborah',       year:-1200, era:'judges'    },
+  { id:'gideon',    name:'Gideon',        year:-1162, era:'judges'    },
+  { id:'samson',    name:'Samson',        year:-1100, era:'judges'    },
+  { id:'ruth',      name:'Ruth',          year:-1100, era:'judges'    },
+  { id:'naomi',     name:'Naomi',         year:-1130, era:'judges'    },
+  { id:'boaz',      name:'Boaz',          year:-1120, era:'judges'    },
+  // Kingdom
+  { id:'hannah',    name:'Hannah',        year:-1105, era:'kingdom'   },
+  { id:'samuel',    name:'Samuel',        year:-1105, era:'kingdom'   },
+  { id:'saul',      name:'Saul',          year:-1079, era:'kingdom'   },
+  { id:'david',     name:'David',         year:-1040, era:'kingdom'   },
+  { id:'bathsheba', name:'Bathsheba',     year:-1020, era:'kingdom'   },
+  { id:'nathan',    name:'Nathan',        year:-1035, era:'kingdom'   },
+  { id:'solomon',   name:'Solomon',       year:-990,  era:'kingdom'   },
+  { id:'rehoboam',  name:'Rehoboam',      year:-972,  era:'prophets'  },
+  // Prophets
+  { id:'elijah',    name:'Elijah',        year:-900,  era:'prophets'  },
+  { id:'elisha',    name:'Elisha',        year:-879,  era:'prophets'  },
+  { id:'amos',      name:'Amos',          year:-786,  era:'prophets'  },
+  { id:'hosea',     name:'Hosea',         year:-780,  era:'prophets'  },
+  { id:'isaiah',    name:'Isaiah',        year:-760,  era:'prophets'  },
+  { id:'micah',     name:'Micah',         year:-750,  era:'prophets'  },
+  { id:'hezekiah',  name:'Hezekiah',      year:-740,  era:'prophets'  },
+  { id:'josiah',    name:'Josiah',        year:-648,  era:'prophets'  },
+  // Exile
+  { id:'jeremiah',  name:'Jeremiah',      year:-650,  era:'exile'     },
+  { id:'ezekiel',   name:'Ezekiel',       year:-622,  era:'exile'     },
+  { id:'daniel',    name:'Daniel',        year:-618,  era:'exile'     },
+  { id:'esther',    name:'Esther',        year:-492,  era:'exile'     },
+  { id:'nehemiah',  name:'Nehemiah',      year:-480,  era:'exile'     },
+  { id:'ezra',      name:'Ezra',          year:-480,  era:'exile'     },
+  // NT
+  { id:'zechariah-nt', name:'Zechariah',  year:-40,  era:'nt'        },
+  { id:'elizabeth',    name:'Elizabeth',  year:-38,  era:'nt'        },
+  { id:'john-baptist', name:'John the Baptist', year:-5, era:'nt'   },
+  { id:'mary',         name:'Mary',       year:-20,  era:'nt'        },
+  { id:'joseph-nt',    name:'Joseph',     year:-22,  era:'nt'        },
+  { id:'jesus',        name:'Jesus',      year:-5,   era:'nt'        },
+  { id:'herod-great',  name:'Herod the Great', year:-73, era:'nt'   },
+  { id:'peter',        name:'Peter',      year:1,    era:'nt'        },
+  { id:'andrew',       name:'Andrew',     year:2,    era:'nt'        },
+  { id:'james-z',      name:'James',      year:3,    era:'nt'        },
+  { id:'john-ap',      name:'John',       year:6,    era:'nt'        },
+  { id:'matthew-ap',   name:'Matthew',    year:5,    era:'nt'        },
+  { id:'paul',         name:'Paul',       year:5,    era:'nt'        },
+  { id:'mary-magdalene',name:'Mary Magdalene', year:3, era:'nt'     },
+  { id:'lazarus',      name:'Lazarus',    year:10,   era:'nt'        },
+  { id:'stephen',      name:'Stephen',    year:10,   era:'nt'        },
+  { id:'barnabas',     name:'Barnabas',   year:8,    era:'nt'        },
+  { id:'pilate',       name:'Pilate',     year:-15,  era:'nt'        },
+  { id:'caiaphas',     name:'Caiaphas',   year:-18,  era:'nt'        },
+];
+
+function renderPeopleLayer(g) {
+  const gPeople = document.getElementById('g-people');
+  if (!gPeople) return;
+  while (gPeople.firstChild) gPeople.removeChild(gPeople.firstChild);
+
+  const dimAll = currentEra !== 'all';
+
+  TIMELINE_PEOPLE.forEach((person, i) => {
+    const x = yearToX(person.year);
+    const color = ERA_HEX[person.era] || '#888';
+    const dimmed = dimAll && person.era !== currentEra;
+    const op = dimmed ? '0.15' : '0.9';
+
+    // Vertical dashed line from person dot up to era bar
+    svgEl_('line', {
+      x1: x, y1: TL.ERA_BAR_Y + TL.ERA_BAR_H,
+      x2: x, y2: TL.PEOPLE_Y - 8,
+      stroke: color, 'stroke-width': '0.7',
+      'stroke-dasharray': '3,3', opacity: dimmed ? '0.1' : '0.35',
+    }, gPeople);
+
+    // Person dot
+    const dot = svgEl_('circle', {
+      cx: x, cy: TL.PEOPLE_Y,
+      r: '5', fill: color,
+      stroke: 'rgba(200,169,110,0.6)', 'stroke-width': '1.2',
+      opacity: op, 'data-clickable': '1', style: 'cursor:pointer',
+    }, gPeople);
+    dot.addEventListener('click', () => openPersonDetail(person));
+
+    // Hit target
+    const hit = svgEl_('circle', {
+      cx: x, cy: TL.PEOPLE_Y, r: '12',
+      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
+    }, gPeople);
+    hit.addEventListener('click', () => openPersonDetail(person));
+
+    // Name label — alternate above/below to reduce stacking
+    const nameY = i % 2 === 0
+      ? TL.PEOPLE_Y - 10
+      : TL.PEOPLE_Y + 18;
+    svgText(person.name, {
+      x, y: nameY,
+      'text-anchor': 'middle',
+      'font-family': "'Cinzel', serif",
+      'font-size': '7',
+      fill: color, opacity: dimmed ? '0.15' : '0.82',
+      'pointer-events': 'none',
+    }, gPeople);
+  });
+}
+
+function openPersonDetail(person) {
+  const color = ERA_HEX[person.era] || '#888';
+  const eraName = ERA_NAMES[person.era] || person.era;
+  const dateStr = person.year < 0 ? `c. ${Math.abs(person.year)} BC` : `c. AD ${person.year}`;
+  document.getElementById('detail-content').innerHTML = `
+    <div class="detail-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
+    <div class="detail-name">${person.name}</div>
+    <div class="detail-date">${dateStr}</div>
+    <div class="detail-divider"></div>
+    <div class="detail-text" style="margin-bottom:.5rem">
+      View the full biography, family connections, and scripture role for this person in the People of the Bible tree.
+    </div>
+    <a href="people.html#${person.id}" target="_blank" class="detail-chapter-link">
+      View Biography in People of the Bible
+    </a>
+  `;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+// Patch togglePeople to also render the layer
+const _origTogglePeople = togglePeople;
+togglePeople = function() {
+  showPeople = !showPeople;
+  const gp = document.getElementById('g-people');
+  if (gp) gp.setAttribute('opacity', showPeople ? '1' : '0');
+  // Render people layer on first toggle ON
+  if (showPeople && gp && gp.childElementCount === 0) {
+    renderPeopleLayer(gp);
+  }
+  document.getElementById('people-toggle-btn')?.classList.toggle('active', showPeople);
+  document.getElementById('mobile-people-btn')?.classList.toggle('active', showPeople);
+};
 
 
 window.addEventListener('DOMContentLoaded', () => {
