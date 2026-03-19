@@ -175,6 +175,27 @@ body {
   overflow: hidden;
 }
 
+/* ── JUMP-TO-ERA BUTTON ─────────────────────────────────────────── */
+#jump-btn {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--gold-dim);
+  font-family: 'Cinzel', serif;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  padding: .45rem .7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  transition: background .15s, color .15s;
+}
+#jump-btn:hover { background: var(--bg3, #1a1612); color: var(--gold); }
+
 /* ── TREE PANEL ──────────────────────────────────────────────── */
 #tree-panel {
   flex: 1;
@@ -231,6 +252,23 @@ body {
   min-width: 340px;
   border-left-width: 1px;
   overflow-y: auto;
+}
+
+/* Bio drag handle (mobile only) */
+.bio-handle {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0 .2rem;
+  cursor: pointer;
+  touch-action: none;
+  flex-shrink: 0;
+}
+.bio-handle-pill {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
 }
 
 .bio-close {
@@ -483,6 +521,98 @@ body {
   transition: opacity .5s;
 }
 .tree-hint.hidden { opacity: 0; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE — breakpoint ≤ 768px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Era filters: horizontal scroll strip */
+  .era-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: .55rem .8rem;
+    gap: .35rem;
+    scrollbar-width: none;
+  }
+  .era-filters::-webkit-scrollbar { display: none; }
+  .filter-label { display: none; }
+
+  /* Main layout: vertical stack */
+  .main-layout {
+    flex-direction: column;
+    height: calc(100vh - 88px);
+  }
+
+  /* Tree fills top portion */
+  #tree-panel {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Bio panel: bottom sheet */
+  #bio-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-left: none !important;
+    border-top: 1px solid var(--border2);
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: height .3s cubic-bezier(.4,0,.2,1),
+                max-height .3s cubic-bezier(.4,0,.2,1);
+    flex-shrink: 0;
+  }
+  #bio-panel.open {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 52vh;
+    max-height: 52vh;
+    overflow-y: auto;
+    border-left-width: 0 !important;
+  }
+
+  /* Show drag handle on mobile */
+  .bio-handle { display: flex; }
+
+  /* Bio content padding tighten */
+  .bio-name { font-size: 1.1rem; }
+  .bio-family-block { margin: 0 .8rem .7rem; }
+  .bio-era-badge { margin: 0 .8rem .4rem; }
+  .bio-role { padding: 0 .8rem .3rem; }
+  .bio-text { padding: 0 .8rem .8rem; font-size: .86rem; }
+  .bio-refs { padding: 0 .8rem .7rem; }
+  .bio-scripture-role {
+    margin-left: .8rem; margin-right: .8rem;
+    padding-left: .6rem;
+  }
+  .bio-section-head { padding: .4rem .8rem .2rem; }
+  .bio-chapter-link { margin: .4rem .8rem 1rem; }
+
+  /* Legend: smaller, collapsed by default handled in JS */
+  .legend {
+    bottom: .5rem;
+    left: .5rem;
+    min-width: 170px;
+    font-size: .8rem;
+  }
+
+  /* Tree hint: pinch language */
+  .tree-hint { font-size: .65rem; top: .5rem; }
+
+  /* Jump-to-era button: visible on mobile */
+  #jump-btn { display: block; }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .era-btn {
+    font-size: .55rem;
+    padding: .25rem .5rem;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -520,6 +650,7 @@ body {
 <div class="main-layout">
   <div id="tree-panel">
     <svg id="tree-svg"></svg>
+    <button id="jump-btn" onclick="jumpToCurrentEra()" title="Jump to current era">⌖ Jump</button>
     <div class="tree-hint" id="tree-hint">Scroll to zoom &middot; Drag to pan &middot; Click a name to read biography</div>
     <div class="legend" id="legend">
       <div class="legend-header" onclick="toggleLegend()">
@@ -3640,6 +3771,12 @@ function render(filterEra) {
       .style('cursor', 'pointer')
       .on('click', () => showBio(d));
 
+    // Invisible touch target (larger hit area for mobile)
+    grp.append('circle')
+      .attr('r', 18)
+      .attr('fill', 'transparent')
+      .attr('stroke', 'none');
+
     grp.append('circle')
       .attr('r', r)
       .attr('fill', color)
@@ -3659,9 +3796,17 @@ function render(filterEra) {
   // Auto-centre on Adam initially
   const adamNode = allNodes.find(n => n.data.id === 'adam');
   if (adamNode) {
+    const isMobile = window.innerWidth <= 768;
+    const initialScale = isMobile ? 0.45 : 0.75;
     const initialX = W / 2 - adamNode.x;
-    const initialY = 60 - adamNode.y;
-    svg.call(zoom.transform, d3.zoomIdentity.translate(initialX, initialY).scale(0.75));
+    const initialY = (isMobile ? 40 : 60) - adamNode.y;
+    svg.call(zoom.transform, d3.zoomIdentity.translate(initialX, initialY).scale(initialScale));
+  }
+
+  // Mobile: update hint text
+  if (window.innerWidth <= 768) {
+    const hint = document.getElementById('tree-hint');
+    if (hint) hint.textContent = 'Pinch to zoom · Drag to pan · Tap a name';
   }
 
   // Dismiss hint after first interaction
@@ -3764,6 +3909,60 @@ function closeBio() {
   bioPanel.classList.remove('open');
 }
 
+// ── JUMP TO CURRENT ERA (mobile helper) ──────────────────────────────────
+function jumpToCurrentEra() {
+  const panel = document.getElementById('tree-panel');
+  const svg = d3.select('#tree-svg');
+  const W = panel.clientWidth;
+  const H = panel.clientHeight;
+
+  // Collect all visible nodes for the current era
+  const svgEl = document.getElementById('tree-svg');
+  const allCircles = svgEl.querySelectorAll('.node circle:not([r="18"])');
+  const transforms = [];
+  svgEl.querySelectorAll('.node').forEach(node => {
+    const era = node.classList[1]; // second class is the era/type
+    const t = node.getAttribute('transform');
+    if (t) {
+      const m = t.match(/translate\(([^,]+),([^)]+)\)/);
+      if (m) transforms.push({ x: parseFloat(m[1]), y: parseFloat(m[2]) });
+    }
+  });
+
+  if (!transforms.length) return;
+
+  // Find centroid of current transform
+  const xs = transforms.map(t => t.x);
+  const ys = transforms.map(t => t.y);
+  const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
+  const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+
+  // Get current zoom transform
+  const zoom = d3.zoom().scaleExtent([0.15, 3]);
+  const currentTransform = d3.zoomTransform(svgEl);
+  const scale = currentTransform.k;
+
+  svg.transition().duration(600)
+    .call(
+      d3.zoom().scaleExtent([0.15, 3]).transform,
+      d3.zoomIdentity.translate(W / 2 - cx * scale, H / 2 - cy * scale).scale(scale)
+    );
+}
+
+// ── SWIPE DOWN TO CLOSE BIO (mobile) ─────────────────────────────────────
+(function() {
+  let startY = 0;
+  const handle = document.getElementById('bio-handle');
+  if (!handle) return;
+  handle.addEventListener('touchstart', e => {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  handle.addEventListener('touchend', e => {
+    const dy = e.changedTouches[0].clientY - startY;
+    if (dy > 40) closeBio(); // swipe down 40px+ closes panel
+  }, { passive: true });
+})();
+
 // ── ERA FILTERS ───────────────────────────────────────────────────────────
 
 let currentEra = 'all';
@@ -3805,6 +4004,11 @@ function handleHash() {
 }
 window.addEventListener('hashchange', handleHash);
 document.addEventListener('DOMContentLoaded', function() {
+  // Collapse legend by default on mobile
+  if (window.innerWidth <= 768) {
+    const leg = document.getElementById('legend');
+    if (leg) leg.classList.add('collapsed');
+  }
   render();
   handleHash();
 });
