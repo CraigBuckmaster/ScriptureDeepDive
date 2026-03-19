@@ -30,6 +30,11 @@ import os
 import re
 import sys
 import json
+
+# Force UTF-8 output on Windows
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 import time
 import urllib.request
 import urllib.error
@@ -222,7 +227,7 @@ def main():
                 existing = os.path.join(OUTPUT_DIR, testament, f'{book.lower()}.js')
                 if os.path.exists(existing):
                     print(f'  {book}: skipping (already exists)')
-                    with open(existing) as f: raw = f.read()
+                    with open(existing, encoding='utf-8') as f: raw = f.read()
                     m = re.search(r'var VERSES_\w+=(\[.*\]);', raw, re.DOTALL)
                     if m:
                         book_verses = json.loads(m.group(1))
