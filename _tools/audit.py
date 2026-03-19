@@ -40,6 +40,7 @@ BOOK_ROSTER = [
     ('genesis',  'Genesis',  range(1, 51), 'ot'),
     ('exodus',   'Exodus',   range(1, 41), 'ot'),
     ('proverbs', 'Proverbs', range(1, 32), 'ot'),
+    ('leviticus','Leviticus',range(1,  8), 'ot'),
     ('ruth',     'Ruth',     range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -296,7 +297,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -379,7 +380,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]

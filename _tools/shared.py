@@ -278,9 +278,9 @@ EXTRA_CSS = '''
 REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT', 'ot'),
     ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
+    ('leviticus','Leviticus',  27,  7, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
-    ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
     ('luke',     'Luke',      24, 24, 'NT', 'nt'),
@@ -823,8 +823,8 @@ def head(book_name, book_dir, ch, is_nt=False):
         prev = f'<a href="{book_name}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
     elif idx is not None and idx > 0:
         # Cross-book: go to last live chapter of the previous book
-        pd, pn, _, pl, _ = REGISTRY[idx - 1]
-        prev = f'<a href="../{pd}/{pn}_{pl}.html" class="nav-arrow">&#8592;</a>'
+        pd, pn, _, pl, _, ptd = REGISTRY[idx - 1]
+        prev = f'<a href="../../{ptd}/{pd}/{pn}_{pl}.html" class="nav-arrow">&#8592;</a>'
     else:
         # First chapter of the entire canon
         prev = '<span class="nav-arrow disabled">&#8592;</span>'
@@ -835,16 +835,16 @@ def head(book_name, book_dir, ch, is_nt=False):
         nxt = f'<a href="{book_name}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
     elif idx is not None and idx < len(REGISTRY) - 1:
         # Cross-book: go to chapter 1 of the next book
-        nd, nn, _, nl, _ = REGISTRY[idx + 1]
+        nd, nn, _, nl, _, ntd = REGISTRY[idx + 1]
         if nl > 0:
-            nxt = f'<a href="../{nd}/{nn}_1.html" class="nav-arrow">&#8594;</a>'
+            nxt = f'<a href="../../{ntd}/{nd}/{nn}_1.html" class="nav-arrow">&#8594;</a>'
         else:
             nxt = '<span class="nav-arrow disabled">&#8594;</span>'
     else:
         # Last chapter of the entire canon
         nxt = '<span class="nav-arrow disabled">&#8594;</span>'
     nav = f'''<nav class="chapter-nav">
-<a href="../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
 <div class="nav-center"><span class="nav-book">{book_name}</span><span class="nav-chapter">Chapter {ch}</span></div>
 <div class="nav-arrows">{prev}<button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button>{nxt}</div>
 </nav>'''
@@ -854,12 +854,12 @@ def head(book_name, book_dir, ch, is_nt=False):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>{book_name} {ch} — Scripture Walkthrough</title>
-<link rel="manifest" href="../manifest.json">
+<link rel="manifest" href="../../manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Scripture">
 <meta name="theme-color" content="#0c0a07">
-<link rel="apple-touch-icon" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 {CSS}
@@ -1346,6 +1346,8 @@ def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn,
                                        hebt_btn, thread_btn, tx_btn, db_btn, themes_btn]))
     all_panels = ''.join(filter(None, [ppl, trans, src, rec, lit, hebtext, thread,
                                        textual_h, debate_h, themes_panel_html]))
+    if not all_btns.strip():
+        return ''  # suppress entirely if no scholarly data provided
     return f'''<div class="scholarly-block">
 <div class="scholarly-title">Chapter-Level Scholarship</div>
 <div class="scholarly-buttons">
@@ -1359,11 +1361,11 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     sec_count = sections_html.count('<div class="section">')
     if sec_count < 2:
         raise ValueError(f"{book_name} {ch}: only {sec_count} section(s) — need at least 2.")
+    book_dir_test = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
     out_dir = f'{_REPO}/{book_dir_test}/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
     # Guard against None from _bootstrap() in case a script wasn't found
     _tog      = TOG_JS       or ''
-    book_dir_test = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
     _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
     _sw       = SW_JS        or ''
     # NOTE: qnav panel HTML is NOT baked inline here.
@@ -1378,11 +1380,11 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '\n</main>\n' +
             _tog + '\n' +
             _vhl + '\n' +
-            '<script src="../books.js"></script>\n' +
-            f'<script src="../verses/{book_dir_test}/{book_dir}.js"></script>\n' +
+            '<script src="../../books.js"></script>\n' +
+            f'<script src="../../verses/niv/{book_dir_test}/{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name}_{ch}.html";</script>\n' +
-            '<script src="../qnav.js"></script>\n<script src="../translation.js"></script>\n</body></html>')
+            '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n</body></html>')
     path = f'{out_dir}/{book_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     return path
