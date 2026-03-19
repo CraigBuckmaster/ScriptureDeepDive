@@ -819,7 +819,20 @@ function closeDetail() {
   document.getElementById('detail-panel').classList.remove('open');
   currentEvent = null;
   history.replaceState(null, '', location.pathname);
-  setTimeout(() => reinitIfResized(), 300);
+  // Re-render SVG at new (wider) width after panel closes
+  setTimeout(() => {
+    const panel = document.getElementById('timeline-panel');
+    const svg = document.getElementById('timeline-svg');
+    if (svg && panel) {
+      svg.setAttribute('width', panel.clientWidth);
+      svg.setAttribute('height', panel.clientHeight);
+      svg.setAttribute('viewBox', `0 0 ${panel.clientWidth} ${panel.clientHeight}`);
+    }
+    const gInner = document.getElementById('g-inner');
+    if (gInner) renderEvents(gInner);
+    if (showPeople) { const gp = document.getElementById('g-people'); if (gp) renderPeopleLayer(gp); }
+    if (showHistory) { const gh = document.getElementById('g-history'); if (gh) renderHistoryLayer(gh); }
+  }, 320);
 }
 
 // ── Swipe to close ─────────────────────────────────────────────────────────
