@@ -7,375 +7,278 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
+/* ── TOKENS ───────────────────────────────────────────────────────────── */
 :root {
-  --bg:         #0c0a07;
-  --bg2:        #141008;
-  --border:     #332810;
-  --border2:    #2a2010;
-  --gold:       #c9a84c;
-  --gold-dim:   #7a6020;
-  --gold-bright:#e8c870;
-  --gold-pale:  #f0dfa0;
-  --text:       #f0e8d8;
-  --text-dim:   #b8a880;
-  --text-muted: #6a5a38;
-  --era-primeval:  #8b6914;
-  --era-patriarch: #7a5c9a;
-  --era-exodus:    #4a8a5a;
-  --era-judges:    #8a6a2a;
-  --era-kingdom:   #5a7a9a;
-  --era-prophets:  #9a4a4a;
-  --era-exile:     #4a7a8a;
-  --era-nt:        #c9a84c;
+  --bg:      #0c0a07; --bg2: #141008; --bg3: #1a1508;
+  --border:  #332810; --border2: #2a2010;
+  --gold:    #c9a84c; --gold-dim: #7a6020; --gold-bright: #e8c870;
+  --text:    #f0e8d8; --text-dim: #b8a880; --text-muted: #6a5a38;
+  --era-primeval:  #8b6914; --era-patriarch: #7a5c9a;
+  --era-exodus:    #4a8a5a; --era-judges:    #8a6a2a;
+  --era-kingdom:   #5a7a9a; --era-prophets:  #9a4a4a;
+  --era-exile:     #4a7a8a; --era-nt:        #c9a84c;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; overflow: hidden; }
+html { height: 100%; }
 body {
-  background: var(--bg);
-  color: var(--text);
+  height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--text);
   font-family: 'Source Sans 3', sans-serif;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
 
-/* ── SITE NAV ─────────────────────────────────────────── */
+/* ── NAV ──────────────────────────────────────────────────────────────── */
 .site-nav {
-  display: flex; align-items: center;
-  padding: .6rem 1rem; border-bottom: 1px solid var(--border);
-  background: var(--bg2); flex-shrink: 0; gap: 1rem; height: 44px;
+  display: flex; align-items: center; padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border); background: var(--bg2);
+  flex-shrink: 0; gap: 1rem; height: 44px;
 }
 .nav-back {
-  display: flex; align-items: center; gap: .4rem;
-  color: var(--text-muted); text-decoration: none;
-  font-family: 'Cinzel', serif; font-size: .6rem;
+  display: flex; align-items: center; gap: .4rem; color: var(--text-muted);
+  text-decoration: none; font-family: 'Cinzel', serif; font-size: .6rem;
   letter-spacing: .14em; text-transform: uppercase; transition: color .15s;
 }
 .nav-back:hover { color: var(--gold); }
 .nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
 .nav-center { flex: 1; text-align: center; }
-.nav-title {
-  font-family: 'Cinzel', serif; font-size: .75rem;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dim);
-}
+.nav-title { font-family: 'Cinzel', serif; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dim); }
 .nav-links { display: flex; gap: .8rem; }
-.nav-link {
-  font-family: 'Cinzel', serif; font-size: .58rem;
-  letter-spacing: .12em; text-transform: uppercase;
-  color: var(--text-muted); text-decoration: none; transition: color .15s;
-}
+.nav-link { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color .15s; }
 .nav-link:hover { color: var(--gold); }
 
-/* ── ERA FILTER STRIP ────────────────────────────────── */
+/* ── ERA FILTER STRIP ─────────────────────────────────────────────────── */
 .era-filters {
-  padding: .65rem 1.2rem; border-bottom: 1px solid var(--border2);
-  display: flex; flex-wrap: wrap; gap: .35rem;
+  padding: .6rem 1.2rem; border-bottom: 1px solid var(--border2);
+  display: flex; flex-wrap: wrap; gap: .3rem;
   align-items: center; background: var(--bg2); flex-shrink: 0;
 }
-.filter-label {
-  font-family: 'Cinzel', serif; font-size: .55rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--text-muted); margin-right: .3rem; flex-shrink: 0;
-}
+.filter-label { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); margin-right: .2rem; flex-shrink: 0; }
 .era-btn {
-  font-family: 'Cinzel', serif; font-size: .58rem;
-  letter-spacing: .1em; text-transform: uppercase;
-  padding: .28rem .7rem; border-radius: 3px;
-  border: 1px solid var(--border); background: transparent;
-  color: var(--text-muted); cursor: pointer; white-space: nowrap;
-  transition: background .15s, color .15s, border-color .15s;
+  font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .1em;
+  text-transform: uppercase; padding: .26rem .65rem; border-radius: 3px;
+  border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+  cursor: pointer; white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
 }
 .era-btn:hover { border-color: var(--border2); color: var(--text-dim); }
 .era-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
 
-/* ── STORY PICKER ────────────────────────────────────── */
+/* ── STORY PICKER ─────────────────────────────────────────────────────── */
 #story-picker-wrap {
   background: var(--bg2); border-bottom: 1px solid var(--border2);
   overflow-x: auto; flex-shrink: 0; scrollbar-width: none;
 }
 #story-picker-wrap::-webkit-scrollbar { display: none; }
 #story-picker {
-  display: flex; gap: .3rem;
-  padding: .45rem 1.2rem; min-height: 34px; align-items: center;
+  display: flex; gap: .28rem; padding: .42rem 1.2rem;
+  min-height: 33px; align-items: center;
 }
 .story-btn {
-  font-family: 'Cinzel', serif; font-size: .55rem;
-  letter-spacing: .08em; text-transform: uppercase;
-  padding: .22rem .62rem; border-radius: 3px;
-  border: 1px solid var(--border); background: transparent;
-  color: var(--text-muted); cursor: pointer; white-space: nowrap;
-  transition: background .15s, color .15s, border-color .15s;
+  font-family: 'Cinzel', serif; font-size: .53rem; letter-spacing: .08em;
+  text-transform: uppercase; padding: .22rem .6rem; border-radius: 3px;
+  border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+  cursor: pointer; white-space: nowrap; transition: background .15s, color .15s, border-color .15s;
 }
 .story-btn:hover { border-color: var(--border2); color: var(--text-dim); }
 .story-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
 
-/* ── MOBILE CONTROLS ─────────────────────────────────── */
+/* ── MOBILE CONTROLS (hidden desktop) ────────────────────────────────── */
 #mobile-controls { display: none; }
 #legend-mobile-wrap { display: none; }
 
-/* ── MAIN LAYOUT ─────────────────────────────────────── */
+/* ── MAIN LAYOUT ──────────────────────────────────────────────────────── */
 .main-layout { display: flex; flex: 1; overflow: hidden; min-height: 0; }
 
-/* ── MAP PANEL ───────────────────────────────────────── */
+/* ── MAP PANEL ────────────────────────────────────────────────────────── */
 #map-panel {
-  flex: 1; min-height: 0; overflow: hidden;
-  position: relative;
+  flex: 1; min-height: 0; min-width: 0;
+  /* Sandy sea colour — visible before tiles load, never black */
+  background: #7a9fb5;
+  position: relative; overflow: hidden;
 }
 
-/* Parchment filter on the Leaflet tile layer only */
-#map-panel .leaflet-tile-pane {
-  filter: sepia(0.45) saturate(0.75) brightness(0.92) contrast(0.95);
+/*
+ * THE HEIGHT FIX:
+ * #leaflet-map uses position:absolute + inset:0 instead of height:100%.
+ * This bypasses the flex-child height-resolution bug entirely.
+ * The div always fills its positioned parent to the pixel.
+ */
+#leaflet-map {
+  position: absolute;
+  inset: 0;
 }
 
-#leaflet-map { width: 100%; height: 100%; }
+/* Parchment filter — applied ONLY to tile images, not markers */
+#leaflet-map .leaflet-tile-pane {
+  filter: sepia(0.5) saturate(0.7) brightness(0.9) contrast(0.95);
+}
 
-/* Leaflet dark theme overrides */
+/* Leaflet UI theme overrides */
 .leaflet-container { background: #7a9fb5; }
+.leaflet-control-zoom { border: 1px solid var(--border) !important; }
 .leaflet-control-zoom a {
-  background: var(--bg2) !important;
-  color: var(--gold-dim) !important;
-  border-color: var(--border) !important;
+  background: rgba(12,10,7,.92) !important; color: var(--gold-dim) !important;
+  border-bottom-color: var(--border) !important; transition: color .15s !important;
 }
-.leaflet-control-zoom a:hover { color: var(--gold) !important; }
+.leaflet-control-zoom a:hover { color: var(--gold) !important; background: #1a1508 !important; }
 .leaflet-control-attribution {
-  background: rgba(12,10,7,.7) !important;
-  color: var(--text-muted) !important;
-  font-size: .55rem !important;
+  background: rgba(12,10,7,.75) !important; color: var(--text-muted) !important;
+  font-size: .52rem !important;
 }
 .leaflet-control-attribution a { color: var(--gold-dim) !important; }
 
-/* ── D3 OVERLAY SVG (sits on top of Leaflet) ─────────── */
-#map-overlay-svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 400;
+/* ── LOADING OVERLAY ──────────────────────────────────────────────────── */
+#map-loading {
+  position: absolute; inset: 0; z-index: 1000;
+  background: #c8a96e;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .8rem; pointer-events: none;
+  transition: opacity .4s;
 }
-#map-overlay-svg .place-group { pointer-events: all; cursor: pointer; }
+#map-loading.hidden { opacity: 0; pointer-events: none; }
+.loading-title { font-family: 'Cinzel', serif; font-size: .85rem; letter-spacing: .22em; text-transform: uppercase; color: #3a2a10; }
+.loading-dots span { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #7a5a20; margin: 0 3px; animation: pulse 1.2s ease-in-out infinite; }
+.loading-dots span:nth-child(2) { animation-delay: .2s; }
+.loading-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes pulse { 0%,80%,100%{transform:scale(0);opacity:.3} 40%{transform:scale(1);opacity:1} }
 
-/* ── MAP HINT ────────────────────────────────────────── */
+/* ── MAP HINT ─────────────────────────────────────────────────────────── */
 .map-hint {
-  position: absolute; top: .8rem; left: 50%;
-  transform: translateX(-50%);
-  font-size: .65rem; color: #2a1a08;
-  background: rgba(200,169,110,.88);
+  position: absolute; top: .8rem; left: 50%; transform: translateX(-50%);
+  font-size: .65rem; color: #2a1a08; background: rgba(200,169,110,.88);
   padding: .28rem .75rem; border-radius: 10px;
-  pointer-events: none; opacity: 1; transition: opacity .5s;
-  white-space: nowrap; font-family: 'Cinzel', serif;
-  letter-spacing: .06em; border: 1px solid rgba(58,42,16,.3);
-  z-index: 500;
+  pointer-events: none; transition: opacity .5s; white-space: nowrap;
+  font-family: 'Cinzel', serif; letter-spacing: .06em;
+  border: 1px solid rgba(58,42,16,.3); z-index: 500;
 }
 .map-hint.hidden { opacity: 0; }
 
-/* ── FLOATING DESKTOP CONTROLS ───────────────────────── */
+/* ── FLOATING CONTROLS (desktop) ──────────────────────────────────────── */
 .map-float-controls {
   position: absolute; bottom: 2.2rem; right: .7rem;
   display: flex; flex-direction: column; gap: .4rem; z-index: 500;
 }
 .map-float-btn {
-  background: rgba(12,10,7,.9); border: 1px solid var(--border);
-  color: var(--gold-dim); font-family: 'Cinzel', serif;
-  font-size: .58rem; letter-spacing: .1em;
-  padding: .38rem .65rem; border-radius: 4px; cursor: pointer;
-  white-space: nowrap;
-  transition: background .15s, color .15s;
+  background: rgba(12,10,7,.92); border: 1px solid var(--border);
+  color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .1em; padding: .38rem .65rem; border-radius: 4px; cursor: pointer;
+  white-space: nowrap; transition: background .15s, color .15s;
   display: flex; align-items: center; gap: .32rem;
   box-shadow: 0 2px 12px rgba(0,0,0,.5);
 }
 .map-float-btn:hover { background: #1a1508; color: var(--gold); }
 .map-float-btn.active { color: var(--gold); border-color: var(--gold-dim); }
 
-/* ── LEGEND ──────────────────────────────────────────── */
+/* ── DESKTOP LEGEND ───────────────────────────────────────────────────── */
 .legend {
   position: absolute; bottom: 2.2rem; left: .7rem;
-  background: rgba(12,10,7,.92); border: 1px solid var(--border);
-  border-radius: 5px; overflow: hidden;
-  pointer-events: all; user-select: none;
-  min-width: 195px; box-shadow: 0 4px 18px rgba(0,0,0,.5); z-index: 500;
+  background: rgba(12,10,7,.93); border: 1px solid var(--border);
+  border-radius: 5px; overflow: hidden; pointer-events: all; user-select: none;
+  min-width: 190px; box-shadow: 0 4px 18px rgba(0,0,0,.55); z-index: 500;
 }
-.legend-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .5rem .8rem; cursor: pointer;
-  border-bottom: 1px solid var(--border2); transition: background .15s;
-}
+.legend-header { display: flex; align-items: center; justify-content: space-between; padding: .48rem .8rem; cursor: pointer; border-bottom: 1px solid var(--border2); transition: background .15s; }
 .legend-header:hover { background: rgba(255,255,255,.03); }
-.legend-title {
-  font-family: 'Cinzel', serif; font-size: .58rem;
-  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim);
-}
-.legend-chev { font-size: .62rem; color: var(--text-muted); transition: transform .22s; }
+.legend-title { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim); }
+.legend-chev { font-size: .6rem; color: var(--text-muted); transition: transform .22s; }
 .legend.collapsed .legend-chev { transform: rotate(-90deg); }
-.legend-body {
-  padding: .5rem .8rem .55rem;
-  transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1);
-  max-height: 260px; overflow: hidden;
-}
+.legend-body { padding: .48rem .8rem .52rem; transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1); max-height: 260px; overflow: hidden; }
 .legend.collapsed .legend-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
-.legend-item {
-  display: flex; align-items: center; gap: .4rem;
-  margin-bottom: .28rem; font-size: .67rem; color: var(--text-muted);
-}
+.legend-item { display: flex; align-items: center; gap: .38rem; margin-bottom: .26rem; font-size: .66rem; color: var(--text-muted); }
 .legend-item:last-child { margin-bottom: 0; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .legend-line { width: 22px; height: 2px; flex-shrink: 0; }
-.legend-dash {
-  width: 22px; height: 2px; flex-shrink: 0;
-  background: repeating-linear-gradient(90deg, var(--gold-dim) 0 4px, transparent 4px 7px);
-}
-.legend-sym { font-size: .75rem; flex-shrink: 0; width: 14px; text-align: center; color: var(--gold); }
+.legend-dash { width: 22px; height: 2px; flex-shrink: 0; background: repeating-linear-gradient(90deg, var(--gold-dim) 0 4px, transparent 4px 7px); }
+.legend-sym { font-size: .72rem; flex-shrink: 0; width: 14px; text-align: center; color: var(--gold); }
 
-/* ── STORY PANEL ─────────────────────────────────────── */
+/* ── STORY PANEL ──────────────────────────────────────────────────────── */
 #story-panel {
   width: 0; min-width: 0; background: var(--bg2);
-  border-left: 0px solid var(--border); display: flex;
-  flex-direction: column; overflow: hidden;
+  border-left: 0px solid var(--border);
+  display: flex; flex-direction: column; overflow: hidden;
   transition: width .28s cubic-bezier(.4,0,.2,1), border-left-width .28s cubic-bezier(.4,0,.2,1);
-  z-index: 600;
 }
 #story-panel.open { width: 340px; min-width: 340px; border-left-width: 1px; overflow-y: auto; }
-.story-close {
-  position: sticky; top: 0; z-index: 2;
-  display: flex; justify-content: flex-end;
-  padding: .6rem .7rem .3rem; background: var(--bg2); flex-shrink: 0;
-}
-.story-close button {
-  background: none; border: 1px solid var(--border); color: var(--text-muted);
-  cursor: pointer; font-size: .72rem; padding: .22rem .55rem;
-  border-radius: 3px; font-family: 'Source Sans 3', sans-serif;
-  transition: color .15s, border-color .15s;
-}
+.story-close { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; padding: .6rem .7rem .3rem; background: var(--bg2); flex-shrink: 0; }
+.story-close button { background: none; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; font-size: .72rem; padding: .22rem .55rem; border-radius: 3px; font-family: 'Source Sans 3', sans-serif; transition: color .15s, border-color .15s; }
 .story-close button:hover { color: var(--text); border-color: var(--border2); }
 #story-content { padding: 0 1.2rem 1.5rem; flex: 1; }
-.story-era-badge {
-  display: inline-block; font-family: 'Cinzel', serif; font-size: .52rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  padding: .18rem .55rem; border-radius: 10px; margin: 0 0 .5rem;
-}
-.story-name { font-family: 'Cinzel', serif; font-size: 1.15rem; letter-spacing: .06em; color: var(--gold-bright); margin-bottom: .15rem; }
+.story-era-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 10px; margin: 0 0 .5rem; }
+.story-name { font-family: 'Cinzel', serif; font-size: 1.12rem; letter-spacing: .06em; color: var(--gold-bright); margin-bottom: .15rem; }
 .story-ref { font-size: .75rem; color: var(--text-muted); font-style: italic; margin-bottom: .7rem; }
 .story-divider { height: 1px; background: var(--border); margin-bottom: .8rem; }
 .story-text { font-size: .9rem; line-height: 1.7; color: var(--text-dim); margin-bottom: 1rem; }
-.story-section-head {
-  font-family: 'Cinzel', serif; font-size: .58rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--text-muted); padding: .4rem 0 .22rem;
-  border-top: 1px solid var(--border2); margin-bottom: .4rem;
-}
+.story-section-head { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); padding: .4rem 0 .22rem; border-top: 1px solid var(--border2); margin-bottom: .4rem; }
 .story-places { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .8rem; }
-.story-place-chip {
-  font-size: .72rem; padding: .18rem .5rem; border: 1px solid var(--border);
-  border-radius: 3px; color: var(--gold-dim); cursor: pointer;
-  transition: background .15s, color .15s;
-}
+.story-place-chip { font-size: .72rem; padding: .18rem .5rem; border: 1px solid var(--border); border-radius: 3px; color: var(--gold-dim); cursor: pointer; transition: background .15s, color .15s; }
 .story-place-chip:hover { background: rgba(201,168,76,.1); color: var(--gold); }
-.story-chapter-link {
-  display: block; margin-top: .8rem; padding: .55rem .9rem;
-  background: rgba(201,168,76,.08); border: 1px solid var(--gold-dim);
-  border-radius: 4px; text-decoration: none; font-size: .75rem;
-  color: var(--gold-dim); font-family: 'Cinzel', serif;
-  letter-spacing: .08em; text-align: center; transition: background .15s, color .15s;
-}
+.story-chapter-link { display: block; margin-top: .8rem; padding: .55rem .9rem; background: rgba(201,168,76,.08); border: 1px solid var(--gold-dim); border-radius: 4px; text-decoration: none; font-size: .75rem; color: var(--gold-dim); font-family: 'Cinzel', serif; letter-spacing: .08em; text-align: center; transition: background .15s, color .15s; }
 .story-chapter-link:hover { background: rgba(201,168,76,.15); color: var(--gold); }
-.story-handle {
-  display: none; justify-content: center; align-items: center;
-  padding: .5rem 0 .2rem; cursor: pointer; touch-action: none; flex-shrink: 0;
-}
+.story-handle { display: none; justify-content: center; align-items: center; padding: .5rem 0 .2rem; cursor: pointer; touch-action: none; flex-shrink: 0; }
 .story-handle-pill { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
 
-/* ── PLACE TOOLTIP ───────────────────────────────────── */
-.place-tooltip {
-  position: fixed; z-index: 700;
-  background: rgba(12,10,7,.96); border: 1px solid var(--border);
-  border-radius: 4px; padding: .4rem .6rem; pointer-events: none;
+/* ── LEAFLET PLACE MARKERS ────────────────────────────────────────────── */
+.place-label {
+  font-family: 'Cinzel', serif; white-space: nowrap;
+  text-shadow: 0 0 4px rgba(200,169,110,.9), 0 0 2px rgba(200,169,110,.9);
+  pointer-events: none; line-height: 1;
 }
-.tip-ancient { font-family: 'Cinzel', serif; font-size: .72rem; color: var(--gold); letter-spacing: .06em; margin-bottom: .12rem; }
-.tip-modern { font-size: .68rem; color: var(--text-muted); font-style: italic; }
+.place-label.water { font-style: italic; }
 
-/* ── CROSS-LINK FROM CHAPTERS ────────────────────────── */
-.map-story-link {
-  display:inline-flex; align-items:center; gap:.3rem;
-  margin:.5rem 0 .8rem; padding:.3rem .65rem;
-  background:rgba(74,138,90,.1); border:1px solid rgba(74,138,90,.4);
-  border-radius:3px; color:#5a9a6a; font-family:'Cinzel',serif;
-  font-size:.6rem; letter-spacing:.08em; text-decoration:none;
-  transition:background .15s,color .15s;
-}
-.map-story-link:hover{background:rgba(74,138,90,.22);color:#7aba8a}
-.map-story-link svg{width:12px;height:12px;flex-shrink:0}
+/* ── CROSS-LINKS FROM CHAPTERS ────────────────────────────────────────── */
+.map-story-link { display:inline-flex; align-items:center; gap:.3rem; margin:.5rem 0 .8rem; padding:.3rem .65rem; background:rgba(74,138,90,.1); border:1px solid rgba(74,138,90,.4); border-radius:3px; color:#5a9a6a; font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.08em; text-decoration:none; transition:background .15s,color .15s; }
+.map-story-link:hover { background:rgba(74,138,90,.22); color:#7aba8a; }
+.map-story-link svg { width:12px; height:12px; flex-shrink:0; }
 
-/* ═══════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    MOBILE ≤ 768px
-   ═══════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .era-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .7rem; gap: .3rem; scrollbar-width: none; }
+  .era-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .7rem; gap: .28rem; scrollbar-width: none; }
   .era-filters::-webkit-scrollbar { display: none; }
   .filter-label { display: none; }
   .main-layout { flex-direction: column; }
-  #map-panel { flex: 1; min-height: 0; }
-  #story-picker { padding: .4rem .8rem; }
-  .story-btn { font-size: .52rem; }
+  #map-panel { flex: 1; }
+  #story-picker { padding: .38rem .8rem; }
+  .story-btn { font-size: .5rem; }
 
   #mobile-controls {
     display: flex; align-items: center; justify-content: space-between;
-    padding: .4rem .8rem; background: var(--bg2);
+    padding: .38rem .8rem; background: var(--bg2);
     border-bottom: 1px solid var(--border2); gap: .5rem; flex-shrink: 0;
   }
   #mobile-controls button {
-    display: flex; align-items: center; gap: .32rem;
+    display: flex; align-items: center; gap: .3rem;
     background: rgba(255,255,255,.04); border: 1px solid var(--border);
     color: var(--gold-dim); font-family: 'Cinzel', serif;
-    font-size: .56rem; letter-spacing: .08em;
-    padding: .32rem .55rem; border-radius: 4px; cursor: pointer;
-    white-space: nowrap; transition: background .15s, color .15s;
+    font-size: .54rem; letter-spacing: .08em; padding: .3rem .52rem;
+    border-radius: 4px; cursor: pointer; white-space: nowrap;
+    transition: background .15s, color .15s;
   }
   #mobile-controls button:active { background: rgba(201,168,76,.12); color: var(--gold); }
-  #mobile-story-label {
-    font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .08em;
-    color: var(--text-muted); text-align: center; flex: 1;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  }
+  #mobile-story-label { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .08em; color: var(--text-muted); text-align: center; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   #legend-mobile-wrap { display: block; background: var(--bg2); overflow: hidden; }
-  #legend-mobile-wrap .legend {
-    position: static; border-radius: 0; border: none; box-shadow: none;
-    min-width: 0; width: 100%; background: var(--bg2); overflow: hidden;
-  }
-  #legend-mobile-wrap .legend-body {
-    display: flex; flex-wrap: wrap; gap: .3rem .65rem;
-    padding: .45rem .8rem .5rem; border-bottom: 1px solid var(--border2);
-  }
+  #legend-mobile-wrap .legend { position: static; border-radius: 0; border: none; box-shadow: none; min-width: 0; width: 100%; background: var(--bg2); overflow: hidden; }
+  #legend-mobile-wrap .legend-body { display: flex; flex-wrap: wrap; gap: .28rem .6rem; padding: .42rem .8rem .48rem; border-bottom: 1px solid var(--border2); }
   #legend-mobile-wrap .legend-item { margin-bottom: 0; }
-  #legend-mobile-wrap .legend.collapsed .legend-body {
-    max-height: 0 !important; padding-top: 0 !important;
-    padding-bottom: 0 !important; border-bottom-width: 0 !important;
-  }
+  #legend-mobile-wrap .legend.collapsed .legend-body { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; border-bottom-width: 0 !important; }
 
   .map-float-controls { display: none; }
   .legend { display: none; }
 
-  #story-panel {
-    width: 100% !important; min-width: 0 !important;
-    border-left: none !important; border-top: 1px solid var(--border2);
-    height: 0; max-height: 0; overflow: hidden;
-    transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1);
-    flex-shrink: 0;
-  }
-  #story-panel.open {
-    width: 100% !important; min-width: 0 !important;
-    height: 50vh; max-height: 50vh; overflow-y: auto; border-left-width: 0 !important;
-  }
+  #story-panel { width: 100% !important; min-width: 0 !important; border-left: none !important; border-top: 1px solid var(--border2); height: 0; max-height: 0; overflow: hidden; transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
+  #story-panel.open { width: 100% !important; min-width: 0 !important; height: 50vh; max-height: 50vh; overflow-y: auto; border-left-width: 0 !important; }
   .story-handle { display: flex; }
   .story-text { font-size: .86rem; }
   #story-content { padding: 0 .9rem 1.2rem; }
 }
-@media (max-width: 380px) { .era-btn, .story-btn { font-size: .52rem; padding: .22rem .45rem; } }
+@media (max-width: 380px) { .era-btn, .story-btn { font-size: .5rem; padding: .2rem .42rem; } }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-back">
     <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
@@ -388,6 +291,7 @@ body {
   </div>
 </nav>
 
+<!-- ERA FILTERS -->
 <div class="era-filters">
   <span class="filter-label">Era</span>
   <button class="era-btn active" data-era="all">All</button>
@@ -401,30 +305,32 @@ body {
   <button class="era-btn" data-era="nt">New Testament</button>
 </div>
 
+<!-- STORY PICKER -->
 <div id="story-picker-wrap">
   <div id="story-picker"></div>
 </div>
 
+<!-- MOBILE CONTROLS BAR -->
 <div id="mobile-controls">
   <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
       <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
       <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
     </svg>
     Legend
-    <span id="legend-btn-chev" style="font-size:.58rem;transition:transform .22s;display:inline-block;">&#9660;</span>
+    <span id="legend-btn-chev" style="font-size:.56rem;transition:transform .22s;display:inline-block;">&#9660;</span>
   </button>
   <span id="mobile-story-label">Select a Story</span>
   <button id="mobile-names-btn" onclick="toggleNames()">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
-      <text x="1" y="9" font-size="6" fill="currentColor" stroke="none" font-family="serif" font-style="italic">A</text>
-      <line x1="6" y1="7" x2="12" y2="7" stroke-width="1.2"/>
-      <polyline points="9,4 12,7 9,10" stroke-width="1.2"/>
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+      <text x="1" y="9" font-size="7" fill="currentColor" stroke="none" font-family="serif" font-style="italic">A</text>
+      <line x1="7" y1="7" x2="13" y2="7" stroke-width="1.2"/><polyline points="10,4 13,7 10,10" stroke-width="1.2"/>
     </svg>
     Names
   </button>
 </div>
 
+<!-- MOBILE LEGEND DROPDOWN -->
 <div id="legend-mobile-wrap">
   <div class="legend collapsed" id="legend-mobile">
     <div class="legend-body">
@@ -442,17 +348,25 @@ body {
   </div>
 </div>
 
+<!-- MAIN LAYOUT -->
 <div class="main-layout">
 
+  <!-- MAP PANEL -->
   <div id="map-panel">
-    <!-- Leaflet map fills this div -->
+
+    <!-- Leaflet renders into this div — position:absolute+inset:0 gives it real pixel height -->
     <div id="leaflet-map"></div>
 
-    <!-- D3 SVG overlay for annotations (synchronized to Leaflet) -->
-    <svg id="map-overlay-svg"></svg>
+    <!-- Loading overlay — shown until first tile loads -->
+    <div id="map-loading">
+      <div class="loading-title">Loading Map</div>
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+    </div>
 
+    <!-- Hint bar -->
     <div class="map-hint" id="map-hint">Scroll to zoom · Drag to pan · Select a story above</div>
 
+    <!-- Desktop floating controls -->
     <div class="map-float-controls">
       <button class="map-float-btn" id="names-toggle-btn" onclick="toggleNames()">⇄ Ancient Names</button>
       <button class="map-float-btn" onclick="centreMap()">
@@ -465,6 +379,7 @@ body {
       </button>
     </div>
 
+    <!-- Desktop legend -->
     <div class="legend" id="legend">
       <div class="legend-header" onclick="toggleLegend()">
         <span class="legend-title">Legend</span>
@@ -481,12 +396,14 @@ body {
         <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>New Testament</div>
         <div class="legend-item" style="margin-top:.3rem"><div class="legend-line" style="background:var(--gold-dim)"></div>Journey path</div>
         <div class="legend-item"><div class="legend-dash"></div>Sea crossing</div>
-        <div class="legend-item"><span class="legend-sym">◆</span>Key site</div>
+        <div class="legend-item"><span class="legend-sym">●</span>City / site</div>
         <div class="legend-item"><span class="legend-sym">▲</span>Mountain</div>
       </div>
     </div>
-  </div>
 
+  </div><!-- #map-panel -->
+
+  <!-- STORY PANEL -->
   <div id="story-panel">
     <div class="story-handle" id="story-handle" onclick="closeStory()">
       <div class="story-handle-pill"></div>
@@ -494,22 +411,21 @@ body {
     <div class="story-close"><button onclick="closeStory()">✕ Close</button></div>
     <div id="story-content">
       <p style="color:var(--text-muted);font-size:.82rem;padding-top:.5rem;">
-        Select an era and story to explore the biblical world.
+        Select an era above then choose a story to explore the biblical world.
       </p>
     </div>
   </div>
 
-</div>
+</div><!-- .main-layout -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="books.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(() => {});
 }
 
-// ── CONSTANTS ──────────────────────────────────────────────────────────────
+// ── ERA / COLOUR CONFIG ────────────────────────────────────────────────────
 const ERA_HEX = {
   primeval:'#8b6914', patriarch:'#7a5c9a', exodus:'#4a8a5a',
   judges:'#8a6a2a', kingdom:'#5a7a9a', prophets:'#9a4a4a',
@@ -523,11 +439,16 @@ const ERA_NAMES = {
 };
 
 // ── STATE ──────────────────────────────────────────────────────────────────
-let leafletMap = null;
-let overlayLayer = null;  // D3 SVG layer
-let showModernNames = false;
+let map = null;
 let currentEra = 'all';
 let currentStory = null;
+let showModernNames = false;
+let placeMarkers = [];   // L.Marker[]
+let storyLayers = [];    // L.Layer[] for current story overlays
+
+// ══════════════════════════════════════════════════════════════════════════
+// DATA — injected below
+// ══════════════════════════════════════════════════════════════════════════
 
 const PLACES = [
 
@@ -1003,183 +924,180 @@ const STORIES = [
 ];
 
 // ══════════════════════════════════════════════════════════════════════════
-// LEAFLET MAP INIT
+// MAP INIT
 // ══════════════════════════════════════════════════════════════════════════
 function initMap() {
-  // Centre on Jerusalem, zoom 5 shows the whole biblical world
-  leafletMap = L.map('leaflet-map', {
-    center: [31.5, 37],
+  // Centre on the Levant — the heart of the biblical world
+  map = L.map('leaflet-map', {
+    center: [30, 38],
     zoom: 5,
     minZoom: 3,
-    maxZoom: 12,
+    maxZoom: 13,
     zoomControl: true,
+    preferCanvas: false,
   });
 
-  // ESRI World Physical — terrain/parchment colours, no text labels
-  L.tileLayer(
+  // ESRI World Physical — real terrain tiles, parchment-coloured, no text labels
+  const tiles = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
-    {
-      attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
-      maxZoom: 12,
-    }
-  ).addTo(leafletMap);
+    { attribution: 'Tiles &copy; Esri', maxZoom: 13 }
+  );
+  tiles.addTo(map);
 
-  // Adjust zoom for mobile
-  if (window.innerWidth <= 768) {
-    leafletMap.setZoom(4);
-  }
+  // Hide loading overlay once first tile arrives
+  tiles.once('tileload', () => {
+    const el = document.getElementById('map-loading');
+    if (el) el.classList.add('hidden');
+    setTimeout(() => { if (el) el.style.display = 'none'; }, 450);
+  });
 
-  // Dismiss hint on first interaction
-  leafletMap.once('movestart', () => {
+  // Mobile: zoom out slightly
+  if (window.innerWidth <= 768) map.setZoom(4);
+
+  // Dismiss hint on first drag/zoom
+  map.once('movestart', () => {
     document.getElementById('map-hint').classList.add('hidden');
   });
 
-  // D3 overlay: sync SVG to Leaflet on every move/zoom
-  initD3Overlay();
-  leafletMap.on('moveend zoomend', updateD3Overlay);
+  // Critical: re-measure after layout settles
+  setTimeout(() => map.invalidateSize(), 100);
+  setTimeout(() => map.invalidateSize(), 400);
+
+  // Place all markers on load
+  renderPlaceMarkers();
 }
 
 // ══════════════════════════════════════════════════════════════════════════
-// D3 SVG OVERLAY (synchronized to Leaflet)
+// PLACE MARKERS
 // ══════════════════════════════════════════════════════════════════════════
-function initD3Overlay() {
-  updateD3Overlay();
+function makePlaceIcon(place) {
+  const label = showModernNames ? place.modern : place.ancient;
+  const isWater  = place.type === 'water';
+  const isRegion = place.type === 'region';
+  const isMtn    = place.type === 'mountain';
+  const isSite   = place.type === 'site';
+
+  // Symbol HTML
+  let sym = '';
+  if (!isWater && !isRegion) {
+    const colour = '#2a1a08';
+    if (isMtn) {
+      sym = `<svg width="12" height="10" viewBox="0 0 12 10" style="display:block;margin:0 auto 1px"><polygon points="6,0 12,10 0,10" fill="#4a3018" stroke="#d4b483" stroke-width="0.8" opacity="0.88"/></svg>`;
+    } else if (isSite) {
+      sym = `<svg width="10" height="10" viewBox="0 0 10 10" style="display:block;margin:0 auto 1px"><polygon points="5,0 10,5 5,10 0,5" fill="#c9a84c" stroke="#2a1a08" stroke-width="0.7" opacity="0.9"/></svg>`;
+    } else {
+      sym = `<svg width="8" height="8" viewBox="0 0 8 8" style="display:block;margin:0 auto 1px"><circle cx="4" cy="4" r="3.5" fill="#2a1a08" stroke="#d4b483" stroke-width="1.1" opacity="0.9"/></svg>`;
+    }
+  }
+
+  const fontSize = (isWater || isRegion) ? '9.5px' : '8px';
+  const colour   = isWater ? '#1a3a50' : '#1a1008';
+  const italic   = isWater ? 'italic' : 'normal';
+  const weight   = isRegion ? '600' : '400';
+  const shadow   = 'text-shadow:0 0 5px rgba(200,169,110,.95),0 0 3px rgba(200,169,110,.85)';
+
+  const html = `<div style="text-align:center;pointer-events:none;">${sym}<span class="place-label${isWater?' water':''}" style="font-size:${fontSize};color:${colour};font-style:${italic};font-weight:${weight};${shadow}">${label}</span></div>`;
+
+  // icon anchor: centre horizontally, above the symbol
+  const w = Math.max(label.length * 6, 40);
+  return L.divIcon({ html, className: '', iconSize: [w, 24], iconAnchor: [w/2, 20] });
 }
 
-function latLngToPixel(lat, lng) {
-  const pt = leafletMap.latLngToContainerPoint(L.latLng(lat, lng));
-  return [pt.x, pt.y];
-}
+function renderPlaceMarkers(filterStoryId) {
+  // Remove existing
+  placeMarkers.forEach(m => map.removeLayer(m));
+  placeMarkers = [];
 
-function updateD3Overlay() {
-  if (!leafletMap) return;
-  const svg = d3.select('#map-overlay-svg');
-  const panel = document.getElementById('map-panel');
-  svg.attr('width', panel.clientWidth).attr('height', panel.clientHeight);
-
-  // Redraw everything at new map position
-  drawPlaces(svg);
-  if (currentStory) drawStoryOverlays(svg, currentStory);
-}
-
-// ── PLACE MARKERS ──────────────────────────────────────────────────────────
-function drawPlaces(svg) {
-  svg.selectAll('.places-layer').remove();
-  const layer = svg.append('g').attr('class', 'places-layer');
-
-  const visible = currentStory
-    ? PLACES.filter(p => p.stories.some(s => s === currentStory.id))
+  const visible = filterStoryId
+    ? PLACES.filter(p => p.stories.includes(filterStoryId))
     : PLACES;
 
   visible.forEach(place => {
-    const [x, y] = latLngToPixel(place.lat, place.lon);
-    const grp = layer.append('g')
-      .attr('class', 'place-group')
-      .attr('transform', `translate(${x},${y})`)
-      .on('click', () => showPlaceTooltip(place, x, y));
-
-    // invisible hit target
-    grp.append('circle').attr('r', 16).attr('fill', 'transparent');
-
-    if (place.type === 'city') {
-      grp.append('circle').attr('r', 3.5)
-        .attr('fill', '#2a1a08').attr('stroke', '#d4b483').attr('stroke-width', 1.2).attr('opacity', 0.9);
-    } else if (place.type === 'mountain') {
-      grp.append('path').attr('d', 'M0,-7 L5,2 L-5,2 Z')
-        .attr('fill', '#4a3018').attr('stroke', '#d4b483').attr('stroke-width', 0.8).attr('opacity', 0.85);
-    } else if (place.type === 'site') {
-      grp.append('path').attr('d', 'M0,-5 L3,0 L0,5 L-3,0 Z')
-        .attr('fill', '#c9a84c').attr('stroke', '#2a1a08').attr('stroke-width', 0.7).attr('opacity', 0.9);
-    }
-
-    const off = place.type === 'region' || place.type === 'water' ? 0 : -10;
-    const isWater = place.type === 'water';
-    const isRegion = place.type === 'region';
-
-    grp.append('text').attr('class', 'ancient-label place-label')
-      .attr('y', off).attr('text-anchor', 'middle')
-      .attr('font-family', "'Cinzel', serif")
-      .attr('font-size', (isRegion || isWater) ? '9px' : '8px')
-      .attr('fill', isWater ? '#2a4a5a' : '#2a1a08')
-      .attr('font-style', isWater ? 'italic' : 'normal')
-      .attr('opacity', 0.95).attr('pointer-events', 'none')
-      .style('display', showModernNames ? 'none' : null)
-      .text(place.ancient);
-
-    grp.append('text').attr('class', 'modern-label place-label')
-      .attr('y', off).attr('text-anchor', 'middle')
-      .attr('font-family', "'Source Sans 3', sans-serif")
-      .attr('font-size', '7.5px').attr('fill', '#1a3040')
-      .attr('opacity', 0.9).attr('pointer-events', 'none')
-      .style('display', showModernNames ? null : 'none')
-      .text(place.modern);
+    const marker = L.marker([place.lat, place.lon], {
+      icon: makePlaceIcon(place),
+      interactive: true,
+    });
+    marker.on('click', () => {
+      L.popup({ className: 'map-popup', closeButton: false, offset: [0, -10] })
+        .setLatLng([place.lat, place.lon])
+        .setContent(`<div style="font-family:'Cinzel',serif;font-size:.72rem;color:#c9a84c;margin-bottom:.2rem">${place.ancient}</div><div style="font-size:.68rem;color:#6a5a38;font-style:italic">${place.modern}</div>`)
+        .openOn(map);
+    });
+    marker.addTo(map);
+    placeMarkers.push(marker);
   });
 }
 
-// ── STORY OVERLAYS ─────────────────────────────────────────────────────────
-function drawStoryOverlays(svg, story) {
-  svg.selectAll('.story-overlays').remove();
-  const layer = svg.append('g').attr('class', 'story-overlays');
+function refreshMarkerIcons() {
+  placeMarkers.forEach((m, i) => {
+    const place = PLACES.find(p => {
+      const ll = m.getLatLng();
+      return Math.abs(p.lat - ll.lat) < 0.001 && Math.abs(p.lon - ll.lng) < 0.001;
+    });
+    if (place) m.setIcon(makePlaceIcon(place));
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// STORY OVERLAYS  (pure Leaflet — L.polygon + L.polyline)
+// ══════════════════════════════════════════════════════════════════════════
+function clearStoryLayers() {
+  storyLayers.forEach(l => map.removeLayer(l));
+  storyLayers = [];
+}
+
+function drawStoryOverlays(story) {
+  clearStoryLayers();
   const color = ERA_HEX[story.era] || '#888';
 
-  // Region polygons
+  // Regions — L.polygon, no custom GeoJSON, just lat/lon arrays
   (story.regions || []).forEach(region => {
-    const pts = region.coords.map(([lon, lat]) => latLngToPixel(lat, lon));
-    const lineGen = d3.line().x(d=>d[0]).y(d=>d[1]);
-    layer.append('path')
-      .attr('d', lineGen([...pts, pts[0]]))
-      .attr('fill', region.color || color).attr('fill-opacity', 0.2)
-      .attr('stroke', region.color || color).attr('stroke-width', 1.5)
-      .attr('stroke-dasharray', '5,3').attr('stroke-opacity', 0.6)
-      .attr('pointer-events', 'none');
-    // Region label at centroid
-    if (region.label && pts.length) {
-      const cx = pts.reduce((a,b)=>a+b[0],0)/pts.length;
-      const cy = pts.reduce((a,b)=>a+b[1],0)/pts.length;
-      layer.append('text').attr('x', cx).attr('y', cy)
-        .attr('text-anchor','middle').attr('font-family',"'Cinzel', serif")
-        .attr('font-size','8px').attr('fill', region.color||color)
-        .attr('opacity', 0.65).attr('pointer-events','none').text(region.label);
-    }
+    // region.coords are [lon, lat] pairs — Leaflet needs [lat, lon]
+    const latlngs = region.coords.map(([lon, lat]) => [lat, lon]);
+    const poly = L.polygon(latlngs, {
+      color: region.color || color,
+      weight: 1.5,
+      opacity: 0.6,
+      dashArray: '6,4',
+      fillColor: region.color || color,
+      fillOpacity: 0.18,
+      interactive: false,
+    }).addTo(map);
+    storyLayers.push(poly);
   });
 
-  // Journey paths
+  // Journey paths — L.polyline with arrow decorations
   (story.paths || []).forEach(seg => {
-    const pts = seg.coords.map(([lon, lat]) => latLngToPixel(lat, lon));
-    const lineGen = d3.line().x(d=>d[0]).y(d=>d[1]).curve(d3.curveCatmullRom.alpha(0.5));
-    layer.append('path').attr('d', lineGen(pts))
-      .attr('fill','none').attr('stroke', color).attr('stroke-width', 2.5)
-      .attr('stroke-opacity', 0.8).attr('stroke-linecap','round')
-      .attr('stroke-dasharray', seg.dashed ? '7,5' : 'none')
-      .attr('pointer-events','none');
-    // Arrow at end
-    if (pts.length >= 2) {
-      const [x2,y2] = pts[pts.length-1];
-      const [x1,y1] = pts[pts.length-2];
-      const angle = Math.atan2(y2-y1, x2-x1) * 180/Math.PI;
-      layer.append('polygon').attr('points','0,-4 9,0 0,4')
-        .attr('fill', color).attr('opacity',0.85)
-        .attr('transform',`translate(${x2},${y2}) rotate(${angle})`);
+    const latlngs = seg.coords.map(([lon, lat]) => [lat, lon]);
+    const line = L.polyline(latlngs, {
+      color,
+      weight: 3,
+      opacity: 0.82,
+      dashArray: seg.dashed ? '10,7' : null,
+      lineCap: 'round',
+      lineJoin: 'round',
+      interactive: false,
+    }).addTo(map);
+    storyLayers.push(line);
+
+    // Arrow at end of path — rotated divIcon
+    if (latlngs.length >= 2) {
+      const end = latlngs[latlngs.length - 1];
+      const prev = latlngs[latlngs.length - 2];
+      const dLat = end[0] - prev[0];
+      const dLon = end[1] - prev[1];
+      const angle = Math.atan2(dLon, dLat) * 180 / Math.PI;
+      const arrowIcon = L.divIcon({
+        html: `<div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:10px solid ${color};opacity:.85;transform:rotate(${angle}deg);transform-origin:center bottom;"></div>`,
+        className: '',
+        iconSize: [10, 10],
+        iconAnchor: [5, 5],
+      });
+      const arrowMarker = L.marker(end, { icon: arrowIcon, interactive: false }).addTo(map);
+      storyLayers.push(arrowMarker);
     }
   });
 }
-
-// ── PLACE TOOLTIP ──────────────────────────────────────────────────────────
-let tooltipEl = null;
-function showPlaceTooltip(place, x, y) {
-  clearTooltip();
-  const panel = document.getElementById('map-panel').getBoundingClientRect();
-  const tip = document.createElement('div');
-  tip.className = 'place-tooltip';
-  tip.innerHTML = `<div class="tip-ancient">${place.ancient}</div><div class="tip-modern">${place.modern}</div>`;
-  tip.style.left = Math.min(panel.left + x + 12, window.innerWidth - 210) + 'px';
-  tip.style.top = Math.max(panel.top + y - 52, 10) + 'px';
-  document.body.appendChild(tip);
-  tooltipEl = tip;
-  setTimeout(clearTooltip, 3000);
-}
-function clearTooltip() { if (tooltipEl) { tooltipEl.remove(); tooltipEl = null; } }
-document.addEventListener('pointerdown', clearTooltip);
 
 // ══════════════════════════════════════════════════════════════════════════
 // STORY ENGINE
@@ -1188,6 +1106,7 @@ function showStory(story) {
   currentStory = story;
   const color = ERA_HEX[story.era] || '#888';
   const eraName = ERA_NAMES[story.era] || story.era;
+
   document.getElementById('story-content').innerHTML = `
     <div class="story-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
     <div class="story-name">${story.name}</div>
@@ -1197,24 +1116,38 @@ function showStory(story) {
     ${story.places && story.places.length ? `
       <div class="story-section-head">Key Places</div>
       <div class="story-places">${story.places.map(pid => {
-        const p = PLACES.find(x=>x.id===pid);
-        if(!p) return '';
-        return `<span class="story-place-chip" data-pid="${pid}" onclick="panToPlace('${pid}')">${showModernNames?p.modern:p.ancient}</span>`;
+        const p = PLACES.find(x => x.id === pid);
+        if (!p) return '';
+        const label = showModernNames ? p.modern : p.ancient;
+        return `<span class="story-place-chip" data-pid="${pid}" onclick="panToPlace('${pid}')">${label}</span>`;
       }).join('')}</div>` : ''}
     ${story.chapter ? `<a href="${story.chapter}" class="story-chapter-link">Read in Scripture Deep Dive →</a>` : ''}
   `;
+
   document.getElementById('story-panel').classList.add('open');
   const lbl = document.getElementById('mobile-story-label');
   if (lbl) lbl.textContent = story.name;
-  updateD3Overlay();
-  // Auto-fit map to story's places
-  if (story.places && story.places.length) {
-    const pts = story.places.map(pid => PLACES.find(p=>p.id===pid)).filter(Boolean);
-    if (pts.length) {
-      const bounds = L.latLngBounds(pts.map(p => [p.lat, p.lon]));
-      leafletMap.fitBounds(bounds, { padding: [60,60], maxZoom: 8 });
+
+  // Draw overlays and filter place markers to this story
+  drawStoryOverlays(story);
+  renderPlaceMarkers(story.id);
+
+  // Auto-fit map to this story's places
+  const pts = (story.places || []).map(pid => PLACES.find(p => p.id === pid)).filter(Boolean);
+  // Also include path endpoints
+  (story.paths || []).forEach(seg => {
+    if (seg.coords.length) {
+      const [lon, lat] = seg.coords[0]; pts.push({ lat, lon });
+      const [lon2, lat2] = seg.coords[seg.coords.length-1]; pts.push({ lat: lat2, lon: lon2 });
     }
+  });
+  if (pts.length) {
+    const bounds = L.latLngBounds(pts.map(p => [p.lat, p.lon]));
+    map.fitBounds(bounds.pad(0.25), { maxZoom: 9, animate: true });
   }
+
+  // Invalidate after panel animation completes (340px panel opens in 280ms)
+  setTimeout(() => map.invalidateSize(), 320);
 }
 
 function closeStory() {
@@ -1223,8 +1156,10 @@ function closeStory() {
   const lbl = document.getElementById('mobile-story-label');
   if (lbl) lbl.textContent = 'Select a Story';
   currentStory = null;
-  updateD3Overlay();
+  clearStoryLayers();
+  renderPlaceMarkers(); // show all
   history.replaceState(null, '', location.pathname);
+  setTimeout(() => map.invalidateSize(), 320);
 }
 
 function selectStory(id) {
@@ -1237,20 +1172,20 @@ function selectStory(id) {
 
 function panToPlace(pid) {
   const p = PLACES.find(x => x.id === pid);
-  if (!p || !leafletMap) return;
-  leafletMap.setView([p.lat, p.lon], Math.max(leafletMap.getZoom(), 7), { animate: true });
+  if (!p) return;
+  map.setView([p.lat, p.lon], Math.max(map.getZoom(), 7), { animate: true });
 }
 
 function centreMap() {
-  if (!leafletMap) return;
-  if (currentStory && currentStory.places && currentStory.places.length) {
-    const pts = currentStory.places.map(pid => PLACES.find(p=>p.id===pid)).filter(Boolean);
+  if (!map) return;
+  if (currentStory) {
+    const pts = (currentStory.places || []).map(pid => PLACES.find(p => p.id === pid)).filter(Boolean);
     if (pts.length) {
-      leafletMap.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lon])), { padding: [60,60], maxZoom: 8 });
+      map.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lon])).pad(0.25), { maxZoom: 9, animate: true });
       return;
     }
   }
-  leafletMap.setView([31.5, 37], 5, { animate: true });
+  map.setView([30, 38], 5, { animate: true });
 }
 
 // ── NAME TOGGLE ────────────────────────────────────────────────────────────
@@ -1260,11 +1195,12 @@ function toggleNames() {
   if (btn) { btn.textContent = showModernNames ? '⇄ Modern Names' : '⇄ Ancient Names'; btn.classList.toggle('active', showModernNames); }
   const mBtn = document.getElementById('mobile-names-btn');
   if (mBtn) mBtn.classList.toggle('active', showModernNames);
-  d3.selectAll('.ancient-label').style('display', showModernNames ? 'none' : null);
-  d3.selectAll('.modern-label').style('display', showModernNames ? null : 'none');
+  // Rebuild all marker icons with new name mode
+  refreshMarkerIcons();
+  // Update open story panel chips
   if (currentStory) {
     document.querySelectorAll('.story-place-chip').forEach(chip => {
-      const p = PLACES.find(x=>x.id===chip.dataset.pid);
+      const p = PLACES.find(x => x.id === chip.dataset.pid);
       if (p) chip.textContent = showModernNames ? p.modern : p.ancient;
     });
   }
@@ -1281,12 +1217,12 @@ function toggleMobileLegend() {
 
 // ── STORY PICKER ───────────────────────────────────────────────────────────
 function buildStoryPicker(era) {
-  const container = document.getElementById('story-picker');
-  if (!container) return;
-  const filtered = era === 'all' ? STORIES : STORIES.filter(s => s.era === era);
-  container.innerHTML = filtered.length
-    ? filtered.map(s => `<button class="story-btn" data-id="${s.id}" onclick="selectStory('${s.id}')">${s.name}</button>`).join('')
-    : '<span style="color:var(--text-muted);font-size:.7rem;font-family:'Cinzel',serif">No stories for this era</span>';
+  const c = document.getElementById('story-picker');
+  if (!c) return;
+  const list = era === 'all' ? STORIES : STORIES.filter(s => s.era === era);
+  c.innerHTML = list.length
+    ? list.map(s => `<button class="story-btn" data-id="${s.id}" onclick="selectStory('${s.id}')">${s.name}</button>`).join('')
+    : `<span style="color:var(--text-muted);font-size:.68rem;font-family:'Cinzel',serif">No stories for this era</span>`;
 }
 
 // ── ERA FILTER ─────────────────────────────────────────────────────────────
@@ -1301,17 +1237,9 @@ document.querySelectorAll('.era-btn').forEach(btn => {
   });
 });
 
-// ── SWIPE / KEYBOARD ───────────────────────────────────────────────────────
-(function() {
-  let startY = 0;
-  const handle = document.getElementById('story-handle');
-  if (!handle) return;
-  handle.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
-  handle.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - startY > 40) closeStory(); }, { passive: true });
-})();
-
+// ── KEYBOARD ───────────────────────────────────────────────────────────────
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeStory(); }
+  if (e.key === 'Escape') closeStory();
   if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
     const btns = [...document.querySelectorAll('.story-btn')];
     if (!btns.length) return;
@@ -1322,6 +1250,15 @@ document.addEventListener('keydown', e => {
   }
 });
 
+// ── SWIPE TO CLOSE ─────────────────────────────────────────────────────────
+(function() {
+  let sy = 0;
+  const h = document.getElementById('story-handle');
+  if (!h) return;
+  h.addEventListener('touchstart', e => { sy = e.touches[0].clientY; }, { passive: true });
+  h.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - sy > 40) closeStory(); }, { passive: true });
+})();
+
 // ── INIT ───────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 768) {
@@ -1330,17 +1267,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const chev = document.getElementById('legend-btn-chev');
     if (chev) chev.style.transform = 'rotate(-90deg)';
   }
+
   buildStoryPicker('all');
   initMap();
 
-  // Hash deep-link
+  // URL hash deep-link — open a specific story on load
   const hash = location.hash.replace('#', '');
   if (hash) {
     const story = STORIES.find(s => s.id === hash);
     if (story) {
       const eraBtn = document.querySelector(`.era-btn[data-era="${story.era}"]`);
-      if (eraBtn) { document.querySelectorAll('.era-btn').forEach(b=>b.classList.remove('active')); eraBtn.classList.add('active'); currentEra=story.era; buildStoryPicker(story.era); }
-      setTimeout(() => selectStory(story.id), 300);
+      if (eraBtn) {
+        document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+        eraBtn.classList.add('active');
+        currentEra = story.era;
+        buildStoryPicker(story.era);
+      }
+      setTimeout(() => selectStory(story.id), 400);
     }
   }
 });
