@@ -4,7 +4,7 @@ var BOOKS = [
   {dir:"genesis",name:"Genesis",total:50,live:50,testament:"OT"},
   {dir:"exodus",name:"Exodus",total:40,live:40,testament:"OT"},
   {dir:"leviticus",name:"Leviticus",total:27,live:27,testament:"OT"},
-  {dir:"numbers",name:"Numbers",total:36,live:10,testament:"OT"},
+  {dir:"numbers",name:"Numbers",total:36,live:14,testament:"OT"},
   {dir:"ruth",name:"Ruth",total:4,live:4,testament:"OT"},
   {dir:"proverbs",name:"Proverbs",total:31,live:31,testament:"OT"},
   {dir:"matthew",name:"Matthew",total:28,live:28,testament:"NT"},
