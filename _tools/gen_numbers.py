@@ -465,3 +465,314 @@ num(6, {
 })
 
 print("NUM-1 complete: Numbers 1–6 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-2: Chapters 7–10 — Tabernacle Dedication; Levites; Cloud and Trumpets
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(7, {
+    'title': 'The Offerings of the Leaders: Twelve Days of Dedication',
+    'sections': [
+        {
+            'header': 'Verses 1–47 — The First Six Tribal Leaders\' Offerings',
+            'verses': verse_range(1, 47),
+            'heb': [
+                ('nĕśîʾîm', "nesi'im", 'leaders / princes / chieftains', 'The tribal leaders (nĕśîʾîm) are the same men named as census co-commissioners in Num 1:5–15. Now they make identical voluntary offerings for the tabernacle\'s dedication — the same gift from each tribe, one per day, over twelve days. Equality of honour in the covenant community.'),
+                ('qorban', 'qorban', 'offering / gift brought near', 'From qārab (to draw near). Each leader\'s offering is an act of approach — the tribe\'s first and best given to draw near to God in the newly consecrated tabernacle.'),
+            ],
+            'ctx': 'Numbers 7 is the longest chapter in the Pentateuch (89 verses) and consists almost entirely of repetition: twelve identical offering lists, one per tribal leader, one per day. Each leader brings: one silver plate (130 shekels), one silver basin (70 shekels), one gold dish (10 shekels), a burnt offering (one bull, one ram, one male lamb), a sin offering (one male goat), and a fellowship offering (two oxen, five rams, five goats, five male lambs). The repetition is not literary laziness but theological precision — every tribe is equally honoured, every leader\'s gift equally recorded. God receives and acknowledges each tribe individually. The chapter ends (v.89) with the remarkable note: "When Moses entered the tent of meeting to speak with the Lord, he heard the voice speaking to him from between the two cherubim above the atonement cover." The tabernacle is functioning: God speaks from within it.',
+            'cross': [
+                ('Rev 5:8', '"Each one had a harp and they were holding golden bowls full of incense, which are the prayers of God\'s people." The twenty-four elders\' golden bowls echo the twelve golden dishes of Num 7 — covenant offerings now transformed into the prayers that rise before the eternal throne.'),
+                ('Heb 9:23', '"It was necessary, then, for the copies of the heavenly things to be purified with these sacrifices." The tabernacle dedication offerings of Num 7 are the earthly counterpart to the heavenly sanctuary\'s purification through Christ\'s blood.'),
+            ],
+            'mac': [
+                ('7:1–3', 'MacArthur: The leaders bring their gifts "on the day Moses finished setting up the tabernacle" — the first act of Israel\'s post-Sinai worship is tribal offering. The community\'s leaders lead in generosity. The pattern is consistent throughout Scripture: covenant leadership is expressed through sacrificial giving.'),
+                ('7:10–11', 'MacArthur: The twelve-day schedule — one tribe per day — ensures that each offering is received as distinct, not merged into a collective. Every tribe has its own day of honour before God. The administrative precision (same gift, separate days, individual recording) expresses the covenant principle: God knows and acknowledges each part of his people individually.'),
+            ],
+            'milgrom': [
+                ('7:1', 'Milgrom: The chapter\'s placement — after the tabernacle is consecrated (Lev 8–9) and all the purity and vow laws are established (Num 1–6) — is chronologically retroactive. Num 7 actually precedes the Num 1–4 census in the narrative timeline. The redactors placed it here for theological reasons: the tabernacle dedication is the culmination of the entire preparation sequence.'),
+                ('7:89', 'Milgrom: The concluding verse — Moses hearing the divine voice from between the cherubim — is the theological payoff for the entire chapter. All 89 verses of offering lists build toward this: the tabernacle is functioning as intended, the divine voice has taken up residence, the sanctuary system is operational.'),
+            ],
+            'ashley': [
+                ('7:10–83', 'Ashley: The twelve-fold repetition is the text\'s most distinctive feature and its deepest theological statement. Each tribe is given identical treatment — no tribe receives preferential listing or offering. The repetition embodies the covenant\'s egalitarian structure: all twelve tribes stand equally before God, equally honoured, equally recorded.'),
+            ],
+            'sarna': [
+                ('7:3', 'Sarna: The leaders bring six covered carts and twelve oxen — two leaders per cart, one ox per leader. The offering is both generous (six carts of silver and gold) and communal (shared transport, shared honour). The tabernacle is built through distributed covenant generosity.'),
+            ],
+            'alter': [
+                ('7:12–83', 'Alter: The twelve-fold repetition in Numbers 7 is unique in biblical literature — no other passage repeats an inventory verbatim twelve times. The priestly writers\' aesthetic of accumulative precision reaches its zenith. The repetition is not failure of imagination but a theological choice: every tribe\'s day is worth its own complete, unabbreviated record.'),
+            ],
+            'calvin': [
+                ('7:1–83', 'Calvin: The tabernacle dedication offerings teach that the worship of God involves tangible, material generosity. The leaders did not merely attend the dedication — they brought significant wealth. True worship is costly; it involves the surrender of what is valuable. The twelve-day sequence models sustained, distributed covenant generosity.'),
+            ],
+            'netbible': [
+                ('7:1', 'NET Note: Numbers 7 is chronologically earlier than chapters 1–6 (the tabernacle was erected on 1 Nisan; the census was taken on 1 Iyyar, one month later). The redactors placed the dedication account here to group all tabernacle-related material together before the narrative of Israel\'s departure from Sinai begins in ch.10.'),
+            ],
+        },
+        {
+            'header': 'Verses 48–89 — The Last Six Leaders\' Offerings; Moses Hears God',
+            'verses': verse_range(48, 89),
+            'heb': [
+                ('wayyišmaʿ ʾet-haqqôl', 'wayyishma et-haqqol', 'and he heard the voice', 'The chapter\'s climactic final verse: Moses enters the completed, dedicated tabernacle and hears the divine voice speaking from between the cherubim. The entire 89-verse chapter of offerings culminates in the moment of divine communication — the tabernacle is functioning as its name implies: a meeting place.'),
+            ],
+            'ctx': 'Days 7–12 repeat the identical offering pattern — Ephraim (day 7), Manasseh (day 8), Benjamin (day 9), Dan (day 10), Asher (day 11), Naphtali (day 12). The total gifts: 12 silver plates, 12 silver basins, 12 gold dishes, 12 burnt offering animals, 12 sin offerings, 24 oxen/fellowship offerings, plus 60 rams/goats/lambs. The accumulated weight of the offerings represents Israel\'s complete covenant response to the completed sanctuary. Verse 89 then shifts register entirely: Moses enters and hears God. The twelve days of offerings create the conditions for the divine voice — not by mechanical causation but by covenant faithfulness.',
+            'cross': [
+                ('John 1:14', '"The Word became flesh and made his dwelling among us." The tabernacle\'s function — the divine voice speaking from within it — reaches its ultimate fulfilment in the Incarnation: God\'s word dwelling, not in a tent, but in human flesh.'),
+                ('Exod 25:22', '"There, above the cover between the two cherubim that are over the ark of the covenant law, I will meet with you and give you all my commands." Numbers 7:89 records the fulfilment of this Exodus promise: God speaks from precisely the location he designated.'),
+            ],
+            'mac': [
+                ('7:84–88', 'MacArthur: The cumulative totals of the twelve leaders\' offerings — 12 silver plates, 12 gold dishes, 24 cattle, 60 rams, 60 goats — represent Israel\'s concentrated covenant devotion. This is not annual giving but a one-time covenant-inaugurating act of comprehensive worship. The scale of the offering matches the scale of the event.'),
+                ('7:89', 'MacArthur: The final verse is Numbers\' most intimate moment: Moses alone with God, the divine voice speaking from the most holy space in Israel\'s world. Everything that precedes — the census, the camp order, the Levitical appointments, the twelve days of offerings — is preparation for this: God speaking to his people through his appointed mediator.'),
+            ],
+            'milgrom': [
+                ('7:89', 'Milgrom: The verb "heard" (wayyišmaʿ) with no stated object immediately — "he heard the voice" — creates a moment of rhetorical suspense before the source is named. Moses enters, and encounters the divine voice. Milgrom notes this parallels the description of Sinai (Deut 4:12, "you heard the sound of words but saw no form") — the tabernacle is a portable Sinai, the ongoing site of divine speech.'),
+            ],
+            'ashley': [
+                ('7:89', 'Ashley: The chapter\'s closing verse functions as a dedication plaque for the entire tabernacle system: it works. Moses enters, God speaks. The twelve days of preparation and twelve leaders\' offerings have established the conditions for ongoing covenant communication. The tabernacle is not a monument but a meeting place.'),
+            ],
+            'sarna': [
+                ('7:89', 'Sarna: "He heard the voice speaking to him from between the two cherubim above the atonement cover" — the mercy seat, covered with blood on Yom Kippur, is also the throne from which the divine voice issues. The place of atonement and the place of revelation are the same point. Grace and truth meet at the mercy seat.'),
+            ],
+            'alter': [
+                ('7:89', 'Alter: After 88 verses of inventory and repetition, the chapter\'s final verse shifts to intimate narrative: Moses and the divine voice. The prose suddenly breathes. The shift in register — from list to scene — is deliberate: all the material preparation leads to this unquantifiable moment of divine-human encounter.'),
+            ],
+            'calvin': [
+                ('7:89', 'Calvin: Moses hearing the divine voice from the mercy seat is the prototype of prayer: approaching the appointed place of atonement to receive the divine word. The Christian enters the holy of holies through Christ (Heb 10:19–22) and hears the word of God — the same dynamic, the same mercy seat, the same voice, now accessible to all.'),
+            ],
+            'netbible': [
+                ('7:89', 'NET Note: "From between the two cherubim" — this precise location was established in Exod 25:22 as the designated point of divine communication. The cherubim flank the mercy seat/atonement cover, their wings meeting above it. The divine voice comes from the intersection of holiness (the ark) and grace (the atonement cover) — theologically precise geography.'),
+            ],
+        },
+    ],
+})
+
+num(8, {
+    'title': 'The Lampstand; the Levites Consecrated and Retired',
+    'sections': [
+        {
+            'header': 'Verses 1–4 — The Lampstand Arrangement',
+            'verses': verse_range(1, 4),
+            'heb': [
+                ('ʾel-mûl pĕnê hamĕnôrāh', 'el-mul pnei hamenorah', 'toward the front of the lampstand / facing the lampstand', 'The seven lamps must be arranged to light the space "in front of" the lampstand — directed forward, not upward or randomly. The lampstand\'s light is purposeful and oriented: it illuminates the table of showbread, providing light for the sanctuary\'s priestly service.'),
+            ],
+            'ctx': 'The short lampstand section (vv.1–4) connects the tabernacle dedication of ch.7 to the Levitical consecration of ch.8. Aaron is commanded to set up the seven lamps so they illuminate "the area in front of the lampstand" — not diffuse light but focused, directed illumination. This tiny passage ties back to the lampstand instructions of Exod 25:31–40 and Lev 24:1–4. Numbers 8\'s brief inclusion of the lampstand detail is a narrative hinge: the sanctuary is fully operational (ch.7), the light is properly arranged (vv.1–4), and now the Levites who serve in its light are formally consecrated (vv.5–26).',
+            'cross': [
+                ('Rev 1:20', '"The seven lampstands are the seven churches." John\'s vision transforms the singular seven-branched menorah into seven separate lampstands, each representing a church community — the covenant people still called to be the light of the world (Matt 5:14–16).'),
+                ('John 8:12', '"I am the light of the world." Jesus\' claim applies the lampstand theology directly to himself — the true lamp before God, giving light in the darkness.'),
+            ],
+            'mac': [
+                ('8:1–4', 'MacArthur: The lampstand\'s directed light — illuminating the space in front of it toward the table of showbread — creates a visual theology. The light of God\'s presence illuminates the covenant bread (Israel\'s presence before God). The lampstand and the table are paired furnishings in the holy place, the light always pointing toward the covenant meal.'),
+            ],
+            'milgrom': [
+                ('8:2', 'Milgrom: "When you set up the lamps, the seven lamps shall give light in front of the lampstand." The positioning creates what Milgrom calls a "lamp-focused" illumination — all seven lamps directed toward the centre, maximising the light on the showbread table and the incense altar. The lampstand is not merely decorative but functionally illuminating the covenant objects.'),
+            ],
+            'ashley': [
+                ('8:1–4', 'Ashley: The lampstand section in Num 8 serves as a literary transition and a theological reminder: the sanctuary\'s inner life depends on maintained light. Before the Levites are consecrated (vv.5–26), the light that will illuminate their service is confirmed as properly arranged. The ministers serve in light; the light is arranged before the ministers are commissioned.'),
+            ],
+            'sarna': [
+                ('8:4', 'Sarna: "The lampstand was made exactly like the pattern the Lord had shown Moses." The conformity formula — explicit reference back to the Exod 25 design specifications — affirms that every detail of the completed tabernacle matches the divine blueprint. There is no improvisation; the sanctuary is a precise copy of the heavenly pattern (Heb 8:5).'),
+            ],
+            'alter': [
+                ('8:1–4', 'Alter: Four verses — command, compliance, construction note. The priestly style at its most compressed. The lampstand passage is almost an afterthought in placement but foundational in theology: the light must be right before the servants are installed. Correct worship precedes correct service.'),
+            ],
+            'calvin': [
+                ('8:1–4', 'Calvin: The lampstand\'s directed light is a figure of the word of God illuminating the covenant meal — scripture and sacrament together. The Christian equivalent: the preaching of the word (the lampstand) illuminates the Lord\'s Table (the showbread). Remove the light and the meal loses its meaning; remove the meal and the light has nothing to illuminate.'),
+            ],
+            'netbible': [
+                ('8:2', 'NET Note: "El-mul pĕnê hamĕnôrāh" — literally "toward the face of the lampstand" — means the lamps are directed to shine forward/outward rather than back toward the wall. The architectural effect: maximum illumination of the table of showbread directly opposite. The paired furnishings (lampstand west wall, table north wall) are in a liturgical dialogue.'),
+            ],
+        },
+        {
+            'header': 'Verses 5–26 — The Consecration and Retirement of the Levites',
+            'verses': verse_range(5, 26),
+            'heb': [
+                ('wĕhēnaptā ʾōtām tĕnûpāh', "wehenafta otam tenufah", 'you shall wave them as a wave offering', 'The Levites are "waved" before the Lord — the same elevation gesture used for portions of the fellowship offering. The Levites are the offering; their entire persons are presented to God in a communal act of dedication before taking up their service.'),
+                ('ûmibben ḥămīšîm šānāh', 'umibben chamishim shanah', 'from the age of fifty years', 'The retirement age for active Levitical service. After 50, the Levite steps down from heavy transport duties but "assists his brothers" in lighter duties. Retirement from strenuous service is not exile from covenant life — the retired Levite continues in an advisory, supportive role.'),
+            ],
+            'ctx': 'The Levites\' formal consecration (vv.5–22) follows a sequence: ritual washing, shaving all hair, washing clothes, presenting themselves before the community, laying of hands by the Israelites (the whole community consecrates the Levites as their substitutes, vv.9–10), Aaron waving them before the Lord, Levites laying hands on the two bulls (one for sin offering, one for burnt offering), atonement. The theology is clear: the Levites are a living offering — the community\'s representative gift to God. Verses 23–26 establish the service ages (25–50 for active service; 50+ for lighter assistance), slightly different from the 30–50 of ch.4, reflecting different duties at different career stages.',
+            'cross': [
+                ('Rom 12:1', '"Offer your bodies as a living sacrifice, holy and pleasing to God." Paul\'s NT equivalent of the Levitical wave offering — the believer presents their whole self as a living offering, the ultimate fulfilment of the Num 8 consecration ceremony.'),
+                ('1 Pet 2:9', '"You are a royal priesthood." The NT democratisation of the Levitical consecration: every believer undergoes a Num 8-type dedication — washed (baptism), presented (profession of faith), consecrated (Spirit-filling).'),
+            ],
+            'mac': [
+                ('8:9–12', 'MacArthur: The hands-laying by "the whole Israelite community" (v.9–10) is extraordinary — not just Moses or Aaron but the entire assembly participates in consecrating the Levites. The community\'s collective act of dedication reflects the principle that the Levites serve on behalf of all Israel. Their consecration belongs to the whole people.'),
+                ('8:25–26', 'MacArthur: The retirement provision — active service until 50, then "assisting" — is one of the Levitical system\'s most humane provisions. Aging Levites are not discarded; they continue in lighter duties and serve as mentors and advisors. The covenant community values its experienced servants at every life stage.'),
+            ],
+            'milgrom': [
+                ('8:10', 'Milgrom: "The Israelites are to lay their hands on the Levites" — not the normal single-hand laying of Lev 1:4 but the symbolic transfer from the community to its representatives. The Levites are consecrated as Israel\'s collective offering to God; the hand-laying transfers the entire community\'s dedication into the Levites who will embody it.'),
+                ('8:19', 'Milgrom: "I have given the Levites as gifts to Aaron and his sons from among the Israelites, to do the work of the Israelites at the tent of meeting and to make atonement for them so that no plague will strike the Israelites when they go near the sanctuary." The Levites\' protective function — shielding Israel from the lethal consequences of unmediated approach to the holy — is explicit here.'),
+            ],
+            'ashley': [
+                ('8:5–22', 'Ashley: The Levitical consecration ceremony is the communal counterpart to the Aaronic ordination of Lev 8. Where Aaron\'s ordination was initiated by Moses alone, the Levites are consecrated by the whole community. The two ceremonies together establish the full priestly system: Aaronic priests for sanctuary service, Levites for communal support, the entire assembly as the body that sustains and is sustained by both.'),
+            ],
+            'sarna': [
+                ('8:6–7', 'Sarna: The purification of the Levites — sprinkling with "water of cleansing" (literally "water of sin-offering"), shaving all hair, washing clothes — is a total physical renewal before presentation. The Levites are cleansed from the crown of the head to the soles of the feet; their entire embodied identity is prepared for covenant service.'),
+            ],
+            'alter': [
+                ('8:10–11', 'Alter: The wave offering of the Levites — living human beings elevated before the Lord — is the most dramatic use of the tĕnûpāh gesture in the Pentateuch. All previous wave offerings were animal portions or grain; here the offering is persons. The Levites are not merely workers; they are Israel\'s living sacrifice.'),
+            ],
+            'calvin': [
+                ('8:23–26', 'Calvin: The Levitical retirement provision models the principle that different life stages call for different service intensity. Youth and middle age for active labour; later years for wisdom, mentoring, and lighter duties. The covenant community honours its older members by retaining them in service rather than excluding them — a counter to every culture\'s tendency to discard the elderly.'),
+            ],
+            'netbible': [
+                ('8:25–26', 'NET Note: The service age in Num 4 was 30–50; here it is 25–50. The apparent discrepancy likely reflects different types of service: the Num 4 count (30–50) specifies active transport duties; Num 8:24–26 describes the broader range of sanctuary service beginning at 25. The five years between 25 and 30 may have been a training/apprenticeship period.'),
+            ],
+        },
+    ],
+})
+
+num(9, {
+    'title': 'The Second Passover and the Guiding Cloud',
+    'sections': [
+        {
+            'header': 'Verses 1–14 — The Second Passover: Grace for the Ceremonially Unclean',
+            'verses': verse_range(1, 14),
+            'heb': [
+                ('ṭĕmēʾ-nepeš', 'teme-nefesh', 'unclean through a dead person / corpse-contaminated', 'The men who approach Moses with the Passover question have incurred corpse-impurity and cannot participate in the Passover as scheduled. Their question — "Why should we be deprived?" — initiates a new divine provision rather than a rebuke.'),
+                ('môʿēd ʾaḥēr', "mo'ed acher", 'an appointed time at another time / the second date', 'God\'s response to the unclean men\'s question: a second Passover, one month later (14 Iyyar instead of 14 Nisan), for those who were impure or on a journey during the first. The provision is a model of divine pastoral accommodation: the covenant requirement stands, but grace provides an alternative path to fulfilment.'),
+            ],
+            'ctx': 'Numbers 9\'s opening section records Israel\'s first anniversary Passover (14 Nisan, year 2 — exactly one year after the Exodus Passover of Exod 12). A pastoral problem arises: some men are ceremonially unclean due to corpse-contact and cannot participate. They approach Moses with an urgent question: "Why should we be kept from presenting the Lord\'s offering with the other Israelites?" Moses takes the question to God; God provides the "second Passover" (Pesach Sheni) — a makeup provision one month later. The section closes (vv.13–14) with the warning: those who are clean but neglect the Passover face kārēt. The provision is grace; the expectation is participation.',
+            'cross': [
+                ('Luke 14:16–24', 'Jesus\'s parable of the great banquet — those originally invited who make excuses are replaced by others gathered from the streets. The Passover\'s mandatory participation principle (Num 9:13 — the clean person who neglects it faces kārēt) and its gracious accommodation principle (the second Passover for the unclean) together form the backdrop for the parable\'s urgency.'),
+                ('1 Cor 11:27–29', '"Whoever eats the bread or drinks the cup of the Lord in an unworthy manner will be guilty." The Num 9 Passover principle — participation required, unworthy absence punishable — resonates with Paul\'s warning about the Lord\'s Supper.'),
+            ],
+            'mac': [
+                ('9:6–8', 'MacArthur: The men\'s question — "Why should we be deprived?" — is one of the most faith-affirming moments in Numbers. They are not seeking an exemption from the Passover; they want to participate. Their impurity is not their fault, yet they refuse to treat it as grounds for exclusion. They bring their problem to Moses and ultimately to God, trusting that grace will provide a path.'),
+                ('9:13', 'MacArthur: The kārēt penalty for a clean person who neglects the Passover without justification is the counterbalance to the second Passover\'s grace. Grace provides an alternative path for the genuinely impeded; it is not permission for cavalier indifference. The covenant memorial cannot be casually skipped — to do so is to repudiate the Exodus redemption itself.'),
+            ],
+            'milgrom': [
+                ('9:6–14', 'Milgrom: The second Passover provision is a landmark in legal reasoning: a case not covered by existing law is brought to the lawgiver, who seeks divine guidance, and a new precedent is established. The process models the development of case law within the covenant system — not rigid inflexibility but responsive guidance that maintains the law\'s underlying purpose.'),
+            ],
+            'ashley': [
+                ('9:1–14', 'Ashley: The Passover section\'s pastoral sensitivity is characteristic of Numbers at its best. God does not condemn the unclean men for their impurity — they could not help it. He provides for them. The covenant\'s requirements are firm; its administration is gracious. The two together — demand and provision — define the character of covenant relationship.'),
+            ],
+            'sarna': [
+                ('9:14', 'Sarna: "The same rules apply both to the native-born Israelites and to the foreigners residing among them." The second Passover provision extends to resident aliens — the same grace available to Israelites is available to those who have cast their lot with Israel. The covenant community is defined by participation, not ethnicity.'),
+            ],
+            'alter': [
+                ('9:6–8', 'Alter: The men approach Moses with a question framed as a grievance: "Why should we be deprived?" The directness is striking — they bring their complaint to the highest authority and receive a hearing. Moses does not dismiss them; he takes their question to God. The covenant legal system is responsive to the community it governs.'),
+            ],
+            'calvin': [
+                ('9:6–13', 'Calvin: The second Passover teaches that God\'s law is always in service of his grace. When the law\'s requirement (Passover on 14 Nisan) conflicts with the law\'s purpose (every Israelite participating in the covenant memorial), God provides a supplementary path. The law\'s spirit — full covenant participation — takes precedence over its letter, when the letter would frustrate the spirit.'),
+            ],
+            'netbible': [
+                ('9:11', 'NET Note: The second Passover (14 Iyyar) follows the same instructions as the first — eaten with unleavened bread and bitter herbs, no bone broken, not left until morning (vv.11–12, echoing Exod 12:8, 10, 46). The provisions are identical; only the date changes. The makeup Passover is a genuine Passover, not a diminished substitute.'),
+            ],
+        },
+        {
+            'header': 'Verses 15–23 — The Cloud: God\'s Guidance in the Wilderness',
+            'verses': verse_range(15, 23),
+            'heb': [
+                ('ʿānān', 'anan', 'cloud', 'The divine cloud — covering the tabernacle by day, appearing as fire by night (v.16). The cloud is the visible form of divine presence guiding Israel\'s movements. Israel moves when the cloud lifts; Israel camps when the cloud settles. The entire wilderness itinerary is determined by this one indicator.'),
+                ('ʿal-pî yhwh yissĕʿû wĕʿal-pî yhwh yaḥănû', 'al-pi YHWH yissa\'u ve\'al-pi YHWH yachanu', 'at the command of the Lord they set out and at the command of the Lord they camped', 'The repeated refrain of vv.18, 20, 23 — Israel\'s movements are entirely determined by divine command, not human initiative. The cloud is God\'s speaking; Israel\'s movement is Israel\'s hearing. The wilderness journey is a sustained act of covenant obedience.'),
+            ],
+            'ctx': 'The cloud section (vv.15–23) describes the guiding cloud that has been present since Exodus 13:21–22 but is now described with more detail: it covers the tabernacle from day to day; it looks like fire at night; Israel moves only when it lifts. The repetition in this section — "whether for two days or a month or a year… they would remain in camp… they would not set out" — emphasises the absolute submission of Israel\'s itinerary to divine direction. Israel does not plan their route; they follow the cloud. The section is framed by the same phrase (v.18 and v.23): "at the command of the Lord." The cloud is the bridge between the tabernacle dedication (chs.7–8) and the march from Sinai (ch.10).',
+            'cross': [
+                ('1 Cor 10:1–2', '"Our ancestors were all under the cloud and… they were all baptised into Moses in the cloud and in the sea." Paul identifies the Exodus/wilderness cloud as a typological baptism — Israel immersed in the divine presence, the cloud as God\'s enveloping grace.'),
+                ('Acts 1:9', '"He was taken up before their very eyes, and a cloud hid him from their sight." The Ascension cloud echoes the wilderness cloud — Christ departing into the divine presence, the same cloud that guided Israel now receiving the risen Lord.'),
+            ],
+            'mac': [
+                ('9:15–23', 'MacArthur: The cloud guidance narrative is Numbers\' most vivid image of radical dependence. Israel cannot plan their route, cannot anticipate their movements, cannot know whether they will camp for two days or two years. Every decision — when to move, when to stop — belongs to God. The wilderness teaches the one lesson Israel keeps failing: "Trust in the Lord with all your heart and lean not on your own understanding" (Prov 3:5).'),
+            ],
+            'milgrom': [
+                ('9:18', 'Milgrom: The phrase "at the command of the Lord" (ʿal-pî yhwh) appears six times in vv.18–23 — a deliberate rhetorical accumulation. Every movement of the Israelite camp is grounded in explicit divine command. Milgrom notes this is not merely theological decoration but the narrative\'s foundational claim: the wilderness journey is not Israel\'s adventure but God\'s choreography.'),
+            ],
+            'ashley': [
+                ('9:15–23', 'Ashley: The cloud theology of Numbers 9 establishes the model for Israel\'s relationship to divine guidance throughout the OT: God leads visibly, community follows responsively, movement is determined by presence rather than plan. The absence of the cloud (cf. Ps 74:1) is a theological crisis; its presence is the guarantee of covenant accompaniment.'),
+            ],
+            'sarna': [
+                ('9:20–22', 'Sarna: "Whether the cloud stayed over the tabernacle for two days or a month or a year…" The indefinite duration possibilities — two days, a month, a year — cover the entire spectrum of human impatience. The cloud stays as long as it stays. Israel\'s obedience must be as flexible as God\'s timing.'),
+            ],
+            'alter': [
+                ('9:22–23', 'Alter: The triple "at the command of the Lord" in the closing verses creates a liturgical cadence — Israel\'s itinerary is not a narrative of human decisions but a sequence of divine commands and covenant responses. The repetition transforms geography into theology: every campsite is a divine appointment, every march a divine commission.'),
+            ],
+            'calvin': [
+                ('9:15–23', 'Calvin: The cloud guidance teaches total dependence on God for direction — not merely for sustenance (manna and water) but for the most fundamental decisions: when to stay, when to go. The Christian equivalent is prayer as the cloud-analogue: the decision to move or remain is referred to God, not resolved by human planning alone.'),
+            ],
+            'netbible': [
+                ('9:16', 'NET Note: "By night it looked like fire" — the pillar of fire by night and cloud by day is first mentioned at Exod 13:21–22. The consistent dual appearance (cloud/fire) indicates a single phenomenon with two aspects: shielding from the desert sun by day, providing warmth and light by night. The cloud is practical as well as theological — God\'s guidance is also God\'s care.'),
+            ],
+        },
+    ],
+})
+
+num(10, {
+    'title': 'The Silver Trumpets and the Departure from Sinai',
+    'sections': [
+        {
+            'header': 'Verses 1–10 — The Silver Trumpets: Signals for a Covenant People',
+            'verses': verse_range(1, 10),
+            'heb': [
+                ('ḥăṣōṣĕrôt', 'chatsotzerot', 'silver trumpets', 'Straight metal trumpets (distinct from the ram\'s horn šôpār). Two trumpets, blown by priests, serve multiple purposes: summoning the assembly (both trumpets), summoning leaders only (one trumpet), signalling march (blasts), alarm for war, and accompanying sacrificial worship. The trumpet system is Israel\'s covenant communication infrastructure.'),
+                ('tĕrûʿāh', 'teruah', 'alarm blast / battle signal', 'A staccato, broken blast pattern distinct from the long sustained blast (tĕqîʿāh). The tĕrûʿāh signals alarm, battle, or the march of camp divisions. The word recurs in the Feast of Trumpets (Yom Teruah, Num 29:1) and in eschatological contexts.'),
+            ],
+            'ctx': 'Numbers 10:1–10 establishes the silver trumpet system — two instruments, blown by priests, with five distinct signals: (1) both trumpets together = full assembly; (2) one trumpet = leaders only; (3) first alarm blast = east camp marches; (4) second alarm blast = south camp marches; (5) festal blasts = feast days and offerings. The final instruction (v.9–10) extends the trumpets\' function to warfare and worship: sounding trumpets before God in battle ensures divine remembrance and rescue; sounding them at feasts and offerings is a "memorial before God." The trumpets are not merely practical signals but theological statements: the covenant people are called, organised, and remembered by God.',
+            'cross': [
+                ('1 Cor 14:8', '"If the trumpet does not sound a clear call, who will get ready for battle?" Paul uses the military trumpet-clarity principle of Num 10:5–8 to make his point about intelligible speech in worship.'),
+                ('1 Thess 4:16', '"For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God." The eschatological trumpet echoes the Num 10 assembly-trumpet: the final summoning of the covenant community.'),
+                ('Rev 8:2', 'The seven angels with seven trumpets in Revelation draw on the Num 10 trumpet-system — the covenant signals now cosmic in scope.'),
+            ],
+            'mac': [
+                ('10:1–7', 'MacArthur: The precision of the trumpet signals — long blast/short blast, one/two trumpets, different combinations for different purposes — models the principle that communication in covenant community must be clear and codified. Ambiguous signals produce confused responses. The covenant people need unambiguous communication from their leadership.'),
+                ('10:9–10', 'MacArthur: The trumpet\'s role in worship (v.10) — "a memorial before your God" — elevates it from a practical tool to a sacramental instrument. When Israel sounds the trumpet at feasts and offerings, they are calling God\'s attention to themselves as his covenant people. The sound is a prayer without words.'),
+            ],
+            'milgrom': [
+                ('10:1–2', 'Milgrom: Two silver trumpets — the silver reflecting the precious character of the communication medium. Milgrom notes that the use of priests (not Levites or leaders) to blow the trumpets integrates the communication system into the priestly structure. The trumpets are extensions of the priestly vocation: calling, organising, and guiding the covenant community.'),
+                ('10:9', 'Milgrom: "When you go to war in your own land against an enemy who is oppressing you, sound a blast on the trumpets. Then you will be remembered by the Lord your God." The trumpet as a memorial device (zikkārôn) connects to the Aaronic Blessing\'s "memorial" language. Israel\'s sound before God calls forth his remembering — his active, interventive attention.'),
+            ],
+            'ashley': [
+                ('10:1–10', 'Ashley: The trumpet system is Numbers\' most direct practical communication mechanism — the covenant army needs clear, unambiguous signals. But Ashley notes the theological dimension: the trumpets are used not only to communicate with Israel (vv.5–7) but with God (vv.9–10). The covenant people communicate in both directions.'),
+            ],
+            'sarna': [
+                ('10:10', 'Sarna: "Blow the trumpets over your burnt offerings and fellowship offerings… They will be a memorial (zikkārôn) for you before your God." The trumpet blast at sacrifice is a verbal claim on divine attention — "remember us" sounded in metal rather than words. The memorial concept (zākar) runs through the entire sacrificial system.'),
+            ],
+            'alter': [
+                ('10:1–10', 'Alter: The trumpet instructions are the last piece of the Sinai legislation before Israel departs. The covenant people are now fully organised: census taken, camp arranged, Levites appointed, tabernacle dedicated, guidance established, communication system in place. Everything is ready; the trumpets call the march to begin.'),
+            ],
+            'calvin': [
+                ('10:9–10', 'Calvin: The trumpet\'s role as a "memorial before God" teaches that God\'s remembering is not passive recall but active intervention. When Israel sounds the trumpet in war or worship, they are claiming the covenant promise: "I will be your God." The covenant memorial is the foundation of Israel\'s confidence in battle and in worship alike.'),
+            ],
+            'netbible': [
+                ('10:2', 'NET Note: "Silver trumpets" (ḥăṣōṣĕrôt kĕsep) — straight metal tubes, distinct from the curved ram\'s horn (šôpār). Trumpets of this type have been found in Egyptian tomb contexts (Tutankhamun\'s tomb contained two). The priestly trumpets are a Levantine cultural form pressed into covenant service.'),
+            ],
+        },
+        {
+            'header': 'Verses 11–36 — The Departure from Sinai; Moses and Hobab; the Ark Prayer',
+            'verses': verse_range(11, 36),
+            'heb': [
+                ('wayyissĕʿû bĕnê-yiśrāʾēl lĕmassĕʿêhem', "wayyisu benei-yisrael lemase'eihem", 'the Israelites set out stage by stage', 'The great departure from Sinai after almost a year. The phrase lĕmassĕʿêhem (according to their stages/journeys) uses the same root as the later "book of journeys" (Num 33). Israel\'s wilderness travel is structured as a series of divine-directed stages.'),
+                ('qûmāh yhwh wĕyāpūṣû ʾōyĕbeykā', 'kumah YHWH weyaputzu oyevecha', 'Arise, O Lord! Let your enemies be scattered!', 'The ark-prayer for march (v.35) — a warrior-liturgy accompanying the ark\'s movement. When the ark moved, the covenant army moved; the ark-prayer commissions God himself as the vanguard of Israel\'s march. The language is battle-speech directed at the divine warrior.'),
+            ],
+            'ctx': 'The departure from Sinai (vv.11–28) follows the prescribed order of Num 2: Judah first, then Reuben, then the Levites with the tabernacle, then Ephraim, then Dan. The narrative detour (vv.29–32) features Moses\'s invitation to Hobab (his brother-in-law) to accompany Israel as a wilderness guide — a fascinating instance of Moses seeking human assistance alongside divine guidance. Hobab\'s response is ambiguous (vv.29–32); the narrative may imply eventual agreement (cf. Judg 1:16). The section closes with the two ark-prayers (vv.35–36) — when the ark moved: "Arise, Lord! May your enemies be scattered"; when it came to rest: "Return, Lord, to the countless thousands of Israel." These liturgies frame Israel\'s wilderness journey as divine warfare and divine homecoming.',
+            'cross': [
+                ('Ps 68:1', '"May God arise, may his enemies be scattered; may his foes flee before him." Psalm 68\'s opening verse quotes the Num 10:35 ark-prayer directly — the wilderness liturgy becomes a Davidic psalm, suggesting the ark-prayer was used in later Israelite worship.'),
+                ('Ps 132:8', '"Arise, Lord, and come to your resting place, you and the ark of your might." The ark\'s journey from Sinai to the Promised Land continues in the ark\'s eventual arrival at Zion — the Num 10:36 "return" prayer finds its fulfilment in Jerusalem.'),
+            ],
+            'mac': [
+                ('10:11–13', 'MacArthur: "On the twentieth day of the second month of the second year, the cloud lifted from above the tabernacle." After eleven months at Sinai — receiving the law, building the tabernacle, organising the community — Israel\'s wilderness march finally begins. The divine signal is given; the covenant army moves. The eleven-month preparation was not delay but essential formation.'),
+                ('10:35–36', 'MacArthur: The two ark-prayers are warrior-liturgies — prayers that frame Israel\'s movement as divine warfare. "Arise, Lord!" commissions God as the vanguard; "Return, Lord!" acknowledges that God\'s return to his "countless thousands" is the purpose of every march. Israel\'s destination is not merely Canaan — it is the restoration of full covenant fellowship with the God who marches with them.'),
+            ],
+            'milgrom': [
+                ('10:35–36', 'Milgrom: The ark-prayers are the oldest liturgical texts in the Bible — possibly predating even the Psalms in their original form. Their warrior-language ("scattered," "enemies," "foes") identifies the ark as the throne of the divine warrior, its movement as military advance. The covenant of Sinai is enacted in martial terms: the divine king leads his army into battle.'),
+                ('10:29–32', 'Milgrom: Moses\'s invitation to Hobab reveals a pastoral realism: even with the divine cloud as guide, human knowledge of the wilderness terrain is valuable. Moses is not displaying lack of faith — he is displaying practical wisdom. The divine and the human are not in competition; they are complementary instruments of covenant navigation.'),
+            ],
+            'ashley': [
+                ('10:11–28', 'Ashley: The departure from Sinai is the pivot of the entire Pentateuch narrative. The Abrahamic covenant, the Exodus, the Sinai law, the tabernacle construction — all of this has been preparation for this moment: Israel organised, equipped, and ready to march toward the promised land. Numbers 10:11 is the sentence that launches the covenant community into its wilderness future.'),
+            ],
+            'sarna': [
+                ('10:29', 'Sarna: Moses\'s appeal to Hobab — "come with us and we will treat you well, for the Lord has promised good things to Israel" — is the first explicit invitation to a non-Israelite to join Israel\'s journey. Hobab\'s knowledge of the wilderness is offered as a gift; Israel\'s covenant blessings are offered in return. The covenant community is not closed to those who choose to join it.'),
+            ],
+            'alter': [
+                ('10:35', 'Alter: "Arise, Lord! May your enemies be scattered; may your foes flee before you." The brevity and force of the ark-prayer — six Hebrew words — achieves what poetry always achieves at its best: maximum effect with minimum means. The divine warrior is invoked with a single verb and two parallel requests. The ark moves; God goes before.'),
+            ],
+            'calvin': [
+                ('10:35–36', 'Calvin: The ark-prayers model the relationship between prayer and action: before the army marches, prayer calls on God to lead; when the army rests, prayer calls on God to dwell. Every movement and every rest of Israel\'s life is framed by invocation. The Christian equivalent is Paul\'s "pray without ceasing" — all of life encompassed by the arc of prayer.'),
+            ],
+            'netbible': [
+                ('10:35', 'NET Note: Psalm 68:1 quotes this verse almost verbatim ("Let God arise, let his enemies be scattered"), suggesting the ark-prayer was incorporated into the liturgical Psalter. The movement from wilderness ark-prayer to temple Psalm demonstrates the continuity of Israel\'s worship tradition across its changing institutional forms.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-2 complete: Numbers 7–10 built.")
