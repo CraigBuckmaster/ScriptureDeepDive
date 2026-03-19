@@ -458,15 +458,15 @@ function yearToX(year) {
 
 // ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
 const TL = {
-  H:          515,
+  H:          510,
   ERA_TOP:    10,
   ERA_BAR_Y:  30,
   ERA_BAR_H:  26,     // era bar bottom = y 56
   LANES:      [73, 88, 103, 118, 133, 148, 163, 178, 193, 208, 223, 238],
-  MARKER_Y:   265,   // all triangle markers on this single row
-  AXIS_Y:     285,
-  PEOPLE_Y:   365,
-  HIST_Y:     455,
+  MARKER_OFFSET: 18,  // marker sits this far below its label baseline
+  AXIS_Y:     275,
+  PEOPLE_Y:   355,
+  HIST_Y:     445,
   GRAIN_Y:    0,
 };
 
@@ -1137,17 +1137,17 @@ const EVENTS = [
 
 // ══════════════════════════════════════════════════════════════════════════
 // EVENT RENDERING — Batch 2
-// ══════════════════════════════════════════════════════════════════════════
-
-function renderEvents(g) {
+// ═════════════════════════════════════════════════════════════════════function renderEvents(g) {
   const gEvents = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
   if (!gEvents) return;
   while (gEvents.firstChild) gEvents.removeChild(gEvents.firstChild);
 
   const dimAll = currentEra !== 'all';
   const ERA_BAR_BOTTOM = TL.ERA_BAR_Y + TL.ERA_BAR_H;  // y=56
+  const TRI_H = 9, TRI_W = 8;
+  const MARKER_OFFSET = TL.MARKER_OFFSET; // px below label baseline
 
-  // ── GREEDY LANE ASSIGNMENT (labels only) ─────────────────────────────
+  // ── GREEDY LANE ASSIGNMENT ────────────────────────────────────────────
   const positioned = EVENTS.map(ev => ({
     ev,
     x: yearToX(ev.year),
@@ -1167,25 +1167,23 @@ function renderEvents(g) {
     item.lane = lane;
   });
 
-  // ── DRAW: stem → label → connector → marker ──────────────────────────
-  const TRI_H = 9, TRI_W = 8;
-
+  // ── DRAW: stem → label → marker directly below label ─────────────────
   positioned.forEach(({ ev, x, lane }) => {
     const color = ERA_HEX[ev.era] || '#8b6914';
     const dimmed = dimAll && ev.era !== currentEra;
-    const labelY = TL.LANES[lane];    // y baseline of the label text
-    const labelTop = labelY - 11;     // approximate top of 10px text
-    const markerY = TL.MARKER_Y;
+    const labelY  = TL.LANES[lane];          // label baseline
+    const labelTop = labelY - 11;             // approx top of 10px text
+    const markerY  = labelY + MARKER_OFFSET;  // marker directly below label
 
-    // 1. Thick stem: era bar bottom → top of label text
+    // 1. Thin stem: era bar bottom → top of label
     svgEl_('line', {
       x1: x, y1: ERA_BAR_BOTTOM,
-      x2: x, y2: labelTop - 2,
+      x2: x, y2: labelTop - 3,
       stroke: color, 'stroke-width': '1.2',
       opacity: dimmed ? '0.12' : '0.45',
     }, gEvents);
 
-    // 2. Label (in its greedy-assigned lane)
+    // 2. Label
     const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     textEl.setAttribute('x', x);
     textEl.setAttribute('y', labelY);
@@ -1203,16 +1201,7 @@ function renderEvents(g) {
     textEl.textContent = ev.name;
     gEvents.appendChild(textEl);
 
-    // 3. Thin dotted connector: bottom of label → top of marker triangle
-    svgEl_('line', {
-      x1: x, y1: labelY + 3,
-      x2: x, y2: markerY - TRI_H - 1,
-      stroke: color, 'stroke-width': '0.8',
-      'stroke-dasharray': '3,3',
-      opacity: dimmed ? '0.1' : '0.4',
-    }, gEvents);
-
-    // 4. Triangle marker on dedicated MARKER_Y row — never overlaps labels
+    // 3. Triangle marker — directly below its own label, never overlaps text
     const tri = svgEl_('polygon', {
       points: `${x},${markerY} ${x-TRI_W},${markerY-TRI_H} ${x+TRI_W},${markerY-TRI_H}`,
       fill: color,
@@ -1221,13 +1210,14 @@ function renderEvents(g) {
     }, gEvents);
     tri.addEventListener('click', () => openDetail(ev));
 
-    // 5. Wide invisible hit target on marker
+    // 4. Generous hit target (larger than marker for easy tapping)
     const hit = svgEl_('rect', {
-      x: x - 14, y: markerY - TRI_H - 4, width: 28, height: TRI_H + 10,
+      x: x - 16, y: markerY - TRI_H - 6, width: 32, height: TRI_H + 12,
       fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
     }, gEvents);
     hit.addEventListener('click', () => openDetail(ev));
   });
+}  });
 }
 
 // Patch initTimeline to call renderEvents after renderContent
