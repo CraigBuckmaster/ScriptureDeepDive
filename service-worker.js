@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.97';
+const CACHE = 'scripture-2.98';
 const CORE = [
   '/',
   '/index.html',
