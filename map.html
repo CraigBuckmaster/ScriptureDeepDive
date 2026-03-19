@@ -85,7 +85,7 @@ body {
 
 /* ── MOBILE CONTROLS (hidden desktop) ────────────────────────────────── */
 #mobile-controls { display: none; }
-#legend-mobile-wrap { display: none; }
+
 
 /* ── MAIN LAYOUT ──────────────────────────────────────────────────────── */
 .main-layout { display: flex; flex: 1; overflow: hidden; min-height: 0; }
@@ -170,26 +170,20 @@ body {
 .map-float-btn:hover { background: #1a1508; color: var(--gold); }
 .map-float-btn.active { color: var(--gold); border-color: var(--gold-dim); }
 
-/* ── DESKTOP LEGEND ───────────────────────────────────────────────────── */
-.legend {
-  position: absolute; bottom: 2.2rem; left: .7rem;
-  background: rgba(12,10,7,.93); border: 1px solid var(--border);
-  border-radius: 5px; overflow: hidden; pointer-events: all; user-select: none;
-  min-width: 190px; box-shadow: 0 4px 18px rgba(0,0,0,.55); z-index: 500;
-}
-.legend-header { display: flex; align-items: center; justify-content: space-between; padding: .48rem .8rem; cursor: pointer; border-bottom: 1px solid var(--border2); transition: background .15s; }
-.legend-header:hover { background: rgba(255,255,255,.03); }
-.legend-title { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim); }
-.legend-chev { font-size: .6rem; color: var(--text-muted); transition: transform .22s; }
-.legend.collapsed .legend-chev { transform: rotate(-90deg); }
-.legend-body { padding: .48rem .8rem .52rem; transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1); max-height: 260px; overflow: hidden; }
-.legend.collapsed .legend-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
-.legend-item { display: flex; align-items: center; gap: .38rem; margin-bottom: .26rem; font-size: .66rem; color: var(--text-muted); }
-.legend-item:last-child { margin-bottom: 0; }
-.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.legend-line { width: 22px; height: 2px; flex-shrink: 0; }
-.legend-dash { width: 22px; height: 2px; flex-shrink: 0; background: repeating-linear-gradient(90deg, var(--gold-dim) 0 4px, transparent 4px 7px); }
-.legend-sym { font-size: .72rem; flex-shrink: 0; width: 14px; text-align: center; color: var(--gold); }
+
+
+
+
+
+.legend.collapsed 
+
+.legend.collapsed 
+
+
+
+
+
+
 
 /* ── STORY PANEL ──────────────────────────────────────────────────────── */
 #story-panel {
@@ -258,14 +252,14 @@ body {
   #mobile-controls button:active { background: rgba(201,168,76,.12); color: var(--gold); }
   #mobile-story-label { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .08em; color: var(--text-muted); text-align: center; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  #legend-mobile-wrap { display: block; background: var(--bg2); overflow: hidden; }
-  #legend-mobile-wrap .legend { position: static; border-radius: 0; border: none; box-shadow: none; min-width: 0; width: 100%; background: var(--bg2); overflow: hidden; }
-  #legend-mobile-wrap .legend-body { display: flex; flex-wrap: wrap; gap: .28rem .6rem; padding: .42rem .8rem .48rem; border-bottom: 1px solid var(--border2); }
-  #legend-mobile-wrap .legend-item { margin-bottom: 0; }
-  #legend-mobile-wrap .legend.collapsed .legend-body { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; border-bottom-width: 0 !important; }
+  
+  #legend-mobile-wrap 
+  #legend-mobile-wrap 
+  #legend-mobile-wrap 
+  #legend-mobile-wrap .legend.collapsed 
 
   .map-float-controls { display: none; }
-  .legend { display: none; }
+  
 
   #story-panel { width: 100% !important; min-width: 0 !important; border-left: none !important; border-top: 1px solid var(--border2); height: 0; max-height: 0; overflow: hidden; transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
   #story-panel.open { width: 100% !important; min-width: 0 !important; height: 50vh; max-height: 50vh; overflow-y: auto; border-left-width: 0 !important; }
@@ -313,14 +307,7 @@ body {
 
 <!-- MOBILE CONTROLS BAR -->
 <div id="mobile-controls">
-  <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
-    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
-      <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
-      <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
-    </svg>
-    Legend
-    <span id="legend-btn-chev" style="font-size:.56rem;transition:transform .22s;display:inline-block;">&#9660;</span>
-  </button>
+
   <span id="mobile-story-label">Select a Story</span>
   <button id="mobile-names-btn" onclick="toggleNames()">
     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -332,22 +319,7 @@ body {
 </div>
 
 <!-- MOBILE LEGEND DROPDOWN -->
-<div id="legend-mobile-wrap">
-  <div class="legend collapsed" id="legend-mobile">
-    <div class="legend-body">
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Exodus</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Judges</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>Kingdom</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Prophets</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>NT</div>
-      <div class="legend-item" style="width:100%"><div class="legend-line" style="background:var(--gold-dim)"></div>Journey</div>
-      <div class="legend-item" style="width:100%"><div class="legend-dash"></div>Sea route</div>
-    </div>
-  </div>
-</div>
+
 
 <!-- MAIN LAYOUT -->
 <div class="main-layout">
@@ -381,26 +353,7 @@ body {
     </div>
 
     <!-- Desktop legend -->
-    <div class="legend" id="legend">
-      <div class="legend-header" onclick="toggleLegend()">
-        <span class="legend-title">Legend</span>
-        <span class="legend-chev">&#9660;</span>
-      </div>
-      <div class="legend-body">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval History</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal Period</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Egypt &amp; Exodus</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Conquest &amp; Judges</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>United Kingdom</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Divided Kingdom</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile &amp; Return</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>New Testament</div>
-        <div class="legend-item" style="margin-top:.3rem"><div class="legend-line" style="background:var(--gold-dim)"></div>Journey path</div>
-        <div class="legend-item"><div class="legend-dash"></div>Sea crossing</div>
-        <div class="legend-item"><span class="legend-sym">●</span>City / site</div>
-        <div class="legend-item"><span class="legend-sym">▲</span>Mountain</div>
-      </div>
-    </div>
+    
 
   </div><!-- #map-panel -->
 
@@ -1284,13 +1237,8 @@ function toggleNames() {
 }
 
 // ── LEGEND ─────────────────────────────────────────────────────────────────
-function toggleLegend() { document.getElementById('legend').classList.toggle('collapsed'); }
-function toggleMobileLegend() {
-  const leg = document.getElementById('legend-mobile');
-  leg.classList.toggle('collapsed');
-  const chev = document.getElementById('legend-btn-chev');
-  if (chev) chev.style.transform = leg.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
-}
+
+
 
 // ── STORY PICKER ───────────────────────────────────────────────────────────
 function buildStoryPicker(era) {
