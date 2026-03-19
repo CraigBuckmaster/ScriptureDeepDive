@@ -315,7 +315,7 @@ missing_per_book = []
 for book_dir, book_name, ch_range, test_dir_v in BOOK_ROSTER:
     p = f'{REPO}/verses/{test_dir_v}/{book_dir}.js'
     if not os.path.exists(p):
-        missing_per_book.append(f'verses/{test}/{book_dir}.js')
+        missing_per_book.append(f'verses/niv/{test_dir_v}/{book_dir}.js')
 if missing_per_book:
     fail(f'Missing per-book verse files: {", ".join(missing_per_book)}')
 else:
