@@ -1087,3 +1087,385 @@ num(14, {
 })
 
 print("NUM-3 complete: Numbers 11–14 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-4: Chapters 15–19 — Offering Laws; Korah; Aaron's Staff; Red Heifer
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(15, {
+    'title': 'Supplementary Offering Laws: Grace After Judgment',
+    'sections': [
+        {
+            'header': 'Verses 1–31 — Supplementary Offerings; Unintentional and Defiant Sin',
+            'verses': verse_range(1, 31),
+            'heb': [
+                ('kî tāḇōʾû ʾel-ʾereṣ', 'ki tavo\'u el-eretz', 'when you come into the land', 'The repeated formula for the laws of ch.15 — offered to a generation that has just been sentenced to die in the wilderness. The laws assume the next generation will enter the land. Judgment on the present does not cancel promise for the future.'),
+                ('bĕyād rāmāh', 'beyad ramah', 'with a high hand / defiantly / presumptuously', 'The deliberate, defiant sin (Num 15:30) that no sacrifice can cover — the opposite of the unintentional sin (bišgāgāh) for which the ḥaṭṭāʾt provides atonement. The "high hand" sinner blasphemes YHWH and must be cut off.'),
+            ],
+            'ctx': 'Numbers 15 follows the Kadesh catastrophe with supplementary offering laws — a remarkable pastoral move. God addresses the next generation immediately after sentencing the current one: "When you enter the land I am giving you as a home…" (v.2). The laws cover accompanying offerings for burnt and fellowship offerings (vv.1–16), first-fruits contribution (vv.17–21), and the critical distinction between unintentional sin (atoneable, vv.22–29) and defiant sin (unatonable, v.30–31). The chapter closes with the Sabbath-breaker narrative (vv.32–36) and the command to wear tassels (vv.37–41) — visible reminders of the commandments for a generation prone to forgetting.',
+            'cross': [
+                ('Heb 10:26', '"If we deliberately keep on sinning after we have received the knowledge of the truth, no sacrifice for sins is left." The NT equivalent of the "high hand" category — the NT too distinguishes between the forgiven sinner who struggles and the apostate who defies.'),
+                ('Matt 23:5', '"Everything they do is done for people to see: they make their phylacteries wide and the tassels on their garments long." Jesus addresses the hypocrisy of tassels divorced from obedience — the tassel command (Num 15:38–40) was for remembrance, not performance.'),
+            ],
+            'mac': [
+                ('15:1–2', 'MacArthur: The placement of these laws immediately after the forty-year sentence is intentionally pastoral. The current generation is condemned; their children are not. God\'s instruction for life in Canaan is given to the next generation while the wilderness generation still lives. The judgment does not end the promise — it delays and transfers it.'),
+                ('15:30–31', 'MacArthur: The defiant sinner (beyad rāmāh — with a raised hand, as if shaking a fist at God) commits a category of sin beyond sacrifice. This is not moral failure under pressure but deliberate, contemptuous rebellion. The NT equivalent is not every deliberate sin but the apostasy of one who knowingly and permanently rejects Christ (Heb 6:4–6; 10:26–29).'),
+            ],
+            'milgrom': [
+                ('15:22–29', 'Milgrom: The distinction between communal unintentional sin (v.22–26) and individual unintentional sin (v.27–29) mirrors the sin offering gradations of Lev 4. The entire community sinning inadvertently requires a bull; the individual requires a yearling goat. The theological principle is consistent: inadvertent sin, at whatever scale, can be atoned; defiant sin cannot.'),
+                ('15:38–40', 'Milgrom: The tassel command (ṣîṣit) places a visible covenant reminder on every garment. Each tassel has a blue thread (tĕkēlet) — the colour of the sanctuary — creating a portable reminder that the wearer belongs to the covenant community. The tassels are democratised sanctuary symbolism: the blue of the tabernacle worn by every Israelite.'),
+            ],
+            'ashley': [
+                ('15:17–21', 'Ashley: The first-fruits contribution (reʾšît ʿărīsōtêkem — the first of your ground meal) extends the firstfruits principle of Lev 23 to every meal. The first portion of every batch of dough belongs to God. The covenant claim on the first is not just agricultural (firstfruits at harvest) but domestic (first portion at every baking). All of life is covenant territory.'),
+            ],
+            'sarna': [
+                ('15:3', 'Sarna: "When you present to the Lord food offerings from the herd or the flock… to fulfil a special vow, or as a freewill offering" — the laws of ch.15 cover both the obligatory and the voluntary. The supplementary offerings (flour, oil, wine) accompanying sacrifices give every worshipper a means of expressing gratitude beyond the minimum required. Covenant worship has both floor and ceiling.'),
+            ],
+            'alter': [
+                ('15:32–36', 'Alter: The Sabbath-breaker narrative — a man found gathering wood on the Sabbath, held in custody until Moses consults God, then stoned — is a disturbing case study. The act seems minor; the punishment is death. But the "high hand" category (defiant sin, vv.30–31) has just been defined: this man, like Nadab and Abihu, represents the category of deliberate covenant violation that cannot be covered by sacrifice.'),
+            ],
+            'calvin': [
+                ('15:1–16', 'Calvin: The supplementary offering laws given immediately after the sentence of Num 14 demonstrate that divine judgment and divine grace coexist. The condemned generation hears new laws for the land they will never enter. God does not withdraw his instruction simply because the recipients have failed — the covenant continues, the instruction continues, for those who will come after.'),
+            ],
+            'netbible': [
+                ('15:30', 'NET Note: "But anyone who sins defiantly (beyad rāmāh), whether native-born or foreigner, blasphemes the Lord and must be cut off from the people of Israel." The phrase beyad rāmāh is literally "with a raised hand" — the hand raised not in worship but in defiance. The posture describes attitude as much as action: the defiant sinner is not struggling against sin but shaking a fist at the God who commands.'),
+            ],
+        },
+        {
+            'header': 'Verses 32–41 — The Sabbath-Breaker; the Tassels Command',
+            'verses': verse_range(32, 41),
+            'heb': [
+                ('ṣîṣit', 'tzitzit', 'tassel / fringe', 'The knotted fringes attached to the corners of garments — a portable covenant reminder. The blue (tĕkēlet) thread in each tassel connects the wearer to the sanctuary\'s colour, making every garment a miniature tabernacle reminder.'),
+            ],
+            'ctx': 'The tassels command (vv.37–41) closes ch.15 with a visual covenant aide-mémoire: four tassels (one on each corner of the outer garment), each with a blue thread, to be looked at and remembered. The stated purpose (v.39): "so you will remember all the commands of the Lord, that you may obey them and not prostitute yourselves by chasing after the lusts of your own hearts and eyes." The heart-and-eyes image captures the anthropology of sin: craving begins in the eyes, settles in the heart, and issues in unfaithfulness. The tassel is an embodied counter-habit: look at the blue thread, remember the commandment, resist the craving.',
+            'cross': [
+                ('Deut 22:12', '"Make tassels on the four corners of the cloak you wear." Deuteronomy\'s parallel command confirms the tassel practice as a covenant institution.'),
+                ('Matt 9:20', '"A woman who had been subject to bleeding for twelve years came up behind him and touched the edge of his cloak." The edge (kraspedon) of Jesus\'s garment likely refers to the tassel (ṣîṣit) — the woman reaches for the covenant fringe of the one who perfectly keeps the covenant.'),
+            ],
+            'mac': [
+                ('15:38–40', 'MacArthur: The tassel is a brilliant pedagogical device: it attaches the covenant obligation to the body. Every time an Israelite looks down at their garment, the blue tassel asks: are you keeping the commandments? The physical reminder serves the same function as sacraments in the NT — it makes the invisible covenant visible, the abstract obligation concrete.'),
+            ],
+            'milgrom': [
+                ('15:39', 'Milgrom: "You will not prostitute yourselves by going after the lusts of your own hearts and eyes" — the tassels are specifically positioned as a counter to the visual craving that drives covenant unfaithfulness. The connection to the spy crisis is implicit: the spies saw the land through the eyes of fear; Israel is commanded to see through the eyes of the commandment.'),
+            ],
+            'ashley': [
+                ('15:37–41', 'Ashley: The tassels chapter closes with the full Exodus motivation: "I am the Lord your God, who brought you out of Egypt." The tassel reminder is grounded in the covenant relationship established at the Exodus. The commandments are not arbitrary restrictions but the shape of life in covenant with the God who redeems.'),
+            ],
+            'sarna': [
+                ('15:39', 'Sarna: The dual anthropology — "hearts and eyes" (lĕbaḇkem wĕʿênêkem) — anticipates the Shema\'s "heart, soul, and strength." Both heart (intention) and eye (perception) need covenant re-orientation. The tassels address the visual pathway to the heart: redirect what you look at, and the heart will follow.'),
+            ],
+            'alter': [
+                ('15:40–41', 'Alter: The tassel section closes with the most comprehensive statement of the covenant\'s purpose: "be holy to your God… I am the Lord your God, who brought you out of Egypt to be your God." Three clauses moving from command (be holy) to identity (I am the Lord) to history (who brought you out). The tassel is small; the theology it embeds is total.'),
+            ],
+            'calvin': [
+                ('15:37–41', 'Calvin: External signs have their proper place in the life of faith — not as replacements for internal devotion but as aids to it. The tassel is not magic; it does not automatically produce obedience. But it provides a repeated, embodied prompt for the mind and heart that Scripture consistently recommends. The NT sacraments serve the same purpose: visible, physical reminders of invisible, spiritual realities.'),
+            ],
+            'netbible': [
+                ('15:38', 'NET Note: The blue thread (pĕtîl tĕkēlet) in the tassel is the same blue used for the tabernacle curtains and the high priest\'s garments (Exod 25:4; 28:6). The colour connects the ordinary Israelite\'s garment to the sanctuary — making every person a walking portable reminder of the covenant\'s sacred centre.'),
+            ],
+        },
+    ],
+})
+
+num(16, {
+    'title': 'Korah\'s Rebellion: The Danger of Priestly Ambition',
+    'sections': [
+        {
+            'header': 'Verses 1–35 — Korah, Dathan, and Abiram; the Earth Opens',
+            'verses': verse_range(1, 35),
+            'heb': [
+                ('kol-hāʿēdāh kullām qĕdōšîm', 'kol-ha\'eda kullam qedoshim', 'the whole community is holy — all of them', 'Korah\'s challenge reverses the Levitical holiness structure: if every Israelite is equally holy (Exod 19:6 — "a kingdom of priests"), then the special Aaronic priesthood is an unauthorized usurpation. The argument is theologically sophisticated — and fatally wrong.'),
+                ('wattipptaḥ hāʾāreṣ ʾet-pîhā', 'wattiptach ha\'aretz et-piha', 'the earth opened its mouth', 'The earth swallowing Dathan and Abiram alive is one of the most dramatic divine judgments in the Torah. The normally passive earth becomes an active instrument of covenant justice.'),
+            ],
+            'ctx': 'Numbers 16 records the most serious leadership challenge in Israel\'s wilderness period. Korah (a Levite) joins with Dathan and Abiram (Reubenites) and 250 leaders to challenge Moses and Aaron: "You have gone too far! The whole community is holy, every one of them, and the Lord is with them. Why then do you set yourselves above the Lord\'s assembly?" The argument conflates two legitimate truths (all Israel is holy; all are equally before God) to reach a false conclusion (therefore the Aaronic priesthood is illegitimate). Moses\'s response is to refer the matter to God — let him decide who is holy. The test: everyone brings incense. Those whom God accepts are the ones he has chosen. Korah\'s 250 followers die by divine fire; Dathan and Abiram (who refused to come) are swallowed by the earth with their households.',
+            'cross': [
+                ('Jude 11', '"Woe to them! They have taken the way of Cain; they have rushed for profit into Balaam\'s error; they have been destroyed in Korah\'s rebellion." Jude uses Korah as the prototype of those who despise legitimate authority in the church.'),
+                ('Heb 5:4', '"No one takes this honour on himself; he must be called by God, just as Aaron was." The priesthood is not a democratic institution — it derives from divine appointment, not popular assent. Korah\'s error is the error of treating spiritual authority as self-authorising.'),
+            ],
+            'mac': [
+                ('16:1–3', 'MacArthur: Korah\'s challenge is the most sophisticated rebellion in Numbers — it uses the language of the covenant ("the whole community is holy") against the covenant\'s structure (Aaronic priesthood). The error is not in the premise (Israel is holy) but in the inference (therefore all priestly distinctions are human usurpation). God\'s holiness differentiations are not contradictions of covenant equality but expressions of covenant order.'),
+                ('16:31–33', 'MacArthur: The earth swallowing Dathan and Abiram alive is judgment by inversion: those who challenged God\'s appointed order return to the earth from which they came. The normally passive creation becomes an active instrument of covenant justice — the same earth that receives the dead now takes the living who rebelled against the one who gives life.'),
+            ],
+            'milgrom': [
+                ('16:3', 'Milgrom: Korah\'s argument — "the whole community is holy, every one of them" — is not theologically wrong in itself. But Milgrom identifies the fatal category error: Korah confuses the holiness of the covenant community (which is real) with the holiness of the priestly office (which is a distinct, divinely-appointed vocation). The priesthood\'s separateness does not contradict the community\'s holiness; it serves it.'),
+                ('16:20–35', 'Milgrom: The dual judgment — fire for the 250 incense-burners, earthquake for Dathan and Abiram — distinguishes two aspects of the rebellion. The incense-burners usurped priestly prerogatives (offering incense); Dathan and Abiram challenged Moses\'s civil authority. The two categories of rebellion receive proportional and fitting judgments.'),
+            ],
+            'ashley': [
+                ('16:1–35', 'Ashley: The Korah rebellion reveals that the greatest threats to covenant order come from within the covenant community — from those who know enough theology to frame their rebellion in theological terms. Korah does not argue against God; he argues using God\'s own language. This is the most dangerous form of covenant challenge: not external attack but internal subversion using the community\'s own vocabulary.'),
+            ],
+            'sarna': [
+                ('16:12–14', 'Sarna: Dathan and Abiram\'s response to Moses\'s summons is a masterpiece of inversion: "We will not come! Isn\'t it enough that you have brought us up out of a land flowing with milk and honey to kill us in the wilderness? And now you also want to lord it over us!" They describe Egypt as a land flowing with milk and honey — the very phrase the Torah uses for Canaan. Their rebellion has completely inverted the covenant narrative.'),
+            ],
+            'alter': [
+                ('16:28–30', 'Alter: Moses\'s test is a radical appeal to divine judgment: "If these men die a natural death… then the Lord has not sent me. But if the Lord brings about something totally new, and the earth opens its mouth and swallows them…" Moses stakes everything on a divine sign. His confidence is not arrogance but the bedrock certainty of one who has heard the divine voice directly.'),
+            ],
+            'calvin': [
+                ('16:1–3', 'Calvin: Korah\'s argument — "all the community is holy" — is the perennial error of those who use a true principle to demolish necessary structure. The principle is sound (every believer is a priest, 1 Pet 2:9); the application is wrong (therefore no one can have special authority). The NT itself maintains both the universal priesthood and the distinct office of elders/pastors — Korah\'s error is not resolved by the NT but corrected by it.'),
+            ],
+            'netbible': [
+                ('16:3', 'NET Note: "You have gone too far" (rab-lākem) — the same phrase Moses uses to rebuke Korah (v.7: "You Levites have gone too far!"). The verbal echo is deliberate: Moses turns Korah\'s accusation back on him. The one who charges "too much authority" is himself taking too much authority. The irony is the chapter\'s theological engine.'),
+            ],
+        },
+        {
+            'header': 'Verses 36–50 — The Bronze Censers; the Plague; Aaron\'s Intercession',
+            'verses': verse_range(36, 50),
+            'heb': [
+                ('wayyaʿămod bên-hammētîm ûbên haḥayyîm', 'wayaamod bein-hameitim uvein hachayim', 'he stood between the dead and the living', 'Aaron\'s intercession in the plague — literally standing in the gap between the dying and the living with his censer of incense. The high-priestly action that stops a plague: not prayer from a distance but physical, intercessory presence in the boundary between death and life.'),
+            ],
+            'ctx': 'The aftermath of the rebellion has two parts: (1) the bronze censers of the 250 are hammered into a covering for the altar — a permanent warning (vv.36–40); (2) the next day, the entire community blames Moses and Aaron for killing "the Lord\'s people," a fresh plague begins, and Aaron literally runs with his censer to stand between the dying and the living (vv.41–50). The plague kills 14,700 before Aaron\'s intercession stops it. The episode confirms both the lesson of the rebellion (the Aaronic priesthood is divinely appointed) and the character of the Aaronic priest (he runs toward the plague, not away from it).',
+            'cross': [
+                ('Heb 7:25', '"He always lives to intercede for them." Aaron\'s physical intercession between the dead and living is the OT type of Christ\'s perpetual high-priestly intercession — standing between the dying and the living, always.'),
+                ('Ezek 22:30', '"I looked for someone among them who would build up the wall and stand before me in the gap on behalf of the land so I would not have to destroy it." Ezekiel\'s "standing in the gap" imagery derives from Aaron\'s literal act in Num 16:48.'),
+            ],
+            'mac': [
+                ('16:47–48', 'MacArthur: Aaron\'s running toward the plague is the definitive priestly act of the wilderness narrative. He does not pray from the edge; he physically enters the boundary between death and life. The censer of incense — the same instrument that killed Korah\'s followers (Lev 10:1–2) — is now the instrument of intercession. The same fire that judges also atones, in the hands of the properly ordained priest.'),
+            ],
+            'milgrom': [
+                ('16:38–40', 'Milgrom: The hammering of the 250 bronze censers into an altar covering is a permanent memorial of two kinds: warning (do not usurp priestly prerogatives) and consecration (the censers touched the altar\'s fire and became holy). The very instruments of rebellion are repurposed as covenant markers. God transforms the evidence of judgment into a teaching monument.'),
+            ],
+            'ashley': [
+                ('16:46–50', 'Ashley: The community\'s instant reversion to accusation the day after the Korah judgment ("You have killed the Lord\'s people") reveals the depth of the wilderness generation\'s spiritual blindness. They see the judgment on Korah\'s rebellion and interpret it as injustice rather than covenant faithfulness. Aaron\'s intercession is for a people who do not deserve it — the nature of all true priestly intercession.'),
+            ],
+            'sarna': [
+                ('16:48', 'Sarna: "He stood between the dead and the living, and the plague stopped." The single Hebrew verb wayyaʿămod (he stood) carries the full weight of the priestly vocation: standing in the breach, maintaining the boundary between life and death, holding the covenant space open for the living. The priest is the one who stands.'),
+            ],
+            'alter': [
+                ('16:47', 'Alter: "Aaron took it as Moses said and ran into the midst of the assembly; and behold, the plague had already begun among the people." The word "ran" (wayyārāts) — the priest runs toward the dying. The censer already burning, the incense already rising. Aaron does not hesitate. His willingness to stand between the dead and the living is the embodiment of the intercessory vocation.'),
+            ],
+            'calvin': [
+                ('16:46–50', 'Calvin: Aaron\'s intercession with the burning censer models the nature of priestly mediation: entering the space of death with the fire of the altar. Christ, our high priest, entered death itself — not with a censer but in his own body — and by his resurrection stands between the dead and the living for all who are his.'),
+            ],
+            'netbible': [
+                ('16:40', 'NET Note: "A reminder to the Israelites that no one except a descendant of Aaron should come to burn incense before the Lord" — the bronze-censer altar covering is a permanent architectural warning. Every Israelite who passes by the altar sees the reforged metal and is reminded: only Aaron\'s line. The architecture of the sanctuary is a theology lesson.'),
+            ],
+        },
+    ],
+})
+
+num(17, {
+    'title': 'Aaron\'s Staff Buds: The Levitical Priesthood Confirmed',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — The Twelve Staffs; Aaron\'s Staff Produces Almonds',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('maṭṭeh', 'matteh', 'staff / rod / tribe', 'The same word for the tribal staff and the tribe itself — the leader\'s staff represents the tribe. Twelve staffs, one per tribe, placed before the ark overnight. The staff that produces life (buds, blossoms, almonds) designates the chosen priestly tribe.'),
+                ('šāqēd', 'shaqed', 'almond / almond tree', 'The almond tree is one of the first to bloom in Israel — its name (šāqēd) shares a root with šāqad (to watch, to be alert). Aaron\'s blossoming staff is a sign of life, watchfulness, and divine attention. It produces not just blossoms but ripe almonds overnight — hyperbolically complete growth.'),
+            ],
+            'ctx': 'Numbers 17 provides the definitive divine confirmation of the Aaronic priesthood following Korah\'s challenge. Twelve staffs are collected — one per tribal leader, each labeled with the tribe\'s name. Aaron\'s name is written on the Levite staff. They are placed "before the Lord" (before the ark) overnight. In the morning, Aaron\'s staff has budded, blossomed, and produced ripe almonds — an entire growth cycle in a single night. The miracle settles the question: God has chosen Aaron. The staff is preserved inside the ark (v.10) as a permanent sign "against the rebels." The people\'s response (v.12–13) is despairing: "We will die! We are lost!"',
+            'cross': [
+                ('Heb 9:4', '"The gold-covered ark of the covenant… contained the gold jar of manna, Aaron\'s staff that had budded, and the stone tablets of the covenant." Aaron\'s staff in the ark is the NT\'s confirmation of this event — the miracle is permanently enshrined in Israel\'s most sacred object.'),
+                ('John 15:5', '"I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit." The fruitfulness of Aaron\'s dead staff — brought to life by divine appointment — anticipates the resurrection-life that bears fruit when connected to Christ.'),
+            ],
+            'mac': [
+                ('17:8', 'MacArthur: The triple growth — buds, blossoms, ripe almonds — in a single night is a miracle of compressed time. The almond tree normally takes months to move from bud to fruit; here the entire cycle occurs between evening and morning. God\'s vindication of Aaron is as unmistakably miraculous as the judgment on Korah was dramatically final.'),
+                ('17:10', 'MacArthur: Placing Aaron\'s budded staff inside the ark alongside the manna and the tablets creates a three-part covenant testimony: the law (tablets — who God is and what he requires), the provision (manna — how God sustains), and the priesthood (staff — how God is approached). The ark holds the complete covenant theology.'),
+            ],
+            'milgrom': [
+                ('17:5', 'Milgrom: "The man I choose — his staff will sprout, and I will rid myself of this constant grumbling against you, the Israelites." The sign is not merely for Israel\'s benefit but for God\'s vindication. The grumbling against Moses and Aaron is simultaneously grumbling against God\'s choice. The budded staff settles both the political and theological question.'),
+                ('17:12–13', 'Milgrom: The people\'s response — "We will die! We are lost!" — reveals the unintended effect of God\'s vindication. The power of the priestly office, confirmed so dramatically, terrifies rather than comforts. They now understand that approaching God without proper mediation is lethal. The correct lesson from Korah and Aaron\'s staff is not despair but proper use of the priestly access God has provided.'),
+            ],
+            'ashley': [
+                ('17:1–11', 'Ashley: The twelve-staff test is democratic in design: every tribe gets an equal chance, the same conditions, the same opportunity. The result is not imposed but demonstrated. God does not simply declare Aaron chosen — he shows it. The miracle is designed to be undeniable and memorable: the dead wood of Aaron\'s staff becomes living fruit overnight.'),
+            ],
+            'sarna': [
+                ('17:2–3', 'Sarna: One staff per tribe — twelve staffs for twelve tribes, with Levi as one among them, no more and no less. The equality of the test is its genius: Aaron\'s tribe is not given a head start or special conditions. The miracle\'s power is that it occurs under perfectly equal experimental conditions.'),
+            ],
+            'alter': [
+                ('17:8', 'Alter: "Behold, Aaron\'s staff, which belonged to the house of Levi, had sprouted and put forth buds and produced blossoms and it bore ripe almonds." The four-stage enumeration — sprouted, buds, blossoms, ripe almonds — lavishes detail on the miracle. The list is both biologically precise and liturgically excessive: God\'s vindication of Aaron is not minimally sufficient but extravagantly unmistakable.'),
+            ],
+            'calvin': [
+                ('17:1–11', 'Calvin: The miracle of Aaron\'s staff teaches that spiritual authority must be divinely authenticated, not merely claimed. Neither seniority, popularity, nor theological argument is sufficient to establish priestly office. God must confirm it — and his confirmation is always unmistakable. The church\'s problem is not lack of leaders but confusion about which leaders God has genuinely called and gifted.'),
+            ],
+            'netbible': [
+                ('17:10', 'NET Note: "Put back Aaron\'s staff in front of the testimony, to be kept as a sign against the rebellious." The term ʾôt (sign) places Aaron\'s staff in the category of covenant signs (rainbow, circumcision, Sabbath). The budded staff is not merely a historical curiosity but an ongoing covenant marker: the Aaronic priesthood is divinely ordained, permanently testified.'),
+            ],
+        },
+        {
+            'header': 'Verses 12–13 — The People\'s Response; the Staff Preserved',
+            'verses': verse_range(12, 13),
+            'heb': [
+                ('gāwaʿnû ʾābadnû kullānû ʾābādnû', 'gavanu avadnu kullanu avadnu', 'we will die! we are lost! we are all lost!', 'Triple lament — the most despairing words in Numbers. After Aaron\'s staff confirms the priestly order, Israel\'s response is not relief but terror. They have finally grasped the lethal character of holiness, but without the comfort of the gospel that makes such holiness approachable.'),
+            ],
+            'ctx': 'The confirmation of Aaron\'s priesthood produces an unexpected crisis: rather than reassuring Israel, it terrifies them. "We will die! We are lost! We are all lost! Anyone who even comes near the tabernacle of the Lord will die. Are we all going to die?" (vv.12–13). The sign that was meant to end the grumbling has instead revealed how little Israel understands about the nature of holy approach. God\'s answer will come in Num 18: the priests and Levites bear the danger on Israel\'s behalf. Aaron\'s staff is preserved inside the ark — a permanent covenant sign against future rebellion.',
+            'cross': [
+                ('Heb 10:19–22', '"Therefore, brothers and sisters, since we have confidence to enter the Most Holy Place by the blood of Jesus… let us draw near to God." The terror of Num 17:12–13 — "we will all die near the tabernacle" — is answered in Hebrews: draw near with confidence, through Christ the high priest, whose blood grants access that Aaron\'s staff only pointed toward.'),
+                ('Isa 6:5', '"Woe to me! I am ruined! For I am a man of unclean lips… and my eyes have seen the King, the Lord Almighty." Isaiah\'s response to the divine glory mirrors Israel\'s terror in Num 17 — the right response to holy presence is initially devastation, before the coal of grace is applied.'),
+            ],
+            'mac': [
+                ('17:12–13', 'MacArthur: Israel\'s terror — "we will all die near the tabernacle" — is theologically correct but spiritually incomplete. They have understood the danger (God\'s holiness is lethal to the unprepared) but not yet the provision (God\'s priests bear that danger on their behalf). Num 18 is the answer to Num 17\'s question. The gap between holy terror and confident approach is bridged by the high-priestly mediator.'),
+            ],
+            'milgrom': [
+                ('17:12–13', 'Milgrom: The people\'s threefold cry — gāwaʿnû, ʾābadnû, kullānû ʾābādnû — is the emotional climax of the Korah-Aaron sequence. The rebellion sequence (Num 16–17) has succeeded in its pedagogical purpose: Israel finally understands that the divine presence is not to be trifled with. But understanding the danger without the provision produces despair; Num 18 supplies the provision.'),
+            ],
+            'ashley': [
+                ('17:12–13', 'Ashley: The preserved staff in the ark is a living contradiction: it sprouts in the presence of God, demonstrating divine appointment and life; yet the people\'s response to that same demonstration is a cry of expected death. The tension between the life-giving sign and the death-fearing response is resolved only by the priest who stands between — Aaron, whose staff bloomed, now bearing Israel\'s danger on their behalf (Num 18:1).'),
+            ],
+            'sarna': [
+                ('17:10', 'Sarna: "Put back Aaron\'s staff in front of the testimony, to be kept as a sign against the rebels." The staff joins the manna (Exod 16:33–34) and eventually the tablets as objects preserved in or before the ark. Together they are Israel\'s covenant memorial objects: the law given (tablets), the provision sustained (manna), the priesthood confirmed (staff). The theology of the ark is complete.'),
+            ],
+            'alter': [
+                ('17:12–13', 'Alter: The triple repetition — "we will die, we are lost, we are all lost" — creates a rhythm of despair that reverberates against the miracle of the budded staff. The same night that produced almonds from dead wood produced terror in the living community. The miracle and the despair are inseparable: genuine encounter with divine power always produces both wonder and fear.'),
+            ],
+            'calvin': [
+                ('17:12–13', 'Calvin: Israel\'s despairing cry is the right response to the wrong question. They ask "will we die near the tabernacle?" when they should ask "how does God provide safe approach?" The law always generates this question; only the gospel answers it. The staff that blooms points forward to the resurrection of the one who will say: "I am the way. No one comes to the Father except through me."'),
+            ],
+            'netbible': [
+                ('17:13', 'NET Note: The question "Are we all going to die?" (hăʾîm tamnû ligwōaʿ) anticipates Numbers 18:1\'s answer: no, because the priests and Levites bear the danger on your behalf. The structure of Num 17–18 is question (how do we survive proximity to the holy?) and answer (through the priestly mediators God has appointed). The chapter break should not obscure the direct theological dialogue.'),
+            ],
+        },
+    ],
+})
+
+num(18, {
+    'title': 'Priestly and Levitical Portions: Sustaining the Sacred Ministry',
+    'sections': [
+        {
+            'header': 'Verses 1–20 — The Priests\' Responsibilities and Portions',
+            'verses': verse_range(1, 20),
+            'heb': [
+                ('ʾattem tiśśĕʾû ʾet-ʿăwōn hammiqdāš', 'atem tis\'u et-avon hammiqdash', 'you shall bear the iniquity of the sanctuary', 'The priests\' responsibility is described as "bearing the iniquity" of the sanctuary — taking upon themselves the ritual impurity and inadvertent violations of the people. The priest bears what Israel cannot carry; the sacrificial system distributes this bearing across the ordained mediators.'),
+                ('ʾēšer nātatî lĕkā lĕmošāl', 'asher natati lecha lemashala', 'everything given to me as most holy portion', 'The priestly portions are described as God\'s own gift — he gives to the priests what belongs to him. The priests eat from what God has received. Their sustenance is sanctified by its origin: the table of the priests is the overflow of the divine table.'),
+            ],
+            'ctx': 'Numbers 18 directly follows the people\'s terrified question of 17:12–13 ("Will everyone who comes near the tabernacle die?") with God\'s answer: the priests and Levites bear the danger on Israel\'s behalf. The chapter establishes the priestly/Levitical income: most holy portions (sin, guilt, grain offerings — priests only, eaten in the sanctuary), holy portions (first-born animals, first-fruits, devoted things — priest\'s household), and the Levitical tithe (one-tenth of all Israel\'s produce — their inheritance in place of land). The theological principle (v.20): "I am your share and your inheritance among the Israelites."',
+            'cross': [
+                ('1 Cor 9:13–14', '"Do you not know that those who work in the temple get their food from the temple…? In the same way, the Lord has commanded that those who preach the gospel should receive their living from the gospel." Paul directly applies the priestly portion principle of Num 18 to NT ministry support.'),
+                ('Mal 3:10', '"Bring the whole tithe into the storehouse… Test me in this… and see if I will not throw open the floodgates of heaven." Malachi\'s call to faithful tithing grounds itself in the Num 18 tithe system.'),
+            ],
+            'mac': [
+                ('18:1–7', 'MacArthur: "You and your sons and your father\'s family are to bear the responsibility for offenses connected with the sanctuary." The priests and Levites answer for the sanctuary\'s integrity — they are simultaneously privileged (closest access) and responsible (bearing the consequences of failure). The graduated holiness structure is also a graduated accountability structure.'),
+                ('18:20', 'MacArthur: "I am your share and your inheritance among the Israelites." The priests receive no land — God himself is their portion. This is the highest form of covenant blessing: not a land, not a territory, not material wealth, but God himself as the inheritance. The NT equivalent: "Christ is all and is in all" (Col 3:11).'),
+            ],
+            'milgrom': [
+                ('18:1', 'Milgrom: "You and your sons and your father\'s family are to bear the responsibility for offenses connected with the sanctuary." The Hebrew ʿāwōn (iniquity/responsibility) — the priests bear the guilt incurred by others\' unintentional violations of the sanctuary. This is substitutionary responsibility: Aaron and his sons absorb the covenant consequences of Israel\'s inadvertent trespasses, protecting the people from direct divine judgment.'),
+                ('18:21–24', 'Milgrom: The Levitical tithe (every tenth of Israel\'s produce) substitutes for the Levites\' lack of land inheritance. Their "land" is the covenant community\'s generosity. Milgrom notes this creates a structural dependency of the Levites on Israel\'s faithfulness — and Israel\'s faithfulness on the Levites\' service. The two are mutually sustaining.'),
+            ],
+            'ashley': [
+                ('18:8–20', 'Ashley: The elaborate listing of priestly portions — most holy, holy, first-born, devoted, first-fruits — reflects a careful economic theology. The sanctuary is not self-sustaining; it requires the community\'s tithes and offerings to function. God has built the economic provision for his servants into the covenant structure itself, not left it to voluntary giving.'),
+            ],
+            'sarna': [
+                ('18:20', 'Sarna: "I am your share and your inheritance" (ʾănî ḥelqĕkā wĕnaḥalātĕkā) — the priests receive God himself as their inheritance in place of land. The phrase anticipates Psalm 16:5 ("You, Lord, are my chosen portion and my cup") and shapes the entire OT theology of God as the believer\'s ultimate inheritance, fulfilled in the NT\'s promise of God as all in all.'),
+            ],
+            'alter': [
+                ('18:20', 'Alter: "I am your share and your inheritance" — four words in Hebrew (ʾănî ḥelqĕkā wĕnaḥalātĕkā). The compression is perfect. After the lists of portions, animals, tithes, and first-fruits, the chapter\'s theological peak arrives in a single sentence: the priests\' real inheritance is not food or silver but God himself. The material provisions are significant; this one verse transcends them.'),
+            ],
+            'calvin': [
+                ('18:20', 'Calvin: "I am your share and your inheritance" is the most exalted statement of the priestly vocation in the Pentateuch. No land, no material estate — only God. This is the perfection of the covenant promise: not blessings from God but God himself. The NT saint who has learned to count everything loss compared to "gaining Christ" (Phil 3:8) has appropriated what Aaron\'s priesthood prefigured.'),
+            ],
+            'netbible': [
+                ('18:19', 'NET Note: "It is an everlasting covenant of salt before the Lord for both you and your offspring." The salt covenant (bĕrît melaḥ) signals permanent, unconditional alliance — salt preserves and does not decay. The priestly portion covenant is not provisional; it is as permanent as salt, as enduring as the covenant itself.'),
+            ],
+        },
+        {
+            'header': 'Verses 21–32 — The Levitical Tithe; the Tithe of the Tithe',
+            'verses': verse_range(21, 32),
+            'heb': [
+                ('maʿăśēr', 'ma\'aser', 'tithe / tenth', 'One-tenth of all Israel\'s agricultural produce goes to the Levites as their inheritance in lieu of land. The Levites in turn give one-tenth of their tithe to the priests — the tithe of the tithe. The cascade creates a system where every tenth belongs to God, then one-tenth of what the Levites receive goes further up the priestly hierarchy.'),
+            ],
+            'ctx': 'The Levitical tithe section (vv.21–32) specifies the tithe system in detail: all Israel gives one-tenth of produce and livestock to the Levites (vv.21–24); the Levites in turn give one-tenth of what they receive to the Aaronic priests (vv.25–32). The Levites are explicitly instructed (v.26): "When you receive from the Israelites the tithe I give you as your inheritance, you must present a tenth of that tithe as the Lord\'s offering." The principle is consistent: even those who receive from others\' tithes are themselves tithers. No one is exempt from the covenant obligation of first-fruits.',
+            'cross': [
+                ('Heb 7:9', '"One might even say that Levi, who collects the tenth, paid the tenth through Abraham, since when Melchizedek met Abraham, Levi was still in the body of his ancestor." The writer of Hebrews uses the tithe system of Num 18 to establish Melchizedek\'s (and Christ\'s) superiority to the Levitical order.'),
+                ('2 Cor 9:7', '"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion." Paul\'s cheerful-giving principle governs the spirit; the Num 18 tithe system governs the minimum structure.'),
+            ],
+            'mac': [
+                ('18:25–29', 'MacArthur: The Levites are tithers — they give one-tenth of what they receive. This ensures that the principle of first-fruits dedication runs through every level of the covenant community. No one, not even those sustained by others\' giving, is exempt from the covenant obligation to give back to God. The cascade of tithes models the covenant principle: everything comes from God, everything returns to God.'),
+            ],
+            'milgrom': [
+                ('18:28', 'Milgrom: "You must also present the Lord\'s offering from all your tithes." The Levites\' own tithe to the priests is called "the Lord\'s offering" (tĕrûmat yhwh) — the same designation used for Israel\'s tithe to the Levites. The cascade of giving is uniform in character: at every level, the tenth is the Lord\'s offering, not a human gift to humans.'),
+            ],
+            'ashley': [
+                ('18:21–32', 'Ashley: The tithe-of-the-tithe system creates a covenant economy of graduated generosity. Israel gives to the Levites; the Levites give to the priests; the priests are sustained by God. The direction is always upward — toward God — even as the material goods flow across the community. The tithe system is a participation in the economy of heaven.'),
+            ],
+            'sarna': [
+                ('18:21', 'Sarna: "I give to the Levites all the tithes in Israel as their inheritance in return for the work they do while serving at the tent of meeting." The tithe is not a charitable gift to the Levites but a covenantally mandated salary — payment for professional sacred service. The Levites\' work is real work deserving real compensation.'),
+            ],
+            'alter': [
+                ('18:30–32', 'Alter: The closing assurance — "you will incur no sin by reason of it when you have presented the best part of it" — frames the entire tithe system as a matter of covenant integrity. Pay what is owed; present the best; incur no guilt. The tithe clears the conscience of the Levite and the Israelite alike: generosity fulfils, not burdens.'),
+            ],
+            'calvin': [
+                ('18:21–32', 'Calvin: The tithe system\'s extension to the Levites themselves — they tithe from their own tithes — establishes the universal character of covenant giving. No one is too poor, no one is sustained by others\' generosity, no one is close enough to God to be exempt from returning a portion to him. The NT equivalent: "Each one must give as he has decided in his heart" — the spirit of the tithe survives its specific Levitical form.'),
+            ],
+            'netbible': [
+                ('18:26', 'NET Note: "When you receive from the Israelites the tithe… you must present a tenth of that tithe as the Lord\'s offering." The Levites\' tithe to the priests constitutes approximately 1% of all Israel\'s produce (10% of the 10% tithe). The Aaronic priesthood is sustained by the concentrated tithe — small numerically but drawn from the entire covenant community\'s contribution.'),
+            ],
+        },
+    ],
+})
+
+num(19, {
+    'title': 'The Red Heifer: Purification from the Impurity of Death',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — The Red Heifer Ritual',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('pārāh ʾădummāh', 'parah adummah', 'red heifer / red cow', 'A perfectly red, unblemished cow that has never been yoked — set apart from all agricultural use for this single sacred purpose. Its colour (red = the colour of blood and death) and its perfect condition (without defect, never yoked) mark it as a unique sacrificial animal for the unique category of corpse-impurity.'),
+                ('ḥuqqat hattôrāh', 'chuqqat hatorah', 'statute of the law / a permanent ordinance', 'The red heifer rite is called a ḥuqqāh (permanent statute) — one of the ḥuqqîm (statutes) for which no reason is given. The Talmud notes this is one of the Torah\'s most puzzling laws: the ashes that purify the impure simultaneously make the priest who uses them impure. The paradox is deliberate.'),
+            ],
+            'ctx': 'Numbers 19 is the Torah\'s most theologically mysterious chapter. A red heifer without defect, never yoked, is slaughtered outside the camp, burned entirely (with cedar wood, hyssop, and scarlet yarn), and its ashes mixed with water to create "water of cleansing" for corpse-impurity. The paradox: the ashes that purify the corpse-contaminated person make the priest who prepares and applies the water impure until evening. The pure becomes impure while making the impure pure. This ḥuqqāh (statute beyond rational explanation) models the principle of substitutionary purification — the one who purifies takes on the impurity they remove. The Mishnah asks why; the Torah does not answer.',
+            'cross': [
+                ('Heb 9:13–14', '"The blood of goats and bulls and the ashes of a heifer sprinkled on those who are ceremonially unclean sanctify them so that they are outwardly clean. How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death."'),
+                ('1 Pet 1:19', '"The precious blood of Christ, a lamb without blemish or defect." The "without defect, never yoked" requirements of the red heifer are fulfilled in Christ — the unblemished one who had never been subjected to the yoke of sin.'),
+            ],
+            'mac': [
+                ('19:1–10', 'MacArthur: The red heifer\'s unique features — red colour, no defect, never yoked, slaughtered outside the camp, burned entirely — mark it as a sacrifice unlike any other. It is not brought to the tabernacle but removed from the camp entirely. The impurity it addresses (death) is so profound that the normal sacrificial system cannot contain the purification rite. Death requires a purification of extraordinary character.'),
+                ('19:11–13', 'MacArthur: Seven-day impurity for corpse contact, with washing on days 3 and 7 — the most extended purification process in Levitical law. Death\'s defilement is not quickly or easily removed. The prolonged purification process embodies the theological weight of mortality in the covenant\'s worldview: death is the enemy, not merely a natural transition.'),
+            ],
+            'milgrom': [
+                ('19:2', 'Milgrom: The red heifer\'s paradox — it purifies the impure and impurifies the pure — is one of Milgrom\'s most extended discussions. His analysis: the ashes are a concentrated impurity-absorber; contact with them transfers the absorbed impurity to anyone who handles them. The priest who purifies others absorbs the impurity they remove. This is the mechanism of substitutionary purification: the purifier bears what the purified releases.'),
+                ('19:9', 'Milgrom: The ashes are stored "outside the camp in a ceremonially clean place" — the cleanest location outside the camp\'s sacred centre. The concentrated purity-producing substance must be kept in its own category: too powerful for the ordinary camp, too sacred for the unclean margins. It occupies a unique spatial status between the holy and the common.'),
+            ],
+            'ashley': [
+                ('19:1–10', 'Ashley: The red heifer ritual addresses the most pressing practical concern in a community where people die: how does Israel maintain a covenant community around a holy God when death is inevitable and death creates the most severe ritual impurity? The red heifer is God\'s pastoral provision for unavoidable mortality in a covenant context. It does not make death holy — it provides a path through death\'s defilement back to covenant life.'),
+            ],
+            'sarna': [
+                ('19:2', 'Sarna: "A red heifer without defect or blemish and that has never been under a yoke" — the three requirements (red, perfect, unyoked) create a uniquely set-apart animal. The unyoked requirement means this animal has never served any human purpose; it has been preserved for this single divine use. Its entire existence has been a consecration.'),
+            ],
+            'alter': [
+                ('19:11–13', 'Alter: The red heifer rite is the Levitical purity system at its most demanding and its most theologically resonant. The seven-day impurity, the required sprinkling on days 3 and 7 (mirroring the consecration period of Lev 8), the kārēt penalty for neglecting purification — all reflect the seriousness with which the priestly tradition treats death\'s defilement of the covenant community.'),
+            ],
+            'calvin': [
+                ('19:1–13', 'Calvin: The red heifer\'s paradox — purifying the impure at the cost of making the purifier impure — is the clearest OT symbol of Christ\'s atoning work. He who knew no sin became sin for us; the pure one took on our impurity to purify us. The ḥuqqāh (statute without stated reason) is the closest the Torah comes to describing what the NT calls "the mystery of our faith."'),
+            ],
+            'netbible': [
+                ('19:9', 'NET Note: "The water of cleansing" (mê niddāh) — literally "waters of impurity/separation," though they function to remove impurity. The paradoxical name captures the paradoxical nature of the rite: impurity-waters that remove impurity. The language is deliberately provocative, signalling that this rite operates in a theological register beyond ordinary purity logic.'),
+            ],
+        },
+        {
+            'header': 'Verses 14–22 — Application: Corpse-Impurity in Tents and Open Country',
+            'verses': verse_range(14, 22),
+            'heb': [
+                ('ʾōhel', 'ohel', 'tent', 'The primary unit of Israelite habitation. When someone dies in a tent, the tent and everything in it becomes impure for seven days — the enclosed space amplifies the spread of corpse-impurity. The open-field rules (v.16) apply less severe spreading logic.'),
+            ],
+            'ctx': 'The application rules (vv.14–22) specify how corpse-impurity spreads and how the red heifer water is applied. Death in a tent makes the tent and all its contents impure; touching a human bone, a corpse, a grave, or someone slain in open country creates seven-day impurity. The purification ritual: a clean person takes hyssop, dips it in the water, and sprinkles the unclean person on days 3 and 7. After washing on day 7, the person is clean by evening. The closing paradox is restated: the person who sprinkles the water becomes impure until evening; anything the unclean person touches before purification becomes impure.',
+            'cross': [
+                ('Ps 51:7', '"Cleanse me with hyssop, and I will be clean; wash me, and I will be whiter than snow." David\'s prayer uses the red heifer purification imagery — the hyssop sprinkling of Num 19:18 becomes the metaphor for moral cleansing.'),
+                ('John 19:29', '"A jar of wine vinegar was there, so they soaked a sponge in it, put the sponge on a stalk of the hyssop plant, and lifted it to Jesus\' lips." The hyssop at the crucifixion connects to the Passover (Exod 12:22) and the red heifer purification — Christ is the one being purified by his own death, purifying all who touch him.'),
+            ],
+            'mac': [
+                ('19:14–16', 'MacArthur: The tent-rule is the most extensive impurity-spreading mechanism in Levitical law: every person, every open container, everything in the tent where someone died becomes impure for seven days. Death\'s defilement is comprehensive — it saturates the dwelling space. The scale of the purification required matches the scale of the defilement caused.'),
+                ('19:20–22', 'MacArthur: The kārēt penalty for neglecting red heifer purification is the most severe consequence in the purity system — reserved for deliberate contempt of the purification provision. The person who treats death\'s defilement casually "defiles the Lord\'s tabernacle." Casual approach to the holy is as dangerous as active rebellion.'),
+            ],
+            'milgrom': [
+                ('19:14–16', 'Milgrom: The tent rule creates what Milgrom calls a "corpse-cloud" — death defiles the enclosed airspace of a tent. The spatial logic of impurity spreading is consistent with the priestly worldview: holiness and impurity are dynamic, spatial forces that move through physical environments. The red heifer water is the only remedy for this most severe form of defilement.'),
+            ],
+            'ashley': [
+                ('19:14–22', 'Ashley: The application rules acknowledge that death is unavoidable in a human community — people will die in tents, bones will be encountered in fields. The red heifer provision is not for an ideal community where death never occurs but for a real community where it constantly does. The pastoral genius of Num 19 is its realistic engagement with human mortality within a covenant framework.'),
+            ],
+            'sarna': [
+                ('19:18', 'Sarna: The hyssop branch (ʾēzôb) appears throughout the purification system — Passover (Exod 12:22), Levitical skin disease purification (Lev 14:4–6), and here. Its association with cleansing is so strong that it becomes the standard metaphor for purification in the Psalms (Ps 51:7). The humble hyssop plant is the covenant\'s instrument of cleansing.'),
+            ],
+            'alter': [
+                ('19:20–22', 'Alter: The closing restatement of the purification-impurity paradox — the one who sprinkles becomes impure; the sprinkled becomes clean — frames the entire chapter with its central mystery. The chapter begins with the paradox (the preparer becomes impure) and ends with it (the applier becomes impure). The red heifer law is defined by this theological inversion: the one who mediates purification bears its cost.'),
+            ],
+            'calvin': [
+                ('19:14–22', 'Calvin: The spreading of corpse-impurity through tent and open country models the total effect of death\'s corruption on human existence — nothing touched by mortality is entirely clean. The red heifer water, sprinkled precisely with hyssop on precise days, is the covenant\'s provision for living with this reality. Christ is the ultimate red heifer: his death, outside the city (cf. Heb 13:12), produces the water that cleanses all who are sprinkled with his blood.'),
+            ],
+            'netbible': [
+                ('19:18', 'NET Note: "A clean person shall take hyssop, dip it in the water, and sprinkle the tent and all the furnishings and the persons who were there, and also the one who touched a bone, a corpse, a grave, or a person who had been killed." The clean person\'s act of sprinkling transfers impurity to themselves while removing it from others. This substitutionary mechanism — taking on impurity to remove it — is the theological heart of the red heifer rite.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-4 complete: Numbers 15–19 built.")
