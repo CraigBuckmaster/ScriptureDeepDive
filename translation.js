@@ -10,7 +10,7 @@
   // Set available:true when the verse files are in the repo
   var TRANSLATIONS = {
     niv: { label: 'NIV', name: 'New International Version', available: true },
-    esv: { label: 'ESV', name: 'English Standard Version',  available: false },
+    esv: { label: 'ESV', name: 'English Standard Version',  available: true  },
     kjv: { label: 'KJV', name: 'King James Version',        available: false },
   };
 
