@@ -279,6 +279,7 @@ REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT', 'ot'),
     ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
     ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
+    ('numbers',  'Numbers',    36,  6, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -295,6 +296,7 @@ BOOK_PREFIX = {
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
+    'numbers':  'num',
     'matthew':  'mt',
     'mark':     'mk',
     'luke':     'lk',
@@ -381,7 +383,8 @@ COMMENTATOR_SCOPE = {
     # narrator, characters, plot, rhetoric.
     'rhoads':    ['mark'],
     'keener':    ['acts'],
-    'milgrom':   ['leviticus'],  # Jacob Milgrom, Anchor Bible Leviticus (3 vols., 1991–2001)
+    'milgrom':   ['leviticus', 'numbers'],  # Jacob Milgrom, Anchor Bible Leviticus + Numbers
+    'ashley':    ['numbers'],              # Timothy Ashley, NICOT Numbers (1993)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -439,6 +442,29 @@ BOOK_META = {
         'vhl_key':    ['holy', 'holiness', 'atonement', 'offering', 'blood', 'clean', 'unclean',
                        'priest', 'sacrifice', 'burnt offering', 'sin offering', 'guilt offering',
                        'fellowship offering', 'grain offering', 'tabernacle', 'tent of meeting'],
+    },
+    'numbers': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Moses, with editorial arrangement c.1446&ndash;1406 BC. '
+                 'Numbers covers the wilderness years from Sinai to the plains of Moab &mdash; '
+                 'approximately 38 years of Israel\u2019s journey. The Hebrew title <em>Bemidbar</em> '
+                 '(&ldquo;In the wilderness&rdquo;) captures the book’s essence: God sustaining '
+                 'his people through a generation of failure, discipline, and eventual renewal.<br><br>'
+                 '<strong>Date:</strong> c.1446&ndash;1406 BC. The book covers from the second year '
+                 'after the Exodus (Num 1:1) to the fortieth year (Num 33:38), ending with Israel '
+                 'camped on the plains of Moab, poised to enter Canaan.<br><br>'
+                 '<strong>Theme:</strong> The faithfulness of God amid Israel’s persistent '
+                 'unfaithfulness. Every act of rebellion (murmuring, the spy crisis, Korah’s '
+                 'revolt, Baal Peor) is met with judgment and then mercy. Numbers is the book '
+                 'of the wilderness generation’s failure and the new generation’s hope &mdash; '
+                 'the old must die before the new can enter.'),
+        'vhl_places': ['Sinai', 'Kadesh', 'Moab', 'Canaan', 'Edom', 'Paran', 'Hormah', 'Peor'],
+        'vhl_people': ['Moses', 'Aaron', 'Miriam', 'Caleb', 'Joshua', 'Korah', 'Dathan',
+                       'Abiram', 'Balaam', 'Balak', 'Phinehas', 'Zelophehad'],
+        'vhl_time':   [],
+        'vhl_key':    ['census', 'camp', 'tabernacle', 'cloud', 'fire', 'offering', 'vow',
+                       'Nazirite', 'jealousy', 'rebellion', 'murmur', 'plague', 'bronze serpent',
+                       'inheritance', 'cities of refuge', 'firstfruits', 'atonement'],
     },
     'ruth': {
         'is_nt': False,
@@ -1249,6 +1275,7 @@ def commentary_panel(pid, commentator_key, notes):
         'rhoads':    ('Rhoads \u2014 Mark as Story',   'David Rhoads & Donald Michie, Mark as Story (3rd ed., 2012) \u2014 Scholarly Paraphrase'),
         'keener':    ('Keener \u2014 Acts Commentary',  'Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012\u20132015) \u2014 Scholarly Paraphrase'),
         'milgrom':   ('Milgrom \u2014 Anchor Bible',    'Jacob Milgrom, Leviticus 1\u20136 / 17\u201322 / 23\u201327, Anchor Bible (1991\u20132001) \u2014 Scholarly Paraphrase'),
+        'ashley':    ('Ashley \u2014 NICOT Numbers',     'Timothy R. Ashley, The Book of Numbers, NICOT (1993) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1549,6 +1576,7 @@ def build_chapter(book_dir, ch, data):
         if 'marcus'     in sec and in_scope('marcus'):     btns.append(('marcus',    'Marcus',      f'{sid}-marcus'))
         if 'rhoads'     in sec and in_scope('rhoads'):     btns.append(('rhoads',    'Rhoads',      f'{sid}-rhoads'))
         if 'milgrom'    in sec and in_scope('milgrom'):    btns.append(('milgrom',   'Milgrom',     f'{sid}-milgrom'))
+        if 'ashley'     in sec and in_scope('ashley'):     btns.append(('ashley',    'Ashley',      f'{sid}-ashley'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -1573,6 +1601,7 @@ def build_chapter(book_dir, ch, data):
         if 'rhoads'   in sec and in_scope('rhoads'):    panels_html += commentary_panel(f'{sid}-rhoads',   'rhoads',    sec['rhoads'])
         if 'keener'   in sec and in_scope('keener'):    panels_html += commentary_panel(f'{sid}-keener',   'keener',    sec['keener'])
         if 'milgrom'  in sec and in_scope('milgrom'):   panels_html += commentary_panel(f'{sid}-milgrom',  'milgrom',   sec['milgrom'])
+        if 'ashley'   in sec and in_scope('ashley'):    panels_html += commentary_panel(f'{sid}-ashley',   'ashley',    sec['ashley'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
