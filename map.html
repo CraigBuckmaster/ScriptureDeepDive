@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bible World Map — Scripture Deep Dive</title>
-<link rel="manifest" href="../../manifest.json">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
-/* ── DESIGN TOKENS ────────────────────────────────────────────── */
 :root {
   --bg:         #0c0a07;
   --bg2:        #141008;
-  --bg3:        #1a1508;
   --border:     #332810;
   --border2:    #2a2010;
   --gold:       #c9a84c;
@@ -22,27 +22,15 @@
   --text:       #f0e8d8;
   --text-dim:   #b8a880;
   --text-muted: #6a5a38;
-
-  /* Map parchment palette */
-  --parch-land:   #c8a96e;
-  --parch-land2:  #b8934a;
-  --parch-sea:    #7a9fb5;
-  --parch-sea2:   #5a7a90;
-  --parch-ink:    #3a2a10;
-  --parch-bg:     #d4b483;
-
-  /* Era colours */
-  --era-primeval:   #8b6914;
-  --era-patriarch:  #7a5c9a;
-  --era-exodus:     #4a8a5a;
-  --era-judges:     #8a6a2a;
-  --era-kingdom:    #5a7a9a;
-  --era-prophets:   #9a4a4a;
-  --era-exile:      #4a7a8a;
-  --era-nt:         #c9a84c;
+  --era-primeval:  #8b6914;
+  --era-patriarch: #7a5c9a;
+  --era-exodus:    #4a8a5a;
+  --era-judges:    #8a6a2a;
+  --era-kingdom:   #5a7a9a;
+  --era-prophets:  #9a4a4a;
+  --era-exile:     #4a7a8a;
+  --era-nt:        #c9a84c;
 }
-
-/* ── RESET & BASE ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
 body {
@@ -53,617 +41,353 @@ body {
   flex-direction: column;
 }
 
-/* ── SITE NAV ─────────────────────────────────────────────────── */
+/* ── SITE NAV ─────────────────────────────────────────── */
 .site-nav {
-  display: flex;
-  align-items: center;
-  padding: .6rem 1rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg2);
-  flex-shrink: 0;
-  gap: 1rem;
-  height: 44px;
+  display: flex; align-items: center;
+  padding: .6rem 1rem; border-bottom: 1px solid var(--border);
+  background: var(--bg2); flex-shrink: 0; gap: 1rem; height: 44px;
 }
 .nav-back {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-family: 'Cinzel', serif;
-  font-size: .6rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  transition: color .15s;
+  display: flex; align-items: center; gap: .4rem;
+  color: var(--text-muted); text-decoration: none;
+  font-family: 'Cinzel', serif; font-size: .6rem;
+  letter-spacing: .14em; text-transform: uppercase; transition: color .15s;
 }
 .nav-back:hover { color: var(--gold); }
 .nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
 .nav-center { flex: 1; text-align: center; }
 .nav-title {
-  font-family: 'Cinzel', serif;
-  font-size: .75rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
+  font-family: 'Cinzel', serif; font-size: .75rem;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dim);
 }
-.nav-links {
-  display: flex;
-  gap: .8rem;
-}
+.nav-links { display: flex; gap: .8rem; }
 .nav-link {
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color .15s;
+  font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none; transition: color .15s;
 }
 .nav-link:hover { color: var(--gold); }
 
-/* ── ERA FILTER STRIP ────────────────────────────────────────── */
+/* ── ERA FILTER STRIP ────────────────────────────────── */
 .era-filters {
-  padding: .65rem 1.2rem;
-  border-bottom: 1px solid var(--border2);
-  display: flex;
-  flex-wrap: wrap;
-  gap: .35rem;
-  align-items: center;
-  background: var(--bg2);
-  flex-shrink: 0;
+  padding: .65rem 1.2rem; border-bottom: 1px solid var(--border2);
+  display: flex; flex-wrap: wrap; gap: .35rem;
+  align-items: center; background: var(--bg2); flex-shrink: 0;
 }
 .filter-label {
-  font-family: 'Cinzel', serif;
-  font-size: .55rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-right: .3rem;
-  flex-shrink: 0;
+  font-family: 'Cinzel', serif; font-size: .55rem;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-muted); margin-right: .3rem; flex-shrink: 0;
 }
 .era-btn {
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: .28rem .7rem;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
+  font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .28rem .7rem; border-radius: 3px;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-muted); cursor: pointer; white-space: nowrap;
   transition: background .15s, color .15s, border-color .15s;
-  white-space: nowrap;
 }
 .era-btn:hover { border-color: var(--border2); color: var(--text-dim); }
-.era-btn.active {
-  background: rgba(201,168,76,.12);
-  border-color: var(--gold-dim);
-  color: var(--gold);
-}
+.era-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
 
-/* ── MOBILE CONTROLS BAR ─────────────────────────────────────── */
+/* ── STORY PICKER ────────────────────────────────────── */
+#story-picker-wrap {
+  background: var(--bg2); border-bottom: 1px solid var(--border2);
+  overflow-x: auto; flex-shrink: 0; scrollbar-width: none;
+}
+#story-picker-wrap::-webkit-scrollbar { display: none; }
+#story-picker {
+  display: flex; gap: .3rem;
+  padding: .45rem 1.2rem; min-height: 34px; align-items: center;
+}
+.story-btn {
+  font-family: 'Cinzel', serif; font-size: .55rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: .22rem .62rem; border-radius: 3px;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-muted); cursor: pointer; white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.story-btn:hover { border-color: var(--border2); color: var(--text-dim); }
+.story-btn.active { background: rgba(201,168,76,.12); border-color: var(--gold-dim); color: var(--gold); }
+
+/* ── MOBILE CONTROLS ─────────────────────────────────── */
 #mobile-controls { display: none; }
 #legend-mobile-wrap { display: none; }
 
-/* ── MAIN LAYOUT ─────────────────────────────────────────────── */
-.main-layout {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-  min-height: 0;
-}
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+.main-layout { display: flex; flex: 1; overflow: hidden; min-height: 0; }
 
-/* ── MAP PANEL ───────────────────────────────────────────────── */
+/* ── MAP PANEL ───────────────────────────────────────── */
 #map-panel {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  flex: 1; min-height: 0; overflow: hidden;
   position: relative;
-  cursor: grab;
-  background: var(--parch-sea2);
-  filter: sepia(0.22) saturate(0.85) contrast(0.95);
-}
-#map-panel:active { cursor: grabbing; }
-#map-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
-/* Parchment filter applied to map SVG */
-#map-svg {
-  filter: sepia(0.28) saturate(0.82) contrast(0.96) brightness(0.95);
+/* Parchment filter on the Leaflet tile layer only */
+#map-panel .leaflet-tile-pane {
+  filter: sepia(0.45) saturate(0.75) brightness(0.92) contrast(0.95);
 }
 
-/* ── MAP HINT ────────────────────────────────────────────────── */
-.map-hint {
+#leaflet-map { width: 100%; height: 100%; }
+
+/* Leaflet dark theme overrides */
+.leaflet-container { background: #7a9fb5; }
+.leaflet-control-zoom a {
+  background: var(--bg2) !important;
+  color: var(--gold-dim) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-control-zoom a:hover { color: var(--gold) !important; }
+.leaflet-control-attribution {
+  background: rgba(12,10,7,.7) !important;
+  color: var(--text-muted) !important;
+  font-size: .55rem !important;
+}
+.leaflet-control-attribution a { color: var(--gold-dim) !important; }
+
+/* ── D3 OVERLAY SVG (sits on top of Leaflet) ─────────── */
+#map-overlay-svg {
   position: absolute;
-  top: .8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: .68rem;
-  color: var(--parch-ink);
-  background: rgba(212,180,131,.85);
-  padding: .28rem .75rem;
-  border-radius: 10px;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
-  opacity: 1;
-  transition: opacity .5s;
-  white-space: nowrap;
-  font-family: 'Cinzel', serif;
-  letter-spacing: .06em;
-  border: 1px solid rgba(58,42,16,.2);
+  z-index: 400;
+}
+#map-overlay-svg .place-group { pointer-events: all; cursor: pointer; }
+
+/* ── MAP HINT ────────────────────────────────────────── */
+.map-hint {
+  position: absolute; top: .8rem; left: 50%;
+  transform: translateX(-50%);
+  font-size: .65rem; color: #2a1a08;
+  background: rgba(200,169,110,.88);
+  padding: .28rem .75rem; border-radius: 10px;
+  pointer-events: none; opacity: 1; transition: opacity .5s;
+  white-space: nowrap; font-family: 'Cinzel', serif;
+  letter-spacing: .06em; border: 1px solid rgba(58,42,16,.3);
+  z-index: 500;
 }
 .map-hint.hidden { opacity: 0; }
 
-/* ── FLOATING CONTROLS (desktop) ─────────────────────────────── */
+/* ── FLOATING DESKTOP CONTROLS ───────────────────────── */
 .map-float-controls {
-  position: absolute;
-  bottom: 1.2rem;
-  right: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  z-index: 10;
+  position: absolute; bottom: 2.2rem; right: .7rem;
+  display: flex; flex-direction: column; gap: .4rem; z-index: 500;
 }
 .map-float-btn {
-  background: rgba(12,10,7,.88);
-  border: 1px solid var(--border);
-  color: var(--gold-dim);
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .1em;
-  padding: .4rem .7rem;
-  border-radius: 4px;
-  cursor: pointer;
+  background: rgba(12,10,7,.9); border: 1px solid var(--border);
+  color: var(--gold-dim); font-family: 'Cinzel', serif;
+  font-size: .58rem; letter-spacing: .1em;
+  padding: .38rem .65rem; border-radius: 4px; cursor: pointer;
   white-space: nowrap;
   transition: background .15s, color .15s;
-  display: flex;
-  align-items: center;
-  gap: .35rem;
+  display: flex; align-items: center; gap: .32rem;
   box-shadow: 0 2px 12px rgba(0,0,0,.5);
 }
-.map-float-btn:hover { background: var(--bg3); color: var(--gold); }
+.map-float-btn:hover { background: #1a1508; color: var(--gold); }
 .map-float-btn.active { color: var(--gold); border-color: var(--gold-dim); }
 
-/* ── LEGEND ──────────────────────────────────────────────────── */
+/* ── LEGEND ──────────────────────────────────────────── */
 .legend {
-  position: absolute;
-  bottom: 1.2rem;
-  left: 1.2rem;
-  background: rgba(12,10,7,.92);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  overflow: hidden;
-  pointer-events: all;
-  user-select: none;
-  min-width: 200px;
-  box-shadow: 0 4px 18px rgba(0,0,0,.5);
-  z-index: 10;
+  position: absolute; bottom: 2.2rem; left: .7rem;
+  background: rgba(12,10,7,.92); border: 1px solid var(--border);
+  border-radius: 5px; overflow: hidden;
+  pointer-events: all; user-select: none;
+  min-width: 195px; box-shadow: 0 4px 18px rgba(0,0,0,.5); z-index: 500;
 }
 .legend-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .5rem .8rem;
-  cursor: pointer;
-  border-bottom: 1px solid var(--border2);
-  transition: background .15s;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem .8rem; cursor: pointer;
+  border-bottom: 1px solid var(--border2); transition: background .15s;
 }
 .legend-header:hover { background: rgba(255,255,255,.03); }
 .legend-title {
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
+  font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim);
 }
-.legend-chev {
-  font-size: .62rem;
-  color: var(--text-muted);
-  transition: transform .22s;
-}
+.legend-chev { font-size: .62rem; color: var(--text-muted); transition: transform .22s; }
 .legend.collapsed .legend-chev { transform: rotate(-90deg); }
 .legend-body {
   padding: .5rem .8rem .55rem;
-  transition: max-height .25s cubic-bezier(.4,0,.2,1),
-              padding .25s cubic-bezier(.4,0,.2,1);
-  max-height: 260px;
-  overflow: hidden;
+  transition: max-height .25s cubic-bezier(.4,0,.2,1), padding .25s cubic-bezier(.4,0,.2,1);
+  max-height: 260px; overflow: hidden;
 }
-.legend.collapsed .legend-body {
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
+.legend.collapsed .legend-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
 .legend-item {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  margin-bottom: .28rem;
-  font-size: .68rem;
-  color: var(--text-muted);
+  display: flex; align-items: center; gap: .4rem;
+  margin-bottom: .28rem; font-size: .67rem; color: var(--text-muted);
 }
 .legend-item:last-child { margin-bottom: 0; }
-.legend-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.legend-line {
-  width: 22px; height: 2px;
-  flex-shrink: 0;
-}
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-line { width: 22px; height: 2px; flex-shrink: 0; }
 .legend-dash {
-  width: 22px; height: 2px;
-  flex-shrink: 0;
-  background: repeating-linear-gradient(90deg,
-    var(--gold-dim) 0 4px, transparent 4px 7px);
+  width: 22px; height: 2px; flex-shrink: 0;
+  background: repeating-linear-gradient(90deg, var(--gold-dim) 0 4px, transparent 4px 7px);
 }
-.legend-sym {
-  font-size: .75rem;
-  flex-shrink: 0;
-  width: 14px;
-  text-align: center;
-  color: var(--gold);
-}
+.legend-sym { font-size: .75rem; flex-shrink: 0; width: 14px; text-align: center; color: var(--gold); }
 
-/* ── STORY PANEL ─────────────────────────────────────────────── */
+/* ── STORY PANEL ─────────────────────────────────────── */
 #story-panel {
-  width: 0;
-  min-width: 0;
-  background: var(--bg2);
-  border-left: 0px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: width .28s cubic-bezier(.4,0,.2,1),
-              border-left-width .28s cubic-bezier(.4,0,.2,1);
+  width: 0; min-width: 0; background: var(--bg2);
+  border-left: 0px solid var(--border); display: flex;
+  flex-direction: column; overflow: hidden;
+  transition: width .28s cubic-bezier(.4,0,.2,1), border-left-width .28s cubic-bezier(.4,0,.2,1);
+  z-index: 600;
 }
-#story-panel.open {
-  width: 340px;
-  min-width: 340px;
-  border-left-width: 1px;
-  overflow-y: auto;
-}
+#story-panel.open { width: 340px; min-width: 340px; border-left-width: 1px; overflow-y: auto; }
 .story-close {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: flex-end;
-  padding: .6rem .7rem .3rem;
-  background: var(--bg2);
-  flex-shrink: 0;
+  position: sticky; top: 0; z-index: 2;
+  display: flex; justify-content: flex-end;
+  padding: .6rem .7rem .3rem; background: var(--bg2); flex-shrink: 0;
 }
 .story-close button {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: .72rem;
-  padding: .22rem .55rem;
-  border-radius: 3px;
-  font-family: 'Source Sans 3', sans-serif;
+  background: none; border: 1px solid var(--border); color: var(--text-muted);
+  cursor: pointer; font-size: .72rem; padding: .22rem .55rem;
+  border-radius: 3px; font-family: 'Source Sans 3', sans-serif;
   transition: color .15s, border-color .15s;
 }
 .story-close button:hover { color: var(--text); border-color: var(--border2); }
-
-/* Story panel content (placeholder styling for Batch 1) */
-#story-content {
-  padding: 0 1.2rem 1.5rem;
-  flex: 1;
-}
+#story-content { padding: 0 1.2rem 1.5rem; flex: 1; }
 .story-era-badge {
-  display: inline-block;
-  font-family: 'Cinzel', serif;
-  font-size: .52rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  padding: .18rem .55rem;
-  border-radius: 10px;
-  margin: 0 0 .5rem;
+  display: inline-block; font-family: 'Cinzel', serif; font-size: .52rem;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: .18rem .55rem; border-radius: 10px; margin: 0 0 .5rem;
 }
-.story-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
-  letter-spacing: .06em;
-  color: var(--gold-bright);
-  margin-bottom: .15rem;
-}
-.story-ref {
-  font-size: .75rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: .7rem;
-}
-.story-divider {
-  height: 1px;
-  background: var(--border);
-  margin-bottom: .8rem;
-}
-.story-text {
-  font-size: .9rem;
-  line-height: 1.7;
-  color: var(--text-dim);
-  margin-bottom: 1rem;
-}
+.story-name { font-family: 'Cinzel', serif; font-size: 1.15rem; letter-spacing: .06em; color: var(--gold-bright); margin-bottom: .15rem; }
+.story-ref { font-size: .75rem; color: var(--text-muted); font-style: italic; margin-bottom: .7rem; }
+.story-divider { height: 1px; background: var(--border); margin-bottom: .8rem; }
+.story-text { font-size: .9rem; line-height: 1.7; color: var(--text-dim); margin-bottom: 1rem; }
 .story-section-head {
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: .4rem 0 .22rem;
-  border-top: 1px solid var(--border2);
-  margin-bottom: .4rem;
+  font-family: 'Cinzel', serif; font-size: .58rem;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-muted); padding: .4rem 0 .22rem;
+  border-top: 1px solid var(--border2); margin-bottom: .4rem;
 }
-.story-places {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem;
-  margin-bottom: .8rem;
-}
+.story-places { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .8rem; }
 .story-place-chip {
-  font-size: .72rem;
-  padding: .18rem .5rem;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  color: var(--gold-dim);
-  cursor: pointer;
+  font-size: .72rem; padding: .18rem .5rem; border: 1px solid var(--border);
+  border-radius: 3px; color: var(--gold-dim); cursor: pointer;
   transition: background .15s, color .15s;
 }
-.story-place-chip:hover {
-  background: rgba(201,168,76,.1);
-  color: var(--gold);
-}
+.story-place-chip:hover { background: rgba(201,168,76,.1); color: var(--gold); }
 .story-chapter-link {
-  display: block;
-  margin-top: .8rem;
-  padding: .55rem .9rem;
-  background: rgba(201,168,76,.08);
-  border: 1px solid var(--gold-dim);
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: .75rem;
-  color: var(--gold-dim);
-  font-family: 'Cinzel', serif;
-  letter-spacing: .08em;
-  text-align: center;
-  transition: background .15s, color .15s;
+  display: block; margin-top: .8rem; padding: .55rem .9rem;
+  background: rgba(201,168,76,.08); border: 1px solid var(--gold-dim);
+  border-radius: 4px; text-decoration: none; font-size: .75rem;
+  color: var(--gold-dim); font-family: 'Cinzel', serif;
+  letter-spacing: .08em; text-align: center; transition: background .15s, color .15s;
 }
-.story-chapter-link:hover {
-  background: rgba(201,168,76,.15);
-  color: var(--gold);
-}
-
-/* Story panel handle (mobile) */
+.story-chapter-link:hover { background: rgba(201,168,76,.15); color: var(--gold); }
 .story-handle {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: .5rem 0 .2rem;
-  cursor: pointer;
-  touch-action: none;
-  flex-shrink: 0;
+  display: none; justify-content: center; align-items: center;
+  padding: .5rem 0 .2rem; cursor: pointer; touch-action: none; flex-shrink: 0;
 }
-.story-handle-pill {
-  width: 36px; height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-}
+.story-handle-pill { width: 36px; height: 4px; background: var(--border); border-radius: 2px; }
 
-/* ═══════════════════════════════════════════════════════════════
-   MOBILE — ≤ 768px
-   ═══════════════════════════════════════════════════════════════ */
+/* ── PLACE TOOLTIP ───────────────────────────────────── */
+.place-tooltip {
+  position: fixed; z-index: 700;
+  background: rgba(12,10,7,.96); border: 1px solid var(--border);
+  border-radius: 4px; padding: .4rem .6rem; pointer-events: none;
+}
+.tip-ancient { font-family: 'Cinzel', serif; font-size: .72rem; color: var(--gold); letter-spacing: .06em; margin-bottom: .12rem; }
+.tip-modern { font-size: .68rem; color: var(--text-muted); font-style: italic; }
+
+/* ── CROSS-LINK FROM CHAPTERS ────────────────────────── */
+.map-story-link {
+  display:inline-flex; align-items:center; gap:.3rem;
+  margin:.5rem 0 .8rem; padding:.3rem .65rem;
+  background:rgba(74,138,90,.1); border:1px solid rgba(74,138,90,.4);
+  border-radius:3px; color:#5a9a6a; font-family:'Cinzel',serif;
+  font-size:.6rem; letter-spacing:.08em; text-decoration:none;
+  transition:background .15s,color .15s;
+}
+.map-story-link:hover{background:rgba(74,138,90,.22);color:#7aba8a}
+.map-story-link svg{width:12px;height:12px;flex-shrink:0}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE ≤ 768px
+   ═══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-
-  /* Era filters: horizontal scroll */
-  .era-filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: .5rem .7rem;
-    gap: .3rem;
-    scrollbar-width: none;
-  }
+  .era-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .7rem; gap: .3rem; scrollbar-width: none; }
   .era-filters::-webkit-scrollbar { display: none; }
   .filter-label { display: none; }
-
-  /* Main layout: vertical stack */
-  .main-layout {
-    flex-direction: column;
-  }
-
-  /* Map fills top */
+  .main-layout { flex-direction: column; }
   #map-panel { flex: 1; min-height: 0; }
+  #story-picker { padding: .4rem .8rem; }
+  .story-btn { font-size: .52rem; }
 
-  /* Mobile controls bar */
   #mobile-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .4rem .8rem;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border2);
-    gap: .5rem;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .4rem .8rem; background: var(--bg2);
+    border-bottom: 1px solid var(--border2); gap: .5rem; flex-shrink: 0;
   }
   #mobile-controls button {
-    display: flex;
-    align-items: center;
-    gap: .32rem;
-    background: rgba(255,255,255,.04);
-    border: 1px solid var(--border);
-    color: var(--gold-dim);
-    font-family: 'Cinzel', serif;
-    font-size: .56rem;
-    letter-spacing: .08em;
-    padding: .32rem .55rem;
-    border-radius: 4px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background .15s, color .15s;
+    display: flex; align-items: center; gap: .32rem;
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    color: var(--gold-dim); font-family: 'Cinzel', serif;
+    font-size: .56rem; letter-spacing: .08em;
+    padding: .32rem .55rem; border-radius: 4px; cursor: pointer;
+    white-space: nowrap; transition: background .15s, color .15s;
   }
-  #mobile-controls button:active {
-    background: rgba(201,168,76,.12);
-    color: var(--gold);
-  }
+  #mobile-controls button:active { background: rgba(201,168,76,.12); color: var(--gold); }
   #mobile-story-label {
-    font-family: 'Cinzel', serif;
-    font-size: .58rem;
-    letter-spacing: .08em;
-    color: var(--text-muted);
-    text-align: center;
-    flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .08em;
+    color: var(--text-muted); text-align: center; flex: 1;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
 
-  /* Mobile legend wrap */
-  #legend-mobile-wrap {
-    display: block;
-    background: var(--bg2);
-    overflow: hidden;
-  }
+  #legend-mobile-wrap { display: block; background: var(--bg2); overflow: hidden; }
   #legend-mobile-wrap .legend {
-    position: static;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    min-width: 0;
-    width: 100%;
-    background: var(--bg2);
-    overflow: hidden;
+    position: static; border-radius: 0; border: none; box-shadow: none;
+    min-width: 0; width: 100%; background: var(--bg2); overflow: hidden;
   }
   #legend-mobile-wrap .legend-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .3rem .65rem;
-    padding: .45rem .8rem .5rem;
-    border-bottom: 1px solid var(--border2);
+    display: flex; flex-wrap: wrap; gap: .3rem .65rem;
+    padding: .45rem .8rem .5rem; border-bottom: 1px solid var(--border2);
   }
   #legend-mobile-wrap .legend-item { margin-bottom: 0; }
   #legend-mobile-wrap .legend.collapsed .legend-body {
-    max-height: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    border-bottom-width: 0 !important;
+    max-height: 0 !important; padding-top: 0 !important;
+    padding-bottom: 0 !important; border-bottom-width: 0 !important;
   }
 
-  /* Desktop map float controls: hide */
   .map-float-controls { display: none; }
   .legend { display: none; }
 
-  /* Story panel: bottom sheet */
   #story-panel {
-    width: 100% !important;
-    min-width: 0 !important;
-    border-left: none !important;
-    border-top: 1px solid var(--border2);
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: height .3s cubic-bezier(.4,0,.2,1),
-                max-height .3s cubic-bezier(.4,0,.2,1);
+    width: 100% !important; min-width: 0 !important;
+    border-left: none !important; border-top: 1px solid var(--border2);
+    height: 0; max-height: 0; overflow: hidden;
+    transition: height .3s cubic-bezier(.4,0,.2,1), max-height .3s cubic-bezier(.4,0,.2,1);
     flex-shrink: 0;
   }
   #story-panel.open {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 50vh;
-    max-height: 50vh;
-    overflow-y: auto;
-    border-left-width: 0 !important;
+    width: 100% !important; min-width: 0 !important;
+    height: 50vh; max-height: 50vh; overflow-y: auto; border-left-width: 0 !important;
   }
   .story-handle { display: flex; }
   .story-text { font-size: .86rem; }
   #story-content { padding: 0 .9rem 1.2rem; }
 }
-
-@media (max-width: 380px) {
-  .era-btn { font-size: .52rem; padding: .22rem .45rem; }
-}
-
-/* ── PLACE TOOLTIP ───────────────────────────────────────────── */
-.place-tooltip { }
-.tip-ancient {
-  font-family: 'Cinzel', serif;
-  font-size: .72rem;
-  color: var(--gold);
-  letter-spacing: .06em;
-  margin-bottom: .15rem;
-}
-.tip-modern {
-  font-size: .68rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-/* ── STORY PICKER ────────────────────────────────────────────── */
-#story-picker-wrap {
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border2);
-  overflow-x: auto;
-  flex-shrink: 0;
-  scrollbar-width: none;
-}
-#story-picker-wrap::-webkit-scrollbar { display: none; }
-#story-picker {
-  display: flex;
-  gap: .3rem;
-  padding: .45rem 1.2rem;
-  min-height: 36px;
-  align-items: center;
-}
-.story-btn {
-  font-family: 'Cinzel', serif;
-  font-size: .55rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  padding: .25rem .65rem;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background .15s, color .15s, border-color .15s;
-}
-.story-btn:hover { border-color: var(--border2); color: var(--text-dim); }
-.story-btn.active {
-  background: rgba(201,168,76,.12);
-  border-color: var(--gold-dim);
-  color: var(--gold);
-}
-
-@media (max-width: 768px) {
-  #story-picker { padding: .4rem .8rem; }
-  .story-btn { font-size: .52rem; }
-}
-
+@media (max-width: 380px) { .era-btn, .story-btn { font-size: .52rem; padding: .22rem .45rem; } }
 </style>
 </head>
 <body>
 
-<!-- SITE NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-back">
     <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
     Library
   </a>
-  <div class="nav-center">
-    <span class="nav-title">Bible World Map</span>
-  </div>
+  <div class="nav-center"><span class="nav-title">Bible World Map</span></div>
   <div class="nav-links">
     <a href="people.html" class="nav-link">People</a>
     <a href="commentators/index.html" class="nav-link">Scholars</a>
   </div>
 </nav>
 
-<!-- ERA FILTERS -->
 <div class="era-filters">
   <span class="filter-label">Era</span>
   <button class="era-btn active" data-era="all">All</button>
@@ -677,15 +401,10 @@ body {
   <button class="era-btn" data-era="nt">New Testament</button>
 </div>
 
-
-<!-- STORY PICKER -->
 <div id="story-picker-wrap">
-  <div id="story-picker">
-    <!-- populated by buildStoryPicker() -->
-  </div>
+  <div id="story-picker"></div>
 </div>
 
-<!-- MOBILE CONTROLS BAR -->
 <div id="mobile-controls">
   <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
     <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -704,57 +423,40 @@ body {
     </svg>
     Names
   </button>
-  <button id="mobile-centre-btn" onclick="centreMap()">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
-      <circle cx="7" cy="7" r="2.5"/>
-      <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
-      <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
-    </svg>
-    Centre
-  </button>
 </div>
 
-<!-- MOBILE LEGEND DROPDOWN -->
 <div id="legend-mobile-wrap">
   <div class="legend collapsed" id="legend-mobile">
     <div class="legend-body">
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Exodus</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Judges</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> Kingdom</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Prophets</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
-      <div class="legend-item" style="width:100%"><div class="legend-line" style="background:var(--gold-dim)"></div> Journey path</div>
-      <div class="legend-item" style="width:100%"><div class="legend-dash"></div> Sea crossing</div>
-      <div class="legend-item"><span class="legend-sym">★</span> Key site</div>
-      <div class="legend-item"><span class="legend-sym">⟁</span> Region</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Exodus</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Judges</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>Kingdom</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Prophets</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>NT</div>
+      <div class="legend-item" style="width:100%"><div class="legend-line" style="background:var(--gold-dim)"></div>Journey</div>
+      <div class="legend-item" style="width:100%"><div class="legend-dash"></div>Sea route</div>
     </div>
   </div>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="main-layout">
 
-  <!-- MAP PANEL -->
   <div id="map-panel">
-    <svg id="map-svg"></svg>
+    <!-- Leaflet map fills this div -->
+    <div id="leaflet-map"></div>
+
+    <!-- D3 SVG overlay for annotations (synchronized to Leaflet) -->
+    <svg id="map-overlay-svg"></svg>
 
     <div class="map-hint" id="map-hint">Scroll to zoom · Drag to pan · Select a story above</div>
 
-    <!-- DESKTOP FLOATING CONTROLS -->
     <div class="map-float-controls">
-      <button class="map-float-btn" id="names-toggle-btn" onclick="toggleNames()">
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
-          <text x="1" y="10" font-size="7" fill="currentColor" stroke="none" font-family="serif">A</text>
-          <line x1="7" y1="7" x2="13" y2="7" stroke-width="1.2"/>
-          <polyline points="10,4 13,7 10,10" stroke-width="1.2"/>
-        </svg>
-        Ancient Names
-      </button>
+      <button class="map-float-btn" id="names-toggle-btn" onclick="toggleNames()">⇄ Ancient Names</button>
       <button class="map-float-btn" onclick="centreMap()">
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
           <circle cx="7" cy="7" r="2.5"/>
           <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
           <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
@@ -763,352 +465,70 @@ body {
       </button>
     </div>
 
-    <!-- DESKTOP LEGEND -->
     <div class="legend" id="legend">
       <div class="legend-header" onclick="toggleLegend()">
         <span class="legend-title">Legend</span>
         <span class="legend-chev">&#9660;</span>
       </div>
       <div class="legend-body">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval History</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal Period</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Egypt &amp; Exodus</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Conquest &amp; Judges</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> United Kingdom</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Divided Kingdom</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile &amp; Return</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
-        <div class="legend-item" style="margin-top:.3rem"><div class="legend-line" style="background:var(--gold-dim)"></div> Journey path</div>
-        <div class="legend-item"><div class="legend-dash"></div> Sea crossing</div>
-        <div class="legend-item"><span class="legend-sym">★</span> Key site</div>
-        <div class="legend-item"><span class="legend-sym">▩</span> Highlighted region</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div>Primeval History</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div>Patriarchal Period</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div>Egypt &amp; Exodus</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div>Conquest &amp; Judges</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div>United Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div>Divided Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div>Exile &amp; Return</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div>New Testament</div>
+        <div class="legend-item" style="margin-top:.3rem"><div class="legend-line" style="background:var(--gold-dim)"></div>Journey path</div>
+        <div class="legend-item"><div class="legend-dash"></div>Sea crossing</div>
+        <div class="legend-item"><span class="legend-sym">◆</span>Key site</div>
+        <div class="legend-item"><span class="legend-sym">▲</span>Mountain</div>
       </div>
     </div>
   </div>
 
-  <!-- STORY PANEL -->
   <div id="story-panel">
     <div class="story-handle" id="story-handle" onclick="closeStory()">
       <div class="story-handle-pill"></div>
     </div>
-    <div class="story-close">
-      <button onclick="closeStory()">✕ Close</button>
-    </div>
+    <div class="story-close"><button onclick="closeStory()">✕ Close</button></div>
     <div id="story-content">
-      <!-- populated by showStory() in Batch 3+ -->
       <p style="color:var(--text-muted);font-size:.82rem;padding-top:.5rem;">
         Select an era and story to explore the biblical world.
       </p>
     </div>
   </div>
 
-</div><!-- .main-layout -->
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="books.js"></script>
 <script>
-// ── SERVICE WORKER ────────────────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../../service-worker.js', { scope: '../../' })
-    .catch(() => {});
+  navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(() => {});
 }
 
-// ══════════════════════════════════════════════════════════════════════════
-// GEOGRAPHICAL DATA
-// ══════════════════════════════════════════════════════════════════════════
-const GEO_LAND = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Egypt"},"geometry":{"type":"Polygon","coordinates":[[[25,22],[34,22],[34,25],[35.5,27],[34.5,29.5],[34,31],[32,31.5],[30,30.5],[28,29],[26,27],[25,25],[25,22]]]}},{"type":"Feature","properties":{"name":"Sinai"},"geometry":{"type":"Polygon","coordinates":[[[32,30],[34,30],[34.5,29.5],[34,28],[33.5,27],[32.5,26.5],[32,27],[31.5,28],[31.5,29],[32,30]]]}},{"type":"Feature","properties":{"name":"Levant"},"geometry":{"type":"Polygon","coordinates":[[[35.1,29.5],[35.5,29.5],[36.5,30],[37,31],[37,32],[37,33],[36.5,34],[36,35],[35.5,35.5],[35,36],[34.5,36.5],[34,36.5],[33.5,35.5],[33.5,34],[33.5,33],[34,32],[34,31],[34.5,30.5],[35.1,29.5]]]}},{"type":"Feature","properties":{"name":"Syria"},"geometry":{"type":"Polygon","coordinates":[[[37,31],[38,31],[39,32],[40,33],[41,34],[41,36],[40,37],[39,37],[38,37],[37,36.5],[36,36],[35.5,35.5],[36,35],[36.5,34],[37,33],[37,31]]]}},{"type":"Feature","properties":{"name":"Mesopotamia"},"geometry":{"type":"Polygon","coordinates":[[[39,32],[40,33],[41,34],[42,33],[43,33],[44,32],[45,31],[46,30],[47,30],[48,29],[48,28],[47,27],[46,28],[45,29],[44,30],[43,31],[42,31],[41,31],[40,32],[39,32]]]}},{"type":"Feature","properties":{"name":"Arabia"},"geometry":{"type":"Polygon","coordinates":[[[35,29],[37,27],[39,22],[42,22],[45,22],[48,22],[51,22],[54,23],[56,24],[57,24],[58,23],[59,22],[60,22],[62,22],[65,22],[65,28],[63,27],[60,26],[58,26],[56,27],[55,28],[55,30],[54,31],[53,32],[51,33],[50,33],[49,33],[48,29],[47,27],[46,28],[45,29],[44,30],[43,31],[42,31],[41,31],[40,32],[39,33],[38,32],[37,31],[36,30],[35,30],[35,29]]]}},{"type":"Feature","properties":{"name":"Asia Minor"},"geometry":{"type":"Polygon","coordinates":[[[26,36],[27,37],[28,38],[29,40],[30,41],[31,41.5],[32,41.5],[33,41.5],[34,42],[35,42.5],[36,42.5],[37,42.5],[38,42],[39,42],[40,42],[41,43],[42,43],[43,43],[44,42],[45,42],[46,42],[47,43],[48,43],[48,41],[47,40],[46,39],[45,38],[44,38],[43,38],[42,38],[41,37],[40,37],[39,36.5],[38,37],[37,36.5],[36.5,36],[36,35.5],[35.5,35],[35,36],[34.5,36.5],[34,36],[33.5,36],[33,36.5],[32.5,36.5],[32,37],[31.5,37],[31,37.5],[30,37.5],[29,37],[28.5,37.5],[28,37],[27,37.5],[26.5,36.5],[26,36]]]}},{"type":"Feature","properties":{"name":"Persia"},"geometry":{"type":"Polygon","coordinates":[[[48,29],[48,32],[49,33],[50,33],[51,33],[52,32],[53,32],[54,31],[55,30],[56,27],[57,24],[58,23],[59,22],[60,22],[62,22],[65,22],[65,38],[64,38],[63,38],[62,37],[61,36],[60,35],[59,35],[58,35],[57,36],[56,37],[55,37],[54,36],[53,35],[52,35],[51,35],[50,34],[49,34],[48,33],[48,29]]]}},{"type":"Feature","properties":{"name":"Greece"},"geometry":{"type":"Polygon","coordinates":[[[20,38],[21,38],[22,37.5],[23,38],[24,38.5],[25,38],[26,37],[27,37],[26.5,38.5],[26,39],[25.5,40],[25,40.5],[24,41],[23,41.5],[22.5,42],[22,42.5],[21,42.5],[20.5,42],[20,41.5],[20,40],[20,38]]]}},{"type":"Feature","properties":{"name":"Cyprus"},"geometry":{"type":"Polygon","coordinates":[[[32,34.5],[32.5,35],[33,35.2],[33.5,35.5],[34,35.5],[34.5,35.3],[34,34.8],[33.5,34.6],[33,34.5],[32.5,34.7],[32,34.5]]]}},{"type":"Feature","properties":{"name":"North Africa"},"geometry":{"type":"Polygon","coordinates":[[[20,30],[25,30],[25,22],[20,22],[20,30]]]}},{"type":"Feature","properties":{"name":"Malta"},"geometry":{"type":"Polygon","coordinates":[[[14.2,35.8],[14.4,35.9],[14.6,35.9],[14.7,36.1],[14.5,36.2],[14.2,36.1],[14,36],[14.2,35.8]]]}},{"type":"Feature","properties":{"name":"Italy"},"geometry":{"type":"Polygon","coordinates":[[[12,44],[13,44],[14,41],[15,40],[16,38],[15.5,37.5],[14,38],[13,38],[12,37],[11,37],[10.5,38],[10,39],[9.5,40],[9.5,41],[10,42],[11,43],[12,44]]]}}]};
-
-// ── MAP PROJECTION SETTINGS ───────────────────────────────────────────────
-// Biblical world: roughly lon 22–65, lat 20–46
-const MAP_CENTER = [42, 33];   // [lon, lat] — centred over the Levant
-const MAP_EXTENT = {
-  lon: [20, 67],
-  lat: [18, 48]
-};
-
-// ── ERA CONFIG ────────────────────────────────────────────────────────────
-const ERA_COLORS = {
-  primeval:  'var(--era-primeval)',
-  patriarch: 'var(--era-patriarch)',
-  exodus:    'var(--era-exodus)',
-  judges:    'var(--era-judges)',
-  kingdom:   'var(--era-kingdom)',
-  prophets:  'var(--era-prophets)',
-  exile:     'var(--era-exile)',
-  nt:        'var(--era-nt)',
+// ── CONSTANTS ──────────────────────────────────────────────────────────────
+const ERA_HEX = {
+  primeval:'#8b6914', patriarch:'#7a5c9a', exodus:'#4a8a5a',
+  judges:'#8a6a2a', kingdom:'#5a7a9a', prophets:'#9a4a4a',
+  exile:'#4a7a8a', nt:'#c9a84c',
 };
 const ERA_NAMES = {
-  primeval:  'Primeval History',
-  patriarch: 'Patriarchal Period',
-  exodus:    'Egypt & Exodus',
-  judges:    'Conquest & Judges',
-  kingdom:   'United Kingdom',
-  prophets:  'Divided Kingdom & Prophets',
-  exile:     'Exile & Return',
-  nt:        'New Testament',
+  primeval:'Primeval History', patriarch:'Patriarchal Period',
+  exodus:'Egypt & Exodus', judges:'Conquest & Judges',
+  kingdom:'United Kingdom', prophets:'Divided Kingdom & Prophets',
+  exile:'Exile & Return', nt:'New Testament',
 };
 
-// ── MODULE STATE ──────────────────────────────────────────────────────────
-let zoomBehavior = null;
-let currentProjection = null;
+// ── STATE ──────────────────────────────────────────────────────────────────
+let leafletMap = null;
+let overlayLayer = null;  // D3 SVG layer
 let showModernNames = false;
 let currentEra = 'all';
 let currentStory = null;
 
-// ══════════════════════════════════════════════════════════════════════════
-// MAP RENDER
-// ══════════════════════════════════════════════════════════════════════════
-function renderMap() {
-  const panel = document.getElementById('map-panel');
-  const svgEl = document.getElementById('map-svg');
-  const W = panel.clientWidth;
-  const H = panel.clientHeight;
-
-  const svg = d3.select(svgEl);
-  svg.selectAll('*').remove();
-  svg.attr('width', W).attr('height', H);
-
-  // ── PARCHMENT BACKGROUND ─────────────────────────────────────────────
-  // SVG defs: paper texture filter
-  const defs = svg.append('defs');
-
-  // Grain / paper texture via feTurbulence
-  defs.append('filter').attr('id', 'paper-grain')
-    .html(`
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3"
-        stitchTiles="stitch" result="noise"/>
-      <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
-      <feBlend in="SourceGraphic" in2="grey" mode="multiply" result="blend"/>
-      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
-    `);
-
-  // Vignette radial gradient
-  const vignette = defs.append('radialGradient')
-    .attr('id', 'vignette')
-    .attr('cx', '50%').attr('cy', '50%')
-    .attr('r', '70%');
-  vignette.append('stop').attr('offset', '0%')
-    .attr('stop-color', 'transparent');
-  vignette.append('stop').attr('offset', '100%')
-    .attr('stop-color', 'rgba(20,12,4,0.45)');
-
-  // Sea gradient
-  const seaGrad = defs.append('radialGradient')
-    .attr('id', 'sea-grad')
-    .attr('cx', '40%').attr('cy', '45%').attr('r', '65%');
-  seaGrad.append('stop').attr('offset', '0%')
-    .attr('stop-color', '#8ab5cc');
-  seaGrad.append('stop').attr('offset', '100%')
-    .attr('stop-color', '#5a7a90');
-
-  // Land gradient
-  const landGrad = defs.append('linearGradient')
-    .attr('id', 'land-grad')
-    .attr('x1', '0%').attr('y1', '0%')
-    .attr('x2', '100%').attr('y2', '100%');
-  landGrad.append('stop').attr('offset', '0%')
-    .attr('stop-color', '#d4b87a');
-  landGrad.append('stop').attr('offset', '100%')
-    .attr('stop-color', '#b8934a');
-
-  // ── SEA BACKGROUND ───────────────────────────────────────────────────
-  svg.append('rect')
-    .attr('width', W).attr('height', H)
-    .attr('fill', '#7a9fb5');
-
-  // ── PROJECTION ───────────────────────────────────────────────────────
-  // Scale so the biblical world (lon 20-65, 45° span) fits ~85% of panel width
-  const bibleScale = (W * 0.85 * 180) / (45 * Math.PI);
-  const projection = d3.geoMercator()
-    .center(MAP_CENTER)
-    .scale(bibleScale)
-    .translate([W / 2, H / 2]);
-
-  currentProjection = projection;
-  const path = d3.geoPath().projection(projection);
-
-  // ── ZOOM + PAN ───────────────────────────────────────────────────────
-  const g = svg.append('g').attr('class', 'map-root');
-
-  zoomBehavior = d3.zoom()
-    .scaleExtent([0.4, 12])
-    .on('zoom', e => g.attr('transform', e.transform));
-  svg.call(zoomBehavior);
-
-  // ── LAND POLYGONS ────────────────────────────────────────────────────
-  g.selectAll('.land')
-    .data(GEO_LAND.features)
-    .join('path')
-    .attr('class', 'land')
-    .attr('d', path)
-    .attr('fill', '#c8a96e')
-    .attr('stroke', '#3a2a10')
-    .attr('stroke-width', 0.6)
-    .attr('stroke-linejoin', 'round')
-    .attr('opacity', 0.92);
-
-  // Paper grain overlay on land
-  g.selectAll('.land-grain')
-    .data(GEO_LAND.features)
-    .join('path')
-    .attr('class', 'land-grain')
-    .attr('d', path)
-    .attr('fill', '#8a6030')
-    .attr('opacity', 0.06)
-    .attr('opacity', 0)
-    .attr('pointer-events', 'none');
-
-  // ── COAST STROKE GLOW (ink effect) ──────────────────────────────────
-  g.selectAll('.coast-glow')
-    .data(GEO_LAND.features)
-    .join('path')
-    .attr('class', 'coast-glow')
-    .attr('d', path)
-    .attr('fill', 'none')
-    .attr('stroke', '#2a1808')
-    .attr('stroke-width', 2.5)
-    .attr('opacity', 0.18)
-    .attr('pointer-events', 'none');
-
-  // ── STORY OVERLAY GROUP (populated in Batch 3+) ─────────────────────
-  g.append('g').attr('class', 'story-regions');
-  g.append('g').attr('class', 'story-paths');
-  g.append('g').attr('class', 'story-places');
-
-  // ── PLACE NAME LAYER ──────────────────────────────────────────────────
-  renderPlaces(g, projection, null); // show all places on load
-  // Store projection reference for story engine
-  currentProjection = projection;
-
-  // ── VIGNETTE OVERLAY ────────────────────────────────────────────────
-  svg.append('rect')
-    .attr('width', W).attr('height', H)
-    .attr('fill', 'rgba(20,12,4,0.28)')
-    .attr('pointer-events', 'none');
-
-  // ── INITIAL VIEW ─────────────────────────────────────────────────────
-  // Auto-scale to fit the biblical world extent
-  const isMobile = window.innerWidth <= 768;
-  const initScale = isMobile ? 0.9 : 1.0;
-  svg.call(zoomBehavior.transform,
-    d3.zoomIdentity.translate(0, 0).scale(initScale));
-
-  // Dismiss hint on first interaction
-  svg.on('pointerdown.hint', () => {
-    document.getElementById('map-hint').classList.add('hidden');
-    svg.on('pointerdown.hint', null);
-  });
-}
-
-// ══════════════════════════════════════════════════════════════════════════
-// CONTROLS
-// ══════════════════════════════════════════════════════════════════════════
-
-// centreMap() defined in story engine above
-
-function toggleNames() {
-  showModernNames = !showModernNames;
-  const btn = document.getElementById('names-toggle-btn');
-  if (btn) {
-    btn.textContent = showModernNames ? '⇄ Modern Names' : '⇄ Ancient Names';
-    btn.classList.toggle('active', showModernNames);
-  }
-  // Toggle SVG text labels
-  d3.selectAll('.ancient-label').style('display', showModernNames ? 'none' : null);
-  d3.selectAll('.modern-label').style('display', showModernNames ? null : 'none');
-  // Update desktop button text
-  const btn = document.getElementById('names-toggle-btn');
-  if (btn) btn.innerHTML = showModernNames
-    ? '⇄&nbsp;Modern Names'
-    : '⇄&nbsp;Ancient Names';
-  if (btn) btn.classList.toggle('active', showModernNames);
-  // Update mobile controls bar toggle btn
-  const mBtn = document.getElementById('mobile-names-btn');
-  if (mBtn) mBtn.classList.toggle('active', showModernNames);
-  // Refresh story panel place chips if open
-  if (currentStory) {
-    document.querySelectorAll('.story-place-chip').forEach(chip => {
-      const pid = chip.dataset.pid;
-      if (!pid) return;
-      const p = PLACES.find(x => x.id === pid);
-      if (p) chip.textContent = showModernNames ? p.modern : p.ancient;
-    });
-  }
-}
-
-function toggleLegend() {
-  document.getElementById('legend').classList.toggle('collapsed');
-}
-function toggleMobileLegend() {
-  const leg = document.getElementById('legend-mobile');
-  leg.classList.toggle('collapsed');
-  const chev = document.getElementById('legend-btn-chev');
-  if (chev) chev.style.transform =
-    leg.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
-}
-
-// ── ERA FILTER WIRING ─────────────────────────────────────────────────────
-document.querySelectorAll('.era-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentEra = btn.dataset.era;
-    // Update mobile label
-    const lbl = document.getElementById('mobile-story-label');
-    if (lbl) lbl.textContent = currentEra === 'all'
-      ? 'Select a Story'
-      : (ERA_NAMES[currentEra] || currentEra);
-    buildStoryPicker(currentEra);
-  });
-});
-
-// ── STORY PANEL ───────────────────────────────────────────────────────────
-function openStory(story) {
-  currentStory = story;
-  document.getElementById('story-panel').classList.add('open');
-}
-function closeStory() {
-  document.getElementById('story-panel').classList.remove('open');
-}
-
-// Swipe-down to close story panel (mobile)
-(function() {
-  let startY = 0;
-  const handle = document.getElementById('story-handle');
-  if (!handle) return;
-  handle.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
-  handle.addEventListener('touchend', e => {
-    if (e.changedTouches[0].clientY - startY > 40) closeStory();
-  }, { passive: true });
-})();
-
-// Keyboard shortcuts
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeStory();
-    // Clear active btn and hash
-    document.querySelectorAll('.story-btn').forEach(b => b.classList.remove('active'));
-    history.replaceState(null, '', location.pathname);
-  }
-  // Left/Right arrow: step through visible story buttons
-  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-    const btns = [...document.querySelectorAll('.story-btn')];
-    if (!btns.length) return;
-    const activeIdx = btns.findIndex(b => b.classList.contains('active'));
-    const next = e.key === 'ArrowRight'
-      ? (activeIdx + 1) % btns.length
-      : (activeIdx - 1 + btns.length) % btns.length;
-    btns[next].click();
-    btns[next].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
-});
-
-
-// ══════════════════════════════════════════════════════════════════════════
-// PLACES DATA — Batch 2
-// Each place: id, ancient name, modern name/location, [lon, lat], type
-// types: city | region | mountain | water | site
-// ══════════════════════════════════════════════════════════════════════════
 const PLACES = [
 
   // ── PRIMEVAL ────────────────────────────────────────────────────────────
@@ -1197,148 +617,6 @@ const PLACES = [
   { id:'troas',      ancient:'Troas',           modern:'Dalyan, Turkey',                  lon:26.3, lat:39.8, type:'city',    stories:['paul-journey2','paul-journey3'] },
 ];
 
-
-// ══════════════════════════════════════════════════════════════════════════
-// PLACE RENDERING — Batch 2
-// ══════════════════════════════════════════════════════════════════════════
-
-// Symbol shapes per type
-const PLACE_SYMBOLS = {
-  city:     { shape: 'circle', r: 4,   labelOffset: [0, -10] },
-  region:   { shape: 'none',   r: 0,   labelOffset: [0,   0] },
-  mountain: { shape: 'path',   r: 5,   labelOffset: [0, -12] },
-  water:    { shape: 'none',   r: 0,   labelOffset: [0,   0] },
-  site:     { shape: 'star',   r: 5,   labelOffset: [0, -12] },
-};
-
-function renderPlaces(g, projection, activeStoryIds) {
-  // Remove old place layer
-  g.selectAll('.places-layer').remove();
-  const layer = g.append('g').attr('class', 'places-layer');
-
-  const visible = activeStoryIds === null
-    ? PLACES
-    : PLACES.filter(p => p.stories.some(s => activeStoryIds.includes(s)));
-
-  visible.forEach(place => {
-    const xy = projection([place.lon, place.lat]);
-    if (!xy) return;
-    const [x, y] = xy;
-    const sym = PLACE_SYMBOLS[place.type] || PLACE_SYMBOLS.city;
-
-    const grp = layer.append('g')
-      .attr('class', `place place-${place.type}`)
-      .attr('transform', `translate(${x},${y})`)
-      .style('cursor', 'pointer')
-      .on('click', () => showPlaceTooltip(place, x, y));
-
-    // Symbol
-    if (place.type === 'city') {
-      grp.append('circle')
-        .attr('r', sym.r)
-        .attr('fill', '#3a2a10')
-        .attr('stroke', '#d4b483')
-        .attr('stroke-width', 1.2)
-        .attr('opacity', 0.85);
-    } else if (place.type === 'mountain') {
-      grp.append('path')
-        .attr('d', 'M0,-8 L5,2 L-5,2 Z')
-        .attr('fill', '#5a3e1c')
-        .attr('stroke', '#d4b483')
-        .attr('stroke-width', 0.8)
-        .attr('opacity', 0.8);
-    } else if (place.type === 'site') {
-      // Small gold diamond
-      grp.append('path')
-        .attr('d', 'M0,-6 L4,0 L0,6 L-4,0 Z')
-        .attr('fill', '#c9a84c')
-        .attr('stroke', '#3a2a10')
-        .attr('stroke-width', 0.8)
-        .attr('opacity', 0.85);
-    }
-
-    // Hit target (invisible, larger for touch)
-    grp.append('circle')
-      .attr('r', 14)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'none');
-
-    const loff = sym.labelOffset;
-
-    // Ancient label
-    grp.append('text')
-      .attr('class', 'ancient-label place-label')
-      .attr('x', loff[0]).attr('y', loff[1])
-      .attr('text-anchor', 'middle')
-      .attr('font-family', "'Cinzel', serif")
-      .attr('font-size', place.type === 'region' || place.type === 'water' ? '8px' : '7.5px')
-      .attr('fill', place.type === 'water' ? '#3a5a70' : '#2a1a08')
-      .attr('font-style', place.type === 'water' ? 'italic' : 'normal')
-      .attr('opacity', 0.9)
-      .attr('pointer-events', 'none')
-      .text(place.ancient);
-
-    // Modern label (hidden by default)
-    grp.append('text')
-      .attr('class', 'modern-label place-label')
-      .attr('x', loff[0]).attr('y', loff[1])
-      .attr('text-anchor', 'middle')
-      .attr('font-family', "'Source Sans 3', sans-serif")
-      .attr('font-size', '7px')
-      .attr('fill', '#1a3a50')
-      .attr('opacity', 0.85)
-      .attr('pointer-events', 'none')
-      .style('display', 'none')
-      .text(place.modern);
-  });
-}
-
-// ── PLACE TOOLTIP ──────────────────────────────────────────────────────────
-let tooltipEl = null;
-
-function showPlaceTooltip(place, x, y) {
-  clearPlaceTooltip();
-  const svgEl = document.getElementById('map-svg');
-  const rect = svgEl.getBoundingClientRect();
-  const transform = d3.zoomTransform(svgEl);
-  const screenX = transform.applyX(x) + rect.left;
-  const screenY = transform.applyY(y) + rect.top;
-
-  const tip = document.createElement('div');
-  tip.className = 'place-tooltip';
-  tip.innerHTML = `
-    <div class="tip-ancient">${place.ancient}</div>
-    <div class="tip-modern">${place.modern}</div>
-  `;
-  tip.style.cssText = `
-    position:fixed;
-    left:${Math.min(screenX + 10, window.innerWidth - 200)}px;
-    top:${Math.max(screenY - 50, 10)}px;
-    z-index:100;
-    background:rgba(12,10,7,.95);
-    border:1px solid #332810;
-    border-radius:4px;
-    padding:.4rem .6rem;
-    pointer-events:none;
-  `;
-  document.body.appendChild(tip);
-  tooltipEl = tip;
-
-  // Auto-dismiss
-  setTimeout(clearPlaceTooltip, 3000);
-}
-
-function clearPlaceTooltip() {
-  if (tooltipEl) { tooltipEl.remove(); tooltipEl = null; }
-}
-
-// Close tooltip on map interaction
-document.addEventListener('pointerdown', () => clearPlaceTooltip());
-
-
-// ══════════════════════════════════════════════════════════════════════════
-// STORIES DATA — OT Early (Batch 3)
-// ══════════════════════════════════════════════════════════════════════════
 const STORIES = [
 
   // ── PRIMEVAL ─────────────────────────────────────────────────────────────
@@ -1724,175 +1002,281 @@ const STORIES = [
 
 ];
 
+// ══════════════════════════════════════════════════════════════════════════
+// LEAFLET MAP INIT
+// ══════════════════════════════════════════════════════════════════════════
+function initMap() {
+  // Centre on Jerusalem, zoom 5 shows the whole biblical world
+  leafletMap = L.map('leaflet-map', {
+    center: [31.5, 37],
+    zoom: 5,
+    minZoom: 3,
+    maxZoom: 12,
+    zoomControl: true,
+  });
+
+  // ESRI World Physical — terrain/parchment colours, no text labels
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
+    {
+      attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
+      maxZoom: 12,
+    }
+  ).addTo(leafletMap);
+
+  // Adjust zoom for mobile
+  if (window.innerWidth <= 768) {
+    leafletMap.setZoom(4);
+  }
+
+  // Dismiss hint on first interaction
+  leafletMap.once('movestart', () => {
+    document.getElementById('map-hint').classList.add('hidden');
+  });
+
+  // D3 overlay: sync SVG to Leaflet on every move/zoom
+  initD3Overlay();
+  leafletMap.on('moveend zoomend', updateD3Overlay);
+}
 
 // ══════════════════════════════════════════════════════════════════════════
-// STORY ENGINE — Batch 3
+// D3 SVG OVERLAY (synchronized to Leaflet)
 // ══════════════════════════════════════════════════════════════════════════
+function initD3Overlay() {
+  updateD3Overlay();
+}
 
-const ERA_HEX = {
-  primeval:  '#8b6914', patriarch: '#7a5c9a', exodus: '#4a8a5a',
-  judges:    '#8a6a2a', kingdom:   '#5a7a9a', prophets:'#9a4a4a',
-  exile:     '#4a7a8a', nt:        '#c9a84c',
-};
+function latLngToPixel(lat, lng) {
+  const pt = leafletMap.latLngToContainerPoint(L.latLng(lat, lng));
+  return [pt.x, pt.y];
+}
 
+function updateD3Overlay() {
+  if (!leafletMap) return;
+  const svg = d3.select('#map-overlay-svg');
+  const panel = document.getElementById('map-panel');
+  svg.attr('width', panel.clientWidth).attr('height', panel.clientHeight);
+
+  // Redraw everything at new map position
+  drawPlaces(svg);
+  if (currentStory) drawStoryOverlays(svg, currentStory);
+}
+
+// ── PLACE MARKERS ──────────────────────────────────────────────────────────
+function drawPlaces(svg) {
+  svg.selectAll('.places-layer').remove();
+  const layer = svg.append('g').attr('class', 'places-layer');
+
+  const visible = currentStory
+    ? PLACES.filter(p => p.stories.some(s => s === currentStory.id))
+    : PLACES;
+
+  visible.forEach(place => {
+    const [x, y] = latLngToPixel(place.lat, place.lon);
+    const grp = layer.append('g')
+      .attr('class', 'place-group')
+      .attr('transform', `translate(${x},${y})`)
+      .on('click', () => showPlaceTooltip(place, x, y));
+
+    // invisible hit target
+    grp.append('circle').attr('r', 16).attr('fill', 'transparent');
+
+    if (place.type === 'city') {
+      grp.append('circle').attr('r', 3.5)
+        .attr('fill', '#2a1a08').attr('stroke', '#d4b483').attr('stroke-width', 1.2).attr('opacity', 0.9);
+    } else if (place.type === 'mountain') {
+      grp.append('path').attr('d', 'M0,-7 L5,2 L-5,2 Z')
+        .attr('fill', '#4a3018').attr('stroke', '#d4b483').attr('stroke-width', 0.8).attr('opacity', 0.85);
+    } else if (place.type === 'site') {
+      grp.append('path').attr('d', 'M0,-5 L3,0 L0,5 L-3,0 Z')
+        .attr('fill', '#c9a84c').attr('stroke', '#2a1a08').attr('stroke-width', 0.7).attr('opacity', 0.9);
+    }
+
+    const off = place.type === 'region' || place.type === 'water' ? 0 : -10;
+    const isWater = place.type === 'water';
+    const isRegion = place.type === 'region';
+
+    grp.append('text').attr('class', 'ancient-label place-label')
+      .attr('y', off).attr('text-anchor', 'middle')
+      .attr('font-family', "'Cinzel', serif")
+      .attr('font-size', (isRegion || isWater) ? '9px' : '8px')
+      .attr('fill', isWater ? '#2a4a5a' : '#2a1a08')
+      .attr('font-style', isWater ? 'italic' : 'normal')
+      .attr('opacity', 0.95).attr('pointer-events', 'none')
+      .style('display', showModernNames ? 'none' : null)
+      .text(place.ancient);
+
+    grp.append('text').attr('class', 'modern-label place-label')
+      .attr('y', off).attr('text-anchor', 'middle')
+      .attr('font-family', "'Source Sans 3', sans-serif")
+      .attr('font-size', '7.5px').attr('fill', '#1a3040')
+      .attr('opacity', 0.9).attr('pointer-events', 'none')
+      .style('display', showModernNames ? null : 'none')
+      .text(place.modern);
+  });
+}
+
+// ── STORY OVERLAYS ─────────────────────────────────────────────────────────
+function drawStoryOverlays(svg, story) {
+  svg.selectAll('.story-overlays').remove();
+  const layer = svg.append('g').attr('class', 'story-overlays');
+  const color = ERA_HEX[story.era] || '#888';
+
+  // Region polygons
+  (story.regions || []).forEach(region => {
+    const pts = region.coords.map(([lon, lat]) => latLngToPixel(lat, lon));
+    const lineGen = d3.line().x(d=>d[0]).y(d=>d[1]);
+    layer.append('path')
+      .attr('d', lineGen([...pts, pts[0]]))
+      .attr('fill', region.color || color).attr('fill-opacity', 0.2)
+      .attr('stroke', region.color || color).attr('stroke-width', 1.5)
+      .attr('stroke-dasharray', '5,3').attr('stroke-opacity', 0.6)
+      .attr('pointer-events', 'none');
+    // Region label at centroid
+    if (region.label && pts.length) {
+      const cx = pts.reduce((a,b)=>a+b[0],0)/pts.length;
+      const cy = pts.reduce((a,b)=>a+b[1],0)/pts.length;
+      layer.append('text').attr('x', cx).attr('y', cy)
+        .attr('text-anchor','middle').attr('font-family',"'Cinzel', serif")
+        .attr('font-size','8px').attr('fill', region.color||color)
+        .attr('opacity', 0.65).attr('pointer-events','none').text(region.label);
+    }
+  });
+
+  // Journey paths
+  (story.paths || []).forEach(seg => {
+    const pts = seg.coords.map(([lon, lat]) => latLngToPixel(lat, lon));
+    const lineGen = d3.line().x(d=>d[0]).y(d=>d[1]).curve(d3.curveCatmullRom.alpha(0.5));
+    layer.append('path').attr('d', lineGen(pts))
+      .attr('fill','none').attr('stroke', color).attr('stroke-width', 2.5)
+      .attr('stroke-opacity', 0.8).attr('stroke-linecap','round')
+      .attr('stroke-dasharray', seg.dashed ? '7,5' : 'none')
+      .attr('pointer-events','none');
+    // Arrow at end
+    if (pts.length >= 2) {
+      const [x2,y2] = pts[pts.length-1];
+      const [x1,y1] = pts[pts.length-2];
+      const angle = Math.atan2(y2-y1, x2-x1) * 180/Math.PI;
+      layer.append('polygon').attr('points','0,-4 9,0 0,4')
+        .attr('fill', color).attr('opacity',0.85)
+        .attr('transform',`translate(${x2},${y2}) rotate(${angle})`);
+    }
+  });
+}
+
+// ── PLACE TOOLTIP ──────────────────────────────────────────────────────────
+let tooltipEl = null;
+function showPlaceTooltip(place, x, y) {
+  clearTooltip();
+  const panel = document.getElementById('map-panel').getBoundingClientRect();
+  const tip = document.createElement('div');
+  tip.className = 'place-tooltip';
+  tip.innerHTML = `<div class="tip-ancient">${place.ancient}</div><div class="tip-modern">${place.modern}</div>`;
+  tip.style.left = Math.min(panel.left + x + 12, window.innerWidth - 210) + 'px';
+  tip.style.top = Math.max(panel.top + y - 52, 10) + 'px';
+  document.body.appendChild(tip);
+  tooltipEl = tip;
+  setTimeout(clearTooltip, 3000);
+}
+function clearTooltip() { if (tooltipEl) { tooltipEl.remove(); tooltipEl = null; } }
+document.addEventListener('pointerdown', clearTooltip);
+
+// ══════════════════════════════════════════════════════════════════════════
+// STORY ENGINE
+// ══════════════════════════════════════════════════════════════════════════
 function showStory(story) {
   currentStory = story;
-  const panel = document.getElementById('story-panel');
-  const content = document.getElementById('story-content');
   const color = ERA_HEX[story.era] || '#888';
   const eraName = ERA_NAMES[story.era] || story.era;
-
-  content.innerHTML = `
-    <div class="story-era-badge"
-         style="background:${color}22;border:1px solid ${color}66;color:${color}">
-      ${eraName}
-    </div>
+  document.getElementById('story-content').innerHTML = `
+    <div class="story-era-badge" style="background:${color}22;border:1px solid ${color}66;color:${color}">${eraName}</div>
     <div class="story-name">${story.name}</div>
     <div class="story-ref">${story.ref}</div>
     <div class="story-divider"></div>
     <div class="story-text">${story.summary}</div>
     ${story.places && story.places.length ? `
       <div class="story-section-head">Key Places</div>
-      <div class="story-places">
-        ${story.places.map(pid => {
-          const p = PLACES.find(x => x.id === pid);
-          if (!p) return '';
-          const label = showModernNames ? p.modern : p.ancient;
-          return `<span class="story-place-chip" data-pid="${pid}"
-            onclick="panToPlace('${pid}')">${label}</span>`;
-        }).join('')}
-      </div>` : ''}
-    ${story.chapter ? `<a href="${story.chapter}" class="story-chapter-link">
-      Read in Scripture Deep Dive →</a>` : ''}
+      <div class="story-places">${story.places.map(pid => {
+        const p = PLACES.find(x=>x.id===pid);
+        if(!p) return '';
+        return `<span class="story-place-chip" data-pid="${pid}" onclick="panToPlace('${pid}')">${showModernNames?p.modern:p.ancient}</span>`;
+      }).join('')}</div>` : ''}
+    ${story.chapter ? `<a href="${story.chapter}" class="story-chapter-link">Read in Scripture Deep Dive →</a>` : ''}
   `;
-
-  panel.classList.add('open');
-
-  // Update mobile label
+  document.getElementById('story-panel').classList.add('open');
   const lbl = document.getElementById('mobile-story-label');
   if (lbl) lbl.textContent = story.name;
-
-  // Render overlays
-  renderStoryOverlays(story);
+  updateD3Overlay();
+  // Auto-fit map to story's places
+  if (story.places && story.places.length) {
+    const pts = story.places.map(pid => PLACES.find(p=>p.id===pid)).filter(Boolean);
+    if (pts.length) {
+      const bounds = L.latLngBounds(pts.map(p => [p.lat, p.lon]));
+      leafletMap.fitBounds(bounds, { padding: [60,60], maxZoom: 8 });
+    }
+  }
 }
 
 function closeStory() {
   document.getElementById('story-panel').classList.remove('open');
-  clearStoryOverlays();
   document.querySelectorAll('.story-btn').forEach(b => b.classList.remove('active'));
   const lbl = document.getElementById('mobile-story-label');
-  if (lbl) lbl.textContent = currentEra === 'all' ? 'Select a Story' : (ERA_NAMES[currentEra] || currentEra);
+  if (lbl) lbl.textContent = 'Select a Story';
   currentStory = null;
+  updateD3Overlay();
+  history.replaceState(null, '', location.pathname);
+}
+
+function selectStory(id) {
+  const story = STORIES.find(s => s.id === id);
+  if (!story) return;
+  document.querySelectorAll('.story-btn').forEach(b => b.classList.toggle('active', b.dataset.id === id));
+  showStory(story);
+  history.replaceState(null, '', '#' + id);
 }
 
 function panToPlace(pid) {
-  const place = PLACES.find(p => p.id === pid);
-  if (!place || !currentProjection || !zoomBehavior) return;
-  const svgEl = document.getElementById('map-svg');
-  const svg = d3.select(svgEl);
-  const panel = document.getElementById('map-panel');
-  const W = panel.clientWidth, H = panel.clientHeight;
-  const currentT = d3.zoomTransform(svgEl);
-  const scale = Math.max(currentT.k, 3);
-  const [px, py] = currentProjection([place.lon, place.lat]);
-  svg.transition().duration(600).call(
-    zoomBehavior.transform,
-    d3.zoomIdentity.translate(W/2 - px*scale, H/2 - py*scale).scale(scale)
-  );
+  const p = PLACES.find(x => x.id === pid);
+  if (!p || !leafletMap) return;
+  leafletMap.setView([p.lat, p.lon], Math.max(leafletMap.getZoom(), 7), { animate: true });
 }
 
-// ── OVERLAY RENDERING ──────────────────────────────────────────────────────
-function renderStoryOverlays(story) {
-  clearStoryOverlays();
-  if (!currentProjection) return;
-  const g = d3.select('#map-svg g.map-root');
-  const regLayer = g.select('.story-regions');
-  const pathLayer = g.select('.story-paths');
-  const path = d3.geoPath().projection(currentProjection);
-  const color = ERA_HEX[story.era] || '#888';
-
-  // Regions
-  (story.regions || []).forEach((region, i) => {
-    const geojsonPoly = {
-      type:'Feature',
-      geometry:{ type:'Polygon', coordinates:[region.coords] }
-    };
-    regLayer.append('path')
-      .datum(geojsonPoly)
-      .attr('class','story-region-fill')
-      .attr('d', path)
-      .attr('fill', region.color || color)
-      .attr('fill-opacity', 0.22)
-      .attr('stroke', region.color || color)
-      .attr('stroke-width', 1.2)
-      .attr('stroke-opacity', 0.55)
-      .attr('stroke-dasharray', '4,3')
-      .attr('pointer-events', 'none');
-
-    // Region label at centroid
-    if (region.label) {
-      const centroid = path.centroid(geojsonPoly);
-      if (centroid && !isNaN(centroid[0])) {
-        regLayer.append('text')
-          .attr('class','story-region-label')
-          .attr('x', centroid[0]).attr('y', centroid[1])
-          .attr('text-anchor','middle')
-          .attr('font-family', "'Cinzel', serif")
-          .attr('font-size','8px')
-          .attr('fill', region.color || color)
-          .attr('opacity',0.7)
-          .attr('pointer-events','none')
-          .text(region.label);
-      }
+function centreMap() {
+  if (!leafletMap) return;
+  if (currentStory && currentStory.places && currentStory.places.length) {
+    const pts = currentStory.places.map(pid => PLACES.find(p=>p.id===pid)).filter(Boolean);
+    if (pts.length) {
+      leafletMap.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lon])), { padding: [60,60], maxZoom: 8 });
+      return;
     }
-  });
-
-  // Journey paths
-  (story.paths || []).forEach((seg, i) => {
-    const line = d3.line()
-      .x(d => currentProjection(d)[0])
-      .y(d => currentProjection(d)[1])
-      .curve(d3.curveCatmullRom.alpha(0.5));
-
-    const points = seg.coords.map(c => Array.isArray(c) ? c : [c.lon, c.lat]);
-
-    pathLayer.append('path')
-      .attr('class','story-path')
-      .attr('d', line(points))
-      .attr('fill','none')
-      .attr('stroke', color)
-      .attr('stroke-width', 2)
-      .attr('stroke-opacity', 0.75)
-      .attr('stroke-dasharray', seg.dashed ? '6,4' : 'none')
-      .attr('stroke-linecap','round')
-      .attr('pointer-events','none');
-
-    // Arrow at end of path
-    const last = currentProjection(points[points.length-1]);
-    const prev = currentProjection(points[Math.max(0,points.length-2)]);
-    if (last && prev) {
-      const angle = Math.atan2(last[1]-prev[1], last[0]-prev[0]) * 180/Math.PI;
-      pathLayer.append('polygon')
-        .attr('points','0,-4 8,0 0,4')
-        .attr('fill', color)
-        .attr('opacity', 0.8)
-        .attr('transform',`translate(${last[0]},${last[1]}) rotate(${angle})`);
-    }
-  });
-
-  // Re-render places filtered to this story
-  const mapG = d3.select('#map-svg g.map-root');
-  renderPlaces(mapG, currentProjection, [story.id]);
-}
-
-function clearStoryOverlays() {
-  d3.select('.story-regions').selectAll('*').remove();
-  d3.select('.story-paths').selectAll('*').remove();
-  // Re-render all places
-  if (currentProjection) {
-    const mapG = d3.select('#map-svg g.map-root');
-    renderPlaces(mapG, currentProjection, null);
   }
+  leafletMap.setView([31.5, 37], 5, { animate: true });
+}
+
+// ── NAME TOGGLE ────────────────────────────────────────────────────────────
+function toggleNames() {
+  showModernNames = !showModernNames;
+  const btn = document.getElementById('names-toggle-btn');
+  if (btn) { btn.textContent = showModernNames ? '⇄ Modern Names' : '⇄ Ancient Names'; btn.classList.toggle('active', showModernNames); }
+  const mBtn = document.getElementById('mobile-names-btn');
+  if (mBtn) mBtn.classList.toggle('active', showModernNames);
+  d3.selectAll('.ancient-label').style('display', showModernNames ? 'none' : null);
+  d3.selectAll('.modern-label').style('display', showModernNames ? null : 'none');
+  if (currentStory) {
+    document.querySelectorAll('.story-place-chip').forEach(chip => {
+      const p = PLACES.find(x=>x.id===chip.dataset.pid);
+      if (p) chip.textContent = showModernNames ? p.modern : p.ancient;
+    });
+  }
+}
+
+// ── LEGEND ─────────────────────────────────────────────────────────────────
+function toggleLegend() { document.getElementById('legend').classList.toggle('collapsed'); }
+function toggleMobileLegend() {
+  const leg = document.getElementById('legend-mobile');
+  leg.classList.toggle('collapsed');
+  const chev = document.getElementById('legend-btn-chev');
+  if (chev) chev.style.transform = leg.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
 }
 
 // ── STORY PICKER ───────────────────────────────────────────────────────────
@@ -1901,57 +1285,45 @@ function buildStoryPicker(era) {
   if (!container) return;
   const filtered = era === 'all' ? STORIES : STORIES.filter(s => s.era === era);
   container.innerHTML = filtered.length
-    ? filtered.map(s =>
-        `<button class="story-btn" data-id="${s.id}"
-          onclick="selectStory('${s.id}')">${s.name}</button>`
-      ).join('')
-    : '<span style="color:var(--text-muted);font-size:.7rem;font-family:'Cinzel',serif;letter-spacing:.08em">No stories for this era</span>';
+    ? filtered.map(s => `<button class="story-btn" data-id="${s.id}" onclick="selectStory('${s.id}')">${s.name}</button>`).join('')
+    : '<span style="color:var(--text-muted);font-size:.7rem;font-family:'Cinzel',serif">No stories for this era</span>';
 }
 
-function selectStory(id) {
-  const story = STORIES.find(s => s.id === id);
-  if (!story) return;
-  // Mark active btn
-  document.querySelectorAll('.story-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.id === id));
-  showStory(story);
-  // Update URL hash without scrolling
-  history.replaceState(null, '', '#' + id);
-}
+// ── ERA FILTER ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.era-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentEra = btn.dataset.era;
+    buildStoryPicker(currentEra);
+    const lbl = document.getElementById('mobile-story-label');
+    if (lbl && !currentStory) lbl.textContent = currentEra === 'all' ? 'Select a Story' : (ERA_NAMES[currentEra] || currentEra);
+  });
+});
 
-// ── AUTO-CENTRE ON STORY ──────────────────────────────────────────────────
-function centreMap() {
-  if (!zoomBehavior || !currentProjection) return;
-  const svgEl = document.getElementById('map-svg');
-  const svg = d3.select(svgEl);
-  const panel = document.getElementById('map-panel');
-  const W = panel.clientWidth, H = panel.clientHeight;
+// ── SWIPE / KEYBOARD ───────────────────────────────────────────────────────
+(function() {
+  let startY = 0;
+  const handle = document.getElementById('story-handle');
+  if (!handle) return;
+  handle.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+  handle.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - startY > 40) closeStory(); }, { passive: true });
+})();
 
-  if (currentStory && currentStory.places && currentStory.places.length) {
-    const pts = currentStory.places.map(pid => {
-      const p = PLACES.find(x => x.id === pid);
-      return p ? currentProjection([p.lon, p.lat]) : null;
-    }).filter(Boolean);
-    if (pts.length) {
-      const cx = pts.reduce((a,b)=>a+b[0],0)/pts.length;
-      const cy = pts.reduce((a,b)=>a+b[1],0)/pts.length;
-      const scale = d3.zoomTransform(svgEl).k;
-      svg.transition().duration(500).call(
-        zoomBehavior.transform,
-        d3.zoomIdentity.translate(W/2-cx*scale, H/2-cy*scale).scale(scale)
-      );
-      return;
-    }
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeStory(); }
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    const btns = [...document.querySelectorAll('.story-btn')];
+    if (!btns.length) return;
+    const ai = btns.findIndex(b => b.classList.contains('active'));
+    const next = e.key === 'ArrowRight' ? (ai+1)%btns.length : (ai-1+btns.length)%btns.length;
+    btns[next].click();
+    btns[next].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   }
-  // Default: reset to initial view
-  svg.transition().duration(500).call(
-    zoomBehavior.transform, d3.zoomIdentity.scale(1)
-  );
-}
+});
 
-// ── INIT ──────────────────────────────────────────────────────────────────
+// ── INIT ───────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
-  // Collapse mobile legend by default
   if (window.innerWidth <= 768) {
     const legM = document.getElementById('legend-mobile');
     if (legM) legM.classList.add('collapsed');
@@ -1959,31 +1331,18 @@ window.addEventListener('DOMContentLoaded', () => {
     if (chev) chev.style.transform = 'rotate(-90deg)';
   }
   buildStoryPicker('all');
-  renderMap();
-  // Deep-link: map.html#story-id
+  initMap();
+
+  // Hash deep-link
   const hash = location.hash.replace('#', '');
   if (hash) {
     const story = STORIES.find(s => s.id === hash);
     if (story) {
-      // Switch era filter to match
       const eraBtn = document.querySelector(`.era-btn[data-era="${story.era}"]`);
-      if (eraBtn) {
-        document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
-        eraBtn.classList.add('active');
-        currentEra = story.era;
-        buildStoryPicker(story.era);
-      }
-      // Small delay to let renderMap complete
-      setTimeout(() => selectStory(story.id), 150);
+      if (eraBtn) { document.querySelectorAll('.era-btn').forEach(b=>b.classList.remove('active')); eraBtn.classList.add('active'); currentEra=story.era; buildStoryPicker(story.era); }
+      setTimeout(() => selectStory(story.id), 300);
     }
   }
-
-  // Re-render on resize
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(renderMap, 200);
-  });
 });
 </script>
 </body>
