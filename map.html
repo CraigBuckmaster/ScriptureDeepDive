@@ -599,6 +599,49 @@ body {
   color: var(--text-muted);
   font-style: italic;
 }
+
+/* ── STORY PICKER ────────────────────────────────────────────── */
+#story-picker-wrap {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border2);
+  overflow-x: auto;
+  flex-shrink: 0;
+  scrollbar-width: none;
+}
+#story-picker-wrap::-webkit-scrollbar { display: none; }
+#story-picker {
+  display: flex;
+  gap: .3rem;
+  padding: .45rem 1.2rem;
+  min-height: 36px;
+  align-items: center;
+}
+.story-btn {
+  font-family: 'Cinzel', serif;
+  font-size: .55rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .25rem .65rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.story-btn:hover { border-color: var(--border2); color: var(--text-dim); }
+.story-btn.active {
+  background: rgba(201,168,76,.12);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  #story-picker { padding: .4rem .8rem; }
+  .story-btn { font-size: .52rem; }
+}
+
 </style>
 </head>
 <body>
@@ -630,6 +673,14 @@ body {
   <button class="era-btn" data-era="prophets">Prophets</button>
   <button class="era-btn" data-era="exile">Exile &amp; Return</button>
   <button class="era-btn" data-era="nt">New Testament</button>
+</div>
+
+
+<!-- STORY PICKER -->
+<div id="story-picker-wrap">
+  <div id="story-picker">
+    <!-- populated by buildStoryPicker() -->
+  </div>
 </div>
 
 <!-- MOBILE CONTROLS BAR -->
@@ -913,6 +964,8 @@ function renderMap() {
 
   // ── PLACE NAME LAYER ──────────────────────────────────────────────────
   renderPlaces(g, projection, null); // show all places on load
+  // Store projection reference for story engine
+  currentProjection = projection;
 
   // ── VIGNETTE OVERLAY ────────────────────────────────────────────────
   svg.append('rect')
@@ -938,16 +991,7 @@ function renderMap() {
 // CONTROLS
 // ══════════════════════════════════════════════════════════════════════════
 
-function centreMap() {
-  if (!zoomBehavior) return;
-  const panel = document.getElementById('map-panel');
-  const svgEl = document.getElementById('map-svg');
-  const svg = d3.select(svgEl);
-  const currentScale = d3.zoomTransform(svgEl).k;
-  svg.transition().duration(500)
-    .call(zoomBehavior.transform,
-      d3.zoomIdentity.translate(0, 0).scale(currentScale));
-}
+// centreMap() defined in story engine above
 
 function toggleNames() {
   showModernNames = !showModernNames;
@@ -989,7 +1033,7 @@ document.querySelectorAll('.era-btn').forEach(btn => {
     if (lbl) lbl.textContent = currentEra === 'all'
       ? 'Select a Story'
       : (ERA_NAMES[currentEra] || currentEra);
-    // Story filter will be wired in Batch 3
+    buildStoryPicker(currentEra);
   });
 });
 
@@ -1245,6 +1289,386 @@ function clearPlaceTooltip() {
 // Close tooltip on map interaction
 document.addEventListener('pointerdown', () => clearPlaceTooltip());
 
+
+// ══════════════════════════════════════════════════════════════════════════
+// STORIES DATA — OT Early (Batch 3)
+// ══════════════════════════════════════════════════════════════════════════
+const STORIES = [
+
+  // ── PRIMEVAL ─────────────────────────────────────────────────────────────
+  {
+    id:'eden', era:'primeval', name:'Garden of Eden',
+    ref:'Genesis 2:8 – 3:24',
+    chapter:'ot/genesis/Genesis_2.html',
+    summary:'God planted a garden in Eden, eastward — a place of abundance, beauty, and direct communion with him. The man was placed there to work and keep it, given freedom over every tree except one. In this garden the serpent\'s deception unravelled everything: Eve ate, Adam ate, innocence shattered. God\'s response was both judgment and mercy — cursing the ground, promising pain in childbirth and death, but also speaking the first messianic prophecy: the woman\'s offspring would crush the serpent\'s head. They were expelled, cherubim set to guard the way back. The garden became the image of what was lost and what will one day be restored.',
+    places:['eden','shinar'],
+    regions:[
+      { coords:[[42,29],[48,29],[48,33],[42,33],[42,29]], color:'#8b6914', label:'Eden region (traditional)' }
+    ],
+    paths:[]
+  },
+  {
+    id:'flood', era:'primeval', name:"Noah's Flood",
+    ref:'Genesis 6:9 – 9:17',
+    chapter:'ot/genesis/Genesis_6.html',
+    summary:'The earth had filled with violence. God grieved that he had made humanity. Into this darkness he came with both judgment and grace — announcing a flood that would cover every mountain, commissioning an ark of precise dimensions, and placing his trust in one man found righteous. Noah built for decades. The rain fell for forty days; the waters prevailed for one hundred and fifty. Every air-breathing creature outside the ark perished. As the waters receded, Noah sent out a raven, then a dove, then a dove again that returned with an olive leaf — the first sign of a restored world. He disembarked, built an altar, and the smell of the sacrifice moved God to promise: never again a flood to destroy all life. The rainbow was set as the sign of this first formal covenant in redemptive history.',
+    places:['ararat'],
+    regions:[
+      { coords:[[35,32],[55,32],[55,42],[35,42],[35,32]], color:'#8b6914', label:'Region of the Flood' }
+    ],
+    paths:[
+      { coords:[[44.5,30],[44.5,39.7]], dashed:false, label:'Ark\'s journey' }
+    ]
+  },
+  {
+    id:'babel', era:'primeval', name:'Tower of Babel',
+    ref:'Genesis 11:1–9',
+    chapter:'ot/genesis/Genesis_11.html',
+    summary:'After the flood, humanity spoke one language and migrated east to a plain in Shinar — the flat alluvial land of ancient Mesopotamia. There they resolved to build a city and a tower that reached the heavens, to make a name for themselves and resist scattering. God came down, observed the project, and confused their language so they could not understand each other. The building stopped. The people scattered across the face of the earth. The city was called Babel — meaning "confusion" — and from it the word Babylon derives. The story is both a historical explanation of linguistic diversity and a theological statement: human empire-building in defiance of God ends in disarray.',
+    places:['babel','shinar'],
+    regions:[
+      { coords:[[43,31],[47,31],[47,34],[43,34],[43,31]], color:'#8b6914', label:'Land of Shinar' }
+    ],
+    paths:[]
+  },
+
+  // ── PATRIARCHAL ──────────────────────────────────────────────────────────
+  {
+    id:'abram-call', era:'patriarch', name:"Abraham's Call",
+    ref:'Genesis 12:1 – 13:18',
+    chapter:'ot/genesis/Genesis_12.html',
+    summary:'God\'s call to Abram was stark and unconditional: leave your country, your people, your father\'s household, and go to the land I will show you. The promise attached was staggering — a great nation, a great name, a blessing to all peoples on earth. Abram went at seventy-five, taking Sarai, Lot, and all they had accumulated in Haran. He entered Canaan at Shechem, where God appeared and promised the land to his offspring. He built altars at Shechem and Bethel — acts of worship that marked the land as God\'s gift. Famine drove him south to Egypt; he returned with great wealth. After a dispute between his herdsmen and Lot\'s, Abram generously gave Lot first choice of the land. Lot chose the well-watered plain of the Jordan; Abram remained in Canaan. God then told Abram to walk the length and breadth of the land — it was all his.',
+    places:['ur','haran','shechem','bethel','hebron','negev'],
+    regions:[
+      { coords:[[34,30],[36,30],[36,34],[34,34],[34,30]], color:'#7a5c9a', label:'Land of Canaan' }
+    ],
+    paths:[
+      { coords:[[46.1,30.9],[38.9,36.8]], dashed:false, label:'Ur to Haran' },
+      { coords:[[38.9,36.8],[35.3,32.2]], dashed:false, label:'Haran to Shechem' },
+      { coords:[[35.3,32.2],[35.2,31.9],[35.1,31.5],[34.8,30.8]], dashed:false, label:'South through Canaan' }
+    ]
+  },
+  {
+    id:'abram-egypt', era:'patriarch', name:'Abraham in Egypt',
+    ref:'Genesis 12:10–20; 20:1–18',
+    chapter:'ot/genesis/Genesis_12.html',
+    summary:'Twice Abraham descended to foreign territory and told the same lie — that Sarah was his sister rather than his wife. The first time, severe famine drove him to Egypt. Pharaoh\'s officials reported Sarah\'s beauty; she was taken into his household. God afflicted Pharaoh\'s house with plagues until the truth came out. Pharaoh confronted Abraham, expelled him with his wife, and sent him away with everything he had brought. The second occasion was at Gerar, under Abimelech king of the Philistines. Again Abraham\'s fear led him to the half-truth. God appeared to Abimelech in a dream and warned him. Abraham prayed, and God healed Abimelech\'s household. Through both episodes the pattern is consistent: God protected the woman who would bear the promised son, even when Abraham\'s faith gave out.',
+    places:['egypt','nile-delta','negev'],
+    regions:[
+      { coords:[[29,28],[34,28],[34,32],[29,32],[29,28]], color:'#7a5c9a', label:'Egypt' }
+    ],
+    paths:[
+      { coords:[[34.8,30.8],[31.2,28.5]], dashed:false, label:'Negev to Egypt' },
+      { coords:[[31.2,28.5],[34.8,30.8]], dashed:true, label:'Return from Egypt' }
+    ]
+  },
+  {
+    id:'sodom', era:'patriarch', name:'Destruction of Sodom',
+    ref:'Genesis 18:1 – 19:38',
+    chapter:'ot/genesis/Genesis_18.html',
+    summary:'Three visitors came to Abraham at the oaks of Mamre near Hebron. One was the LORD himself. He announced that Sarah — at ninety — would bear a son within the year. He also revealed the impending judgment on Sodom and Gomorrah, whose outcry for sin had reached heaven. Abraham interceded with extraordinary boldness, negotiating God down from fifty righteous to ten. There were not ten. Two angels arrived in Sodom at evening. Lot insisted they enter his house. The men of Sodom surrounded it demanding the visitors be handed over. The angels struck the crowd blind and told Lot to take his family and flee — the city would be destroyed. They fled to Zoar. As they ran, the LORD rained burning sulphur on Sodom and Gomorrah. Lot\'s wife looked back and became a pillar of salt. Abraham looked from Mamre and saw the smoke rising like smoke from a furnace.',
+    places:['hebron','sodom','dead-sea'],
+    regions:[
+      { coords:[[35,30.5],[36.5,30.5],[36.5,32],[35,32],[35,30.5]], color:'#7a5c9a', label:'Plain of Jordan' }
+    ],
+    paths:[
+      { coords:[[35.1,31.5],[35.5,31.0]], dashed:false, label:'Angels to Sodom' }
+    ]
+  },
+  {
+    id:'isaac-birth', era:'patriarch', name:'Isaac & the Covenant',
+    ref:'Genesis 21–22',
+    chapter:'ot/genesis/Genesis_21.html',
+    summary:'Isaac was born at last — the impossible child, Abraham at one hundred, Sarah at ninety. He was circumcised on the eighth day. Sarah\'s laughter of incredulity became laughter of joy. The crisis came when God tested Abraham with the most devastating possible command: take your son, your only son Isaac whom you love, to the land of Moriah and offer him as a burnt offering. Abraham rose early, saddled his donkey, and went. On the third day he saw the place from far off. He told his servants "We will come back to you" — a statement of faith that Hebrews 11 reads as belief in resurrection. Isaac carried the wood; Abraham the fire and knife. When Isaac asked where the lamb was, Abraham said "God himself will provide." The knife was raised. The angel of the LORD called: "Do not lay a hand on the boy." A ram was caught in the thicket by its horns. Abraham named the place "The LORD Will Provide." The covenant was reconfirmed with oath: all nations on earth would be blessed through his offspring.',
+    places:['beersheba','moriah'],
+    regions:[],
+    paths:[
+      { coords:[[34.8,31.2],[35.2,31.8]], dashed:false, label:'Beersheba to Moriah' }
+    ]
+  },
+  {
+    id:'jacob-journey', era:'patriarch', name:"Jacob's Journey",
+    ref:'Genesis 27–35',
+    chapter:'ot/genesis/Genesis_28.html',
+    summary:'Jacob left Beersheba under a cloud — his brother Esau murderous after the stolen blessing. At Bethel he dreamed of a stairway to heaven with angels ascending and descending, and God stood above it renewing the Abrahamic promises: the land, countless descendants, blessing to all peoples. He arrived in Paddan-Aram and met Rachel at a well. He served her father Laban seven years; Laban substituted Leah on the wedding night; he served seven more years for Rachel. After twenty years, four wives, twelve children, and great wealth accumulated through divine guidance, he fled at God\'s direction. Laban pursued but God warned him in a dream not to harm Jacob. At the Jabbok river Jacob wrestled through the night with a divine figure, refused to let go without a blessing, had his hip dislocated, and received a new name: Israel. He was reconciled with Esau. God renewed the covenant at Bethel and renamed him Israel again. Rachel died giving birth to Benjamin near Bethlehem.',
+    places:['beersheba','bethel','haran','paddan-aram','peniel','hebron'],
+    regions:[],
+    paths:[
+      { coords:[[34.8,31.2],[35.2,31.9]], dashed:false, label:'Beersheba to Bethel' },
+      { coords:[[35.2,31.9],[38.9,36.8]], dashed:false, label:'Bethel to Paddan-Aram' },
+      { coords:[[38.9,36.8],[35.8,32.3]], dashed:true, label:'Return journey' },
+      { coords:[[35.8,32.3],[35.1,31.5]], dashed:false, label:'To Hebron' }
+    ]
+  },
+  {
+    id:'joseph-egypt', era:'patriarch', name:'Joseph in Egypt',
+    ref:'Genesis 37–50',
+    chapter:'ot/genesis/Genesis_37.html',
+    summary:'Joseph was sold into slavery by his own brothers for twenty pieces of silver at Dothan. The Ishmaelite traders took him to Egypt, where he was sold to Potiphar, captain of Pharaoh\'s guard. False accusation landed him in prison. In prison he interpreted the dreams of two royal officials with perfect accuracy. Two years later, Pharaoh dreamed of seven fat cows and seven thin ones. Joseph was recalled, interpreted the dream as seven years of abundance followed by seven of famine, and was made second in command of all Egypt. He was thirty years old. During the famine, his brothers came to buy grain — twice. On the second visit he revealed himself weeping: "I am Joseph your brother whom you sold into Egypt." His theological conclusion: "You intended to harm me, but God intended it for good." Jacob and the whole family — seventy people — came to Egypt and settled in the land of Goshen. Jacob lived seventeen more years in Egypt and died at one hundred and forty-seven.',
+    places:['dothan','egypt','goshen','memphis','on'],
+    regions:[
+      { coords:[[29,28],[34,28],[34,32],[29,32],[29,28]], color:'#7a5c9a', label:'Egypt' }
+    ],
+    paths:[
+      { coords:[[35.2,32.4],[34.0,30.5]], dashed:false, label:'Dothan to Egypt' },
+      { coords:[[35.1,31.5],[31.8,30.8]], dashed:false, label:'Family to Goshen' }
+    ]
+  },
+
+  // ── EXODUS ───────────────────────────────────────────────────────────────
+  {
+    id:'exodus-plagues', era:'exodus', name:'The Exodus & Plagues',
+    ref:'Exodus 1–15',
+    chapter:'ot/exodus/Exodus_1.html',
+    summary:'Four hundred years after Joseph, a Pharaoh who did not know Joseph enslaved Israel and ordered all newborn Hebrew boys drowned in the Nile. Moses survived in a basket, grew up in the palace, killed an Egyptian, and fled to Midian for forty years. At the burning bush God commissioned him: bring my people out of Egypt. The confrontation with Pharaoh was a theological war against Egypt\'s gods — ten plagues dismantling each major deity: the Nile turned to blood, frogs, gnats, flies, livestock disease, boils, hail, locusts, darkness, and finally the death of every firstborn. Israel was protected by the blood of the Passover lamb on their doorposts. Pharaoh expelled them. At the Red Sea, Pharaoh\'s army pursued, God parted the waters, Israel crossed on dry ground, and the army was swallowed. Moses and Miriam led the song of victory: "Sing to the LORD, for he is highly exalted."',
+    places:['rameses','pithom','nile-delta','egypt','red-sea'],
+    regions:[
+      { coords:[[29,28],[34,28],[34,32],[29,32],[29,28]], color:'#4a8a5a', label:'Egypt' }
+    ],
+    paths:[
+      { coords:[[31.8,30.8],[32.5,29.5]], dashed:false, label:'Exodus route to Red Sea' }
+    ]
+  },
+  {
+    id:'wilderness', era:'exodus', name:'Wilderness Wandering',
+    ref:'Exodus 16 – Numbers 36',
+    chapter:'ot/exodus/Exodus_16.html',
+    summary:'Forty years in the Sinai Peninsula — the consequence of refusing to enter the Promised Land at Kadesh-Barnea when the twelve spies reported. The wilderness was also the place of formation: manna every morning, water from a rock, quail when they complained. The Tabernacle was built at Sinai as a portable dwelling for the divine presence, carried through every camp. The cloud led them by day, the pillar of fire by night. At Kadesh the spies returned; ten gave a fearful report; the people wept and wanted to return to Egypt; only Caleb and Joshua urged faith. God declared that generation would not enter the land. They wandered until the original generation had died. The book of Numbers traces the journey from Sinai through the Negev, Edom, Moab, and finally to the plains of Moab opposite Jericho — the threshold of the promised land.',
+    places:['red-sea','sinai','kadesh','sinai-pen'],
+    regions:[
+      { coords:[[32,28],[36,28],[36,31],[32,31],[32,28]], color:'#4a8a5a', label:'Sinai Peninsula' }
+    ],
+    paths:[
+      { coords:[[32.5,29.5],[33.97,28.54]], dashed:false, label:'To Sinai' },
+      { coords:[[33.97,28.54],[34.4,30.7]], dashed:false, label:'Sinai to Kadesh' },
+      { coords:[[34.4,30.7],[35.6,32.0]], dashed:true, label:'40 years wandering (summary)' }
+    ]
+  },
+  {
+    id:'sinai', era:'exodus', name:'Mount Sinai',
+    ref:'Exodus 19–40; Leviticus',
+    chapter:'ot/exodus/Exodus_19.html',
+    summary:'Israel camped at the foot of Sinai for approximately a year. God descended on the mountain in fire and smoke; the whole mountain shook; a trumpet blast grew louder and louder. God spoke the Ten Commandments to the whole assembly, whose terror was so great they begged Moses to be the mediator. Moses ascended into the cloud-covered summit — he was there forty days and forty nights, receiving the Torah: the covenant code, the Tabernacle design, the priesthood, the sacrificial system. Below, in his absence, Aaron fashioned the golden calf and the people worshipped it. Moses came down, shattered the tablets, interceded for the people. He went back up for another forty days and received the tablets again. The Tabernacle was built exactly to the design given on the mountain. On the day it was completed, the cloud covered it and the glory of the LORD filled it.',
+    places:['sinai','sinai-pen'],
+    regions:[
+      { coords:[[33.3,27.8],[34.8,27.8],[34.8,29.5],[33.3,29.5],[33.3,27.8]], color:'#4a8a5a', label:'Sinai region' }
+    ],
+    paths:[]
+  },
+];
+
+
+// ══════════════════════════════════════════════════════════════════════════
+// STORY ENGINE — Batch 3
+// ══════════════════════════════════════════════════════════════════════════
+
+const ERA_HEX = {
+  primeval:  '#8b6914', patriarch: '#7a5c9a', exodus: '#4a8a5a',
+  judges:    '#8a6a2a', kingdom:   '#5a7a9a', prophets:'#9a4a4a',
+  exile:     '#4a7a8a', nt:        '#c9a84c',
+};
+
+function showStory(story) {
+  currentStory = story;
+  const panel = document.getElementById('story-panel');
+  const content = document.getElementById('story-content');
+  const color = ERA_HEX[story.era] || '#888';
+  const eraName = ERA_NAMES[story.era] || story.era;
+
+  content.innerHTML = `
+    <div class="story-era-badge"
+         style="background:${color}22;border:1px solid ${color}66;color:${color}">
+      ${eraName}
+    </div>
+    <div class="story-name">${story.name}</div>
+    <div class="story-ref">${story.ref}</div>
+    <div class="story-divider"></div>
+    <div class="story-text">${story.summary}</div>
+    ${story.places && story.places.length ? `
+      <div class="story-section-head">Key Places</div>
+      <div class="story-places">
+        ${story.places.map(pid => {
+          const p = PLACES.find(x => x.id === pid);
+          if (!p) return '';
+          const label = showModernNames ? p.modern : p.ancient;
+          return `<span class="story-place-chip"
+            onclick="panToPlace('${pid}')">${label}</span>`;
+        }).join('')}
+      </div>` : ''}
+    ${story.chapter ? `<a href="${story.chapter}" class="story-chapter-link">
+      Read in Scripture Deep Dive →</a>` : ''}
+  `;
+
+  panel.classList.add('open');
+
+  // Update mobile label
+  const lbl = document.getElementById('mobile-story-label');
+  if (lbl) lbl.textContent = story.name;
+
+  // Render overlays
+  renderStoryOverlays(story);
+}
+
+function closeStory() {
+  document.getElementById('story-panel').classList.remove('open');
+  clearStoryOverlays();
+  const lbl = document.getElementById('mobile-story-label');
+  if (lbl) lbl.textContent = currentEra === 'all' ? 'Select a Story' : (ERA_NAMES[currentEra] || currentEra);
+  currentStory = null;
+}
+
+function panToPlace(pid) {
+  const place = PLACES.find(p => p.id === pid);
+  if (!place || !currentProjection || !zoomBehavior) return;
+  const svgEl = document.getElementById('map-svg');
+  const svg = d3.select(svgEl);
+  const panel = document.getElementById('map-panel');
+  const W = panel.clientWidth, H = panel.clientHeight;
+  const currentT = d3.zoomTransform(svgEl);
+  const scale = Math.max(currentT.k, 3);
+  const [px, py] = currentProjection([place.lon, place.lat]);
+  svg.transition().duration(600).call(
+    zoomBehavior.transform,
+    d3.zoomIdentity.translate(W/2 - px*scale, H/2 - py*scale).scale(scale)
+  );
+}
+
+// ── OVERLAY RENDERING ──────────────────────────────────────────────────────
+function renderStoryOverlays(story) {
+  clearStoryOverlays();
+  if (!currentProjection) return;
+  const g = d3.select('#map-svg g.map-root');
+  const regLayer = g.select('.story-regions');
+  const pathLayer = g.select('.story-paths');
+  const path = d3.geoPath().projection(currentProjection);
+  const color = ERA_HEX[story.era] || '#888';
+
+  // Regions
+  (story.regions || []).forEach((region, i) => {
+    const geojsonPoly = {
+      type:'Feature',
+      geometry:{ type:'Polygon', coordinates:[region.coords] }
+    };
+    regLayer.append('path')
+      .datum(geojsonPoly)
+      .attr('class','story-region-fill')
+      .attr('d', path)
+      .attr('fill', region.color || color)
+      .attr('fill-opacity', 0.22)
+      .attr('stroke', region.color || color)
+      .attr('stroke-width', 1.2)
+      .attr('stroke-opacity', 0.55)
+      .attr('stroke-dasharray', '4,3')
+      .attr('pointer-events', 'none');
+
+    // Region label at centroid
+    if (region.label) {
+      const centroid = path.centroid(geojsonPoly);
+      if (centroid && !isNaN(centroid[0])) {
+        regLayer.append('text')
+          .attr('class','story-region-label')
+          .attr('x', centroid[0]).attr('y', centroid[1])
+          .attr('text-anchor','middle')
+          .attr('font-family', "'Cinzel', serif")
+          .attr('font-size','8px')
+          .attr('fill', region.color || color)
+          .attr('opacity',0.7)
+          .attr('pointer-events','none')
+          .text(region.label);
+      }
+    }
+  });
+
+  // Journey paths
+  (story.paths || []).forEach((seg, i) => {
+    const line = d3.line()
+      .x(d => currentProjection(d)[0])
+      .y(d => currentProjection(d)[1])
+      .curve(d3.curveCatmullRom.alpha(0.5));
+
+    const points = seg.coords.map(c => Array.isArray(c) ? c : [c.lon, c.lat]);
+
+    pathLayer.append('path')
+      .attr('class','story-path')
+      .attr('d', line(points))
+      .attr('fill','none')
+      .attr('stroke', color)
+      .attr('stroke-width', 2)
+      .attr('stroke-opacity', 0.75)
+      .attr('stroke-dasharray', seg.dashed ? '6,4' : 'none')
+      .attr('stroke-linecap','round')
+      .attr('pointer-events','none');
+
+    // Arrow at end of path
+    const last = currentProjection(points[points.length-1]);
+    const prev = currentProjection(points[Math.max(0,points.length-2)]);
+    if (last && prev) {
+      const angle = Math.atan2(last[1]-prev[1], last[0]-prev[0]) * 180/Math.PI;
+      pathLayer.append('polygon')
+        .attr('points','0,-4 8,0 0,4')
+        .attr('fill', color)
+        .attr('opacity', 0.8)
+        .attr('transform',`translate(${last[0]},${last[1]}) rotate(${angle})`);
+    }
+  });
+
+  // Re-render places filtered to this story
+  const mapG = d3.select('#map-svg g.map-root');
+  renderPlaces(mapG, currentProjection, [story.id]);
+}
+
+function clearStoryOverlays() {
+  d3.select('.story-regions').selectAll('*').remove();
+  d3.select('.story-paths').selectAll('*').remove();
+  // Re-render all places
+  if (currentProjection) {
+    const mapG = d3.select('#map-svg g.map-root');
+    renderPlaces(mapG, currentProjection, null);
+  }
+}
+
+// ── STORY PICKER ───────────────────────────────────────────────────────────
+function buildStoryPicker(era) {
+  const container = document.getElementById('story-picker');
+  if (!container) return;
+  const filtered = era === 'all' ? STORIES : STORIES.filter(s => s.era === era);
+  container.innerHTML = filtered.map(s =>
+    `<button class="story-btn" data-id="${s.id}" onclick="showStory(STORIES.find(x=>x.id==='${s.id}'))">
+      ${s.name}
+    </button>`
+  ).join('');
+}
+
+// ── AUTO-CENTRE ON STORY ──────────────────────────────────────────────────
+function centreMap() {
+  if (!zoomBehavior || !currentProjection) return;
+  const svgEl = document.getElementById('map-svg');
+  const svg = d3.select(svgEl);
+  const panel = document.getElementById('map-panel');
+  const W = panel.clientWidth, H = panel.clientHeight;
+
+  if (currentStory && currentStory.places && currentStory.places.length) {
+    const pts = currentStory.places.map(pid => {
+      const p = PLACES.find(x => x.id === pid);
+      return p ? currentProjection([p.lon, p.lat]) : null;
+    }).filter(Boolean);
+    if (pts.length) {
+      const cx = pts.reduce((a,b)=>a+b[0],0)/pts.length;
+      const cy = pts.reduce((a,b)=>a+b[1],0)/pts.length;
+      const scale = d3.zoomTransform(svgEl).k;
+      svg.transition().duration(500).call(
+        zoomBehavior.transform,
+        d3.zoomIdentity.translate(W/2-cx*scale, H/2-cy*scale).scale(scale)
+      );
+      return;
+    }
+  }
+  // Default: reset to initial view
+  svg.transition().duration(500).call(
+    zoomBehavior.transform, d3.zoomIdentity.scale(1)
+  );
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   // Collapse mobile legend by default
@@ -1254,6 +1678,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const chev = document.getElementById('legend-btn-chev');
     if (chev) chev.style.transform = 'rotate(-90deg)';
   }
+  buildStoryPicker('all');
   renderMap();
 
   // Re-render on resize
