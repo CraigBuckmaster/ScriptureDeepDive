@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible World Map — Scripture Deep Dive</title>
+<link rel="manifest" href="../../manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── DESIGN TOKENS ────────────────────────────────────────────── */
+:root {
+  --bg:         #0c0a07;
+  --bg2:        #141008;
+  --bg3:        #1a1508;
+  --border:     #332810;
+  --border2:    #2a2010;
+  --gold:       #c9a84c;
+  --gold-dim:   #7a6020;
+  --gold-bright:#e8c870;
+  --gold-pale:  #f0dfa0;
+  --text:       #f0e8d8;
+  --text-dim:   #b8a880;
+  --text-muted: #6a5a38;
+
+  /* Map parchment palette */
+  --parch-land:   #c8a96e;
+  --parch-land2:  #b8934a;
+  --parch-sea:    #7a9fb5;
+  --parch-sea2:   #5a7a90;
+  --parch-ink:    #3a2a10;
+  --parch-bg:     #d4b483;
+
+  /* Era colours */
+  --era-primeval:   #8b6914;
+  --era-patriarch:  #7a5c9a;
+  --era-exodus:     #4a8a5a;
+  --era-judges:     #8a6a2a;
+  --era-kingdom:    #5a7a9a;
+  --era-prophets:   #9a4a4a;
+  --era-exile:      #4a7a8a;
+  --era-nt:         #c9a84c;
+}
+
+/* ── RESET & BASE ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── SITE NAV ─────────────────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  flex-shrink: 0;
+  gap: 1rem;
+  height: 44px;
+}
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: .6rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: color .15s;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
+.nav-center { flex: 1; text-align: center; }
+.nav-title {
+  font-family: 'Cinzel', serif;
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+.nav-links {
+  display: flex;
+  gap: .8rem;
+}
+.nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .15s;
+}
+.nav-link:hover { color: var(--gold); }
+
+/* ── ERA FILTER STRIP ────────────────────────────────────────── */
+.era-filters {
+  padding: .65rem 1.2rem;
+  border-bottom: 1px solid var(--border2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  align-items: center;
+  background: var(--bg2);
+  flex-shrink: 0;
+}
+.filter-label {
+  font-family: 'Cinzel', serif;
+  font-size: .55rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: .3rem;
+  flex-shrink: 0;
+}
+.era-btn {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .28rem .7rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.era-btn:hover { border-color: var(--border2); color: var(--text-dim); }
+.era-btn.active {
+  background: rgba(201,168,76,.12);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* ── MOBILE CONTROLS BAR ─────────────────────────────────────── */
+#mobile-controls { display: none; }
+#legend-mobile-wrap { display: none; }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────────── */
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── MAP PANEL ───────────────────────────────────────────────── */
+#map-panel {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  background: var(--parch-sea2);
+}
+#map-panel:active { cursor: grabbing; }
+#map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Parchment filter applied to map SVG */
+#map-svg {
+  filter: sepia(0.28) saturate(0.82) contrast(0.96) brightness(0.95);
+}
+
+/* ── MAP HINT ────────────────────────────────────────────────── */
+.map-hint {
+  position: absolute;
+  top: .8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .68rem;
+  color: var(--parch-ink);
+  background: rgba(212,180,131,.85);
+  padding: .28rem .75rem;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity .5s;
+  white-space: nowrap;
+  font-family: 'Cinzel', serif;
+  letter-spacing: .06em;
+  border: 1px solid rgba(58,42,16,.2);
+}
+.map-hint.hidden { opacity: 0; }
+
+/* ── FLOATING CONTROLS (desktop) ─────────────────────────────── */
+.map-float-controls {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  z-index: 10;
+}
+.map-float-btn {
+  background: rgba(12,10,7,.88);
+  border: 1px solid var(--border);
+  color: var(--gold-dim);
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  padding: .4rem .7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.map-float-btn:hover { background: var(--bg3); color: var(--gold); }
+.map-float-btn.active { color: var(--gold); border-color: var(--gold-dim); }
+
+/* ── LEGEND ──────────────────────────────────────────────────── */
+.legend {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  background: rgba(12,10,7,.92);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  pointer-events: all;
+  user-select: none;
+  min-width: 200px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.5);
+  z-index: 10;
+}
+.legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem .8rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border2);
+  transition: background .15s;
+}
+.legend-header:hover { background: rgba(255,255,255,.03); }
+.legend-title {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+.legend-chev {
+  font-size: .62rem;
+  color: var(--text-muted);
+  transition: transform .22s;
+}
+.legend.collapsed .legend-chev { transform: rotate(-90deg); }
+.legend-body {
+  padding: .5rem .8rem .55rem;
+  transition: max-height .25s cubic-bezier(.4,0,.2,1),
+              padding .25s cubic-bezier(.4,0,.2,1);
+  max-height: 260px;
+  overflow: hidden;
+}
+.legend.collapsed .legend-body {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .28rem;
+  font-size: .68rem;
+  color: var(--text-muted);
+}
+.legend-item:last-child { margin-bottom: 0; }
+.legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-line {
+  width: 22px; height: 2px;
+  flex-shrink: 0;
+}
+.legend-dash {
+  width: 22px; height: 2px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(90deg,
+    var(--gold-dim) 0 4px, transparent 4px 7px);
+}
+.legend-sym {
+  font-size: .75rem;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  color: var(--gold);
+}
+
+/* ── STORY PANEL ─────────────────────────────────────────────── */
+#story-panel {
+  width: 0;
+  min-width: 0;
+  background: var(--bg2);
+  border-left: 0px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width .28s cubic-bezier(.4,0,.2,1),
+              border-left-width .28s cubic-bezier(.4,0,.2,1);
+}
+#story-panel.open {
+  width: 340px;
+  min-width: 340px;
+  border-left-width: 1px;
+  overflow-y: auto;
+}
+.story-close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding: .6rem .7rem .3rem;
+  background: var(--bg2);
+  flex-shrink: 0;
+}
+.story-close button {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: .72rem;
+  padding: .22rem .55rem;
+  border-radius: 3px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: color .15s, border-color .15s;
+}
+.story-close button:hover { color: var(--text); border-color: var(--border2); }
+
+/* Story panel content (placeholder styling for Batch 1) */
+#story-content {
+  padding: 0 1.2rem 1.5rem;
+  flex: 1;
+}
+.story-era-badge {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: .52rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .18rem .55rem;
+  border-radius: 10px;
+  margin: 0 0 .5rem;
+}
+.story-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: .06em;
+  color: var(--gold-bright);
+  margin-bottom: .15rem;
+}
+.story-ref {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: .7rem;
+}
+.story-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: .8rem;
+}
+.story-text {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+.story-section-head {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: .4rem 0 .22rem;
+  border-top: 1px solid var(--border2);
+  margin-bottom: .4rem;
+}
+.story-places {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-bottom: .8rem;
+}
+.story-place-chip {
+  font-size: .72rem;
+  padding: .18rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--gold-dim);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.story-place-chip:hover {
+  background: rgba(201,168,76,.1);
+  color: var(--gold);
+}
+.story-chapter-link {
+  display: block;
+  margin-top: .8rem;
+  padding: .55rem .9rem;
+  background: rgba(201,168,76,.08);
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: .75rem;
+  color: var(--gold-dim);
+  font-family: 'Cinzel', serif;
+  letter-spacing: .08em;
+  text-align: center;
+  transition: background .15s, color .15s;
+}
+.story-chapter-link:hover {
+  background: rgba(201,168,76,.15);
+  color: var(--gold);
+}
+
+/* Story panel handle (mobile) */
+.story-handle {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0 .2rem;
+  cursor: pointer;
+  touch-action: none;
+  flex-shrink: 0;
+}
+.story-handle-pill {
+  width: 36px; height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE — ≤ 768px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Era filters: horizontal scroll */
+  .era-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: .5rem .7rem;
+    gap: .3rem;
+    scrollbar-width: none;
+  }
+  .era-filters::-webkit-scrollbar { display: none; }
+  .filter-label { display: none; }
+
+  /* Main layout: vertical stack */
+  .main-layout {
+    flex-direction: column;
+  }
+
+  /* Map fills top */
+  #map-panel { flex: 1; min-height: 0; }
+
+  /* Mobile controls bar */
+  #mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .8rem;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border2);
+    gap: .5rem;
+    flex-shrink: 0;
+  }
+  #mobile-controls button {
+    display: flex;
+    align-items: center;
+    gap: .32rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    color: var(--gold-dim);
+    font-family: 'Cinzel', serif;
+    font-size: .56rem;
+    letter-spacing: .08em;
+    padding: .32rem .55rem;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  #mobile-controls button:active {
+    background: rgba(201,168,76,.12);
+    color: var(--gold);
+  }
+  #mobile-story-label {
+    font-family: 'Cinzel', serif;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    color: var(--text-muted);
+    text-align: center;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Mobile legend wrap */
+  #legend-mobile-wrap {
+    display: block;
+    background: var(--bg2);
+    overflow: hidden;
+  }
+  #legend-mobile-wrap .legend {
+    position: static;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    min-width: 0;
+    width: 100%;
+    background: var(--bg2);
+    overflow: hidden;
+  }
+  #legend-mobile-wrap .legend-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem .65rem;
+    padding: .45rem .8rem .5rem;
+    border-bottom: 1px solid var(--border2);
+  }
+  #legend-mobile-wrap .legend-item { margin-bottom: 0; }
+  #legend-mobile-wrap .legend.collapsed .legend-body {
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom-width: 0 !important;
+  }
+
+  /* Desktop map float controls: hide */
+  .map-float-controls { display: none; }
+  .legend { display: none; }
+
+  /* Story panel: bottom sheet */
+  #story-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-left: none !important;
+    border-top: 1px solid var(--border2);
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: height .3s cubic-bezier(.4,0,.2,1),
+                max-height .3s cubic-bezier(.4,0,.2,1);
+    flex-shrink: 0;
+  }
+  #story-panel.open {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 50vh;
+    max-height: 50vh;
+    overflow-y: auto;
+    border-left-width: 0 !important;
+  }
+  .story-handle { display: flex; }
+  .story-text { font-size: .86rem; }
+  #story-content { padding: 0 .9rem 1.2rem; }
+}
+
+@media (max-width: 380px) {
+  .era-btn { font-size: .52rem; padding: .22rem .45rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>
+    Library
+  </a>
+  <div class="nav-center">
+    <span class="nav-title">Bible World Map</span>
+  </div>
+  <div class="nav-links">
+    <a href="people.html" class="nav-link">People</a>
+    <a href="commentators/index.html" class="nav-link">Scholars</a>
+  </div>
+</nav>
+
+<!-- ERA FILTERS -->
+<div class="era-filters">
+  <span class="filter-label">Era</span>
+  <button class="era-btn active" data-era="all">All</button>
+  <button class="era-btn" data-era="primeval">Primeval</button>
+  <button class="era-btn" data-era="patriarch">Patriarchal</button>
+  <button class="era-btn" data-era="exodus">Exodus</button>
+  <button class="era-btn" data-era="judges">Judges</button>
+  <button class="era-btn" data-era="kingdom">Kingdom</button>
+  <button class="era-btn" data-era="prophets">Prophets</button>
+  <button class="era-btn" data-era="exile">Exile &amp; Return</button>
+  <button class="era-btn" data-era="nt">New Testament</button>
+</div>
+
+<!-- MOBILE CONTROLS BAR -->
+<div id="mobile-controls">
+  <button id="mobile-legend-btn" onclick="toggleMobileLegend()">
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="4" cy="4" r="2"/><line x1="8" y1="4" x2="13" y2="4"/>
+      <circle cx="4" cy="10" r="2"/><line x1="8" y1="10" x2="13" y2="10"/>
+    </svg>
+    Legend
+    <span id="legend-btn-chev" style="font-size:.58rem;transition:transform .22s;display:inline-block;">&#9660;</span>
+  </button>
+  <span id="mobile-story-label">Select a Story</span>
+  <button id="mobile-centre-btn" onclick="centreMap()">
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="7" cy="7" r="2.5"/>
+      <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
+      <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
+    </svg>
+    Centre
+  </button>
+</div>
+
+<!-- MOBILE LEGEND DROPDOWN -->
+<div id="legend-mobile-wrap">
+  <div class="legend collapsed" id="legend-mobile">
+    <div class="legend-body">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Exodus</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Judges</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> Kingdom</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Prophets</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
+      <div class="legend-item" style="width:100%"><div class="legend-line" style="background:var(--gold-dim)"></div> Journey path</div>
+      <div class="legend-item" style="width:100%"><div class="legend-dash"></div> Sea crossing</div>
+      <div class="legend-item"><span class="legend-sym">★</span> Key site</div>
+      <div class="legend-item"><span class="legend-sym">⟁</span> Region</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-layout">
+
+  <!-- MAP PANEL -->
+  <div id="map-panel">
+    <svg id="map-svg"></svg>
+
+    <div class="map-hint" id="map-hint">Scroll to zoom · Drag to pan · Select a story above</div>
+
+    <!-- DESKTOP FLOATING CONTROLS -->
+    <div class="map-float-controls">
+      <button class="map-float-btn" id="names-toggle-btn" onclick="toggleNames()">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+          <text x="1" y="10" font-size="7" fill="currentColor" stroke="none" font-family="serif">A</text>
+          <line x1="7" y1="7" x2="13" y2="7" stroke-width="1.2"/>
+          <polyline points="10,4 13,7 10,10" stroke-width="1.2"/>
+        </svg>
+        Ancient Names
+      </button>
+      <button class="map-float-btn" onclick="centreMap()">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="7" cy="7" r="2.5"/>
+          <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
+          <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
+        </svg>
+        Centre
+      </button>
+    </div>
+
+    <!-- DESKTOP LEGEND -->
+    <div class="legend" id="legend">
+      <div class="legend-header" onclick="toggleLegend()">
+        <span class="legend-title">Legend</span>
+        <span class="legend-chev">&#9660;</span>
+      </div>
+      <div class="legend-body">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-primeval)"></div> Primeval History</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-patriarch)"></div> Patriarchal Period</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exodus)"></div> Egypt &amp; Exodus</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-judges)"></div> Conquest &amp; Judges</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-kingdom)"></div> United Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-prophets)"></div> Divided Kingdom</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-exile)"></div> Exile &amp; Return</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--era-nt)"></div> New Testament</div>
+        <div class="legend-item" style="margin-top:.3rem"><div class="legend-line" style="background:var(--gold-dim)"></div> Journey path</div>
+        <div class="legend-item"><div class="legend-dash"></div> Sea crossing</div>
+        <div class="legend-item"><span class="legend-sym">★</span> Key site</div>
+        <div class="legend-item"><span class="legend-sym">▩</span> Highlighted region</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY PANEL -->
+  <div id="story-panel">
+    <div class="story-handle" id="story-handle" onclick="closeStory()">
+      <div class="story-handle-pill"></div>
+    </div>
+    <div class="story-close">
+      <button onclick="closeStory()">✕ Close</button>
+    </div>
+    <div id="story-content">
+      <!-- populated by showStory() in Batch 3+ -->
+      <p style="color:var(--text-muted);font-size:.82rem;padding-top:.5rem;">
+        Select an era and story to explore the biblical world.
+      </p>
+    </div>
+  </div>
+
+</div><!-- .main-layout -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="books.js"></script>
+<script>
+// ── SERVICE WORKER ────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../../service-worker.js', { scope: '../../' })
+    .catch(() => {});
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// GEOGRAPHICAL DATA
+// ══════════════════════════════════════════════════════════════════════════
+const GEO_LAND = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Africa North"},"geometry":{"type":"Polygon","coordinates":[[[20.0,30.0],[20.0,37.5],[22.0,37.3],[24.0,37.6],[25.5,35.3],[26.0,35.2],[28.2,35.5],[29.0,35.0],[30.0,31.5],[31.5,31.1],[32.5,31.0],[33.0,31.5],[34.0,31.3],[34.5,29.5],[35.0,29.0],[36.0,28.0],[37.0,27.5],[38.5,27.0],[39.0,27.5],[40.0,26.5],[41.0,25.0],[42.0,24.0],[43.0,23.5],[44.0,23.0],[45.0,22.5],[46.0,22.0],[47.0,21.5],[48.0,21.0],[49.0,20.5],[50.0,20.0],[51.0,20.0],[52.0,20.5],[53.0,21.0],[54.0,22.0],[55.0,23.0],[56.0,24.0],[57.0,24.5],[58.0,24.0],[59.0,23.0],[60.0,22.0],[61.0,21.0],[62.0,20.5],[63.0,20.0],[64.0,20.0],[65.0,20.0],[65.0,20.0],[65.0,20.0],[65.0,20.0],[20.0,20.0],[20.0,30.0]]]}},{"type":"Feature","properties":{"name":"Asia Minor"},"geometry":{"type":"Polygon","coordinates":[[[26.0,36.0],[26.5,36.5],[27.0,37.0],[27.5,37.5],[27.0,38.0],[27.5,38.5],[28.0,39.0],[28.5,39.5],[29.0,40.0],[29.5,40.5],[30.0,41.0],[30.5,41.5],[31.0,41.5],[31.5,41.5],[32.0,42.0],[32.5,42.0],[33.0,42.0],[33.5,42.0],[34.0,42.0],[34.5,42.0],[35.0,42.0],[35.5,42.5],[36.0,42.5],[36.5,42.5],[37.0,42.5],[37.5,42.5],[38.0,42.5],[38.5,42.0],[39.0,42.0],[39.5,42.5],[40.0,43.0],[40.5,43.5],[41.0,43.5],[41.5,43.0],[42.0,43.5],[42.5,43.5],[43.0,43.0],[43.5,42.5],[44.0,43.0],[44.5,43.5],[45.0,43.0],[45.5,42.5],[46.0,43.0],[46.5,42.5],[47.0,42.5],[47.5,43.0],[48.0,43.5],[48.5,44.0],[48.5,41.0],[48.0,40.0],[47.5,39.5],[47.0,39.0],[46.5,38.5],[46.0,38.0],[45.5,38.5],[45.0,38.0],[44.5,38.5],[44.0,38.0],[43.5,38.0],[43.0,37.5],[42.5,37.0],[42.0,37.5],[41.5,37.0],[41.0,37.0],[40.5,37.0],[40.0,36.5],[39.5,36.5],[39.0,36.5],[38.5,37.0],[38.0,36.5],[37.5,36.5],[37.0,36.5],[36.5,36.0],[36.3,36.5],[36.0,36.5],[36.2,36.0],[36.5,35.5],[36.5,35.0],[36.0,34.0],[35.8,34.5],[35.5,35.5],[35.0,36.0],[34.5,36.5],[34.0,36.5],[33.5,36.5],[33.0,36.0],[32.5,36.5],[32.0,36.5],[31.5,37.0],[31.0,37.0],[30.5,37.5],[30.0,37.5],[29.5,37.5],[29.0,37.0],[28.5,37.5],[28.0,37.5],[27.5,37.5],[27.0,37.0],[26.5,36.5],[26.0,36.0]]]}},{"type":"Feature","properties":{"name":"Greece"},"geometry":{"type":"Polygon","coordinates":[[[20.0,37.5],[20.5,37.5],[21.0,38.0],[21.5,38.5],[22.0,38.0],[22.5,37.5],[23.0,38.0],[23.5,38.5],[24.0,38.0],[24.5,38.5],[25.0,38.0],[25.5,37.5],[26.0,37.0],[26.5,37.5],[27.0,37.0],[27.5,37.5],[27.0,38.0],[26.5,38.5],[26.0,39.0],[25.5,39.5],[25.0,40.0],[24.5,40.5],[24.0,41.0],[23.5,41.5],[23.0,42.0],[22.5,42.5],[22.0,43.0],[21.5,43.0],[21.0,42.5],[20.5,42.0],[20.0,41.5],[20.0,37.5]]]}},{"type":"Feature","properties":{"name":"Cyprus"},"geometry":{"type":"Polygon","coordinates":[[[32.0,35.0],[32.5,35.2],[33.0,35.3],[33.5,35.5],[34.0,35.5],[34.5,35.3],[34.0,34.8],[33.5,34.6],[33.0,34.5],[32.5,34.7],[32.0,35.0]]]}},{"type":"Feature","properties":{"name":"Africa"},"geometry":{"type":"Polygon","coordinates":[[[20.0,30.0],[20.0,37.5],[22.0,37.3],[24.0,37.6],[25.5,35.3],[26.0,35.2],[28.2,35.5],[29.0,35.0],[30.0,31.5],[31.5,31.1],[32.5,31.0],[33.0,31.5],[34.0,31.3],[34.5,29.5],[35.0,29.0],[36.0,28.0],[37.0,27.5],[38.5,27.0],[39.0,27.5],[40.0,26.5],[41.0,25.0],[42.0,24.0],[43.0,23.5],[44.0,23.0],[45.0,22.5],[46.0,22.0],[47.0,21.5],[48.0,21.0],[49.0,20.5],[50.0,20.0],[51.0,20.0],[52.0,20.5],[53.0,21.0],[54.0,22.0],[55.0,23.0],[56.0,24.0],[57.0,24.5],[58.0,24.0],[59.0,23.0],[60.0,22.0],[61.0,21.0],[62.0,20.5],[63.0,20.0],[64.0,20.0],[65.0,20.0],[65.0,20.0],[65.0,20.0],[65.0,20.0],[20.0,20.0],[20.0,30.0]]]}},{"type":"Feature","properties":{"name":"Levant"},"geometry":{"type":"Polygon","coordinates":[[[34.2,31.5],[34.5,31.7],[35.0,32.5],[35.5,33.0],[35.8,33.5],[36.0,34.0],[36.2,34.5],[36.5,35.0],[36.7,35.5],[36.5,36.0],[36.3,36.5],[36.6,36.8],[36.2,36.7],[35.9,36.8],[36.0,36.5],[35.8,36.3],[35.4,36.5],[35.0,36.2],[34.5,35.8],[34.0,35.5],[33.5,35.2],[33.0,35.0],[32.8,34.5],[32.6,34.0],[32.5,33.5],[32.8,33.0],[33.0,32.5],[33.0,32.0],[32.5,31.5],[32.2,31.3],[32.0,31.5],[31.5,31.1],[32.5,31.0],[33.0,31.5],[34.0,31.3],[34.2,31.5]]]}},{"type":"Feature","properties":{"name":"Mesopotamia"},"geometry":{"type":"Polygon","coordinates":[[[36.0,34.0],[36.5,35.0],[36.7,35.5],[37.0,36.0],[37.5,36.5],[38.0,37.0],[38.5,37.2],[39.0,37.0],[39.5,37.0],[40.0,37.5],[40.5,38.0],[41.0,38.5],[41.5,38.5],[42.0,39.0],[42.5,39.5],[43.0,40.0],[43.5,40.5],[44.0,40.5],[44.5,40.0],[45.0,40.5],[45.5,41.0],[46.0,41.5],[46.5,42.0],[47.0,42.5],[47.5,43.0],[48.0,43.5],[48.5,44.0],[49.0,44.5],[50.0,45.0],[51.0,45.5],[52.0,45.5],[53.0,45.0],[54.0,44.5],[55.0,44.0],[56.0,44.0],[57.0,44.5],[58.0,45.0],[59.0,45.0],[60.0,44.5],[61.0,44.0],[62.0,43.5],[63.0,43.0],[64.0,42.0],[65.0,41.0],[65.0,20.0],[63.0,20.0],[61.0,21.0],[58.5,26.0],[57.0,26.5],[56.5,27.5],[56.0,28.5],[55.5,29.5],[55.0,30.0],[54.0,30.5],[53.5,31.0],[53.0,31.5],[52.0,32.0],[51.0,32.5],[50.5,33.0],[50.0,33.5],[49.5,34.0],[48.5,34.5],[48.0,34.5],[47.5,34.0],[46.5,33.5],[45.5,33.0],[44.5,32.5],[43.5,32.0],[42.5,31.5],[41.5,31.0],[40.5,30.5],[39.5,30.0],[38.5,29.0],[37.5,28.5],[37.0,27.5],[38.5,27.0],[39.0,27.5],[40.0,26.5],[41.0,25.0],[42.0,24.0],[43.0,23.5],[44.0,23.0],[45.0,22.5],[46.0,22.0],[47.0,21.5],[48.0,21.0],[49.0,20.5],[50.0,20.0],[51.0,20.0],[52.0,20.5],[53.0,21.0],[54.0,22.0],[55.0,23.0],[56.0,24.0],[57.0,24.5],[58.0,24.0],[59.0,23.0],[60.0,22.0],[61.0,21.0],[36.0,34.0]]]}}]};
+
+// ── MAP PROJECTION SETTINGS ───────────────────────────────────────────────
+// Biblical world: roughly lon 22–65, lat 20–46
+const MAP_CENTER = [42, 33];   // [lon, lat] — centred over the Levant
+const MAP_EXTENT = {
+  lon: [20, 67],
+  lat: [18, 48]
+};
+
+// ── ERA CONFIG ────────────────────────────────────────────────────────────
+const ERA_COLORS = {
+  primeval:  'var(--era-primeval)',
+  patriarch: 'var(--era-patriarch)',
+  exodus:    'var(--era-exodus)',
+  judges:    'var(--era-judges)',
+  kingdom:   'var(--era-kingdom)',
+  prophets:  'var(--era-prophets)',
+  exile:     'var(--era-exile)',
+  nt:        'var(--era-nt)',
+};
+const ERA_NAMES = {
+  primeval:  'Primeval History',
+  patriarch: 'Patriarchal Period',
+  exodus:    'Egypt & Exodus',
+  judges:    'Conquest & Judges',
+  kingdom:   'United Kingdom',
+  prophets:  'Divided Kingdom & Prophets',
+  exile:     'Exile & Return',
+  nt:        'New Testament',
+};
+
+// ── MODULE STATE ──────────────────────────────────────────────────────────
+let zoomBehavior = null;
+let currentProjection = null;
+let showModernNames = false;
+let currentEra = 'all';
+let currentStory = null;
+
+// ══════════════════════════════════════════════════════════════════════════
+// MAP RENDER
+// ══════════════════════════════════════════════════════════════════════════
+function renderMap() {
+  const panel = document.getElementById('map-panel');
+  const svgEl = document.getElementById('map-svg');
+  const W = panel.clientWidth;
+  const H = panel.clientHeight;
+
+  const svg = d3.select(svgEl);
+  svg.selectAll('*').remove();
+
+  // ── PARCHMENT BACKGROUND ─────────────────────────────────────────────
+  // SVG defs: paper texture filter
+  const defs = svg.append('defs');
+
+  // Grain / paper texture via feTurbulence
+  defs.append('filter').attr('id', 'paper-grain')
+    .html(`
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3"
+        stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
+      <feBlend in="SourceGraphic" in2="grey" mode="multiply" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    `);
+
+  // Vignette radial gradient
+  const vignette = defs.append('radialGradient')
+    .attr('id', 'vignette')
+    .attr('cx', '50%').attr('cy', '50%')
+    .attr('r', '70%');
+  vignette.append('stop').attr('offset', '0%')
+    .attr('stop-color', 'transparent');
+  vignette.append('stop').attr('offset', '100%')
+    .attr('stop-color', 'rgba(20,12,4,0.45)');
+
+  // Sea gradient
+  const seaGrad = defs.append('radialGradient')
+    .attr('id', 'sea-grad')
+    .attr('cx', '40%').attr('cy', '45%').attr('r', '65%');
+  seaGrad.append('stop').attr('offset', '0%')
+    .attr('stop-color', '#8ab5cc');
+  seaGrad.append('stop').attr('offset', '100%')
+    .attr('stop-color', '#5a7a90');
+
+  // Land gradient
+  const landGrad = defs.append('linearGradient')
+    .attr('id', 'land-grad')
+    .attr('x1', '0%').attr('y1', '0%')
+    .attr('x2', '100%').attr('y2', '100%');
+  landGrad.append('stop').attr('offset', '0%')
+    .attr('stop-color', '#d4b87a');
+  landGrad.append('stop').attr('offset', '100%')
+    .attr('stop-color', '#b8934a');
+
+  // ── SEA BACKGROUND ───────────────────────────────────────────────────
+  svg.append('rect')
+    .attr('width', W).attr('height', H)
+    .attr('fill', 'url(#sea-grad)');
+
+  // ── PROJECTION ───────────────────────────────────────────────────────
+  const projection = d3.geoMercator()
+    .center(MAP_CENTER)
+    .scale(Math.min(W, H) * 2.8)
+    .translate([W / 2, H / 2]);
+
+  currentProjection = projection;
+  const path = d3.geoPath().projection(projection);
+
+  // ── ZOOM + PAN ───────────────────────────────────────────────────────
+  const g = svg.append('g').attr('class', 'map-root');
+
+  zoomBehavior = d3.zoom()
+    .scaleExtent([0.4, 12])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoomBehavior);
+
+  // ── LAND POLYGONS ────────────────────────────────────────────────────
+  g.selectAll('.land')
+    .data(GEO_LAND.features)
+    .join('path')
+    .attr('class', 'land')
+    .attr('d', path)
+    .attr('fill', 'url(#land-grad)')
+    .attr('stroke', '#3a2a10')
+    .attr('stroke-width', 0.6)
+    .attr('stroke-linejoin', 'round')
+    .attr('opacity', 0.92);
+
+  // Paper grain overlay on land
+  g.selectAll('.land-grain')
+    .data(GEO_LAND.features)
+    .join('path')
+    .attr('class', 'land-grain')
+    .attr('d', path)
+    .attr('fill', '#8a6030')
+    .attr('opacity', 0.06)
+    .attr('filter', 'url(#paper-grain)')
+    .attr('pointer-events', 'none');
+
+  // ── COAST STROKE GLOW (ink effect) ──────────────────────────────────
+  g.selectAll('.coast-glow')
+    .data(GEO_LAND.features)
+    .join('path')
+    .attr('class', 'coast-glow')
+    .attr('d', path)
+    .attr('fill', 'none')
+    .attr('stroke', '#2a1808')
+    .attr('stroke-width', 2.5)
+    .attr('opacity', 0.18)
+    .attr('pointer-events', 'none');
+
+  // ── STORY OVERLAY GROUP (populated in Batch 3+) ─────────────────────
+  g.append('g').attr('class', 'story-regions');
+  g.append('g').attr('class', 'story-paths');
+  g.append('g').attr('class', 'story-places');
+
+  // ── VIGNETTE OVERLAY ────────────────────────────────────────────────
+  svg.append('rect')
+    .attr('width', W).attr('height', H)
+    .attr('fill', 'url(#vignette)')
+    .attr('pointer-events', 'none');
+
+  // ── INITIAL VIEW ─────────────────────────────────────────────────────
+  // Auto-scale to fit the biblical world extent
+  const isMobile = window.innerWidth <= 768;
+  const initScale = isMobile ? 0.9 : 1.0;
+  svg.call(zoomBehavior.transform,
+    d3.zoomIdentity.translate(0, 0).scale(initScale));
+
+  // Dismiss hint on first interaction
+  svg.on('pointerdown.hint', () => {
+    document.getElementById('map-hint').classList.add('hidden');
+    svg.on('pointerdown.hint', null);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// CONTROLS
+// ══════════════════════════════════════════════════════════════════════════
+
+function centreMap() {
+  if (!zoomBehavior) return;
+  const panel = document.getElementById('map-panel');
+  const svgEl = document.getElementById('map-svg');
+  const svg = d3.select(svgEl);
+  const currentScale = d3.zoomTransform(svgEl).k;
+  svg.transition().duration(500)
+    .call(zoomBehavior.transform,
+      d3.zoomIdentity.translate(0, 0).scale(currentScale));
+}
+
+function toggleNames() {
+  showModernNames = !showModernNames;
+  const btn = document.getElementById('names-toggle-btn');
+  if (btn) {
+    btn.textContent = showModernNames ? '⇄ Modern Names' : '⇄ Ancient Names';
+    btn.classList.toggle('active', showModernNames);
+  }
+  // Toggle label visibility — populated in Batch 2
+  document.querySelectorAll('.ancient-label').forEach(el =>
+    el.style.display = showModernNames ? 'none' : '');
+  document.querySelectorAll('.modern-label').forEach(el =>
+    el.style.display = showModernNames ? '' : 'none');
+}
+
+function toggleLegend() {
+  document.getElementById('legend').classList.toggle('collapsed');
+}
+function toggleMobileLegend() {
+  const leg = document.getElementById('legend-mobile');
+  leg.classList.toggle('collapsed');
+  const chev = document.getElementById('legend-btn-chev');
+  if (chev) chev.style.transform =
+    leg.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
+}
+
+// ── ERA FILTER WIRING ─────────────────────────────────────────────────────
+document.querySelectorAll('.era-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentEra = btn.dataset.era;
+    // Update mobile label
+    const lbl = document.getElementById('mobile-story-label');
+    if (lbl) lbl.textContent = currentEra === 'all'
+      ? 'Select a Story'
+      : (ERA_NAMES[currentEra] || currentEra);
+    // Story filter will be wired in Batch 3
+  });
+});
+
+// ── STORY PANEL ───────────────────────────────────────────────────────────
+function openStory(story) {
+  currentStory = story;
+  document.getElementById('story-panel').classList.add('open');
+}
+function closeStory() {
+  document.getElementById('story-panel').classList.remove('open');
+}
+
+// Swipe-down to close story panel (mobile)
+(function() {
+  let startY = 0;
+  const handle = document.getElementById('story-handle');
+  if (!handle) return;
+  handle.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+  handle.addEventListener('touchend', e => {
+    if (e.changedTouches[0].clientY - startY > 40) closeStory();
+  }, { passive: true });
+})();
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  // Collapse mobile legend by default
+  if (window.innerWidth <= 768) {
+    const legM = document.getElementById('legend-mobile');
+    if (legM) legM.classList.add('collapsed');
+    const chev = document.getElementById('legend-btn-chev');
+    if (chev) chev.style.transform = 'rotate(-90deg)';
+  }
+  renderMap();
+
+  // Re-render on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderMap, 200);
+  });
+});
+</script>
+</body>
+</html>
