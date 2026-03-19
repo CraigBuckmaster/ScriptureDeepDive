@@ -965,6 +965,13 @@ function initMap() {
     document.getElementById('map-hint').classList.add('hidden');
   });
 
+  // Rebuild markers on zoom so they scale with the map
+  map.on('zoomend', () => {
+    renderPlaceMarkers(currentStory ? currentStory.id : null);
+    // Rescale story path weight
+    if (currentStory) rescaleStoryLayers();
+  });
+
   // Critical: re-measure after layout settles
   setTimeout(() => map.invalidateSize(), 100);
   setTimeout(() => map.invalidateSize(), 400);
@@ -983,30 +990,42 @@ function makePlaceIcon(place) {
   const isMtn    = place.type === 'mountain';
   const isSite   = place.type === 'site';
 
-  // Symbol HTML
+  // Scale everything with zoom level
+  const z = map ? map.getZoom() : 5;
+  // Font scale: 1.0 at zoom 5, grows linearly. Cap at zoom 12.
+  const scale = Math.max(0.7, Math.min(2.4, 0.55 + (z - 3) * 0.19));
+
+  // Base sizes (at scale 1.0)
+  const baseFontPx = (isWater || isRegion) ? 10 : 8.5;
+  const fontPx = Math.round(baseFontPx * scale * 10) / 10;
+
+  // Symbol size scales with zoom
+  const sSize = Math.round(scale * 10);   // e.g. 10→25px
+
   let sym = '';
   if (!isWater && !isRegion) {
-    const colour = '#2a1a08';
     if (isMtn) {
-      sym = `<svg width="12" height="10" viewBox="0 0 12 10" style="display:block;margin:0 auto 1px"><polygon points="6,0 12,10 0,10" fill="#4a3018" stroke="#d4b483" stroke-width="0.8" opacity="0.88"/></svg>`;
+      sym = `<svg width="${sSize+2}" height="${Math.round(sSize*0.85)}" viewBox="0 0 12 10" style="display:block;margin:0 auto 1px"><polygon points="6,0 12,10 0,10" fill="#4a3018" stroke="#d4b483" stroke-width="0.8" opacity="0.88"/></svg>`;
     } else if (isSite) {
-      sym = `<svg width="10" height="10" viewBox="0 0 10 10" style="display:block;margin:0 auto 1px"><polygon points="5,0 10,5 5,10 0,5" fill="#c9a84c" stroke="#2a1a08" stroke-width="0.7" opacity="0.9"/></svg>`;
+      sym = `<svg width="${sSize}" height="${sSize}" viewBox="0 0 10 10" style="display:block;margin:0 auto 1px"><polygon points="5,0 10,5 5,10 0,5" fill="#c9a84c" stroke="#2a1a08" stroke-width="0.7" opacity="0.9"/></svg>`;
     } else {
-      sym = `<svg width="8" height="8" viewBox="0 0 8 8" style="display:block;margin:0 auto 1px"><circle cx="4" cy="4" r="3.5" fill="#2a1a08" stroke="#d4b483" stroke-width="1.1" opacity="0.9"/></svg>`;
+      const r = Math.max(3, Math.round(scale * 4));
+      sym = `<svg width="${r*2+2}" height="${r*2+2}" viewBox="0 0 ${r*2+2} ${r*2+2}" style="display:block;margin:0 auto 1px"><circle cx="${r+1}" cy="${r+1}" r="${r}" fill="#2a1a08" stroke="#d4b483" stroke-width="1.1" opacity="0.9"/></svg>`;
     }
   }
 
-  const fontSize = (isWater || isRegion) ? '9.5px' : '8px';
-  const colour   = isWater ? '#1a3a50' : '#1a1008';
-  const italic   = isWater ? 'italic' : 'normal';
-  const weight   = isRegion ? '600' : '400';
-  const shadow   = 'text-shadow:0 0 5px rgba(200,169,110,.95),0 0 3px rgba(200,169,110,.85)';
+  const colour  = isWater ? '#0a2030' : '#120a04';
+  const italic  = isWater ? 'italic' : 'normal';
+  const weight  = isRegion ? '600' : '400';
+  const stroke  = `paint-order:stroke;-webkit-text-stroke:${Math.ceil(scale*1.5)}px rgba(210,180,120,.9)`;
+  const shadow  = `text-shadow:0 0 ${Math.ceil(scale*5)}px rgba(200,169,110,.98),0 0 ${Math.ceil(scale*3)}px rgba(200,169,110,.9)`;
 
-  const html = `<div style="text-align:center;pointer-events:none;">${sym}<span class="place-label${isWater?' water':''}" style="font-size:${fontSize};color:${colour};font-style:${italic};font-weight:${weight};${shadow}">${label}</span></div>`;
+  const html = `<div style="text-align:center;pointer-events:none;">${sym}<span class="place-label${isWater?' water':''}" style="font-size:${fontPx}px;color:${colour};font-style:${italic};font-weight:${weight};${shadow}">${label}</span></div>`;
 
-  // icon anchor: centre horizontally, above the symbol
-  const w = Math.max(label.length * 6, 40);
-  return L.divIcon({ html, className: '', iconSize: [w, 24], iconAnchor: [w/2, 20] });
+  const charW = fontPx * 0.62;
+  const w = Math.max(label.length * charW, sSize + 4);
+  const h = fontPx + sSize + 6;
+  return L.divIcon({ html, className: '', iconSize: [w, h], iconAnchor: [w/2, h - 2] });
 }
 
 function renderPlaceMarkers(filterStoryId) {
@@ -1052,6 +1071,11 @@ function clearStoryLayers() {
   storyLayers = [];
 }
 
+function rescaleStoryLayers() {
+  // Redraw overlays at current zoom rather than tweaking individual layers
+  if (currentStory) drawStoryOverlays(currentStory);
+}
+
 function drawStoryOverlays(story) {
   clearStoryLayers();
   const color = ERA_HEX[story.era] || '#888';
@@ -1060,13 +1084,14 @@ function drawStoryOverlays(story) {
   (story.regions || []).forEach(region => {
     // region.coords are [lon, lat] pairs — Leaflet needs [lat, lon]
     const latlngs = region.coords.map(([lon, lat]) => [lat, lon]);
+    const zw = Math.max(1, Math.min(4, (map.getZoom() - 3) * 0.4));
     const poly = L.polygon(latlngs, {
       color: region.color || color,
-      weight: 1.5,
-      opacity: 0.6,
+      weight: zw,
+      opacity: 0.65,
       dashArray: '6,4',
       fillColor: region.color || color,
-      fillOpacity: 0.18,
+      fillOpacity: 0.2,
       interactive: false,
     }).addTo(map);
     storyLayers.push(poly);
@@ -1075,11 +1100,12 @@ function drawStoryOverlays(story) {
   // Journey paths — L.polyline with arrow decorations
   (story.paths || []).forEach(seg => {
     const latlngs = seg.coords.map(([lon, lat]) => [lat, lon]);
+    const zScale = Math.max(1.5, Math.min(6, 1 + (map.getZoom() - 3) * 0.55));
     const line = L.polyline(latlngs, {
       color,
-      weight: 3,
-      opacity: 0.82,
-      dashArray: seg.dashed ? '10,7' : null,
+      weight: zScale,
+      opacity: 0.85,
+      dashArray: seg.dashed ? `${Math.round(zScale*3)},${Math.round(zScale*2)}` : null,
       lineCap: 'round',
       lineJoin: 'round',
       interactive: false,
