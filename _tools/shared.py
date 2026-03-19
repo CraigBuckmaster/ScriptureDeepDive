@@ -1394,7 +1394,9 @@ def ensure_tx_book_var(book_name):
     """Ensure translation.js BOOK_VARS contains VERSES_BOOKNAME for this book.
     Called automatically by build_chapter. Idempotent.
     """
-    tx_path = os.path.join(_REPO, "translation.js")
+    # Use script location to find repo root — works on both Windows and Linux
+    _repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    tx_path = os.path.join(_repo_root, 'translation.js')
     if not os.path.exists(tx_path):
         return
 
