@@ -815,7 +815,7 @@ body {
              font-size:.54rem;letter-spacing:.06em;padding:.3rem .5rem;
              outline:none;transition:border-color .15s;"
     />
-    <div id="search-results" style="display:none;position:absolute;bottom:calc(100% + 4px);
+    <div id="search-results" style="display:none;position:absolute;top:calc(100% + 4px);
          left:0;right:0;background:var(--bg2);border:1px solid var(--border);
          border-radius:4px;z-index:200;max-height:220px;overflow-y:auto;
          box-shadow:0 -4px 16px rgba(0,0,0,.5);">
@@ -4207,12 +4207,13 @@ function centreOnPerson(personId) {
       const nx = parseFloat(m[1]);
       const ny = parseFloat(m[2]);
 
-      // On desktop the bio panel (340px) opens on the right, shifting the
-      // visible canvas left. Compensate so the node stays visually centred.
-      const bioPanelOffset = isMobile ? 0 : 170; // half of 340px panel
-      const centreX = (W - (isMobile ? 0 : 340)) / 2 - bioPanelOffset;
+      // Centre in the canvas area left after the bio panel opens.
+      // Desktop: bio panel is 340px wide on the right → available = W-340
+      // Mobile:  bio panel is bottom sheet → full width available
+      const availW = isMobile ? W : W - 340;
+      const centreX = availW / 2;
 
-      // Delay slightly so the bio panel has started opening
+      // Delay so bio panel animation has started before we pan
       setTimeout(() => {
         svg.transition().duration(550).call(
           zoomBehavior.transform,
@@ -4220,7 +4221,7 @@ function centreOnPerson(personId) {
             .translate(centreX - nx * targetScale, H / 2 - ny * targetScale)
             .scale(targetScale)
         );
-      }, 60);
+      }, 80);
       return;
     }
   }
