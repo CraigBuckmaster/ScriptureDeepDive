@@ -58,15 +58,22 @@
 
   // ── REBUILD QNAV SEARCH INDEX ──────────────────────────────────────────────
   function rebuildSearchIndex(verseData) {
+    // Update search index text for this translation without mutating cached data
     if (!window.VERSES_ALL || !verseData) return;
-    var bookName = verseData[0] && verseData[0].book;
-    if (!bookName) return;
+    // Build lookup for fast access
+    var lookup = {};
     for (var i = 0; i < verseData.length; i++) {
       var v = verseData[i];
-      var idx = window.VERSES_ALL.findIndex(function(x) {
-        return x.book === v.book && x.ch === v.ch && x.v === v.v;
-      });
-      if (idx > -1) window.VERSES_ALL[idx].text = v.text;
+      lookup[v.book + '|' + v.ch + '|' + v.v] = v.text;
+    }
+    for (var j = 0; j < window.VERSES_ALL.length; j++) {
+      var entry = window.VERSES_ALL[j];
+      var key = entry.book + '|' + entry.ch + '|' + entry.v;
+      if (lookup[key] !== undefined) {
+        // VERSES_ALL entries are their own objects (loaded from niv/verses.js)
+        // Safe to update .text directly — these aren't in our translation cache
+        entry.text = lookup[key];
+      }
     }
   }
 
@@ -87,7 +94,7 @@
     s.src = newSrc;
     s.onload = function() {
       var data = window[bookVar] || null;
-      if (data) _cache[slug] = data;
+      if (data) { _cache[slug] = data.map(function(v) { return Object.assign({}, v); }); }
       callback(data);
     };
     s.onerror = function() { callback(null); };
@@ -178,7 +185,8 @@
     // (ESV matthew.js also declares var VERSES_MATTHEW which would clobber the reference)
     var initData = window[bookVar];
     if (initData) {
-      _cache['niv'] = initData.slice(); // copy the array
+      // Deep copy — each verse object is also copied so rebuildSearchIndex can't corrupt it
+      _cache['niv'] = initData.map(function(v) { return Object.assign({}, v); });
 
       // If user prefers a different translation, switch immediately
       if (current !== 'niv') {
