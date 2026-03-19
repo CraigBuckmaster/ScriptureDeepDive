@@ -702,6 +702,61 @@ body {
   }
 }
 
+
+/* ── PEOPLE SEARCH ────────────────────────────────────────────── */
+#people-search-input:focus,
+#people-search-desktop:focus {
+  border-color: var(--gold-dim);
+}
+#people-search-input::placeholder,
+#people-search-desktop::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .38rem .65rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border2);
+  transition: background .12s;
+}
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background: rgba(201,168,76,.08); }
+.search-result-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.search-result-name {
+  font-family: 'Cinzel', serif;
+  font-size: .68rem;
+  letter-spacing: .05em;
+  color: var(--text);
+  flex: 1;
+}
+.search-result-era {
+  font-size: .58rem;
+  color: var(--text-muted);
+  font-family: 'Cinzel', serif;
+  letter-spacing: .05em;
+}
+.search-no-results {
+  padding: .5rem .65rem;
+  font-size: .65rem;
+  color: var(--text-muted);
+  font-family: 'Cinzel', serif;
+  letter-spacing: .06em;
+}
+/* Hide desktop search wrap on mobile (mobile has its own) */
+@media (max-width: 768px) {
+  #search-wrap-desktop { display: none; }
+}
+/* Hide mobile search wrap on desktop */
+@media (min-width: 769px) {
+  #search-wrap { display: none !important; }
+}
 </style>
 </head>
 <body>
@@ -748,14 +803,24 @@ body {
     <span id="legend-btn-chev" style="font-size:.6rem;margin-left:.1rem;transition:transform .22s;display:inline-block;">&#9660;</span>
   </button>
   <span id="mobile-era-label">All Eras</span>
-  <button id="mobile-jump-btn" onclick="jumpToCurrentEra()">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
-      <circle cx="7" cy="7" r="2.5"/>
-      <line x1="7" y1="1" x2="7" y2="4"/><line x1="7" y1="10" x2="7" y2="13"/>
-      <line x1="1" y1="7" x2="4" y2="7"/><line x1="10" y1="7" x2="13" y2="7"/>
-    </svg>
-    Centre
-  </button>
+  <div id="search-wrap" style="flex:1;position:relative;margin-left:.3rem;">
+    <input id="people-search-input"
+      type="search"
+      placeholder="Search people..."
+      autocomplete="off"
+      oninput="handleSearchInput(this.value)"
+      onfocus="handleSearchInput(this.value)"
+      style="width:100%;background:rgba(255,255,255,.06);border:1px solid var(--border);
+             border-radius:4px;color:var(--text);font-family:'Cinzel',serif;
+             font-size:.54rem;letter-spacing:.06em;padding:.3rem .5rem;
+             outline:none;transition:border-color .15s;"
+    />
+    <div id="search-results" style="display:none;position:absolute;bottom:calc(100% + 4px);
+         left:0;right:0;background:var(--bg2);border:1px solid var(--border);
+         border-radius:4px;z-index:200;max-height:220px;overflow-y:auto;
+         box-shadow:0 -4px 16px rgba(0,0,0,.5);">
+    </div>
+  </div>
 </div>
 <div id="legend-mobile-wrap"><div class="legend" id="legend-mobile">
       <div class="legend-body">
@@ -786,7 +851,26 @@ body {
   <div id="tree-panel">
     <svg id="tree-svg"></svg>
     <button id="jump-btn" onclick="jumpToCurrentEra()" title="Jump to current era">⌖ Jump</button>
-    <div class="tree-hint" id="tree-hint">Scroll to zoom &middot; Drag to pan &middot; Click a name to read biography</div>
+    <div id="search-wrap-desktop" style="position:absolute;top:.7rem;right:.7rem;z-index:50;width:200px;">
+    <input id="people-search-desktop"
+      type="search"
+      placeholder="Search people..."
+      autocomplete="off"
+      oninput="handleSearchInput(this.value)"
+      onfocus="handleSearchInput(this.value)"
+      style="width:100%;background:rgba(12,10,7,.88);border:1px solid var(--border);
+             border-radius:4px;color:var(--text);font-family:'Cinzel',serif;
+             font-size:.58rem;letter-spacing:.06em;padding:.35rem .55rem;
+             outline:none;transition:border-color .15s;
+             box-shadow:0 2px 12px rgba(0,0,0,.5);"
+    />
+    <div id="search-results-desktop" style="display:none;position:absolute;top:calc(100% + 4px);
+         left:0;right:0;background:rgba(12,10,7,.96);border:1px solid var(--border);
+         border-radius:4px;z-index:200;max-height:260px;overflow-y:auto;
+         box-shadow:0 4px 18px rgba(0,0,0,.6);">
+    </div>
+  </div>
+<div class="tree-hint" id="tree-hint">Scroll to zoom &middot; Drag to pan &middot; Click a name to read biography</div>
     
   
     <div class="legend" id="legend">
@@ -3908,6 +3992,7 @@ function render(filterEra) {
     const grp = nodes.append('g')
       .attr('class', `node ${d.type} ${d._dim ? 'dimmed' : ''}`)
       .attr('transform', `translate(${n.x},${n.y})`)
+      .attr('data-id', d.id)
       .style('cursor', 'pointer')
       .on('click', () => showBio(d));
 
@@ -4088,6 +4173,103 @@ function jumpToCurrentEra() {
     );
 }
 
+
+// ── PERSON SEARCH ──────────────────────────────────────────────────────────
+function centreOnPerson(personId) {
+  if (!zoomBehavior) return;
+  const svgEl = document.getElementById('tree-svg');
+  const svg = d3.select(svgEl);
+  const panel = document.getElementById('tree-panel');
+  const W = panel.clientWidth;
+  const H = panel.clientHeight;
+
+  // Find the node in the rendered SVG
+  let targetNode = null;
+  svgEl.querySelectorAll('.node').forEach(node => {
+    const cls = Array.from(node.classList);
+    // node id is stored in the data — find via transform match
+    // We use the node's data-id attribute set during render
+    if (node.dataset.id === personId) targetNode = node;
+  });
+
+  if (targetNode) {
+    const t = targetNode.getAttribute('transform');
+    const m = t && t.match(/translate\(([^,]+),([^)]+)\)/);
+    if (m) {
+      const nx = parseFloat(m[1]);
+      const ny = parseFloat(m[2]);
+      const scale = Math.max(d3.zoomTransform(svgEl).k, 1.2);
+      svg.transition().duration(600).call(
+        zoomBehavior.transform,
+        d3.zoomIdentity
+          .translate(W / 2 - nx * scale, H / 2 - ny * scale)
+          .scale(scale)
+      );
+    }
+  }
+  // Open bio regardless (works even if node is dimmed)
+  const person = PEOPLE.find(p => p.id === personId);
+  if (person) showBio(person);
+  clearSearch();
+}
+
+function clearSearch() {
+  ['people-search-input','people-search-desktop'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  ['search-results','search-results-desktop'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.innerHTML = ''; el.style.display = 'none'; }
+  });
+}
+
+function getSearchResults() {
+  // Return whichever results container is visible (desktop or mobile)
+  const isMobile = window.innerWidth <= 768;
+  return document.getElementById(isMobile ? 'search-results' : 'search-results-desktop');
+}
+
+function handleSearchInput(val) {
+  const results = getSearchResults();
+  if (!results) return;
+  const q = val.trim().toLowerCase();
+  if (q.length < 2) {
+    results.innerHTML = '';
+    results.style.display = 'none';
+    return;
+  }
+  const matches = PEOPLE.filter(p =>
+    p.name.toLowerCase().includes(q) ||
+    (p.role && p.role.toLowerCase().includes(q))
+  ).slice(0, 8);
+
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-no-results">No matches found</div>';
+    results.style.display = 'block';
+    return;
+  }
+
+  results.innerHTML = matches.map(p => {
+    const color = ERA_COLORS[p.era] || '#888';
+    const eraName = ERA_NAMES[p.era] || p.era;
+    return `<div class="search-result-item" onclick="centreOnPerson('${p.id}')">
+      <span class="search-result-dot" style="background:${color}"></span>
+      <span class="search-result-name">${p.name}</span>
+      <span class="search-result-era">${eraName}</span>
+    </div>`;
+  }).join('');
+  results.style.display = 'block';
+}
+
+// Close search results when clicking outside
+document.addEventListener('click', e => {
+  if (!e.target.closest('#search-wrap') && !e.target.closest('#search-wrap-desktop')) clearSearch();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') clearSearch();
+});
+
 // ── SWIPE DOWN TO CLOSE BIO (mobile) ─────────────────────────────────────
 (function() {
   let startY = 0;
@@ -4118,6 +4300,8 @@ document.querySelectorAll('.era-btn').forEach(btn => {
       mobileLabel.textContent = currentEra === 'all' ? 'All Eras'
         : (ERA_NAMES[currentEra] || currentEra);
     }
+    // Centre on the selected era after render
+    setTimeout(() => jumpToCurrentEra(), 80);
   });
 });
 
