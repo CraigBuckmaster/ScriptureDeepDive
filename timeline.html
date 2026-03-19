@@ -458,14 +458,15 @@ function yearToX(year) {
 
 // ── LAYOUT CONSTANTS ───────────────────────────────────────────────────────
 const TL = {
-  H:          460,    // total SVG height — taller for readability
+  H:          520,    // taller canvas for 4-lane event layout
   ERA_TOP:    10,
-  ERA_BAR_Y:  30,     // era colour bar — moved down from top
-  ERA_BAR_H:  26,     // taller band so text fits
-  AXIS_Y:     185,    // axis moved down — more room for event stems
-  EVENT_STEM: 120,    // stems reach further below era bar
-  PEOPLE_Y:   265,    // people nodes sit below event stems
-  HIST_Y:     350,    // history events at bottom with room for labels
+  ERA_BAR_Y:  30,
+  ERA_BAR_H:  26,     // era bar bottom = y 56
+  // 4 event lanes between era bar and axis
+  LANES:      [82, 107, 132, 157],  // y of label for each lane
+  AXIS_Y:     195,    // axis below all 4 lanes
+  PEOPLE_Y:   285,    // people nodes below axis
+  HIST_Y:     385,    // history events at bottom
   GRAIN_Y:    0,
 };
 
@@ -1141,59 +1142,87 @@ const EVENTS = [
 function renderEvents(g) {
   const gEvents = g.querySelector ? g.querySelector('#g-events') : document.getElementById('g-events');
   if (!gEvents) return;
-  // Clear
   while (gEvents.firstChild) gEvents.removeChild(gEvents.firstChild);
 
   const dimAll = currentEra !== 'all';
+  const ERA_BAR_BOTTOM = TL.ERA_BAR_Y + TL.ERA_BAR_H;  // y=56
 
-  EVENTS.forEach(ev => {
-    const x = yearToX(ev.year);
+  // ── GREEDY 4-LANE ASSIGNMENT ──────────────────────────────────────────
+  // Sort events by pixel x so we assign left-to-right
+  const positioned = EVENTS.map(ev => ({
+    ev,
+    x: yearToX(ev.year),
+    labelW: Math.max(ev.name.length * 6.5 + 16, 50),  // estimated px width
+  })).sort((a, b) => a.x - b.x);
+
+  const N_LANES = TL.LANES.length;
+  const laneLastX = new Array(N_LANES).fill(-9999);  // rightmost edge used per lane
+
+  positioned.forEach(item => {
+    // Find first lane with enough clearance (14px padding each side)
+    let lane = -1;
+    for (let t = 0; t < N_LANES; t++) {
+      if (item.x - 6 >= laneLastX[t] + 14) {
+        lane = t;
+        break;
+      }
+    }
+    // Fallback: use lane with most clearance
+    if (lane === -1) {
+      lane = laneLastX.indexOf(Math.min(...laneLastX));
+    }
+    laneLastX[lane] = item.x + item.labelW / 2;
+    item.lane = lane;
+  });
+
+  // ── DRAW each event ───────────────────────────────────────────────────
+  positioned.forEach(({ ev, x, lane }) => {
     const color = ERA_HEX[ev.era] || '#8b6914';
     const dimmed = dimAll && ev.era !== currentEra;
+    const laneY = TL.LANES[lane];
 
-    // Vertical stem from era bar down to just above axis
-    const stemTop = TL.ERA_BAR_Y + TL.ERA_BAR_H;
-    const stemBot = TL.EVENT_STEM;
-
+    // Vertical stem: era bar bottom → just above the lane triangle
+    const TRI_H = 9;
+    const stemBot = laneY - TRI_H;
     svgEl_('line', {
-      x1: x, y1: stemTop, x2: x, y2: stemBot,
-      stroke: color, 'stroke-width': '0.8',
-      opacity: dimmed ? '0.2' : '0.55',
+      x1: x, y1: ERA_BAR_BOTTOM,
+      x2: x, y2: stemBot,
+      stroke: color, 'stroke-width': '1',
+      opacity: dimmed ? '0.15' : '0.5',
     }, gEvents);
 
-    // Triangle marker (pointing down toward axis)
-    const tw = 7, th = 8;
+    // Triangle marker pointing down at laneY
+    const tw = 8;
     const tri = svgEl_('polygon', {
-      points: `${x},${stemBot} ${x-tw},${stemBot-th} ${x+tw},${stemBot-th}`,
-      fill: color, opacity: dimmed ? '0.15' : '0.88',
+      points: `${x},${laneY} ${x - tw},${laneY - TRI_H} ${x + tw},${laneY - TRI_H}`,
+      fill: color, opacity: dimmed ? '0.15' : '0.9',
       'data-clickable': '1', style: 'cursor:pointer',
     }, gEvents);
     tri.addEventListener('click', () => openDetail(ev));
 
-    // Invisible wide hit target
+    // Hit target
     const hit = svgEl_('rect', {
-      x: x - 12, y: stemBot - th - 4, width: 24, height: th + 8,
+      x: x - 14, y: laneY - TRI_H - 4, width: 28, height: TRI_H + 8,
       fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
     }, gEvents);
     hit.addEventListener('click', () => openDetail(ev));
 
-    // Label — two stagger rows, dark ink with coloured halo for contrast
-    const evIndex = EVENTS.indexOf(ev);
-    const labelY = stemTop + (evIndex % 2 === 0 ? 20 : 38);
-    svgText(ev.name, {
+    // Label just below the triangle, dark ink + coloured halo
+    const labelY = laneY + 12;
+    svgEl_('text', {
       x, y: labelY,
       'text-anchor': 'middle',
       'font-family': "'Cinzel', serif",
       'font-size': '10',
       'font-weight': '700',
       fill: '#1a1006',
-      opacity: dimmed ? '0.2' : '1',
+      opacity: dimmed ? '0.15' : '1',
       'pointer-events': 'none',
       'paint-order': 'stroke',
       stroke: `${color}88`,
       'stroke-width': '3.5',
       'stroke-linejoin': 'round',
-    }, gEvents);
+    }, gEvents).textContent = ev.name;
   });
 }
 
