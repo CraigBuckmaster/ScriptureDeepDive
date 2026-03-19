@@ -873,6 +873,12 @@ def verse(num, text, book='', ch=0):
     # Fallback: hardcoded text (for backwards compatibility)
     return f'<span class="verse-text"><span class="verse-num">{num}</span>{text}</span>'
 
+def verse_range(start, end):
+    """Return [(n, '')] for verse numbers start..end inclusive.
+    Use in generator scripts: 'verses': verse_range(1, 18)
+    """
+    return [(n, '') for n in range(start, end + 1)]
+
 def heb_panel(pid, words, is_nt=False):
     label = 'Greek Word Study' if is_nt else 'Hebrew Word Study'
     rows = ''.join(f'<p><span class="hebrew-word">{h}</span> <span class="tlit">{t}</span> — <strong>{g}</strong>: {n}</p>' for h,t,g,n in words)
@@ -1390,7 +1396,11 @@ def build_chapter(book_dir, ch, data):
                                    hubbard → waltke → calvin → netbible →
                                    robertson → catena → marcus → rhoads → keener
       header      str                     e.g. 'Verses 1–5 — Title'
-      verses      list[(int, str)]        NIV verse tuples
+      verses      list[(int, str)]        Verse number + text tuples. With the
+                                          translation system live, text is ignored —
+                                          pass empty string or any placeholder:
+                                          e.g. [(1,''), (2,''), ...] or use
+                                          verse_range(1,18) helper (returns [(n,'')])
       heb         list[(word, translit, gloss, note)]   Hebrew/Greek word study
       ctx         str                     Context note
       cross       list[(ref, text)]       Cross-references
@@ -1447,7 +1457,7 @@ def build_chapter(book_dir, ch, data):
         sid = f'{cid}-s{i+1}'
 
         # --- verses ---
-        verses_html = ''.join(verse(n, t) for n, t in sec['verses'])
+        verses_html = ''.join(verse(n, '', book_name, ch) for n, t in sec['verses'])
 
         # --- buttons: presence of key + scope check drives inclusion ---
         btns = []
