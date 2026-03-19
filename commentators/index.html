@@ -50,6 +50,21 @@ body {
   text-transform:uppercase;
   color:var(--text-muted);
 }
+.hub-nav-links { display:flex; gap:.4rem; }
+.hub-nav-links a {
+  font-family:'Cinzel',serif;
+  font-size:.58rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  text-decoration:none;
+  padding:.28rem .6rem;
+  border:1px solid transparent;
+  border-radius:3px;
+  white-space:nowrap;
+  transition:color .15s, border-color .15s;
+}
+.hub-nav-links a:hover { color:var(--gold); border-color:var(--border); }
 .hub-wrap {
   max-width:900px;
   margin:0 auto;
