@@ -1385,6 +1385,151 @@ togglePeople = function() {
 };
 
 
+
+// ══════════════════════════════════════════════════════════════════════════
+// WORLD HISTORY LAYER — Batch 4
+// Major secular events contemporaneous with biblical history
+// ══════════════════════════════════════════════════════════════════════════
+
+const WORLD_EVENTS = [
+  { id:'wh-stonehenge-begin', name:'Stonehenge begun', year:-3000, region:'Britain',
+    summary:'Construction of Stonehenge begins on Salisbury Plain in what is now England. The monument was built in several phases over 1,500 years. Contemporary with early patriarchal period.' },
+  { id:'wh-writing-mesopotamia', name:'Writing invented (Sumerian)', year:-3200, region:'Mesopotamia',
+    summary:'The Sumerians of Mesopotamia (modern Iraq) develop cuneiform writing — the earliest writing system in human history — used for record-keeping, law, and literature. The Epic of Gilgamesh is among the earliest works.' },
+  { id:'wh-egypt-unified', name:'Egypt unified under first Pharaoh', year:-3100, region:'Egypt',
+    summary:'Narmer (Menes) unifies Upper and Lower Egypt under one rule, establishing the first dynasty. Egypt becomes one of the ancient world\'s great civilizations contemporaneous with the biblical patriarchal era.' },
+  { id:'wh-great-pyramid', name:'Great Pyramid of Giza built', year:-2560, region:'Egypt',
+    summary:'The Great Pyramid of Giza — the largest pyramid ever built — is completed for Pharaoh Khufu. Approximately 2.3 million stone blocks, each averaging 2.5 tonnes. It is the only Wonder of the Ancient World still standing, built during the time of the biblical patriarchs.' },
+  { id:'wh-akkadian-empire', name:'Akkadian Empire — world\'s first empire', year:-2334, region:'Mesopotamia',
+    summary:'Sargon of Akkad establishes the world\'s first empire, spanning much of Mesopotamia. Contemporary with the later patriarchal period. The Akkadian language becomes the diplomatic lingua franca of the ancient Near East.' },
+  { id:'wh-hammurabi-code', name:'Hammurabi\'s Code', year:-1754, region:'Babylon',
+    summary:'King Hammurabi of Babylon codifies one of the earliest and most complete written legal codes — 282 laws covering trade, property, marriage, and criminal justice. Contemporary with the Israelites in Egypt. Illuminates the legal world of Moses\'s day.' },
+  { id:'wh-mycenae-greece', name:'Mycenaean civilization rises', year:-1600, region:'Greece',
+    summary:'The Mycenaean civilization — the world of Agamemnon and the Trojan War — flourishes in mainland Greece, producing Linear B writing and the first Greek palace cultures. Contemporary with Israel\'s Egyptian sojourn.' },
+  { id:'wh-trojan-war', name:'Trojan War (traditional)', year:-1200, region:'Aegean',
+    summary:'The traditional date of the Trojan War — the conflict immortalized in Homer\'s Iliad — corresponds to the collapse of Bronze Age civilizations and the period of the biblical Judges. The same era saw the Sea Peoples disrupt Egypt and destroy Ugarit.' },
+  { id:'wh-bronze-age-collapse', name:'Bronze Age Collapse', year:-1200, region:'Mediterranean',
+    summary:'A catastrophic systems collapse destroys nearly every major civilization in the Eastern Mediterranean simultaneously — the Hittite Empire, Mycenaean Greece, Ugarit, and weakens Egypt. The cause remains debated. This is the turbulent backdrop of the period of the Judges.' },
+  { id:'wh-homer', name:'Homer composes the Iliad and Odyssey', year:-800, region:'Greece',
+    summary:'Homer — whether one poet or a tradition — composes the Iliad and Odyssey, the foundational works of Western literature, roughly contemporary with the divided kingdom of Israel and the ministry of Elijah.' },
+  { id:'wh-rome-founded', name:'Rome founded (traditional)', year:-753, region:'Italy',
+    summary:'Traditional date for the founding of Rome by Romulus, who according to legend was suckled by a she-wolf. The Roman Republic would later conquer Judea in 63 BC and the Roman Empire would be the world into which Jesus was born.' },
+  { id:'wh-athens-democracy', name:'Democracy in Athens', year:-508, region:'Greece',
+    summary:'Cleisthenes introduces democratic reforms in Athens — the world\'s first experiment in democratic governance — roughly contemporaneous with the rebuilding of Jerusalem\'s walls under Nehemiah and the ministry of Ezra.' },
+  { id:'wh-confucius', name:'Confucius', year:-551, region:'China',
+    summary:'Kong Qiu (Confucius) is born in China. His ethical teachings — on virtue, propriety, family loyalty, and righteous governance — would shape Chinese civilization for 2,500 years. Contemporary with Daniel\'s ministry in Babylon and the Jewish exile.' },
+  { id:'wh-buddha', name:'Siddhartha Gautama (Buddha)', year:-563, region:'India',
+    summary:'Siddhartha Gautama is born in what is now Nepal. His teachings on suffering, impermanence, and the eightfold path to liberation would become Buddhism — one of the world\'s great religions. Contemporary with the Jewish exile in Babylon.' },
+  { id:'wh-persian-empire', name:'Persian Empire at its height', year:-500, region:'Persia',
+    summary:'Under Darius I and Xerxes, the Achaemenid Persian Empire spans from India to Egypt and Greece — the largest empire the world had yet seen. This is the empire of Esther, Nehemiah, and Ezra. The Cyrus Cylinder (preserved from this era) corroborates the biblical account of Cyrus\'s decree.' },
+  { id:'wh-socrates', name:'Socrates', year:-470, region:'Greece',
+    summary:'Socrates is born in Athens. His method of philosophical inquiry — questioning assumptions through dialogue — and his death by hemlock for impiety (399 BC) established the foundation of Western philosophy. Contemporary with the Persian period and the rebuilding of Jerusalem.' },
+  { id:'wh-plato', name:'Plato founds the Academy', year:-387, region:'Greece',
+    summary:'Plato establishes the Academy in Athens — essentially the first university — and writes the Republic, the Symposium, and the dialogues that would shape Western thought for two millennia. His concept of ideal forms influenced later Jewish and early Christian theology.' },
+  { id:'wh-alexander', name:'Alexander the Great', year:-356, region:'Macedonia',
+    summary:'Alexander III of Macedon conquers the Persian Empire, Egypt, and reaches into India between 334-323 BC. His death at 32 in Babylon ends the largest empire the world had seen. His conquests spread Greek language and culture, creating the Koine Greek in which the entire NT would be written.' },
+  { id:'wh-sep-translation', name:'Septuagint translation begun', year:-285, region:'Alexandria',
+    summary:'The Hebrew scriptures are translated into Greek in Alexandria, Egypt — the Septuagint (LXX) — for the large Jewish diaspora who no longer read Hebrew. This Greek OT was the Bible of the early church and is quoted throughout the NT. It preserved and spread the OT across the Hellenistic world.' },
+  { id:'wh-han-dynasty', name:'Han Dynasty — China', year:-206, region:'China',
+    summary:'The Han Dynasty unifies China, establishing Confucianism as state philosophy and creating an empire contemporary with the Maccabean period in Judea. The Silk Road connecting China to the Mediterranean opens; goods and ideas flow across the ancient world.' },
+  { id:'wh-julius-caesar', name:'Julius Caesar', year:-100, region:'Rome',
+    summary:'Gaius Julius Caesar is born in Rome. His conquests in Gaul, civil war against Pompey, and dictatorship transformed Rome from Republic to Empire. His assassination in 44 BC led to Augustus, who would later decree the census that brought Joseph and Mary to Bethlehem (Luke 2:1).' },
+  { id:'wh-augustus', name:'Augustus becomes first Emperor', year:-27, region:'Rome',
+    summary:'Octavian (Augustus) becomes Rome\'s first emperor, inaugurating the Pax Romana — 200 years of relative peace and stable governance across the Mediterranean world. This is the political context of the Nativity: "In those days Caesar Augustus issued a decree that a census should be taken of the entire Roman world" (Luke 2:1).' },
+  { id:'wh-roman-roads', name:'Roman road network complete', year:-20, region:'Roman Empire',
+    summary:'The Roman road network — approximately 400,000 km of roads across the empire — reaches its greatest extent under Augustus. These roads enabled Paul\'s missionary journeys and the rapid spread of the gospel. "All roads lead to Rome" created the infrastructure for the early church\'s expansion.' },
+  { id:'wh-cleopatra', name:'Cleopatra VII rules Egypt', year:-51, region:'Egypt',
+    summary:'Cleopatra VII — the last active ruler of Ptolemaic Egypt — rules Egypt, allies with Julius Caesar and later Mark Antony, and ultimately takes her own life when Octavian\'s army defeats Antony. Contemporary with the late Hasmonean period in Judea.' },
+  { id:'wh-pompeii', name:'Mount Vesuvius destroys Pompeii', year:79, region:'Italy',
+    summary:'Mount Vesuvius erupts and buries the Roman city of Pompeii under ash, preserving a snapshot of first-century Roman life in extraordinary detail. The preserved graffiti, street food shops, brothels, bakeries, and homes illuminate the world into which the early church was born and in which Paul wrote his letters.' },
+  { id:'wh-colosseum', name:'Colosseum built in Rome', year:72, region:'Rome',
+    summary:'The Flavian Amphitheater (Colosseum) is constructed in Rome using the spoils from the sacking of Jerusalem — the gold and silver of the Temple treasury funded its construction. It could hold 50,000-80,000 spectators. Early Christian tradition holds that some believers were martyred in Roman amphitheaters during persecution.' },
+  { id:'wh-china-paper', name:'Paper invented in China', year:105, region:'China',
+    summary:'Cai Lun of the Han Dynasty refines papermaking technology in China. This invention would eventually transform the transmission of Scripture and Christian thought, though it would not reach Europe for over a millennium. The NT documents were written on papyrus — Egypt\'s equivalent.' },
+  { id:'wh-parthian-empire', name:'Parthian Empire', year:-247, region:'Persia',
+    summary:'The Parthian Empire controls Mesopotamia and Persia during the intertestamental period and into the NT era. They famously defeated Rome at the Battle of Carrhae (53 BC). The Magi (wise men) who visited Jesus likely came from Parthian territory — the biblical "east" — and their visit may have had political dimensions.' },
+  { id:'wh-silk-road', name:'Silk Road trade route opens', year:-130, region:'Central Asia',
+    summary:'Han Dynasty China opens formal trade with the West along what becomes known as the Silk Road. Goods, ideas, and eventually religions (including Christianity and Buddhism) would travel this network. The world of Acts is a world of long-distance trade — Lydia is a dealer in purple cloth (Acts 16:14), Priscilla and Aquila are tentmakers (Acts 18:3).' },
+  { id:'wh-dead-sea-scrolls-era', name:'Qumran Community established', year:-150, region:'Judea',
+    summary:'The Essene community at Qumran is established near the Dead Sea, copying and preserving the Hebrew scriptures. Their library — discovered in caves in 1947 as the Dead Sea Scrolls — includes the oldest surviving manuscripts of almost every OT book, proving the remarkable accuracy of textual transmission over a thousand years.' },
+];
+
+function renderHistoryLayer(g) {
+  const gHist = document.getElementById('g-history');
+  if (!gHist) return;
+  while (gHist.firstChild) gHist.removeChild(gHist.firstChild);
+
+  const HIST_COLOR = '#3a5a7a'; // muted steel blue — distinct from biblical events
+
+  WORLD_EVENTS.forEach((ev, i) => {
+    const x = yearToX(ev.year);
+
+    // Stem from axis down to marker
+    svgEl_('line', {
+      x1: x, y1: TL.AXIS_Y,
+      x2: x, y2: TL.HIST_Y - 8,
+      stroke: HIST_COLOR, 'stroke-width': '0.7', opacity: '0.45',
+    }, gHist);
+
+    // Diamond marker (pointing up)
+    const dw = 6;
+    const diamond = svgEl_('polygon', {
+      points: `${x},${TL.HIST_Y-dw} ${x+dw},${TL.HIST_Y} ${x},${TL.HIST_Y+dw} ${x-dw},${TL.HIST_Y}`,
+      fill: HIST_COLOR, opacity: '0.82',
+      'data-clickable': '1', style: 'cursor:pointer',
+    }, gHist);
+    diamond.addEventListener('click', () => openHistoryDetail(ev));
+
+    // Hit target
+    const hit = svgEl_('rect', {
+      x: x - 12, y: TL.HIST_Y - dw - 4, width: 24, height: dw * 2 + 8,
+      fill: 'transparent', 'data-clickable': '1', style: 'cursor:pointer',
+    }, gHist);
+    hit.addEventListener('click', () => openHistoryDetail(ev));
+
+    // Label — alternate two rows
+    const labelY = i % 2 === 0
+      ? TL.HIST_Y + dw + 12
+      : TL.HIST_Y + dw + 22;
+    svgText(ev.name, {
+      x, y: labelY,
+      'text-anchor': 'middle',
+      'font-family': "'Cinzel', serif",
+      'font-size': '6.5',
+      fill: HIST_COLOR, opacity: '0.78',
+      'pointer-events': 'none',
+    }, gHist);
+  });
+}
+
+function openHistoryDetail(ev) {
+  const HIST_COLOR = '#3a5a7a';
+  const dateStr = ev.year < 0 ? `c. ${Math.abs(ev.year)} BC` : `c. AD ${ev.year}`;
+  document.getElementById('detail-content').innerHTML = `
+    <div class="detail-era-badge" style="background:${HIST_COLOR}22;border:1px solid ${HIST_COLOR}66;color:${HIST_COLOR}">World History</div>
+    <div class="detail-name">${ev.name}</div>
+    <div class="detail-date">${dateStr}</div>
+    ${ev.region ? `<div class="detail-ref" style="color:var(--text-muted)">${ev.region}</div>` : ''}
+    <div class="detail-divider"></div>
+    <div class="detail-text">${ev.summary}</div>
+  `;
+  document.getElementById('detail-panel').classList.add('open');
+}
+
+// Patch toggleHistory to render on first use
+const _origToggleHistory = toggleHistory;
+toggleHistory = function() {
+  showHistory = !showHistory;
+  const gh = document.getElementById('g-history');
+  if (gh) gh.setAttribute('opacity', showHistory ? '1' : '0');
+  if (showHistory && gh && gh.childElementCount === 0) {
+    renderHistoryLayer(gh);
+  }
+  document.getElementById('history-toggle-btn')?.classList.toggle('active', showHistory);
+  document.getElementById('mobile-history-btn')?.classList.toggle('active', showHistory);
+};
+
+
 window.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 768) {
     document.getElementById('legend-mobile')?.classList.add('collapsed');
