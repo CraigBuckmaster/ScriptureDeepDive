@@ -776,3 +776,314 @@ num(10, {
 })
 
 print("NUM-2 complete: Numbers 7–10 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NUM-3: Chapters 11–14 — Complaint, Quail; Miriam; The Spy Crisis
+# ─────────────────────────────────────────────────────────────────────────────
+
+num(11, {
+    'title': 'Fire, Quail, and the Seventy Elders: The Beginning of Complaint',
+    'sections': [
+        {
+            'header': 'Verses 1–25 — Fire at Taberah; Complaining about Food; the Seventy Elders',
+            'verses': verse_range(1, 25),
+            'heb': [
+                ('mistaʾôněnîm', 'mistaonenim', 'complaining / those who complained', 'The Hithpoel of ʾānan — an unusual form suggesting deliberate, habitual complaining. Not an involuntary grievance but a chosen posture of complaint against the covenant God. It marks the beginning of Numbers\' rebellion sequence.'),
+                ('hāʾăsapsup', 'haasafsuf', 'the rabble / the riffraff / the mixed multitude', 'The discontented element within Israel — perhaps the "mixed multitude" of Exod 12:38 who joined Israel in the Exodus. Their craving (hittaʾawwû taʾăwāh) ignites the broader rebellion against the manna.'),
+            ],
+            'ctx': 'Numbers 11 opens the rebellion sequence that will dominate chs.11–21. Three crises in rapid succession: (1) unnamed complaint → fire at Taberah (vv.1–3); (2) craving for meat → the quail and plague (vv.4–34); (3) Moses\'s leadership crisis → the seventy elders (vv.14–25). The food complaint is particularly revealing — Israel lists the Egyptian food they miss (fish, cucumbers, melons, leeks, onions, garlic) and despises the manna God provides daily. Moses\'s own crisis (vv.11–15) is remarkable: he complains to God, "Why have you brought this trouble on your servant?… If this is how you are going to treat me, please go ahead and kill me." God\'s response is pastoral rather than punitive: he establishes the seventy elders to share Moses\'s burden, and he sends the quail — but the craving is met with a plague.',
+            'cross': [
+                ('1 Cor 10:6', '"Now these things occurred as examples to keep us from setting our hearts on evil things as they did." Paul explicitly uses the Num 11 rebellion as a warning for NT believers — the pattern of complaint against God\'s provision is a trap for every generation.'),
+                ('Ps 106:14–15', '"In the desert they gave in to their craving; in the wilderness they put God to the test. So he gave them what they asked for, but sent a wasting disease among them." The Psalmist summarises Num 11 — God\'s judgment is not always refusal; sometimes it is granting the craving with consequences.'),
+            ],
+            'mac': [
+                ('11:4–6', 'MacArthur: The food list — fish, cucumbers, melons, leeks, onions, garlic — reveals the nature of the complaint. Egypt\'s food was real, varied, and sensory. Manna is daily, reliable, and divine — but not diverse. The rebellion is not against hunger but against sameness; not against scarcity but against God\'s chosen form of provision. The complaint is fundamentally ingratitude.'),
+                ('11:14–15', 'MacArthur: Moses\'s prayer for death is one of the most honest moments of pastoral exhaustion in Scripture. He does not pray secretly; he tells God exactly how he feels: "I cannot carry all these people alone; the burden is too heavy for me." God\'s response is not rebuke but provision — the seventy elders. God meets exhaustion with structure, not condemnation.'),
+            ],
+            'milgrom': [
+                ('11:1', 'Milgrom: The fire at Taberah is set off by "complaint" (hĕmiṯʾônĕnîm) — a rare form suggesting pretextual or habitual grievance rather than genuine hardship. The fire burns "at the outskirts of the camp" — not the centre, not the tabernacle, but the margins. Divine judgment in Numbers begins at the periphery before spreading inward, reflecting graduated covenant consequence.'),
+                ('11:16–17', 'Milgrom: The seventy elders parallel the Jethro tradition of Exod 18 but with a different mechanism: not administrative efficiency but spiritual endowment. God takes some of Moses\'s Spirit and places it on the seventy. The shared Spirit creates a distributed prophetic authority — leadership is not Moses alone but a community of Spirit-bearers.'),
+            ],
+            'ashley': [
+                ('11:4–34', 'Ashley: The quail narrative is Numbers\' first extended crisis and its most psychologically rich. The people weep publicly (v.4, 10, 13, 18), Moses complains privately (vv.11–15), God responds with provision and judgment simultaneously (vv.18–20, 31–33). The chapter models the full complexity of covenant life: genuine distress, legitimate leadership struggle, divine patience, divine anger, and the terrible logic of getting what you crave.'),
+            ],
+            'sarna': [
+                ('11:5', 'Sarna: The menu of Egyptian foods — "fish we used to eat in Egypt for free" — is not merely nostalgia but a theological statement. Egypt, the house of slavery, is remembered as the house of provision. The Exodus has been reframed in Israel\'s memory from redemption to deprivation. This inversion of perspective is the heart of the complaint.'),
+            ],
+            'alter': [
+                ('11:11–15', 'Alter: Moses\'s soliloquy to God is among the most poignant passages in the Torah — a great leader at the breaking point, speaking with complete candour to the One who assigned him this impossible task. "Did I conceive all these people? Did I give them birth? Why do you tell me to carry them in my arms…?" The metaphor of nursing mother applied to Moses\'s pastoral burden is unforgettable.'),
+            ],
+            'calvin': [
+                ('11:1–3', 'Calvin: The punishment at Taberah teaches that complaining against God\'s provision is not merely emotional negativity but covenant rebellion. To despise the manna — God\'s daily miracle — is to despise the God who gives it. Christian contentment is not passive acceptance but active gratitude for what God has chosen to provide, even when it is less than what we might choose.'),
+            ],
+            'netbible': [
+                ('11:17', 'NET Note: "I will take some of the Spirit that is on you and put it on them" — the Spirit\'s distribution to the seventy elders is not division (Moses loses none) but multiplication. The text does not say Moses\'s Spirit is reduced; the shared anointing is additive, not subtractive. This models Spirit-empowered distributed leadership throughout the OT.'),
+            ],
+        },
+        {
+            'header': 'Verses 26–35 — Eldad, Medad, and the Quail Plague',
+            'verses': verse_range(26, 35),
+            'heb': [
+                ('mitnabbe\'im', 'mitnabe\'im', 'were prophesying', 'Hithpael of nābaʾ — prophesying, but in what mode is unclear. This may refer to ecstatic, spirit-inspired speech rather than predictive prophecy. The verb form suggests something spontaneous and visibly unusual — hence Joshua\'s alarm.'),
+                ('kĕvārāh', 'kevarak', 'about two cubits deep', 'The quail migration is so dense it covers the ground to a depth of three feet around the camp. The excess provision — not the lack of it — becomes the instrument of judgment. God\'s judgment through abundance is the chapter\'s most disturbing theological note.'),
+            ],
+            'ctx': 'Eldad and Medad (vv.26–30) stay in the camp rather than going to the tent of meeting but still receive the Spirit and prophesy — to Joshua\'s alarm and Moses\'s liberating response: "Are you jealous for my sake? I wish that all the Lord\'s people were prophets." The quail arrives in vast quantity (vv.31–33) — those who gathered least collected ten homers. But as they begin eating, "while the meat was still between their teeth," God strikes with a severe plague. The place is named Kibroth Hattaavah — "Graves of Craving." The craving became the grave.',
+            'cross': [
+                ('Acts 2:17–18', '"In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy." Peter quotes Joel in describing Pentecost — the fulfilment of Moses\'s wish: "I wish that all the Lord\'s people were prophets" (Num 11:29).'),
+                ('Ps 78:29–31', '"He gave them what they craved… but before they turned from what they craved, even while the food was still in their mouths, God\'s anger rose against them." The Psalmist\'s reflection on Kibroth Hattaavah — the anatomy of craving-turned-grave.'),
+            ],
+            'mac': [
+                ('11:28–29', 'MacArthur: "Are you jealous for my sake?" — Moses\'s response to Joshua\'s protectiveness is one of the most gracious statements of leadership in Scripture. A leader who is threatened by others\' gifts will suppress them; a leader who longs for God\'s blessing on all will celebrate every expression of the Spirit. Moses models the anti-jealousy of true covenant leadership.'),
+                ('11:31–34', 'MacArthur: The quail plague is Numbers\' most sobering divine judgment — not fire, not disease, but the consequence of getting exactly what was demanded. "While the meat was still between their teeth" — the craving that began as a complaint ended as a grave. Kibroth Hattaavah is a memorial warning: some prayers are dangerous to have answered.'),
+            ],
+            'milgrom': [
+                ('11:26–30', 'Milgrom: The Eldad-Medad episode introduces a principle that will recur throughout Israel\'s history: the Spirit of God is not bound to institutional structures. The Spirit falls on those who did not follow the prescribed procedure (going to the tent). Moses\'s response — "I wish all the Lord\'s people were prophets" — anticipates Joel\'s prophecy and Pentecost.'),
+            ],
+            'ashley': [
+                ('11:33', 'Ashley: "But while the meat was still between their teeth and before it could be consumed, the anger of the Lord burned against the people." The timing is theologically precise — the judgment comes at the moment of satisfaction, not the moment of craving. The craving itself was not punished; the consuming satisfaction of it was. God judges not the desire but the idol made of it.'),
+            ],
+            'alter': [
+                ('11:32', 'Alter: "All that day and night and all the next day the people went out and gathered quail. No one gathered less than ten homers." The scale of the gathering — every person, all day and night, minimal collection ten bushels — is grotesque. The excess is itself the judgment; the abundance is already becoming the grave.'),
+            ],
+            'calvin': [
+                ('11:34', 'Calvin: Kibroth Hattaavah — "Graves of Craving" — is a permanent memorial to the principle that disordered desire destroys. The people\'s craving was not for food per se (they had manna) but for the satisfactions of a life without God\'s constraints. When God removed the constraints and gave the craving its fullest expression, it killed them. Ungoverned desire is always ultimately fatal.'),
+            ],
+            'netbible': [
+                ('11:31', 'NET Note: "From the sea" — quail migrated annually across the Sinai peninsula from Africa to the Mediterranean, often flying low and landing exhausted on the ground where they could be easily caught. The "miraculous" element is not the quail themselves but their divinely-timed, divinely-scaled provision — and its timing with the people\'s demand.'),
+            ],
+        },
+    ],
+})
+
+num(12, {
+    'title': 'Miriam and Aaron: The Challenge to Moses\'s Authority',
+    'sections': [
+        {
+            'header': 'Verses 1–9 — Miriam and Aaron Speak Against Moses',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('wĕhāʾîš mōšeh ʿānāw mĕʾōd', "weha'ish Moshe anav me'od", 'Now Moses was a very humble man', 'Ânāv (humble/meek) — the quality that makes Moses uniquely suited to hear God directly. His humility is not weakness but a particular form of spiritual receptivity: he does not grasp at status or defend his position. God defends it for him.'),
+                ('peh ʾel-peh ădabbēr-bô', "peh el-peh adaber-vo", 'I speak with him face to face / mouth to mouth', 'God\'s description of his unique relationship with Moses — not through visions or dreams (as with other prophets) but directly, clearly, "mouth to mouth." The intimacy of Moses\'s prophetic access is unparalleled in Israel\'s history (cf. Deut 34:10).'),
+            ],
+            'ctx': 'Miriam and Aaron challenge Moses on two grounds: his Cushite wife (ethnicity objection) and their own prophetic status ("Has the Lord spoken only through Moses?"). The narrator notes the first objection but God addresses only the second — the prophetic-authority challenge. God summons all three to the tent of meeting, distinguishes Moses\'s prophetic access from all others (not through visions but "face to face"), and strikes Miriam with ṣāraʿat. Aaron pleads; Moses intercedes. Miriam is confined outside the camp for seven days. The entire community waits for her.',
+            'cross': [
+                ('Deut 34:10', '"Since then, no prophet has risen in Israel like Moses, whom the Lord knew face to face." The claim of Num 12:6–8 is confirmed at Moses\'s death: the "mouth to mouth" relationship was unique and unrepeated.'),
+                ('Matt 17:5', '"This is my Son, whom I love; with him I am well pleased. Listen to him!" At the Transfiguration, God\'s voice distinguishes Jesus from Moses and Elijah — the ultimate "face to face" relationship surpassing even Moses\'s unique access.'),
+            ],
+            'mac': [
+                ('12:1–3', 'MacArthur: The Cushite wife objection is almost certainly a cover for the real issue — prophetic authority. The narrator\'s aside ("Moses was a very humble man") is not accidental: it is the theological key. Miriam and Aaron\'s challenge is essentially a power struggle; Moses\'s humility is precisely what makes him immune to the temptation to fight back. He does not need to defend himself because he has no ego investment in his position.'),
+                ('12:6–8', 'MacArthur: God\'s distinction between Moses and all other prophets — "With him I speak face to face, clearly and not in riddles" — establishes a prophetic hierarchy that will govern Israel\'s understanding of revelation for millennia. Not all prophecy is equal; not all prophetic access is the same. Moses stands at the apex of Israel\'s prophetic tradition.'),
+            ],
+            'milgrom': [
+                ('12:1', 'Milgrom: The Cushite wife is identified with Zipporah in some traditions (Exod 2:21, from Midian; some traditions identify Midian with Cush). The objection may be ethnic — Moses married a non-Israelite — or it may simply be the presenting complaint for the deeper power struggle. Either way, God does not address it, suggesting the ethnic objection was a pretext.'),
+                ('12:8', 'Milgrom: "The form of the Lord" (tĕmûnat yhwh) — Moses sees not merely the divine glory but some form or likeness. This goes beyond any other Israelite\'s prophetic access, approaching but not reaching the direct sight of God\'s face (Exod 33:20). Moses is the prophet-mediator who bridges the gap between divine transcendence and human finitude.'),
+            ],
+            'ashley': [
+                ('12:1–16', 'Ashley: The Miriam-Aaron episode reveals that the challenges to covenant authority do not only come from outside the community (the rabble, the Egyptians) but from within the family and the leadership. Aaron and Miriam are Moses\'s own siblings and both prophetic figures. The threat from within is the more dangerous one — and God addresses it with both judgment and mercy.'),
+            ],
+            'sarna': [
+                ('12:3', 'Sarna: The narrator\'s parenthetical note — "Now Moses was a very humble man, more humble than anyone else on the face of the earth" — is one of the Torah\'s most unusual first-person-style comments. Its placement between the challenge (vv.1–2) and God\'s response (vv.4–8) is interpretive: Moses\'s greatness is not power but receptivity. He is great because he is empty of self.'),
+            ],
+            'alter': [
+                ('12:6–8', 'Alter: God\'s speech distinguishing Moses from other prophets is among the most formally elevated passages in Numbers — carefully structured, rhetorically precise, climaxing in the devastating rhetorical question of v.8: "Why then were you not afraid to speak against my servant Moses?" The divine defense of Moses is more devastating than any punishment Moses could have requested.'),
+            ],
+            'calvin': [
+                ('12:3', 'Calvin: Moses\'s humility is not natural meekness but God-wrought submission — the quality of a man who has seen God "face to face" and therefore has no need to assert himself before other humans. Those who have genuinely encountered God\'s glory find human status comparison absurd. True meekness flows from worship.'),
+            ],
+            'netbible': [
+                ('12:7', 'NET Note: "He is faithful in all my house" (neʾĕmān bĕkol-bêtî) — the title "faithful in all my house" is unique to Moses in the OT. The writer of Hebrews (3:2, 5) uses it to compare Moses\'s faithfulness with Christ\'s: Moses as faithful servant in God\'s house; Christ as faithful Son over God\'s house.'),
+            ],
+        },
+        {
+            'header': 'Verses 10–16 — Miriam\'s Leprosy; Moses\'s Intercession; Seven Days Outside',
+            'verses': verse_range(10, 16),
+            'heb': [
+                ('ʾal-naʾ tĕhî kĕmēt', "al-na tehi kamet", 'please do not let her be like the dead', 'Moses\'s intercession for Miriam is brief and urgent — seven Hebrew words. The "please" (naʾ) signals urgent entreaty; the comparison to "the dead" (who emerge from the womb already half-decayed, v.12) shows the severity of her condition. Moses prays for the sister who just challenged him.'),
+            ],
+            'ctx': 'When the cloud lifts from the tent of meeting, Miriam is suddenly covered with ṣāraʿat. Aaron turns and sees — her skin is white as snow. He immediately confesses ("we have sinned") and pleads with Moses, who immediately intercedes for her. God\'s response: she will be confined outside the camp for seven days, as if her father had spit in her face (a shaming gesture). The entire camp waits for Miriam\'s seven days before moving. The combination of judgment (confinement), mercy (healing), and community solidarity (waiting) is characteristic of Numbers at its most pastorally complex.',
+            'cross': [
+                ('Luke 17:14', '"Go, show yourselves to the priests." Jesus sends healed lepers to the priests in fulfilment of the Levitical procedure — the same process that will declare Miriam clean after her seven days outside the camp.'),
+                ('Matt 5:44', '"Pray for those who persecute you." Moses intercedes immediately for the sister who just challenged his authority — the pattern Jesus commands is first enacted by Moses.'),
+            ],
+            'mac': [
+                ('12:13', 'MacArthur: Moses\'s seven-word prayer for Miriam — "Please, God, heal her!" — is the shortest intercessory prayer in Scripture and among the most powerful. After Miriam has publicly challenged his authority, Moses\'s first response is prayer for her, not satisfaction at her judgment. This is the meekness of v.3 in action: no vindictiveness, no gloating, immediate compassionate intercession.'),
+                ('12:15', 'MacArthur: "The people did not move on till Miriam was brought back" — the entire covenant community halts for one member\'s restoration. Israel\'s march is not more important than the redemption of a single person. The community\'s coherence takes precedence over its schedule.'),
+            ],
+            'milgrom': [
+                ('12:10–12', 'Milgrom: Aaron\'s description of Miriam as "like a stillborn infant" (v.12) is a graphic description of advanced ṣāraʿat — skin so damaged it resembles a half-formed newborn. The simile drives home the severity of her condition and the urgency of Moses\'s intercession. Milgrom notes this is one of the OT\'s most vivid descriptions of ṣāraʿat\'s full effect.'),
+            ],
+            'ashley': [
+                ('12:15–16', 'Ashley: The community waiting for Miriam — a woman, a prophet, one who has just been punished — is a striking counter to the tendency of ancient communities to simply move on and leave the disgraced behind. Israel\'s solidarity with Miriam in her shame and restoration is a model of covenant community: no one is dispensable, not even the disciplined.'),
+            ],
+            'sarna': [
+                ('12:14', 'Sarna: "If her father had spit in her face, would she not have been in disgrace for seven days?" — the seven-day period parallels the seven-day shame-period in ancient Near Eastern custom for public disgrace. God\'s discipline mirrors human social consequences but adds the element of genuine physical healing and restoration — judgment with a clear endpoint.'),
+            ],
+            'alter': [
+                ('12:13', 'Alter: The brevity of Moses\'s intercession — four words in Hebrew (ʾēl nāʾ rĕfāʾ nāʾ lāh — "Please God, heal her please") — is itself a theological statement. Moses does not craft an elaborate plea or argue theological reasons; he cries out the bare minimum of urgent love. Sometimes prayer is simply "please."'),
+            ],
+            'calvin': [
+                ('12:10–16', 'Calvin: Miriam\'s punishment and restoration model the covenant\'s discipline-and-mercy structure. The judgment is real (seven days outside), the humiliation genuine, but the endpoint is clear and the restoration complete. God does not destroy Miriam for her rebellion — he disciplines her and restores her. The covenant\'s judgment is always in service of the covenant\'s relationship.'),
+            ],
+            'netbible': [
+                ('12:15', 'NET Note: "The people did not move on till Miriam was brought back" — the Hiphil of ʾāsap ("gathered in/brought back") uses the same root as the verb for gathering the dead for burial. Miriam is "gathered back" from the social death of camp exclusion — her restoration is a small resurrection.'),
+            ],
+        },
+    ],
+})
+
+num(13, {
+    'title': 'The Spies: Seeing the Land Through the Eyes of Fear',
+    'sections': [
+        {
+            'header': 'Verses 1–25 — The Twelve Spies Sent; The Land Explored',
+            'verses': verse_range(1, 25),
+            'heb': [
+                ('ʾănāšîm', 'anashim', 'men', 'One leader from each tribe — significant men, each a chieftain (nāśîʾ) of his tribe. The spies are not random soldiers but tribal leaders entrusted with the mission. Their failure is therefore not just personal but representational — Israel\'s leadership fails the covenant test.'),
+                ('Kālēb ben Yĕpunneh', 'Calev ben Yefunneh', 'Caleb son of Jephunneh', 'Caleb\'s name likely means "dog" or "wholehearted" — the latter apt for the man who follows God "wholeheartedly" (14:24). His wholehearted spirit (ʿaqab ʾaḥărāy) stands in direct contrast to the ten spies\' fearful report.'),
+            ],
+            'ctx': 'Numbers 13 records the spy mission to Canaan — the decisive test that will determine whether the Exodus generation enters the promised land. Moses sends twelve tribal leaders for forty days. They bring back an enormous cluster of grapes (requiring two men to carry), pomegranates, and figs — visible confirmation that the land "flows with milk and honey." They also bring back the report of fortified cities and giant inhabitants (Nephilim, Anakites). The chapter ends at the threshold of the great crisis: ten spies see the people as grasshoppers before the giants; two see the same facts through the lens of faith.',
+            'cross': [
+                ('Heb 3:19', '"So we see that they were not able to enter, because of their unbelief." The writer of Hebrews identifies the spy crisis as the paradigmatic failure of unbelief — the event that defines Israel\'s wilderness generation for the NT as a negative example.'),
+                ('Josh 14:6–14', 'Caleb, 85 years old, claims the land God promised him at Kadesh-barnea — the faith of his spy mission vindicated forty-five years later.'),
+            ],
+            'mac': [
+                ('13:17–20', 'MacArthur: Moses\'s briefing for the spies is detailed and practical: assess the land (Is it good or bad?), the people (Are they strong or weak?), the cities (Are they unwalled or fortified?), the soil (Is it fertile or poor?). The mission is intelligence-gathering, not doubt-expressing. The problem is not the reconnaissance but what the ten spies do with the information they gather.'),
+                ('13:23–24', 'MacArthur: The enormous grape cluster — two men, a pole — is a tangible confirmation of the Promised Land\'s abundance. The evidence was visible and concrete: the land flows with milk and honey. The problem is not insufficient evidence but insufficient faith to act on the evidence that was given.'),
+            ],
+            'milgrom': [
+                ('13:2', 'Milgrom: "Send men to explore the land of Canaan, which I am giving to the Israelites." The divine command uses the participiple "I am giving" — the gift is already in process. The land is being given; the reconnaissance is not to determine whether to go but how. The ten spies\'s later report converts a logistics mission into a referendum on the promise.'),
+                ('13:27–29', 'Milgrom: The spies\' report has two parts: the land is indeed flowing with milk and honey (the good news, vv.27–28a), but the people are powerful and the cities large (the bad news, vv.28b–29). The ten spies lead with the good news but frame the bad news as determinative. Caleb and Joshua will reverse this weighting.'),
+            ],
+            'ashley': [
+                ('13:1–25', 'Ashley: The forty-day reconnaissance period mirrors other significant forty-day periods in the Pentateuch (Exod 24:18, Moses on Sinai; Gen 7:4, the flood). The number signals a divine appointment — a period of testing and preparation. The spies return from their forty-day test; Israel\'s response will consign the generation to forty years.'),
+            ],
+            'sarna': [
+                ('13:22', 'Sarna: "Hebron had been built seven years before Zoan in Egypt" — a historical note that grounds the spy narrative in real geography. Hebron is one of the oldest cities in Canaan; the Anakites who lived there were a notoriously large people (Deut 9:2). The spies\' fear is not irrational — Hebron\'s history and inhabitants were genuinely formidable by human standards.'),
+            ],
+            'alter': [
+                ('13:23', 'Alter: The grape cluster carried on a pole by two men is one of Numbers\' most vivid images — a hyperbolically literal fulfilment of "a land flowing with milk and honey." The fruit is so large two men must carry it. The land exceeds even what the promise implied. The problem is not the evidence but the ability to trust it.'),
+            ],
+            'calvin': [
+                ('13:17–25', 'Calvin: The spy mission is not unbelief — Moses commands it, God permits it. Intelligence-gathering is not incompatible with faith. The sin comes afterward, when the ten spies allow the intelligence to overwhelm the promise. Faith does not ignore reality; it interprets reality through the lens of God\'s covenant word.'),
+            ],
+            'netbible': [
+                ('13:22', 'NET Note: "Ahiman, Sheshai, and Talmai, the descendants of Anak" — the three Anakites at Hebron are named, giving them individual identity and weight. These are not generic "big people" but named, powerful individuals whose size made them legendary. The spies\' fear is not fabrication; the threat they faced was real. But God is greater.'),
+            ],
+        },
+        {
+            'header': 'Verses 26–33 — The Spies\' Report: The Grasshopper Complex',
+            'verses': verse_range(26, 33),
+            'heb': [
+                ('wayyahaś', 'wayyahas', 'he silenced / he calmed', 'Caleb\'s verb: he "hushed" (haśāh) the people before Moses — a command to stop the panic. One man against the tide of ten, silencing the assembly. His action as much as his words is the embodiment of the faith that distinguishes him.'),
+                ('kaḥăgābîm', 'kachagavim', 'like grasshoppers', 'The ten spies\' self-description: "We seemed like grasshoppers in our own eyes, and we looked the same to them." The double perception — how they saw themselves, how they imagined the giants saw them — reveals the mechanism of unbelief: it begins with self-assessment, not with God-assessment.'),
+            ],
+            'ctx': 'The spies\' return (vv.26–29) initially confirms the mission\'s findings — good land, but formidable inhabitants. Then Caleb silences the panic and proposes immediate action: "We should go up and take possession of the land, for we can certainly do it." The ten contradict him: "We can\'t attack those people; they are stronger than we are." Their report escalates into a "bad report" (dibbāh) — slander against the land. The final image is devastating: "We seemed like grasshoppers in our own eyes." Self-perception, not God\'s assessment, has become the measure of reality. Israel has exchanged God\'s perspective for their own smallness.',
+            'cross': [
+                ('2 Tim 1:7', '"For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline." The antidote to the grasshopper complex — the Spirit of power replaces the spirit of fear that reduced Israel to grasshoppers in their own eyes.'),
+                ('Rom 8:31', '"If God is for us, who can be against us?" Paul\'s rhetorical question is the theological counter to Num 13:31 ("We can\'t attack those people; they are stronger than we are"). The issue is not the strength of the opposition but the identity of the one on Israel\'s side.'),
+            ],
+            'mac': [
+                ('13:30', 'MacArthur: Caleb\'s "We can certainly do it" is one of faith\'s clearest statements in the Torah — not a denial of the obstacles but a declaration that the obstacles are secondary to the promise. He has seen the same giants, the same fortified cities, the same formidable reality as the ten. He interprets that reality through the covenant rather than through his own smallness.'),
+                ('13:33', 'MacArthur: "We seemed like grasshoppers in our own eyes" — the ten spies have committed the fundamental theological error: they have made themselves the measure. The question is not "How big are we compared to the giants?" but "How big is God compared to the giants?" Self-measurement always produces despair; God-measurement always produces courage.'),
+            ],
+            'milgrom': [
+                ('13:32', 'Milgrom: "The land we explored devours those living in it" — the ten spies\' description of Canaan as a "land that devours its inhabitants" contradicts the earlier report of its fertility. The slander (dibbāh) is not merely about the inhabitants but about the land itself. They are not just afraid of the Canaanites; they have rejected the promise.'),
+            ],
+            'ashley': [
+                ('13:30–33', 'Ashley: The contrast between Caleb\'s single verse (v.30) and the ten spies\' three verses (vv.31–33) is telling. One voice of faith is overwhelmed by multiple voices of fear. The majority report is not automatically the correct one; in the covenant community, faithfulness is measured by alignment with God\'s word, not by headcount.'),
+            ],
+            'sarna': [
+                ('13:33', 'Sarna: "We seemed like grasshoppers in our own eyes, and we looked the same to them" — the second half is a projection: the spies assume the giants saw them as small as they saw themselves. They have no evidence for this; it is the imagination of unbelief. Fear projects its own self-assessment onto others and calls the projection reality.'),
+            ],
+            'alter': [
+                ('13:32–33', 'Alter: The "bad report" (dibbāh) escalates through two verses from realism (fortified cities, powerful people) to slander (land that devours its inhabitants, giants who make us grasshoppers). The movement from factual intelligence to panic-driven distortion is the textbook anatomy of how unbelief processes reality.'),
+            ],
+            'calvin': [
+                ('13:31–33', 'Calvin: "We can\'t attack those people; they are stronger than we are." The ten spies speak the truth about human strength and lie about theological reality. They have seen God\'s power in the Exodus, the Red Sea, the provision of manna and water, the Sinai theophany — and still conclude that the Canaanites are stronger. Unbelief is not lack of evidence; it is refusal to interpret evidence through the lens of covenant experience.'),
+            ],
+            'netbible': [
+                ('13:33', 'NET Note: "Nephilim" (v.33) — the reference to the Nephilim connects to Gen 6:4, where they appear before the flood. Their post-flood appearance here either reflects legendary tradition about large people groups or the use of the term for any extraordinarily large warriors. The point for the narrative is the ten spies\' perception of overwhelming, superhuman opposition.'),
+            ],
+        },
+    ],
+})
+
+num(14, {
+    'title': 'The Rebellion at Kadesh: The Sentence of Forty Years',
+    'sections': [
+        {
+            'header': 'Verses 1–25 — The People\'s Rebellion; Moses\'s Intercession',
+            'verses': verse_range(1, 25),
+            'heb': [
+                ('lûlê', 'lulei', 'if only / would that', 'The ultimate inversion: "If only we had died in Egypt! If only we had died in this wilderness!" The people who were enslaved in Egypt and are now months from the promised land wish they were back in Egypt or dead. The covenant has been completely inverted in their imagination.'),
+                ('lĕmaʿan šimkā', 'lemaʼan shimcha', 'for the sake of your name / for your name\'s sake', 'Moses\'s intercession turns not on Israel\'s repentance (there is none) but on God\'s own reputation among the nations. The nations who heard of the Exodus will say YHWH was unable to complete what he began. God\'s honour is the ground of Moses\'s appeal.'),
+            ],
+            'ctx': 'Numbers 14 is the climactic crisis of the Pentateuch. The people weep through the night, propose returning to Egypt, and move to stone Caleb and Joshua. God announces his intention to destroy Israel and start over with Moses. Moses intercedes with three arguments: (1) God\'s reputation among the nations (vv.13–16); (2) the divine character proclamation of Exod 34:6–7 (vv.17–19); (3) the covenant itself ("forgive, as you have forgiven since Egypt," v.19). God responds: "I have forgiven them, as you asked" — but with a judicial consequence. The Exodus generation will die in the wilderness. Every person who was counted in the census (20 years and older) will not enter Canaan. Only Caleb and Joshua are excepted. Forty years in the wilderness: one year for each day of the spy mission.',
+            'cross': [
+                ('Heb 3:16–4:2', '"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?… They were not able to enter, because of their unbelief." The writer of Hebrews makes Num 14 the paradigmatic warning passage for the NT church: covenant proximity does not guarantee covenant entry.'),
+                ('Exod 34:6–7', '"The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness." Moses quotes the Sinai self-revelation of God as the basis for his intercession — God\'s own stated character is the grounds for the appeal.'),
+            ],
+            'mac': [
+                ('14:13–19', 'MacArthur: Moses\'s intercession is one of the great theological arguments in Scripture. He does not argue Israel\'s merit (they have none) or their potential (they have just proved faithless). He argues God\'s character and God\'s reputation. The intercession is entirely theocentric — "for the sake of your name" (cf. v.17). This is the model for Christian prayer: appeal to God\'s own character, not to our own worthiness.'),
+                ('14:20–23', 'MacArthur: "I have forgiven them, as you asked" — God forgives but does not remove consequences. Forgiveness and judgment are not mutually exclusive in the covenant framework. The generation is forgiven in the sense that they are not immediately destroyed; they are judged in that they will not enter the land. The grace that preserves them and the justice that sentences them operate simultaneously.'),
+            ],
+            'milgrom': [
+                ('14:1–4', 'Milgrom: The people\'s proposal to return to Egypt (v.4) is the logical endpoint of the spy crisis: if the land cannot be taken, the only alternative is retreat to the starting point. The proposal to appoint a leader to take them back to Egypt inverts the Exodus — the people are now proposing a reverse Exodus, returning to slavery. This is the nadir of Israel\'s covenant failure.'),
+                ('14:17–19', 'Milgrom: Moses\'s quotation of the divine character formula (Exod 34:6–7) as the basis for intercession establishes a principle of covenant prayer: God\'s own self-disclosure is the most powerful ground for appeal. Moses holds God to his own self-declaration. This is not manipulation but covenant faithfulness — praying God\'s own promises back to him.'),
+            ],
+            'ashley': [
+                ('14:1–10', 'Ashley: The community\'s response to the spies\' report escalates rapidly: weeping (v.1), corporate complaint (v.2), desire for death (v.2), proposal to return to Egypt (v.3), stone Caleb and Joshua (v.10). The speed of the descent from fear to murderous intent reveals how thin the covenant community\'s loyalty was. Grace had not yet been appropriated; it had only been received.'),
+            ],
+            'sarna': [
+                ('14:11', 'Sarna: "How long will these people treat me with contempt? How long will they refuse to believe in me, in spite of all the signs I have performed among them?" God\'s rhetorical questions to Moses reveal divine grief as much as divine anger. The language is relational, not merely judicial — these are the words of a covenant partner who has been consistently rejected despite consistent faithfulness.'),
+            ],
+            'alter': [
+                ('14:13–16', 'Alter: Moses\'s argument from international reputation is extraordinary — he appeals to what the Egyptians will say, what the nations will conclude. He is not being cynical; he is being theologically astute. God\'s honour among the nations is a legitimate and powerful ground for mercy. The nations watching the Exodus deserve to see its completion; God\'s aborted promise would be a theological scandal.'),
+            ],
+            'calvin': [
+                ('14:17–19', 'Calvin: Moses\'s intercession models the principle that the deepest ground for prayer is not human need but divine character. "In accordance with your great love, forgive the sin of these people" — Moses appeals not to Israel\'s contrition (absent) or to their future potential (dubious) but to God\'s love and God\'s past forgiveness. This is the structure of Christian prayer at its best: appealing to what God is and what God has already done.'),
+            ],
+            'netbible': [
+                ('14:18', 'NET Note: "Forgiving wickedness, rebellion and sin. Yet he does not leave the guilty unpunished; he punishes the children for the sin of the parents to the third and fourth generation" — Moses quotes Exod 34:6–7 but omits the opening list of God\'s gracious attributes, moving directly to the justice-mercy tension. He uses the full text including the justice clause — his prayer is honest about God\'s character, not selective.'),
+            ],
+        },
+        {
+            'header': 'Verses 26–45 — The Forty-Year Sentence; the Defeated Presumption',
+            'verses': verse_range(26, 45),
+            'heb': [
+                ('yĕdaʿtem ʾet-tĕnûʾātî', 'yeda\'tem et-tenuati', 'you will know what it is like to have me withdraw my support / you will feel my opposition', 'A deeply ominous phrase — tĕnûʾāh means "my thwarting" or "my opposition." The generation that refused to enter Canaan will experience God opposing their movement rather than leading it — the ultimate covenant reversal.'),
+                ('wayaʿpîlû', 'wayapiloo', 'yet they dared to go up / they presumed / they acted presumptuously', 'The word for the unauthorized assault on the Amalekites and Canaanites — the people try to enter the land on their own, after the sentence has been declared. Presumption is the opposite of faith: where faith acts on God\'s invitation, presumption acts on God\'s absence.'),
+            ],
+            'ctx': 'The divine sentence (vv.26–35) is precise: everyone counted in the census (20+) will die in the wilderness — one year for each spy day, forty years total. Only Caleb and Joshua are exempted. The ten unfaithful spies die immediately of plague. Then in an act of grotesque irony, the people immediately reverse course and attempt to enter Canaan anyway — without the ark, without Moses, against Moses\'s warning. They are defeated by the Amalekites and Canaanites. Presumption after refusal is no more pleasing to God than refusal itself. The generation is now condemned from both directions: they refused when God invited; they attempted when God forbade.',
+            'cross': [
+                ('Num 14:44', '"Nevertheless, in their presumption they went up toward the high hill country, though neither Moses nor the ark of the Lord\'s covenant moved from the camp." The absent ark is the theological marker: Israel attempted what only God\'s presence can accomplish. Without the ark (the symbol of divine accompaniment), the campaign was doomed before it began.'),
+                ('Luke 14:28–32', '"Suppose a king is about to go to war against another king. Won\'t he first sit down and consider whether he is able with ten thousand men to oppose the one coming against him with twenty thousand?" Jesus\'s principle of counting the cost before action reflects the Num 14 lesson: the issue is not whether to fight but whether God is with you.'),
+            ],
+            'mac': [
+                ('14:26–35', 'MacArthur: The forty-year sentence is proportional, specific, and memorable: one year for each spy day. The spy mission that took forty days produces forty years of consequences. God\'s judicial sentences are not arbitrary but calibrated — the punishment fits the crime in a way Israel will never forget. Every year of wilderness wandering is a reminder of one day of faithless reconnaissance.'),
+                ('14:39–45', 'MacArthur: The presumptuous assault on Canaan is the covenant\'s tragic irony: the generation who refused to go when God invited now attempts to go when God has forbidden. Both the refusal and the presumption are forms of self-will — replacing God\'s timing and command with their own. Faith acts on God\'s invitation, neither refusing nor presuming.'),
+            ],
+            'milgrom': [
+                ('14:29–33', 'Milgrom: The census numbers reappear in the sentence — "this generation" is defined precisely as those counted in Num 1 (600,000+ males, ages 20+). The census that organised Israel into an army now defines the generation that will die without entering Canaan. The census data becomes the sentence data: every man numbered will die unnumbered in the wilderness.'),
+                ('14:44', 'Milgrom: "The ark of the Lord\'s covenant did not move from the camp" — the ark\'s immobility is the key detail. The divine warrior who goes before Israel (10:35) has withdrawn. Without the ark\'s movement, Israel has no divine vanguard; their assault is entirely human — and humanly insufficient.'),
+            ],
+            'ashley': [
+                ('14:39–45', 'Ashley: The attempted entry into Canaan after the judgment is pronounced reveals the generation\'s fundamental problem: they respond to circumstances rather than to God\'s word. When the spies reported negatively, they despaired. When God announced judgment, they decided to act. Neither response is faith — both are reactions to events rather than responses to the covenant word.'),
+            ],
+            'sarna': [
+                ('14:44–45', 'Sarna: The defeat at Hormah by the Amalekites and Canaanites is the first military defeat recorded for Israel in the wilderness — a foretaste of the forty years\' experience. The generation that saw Egypt, the Red Sea, and Sinai ends by being "beaten back" at the boundary of the land they refused to enter. The trajectory of unbelief is always downward.'),
+            ],
+            'alter': [
+                ('14:40', 'Alter: "We have sinned. We will go up to the place the Lord promised." The repentance comes one day too late and takes the wrong form: they confess the sin of refusing to go and then immediately attempt to go — as if the action can undo the confession. Genuine repentance accepts the consequences of sin; presumptuous repentance tries to remove consequences through compensating action.'),
+            ],
+            'calvin': [
+                ('14:26–35', 'Calvin: The forty-year sentence teaches that covenant consequences are real and permanent within this life, even after forgiveness. God forgives the rebellion; he does not immediately remove its earthly consequences. The Christian who has been forgiven a serious sin may live with its earthly consequences for the rest of their life. Forgiveness restores the relationship; it does not always restore the circumstances.'),
+            ],
+            'netbible': [
+                ('14:34', 'NET Note: "For forty years — one year for each of the forty days you explored the land — you will suffer for your sins and know what it is like to have me against you." The correlation is exact: the spy mission determined the wilderness sentence. The forty days of faithless reconnaissance translated into forty years of wilderness discipline. Divine judgment is precisely calibrated.'),
+            ],
+        },
+    ],
+})
+
+print("NUM-3 complete: Numbers 11–14 built.")

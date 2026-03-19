@@ -279,7 +279,7 @@ REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT', 'ot'),
     ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
     ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
-    ('numbers',  'Numbers',    36, 10, 'OT', 'ot'),
+    ('numbers',  'Numbers',    36, 14, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
