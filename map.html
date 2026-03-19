@@ -937,15 +937,15 @@ function initMap() {
     preferCanvas: false,
   });
 
-  // ESRI National Geographic — cartographic parchment style, tiles to zoom 16
-  // maxNativeZoom: tiles are stretched gracefully beyond their native limit
-  // instead of showing "tiles not available"
+  // ESRI World Physical — pure terrain imagery, NO text labels at all.
+  // Our Cinzel ancient place names will be the only text on the map.
+  // maxNativeZoom:8 means tiles stretch at higher zooms rather than disappearing.
   const tiles = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
     {
-      attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+      attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
       maxZoom: 16,
-      maxNativeZoom: 16,
+      maxNativeZoom: 8,
     }
   );
   tiles.addTo(map);
