@@ -906,9 +906,11 @@ function renderMap() {
     .attr('fill', 'url(#sea-grad)');
 
   // ── PROJECTION ───────────────────────────────────────────────────────
+  // Scale so the biblical world (lon 20-65, 45° span) fits ~85% of panel width
+  const bibleScale = (W * 0.85 * 180) / (45 * Math.PI);
   const projection = d3.geoMercator()
     .center(MAP_CENTER)
-    .scale(Math.min(W, H) * 2.8)
+    .scale(bibleScale)
     .translate([W / 2, H / 2]);
 
   currentProjection = projection;
@@ -1565,6 +1567,114 @@ const STORIES = [
     paths:[
       { coords:[[44.4,32.5],[35.2,31.8]], dashed:false, label:'Return to Jerusalem' },
       { coords:[[48.2,32.2],[35.2,31.8]], dashed:true, label:'Nehemiah\'s journey' }
+    ]
+  },
+
+
+  // ── NEW TESTAMENT ─────────────────────────────────────────────────────────
+  {
+    id:'nativity', era:'nt', name:'The Nativity',
+    ref:'Matthew 1–2; Luke 1–2',
+    chapter:'nt/luke/Luke_2.html',
+    summary:'The Word became flesh in the most unlikely of circumstances. Caesar Augustus\'s census decree forced Joseph and Mary from Nazareth south to Bethlehem to register. No room was found in the inn; the child was born and laid in a feeding trough. Shepherds in nearby fields were startled by an angelic announcement and went to verify it. Magi from the east arrived in Jerusalem asking for the King of the Jews. Herod, paranoid, directed them to Bethlehem; they found the child, offered gold, frankincense, and myrrh, and were warned in a dream not to return to Herod. Joseph was warned in a dream: flee to Egypt. They left by night. Herod ordered the slaughter of all boys under two in Bethlehem and its vicinity. After Herod\'s death the family returned to Nazareth in Galilee.',
+    places:['nazareth','bethlehem','egypt','jerusalem'],
+    regions:[],
+    paths:[
+      { coords:[[35.3,32.7],[35.2,31.7]], dashed:false, label:'Nazareth to Bethlehem' },
+      { coords:[[35.2,31.7],[31.2,28.5]], dashed:false, label:'Flight to Egypt' },
+      { coords:[[31.2,28.5],[35.3,32.7]], dashed:true, label:'Return to Nazareth' }
+    ]
+  },
+  {
+    id:'baptism-temptation', era:'nt', name:'Baptism & Temptation',
+    ref:'Matthew 3–4; Luke 3–4',
+    chapter:'nt/matthew/Matthew_3.html',
+    summary:'John the Baptist had been preaching repentance at the Jordan when Jesus came from Galilee to be baptised. John protested — he needed to be baptised by Jesus. When Jesus came up from the water, the Spirit descended like a dove, and a voice from heaven declared: "This is my Son, whom I love." Immediately the Spirit led him into the Judean wilderness. For forty days he was tempted by the devil — the inverse of Israel\'s forty years in the wilderness. Three tests: turn stones to bread, throw yourself from the Temple pinnacle, worship me in exchange for all the kingdoms of the world. Jesus answered each with Scripture from Deuteronomy. Angels came and ministered to him. He returned to Galilee in the power of the Spirit.',
+    places:['jordan-r','judean-wild','nazareth'],
+    regions:[
+      { coords:[[35,31.5],[36,31.5],[36,32.2],[35,32.2],[35,31.5]], color:'#c9a84c', label:'Judean Wilderness' }
+    ],
+    paths:[
+      { coords:[[35.3,32.7],[35.6,32.0]], dashed:false, label:'To Jordan' },
+      { coords:[[35.6,32.0],[35.4,31.7]], dashed:false, label:'Into the wilderness' }
+    ]
+  },
+  {
+    id:'galilee-ministry', era:'nt', name:'Galilean Ministry',
+    ref:'Matthew 4–18; Mark 1–9; John 1–6',
+    chapter:'nt/matthew/Matthew_4.html',
+    summary:'Jesus based his ministry in Capernaum on the northern shore of the Sea of Galilee. From here he called his first disciples — two pairs of brothers fishing: Peter and Andrew, James and John. The Sermon on the Mount was delivered on a hillside overlooking the lake. He performed his first miracle at a wedding in Cana. He fed five thousand with five loaves and two fish. He walked on water. He was transfigured on a high mountain and met with Moses and Elijah. At Caesarea Philippi, Peter confessed: "You are the Messiah, the Son of the living God." Jesus said the gates of Hades would not overcome the church built on this rock.',
+    places:['capernaum','galilee-sea','nazareth','cana','caesarea-p'],
+    regions:[
+      { coords:[[35.1,32.5],[36.2,32.5],[36.2,33.2],[35.1,33.2],[35.1,32.5]], color:'#c9a84c', label:'Galilee' }
+    ],
+    paths:[
+      { coords:[[35.3,32.7],[35.6,32.9]], dashed:false, label:'Nazareth to Capernaum' }
+    ]
+  },
+  {
+    id:'final-week', era:'nt', name:'Passion Week',
+    ref:'Matthew 21–28; Luke 19–24; John 12–21',
+    chapter:'nt/matthew/Matthew_21.html',
+    summary:'Jesus set his face toward Jerusalem. He arrived at Jericho and called Zacchaeus down from a sycamore tree. He entered Jerusalem on a donkey to the crowds crying Hosanna — fulfilling Zechariah 9:9. He drove money-changers from the Temple. On Thursday evening he shared the Last Supper, instituting the new covenant in his blood. In Gethsemane he prayed until his sweat became like drops of blood. He was arrested, tried by Annas, Caiaphas, Pilate, and Herod Antipas, declared innocent three times by Pilate, flogged, crowned with thorns, and led out to Golgotha. He was crucified at nine in the morning and died at three. On the first day of the week, the women found the tomb empty. The risen Jesus appeared to Mary Magdalene, to the eleven, to more than five hundred. He ascended from the Mount of Olives.',
+    places:['jericho','jerusalem','gethsemane','golgotha'],
+    regions:[],
+    paths:[
+      { coords:[[35.4,31.9],[35.2,31.8]], dashed:false, label:'Jericho to Jerusalem' }
+    ]
+  },
+  {
+    id:'paul-journey1', era:'nt', name:"Paul's First Journey",
+    ref:'Acts 13–14',
+    chapter:'nt/acts/Acts_13.html',
+    summary:'The Holy Spirit called Barnabas and Saul out from the Antioch church. They sailed to Cyprus, where the proconsul Sergius Paulus believed after Paul struck the sorcerer Elymas blind. They crossed to the mainland — to Perga, then inland to Pisidian Antioch where Paul delivered the first extended missionary sermon recorded in Acts. Expelled, they went to Iconium, Lystra where Paul was stoned and left for dead, and Derbe. On the return journey they retraced their steps, appointing elders in every church. They sailed back to Antioch and reported that God had opened a door of faith to the Gentiles.',
+    places:['antioch-s','cyprus','antioch-p','iconium','lystra','derbe'],
+    regions:[],
+    paths:[
+      { coords:[[36.2,36.2],[33.4,35.1]], dashed:false, label:'Antioch to Cyprus' },
+      { coords:[[33.4,35.1],[31.2,38.3]], dashed:false, label:'Cyprus to Pisidian Antioch' },
+      { coords:[[31.2,38.3],[32.5,37.9],[32.5,37.6],[33.4,37.4]], dashed:false, label:'To Iconium, Lystra, Derbe' },
+      { coords:[[33.4,37.4],[32.5,37.6],[32.5,37.9],[31.2,38.3],[33.4,35.1],[36.2,36.2]], dashed:true, label:'Return journey' }
+    ]
+  },
+  {
+    id:'paul-journey2', era:'nt', name:"Paul's Second Journey",
+    ref:'Acts 15:36 – 18:22',
+    chapter:'nt/acts/Acts_15.html',
+    summary:'At Troas Paul saw a vision: a Macedonian man saying "Come over to Macedonia and help us." They crossed the Aegean — the mission to Europe had begun. At Philippi, Lydia believed; Paul and Silas were imprisoned and an earthquake freed them; the jailer believed. At Thessalonica, Jason\'s house was mobbed. At Athens, Paul addressed the Areopagus and argued from creation for the God who raised Jesus from the dead. At Corinth he stayed eighteen months with Aquila and Priscilla. He returned to Antioch via Ephesus and Caesarea.',
+    places:['antioch-s','troas','philippi','thessalonica','athens','corinth','caesarea-m'],
+    regions:[],
+    paths:[
+      { coords:[[36.2,36.2],[26.3,39.8]], dashed:false, label:'To Troas' },
+      { coords:[[26.3,39.8],[24.3,41.0]], dashed:false, label:'To Philippi (sea crossing)' },
+      { coords:[[24.3,41.0],[22.9,40.6],[23.7,37.9],[22.9,37.9]], dashed:false, label:'South through Greece' },
+      { coords:[[22.9,37.9],[27.3,37.9],[34.9,32.5],[36.2,36.2]], dashed:true, label:'Return via Ephesus' }
+    ]
+  },
+  {
+    id:'paul-journey3', era:'nt', name:"Paul's Third Journey",
+    ref:'Acts 18:23 – 21:17',
+    chapter:'nt/acts/Acts_18.html',
+    summary:'Paul settled in Ephesus for nearly three years. His ministry was so effective that the silversmiths who made shrines to Artemis organised a riot. He revisited Macedonia and Greece, spending three months in Corinth. On the return journey he summoned the Ephesian elders to Miletus for a farewell: "None of you will ever see me again." He stopped at Tyre, Ptolemais, and Caesarea — where the prophet Agabus tied his hands and feet to warn of what awaited in Jerusalem. Paul went nonetheless: "I am ready not only to be bound, but also to die in Jerusalem for the name of the Lord Jesus."',
+    places:['antioch-s','ephesus','corinth','troas','caesarea-m'],
+    regions:[],
+    paths:[
+      { coords:[[36.2,36.2],[27.3,37.9]], dashed:false, label:'To Ephesus' },
+      { coords:[[27.3,37.9],[22.9,37.9],[24.3,41.0],[26.3,39.8]], dashed:false, label:'Corinth and Macedonia' },
+      { coords:[[26.3,39.8],[27.3,37.9],[34.9,32.5]], dashed:false, label:'Return via Miletus' }
+    ]
+  },
+  {
+    id:'paul-rome', era:'nt', name:"Paul's Journey to Rome",
+    ref:'Acts 21:17 – 28:31',
+    chapter:'nt/acts/Acts_21.html',
+    summary:'Paul arrived in Jerusalem and was seized in the Temple courts. The Roman tribune rescued him. He appeared before Felix, Festus, and Herod Agrippa II — each finding him innocent of any capital crime. When Festus proposed transferring him to Jerusalem, Paul appealed to Caesar. He sailed from Caesarea in the custody of Julius the centurion. A violent storm blew them off course for two weeks; they were shipwrecked on Malta. The islanders showed extraordinary kindness. After three months they sailed on to Rome. Paul lived under house arrest for two years, "proclaiming the kingdom of God and teaching about the Lord Jesus Christ — with all boldness and without hindrance."',
+    places:['jerusalem','caesarea-m','malta','rome'],
+    regions:[],
+    paths:[
+      { coords:[[35.2,31.8],[34.9,32.5]], dashed:false, label:'Jerusalem to Caesarea' },
+      { coords:[[34.9,32.5],[14.4,35.9]], dashed:false, label:'Caesarea to Malta (storm)' },
+      { coords:[[14.4,35.9],[12.5,41.9]], dashed:false, label:'Malta to Rome' }
     ]
   },
 
