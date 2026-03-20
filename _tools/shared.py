@@ -297,6 +297,7 @@ REGISTRY = [
     ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
     ('numbers',      'Numbers',      36, 36, 'OT', 'ot'),
     ('deuteronomy', 'Deuteronomy',  34, 34, 'OT', 'ot'),
+    ('joshua',      'Joshua',       24, 24, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -311,6 +312,7 @@ BOOK_PREFIX = {
     'genesis':  'gen',
     'exodus':   'ex',
     'deuteronomy': 'deu',
+    'joshua':   'josh',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -405,6 +407,8 @@ COMMENTATOR_SCOPE = {
     'ashley':    ['numbers'],              # Timothy Ashley, NICOT Numbers (1993)
     'craigie':   ['deuteronomy'],           # Peter Craigie, NICOT Deuteronomy (1976)
     'tigay':     ['deuteronomy'],           # Jeffrey Tigay, JPS Torah Deuteronomy (1996)
+    'hess':      ['joshua'],                # Richard Hess, TOTC Joshua (1996)
+    'howard':    ['joshua'],                # David Howard, NAC Joshua (1998)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -509,7 +513,29 @@ BOOK_META = {
                        'blessing', 'curse', 'life', 'death', 'law', 'Torah', 'prophet',
                        'inheritance', 'land', 'rest', 'holy', 'fear', 'worship', 'tithe',
                        'firstfruits', 'witness', 'cities of refuge', 'king'],
+    },    'joshua': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. Jewish tradition attributes the book to Joshua himself, '
+                 'with the final verses (24:29-33) added by Eleazar or Phinehas. The text draws on earlier '
+                 'written sources (&ldquo;the Book of Jashar,&rdquo; 10:13) and may have reached its final '
+                 'form during the early monarchy.<br><br>'
+                 '<strong>Date:</strong> The events span c.1406&ndash;1380 BC, from the Jordan crossing to '
+                 'Joshua&rsquo;s death at 110. The book&rsquo;s composition is debated: conservative scholars '
+                 'date the core to the late 15th century BC; critical scholars place final editing in the '
+                 'Deuteronomistic History (7th&ndash;6th c. BC).<br><br>'
+                 '<strong>Theme:</strong> Faithful God, fulfilled promises. The land promised to Abraham (Gen 12:7) '
+                 'is finally given to his descendants. The key command: &ldquo;Be strong and courageous&rdquo; (1:6-9). '
+                 'The key theological statement: &ldquo;Not one of all the LORD&rsquo;s good promises to Israel '
+                 'failed; every one was fulfilled&rdquo; (21:45).'),
+        'vhl_people': ['Joshua','Caleb','Rahab','Achan','Phinehas','Eleazar',
+                        'Moses','God','LORD','Israel','Gibeonites'],
+        'vhl_places': ['Jericho','Jordan','Gilgal','Ai','Gibeon','Shiloh','Shechem',
+                        'Hebron','Hazor','Canaan','Ebal','Gerizim','Kadesh'],
+        'vhl_key': ['covenant','land','inheritance','conquest','obey','strong','courageous',
+                     'holy','destroy','possess','allotment','faithfulness','promise','rest'],
+        'vhl_time': ['day','days','year','years','time','generation','month'],
     },
+
     'ruth': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Unknown; Jewish tradition attributes authorship to Samuel.\n\n'
@@ -762,9 +788,9 @@ def qnav_overlay(current_book_dir, current_ch):
                 f'<span class="qnav-book-name"><span class="qnav-live-dot"></span>{n}</span>'
                 f'<span class="qnav-book-meta"><span class="qnav-book-chev">&#9660;</span></span>'
                 f'</button><div class="qnav-ch-grid">{links}</div></div>')
-    ot_books = ''.join(book_div(d,n,t,l,current_book_dir,current_ch) for d,n,t,l,test in REGISTRY if test=='OT')
-    nt_books = ''.join(book_div(d,n,t,l,current_book_dir,current_ch) for d,n,t,l,test in REGISTRY if test=='NT')
-    cur_test = next((test for d,n,t,l,test in REGISTRY if d==current_book_dir), 'OT')
+    ot_books = ''.join(book_div(d,n,t,l,current_book_dir,current_ch) for d,n,t,l,test,_ in REGISTRY if test=='OT')
+    nt_books = ''.join(book_div(d,n,t,l,current_book_dir,current_ch) for d,n,t,l,test,_ in REGISTRY if test=='NT')
+    cur_test = next((test for d,n,t,l,test,_ in REGISTRY if d==current_book_dir), 'OT')
     ot_open = ' open' if cur_test == 'OT' else ''
     nt_open = ' open' if cur_test == 'NT' else ''
     return f'''<div class="qnav-overlay" id="qnav-overlay">
@@ -1330,6 +1356,8 @@ def commentary_panel(pid, commentator_key, notes):
         'ashley':    ('Ashley \u2014 NICOT Numbers',     'Timothy R. Ashley, The Book of Numbers, NICOT (1993) \u2014 Scholarly Paraphrase'),
     'craigie':   ('Craigie \u2014 NICOT Deuteronomy','Peter C. Craigie, The Book of Deuteronomy, NICOT (1976) \u2014 Scholarly Paraphrase'),
     'tigay':     ('Tigay \u2014 JPS Deuteronomy',     'Jeffrey H. Tigay, Deuteronomy, JPS Torah Commentary (1996) \u2014 Scholarly Paraphrase'),
+    'hess':      ('Hess \u2014 TOTC Joshua',          'Richard S. Hess, Joshua, Tyndale OT Commentary (1996) \u2014 Scholarly Paraphrase'),
+    'howard':    ('Howard \u2014 NAC Joshua',          'David M. Howard Jr., Joshua, New American Commentary (1998) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -2128,6 +2156,17 @@ def _auto_src(book_dir, ch, title, all_text):
              'Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.',
              'The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography.'),
         ],
+        'joshua': [
+            ('Amarna Letters (EA 285-290)', 
+             'Letters from Canaanite vassal kings to Egyptian Pharaoh describe &ldquo;Habiru&rdquo; invaders destabilising city-states.',
+             'The Amarna correspondence (c.1350 BC) describes social upheaval in Canaan that some scholars correlate with the Israelite conquest. The &ldquo;Habiru&rdquo; are not identical to &ldquo;Hebrews&rdquo; but may include them.'),
+            ('Merneptah Stele (c.1207 BC)',
+             '&ldquo;Israel is laid waste; his seed is not.&rdquo;',
+             'The earliest extra-biblical reference to Israel as a people group in Canaan. The determinative marks Israel as a people, not a territory — consistent with a recently settled group.'),
+            ('Papyrus Anastasi I',
+             'An Egyptian satirical letter describing Canaan\'s geography, roads, and fortified cities.',
+             'The detailed Canaanite geography matches Joshua\'s territorial descriptions, confirming the text\'s familiarity with the region\'s actual landscape.'),
+        ],
     }
     return ane_map.get(book_dir, [])[:3]
 
@@ -2238,6 +2277,14 @@ def _auto_textual(book_dir, ch, title):
              'P45 and early papyrus witnesses',
              'The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.',
              'The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation.'),
+        ],
+        'joshua': [
+            ('LXX Joshua', 'Shorter text form',
+             'The LXX of Joshua is significantly shorter than the MT, especially in chapters 5-6, 20, and 24. Some scholars argue the LXX preserves an earlier, more concise text.',
+             'The LXX order and shorter readings may witness to a pre-Deuteronomistic edition of Joshua.'),
+            ('4QJosh\u1d43 (Dead Sea Scrolls)', 'Altar-building placement',
+             'A Qumran fragment places the Ebal altar episode (Josh 8:30-35) after 5:1, supporting the LXX order rather than the MT.',
+             'This variant supports the view that the MT order was editorially rearranged, possibly to group all conquest narratives together.'),
         ],
     }
     return tx_books.get(book_dir, [])
@@ -2437,6 +2484,8 @@ def build_chapter(book_dir, ch, data):
         if 'rhoads'     in sec and in_scope('rhoads'):     btns.append(('rhoads',    'Rhoads',      f'{sid}-rhoads'))
         if 'milgrom'    in sec and in_scope('milgrom'):    btns.append(('milgrom',   'Milgrom',     f'{sid}-milgrom'))
         if 'ashley'     in sec and in_scope('ashley'):     btns.append(('ashley',    'Ashley',      f'{sid}-ashley'))
+        if 'hess'       in sec and in_scope('hess'):       btns.append(('hess',      'Hess',        f'{sid}-hess'))
+        if 'howard'     in sec and in_scope('howard'):     btns.append(('howard',    'Howard',      f'{sid}-howard'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -2464,6 +2513,8 @@ def build_chapter(book_dir, ch, data):
         if 'ashley'   in sec and in_scope('ashley'):    panels_html += commentary_panel(f'{sid}-ashley',   'ashley',    sec['ashley'])
         if 'craigie'  in sec and in_scope('craigie'):   panels_html += commentary_panel(f'{sid}-craigie',  'craigie',   sec['craigie'])
         if 'tigay'    in sec and in_scope('tigay'):     panels_html += commentary_panel(f'{sid}-tigay',    'tigay',     sec['tigay'])
+        if 'hess'     in sec and in_scope('hess'):      panels_html += commentary_panel(f'{sid}-hess',     'hess',      sec['hess'])
+        if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
@@ -2894,8 +2945,8 @@ document.addEventListener('DOMContentLoaded', function() {
     with open(qnav_path, 'w') as f:
         f.write(output)
 
-    total_live = sum(l for _, _, _, l, _ in REGISTRY)
-    total_chs  = sum(t for _, _, t, _, _ in REGISTRY)
+    total_live = sum(l for _, _, _, l, _, _ in REGISTRY)
+    total_chs  = sum(t for _, _, t, _, _, _ in REGISTRY)
     print(f'qnav.js rebuilt: {len(REGISTRY)} books, {total_live}/{total_chs} chapters live')
 
 
