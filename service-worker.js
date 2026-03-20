@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.131';
+const CACHE = 'scripture-2.132';
 const CORE = [
   '/',
   '/index.html',
@@ -8,6 +8,7 @@ const CORE = [
   '/books.js',
   '/qnav.js',
   '/translation.js',
+  '/verses/chapters.js',
   '/verses/niv/verses.js',
   '/verses/niv/ot/genesis.js',
   '/verses/niv/ot/exodus.js',

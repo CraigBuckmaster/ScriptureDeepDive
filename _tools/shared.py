@@ -2538,6 +2538,7 @@ def rebuild_sw_js():
         "  '/books.js',",
         "  '/qnav.js',",
         "  '/translation.js',",
+        "  '/verses/chapters.js',",
     ]
 
     # Extract static pages from old CORE (in case new ones were added)
