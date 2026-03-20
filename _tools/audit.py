@@ -225,8 +225,11 @@ for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     label = f'{book} {ch}'
 
-    if h.count('<style>') != 1:
-        fail(f'{label}: {h.count("<style>")} <style> blocks (expected 1)')
+    # Accept either inline <style> or external stylesheet link
+    has_inline = h.count('<style>') == 1
+    has_external = 'styles.css' in h
+    if not has_inline and not has_external:
+        fail(f'{label}: no <style> block and no styles.css link')
         style_errors += 1
 
     main_start = h.find('<main>')
@@ -236,14 +239,15 @@ for path, book, ch in chapters:
             fail(f'{label}: orphaned/broken legend-item in <main>')
             orphan_errors += 1
 
-    body = h[h.find('</style>'):]
+    # Look for orphaned fragments after the head section
+    body = h[h.find('</head>'):]
     for frag in ['Available now</div>', 'll-item"><div class="ll-dot']:
         if frag in body:
             fail(f'{label}: orphaned legend text in body')
             orphan_errors += 1
 
 if style_errors == 0:
-    ok(f'Single <style> block in all {len(chapters)} chapters')
+    ok(f'CSS present in all {len(chapters)} chapters')
 if orphan_errors == 0:
     ok('No orphaned HTML fragments')
 
@@ -282,28 +286,40 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('3. CSS Integrity')
 
-missing_auth = []
-missing_mac  = []
-
-for path, book, ch in chapters:
-    with open(path) as f: h = f.read()
-    css = h[h.find('<style>'):h.find('</style>')]
-    if 'authorship-block{' not in css and 'authorship-block {' not in css:
-        missing_auth.append(f'{book} {ch}')
-    if 'anno-trigger.macarthur' not in css:
-        missing_mac.append(f'{book} {ch}')
-
-if missing_auth:
-    fail(f'Missing authorship CSS in {len(missing_auth)} chapters: ' +
-         ', '.join(missing_auth[:3]) + ('...' if len(missing_auth) > 3 else ''))
+# CSS now lives in external styles.css — check it once rather than per-chapter
+_styles_path = os.path.join(REPO, 'styles.css')
+if os.path.exists(_styles_path):
+    with open(_styles_path) as f: _css = f.read()
+    ok(f'External styles.css found ({len(_css):,} chars)')
+    if 'authorship-block{' not in _css and 'authorship-block {' not in _css:
+        fail('Missing authorship-block CSS in styles.css')
+    else:
+        ok('Authorship CSS present in styles.css')
+    if 'anno-trigger.macarthur' not in _css:
+        fail('Missing MacArthur CSS in styles.css')
+    else:
+        ok('MacArthur CSS present in styles.css')
 else:
-    ok('Authorship CSS present in all chapters')
-
-if missing_mac:
-    fail(f'Missing MacArthur CSS in {len(missing_mac)} chapters: ' +
-         ', '.join(missing_mac[:3]) + ('...' if len(missing_mac) > 3 else ''))
-else:
-    ok('MacArthur CSS present in all chapters')
+    # Fallback: check inline <style> per chapter (legacy mode)
+    missing_auth = []
+    missing_mac  = []
+    for path, book, ch in chapters:
+        with open(path) as f: h = f.read()
+        css = h[h.find('<style>'):h.find('</style>')]
+        if 'authorship-block{' not in css and 'authorship-block {' not in css:
+            missing_auth.append(f'{book} {ch}')
+        if 'anno-trigger.macarthur' not in css:
+            missing_mac.append(f'{book} {ch}')
+    if missing_auth:
+        fail(f'Missing authorship CSS in {len(missing_auth)} chapters: ' +
+             ', '.join(missing_auth[:3]) + ('...' if len(missing_auth) > 3 else ''))
+    else:
+        ok('Authorship CSS present in all chapters')
+    if missing_mac:
+        fail(f'Missing MacArthur CSS in {len(missing_mac)} chapters: ' +
+             ', '.join(missing_mac[:3]) + ('...' if len(missing_mac) > 3 else ''))
+    else:
+        ok('MacArthur CSS present in all chapters')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 4. VERSES.JS
@@ -544,7 +560,13 @@ single_section      = []
 
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
-    css   = h[h.find('<style>'):h.find('</style>')]
+    # CSS may be inline (<style>) or external (styles.css) — get the right source
+    if '<style>' in h:
+        css = h[h.find('<style>'):h.find('</style>')]
+    elif os.path.exists(os.path.join(REPO, 'styles.css')):
+        css = _css  # reuse from section 3
+    else:
+        css = ''
     label = f'{book} {ch}'
 
     if '.anno-panel{display:none' not in css and '.anno-panel {display:none' not in css:
@@ -831,18 +853,25 @@ for path, book, ch in chapters:
 
 missing_tl_css  = []
 missing_poi_css = []
+# CSS may be inline or in external styles.css
+_ext_css = ''
+if os.path.exists(os.path.join(REPO, 'styles.css')):
+    with open(os.path.join(REPO, 'styles.css')) as f: _ext_css = f.read()
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
-    css = h[h.find('<style>'):h.find('</style>')]
-    if 'class="anno-panel tl-panel"' in h and 'tl-visual' not in css and 'tl-visual' not in open('qnav.js').read():
+    if '<style>' in h:
+        css = h[h.find('<style>'):h.find('</style>')]
+    else:
+        css = _ext_css
+    if 'class="anno-panel tl-panel"' in h and 'tl-visual' not in css:
         missing_tl_css.append(f'{book} {ch}')
-    if 'class="anno-panel poi-panel"' in h and 'poi-entry' not in css and 'poi-entry' not in open('qnav.js').read():
+    if 'class="anno-panel poi-panel"' in h and 'poi-entry' not in css:
         missing_poi_css.append(f'{book} {ch}')
 
 all_ok_15 = True
 for bad_list, label in [
-    (missing_tl_css,  'Timeline panel present but tl-visual CSS missing from <style>'),
-    (missing_poi_css, 'Places panel present but poi-entry CSS missing from <style>'),
+    (missing_tl_css,  'Timeline panel present but tl-visual CSS missing'),
+    (missing_poi_css, 'Places panel present but poi-entry CSS missing'),
     (poi_bad,   'Places panel structural issues'),
     (tl_bad,    'Timeline panel structural issues'),
     (tl_no_cur, 'Timeline panel missing/duplicate current event'),
@@ -946,13 +975,17 @@ if os.path.exists(_idx_path):
     else:
         ok(f'All {len(_used_scholars)} scholars have index cards')
 
-# Check CSS button colors exist in shared.py CSS template
-with open(os.path.join(REPO, '_tools', 'shared.py')) as _f: _shared_src = _f.read()
-_missing_css = [k for k in sorted(_used_scholars) if f'.anno-trigger.{k}' not in _shared_src]
+# Check CSS button colors exist in styles.css (or shared.py for legacy)
+_css_sources = ''
+_styles_file = os.path.join(REPO, 'styles.css')
+if os.path.exists(_styles_file):
+    with open(_styles_file) as _f: _css_sources += _f.read()
+with open(os.path.join(REPO, '_tools', 'shared.py')) as _f: _css_sources += _f.read()
+_missing_css = [k for k in sorted(_used_scholars) if f'.anno-trigger.{k}' not in _css_sources]
 if _missing_css:
-    warn(f"Commentator CSS missing in shared.py for: {', '.join(_missing_css)}")
+    warn(f"Commentator CSS missing for: {', '.join(_missing_css)}")
 else:
-    ok(f'All {len(_used_scholars)} scholars have button CSS colors in shared.py')
+    ok(f'All {len(_used_scholars)} scholars have button CSS colors')
 
 
 # ═══════════════════════════════════════════════════════════════════════════
