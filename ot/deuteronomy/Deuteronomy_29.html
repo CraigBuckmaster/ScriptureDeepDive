@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Deuteronomy 29 — Scripture Walkthrough</title>
+<link rel="manifest" href="../../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --border:#3a2e18;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+  --heb-bg:#1a0d14;  --heb-border:#7a3050; --heb-accent:#e890b8;
+  --hist-bg:#0a1220; --hist-border:#2a5080; --hist-accent:#70b8e8;
+  --ctx-bg:#0a180e;  --ctx-border:#2a6040; --ctx-accent:#70d098;
+  --cross-bg:#140f00;--cross-border:#6a4a00;--cross-accent:#d4b060;
+  --poi-bg:#060e06; --poi-border:#1a6028; --poi-accent:#30a848;
+  --tl-bg:#0a0f18;
+  --ppl-bg:#180800;  --ppl-border:#8a3010; --ppl-accent:#e86040;
+  --trans-bg:#001a18;--trans-border:#186058;--trans-accent:#58c8c0;
+  --src-bg:#140814;  --src-border:#603058; --src-accent:#a05890;
+  --rec-bg:#180610;  --rec-border:#882040; --rec-accent:#e04080;
+  --lit-bg:#101400;  --lit-border:#485010; --lit-accent:#b8c858;
+  --heb-text-bg:#0a0800; --heb-text-border:#4a3800; --heb-text-accent:#d4aa40;
+  --thread-bg:#0a0a1a; --thread-border:#303070; --thread-accent:#9090e0;
+  --com-bg:#110408;    --com-border:#6a1828;    --com-accent:#c04050;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.8;min-height:100vh;padding-top:52px;}
+.chapter-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(10,8,4,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 .75rem;padding-top:env(safe-area-inset-top);}
+.nav-back{display:flex;align-items:center;gap:.35rem;color:var(--gold);font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.5rem .4rem;border-radius:4px;transition:opacity .15s;min-width:60px;}
+.nav-back:hover{opacity:.7;}
+.nav-back svg{width:14px;height:14px;flex-shrink:0;}
+.nav-center{text-align:center;flex:1;padding:0 .5rem;display:flex;align-items:center;justify-content:center;}
+.nav-book{font-family:'Cinzel',serif;font-size:.78rem;font-weight:600;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase;display:block;line-height:1.2;}
+.nav-chapter{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-arrows{display:flex;gap:.25rem;min-width:60px;justify-content:flex-end;}
+.nav-arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);text-decoration:none;font-size:.9rem;transition:all .15s;}
+.nav-arrow:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.08);}
+.nav-arrow.disabled{opacity:.25;pointer-events:none;}
+header{background:linear-gradient(180deg,#080600,#161208);padding:2.5rem 1.5rem 1.8rem;text-align:center;border-bottom:2px solid var(--gold-dim);position:relative;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.1),transparent 65%);pointer-events:none;}
+header h1{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:clamp(1.4rem,5vw,2.3rem);font-weight:600;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+header p{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.78rem;margin-top:.4rem;letter-spacing:.07em;text-transform:uppercase;position:relative;}
+.legend{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;padding:.85rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.legend-item{display:flex;align-items:center;gap:.32rem;font-family:'Source Sans 3',sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-hebrew{background:var(--heb-accent);} .dot-history{background:var(--hist-accent);} .dot-context{background:var(--ctx-accent);} .dot-cross{background:var(--cross-accent);} .dot-places{background:var(--poi-accent);} .dot-timeline{background:#c0d8f0;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+.section{margin-bottom:3rem;}
+.section-header{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--border);padding-top:1.4rem;margin-bottom:1rem;}
+.verse-text{display:block;padding:.4rem 0;color:#ffffff;font-size:1.05rem;line-height:1.88;}
+.verse-num{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:var(--gold);vertical-align:super;margin-right:.2rem;letter-spacing:.04em;}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.35rem 0 .55rem;}
+.anno-trigger{
+  display:inline-flex;align-items:center;cursor:pointer;
+  border:1px solid;border-radius:5px;
+  font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;text-transform:none;padding:.28rem .68rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 3px rgba(0,0,0,.4);
+  transition:border-color .16s,background .16s,box-shadow .16s,transform .12s;
+}
+.anno-trigger:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 3px 8px rgba(0,0,0,.5);}
+.anno-trigger:active{transform:translateY(0);}
+.anno-trigger.hebrew,.anno-trigger.history,.anno-trigger.context,
+.anno-trigger.cross,.anno-trigger.places,.anno-trigger.timeline,
+.anno-trigger.people{color:#c9a060;border-color:#6a5020;background:rgba(80,56,12,.2);}
+.anno-trigger.hebrew:hover,.anno-trigger.history:hover,.anno-trigger.context:hover,
+.anno-trigger.cross:hover,.anno-trigger.places:hover,.anno-trigger.timeline:hover,
+.anno-trigger.people:hover{border-color:#9a7832;background:rgba(80,56,12,.32);}
+.anno-trigger.hebrew.active,.anno-trigger.history.active,.anno-trigger.context.active,
+.anno-trigger.cross.active,.anno-trigger.places.active,.anno-trigger.timeline.active,
+.anno-trigger.people.active{color:#e8c870;border-color:#c9a84c;background:rgba(80,56,12,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(201,168,76,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.macarthur{color:#c04050;border-color:#6a1828;background:rgba(90,16,28,.2);}
+.anno-trigger.macarthur:hover{border-color:#902030;background:rgba(90,16,28,.34);}
+.anno-trigger.macarthur.active{color:#e05060;border-color:#c04050;background:rgba(90,16,28,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(192,64,80,.2),0 2px 6px rgba(0,0,0,.4);}
+.anno-trigger.translations,.anno-trigger.sources,.anno-trigger.reception,
+.anno-trigger.literary,.anno-trigger.hebrew-text,.anno-trigger.threading{
+  color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.anno-trigger.translations:hover,.anno-trigger.sources:hover,.anno-trigger.reception:hover,
+.anno-trigger.literary:hover,.anno-trigger.hebrew-text:hover,.anno-trigger.threading:hover{
+  border-color:#4a7098;background:rgba(32,56,88,.32);}
+.anno-trigger.translations.active,.anno-trigger.sources.active,.anno-trigger.reception.active,
+.anno-trigger.literary.active,.anno-trigger.hebrew-text.active,.anno-trigger.threading.active{
+  color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger{color:#7aacc8;border-color:#304a68;background:rgba(32,56,88,.2);}
+.scholarly-buttons .anno-trigger:hover{border-color:#4a7098;background:rgba(32,56,88,.32);}
+.scholarly-buttons .anno-trigger.active{color:#a8cce0;border-color:#5a90b8;background:rgba(32,56,88,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(90,144,184,.2),0 2px 6px rgba(0,0,0,.4);}
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:#a070d8 !important;border-color:#5a3090 !important;background:rgba(60,24,100,.2) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:#7848b8 !important;background:rgba(60,24,100,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:#c090f0 !important;border-color:#9060d8 !important;background:rgba(60,24,100,.4) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(144,96,216,.2),0 2px 6px rgba(0,0,0,.4) !important;}
+
+.anno-panel{display:none;border-left:3px solid;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;animation:fadeIn .22s ease;}
+.anno-panel.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.anno-panel.heb      {background:var(--heb-bg);  border-color:var(--heb-border);}
+.anno-panel.hist     {background:var(--hist-bg); border-color:var(--hist-border);}
+.anno-panel.ctx      {background:var(--ctx-bg);  border-color:var(--ctx-border);}
+.anno-panel.cross-ref{background:var(--cross-bg);border-color:var(--cross-border);}
+.anno-panel.poi-panel{background:var(--poi-bg);  border-color:var(--poi-border);}
+.anno-panel.tl-panel {background:var(--tl-bg);   border-color:#4a6888;}
+.anno-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;}
+.anno-panel.heb h4{color:var(--heb-accent);} .anno-panel.hist h4{color:var(--hist-accent);} .anno-panel.ctx h4{color:var(--ctx-accent);} .anno-panel.cross-ref h4{color:var(--cross-accent);} .anno-panel.poi-panel h4{color:var(--poi-accent);} .anno-panel.tl-panel h4{color:#c0d8f0;}
+.anno-panel p,.anno-panel li{color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.87rem;line-height:1.65;}
+.anno-panel ul{padding-left:1.2rem;} .anno-panel li{margin-bottom:.3rem;}
+.hebrew-word{font-size:1.1rem;direction:rtl;display:inline-block;font-family:'EB Garamond',serif;color:#f0b0d0;margin-right:.2rem;}
+.tlit{font-style:italic;color:#d8c090;font-size:.83rem;}
+.cross-ref-list{list-style:none;padding:0;}
+.cross-ref-list li{padding:.32rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.7rem;}
+.cross-ref-list li:last-child{border-bottom:none;}
+.ref-cite{color:var(--gold);font-weight:600;white-space:nowrap;font-size:.76rem;min-width:5.5rem;font-family:'Cinzel',serif;letter-spacing:.04em;}
+.ref-text{color:#fff;font-size:.82rem;opacity:.9;}
+.poi-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.poi-grid{grid-template-columns:1fr 1fr;}}
+.poi-card{background:#0b150b;border:1px solid #1e401e;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.poi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#30a848);}
+.poi-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#b8eeb8;line-height:1.3;margin-bottom:.1rem;}
+.poi-region{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#507050;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.poi-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#c8e8c8;line-height:1.58;}
+.poi-caption,.tl-caption{font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:var(--text-dim);margin-top:.6rem;font-style:italic;}
+footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);}
+
+.anno-trigger.people     {color:var(--ppl-accent); border-color:var(--ppl-border); background:rgba(138,48,16,.12);}
+.anno-trigger.translations{color:var(--trans-accent);border-color:var(--trans-border);background:rgba(24,96,88,.12);}
+.anno-trigger.sources  {color:var(--src-accent); border-color:var(--src-border); background:rgba(96,48,88,.12);}
+.anno-trigger.reception{color:var(--rec-accent); border-color:var(--rec-border); background:rgba(136,32,64,.12);}
+.anno-trigger.literary {color:var(--lit-accent); border-color:var(--lit-border); background:rgba(72,80,16,.12);}
+.anno-panel.ppl-panel  {background:var(--ppl-bg);  border-color:var(--ppl-border);}
+.anno-panel.trans-panel{background:var(--trans-bg);border-color:var(--trans-border);}
+.anno-panel.src-panel  {background:var(--src-bg);  border-color:var(--src-border);}
+.anno-panel.rec-panel  {background:var(--rec-bg);  border-color:var(--rec-border);}
+.anno-panel.lit-panel  {background:var(--lit-bg);  border-color:var(--lit-border);}
+.anno-panel.ppl-panel h4{color:var(--ppl-accent);}
+.anno-panel.trans-panel h4{color:var(--trans-accent);}
+.anno-panel.src-panel h4{color:var(--src-accent);}
+.anno-panel.rec-panel h4{color:var(--rec-accent);}
+.anno-panel.lit-panel h4{color:var(--lit-accent);}
+.person-grid{display:grid;grid-template-columns:1fr;gap:.8rem;}
+@media(min-width:500px){.person-grid{grid-template-columns:1fr 1fr;}}
+.person-card{background:#120a00;border:1px solid #4a2c00;border-radius:6px;padding:.95rem 1.05rem;position:relative;padding-left:1.35rem;}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:6px 0 0 6px;background:var(--dot-color,#e86040);}
+.person-name{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.09em;color:#f0c880;margin-bottom:.1rem;display:flex;align-items:baseline;justify-content:space-between;gap:.4rem;}.person-timeline-link{font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:var(--gold-dim);text-decoration:none;letter-spacing:.04em;white-space:nowrap;opacity:.75;flex-shrink:0;}.person-timeline-link:hover{color:var(--gold);opacity:1;}
+.person-role{font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#806040;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem;}
+.person-text{font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:#e8d0a8;line-height:1.58;}
+.trans-table{width:100%;border-collapse:collapse;margin:.4rem 0;}
+.trans-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--trans-accent);padding:.4rem .6rem;border-bottom:1px solid var(--trans-border);text-align:left;}
+.trans-table td{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#c8f0ec;padding:.45rem .6rem;border-bottom:1px solid rgba(24,96,88,.3);vertical-align:top;line-height:1.5;}
+.trans-table tr:last-child td{border-bottom:none;}
+.trans-table .t-label{color:var(--trans-accent);font-weight:600;white-space:nowrap;font-size:.72rem;min-width:4rem;}
+.source-block{margin-bottom:1.2rem;border-left:2px solid var(--src-border);padding-left:.9rem;}
+.source-block:last-child{margin-bottom:0;}
+.source-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--src-accent);margin-bottom:.4rem;}
+.source-quote{font-family:'EB Garamond',serif;font-size:.95rem;font-style:italic;color:#e8c8e0;line-height:1.7;margin-bottom:.4rem;}
+.source-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b898b0;line-height:1.55;}
+.rec-block{margin-bottom:1.1rem;border-left:2px solid var(--rec-border);padding-left:.9rem;}
+.rec-block:last-child{margin-bottom:0;}
+.rec-who{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rec-accent);margin-bottom:.3rem;}
+.rec-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c0cce0;line-height:1.6;}
+.lit-diagram{background:#0c1000;border:1px solid var(--lit-border);border-radius:6px;padding:1rem 1.1rem;margin:.5rem 0;}
+.lit-row{display:flex;align-items:baseline;gap:.6rem;padding:.18rem 0;}
+.lit-label{color:var(--lit-accent);font-weight:600;min-width:1.4rem;font-size:.75rem;font-family:'Cinzel',serif;}
+.lit-text{color:#d8e0a8;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-center{color:#f0f0c0;font-weight:600;border-left:2px solid var(--lit-accent);padding-left:.6rem;margin:.3rem 0;font-family:'Source Sans 3',sans-serif;font-size:.82rem;}
+.lit-note{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a0a870;margin-top:.7rem;line-height:1.55;}
+.anno-trigger.threading{color:var(--thread-accent);border-color:var(--thread-border);background:rgba(48,48,112,.15);}
+.anno-trigger.macarthur{color:var(--com-accent);border-color:var(--com-border);background:rgba(106,24,40,.12);}
+.anno-panel.com-panel{background:var(--com-bg);border-color:var(--com-border);}
+.anno-panel.com-panel h4{color:var(--com-accent);}
+.com-source{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--com-accent);opacity:.7;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(106,24,40,.4);}
+.com-note{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(106,24,40,.25);}
+.com-note:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.com-ref{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;color:#e8c870;display:block;margin-bottom:.35rem;}
+.com-note p{font-family:'Source Sans 3',sans-serif;font-size:.86rem;color:#e8ccd0;line-height:1.65;}
+.anno-panel.heb-text-panel{background:var(--heb-text-bg);border-color:var(--heb-text-border);}
+.anno-panel.thread-panel{background:var(--thread-bg);border-color:var(--thread-border);}
+.anno-panel.heb-text-panel h4{color:var(--heb-text-accent);}
+.anno-panel.thread-panel h4{color:var(--thread-accent);}
+.thread-item{margin-bottom:1.1rem;border-left:3px solid;border-radius:0 6px 6px 0;padding:.75rem 1rem;}
+.thread-item.forward{border-color:#6060c0;background:rgba(48,48,128,.18);}
+.thread-item.backward{border-color:#c06060;background:rgba(128,48,48,.15);}
+.thread-item.reversal{border-color:#c08030;background:rgba(128,80,0,.15);}
+.thread-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.thread-anchor{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#c8c8f0;}
+.thread-arrow{font-size:.8rem;color:#6060a0;}
+.thread-target{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;color:#a0a0ff;letter-spacing:.08em;}
+.thread-type{font-family:'Source Sans 3',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.1rem .4rem;border-radius:3px;font-weight:600;}
+.thread-type.echo{background:rgba(60,60,180,.3);color:#b0b0ff;}
+.thread-type.fulfillment{background:rgba(60,160,60,.3);color:#80e080;}
+.thread-type.reversal{background:rgba(180,90,0,.3);color:#ffa040;}
+.thread-type.contrast{background:rgba(160,40,40,.3);color:#ff8080;}
+.thread-type.quotation{background:rgba(140,100,0,.3);color:#ffd060;}
+.thread-type.allusion{background:rgba(80,80,80,.3);color:#c0c0c0;}
+.thread-text{font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#c8c8e8;line-height:1.6;}
+.anno-trigger.hebrew-text{color:var(--heb-text-accent);border-color:#8a7228;background:linear-gradient(135deg,#2d2408 0%,#1a1504 100%);font-style:italic;letter-spacing:.08em;}
+.dn-yhwh{color:#e8c070;font-weight:600;} .dn-elohim{color:#70b8e8;} .dn-spirit{color:#58d8d8;} .dn-key{color:#f0e060;background:rgba(240,224,96,.08);border-radius:2px;padding:0 2px;} .dn-human{color:#e8c8a0;} .dn-place{color:#70d098;} .dn-covenant{color:#a0e090;} .dn-tov{color:#80e880;} .dn-ra{color:#e06060;}
+.vhl{border-radius:2px;transition:opacity .15s,background .15s;cursor:pointer;}
+.vhl-divine{color:#e8c070;} .vhl-place{color:#30a848;} .vhl-person{color:#e86040;} .vhl-time{color:#c0d8f0;} .vhl-key{color:#b8c858;}
+.vhl:hover{text-decoration:underline dotted;text-underline-offset:3px;}
+.vhl.vhl-pulse{animation:vhlPulse .35s ease-out;}
+@keyframes vhlPulse{0%{opacity:1}40%{opacity:.4}100%{opacity:1}}
+
+.authorship-block{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin:1.5rem 0;overflow:hidden;}
+.authorship-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.1rem;color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.authorship-toggle:hover{background:rgba(255,255,255,.03);}
+.authorship-toggle .chev{font-size:.6rem;transition:transform .25s;}
+.authorship-toggle.open .chev{transform:rotate(180deg);}
+.authorship-content{display:none;padding:0 1.1rem 1.1rem;border-top:1px solid var(--border);}
+.authorship-toggle.open + .authorship-content{display:block;}
+.auth-section{margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.auth-section:first-child{margin-top:.75rem;padding-top:.75rem;border-top:none;}
+.auth-label{display:block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.35rem;}
+.auth-text{color:var(--text-dim);font-family:'Source Sans 3',sans-serif;font-size:.83rem;line-height:1.7;margin:0;}
+.scholarly-block{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.3rem;margin-top:2.5rem;}
+.scholarly-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.scholarly-buttons{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem;}
+.themes-panel{display:none;border-left:3px solid #501890;border-radius:0 6px 6px 0;margin:.4rem 0 .8rem .5rem;padding:1.1rem 1.2rem;background:#08080f;animation:fadeIn .22s ease;}
+.themes-panel.open{display:block;}
+.themes-panel h4{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;color:#8840e0;}
+.radar-wrap{width:100%;max-width:320px;margin:0 auto .8rem;}
+.radar-label{font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#9090c8;}
+.tl-event-link{display:inline-flex;align-items:center;gap:.3rem;
+  margin:.5rem 0 .8rem;padding:.3rem .65rem;
+  background:rgba(90,122,154,.1);border:1px solid rgba(90,122,154,.4);
+  border-radius:3px;color:#5a7a9a;font-family:'Cinzel',serif;
+  font-size:.6rem;letter-spacing:.08em;text-decoration:none;
+  transition:background .15s,color .15s}
+.tl-event-link:hover{background:rgba(90,122,154,.22);color:#7a9aba}
+.tl-event-link svg{width:12px;height:12px;flex-shrink:0}
+.verse-body{display:inline;}
+.translation-toggle{display:inline-flex;gap:.25rem;align-items:center;margin-left:.5rem;}
+.translation-btn{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .5rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+.translation-btn:hover{color:var(--gold);border-color:var(--gold-dim);}
+.translation-btn.active{background:rgba(201,168,76,.15);border-color:var(--gold-dim);color:var(--gold);}
+
+
+/* ==EXTRA_CSS_START== */
+/* ════════════════════════════════════════════════════════
+   BUTTON SYSTEM — corrected layer (overrides original CSS)
+   ════════════════════════════════════════════════════════ */
+
+/* 1. Font size: .72rem → .8rem for readability + tap target */
+.anno-trigger{font-size:.8rem !important;}
+
+/* Chev transition + rotation — applies to ALL anno-trigger buttons
+   (section-level new chapters have .chev; scholarly block no longer does) */
+.anno-trigger .chev{transition:transform .25s;}
+.anno-trigger.active .chev{transform:rotate(180deg);}
+
+/* Align scholarly-buttons container to match .btn-row */
+.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
+
+/* 2. Active state: clear left-bar indicator + brighter text
+      Users can see at a glance which panels are open         */
+.anno-trigger.active{
+  box-shadow:inset 3px 0 0 currentColor,
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5) !important;
+  filter:brightness(1.25);
+}
+
+/* 3. Background opacity raised to .22 across section-level
+      buttons so they read as distinct interactive surfaces   */
+.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
+.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
+.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
+.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
+.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
+.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
+.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
+.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
+                          color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
+.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
+.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
+.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
+.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
+
+/* 4. WCAG AA fixes for failing colours
+      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
+      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
+.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
+.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
+                        background:rgba(100,40,80,.22) !important;}
+
+/* 5. SCHOLARLY BLOCK — unified gold theme
+      Matches the inline cross-ref button aesthetic: warm gold text,
+      dark amber background, gold-dim border. Clean and consistent.
+      Three rules replace the previous 33.                          */
+.scholarly-buttons .anno-trigger{
+  color:var(--gold)          !important;
+  border-color:var(--gold-dim) !important;
+  background:rgba(90,64,0,.22) !important;
+}
+.scholarly-buttons .anno-trigger:hover{
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.32) !important;
+}
+.scholarly-buttons .anno-trigger.active{
+  color:var(--gold-bright)     !important;
+  border-color:var(--gold)     !important;
+  background:rgba(90,64,0,.36) !important;
+  box-shadow:inset 3px 0 0 var(--gold),
+             inset 0 1px 0 rgba(255,255,255,.12),
+             0 0 0 1px rgba(255,255,255,.06),
+             0 2px 8px rgba(0,0,0,.5)       !important;
+  filter:brightness(1.15);
+}
+
+/* Themes button — also gold in scholarly context, own colour outside */
+.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
+.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
+
+/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
+   with !important setting purple. Override it here with equal specificity + !important
+   coming later in the cascade.                                                        */
+.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
+.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
+
+
+/* ── Commentary panels — per-commentator colour identity ─ */
+/* MacArthur: crimson (defined in base CSS, kept as-is)     */
+/* Sarna (JPS): deep teal — Jewish/academic register        */
+.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
+.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
+.anno-trigger.sarna.active{filter:brightness(1.25);}
+.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
+.com-panel.com-sarna h4{color:#4ec9b0;}
+.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
+
+/* Alter (Literary): warm amber — literary/poetic register  */
+.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
+.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
+.anno-trigger.alter.active{filter:brightness(1.25);}
+.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
+.com-panel.com-alter h4{color:#d4a853;}
+.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
+
+/* Calvin: slate blue — Reformed/theological register       */
+.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
+.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
+.anno-trigger.calvin.active{filter:brightness(1.25);}
+.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
+.com-panel.com-calvin h4{color:#7ba7cc;}
+.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
+
+/* Robertson (NT Greek): chartreuse-lime                    */
+.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
+.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
+.anno-trigger.robertson.active{filter:brightness(1.25);}
+.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
+.com-panel.com-robertson h4{color:#c8d870;}
+.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
+
+/* Catena Aurea (Patristic): medium violet                  */
+.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
+.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
+.anno-trigger.catena.active{filter:brightness(1.25);}
+.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
+.com-panel.com-catena h4{color:#b888d8;}
+.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
+
+/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
+.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
+.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
+.anno-trigger.hubbard.active{filter:brightness(1.25);}
+.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
+.com-panel.com-hubbard h4{color:#a8c870;}
+.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
+
+/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
+.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
+.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
+.anno-trigger.waltke.active{filter:brightness(1.25);}
+.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
+.com-panel.com-waltke h4{color:#e8a0b8;}
+.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
+
+/* NET Bible Notes: pale sage                               */
+.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
+.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
+.anno-trigger.netbible.active{filter:brightness(1.25);}
+.com-panel.com-netbible{background:#070e06;border-color:#688858;}
+.com-panel.com-netbible h4{color:#d8e8d0;}
+.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
+/* Marcus — Anchor Bible (teal-blue: historical-critical scholarship) */
+.anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
+.anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
+.anno-trigger.marcus.active{filter:brightness(1.25);}
+.com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
+.com-panel.com-marcus h4{color:#70d8d8;}
+.com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
+/* Rhoads — Mark as Story (amber-gold: narrative/literary criticism) */
+.anno-trigger.rhoads{color:#e8c060;border-color:#886020;background:rgba(80,56,12,.22);}
+.anno-trigger.rhoads:hover{border-color:#c8a040;background:rgba(80,56,12,.32);}
+.anno-trigger.rhoads.active{filter:brightness(1.25);}
+.com-panel.com-rhoads{background:#0e0900;border-color:#886020;}
+.com-panel.com-rhoads h4{color:#e8c060;}
+.com-panel.com-rhoads .com-source{color:#e8c060;border-bottom-color:rgba(136,96,32,.4);}
+
+.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
+.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
+.tx-panel h4{color:var(--tx-accent);}
+.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
+.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
+.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
+.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
+.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
+.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
+.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
+       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
+        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
+
+/* ── Scholarly Debates panel ─────────────────────────── */
+.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
+.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
+.db-panel h4{color:var(--db-accent);}
+.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
+.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
+          letter-spacing:.05em;margin-bottom:.6rem;}
+.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
+.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
+             border-radius:4px;padding:.5rem .7rem;}
+.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
+             color:#c8a8f0;margin-bottom:.15rem;}
+.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
+               font-style:italic;margin-bottom:.25rem;}
+.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
+.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
+              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
+              padding:.4rem .6rem;line-height:1.55;}
+
+/* ── Places (POI) section panel ─────────────────────────────── */
+.poi-entry{padding:.7rem 0;border-bottom:1px solid rgba(26,96,40,.35);}
+.poi-entry:last-child{border-bottom:none;}
+.poi-name{font-family:'Cinzel',serif;font-size:.8rem;color:var(--poi-accent);margin-bottom:.2rem;}
+.poi-coords{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-bottom:.35rem;}
+.poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
+
+/* ── Timeline section panel ─────────────────────────────────── */
+.tl-visual{position:relative;margin:.5rem 0 .3rem;}
+.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 6%,#4a6888 94%,transparent);pointer-events:none;}
+.tl-event{position:relative;display:grid;grid-template-columns:130px 28px 1fr;grid-template-rows:auto auto;align-items:start;padding:6px 0;}
+.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:'Cinzel',serif;font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:10px;white-space:nowrap;}
+.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;padding-top:4px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}
+.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:12px;}
+.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}
+.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}
+.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 170px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}-top:1px;}
+.tl-event.current .tl-date{color:#c0d8f0;}
+.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
+.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
+.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
+.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
+
+/* ── People tree link in person cards ─────────────────────────────────── */
+.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);
+  transition:border-color .15s,color .15s;}
+.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
+/* ── Translation toggle ──────────────────────────────────────────── */
+.translation-toggle{display:inline-flex;gap:.25rem;align-items:center;margin-left:.5rem;}
+.translation-btn{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .5rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+.translation-btn:hover{color:var(--gold);border-color:var(--gold-dim);}
+.translation-btn.active{background:rgba(201,168,76,.15);border-color:var(--gold-dim);color:var(--gold);}
+.verse-body{display:inline;}
+
+</style>
+</head>
+<body>
+<nav class="chapter-nav">
+<a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
+<div class="nav-center"><span class="nav-book">Deuteronomy</span><span class="nav-chapter">Chapter 29</span></div>
+<div class="nav-arrows"><a href="Deuteronomy_28.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="../../ot/ruth/Ruth_1.html" class="nav-arrow">&#8594;</a></div>
+</nav>
+<main>
+<header>
+<h1>Deuteronomy 29</h1>
+<p>The Covenant at Moab: Renewal for the New Generation</p>
+</header>
+<div class="authorship-block">
+<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
+<div class="authorship-content"><div class="auth-section"><p class="auth-text"><strong>Author:</strong> Moses, with a brief editorial postscript (Deut 34). The Hebrew title <em>Devarim</em> (&ldquo;Words&rdquo;) reflects its nature as three great farewell addresses.<br><br><strong>Date:</strong> c.1406 BC. The final year of Israel’s wilderness sojourn on the plains of Moab. Moses is 120 years old; his death closes the book (34:7).<br><br><strong>Theme:</strong> Covenant love and loyalty. The Shema (6:4–;5) is its centrepiece: love for God with whole heart, soul, and strength. Moses calls Israel to a choice: covenant faithfulness means life and blessing; apostasy means death and exile (30:15–20). The book’s structure mirrors Hittite suzerainty treaties (Kline, 1963): preamble, historical prologue, stipulations, document clause, witnesses, blessings and curses — evidence for early composition.</p></div></div>
+</div>
+<div class="section"><div class="section-header">Verses 1–21 — The Moab Covenant; Eyes That Do Not See</div><span class="verse-text"><span class="verse-num">1</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="1"></span></span><span class="verse-text"><span class="verse-num">2</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="2"></span></span><span class="verse-text"><span class="verse-num">3</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="3"></span></span><span class="verse-text"><span class="verse-num">4</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="4"></span></span><span class="verse-text"><span class="verse-num">5</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="5"></span></span><span class="verse-text"><span class="verse-num">6</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="6"></span></span><span class="verse-text"><span class="verse-num">7</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="7"></span></span><span class="verse-text"><span class="verse-num">8</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="8"></span></span><span class="verse-text"><span class="verse-num">9</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="9"></span></span><span class="verse-text"><span class="verse-num">10</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="10"></span></span><span class="verse-text"><span class="verse-num">11</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="11"></span></span><span class="verse-text"><span class="verse-num">12</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="12"></span></span><span class="verse-text"><span class="verse-num">13</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="13"></span></span><span class="verse-text"><span class="verse-num">14</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="14"></span></span><span class="verse-text"><span class="verse-num">15</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="15"></span></span><span class="verse-text"><span class="verse-num">16</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="16"></span></span><span class="verse-text"><span class="verse-num">17</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="17"></span></span><span class="verse-text"><span class="verse-num">18</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="18"></span></span><span class="verse-text"><span class="verse-num">19</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="19"></span></span><span class="verse-text"><span class="verse-num">20</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="20"></span></span><span class="verse-text"><span class="verse-num">21</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="21"></span></span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'deu29-s1-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'deu29-s1-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'deu29-s1-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'deu29-s1-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="deu29-s1-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">velo natan YHWH lachem lev ladaat</span> <span class="tlit">velo natan YHWH lachem lev ladaat</span> — <strong>the LORD has not given you a mind that understands</strong>: The statement that God had not given Israel spiritual understanding despite all they had seen (v.4) is a profound mystery. Moses is not blaming God but describing the persistence of spiritual blindness in the face of overwhelming evidence. Paul quotes this verse (Rom 11:8) in his discussion of Israel's hardening -- spiritual sight is ultimately a divine gift.</p><p><span class="hebrew-word">pen yesh bakem shoresh poreh rosh velaanah</span> <span class="tlit">pen yesh bakem shoresh poreh rosh velaanah</span> — <strong>lest there is among you a root bearing poison and bitterness</strong>: The "root of bitterness" (v.18) is the apostate individual within the covenant community -- the one who takes the covenant oath while planning to exempt himself from it. The image is of a poisonous plant that spreads underground, contaminating the community before its effects are visible.</p></div><div id="deu29-s1-ctx" class="anno-panel ctx"><h4>Context</h4><p>Chapter 29 is the third of Moses' addresses -- a covenant renewal for the new generation. He begins with the contrast between what their eyes have seen (Exodus, wilderness miracles) and what their hearts have not understood (v.4). The appeal is both cognitive and affective: they have seen everything; they must now comprehend what it means. Moses then binds all Israel -- the present generation and all future generations -- to the Moab covenant (v.15). A severe warning against apostate individuals follows. The chapter closes with the most-quoted verse of Deuteronomy 29: "The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever" (v.29).</p></div><div id="deu29-s1-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Rom 11:8</span><span class="ref-text">"God gave them a spirit of stupor, eyes that could not see and ears that could not hear, to this very day." Paul quotes Deuteronomy 29:4 in his discussion of Israel's hardening -- spiritual sight is God's gift, not human achievement.</span></li><li><span class="ref-cite">Heb 12:15</span><span class="ref-text">"See to it that no one falls short of the grace of God and that no bitter root grows up to cause trouble and defile many." The Hebrews author applies Deuteronomy 29:18's bitter root warning to the NT community.</span></li></ul></div><div id="deu29-s1-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:2-4</span><p>MacArthur: "Your eyes have seen all that the LORD did in Egypt... But to this day the LORD has not given you a mind that understands or eyes that see or ears that hear." The paradox is shattering: they saw everything, and still did not understand. Seeing is not believing; spiritual understanding is a divine gift. The same miracles that produced faith in some produced hardness in others. This is why spiritual sight cannot be produced by evidence alone.</p></div><div class="com-note"><span class="com-ref">29:10-15</span><p>MacArthur: "All of you are standing today in the presence of the LORD your God... together with your children and your wives, and the foreigners living in your camps." The covenant at Moab is radically inclusive: officials, elders, workers, foreigners -- everyone present is party to the covenant. And more than those present: "I am making this covenant... with those who are not here today." Every future generation is included.</p></div><div class="com-note"><span class="com-ref">29:19-20</span><p>MacArthur: "When such a person hears the words of this oath and they invoke a blessing on themselves, thinking, 'I will be safe, even though I persist in going my own way...'" The individual who takes the covenant oath while planning to exempt themselves from it will find that their private apostasy contaminates the community around them. Individual faithlessness has corporate consequences.</p></div></div></div><div class="section"><div class="section-header">Verses 22–29 — Future Desolation; Hidden and Revealed Things</div><span class="verse-text"><span class="verse-num">22</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="22"></span></span><span class="verse-text"><span class="verse-num">23</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="23"></span></span><span class="verse-text"><span class="verse-num">24</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="24"></span></span><span class="verse-text"><span class="verse-num">25</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="25"></span></span><span class="verse-text"><span class="verse-num">26</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="26"></span></span><span class="verse-text"><span class="verse-num">27</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="27"></span></span><span class="verse-text"><span class="verse-num">28</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="28"></span></span><span class="verse-text"><span class="verse-num">29</span><span class="verse-body" data-book="Deuteronomy" data-ch="29" data-v="29"></span></span><div class="btn-row"><button class="anno-trigger hebrew" onclick="tog(this,'deu29-s2-grk')"><span>Hebrew</span><span class="chev">&#9660;</span></button><button class="anno-trigger context" onclick="tog(this,'deu29-s2-ctx')"><span>Context</span><span class="chev">&#9660;</span></button><button class="anno-trigger cross" onclick="tog(this,'deu29-s2-cross')"><span>Cross-Ref</span><span class="chev">&#9660;</span></button><button class="anno-trigger macarthur" onclick="tog(this,'deu29-s2-mac')"><span>MacArthur</span><span class="chev">&#9660;</span></button></div><div id="deu29-s2-grk" class="anno-panel heb-text-panel"><h4>Hebrew Word Study</h4><p><span class="hebrew-word">hanistarot laYHWH eloheinu</span> <span class="tlit">hanistarot laYHWH eloheinu</span> — <strong>the secret things belong to the LORD our God</strong>: Verse 29's famous statement about hidden and revealed things is one of Deuteronomy's most theologically important. God has revealed what Israel needs to know for covenant faithfulness; what he has not revealed is his own business. This is the foundational principle of revealed religion: work with what God has said, not with what he has not said.</p></div><div id="deu29-s2-ctx" class="anno-panel ctx"><h4>Context</h4><p>The chapter closes with a prospective description of the land's desolation when Israel apostatises -- foreign nations will ask why the land is ruined. The answer: because they forsook the covenant of the LORD. Then the most-quoted verse of chapter 29: "The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever, that we may follow all the words of this law." The hidden/revealed distinction is the foundational principle of biblical epistemology: act on what God has given, trust him with what he has withheld.</p></div><div id="deu29-s2-cross" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list"><li><span class="ref-cite">Deut 30:11-14</span><span class="ref-text">"Now what I am commanding you today is not too difficult for you or beyond your reach... the word is very near you." The revealed things of 29:29 are explicitly accessible -- not remote or esoteric.</span></li><li><span class="ref-cite">Rev 22:18-19</span><span class="ref-text">"I warn everyone who hears the words of the prophecy of this scroll: If anyone adds anything to them, God will add to that person the plagues described in this scroll." Revelation's canonical closing warning echoes Deuteronomy 29's covenant completeness -- the revealed things are sufficient.</span></li></ul></div><div id="deu29-s2-mac" class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div class="com-source">MacArthur Study Bible — Faithful Paraphrase</div><div class="com-note"><span class="com-ref">29:22-25</span><p>MacArthur: "All the nations will ask: 'Why has the LORD done this to this land? Why this fierce, burning anger?' And the answer will be: 'It is because this people abandoned the covenant of the LORD...'" The land's desolation will itself be a testimony to the nations about the covenant's reality. The curses, if fulfilled, become a witness to God's faithfulness to his word -- even in judgment.</p></div><div class="com-note"><span class="com-ref">29:29</span><p>MacArthur: "The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever, that we may follow all the words of this law." The principle of theological sufficiency: God has revealed what we need to live faithfully. The hidden things -- the why behind suffering, the timing of fulfilment, the final purposes of history -- are God's business. The revealed things -- the law, the promises, the covenant -- are our business. Wisdom knows the difference and acts on what has been given.</p></div></div></div>
+<div class="scholarly-block">
+<div class="scholarly-title">Chapter-Level Scholarship</div>
+<div class="scholarly-buttons">
+<button class="anno-trigger people" onclick="tog(this,'deu29-ppl')"><span>People</span></button><button class="anno-trigger sources" onclick="tog(this,'deu29-src')"><span>Ancient Sources</span></button><button class="anno-trigger reception" onclick="tog(this,'deu29-rec')"><span>Reception History</span></button><button class="anno-trigger literary" onclick="tog(this,'deu29-lit')"><span>Literary Structure</span></button><button class="anno-trigger hebrew-text" onclick="tog(this,'deu29-hebtext')"><span>Hebrew-Rooted Reading</span></button><button class="anno-trigger threading" onclick="tog(this,'deu29-thread')"><span>Intertextual Threading</span></button><button class="anno-trigger textual" onclick="tog(this,'deu29-tx')"><span>Textual Notes</span></button><button class="anno-trigger debate" onclick="tog(this,'deu29-debate')"><span>Scholarly Debates</span></button><button class="anno-trigger themes" onclick="tog(this,'deu29-themes')"><span>Theological Themes</span></button>
+</div>
+<div id="deu29-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">Moses<a class="person-timeline-link" href="../people.html#moses" title="View in People of the Bible tree">&#8599; People</a></div><div class="person-role">Prophet, lawgiver, and covenant mediator</div><div class="person-text">Moses stands at the centre of the Pentateuch’s narrative — the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him "faithful in all God’s house" (Heb 3:5) while distinguishing him from Christ, the Son over the house.</div></div><div class="person-card"><div class="person-name">Og<a class="person-timeline-link" href="../people.html#og" title="View in People of the Bible tree">&#8599; People</a></div><div class="person-role">Giant king of Bashan; last of the Rephaim</div><div class="person-text">Og king of Bashan was the last of the Rephaim — a pre-Israelite giant people. His iron bed, measuring nine cubits long (c.4.5m), was preserved in Rabbah of Ammon as a monument (Deut 3:11). Israel defeated him at Edrei after his defeat of Sihon, and Moses divided his territory among the Transjordan tribes. Deut 3 presents his defeat as proof that God can give Israel the whole land: if the giant Og fell, so will the Anakites in Canaan. He appears in numerous later biblical summaries of God’s power (Ps 135, 136; Neh 9).</div></div></div></div><div id="deu29-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Hittite Suzerainty Treaties (14th–13th c. BC)</div><div class="source-quote">Klaus Baltzer (1960) and Meredith Kline (1963) demonstrated that Deuteronomy follows the six-part structure of Hittite vassal treaties: preamble (1:1–5), historical prologue (1:6–3:29), stipulations (4–26), document clause (27:1–9), witnesses (31:19–22), and blessings/curses (28). This structure is attested only in 14th–13th century BC treaties, strongly supporting Mosaic authorship.</div><div class="source-note">The treaty-form evidence is the most powerful external argument for Deuteronomy’s early date. Subsequent Assyrian vassal treaties (7th c. BC) have a different form, making a late (Josian) dating of the book structurally improbable.</div></div><div class="source-block"><div class="source-title">Vassal Treaties of Esarhaddon (672 BC)</div><div class="source-quote">The Neo-Assyrian VTE contains curse language strikingly similar to Deut 28, leading some scholars (Weinfeld, Steymans) to argue Deuteronomy was modelled on Assyrian treaties. However, the VTE represents only the curse section; Deuteronomy’s full six-part structure matches only Hittite treaties.</div><div class="source-note">The parallel demonstrates that ancient Near Eastern covenant forms were widespread, but the direction of dependence is disputed. The Hittite parallel is structurally closer and temporally earlier, supporting the traditional dating.</div></div><div class="source-block"><div class="source-title">Ugaritic and Ancient Near Eastern Covenant Terminology</div><div class="source-quote">The vocabulary of Deuteronomy — <em>berît</em> (covenant), <em>ahavah</em> (love as covenant loyalty), <em>hesed</em> (loyal love), ‘adon’ (lord) — is attested in Ugaritic and other ANE diplomatic texts as standard covenant terminology.</div><div class="source-note">This shows that Deuteronomy’s language of love, loyalty, and service was not merely personal piety but carried legal-diplomatic weight: Israel’s relationship with God is structured as a formal suzerainty covenant.</div></div></div><div id="deu29-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Origen, Homilies on Deuteronomy (3rd c. AD)</div><div class="rec-text">"Origen read Deuteronomy christologically throughout, interpreting Moses’ farewell discourses as prefiguring Christ’s teaching, the “prophet like Moses” (18:15) as a direct prophecy of Christ, and the land as a figure of the soul’s heavenly inheritance."</div></div><div class="rec-block"><div class="rec-who">John MacArthur</div><div class="rec-text">"MacArthur: "Your eyes have seen all that the LORD did in Egypt... But to this day the LORD has not given you a mind that understands or eyes that see or ears that hear." The paradox is shattering: the…"</div></div></div><div id="deu29-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row"><span class="lit-label">Verses 1–21 — The Moab Covenant; Eyes That Do Not See</span><span class="lit-text">Chapter 29 is the third of Moses' addresses -- a covenant renewal for the new generation. He begins with the contrast be…</span></div><div class="lit-row"><span class="lit-label">Verses 22–29 — Future Desolation; Hidden and Revealed Things</span><span class="lit-text">The chapter closes with a prospective description of the land's desolation when Israel apostatises -- foreign nations wi…</span></div><div class="lit-note">Structure of The Covenant at Moab: Renewal for the New Generation</div></div></div><div id="deu29-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4><div style="padding:.25rem 0;"><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.8rem;letter-spacing:.06em;">Key Hebrew Terms</p><div style="margin-bottom:.9rem;"><span style="color:#e890b8;font-size:1.05rem;">velo natan YHWH lachem lev ladaat</span> <span style="color:var(--gold-dim);font-size:.75rem;font-style:italic;">velo natan YHWH lachem lev ladaat</span> &mdash; <strong style="color:var(--gold);">the LORD has not given you a mind that understands</strong><br><span style="color:var(--fg2);font-size:.82rem;line-height:1.6;">The statement that God had not given Israel spiritual understanding despite all they had seen (v.4) is a profound mystery. Moses is not blaming God but describing the persistence of spiritual blindness in the face of overwhelming evidence. Paul quotes this verse (Rom 11:8) in his discussion of Israel's hardening -- spiritual sight is ultimately a divine gift.</span></div><div style="margin-bottom:.9rem;"><span style="color:#e890b8;font-size:1.05rem;">pen yesh bakem shoresh poreh rosh velaanah</span> <span style="color:var(--gold-dim);font-size:.75rem;font-style:italic;">pen yesh bakem shoresh poreh rosh velaanah</span> &mdash; <strong style="color:var(--gold);">lest there is among you a root bearing poison and bitterness</strong><br><span style="color:var(--fg2);font-size:.82rem;line-height:1.6;">The "root of bitterness" (v.18) is the apostate individual within the covenant community -- the one who takes the covenant oath while planning to exempt himself from it. The image is of a poisonous plant that spreads underground, contaminating the community before its effects are visible.</span></div><div style="margin-bottom:.9rem;"><span style="color:#e890b8;font-size:1.05rem;">hanistarot laYHWH eloheinu</span> <span style="color:var(--gold-dim);font-size:.75rem;font-style:italic;">hanistarot laYHWH eloheinu</span> &mdash; <strong style="color:var(--gold);">the secret things belong to the LORD our God</strong><br><span style="color:var(--fg2);font-size:.82rem;line-height:1.6;">Verse 29's famous statement about hidden and revealed things is one of Deuteronomy's most theologically important. God has revealed what Israel needs to know for covenant faithfulness; what he has not revealed is his own business. This is the foundational principle of revealed religion: work with what God has said, not with what he has not said.</span></div></div></div><div id="deu29-thread" class="anno-panel thread-panel"><h4>Intertextual Threading</h4><div class="thread-item fulfilment"><div class="thread-header"><span class="thread-anchor">The Covenant at Moab</span><span class="thread-arrow">→</span><span class="thread-target">Rom 11:8</span><span class="thread-type type-ful">Fulfilment</span></div><div class="thread-text">"God gave them a spirit of stupor, eyes that could not see and ears that could not hear, to this very day." Paul quotes Deuteronomy 29:4 in his discussion of Israel's hardening -- spiritual sight is God's gift, not human achievement.</div></div><div class="thread-item connection"><div class="thread-header"><span class="thread-anchor">The Covenant at Moab</span><span class="thread-arrow">→</span><span class="thread-target">Heb 12:15</span><span class="thread-type type-con">Connection</span></div><div class="thread-text">"See to it that no one falls short of the grace of God and that no bitter root grows up to cause trouble and defile many." The Hebrews author applies Deuteronomy 29:18's bitter root warning to the NT community.</div></div><div class="thread-item connection"><div class="thread-header"><span class="thread-anchor">The Covenant at Moab</span><span class="thread-arrow">→</span><span class="thread-target">Deut 30:11-14</span><span class="thread-type type-con">Connection</span></div><div class="thread-text">"Now what I am commanding you today is not too difficult for you or beyond your reach... the word is very near you." The revealed things of 29:29 are explicitly accessible -- not remote or esoteric.</div></div><div class="thread-item echo"><div class="thread-header"><span class="thread-anchor">The Covenant at Moab</span><span class="thread-arrow">→</span><span class="thread-target">Rev 22:18-19</span><span class="thread-type type-ech">Echo</span></div><div class="thread-text">"I warn everyone who hears the words of the prophecy of this scroll: If anyone adds anything to them, God will add to that person the plagues described in this scroll." Revelation's canonical closing warning echoes Deuteronomy 29's covenant completen…</div></div></div><div id="deu29-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4><div class="tx-item"><div class="tx-header"><span class="tx-ref">Deut 29</span><span class="tx-issue">LXX Deuteronomy and the MT divergences</span></div><div class="tx-variants"><span class="tx-mt">MT</span> and <span class="tx-lxx">LXX</span> Deuteronomy diverge more significantly than other Pentateuchal books. The LXX adds explanatory expansions, especially in the blessings and curses (ch.28) and the Song of Moses (ch.32).</div><div class="tx-sig">The LXX Deuteronomy was translated with greater theological freedom than other books. It often interprets rather than translates, and has shaped the NT’s use of Deuteronomy (Paul cites LXX Deut in Rom 10 and Gal 3).</div></div><div class="tx-item"><div class="tx-header"><span class="tx-ref">Deut 29 (general)</span><span class="tx-issue">Qumran and the Samaritan Pentateuch</span></div><div class="tx-variants">Deuteronomy is the most-copied book at Qumran (29 manuscripts), showing its centrality to Second Temple Judaism. The <span class="tx-sp">SP</span> Deuteronomy adds a tenth commandment mandating an altar on Gerizim (Exod 20:17b insert), the central SP polemic.</div><div class="tx-sig">The Nash Papyrus (c.150–100 BC) preserves the Decalogue and Shema from Deuteronomy — the oldest surviving Hebrew manuscript of any biblical text. It shows a mixed text-type combining MT and LXX features.</div></div></div><div id="deu29-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Authorship and Date of Deuteronomy</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Critical scholarship: Josian composition (de Wette, Wellhausen)</div><div class="db-proponents">The dominant critical view since de Wette (1805) identifies the “book of the law” found in 2 Kgs 22 with Deuteronomy, placing its composition in Josiah’s reign (c.621 BC). Deuteronomy on this view was written to legitimise Josiah’s centralisation reforms.</div><div class="db-argument">This view treats the Mosaic attribution as a literary fiction and explains the book’s similarities with 7th-century Assyrian treaty forms — though the Hittite parallels are structurally closer.</div></div><div class="db-position"><div class="db-pos-name">Mosaic authorship / early composition (Kline, Craigie, evangelical scholarship)</div><div class="db-proponents">The Hittite suzerainty treaty structure (attested only in 14th–13th c. BC) strongly supports early composition. The book’s internal claims (1:1, 31:9,22,24) and NT citations (Jesus cites Deuteronomy three times in the temptation: Matt 4:4,7,10) support Mosaic origin.</div><div class="db-argument">Craigie and Kline argue that the treaty-form evidence makes a late date structurally implausible. The “prophet like Moses” passage (18:15) is best read as a genuine prediction, not a post-exilic retrojection.</div></div></div><div class="db-synthesis">The authorship question significantly affects interpretation but not the canonical authority or theological meaning of Deuteronomy’s covenant vision.</div></div></div><div id="deu29-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,103.0 164.2,94.5 134.7,128.5 120.0,137.0 105.3,128.5 105.3,111.5" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Holiness</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Covenant</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Atonement</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Judgment</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Redemption</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Worship</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">The Covenant at Moab: Renewal for the New Generation</p></div>
+</div>
+</main>
+<script>
+function tog(btn,id){
+  var p=document.getElementById(id);
+  if(!p)return;
+  var willOpen=!p.classList.contains('open');
+  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
+  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
+  if(willOpen){p.classList.add('open');btn.classList.add('active');}
+}
+function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
+</script>
+<script>
+(function(){
+  var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
+  var PLACES={words:['Moab','Horeb','Canaan','Ebal','Gerizim','Nebo','Bashan','Gilead','Pisgah','Beth-peor','Jordan','Transjordan'],cls:'vhl-place',btn:['places','context']};
+  var PEOPLE={words:['Moses','Joshua','Caleb','Og','Sihon','Zelophehad'],cls:'vhl-person',btn:['people','context']};
+  var TIME  ={words:['day','days','night','morning','evening','year','years','month','generation'],cls:'vhl-time',btn:['timeline','context']};
+  var KEY   ={words:['covenant','Shema','love','obey','heart','choose','remember','blessing','curse','life','death','law','Torah','prophet','inheritance','land','rest','holy','fear','worship','tithe','firstfruits','witness','cities of refuge','king'],cls:'vhl-key',btn:['literary','cross']};
+  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
+  function hasBtnType(row,types){return types.some(function(t){return row.querySelector('.anno-trigger.'+t);});}
+  var vhlRowId=0;
+  function highlightNode(node,word,cls,btns,row){
+    if(node.nodeType===3){
+      var nv=node.nodeValue,idx=nv.indexOf(word);
+      if(idx===-1)return;
+      var b=nv[idx-1],a=nv[idx+word.length];
+      if((b!==undefined&&/[\w]/.test(b))||(a!==undefined&&/[\w]/.test(a)))return;
+      var after=node.splitText(idx);after.splitText(word.length);
+      var sp=document.createElement('span');sp.className='vhl '+cls;
+      if(btns&&row){
+        if(!row.dataset.vhlId){row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}
+        sp.setAttribute('data-btn',btns.join(','));
+        sp.setAttribute('data-row',row.dataset.vhlId);
+      }
+      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
+    } else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(c){highlightNode(c,word,cls,btns,row);});
+    }
+  }
+  document.querySelectorAll('.btn-row').forEach(function(row){
+    var vt=row.previousElementSibling;
+    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
+    if(!vt)return;
+    GROUPS.forEach(function(g){
+      if(!hasBtnType(row,g.btn))return;
+      g.words.forEach(function(w){highlightNode(vt,w,g.cls,g.btn,row);});
+    });
+  });
+  document.addEventListener('click',function(e){
+    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
+    if(!sp)return;
+    var rowId=sp.getAttribute('data-row');
+    if(!rowId)return;
+    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
+    if(!row)return;
+    var types=(sp.getAttribute('data-btn')||'').split(',');
+    var btn=null;
+    for(var i=0;i<types.length;i++){btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}
+    if(!btn)return;
+    var oc=btn.getAttribute('onclick')||'';
+    var m=oc.match(/'([^']+)'/);
+    var panelId=m?m[1]:null;
+    if(!panelId)return;
+    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
+    tog(btn,panelId);
+    var panel=document.getElementById(panelId);
+    if(panel&&panel.classList.contains('open')){
+      setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+})();
+</script>
+<script src="../../books.js"></script>
+<script src="../../verses/niv/ot/deuteronomy.js"></script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
+<script>
+(function(){
+  try {
+    var KEY='sdw_recent', MAX=5;
+    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
+    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
+    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
+    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
+    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
+    hist = hist.filter(function(h){ return h.url !== url; });
+    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
+    if(hist.length > MAX) hist = hist.slice(0,MAX);
+    localStorage.setItem(KEY, JSON.stringify(hist));
+  } catch(e){}
+})();
+</script>
+<script>window.QNAV_CURRENT="ot/deuteronomy/Deuteronomy_29.html";</script>
+<script src="../../qnav.js"></script>
+<script src="../../translation.js"></script>
+</body></html>
