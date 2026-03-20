@@ -72,7 +72,7 @@ LIVE_BOOKS = [
     ('3 John',          'nt',   1), ('Jude',            'nt',   1), ('Revelation',      'nt',  22),
 ]
 
-FETCH_ONLY = []  # empty = fetch all (skips books whose .js already exists)
+FETCH_ONLY = []  # empty = fetch all missing books
 
 ESV_API_BASE = 'https://api.esv.org/v3/passage/text/'
 
@@ -91,77 +91,89 @@ ESV_PARAMS = (
 
 REPO_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(REPO_ROOT, 'verses', 'esv')
-DELAY_SEC  = 0.5   # polite delay between API requests
+DELAY_SEC  = 1.0   # delay between books (1 request per book now)
 
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
 
-def fetch_chapter(book, chapter, api_key):
-    """Fetch one chapter from the ESV API. Returns raw text string."""
-    ref = urllib.parse.quote(f'{book} {chapter}')
+def fetch_book(book, chapter_count, api_key):
+    """Fetch an entire book from the ESV API in one request. Returns raw text string."""
+    ref = urllib.parse.quote(f'{book} 1-{chapter_count}')
     url = f'{ESV_API_BASE}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read().decode())
             passages = data.get('passages', [])
             return passages[0] if passages else ''
     except urllib.error.HTTPError as e:
-        print(f'    HTTP {e.code} for {book} {chapter}: {e.reason}')
+        print(f'    HTTP {e.code} for {book}: {e.reason}')
         return None
     except Exception as e:
-        print(f'    Error for {book} {chapter}: {e}')
+        print(f'    Error for {book}: {e}')
         return None
 
 
-def parse_verses(raw_text, book, chapter):
+def parse_book(raw_text, book, testament, chapter_count):
     """
-    Parse the ESV API plain-text response into a list of verse dicts.
-
-    The API returns text like:
-        [1] In the beginning, God created the heavens and the earth.
-        [2] The earth was without form and void, ...
-        [3] And God said, "Let there be light," ...
-
-    We strip the [N] markers and build verse objects.
+    Parse the ESV API plain-text response for an entire book into verse dicts.
+    The API returns all chapters concatenated. We detect chapter boundaries by
+    looking for the book name followed by a chapter number in the text, or by
+    tracking verse numbers resetting back to 1.
     """
     if not raw_text:
         return []
 
     verses = []
-    # Split on verse markers [N] — handles multi-line verses and poetry
-    # Pattern: [digit+] followed by text until next [digit+] or end
-    # ESV sometimes has line breaks inside a verse for poetry
+    # Split on verse markers [N]
     parts = re.split(r'\[(\d+)\]', raw_text.strip())
 
-    # parts: ['preamble', '1', 'verse text', '2', 'verse text', ...]
+    current_ch = 1
+    last_v = 0
+    book_short_map = {
+        'Genesis':'Gen','Exodus':'Ex','Leviticus':'Lev','Numbers':'Num',
+        'Deuteronomy':'Deut','Joshua':'Josh','Judges':'Judg','Ruth':'Ru',
+        '1 Samuel':'1Sam','2 Samuel':'2Sam','1 Kings':'1Ki','2 Kings':'2Ki',
+        '1 Chronicles':'1Ch','2 Chronicles':'2Ch','Ezra':'Ezr','Nehemiah':'Neh',
+        'Esther':'Est','Job':'Job','Psalms':'Ps','Proverbs':'Prov',
+        'Ecclesiastes':'Eccl','Song of Solomon':'Song','Isaiah':'Isa',
+        'Jeremiah':'Jer','Lamentations':'Lam','Ezekiel':'Ezek','Daniel':'Dan',
+        'Hosea':'Hos','Joel':'Joel','Amos':'Amos','Obadiah':'Ob','Jonah':'Jon',
+        'Micah':'Mic','Nahum':'Nah','Habakkuk':'Hab','Zephaniah':'Zeph',
+        'Haggai':'Hag','Zechariah':'Zech','Malachi':'Mal',
+        'Matthew':'Mt','Mark':'Mk','Luke':'Lk','John':'Jn','Acts':'Ac',
+        'Romans':'Rom','1 Corinthians':'1Cor','2 Corinthians':'2Cor',
+        'Galatians':'Gal','Ephesians':'Eph','Philippians':'Phil',
+        'Colossians':'Col','1 Thessalonians':'1Th','2 Thessalonians':'2Th',
+        '1 Timothy':'1Ti','2 Timothy':'2Ti','Titus':'Tit','Philemon':'Phm',
+        'Hebrews':'Heb','James':'Jas','1 Peter':'1Pe','2 Peter':'2Pe',
+        '1 John':'1Jn','2 John':'2Jn','3 John':'3Jn','Jude':'Jude',
+        'Revelation':'Rev',
+    }
+    book_short = book_short_map.get(book, book[:3])
+    book_dir = book.lower().replace(' ', '_')
+
     i = 1
     while i < len(parts) - 1:
         v_num = int(parts[i])
         v_text = parts[i + 1] if i + 1 < len(parts) else ''
-
-        # Clean: collapse whitespace, strip leading/trailing
         v_text = re.sub(r'\s+', ' ', v_text).strip()
-
-        # Strip trailing verse reference if API included it (e.g. "(ESV)")
         v_text = re.sub(r'\s*\(ESV\)\s*$', '', v_text).strip()
 
-        # Skip empty verses (can happen with psalm titles)
-        if v_text:
-            book_dir = book.lower()
-            testament = 'nt' if book in ('Matthew','Mark','Luke','John','Acts') else 'ot'
-            book_short = {
-                'Genesis':'Gen','Exodus':'Ex','Ruth':'Ru','Proverbs':'Prov',
-                'Matthew':'Mt','Mark':'Mk','Luke':'Lk','John':'Jn','Acts':'Ac'
-            }.get(book, book[:3])
+        # Detect chapter boundary: verse number reset to 1 (or lower than last)
+        if v_num == 1 and last_v > 1:
+            current_ch += 1
 
+        last_v = v_num
+
+        if v_text and current_ch <= chapter_count:
             verses.append({
-                'ref':   f'{book} {chapter}:{v_num}',
-                'short': f'{book_short} {chapter}:{v_num}',
+                'ref':   f'{book} {current_ch}:{v_num}',
+                'short': f'{book_short} {current_ch}:{v_num}',
                 'text':  v_text,
-                'url':   f'{testament}/{book_dir}/{book}_{chapter}.html',
+                'url':   f'{testament}/{book_dir}/{book.replace(" ", "_")}_{current_ch}.html',
                 'book':  book,
-                'ch':    chapter,
+                'ch':    current_ch,
                 'v':     v_num,
             })
         i += 2
@@ -274,31 +286,22 @@ def main():
                 # File doesn't exist, stop skipping
                 resuming = False
 
-        print(f'{book} ({testament.upper()}, {chapter_count} chapters):')
+        print(f'{book} ({testament.upper()}, {chapter_count} chapters):', end=' ', flush=True)
         book_verses = []
 
-        for ch in range(1, chapter_count + 1):
-            raw = fetch_chapter(book, ch, api_key)
+        raw = fetch_book(book, chapter_count, api_key)
+        if raw is None:
+            print(f'FAILED — waiting 20s then retrying...')
+            time.sleep(20)
+            raw = fetch_book(book, chapter_count, api_key)
             if raw is None:
-                print(f'  Chapter {ch}: FAILED (rate limit) — waiting 15s then retrying...')
-                time.sleep(15)
-                raw = fetch_chapter(book, ch, api_key)
-                if raw is None:
-                    print(f'  Chapter {ch}: FAILED twice — skipping. Run with --resume {book} to retry.')
-                    continue
+                print(f'FAILED twice — skipping {book}.')
+                continue
 
-            verses = parse_verses(raw, book, ch)
-            book_verses.extend(verses)
-            print(f'  Ch {ch:3d}: {len(verses)} verses', end='')
+        book_verses = parse_book(raw, book, testament, chapter_count)
+        print(f'{len(book_verses)} verses fetched.')
 
-            # Spot-check a sample verse
-            if verses:
-                sample = verses[0]
-                print(f'  — {sample["ref"]}: {sample["text"][:50]}...')
-            else:
-                print()
-
-            time.sleep(DELAY_SEC)
+        time.sleep(DELAY_SEC)
 
         # Write the book file
         out_path = write_book_file(book, testament, book_verses)
