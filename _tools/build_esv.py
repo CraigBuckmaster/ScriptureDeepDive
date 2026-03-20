@@ -43,24 +43,20 @@ import argparse
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 # Books currently live in the app — (book_name, testament, chapter_count)
-# Auto-generated from REGISTRY — update this list when new books go live
 LIVE_BOOKS = [
-    ('Genesis',      'ot', 50),
-    ('Exodus',       'ot', 40),
-    ('Leviticus',    'ot', 27),
-    ('Numbers',      'ot', 36),
-    ('Deuteronomy',  'ot', 34),
-    ('Ruth',         'ot',  4),
-    ('Proverbs',     'ot', 31),
-    ('Matthew',      'nt', 28),
-    ('Mark',         'nt', 16),
-    ('Luke',         'nt', 24),
-    ('John',         'nt', 21),
-    ('Acts',         'nt', 28),
+    ('Genesis',    'ot', 50),
+    ('Exodus',     'ot', 40),
+    ('Leviticus',  'ot', 27),
+    ('Ruth',       'ot',  4),
+    ('Proverbs',   'ot', 31),
+    ('Matthew',    'nt', 28),
+    ('Mark',       'nt', 16),
+    ('Luke',       'nt', 24),
+    ('John',       'nt', 21),
+    ('Acts',       'nt', 28),
+    ('Numbers',     'ot', 36),
+    ('Deuteronomy', 'ot', 34),
 ]
-
-# To run only missing books, set this to the books you want to fetch:
-FETCH_ONLY = ['Numbers', 'Deuteronomy']  # set to [] to fetch all
 
 ESV_API_BASE = 'https://api.esv.org/v3/passage/text/'
 
