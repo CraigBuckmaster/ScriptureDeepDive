@@ -91,7 +91,7 @@ ESV_PARAMS = (
 
 REPO_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(REPO_ROOT, 'verses', 'esv')
-DELAY_SEC  = 1.2   # polite delay between API requests
+DELAY_SEC  = 0.5   # polite delay between API requests
 
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
