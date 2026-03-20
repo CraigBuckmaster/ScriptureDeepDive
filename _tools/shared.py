@@ -2423,6 +2423,22 @@ def update_homepage():
         # Use the id to locate the block
         book_id = book_dir.lower().replace('_', '-')
         id_marker = f'id="book-{book_id}"'
+
+        # Remove duplicate book-item blocks (keep only the first occurrence)
+        occurrences = [m.start() for m in re.finditer(re.escape(id_marker), h)]
+        if len(occurrences) > 1:
+            for dup_idx in reversed(occurrences[1:]):  # remove from end
+                div_s = h.rfind('<div class="book-item', 0, dup_idx)
+                depth = 0; i = div_s
+                while i < len(h):
+                    if h[i:i+4] == '<div': depth += 1
+                    elif h[i:i+6] == '</div>':
+                        depth -= 1
+                        if depth == 0:
+                            h = h[:div_s] + h[i+6:]
+                            break
+                    i += 1
+
         idx = h.find(id_marker)
         if idx == -1:
             print(f'  WARNING: book-{book_id} not found in index.html')
