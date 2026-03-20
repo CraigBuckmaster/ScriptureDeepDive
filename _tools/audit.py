@@ -45,6 +45,7 @@ BOOK_ROSTER = [
     ('deuteronomy',  'Deuteronomy',  range(1, 35), 'ot'),
     ('joshua',       'Joshua',       range(1, 25), 'ot'),
     ('judges',       'Judges',       range(1, 22), 'ot'),
+    ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -68,6 +69,7 @@ SCHOLAR_KEYS = {
     'Deuteronomy': ['craigie',  'tigay',  'calvin', 'netbible'],
     'Joshua':      ['hess',     'howard', 'calvin', 'netbible'],
     'Judges':      ['block',    'webb',   'calvin', 'netbible'],
+    '1 Samuel':    ['bergen',   'tsumura','calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -306,7 +308,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -389,7 +391,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]
@@ -402,7 +404,7 @@ for i,(bd,bn,td) in enumerate(REGISTRY_ORDER):
         path = f'{REPO}/{td}/{bd}/{bn}_1.html'
         if os.path.exists(path):
             with open(path) as f: h = f.read()
-            expected = f'../../{ptd}/{pbd}/{pbn}_{pl}.html'
+            expected = f'../../{ptd}/{pbd}/{pbn.replace(" ","_")}_{pl}.html'
             if expected not in h:
                 cross_errors.append(f'{bn} 1: prev cross-book href wrong (expected {expected})')
     if i < len(REGISTRY_ORDER)-1:  # check last chapter's next arrow
@@ -411,7 +413,7 @@ for i,(bd,bn,td) in enumerate(REGISTRY_ORDER):
         path = f'{REPO}/{td}/{bd}/{bn}_{ll}.html'
         if os.path.exists(path):
             with open(path) as f: h = f.read()
-            expected = f'../../{ntd}/{nbd}/{nbn}_1.html'
+            expected = f'../../{ntd}/{nbd}/{nbn.replace(" ","_")}_1.html'
             if expected not in h:
                 cross_errors.append(f'{bn} {ll}: next cross-book href wrong (expected {expected})')
 if cross_errors:
