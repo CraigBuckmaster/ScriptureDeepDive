@@ -1,0 +1,3 @@
+var VERSES_PHILIPPIANS=[];
+if(!window.VERSES_ALL)window.VERSES_ALL=[];
+window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_PHILIPPIANS);

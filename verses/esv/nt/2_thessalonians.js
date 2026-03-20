@@ -1,0 +1,3 @@
+var VERSES_2 THESSALONIANS=[];
+if(!window.VERSES_ALL)window.VERSES_ALL=[];
+window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_2 THESSALONIANS);
