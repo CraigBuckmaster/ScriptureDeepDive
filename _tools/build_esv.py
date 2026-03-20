@@ -38,6 +38,7 @@ if sys.platform == 'win32':
 import time
 import urllib.request
 import urllib.error
+import urllib.parse
 import argparse
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
@@ -97,7 +98,7 @@ DELAY_SEC  = 1.2   # polite delay between API requests
 
 def fetch_chapter(book, chapter, api_key):
     """Fetch one chapter from the ESV API. Returns raw text string."""
-    ref = f'{book}+{chapter}'
+    ref = urllib.parse.quote(f'{book} {chapter}')
     url = f'{ESV_API_BASE}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
     try:
