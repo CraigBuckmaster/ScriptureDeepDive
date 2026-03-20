@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Jacob Milgrom &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#78d8a8; }
+
+:root { --accent:#4ec9b0; }
+
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style>
+</head>
+<body><nav class="com-nav">
+  <a href="../index.html" class="com-nav-back">&#8592; Library</a>
+  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="hubbard.html" class="com-nav-item" style="">Hubbard</a><a href="waltke.html" class="com-nav-item" style="">Waltke</a><a href="milgrom.html" class="com-nav-item" style="color:#78d8a8;border-bottom:2px solid #78d8a8;">Milgrom</a><a href="ashley.html" class="com-nav-item" style="">Ashley</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a><a href="robertson.html" class="com-nav-item" style="">Robertson</a><a href="catena.html" class="com-nav-item" style="">Catena</a><a href="netbible.html" class="com-nav-item" style="">NET Bible</a><a href="marcus.html" class="com-nav-item" style="">Marcus</a><a href="rhoads.html" class="com-nav-item" style="">Rhoads</a><a href="keener.html" class="com-nav-item" style="">Keener</a><a href="craigie.html" class="com-nav-item" style="">Craigie</a><a href="tigay.html" class="com-nav-item" style="">Tigay</a></div>
+  <a href="index.html" class="com-nav-all">All Scholars</a>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">Jewish &middot; Critical Scholarship &middot; 20th&ndash;21st Century</p>
+    <h1 class="bio-name">Jacob Milgrom</h1>
+    <p class="bio-tradition">1923&ndash;2010 &middot; <span>Jewish Biblical Scholar</span> &middot; UC Berkeley &middot; Anchor Bible Leviticus &amp; Numbers</p>
+  </div>
+
+  <div class="bio-quote">
+    <p>&ldquo;The priestly literature is not a dry legal code. It is a sophisticated theological system in which every ritual enacts a theology of holiness, purity, and the sacred/profane boundary that separates the divine from the human.&rdquo;</p>
+    <cite>&mdash; &mdash; Jacob Milgrom, Leviticus 1&ndash;16 (Anchor Bible, 1991)</cite>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>Jacob Milgrom was born in New York in 1923 and became one of the most prolific and influential scholars of the Hebrew Bible in the twentieth century. He taught for decades at the University of California, Berkeley, where he shaped generations of students in OT studies.</p><p>His magnum opus is the three-volume Anchor Bible Commentary on Leviticus (1991, 1999, 2001) &mdash; at over 2,700 pages the most comprehensive critical commentary on any biblical book in English. He also wrote the Anchor Bible Numbers (1990), extending the same rigorous method to the wilderness narratives.</p><p>Milgrom brought to the priestly texts a combination of deep knowledge of rabbinic and Second Temple literature, Ancient Near Eastern comparative religion, and rigorous philological method. Where earlier scholars had dismissed the levitical legislation as arid ritualism, Milgrom demonstrated that it encodes a coherent theology of holiness, pollution, and moral responsibility.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>Milgrom&rsquo;s central contribution is his interpretation of the priestly purity system as a moral theology. In his reading, the major sources of ritual impurity in Leviticus &mdash; death, disease, genital discharge &mdash; all represent forces hostile to life. The tabernacle/temple is a sanctuary of life, and impurity pollutes it not through physical contamination but through moral-symbolic associations with the powers of death.</p><p>He argues that the sin offering (<em>ḥaṭṭāʾt</em>) functions not primarily to atone for the offerer but to purge the sanctuary itself from the impurity caused by Israel&rsquo;s sins. This reconceptualisation of the sacrificial system has been enormously influential and remains debated.</p><p>On Numbers, Milgrom consistently illuminates the Priestly source&rsquo;s literary artistry and theological intentions, showing how the wilderness narratives function as a theology of community, leadership, and covenant failure.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>Milgrom writes from within the Jewish scholarly tradition, combining the philological rigour of the academic guild with deep familiarity with the Talmudic and medieval Jewish interpretive heritage. He does not read the priestly texts as Christian allegory but as documents of a living religious system whose logic and beauty deserve to be understood on their own terms.</p>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <ul class="bio-works"><li><span class="work-title">Leviticus 1&ndash;16 (Anchor Bible, 1991)</span><span class="work-desc">The first and most influential volume &mdash; over 1,100 pages covering the sacrificial system and purity laws with unparalleled depth.</span></li><li><span class="work-title">Leviticus 17&ndash;22 (Anchor Bible, 1999)</span><span class="work-desc">The Holiness Code, arguing that its ethics anticipate and extend the priestly purity system into the moral domain.</span></li><li><span class="work-title">Leviticus 23&ndash;27 (Anchor Bible, 2001)</span><span class="work-desc">The festival calendar, jubilee, and concluding legislation.</span></li><li><span class="work-title">Numbers (Anchor Bible, 1990)</span><span class="work-desc">A comprehensive commentary on the wilderness narratives combining literary, historical, and theological analysis.</span></li></ul>
+  </div>
+
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:.6rem;">Milgrom notes appear throughout Leviticus and Numbers in this tool, covering the priestly legislation, purity laws, and wilderness narratives.</p>
+    <div class="bio-appears"><a href="../ot/leviticus/Leviticus_1.html">Lev 1</a><a href="../ot/leviticus/Leviticus_2.html">Lev 2</a><a href="../ot/leviticus/Leviticus_3.html">Lev 3</a><a href="../ot/leviticus/Leviticus_4.html">Lev 4</a><a href="../ot/leviticus/Leviticus_5.html">Lev 5</a><a href="../ot/leviticus/Leviticus_6.html">Lev 6</a><a href="../ot/leviticus/Leviticus_7.html">Lev 7</a><a href="../ot/leviticus/Leviticus_8.html">Lev 8</a><a href="../ot/leviticus/Leviticus_9.html">Lev 9</a><a href="../ot/leviticus/Leviticus_10.html">Lev 10</a><a href="../ot/leviticus/Leviticus_11.html">Lev 11</a><a href="../ot/leviticus/Leviticus_12.html">Lev 12</a><a href="../ot/leviticus/Leviticus_13.html">Lev 13</a><a href="../ot/leviticus/Leviticus_14.html">Lev 14</a><a href="../ot/leviticus/Leviticus_15.html">Lev 15</a><a href="../ot/leviticus/Leviticus_16.html">Lev 16</a><a href="../ot/leviticus/Leviticus_17.html">Lev 17</a><a href="../ot/leviticus/Leviticus_18.html">Lev 18</a><a href="../ot/leviticus/Leviticus_19.html">Lev 19</a><a href="../ot/leviticus/Leviticus_20.html">Lev 20</a><a href="../ot/leviticus/Leviticus_21.html">Lev 21</a><a href="../ot/leviticus/Leviticus_22.html">Lev 22</a><a href="../ot/leviticus/Leviticus_23.html">Lev 23</a><a href="../ot/leviticus/Leviticus_24.html">Lev 24</a><a href="../ot/leviticus/Leviticus_25.html">Lev 25</a><a href="../ot/leviticus/Leviticus_26.html">Lev 26</a><a href="../ot/leviticus/Leviticus_27.html">Lev 27</a></div><div class="bio-appears"><a href="../ot/numbers/Numbers_1.html">Num 1</a><a href="../ot/numbers/Numbers_2.html">Num 2</a><a href="../ot/numbers/Numbers_3.html">Num 3</a><a href="../ot/numbers/Numbers_4.html">Num 4</a><a href="../ot/numbers/Numbers_5.html">Num 5</a><a href="../ot/numbers/Numbers_6.html">Num 6</a><a href="../ot/numbers/Numbers_7.html">Num 7</a><a href="../ot/numbers/Numbers_8.html">Num 8</a><a href="../ot/numbers/Numbers_9.html">Num 9</a><a href="../ot/numbers/Numbers_10.html">Num 10</a><a href="../ot/numbers/Numbers_11.html">Num 11</a><a href="../ot/numbers/Numbers_12.html">Num 12</a><a href="../ot/numbers/Numbers_13.html">Num 13</a><a href="../ot/numbers/Numbers_14.html">Num 14</a><a href="../ot/numbers/Numbers_15.html">Num 15</a><a href="../ot/numbers/Numbers_16.html">Num 16</a><a href="../ot/numbers/Numbers_17.html">Num 17</a><a href="../ot/numbers/Numbers_18.html">Num 18</a><a href="../ot/numbers/Numbers_19.html">Num 19</a><a href="../ot/numbers/Numbers_20.html">Num 20</a><a href="../ot/numbers/Numbers_21.html">Num 21</a><a href="../ot/numbers/Numbers_22.html">Num 22</a><a href="../ot/numbers/Numbers_23.html">Num 23</a><a href="../ot/numbers/Numbers_24.html">Num 24</a><a href="../ot/numbers/Numbers_25.html">Num 25</a><a href="../ot/numbers/Numbers_26.html">Num 26</a><a href="../ot/numbers/Numbers_27.html">Num 27</a><a href="../ot/numbers/Numbers_28.html">Num 28</a><a href="../ot/numbers/Numbers_29.html">Num 29</a><a href="../ot/numbers/Numbers_30.html">Num 30</a><a href="../ot/numbers/Numbers_31.html">Num 31</a><a href="../ot/numbers/Numbers_32.html">Num 32</a><a href="../ot/numbers/Numbers_33.html">Num 33</a><a href="../ot/numbers/Numbers_34.html">Num 34</a><a href="../ot/numbers/Numbers_35.html">Num 35</a><a href="../ot/numbers/Numbers_36.html">Num 36</a></div>
+  </div>
+<div class="bio-others">
+<p class="bio-others-title">Other Scholars</p>
+<div class="bio-others-grid"><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">MacArthur</span><span class="bio-other-desc">Evangelical pastor-scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Jewish biblical scholar</span></a><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Literary / narrative criticism</span></a><a href="hubbard.html" class="bio-other-card" style="--other-accent:#a8c870"><span class="bio-other-name">Hubbard</span><span class="bio-other-desc">Evangelical OT / Ruth</span></a><a href="waltke.html" class="bio-other-card" style="--other-accent:#e8a0b8"><span class="bio-other-name">Waltke</span><span class="bio-other-desc">Evangelical OT / Proverbs</span></a><a href="ashley.html" class="bio-other-card" style="--other-accent:#f0c080"><span class="bio-other-name">Ashley</span><span class="bio-other-desc">Evangelical / NICOT Numbers</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Reformed / 16th century</span></a><a href="robertson.html" class="bio-other-card" style="--other-accent:#c8d870"><span class="bio-other-name">Robertson</span><span class="bio-other-desc">NT Greek scholarship</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena</span><span class="bio-other-desc">Patristic compilation</span></a><a href="netbible.html" class="bio-other-card" style="--other-accent:#d8e8d0"><span class="bio-other-name">NET Bible</span><span class="bio-other-desc">Textual-critical scholarship</span></a><a href="marcus.html" class="bio-other-card" style="--other-accent:#70d8d8"><span class="bio-other-name">Marcus</span><span class="bio-other-desc">Historical-critical / NT</span></a><a href="rhoads.html" class="bio-other-card" style="--other-accent:#e8c060"><span class="bio-other-name">Rhoads</span><span class="bio-other-desc">Narrative criticism / Mark</span></a><a href="keener.html" class="bio-other-card" style="--other-accent:#a8c8f8"><span class="bio-other-name">Keener</span><span class="bio-other-desc">Social-historical NT</span></a><a href="craigie.html" class="bio-other-card" style="--other-accent:#d8b8f0"><span class="bio-other-name">Craigie</span><span class="bio-other-desc">Evangelical / NICOT Deut</span></a><a href="tigay.html" class="bio-other-card" style="--other-accent:#e8d090"><span class="bio-other-name">Tigay</span><span class="bio-other-desc">Jewish / JPS Deuteronomy</span></a></div>
+</div>
+
+</div>
+
+</div>
+</div><footer>
+  Scripture: Holy Bible, New International Version (NIV) &middot; New International Version &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.<br>
+  Commentary for personal study &middot; Scholarly paraphrases &mdash; not verbatim quotations
+</footer>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../service-worker.js"))}</script>
+</body>
+</html>

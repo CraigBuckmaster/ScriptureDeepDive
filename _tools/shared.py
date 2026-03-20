@@ -189,6 +189,21 @@ EXTRA_CSS = '''
 .anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
 .anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
 .anno-trigger.marcus.active{filter:brightness(1.25);}
+.anno-trigger.milgrom{color:#78d8a8;border-color:#287850;background:rgba(16,72,44,.22);}
+.anno-trigger.milgrom:hover{border-color:#50b880;background:rgba(16,72,44,.32);}
+.anno-trigger.milgrom.active{filter:brightness(1.25);}
+.anno-trigger.ashley{color:#f0c080;border-color:#886020;background:rgba(80,52,8,.22);}
+.anno-trigger.ashley:hover{border-color:#c09040;background:rgba(80,52,8,.32);}
+.anno-trigger.ashley.active{filter:brightness(1.25);}
+.anno-trigger.keener{color:#a8c8f8;border-color:#2a5080;background:rgba(20,48,80,.22);}
+.anno-trigger.keener:hover{border-color:#6090c8;background:rgba(20,48,80,.32);}
+.anno-trigger.keener.active{filter:brightness(1.25);}
+.anno-trigger.craigie{color:#d8b8f0;border-color:#604880;background:rgba(52,28,72,.22);}
+.anno-trigger.craigie:hover{border-color:#9870c0;background:rgba(52,28,72,.32);}
+.anno-trigger.craigie.active{filter:brightness(1.25);}
+.anno-trigger.tigay{color:#e8d090;border-color:#806828;background:rgba(72,52,8,.22);}
+.anno-trigger.tigay:hover{border-color:#c0a050;background:rgba(72,52,8,.32);}
+.anno-trigger.tigay.active{filter:brightness(1.25);}
 .com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
 .com-panel.com-marcus h4{color:#70d8d8;}
 .com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
@@ -388,6 +403,8 @@ COMMENTATOR_SCOPE = {
     'keener':    ['acts'],
     'milgrom':   ['leviticus', 'numbers'],  # Jacob Milgrom, Anchor Bible Leviticus + Numbers
     'ashley':    ['numbers'],              # Timothy Ashley, NICOT Numbers (1993)
+    'craigie':   ['deuteronomy'],           # Peter Craigie, NICOT Deuteronomy (1976)
+    'tigay':     ['deuteronomy'],           # Jeffrey Tigay, JPS Torah Deuteronomy (1996)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -1311,6 +1328,8 @@ def commentary_panel(pid, commentator_key, notes):
         'keener':    ('Keener \u2014 Acts Commentary',  'Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012\u20132015) \u2014 Scholarly Paraphrase'),
         'milgrom':   ('Milgrom \u2014 Anchor Bible',    'Jacob Milgrom, Leviticus 1\u20136 / 17\u201322 / 23\u201327, Anchor Bible (1991\u20132001) \u2014 Scholarly Paraphrase'),
         'ashley':    ('Ashley \u2014 NICOT Numbers',     'Timothy R. Ashley, The Book of Numbers, NICOT (1993) \u2014 Scholarly Paraphrase'),
+    'craigie':   ('Craigie \u2014 NICOT Deuteronomy','Peter C. Craigie, The Book of Deuteronomy, NICOT (1976) \u2014 Scholarly Paraphrase'),
+    'tigay':     ('Tigay \u2014 JPS Deuteronomy',     'Jeffrey H. Tigay, Deuteronomy, JPS Torah Commentary (1996) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -2127,6 +2146,8 @@ def _auto_rec(book_dir, ch, title, sections):
         'waltke':    ('Bruce Waltke', 'Evangelical / Reformed', '20th–21st c.'),
         'marcus':    ('Joel Marcus', 'Historical-critical', '20th–21st c.'),
         'keener':    ('Craig Keener', 'Evangelical / Socio-historical', '21st c.'),
+        'craigie':   ('Peter Craigie', 'Evangelical / NICOT', '20th c.'),
+        'tigay':     ('Jeffrey Tigay', 'JPS / Modern Jewish scholarship', '20th\u201321st c.'),
     }
     seen = []
     for sec in sections:
@@ -2441,6 +2462,8 @@ def build_chapter(book_dir, ch, data):
         if 'keener'   in sec and in_scope('keener'):    panels_html += commentary_panel(f'{sid}-keener',   'keener',    sec['keener'])
         if 'milgrom'  in sec and in_scope('milgrom'):   panels_html += commentary_panel(f'{sid}-milgrom',  'milgrom',   sec['milgrom'])
         if 'ashley'   in sec and in_scope('ashley'):    panels_html += commentary_panel(f'{sid}-ashley',   'ashley',    sec['ashley'])
+        if 'craigie'  in sec and in_scope('craigie'):   panels_html += commentary_panel(f'{sid}-craigie',  'craigie',   sec['craigie'])
+        if 'tigay'    in sec and in_scope('tigay'):     panels_html += commentary_panel(f'{sid}-tigay',    'tigay',     sec['tigay'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
@@ -2448,7 +2471,8 @@ def build_chapter(book_dir, ch, data):
 
     # --- hoist chapter-level keys from sections if accidentally placed there ---
     for key in ('textual', 'debate', 'hebtext', 'themes', 'lit', 'ppl_sec',
-                'sarna', 'alter', 'hubbard', 'waltke', 'calvin', 'netbible'):
+                'sarna', 'alter', 'hubbard', 'waltke', 'calvin', 'netbible',
+                'craigie', 'tigay'):
         for sec in data.get('sections', []):
             if key in sec:
                 if key not in data:
