@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>David T. Tsumura &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scripture">
+<meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#88b8d8; }
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style>
+</head>
+<body>
+<nav class="com-nav">
+  <div class="com-nav-items">
+    <a href="index.html" class="com-nav-back">&#8592; Scholars</a>
+    <a href="../index.html" class="com-nav-all">Library</a>
+  </div>
+</nav>
+<div class="bio-wrap">
+  <div class="bio-header">
+    <p class="bio-eyebrow">{data["eyebrow"]}</p>
+    <h1 class="bio-name">{data["name"]}</h1>
+    <p class="bio-tradition">{data["tradition_line"]}</p>
+  </div>
+  <div class="bio-quote">
+    <blockquote>&ldquo;{data["quote"]}&rdquo;</blockquote>
+  </div>
+  <div class="bio-section">
+    <h2 class="bio-section-title">Biography</h2>
+    <p>{data["bio"]}</p>
+  </div>
+  <div class="bio-section">
+    <h2 class="bio-section-title">Interpretive Approach</h2>
+    <p>{data["approach"]}</p>
+  </div>
+  <div class="bio-section">
+    <h2 class="bio-section-title">Theological Tradition</h2>
+    <p>{data["theological"]}</p>
+  </div>
+  <div class="bio-section">
+    <h2 class="bio-section-title">Key Works</h2>
+    <p>{data["works"]}</p>
+  </div>
+  <div class="bio-section">
+    <h2 class="bio-section-title">Appears In</h2>
+    <p>{data["name"].split()[-1]} notes appear throughout {data["book_label"]} in this tool.</p>
+    <div class="bio-appears">{ch_links}</div>
+  </div>
+  <div class="bio-others">
+    <p class="bio-others-title">Other Scholars</p>
+    <div class="bio-others-grid"><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Robert Alter</span><span class="bio-other-desc">Literary Criticism &middot; Contemporary</span></a><a href="ashley.html" class="bio-other-card" style="--other-accent:#f0c080"><span class="bio-other-name">Timothy</span><span class="bio-other-desc">Evangelical OT Scholar &middot; NICOT Numbers</span></a><a href="bergen.html" class="bio-other-card" style="--other-accent:#d8a080"><span class="bio-other-name">Bergen</span><span class="bio-other-desc">Evangelical &middot; NAC Commentary &middot; 20th Century</span></a><a href="block.html" class="bio-other-card" style="--other-accent:#e0a070"><span class="bio-other-name">Block</span><span class="bio-other-desc">Evangelical &middot; NAC Commentary &middot; 20th&ndash;21st Century</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">John Calvin</span><span class="bio-other-desc">Reformed Theology &middot; 16th Century</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena Aurea</span><span class="bio-other-desc">Patristic Compilation &middot; Aquinas, 13th Century</span></a><a href="craigie.html" class="bio-other-card" style="--other-accent:#d8b8f0"><span class="bio-other-name">Peter</span><span class="bio-other-desc">Evangelical OT Scholar &middot; NICOT Deuteronomy</span></a><a href="hess.html" class="bio-other-card" style="--other-accent:#60d0c0"><span class="bio-other-name">Hess</span><span class="bio-other-desc">Evangelical &middot; TOTC Commentary &middot; 20th&ndash;21st Century</span></a><a href="howard.html" class="bio-other-card" style="--other-accent:#90b0e0"><span class="bio-other-name">Jr.</span><span class="bio-other-desc">Evangelical &middot; NAC Commentary &middot; 20th&ndash;21st Century</span></a><a href="hubbard.html" class="bio-other-card" style="--other-accent:#a8c870"><span class="bio-other-name">Robert</span><span class="bio-other-desc">Evangelical OT Scholar &middot; NICOT Commentary</span></a><a href="keener.html" class="bio-other-card" style="--other-accent:#a8c8f8"><span class="bio-other-name">Craig</span><span class="bio-other-desc">Evangelical NT Scholar &middot; Socio-Historical</span></a><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">John MacArthur</span><span class="bio-other-desc">Conservative Evangelical &middot; Contemporary</span></a><a href="marcus.html" class="bio-other-card" style="--other-accent:#70d8d8"><span class="bio-other-name">Joel Marcus</span><span class="bio-other-desc">NT Historical-Critical Scholarship &middot; Contemporary</span></a><a href="milgrom.html" class="bio-other-card" style="--other-accent:#78d8a8"><span class="bio-other-name">Jacob Milgrom</span><span class="bio-other-desc">Jewish Biblical Scholar &middot; Anchor Bible</span></a><a href="netbible.html" class="bio-other-card" style="--other-accent:#d8e8d0"><span class="bio-other-name">NET</span><span class="bio-other-desc">Textual-Critical Scholarship &middot; Contemporary</span></a><a href="rhoads.html" class="bio-other-card" style="--other-accent:#e8c060"><span class="bio-other-name">Rhoads</span><span class="bio-other-desc">Narrative Criticism &middot; Contemporary</span></a><a href="robertson.html" class="bio-other-card" style="--other-accent:#c8d870"><span class="bio-other-name">A.T. Robertson</span><span class="bio-other-desc">NT Greek Scholarship &middot; Early 20th Century</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Nahum Sarna</span><span class="bio-other-desc">Jewish Biblical Scholar &middot; 20th Century</span></a><a href="tigay.html" class="bio-other-card" style="--other-accent:#e8d090"><span class="bio-other-name">Jeffrey</span><span class="bio-other-desc">Jewish Biblical Scholar &middot; JPS Torah Commentary</span></a><a href="waltke.html" class="bio-other-card" style="--other-accent:#e8a0b8"><span class="bio-other-name">Bruce</span><span class="bio-other-desc">Evangelical OT Scholar &middot; Reformed</span></a><a href="webb.html" class="bio-other-card" style="--other-accent:#90c890"><span class="bio-other-name">Webb</span><span class="bio-other-desc">Evangelical &middot; NICOT Commentary &middot; 21st Century</span></a></div>
+  </div>
+</div>
+</body>
+</html>

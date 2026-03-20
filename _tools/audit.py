@@ -901,6 +901,58 @@ else:
          "Add rect.top < 60 guard with scrollIntoView block:'start'")
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 17. SCHOLAR BIO PAGES + COMMENTATOR CSS
+# ═══════════════════════════════════════════════════════════════════════════
+import importlib, sys as _sys
+_sys.path.insert(0, os.path.join(REPO, '_tools'))
+import shared as _shared; _shared = importlib.reload(_shared)
+
+# Collect all book-specific scholars actually in use
+_live_books = set()
+for bd, bn, tot, live, testament, td in _shared.REGISTRY:
+    if live > 0:
+        _live_books.add(bd)
+
+_used_scholars = set()
+for key, scope in _shared.COMMENTATOR_SCOPE.items():
+    if scope == 'all':
+        continue  # universal scholars don't need individual bios (except macarthur/calvin/netbible which already have them)
+    if isinstance(scope, list):
+        if any(b in _live_books for b in scope):
+            _used_scholars.add(key)
+
+# Check bio pages exist
+_bio_dir = os.path.join(REPO, 'commentators')
+_missing_bios = []
+for key in sorted(_used_scholars):
+    bio_path = os.path.join(_bio_dir, f'{key}.html')
+    if not os.path.exists(bio_path):
+        _missing_bios.append(key)
+
+if _missing_bios:
+    warn(f"Scholar bio pages missing in commentators/: {', '.join(_missing_bios)}")
+else:
+    ok(f'All {len(_used_scholars)} book-specific scholars have bio pages')
+
+# Check index.html cards
+_idx_path = os.path.join(_bio_dir, 'index.html')
+if os.path.exists(_idx_path):
+    with open(_idx_path) as _f: _idx_content = _f.read()
+    _missing_cards = [k for k in sorted(_used_scholars) if f'href="{k}.html"' not in _idx_content]
+    if _missing_cards:
+        warn(f"Scholar cards missing in commentators/index.html: {', '.join(_missing_cards)}")
+    else:
+        ok(f'All {len(_used_scholars)} scholars have index cards')
+
+# Check CSS button colors exist in shared.py CSS template
+with open(os.path.join(REPO, '_tools', 'shared.py')) as _f: _shared_src = _f.read()
+_missing_css = [k for k in sorted(_used_scholars) if f'.anno-trigger.{k}' not in _shared_src]
+if _missing_css:
+    warn(f"Commentator CSS missing in shared.py for: {', '.join(_missing_css)}")
+else:
+    ok(f'All {len(_used_scholars)} scholars have button CSS colors in shared.py')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")
