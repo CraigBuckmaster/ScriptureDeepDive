@@ -43,24 +43,35 @@ import argparse
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 # Books currently live in the app — (book_name, testament, chapter_count)
-# Auto-generated from REGISTRY — update this list when new books go live
+# Full Bible — all 66 books
 LIVE_BOOKS = [
-    ('Genesis',      'ot', 50),
-    ('Exodus',       'ot', 40),
-    ('Leviticus',    'ot', 27),
-    ('Numbers',      'ot', 36),
-    ('Deuteronomy',  'ot', 34),
-    ('Ruth',         'ot',  4),
-    ('Proverbs',     'ot', 31),
-    ('Matthew',      'nt', 28),
-    ('Mark',         'nt', 16),
-    ('Luke',         'nt', 24),
-    ('John',         'nt', 21),
-    ('Acts',         'nt', 28),
+    # OT
+    ('Genesis',         'ot',  50), ('Exodus',          'ot',  40), ('Leviticus',       'ot',  27),
+    ('Numbers',         'ot',  36), ('Deuteronomy',     'ot',  34), ('Joshua',          'ot',  24),
+    ('Judges',          'ot',  21), ('Ruth',            'ot',   4), ('1 Samuel',        'ot',  31),
+    ('2 Samuel',        'ot',  24), ('1 Kings',         'ot',  22), ('2 Kings',         'ot',  25),
+    ('1 Chronicles',    'ot',  29), ('2 Chronicles',    'ot',  36), ('Ezra',            'ot',  10),
+    ('Nehemiah',        'ot',  13), ('Esther',          'ot',  10), ('Job',             'ot',  42),
+    ('Psalms',          'ot', 150), ('Proverbs',        'ot',  31), ('Ecclesiastes',    'ot',  12),
+    ('Song of Solomon', 'ot',   8), ('Isaiah',          'ot',  66), ('Jeremiah',        'ot',  52),
+    ('Lamentations',    'ot',   5), ('Ezekiel',         'ot',  48), ('Daniel',          'ot',  12),
+    ('Hosea',           'ot',  14), ('Joel',            'ot',   3), ('Amos',            'ot',   9),
+    ('Obadiah',         'ot',   1), ('Jonah',           'ot',   4), ('Micah',           'ot',   7),
+    ('Nahum',           'ot',   3), ('Habakkuk',        'ot',   3), ('Zephaniah',       'ot',   3),
+    ('Haggai',          'ot',   2), ('Zechariah',       'ot',  14), ('Malachi',         'ot',   4),
+    # NT
+    ('Matthew',         'nt',  28), ('Mark',            'nt',  16), ('Luke',            'nt',  24),
+    ('John',            'nt',  21), ('Acts',            'nt',  28), ('Romans',          'nt',  16),
+    ('1 Corinthians',   'nt',  16), ('2 Corinthians',   'nt',  13), ('Galatians',       'nt',   6),
+    ('Ephesians',       'nt',   6), ('Philippians',     'nt',   4), ('Colossians',      'nt',   4),
+    ('1 Thessalonians', 'nt',   5), ('2 Thessalonians', 'nt',   3), ('1 Timothy',       'nt',   6),
+    ('2 Timothy',       'nt',   4), ('Titus',           'nt',   3), ('Philemon',        'nt',   1),
+    ('Hebrews',         'nt',  13), ('James',           'nt',   5), ('1 Peter',         'nt',   5),
+    ('2 Peter',         'nt',   3), ('1 John',          'nt',   5), ('2 John',          'nt',   1),
+    ('3 John',          'nt',   1), ('Jude',            'nt',   1), ('Revelation',      'nt',  22),
 ]
 
-# To run only missing books, set this to the books you want to fetch:
-FETCH_ONLY = ['Numbers', 'Deuteronomy']  # set to [] to fetch all
+FETCH_ONLY = []  # empty = fetch all (skips books whose .js already exists)
 
 ESV_API_BASE = 'https://api.esv.org/v3/passage/text/'
 
