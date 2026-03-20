@@ -460,3 +460,4 @@ else:
             print(f'    ⚠  {w.strip()}')
         if len(warnings) > 15:
             print(f'    ⚠  ... and {len(warnings)-15} more warnings')
+sys.exit(1 if issues else 0)
