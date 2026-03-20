@@ -166,7 +166,7 @@ def main():
         if not os.path.exists(path):
             gaps.append((name, testament, chapters, short, filename, 'MISSING'))
         else:
-            with open(path) as f:
+            with open(path, encoding='utf-8') as f:
                 content = f.read()
             if content.count('"ref":') == 0:
                 gaps.append((name, testament, chapters, short, filename, 'EMPTY'))
