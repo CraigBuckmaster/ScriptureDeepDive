@@ -69,7 +69,12 @@ BOOKS = [
 
 def fetch_text(book_name, ch_start, ch_end, api_key):
     """Fetch a range of chapters. Returns raw text or None."""
-    ref = urllib.parse.quote(f'{book_name} {ch_start}-{ch_end}')
+    # Single-chapter books: "Obadiah 1-1" means verse 1, not chapter 1
+    # Use just the book name, or "Book 1" for single-chapter books
+    if ch_start == ch_end:
+        ref = urllib.parse.quote(f'{book_name} {ch_start}')
+    else:
+        ref = urllib.parse.quote(f'{book_name} {ch_start}-{ch_end}')
     url = f'{ESV_API}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
     try:
