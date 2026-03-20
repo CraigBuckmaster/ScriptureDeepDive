@@ -69,12 +69,18 @@ BOOKS = [
 
 def fetch_text(book_name, ch_start, ch_end, total_chapters, api_key):
     """Fetch a range of chapters. Returns raw text or None."""
-    # If requesting the entire book, use just the book name — avoids all ambiguity
-    if ch_start == 1 and ch_end == total_chapters:
+    if ch_start is None:
+        # Whole book request
         ref = urllib.parse.quote(book_name)
+    elif total_chapters == 1:
+        # Single-chapter book
+        ref = urllib.parse.quote(book_name)
+    elif ch_start == ch_end:
+        # Single chapter from multi-chapter book: "Ezra 5"
+        ref = urllib.parse.quote(f'{book_name} {ch_start}')
     else:
-        # Chunked request for large books: explicit chapter:verse format
-        ref = urllib.parse.quote(f'{book_name} {ch_start}:1-{ch_end}:999')
+        # Chapter range for chunked large books
+        ref = urllib.parse.quote(f'{book_name} {ch_start}-{ch_end}')
     url = f'{ESV_API}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
     try:
@@ -92,29 +98,54 @@ def fetch_text(book_name, ch_start, ch_end, total_chapters, api_key):
 
 
 def fetch_book(name, chapters, api_key):
-    """Fetch entire book, chunking if needed. Returns full text."""
-    all_text = ''
-    for start in range(1, chapters + 1, CHUNK):
-        end = min(start + CHUNK - 1, chapters)
-        for attempt in range(1, 4):
-            result = fetch_text(name, start, end, chapters, api_key)
-            if result == '429':
-                wait = 60 * attempt
-                print(f'    Rate limited — waiting {wait}s (attempt {attempt}/3)...')
-                time.sleep(wait)
-                continue
-            elif result is None:
-                print(f'    Failed chunk {start}-{end}')
+    """Fetch entire book. Try whole-book first, fall back to chapter-by-chapter."""
+    # Large books (>CHUNK chapters): must chunk
+    if chapters > CHUNK:
+        print(f'    Large book — fetching chapter-by-chapter')
+        all_text = ''
+        for ch in range(1, chapters + 1):
+            result = fetch_with_retry(name, ch, ch, chapters, api_key)
+            if result is None:
+                print(f'    Failed on chapter {ch}')
                 return None
-            else:
-                all_text += result
-                break
-        else:
-            print(f'    Gave up on {name} {start}-{end} after 3 attempts')
+            all_text += result
+            if ch < chapters:
+                time.sleep(DELAY)
+        return all_text
+
+    # Small/medium books: try whole-book first
+    result = fetch_with_retry(name, None, None, chapters, api_key)
+    if result:
+        marker_count = len(re.findall(r'\[\d+\]', result))
+        if marker_count >= chapters:  # at least 1 verse per chapter
+            return result
+        print(f'    Whole-book returned only {marker_count} verse markers — falling back to chapter-by-chapter')
+
+    # Fallback: chapter by chapter
+    all_text = ''
+    for ch in range(1, chapters + 1):
+        result = fetch_with_retry(name, ch, ch, chapters, api_key)
+        if result is None:
+            print(f'    Failed on chapter {ch}')
             return None
-        if end < chapters:
+        all_text += result
+        if ch < chapters:
             time.sleep(DELAY)
     return all_text
+
+
+def fetch_with_retry(name, ch_start, ch_end, total_chapters, api_key):
+    """Fetch with up to 3 retries on 429."""
+    for attempt in range(1, 4):
+        result = fetch_text(name, ch_start, ch_end, total_chapters, api_key)
+        if result == '429':
+            wait = 60 * attempt
+            print(f'    Rate limited — waiting {wait}s (attempt {attempt}/3)...')
+            time.sleep(wait)
+            continue
+        return result
+    print(f'    Gave up after 3 attempts')
+    return None
 
 
 def parse_verses(raw, name, testament, chapters, short, filename):
