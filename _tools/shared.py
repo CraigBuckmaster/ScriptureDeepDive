@@ -280,7 +280,8 @@ REGISTRY = [
     ('genesis',  'Genesis',   50, 50, 'OT', 'ot'),
     ('exodus',   'Exodus',    40, 40, 'OT', 'ot'),
     ('leviticus','Leviticus',  27, 27, 'OT', 'ot'),
-    ('numbers',  'Numbers',    36, 36, 'OT', 'ot'),
+    ('numbers',      'Numbers',      36, 36, 'OT', 'ot'),
+    ('deuteronomy', 'Deuteronomy',  34, 34, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -294,6 +295,7 @@ REGISTRY = [
 BOOK_PREFIX = {
     'genesis':  'gen',
     'exodus':   'ex',
+    'deuteronomy': 'deu',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -466,6 +468,30 @@ BOOK_META = {
         'vhl_key':    ['census', 'camp', 'tabernacle', 'cloud', 'fire', 'offering', 'vow',
                        'Nazirite', 'jealousy', 'rebellion', 'murmur', 'plague', 'bronze serpent',
                        'inheritance', 'cities of refuge', 'firstfruits', 'atonement'],
+    },
+
+
+    'deuteronomy': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Moses, with a brief editorial postscript (Deut 34). '
+                 'The Hebrew title <em>Devarim</em> (&ldquo;Words&rdquo;) reflects its nature as '
+                 'three great farewell addresses.<br><br>'
+                 '<strong>Date:</strong> c.1406 BC. The final year of Israel\u2019s wilderness sojourn '
+                 'on the plains of Moab. Moses is 120 years old; his death closes the book (34:7).<br><br>'
+                 '<strong>Theme:</strong> Covenant love and loyalty. The Shema (6:4\u2013;5) is its '
+                 'centrepiece: love for God with whole heart, soul, and strength. Moses calls Israel '
+                 'to a choice: covenant faithfulness means life and blessing; apostasy means death '
+                 'and exile (30:15\u201320). The book\u2019s structure mirrors Hittite suzerainty '
+                 'treaties (Kline, 1963): preamble, historical prologue, stipulations, document '
+                 'clause, witnesses, blessings and curses \u2014 evidence for early composition.'),
+        'vhl_places': ['Moab', 'Horeb', 'Canaan', 'Ebal', 'Gerizim', 'Nebo', 'Bashan',
+                       'Gilead', 'Pisgah', 'Beth-peor', 'Jordan', 'Transjordan'],
+        'vhl_people': ['Moses', 'Joshua', 'Caleb', 'Og', 'Sihon', 'Zelophehad'],
+        'vhl_time':   [],
+        'vhl_key':    ['covenant', 'Shema', 'love', 'obey', 'heart', 'choose', 'remember',
+                       'blessing', 'curse', 'life', 'death', 'law', 'Torah', 'prophet',
+                       'inheritance', 'land', 'rest', 'holy', 'fear', 'worship', 'tithe',
+                       'firstfruits', 'witness', 'cities of refuge', 'king'],
     },
     'ruth': {
         'is_nt': False,
