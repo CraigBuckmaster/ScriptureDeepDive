@@ -9,6 +9,7 @@ var BOOKS = [
   {dir:"joshua",name:"Joshua",total:24,live:24,testament:"OT"},
   {dir:"judges",name:"Judges",total:21,live:21,testament:"OT"},
   {dir:"1_samuel",name:"1 Samuel",total:31,live:31,testament:"OT"},
+  {dir:"2_samuel",name:"2 Samuel",total:24,live:24,testament:"OT"},
   {dir:"ruth",name:"Ruth",total:4,live:4,testament:"OT"},
   {dir:"proverbs",name:"Proverbs",total:31,live:31,testament:"OT"},
   {dir:"matthew",name:"Matthew",total:28,live:28,testament:"NT"},

@@ -246,6 +246,13 @@ EXTRA_CSS = '''
 .com-panel.com-tsumura{background:#040810;border-color:#386080;}
 .com-panel.com-tsumura h4{color:#88b8d8;}
 .com-panel.com-tsumura .com-source{color:#88b8d8;border-bottom-color:rgba(56,96,128,.4);}
+/* Anderson — WBC 2 Samuel (warm olive: historical-critical) */
+.anno-trigger.anderson{color:#c8d0a0;border-color:#606828;background:rgba(64,72,24,.22);}
+.anno-trigger.anderson:hover{border-color:#a0b060;background:rgba(64,72,24,.32);}
+.anno-trigger.anderson.active{filter:brightness(1.25);}
+.com-panel.com-anderson{background:#0a0c04;border-color:#606828;}
+.com-panel.com-anderson h4{color:#c8d0a0;}
+.com-panel.com-anderson .com-source{color:#c8d0a0;border-bottom-color:rgba(96,104,40,.4);}
 .com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
 .com-panel.com-marcus h4{color:#70d8d8;}
 .com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
@@ -342,6 +349,7 @@ REGISTRY = [
     ('joshua',      'Joshua',       24, 24, 'OT', 'ot'),
     ('judges',      'Judges',       21, 21, 'OT', 'ot'),
     ('1_samuel',    '1 Samuel',     31, 31, 'OT', 'ot'),
+    ('2_samuel',    '2 Samuel',     24, 24, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -359,6 +367,7 @@ BOOK_PREFIX = {
     'joshua':   'josh',
     'judges':   'judg',
     '1_samuel': '1sa',
+    '2_samuel': '2sa',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -457,8 +466,9 @@ COMMENTATOR_SCOPE = {
     'howard':    ['joshua'],                # David Howard, NAC Joshua (1998)
     'block':     ['judges'],                # Daniel Block, NAC Judges-Ruth (1999)
     'webb':      ['judges'],                # Barry Webb, NICOT Judges (2012)
-    'bergen':    ['1_samuel'],              # Robert Bergen, NAC 1-2 Samuel (1996)
+    'bergen':    ['1_samuel', '2_samuel'],              # Robert Bergen, NAC 1-2 Samuel (1996)
     'tsumura':   ['1_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
+    'anderson':  ['2_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -624,6 +634,27 @@ BOOK_META = {
                         'Nob','Gath','Ziklag','En Gedi','Carmel'],
         'vhl_key': ['king','anoint','spirit','heart','obey','reject','pray','ark',
                      'covenant','prophet','warrior','shepherd','choose'],
+        'vhl_time': ['day','days','year','years','time','generation','month'],
+    },
+    '2_samuel': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. Originally one book with 1 Samuel. Draws on court '
+                 'records, the &ldquo;Succession Narrative&rdquo; (chs 9&ndash;20), and prophetic '
+                 'archives. David&rsquo;s lament over Saul and Jonathan (ch 1) and the appendices '
+                 '(chs 21&ndash;24) may derive from independent sources.<br><br>'
+                 '<strong>Date:</strong> Events span c.1010&ndash;970 BC, from David&rsquo;s accession '
+                 'to his final years. The Succession Narrative is widely regarded as one of the earliest '
+                 'examples of ancient historiography.<br><br>'
+                 '<strong>Theme:</strong> The Davidic covenant and its consequences. God promises David '
+                 'an eternal dynasty (ch 7), but David&rsquo;s sin with Bathsheba (chs 11&ndash;12) '
+                 'unleashes a chain of violence &mdash; Amnon, Tamar, Absalom &mdash; that nearly '
+                 'destroys the very house God promised to build. Grace and judgment intertwine.'),
+        'vhl_people': ['David','Joab','Absalom','Nathan','Bathsheba','Uriah','Amnon',
+                        'Tamar','Mephibosheth','Abner','Ish-Bosheth','God','LORD','Israel'],
+        'vhl_places': ['Hebron','Jerusalem','Zion','Mahanaim','Gilead','Jordan',
+                        'Rabbah','Gath','En Rogel','Bahurim'],
+        'vhl_key': ['king','covenant','house','dynasty','throne','sin','sword',
+                     'loyal','mercy','judgment','anoint','promise','servant'],
         'vhl_time': ['day','days','year','years','time','generation','month'],
     },
     'ruth': {
@@ -1452,6 +1483,7 @@ def commentary_panel(pid, commentator_key, notes):
     'webb':      ('Webb \u2014 NICOT Judges',           'Barry G. Webb, The Book of Judges, NICOT (2012) \u2014 Scholarly Paraphrase'),
     'bergen':    ('Bergen \u2014 NAC Samuel',           'Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) \u2014 Scholarly Paraphrase'),
     'tsumura':   ('Tsumura \u2014 NICOT 1 Samuel',     'David T. Tsumura, The First Book of Samuel, NICOT (2007) \u2014 Scholarly Paraphrase'),
+    'anderson':  ('Anderson \u2014 WBC 2 Samuel',       'A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -2251,6 +2283,17 @@ def _auto_src(book_dir, ch, title, all_text):
              'Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.',
              'The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography.'),
         ],
+        '2_samuel': [
+            ('Tel Dan Stele (c.840 BC)',
+             'The Aramaic inscription mentioning &ldquo;the house of David&rdquo; is the earliest extra-biblical reference to David\'s dynasty.',
+             'Confirms the historical existence of a Davidic royal house, corroborating the 2 Samuel narrative of dynasty-founding.'),
+            ('Mesha Stele / Moabite Stone (c.840 BC)',
+             'King Mesha of Moab describes his revolt against Israelite control of Transjordan, referencing the &ldquo;house of David.&rdquo;',
+             'The Moabite perspective on Israelite territorial claims illuminates the geopolitical context of David\'s Transjordan campaigns in 2 Samuel 8-10.'),
+            ('Ancient Near Eastern Royal Ideology and Succession Narratives',
+             'Egyptian, Hittite, and Mesopotamian court narratives describe succession crises, palace intrigues, and the legitimation of new dynasties.',
+             'The Succession Narrative (2 Sam 9-20) has been compared to Egyptian and Hittite court literature for its psychological realism and political sophistication.'),
+        ],
         '1_samuel': [
             ('Philistine Archaeology (Tel Miqne/Ekron, Ashkelon)',
              'Excavations at Philistine sites reveal a sophisticated Aegean-origin culture with distinctive pottery, architecture, and religious practices.',
@@ -2394,6 +2437,27 @@ def _auto_textual(book_dir, ch, title):
              'P45 and early papyrus witnesses',
              'The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.',
              'The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation.'),
+        ],
+        '2_samuel': [
+            ('Tel Dan Stele (c.840 BC)',
+             'The Aramaic inscription mentioning &ldquo;the house of David&rdquo; is the earliest extra-biblical reference to David\'s dynasty.',
+             'Confirms the historical existence of a Davidic royal house, corroborating the 2 Samuel narrative of dynasty-founding.'),
+            ('Mesha Stele / Moabite Stone (c.840 BC)',
+             'King Mesha of Moab describes his revolt against Israelite control of Transjordan, referencing the &ldquo;house of David.&rdquo;',
+             'The Moabite perspective on Israelite territorial claims illuminates the geopolitical context of David\'s Transjordan campaigns in 2 Samuel 8-10.'),
+            ('Ancient Near Eastern Royal Ideology and Succession Narratives',
+             'Egyptian, Hittite, and Mesopotamian court narratives describe succession crises, palace intrigues, and the legitimation of new dynasties.',
+             'The Succession Narrative (2 Sam 9-20) has been compared to Egyptian and Hittite court literature for its psychological realism and political sophistication.'),
+        ],
+        '2_samuel': [
+            ('4QSam\u1d43 (Dead Sea Scrolls)',
+             'Important Qumran witness for 2 Samuel',
+             '4QSam\u1d43 preserves readings closer to the LXX than the MT in several passages, including significant variants in 2 Sam 5-6 and the appendices (chs 21-24).',
+             'The textual evidence confirms that the MT of 2 Samuel, like 1 Samuel, is not always the best text. Critical editions now routinely consult 4QSam\u1d43 alongside LXX.'),
+            ('Josephus, Antiquities VII',
+             'First-century retelling of David\'s reign',
+             'Josephus\'s account smooths over some of David\'s moral failures while expanding the political narrative, revealing how Second Temple Judaism received the David tradition.',
+             'Josephus confirms the broad historical outline while showing interpretive tendencies in the reception of the David story.'),
         ],
         '1_samuel': [
             ('4QSam\u1d43 (Dead Sea Scrolls)',
@@ -2639,6 +2703,7 @@ def build_chapter(book_dir, ch, data):
         if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
         if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
         if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
+        if 'anderson'   in sec and in_scope('anderson'):   btns.append(('anderson',  'Anderson',    f'{sid}-anderson'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -2672,6 +2737,7 @@ def build_chapter(book_dir, ch, data):
         if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
         if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
         if 'tsumura'  in sec and in_scope('tsumura'):   panels_html += commentary_panel(f'{sid}-tsumura',  'tsumura',   sec['tsumura'])
+        if 'anderson' in sec and in_scope('anderson'):  panels_html += commentary_panel(f'{sid}-anderson', 'anderson',  sec['anderson'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
