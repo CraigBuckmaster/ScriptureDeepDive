@@ -1571,17 +1571,24 @@ def auto_scholarly(data, book_dir, ch):
     }
     if mentioned:
         ppl = []
-        ctx_combined = ' '.join(sec.get('ctx','') for sec in sections)
         for name in mentioned[:8]:
-            role = roles.get(name, f'Key figure in {title}')
-            sentences = ctx_combined.split('.')
-            desc = next((sent.strip() for sent in sentences
-                        if name in sent and len(sent.strip()) > 25), '')
-            desc = (desc[:200] + '…') if len(desc) > 200 else (desc or f'Key figure in this chapter.')
+            bio = _get_person_bio(name, book_dir)
+            if bio:
+                role, desc = bio
+            else:
+                role = roles.get(name, 'Key biblical figure')
+                ctx_combined = ' '.join(sec.get('ctx','') + ' ' +
+                    ' '.join(n[1] for k in ('mac','milgrom','sarna','alter','ashley',
+                        'calvin','netbible','keener','robertson','marcus')
+                        for n in sec.get(k,[]) if len(n)>=2)
+                    for sec in sections)
+                sentences = [sent.strip() for sent in ctx_combined.replace(';','.').split('.')
+                             if name in sent and len(sent.strip()) > 35]
+                desc = (sentences[0][:240] + '\u2026') if sentences else (
+                    f'{name} is a key figure in {title}.')
             ppl.append((name, role, desc))
         if ppl:
             result['ppl'] = ppl
-
     # ── 5. TRANS ─────────────────────────────────────────────────────────
     td = 'nt' if is_nt else 'ot'
     niv_path = os.path.join(_REPO, 'verses', 'niv', td, f'{book_dir}.js')
@@ -1666,6 +1673,315 @@ def _auto_thread(book_dir, ch, title, sections, is_nt):
             text = note[:250] + ('…' if len(note) > 250 else '')
             items.append((dc, anchor, arrow, target, tc, tl, text))
     return items[:6] if items else []
+
+
+# ── People biographical database ─────────────────────────────────────────────
+# Keyed by (book_dir, name) then falling back to (name,) for cross-book figures.
+# Each entry: (role, description)
+PEOPLE_BIO = {
+    # Cross-book figures
+    ('moses',): (
+        'Prophet, lawgiver, and covenant mediator',
+        'Moses stands at the centre of the Pentateuch’s narrative \u2014 the one man who '
+        'spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai '
+        'covenant to Israel. In Leviticus he receives the priestly legislation; in '
+        'Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). '
+        'The writer of Hebrews calls him "faithful in all God’s house" (Heb 3:5) '
+        'while distinguishing him from Christ, the Son over the house.'
+    ),
+    ('aaron',): (
+        'First high priest of Israel',
+        'Aaron, Moses’s brother, is consecrated as Israel’s first high priest in Lev '
+        '8–9. He bears the names of the twelve tribes on his breastplate before God '
+        'and enters the Most Holy Place once a year on Yom Kippur (Lev 16). His '
+        'failures \u2014 the golden calf (Exod 32), challenging Moses’s authority (Num 12), '
+        'complicity at Meribah (Num 20) \u2014 make him the paradigm of the imperfect '
+        'priest who prefigures a better high priest (Heb 7:26–28).'
+    ),
+    ('miriam',): (
+        'Prophetess and worship leader; Moses’s sister',
+        'Miriam leads Israel’s women in worship after the Red Sea crossing (Exod 15:20) '
+        'and is called a prophetess. In Num 12 she challenges Moses’s unique prophetic '
+        'authority alongside Aaron and is struck with ṣāraʿat \u2014 only to be healed '
+        'after Moses’s seven-word intercession. She dies at Kadesh (Num 20:1), her '
+        'passing noted in two terse Hebrew words before the water crisis.'
+    ),
+    ('caleb',): (
+        'Spy from Judah; wholehearted follower of God',
+        'Caleb alone among the twelve spies urges immediate entry into Canaan (Num '
+        '13:30). The word that defines him is "wholehearted" \u2014 he followed God '
+        'wholeheartedly (Num 14:24) when the rest of his generation did not. As a '
+        'result he is exempted from the forty-year sentence and enters the land at '
+        'age 85, still claiming the Anakite hill country God promised him (Josh '
+        '14:6–14).'
+    ),
+    ('joshua',): (
+        'Moses’s military commander and designated successor',
+        'Joshua son of Nun serves as Moses’s lieutenant throughout the wilderness '
+        'period \u2014 commanding at Rephidim (Exod 17), ascending Sinai with Moses '
+        '(Exod 24), guarding the tent of meeting. In Num 13–14 he stands with '
+        'Caleb as one of two faithful spies. He is formally commissioned in Num 27 '
+        'through Moses’s hand-laying and inherits the leadership role that Moses '
+        'cannot fulfil past the Jordan.'
+    ),
+    ('korah',): (
+        'Levite leader of the great wilderness rebellion',
+        'Korah son of Izhar (a Kohathite) leads the most theologically sophisticated '
+        'challenge to covenant authority in Numbers \u2014 arguing that the Aaronic '
+        'priesthood contradicts the community’s universal holiness (Num 16:3). The '
+        'earth opens and swallows him with Dathan and Abiram; 250 followers die by '
+        'divine fire. Jude cites "Korah’s rebellion" as the paradigmatic pattern '
+        'of those who despise legitimate spiritual authority (Jude 11).'
+    ),
+    ('balaam',): (
+        'Mesopotamian seer hired to curse Israel',
+        'Balaam son of Beor is attested outside the Bible \u2014 the Deir Alla inscription '
+        '(c.800 BC) names him as a seer from the region. In Num 22–24 he is hired '
+        'by Balak to curse Israel but God compels him to bless instead, producing '
+        'four increasingly exalted oracles including the messianic "star from Jacob" '
+        '(Num 24:17). His donkey sees what he cannot; his death in Num 31:8 confirms '
+        'his role in the Baal Peor seduction (Num 31:16; Rev 2:14).'
+    ),
+    ('balak',): (
+        'King of Moab who hired Balaam to curse Israel',
+        'Balak son of Zippor, king of Moab, is terrified by Israel’s military '
+        'victories (Num 22:2–4) and commissions Balaam at great expense to produce '
+        'a prophetic curse. He prepares seven altars and seven sacrifices three times '
+        'at three different vantage points, each time receiving a blessing instead. '
+        'His furious dismissal of Balaam without payment (Num 24:10–11) is the '
+        'oracle cycle’s comic climax. His strategy of seduction through Balaam’s '
+        'counsel (Num 31:16) succeeds where his direct curse attempt failed.'
+    ),
+    ('phinehas',): (
+        'Aaron’s grandson; the zealous priest who stopped the Baal Peor plague',
+        'Phinehas son of Eleazar acts with decisive, covenant-protecting zeal when an '
+        'Israelite leader publicly brings a Midianite woman into the camp during the '
+        'Baal Peor plague. His action stops the plague at 24,000 dead and earns him '
+        'God’s "covenant of a lasting priesthood" (Num 25:12–13). Psalm 106:31 '
+        'credits this as "righteousness for endless generations." He becomes the '
+        'ancestor of the Zadokite priestly line and appears again in Josh 22 mediating '
+        'the Transjordan tribes’ altar dispute.'
+    ),
+    ('eleazar',): (
+        "Aaron’s son; second high priest of Israel",
+        'Eleazar son of Aaron inherits his father’s high-priestly office on Mount Hor '
+        '(Num 20:28) \u2014 the vestment-transfer ceremony that occurs in Aaron’s presence '
+        'before his death is the Torah’s most solemn succession. Eleazar serves '
+        'alongside Joshua to administer the land distribution (Num 34:17) and appears '
+        'throughout the late Numbers narrative as the priestly counterpart to Joshua’s '
+        'civil authority. His lineage produces Phinehas and eventually Zadok.'
+    ),
+    ('nadab',): (
+        "Aaron’s eldest son; died offering unauthorized fire",
+        'Nadab son of Aaron is ordained alongside his father in Lev 8–9, ascending '
+        'to the summit of Israel’s priestly hierarchy. In Lev 10:1–2 he and his '
+        'brother Abihu offer "unauthorized fire" before the Lord \u2014 fire that God '
+        'had not commanded \u2014 and are consumed by divine fire. Aaron’s silence at '
+        'their death (Lev 10:3) is one of the Torah’s most austere moments. They '
+        'become the paradigm of presumptuous worship throughout the OT.'
+    ),
+    ('abihu',): (
+        "Aaron’s second son; died alongside Nadab",
+        'Abihu son of Aaron is ordained with his father and brothers in Lev 8–9 '
+        'and dies with Nadab in Lev 10 offering unauthorized fire. The incident '
+        'immediately follows the inaugural divine fire accepting the tabernacle’s '
+        'first official sacrifice \u2014 making the contrast between authorized and '
+        'unauthorized fire as stark as possible. His death, with Nadab’s, establishes '
+        'the seriousness of the priestly vocation: proximity to God is privilege '
+        'and peril simultaneously.'
+    ),
+    ('ithamar',): (
+        "Aaron’s youngest surviving son; coordinates Levitical clans",
+        'Ithamar son of Aaron survives the deaths of Nadab and Abihu to become one '
+        'of Aaron’s two surviving sons alongside Eleazar. He coordinates the Gershonite '
+        'and Merarite transport duties (Num 4:28, 33) and receives a significant '
+        'role in the tabernacle administration. In Lev 10:16–20 Moses initially '
+        'rebukes him for not eating the sin offering, accepting his explanation.'
+    ),
+    # Numbers-specific
+    ('dathan',): (
+        'Reubenite rebel; allied with Korah against Moses',
+        'Dathan son of Eliab joins Korah’s rebellion in Num 16 from the Reubenite '
+        'tribal leadership, challenging Moses’s civil authority rather than Aaron’s '
+        'priestly office. He and Abiram refuse to appear before Moses (Num 16:12–14), '
+        'framing Egypt as a land flowing with milk and honey in the rebellion’s most '
+        'complete inversion of covenant narrative. The earth swallows Dathan, Abiram, '
+        'and their households when they stand at their tent entrances.'
+    ),
+    ('abiram',): (
+        'Reubenite rebel; allied with Dathan and Korah',
+        'Abiram son of Eliab joins Dathan and Korah in the Num 16 rebellion, sharing '
+        'the earth-swallowing judgment. His and Dathan’s refusal to come to Moses '
+        '("We will not come!") is one of the boldest acts of defiance in the '
+        'wilderness narrative. Psalm 106:17 records "the earth opened up and '
+        'swallowed Dathan; it buried the company of Abiram."'
+    ),
+    # Acts figures
+    ('peter',): (
+        'Lead apostle; spokesperson for the Jerusalem church',
+        'Peter (Simon bar Jonah) dominates Acts 1–12 as the church’s primary '
+        'spokesman and miracle-worker. He preaches at Pentecost (Acts 2), heals at '
+        'the Beautiful Gate (Acts 3), defends before the Sanhedrin (Acts 4–5), '
+        'raises Tabitha (Acts 9:36–42), and receives the vision that opens the '
+        'gospel to Gentiles (Acts 10). His release from Herod’s prison by an angel '
+        '(Acts 12) closes his narrative in Acts; Paul’s story takes over from ch.13.'
+    ),
+    ('paul',): (
+        'Apostle to the Gentiles; author of thirteen NT letters',
+        'Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning '
+        '(Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). '
+        'He dominates Acts 13–28 across three missionary journeys, planting churches '
+        'from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames '
+        'Acts’ theological climax: the gospel reaching the empire’s capital, '
+        '"boldly and without hindrance" (Acts 28:31).'
+    ),
+    ('barnabas',): (
+        "Paul’s first missionary partner; 'Son of Encouragement'",
+        'Barnabas (Joseph of Cyprus) is introduced as a generous land-seller in Acts '
+        '4:36–37 and is the one who vouches for the newly converted Paul to the '
+        'suspicious Jerusalem church (Acts 9:27). He leads the Antioch church '
+        '(Acts 11:22–24) and takes Paul as his partner for the first missionary '
+        'journey (Acts 13–14). Their sharp disagreement over Mark (Acts 15:36–40) '
+        'ends their partnership but doubles the missionary coverage.'
+    ),
+    ('stephen',): (
+        'First martyr; deacon whose speech reframed salvation history',
+        'Stephen is appointed as one of the seven deacons in Acts 6 to serve the '
+        'Hellenistic widows. His speech before the Sanhedrin (Acts 7) is the longest '
+        'speech in Acts and a sweeping reinterpretation of Israel’s history as a '
+        'pattern of rejecting God’s messengers. He is stoned while seeing the Son '
+        'of Man standing at God’s right hand. His death scatters the Jerusalem '
+        'church and launches the Gentile mission (Acts 8:1–4).'
+    ),
+    ('philip',): (
+        'Evangelist; deacon who brought the gospel to Samaria and Ethiopia',
+        'Philip the evangelist (distinct from Philip the apostle) is one of the '
+        'seven deacons of Acts 6. Scattered by Stephen’s persecution, he preaches '
+        'in Samaria with signs and wonders (Acts 8:4–13), then is directed by '
+        'an angel to the Ethiopian eunuch on the Gaza road (Acts 8:26–40), '
+        'baptising him and inaugurating the gospel’s African reach. He later '
+        'hosts Paul at Caesarea (Acts 21:8).'
+    ),
+    ('cornelius',): (
+        'Roman centurion; first Gentile convert; pivot of Acts 10',
+        'Cornelius is a God-fearing Roman centurion at Caesarea \u2014 devout, generous, '
+        'and prayerful but uncircumcised. His angel-directed encounter with Peter '
+        '(Acts 10) is the theological turning point of Acts: the Spirit falls on '
+        'Gentiles before baptism, demonstrating that God shows no partiality. '
+        'Peter’s report to Jerusalem (Acts 11) establishes the principle that '
+        'will be formalized at the Jerusalem Council (Acts 15).'
+    ),
+    ('silas',): (
+        "Prophet and Paul’s companion on the second missionary journey",
+        'Silas (Silvanus) is a leading figure in the Jerusalem church and a prophet '
+        '(Acts 15:32) chosen by Paul to replace Barnabas after their split. He '
+        'accompanies Paul through Macedonia, Philippi (imprisoned together, Acts '
+        '16:25–34), Thessalonica, Berea, and Corinth. His Roman citizenship '
+        'alongside Paul’s creates the legal dynamic at Philippi. He is co-author '
+        'of both Thessalonian letters.'
+    ),
+    ('timothy',): (
+        "Paul’s young protégé; co-author of six NT letters",
+        'Timothy is recruited at Lystra on the second journey (Acts 16:1–3) \u2014 the '
+        'son of a Jewish mother and Greek father, circumcised by Paul to aid '
+        'Jewish outreach. He becomes Paul’s most trusted emissary, sent to '
+        'troubled churches when Paul cannot go. Paul twice calls him "my true '
+        'son in the faith" and addresses two personal letters to him. He is '
+        'co-author of six Pauline letters and appears at the end of Hebrews.'
+    ),
+    ('james',): (
+        "Brother of Jesus; leader of the Jerusalem church",
+        'James the brother of Jesus (not the apostle James son of Zebedee) emerges '
+        'in Acts as the dominant figure of the Jerusalem church. He is not mentioned '
+        'in Acts 1–9 but appears decisively in Acts 12:17 (Peter reports to him '
+        'after his prison release), acts as president at the Jerusalem Council '
+        '(Acts 15:13–21), and receives Paul’s final Jerusalem report (Acts 21:18). '
+        'Paul calls him a "pillar" of the church (Gal 2:9). He authored the letter of James.'
+    ),
+    ('luke',): (
+        'Physician; author of Luke-Acts; Paul’s companion',
+        'Luke the physician (Col 4:14) is identified by tradition as the author of '
+        'Luke-Acts and as Paul’s companion in the "we" passages of Acts (16:10–17; '
+        '20:5–21:18; 27:1–28:16). He is with Paul during the second journey '
+        '(Philippi onward), the voyage to Rome, and Paul’s imprisonment. '
+        'Colossians 4:14 identifies him as "the beloved physician"; Philemon 24 '
+        'calls him Paul’s fellow worker.'
+    ),
+    ('priscilla',): (
+        'Teacher and co-worker with Paul and Apollos',
+        'Priscilla (Prisca) and her husband Aquila are Jewish tentmakers expelled '
+        'from Rome under Claudius. They meet Paul at Corinth (Acts 18:2) and join '
+        'his team as both co-workers in tentmaking and teachers of the faith. '
+        'When Apollos arrives at Ephesus with incomplete knowledge, Priscilla '
+        'and Aquila "took him aside and explained to him the way of God more '
+        'adequately" (Acts 18:26). She is mentioned before Aquila four of six '
+        'times in the NT, suggesting her prominence.'
+    ),
+    ('aquila',): (
+        'Tentmaker and co-worker; husband of Priscilla',
+        'Aquila is a Jewish tentmaker from Pontus who with Priscilla becomes one '
+        'of Paul’s most important co-workers. The couple host a church in their '
+        'home in both Ephesus and Rome (1 Cor 16:19; Rom 16:3–5) and risk their '
+        'lives for Paul (Rom 16:4). Their partnership with Paul in tentmaking '
+        'while he is at Corinth models the early church’s pattern of self-supporting '
+        'ministry.'
+    ),
+    ('apollos',): (
+        'Eloquent Alexandrian teacher; discipled by Priscilla and Aquila',
+        'Apollos is an Alexandrian Jew who arrives at Ephesus knowing the way of '
+        'God accurately but only knowing John’s baptism (Acts 18:24–25). After '
+        'Priscilla and Aquila complete his instruction, he becomes a powerful '
+        'apologist in Achaia, "vigorously refuting his Jewish opponents in public '
+        'debate" (Acts 18:28). Paul’s Corinthian correspondence shows Apollos '
+        'became an unintended source of factionalism (1 Cor 1:12), though Paul '
+        'regards him as a fellow worker.'
+    ),
+    ('agrippa',): (
+        'Herod Agrippa II; king before whom Paul defends himself (Acts 26)',
+        'Herod Agrippa II is the last significant Herodian ruler, client-king of '
+        'several territories and a man expert in Jewish customs and disputes '
+        '(Acts 26:3). Paul’s defence before him in Acts 26 is the most polished '
+        'forensic speech in Acts. Agrippa’s response \u2014 "In a short time you would '
+        'persuade me to be a Christian?" (Acts 26:28) \u2014 is ambiguous: half-moved '
+        'but unwilling to commit. He agrees with Festus that Paul could have been '
+        'released had he not appealed to Caesar.'
+    ),
+    ('felix',): (
+        'Roman governor of Judaea; kept Paul in custody for two years',
+        'Antonius Felix is governor of Judaea (52–59 AD) when Paul is transferred '
+        'from Jerusalem to Caesarea (Acts 23:24). He gives Paul relative freedom '
+        'and converses with him privately about faith and righteousness, but '
+        '"became frightened" at Paul’s mention of judgment and deferred (Acts '
+        '24:25). He keeps Paul imprisoned hoping for a bribe (Acts 24:26) and '
+        'leaves him in custody for two years as a political favour to the Jews.'
+    ),
+    ('festus',): (
+        "Felix’s successor as governor; sent Paul to Rome",
+        'Porcius Festus replaces Felix as governor (c.59–60 AD). He immediately '
+        'confronts the Paul case, offering Paul a Jerusalem trial \u2014 which Paul '
+        'refuses by appealing to Caesar (Acts 25:11). Festus consults Agrippa II '
+        'before writing his report to Rome, acknowledging that Paul’s charges '
+        'concern "their own religion and about a certain Jesus who had died, '
+        'but whom Paul asserted to be alive" (Acts 25:19). He arranges Paul’s '
+        'hearing before Agrippa (Acts 25:23–26:32).'
+    ),
+}
+
+def _get_person_bio(name, book_dir):
+    """Look up a person's (role, description) from the PEOPLE_BIO database."""
+    # Try book-specific key first, then general key
+    key_specific = (book_dir, name.lower().replace(" ","_"))
+    key_general  = (name.lower().replace(" ","_"),)
+    # Also try partial matches
+    for key in [key_specific, key_general]:
+        if key in PEOPLE_BIO:
+            return PEOPLE_BIO[key]
+    # Try first name only
+    first = name.split()[0].lower()
+    for key in PEOPLE_BIO:
+        if key[-1] == first or (len(key) == 1 and key[0] == first):
+            return PEOPLE_BIO[key]
+    return None
 
 
 def _auto_src(book_dir, ch, title, all_text):
