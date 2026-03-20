@@ -67,14 +67,16 @@ BOOKS = [
 ]
 
 
-def fetch_text(book_name, ch_start, ch_end, api_key):
+def fetch_text(book_name, ch_start, ch_end, total_chapters, api_key):
     """Fetch a range of chapters. Returns raw text or None."""
-    # Single-chapter books: "Obadiah 1-1" means verse 1, not chapter 1
-    # Use just the book name, or "Book 1" for single-chapter books
-    if ch_start == ch_end:
-        ref = urllib.parse.quote(f'{book_name} {ch_start}')
+    # Single-chapter books: just use the book name — "Obadiah 1" means verse 1!
+    if total_chapters == 1:
+        ref = urllib.parse.quote(book_name)
     else:
-        ref = urllib.parse.quote(f'{book_name} {ch_start}-{ch_end}')
+        # Use explicit chapter:verse format to avoid ambiguity
+        # "Ezra 1-10" could be misread as "Ezra ch1 v1-10"
+        # "Ezra 1:1-10:99" is unambiguous: chapter 1 verse 1 through chapter 10 verse 99
+        ref = urllib.parse.quote(f'{book_name} {ch_start}:1-{ch_end}:999')
     url = f'{ESV_API}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
     try:
@@ -97,7 +99,7 @@ def fetch_book(name, chapters, api_key):
     for start in range(1, chapters + 1, CHUNK):
         end = min(start + CHUNK - 1, chapters)
         for attempt in range(1, 4):
-            result = fetch_text(name, start, end, api_key)
+            result = fetch_text(name, start, end, chapters, api_key)
             if result == '429':
                 wait = 60 * attempt
                 print(f'    Rate limited — waiting {wait}s (attempt {attempt}/3)...')
