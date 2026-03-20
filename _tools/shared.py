@@ -1209,7 +1209,15 @@ def plan_chapter(book_name, chapter_num, sections):
 
 
 def ppl_panel(pid, people):
-    cards = ''.join(f'<div class="person-card"><div class="person-name">{n}</div><div class="person-role">{r}</div><div class="person-text">{t}</div></div>' for n,r,t in people)
+    cards = ''
+    for entry in people:
+        n, r, t = entry[0], entry[1], entry[2]
+        tid = entry[3] if len(entry) > 3 else None
+        link = (f'<a class="person-timeline-link" href="../people.html#{tid}" '
+                f'title="View in People of the Bible tree">&#8599; People</a>') if tid else ''
+        cards += (f'<div class="person-card"><div class="person-name">{n}{link}</div>'
+                  f'<div class="person-role">{r}</div>'
+                  f'<div class="person-text">{t}</div></div>')
     return f'<div id="{pid}" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid">{cards}</div></div>'
 
 def trans_panel(pid, verse_ref, rows):
@@ -1574,7 +1582,8 @@ def auto_scholarly(data, book_dir, ch):
         for name in mentioned[:8]:
             bio = _get_person_bio(name, book_dir)
             if bio:
-                role, desc = bio
+                role, desc = bio[0], bio[1]
+                tid = bio[2] if len(bio) > 2 else None
             else:
                 role = roles.get(name, 'Key biblical figure')
                 ctx_combined = ' '.join(sec.get('ctx','') + ' ' +
@@ -1586,7 +1595,7 @@ def auto_scholarly(data, book_dir, ch):
                              if name in sent and len(sent.strip()) > 35]
                 desc = (sentences[0][:240] + '\u2026') if sentences else (
                     f'{name} is a key figure in {title}.')
-            ppl.append((name, role, desc))
+            ppl.append((name, role, desc, tid) if bio else (name, role, desc))
         if ppl:
             result['ppl'] = ppl
     # ── 5. TRANS ─────────────────────────────────────────────────────────
@@ -1967,21 +1976,27 @@ PEOPLE_BIO = {
     ),
 }
 
+# Timeline ID mapping for PEOPLE_BIO figures
+_TIMELINE_IDS = {'moses': 'moses', 'aaron': 'aaron', 'miriam': 'miriam', 'caleb': 'caleb', 'joshua': 'joshua', 'korah': 'korah', 'balaam': 'balaam', 'balak': 'balak', 'phinehas': 'phinehas', 'eleazar': 'eleazar', 'nadab': 'nadab', 'abihu': 'abihu', 'ithamar': 'ithamar', 'dathan': 'dathan', 'abiram': 'abiram', 'peter': 'peter', 'paul': 'paul', 'barnabas': 'barnabas', 'stephen': 'stephen', 'philip': 'philip-ev', 'cornelius': 'cornelius', 'silas': 'silas', 'timothy': 'timothy', 'james': 'james-brother', 'luke': 'luke', 'priscilla': 'priscilla', 'aquila': 'aquila', 'apollos': 'apollos', 'agrippa': 'agrippa', 'felix': 'felix', 'festus': 'festus'}
+
 def _get_person_bio(name, book_dir):
-    """Look up a person's (role, description) from the PEOPLE_BIO database."""
-    # Try book-specific key first, then general key
+    """Look up a person's (role, description, timeline_id) from the PEOPLE_BIO database."""
     key_specific = (book_dir, name.lower().replace(" ","_"))
     key_general  = (name.lower().replace(" ","_"),)
-    # Also try partial matches
+    first = name.split()[0].lower()
+    bio = None
     for key in [key_specific, key_general]:
         if key in PEOPLE_BIO:
-            return PEOPLE_BIO[key]
-    # Try first name only
-    first = name.split()[0].lower()
-    for key in PEOPLE_BIO:
-        if key[-1] == first or (len(key) == 1 and key[0] == first):
-            return PEOPLE_BIO[key]
-    return None
+            bio = PEOPLE_BIO[key]; break
+    if bio is None:
+        for key in PEOPLE_BIO:
+            if key[-1] == first or (len(key) == 1 and key[0] == first):
+                bio = PEOPLE_BIO[key]; break
+    if bio is None:
+        return None
+    # Return (role, desc, timeline_id)
+    tid = _TIMELINE_IDS.get(first) or _TIMELINE_IDS.get(name.lower().replace(" ","_"))
+    return (bio[0], bio[1], tid)
 
 
 def _auto_src(book_dir, ch, title, all_text):

@@ -1355,6 +1355,30 @@ const TIMELINE_PEOPLE = [
   { id:'barnabas',     name:'Barnabas',   year:8,    era:'nt'        },
   { id:'pilate',       name:'Pilate',     year:-15,  era:'nt'        },
   { id:'caiaphas',     name:'Caiaphas',   year:-18,  era:'nt'        },
+
+  // Additional OT figures (Exodus/Numbers/Judges era)
+  { id:'nadab',        name:'Nadab',          year:-1489, era:'exodus'    },
+  { id:'abihu',        name:'Abihu',          year:-1489, era:'exodus'    },
+  { id:'ithamar',      name:'Ithamar',        year:-1487, era:'exodus'    },
+  { id:'phinehas',     name:'Phinehas',       year:-1420, era:'exodus'    },
+  { id:'korah',        name:'Korah',          year:-1480, era:'exodus'    },
+  { id:'dathan',       name:'Dathan',         year:-1479, era:'exodus'    },
+  { id:'abiram',       name:'Abiram',         year:-1479, era:'exodus'    },
+  { id:'balaam',       name:'Balaam',         year:-1406, era:'exodus'    },
+  { id:'balak',        name:'Balak',          year:-1406, era:'exodus'    },
+  // Additional NT figures (Acts era)
+  { id:'james-brother',name:'James (brother of Jesus)', year:8,  era:'nt' },
+  { id:'philip-ev',    name:'Philip (Evangelist)',      year:10, era:'nt' },
+  { id:'cornelius',    name:'Cornelius',                year:35, era:'nt' },
+  { id:'silas',        name:'Silas',                    year:45, era:'nt' },
+  { id:'luke',         name:'Luke',                     year:45, era:'nt' },
+  { id:'timothy',      name:'Timothy',                  year:50, era:'nt' },
+  { id:'priscilla',    name:'Priscilla',                year:50, era:'nt' },
+  { id:'aquila',       name:'Aquila',                   year:50, era:'nt' },
+  { id:'apollos',      name:'Apollos',                  year:52, era:'nt' },
+  { id:'agrippa',      name:'Agrippa II',               year:27, era:'nt' },
+  { id:'felix',        name:'Felix',                    year:52, era:'nt' },
+  { id:'festus',       name:'Festus',                   year:58, era:'nt' },
 ];
 
 const WORLD_EVENTS = [
@@ -1430,6 +1454,23 @@ window.addEventListener('DOMContentLoaded',()=>{
   initTimeline();
   handleHash();
 });
+// Deep-link to a person via URL hash: timeline.html#p-moses
+(function() {
+  function handleTimelineHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#p-')) {
+      const pid = hash.slice(3);
+      const person = TIMELINE_PEOPLE.find(p => p.id === pid);
+      if (person) {
+        // Small delay so the canvas has rendered
+        setTimeout(() => openPersonDetail(person), 200);
+      }
+    }
+  }
+  window.addEventListener('hashchange', handleTimelineHash);
+  document.addEventListener('DOMContentLoaded', handleTimelineHash);
+})();
+
 </script>
 </body>
 </html>
