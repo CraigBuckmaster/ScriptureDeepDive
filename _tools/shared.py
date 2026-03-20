@@ -204,6 +204,48 @@ EXTRA_CSS = '''
 .anno-trigger.tigay{color:#e8d090;border-color:#806828;background:rgba(72,52,8,.22);}
 .anno-trigger.tigay:hover{border-color:#c0a050;background:rgba(72,52,8,.32);}
 .anno-trigger.tigay.active{filter:brightness(1.25);}
+/* Hess — TOTC Joshua (teal: archaeological/ANE) */
+.anno-trigger.hess{color:#60d0c0;border-color:#287868;background:rgba(16,80,72,.22);}
+.anno-trigger.hess:hover{border-color:#40b0a0;background:rgba(16,80,72,.32);}
+.anno-trigger.hess.active{filter:brightness(1.25);}
+.com-panel.com-hess{background:#040e0c;border-color:#287868;}
+.com-panel.com-hess h4{color:#60d0c0;}
+.com-panel.com-hess .com-source{color:#60d0c0;border-bottom-color:rgba(40,120,104,.4);}
+/* Howard — NAC Joshua (slate blue: canonical/literary) */
+.anno-trigger.howard{color:#90b0e0;border-color:#405880;background:rgba(40,56,96,.22);}
+.anno-trigger.howard:hover{border-color:#6890c0;background:rgba(40,56,96,.32);}
+.anno-trigger.howard.active{filter:brightness(1.25);}
+.com-panel.com-howard{background:#060810;border-color:#405880;}
+.com-panel.com-howard h4{color:#90b0e0;}
+.com-panel.com-howard .com-source{color:#90b0e0;border-bottom-color:rgba(64,88,128,.4);}
+/* Block — NAC Judges (warm copper: evangelical narrative) */
+.anno-trigger.block{color:#e0a070;border-color:#805020;background:rgba(96,48,16,.22);}
+.anno-trigger.block:hover{border-color:#c08040;background:rgba(96,48,16,.32);}
+.anno-trigger.block.active{filter:brightness(1.25);}
+.com-panel.com-block{background:#0e0804;border-color:#805020;}
+.com-panel.com-block h4{color:#e0a070;}
+.com-panel.com-block .com-source{color:#e0a070;border-bottom-color:rgba(128,80,32,.4);}
+/* Webb — NICOT Judges (sage green: literary theology) */
+.anno-trigger.webb{color:#90c890;border-color:#3a6838;background:rgba(32,72,40,.22);}
+.anno-trigger.webb:hover{border-color:#60a860;background:rgba(32,72,40,.32);}
+.anno-trigger.webb.active{filter:brightness(1.25);}
+.com-panel.com-webb{background:#060e06;border-color:#3a6838;}
+.com-panel.com-webb h4{color:#90c890;}
+.com-panel.com-webb .com-source{color:#90c890;border-bottom-color:rgba(58,104,56,.4);}
+/* Bergen — NAC 1-2 Samuel (burnt sienna: historical narrative) */
+.anno-trigger.bergen{color:#d8a080;border-color:#785030;background:rgba(88,48,24,.22);}
+.anno-trigger.bergen:hover{border-color:#b88060;background:rgba(88,48,24,.32);}
+.anno-trigger.bergen.active{filter:brightness(1.25);}
+.com-panel.com-bergen{background:#0c0804;border-color:#785030;}
+.com-panel.com-bergen h4{color:#d8a080;}
+.com-panel.com-bergen .com-source{color:#d8a080;border-bottom-color:rgba(120,80,48,.4);}
+/* Tsumura — NICOT 1 Samuel (steel blue: philological) */
+.anno-trigger.tsumura{color:#88b8d8;border-color:#386080;background:rgba(32,60,88,.22);}
+.anno-trigger.tsumura:hover{border-color:#5898b8;background:rgba(32,60,88,.32);}
+.anno-trigger.tsumura.active{filter:brightness(1.25);}
+.com-panel.com-tsumura{background:#040810;border-color:#386080;}
+.com-panel.com-tsumura h4{color:#88b8d8;}
+.com-panel.com-tsumura .com-source{color:#88b8d8;border-bottom-color:rgba(56,96,128,.4);}
 .com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
 .com-panel.com-marcus h4{color:#70d8d8;}
 .com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
@@ -299,6 +341,7 @@ REGISTRY = [
     ('deuteronomy', 'Deuteronomy',  34, 34, 'OT', 'ot'),
     ('joshua',      'Joshua',       24, 24, 'OT', 'ot'),
     ('judges',      'Judges',       21, 21, 'OT', 'ot'),
+    ('1_samuel',    '1 Samuel',     31, 31, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -315,6 +358,7 @@ BOOK_PREFIX = {
     'deuteronomy': 'deu',
     'joshua':   'josh',
     'judges':   'judg',
+    '1_samuel': '1sa',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -413,6 +457,8 @@ COMMENTATOR_SCOPE = {
     'howard':    ['joshua'],                # David Howard, NAC Joshua (1998)
     'block':     ['judges'],                # Daniel Block, NAC Judges-Ruth (1999)
     'webb':      ['judges'],                # Barry Webb, NICOT Judges (2012)
+    'bergen':    ['1_samuel'],              # Robert Bergen, NAC 1-2 Samuel (1996)
+    'tsumura':   ['1_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -557,6 +603,27 @@ BOOK_META = {
                         'Mizpah','Ophrah','Timnah','Hazor'],
         'vhl_key': ['evil','cry','deliver','judge','rest','oppress','forsake','serve',
                      'covenant','idolatry','Baal','Ashtoreth','cycle','king'],
+        'vhl_time': ['day','days','year','years','time','generation','month'],
+    },
+    '1_samuel': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. Jewish tradition attributes the book to Samuel, Nathan, '
+                 'and Gad (1 Chr 29:29). Originally one book with 2 Samuel in the Hebrew canon; divided by '
+                 'the LXX translators. The narrative draws on court records, prophetic archives, and the '
+                 '&ldquo;Book of Jashar&rdquo; (2 Sam 1:18).<br><br>'
+                 '<strong>Date:</strong> Events span c.1100&ndash;1010 BC, from Samuel&rsquo;s birth to '
+                 'Saul&rsquo;s death. Composition likely during or after the early monarchy (the phrase '
+                 '&ldquo;to this day&rdquo; implies historical distance).<br><br>'
+                 '<strong>Theme:</strong> The transition from judges to monarchy. Samuel is the last judge '
+                 'and first kingmaker. The book asks: what kind of king does Israel need? Saul answers with '
+                 'failure; David is anointed as God&rsquo;s answer. The key theological tension: human '
+                 'kingship vs divine sovereignty.'),
+        'vhl_people': ['Samuel','Saul','David','Jonathan','Hannah','Eli','Goliath',
+                        'Jesse','Abigail','God','LORD','Israel','Philistines'],
+        'vhl_places': ['Shiloh','Ramah','Gibeah','Bethlehem','Mizpah','Gilgal',
+                        'Nob','Gath','Ziklag','En Gedi','Carmel'],
+        'vhl_key': ['king','anoint','spirit','heart','obey','reject','pray','ark',
+                     'covenant','prophet','warrior','shepherd','choose'],
         'vhl_time': ['day','days','year','years','time','generation','month'],
     },
     'ruth': {
@@ -939,11 +1006,11 @@ def head(book_name, book_dir, ch, is_nt=False):
     # ── Previous arrow ────────────────────────────────────────────────────
     if ch > 1:
         # Within same book
-        prev = f'<a href="{book_name}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
+        prev = f'<a href="{book_name.replace(chr(32),chr(95))}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
     elif idx is not None and idx > 0:
         # Cross-book: go to last live chapter of the previous book
         pd, pn, _, pl, _, ptd = REGISTRY[idx - 1]
-        prev = f'<a href="../../{ptd}/{pd}/{pn}_{pl}.html" class="nav-arrow">&#8592;</a>'
+        prev = f'<a href="../../{ptd}/{pd}/{pn.replace(chr(32),chr(95))}_{pl}.html" class="nav-arrow">&#8592;</a>'
     else:
         # First chapter of the entire canon
         prev = '<span class="nav-arrow disabled">&#8592;</span>'
@@ -951,7 +1018,7 @@ def head(book_name, book_dir, ch, is_nt=False):
     # ── Next arrow ────────────────────────────────────────────────────────
     if ch < live:
         # Within same book
-        nxt = f'<a href="{book_name}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
+        nxt = f'<a href="{book_name.replace(chr(32),chr(95))}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
     elif idx is not None and idx < len(REGISTRY) - 1:
         # Cross-book: go to chapter 1 of the next book
         nd, nn, _, nl, _, ntd = REGISTRY[idx + 1]
@@ -1383,6 +1450,8 @@ def commentary_panel(pid, commentator_key, notes):
     'howard':    ('Howard \u2014 NAC Joshua',          'David M. Howard Jr., Joshua, New American Commentary (1998) \u2014 Scholarly Paraphrase'),
     'block':     ('Block \u2014 NAC Judges',           'Daniel I. Block, Judges, Ruth, New American Commentary (1999) \u2014 Scholarly Paraphrase'),
     'webb':      ('Webb \u2014 NICOT Judges',           'Barry G. Webb, The Book of Judges, NICOT (2012) \u2014 Scholarly Paraphrase'),
+    'bergen':    ('Bergen \u2014 NAC Samuel',           'Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) \u2014 Scholarly Paraphrase'),
+    'tsumura':   ('Tsumura \u2014 NICOT 1 Samuel',     'David T. Tsumura, The First Book of Samuel, NICOT (2007) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1517,9 +1586,10 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../books.js"></script>\n' +
             f'<script src="../../verses/niv/{book_dir_test}/{book_dir}.js"></script>\n' +
             _sw + '\n' + HISTORY_JS + '\n' +
-            f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name}_{ch}.html";</script>\n' +
+            f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
             '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n</body></html>')
-    path = f'{out_dir}/{book_name}_{ch}.html'
+    file_name = book_name.replace(' ', '_')
+    path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
     ensure_tx_book_var(book_name)
     return path
@@ -2181,6 +2251,17 @@ def _auto_src(book_dir, ch, title, all_text):
              'Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.',
              'The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography.'),
         ],
+        '1_samuel': [
+            ('Philistine Archaeology (Tel Miqne/Ekron, Ashkelon)',
+             'Excavations at Philistine sites reveal a sophisticated Aegean-origin culture with distinctive pottery, architecture, and religious practices.',
+             'The archaeological record confirms the Philistines as a formidable, technologically advanced people — consistent with their iron monopoly (1 Sam 13:19-22) and military dominance in the Samuel narratives.'),
+            ('Tel Dan Stele (c.840 BC)',
+             'The Aramaic inscription mentioning &ldquo;the house of David&rdquo; (<em>bytdwd</em>) is the earliest extra-biblical reference to David\'s dynasty.',
+             'Confirms the historical existence of a Davidic royal line, corroborating the Samuel narrative\'s account of David\'s rise to kingship.'),
+            ('Ancient Near Eastern Kingship Ideology',
+             'Mesopotamian and Egyptian king-lists, coronation rituals, and royal ideology illuminate Israel\'s ambivalent adoption of monarchy.',
+             'The tension in 1 Samuel between divine kingship and human monarchy reflects a distinctively Israelite adaptation of ANE royal theology — the king serves under YHWH, never as a divine figure.'),
+        ],
         'judges': [
             ('Amarna Letters',
              'Letters from Canaanite vassal kings describe the political fragmentation and inter-city rivalries characterising the Judges period.',
@@ -2314,7 +2395,17 @@ def _auto_textual(book_dir, ch, title):
              'The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.',
              'The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation.'),
         ],
-        'judges': [
+        '1_samuel': [
+            ('4QSam\u1d43 (Dead Sea Scrolls)',
+             'Significant Qumran witness',
+             '4QSam\u1d43 preserves a text of Samuel closer to the LXX Vorlage than to the MT. In several places it fills gaps and resolves difficulties (e.g., 1 Sam 10:27-11:1 has an entire paragraph missing from the MT).',
+             'The Samuel DSS evidence demonstrates that the MT is not always the best text — the LXX and Qumran sometimes preserve more original readings.'),
+            ('Josephus, Antiquities VI-VII',
+             'First-century retelling',
+             'Josephus provides an extensive parallel to 1 Samuel, sometimes drawing on traditions independent of both MT and LXX.',
+             'Josephus confirms the broad narrative outline while showing how the story was received in Second Temple Judaism.'),
+        ],
+                'judges': [
             ('Amarna Letters',
              'Letters from Canaanite vassal kings describe the political fragmentation and inter-city rivalries characterising the Judges period.',
              'The correspondence confirms Canaan\'s decentralised city-state structure — the landscape in which tribal judges operated as regional deliverers.'),
@@ -2325,6 +2416,7 @@ def _auto_textual(book_dir, ch, title):
              'Describes Baal\'s conflict with Mot and Yam — the religious background to Judges\' repeated Baal worship.',
              'Understanding Canaanite religion is essential: Israel was drawn to a sophisticated fertility cult, not abstract idolatry.'),
         ],
+        
         'judges': [
             ('LXX Judges (Vaticanus vs Alexandrinus)',
              'Two distinct Greek text traditions',
@@ -2545,6 +2637,8 @@ def build_chapter(book_dir, ch, data):
         if 'howard'     in sec and in_scope('howard'):     btns.append(('howard',    'Howard',      f'{sid}-howard'))
         if 'block'      in sec and in_scope('block'):      btns.append(('block',     'Block',       f'{sid}-block'))
         if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
+        if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
+        if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -2576,6 +2670,8 @@ def build_chapter(book_dir, ch, data):
         if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
         if 'block'    in sec and in_scope('block'):     panels_html += commentary_panel(f'{sid}-block',    'block',     sec['block'])
         if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
+        if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
+        if 'tsumura'  in sec and in_scope('tsumura'):   panels_html += commentary_panel(f'{sid}-tsumura',  'tsumura',   sec['tsumura'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
@@ -2648,7 +2744,7 @@ def update_homepage():
     for book_dir, book_name, total, _, testament, test_dir in REGISTRY:
         # Count which chapter files actually exist
         live_chs = [ch for ch in range(1, total+1)
-                    if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html')]
+                    if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html')]
         live_count = len(live_chs)
 
         # Build the new chapter-grid HTML
@@ -2656,7 +2752,7 @@ def update_homepage():
         for ch in range(1, total+1):
             title = f'{book_name} {ch}'
             if ch in live_chs:
-                href = f'{test_dir}/{book_dir}/{book_name}_{ch}.html'
+                href = f'{test_dir}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html'
                 links.append(f'<a href="{href}" class="chapter-link live" title="{title}">Ch.{ch}</a>')
             else:
                 links.append(f'<span class="chapter-link coming" title="{title}">Ch.{ch}</span>')
@@ -2715,7 +2811,7 @@ def update_homepage():
     # Report
     total_live = sum(
         len([ch for ch in range(1, total+1)
-             if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name}_{ch}.html')])
+             if os.path.exists(f'{_REPO}/{test_dir}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html')])
         for book_dir, book_name, total, _, _, test_dir in REGISTRY
     )
     print(f'index.html updated — {total_live} live chapters across {len(REGISTRY)} books')
@@ -2885,7 +2981,7 @@ def rebuild_qnav_js():
         for i in range(1, total + 1):
             if i <= live:
                 links.append(
-                    f'<a href="../../{test_dir}/{book_dir}/{book_name}_{i}.html" '
+                    f'<a href="../../{test_dir}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{i}.html" '
                     f'class="qnav-ch-btn live">Ch {i}</a>'
                 )
         return ''.join(links)
@@ -3049,7 +3145,7 @@ def rebuild_verses_js(translation='niv'):
         # Ensure url field uses correct path (same for all translations)
         for entry in book_verses:
             if 'url' not in entry or not entry['url']:
-                entry['url'] = f'{test_dir_lower}/{book_dir}/{book_name}_{entry["ch"]}.html'
+                entry['url'] = f'{test_dir_lower}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{entry["ch"]}.html'
 
         all_verses.extend(book_verses)
 
@@ -3085,7 +3181,7 @@ def rebuild_niv_from_html():
         book_verses = []
         td = test_dir.lower()
         for ch in range(1, live + 1):
-            path = f'{_REPO}/{td}/{book_dir}/{book_name}_{ch}.html'
+            path = f'{_REPO}/{td}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html'
             if not os.path.exists(path): continue
             with open(path) as f: html = f.read()
             boundary = html.find('<div class="scholarly-block">')
