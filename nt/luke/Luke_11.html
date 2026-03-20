@@ -81,17 +81,7 @@
 <div id="lk11-hebtext" class="anno-panel heb-text-panel"><h4>Greek Word Study</h4><p><span class="hebrew-word">proskartereite</span> <span class="tlit">pros-kar-te-REI-te</span> — <strong>persist / be devoted to</strong>: The disciples' request "teach us to pray" (v.1) leads to the Lord's Prayer. Proskartereō combines pros (toward) + karterōs (steadfast). Persistent, devoted prayer — not occasional petition — is the posture Jesus models throughout Luke.</p><p><span class="hebrew-word">hamartias</span> <span class="tlit">ha-mar-TI-as</span> — <strong>sins (in the Lord's Prayer)</strong>: Luke's version of the Lord's Prayer (v.4) uses hamartias (sins) where Matthew uses opheilēmata (debts). The petition flows both ways: we receive forgiveness as we extend it. The same verb aphiomen (we forgive) governs both directions.</p><p><span class="hebrew-word">ekballō</span> <span class="tlit">ek-BAL-lo</span> — <strong>drive out / cast out</strong>: "If I drive out demons by the finger of God, then the kingdom of God has come upon you" (v.20). The logic is tight: the same power cannot be both divine and demonic. Ekballō is the language of conquest — the strong man's house is plundered (v.22).</p></div>
 </div>
 </main>
-<script>
-function tog(btn,id){
-  var p=document.getElementById(id);
-  if(!p)return;
-  var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
-  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
-  if(willOpen){p.classList.add('open');btn.classList.add('active');}
-}
-function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-</script>
+<script src="../../tog.js"></script>
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
@@ -157,22 +147,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script src="../../books.js"></script>
 <script src="../../verses/niv/nt/luke.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
-<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>
+<script src="../../history.js"></script>
 
 <script>window.QNAV_CURRENT="nt/luke/Luke_11.html";</script>
 <script src="../../qnav.js"></script>

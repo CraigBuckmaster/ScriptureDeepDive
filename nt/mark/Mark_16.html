@@ -57,17 +57,7 @@ class="anno-panel com-panel com-macarthur"><h4>MacArthur Study Notes</h4><div cl
 <div id="mk16-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">Where does the original Mark end?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">16:8 original ending</div><div class="db-proponents">The oldest manuscripts (Sinaiticus, Vaticanus), the earliest patristic witnesses (Clement, Origen, Eusebius), and internal stylistic evidence all point to 16:8 as the original ending. The abrupt ending is Markan in character.</div><div class="db-argument">Original ending at 16:8</div></div><div class="db-position"><div class="db-pos-name">16:9-20 canonical ending</div><div class="db-proponents">The longer ending is included in the NT canon (Irenaeus quotes it as early as c.AD 185) and has been the church’s received text for most of Christian history.</div><div class="db-argument">Canonical longer ending</div></div></div><div class="db-synthesis">"He has risen" at 16:6 is the Gospel’s theological climax. The story’s continuation — the disciples’ mission, the Lord working with them — is real but occurs outside the Gospel’s frame. Mark’s ending is not incomplete; it is deliberately open.</div></div></div><div id="mk16-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,52.0 193.6,77.5 193.6,162.5 120.0,188.0 46.4,162.5 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Kingdom</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Christology</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Resurrection</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Discipleship</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Mission</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Fear and Faith</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Mark 16 is the resurrection chapter: the empty tomb, the angel’s announcement, and the commission. The Gospel that began with “the beginning of the good news” ends not with a conclusion but with a continuing mission.</p></div>
 </div>
 </main>
-<script>
-function tog(btn,id){
-  var p=document.getElementById(id);
-  if(!p)return;
-  var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
-  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
-  if(willOpen){p.classList.add('open');btn.classList.add('active');}
-}
-function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-</script>
+<script src="../../tog.js"></script>
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
@@ -133,22 +123,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script src="../../books.js"></script>
 <script src="../../verses/niv/nt/mark.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
-<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>
+<script src="../../history.js"></script>
 
 <script>window.QNAV_CURRENT="nt/mark/Mark_16.html";</script>
 <script src="../../qnav.js"></script>

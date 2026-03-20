@@ -527,20 +527,39 @@ else:
 section('9. tog() Function')
 
 tog_errors = []
-for path, book, ch in chapters:
-    with open(path) as f: h = f.read()
-    m = re.search(r'function tog\b.*?\{(.*?)\n\}', h, re.DOTALL)
-    if not m:
-        tog_errors.append(f'{book} {ch}: tog() not found')
-        continue
-    body = m.group(1)
-    if 'anno-panel.open' not in body or 'themes-panel.open' not in body:
-        tog_errors.append(f'{book} {ch}: tog() missing required selectors')
-
-if tog_errors:
-    for e in tog_errors[:5]: fail(e)
+# Check external tog.js exists and has correct content
+_tog_path = os.path.join(REPO, 'tog.js')
+if os.path.exists(_tog_path):
+    with open(_tog_path) as f: _tog_content = f.read()
+    if 'anno-panel.open' in _tog_content and 'themes-panel.open' in _tog_content:
+        ok('External tog.js has correct selectors')
+    else:
+        fail('External tog.js missing required selectors')
+    # Verify chapters reference it
+    _missing_tog_ref = []
+    for path, book, ch in chapters:
+        with open(path) as f: h = f.read()
+        if 'tog.js' not in h and 'function tog(' not in h:
+            _missing_tog_ref.append(f'{book} {ch}')
+    if _missing_tog_ref:
+        for e in _missing_tog_ref[:5]: fail(f'{e}: no tog.js reference or inline tog()')
+    else:
+        ok(f'All {len(chapters)} chapters load tog.js')
 else:
-    ok('tog() correct in all chapters')
+    # Fallback: check inline tog() per chapter (legacy)
+    for path, book, ch in chapters:
+        with open(path) as f: h = f.read()
+        m = re.search(r'function tog\b.*?\{(.*?)\n\}', h, re.DOTALL)
+        if not m:
+            tog_errors.append(f'{book} {ch}: tog() not found')
+            continue
+        body = m.group(1)
+        if 'anno-panel.open' not in body or 'themes-panel.open' not in body:
+            tog_errors.append(f'{book} {ch}: tog() missing required selectors')
+    if tog_errors:
+        for e in tog_errors[:5]: fail(e)
+    else:
+        ok('tog() correct in all chapters')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 10. PANEL CSS & JS COMPLETENESS
@@ -579,7 +598,7 @@ for path, book, ch in chapters:
         missing_qnav_filter.append(label)
     if 'togThemes' in h:
         has_togthemes.append(label)
-    if 'var label' not in h and "'label'" not in h:
+    if 'var label' not in h and "'label'" not in h and 'history.js' not in h:
         missing_label_js.append(label)
     if 'qnav.js' not in h and ('id="qnav-t-ot"' not in h or 'id="qnav-t-nt"' not in h):
         missing_qnav_groups.append(label)
