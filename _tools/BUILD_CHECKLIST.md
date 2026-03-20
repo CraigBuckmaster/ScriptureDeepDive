@@ -267,6 +267,9 @@ AUDIT = """
          - cross-book href wrong: forgot space→underscore in filenames
          - single lit-row: forgot to add 2nd row
          - scholar panel thin: <2 notes in a section
+         - space in JS var name in verse files (ESV/NIV)
+         - BOOK_VARS entry has space instead of underscore
+         - live book missing from BOOK_VARS in translation.js
 
 □ 33. python3 _tools/audit_people.py   — MUST show "0 warning(s)"
        Common failures:
@@ -276,6 +279,19 @@ AUDIT = """
        Common failures:
          - LIVE_BOOKS missing in audit_search.py or index.html JS Set
          - Multiple Sets in index.html — forgot to update one of them
+
+VERSE FILE + TRANSLATION TOGGLE CHECKLIST  ★ EASY TO MISS ★
+   After building any new book, verify:
+   □ NIV verse file var name has NO spaces: var VERSES_BOOK_NAME=
+   □ ESV verse file var name has NO spaces: var VERSES_BOOK_NAME=
+   □ translation.js BOOK_VARS entry uses underscores, not spaces
+   □ Chapter HTML loads the correct NIV verse script path
+   □ Translation toggle works: switch NIV↔ESV, verify text changes
+   
+   Root cause: book names with spaces (1 Samuel, 2 Kings, Song of Solomon)
+   generate invalid JS var names unless spaces are replaced with underscores.
+   shared.py ensure_tx_book_var() and rebuild_verses_js() now handle this,
+   but ESV files built before the fix needed manual patching.
 """
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -339,6 +355,12 @@ GOTCHAS = """
 
 12. PEOPLE_BIO vs people.html: Both need updating. PEOPLE_BIO is in
     shared.py (used by auto_scholarly). people.html is the public tree.
+
+13. VERSE FILE VAR NAMES: Books with spaces in names (1 Samuel, 2 Kings,
+    Song of Solomon) produce invalid JS var names (var VERSES_1 SAMUEL=).
+    shared.py now handles this, but if ESV files were built with older
+    build_esv.py, they need manual patching. The audit now catches this
+    (Section 18: Verse File Integrity).
 """
 
 # ═══════════════════════════════════════════════════════════════════════════
