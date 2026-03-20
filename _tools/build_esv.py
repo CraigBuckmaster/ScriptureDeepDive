@@ -72,7 +72,7 @@ LIVE_BOOKS = [
     ('3 John',          'nt',   1), ('Jude',            'nt',   1), ('Revelation',      'nt',  22),
 ]
 
-FETCH_ONLY = []  # empty = fetch all (skips books whose .js already exists)
+FETCH_ONLY = ['Joshua']  # fetch ONE book at a time
 
 ESV_API_BASE = 'https://api.esv.org/v3/passage/text/'
 
