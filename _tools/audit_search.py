@@ -361,3 +361,4 @@ else:
         print('\n  Warnings:')
         for w in warnings:
             print(f'    ⚠  {w.strip()}')
+sys.exit(1 if issues else 0)
