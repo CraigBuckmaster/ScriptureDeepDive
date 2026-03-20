@@ -59,7 +59,10 @@ SCHOLAR_KEYS = {
     'Mark':     ['marcus',   'catena','calvin', 'netbible'],
     'Luke':     ['robertson','catena','calvin', 'netbible'],
     'John':     ['catena',   'calvin'],
-    'Acts':     ['robertson','keener'],
+    'Acts':        ['robertson','keener'],
+    'Leviticus':   ['milgrom',  'calvin', 'netbible'],
+    'Numbers':     ['milgrom',  'ashley', 'calvin', 'netbible'],
+    'Deuteronomy': ['craigie',  'tigay',  'calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -381,7 +384,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]
@@ -409,7 +412,7 @@ for i,(bd,bn,td) in enumerate(REGISTRY_ORDER):
 if cross_errors:
     for e in cross_errors: fail(e)
 else:
-    ok('All 8 cross-book nav boundaries correct')
+    ok('All cross-book nav boundaries correct')
 
 # Verify QNAV_CURRENT values use testament/book/Name_N.html format
 qnav_cur_errors = []
