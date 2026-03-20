@@ -36,344 +36,25 @@ import re, json, math, os
 
 _REPO = '/home/claude/ScriptureDeepDive'
 
-def _bootstrap():
-    """Extract base CSS and inline JS from Genesis HTML files.
+# ══════════════════════════════════════════════════════════════════════
+#  INLINE JS — small scripts baked into each chapter HTML
+#  CSS now lives in styles.css (external stylesheet, loaded via <link>).
+#  TOG_JS and SW_JS remain inline because they're tiny and load-critical.
+# ══════════════════════════════════════════════════════════════════════
 
-    CSS is scraped from Genesis_1.html (the canonical style source).
-    TOG_JS (panel toggle) and SW_JS (service worker registration) are
-    scraped from Genesis_2.html inline scripts.
+TOG_JS = ("<script>\n"
+    "function tog(btn,id){\n"
+    "  var p=document.getElementById(id);\n"
+    "  if(!p)return;\n"
+    "  var willOpen=!p.classList.contains('open');\n"
+    "  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});\n"
+    "  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});\n"
+    "  if(willOpen){p.classList.add('open');btn.classList.add('active');}\n"
+    "}\n"
+    "function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}\n"
+    "</script>")
 
-    NOTE: This function will be eliminated in Batch 3 when CSS moves to
-    an external stylesheet. For now it remains the CSS source of truth.
-    """
-    with open(f'{_REPO}/ot/genesis/Genesis_1.html') as f:
-        g1 = f.read()
-    with open(f'{_REPO}/ot/genesis/Genesis_2.html') as f:
-        g2 = f.read()
-
-    # CSS from Genesis 1 (base, stripped of EXTRA_CSS)
-    raw_css = g1[g1.find('<style>')+7:g1.find('</style>')]
-    for marker in ('/* ==EXTRA_CSS_START== */', '/* \u2550\u2550\u2550\u2550'):
-        if marker in raw_css:
-            raw_css = raw_css[:raw_css.find(marker)]
-            break
-
-    # Inline scripts from Genesis 2
-    scripts2 = re.findall(r'<script[^>]*>(.*?)</script>', g2, re.DOTALL)
-    tog_js   = '<script>' + scripts2[0] + '</script>'
-    sw_js    = next(('<script>'+s+'</script>' for s in scripts2 if 'serviceWorker' in s), None)
-
-    return raw_css, tog_js, sw_js
-
-CSS, TOG_JS, SW_JS = _bootstrap()
-
-# CSS for panel types added after the original Genesis_1.html template was frozen
-EXTRA_CSS = '''
-/* ==EXTRA_CSS_START== */
-/* ════════════════════════════════════════════════════════
-   BUTTON SYSTEM — corrected layer (overrides original CSS)
-   ════════════════════════════════════════════════════════ */
-
-/* 1. Font size: .72rem → .8rem for readability + tap target */
-.anno-trigger{font-size:.8rem !important;}
-
-/* Chev transition + rotation — applies to ALL anno-trigger buttons
-   (section-level new chapters have .chev; scholarly block no longer does) */
-.anno-trigger .chev{transition:transform .25s;}
-.anno-trigger.active .chev{transform:rotate(180deg);}
-
-/* Align scholarly-buttons container to match .btn-row */
-.scholarly-buttons{gap:.4rem !important;margin:.35rem 0 .55rem !important;}
-
-/* 2. Active state: clear left-bar indicator + brighter text
-      Users can see at a glance which panels are open         */
-.anno-trigger.active{
-  box-shadow:inset 3px 0 0 currentColor,
-             inset 0 1px 0 rgba(255,255,255,.12),
-             0 0 0 1px rgba(255,255,255,.06),
-             0 2px 8px rgba(0,0,0,.5) !important;
-  filter:brightness(1.25);
-}
-
-/* 3. Background opacity raised to .22 across section-level
-      buttons so they read as distinct interactive surfaces   */
-.anno-trigger.hebrew     {background:rgba(122,48,80,.22)   !important;}
-.anno-trigger.history    {background:rgba(32,64,112,.22)   !important;}
-.anno-trigger.context    {background:rgba(20,80,48,.22)    !important;}
-.anno-trigger.cross      {background:rgba(90,64,0,.22)     !important;}
-.anno-trigger.places     {background:rgba(12,80,32,.22)    !important;}
-.anno-trigger.people     {background:rgba(120,48,12,.22)   !important;}
-.anno-trigger.timeline   {background:rgba(32,48,100,.22)   !important;}
-.anno-trigger.macarthur  {background:rgba(100,20,32,.22)   !important;
-                          color:#e05a6a !important;border-color:#882030 !important;}
-.anno-trigger.literary   {background:rgba(64,72,8,.22)     !important;}
-.anno-trigger.hebrew-text{background:rgba(64,48,0,.22)     !important;}
-.anno-trigger.threading  {background:rgba(40,40,100,.22)   !important;}
-.anno-trigger.textual    {background:rgba(32,64,100,.22)   !important;}
-.anno-trigger.debate     {background:rgba(56,24,96,.22)    !important;}
-
-/* 4. WCAG AA fixes for failing colours
-      macarthur: #c04050 (3.78:1) → #e05a6a (5.40:1)
-      sources:   #a05890 (3.97:1) → #c070a8 (5.66:1)         */
-.anno-trigger.macarthur{color:#e05a6a !important;border-color:#882030 !important;}
-.anno-trigger.sources  {color:#c070a8 !important;border-color:#743060 !important;
-                        background:rgba(100,40,80,.22) !important;}
-
-/* 5. SCHOLARLY BLOCK — unified gold theme
-      Matches the inline cross-ref button aesthetic: warm gold text,
-      dark amber background, gold-dim border. Clean and consistent.
-      Three rules replace the previous 33.                          */
-.scholarly-buttons .anno-trigger{
-  color:var(--gold)          !important;
-  border-color:var(--gold-dim) !important;
-  background:rgba(90,64,0,.22) !important;
-}
-.scholarly-buttons .anno-trigger:hover{
-  border-color:var(--gold)     !important;
-  background:rgba(90,64,0,.32) !important;
-}
-.scholarly-buttons .anno-trigger.active{
-  color:var(--gold-bright)     !important;
-  border-color:var(--gold)     !important;
-  background:rgba(90,64,0,.36) !important;
-  box-shadow:inset 3px 0 0 var(--gold),
-             inset 0 1px 0 rgba(255,255,255,.12),
-             0 0 0 1px rgba(255,255,255,.06),
-             0 2px 8px rgba(0,0,0,.5)       !important;
-  filter:brightness(1.15);
-}
-
-/* Themes button — also gold in scholarly context, own colour outside */
-.anno-trigger.themes{color:var(--gold);border-color:var(--gold-dim);background:rgba(90,64,0,.22);}
-.anno-trigger.themes:hover{border-color:var(--gold);background:rgba(90,64,0,.32);}
-
-/* The original base CSS has .scholarly-buttons .anno-trigger[onclick*="themes"]
-   with !important setting purple. Override it here with equal specificity + !important
-   coming later in the cascade.                                                        */
-.scholarly-buttons .anno-trigger[onclick*="themes"]{color:var(--gold) !important;border-color:var(--gold-dim) !important;background:rgba(90,64,0,.22) !important;}
-.scholarly-buttons .anno-trigger[onclick*="themes"]:hover{border-color:var(--gold) !important;background:rgba(90,64,0,.32) !important;}
-.scholarly-buttons .anno-trigger[onclick*="themes"].active{color:var(--gold-bright) !important;border-color:var(--gold) !important;background:rgba(90,64,0,.36) !important;box-shadow:inset 3px 0 0 var(--gold),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.5) !important;filter:brightness(1.15);}
-
-
-/* ── Commentary panels — per-commentator colour identity ─ */
-/* MacArthur: crimson (defined in base CSS, kept as-is)     */
-/* Sarna (JPS): deep teal — Jewish/academic register        */
-.anno-trigger.sarna{color:#4ec9b0;border-color:#1a6058;background:rgba(20,80,70,.22);}
-.anno-trigger.sarna:hover{border-color:#3aaa98;background:rgba(20,80,70,.32);}
-.anno-trigger.sarna.active{filter:brightness(1.25);}
-.com-panel.com-sarna{background:#060e0c;border-color:#1a6058;}
-.com-panel.com-sarna h4{color:#4ec9b0;}
-.com-panel.com-sarna .com-source{color:#4ec9b0;border-bottom-color:rgba(26,96,88,.4);}
-
-/* Alter (Literary): warm amber — literary/poetic register  */
-.anno-trigger.alter{color:#d4a853;border-color:#7a5820;background:rgba(90,60,10,.22);}
-.anno-trigger.alter:hover{border-color:#c09040;background:rgba(90,60,10,.32);}
-.anno-trigger.alter.active{filter:brightness(1.25);}
-.com-panel.com-alter{background:#0e0c06;border-color:#7a5820;}
-.com-panel.com-alter h4{color:#d4a853;}
-.com-panel.com-alter .com-source{color:#d4a853;border-bottom-color:rgba(122,88,32,.4);}
-
-/* Calvin: slate blue — Reformed/theological register       */
-.anno-trigger.calvin{color:#7ba7cc;border-color:#2a4870;background:rgba(28,56,90,.22);}
-.anno-trigger.calvin:hover{border-color:#5a88b8;background:rgba(28,56,90,.32);}
-.anno-trigger.calvin.active{filter:brightness(1.25);}
-.com-panel.com-calvin{background:#060810;border-color:#2a4870;}
-.com-panel.com-calvin h4{color:#7ba7cc;}
-.com-panel.com-calvin .com-source{color:#7ba7cc;border-bottom-color:rgba(42,72,112,.4);}
-
-/* Robertson (NT Greek): chartreuse-lime                    */
-.anno-trigger.robertson{color:#c8d870;border-color:#687830;background:rgba(80,96,20,.22);}
-.anno-trigger.robertson:hover{border-color:#a8b850;background:rgba(80,96,20,.32);}
-.anno-trigger.robertson.active{filter:brightness(1.25);}
-.com-panel.com-robertson{background:#0a0e04;border-color:#687830;}
-.com-panel.com-robertson h4{color:#c8d870;}
-.com-panel.com-robertson .com-source{color:#c8d870;border-bottom-color:rgba(104,120,48,.4);}
-
-/* Catena Aurea (Patristic): medium violet                  */
-.anno-trigger.catena{color:#b888d8;border-color:#6a3898;background:rgba(60,28,90,.22);}
-.anno-trigger.catena:hover{border-color:#9868c0;background:rgba(60,28,90,.32);}
-.anno-trigger.catena.active{filter:brightness(1.25);}
-.com-panel.com-catena{background:#0c080f;border-color:#6a3898;}
-.com-panel.com-catena h4{color:#b888d8;}
-.com-panel.com-catena .com-source{color:#b888d8;border-bottom-color:rgba(106,56,152,.4);}
-
-/* Hubbard (NICOT Ruth): warm olive — OT narrative/covenant register */
-.anno-trigger.hubbard{color:#a8c870;border-color:#507028;background:rgba(60,80,20,.22);}
-.anno-trigger.hubbard:hover{border-color:#80a848;background:rgba(60,80,20,.32);}
-.anno-trigger.hubbard.active{filter:brightness(1.25);}
-.com-panel.com-hubbard{background:#090e04;border-color:#507028;}
-.com-panel.com-hubbard h4{color:#a8c870;}
-.com-panel.com-hubbard .com-source{color:#a8c870;border-bottom-color:rgba(80,112,40,.4);}
-
-/* Waltke (NICOT Proverbs): warm rose-mauve — wisdom register */
-.anno-trigger.waltke{color:#e8a0b8;border-color:#883050;background:rgba(80,20,40,.22);}
-.anno-trigger.waltke:hover{border-color:#c06080;background:rgba(80,20,40,.32);}
-.anno-trigger.waltke.active{filter:brightness(1.25);}
-.com-panel.com-waltke{background:#0f0608;border-color:#883050;}
-.com-panel.com-waltke h4{color:#e8a0b8;}
-.com-panel.com-waltke .com-source{color:#e8a0b8;border-bottom-color:rgba(136,48,80,.4);}
-
-/* NET Bible Notes: pale sage                               */
-.anno-trigger.netbible{color:#d8e8d0;border-color:#688858;background:rgba(52,80,40,.22);}
-.anno-trigger.netbible:hover{border-color:#a8c890;background:rgba(52,80,40,.32);}
-.anno-trigger.netbible.active{filter:brightness(1.25);}
-.com-panel.com-netbible{background:#070e06;border-color:#688858;}
-.com-panel.com-netbible h4{color:#d8e8d0;}
-.com-panel.com-netbible .com-source{color:#d8e8d0;border-bottom-color:rgba(104,136,88,.4);}
-/* Marcus — Anchor Bible (teal-blue: historical-critical scholarship) */
-.anno-trigger.marcus{color:#70d8d8;border-color:#2a7878;background:rgba(20,80,80,.22);}
-.anno-trigger.marcus:hover{border-color:#50b8b8;background:rgba(20,80,80,.32);}
-.anno-trigger.marcus.active{filter:brightness(1.25);}
-.anno-trigger.milgrom{color:#78d8a8;border-color:#287850;background:rgba(16,72,44,.22);}
-.anno-trigger.milgrom:hover{border-color:#50b880;background:rgba(16,72,44,.32);}
-.anno-trigger.milgrom.active{filter:brightness(1.25);}
-.anno-trigger.ashley{color:#f0c080;border-color:#886020;background:rgba(80,52,8,.22);}
-.anno-trigger.ashley:hover{border-color:#c09040;background:rgba(80,52,8,.32);}
-.anno-trigger.ashley.active{filter:brightness(1.25);}
-.anno-trigger.keener{color:#a8c8f8;border-color:#2a5080;background:rgba(20,48,80,.22);}
-.anno-trigger.keener:hover{border-color:#6090c8;background:rgba(20,48,80,.32);}
-.anno-trigger.keener.active{filter:brightness(1.25);}
-.anno-trigger.craigie{color:#d8b8f0;border-color:#604880;background:rgba(52,28,72,.22);}
-.anno-trigger.craigie:hover{border-color:#9870c0;background:rgba(52,28,72,.32);}
-.anno-trigger.craigie.active{filter:brightness(1.25);}
-.anno-trigger.tigay{color:#e8d090;border-color:#806828;background:rgba(72,52,8,.22);}
-.anno-trigger.tigay:hover{border-color:#c0a050;background:rgba(72,52,8,.32);}
-.anno-trigger.tigay.active{filter:brightness(1.25);}
-/* Hess — TOTC Joshua (teal: archaeological/ANE) */
-.anno-trigger.hess{color:#60d0c0;border-color:#287868;background:rgba(16,80,72,.22);}
-.anno-trigger.hess:hover{border-color:#40b0a0;background:rgba(16,80,72,.32);}
-.anno-trigger.hess.active{filter:brightness(1.25);}
-.com-panel.com-hess{background:#040e0c;border-color:#287868;}
-.com-panel.com-hess h4{color:#60d0c0;}
-.com-panel.com-hess .com-source{color:#60d0c0;border-bottom-color:rgba(40,120,104,.4);}
-/* Howard — NAC Joshua (slate blue: canonical/literary) */
-.anno-trigger.howard{color:#90b0e0;border-color:#405880;background:rgba(40,56,96,.22);}
-.anno-trigger.howard:hover{border-color:#6890c0;background:rgba(40,56,96,.32);}
-.anno-trigger.howard.active{filter:brightness(1.25);}
-.com-panel.com-howard{background:#060810;border-color:#405880;}
-.com-panel.com-howard h4{color:#90b0e0;}
-.com-panel.com-howard .com-source{color:#90b0e0;border-bottom-color:rgba(64,88,128,.4);}
-/* Block — NAC Judges (warm copper: evangelical narrative) */
-.anno-trigger.block{color:#e0a070;border-color:#805020;background:rgba(96,48,16,.22);}
-.anno-trigger.block:hover{border-color:#c08040;background:rgba(96,48,16,.32);}
-.anno-trigger.block.active{filter:brightness(1.25);}
-.com-panel.com-block{background:#0e0804;border-color:#805020;}
-.com-panel.com-block h4{color:#e0a070;}
-.com-panel.com-block .com-source{color:#e0a070;border-bottom-color:rgba(128,80,32,.4);}
-/* Webb — NICOT Judges (sage green: literary theology) */
-.anno-trigger.webb{color:#90c890;border-color:#3a6838;background:rgba(32,72,40,.22);}
-.anno-trigger.webb:hover{border-color:#60a860;background:rgba(32,72,40,.32);}
-.anno-trigger.webb.active{filter:brightness(1.25);}
-.com-panel.com-webb{background:#060e06;border-color:#3a6838;}
-.com-panel.com-webb h4{color:#90c890;}
-.com-panel.com-webb .com-source{color:#90c890;border-bottom-color:rgba(58,104,56,.4);}
-/* Bergen — NAC 1-2 Samuel (burnt sienna: historical narrative) */
-.anno-trigger.bergen{color:#d8a080;border-color:#785030;background:rgba(88,48,24,.22);}
-.anno-trigger.bergen:hover{border-color:#b88060;background:rgba(88,48,24,.32);}
-.anno-trigger.bergen.active{filter:brightness(1.25);}
-.com-panel.com-bergen{background:#0c0804;border-color:#785030;}
-.com-panel.com-bergen h4{color:#d8a080;}
-.com-panel.com-bergen .com-source{color:#d8a080;border-bottom-color:rgba(120,80,48,.4);}
-/* Tsumura — NICOT 1 Samuel (steel blue: philological) */
-.anno-trigger.tsumura{color:#88b8d8;border-color:#386080;background:rgba(32,60,88,.22);}
-.anno-trigger.tsumura:hover{border-color:#5898b8;background:rgba(32,60,88,.32);}
-.anno-trigger.tsumura.active{filter:brightness(1.25);}
-.com-panel.com-tsumura{background:#040810;border-color:#386080;}
-.com-panel.com-tsumura h4{color:#88b8d8;}
-.com-panel.com-tsumura .com-source{color:#88b8d8;border-bottom-color:rgba(56,96,128,.4);}
-/* Anderson — WBC 2 Samuel (warm olive: historical-critical) */
-.anno-trigger.anderson{color:#c8d0a0;border-color:#606828;background:rgba(64,72,24,.22);}
-.anno-trigger.anderson:hover{border-color:#a0b060;background:rgba(64,72,24,.32);}
-.anno-trigger.anderson.active{filter:brightness(1.25);}
-.com-panel.com-anderson{background:#0a0c04;border-color:#606828;}
-.com-panel.com-anderson h4{color:#c8d0a0;}
-.com-panel.com-anderson .com-source{color:#c8d0a0;border-bottom-color:rgba(96,104,40,.4);}
-.com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
-.com-panel.com-marcus h4{color:#70d8d8;}
-.com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
-/* Rhoads — Mark as Story (amber-gold: narrative/literary criticism) */
-.anno-trigger.rhoads{color:#e8c060;border-color:#886020;background:rgba(80,56,12,.22);}
-.anno-trigger.rhoads:hover{border-color:#c8a040;background:rgba(80,56,12,.32);}
-.anno-trigger.rhoads.active{filter:brightness(1.25);}
-.com-panel.com-rhoads{background:#0e0900;border-color:#886020;}
-.com-panel.com-rhoads h4{color:#e8c060;}
-.com-panel.com-rhoads .com-source{color:#e8c060;border-bottom-color:rgba(136,96,32,.4);}
-
-.tx-panel{--tx-bg:#0e1218;--tx-border:#2a4060;--tx-accent:#70b8e8;}
-.tx-panel.open{background:var(--tx-bg);border-color:var(--tx-border);}
-.tx-panel h4{color:var(--tx-accent);}
-.tx-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(42,64,96,.4);}
-.tx-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-.tx-header{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.35rem;}
-.tx-ref{font-family:'Cinzel',serif;font-size:.68rem;color:var(--tx-accent);flex-shrink:0;}
-.tx-issue{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;color:#c0d8f0;}
-.tx-variants{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#b0c8e0;line-height:1.6;margin-bottom:.3rem;}
-.tx-sig{font-family:'EB Garamond',serif;font-size:.88rem;color:#90a8c0;font-style:italic;line-height:1.5;}
-.tx-ms{font-family:'Cinzel',serif;font-size:.65rem;color:#c9a84c;background:rgba(201,168,76,.1);
-       padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
-.tx-lxx{font-family:'Cinzel',serif;font-size:.65rem;color:#70b8e8;background:rgba(112,184,232,.1);
-        padding:.05rem .3rem;border-radius:2px;margin-right:.2rem;}
-
-/* ── Scholarly Debates panel ─────────────────────────── */
-.db-panel{--db-bg:#120d18;--db-border:#3a2060;--db-accent:#a870e8;}
-.db-panel.open{background:var(--db-bg);border-color:var(--db-border);}
-.db-panel h4{color:var(--db-accent);}
-.db-debate{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(58,32,96,.4);}
-.db-debate:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-.db-title{font-family:'Cinzel',serif;font-size:.78rem;color:var(--db-accent);
-          letter-spacing:.05em;margin-bottom:.6rem;}
-.db-positions{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem;}
-.db-position{background:rgba(58,32,96,.15);border:1px solid rgba(58,32,96,.3);
-             border-radius:4px;padding:.5rem .7rem;}
-.db-pos-name{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;
-             color:#c8a8f0;margin-bottom:.15rem;}
-.db-proponents{font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#8868a8;
-               font-style:italic;margin-bottom:.25rem;}
-.db-argument{font-family:'EB Garamond',serif;font-size:.88rem;color:#b098d0;line-height:1.55;}
-.db-synthesis{font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:#a090c0;
-              background:rgba(168,112,232,.08);border-left:2px solid var(--db-accent);
-              padding:.4rem .6rem;line-height:1.55;}
-
-/* ── Places (POI) section panel ─────────────────────────────── */
-.poi-entry{padding:.7rem 0;border-bottom:1px solid rgba(26,96,40,.35);}
-.poi-entry:last-child{border-bottom:none;}
-.poi-name{font-family:'Cinzel',serif;font-size:.8rem;color:var(--poi-accent);margin-bottom:.2rem;}
-.poi-coords{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-bottom:.35rem;}
-.poi-text{font-size:.82rem;color:var(--text);line-height:1.65;}
-
-/* ── Timeline section panel ─────────────────────────────────── */
-.tl-visual{position:relative;margin:.5rem 0 .3rem;}
-.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,transparent,#4a6888 6%,#4a6888 94%,transparent);pointer-events:none;}
-.tl-event{position:relative;display:grid;grid-template-columns:130px 28px 1fr;grid-template-rows:auto auto;align-items:start;padding:6px 0;}
-.tl-date{grid-column:1;grid-row:1;text-align:right;font-family:'Cinzel',serif;font-size:.63rem;color:#7a9ab8;line-height:1.6;padding-right:10px;white-space:nowrap;}
-.tl-dot-wrap{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;padding-top:4px;}
-.tl-dot{width:10px;height:10px;border-radius:50%;background:#304858;border:2px solid #4a6888;position:relative;z-index:1;flex-shrink:0;}
-.tl-body{grid-column:3;grid-row:1 / span 2;padding-left:12px;}
-.tl-name{font-size:.78rem;color:#8ab8d8;line-height:1.6;}
-.tl-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-top:.25rem;padding-top:.25rem;border-top:1px solid rgba(74,104,136,.2);}
-.tl-event.current .tl-dot{width:13px;height:13px;background:#c0d8f0;border-color:#e8f4ff;box-shadow:0 0 7px rgba(192,216,240,.55);margin-top:1px;}
-.tl-event.current .tl-date{color:#c0d8f0;}
-.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
-.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
-.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 170px;}
-.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}-top:1px;}
-.tl-event.current .tl-date{color:#c0d8f0;}
-.tl-event.current .tl-name{color:#e8f4ff;font-weight:600;}
-.tl-event.current .tl-text{border-color:rgba(192,216,240,.2);color:var(--text);}
-.tl-range{display:flex;justify-content:space-between;font-size:.63rem;color:var(--text-muted);font-style:italic;padding:.2rem 0 0 90px;}
-.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}
-
-/* ── People tree link in person cards ─────────────────────────────────── */
-.person-tree-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ppl-accent);
-  transition:border-color .15s,color .15s;}
-.person-tree-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
-/* ── Translation toggle ──────────────────────────────────────────── */
-.translation-toggle{display:inline-flex;gap:.25rem;align-items:center;margin-left:.5rem;}
-.translation-btn{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .5rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
-.translation-btn:hover{color:var(--gold);border-color:var(--gold-dim);}
-.translation-btn.active{background:rgba(201,168,76,.15);border-color:var(--gold-dim);color:var(--gold);}
-.verse-body{display:inline;}
-'''
+SW_JS = '<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>'
 
 # ══════════════════════════════════════════════════════════════════════
 #  REGISTRY — canonical ordered list of all Bible books
@@ -1087,10 +768,7 @@ def head(book_name, book_dir, ch, is_nt=False):
 <meta name="theme-color" content="#0c0a07">
 <link rel="apple-touch-icon" href="../../icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-{CSS}
-{EXTRA_CSS}
-</style>
+<link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
 {nav}'''
@@ -1169,7 +847,7 @@ def poi_panel(pid, entries):
 
 # ── Canonical timeline CSS ────────────────────────────────────────────────
 # Injected into chapters that receive tl-panels via patch scripts.
-# Values must match EXTRA_CSS above. Update both together.
+# Values must match styles.css. Update both together.
 TL_CSS = (
     '.tl-visual{position:relative;margin:.5rem 0 .3rem;}'
     '.tl-spine{position:absolute;left:144px;top:8px;bottom:8px;width:2px;'
@@ -1393,8 +1071,8 @@ def plan_chapter(book_name, chapter_num, sections):
         ])
 
     After reviewing output, add places/timeline keys to sections that need them.
-    REMINDER: chapters with tl/poi panels need tl-visual + poi-entry CSS in their
-    <style> block. build_chapter() injects this via EXTRA_CSS automatically.
+    REMINDER: chapters with tl/poi panels need tl-visual + poi-entry CSS.
+    This CSS lives in styles.css (the external stylesheet).
     Manual patch scripts must inject it explicitly.
     """
     print(f'\n\033[96m{"="*58}\033[0m')
@@ -1568,7 +1246,7 @@ def themes_btn_panel(pid, theme_data, chapter_note):
         axis_labels += f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">{lbl}</text>'
     circles = ''.join(f'<circle cx="{cx}" cy="{cy}" r="{r*k/5:.1f}" fill="none" stroke="#202040" stroke-width="1"/>' for k in range(1,6))
     svg = f'<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">{circles}{axis_lines}<polygon points="{poly}" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/>{axis_labels}</svg>'
-    # Use class-based styling so EXTRA_CSS can control it consistently
+    # Use class-based styling controlled by styles.css
     btn = (f'<button class="anno-trigger themes" onclick="tog(this,\'{pid}\')">'
            f'<span>Theological Themes</span></button>')
     panel = (f'<div id="{pid}" class="themes-panel"><h4>Theological Themes Tracker</h4>'
@@ -1613,10 +1291,10 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     book_dir_test = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
     out_dir = f'{_REPO}/{book_dir_test}/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
-    # TOG_JS and SW_JS are inline script blocks extracted by _bootstrap()
-    _tog      = TOG_JS       or ''
+    # Inline JS blocks (small, load-critical — kept inline rather than external)
+    _tog      = TOG_JS
     _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
-    _sw       = SW_JS        or ''
+    _sw       = SW_JS
     # NOTE: qnav panel HTML is NOT baked inline here.
     # qnav.js (loaded at the bottom) dynamically injects the full panel at
     # runtime and is always current. The QNAV_CURRENT var tells it which
@@ -2945,6 +2623,67 @@ def rebuild_books_js():
     print(f'books.js rebuilt: {len(REGISTRY)} books')
 
 
+def _build_chapters_js():
+    """Rebuild verses/chapters.js — the chapter-level search index.
+
+    Scans all live chapter HTML files and extracts section headers and
+    context snippets for the homepage search feature.
+    Called automatically by rebuild_sw_js().
+    """
+    rows = []
+    for book_dir, book_name, total, live, testament, subdir in REGISTRY:
+        if live == 0:
+            continue
+        base = os.path.join(_REPO, subdir, book_dir)
+        paths = sorted(
+            glob.glob(os.path.join(base, '*.html')),
+            key=lambda p: int(re.search(r'_(\d+)\.html$', p).group(1))
+        )
+        for html_path in paths:
+            ch = int(re.search(r'_(\d+)\.html$', html_path).group(1))
+            with open(html_path, encoding='utf-8') as f:
+                h = f.read()
+
+            # Extract section headers
+            raw_hdrs = re.findall(
+                r'class="section-header[^"]*"[^>]*>(.*?)</(?:h\d|div)',
+                h, re.DOTALL)
+            hdrs = [re.sub(r'<[^>]+>', '', x)
+                    .replace('&ndash;', '\u2013').replace('&mdash;', '\u2014')
+                    .replace('&hellip;', '\u2026').replace('&rsquo;', "\u2019")
+                    .replace('&lsquo;', "\u2018").replace('&amp;', '&')
+                    .strip()
+                    for x in raw_hdrs]
+
+            # Strip "Verses N–N — " prefix from headers
+            titles = []
+            for hdr in hdrs:
+                m = re.match(r'Verses?\s+[\d\u2013\u2014\-]+\s+[\u2014\u2013\-]+\s*(.*)', hdr)
+                titles.append(m.group(1).strip() if m else hdr)
+
+            # First-section context snippet
+            ctx_m = re.search(r'id="[^"]*s1-ctx"[^>]*>(.*?)</div>', h, re.DOTALL)
+            ctx = ''
+            if ctx_m:
+                ctx = re.sub(r'<[^>]+>', ' ', ctx_m.group(1)).strip()[:200]
+
+            rel_path = os.path.relpath(html_path, _REPO).replace(os.sep, '/')
+            rows.append({
+                'ref':    f'{book_name} {ch}',
+                'book':   book_name,
+                'ch':     ch,
+                'url':    rel_path,
+                'titles': titles,
+                'ctx':    ctx,
+            })
+
+    out_path = os.path.join(_REPO, 'verses', 'chapters.js')
+    js = 'const CHAPTERS_ALL=' + json.dumps(rows, ensure_ascii=False) + ';'
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(js)
+    print(f'Written verses/chapters.js: {len(js):,} chars, {len(rows)} chapters')
+
+
 def rebuild_sw_js():
     """
     Regenerate the CORE array in service-worker.js to include all live NIV
@@ -2995,6 +2734,10 @@ def rebuild_sw_js():
         and '/verses/niv/' not in e and '/verses/esv/' not in e
     ]
 
+    # Ensure styles.css is always included (external stylesheet)
+    if not any('/styles.css' in e for e in static_preserved):
+        static_preserved.append("  '/styles.css',")
+
     # Build verse entries from REGISTRY
     niv_lines = ["  '/verses/chapters.js',", "  '/verses/niv/verses.js',"]
     for book_dir, book_name, total, live, testament, subdir in REGISTRY:
@@ -3032,15 +2775,7 @@ def rebuild_sw_js():
     print(f'service-worker.js CORE rebuilt: {niv_count} NIV + {esv_count} ESV verse files, {ch_count} chapter pages')
 
     # Also rebuild chapters.js search index whenever SW is rebuilt
-    try:
-        import importlib.util as _ilu
-        _spec = _ilu.spec_from_file_location('build_chapters_js',
-                    os.path.join(_REPO, '_tools', 'build_chapters_js.py'))
-        _mod = _ilu.module_from_spec(_spec)
-        _spec.loader.exec_module(_mod)
-        _mod.build()
-    except Exception as _e:
-        print(f'  chapters.js rebuild skipped: {_e}')
+    _build_chapters_js()
 
 
 
