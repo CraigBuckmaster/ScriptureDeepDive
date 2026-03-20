@@ -98,30 +98,7 @@ def fetch_text(book_name, ch_start, ch_end, total_chapters, api_key):
 
 
 def fetch_book(name, chapters, api_key):
-    """Fetch entire book. Try whole-book first, fall back to chapter-by-chapter."""
-    # Large books (>CHUNK chapters): must chunk
-    if chapters > CHUNK:
-        print(f'    Large book — fetching chapter-by-chapter')
-        all_text = ''
-        for ch in range(1, chapters + 1):
-            result = fetch_with_retry(name, ch, ch, chapters, api_key)
-            if result is None:
-                print(f'    Failed on chapter {ch}')
-                return None
-            all_text += result
-            if ch < chapters:
-                time.sleep(DELAY)
-        return all_text
-
-    # Small/medium books: try whole-book first
-    result = fetch_with_retry(name, None, None, chapters, api_key)
-    if result:
-        marker_count = len(re.findall(r'\[\d+\]', result))
-        if marker_count >= chapters:  # at least 1 verse per chapter
-            return result
-        print(f'    Whole-book returned only {marker_count} verse markers — falling back to chapter-by-chapter')
-
-    # Fallback: chapter by chapter
+    """Fetch entire book chapter-by-chapter. Reliable for all book sizes."""
     all_text = ''
     for ch in range(1, chapters + 1):
         result = fetch_with_retry(name, ch, ch, chapters, api_key)
