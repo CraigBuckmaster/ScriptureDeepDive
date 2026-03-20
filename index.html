@@ -1388,7 +1388,8 @@ footer {
   Commentary for personal study &middot; Hebrew &amp; Greek transliterations are scholarly approximations
 </footer>
 
-<script src="verses/verses.js"></script>
+<script src="verses/niv/verses.js"></script>
+<script src="verses/chapters.js"></script>
 <script>
 // ── BOOK DATA for matching ─────────────────────────────────────────────────
 // BOOK_DATA — built from DOM automatically.
@@ -1410,7 +1411,7 @@ document.querySelectorAll('.book-item').forEach(item => {
 
 // ── UNIFIED SEARCH ────────────────────────────────────────────────────────
 function handleSearch(q) {
-  const panel = document.getElementById('unified-results');
+  const panel   = document.getElementById('unified-results');
   const libGrid = document.getElementById('library-grid');
   q = q.trim();
 
@@ -1418,41 +1419,27 @@ function handleSearch(q) {
     panel.classList.remove('visible');
     panel.innerHTML = '';
     libGrid.style.display = '';
-    // Reset book visibility
     document.querySelectorAll('.book-item').forEach(b => b.style.display = '');
     document.querySelectorAll('.testament-group').forEach(g => { g.style.display = ''; g.classList.remove('open'); });
     return;
   }
 
-  const ql = q.toLowerCase();
+  const ql    = q.toLowerCase();
   const words = ql.split(/\s+/).filter(w => w.length > 1);
 
-  // ── Book matches ──────────────────────────────────────────────────────
-  const bookMatches = BOOK_DATA.filter(b => b.name.toLowerCase().includes(ql));
+  // Live books set for filtering
+  const LIVE_BOOKS = new Set(['genesis','exodus','leviticus','numbers','ruth','proverbs',
+                               'matthew','mark','luke','john','acts']);
 
-  // ── Verse matches ─────────────────────────────────────────────────────
-  const verseMatches = q.length >= 2 ? (window.VERSES_ALL||[]).map(v => {
-    const text = v.text.toLowerCase();
-    const ref  = v.ref.toLowerCase();
-    let score = 0;
-    for (const w of words) {
-      if (text.includes(w)) score += 2;
-      else if (ref.includes(w)) score += 1;
-    }
-    if (text.includes(ql)) score += 5;
-    return { ...v, score };
-  }).filter(v => v.score > 0).sort((a, b) => b.score - a.score).slice(0, 10) : [];
-
-  // ── Highlight helper ──────────────────────────────────────────────────
+  // ── Highlight helper ───────────────────────────────────────────────────
   function hl(text, q, words) {
     let out = text;
-    // Exact phrase first
     if (q.length > 2) {
       const rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
       out = out.replace(rx, '<em>$1</em>');
     }
     for (const w of words) {
-      if (out.toLowerCase().includes(w) && !out.includes('<em>' + w)) {
+      if (!out.toLowerCase().includes('<em>' + w)) {
         const rx = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
         out = out.replace(rx, '<em>$1</em>');
       }
@@ -1460,15 +1447,60 @@ function handleSearch(q) {
     return out;
   }
 
-  // ── Build results HTML ────────────────────────────────────────────────
-  let html = '';
-  const hasBooks  = bookMatches.length > 0;
-  const hasVerses = verseMatches.length > 0;
+  // ── 1. Book matches ────────────────────────────────────────────────────
+  const bookMatches = BOOK_DATA.filter(b => b.name.toLowerCase().includes(ql));
 
-  if (!hasBooks && !hasVerses) {
-    html = '<p class="no-results-msg">No books or verses found for &ldquo;' + q + '&rdquo;</p>';
+  // ── 2. Chapter matches ─────────────────────────────────────────────────
+  // Match ref (e.g. "Genesis 1"), book name, or section title keywords
+  const chapterMatches = q.length >= 2 ? (window.CHAPTERS_ALL || []).filter(c => {
+    const refLow   = c.ref.toLowerCase();
+    const bookLow  = c.book.toLowerCase();
+    const titlesLow = c.titles.map(t => t.toLowerCase()).join(' ');
+    const ctxLow   = (c.ctx || '').toLowerCase();
+
+    // Direct ref match: "Gen 1", "Genesis 1", "genesis 1"
+    if (refLow.includes(ql)) return true;
+    // All words appear somewhere in titles or ctx
+    if (words.length >= 2 && words.every(w => titlesLow.includes(w) || ctxLow.includes(w))) return true;
+    // Single keyword in section title
+    if (words.length === 1 && words[0].length >= 4 && titlesLow.includes(words[0])) return true;
+    return false;
+  }).slice(0, 8) : [];
+
+  // ── 3. Verse matches ───────────────────────────────────────────────────
+  const verseMatches = q.length >= 3 ? (window.VERSES_ALL || [])
+    .filter(v => {
+      // Only live chapters
+      const bookDir = v.url.split('/')[1];
+      return LIVE_BOOKS.has(bookDir);
+    })
+    .map(v => {
+      const textLow = v.text.toLowerCase();
+      const refLow  = v.ref.toLowerCase();
+      let score = 0;
+      for (const w of words) {
+        if (textLow.includes(w)) score += w.length >= 5 ? 3 : 2;
+        if (refLow.includes(w)) score += 1;
+      }
+      if (textLow.includes(ql)) score += 6;   // exact phrase bonus
+      if (refLow === ql)         score += 10;  // exact ref match
+      return { ...v, score };
+    })
+    .filter(v => v.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 12) : [];
+
+  // ── Build results HTML ─────────────────────────────────────────────────
+  let html = '';
+  const hasBooks    = bookMatches.length > 0;
+  const hasChapters = chapterMatches.length > 0;
+  const hasVerses   = verseMatches.length > 0;
+
+  if (!hasBooks && !hasChapters && !hasVerses) {
+    html = '<p class="no-results-msg">No results found for &ldquo;' + q + '&rdquo;</p>';
   }
 
+  // Books
   if (hasBooks) {
     html += `<div class="results-section">
       <div class="results-section-label">
@@ -1477,14 +1509,14 @@ function handleSearch(q) {
       </div>`;
     for (const b of bookMatches) {
       const hlName = hl(b.name, ql, words);
-      const liveBadge = b.hasLive ? '<span class="live-tag">&#x25CF; live</span>' : '';
+      const liveBadge = b.hasLive ? `<span class="live-tag">&#x25CF; ${b.liveCount} live</span>` : '';
       if (b.hasLive && b.url) {
         html += `<a href="${b.url}" class="book-result has-live" title="Open ${b.name}">
           <span class="book-result-name">${hlName}</span>
           <span class="book-result-meta">${liveBadge}</span>
         </a>`;
       } else {
-        html += `<div class="book-result" onclick="openBookFromSearch('${b.id}')" title="Browse ${b.name} chapters">
+        html += `<div class="book-result" onclick="openBookFromSearch('${b.id}')" title="Browse ${b.name}">
           <span class="book-result-name">${hlName}</span>
           <span class="book-result-meta">coming soon</span>
         </div>`;
@@ -1493,6 +1525,26 @@ function handleSearch(q) {
     html += '</div>';
   }
 
+  // Chapters
+  if (hasChapters) {
+    html += `<div class="results-section">
+      <div class="results-section-label">
+        <span>&#x1F4C4; Chapters</span>
+        <span class="results-count">${chapterMatches.length} match${chapterMatches.length !== 1 ? 'es' : ''}</span>
+      </div>`;
+    for (const c of chapterMatches) {
+      const sectionList = c.titles.slice(0, 2)
+        .map(t => `<span class="ch-section">${hl(t, ql, words)}</span>`).join('');
+      const extraCount = c.titles.length > 2 ? `<span class="ch-section-more">+${c.titles.length - 2} more</span>` : '';
+      html += `<a href="${c.url}" class="chapter-result" title="Open ${c.ref}">
+        <span class="chapter-result-ref">${hl(c.ref, ql, words)}</span>
+        <span class="chapter-result-sections">${sectionList}${extraCount}</span>
+      </a>`;
+    }
+    html += '</div>';
+  }
+
+  // Verses
   if (hasVerses) {
     html += `<div class="results-section">
       <div class="results-section-label">
@@ -1500,7 +1552,7 @@ function handleSearch(q) {
         <span class="results-count">${verseMatches.length} match${verseMatches.length !== 1 ? 'es' : ''}</span>
       </div>`;
     for (const v of verseMatches) {
-      const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '…' : v.text;
+      const snippet = v.text.length > 160 ? v.text.slice(0, 157) + '\u2026' : v.text;
       html += `<a href="${v.url}" class="verse-result" title="Open ${v.ref}">
         <span class="verse-ref">${v.short}</span>
         <span class="verse-snippet">${hl(snippet, ql, words)}</span>
@@ -1511,26 +1563,23 @@ function handleSearch(q) {
 
   panel.innerHTML = html;
   panel.classList.add('visible');
-  // Hide library grid while results are showing
   libGrid.style.display = 'none';
 }
 
 function openBookFromSearch(id) {
-  // Close search, scroll to book and open it
   document.getElementById('bookSearch').value = '';
   document.getElementById('unified-results').classList.remove('visible');
   document.getElementById('library-grid').style.display = '';
   document.querySelectorAll('.testament-group').forEach(g => g.classList.remove('open'));
-  // Open the relevant testament
   const bookEl = document.getElementById('book-' + id);
   if (bookEl) {
-    // Find parent testament and open it
     const testament = bookEl.closest('.testament-group');
     if (testament) testament.classList.add('open');
     bookEl.classList.add('open');
     setTimeout(() => bookEl.scrollIntoView({behavior:'smooth', block:'start'}), 100);
   }
 }
+
 
 // ── TESTAMENT TOGGLE ──────────────────────────────────────────────────────
 function toggleTestament(id) {
