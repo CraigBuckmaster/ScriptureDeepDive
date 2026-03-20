@@ -1825,6 +1825,25 @@ PEOPLE_BIO = {
         'wilderness narrative. Psalm 106:17 records "the earth opened up and '
         'swallowed Dathan; it buried the company of Abiram."'
     ),
+    # Numbers/Deuteronomy additional figures
+    ('sihon',): (
+        'Amorite king of Heshbon; defeated by Israel',
+        'Sihon king of the Amorites ruled from Heshbon in Transjordan. When Israel requested peaceful '
+        'passage through his territory, he refused and came out to fight (Num 21:21–25). Israel '
+        'defeated him decisively, occupying his territory from the Arnon to the Jabbok. This victory '
+        'is retold as a paradigm of God’s power in Deut 1–2, Ps 135:11, and Ps 136:19. '
+        'His defeat, alongside Og’s, became a standard example of God’s faithfulness to '
+        'Israel in later liturgical tradition.'
+    ),
+    ('og',): (
+        'Giant king of Bashan; last of the Rephaim',
+        'Og king of Bashan was the last of the Rephaim — a pre-Israelite giant people. His iron '
+        'bed, measuring nine cubits long (c.4.5m), was preserved in Rabbah of Ammon as a monument '
+        '(Deut 3:11). Israel defeated him at Edrei after his defeat of Sihon, and Moses divided '
+        'his territory among the Transjordan tribes. Deut 3 presents his defeat as proof that God '
+        'can give Israel the whole land: if the giant Og fell, so will the Anakites in Canaan. '
+        'He appears in numerous later biblical summaries of God’s power (Ps 135, 136; Neh 9).'
+    ),
     # Acts figures
     ('peter',): (
         'Lead apostle; spokesperson for the Jerusalem church',
@@ -1977,7 +1996,10 @@ PEOPLE_BIO = {
 }
 
 # Timeline ID mapping for PEOPLE_BIO figures
-_TIMELINE_IDS = {'moses': 'moses', 'aaron': 'aaron', 'miriam': 'miriam', 'caleb': 'caleb', 'joshua': 'joshua', 'korah': 'korah', 'balaam': 'balaam', 'balak': 'balak', 'phinehas': 'phinehas', 'eleazar': 'eleazar', 'nadab': 'nadab', 'abihu': 'abihu', 'ithamar': 'ithamar', 'dathan': 'dathan', 'abiram': 'abiram', 'peter': 'peter', 'paul': 'paul', 'barnabas': 'barnabas', 'stephen': 'stephen', 'philip': 'philip-ev', 'cornelius': 'cornelius', 'silas': 'silas', 'timothy': 'timothy', 'james': 'james-brother', 'luke': 'luke', 'priscilla': 'priscilla', 'aquila': 'aquila', 'apollos': 'apollos', 'agrippa': 'agrippa', 'felix': 'felix', 'festus': 'festus'}
+_TIMELINE_IDS = {'moses': 'moses', 'aaron': 'aaron', 'miriam': 'miriam', 'caleb': 'caleb', 'joshua': 'joshua', 'korah': 'korah', 'balaam': 'balaam', 'balak': 'balak', 'phinehas': 'phinehas', 'eleazar': 'eleazar', 'nadab': 'nadab', 'abihu': 'abihu', 'ithamar': 'ithamar', 'dathan': 'dathan', 'abiram': 'abiram', 'peter': 'peter', 'paul': 'paul', 'barnabas': 'barnabas', 'stephen': 'stephen', 'philip': 'philip-ev', 'cornelius': 'cornelius', 'silas': 'silas', 'timothy': 'timothy', 'james': 'james-brother', 'luke': 'luke', 'priscilla': 'priscilla', 'aquila': 'aquila', 'apollos': 'apollos', 'agrippa': 'agrippa', 'felix': 'felix', 'festus': 'festus',
+    'sihon': 'sihon',
+    'og': 'og',
+}
 
 def _get_person_bio(name, book_dir):
     """Look up a person's (role, description, timeline_id) from the PEOPLE_BIO database."""
@@ -2023,6 +2045,32 @@ def _auto_src(book_dir, ch, title, all_text):
             ('Ugaritic Priestly Archive Texts',
              'Sanctuary service rosters and offering procedures from Ugarit illuminate the social organisation of ancient Near Eastern priesthoods, paralleling the Levitical organisation of Num 3–4.',
              'The Levitical clan structure and service rotations reflect authentic Bronze Age priestly administrative structures known across the ancient Near East.'),
+        ],
+        'deuteronomy': [
+            ('Hittite Suzerainty Treaties (14th–13th c. BC)',
+             'Klaus Baltzer (1960) and Meredith Kline (1963) demonstrated that Deuteronomy follows the '
+             'six-part structure of Hittite vassal treaties: preamble (1:1–5), historical prologue '
+             '(1:6–3:29), stipulations (4–26), document clause (27:1–9), witnesses (31:19–22), '
+             'and blessings/curses (28). This structure is attested only in 14th–13th century BC '
+             'treaties, strongly supporting Mosaic authorship.',
+             'The treaty-form evidence is the most powerful external argument for Deuteronomy’s '
+             'early date. Subsequent Assyrian vassal treaties (7th c. BC) have a different form, '
+             'making a late (Josian) dating of the book structurally improbable.'),
+            ('Vassal Treaties of Esarhaddon (672 BC)',
+             'The Neo-Assyrian VTE contains curse language strikingly similar to Deut 28, leading some '
+             'scholars (Weinfeld, Steymans) to argue Deuteronomy was modelled on Assyrian treaties. '
+             'However, the VTE represents only the curse section; Deuteronomy’s full six-part '
+             'structure matches only Hittite treaties.',
+             'The parallel demonstrates that ancient Near Eastern covenant forms were widespread, but '
+             'the direction of dependence is disputed. The Hittite parallel is structurally closer and '
+             'temporally earlier, supporting the traditional dating.'),
+            ('Ugaritic and Ancient Near Eastern Covenant Terminology',
+             'The vocabulary of Deuteronomy — <em>berît</em> (covenant), <em>ahavah</em> (love as '
+             'covenant loyalty), <em>hesed</em> (loyal love), ‘adon’ (lord) — is attested '
+             'in Ugaritic and other ANE diplomatic texts as standard covenant terminology.',
+             'This shows that Deuteronomy’s language of love, loyalty, and service was not merely '
+             'personal piety but carried legal-diplomatic weight: Israel’s relationship with God '
+             'is structured as a formal suzerainty covenant.'),
         ],
         'acts': [
             ('Josephus, Antiquities of the Jews (c.93 AD)',
@@ -2072,6 +2120,13 @@ def _auto_rec(book_dir, ch, title, sections):
                       'Patristic exegesis / Allegorical',
                       'Early',
                       'Origen’s homilies treat the wilderness journey as a spiritual allegory for the soul’s journey toward God, reading each campsite as a stage in spiritual formation.'),
+        'deuteronomy':('Origen, Homilies on Deuteronomy (3rd c. AD)',
+                      'Patristic exegesis / Allegorical',
+                      'Early',
+                      'Origen read Deuteronomy christologically throughout, interpreting Moses’ '
+                      'farewell discourses as prefiguring Christ’s teaching, the “prophet like Moses” '
+                      '(18:15) as a direct prophecy of Christ, and the land as a figure of the soul’s '
+                      'heavenly inheritance.'),
         'acts':      ('John Chrysostom, Homilies on Acts (c.400 AD)',
                       'Patristic exegesis / Antiochene school',
                       'Early',
@@ -2108,6 +2163,24 @@ def _auto_textual(book_dir, ch, title):
              'Samaritan Pentateuch and Qumran',
              '<span class="tx-sp">SP</span> Numbers preserves significant expansions at several points (notably Num 21, 27) that align with Deuteronomy — harmonistic editing for worship at Gerizim.',
              'The Dead Sea Scrolls (4QNumb) represent a text-type distinct from both MT and SP, confirming the diversity of the Numbers textual tradition in the Second Temple period.'),
+        ],
+        'deuteronomy': [
+            (f'Deut {ch}',
+             'LXX Deuteronomy and the MT divergences',
+             '<span class="tx-mt">MT</span> and <span class="tx-lxx">LXX</span> Deuteronomy diverge more '
+             'significantly than other Pentateuchal books. The LXX adds explanatory expansions, especially '
+             'in the blessings and curses (ch.28) and the Song of Moses (ch.32).',
+             'The LXX Deuteronomy was translated with greater theological freedom than other books. '
+             'It often interprets rather than translates, and has shaped the NT’s use of Deuteronomy '
+             '(Paul cites LXX Deut in Rom 10 and Gal 3).'),
+            (f'Deut {ch} (general)',
+             'Qumran and the Samaritan Pentateuch',
+             'Deuteronomy is the most-copied book at Qumran (29 manuscripts), showing its centrality '
+             'to Second Temple Judaism. The <span class="tx-sp">SP</span> Deuteronomy adds a tenth '
+             'commandment mandating an altar on Gerizim (Exod 20:17b insert), the central SP polemic.',
+             'The Nash Papyrus (c.150–100 BC) preserves the Decalogue and Shema from Deuteronomy '
+             '— the oldest surviving Hebrew manuscript of any biblical text. It shows a mixed '
+             'text-type combining MT and LXX features.'),
         ],
         'acts': [
             (f'Acts {ch}',
@@ -2165,7 +2238,25 @@ def _auto_debate(book_dir, ch, title, sections):
                   'The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.')],
                 'The source debate is ongoing; its resolution affects historical reconstruction more than theological interpretation.'
             ),
-            'acts': (
+            'deuteronomy': (
+            f'Authorship and Date of Deuteronomy',
+            [('Critical scholarship: Josian composition (de Wette, Wellhausen)',
+              f'The dominant critical view since de Wette (1805) identifies the “book of the law” '
+              f'found in 2 Kgs 22 with Deuteronomy, placing its composition in Josiah’s reign (c.621 BC). '
+              f'Deuteronomy on this view was written to legitimise Josiah’s centralisation reforms.',
+              'This view treats the Mosaic attribution as a literary fiction and explains the book’s '
+              'similarities with 7th-century Assyrian treaty forms — though the Hittite parallels are structurally closer.'),
+             ('Mosaic authorship / early composition (Kline, Craigie, evangelical scholarship)',
+              f'The Hittite suzerainty treaty structure (attested only in 14th–13th c. BC) strongly '
+              f'supports early composition. The book’s internal claims (1:1, 31:9,22,24) and NT citations '
+              f'(Jesus cites Deuteronomy three times in the temptation: Matt 4:4,7,10) support Mosaic origin.',
+              'Craigie and Kline argue that the treaty-form evidence makes a late date structurally '
+              'implausible. The “prophet like Moses” passage (18:15) is best read as a genuine '
+              'prediction, not a post-exilic retrojection.')],
+            'The authorship question significantly affects interpretation but not the canonical authority '
+            'or theological meaning of Deuteronomy’s covenant vision.'
+        ),
+        'acts': (
                 f'Authorship and Historicity of {title.split(":")[0]}',
                 [('Traditional Lukan authorship (Hengel, Keener, classical scholarship)',
                   f'Attributes Acts to Luke the physician (Col 4:14), a companion of Paul, on the basis of the "we" passages, historical accuracy, and early church tradition.',
@@ -2546,11 +2637,12 @@ def rebuild_sw_js():
     # Keep everything that isn't a chapter or verse file
     static_preserved = [
         e for e in re.findall(r"  '[^']+',", old_core)
-        if '/ot/' not in e and '/nt/' not in e and '/verses/' not in e
+        if '/ot/' not in e and '/nt/' not in e
+        and '/verses/niv/' not in e and '/verses/esv/' not in e
     ]
 
     # Build verse entries from REGISTRY
-    niv_lines = ["  '/verses/niv/verses.js',"]
+    niv_lines = ["  '/verses/chapters.js',", "  '/verses/niv/verses.js',"]
     for book_dir, book_name, total, live, testament, subdir in REGISTRY:
         niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.js',")
 
@@ -2584,6 +2676,17 @@ def rebuild_sw_js():
     esv_count = len(esv_lines)
     ch_count  = len(chapter_lines)
     print(f'service-worker.js CORE rebuilt: {niv_count} NIV + {esv_count} ESV verse files, {ch_count} chapter pages')
+
+    # Also rebuild chapters.js search index whenever SW is rebuilt
+    try:
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location('build_chapters_js',
+                    os.path.join(_REPO, '_tools', 'build_chapters_js.py'))
+        _mod = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(_mod)
+        _mod.build()
+    except Exception as _e:
+        print(f'  chapters.js rebuild skipped: {_e}')
 
 
 def rebuild_qnav_js():

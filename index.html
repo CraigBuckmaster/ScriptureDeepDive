@@ -1428,7 +1428,8 @@ function handleSearch(q) {
   const words = ql.split(/\s+/).filter(w => w.length > 1);
 
   // Live books set for filtering
-  const LIVE_BOOKS = new Set(['genesis','exodus','leviticus','numbers','ruth','proverbs',
+  const LIVE_BOOKS = new Set(['genesis','exodus','leviticus','numbers','deuteronomy',
+                               'ruth','proverbs',
                                'matthew','mark','luke','john','acts']);
 
   // ── Highlight helper ───────────────────────────────────────────────────
