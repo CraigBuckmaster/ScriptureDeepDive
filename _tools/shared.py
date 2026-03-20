@@ -3013,6 +3013,181 @@ def rebuild_sw_js():
         print(f'  chapters.js rebuild skipped: {_e}')
 
 
+
+_QNAV_FUNCTIONS = """var _versesLoaded = {};
+function loadAllVerses() {
+  var slug = window.CURRENT_TRANSLATION || 'niv';
+  var books = window.BOOKS || [];
+  for (var i = 0; i < books.length; i++) {
+    var b = books[i];
+    var key = slug + ':' + b.dir;
+    if (_versesLoaded[key]) continue;
+    _versesLoaded[key] = true;
+    (function(dir, test) {
+      var s = document.createElement('script');
+      s.src = '../../verses/' + slug + '/' + test.toLowerCase() + '/' + dir + '.js';
+      document.head.appendChild(s);
+    })(b.dir, b.testament);
+  }
+}
+
+function qnavToggleTestament(id) {
+  var el = document.getElementById('qnav-t-' + id);
+  if (el) el.classList.toggle('open');
+}
+
+function openQnav() {
+  var ol = document.getElementById('qnav-overlay');
+  ol.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  loadAllVerses();
+  var cur = window.QNAV_CURRENT || '';
+  if (cur) {
+    var parts = cur.split('/');
+    var bookDir = parts[1];
+    var bookEl = document.getElementById('qnav-book-' + bookDir);
+    if (bookEl) {
+      var testament = bookEl.closest('.qnav-testament');
+      if (testament && !testament.classList.contains('open')) testament.classList.add('open');
+      if (!bookEl.classList.contains('open')) qnavToggleBook(bookDir);
+      setTimeout(function() { bookEl.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 80);
+    }
+  }
+  setTimeout(function() { var s = document.getElementById('qnav-search-input'); if (s) s.focus(); }, 80);
+}
+
+function closeQnav() {
+  var ol = document.getElementById('qnav-overlay');
+  if (!ol) return;
+  ol.classList.remove('open');
+  document.body.style.overflow = '';
+  var s = document.getElementById('qnav-search-input');
+  if (s) { s.value = ''; qnavFilter(''); }
+}
+
+function qnavToggleBook(id) {
+  var el = document.getElementById('qnav-book-' + id);
+  if (!el) return;
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.qnav-book').forEach(function(b) { b.classList.remove('open'); });
+  if (!wasOpen) el.classList.add('open');
+}
+
+var _qnavFocusIndex = -1;
+function qnavKeydown(e) {
+  var results = document.querySelectorAll('#qnav-search-results .qnav-verse-result, #qnav-search-results .qnav-book-result');
+  if (!results.length) return;
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    _qnavFocusIndex = Math.min(_qnavFocusIndex + 1, results.length - 1);
+    _qnavApplyFocus(results);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    _qnavFocusIndex = Math.max(_qnavFocusIndex - 1, -1);
+    if (_qnavFocusIndex === -1) {
+      results.forEach(function(r) { r.classList.remove('focused'); });
+      document.getElementById('qnav-search-input').focus();
+    } else { _qnavApplyFocus(results); }
+  } else if (e.key === 'Enter' && _qnavFocusIndex >= 0) {
+    e.preventDefault();
+    results[_qnavFocusIndex].click();
+  }
+}
+function _qnavApplyFocus(results) {
+  results.forEach(function(r, i) {
+    r.classList.toggle('focused', i === _qnavFocusIndex);
+    if (i === _qnavFocusIndex) r.scrollIntoView({ block: 'nearest' });
+  });
+}
+
+function qnavFilter(q) {
+  q = q.trim();
+  var ql = q.toLowerCase();
+  var words = ql.split(/\s+/).filter(function(w) { return w.length > 1; });
+  var panel = document.getElementById('qnav-search-results');
+  _qnavFocusIndex = -1;
+  if (!q) {
+    if (panel) { panel.innerHTML = ''; panel.style.display = 'none'; }
+    document.querySelectorAll('.qnav-ch-grid').forEach(function(g) { g.style.display = ''; });
+    document.querySelectorAll('.qnav-book').forEach(function(b) { b.style.display = ''; });
+    return;
+  }
+  document.querySelectorAll('.qnav-ch-grid').forEach(function(g) { g.style.display = 'none'; });
+  document.querySelectorAll('.qnav-book').forEach(function(b) { b.style.display = 'none'; });
+
+  var books = window.BOOKS || [];
+  var bookMatches = books.filter(function(b) { return b.live > 0 && b.name.toLowerCase().indexOf(ql) > -1; });
+
+  var verseMatches = ql.length >= 2 ? (window.VERSES_ALL || []).map(function(v) {
+    var text = v.text.toLowerCase(), ref = v.ref.toLowerCase(), score = 0;
+    for (var i = 0; i < words.length; i++) {
+      if (text.indexOf(words[i]) > -1) score += 2;
+      else if (ref.indexOf(words[i]) > -1) score += 1;
+    }
+    if (text.indexOf(ql) > -1) score += 5;
+    return { ref: v.ref, short: v.short, text: v.text, url: v.url, score: score };
+  }).filter(function(v) { return v.score > 0; })
+    .sort(function(a, b) { return b.score - a.score; })
+    .slice(0, 12) : [];
+
+  function hl(text) {
+    var out = text;
+    if (ql.length > 2) { var rx = new RegExp('(' + ql.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + ')','gi'); out = out.replace(rx,'<em>$1</em>'); }
+    for (var i = 0; i < words.length; i++) { var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + ')','gi'); out = out.replace(rx2,'<em>$1</em>'); }
+    return out;
+  }
+
+  var html = '';
+  for (var i = 0; i < bookMatches.length; i++) {
+    var b = bookMatches[i];
+    var firstUrl = '../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name.replace(/ /g,'_') + '_1.html';
+    html += '<a href="' + firstUrl + '" class="qnav-book-result"><span style="font-family:\'EB Garamond\',serif;font-size:.95rem;color:#c8c0a0;">' + hl(b.name) + '</span><span class="qnav-book-result-meta">' + b.live + ' ch &middot; ' + b.testament + '</span></a>';
+  }
+  if (verseMatches.length === 0 && bookMatches.length === 0) {
+    html = '<p class="qnav-no-results">No results for \u201c' + q + '\u201d</p>';
+  } else {
+    for (var j = 0; j < verseMatches.length; j++) {
+      var v = verseMatches[j];
+      var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
+      html += '<a href="../../' + v.url + '" class="qnav-verse-result"><span class="qnav-vref">' + v.short + '</span><span class="qnav-vsnip">' + hl(snippet) + '</span></a>';
+    }
+  }
+  if (!panel) {
+    var p = document.createElement('div'); p.id = 'qnav-search-results'; p.className = 'qnav-search-results';
+    var body = document.querySelector('.qnav-body'); if (body) body.insertBefore(p, body.firstChild);
+    p.innerHTML = html; p.style.display = 'block';
+  } else { panel.innerHTML = html; panel.style.display = 'block'; }
+}
+
+// ── Highlight current chapter and open its book on page load ────────────
+document.addEventListener('DOMContentLoaded', function() {
+  var cur = window.QNAV_CURRENT || '';
+  if (!cur) return;
+  var parts = cur.split('/');
+  if (parts.length < 2) return;
+  var bookDir = parts[0];
+  var fname   = parts[1];
+  var chNum   = fname.replace(/^.*_(\d+)\\.html$/, '$1');
+  var chUrl   = '../' + cur;
+
+  document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
+    if (btn.getAttribute('href') === chUrl) {
+      btn.classList.add('current');
+    }
+  });
+
+  var bookEl = document.getElementById('qnav-book-' + bookDir);
+  if (bookEl) {
+    bookEl.classList.add('open');
+    var testamentDiv = bookEl.closest('.qnav-testament');
+    if (testamentDiv && !testamentDiv.classList.contains('open')) {
+      testamentDiv.classList.add('open');
+    }
+  }
+});
+"""
+
+
 def rebuild_qnav_js():
     """
     Regenerate /qnav.js from the current REGISTRY.
@@ -3039,7 +3214,15 @@ def rebuild_qnav_js():
     css_end   = existing.find("';\n  document.head")
     css_blob  = existing[css_start:css_end]  # preserve exactly
 
-    global_js = existing[existing.find('// ── Global qnav functions'):]
+    global_js = ''
+    for marker in ['var _versesLoaded', 'function qnavToggleTestament', 'function openQnav', '// ── Global qnav functions']:
+        pos = existing.find(marker)
+        if pos > -1:
+            global_js = existing[pos:]
+            break
+    if not global_js or 'function openQnav' not in global_js:
+        # Functions were lost — restore from canonical source
+        global_js = _QNAV_FUNCTIONS
 
     # ── 2. Build the HTML panel from REGISTRY ───────────────────────────
     def ch_links(book_dir, book_name, total, live, test_dir):
@@ -3202,7 +3385,7 @@ def rebuild_verses_js(translation='niv'):
 
         with open(book_js) as f: raw = f.read()
         # Extract JSON array from "var VERSES_X=[...];"
-        m = re.search(r'var VERSES_\w+=(\[.*\]);', raw, re.DOTALL)
+        m = re.search(r'var VERSES_\w+=(\[.*\]);', raw)
         if not m:
             print(f'  SKIP {book_js} (cannot parse)')
             continue
@@ -3210,8 +3393,7 @@ def rebuild_verses_js(translation='niv'):
 
         # Ensure url field uses correct path (same for all translations)
         for entry in book_verses:
-            if 'url' not in entry or not entry['url']:
-                entry['url'] = f'{test_dir_lower}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{entry["ch"]}.html'
+            entry['url'] = f'{test_dir_lower}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{entry["ch"]}.html'
 
         all_verses.extend(book_verses)
 
