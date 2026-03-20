@@ -1604,7 +1604,7 @@ def ensure_tx_book_var(book_name):
     if not os.path.exists(tx_path):
         return
 
-    var_name = "VERSES_" + book_name.upper()
+    var_name = "VERSES_" + book_name.upper().replace(' ', '_')
     quoted   = chr(39) + var_name + chr(39)
 
     with open(tx_path, encoding="utf-8") as f:
@@ -1618,7 +1618,7 @@ def ensure_tx_book_var(book_name):
         print("  [translation.js] BOOK_VARS not found")
         return
 
-    reg_vars = ["VERSES_" + r[1].upper() for r in REGISTRY]
+    reg_vars = ["VERSES_" + r[1].upper().replace(' ', '_') for r in REGISTRY]
     existing = re.findall(r"VERSES_[A-Z_]+", bv_match.group(1))
     combined = list(dict.fromkeys(existing + [var_name]))
     ordered  = [v for v in reg_vars if v in combined]
@@ -3152,9 +3152,9 @@ def rebuild_verses_js(translation='niv'):
         # Re-write the book file (normalises format)
         payload = _json.dumps(book_verses, separators=(',', ':'))
         with open(book_js, 'w') as f:
-            f.write(f'var VERSES_{book_name.upper()}={payload};\n')
+            f.write(f'var VERSES_{book_name.upper().replace(" ","_")}={payload};\n')
             f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
-            f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper()});\n')
+            f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper().replace(" ","_")});\n')
         total_count += len(book_verses)
         print(f'  verses/{slug}/{test_dir_lower}/{book_dir}.js: {len(book_verses)} verses')
 

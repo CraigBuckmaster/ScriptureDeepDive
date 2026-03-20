@@ -952,6 +952,46 @@ if _missing_css:
 else:
     ok(f'All {len(_used_scholars)} scholars have button CSS colors in shared.py')
 
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 18. VERSE FILE INTEGRITY + TRANSLATION TOGGLE
+# ═══════════════════════════════════════════════════════════════════════════
+import glob as _glob
+
+# Check all ESV+NIV verse files for space-in-var-name bugs
+_bad_vars = []
+for _vpath in sorted(_glob.glob(os.path.join(REPO, 'verses', '*', '*', '*.js'))):
+    with open(_vpath) as _vf: _vline = _vf.readline()
+    _vm = re.match(r'var\s+(.*?)=', _vline)
+    if _vm and ' ' in _vm.group(1).strip():
+        _bad_vars.append(os.path.relpath(_vpath, REPO))
+if _bad_vars:
+    fail(f"Space in JS var name in verse files: {', '.join(_bad_vars)}")
+else:
+    ok('All verse files have valid JS variable names')
+
+# Check BOOK_VARS in translation.js has no spaces
+with open(os.path.join(REPO, 'translation.js')) as _tf: _tx = _tf.read()
+_bv_match = re.search(r"BOOK_VARS\s*=\s*\[([^\]]+)\]", _tx)
+if _bv_match:
+    _bv_entries = re.findall(r"'(VERSES_[^']+)'", _bv_match.group(1))
+    _bad_bv = [v for v in _bv_entries if ' ' in v]
+    if _bad_bv:
+        fail(f"Space in BOOK_VARS entry: {', '.join(_bad_bv)}")
+    else:
+        ok(f'BOOK_VARS entries all valid ({len(_bv_entries)} books)')
+
+# Check every live book has its BOOK_VARS entry
+_live_names = set()
+for bd, bn, tot, live, testament, td in _shared.REGISTRY:
+    if live > 0:
+        _live_names.add('VERSES_' + bn.upper().replace(' ', '_'))
+_missing_bv = _live_names - set(_bv_entries) if _bv_match else _live_names
+if _missing_bv:
+    fail(f"Live books missing from BOOK_VARS: {', '.join(sorted(_missing_bv))}")
+else:
+    ok(f'All {len(_live_names)} live books registered in BOOK_VARS')
+
 # ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
