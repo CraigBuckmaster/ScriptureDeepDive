@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A.A. Anderson &mdash; Scripture Walkthrough</title>
+<link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#0c0a07">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root { --accent:#c8d0a0; }
+:root {
+  --bg:#0f0d0a; --bg2:#181410; --bg3:#1e1a12;
+  --border:#3a2e18; --border2:#2a2210;
+  --gold:#c9a84c; --gold-dim:#8b6914; --gold-bright:#e8c870;
+  --text:#f0e8d8; --text-dim:#b8a888; --text-muted:#7a6a50;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:17px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* Nav */
+.com-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.5rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.com-nav-back, .com-nav-all {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--gold-dim);
+  text-decoration:none;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
+.com-nav-items {
+  display:flex;
+  gap:.2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.com-nav-item {
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:.3rem .6rem;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.com-nav-item:hover { color:var(--text-dim); }
+
+/* Bio layout */
+.bio-wrap {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 1.5rem 6rem;
+}
+
+/* Header */
+.bio-header {
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+.bio-eyebrow {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.8rem;
+}
+.bio-name {
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.06em;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.bio-tradition {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.78rem;
+  color:var(--text-muted);
+  letter-spacing:.08em;
+}
+.bio-tradition span {
+  color:var(--accent);
+}
+
+/* Quote block */
+.bio-quote {
+  margin:2rem 0;
+  padding:1.2rem 1.4rem;
+  border-left:3px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  border-radius:0 4px 4px 0;
+}
+.bio-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--text-dim);
+  line-height:1.7;
+  margin-bottom:.5rem;
+}
+.bio-quote cite {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  font-style:normal;
+  letter-spacing:.04em;
+}
+
+/* Sections */
+.bio-section {
+  margin-bottom:2.5rem;
+}
+.bio-section-title {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.9rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--border2);
+}
+.bio-section p {
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.bio-section p:last-child { margin-bottom:0; }
+
+/* Works list */
+.bio-works {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.bio-works li {
+  padding:.7rem 1rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0;
+}
+.bio-works .work-title {
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  color:var(--text);
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-works .work-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+/* Appears in tag list */
+.bio-appears {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.bio-appears a {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  background:rgba(0,0,0,.2);
+  padding:.2rem .55rem;
+  border-radius:3px;
+  text-decoration:none;
+  opacity:.8;
+  transition:opacity .15s;
+}
+.bio-appears a:hover { opacity:1; }
+
+/* Other scholars strip */
+.bio-others {
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.bio-others-title {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.bio-others-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:.6rem;
+}
+.bio-other-card {
+  display:block;
+  padding:.7rem .9rem;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-left:3px solid var(--other-accent,var(--gold-dim));
+  border-radius:0 4px 4px 0;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.bio-other-card:hover { border-color:var(--other-accent,var(--gold)); }
+.bio-other-name {
+  font-family:'Cinzel',serif;
+  font-size:.65rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--other-accent,var(--gold-dim));
+  display:block;
+  margin-bottom:.2rem;
+}
+.bio-other-desc {
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+
+/* Footer */
+footer {
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.72rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border2);
+  line-height:1.7;
+}
+
+</style></head><body>
+<nav class="com-nav"><div class="com-nav-items"><a href="index.html" class="com-nav-back">&#8592; Scholars</a><a href="../index.html" class="com-nav-all">Library</a></div></nav>
+<div class="bio-wrap">
+<div class="bio-header"><p class="bio-eyebrow">Historical-Critical &middot; WBC Commentary &middot; 20th Century</p>
+<h1 class="bio-name">A.A. Anderson</h1>
+<p class="bio-tradition">1927&ndash;2009 &middot; <span>OT Scholar</span> &middot; University of Manchester &middot; WBC 2 Samuel</p></div>
+<div class="bio-quote"><blockquote>&ldquo;The Succession Narrative is one of the finest examples of ancient historiography &mdash; psychologically realistic, theologically profound, and literarily sophisticated.&rdquo;</blockquote></div>
+<div class="bio-section"><h2 class="bio-section-title">Biography</h2><p>A.A. (Arnold Albert) Anderson was a British OT scholar at the University of Manchester known for careful, philologically grounded commentary on the Hebrew text.</p></div>
+<div class="bio-section"><h2 class="bio-section-title">Interpretive Approach</h2><p>Anderson reads 2 Samuel with close attention to the Hebrew text, text-critical questions, and the literary structure of the Succession Narrative. His WBC commentary provides detailed verse-by-verse analysis with extensive engagement with ancient versions and modern scholarship.</p></div>
+<div class="bio-section"><h2 class="bio-section-title">Theological Tradition</h2><p>Anderson writes from a centrist scholarly perspective, engaging critically with both conservative and liberal scholarship. His approach is measured and judicious.</p></div>
+<div class="bio-section"><h2 class="bio-section-title">Key Works</h2><p><strong>2 Samuel</strong> (Word Biblical Commentary, 1989) &mdash; Detailed philological commentary with extensive text-critical apparatus.</p></div>
+<div class="bio-section"><h2 class="bio-section-title">Appears In</h2><p>Anderson notes appear throughout 2 Samuel.</p>
+<div class="bio-appears"><a href="../ot/2_samuel/2_Samuel_1.html">2 Sam 1</a><a href="../ot/2_samuel/2_Samuel_2.html">2 Sam 2</a><a href="../ot/2_samuel/2_Samuel_3.html">2 Sam 3</a><a href="../ot/2_samuel/2_Samuel_4.html">2 Sam 4</a><a href="../ot/2_samuel/2_Samuel_5.html">2 Sam 5</a><a href="../ot/2_samuel/2_Samuel_6.html">2 Sam 6</a><a href="../ot/2_samuel/2_Samuel_7.html">2 Sam 7</a><a href="../ot/2_samuel/2_Samuel_8.html">2 Sam 8</a><a href="../ot/2_samuel/2_Samuel_9.html">2 Sam 9</a><a href="../ot/2_samuel/2_Samuel_10.html">2 Sam 10</a><a href="../ot/2_samuel/2_Samuel_11.html">2 Sam 11</a><a href="../ot/2_samuel/2_Samuel_12.html">2 Sam 12</a><a href="../ot/2_samuel/2_Samuel_13.html">2 Sam 13</a><a href="../ot/2_samuel/2_Samuel_14.html">2 Sam 14</a><a href="../ot/2_samuel/2_Samuel_15.html">2 Sam 15</a><a href="../ot/2_samuel/2_Samuel_16.html">2 Sam 16</a><a href="../ot/2_samuel/2_Samuel_17.html">2 Sam 17</a><a href="../ot/2_samuel/2_Samuel_18.html">2 Sam 18</a><a href="../ot/2_samuel/2_Samuel_19.html">2 Sam 19</a><a href="../ot/2_samuel/2_Samuel_20.html">2 Sam 20</a><a href="../ot/2_samuel/2_Samuel_21.html">2 Sam 21</a><a href="../ot/2_samuel/2_Samuel_22.html">2 Sam 22</a><a href="../ot/2_samuel/2_Samuel_23.html">2 Sam 23</a><a href="../ot/2_samuel/2_Samuel_24.html">2 Sam 24</a></div></div>
+<div class="bio-others"><p class="bio-others-title">Other Scholars</p><div class="bio-others-grid"><a href="alter.html" class="bio-other-card" style="--other-accent:#d4a853"><span class="bio-other-name">Alter</span><span class="bio-other-desc">Scholar</span></a><a href="ashley.html" class="bio-other-card" style="--other-accent:#f0c080"><span class="bio-other-name">Ashley</span><span class="bio-other-desc">Scholar</span></a><a href="bergen.html" class="bio-other-card" style="--other-accent:#d8a080"><span class="bio-other-name">Bergen</span><span class="bio-other-desc">Scholar</span></a><a href="block.html" class="bio-other-card" style="--other-accent:#e0a070"><span class="bio-other-name">Block</span><span class="bio-other-desc">Scholar</span></a><a href="calvin.html" class="bio-other-card" style="--other-accent:#7ba7cc"><span class="bio-other-name">Calvin</span><span class="bio-other-desc">Scholar</span></a><a href="catena.html" class="bio-other-card" style="--other-accent:#b888d8"><span class="bio-other-name">Catena</span><span class="bio-other-desc">Scholar</span></a><a href="craigie.html" class="bio-other-card" style="--other-accent:#d8b8f0"><span class="bio-other-name">Craigie</span><span class="bio-other-desc">Scholar</span></a><a href="hess.html" class="bio-other-card" style="--other-accent:#60d0c0"><span class="bio-other-name">Hess</span><span class="bio-other-desc">Scholar</span></a><a href="howard.html" class="bio-other-card" style="--other-accent:#90b0e0"><span class="bio-other-name">Howard</span><span class="bio-other-desc">Scholar</span></a><a href="hubbard.html" class="bio-other-card" style="--other-accent:#a8c870"><span class="bio-other-name">Hubbard</span><span class="bio-other-desc">Scholar</span></a><a href="keener.html" class="bio-other-card" style="--other-accent:#a8c8f8"><span class="bio-other-name">Keener</span><span class="bio-other-desc">Scholar</span></a><a href="macarthur.html" class="bio-other-card" style="--other-accent:#e05a6a"><span class="bio-other-name">Macarthur</span><span class="bio-other-desc">Scholar</span></a><a href="marcus.html" class="bio-other-card" style="--other-accent:#70d8d8"><span class="bio-other-name">Marcus</span><span class="bio-other-desc">Scholar</span></a><a href="milgrom.html" class="bio-other-card" style="--other-accent:#78d8a8"><span class="bio-other-name">Milgrom</span><span class="bio-other-desc">Scholar</span></a><a href="netbible.html" class="bio-other-card" style="--other-accent:#d8e8d0"><span class="bio-other-name">Netbible</span><span class="bio-other-desc">Scholar</span></a><a href="rhoads.html" class="bio-other-card" style="--other-accent:#e8c060"><span class="bio-other-name">Rhoads</span><span class="bio-other-desc">Scholar</span></a><a href="robertson.html" class="bio-other-card" style="--other-accent:#c8d870"><span class="bio-other-name">Robertson</span><span class="bio-other-desc">Scholar</span></a><a href="sarna.html" class="bio-other-card" style="--other-accent:#4ec9b0"><span class="bio-other-name">Sarna</span><span class="bio-other-desc">Scholar</span></a><a href="tigay.html" class="bio-other-card" style="--other-accent:#e8d090"><span class="bio-other-name">Tigay</span><span class="bio-other-desc">Scholar</span></a><a href="tsumura.html" class="bio-other-card" style="--other-accent:#88b8d8"><span class="bio-other-name">Tsumura</span><span class="bio-other-desc">Scholar</span></a><a href="waltke.html" class="bio-other-card" style="--other-accent:#e8a0b8"><span class="bio-other-name">Waltke</span><span class="bio-other-desc">Scholar</span></a><a href="webb.html" class="bio-other-card" style="--other-accent:#90c890"><span class="bio-other-name">Webb</span><span class="bio-other-desc">Scholar</span></a></div></div>
+</div></body></html>

@@ -46,6 +46,7 @@ BOOK_ROSTER = [
     ('joshua',       'Joshua',       range(1, 25), 'ot'),
     ('judges',       'Judges',       range(1, 22), 'ot'),
     ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
+    ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -70,6 +71,7 @@ SCHOLAR_KEYS = {
     'Joshua':      ['hess',     'howard', 'calvin', 'netbible'],
     'Judges':      ['block',    'webb',   'calvin', 'netbible'],
     '1 Samuel':    ['bergen',   'tsumura','calvin', 'netbible'],
+    '2 Samuel':    ['bergen',   'anderson','calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -308,7 +310,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -391,7 +393,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]
