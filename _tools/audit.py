@@ -43,6 +43,7 @@ BOOK_ROSTER = [
     ('leviticus','Leviticus',range(1, 28), 'ot'),
     ('numbers',      'Numbers',      range(1, 37), 'ot'),
     ('deuteronomy',  'Deuteronomy',  range(1, 35), 'ot'),
+    ('joshua',       'Joshua',       range(1, 25), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -64,6 +65,7 @@ SCHOLAR_KEYS = {
     'Leviticus':   ['milgrom',  'calvin', 'netbible'],
     'Numbers':     ['milgrom',  'ashley', 'calvin', 'netbible'],
     'Deuteronomy': ['craigie',  'tigay',  'calvin', 'netbible'],
+    'Joshua':      ['hess',     'howard', 'calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -302,7 +304,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -385,7 +387,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]
