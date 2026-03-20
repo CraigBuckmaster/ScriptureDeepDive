@@ -298,6 +298,7 @@ REGISTRY = [
     ('numbers',      'Numbers',      36, 36, 'OT', 'ot'),
     ('deuteronomy', 'Deuteronomy',  34, 34, 'OT', 'ot'),
     ('joshua',      'Joshua',       24, 24, 'OT', 'ot'),
+    ('judges',      'Judges',       21, 21, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -313,6 +314,7 @@ BOOK_PREFIX = {
     'exodus':   'ex',
     'deuteronomy': 'deu',
     'joshua':   'josh',
+    'judges':   'judg',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -409,6 +411,8 @@ COMMENTATOR_SCOPE = {
     'tigay':     ['deuteronomy'],           # Jeffrey Tigay, JPS Torah Deuteronomy (1996)
     'hess':      ['joshua'],                # Richard Hess, TOTC Joshua (1996)
     'howard':    ['joshua'],                # David Howard, NAC Joshua (1998)
+    'block':     ['judges'],                # Daniel Block, NAC Judges-Ruth (1999)
+    'webb':      ['judges'],                # Barry Webb, NICOT Judges (2012)
 }
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
@@ -536,6 +540,25 @@ BOOK_META = {
         'vhl_time': ['day','days','year','years','time','generation','month'],
     },
 
+    'judges': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. Jewish tradition suggests Samuel, but the text is '
+                 'anonymous. The recurring phrase &ldquo;in those days there was no king in Israel&rdquo; '
+                 '(17:6; 18:1; 19:1; 21:25) implies composition during or after the early monarchy.<br><br>'
+                 '<strong>Date:</strong> The events span c.1380&ndash;1050 BC, from Othniel to the eve of '
+                 'the monarchy. The repeated cycle &mdash; sin, oppression, cry, deliverance, rest &mdash; '
+                 'covers roughly 350 years.<br><br>'
+                 '<strong>Theme:</strong> The downward spiral of covenant unfaithfulness. Each judge cycle '
+                 'descends further into moral chaos, culminating in civil war (ch.19&ndash;21). '
+                 'The refrain: &ldquo;Everyone did what was right in his own eyes&rdquo; (21:25).'),
+        'vhl_people': ['Othniel','Ehud','Deborah','Barak','Gideon','Abimelech','Jephthah',
+                        'Samson','Delilah','God','LORD','Israel','Philistines'],
+        'vhl_places': ['Canaan','Gilead','Shiloh','Shechem','Gaza','Bethlehem','Dan',
+                        'Mizpah','Ophrah','Timnah','Hazor'],
+        'vhl_key': ['evil','cry','deliver','judge','rest','oppress','forsake','serve',
+                     'covenant','idolatry','Baal','Ashtoreth','cycle','king'],
+        'vhl_time': ['day','days','year','years','time','generation','month'],
+    },
     'ruth': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Unknown; Jewish tradition attributes authorship to Samuel.\n\n'
@@ -1358,6 +1381,8 @@ def commentary_panel(pid, commentator_key, notes):
     'tigay':     ('Tigay \u2014 JPS Deuteronomy',     'Jeffrey H. Tigay, Deuteronomy, JPS Torah Commentary (1996) \u2014 Scholarly Paraphrase'),
     'hess':      ('Hess \u2014 TOTC Joshua',          'Richard S. Hess, Joshua, Tyndale OT Commentary (1996) \u2014 Scholarly Paraphrase'),
     'howard':    ('Howard \u2014 NAC Joshua',          'David M. Howard Jr., Joshua, New American Commentary (1998) \u2014 Scholarly Paraphrase'),
+    'block':     ('Block \u2014 NAC Judges',           'Daniel I. Block, Judges, Ruth, New American Commentary (1999) \u2014 Scholarly Paraphrase'),
+    'webb':      ('Webb \u2014 NICOT Judges',           'Barry G. Webb, The Book of Judges, NICOT (2012) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -2156,6 +2181,17 @@ def _auto_src(book_dir, ch, title, all_text):
              'Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.',
              'The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography.'),
         ],
+        'judges': [
+            ('Amarna Letters',
+             'Letters from Canaanite vassal kings describe the political fragmentation and inter-city rivalries characterising the Judges period.',
+             'The correspondence confirms Canaan\'s decentralised city-state structure — the landscape in which tribal judges operated as regional deliverers.'),
+            ('Merneptah Stele (c.1207 BC)',
+             'The earliest extra-biblical mention of Israel in Canaan, dating to the period of the Judges.',
+             'Places Israel in Canaan during the Judges period, corroborating the biblical settlement chronology.'),
+            ('Ugaritic Baal Cycle (KTU 1.1-6)',
+             'Describes Baal\'s conflict with Mot and Yam — the religious background to Judges\' repeated Baal worship.',
+             'Understanding Canaanite religion is essential: Israel was drawn to a sophisticated fertility cult, not abstract idolatry.'),
+        ],
         'joshua': [
             ('Amarna Letters (EA 285-290)', 
              'Letters from Canaanite vassal kings to Egyptian Pharaoh describe &ldquo;Habiru&rdquo; invaders destabilising city-states.',
@@ -2277,6 +2313,27 @@ def _auto_textual(book_dir, ch, title):
              'P45 and early papyrus witnesses',
              'The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.',
              'The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation.'),
+        ],
+        'judges': [
+            ('Amarna Letters',
+             'Letters from Canaanite vassal kings describe the political fragmentation and inter-city rivalries characterising the Judges period.',
+             'The correspondence confirms Canaan\'s decentralised city-state structure — the landscape in which tribal judges operated as regional deliverers.'),
+            ('Merneptah Stele (c.1207 BC)',
+             'The earliest extra-biblical mention of Israel in Canaan, dating to the period of the Judges.',
+             'Places Israel in Canaan during the Judges period, corroborating the biblical settlement chronology.'),
+            ('Ugaritic Baal Cycle (KTU 1.1-6)',
+             'Describes Baal\'s conflict with Mot and Yam — the religious background to Judges\' repeated Baal worship.',
+             'Understanding Canaanite religion is essential: Israel was drawn to a sophisticated fertility cult, not abstract idolatry.'),
+        ],
+        'judges': [
+            ('LXX Judges (Vaticanus vs Alexandrinus)',
+             'Two distinct Greek text traditions',
+             'Judges has two significantly different LXX traditions (B and A), suggesting independent translation from different Hebrew Vorlagen.',
+             'The textual diversity indicates a complex transmission history with multiple Hebrew editions.'),
+            ('4QJudg\u1d43 (Dead Sea Scrolls)',
+             'Fragmentary Qumran witness',
+             'Cave 4 fragments generally align with MT but show minor variants in spelling.',
+             'The Qumran evidence supports MT reliability while confirming textual variation existed.'),
         ],
         'joshua': [
             ('LXX Joshua', 'Shorter text form',
@@ -2486,6 +2543,8 @@ def build_chapter(book_dir, ch, data):
         if 'ashley'     in sec and in_scope('ashley'):     btns.append(('ashley',    'Ashley',      f'{sid}-ashley'))
         if 'hess'       in sec and in_scope('hess'):       btns.append(('hess',      'Hess',        f'{sid}-hess'))
         if 'howard'     in sec and in_scope('howard'):     btns.append(('howard',    'Howard',      f'{sid}-howard'))
+        if 'block'      in sec and in_scope('block'):      btns.append(('block',     'Block',       f'{sid}-block'))
+        if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -2515,6 +2574,8 @@ def build_chapter(book_dir, ch, data):
         if 'tigay'    in sec and in_scope('tigay'):     panels_html += commentary_panel(f'{sid}-tigay',    'tigay',     sec['tigay'])
         if 'hess'     in sec and in_scope('hess'):      panels_html += commentary_panel(f'{sid}-hess',     'hess',      sec['hess'])
         if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
+        if 'block'    in sec and in_scope('block'):     panels_html += commentary_panel(f'{sid}-block',    'block',     sec['block'])
+        if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'
