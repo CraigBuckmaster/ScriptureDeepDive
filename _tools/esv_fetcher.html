@@ -49,6 +49,10 @@ td.status-error{color:var(--red);}
   <button id="btnAll" onclick="startFetch(true)">Fetch ALL 66 Books</button>
   <button id="btnDownload" onclick="downloadZip()" disabled>Download ZIP</button>
 </div>
+<div class="input-row" style="font-size:.8rem;color:var(--text-dim);">
+  <label>Delay between books: <input type="range" id="delaySlider" min="3" max="15" value="5" oninput="document.getElementById('delayVal').textContent=this.value"> <b id="delayVal">5</b>s</label>
+  <span style="margin-left:1rem;">ESV API is rate-limited (~5 req/min). Longer delays = safer. 429s trigger automatic 60s backoff.</span>
+</div>
 
 <div class="controls">
   <span style="color:var(--text-dim);font-size:.75rem;margin-right:.3rem;">Show:</span>
@@ -245,28 +249,85 @@ function buildJsFile(book, verses) {
 // FETCH ONE BOOK
 // ══════════════════════════════════════════════════════════════════════
 async function fetchOneBook(book, apiKey) {
-  // For large books like Psalms (150ch), fetch in chunks to avoid API timeout
-  const CHUNK = 50;
+  // ESV API can return ~500 verses per request max.
+  // Fetch whole book if small, chunk large books (Psalms=150ch, Isaiah=66ch etc.)
+  const CHUNK = 30; // conservative chunk size
   let allText = '';
+  let retries = 0;
+  const MAX_RETRIES = 3;
 
   if (book.ch > CHUNK) {
     for (let start = 1; start <= book.ch; start += CHUNK) {
       const end = Math.min(start + CHUNK - 1, book.ch);
       const ref = encodeURIComponent(`${book.name} ${start}-${end}`);
       const url = `${ESV_API}?q=${ref}&${ESV_PARAMS}`;
-      const resp = await fetch(url, { headers: { 'Authorization': `Token ${apiKey}` } });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
-      const data = await resp.json();
-      allText += (data.passages?.[0] || '');
-      if (end < book.ch) await sleep(500); // brief pause between chunks
+
+      let success = false;
+      retries = 0;
+      while (!success && retries < MAX_RETRIES) {
+        try {
+          const resp = await fetch(url, { headers: { 'Authorization': `Token ${apiKey}` } });
+          if (resp.status === 429) {
+            retries++;
+            const wait = 60 * retries; // 60s, 120s, 180s
+            log(`  ⚠ Rate limited on ${book.name} ${start}-${end} — waiting ${wait}s (attempt ${retries}/${MAX_RETRIES})...`, 'log-info');
+            await sleep(wait * 1000);
+            continue;
+          }
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
+          const data = await resp.json();
+          allText += (data.passages?.[0] || '');
+          success = true;
+        } catch (err) {
+          if (err.message.includes('429')) {
+            retries++;
+            const wait = 60 * retries;
+            log(`  ⚠ Rate limited — waiting ${wait}s (attempt ${retries}/${MAX_RETRIES})...`, 'log-info');
+            await sleep(wait * 1000);
+          } else {
+            throw err;
+          }
+        }
+      }
+      if (!success) throw new Error(`Failed after ${MAX_RETRIES} retries on ${book.name} ${start}-${end}`);
+
+      if (end < book.ch) {
+        const chunkDelay = parseInt(document.getElementById('delaySlider').value) * 1000;
+        await sleep(chunkDelay);
+      }
     }
   } else {
     const ref = encodeURIComponent(`${book.name} 1-${book.ch}`);
     const url = `${ESV_API}?q=${ref}&${ESV_PARAMS}`;
-    const resp = await fetch(url, { headers: { 'Authorization': `Token ${apiKey}` } });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
-    const data = await resp.json();
-    allText = data.passages?.[0] || '';
+
+    let success = false;
+    retries = 0;
+    while (!success && retries < MAX_RETRIES) {
+      try {
+        const resp = await fetch(url, { headers: { 'Authorization': `Token ${apiKey}` } });
+        if (resp.status === 429) {
+          retries++;
+          const wait = 60 * retries;
+          log(`  ⚠ Rate limited on ${book.name} — waiting ${wait}s (attempt ${retries}/${MAX_RETRIES})...`, 'log-info');
+          await sleep(wait * 1000);
+          continue;
+        }
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
+        const data = await resp.json();
+        allText = data.passages?.[0] || '';
+        success = true;
+      } catch (err) {
+        if (err.message.includes('429')) {
+          retries++;
+          const wait = 60 * retries;
+          log(`  ⚠ Rate limited — waiting ${wait}s (attempt ${retries}/${MAX_RETRIES})...`, 'log-info');
+          await sleep(wait * 1000);
+        } else {
+          throw err;
+        }
+      }
+    }
+    if (!success) throw new Error(`Failed after ${MAX_RETRIES} retries on ${book.name}`);
   }
 
   return allText;
@@ -292,7 +353,8 @@ async function startFetch(fetchAll) {
   totalVerses = 0;
 
   const toFetch = fetchAll ? BOOKS : BOOKS.filter(b => !HAVE_ESV.has(b.dir));
-  log(`Fetching ${toFetch.length} books from ESV API...`, 'log-info');
+  const userDelay = parseInt(document.getElementById('delaySlider').value) * 1000;
+  log(`Fetching ${toFetch.length} books from ESV API (${userDelay/1000}s delay between books)...`, 'log-info');
   log(`1 request per book (large books chunked), 1s delay between books.\n`, 'log-info');
 
   for (let i = 0; i < toFetch.length; i++) {
@@ -307,6 +369,16 @@ async function startFetch(fetchAll) {
     try {
       const rawText = await fetchOneBook(book, apiKey);
       const verses = parseBook(rawText, book);
+
+      // Safety: don't save 0-verse results (protects against rate-limit wipeouts)
+      if (verses.length === 0) {
+        document.getElementById('status-' + idx).textContent = '⚠ 0 verses — skipped';
+        document.getElementById('status-' + idx).className = 'status-error';
+        log(`⚠ ${book.name}: 0 verses parsed — SKIPPED (won't overwrite good data)`, 'log-err');
+        if (i < toFetch.length - 1) await sleep(userDelay);
+        continue;
+      }
+
       const jsContent = buildJsFile(book, verses);
       const filePath = `verses/esv/${book.t}/${book.dir}.js`;
 
@@ -322,21 +394,13 @@ async function startFetch(fetchAll) {
 
       log(`✓ ${book.name}: ${verses.length} verses (${book.ch} chapters)`, 'log-ok');
 
-      // Polite delay
-      if (i < toFetch.length - 1) await sleep(1000);
+      // Polite delay between books
+      if (i < toFetch.length - 1) await sleep(userDelay);
 
     } catch (err) {
       document.getElementById('status-' + idx).textContent = '✗ Error';
       document.getElementById('status-' + idx).className = 'status-error';
       log(`✗ ${book.name}: ${err.message}`, 'log-err');
-
-      // If rate limited, wait longer and retry
-      if (err.message.includes('429')) {
-        log('  Rate limited — waiting 30s before retry...', 'log-info');
-        await sleep(30000);
-        i--; // retry this book
-        continue;
-      }
     }
   }
 
