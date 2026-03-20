@@ -69,13 +69,11 @@ BOOKS = [
 
 def fetch_text(book_name, ch_start, ch_end, total_chapters, api_key):
     """Fetch a range of chapters. Returns raw text or None."""
-    # Single-chapter books: just use the book name — "Obadiah 1" means verse 1!
-    if total_chapters == 1:
+    # If requesting the entire book, use just the book name — avoids all ambiguity
+    if ch_start == 1 and ch_end == total_chapters:
         ref = urllib.parse.quote(book_name)
     else:
-        # Use explicit chapter:verse format to avoid ambiguity
-        # "Ezra 1-10" could be misread as "Ezra ch1 v1-10"
-        # "Ezra 1:1-10:99" is unambiguous: chapter 1 verse 1 through chapter 10 verse 99
+        # Chunked request for large books: explicit chapter:verse format
         ref = urllib.parse.quote(f'{book_name} {ch_start}:1-{ch_end}:999')
     url = f'{ESV_API}?q={ref}&{ESV_PARAMS}'
     req = urllib.request.Request(url, headers={'Authorization': f'Token {api_key}'})
