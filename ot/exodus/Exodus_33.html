@@ -44,17 +44,7 @@
 </div>
 </div>
 </div></main>
-<script>
-function tog(btn,id){
-  var p=document.getElementById(id);
-  if(!p)return;
-  var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
-  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
-  if(willOpen){p.classList.add('open');btn.classList.add('active');}
-}
-function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-</script>
+<script src="../../tog.js"></script>
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
@@ -120,22 +110,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script src="../../books.js"></script>
 <script src="../../verses/niv/ot/exodus.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
-<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>
+<script src="../../history.js"></script>
 
 <script>window.QNAV_CURRENT="ot/exodus/Exodus_33.html";</script>
 <script src="../../qnav.js"></script>

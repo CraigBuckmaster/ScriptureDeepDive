@@ -37,22 +37,10 @@ import re, json, math, os
 _REPO = '/home/claude/ScriptureDeepDive'
 
 # ══════════════════════════════════════════════════════════════════════
-#  INLINE JS — small scripts baked into each chapter HTML
-#  CSS now lives in styles.css (external stylesheet, loaded via <link>).
-#  TOG_JS and SW_JS remain inline because they're tiny and load-critical.
+#  SCRIPT CONSTANTS
+#  Most JS is now in external files (tog.js, history.js, qnav.js, translation.js).
+#  SW_JS remains inline — it's a single line that registers the service worker.
 # ══════════════════════════════════════════════════════════════════════
-
-TOG_JS = ("<script>\n"
-    "function tog(btn,id){\n"
-    "  var p=document.getElementById(id);\n"
-    "  if(!p)return;\n"
-    "  var willOpen=!p.classList.contains('open');\n"
-    "  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});\n"
-    "  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});\n"
-    "  if(willOpen){p.classList.add('open');btn.classList.add('active');}\n"
-    "}\n"
-    "function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}\n"
-    "</script>")
 
 SW_JS = '<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>'
 
@@ -698,22 +686,8 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
 }})();
 </script>'''
 
-HISTORY_JS = '''<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' \xb7 ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>'''
+# NOTE: HISTORY_JS moved to external history.js file (Batch 4).
+# Loaded via <script src="../../history.js"> in page().
 
 # ══════════════════════════════════════════════════════════════════════
 #  PAGE ASSEMBLY — head, nav, chapter header, final HTML output
@@ -1291,25 +1265,23 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     book_dir_test = next((t for d,n,_,_,_,t in REGISTRY if d==book_dir), 'ot').lower()
     out_dir = f'{_REPO}/{book_dir_test}/{book_dir}'
     os.makedirs(out_dir, exist_ok=True)
-    # Inline JS blocks (small, load-critical — kept inline rather than external)
-    _tog      = TOG_JS
     _vhl      = vhl_js(vhl_places, vhl_people, vhl_time, vhl_key)
-    _sw       = SW_JS
     # NOTE: qnav panel HTML is NOT baked inline here.
     # qnav.js (loaded at the bottom) dynamically injects the full panel at
     # runtime and is always current. The QNAV_CURRENT var tells it which
     # chapter to highlight as active. This is the single shared approach
-    # used by every book — never use qnav_overlay() inside page().
+    # used by every book.
     html = (head(book_name, book_dir, ch, is_nt) +
             '\n<main>\n' +
             chapter_header(book_name, ch, title, auth_text, is_nt) +
             '\n' + sections_html + '\n' + scholarly_html +
             '\n</main>\n' +
-            _tog + '\n' +
+            '<script src="../../tog.js"></script>\n' +
             _vhl + '\n' +
             '<script src="../../books.js"></script>\n' +
             f'<script src="../../verses/niv/{book_dir_test}/{book_dir}.js"></script>\n' +
-            _sw + '\n' + HISTORY_JS + '\n' +
+            '<script src="../../history.js"></script>\n' +
+            SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
             '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
@@ -2734,9 +2706,10 @@ def rebuild_sw_js():
         and '/verses/niv/' not in e and '/verses/esv/' not in e
     ]
 
-    # Ensure styles.css is always included (external stylesheet)
-    if not any('/styles.css' in e for e in static_preserved):
-        static_preserved.append("  '/styles.css',")
+    # Ensure external resources are always included
+    for asset in ['/styles.css', '/tog.js', '/history.js']:
+        if not any(asset in e for e in static_preserved):
+            static_preserved.append(f"  '{asset}',")
 
     # Build verse entries from REGISTRY
     niv_lines = ["  '/verses/chapters.js',", "  '/verses/niv/verses.js',"]

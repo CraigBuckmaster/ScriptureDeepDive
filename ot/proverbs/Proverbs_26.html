@@ -40,17 +40,7 @@
 <div id="pr26-ppl" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid"><div class="person-card"><div class="person-name">The righteous</div><div class="person-role">Walk blamelessly</div><div class="person-text">Integrity is both compass and shield.</div></div><div class="person-card"><div class="person-name">The fool</div><div class="person-role">Despises correction</div><div class="person-text">Unteachable and self-destructive.</div></div><div class="person-card"><div class="person-name">The diligent</div><div class="person-role">Plans and prospers</div><div class="person-text">Patient work yields real gain.</div></div></div></div><div id="pr26-trans" class="anno-panel trans-panel"><h4>Translation Comparison</h4><p style="font-family:'Cinzel',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">Prov 26 -- Key Terms</p><table class="trans-table"><tr><th>Version</th><th>Translation</th></tr><tr><td class="t-label">NIV</td><td>"Do you see a person wise in their own eyes? There is more hope for a fool than for them."</td></tr><tr><td class="t-label">Note</td><td>The most devastating assessment in the fool gallery. Ordinary foolishness can be identified; self-perceived wisdom is unreachable.</td></tr></table></div><div id="pr26-src" class="anno-panel src-panel"><h4>Ancient Sources</h4><div class="source-block"><div class="source-title">Ancient Near Eastern wisdom</div><div class="source-quote">These proverbs reflect Israel's engagement with international wisdom traditions, especially Egyptian.</div><div class="source-note">Wisdom was a shared human enterprise across cultures.</div></div><div class="source-block"><div class="source-title">Hezekian editorial work</div><div class="source-quote">Proverbs 25:1 notes that men of Hezekiah copied these proverbs — one of the most historically specific attributions in Proverbs.</div><div class="source-note">The editorial activity shows Proverbs as a living, curated collection.</div></div></div><div id="pr26-rec" class="anno-panel rec-panel"><h4>Reception History</h4><div class="rec-block"><div class="rec-who">Virtue ethics</div><div class="rec-text">Proverbs 21-30 has been foundational to Christian virtue ethics — the practical outworking of the fear of the LORD.</div></div><div class="rec-block"><div class="rec-who">Practical wisdom</div><div class="rec-text">These chapters have been widely cited in ethics, governance, and social teaching.</div></div></div><div id="pr26-lit" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram"><div class="lit-row center"><span class="lit-label">Answer / Do Not Answer</span><span class="lit-ref">26:4-5</span><span class="lit-text">Do not answer a fool according to his folly, or you yourself will be just like him. Answer a fool according to his folly, or he will be wise in his own eyes. The consecutive contradiction teaches situational wisdom: both responses are sometimes correct.</span></div><div class="lit-row"><span class="lit-label">Gossip as Conflict's Fuel</span><span class="lit-ref">26:20</span><span class="lit-text">Without wood a fire goes out; without a gossip a quarrel dies down. The most structural community-conflict insight in Proverbs: remove the fuel and the fire ends. The gossip is the quarrel's structural cause, not just one of its symptoms.</span></div></div></div><div id="pr26-hebtext" class="anno-panel heb-text-panel"><h4>Hebrew-Rooted Reading</h4>[('כְּסִיל', 'kesil', 'Fool (committed to folly)', "The dominant fool-word of chs.10-29. The kesil has made a settled choice against wisdom's formation."), ('נִרְגָּן', 'nirgan', 'Gossip / whisperer', "The structural source of community conflict (26:20-22). Gossip's damage is deep, structural, and persistent.")]</div><div id="pr26-tx" class="anno-panel tx-panel"><h4>Textual Notes</h4></div><div id="pr26-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">The Fool: Type or Continuum?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">A distinct character type: the kesil</div><div class="db-proponents">Waltke, most commentators</div><div class="db-argument">The kesil has made a settled choice against wisdom's formation. The eleven portraits describe a character, not occasional failures.</div></div><div class="db-position"><div class="db-pos-name">A continuum from peti to kesil to letz</div><div class="db-proponents">Some scholars</div><div class="db-argument">The three fool-words represent a spectrum of increasing resistance to wisdom.</div></div></div><div class="db-synthesis">The spectrum reading is most consistent with Proverbs' overall structure. The character types are points on a continuum of increasing resistance.</div></div></div><div id="pr26-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><polygon points="" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;"></p></div>
 </div>
 </main>
-<script>
-function tog(btn,id){
-  var p=document.getElementById(id);
-  if(!p)return;
-  var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
-  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
-  if(willOpen){p.classList.add('open');btn.classList.add('active');}
-}
-function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-</script>
+<script src="../../tog.js"></script>
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
@@ -116,22 +106,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script src="../../books.js"></script>
 <script src="../../verses/niv/ot/proverbs.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
-<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>
+<script src="../../history.js"></script>
 
 <script>window.QNAV_CURRENT="ot/proverbs/Proverbs_26.html";</script>
 <script src="../../qnav.js"></script>

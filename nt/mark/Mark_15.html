@@ -94,17 +94,7 @@
 <div id="mk15-debate" class="anno-panel db-panel"><h4>Scholarly Debates</h4><div class="db-debate"><div class="db-title">What did the torn veil signify?</div><div class="db-positions"><div class="db-position"><div class="db-pos-name">Access to God</div><div class="db-proponents">The veil that separated the Holy of Holies from the Holy Place — the barrier to the divine presence — was torn, signifying that through Christ’s death direct access to God is now available (Heb 9:8-12).</div><div class="db-argument">Access to the Most Holy Place</div></div><div class="db-position"><div class="db-pos-name">Temple judgment</div><div class="db-proponents">The tearing is a sign of God’s judgment on the Temple system, anticipating its physical destruction in AD 70.</div><div class="db-argument">Judgment on the Temple</div></div></div><div class="db-synthesis">"The curtain of the Temple was torn in two from top to bottom" — the divine direction of the tear and the Hebrews 9-10 interpretation both support the access reading. The two interpretations (access + judgment) are not mutually exclusive: the cross both opens access and renders the Temple system obsolete.</div></div></div><div id="mk15-themes" class="themes-panel"><h4>Theological Themes Tracker</h4><div class="radar-wrap"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="17.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="34.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="51.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="68.0" fill="none" stroke="#202040" stroke-width="1"/><circle cx="120" cy="120" r="85.0" fill="none" stroke="#202040" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="35.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="77.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="193.6" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="120.0" y2="205.0" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="162.5" stroke="#303050" stroke-width="1"/><line x1="120" y1="120" x2="46.4" y2="77.5" stroke="#303050" stroke-width="1"/><polygon points="120.0,69.0 193.6,77.5 193.6,162.5 120.0,205.0 61.1,154.0 61.1,86.0" fill="rgba(136,64,224,.25)" stroke="#8840e0" stroke-width="1.5"/><text x="120.0" y="17.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Kingdom</text><text x="209.2" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Christology</text><text x="209.2" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Atonement</text><text x="120.0" y="223.0" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Suffering</text><text x="30.8" y="171.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">Judgment</text><text x="30.8" y="68.5" text-anchor="middle" dominant-baseline="middle" fill="#7070a0" font-size="7" font-family="Source Sans 3">New Covenant</text></svg></div><p style="font-family:'Source Sans 3',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">Mark 15 is the atonement chapter: the ransom for many (10:45) is paid. The crucifixion is structured by Psalm 22, the torn veil opens access to God, and the centurion’s confession names what has been accomplished.</p></div>
 </div>
 </main>
-<script>
-function tog(btn,id){
-  var p=document.getElementById(id);
-  if(!p)return;
-  var willOpen=!p.classList.contains('open');
-  document.querySelectorAll('.anno-panel.open,.themes-panel.open').forEach(function(op){op.classList.remove('open');});
-  document.querySelectorAll('.anno-trigger.active').forEach(function(tb){tb.classList.remove('active');});
-  if(willOpen){p.classList.add('open');btn.classList.add('active');}
-}
-function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.toggle('open');}
-</script>
+<script src="../../tog.js"></script>
 <script>
 (function(){
   var DIVINE={words:['God','LORD','Spirit','Angel','Lord','Holy Spirit','Father','Son','I AM','Almighty','Shaddai'],cls:'vhl-divine',btn:['hebrew','hebrew-text','context']};
@@ -170,22 +160,7 @@ function toggleAuth(btn){btn.nextElementSibling.classList.toggle('open');btn.cla
 <script src="../../books.js"></script>
 <script src="../../verses/niv/nt/mark.js"></script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
-<script>
-(function(){
-  try {
-    var KEY='sdw_recent', MAX=5;
-    var hist = JSON.parse(localStorage.getItem(KEY)||'[]');
-    var parts=window.location.pathname.split('/'); var url=parts.slice(-3).join('/');
-    var title = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : '';
-    var subtitle = document.querySelector('header p') ? document.querySelector('header p').textContent.trim() : '';
-    var label = title + (subtitle ? ' · ' + subtitle.slice(0,30) : '');
-    hist = hist.filter(function(h){ return h.url !== url; });
-    hist.unshift({url:url, label:label, title:title, subtitle:subtitle});
-    if(hist.length > MAX) hist = hist.slice(0,MAX);
-    localStorage.setItem(KEY, JSON.stringify(hist));
-  } catch(e){}
-})();
-</script>
+<script src="../../history.js"></script>
 
 <script>window.QNAV_CURRENT="nt/mark/Mark_15.html";</script>
 <script src="../../qnav.js"></script>
