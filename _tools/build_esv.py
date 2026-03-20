@@ -183,13 +183,13 @@ def parse_book(raw_text, book, testament, chapter_count):
 
 def write_book_file(book, testament, verses):
     """Write verses/esv/{testament}/{book_lower}.js"""
-    book_lower = book.lower()
+    book_lower = book.lower().replace(' ', '_')
     testament_dir = os.path.join(OUTPUT_DIR, testament)
     os.makedirs(testament_dir, exist_ok=True)
 
     out_path = os.path.join(testament_dir, f'{book_lower}.js')
     payload  = json.dumps(verses, separators=(',', ':'), ensure_ascii=False)
-    var_name = f'VERSES_{book.upper()}'
+    var_name = 'VERSES_' + re.sub(r'\W', '_', book.upper())
 
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f'var {var_name}={payload};\n')
