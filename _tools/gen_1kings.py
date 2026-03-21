@@ -684,4 +684,317 @@ ki1(8, {
     ],
 })
 
-print("\n1KI-2 complete: 1 Kings 5–8 built.")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-3: Chapters 9–12 — Zenith to Fracture: Glory, Apostasy, Division
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(9, {
+    'title': 'God\'s Second Appearance; Cities, Fleet, and Foreign Labour',
+    'sections': [
+        {
+            'header': 'Verses 1–9 — The LORD Appears Again: If You Turn Aside, This House Becomes Ruins',
+            'verses': verse_range(1, 9),
+            'heb': [
+                ('hiqḏaštî', 'hikdashti', 'I have consecrated', 'God says "I have consecrated this temple by putting my Name there forever" (v.3). The verb <em>qāḏaš</em> (hiphil: to make holy) indicates permanent divine investment. Yet vv.6–9 immediately condition the temple\'s future on obedience. Even sacred space can become profane through unfaithfulness.'),
+                ('māšāl', 'mashal', 'byword/proverb', 'If Israel turns away, "this temple will become a heap of ruins. All who pass by will be appalled and will hiss and say, \'Why has the LORD done this?\'" (vv.8–9). The temple will become a <em>māšāl</em> — a cautionary tale for the nations. The very building meant to attract the nations to God (8:41–43) will instead repel them.'),
+            ],
+            'ctx': 'God\'s second appearance to Solomon is the theological counterweight to the dedication. Where ch. 8 was all glory and promise, ch. 9 is warning. God accepts the temple but attaches a condition: if you or your sons turn aside, I will reject this temple. The warning is prophetically specific — "this temple will become a heap of ruins" — exactly what happens in 586 BC. The narrator places this warning immediately after the dedication to show that Israel\'s future was never guaranteed by architecture. Buildings don\'t save; covenant faithfulness does.',
+            'cross': [
+                ('Deut 28:37', '"You will become a thing of horror, a byword among all the nations." God\'s warning to Solomon echoes the Deuteronomic curse formula precisely.'),
+                ('2 Kgs 25:8–10', 'Nebuzaradan burned the temple — the fulfilment of this warning, 370 years later.'),
+                ('Jer 7:4', '"Do not trust in deceptive words and say, \'This is the temple of the LORD.\'" Jeremiah confronts the same false confidence that God warns against here.'),
+            ],
+            'macarthur': [
+                ('9:3', 'MacArthur: God accepts the temple by putting his Name there "forever" — but the very next verse introduces "if." The unconditional commitment to the Name coexists with conditional blessing for the people. God\'s faithfulness to his Name does not override human responsibility.'),
+                ('9:4', 'MacArthur: "Walk before me faithfully as David your father did" — David is the standard, despite his sins. David\'s faithfulness was not sinlessness but wholehearted devotion and repentance. God measures kings not by perfection but by the orientation of their hearts.'),
+                ('9:7', 'MacArthur: "I will reject this temple I have consecrated for my Name" — the most shocking threat in the OT. God will abandon his own house if his people abandon him. No institution, no building, no tradition is immune from divine judgment.'),
+                ('9:9', 'MacArthur: The nations will explain Israel\'s ruin theologically: "Because they forsook the LORD their God." God\'s judgment is self-interpreting. Even pagans will understand the connection between apostasy and disaster.'),
+            ],
+            'wiseman': [
+                ('9:3', 'Wiseman: Temple dedication texts from Mesopotamia similarly record divine acceptance after construction. The Gudea cylinders (c.2100 BC) describe the god Ningirsu\'s approval of his new temple. The pattern — build, dedicate, receive divine approval — is standard ANE practice; the conditional warning is distinctly Israelite.'),
+                ('9:8', 'Wiseman: "This temple will become a heap of ruins" — the Hebrew <em>ʿelyôn</em> may alternatively be read as "conspicuous" rather than "exalted," yielding "this conspicuous temple will cause astonishment." Either reading conveys devastating reversal.'),
+            ],
+            'provan': [
+                ('9:4', 'Provan: The "if" of v.4 is the hinge of the entire book. Everything before it pointed toward fulfilment; everything after it describes the failure to meet the condition. The narrator places this conditional warning at the exact centre of the Solomon narrative — after the temple is built, before the decline begins.'),
+                ('9:9', 'Provan: The nations\'explanation — "Because they forsook the LORD" — is the Deuteronomistic theology of history stated by outsiders. Even non-Israelites can read the theological logic of blessing and curse. The pattern is universally legible.'),
+            ],
+            'calvin': [
+                ('9:3', 'Calvin: God consecrates the temple by placing his Name there — yet warns of its destruction in the same breath. This teaches that no external privilege guarantees spiritual security. Baptism, church membership, ordained ministry — all can be withdrawn if faith is abandoned.'),
+                ('9:7', 'Calvin: "I will reject this temple" — let no church imagine itself immune from God\'s judgment. Churches have been planted and uprooted throughout history. The lamp can be removed from its stand (Rev 2:5). Only repentance preserves what grace has built.'),
+            ],
+            'netbible': [
+                ('9:3', 'NET Note: <em>hiqḏaštî ʾet-habbayit hazzeh</em> (I have consecrated this house) — the hiphil of <em>qāḏaš</em> indicates God\'s active sanctification. The temple is holy not because of its materials or architecture but because God chose to invest his Name there.'),
+                ('9:8', 'NET Note: The Kethib (written text) reads <em>ʿelyôn</em> (exalted/high); the Qere (read text) suggests <em>ʿiyyîn</em> (a heap of ruins). The textual variants both convey devastation: the "exalted" temple becomes an object of horror, or the temple literally becomes rubble.'),
+            ],
+        },
+        {
+            'header': 'Verses 10–28 — Twenty Cities, Forced Labour, and the Fleet at Ophir',
+            'verses': verse_range(10, 28),
+            'heb': [
+                ('ʿebed Šĕlōmōh', 'eved Shelomoh', 'Solomon\'s servants', 'The Canaanite remnant populations (v.21) become permanent <em>ʿebed</em> (slaves/servants) — a standing corvée that continues "to this day." Solomon solves the forced-labour problem by exempting Israelites (v.22) and imposing permanent servitude on non-Israelites. The ethical complexity is left unresolved by the narrator.'),
+            ],
+            'ctx': 'The second half of ch. 9 reveals the underside of Solomon\'s prosperity. Hiram is dissatisfied with the twenty cities Solomon gave him (v.13) — calling them "Cabul" (perhaps "worthless"). Solomon builds with forced labour from conquered populations. The fleet at Ezion-geber brings 420 talents of gold from Ophir. The prosperity is real but the methods are increasingly coercive. The narrator presents both the achievement and the cost without explicit judgment — the reader must weigh them.',
+            'cross': [
+                ('1 Kgs 12:4', '"Your father put a heavy yoke on us." The forced-labour system of 9:15–22 is the root cause of the secession in ch. 12.'),
+                ('2 Chr 8:1–2', 'The Chronicler reverses the Cabul story: Hiram gave cities to Solomon, who rebuilt them. The different perspectives may reflect different stages of a diplomatic exchange.'),
+            ],
+            'macarthur': [
+                ('9:13', 'MacArthur: Hiram\'s dissatisfaction with the cities reveals that even great alliances have friction. Solomon\'s generosity has limits, and Hiram\'s expectations exceed what he receives. International relationships, even in Israel\'s golden age, are imperfect.'),
+                ('9:15', 'MacArthur: Solomon\'s building projects — temple, palace, Millo, wall, Hazor, Megiddo, Gezer — represent both achievement and burden. Every monument required labour, taxation, and material. Greatness has a price.'),
+                ('9:22', 'MacArthur: Solomon exempts Israelites from permanent slavery but imposes it on Canaanite remnants. The ethical distinction made here will be debated across the centuries. The narrator does not celebrate or condemn — he reports.'),
+                ('9:28', 'MacArthur: 420 talents of gold from Ophir (about 16 tons) demonstrates the scale of Solomon\'s commercial empire. The wealth is staggering but it creates dependency on trade networks that will collapse when the kingdom divides.'),
+            ],
+            'wiseman': [
+                ('9:15', 'Wiseman: Archaeological excavations at Hazor, Megiddo, and Gezer have uncovered monumental six-chambered gate structures of remarkably similar design, all dated to the 10th century BC. These are consistent with centralised Solomonic construction. Yigael Yadin\'s excavations at Hazor (1955–58) first identified this architectural pattern.'),
+                ('9:26', 'Wiseman: Ezion-geber (modern Tell el-Kheleifeh near Aqaba) was excavated by Nelson Glueck (1938–40), who identified copper-smelting facilities he attributed to Solomon. Later reinterpretation has questioned the smelting identification but confirmed the site\'s importance as a Red Sea port.'),
+            ],
+            'provan': [
+                ('9:13', 'Provan: The Cabul episode introduces a sour note into the Solomon-Hiram relationship. The great alliance of ch. 5 is showing strain. The narrator does not idealise diplomatic relationships — even the best partnerships involve disappointment and negotiation.'),
+                ('9:22', 'Provan: The distinction between Israelite soldiers and Canaanite slaves is the narrator\'s way of showing that Solomon\'s Israel has become an empire — with all the moral complexities that empire entails. The liberated people now maintain a servant class. The irony is quiet but unmistakable.'),
+            ],
+            'calvin': [
+                ('9:15', 'Calvin: Solomon\'s extensive building demonstrates that prosperity brings responsibility. Wealth is not for hoarding but for building — infrastructure, defence, worship. But the moment building serves pride rather than purpose, it becomes a snare.'),
+                ('9:26', 'Calvin: The Ophir fleet shows Solomon\'s reach extending to the ends of the known world. God\'s blessing on obedience has tangible, material dimensions. Yet all this wealth will prove unable to prevent the kingdom\'s collapse when obedience fails.'),
+            ],
+            'netbible': [
+                ('9:13', 'NET Note: <em>ʾereṣ kābûl</em> — the meaning of "Cabul" is debated. Josephus (Ant. 8.5.3) derives it from a Phoenician word meaning "displeasing." Others connect it to <em>kĕbûlāh</em> (boundary/pledge). Either way, Hiram\'s naming expresses dissatisfaction.'),
+                ('9:15', 'NET Note: <em>millôʾ</em> (Millo) is an architectural term meaning "filling" — probably a terraced stone fill supporting the expanded city platform. Archaeological evidence for stepped-stone terracing in the City of David may correspond to the Millo.'),
+            ],
+        },
+    ],
+})
+
+ki1(10, {
+    'title': 'The Queen of Sheba; Solomon\'s Unmatched Wealth',
+    'sections': [
+        {
+            'header': 'Verses 1–13 — The Queen of Sheba: Nothing Was Hidden from the King',
+            'verses': verse_range(1, 13),
+            'heb': [
+                ('ḥîdôt', 'chidot', 'riddles/hard questions', 'The queen tests Solomon with <em>ḥîdôt</em> (v.1) — the same term used for Samson\'s riddle (Judg 14:12). These are not trivial puzzles but probing questions of wisdom, governance, and theology. The exchange is an intellectual contest between two royal courts, and Solomon prevails completely.'),
+                ('rûaḥ', 'ruach', 'spirit/breath', 'The queen says "there was no more <em>rûaḥ</em> in her" (v.5) — she was breathless, overwhelmed. The same word means spirit, wind, breath. Solomon\'s wisdom literally takes her breath away.'),
+            ],
+            'ctx': 'The Queen of Sheba visit is the narrative apex of Solomon\'s international reputation. She comes from the ends of the earth (likely modern Yemen/Ethiopia) to test his wisdom with hard questions — and he answers every one. Her response is threefold: breathlessness at his wisdom, amazement at his prosperity, and a theological confession: "Praise be to the LORD your God, who has delighted in you" (v.9). A foreign queen acknowledges YHWH as the source of Solomon\'s greatness. This is the Abrahamic promise in action: all nations blessed through Abraham\'s seed. Jesus cites this visit as a rebuke to his generation: "The Queen of the South will rise at the judgment... for she came from the ends of the earth to listen to Solomon\'s wisdom, and now something greater than Solomon is here" (Matt 12:42).',
+            'cross': [
+                ('Matt 12:42', 'Jesus cites the Queen of Sheba as a Gentile who recognised wisdom — condemning those who reject greater wisdom standing before them.'),
+                ('Gen 12:3', '"All peoples on earth will be blessed through you." The queen\'s visit fulfils the Abrahamic promise: a foreign ruler blessed through Israel\'s king.'),
+            ],
+            'macarthur': [
+                ('10:1', 'MacArthur: The Queen of Sheba represents the nations drawn to God\'s wisdom through Israel. Her journey from the ends of the earth demonstrates that divine wisdom is universally attractive — it crosses every cultural and geographical boundary.'),
+                ('10:5', 'MacArthur: Her breathlessness encompasses everything: wisdom, wealth, the burnt offerings at the temple. The total effect of Solomon\'s kingdom — intellectual, material, and spiritual — overwhelms her. This is the integrated witness of a covenant-faithful society.'),
+                ('10:9', 'MacArthur: The queen praises YHWH, not Solomon. She recognises the divine source of his wisdom. A Gentile queen makes a better theologian than many in Israel who take God\'s gifts for granted.'),
+                ('10:13', 'MacArthur: Solomon gives the queen "all she desired" — royal generosity that mirrors God\'s own. The wise king reflects the generous God. Grace flows downward from the throne.'),
+            ],
+            'wiseman': [
+                ('10:1', 'Wiseman: Sheba (Sabaʾ) was a kingdom in southwestern Arabia (modern Yemen) known for frankincense, gold, and precious stones — exactly the gifts the queen brings. Sabaean inscriptions from the 8th century BC onward confirm a wealthy trading civilisation. The queen\'s journey (~1,200 miles) would have taken several months by camel caravan.'),
+                ('10:10', 'Wiseman: The 120 talents of gold (approximately 4.5 tons) is the largest single diplomatic gift recorded in the OT. Comparable gifts are attested in Assyrian tribute lists and Egyptian records of foreign offerings to the pharaoh.'),
+            ],
+            'provan': [
+                ('10:1', 'Provan: The Sheba narrative is the peak of the Solomon story — the moment when all the promises converge. Wisdom (ch. 3), wealth (ch. 4), temple (chs. 5–8), and international fame all culminate in a foreign queen confessing YHWH\'s goodness. The narrator places this peak here because the fall begins in the very next chapter.'),
+                ('10:9', 'Provan: The queen\'s confession is carefully theological: God placed Solomon on the throne "because of the LORD\'s eternal love for Israel." She credits not Solomon\'s merit but God\'s love. Even a pagan understands what Solomon will forget.'),
+            ],
+            'calvin': [
+                ('10:1', 'Calvin: The queen\'s long journey teaches that true wisdom is worth any effort to obtain. She crossed deserts for Solomon\'s wisdom; how much more should we seek the wisdom of Christ, who is greater than Solomon?'),
+                ('10:9', 'Calvin: A pagan queen praises Israel\'s God — a rebuke to every Israelite who takes covenant blessings for granted. Those outside the faith sometimes see God\'s goodness more clearly than those within it.'),
+            ],
+            'netbible': [
+                ('10:1', 'NET Note: <em>šēm YHWH</em> (the name of the LORD) — the queen came because of the reputation of God\'s Name, not merely Solomon\'s fame. The temple\'s purpose (8:41–43) — drawing foreigners to pray to YHWH — is already being realised through Solomon\'s wisdom.'),
+                ('10:5', 'NET Note: <em>wĕlōʾ-hāyāh bāh ʿôd rûaḥ</em> (there was no more spirit/breath in her) — the same idiom appears in Josh 2:11 and 5:1 where Canaanites lose heart at Israel\'s approach. The queen\'s response is the positive counterpart: not fear but wonder.'),
+            ],
+        },
+        {
+            'header': 'Verses 14–29 — 666 Talents of Gold; the Ivory Throne; Horses from Egypt',
+            'verses': verse_range(14, 29),
+            'heb': [
+                ('šēš mēʾôt šiššîm wāšēš', 'shesh meot shishim vashesh', 'six hundred sixty-six', 'Solomon\'s annual gold income is 666 talents (v.14) — a number that later appears in Rev 13:18. Whether the echo is intentional or coincidental, the accumulation of wealth at this scale crosses into excess. The narrator catalogues it without celebration: gold shields, ivory throne, gold cups, gold everywhere. The abundance becomes oppressive.'),
+            ],
+            'ctx': 'The wealth catalogue reads like a fever dream of gold. 666 talents annually. 200 large shields of hammered gold. 300 small shields. A great ivory throne overlaid with gold, flanked by lions. All drinking vessels of pure gold — "nothing was made of silver, because silver was considered of little value" (v.21). Ships bring gold, silver, ivory, apes, and baboons every three years. The narrator piles detail upon detail until the reader feels the weight. Then the final note: Solomon acquires horses and chariots from Egypt and exports them to the Hittites and Arameans (vv.28–29). This directly violates Deut 17:16: "The king must not acquire great numbers of horses for himself or make the people return to Egypt to get more." The seeds of apostasy are being sown in the very prosperity that wisdom produced.',
+            'cross': [
+                ('Deut 17:16–17', '"The king must not acquire great numbers of horses... He must not take many wives... He must not accumulate large amounts of silver and gold." Solomon violates all three Deuteronomic restrictions — horses (10:26–29), wives (11:1–3), and gold (10:14–22).'),
+                ('Rev 13:18', '"The number of the beast is 666." Whether an intentional allusion to Solomon\'s gold or not, the number links excessive wealth to spiritual danger.'),
+            ],
+            'macarthur': [
+                ('10:14', 'MacArthur: 666 talents of gold — approximately 25 tons annually. The wealth is real and God-given. But the Deuteronomic law explicitly prohibits the king from accumulating excessive gold (Deut 17:17). Solomon\'s blessings are becoming his temptations.'),
+                ('10:21', 'MacArthur: "Nothing was made of silver, because silver was considered of little value." The abundance has distorted all sense of value. When silver becomes worthless, something has gone wrong. Excess corrodes gratitude.'),
+                ('10:26', 'MacArthur: "Solomon accumulated chariots and horses" — the exact prohibition of Deut 17:16. The horses come from Egypt — the land of slavery. The king who was to embody Torah is systematically violating it.'),
+                ('10:29', 'MacArthur: Solomon becomes an arms dealer — exporting chariots to the Hittites and Arameans. The king of wisdom is now the merchant of military power. The trajectory from temple builder to arms trader is the arc of decline.'),
+            ],
+            'wiseman': [
+                ('10:22', 'Wiseman: The "ships of Tarshish" (v.22) were large, ocean-going vessels capable of extended voyages. The term may indicate ships of the Tarshish class (large merchant vessels) rather than ships sailing to a specific destination. Three-year round trips match the Red Sea/Indian Ocean trade routes to East Africa or western India.'),
+                ('10:28', 'Wiseman: Egyptian horse-breeding was centred in the Nile Delta. Assyrian records confirm that Musri (Egypt/Cilicia) was a major source of horses for Near Eastern armies. The price data (600 shekels per chariot, 150 per horse) provides rare ANE commercial information.'),
+            ],
+            'provan': [
+                ('10:14', 'Provan: The gold catalogue is the narrator\'s literary technique for conveying excess. By listing item after golden item, he creates a cumulative effect of surfeit. The reader is meant to feel overwhelmed — and then to recall Deut 17\'s prohibitions. The narrator shows rather than tells.'),
+                ('10:29', 'Provan: The horse trade with Egypt is the clearest Deuteronomic violation in the chapter. The narrator places it at the chapter\'s end — the final note before ch. 11\'s explicit apostasy. The trade with Egypt is the bridge between material excess and spiritual collapse.'),
+            ],
+            'calvin': [
+                ('10:14', 'Calvin: The accumulation of gold teaches that wealth without wisdom to use it rightly is a curse disguised as a blessing. Solomon has both wisdom and wealth — but the wealth is beginning to outpace the wisdom. When possessions govern the possessor, the downfall has already begun.'),
+                ('10:26', 'Calvin: Horses from Egypt — the very nation God freed Israel from. To return to Egypt for military supplies is to undo the Exodus symbolically. Every believer who returns to old patterns of sin for comfort or security is making the same journey.'),
+            ],
+            'netbible': [
+                ('10:14', 'NET Note: The figure of 666 talents represents an enormous sum — roughly $1.1 billion in modern gold value. This does not include trade profits, tribute, and tax revenue mentioned in v.15. Solomon\'s total annual income dwarfed any contemporary Near Eastern kingdom.'),
+                ('10:22', 'NET Note: The cargo list — gold, silver, ivory, apes, and baboons (<em>qōpîm wĕtukiyyîm</em>) — suggests trade routes to East Africa (Somalia/Ethiopia) or western India. The exotic cargo demonstrates the global reach of Solomon\'s commercial network.'),
+            ],
+        },
+    ],
+})
+
+ki1(11, {
+    'title': 'Solomon\'s Apostasy: Foreign Wives, Adversaries, and the Kingdom Torn',
+    'sections': [
+        {
+            'header': 'Verses 1–25 — Seven Hundred Wives Turn Solomon\'s Heart; God Raises Adversaries',
+            'verses': verse_range(1, 25),
+            'heb': [
+                ('nāšîm nokriyyôt', 'nashim nochriyot', 'foreign women', 'Solomon loved many <em>nāšîm nokriyyôt</em> (v.1) — the exact category Deuteronomy forbids for kings (Deut 17:17) and that Proverbs repeatedly warns against (Prov 2:16; 5:20; 7:5). The irony is devastating: the author of Proverbs falls victim to the very sin he warned his son about.'),
+                ('wayyaṭ ʾet-lĕbābô', 'vayat et-levavo', 'they turned his heart', '"His wives turned his heart after other gods" (v.4) — the verb <em>nāṭāh</em> (to turn, incline, bend) describes a gradual process, not a sudden collapse. Solomon\'s apostasy was not a single dramatic act but a slow erosion of devotion over decades.'),
+            ],
+            'ctx': 'Chapter 11 is the most devastating chapter in 1 Kings. The wisest man who ever lived, who built God\'s temple, who prayed the greatest prayer in the OT — turns to other gods. Seven hundred wives and three hundred concubines from forbidden nations turn his heart to Ashtoreth (Sidonian), Chemosh (Moabite), and Molek (Ammonite). The narrator uses the word "heart" five times — the same heart that asked for wisdom at Gibeon (3:9) now follows other gods. God responds by raising three adversaries: Hadad the Edomite, Rezon of Damascus, and Jeroboam son of Nebat. The divine discipline is precise: the kingdom that Solomon\'s wisdom unified will be torn apart by the adversaries his sin provoked.',
+            'cross': [
+                ('Deut 17:17', '"He must not take many wives, or his heart will be led astray." The Deuteronomic warning is fulfilled word for word.'),
+                ('Neh 13:26', '"Was it not because of marriages like these that Solomon king of Israel sinned?" Nehemiah cites Solomon as the canonical example of foreign-wife apostasy.'),
+                ('Prov 5:3–5', '"For the lips of the adulterous woman drip honey... but in the end she is bitter as gall." Solomon\'s own wisdom, tragically unheeded by its author.'),
+            ],
+            'macarthur': [
+                ('11:1', 'MacArthur: "King Solomon loved many foreign women." The verse opens with the same verb (<em>ʾāhab</em>) used of his love for God (3:3). The competition for Solomon\'s heart is stated in identical terms: he loved God; he loved foreign women. The heart cannot serve two masters.'),
+                ('11:4', 'MacArthur: "As Solomon grew old, his wives turned his heart after other gods." Age did not bring deeper faith but deeper compromise. The greatest danger for the believer is not sudden temptation but gradual erosion — the slow drift that decades of comfort enable.'),
+                ('11:7', 'MacArthur: Solomon built high places for Chemosh and Molek — gods whose worship included child sacrifice. The temple builder became a shrine builder for demons. The descent from Gibeon\'s prayer to Molek\'s altar is the steepest fall in Scripture.'),
+                ('11:14', 'MacArthur: "Then the LORD raised up against Solomon an adversary" — the same God who gave peace (5:4) now raises enemies. The adversaries are instruments of divine discipline. God uses political opposition to chasten spiritual rebellion.'),
+            ],
+            'wiseman': [
+                ('11:1', 'Wiseman: Diplomatic marriages were standard ANE practice for sealing alliances. Egyptian, Hittite, and Mesopotamian kings maintained large harems for political reasons. But Solomon\'s 700 wives far exceeds documented royal harems. Ashurnasirpal II had hundreds but not thousands. The number signals excess even by ANE standards.'),
+                ('11:7', 'Wiseman: Chemosh was the national deity of Moab (attested on the Mesha Stele, c.840 BC). Molek (Milcom) was an Ammonite deity associated with fire rituals. The high places on the "hill east of Jerusalem" (the Mount of Olives) would have been visible from the temple itself — a deliberate affront.'),
+            ],
+            'provan': [
+                ('11:1', 'Provan: The narrator constructs ch. 11 as the mirror-image of ch. 3. In ch. 3, Solomon loved God "except" for the high places. In ch. 11, his heart is no longer fully devoted — the "except" has consumed the whole. The flaw that was tolerable in youth has become fatal in old age.'),
+                ('11:4', 'Provan: "His heart was not fully devoted to the LORD his God, as the heart of David his father had been." The comparison with David is the Deuteronomistic standard. David sinned grievously but always returned. Solomon drifted and never returned. The difference is not in the magnitude of sin but in the direction of the heart.'),
+            ],
+            'calvin': [
+                ('11:1', 'Calvin: Solomon\'s fall teaches that no degree of past blessing guarantees future faithfulness. Wisdom received is not wisdom retained. The greatest gifts require the greatest vigilance, for the higher the position, the more catastrophic the fall.'),
+                ('11:7', 'Calvin: Building shrines to Molek — the god of child sacrifice — on the hill facing the temple is an act of breathtaking spiritual violence. The man who built God\'s house now builds houses for his enemies. Sin does not merely subtract from devotion; it actively constructs alternatives.'),
+            ],
+            'netbible': [
+                ('11:2', 'NET Note: <em>min-haggôyim ʾăšer ʾāmar-YHWH</em> (from the nations about which the LORD said) — the narrator explicitly cites the Deuteronomic prohibition. This is not ambiguous: Solomon\'s marriages violate a specific, known divine command.'),
+                ('11:4', 'NET Note: <em>lĕbābô lōʾ-hāyāh šālēm ʿim-YHWH</em> (his heart was not fully with the LORD) — <em>šālēm</em> (complete, whole, at peace) is the adjective from the same root as <em>šālôm</em> and <em>Šĕlōmōh</em> (Solomon). The man whose name means "peace/wholeness" is no longer whole with God. The irony is built into his name.'),
+            ],
+        },
+        {
+            'header': 'Verses 26–43 — Ahijah Tears the Cloak: Ten Tribes for Jeroboam; Solomon Dies',
+            'verses': verse_range(26, 43),
+            'heb': [
+                ('qāraʿ', 'qara', 'to tear', 'Ahijah tears the new cloak into twelve pieces and gives Jeroboam ten (vv.30–31) — an <em>ôt</em> (enacted prophecy / sign-act). The physical tearing symbolises what God will do to the kingdom. Tearing a garment was a recognised prophetic action (cf. 1 Sam 15:27–28). The prophecy is both prediction and divine sentence.'),
+                ('nēr', 'ner', 'lamp', 'God preserves one tribe for David\'s sake — "so that David my servant may always have a <em>nēr</em> before me in Jerusalem" (v.36). The lamp is the Davidic dynasty, kept burning even in judgment. The covenant with David is not revoked but reduced: the dynasty continues, but over one tribe instead of twelve.'),
+            ],
+            'ctx': 'Ahijah\'s prophecy to Jeroboam is one of the most dramatic enacted prophecies in the OT. He meets Jeroboam alone in a field, tears his new cloak into twelve pieces, and gives ten to Jeroboam — ten tribes will be his. But one tribe remains with David\'s house "for the sake of David my servant and for the sake of Jerusalem." The prophecy is both judgment (the kingdom torn) and grace (the lamp preserved). Solomon tries to kill Jeroboam, who flees to Egypt until Solomon\'s death. The chapter closes with the standard formula: Solomon reigned 40 years. The wisest king dies under God\'s discipline, and his kingdom is about to shatter.',
+            'cross': [
+                ('1 Sam 15:27–28', 'Saul\'s robe torn by Samuel — the first enacted tearing prophecy. "The LORD has torn the kingdom of Israel from you today." Ahijah\'s action deliberately echoes Samuel\'s.'),
+                ('2 Sam 7:14–16', '"When he does wrong, I will punish him... But my love will never be taken away from him." The Davidic covenant promises discipline but not abandonment. One tribe preserved is the covenant kept.'),
+                ('1 Kgs 12:15', '"This turn of events was from the LORD, to fulfil the word the LORD had spoken to Jeroboam through Ahijah." The narrator confirms that the political catastrophe of ch. 12 executes the prophetic word of ch. 11.'),
+            ],
+            'macarthur': [
+                ('11:29', 'MacArthur: Ahijah\'s enacted prophecy — tearing the cloak — makes the abstract concrete. The kingdom will be physically, violently divided. Prophetic sign-acts are not mere illustrations but performative declarations: they set divine purposes in motion.'),
+                ('11:32', 'MacArthur: "One tribe for the sake of David my servant" — even in judgment, the Davidic covenant is honoured. The lamp is reduced but not extinguished. God\'s faithfulness to his promises survives human unfaithfulness.'),
+                ('11:36', 'MacArthur: The "lamp" metaphor for the Davidic dynasty recurs throughout Kings (15:4; 2 Kgs 8:19). The lamp can flicker, dim, nearly go out — but God preserves it. The messianic hope depends on this lamp surviving until Christ.'),
+                ('11:43', 'MacArthur: Solomon\'s death notice is terse: he slept with his fathers and was buried in the City of David. No eulogy, no "he did what was right." The silence is the narrator\'s verdict.'),
+            ],
+            'wiseman': [
+                ('11:40', 'Wiseman: Jeroboam\'s flight to Shishak (Shoshenq I) in Egypt places this event in the last decade of Solomon\'s reign (c.940–930 BC). Shoshenq I founded Egypt\'s 22nd Dynasty and would later invade Judah (14:25–26). His willingness to harbour Jeroboam suggests Egyptian interest in destabilising the Israelite monarchy.'),
+                ('11:41', 'Wiseman: "The book of the annals of Solomon" is one of three source documents cited in Kings (along with the annals of the kings of Israel and Judah). These were likely official court chronicles maintained by the royal scribes — the <em>sōpēr</em> mentioned in Solomon\'s cabinet (4:3).'),
+            ],
+            'provan': [
+                ('11:31', 'Provan: The tearing of the cloak enacts what Solomon\'s sin has caused. The kingdom is not torn by Jeroboam\'s ambition but by Solomon\'s apostasy. The narrator places the cause (11:1–13) before the effect (11:26–40) to make the theological logic unmistakable: sin causes division.'),
+                ('11:36', 'Provan: The lamp metaphor is the Deuteronomistic historian\'s way of expressing eschatological hope within a narrative of decline. The kingdom falls, the kings fail, but the lamp is never extinguished. The entire narrative of Kings is held together by this fragile, persistent flame.'),
+            ],
+            'calvin': [
+                ('11:31', 'Calvin: The tearing of the cloak is a sermon in fabric. God\'s judgments are not hidden but demonstrated — made visible, tangible, public. Let no one imagine that divine discipline operates only in the invisible realm. God\'s hand in history can be seen by those with eyes to see.'),
+                ('11:36', 'Calvin: The preserved lamp teaches that God\'s mercy outlasts human sin. Solomon deserved the complete loss of his kingdom. Instead, one tribe is preserved — not for Solomon\'s sake but for David\'s, and ultimately for the sake of the Messiah who would come from David\'s line. Grace plans ahead.'),
+            ],
+            'netbible': [
+                ('11:30', 'NET Note: The garment (<em>śalmāh ḥădāšāh</em>) is specifically "new" — unused, whole, representing the intact kingdom. Its tearing into twelve pieces is a powerful visual: what was whole and new is now fragmented. The Hebrew <em>qāraʿ</em> denotes violent tearing, not cutting.'),
+                ('11:36', 'NET Note: <em>nēr</em> (lamp) functions as a metaphor for dynastic continuity — the lamp kept burning in the temple (Exod 27:20) symbolises the perpetual presence of the Davidic house before God. When the lamp metaphor is used for Judah\'s kings, it means the dynasty survives.'),
+            ],
+        },
+    ],
+})
+
+ki1(12, {
+    'title': 'The Kingdom Divides: Rehoboam\'s Folly and Jeroboam\'s Golden Calves',
+    'sections': [
+        {
+            'header': 'Verses 1–24 — My Little Finger Is Thicker: Rehoboam Rejects the Elders\' Counsel',
+            'verses': verse_range(1, 24),
+            'heb': [
+                ('qāṭonnî', 'katonni', 'my little [finger]', 'Rehoboam\'s boast: "My little finger is thicker than my father\'s waist" (v.10). The Hebrew <em>qāṭonnî</em> likely refers to the little finger, though some scholars read it as a crude anatomical reference. Either way, the boast claims that Rehoboam\'s minimum exceeds Solomon\'s maximum — absurd arrogance from an untested king.'),
+                ('ʿaqrabbîm', 'akrabim', 'scorpions', '"My father scourged you with whips; I will scourge you with <em>ʿaqrabbîm</em>" (v.11) — scorpion-tipped whips, multi-lashed instruments of torture. Rehoboam promises not reform but escalation. The young men\'s counsel is governance by intimidation.'),
+            ],
+            'ctx': 'The Shechem assembly is the political catastrophe that the entire Solomon narrative anticipated. The northern tribes petition for relief from Solomon\'s labour burden. The elders counsel gentleness; the young men counsel brutality. Rehoboam chooses the young men. The narrator adds the theological commentary: "this turn of events was from the LORD, to fulfil the word the LORD had spoken to Jeroboam through Ahijah" (v.15). The political folly is real — Rehoboam genuinely chose badly — but it also executes divine judgment. Human stupidity and divine purpose operate on the same event simultaneously. The kingdom splits: ten tribes follow Jeroboam; Judah and Benjamin remain with Rehoboam.',
+            'cross': [
+                ('1 Kgs 11:31', 'Ahijah\'s prophecy — ten tribes torn from Solomon\'s house — is fulfilled here precisely. Prophecy stated; ch. 12 delivers.'),
+                ('2 Chr 10:15', '"This turn of events was from God." The Chronicler makes the same theological point: the split is divinely orchestrated through human foolishness.'),
+                ('Prov 15:1', '"A gentle answer turns away wrath, but a harsh word stirs up anger." Solomon\'s own proverb — ignored by his son.'),
+            ],
+            'macarthur': [
+                ('12:6', 'MacArthur: The elders\'counsel — "If you will be a servant to these people today and serve them" — defines godly leadership as service. The king exists for the people, not the people for the king. This is the principle Jesus restates: "Whoever wants to become great among you must be your servant" (Mark 10:43).'),
+                ('12:10', 'MacArthur: The young men\'s counsel is pure machismo — asserting dominance rather than building trust. Their advice replaces service with intimidation. The result is predictable: the people who are threatened with scorpions choose to leave.'),
+                ('12:15', 'MacArthur: "This turn of events was from the LORD." God\'s sovereignty does not excuse Rehoboam\'s foolishness. Both truths coexist: Rehoboam freely chose badly, and God used that choice to fulfil his prophetic word. Divine sovereignty operates through, not against, human agency.'),
+                ('12:16', 'MacArthur: "What share do we have in David?" — the northern tribes\'secession cry. The Davidic covenant, which should have united the nation, becomes the very point of division. When the king fails, the covenant bond is strained to breaking.'),
+            ],
+            'wiseman': [
+                ('12:1', 'Wiseman: Shechem was a natural location for the assembly — it was the traditional gathering site between north and south (cf. Josh 24), located in Ephraim\'s territory, and carried ancient covenantal associations. Choosing Shechem rather than Jerusalem signalled that the northern tribes would not simply submit to Judahite hegemony.'),
+                ('12:18', 'Wiseman: Adoniram (the forced labour overseer from Solomon\'s cabinet, 4:6) is stoned to death — the most violent rejection possible of the corvée system. The man who symbolised Solomon\'s burden becomes the first casualty of the division.'),
+            ],
+            'provan': [
+                ('12:7', 'Provan: The elders understand something Rehoboam does not: authority is relational, not positional. A king who serves earns loyalty; a king who threatens produces rebellion. The narrative is a case study in leadership failure — and its permanent consequences.'),
+                ('12:15', 'Provan: The narrator\'s theological comment (v.15) is the Deuteronomistic philosophy of history in a single sentence. Human choices have real consequences AND fulfil divine purposes. The historian holds both truths without resolving the tension — because the tension is the point.'),
+            ],
+            'calvin': [
+                ('12:7', 'Calvin: "If today you will be a servant to these people" — the elders\'counsel defines kingship as servanthood. This is the standard by which every leader, ecclesiastical or civil, should be measured. Power exists for service; when it serves itself, it has already fallen.'),
+                ('12:15', 'Calvin: God uses Rehoboam\'s foolishness to accomplish his own purposes. This does not absolve Rehoboam — his pride is genuinely sinful. But God\'s sovereignty is so comprehensive that even human stupidity becomes an instrument of divine justice. Providence wastes nothing.'),
+            ],
+            'netbible': [
+                ('12:10', 'NET Note: <em>qoṭonnî ʿābāh mimmotnê ʾābî</em> — literally "my little-one is thicker than my father\'s loins." The phrase is deliberately provocative, a boast of masculine dominance. The young men\'s rhetoric replaces persuasion with intimidation.'),
+                ('12:15', 'NET Note: <em>kî-hāyĕtāh sibbāh mēʿim YHWH</em> (for the turn of events was from the LORD) — <em>sibbāh</em> (turning, cause) indicates divine causation operating through the free decisions of human agents. The Deuteronomistic historian asserts divine sovereignty without denying human responsibility.'),
+            ],
+        },
+        {
+            'header': 'Verses 25–33 — Jeroboam\'s Golden Calves at Dan and Bethel',
+            'verses': verse_range(25, 33),
+            'heb': [
+                ('ʿeglê zāhāb', 'eglei zahav', 'calves of gold', 'Jeroboam makes two golden calves (v.28) and uses the identical formula Aaron used at Sinai: "Here are your gods, Israel, who brought you up out of Egypt" (cf. Exod 32:4). The verbal echo is exact and devastating. The narrator makes no editorial comment — the quotation from Exodus is the comment. Jeroboam is not merely sinning; he is re-enacting Israel\'s original apostasy.'),
+                ('ḥāṭāʾ', 'chata', 'to sin / cause to sin', '"This thing became a sin" (v.30) — the verb <em>ḥāṭāʾ</em> in the hiphil means "to cause to sin." The calves do not merely represent Jeroboam\'s personal failure but become the mechanism by which all Israel is led into apostasy. This phrase — "the sins of Jeroboam who caused Israel to sin" — will be repeated for every northern king who follows.'),
+            ],
+            'ctx': 'Jeroboam\'s golden calves are the defining sin of the northern kingdom. His motive is political: if the people go to Jerusalem to sacrifice, their hearts will return to Rehoboam (v.27). So he creates an alternative worship system — golden calves at Dan (northern border) and Bethel (southern border), non-Levitical priests, and a rival feast in the eighth month (one month after Judah\'s Feast of Tabernacles). The calves may represent YHWH\'s throne (not rival gods) — but the effect is the same: worship divorced from the place God chose, conducted by priests God did not appoint, using images God forbade. Every subsequent northern king is evaluated against this baseline: "He did evil... walking in the ways of Jeroboam and his sin, which he had caused Israel to commit."',
+            'cross': [
+                ('Exod 32:4', '"These are your gods, Israel, who brought you up out of Egypt." Identical formula. The narrator forces the reader to hear the echo of Israel\'s first and worst apostasy.'),
+                ('2 Kgs 17:21–23', '"Jeroboam enticed Israel away from following the LORD and caused them to commit a great sin. The Israelites persisted in all the sins of Jeroboam." The Deuteronomistic historian attributes the fall of the northern kingdom directly to Jeroboam\'s calves.'),
+                ('Hos 8:5–6', '"Samaria, throw out your calf-idol! My anger burns against them." Hosea, 200 years later, still confronts the same golden calves.'),
+            ],
+            'macarthur': [
+                ('12:26', 'MacArthur: Jeroboam\'s reasoning is political, not theological. He fears losing power if the people worship in Jerusalem. Every religious innovation driven by political calculation rather than divine revelation leads to apostasy. When convenience replaces conviction, the faith is corrupted.'),
+                ('12:28', 'MacArthur: The golden calves quote Exodus 32 exactly. Jeroboam knows the history — and repeats it anyway. This is not ignorance but deliberate choice: political survival over theological fidelity. The most dangerous sins are committed with full knowledge.'),
+                ('12:31', 'MacArthur: Non-Levitical priests, rival temples, alternative festivals — Jeroboam constructs an entire counterfeit worship system. The counterfeiter does not invent something new; he copies something real with crucial alterations. False religion always mimics true religion.'),
+                ('12:33', 'MacArthur: The feast "of his own choosing" in the eighth month — one month after the divinely appointed seventh-month feast. Close enough to feel legitimate, far enough to be rebellion. The most effective deceptions are nearly true.'),
+            ],
+            'wiseman': [
+                ('12:28', 'Wiseman: The calves may have been intended as pedestals for the invisible YHWH — similar to the cherubim above the ark. Bull iconography for deities was widespread in Canaan and the ANE (the Baal/Hadad bull imagery). But the distinction between a pedestal and an idol was too subtle for popular religion, and the calves became objects of worship themselves.'),
+                ('12:29', 'Wiseman: Dan (Tell el-Qadi, at the headwaters of the Jordan) and Bethel (Beitin, 12 miles north of Jerusalem) were both ancient cultic sites with pre-Israelite sanctuary traditions. Jeroboam exploited existing sacred associations rather than creating sites from scratch.'),
+            ],
+            'provan': [
+                ('12:28', 'Provan: The Exodus 32 quotation is the narrator\'s most devastating literary technique. By placing Aaron\'s exact words in Jeroboam\'s mouth, he makes the reader\'s judgment instantaneous. No editorial comment is needed. The allusion is the argument.'),
+                ('12:30', 'Provan: "This thing became a sin" — the simplest and most damning verdict in Kings. Every subsequent evaluation of northern kings traces back to this sentence. Jeroboam\'s calves become the template against which all northern kingship is measured and found wanting.'),
+            ],
+            'calvin': [
+                ('12:28', 'Calvin: Jeroboam\'s sin teaches that when religion is shaped by political convenience, it ceases to be religion and becomes propaganda. The moment worship serves the state rather than God, it is no longer worship — no matter how elaborate the ritual.'),
+                ('12:31', 'Calvin: Counterfeit priests, counterfeit feasts, counterfeit sanctuaries. The thoroughness of Jeroboam\'s alternative system shows how completely religion can be corrupted while retaining outward religious form. External appearance is no guarantee of internal truth.'),
+            ],
+            'netbible': [
+                ('12:28', 'NET Note: <em>hinnēh ʾĕlōhêkā Yiśrāʾēl ʾăšer heʿĕlûkā mēʾereṣ Miṣrāyim</em> — the verbal correspondence with Exod 32:4 is exact. The narrator does not add "as Aaron had said" because the reader is expected to recognise the quotation. The allusion functions as an implicit condemnation.'),
+                ('12:31', 'NET Note: <em>bêt bāmôt</em> (house/temple of high places) — Jeroboam does not merely set up open-air altars but constructs actual temple buildings at the high places. He creates a rival institutional religion with permanent infrastructure.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-3 complete: 1 Kings 9–12 built.")
