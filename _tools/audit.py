@@ -48,6 +48,7 @@ BOOK_ROSTER = [
     ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
     ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
     ('1_kings',      '1 Kings',      range(1, 23), 'ot'),
+    ('2_kings',      '2 Kings',      range(1,  1), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -74,6 +75,7 @@ SCHOLAR_KEYS = {
     '1 Samuel':    ['bergen',   'tsumura','calvin', 'netbible'],
     '2 Samuel':    ['bergen',   'anderson','calvin', 'netbible'],
     '1 Kings':     ['wiseman',  'provan',  'calvin', 'netbible'],
+    '2 Kings':     ['wiseman',  'provan',  'calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -318,7 +320,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','1_kings','2_kings','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'

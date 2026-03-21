@@ -23,7 +23,8 @@ window.WORD_STUDY_DATA = [
       {ref:"Ruth 3:10",  gloss:"kindness",       ctx:"Boaz: ‘This hesed is greater than the first’"},
       {ref:"2 Sam 7:15", gloss:"love",           ctx:"Davidic covenant: ‘My hesed will not depart from him’"},
       {ref:"1 Kgs 8:23", gloss:"love",           ctx:"Solomon’s prayer: ‘You who keep your covenant of hesed’"}
-    ]
+    ,
+      {ref:"2 Kgs 13:23",  gloss:"covenant love", ctx:"The LORD was gracious because of his hesed with Abraham, Isaac and Jacob"}]
   },
   {
     id:"shalom", language:"hebrew", original:"\u05E9\u05C1\u05DC\u05D5\u05DD", transliteration:"sh\u0101l\u00f4m", strongs:"H7965",
@@ -67,7 +68,8 @@ window.WORD_STUDY_DATA = [
       {ref:"2 Sam 7:12-16",gloss:"covenant",ctx:"The Davidic berith — eternal throne"},
       {ref:"1 Kgs 8:23", gloss:"covenant",  ctx:"Solomon: ‘You keep your berith of love’"}
     ,
-      {ref:"Lev 26:9",  gloss:"covenant", ctx:"‘I will keep my berith with you’"}]
+      {ref:"Lev 26:9",  gloss:"covenant", ctx:"‘I will keep my berith with you’"},
+      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the berith before the LORD — the last great covenant renewal"}]
   },
   {
     id:"tselem", language:"hebrew", original:"\u05E6\u05DC\u05DD", transliteration:"\u1E63elem", strongs:"H6754",
@@ -96,7 +98,8 @@ window.WORD_STUDY_DATA = [
       {ref:"1 Sam 16:13",gloss:"Spirit",  ctx:"The ruach of the LORD came on David"},
       {ref:"1 Kgs 19:11",gloss:"wind",    ctx:"A great and powerful ruach tore the mountains apart"}
     ,
-      {ref:"Lev 16:16",  gloss:"Spirit", ctx:"Atonement for the tabernacle — where God’s ruach dwells among impurity"}]
+      {ref:"Lev 16:16",  gloss:"Spirit", ctx:"Atonement for the tabernacle — where God’s ruach dwells among impurity"},
+      {ref:"2 Kgs 2:15",  gloss:"spirit", ctx:"The ruach of Elijah rests on Elisha — prophetic succession"}]
   },
   {
     id:"yasha", language:"hebrew", original:"\u05D9\u05E9\u05C1\u05E2", transliteration:"y\u0101sha\u02BB", strongs:"H3467",
@@ -108,7 +111,8 @@ window.WORD_STUDY_DATA = [
       {ref:"Judg 2:16",  gloss:"saved",     ctx:"The LORD raised up judges who yasha’d them"},
       {ref:"1 Sam 17:47",gloss:"save",      ctx:"David: ‘The battle is the LORD’s and he will yasha’"},
       {ref:"Matt 1:21",  gloss:"save",      ctx:"‘He will save (y\u014dsh\u012ba\u02BB) his people from their sins’"}
-    ]
+    ,
+      {ref:"2 Kgs 19:34",  gloss:"save/deliver", ctx:"I will defend this city and save (yasha) it, for my sake and for David’s sake"}]
   },
 
   // ═══════════════════════════════════════════════════════════════════════

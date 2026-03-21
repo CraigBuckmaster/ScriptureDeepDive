@@ -429,6 +429,52 @@ window.BOOK_INTROS = [
 },
 
 {
+  book: '2_kings',
+  title: 'How to Read 2 Kings',
+  subtitle: 'The covenant curses fulfilled \u2014 both kingdoms fall, but the Davidic line survives in exile.',
+  authorship:{author:"Anonymous (same author/editor as 1 Kings). Originally one book in the Hebrew canon (Melachim, \u2018Kings\u2019). The Deuteronomistic historian drew on multiple named sources: the Book of the Acts of Solomon, the chronicles of the kings of Israel, and the chronicles of the kings of Judah. These court records, prophetic narratives (especially the Elisha cycle), and temple archives were shaped into a unified theological history that evaluates every king by the standard of Deuteronomy\u2019s covenant theology. The final verses (25:27\u201330) record Jehoiachin\u2019s release in Babylon c.561 BC, establishing the earliest possible date for the book\u2019s completion.",date:"Events span c.852\u2013561 BC, from Elijah\u2019s departure to Jehoiachin\u2019s release from Babylonian prison. The book was compiled during the exile (post-561 BC), as the closing four verses require a date after Jehoiachin\u2019s release in the 37th year of his captivity. The Deuteronomistic History as a whole (Joshua through 2 Kings) was likely given its final form by an exilic editor who used the catastrophe of 586 BC as the theological lens through which to read all of Israel\u2019s royal history. The historical narratives themselves draw on much earlier sources \u2014 the Elisha stories, the Hezekiah-Isaiah material (parallel in Isaiah 36\u201339), and the court archives of both kingdoms.",prompt:"To explain why the covenant people lost everything \u2014 land, temple, monarchy, independence \u2014 and whether God\u2019s promises survived the catastrophe. 2 Kings answers the first question with devastating clarity: Israel fell because \u2018they followed worthless idols and themselves became worthless\u2019 (17:15). Judah fell because even Josiah\u2019s reform could not undo the damage Manasseh had done (23:26\u201327). But the book\u2019s final four verses answer the second question with quiet hope: Jehoiachin, heir of David, is released from prison, given a seat at the king\u2019s table, and sustained for the rest of his life. The dynasty lives. The promise endures. Exile is not the last word."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: '2 Kings is the second half of a single work (1\u20132 Kings in Hebrew: Melachim). It is theological history \u2014 a narrative that selects, arranges, and interprets events to answer the question: why did God\u2019s people lose everything? The answer comes through the Deuteronomistic lens: every king is evaluated by whether he worshipped YHWH alone or followed other gods. The northern kingdom never produces a faithful king and is destroyed by Assyria (722 BC). Judah gets two great reformers \u2014 Hezekiah and Josiah \u2014 but the damage done by Manasseh\u2019s 55-year reign of apostasy proves irreversible.\n\nThe book is also a prophetic narrative. Elisha dominates the first half (chapters 1\u201313), performing twice as many miracles as Elijah. Isaiah appears during the Hezekiah crisis (chapters 18\u201320). Huldah the prophetess validates the Torah scroll Josiah discovers (chapter 22). The prophetic word drives the plot: what God says through his prophets is what happens.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Elisha Cycle', chapters: [1, 8], note: 'Elijah\u2019s departure, Elisha\u2019s miracles, Naaman, invisible armies' },
+        { label: 'Revolution and Reform', chapters: [9, 12], note: 'Jehu\u2019s purge, Athaliah overthrown, boy king Joash' },
+        { label: 'The Long Decline', chapters: [13, 16], note: 'Elisha dies, rapid succession of kings, Assyria\u2019s shadow' },
+        { label: 'Fall of Israel', chapters: [17, 17], note: 'Samaria falls (722 BC) \u2014 the theological verdict' },
+        { label: 'Hezekiah\u2019s Reform', chapters: [18, 20], note: 'Sennacherib crisis, Isaiah, tunnel, Babylon embassy' },
+        { label: 'Manasseh and Josiah', chapters: [21, 23], note: 'Worst king, best king, still not enough' },
+        { label: 'Fall of Jerusalem', chapters: [24, 25], note: 'Temple destroyed (586 BC), exile, Jehoiachin released' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Prophetic Word Fulfilled', 'Covenant Curses', 'The High Places', 'Reform and Its Limits', 'Exile as Judgment', 'The Davidic Promise in Crisis', 'God\u2019s Patience Exhausted']
+    },
+    {
+      heading: 'Historical Context',
+      content: '2 Kings spans roughly 300 years of ancient Near Eastern history. The Assyrian Empire dominates the first half \u2014 Shalmaneser, Sargon II, Sennacherib are all attested in both biblical and archaeological sources. The Babylonian Empire replaces Assyria and destroys Jerusalem. This is one of the most archaeologically well-documented periods in the Bible: the Taylor Prism records Sennacherib\u2019s siege of Jerusalem, the Siloam Tunnel inscription confirms Hezekiah\u2019s water engineering, the Babylonian Chronicles record Nebuchadnezzar\u2019s capture of Jerusalem, and the Lachish Letters provide eyewitness testimony from Judah\u2019s final days.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      content: 'If you are new to 2 Kings, these chapters capture the full arc:',
+      plan: [
+        { ref: '2 Kgs 2', label: 'The chariot of fire \u2014 Elijah taken, Elisha succeeds' },
+        { ref: '2 Kgs 5', label: 'Naaman the leper \u2014 faith from an unexpected source' },
+        { ref: '2 Kgs 6', label: 'Invisible armies \u2014 \u201cthose who are with us are more\u201d' },
+        { ref: '2 Kgs 17', label: 'The fall of Israel \u2014 the theological centre of the book' },
+        { ref: '2 Kgs 18', label: 'Hezekiah\u2019s reform and Sennacherib\u2019s threat' },
+        { ref: '2 Kgs 22', label: 'Josiah finds the Book of the Law' },
+        { ref: '2 Kgs 25', label: 'Jerusalem falls \u2014 and a flicker of hope (vv 27\u201330)' }
+      ]
+    }
+  ]
+},
+
+{
   book: 'proverbs',
   title: 'How to Read Proverbs',
   subtitle: 'Wisdom for living — how to navigate a complex world with skill, integrity, and the fear of the LORD.',
