@@ -254,10 +254,12 @@ if orphan_errors == 0:
     ok('No orphaned HTML fragments')
 
 with open(f'{REPO}/index.html') as f: idx = f.read()
-if idx.count('<style>') != 1:
-    fail(f'index.html: {idx.count("<style>")} <style> blocks (expected 1)')
+# Homepage may use inline <style> OR external homepage.css
+_has_homepage_css = 'homepage.css' in idx
+if idx.count('<style>') == 1 or _has_homepage_css:
+    ok('Homepage CSS present' + (' (external homepage.css)' if _has_homepage_css else ' (inline <style>)'))
 else:
-    ok('Single <style> block in index.html')
+    fail(f'index.html: {idx.count("<style>")} <style> blocks and no homepage.css link')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # 2. CHAPTER SUBTITLE
@@ -920,36 +922,43 @@ if all_ok_15:
 # ═══════════════════════════════════════════════════════════════════════════
 section('16. Homepage Structural Checks')
 
-if '.book-item.open .chapter-list' not in idx:
+# Load external homepage files if they exist
+_hp_css_path = f'{REPO}/homepage.css'
+_hp_js_path = f'{REPO}/homepage.js'
+_hp_css = open(_hp_css_path).read() if os.path.exists(_hp_css_path) else ''
+_hp_js = open(_hp_js_path).read() if os.path.exists(_hp_js_path) else ''
+_hp_all = idx + _hp_css + _hp_js  # combined content for checks
+
+if '.book-item.open .chapter-list' not in _hp_all:
     fail('index.html: .book-item.open .chapter-list rule missing')
 else:
     ok('.book-item.open .chapter-list rule present')
 
-if 'item.label' not in idx:
+if 'item.label' not in _hp_all:
     fail('index.html: continue-reading chip does not read item.label')
 else:
     ok('Continue-reading chip reads item.label')
 
 for fn in ['handleSearch', 'VERSES_ALL']:
-    if fn in idx: ok(f'{fn} present in index.html')
-    else: fail(f'index.html: {fn} missing')
+    if fn in _hp_all: ok(f'{fn} present in homepage')
+    else: fail(f'homepage: {fn} missing')
 
-if 'continue-bar' in idx:
+if 'continue-bar' in _hp_all:
     ok('Continue reading bar present')
 else:
     warn('Continue reading bar not found')
 
 # Testament + book dropdown scroll guards
-if "block:'start'" in idx and 'toggleTestament' in idx:
+if "block:'start'" in _hp_all and 'toggleTestament' in _hp_all:
     ok('toggleTestament scroll guard present (dropdowns open downward)')
 else:
-    fail("index.html: toggleTestament missing scroll guard — dropdowns may open off-screen upward. "
+    fail("homepage: toggleTestament missing scroll guard — dropdowns may open off-screen upward. "
          "Add: if (rect.top < 60) grp.scrollIntoView({behavior:'smooth', block:'start'})")
 
-if "block:'start'" in idx and 'toggleBook' in idx and 'getBoundingClientRect' in idx:
+if "block:'start'" in _hp_all and 'toggleBook' in _hp_all and 'getBoundingClientRect' in _hp_all:
     ok('toggleBook scroll guard present (chapter list opens downward)')
 else:
-    fail("index.html: toggleBook missing scroll guard — chapter list may open off-screen upward. "
+    fail("homepage: toggleBook missing scroll guard — chapter list may open off-screen upward. "
          "Add rect.top < 60 guard with scrollIntoView block:'start'")
 
 # ═══════════════════════════════════════════════════════════════════════════
