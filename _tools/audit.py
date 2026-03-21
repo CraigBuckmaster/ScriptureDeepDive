@@ -48,7 +48,7 @@ BOOK_ROSTER = [
     ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
     ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
     ('1_kings',      '1 Kings',      range(1, 23), 'ot'),
-    ('2_kings',      '2 Kings',      range(1,  1), 'ot'),
+    ('2_kings',      '2 Kings',      range(1,  5), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -403,7 +403,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]

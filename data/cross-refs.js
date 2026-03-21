@@ -41,7 +41,8 @@ window.CROSS_REF_THREADS = [
       { ref: "Luke 22:20",   note: "'This cup is the new covenant in my blood'" }
     ,
       { ref: "2 Kgs 17:15", note: "Israel rejected the covenant — followed worthless idols" },
-      { ref: "2 Kgs 23:3",  note: "Josiah renews the covenant — the last great reform" }]
+      { ref: "2 Kgs 23:3",  note: "Josiah renews the covenant — the last great reform" },
+      { ref: "2 Kgs 23:2-3",  note: "Josiah renews the covenant — the last and greatest reform" }]
   },
 
   // ── Creation & New Creation ─────────────────────────────────────────────
@@ -77,7 +78,10 @@ window.CROSS_REF_THREADS = [
     ,
       { ref: "2 Kgs 17:6",  note: "Samaria falls — Israel exiled to Assyria (722 BC)" },
       { ref: "2 Kgs 25:11", note: "Jerusalem falls — Judah exiled to Babylon (586 BC)" },
-      { ref: "2 Kgs 25:27", note: "Jehoiachin released from prison — the Davidic line survives" }]
+      { ref: "2 Kgs 25:27", note: "Jehoiachin released from prison — the Davidic line survives" },
+      { ref: "2 Kgs 17:6",    note: "Israel deported to Assyria — the northern kingdom ceases to exist" },
+      { ref: "2 Kgs 25:8-12", note: "Jerusalem and the temple destroyed; Judah exiled to Babylon" },
+      { ref: "2 Kgs 25:27-30", note: "Jehoiachin released from prison — the Davidic line survives in exile" }]
   },
 
   // ── The Name of God ─────────────────────────────────────────────────────
@@ -112,7 +116,8 @@ window.CROSS_REF_THREADS = [
       { ref: "1 Kgs 22:17",  note: "Micaiah's vision: 'Israel scattered like sheep without a shepherd'" },
       { ref: "Matt 9:36",    note: "Jesus 'had compassion, because they were like sheep without a shepherd'" },
       { ref: "John 10:11",   note: "'I am the good shepherd — the good shepherd lays down his life'" }
-    ]
+    ,
+      { ref: "2 Kgs 21:16", note: "Manasseh — the anti-shepherd king who fills Jerusalem with innocent blood" }]
   },
 
   // ── Kingdom of God ──────────────────────────────────────────────────────
@@ -231,4 +236,7 @@ window.CROSS_REF_PAIRS = [
   { a: "Prov 8:22-31",b: "John 1:1-3",    note: "Wisdom at creation — the Word at creation" }
 ,
   { a: "2 Kgs 18:13",b: "Isa 36:1",     note: "Sennacherib invades — parallel accounts in Kings and Isaiah" },
-  { a: "2 Kgs 25:1", b: "Jer 52:4",     note: "The siege of Jerusalem — parallel accounts in Kings and Jeremiah" }];
+  { a: "2 Kgs 25:1", b: "Jer 52:4",     note: "The siege of Jerusalem — parallel accounts in Kings and Jeremiah" },
+{ a: "2 Kgs 2:9-14",b: "1 Kgs 19:19-21", note: "Elisha receives Elijah’s mantle — prophetic succession" },
+  { a: "2 Kgs 18:4",  b: "Num 21:8-9",     note: "The bronze serpent: from salvation to idolatry" },
+];

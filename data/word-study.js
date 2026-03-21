@@ -52,7 +52,8 @@ window.WORD_STUDY_DATA = [
       {ref:"Josh 1:8",    gloss:"law",        ctx:"‘Do not let this Book of the Torah depart from your mouth’"},
       {ref:"Prov 1:8",    gloss:"teaching",   ctx:"‘Do not forsake your mother’s torah’"}
     ,
-      {ref:"Lev 7:37",  gloss:"law", ctx:"‘This is the torah of the burnt offering, grain offering, sin offering’"}]
+      {ref:"Lev 7:37",  gloss:"law", ctx:"‘This is the torah of the burnt offering, grain offering, sin offering’"},
+      {ref:"2 Kgs 22:8",  gloss:"law", ctx:"\"I have found the Book of the Torah in the temple\" — Hilkiah's discovery"}]
   },
   {
     id:"berith", language:"hebrew", original:"\u05D1\u05E8\u05D9\u05EA", transliteration:"b\u0259r\u00eet", strongs:"H1285",
@@ -69,7 +70,8 @@ window.WORD_STUDY_DATA = [
       {ref:"1 Kgs 8:23", gloss:"covenant",  ctx:"Solomon: ‘You keep your berith of love’"}
     ,
       {ref:"Lev 26:9",  gloss:"covenant", ctx:"‘I will keep my berith with you’"},
-      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the berith before the LORD — the last great covenant renewal"}]
+      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the berith before the LORD — the last great covenant renewal"},
+      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the covenant before the LORD — the last great reform"}]
   },
   {
     id:"tselem", language:"hebrew", original:"\u05E6\u05DC\u05DD", transliteration:"\u1E63elem", strongs:"H6754",
@@ -99,7 +101,8 @@ window.WORD_STUDY_DATA = [
       {ref:"1 Kgs 19:11",gloss:"wind",    ctx:"A great and powerful ruach tore the mountains apart"}
     ,
       {ref:"Lev 16:16",  gloss:"Spirit", ctx:"Atonement for the tabernacle — where God’s ruach dwells among impurity"},
-      {ref:"2 Kgs 2:15",  gloss:"spirit", ctx:"The ruach of Elijah rests on Elisha — prophetic succession"}]
+      {ref:"2 Kgs 2:15",  gloss:"spirit", ctx:"The ruach of Elijah rests on Elisha — prophetic succession"},
+      {ref:"2 Kgs 2:9",  gloss:"spirit", ctx:"\"Let me inherit a double portion of your ruach\" — Elisha to Elijah"}]
   },
   {
     id:"yasha", language:"hebrew", original:"\u05D9\u05E9\u05C1\u05E2", transliteration:"y\u0101sha\u02BB", strongs:"H3467",
