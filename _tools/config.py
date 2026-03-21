@@ -98,7 +98,9 @@ COMMENTATOR_SCOPE = {
     'wiseman':   ['1_kings', '2_kings'],   # Donald Wiseman, TOTC 1 & 2 Kings (1993)
     'provan':    ['1_kings', '2_kings'],
     'selman':    ['1_chronicles', '2_chronicles'],  # Martin Selman, TOTC 1 \& 2 Chronicles (1994)
-    'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)
+    'kidner':    ['ezra'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
+    'williamson':['ezra'],                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -386,6 +388,16 @@ BOOK_META = {
         'vhl_people': ['Ruth','Naomi','Boaz','Orpah','LORD','redeemer','kinsman'],
         'vhl_time':   ['day','days','harvest','night','morning'],
         'vhl_key':    ['kindness','hesed','redeemer','covenant','blessing','LORD','loyal','faithful'],
+    },
+    'ezra': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Traditionally Ezra, though the text is anonymous. '
+                 '<strong>Date:</strong> c.&thinsp;450&ndash;400 BC. '
+                 '<strong>Setting:</strong> Babylon and Jerusalem under Persian rule, covering the returns of 538 BC and 458 BC.'),
+        'vhl_places': ['Babylon','Jerusalem','Persia','Judah','Israel','Samaria','Ecbatana','Susa','Egypt','Jordan','Ahava','Casiphia','Zion'],
+        'vhl_people': ['Cyrus','Sheshbazzar','Zerubbabel','Jeshua','Ezra','Artaxerxes','Darius','Haggai','Zechariah','Tattenai','Nehemiah','Aaron','David','Moses','Solomon'],
+        'vhl_key': ['LORD','God','temple','law','decree','covenant','house','altar','offering','sacrifice','worship','exile','return','vessels','foundation','Passover','Torah'],
+        'vhl_time': ['day','days','month','year','years','first year','seventh month','second year','first day'],
     },
     'proverbs': {
         'is_nt': False,

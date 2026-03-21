@@ -166,4 +166,13 @@ window.SCHOLAR_DATA = [
     desc:'Professor of Bible at Hebrew University of Jerusalem (1934\u20132022). The definitive critical commentary on Chronicles. Demonstrated the Chronicler\u2019s literary artistry and theological independence.'
   }
 
+,
+  {key:'kidner',name:'Derek Kidner',dates:'1913–2008',tradition:'Evangelical Anglican',
+   photo:'',works:'TOTC Ezra & Nehemiah (1979)',
+   bio:'Derek Kidner was a British Old Testament scholar and Warden of Tyndale House, Cambridge. His Tyndale commentaries are models of concise, theologically rich exposition. On Ezra-Nehemiah he combines careful attention to the Persian-period historical context with pastoral sensitivity to the spiritual dynamics of restoration.',
+   bookScope:['ezra'],buttonCSS:'.anno-trigger.kidner'},
+  {key:'williamson',name:'H.G.M. Williamson',dates:'1947–',tradition:'Critical-Evangelical',
+   photo:'',works:'WBC Ezra, Nehemiah (1985)',
+   bio:'Hugh Williamson is Regius Professor of Hebrew at Oxford. His Word Biblical Commentary on Ezra-Nehemiah is the standard academic reference, combining rigorous textual and historical analysis with theological insight. Particularly strong on the Aramaic sections and Persian administrative context.',
+   bookScope:['ezra'],buttonCSS:'.anno-trigger.williamson'}
 ];

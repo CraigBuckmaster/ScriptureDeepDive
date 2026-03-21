@@ -70,6 +70,7 @@ REGISTRY = [
     ('2_kings',     '2 Kings',      25, 25, 'OT', 'ot'),
     ('1_chronicles','1 Chronicles', 29, 29, 'OT', 'ot'),
     ('2_chronicles','2 Chronicles', 36, 36, 'OT', 'ot'),
+    ('ezra',        'Ezra',         10,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
@@ -91,6 +92,7 @@ BOOK_PREFIX = {
     '2_kings':  '2ki',
     '1_chronicles':'1ch',
     '2_chronicles':'2ch',
+    'ezra':     'ezr',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -1513,6 +1515,8 @@ def build_chapter(book_dir, ch, data):
         if 'howard'     in sec and in_scope('howard'):     btns.append(('howard',    'Howard',      f'{sid}-howard'))
         if 'block'      in sec and in_scope('block'):      btns.append(('block',     'Block',       f'{sid}-block'))
         if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
+        if 'williamson'  in sec and in_scope('williamson'):  btns.append(('williamson', 'Williamson',     f'{sid}-williamson'))
+        if 'kidner'  in sec and in_scope('kidner'):  btns.append(('kidner', 'Kidner',     f'{sid}-kidner'))
         if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
         if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
         if 'anderson'   in sec and in_scope('anderson'):   btns.append(('anderson',  'Anderson',    f'{sid}-anderson'))
@@ -1548,6 +1552,8 @@ def build_chapter(book_dir, ch, data):
         if 'hess'     in sec and in_scope('hess'):      panels_html += commentary_panel(f'{sid}-hess',     'hess',      sec['hess'])
         if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
         if 'block'    in sec and in_scope('block'):     panels_html += commentary_panel(f'{sid}-block',    'block',     sec['block'])
+        if 'williamson' in sec and in_scope('williamson'): panels_html += commentary_panel(f'{sid}-williamson', 'williamson', sec['williamson'])
+        if 'kidner' in sec and in_scope('kidner'): panels_html += commentary_panel(f'{sid}-kidner', 'kidner', sec['kidner'])
         if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
         if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
         if 'tsumura'  in sec and in_scope('tsumura'):   panels_html += commentary_panel(f'{sid}-tsumura',  'tsumura',   sec['tsumura'])
