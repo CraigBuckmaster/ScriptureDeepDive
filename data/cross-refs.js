@@ -241,4 +241,5 @@ window.CROSS_REF_PAIRS = [
 { a: "2 Kgs 2:9-14",b: "1 Kgs 19:19-21", note: "Elisha receives Elijah’s mantle — prophetic succession" },
   { a: "2 Kgs 18:4",  b: "Num 21:8-9",     note: "The bronze serpent: from salvation to idolatry" },
   { a: "1 Chr 21:1",  b: "2 Sam 24:1",     note: "Satan vs the LORD inciting the census — the Chronicler’s theological reinterpretation" },
+  { a: "2 Chr 7:14",  b: "1 Kgs 9:3",      note: "If my people humble themselves and pray — the Chronicler’s expansion of God’s temple promise" },
 ];

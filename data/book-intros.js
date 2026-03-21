@@ -519,6 +519,33 @@ window.BOOK_INTROS = [
 },
 
 {
+  book: '2_chronicles',
+  title: 'How to Read 2 Chronicles',
+  subtitle: 'The Chronicler\u2019s history of Judah\u2019s kings \u2014 from Solomon\u2019s glory to the exile \u2014 measured by one question: did the king seek God?',
+  authorship:{author:"The same anonymous Chronicler who wrote 1 Chronicles. Originally a single work with 1 Chronicles; the division into two books occurred in the Greek translation (Septuagint). The author writes from a post-exilic perspective for a community rebuilding its worship institutions.",date:"c.450\u2013400 BC, the same compositional period as 1 Chronicles. The book\u2019s final verses (36:22\u201323) quote the opening of Ezra (1:1\u20132), linking the two works and suggesting awareness of the Persian decree of Cyrus (538 BC).",prompt:"To demonstrate that Judah\u2019s history is governed by one principle: kings who seek God prosper; kings who forsake him fall. The Chronicler retells the monarchy from Solomon to the exile through this theological lens, expanding stories that illustrate seeking (Asa, Jehoshaphat, Hezekiah, Josiah) and compressing those that don\u2019t serve this purpose. The northern kingdom is almost entirely ignored because it lacks the legitimate temple, priesthood, and Davidic king. The book ends not with destruction (as 2 Kings does) but with Cyrus\u2019s decree to rebuild \u2014 hope beyond exile."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'2 Chronicles covers the same period as 1 Kings 1 through 2 Kings 25, but from a radically different perspective. Where Kings asks \u201cwhy did we lose everything?\u201d Chronicles asks \u201chow should we worship now?\u201d The Chronicler expands temple dedication ceremonies, worship reforms, and Levitical services while compressing or omitting political details, military campaigns, and northern kingdom history. The result is a history that reads like a sermon series on the consequences of seeking or forsaking God.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Solomon\u2019s Reign',chapters:[1,9],note:'Temple built, dedicated, glory established'},
+      {label:'The Divided Kingdom',chapters:[10,28],note:'Rehoboam to Ahaz \u2014 the seek/forsake cycle'},
+      {label:'Hezekiah\u2019s Reform',chapters:[29,32],note:'The great revival \u2014 4 chapters for one king'},
+      {label:'Manasseh to Josiah',chapters:[33,35],note:'Manasseh repents (unique to Chronicles); Josiah\u2019s reform'},
+      {label:'The Fall and the Hope',chapters:[36,36],note:'Four last kings in 23 verses \u2014 then Cyrus\u2019s decree'}
+    ]},
+    {heading:'Key Themes',themes:['Seek God and Prosper','The Temple as Identity','Levitical Worship','Immediate Retribution','Repentance Restores','All Israel United','Hope Beyond Exile']},
+    {heading:'Unique Material',content:'2 Chronicles contains substantial material absent from Kings: Abijah\u2019s speech (ch 13), Asa\u2019s prayer (14:11), Jehoshaphat\u2019s judicial reform (19:4\u201311), the \u201cbattle by worship\u201d (20:1\u201330), Manasseh\u2019s repentance (33:10\u201317), and extended accounts of Hezekiah\u2019s Passover (ch 30). These additions reveal the Chronicler\u2019s priorities: prayer, worship, and repentance matter more than politics.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 Chr 5\u20137',label:'Temple dedication \u2014 fire from heaven, God\u2019s glory fills the house'},
+      {ref:'2 Chr 10',label:'The kingdom divides \u2014 Rehoboam\u2019s folly'},
+      {ref:'2 Chr 20',label:'Jehoshaphat\u2019s battle by worship \u2014 singers defeat armies'},
+      {ref:'2 Chr 29\u201330',label:'Hezekiah\u2019s revival \u2014 the greatest reform'},
+      {ref:'2 Chr 34\u201335',label:'Josiah finds the Torah \u2014 the last good king'},
+      {ref:'2 Chr 36:22\u201323',label:'Cyrus\u2019s decree \u2014 hope beyond exile'}
+    ]}
+  ]
+},
+
+{
   book: 'proverbs',
   title: 'How to Read Proverbs',
   subtitle: 'Wisdom for living — how to navigate a complex world with skill, integrity, and the fear of the LORD.',

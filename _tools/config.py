@@ -357,6 +357,25 @@ BOOK_META = {
                      'all Israel','faithfulness','seek','heart','offering','divisions'],
         'vhl_time': ['day','days','year','years','month','time','generation','reign'],
     },
+    '2_chronicles': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> The same anonymous Chronicler who wrote 1 Chronicles. '
+                 'Originally a single work, the division into two books occurred in the Greek translation (LXX).<br><br>'
+                 '<strong>Date:</strong> c.450&ndash;400 BC. Same compositional period as 1 Chronicles.<br><br>'
+                 '<strong>Theme:</strong> The Chronicler retells the history of the Davidic kings from Solomon to the exile, '
+                 'focused on temple worship, royal faithfulness, and the seek/forsake pattern: kings who seek God prosper; '
+                 'kings who forsake him fall. The northern kingdom is almost entirely ignored &mdash; only Judah matters '
+                 'because only Judah has the legitimate temple, priesthood, and Davidic king.'),
+        'vhl_people': ['Solomon','Rehoboam','Abijah','Asa','Jehoshaphat','Joram','Ahaziah','Joash',
+                        'Amaziah','Uzziah','Jotham','Ahaz','Hezekiah','Manasseh','Josiah','Zedekiah',
+                        'Athaliah','Jehoiada','Huldah','Shishak','Sennacherib','Nebuchadnezzar',
+                        'God','LORD'],
+        'vhl_places': ['Jerusalem','temple','Samaria','Egypt','Assyria','Babylon','Moriah',
+                        'Gibeon','Megiddo','Lachish'],
+        'vhl_key': ['seek','forsake','temple','altar','priest','Levite','worship','faithfulness',
+                     'unfaithfulness','prayer','repentance','reform','covenant','high places'],
+        'vhl_time': ['day','days','year','years','month','reign','generation'],
+    },
     'ruth': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Unknown; Jewish tradition attributes authorship to Samuel.\n\n'
