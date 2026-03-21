@@ -1,0 +1,290 @@
+/* annotations.css — Personal study notes UI
+   Injected by annotations.js. Uses :root vars from styles.css. */
+
+/* ── Note indicator (quill icon in verse margin) ──────────── */
+
+.note-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.15s;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.note-indicator:hover { opacity: 0.8; }
+.note-indicator.has-note { opacity: 0.7; }
+.note-indicator.has-note:hover { opacity: 1; }
+
+.note-indicator svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Inline editor ────────────────────────────────────────── */
+
+.note-editor {
+  display: none;
+  margin: 0.6rem 0 1rem;
+  padding: 0.8rem;
+  background: rgba(201, 168, 76, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  animation: noteSlideIn 0.2s ease-out;
+}
+
+.note-editor.open { display: block; }
+
+@keyframes noteSlideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.note-editor-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.note-editor-ref {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+.note-editor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.note-editor-btn {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  transition: background 0.12s, color 0.12s;
+}
+
+.note-editor-btn.save {
+  color: #c9a84c;
+}
+
+.note-editor-btn.save:hover {
+  background: rgba(201, 168, 76, 0.12);
+}
+
+.note-editor-btn.delete {
+  color: #6a5a38;
+}
+
+.note-editor-btn.delete:hover {
+  color: #c04050;
+  background: rgba(192, 64, 80, 0.08);
+}
+
+.note-textarea {
+  width: 100%;
+  min-height: 80px;
+  max-height: 300px;
+  resize: vertical;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(58, 46, 24, 0.4);
+  border-radius: 3px;
+  padding: 0.6rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #f0e8d8;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.note-textarea:focus {
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.note-textarea::placeholder {
+  color: #4a3a22;
+  font-style: italic;
+}
+
+.note-saved-msg {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.6rem;
+  color: #78d8a8;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin-left: 0.5rem;
+}
+
+.note-saved-msg.show { opacity: 1; }
+
+/* ── Chapter notes panel ──────────────────────────────────── */
+
+.notes-panel-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.notes-panel-overlay.open { display: flex; justify-content: flex-end; }
+
+.notes-panel {
+  width: min(400px, 90vw);
+  height: 100%;
+  background: #0d0b07;
+  border-left: 1px solid #332810;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  animation: notesPanelSlide 0.25s ease-out;
+}
+
+@keyframes notesPanelSlide {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.notes-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #332810;
+  position: sticky;
+  top: 0;
+  background: #0d0b07;
+  z-index: 1;
+}
+
+.notes-panel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+.notes-panel-count {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.6rem;
+  color: #6a5a38;
+  margin-left: 0.5rem;
+}
+
+.notes-panel-close {
+  background: none;
+  border: none;
+  color: #6a5a38;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.notes-panel-close:hover { color: #c9a84c; }
+
+.notes-panel-body {
+  flex: 1;
+  padding: 1rem 1.2rem;
+}
+
+.notes-panel-empty {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.78rem;
+  color: #6a5a38;
+  text-align: center;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+.notes-panel-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(58, 46, 24, 0.3);
+}
+
+.notes-panel-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.notes-panel-item-ref {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 0.3rem;
+}
+
+.notes-panel-item-text {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.88rem;
+  color: #b8a880;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.notes-panel-item-date {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.55rem;
+  color: #4a3a22;
+  margin-top: 0.3rem;
+}
+
+/* ── My Notes button (chapter header) ─────────────────────── */
+
+.notes-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6020;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.notes-toggle-btn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.notes-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.15);
+  font-size: 0.55rem;
+  color: #c9a84c;
+  font-weight: 600;
+}

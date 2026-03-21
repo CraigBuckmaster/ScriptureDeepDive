@@ -746,7 +746,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../history.js"></script>\n' +
             SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
-            '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n</body></html>')
+            '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
     path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -1869,7 +1869,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 
