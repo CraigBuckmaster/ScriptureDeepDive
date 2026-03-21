@@ -104,15 +104,22 @@
     return results;
   }
 
-  // Full-text search across entries.
+  // Full-text search across entries — matches English words, transliterations,
+  // original script, glosses, semantic range, notes, and occurrence contexts.
   function search(query) {
     if (!query) return DATA.slice();
     var q = query.toLowerCase();
     return DATA.filter(function(e) {
       if (e.id.indexOf(q) > -1) return true;
       if (e.transliteration.toLowerCase().indexOf(q) > -1) return true;
-      if (e.glosses.some(function(g) { return g.toLowerCase().indexOf(q) > -1; })) return true;
+      if (e.original && e.original.indexOf(q) > -1) return true;
+      if (e.glosses && e.glosses.some(function(g) { return g.toLowerCase().indexOf(q) > -1; })) return true;
       if (e.range && e.range.toLowerCase().indexOf(q) > -1) return true;
+      if (e.note && e.note.toLowerCase().indexOf(q) > -1) return true;
+      if (e.occurrences && e.occurrences.some(function(occ) {
+        return (occ.gloss && occ.gloss.toLowerCase().indexOf(q) > -1) ||
+               (occ.ctx && occ.ctx.toLowerCase().indexOf(q) > -1);
+      })) return true;
       return false;
     });
   }

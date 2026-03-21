@@ -1125,6 +1125,25 @@ else:
     ok(f'ESV verse data complete for all {sum(1 for _,_,_,l,_,_ in _shared.REGISTRY if l > 0)} live books')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 19. DATA FILE SYNTAX
+# Validate JS syntax of all data/*.js files to catch missing commas etc.
+# ═══════════════════════════════════════════════════════════════════════════
+section('19. Data File JS Syntax')
+
+import subprocess
+_data_js = sorted(_glob.glob(os.path.join(REPO, 'data', '*.js')))
+_syntax_errors = []
+for _djs in _data_js:
+    result = subprocess.run(['node', '-c', _djs], capture_output=True, text=True)
+    if result.returncode != 0:
+        _syntax_errors.append(os.path.basename(_djs) + ': ' + result.stderr.strip().split('\n')[0])
+
+if _syntax_errors:
+    for e in _syntax_errors: fail(e)
+else:
+    ok(f'All {len(_data_js)} data/*.js files pass JS syntax check')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")

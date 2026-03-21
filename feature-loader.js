@@ -18,14 +18,17 @@
       '../../verse-resolver.js',
       '../../study-storage.js'
     ],
-    // Phase 2: data files + engines
+    // Phase 2: data files (must complete before engines capture globals)
     [
       '../../data/cross-refs.js',
+      '../../data/word-study.js'
+    ],
+    // Phase 3: engines (index the data loaded in Phase 2)
+    [
       '../../cross-ref-engine.js',
-      '../../data/word-study.js',
       '../../word-study-engine.js'
     ],
-    // Phase 3: UI features (depend on services + engines)
+    // Phase 4: UI features (depend on services + engines)
     [
       '../../annotations.js',
       '../../cross-ref-ui.js',
