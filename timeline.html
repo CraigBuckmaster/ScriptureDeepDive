@@ -155,8 +155,6 @@
 
 <script src="timeline-data.js"></script>
 <script>
-);
-}
 
 // ── CONSTANTS ──────────────────────────────────────────────────────────────
 
@@ -718,7 +716,10 @@ function handleHash(){
 let resizeTimer;
 window.addEventListener('resize',()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(initTimeline,150); });
 
-// ── DATA ──────────────────────────────────────────────────────────────────
+// ── INIT ──────────────────────────────────────────────────────────────────
+initTimeline();
+handleHash();
+window.addEventListener('hashchange', handleHash);
 </script>
 <script src="site-footer.js"></script>
 </body>
