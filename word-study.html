@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Word Study — Scripture Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root { --accent:#c9a84c; }
+.ws-wrapper { max-width:860px; margin:0 auto; padding:1.5rem; }
+.ws-nav { display:flex; align-items:center; justify-content:space-between; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.ws-nav a { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; transition:color .15s; }
+.ws-nav a:hover { color:var(--gold); }
+.ws-page-title { font-family:'Cinzel',serif; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--text); letter-spacing:.04em; margin-bottom:.4rem; }
+.ws-page-sub { font-family:'Source Sans 3',sans-serif; font-size:.82rem; color:var(--text-muted); margin-bottom:2rem; }
+
+.ws-controls { display:flex; gap:.8rem; flex-wrap:wrap; margin-bottom:2rem; }
+.ws-search { flex:1; min-width:200px; background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:4px;
+  padding:.5rem .8rem; font-family:'Source Sans 3',sans-serif; font-size:.85rem; color:var(--text); outline:none; transition:border-color .15s; }
+.ws-search:focus { border-color:var(--gold-dim); }
+.ws-search::placeholder { color:var(--text-muted); }
+.ws-filter { font-family:'Source Sans 3',sans-serif; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase;
+  padding:.4rem .7rem; background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:3px;
+  color:var(--text-muted); cursor:pointer; transition:all .12s; }
+.ws-filter:hover { border-color:var(--gold-dim); color:var(--text-dim); }
+.ws-filter.active { background:rgba(201,168,76,.1); border-color:var(--gold-dim); color:var(--accent); }
+
+.ws-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:.8rem; }
+.ws-entry { padding:1rem; background:rgba(255,255,255,.02); border:1px solid var(--border); border-radius:4px;
+  cursor:pointer; transition:background .12s, border-color .12s; }
+.ws-entry:hover { background:rgba(201,168,76,.04); border-color:var(--gold-dim); }
+.ws-entry-lang { font-family:'Source Sans 3',sans-serif; font-size:.5rem; letter-spacing:.12em; text-transform:uppercase; color:#6a5a38; margin-bottom:.2rem; }
+.ws-entry-original { font-size:1.5rem; color:var(--text); margin-bottom:.1rem; }
+.ws-entry-translit { font-family:'EB Garamond',Georgia,serif; font-size:.9rem; color:var(--accent); font-style:italic; margin-bottom:.3rem; }
+.ws-entry-glosses { font-family:'Source Sans 3',sans-serif; font-size:.7rem; color:var(--text-muted); }
+.ws-entry-count { font-family:'Source Sans 3',sans-serif; font-size:.55rem; color:#4a3a22; margin-top:.4rem; }
+
+/* Detail card reuses word-study-ui.js card styles */
+.ws-detail { display:none; }
+.ws-detail.open { display:block; }
+.ws-detail-back { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim);
+  cursor:pointer; background:none; border:none; margin-bottom:1.5rem; padding:0; transition:color .15s; }
+.ws-detail-back:hover { color:var(--gold); }
+.ws-detail-header { margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.ws-detail-lang { font-family:'Source Sans 3',sans-serif; font-size:.55rem; letter-spacing:.15em; text-transform:uppercase; color:#7a6020; margin-bottom:.3rem; }
+.ws-detail-original { font-size:2.2rem; color:var(--text); margin-bottom:.1rem; line-height:1.2; }
+.ws-detail-translit { font-family:'EB Garamond',Georgia,serif; font-size:1.1rem; color:var(--accent); font-style:italic; margin-bottom:.4rem; }
+.ws-detail-glosses { font-family:'Source Sans 3',sans-serif; font-size:.78rem; color:var(--text-dim); }
+.ws-detail-strongs { font-family:'Source Sans 3',sans-serif; font-size:.6rem; color:#4a3a22; margin-top:.3rem; }
+.ws-detail-section { margin-bottom:1.5rem; }
+.ws-detail-label { font-family:'Source Sans 3',sans-serif; font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:#6a5a38; margin-bottom:.4rem; }
+.ws-detail-text { font-family:'EB Garamond',Georgia,serif; font-size:.95rem; color:var(--text-dim); line-height:1.8; }
+.ws-detail-note { font-family:'EB Garamond',Georgia,serif; font-size:.9rem; color:#7a6020; line-height:1.8; font-style:italic; }
+.ws-occ-list { list-style:none; padding:0; }
+.ws-occ-item { display:flex; gap:.6rem; align-items:baseline; padding:.5rem 0; border-bottom:1px solid rgba(58,46,24,.2); }
+.ws-occ-item:last-child { border-bottom:none; }
+.ws-occ-ref { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.05em; min-width:75px; flex-shrink:0; }
+.ws-occ-ref a { color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(201,168,76,.3); }
+.ws-occ-ref a:hover { border-color:var(--accent); }
+.ws-occ-ref span { color:#6a5a38; }
+.ws-occ-gloss { font-family:'Source Sans 3',sans-serif; font-size:.6rem; color:#7a6020; background:rgba(201,168,76,.08); padding:.1rem .3rem; border-radius:2px; flex-shrink:0; }
+.ws-occ-ctx { font-family:'EB Garamond',Georgia,serif; font-size:.85rem; color:var(--text-dim); }
+.ws-empty { font-family:'Source Sans 3',sans-serif; font-size:.82rem; color:var(--text-muted); text-align:center; padding:3rem 0; font-style:italic; }
+</style>
+</head>
+<body>
+<div class="ws-wrapper">
+  <nav class="ws-nav"><a href="index.html">&larr; Library</a></nav>
+  <h1 class="ws-page-title">Word Study</h1>
+  <p class="ws-page-sub">Explore key Hebrew and Greek words — their semantic range, theological weight, and every occurrence in live chapters.</p>
+  <div id="ws-target"></div>
+</div>
+<script src="books.js"></script>
+<script src="verse-resolver.js"></script>
+<script src="data/word-study.js"></script>
+<script src="word-study-engine.js"></script>
+<script>
+(function() {
+  'use strict';
+  var WS = window.WordStudy;
+  var VR = window.VerseResolver;
+  if (!WS || !VR) return;
+
+  var target = document.getElementById('ws-target');
+  var allEntries = WS.allEntries();
+  var activeLang = 'all';
+
+  function renderList(lang, query) {
+    var entries = allEntries;
+    if (lang && lang !== 'all') entries = entries.filter(function(e) { return e.language === lang; });
+    if (query) {
+      var q = query.toLowerCase();
+      entries = entries.filter(function(e) {
+        return e.id.indexOf(q) > -1 || e.transliteration.toLowerCase().indexOf(q) > -1 ||
+          e.glosses.some(function(g) { return g.toLowerCase().indexOf(q) > -1; });
+      });
+    }
+
+    var html = '<div class="ws-controls">' +
+      '<input class="ws-search" id="ws-search" placeholder="Search words\u2026" value="' + (query || '') + '">' +
+      '<button class="ws-filter' + (activeLang === 'all' ? ' active' : '') + '" data-lang="all">All</button>' +
+      '<button class="ws-filter' + (activeLang === 'hebrew' ? ' active' : '') + '" data-lang="hebrew">Hebrew</button>' +
+      '<button class="ws-filter' + (activeLang === 'greek' ? ' active' : '') + '" data-lang="greek">Greek</button>' +
+      '</div>';
+
+    if (entries.length === 0) {
+      html += '<p class="ws-empty">No words found.</p>';
+    } else {
+      html += '<div class="ws-grid">';
+      entries.forEach(function(e) {
+        html += '<div class="ws-entry" data-id="' + e.id + '">' +
+          '<div class="ws-entry-lang">' + e.language + '</div>' +
+          '<div class="ws-entry-original">' + e.original + '</div>' +
+          '<div class="ws-entry-translit">' + e.transliteration + '</div>' +
+          '<div class="ws-entry-glosses">' + e.glosses.join(' \u00b7 ') + '</div>' +
+          '<div class="ws-entry-count">' + (e.occurrences ? e.occurrences.length : 0) + ' occurrences</div>' +
+          '</div>';
+      });
+      html += '</div>';
+    }
+
+    target.innerHTML = html;
+
+    document.getElementById('ws-search').addEventListener('input', function(ev) { renderList(activeLang, ev.target.value); });
+    target.querySelectorAll('.ws-filter').forEach(function(btn) {
+      btn.addEventListener('click', function() { activeLang = btn.getAttribute('data-lang'); renderList(activeLang, document.getElementById('ws-search').value); });
+    });
+    target.querySelectorAll('.ws-entry').forEach(function(card) {
+      card.addEventListener('click', function() { renderDetail(card.getAttribute('data-id')); });
+    });
+  }
+
+  function renderDetail(wordId) {
+    var e = WS.lookup(wordId);
+    if (!e) return;
+
+    var occHtml = '';
+    if (e.occurrences && e.occurrences.length) {
+      occHtml = '<ul class="ws-occ-list">';
+      e.occurrences.forEach(function(occ) {
+        var parsed = VR.parse(occ.ref);
+        var refH = parsed && VR.isLive(parsed.book, parsed.ch) ? '<a href="' + parsed.url + '">' + occ.ref + '</a>' : '<span>' + occ.ref + '</span>';
+        occHtml += '<li class="ws-occ-item"><span class="ws-occ-ref">' + refH + '</span>' +
+          '<span class="ws-occ-gloss">' + occ.gloss + '</span><span class="ws-occ-ctx">' + occ.ctx + '</span></li>';
+      });
+      occHtml += '</ul>';
+    }
+
+    target.innerHTML =
+      '<button class="ws-detail-back">&larr; Back to all words</button>' +
+      '<div class="ws-detail-header">' +
+        '<div class="ws-detail-lang">' + e.language + '</div>' +
+        '<div class="ws-detail-original">' + e.original + '</div>' +
+        '<div class="ws-detail-translit">' + e.transliteration + '</div>' +
+        '<div class="ws-detail-glosses">' + e.glosses.join(' \u00b7 ') + '</div>' +
+        (e.strongs ? '<div class="ws-detail-strongs">' + e.strongs + '</div>' : '') +
+      '</div>' +
+      '<div class="ws-detail-section"><div class="ws-detail-label">Semantic Range</div><div class="ws-detail-text">' + e.range + '</div></div>' +
+      (e.note ? '<div class="ws-detail-section"><div class="ws-detail-label">Theological Significance</div><div class="ws-detail-note">' + e.note + '</div></div>' : '') +
+      (occHtml ? '<div class="ws-detail-section"><div class="ws-detail-label">Occurrences</div>' + occHtml + '</div>' : '');
+
+    target.querySelector('.ws-detail-back').addEventListener('click', function() { renderList(activeLang); });
+  }
+
+  function handleHash() {
+    var h = location.hash.replace('#', '');
+    if (h && WS.lookup(h)) { renderDetail(h); return; }
+    renderList('all');
+  }
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
+})();
+</script>
+<script src="site-footer.js"></script>
+</body>
+</html>

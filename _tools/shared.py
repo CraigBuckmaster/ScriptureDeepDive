@@ -1869,7 +1869,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 
