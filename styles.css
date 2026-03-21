@@ -562,3 +562,13 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .translation-btn:hover{color:var(--gold);border-color:var(--gold-dim);}
 .translation-btn.active{background:rgba(201,168,76,.15);border-color:var(--gold-dim);color:var(--gold);}
 .verse-body{display:inline;}
+.anno-trigger.selman{color:#c0b890;border-color:#7a6e48;background:rgba(122,110,72,.22);}
+.anno-trigger.selman:hover{border-color:#c0b890;background:rgba(122,110,72,.32);}
+.anno-trigger.selman.active{filter:brightness(1.25);}
+.com-panel.com-selman{background:#0a0904;border-color:#7a6e48;}
+.com-panel.com-selman h4{color:#c0b890;}
+.anno-trigger.japhet{color:#a8c8b8;border-color:#4a7868;background:rgba(74,120,104,.22);}
+.anno-trigger.japhet:hover{border-color:#a8c8b8;background:rgba(74,120,104,.32);}
+.anno-trigger.japhet.active{filter:brightness(1.25);}
+.com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
+.com-panel.com-japhet h4{color:#a8c8b8;}

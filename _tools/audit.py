@@ -49,6 +49,7 @@ BOOK_ROSTER = [
     ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
     ('1_kings',      '1 Kings',      range(1, 23), 'ot'),
     ('2_kings',      '2 Kings',      range(1, 26), 'ot'),
+    ('1_chronicles', '1 Chronicles', range(1,  5), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
@@ -76,6 +77,7 @@ SCHOLAR_KEYS = {
     '2 Samuel':    ['bergen',   'anderson','calvin', 'netbible'],
     '1 Kings':     ['wiseman',  'provan',  'calvin', 'netbible'],
     '2 Kings':     ['wiseman',  'provan',  'calvin', 'netbible'],
+    '1 Chronicles':['selman',   'japhet',  'calvin', 'netbible'],
 }
 
 def chapter_paths():
@@ -320,7 +322,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','1_kings','2_kings','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','1_kings','2_kings','1_chronicles','ruth','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -403,7 +405,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('1_chronicles','1 Chronicles','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]

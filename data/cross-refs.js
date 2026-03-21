@@ -42,7 +42,8 @@ window.CROSS_REF_THREADS = [
     ,
       { ref: "2 Kgs 17:15", note: "Israel rejected the covenant — followed worthless idols" },
       { ref: "2 Kgs 23:3",  note: "Josiah renews the covenant — the last great reform" },
-      { ref: "2 Kgs 23:2-3",  note: "Josiah renews the covenant — the last and greatest reform" }]
+      { ref: "2 Kgs 23:2-3",  note: "Josiah renews the covenant — the last and greatest reform" },
+      { ref: "1 Chr 17:11-14", note: "The Chronicler’s version of the Davidic covenant — emphasises the eternal throne and temple" }]
   },
 
   // ── Creation & New Creation ─────────────────────────────────────────────
@@ -239,4 +240,5 @@ window.CROSS_REF_PAIRS = [
   { a: "2 Kgs 25:1", b: "Jer 52:4",     note: "The siege of Jerusalem — parallel accounts in Kings and Jeremiah" },
 { a: "2 Kgs 2:9-14",b: "1 Kgs 19:19-21", note: "Elisha receives Elijah’s mantle — prophetic succession" },
   { a: "2 Kgs 18:4",  b: "Num 21:8-9",     note: "The bronze serpent: from salvation to idolatry" },
+  { a: "1 Chr 21:1",  b: "2 Sam 24:1",     note: "Satan vs the LORD inciting the census — the Chronicler’s theological reinterpretation" },
 ];

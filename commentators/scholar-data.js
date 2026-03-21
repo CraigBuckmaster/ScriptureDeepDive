@@ -152,5 +152,18 @@ window.SCHOLAR_DATA = [
     scope:'1\u20132 Kings',
     tradition:'Evangelical \u00b7 TOTC 1\u20132 Kings \u00b7 ANE Archaeology',
     desc:'Professor of Assyriology at the University of London. Uniquely combined cuneiform expertise with evangelical biblical scholarship. TOTC 1 and 2 Kings.'
+  },
+  {
+    key:'selman', name:'Martin J. Selman', color:'#c0b890',
+    scope:'1\u20132 Chronicles',
+    tradition:'Evangelical \u00b7 TOTC 1\u20132 Chronicles \u00b7 Post-Exilic Theology',
+    desc:'Director of Postgraduate Studies at Spurgeon\u2019s College, London. TOTC 1 and 2 Chronicles: the Chronicler\u2019s theological agenda made accessible.'
+  },
+  {
+    key:'japhet', name:'Sara Japhet', color:'#a8c8b8',
+    scope:'1\u20132 Chronicles',
+    tradition:'Critical \u00b7 OTL I\u2013II Chronicles \u00b7 Hebrew University',
+    desc:'Professor of Bible at Hebrew University of Jerusalem (1934\u20132022). The definitive critical commentary on Chronicles. Demonstrated the Chronicler\u2019s literary artistry and theological independence.'
   }
+
 ];

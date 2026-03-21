@@ -96,7 +96,9 @@ COMMENTATOR_SCOPE = {
     'tsumura':   ['1_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
     'anderson':  ['2_samuel'],              # A.A. Anderson, WBC 2 Samuel (1989)
     'wiseman':   ['1_kings', '2_kings'],   # Donald Wiseman, TOTC 1 & 2 Kings (1993)
-    'provan':    ['1_kings', '2_kings'],   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'provan':    ['1_kings', '2_kings'],
+    'selman':    ['1_chronicles', '2_chronicles'],  # Martin Selman, TOTC 1 \& 2 Chronicles (1994)
+    'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -331,6 +333,28 @@ BOOK_META = {
                         'Egypt','Moab','Edom'],
         'vhl_key': ['covenant','temple','high places','exile','deportation','reform','prophet',
                      'judgment','idolatry','Baal','Assyria','Babylon','law','book','fire'],
+        'vhl_time': ['day','days','year','years','month','time','generation','reign'],
+    },
+    '1_chronicles': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous (traditionally attributed to Ezra, but the text is anonymous). '
+                 'The author is called "the Chronicler" &mdash; a post-exilic Levitical writer with deep interest in '
+                 'temple worship, music, and priestly genealogies. Originally one book with 2 Chronicles (Hebrew: '
+                 'Dibr&ecirc; Hayy&acirc;m&icirc;m, "Events of the Days").<br><br>'
+                 '<strong>Date:</strong> c.450&ndash;400 BC, during or after the time of Ezra and Nehemiah. '
+                 'The genealogy in 3:19&ndash;24 extends several generations past Zerubbabel (c.520 BC), '
+                 'placing final composition in the late 5th or early 4th century BC.<br><br>'
+                 '<strong>Theme:</strong> Legitimate worship and the continuity of God&rsquo;s people. '
+                 'Where Samuel-Kings asks &ldquo;why did we lose everything?&rdquo; Chronicles asks &ldquo;who are we now, '
+                 'and how do we worship rightly?&rdquo; David is presented primarily as worship-organiser, not warrior-king. '
+                 'The Levites, musicians, and temple service receive more attention than battles and politics.'),
+        'vhl_people': ['Adam','Abraham','Isaac','Jacob','Israel','Judah','David','Solomon','Nathan',
+                        'Joab','Asaph','Heman','Jeduthun','Zadok','Hiram','Jabez','Uzzah',
+                        'Obed-Edom','Ornan','God','LORD'],
+        'vhl_places': ['Jerusalem','Hebron','Zion','Gibeon','Kiriath Jearim','Bethlehem',
+                        'Tyre','Rabbah','Gath','temple','tabernacle','threshing floor'],
+        'vhl_key': ['genealogy','temple','ark','Levites','priest','worship','music','covenant',
+                     'all Israel','faithfulness','seek','heart','offering','divisions'],
         'vhl_time': ['day','days','year','years','month','time','generation','reign'],
     },
     'ruth': {
