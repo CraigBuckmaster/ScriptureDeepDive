@@ -383,87 +383,66 @@ else:
     ok(f'All {len(EXPECTED)} chapters have correct NIV verse counts')
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 6. NAVIGATION ARROWS
+# 6. NAVIGATION ARROWS (dynamic — computed by nav-arrows.js at runtime)
 # ═══════════════════════════════════════════════════════════════════════════
 section('6. Navigation Arrows')
 
-nav_errors = []
-for i, (path, book, ch) in enumerate(chapters):
+# 6a. Every chapter has placeholder arrows with correct IDs
+placeholder_errors = []
+for path, book, ch in chapters:
     with open(path) as f: h = f.read()
-    m = re.search(r'class="nav-arrow next([^"]*)"[^>]*href="([^"]*)"', h) or \
-        re.search(r'href="([^"]*)"[^>]*class="nav-arrow next([^"]*)"', h)
-    if not m: continue
-    next_exists = (i + 1 < len(chapters) and chapters[i+1][1] == book)
-    href = m.group(2) if m.lastindex >= 2 else m.group(1)
-    classes = m.group(1) if m.lastindex >= 2 else m.group(2)
-    if next_exists and (href == '#' or 'disabled' in classes):
-        nav_errors.append(f'{book} {ch}: next arrow disabled but {book} {ch+1} exists')
-
-if nav_errors:
-    for e in nav_errors: fail(e)
+    if 'id="nav-prev"' not in h:
+        placeholder_errors.append(f'{book} {ch}: missing id="nav-prev"')
+    if 'id="nav-next"' not in h:
+        placeholder_errors.append(f'{book} {ch}: missing id="nav-next"')
+if placeholder_errors:
+    for e in placeholder_errors[:5]: fail(e)
+    if len(placeholder_errors) > 5: fail(f'...and {len(placeholder_errors)-5} more')
 else:
-    ok('No incorrectly disabled next-arrows')
+    ok(f'All {len(chapters)} chapters have nav-prev/nav-next placeholders')
 
-# Verify ALL intra-book arrows point to correct adjacent chapters
-intra_errors = []
-for i, (path, book, ch) in enumerate(chapters):
+# 6b. Every chapter loads nav-arrows.js
+nav_js_errors = []
+for path, book, ch in chapters:
     with open(path) as f: h = f.read()
-    bn_file = book.replace(' ', '_')
-    
-    # Check next arrow (if not last chapter of this book)
-    is_last = (i + 1 >= len(chapters) or chapters[i+1][1] != book)
-    if not is_last:
-        expected_next = f'{bn_file}_{ch+1}.html'
-        m = re.search(r'href="([^"]+)" class="nav-arrow">&#8594;', h)
-        if m and m.group(1) != expected_next:
-            intra_errors.append(f'{book} {ch}: next → {m.group(1)} (expected {expected_next})')
-    
-    # Check prev arrow (if not first chapter of this book)
-    is_first = (i == 0 or chapters[i-1][1] != book)
-    if not is_first:
-        expected_prev = f'{bn_file}_{ch-1}.html'
-        m = re.search(r'href="([^"]+)" class="nav-arrow">&#8592;', h)
-        if m and m.group(1) != expected_prev:
-            intra_errors.append(f'{book} {ch}: prev → {m.group(1)} (expected {expected_prev})')
-
-if intra_errors:
-    for e in intra_errors[:10]: fail(e)
-    if len(intra_errors) > 10: fail(f'...and {len(intra_errors)-10} more intra-book arrow errors')
+    if 'nav-arrows.js' not in h:
+        nav_js_errors.append(f'{book} {ch}: missing nav-arrows.js')
+if nav_js_errors:
+    for e in nav_js_errors[:5]: fail(e)
 else:
-    ok(f'All intra-book arrows verified ({len(chapters)} chapters)')
+    ok(f'All {len(chapters)} chapters load nav-arrows.js')
 
-# Verify cross-book nav arrows use ../../ testament-prefixed paths
-REGISTRY_ORDER = [
-    ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('ruth','Ruth','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('1_chronicles','1 Chronicles','ot'), ('2_chronicles','2 Chronicles','ot'), ('proverbs','Proverbs','ot'),
-    ('matthew','Matthew','nt'), ('mark','Mark','nt'),
-    ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
-]
-LIVE_CHS = {bd: ch_range.stop-1 for bd,bn,ch_range,_ in BOOK_ROSTER}
-cross_errors = []
-for i,(bd,bn,td) in enumerate(REGISTRY_ORDER):
-    if i > 0:  # check first chapter's prev arrow
-        pbd,pbn,ptd = REGISTRY_ORDER[i-1]
-        pl = LIVE_CHS[pbd]
-        path = f'{REPO}/{td}/{bd}/{bn}_1.html'
-        if os.path.exists(path):
-            with open(path) as f: h = f.read()
-            expected = f'../../{ptd}/{pbd}/{pbn.replace(" ","_")}_{pl}.html'
-            if expected not in h:
-                cross_errors.append(f'{bn} 1: prev cross-book href wrong (expected {expected})')
-    if i < len(REGISTRY_ORDER)-1:  # check last chapter's next arrow
-        nbd,nbn,ntd = REGISTRY_ORDER[i+1]
-        ll = LIVE_CHS[bd]
-        path = f'{REPO}/{td}/{bd}/{bn}_{ll}.html'
-        if os.path.exists(path):
-            with open(path) as f: h = f.read()
-            expected = f'../../{ntd}/{nbd}/{nbn.replace(" ","_")}_1.html'
-            if expected not in h:
-                cross_errors.append(f'{bn} {ll}: next cross-book href wrong (expected {expected})')
-if cross_errors:
-    for e in cross_errors: fail(e)
+# 6c. No hardcoded arrow hrefs remain (should all be placeholders now)
+hardcoded_errors = []
+for path, book, ch in chapters:
+    with open(path) as f: h = f.read()
+    if re.search(r'href="[^"]*" class="nav-arrow">&#8592;', h):
+        hardcoded_errors.append(f'{book} {ch}: hardcoded prev arrow still present')
+    if re.search(r'href="[^"]*" class="nav-arrow">&#8594;', h):
+        hardcoded_errors.append(f'{book} {ch}: hardcoded next arrow still present')
+if hardcoded_errors:
+    for e in hardcoded_errors[:5]: fail(e)
+    if len(hardcoded_errors) > 5: fail(f'...and {len(hardcoded_errors)-5} more')
 else:
-    ok('All cross-book nav boundaries correct')
+    ok('No hardcoded arrow hrefs remain (all dynamic)')
+
+# 6d. BOOKS order matches BOOK_ROSTER order (nav-arrows.js depends on this)
+_books_path = os.path.join(REPO, 'books.js')
+with open(_books_path) as f: _books_raw = f.read()
+_books_dirs = re.findall(r'dir:"([^"]+)"', _books_raw)
+_roster_dirs = [bd for bd, bn, ch_range, td in BOOK_ROSTER]
+if _books_dirs != _roster_dirs:
+    fail(f'BOOKS order does not match BOOK_ROSTER: {_books_dirs[:3]}... vs {_roster_dirs[:3]}...')
+else:
+    ok(f'BOOKS order matches BOOK_ROSTER ({len(_books_dirs)} books)')
+
+# 6e. nav-arrows.js is in SW CORE cache
+_sw_path = os.path.join(REPO, 'service-worker.js')
+with open(_sw_path) as f: _sw_raw = f.read()
+if '/nav-arrows.js' not in _sw_raw:
+    fail('nav-arrows.js not in service-worker.js CORE cache')
+else:
+    ok('nav-arrows.js in SW CORE cache')
 
 # Verify QNAV_CURRENT values use testament/book/Name_N.html format
 qnav_cur_errors = []
