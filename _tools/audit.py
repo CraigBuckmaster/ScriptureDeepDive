@@ -1180,7 +1180,7 @@ else:
     ok(f'No const/let collisions across {len(_coload_groups)} co-load groups')
 
 # Check inline scripts on key pages parse correctly
-_inline_pages = ['timeline.html', 'synoptic.html']
+_inline_pages = ['timeline.html', 'synoptic.html', 'word-study.html']
 _inline_errors = []
 for _page in _inline_pages:
     _page_path = os.path.join(REPO, _page)
