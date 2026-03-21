@@ -1869,7 +1869,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 

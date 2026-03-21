@@ -1233,3 +1233,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+// ── Highlight current chapter and open its book on page load ────────────
+document.addEventListener('DOMContentLoaded', function() {
+  var cur = window.QNAV_CURRENT || '';
+  if (!cur) return;
+  // cur = 'acts/Acts_5.html'  →  book_dir='acts', book_name='Acts', ch='5'
+  var parts = cur.split('/');
+  if (parts.length < 2) return;
+  var bookDir = parts[0];
+  var fname   = parts[1];                          // e.g. Acts_5.html
+  var chNum   = fname.replace(/^.*_(\d+)\.html$/, '$1');
+  var chUrl   = '../' + cur;
+
+  // Mark the current chapter button
+  document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
+    if (btn.getAttribute('href') === chUrl) {
+      btn.classList.add('current');
+    }
+  });
+
+  // Open the current book's grid
+  var bookEl = document.getElementById('qnav-book-' + bookDir);
+  if (bookEl) {
+    bookEl.classList.add('open');
+    // Open the parent testament section too
+    var testamentDiv = bookEl.closest('.qnav-testament');
+    if (testamentDiv && !testamentDiv.classList.contains('open')) {
+      testamentDiv.classList.add('open');
+    }
+  }
+});
