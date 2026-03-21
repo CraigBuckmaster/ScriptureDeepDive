@@ -24,9 +24,54 @@ body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgi
 .com-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.5rem; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
 .com-nav-back, .com-nav-all { font-family:'Source Sans 3',sans-serif; font-size:.72rem; color:var(--gold-dim); text-decoration:none; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
 .com-nav-back:hover, .com-nav-all:hover { color:var(--gold); }
-.com-nav-items { display:flex; gap:.2rem; flex-wrap:wrap; justify-content:center; }
-.com-nav-item { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; padding:.3rem .6rem; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
-.com-nav-item:hover { color:var(--text-dim); }
+
+/* Scholar dropdown nav */
+.com-nav-dropdown { position:relative; flex:1; display:flex; justify-content:center; }
+.com-nav-trigger {
+  display:flex; align-items:center; gap:.4rem;
+  background:none; border:1px solid var(--border); border-radius:4px;
+  padding:.35rem .7rem; cursor:pointer;
+  font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent);
+  transition:border-color .15s, background .15s;
+}
+.com-nav-trigger:hover { border-color:var(--accent); background:rgba(255,255,255,.04); }
+.com-nav-trigger .chev { font-size:.5rem; color:var(--text-muted); transition:transform .2s; }
+.com-nav-trigger.open .chev { transform:rotate(180deg); }
+.com-nav-dd-panel {
+  display:none; position:absolute; top:calc(100% + .5rem); left:50%; transform:translateX(-50%);
+  width:min(320px, 90vw); max-height:70vh; overflow-y:auto; overscroll-behavior:contain;
+  background:#0d0b07; border:1px solid var(--border); border-radius:6px;
+  box-shadow:0 8px 32px rgba(0,0,0,.6); z-index:200;
+  -webkit-overflow-scrolling:touch;
+}
+.com-nav-dd-panel.open { display:block; }
+.com-nav-dd-item {
+  display:flex; align-items:center; gap:.6rem;
+  padding:.55rem .9rem; text-decoration:none;
+  border-bottom:1px solid rgba(58,46,24,.3);
+  transition:background .12s;
+}
+.com-nav-dd-item:last-child { border-bottom:none; }
+.com-nav-dd-item:hover { background:rgba(255,255,255,.04); }
+.com-nav-dd-item.current { background:rgba(255,255,255,.06); }
+.com-nav-dd-dot {
+  width:8px; height:8px; border-radius:50%; flex-shrink:0;
+}
+.com-nav-dd-name {
+  font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--text-dim); flex:1;
+}
+.com-nav-dd-item.current .com-nav-dd-name { color:var(--text); }
+.com-nav-dd-scope {
+  font-family:'Source Sans 3',sans-serif; font-size:.62rem;
+  color:var(--text-muted); white-space:nowrap;
+}
+.com-nav-dd-dismiss {
+  display:none; position:fixed; inset:0; z-index:199;
+}
+.com-nav-dd-dismiss.open { display:block; }
+
 .bio-wrap { max-width:800px; margin:0 auto; padding:3rem 1.5rem 6rem; }
 .bio-header { margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
 .bio-eyebrow { font-family:'Source Sans 3',sans-serif; font-size:.65rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:.8rem; }
@@ -59,8 +104,7 @@ body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgi
 <body>
 <nav class="com-nav">
   <a href="../index.html" class="com-nav-back">&#8592; Library</a>
-  <div class="com-nav-items"><a href="macarthur.html" class="com-nav-item" style="">MacArthur</a><a href="sarna.html" class="com-nav-item" style="">Sarna</a><a href="alter.html" class="com-nav-item" style="">Alter</a><a href="hubbard.html" class="com-nav-item" style="">Hubbard</a><a href="waltke.html" class="com-nav-item" style="">Waltke</a><a href="milgrom.html" class="com-nav-item" style="">Milgrom</a><a href="ashley.html" class="com-nav-item" style="">Ashley</a><a href="calvin.html" class="com-nav-item" style="">Calvin</a><a href="robertson.html" class="com-nav-item" style="">Robertson</a><a href="catena.html" class="com-nav-item" style="">Catena</a><a href="netbible.html" class="com-nav-item" style="">NET Bible</a><a href="marcus.html" class="com-nav-item" style="color:#70d8d8;border-bottom:2px solid #70d8d8;">Marcus</a><a href="rhoads.html" class="com-nav-item" style="">Rhoads</a><a href="keener.html" class="com-nav-item" style="">Keener</a><a href="craigie.html" class="com-nav-item" style="">Craigie</a><a href="tigay.html" class="com-nav-item" style="">Tigay</a></div>
-  <a href="index.html" class="com-nav-all">All Scholars</a>
+  <div class="com-nav-dropdown"><button class="com-nav-trigger">Joel Marcus <span class="chev">&#9660;</span></button><div class="com-nav-dd-panel"><a href="alter.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#d4a853"></span><span class="com-nav-dd-name">Robert Alter</span><span class="com-nav-dd-scope">Genesis–Deuteronomy, Ruth, Proverbs</span></a><a href="anderson.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#c8d0a0"></span><span class="com-nav-dd-name">A.A. Anderson</span><span class="com-nav-dd-scope">2 Samuel</span></a><a href="ashley.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#f0c080"></span><span class="com-nav-dd-name">Timothy Ashley</span><span class="com-nav-dd-scope">Numbers</span></a><a href="bergen.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#d8a080"></span><span class="com-nav-dd-name">Robert Bergen</span><span class="com-nav-dd-scope">1–2 Samuel</span></a><a href="block.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#e0a070"></span><span class="com-nav-dd-name">Daniel Block</span><span class="com-nav-dd-scope">Judges</span></a><a href="calvin.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#7ba7cc"></span><span class="com-nav-dd-name">John Calvin</span><span class="com-nav-dd-scope">All Books</span></a><a href="catena.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#b888d8"></span><span class="com-nav-dd-name">Catena Aurea</span><span class="com-nav-dd-scope">Gospels</span></a><a href="craigie.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#d8b8f0"></span><span class="com-nav-dd-name">Peter Craigie</span><span class="com-nav-dd-scope">Deuteronomy</span></a><a href="hess.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#60d0c0"></span><span class="com-nav-dd-name">Richard Hess</span><span class="com-nav-dd-scope">Joshua</span></a><a href="howard.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#90b0e0"></span><span class="com-nav-dd-name">David Howard</span><span class="com-nav-dd-scope">Joshua</span></a><a href="hubbard.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#a8c870"></span><span class="com-nav-dd-name">Robert Hubbard</span><span class="com-nav-dd-scope">Ruth</span></a><a href="keener.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#a8c8f8"></span><span class="com-nav-dd-name">Craig Keener</span><span class="com-nav-dd-scope">Acts</span></a><a href="macarthur.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#e05a6a"></span><span class="com-nav-dd-name">John MacArthur</span><span class="com-nav-dd-scope">All Books</span></a><a href="marcus.html" class="com-nav-dd-item current"><span class="com-nav-dd-dot" style="background:#70d8d8"></span><span class="com-nav-dd-name">Joel Marcus</span><span class="com-nav-dd-scope">Mark</span></a><a href="milgrom.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#78d8a8"></span><span class="com-nav-dd-name">Jacob Milgrom</span><span class="com-nav-dd-scope">Leviticus–Numbers</span></a><a href="netbible.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#d8e8d0"></span><span class="com-nav-dd-name">NET Bible Notes</span><span class="com-nav-dd-scope">All Books</span></a><a href="provan.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#d8c0a0"></span><span class="com-nav-dd-name">Iain Provan</span><span class="com-nav-dd-scope">1–2 Kings</span></a><a href="rhoads.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#e8c060"></span><span class="com-nav-dd-name">David Rhoads</span><span class="com-nav-dd-scope">Mark</span></a><a href="robertson.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#c8d870"></span><span class="com-nav-dd-name">A.T. Robertson</span><span class="com-nav-dd-scope">Gospels, Acts</span></a><a href="sarna.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#4ec9b0"></span><span class="com-nav-dd-name">Nahum Sarna</span><span class="com-nav-dd-scope">Genesis–Exodus</span></a><a href="tigay.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#e8d090"></span><span class="com-nav-dd-name">Jeffrey Tigay</span><span class="com-nav-dd-scope">Deuteronomy</span></a><a href="tsumura.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#88b8d8"></span><span class="com-nav-dd-name">David Tsumura</span><span class="com-nav-dd-scope">1 Samuel</span></a><a href="waltke.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#e8a0b8"></span><span class="com-nav-dd-name">Bruce Waltke</span><span class="com-nav-dd-scope">Proverbs</span></a><a href="webb.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#90c890"></span><span class="com-nav-dd-name">Barry Webb</span><span class="com-nav-dd-scope">Judges</span></a><a href="wiseman.html" class="com-nav-dd-item"><span class="com-nav-dd-dot" style="background:#b0d8e8"></span><span class="com-nav-dd-name">Donald Wiseman</span><span class="com-nav-dd-scope">1–2 Kings</span></a></div><div class="com-nav-dd-dismiss"></div></div><a href="index.html" class="com-nav-all">All Scholars</a>
 </nav>
 
 <div class="bio-wrap">
@@ -118,5 +162,30 @@ body { background:var(--bg); color:var(--text); font-family:'EB Garamond',Georgi
 
 </div>
 </div>
+
+<script>
+(function(){
+  var trigger = document.querySelector('.com-nav-trigger');
+  var panel = document.querySelector('.com-nav-dd-panel');
+  var dismiss = document.querySelector('.com-nav-dd-dismiss');
+  if (!trigger || !panel) return;
+  function toggle() {
+    var open = panel.classList.toggle('open');
+    trigger.classList.toggle('open', open);
+    dismiss.classList.toggle('open', open);
+  }
+  function close() {
+    panel.classList.remove('open');
+    trigger.classList.remove('open');
+    dismiss.classList.remove('open');
+  }
+  trigger.addEventListener('click', toggle);
+  dismiss.addEventListener('click', close);
+  // Scroll current into view
+  var cur = panel.querySelector('.current');
+  if (cur) setTimeout(function(){ cur.scrollIntoView({block:'center'}); }, 50);
+})();
+</script>
+
 </body>
 </html>
