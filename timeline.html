@@ -624,6 +624,7 @@ function openDetail(ev){
   document.getElementById('detail-content').innerHTML=html;
   document.getElementById('detail-panel').classList.add('open');
   history.replaceState(null,'','#'+ev.id);
+  setTimeout(initTimeline, 320);
 }
 
 function openPersonDetail(person){
@@ -637,6 +638,7 @@ function openPersonDetail(person){
     <div class="detail-text">View the full biography, family connections, and scripture role for ${person.name} in the People of the Bible tree.</div>
     <a href="people.html#${person.id}" target="_blank" class="detail-chapter-link">View Biography in People of the Bible</a>`;
   document.getElementById('detail-panel').classList.add('open');
+  setTimeout(initTimeline, 320);
 }
 
 function openHistoryDetail(ev){
@@ -650,16 +652,14 @@ function openHistoryDetail(ev){
     <div class="detail-divider"></div>
     <div class="detail-text">${ev.summary}</div>`;
   document.getElementById('detail-panel').classList.add('open');
+  setTimeout(initTimeline, 320);
 }
 
 function closeDetail(){
   document.getElementById('detail-panel').classList.remove('open');
   history.replaceState(null,'',location.pathname);
-  setTimeout(()=>{
-    const panel=document.getElementById('timeline-panel');
-    const svg=document.getElementById('timeline-svg');
-    if(svg&&panel){ svg.setAttribute('width',panel.clientWidth); svg.setAttribute('height',panel.clientHeight); }
-  },320);
+  // After CSS transition completes, rebuild SVG with correct dimensions
+  setTimeout(initTimeline, 320);
 }
 
 // ── ERA FILTER ────────────────────────────────────────────────────────────
