@@ -68,7 +68,7 @@ REGISTRY = [
     ('1_kings',     '1 Kings',      22, 22, 'OT', 'ot'),
     ('2_kings',     '2 Kings',      25, 25, 'OT', 'ot'),
     ('1_chronicles','1 Chronicles', 29, 29, 'OT', 'ot'),
-    ('2_chronicles','2 Chronicles', 36,  9, 'OT', 'ot'),
+    ('2_chronicles','2 Chronicles', 36, 36, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),

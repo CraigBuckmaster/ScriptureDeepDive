@@ -50,7 +50,7 @@ BOOK_ROSTER = [
     ('1_kings',      '1 Kings',      range(1, 23), 'ot'),
     ('2_kings',      '2 Kings',      range(1, 26), 'ot'),
     ('1_chronicles', '1 Chronicles', range(1, 30), 'ot'),
-    ('2_chronicles', '2 Chronicles', range(1, 10), 'ot'),
+    ('2_chronicles', '2 Chronicles', range(1, 37), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),
