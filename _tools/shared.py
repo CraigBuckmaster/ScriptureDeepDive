@@ -208,15 +208,14 @@ def head(book_name, book_dir, ch, is_nt=False):
 <body>
 {nav}'''
 
-def chapter_header(book_name, ch, title, auth_text, is_nt=False):
+def chapter_header(book_name, ch, title, auth_text='', is_nt=False):
+    """Build the <header> for a chapter page.
+    auth_text is retained for backward compatibility but no longer rendered —
+    authorship data now lives in data/book-intros.js and renders on intro pages."""
     return f'''<header>
 <h1>{book_name} {ch}</h1>
 <p>{title}</p>
-</header>
-<div class="authorship-block">
-<button class="authorship-toggle" onclick="toggleAuth(this)"><span>Authorship &amp; Dating</span><span class="chev">&#9660;</span></button>
-<div class="authorship-content">{auth_sections(auth_text)}</div>
-</div>'''
+</header>'''
 
 def btn_row(*btns):
     inner = ''.join(

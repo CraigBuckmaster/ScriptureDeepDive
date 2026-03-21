@@ -266,3 +266,31 @@
   .intro-outline-label { min-width: auto; }
   .intro-plan-step { flex-wrap: wrap; }
 }
+
+/* ── Authorship & Dating ─────────────────────────────────── */
+
+.intro-auth-field {
+  margin-bottom: 1rem;
+}
+
+.intro-auth-field:last-child {
+  margin-bottom: 0;
+}
+
+.intro-auth-label {
+  display: block;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.intro-auth-text {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}

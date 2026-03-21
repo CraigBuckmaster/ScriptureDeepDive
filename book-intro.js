@@ -78,6 +78,33 @@
     html += '<p class="intro-subtitle">' + intro.subtitle + '</p>';
   }
 
+  // Authorship & Dating
+  if (intro.authorship) {
+    var a = intro.authorship;
+    html += '<div class="intro-section intro-authorship">';
+    html += '<h2 class="intro-section-heading">Authorship &amp; Dating</h2>';
+    html += '<div class="intro-section-content">';
+    if (a.author) {
+      html += '<div class="intro-auth-field">';
+      html += '<span class="intro-auth-label">Author</span>';
+      html += '<p class="intro-auth-text">' + a.author + '</p>';
+      html += '</div>';
+    }
+    if (a.date) {
+      html += '<div class="intro-auth-field">';
+      html += '<span class="intro-auth-label">When Written</span>';
+      html += '<p class="intro-auth-text">' + a.date + '</p>';
+      html += '</div>';
+    }
+    if (a.prompt) {
+      html += '<div class="intro-auth-field">';
+      html += '<span class="intro-auth-label">What Prompted It</span>';
+      html += '<p class="intro-auth-text">' + a.prompt + '</p>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+
   // Sections
   var sections = intro.sections || [];
   for (var s = 0; s < sections.length; s++) {
