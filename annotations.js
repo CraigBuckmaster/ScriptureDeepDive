@@ -38,6 +38,9 @@
     _bookKey = bookKey;
     _chNum = chNum;
 
+    // Always add intro link (not storage-dependent)
+    _addIntroLink();
+
     if (!SS.isAvailable()) return;
 
     // Load existing notes for this chapter
@@ -58,9 +61,6 @@
 
     // Add "My Notes" button to chapter header
     _addNotesButton();
-
-    // Add "About This Book" link
-    _addIntroLink();
   }
 
   // ── Verse number extraction ─────────────────────────────────────────────

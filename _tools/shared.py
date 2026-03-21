@@ -1896,7 +1896,13 @@ def rebuild_sw_js():
             _rel = '/' + os.path.relpath(_p, _REPO).replace(os.sep, '/')
             chapter_lines.append(f"  '{_rel}',")
 
-    all_lines = static_preserved + niv_lines + esv_lines + chapter_lines
+    # Scan intro pages
+    intro_lines = []
+    for _p in sorted(glob.glob(os.path.join(_REPO, 'intro', '*.html'))):
+        _rel = '/' + os.path.relpath(_p, _REPO).replace(os.sep, '/')
+        intro_lines.append(f"  '{_rel}',")
+
+    all_lines = static_preserved + niv_lines + esv_lines + chapter_lines + intro_lines
     new_core = "\n" + "\n".join(all_lines) + "\n"
 
     new_sw = sw[:core_match.start(1)] + "const CORE = [" + new_core + "];" + sw[core_match.end(3):]

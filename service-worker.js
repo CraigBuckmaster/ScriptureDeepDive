@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.175';
+const CACHE = 'scripture-2.176';
 const CORE = [
   '/',
   '/index.html',
@@ -70,6 +70,7 @@ const CORE = [
   '/data/word-study.js',
   '/word-study-engine.js',
   '/word-study-ui.js',
+  '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/niv/verses.js',
@@ -569,6 +570,23 @@ const CORE = [
   '/ot/ruth/Ruth_2.html',
   '/ot/ruth/Ruth_3.html',
   '/ot/ruth/Ruth_4.html',
+  '/intro/1_kings.html',
+  '/intro/1_samuel.html',
+  '/intro/2_samuel.html',
+  '/intro/acts.html',
+  '/intro/deuteronomy.html',
+  '/intro/exodus.html',
+  '/intro/genesis.html',
+  '/intro/john.html',
+  '/intro/joshua.html',
+  '/intro/judges.html',
+  '/intro/leviticus.html',
+  '/intro/luke.html',
+  '/intro/mark.html',
+  '/intro/matthew.html',
+  '/intro/numbers.html',
+  '/intro/proverbs.html',
+  '/intro/ruth.html',
 ];
 
 self.addEventListener('install', e => {
