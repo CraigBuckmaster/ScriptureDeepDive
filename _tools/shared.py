@@ -162,7 +162,9 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
 
 def head(book_name, book_dir, ch, is_nt=False):
     rec      = next((r for r in REGISTRY if r[0]==book_dir), None)
-    live     = rec[3] if rec else ch
+    # Use TOTAL chapters (rec[2]) for intra-book nav, not live (rec[3]).
+    # live may not be updated yet during batch builds; total is always correct.
+    book_total = rec[2] if rec else ch
     idx      = next((i for i,r in enumerate(REGISTRY) if r[0]==book_dir), None)
 
     # ── Previous arrow ────────────────────────────────────────────────────
@@ -178,7 +180,7 @@ def head(book_name, book_dir, ch, is_nt=False):
         prev = '<span class="nav-arrow disabled">&#8592;</span>'
 
     # ── Next arrow ────────────────────────────────────────────────────────
-    if ch < live:
+    if ch < book_total:
         # Within same book
         nxt = f'<a href="{book_name.replace(chr(32),chr(95))}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
     elif idx is not None and idx < len(REGISTRY) - 1:
