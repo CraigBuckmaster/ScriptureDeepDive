@@ -469,6 +469,20 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .com-panel.com-anderson{background:#0a0c04;border-color:#606828;}
 .com-panel.com-anderson h4{color:#c8d0a0;}
 .com-panel.com-anderson .com-source{color:#c8d0a0;border-bottom-color:rgba(96,104,40,.4);}
+/* Wiseman — TOTC 1 & 2 Kings (ice blue: ANE archaeology) */
+.anno-trigger.wiseman{color:#b0d8e8;border-color:#406878;background:rgba(64,104,120,.22);}
+.anno-trigger.wiseman:hover{border-color:#80b8d0;background:rgba(64,104,120,.32);}
+.anno-trigger.wiseman.active{filter:brightness(1.25);}
+.com-panel.com-wiseman{background:#040a0e;border-color:#406878;}
+.com-panel.com-wiseman h4{color:#b0d8e8;}
+.com-panel.com-wiseman .com-source{color:#b0d8e8;border-bottom-color:rgba(64,104,120,.4);}
+/* Provan — NIBCOT 1 & 2 Kings (sandstone: literary-theological) */
+.anno-trigger.provan{color:#d8c0a0;border-color:#786040;background:rgba(120,96,64,.22);}
+.anno-trigger.provan:hover{border-color:#c0a880;background:rgba(120,96,64,.32);}
+.anno-trigger.provan.active{filter:brightness(1.25);}
+.com-panel.com-provan{background:#0c0a06;border-color:#786040;}
+.com-panel.com-provan h4{color:#d8c0a0;}
+.com-panel.com-provan .com-source{color:#d8c0a0;border-bottom-color:rgba(120,96,64,.4);}
 .com-panel.com-marcus{background:#030d0d;border-color:#2a7878;}
 .com-panel.com-marcus h4{color:#70d8d8;}
 .com-panel.com-marcus .com-source{color:#70d8d8;border-bottom-color:rgba(42,120,120,.4);}
