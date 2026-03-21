@@ -404,6 +404,34 @@ if nav_errors:
 else:
     ok('No incorrectly disabled next-arrows')
 
+# Verify ALL intra-book arrows point to correct adjacent chapters
+intra_errors = []
+for i, (path, book, ch) in enumerate(chapters):
+    with open(path) as f: h = f.read()
+    bn_file = book.replace(' ', '_')
+    
+    # Check next arrow (if not last chapter of this book)
+    is_last = (i + 1 >= len(chapters) or chapters[i+1][1] != book)
+    if not is_last:
+        expected_next = f'{bn_file}_{ch+1}.html'
+        m = re.search(r'href="([^"]+)" class="nav-arrow">&#8594;', h)
+        if m and m.group(1) != expected_next:
+            intra_errors.append(f'{book} {ch}: next → {m.group(1)} (expected {expected_next})')
+    
+    # Check prev arrow (if not first chapter of this book)
+    is_first = (i == 0 or chapters[i-1][1] != book)
+    if not is_first:
+        expected_prev = f'{bn_file}_{ch-1}.html'
+        m = re.search(r'href="([^"]+)" class="nav-arrow">&#8592;', h)
+        if m and m.group(1) != expected_prev:
+            intra_errors.append(f'{book} {ch}: prev → {m.group(1)} (expected {expected_prev})')
+
+if intra_errors:
+    for e in intra_errors[:10]: fail(e)
+    if len(intra_errors) > 10: fail(f'...and {len(intra_errors)-10} more intra-book arrow errors')
+else:
+    ok(f'All intra-book arrows verified ({len(chapters)} chapters)')
+
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
