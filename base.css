@@ -1,0 +1,29 @@
+/* base.css — shared design tokens and body reset for Scripture Deep Dive
+   Loaded by: index.html, people.html, timeline.html, commentators/index.html, commentator bios
+   Chapter pages use styles.css instead (which defines its own :root).
+   To change a site-wide colour: edit here. All pages inherit automatically. */
+
+:root {
+  --bg: #0c0a07;
+  --bg2: #141008;
+  --bg3: #1a1508;
+  --border: #332810;
+  --border2: #2a2010;
+  --gold: #c9a84c;
+  --gold-dim: #7a6020;
+  --gold-bright: #e8c870;
+  --text: #f0e8d8;
+  --text-dim: #b8a880;
+  --text-muted: #6a5a38;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
