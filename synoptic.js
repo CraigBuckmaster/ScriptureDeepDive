@@ -17,6 +17,7 @@
   var _byChapter = {};
 
   MAP.forEach(function(entry) {
+    if (!entry.passages || !Array.isArray(entry.passages)) return;
     entry.passages.forEach(function(p) {
       if (!VR) return;
       var parsed = VR.parse(p.ref);
