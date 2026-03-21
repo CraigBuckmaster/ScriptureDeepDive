@@ -1049,6 +1049,49 @@ else:
     ok(f'All {len(_live_names)} live books registered in BOOK_VARS')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 18. VERSE LOADING INTEGRITY
+# Every verse-body span in every chapter must have matching data in its verse file.
+# ═══════════════════════════════════════════════════════════════════════════
+section('18. Verse Loading Integrity')
+
+_vl_errors = []
+for book_dir, book_name, total, live, _test, subdir in REGISTRY:
+    if live == 0: continue
+    _vf = os.path.join(REPO, 'verses', 'niv', subdir, f'{book_dir}.js')
+    if not os.path.exists(_vf):
+        _vl_errors.append(f'{book_name}: verse file missing')
+        continue
+    with open(_vf) as _f: _vjs = _f.read()
+    _var_name = f'VERSES_{book_dir.upper()}'
+    if f'var {_var_name}=' not in _vjs and f'var {_var_name} =' not in _vjs:
+        _vl_errors.append(f'{book_name}: variable {_var_name} not found')
+        continue
+    _data_keys = set(re.findall(r'"book":"([^"]+)","ch":(\d+),"v":(\d+)', _vjs))
+    _data_keys = {f'{b} {c}:{v}' for b, c, v in _data_keys}
+    for ch in range(1, live + 1):
+        _cf = os.path.join(REPO, subdir, book_dir, f'{book_name.replace(" ","_")}_{ch}.html')
+        if not os.path.exists(_cf): continue
+        with open(_cf) as _f: _ch = _f.read()
+        if f'verses/niv/{subdir}/{book_dir}.js' not in _ch:
+            _vl_errors.append(f'{book_name} {ch}: missing verse file script tag')
+        if 'translation.js' not in _ch:
+            _vl_errors.append(f'{book_name} {ch}: missing translation.js')
+        _bodies = re.findall(r'data-book="([^"]+)"\s*data-ch="(\d+)"\s*data-v="(\d+)"', _ch)
+        if not _bodies:
+            _vl_errors.append(f'{book_name} {ch}: no verse-body spans')
+            continue
+        for _b, _c, _v in _bodies:
+            if f'{_b} {_c}:{_v}' not in _data_keys:
+                _vl_errors.append(f'{book_name} {ch}: verse {_b} {_c}:{_v} has no data')
+                break  # one per chapter is enough
+
+if _vl_errors:
+    fail(f'Verse loading issues ({len(_vl_errors)}):')
+    for _e in _vl_errors[:5]: fail(f'  {_e}')
+else:
+    ok(f'All {sum(1 for _,_,_,l,_,_ in REGISTRY if l > 0)} books pass verse loading integrity')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")
