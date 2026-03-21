@@ -60,15 +60,20 @@
   var testament = bookInfo ? bookInfo.testament : 'ot';
   var bookDir = bookInfo ? bookInfo.dir : bookKey;
 
-  // First chapter link
-  var firstChUrl = '../' + testament + '/' + bookDir + '/' + bookName.replace(/ /g, '_') + '_1.html';
+  // Chapter link — if user came from a chapter, return them there
+  var refCh = null;
+  var hashMatch = window.location.hash.match(/ch=(\d+)/);
+  if (hashMatch) refCh = parseInt(hashMatch[1], 10);
+
+  var chUrl = '../' + testament + '/' + bookDir + '/' + bookName.replace(/ /g, '_') + '_' + (refCh || 1) + '.html';
+  var chLabel = refCh ? 'Continue Reading &rarr;' : 'Start Reading &rarr;';
 
   var html = '<div class="intro-wrapper">';
 
   // Nav
   html += '<nav class="intro-nav">';
   html += '<a href="../index.html">&larr; Library</a>';
-  html += '<a href="' + firstChUrl + '">Start Reading &rarr;</a>';
+  html += '<a href="' + chUrl + '">' + chLabel + '</a>';
   html += '</nav>';
 
   // Header
