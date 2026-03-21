@@ -51,14 +51,21 @@
   }
 
   // ── VERSE JSON PATH ──────────────────────────────────────────────────────
+  // Derive prefix from the existing verse script tag (already correct on all
+  // hosting configurations including GitHub Pages subdirectories).
+  var _pathPrefix = null;
   function verseJsonUrl(slug, testament, book) {
-    // Resolve path relative to repo root
-    var depth = window.location.pathname.split('/').length - 2;
-    var prefix = '';
-    for (var i = 0; i < depth; i++) prefix += '../';
-    // GitHub Pages: paths are relative to site root
-    if (prefix === '') prefix = './';
-    return prefix + 'verses/' + slug + '/' + testament + '/' + book + '.json';
+    if (!_pathPrefix) {
+      var script = document.querySelector('script[src*="/verses/"]');
+      if (script) {
+        // src="../../verses/niv/ot/genesis.js" → prefix="../../"
+        var src = script.getAttribute('src');
+        _pathPrefix = src.replace(/verses\/.*$/, '');
+      } else {
+        _pathPrefix = '../../';
+      }
+    }
+    return _pathPrefix + 'verses/' + slug + '/' + testament + '/' + book + '.json';
   }
 
   // ── FETCH VERSE DATA ─────────────────────────────────────────────────────
