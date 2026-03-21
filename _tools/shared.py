@@ -161,38 +161,10 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
 # ══════════════════════════════════════════════════════════════════════
 
 def head(book_name, book_dir, ch, is_nt=False):
-    rec      = next((r for r in REGISTRY if r[0]==book_dir), None)
-    # Use TOTAL chapters (rec[2]) for intra-book nav, not live (rec[3]).
-    # live may not be updated yet during batch builds; total is always correct.
-    book_total = rec[2] if rec else ch
-    idx      = next((i for i,r in enumerate(REGISTRY) if r[0]==book_dir), None)
-
-    # ── Previous arrow ────────────────────────────────────────────────────
-    if ch > 1:
-        # Within same book
-        prev = f'<a href="{book_name.replace(chr(32),chr(95))}_{ch-1}.html" class="nav-arrow">&#8592;</a>'
-    elif idx is not None and idx > 0:
-        # Cross-book: go to last live chapter of the previous book
-        pd, pn, _, pl, _, ptd = REGISTRY[idx - 1]
-        prev = f'<a href="../../{ptd}/{pd}/{pn.replace(chr(32),chr(95))}_{pl}.html" class="nav-arrow">&#8592;</a>'
-    else:
-        # First chapter of the entire canon
-        prev = '<span class="nav-arrow disabled">&#8592;</span>'
-
-    # ── Next arrow ────────────────────────────────────────────────────────
-    if ch < book_total:
-        # Within same book
-        nxt = f'<a href="{book_name.replace(chr(32),chr(95))}_{ch+1}.html" class="nav-arrow">&#8594;</a>'
-    elif idx is not None and idx < len(REGISTRY) - 1:
-        # Cross-book: go to chapter 1 of the next book
-        nd, nn, _, nl, _, ntd = REGISTRY[idx + 1]
-        if nl > 0:
-            nxt = f'<a href="../../{ntd}/{nd}/{nn}_1.html" class="nav-arrow">&#8594;</a>'
-        else:
-            nxt = '<span class="nav-arrow disabled">&#8594;</span>'
-    else:
-        # Last chapter of the entire canon
-        nxt = '<span class="nav-arrow disabled">&#8594;</span>'
+    # Nav arrows are computed at runtime by nav-arrows.js using BOOKS data.
+    # HTML emits disabled placeholders; JS upgrades them to <a> tags.
+    prev = '<span class="nav-arrow disabled" id="nav-prev">&#8592;</span>'
+    nxt  = '<span class="nav-arrow disabled" id="nav-next">&#8594;</span>'
     nav = f'''<nav class="chapter-nav">
 <a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
 <div class="nav-center"><span class="nav-book">{book_name}</span><span class="nav-chapter">Chapter {ch}</span></div>
@@ -753,7 +725,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../history.js"></script>\n' +
             SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
-            '<script src="../../qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
+            '<script src="../../nav-arrows.js"></script>\n<script src="../../qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
     path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -1876,7 +1848,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/data/translations.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/data/translations.js', '/nav-arrows.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 

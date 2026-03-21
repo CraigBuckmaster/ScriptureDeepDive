@@ -17,7 +17,7 @@
 <nav class="chapter-nav">
 <a href="../../index.html" class="nav-back"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,2 4,7 9,12"/></svg>Library</a>
 <div class="nav-center"><span class="nav-book">Deuteronomy</span><span class="nav-chapter">Chapter 18</span></div>
-<div class="nav-arrows"><a href="Deuteronomy_17.html" class="nav-arrow">&#8592;</a><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><a href="Deuteronomy_19.html" class="nav-arrow">&#8594;</a></div>
+<div class="nav-arrows"><span class="nav-arrow disabled" id="nav-prev">&#8592;</span><button onclick="openQnav()" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold);cursor:pointer;font-size:.85rem;" aria-label="Search">&#128269;</button><span class="nav-arrow disabled" id="nav-next">&#8594;</span></div>
 </nav>
 <main>
 <header>
@@ -52,6 +52,7 @@
 <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("../../service-worker.js"))}</script>
 <script src="../../history.js"></script>
 <script>window.QNAV_CURRENT="ot/deuteronomy/Deuteronomy_18.html";</script>
+<script src="../../nav-arrows.js"></script>
 <script src="../../qnav.js"></script>
 <script src="../../data/translations.js"></script>
 <script src="../../translation.js"></script>
