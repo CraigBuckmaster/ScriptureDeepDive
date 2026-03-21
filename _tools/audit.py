@@ -72,6 +72,7 @@ SCHOLAR_KEYS = {
     'Judges':      ['block',    'webb',   'calvin', 'netbible'],
     '1 Samuel':    ['bergen',   'tsumura','calvin', 'netbible'],
     '2 Samuel':    ['bergen',   'anderson','calvin', 'netbible'],
+    '1 Kings':     ['wiseman',  'provan',  'calvin', 'netbible'],
 }
 
 def chapter_paths():

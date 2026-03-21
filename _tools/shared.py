@@ -65,6 +65,7 @@ REGISTRY = [
     ('judges',      'Judges',       21, 21, 'OT', 'ot'),
     ('1_samuel',    '1 Samuel',     31, 31, 'OT', 'ot'),
     ('2_samuel',    '2 Samuel',     24, 24, 'OT', 'ot'),
+    ('1_kings',     '1 Kings',      22,  0, 'OT', 'ot'),
     ('ruth',     'Ruth',       4,  4, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
@@ -83,6 +84,7 @@ BOOK_PREFIX = {
     'judges':   'judg',
     '1_samuel': '1sa',
     '2_samuel': '2sa',
+    '1_kings':  '1ki',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -660,6 +662,8 @@ def commentary_panel(pid, commentator_key, notes):
     'bergen':    ('Bergen \u2014 NAC Samuel',           'Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) \u2014 Scholarly Paraphrase'),
     'tsumura':   ('Tsumura \u2014 NICOT 1 Samuel',     'David T. Tsumura, The First Book of Samuel, NICOT (2007) \u2014 Scholarly Paraphrase'),
     'anderson':  ('Anderson \u2014 WBC 2 Samuel',       'A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) \u2014 Scholarly Paraphrase'),
+    'wiseman':   ('Wiseman \u2014 TOTC 1\u20132 Kings',    'Donald J. Wiseman, 1 and 2 Kings, Tyndale OT Commentary (1993) \u2014 Scholarly Paraphrase'),
+    'provan':    ('Provan \u2014 NIBCOT 1\u20132 Kings',   'Iain W. Provan, 1 and 2 Kings, New International Biblical Commentary (1995) \u2014 Scholarly Paraphrase'),
     }
     title, source = META.get(commentator_key, (commentator_key.title() + ' Notes', commentator_key))
     items = ''.join(
@@ -1584,6 +1588,8 @@ def build_chapter(book_dir, ch, data):
         if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
         if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
         if 'anderson'   in sec and in_scope('anderson'):   btns.append(('anderson',  'Anderson',    f'{sid}-anderson'))
+        if 'wiseman'    in sec and in_scope('wiseman'):    btns.append(('wiseman',   'Wiseman',     f'{sid}-wiseman'))
+        if 'provan'     in sec and in_scope('provan'):     btns.append(('provan',    'Provan',      f'{sid}-provan'))
         btn_html = btn_row(*btns)
 
         # --- panels: same key + scope logic ---
@@ -1618,6 +1624,8 @@ def build_chapter(book_dir, ch, data):
         if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
         if 'tsumura'  in sec and in_scope('tsumura'):   panels_html += commentary_panel(f'{sid}-tsumura',  'tsumura',   sec['tsumura'])
         if 'anderson' in sec and in_scope('anderson'):  panels_html += commentary_panel(f'{sid}-anderson', 'anderson',  sec['anderson'])
+        if 'wiseman'  in sec and in_scope('wiseman'):   panels_html += commentary_panel(f'{sid}-wiseman',  'wiseman',   sec['wiseman'])
+        if 'provan'   in sec and in_scope('provan'):    panels_html += commentary_panel(f'{sid}-provan',   'provan',    sec['provan'])
 
         sections_html += (f'<div class="section">'
                           f'<div class="section-header">{sec["header"]}</div>'

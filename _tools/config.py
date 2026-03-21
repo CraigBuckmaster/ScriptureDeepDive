@@ -94,7 +94,9 @@ COMMENTATOR_SCOPE = {
     'webb':      ['judges'],                # Barry Webb, NICOT Judges (2012)
     'bergen':    ['1_samuel', '2_samuel'],              # Robert Bergen, NAC 1-2 Samuel (1996)
     'tsumura':   ['1_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
-    'anderson':  ['2_samuel'],              # David Tsumura, NICOT 1 Samuel (2007)
+    'anderson':  ['2_samuel'],              # A.A. Anderson, WBC 2 Samuel (1989)
+    'wiseman':   ['1_kings', '2_kings'],   # Donald Wiseman, TOTC 1 & 2 Kings (1993)
+    'provan':    ['1_kings', '2_kings'],   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -282,6 +284,30 @@ BOOK_META = {
         'vhl_key': ['king','covenant','house','dynasty','throne','sin','sword',
                      'loyal','mercy','judgment','anoint','promise','servant'],
         'vhl_time': ['day','days','year','years','time','generation','month'],
+    },
+    '1_kings': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. Jewish tradition assigns Kings to Jeremiah, '
+                 'but the work draws on multiple sources cited by name: the Book of the Acts of '
+                 'Solomon, the Book of the Chronicles of the Kings of Israel, and the Book of the '
+                 'Chronicles of the Kings of Judah. The final editor shaped these into a unified '
+                 'theological history.<br><br>'
+                 '<strong>Date:</strong> Events span c.970&ndash;853 BC, from Solomon&rsquo;s accession '
+                 'to Ahaziah of Israel. Final compilation during or after the Babylonian exile '
+                 '(post-586 BC), as part of the Deuteronomistic History.<br><br>'
+                 '<strong>Theme:</strong> Covenant faithfulness determines national destiny. Solomon&rsquo;s '
+                 'wisdom and temple represent the zenith of Israel&rsquo;s covenant life; his apostasy '
+                 'and the kingdom&rsquo;s division demonstrate that even the wisest king cannot sustain '
+                 'obedience apart from a circumcised heart. The Elijah cycle (chs 17&ndash;19) '
+                 'reintroduces the raw power of prophetic witness against royal idolatry.'),
+        'vhl_people': ['Solomon','David','Bathsheba','Nathan','Adonijah','Joab','Abiathar','Zadok',
+                        'Hiram','Jeroboam','Rehoboam','Ahab','Jezebel','Elijah','Elisha',
+                        'Ben-Hadad','Naboth','Micaiah','Jehoshaphat','God','LORD','Israel'],
+        'vhl_places': ['Jerusalem','Gibeon','Tyre','Lebanon','Shechem','Dan','Bethel','Samaria',
+                        'Jezreel','Carmel','Zarephath','Horeb','Ophir','Ramoth Gilead'],
+        'vhl_key': ['wisdom','temple','covenant','kingdom','throne','prophet','altar','sacrifice',
+                     'high places','Baal','apostasy','drought','fire','glory','heart','obey'],
+        'vhl_time': ['day','days','year','years','month','time','generation'],
     },
     'ruth': {
         'is_nt': False,

@@ -23,6 +23,7 @@ const CORE = [
   '/tog.js',
   '/history.js',
   '/verses/chapters.js',
+  '/verses/chapters.js',
   '/verses/niv/verses.js',
   '/verses/niv/ot/genesis.js',
   '/verses/niv/ot/exodus.js',
