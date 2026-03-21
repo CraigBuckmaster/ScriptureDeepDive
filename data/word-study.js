@@ -200,10 +200,12 @@ window.WORD_STUDY_DATA = [
       {ref:"Luke 1:75",  gloss:"righteousness", ctx:"Serving God in holiness and dikaiosyne"},
       {ref:"Acts 10:35", gloss:"right",         ctx:"‘In every nation the one who does dikaiosyne is acceptable’"}
     ]
-  }
+  },
   {
-    id:"darash", word:"darash", transliteration:"darash", gloss:"to seek / enquire",
-    definition:"The Chronicler\u2019s signature theological verb. To seek God (darash) means to orient one\u2019s life, worship, and governance toward YHWH. The opposite is to forsake (\u02bfazab). Every king in Chronicles is evaluated by whether they sought or forsook God. The verb appears over 40 times in Chronicles.",
+    id:"darash", language:"hebrew", original:"דרש", transliteration:"dārash", strongs:"H1875",
+    glosses:["seek","enquire","require","search"],
+    range:"The Chronicler\u2019s signature theological verb. To seek God (darash) means to orient one\u2019s life, worship, and governance toward YHWH. The opposite is to forsake (\u02bfazab). Every king in Chronicles is evaluated by whether they sought or forsook God.",
+    note:"The verb appears over 40 times in Chronicles. It carries the sense of intentional pursuit, not passive waiting. Seeking God is the active choice that determines destiny in the Chronicler\u2019s theology.",
     occurrences:[
       {ref:"1 Chr 16:11",  gloss:"seek", ctx:"David\u2019s psalm: \u2018Seek the LORD and his strength; seek his face always.\u2019"},
       {ref:"2 Chr 7:14",   gloss:"seek", ctx:"\u2018If my people, who are called by my name, will humble themselves and pray and seek my face...\u2019"},
