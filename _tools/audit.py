@@ -986,15 +986,18 @@ if _missing_bios:
 else:
     ok(f'All {len(_used_scholars)} book-specific scholars have bio pages')
 
-# Check index.html cards
+# Check index.html cards (either hardcoded or dynamically loaded via scholar-data.js)
 _idx_path = os.path.join(_bio_dir, 'index.html')
 if os.path.exists(_idx_path):
     with open(_idx_path) as _f: _idx_content = _f.read()
-    _missing_cards = [k for k in sorted(_used_scholars) if f'href="{k}.html"' not in _idx_content]
-    if _missing_cards:
-        warn(f"Scholar cards missing in commentators/index.html: {', '.join(_missing_cards)}")
+    if 'scholar-data.js' in _idx_content and 'hub-grid-target' in _idx_content:
+        ok(f'All {len(_used_scholars)} scholars have index cards (dynamic via scholar-data.js)')
     else:
-        ok(f'All {len(_used_scholars)} scholars have index cards')
+        _missing_cards = [k for k in sorted(_used_scholars) if f'href="{k}.html"' not in _idx_content]
+        if _missing_cards:
+            warn(f"Scholar cards missing in commentators/index.html: {', '.join(_missing_cards)}")
+        else:
+            ok(f'All {len(_used_scholars)} scholars have index cards')
 
 # Check CSS button colors exist in styles.css (or shared.py for legacy)
 _css_sources = ''
