@@ -1155,6 +1155,7 @@ import tempfile as _tmpmod
 # Define groups of scripts that are co-loaded on the same page
 _coload_groups = {
     'timeline.html': ['people-data.js', 'timeline-data.js'],
+    'synoptic.html': ['data/synoptic-map.js', 'synoptic.js'],
 }
 _collision_errors = []
 for page, scripts in _coload_groups.items():
@@ -1179,7 +1180,7 @@ else:
     ok(f'No const/let collisions across {len(_coload_groups)} co-load groups')
 
 # Check inline scripts on key pages parse correctly
-_inline_pages = ['timeline.html']
+_inline_pages = ['timeline.html', 'synoptic.html']
 _inline_errors = []
 for _page in _inline_pages:
     _page_path = os.path.join(REPO, _page)
