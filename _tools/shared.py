@@ -2063,33 +2063,6 @@ function qnavFilter(q) {
     p.innerHTML = html; p.style.display = 'block';
   } else { panel.innerHTML = html; panel.style.display = 'block'; }
 }
-
-// ── Highlight current chapter and open its book on page load ────────────
-document.addEventListener('DOMContentLoaded', function() {
-  var cur = window.QNAV_CURRENT || '';
-  if (!cur) return;
-  var parts = cur.split('/');
-  if (parts.length < 2) return;
-  var bookDir = parts[0];
-  var fname   = parts[1];
-  var chNum   = fname.replace(/^.*_(\d+)\\.html$/, '$1');
-  var chUrl   = '../' + cur;
-
-  document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
-    if (btn.getAttribute('href') === chUrl) {
-      btn.classList.add('current');
-    }
-  });
-
-  var bookEl = document.getElementById('qnav-book-' + bookDir);
-  if (bookEl) {
-    bookEl.classList.add('open');
-    var testamentDiv = bookEl.closest('.qnav-testament');
-    if (testamentDiv && !testamentDiv.classList.contains('open')) {
-      testamentDiv.classList.add('open');
-    }
-  }
-});
 """
 
 
@@ -2132,6 +2105,14 @@ def rebuild_qnav_js():
     if not global_js or 'function openQnav' not in global_js:
         # Functions were lost — restore from canonical source
         global_js = _QNAV_FUNCTIONS
+
+    # Strip any existing DOMContentLoaded handler from global_js
+    # (current_js provides the canonical one)
+    import re as _re
+    global_js = _re.sub(
+        r'\n*// ── Highlight current.*?(?=\n(?:// ──|var |function |\Z))',
+        '', global_js, flags=_re.DOTALL
+    )
 
     # ── 2. Build the HTML panel from REGISTRY ───────────────────────────
     def ch_links(book_dir, book_name, total, live, test_dir):
@@ -2187,7 +2168,7 @@ def rebuild_qnav_js():
         '</button>\\n'
         f'<div class="qnav-testament-books">{ot_html}</div>\\n'
         '</div>\\n'
-        '<div class="qnav-testament open" id="qnav-t-nt">\\n'
+        '<div class="qnav-testament" id="qnav-t-nt">\\n'
         '<button class="qnav-testament-btn" onclick="qnavToggleTestament(\'nt\')">\\n'
         '<span class="qnav-testament-label">New Testament</span>\\n'
         '<span class="qnav-testament-chev">&#9660;</span>\\n'
@@ -2202,35 +2183,15 @@ def rebuild_qnav_js():
 
     # ── 3. Build the QNAV_CURRENT highlighting script ───────────────────
     current_js = """
-// ── Highlight current chapter and open its book on page load ────────────
+// ── Highlight current chapter on page load ────────────────────────────────
+// Only marks .current — does NOT open testament/book (that happens in openQnav)
 document.addEventListener('DOMContentLoaded', function() {
   var cur = window.QNAV_CURRENT || '';
   if (!cur) return;
-  // cur = 'acts/Acts_5.html'  →  book_dir='acts', book_name='Acts', ch='5'
-  var parts = cur.split('/');
-  if (parts.length < 2) return;
-  var bookDir = parts[0];
-  var fname   = parts[1];                          // e.g. Acts_5.html
-  var chNum   = fname.replace(/^.*_(\\d+)\\.html$/, '$1');
-  var chUrl   = '../' + cur;
-
-  // Mark the current chapter button
+  var chUrl = '../' + cur;
   document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
-    if (btn.getAttribute('href') === chUrl) {
-      btn.classList.add('current');
-    }
+    if (btn.getAttribute('href') === chUrl) btn.classList.add('current');
   });
-
-  // Open the current book's grid
-  var bookEl = document.getElementById('qnav-book-' + bookDir);
-  if (bookEl) {
-    bookEl.classList.add('open');
-    // Open the parent testament section too
-    var testamentDiv = bookEl.closest('.qnav-testament');
-    if (testamentDiv && !testamentDiv.classList.contains('open')) {
-      testamentDiv.classList.add('open');
-    }
-  }
 });
 """
 
