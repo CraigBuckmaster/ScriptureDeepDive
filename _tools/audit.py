@@ -37,26 +37,26 @@ def fail(msg):  print(f"  {FAIL} {msg}"); failures.append(msg)
 def warn(msg):  print(f"  {WARN}  {msg}"); warnings.append(msg)
 
 BOOK_ROSTER = [
-    ('genesis',  'Genesis',  range(1, 51), 'ot'),
-    ('exodus',   'Exodus',   range(1, 41), 'ot'),
-    ('proverbs', 'Proverbs', range(1, 32), 'ot'),
-    ('leviticus','Leviticus',range(1, 28), 'ot'),
+    ('genesis',      'Genesis',      range(1, 51), 'ot'),
+    ('exodus',       'Exodus',       range(1, 41), 'ot'),
+    ('leviticus',    'Leviticus',    range(1, 28), 'ot'),
     ('numbers',      'Numbers',      range(1, 37), 'ot'),
     ('deuteronomy',  'Deuteronomy',  range(1, 35), 'ot'),
     ('joshua',       'Joshua',       range(1, 25), 'ot'),
     ('judges',       'Judges',       range(1, 22), 'ot'),
+    ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
     ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
     ('1_kings',      '1 Kings',      range(1, 23), 'ot'),
     ('2_kings',      '2 Kings',      range(1, 26), 'ot'),
     ('1_chronicles', '1 Chronicles', range(1, 30), 'ot'),
     ('2_chronicles', '2 Chronicles', range(1, 37), 'ot'),
-    ('ruth',         'Ruth',         range(1,  5), 'ot'),
-    ('matthew',  'Matthew',  range(1, 29), 'nt'),
-    ('mark',     'Mark',     range(1, 17), 'nt'),
-    ('luke',     'Luke',     range(1, 25), 'nt'),
-    ('john',     'John',     range(1, 22), 'nt'),
-    ('acts',     'Acts',     range(1, 29), 'nt'),
+    ('proverbs',     'Proverbs',     range(1, 32), 'ot'),
+    ('matthew',      'Matthew',      range(1, 29), 'nt'),
+    ('mark',         'Mark',         range(1, 17), 'nt'),
+    ('luke',         'Luke',         range(1, 25), 'nt'),
+    ('john',         'John',         range(1, 22), 'nt'),
+    ('acts',         'Acts',         range(1, 29), 'nt'),
 ]
 
 SCHOLAR_KEYS = {
@@ -324,7 +324,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','1_samuel','2_samuel','1_kings','2_kings','1_chronicles','2_chronicles','ruth','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth','1_samuel','2_samuel','1_kings','2_kings','1_chronicles','2_chronicles','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -407,7 +407,7 @@ else:
 # Verify cross-book nav arrows use ../../ testament-prefixed paths
 REGISTRY_ORDER = [
     ('genesis','Genesis','ot'), ('exodus','Exodus','ot'),
-    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('1_chronicles','1 Chronicles','ot'), ('2_chronicles','2 Chronicles','ot'), ('ruth','Ruth','ot'), ('proverbs','Proverbs','ot'),
+    ('leviticus','Leviticus','ot'), ('numbers','Numbers','ot'), ('deuteronomy','Deuteronomy','ot'), ('joshua','Joshua','ot'), ('judges','Judges','ot'), ('ruth','Ruth','ot'), ('1_samuel','1 Samuel','ot'), ('2_samuel','2 Samuel','ot'), ('1_kings','1 Kings','ot'), ('2_kings','2 Kings','ot'), ('1_chronicles','1 Chronicles','ot'), ('2_chronicles','2 Chronicles','ot'), ('proverbs','Proverbs','ot'),
     ('matthew','Matthew','nt'), ('mark','Mark','nt'),
     ('luke','Luke','nt'), ('john','John','nt'), ('acts','Acts','nt'),
 ]
