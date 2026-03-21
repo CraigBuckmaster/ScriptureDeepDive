@@ -19,7 +19,7 @@
   var style = document.createElement('style');
   style.textContent =
     // Thread badges in chapter header
-    '.xref-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;}' +
+    '.xref-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin:.3rem 0;}' +
     '.xref-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.25rem .55rem;' +
       'background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.18);border-radius:3px;' +
       'cursor:pointer;transition:background .12s,border-color .12s;text-decoration:none;}' +
@@ -123,8 +123,9 @@
       container.appendChild(badge);
     });
 
-    // Insert after header (and after notes button if present)
-    var insertAfter = document.getElementById('notes-toggle-btn') || header;
+    // Insert after the last map/timeline link, or after header if none exist
+    var mapLinks = document.querySelectorAll('.map-story-link, .tl-event-link');
+    var insertAfter = mapLinks.length ? mapLinks[mapLinks.length - 1] : header;
     insertAfter.parentNode.insertBefore(container, insertAfter.nextSibling);
   }
 
