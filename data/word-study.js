@@ -71,7 +71,8 @@ window.WORD_STUDY_DATA = [
     ,
       {ref:"Lev 26:9",  gloss:"covenant", ctx:"‘I will keep my berith with you’"},
       {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the berith before the LORD — the last great covenant renewal"},
-      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the covenant before the LORD — the last great reform"}]
+      {ref:"2 Kgs 23:3",  gloss:"covenant", ctx:"Josiah renews the covenant before the LORD — the last great reform"},
+      {ref:"1 Chr 16:15",  gloss:"covenant", ctx:"David’s psalm: ‘He remembers his berith forever, the promise he made for a thousand generations’"}]
   },
   {
     id:"tselem", language:"hebrew", original:"\u05E6\u05DC\u05DD", transliteration:"\u1E63elem", strongs:"H6754",
@@ -102,7 +103,8 @@ window.WORD_STUDY_DATA = [
     ,
       {ref:"Lev 16:16",  gloss:"Spirit", ctx:"Atonement for the tabernacle — where God’s ruach dwells among impurity"},
       {ref:"2 Kgs 2:15",  gloss:"spirit", ctx:"The ruach of Elijah rests on Elisha — prophetic succession"},
-      {ref:"2 Kgs 2:9",  gloss:"spirit", ctx:"\"Let me inherit a double portion of your ruach\" — Elisha to Elijah"}]
+      {ref:"2 Kgs 2:9",  gloss:"spirit", ctx:"\"Let me inherit a double portion of your ruach\" — Elisha to Elijah"},
+      {ref:"1 Chr 28:12",  gloss:"spirit", ctx:"David gave Solomon the plans ‘that the ruach had put in his mind’ — temple blueprints by divine inspiration"}]
   },
   {
     id:"yasha", language:"hebrew", original:"\u05D9\u05E9\u05C1\u05E2", transliteration:"y\u0101sha\u02BB", strongs:"H3467",

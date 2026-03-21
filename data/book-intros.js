@@ -475,6 +475,50 @@ window.BOOK_INTROS = [
 },
 
 {
+  book: '1_chronicles',
+  title: 'How to Read 1 Chronicles',
+  subtitle: 'A post-exilic retelling of Israel\u2019s story \u2014 from Adam to David \u2014 focused on worship, identity, and the temple.',
+  authorship:{author:"Anonymous. Jewish tradition (Baba Bathra 15a) attributes Chronicles to Ezra, and there are linguistic and thematic connections between Chronicles, Ezra, and Nehemiah. However, most scholars treat the Chronicler as an independent figure \u2014 likely a Levitical musician or temple administrator writing in Jerusalem during the late Persian period. The author had access to Samuel-Kings and to additional sources no longer extant: genealogical records, priestly archives, prophetic writings, and what appears to be an independent history of the monarchy. His editorial hand is visible in the selection, arrangement, and theological framing of his material.",date:"c.450\u2013400 BC, during or after the time of Ezra and Nehemiah. The genealogy of David\u2019s line in 3:19\u201324 extends several generations past Zerubbabel (c.520 BC), placing final composition in the late 5th or early 4th century BC. The book presupposes a functioning Second Temple and an established post-exilic community \u2014 it addresses people who have returned from Babylon and are rebuilding their religious institutions.",prompt:"To answer the post-exilic community\u2019s existential question: who are we now? After the catastrophe of 586 BC \u2014 temple destroyed, monarchy ended, population scattered \u2014 the returned community needed to know whether they were still God\u2019s people. Chronicles answers with nine chapters of genealogies that trace an unbroken line from Adam to the present, then retells David\u2019s story with a focus on worship rather than warfare. The message: you are the same people, with the same God, called to the same worship. The temple you are rebuilding is the continuation of David\u2019s vision. The Levitical service you are restoring is the service David instituted. Your identity is secure because God\u2019s covenant endures."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: '1 Chronicles is theological history written for a community in crisis. The post-exilic Jews who returned from Babylon had lost everything that defined them: the Davidic monarchy, the Solomonic temple, national independence, and most of their population. Chronicles rebuilds their identity by retelling their story with a specific theological lens: legitimate worship is what makes Israel Israel.\n\nThe book is NOT a corrective to Samuel-Kings or an attempt to replace it. Both were in circulation simultaneously. Chronicles is a different sermon from the same pulpit \u2014 addressing a different audience with different needs. Where the Deuteronomistic Historian wrote during exile to explain the catastrophe, the Chronicler writes after the return to rebuild the community\u2019s self-understanding.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Genealogies: Adam to Post-Exile', chapters: [1, 9], note: 'Nine chapters of names \u2014 identity theology, not filler' },
+        { label: 'Saul\u2019s Death and David\u2019s Rise', chapters: [10, 12], note: 'Narrative begins; \"all Israel\" anoints David immediately' },
+        { label: 'The Ark Comes to Jerusalem', chapters: [13, 16], note: 'Uzzah, Levitical procession, David\u2019s psalm of thanksgiving' },
+        { label: 'Davidic Covenant and Wars', chapters: [17, 20], note: 'God\u2019s promise; military victories; Bathsheba omitted entirely' },
+        { label: 'Temple Preparation', chapters: [21, 27], note: 'Census \u2192 temple site; Levites, priests, musicians organised' },
+        { label: 'David\u2019s Farewell', chapters: [28, 29], note: 'Temple plans, offerings, doxology, Solomon enthroned, David dies' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['All Israel United', 'David as Worship-Organiser', 'Levites and Temple Service', 'Seeking God (darash)', 'Genealogy as Identity', 'Legitimate Worship', 'The Temple Vision']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Chronicles was written during the Persian period (c.450\u2013400 BC), when Judah was a small province (Yehud) within the vast Persian Empire. The Second Temple had been rebuilt (515 BC) but was modest compared to Solomon\u2019s. The community was small, surrounded by hostile neighbours (Samaritans, Edomites), and struggling with intermarriage, Sabbath-breaking, and religious apathy (as Ezra-Nehemiah documents). Chronicles provides the theological backbone for the restoration: this worship is David\u2019s worship, this temple is Solomon\u2019s vision, this community is the true Israel.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      content: 'If you are new to 1 Chronicles, these chapters capture the essential arc:',
+      plan: [
+        { ref: '1 Chr 1', label: 'Adam to Abraham \u2014 the genealogies begin with all humanity' },
+        { ref: '1 Chr 10', label: 'Saul\u2019s death \u2014 the Chronicler\u2019s theological verdict' },
+        { ref: '1 Chr 15\u201316', label: 'The ark arrives \u2014 David\u2019s psalm of thanksgiving' },
+        { ref: '1 Chr 17', label: 'The Davidic covenant \u2014 \"I will build YOU a house\"' },
+        { ref: '1 Chr 21', label: 'The census and the threshing floor \u2014 the temple site revealed' },
+        { ref: '1 Chr 28\u201329', label: 'David\u2019s farewell \u2014 \"Yours, O LORD, is the greatness\"' }
+      ]
+    }
+  ]
+},
+
+{
   book: 'proverbs',
   title: 'How to Read Proverbs',
   subtitle: 'Wisdom for living — how to navigate a complex world with skill, integrity, and the fear of the LORD.',
