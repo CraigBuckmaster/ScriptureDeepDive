@@ -139,7 +139,37 @@ Last updated: SW 2.150 (16 books, 439 chapters)
 #   - These populate the debate panels in auto_scholarly()
 
 # ═══════════════════════════════════════════════════════════════════════════
-# STEP 7: PRE-FLIGHT CHECKS
+# STEP 7: BOOK INTRODUCTION & DEEP STUDY DATA
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# The "About This Book" intro page is built from data/book-intros.js.
+# Authorship & Dating lives here (NOT on chapter pages).
+# Complete this BEFORE building chapters so the intro link works from day one.
+#
+# □ Book introduction (data/book-intros.js):
+#   - authorship: { author, date, prompt }
+#   - "What Kind of Book Is This?" section
+#   - Literary structure outline (label, chapters, note)
+#   - Key themes (tag list)
+#   - Historical context
+#   - Suggested reading order (ref + label, 5-7 entries)
+#
+# □ Intro shell page (intro/{book}.html):
+#   - Copy from any existing intro page, change CURRENT_BOOK
+#
+# □ Cross-reference threads (data/cross-refs.js):
+#   - 2-5 threads that pass through this book
+#   - Bidirectional pairs for key verse connections
+#
+# □ Word study entries (data/word-study.js):
+#   - 3-5 theologically significant Hebrew/Greek words
+#   - Occurrence refs for this book's chapters
+#
+# □ Synoptic/parallel passages (data/synoptic-map.js — if applicable):
+#   - Gospel parallels or OT parallels (Kings/Chronicles etc.)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# STEP 8: PRE-FLIGHT CHECKS
 # ═══════════════════════════════════════════════════════════════════════════
 #
 # Before writing gen_{book}.py:
@@ -149,6 +179,10 @@ Last updated: SW 2.150 (16 books, 439 chapters)
 #   □ Scholar CSS in styles.css (if new scholars)
 #   □ Scholar bio pages created (if new scholars)
 #   □ audit.py updated (BOOK_ROSTER, SCHOLAR_KEYS, OT/NT_BOOKS)
+#   □ Book intro entry added to data/book-intros.js (with authorship)
+#   □ Intro shell page created at intro/{book}.html
+#   □ Cross-ref threads added to data/cross-refs.js
+#   □ Word study entries added to data/word-study.js
 #   □ Plan reviewed and approved
 #
 # After building each batch:

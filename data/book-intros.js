@@ -12,6 +12,7 @@ window.BOOK_INTROS = [
   book: 'genesis',
   title: 'How to Read Genesis',
   subtitle: 'The book of beginnings — creation, fall, covenant, and the family through whom God will bless all nations.',
+  authorship:{author:"Moses (Moshe ben Amram), c.1526–1406 BC. Born a Hebrew slave in Egypt, adopted into Pharaoh\'s household, educated in \"all the wisdom of the Egyptians\" (Acts 7:22). Fled to Midian after killing an Egyptian overseer; spent 40 years as a shepherd under Jethro. Called at the burning bush (Exod 3) to lead the Exodus at age 80. Spent 40 years leading Israel through the wilderness; died on Mount Nebo in sight of Canaan, age 120.",date:"c.1445–1405 BC during the wilderness period, following the Exodus from Egypt. Moses drew on earlier patriarchal records, oral tradition, and direct divine revelation. The Pentateuch as a whole shows strong literary unity and was treated as Mosaic by both the OT (Josh 8:31; 1 Kgs 2:3; Ezra 6:18) and the NT (Mark 12:26; Luke 24:27; John 5:46).",prompt:"To record God\'s creation of the world and his covenant relationship with the patriarchs — Abraham, Isaac, Jacob, and Joseph — culminating in Israel\'s formation as a people chosen to carry the promise of blessing to all nations (Gen 12:1–3). Genesis answers the foundational questions: Who is God? Who are we? What went wrong? What is God doing about it?"},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -55,6 +56,7 @@ window.BOOK_INTROS = [
 {
   book: 'exodus',
   title: 'How to Read Exodus',
+  authorship:{author:"Moses, according to Jewish and Christian tradition.",date:"c.1445-1405 BC during the wilderness period.",prompt:"To record God\'s redemption of Israel from Egypt and the establishment of the covenant at Sinai."},
   subtitle: 'Liberation, law, and the presence of God — the foundational story of Israel\'s identity.',
   sections: [
     {
@@ -96,6 +98,7 @@ window.BOOK_INTROS = [
   book: 'leviticus',
   title: 'How to Read Leviticus',
   subtitle: 'The most misunderstood book in the Bible — and the key to understanding sacrifice, holiness, and atonement.',
+  authorship:{author:"Moses, c.1446–1406 BC. Leviticus records the laws given to Israel at Sinai immediately after the tabernacle was erected (Exod 40). The Hebrew title Wayyiqraʾ (“And He called”) captures the book’s essence: God summons Israel into a priestly relationship. The book covers approximately one month at Sinai between Exodus 40:17 and Numbers 1:1.",date:"c.1446 BC (early Exodus date). The priestly legislation is internally coherent and reflects detailed tabernacle-era conditions.",prompt:"Holiness — qādōš (holy) appears 87 times. The governing call: “Be holy, for I the Lord your God am holy” (19:2). Leviticus teaches Israel to approach a holy God through the sacrificial system, maintain covenant purity, and embody holiness in every dimension of life."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -132,6 +135,7 @@ window.BOOK_INTROS = [
   book: 'numbers',
   title: 'How to Read Numbers',
   subtitle: 'The wilderness generation — faith tested, leadership challenged, and a people learning (slowly) to trust God.',
+  authorship:{author:"Moses, with editorial arrangement c.1446–1406 BC. Numbers covers the wilderness years from Sinai to the plains of Moab — approximately 38 years of Israel’s journey. The Hebrew title Bemidbar (&ldquo;In the wilderness&rdquo;) captures the book’s essence: God sustaining his people through a generation of failure, discipline, and eventual renewal.",date:"c.1446–1406 BC. The book covers from the second year after the Exodus (Num 1:1) to the fortieth year (Num 33:38), ending with Israel camped on the plains of Moab, poised to enter Canaan.",prompt:"The faithfulness of God amid Israel’s persistent unfaithfulness. Every act of rebellion (murmuring, the spy crisis, Korah’s revolt, Baal Peor) is met with judgment and then mercy. Numbers is the book of the wilderness generation’s failure and the new generation’s hope — the old must die before the new can enter."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -166,6 +170,7 @@ window.BOOK_INTROS = [
 {
   book: 'deuteronomy',
   title: 'How to Read Deuteronomy',
+  authorship:{author:"Moses, with a brief editorial postscript (Deut 34). The Hebrew title Devarim (&ldquo;Words&rdquo;) reflects its nature as three great farewell addresses.",date:"c.1406 BC. The final year of Israel’s wilderness sojourn on the plains of Moab. Moses is 120 years old; his death closes the book (34:7).",prompt:"Covenant love and loyalty. The Shema (6:4–;5) is its centrepiece: love for God with whole heart, soul, and strength. Moses calls Israel to a choice: covenant faithfulness means life and blessing; apostasy means death and exile (30:15–20). The book’s structure mirrors Hittite suzerainty treaties (Kline, 1963): preamble, historical prologue, stipulations, document clause, witnesses, blessings and curses — evidence for early composition."},
   subtitle: 'Moses\' final sermons — the most quoted OT book in the NT, and the theological heart of the Old Testament.',
   sections: [
     {
@@ -207,6 +212,7 @@ window.BOOK_INTROS = [
   book: 'joshua',
   title: 'How to Read Joshua',
   subtitle: 'The fulfilment of promise — Israel enters the land, and the question becomes: will they remain faithful?',
+  authorship:{author:"Anonymous. Jewish tradition attributes the book to Joshua himself, with the final verses (24:29-33) added by Eleazar or Phinehas. The text draws on earlier written sources (&ldquo;the Book of Jashar,&rdquo; 10:13) and may have reached its final form during the early monarchy.",date:"The events span c.1406–1380 BC, from the Jordan crossing to Joshua&rsquo;s death at 110. The book&rsquo;s composition is debated: conservative scholars date the core to the late 15th century BC; critical scholars place final editing in the Deuteronomistic History (7th–6th c. BC).",prompt:"Faithful God, fulfilled promises. The land promised to Abraham (Gen 12:7) is finally given to his descendants. The key command: &ldquo;Be strong and courageous&rdquo; (1:6-9). The key theological statement: &ldquo;Not one of all the LORD&rsquo;s good promises to Israel failed; every one was fulfilled&rdquo; (21:45)."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -242,6 +248,7 @@ window.BOOK_INTROS = [
   book: 'judges',
   title: 'How to Read Judges',
   subtitle: 'A spiral of failure — "In those days there was no king in Israel; everyone did what was right in their own eyes."',
+  authorship:{author:"Anonymous. Jewish tradition suggests Samuel, but the text is anonymous. The recurring phrase &ldquo;in those days there was no king in Israel&rdquo; (17:6; 18:1; 19:1; 21:25) implies composition during or after the early monarchy.",date:"The events span c.1380–1050 BC, from Othniel to the eve of the monarchy. The repeated cycle — sin, oppression, cry, deliverance, rest — covers roughly 350 years.",prompt:"The downward spiral of covenant unfaithfulness. Each judge cycle descends further into moral chaos, culminating in civil war (ch.19–21). The refrain: &ldquo;Everyone did what was right in his own eyes&rdquo; (21:25)."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -278,6 +285,7 @@ window.BOOK_INTROS = [
   book: 'ruth',
   title: 'How to Read Ruth',
   subtitle: 'A jewel of a story — hesed (covenant faithfulness) embodied in an unlikely heroine, set against the darkness of Judges.',
+  authorship:{author:"Unknown; Jewish tradition attributes authorship to Samuel.",date:"c.1000 BC, possibly early monarchy period.",prompt:"To record God\'s providential care for a Moabite widow and her mother-in-law, and to trace the lineage of King David."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -310,6 +318,7 @@ window.BOOK_INTROS = [
   book: '1_samuel',
   title: 'How to Read 1 Samuel',
   subtitle: 'The birth of the monarchy — Samuel, Saul, and David in a story about what kind of king Israel needs.',
+  authorship:{author:"Anonymous. Jewish tradition attributes the book to Samuel, Nathan, and Gad (1 Chr 29:29). Originally one book with 2 Samuel in the Hebrew canon; divided by the LXX translators. The narrative draws on court records, prophetic archives, and the &ldquo;Book of Jashar&rdquo; (2 Sam 1:18).",date:"Events span c.1100–1010 BC, from Samuel&rsquo;s birth to Saul&rsquo;s death. Composition likely during or after the early monarchy (the phrase &ldquo;to this day&rdquo; implies historical distance).",prompt:"The transition from judges to monarchy. Samuel is the last judge and first kingmaker. The book asks: what kind of king does Israel need? Saul answers with failure; David is anointed as God&rsquo;s answer. The key theological tension: human kingship vs divine sovereignty."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -344,6 +353,7 @@ window.BOOK_INTROS = [
 {
   book: '2_samuel',
   title: 'How to Read 2 Samuel',
+  authorship:{author:"Anonymous. Originally one book with 1 Samuel. Draws on court records, the &ldquo;Succession Narrative&rdquo; (chs 9–20), and prophetic archives. David&rsquo;s lament over Saul and Jonathan (ch 1) and the appendices (chs 21–24) may derive from independent sources.",date:"Events span c.1010–970 BC, from David&rsquo;s accession to his final years. The Succession Narrative is widely regarded as one of the earliest examples of ancient historiography.",prompt:"The Davidic covenant and its consequences. God promises David an eternal dynasty (ch 7), but David&rsquo;s sin with Bathsheba (chs 11–12) unleashes a chain of violence — Amnon, Tamar, Absalom — that nearly destroys the very house God promised to build. Grace and judgment intertwine."},
   subtitle: 'David\'s reign — triumph, sin, consequence, and the covenant that outlasts the king\'s failures.',
   sections: [
     {
@@ -381,6 +391,7 @@ window.BOOK_INTROS = [
 {
   book: '1_kings',
   title: 'How to Read 1 Kings',
+  authorship:{author:"Anonymous. Jewish tradition assigns Kings to Jeremiah, but the work draws on multiple sources cited by name: the Book of the Acts of Solomon, the Book of the Chronicles of the Kings of Israel, and the Book of the Chronicles of the Kings of Judah. The final editor shaped these into a unified theological history.",date:"Events span c.970–853 BC, from Solomon&rsquo;s accession to Ahaziah of Israel. Final compilation during or after the Babylonian exile (post-586 BC), as part of the Deuteronomistic History.",prompt:"Covenant faithfulness determines national destiny. Solomon&rsquo;s wisdom and temple represent the zenith of Israel&rsquo;s covenant life; his apostasy and the kingdom&rsquo;s division demonstrate that even the wisest king cannot sustain obedience apart from a circumcised heart. The Elijah cycle (chs 17–19) reintroduces the raw power of prophetic witness against royal idolatry."},
   subtitle: 'Solomon\'s glory, the kingdom divided, and Elijah\'s stand — the beginning of the end.',
   sections: [
     {
@@ -421,6 +432,7 @@ window.BOOK_INTROS = [
   book: 'proverbs',
   title: 'How to Read Proverbs',
   subtitle: 'Wisdom for living — how to navigate a complex world with skill, integrity, and the fear of the LORD.',
+  authorship:{author:"Primarily Solomon son of David (chs.1-29), with additional contributions from Agur son of Jakeh (ch.30) and King Lemuel\'s mother (ch.31).",date:"Core Solomonic material c.970-930 BC; final compilation under Hezekiah c.715-686 BC.",prompt:"To transmit the accumulated wisdom of Israel\'s sages to the next generation -- teaching the fear of the LORD as the foundation of all genuine wisdom."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -460,6 +472,7 @@ window.BOOK_INTROS = [
 {
   book: 'matthew',
   title: 'How to Read Matthew',
+  authorship:{author:"Matthew (Levi) ben Alphaeus, a tax collector called by Jesus at his customs post in Capernaum (Matt 9:9; Mark 2:14). One of the twelve apostles and an eyewitness to the ministry of Jesus. He would have been literate and numerate by profession — uniquely equipped to compose a carefully structured written account. Unanimous early tradition attributes the Gospel to him: Papias (c.AD 125) records that \"Matthew compiled the oracles in the Hebrew language, and everyone interpreted them as best he could.\" The Gospel as we have it is in polished literary Greek, suggesting either a Greek composition drawing on Aramaic sources, or a Greek original.",date:"c.AD 80–90, traditionally associated with Antioch of Syria, the first great Gentile church and a centre of Jewish-Christian interaction. The Gospel presupposes the destruction of Jerusalem (AD 70) in its apocalyptic passages (Matt 22:7; 24:15-22), suggesting composition after that date. It draws on Mark\'s Gospel (c.AD 65-70) and on a sayings source shared with Luke (conventionally called Q). Matthew shapes his sources with a more formal, structured literary hand than any of the other evangelists.",prompt:"To present Jesus of Nazareth as the fulfilment of Israel\'s entire scriptural heritage — the promised Messiah, the new Moses, the true Israel, and the Son of God. Matthew writes primarily for a Jewish-Christian community navigating its relationship to the synagogue after AD 70. His ten fulfilment-formula citations (\"all this took place to fulfil what was spoken through the prophet\") are the theological spine of the work: Israel\'s Scripture is not superseded but completed in Jesus. The Great Commission (28:18-20) shows the universal horizon of a Gospel that begins with Abraham and ends with all nations."},
   subtitle: 'Jesus as the new Moses, the son of David, the fulfilment of Israel\'s story — a Gospel written for a Jewish audience.',
   sections: [
     {
@@ -501,6 +514,7 @@ window.BOOK_INTROS = [
   book: 'mark',
   title: 'How to Read Mark',
   subtitle: 'The urgent Gospel — Jesus as the suffering servant, moving relentlessly toward the cross.',
+  authorship:{author:"John Mark, son of Mary of Jerusalem (Acts 12:12), cousin of Barnabas (Col 4:10), and close associate of both Paul and Peter. Early and unanimous tradition identifies him as “the interpreter of Peter”: Papias of Hierapolis (c. AD 125, preserved in Eusebius, HE 3.39.15) records that Mark “wrote down accurately, though not in order, as much as he remembered of the things said or done by the Lord” — drawing entirely on Peter’s teaching. Irenaeus (Against Heresies 3.1.1), Clement of Alexandria (Hypotyposeis, in Eusebius HE 6.14.6), and the Anti-Marcionite Prologue all confirm the Petrine connection. Mark himself is mentioned in Acts 12:12, 25; 13:13; 15:37–39; Col 4:10; Phlm 24; 2 Tim 4:11; and 1 Pet 5:13 (“my son Mark”). He was present at some events he records (the young man fleeing naked, 14:51–52, is widely identified as a Markan self-cameo), and his vividness throughout reflects the eyewitness testimony he received directly from Peter in Rome.",date:"c. AD 55–65, almost certainly in Rome, most likely before the destruction of Jerusalem in AD 70 — which Mark 13 predicts but nowhere records as fulfilled. Clement of Alexandria states the Gospel was written “while Peter was still preaching publicly in Rome.” If so, the most probable window is the late 50s to mid-60s, during Paul’s Roman imprisonment (Acts 28) and Peter’s residence in the capital. Mark is the earliest of the four Gospels (the Markan Priority hypothesis, held by the majority of NT scholars), and both Matthew and Luke appear to have used it as a primary source. The Gospel’s Latin loanwords (legiōn, denarius, praetorium, centurio), its explanation of Jewish customs for non-Jewish readers (7:3–4), and its Latinisms of idiom all point to a Roman Gentile audience.",prompt:"To preserve Peter’s eyewitness testimony in permanent written form for a church facing persecution under Nero (AD 64), and to answer the most urgent question that question raised: who is Jesus, and why did he die? Mark’s opening declaration — “The beginning of the good news about Jesus the Messiah, the Son of God” (1:1) — is simultaneously title, thesis, and answer. The Gospel is structured around the progressive revelation of that identity: demons recognise Jesus before disciples do (1:24); Peter confesses “You are the Messiah” at the midpoint (8:29); a Roman centurion declares “Surely this man was the Son of God” at the cross (15:39). The relentless pace — euthys (“immediately”) appears 41 times — reflects both Peter’s preaching style and the urgency of a community for whom the Passion narrative was not ancient history but recent, costly, and still unfolding."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -538,6 +552,7 @@ window.BOOK_INTROS = [
   book: 'luke',
   title: 'How to Read Luke',
   subtitle: 'The Gospel for everyone — the poor, the outcast, women, Gentiles, and anyone the world has written off.',
+  authorship:{author:"Luke, a Gentile physician (Col 4:14) and the most accomplished literary stylist in the New Testament. His Greek is the most polished in the NT corpus — modelled on the style of educated Hellenistic historians such as Thucydides and Polybius. Early and unanimous church tradition (Irenaeus c.&thinsp;AD&thinsp;180, Clement of Alexandria, Origen, Eusebius, Jerome) identifies him as the author of both this Gospel and the Acts of the Apostles. He was a close companion of Paul (Phlm 24; 2 Tim 4:11, &ldquo;only Luke is with me&rdquo;), and the &ldquo;we&rdquo; passages in Acts (16:10–17; 20:5–15; 21:1–18; 27:1–28:16) confirm direct eyewitness participation in events he narrates. Luke is the only Gentile author in the canon. He explicitly describes his method in the prologue (1:1–4): careful investigation of all available tradition, consultation of eyewitnesses and ministers of the word, and orderly composition for a patron named Theophilus — a preface that conforms to the best conventions of Hellenistic historiography.",date:"c.&thinsp;AD&thinsp;62–70, most likely during Paul&rsquo;s two-year imprisonment in Caesarea (Acts 24:27, c.&thinsp;AD 57–59) or shortly thereafter, with publication before Acts (which presupposes it, Acts 1:1). A pre-AD&thinsp;70 date is supported by the absence of any reference to the destruction of Jerusalem as a past event; the Gospel&rsquo;s detailed prediction of the siege (21:20–24) reads as prophecy, not retrospective commentary. A minority of scholars favour AD&thinsp;70–85, arguing that the precision of 21:20 reflects post-event knowledge. The two-volume work (Luke–Acts) is approximately 27,000 words — the largest single contribution to the NT by word count.",prompt:"Luke writes for Theophilus (&ldquo;friend of God&rdquo;), probably a Gentile patron of high social standing (&ldquo;most excellent,&rdquo; Acts 1:1, a term used for Roman officials), who has already received some instruction in the faith but needs a reliable, ordered account to confirm its certainty (1:4). More broadly, Luke&rsquo;s two-volume work addresses the expanding Gentile mission: How does the story of a Jewish Messiah become good news for all nations? His Gospel foregrounds the inclusion of the poor, women, Samaritans, and Gentiles; his Acts shows the gospel moving from Jerusalem to Rome. Luke also addresses a pastoral crisis: the delay of the Parousia. His travel narrative (9:51–19:28) reframes discipleship as a sustained journey of formation, not merely expectation of an imminent end. The Gospel&rsquo;s persistent themes — prayer, joy, the Holy Spirit, reversal of fortune, universal salvation — all serve this dual apologetic and pastoral purpose."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -575,6 +590,7 @@ window.BOOK_INTROS = [
   book: 'john',
   title: 'How to Read John',
   subtitle: 'The theological Gospel — "that you may believe that Jesus is the Messiah, the Son of God."',
+  authorship:{author:"John the son of Zebedee — fisherman, apostle, and &ldquo;the disciple whom Jesus loved&rdquo; (John 13:23; 19:26; 20:2; 21:7, 20). The fourth Gospel never names its author directly, but the evidence converges on John: (1) The &ldquo;beloved disciple&rdquo; is an eyewitness (19:35; 21:24) present at the Last Supper, the cross, and the empty tomb. (2) Early and unanimous tradition: Irenaeus (c.&thinsp;AD&thinsp;180), Clement of Alexandria, Origen, and Eusebius all identify the author as John the apostle writing from Ephesus in old age. (3) The Gospel’s intimate knowledge of Jerusalem topography (Pool of Bethesda, Pool of Siloam, the Pavement/Gabbatha) is confirmed by archaeology. (4) The eyewitness claim of 19:35 and the closing verse of 21:24 point to direct authorial witness. Liberal scholarship has proposed an anonymous Johannine community or the Elder John of Ephesus; the traditional identification with the apostle remains the best-attested position.",date:"c.&thinsp;AD&thinsp;85–95, probably from Ephesus, making it the latest of the four Gospels. The Rylands Papyrus (P52, c.&thinsp;AD&thinsp;125) — the earliest surviving NT manuscript fragment — contains John 18:31-33, 37-38, confirming the Gospel was in circulation in Egypt by the early second century. A pre-AD&thinsp;70 date has been argued from the Temple language in chs 2, 5, and 10, which reads as description of a standing building; the majority of scholars favour a post-70 date for the final composition. The three Johannine letters and Revelation share vocabulary and theological concerns with the Gospel, suggesting a common Ephesian milieu.",prompt:"John states his purpose explicitly — a rarity in the Gospels: &ldquo;These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name&rdquo; (20:31). The Gospel was written to produce and sustain faith in the person of Jesus as divine Son. It supplements the Synoptics rather than duplicates them: John omits the Baptism, the Transfiguration, the Olivet Discourse, and the institution of the Lord’s Supper as a formal narrative, while providing material found nowhere else — the wedding at Cana, Nicodemus, the Samaritan woman, the raising of Lazarus, the Farewell Discourse (chs&thinsp;14–17), and the resurrection appearances to Mary Magdalene and Thomas. Its elevated Christology (&ldquo;In the beginning was the Word&rdquo;) addresses late first-century challenges to the full divinity of Christ and lays the foundation for all subsequent trinitarian theology."},
   sections: [
     {
       heading: 'What Kind of Book Is This?',
@@ -611,6 +627,7 @@ window.BOOK_INTROS = [
 {
   book: 'acts',
   title: 'How to Read Acts',
+  authorship:{author:"Luke the physician (Col 4:14), a Gentile convert and travelling companion of Paul. Acts is the second volume of a two-part work addressed to Theophilus (Luke 1:3; Acts 1:1). The &ldquo;we&rdquo; sections (16:10–17; 20:5–21:18; 27:1–28:16) place Luke as an eyewitness participant in significant portions of the Pauline mission. Irenaeus, Clement of Alexandria, and the Muratorian Canon (c.&thinsp;AD&thinsp;170) unanimously identify Luke as author.",date:"c.&thinsp;AD&thinsp;62–64, most likely during Paul\'s Roman imprisonment (28:30–31). The abrupt ending — Paul awaiting trial — is most naturally explained if Luke wrote before the outcome was known. The silence about Jerusalem&rsquo;s destruction (AD&thinsp;70) and Paul&rsquo;s death (c.&thinsp;AD&thinsp;67) supports an early 60s date.",prompt:"Luke traces the Gospel from Jerusalem to Rome, fulfilling the commission of 1:8 (&ldquo;you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth&rdquo;). Acts defends the legitimacy of the Gentile mission, demonstrates the continuity of the church with Israel, and shows that the gospel&rsquo;s advance is providentially directed through opposition, imprisonment, and persecution. It is the indispensable bridge between the Gospels and the Epistles."},
   subtitle: 'The sequel to Luke\'s Gospel — the Spirit empowers the church to carry Jesus\' mission to the ends of the earth.',
   sections: [
     {

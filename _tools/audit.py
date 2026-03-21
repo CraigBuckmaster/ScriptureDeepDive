@@ -295,30 +295,18 @@ _styles_path = os.path.join(REPO, 'styles.css')
 if os.path.exists(_styles_path):
     with open(_styles_path) as f: _css = f.read()
     ok(f'External styles.css found ({len(_css):,} chars)')
-    if 'authorship-block{' not in _css and 'authorship-block {' not in _css:
-        fail('Missing authorship-block CSS in styles.css')
-    else:
-        ok('Authorship CSS present in styles.css')
     if 'anno-trigger.macarthur' not in _css:
         fail('Missing MacArthur CSS in styles.css')
     else:
         ok('MacArthur CSS present in styles.css')
 else:
     # Fallback: check inline <style> per chapter (legacy mode)
-    missing_auth = []
     missing_mac  = []
     for path, book, ch in chapters:
         with open(path) as f: h = f.read()
         css = h[h.find('<style>'):h.find('</style>')]
-        if 'authorship-block{' not in css and 'authorship-block {' not in css:
-            missing_auth.append(f'{book} {ch}')
         if 'anno-trigger.macarthur' not in css:
             missing_mac.append(f'{book} {ch}')
-    if missing_auth:
-        fail(f'Missing authorship CSS in {len(missing_auth)} chapters: ' +
-             ', '.join(missing_auth[:3]) + ('...' if len(missing_auth) > 3 else ''))
-    else:
-        ok('Authorship CSS present in all chapters')
     if missing_mac:
         fail(f'Missing MacArthur CSS in {len(missing_mac)} chapters: ' +
              ', '.join(missing_mac[:3]) + ('...' if len(missing_mac) > 3 else ''))
