@@ -47,7 +47,7 @@ BOOK_ROSTER = [
     ('judges',       'Judges',       range(1, 22), 'ot'),
     ('1_samuel',     '1 Samuel',     range(1, 32), 'ot'),
     ('2_samuel',     '2 Samuel',     range(1, 25), 'ot'),
-    ('1_kings',      '1 Kings',      range(1,  9), 'ot'),
+    ('1_kings',      '1 Kings',      range(1, 13), 'ot'),
     ('ruth',         'Ruth',         range(1,  5), 'ot'),
     ('matthew',  'Matthew',  range(1, 29), 'nt'),
     ('mark',     'Mark',     range(1, 17), 'nt'),

@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.152';
+const CACHE = 'scripture-2.153';
 const CORE = [
   '/',
   '/index.html',
@@ -22,6 +22,7 @@ const CORE = [
   '/verses/chapters.js',
   '/tog.js',
   '/history.js',
+  '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
@@ -180,6 +181,9 @@ const CORE = [
   '/nt/matthew/Matthew_8.html',
   '/nt/matthew/Matthew_9.html',
   '/ot/1_kings/1_Kings_1.html',
+  '/ot/1_kings/1_Kings_10.html',
+  '/ot/1_kings/1_Kings_11.html',
+  '/ot/1_kings/1_Kings_12.html',
   '/ot/1_kings/1_Kings_2.html',
   '/ot/1_kings/1_Kings_3.html',
   '/ot/1_kings/1_Kings_4.html',
@@ -187,6 +191,7 @@ const CORE = [
   '/ot/1_kings/1_Kings_6.html',
   '/ot/1_kings/1_Kings_7.html',
   '/ot/1_kings/1_Kings_8.html',
+  '/ot/1_kings/1_Kings_9.html',
   '/ot/1_samuel/1_Samuel_1.html',
   '/ot/1_samuel/1_Samuel_10.html',
   '/ot/1_samuel/1_Samuel_11.html',
