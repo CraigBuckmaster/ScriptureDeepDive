@@ -223,15 +223,26 @@ else:
 # ── Check 8: Live verse url validity (sample) ────────────────────────────────
 section('Check 8: Live-book verse urls exist on disk (sampled)')
 if os.path.exists(verses_js_path):
-    # Parse a sample of live-book verse URLs
+    # Parse a sample of live-book verse URLs, filtering to live chapters only
     live_dirs = set()
+    live_ch_limits = {}  # book_dir → max live chapter
     for book_dir, info in live_books.items():
-        live_dirs.add(f'{info["subdir"]}/{book_dir}/')
+        prefix = f'{info["subdir"]}/{book_dir}/'
+        live_dirs.add(prefix)
+        live_ch_limits[prefix] = info['live']
 
     # Extract all urls from verses.js
     all_verse_urls = re.findall(r'"url":"([^"]+)"', verses_js)
-    live_verse_urls = [u for u in all_verse_urls
-                       if any(u.startswith(d) for d in live_dirs)]
+    live_verse_urls = []
+    for u in all_verse_urls:
+        prefix = next((d for d in live_dirs if u.startswith(d)), None)
+        if not prefix:
+            continue
+        # Extract chapter number from URL (e.g. "ot/1_kings/1_Kings_7.html" → 7)
+        ch_m = re.search(r'_(\d+)\.html$', u)
+        if ch_m and int(ch_m.group(1)) > live_ch_limits[prefix]:
+            continue  # skip chapters beyond the live count
+        live_verse_urls.append(u)
 
     # Sample every 50th URL to avoid checking 10k files
     sample = live_verse_urls[::50]
