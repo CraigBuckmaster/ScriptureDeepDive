@@ -201,4 +201,14 @@ window.WORD_STUDY_DATA = [
       {ref:"Acts 10:35", gloss:"right",         ctx:"‘In every nation the one who does dikaiosyne is acceptable’"}
     ]
   }
+  {
+    id:"darash", word:"darash", transliteration:"darash", gloss:"to seek / enquire",
+    definition:"The Chronicler\u2019s signature theological verb. To seek God (darash) means to orient one\u2019s life, worship, and governance toward YHWH. The opposite is to forsake (\u02bfazab). Every king in Chronicles is evaluated by whether they sought or forsook God. The verb appears over 40 times in Chronicles.",
+    occurrences:[
+      {ref:"1 Chr 16:11",  gloss:"seek", ctx:"David\u2019s psalm: \u2018Seek the LORD and his strength; seek his face always.\u2019"},
+      {ref:"2 Chr 7:14",   gloss:"seek", ctx:"\u2018If my people, who are called by my name, will humble themselves and pray and seek my face...\u2019"},
+      {ref:"2 Chr 15:2",   gloss:"seek", ctx:"Azariah to Asa: \u2018If you seek him, he will be found by you; if you forsake him, he will forsake you.\u2019"},
+      {ref:"2 Chr 26:5",   gloss:"seek", ctx:"Uzziah \u2018sought God during the days of Zechariah... as long as he sought the LORD, God gave him success.\u2019"}
+    ]
+  },
 ];
