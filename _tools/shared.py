@@ -751,7 +751,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../history.js"></script>\n' +
             SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
-            '<script src="../../qnav.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
+            '<script src="../../qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
     path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -759,10 +759,9 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     return path
 
 def ensure_tx_book_var(book_name):
-    """Ensure translation.js BOOK_VARS contains VERSES_BOOKNAME for this book.
+    """Ensure translation.js legacy bookVars list contains VERSES_BOOKNAME for this book.
     Called automatically by build_chapter. Idempotent.
     """
-    # Use script location to find repo root — works on both Windows and Linux
     _repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     tx_path = os.path.join(_repo_root, 'translation.js')
     if not os.path.exists(tx_path):
@@ -777,13 +776,14 @@ def ensure_tx_book_var(book_name):
     if quoted in tx:
         return  # already present
 
-    bv_match = re.search(r"var BOOK_VARS\s*=\s*\[([^\]]+)\];", tx, re.DOTALL)
+    # v3: var bookVars = [...] inside cacheLegacyData(); v2: var BOOK_VARS = [...]
+    bv_match = re.search(r"(var bookVars|var BOOK_VARS)\s*=\s*\[([^\]]+)\];?", tx, re.DOTALL)
     if not bv_match:
-        print("  [translation.js] BOOK_VARS not found")
+        print("  [translation.js] bookVars/BOOK_VARS not found")
         return
 
     reg_vars = ["VERSES_" + r[1].upper().replace(' ', '_') for r in REGISTRY]
-    existing = re.findall(r"VERSES_[A-Z_]+", bv_match.group(1))
+    existing = re.findall(r"VERSES_[A-Z_0-9]+", bv_match.group(2))
     combined = list(dict.fromkeys(existing + [var_name]))
     ordered  = [v for v in reg_vars if v in combined]
     for v in combined:
@@ -791,13 +791,13 @@ def ensure_tx_book_var(book_name):
             ordered.append(v)
 
     chunks   = [ordered[i:i+5] for i in range(0, len(ordered), 5)]
-    rows     = ["    " + ",".join(chr(39)+v+chr(39) for v in chunk) for chunk in chunks]
+    rows     = ["      " + ",".join(chr(39)+v+chr(39) for v in chunk) for chunk in chunks]
     inner    = ",\n".join(rows)
-    new_block = "var BOOK_VARS = [\n" + inner + "\n  ];"
+    decl = bv_match.group(1)
+    new_block = decl + " = [\n" + inner + "\n    ];"
 
     with open(tx_path, "w", encoding="utf-8") as f:
         f.write(tx[:bv_match.start()] + new_block + tx[bv_match.end():])
-    print("  [translation.js] Added " + quoted + " to BOOK_VARS")
 
 
 
@@ -1874,7 +1874,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/data/translations.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 
@@ -1882,6 +1882,8 @@ def rebuild_sw_js():
     niv_lines = ["  '/verses/chapters.js',", "  '/verses/niv/verses.js',"]
     for book_dir, book_name, total, live, testament, subdir in REGISTRY:
         niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.js',")
+        # JSON files for fetch-based translation switching
+        niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.json',")
 
     esv_lines = []
     esv_all = os.path.join(_REPO, 'verses', 'esv', 'verses.js')
@@ -1891,6 +1893,10 @@ def rebuild_sw_js():
             esv_path = os.path.join(_REPO, 'verses', 'esv', subdir, f'{book_dir}.js')
             if os.path.exists(esv_path):
                 esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.js',")
+                # JSON files for fetch-based translation switching
+                esv_json = os.path.join(_REPO, 'verses', 'esv', subdir, f'{book_dir}.json')
+                if os.path.exists(esv_json):
+                    esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.json',")
 
     # Extract chapter HTML entries from old CORE (keep them all)
     # Scan disk for ALL chapter HTML files
@@ -2279,14 +2285,22 @@ def rebuild_verses_js(translation='niv'):
             f.write(f'var VERSES_{book_name.upper().replace(" ","_")}={payload};\n')
             f.write(f'if(!window.VERSES_ALL)window.VERSES_ALL=[];\n')
             f.write(f'window.VERSES_ALL=window.VERSES_ALL.concat(VERSES_{book_name.upper().replace(" ","_")});\n')
+        # Also write .json (used by fetch-based translation.js v3)
+        json_path = f'{trans_dir}/{test_dir_lower}/{book_dir}.json'
+        with open(json_path, 'w') as f:
+            f.write(_json.dumps(book_verses, separators=(',', ':')))
+
         total_count += len(book_verses)
         print(f'  verses/{slug}/{test_dir_lower}/{book_dir}.js: {len(book_verses)} verses')
 
-    # Write full canon index
-    out = f'{trans_dir}/verses.js'
-    with open(out, 'w') as f:
+    # Write full canon index (.js for legacy search, .json for fetch)
+    out_js = f'{trans_dir}/verses.js'
+    with open(out_js, 'w') as f:
         f.write(f'// {slug.upper()} full canon verse index\n')
         f.write('var VERSES_ALL=' + _json.dumps(all_verses, separators=(',', ':')) + ';\n')
+    out_json = f'{trans_dir}/verses.json'
+    with open(out_json, 'w') as f:
+        f.write(_json.dumps(all_verses, separators=(',', ':')))
     print(f'verses/{slug}/verses.js: {total_count} verses across {len(REGISTRY)} books')
     return total_count
 

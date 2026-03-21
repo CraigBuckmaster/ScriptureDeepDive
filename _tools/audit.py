@@ -1032,9 +1032,10 @@ if _bad_vars:
 else:
     ok('All verse files have valid JS variable names')
 
-# Check BOOK_VARS in translation.js has no spaces
+# Check BOOK_VARS / cacheLegacyData in translation.js has entries for live books
 with open(os.path.join(REPO, 'translation.js')) as _tf: _tx = _tf.read()
-_bv_match = re.search(r"BOOK_VARS\s*=\s*\[([^\]]+)\]", _tx)
+# v3 uses cacheLegacyData() with bookVars array; v2 used BOOK_VARS
+_bv_match = re.search(r"(?:BOOK_VARS|bookVars)\s*=\s*\[([^\]]+)\]", _tx)
 if _bv_match:
     _bv_entries = re.findall(r"'(VERSES_[^']+)'", _bv_match.group(1))
     _bad_bv = [v for v in _bv_entries if ' ' in v]
