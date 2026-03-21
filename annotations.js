@@ -280,10 +280,9 @@
   function _addIntroLink() {
     var header = document.querySelector('.scholarly-header, .chapter-title, h1');
     if (!header) return;
-    // Only add if intro page exists (check BOOK_INTROS if loaded, otherwise always show)
     var link = document.createElement('a');
     link.className = 'notes-toggle-btn';
-    link.href = '../../intro/' + _bookKey + '.html';
+    link.href = '../../intro/' + _bookKey + '.html#ch=' + _chNum;
     link.innerHTML = 'About This Book \u2192';
     link.style.textDecoration = 'none';
     // Insert after notes button if present, otherwise after header
