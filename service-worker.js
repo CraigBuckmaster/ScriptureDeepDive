@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.150';
+const CACHE = 'scripture-2.151';
 const CORE = [
   '/',
   '/index.html',
@@ -24,6 +24,7 @@ const CORE = [
   '/history.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
+  '/verses/chapters.js',
   '/verses/niv/verses.js',
   '/verses/niv/ot/genesis.js',
   '/verses/niv/ot/exodus.js',
@@ -34,6 +35,7 @@ const CORE = [
   '/verses/niv/ot/judges.js',
   '/verses/niv/ot/1_samuel.js',
   '/verses/niv/ot/2_samuel.js',
+  '/verses/niv/ot/1_kings.js',
   '/verses/niv/ot/ruth.js',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/nt/matthew.js',
@@ -51,6 +53,7 @@ const CORE = [
   '/verses/esv/ot/judges.js',
   '/verses/esv/ot/1_samuel.js',
   '/verses/esv/ot/2_samuel.js',
+  '/verses/esv/ot/1_kings.js',
   '/verses/esv/ot/ruth.js',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/nt/matthew.js',
@@ -175,6 +178,10 @@ const CORE = [
   '/nt/matthew/Matthew_7.html',
   '/nt/matthew/Matthew_8.html',
   '/nt/matthew/Matthew_9.html',
+  '/ot/1_kings/1_Kings_1.html',
+  '/ot/1_kings/1_Kings_2.html',
+  '/ot/1_kings/1_Kings_3.html',
+  '/ot/1_kings/1_Kings_4.html',
   '/ot/1_samuel/1_Samuel_1.html',
   '/ot/1_samuel/1_Samuel_10.html',
   '/ot/1_samuel/1_Samuel_11.html',
