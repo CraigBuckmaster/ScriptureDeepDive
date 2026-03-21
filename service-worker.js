@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.166';
+const CACHE = 'scripture-2.167';
 const CORE = [
   '/',
   '/index.html',
@@ -48,6 +48,9 @@ const CORE = [
   '/timeline.css',
   '/verses/chapters.js',
   '/site-footer.js',
+  '/verses/chapters.js',
+  '/verse-resolver.js',
+  '/study-storage.js',
   '/verses/chapters.js',
   '/verses/niv/verses.js',
   '/verses/niv/ot/genesis.js',
