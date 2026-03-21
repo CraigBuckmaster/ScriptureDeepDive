@@ -2161,7 +2161,11 @@ def rebuild_qnav_js():
     with open(qnav_path) as f:
         existing = f.read()
 
-    css_start = existing.find("style.textContent = '") + len("style.textContent = '")
+    # Find the REAL CSS blob (starts with .qnav-overlay), not any corrupted preamble
+    css_anchor = existing.find("'.qnav-overlay{")
+    if css_anchor == -1:
+        css_anchor = existing.find("'.qnav-overlay {")
+    css_start = css_anchor + 1 if css_anchor != -1 else (existing.find("style.textContent = '") + len("style.textContent = '"))
     css_end   = existing.find("';\n  document.head")
     css_blob  = existing[css_start:css_end]  # preserve exactly
 
@@ -2290,7 +2294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "\n"
         "  // ── Inject HTML ─────────────────────────────────────────────────────────\n"
         "  var div = document.createElement('div');\n"
-        f"  div.innerHTML = '{panel_html}';\n"
+        f"  div.innerHTML = '{panel_html.replace(chr(39), chr(92)+chr(39))}';\n"
         "  document.body.appendChild(div.firstChild);\n"
         "})();\n"
         "\n"
