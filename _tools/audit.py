@@ -1204,6 +1204,26 @@ else:
     ok(f'All inline scripts in {len(_inline_pages)} key pages parse correctly')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 21. NO ORPHANED GENERATORS
+# gen_*.py files must never be committed — they belong in /tmp/ during builds.
+# ═══════════════════════════════════════════════════════════════════════════
+section('21. No Orphaned Generators')
+
+_orphan_patterns = ['gen_*.py', 'build_*.py']
+_orphans = []
+for _pat in _orphan_patterns:
+    _orphans.extend(_glob.glob(os.path.join(REPO, '_tools', _pat)))
+# Exclude files that are intentionally kept
+_kept = {'audit.py', 'shared.py', 'config.py'}
+_orphans = [f for f in _orphans if os.path.basename(f) not in _kept]
+
+if _orphans:
+    for o in _orphans:
+        fail(f'Orphaned file in _tools/: {os.path.basename(o)} — delete or move to /tmp/')
+else:
+    ok('No orphaned gen_*/build_* files in _tools/')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")
