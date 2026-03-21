@@ -18,7 +18,7 @@
 
   // Register service worker
   if ('serviceWorker' in navigator) {
-    var swPath = location.pathname.indexOf('/commentators/') > -1 ? '../service-worker.js' : 'service-worker.js';
+    var swPath = (location.pathname.indexOf('/commentators/') > -1 || location.pathname.indexOf('/intro/') > -1) ? '../service-worker.js' : 'service-worker.js';
     window.addEventListener('load', function() {
       navigator.serviceWorker.register(swPath).catch(function() {});
     });
