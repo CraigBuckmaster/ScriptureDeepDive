@@ -420,7 +420,7 @@ function render(filterEra) {
 
 function showBio(d) {
   const color = ERA_COLORS[d.era] || '#888';
-  const eraName = ERA_NAMES[d.era] || d.era;
+  const eraName = PEOPLE_ERA_NAMES[d.era] || d.era;
 
   // ── Build family connections dynamically from PEOPLE array ──────────────
   const allPeople = PEOPLE;
@@ -650,7 +650,7 @@ function handleSearchInput(val) {
 
   results.innerHTML = matches.map(p => {
     const color = ERA_COLORS[p.era] || '#888';
-    const eraName = ERA_NAMES[p.era] || p.era;
+    const eraName = PEOPLE_ERA_NAMES[p.era] || p.era;
     return `<div class="search-result-item" onclick="centreOnPerson('${p.id}')">
       <span class="search-result-dot" style="background:${color}"></span>
       <span class="search-result-name">${p.name}</span>
@@ -696,7 +696,7 @@ document.querySelectorAll('.era-btn').forEach(btn => {
     const mobileLabel = document.getElementById('mobile-era-label');
     if (mobileLabel) {
       mobileLabel.textContent = currentEra === 'all' ? 'All Eras'
-        : (ERA_NAMES[currentEra] || currentEra);
+        : (PEOPLE_ERA_NAMES[currentEra] || currentEra);
     }
     // Centre on the selected era after render
     setTimeout(() => jumpToCurrentEra(), 80);

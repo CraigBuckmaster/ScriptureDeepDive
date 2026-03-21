@@ -1144,6 +1144,65 @@ else:
     ok(f'All {len(_data_js)} data/*.js files pass JS syntax check')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 20. CONST/LET COLLISION CHECK
+# Pages that load multiple external scripts must not have const/let
+# redeclarations across those scripts. We check known co-load groups.
+# ═══════════════════════════════════════════════════════════════════════════
+section('20. Const/Let Collision Check')
+
+import tempfile as _tmpmod
+
+# Define groups of scripts that are co-loaded on the same page
+_coload_groups = {
+    'timeline.html': ['people-data.js', 'timeline-data.js'],
+}
+_collision_errors = []
+for page, scripts in _coload_groups.items():
+    paths = [os.path.join(REPO, s) for s in scripts]
+    if not all(os.path.exists(p) for p in paths):
+        continue
+    combined = ''
+    for p in paths:
+        with open(p) as f: combined += f.read() + '\n'
+    with _tmpmod.NamedTemporaryFile(mode='w', suffix='.js', delete=False) as tmp:
+        tmp.write(combined)
+        tmp_path = tmp.name
+    result = subprocess.run(['node', '-c', tmp_path], capture_output=True, text=True)
+    os.unlink(tmp_path)
+    if result.returncode != 0:
+        err_line = result.stderr.strip().split('\n')[0]
+        _collision_errors.append(f'{page} co-loads {"+".join(scripts)}: {err_line}')
+
+if _collision_errors:
+    for e in _collision_errors: fail(e)
+else:
+    ok(f'No const/let collisions across {len(_coload_groups)} co-load groups')
+
+# Check inline scripts on key pages parse correctly
+_inline_pages = ['timeline.html']
+_inline_errors = []
+for _page in _inline_pages:
+    _page_path = os.path.join(REPO, _page)
+    if not os.path.exists(_page_path): continue
+    with open(_page_path) as f: _ph = f.read()
+    # Extract inline script blocks (between <script> and </script>, not src= ones)
+    _blocks = re.findall(r'<script>\n(.*?)</script>', _ph, re.DOTALL)
+    for _bi, _block in enumerate(_blocks):
+        with _tmpmod.NamedTemporaryFile(mode='w', suffix='.js', delete=False) as tmp:
+            tmp.write(_block)
+            tmp_path = tmp.name
+        result = subprocess.run(['node', '-c', tmp_path], capture_output=True, text=True)
+        os.unlink(tmp_path)
+        if result.returncode != 0:
+            err_line = result.stderr.strip().split('\n')[0]
+            _inline_errors.append(f'{_page} inline block {_bi+1}: {err_line}')
+
+if _inline_errors:
+    for e in _inline_errors: fail(e)
+else:
+    ok(f'All inline scripts in {len(_inline_pages)} key pages parse correctly')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")

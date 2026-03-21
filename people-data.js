@@ -12,7 +12,7 @@ const ERA_COLORS = {
   nt:         '#c9a84c',
 };
 
-const ERA_NAMES = {
+const PEOPLE_ERA_NAMES = {
   primeval:   'Primeval History',
   patriarch:  'Patriarchal Period',
   exodus:     'Egypt & Exodus',
