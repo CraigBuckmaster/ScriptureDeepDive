@@ -58,6 +58,9 @@
 
     // Add "My Notes" button to chapter header
     _addNotesButton();
+
+    // Add "About This Book" link
+    _addIntroLink();
   }
 
   // ── Verse number extraction ─────────────────────────────────────────────
@@ -272,6 +275,20 @@
 
     // Insert after header
     header.parentNode.insertBefore(btn, header.nextSibling);
+  }
+
+  function _addIntroLink() {
+    var header = document.querySelector('.scholarly-header, .chapter-title, h1');
+    if (!header) return;
+    // Only add if intro page exists (check BOOK_INTROS if loaded, otherwise always show)
+    var link = document.createElement('a');
+    link.className = 'notes-toggle-btn';
+    link.href = '../../intro/' + _bookKey + '.html';
+    link.innerHTML = 'About This Book \u2192';
+    link.style.textDecoration = 'none';
+    // Insert after notes button if present, otherwise after header
+    var after = document.getElementById('notes-toggle-btn') || header;
+    after.parentNode.insertBefore(link, after.nextSibling);
   }
 
   function _updateNotesBadge() {

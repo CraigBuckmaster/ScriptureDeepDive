@@ -182,6 +182,25 @@ window.CROSS_REF_THREADS = [
       { ref: "Luke 1:46-55", note: "Mary's Magnificat — the most revolutionary song in Scripture" },
       { ref: "John 20:17-18",note: "Mary Magdalene — first witness of the resurrection" }
     ]
+  },
+  // ── Wisdom ──────────────────────────────────────────────────────────────
+  {
+    id: "wisdom-thread",
+    theme: "The Pursuit of Wisdom",
+    tags: ["wisdom", "fear of the LORD", "understanding", "knowledge"],
+    chain: [
+      { ref: "Gen 3:6",      note: "The tree of knowledge — wisdom sought apart from God" },
+      { ref: "Deut 4:6",     note: "'Observe them carefully, for this will show your wisdom'" },
+      { ref: "1 Kgs 3:9-12", note: "Solomon asks for wisdom — and God grants it" },
+      { ref: "1 Kgs 4:29-34",note: "Solomon's wisdom surpasses all the East and Egypt" },
+      { ref: "Prov 1:7",     note: "'The fear of the LORD is the beginning of knowledge'" },
+      { ref: "Prov 3:13-18", note: "Blessed is the one who finds wisdom — 'she is a tree of life'" },
+      { ref: "Prov 8:22-31", note: "Wisdom present at creation — 'I was there when he set the heavens in place'" },
+      { ref: "Prov 9:10",    note: "'The fear of the LORD is the beginning of wisdom'" },
+      { ref: "Matt 12:42",   note: "'One greater than Solomon is here'" },
+      { ref: "Luke 2:52",    note: "Jesus grew in wisdom" },
+      { ref: "Acts 6:10",    note: "Stephen's wisdom could not be resisted" }
+    ]
   }
 ];
 
