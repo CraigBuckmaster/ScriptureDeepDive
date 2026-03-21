@@ -123,9 +123,18 @@
       container.appendChild(badge);
     });
 
-    // Insert after the last map/timeline link, or after header if none exist
+    // Insert after the last map/timeline link, or after <header> if none exist.
+    // Map/timeline links sit between </header> and the first .section div —
+    // badges should land in the same zone.
     var mapLinks = document.querySelectorAll('.map-story-link, .tl-event-link');
-    var insertAfter = mapLinks.length ? mapLinks[mapLinks.length - 1] : header;
+    var insertAfter;
+    if (mapLinks.length) {
+      insertAfter = mapLinks[mapLinks.length - 1];
+    } else {
+      // Fall back to the <header> element (not h1 inside it)
+      insertAfter = document.querySelector('main > header') || document.querySelector('header');
+    }
+    if (!insertAfter) return;
     insertAfter.parentNode.insertBefore(container, insertAfter.nextSibling);
   }
 
