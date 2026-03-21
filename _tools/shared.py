@@ -135,66 +135,15 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
     kw = key_words  or []
     def js_list(lst):
         return '[' + ','.join(f"'{w}'" for w in lst) + ']'
-    return f'''<script>
+    return f'''<script src="../../vhl.js"></script>
+<script>
 (function(){{
   var DIVINE={{words:{js_list(divine)},cls:'vhl-divine',btn:['hebrew','hebrew-text','context']}};
   var PLACES={{words:{js_list(pl)},cls:'vhl-place',btn:['places','context']}};
   var PEOPLE={{words:{js_list(pp)},cls:'vhl-person',btn:['people','context']}};
   var TIME  ={{words:{js_list(tw)},cls:'vhl-time',btn:['timeline','context']}};
   var KEY   ={{words:{js_list(kw)},cls:'vhl-key',btn:['literary','cross']}};
-  var GROUPS=[DIVINE,PLACES,PEOPLE,TIME,KEY];
-  function hasBtnType(row,types){{return types.some(function(t){{return row.querySelector('.anno-trigger.'+t);}});}}
-  var vhlRowId=0;
-  function highlightNode(node,word,cls,btns,row){{
-    if(node.nodeType===3){{
-      var nv=node.nodeValue,idx=nv.indexOf(word);
-      if(idx===-1)return;
-      var b=nv[idx-1],a=nv[idx+word.length];
-      if((b!==undefined&&/[\\w]/.test(b))||(a!==undefined&&/[\\w]/.test(a)))return;
-      var after=node.splitText(idx);after.splitText(word.length);
-      var sp=document.createElement('span');sp.className='vhl '+cls;
-      if(btns&&row){{
-        if(!row.dataset.vhlId){{row.dataset.vhlId=++vhlRowId;row.setAttribute('data-vhl-id',vhlRowId);}}
-        sp.setAttribute('data-btn',btns.join(','));
-        sp.setAttribute('data-row',row.dataset.vhlId);
-      }}
-      after.parentNode.replaceChild(sp,after);sp.appendChild(document.createTextNode(word));
-    }} else if(node.nodeType===1&&!node.classList.contains('verse-num')&&node.tagName!=='BUTTON'&&!node.classList.contains('vhl')){{
-      var kids=[].slice.call(node.childNodes);
-      kids.forEach(function(c){{highlightNode(c,word,cls,btns,row);}});
-    }}
-  }}
-  document.querySelectorAll('.btn-row').forEach(function(row){{
-    var vt=row.previousElementSibling;
-    while(vt&&!vt.classList.contains('verse-text'))vt=vt.previousElementSibling;
-    if(!vt)return;
-    GROUPS.forEach(function(g){{
-      if(!hasBtnType(row,g.btn))return;
-      g.words.forEach(function(w){{highlightNode(vt,w,g.cls,g.btn,row);}});
-    }});
-  }});
-  document.addEventListener('click',function(e){{
-    var sp=e.target.closest?e.target.closest('.vhl[data-btn]'):null;
-    if(!sp)return;
-    var rowId=sp.getAttribute('data-row');
-    if(!rowId)return;
-    var row=document.querySelector('.btn-row[data-vhl-id="'+rowId+'"]');
-    if(!row)return;
-    var types=(sp.getAttribute('data-btn')||'').split(',');
-    var btn=null;
-    for(var i=0;i<types.length;i++){{btn=row.querySelector('.anno-trigger.'+types[i]);if(btn)break;}}
-    if(!btn)return;
-    var oc=btn.getAttribute('onclick')||'';
-    var m=oc.match(/'([^']+)'/);
-    var panelId=m?m[1]:null;
-    if(!panelId)return;
-    sp.classList.remove('vhl-pulse');void sp.offsetWidth;sp.classList.add('vhl-pulse');
-    tog(btn,panelId);
-    var panel=document.getElementById(panelId);
-    if(panel&&panel.classList.contains('open')){{
-      setTimeout(function(){{panel.scrollIntoView({{behavior:'smooth',block:'nearest'}});}},80);
-    }}
-  }});
+  initVHL([DIVINE,PLACES,PEOPLE,TIME,KEY]);
 }})();
 </script>'''
 
@@ -1920,7 +1869,7 @@ def rebuild_sw_js():
     ]
 
     # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/timeline-data.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
+    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/timeline-data.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
         if not any(asset in e for e in static_preserved):
             static_preserved.append(f"  '{asset}',")
 
