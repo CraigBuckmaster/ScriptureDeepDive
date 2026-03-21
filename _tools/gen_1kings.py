@@ -336,4 +336,352 @@ ki1(4, {
     ],
 })
 
-print("\n1KI-1 complete: 1 Kings 1–4 built.")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-2: Chapters 5–8 — The Temple: Preparation, Construction, Dedication
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(5, {
+    'title': 'Alliance with Hiram; Preparing for the Temple',
+    'sections': [
+        {
+            'header': 'Verses 1–12 — Hiram of Tyre: Timber, Treaty, and Shared Wisdom',
+            'verses': verse_range(1, 12),
+            'heb': [
+                ('bĕrît', 'berit', 'covenant/treaty', 'The treaty between Solomon and Hiram (v.12) uses the covenant term <em>bĕrît</em>. International alliances were formalised with covenant rituals. Solomon\'s commercial diplomacy operates within the theological framework of binding agreement.'),
+                ('šālôm', 'shalom', 'peace', 'Solomon tells Hiram that God has given him <em>šālôm</em> on every side (v.4) — the peace David never had. This rest from enemies is the precondition for temple construction, fulfilling God\'s own stated requirement (1 Chr 22:9).'),
+            ],
+            'ctx': 'Solomon\'s letter to Hiram is a diplomatic masterpiece and a theological confession. He explains the temple project by recounting the Davidic covenant — David could not build because of war, but God promised his son would build. Hiram\'s response is striking: the pagan king praises YHWH for giving David "a wise son." The Phoenician timber trade was one of the great commercial systems of the ancient world.',
+            'cross': [
+                ('2 Sam 7:12–13', 'Solomon\'s message to Hiram quotes the Davidic covenant promise as the basis for the temple project.'),
+                ('2 Chr 2:11–12', 'The Chronicler\'s parallel includes Hiram\'s fuller confession: "Because the LORD loves his people, he has made you their king."'),
+            ],
+            'macarthur': [
+                ('5:3', 'MacArthur: Solomon\'s explanation to Hiram is a theology of rest. David was a man of war; Solomon is a man of peace. The temple requires peace because worship requires rest — a principle carried into the NT: "Come to me, all you who are weary, and I will give you rest" (Matt 11:28).'),
+                ('5:5', 'MacArthur: "I intend to build a temple for the Name of the LORD my God" — the temple is for God\'s Name, not merely his presence. The Name represents God\'s revealed character and covenant identity.'),
+                ('5:7', 'MacArthur: Hiram\'s praise of YHWH is a Gentile confession. Even pagan kings recognise God\'s wisdom when they encounter it. This anticipates the nations streaming to Zion (Isa 2:2–3).'),
+                ('5:12', 'MacArthur: The treaty demonstrates that international cooperation in service of God\'s purposes is legitimate. The temple was built with Phoenician timber and craftsmanship — God uses the skills of all nations.'),
+            ],
+            'wiseman': [
+                ('5:1', 'Wiseman: Hiram I of Tyre (c.980–947 BC) is attested in Phoenician records preserved by Josephus. He expanded Tyre\'s harbour, built temples to Melqart, and established the commercial empire that dominated Mediterranean trade. His alliance with Solomon was mutually beneficial.'),
+                ('5:6', 'Wiseman: The Lebanon cedar trade is confirmed by archaeological evidence spanning millennia. Egyptian Old Kingdom records mention cedar from Byblos. The Amarna letters document shipments. Solomon\'s arrangement follows an established Levantine timber export pattern.'),
+            ],
+            'provan': [
+                ('5:3', 'Provan: The narrator presents the temple project as the convergence of David\'s desire and God\'s timing. Solomon is the right man at the right time — not because of personal virtue but because the conditions God specified have been met.'),
+                ('5:12', 'Provan: The Solomon-Hiram treaty is the international dimension of the Solomonic peace. Domestic prosperity (4:25) and international relationships (5:12) together depict the covenant ideal.'),
+            ],
+            'calvin': [
+                ('5:5', 'Calvin: Solomon builds for God\'s Name, not his own glory. Every enterprise undertaken for God must begin with this distinction: whose Name is being exalted?'),
+                ('5:7', 'Calvin: Hiram\'s praise teaches that even those outside the covenant can recognise God\'s work when they see its effects in wisdom, justice, and prosperity.'),
+            ],
+            'netbible': [
+                ('5:4', 'NET Note: <em>śāṭān</em> here means "adversary" in the political-military sense. Solomon has no <em>śāṭān</em>. The term will recur ominously in 11:14, 23, 25 when God raises adversaries after Solomon\'s apostasy.'),
+                ('5:6', 'NET Note: The cedar of Lebanon was the most prized building timber of the ancient world — straight-grained, aromatic, insect-resistant, and available in lengths exceeding 60 feet.'),
+            ],
+        },
+        {
+            'header': 'Verses 13–18 — The Labour Force: Thirty Thousand Conscripts',
+            'verses': verse_range(13, 18),
+            'heb': [
+                ('mas', 'mas', 'forced labour/corvée', 'Solomon raises a <em>mas</em> (v.13) of 30,000 men — the same term for Israel\'s condition in Egypt (Exod 1:11). Samuel warned a king would impose <em>mas</em> (1 Sam 8:12–16). The narrator does not condemn it here, but the echo is unmistakable.'),
+                ('sōbēl', 'sovel', 'burden-bearer', 'The 70,000 carriers and 80,000 stonecutters (v.15) represent 150,000 labourers — approaching Pharaonic scale. Solomon builds for God using the methods of Egypt.'),
+            ],
+            'ctx': 'The labour conscription is presented matter-of-factly, but the narrator trusts the reader to hear the Exodus echoes. Thirty thousand Israelites doing forced labour for a building project rhymes with Egypt. The rotational system (one month on, two off) shows administrative wisdom. But it plants the seed of resentment that bears fruit in ch. 12: "Your father put a heavy yoke on us."',
+            'cross': [
+                ('Exod 1:11', 'The vocabulary of forced labour deliberately echoes Israel\'s oppression in Egypt.'),
+                ('1 Kgs 12:4', '"Your father put a heavy yoke on us" — the corvée is the grievance that splits the kingdom.'),
+            ],
+            'macarthur': [
+                ('5:13', 'MacArthur: The forced labour raises a moral question: does the holiness of the project justify the burden on the people? The temple is God\'s house, built by conscripted labour. The tension is intentional.'),
+                ('5:14', 'MacArthur: The rotational system shows administrative wisdom. Solomon distributes the burden rather than grinding the people into dust. But the burden exists, and it will not be forgotten.'),
+                ('5:15', 'MacArthur: The 150,000-person workforce demonstrates that the temple required massive human effort. God chooses to work through human labour, not in spite of it.'),
+                ('5:18', 'MacArthur: The Gebalites (men of Byblos) were expert stonemasons. Solomon draws on the best craftsmen of the known world. God\'s house deserves the finest human skill available.'),
+            ],
+            'wiseman': [
+                ('5:13', 'Wiseman: Corvée labour systems are well attested in the ANE. The Egyptian <em>corvée</em> and Mesopotamian <em>ilku</em> service were standard mechanisms for public works. Solomon\'s rotational system was more humane than permanent conscription.'),
+                ('5:18', 'Wiseman: The Gebalites (from Byblos/Gebal, modern Jbeil in Lebanon) were renowned stonemasons. Archaeological remains at Byblos confirm sophisticated stone-working techniques from the 3rd millennium BC onward.'),
+            ],
+            'provan': [
+                ('5:13', 'Provan: The narrator does not editorialize about the corvée — he simply reports it and lets the Exodus echoes do the work. This is characteristic Deuteronomistic restraint: the reader is trusted to draw the theological conclusion.'),
+                ('5:18', 'Provan: The international workforce (Israelites, Sidonians, Gebalites) building the temple together prefigures the temple\'s purpose: a house of prayer for all nations (Isa 56:7).'),
+            ],
+            'calvin': [
+                ('5:13', 'Calvin: The corvée teaches that great works for God still involve human cost. The church must never forget that its projects are built on the labour and sacrifice of real people. Pious goals do not justify unjust means.'),
+                ('5:15', 'Calvin: Yet the work itself is honourable — these men are building for God. Labour in God\'s service, even when hard, carries a dignity that no secular project can match.'),
+            ],
+            'netbible': [
+                ('5:13', 'NET Note: <em>mas</em> (corvée) is a technical term for state-imposed forced labour. In Exod 1:11 the same term describes Israel\'s oppression. The verbal echo creates an ironic reversal: the people once oppressed by corvée now impose it on others.'),
+                ('5:17', 'NET Note: "Great stones, costly stones, dressed stones" — the Hebrew emphasizes quality (<em>gĕdōlôt... yĕqārôt... gazît</em>). These foundation stones were massive ashlar blocks, some estimated at 20+ feet in length.'),
+            ],
+        },
+    ],
+})
+
+ki1(6, {
+    'title': 'The Temple Built: Seven Years of Sacred Construction',
+    'sections': [
+        {
+            'header': 'Verses 1–22 — Dimensions, Cedar Panelling, and Gold Overlay',
+            'verses': verse_range(1, 22),
+            'heb': [
+                ('dĕbîr', 'devir', 'inner sanctuary / Most Holy Place', 'The <em>dĕbîr</em> (v.16) is the innermost chamber — the Holy of Holies where the ark rested. The term may derive from <em>dābar</em> (word/speak), suggesting the place where God speaks. The dimensions are a perfect cube: 20×20×20 cubits, echoing the perfection of divine presence.'),
+                ('bêt YHWH', 'beit Adonai', 'house of the LORD', 'The phrase <em>bêt YHWH</em> frames the entire construction narrative. The temple is not Solomon\'s house but God\'s house — a distinction the narrator enforces by the contrast with ch. 7 ("Solomon\'s own palace took thirteen years").'),
+            ],
+            'ctx': 'The temple construction begins 480 years after the Exodus (v.1) — a number that may be literal or schematic (12 generations × 40 years). Either way, the narrator connects temple to Exodus: the God who brought Israel out of Egypt now dwells among them in a permanent house. The dimensions (60×20×30 cubits) are exactly double the tabernacle, signifying continuity with expansion. Every surface is covered with cedar — no stone is visible inside — and overlaid with gold. The building is both a continuation of the tabernacle and its fulfilment.',
+            'cross': [
+                ('Exod 26:33–34', 'The tabernacle\'s Most Holy Place and its curtain-veil are the prototype for the temple\'s <em>dĕbîr</em>. The temple makes permanent what the tabernacle made portable.'),
+                ('Rev 21:16', 'The New Jerusalem is a perfect cube — 12,000 stadia on each side. The cubical Holy of Holies (20×20×20) is the prototype for the eschatological city where God dwells with humanity permanently.'),
+                ('Heb 9:1–5', 'The writer of Hebrews describes the tabernacle/temple furniture as "copies of the heavenly things." The earthly temple points beyond itself.'),
+            ],
+            'macarthur': [
+                ('6:1', 'MacArthur: The 480-year marker links temple to Exodus — the God who liberated Israel now makes his permanent dwelling among them. The temple is the architectural fulfilment of "I will dwell among you" (Exod 29:45).'),
+                ('6:7', 'MacArthur: "No hammer, chisel or any other iron tool was heard at the temple site." The stones were dressed at the quarry — the building site was silent. This prefigures the church: believers are shaped elsewhere (through trials) and fitted together without force (Eph 2:21).'),
+                ('6:12', 'MacArthur: God interrupts the construction narrative with a conditional word: "If you follow my decrees... I will fulfil through you the promise I gave to David." Even mid-construction, God reminds Solomon that the building is nothing without obedience.'),
+                ('6:20', 'MacArthur: The gold overlay transforms the interior into a chamber of pure gold — heaven on earth. The lavishness is not excess but theology: God\'s dwelling place reflects his glory, not human austerity.'),
+            ],
+            'wiseman': [
+                ('6:1', 'Wiseman: The 480-year figure is confirmed by some scholars using sequential archaeological dating of the Judges period. Others treat it as schematic. Either way, it functions as a theological chronology connecting Exodus and Temple as the two foundational events of Israel\'s covenant life.'),
+                ('6:2', 'Wiseman: The temple dimensions (60×20×30 cubits ≈ 90×30×45 feet) make it a relatively modest building by ANE standards. The Ain Dara temple in Syria (discovered 1954, excavated 1980s) provides the closest architectural parallel — similar tripartite plan, similar dimensions, similar carved cherubim flanking the entrance.'),
+            ],
+            'provan': [
+                ('6:7', 'Provan: The silence at the construction site is the narrator\'s way of marking sacred space. The temple is built in reverent quietness — no iron, no noise, no violence. The building process itself enacts the peace that the temple represents.'),
+                ('6:12', 'Provan: The divine interruption (vv.11–13) breaks the architectural description with a theological warning. The narrator reminds the reader that the most magnificent building in the world is worthless without covenant faithfulness. Form without faith is an empty shell.'),
+            ],
+            'calvin': [
+                ('6:7', 'Calvin: The silent construction teaches that God\'s spiritual temple — the church — is built without compulsion or violence. Believers are fitted together by the Spirit, not by human force. The church grows by persuasion, not by coercion.'),
+                ('6:12', 'Calvin: God\'s conditional word mid-construction is a warning to all who build for God: the building does not sanctify the builder. Many have erected magnificent churches while their hearts wandered far from God.'),
+            ],
+            'netbible': [
+                ('6:1', 'NET Note: The date formula uses both regnal year (Solomon\'s 4th) and historical epoch (480 years post-Exodus) — a dual chronological anchor unique in Kings. The month Ziv (April/May) marks the beginning of the dry building season.'),
+                ('6:20', 'NET Note: <em>zāhāb sāgûr</em> (pure/refined gold) — the term <em>sāgûr</em> literally means "shut up, enclosed," denoting gold of the highest refinement. The entire inner sanctuary was overlaid with this premium-grade gold.'),
+            ],
+        },
+        {
+            'header': 'Verses 23–38 — The Cherubim, the Doors, and the Seven-Year Completion',
+            'verses': verse_range(23, 38),
+            'heb': [
+                ('kĕrûbîm', 'keruvim', 'cherubim', 'The two cherubim (vv.23–28) are 15 feet tall with 15-foot wingspans, made of olive wood overlaid with gold. Their wings touch at the centre and extend to the walls — spanning the entire width of the Holy of Holies. They guard the ark below, just as the cherubim guarded Eden (Gen 3:24). The temple is a return to Eden.'),
+                ('wayyiḵal', 'vayichal', 'he completed/finished', 'The temple is completed in Solomon\'s eleventh year (v.38) — seven years of construction. The seven-year period echoes the seven days of creation: the temple is a new creation, a microcosm of the ordered cosmos God made in Genesis 1.'),
+            ],
+            'ctx': 'The cherubim dominate the inner sanctuary — two enormous guardian figures whose wings span the entire room. They are the theological centre of the temple: guardians of divine holiness (cf. Gen 3:24, Exod 25:18–22). The olive-wood doors are carved with cherubim, palm trees, and open flowers — a garden scene. The temple interior is Eden restored: gold, precious wood, guardian cherubim, and garden imagery. The seven-year construction completes on a note of both achievement and anticipation — the building is finished, but the glory has not yet come (that happens in ch. 8).',
+            'cross': [
+                ('Gen 3:24', 'Cherubim placed east of Eden to guard the way to the tree of life. The temple cherubim guard the ark — the place of God\'s presence. The temple is the way back into God\'s presence that Eden\'s expulsion closed.'),
+                ('Exod 25:18–22', 'The tabernacle\'s cherubim atop the ark are small (2.5 cubits). Solomon\'s cherubim are 15 feet tall — the same guardians, massively expanded, signifying intensified divine presence.'),
+            ],
+            'macarthur': [
+                ('6:23', 'MacArthur: The cherubim represent heavenly beings that attend God\'s throne. Their presence in the Holy of Holies marks it as the meeting point between heaven and earth. The temple is not merely a human building but a threshold between two realms.'),
+                ('6:29', 'MacArthur: The carved palm trees and flowers on every surface create an Eden motif. The temple is paradise regained — not fully, but symbolically. Where Adam was expelled, Israel is invited back into God\'s presence through sacrifice and mediation.'),
+                ('6:37', 'MacArthur: Seven years of construction echo the seven days of creation. God created the cosmos in seven days; Solomon builds God\'s earthly dwelling in seven years. The temple is a creation narrative in architecture.'),
+                ('6:38', 'MacArthur: "The temple was finished in all its details according to its specifications." Obedience to God\'s design is the foundation of true worship. Solomon built what God specified, not what he imagined.'),
+            ],
+            'wiseman': [
+                ('6:23', 'Wiseman: Monumental winged guardian figures flanking sanctuaries are attested throughout the ANE — the Assyrian <em>lamassu</em> (winged human-headed bulls), the Ain Dara temple sphinxes, and Egyptian winged figures in throne rooms. Solomon\'s cherubim participate in a widespread iconographic tradition while carrying distinctly Israelite theological meaning.'),
+                ('6:38', 'Wiseman: The month Bul (October/November) corresponds to the autumn harvest — the Feast of Tabernacles season. The temple\'s completion coincides with Israel\'s most joyful agricultural festival, linking sacred architecture to the liturgical calendar.'),
+            ],
+            'provan': [
+                ('6:29', 'Provan: The Eden imagery — cherubim, palm trees, flowers, gold — is the narrator\'s most sophisticated architectural theology. The temple is not merely a building but a statement about God\'s intention: to dwell with humanity in a garden-paradise, as at the beginning. The entire biblical narrative arcs from Eden lost to Eden restored.'),
+                ('6:38', 'Provan: "Finished in all its details" — the narrator\'s verdict on the construction echoes God\'s verdict on creation: "God saw all that he had made, and it was very good" (Gen 1:31). The temple is creation brought to architectural completion.'),
+            ],
+            'calvin': [
+                ('6:23', 'Calvin: The cherubim teach that God\'s holiness is guarded and unapproachable except by the way he himself provides. No one enters the Most Holy Place by human effort — only the high priest, once a year, with blood. Access to God is always God\'s gift, not human achievement.'),
+                ('6:38', 'Calvin: The seven-year construction shows that sacred work takes time. God could have provided a temple instantly; instead he chose human labour over seven patient years. Great works of faith are built slowly, with perseverance, not in a rush of enthusiasm.'),
+            ],
+            'netbible': [
+                ('6:23', 'NET Note: <em>ʿăṣê-šemen</em> (olive wood) was chosen for the cherubim for its fine grain, workability, and natural oil content that preserved the wood. The 10-cubit (15-foot) height made these the largest known wooden sculptures of the ancient Levant.'),
+                ('6:38', 'NET Note: The month Bul (<em>Būl</em>) is the pre-exilic Canaanite month name (cf. the Gezer Calendar). After the exile, Babylonian month names replaced the Canaanite ones. The narrator\'s use of the old name confirms the pre-exilic origin of this source material.'),
+            ],
+        },
+    ],
+})
+
+ki1(7, {
+    'title': 'Solomon\'s Palace and the Temple Furnishings',
+    'sections': [
+        {
+            'header': 'Verses 1–12 — The Palace Complex: Thirteen Years of Building',
+            'verses': verse_range(1, 12),
+            'heb': [
+                ('bêt yaʿar halLĕbānôn', 'beit yaar haLevanon', 'House of the Forest of Lebanon', 'Solomon\'s largest building (v.2) — 100×50×30 cubits, nearly twice the temple\'s size. Named for its 45 cedar pillars arranged in rows like a forest. It served as an armoury (Isa 22:8) and reception hall. The narrator\'s note that the palace took 13 years versus the temple\'s 7 invites comparison: Solomon spent nearly twice as long on his own house as on God\'s.'),
+            ],
+            'ctx': 'The narrator places the palace description immediately after the temple, creating an implicit comparison. The temple took 7 years; the palace took 13 — nearly twice as long. The palace complex includes the Hall of Pillars, the Hall of Justice (Solomon\'s throne room), a residence for Pharaoh\'s daughter, and the massive House of the Forest of Lebanon. The narrator does not criticise Solomon explicitly, but the proportions speak: God\'s house is magnificent; Solomon\'s house is even more so.',
+            'cross': [
+                ('2 Sam 7:2', 'David said: "Here I am, living in a house of cedar, while the ark of God remains in a tent." David felt the disproportion. Solomon resolves it by building the temple — then surpasses it with his own palace.'),
+                ('Isa 22:8', '"You looked to the weapons in the Palace of the Forest" — the House of the Forest of Lebanon was still serving as an armoury centuries after Solomon built it.'),
+            ],
+            'macarthur': [
+                ('7:1', 'MacArthur: "He spent thirteen years building his palace" — the narrator\'s first words after the temple narrative. The juxtaposition is deliberate: 7 years for God\'s house, 13 for Solomon\'s. Priorities are revealed not by what we say but by where we invest our time and resources.'),
+                ('7:2', 'MacArthur: The House of the Forest of Lebanon was the largest single building in Solomon\'s complex — bigger than the temple. Its cedar pillars created a forest-like interior. The building demonstrated Solomon\'s wealth and power to visiting dignitaries.'),
+                ('7:7', 'MacArthur: The Hall of Justice is where Solomon sat as judge. The throne room was the physical setting for the wisdom demonstrated in ch. 3. Architecture serves function: the building enables the governance.'),
+                ('7:8', 'MacArthur: The separate palace for Pharaoh\'s daughter acknowledges the diplomatic marriage while maintaining spatial distance from the temple. Solomon\'s arrangement shows awareness that a foreign wife does not belong in the sacred precinct — an awareness he will later abandon (ch. 11).'),
+            ],
+            'wiseman': [
+                ('7:2', 'Wiseman: The "House of the Forest of Lebanon" has been compared to the Assyrian bīt ḫilāni — a columned portico hall attested in North Syrian palace architecture (excavated at Zincirli, Tell Halaf, and other sites). The cedar-pillar construction reflects Phoenician building techniques learned from Hiram\'s craftsmen.'),
+                ('7:8', 'Wiseman: A separate palace for the chief queen is attested in Egyptian royal architecture — the pharaoh\'s chief wife had her own residential complex adjacent to but separate from the main palace. Solomon follows Egyptian precedent for his Egyptian wife.'),
+            ],
+            'provan': [
+                ('7:1', 'Provan: The 13-year/7-year comparison is the narrator\'s subtlest critique. He never says Solomon\'s priorities are wrong. He simply places the numbers side by side and lets the reader do the arithmetic. This is Deuteronomistic narration at its most restrained and most devastating.'),
+                ('7:8', 'Provan: Pharaoh\'s daughter gets her own palace — separate from both the temple and Solomon\'s residence. The spatial arrangement mirrors the theological tension: the foreign alliance is accommodated but not integrated into the sacred centre. Later, this boundary will collapse.'),
+            ],
+            'calvin': [
+                ('7:1', 'Calvin: Thirteen years for the palace, seven for the temple. The numbers convict Solomon of misplaced priorities. Let every believer examine: do I invest more in my own comfort than in God\'s service? The ratio of our spending reveals the ratio of our devotion.'),
+                ('7:7', 'Calvin: The Hall of Justice teaches that good governance requires proper infrastructure. The king\'s judicial function needs a dignified setting — not for vanity but because justice itself deserves honour and visibility.'),
+            ],
+            'netbible': [
+                ('7:1', 'NET Note: The note about 13 years (<em>šĕlōš ʿeśrēh šānāh</em>) stands in stark contrast to the 7-year temple construction. The narrator uses chronological data as theological commentary without explicit editorialising.'),
+                ('7:2', 'NET Note: The dimensions of the House of the Forest of Lebanon (100×50×30 cubits ≈ 150×75×45 feet) make it substantially larger than the temple (60×20×30 cubits). The cedar pillars were arranged in four rows of 15 columns each.'),
+            ],
+        },
+        {
+            'header': 'Verses 13–51 — Huram\'s Bronze Work: Pillars, Sea, Basins, and the Furnishings Complete',
+            'verses': verse_range(13, 51),
+            'heb': [
+                ('Yākîn...Bōʿaz', 'Yachin...Boaz', 'He establishes...In him is strength', 'The two bronze pillars (vv.21–22) flanking the temple entrance are named <em>Yākîn</em> ("He establishes") and <em>Bōʿaz</em> ("In him is strength"). These are not structural supports but freestanding monuments — visible theological statements. Everyone entering the temple passed between these pillars and their declaration: God establishes; God is strong.'),
+                ('yām mûṣāq', 'yam mutzak', 'cast sea', 'The bronze sea (vv.23–26) — 15 feet in diameter, 7.5 feet high, holding approximately 12,000 gallons — rested on twelve bronze oxen facing outward in four groups of three (the four compass points). It served for priestly washing. The "sea" echoes the primordial waters of creation — the temple contains and orders the chaos waters.'),
+            ],
+            'ctx': 'Huram (also called Huram-abi) is a master craftsman from Tyre whose mother was from the tribe of Naphtali — a mixed Israelite-Phoenician heritage that qualifies him to work on an Israelite sacred project with Phoenician expertise. His bronze work is described in lavish detail: the two freestanding pillars (Jakin and Boaz), the enormous bronze sea on twelve oxen, ten bronze basins on wheeled stands, and all the smaller vessels. The detail serves a theological purpose: every object is specified because every object is sacred. The chapter concludes with Solomon bringing in David\'s dedicated silver and gold — the father\'s treasures stored in the son\'s building.',
+            'cross': [
+                ('Exod 31:1–5', 'Bezalel, filled with the Spirit for tabernacle craftsmanship, is the prototype for Huram. Both are divinely gifted artisans working on sacred construction.'),
+                ('2 Chr 4:2–5', 'The Chronicler\'s parallel adds detail about the bronze sea\'s decoration: "below its rim, figures of bulls encircled it — ten to a cubit." The sea was both functional and ornamental.'),
+                ('Jer 52:17', 'The Babylonians broke up the bronze sea and the pillars and carried the bronze to Babylon. The temple furnishings survived 370 years before being destroyed in 586 BC.'),
+            ],
+            'macarthur': [
+                ('7:14', 'MacArthur: Huram\'s mixed heritage (Tyrian father, Israelite mother) makes him a bridge figure — Gentile skill in service of Israelite worship. The best human artistry is not wasted on God\'s house; it is fulfilled there.'),
+                ('7:21', 'MacArthur: Jakin ("He establishes") and Boaz ("In him is strength") proclaim theology to everyone who enters. The pillars are not merely decorative but confessional — permanent monuments declaring that God\'s purposes are established and his power is sufficient.'),
+                ('7:23', 'MacArthur: The bronze sea for priestly cleansing symbolises the necessity of purification before ministry. No priest served without washing first. The principle carries into the New Testament: those who serve God must first be cleansed (John 13:10).'),
+                ('7:51', 'MacArthur: Solomon brings in David\'s dedicated treasures — the father\'s preparation meets the son\'s completion. The temple is a two-generation project: David prepared, Solomon built. God\'s work often spans generations; faithfulness in one generation bears fruit in the next.'),
+            ],
+            'wiseman': [
+                ('7:14', 'Wiseman: The description of Huram as "filled with wisdom, understanding, and skill" (<em>ḥokmāh ûtĕbûnāh wĕdaʿat</em>) uses the same triplet applied to Bezalel (Exod 31:3). The verbal parallel explicitly connects tabernacle and temple craftsmanship.'),
+                ('7:23', 'Wiseman: Large basins for ritual washing are attested at several ANE temple sites. A stone basin at Amathus (Cyprus) approaches the scale described here. The twelve oxen supporting the sea may represent the twelve tribes — all Israel supporting the priestly purification system.'),
+            ],
+            'provan': [
+                ('7:21', 'Provan: The pillar names are a creed in bronze. Every worshipper who enters reads the theology: God establishes his purposes and his strength is the foundation. The architecture preaches before the priest opens his mouth.'),
+                ('7:51', 'Provan: The chapter closes with an act of generational continuity — Solomon installs David\'s treasures. The temple is not Solomon\'s alone but the fruition of his father\'s vision. The narrator honours both generations and signals that the Davidic covenant operates across time.'),
+            ],
+            'calvin': [
+                ('7:23', 'Calvin: The bronze sea for washing teaches that we cannot approach God in our natural state. Cleansing must precede worship. This is the gospel in symbol: Christ\'s blood cleanses those who would draw near to God (Heb 10:22).'),
+                ('7:51', 'Calvin: David gathered; Solomon placed. The first generation\'s sacrificial giving finds its purpose in the next generation\'s faithful building. Let parents who invest in their children\'s faith take comfort: the harvest may come after they are gone.'),
+            ],
+            'netbible': [
+                ('7:21', 'NET Note: The pillar names <em>Yākîn</em> and <em>Bōʿaz</em> may be the opening words of dynastic oracles inscribed on the pillars. "He [God] establishes [the throne]" and "In him [God] is [the king\'s] strength" — royal theology in architectural form.'),
+                ('7:23', 'NET Note: "A circular shape, ten cubits from rim to rim" — the bronze sea\'s circumference is given as 30 cubits (v.23), yielding an approximate π of 3. This is a practical measurement, not a mathematical claim; the rim\'s thickness accounts for the apparent discrepancy.'),
+            ],
+        },
+    ],
+})
+
+ki1(8, {
+    'title': 'The Temple Dedication: Glory, Prayer, and Sacrifice',
+    'sections': [
+        {
+            'header': 'Verses 1–21 — The Ark Brought In; the Cloud Fills the Temple',
+            'verses': verse_range(1, 21),
+            'heb': [
+                ('kābôd YHWH', 'kavod Adonai', 'glory of the LORD', 'The glory-cloud (vv.10–11) is the visible manifestation of God\'s presence — the same <em>kābôd</em> that filled the tabernacle (Exod 40:34–35) and that Moses encountered on Sinai (Exod 24:16–17). The cloud is so dense the priests cannot continue ministering. God\'s presence overwhelms human capacity.'),
+                ('ʿărāpel', 'arafel', 'thick darkness', 'Solomon says God "has said he would dwell in thick darkness" (v.12) — the same <em>ʿărāpel</em> of Sinai (Exod 20:21). God\'s presence is paradoxically both glorious (light) and hidden (darkness). He reveals himself but remains beyond full comprehension.'),
+            ],
+            'ctx': 'The temple dedication is the climax of 1 Kings and the theological centre of Solomon\'s reign. The ark — carried by Levites, not on a cart (learning from Uzzah, 2 Sam 6) — is brought into the Most Holy Place. When the priests withdraw, the glory-cloud fills the temple so powerfully that no one can stand to minister. This is the Exodus-Sinai theophany relocated to Jerusalem: God takes up permanent residence in the house built for his Name. Solomon\'s speech (vv.14–21) rehearses the Davidic covenant history and declares the temple the fulfilment of God\'s promise.',
+            'cross': [
+                ('Exod 40:34–35', '"The glory of the LORD filled the tabernacle. Moses could not enter." The identical scene at the tabernacle\'s completion — glory so overwhelming that even Moses cannot enter.'),
+                ('2 Chr 5:13–14', 'The Chronicler adds that the glory appeared when the musicians and singers praised as one, saying "He is good; his love endures forever." The glory came in response to worship.'),
+                ('Ezek 10:18–19', 'Ezekiel sees the glory depart the temple before the Babylonian destruction — the reversal of this moment. The glory that entered in 1 Kings 8 eventually leaves because of Israel\'s sin.'),
+            ],
+            'macarthur': [
+                ('8:1', 'MacArthur: Solomon assembles all Israel for the dedication — not a private ceremony but a national covenant event. The entire community witnesses God taking up residence. Public worship is the foundation of national life.'),
+                ('8:6', 'MacArthur: The ark placed under the cherubim\'s wings completes the temple\'s purpose. The building was always about this moment — the ark finding its permanent rest. Every detail of construction pointed here.'),
+                ('8:10', 'MacArthur: The glory-cloud is God\'s visible answer to Solomon\'s work. You build; I come. The divine response to human obedience is overwhelming presence. God does not merely approve the temple — he inhabits it.'),
+                ('8:12', 'MacArthur: "The LORD has said he would dwell in thick darkness" — God\'s transcendence and immanence held together. He dwells in the temple (immanent) but in thick darkness (transcendent). He is near but never domesticated.'),
+            ],
+            'wiseman': [
+                ('8:2', 'Wiseman: The dedication during the Feast of Tabernacles (7th month, Ethanim) linked the temple to Israel\'s harvest thanksgiving and wilderness commemoration. The feast of booths reminded Israel of its tent-dwelling past — now God has moved from tent to temple.'),
+                ('8:8', 'Wiseman: "The poles were so long that their ends could be seen from the Holy Place" — a detail confirming the ark\'s physical presence and the continuity between tabernacle (where the poles were permanent, Exod 25:15) and temple.'),
+            ],
+            'provan': [
+                ('8:10', 'Provan: The glory-cloud is the narrator\'s ultimate validation. No prophetic word, no angelic message — God himself comes. The building is complete, the ark is placed, and God responds with his own presence. This is the goal of all sacred architecture: not human admiration but divine habitation.'),
+                ('8:12', 'Provan: Solomon\'s declaration that God dwells in "thick darkness" is a corrective to any assumption that the magnificent temple has somehow contained or controlled God. The building is glorious; the God within it is infinitely more so — and beyond full comprehension.'),
+            ],
+            'calvin': [
+                ('8:10', 'Calvin: The glory filling the temple teaches that God\'s presence is the soul of worship. Without it, the most beautiful building is a decorated tomb. With it, even a stable becomes Bethlehem. The church must pray not for better buildings but for God\'s manifest presence.'),
+                ('8:12', 'Calvin: "Thick darkness" preserves divine mystery. God reveals himself truly but not exhaustively. The temple gives access but not mastery. Let theologians remember: we know God truly through his Word, but we never know him completely. Humility is the proper posture before the Infinite.'),
+            ],
+            'netbible': [
+                ('8:10', 'NET Note: <em>heʿānān mālēʾ ʾet-bêt YHWH</em> (the cloud filled the house of the LORD) — the verbal form exactly parallels Exod 40:34 (<em>heʿānān kissāh... ûkĕbôd-YHWH mālēʾ</em>). The narrator uses identical language to mark temple dedication as the architectural Sinai.'),
+                ('8:12', 'NET Note: <em>ʿărāpel</em> (thick darkness/dark cloud) appears in theophanic contexts: Sinai (Exod 20:21), the Red Sea crossing (Deut 4:11), and Psalm 97:2. It signifies divine presence that is real but unapproachable.'),
+            ],
+        },
+        {
+            'header': 'Verses 22–53 — Solomon\'s Dedicatory Prayer: Seven Petitions',
+            'verses': verse_range(22, 53),
+            'heb': [
+                ('tĕḥinnāh', 'techinnah', 'supplication/plea for grace', 'Solomon\'s prayer is structured around <em>tĕḥinnāh</em> — heartfelt pleas addressed to God in specific situations. Seven petitions cover every contingency Israel might face: sin, defeat, drought, famine, plague, the foreigner\'s prayer, and war. The completeness is deliberate: every need finds its answer at the temple.'),
+                ('wĕšāmaʿtā haššāmayim', 'veshamata hashamayim', 'then hear from heaven', 'The refrain "then hear from heaven" (vv.30, 32, 34, 36, 39, 43, 45, 49) anchors every petition. Solomon does not presume God is confined to the temple — "the heavens, even the highest heaven, cannot contain you" (v.27). The temple is the address where prayers are directed; heaven is where God actually dwells and acts.'),
+            ],
+            'ctx': 'Solomon\'s dedicatory prayer is the longest prayer in the Old Testament and one of the most theologically sophisticated. It begins with a remarkable paradox: the God who fills heaven and earth has chosen to put his Name in this building (v.29). Seven petitions follow, each structured as "when X happens, and they pray toward this temple, then hear from heaven and forgive/act." The petitions move from individual sin to national catastrophe to the foreigner\'s prayer — expanding the temple\'s reach from Israel to all nations. The sixth petition (vv.41–43) is extraordinary: Solomon prays for the non-Israelite who comes to pray at the temple, "so that all the peoples of the earth may know your Name." The temple is designed from its inception as a house of prayer for all nations.',
+            'cross': [
+                ('2 Chr 7:14', '"If my people, who are called by my name, will humble themselves and pray... then I will hear from heaven." God\'s response to Solomon\'s prayer — the most quoted verse from this entire narrative.'),
+                ('Dan 6:10', 'Daniel prayed "toward Jerusalem" — exactly the practice Solomon\'s prayer establishes. The temple\'s orientation function survived even in exile.'),
+                ('Isa 56:7', '"My house will be called a house of prayer for all nations." Jesus quotes this when cleansing the temple (Mark 11:17) — the fulfilment of Solomon\'s sixth petition.'),
+            ],
+            'macarthur': [
+                ('8:23', 'MacArthur: Solomon begins by praising God\'s uniqueness: "There is no God like you in heaven above or on earth below." Theology precedes petition. Before asking, Solomon worships. This is the pattern Christ teaches: "Our Father... hallowed be your name" before "give us this day."'),
+                ('8:27', 'MacArthur: "The heavens, even the highest heaven, cannot contain you. How much less this temple I have built!" Solomon\'s greatest theological statement — the builder of the most magnificent temple in the ancient world declares it inadequate to contain God. This is the corrective to all religious architecture: God is always greater than any building.'),
+                ('8:41', 'MacArthur: The prayer for the foreigner is remarkable. Solomon explicitly asks God to hear non-Israelites who pray toward the temple, "so that all the peoples of the earth may know your Name." The temple is missionary from its dedication day.'),
+                ('8:46', 'MacArthur: "There is no one who does not sin" — Solomon\'s realism grounds the prayer. The temple\'s ministry of forgiveness presupposes universal human sinfulness. This is not pessimism but honesty — the same honesty Paul articulates in Romans 3:23.'),
+            ],
+            'wiseman': [
+                ('8:22', 'Wiseman: Solomon\'s posture — standing before the altar with hands spread toward heaven — matches depictions of royal prayer in Assyrian and Babylonian reliefs. The gesture of open hands signifies both supplication and receptivity. ANE kings regularly prayed publicly at temple dedications.'),
+                ('8:37', 'Wiseman: The catalogue of calamities (drought, famine, plague, blight, locusts, siege) matches documented disasters in ANE records. The Assyrian Eponym Chronicle and Babylonian chronicles record precisely these catastrophes. Solomon\'s prayer addresses real, historically attested threats.'),
+            ],
+            'provan': [
+                ('8:27', 'Provan: Solomon\'s "How much less this temple" is the Deuteronomistic theology of the Name in its purest expression. God is not in the temple; God\'s Name is. The Name gives access without implying containment. This theology prevents the temple from becoming an idol while preserving its function as a place of encounter.'),
+                ('8:41', 'Provan: The foreigner petition (vv.41–43) breaks the boundaries of ethnic religion. Solomon envisions the temple as a place where any human being — regardless of nationality — can approach Israel\'s God and be heard. This is the Abrahamic promise (Gen 12:3) built into the temple\'s liturgical architecture.'),
+            ],
+            'calvin': [
+                ('8:27', 'Calvin: Solomon confesses God\'s transcendence at the moment of his greatest architectural achievement. This is true wisdom: the more we build for God, the more we recognise that God surpasses all our building. Our finest efforts are a child\'s drawing compared to the reality of divine majesty.'),
+                ('8:46', 'Calvin: "There is no one who does not sin." Solomon does not exempt himself or his successors. The temple\'s entire ministry presupposes human failure. Grace is not the exception in God\'s economy; it is the foundation. Every prayer of confession spoken in the temple rests on this bedrock realism.'),
+            ],
+            'netbible': [
+                ('8:27', 'NET Note: <em>hinnēh haššāmayim ûšĕmê haššāmayim lōʾ yĕkalkĕlûkā</em> (the heavens and the highest heavens cannot contain you) — the construction <em>šĕmê haššāmayim</em> (heaven of heavens) is a superlative, denoting the uttermost reaches of the cosmos. Even the totality of created space is insufficient for God.'),
+                ('8:46', 'NET Note: <em>kî ʾên ʾādām ʾăšer lōʾ-yeḥĕṭāʾ</em> (there is no person who does not sin) — a universal negative statement. The construction <em>ʾên... ʾăšer lōʾ</em> (there is not... who does not) is an emphatic double negative asserting total human sinfulness. Cf. Eccl 7:20; Rom 3:23.'),
+            ],
+        },
+        {
+            'header': 'Verses 54–66 — The Blessing, the Sacrifices, and the People Dismissed with Joy',
+            'verses': verse_range(54, 66),
+            'heb': [
+                ('wayĕbārek', 'vayevarech', 'he blessed', 'Solomon blesses the assembly (v.55) standing — having risen from his knees. The king functions as both worshipper (kneeling in prayer) and mediator (standing to bless). The dual posture captures the king\'s role: he intercedes before God and pronounces blessing on God\'s behalf.'),
+                ('śĕmēḥîm wĕṭôbê lēb', 'semechim vetovei lev', 'joyful and glad of heart', 'The people go home "joyful and glad of heart" (v.66) — the signature vocabulary of covenant blessing. The dedication is not solemn austerity but overwhelming joy. Israel has never been closer to God, and the appropriate response is celebration.'),
+            ],
+            'ctx': 'The dedication concludes with the largest sacrifice in Israel\'s history: 22,000 cattle and 120,000 sheep and goats. The bronze altar cannot contain the volume, so the entire courtyard is consecrated as sacred space (v.64). The celebration lasts fourteen days — a double week, the seven-day festival plus seven additional days. Then Solomon sends the people home "joyful and glad of heart for all the good things the LORD had done for his servant David and his people Israel." The final words link back to the Davidic covenant: everything culminates in God\'s faithfulness to David\'s line.',
+            'cross': [
+                ('2 Chr 7:1–3', 'The Chronicler adds that fire came down from heaven and consumed the burnt offering — the same divine fire that validated the tabernacle (Lev 9:24). Heaven ratifies the temple as it ratified the tabernacle.'),
+                ('Neh 8:10', '"The joy of the LORD is your strength." The same covenant joy that sends Solomon\'s Israel home characterises Ezra\'s community when the law is read after the exile. Joy is the fruit of encountering God.'),
+            ],
+            'macarthur': [
+                ('8:56', 'MacArthur: "Not one word has failed of all the good promises he gave through his servant Moses." Solomon\'s testimony is a vindication of divine faithfulness. Every promise — land, rest, presence, blessing — has been fulfilled. This is the high-water mark of Old Testament covenant history.'),
+                ('8:60', 'MacArthur: "So that all the peoples of the earth may know that the LORD is God and that there is no other." The temple\'s purpose extends beyond Israel. God\'s dwelling in Jerusalem is meant to be a witness to the entire world.'),
+                ('8:61', 'MacArthur: "But your hearts must be fully committed to the LORD our God." Even at the moment of greatest blessing, Solomon calls for complete devotion. The danger of prosperity is complacency. Solomon preaches what he will eventually fail to practice.'),
+                ('8:66', 'MacArthur: The people leave "joyful and glad of heart." This is the emotional texture of covenant faithfulness — not grim duty but overflowing happiness. When God\'s people live in God\'s presence under God\'s blessing, the result is deep, settled joy.'),
+            ],
+            'wiseman': [
+                ('8:63', 'Wiseman: The scale of sacrifice (22,000 cattle, 120,000 sheep) finds parallels in Assyrian temple dedication inscriptions. Ashurnasirpal II\'s dedication of the Northwest Palace at Nimrud (879 BC) involved similarly vast numbers of animals, suggesting both accounts reflect genuine ANE royal dedication practice.'),
+                ('8:65', 'Wiseman: "From Lebo Hamath to the Wadi of Egypt" — the traditional boundary formula for Israel\'s maximum territorial extent (cf. Num 34:8; 2 Kgs 14:25). Solomon\'s Israel, at this moment, controls the promised land in its fullest dimensions.'),
+            ],
+            'provan': [
+                ('8:56', 'Provan: Solomon\'s declaration that "not one word has failed" is the narrator\'s theological verdict on the era. Everything God promised has been delivered. The temple stands; the glory fills it; the people celebrate. The question that drives the rest of the narrative is: will this fulfilment endure?'),
+                ('8:66', 'Provan: The joy of v.66 is the last unambiguously positive note in Solomon\'s narrative. After this, shadows begin: the conditional warning (9:1–9), the Hiram dispute (9:10–14), and the gradual slide toward ch. 11\'s apostasy. The narrator captures the joy precisely because it will not last.'),
+            ],
+            'calvin': [
+                ('8:56', 'Calvin: "Not one word has failed." Let every believer take this as personal assurance: what God has promised, God will perform. Our doubts do not diminish his faithfulness. Our circumstances do not alter his commitments. Every promise will be fulfilled in its time.'),
+                ('8:66', 'Calvin: The people\'s joy is not manufactured emotion but the natural overflow of experienced grace. When God\'s presence is real and his blessings are tangible, joy is not commanded — it erupts. The church should examine itself: if joy is absent, perhaps God\'s presence is being sought too little.'),
+            ],
+            'netbible': [
+                ('8:63', 'NET Note: The <em>šĕlāmîm</em> (fellowship/peace offerings) were the only sacrifice where the worshipper ate the meat. The 142,000 animals represent not just an offering to God but a massive communal feast — the entire nation eating together in God\'s presence.'),
+                ('8:66', 'NET Note: <em>śĕmēḥîm wĕṭôbê lēb</em> (joyful and good of heart) combines two terms for happiness. <em>śāmēaḥ</em> is outward, visible joy; <em>ṭôb lēb</em> is deep inner contentment. The dedication produces both — visible celebration and settled gratitude.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-2 complete: 1 Kings 5–8 built.")
