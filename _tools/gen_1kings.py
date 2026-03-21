@@ -997,4 +997,1124 @@ ki1(12, {
     ],
 })
 
-print("\n1KI-3 complete: 1 Kings 9–12 built.")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-4: Chapters 13–16 — Prophets and Kings: Rapid Decline
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(13, {
+    'title': 'The Man of God from Judah; the Old Prophet\'s Deception',
+    'sections': [
+        {
+            'header': 'Verses 1–10 — The Man of God Confronts the Altar at Bethel',
+            'verses': verse_range(1, 10),
+            'heb': [
+                ('ʾîš hāʾĕlōhîm', 'ish haElohim', 'man of God', 'The anonymous prophet from Judah is called <em>ʾîš hāʾĕlōhîm</em> (v.1) — a title of prophetic authority. He prophesies against Jeroboam\'s altar by name: "Josiah" — a king who will not exist for 300 years. This is the most chronologically specific predictive prophecy in Kings.'),
+            ],
+            'ctx': 'The unnamed man of God from Judah delivers one of the most remarkable prophecies in the OT: he names Josiah — a king born 300 years later — who will desecrate this very altar (fulfilled in 2 Kgs 23:15–18). The altar splits, Jeroboam\'s hand withers and is restored, but Jeroboam does not repent. The man of God refuses the king\'s hospitality as commanded by God: "Do not eat bread or drink water or return by the way you came."',
+            'cross': [
+                ('2 Kgs 23:15–18', 'Josiah fulfils this prophecy exactly — desecrating the Bethel altar and burning bones on it, but sparing the man of God\'s tomb.'),
+                ('Isa 44:28', 'Cyrus named by Isaiah 150 years before his birth. The Josiah prophecy follows the same pattern of divinely specific foreknowledge.'),
+            ],
+            'macarthur': [
+                ('13:2', 'MacArthur: Naming Josiah 300 years in advance demonstrates God\'s absolute sovereignty over history. The future is not unknown to God; it is decreed by him. This prophecy anchors the entire Bethel narrative in divine omniscience.'),
+                ('13:4', 'MacArthur: Jeroboam\'s withered hand is healed at the man of God\'s prayer — grace extended even to the rebel king. Yet Jeroboam does not repent. Miracles do not produce faith; they only confirm or challenge existing orientation.'),
+                ('13:8', 'MacArthur: The man of God\'s refusal of hospitality is strict obedience to a specific divine command. His faithfulness to God\'s word is the measure of his prophetic integrity. He will tragically fail this same test in the second half of the chapter.'),
+                ('13:10', 'MacArthur: "He took another road" — exact obedience to God\'s instruction. The prophet demonstrates that the word of God governs every detail: not just what to say but where to go, what to eat, and which road to take. Total obedience is the prophetic calling.'),
+            ],
+            'wiseman': [
+                ('13:2', 'Wiseman: The specificity of naming Josiah has led some scholars to date this passage to the Josianic period (c.621 BC). However, predictive naming is attested in ANE prophetic texts, and the narrative\'s literary function requires the prediction to precede its fulfilment. The text claims prophetic foreknowledge, not historical retrofitting.'),
+                ('13:3', 'Wiseman: The altar splitting and ashes pouring out would have been understood as divine desecration of the sacred space. In ANE religion, the destruction of an altar signified the withdrawal of divine favour from the cult.'),
+            ],
+            'provan': [
+                ('13:2', 'Provan: The Josiah prophecy creates a narrative thread that spans the entire book of Kings — from ch. 13 to 2 Kgs 23. The reader holds this unfulfilled promise across hundreds of pages, watching for its resolution. It is the narrator\'s longest-range narrative device.'),
+                ('13:8', 'Provan: The man of God\'s obedience in the first episode (refusing the king) sets up the tragedy of the second episode (accepting the old prophet\'s invitation). The narrator constructs the chapter as a test of prophetic fidelity — passed once, failed once, with fatal consequences.'),
+            ],
+            'calvin': [
+                ('13:2', 'Calvin: God names Josiah three centuries early to show that his purposes are certain before they are enacted. The future is not contingent from God\'s perspective; it is appointed. This is comfort for the faithful and warning for the faithless.'),
+                ('13:4', 'Calvin: The withered hand teaches that human power cannot resist divine authority. Jeroboam reaches out to seize the prophet and is seized himself. The arm that would silence God\'s messenger is paralysed by God\'s power.'),
+            ],
+            'netbible': [
+                ('13:2', 'NET Note: <em>yōšiyyāhû šĕmô</em> (Josiah is his name) — the naming formula is the same used for Isaac (Gen 17:19) and Jesus (Matt 1:21). Divine naming indicates divine appointment — the person\'s destiny is determined before birth.'),
+                ('13:3', 'NET Note: <em>môpēt</em> (sign/portent) — a validating sign accompanying the prophecy. The altar splits and the ashes pour out as immediate confirmation that the long-range Josiah prophecy is truly from God.'),
+            ],
+        },
+        {
+            'header': 'Verses 11–34 — The Old Prophet\'s Lie; the Lion on the Road',
+            'verses': verse_range(11, 34),
+            'heb': [
+                ('nābîʾ zāqēn', 'navi zaken', 'old prophet', 'The old prophet of Bethel (v.11) is one of the most enigmatic figures in Kings. He lies to the man of God — claiming an angel told him to bring him back — and the man of God believes him. Then the old prophet genuinely prophesies the man of God\'s death. He is simultaneously a deceiver and a true prophet — a combination that defies simple moral categories.'),
+                ('ʾaryēh', 'aryeh', 'lion', 'The lion kills the man of God but does not eat the body or attack the donkey (vv.24–25). This supernatural restraint proves the death is divine judgment, not natural accident. The lion is God\'s instrument — deployed with surgical precision.'),
+            ],
+            'ctx': 'The second half of ch. 13 is one of the strangest narratives in Scripture. The old prophet lies, the man of God disobeys, the man of God is killed by a lion, and the old prophet mourns him and asks to be buried alongside him. The moral complexity is deliberate: the man of God who resisted a king\'s invitation falls for a prophet\'s lie. The lesson is severe: obedience to God\'s direct word cannot be overridden by any human authority, even prophetic authority. The chapter closes with the note that Jeroboam "did not change his evil ways" — the man of God\'s mission succeeded prophetically but failed to produce repentance.',
+            'cross': [
+                ('Gal 1:8', '"Even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God\'s curse!" Paul\'s principle matches the lesson of ch. 13 exactly: no secondary authority overrides God\'s direct word.'),
+                ('1 Kgs 20:36', 'Another prophet killed by a lion for disobedience — the same pattern of lethal consequence for prophetic unfaithfulness.'),
+            ],
+            'macarthur': [
+                ('13:18', 'MacArthur: "An angel spoke to me by the word of the LORD... But he was lying." The man of God\'s fatal error: accepting a human claim about divine revelation over the direct word he had received. No secondhand revelation overrides firsthand command.'),
+                ('13:24', 'MacArthur: The lion\'s supernatural behaviour — killing without eating, standing beside the donkey — proves this is divine judgment. God controls even predators with precision. The death is measured, not random.'),
+                ('13:33', 'MacArthur: After everything — the prophecy, the withered hand, the altar split, the prophet\'s death — Jeroboam "did not change his evil ways." The hardest hearts are not softened by the most dramatic signs. Only grace changes the will.'),
+                ('13:34', 'MacArthur: "This was the sin of the house of Jeroboam that led to its downfall and to its destruction." The narrator\'s verdict: Jeroboam\'s dynasty is doomed from this moment. The golden calves are the death sentence, delayed but certain.'),
+            ],
+            'wiseman': [
+                ('13:24', 'Wiseman: Lions were present in Palestine until the medieval period. References to lion attacks appear in Assyrian royal inscriptions and in biblical texts (2 Kgs 17:25–26). The supernatural element is not the lion\'s presence but its selective behaviour.'),
+                ('13:31', 'Wiseman: The old prophet\'s request to be buried beside the man of God is a recognition of the Judean prophet\'s genuine authority. By sharing a tomb, the old prophet ensures that when Josiah eventually desecrates the Bethel cemetery, his bones will be protected alongside the man of God\'s (2 Kgs 23:17–18).'),
+            ],
+            'provan': [
+                ('13:18', 'Provan: The chapter\'s moral is not that prophets are untrustworthy but that no human authority — even prophetic — supersedes God\'s direct command. The Deuteronomistic historian is establishing a principle that will govern the entire prophetic narrative of Kings: test every word against God\'s revealed will.'),
+                ('13:34', 'Provan: "This was the sin that led to its downfall" — the narrator delivers the dynasty\'s death sentence while Jeroboam is still alive. The verdict precedes the execution by decades. The reader knows the end from the middle.'),
+            ],
+            'calvin': [
+                ('13:18', 'Calvin: The man of God believed a lie because it came from a prophet. This teaches that we must never accept human authority — however impressive — over God\'s clear word. Scripture is the final court of appeal, not any human intermediary.'),
+                ('13:24', 'Calvin: God\'s judgment on his own prophet is terrifying in its severity. If God does not spare his faithful servant for one act of disobedience, how much more will he judge those who persistently rebel? The severity of God is the other face of the kindness of God.'),
+            ],
+            'netbible': [
+                ('13:18', 'NET Note: <em>waykakkēš lô</em> (he lied to him) — the narrator states the deception flatly. There is no ambiguity: the old prophet fabricated the angel story. The reader is told the truth so that the man of God\'s failure is seen as gullibility, not reasonable trust.'),
+                ('13:24', 'NET Note: The triple tableau — lion, donkey, body — standing together on the road functions as a supernatural sign. Normal predator behaviour (eating prey, attacking nearby animals) is suspended. The scene is a visible parable of divine judgment.'),
+            ],
+        },
+    ],
+})
+
+ki1(14, {
+    'title': 'Ahijah\'s Word to Jeroboam; Shishak Invades Judah',
+    'sections': [
+        {
+            'header': 'Verses 1–20 — Jeroboam\'s Wife in Disguise; Ahijah\'s Devastating Prophecy',
+            'verses': verse_range(1, 20),
+            'heb': [
+                ('mitnakkērāh', 'mitnakerah', 'disguising herself', 'Jeroboam tells his wife to <em>hitnakkēr</em> (disguise herself, v.2) before visiting Ahijah — the prophet who originally gave Jeroboam the kingdom (11:29–39). The king fears the prophet\'s discernment. But Ahijah is blind (v.4) — and God tells him she is coming. Physical blindness cannot block prophetic sight.'),
+            ],
+            'ctx': 'Jeroboam\'s son Abijah is sick, and Jeroboam sends his wife in disguise to the now-blind prophet Ahijah. God warns Ahijah in advance: she is coming, and the answer is devastating. Ahijah delivers one of the harshest prophetic judgments in the OT: every male in Jeroboam\'s house will be cut off, eaten by dogs or birds. Only Abijah will receive a proper burial — "because in him there is found something pleasing to the LORD." The boy dies the moment his mother crosses the threshold of home. The dynasty that began with such promise (11:37–38) ends in total destruction because Jeroboam "did more evil than all who lived before you."',
+            'cross': [
+                ('1 Kgs 11:37–38', 'Ahijah\'s original promise: "If you do whatever I command you... I will build you a dynasty as enduring as the one I built for David." The conditional promise is now revoked because the condition was never met.'),
+                ('1 Kgs 15:29', 'Baasha destroys Jeroboam\'s entire family — fulfilling Ahijah\'s prophecy of 14:10.'),
+            ],
+            'macarthur': [
+                ('14:2', 'MacArthur: Jeroboam sends his wife in disguise to the prophet who gave him the kingdom. The king who created a counterfeit religion now creates a counterfeit identity. Deception has become his default mode. But you cannot disguise yourself from God.'),
+                ('14:6', 'MacArthur: Ahijah hears her footsteps and says "Come in, wife of Jeroboam. Why this pretence?" God reveals what the disguise conceals. No human strategy can hide from divine omniscience.'),
+                ('14:13', 'MacArthur: Only the sick boy receives a proper burial because "in him there is found something pleasing to the LORD." Even in a corrupt household, God discerns and honours individual faithfulness. One good heart in a wicked family is not overlooked.'),
+                ('14:18', 'MacArthur: The boy dies "as the LORD had said through his servant Ahijah." Prophetic word and historical event align exactly. The narrator traces every outcome to divine speech. History is the execution of prophecy.'),
+            ],
+            'wiseman': [
+                ('14:2', 'Wiseman: Consulting prophets during royal illness was standard ANE practice. Assyrian kings regularly consulted <em>bārû</em> (diviners) and <em>āšipu</em> (exorcist-priests) when royal family members fell ill. Jeroboam follows the cultural pattern but fears the specific prophet who knows his failures.'),
+                ('14:15', 'Wiseman: Ahijah\'s prophecy of exile — "He will uproot Israel from this good land... and scatter them beyond the Euphrates" — accurately predicts the Assyrian deportation of 722 BC, roughly 200 years later.'),
+            ],
+            'provan': [
+                ('14:2', 'Provan: The disguise episode is the narrative\'s final comment on Jeroboam: a man so morally disoriented that he sends his wife to deceive a blind prophet who speaks for the God who sees everything. The irony is total and devastating.'),
+                ('14:13', 'Provan: The boy Abijah — the only member of Jeroboam\'s house to receive a proper burial — is the narrator\'s way of saying that judgment is discriminating, not indiscriminate. God\'s wrath does not destroy the righteous with the wicked (cf. Gen 18:25).'),
+            ],
+            'calvin': [
+                ('14:6', 'Calvin: God reveals the disguise to his prophet, teaching that all human scheming is transparent to heaven. Let no sinner imagine that darkness or deception can hide from the eyes of the Almighty.'),
+                ('14:13', 'Calvin: In the boy Abijah, God preserves a spark of grace even in a house destined for destruction. This teaches that God\'s judgment, however severe, is never blind. He distinguishes the good from the evil, even within the same family.'),
+            ],
+            'netbible': [
+                ('14:2', 'NET Note: <em>hitnakkĕrî</em> (hitpael of <em>nkr</em>: to make yourself unrecognisable) — the reflexive form indicates deliberate self-transformation. The same root in Gen 42:7 describes Joseph "making himself strange" to his brothers. Disguise in both cases fails.'),
+                ('14:10', 'NET Note: The graphic phrase about cutting off every male (<em>maštin bĕqîr</em>) is a vulgar idiom meaning "one who urinates against a wall" — i.e., every male. The crudeness matches the severity of the judgment.'),
+            ],
+        },
+        {
+            'header': 'Verses 21–31 — Rehoboam: Judah Does Evil; Shishak Invades',
+            'verses': verse_range(21, 31),
+            'heb': [
+                ('qĕdēšîm', 'kedeshim', 'male shrine prostitutes', 'Judah establishes <em>qĕdēšîm</em> (v.24) — male cult prostitutes associated with Canaanite fertility worship. The practice represents total assimilation to Canaanite religion. Judah has adopted not just Canaanite theology but Canaanite practice.'),
+            ],
+            'ctx': 'The narrator shifts to Judah under Rehoboam. The verdict is blunt: "Judah did evil in the eyes of the LORD" (v.22). High places, sacred stones, Asherah poles, male shrine prostitutes — the full catalogue of Canaanite religion. Then Shishak (Pharaoh Shoshenq I) invades in Rehoboam\'s fifth year and carries off the temple treasures, including Solomon\'s gold shields. Rehoboam replaces them with bronze — a perfect metaphor for the decline: gold becomes bronze. The kingdom that began with gold overflowing now substitutes cheap metal for precious.',
+            'cross': [
+                ('2 Chr 12:5–8', 'The Chronicler adds that the prophet Shemaiah explained the invasion: "You have abandoned me; therefore, I now abandon you to Shishak." Repentance brought a limited reprieve.'),
+                ('1 Kgs 10:16–17', 'Solomon\'s 200 large gold shields and 300 small gold shields — now carried off to Egypt. The symbol of Solomon\'s glory becomes the spoil of Solomon\'s successor\'s failure.'),
+            ],
+            'macarthur': [
+                ('14:22', 'MacArthur: "Judah did evil" — not just the northern kingdom. Both halves of the divided nation are in rebellion. The narrator prevents any triumphalism in Judah: they are no better than Israel. Sin is universal, not tribal.'),
+                ('14:25', 'MacArthur: Shishak\'s invasion is divine discipline — the wealth Solomon accumulated is stripped away in one campaign. What took decades to build is plundered in days. Prosperity without faithfulness is a castle built on sand.'),
+                ('14:26', 'MacArthur: Gold shields replaced with bronze — the narrator\'s most eloquent image of decline. The substitution is both literal and metaphorical: Judah maintains the forms of royal splendour while the substance drains away. Religious decline often looks exactly like this.'),
+                ('14:30', 'MacArthur: "There was continual warfare between Rehoboam and Jeroboam." The divided kingdom is immediately at war with itself. Division breeds conflict; conflict breeds further division. The cycle of national self-destruction has begun.'),
+            ],
+            'wiseman': [
+                ('14:25', 'Wiseman: Shoshenq I\'s invasion (c.925 BC) is confirmed by his own triumphal relief at the Temple of Amun in Karnak, which lists over 150 conquered cities in both Israel and Judah. This is one of the most important archaeological confirmations of a biblical event.'),
+                ('14:26', 'Wiseman: The temple treasury\'s plundering is the first of several recorded in Kings (cf. 2 Kgs 14:14; 16:8; 18:15–16; 24:13). Each extraction represents a further stripping of Solomon\'s legacy — the temple\'s wealth diminishes with each successive crisis.'),
+            ],
+            'provan': [
+                ('14:22', 'Provan: By describing Judah\'s sin immediately after Jeroboam\'s, the narrator establishes the parallel structure that will govern the rest of Kings: Israel sins, Judah sins, both face consequences. Neither kingdom has a monopoly on covenant faithfulness or on judgment.'),
+                ('14:26', 'Provan: The gold-to-bronze substitution is the narrative\'s most compact symbol of decline. Rehoboam still has shields, still posts guards, still processes to the temple — the routine continues. But the gold is gone. The form persists while the glory departs. This is the story of institutional religion when faith has emptied it.'),
+            ],
+            'calvin': [
+                ('14:22', 'Calvin: Judah sins alongside Israel. Let no branch of the church imagine itself immune from corruption. Neither tradition nor heritage nor orthodox confession guarantees faithfulness. Every generation must fight the battle of faith for itself.'),
+                ('14:26', 'Calvin: Bronze for gold — the substitute that fools no one but becomes accepted through repetition. Churches that replace the gospel with moralism, tradition with formalism, or conviction with accommodation make the same substitution. The guards still march; the gold is gone.'),
+            ],
+            'netbible': [
+                ('14:25', 'NET Note: <em>Šîšaq</em> (Shishak) = Shoshenq I, founder of Egypt\'s 22nd Dynasty. His invasion c.925 BC targeted both Judah and Israel — the Karnak relief includes cities from both kingdoms, suggesting Shoshenq exploited the divided state of the former Solomonic empire.'),
+                ('14:26', 'NET Note: <em>māginnê hazzāhāb</em> (gold shields) → <em>māginnê nĕḥōšet</em> (bronze shields). The lexical substitution enacts the narrative\'s theme: the kingdom of gold has become a kingdom of bronze. The same word <em>māgēn</em> (shield) highlights what has changed — the material, not the form.'),
+            ],
+        },
+    ],
+})
+
+ki1(15, {
+    'title': 'Abijah and Asa in Judah; Nadab and Baasha in Israel',
+    'sections': [
+        {
+            'header': 'Verses 1–24 — Asa\'s Reforms: He Did Right in the Eyes of the LORD',
+            'verses': verse_range(1, 24),
+            'heb': [
+                ('šālēm ʿim-YHWH', 'shalem im-Adonai', 'fully devoted to the LORD', 'Asa\'s heart was <em>šālēm</em> (fully devoted, v.14) "all his days" — the same word used negatively of Solomon (11:4). What Solomon failed to maintain, Asa achieves. He is the first king evaluated positively since the division, restoring hope for the Davidic line.'),
+            ],
+            'ctx': 'Abijah reigns briefly (3 years) and "committed all the sins his father had done." Then Asa — the first reformer king — reigns 41 years. He expels the male shrine prostitutes, removes the idols, and even deposes his grandmother Maakah for her Asherah pole. His heart is "fully devoted" — but with a caveat: "the high places were not removed." The narrator\'s "except" returns (cf. 3:3). Asa is faithful but not completely so. He also strips the temple treasury to buy an alliance with Ben-Hadad of Aram against Israel — using sacred resources for political strategy.',
+            'cross': [
+                ('2 Chr 15:17', '"Asa\'s heart was fully committed to the LORD all his life." The Chronicler\'s parallel evaluation is identical.'),
+                ('2 Chr 16:7–9', 'The Chronicler adds the prophet Hanani\'s rebuke for the Ben-Hadad alliance: "You relied on the king of Aram and not on the LORD." The political alliance was a failure of faith.'),
+            ],
+            'macarthur': [
+                ('15:11', 'MacArthur: "Asa did what was right in the eyes of the LORD, as his father David had done." The Davidic standard is maintained. After two bad kings, Asa restores the pattern. Even in decline, God raises reformers who turn back the tide — for a time.'),
+                ('15:13', 'MacArthur: Deposing his grandmother Maakah for her Asherah pole demonstrates that reform must begin at home. Asa does not spare the powerful or the family. True reform costs personal relationships.'),
+                ('15:14', 'MacArthur: "Although he did not remove the high places, Asa\'s heart was fully committed." The narrator holds both truths: genuine devotion and incomplete reform. God accepts the imperfect when the heart is sincere — but notes the imperfection.'),
+                ('15:18', 'MacArthur: Stripping the temple treasury to buy a foreign alliance reveals the limit of Asa\'s faith. He trusts God enough to remove idols but not enough to face a military threat without political manoeuvring. Faith is tested most severely in crisis.'),
+            ],
+            'wiseman': [
+                ('15:18', 'Wiseman: Ben-Hadad I of Damascus (c.900–860 BC) is attested in the Melqart Stele discovered near Aleppo (1939). The Aramean kingdom of Damascus was the dominant regional power in the 9th century, making it a natural ally for Judah against Israel.'),
+                ('15:20', 'Wiseman: Ben-Hadad\'s conquest of Ijon, Dan, and Abel Beth Maakah in northern Israel is consistent with Aramean expansion southward from the Anti-Lebanon region. Archaeological evidence at Dan shows destruction layers datable to this period.'),
+            ],
+            'provan': [
+                ('15:11', 'Provan: Asa is the narrator\'s first ray of hope in the southern kingdom. After Rehoboam and Abijah, a king arises who "did right." The Deuteronomistic historian uses Asa to demonstrate that the pattern of decline is not inevitable — reform is possible when the king\'s heart is right.'),
+                ('15:14', 'Provan: The "high places not removed" caveat follows Asa into his positive evaluation. This persistent qualifier demonstrates the narrator\'s honesty: even the best Judahite kings fall short of the Deuteronomic ideal. Complete reform awaits Josiah — and even he cannot save the nation.'),
+            ],
+            'calvin': [
+                ('15:13', 'Calvin: Asa\'s deposition of his own grandmother teaches that family loyalty must yield to loyalty to God. When relatives promote idolatry, the faithful must choose God over kinship. This is costly but non-negotiable.'),
+                ('15:14', 'Calvin: The high places remained — even the best reformer\'s work is incomplete in this life. Let the church not despair of imperfect reform. God honours sincere effort even when the result falls short of perfection.'),
+            ],
+            'netbible': [
+                ('15:13', 'NET Note: <em>mipliṣet</em> (horrid/obscene thing) — the object Maakah made for Asherah. The term implies something repulsive, possibly a phallic cult image. Asa burned it in the Kidron Valley — the same valley where Josiah later destroyed cult objects (2 Kgs 23:4, 6).'),
+                ('15:14', 'NET Note: <em>raq habbāmôt lōʾ sārû</em> (only the high places were not removed) — the <em>raq</em> (only/except) particle is the narrator\'s trademark qualifying device, appearing in positive evaluations of both Solomon (3:3) and now Asa.'),
+            ],
+        },
+        {
+            'header': 'Verses 25–34 — Baasha Destroys Jeroboam\'s House; Walks in His Sin',
+            'verses': verse_range(25, 34),
+            'heb': [
+                ('bĕḥeṭʾô ʾăšer heḥĕṭîʾ ʾet-Yiśrāʾēl', 'becheto asher hecheti et-Yisrael', 'in his sin which he caused Israel to sin', 'The formula "walked in the way of Jeroboam and in his sin, which he caused Israel to sin" (v.34) becomes the standard verdict for every northern king. It appears over 20 times in Kings. The golden calves are the measuring stick against which every reign is evaluated.'),
+            ],
+            'ctx': 'Nadab reigns only 2 years before Baasha assassinates him and destroys Jeroboam\'s entire house — fulfilling Ahijah\'s prophecy (14:10). But Baasha then walks in the same sin: the golden calves remain. The pattern is established: northern kings rise by violence, destroy their predecessors, but perpetuate the same apostasy. The mechanism changes; the sin does not. The narrator demonstrates that the problem is not the dynasty but the system — Jeroboam\'s calves corrupt whoever rules, regardless of how they gained power.',
+            'cross': [
+                ('1 Kgs 14:10', 'Ahijah\'s prophecy against Jeroboam\'s house — fulfilled by Baasha in v.29.'),
+                ('1 Kgs 16:1–4', 'Jehu the prophet will deliver an identical prophecy against Baasha — the destroyer becomes the destroyed.'),
+            ],
+            'macarthur': [
+                ('15:27', 'MacArthur: Baasha assassinates Nadab at the siege of Gibbethon — a Philistine city. The northern kingdom is simultaneously fighting external enemies and consuming itself from within. Sin divides, and division weakens.'),
+                ('15:29', 'MacArthur: "He killed Jeroboam\'s whole family. He did not leave Jeroboam anyone that breathed." Ahijah\'s prophecy fulfilled to the letter. God\'s word accomplishes exactly what it promises — whether blessing or judgment.'),
+                ('15:34', 'MacArthur: Baasha "walked in the ways of Jeroboam and committed the same sin." The instrument of God\'s judgment against Jeroboam repeats Jeroboam\'s sin. Judgment does not produce repentance. Only grace changes hearts.'),
+                ('15:34', 'MacArthur: The golden calves survive every dynasty change. They are bigger than any individual king — a systemic corruption embedded in the northern kingdom\'s institutional worship. Structural sin outlasts individual sinners.'),
+            ],
+            'wiseman': [
+                ('15:27', 'Wiseman: Gibbethon (Tell el-Melat, near Gezer) was a Levitical city (Josh 21:23) in Philistine territory. Israel\'s siege there — interrupted by the coup — shows ongoing border conflict with the Philistines. The location reappears in 16:15–17 when Zimri\'s coup also occurs during a Gibbethon siege.'),
+                ('15:29', 'Wiseman: The complete destruction of a predecessor\'s dynasty was standard practice in ANE succession by coup. Assyrian, Babylonian, and Hittite records document similar dynastic purges. The practice eliminated rival claimants but perpetuated cycles of violence.'),
+            ],
+            'provan': [
+                ('15:29', 'Provan: The narrator notes the fulfilment of Ahijah\'s prophecy (14:10) — maintaining the theme that prophetic word drives historical outcome. Every major event in Kings is traced to a prior prophetic announcement. The narrative is not random history but executed prophecy.'),
+                ('15:34', 'Provan: Baasha\'s identical sin demonstrates the narrator\'s point: the problem in Israel is not personal but systemic. Change the king, keep the calves, and nothing changes. Structural reform — not just leadership change — is what Israel needs and never gets.'),
+            ],
+            'calvin': [
+                ('15:29', 'Calvin: God uses Baasha — a brutal usurper — to fulfil his prophetic word against Jeroboam. This does not sanctify Baasha\'s violence; it demonstrates God\'s sovereignty over even sinful human actions. The instrument of judgment is itself judged (ch. 16).'),
+                ('15:34', 'Calvin: Baasha repeats Jeroboam\'s sin after witnessing Jeroboam\'s destruction. How blind is the human heart that it cannot learn even from the ruin of others! The examples of judgment that should produce fear produce only continued rebellion.'),
+            ],
+            'netbible': [
+                ('15:29', 'NET Note: <em>kĕḏabar YHWH ʾăšer dibbēr bĕyad ʿabdô ʾĂḥiyyāh</em> (according to the word of the LORD which he spoke by the hand of his servant Ahijah) — the fulfilment formula explicitly connects event to prophecy. "By the hand of" (<em>bĕyad</em>) is the standard OT idiom for prophetic mediation.'),
+                ('15:34', 'NET Note: The formulaic evaluation "he walked in the way of Jeroboam and in his sin which he caused Israel to sin" (<em>wayyēlek bĕderek Yārŏbʿām ûbĕḥaṭṭāʾtô</em>) uses the construct chain to bind the king\'s personal sin to its national effects. Every northern king inherits Jeroboam\'s guilt by perpetuating his system.'),
+            ],
+        },
+    ],
+})
+
+ki1(16, {
+    'title': 'Elah, Zimri, Omri, Ahab — Rapid Succession and the Worst King Yet',
+    'sections': [
+        {
+            'header': 'Verses 1–20 — From Baasha to Zimri: Seven Days on the Throne',
+            'verses': verse_range(1, 20),
+            'heb': [
+                ('šibʿat yāmîm', 'shivat yamim', 'seven days', 'Zimri reigns only seven days (v.15) — the shortest reign in Israelite history. He seizes the throne by assassination, destroys Baasha\'s house (fulfilling prophetic word), then burns the palace over himself when Omri\'s forces close in. His reign is a compressed tragedy: coup, fulfilment, and self-destruction in one week.'),
+            ],
+            'ctx': 'Chapter 16 accelerates through four northern kings with breathtaking speed. Baasha dies naturally but under prophetic condemnation (vv.1–6). His son Elah reigns 2 years and is assassinated while drunk by Zimri, his chariot commander (vv.8–10). Zimri destroys Baasha\'s house — fulfilling Jehu\'s prophecy (16:3–4) — but reigns only 7 days before the army proclaims Omri king. Zimri dies in a self-immolated palace. The pace of violence escalates: assassination follows assassination. The northern kingdom is consuming itself.',
+            'cross': [
+                ('1 Kgs 16:3–4', 'Jehu\'s prophecy against Baasha — identical to Ahijah\'s against Jeroboam. The same sin produces the same punishment. God is consistent.'),
+                ('2 Kgs 9:31', 'When Jehu enters Jezreel, Jezebel calls him "Zimri, you murderer!" — invoking Zimri\'s precedent as a warning. The coup artist\'s name becomes a curse.'),
+            ],
+            'macarthur': [
+                ('16:2', 'MacArthur: Jehu\'s prophecy against Baasha mirrors Ahijah\'s against Jeroboam. God treats identical sins with identical judgments. The consistency of divine justice demonstrates that God is no respecter of persons.'),
+                ('16:9', 'MacArthur: Elah is assassinated while "drinking himself drunk" in the home of his palace manager. The king\'s dereliction — getting drunk while his army fights at Gibbethon — creates the vulnerability his enemies exploit. Self-indulgence invites disaster.'),
+                ('16:15', 'MacArthur: Seven days — the briefest reign. Zimri\'s story teaches that seizing power by violence provides no stability. The sword that gives the throne also takes it.'),
+                ('16:18', 'MacArthur: Zimri burns the palace over himself — the ultimate act of despair. When the coup fails, there is no exit strategy. Those who live by the sword die by it.'),
+            ],
+            'wiseman': [
+                ('16:8', 'Wiseman: The assassination of Elah while drinking at the palace steward\'s house follows a pattern attested in ANE sources. The Assyrian king Tukulti-Ninurta I was assassinated by courtiers in similar domestic circumstances. Palace coups often targeted the king during private moments.'),
+                ('16:15', 'Wiseman: Zimri\'s 7-day reign is the shortest documented reign in the ANE. Comparable brief reigns are known from Babylonian and Assyrian king lists, usually terminated by counter-coups.'),
+            ],
+            'provan': [
+                ('16:12', 'Provan: The narrator notes the fulfilment of Jehu\'s prophecy (16:1–4) against Baasha — the same fulfilment formula used for Ahijah\'s prophecy against Jeroboam (15:29). The parallel structure demonstrates that God\'s justice operates by consistent principle, not arbitrary caprice.'),
+                ('16:18', 'Provan: Zimri\'s self-immolation is the narrator\'s most extreme image of political self-destruction. The northern kingdom is literally burning itself down. The palace that should house governance becomes a funeral pyre. Power pursued for its own sake is self-consuming.'),
+            ],
+            'calvin': [
+                ('16:9', 'Calvin: Elah drunk while his army fights — the picture of a ruler who has abandoned his duty for pleasure. When leaders indulge themselves while their people suffer, judgment is already at the door. Vigilance is the price of authority.'),
+                ('16:18', 'Calvin: Zimri\'s fiery suicide teaches that sin\'s wages are paid in full. He who murdered his master is consumed by his own hand. The palace he seized becomes his tomb. There is no peace for the wicked.'),
+            ],
+            'netbible': [
+                ('16:12', 'NET Note: <em>kĕḏabar YHWH ʾăšer dibbēr ʾel-Baʿšāʾ bĕyad Yēhûʾ</em> — the fulfilment formula. "By the hand of Jehu" — a different Jehu from the later king who destroys the Omride dynasty (2 Kgs 9). Prophetic names recur across generations.'),
+                ('16:18', 'NET Note: <em>wayyiśrōp ʿālāyw ʾet-bêt hammelek bāʾēš</em> (he burned the royal palace over himself with fire) — the verb <em>śārap</em> (to burn) combined with <em>ʿal</em> (over/upon) indicates deliberate self-immolation. Zimri\'s death is suicide by arson.'),
+            ],
+        },
+        {
+            'header': 'Verses 21–34 — Omri Founds Samaria; Ahab: More Evil Than All Before Him',
+            'verses': verse_range(21, 34),
+            'heb': [
+                ('wayyaʿaś hāraʿ mikkōl ʾăšer lĕpānāyw', 'vayaas hara mikol asher lefanav', 'he did more evil than all before him', 'Ahab\'s evaluation (v.30) escalates beyond all predecessors. But v.33 adds: "Ahab also made an Asherah pole and did more to arouse the anger of the LORD... than did all the kings of Israel before him." The superlative is doubled — Ahab is the worst king in Israelite history, exceeding even Jeroboam.'),
+            ],
+            'ctx': 'Omri founds Samaria and establishes the most powerful northern dynasty — yet the narrator dismisses his 12-year reign in six verses (vv.23–28). His son Ahab marries Jezebel of Sidon and introduces Baal worship on an entirely new scale: a Baal temple in Samaria, an Asherah pole, and active promotion of Canaanite religion. The narrator\'s verdict is the most severe in Kings: Ahab "did more to arouse the anger of the LORD... than all the kings of Israel before him" (v.33). The Elijah cycle that follows (chs. 17–19) is God\'s response to Ahab\'s unprecedented evil.',
+            'cross': [
+                ('Mic 6:16', '"You have observed the statutes of Omri and all the practices of Ahab\'s house." A century later, Micah still cites the Omride dynasty as the standard of wickedness.'),
+                ('2 Kgs 3:4–5', 'The Mesha Stele confirms Omri\'s conquest of Moab: "Omri was king of Israel, and he oppressed Moab many days." The archaeological confirmation validates the narrator\'s brief account.'),
+            ],
+            'macarthur': [
+                ('16:24', 'MacArthur: Omri buys the hill of Samaria and builds a new capital — a shrewd political move. The city is strategically defensible and symbolically fresh: not associated with any previous dynasty. But political brilliance without spiritual fidelity is empty.'),
+                ('16:30', 'MacArthur: "Ahab did more evil... than any of those before him." The superlative indicates not just personal sin but systematic promotion of evil. Ahab does not merely tolerate Baal worship; he institutionalises it. The king becomes the architect of national apostasy.'),
+                ('16:31', 'MacArthur: Ahab married Jezebel daughter of Ethbaal king of the Sidonians. This is more than a diplomatic marriage — it is a theological alliance. Jezebel brings Baal worship with her and aggressively promotes it. Marriage to a pagan spouse becomes the vehicle for religious revolution.'),
+                ('16:34', 'MacArthur: The rebuilding of Jericho by Hiel fulfils Joshua\'s curse (Josh 6:26) — the firstborn dies when the foundation is laid, the youngest when the gates are set. The narrator places this at the chapter\'s end to demonstrate that God\'s ancient words remain active across centuries.'),
+            ],
+            'wiseman': [
+                ('16:24', 'Wiseman: Samaria (modern Sebastia) was excavated by Harvard University (1908–10) and later by Kathleen Kenyon (1931–35). The Omride palace revealed sophisticated ashlar masonry, ivory inlays, and administrative ostraca. Archaeologically, Omri\'s dynasty was the most materially impressive in Israelite history — a fact the narrator deliberately minimises.'),
+                ('16:31', 'Wiseman: Ethbaal (Ittobaal) king of the Sidonians is attested by Josephus (citing Menander of Ephesus) as a priest of Astarte who seized the Tyrian throne by assassination. Jezebel\'s father was both priest and king — she brought religious and political authority into the marriage.'),
+            ],
+            'provan': [
+                ('16:25', 'Provan: The narrator gives Omri — the most archaeologically attested Israelite king (Assyrian records call Israel "the house of Omri" for a century after his death) — only six verses. The narrator\'s priorities are theological, not political. Military power and architectural achievement are irrelevant if the king "did evil in the eyes of the LORD."'),
+                ('16:33', 'Provan: Ahab\'s doubled superlative — more evil than all before, more anger than all before — prepares the reader for the unprecedented prophetic response. The worst king calls forth the greatest prophet: Elijah. The narrative logic is proportional: extreme evil produces extreme divine intervention.'),
+            ],
+            'calvin': [
+                ('16:31', 'Calvin: Ahab\'s marriage to Jezebel teaches that the choice of a spouse shapes the destiny of a household and even a nation. Jezebel did not merely share Ahab\'s throne; she redirected his worship. Marriage is a theological act with consequences beyond the couple.'),
+                ('16:34', 'Calvin: Joshua\'s curse on Jericho — spoken 500 years earlier — is fulfilled in Hiel\'s sons. Let no one dismiss ancient prophecy as expired. God\'s word outlasts every human generation. The curse spoken at the conquest is executed in the monarchy.'),
+            ],
+            'netbible': [
+                ('16:24', 'NET Note: <em>wayyiqen ʾet-hāhār Šōmĕrôn</em> (he bought the hill of Samaria) — the purchase price of two talents of silver was modest for a royal capital. Omri selected the site for its defensive advantages: a steep, isolated hill with excellent visibility in all directions.'),
+                ('16:34', 'NET Note: The fulfilment of Joshua\'s curse (Josh 6:26) — <em>kĕḏabar YHWH ʾăšer dibbēr bĕyad Yĕhôšuaʿ</em> (according to the word of the LORD spoken by Joshua) — is the narrator\'s last note before Elijah appears in ch. 17. It demonstrates that prophetic words remain active centuries after they are spoken.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-4 complete: 1 Kings 13–16 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-5: Chapters 17–19 — The Elijah Cycle: Drought, Fire, Silence
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(17, {
+    'title': 'Elijah Appears: Drought, Ravens, and Resurrection',
+    'sections': [
+        {
+            'header': 'Verses 1–16 — No Rain; Fed by Ravens; the Widow\'s Jar That Never Ran Dry',
+            'verses': verse_range(1, 16),
+            'heb': [
+                ('ʾĒliyyāhû', 'Eliyahu', 'My God is YHWH', 'Elijah\'s name is his message: <em>ʾĒliyyāhû</em> = "My God is YHWH." In a nation worshipping Baal (the storm god who supposedly controls rain), a man whose name declares "My God is YHWH" announces that there will be no rain "except at my word." The contest is joined with his first breath.'),
+                ('kĕrît', 'kerit', 'Kerith', 'The Kerith Ravine (v.3) becomes Elijah\'s hiding place — east of the Jordan, away from Ahab\'s territory. God feeds him through ravens — unclean birds (Lev 11:15) bringing bread and meat. God\'s provision operates outside the purity system when necessary. The means of sustenance are unexpected, even scandalous.'),
+            ],
+            'ctx': 'Elijah appears without genealogy, without call narrative, without introduction — the most abrupt prophetic entrance in the OT. His first word is an oath: "As the LORD, the God of Israel, lives... there will be neither dew nor rain in the next few years except at my word." The drought is a direct assault on Baal theology: Baal was the storm god, the giver of rain. If YHWH can shut the sky, Baal is impotent. God then sends Elijah to three places of provision: Kerith (ravens), Zarephath (a widow), and eventually Carmel (fire). Each location tests and demonstrates that YHWH alone provides — not Baal, not human resources, not natural processes.',
+            'cross': [
+                ('Jas 5:17', '"Elijah was a human being, even as we are. He prayed earnestly that it would not rain, and it did not rain on the land for three and a half years." James cites Elijah as a model of effective prayer.'),
+                ('Luke 4:25–26', 'Jesus cites the Zarephath widow to show that God\'s grace extends beyond Israel: "There were many widows in Israel... yet Elijah was sent to none of them, but to a widow in Zarephath in Sidon."'),
+                ('Deut 11:16–17', '"If you worship other gods... he will shut up the heavens so that it will not rain." The drought fulfils the Deuteronomic curse.'),
+            ],
+            'macarthur': [
+                ('17:1', 'MacArthur: Elijah appears without preamble — no call narrative, no genealogy, no background. He speaks and heaven shuts. The prophet\'s authority derives not from credentials but from the word he carries. The message authenticates the messenger.'),
+                ('17:4', 'MacArthur: Ravens — unclean birds — become God\'s delivery service. When God provides, he is not bound by the categories of purity or propriety. The same God who gave the food laws now uses unclean birds to feed his prophet. Grace is creative and unconventional.'),
+                ('17:9', 'MacArthur: God sends Elijah to Zarephath — in Sidon, Jezebel\'s homeland. The prophet flees to the very territory of his enemy\'s family. God hides his servants in the last place anyone would look.'),
+                ('17:14', 'MacArthur: "The jar of flour will not be used up and the jug of oil will not run dry." Daily provision, not stockpiling. The widow must use her last handful and trust God for tomorrow. This is the manna principle (Exod 16): enough for today, faith for tomorrow.'),
+            ],
+            'wiseman': [
+                ('17:1', 'Wiseman: "Elijah the Tishbite, from Tishbe in Gilead" — Tishbe has been tentatively identified with Tell el-Istib in northern Gilead (Transjordan). Gilead was a rugged, frontier territory — Elijah emerges from the margins, not the centres of power.'),
+                ('17:9', 'Wiseman: Zarephath (modern Sarafand, between Tyre and Sidon) was a Phoenician coastal town. A 7th-century BC inscription found there confirms the site\'s identification. Elijah\'s sojourn in Phoenician territory demonstrates YHWH\'s sovereignty over Baal\'s homeland.'),
+            ],
+            'provan': [
+                ('17:1', 'Provan: The narrator introduces Elijah with no preparation — the literary equivalent of a thunderclap. After the measured pace of dynastic succession formulae, a prophet suddenly stands before the king and announces drought. The narrative technique mirrors Elijah\'s message: God interrupts business as usual.'),
+                ('17:14', 'Provan: The inexhaustible jar and jug are the narrator\'s way of demonstrating that YHWH controls the food supply — not Baal. The fertility god is impotent while YHWH feeds a Phoenician widow from a handful of flour. The Baal contest begins not on Carmel but in a widow\'s kitchen.'),
+            ],
+            'calvin': [
+                ('17:1', 'Calvin: Elijah\'s abrupt appearance teaches that God raises his servants when they are most needed. In the darkest hour — Ahab and Jezebel promoting Baal — God\'s prophet appears. The church should never despair: God always has his Elijah ready.'),
+                ('17:14', 'Calvin: The daily provision of flour and oil teaches radical dependence on God. The widow had enough for one meal; God made it enough for years. Our resources are never the measure of God\'s provision. A little in God\'s hands is more than abundance in our own.'),
+            ],
+            'netbible': [
+                ('17:1', 'NET Note: <em>ḥay-YHWH ʾĕlōhê Yiśrāʾēl ʾăšer ʿāmadtî lĕpānāyw</em> (as the LORD the God of Israel lives, before whom I stand) — this oath formula establishes Elijah as a covenant mediator. "Before whom I stand" denotes prophetic service at God\'s court, like a royal official standing before the king.'),
+                ('17:6', 'NET Note: <em>hāʿōrĕbîm</em> (the ravens) — some scholars have proposed reading <em>ʿărbîm</em> (Arabs) or <em>ʿōrbîm</em> (merchants/caravaneers). But the MT reading "ravens" creates the theological point: God uses even unclean creatures to sustain his prophet.'),
+            ],
+        },
+        {
+            'header': 'Verses 17–24 — The Widow\'s Son Raised: Now I Know You Are a Man of God',
+            'verses': verse_range(17, 24),
+            'heb': [
+                ('wayyitmōdēd', 'vayitmoded', 'he stretched himself out', 'Elijah stretches himself (<em>māḏaḏ</em>, hitpolel) over the child three times (v.21) — a physical act of identification. The prophet\'s body covers the dead body; life transfers from the living to the dead. This is resurrection through intimate contact — a foreshadowing of resurrection theology.'),
+            ],
+            'ctx': 'The widow\'s son dies, and she blames Elijah: "Did you come to remind me of my sin and kill my son?" Her theology is retributive — sickness and death are punishment for sin. Elijah takes the child, carries him to the upper room, stretches over him three times, and cries out to God. The boy revives. The widow\'s response is not merely relief but confession: "Now I know that you are a man of God and that the word of the LORD from your mouth is the truth." She moves from retributive theology to personal knowledge of God\'s power. This is the first resurrection miracle in the OT — anticipating Elisha (2 Kgs 4:34–35), Jesus (Luke 7:11–15), and the ultimate resurrection.',
+            'cross': [
+                ('2 Kgs 4:34–35', 'Elisha raises the Shunammite\'s son with an identical stretching-out gesture. The disciple mirrors the master.'),
+                ('Luke 7:11–15', 'Jesus raises the widow of Nain\'s son — another widow, another dead son. Jesus\'s word accomplishes what Elijah\'s bodily contact and prayer accomplished.'),
+                ('Heb 11:35', '"Women received back their dead, raised to life again" — the Hebrews writer cites this episode as an example of resurrection faith.'),
+            ],
+            'macarthur': [
+                ('17:18', 'MacArthur: The widow assumes her son\'s death is punishment for her sin — a common but wrong assumption (cf. John 9:2–3). Suffering is not always retributive. Elijah does not correct her theology with words; he corrects it with action — by raising her son.'),
+                ('17:21', 'MacArthur: The three-fold stretching is both physical and spiritual — Elijah\'s body over the child\'s body, the prophet\'s life-force symbolically covering death. The act anticipates Christ\'s identification with the dead: he enters death to bring life.'),
+                ('17:22', 'MacArthur: "The LORD heard Elijah\'s cry, and the boy\'s life returned to him." God responds to the prophet\'s prayer, not to a ritual. Resurrection is personal — the result of relational prayer, not magical technique.'),
+                ('17:24', 'MacArthur: The widow\'s confession — "Now I know" — is conversion language. She believed before; now she knows from experience. The resurrection of her son moves her from intellectual assent to personal encounter. This is the pattern of saving faith.'),
+            ],
+            'wiseman': [
+                ('17:19', 'Wiseman: The "upper room" (<em>ʿăliyyāh</em>) was a rooftop chamber common in Levantine domestic architecture, used for guests and private retreat. Archaeological excavations at Israelite-period sites confirm the prevalence of upper-story rooms built on flat rooftops.'),
+                ('17:21', 'Wiseman: The stretching-out gesture has no ANE parallel in the context of resurrection. This is distinctly prophetic practice — Elisha will repeat it (2 Kgs 4:34). The gesture may symbolise the transfer of the prophet\'s life-breath to the dead child.'),
+            ],
+            'provan': [
+                ('17:18', 'Provan: The widow\'s question reveals the theology of the average Israelite: suffering equals punishment. Elijah does not debate theology — he acts. The resurrection is the argument. The narrative teaches that God\'s power speaks louder than theological discussion.'),
+                ('17:24', 'Provan: The widow\'s "Now I know" is the chapter\'s climactic confession. She has moved from desperate trust (giving her last flour) through accusation (blaming the prophet) to personal knowledge (the word of the LORD is truth). Her journey is a compressed conversion narrative.'),
+            ],
+            'calvin': [
+                ('17:21', 'Calvin: Elijah\'s three-fold prayer teaches persistence in intercession. He does not accept the first silence as refusal. Three times he stretches, three times he cries out. Prayer that gives up at the first obstacle is not true prayer. God tests our persistence to deepen our dependence.'),
+                ('17:24', 'Calvin: "Now I know that the word of the LORD from your mouth is the truth." The resurrection validates both the prophet and his God. Miracles serve truth — they confirm the word, not replace it. The miracle points to the message, not to itself.'),
+            ],
+            'netbible': [
+                ('17:21', 'NET Note: <em>wayyitmōdēd ʿal-hayyeled šālōš pĕʿāmîm</em> (he stretched himself upon the child three times) — the hitpolel of <em>māḏaḏ</em> appears only here and in 2 Kgs 4:34 (Elisha). The threefold repetition may reflect liturgical persistence or the symbolic completeness of three.'),
+                ('17:22', 'NET Note: <em>wattāšāb nepeš-hayyeled ʿal-qirbô</em> (the life/soul of the child returned to his body) — <em>nepeš</em> here clearly means life-force or vital principle. The return of the <em>nepeš</em> to the body is the OT\'s clearest description of resurrection as the reversal of death.'),
+            ],
+        },
+    ],
+})
+
+ki1(18, {
+    'title': 'Mount Carmel: The LORD, He Is God',
+    'sections': [
+        {
+            'header': 'Verses 1–19 — Three Years of Drought; Obadiah Hides 100 Prophets',
+            'verses': verse_range(1, 19),
+            'heb': [
+                ('ʿōbadyāhû', 'Ovadyahu', 'servant of YHWH', 'Obadiah\'s name means "servant of YHWH" — and he lives up to it by hiding 100 prophets from Jezebel\'s purge. His name is a confession of faith in a court that worships Baal. He feared God "greatly" (<em>mĕʾōd</em>, v.3) while serving Ahab\'s household — a portrait of faithful service in a hostile environment.'),
+            ],
+            'ctx': 'After three years of drought, God sends Elijah back to Ahab. The intervening narrative introduces Obadiah — Ahab\'s palace administrator who secretly saved 100 prophets by hiding them in caves and feeding them. Obadiah represents the "7,000 who have not bowed to Baal" (19:18) — faithfulness operating behind the scenes. When Elijah meets Ahab, the king\'s greeting is revealing: "Is that you, you troubler of Israel?" Elijah redirects: "I have not made trouble for Israel. But you and your father\'s family have." The real troublemaker is not the prophet who declares truth but the king who abandons it.',
+            'cross': [
+                ('1 Kgs 19:18', '"I reserve seven thousand in Israel — all whose knees have not bowed down to Baal." Obadiah\'s hidden faithfulness is part of this remnant.'),
+                ('Matt 10:26', '"There is nothing concealed that will not be disclosed." Obadiah\'s secret service will be known. Hidden faithfulness is still faithfulness.'),
+            ],
+            'macarthur': [
+                ('18:3', 'MacArthur: Obadiah feared the LORD greatly while managing Ahab\'s household. Faithfulness does not require withdrawal from the world — it requires integrity within it. Obadiah served a wicked king while secretly protecting God\'s prophets.'),
+                ('18:10', 'MacArthur: Ahab searched "every nation and kingdom" for Elijah — the scope of the manhunt reveals the scale of the threat. One prophet with God\'s word is more dangerous to the regime than an army. Truth is the ultimate political weapon.'),
+                ('18:17', 'MacArthur: "Is that you, you troubler of Israel?" Ahab blames the messenger for the message. This is the perennial response of the powerful to the prophet: shoot the messenger. Elijah\'s response is definitive: "I have not troubled Israel, but you have."'),
+                ('18:19', 'MacArthur: The summons to Carmel — 450 prophets of Baal, 400 prophets of Asherah, "who eat at Jezebel\'s table" — reveals the scale of institutionalised apostasy. These are state-funded, palace-supported religious professionals. Elijah faces not just false theology but the entire apparatus of the state.'),
+            ],
+            'wiseman': [
+                ('18:4', 'Wiseman: Caves were abundant in the limestone hills of Palestine and served as hiding places throughout Israelite history (cf. 1 Sam 22:1; 24:3). The provision of bread and water for 100 prophets in two groups of fifty was a significant logistical operation that Obadiah managed within the palace administration.'),
+                ('18:19', 'Wiseman: The 450 prophets of Baal and 400 of Asherah represent a professional religious establishment. ANE temples maintained large staffs of cultic personnel: diviners, musicians, administrators, and ecstatic prophets. Jezebel\'s patronage followed Phoenician royal practice of maintaining court prophets.'),
+            ],
+            'provan': [
+                ('18:4', 'Provan: Obadiah\'s secret rescue operation demonstrates that faithfulness takes many forms. Not everyone is called to be Elijah — standing alone before kings. Some are called to be Obadiah — working within the system to preserve what can be preserved. Both forms of faithfulness are honoured by the narrator.'),
+                ('18:17', 'Provan: The exchange between Ahab and Elijah crystallises the conflict: who is the real troublemaker? The king who imported Baal worship, or the prophet who announced drought in response? The narrator has already answered (16:30–33), but the characters must work it out on the mountain.'),
+            ],
+            'calvin': [
+                ('18:3', 'Calvin: Obadiah teaches that faithfulness in a hostile environment is possible. Not every believer can flee the wicked workplace or the corrupt court. Some must remain and do what good they can — hiding prophets, speaking truth quietly, maintaining integrity under pressure.'),
+                ('18:17', 'Calvin: "You troubler of Israel" — the world always blames the prophet for the consequences of sin. The doctor who diagnoses the disease is blamed for the pain. But the disease came first; the diagnosis is mercy, not malice.'),
+            ],
+            'netbible': [
+                ('18:3', 'NET Note: <em>waʿōbaḏyāhû hāyāh yārēʾ ʾet-YHWH mĕʾōd</em> (Obadiah feared the LORD greatly) — the intensifier <em>mĕʾōd</em> (very/exceedingly) is rare in character descriptions. It places Obadiah among the most devout figures in the narrative. His name + his character = perfect alignment.'),
+                ('18:17', 'NET Note: <em>ʿōkēr Yiśrāʾēl</em> (troubler of Israel) — the participle <em>ʿōkēr</em> carries overtones of covenant curse (cf. Josh 7:25, Achan "troubled" Israel). Ahab accuses Elijah of bringing covenant malediction — ironic, since Ahab\'s own apostasy triggered the drought-curse.'),
+            ],
+        },
+        {
+            'header': 'Verses 20–40 — The Contest on Mount Carmel: Fire from Heaven',
+            'verses': verse_range(20, 40),
+            'heb': [
+                ('ʿad-mātay ʾattem pōsĕḥîm ʿal-šĕtê hassĕʿippîm', 'ad-matay atem posechim al-shtei haseipim', 'how long will you limp between two opinions?', 'Elijah\'s challenge (v.21) uses <em>pāsaḥ</em> (to limp, hobble) — the same root as Passover (<em>pesaḥ</em>). Israel is limping between YHWH and Baal like a cripple between two crutches, unable to walk with either. The wordplay is devastating: the Passover people who should walk straight are hobbling.'),
+                ('ʾĕlōhîm ʾăšer-yaʿăneh bāʾēš', 'Elohim asher-yaaneh vaesh', 'the god who answers by fire', 'Elijah proposes the decisive test: "the god who answers by fire — he is God" (v.24). Fire is the medium because both YHWH and Baal were associated with fire and lightning in their respective traditions. The test is fair on Baal\'s own terms — and Baal fails completely.'),
+            ],
+            'ctx': 'The Carmel contest is the climactic event of 1 Kings. Elijah alone against 450 prophets of Baal. The test is simple: two bulls, two altars, no fire — the god who answers with fire is the true God. Baal\'s prophets cry out from morning to evening; Elijah mocks them: "Perhaps he is deep in thought, or busy, or travelling. Maybe he is sleeping and must be awakened." The Hebrew innuendo is sharper than it appears — "busy" may be a euphemism for using the toilet. Then Elijah rebuilds YHWH\'s altar with twelve stones (one per tribe — reuniting the nation symbolically), drenches everything with water (eliminating any suspicion of trickery), and prays a brief, confident prayer. Fire falls and consumes everything — bull, wood, stones, soil, water. The people fall on their faces: "YHWH — he is God! YHWH — he is God!" The prophets of Baal are seized and executed at the Kishon brook.',
+            'cross': [
+                ('Lev 9:24', '"Fire came out from the presence of the LORD and consumed the burnt offering." The same divine fire that validated the tabernacle now validates Elijah\'s altar. Fire from heaven is God\'s consistent method of ratifying true worship.'),
+                ('2 Chr 7:1', 'Fire from heaven consumes Solomon\'s dedication offerings — the same pattern. Carmel, tabernacle, and temple all receive the same divine signature.'),
+                ('Rev 11:5', '"Fire comes from their mouths and devours their enemies." The two witnesses in Revelation are modelled on Moses and Elijah — Carmel\'s fire imagery extended eschatologically.'),
+            ],
+            'macarthur': [
+                ('18:21', 'MacArthur: "How long will you waver between two opinions?" Elijah demands a decision. Syncretism — worshipping both YHWH and Baal — is not an option. The people\'s silence reveals their guilt: they have no answer because they know they are compromised.'),
+                ('18:27', 'MacArthur: Elijah\'s mockery is holy sarcasm — exposing the absurdity of worshipping a god who cannot hear, act, or respond. The prophet does not treat Baal with respectful dialogue; he ridicules him. False gods deserve exposure, not courtesy.'),
+                ('18:36', 'MacArthur: Elijah\'s prayer is brief — about 30 words. The Baal prophets screamed for hours; Elijah prays one sentence. Effective prayer is not measured by length or volume but by the God it addresses. A sentence to the true God outweighs hours of screaming to an idol.'),
+                ('18:39', 'MacArthur: "YHWH — he is God! YHWH — he is God!" The people\'s double confession is the chapter\'s theological climax. For one moment, the entire nation acknowledges the truth that Elijah\'s name declares: My God is YHWH.'),
+            ],
+            'wiseman': [
+                ('18:19', 'Wiseman: Mount Carmel (modern Jebel Mar Elyas, 1,742 feet) projects into the Mediterranean at the northwest end of the Jezreel Valley. It was a boundary zone between Israelite and Phoenician territory — a natural location for a contest between YHWH and Baal. Archaeological surveys have identified ancient cultic sites on the mountain.'),
+                ('18:33', 'Wiseman: The twelve water-pourings over the sacrifice and trench demonstrate the impossibility of natural combustion. In a three-year drought, water was extraordinarily precious — its lavish use underscores the boldness of Elijah\'s faith. The water likely came from the Mediterranean (Carmel overlooks the sea).'),
+            ],
+            'provan': [
+                ('18:21', 'Provan: The Carmel contest is not merely a theological debate but a national covenant renewal. Elijah rebuilds the altar with twelve stones — reuniting the divided nation symbolically around YHWH\'s altar. For one moment on the mountain, Israel is whole again.'),
+                ('18:38', 'Provan: The fire consumes not just the offering but the stones, soil, and water. This is overkill — a demonstration of power so excessive it eliminates all doubt. The narrator wants the reader to feel the same awe the people felt: this is no ordinary fire. This is God.'),
+            ],
+            'calvin': [
+                ('18:21', 'Calvin: The double-minded — those who try to serve God and idols simultaneously — are worse off than outright pagans. At least the pagans are consistent. The compromiser insults God by putting him on equal footing with a lie. Lukewarm faith is the most dangerous state.'),
+                ('18:39', 'Calvin: The people\'s confession is genuine but short-lived. By ch. 19, Jezebel is still in power and Elijah is fleeing for his life. Emotional responses to dramatic events do not constitute lasting faith. The fire on Carmel produced a confession; it did not produce a reformation.'),
+            ],
+            'netbible': [
+                ('18:21', 'NET Note: <em>pōsĕḥîm</em> (limping/hobbling) — a participle suggesting ongoing, habitual wavering. The people have been limping for years. Elijah\'s question demands an end to the chronic condition. <em>Sĕʿippîm</em> (divided opinions/branches) implies a fork in the road: choose one path.'),
+                ('18:38', 'NET Note: <em>wattippōl ʾēš-YHWH</em> (the fire of the LORD fell) — the subject is <em>ʾēš-YHWH</em>, fire belonging to and sent by YHWH. This is not lightning but theophanic fire — the same category as the burning bush (Exod 3:2) and the Sinai fire (Exod 19:18). It is God\'s personal presence in combustion.'),
+            ],
+        },
+        {
+            'header': 'Verses 41–46 — Rain Returns; Elijah Outruns Ahab\'s Chariot to Jezreel',
+            'verses': verse_range(41, 46),
+            'heb': [
+                ('yad-YHWH', 'yad-Adonai', 'hand of the LORD', 'The hand of the LORD comes upon Elijah (v.46) — enabling a supernatural run from Carmel to Jezreel (~17 miles). The <em>yad YHWH</em> (hand of the LORD) is the term for prophetic empowerment (cf. Ezek 1:3; 3:14). The Spirit enables physical feats that nature cannot explain.'),
+            ],
+            'ctx': 'After fire, rain. Elijah tells Ahab to eat and drink — "for there is the sound of heavy rain." But there is no rain yet. Elijah goes to the summit of Carmel, bends to the ground, and sends his servant to look toward the sea seven times. On the seventh look: "A cloud as small as a man\'s hand is rising from the sea." Elijah sends a warning to Ahab, and then the sky turns black, wind rises, and torrential rain falls. Then the most extraordinary detail: "the power of the LORD came on Elijah and, tucking his cloak into his belt, he ran ahead of Ahab all the way to Jezreel." The prophet outruns a chariot — supernatural speed that caps the most supernatural day in Israelite history.',
+            'cross': [
+                ('Jas 5:18', '"Again he prayed, and the heavens gave rain, and the earth produced its crops." James completes the Elijah-prayer narrative: the same prayer that shut the heavens opens them.'),
+                ('1 Kgs 19:1', 'But the very next verse begins: "Now Ahab told Jezebel everything Elijah had done." The triumph of Carmel is immediately followed by Jezebel\'s death threat. Victory does not eliminate opposition.'),
+            ],
+            'macarthur': [
+                ('18:42', 'MacArthur: Elijah prays for rain with his face between his knees — the posture of intense, focused intercession. He has just demonstrated power before 450 prophets; now he humbles himself in private prayer. Public boldness and private humility are the marks of true prophetic character.'),
+                ('18:44', 'MacArthur: "A cloud as small as a man\'s hand" — Elijah sees God\'s answer before it is visible to anyone else. Faith discerns what sight cannot yet detect. The prophet sees rain in a fist-sized cloud because he knows the character of the God who promised it.'),
+                ('18:45', 'MacArthur: The sky turns black, wind comes, heavy rain falls. The three-year drought ends in a moment. What Baal could not do in three years, YHWH does in an instant. The speed of divine action reveals the totality of divine power.'),
+                ('18:46', 'MacArthur: Running ahead of Ahab\'s chariot — about 17 miles — is a sign of prophetic empowerment. Elijah does not merely speak for God; the Spirit physically propels him. The prophet\'s body demonstrates what his mouth declared: YHWH is the God of power.'),
+            ],
+            'wiseman': [
+                ('18:42', 'Wiseman: The distance from the Carmel summit to Jezreel (modern Zerin) is approximately 17 miles across the Jezreel Valley. For a man on foot to outrun a chariot team on this terrain required supernatural enablement, as the narrator explicitly states.'),
+                ('18:44', 'Wiseman: The cloud "rising from the sea" — the Mediterranean, visible from Carmel\'s western summit — is the natural direction from which rain approached Palestine. The meteorological detail is precise: rain came from the west off the sea.'),
+            ],
+            'provan': [
+                ('18:43', 'Provan: Seven looks before the cloud appears — the number of completeness and the number of creation. Elijah\'s patience in prayer matches the thoroughness of God\'s timing. The narrator builds suspense: six times nothing, then the tiny cloud that changes everything.'),
+                ('18:46', 'Provan: The chapter ends with Elijah running through the rain ahead of Ahab\'s chariot — an image of exuberant prophetic power. But the narrator knows what the reader does not yet: the next chapter opens with Elijah running again — this time running away. The juxtaposition is devastating.'),
+            ],
+            'calvin': [
+                ('18:42', 'Calvin: Elijah prays persistently for what God has already promised. The promise of rain does not eliminate the need for prayer; it grounds it. We pray not to inform God but to align our hearts with his purposes. Prayer is not the cause of God\'s action but the appointed means of it.'),
+                ('18:46', 'Calvin: The supernatural run teaches that God equips his servants for every task — even physical ones. The same Spirit that gives wisdom gives strength. Nothing is beyond God\'s provision when it serves his purposes.'),
+            ],
+            'netbible': [
+                ('18:44', 'NET Note: <em>ʿāb qĕṭannāh kĕkap-ʾîš</em> (a small cloud like a man\'s palm/hand) — the diminutive <em>qĕṭannāh</em> emphasizes how tiny the cloud is. The man\'s-palm comparison gives it a specific, memorable visual. Great things begin with small signs.'),
+                ('18:46', 'NET Note: <em>wĕyad-YHWH hāyĕtāh ʾel-ʾĒliyyāhû</em> (the hand of the LORD was upon Elijah) — the standard formula for prophetic empowerment. In Ezekiel, this phrase precedes visionary experiences; here it enables physical prowess. The "hand of the LORD" is versatile: it empowers whatever the moment requires.'),
+            ],
+        },
+    ],
+})
+
+ki1(19, {
+    'title': 'Horeb: Jezebel\'s Threat, the Journey, and the Still Small Voice',
+    'sections': [
+        {
+            'header': 'Verses 1–14 — Take My Life; the Angel Feeds; Forty Days to Horeb',
+            'verses': verse_range(1, 14),
+            'heb': [
+                ('qôl dĕmāmāh daqqāh', 'kol demamah dakah', 'a sound of thin silence / a still small voice', 'The famous phrase of v.12 — <em>qôl dĕmāmāh daqqāh</em> — defies easy translation. <em>Qôl</em> = sound/voice; <em>dĕmāmāh</em> = silence/stillness; <em>daqqāh</em> = thin/fine/gentle. A "sound of thin silence" or "a gentle whisper." After wind, earthquake, and fire — God is in none of them. He is in the paradoxical sound that is almost silence. Power gives way to presence.'),
+                ('rab', 'rav', 'enough', '"Enough, LORD!" (<em>rab</em>, v.4) — Elijah\'s prayer of exhaustion. One day after the greatest prophetic triumph in history, Elijah is suicidal. The word <em>rab</em> means "much, enough, sufficient." He has had enough — enough of the fight, enough of the isolation, enough of being the only one.'),
+            ],
+            'ctx': 'The juxtaposition is staggering. Chapter 18: Elijah calls fire from heaven and outruns a chariot. Chapter 19: Elijah collapses under a bush and asks to die. Jezebel\'s death threat — "May the gods deal with me, be it ever so severely, if by this time tomorrow I do not make your life like that of one of them" — undoes everything Carmel accomplished. Elijah flees south through Judah, into the Negev, and collapses. An angel feeds him twice — a 40-day journey to Horeb (Sinai), where Moses met God. At Horeb, God asks: "What are you doing here, Elijah?" The prophet pours out his complaint: "I alone am left." Then the theophany: wind, earthquake, fire — God is in none of them. Then the still small voice. God asks the same question. Elijah gives the same answer. Nothing has changed externally — but God has revealed something: he is not always in the spectacular. Sometimes he is in the whisper.',
+            'cross': [
+                ('Exod 19:16–18', 'The Sinai theophany: "thunder and lightning, a thick cloud, a very loud trumpet blast, fire and smoke." At Horeb, God reverses the Sinai pattern: the spectacular phenomena appear but God is not in them.'),
+                ('Matt 17:3', 'Moses and Elijah appear with Jesus at the Transfiguration — both Horeb-visitors now meeting the one who is greater than Horeb.'),
+                ('Rom 11:2–4', 'Paul cites Elijah\'s "I alone am left" and God\'s response about the 7,000 to demonstrate that God always preserves a remnant.'),
+            ],
+            'macarthur': [
+                ('19:2', 'MacArthur: Jezebel\'s threat — after seeing 450 of her prophets killed and fire fall from heaven — shows that evidence does not produce faith in a hard heart. She witnessed God\'s power and responded with a death threat. The problem is not insufficient evidence but a resistant will.'),
+                ('19:4', 'MacArthur: "I have had enough, LORD. Take my life." The greatest prophet in Israel\'s history is suicidal. This teaches that spiritual depression is not a sign of weak faith — it can follow the greatest spiritual victories. Exhaustion, isolation, and fear can overwhelm even the strongest.'),
+                ('19:7', 'MacArthur: The angel feeds Elijah twice — bread and water, the same provision as the wilderness manna. God\'s first response to the depressed prophet is not rebuke but food. Physical needs precede spiritual counsel. A tired, hungry prophet needs rest before he needs a sermon.'),
+                ('19:12', 'MacArthur: The still small voice teaches that God\'s most powerful communication is not always dramatic. Fire, wind, and earthquake serve God — but God himself comes in the whisper. After the noise of Carmel, Elijah needs to learn that God\'s normal mode is quiet faithfulness, not spectacular intervention.'),
+            ],
+            'wiseman': [
+                ('19:8', 'Wiseman: The 40-day journey to Horeb covers approximately 200 miles through the Negev and Sinai Peninsula. The number 40 echoes Moses\'s 40 days on Sinai (Exod 24:18) and Israel\'s 40 years in the wilderness. Elijah retraces Israel\'s route in reverse — from the promised land back to the mountain of revelation.'),
+                ('19:11', 'Wiseman: The sequence wind-earthquake-fire mirrors but reverses Sinai\'s theophany (Exod 19:16–18), where these phenomena accompanied God\'s presence. Here God is explicitly NOT in them — a theological correction. The God who once revealed himself in fire now reveals himself in silence.'),
+            ],
+            'provan': [
+                ('19:4', 'Provan: Elijah\'s depression is the narrator\'s most human moment in the Elijah cycle. The prophet who spoke to heaven and received fire is now a man lying under a bush wishing for death. The narrator does not idealise his heroes — he shows them whole, including their brokenness.'),
+                ('19:12', 'Provan: The still small voice is the theological centre of the Elijah cycle. It redefines what it means for God to be present. Carmel was spectacular but temporary. The whisper is ordinary but permanent. God\'s ongoing work in the world is more whisper than fire — and the whisper sustains what the fire only demonstrates.'),
+            ],
+            'calvin': [
+                ('19:4', 'Calvin: Elijah\'s despair teaches that the greatest servants of God are still human. The same man who stood against 450 prophets cannot stand against one woman\'s threat. Human strength has limits; only divine strength is inexhaustible. This is why we need not just God\'s gifts but God himself.'),
+                ('19:12', 'Calvin: The still small voice corrects our addiction to the spectacular. We want fire from heaven; God gives a whisper. We want dramatic intervention; God gives quiet faithfulness. The Christian life is lived mostly in the whisper, not the whirlwind. Learning to hear the whisper is the deepest form of spiritual maturity.'),
+            ],
+            'netbible': [
+                ('19:4', 'NET Note: <em>rab ʿattāh YHWH qāḥ napšî</em> (enough now, LORD, take my life) — the imperative <em>qāḥ</em> (take!) is blunt and desperate. Elijah uses the same directness with God that he used with Ahab. His prayer is raw honesty, not polished piety.'),
+                ('19:12', 'NET Note: <em>qôl dĕmāmāh daqqāh</em> — the three-word phrase is syntactically unusual. <em>Dĕmāmāh</em> (silence) qualified by <em>daqqāh</em> (thin/fine) creates an oxymoron: a sound made of silence. The paradox is the point — God\'s presence transcends the categories of loud and quiet.'),
+            ],
+        },
+        {
+            'header': 'Verses 15–21 — Three Commissions: Hazael, Jehu, Elisha; the Seven Thousand',
+            'verses': verse_range(15, 21),
+            'heb': [
+                ('šibʿat ʾălāpîm', 'shivat alafim', 'seven thousand', 'God\'s response to "I alone am left" is devastating: "I reserve seven thousand in Israel" (v.18). Elijah is not alone — he never was. His isolation was perception, not reality. God\'s work is always larger than any individual prophet can see.'),
+                ('hišlîk ʾaddartô', 'hishlich adarto', 'he threw his cloak', 'Elijah throws his cloak (<em>ʾadderet</em>) over Elisha (v.19) — a symbolic act of prophetic commissioning. The cloak represents prophetic authority (cf. 2 Kgs 2:8, 13–14). Elisha will literally inherit Elijah\'s mantle.'),
+            ],
+            'ctx': 'God\'s response to Elijah\'s despair is not comfort but commission: go anoint Hazael king of Aram, Jehu king of Israel, and Elisha as your successor. Three agents of judgment — two political, one prophetic — will execute what Elijah cannot accomplish alone. The 7,000 who have not bowed to Baal remind Elijah that God\'s work is vastly larger than his individual ministry. Elisha\'s call follows immediately: Elijah throws his cloak over him, Elisha slaughters his oxen, burns his ploughing equipment, and follows. The burning of the equipment is total — there is no going back. Discipleship costs everything.',
+            'cross': [
+                ('Rom 11:4', 'Paul quotes the 7,000 passage to prove that God always preserves a faithful remnant: "So too, at the present time there is a remnant chosen by grace."'),
+                ('2 Kgs 2:13–14', 'Elisha picks up Elijah\'s fallen cloak after the chariot of fire and strikes the Jordan — the mantle-transfer prophecied here is completed there.'),
+                ('Luke 9:62', '"No one who puts a hand to the plough and looks back is fit for service in the kingdom of God." Jesus echoes the radical commitment of Elisha\'s plough-burning.'),
+            ],
+            'macarthur': [
+                ('19:15', 'MacArthur: God\'s response to depression is not sympathy but mission. "Go back the way you came" — return to the world and act. The cure for prophetic despair is not retreat but obedience. Purpose overcomes paralysis.'),
+                ('19:17', 'MacArthur: Three commissions create a chain of judgment: Hazael will devastate Israel militarily; Jehu will destroy the house of Ahab; Elisha will continue the prophetic ministry. God\'s plans always have contingency and succession. No single servant is indispensable.'),
+                ('19:18', 'MacArthur: "Seven thousand who have not bowed to Baal" — Elijah\'s despair was based on faulty information. He felt alone; he was not. God\'s faithful remnant is always larger than any prophet can see. Discouragement often stems from an incomplete picture.'),
+                ('19:21', 'MacArthur: Elisha burns his ploughing equipment — the tools of his livelihood. There is no fallback position, no plan B. Discipleship that keeps an escape route open is not full discipleship. Following God requires burning the boats.'),
+            ],
+            'wiseman': [
+                ('19:15', 'Wiseman: Hazael became king of Damascus c.843 BC, confirmed by Assyrian records (Shalmaneser III\'s annals). The Tel Dan Stele, discovered in 1993, contains Hazael\'s own account of his military campaigns against Israel and Judah. Elijah\'s commission here anticipates events that unfold across 2 Kings.'),
+                ('19:16', 'Wiseman: Jehu\'s anointing is carried out by Elisha\'s servant in 2 Kgs 9:1–6 — the commission passes through the prophetic succession. The Nimrud Black Obelisk depicts Jehu (or his representative) prostrating before Shalmaneser III — the only visual image of an Israelite king.'),
+            ],
+            'provan': [
+                ('19:18', 'Provan: The 7,000 is the narrator\'s correction of Elijah\'s self-pity. The prophet is not the only faithful person in Israel — he is one of 7,000. God\'s work does not depend on one man\'s heroism. This is simultaneously humbling (Elijah is not as unique as he thought) and encouraging (the cause is not lost).'),
+                ('19:21', 'Provan: Elisha\'s radical response — killing the oxen, burning the plough, hosting a farewell feast — marks the most complete prophetic call narrative in Kings. Every tie to the old life is severed publicly. The community witnesses the break. There is no ambiguity about Elisha\'s commitment.'),
+            ],
+            'calvin': [
+                ('19:18', 'Calvin: The 7,000 teach that God always preserves a remnant, even when the visible church seems utterly corrupted. Let no one say "the church is dead." God\'s people may be hidden, scattered, and oppressed — but they are never extinct. The invisible church endures when the visible church falls.'),
+                ('19:21', 'Calvin: Elisha\'s burnt plough is the OT equivalent of the disciples leaving their nets. Total commitment is not negotiable for those called to prophetic ministry. Half-hearted service is no service at all. The cloak demands the whole person.'),
+            ],
+            'netbible': [
+                ('19:18', 'NET Note: <em>wĕhišʾartî bĕYiśrāʾēl šibʿat ʾălāpîm</em> (I will preserve in Israel seven thousand) — the verb <em>hišʾartî</em> (hiphil of <em>šāʾar</em>) means "I will cause to remain" — active divine preservation, not passive survival. God keeps the remnant; the remnant does not keep itself.'),
+                ('19:19', 'NET Note: <em>wayyašlēk ʾaddartô ʾēlāyw</em> (he threw his cloak upon him) — the <em>ʾadderet</em> (cloak/mantle) is the external symbol of prophetic authority. Throwing it over another person symbolises the transfer of that authority. This is prophetic ordination by symbolic action.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-5 complete: 1 Kings 17–19 built.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-6: Chapters 20–22 — Ahab\'s End: Wars, Murder, Death
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(20, {
+    'title': 'Ahab\'s Wars with Ben-Hadad: Victory and Foolish Mercy',
+    'sections': [
+        {
+            'header': 'Verses 1–21 — Ben-Hadad Besieges Samaria; a Prophet Announces Victory',
+            'verses': verse_range(1, 21),
+            'heb': [
+                ('neʿārê śārê hammedînôt', 'nearei sarei hamedinot', 'young officers of the provincial governors', 'God promises victory through the <em>neʿārîm</em> (young men/officers, v.14) — 232 district commanders followed by 7,000 Israelite troops against Ben-Hadad\'s coalition. The small, unlikely force wins because God has decreed it. The purpose: "Then you will know that I am the LORD" (v.13). Victory serves revelation, not national pride.'),
+            ],
+            'ctx': 'Ben-Hadad of Aram besieges Samaria with 32 allied kings. His demands escalate from tribute to total humiliation. Ahab initially accepts, then refuses the second demand. A prophet (unnamed) promises victory: "I will deliver this vast army into your hands today, and then you will know that I am the LORD." The victory comes through the smallest unit — 232 young officers leading the charge. Ben-Hadad, drinking drunk in his tent, barely escapes. The chapter\'s theological point: God gives Ahab victory not because Ahab deserves it but because "they said, \'The LORD is a god of the hills but not of the valleys\'" (v.28). God fights for his own Name, not for Ahab\'s merit.',
+            'cross': [
+                ('Judg 7:2–7', 'Gideon\'s 300 — the same pattern of God using a small force to demonstrate that victory comes from him, not from military strength.'),
+                ('Deut 20:1–4', '"When you go to war... do not be afraid of them, because the LORD your God will be with you." The Deuteronomic war laws promise divine presence in battle.'),
+            ],
+            'macarthur': [
+                ('20:13', 'MacArthur: God sends a prophet to Ahab — the worst king in Israel — offering military salvation. Grace extends even to the most wicked. The purpose is revelation: "you will know that I am the LORD." God acts for his Name\'s sake, not for the recipient\'s worthiness.'),
+                ('20:14', 'MacArthur: Victory through 232 young officers demonstrates God\'s pattern: the smaller the force, the greater the glory. When the instrument is obviously insufficient, the Author of victory is unmistakable.'),
+                ('20:16', 'MacArthur: Ben-Hadad was "drinking himself drunk" while the battle began — the same dereliction that cost Elah his life (16:9). Military leaders who indulge themselves while others fight are a recurring judgment in Kings.'),
+                ('20:21', 'MacArthur: Ahab defeats the Aramean coalition — a significant military achievement. But the victory belongs to God, not Ahab. The king who worships Baal is saved by YHWH. The irony is sharp and intended.'),
+            ],
+            'wiseman': [
+                ('20:1', 'Wiseman: Ben-Hadad I of Damascus (if distinct from Ben-Hadad in 15:18) leads a coalition of 32 kings — reflecting the fragmented political landscape of the Levant. Assyrian records document similar coalitions of small Syro-Palestinian kingdoms.'),
+                ('20:16', 'Wiseman: The note that Ben-Hadad was drinking in his "sukkoth" (booths/campaign shelters) reflects standard ANE military practice. Royal campaign tents with dining facilities are depicted in Assyrian reliefs.'),
+            ],
+            'provan': [
+                ('20:13', 'Provan: The unnamed prophet\'s appearance is startling — Ahab has been God\'s enemy since ch. 16, yet God sends a prophet to save him. The narrator demonstrates that God\'s dealings with Ahab are not simple: judgment for apostasy coexists with grace for military deliverance. God\'s relationship with even the worst king is complex.'),
+                ('20:14', 'Provan: The victory through 232 young officers follows the Gideon paradigm: God reduces the force to make the source of victory unmistakable. The narrator is building a case: even Ahab cannot deny that YHWH saved him. His continued apostasy is therefore doubly inexcusable.'),
+            ],
+            'calvin': [
+                ('20:13', 'Calvin: God sends deliverance to Ahab — not because Ahab deserves it but because God\'s Name has been challenged. God protects his own honour even through ungrateful recipients. This is common grace: God sends rain on the righteous and the unrighteous alike.'),
+                ('20:21', 'Calvin: The victory teaches that military success is not an indicator of spiritual standing. Ahab wins battles while losing his soul. The church must not confuse institutional success with divine approval. Many flourishing enterprises are under God\'s judgment.'),
+            ],
+            'netbible': [
+                ('20:13', 'NET Note: The anonymous prophet (<em>nābîʾ ʾeḥāḏ</em>, "one prophet") is one of several unnamed prophets in the Ahab narrative (20:13, 22, 28, 35). The narrator uses anonymity to shift focus from the messenger to the message.'),
+                ('20:20', 'NET Note: <em>wayyakkû ʾîš ʾîšô</em> (each man struck his man) — the distributive <em>ʾîš ʾîšô</em> indicates individual combat success. The young officers fought with personal initiative, not just formation discipline.'),
+            ],
+        },
+        {
+            'header': 'Verses 22–43 — Second Victory; Ahab Spares Ben-Hadad; the Prophet Condemns',
+            'verses': verse_range(22, 43),
+            'heb': [
+                ('ḥerem', 'cherem', 'devoted to destruction', 'Ben-Hadad was under <em>ḥērem</em> — devoted to destruction (v.42). Ahab\'s treaty with him violates the same principle that cost Saul his kingdom when he spared Agag (1 Sam 15). The parallel is deliberate: a king who shows mercy where God demands judgment loses his throne.'),
+            ],
+            'ctx': 'Ben-Hadad\'s advisers claim YHWH is "a god of the hills" — so they move the battle to the plains. God sends a prophet: "Because the Arameans think the LORD is a god of the hills and not a god of the valleys, I will deliver this vast army into your hands." The second victory is total: 100,000 killed in one day. But then Ahab makes a treaty with Ben-Hadad instead of executing him — calling him "my brother." A prophet condemns Ahab using a parable (like Nathan to David): "You have set free a man I had determined should die. Therefore it is your life for his life, your people for his people."',
+            'cross': [
+                ('1 Sam 15:9–23', 'Saul spared Agag when God commanded herem. Samuel said: "To obey is better than sacrifice." Ahab\'s mercy toward Ben-Hadad repeats Saul\'s sin with the same consequence: the loss of his kingdom and his life.'),
+                ('2 Sam 12:1–7', 'Nathan\'s parable to David. The prophetic parable technique — getting the king to condemn himself — is repeated here in vv.38–42.'),
+            ],
+            'macarthur': [
+                ('20:28', 'MacArthur: God fights not for Ahab but for his own Name. "Because the Arameans think the LORD is a god of the hills and not the valleys" — God acts to correct a theological error. His reputation, not Israel\'s politics, drives the battle.'),
+                ('20:34', 'MacArthur: Ahab\'s treaty with Ben-Hadad — "my brother" — substitutes diplomacy for obedience. The king makes a deal when God demanded destruction. Political pragmatism that contradicts divine command is always a fatal compromise.'),
+                ('20:42', 'MacArthur: "Your life for his life, your people for his people." The sentence is exact: Ahab will die (ch. 22) and his dynasty will be destroyed (2 Kgs 9–10) because he released the man God sentenced. Disobedience has precise, proportional consequences.'),
+                ('20:43', 'MacArthur: Ahab goes home "sullen and angry" — his characteristic response to prophetic confrontation (cf. 21:4). He cannot refute the prophet\'s word, so he sulks. This is the response of a man who knows the truth but refuses to submit to it.'),
+            ],
+            'wiseman': [
+                ('20:34', 'Wiseman: The treaty terms — bazaars in Damascus, return of captured cities — reflect standard ANE vassal treaty provisions. Ben-Hadad offers commercial concessions in exchange for his life. The "bazaars" would be commercial districts under Israelite administration within the Aramean capital.'),
+                ('20:35', 'Wiseman: The "sons of the prophets" (<em>bĕnê hannĕbîʾîm</em>) are professional prophetic guilds attested throughout the monarchic period. They appear repeatedly in the Elisha narratives (2 Kgs 2:3, 5, 7; 4:1, 38). The guild system provided institutional support for prophetic ministry.'),
+            ],
+            'provan': [
+                ('20:34', 'Provan: Ahab\'s treaty with Ben-Hadad is the political equivalent of his religious syncretism. He compromises where God demands absoluteness. The narrator shows a consistent character flaw: Ahab always seeks the comfortable middle ground rather than full obedience. In religion, he mixes YHWH and Baal; in politics, he befriends God\'s enemies.'),
+                ('20:42', 'Provan: The prophet\'s verdict — "your life for his life" — introduces the exchange principle that will govern Ahab\'s death in ch. 22. The narrative logic is retributive: the mercy Ahab showed to God\'s enemy will be repaid with the judgment Ahab should have executed.'),
+            ],
+            'calvin': [
+                ('20:34', 'Calvin: Ahab\'s false mercy teaches that compassion directed against God\'s command is not virtue but disobedience. There is a kindness that kills — when we spare what God has sentenced, we invite judgment on ourselves. True mercy operates within God\'s will, not against it.'),
+                ('20:42', 'Calvin: "Your life for his life" — precise retributive justice. God\'s sentences are exact. He does not punish vaguely or disproportionately. Every consequence matches its cause. This precision should comfort the righteous and terrify the rebellious.'),
+            ],
+            'netbible': [
+                ('20:28', 'NET Note: <em>ʾĕlōhê hārîm</em> (god of the hills) vs. <em>ʾĕlōhê ʿămāqîm</em> (god of the valleys) — the Aramean theological error limits YHWH\'s jurisdiction to a specific terrain type. ANE deities were often associated with specific geographical features. YHWH\'s response demolishes all territorial limitations.'),
+                ('20:42', 'NET Note: <em>ʾîš-ḥermî</em> (the man I devoted to destruction) — the <em>ḥērem</em> designation marks Ben-Hadad as under God\'s ban. Releasing a <em>ḥērem</em>-designated person is a covenant violation of the highest order (cf. Josh 6:17–19; 1 Sam 15:3).'),
+            ],
+        },
+    ],
+})
+
+ki1(21, {
+    'title': 'Naboth\'s Vineyard: Judicial Murder and Prophetic Confrontation',
+    'sections': [
+        {
+            'header': 'Verses 1–16 — Jezebel\'s Plot: False Witnesses, Fabricated Charges, Murder',
+            'verses': verse_range(1, 16),
+            'heb': [
+                ('naḥălat ʾăbōtāy', 'nachalat avotay', 'inheritance of my fathers', 'Naboth refuses to sell because the land is his <em>naḥălāh</em> (ancestral inheritance, v.3). Under Torah law (Lev 25:23–28; Num 36:7), ancestral land was inalienable — it belonged to the family in perpetuity. Naboth\'s refusal is not stubbornness but covenant obedience. He honours God\'s law over the king\'s desire.'),
+                ('bĕliyyaʿal', 'beliyaal', 'worthless/wicked men', 'Jezebel procures <em>bĕnê bĕliyyaʿal</em> (worthless men, v.10) to give false testimony against Naboth. The term <em>bĕliyyaʿal</em> (later "Belial" — a name for Satan) denotes persons devoid of moral worth. Jezebel corrupts the judicial system by weaponising its forms: elders, fasting, witnesses, execution — all legally correct in form, totally corrupt in substance.'),
+            ],
+            'ctx': 'Naboth\'s vineyard is the moral nadir of Ahab\'s reign. Ahab wants the vineyard; Naboth refuses on covenantal grounds. Ahab sulks. Jezebel takes over: she forges letters in Ahab\'s name, proclaims a fast (implying a national crisis), seats Naboth in a place of honour (setting him up), hires false witnesses to accuse him of blasphemy, and has him stoned. Then she tells Ahab: "Get up and take possession." The entire operation is a masterclass in institutional evil — every step follows legal procedure while violating every principle the law was designed to protect. The narrator shows how power corrupts justice: the same legal system that should protect Naboth is turned into the instrument of his murder.',
+            'cross': [
+                ('Lev 25:23', '"The land must not be sold permanently, because the land is mine." Naboth\'s refusal is grounded in this Levitical principle — the land belongs to God, not to kings.'),
+                ('Deut 19:15–21', 'The two-witness requirement for capital cases. Jezebel technically complies with the form while perverting the substance.'),
+                ('2 Kgs 9:25–26', 'Jehu throws Joram\'s body onto Naboth\'s plot, fulfilling Elijah\'s prophecy from this chapter.'),
+            ],
+            'macarthur': [
+                ('21:3', 'MacArthur: "The LORD forbid that I should give you the inheritance of my ancestors." Naboth\'s refusal is covenant loyalty at its finest. He risks the king\'s wrath to honour God\'s law. This is the kind of faithfulness that costs everything — and Naboth pays the ultimate price.'),
+                ('21:7', 'MacArthur: "Is this how you act as king over Israel?" Jezebel\'s contempt reveals her Phoenician understanding of kingship: the king takes what he wants. Israelite kingship is fundamentally different — the king is under the law, not above it. Jezebel cannot comprehend a king limited by covenant.'),
+                ('21:10', 'MacArthur: Jezebel\'s judicial murder uses every form of justice while emptying justice of all substance. This is the most dangerous form of evil: corruption clothed in legal procedure. The system designed to protect the innocent becomes the weapon that destroys them.'),
+                ('21:16', 'MacArthur: "Ahab got up to go down and take possession." He does not even protest. He accepts the stolen vineyard knowing how it was obtained. Passive complicity in evil is not innocence — it is participation. Ahab\'s silence makes him guilty.'),
+            ],
+            'wiseman': [
+                ('21:1', 'Wiseman: Jezreel (modern Zerin) was Ahab\'s secondary capital — a winter palace in the fertile Jezreel Valley, in addition to the hilltop capital Samaria. Excavations have identified monumental Iron Age remains at the site. Naboth\'s vineyard would have been adjacent to the royal property.'),
+                ('21:10', 'Wiseman: The charge of "cursing God and the king" combines two capital offenses under Israelite law (Exod 22:28; Lev 24:15–16). By fabricating a dual charge, Jezebel ensures the death penalty. The judicial process follows correct form — elders, public assembly, witnesses — making the corruption harder to detect.'),
+            ],
+            'provan': [
+                ('21:3', 'Provan: Naboth\'s refusal stands as the narrative\'s moral standard. He is the faithful Israelite — the opposite of Ahab. He honours Torah over power, covenant over convenience, God over king. The narrator presents him as a martyred saint, killed for obeying the law the king should have upheld.'),
+                ('21:7', 'Provan: Jezebel\'s "Is this how you act as king?" exposes the clash between two models of kingship: the Deuteronomic king (under law, serving the people) and the Canaanite/Phoenician king (above law, served by the people). The entire book of Kings is this conflict in narrative form.'),
+            ],
+            'calvin': [
+                ('21:3', 'Calvin: Naboth\'s courage teaches that obedience to God may cost us everything — property, reputation, life itself. But the inheritance he refused to surrender was God\'s land, not his own. He was a steward, and stewards answer to their Master, not to earthly kings.'),
+                ('21:10', 'Calvin: The false witnesses teach that the most dangerous injustice wears the mask of legality. When courts are corrupted, when procedure serves power instead of truth, the last refuge of the oppressed is gone. This is why an independent judiciary is not a political luxury but a moral necessity.'),
+            ],
+            'netbible': [
+                ('21:3', 'NET Note: <em>ḥālîlāh llî mēYHWH</em> (far be it from me before the LORD) — literally "profanation to me from YHWH." Naboth considers selling ancestral land not merely unwise but sacrilegious — a desecration of God\'s covenant arrangement for land tenure.'),
+                ('21:10', 'NET Note: <em>bērakĕtā ʾĕlōhîm wāmelek</em> (you have cursed God and the king) — the verb <em>bērak</em> here is a euphemism for "cursed" (the same euphemistic use appears in Job 1:5, 11; 2:5, 9). Scribes substituted "bless" for "curse" to avoid writing "curse God."'),
+            ],
+        },
+        {
+            'header': 'Verses 17–29 — Elijah Confronts Ahab: Dogs Will Lick Your Blood',
+            'verses': verse_range(17, 29),
+            'heb': [
+                ('hăraṣaḥtā wĕgam-yāraštā', 'haratzachta vegam-yarashta', 'have you murdered and also taken possession?', 'Elijah\'s accusation (v.19) is two words in Hebrew: "murder" and "possess." The starkness is intentional — no mitigation, no qualification, no context. The prophet strips Ahab\'s crime to its essence: you killed a man and stole his land. The simplicity of the charge makes it unanswerable.'),
+            ],
+            'ctx': 'God sends Elijah to Naboth\'s vineyard with a single devastating question: "Have you murdered and also taken possession?" The prophecy is specific: dogs will lick Ahab\'s blood in the same place they licked Naboth\'s. Jezebel will be eaten by dogs at the wall of Jezreel. Every male in Ahab\'s house will be destroyed. Then — remarkably — Ahab repents. He tears his clothes, puts on sackcloth, fasts, and "went around meekly." God responds to Elijah: "Have you noticed how Ahab has humbled himself? Because he has humbled himself, I will not bring this disaster in his day." The disaster is delayed, not cancelled. Ahab\'s repentance is genuine enough to delay judgment but not thorough enough to avert it.',
+            'cross': [
+                ('2 Kgs 9:26', '"Yesterday I saw the blood of Naboth and the blood of his sons." Jehu fulfils the Naboth prophecy at the very field where Naboth was murdered.'),
+                ('2 Kgs 9:36', '"This is the word of the LORD: Dogs will devour Jezebel\'s flesh." Fulfilled exactly — dogs ate Jezebel at Jezreel.'),
+                ('Jonah 3:10', 'Nineveh\'s repentance delays judgment. Ahab\'s repentance follows the same pattern — genuine humility, even from the worst, earns God\'s merciful delay.'),
+            ],
+            'macarthur': [
+                ('21:19', 'MacArthur: Elijah confronts Ahab at the crime scene — Naboth\'s vineyard. The prophet appears exactly where the crime occurred, making it impossible for Ahab to forget what he has done. God\'s messengers confront sin at its source.'),
+                ('21:20', 'MacArthur: "You have sold yourself to do evil in the eyes of the LORD." The commercial metaphor is devastating: Ahab has traded his soul for a vineyard. The transaction echoes Esau selling his birthright for a meal (Gen 25:34). The price of sin is always absurdly low compared to what is lost.'),
+                ('21:27', 'MacArthur: Ahab\'s repentance is the most surprising turn in his narrative. The worst king of Israel humbles himself — and God notices. "Have you noticed how Ahab has humbled himself before me?" Even partial repentance from the worst sinner moves God to mercy. This is the character of divine grace.'),
+                ('21:29', 'MacArthur: Judgment is delayed but not cancelled. Ahab\'s repentance buys time — the disaster falls on his son instead. Partial repentance produces partial reprieve. Only thorough, lasting repentance averts judgment completely.'),
+            ],
+            'wiseman': [
+                ('21:19', 'Wiseman: The Naboth vineyard site would have been identifiable in the vicinity of the Jezreel royal compound. Archaeological surveys of the area have identified agricultural terracing and vine-press installations consistent with vineyard cultivation adjacent to the mound.'),
+                ('21:27', 'Wiseman: Royal repentance in sackcloth and fasting is attested in ANE texts. The Assyrian king Esarhaddon performed penitential rituals during times of omen-related anxiety. Sackcloth was the universal Near Eastern garment of mourning and humiliation.'),
+            ],
+            'provan': [
+                ('21:19', 'Provan: Elijah\'s two-verb accusation is the narrator\'s most compressed prophetic speech. No elaboration, no theological framework — just the raw charge. The simplicity mirrors the crime: the case is not complex. Murder and theft. The prophet needs no rhetoric because the facts speak for themselves.'),
+                ('21:29', 'Provan: God\'s response to Ahab\'s repentance is the most theologically generous moment in Ahab\'s story. Even for the worst king, God\'s mercy is available. The narrator is not soft on Ahab — the judgment stands — but he shows that God\'s character is consistent: "he is patient... not wanting anyone to perish, but everyone to come to repentance" (2 Pet 3:9).'),
+            ],
+            'calvin': [
+                ('21:20', 'Calvin: "You have sold yourself to do evil." The language of spiritual slavery — Ahab is no longer a free agent but a bondslave of sin. This is the end of every path of persistent rebellion: the sinner loses the ability to choose otherwise. Freedom is lost one compromise at a time.'),
+                ('21:29', 'Calvin: Even Ahab\'s imperfect repentance moves God. How much more will genuine, wholehearted repentance! If God shows mercy to the worst on the basis of incomplete humility, how much grace is available to those who truly turn? Let no sinner say "I am too far gone." Ahab was further.'),
+            ],
+            'netbible': [
+                ('21:19', 'NET Note: <em>hăraṣaḥtā wĕgam-yāraštā</em> (have you murdered and also inherited/possessed?) — the two verbs form a devastating pair. <em>Rāṣaḥ</em> (murder) is the Sixth Commandment verb; <em>yāraš</em> (take possession) is the covenant term for inheriting the promised land. Ahab has murdered to take what only God grants.'),
+                ('21:27', 'NET Note: <em>wayyiḵnāʿ</em> (he humbled himself) — the niphal of <em>kānaʿ</em> (to be subdued/humbled). The same verb appears in 2 Chr 7:14: "If my people... humble themselves (<em>wĕyiḵḵānĕʿû</em>)." Ahab\'s action matches God\'s prescription exactly — and God responds as promised.'),
+            ],
+        },
+    ],
+})
+
+ki1(22, {
+    'title': 'Micaiah\'s Prophecy; Ahab Dies at Ramoth Gilead',
+    'sections': [
+        {
+            'header': 'Verses 1–28 — 400 Prophets Say Go; Micaiah Says Disaster',
+            'verses': verse_range(1, 28),
+            'heb': [
+                ('rûaḥ šeqer', 'ruach sheker', 'lying spirit', 'God sends a <em>rûaḥ šeqer</em> (lying spirit, v.22) to entice Ahab through the mouths of 400 prophets. This is one of the most theologically challenging passages in the OT: God himself commissions deception to accomplish judgment. The lying spirit is God\'s instrument — permitted, directed, and purpose-driven — not an autonomous deceiver.'),
+                ('qāḏaš', 'kadash', 'set apart', 'Micaiah\'s vision of God\'s heavenly council (vv.19–23) is the OT\'s most detailed depiction of divine deliberation. God asks "Who will entice Ahab?" — not because he lacks power but because he governs through intermediary agents. The council scene reveals that heaven is actively engaged in earthly events.'),
+            ],
+            'ctx': 'Three years of peace between Israel and Aram end when Ahab decides to retake Ramoth Gilead. Jehoshaphat of Judah joins the campaign but requests "a prophet of the LORD." Four hundred court prophets say "Go!" — but Jehoshaphat senses they are not genuine. Micaiah is summoned and initially mimics the 400, then delivers the true word: Israel scattered on the hills "like sheep without a shepherd." He then reveals the heavenly council scene: God deliberately sent a lying spirit to entice Ahab to his death. Micaiah is slapped and imprisoned. The scene is a study in the politics of prophecy: 400 prophets say what the king wants to hear; one says what God actually said. The majority is wrong; the lone dissenter is right.',
+            'cross': [
+                ('Job 1:6–12', 'Satan appears before God\'s heavenly council and receives permission to test Job. The same pattern: God permits an agent to accomplish a purpose that serves divine justice.'),
+                ('2 Chr 18:18–22', 'The Chronicler\'s identical account — one of the closest parallels between Kings and Chronicles.'),
+                ('Deut 13:1–3', '"If a prophet... announces a sign that takes place, and he says, \'Let us follow other gods\' — you must not listen." God may test his people through prophetic deception to expose their hearts.'),
+            ],
+            'macarthur': [
+                ('22:7', 'MacArthur: Jehoshaphat\'s instinct — "Is there no longer a prophet of the LORD here?" — recognises that 400 court prophets are not genuine. Numbers do not equal truth. The majority opinion is irrelevant when it contradicts God\'s word.'),
+                ('22:14', 'MacArthur: "I can tell him only what the LORD tells me." Micaiah\'s declaration is the essence of prophetic integrity. The prophet speaks God\'s word regardless of consequences — imprisonment, violence, death. The messenger is accountable to the one who sent the message.'),
+                ('22:19', 'MacArthur: The heavenly council vision reveals that what happens on earth is first decided in heaven. Ahab\'s death is not random — it is divinely decreed, deliberated, and executed through specific agents. History is providence in disguise.'),
+                ('22:23', 'MacArthur: "The LORD has decreed disaster for you." The 400 prophets are instruments of God\'s judgment, not merely liars. They speak falsehood because God has permitted the lying spirit. This is the most severe form of divine judgment: when God removes the restraint on deception and lets the self-deceived believe their own lies (cf. 2 Thess 2:11).'),
+            ],
+            'wiseman': [
+                ('22:1', 'Wiseman: The three years of peace between Israel and Aram (v.1) fit the period after the Battle of Qarqar (853 BC), where Ahab and Ben-Hadad fought together against Shalmaneser III of Assyria. The Kurkh Monolith inscription of Shalmaneser III lists "Ahab the Israelite" contributing 2,000 chariots and 10,000 soldiers — the largest chariot force in the coalition.'),
+                ('22:10', 'Wiseman: The kings sitting on thrones at the threshing floor by the gate of Samaria mirrors ANE judicial and diplomatic settings. Threshing floors served as open-air assembly points for legal proceedings and royal audiences (cf. Ruth 3; 2 Sam 24:18).'),
+            ],
+            'provan': [
+                ('22:19', 'Provan: The heavenly council scene is the narrator\'s theological explanation for the 400 prophets\' false message. They are not merely corrupt — they are instruments in a divine plan. God uses their eagerness to please the king as the mechanism of his judgment. The scene reveals that even false prophecy operates under divine sovereignty.'),
+                ('22:28', 'Provan: Micaiah\'s final words — "Mark my words, all you people!" — are a public challenge. If Ahab returns safely, Micaiah is a false prophet. If he does not, the 400 are false. The chapter will answer the test definitively.'),
+            ],
+            'calvin': [
+                ('22:19', 'Calvin: The lying spirit teaches that God governs even the kingdom of darkness. Satan and his agents operate only within the boundaries God sets. This is not dualism — evil has no independent sovereignty. The lying spirit serves God\'s justice whether it knows it or not.'),
+                ('22:28', 'Calvin: Micaiah stands alone against 400 prophets, the king, and the entire court. Truth is not determined by majority vote. One voice speaking God\'s word outweighs a thousand voices speaking human invention. The church must remember this in every age.'),
+            ],
+            'netbible': [
+                ('22:19', 'NET Note: <em>rāʾîtî ʾet-YHWH yōšēb ʿal-kisʾô</em> (I saw the LORD sitting on his throne) — Micaiah claims direct visionary access to God\'s council (<em>sôd YHWH</em>). This is the prophetic credentialing par excellence: the true prophet has stood in the divine council (cf. Jer 23:18, 22).'),
+                ('22:22', 'NET Note: <em>rûaḥ šeqer bĕpî kol-nĕbîʾāyw</em> (a lying spirit in the mouths of all his prophets) — the spirit is God\'s commissioned agent. The lying is divinely permitted and directed. This passage is the OT\'s strongest assertion that God can use deception as an instrument of judgment against those who have already committed themselves to falsehood.'),
+            ],
+        },
+        {
+            'header': 'Verses 29–53 — Ahab Disguised; a Random Arrow; the Kingdom Continues',
+            'verses': verse_range(29, 53),
+            'heb': [
+                ('lĕtummô', 'letummo', 'at random / in his innocence', 'The arrow that kills Ahab is shot <em>lĕtummô</em> (v.34) — "in his innocence/simplicity," meaning the archer drew his bow at random without aiming at anyone specific. The narrator\'s point is devastating: a random arrow accomplishes what a divine decree ordained. Providence operates through contingency. Ahab\'s disguise cannot defeat a "random" arrow guided by God\'s hand.'),
+            ],
+            'ctx': 'Ahab disguises himself to avoid Micaiah\'s prophecy — but sends Jehoshaphat into battle in his royal robes. Ahab\'s cowardice nearly gets Jehoshaphat killed when the Aramean chariots pursue the robed king. But an unnamed soldier draws his bow "at random" and strikes Ahab between the sections of his armour — the one vulnerable spot in his protection. Ahab bleeds out in his chariot all day, propped up facing the Arameans, and dies at sunset. His blood pools in the chariot floor; when it is washed at the pool of Samaria, dogs lick the blood — fulfilling Elijah\'s prophecy (21:19). The narrator closes the Ahab narrative with the standard formula, then quickly records Jehoshaphat\'s 25-year reign and Ahaziah\'s brief evil reign.',
+            'cross': [
+                ('1 Kgs 21:19', '"In the place where dogs licked up Naboth\'s blood, dogs will lick up your blood — yes, yours!" Fulfilled at the pool of Samaria where Ahab\'s chariot blood is washed.'),
+                ('Prov 16:33', '"The lot is cast into the lap, but its every decision is from the LORD." The "random" arrow is the proverb enacted: human contingency, divine sovereignty.'),
+                ('2 Kgs 9:25–26', 'Jehu recalls the Naboth prophecy when he kills Ahab\'s son Joram. The Naboth curse pursues the dynasty for two generations.'),
+            ],
+            'macarthur': [
+                ('22:30', 'MacArthur: Ahab disguises himself but sends Jehoshaphat in royal robes — using his ally as a decoy. This is cowardice compounded by treachery. The man who could not face Naboth honestly cannot face the battlefield honestly. Character is consistent.'),
+                ('22:34', 'MacArthur: "A certain man drew his bow at random." From the human perspective, it is chance. From the divine perspective, it is precision. The arrow finds the one gap in Ahab\'s armour — the joint between breastplate and scale-armour. No disguise can protect the man God has sentenced.'),
+                ('22:38', 'MacArthur: Dogs licking Ahab\'s blood at the pool of Samaria fulfils Elijah\'s prophecy word for word. The narrator explicitly notes the fulfilment: "as the word of the LORD had declared." Every prophetic word finds its match in history.'),
+                ('22:43', 'MacArthur: Jehoshaphat "did what was right in the eyes of the LORD" — a positive evaluation that provides relief after the Ahab narrative. But the familiar caveat follows: "the high places were not removed." The pattern of incomplete reform continues in Judah.'),
+            ],
+            'wiseman': [
+                ('22:34', 'Wiseman: The description of Ahab\'s wound — an arrow penetrating between the joints of armour (<em>bên haddĕbāqîm ûbên hašširyōn</em>) — reflects detailed knowledge of contemporary military equipment. Composite scale armour with jointed sections is well attested in archaeological finds from Iron Age Palestine and Assyria.'),
+                ('22:39', 'Wiseman: Ahab\'s "ivory house" (<em>bêt haššēn</em>) is confirmed by the spectacular ivory carvings discovered in the Samaria excavations — hundreds of carved ivory plaques and furniture inlays in Phoenician style, datable to the Omride period.'),
+            ],
+            'provan': [
+                ('22:34', 'Provan: The "random" arrow is the chapter\'s theological climax. All of Ahab\'s efforts to evade the prophetic word — the disguise, the decoy, the positioning — fail against a single arrow shot without aim. The narrator\'s message: you cannot outrun God\'s word. Providence finds you through the most unlikely instruments.'),
+                ('22:38', 'Provan: The dogs and the blood are the closing image of Ahab\'s story. The king who took Naboth\'s vineyard by blood pays with his own blood in the presence of dogs. The poetic justice is exact: measure for measure. The narrator trusts the reader to recall Elijah\'s words without restating them.'),
+            ],
+            'calvin': [
+                ('22:34', 'Calvin: The "random" arrow teaches that there is no such thing as chance in God\'s universe. What appears accidental to the archer is precise to the Almighty. Not a sparrow falls without the Father\'s knowledge; not an arrow flies without his direction.'),
+                ('22:38', 'Calvin: The fulfilment of Elijah\'s prophecy — dogs licking Ahab\'s blood — demonstrates that God\'s word is self-executing. It does not need human enforcement; it accomplishes itself through the ordinary course of events. The prophet speaks; history obeys.'),
+            ],
+            'netbible': [
+                ('22:34', 'NET Note: <em>lĕtummô</em> (at random / in innocence) — from <em>tōm</em> (integrity, completeness). The archer shoots in simple, unintentional fashion. The narrator uses the word to emphasize the total absence of human design — making the divine design unmistakable.'),
+                ('22:38', 'NET Note: <em>kaḏĕbar YHWH ʾăšer dibbēr</em> (according to the word of the LORD which he spoke) — the fulfilment formula closing Ahab\'s story. The narrator traces the entire chain: Elijah\'s word (21:19) → divine decree (22:19–23) → arrow (22:34) → dogs (22:38). Prophecy, decree, instrument, and fulfilment form a seamless chain.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-6 complete: 1 Kings 20–22 built. ALL 22 CHAPTERS DONE.")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1KI-4: Chapters 13–16 — Prophets and Kings: Rapid Decline in Both Kingdoms
+# ─────────────────────────────────────────────────────────────────────────────
+
+ki1(13, {
+    'title': 'The Man of God from Judah; the Old Prophet\'s Deception',
+    'sections': [
+        {
+            'header': 'Verses 1–10 — The Man of God Confronts Jeroboam\'s Altar at Bethel',
+            'verses': verse_range(1, 10),
+            'heb': [
+                ('ʾîš hāʾĕlōhîm', 'ish haElohim', 'man of God', 'The unnamed prophet is called <em>ʾîš hāʾĕlōhîm</em> (man of God) — a title of prophetic authority used for Moses (Deut 33:1), Samuel (1 Sam 9:6), and Elijah (1 Kgs 17:18). His anonymity is significant: his identity is less important than his message. He is a vessel for the divine word, not a personality.'),
+                ('mōpēt', 'mofet', 'sign/portent', 'The altar splitting and ashes pouring out (v.5) is a <em>mōpēt</em> — a prophetic sign that authenticates the word spoken. The withering and restoration of Jeroboam\'s hand (vv.4–6) further demonstrates that the prophet speaks with divine authority. Even the king\'s body is subject to the prophet\'s God.'),
+            ],
+            'ctx': 'The man of God from Judah delivers one of the most remarkable prophecies in the Old Testament: he names Josiah by name approximately 300 years before Josiah\'s birth (v.2, fulfilled in 2 Kgs 23:15–18). The prophecy is accompanied by immediate signs — the altar splits, ashes pour out, and Jeroboam\'s hand withers when he commands the prophet\'s arrest. The king who can control an entire religious system cannot control his own hand when it opposes God\'s messenger. The prophet is commanded not to eat or drink in the northern kingdom and not to return by the same route — a symbolic rejection of fellowship with the apostate shrine.',
+            'cross': [
+                ('2 Kgs 23:15–18', 'Josiah destroys the Bethel altar and burns bones on it — except the bones of the man of God from Judah, whose tomb is spared. The prophecy finds exact fulfilment three centuries later.'),
+                ('Amos 3:14', '"On the day I punish Israel for her sins, I will destroy the altars of Bethel; the horns of the altar will be cut off." Amos confirms the same judgment on the same altar.'),
+            ],
+            'macarthur': [
+                ('13:2', 'MacArthur: The naming of Josiah 300 years before his birth is one of the most striking examples of predictive prophecy in the Old Testament. Only Isaiah\'s naming of Cyrus (Isa 44:28) is comparable. This level of specificity demonstrates that biblical prophecy is not educated guessing but divine revelation.'),
+                ('13:4', 'MacArthur: Jeroboam stretches out his hand to seize the prophet and it immediately withers. The irony is devastating: the hand that reached for unauthorized religious authority now cannot even function. Physical power is useless against the word of God.'),
+                ('13:6', 'MacArthur: Jeroboam asks the prophet to pray for healing — and receives it. Even the enemy of God benefits from God\'s mercy when a prophet intercedes. But the healing does not produce repentance. Jeroboam is restored physically but remains unchanged spiritually.'),
+                ('13:9', 'MacArthur: The command not to eat or drink in the northern kingdom symbolises complete separation from Jeroboam\'s religious system. Fellowship with idolatry is forbidden even in its most innocent forms — sharing a meal. The prohibition is absolute.'),
+            ],
+            'wiseman': [
+                ('13:2', 'Wiseman: The naming of a future king centuries in advance is paralleled in ANE literature only by scribal retrojection — editing a text after the event to appear prophetic. Critical scholars often date this oracle to the Josianic period. Conservative scholars argue that the narrative assumes the prophecy\'s antiquity, since the story makes no sense without the tension between prediction and fulfilment across centuries.'),
+                ('13:5', 'Wiseman: The sign of the altar splitting corresponds to known earthquake damage patterns at ancient ANE altars. Whether this was a localised seismic event or a purely miraculous act, the narrative presents it as divine intervention confirming the prophetic word.'),
+            ],
+            'provan': [
+                ('13:2', 'Provan: The specificity of the Josiah prophecy creates a narrative thread that spans the entire Deuteronomistic History. The reader of 1 Kings 13 is meant to remember this verse when reading 2 Kings 23. The narrative is constructed as a single literary work in which prophetic words spoken early find fulfilment late.'),
+                ('13:9', 'Provan: The prohibition against eating and drinking is a performative parable: the prophet\'s behaviour <em>enacts</em> God\'s rejection of Bethel. By refusing hospitality, the man of God declares the northern cult illegitimate more powerfully than any speech could.'),
+            ],
+            'calvin': [
+                ('13:4', 'Calvin: God humbles Jeroboam\'s arrogance instantly. The king who dared to arrest God\'s messenger finds his own arm paralysed. Let every ruler learn: you may command armies, but you cannot command the arm of God. When earthly power opposes heaven, earth always loses.'),
+                ('13:6', 'Calvin: The healing of Jeroboam\'s hand teaches that God\'s mercy extends even to his enemies. But mercy rejected hardens rather than softens. Jeroboam receives healing but not conversion — the most dangerous spiritual condition: to experience God\'s power without being changed by it.'),
+            ],
+            'netbible': [
+                ('13:2', 'NET Note: The phrase <em>hinnēh-bēn nôlād lĕbêt-Dāwid Yōʾšiyyāhû šĕmô</em> (behold, a son will be born to the house of David, Josiah by name) uses the niphal participle <em>nôlād</em> (being born) — a prophetic present tense. The prophecy treats the future birth as already in process.'),
+                ('13:5', 'NET Note: <em>wayyiqqāraʿ hammizbeaḥ</em> (the altar was torn apart) — the niphal of <em>qāraʿ</em> (to tear) connects to Ahijah\'s symbolic tearing of the cloak (11:30). Tearing is the dominant metaphor of 1 Kings: kingdom torn, altar torn, garment torn — all because the covenant was torn.'),
+            ],
+        },
+        {
+            'header': 'Verses 11–34 — The Old Prophet\'s Lie; the Lion on the Road',
+            'verses': verse_range(11, 34),
+            'heb': [
+                ('nābîʾ zāqēn', 'navi zaken', 'old prophet', 'The old prophet of Bethel is a deeply ambiguous figure. He is a genuine <em>nābîʾ</em> (prophet) — he prophesies truthfully over the dead man\'s body (vv.21–22) — but he lies to lure the man of God back (v.18). The story demonstrates that prophetic gifting and personal integrity do not always coincide.'),
+                ('kikkār leḥem', 'kikkar lechem', 'loaf of bread', 'The shared meal (v.19) violates the divine command of v.9. The man of God eats and drinks in the territory he was commanded to reject. The bread becomes the instrument of disobedience — a communion meal that should never have happened.'),
+            ],
+            'ctx': 'This is one of the most troubling narratives in the Old Testament. The man of God resists Jeroboam\'s invitation but succumbs to the old prophet\'s lie — "An angel spoke to me by the word of the LORD: Bring him back." The deception works because it sounds plausible: surely God could change his instructions through another prophet? But the man of God had a direct command from God and should have trusted it over any secondary voice. The lion that kills him but does not eat the body or attack the donkey is a supernatural sign — the death is judicial, not random. The old prophet himself recognises this: he buries the man of God and instructs his sons to bury him in the same tomb, honouring the fallen prophet and confirming the truth of his original word against Bethel.',
+            'cross': [
+                ('Gal 1:8', '"Even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God\'s curse." Paul\'s principle directly addresses the scenario of 1 Kings 13 — a secondary messenger contradicting the original word.'),
+                ('Deut 13:1–3', '"If a prophet appears among you... and announces a sign or wonder, and if the sign comes true but says, \'Let us follow other gods,\' you must not listen." A true sign from a false message is still a test.'),
+            ],
+            'macarthur': [
+                ('13:18', 'MacArthur: "He lied to him." The narrator states it bluntly. No ambiguity, no mitigating circumstances. A prophet of God lied. The man of God\'s error was believing a human voice over a divine command he had already received. When God has spoken clearly, no secondary revelation can override it.'),
+                ('13:24', 'MacArthur: The lion kills but does not eat; the donkey stands beside the body. This is not natural animal behaviour — it is a sign. The death is judicial punishment, not predatory accident. God is making a point visible to anyone who passes by: disobedience to the divine word has consequences, even for prophets.'),
+                ('13:26', 'MacArthur: The old prophet interprets the death correctly: "It is the man of God who disobeyed the word of the LORD." Even the deceiver recognises the justice of the punishment. The irony is searing: the one who caused the disobedience is the one who explains its meaning.'),
+                ('13:33', 'MacArthur: The chapter closes with Jeroboam utterly unchanged: "he did not change his evil ways." Neither miracle, nor prophecy, nor the dramatic death of a prophet on the road produces repentance. Hardened hearts are not softened by signs but only by the sovereign work of God.'),
+            ],
+            'wiseman': [
+                ('13:24', 'Wiseman: Lions were present in ancient Palestine until the Crusader period. The Asiatic lion (Panthera leo persica) is attested in Assyrian hunting reliefs and in biblical references (Judg 14; 1 Sam 17:34; 2 Kgs 17:25). A lion killing a traveller was not extraordinary; a lion standing beside the body without eating it was.'),
+                ('13:31', 'Wiseman: The old prophet\'s request to be buried in the same tomb as the man of God reflects ANE beliefs about the power of proximity to holy figures. By sharing a burial, the old prophet places himself under the protection of the prophetic word he himself confirmed.'),
+            ],
+            'provan': [
+                ('13:18', 'Provan: The old prophet\'s lie is the narrative\'s most disturbing element because it raises the question of discernment: how does a prophet distinguish between a genuine word from God and a compelling lie? The answer the text provides is stark: the original, clear command takes precedence over any subsequent claim to override it.'),
+                ('13:33', 'Provan: The narrator\'s verdict — "Jeroboam did not change his evil ways" — closes the chapter by returning the focus from the prophetic subplot to the royal failure. The spectacular events of ch. 13 produce no political or religious reform. This is the Deuteronomistic thesis in action: the word of God is reliable, but human hearts resist it.'),
+            ],
+            'calvin': [
+                ('13:18', 'Calvin: The man of God perished because he trusted a human voice over the divine voice he had already heard. This is a perpetual danger for believers: the temptation to accept teaching that contradicts what God has clearly said, simply because it comes through an apparently authoritative channel. Test everything against Scripture.'),
+                ('13:26', 'Calvin: God\'s judgment on the disobedient prophet is severe but just. Prophetic privilege does not exempt from prophetic accountability. Indeed, those who know God\'s will and violate it face stricter judgment than those who sin in ignorance (cf. Luke 12:48, "to whom much is given, much will be required").'),
+            ],
+            'netbible': [
+                ('13:18', 'NET Note: <em>waykḥēš lô</em> (and he lied to him) — the verb <em>kāḥaš</em> (to lie, deceive) is used elsewhere for covenant treachery (Hos 9:2; Josh 7:11). The old prophet\'s deception is not mere dishonesty but a violation of the prophetic covenant — the most sacred trust in Israel.'),
+                ('13:24', 'NET Note: The triple scene — lion, donkey, body — uses the verb <em>ʿōmēd</em> (standing) three times: the lion stands, the donkey stands, the body lies. The supernatural stillness emphasises that this is judgment, not nature.'),
+            ],
+        },
+    ],
+})
+
+ki1(14, {
+    'title': 'Judgment on Jeroboam\'s House; Rehoboam\'s Judah',
+    'sections': [
+        {
+            'header': 'Verses 1–20 — Ahijah\'s Word to Jeroboam\'s Wife: Your Son Will Die at the Threshold',
+            'verses': verse_range(1, 20),
+            'heb': [
+                ('hišnannēh', 'hishtaneh', 'to disguise oneself', 'Jeroboam tells his wife to disguise herself (v.2) before visiting the prophet Ahijah. The irony is devastating: Ahijah is blind (v.4) but sees more clearly than Jeroboam, who has eyes but cannot perceive the consequences of his apostasy. Physical sight and spiritual insight are inversely related throughout 1 Kings.'),
+                ('ʾăḇiyyāh', 'Aviyah', 'Abijah (my father is YHWH)', 'The dying child\'s name means "my father is YHWH" — the very claim Jeroboam\'s golden calves denied. The one member of Jeroboam\'s house in whom "something good toward the LORD" was found (v.13) dies at the threshold of the door, the boundary between life and death, house and grave.'),
+            ],
+            'ctx': 'Jeroboam\'s son falls ill and the king sends his wife to the prophet Ahijah — the same prophet who originally announced the ten-tribe kingdom (11:29–39). But she goes in disguise, revealing Jeroboam\'s fear and guilt: he wants God\'s help but cannot face God\'s prophet honestly. Ahijah, now blind, is told by God of the deception and delivers the most comprehensive judgment oracle in 1 Kings: Jeroboam\'s dynasty will be utterly destroyed, "cut off" like dung swept away. Only the child Abijah will receive a decent burial because only in him was there "something good toward the LORD" (v.13) — the most poignant grace note in a passage of total devastation.',
+            'cross': [
+                ('1 Kgs 11:31–38', 'Ahijah\'s original promise to Jeroboam — ten tribes, conditional dynasty "if you walk in obedience." Jeroboam violated every condition. The same prophet who gave the kingdom now takes it away.'),
+                ('1 Kgs 15:29', 'Fulfilment: Baasha kills every member of Jeroboam\'s family — "He did not leave Jeroboam anyone that breathed, but destroyed them all, according to the word of the LORD."'),
+            ],
+            'macarthur': [
+                ('14:2', 'MacArthur: Jeroboam sends his wife in disguise to the blind prophet. The absurdity reveals the depth of his spiritual confusion: he trusts the prophet enough to consult him but fears him enough to hide. Partial faith mixed with persistent rebellion is the worst spiritual position — too much knowledge to plead ignorance, too little obedience to receive blessing.'),
+                ('14:7', 'MacArthur: "I raised you up from among the people and appointed you ruler over my people Israel" — God recounts his generosity before pronouncing judgment. The pattern is consistent: before judgment, grace is remembered. The severity of punishment is proportional to the magnitude of blessing squandered.'),
+                ('14:13', 'MacArthur: "He is the only one belonging to Jeroboam who will be buried" — a devastating grace note. In a family sentenced to total destruction, one child receives mercy because "something good toward the LORD" was found in him. Even in judgment, God preserves the righteous remnant.'),
+                ('14:16', 'MacArthur: "He will give Israel up because of the sins Jeroboam has committed and has caused Israel to commit." The king\'s sin is compounded by its corporate dimension — he led others into apostasy. Leadership carries accountability not just for personal sin but for the sins one enables in others.'),
+            ],
+            'wiseman': [
+                ('14:2', 'Wiseman: Shiloh, where Ahijah lived, was the site of the former tabernacle (Josh 18:1; 1 Sam 1:3). The location itself carries theological weight: the prophet of the old covenant centre pronounces judgment on the new king who has violated that covenant.'),
+                ('14:17', 'Wiseman: Tirzah, Jeroboam\'s capital (v.17), is identified with Tell el-Far\'ah (North), about 7 miles northeast of Shechem. Excavations by Roland de Vaux revealed substantial early Iron Age II occupation consistent with its role as the northern capital before Omri built Samaria.'),
+            ],
+            'provan': [
+                ('14:2', 'Provan: The disguise motif links back to Jacob disguising himself before blind Isaac (Gen 27). In both cases, a blind authority figure is not actually deceived. The narrator uses the parallel to show that deception before God\'s representatives never works — prophets see with God\'s eyes, not their own.'),
+                ('14:13', 'Provan: The "something good toward the LORD" in Abijah is the narrator\'s way of preserving theological nuance within a judgment oracle. Not all of Jeroboam\'s house is equally guilty. The Deuteronomistic historian is capable of distinguishing individual merit even within corporate condemnation.'),
+            ],
+            'calvin': [
+                ('14:2', 'Calvin: The disguise reveals a guilty conscience. Jeroboam knows he has done evil but will not repent — he prefers concealment to confession. This is the universal pattern of unregenerate religion: seeking God\'s benefits while hiding from God\'s truth.'),
+                ('14:13', 'Calvin: God takes the righteous child early to spare him from the coming destruction. Early death, which we regard as tragedy, may be divine mercy — removing the innocent before the storm. "The righteous are taken away to be spared from evil" (Isa 57:1).'),
+            ],
+            'netbible': [
+                ('14:10', 'NET Note: The graphic phrase <em>mašṭîn bĕqîr</em> (one who urinates against a wall) is a crude idiom meaning every male — from the highest to the lowest. The vulgarity of the expression matches the severity of the judgment. No male survivor will remain.'),
+                ('14:15', 'NET Note: <em>wĕnātaš ʾet-Yiśrāʾēl mēʿal hāʾădāmāh haṭṭôbāh</em> (he will uproot Israel from this good land) — the verb <em>nātaš</em> (to uproot) reverses the planting imagery of 2 Sam 7:10. What God planted, sin uproots. The exile is presented as the reversal of the settlement.'),
+            ],
+        },
+        {
+            'header': 'Verses 21–31 — Rehoboam\'s Judah: High Places, Asherah Poles, and Shishak\'s Invasion',
+            'verses': verse_range(21, 31),
+            'heb': [
+                ('qĕdēšîm', 'kedeshim', 'male shrine prostitutes', 'The presence of <em>qĕdēšîm</em> (v.24) — males dedicated to shrine prostitution — represents the deepest level of Canaanite religious syncretism. The term derives from <em>qādôš</em> (holy), creating a horrifying oxymoron: "holy ones" engaged in sexual degradation. Judah has adopted the most debased forms of Canaanite worship.'),
+                ('Šîšaq', 'Shishak', 'Shishak (Pharaoh Shoshenq I)', 'Shishak\'s invasion (v.25) is one of the most important external confirmations of biblical history. Pharaoh Shoshenq I\'s victory relief at Karnak lists over 150 conquered cities, many identifiable with biblical sites. The raid on the temple treasury (v.26) strips Solomon\'s golden shields — the visible glory of the previous generation is carried off to Egypt.'),
+            ],
+            'ctx': 'Rehoboam\'s 17-year reign in Judah is summarised in devastating brevity: high places, sacred stones, Asherah poles on every high hill and under every spreading tree, and male shrine prostitutes. Judah has become indistinguishable from the Canaanites Israel was supposed to displace. Shishak\'s invasion in Rehoboam\'s fifth year (c. 925 BC) strips the temple and palace of their gold — Solomon\'s golden shields are replaced with bronze replicas (v.27), a perfect metaphor for the kingdom\'s decline from gold to bronze, from glory to imitation. The Chronicler adds that Shemaiah the prophet interpreted the invasion as divine discipline (2 Chr 12:5–8).',
+            'cross': [
+                ('2 Chr 12:5–8', '"You have abandoned me; therefore, I now abandon you to Shishak." The Chronicler preserves the prophetic interpretation that 1 Kings omits. Shishak is God\'s instrument of discipline.'),
+                ('Deut 12:2–3', '"Destroy completely all the places on the high mountains, on the hills and under every spreading tree where the nations you are dispossessing worship their gods." Judah has done precisely the opposite.'),
+            ],
+            'macarthur': [
+                ('14:22', 'MacArthur: Judah\'s sin provokes God\'s jealousy (<em>qinʾāh</em>) — not petty envy but the fierce protective love of a covenant husband whose wife has committed adultery. God\'s jealousy is the appropriate response to covenant betrayal.'),
+                ('14:25', 'MacArthur: Shishak\'s invasion is divine discipline, not random geopolitics. The treasures Solomon accumulated through wisdom are stripped by a foreign army because of his son\'s foolishness. What wisdom builds, folly forfeits.'),
+                ('14:27', 'MacArthur: Bronze shields replacing gold is the narrator\'s most powerful visual metaphor. Rehoboam maintains the appearance of royal processions — guards still carry shields when the king enters the temple — but the substance has been degraded. Religious form without spiritual reality is bronze masquerading as gold.'),
+                ('14:30', 'MacArthur: "There was continual warfare between Rehoboam and Jeroboam" — the peace of Solomon\'s era (4:24) has been replaced by perpetual conflict. Division produces war; unity produces peace. The kingdom divided is the kingdom diminished.'),
+            ],
+            'wiseman': [
+                ('14:25', 'Wiseman: Shoshenq I\'s campaign is documented on the Bubastite Portal at Karnak temple, where a relief shows the pharaoh smiting Asiatic enemies before Amun. The city list includes Megiddo, Taanach, Beth Shean, Arad, and others — an extensive campaign through both Judah and Israel. A fragment of a Shoshenq stele was discovered at Megiddo, confirming his presence there.'),
+                ('14:26', 'Wiseman: The removal of the gold shields and their replacement with bronze is archaeologically plausible — the enormous quantities of gold described in Solomon\'s reign would have been a primary target for any invading force. Egyptian tomb reliefs from the same period show Asiatic tribute including gold vessels and weapons.'),
+            ],
+            'provan': [
+                ('14:22', 'Provan: The narrator uses "Judah" rather than "Rehoboam" as the subject — "Judah did evil in the eyes of the LORD." The sin is corporate, not merely royal. The Deuteronomistic historian holds the entire society accountable, not just the king. This is important: the people are participants in apostasy, not merely victims of bad leadership.'),
+                ('14:27', 'Provan: The bronze-for-gold substitution is the master metaphor of the entire decline narrative. The kingdom retains its rituals and processions but the substance is gone. The form of religion persists; the glory has departed. This is the Ichabod (1 Sam 4:21) principle applied to the monarchy.'),
+            ],
+            'calvin': [
+                ('14:25', 'Calvin: God used Shishak as his rod of discipline. The treasures of the temple, accumulated through years of wisdom, were swept away in a single campaign. This teaches that no amount of past blessing guarantees present security. Each generation must maintain its own faithfulness or forfeit its own inheritance.'),
+                ('14:27', 'Calvin: Bronze shields for gold — the visible sign of spiritual decline. The church faces the same danger in every age: maintaining outward forms after the inner reality has departed. Where there was once gold, there is now bronze; where there was once power, there is now pageantry.'),
+            ],
+            'netbible': [
+                ('14:23', 'NET Note: <em>bāmôt ûmaṣṣēbôt waʾăšērîm</em> (high places, sacred pillars, and Asherah poles) — the triad of Canaanite worship installations. The <em>maṣṣēbāh</em> was a standing stone representing the male deity; the <em>ʾăšērāh</em> was a wooden pole or tree representing the mother goddess. Together they constituted the full apparatus of fertility religion.'),
+                ('14:25', 'NET Note: The chronological note — fifth year of Rehoboam — dates Shishak\'s invasion to c. 925 BC, consistent with Egyptian chronology placing Shoshenq I\'s Palestinian campaign near the end of his reign (he died c. 924 BC).'),
+            ],
+        },
+    ],
+})
+
+ki1(15, {
+    'title': 'Abijah and Asa in Judah; Nadab and Baasha in Israel',
+    'sections': [
+        {
+            'header': 'Verses 1–24 — Asa: He Did Right; Maakah\'s Idol Destroyed',
+            'verses': verse_range(1, 24),
+            'heb': [
+                ('šālēm ʿim-YHWH', 'shalem im-YHWH', 'wholly devoted to the LORD', 'Asa\'s heart is described as <em>šālēm</em> (complete, undivided) with the LORD (v.14). The adjective comes from <em>šālôm</em> — wholeness, integrity. Asa\'s devotion is presented as the standard of Judahite kingship: measured not against perfection but against David\'s example of wholehearted commitment to YHWH despite failures.'),
+                ('miphletseth', 'mifhletzet', 'repulsive/obscene thing', 'Asa removes his grandmother Maakah from her position as queen mother because she made a <em>miphletseth</em> (v.13) — an obscene image, probably a phallic Asherah pole. He cuts it down and burns it in the Kidron Valley. The term <em>miphletseth</em> occurs only here and in 2 Chr 15:16, suggesting something uniquely horrifying.'),
+            ],
+            'ctx': 'After the rapid deterioration under Rehoboam and Abijah, Asa represents the first reform in Judah. His 41-year reign (c. 911–870 BC) is the longest in Judah to this point. The narrator praises him with the highest evaluation formula: "Asa did what was right in the eyes of the LORD, as his father David had done" (v.11). His reforms include expelling the male shrine prostitutes, removing Canaanite idols, and deposing his own grandmother for idolatry — an act of extraordinary courage, since the queen mother held significant political power. Yet the narrator adds the qualification: "The high places were not removed" (v.14). Even the best kings fall short of the Deuteronomic ideal of centralised worship.',
+            'cross': [
+                ('2 Chr 14:9–15', 'The Chronicler adds Asa\'s victory over Zerah the Cushite — a massive Ethiopian/Egyptian army defeated through prayer and divine intervention. This military dimension is absent from 1 Kings.'),
+                ('2 Chr 16:12', 'The Chronicler records Asa\'s tragic ending: in his old age he sought physicians rather than God for a severe foot disease, and he oppressed some of the people. Even good kings can end badly.'),
+            ],
+            'macarthur': [
+                ('15:11', 'MacArthur: "Asa did what was right in the eyes of the LORD, as his father David had done." This is the gold-standard evaluation in Kings — comparison to David. Not comparison to an abstract ideal but to a real, flawed man whose heart was wholly devoted to God. The standard is not sinlessness but wholehearted commitment.'),
+                ('15:13', 'MacArthur: Deposing his own grandmother required immense personal courage. Family loyalty was paramount in the ancient world; deposing the queen mother was politically dangerous. Asa\'s willingness to put covenant faithfulness above family ties demonstrates that true reform begins at home.'),
+                ('15:14', 'MacArthur: "The high places were not removed. Nevertheless, Asa\'s heart was fully committed to the LORD all his life." The narrator holds two truths simultaneously: Asa was faithful, and Asa was incomplete. This is the honest assessment Scripture makes of even its best figures. No one arrives at perfection this side of eternity.'),
+                ('15:19', 'MacArthur: Asa\'s alliance with Ben-Hadad of Aram against Baasha of Israel is politically shrewd but spiritually questionable — buying a foreign army with temple silver. The Chronicler explicitly condemns this (2 Chr 16:7–9). Even good kings make bad decisions when they rely on political calculation rather than prayer.'),
+            ],
+            'wiseman': [
+                ('15:2', 'Wiseman: Abijah\'s three-year reign (c. 913–911 BC) is barely mentioned in Kings but given an extended narrative in 2 Chronicles 13, including a major battle with Jeroboam and a speech defending the Davidic covenant and Aaronic priesthood. The Kings narrator subordinates everything to the Deuteronomistic evaluation.'),
+                ('15:18', 'Wiseman: Ben-Hadad I of Damascus (c. 900–860 BC) is known from the Melqart Stele discovered near Aleppo, which names "Bar-Hadad son of Tab-Rimmon son of Hezion, king of Aram." This genealogy matches 1 Kgs 15:18 exactly — one of the most precise extra-biblical confirmations of a Kings narrative.'),
+            ],
+            'provan': [
+                ('15:11', 'Provan: The evaluation formula "did right in the eyes of the LORD" is the narrator\'s primary tool. Every king is measured by this single criterion. Military success, economic prosperity, building projects — none of these affect the verdict. The Deuteronomistic historian cares about one thing: covenant faithfulness.'),
+                ('15:14', 'Provan: The "high places" qualification creates a narrative tension that runs through all of Judah\'s history. Even good kings leave the high places standing. The problem persists until Josiah (2 Kgs 23), who finally removes them — only for the nation to be exiled anyway. The narrator implies that partial reform is insufficient.'),
+            ],
+            'calvin': [
+                ('15:13', 'Calvin: Asa\'s courage in deposing his grandmother teaches that reformation must begin with those closest to us. It is easy to condemn strangers\' idols; it takes courage to confront idolatry in our own families. But God\'s honour demands priority over every human relationship.'),
+                ('15:14', 'Calvin: The high places remained. Even the best human reform is incomplete. Only Christ accomplishes the full purification that no king — not David, not Asa, not Josiah — could achieve. Every reformation points forward to the one reformer who will finish the work.'),
+            ],
+            'netbible': [
+                ('15:13', 'NET Note: <em>miphletseth laʾăšērāh</em> (a repulsive image for Asherah) — <em>miphletseth</em> derives from <em>pālaṣ</em> (to shudder, tremble with horror). The object was so offensive that the narrator can barely name it. Asa\'s response — cutting and burning in the Kidron — follows the Deuteronomic prescription for idol destruction (Deut 7:5).'),
+                ('15:14', 'NET Note: The qualifier <em>raq</em> (except, only) recurs — the same limiting particle used for Solomon (3:3). It signals incomplete faithfulness in an otherwise positive evaluation. The <em>raq</em> is the narrator\'s most subtle editorial tool.'),
+            ],
+        },
+        {
+            'header': 'Verses 25–34 — Nadab Assassinated; Baasha Destroys Jeroboam\'s Line',
+            'verses': verse_range(25, 34),
+            'heb': [
+                ('hikkāh', 'hikkah', 'he struck him down', 'Baasha "struck down" (<em>hikkāh</em>, v.27) Nadab at Gibbethon — a Philistine border town Israel was besieging. The assassination during a military campaign is a pattern: power is seized at moments of national distraction. The same verb is used for judicial execution (Deut 13:15), giving Baasha\'s act an ambiguous quality — he may consider himself an agent of judgment even as he acts from ambition.'),
+            ],
+            'ctx': 'The northern kingdom enters its first dynastic transition — and it is violent. Nadab, Jeroboam\'s son, reigns only two years before Baasha assassinates him during the siege of Gibbethon and kills every member of Jeroboam\'s house, fulfilling Ahijah\'s prophecy (14:10–11). The narrator draws the explicit connection: "because of the sins Jeroboam had committed and had caused Israel to commit" (v.30). But Baasha is no reformer — he walks "in the ways of Jeroboam" (v.34). The destroyer of one sinful dynasty immediately becomes the founder of another. The northern cycle of apostasy, assassination, and replacement begins here and will repeat through the book.',
+            'cross': [
+                ('1 Kgs 14:10–11', 'Ahijah\'s prophecy against Jeroboam\'s house — "I will cut off from Jeroboam every last male... Dogs will eat those belonging to Jeroboam who die in the city." Baasha fulfils this word exactly.'),
+                ('1 Kgs 16:1–4', 'Jehu son of Hanani prophesies the identical judgment against Baasha: the man who destroyed one dynasty for its sin commits the same sin and receives the same sentence.'),
+            ],
+            'macarthur': [
+                ('15:27', 'MacArthur: Baasha assassinates Nadab during a military campaign — seizing power at a moment of national vulnerability. The pattern of violent succession in Israel contrasts sharply with Judah\'s (mostly) orderly Davidic transitions. Without a divine covenant guaranteeing the dynasty, every northern king rules by the sword and dies by the sword.'),
+                ('15:29', 'MacArthur: The destruction of Jeroboam\'s entire family fulfils the prophetic word of 14:10. God\'s judgment may be delayed but it is never cancelled. Ahijah\'s prophecy, spoken years earlier, finds exact fulfilment through a human agent who acts from political ambition — God\'s sovereignty working through human agency.'),
+                ('15:34', 'MacArthur: Baasha walks in Jeroboam\'s ways. The man who destroyed the house of Jeroboam immediately replicates Jeroboam\'s sin. Power alone does not produce righteousness; only a changed heart does. Regime change without spiritual change is merely rearranging the furniture in a burning house.'),
+                ('15:30', 'MacArthur: The repeated phrase "the sins of Jeroboam which he sinned and which he made Israel sin" becomes the refrain of the northern kingdom. No northern king ever breaks free of this template. The original sin of the golden calves casts its shadow over every subsequent reign.'),
+            ],
+            'wiseman': [
+                ('15:27', 'Wiseman: Gibbethon (Tell el-Melat, near Gezer) was a Levitical city in Dan\'s territory (Josh 21:23) that had been occupied by the Philistines. Israel\'s repeated attempts to retake it (cf. 16:15) suggest it was a strategic frontier position controlling access to the coastal plain.'),
+                ('15:29', 'Wiseman: The total destruction of a royal house upon dynastic change is well attested in ANE practice. The Assyrian usurper Sargon II eliminated the family of his predecessor Shalmaneser V. The practice aimed to prevent any surviving heir from mounting a counter-claim.'),
+            ],
+            'provan': [
+                ('15:29', 'Provan: The narrator\'s explicit citation of the prophetic fulfilment ("according to the word of the LORD given through his servant Ahijah") is the narrative engine of 1 Kings. Every judgment announced by a prophet is eventually executed. The word of God is the constant; kings are the variables.'),
+                ('15:34', 'Provan: The verdict on Baasha is identical to the verdict on Jeroboam — the narrator uses the same evaluative formula. The new dynasty is no improvement on the old. The problem in Israel is not which family rules but the structural apostasy inaugurated by the golden calves, which no mere regime change can address.'),
+            ],
+            'calvin': [
+                ('15:29', 'Calvin: God used Baasha — a wicked man acting from selfish ambition — to fulfil his righteous judgment against Jeroboam\'s house. God\'s sovereignty employs human agents without approving their motives. The instrument of judgment is not thereby justified; Baasha will face his own reckoning (16:1–4).'),
+                ('15:34', 'Calvin: The cycle of sin continues because the problem is the human heart, not the human ruler. Replace the king and the sin remains. Only the grace of God, working internal transformation, can break the cycle. External reform without internal renewal is futile.'),
+            ],
+            'netbible': [
+                ('15:29', 'NET Note: <em>lōʾ hišʾîr kol-nišmat lĕYārŏbʿām</em> (he did not leave any breathing thing of Jeroboam\'s) — the phrase <em>kol-nišmāh</em> (every breath) echoes the conquest vocabulary of Joshua (Josh 11:11, 14). Baasha\'s purge uses herem language — total destruction — but applied to a fellow Israelite dynasty.'),
+                ('15:34', 'NET Note: The formulaic evaluation <em>wayyēlek bĕderek Yārŏbʿām ûbĕḥaṭṭāʾtô ʾăšer heḥĕṭîʾ ʾet-Yiśrāʾēl</em> (he walked in the way of Jeroboam and in his sin which he caused Israel to commit) will be repeated for nearly every northern king. It functions as a liturgical refrain of condemnation.'),
+            ],
+        },
+    ],
+})
+
+ki1(16, {
+    'title': 'From Baasha to Ahab: Rapid Succession and the Worst King',
+    'sections': [
+        {
+            'header': 'Verses 1–20 — Baasha to Zimri: Coups, Conspiracy, and Seven Days on the Throne',
+            'verses': verse_range(1, 20),
+            'heb': [
+                ('šibʿat yāmîm', 'shivat yamim', 'seven days', 'Zimri reigns only seven days (v.15) — the shortest reign in Israelite history. The number seven, normally associated with completion and divine order, here describes total futility. Zimri\'s "dynasty" begins and ends in a single week, destroyed by the same violence that created it.'),
+                ('bāʿar ʾet-bêtô', 'baar et-beito', 'he burned the palace over himself', 'Zimri\'s suicide by fire (v.18) when he sees the city is taken is an act of desperate finality. The burning of the royal palace is both personal destruction and the destruction of the regime. Unlike Saul\'s death (which had tragic nobility), Zimri\'s self-immolation is the end of a seven-day farce.'),
+            ],
+            'ctx': 'Chapter 16 compresses approximately 50 years of northern history into 34 verses — a deliberate narrative acceleration that conveys the feeling of rapid, meaningless succession. The narrator rushes through dynasties because they are interchangeable: Baasha replicates Jeroboam\'s sin and receives an identical judgment (vv.1–7). His son Elah is assassinated by Zimri while drinking himself drunk (v.9). Zimri reigns seven days before burning himself alive. The speed communicates the futility: without covenant faithfulness, political power is ephemeral. Each regime destroys its predecessor and is destroyed in turn.',
+            'cross': [
+                ('1 Kgs 14:10–11', 'The prophecy against Jeroboam is repeated nearly verbatim against Baasha (16:3–4). The same sin produces the same judgment. The narrator makes the parallelism explicit.'),
+                ('2 Kgs 9:31', 'When Jehu enters Jezreel, Jezebel taunts him: "Is all well, Zimri, you murderer of your master?" Zimri becomes a byword for regicide — his name is a curse that persists for generations.'),
+            ],
+            'macarthur': [
+                ('16:2', 'MacArthur: God\'s indictment of Baasha through Jehu the prophet mirrors Ahijah\'s indictment of Jeroboam: "I lifted you up... but you walked in the ways of Jeroboam." The pattern is established: God gives opportunity, the king squanders it, the prophet announces judgment. This cycle will repeat until there is no northern kingdom left.'),
+                ('16:9', 'MacArthur: Elah is murdered while getting drunk in his steward\'s house. The king of Israel is so insulated from his own people and so given to luxury that he is caught unawares in a private drinking session. Leadership requires vigilance; self-indulgence produces vulnerability.'),
+                ('16:15', 'MacArthur: Seven days — the duration of a feast, not a reign. Zimri\'s brevity demonstrates that power seized by violence alone cannot sustain itself. Without legitimacy, without popular support, without divine sanction, the throne is just a chair.'),
+                ('16:19', 'MacArthur: The narrator provides a moral verdict even for Zimri\'s seven-day reign: "because of the sins he had committed, doing evil in the eyes of the LORD and following the ways of Jeroboam." Even seven days is enough time to be evaluated against God\'s standard.'),
+            ],
+            'wiseman': [
+                ('16:8', 'Wiseman: The chronological data for this period (Elah year 26 of Asa; Zimri year 27; Omri year 31) creates apparent contradictions that scholars resolve through co-regency systems and different calendar reckoning methods. The precision of the data suggests the narrator is working from official Israelite regnal records.'),
+                ('16:15', 'Wiseman: Gibbethon reappears (cf. 15:27) — Israel is still besieging the same Philistine frontier town. The military stalemate at Gibbethon spans two reigns and two coups, suggesting it was a persistent strategic problem on the western border.'),
+            ],
+            'provan': [
+                ('16:7', 'Provan: The prophet Jehu\'s message to Baasha contains a paradox: Baasha is condemned both for walking in Jeroboam\'s way (v.2) AND for destroying Jeroboam\'s house (v.7). He was God\'s instrument of judgment but is condemned for using violence as his own tool. The narrator holds divine sovereignty and human responsibility in tension without resolving it.'),
+                ('16:18', 'Provan: Zimri burns the palace over himself — the most compressed narrative in Kings. The narrator devotes a single verse to Zimri\'s death. The brevity itself is a verdict: a life and reign so insignificant that one verse suffices for both.'),
+            ],
+            'calvin': [
+                ('16:2', 'Calvin: God reminds Baasha: "I lifted you up from the dust." Every position of authority is a gift from God. When the recipient forgets the source, the gift is reclaimed. The pattern applies to every sphere of life: what God gives, ingratitude forfeits.'),
+                ('16:18', 'Calvin: Zimri\'s self-destruction teaches that violence turned outward eventually turns inward. The man who murdered his way to the throne destroys himself when the throne collapses. Sin is inherently self-consuming.'),
+            ],
+            'netbible': [
+                ('16:2', 'NET Note: <em>hărimōtîkā min-heʿāpār</em> (I raised you from the dust) — the phrase echoes 1 Sam 2:8 (Hannah\'s Song) and Ps 113:7. "Dust" represents the lowest social condition. God\'s elevation of Baasha from obscurity to kingship makes his ingratitude all the more culpable.'),
+                ('16:11', 'NET Note: <em>lōʾ hišʾîr lô mašṭîn bĕqîr</em> — the crude idiom recurs from 14:10. The narrator uses identical language for the destruction of both Jeroboam\'s and Baasha\'s houses, underlining the parallelism of their sin and punishment.'),
+            ],
+        },
+        {
+            'header': 'Verses 21–34 — Omri Builds Samaria; Ahab Marries Jezebel; Baal Worship Established',
+            'verses': verse_range(21, 34),
+            'heb': [
+                ('Šōmĕrôn', 'Shomeron', 'Samaria', 'Omri purchases the hill of Samaria (<em>Šōmĕrôn</em>, from its owner Shemer, v.24) and builds a new capital — the most important act of Israelite city-building since David took Jerusalem. Samaria will remain the northern capital until its destruction in 722 BC, and the name will become synonymous with the northern kingdom itself.'),
+                ('wayyēlek laʿăbōd ʾet-haBaʿal wayyištaḥăwû-lô', 'vayelech laavod et-haBaal', 'he went and served Baal and worshipped him', 'Ahab\'s introduction (v.31) marks a quantum leap in apostasy. Previous kings maintained YHWH worship alongside the golden calves; Ahab institutes official Baal worship with a temple in Samaria. The verb sequence — "went... served... worshipped" — describes a deliberate, systematic adoption of a foreign deity as state religion.'),
+            ],
+            'ctx': 'The chapter\'s second half introduces the two figures who will dominate the rest of 1 Kings: Omri and especially Ahab. Omri is one of the most significant kings in Israelite history from an external perspective — Assyrian records call Israel "the house of Omri" for over a century after his death, and the Mesha Stele credits him with subjugating Moab. Yet the narrator devotes only six verses to him, condemning him as worse than all who preceded him (v.25). Ahab then surpasses even Omri: he marries Jezebel, daughter of the Sidonian king, builds a Baal temple in Samaria, and erects an Asherah pole. The narrator\'s verdict: "Ahab did more to arouse the anger of the LORD, the God of Israel, than did all the kings of Israel before him" (v.33). The stage is set for Elijah.',
+            'cross': [
+                ('Mic 6:16', '"You have observed the statutes of Omri and all the practices of Ahab\'s house." A century later, Micah still references the Omride dynasty as the paradigm of Israelite apostasy.'),
+                ('Rev 2:20', '"You tolerate that woman Jezebel, who calls herself a prophet." Jezebel becomes a biblical archetype for false teaching and religious corruption — referenced even in the New Testament.'),
+                ('Josh 6:26', '"Cursed before the LORD is the one who undertakes to rebuild this city, Jericho." The fulfilment in v.34 (Hiel of Bethel rebuilds Jericho, losing his sons) demonstrates that Joshua\'s curse remained active.'),
+            ],
+            'macarthur': [
+                ('16:25', 'MacArthur: "Omri did evil in the eyes of the LORD and sinned more than all those before him." The superlative keeps escalating — each king is worse than his predecessor. The narrative of decline is cumulative; sin does not plateau but accelerates. This is the trajectory of unrestrained apostasy.'),
+                ('16:31', 'MacArthur: Ahab\'s marriage to Jezebel is the most consequential political marriage in Israelite history. It brings not just a foreign queen but an aggressive foreign religion backed by royal power. Jezebel does not merely worship Baal privately; she makes it state policy and actively persecutes YHWH prophets (18:4).'),
+                ('16:32', 'MacArthur: A Baal temple in the capital city of Israel is the ultimate provocation. The calves at Dan and Bethel were heretical but claimed to represent YHWH; the Baal temple represents an entirely different deity. This is not syncretism but replacement.'),
+                ('16:34', 'MacArthur: The rebuilding of Jericho by Hiel at the cost of his sons fulfils Joshua\'s curse (Josh 6:26) — a curse spoken 500+ years earlier. The narrator places this note at the end of the chapter to remind the reader: God\'s word is unfailingly reliable. What God declares, history confirms.'),
+            ],
+            'wiseman': [
+                ('16:24', 'Wiseman: Samaria (Sebastiyeh) sits on an isolated hill with excellent natural defenses, commanding the main east-west route through the central highlands. Harvard excavations (1908–10) and subsequent campaigns uncovered Omride-period ashlar masonry, ivory carvings, and the "Samaria ostraca" (administrative records). The city\'s construction quality confirms Omri as a significant builder-king.'),
+                ('16:31', 'Wiseman: Ethbaal king of Sidon is identified by Josephus (citing Menander) as a priest of Astarte who seized the throne by murdering the previous king. Jezebel\'s religious fanaticism is inherited: her father was both king and chief priest of a violent cult. She brought this combination of political and religious authority to Israel.'),
+                ('16:33', 'Wiseman: The Mesha Stele (Moabite Stone, discovered 1868) confirms Omri\'s conquest of Moab and notes that "Omri had humbled Moab for many years." Assyrian records continue to call Israel "Bit-Humri" (House of Omri) long after his dynasty fell — testimony to his geopolitical significance that the biblical narrator deliberately minimises.'),
+            ],
+            'provan': [
+                ('16:25', 'Provan: The disproportion between Omri\'s external importance (Assyrian records, Mesha Stele) and his meagre biblical coverage (6 verses) reveals the narrator\'s priorities. Political and military achievement is irrelevant to the Deuteronomistic evaluation. Only covenant faithfulness matters. Omri built Samaria and subjugated Moab but "sinned more than all before him" — and that is his verdict.'),
+                ('16:33', 'Provan: The narrator\'s superlative judgment on Ahab — worse than all before him — sets up the Elijah narratives that follow. The deeper the darkness, the more dramatic the prophetic light. Elijah does not appear in a vacuum but in the worst spiritual crisis since the golden calf. The prophet is summoned by the extremity of the apostasy.'),
+            ],
+            'calvin': [
+                ('16:31', 'Calvin: Ahab\'s marriage to Jezebel teaches the danger of unequal yoking. A foreign wife brought a foreign god, and a foreign god brought the destruction of the kingdom. What begins as a political alliance ends as spiritual catastrophe. The church must guard its partnerships with the same vigilance.'),
+                ('16:34', 'Calvin: The fulfilment of Joshua\'s ancient curse demonstrates that God\'s word operates outside human timescales. Five centuries pass between the curse and its fulfilment. What patience this implies — and what certainty. God neither forgets nor exaggerates. Every word will be accounted for.'),
+            ],
+            'netbible': [
+                ('16:31', 'NET Note: <em>wayyelek wayyaʿăbōd ʾet-habBaʿal wayyištaḥăwû-lô</em> — the triple <em>wayyiqtol</em> sequence (went... served... worshipped) describes a deliberate process of adoption. This is not accidental syncretism but intentional establishment of Baal as the national deity alongside (or replacing) YHWH.'),
+                ('16:34', 'NET Note: <em>bidbar YHWH ʾăšer dibbēr bĕyad Yĕhôšuaʿ bin-Nûn</em> (according to the word of the LORD which he spoke through Joshua son of Nun) — the narrator explicitly cites the prophetic chain: God → Joshua → fulfilment in Ahab\'s day. The word of God traverses centuries with undiminished authority.'),
+            ],
+        },
+    ],
+})
+
+print("\n1KI-4 complete: 1 Kings 13–16 built.")
