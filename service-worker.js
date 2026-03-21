@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.170';
+const CACHE = 'scripture-2.171';
 const CORE = [
   '/',
   '/index.html',
@@ -63,6 +63,9 @@ const CORE = [
   '/data/cross-refs.js',
   '/cross-ref-engine.js',
   '/cross-ref-ui.js',
+  '/verses/chapters.js',
+  '/data/synoptic-map.js',
+  '/synoptic.js',
   '/verses/chapters.js',
   '/verses/niv/verses.js',
   '/verses/niv/ot/genesis.js',
