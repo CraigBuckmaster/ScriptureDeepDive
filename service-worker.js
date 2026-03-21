@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.153';
+const CACHE = 'scripture-2.154';
 const CORE = [
   '/',
   '/index.html',
@@ -22,6 +22,7 @@ const CORE = [
   '/verses/chapters.js',
   '/tog.js',
   '/history.js',
+  '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
   '/verses/chapters.js',
@@ -184,7 +185,17 @@ const CORE = [
   '/ot/1_kings/1_Kings_10.html',
   '/ot/1_kings/1_Kings_11.html',
   '/ot/1_kings/1_Kings_12.html',
+  '/ot/1_kings/1_Kings_13.html',
+  '/ot/1_kings/1_Kings_14.html',
+  '/ot/1_kings/1_Kings_15.html',
+  '/ot/1_kings/1_Kings_16.html',
+  '/ot/1_kings/1_Kings_17.html',
+  '/ot/1_kings/1_Kings_18.html',
+  '/ot/1_kings/1_Kings_19.html',
   '/ot/1_kings/1_Kings_2.html',
+  '/ot/1_kings/1_Kings_20.html',
+  '/ot/1_kings/1_Kings_21.html',
+  '/ot/1_kings/1_Kings_22.html',
   '/ot/1_kings/1_Kings_3.html',
   '/ot/1_kings/1_Kings_4.html',
   '/ot/1_kings/1_Kings_5.html',
