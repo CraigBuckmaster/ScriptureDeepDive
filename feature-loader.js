@@ -21,12 +21,15 @@
     // Phase 2: data files + engines
     [
       '../../data/cross-refs.js',
-      '../../cross-ref-engine.js'
+      '../../cross-ref-engine.js',
+      '../../data/word-study.js',
+      '../../word-study-engine.js'
     ],
     // Phase 3: UI features (depend on services + engines)
     [
       '../../annotations.js',
-      '../../cross-ref-ui.js'
+      '../../cross-ref-ui.js',
+      '../../word-study-ui.js'
     ]
   ];
 
