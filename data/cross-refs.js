@@ -39,7 +39,9 @@ window.CROSS_REF_THREADS = [
       { ref: "1 Kgs 8:22-30",note: "Solomon's prayer — covenant remembered at the temple" },
       { ref: "Matt 26:27-28",note: "'This is my blood of the covenant, poured out for many'" },
       { ref: "Luke 22:20",   note: "'This cup is the new covenant in my blood'" }
-    ]
+    ,
+      { ref: "2 Kgs 17:15", note: "Israel rejected the covenant — followed worthless idols" },
+      { ref: "2 Kgs 23:3",  note: "Josiah renews the covenant — the last great reform" }]
   },
 
   // ── Creation & New Creation ─────────────────────────────────────────────
@@ -72,7 +74,10 @@ window.CROSS_REF_THREADS = [
       { ref: "Deut 30:1-5",  note: "Promise of restoration — 'even if you have been banished to the most distant land'" },
       { ref: "1 Kgs 9:6-7",  note: "Temple warning — 'I will reject this temple and cut Israel off'" },
       { ref: "Luke 15:11-24",note: "The prodigal son — exile, repentance, homecoming" }
-    ]
+    ,
+      { ref: "2 Kgs 17:6",  note: "Samaria falls — Israel exiled to Assyria (722 BC)" },
+      { ref: "2 Kgs 25:11", note: "Jerusalem falls — Judah exiled to Babylon (586 BC)" },
+      { ref: "2 Kgs 25:27", note: "Jehoiachin released from prison — the Davidic line survives" }]
   },
 
   // ── The Name of God ─────────────────────────────────────────────────────
@@ -127,7 +132,8 @@ window.CROSS_REF_THREADS = [
       { ref: "Mark 1:15",    note: "'The time has come; the kingdom of God has come near'" },
       { ref: "Luke 17:20-21",note: "'The kingdom of God is in your midst'" },
       { ref: "Acts 1:6-8",   note: "'It is not for you to know the times — but you will receive power'" }
-    ]
+    ,
+      { ref: "2 Kgs 11:12", note: "Joash crowned — the Davidic line preserved through Athaliah's purge" }]
   },
 
   // ── The Spirit of God ───────────────────────────────────────────────────
@@ -223,4 +229,6 @@ window.CROSS_REF_PAIRS = [
   { a: "1 Kgs 19:11-12",b:"Mark 4:39",    note: "God in the whisper, not the storm — Jesus commands the storm itself" },
   { a: "Lev 19:18",   b: "Matt 22:39",    note: "'Love your neighbour' — Leviticus to Jesus" },
   { a: "Prov 8:22-31",b: "John 1:1-3",    note: "Wisdom at creation — the Word at creation" }
-];
+,
+  { a: "2 Kgs 18:13",b: "Isa 36:1",     note: "Sennacherib invades — parallel accounts in Kings and Isaiah" },
+  { a: "2 Kgs 25:1", b: "Jer 52:4",     note: "The siege of Jerusalem — parallel accounts in Kings and Jeremiah" }];

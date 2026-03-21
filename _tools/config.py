@@ -309,6 +309,30 @@ BOOK_META = {
                      'high places','Baal','apostasy','drought','fire','glory','heart','obey'],
         'vhl_time': ['day','days','year','years','month','time','generation'],
     },
+    '2_kings': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous (same author/editor as 1 Kings). '
+                 'Originally one book with 1 Kings in the Hebrew canon (Melachim). '
+                 'The final editor drew on the same court archives and prophetic sources, '
+                 'shaping them into a unified Deuteronomistic theological history.<br><br>'
+                 '<strong>Date:</strong> Events span c.852&ndash;561 BC, from Elijah&rsquo;s '
+                 'departure to Jehoiachin&rsquo;s release in Babylon. Final compilation during '
+                 'the exile (post-561 BC), as the closing verses require.<br><br>'
+                 '<strong>Theme:</strong> The covenant curses fulfilled. Despite prophetic '
+                 'witness (Elisha), revolutionary reform (Jehu), and righteous kings (Hezekiah, '
+                 'Josiah), both kingdoms fall. Israel to Assyria (722 BC), Judah to Babylon '
+                 '(586 BC). Yet the Davidic line survives &mdash; Jehoiachin is released '
+                 '(25:27&ndash;30), a whisper of hope in the darkness.'),
+        'vhl_people': ['Elijah','Elisha','Naaman','Gehazi','Jehu','Jezebel','Athaliah','Joash',
+                        'Hezekiah','Isaiah','Sennacherib','Manasseh','Josiah','Nebuchadnezzar',
+                        'Jehoiachin','Zedekiah','Hilkiah','Huldah','God','LORD','Israel','Judah'],
+        'vhl_places': ['Samaria','Jerusalem','Jericho','Jordan','Damascus','Assyria','Babylon',
+                        'Shunem','Dothan','Jezreel','Bethel','Carmel','Lachish','Nineveh',
+                        'Egypt','Moab','Edom'],
+        'vhl_key': ['covenant','temple','high places','exile','deportation','reform','prophet',
+                     'judgment','idolatry','Baal','Assyria','Babylon','law','book','fire'],
+        'vhl_time': ['day','days','year','years','month','time','generation','reign'],
+    },
     'ruth': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Unknown; Jewish tradition attributes authorship to Samuel.\n\n'

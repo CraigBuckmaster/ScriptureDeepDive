@@ -93,4 +93,35 @@ window.SYNOPTIC_MAP = [
     passages:[{book:"1_samuel",ref:"1 Sam 16:1-13"},{book:"2_samuel",ref:"2 Sam 2:4"},{book:"2_samuel",ref:"2 Sam 5:3"}] },
   { id:"davidic-covenant", title:"The Davidic Covenant",           category:"ot-parallel",
     passages:[{book:"2_samuel",ref:"2 Sam 7:1-17"},{book:"1_kings",ref:"1 Kgs 8:22-26"}] }
+,
+  {
+    id: "hezekiah-sennacherib",
+    title: "Sennacherib's Invasion",
+    category: "ot-parallel",
+    passages: [
+      { ref: "2 Kgs 18:13–19:37", book: "2_kings", label: "Kings account" },
+      { ref: "Isa 36:1–37:38",    book: "isaiah",  label: "Isaiah account" }
+    ],
+    note: "Nearly identical parallel accounts of Sennacherib's siege and the angel of the LORD's deliverance of Jerusalem."
+  },
+  {
+    id: "fall-of-jerusalem",
+    title: "The Fall of Jerusalem",
+    category: "ot-parallel",
+    passages: [
+      { ref: "2 Kgs 25:1–30",    book: "2_kings",   label: "Kings account" },
+      { ref: "Jer 52:1–34",      book: "jeremiah",  label: "Jeremiah account" }
+    ],
+    note: "Jeremiah 52 is nearly a verbatim copy of 2 Kings 25 — the destruction of Jerusalem, temple, and exile to Babylon."
+  },
+  {
+    id: "hezekiah-illness",
+    title: "Hezekiah's Illness and Recovery",
+    category: "ot-parallel",
+    passages: [
+      { ref: "2 Kgs 20:1–11",    book: "2_kings",  label: "Kings account" },
+      { ref: "Isa 38:1–22",      book: "isaiah",   label: "Isaiah account" }
+    ],
+    note: "Isaiah's version includes Hezekiah's psalm of thanksgiving (Isa 38:9–20), absent from Kings."
+  }
 ];
