@@ -87,28 +87,51 @@
   var allEntries = WS.allEntries();
   var activeLang = 'all';
 
-  function renderList(lang, query) {
+  // ── Build stable controls (rendered once, never destroyed) ───────────
+  var controlsDiv = document.createElement('div');
+  controlsDiv.className = 'ws-controls';
+  controlsDiv.innerHTML =
+    '<input class="ws-search" id="ws-search" placeholder="Search words\u2026">' +
+    '<button class="ws-filter active" data-lang="all">All</button>' +
+    '<button class="ws-filter" data-lang="hebrew">Hebrew</button>' +
+    '<button class="ws-filter" data-lang="greek">Greek</button>';
+  target.appendChild(controlsDiv);
+
+  var gridDiv = document.createElement('div');
+  gridDiv.id = 'ws-grid-container';
+  target.appendChild(gridDiv);
+
+  var searchInput = document.getElementById('ws-search');
+  searchInput.addEventListener('input', function() { renderGrid(); });
+  controlsDiv.querySelectorAll('.ws-filter').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activeLang = btn.getAttribute('data-lang');
+      controlsDiv.querySelectorAll('.ws-filter').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-lang') === activeLang);
+      });
+      renderGrid();
+    });
+  });
+
+  // ── Render grid only (controls stay in DOM) ──────────────────────────
+  function renderGrid() {
+    var query = searchInput.value;
     var entries = allEntries;
-    if (lang && lang !== 'all') entries = entries.filter(function(e) { return e.language === lang; });
+    if (activeLang && activeLang !== 'all') entries = entries.filter(function(e) { return e.language === activeLang; });
     if (query) {
       var q = query.toLowerCase();
       entries = entries.filter(function(e) {
         return e.id.indexOf(q) > -1 || e.transliteration.toLowerCase().indexOf(q) > -1 ||
-          e.glosses.some(function(g) { return g.toLowerCase().indexOf(q) > -1; });
+          e.glosses.some(function(g) { return g.toLowerCase().indexOf(q) > -1; }) ||
+          (e.range && e.range.toLowerCase().indexOf(q) > -1) ||
+          (e.note && e.note.toLowerCase().indexOf(q) > -1);
       });
     }
 
-    var html = '<div class="ws-controls">' +
-      '<input class="ws-search" id="ws-search" placeholder="Search words\u2026" value="' + (query || '') + '">' +
-      '<button class="ws-filter' + (activeLang === 'all' ? ' active' : '') + '" data-lang="all">All</button>' +
-      '<button class="ws-filter' + (activeLang === 'hebrew' ? ' active' : '') + '" data-lang="hebrew">Hebrew</button>' +
-      '<button class="ws-filter' + (activeLang === 'greek' ? ' active' : '') + '" data-lang="greek">Greek</button>' +
-      '</div>';
-
     if (entries.length === 0) {
-      html += '<p class="ws-empty">No words found.</p>';
+      gridDiv.innerHTML = '<p class="ws-empty">No words found.</p>';
     } else {
-      html += '<div class="ws-grid">';
+      var html = '<div class="ws-grid">';
       entries.forEach(function(e) {
         html += '<div class="ws-entry" data-id="' + e.id + '">' +
           '<div class="ws-entry-lang">' + e.language + '</div>' +
@@ -119,22 +142,27 @@
           '</div>';
       });
       html += '</div>';
+      gridDiv.innerHTML = html;
     }
 
-    target.innerHTML = html;
-
-    document.getElementById('ws-search').addEventListener('input', function(ev) { renderList(activeLang, ev.target.value); });
-    target.querySelectorAll('.ws-filter').forEach(function(btn) {
-      btn.addEventListener('click', function() { activeLang = btn.getAttribute('data-lang'); renderList(activeLang, document.getElementById('ws-search').value); });
-    });
-    target.querySelectorAll('.ws-entry').forEach(function(card) {
+    gridDiv.querySelectorAll('.ws-entry').forEach(function(card) {
       card.addEventListener('click', function() { renderDetail(card.getAttribute('data-id')); });
     });
+  }
+
+  // ── Render list view (controls + grid, for returning from detail) ────
+  function renderList() {
+    controlsDiv.style.display = '';
+    gridDiv.style.display = '';
+    renderGrid();
   }
 
   function renderDetail(wordId) {
     var e = WS.lookup(wordId);
     if (!e) return;
+
+    // Hide controls, use grid container for detail
+    controlsDiv.style.display = 'none';
 
     var occHtml = '';
     if (e.occurrences && e.occurrences.length) {
@@ -148,7 +176,7 @@
       occHtml += '</ul>';
     }
 
-    target.innerHTML =
+    gridDiv.innerHTML =
       '<button class="ws-detail-back">&larr; Back to all words</button>' +
       '<div class="ws-detail-header">' +
         '<div class="ws-detail-lang">' + e.language + '</div>' +
@@ -161,13 +189,13 @@
       (e.note ? '<div class="ws-detail-section"><div class="ws-detail-label">Theological Significance</div><div class="ws-detail-note">' + e.note + '</div></div>' : '') +
       (occHtml ? '<div class="ws-detail-section"><div class="ws-detail-label">Occurrences</div>' + occHtml + '</div>' : '');
 
-    target.querySelector('.ws-detail-back').addEventListener('click', function() { renderList(activeLang); });
+    gridDiv.querySelector('.ws-detail-back').addEventListener('click', function() { renderList(); });
   }
 
   function handleHash() {
     var h = location.hash.replace('#', '');
     if (h && WS.lookup(h)) { renderDetail(h); return; }
-    renderList('all');
+    renderList();
   }
   handleHash();
   window.addEventListener('hashchange', handleHash);
