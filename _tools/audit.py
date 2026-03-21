@@ -1055,7 +1055,7 @@ else:
 section('18. Verse Loading Integrity')
 
 _vl_errors = []
-for book_dir, book_name, total, live, _test, subdir in REGISTRY:
+for book_dir, book_name, total, live, _test, subdir in _shared.REGISTRY:
     if live == 0: continue
     _vf = os.path.join(REPO, 'verses', 'niv', subdir, f'{book_dir}.js')
     if not os.path.exists(_vf):
@@ -1089,7 +1089,26 @@ if _vl_errors:
     fail(f'Verse loading issues ({len(_vl_errors)}):')
     for _e in _vl_errors[:5]: fail(f'  {_e}')
 else:
-    ok(f'All {sum(1 for _,_,_,l,_,_ in REGISTRY if l > 0)} books pass verse loading integrity')
+    ok(f'All {sum(1 for _,_,_,l,_,_ in _shared.REGISTRY if l > 0)} books pass verse loading integrity')
+
+# ESV coverage: every live chapter should have ESV data too
+_esv_gaps = []
+for book_dir, book_name, total, live, _test, subdir in _shared.REGISTRY:
+    if live == 0: continue
+    _ef = os.path.join(REPO, 'verses', 'esv', subdir, f'{book_dir}.js')
+    if not os.path.exists(_ef):
+        _esv_gaps.append(f'{book_name}: ESV file missing')
+        continue
+    with open(_ef) as _f: _ejs = _f.read()
+    _esv_chs = set(int(m) for m in re.findall(r'"ch":(\d+)', _ejs))
+    for ch in range(1, live + 1):
+        if ch not in _esv_chs:
+            _esv_gaps.append(f'{book_name} {ch}: missing from ESV data')
+if _esv_gaps:
+    fail(f'ESV verse gaps ({len(_esv_gaps)}):')
+    for _g in _esv_gaps[:5]: fail(f'  {_g}')
+else:
+    ok(f'ESV verse data complete for all {sum(1 for _,_,_,l,_,_ in _shared.REGISTRY if l > 0)} live books')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # RESULT
