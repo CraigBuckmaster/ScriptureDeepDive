@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.276';
+const CACHE = 'scripture-2.277';
 
 const SHELL = [
   '/',
@@ -630,7 +630,14 @@ const PRECACHE = [
   '/ot/isaiah/Isaiah_11.html',
   '/ot/isaiah/Isaiah_12.html',
   '/ot/isaiah/Isaiah_13.html',
+  '/ot/isaiah/Isaiah_14.html',
+  '/ot/isaiah/Isaiah_15.html',
+  '/ot/isaiah/Isaiah_16.html',
+  '/ot/isaiah/Isaiah_17.html',
+  '/ot/isaiah/Isaiah_18.html',
+  '/ot/isaiah/Isaiah_19.html',
   '/ot/isaiah/Isaiah_2.html',
+  '/ot/isaiah/Isaiah_20.html',
   '/ot/isaiah/Isaiah_3.html',
   '/ot/isaiah/Isaiah_4.html',
   '/ot/isaiah/Isaiah_5.html',
