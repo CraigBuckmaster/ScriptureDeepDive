@@ -187,7 +187,7 @@ def head(book_name, book_dir, ch, is_nt=False):
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Scripture">
 <meta name="theme-color" content="#0c0a07">
-<link rel="apple-touch-icon" href="../../icon-192.png">
+<link rel="apple-touch-icon" href="../../assets/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../styles.css">
 </head>
