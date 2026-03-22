@@ -70,7 +70,7 @@ REGISTRY = [
     ('2_kings',     '2 Kings',      25, 25, 'OT', 'ot'),
     ('1_chronicles','1 Chronicles', 29, 29, 'OT', 'ot'),
     ('2_chronicles','2 Chronicles', 36, 36, 'OT', 'ot'),
-    ('ezra',        'Ezra',         10,  4, 'OT', 'ot'),
+    ('ezra',        'Ezra',         10, 10, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
