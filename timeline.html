@@ -169,7 +169,9 @@ const TOTAL_WIDTH = 9000;
 
 // 12 label lanes
 const TL = {
-  H: 620,
+  H_BASE: 295,    // events + axis + labels only
+  H_PEOPLE: 475,  // extends through people lanes
+  H_FULL: 555,    // extends through history lanes
   ERA_BAR_Y: 30, ERA_BAR_H: 26,
   // Event label lanes (12), 15px spacing, era bar bottom = y56
   LANES: [71,86,101,116,131,146,161,176,191,206,221,236],
@@ -188,6 +190,27 @@ const LABEL_PAD    = 20;
 const LABEL_GAP    = 10;
 
 // ── STATE ──────────────────────────────────────────────────────────────────
+function activeH(){
+  if(showHistory) return TL.H_FULL;
+  if(showPeople)  return TL.H_PEOPLE;
+  return TL.H_BASE;
+}
+
+function updateViewBox(){
+  const svgEl=document.getElementById('timeline-svg');
+  if(!svgEl) return;
+  const W=document.getElementById('timeline-panel').clientWidth;
+  const H=activeH();
+  svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  // Resize background rects and clip rect to match
+  svgEl.querySelectorAll(':scope > rect').forEach(r=>{
+    r.setAttribute('height',H);
+    if(r.getAttribute('width')!==String(W)) r.setAttribute('width',W);
+  });
+  const clipRect=svgEl.querySelector('clipPath > rect');
+  if(clipRect){ clipRect.setAttribute('height',H); clipRect.setAttribute('width',W); }
+}
+
 let translateX=0, scaleX=1;
 let currentEra='all', showPeople=false, showHistory=false;
 let isPanning=false, panStartX=0, panStartTranslate=0, lastPinchDist=0;
@@ -219,7 +242,7 @@ function txt(text,attrs,parent){
 function initTimeline(){
   const panel=document.getElementById('timeline-panel');
   const svgEl=document.getElementById('timeline-svg');
-  const W=panel.clientWidth, H=TL.H;
+  const W=panel.clientWidth, H=activeH();
 
   svgEl.setAttribute('width',panel.clientWidth);
   svgEl.setAttribute('height',panel.clientHeight);
@@ -578,6 +601,7 @@ function togglePeople(){
   if(gp){ gp.setAttribute('opacity',showPeople?'1':'0'); if(showPeople) drawPeople(); }
   document.getElementById('people-toggle-btn')?.classList.toggle('active',showPeople);
   document.getElementById('mobile-people-btn')?.classList.toggle('active',showPeople);
+  updateViewBox();
 }
 function toggleHistory(){
   showHistory=!showHistory;
@@ -585,6 +609,7 @@ function toggleHistory(){
   if(gh){ gh.setAttribute('opacity',showHistory?'1':'0'); if(showHistory) drawHistory(); }
   document.getElementById('history-toggle-btn')?.classList.toggle('active',showHistory);
   document.getElementById('mobile-history-btn')?.classList.toggle('active',showHistory);
+  updateViewBox();
 }
 function toggleLegend(){ document.getElementById('legend')?.classList.toggle('collapsed'); }
 function toggleMobileLegend(){
