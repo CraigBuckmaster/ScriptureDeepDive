@@ -198,10 +198,16 @@ window.SCHOLAR_DATA = [
    tradition:'Evangelical Academic',desc:'NICOT Ecclesiastes and Song of Solomon. Reformed evangelical with literary sensitivity.',
    dates:'1952\u2013',photo:'',works:'NICOT Ecclesiastes (1998), Song of Solomon (2001)',
    bio:'Tremper Longman III is Distinguished Scholar and Professor Emeritus of Biblical Studies at Westmont College. His NICOT commentaries on Ecclesiastes and Song of Solomon combine evangelical conviction with sophisticated literary analysis. He reads Qoheleth as a foil whose pessimism is corrected by the epilogue narrator.',
-   bookScope:['ecclesiastes'],buttonCSS:'.anno-trigger.longman'},
+   bookScope:['ecclesiastes','song_of_solomon'],buttonCSS:'.anno-trigger.longman'},
   {key:'fox',name:'Michael V. Fox',color:'#a0b8a0',scope:'Ecclesiastes',
    tradition:'Jewish Academic',desc:'JPS Ecclesiastes. The definitive philological commentary on Qoheleth.',
    dates:'1940\u2013',photo:'',works:'JPS Qohelet (2004), A Time to Tear Down (1999)',
    bio:'Michael V. Fox is the Jay C. and Ruth Halls Bascom Professor Emeritus of Hebrew at the University of Wisconsin-Madison. His two books on Ecclesiastes represent the most thorough philological analysis of Qoheleth in English. He argues that hebel means “absurd” rather than “meaningless” \u2014 life is not empty but irrational, defying human attempts to find coherent patterns.',
    bookScope:['ecclesiastes'],buttonCSS:'.anno-trigger.fox'}
+,
+  {key:'garrett',name:'Duane A. Garrett',color:'#c89898',scope:'Song of Solomon',
+   tradition:'Evangelical Academic',desc:'NAC Song of Songs. Reads it as a unified love poem celebrating marital intimacy.',
+   dates:'1953\u2013',photo:'',works:'NAC Song of Songs (2004)',
+   bio:'Duane Garrett is John R. Sampey Professor of Old Testament Interpretation at The Southern Baptist Theological Seminary. His NAC commentary on Song of Songs reads the poem as a celebration of marital love, structured as a unified dramatic sequence rather than a collection of fragments.',
+   bookScope:['song_of_solomon'],buttonCSS:'.anno-trigger.garrett'}
 ];

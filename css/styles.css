@@ -606,5 +606,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.fox{color:#a0b8a0;border-color:#607860;background:rgba(96,120,96,.22);}
 .anno-trigger.fox:hover{border-color:#a0b8a0;background:rgba(96,120,96,.32);}
 .anno-trigger.fox.active{filter:brightness(1.25);}
+.anno-trigger.garrett{color:#c89898;border-color:#886060;background:rgba(136,96,96,.22);}
+.anno-trigger.garrett:hover{border-color:#c89898;background:rgba(136,96,96,.32);}
+.anno-trigger.garrett.active{filter:brightness(1.25);}
 .com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
 .com-panel.com-japhet h4{color:#a8c8b8;}

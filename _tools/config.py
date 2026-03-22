@@ -52,7 +52,7 @@ COMMENTATOR_SCOPE = {
 
     # Robert Alter — The Hebrew Bible: A Translation with Commentary (2019)
     # Covers the entire Hebrew Bible (Torah, Prophets, Writings).
-    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes'],
+    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes', 'song_of_solomon'],
     # Future: add 'psalms', 'job', 'isaiah', etc. as built
 
     # Robert Hubbard — NICOT Commentary on Ruth (1988)
@@ -105,8 +105,9 @@ COMMENTATOR_SCOPE = {
     'levenson':  ['esther'],
     'clines':    ['job'],                              # David Clines, WBC Job (1989-2011)
     'habel':     ['job'],
-    'longman':   ['ecclesiastes'],               # Tremper Longman III, NICOT Ecclesiastes (1998)
-    'fox':       ['ecclesiastes'],               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'longman':   ['ecclesiastes', 'song_of_solomon'],               # Tremper Longman III, NICOT Ecclesiastes (1998)
+    'fox':       ['ecclesiastes'],
+    'garrett':   ['song_of_solomon'],            # Duane Garrett, NAC Song of Songs (2004)               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -442,6 +443,16 @@ BOOK_META = {
         'vhl_people': ['Qoheleth','Solomon','God'],
         'vhl_key': ['meaningless','hebel','wisdom','folly','toil','profit','portion','time','death','fear','God','righteous','wicked','good','evil','joy','vanity','wind'],
         'vhl_time': ['time','day','days','youth','old','morning','evening','season'],
+    },
+    'song_of_solomon': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Traditionally Solomon (1:1). '
+                 '<strong>Date:</strong> 10th c. BC (traditional) or later. '
+                 '<strong>Setting:</strong> Royal court; pastoral landscape of Israel.'),
+        'vhl_places': ['Jerusalem','Lebanon','Sharon','Carmel','En Gedi','Tirzah','Hermon'],
+        'vhl_people': ['Beloved','Lover','Solomon','Daughters of Jerusalem'],
+        'vhl_key': ['love','beloved','beautiful','desire','garden','vineyard','fragrance','kiss','lily','dove','myrrh','wine','spring','fountain','seal'],
+        'vhl_time': ['night','day','dawn','spring','winter'],
     },
     'proverbs': {
         'is_nt': False,
@@ -1012,5 +1023,6 @@ SCHOLAR_REGISTRY = [
     ('habel',       'habel',      'Habel',        'habel'),
     ('longman',     'longman',    'Longman',      'longman'),
     ('fox',         'fox',        'Fox',          'fox'),
+    ('garrett',     'garrett',    'Garrett',      'garrett'),
 ]
 
