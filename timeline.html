@@ -455,6 +455,7 @@ function drawPeople(){
 function drawHistory(){
   const gh=document.getElementById('g-history');
   if(!gh||historyRendered) return;
+  if(typeof WORLD_EVENTS==='undefined'||!WORLD_EVENTS.length) return;
   historyRendered=true;
   const HIST_COLOR='#1e3548';
   const LANES=TL.HIST_LANES;
