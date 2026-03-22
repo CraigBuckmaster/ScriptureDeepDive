@@ -79,7 +79,7 @@ REGISTRY = [
     ('psalms',       'Psalms',       150,150, 'OT', 'ot'),
     ('daniel',       'Daniel',        12, 12, 'OT', 'ot'),
     ('lamentations', 'Lamentations',    5,  5, 'OT', 'ot'),
-    ('isaiah',       'Isaiah',         66, 13, 'OT', 'ot'),
+    ('isaiah',       'Isaiah',         66, 20, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
