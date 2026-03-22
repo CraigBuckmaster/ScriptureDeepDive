@@ -405,7 +405,6 @@ function refreshLabelScales() {
 function drawPeople(){
   const gp=document.getElementById('g-people');
   if(!gp||peopleRendered) return;
-  peopleRendered=true;
   const dimAll=currentEra!=='all';
   const ERA_BOT=TL.ERA_BAR_Y+TL.ERA_BAR_H;
   const LANES=TL.PEOPLE_LANES;
@@ -449,6 +448,7 @@ function drawPeople(){
     t.textContent=person.name;
     t.addEventListener('click',()=>openPersonDetail(person));
   });
+  peopleRendered=true;
 }
 
 // ── HISTORY LAYER ──────────────────────────────────────────────────────────
@@ -456,7 +456,6 @@ function drawHistory(){
   const gh=document.getElementById('g-history');
   if(!gh||historyRendered) return;
   if(typeof WORLD_EVENTS==='undefined'||!WORLD_EVENTS.length) return;
-  historyRendered=true;
   const HIST_COLOR='#1e3548';
   const LANES=TL.HIST_LANES;
   const N=LANES.length;
@@ -496,6 +495,7 @@ function drawHistory(){
     t.textContent=ev.name;
     t.addEventListener('click',()=>openHistoryDetail(ev));
   });
+  historyRendered=true;
 }
 
 // ── PAN / ZOOM ──────────────────────────────────────────────────────────────

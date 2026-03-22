@@ -256,6 +256,25 @@ const EVENTS = [
 
 { id:'revelation', era:'nt', name:'Revelation Written', year:95, ref:'Revelation 1–22', chapter:'nt/acts/Acts_28.html', people:['john-ap'],
   summary:'The apostle John, exiled on the island of Patmos under Domitian\'s persecution, received a series of visions from the risen, glorified Christ. Seven letters to seven churches. Four living creatures and twenty-four elders. Seals, trumpets, bowls. The great dragon and the Lamb. Babylon the Great and the New Jerusalem. "I am the Alpha and the Omega, the First and the Last, the Beginning and the End." The Scriptures that began with creation end with new creation: "He who was seated on the throne said, \'I am making everything new!\' ... It is done." The entire biblical narrative arrives at its intended destination.' },
+
+  {id:'joshua-conquest', name:'Joshua leads conquest of Canaan', year:-1406, era:'exodus', ref:'Joshua 1–6', people:['joshua'],
+    summary:'After Moses\' death, Joshua leads Israel across the Jordan and into Canaan. The conquest is both military campaign and theological statement: God is giving the land he promised to Abraham.' },
+  {id:'joshua-jericho', name:'Fall of Jericho', year:-1405, era:'exodus', ref:'Joshua 6', chapter:'ot/joshua/Joshua_6.html', people:['joshua'],
+    summary:'The first city conquered in Canaan falls not by siege but by procession: seven days of marching, seven priests with trumpets, and a shout. The walls collapse. Rahab and her family are spared.' },
+  {id:'joshua-death', name:'Joshua dies at 110', year:-1380, era:'judges', ref:'Joshua 24:29\u201331', chapter:'ot/joshua/Joshua_24.html', people:['joshua'],
+    summary:'Joshua dies after renewing the covenant at Shechem: "Choose for yourselves this day whom you will serve." Israel served the LORD throughout Joshua\'s lifetime and that of the elders who outlived him.' },
+  {id:'judges-othniel', name:'Othniel judges Israel', year:-1370, era:'judges', ref:'Judges 3:7\u201311', chapter:'ot/judges/Judges_3.html', people:[],
+    summary:'The first judge. Israel does evil, is oppressed by Cushan-Rishathaim of Aram, cries out, and God raises Othniel. The Spirit of the LORD comes on him; he delivers Israel. The cycle begins.' },
+  {id:'judges-ehud', name:'Ehud delivers from Moab', year:-1300, era:'judges', ref:'Judges 3:12\u201330', chapter:'ot/judges/Judges_3.html', people:[],
+    summary:'Left-handed Ehud conceals a sword and assassinates Eglon king of Moab in his private upper room. He then rallies Israel to seize the Jordan fords, cutting off Moabite retreat. Eighty years of peace follow.' },
+  {id:'judges-deborah', name:'Deborah and Barak defeat Sisera', year:-1230, era:'judges', ref:'Judges 4\u20135', chapter:'ot/judges/Judges_4.html', people:[],
+    summary:'Prophetess Deborah commissions Barak to fight Sisera\'s 900 iron chariots. Barak insists Deborah accompany him. God sends a rainstorm that bogs down the chariots. Jael finishes Sisera with a tent peg. Deborah\'s victory song (ch 5) is among the oldest Hebrew poetry.' },
+  {id:'judges-gideon', name:'Gideon defeats Midian', year:-1190, era:'judges', ref:'Judges 6\u20138', chapter:'ot/judges/Judges_6.html', people:[],
+    summary:'God reduces Gideon\'s army from 32,000 to 300 so that Israel cannot boast. With torches, trumpets, and jars, 300 men rout the Midianite host. "The sword of the LORD and of Gideon!" The victory is God\'s, not Israel\'s.' },
+  {id:'judges-jephthah', name:'Jephthah delivers from Ammon', year:-1100, era:'judges', ref:'Judges 10:6\u201312:7', chapter:'ot/judges/Judges_11.html', people:[],
+    summary:'An outcast and son of a prostitute, Jephthah is called back to lead Gilead against Ammon. He makes a rash vow with devastating consequences. His story reveals both God\'s use of unlikely leaders and the cost of foolish promises.' },
+  {id:'judges-samson', name:'Samson judges Israel', year:-1070, era:'judges', ref:'Judges 13\u201316', chapter:'ot/judges/Judges_13.html', people:[],
+    summary:'A Nazirite from birth with supernatural strength, Samson\'s story is a study in wasted potential. His final act — pulling down the temple of Dagon — kills more Philistines in his death than in his life. He judged Israel twenty years.' }
 ];
 
 const TIMELINE_PEOPLE = [
@@ -436,14 +455,5 @@ const WORLD_EVENTS = [
   { id:'wh-silk-road', name:'Silk Road trade route opens', year:-130, region:'Central Asia',
     summary:'Han Dynasty China opens formal trade with the West along what becomes known as the Silk Road. Goods, ideas, and eventually religions (including Christianity and Buddhism) would travel this network. The world of Acts is a world of long-distance trade — Lydia is a dealer in purple cloth (Acts 16:14), Priscilla and Aquila are tentmakers (Acts 18:3).' },
   { id:'wh-dead-sea-scrolls-era', name:'Qumran Community established', year:-150, region:'Judea',
-    summary:'The Essene community at Qumran is established near the Dead Sea, copying and preserving the Hebrew scriptures. Their library — discovered in caves in 1947 as the Dead Sea Scrolls — includes the oldest surviving manuscripts of almost every OT book, proving the remarkable accuracy of textual transmission over a thousand years.' },,
-{id:"joshua-conquest", label:"Joshua leads conquest of Canaan", year:-1406, era:"exodus"},
-{id:"joshua-jericho", label:"Fall of Jericho", year:-1405, era:"exodus"},
-{id:"joshua-death", label:"Joshua dies at 110", year:-1380, era:"judges"},
-{id:"judges-othniel",label:"Othniel judges Israel",year:-1370,era:"judges"},
-{id:"judges-ehud",label:"Ehud delivers from Moab",year:-1300,era:"judges"},
-{id:"judges-deborah",label:"Deborah and Barak defeat Sisera",year:-1230,era:"judges"},
-{id:"judges-gideon",label:"Gideon defeats Midian",year:-1190,era:"judges"},
-{id:"judges-jephthah",label:"Jephthah delivers from Ammon",year:-1100,era:"judges"},
-{id:"judges-samson",label:"Samson judges Israel",year:-1070,era:"judges"}
+    summary:'The Essene community at Qumran is established near the Dead Sea, copying and preserving the Hebrew scriptures. Their library — discovered in caves in 1947 as the Dead Sea Scrolls — includes the oldest surviving manuscripts of almost every OT book, proving the remarkable accuracy of textual transmission over a thousand years.' }
 ];
