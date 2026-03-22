@@ -71,3 +71,16 @@
   upgrade(prevEl, prevHref);
   upgrade(nextEl, nextHref);
 })();
+
+// ── Auto-reload when a new service worker takes control ──────────────────
+// This fires when skipWaiting + clients.claim activates a new SW while the
+// page is open. The page reloads once to pick up fresh infrastructure files
+// (books.js, qnav.js, etc.) from the new cache.
+if ('serviceWorker' in navigator) {
+  var _swRefreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function() {
+    if (_swRefreshing) return;
+    _swRefreshing = true;
+    window.location.reload();
+  });
+}
