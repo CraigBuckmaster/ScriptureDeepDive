@@ -180,6 +180,7 @@ const TL = {
   // History label lanes (3), 15px spacing
   // People bottom = 458 — start history at 503 for 45px clear gap
   HIST_LANES: [503,518,533],
+  HIST_Y: 503,
 };
 // Label metrics (same for all layers)
 const LABEL_CHAR_W = 9.5;   // conservative for Cinzel Bold
@@ -218,14 +219,15 @@ function txt(text,attrs,parent){
 function initTimeline(){
   const panel=document.getElementById('timeline-panel');
   const svgEl=document.getElementById('timeline-svg');
-  const W=panel.clientWidth, H=panel.clientHeight;
+  const W=panel.clientWidth, H=TL.H;
 
-  svgEl.setAttribute('width',W);
-  svgEl.setAttribute('height',H);
+  svgEl.setAttribute('width',panel.clientWidth);
+  svgEl.setAttribute('height',panel.clientHeight);
   svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svgEl.setAttribute('preserveAspectRatio','none');
   while(svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
 
-  // Parchment background
+  // Parchment background — fill the full coordinate space
   const defs=el('defs',{},svgEl);
   const flt=el('filter',{id:'grain',x:'0%',y:'0%',width:'100%',height:'100%'},defs);
   el('feTurbulence',{type:'fractalNoise',baseFrequency:'0.72',numOctaves:'3',stitchTiles:'stitch',result:'noise'},flt);
@@ -550,13 +552,29 @@ function zoomTimeline(f){ zoomAround(f,document.getElementById('timeline-panel')
 function jumpToEra(era){
   const W=document.getElementById('timeline-panel').clientWidth;
   const g=document.getElementById('g-inner');
-  const yr=era==='all'?-1500:(ERA_RANGES[era][0]+ERA_RANGES[era][1])/2;
-  const start=translateX, end=W/2-yearToX(yr)*scaleX;
+
+  let targetScale, targetYear;
+  if(era==='all'){
+    targetScale=1;
+    targetYear=-1500;
+  } else {
+    const[y0,y1]=ERA_RANGES[era];
+    const x0=yearToX(y0), x1=yearToX(y1);
+    const eraWidth=x1-x0;
+    // Zoom so the era fills ~75% of the viewport width
+    targetScale=Math.min(6,Math.max(0.4,(W*0.75)/eraWidth));
+    targetYear=(y0+y1)/2;
+  }
+
+  const startTx=translateX, endTx=W/2-yearToX(targetYear)*targetScale;
+  const startSx=scaleX, endSx=targetScale;
   const t0=performance.now();
   (function step(now){
-    const t=Math.min(1,(now-t0)/400), e=t<.5?2*t*t:-1+(4-2*t)*t;
-    translateX=start+(end-start)*e;
+    const t=Math.min(1,(now-t0)/450), e=t<.5?2*t*t:-1+(4-2*t)*t;
+    translateX=startTx+(endTx-startTx)*e;
+    scaleX=startSx+(endSx-startSx)*e;
     applyTransform(g);
+    refreshLabelScales();
     if(t<1) requestAnimationFrame(step);
   })(t0);
 }
