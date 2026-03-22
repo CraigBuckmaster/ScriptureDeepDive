@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.236';
+const CACHE = 'scripture-2.237';
 
 const SHELL = [
   '/',
@@ -585,6 +585,11 @@ const PRECACHE = [
   '/ot/job/Job_18.html',
   '/ot/job/Job_19.html',
   '/ot/job/Job_2.html',
+  '/ot/job/Job_20.html',
+  '/ot/job/Job_21.html',
+  '/ot/job/Job_22.html',
+  '/ot/job/Job_23.html',
+  '/ot/job/Job_24.html',
   '/ot/job/Job_3.html',
   '/ot/job/Job_4.html',
   '/ot/job/Job_5.html',
