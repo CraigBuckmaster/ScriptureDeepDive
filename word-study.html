@@ -6,7 +6,7 @@
 <title>Word Study — Scripture Deep Dive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="css/base.css">
 <style>
 :root { --accent:#c9a84c; }
 .ws-wrapper { max-width:860px; margin:0 auto; padding:1.5rem; }
@@ -72,10 +72,10 @@
   <p class="ws-page-sub">Explore key Hebrew and Greek words — their semantic range, theological weight, and every occurrence in live chapters.</p>
   <div id="ws-target"></div>
 </div>
-<script src="books.js"></script>
-<script src="verse-resolver.js"></script>
+<script src="js/core/books.js"></script>
+<script src="js/features/verse-resolver.js"></script>
 <script src="data/word-study.js"></script>
-<script src="word-study-engine.js"></script>
+<script src="js/features/word-study-engine.js"></script>
 <script>
 (function() {
   'use strict';
@@ -201,6 +201,6 @@
   window.addEventListener('hashchange', handleHash);
 })();
 </script>
-<script src="site-footer.js"></script>
+<script src="js/core/site-footer.js"></script>
 </body>
 </html>

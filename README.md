@@ -31,11 +31,11 @@ Chapters are built by ephemeral Python generators (live in `/tmp/`, never commit
 | `_tools/shared.py` | Build system: `build_chapter()`, `rebuild_*()` functions |
 | `_tools/config.py` | Data constants: scholar scopes, book metadata, scholar registry |
 | `_tools/audit.py` | 22-section structural audit (runs in CI) |
-| `service-worker.js` | SHELL (41 infra files) + PRECACHE (698 content files) |
-| `books.js` | Book registry for nav-arrows and qnav |
-| `qnav.js` | Chapter picker overlay with verse search |
-| `nav-arrows.js` | Prev/next chapter navigation + SW auto-reload |
-| `feature-loader.js` | 4-phase progressive loader for chapter features |
+| `service-worker.js` | SHELL (43 infra files) + PRECACHE (701 content files) |
+| `js/core/books.js` | Book registry for nav-arrows and qnav |
+| `js/core/qnav.js` | Chapter picker overlay with verse search |
+| `js/core/nav-arrows.js` | Prev/next chapter navigation + SW auto-reload |
+| `js/features/feature-loader.js` | 4-phase progressive loader for chapter features |
 
 ### Interactive Tools
 
@@ -80,7 +80,7 @@ node _tools/tests/test_verse_resolver.js   # 66 verse resolver tests
 
 ## Service Worker
 
-- **SHELL** (41 files): Infrastructure cached on install
-- **PRECACHE** (698 files): Chapters + verses cached on install for offline reading
+- **SHELL** (43 files): Infrastructure cached on install
+- **PRECACHE** (701 files): Chapters + verses cached on install for offline reading
 - `skipWaiting()` + `clients.claim()` for immediate activation
 - Pages auto-reload via `controllerchange` listener when new SW takes control

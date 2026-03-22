@@ -23,7 +23,7 @@ global.BOOKS = [
 global.window.BOOKS = global.BOOKS;
 
 // Load verse-resolver.js
-var code = fs.readFileSync('verse-resolver.js', 'utf8');
+var code = fs.readFileSync('js/features/verse-resolver.js', 'utf8');
 eval(code);
 
 var VR = global.window.VerseResolver;

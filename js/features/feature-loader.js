@@ -17,8 +17,8 @@
   var PHASES = [
     // Phase 1: shared services
     [
-      '../../verse-resolver.js',
-      '../../study-storage.js'
+      '../../js/features/verse-resolver.js',
+      '../../js/features/study-storage.js'
     ],
     // Phase 2: data files (must complete before engines capture globals)
     [
@@ -27,14 +27,14 @@
     ],
     // Phase 3: engines (index the data loaded in Phase 2)
     [
-      '../../cross-ref-engine.js',
-      '../../word-study-engine.js'
+      '../../js/features/cross-ref-engine.js',
+      '../../js/features/word-study-engine.js'
     ],
     // Phase 4: UI features (depend on services + engines)
     [
-      '../../annotations.js',
-      '../../cross-ref-ui.js',
-      '../../word-study-ui.js'
+      '../../js/features/annotations.js',
+      '../../js/features/cross-ref-ui.js',
+      '../../js/features/word-study-ui.js'
     ]
   ];
 
