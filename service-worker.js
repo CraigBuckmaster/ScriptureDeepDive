@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.246';
+const CACHE = 'scripture-2.247';
 
 const SHELL = [
   '/',
@@ -86,6 +86,8 @@ const PRECACHE = [
   '/verses/niv/ot/job.json',
   '/verses/niv/ot/ecclesiastes.js',
   '/verses/niv/ot/ecclesiastes.json',
+  '/verses/niv/ot/song_of_solomon.js',
+  '/verses/niv/ot/song_of_solomon.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -137,6 +139,8 @@ const PRECACHE = [
   '/verses/esv/ot/job.json',
   '/verses/esv/ot/ecclesiastes.js',
   '/verses/esv/ot/ecclesiastes.json',
+  '/verses/esv/ot/song_of_solomon.js',
+  '/verses/esv/ot/song_of_solomon.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -787,6 +791,10 @@ const PRECACHE = [
   '/ot/ruth/Ruth_2.html',
   '/ot/ruth/Ruth_3.html',
   '/ot/ruth/Ruth_4.html',
+  '/ot/song_of_solomon/Song_of_Solomon_1.html',
+  '/ot/song_of_solomon/Song_of_Solomon_2.html',
+  '/ot/song_of_solomon/Song_of_Solomon_3.html',
+  '/ot/song_of_solomon/Song_of_Solomon_4.html',
   '/intro/1_chronicles.html',
   '/intro/1_kings.html',
   '/intro/1_samuel.html',
@@ -812,6 +820,7 @@ const PRECACHE = [
   '/intro/numbers.html',
   '/intro/proverbs.html',
   '/intro/ruth.html',
+  '/intro/song_of_solomon.html',
 ];
 
 self.addEventListener('install', e => {

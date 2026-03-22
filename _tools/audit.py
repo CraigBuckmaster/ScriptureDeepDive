@@ -56,6 +56,7 @@ BOOK_ROSTER = [
     ('esther',        'Esther',        range(1, 11),  'ot'),
     ('job',            'Job',           range(1, 43),  'ot'),
     ('ecclesiastes',   'Ecclesiastes',  range(1, 13),  'ot'),
+    ('song_of_solomon','Song of Solomon',range(1, 9),   'ot'),
     ('proverbs',     'Proverbs',     range(1, 32), 'ot'),
     ('matthew',      'Matthew',      range(1, 29), 'nt'),
     ('mark',         'Mark',         range(1, 17), 'nt'),
@@ -329,7 +330,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 section('4. Verse Index (verses/)')
 
-OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth','1_samuel','2_samuel','1_kings','2_kings','1_chronicles','2_chronicles','ezra','nehemiah','esther','job','ecclesiastes','proverbs']
+OT_BOOKS = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth','1_samuel','2_samuel','1_kings','2_kings','1_chronicles','2_chronicles','ezra','nehemiah','esther','job','ecclesiastes','song_of_solomon','proverbs']
 
 # Check monolithic verses/verses.js (full canon fallback)
 vjs_path = f'{REPO}/verses/niv/verses.js'
@@ -523,7 +524,7 @@ else:
     ok('All chapters register service worker at correct depth (../../)')
 
 # Verify SW CORE cache uses /ot/ and /nt/ prefixed paths
-old_flat = re.findall(r"'/(genesis|exodus|ruth|ezra|nehemiah|esther|job|ecclesiastes|proverbs|matthew|mark|luke|john|acts)/[^']+\.html'", sw)
+old_flat = re.findall(r"'/(genesis|exodus|ruth|ezra|nehemiah|esther|job|ecclesiastes|song_of_solomon|proverbs|matthew|mark|luke|john|acts)/[^']+\.html'", sw)
 if old_flat:
     fail(f'SW CORE has {len(old_flat)} flat (pre-restructure) chapter paths')
 else:
