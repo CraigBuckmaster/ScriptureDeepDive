@@ -167,23 +167,41 @@ const SCALE_BREAKPOINTS = [
 ];
 const TOTAL_WIDTH = 9000;
 
-// 12 label lanes
-const TL = {
-  H_BASE: 295,    // events + axis + labels only
-  H_PEOPLE: 475,  // extends through people lanes
-  H_FULL: 555,    // extends through history lanes
-  ERA_BAR_Y: 30, ERA_BAR_H: 26,
-  // Event label lanes (12), 15px spacing, era bar bottom = y56
-  LANES: [71,86,101,116,131,146,161,176,191,206,221,236],
-  AXIS_Y: 261,
-  // People label lanes (10), 15px spacing
-  // Axis labels sit at AXIS_Y+22=283 — start people at 323 for 40px clear gap
-  PEOPLE_LANES: [323,338,353,368,383,398,413,428,443,458],
-  // History label lanes (3), 15px spacing
-  // People bottom = 458 — start history at 503 for 45px clear gap
-  HIST_LANES: [503,518,533],
-  HIST_Y: 503,
-};
+// Dynamic layout — recomputed based on panel height + active layers
+var TL = {};
+function computeLayout() {
+  var panel = document.getElementById('timeline-panel');
+  var H = panel ? panel.clientHeight : 500;
+  var ERA_BAR_Y = 20, ERA_BAR_H = 22;
+  var eraBot = ERA_BAR_Y + ERA_BAR_H;
+  // Count active sections
+  var sections = 1 + (showPeople ? 1 : 0) + (showHistory ? 1 : 0);
+  var usable = H - eraBot - 10;
+  var perSection = usable / sections;
+  // Events section
+  var evCount = 12, evSpacing = Math.min(14, (perSection - 40) / evCount);
+  var evStart = eraBot + 12;
+  var LANES = [];
+  for (var i = 0; i < evCount; i++) LANES.push(Math.round(evStart + i * evSpacing));
+  var AXIS_Y = Math.round(LANES[evCount - 1] + evSpacing + 18);
+  // People section
+  var PEOPLE_LANES = [];
+  if (showPeople) {
+    var pplCount = 10, pplStart = AXIS_Y + 30;
+    var pplSpacing = Math.min(14, (perSection - 40) / pplCount);
+    for (var j = 0; j < pplCount; j++) PEOPLE_LANES.push(Math.round(pplStart + j * pplSpacing));
+  }
+  // History section
+  var HIST_LANES = [], HIST_Y = H - 10;
+  if (showHistory) {
+    var histStart = (showPeople ? PEOPLE_LANES[PEOPLE_LANES.length - 1] + 25 : AXIS_Y + 30);
+    var histCount = 3, histSpacing = Math.min(14, (H - histStart - 15) / histCount);
+    for (var k = 0; k < histCount; k++) HIST_LANES.push(Math.round(histStart + k * histSpacing));
+    HIST_Y = HIST_LANES[0];
+  }
+  TL = { ERA_BAR_Y:ERA_BAR_Y, ERA_BAR_H:ERA_BAR_H, LANES:LANES, AXIS_Y:AXIS_Y,
+         PEOPLE_LANES:PEOPLE_LANES, HIST_LANES:HIST_LANES, HIST_Y:HIST_Y };
+}
 // Label metrics (same for all layers)
 const LABEL_CHAR_W = 9.5;   // conservative for Cinzel Bold
 const LABEL_PAD    = 20;
