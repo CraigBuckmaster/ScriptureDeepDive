@@ -102,7 +102,9 @@ COMMENTATOR_SCOPE = {
     'kidner':    ['ezra', 'nehemiah'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
     'williamson':['ezra', 'nehemiah'],
     'jobes':     ['esther'],                             # Karen Jobes, NIVAC Esther (1999)
-    'levenson':  ['esther'],                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'levenson':  ['esther'],
+    'clines':    ['job'],                              # David Clines, WBC Job (1989-2011)
+    'habel':     ['job'],                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -419,6 +421,15 @@ BOOK_META = {
         'vhl_people': ['Esther','Mordecai','Haman','Xerxes','Ahasuerus','Vashti','Zeresh','Hathak','Memucan','Hegai','Bigthana','Teresh','Harbona'],
         'vhl_key': ['king','queen','decree','law','sceptre','gallows','feast','banquet','honour','Jews','destroy','deliverance','Purim','lot','edict','royal','throne'],
         'vhl_time': ['day','days','night','month','year','twelfth month','thirteenth day','Adar','Nisan'],
+    },
+    'job': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Unknown. <strong>Date:</strong> Composition debated (Mosaic to post-exilic). '
+                 '<strong>Setting:</strong> The land of Uz, patriarchal era.'),
+        'vhl_places': ['Uz','Edom','Sheba','Ophir','Teman','Jordan','Egypt','Rahab'],
+        'vhl_people': ['Job','Eliphaz','Bildad','Zophar','Elihu','Satan','God','Moses','Abraham'],
+        'vhl_key': ['LORD','God','Almighty','Shaddai','righteous','wicked','wisdom','justice','suffering','redeemer','whirlwind','dust','ashes','integrity','counsel','darkness','light','hope','fear'],
+        'vhl_time': ['day','days','night','months','years','morning','dawn'],
     },
     'proverbs': {
         'is_nt': False,
@@ -985,5 +996,7 @@ SCHOLAR_REGISTRY = [
     ('provan',      'provan',     'Provan',       'provan'),
     ('japhet',      'japhet',     'Japhet',       'japhet'),
     ('selman',      'selman',     'Selman',       'selman'),
+    ('clines',      'clines',     'Clines',       'clines'),
+    ('habel',       'habel',      'Habel',        'habel'),
 ]
 

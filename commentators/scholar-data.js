@@ -184,4 +184,13 @@ window.SCHOLAR_DATA = [
    photo:'',works:'OTL Esther (1997)',
    bio:'Jon Levenson is Albert A. List Professor of Jewish Studies at Harvard Divinity School. His OTL commentary on Esther is the standard academic treatment, combining literary sophistication with deep knowledge of Jewish interpretive traditions. He reads Esther as a diaspora survival narrative with profound connections to the Exodus story — Haman as a new Pharaoh, Esther as a new Moses.',
    bookScope:['esther'],buttonCSS:'.anno-trigger.levenson'}
+,
+  {key:'clines',name:'David J.A. Clines',dates:'1938\u2013',tradition:'Critical Academic',
+   photo:'',works:'WBC Job (1989\u20132011, 3 vols)',
+   bio:'David Clines is Emeritus Professor of Biblical Studies at the University of Sheffield. His three-volume Word Biblical Commentary on Job (1989, 2006, 2011) is the most comprehensive modern commentary on the book.',
+   bookScope:['job'],buttonCSS:'.anno-trigger.clines'},
+  {key:'habel',name:'Norman C. Habel',dates:'1932\u2013',tradition:'Lutheran Academic',
+   photo:'',works:'OTL Job (1985)',
+   bio:'Norman Habel is an Australian Lutheran theologian whose Old Testament Library commentary on Job (1985) reads the book as a legal drama \u2014 a cosmic court case in which Job demands a hearing and receives not a verdict but a theophany.',
+   bookScope:['job'],buttonCSS:'.anno-trigger.habel'}
 ];

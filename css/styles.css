@@ -594,5 +594,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.levenson{color:#a0c0a8;border-color:#487858;background:rgba(72,120,88,.22);}
 .anno-trigger.levenson:hover{border-color:#a0c0a8;background:rgba(72,120,88,.32);}
 .anno-trigger.levenson.active{filter:brightness(1.25);}
+.anno-trigger.clines{color:#b8a0d0;border-color:#6a5088;background:rgba(106,80,136,.22);}
+.anno-trigger.clines:hover{border-color:#b8a0d0;background:rgba(106,80,136,.32);}
+.anno-trigger.clines.active{filter:brightness(1.25);}
+.anno-trigger.habel{color:#d0b888;border-color:#887040;background:rgba(136,112,64,.22);}
+.anno-trigger.habel:hover{border-color:#d0b888;background:rgba(136,112,64,.32);}
+.anno-trigger.habel.active{filter:brightness(1.25);}
 .com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
 .com-panel.com-japhet h4{color:#a8c8b8;}
