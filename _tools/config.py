@@ -52,7 +52,7 @@ COMMENTATOR_SCOPE = {
 
     # Robert Alter — The Hebrew Bible: A Translation with Commentary (2019)
     # Covers the entire Hebrew Bible (Torah, Prophets, Writings).
-    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes', 'song_of_solomon', 'psalms'],
+    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes', 'song_of_solomon', 'psalms', 'lamentations'],
     # Future: add 'psalms', 'job', 'isaiah', etc. as built
 
     # Robert Hubbard — NICOT Commentary on Ruth (1988)
@@ -465,6 +465,18 @@ BOOK_META = {
         'vhl_people': ['David','God','Moses','Solomon','Abraham','Jacob','Messiah'],
         'vhl_key': ['LORD','God','praise','mercy','righteousness','wicked','salvation','trust','fear','love','faithful','king','throne','refuge','shepherd','rock','fortress','holy','glory','prayer'],
         'vhl_time': ['day','night','morning','forever','generations','eternity'],
+    },
+    'lamentations': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Traditionally attributed to Jeremiah; anonymous in the Hebrew text.\n\n'
+                 '<strong>When written:</strong> Shortly after Jerusalem\'s destruction, 586 BC.\n\n'
+                 '<strong>What prompted it:</strong> The fall of Jerusalem and destruction of Solomon\'s temple '
+                 'by Nebuchadnezzar. Five poems of grief, protest, and tentative hope.'),
+        'vhl_places': ['Jerusalem','Zion','gate','street','temple','wall','city'],
+        'vhl_people': ['LORD','daughter','children','enemy','prophet','priest','king'],
+        'vhl_time':   ['day','night','morning','evening','time','end'],
+        'vhl_key':    ['affliction','grief','tears','anger','compassion','faithfulness',
+                       'mercy','destruction','sin','hope','suffering','exile'],
     },
     'daniel': {
         'is_nt': False,

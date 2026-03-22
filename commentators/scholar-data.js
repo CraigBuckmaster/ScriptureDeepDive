@@ -230,5 +230,25 @@ window.SCHOLAR_DATA = [
   bio:'John J. Collins is Holmes Professor of Old Testament Criticism and Interpretation at Yale Divinity School. His Hermeneia commentary on Daniel (1993) is the standard critical treatment. He is the foremost authority on Jewish apocalypticism and Second Temple literature. His work situates Daniel within the broader apocalyptic genre of the ancient Near East while taking its theological claims seriously. His Apocalyptic Imagination traces the genre from Daniel through the Dead Sea Scrolls to the New Testament.',
   bookScope:['daniel'],
   buttonCSS:'.anno-trigger.collins'
+},
+{
+  key:'berlin',name:'Adele Berlin',color:'#c08060',
+  scope:'Lamentations',tradition:'Literary-Critical · Modern',
+  desc:'Leading Lamentations scholar; JPS commentary. Expert on biblical poetry and literary criticism.',
+  dates:'1943–',photo:'',
+  works:'Lamentations (JPS Bible Commentary, 2002), The Dynamics of Biblical Parallelism (1985)',
+  bio:'Adele Berlin is Robert H. Smith Professor Emerita at the University of Maryland. Her JPS commentary on Lamentations (2002) combines literary sensitivity with historical awareness. She pioneered the application of modern literary theory to biblical poetry, demonstrating how parallelism, wordplay, and structure create meaning. Her reading of Lamentations attends to both the raw grief and the artful poetic construction that shapes it.',
+  bookScope:['lamentations'],
+  buttonCSS:'.anno-trigger.berlin'
+},
+{
+  key:'oconnor',name:"Kathleen O'Connor",color:'#a080b0',
+  scope:'Lamentations',tradition:'Theological · Trauma Studies',
+  desc:"Lamentations as trauma literature; pioneering grief-theology scholar.",
+  dates:'1942–',photo:'',
+  works:"Lamentations and the Tears of the World (2002)",
+  bio:"Kathleen M. O'Connor is William Marcellus McPheeters Professor Emerita of Old Testament at Columbia Theological Seminary. Her Lamentations and the Tears of the World (2002) reads Lamentations through the lens of trauma theory, arguing that the poems perform the psychological and spiritual work of processing catastrophic loss. She shows how the book's raw honesty — including its anger at God — is itself therapeutic and faithful. Her work has transformed how pastors and theologians use Lamentations in contexts of grief, disaster, and collective trauma.",
+  bookScope:['lamentations'],
+  buttonCSS:'.anno-trigger.oconnor'
 }
 ];

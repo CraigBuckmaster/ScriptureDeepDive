@@ -622,3 +622,12 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.collins{color:#7a9ab0;border-color:#4a6a80;background:rgba(74,106,128,.08);}
 .anno-trigger.collins:hover{background:rgba(74,106,128,.18);border-color:#7a9ab0;}
 .anno-trigger.collins:active,.anno-trigger.collins.active{background:rgba(74,106,128,.28);border-color:#9abacc;}
+
+/* Berlin — warm terracotta (Lamentations) */
+.anno-trigger.berlin{color:#c08060;border-color:#8a5a3a;background:rgba(192,128,96,.08);}
+.anno-trigger.berlin:hover{background:rgba(192,128,96,.18);border-color:#c08060;}
+.anno-trigger.berlin:active,.anno-trigger.berlin.active{background:rgba(192,128,96,.28);border-color:#d0a080;}
+/* O'Connor — muted violet (Lamentations) */
+.anno-trigger.oconnor{color:#a080b0;border-color:#6a5078;background:rgba(160,128,176,.08);}
+.anno-trigger.oconnor:hover{background:rgba(160,128,176,.18);border-color:#a080b0;}
+.anno-trigger.oconnor:active,.anno-trigger.oconnor.active{background:rgba(160,128,176,.28);border-color:#c0a0d0;}
