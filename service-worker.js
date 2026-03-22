@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.247';
+const CACHE = 'scripture-2.248';
 
 const SHELL = [
   '/',
@@ -795,6 +795,10 @@ const PRECACHE = [
   '/ot/song_of_solomon/Song_of_Solomon_2.html',
   '/ot/song_of_solomon/Song_of_Solomon_3.html',
   '/ot/song_of_solomon/Song_of_Solomon_4.html',
+  '/ot/song_of_solomon/Song_of_Solomon_5.html',
+  '/ot/song_of_solomon/Song_of_Solomon_6.html',
+  '/ot/song_of_solomon/Song_of_Solomon_7.html',
+  '/ot/song_of_solomon/Song_of_Solomon_8.html',
   '/intro/1_chronicles.html',
   '/intro/1_kings.html',
   '/intro/1_samuel.html',
