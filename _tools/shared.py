@@ -739,7 +739,7 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             '<script src="../../js/core/history.js"></script>\n' +
             SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
-            '<script src="../../js/core/nav-arrows.js"></script>\n<script src="../../js/core/qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../js/features/translation.js"></script>\n<script src="../../js/features/feature-loader.js"></script>\n</body></html>')
+            '<script src="../../js/core/nav-arrows.js"></script>\n<script src="../../js/core/search-engine.js"></script>\n<script src="../../js/pages/people-index.js"></script>\n<script src="../../js/core/qnav.js"></script>\n<script src="../../js/features/person-sidebar.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../js/features/translation.js"></script>\n<script src="../../js/features/feature-loader.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
     path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -1808,6 +1808,10 @@ def rebuild_sw_js():
         '/css/timeline.css',
         # JS core
         '/js/core/books.js',
+        '/js/core/search-engine.js',
+        '/js/pages/people-index.js',
+        '/js/features/person-sidebar.js',
+        '/css/person-sidebar.css',
         '/js/core/qnav.js',
         '/js/core/nav-arrows.js',
         '/js/core/tog.js',

@@ -144,9 +144,8 @@ function _qnavApplyFocus(results) {
 }
 
 function qnavFilter(q) {
-  q = q.trim();
+  q = (q || '').trim();
   var ql = q.toLowerCase();
-  var words = ql.split(/\s+/).filter(function(w) { return w.length > 1; });
   var panel = document.getElementById('qnav-search-results');
   _qnavFocusIndex = -1;
   if (!q) {
@@ -158,47 +157,46 @@ function qnavFilter(q) {
   document.querySelectorAll('.qnav-ch-grid').forEach(function(g) { g.style.display = 'none'; });
   document.querySelectorAll('.qnav-book').forEach(function(b) { b.style.display = 'none'; });
 
-  var books = window.BOOKS || [];
-  var bookMatches = books.filter(function(b) { return b.live > 0 && b.name.toLowerCase().indexOf(ql) > -1; });
-
-  var verseMatches = ql.length >= 2 ? (window.VERSES_ALL || []).map(function(v) {
-    var text = v.text.toLowerCase(), ref = v.ref.toLowerCase(), score = 0;
-    for (var i = 0; i < words.length; i++) {
-      if (text.indexOf(words[i]) > -1) score += 2;
-      else if (ref.indexOf(words[i]) > -1) score += 1;
-    }
-    if (text.indexOf(ql) > -1) score += 5;
-    return { ref: v.ref, short: v.short, text: v.text, url: v.url, score: score };
-  }).filter(function(v) { return v.score > 0; })
-    .sort(function(a, b) { return b.score - a.score; })
-    .slice(0, 12) : [];
-
-  function hl(text) {
-    var out = text;
-    if (ql.length > 2) { var rx = new RegExp('(' + ql.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi'); out = out.replace(rx,'<em>$1</em>'); }
-    for (var i = 0; i < words.length; i++) { var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi'); out = out.replace(rx2,'<em>$1</em>'); }
-    return out;
-  }
+  var SE = window.SearchEngine;
+  if (!SE) return;
+  var r = SE.search(q, { books: window.BOOKS || [], requireLiveBooks: true, maxVerses: 10 });
+  var hl = SE.highlight;
 
   var html = '';
+
+  // People results
+  for (var p = 0; p < r.people.length; p++) {
+    var person = r.people[p];
+    var eraLabel = SE.ERA_LABELS[person.era] || person.era;
+    html += '<div class="qnav-book-result" style="cursor:pointer" onclick="PersonSidebar.open(\'' + person.id + '\');closeQnav();" title="View ' + person.name + '">' +
+      '<span style="font-family:\'EB Garamond\',serif;font-size:.95rem;color:#c8c0a0;">\u1F464 ' + hl(person.name, r.ql, r.words) + '</span>' +
+      '<span class="qnav-book-result-meta">' + person.role + ' &middot; ' + eraLabel + '</span></div>';
+  }
+
+  // Book results
+  var books = window.BOOKS || [];
+  var bookMatches = books.filter(function(b) { return b.live > 0 && b.name.toLowerCase().indexOf(ql) > -1; });
   for (var i = 0; i < bookMatches.length; i++) {
     var b = bookMatches[i];
     var firstUrl = '../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name.replace(/ /g,'_') + '_1.html';
-    html += '<a href="' + firstUrl + '" class="qnav-book-result"><span style="font-family:\'EB Garamond\',serif;font-size:.95rem;color:#c8c0a0;">' + hl(b.name) + '</span><span class="qnav-book-result-meta">' + b.live + ' ch &middot; ' + b.testament + '</span></a>';
+    html += '<a href="' + firstUrl + '" class="qnav-book-result"><span style="font-family:\'EB Garamond\',serif;font-size:.95rem;color:#c8c0a0;">' + hl(b.name, r.ql, r.words) + '</span><span class="qnav-book-result-meta">' + b.live + ' ch &middot; ' + b.testament + '</span></a>';
   }
-  if (verseMatches.length === 0 && bookMatches.length === 0) {
+
+  // Verse results
+  if (r.verses.length === 0 && bookMatches.length === 0 && r.people.length === 0) {
     html = '<p class="qnav-no-results">No results for \u201c' + q + '\u201d</p>';
   } else {
-    for (var j = 0; j < verseMatches.length; j++) {
-      var v = verseMatches[j];
+    for (var j = 0; j < r.verses.length; j++) {
+      var v = r.verses[j];
       var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
-      html += '<a href="../../' + v.url + '" class="qnav-verse-result"><span class="qnav-vref">' + v.short + '</span><span class="qnav-vsnip">' + hl(snippet) + '</span></a>';
+      html += '<a href="../../' + v.url + '" class="qnav-verse-result"><span class="qnav-vref">' + v.short + '</span><span class="qnav-vsnip">' + hl(snippet, r.ql, r.words) + '</span></a>';
     }
   }
+
   if (!panel) {
-    var p = document.createElement('div'); p.id = 'qnav-search-results'; p.className = 'qnav-search-results';
-    var body = document.querySelector('.qnav-body'); if (body) body.insertBefore(p, body.firstChild);
-    p.innerHTML = html; p.style.display = 'block';
+    var pd = document.createElement('div'); pd.id = 'qnav-search-results'; pd.className = 'qnav-search-results';
+    var body = document.querySelector('.qnav-body'); if (body) body.insertBefore(pd, body.firstChild);
+    pd.innerHTML = html; pd.style.display = 'block';
   } else { panel.innerHTML = html; panel.style.display = 'block'; }
 }
 

@@ -947,7 +947,7 @@ if 'item.label' not in _hp_all:
 else:
     ok('Continue-reading chip reads item.label')
 
-for fn in ['handleSearch', 'VERSES_ALL']:
+for fn in ['handleSearch', 'SearchEngine']:
     if fn in _hp_all: ok(f'{fn} present in homepage')
     else: fail(f'homepage: {fn} missing')
 

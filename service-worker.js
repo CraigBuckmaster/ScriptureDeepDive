@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.267';
+const CACHE = 'scripture-2.268';
 
 const SHELL = [
   '/',
@@ -16,6 +16,10 @@ const SHELL = [
   '/css/people.css',
   '/css/timeline.css',
   '/js/core/books.js',
+  '/js/core/search-engine.js',
+  '/js/pages/people-index.js',
+  '/js/features/person-sidebar.js',
+  '/css/person-sidebar.css',
   '/js/core/qnav.js',
   '/js/core/nav-arrows.js',
   '/js/core/tog.js',
