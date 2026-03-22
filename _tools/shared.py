@@ -74,7 +74,7 @@ REGISTRY = [
     ('nehemiah',    'Nehemiah',     13, 13, 'OT', 'ot'),
     ('esther',      'Esther',       10, 10, 'OT', 'ot'),
     ('job',          'Job',          42, 42, 'OT', 'ot'),
-    ('ecclesiastes', 'Ecclesiastes', 12,  4, 'OT', 'ot'),
+    ('ecclesiastes', 'Ecclesiastes', 12,  8, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
