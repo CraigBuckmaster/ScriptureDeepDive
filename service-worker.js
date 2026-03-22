@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.274';
+const CACHE = 'scripture-2.275';
 
 const SHELL = [
   '/',
@@ -98,6 +98,8 @@ const PRECACHE = [
   '/verses/niv/ot/daniel.json',
   '/verses/niv/ot/lamentations.js',
   '/verses/niv/ot/lamentations.json',
+  '/verses/niv/ot/isaiah.js',
+  '/verses/niv/ot/isaiah.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -157,6 +159,8 @@ const PRECACHE = [
   '/verses/esv/ot/daniel.json',
   '/verses/esv/ot/lamentations.js',
   '/verses/esv/ot/lamentations.json',
+  '/verses/esv/ot/isaiah.js',
+  '/verses/esv/ot/isaiah.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -621,6 +625,12 @@ const PRECACHE = [
   '/ot/genesis/Genesis_7.html',
   '/ot/genesis/Genesis_8.html',
   '/ot/genesis/Genesis_9.html',
+  '/ot/isaiah/Isaiah_1.html',
+  '/ot/isaiah/Isaiah_2.html',
+  '/ot/isaiah/Isaiah_3.html',
+  '/ot/isaiah/Isaiah_4.html',
+  '/ot/isaiah/Isaiah_5.html',
+  '/ot/isaiah/Isaiah_6.html',
   '/ot/job/Job_1.html',
   '/ot/job/Job_10.html',
   '/ot/job/Job_11.html',
@@ -996,6 +1006,7 @@ const PRECACHE = [
   '/intro/exodus.html',
   '/intro/ezra.html',
   '/intro/genesis.html',
+  '/intro/isaiah.html',
   '/intro/job.html',
   '/intro/john.html',
   '/intro/joshua.html',

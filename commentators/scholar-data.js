@@ -250,5 +250,25 @@ window.SCHOLAR_DATA = [
   bio:"Kathleen M. O'Connor is William Marcellus McPheeters Professor Emerita of Old Testament at Columbia Theological Seminary. Her Lamentations and the Tears of the World (2002) reads Lamentations through the lens of trauma theory, arguing that the poems perform the psychological and spiritual work of processing catastrophic loss. She shows how the book's raw honesty — including its anger at God — is itself therapeutic and faithful. Her work has transformed how pastors and theologians use Lamentations in contexts of grief, disaster, and collective trauma.",
   bookScope:['lamentations'],
   buttonCSS:'.anno-trigger.oconnor'
+},
+{
+  key:'oswalt',name:'John N. Oswalt',color:'#5a9a6a',
+  scope:'Isaiah',tradition:'Evangelical · Modern',
+  desc:'Leading evangelical Isaiah scholar; NICOT commentary (2 vols). Defends unified authorship.',
+  dates:'1940–',photo:'',
+  works:'The Book of Isaiah (NICOT, 1986/1998, 2 vols)',
+  bio:'John N. Oswalt is Visiting Distinguished Professor of Old Testament at Asbury Theological Seminary. His two-volume NICOT commentary on Isaiah (1986, 1998) is the standard evangelical treatment, defending unified authorship while engaging critically with the text. He argues that the theological coherence of Isaiah 1-66 is best explained by single authorship. His work combines careful exegesis with pastoral sensitivity.',
+  bookScope:['isaiah'],
+  buttonCSS:'.anno-trigger.oswalt'
+},
+{
+  key:'childs',name:'Brevard S. Childs',color:'#6080b0',
+  scope:'Isaiah',tradition:'Canonical · Modern',
+  desc:'Pioneer of canonical criticism; reads Isaiah as unified theological whole regardless of authorship.',
+  dates:'1923–2007',photo:'',
+  works:'Isaiah (OTL, 2001)',
+  bio:'Brevard Springs Childs was Sterling Professor of Divinity at Yale. His OTL commentary on Isaiah (2001) applies his canonical approach: reading the final form of the text as Scripture, bracketing (without dismissing) historical-critical questions about authorship. For Childs, the canonical shape of Isaiah — judgment (1-39) then comfort (40-66) — is itself theologically significant regardless of how many human authors produced it. His approach bridges conservative and critical scholarship by taking the text seriously as both literature and Scripture.',
+  bookScope:['isaiah'],
+  buttonCSS:'.anno-trigger.childs'
 }
 ];
