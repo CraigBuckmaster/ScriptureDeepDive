@@ -1813,257 +1813,167 @@ def _build_chapters_js():
 
 def rebuild_sw_js():
     """
-    Regenerate the CORE array in service-worker.js to include all live NIV
-    and ESV verse files, plus bump the SW version number.
+    Regenerate service-worker.js with clean SHELL + PRECACHE architecture.
 
-    Call this in the deploy checklist whenever:
-      - A new book is added to REGISTRY
-      - New ESV verse files are built
-      - Chapter HTML files are added or removed
+    SHELL:  Infrastructure files (~40) pre-cached on install. Fast, reliable.
+    PRECACHE: Chapter HTML, verse files — also pre-cached for offline reading.
 
-    The function rebuilds the verse-file section of CORE from REGISTRY,
-    preserving the chapter HTML entries already present.
+    All entries are deduplicated. The fetch handler is cache-first for everything.
+    When the SW version bumps, skipWaiting + clients.claim activates immediately.
+    Pages detect the new controller via controllerchange (in nav-arrows.js) and
+    auto-reload, picking up fresh infrastructure files.
     """
     sw_path = os.path.join(_REPO, 'service-worker.js')
-    if not os.path.exists(sw_path):
-        print('service-worker.js not found — skipping')
-        return
 
-    with open(sw_path, encoding='utf-8') as f:
-        sw = f.read()
-
-    core_match = re.search(r'(const CORE = \[)(.*?)(\];)', sw, re.DOTALL)
-    if not core_match:
-        print('CORE array not found in service-worker.js')
-        return
-
-    old_core = core_match.group(2)
-
-    # Static pages — preserve as-is
-    static_lines = [
-        "  '/';",
-        "  '/index.html',",
-        "  '/people.html',",
-        "  '/map.html',",
-        "  '/timeline.html',",
-        "  '/books.js',",
-        "  '/qnav.js',",
-        "  '/translation.js',",
-        "  '/verses/chapters.js',",
+    # ── SHELL: infrastructure files that every page needs ─────────────────
+    shell = [
+        '/',
+        '/index.html',
+        '/people.html',
+        '/map.html',
+        '/timeline.html',
+        '/styles.css',
+        '/base.css',
+        '/homepage.css',
+        '/homepage.js',
+        '/books.js',
+        '/qnav.js',
+        '/nav-arrows.js',
+        '/tog.js',
+        '/vhl.js',
+        '/history.js',
+        '/translation.js',
+        '/site-footer.js',
+        '/verse-resolver.js',
+        '/study-storage.js',
+        '/feature-loader.js',
+        '/annotations.js',
+        '/annotations.css',
+        '/book-intro.css',
+        '/book-intro.js',
+        '/data/book-intros.js',
+        '/data/cross-refs.js',
+        '/cross-ref-engine.js',
+        '/cross-ref-ui.js',
+        '/data/synoptic-map.js',
+        '/synoptic.js',
+        '/data/word-study.js',
+        '/word-study-engine.js',
+        '/word-study-ui.js',
+        '/data/translations.js',
+        '/people-data.js',
+        '/people.css',
+        '/timeline-data.js',
+        '/timeline.css',
+        '/commentators/scholar-data.js',
+        '/commentators/commentator-nav.js',
+        '/verses/chapters.js',
     ]
 
-    # Extract static pages from old CORE (in case new ones were added)
-    static_entries = re.findall(r"  '/[^/][^']*\.(html|js)',", old_core)
-    # Keep everything that isn't a chapter or verse file
-    static_preserved = [
-        e for e in re.findall(r"  '[^']+',", old_core)
-        if '/ot/' not in e and '/nt/' not in e
-        and '/verses/niv/' not in e and '/verses/esv/' not in e
-    ]
+    # ── PRECACHE: verse files + chapter pages + intros ─────────────────────
+    precache = []
 
-    # Ensure external resources are always included
-    for asset in ['/base.css', '/homepage.css', '/homepage.js', '/vhl.js', '/verse-resolver.js', '/study-storage.js', '/feature-loader.js', '/annotations.js', '/annotations.css', '/data/cross-refs.js', '/cross-ref-engine.js', '/cross-ref-ui.js', '/data/synoptic-map.js', '/synoptic.js', '/data/word-study.js', '/word-study-engine.js', '/word-study-ui.js', '/book-intro.css', '/book-intro.js', '/data/book-intros.js', '/data/translations.js', '/nav-arrows.js', '/styles.css', '/tog.js', '/history.js', '/people-data.js', '/people.css', '/timeline.css', '/timeline-data.js', '/site-footer.js', '/commentators/scholar-data.js', '/commentators/commentator-nav.js']:
-        if not any(asset in e for e in static_preserved):
-            static_preserved.append(f"  '{asset}',")
-
-    # Build verse entries from REGISTRY
-    niv_lines = ["  '/verses/chapters.js',", "  '/verses/niv/verses.js',"]
-    for book_dir, book_name, total, live, testament, subdir in REGISTRY:
-        niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.js',")
-        # JSON files for fetch-based translation switching
-        niv_lines.append(f"  '/verses/niv/{subdir}/{book_dir}.json',")
-
-    esv_lines = []
-    esv_all = os.path.join(_REPO, 'verses', 'esv', 'verses.js')
-    if os.path.exists(esv_all):
-        esv_lines.append("  '/verses/esv/verses.js',")
+    # Verse data files (NIV + ESV)
+    for slug in ['niv', 'esv']:
+        verses_all = os.path.join(_REPO, 'verses', slug, 'verses.js')
+        if os.path.exists(verses_all):
+            precache.append(f'/verses/{slug}/verses.js')
         for book_dir, book_name, total, live, testament, subdir in REGISTRY:
-            esv_path = os.path.join(_REPO, 'verses', 'esv', subdir, f'{book_dir}.js')
-            if os.path.exists(esv_path):
-                esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.js',")
-                # JSON files for fetch-based translation switching
-                esv_json = os.path.join(_REPO, 'verses', 'esv', subdir, f'{book_dir}.json')
-                if os.path.exists(esv_json):
-                    esv_lines.append(f"  '/verses/esv/{subdir}/{book_dir}.json',")
+            for ext in ['js', 'json']:
+                vpath = os.path.join(_REPO, 'verses', slug, subdir, f'{book_dir}.{ext}')
+                if os.path.exists(vpath):
+                    precache.append(f'/verses/{slug}/{subdir}/{book_dir}.{ext}')
 
-    # Extract chapter HTML entries from old CORE (keep them all)
-    # Scan disk for ALL chapter HTML files
-    chapter_lines = []
+    # Chapter HTML files
     for _p in sorted(glob.glob(os.path.join(_REPO, 'ot', '*', '*.html')) +
                      glob.glob(os.path.join(_REPO, 'nt', '*', '*.html'))):
         if re.search(r'_\d+\.html$', _p):
-            _rel = '/' + os.path.relpath(_p, _REPO).replace(os.sep, '/')
-            chapter_lines.append(f"  '{_rel}',")
+            precache.append('/' + os.path.relpath(_p, _REPO).replace(os.sep, '/'))
 
-    # Scan intro pages
-    intro_lines = []
+    # Intro pages
     for _p in sorted(glob.glob(os.path.join(_REPO, 'intro', '*.html'))):
-        _rel = '/' + os.path.relpath(_p, _REPO).replace(os.sep, '/')
-        intro_lines.append(f"  '{_rel}',")
+        precache.append('/' + os.path.relpath(_p, _REPO).replace(os.sep, '/'))
 
-    all_lines = static_preserved + niv_lines + esv_lines + chapter_lines + intro_lines
-    new_core = "\n" + "\n".join(all_lines) + "\n"
+    # ── Deduplicate everything ────────────────────────────────────────────
+    seen = set()
+    shell_deduped = []
+    for entry in shell:
+        if entry not in seen:
+            seen.add(entry)
+            shell_deduped.append(entry)
 
-    new_sw = sw[:core_match.start(1)] + "const CORE = [" + new_core + "];" + sw[core_match.end(3):]
+    precache_deduped = []
+    for entry in precache:
+        if entry not in seen:
+            seen.add(entry)
+            precache_deduped.append(entry)
+
+    # ── Read old version number ───────────────────────────────────────────
+    old_ver = '2.222'
+    if os.path.exists(sw_path):
+        with open(sw_path, encoding='utf-8') as f:
+            old_sw = f.read()
+        ver_match = re.search(r"scripture-(\d+\.\d+)", old_sw)
+        if ver_match:
+            old_ver = ver_match.group(1)
+
+    # ── Generate SW source ────────────────────────────────────────────────
+    shell_str = '\n'.join(f"  '{e}'," for e in shell_deduped)
+    precache_str = '\n'.join(f"  '{e}'," for e in precache_deduped)
+
+    new_sw = f"""const CACHE = 'scripture-{old_ver}';
+
+const SHELL = [
+{shell_str}
+];
+
+const PRECACHE = [
+{precache_str}
+];
+
+self.addEventListener('install', e => {{
+  e.waitUntil(
+    caches.open(CACHE).then(c => c.addAll(SHELL.concat(PRECACHE)))
+  );
+  self.skipWaiting();
+}});
+
+self.addEventListener('activate', e => {{
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+}});
+
+self.addEventListener('fetch', e => {{
+  e.respondWith(
+    caches.match(e.request).then(cached => {{
+      if (cached) return cached;
+      return fetch(e.request).then(res => {{
+        if (res && res.status === 200 && res.type === 'basic') {{
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }}
+        return res;
+      }}).catch(() => caches.match('/index.html'));
+    }})
+  );
+}});
+"""
 
     with open(sw_path, 'w', encoding='utf-8') as f:
         f.write(new_sw)
 
-    niv_count = len(niv_lines)
-    esv_count = len(esv_lines)
-    ch_count  = len(chapter_lines)
+    niv_count = len([e for e in precache_deduped if '/niv/' in e])
+    esv_count = len([e for e in precache_deduped if '/esv/' in e])
+    ch_count  = len([e for e in precache_deduped if '/ot/' in e or '/nt/' in e])
     print(f'service-worker.js CORE rebuilt: {niv_count} NIV + {esv_count} ESV verse files, {ch_count} chapter pages')
+    print(f'  SHELL: {len(shell_deduped)} files | PRECACHE: {len(precache_deduped)} files | Total: {len(shell_deduped) + len(precache_deduped)} (deduped)')
 
     # Also rebuild chapters.js search index whenever SW is rebuilt
     _build_chapters_js()
-
-
-
-_QNAV_FUNCTIONS = r"""var _versesLoaded = {};
-function loadAllVerses() {
-  var slug = window.CURRENT_TRANSLATION || 'niv';
-  var books = window.BOOKS || [];
-  for (var i = 0; i < books.length; i++) {
-    var b = books[i];
-    var key = slug + ':' + b.dir;
-    if (_versesLoaded[key]) continue;
-    _versesLoaded[key] = true;
-    (function(dir, test) {
-      var s = document.createElement('script');
-      s.src = '../../verses/' + slug + '/' + test.toLowerCase() + '/' + dir + '.js';
-      document.head.appendChild(s);
-    })(b.dir, b.testament);
-  }
-}
-
-function qnavToggleTestament(id) {
-  var el = document.getElementById('qnav-t-' + id);
-  if (el) el.classList.toggle('open');
-}
-
-function openQnav() {
-  var ol = document.getElementById('qnav-overlay');
-  ol.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  loadAllVerses();
-  var cur = window.QNAV_CURRENT || '';
-  if (cur) {
-    var parts = cur.split('/');
-    var bookDir = parts[1];
-    var bookEl = document.getElementById('qnav-book-' + bookDir);
-    if (bookEl) {
-      var testament = bookEl.closest('.qnav-testament');
-      if (testament && !testament.classList.contains('open')) testament.classList.add('open');
-      if (!bookEl.classList.contains('open')) qnavToggleBook(bookDir);
-      setTimeout(function() { bookEl.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 80);
-    }
-  }
-  setTimeout(function() { var s = document.getElementById('qnav-search-input'); if (s) s.focus(); }, 80);
-}
-
-function closeQnav() {
-  var ol = document.getElementById('qnav-overlay');
-  if (!ol) return;
-  ol.classList.remove('open');
-  document.body.style.overflow = '';
-  var s = document.getElementById('qnav-search-input');
-  if (s) { s.value = ''; qnavFilter(''); }
-}
-
-function qnavToggleBook(id) {
-  var el = document.getElementById('qnav-book-' + id);
-  if (!el) return;
-  var wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.qnav-book').forEach(function(b) { b.classList.remove('open'); });
-  if (!wasOpen) el.classList.add('open');
-}
-
-var _qnavFocusIndex = -1;
-function qnavKeydown(e) {
-  var results = document.querySelectorAll('#qnav-search-results .qnav-verse-result, #qnav-search-results .qnav-book-result');
-  if (!results.length) return;
-  if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    _qnavFocusIndex = Math.min(_qnavFocusIndex + 1, results.length - 1);
-    _qnavApplyFocus(results);
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    _qnavFocusIndex = Math.max(_qnavFocusIndex - 1, -1);
-    if (_qnavFocusIndex === -1) {
-      results.forEach(function(r) { r.classList.remove('focused'); });
-      document.getElementById('qnav-search-input').focus();
-    } else { _qnavApplyFocus(results); }
-  } else if (e.key === 'Enter' && _qnavFocusIndex >= 0) {
-    e.preventDefault();
-    results[_qnavFocusIndex].click();
-  }
-}
-function _qnavApplyFocus(results) {
-  results.forEach(function(r, i) {
-    r.classList.toggle('focused', i === _qnavFocusIndex);
-    if (i === _qnavFocusIndex) r.scrollIntoView({ block: 'nearest' });
-  });
-}
-
-function qnavFilter(q) {
-  q = q.trim();
-  var ql = q.toLowerCase();
-  var words = ql.split(/\s+/).filter(function(w) { return w.length > 1; });
-  var panel = document.getElementById('qnav-search-results');
-  _qnavFocusIndex = -1;
-  if (!q) {
-    if (panel) { panel.innerHTML = ''; panel.style.display = 'none'; }
-    document.querySelectorAll('.qnav-ch-grid').forEach(function(g) { g.style.display = ''; });
-    document.querySelectorAll('.qnav-book').forEach(function(b) { b.style.display = ''; });
-    return;
-  }
-  document.querySelectorAll('.qnav-ch-grid').forEach(function(g) { g.style.display = 'none'; });
-  document.querySelectorAll('.qnav-book').forEach(function(b) { b.style.display = 'none'; });
-
-  var books = window.BOOKS || [];
-  var bookMatches = books.filter(function(b) { return b.live > 0 && b.name.toLowerCase().indexOf(ql) > -1; });
-
-  var verseMatches = ql.length >= 2 ? (window.VERSES_ALL || []).map(function(v) {
-    var text = v.text.toLowerCase(), ref = v.ref.toLowerCase(), score = 0;
-    for (var i = 0; i < words.length; i++) {
-      if (text.indexOf(words[i]) > -1) score += 2;
-      else if (ref.indexOf(words[i]) > -1) score += 1;
-    }
-    if (text.indexOf(ql) > -1) score += 5;
-    return { ref: v.ref, short: v.short, text: v.text, url: v.url, score: score };
-  }).filter(function(v) { return v.score > 0; })
-    .sort(function(a, b) { return b.score - a.score; })
-    .slice(0, 12) : [];
-
-  function hl(text) {
-    var out = text;
-    if (ql.length > 2) { var rx = new RegExp('(' + ql.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + ')','gi'); out = out.replace(rx,'<em>$1</em>'); }
-    for (var i = 0; i < words.length; i++) { var rx2 = new RegExp('(' + words[i].replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + ')','gi'); out = out.replace(rx2,'<em>$1</em>'); }
-    return out;
-  }
-
-  var html = '';
-  for (var i = 0; i < bookMatches.length; i++) {
-    var b = bookMatches[i];
-    var firstUrl = '../../' + b.testament.toLowerCase() + '/' + b.dir + '/' + b.name.replace(/ /g,'_') + '_1.html';
-    html += '<a href="' + firstUrl + '" class="qnav-book-result"><span style="font-family:\'EB Garamond\',serif;font-size:.95rem;color:#c8c0a0;">' + hl(b.name) + '</span><span class="qnav-book-result-meta">' + b.live + ' ch &middot; ' + b.testament + '</span></a>';
-  }
-  if (verseMatches.length === 0 && bookMatches.length === 0) {
-    html = '<p class="qnav-no-results">No results for \u201c' + q + '\u201d</p>';
-  } else {
-    for (var j = 0; j < verseMatches.length; j++) {
-      var v = verseMatches[j];
-      var snippet = v.text.length > 120 ? v.text.slice(0,117) + '\u2026' : v.text;
-      html += '<a href="../../' + v.url + '" class="qnav-verse-result"><span class="qnav-vref">' + v.short + '</span><span class="qnav-vsnip">' + hl(snippet) + '</span></a>';
-    }
-  }
-  if (!panel) {
-    var p = document.createElement('div'); p.id = 'qnav-search-results'; p.className = 'qnav-search-results';
-    var body = document.querySelector('.qnav-body'); if (body) body.insertBefore(p, body.firstChild);
-    p.innerHTML = html; p.style.display = 'block';
-  } else { panel.innerHTML = html; panel.style.display = 'block'; }
-}
-"""
 
 
 def rebuild_qnav_js():
