@@ -466,6 +466,20 @@ BOOK_META = {
         'vhl_key': ['LORD','God','praise','mercy','righteousness','wicked','salvation','trust','fear','love','faithful','king','throne','refuge','shepherd','rock','fortress','holy','glory','prayer'],
         'vhl_time': ['day','night','morning','forever','generations','eternity'],
     },
+    'isaiah': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Isaiah son of Amoz (chs.1-39); disputed for chs.40-66 '
+                 '("Deutero-Isaiah" / "Trito-Isaiah" or unified authorship).\n\n'
+                 '<strong>When written:</strong> 8th century BC (chs.1-39, c.740-700 BC); '
+                 'chs.40-66 either late 8th century (traditional) or exilic/post-exilic (critical).\n\n'
+                 '<strong>What prompted it:</strong> The Assyrian crisis, Judah\'s covenant unfaithfulness, '
+                 'and God\'s plan for universal salvation through the Servant.'),
+        'vhl_places': ['Jerusalem','Zion','Babylon','Egypt','Assyria','temple','mountain','wilderness','sea'],
+        'vhl_people': ['LORD','servant','king','nations','Israel','Jacob','daughter','remnant'],
+        'vhl_time':   ['day','days','time','forever','morning','evening','end','age'],
+        'vhl_key':    ['holy','righteousness','justice','salvation','comfort','glory','servant',
+                       'light','darkness','covenant','remnant','woe','peace','suffering'],
+    },
     'lamentations': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Traditionally attributed to Jeremiah; anonymous in the Hebrew text.\n\n'

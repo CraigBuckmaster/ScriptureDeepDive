@@ -631,3 +631,12 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.oconnor{color:#a080b0;border-color:#6a5078;background:rgba(160,128,176,.08);}
 .anno-trigger.oconnor:hover{background:rgba(160,128,176,.18);border-color:#a080b0;}
 .anno-trigger.oconnor:active,.anno-trigger.oconnor.active{background:rgba(160,128,176,.28);border-color:#c0a0d0;}
+
+/* Oswalt — deep forest green (NICOT Isaiah) */
+.anno-trigger.oswalt{color:#5a9a6a;border-color:#3a6a4a;background:rgba(90,154,106,.08);}
+.anno-trigger.oswalt:hover{background:rgba(90,154,106,.18);border-color:#5a9a6a;}
+.anno-trigger.oswalt:active,.anno-trigger.oswalt.active{background:rgba(90,154,106,.28);border-color:#7aba8a;}
+/* Childs — midnight blue (OTL Isaiah) */
+.anno-trigger.childs{color:#6080b0;border-color:#405878;background:rgba(96,128,176,.08);}
+.anno-trigger.childs:hover{background:rgba(96,128,176,.18);border-color:#6080b0;}
+.anno-trigger.childs:active,.anno-trigger.childs.active{background:rgba(96,128,176,.28);border-color:#80a0d0;}
