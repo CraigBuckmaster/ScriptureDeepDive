@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.271';
+const CACHE = 'scripture-2.272';
 
 const SHELL = [
   '/',
@@ -453,6 +453,10 @@ const PRECACHE = [
   '/ot/daniel/Daniel_2.html',
   '/ot/daniel/Daniel_3.html',
   '/ot/daniel/Daniel_4.html',
+  '/ot/daniel/Daniel_5.html',
+  '/ot/daniel/Daniel_6.html',
+  '/ot/daniel/Daniel_7.html',
+  '/ot/daniel/Daniel_8.html',
   '/ot/deuteronomy/Deuteronomy_1.html',
   '/ot/deuteronomy/Deuteronomy_10.html',
   '/ot/deuteronomy/Deuteronomy_11.html',
