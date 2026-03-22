@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // word-study-ui.js — Word study cards on chapter pages
 //
 // Adds word study indicators to VHL-highlighted words when they have
@@ -179,4 +181,6 @@
   }
 
   window.WordStudyUI = { init: init, openCard: openCard };
+})();
+
 })();

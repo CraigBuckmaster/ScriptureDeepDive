@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // synoptic.js — Parallel passage lookup engine
 //
 // Indexes SYNOPTIC_MAP and provides fast lookups by book/chapter/verse.
@@ -79,5 +81,7 @@
     allEntries: allEntries,
     allCategories: allCategories
   };
+
+})();
 
 })();

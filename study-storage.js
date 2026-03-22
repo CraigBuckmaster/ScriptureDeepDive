@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // study-storage.js — Personal study data persistence for Scripture Deep Dive
 //
 // Thin wrapper around localStorage for per-verse notes with chapter-level grouping.
@@ -249,5 +251,7 @@
     clearAll: clearAll,
     isAvailable: isAvailable
   };
+
+})();
 
 })();

@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // site-footer.js — shared footer + service worker registration
 // Loaded by all standalone pages (homepage, people, timeline, commentator hub/bios).
 // Chapter pages handle their own footer in styles.css/shared.py.
@@ -23,4 +25,6 @@
       navigator.serviceWorker.register(swPath).catch(function() {});
     });
   }
+})();
+
 })();

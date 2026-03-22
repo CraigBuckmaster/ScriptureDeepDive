@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // word-study-engine.js — Hebrew/Greek word study lookup engine
 //
 // Indexes WORD_STUDY_DATA and provides lookups by ID, gloss, verse, and search.
@@ -142,5 +144,7 @@
     allEntries: allEntries,
     getByLanguage: getByLanguage
   };
+
+})();
 
 })();

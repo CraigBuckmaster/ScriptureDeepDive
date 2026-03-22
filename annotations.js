@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // annotations.js — Personal study notes for Scripture Deep Dive
 //
 // Adds per-verse note indicators to chapter pages. Tap a verse to add
@@ -379,5 +381,7 @@
   window.Annotations = {
     init: init
   };
+
+})();
 
 })();
