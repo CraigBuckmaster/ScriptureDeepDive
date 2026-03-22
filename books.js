@@ -16,6 +16,7 @@ var BOOKS = [
   {dir:"1_chronicles",name:"1 Chronicles",total:29,live:29,testament:"OT"},
   {dir:"2_chronicles",name:"2 Chronicles",total:36,live:36,testament:"OT"},
   {dir:"ezra",name:"Ezra",total:10,live:10,testament:"OT"},
+  {dir:"nehemiah",name:"Nehemiah",total:13,live:13,testament:"OT"},
   {dir:"proverbs",name:"Proverbs",total:31,live:31,testament:"OT"},
   {dir:"matthew",name:"Matthew",total:28,live:28,testament:"NT"},
   {dir:"mark",name:"Mark",total:16,live:16,testament:"NT"},
