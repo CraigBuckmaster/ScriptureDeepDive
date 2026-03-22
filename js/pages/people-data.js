@@ -3116,3 +3116,4 @@ const PEOPLE = [
 {id:"uriah",name:"Uriah the Hittite",era:"monarchy",parent:"",role:"Mighty man; Bathsheba's husband",bio:"Loyal soldier murdered by David to cover adultery. The pivot point of 2 Samuel.",refs:["2 Sam 11:3-24","Matt 1:6"],chapter:"ot/2_samuel/2_Samuel_11.html"},
 {id:"abner",name:"Abner",era:"monarchy",parent:"",role:"Commander of Saul's army",bio:"Backed Ish-Bosheth then defected to David. Murdered by Joab (2 Sam 3).",refs:["2 Sam 2:8-32","2 Sam 3:6-39"],chapter:"ot/2_samuel/2_Samuel_3.html"}
 ];
+window.PEOPLE = PEOPLE;
