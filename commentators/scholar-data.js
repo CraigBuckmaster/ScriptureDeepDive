@@ -193,4 +193,15 @@ window.SCHOLAR_DATA = [
    photo:'',works:'OTL Job (1985)',
    bio:'Norman Habel is an Australian Lutheran theologian whose Old Testament Library commentary on Job (1985) reads the book as a legal drama \u2014 a cosmic court case in which Job demands a hearing and receives not a verdict but a theophany.',
    bookScope:['job'],buttonCSS:'.anno-trigger.habel'}
+,
+  {key:'longman',name:'Tremper Longman III',color:'#c0a870',scope:'Ecclesiastes, Song of Solomon, Daniel',
+   tradition:'Evangelical Academic',desc:'NICOT Ecclesiastes and Song of Solomon. Reformed evangelical with literary sensitivity.',
+   dates:'1952\u2013',photo:'',works:'NICOT Ecclesiastes (1998), Song of Solomon (2001)',
+   bio:'Tremper Longman III is Distinguished Scholar and Professor Emeritus of Biblical Studies at Westmont College. His NICOT commentaries on Ecclesiastes and Song of Solomon combine evangelical conviction with sophisticated literary analysis. He reads Qoheleth as a foil whose pessimism is corrected by the epilogue narrator.',
+   bookScope:['ecclesiastes'],buttonCSS:'.anno-trigger.longman'},
+  {key:'fox',name:'Michael V. Fox',color:'#a0b8a0',scope:'Ecclesiastes',
+   tradition:'Jewish Academic',desc:'JPS Ecclesiastes. The definitive philological commentary on Qoheleth.',
+   dates:'1940\u2013',photo:'',works:'JPS Qohelet (2004), A Time to Tear Down (1999)',
+   bio:'Michael V. Fox is the Jay C. and Ruth Halls Bascom Professor Emeritus of Hebrew at the University of Wisconsin-Madison. His two books on Ecclesiastes represent the most thorough philological analysis of Qoheleth in English. He argues that hebel means “absurd” rather than “meaningless” \u2014 life is not empty but irrational, defying human attempts to find coherent patterns.',
+   bookScope:['ecclesiastes'],buttonCSS:'.anno-trigger.fox'}
 ];

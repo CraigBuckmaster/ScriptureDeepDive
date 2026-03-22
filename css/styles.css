@@ -600,5 +600,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.habel{color:#d0b888;border-color:#887040;background:rgba(136,112,64,.22);}
 .anno-trigger.habel:hover{border-color:#d0b888;background:rgba(136,112,64,.32);}
 .anno-trigger.habel.active{filter:brightness(1.25);}
+.anno-trigger.longman{color:#c0a870;border-color:#887040;background:rgba(136,112,64,.22);}
+.anno-trigger.longman:hover{border-color:#c0a870;background:rgba(136,112,64,.32);}
+.anno-trigger.longman.active{filter:brightness(1.25);}
+.anno-trigger.fox{color:#a0b8a0;border-color:#607860;background:rgba(96,120,96,.22);}
+.anno-trigger.fox:hover{border-color:#a0b8a0;background:rgba(96,120,96,.32);}
+.anno-trigger.fox.active{filter:brightness(1.25);}
 .com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
 .com-panel.com-japhet h4{color:#a8c8b8;}

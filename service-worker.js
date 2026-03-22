@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.242';
+const CACHE = 'scripture-2.243';
 
 const SHELL = [
   '/',
@@ -84,6 +84,8 @@ const PRECACHE = [
   '/verses/niv/ot/esther.json',
   '/verses/niv/ot/job.js',
   '/verses/niv/ot/job.json',
+  '/verses/niv/ot/ecclesiastes.js',
+  '/verses/niv/ot/ecclesiastes.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -133,6 +135,8 @@ const PRECACHE = [
   '/verses/esv/ot/esther.json',
   '/verses/esv/ot/job.js',
   '/verses/esv/ot/job.json',
+  '/verses/esv/ot/ecclesiastes.js',
+  '/verses/esv/ot/ecclesiastes.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -463,6 +467,10 @@ const PRECACHE = [
   '/ot/deuteronomy/Deuteronomy_7.html',
   '/ot/deuteronomy/Deuteronomy_8.html',
   '/ot/deuteronomy/Deuteronomy_9.html',
+  '/ot/ecclesiastes/Ecclesiastes_1.html',
+  '/ot/ecclesiastes/Ecclesiastes_2.html',
+  '/ot/ecclesiastes/Ecclesiastes_3.html',
+  '/ot/ecclesiastes/Ecclesiastes_4.html',
   '/ot/esther/Esther_1.html',
   '/ot/esther/Esther_10.html',
   '/ot/esther/Esther_2.html',
@@ -779,6 +787,7 @@ const PRECACHE = [
   '/intro/2_samuel.html',
   '/intro/acts.html',
   '/intro/deuteronomy.html',
+  '/intro/ecclesiastes.html',
   '/intro/esther.html',
   '/intro/exodus.html',
   '/intro/ezra.html',
