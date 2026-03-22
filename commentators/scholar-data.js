@@ -220,5 +220,15 @@ window.SCHOLAR_DATA = [
    tradition:'Anglican Academic',desc:'BCOT Psalms (3 vols). Literary-theological commentary with fresh translation.',
    dates:'1942\u2013',photo:'',works:'BCOT Psalms 1\u201341 (2006), 42\u201389 (2007), 90\u2013150 (2008)',
    bio:'John Goldingay is David Allan Hubbard Professor Emeritus of Old Testament at Fuller Theological Seminary. His three-volume Baker Commentary on Psalms offers fresh translations with literary and theological insight, reading each psalm as both ancient Israelite worship and contemporary spiritual resource.',
-   bookScope:['psalms'],buttonCSS:'.anno-trigger.goldingay'}
+   bookScope:['psalms'],buttonCSS:'.anno-trigger.goldingay'},
+{
+  key:'collins',name:'John J. Collins',color:'#7a9ab0',
+  scope:'Daniel',tradition:'Critical · Modern',
+  desc:'Leading Daniel scholar; Hermeneia commentary. Expert on Jewish apocalypticism.',
+  dates:'1946–',photo:'',
+  works:'Daniel (Hermeneia, 1993), The Apocalyptic Imagination (1984)',
+  bio:'John J. Collins is Holmes Professor of Old Testament Criticism and Interpretation at Yale Divinity School. His Hermeneia commentary on Daniel (1993) is the standard critical treatment. He is the foremost authority on Jewish apocalypticism and Second Temple literature. His work situates Daniel within the broader apocalyptic genre of the ancient Near East while taking its theological claims seriously. His Apocalyptic Imagination traces the genre from Daniel through the Dead Sea Scrolls to the New Testament.',
+  bookScope:['daniel'],
+  buttonCSS:'.anno-trigger.collins'
+}
 ];

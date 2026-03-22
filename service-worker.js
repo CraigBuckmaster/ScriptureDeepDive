@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.269';
+const CACHE = 'scripture-2.270';
 
 const SHELL = [
   '/',
@@ -94,6 +94,8 @@ const PRECACHE = [
   '/verses/niv/ot/song_of_solomon.json',
   '/verses/niv/ot/psalms.js',
   '/verses/niv/ot/psalms.json',
+  '/verses/niv/ot/daniel.js',
+  '/verses/niv/ot/daniel.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -149,6 +151,8 @@ const PRECACHE = [
   '/verses/esv/ot/song_of_solomon.json',
   '/verses/esv/ot/psalms.js',
   '/verses/esv/ot/psalms.json',
+  '/verses/esv/ot/daniel.js',
+  '/verses/esv/ot/daniel.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -445,6 +449,10 @@ const PRECACHE = [
   '/ot/2_samuel/2_Samuel_7.html',
   '/ot/2_samuel/2_Samuel_8.html',
   '/ot/2_samuel/2_Samuel_9.html',
+  '/ot/daniel/Daniel_1.html',
+  '/ot/daniel/Daniel_2.html',
+  '/ot/daniel/Daniel_3.html',
+  '/ot/daniel/Daniel_4.html',
   '/ot/deuteronomy/Deuteronomy_1.html',
   '/ot/deuteronomy/Deuteronomy_10.html',
   '/ot/deuteronomy/Deuteronomy_11.html',
@@ -964,6 +972,7 @@ const PRECACHE = [
   '/intro/2_kings.html',
   '/intro/2_samuel.html',
   '/intro/acts.html',
+  '/intro/daniel.html',
   '/intro/deuteronomy.html',
   '/intro/ecclesiastes.html',
   '/intro/esther.html',
