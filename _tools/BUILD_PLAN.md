@@ -1,14 +1,20 @@
 # Scripture Deep Dive — New Book Build Plan
 
 > **Read this file before starting any new book.**
-> Last updated: 2026-03-22 (after Job completion, 25 books live)
+> Last updated: 2026-03-22 (after Job completion, 24 books live)
+>
+> **See also:** `_tools/MASTER_PLAN.md` — strategic plan for all remaining books.
+> Contains build wave order, scholar-to-book allocation map, new scholar roster
+> with full scope, and chapter totals per wave. Consult it BEFORE Phase 1 to
+> confirm which wave/book is next and which scholars to add.
 
 ---
 
 ## Phase 1: Planning (before touching any code)
 
+0. **Check MASTER_PLAN.md** — confirm this book's wave, scholar assignments, and scope extensions
 1. **Book profile** — testament, total chapters, author, date, setting
-2. **Scholar roster** — which existing scholars cover this book? New scholars needed?
+2. **Scholar roster** — which existing scholars cover this book? New scholars needed? (MASTER_PLAN.md has the full allocation map)
 3. **Batch strategy** — group chapters by content arc (5–7 chapters per batch typical)
 4. **DRAFT ALL CHAPTER SECTIONS** — verse ranges + section headers for every chapter
    - This prevents mid-build refactors
