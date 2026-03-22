@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.262';
+const CACHE = 'scripture-2.263';
 
 const SHELL = [
   '/',
@@ -805,7 +805,17 @@ const PRECACHE = [
   '/ot/psalms/Psalms_109.html',
   '/ot/psalms/Psalms_11.html',
   '/ot/psalms/Psalms_110.html',
+  '/ot/psalms/Psalms_111.html',
+  '/ot/psalms/Psalms_112.html',
+  '/ot/psalms/Psalms_113.html',
+  '/ot/psalms/Psalms_114.html',
+  '/ot/psalms/Psalms_115.html',
+  '/ot/psalms/Psalms_116.html',
+  '/ot/psalms/Psalms_117.html',
+  '/ot/psalms/Psalms_118.html',
+  '/ot/psalms/Psalms_119.html',
   '/ot/psalms/Psalms_12.html',
+  '/ot/psalms/Psalms_120.html',
   '/ot/psalms/Psalms_13.html',
   '/ot/psalms/Psalms_14.html',
   '/ot/psalms/Psalms_15.html',
