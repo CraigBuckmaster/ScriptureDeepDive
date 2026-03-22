@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // book-intro.js — Renders book introduction pages from data/book-intros.js
 //
 // Each intro page is a thin HTML shell that sets window.CURRENT_BOOK and loads this script.
@@ -196,4 +198,6 @@
   html += '</div>'; // .intro-wrapper
 
   target.innerHTML = html;
+})();
+
 })();

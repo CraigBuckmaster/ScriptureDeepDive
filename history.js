@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // history.js — Recent chapter tracker
 // Records the current chapter visit in localStorage for the homepage
 // "Continue Reading" bar. Keeps the last 5 chapters visited.
@@ -16,4 +18,6 @@
     if(hist.length > MAX) hist = hist.slice(0,MAX);
     localStorage.setItem(KEY, JSON.stringify(hist));
   } catch(e){}
+})();
+
 })();

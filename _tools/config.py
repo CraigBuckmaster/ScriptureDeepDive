@@ -938,3 +938,52 @@ PEOPLE_BIO = {
     ),
 }
 
+# ── Scholar Registry ─────────────────────────────────────────────────────
+# Canonical list of all scholars. Used by build_chapter() to generate
+# buttons and panels in a single loop. Adding a new scholar means:
+#   1. Add entry here
+#   2. Add to COMMENTATOR_SCOPE above
+#   3. Add CSS in styles.css
+#   4. Add bio page + scholar-data.js entry
+# That's it. No more touching shared.py.
+#
+#   data_key:     key used in section data dicts (e.g. 'mac', 'netbible')
+#   scope_key:    key used in COMMENTATOR_SCOPE (e.g. 'macarthur')
+#   label:        display name for button text
+#   panel_suffix: suffix for panel HTML IDs (e.g. 'mac' → {sid}-mac)
+#
+SCHOLAR_REGISTRY = [
+    # (data_key,    scope_key,    label,          panel_suffix)
+    ('mac',         'macarthur',  'MacArthur',    'mac'),
+    ('sarna',       'sarna',      'Sarna',        'sarna'),
+    ('alter',       'alter',      'Alter',        'alter'),
+    ('hubbard',     'hubbard',    'Hubbard',      'hubbard'),
+    ('waltke',      'waltke',     'Waltke',       'waltke'),
+    ('calvin',      'calvin',     'Calvin',       'calvin'),
+    ('netbible',    'netbible',   'NET Notes',    'net'),
+    ('robertson',   'robertson',  'Robertson',    'robertson'),
+    ('catena',      'catena',     'Catena Aurea', 'catena'),
+    ('marcus',      'marcus',     'Marcus',       'marcus'),
+    ('rhoads',      'rhoads',     'Rhoads',       'rhoads'),
+    ('keener',      'keener',     'Keener',       'keener'),
+    ('milgrom',     'milgrom',    'Milgrom',      'milgrom'),
+    ('ashley',      'ashley',     'Ashley',       'ashley'),
+    ('craigie',     'craigie',    'Craigie',      'craigie'),
+    ('tigay',       'tigay',      'Tigay',        'tigay'),
+    ('hess',        'hess',       'Hess',         'hess'),
+    ('howard',      'howard',     'Howard',       'howard'),
+    ('block',       'block',      'Block',        'block'),
+    ('webb',        'webb',       'Webb',         'webb'),
+    ('williamson',  'williamson', 'Williamson',   'williamson'),
+    ('kidner',      'kidner',     'Kidner',       'kidner'),
+    ('levenson',    'levenson',   'Levenson',     'levenson'),
+    ('jobes',       'jobes',      'Jobes',        'jobes'),
+    ('bergen',      'bergen',     'Bergen',       'bergen'),
+    ('tsumura',     'tsumura',    'Tsumura',      'tsumura'),
+    ('anderson',    'anderson',   'Anderson',     'anderson'),
+    ('wiseman',     'wiseman',    'Wiseman',      'wiseman'),
+    ('provan',      'provan',     'Provan',       'provan'),
+    ('japhet',      'japhet',     'Japhet',       'japhet'),
+    ('selman',      'selman',     'Selman',       'selman'),
+]
+

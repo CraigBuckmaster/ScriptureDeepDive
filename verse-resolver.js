@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // verse-resolver.js — Canonical verse addressing for Scripture Deep Dive
 //
 // Parses any standard Bible reference string into a structured object.
@@ -347,5 +349,7 @@
     allBooks: allBooks,
     BOOK_TABLE: BOOK_TABLE
   };
+
+})();
 
 })();

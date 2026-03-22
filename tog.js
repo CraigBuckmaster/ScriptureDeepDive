@@ -1,3 +1,4 @@
+'use strict';
 // tog.js — Panel toggle and authorship disclosure
 // Shared across all chapter pages. Loaded via <script src="../../tog.js">
 //

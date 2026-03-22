@@ -1227,6 +1227,24 @@ else:
     ok('No orphaned gen_*/build_* files in _tools/')
 
 # ═══════════════════════════════════════════════════════════════════════════
+# 22. INTRO PAGES FOR ALL LIVE BOOKS
+# ═══════════════════════════════════════════════════════════════════════════
+section('22. Intro Pages for Live Books')
+
+_missing_intros = []
+for book_dir, book_name, ch_range, test_dir_v in BOOK_ROSTER:
+    if len(ch_range) > 0:
+        _intro_path = os.path.join(REPO, 'intro', f'{book_dir}.html')
+        if not os.path.exists(_intro_path):
+            _missing_intros.append(book_name)
+
+if _missing_intros:
+    fail(f'Missing intro pages: {_missing_intros}')
+else:
+    _live_count = sum(1 for _, _, cr, _ in BOOK_ROSTER if len(cr) > 0)
+    ok(f'All {_live_count} live books have intro pages')
+
+# ═══════════════════════════════════════════════════════════════════════════
 # RESULT
 # ═══════════════════════════════════════════════════════════════════════════
 print(f"\n{'═' * 52}")

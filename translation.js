@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // translation.js — Multi-translation verse system v3
 // Data-driven: reads from window.SDD_TRANSLATIONS (data/translations.js).
 // Fetch-based: loads verse JSON files via fetch(), no script injection.
@@ -331,5 +333,7 @@
     cache:    function() { return _cache; },
     registry: function() { return registry; }
   };
+
+})();
 
 })();

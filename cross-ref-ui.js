@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // cross-ref-ui.js — Cross-reference thread UI for chapter pages
 //
 // Enhances chapter pages with:
@@ -215,5 +217,7 @@
   }
 
   window.CrossRefUI = { init: init };
+
+})();
 
 })();

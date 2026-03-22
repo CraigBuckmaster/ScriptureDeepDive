@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.223';
+const CACHE = 'scripture-2.224';
 
 const SHELL = [
   '/',
@@ -731,7 +731,9 @@ const PRECACHE = [
   '/intro/2_samuel.html',
   '/intro/acts.html',
   '/intro/deuteronomy.html',
+  '/intro/esther.html',
   '/intro/exodus.html',
+  '/intro/ezra.html',
   '/intro/genesis.html',
   '/intro/john.html',
   '/intro/joshua.html',
@@ -740,6 +742,7 @@ const PRECACHE = [
   '/intro/luke.html',
   '/intro/mark.html',
   '/intro/matthew.html',
+  '/intro/nehemiah.html',
   '/intro/numbers.html',
   '/intro/proverbs.html',
   '/intro/ruth.html',

@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // cross-ref-engine.js — Cross-reference thread lookup and traversal
 //
 // Indexes CROSS_REF_THREADS and CROSS_REF_PAIRS from data/cross-refs.js.
@@ -189,5 +191,7 @@
     allThreads: allThreads,
     allPairs: allPairs
   };
+
+})();
 
 })();

@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // feature-loader.js — Lazy-loads deep study feature scripts on chapter pages.
 //
 // Loaded by every chapter page. Waits for DOMContentLoaded, then loads
@@ -60,4 +62,6 @@
   } else {
     loadAll();
   }
+})();
+
 })();

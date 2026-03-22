@@ -110,7 +110,7 @@ BOOK_PREFIX = {
 
 # COMMENTATOR_SCOPE — moved to config.py (Batch 5)
 # See config.py for the full scholar roster documentation.
-from config import COMMENTATOR_SCOPE  # noqa: E402
+from config import COMMENTATOR_SCOPE, SCHOLAR_REGISTRY  # noqa: E402
 
 # Book-level constants — AUTH text, IS_NT flag, VHL word lists
 # BOOK_META — moved to config.py (Batch 5)
@@ -1397,6 +1397,44 @@ def _auto_debate(book_dir, ch, title, sections):
 #  build_chapter() is called by every gen_{book}.py script.
 # ══════════════════════════════════════════════════════════════════════
 
+def _build_section_html(sec, sid, in_scope, is_nt, book_name, ch, lang):
+    """Build HTML for a single chapter section: verses + buttons + panels."""
+    verses_html = ''.join(verse(n, '', book_name, ch) for n, t in sec['verses'])
+
+    # Feature buttons: presence of key drives inclusion
+    btns = []
+    if 'heb'        in sec: btns.append(('hebrew',    lang,           f'{sid}-grk'))
+    if 'places'     in sec: btns.append(('places',    'Places',       f'{sid}-places'))
+    if 'people_sec' in sec: btns.append(('people',    'People',       f'{sid}-ppl'))
+    if 'timeline'   in sec: btns.append(('timeline',  'Timeline',     f'{sid}-tl'))
+    if 'hist'       in sec: btns.append(('history',   'History',      f'{sid}-hist'))
+    if 'ctx'        in sec: btns.append(('context',   'Context',      f'{sid}-ctx'))
+    if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',    f'{sid}-cross'))
+    # Scholar buttons — data-driven from SCHOLAR_REGISTRY
+    for _dk, _sk, _lbl, _ps in SCHOLAR_REGISTRY:
+        if _dk in sec and in_scope(_sk):
+            btns.append((_sk, _lbl, f'{sid}-{_ps}'))
+    btn_html = btn_row(*btns)
+
+    # Feature panels
+    panels_html = ''
+    if 'heb'        in sec: panels_html += heb_panel(f'{sid}-grk',    sec['heb'], is_nt)
+    if 'places'     in sec: panels_html += poi_panel(f'{sid}-places',  sec['places'])
+    if 'people_sec' in sec: panels_html += ppl_panel(f'{sid}-ppl',     sec['people_sec'])
+    if 'timeline'   in sec: panels_html += tl_panel( f'{sid}-tl',      sec['timeline'])
+    if 'hist'       in sec: panels_html += hist_panel(f'{sid}-hist',   sec['hist'])
+    if 'ctx'        in sec: panels_html += ctx_panel(f'{sid}-ctx',     sec['ctx'])
+    if 'cross'      in sec: panels_html += cross_panel(f'{sid}-cross', sec['cross'])
+    # Scholar panels — data-driven from SCHOLAR_REGISTRY
+    for _dk, _sk, _lbl, _ps in SCHOLAR_REGISTRY:
+        if _dk in sec and in_scope(_sk):
+            panels_html += commentary_panel(f'{sid}-{_ps}', _sk, sec[_dk])
+
+    return (f'<div class="section">'
+            f'<div class="section-header">{sec["header"]}</div>'
+            f'{verses_html}{btn_html}{panels_html}</div>')
+
+
 def build_chapter(book_dir, ch, data):
     """
     Build a chapter HTML file from a data dict and write it to disk.
@@ -1489,89 +1527,7 @@ def build_chapter(book_dir, ch, data):
     sections_html = ''
     for i, sec in enumerate(data['sections']):
         sid = f'{cid}-s{i+1}'
-
-        # --- verses ---
-        verses_html = ''.join(verse(n, '', book_name, ch) for n, t in sec['verses'])
-
-        # --- buttons: presence of key + scope check drives inclusion ---
-        btns = []
-        if 'heb'        in sec: btns.append(('hebrew',    lang,           f'{sid}-grk'))
-        if 'places'     in sec: btns.append(('places',    'Places',       f'{sid}-places'))
-        if 'people_sec' in sec: btns.append(('people',    'People',       f'{sid}-ppl'))
-        if 'timeline'   in sec: btns.append(('timeline',  'Timeline',     f'{sid}-tl'))
-        if 'hist'       in sec: btns.append(('history',   'History',      f'{sid}-hist'))
-        if 'ctx'        in sec: btns.append(('context',   'Context',      f'{sid}-ctx'))
-        if 'cross'      in sec: btns.append(('cross',     'Cross-Ref',    f'{sid}-cross'))
-        if 'mac'        in sec and in_scope('macarthur'):  btns.append(('macarthur', 'MacArthur',   f'{sid}-mac'))
-        if 'sarna'      in sec and in_scope('sarna'):      btns.append(('sarna',     'Sarna',       f'{sid}-sarna'))
-        if 'alter'      in sec and in_scope('alter'):      btns.append(('alter',     'Alter',       f'{sid}-alter'))
-        if 'hubbard'    in sec and in_scope('hubbard'):    btns.append(('hubbard',   'Hubbard',     f'{sid}-hubbard'))
-        if 'waltke'     in sec and in_scope('waltke'):     btns.append(('waltke',    'Waltke',      f'{sid}-waltke'))
-        if 'calvin'     in sec and in_scope('calvin'):     btns.append(('calvin',    'Calvin',      f'{sid}-calvin'))
-        if 'netbible'   in sec and in_scope('netbible'):   btns.append(('netbible',  'NET Notes',   f'{sid}-net'))
-        if 'robertson'  in sec and in_scope('robertson'):  btns.append(('robertson', 'Robertson',   f'{sid}-robertson'))
-        if 'catena'     in sec and in_scope('catena'):     btns.append(('catena',    'Catena Aurea',f'{sid}-catena'))
-        if 'marcus'     in sec and in_scope('marcus'):     btns.append(('marcus',    'Marcus',      f'{sid}-marcus'))
-        if 'rhoads'     in sec and in_scope('rhoads'):     btns.append(('rhoads',    'Rhoads',      f'{sid}-rhoads'))
-        if 'milgrom'    in sec and in_scope('milgrom'):    btns.append(('milgrom',   'Milgrom',     f'{sid}-milgrom'))
-        if 'ashley'     in sec and in_scope('ashley'):     btns.append(('ashley',    'Ashley',      f'{sid}-ashley'))
-        if 'hess'       in sec and in_scope('hess'):       btns.append(('hess',      'Hess',        f'{sid}-hess'))
-        if 'howard'     in sec and in_scope('howard'):     btns.append(('howard',    'Howard',      f'{sid}-howard'))
-        if 'block'      in sec and in_scope('block'):      btns.append(('block',     'Block',       f'{sid}-block'))
-        if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
-        if 'williamson'  in sec and in_scope('williamson'):  btns.append(('williamson', 'Williamson',     f'{sid}-williamson'))
-        if 'levenson'  in sec and in_scope('levenson'):  btns.append(('levenson', 'Levenson',     f'{sid}-levenson'))
-        if 'jobes'  in sec and in_scope('jobes'):  btns.append(('jobes', 'Jobes',     f'{sid}-jobes'))
-        if 'kidner'  in sec and in_scope('kidner'):  btns.append(('kidner', 'Kidner',     f'{sid}-kidner'))
-        if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
-        if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
-        if 'anderson'   in sec and in_scope('anderson'):   btns.append(('anderson',  'Anderson',    f'{sid}-anderson'))
-        if 'wiseman'    in sec and in_scope('wiseman'):    btns.append(('wiseman',   'Wiseman',     f'{sid}-wiseman'))
-        if 'provan'     in sec and in_scope('provan'):     btns.append(('provan',    'Provan',      f'{sid}-provan'))
-        btn_html = btn_row(*btns)
-
-        # --- panels: same key + scope logic ---
-        panels_html = ''
-        if 'heb'        in sec: panels_html += heb_panel(f'{sid}-grk',    sec['heb'], is_nt)
-        if 'places'     in sec: panels_html += poi_panel(f'{sid}-places',  sec['places'])
-        if 'people_sec' in sec: panels_html += ppl_panel(f'{sid}-ppl',     sec['people_sec'])
-        if 'timeline'   in sec: panels_html += tl_panel( f'{sid}-tl',      sec['timeline'])
-        if 'hist'       in sec: panels_html += hist_panel(f'{sid}-hist',   sec['hist'])
-        if 'ctx'        in sec: panels_html += ctx_panel(f'{sid}-ctx',     sec['ctx'])
-        if 'cross'      in sec: panels_html += cross_panel(f'{sid}-cross', sec['cross'])
-        if 'mac'      in sec and in_scope('macarthur'): panels_html += commentary_panel(f'{sid}-mac',      'macarthur', sec['mac'])
-        if 'sarna'    in sec and in_scope('sarna'):     panels_html += commentary_panel(f'{sid}-sarna',    'sarna',     sec['sarna'])
-        if 'alter'    in sec and in_scope('alter'):     panels_html += commentary_panel(f'{sid}-alter',    'alter',     sec['alter'])
-        if 'hubbard'  in sec and in_scope('hubbard'):   panels_html += commentary_panel(f'{sid}-hubbard',  'hubbard',   sec['hubbard'])
-        if 'waltke'   in sec and in_scope('waltke'):    panels_html += commentary_panel(f'{sid}-waltke',   'waltke',    sec['waltke'])
-        if 'calvin'   in sec and in_scope('calvin'):    panels_html += commentary_panel(f'{sid}-calvin',   'calvin',    sec['calvin'])
-        if 'netbible' in sec and in_scope('netbible'):  panels_html += commentary_panel(f'{sid}-net',      'netbible',  sec['netbible'])
-        if 'robertson' in sec and in_scope('robertson'): panels_html += commentary_panel(f'{sid}-robertson','robertson', sec['robertson'])
-        if 'catena'   in sec and in_scope('catena'):    panels_html += commentary_panel(f'{sid}-catena',   'catena',    sec['catena'])
-        if 'marcus'   in sec and in_scope('marcus'):    panels_html += commentary_panel(f'{sid}-marcus',   'marcus',    sec['marcus'])
-        if 'rhoads'   in sec and in_scope('rhoads'):    panels_html += commentary_panel(f'{sid}-rhoads',   'rhoads',    sec['rhoads'])
-        if 'keener'   in sec and in_scope('keener'):    panels_html += commentary_panel(f'{sid}-keener',   'keener',    sec['keener'])
-        if 'milgrom'  in sec and in_scope('milgrom'):   panels_html += commentary_panel(f'{sid}-milgrom',  'milgrom',   sec['milgrom'])
-        if 'ashley'   in sec and in_scope('ashley'):    panels_html += commentary_panel(f'{sid}-ashley',   'ashley',    sec['ashley'])
-        if 'craigie'  in sec and in_scope('craigie'):   panels_html += commentary_panel(f'{sid}-craigie',  'craigie',   sec['craigie'])
-        if 'tigay'    in sec and in_scope('tigay'):     panels_html += commentary_panel(f'{sid}-tigay',    'tigay',     sec['tigay'])
-        if 'hess'     in sec and in_scope('hess'):      panels_html += commentary_panel(f'{sid}-hess',     'hess',      sec['hess'])
-        if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
-        if 'block'    in sec and in_scope('block'):     panels_html += commentary_panel(f'{sid}-block',    'block',     sec['block'])
-        if 'williamson' in sec and in_scope('williamson'): panels_html += commentary_panel(f'{sid}-williamson', 'williamson', sec['williamson'])
-        if 'levenson' in sec and in_scope('levenson'): panels_html += commentary_panel(f'{sid}-levenson', 'levenson', sec['levenson'])
-        if 'jobes' in sec and in_scope('jobes'): panels_html += commentary_panel(f'{sid}-jobes', 'jobes', sec['jobes'])
-        if 'kidner' in sec and in_scope('kidner'): panels_html += commentary_panel(f'{sid}-kidner', 'kidner', sec['kidner'])
-        if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
-        if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
-        if 'tsumura'  in sec and in_scope('tsumura'):   panels_html += commentary_panel(f'{sid}-tsumura',  'tsumura',   sec['tsumura'])
-        if 'anderson' in sec and in_scope('anderson'):  panels_html += commentary_panel(f'{sid}-anderson', 'anderson',  sec['anderson'])
-        if 'wiseman'  in sec and in_scope('wiseman'):   panels_html += commentary_panel(f'{sid}-wiseman',  'wiseman',   sec['wiseman'])
-        if 'provan'   in sec and in_scope('provan'):    panels_html += commentary_panel(f'{sid}-provan',   'provan',    sec['provan'])
-
-        sections_html += (f'<div class="section">'
-                          f'<div class="section-header">{sec["header"]}</div>'
-                          f'{verses_html}{btn_html}{panels_html}</div>')
+        sections_html += _build_section_html(sec, sid, in_scope, is_nt, book_name, ch, lang)
 
     # --- hoist chapter-level keys from sections if accidentally placed there ---
     for key in ('textual', 'debate', 'hebtext', 'themes', 'lit', 'ppl_sec',

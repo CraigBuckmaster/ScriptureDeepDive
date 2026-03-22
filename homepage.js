@@ -1,3 +1,4 @@
+'use strict';
 // homepage.js — search, navigation, and continue-reading for the homepage
 
 // ── BOOK DATA for matching ─────────────────────────────────────────────────

@@ -1,3 +1,5 @@
+(function() {
+'use strict';
 // vhl.js — Verse Highlight Layer (shared logic)
 // Each chapter defines its word groups inline, then calls initVHL(GROUPS).
 // This file provides the highlighting engine and click handler.
@@ -56,3 +58,5 @@ window.initVHL = function(GROUPS) {
     }
   });
 };
+
+})();
