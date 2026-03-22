@@ -75,7 +75,7 @@ REGISTRY = [
     ('esther',      'Esther',       10, 10, 'OT', 'ot'),
     ('job',          'Job',          42, 42, 'OT', 'ot'),
     ('ecclesiastes', 'Ecclesiastes', 12, 12, 'OT', 'ot'),
-    ('song_of_solomon','Song of Solomon',8, 4, 'OT', 'ot'),
+    ('song_of_solomon','Song of Solomon',8, 8, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
