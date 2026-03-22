@@ -207,7 +207,7 @@ function qnavFilter(q) {
 document.addEventListener('DOMContentLoaded', function() {
   var cur = window.QNAV_CURRENT || '';
   if (!cur) return;
-  var chUrl = '../' + cur;
+  var chUrl = '../../' + cur;
   document.querySelectorAll('.qnav-ch-btn').forEach(function(btn) {
     if (btn.getAttribute('href') === chUrl) btn.classList.add('current');
   });
