@@ -99,8 +99,8 @@ COMMENTATOR_SCOPE = {
     'provan':    ['1_kings', '2_kings'],
     'selman':    ['1_chronicles', '2_chronicles'],  # Martin Selman, TOTC 1 \& 2 Chronicles (1994)
     'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)
-    'kidner':    ['ezra'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
-    'williamson':['ezra'],                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'kidner':    ['ezra', 'nehemiah'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
+    'williamson':['ezra', 'nehemiah'],                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -398,6 +398,16 @@ BOOK_META = {
         'vhl_people': ['Cyrus','Sheshbazzar','Zerubbabel','Jeshua','Ezra','Artaxerxes','Darius','Haggai','Zechariah','Tattenai','Nehemiah','Aaron','David','Moses','Solomon'],
         'vhl_key': ['LORD','God','temple','law','decree','covenant','house','altar','offering','sacrifice','worship','exile','return','vessels','foundation','Passover','Torah'],
         'vhl_time': ['day','days','month','year','years','first year','seventh month','second year','first day'],
+    },
+    'nehemiah': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Nehemiah son of Hakaliah, with editorial additions. '
+                 '<strong>Date:</strong> c.&thinsp;430&ndash;400 BC. '
+                 '<strong>Setting:</strong> Susa (Persian capital) and Jerusalem, 445&ndash;432 BC.'),
+        'vhl_places': ['Jerusalem','Judah','Samaria','Susa','Israel','Babylon','Egypt','Jordan','Zion','Jericho','Ashdod','Ammon','Moab','Gilead','Ono'],
+        'vhl_people': ['Nehemiah','Sanballat','Tobiah','Geshem','Ezra','Artaxerxes','Eliashib','Hanani','Moses','David','Solomon','Abraham','Noah'],
+        'vhl_key': ['LORD','God','wall','gates','temple','house','law','covenant','prayer','work','rebuild','guard','fight','remember','joy','tithes','Sabbath'],
+        'vhl_time': ['day','days','night','month','year','years','fifty-two days','twelfth year','twentieth year'],
     },
     'proverbs': {
         'is_nt': False,
