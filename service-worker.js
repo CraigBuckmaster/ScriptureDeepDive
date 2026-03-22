@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.244';
+const CACHE = 'scripture-2.245';
 
 const SHELL = [
   '/',
@@ -468,6 +468,9 @@ const PRECACHE = [
   '/ot/deuteronomy/Deuteronomy_8.html',
   '/ot/deuteronomy/Deuteronomy_9.html',
   '/ot/ecclesiastes/Ecclesiastes_1.html',
+  '/ot/ecclesiastes/Ecclesiastes_10.html',
+  '/ot/ecclesiastes/Ecclesiastes_11.html',
+  '/ot/ecclesiastes/Ecclesiastes_12.html',
   '/ot/ecclesiastes/Ecclesiastes_2.html',
   '/ot/ecclesiastes/Ecclesiastes_3.html',
   '/ot/ecclesiastes/Ecclesiastes_4.html',
@@ -475,6 +478,7 @@ const PRECACHE = [
   '/ot/ecclesiastes/Ecclesiastes_6.html',
   '/ot/ecclesiastes/Ecclesiastes_7.html',
   '/ot/ecclesiastes/Ecclesiastes_8.html',
+  '/ot/ecclesiastes/Ecclesiastes_9.html',
   '/ot/esther/Esther_1.html',
   '/ot/esther/Esther_10.html',
   '/ot/esther/Esther_2.html',
