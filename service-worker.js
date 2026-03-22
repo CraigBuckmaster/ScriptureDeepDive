@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.273';
+const CACHE = 'scripture-2.274';
 
 const SHELL = [
   '/',
@@ -96,6 +96,8 @@ const PRECACHE = [
   '/verses/niv/ot/psalms.json',
   '/verses/niv/ot/daniel.js',
   '/verses/niv/ot/daniel.json',
+  '/verses/niv/ot/lamentations.js',
+  '/verses/niv/ot/lamentations.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -153,6 +155,8 @@ const PRECACHE = [
   '/verses/esv/ot/psalms.json',
   '/verses/esv/ot/daniel.js',
   '/verses/esv/ot/daniel.json',
+  '/verses/esv/ot/lamentations.js',
+  '/verses/esv/ot/lamentations.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -704,6 +708,11 @@ const PRECACHE = [
   '/ot/judges/Judges_7.html',
   '/ot/judges/Judges_8.html',
   '/ot/judges/Judges_9.html',
+  '/ot/lamentations/Lamentations_1.html',
+  '/ot/lamentations/Lamentations_2.html',
+  '/ot/lamentations/Lamentations_3.html',
+  '/ot/lamentations/Lamentations_4.html',
+  '/ot/lamentations/Lamentations_5.html',
   '/ot/leviticus/Leviticus_1.html',
   '/ot/leviticus/Leviticus_10.html',
   '/ot/leviticus/Leviticus_11.html',
@@ -991,6 +1000,7 @@ const PRECACHE = [
   '/intro/john.html',
   '/intro/joshua.html',
   '/intro/judges.html',
+  '/intro/lamentations.html',
   '/intro/leviticus.html',
   '/intro/luke.html',
   '/intro/mark.html',
