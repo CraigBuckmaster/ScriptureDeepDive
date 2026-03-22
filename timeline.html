@@ -341,7 +341,8 @@ function drawEvents(g) {
 
   // ── GREEDY LANE ASSIGNMENT (correct: uses half-width for clearance) ────
   const positioned = EVENTS.map(ev => {
-    const lw = Math.max(ev.name.length * LABEL_CHAR_W + LABEL_PAD, 60);
+    const dateSuffix = ' \u00b7 ' + shortYear(ev.year);
+    const lw = Math.max((ev.name.length + dateSuffix.length) * LABEL_CHAR_W + LABEL_PAD, 60);
     return { ev, x: yearToX(ev.year), lw, half: lw / 2 };
   }).sort((a, b) => a.x - b.x);
 
@@ -356,18 +357,11 @@ function drawEvents(g) {
     item.lane = lane;
   });
 
-  // ── DRAW stem + inverse-scaled clickable label ─────────────────────────
+  // ── DRAW inverse-scaled clickable label ─────────────────────────
   positioned.forEach(({ ev, x, lane }) => {
     const color = ERA_HEX[ev.era] || '#523d0b';
     const dim = dimAll && ev.era !== currentEra;
     const laneY = TL.LANES[lane];
-
-    // Thin stem: era bar bottom → top of label
-    el('line', {
-      x1: x, y1: ERA_BOT, x2: x, y2: laneY - 12,
-      stroke: color, 'stroke-width': '1.2',
-      opacity: dim ? '0.25' : '0.45',
-    }, gEv);
 
     // Wrapper group with inverse-scale so label stays constant screen size
     // at any zoom level (cancels the parent g-inner scale transform)
@@ -389,6 +383,8 @@ function drawEvents(g) {
 
     }, lg);
     t.textContent = ev.name;
+    const td = el('tspan', {fill: color, opacity: dim ? '0.4' : '0.6', 'font-size': '11', 'font-weight': '400'}, t);
+    td.textContent = ' \u00b7 ' + shortYear(ev.year);
     t.addEventListener('click', () => openDetail(ev));
   });
 }
@@ -414,7 +410,7 @@ function drawPeople(){
   const positioned=TIMELINE_PEOPLE.map(person=>({
     person,
     x:yearToX(person.year),
-    lw:Math.max(person.name.length*LABEL_CHAR_W+LABEL_PAD,60),
+    lw:Math.max((person.name.length+8)*LABEL_CHAR_W+LABEL_PAD,60),
   })).sort((a,b)=>a.x-b.x);
 
   const laneRight=new Array(N).fill(-9999);
@@ -426,16 +422,11 @@ function drawPeople(){
     item.lane=lane;
   });
 
-  // Draw: thin dashed stem from axis + clickable name label (no circle)
+  // Draw clickable name label with date
   positioned.forEach(({person,x,lane})=>{
     const color=ERA_HEX[person.era]||'#523d0b';
     const dim=dimAll&&person.era!==currentEra;
     const laneY=LANES[lane];
-
-    // Thin dashed stem from axis to label
-    el('line',{x1:x,y1:TL.AXIS_Y,x2:x,y2:laneY-11,
-      stroke:color,'stroke-width':'0.8','stroke-dasharray':'3,3',
-      opacity:dim?'0.2':'0.35'},gp);
 
     // Inverse-scaled clickable name label
     const lg=el('g',{class:'tl-label','data-x':String(x),
@@ -446,6 +437,8 @@ function drawPeople(){
       fill:'#1a1006',opacity:dim?'0.55':'1',
       style:'cursor:pointer'},lg);
     t.textContent=person.name;
+    const td=el('tspan',{fill:color,opacity:dim?'0.35':'0.5','font-size':'11','font-weight':'400'},t);
+    td.textContent=' \u00b7 '+shortYear(person.year);
     t.addEventListener('click',()=>openPersonDetail(person));
   });
   peopleRendered=true;
@@ -464,7 +457,7 @@ function drawHistory(){
   const positioned=WORLD_EVENTS.map(ev=>({
     ev,
     x:yearToX(ev.year),
-    lw:Math.max(ev.name.length*LABEL_CHAR_W+LABEL_PAD,60),
+    lw:Math.max((ev.name.length+8)*LABEL_CHAR_W+LABEL_PAD,60),
   })).sort((a,b)=>a.x-b.x);
 
   const laneRight=new Array(N).fill(-9999);
@@ -476,13 +469,9 @@ function drawHistory(){
     item.lane=lane;
   });
 
-  // Draw: thin stem from axis + clickable name label (no diamond)
+  // Draw clickable name label with date
   positioned.forEach(({ev,x,lane})=>{
     const laneY=LANES[lane];
-
-    // Thin stem from axis to label
-    el('line',{x1:x,y1:TL.AXIS_Y,x2:x,y2:laneY-11,
-      stroke:HIST_COLOR,'stroke-width':'0.8',opacity:'0.45'},gh);
 
     // Inverse-scaled clickable name label
     const lg=el('g',{class:'tl-label','data-x':String(x),
@@ -493,6 +482,8 @@ function drawHistory(){
       fill:'#0a1a28',opacity:'1',
       style:'cursor:pointer'},lg);
     t.textContent=ev.name;
+    const td=el('tspan',{fill:'#3a5868',opacity:'0.7','font-size':'11','font-weight':'400'},t);
+    td.textContent=' \u00b7 '+shortYear(ev.year);
     t.addEventListener('click',()=>openHistoryDetail(ev));
   });
   historyRendered=true;
@@ -613,6 +604,8 @@ function _personName(pid) {
 }
 
 // ── SHARED UTILITIES ──────────────────────────────────────────────────────
+function shortYear(y) { return y < 0 ? Math.abs(y) + ' BC' : 'AD ' + y; }
+
 function formatYear(year, yearEnd) {
   const main = year < 0 ? `c. ${Math.abs(year)} BC` : year === 0 ? 'c. AD 1' : `c. AD ${year}`;
   if (yearEnd == null) return main;
