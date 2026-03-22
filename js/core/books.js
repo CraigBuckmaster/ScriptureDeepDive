@@ -18,7 +18,7 @@ var BOOKS = [
   {dir:"ezra",name:"Ezra",total:10,live:10,testament:"OT"},
   {dir:"nehemiah",name:"Nehemiah",total:13,live:13,testament:"OT"},
   {dir:"esther",name:"Esther",total:10,live:10,testament:"OT"},
-  {dir:"job",name:"Job",total:42,live:31,testament:"OT"},
+  {dir:"job",name:"Job",total:42,live:37,testament:"OT"},
   {dir:"proverbs",name:"Proverbs",total:31,live:31,testament:"OT"},
   {dir:"matthew",name:"Matthew",total:28,live:28,testament:"NT"},
   {dir:"mark",name:"Mark",total:16,live:16,testament:"NT"},
