@@ -52,7 +52,7 @@ COMMENTATOR_SCOPE = {
 
     # Robert Alter — The Hebrew Bible: A Translation with Commentary (2019)
     # Covers the entire Hebrew Bible (Torah, Prophets, Writings).
-    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes', 'song_of_solomon'],
+    'alter':     ['genesis', 'exodus', 'ruth', 'proverbs', 'ecclesiastes', 'song_of_solomon', 'psalms'],
     # Future: add 'psalms', 'job', 'isaiah', etc. as built
 
     # Robert Hubbard — NICOT Commentary on Ruth (1988)
@@ -99,7 +99,7 @@ COMMENTATOR_SCOPE = {
     'provan':    ['1_kings', '2_kings'],
     'selman':    ['1_chronicles', '2_chronicles'],  # Martin Selman, TOTC 1 \& 2 Chronicles (1994)
     'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)
-    'kidner':    ['ezra', 'nehemiah'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
+    'kidner':    ['ezra', 'nehemiah', 'psalms'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
     'williamson':['ezra', 'nehemiah'],
     'jobes':     ['esther'],                             # Karen Jobes, NIVAC Esther (1999)
     'levenson':  ['esther'],
@@ -107,7 +107,9 @@ COMMENTATOR_SCOPE = {
     'habel':     ['job'],
     'longman':   ['ecclesiastes', 'song_of_solomon'],               # Tremper Longman III, NICOT Ecclesiastes (1998)
     'fox':       ['ecclesiastes'],
-    'garrett':   ['song_of_solomon'],            # Duane Garrett, NAC Song of Songs (2004)               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'garrett':   ['song_of_solomon'],
+    'vangemeren':['psalms'],                    # Willem VanGemeren, EBC Psalms (2008)
+    'goldingay': ['psalms'],                    # John Goldingay, BCOT Psalms (2006-2008)            # Duane Garrett, NAC Song of Songs (2004)               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -453,6 +455,16 @@ BOOK_META = {
         'vhl_people': ['Beloved','Lover','Solomon','Daughters of Jerusalem'],
         'vhl_key': ['love','beloved','beautiful','desire','garden','vineyard','fragrance','kiss','lily','dove','myrrh','wine','spring','fountain','seal'],
         'vhl_time': ['night','day','dawn','spring','winter'],
+    },
+    'psalms': {
+        'is_nt': False,
+        'auth': ('<strong>Authors:</strong> David (73 psalms), Asaph, Sons of Korah, Solomon, Moses, and anonymous. '
+                 '<strong>Date:</strong> c. 1400\u2013400 BC. '
+                 '<strong>Setting:</strong> Israel\u2019s worship through a millennium.'),
+        'vhl_places': ['Zion','Jerusalem','Israel','Egypt','Babylon','Jordan','Hermon','Sinai','Sheol'],
+        'vhl_people': ['David','God','Moses','Solomon','Abraham','Jacob','Messiah'],
+        'vhl_key': ['LORD','God','praise','mercy','righteousness','wicked','salvation','trust','fear','love','faithful','king','throne','refuge','shepherd','rock','fortress','holy','glory','prayer'],
+        'vhl_time': ['day','night','morning','forever','generations','eternity'],
     },
     'proverbs': {
         'is_nt': False,
@@ -1024,5 +1036,7 @@ SCHOLAR_REGISTRY = [
     ('longman',     'longman',    'Longman',      'longman'),
     ('fox',         'fox',        'Fox',          'fox'),
     ('garrett',     'garrett',    'Garrett',      'garrett'),
+    ('vangemeren',  'vangemeren', 'VanGemeren',   'vangemeren'),
+    ('goldingay',   'goldingay',  'Goldingay',    'goldingay'),
 ]
 

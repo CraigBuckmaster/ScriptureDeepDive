@@ -21,6 +21,7 @@ var BOOKS = [
   {dir:"job",name:"Job",total:42,live:42,testament:"OT"},
   {dir:"ecclesiastes",name:"Ecclesiastes",total:12,live:12,testament:"OT"},
   {dir:"song_of_solomon",name:"Song of Solomon",total:8,live:8,testament:"OT"},
+  {dir:"psalms",name:"Psalms",total:150,live:0,testament:"OT"},
   {dir:"proverbs",name:"Proverbs",total:31,live:31,testament:"OT"},
   {dir:"matthew",name:"Matthew",total:28,live:28,testament:"NT"},
   {dir:"mark",name:"Mark",total:16,live:16,testament:"NT"},

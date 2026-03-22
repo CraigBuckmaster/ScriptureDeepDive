@@ -5,7 +5,7 @@
 window.SCHOLAR_DATA = [
   {
     key:'alter', name:'Robert Alter', color:'#d4a853',
-    scope:'Genesis\u2013Deuteronomy, Ruth, Proverbs',
+    scope:'Genesis\u2013Deuteronomy, Ruth, Psalms, Proverbs',
     tradition:'Literary Criticism \u00b7 Contemporary',
     desc:'UC Berkeley professor whose landmark translation and commentary illuminates the narrative art, poetic structure, and rhetorical genius of the Hebrew Bible.'
   },
@@ -167,11 +167,11 @@ window.SCHOLAR_DATA = [
   }
 
 ,
-  {key:'kidner',name:'Derek Kidner',color:'#a8c890',scope:'Ezra, Nehemiah',desc:'Tyndale commentator on Ezra-Nehemiah with clarity and pastoral warmth.',dates:'1913–2008',tradition:'Evangelical Anglican',
+  {key:'kidner',name:'Derek Kidner',color:'#a8c890',scope:'Ezra, Nehemiah, Psalms',desc:'Tyndale commentator on Ezra-Nehemiah with clarity and pastoral warmth.',dates:'1913–2008',tradition:'Evangelical Anglican',
    photo:'',works:'TOTC Ezra & Nehemiah (1979)',
    bio:'Derek Kidner was a British Old Testament scholar and Warden of Tyndale House, Cambridge. His Tyndale commentaries are models of concise, theologically rich exposition. On Ezra-Nehemiah he combines careful attention to the Persian-period historical context with pastoral sensitivity to the spiritual dynamics of restoration.',
    bookScope:['ezra'],buttonCSS:'.anno-trigger.kidner'},
-  {key:'williamson',name:'H.G.M. Williamson',color:'#90a8c8',scope:'Ezra, Nehemiah',desc:'WBC Ezra-Nehemiah with rigorous historical-critical analysis.',dates:'1947–',tradition:'Critical-Evangelical',
+  {key:'williamson',name:'H.G.M. Williamson',color:'#90a8c8',scope:'Ezra, Nehemiah, Psalms',desc:'WBC Ezra-Nehemiah with rigorous historical-critical analysis.',dates:'1947–',tradition:'Critical-Evangelical',
    photo:'',works:'WBC Ezra, Nehemiah (1985)',
    bio:'Hugh Williamson is Regius Professor of Hebrew at Oxford. His Word Biblical Commentary on Ezra-Nehemiah is the standard academic reference, combining rigorous textual and historical analysis with theological insight. Particularly strong on the Aramaic sections and Persian administrative context.',
    bookScope:['ezra'],buttonCSS:'.anno-trigger.williamson'}
@@ -210,4 +210,15 @@ window.SCHOLAR_DATA = [
    dates:'1953\u2013',photo:'',works:'NAC Song of Songs (2004)',
    bio:'Duane Garrett is John R. Sampey Professor of Old Testament Interpretation at The Southern Baptist Theological Seminary. His NAC commentary on Song of Songs reads the poem as a celebration of marital love, structured as a unified dramatic sequence rather than a collection of fragments.',
    bookScope:['song_of_solomon'],buttonCSS:'.anno-trigger.garrett'}
+,
+  {key:'vangemeren',name:'Willem A. VanGemeren',color:'#88a8c8',scope:'Psalms',
+   tradition:'Reformed Evangelical',desc:'EBC Psalms. Comprehensive evangelical commentary integrating ANE background with Reformed theology.',
+   dates:'1943\u2013',photo:'',works:'EBC Psalms (2008)',
+   bio:'Willem VanGemeren is Professor Emeritus of Old Testament and Semitic Languages at Trinity Evangelical Divinity School. His EBC commentary on the Psalms is one of the most thorough evangelical treatments, combining detailed exegesis with sensitivity to the Psalms as worship literature.',
+   bookScope:['psalms'],buttonCSS:'.anno-trigger.vangemeren'},
+  {key:'goldingay',name:'John Goldingay',color:'#b0a890',scope:'Psalms',
+   tradition:'Anglican Academic',desc:'BCOT Psalms (3 vols). Literary-theological commentary with fresh translation.',
+   dates:'1942\u2013',photo:'',works:'BCOT Psalms 1\u201341 (2006), 42\u201389 (2007), 90\u2013150 (2008)',
+   bio:'John Goldingay is David Allan Hubbard Professor Emeritus of Old Testament at Fuller Theological Seminary. His three-volume Baker Commentary on Psalms offers fresh translations with literary and theological insight, reading each psalm as both ancient Israelite worship and contemporary spiritual resource.',
+   bookScope:['psalms'],buttonCSS:'.anno-trigger.goldingay'}
 ];
