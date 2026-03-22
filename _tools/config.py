@@ -466,6 +466,19 @@ BOOK_META = {
         'vhl_key': ['LORD','God','praise','mercy','righteousness','wicked','salvation','trust','fear','love','faithful','king','throne','refuge','shepherd','rock','fortress','holy','glory','prayer'],
         'vhl_time': ['day','night','morning','forever','generations','eternity'],
     },
+    'daniel': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Daniel, with editorial compilation.\n\n'
+                 '<strong>When written:</strong> 6th century BC setting (605-536 BC); '
+                 'final form debated (6th or 2nd century BC).\n\n'
+                 '<strong>What prompted it:</strong> Court tales of faithfulness in exile (chs.1-6) '
+                 'and apocalyptic visions of God\'s sovereignty over all kingdoms (chs.7-12).'),
+        'vhl_places': ['Babylon','Jerusalem','temple','river','den','furnace','mountain','sea'],
+        'vhl_people': ['God','king','son','angel','saints','wise','prince','beast'],
+        'vhl_time':   ['time','times','days','years','night','evening','morning','end','eternal'],
+        'vhl_key':    ['kingdom','vision','dream','mystery','sovereignty','glory','worship','power',
+                       'throne','dominion','stone','horn','beast','angel','decree','wisdom'],
+    },
     'proverbs': {
         'is_nt': False,
         'auth': ('<strong>Author:</strong> Primarily Solomon son of David (chs.1-29), with additional '

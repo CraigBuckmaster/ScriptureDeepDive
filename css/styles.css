@@ -617,3 +617,8 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.goldingay.active{filter:brightness(1.25);}
 .com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
 .com-panel.com-japhet h4{color:#a8c8b8;}
+
+/* Collins — deep blue-grey (Hermeneia Daniel) */
+.anno-trigger.collins{color:#7a9ab0;border-color:#4a6a80;background:rgba(74,106,128,.08);}
+.anno-trigger.collins:hover{background:rgba(74,106,128,.18);border-color:#7a9ab0;}
+.anno-trigger.collins:active,.anno-trigger.collins.active{background:rgba(74,106,128,.28);border-color:#9abacc;}
