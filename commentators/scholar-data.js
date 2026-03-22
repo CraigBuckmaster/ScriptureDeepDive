@@ -175,4 +175,13 @@ window.SCHOLAR_DATA = [
    photo:'',works:'WBC Ezra, Nehemiah (1985)',
    bio:'Hugh Williamson is Regius Professor of Hebrew at Oxford. His Word Biblical Commentary on Ezra-Nehemiah is the standard academic reference, combining rigorous textual and historical analysis with theological insight. Particularly strong on the Aramaic sections and Persian administrative context.',
    bookScope:['ezra'],buttonCSS:'.anno-trigger.williamson'}
+,
+  {key:'jobes',name:'Karen H. Jobes',dates:'1952–',tradition:'Evangelical',
+   photo:'',works:'NIVAC Esther (1999)',
+   bio:'Karen Jobes is Gerald F. Hawthorne Professor Emerita of New Testament Greek and Exegesis at Wheaton College. Her NIVAC commentary on Esther masterfully balances literary analysis, Persian-period history, and theological application. She is particularly strong on the providence theology of Esther — how God works through human agency without explicit mention.',
+   bookScope:['esther'],buttonCSS:'.anno-trigger.jobes'},
+  {key:'levenson',name:'Jon D. Levenson',dates:'1949–',tradition:'Jewish Academic',
+   photo:'',works:'OTL Esther (1997)',
+   bio:'Jon Levenson is Albert A. List Professor of Jewish Studies at Harvard Divinity School. His OTL commentary on Esther is the standard academic treatment, combining literary sophistication with deep knowledge of Jewish interpretive traditions. He reads Esther as a diaspora survival narrative with profound connections to the Exodus story — Haman as a new Pharaoh, Esther as a new Moses.',
+   bookScope:['esther'],buttonCSS:'.anno-trigger.levenson'}
 ];

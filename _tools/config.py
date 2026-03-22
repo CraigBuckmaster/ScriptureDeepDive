@@ -100,7 +100,9 @@ COMMENTATOR_SCOPE = {
     'selman':    ['1_chronicles', '2_chronicles'],  # Martin Selman, TOTC 1 \& 2 Chronicles (1994)
     'japhet':    ['1_chronicles', '2_chronicles'],  # Sara Japhet, OTL I \& II Chronicles (1993)
     'kidner':    ['ezra', 'nehemiah'],                              # Derek Kidner, TOTC Ezra-Nehemiah (1979)
-    'williamson':['ezra', 'nehemiah'],                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'williamson':['ezra', 'nehemiah'],
+    'jobes':     ['esther'],                             # Karen Jobes, NIVAC Esther (1999)
+    'levenson':  ['esther'],                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -408,6 +410,15 @@ BOOK_META = {
         'vhl_people': ['Nehemiah','Sanballat','Tobiah','Geshem','Ezra','Artaxerxes','Eliashib','Hanani','Moses','David','Solomon','Abraham','Noah'],
         'vhl_key': ['LORD','God','wall','gates','temple','house','law','covenant','prayer','work','rebuild','guard','fight','remember','joy','tithes','Sabbath'],
         'vhl_time': ['day','days','night','month','year','years','fifty-two days','twelfth year','twentieth year'],
+    },
+    'esther': {
+        'is_nt': False,
+        'auth': ('<strong>Author:</strong> Anonymous. <strong>Date:</strong> c.&thinsp;460&ndash;350 BC. '
+                 '<strong>Setting:</strong> Susa, capital of the Persian Empire, during the reign of Ahasuerus (Xerxes I), c.&thinsp;483&ndash;473 BC.'),
+        'vhl_places': ['Susa','Persia','India','Ethiopia','Media','Jerusalem','Judah','Babylon'],
+        'vhl_people': ['Esther','Mordecai','Haman','Xerxes','Ahasuerus','Vashti','Zeresh','Hathak','Memucan','Hegai','Bigthana','Teresh','Harbona'],
+        'vhl_key': ['king','queen','decree','law','sceptre','gallows','feast','banquet','honour','Jews','destroy','deliverance','Purim','lot','edict','royal','throne'],
+        'vhl_time': ['day','days','night','month','year','twelfth month','thirteenth day','Adar','Nisan'],
     },
     'proverbs': {
         'is_nt': False,

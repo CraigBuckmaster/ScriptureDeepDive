@@ -72,6 +72,7 @@ REGISTRY = [
     ('2_chronicles','2 Chronicles', 36, 36, 'OT', 'ot'),
     ('ezra',        'Ezra',         10, 10, 'OT', 'ot'),
     ('nehemiah',    'Nehemiah',     13, 13, 'OT', 'ot'),
+    ('esther',      'Esther',       10, 10, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
@@ -95,6 +96,7 @@ BOOK_PREFIX = {
     '2_chronicles':'2ch',
     'ezra':     'ezr',
     'nehemiah': 'neh',
+    'esther': 'est',
     'ruth':     'ru',
     'proverbs': 'pr',
     'leviticus':'lev',
@@ -1518,6 +1520,8 @@ def build_chapter(book_dir, ch, data):
         if 'block'      in sec and in_scope('block'):      btns.append(('block',     'Block',       f'{sid}-block'))
         if 'webb'       in sec and in_scope('webb'):       btns.append(('webb',      'Webb',        f'{sid}-webb'))
         if 'williamson'  in sec and in_scope('williamson'):  btns.append(('williamson', 'Williamson',     f'{sid}-williamson'))
+        if 'levenson'  in sec and in_scope('levenson'):  btns.append(('levenson', 'Levenson',     f'{sid}-levenson'))
+        if 'jobes'  in sec and in_scope('jobes'):  btns.append(('jobes', 'Jobes',     f'{sid}-jobes'))
         if 'kidner'  in sec and in_scope('kidner'):  btns.append(('kidner', 'Kidner',     f'{sid}-kidner'))
         if 'bergen'     in sec and in_scope('bergen'):     btns.append(('bergen',    'Bergen',      f'{sid}-bergen'))
         if 'tsumura'    in sec and in_scope('tsumura'):    btns.append(('tsumura',   'Tsumura',     f'{sid}-tsumura'))
@@ -1555,6 +1559,8 @@ def build_chapter(book_dir, ch, data):
         if 'howard'   in sec and in_scope('howard'):    panels_html += commentary_panel(f'{sid}-howard',   'howard',    sec['howard'])
         if 'block'    in sec and in_scope('block'):     panels_html += commentary_panel(f'{sid}-block',    'block',     sec['block'])
         if 'williamson' in sec and in_scope('williamson'): panels_html += commentary_panel(f'{sid}-williamson', 'williamson', sec['williamson'])
+        if 'levenson' in sec and in_scope('levenson'): panels_html += commentary_panel(f'{sid}-levenson', 'levenson', sec['levenson'])
+        if 'jobes' in sec and in_scope('jobes'): panels_html += commentary_panel(f'{sid}-jobes', 'jobes', sec['jobes'])
         if 'kidner' in sec and in_scope('kidner'): panels_html += commentary_panel(f'{sid}-kidner', 'kidner', sec['kidner'])
         if 'webb'     in sec and in_scope('webb'):      panels_html += commentary_panel(f'{sid}-webb',     'webb',      sec['webb'])
         if 'bergen'   in sec and in_scope('bergen'):    panels_html += commentary_panel(f'{sid}-bergen',   'bergen',    sec['bergen'])
