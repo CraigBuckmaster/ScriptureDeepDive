@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.248';
+const CACHE = 'scripture-2.249';
 
 const SHELL = [
   '/',
@@ -88,6 +88,8 @@ const PRECACHE = [
   '/verses/niv/ot/ecclesiastes.json',
   '/verses/niv/ot/song_of_solomon.js',
   '/verses/niv/ot/song_of_solomon.json',
+  '/verses/niv/ot/psalms.js',
+  '/verses/niv/ot/psalms.json',
   '/verses/niv/ot/proverbs.js',
   '/verses/niv/ot/proverbs.json',
   '/verses/niv/nt/matthew.js',
@@ -141,6 +143,8 @@ const PRECACHE = [
   '/verses/esv/ot/ecclesiastes.json',
   '/verses/esv/ot/song_of_solomon.js',
   '/verses/esv/ot/song_of_solomon.json',
+  '/verses/esv/ot/psalms.js',
+  '/verses/esv/ot/psalms.json',
   '/verses/esv/ot/proverbs.js',
   '/verses/esv/ot/proverbs.json',
   '/verses/esv/nt/matthew.js',
@@ -823,6 +827,7 @@ const PRECACHE = [
   '/intro/nehemiah.html',
   '/intro/numbers.html',
   '/intro/proverbs.html',
+  '/intro/psalms.html',
   '/intro/ruth.html',
   '/intro/song_of_solomon.html',
 ];

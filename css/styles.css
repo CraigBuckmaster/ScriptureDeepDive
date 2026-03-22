@@ -609,5 +609,11 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Source Sans 3',sans-se
 .anno-trigger.garrett{color:#c89898;border-color:#886060;background:rgba(136,96,96,.22);}
 .anno-trigger.garrett:hover{border-color:#c89898;background:rgba(136,96,96,.32);}
 .anno-trigger.garrett.active{filter:brightness(1.25);}
+.anno-trigger.vangemeren{color:#88a8c8;border-color:#506880;background:rgba(80,104,128,.22);}
+.anno-trigger.vangemeren:hover{border-color:#88a8c8;background:rgba(80,104,128,.32);}
+.anno-trigger.vangemeren.active{filter:brightness(1.25);}
+.anno-trigger.goldingay{color:#b0a890;border-color:#807860;background:rgba(128,120,96,.22);}
+.anno-trigger.goldingay:hover{border-color:#b0a890;background:rgba(128,120,96,.32);}
+.anno-trigger.goldingay.active{filter:brightness(1.25);}
 .com-panel.com-japhet{background:#040a08;border-color:#4a7868;}
 .com-panel.com-japhet h4{color:#a8c8b8;}
