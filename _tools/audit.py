@@ -300,7 +300,7 @@ else:
 section('3. CSS Integrity')
 
 # CSS now lives in external styles.css — check it once rather than per-chapter
-_styles_path = os.path.join(REPO, 'styles.css')
+_styles_path = os.path.join(REPO, 'css', 'styles.css')
 if os.path.exists(_styles_path):
     with open(_styles_path) as f: _css = f.read()
     ok(f'External styles.css found ({len(_css):,} chars)')
@@ -430,7 +430,7 @@ else:
     ok('No hardcoded arrow hrefs remain (all dynamic)')
 
 # 6d. BOOKS order matches BOOK_ROSTER order (nav-arrows.js depends on this)
-_books_path = os.path.join(REPO, 'books.js')
+_books_path = os.path.join(REPO, 'js', 'core', 'books.js')
 with open(_books_path) as f: _books_raw = f.read()
 _books_dirs = re.findall(r'dir:"([^"]+)"', _books_raw)
 _roster_dirs = [bd for bd, bn, ch_range, td in BOOK_ROSTER]
@@ -464,7 +464,7 @@ else:
     ok('All chapters have testament-prefixed QNAV_CURRENT')
 
 # Verify no chapter still uses depth-1 ../ for root assets
-root_assets = ['books.js','qnav.js','index.html','manifest.json','icon-192.png']
+root_assets = ['js/core/books.js','js/core/qnav.js','index.html','manifest.json','assets/icon-192.png']
 depth_errors = []
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
@@ -536,7 +536,7 @@ section('9. tog() Function')
 
 tog_errors = []
 # Check external tog.js exists and has correct content
-_tog_path = os.path.join(REPO, 'tog.js')
+_tog_path = os.path.join(REPO, 'js', 'core', 'tog.js')
 if os.path.exists(_tog_path):
     with open(_tog_path) as f: _tog_content = f.read()
     if 'anno-panel.open' in _tog_content and 'themes-panel.open' in _tog_content:
@@ -590,7 +590,7 @@ for path, book, ch in chapters:
     # CSS may be inline (<style>) or external (styles.css) — get the right source
     if '<style>' in h:
         css = h[h.find('<style>'):h.find('</style>')]
-    elif os.path.exists(os.path.join(REPO, 'styles.css')):
+    elif os.path.exists(os.path.join(REPO, 'css', 'styles.css')):
         css = _css  # reuse from section 3
     else:
         css = ''
@@ -882,8 +882,8 @@ missing_tl_css  = []
 missing_poi_css = []
 # CSS may be inline or in external styles.css
 _ext_css = ''
-if os.path.exists(os.path.join(REPO, 'styles.css')):
-    with open(os.path.join(REPO, 'styles.css')) as f: _ext_css = f.read()
+if os.path.exists(os.path.join(REPO, 'css', 'styles.css')):
+    with open(os.path.join(REPO, 'css', 'styles.css')) as f: _ext_css = f.read()
 for path, book, ch in chapters:
     with open(path) as f: h = f.read()
     if '<style>' in h:
@@ -927,8 +927,8 @@ if all_ok_15:
 section('16. Homepage Structural Checks')
 
 # Load external homepage files if they exist
-_hp_css_path = f'{REPO}/homepage.css'
-_hp_js_path = f'{REPO}/homepage.js'
+_hp_css_path = f'{REPO}/css/homepage.css'
+_hp_js_path = f'{REPO}/js/pages/homepage.js'
 _hp_css = open(_hp_css_path).read() if os.path.exists(_hp_css_path) else ''
 _hp_js = open(_hp_js_path).read() if os.path.exists(_hp_js_path) else ''
 _hp_all = idx + _hp_css + _hp_js  # combined content for checks
@@ -1014,7 +1014,7 @@ if os.path.exists(_idx_path):
 
 # Check CSS button colors exist in styles.css (or shared.py for legacy)
 _css_sources = ''
-_styles_file = os.path.join(REPO, 'styles.css')
+_styles_file = os.path.join(REPO, 'css', 'styles.css')
 if os.path.exists(_styles_file):
     with open(_styles_file) as _f: _css_sources += _f.read()
 with open(os.path.join(REPO, '_tools', 'shared.py')) as _f: _css_sources += _f.read()
@@ -1043,7 +1043,7 @@ else:
     ok('All verse files have valid JS variable names')
 
 # Check BOOK_VARS / cacheLegacyData in translation.js has entries for live books
-with open(os.path.join(REPO, 'translation.js')) as _tf: _tx = _tf.read()
+with open(os.path.join(REPO, 'js', 'features', 'translation.js')) as _tf: _tx = _tf.read()
 # v3 uses cacheLegacyData() with bookVars array; v2 used BOOK_VARS
 _bv_match = re.search(r"(?:BOOK_VARS|bookVars)\s*=\s*\[([^\]]+)\]", _tx)
 if _bv_match:

@@ -34,7 +34,7 @@ def fail(msg):
 # ═══════════════════════════════════════════════════════════════════════════
 
 print('\n1. qnav.js global functions')
-qnav_path = os.path.join(REPO, 'qnav.js')
+qnav_path = os.path.join(REPO, 'js', 'core', 'qnav.js')
 with open(qnav_path) as f:
     qnav = f.read()
 
@@ -89,7 +89,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 
 print('\n3. External stylesheet')
-styles_path = os.path.join(REPO, 'styles.css')
+styles_path = os.path.join(REPO, 'css', 'styles.css')
 if os.path.exists(styles_path):
     ok('styles.css exists')
     with open(styles_path) as f:
@@ -131,7 +131,7 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════
 
 print('\n4. External JS files')
-for js_file in ['tog.js', 'history.js']:
+for js_file in ['js/core/tog.js', 'js/core/history.js']:
     path = os.path.join(REPO, js_file)
     if os.path.exists(path):
         ok(f'{js_file} exists')
@@ -161,8 +161,8 @@ sw_path = os.path.join(REPO, 'service-worker.js')
 with open(sw_path) as f:
     sw = f.read()
 
-required_assets = ['/styles.css', '/tog.js', '/history.js',
-                   '/qnav.js', '/translation.js', '/books.js']
+required_assets = ['/css/styles.css', '/js/core/tog.js', '/js/core/history.js',
+                   '/js/core/qnav.js', '/js/features/translation.js', '/js/core/books.js']
 for asset in required_assets:
     if asset in sw:
         ok(f'{asset} in SW CORE')

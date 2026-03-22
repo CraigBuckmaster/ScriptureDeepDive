@@ -147,7 +147,7 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
     kw = key_words  or []
     def js_list(lst):
         return '[' + ','.join(f"'{w}'" for w in lst) + ']'
-    return f'''<script src="../../vhl.js"></script>
+    return f'''<script src="../../js/core/vhl.js"></script>
 <script>
 (function(){{
   var DIVINE={{words:{js_list(divine)},cls:'vhl-divine',btn:['hebrew','hebrew-text','context']}};
@@ -160,7 +160,7 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
 </script>'''
 
 # NOTE: HISTORY_JS moved to external history.js file (Batch 4).
-# Loaded via <script src="../../history.js"> in page().
+# Loaded via <script src="../../js/core/history.js"> in page().
 
 # ══════════════════════════════════════════════════════════════════════
 #  PAGE ASSEMBLY — head, nav, chapter header, final HTML output
@@ -189,7 +189,7 @@ def head(book_name, book_dir, ch, is_nt=False):
 <meta name="theme-color" content="#0c0a07">
 <link rel="apple-touch-icon" href="../../assets/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 {nav}'''
@@ -724,14 +724,14 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
             chapter_header(book_name, ch, title, auth_text, is_nt) +
             '\n' + sections_html + '\n' + scholarly_html +
             '\n</main>\n' +
-            '<script src="../../tog.js"></script>\n' +
+            '<script src="../../js/core/tog.js"></script>\n' +
             _vhl + '\n' +
-            '<script src="../../books.js"></script>\n' +
+            '<script src="../../js/core/books.js"></script>\n' +
             f'<script src="../../verses/niv/{book_dir_test}/{book_dir}.js"></script>\n' +
-            '<script src="../../history.js"></script>\n' +
+            '<script src="../../js/core/history.js"></script>\n' +
             SW_JS + '\n' +
             f'<script>window.QNAV_CURRENT="{book_dir_test}/{book_dir}/{book_name.replace(chr(32),chr(95))}_{ch}.html";</script>\n' +
-            '<script src="../../nav-arrows.js"></script>\n<script src="../../qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../translation.js"></script>\n<script src="../../feature-loader.js"></script>\n</body></html>')
+            '<script src="../../js/core/nav-arrows.js"></script>\n<script src="../../js/core/qnav.js"></script>\n<script src="../../data/translations.js"></script>\n<script src="../../js/features/translation.js"></script>\n<script src="../../js/features/feature-loader.js"></script>\n</body></html>')
     file_name = book_name.replace(' ', '_')
     path = f'{out_dir}/{file_name}_{ch}.html'
     with open(path, 'w') as f: f.write(html)
@@ -1700,7 +1700,7 @@ def rebuild_books_js():
         + ",\n".join(rows)
         + "\n];\n"
     )
-    path = f'{_REPO}/books.js'
+    path = f'{_REPO}/js/core/books.js'
     with open(path, 'w') as f:
         f.write(content)
     print(f'books.js rebuilt: {len(REGISTRY)} books')
@@ -1788,39 +1788,47 @@ def rebuild_sw_js():
         '/people.html',
         '/map.html',
         '/timeline.html',
-        '/styles.css',
-        '/base.css',
-        '/homepage.css',
-        '/homepage.js',
-        '/books.js',
-        '/qnav.js',
-        '/nav-arrows.js',
-        '/tog.js',
-        '/vhl.js',
-        '/history.js',
-        '/translation.js',
-        '/site-footer.js',
-        '/verse-resolver.js',
-        '/study-storage.js',
-        '/feature-loader.js',
-        '/annotations.js',
-        '/annotations.css',
-        '/book-intro.css',
-        '/book-intro.js',
+        '/synoptic.html',
+        '/word-study.html',
+        # CSS
+        '/css/styles.css',
+        '/css/base.css',
+        '/css/homepage.css',
+        '/css/annotations.css',
+        '/css/book-intro.css',
+        '/css/people.css',
+        '/css/timeline.css',
+        # JS core
+        '/js/core/books.js',
+        '/js/core/qnav.js',
+        '/js/core/nav-arrows.js',
+        '/js/core/tog.js',
+        '/js/core/vhl.js',
+        '/js/core/site-footer.js',
+        '/js/core/history.js',
+        # JS features
+        '/js/features/feature-loader.js',
+        '/js/features/annotations.js',
+        '/js/features/cross-ref-engine.js',
+        '/js/features/cross-ref-ui.js',
+        '/js/features/word-study-engine.js',
+        '/js/features/word-study-ui.js',
+        '/js/features/synoptic.js',
+        '/js/features/translation.js',
+        '/js/features/book-intro.js',
+        '/js/features/study-storage.js',
+        '/js/features/verse-resolver.js',
+        # JS pages
+        '/js/pages/homepage.js',
+        '/js/pages/people-data.js',
+        '/js/pages/timeline-data.js',
+        # Data
         '/data/book-intros.js',
         '/data/cross-refs.js',
-        '/cross-ref-engine.js',
-        '/cross-ref-ui.js',
         '/data/synoptic-map.js',
-        '/synoptic.js',
         '/data/word-study.js',
-        '/word-study-engine.js',
-        '/word-study-ui.js',
         '/data/translations.js',
-        '/people-data.js',
-        '/people.css',
-        '/timeline-data.js',
-        '/timeline.css',
+        # Other
         '/commentators/scholar-data.js',
         '/commentators/commentator-nav.js',
         '/verses/chapters.js',
@@ -1950,7 +1958,7 @@ def rebuild_qnav_js():
     import re as _re
 
     # ── 1. Preserve CSS and global JS from the existing qnav.js ─────────
-    qnav_path = f'{_REPO}/qnav.js'
+    qnav_path = f'{_REPO}/js/core/qnav.js'
     with open(qnav_path) as f:
         existing = f.read()
 

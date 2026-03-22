@@ -20,7 +20,7 @@
   // ── Inject CSS ──────────────────────────────────────────────────────────
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '../../annotations.css';
+  link.href = '../../css/annotations.css';
   document.head.appendChild(link);
 
   // ── SVG icons ───────────────────────────────────────────────────────────

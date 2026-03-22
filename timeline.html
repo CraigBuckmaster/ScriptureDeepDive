@@ -7,8 +7,8 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="base.css">
-<link rel="stylesheet" href="timeline.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/timeline.css">
 </head>
 <body>
 
@@ -153,10 +153,10 @@
   </div>
 </div>
 
-<script src="books.js"></script>
-<script src="verse-resolver.js"></script>
-<script src="people-data.js"></script>
-<script src="timeline-data.js"></script>
+<script src="js/core/books.js"></script>
+<script src="js/features/verse-resolver.js"></script>
+<script src="js/pages/people-data.js"></script>
+<script src="js/pages/timeline-data.js"></script>
 <script>
 
 // ── CONSTANTS ──────────────────────────────────────────────────────────────
@@ -784,6 +784,6 @@ initTimeline();
 handleHash();
 window.addEventListener('hashchange', handleHash);
 </script>
-<script src="site-footer.js"></script>
+<script src="js/core/site-footer.js"></script>
 </body>
 </html>
