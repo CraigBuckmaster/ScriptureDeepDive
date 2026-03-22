@@ -190,27 +190,6 @@ const LABEL_PAD    = 20;
 const LABEL_GAP    = 10;
 
 // ── STATE ──────────────────────────────────────────────────────────────────
-function activeH(){
-  if(showHistory) return TL.H_FULL;
-  if(showPeople)  return TL.H_PEOPLE;
-  return TL.H_BASE;
-}
-
-function updateViewBox(){
-  const svgEl=document.getElementById('timeline-svg');
-  if(!svgEl) return;
-  const W=document.getElementById('timeline-panel').clientWidth;
-  const H=activeH();
-  svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  // Resize background rects and clip rect to match
-  svgEl.querySelectorAll(':scope > rect').forEach(r=>{
-    r.setAttribute('height',H);
-    if(r.getAttribute('width')!==String(W)) r.setAttribute('width',W);
-  });
-  const clipRect=svgEl.querySelector('clipPath > rect');
-  if(clipRect){ clipRect.setAttribute('height',H); clipRect.setAttribute('width',W); }
-}
-
 let translateX=0, scaleX=1;
 let currentEra='all', showPeople=false, showHistory=false;
 let isPanning=false, panStartX=0, panStartTranslate=0, lastPinchDist=0;
@@ -242,12 +221,12 @@ function txt(text,attrs,parent){
 function initTimeline(){
   const panel=document.getElementById('timeline-panel');
   const svgEl=document.getElementById('timeline-svg');
-  const W=panel.clientWidth, H=activeH();
+  computeLayout();
+  const W=panel.clientWidth, H=panel.clientHeight;
 
   svgEl.setAttribute('width',panel.clientWidth);
   svgEl.setAttribute('height',panel.clientHeight);
   svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  svgEl.setAttribute('preserveAspectRatio','none');
   while(svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
 
   // Parchment background — fill the full coordinate space
@@ -597,19 +576,15 @@ function jumpToEra(era){
 // ── TOGGLES ─────────────────────────────────────────────────────────────────
 function togglePeople(){
   showPeople=!showPeople;
-  const gp=document.getElementById('g-people');
-  if(gp){ gp.setAttribute('opacity',showPeople?'1':'0'); if(showPeople) drawPeople(); }
   document.getElementById('people-toggle-btn')?.classList.toggle('active',showPeople);
   document.getElementById('mobile-people-btn')?.classList.toggle('active',showPeople);
-  updateViewBox();
+  initTimeline();
 }
 function toggleHistory(){
   showHistory=!showHistory;
-  const gh=document.getElementById('g-history');
-  if(gh){ gh.setAttribute('opacity',showHistory?'1':'0'); if(showHistory) drawHistory(); }
   document.getElementById('history-toggle-btn')?.classList.toggle('active',showHistory);
   document.getElementById('mobile-history-btn')?.classList.toggle('active',showHistory);
-  updateViewBox();
+  initTimeline();
 }
 function toggleLegend(){ document.getElementById('legend')?.classList.toggle('collapsed'); }
 function toggleMobileLegend(){
