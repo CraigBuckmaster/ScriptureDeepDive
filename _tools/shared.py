@@ -205,12 +205,21 @@ def save_chapter(book_dir, ch, data):
 
         chapter['sections'].append(section_out)
 
-    # ── Chapter-level panels ──
+    # ── Chapter-level panels (explicit from data) ──
     ch_panel_keys = {'lit', 'themes', 'ppl', 'trans', 'src', 'rec',
                      'hebtext', 'thread', 'tx', 'debate'}
     for key in ch_panel_keys:
         if key in data and data[key] is not None:
             chapter['chapter_panels'][key] = _normalise_chapter_panel(key, data[key])
+
+    # ── Auto-generate missing chapter panels ──
+    try:
+        auto_panels = auto_scholarly_json(data, book_dir, ch)
+        for key, value in auto_panels.items():
+            if key not in chapter['chapter_panels']:
+                chapter['chapter_panels'][key] = value
+    except Exception as e:
+        print(f'  ⚠ auto_scholarly_json failed (non-fatal): {e}')
 
     # ── Write JSON ──
     out_dir = os.path.join(CONTENT_DIR, book_dir)
@@ -485,6 +494,190 @@ def rebuild_sqlite():
     if result.returncode != 0:
         print(f"ERROR: {result.stderr}")
     return result.returncode == 0
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  AUTO-SCHOLARLY JSON — auto-generate chapter-level panels as dicts
+# ══════════════════════════════════════════════════════════════════════
+
+def auto_scholarly_json(data, book_dir, ch):
+    """Auto-generate chapter-level scholarly panels as clean JSON dicts.
+
+    Calls the existing auto_scholarly() and transforms its tuple/HTML
+    output into the canonical JSON formats defined in PHASE_1_PLAN.md.
+
+    Returns a dict with keys: hebtext, lit, themes, ppl, trans, src,
+    rec, tx, debate, thread. Missing panels omitted.
+    """
+    import re as _re
+
+    # Call the existing (HTML-era) auto_scholarly
+    raw = auto_scholarly(data, book_dir, ch)
+    result = {}
+
+    # ── HEBTEXT: HTML string → list of dicts ──
+    # Instead of parsing the HTML, regenerate from section heb entries
+    sections = data.get('sections', [])
+    meta = BOOK_META.get(book_dir, {})
+    is_nt = meta.get('is_nt', False)
+    heb_entries = []
+    for sec in sections:
+        for e in sec.get('heb', []):
+            if isinstance(e, (list, tuple)) and len(e) >= 4:
+                heb_entries.append({
+                    'word': e[0], 'tlit': e[1], 'gloss': e[2], 'note': e[3],
+                })
+            elif isinstance(e, dict):
+                heb_entries.append({
+                    'word': e.get('word', ''),
+                    'tlit': e.get('transliteration', e.get('tlit', '')),
+                    'gloss': e.get('gloss', ''),
+                    'note': e.get('paragraph', e.get('note', '')),
+                })
+    if heb_entries:
+        result['hebtext'] = heb_entries
+
+    # ── LIT: (rows_list, note) → {rows, note} ──
+    if 'lit' in raw:
+        lit_raw = raw['lit']
+        if isinstance(lit_raw, (list, tuple)) and len(lit_raw) == 2:
+            rows, note = lit_raw
+            result['lit'] = {
+                'rows': [_normalise_lit_row(r) for r in rows],
+                'note': note or '',
+            }
+        elif isinstance(lit_raw, dict):
+            result['lit'] = lit_raw
+
+    # ── THEMES: (scores_list, note) → {scores, note} ──
+    if 'themes' in raw:
+        themes_raw = raw['themes']
+        if isinstance(themes_raw, (list, tuple)) and len(themes_raw) == 2:
+            scores, note = themes_raw
+            result['themes'] = {
+                'scores': [{'name': s[0], 'value': s[1]} if isinstance(s, (list, tuple))
+                           else s for s in scores],
+                'note': note or '',
+            }
+        elif isinstance(themes_raw, dict):
+            result['themes'] = themes_raw
+
+    # ── PPL: list of tuples → list of dicts ──
+    if 'ppl' in raw:
+        ppl_raw = raw['ppl']
+        ppl_out = []
+        for p in ppl_raw:
+            if isinstance(p, (list, tuple)):
+                entry = {'name': p[0], 'role': p[1],
+                         'text': p[2] if len(p) > 2 else ''}
+                if len(p) > 3 and p[3]:
+                    entry['timeline_id'] = p[3]
+                ppl_out.append(entry)
+            elif isinstance(p, dict):
+                ppl_out.append(p)
+        if ppl_out:
+            result['ppl'] = ppl_out
+
+    # ── TRANS: (title, rows_list) → {title, rows} ──
+    if 'trans' in raw:
+        trans_raw = raw['trans']
+        if isinstance(trans_raw, (list, tuple)) and len(trans_raw) == 2:
+            title_str, rows = trans_raw
+            # rows = [('NIV', text), ('ESV', text), ...]
+            # Group into verse-pairs
+            trans_rows = []
+            for i in range(0, len(rows), 2):
+                if i + 1 < len(rows):
+                    trans_rows.append({
+                        'verse_ref': '',
+                        'translations': [
+                            {'version': rows[i][0], 'text': rows[i][1]},
+                            {'version': rows[i+1][0], 'text': rows[i+1][1]},
+                        ]
+                    })
+            if trans_rows:
+                result['trans'] = {'title': title_str, 'rows': trans_rows}
+        elif isinstance(trans_raw, dict):
+            result['trans'] = trans_raw
+
+    # ── SRC: list of 3-tuples → list of dicts ──
+    if 'src' in raw:
+        src_out = []
+        for s in raw['src']:
+            if isinstance(s, (list, tuple)) and len(s) >= 3:
+                src_out.append({'title': s[0], 'quote': s[1], 'note': s[2]})
+            elif isinstance(s, dict):
+                src_out.append(s)
+        if src_out:
+            result['src'] = src_out
+
+    # ── REC: list of 3-tuples → list of dicts ──
+    if 'rec' in raw:
+        rec_out = []
+        for r in raw['rec']:
+            if isinstance(r, (list, tuple)) and len(r) >= 3:
+                rec_out.append({'title': r[0], 'quote': r[1], 'note': r[2]})
+            elif isinstance(r, dict):
+                rec_out.append(r)
+        if rec_out:
+            result['rec'] = rec_out
+
+    # ── TEXTUAL: list of 4-tuples with HTML → list of dicts, plain text ──
+    if 'textual' in raw:
+        tx_out = []
+        for t in raw['textual']:
+            if isinstance(t, (list, tuple)) and len(t) >= 4:
+                content = _strip_tx_html(t[2])
+                tx_out.append({'ref': t[0], 'title': t[1],
+                               'content': content, 'note': t[3]})
+            elif isinstance(t, dict):
+                if 'content' in t:
+                    t['content'] = _strip_tx_html(t['content'])
+                tx_out.append(t)
+        if tx_out:
+            result['tx'] = tx_out  # Note: 'textual' key → 'tx' in JSON schema
+
+    # ── DEBATE: already structured dicts ──
+    if 'debate' in raw:
+        result['debate'] = raw['debate']
+
+    # ── THREAD: list of 7-tuples → list of dicts ──
+    if 'thread' in raw:
+        thread_out = []
+        for t in raw['thread']:
+            if isinstance(t, (list, tuple)) and len(t) >= 7:
+                thread_out.append({
+                    'direction': t[0],   # dc: fulfilment/echo/type/connection
+                    'anchor': t[1],
+                    'target': t[3],
+                    'type': t[5],        # tl: display label
+                    'text': t[6],
+                })
+            elif isinstance(t, dict):
+                thread_out.append(t)
+        if thread_out:
+            result['thread'] = thread_out
+
+    return result
+
+
+def _strip_tx_html(text):
+    """Strip HTML spans from textual notes content.
+
+    Converts: <span class="tx-mt">MT</span> → MT:
+              <span class="tx-lxx">LXX</span> → LXX:
+              <span class="tx-dss">DSS</span> → DSS:
+              <span class="tx-sp">SP</span> → SP:
+    Strips all remaining HTML tags.
+    """
+    import re as _re
+    text = _re.sub(r'<span class="tx-mt">MT</span>', 'MT:', text)
+    text = _re.sub(r'<span class="tx-lxx">LXX</span>', 'LXX:', text)
+    text = _re.sub(r'<span class="tx-dss">DSS</span>', 'DSS:', text)
+    text = _re.sub(r'<span class="tx-sp">SP</span>', 'SP:', text)
+    text = _re.sub(r'<[^>]+>', '', text)  # strip remaining HTML
+    text = _re.sub(r'\s+', ' ', text).strip()
+    return text
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -1290,8 +1483,13 @@ def auto_scholarly(data, book_dir, ch):
             result['ppl'] = ppl
     # ── 5. TRANS ─────────────────────────────────────────────────────────
     td = 'nt' if is_nt else 'ot'
-    niv_path = os.path.join(_REPO, 'verses', 'niv', td, f'{book_dir}.js')
-    esv_path = os.path.join(_REPO, 'verses', 'esv', td, f'{book_dir}.js')
+    niv_path = os.path.join(_REPO, '_archive', 'verses', 'niv', td, f'{book_dir}.js')
+    esv_path = os.path.join(_REPO, '_archive', 'verses', 'esv', td, f'{book_dir}.js')
+    # Fallback to root (pre-archive layout)
+    if not os.path.exists(niv_path):
+        niv_path = os.path.join(_REPO, 'verses', 'niv', td, f'{book_dir}.js')
+    if not os.path.exists(esv_path):
+        esv_path = os.path.join(_REPO, 'verses', 'esv', td, f'{book_dir}.js')
     if os.path.exists(niv_path) and os.path.exists(esv_path):
         def _get_vv(path, bk, chapter, vlist):
             with open(path) as f: raw = f.read()
