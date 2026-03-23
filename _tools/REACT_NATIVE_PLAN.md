@@ -527,20 +527,29 @@ export const radii = { sm: 4, md: 8, lg: 12, pill: 999 };
 App
 ├── BottomTabNavigator
 │   ├── HomeTab
-│   │   └── HomeScreen               — Hero, search, featured content, recent history
+│   │   └── HomeScreen
+│   │       ├── Hero section (app branding, tagline)
+│   │       ├── "Continue Reading" chips (last 5 chapters from reading_progress)
+│   │       ├── Inline search bar (mixed verse + people results, inline rendering)
+│   │       ├── Book grid: OT/NT toggle, collapsible book sections
+│   │       │   ├── Book cards with chapter counts + "LIVE" badges
+│   │       │   └── Expand → chapter number grid (tap to open chapter)
+│   │       └── Footer (about, credits)
 │   │
 │   ├── ReadTab (Stack)
-│   │   ├── BookListScreen            — OT/NT sections, book cards with chapter counts
-│   │   ├── ChapterListScreen         — Chapter grid + Book Intro link
-│   │   ├── BookIntroScreen           — "How to Read" — authorship, genre, themes, structure
-│   │   ├── ChapterScreen             — THE main screen (§3)
+│   │   ├── BookListScreen            — OT/NT sections, book cards, chapter counts, LIVE badges
+│   │   ├── ChapterListScreen         — Chapter number grid + "About This Book" link
+│   │   ├── BookIntroScreen           — Full book intro. Supports `initialScrollTo` for chapter-specific deep-scroll.
+│   │   ├── ChapterScreen             — THE main screen (§3). See §3.1 for full layout spec.
 │   │   └── ParallelPassageScreen     — Side-by-side synoptic comparison
 │   │
 │   ├── ExploreTab (Stack)
-│   │   ├── ExploreMenuScreen         — Grid: People, Map, Timeline, Word Studies, Scholars
+│   │   ├── ExploreMenuScreen         — Grid: People, Map, Timeline, Synoptic, Word Studies, Scholars
 │   │   ├── GenealogyTreeScreen       — Zoomable SVG family tree (§4)
 │   │   ├── PersonDetailScreen        — Full bio
 │   │   ├── MapScreen                 — Biblical world map with journey stories (§5)
+│   │   ├── TimelineScreen            — Full interactive timeline (standalone, not just in-chapter panel)
+│   │   ├── ParallelPassageScreen     — Also reachable from Explore (not just from chapters)
 │   │   ├── WordStudyBrowseScreen     — Hebrew/Greek lexicon browser
 │   │   ├── WordStudyDetailScreen     — Single word detail
 │   │   ├── ScholarBrowseScreen       — 43 scholars, filter by tradition/era
@@ -550,12 +559,22 @@ App
 │   │   └── SearchScreen              — FTS5 across verses, people, places, word studies
 │   │
 │   └── MoreTab
-│       └── SettingsScreen            — Translation, font size, reading plans, notifications, about
+│       └── SettingsScreen            — Translation, font size, reading plans, notifications
+│           ├── Authorship & methodology disclosure
+│           ├── About / credits / licenses
+│           └── Footer content
 │
+├── Modal: QnavOverlay                — CRITICAL. Full-screen quick-navigation overlay (§3.5).
+│                                       OT/NT toggle, book accordion, chapter grid, inline search.
+│                                       Triggered by 🔍 button on ChapterScreen nav bar.
+│                                       This is how users jump between books/chapters without leaving.
 ├── Modal: PersonSidebar              — Slide-in from any screen. Tappable family links chain.
 ├── Modal: CrossRefPopup              — Tap reference → verse preview without navigating away.
 ├── Modal: WordStudyPopup             — Tap highlighted word → compact lexicon card.
-└── Modal: ScholarInfoSheet           — Tap scholar name in panel → quick info + "See full bio."
+├── Modal: ScholarInfoSheet           — Tap scholar name in panel → quick info + "See full bio."
+├── Modal: ThreadViewerSheet          — Step-by-step cross-book theme journey (§3.7).
+├── Modal: NotesOverlay               — "My Notes" for current chapter. View/edit/delete per-verse notes (§3.6).
+└── Modal: AuthorshipSheet            — Methodology and content attribution disclosure.
 ```
 
 ### 2.5 — Data access layer
@@ -618,6 +637,44 @@ export const getScholar = (id: string): Scholar | null =>
 export const getScholarsForBook = (bookId: string): Scholar[] =>
   db.getAllSync("SELECT * FROM scholars WHERE scope_json LIKE ? OR scope_json='\"all\"'",
     [`%${bookId}%`]);
+
+// ── User notes ────────────────────────────────────────────────────────
+export const getNotesForChapter = (bookId: string, ch: number): UserNote[] =>
+  db.getAllSync(
+    "SELECT * FROM user_notes WHERE verse_ref LIKE ? ORDER BY verse_ref",
+    [`${bookId} ${ch}:%`]);
+
+export const getNoteCount = (bookId: string, ch: number): number =>
+  db.getFirstSync<{c:number}>(
+    "SELECT COUNT(*) as c FROM user_notes WHERE verse_ref LIKE ?",
+    [`${bookId} ${ch}:%`])?.c ?? 0;
+
+export const saveNote = (verseRef: string, text: string): void =>
+  db.runSync(
+    "INSERT OR REPLACE INTO user_notes (verse_ref, note_text, updated_at) VALUES (?, ?, datetime('now'))",
+    [verseRef, text]);
+
+// ── Reading history ───────────────────────────────────────────────────
+export const recordVisit = (bookId: string, ch: number): void =>
+  db.runSync(
+    "INSERT OR REPLACE INTO reading_progress (book_id, chapter_num, completed_at) VALUES (?, ?, datetime('now'))",
+    [bookId, ch]);
+
+export const getRecentChapters = (limit = 5): RecentChapter[] =>
+  db.getAllSync(
+    `SELECT rp.*, c.title, b.name as book_name FROM reading_progress rp
+     JOIN chapters c ON c.book_id=rp.book_id AND c.chapter_num=rp.chapter_num
+     JOIN books b ON b.id=rp.book_id ORDER BY rp.completed_at DESC LIMIT ?`,
+    [limit]);
+
+// ── Timeline / Map deep-links ─────────────────────────────────────────
+export const getTimelineEventForChapter = (bookId: string, ch: number): TimelineEvent | null =>
+  db.getFirstSync(
+    "SELECT * FROM chapter_panels WHERE chapter_id=? AND panel_type='tl'",
+    [`${bookId}_${ch}`]);
+
+export const getMapStoryForChapter = (chapterLink: string): MapStory | null =>
+  db.getFirstSync("SELECT * FROM map_stories WHERE chapter_link LIKE ?", [`%${chapterLink}%`]);
 ```
 
 ---
@@ -625,37 +682,147 @@ export const getScholarsForBook = (bookId: string): Scholar[] =>
 ## Phase 3: ChapterScreen — The Core Experience (Weeks 6-9)
 *"This is where 90% of user time is spent. Get this right."*
 
-### 3.1 — ChapterScreen layout
+### 3.1 — ChapterScreen full layout
 
 ```
 ┌─────────────────────────────────────┐
-│ ← Isaiah  Ch.1  The Great Arraign→  │  sticky header
+│ ← Library  Genesis Ch.1  ← 🔍 →    │  sticky nav bar (§3.1a)
 ├─────────────────────────────────────┤
 │                                     │
-│ Verses 1–15 — "Though Your Sins..."│  section header
+│ Genesis 1                           │  chapter title (h1)
+│ The Creation of the Heavens...      │  subtitle
 │                                     │
-│ ¹ Hear me, you heavens! Listen,    │  verse text (VHL-highlighted)
-│ earth! The LORD has spoken: I      │
-│ reared children and brought them   │
-│ up, but they have rebelled...      │
+│ [My Notes (3)]  [About This Book →] │  action bar (§3.6, §3.1b)
 │                                     │
-│ [Heb] [Ctx] [✝] [Mac] [Cal] ...   │  button row (animated collapse)
+│ ┌ See on Timeline — Creation ─────┐ │  timeline deep-link (§3.1c)
+│ └─────────────────────────────────┘ │
+│ ┌ 📍 See on Map — Garden of Eden ┐ │  map story deep-link (§3.1c)
+│ └─────────────────────────────────┘ │
+│                                     │
+│ ┌ Creation Thread · Covenant Thr. ┐ │  thread badges (§3.7)
+│ └─────────────────────────────────┘ │
+│                                     │
+│ Verses 1–13 — "In the Beginning"   │  section header
+│                                     │
+│ ¹ In the beginning God created...  │  verse text (VHL-highlighted, §3.3)
+│ ² Now the earth was formless...    │  per-verse note indicator ✏️ (§3.6)
+│ ³ And God said...                  │
+│                                     │
+│ [Heb][Ctx][Hst][✝][Mac][Sar][Cal] │  button row
+│ [Net][Alt][Plc][TL]                │  (incl. poi + tl buttons, §3.2b)
 │                                     │
 │ ┌─ Hebrew Word Study ────────────┐ │
-│ │  רִיב (rîb) — lawsuit          │ │  expanded panel
-│ │  "Hear me, you heavens!..."     │ │
+│ │  בְּרֵאשִׁית (bərēʾshîṯ)       │ │  expanded panel (single-open)
+│ │  — in the beginning             │ │
 │ └────────────────────────────────┘ │
 │                                     │
-│ Verses 16–31 — "The Faithful..."   │  section 2
+│ Verses 14–23 — "Let There Be..."   │  section 2
 │ ...                                 │
 │                                     │
 │ ── SCHOLARLY BLOCK ──────────────── │  chapter-level panels
-│ [Lit] [Heb] [Themes] [Ppl] [Trans] │
+│ [Lit][Heb][Themes][Ppl][Trans]     │
+│ [Src][Rec][Thread][Txt][Debate]    │
+│                                     │
+│ ── Authorship ▾ ─────────────────── │  collapsible authorship disclosure
 │                                     │
 ├─────────────────────────────────────┤
 │ ←  Prev          NIV ↔ ESV    Next→ │  bottom bar
 └─────────────────────────────────────┘
 ```
+
+### 3.1a — Sticky nav bar
+
+```typescript
+// components/ChapterNavBar.tsx
+
+function ChapterNavBar({ book, chapter, totalChapters, onBack, onPrev, onNext, onQnav }) {
+  return (
+    <View style={styles.navBar}>
+      {/* Left: back to Library (BookListScreen) */}
+      <TouchableOpacity onPress={onBack} style={styles.navBack}>
+        <ChevronLeft size={16} /><Text style={styles.navBackText}>Library</Text>
+      </TouchableOpacity>
+
+      {/* Centre: book name + chapter number */}
+      <View style={styles.navCenter}>
+        <Text style={styles.navBook}>{book.name}</Text>
+        <Text style={styles.navChapter}>Chapter {chapter}</Text>
+      </View>
+
+      {/* Right: prev, qnav trigger (🔍), next */}
+      <View style={styles.navArrows}>
+        <TouchableOpacity onPress={onPrev} disabled={chapter <= 1}>
+          <Text style={[styles.arrow, chapter <= 1 && styles.arrowDisabled]}>←</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onQnav} style={styles.qnavTrigger}>
+          <Search size={18} color={colors.gold} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onNext} disabled={chapter >= totalChapters}>
+          <Text style={[styles.arrow, chapter >= totalChapters && styles.arrowDisabled]}>→</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+```
+
+### 3.1b — "About This Book" link
+
+Every chapter page shows an "About This Book →" link below the title. Tapping navigates to BookIntroScreen with `initialScrollTo` set to the current chapter number, so the intro page deep-scrolls to the section most relevant to that chapter (e.g., the literary structure outline highlighting the current chapter's position).
+
+```typescript
+<TouchableOpacity onPress={() => navigation.navigate('BookIntro', {
+  bookId: book.id,
+  initialScrollTo: chapterNum  // intro page scrolls to relevant section
+})}>
+  <Text style={styles.introLink}>About This Book →</Text>
+</TouchableOpacity>
+```
+
+### 3.1c — Timeline and map deep-links
+
+Certain chapters link to timeline events or map stories. This data is stored in the chapter JSON (or derived from cross-referencing chapter content with the timeline/map-stories tables).
+
+```typescript
+{/* Timeline event link — shown when chapter maps to a timeline event */}
+{timelineEvent && (
+  <TouchableOpacity onPress={() => navigation.navigate('Timeline', { eventId: timelineEvent.id })}>
+    <Text style={styles.deepLink}>See on Timeline — {timelineEvent.name}</Text>
+  </TouchableOpacity>
+)}
+
+{/* Map story link — shown when chapter maps to a map story */}
+{mapStory && (
+  <TouchableOpacity onPress={() => navigation.navigate('Map', { storyId: mapStory.id })}>
+    <Text style={styles.deepLink}>📍 See on Map — {mapStory.name}</Text>
+  </TouchableOpacity>
+)}
+```
+
+### 3.1d — Authorship disclosure
+
+A collapsible section at the bottom of each chapter (below the scholarly block) showing content attribution and methodology:
+
+```typescript
+<CollapsibleSection title="Authorship & Sources" initiallyCollapsed>
+  <Text style={styles.disclosureText}>
+    Commentary panels are scholarly paraphrases, not direct quotes. Each scholar's
+    work is cited by name. Hebrew/Greek studies are based on standard lexicons (BDB,
+    HALOT, BDAG). Cross-references are curated, not algorithmically generated.
+  </Text>
+</CollapsibleSection>
+```
+
+### 3.1e — Progressive loading
+
+To avoid blocking the reading experience while panels load:
+
+1. **Immediate:** Render verse text + section headers (the content the user came to read)
+2. **50ms later:** Render button rows (shows what panels are available)
+3. **On panel tap:** Load panel content from SQLite (sub-100ms query)
+4. **Background:** Pre-fetch adjacent chapters (prev/next) for instant navigation
+
+Loading skeletons shown for any panel content that takes >100ms to render.
 
 ### 3.2 — Panel rendering system
 
@@ -663,19 +830,24 @@ export const getScholarsForBook = (bookId: string): Scholar[] =>
 // components/panels/PanelRenderer.tsx
 
 const PANEL_COMPONENTS: Record<string, React.FC<PanelProps>> = {
-  heb:      HebrewPanel,
-  ctx:      ContextPanel,
-  cross:    CrossRefPanel,
-  lit:      LiteraryStructurePanel,
-  hebtext:  HebrewReadingPanel,
-  themes:   ThemesRadarPanel,
-  ppl:      PeoplePanel,
-  trans:    TranslationPanel,
-  src:      SourcesPanel,
-  rec:      ReceptionPanel,
-  thread:   ThreadingPanel,
-  textual:  TextualPanel,
-  debate:   DebatePanel,
+  // Section-level panels
+  heb:      HebrewPanel,            // Hebrew/Greek word studies
+  ctx:      ContextPanel,           // Literary/historical context
+  hist:     HistoricalContextPanel, // Historical background (distinct from ctx in PWA)
+  cross:    CrossRefPanel,          // Cross-references with tappable verse links
+  poi:      PlacesPanel,            // Geographic places with coords → tap navigates to MapScreen
+  tl:       TimelinePanel,          // Per-section timeline events → tap navigates to TimelineScreen
+  // Chapter-level panels
+  lit:      LiteraryStructurePanel, // Literary outline with key-section highlighting
+  hebtext:  HebrewReadingPanel,     // Hebrew-rooted interlinear reading
+  themes:   ThemesRadarPanel,       // SVG radar chart of 10 theological themes
+  ppl:      PeoplePanel,            // People cards → tap opens PersonSidebar
+  trans:    TranslationPanel,       // Translation comparison table
+  src:      SourcesPanel,           // Ancient sources (ANE texts, DSS, Josephus, etc.)
+  rec:      ReceptionPanel,         // Reception history (early church, medieval, modern)
+  thread:   ThreadingPanel,         // Intertextual threading connections
+  textual:  TextualPanel,           // Textual criticism notes
+  debate:   DebatePanel,            // Scholarly debates
 };
 
 // All scholar commentary uses one component, parameterized by scholar ID.
@@ -686,6 +858,12 @@ export function renderPanel(type: string, data: any) {
   return <CommentaryPanel data={JSON.parse(data)} scholarId={type} />;
 }
 ```
+
+**PlacesPanel (poi):** Renders place cards with name, description, and coordinates. Tapping a place navigates to MapScreen centered on that location. If the place is part of a map story, the story is pre-selected.
+
+**TimelinePanel (tl):** Renders per-section timeline events. Tapping an event navigates to the standalone TimelineScreen centered on that event's date.
+
+**HistoricalContextPanel (hist):** Renders historical/archaeological background paragraphs. Distinct from `ctx` (which is literary context) in the PWA's panel taxonomy.
 
 Adding a new scholar in the future requires ZERO new components — just a database entry + a color in the theme.
 
@@ -724,6 +902,190 @@ Port the `verse-resolver.js` (15KB) logic to TypeScript. This handles:
 - Chapter-only: "Gen 1" (all verses)
 
 Every cross-reference string rendered in any panel becomes a tappable link that opens CrossRefPopup with the resolved verse text.
+
+### 3.5 — Qnav (Quick Navigation Overlay)
+
+**What this is:** The primary navigation mechanism for jumping between books and chapters without leaving the reading experience. In the PWA, `qnav.js` (88KB) is a full-screen overlay triggered by the 🔍 button in the chapter nav bar. It's NOT the same as the SearchTab — it's an instant chapter-picker modal.
+
+```typescript
+// components/QnavOverlay.tsx — Full-screen quick-navigation modal
+
+function QnavOverlay({ visible, onClose, onSelectChapter }) {
+  const [testament, setTestament] = useState<'ot'|'nt'>('ot');
+  const [expandedBook, setExpandedBook] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const books = useBooks();
+
+  return (
+    <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
+      <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
+        {/* Header: close button + title */}
+        <View style={styles.qnavHeader}>
+          <TouchableOpacity onPress={onClose}><X size={20} /></TouchableOpacity>
+          <Text style={styles.qnavTitle}>Navigate</Text>
+        </View>
+
+        {/* Inline search bar (searches verses + people) */}
+        <TextInput
+          style={styles.qnavSearch}
+          placeholder="Search verses, people..."
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+        />
+        {searchQuery.length >= 2 && <QnavSearchResults query={searchQuery} onSelect={...} />}
+
+        {/* OT / NT toggle */}
+        <View style={styles.testamentToggle}>
+          <TouchableOpacity onPress={() => setTestament('ot')}>
+            <Text style={[styles.testamentBtn, testament === 'ot' && styles.active]}>Old Testament</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setTestament('nt')}>
+            <Text style={[styles.testamentBtn, testament === 'nt' && styles.active]}>New Testament</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Book accordion — tap book to expand chapter grid */}
+        <FlatList
+          data={books.filter(b => b.testament === testament)}
+          renderItem={({ item }) => (
+            <BookAccordion
+              book={item}
+              expanded={expandedBook === item.id}
+              onToggle={() => setExpandedBook(expandedBook === item.id ? null : item.id)}
+              onSelectChapter={(ch) => { onSelectChapter(item.id, ch); onClose(); }}
+            />
+          )}
+        />
+      </SafeAreaView>
+    </Modal>
+  );
+}
+```
+
+**Key behaviors:**
+- Opens instantly (no network calls — all data from SQLite)
+- Search works while the accordion is visible (mixed results: verses + people)
+- Tapping a chapter number navigates directly and closes the overlay
+- Book rows show chapter counts and "LIVE" badges
+- Remembers last testament toggle between opens
+
+### 3.6 — Per-verse notes system
+
+**What this is:** Users can annotate individual verses. The PWA has per-verse pencil indicators (✏️), a "My Notes (3)" button with badge count in the chapter header, and a full notes overlay panel for viewing/editing/deleting.
+
+This is a **core feature**, not a post-launch enhancement. It ships with the app.
+
+```typescript
+// components/NoteIndicator.tsx — tiny pencil icon per verse
+function NoteIndicator({ verseNum, hasNote, onPress }) {
+  return (
+    <TouchableOpacity onPress={() => onPress(verseNum)} style={styles.noteIndicator}
+                      accessibilityLabel={hasNote ? `Edit note on verse ${verseNum}` : `Add note to verse ${verseNum}`}>
+      <Pencil size={12} color={hasNote ? colors.gold : colors.textMuted} />
+    </TouchableOpacity>
+  );
+}
+
+// components/NotesButton.tsx — "My Notes (3)" in chapter header
+function NotesButton({ noteCount, onPress }) {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.notesButton}>
+      <Text style={styles.notesButtonText}>My Notes</Text>
+      {noteCount > 0 && <View style={styles.badge}><Text style={styles.badgeText}>{noteCount}</Text></View>}
+    </TouchableOpacity>
+  );
+}
+
+// components/NotesOverlay.tsx — full-screen notes panel for current chapter
+function NotesOverlay({ bookId, chapterNum, onClose }) {
+  const notes = useNotesForChapter(bookId, chapterNum);
+
+  return (
+    <Modal animationType="slide">
+      <SafeAreaView>
+        <FlatList
+          data={notes}
+          renderItem={({ item }) => (
+            <NoteCard
+              verseRef={item.verse_ref}
+              text={item.note_text}
+              updatedAt={item.updated_at}
+              onEdit={() => openEditor(item)}
+              onDelete={() => deleteNote(item.id)}
+            />
+          )}
+          ListEmptyComponent={<Text>No notes yet. Tap ✏️ next to any verse.</Text>}
+        />
+      </SafeAreaView>
+    </Modal>
+  );
+}
+```
+
+**Data:** `user_notes` SQLite table (local only, never overwritten by OTA updates).
+
+### 3.7 — Thread viewer
+
+**What this is:** The PWA's `cross-ref-ui.js` renders "thread badges" below the chapter header — e.g., "Creation Thread", "Covenant Thread". Tapping a badge opens a step-by-step guided viewer showing how a theme threads through multiple books (Gen 1:1 → John 1:1 → Col 1:16 → Heb 11:3 → Rev 21:1).
+
+```typescript
+// components/ThreadViewerSheet.tsx — bottom sheet step-by-step cross-book journey
+
+function ThreadViewerSheet({ thread, initialStep, onClose }) {
+  // thread = { name: "Creation Thread", steps: [
+  //   { ref: "Gen 1:1", anchor: true, text: "In the beginning God created..." },
+  //   { ref: "John 1:1-3", type: "fulfilment", text: "In the beginning was the Word..." },
+  //   { ref: "Col 1:16", type: "expansion", text: "All things created through him..." },
+  // ]}
+
+  const [currentStep, setCurrentStep] = useState(initialStep);
+
+  return (
+    <BottomSheet snapPoints={['60%', '90%']}>
+      <Text style={styles.threadTitle}>{thread.name}</Text>
+      <FlatList
+        data={thread.steps}
+        renderItem={({ item, index }) => (
+          <ThreadStep
+            step={item}
+            isCurrent={index === currentStep}
+            isAnchor={item.anchor}
+            onPress={() => setCurrentStep(index)}
+            onNavigate={() => navigateToChapter(item.ref)}
+          />
+        )}
+      />
+    </BottomSheet>
+  );
+}
+```
+
+**Data source:** `thread-panel` data from `chapter_panels` table. Each chapter's threading data includes the cross-book step sequences.
+
+### 3.8 — Reading history tracking
+
+Record every chapter visit for the "Continue Reading" section on HomeScreen:
+
+```typescript
+// db/user.ts
+export function recordChapterVisit(bookId: string, chapterNum: number) {
+  db.runSync(
+    'INSERT OR REPLACE INTO reading_progress (book_id, chapter_num, completed_at) VALUES (?, ?, ?)',
+    [bookId, chapterNum, new Date().toISOString()]
+  );
+}
+
+export function getRecentChapters(limit = 5): RecentChapter[] {
+  return db.getAllSync(
+    `SELECT rp.*, c.title, b.name as book_name
+     FROM reading_progress rp
+     JOIN chapters c ON c.book_id = rp.book_id AND c.chapter_num = rp.chapter_num
+     JOIN books b ON b.id = rp.book_id
+     ORDER BY rp.completed_at DESC LIMIT ?`,
+    [limit]
+  );
+}
+```
 
 ---
 
@@ -875,30 +1237,42 @@ function MapScreen() {
 
 ## Phase 6: Remaining Feature Screens (Weeks 13-16)
 
-### 6.1 — Interactive Timeline Component
+### 6.1 — Standalone Timeline Screen
 
-Custom `react-native-svg` component used inside chapter panels:
+**Not just a panel component** — the PWA has a dedicated `timeline.html` (35KB) that is a full interactive page with era filtering, zoom/pan, event cards, and people-data integration. This must be replicated as a standalone screen accessible from ExploreTab.
+
+The TimelineScreen uses the same SVG timeline component as the in-chapter `tl` panel but with:
+- Full-screen layout (not constrained to a panel)
+- Era filter bar (9 eras, tap to isolate an era)
+- Pan and zoom across the full timeline (3000 BC → AD 100)
+- Tappable event cards that expand to show description + "Go to chapter" link
+- People integration: events linked to people entries (tap person name → PersonSidebar)
+- Deep-link support: `navigate('Timeline', { eventId })` centers on a specific event (used by chapter deep-links from §3.1c)
+
+### 6.2 — Interactive Timeline SVG Component (shared)
+
+Custom `react-native-svg` component used in BOTH the standalone TimelineScreen AND the in-chapter `tl` panel:
 - Horizontal proportional date axis (3000 BC → AD 100)
 - Era-colored background segments
 - Event markers positioned by year
-- Current-chapter event highlighted with glow
+- Current-chapter event highlighted with glow (when used in chapter panels)
 - Tappable events with expandable detail cards
 - Pinch-to-zoom for dense time periods
 
-### 6.2 — Word Study System
+### 6.3 — Word Study System
 
 - **WordStudyBrowseScreen:** FlatList, filterable by language (Hebrew/Greek), searchable. Row: original script → transliteration → primary gloss.
 - **WordStudyDetailScreen:** Full entry with glosses, semantic range, theological note, occurrence list (tappable cross-refs).
 - **WordStudyPopup:** Triggered from VHL tap in verse text. Compact card. "See full study" link.
 
-### 6.3 — Parallel / Synoptic Passages
+### 6.4 — Parallel / Synoptic Passages
 
 - **ParallelPassageScreen:** Side-by-side scrollable columns for 2-4 Gospels.
 - Synced scroll position across columns.
 - Tabbed mode for smaller screens: swipeable tabs per Gospel.
 - Unique words highlighted per Gospel.
 
-### 6.4 — Scholar Browse System
+### 6.5 — Scholar Browse System
 
 - **ScholarBrowseScreen:** Grid of 43 scholars. Filter by tradition, era. Each card: name, tradition badge, books covered.
 - **ScholarBioScreen:** Full bio with sections. "Other Scholars" grid. "See their commentary in [book]" links.
@@ -910,10 +1284,12 @@ Custom `react-native-svg` component used inside chapter panels:
 ## Phase 7: Native-Only Enhancements (Weeks 16-18)
 
 ### 7.1 — User features
-- **Notes & highlights:** Per-verse annotation. SQLite user_notes table. Highlight colors.
-- **Bookmarks:** Quick-save verses. Browsable list.
-- **Reading plans:** Multi-week plans. Progress tracking. Reminders.
-- **Reading history:** Recent chapters with timestamps.
+- **Bookmarks:** Quick-save verses. Browsable list. Badge counts.
+- **Reading plans:** Multi-week structured plans. Progress tracking. Daily reminders.
+- **Reading history:** Recent chapters with timestamps (core tracking in §3.8, this adds a dedicated browsable history screen).
+- **Highlights:** Color-coded verse highlighting (distinct from notes). Multiple colors for different study purposes.
+
+Note: Per-verse **notes** (pencil indicators, notes overlay, edit/delete) are core features built in Phase 3 (§3.6), not deferred to this phase.
 
 ### 7.2 — Platform features
 - **Push notifications:** Daily verse, reading plan reminders, new content alerts.
@@ -1028,16 +1404,16 @@ Authored directly into the JSON pipeline. Book intros already written (all 66). 
 | **0. Data Migration** | 1–3 | Extract all 879 chapters + map + VHL + bios → JSON. Build SQLite. Archive PWA. |
 | **1. Authoring Pipeline** | 3–4 | save_chapter() → JSON → SQLite. Generator scripts updated. |
 | **2. App Foundation** | 4–6 | Expo project, design system, navigation, database layer, accessibility. |
-| **3. ChapterScreen** | 6–9 | Core reading experience, all panel types, VHL, cross-ref engine. |
-| **4. Genealogy Tree** | 9–11 | Pure-native SVG tree with d3-hierarchy, gestures, family links. |
-| **5. Biblical World Map** | 11–13 | react-native-maps with places, stories, journeys, overlays. |
-| **6. Feature Screens** | 13–16 | Timeline, word studies, synoptic, scholar browse. |
-| **7. Native Features** | 16–18 | Notes, bookmarks, reading plans, TTS, sharing, notifications. |
-| **8. Testing & Polish** | 18–20 | Jest, Maestro E2E, accessibility audit, performance tuning. |
-| **9. Store Submission** | 20–22 | App Store + Google Play submission and review. |
+| **3. ChapterScreen** | 6–10 | Core reading experience: all panels (18 types + scholars), VHL, cross-ref engine, Qnav overlay, per-verse notes system, thread viewer, "About This Book" links, timeline/map deep-links, nav bar with prev/next/Qnav, authorship disclosure, progressive loading, reading history tracking. |
+| **4. Genealogy Tree** | 10–12 | Pure-native SVG tree with d3-hierarchy, gestures, family links. |
+| **5. Biblical World Map** | 12–14 | react-native-maps with places, stories, journeys, overlays. |
+| **6. Feature Screens** | 14–17 | Standalone timeline, timeline SVG component, word studies, synoptic, scholar browse. |
+| **7. Native Features** | 17–19 | Bookmarks, reading plans, highlights, TTS, sharing, notifications. |
+| **8. Testing & Polish** | 19–21 | Jest, Maestro E2E, accessibility audit, performance tuning. |
+| **9. Store Submission** | 21–23 | App Store + Google Play submission and review. |
 | **10. Content** | Ongoing | Isaiah enrichment, remaining 36 books via JSON pipeline. |
 
-**Total: ~22 weeks (5.5 months).** No shortcuts. Every component pure native. Every screen tested. Every interaction accessible.
+**Total: ~23 weeks (5.75 months).** Phase 3 expanded by 1 week to accommodate Qnav, notes system, thread viewer, deep-links, and authorship — all core features that must ship at launch.
 
 ---
 
