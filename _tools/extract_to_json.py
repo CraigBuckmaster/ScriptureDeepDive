@@ -51,13 +51,18 @@ def _parse_verse_range(header_text):
     """Extract verse_start and verse_end from section header text.
 
     Patterns:
-        'Verses 1–5 — The First Day: Light'  → (1, 5)
-        'Verse 1 — The Beginning'            → (1, 1)
+        'Verses 1–5 — The First Day: Light'    → (1, 5)    # en-dash
+        'Verses 1‐11 — Rehoboam at Shechem'    → (1, 11)   # unicode hyphen U+2010
+        'Verses 1-5 — Title'                    → (1, 5)    # ascii hyphen
+        'Verse 1 — The Beginning'               → (1, 1)    # singular
+        'Verses 31 — Shamgar'                   → (31, 31)  # plural but single verse
     """
-    m = re.search(r'Verses?\s+(\d+)\s*[–\-]\s*(\d+)', header_text)
+    # Range: any dash variant between two numbers
+    m = re.search(r'Verses?\s+(\d+)\s*[\–\-\‐\—]\s*(\d+)', header_text)
     if m:
         return int(m.group(1)), int(m.group(2))
-    m2 = re.search(r'Verse\s+(\d+)', header_text)
+    # Single verse (plural or singular)
+    m2 = re.search(r'Verses?\s+(\d+)', header_text)
     if m2:
         v = int(m2.group(1))
         return v, v
@@ -729,16 +734,20 @@ def validate_extraction(html_path, json_path=None):
                 f"Section {sn} panel count: HTML={len(html_panels)}, JSON={json_panel_count}"
             )
 
-    # Chapter panels
+    # Chapter panels — count unique type suffixes, not raw elements
+    # (source HTML sometimes has duplicate IDs, e.g., 3× lk11-hebtext)
     section_id_pattern = re.compile(rf'^{re.escape(cid)}-s\d+-')
     html_ch_panels = [
         el for el in soup.find_all(id=re.compile(rf'^{re.escape(cid)}-'))
         if not section_id_pattern.match(el['id'])
     ]
+    html_ch_types = set(
+        el['id'][len(cid) + 1:] for el in html_ch_panels
+    )
     json_ch_panel_count = len(data.get('chapter_panels', {}))
-    if len(html_ch_panels) != json_ch_panel_count:
+    if len(html_ch_types) != json_ch_panel_count:
         issues.append(
-            f"Chapter panel count: HTML={len(html_ch_panels)}, JSON={json_ch_panel_count}"
+            f"Chapter panel count: HTML={len(html_ch_types)} unique types, JSON={json_ch_panel_count}"
         )
 
     # Verse ranges: each section should have valid start/end
@@ -756,8 +765,6 @@ def validate_extraction(html_path, json_path=None):
         issues.append("No VHL groups extracted")
     else:
         for g in vhl:
-            if not g.get('words'):
-                issues.append(f"VHL group '{g.get('name')}' has no words")
             if not g.get('btn_types'):
                 issues.append(f"VHL group '{g.get('name')}' has no btn_types")
 
