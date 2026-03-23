@@ -1260,4 +1260,762 @@ window.BOOK_INTROS = [
   ]
 }
 
+,
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  REMAINING MAJOR PROPHETS
+// ═══════════════════════════════════════════════════════════════════════════
+
+{
+  book: 'jeremiah',
+  title: 'How to Read Jeremiah',
+  subtitle: 'The weeping prophet — 52 chapters of heartbreak, judgment, and the promise of a new covenant written on the heart.',
+  authorship:{author:"Jeremiah son of Hilkiah, a priest from Anathoth in Benjamin. Called as a youth ('before I formed you in the womb I knew you,' 1:5). Ministered c.627–586 BC through Judah's final kings: Josiah, Jehoahaz, Jehoiakim, Jehoiachin, and Zedekiah. His scribe Baruch recorded his oracles (ch.36). After Jerusalem fell, he was taken to Egypt against his will (chs.42–44). Tradition says he died there.",date:"c.627–580 BC. Jeremiah's ministry spanned 40 years — from Josiah's reforms through the fall of Jerusalem and into the aftermath. The book was compiled over time, with Baruch as editor. The Greek (LXX) version is about 12% shorter than the Hebrew (MT), suggesting a complex editorial history.",prompt:"To call Judah to repentance before it's too late — and when it IS too late, to promise that God's relationship with his people is not over. The new covenant (31:31–34) is Jeremiah's greatest contribution: a covenant not on stone tablets but on human hearts."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Jeremiah is the most personal prophetic book — the prophet\'s emotions, prayers, doubts, and suffering are woven into the oracles. It is not arranged chronologically but thematically, which can be disorienting. The book alternates between poetry (oracles) and prose (narratives), and includes confessions (personal laments), symbolic actions, letters, and historical narrative. It is the longest book in the Bible by word count.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Call and Early Oracles',chapters:[1,6],note:'Called before birth; unfaithful wife metaphor; foe from the north'},
+      {label:'Temple Sermon & Conflict',chapters:[7,20],note:'The sermon that nearly killed him; confessions; the potter\'s house'},
+      {label:'Kings, Prophets, Exile',chapters:[21,29],note:'Judgments on kings; false prophets; letter to the exiles'},
+      {label:'The Book of Consolation',chapters:[30,33],note:'\"I will make a new covenant\" — the theological heart'},
+      {label:'The Fall of Jerusalem',chapters:[34,45],note:'Siege, destruction, aftermath, Baruch\'s story'},
+      {label:'Oracles Against Nations',chapters:[46,51],note:'Egypt, Philistia, Moab, Ammon, Edom, Damascus, Babylon'},
+      {label:'Historical Appendix',chapters:[52,52],note:'The fall retold (parallel to 2 Kings 25)'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The New Covenant','Faithful Suffering','True vs False Prophecy','The Heart (lev)','Judgment and Restoration','The Foe from the North','Idolatry as Adultery']},
+    {heading:'Historical Context',content:'Jeremiah prophesied during the most turbulent period in Judah\'s history. Josiah\'s reforms (622 BC) gave brief hope, but his death at Megiddo (609 BC) ended it. The Babylonian Empire replaced Assyria as the dominant superpower. Nebuchadnezzar besieged Jerusalem three times (605, 597, 586 BC). Jeremiah\'s message — submit to Babylon, because God has appointed it as his instrument of judgment — was political treason in the eyes of the court. He was imprisoned, thrown into a cistern, and accused of desertion. The Lachish Letters (discovered 1935) confirm the desperate military situation Jeremiah describes.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Jer 1',label:'The call — \"Before I formed you in the womb I knew you\"'},
+      {ref:'Jer 7',label:'The temple sermon — the speech that nearly killed him'},
+      {ref:'Jer 18',label:'The potter\'s house — God reshapes nations'},
+      {ref:'Jer 29:1-14',label:'Letter to the exiles — \"plans to prosper you\"'},
+      {ref:'Jer 31:31-34',label:'The new covenant — the theological peak of the OT'},
+      {ref:'Jer 52',label:'The fall of Jerusalem — the end Jeremiah foretold'}
+    ]}
+  ]
+},
+
+{
+  book: 'ezekiel',
+  title: 'How to Read Ezekiel',
+  subtitle: 'The strangest book in the OT — wheels within wheels, a valley of dry bones, and a temple vision that rebuilds everything.',
+  authorship:{author:"Ezekiel son of Buzi, a priest deported to Babylon in 597 BC with King Jehoiachin. He prophesied from the exile community at Tel Abib by the Kebar River (1:1–3). His priestly training shapes everything: the book is obsessed with holiness, temple, glory, and the boundary between sacred and profane.",date:"c.593–571 BC. Ezekiel\'s ministry is precisely dated — more dates appear in Ezekiel than in any other prophetic book (14 specific dates). His call occurs in the fifth year of Jehoiachin\'s exile (593 BC); his last dated oracle is the 27th year (571 BC).",prompt:"To explain why God\'s glory departed from the temple (chs.8–11), to pronounce judgment on Israel and the nations, and then to reveal the breathtaking vision of restoration: dry bones raised, a new heart and spirit given, the glory returning to a rebuilt temple (chs.40–48). Ezekiel answers the exile\'s deepest question: has God abandoned us? The answer is no — he left, but he will return."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Ezekiel is visionary prophecy at its most elaborate. The prophet sees things no other biblical author sees: the divine throne-chariot (ch.1), the glory of God physically departing the temple (chs.8–11), a valley of dry bones reassembling (ch.37), and a new temple measured with architectural precision (chs.40–48). The book is structured with unusual clarity: judgment on Israel (chs.1–24), judgment on nations (chs.25–32), restoration (chs.33–48). Ezekiel performs bizarre sign-acts (lying on his side for 430 days, cooking over dung) that make him the most dramatic of the prophets.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Call and Commission',chapters:[1,3],note:'The throne-chariot vision, eating the scroll'},
+      {label:'Judgment on Jerusalem',chapters:[4,24],note:'Sign-acts, the glory departs, allegories of unfaithfulness'},
+      {label:'Oracles Against Nations',chapters:[25,32],note:'Ammon, Moab, Edom, Philistia, Tyre, Egypt'},
+      {label:'Restoration Promises',chapters:[33,39],note:'The watchman, the shepherds, dry bones, Gog and Magog'},
+      {label:'The New Temple Vision',chapters:[40,48],note:'Detailed architectural blueprint; the glory returns; the river of life'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Glory of God (Kavod)','The Temple','Individual Responsibility','The New Heart and Spirit','Dry Bones / Resurrection','The Shepherd King','Holiness and Profanity']},
+    {heading:'Historical Context',content:'Ezekiel prophesied from Babylon, among the exiles deported in 597 BC. Unlike Jeremiah (who stayed in Jerusalem), Ezekiel never saw the city\'s destruction firsthand — he received the news by messenger (33:21). The exile community maintained its identity through Sabbath observance, dietary laws, and prophetic instruction. Babylonian records (the Weidner tablets) confirm the provisioning of King Jehoiachin in exile, matching Ezekiel\'s assumption that Jehoiachin remained the legitimate king. The temple vision (chs.40–48) has never been literally built — it remains the most debated architectural blueprint in biblical literature.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Ezek 1',label:'The throne-chariot — the most elaborate theophany in the Bible'},
+      {ref:'Ezek 10–11',label:'The glory departs — God leaves his own temple'},
+      {ref:'Ezek 18',label:'Individual responsibility — \"the soul who sins is the one who will die\"'},
+      {ref:'Ezek 34',label:'The shepherd chapter — bad shepherds replaced by the true Shepherd'},
+      {ref:'Ezek 37',label:'The valley of dry bones — the most famous vision in the OT'},
+      {ref:'Ezek 47',label:'The river from the temple — life flowing from God\'s presence'}
+    ]}
+  ]
+},
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  THE TWELVE (MINOR PROPHETS)
+// ═══════════════════════════════════════════════════════════════════════════
+
+{
+  book: 'hosea',
+  title: 'How to Read Hosea',
+  subtitle: 'God commands a prophet to marry a prostitute — and the marriage becomes the most shocking metaphor for divine love in the Bible.',
+  authorship:{author:"Hosea son of Beeri, a prophet to the northern kingdom of Israel during its final decades. He is the only writing prophet from the northern kingdom. His ministry spanned roughly 750–715 BC, overlapping with Amos, Isaiah, and Micah.",date:"c.750–715 BC, during the reigns of Jeroboam II through Hoshea (the last king of Israel before the Assyrian conquest in 722 BC).",prompt:"To dramatise God\'s relentless love for unfaithful Israel through the prophet\'s own agonising marriage. The metaphor is deliberate: Israel\'s idolatry is adultery, and God is the betrayed husband who refuses to give up."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Hosea is prophetic autobiography fused with divine oracle. The first three chapters narrate Hosea\'s marriage to Gomer — a woman of promiscuity — and their children (named Jezreel, Lo-Ruhamah, Lo-Ammi: judgment-names). Chapters 4–14 are oracles that apply the marriage metaphor to Israel\'s covenant unfaithfulness. The poetry is dense, emotional, and often shifts speakers mid-verse. Hosea is the most emotionally intense of the prophetic books.'},
+    {heading:'Literary Structure',outline:[
+      {label:'The Marriage',chapters:[1,3],note:'Hosea marries Gomer; children named as judgments; reconciliation commanded'},
+      {label:'Israel\'s Unfaithfulness',chapters:[4,8],note:'Covenant lawsuit; priests fail; foreign alliances replace God'},
+      {label:'Judgment Coming',chapters:[9,11],note:'Exile foretold; but \"How can I give you up, Ephraim?\"'},
+      {label:'Restoration Promised',chapters:[12,14],note:'\"I will heal their waywardness and love them freely\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Covenant as Marriage','Idolatry as Adultery','Hesed (Covenant Love)','Judgment and Restoration','The Knowledge of God','Repentance','Divine Anguish']},
+    {heading:'Historical Context',content:'Hosea prophesied during Israel\'s last prosperous period under Jeroboam II (c.793–753 BC) and its rapid decline through six kings in 20 years (four assassinated). The northern kingdom mixed YHWH worship with Baal worship at sanctuaries like Bethel and Dan. Hosea\'s marriage to a promiscuous woman was a prophetic sign-act: his domestic pain mirrored God\'s covenant pain. Israel fell to Assyria in 722 BC — the catastrophe Hosea foretold.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Hos 1–3',label:'The marriage — the most shocking prophetic sign-act'},
+      {ref:'Hos 6:1-6',label:'\"I desire mercy, not sacrifice\" — quoted by Jesus (Matt 9:13)'},
+      {ref:'Hos 11',label:'\"How can I give you up?\" — God\'s anguished love'},
+      {ref:'Hos 14',label:'\"I will heal their waywardness\" — the book\'s resolution'}
+    ]}
+  ]
+},
+
+{book:'joel',title:'How to Read Joel',subtitle:'A locust plague becomes a window into the Day of the LORD — and the promise that God will pour out his Spirit on all flesh.',
+  authorship:{author:"Joel son of Pethuel. Nothing else is known about him. The book gives no date, no king\'s name, and no historical anchor — making it the most difficult prophetic book to date.",date:"Proposals range from the 9th century BC (pre-exilic) to the 4th century BC (post-exilic). The lack of references to Assyria, Babylon, or any king makes dating uncertain. The book\'s theology is timeless by design.",prompt:"To interpret a devastating locust plague as a foretaste of the Day of the LORD — and to promise that beyond judgment, God will pour out his Spirit on all people. Peter quotes Joel 2:28–32 at Pentecost (Acts 2:17–21) as the inauguration of the last days."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Joel is a liturgical prophecy — a call to national repentance in response to agricultural catastrophe. The locust plague is both literal (an actual ecological disaster) and symbolic (a preview of divine judgment). The book moves from crisis (ch.1) to repentance (ch.2a) to restoration (ch.2b) to cosmic judgment (ch.3). It is short, tightly structured, and enormously influential — more NT theology comes from Joel than its three chapters would suggest.'},
+    {heading:'Literary Structure',outline:[
+      {label:'The Locust Plague',chapters:[1,1],note:'Agricultural devastation; call to mourn and fast'},
+      {label:'The Day of the LORD',chapters:[2,2],note:'Army-like locusts, then repentance, then the Spirit poured out'},
+      {label:'Judgment and Restoration',chapters:[3,3],note:'Nations judged in the Valley of Decision; Zion restored'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Day of the LORD','Repentance','The Outpouring of the Spirit','Agricultural Blessing and Curse','Cosmic Signs','The Valley of Decision']},
+    {heading:'Historical Context',content:'Locust plagues were a recurring catastrophe in the ancient Near East — modern swarms can cover 460 square miles and consume 423 million pounds of vegetation daily. Joel uses this lived experience to teach eschatology: if a locust army is this devastating, how much more the army of God? The Spirit-outpouring promise (2:28–32) became the single most important OT text for the early church at Pentecost.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Joel 1',label:'The locust plague — agricultural apocalypse'},
+      {ref:'Joel 2:12-17',label:'\"Rend your heart, not your garments\" — the call to repent'},
+      {ref:'Joel 2:28-32',label:'The Spirit poured out — Peter\'s Pentecost text (Acts 2)'},
+      {ref:'Joel 3:14',label:'\"Multitudes in the valley of decision\"'}
+    ]}
+  ]
+},
+
+{book:'amos',title:'How to Read Amos',subtitle:'A shepherd turned prophet thunders against injustice — the book that invented social justice prophecy.',
+  authorship:{author:"Amos, a shepherd and sycamore-fig dresser from Tekoa in Judah (1:1; 7:14). He was not a professional prophet but a labourer called by God to prophesy to the northern kingdom. His blunt rural imagery — plumb lines, baskets of fruit, cattle — reveals a man rooted in the land.",date:"c.760–750 BC, during the reign of Jeroboam II of Israel. A period of military success and economic prosperity that masked deep social injustice.",prompt:"To expose the moral rot beneath Israel\'s religious prosperity. Amos declares that worship without justice is not just inadequate but offensive to God: \'Let justice roll on like a river\' (5:24)."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Amos is the earliest of the writing prophets and the prototype of social-justice prophecy. The book opens with a rhetorical trap: judgments on seven surrounding nations draw the audience in before the eighth oracle targets Israel itself (2:6). The message is devastating — religious observance without social justice is not worship but abomination.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Oracles Against Nations',chapters:[1,2],note:'Damascus, Gaza, Tyre, Edom, Ammon, Moab, Judah, then ISRAEL'},
+      {label:'Three Sermons',chapters:[3,6],note:'\"Hear this word\" — the indictment of the wealthy and complacent'},
+      {label:'Five Visions',chapters:[7,9],note:'Locusts, fire, plumb line, summer fruit, the altar — escalating judgment'},
+      {label:'Restoration',chapters:[9,9],note:'\"I will restore David\'s fallen shelter\" (quoted in Acts 15:16-17)'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Justice and Righteousness','The Day of the LORD (as Judgment, Not Salvation)','Wealth and Exploitation','True vs False Worship','Election Means Greater Accountability','The Remnant']},
+    {heading:'Historical Context',content:'Amos prophesied during Israel\'s Indian summer under Jeroboam II — military expansion, economic boom, building projects. But the prosperity was built on exploitation: the poor were sold for a pair of sandals (2:6), courts were corrupt (5:10), and the wealthy lived in ivory-inlaid houses while the poor starved (6:4–6). Amos came from the south (Judah) to the north (Israel) as an outsider, which made his message even more unwelcome. Martin Luther King Jr. quoted Amos 5:24 in his \"I Have a Dream\" speech.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Amos 1–2',label:'The rhetorical trap — seven nations, then YOU'},
+      {ref:'Amos 5:18-24',label:'\"Let justice roll on like a river\" — the most famous verse'},
+      {ref:'Amos 7:10-17',label:'Amos vs Amaziah — the prophet confronts the priest'},
+      {ref:'Amos 9:11-15',label:'Restoration — quoted by James at the Jerusalem council (Acts 15)'}
+    ]}
+  ]
+},
+
+{book:'obadiah',title:'How to Read Obadiah',subtitle:'The shortest book in the OT — one chapter of white-hot fury against Edom for betraying its brother.',
+  authorship:{author:"Obadiah (\'servant of the LORD\'). Nothing else is known. The name was common in Israel, and the prophet cannot be identified with any other biblical Obadiah.",date:"Most likely shortly after 586 BC (the fall of Jerusalem), when Edom aided the Babylonians and gloated over Judah\'s destruction. Some scholars date it earlier to the 9th century.",prompt:"To pronounce judgment on Edom for its treachery against Judah — its brother nation (Edom = Esau, Judah = Jacob). The book declares that betraying family incurs the severest divine judgment."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Obadiah is a single prophetic oracle — 21 verses of concentrated judgment against Edom. It is the shortest book in the OT. Despite its brevity, it addresses a major biblical theme: the Esau-Jacob rivalry that began in the womb (Gen 25) and culminates in Edom\'s betrayal at Jerusalem\'s fall. The book ends with eschatological hope: \"The kingdom will be the LORD\'s\" (v.21).'},
+    {heading:'Literary Structure',outline:[
+      {label:'Edom\'s Judgment',chapters:[1,1],note:'Verses 1–14: pride exposed, betrayal condemned'},
+      {label:'The Day of the LORD',chapters:[1,1],note:'Verses 15–21: universal judgment; Zion\'s restoration; \"the kingdom will be the LORD\'s\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Brotherhood and Betrayal','Pride Before the Fall','The Day of the LORD','Divine Justice','The Kingdom of God']},
+    {heading:'Historical Context',content:'Edom occupied the mountainous terrain south of the Dead Sea (modern Jordan). The Edomites were Israel\'s cousins — descended from Esau, Jacob\'s twin. When Babylon destroyed Jerusalem in 586 BC, Edom not only failed to help but actively collaborated: looting refugees, blocking escape routes, and handing survivors over (vv.12–14; cf. Ps 137:7). This betrayal by a brother-nation was considered the ultimate treachery. Edom eventually disappeared as a distinct people, absorbed into the Nabataean kingdom — a fulfilment Obadiah would have recognised.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Obad 1-4',label:'\"The pride of your heart has deceived you\" — Edom\'s arrogance'},
+      {ref:'Obad 10-14',label:'The indictment — \"you should not have\" (repeated 8 times)'},
+      {ref:'Obad 15-21',label:'The Day of the LORD and the kingdom restored'}
+    ]}
+  ]
+},
+
+{book:'jonah',title:'How to Read Jonah',subtitle:'The prophet who ran from God — and discovered that divine mercy extends even to the enemy.',
+  authorship:{author:"Jonah son of Amittai, from Gath-hepher in the northern kingdom (2 Kgs 14:25). He is the only prophet sent to a foreign nation (Nineveh). The book is narrated in the third person, suggesting it was written about Jonah rather than by him.",date:"Jonah the prophet is dated to the reign of Jeroboam II (c.793–753 BC). The book\'s composition date is debated: 8th century (contemporary) to post-exilic (using Jonah as a character in theological narrative).",prompt:"To confront the reader — through Jonah — with the scandal of God\'s mercy: God cares about the enemy, forgives the undeserving, and the greatest danger for the prophet is not the storm or the fish but his own anger at grace."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Jonah is narrative prophecy — the only prophetic book that is primarily a story rather than a collection of oracles. The \'prophecy\' itself is five words in Hebrew (3:4). Everything else is narrative about a reluctant prophet, a violent storm, a great fish, a repentant city, and an angry man arguing with God under a dead plant. It is deliberately comic: the pagan sailors are more pious than the prophet, the wicked Ninevites repent instantly, and God ends the book with an unanswered question.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Flight',chapters:[1,1],note:'Jonah flees; storm; sailors pray; Jonah thrown overboard'},
+      {label:'The Fish',chapters:[2,2],note:'Swallowed, prays a psalm, vomited onto dry land'},
+      {label:'Nineveh Repents',chapters:[3,3],note:'Five-word sermon; total repentance from king to cattle'},
+      {label:'Jonah\'s Anger',chapters:[4,4],note:'\"I knew you were gracious!\" The vine, the worm, the question'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Scope of God\'s Mercy','Reluctant Obedience','Repentance (Pagan and Prophetic)','The Sovereignty of God Over Nature','Compassion vs Nationalism','The Unanswered Question']},
+    {heading:'Historical Context',content:'Nineveh was the capital of the Assyrian Empire — the most feared military power in the ancient world. Assyria\'s cruelty was legendary: flaying prisoners alive, impaling captives, deporting entire populations. For an Israelite prophet to be sent to Nineveh was like asking a Jewish rabbi to preach repentance in Berlin in 1943. Jonah\'s reluctance is not cowardice but nationalism: he knows God is merciful (4:2) and fears that Nineveh will repent and be spared — which is exactly what happens. Jesus cites Jonah as a sign of his own death and resurrection (Matt 12:39–41).'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Jonah 1',label:'The flight — storm, lots, overboard'},
+      {ref:'Jonah 2',label:'Prayer from the belly of the fish'},
+      {ref:'Jonah 3',label:'Five words and total repentance'},
+      {ref:'Jonah 4',label:'\"Should I not have concern for Nineveh?\" — the unanswered question'}
+    ]}
+  ]
+},
+
+{book:'micah',title:'How to Read Micah',subtitle:'\"What does the LORD require? To act justly, love mercy, and walk humbly\" — the prophet who gave us the Bible\'s most quoted ethical summary.',
+  authorship:{author:"Micah of Moresheth, a rural prophet from the Judean lowlands (Shephelah). A contemporary of Isaiah, Hosea, and Amos. His village perspective gives his oracles a grittiness that contrasts with Isaiah\'s courtly voice.",date:"c.735–700 BC, during the reigns of Jotham, Ahaz, and Hezekiah of Judah. Micah witnessed the fall of the northern kingdom (722 BC) and the Assyrian threat to Judah.",prompt:"To indict the powerful for exploiting the poor, to announce judgment on Jerusalem, and then to promise that from tiny Bethlehem a ruler will come whose origins are \'from of old, from ancient times\' (5:2). Matthew cites this for Jesus\' birthplace."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Micah alternates between judgment and hope in three cycles: doom (chs.1–2), hope (ch.3–5), doom (ch.6), hope (ch.7). The prophet is a champion of the poor — his targets are land-grabbers, corrupt judges, lying prophets, and priests who teach for a price. His most famous verse (6:8) is the ethical distillation of the entire prophetic tradition.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Judgment on Samaria and Judah',chapters:[1,2],note:'The LORD comes in judgment; land-grabbers condemned'},
+      {label:'Leaders Indicted, Future King Promised',chapters:[3,5],note:'Corrupt leaders; Bethlehem prophecy; peace'},
+      {label:'God\'s Lawsuit',chapters:[6,7],note:'\"What does the LORD require?\" Lament, then trust and restoration'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Justice for the Poor','Corrupt Leadership','The Bethlehem Messiah','Swords into Ploughshares','What God Requires','Mercy Triumphs']},
+    {heading:'Historical Context',content:'Micah prophesied during the Assyrian crisis that dominated 8th-century Judah. Sennacherib\'s invasion (701 BC) devastated the Judean countryside — Micah\'s home region was directly affected. The Lachish reliefs in the British Museum depict the destruction of cities near Moresheth. Micah\'s prophecy that Zion would be \"ploughed like a field\" (3:12) was remembered a century later and cited to save Jeremiah\'s life (Jer 26:18). His \"swords into ploughshares\" oracle (4:3) parallels Isaiah 2:4 — whether one borrowed from the other or both drew from a common tradition is debated.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Mic 3',label:'Corrupt leaders — \"her leaders judge for a bribe\"'},
+      {ref:'Mic 5:2-5',label:'The Bethlehem prophecy — quoted at Jesus\' birth (Matt 2:6)'},
+      {ref:'Mic 6:1-8',label:'\"What does the LORD require?\" — the Bible\'s ethical summary'},
+      {ref:'Mic 7:18-20',label:'\"Who is a God like you?\" — the closing hymn of mercy'}
+    ]}
+  ]
+},
+
+{book:'nahum',title:'How to Read Nahum',subtitle:'The fall of Nineveh — the empire that terrorised the world meets the God who avenges the oppressed.',
+  authorship:{author:"Nahum the Elkoshite. The location of Elkosh is unknown. His name means \'comfort\' — ironic, since the book offers comfort to the oppressed by announcing destruction on the oppressor.",date:"Between 663 BC (the fall of Thebes, referenced in 3:8) and 612 BC (the fall of Nineveh, which Nahum prophesies). The book was likely composed c.650–620 BC.",prompt:"To announce God\'s justice against Assyria — the empire whose cruelty terrorised the ancient world for centuries. Nahum is the companion piece to Jonah: Jonah shows God\'s mercy toward Nineveh; Nahum shows that mercy exhausted becomes judgment."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Nahum is a prophecy of doom against Nineveh — vivid, violent, and poetically brilliant. The opening is a partial acrostic hymn (1:2–8) celebrating God as both jealous avenger and patient refuge. The rest is a cinematic description of Nineveh\'s siege and fall, written with the intensity of an eyewitness report — though the events had not yet occurred.'},
+    {heading:'Literary Structure',outline:[
+      {label:'God the Avenger',chapters:[1,1],note:'Theophany hymn; God is slow to anger but will not leave the guilty unpunished'},
+      {label:'The Siege of Nineveh',chapters:[2,2],note:'Chariots, shields, flooding rivers, lions\' den emptied'},
+      {label:'Woe to the City of Blood',chapters:[3,3],note:'\"Woe to the city of blood!\" No one mourns Nineveh\'s fall'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Divine Justice Against Oppressors','The Patience and Wrath of God','The Fall of Empires','Comfort for the Oppressed','Military Imagery','The Lion Metaphor']},
+    {heading:'Historical Context',content:'Assyria ruled the ancient Near East for over two centuries through systematic terror: mass deportations, public torture, and siege warfare. Nineveh fell to a coalition of Babylonians and Medes in 612 BC. The city was so thoroughly destroyed that by Xenophon\'s time (401 BC), no one could identify the ruins. Nahum\'s prediction of flooding (2:6) matches the historical account: the Tigris flooded and broke through Nineveh\'s walls, enabling the attackers. The book\'s violence reflects the violence of the empire it condemns.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Nah 1:1-8',label:'The divine warrior — \"slow to anger and great in power\"'},
+      {ref:'Nah 2',label:'The siege — cinematic, terrifying, inevitable'},
+      {ref:'Nah 3:1-7',label:'\"Woe to the city of blood\" — no one mourns'}
+    ]}
+  ]
+},
+
+{book:'habakkuk',title:'How to Read Habakkuk',subtitle:'The prophet who argued with God — and received the answer that launched the Reformation: \"the righteous will live by faith.\"',
+  authorship:{author:"Habakkuk the prophet. Nothing is known of his background. The musical notation in ch.3 suggests he may have been a Levitical musician.",date:"c.610–600 BC, shortly before the Babylonian invasion of Judah. The Chaldeans (Babylonians) are described as a rising power (1:6).",prompt:"To ask the question every believer asks — Why does God allow evil? — and to receive an answer that does not explain suffering but transforms the sufferer: \'the righteous will live by faith\' (2:4). Paul quotes this in Romans 1:17 and Galatians 3:11; it became the cornerstone of the Reformation."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Habakkuk is a dialogue between a prophet and God — unique among the prophets. Instead of delivering God\'s message to the people, Habakkuk delivers the people\'s complaint to God. The book has three movements: complaint (ch.1), answer (ch.2), and worship (ch.3). It is the OT\'s closest parallel to the book of Job — both wrestle with divine justice.'},
+    {heading:'Literary Structure',outline:[
+      {label:'First Complaint and Answer',chapters:[1,1],note:'\"How long, LORD?\" God answers: I\'m sending the Babylonians'},
+      {label:'Second Complaint and Answer',chapters:[2,2],note:'\"That\'s worse!\" Five woes; \"the righteous will live by faith\"'},
+      {label:'The Prophet\'s Prayer',chapters:[3,3],note:'Theophany, trembling, and triumphant trust despite ruin'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Problem of Evil','Faith in the Face of Injustice','The Righteous Live by Faith','The Sovereignty of God','Lament as Dialogue','Worship Despite Circumstances']},
+    {heading:'Historical Context',content:'Habakkuk prophesied as the Neo-Babylonian Empire was rising to replace Assyria. The Battle of Carchemish (605 BC) established Babylon as the dominant superpower. Habakkuk\'s complaint is that God seems to use a MORE wicked nation (Babylon) to punish a LESS wicked one (Judah). The Dead Sea Scrolls include a commentary on Habakkuk (1QpHab) that applies the prophecy to the Roman period — showing how the book\'s questions remain relevant across centuries. Luther\'s rediscovery of Habakkuk 2:4 (\"the righteous will live by faith\") through Romans 1:17 ignited the Protestant Reformation.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Hab 1:1-4',label:'\"How long, LORD?\" — the complaint'},
+      {ref:'Hab 2:1-4',label:'\"The righteous will live by faith\" — the answer (Rom 1:17; Gal 3:11)'},
+      {ref:'Hab 3:17-19',label:'\"Though the fig tree does not bud... yet I will rejoice\" — the greatest trust statement in the OT'}
+    ]}
+  ]
+},
+
+{book:'zephaniah',title:'How to Read Zephaniah',subtitle:'Universal judgment and universal hope — the Day of the LORD sweeps everything, then God sings over his people with delight.',
+  authorship:{author:"Zephaniah son of Cushi, great-great-grandson of King Hezekiah (1:1) — the only prophet with royal lineage. His four-generation genealogy is unique among the prophets.",date:"During the reign of Josiah (640–609 BC), probably before Josiah\'s reforms (622 BC), given the descriptions of pagan worship still active in Jerusalem.",prompt:"To announce the Day of the LORD as universal judgment — sweeping creation itself — and then to reveal that beyond the judgment, God will purify a remnant and rejoice over them with singing (3:17)."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Zephaniah is concentrated eschatology — more references to the Day of the LORD per verse than any other prophetic book. The scope is cosmic: God will sweep away everything from the face of the earth (1:2–3), reversing creation itself. But the book does not end in destruction — it ends with God singing a love song over his purified people (3:17).'},
+    {heading:'Literary Structure',outline:[
+      {label:'Judgment on Judah',chapters:[1,1],note:'The Day of the LORD — cosmic and local judgment'},
+      {label:'Judgment on Nations',chapters:[2,2],note:'Philistia, Moab, Cush, Assyria — all swept'},
+      {label:'Jerusalem\'s Sin and Salvation',chapters:[3,3],note:'Woe to Jerusalem; then restoration, singing, gathering'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Day of the LORD','De-creation and Re-creation','The Humble Remnant','God\'s Singing','Universal Judgment','Hope After Purification']},
+    {heading:'Historical Context',content:'Zephaniah prophesied during the early reign of Josiah, before the discovery of the Book of the Law (2 Kgs 22:8) sparked Josiah\'s reforms. Jerusalem was still syncretistic — Baal worship, astral worship, and Molech worship coexisted alongside YHWH worship (1:4–5). The Assyrian Empire was weakening (it would fall in 612 BC), creating a power vacuum that Zephaniah\'s oracles against the nations address. His prophecy may have helped motivate Josiah\'s reforms.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Zeph 1:1-6',label:'\"I will sweep away everything\" — cosmic judgment'},
+      {ref:'Zeph 1:14-18',label:'\"The great day of the LORD is near\" — the Dies Irae text'},
+      {ref:'Zeph 3:9-13',label:'The purified remnant — humble and trusting'},
+      {ref:'Zeph 3:17',label:'\"He will rejoice over you with singing\" — God sings'}
+    ]}
+  ]
+},
+
+{book:'haggai',title:'How to Read Haggai',subtitle:'\"Is it time for you to live in panelled houses while this house remains a ruin?\" — the prophet who got the temple rebuilt.',
+  authorship:{author:"Haggai the prophet. His name means \'festive.\' He prophesied alongside Zechariah to the post-exilic community in Jerusalem. He may have been old enough to remember the first temple (2:3).",date:"520 BC — precisely dated by four oracles in four months (Aug–Dec 520 BC). The most precisely dated prophetic book in the OT.",prompt:"To motivate the returned exiles to stop prioritising their own houses and rebuild God\'s temple. The theology is practical: put God first, and everything else follows."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Haggai is the most practically focused prophetic book — four short oracles, all delivered within four months, all aimed at one goal: rebuild the temple. There is no apocalyptic imagery, no extended poetry, no call narrative. Just a clear-eyed prophet telling a discouraged community: get to work. And they do.'},
+    {heading:'Literary Structure',outline:[
+      {label:'First Oracle: Priorities',chapters:[1,1],note:'\"Consider your ways\" — your houses are panelled; God\'s house is ruins'},
+      {label:'Second Oracle: Glory',chapters:[2,2],note:'\"The glory of this house will surpass the former\" — despite appearances'},
+      {label:'Third Oracle: Holiness',chapters:[2,2],note:'Holiness doesn\'t transfer by contact; defilement does'},
+      {label:'Fourth Oracle: Zerubbabel',chapters:[2,2],note:'\"I will make you like my signet ring\" — the Davidic line preserved'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Priorities — God First','The Presence of God','Discouragement and Obedience','The Greater Glory to Come','Covenant Faithfulness','Leadership']},
+    {heading:'Historical Context',content:'The exiles returned to Jerusalem under Zerubbabel in 538 BC, but the temple rebuilding stalled for 16 years due to opposition, economic hardship, and discouragement (Ezra 4–5). Haggai and Zechariah began prophesying in 520 BC, and the temple was completed in 516 BC. The second temple was modest — old men who remembered Solomon\'s temple wept (Ezra 3:12). Haggai\'s promise that \"the glory of this house will surpass the former\" (2:9) was fulfilled when Jesus walked its courts.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Hag 1:1-11',label:'\"Consider your ways\" — misplaced priorities'},
+      {ref:'Hag 2:1-9',label:'\"The glory of this house will surpass the former\"'},
+      {ref:'Hag 2:20-23',label:'Zerubbabel as signet ring — the Davidic hope preserved'}
+    ]}
+  ]
+},
+
+{book:'zechariah',title:'How to Read Zechariah',subtitle:'Eight night visions, a crowned priest, and the most messianic of the minor prophets — \"they will look on me, the one they have pierced.\"',
+  authorship:{author:"Zechariah son of Berekiah, son of Iddo — a priest-prophet who prophesied alongside Haggai. Chapters 9–14 are stylistically different and may come from a later period or a different author (\'Deutero-Zechariah\'), though the book functions as a literary unity.",date:"Chapters 1–8: 520–518 BC (precisely dated). Chapters 9–14: date debated (6th to 4th century BC).",prompt:"To encourage the post-exilic community through apocalyptic visions of God\'s cosmic plan — and to reveal the Messiah as both triumphant king and pierced shepherd. The NT quotes Zechariah extensively for Passion Week: the donkey (9:9), the thirty silver coins (11:12–13), the struck shepherd (13:7), and the pierced one (12:10)."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Zechariah is the longest and most complex of the minor prophets. Chapters 1–8 contain eight symbolic night visions with angelic interpretation (the apocalyptic genre that Daniel also uses). Chapters 9–14 shift to oracles about the coming king, the rejected shepherd, and the final battle for Jerusalem. The messianic density is extraordinary — the NT draws more Passion-week imagery from Zechariah than from any other OT book except Psalms and Isaiah.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Eight Night Visions',chapters:[1,6],note:'Horses, horns, measuring line, Joshua the priest, lampstand, scroll, woman in a basket, chariots'},
+      {label:'The Crowning of Joshua',chapters:[6,6],note:'The priest crowned as king — the Branch who builds the temple'},
+      {label:'Fasting and Justice',chapters:[7,8],note:'True fasting; Jerusalem restored; nations stream to Zion'},
+      {label:'The Coming King',chapters:[9,11],note:'Riding a donkey (Matt 21:5); thirty silver coins (Matt 27:9); the struck shepherd'},
+      {label:'The Final Battle and Restoration',chapters:[12,14],note:'\"They will look on me, the one they have pierced\" (John 19:37); living water; the LORD will be king'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Messiah as King and Priest','The Pierced One','The Branch','Jerusalem\'s Future','Cosmic Warfare','Repentance and Cleansing','The Day of the LORD']},
+    {heading:'Historical Context',content:'Zechariah prophesied in the early Persian period, alongside Haggai, to a community rebuilding the temple. The night visions address their anxieties: Will Jerusalem be rebuilt? Will the nations leave us alone? Will the priesthood be restored? God\'s answer through the visions is comprehensively yes. The later chapters (9–14) look far beyond the immediate situation to the Messiah\'s coming — riding a donkey (fulfilled on Palm Sunday), sold for thirty silver coins (fulfilled at the betrayal), pierced (fulfilled at the crucifixion). The Passion narratives are incomprehensible without Zechariah.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Zech 3',label:'Joshua the priest cleansed — guilt removed in a single day'},
+      {ref:'Zech 9:9-10',label:'\"Your king comes, riding on a donkey\" — Palm Sunday (Matt 21:5)'},
+      {ref:'Zech 11:12-13',label:'Thirty pieces of silver — the betrayal price (Matt 27:9)'},
+      {ref:'Zech 12:10',label:'\"They will look on me, the one they have pierced\" (John 19:37)'},
+      {ref:'Zech 14',label:'The LORD will be king over the whole earth'}
+    ]}
+  ]
+},
+
+{book:'malachi',title:'How to Read Malachi',subtitle:'The last prophetic voice before 400 years of silence — \"I have loved you,\" says the LORD, to a people who have stopped believing it.',
+  authorship:{author:"Malachi (\'my messenger\'). Whether this is a personal name or a title is debated. The prophet addresses a post-exilic community that has grown cynical and complacent.",date:"c.460–430 BC, during the Persian period, probably contemporary with Ezra and Nehemiah. The temple is rebuilt but the worship is halfhearted.",prompt:"To confront a spiritually exhausted community with God\'s persistent love — and to warn that the Day of the LORD will come with purifying fire. Malachi closes the OT with a promise: Elijah will come before that great day. Jesus identified this Elijah as John the Baptist (Matt 11:14)."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Malachi uses a distinctive disputational style: God makes a statement, the people challenge it (\"How have you loved us?\"), and God responds. Six disputes structure the book. The tone is pastoral rather than thundering — God reasons with a people who have lost their spiritual vitality. It is the last prophetic voice in the OT canon; after Malachi, 400 years of silence until John the Baptist.'},
+    {heading:'Literary Structure',outline:[
+      {label:'God\'s Love Affirmed',chapters:[1,1],note:'\"I have loved you\" — the opening dispute'},
+      {label:'Priestly Failure',chapters:[1,2],note:'Defective sacrifices; broken covenants; faithless marriages'},
+      {label:'The Coming Messenger',chapters:[3,3],note:'\"I will send my messenger\" — the forerunner and the refiner'},
+      {label:'Tithes and the Day of the LORD',chapters:[3,4],note:'\"Test me in this\"; the scroll of remembrance; Elijah will come'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['God\'s Covenant Love','Wholehearted Worship','The Messenger Who Prepares the Way','Tithing and Generosity','The Book of Remembrance','The Sun of Righteousness','Elijah\'s Return']},
+    {heading:'Historical Context',content:'Malachi addresses a community roughly 80 years after the temple\'s rebuilding (516 BC). The initial excitement has faded; the glorious restoration the prophets promised hasn\'t fully materialised. The priests offer blind and lame animals (1:8). The people divorce their wives to marry foreign women (2:14–16). Tithes are withheld (3:8). The question \"Where is the God of justice?\" (2:17) reveals deep disappointment. Malachi\'s answer: he IS coming — but \"who can endure the day of his coming?\" (3:2). The book\'s final words (\"Elijah the prophet,\" 4:5) become the bridge to the NT: John the Baptist appears in Elijah\'s spirit (Luke 1:17).'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Mal 1:1-5',label:'\"I have loved you\" — the first dispute'},
+      {ref:'Mal 3:1-4',label:'\"I will send my messenger\" — John the Baptist foretold'},
+      {ref:'Mal 3:6-12',label:'\"Test me in this\" — the tithing challenge'},
+      {ref:'Mal 4:1-6',label:'The sun of righteousness; Elijah will come — the OT\'s last words'}
+    ]}
+  ]
+},
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  PAULINE EPISTLES
+// ═══════════════════════════════════════════════════════════════════════════
+
+{book:'romans',title:'How to Read Romans',subtitle:'Paul\'s theological masterpiece — the most systematic explanation of the gospel ever written, from guilt to glory in 16 chapters.',
+  authorship:{author:"Paul the apostle, dictated to Tertius (16:22), written from Corinth during his third missionary journey. Paul was a Pharisee trained under Gamaliel (Acts 22:3), converted on the Damascus road, and became the apostle to the Gentiles.",date:"c.AD 57, written from Corinth before Paul\'s final journey to Jerusalem.",prompt:"To present the gospel systematically to a church Paul had never visited, preparing for his planned mission to Spain (15:24). Romans answers the question: How does God make sinful people righteous — and what does that mean for how Jews and Gentiles relate to each other?"},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Romans is a theological letter — the closest thing in the NT to a systematic theology. Paul builds his argument step by step: universal guilt (chs.1–3), justification by faith (chs.3–5), freedom from sin (chs.6–8), the mystery of Israel (chs.9–11), and practical living (chs.12–16). Every major Christian doctrine finds its roots here. Augustine, Luther, Calvin, Wesley, and Barth all experienced theological breakthroughs through Romans.'},
+    {heading:'Literary Structure',outline:[
+      {label:'The Gospel Needed',chapters:[1,3],note:'All have sinned — Gentile and Jew alike'},
+      {label:'The Gospel Explained',chapters:[3,5],note:'Justified by faith; peace with God; Adam and Christ'},
+      {label:'The Gospel Applied',chapters:[6,8],note:'Dead to sin; life in the Spirit; nothing can separate us'},
+      {label:'The Gospel and Israel',chapters:[9,11],note:'Has God rejected his people? \"By no means!\"'},
+      {label:'The Gospel Lived',chapters:[12,16],note:'Living sacrifices; love fulfils the law; the weak and the strong'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Justification by Faith','The Righteousness of God','Sin and Grace','The Law and the Spirit','Election and Mercy','The Body of Christ','Living Sacrifice']},
+    {heading:'Historical Context',content:'The Roman church was founded by unknown missionaries (not by Paul or Peter). It contained both Jewish and Gentile believers, and tensions between the two groups are visible throughout (chs.14–15). Claudius had expelled Jews from Rome in AD 49 (Acts 18:2); when they returned after Claudius\'s death (AD 54), they found Gentile-majority churches that had developed without them. Paul writes to unify the community around a shared gospel. Romans has shaped more of Western theology than any other single document — its influence on Augustine, Luther, and the Reformation is incalculable.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Rom 1:16-17',label:'The thesis — \"the righteous will live by faith\"'},
+      {ref:'Rom 3:21-26',label:'Justification by faith — the heart of the gospel'},
+      {ref:'Rom 5:1-11',label:'Peace with God — suffering, character, hope'},
+      {ref:'Rom 8',label:'Life in the Spirit — \"nothing can separate us\"'},
+      {ref:'Rom 12:1-2',label:'Living sacrifices — the gospel applied'}
+    ]}
+  ]
+},
+
+{book:'1_corinthians',title:'How to Read 1 Corinthians',subtitle:'A messy church in a wild city — Paul addresses divisions, sexuality, worship, and the resurrection in one explosive letter.',
+  authorship:{author:"Paul the apostle, with Sosthenes (1:1). Written during Paul\'s extended stay in Ephesus (16:8).",date:"c.AD 55, from Ephesus.",prompt:"To address a cascade of problems in the Corinthian church: factions, sexual immorality, lawsuits, idol food, worship chaos, denial of the resurrection. The letter shows Paul as both theologian and pastor — every doctrinal argument serves a practical purpose."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'First Corinthians is a pastoral letter to a church in crisis — but the crises are theological, not just behavioural. Each problem (divisions, immorality, lawsuits, idol food, veiling, the Lord\'s Supper, spiritual gifts, resurrection) receives a theological diagnosis. The letter moves from issue to issue, often responding to questions the Corinthians wrote to Paul (\"Now about...\", 7:1; 8:1; 12:1; 16:1). Chapter 13 (the love chapter) and chapter 15 (the resurrection chapter) are two of the most important chapters in the NT.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Divisions',chapters:[1,4],note:'\"Is Christ divided?\" The wisdom of the cross vs human pride'},
+      {label:'Sexual Ethics and Lawsuits',chapters:[5,6],note:'Incest, prostitution, the body as temple'},
+      {label:'Marriage and Singleness',chapters:[7,7],note:'Paul\'s nuanced teaching on marriage, divorce, and celibacy'},
+      {label:'Idol Food and Freedom',chapters:[8,10],note:'Knowledge puffs up; love builds up; Paul\'s own example'},
+      {label:'Worship',chapters:[11,14],note:'The Lord\'s Supper, spiritual gifts, \"the greatest of these is love\"'},
+      {label:'The Resurrection',chapters:[15,15],note:'\"If Christ has not been raised, your faith is futile\"'},
+      {label:'Final Matters',chapters:[16,16],note:'The collection, travel plans, greetings'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Cross as Wisdom','Unity in Diversity','The Body of Christ','Love as the Greatest Gift','The Resurrection','Freedom and Responsibility','Worship Order']},
+    {heading:'Historical Context',content:'Corinth was a Roman colony, a trade hub, and famously immoral — \"to live like a Corinthian\" was a Greek euphemism for sexual excess. The church reflected its culture: status-conscious, sexually confused, and enamoured with rhetorical sophistication. Paul\'s insistence on the \"foolishness\" of the cross (1:18–25) directly counters Corinthian values. Archaeological discoveries confirm Corinth\'s cosmopolitan character — the Gallio inscription (Acts 18:12) dates Paul\'s founding visit to AD 50–51.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'1 Cor 1:18-31',label:'The foolishness of the cross — God\'s wisdom vs human wisdom'},
+      {ref:'1 Cor 6:12-20',label:'The body as temple — \"you were bought at a price\"'},
+      {ref:'1 Cor 12–13',label:'Spiritual gifts and love — \"the greatest of these\"'},
+      {ref:'1 Cor 15',label:'The resurrection — \"if Christ has not been raised...\"'}
+    ]}
+  ]
+},
+
+{book:'2_corinthians',title:'How to Read 2 Corinthians',subtitle:'Paul\'s most vulnerable letter — weakness, suffering, and the power of God made perfect in brokenness.',
+  authorship:{author:"Paul the apostle, with Timothy (1:1). Written after a painful visit and a severe letter (now lost).",date:"c.AD 55–56, probably from Macedonia.",prompt:"To defend his apostleship against rival teachers, to explain why his suffering validates rather than disqualifies his ministry, and to complete the collection for Jerusalem. This is Paul at his most emotionally raw."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Second Corinthians is the most autobiographical of Paul\'s letters — a window into apostolic suffering. Paul catalogues his hardships (beatings, shipwrecks, sleepless nights), defends his authority against \"super-apostles,\" and articulates the paradox that defines his ministry: \"My grace is sufficient for you, for my power is made perfect in weakness\" (12:9). The letter\'s emotional range — from anguish to ecstasy to fierce sarcasm — is unmatched in the NT.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Comfort in Affliction',chapters:[1,7],note:'The God of all comfort; treasure in jars of clay; the new covenant ministry'},
+      {label:'The Collection',chapters:[8,9],note:'Generosity theology — \"God loves a cheerful giver\"'},
+      {label:'Paul\'s Defence',chapters:[10,13],note:'Boasting in weakness; visions and thorns; \"power made perfect in weakness\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Strength in Weakness','The New Covenant','Treasure in Jars of Clay','Generous Giving','Suffering and Comfort','Apostolic Authority','Reconciliation']},
+    {heading:'Historical Context',content:'Between 1 and 2 Corinthians, Paul made a \"painful visit\" (2:1) that went badly, then wrote a \"severe letter\" (2:4, now lost) delivered by Titus. Rival teachers — \"super-apostles\" (11:5) — had arrived in Corinth, questioning Paul\'s credentials: he was unimpressive in person (10:10), refused financial support (11:7), and suffered too much to be a legitimate apostle. Paul turns their critique inside out: weakness IS his credential, because it proves the power is God\'s, not his.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 Cor 4:7-18',label:'Treasure in jars of clay — the paradox of apostolic ministry'},
+      {ref:'2 Cor 5:17-21',label:'The ministry of reconciliation — \"God was reconciling the world\"'},
+      {ref:'2 Cor 11:16-33',label:'The fool\'s speech — Paul\'s catalogue of suffering'},
+      {ref:'2 Cor 12:1-10',label:'The thorn in the flesh — \"my power is made perfect in weakness\"'}
+    ]}
+  ]
+},
+
+{book:'galatians',title:'How to Read Galatians',subtitle:'Paul\'s fiercest letter — \"You foolish Galatians!\" Freedom in Christ versus slavery to the law.',
+  authorship:{author:"Paul the apostle, writing with unusual urgency — no co-sender, no thanksgiving, immediate confrontation.",date:"c.AD 48–55 (debated; depends on whether the Galatian churches are in southern or northern Galatia).",prompt:"To rescue the Galatian churches from teachers who demand Gentile believers be circumcised and follow the Mosaic law. Paul argues that adding law-works to faith nullifies grace: \'if righteousness could be gained through the law, Christ died for nothing\' (2:21). Luther called Galatians \'my epistle\' — the Reformation\'s manifesto."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Galatians is a polemical letter — Paul\'s angriest writing. There is no thanksgiving (unprecedented in Paul\'s letters), and the opening moves immediately to rebuke: \"I am astonished that you are so quickly deserting\" (1:6). The argument is tightly structured: autobiographical defence (chs.1–2), theological argument (chs.3–4), practical application (chs.5–6). The letter\'s core claim — justification by faith apart from works of the law — became the theological engine of the Protestant Reformation.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Paul\'s Gospel Defended',chapters:[1,2],note:'Not from humans but from God; the Antioch confrontation with Peter'},
+      {label:'Faith vs Law',chapters:[3,4],note:'Abraham justified by faith; the law as guardian; sons, not slaves'},
+      {label:'Freedom Applied',chapters:[5,6],note:'\"Do not use your freedom to indulge the flesh\"; fruit of the Spirit'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Justification by Faith Alone','Freedom in Christ','The Law\'s Purpose and Limits','The Fruit of the Spirit','Neither Jew nor Gentile','The Cross','New Creation']},
+    {heading:'Historical Context',content:'After Paul founded churches in Galatia, rival teachers arrived insisting that Gentile converts must be circumcised and follow the Mosaic law to be fully saved. Paul sees this as a different gospel (1:6–9) that destroys the sufficiency of Christ. The Jerusalem Council (Acts 15) addressed the same issue and sided with Paul. Galatians may have been written before or after that council — the dating is disputed. The letter\'s influence on Luther (and through Luther on all Protestantism) makes it one of the most consequential documents in Western history.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Gal 1:6-10',label:'\"I am astonished\" — the opening rebuke'},
+      {ref:'Gal 2:11-21',label:'Paul confronts Peter — \"if righteousness could come through the law, Christ died for nothing\"'},
+      {ref:'Gal 3:26-29',label:'\"Neither Jew nor Gentile\" — unity in Christ'},
+      {ref:'Gal 5:1,13-26',label:'Freedom and the fruit of the Spirit'}
+    ]}
+  ]
+},
+
+{book:'ephesians',title:'How to Read Ephesians',subtitle:'The cosmic Christ and his church — Paul\'s most exalted vision of what God is doing in the universe.',
+  authorship:{author:"Paul the apostle (1:1; 3:1), though Pauline authorship is debated by some scholars based on style and vocabulary differences from undisputed letters. Written from prison (3:1; 4:1; 6:20).",date:"c.AD 60–62, from Rome during Paul\'s first imprisonment.",prompt:"To reveal the cosmic scope of God\'s plan: to unite all things in Christ (1:10) and to create one new humanity from Jew and Gentile (2:15). The letter moves from theology (chs.1–3) to ethics (chs.4–6), showing that the church\'s unity and holiness are the visible evidence of God\'s invisible plan."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Ephesians reads like a theological meditation or sermon rather than a typical Pauline letter — there are no personal greetings, no specific problems addressed, and the tone is worshipful rather than argumentative. The opening sentence (1:3–14) is one of the longest and most theologically dense sentences in the NT. The letter\'s vision of the church as Christ\'s body, bride, and temple has shaped Christian ecclesiology more than any other NT text.'},
+    {heading:'Literary Structure',outline:[
+      {label:'What God Has Done',chapters:[1,3],note:'Chosen before creation; alive with Christ; Jew and Gentile reconciled; Paul\'s prayer'},
+      {label:'How We Should Live',chapters:[4,6],note:'Unity; new self; household relationships; the armour of God'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Cosmic Christ','The Church as Body, Bride, Temple','Unity of Jew and Gentile','Spiritual Blessings','The Mystery Revealed','The Armour of God','Grace']},
+    {heading:'Historical Context',content:'Ephesus was the fourth-largest city in the Roman Empire, home to the Temple of Artemis (one of the Seven Wonders), and a centre of magic and occult practice (Acts 19:19). Paul spent three years there (Acts 20:31) — his longest church plant. Some early manuscripts omit \"in Ephesus\" from 1:1, leading some scholars to view the letter as a circular letter sent to multiple churches in Asia Minor. The \"armour of God\" passage (6:10–20) would have been especially vivid to readers living under Roman military occupation.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Eph 1:3-14',label:'Spiritual blessings — one sentence, the entire gospel'},
+      {ref:'Eph 2:1-10',label:'\"By grace you have been saved, through faith\" — the Reformation text'},
+      {ref:'Eph 2:11-22',label:'Jew and Gentile made one — the dividing wall destroyed'},
+      {ref:'Eph 6:10-20',label:'The armour of God — spiritual warfare'}
+    ]}
+  ]
+},
+
+{book:'philippians',title:'How to Read Philippians',subtitle:'Joy from prison — Paul\'s most personal letter and the Christ Hymn that defines Christian theology.',
+  authorship:{author:"Paul the apostle, with Timothy (1:1). Written from prison, most likely Rome.",date:"c.AD 61–62, from Rome during Paul\'s first imprisonment.",prompt:"To thank the Philippians for their financial gift, to encourage joy despite suffering, and to present the supreme example of Christ\'s humility (2:5–11). The letter\'s keyword is \'joy\' (or \'rejoice\'), appearing 16 times — remarkable from a man in chains."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Philippians is a friendship letter with profound theology embedded in it. Paul writes warmly (\"I thank my God every time I remember you,\" 1:3), practically (\"Rejoice! I say it again: Rejoice!\" 4:4), and theologically (the Christ Hymn of 2:5–11 is the most important christological text in Paul). It reads less like a formal epistle and more like a conversation between friends who share a common Lord and a common suffering.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Paul\'s Circumstances',chapters:[1,1],note:'Joy in prison; to live is Christ, to die is gain'},
+      {label:'The Mind of Christ',chapters:[2,2],note:'The Christ Hymn; Timothy and Epaphroditus commended'},
+      {label:'Pressing On',chapters:[3,3],note:'Righteousness from God by faith; pressing toward the goal'},
+      {label:'Joy and Peace',chapters:[4,4],note:'Rejoice always; the peace of God; contentment in all circumstances'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Joy in Suffering','The Christ Hymn','Humility','Knowing Christ','Contentment','Partnership in the Gospel','Pressing Toward the Goal']},
+    {heading:'Historical Context',content:'Philippi was a Roman colony in Macedonia — the site of the decisive battle (42 BC) where Octavian and Antony defeated Brutus and Cassius. The church was founded during Paul\'s second missionary journey (Acts 16:11–40) when Lydia, the jailer, and others believed. It was Paul\'s first European church and his most generous supporter. The Christ Hymn (2:5–11) may be a pre-Pauline hymn that Paul incorporates — suggesting that the highest Christology was present in the church\'s worship from the very beginning.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Phil 1:21-26',label:'\"To live is Christ, to die is gain\"'},
+      {ref:'Phil 2:1-11',label:'The Christ Hymn — the most important christological text in Paul'},
+      {ref:'Phil 3:7-14',label:'\"I consider everything a loss compared to knowing Christ\"'},
+      {ref:'Phil 4:4-13',label:'\"Rejoice always; I can do all things through him who strengthens me\"'}
+    ]}
+  ]
+},
+
+{book:'colossians',title:'How to Read Colossians',subtitle:'The supremacy of Christ over everything — Paul\'s most concentrated statement of who Jesus is.',
+  authorship:{author:"Paul the apostle, with Timothy (1:1). Written from prison. Paul had not visited Colossae; the church was founded by Epaphras (1:7).",date:"c.AD 60–62, from Rome.",prompt:"To combat a \'hollow and deceptive philosophy\' (2:8) threatening the Colossian church — probably a syncretistic blend of Jewish mysticism, asceticism, and angel worship — by presenting the absolute supremacy of Christ. If Christ is supreme, nothing needs to be added to him."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Colossians is a polemical letter centred on a cosmic Christology. The Christ Hymn (1:15–20) is the most exalted description of Jesus in the NT: image of the invisible God, firstborn over all creation, all things created through him and for him, head of the body, firstborn from the dead. Once Christ\'s supremacy is established, every rival claim collapses. The letter moves from theology (who Christ is) to practice (how to live in him).'},
+    {heading:'Literary Structure',outline:[
+      {label:'The Supremacy of Christ',chapters:[1,1],note:'The Christ Hymn; Paul\'s suffering for the church'},
+      {label:'Freedom from False Teaching',chapters:[2,2],note:'\"See to it that no one takes you captive\"; fullness in Christ'},
+      {label:'The New Life',chapters:[3,4],note:'Set your minds on things above; put on compassion; household relationships'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Supremacy of Christ','The Image of God','Fullness in Christ','Freedom from Legalism','The New Self','Hiddenness in Christ','Wisdom']},
+    {heading:'Historical Context',content:'Colossae was a small city in the Lycus Valley of Asia Minor, near Laodicea and Hierapolis. By Paul\'s time it was declining in importance. The \"Colossian heresy\" (2:8, 16–23) appears to combine Jewish calendar observance, dietary restrictions, angel veneration, and ascetic practices. Paul does not refute this point by point but renders it irrelevant by establishing Christ\'s supremacy: if you have the fullness of deity in Christ (2:9), you need nothing else.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Col 1:15-20',label:'The Christ Hymn — \"the image of the invisible God\"'},
+      {ref:'Col 2:6-23',label:'Freedom from hollow philosophy — fullness is in Christ'},
+      {ref:'Col 3:1-17',label:'The new self — \"set your minds on things above\"'}
+    ]}
+  ]
+},
+
+{book:'1_thessalonians',title:'How to Read 1 Thessalonians',subtitle:'Paul\'s earliest letter — encouragement for a young church and the first written teaching about Christ\'s return.',
+  authorship:{author:"Paul, with Silas and Timothy (1:1). Written shortly after leaving Thessalonica.",date:"c.AD 50–51, from Corinth — making it probably the earliest NT document.",prompt:"To encourage a young church under persecution, to address concerns about believers who have died before Christ\'s return, and to teach about the parousia (Christ\'s second coming). This letter contains the NT\'s first description of the rapture/resurrection sequence."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'First Thessalonians is a pastoral letter of encouragement — warm, affectionate, and practical. Paul uses family language throughout (\"brothers and sisters,\" \"like a nursing mother,\" \"like a father\"). The eschatological section (4:13–5:11) became foundational for Christian teaching about the second coming and the resurrection of the dead. It is likely the earliest complete NT document we possess.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Thanksgiving',chapters:[1,3],note:'Their faith is famous; Paul\'s longing to return; Timothy\'s good report'},
+      {label:'Holy Living',chapters:[4,4],note:'Sexual purity; love; the dead in Christ will rise first'},
+      {label:'The Day of the Lord',chapters:[5,5],note:'Like a thief in the night; but you are children of the light'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Second Coming','Hope for the Dead','Holy Living','Perseverance Under Persecution','Faith, Love, Hope','Encouragement','The Day of the Lord']},
+    {heading:'Historical Context',content:'Paul founded the Thessalonian church during his second missionary journey (Acts 17:1–9) but was forced to leave after only a few weeks due to mob violence. He was anxious about the young church\'s survival and sent Timothy to check on them (3:1–5). Timothy returned with good news, and Paul wrote this letter in relief and joy. Thessalonica was a major Roman city on the Via Egnatia — a strategic location for the gospel. The believers\' concern about dead believers (4:13) suggests they expected Christ\'s imminent return.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'1 Thess 1',label:'A model church — \"your faith has become known everywhere\"'},
+      {ref:'1 Thess 4:13-18',label:'The dead in Christ will rise — the first rapture/resurrection text'},
+      {ref:'1 Thess 5:1-11',label:'The Day of the Lord — \"like a thief in the night\"'}
+    ]}
+  ]
+},
+
+{book:'2_thessalonians',title:'How to Read 2 Thessalonians',subtitle:'Correcting confusion about Christ\'s return — the man of lawlessness and the call to keep working.',
+  authorship:{author:"Paul, with Silas and Timothy (1:1). Some scholars question Pauline authorship based on stylistic differences from 1 Thessalonians.",date:"c.AD 51–52, from Corinth, shortly after 1 Thessalonians.",prompt:"To correct the belief that the Day of the Lord has already come (2:2), to describe the \'man of lawlessness\' who must appear first, and to rebuke idleness — some Thessalonians had stopped working, apparently expecting Christ\'s imminent return."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Second Thessalonians is a corrective letter — it clarifies misunderstandings from the first letter. Where 1 Thessalonians emphasised Christ\'s imminent return, 2 Thessalonians adds a sequence of events that must occur first: the rebellion and the man of lawlessness (2:3–4). The letter also addresses a practical problem: some believers had quit their jobs to wait for the parousia.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Encouragement in Persecution',chapters:[1,1],note:'God\'s righteous judgment; relief at Christ\'s revelation'},
+      {label:'The Man of Lawlessness',chapters:[2,2],note:'The rebellion first; the restrainer; the lawless one destroyed'},
+      {label:'Warning Against Idleness',chapters:[3,3],note:'\"If anyone is not willing to work, let them not eat\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Man of Lawlessness','The Restrainer','The Day of the Lord Not Yet','Perseverance','Faithfulness in Work','Divine Justice']},
+    {heading:'Historical Context',content:'Some Thessalonians believed the Day of the Lord had already come (2:2) — possibly based on a misread letter claiming to be from Paul. Paul corrects this with apocalyptic teaching about the \"man of lawlessness\" who must appear first (2:3–4), echoing Daniel\'s abomination of desolation. The identity of the \"restrainer\" (2:6–7) who holds back the lawless one has been debated for two millennia: the Roman Empire, the Holy Spirit, the preaching of the gospel, or an angelic power. The practical problem of idleness (3:6–12) shows the pastoral consequences of bad eschatology.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 Thess 1:5-10',label:'God\'s justice — relief for the persecuted'},
+      {ref:'2 Thess 2:1-12',label:'The man of lawlessness — the rebellion that precedes the Day'},
+      {ref:'2 Thess 3:6-12',label:'\"If anyone is not willing to work, let them not eat\"'}
+    ]}
+  ]
+},
+
+{book:'1_timothy',title:'How to Read 1 Timothy',subtitle:'Paul\'s manual for church leadership — how to guard the faith in a hostile culture.',
+  authorship:{author:"Paul the apostle (1:1), written to his protégé Timothy who was leading the church in Ephesus. Pauline authorship of the Pastoral Epistles is debated; many scholars see a later author using Paul\'s name and authority.",date:"c.AD 62–65 (traditional) or c.AD 80–100 (critical dating). Written between Paul\'s first and second Roman imprisonments (if traditional dating).",prompt:"To instruct Timothy on church order: qualifications for leaders, handling false teaching, caring for widows, and modelling godliness. The letter is Paul\'s practical handbook for what a healthy church looks like."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'First Timothy is a pastoral letter — a senior leader writing to a younger one about church governance. It belongs to the Pastoral Epistles (1–2 Timothy, Titus), which share vocabulary, style, and concerns distinct from Paul\'s other letters. The letter addresses both doctrinal integrity (guarding sound teaching) and practical organisation (qualifications for overseers and deacons, care for widows, financial accountability).'},
+    {heading:'Literary Structure',outline:[
+      {label:'Charge Against False Teaching',chapters:[1,1],note:'Guard the deposit; the law\'s purpose; Paul\'s testimony'},
+      {label:'Worship and Leadership',chapters:[2,3],note:'Prayer for all; qualifications for overseers and deacons'},
+      {label:'Practical Instructions',chapters:[4,6],note:'Training in godliness; widows; elders; contentment; fight the good fight'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Sound Doctrine','Church Leadership','Godliness','Guarding the Faith','The Role of Women (Debated)','Contentment','The Good Fight']},
+    {heading:'Historical Context',content:'Timothy was Paul\'s most trusted co-worker — converted during Paul\'s first missionary journey (Acts 16:1), he accompanied Paul on multiple journeys and is co-sender of six of Paul\'s letters. Ephesus was a major city with a complex religious environment (the cult of Artemis, imperial worship, mystery religions) and the church faced pressure from false teachers who combined Jewish speculation with proto-Gnostic ideas (1:3–7; 4:1–5; 6:20). The letter\'s instructions on church order became the foundation for Christian institutional development.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'1 Tim 1:12-17',label:'Paul\'s testimony — \"Christ Jesus came to save sinners, of whom I am the worst\"'},
+      {ref:'1 Tim 3:1-13',label:'Qualifications for overseers and deacons'},
+      {ref:'1 Tim 6:6-19',label:'Contentment and the danger of wealth — \"the love of money is the root of all kinds of evil\"'}
+    ]}
+  ]
+},
+
+{book:'2_timothy',title:'How to Read 2 Timothy',subtitle:'Paul\'s last letter — written from death row, passing the torch to the next generation.',
+  authorship:{author:"Paul the apostle (1:1), writing to Timothy from a Roman prison, facing execution.",date:"c.AD 66–67 (traditional), Paul\'s final imprisonment under Nero.",prompt:"To pass the apostolic charge to Timothy before Paul\'s death. This is Paul\'s spiritual last will and testament: guard the gospel, endure suffering, preach the word, finish the race."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Second Timothy is a farewell letter — Paul\'s most personal and poignant writing. He is cold (4:13), lonely (4:11), and facing death (4:6–8), but his concern is not for himself but for the gospel\'s future. The letter pulses with urgency: \"fan into flame the gift of God\" (1:6); \"be prepared in season and out of season\" (4:2); \"I have fought the good fight, I have finished the race\" (4:7). It is the NT\'s most moving example of a dying leader entrusting the mission to the next generation.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Fan Into Flame',chapters:[1,1],note:'Guard the deposit; don\'t be ashamed of suffering'},
+      {label:'Be Strong in Grace',chapters:[2,2],note:'Soldier, athlete, farmer metaphors; rightly handling the word'},
+      {label:'Terrible Times',chapters:[3,3],note:'Godlessness in the last days; all Scripture is God-breathed'},
+      {label:'The Final Charge',chapters:[4,4],note:'Preach the word; \"I have fought the good fight\"; come quickly'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Passing the Torch','Endurance in Suffering','All Scripture God-Breathed','The Good Fight','Faithfulness','The Crown of Righteousness','Unashamed']},
+    {heading:'Historical Context',content:'Paul writes from Rome during Nero\'s persecution of Christians (c.AD 64–68). Tradition says Paul was beheaded on the Ostian Way. Demas has deserted him (4:10), Alexander the coppersmith has done great harm (4:14), only Luke remains (4:11). Despite abandonment, Paul\'s confidence is unshaken: \"I know whom I have believed\" (1:12). The passage on Scripture (3:16–17) — \"All Scripture is God-breathed\" — became the foundational text for the doctrine of biblical inspiration.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 Tim 1:3-14',label:'\"Fan into flame the gift of God\" — the opening charge'},
+      {ref:'2 Tim 2:1-13',label:'Soldier, athlete, farmer — metaphors for endurance'},
+      {ref:'2 Tim 3:14-17',label:'\"All Scripture is God-breathed\"'},
+      {ref:'2 Tim 4:6-8',label:'\"I have fought the good fight\" — Paul\'s farewell'}
+    ]}
+  ]
+},
+
+{book:'titus',title:'How to Read Titus',subtitle:'Sound doctrine produces godly living — Paul\'s blueprint for healthy churches on the island of Crete.',
+  authorship:{author:"Paul the apostle (1:1), writing to Titus, a Gentile convert and trusted co-worker who had been left on Crete to organise the churches.",date:"c.AD 63–65 (traditional).",prompt:"To instruct Titus on appointing elders, refuting false teachers, and teaching sound doctrine that transforms behaviour. The letter\'s core claim: what you believe shapes how you live. Theology and ethics are inseparable."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Titus is a compact pastoral letter — the most structured and least personal of the Pastorals. It moves efficiently from leadership qualifications (ch.1) to teaching for different groups (ch.2) to theological grounding (ch.3). Two magnificent theological summaries (2:11–14 and 3:4–7) function as creedal statements that anchor the practical instructions in the grace of God.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Elders and False Teachers',chapters:[1,1],note:'Qualifications for leaders; Cretan culture; silence the deceivers'},
+      {label:'Sound Doctrine for All',chapters:[2,2],note:'Older men, older women, young, slaves; \"the grace of God has appeared\"'},
+      {label:'Doing Good',chapters:[3,3],note:'Submit to authorities; be ready for every good work; \"he saved us by his mercy\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Sound Doctrine','Good Works','Grace That Teaches','Leadership Qualifications','Cultural Engagement','The Appearing of God\'s Grace','Renewal by the Holy Spirit']},
+    {heading:'Historical Context',content:'Crete was a large Mediterranean island with a reputation for dishonesty — Paul quotes the Cretan poet Epimenides: \"Cretans are always liars, evil brutes, lazy gluttons\" (1:12). The churches there needed strong leadership and clear doctrine to counter both cultural vices and Jewish-influenced false teaching (1:10, 14). Titus had previously handled the difficult Corinthian situation (2 Cor 7:6–16), making him well-suited for the challenging Cretan assignment.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Titus 1:5-9',label:'Elder qualifications — the character required'},
+      {ref:'Titus 2:11-14',label:'\"The grace of God has appeared\" — theology as motivation'},
+      {ref:'Titus 3:3-7',label:'\"He saved us by his mercy\" — the most concentrated salvation summary'}
+    ]}
+  ]
+},
+
+{book:'philemon',title:'How to Read Philemon',subtitle:'The shortest of Paul\'s letters — one page that overturns the ancient world\'s assumptions about slavery, status, and brotherhood.',
+  authorship:{author:"Paul the apostle, writing from prison (v.1, 9), with Timothy.",date:"c.AD 60–62, from Rome, written at the same time as Colossians.",prompt:"To persuade Philemon to receive back his runaway slave Onesimus — not as a slave but as a brother in Christ (v.16). The letter is a masterclass in pastoral persuasion, and its implications for human equality are revolutionary."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Philemon is a personal letter — the only undisputed Pauline letter addressed to an individual (1 Timothy and 2 Timothy are also to individuals but are more formal). It reads like a private note: warm, tactful, and devastatingly effective. Paul never commands Philemon to free Onesimus — he does something more subversive: he redefines the relationship. A slave becomes a brother, and the master is asked to receive him \"as you would receive me\" (v.17). In 335 words (Greek), Paul plants a seed that will eventually dismantle slavery.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Greeting and Thanksgiving',chapters:[1,1],note:'Philemon\'s love and faith; Paul\'s joy'},
+      {label:'The Appeal',chapters:[1,1],note:'\"I appeal to you for Onesimus\" — from slave to brother'},
+      {label:'Confidence and Closing',chapters:[1,1],note:'\"Knowing you will do even more than I ask\"; prepare a guest room'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Brotherhood in Christ','The Subversion of Social Hierarchy','Forgiveness','Reconciliation','Paul\'s Pastoral Tact','Grace Transforming Relationships','The Seed of Abolition']},
+    {heading:'Historical Context',content:'Roman slavery was pervasive — perhaps one-third of the empire\'s population was enslaved. Runaway slaves faced severe punishment, including death. Onesimus had apparently stolen from Philemon (v.18) and fled, eventually encountering Paul in prison and becoming a Christian. Paul sends him back — not because he approves of slavery but because he wants the transformation to happen within the relationship. The phrase \"no longer as a slave but as a beloved brother\" (v.16) is among the most socially radical sentences in ancient literature. The letter was used by both abolitionists and slavery apologists — but its trajectory is unmistakably toward freedom.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Philemon 1-25',label:'Read the whole letter — it takes five minutes and changes everything'}
+    ]}
+  ]
+},
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  GENERAL EPISTLES & REVELATION
+// ═══════════════════════════════════════════════════════════════════════════
+
+{book:'hebrews',title:'How to Read Hebrews',subtitle:'The sermon that shows how everything in the Old Testament points to Christ — who is better than angels, Moses, the priesthood, and the sacrifices.',
+  authorship:{author:"Anonymous. Hebrews is the only NT letter without a named author. Guesses include Paul, Apollos, Barnabas, Luke, and Priscilla. Origen (3rd century) famously concluded: \'Only God knows who wrote Hebrews.\' The author was a sophisticated theologian, fluent in Greek rhetoric, and deeply steeped in the OT.",date:"Before AD 70 (the temple destruction is not mentioned despite its relevance to the argument), probably c.AD 60–68.",prompt:"To prevent Jewish Christians from abandoning faith in Christ and reverting to Judaism under persecution. The argument: everything the old covenant offered (angels, Moses, priesthood, sacrifices, tabernacle) was a shadow; Christ is the reality. Going back is going from substance to shadow."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Hebrews is a sermon (the author calls it a \"word of exhortation,\" 13:22) with a letter-ending. It is the NT\'s most sustained theological argument, building a case through OT exposition: Christ is superior to angels (chs.1–2), to Moses (chs.3–4), to the Aaronic priesthood (chs.5–7), and his sacrifice is superior to all temple sacrifices (chs.8–10). The practical exhortations (chs.10–13) flow from the theology: since Christ is better, hold fast. The \"hall of faith\" (ch.11) is the most beloved chapter.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Christ Superior to Angels',chapters:[1,2],note:'Heir of all things; why he became human'},
+      {label:'Christ Superior to Moses',chapters:[3,4],note:'Greater than a servant; the Sabbath rest remains'},
+      {label:'Christ the High Priest',chapters:[5,7],note:'After the order of Melchizedek; a permanent priesthood'},
+      {label:'The New Covenant',chapters:[8,10],note:'Better covenant, better sacrifice, better access — \"once for all\"'},
+      {label:'Faith and Endurance',chapters:[11,13],note:'The hall of faith; looking to Jesus; the city to come'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Supremacy of Christ','Shadow and Reality','The Melchizedek Priesthood','The New Covenant','Faith as Endurance','Warning Passages','The Blood of Christ','The Heavenly Tabernacle']},
+    {heading:'Historical Context',content:'The recipients were Jewish Christians under pressure to abandon Christ and return to Judaism — probably in Rome (13:24). The argument only works if the temple is still standing and the sacrificial system is still functioning. Hebrews explains why those sacrifices are now obsolete: Christ offered himself \"once for all\" (7:27; 9:12; 10:10). The five warning passages (2:1–4; 3:7–4:13; 5:11–6:12; 10:26–39; 12:25–29) are among the most debated texts in Christian theology.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Heb 1:1-4',label:'The opening — the most exalted Christology in the NT'},
+      {ref:'Heb 4:14-16',label:'Our great high priest — \"approach the throne of grace with confidence\"'},
+      {ref:'Heb 11',label:'The hall of faith — from Abel to the unnamed'},
+      {ref:'Heb 12:1-3',label:'\"Let us run the race, looking to Jesus\"'}
+    ]}
+  ]
+},
+
+{book:'james',title:'How to Read James',subtitle:'\"Faith without works is dead\" — the most practical book in the NT, written by Jesus\' brother.',
+  authorship:{author:"James the brother of Jesus (1:1; cf. Matt 13:55; Gal 1:19), leader of the Jerusalem church (Acts 15:13; 21:18). He was not a believer during Jesus\' ministry (John 7:5) but became one after the resurrection (1 Cor 15:7).",date:"Possibly c.AD 45–49, making it one of the earliest NT documents. Some scholars date it later (AD 60s).",prompt:"To show that genuine faith produces visible action. James is not opposing Paul (justification by faith) but opposing a misuse of Paul: the claim that belief alone, without transformed behaviour, constitutes saving faith. \'Show me your faith without deeds, and I will show you my faith by my deeds\' (2:18)."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'James is wisdom literature for the church — the NT\'s closest equivalent to Proverbs. It moves rapidly between topics: trials, temptation, the tongue, wealth, prayer, favouritism, and patience. There is no sustained theological argument; instead, sharp practical instructions delivered in pointed, memorable language. Luther famously called it an \"epistle of straw\" because he thought it contradicted Paul; but read carefully, James and Paul address different questions (James: what does real faith look like? Paul: how is faith received?).'},
+    {heading:'Literary Structure',outline:[
+      {label:'Trials and Temptation',chapters:[1,1],note:'Joy in trials; every good gift; be doers, not hearers only'},
+      {label:'Favouritism and Works',chapters:[2,2],note:'Don\'t show favouritism; faith without works is dead'},
+      {label:'The Tongue and Wisdom',chapters:[3,3],note:'The tongue is a fire; wisdom from above vs wisdom from below'},
+      {label:'Humility, Patience, Prayer',chapters:[4,5],note:'Submit to God; don\'t judge; the prayer of faith'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Faith and Works','The Tongue','Wisdom','Trials as Growth','Wealth and Poverty','Prayer','Patience','Doers of the Word']},
+    {heading:'Historical Context',content:'James writes to \"the twelve tribes scattered among the nations\" (1:1) — Jewish Christians in the diaspora. The letter\'s Jewish character is strong: it references Abraham, Rahab, Job, and Elijah but never quotes Paul or mentions Gentile inclusion. If dated early (AD 40s), it predates the Gentile mission and reflects the earliest Jewish-Christian community. The letter\'s practical wisdom would have been immediately applicable to communities navigating poverty, social stratification, and the daily challenges of living faithfully in a hostile culture.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Jas 1:2-8',label:'Joy in trials — \"consider it pure joy\" and the prayer for wisdom'},
+      {ref:'Jas 2:14-26',label:'Faith and works — \"faith without deeds is dead\"'},
+      {ref:'Jas 3:1-12',label:'The tongue — \"a small part that makes great boasts\"'},
+      {ref:'Jas 5:13-18',label:'The prayer of faith — \"the prayer of a righteous person is powerful\"'}
+    ]}
+  ]
+},
+
+{book:'1_peter',title:'How to Read 1 Peter',subtitle:'Suffering as a stranger — how to live faithfully as exiles in a hostile world.',
+  authorship:{author:"Peter the apostle (1:1), written with Silas\'s help (5:12) from \'Babylon\' (5:13, probably Rome). Some scholars question Petrine authorship based on the letter\'s polished Greek.",date:"c.AD 62–64, before the Neronian persecution (or during its early stages).",prompt:"To encourage Christians scattered across Asia Minor who face social hostility, slander, and potential persecution. Peter reframes their suffering as participation in Christ\'s suffering and their social alienation as the dignity of being God\'s chosen exiles."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'First Peter is a pastoral letter to suffering believers — combining theology (Christ\'s suffering and resurrection), ethics (holy living as strangers), and encouragement (sharing in Christ\'s sufferings leads to sharing in his glory). The letter\'s controlling metaphor is exile: believers are \"foreigners and exiles\" (2:11) whose true citizenship is in heaven. This reframes persecution not as punishment but as identity confirmation — you suffer BECAUSE you belong elsewhere.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Living Hope',chapters:[1,1],note:'Born again to a living hope; be holy; love one another'},
+      {label:'Living Stones',chapters:[2,3],note:'The spiritual house; submission; Christ\'s example in suffering'},
+      {label:'Living for God',chapters:[4,5],note:'Suffering as a Christian; elders and humility; resist the devil'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Suffering and Glory','Exile and Identity','The Living Stone','Holy Living','Submission in a Hostile World','Christ\'s Example','Hope']},
+    {heading:'Historical Context',content:'The recipients are scattered across five Roman provinces in Asia Minor (1:1). They face social ostracism, verbal abuse (4:4), and possibly legal proceedings (3:15–16). The suffering is primarily social — neighbours who once shared their lifestyle now slander them for their changed behaviour (4:3–4). Peter writes from \"Babylon\" (5:13), almost certainly a code-name for Rome (as in Revelation). If Peter was martyred under Nero (c.AD 64–68), this letter comes from the last years of his life.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'1 Pet 1:3-9',label:'Living hope — \"though you have not seen him, you love him\"'},
+      {ref:'1 Pet 2:4-10',label:'Living stones — \"you are a chosen people, a royal priesthood\"'},
+      {ref:'1 Pet 2:21-25',label:'Christ\'s example in suffering — \"by his wounds you have been healed\"'},
+      {ref:'1 Pet 4:12-19',label:'Suffering as a Christian — \"rejoice inasmuch as you participate in Christ\'s sufferings\"'}
+    ]}
+  ]
+},
+
+{book:'2_peter',title:'How to Read 2 Peter',subtitle:'Peter\'s farewell — guarding against false teachers while waiting for the new heavens and new earth.',
+  authorship:{author:"Simon Peter (1:1), though this is the most disputed authorship in the NT. The style differs significantly from 1 Peter, and the letter appears to draw on Jude. Many scholars see it as pseudonymous; others defend Petrine authorship.",date:"c.AD 65–68 (traditional) or c.AD 80–120 (critical).",prompt:"To combat false teachers who deny Christ\'s return and promote moral license, and to encourage believers to grow in knowledge and godliness while waiting for the Day of the Lord."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Second Peter is a testament letter — Peter writes knowing his death is near (1:14). It combines exhortation to spiritual growth (ch.1), denunciation of false teachers (ch.2, closely paralleling Jude), and eschatological teaching (ch.3). The false teachers deny the second coming (\"Where is this \'coming\' he promised?\", 3:4) and use that denial to justify immoral behaviour. Peter responds with cosmic eschatology: the universe will be dissolved and remade.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Growing in Godliness',chapters:[1,1],note:'Add to your faith; Peter\'s eyewitness testimony; Scripture\'s divine origin'},
+      {label:'False Teachers',chapters:[2,2],note:'Destructive heresies; examples from history; enslaved to corruption'},
+      {label:'The Day of the Lord',chapters:[3,3],note:'Scoffers; the earth dissolved; new heavens and new earth'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Spiritual Growth','False Teaching','The Transfiguration','Scripture\'s Authority','The Day of the Lord','New Heavens and New Earth','Divine Patience']},
+    {heading:'Historical Context',content:'The false teachers Peter combats appear to be early libertine Gnostics who denied future judgment and used theological sophistication to justify immorality. Peter\'s response includes his personal testimony of the Transfiguration (1:16–18) and a defence of Scripture\'s divine origin (1:19–21). The statement that \"with the Lord a day is like a thousand years\" (3:8) has shaped Christian eschatology profoundly, and the vision of cosmic renewal (3:10–13) directly influences Revelation 21.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 Pet 1:3-11',label:'The spiritual growth ladder — from faith to love'},
+      {ref:'2 Pet 1:16-21',label:'Eyewitness testimony and Scripture\'s divine origin'},
+      {ref:'2 Pet 3:8-13',label:'\"A day is like a thousand years\" — new heavens, new earth'}
+    ]}
+  ]
+},
+
+{book:'1_john',title:'How to Read 1 John',subtitle:'\"God is light. God is love.\" The apostle of love writes to a community torn by false teaching and doubt.',
+  authorship:{author:"Traditionally attributed to the apostle John, the author of the Fourth Gospel. The letter is anonymous but shares vocabulary, theology, and style with John\'s Gospel. The author claims eyewitness authority (1:1–3).",date:"c.AD 85–95, probably from Ephesus.",prompt:"To reassure believers shaken by a church split (false teachers who left, 2:19) and to provide tests of genuine faith: do you believe Jesus came in the flesh? Do you love your brothers and sisters? Do you obey God\'s commands? These three tests — doctrinal, ethical, relational — recur throughout the letter."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'First John is a pastoral letter without typical letter features — no greeting, no named sender or recipients, no closing. It reads like a sermon or meditation, circling back through the same themes in deepening spirals. The three great declarations — \"God is light\" (1:5), \"God is love\" (4:8, 16) — provide the theological framework. The tone is intimate (\"my dear children\") and urgent: the community has been wounded by defectors, and John writes to rebuild confidence.'},
+    {heading:'Literary Structure',outline:[
+      {label:'God Is Light',chapters:[1,2],note:'Walking in the light; confession; the world\'s temptations; antichrists'},
+      {label:'Children of God',chapters:[3,3],note:'What love looks like; testing the spirits'},
+      {label:'God Is Love',chapters:[4,5],note:'Love one another; perfect love casts out fear; overcoming the world'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Light and Darkness','Love as Test of Faith','The Incarnation','Assurance of Salvation','Sin and Forgiveness','Antichrist','Abiding in Christ']},
+    {heading:'Historical Context',content:'The false teachers who left the community (2:19) denied that Jesus Christ had come \"in the flesh\" (4:2) — an early form of Docetism or proto-Gnosticism that separated the divine Christ from the human Jesus. John insists on the physical reality of the incarnation (\"what we have heard, seen, touched,\" 1:1). The community\'s location is traditionally Ephesus, where John spent his later years. The letter\'s influence on Christian theology of love is immeasurable — \"God is love\" (4:8) is arguably the most quoted theological statement in Christianity.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'1 John 1:1-10',label:'\"What we have heard, seen, touched\" — the incarnation affirmed'},
+      {ref:'1 John 3:11-24',label:'\"This is how we know what love is: Jesus Christ laid down his life\"'},
+      {ref:'1 John 4:7-21',label:'\"God is love\" — perfect love casts out fear'}
+    ]}
+  ]
+},
+
+{book:'2_john',title:'How to Read 2 John',subtitle:'Thirteen verses on truth and love — and when NOT to welcome a teacher into your home.',
+  authorship:{author:"\'The elder\' (v.1), traditionally identified as the apostle John.",date:"c.AD 85–95.",prompt:"To warn a \'chosen lady\' (either a woman or a personified church) against receiving false teachers who deny Christ\'s incarnation. Truth and love must go together — truth without love is harsh; love without truth is naive."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Second John is the shortest book in the NT by verse count (13 verses). It is a real letter — with sender, recipient, greeting, body, and closing. The concern is the same as 1 John: false teachers who deny Christ came in the flesh. But here the practical application is specific: do not welcome them into your house or give them a platform (vv.10–11). Hospitality was the primary means of supporting travelling teachers; refusing it was a way of refusing the teaching.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Greeting',chapters:[1,1],note:'The elder to the chosen lady — grace, mercy, peace'},
+      {label:'Walk in Truth and Love',chapters:[1,1],note:'The commandment from the beginning; many deceivers'},
+      {label:'Warning',chapters:[1,1],note:'Do not welcome false teachers — \"anyone who runs ahead\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Truth and Love Together','The Incarnation','Discernment','Hospitality and Its Limits','Walking in the Commandments']},
+    {heading:'Historical Context',content:'In the early church, travelling teachers depended on hospitality from local believers (cf. 3 John; Didache 11–13). Welcoming a teacher into your home was an endorsement of their message. John warns that extending hospitality to those who deny Christ\'s incarnation makes you \"a partner in their wicked work\" (v.11). The letter reflects a church navigating the boundary between generous welcome and theological discernment.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'2 John 1-13',label:'Read the whole letter — it takes two minutes'}
+    ]}
+  ]
+},
+
+{book:'3_john',title:'How to Read 3 John',subtitle:'A personal note about three men — and the difference between hospitality and hostility in the early church.',
+  authorship:{author:"\'The elder\' (v.1), traditionally the apostle John.",date:"c.AD 85–95.",prompt:"To commend Gaius for his hospitality to travelling missionaries, to condemn Diotrephes for his domineering refusal to welcome them, and to recommend Demetrius as trustworthy. The letter is a window into early church politics and the tension between local and itinerant authority."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Third John is the shortest book in the NT by word count — a personal note from a senior leader to a trusted friend. It names three characters: Gaius (the good host), Diotrephes (the power-hungry obstructor), and Demetrius (the recommended teacher). The letter shows the early church was not a utopia — personality conflicts, power struggles, and competing authorities were real. John\'s response is not institutional but relational: truth and love, modelled in persons.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Commendation of Gaius',chapters:[1,1],note:'Walking in the truth; faithful hospitality to strangers'},
+      {label:'Condemnation of Diotrephes',chapters:[1,1],note:'\"Loves to be first\"; refuses to welcome; puts people out of the church'},
+      {label:'Recommendation of Demetrius',chapters:[1,1],note:'\"Well spoken of by everyone — and even by the truth itself\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Hospitality','Church Leadership','Walking in Truth','The Danger of Domineering Leadership','Personal Relationships']},
+    {heading:'Historical Context',content:'The early church functioned through networks of travelling teachers, letter-carriers, and local hosts. Third John reveals the human dynamics: some leaders (Gaius) faithfully support the network; others (Diotrephes) hijack it for personal power. Diotrephes \"loves to be first\" (v.9) — the earliest description of authoritarian church leadership. John plans a personal visit to address the situation (v.14), showing that some problems cannot be solved by letter.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'3 John 1-15',label:'Read the whole letter — three characters, three lessons'}
+    ]}
+  ]
+},
+
+{book:'jude',title:'How to Read Jude',subtitle:'\"Contend for the faith\" — a short, fierce letter against infiltrators who pervert grace into license.',
+  authorship:{author:"Jude, brother of James (v.1) — traditionally identified as the brother of Jesus (Matt 13:55; Mark 6:3). Like James, he does not claim the family connection but identifies himself as a \'servant of Jesus Christ.\'",date:"c.AD 65–80. The relationship to 2 Peter is debated (most scholars think Jude is earlier and 2 Peter draws on it).",prompt:"To urge believers to \'contend for the faith\' (v.3) against false teachers who have infiltrated the community and are turning grace into moral license. The letter draws on OT examples, Jewish tradition (1 Enoch, the Assumption of Moses), and vivid metaphors to expose the danger."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Jude is a polemical letter — 25 verses of concentrated warning against false teachers. The language is vivid and the metaphors pile up: \"clouds without rain,\" \"autumn trees without fruit, uprooted — twice dead,\" \"wild waves of the sea, foaming up their shame,\" \"wandering stars\" (vv.12–13). The letter is notable for quoting non-canonical Jewish texts (1 Enoch in v.14; the Assumption of Moses behind v.9) — showing that early Christians engaged with Jewish literature beyond the Hebrew Bible.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Occasion',chapters:[1,1],note:'Contend for the faith; certain people have slipped in'},
+      {label:'OT Warnings',chapters:[1,1],note:'Israel in the wilderness, fallen angels, Sodom — three examples'},
+      {label:'The False Teachers Described',chapters:[1,1],note:'Clouds without rain, wandering stars — vivid metaphors'},
+      {label:'Exhortation',chapters:[1,1],note:'Build yourselves up; keep yourselves in God\'s love; the doxology'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['Contending for the Faith','False Teachers','Judgment Examples','Grace Perverted','Mercy for the Doubting','The Doxology','Non-Canonical Jewish Traditions']},
+    {heading:'Historical Context',content:'The false teachers in Jude are antinomians — they use God\'s grace as a license for immorality (v.4). They are insiders, not outsiders (\"certain people have crept in unnoticed,\" v.4). Jude\'s response draws on Jewish apocalyptic tradition extensively, including material from 1 Enoch (a book highly regarded in Second Temple Judaism and still canonical in the Ethiopian church). The letter\'s closing doxology (vv.24–25) — \"to him who is able to keep you from stumbling\" — is one of the most beloved benedictions in Christian worship.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Jude 1-25',label:'Read the whole letter — 25 verses of concentrated fire, ending in one of the NT\'s most beautiful doxologies'}
+    ]}
+  ]
+},
+
+{book:'revelation',title:'How to Read Revelation',subtitle:'The Apocalypse — Christ unveiled, history judged, and the promise that God wins. \"Behold, I am making all things new.\"',
+  authorship:{author:"John (1:1, 4, 9), traditionally identified as the apostle John, writing from exile on the island of Patmos. Some scholars distinguish this John from the Gospel author based on style differences.",date:"c.AD 95, during the reign of Domitian, though some argue for a Neronian date (c.AD 65–68).",prompt:"To reveal (apokalypsis = unveiling) the ultimate triumph of God and the Lamb over all evil — using Old Testament imagery, symbolic numbers, and dramatic visions to encourage persecuted Christians that history is not out of control. The book answers one question: Who really rules the world? Answer: the slaughtered Lamb on the throne."},
+  sections: [
+    {heading:'What Kind of Book Is This?',content:'Revelation is three genres in one: apocalypse (symbolic visions of heavenly reality), prophecy (God\'s message to the churches), and letter (addressed to seven specific churches in Asia Minor). It is the most misread book in the Bible — not because it is incoherent but because modern readers lack the OT literacy its first audience possessed. Nearly every image is drawn from the OT: Daniel\'s beasts, Ezekiel\'s throne, Isaiah\'s new creation, Exodus\'s plagues. Read Revelation as the OT\'s greatest symphony, not as a coded newspaper.'},
+    {heading:'Literary Structure',outline:[
+      {label:'Christ Among the Churches',chapters:[1,3],note:'The glorified Christ; seven letters to seven churches'},
+      {label:'The Throne Room and the Seals',chapters:[4,7],note:'Worship in heaven; the Lamb opens the scroll; the 144,000'},
+      {label:'The Trumpets',chapters:[8,11],note:'Seven trumpets of warning; the two witnesses; the seventh trumpet'},
+      {label:'The Cosmic Conflict',chapters:[12,14],note:'The dragon, the woman, the beasts, the Lamb on Mount Zion'},
+      {label:'The Bowls of Wrath',chapters:[15,16],note:'Seven bowls of final judgment'},
+      {label:'The Fall of Babylon',chapters:[17,18],note:'The great prostitute; \"Fallen, fallen is Babylon the great\"'},
+      {label:'The Return and the New Creation',chapters:[19,22],note:'The rider on the white horse; new heavens and new earth; \"Come, Lord Jesus\"'}
+    ]},
+    {heading:'Key Themes to Watch For',themes:['The Lamb on the Throne','Worship','Faithful Witness','Judgment and Justice','The New Creation','The Bride and the Prostitute','The Dragon Defeated','Already and Not Yet','\"Come, Lord Jesus\"']},
+    {heading:'Historical Context',content:'Revelation was written to real churches facing real persecution under the Roman Empire. The seven churches of Asia Minor (chs.2–3) are archaeologically attested cities with distinct local features that match John\'s descriptions. The imperial cult (worship of the emperor) is the immediate backdrop for the \"beast\" imagery — refusal to worship Caesar could mean economic exclusion or death. The number 666 (13:18) is most commonly decoded as Nero Caesar using Hebrew gematria. The book draws on Daniel, Ezekiel, Isaiah, and Zechariah so extensively that it functions as the OT\'s final interpretive lens — showing where all those prophecies converge: in Christ, in his church, and in the new creation.'},
+    {heading:'Suggested Reading Order',plan:[
+      {ref:'Rev 1',label:'The glorified Christ — \"I am the Living One; I was dead, and behold I am alive\"'},
+      {ref:'Rev 4–5',label:'The throne room and the Lamb — \"worthy is the Lamb who was slain\"'},
+      {ref:'Rev 12',label:'The woman, the dragon, the war in heaven'},
+      {ref:'Rev 21:1–22:5',label:'New heavens, new earth, new Jerusalem — \"Behold, I am making all things new\"'},
+      {ref:'Rev 22:20-21',label:'\"Come, Lord Jesus\" — the Bible\'s last prayer'}
+    ]}
+  ]
+}
+
 ];
