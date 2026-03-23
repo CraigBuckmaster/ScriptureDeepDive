@@ -108,7 +108,14 @@ Build a Python script `_tools/extract_to_json.py` with a function
    - <a class="map-story-link"> → map_story_link: {story_id, text} (or null)
    61 chapters have these. Parse the href fragment (#creation, #abram-call)
    as the event_id / story_id.
-6. Extracts VHL groups from the IIFE block at the bottom of the file
+6. Extracts VHL groups from the IIFE block at the bottom of the file.
+   Each group has THREE fields that must ALL be extracted:
+   - words: array of strings (the highlighted words)
+   - cls: CSS class string (e.g., 'vhl-divine') → maps to highlight color
+   - btn: array of panel type strings (e.g., ['hebrew','hebrew-text','context'])
+     This is CRITICAL — btn defines which panel opens when a VHL word is tapped.
+   Output per group: { "name": "divine", "css_class": "vhl-divine",
+     "words": ["LORD","God",...], "btn_types": ["hebrew","hebrew-text","context"] }
 7. Returns a dict matching the JSON schema in the React Native plan
 
 Include a `extract_all(output_dir)` function that walks ot/ and nt/,
@@ -147,6 +154,8 @@ READ _tools/PHASE_0_PLAN.md (Batch 0B section).
    - No empty panel content (content_json is not empty string or null)
    - Verse ranges are contiguous within each section
    - Every chapter has at least: title, 2+ sections, heb panels
+   - Every chapter has vhl_groups with 5 groups (DIVINE, PLACES, PEOPLE, TIME, KEY)
+   - Every VHL group has all 3 fields: words (non-empty), css_class, btn_types (non-empty)
 4. Print a failure report: which chapters failed and why
 5. Fix any systematic extraction bugs
 6. Re-run until 0 failures
@@ -426,6 +435,10 @@ Write _tools/validate_sqlite.py that runs these checks against scripture.db:
    - JSON in content_json columns is valid (json_valid() in SQLite)
    - People with father/mother references point to existing people IDs
    - Scholar scope references point to existing book IDs
+   - Every vhl_groups row has non-empty btn_types_json
+   - Every btn_types_json contains valid panel type strings
+     (json_each → values should be in: hebrew, hebrew-text, context,
+     places, people, timeline, literary, cross)
 
 4. FTS5 SEARCH:
    - Search "In the beginning" → returns Genesis 1:1
@@ -544,6 +557,7 @@ READ _tools/REACT_NATIVE_PLAN.md Phase 1 for save_chapter() spec.
 - [ ] `content/meta/` has: books.json, book-intros.json, people.json, timelines.json, cross-refs.json (with threads[] and pairs[]), word-studies.json, synoptic.json, scholars.json, scholar-scopes.json, scholar-data.json, scholar-bios.json, places.json, map-stories.json, genealogy-config.json
 - [ ] `content/verses/` has niv/ and esv/ subdirectories with 66 JSON files each
 - [ ] ~61 chapter JSON files have non-null `timeline_link` and/or `map_story_link` fields
+- [ ] Every chapter JSON has 5 VHL groups, each with `words`, `css_class`, AND `btn_types` arrays
 - [ ] cross-refs.json has both `threads` (themed step sequences) and `pairs` (bidirectional links)
 - [ ] `scripture.db` exists and passes all validation checks (including deep-link and thread integrity)
 - [ ] `_archive/` contains the complete old PWA

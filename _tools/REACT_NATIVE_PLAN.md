@@ -61,9 +61,11 @@ Write `_tools/extract_to_json.py` — a BeautifulSoup parser that reads each cha
     "debate": [...]
   },
   "vhl_groups": [
-    {"name": "hebrew", "css_class": "dn-key", "words": ["rîb", "ṣədāqâ"]},
-    {"name": "divine", "css_class": "dn-yhwh", "words": ["LORD"]},
-    {"name": "key", "css_class": "dn-key", "words": ["scarlet", "snow"]}
+    {"name": "divine", "css_class": "vhl-divine", "words": ["LORD","God"], "btn_types": ["hebrew","hebrew-text","context"]},
+    {"name": "places", "css_class": "vhl-place", "words": ["Jerusalem","Zion"], "btn_types": ["places","context"]},
+    {"name": "people", "css_class": "vhl-person", "words": ["Abraham","Moses"], "btn_types": ["people","context"]},
+    {"name": "time", "css_class": "vhl-time", "words": ["day","days"], "btn_types": ["timeline","context"]},
+    {"name": "key", "css_class": "vhl-key", "words": ["covenant","blessing"], "btn_types": ["literary","cross"]}
   ]
 }
 ```
@@ -259,7 +261,8 @@ CREATE TABLE vhl_groups (
   chapter_id TEXT NOT NULL REFERENCES chapters(id),
   group_name TEXT NOT NULL,
   css_class TEXT NOT NULL,
-  words_json TEXT NOT NULL
+  words_json TEXT NOT NULL,
+  btn_types_json TEXT NOT NULL           -- JSON array: ["hebrew","hebrew-text","context"]
 );
 
 CREATE TABLE genealogy_config (
@@ -893,10 +896,31 @@ Adding a new scholar in the future requires ZERO new components — just a datab
 
 ### 3.3 — VHL integration in verse text
 
+**How VHL works:** Each chapter defines VHL word groups (e.g., DIVINE, PLACES, PEOPLE, TIME, KEY). Each group has a word list, a CSS color class, and a `btn` array that maps to panel types. When a highlighted word is tapped, VHL walks the `btn` array and opens the first matching panel that exists in that section's button row. VHL does NOT open a popup — it opens panels.
+
+```
+DIVINE = { words:['LORD','God'], cls:'vhl-divine', btn:['hebrew','hebrew-text','context'] }
+PLACES = { words:['Jerusalem'], cls:'vhl-place',  btn:['places','context'] }
+PEOPLE = { words:['Abraham'],   cls:'vhl-person', btn:['people','context'] }
+TIME   = { words:['day','year'], cls:'vhl-time',   btn:['timeline','context'] }
+KEY    = { words:['covenant'],  cls:'vhl-key',     btn:['literary','cross'] }
+```
+
+Tap "LORD" (pink) → VHL finds `btn:['hebrew','hebrew-text','context']` → checks which of those panels exist in this section → opens the first match (typically Hebrew panel).
+
 ```typescript
 // components/VerseBlock.tsx
 
-function VerseBlock({ verses, vhlGroups, activeGroups }) {
+function VerseBlock({ verses, vhlGroups, activeGroups, sectionId, sectionPanels, onPanelToggle }) {
+  const handleVhlTap = (btnTypes: string[]) => {
+    // Walk the btn array, find the first panel that exists in this section
+    const availableTypes = sectionPanels.map(p => p.panel_type);
+    const matchType = btnTypes.find(btn => availableTypes.includes(btn));
+    if (matchType) {
+      onPanelToggle(sectionId, matchType); // opens that panel
+    }
+  };
+
   return (
     <View>
       {verses.map(v => (
@@ -905,10 +929,7 @@ function VerseBlock({ verses, vhlGroups, activeGroups }) {
           <HighlightedText
             text={v.text}
             groups={vhlGroups.filter(g => activeGroups.includes(g.group_name))}
-            onWordPress={(word) => {
-              const study = findWordStudy(word);
-              if (study) openWordStudyPopup(study);
-            }}
+            onVhlWordPress={(btnTypes) => handleVhlTap(btnTypes)}
           />
         </Text>
       ))}
@@ -916,6 +937,8 @@ function VerseBlock({ verses, vhlGroups, activeGroups }) {
   );
 }
 ```
+
+The WordStudyPopup is triggered separately — from tapping a word entry **inside** the HebrewPanel (after VHL has already opened it), not from VHL directly. The flow is: VHL tap → panel opens → tap word entry inside panel → WordStudyPopup.
 
 ### 3.4 — Cross-reference resolution
 

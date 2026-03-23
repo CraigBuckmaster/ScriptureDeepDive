@@ -444,6 +444,7 @@ READ the SQLite schema from _tools/REACT_NATIVE_PLAN.md Phase 0.5.
      group_name: string;
      css_class: string;
      words_json: string;
+     btn_types_json: string;    // JSON array: ["hebrew","hebrew-text","context"]
    }
 
    export interface CrossRefThread {
