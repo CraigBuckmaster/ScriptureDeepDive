@@ -12,6 +12,8 @@ import { View, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { useChapterData } from '../hooks/useChapterData';
+import { useNotedVerses } from '../hooks/useNotedVerses';
+import { useChapterCache } from '../hooks/useChapterCache';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { getBook } from '../db/content';
@@ -100,8 +102,11 @@ export default function ChapterScreen() {
       ? activePanel.panelType
       : null;
 
-  // Noted verses placeholder
-  const notedVerses = useMemo(() => new Set<number>(), []);
+  // Noted verses for note indicators
+  const notedVerses = useNotedVerses(bookId, chapterNum);
+
+  // Pre-fetch adjacent chapters
+  useChapterCache(bookId, chapterNum, totalChapters);
 
   // All VHL group names active by default
   const activeVhlGroups = useMemo(
