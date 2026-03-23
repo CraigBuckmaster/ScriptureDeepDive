@@ -649,7 +649,7 @@ def extract_chapter(html_path):
 # Batch extraction
 # ---------------------------------------------------------------------------
 def extract_all(output_dir='content'):
-    """Walk ot/ and nt/ and extract every chapter to JSON.
+    """Walk ot/ and nt/ (or _archive/ot/ and _archive/nt/) and extract every chapter to JSON.
 
     Output structure: {output_dir}/{book_dir}/{ch_num}.json
     """
@@ -658,7 +658,10 @@ def extract_all(output_dir='content'):
     errors = []
 
     for testament in ('ot', 'nt'):
+        # Check both root and _archive locations
         testament_dir = ROOT / testament
+        if not testament_dir.is_dir():
+            testament_dir = ROOT / '_archive' / testament
         if not testament_dir.is_dir():
             continue
         for book_dir in sorted(testament_dir.iterdir()):
@@ -885,9 +888,9 @@ if __name__ == '__main__':
     else:
         # Default: test on 3 diverse chapters
         tests = [
-            ('ot/genesis/Genesis_1.html', 'Fully enriched, 5 sections, 9 panel types per section'),
-            ('ot/isaiah/Isaiah_6.html', 'Enriched batch 1, 2 sections, 8 panel types per section'),
-            ('ot/isaiah/Isaiah_50.html', 'Unenriched, 2 sections, 2 panel types per section'),
+            ('_archive/ot/genesis/Genesis_1.html', 'Fully enriched, 5 sections, 9 panel types per section'),
+            ('_archive/ot/isaiah/Isaiah_6.html', 'Enriched batch 1, 2 sections, 8 panel types per section'),
+            ('_archive/ot/isaiah/Isaiah_50.html', 'Unenriched, 2 sections, 2 panel types per section'),
         ]
         for path, desc in tests:
             _test_chapter(path, desc)

@@ -17,6 +17,14 @@ ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'content' / 'meta'
 
 
+def _src(relpath):
+    """Resolve source path — check _archive/ first, then root."""
+    archived = ROOT / '_archive' / relpath
+    if archived.exists():
+        return archived
+    return ROOT / relpath
+
+
 # ---------------------------------------------------------------------------
 # Node.js eval helper (reused from convert_js_to_json.py)
 # ---------------------------------------------------------------------------
@@ -64,7 +72,7 @@ def _extract_js_block(content, pattern):
 # ---------------------------------------------------------------------------
 def extract_map_data():
     """Extract PLACES, STORIES, ERA_HEX, ERA_NAMES from map.html."""
-    src = ROOT / 'map.html'
+    src = _src('map.html')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
 
@@ -181,7 +189,7 @@ def extract_scholar_bios():
 
     Returns dict keyed by scholar ID (from filename).
     """
-    bio_dir = ROOT / 'commentators'
+    bio_dir = _src('commentators')
     bios = {}
     errors = []
 
