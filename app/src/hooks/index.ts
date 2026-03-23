@@ -9,3 +9,5 @@ export { useMapStories } from './useMapStories';
 export { useWordStudies } from './useWordStudies';
 export { useSearch } from './useSearch';
 export { useRecentChapters } from './useRecentChapters';
+export { useNotedVerses } from './useNotedVerses';
+export { useChapterCache, getCachedChapter } from './useChapterCache';
