@@ -105,11 +105,16 @@ COMMENTATOR_SCOPE = {
     'levenson':  ['esther'],
     'clines':    ['job'],                              # David Clines, WBC Job (1989-2011)
     'habel':     ['job'],
-    'longman':   ['ecclesiastes', 'song_of_solomon'],               # Tremper Longman III, NICOT Ecclesiastes (1998)
+    'longman':   ['ecclesiastes', 'song_of_solomon', 'daniel'],               # Tremper Longman III, NICOT Ecclesiastes (1998)
     'fox':       ['ecclesiastes'],
     'garrett':   ['song_of_solomon'],
     'vangemeren':['psalms'],                    # Willem VanGemeren, EBC Psalms (2008)
-    'goldingay': ['psalms'],                    # John Goldingay, BCOT Psalms (2006-2008)            # Duane Garrett, NAC Song of Songs (2004)               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
+    'goldingay': ['psalms', 'daniel'],
+    'collins':   ['daniel'],
+    'childs':  ['isaiah'],
+    'oswalt':  ['isaiah'],
+    'oconnor':  ['lamentations'],
+    'berlin':  ['lamentations'],                    # John Goldingay, BCOT Psalms (2006-2008)            # Duane Garrett, NAC Song of Songs (2004)               # Michael V. Fox, JPS Ecclesiastes (2004)                              # Norman Habel, OTL Job (1985)                             # Jon Levenson, OTL Esther (1997),                              # H.G.M. Williamson, WBC Ezra-Nehemiah (1985)   # Iain Provan, NIBCOT 1 & 2 Kings (1995)
 }
 
 
@@ -1077,5 +1082,10 @@ SCHOLAR_REGISTRY = [
     ('garrett',     'garrett',    'Garrett',      'garrett'),
     ('vangemeren',  'vangemeren', 'VanGemeren',   'vangemeren'),
     ('goldingay',   'goldingay',  'Goldingay',    'goldingay'),
+    ('collins',   'collins',   'Collins',   'collins'),
+    ('berlin',    'berlin',    'Berlin',    'berlin'),
+    ('oconnor',   'oconnor',   "O'Connor", 'oconnor'),
+    ('oswalt',    'oswalt',    'Oswalt',    'oswalt'),
+    ('childs',    'childs',    'Childs',    'childs'),
 ]
 
