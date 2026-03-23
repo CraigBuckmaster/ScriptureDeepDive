@@ -1,4 +1,4 @@
-const CACHE = 'scripture-2.287';
+const CACHE = 'scripture-2.288';
 
 const SHELL = [
   '/',

@@ -80,6 +80,10 @@ window.BOOK_INTROS = [
       themes: ['Liberation', 'The Name of God (YHWH)', 'Covenant and Law', 'God\'s Presence', 'Worship', 'Intercession', 'The Hardened Heart']
     },
     {
+      heading: 'Historical Context',
+      content: 'Genesis ends with Israel in Egypt as honoured guests; Exodus opens with them as slaves. The gap between Joseph\'s death (c.1805 BC) and Moses\' birth (c.1526 BC) spans roughly 280 years during which Egypt\'s political landscape shifted dramatically — a \"new king who did not know about Joseph\" (1:8). The Exodus itself (c.1446 BC on the early date, c.1260 BC on the late date) occurred during either the 18th or 19th Dynasty. Archaeological evidence from the Merneptah Stele (c.1208 BC) confirms Israel\'s presence in Canaan by the late 13th century.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Exod 1', label: 'Oppression — why deliverance is needed' },
@@ -119,6 +123,10 @@ window.BOOK_INTROS = [
       themes: ['Holiness', 'Atonement', 'Blood and Life', 'Clean and Unclean', 'The Presence of God', 'Priesthood as Mediation', 'Social Ethics']
     },
     {
+      heading: 'Historical Context',
+      content: 'Leviticus is set entirely at Mount Sinai, in the thirteen months between Israel\'s arrival (Exod 19:1) and departure (Num 10:11). The book assumes the freshly constructed tabernacle — God has just moved in, and the question is: how do sinful people live near a holy God without being destroyed? Israel\'s neighbours had similar sacrificial systems (Ugaritic and Hittite ritual texts show close parallels), but Leviticus\'s theology of holiness — extending from sanctuary to kitchen to bedroom — is unique in the ancient world.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Lev 1', label: 'The burnt offering — total dedication' },
@@ -155,6 +163,10 @@ window.BOOK_INTROS = [
       themes: ['Faithfulness vs. Rebellion', 'God\'s Patience', 'Holy War', 'Priesthood and Intercession', 'The Wilderness as Testing', 'Generational Transition']
     },
     {
+      heading: 'Historical Context',
+      content: 'Numbers covers the 38 years between Sinai and the plains of Moab (c.1444–1406 BC). The census of ch.1 counts 603,550 fighting men; the census of ch.26 counts 601,730 — a nearly unchanged total that masks the fact that the entire first generation has died in the wilderness (except Caleb and Joshua). The book\'s geography moves from Sinai to Kadesh-barnea to Moab, tracing a generation\'s failure and replacement. Mari census texts and the Balaam inscription from Deir Alla confirm the book\'s historical plausibility.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Num 6', label: 'The Aaronic blessing — the most famous passage' },
@@ -189,6 +201,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['Love as Covenant Loyalty', 'Remember / Do Not Forget', 'The Shema', 'One God, One Sanctuary', 'Blessings and Curses', 'Torah as Gift']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Moses delivers these speeches on the plains of Moab, within sight of the Promised Land he will not enter (c.1406 BC). The book follows the structure of ancient Hittite suzerainty treaties (preamble, historical review, stipulations, blessings/curses, witnesses) — a form well attested in the 14th–13th centuries BC. This treaty-structure frames the entire book as a covenant-renewal ceremony: Israel is about to cross the Jordan, and Moses is about to die. Every word carries the weight of a last testament.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -232,6 +248,10 @@ window.BOOK_INTROS = [
       themes: ['Promise Fulfilment', 'Faith and Obedience', 'Holy War', 'The Land as Gift', 'Covenant Loyalty', 'Leadership Transition']
     },
     {
+      heading: 'Historical Context',
+      content: 'Joshua picks up where Deuteronomy ends: Moses is dead, and Israel crosses the Jordan (c.1406 BC). The conquest described in chs.1–12 took approximately seven years. Archaeological evidence is debated — Jericho\'s destruction layers are contested, but Hazor\'s burning (11:10–11) has strong archaeological support. The land-distribution in chs.13–21 reflects genuine tribal boundary traditions. The book assumes readers know the Pentateuch: covenant language, sacrificial practice, and the promise to Abraham all frame the narrative.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Josh 1', label: '"Be strong and courageous" — the commission' },
@@ -266,6 +286,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['The Cycle of Sin', 'Progressive Deterioration', 'Flawed Leaders', 'Covenant Infidelity', '"No King in Israel"', 'God\'s Persistent Grace']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Judges covers roughly 350 years between Joshua\'s death (c.1380 BC) and the rise of Samuel (c.1050 BC). The period is characterised by the Amarna Letters (14th century), which describe Canaan as a patchwork of competing city-states with minimal Egyptian oversight — exactly the political vacuum Judges presupposes. The recurring cycle (sin → oppression → crying out → deliverance → peace → sin) structures the book. The refrain \"in those days Israel had no king\" (17:6; 18:1; 19:1; 21:25) frames the chaos as a monarchy-anticipating problem.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -305,6 +329,10 @@ window.BOOK_INTROS = [
       themes: ['Hesed (Covenant Faithfulness)', 'The Kinsman-Redeemer', 'Emptiness to Fullness', 'The Foreigner Included', 'Providence in Ordinary Life']
     },
     {
+      heading: 'Historical Context',
+      content: 'Ruth is set \"in the days when the judges ruled\" (1:1) — the same period of Judges, but the tone is completely different. The story moves from Bethlehem to Moab and back, probably during the period of relative peace under one of the judges. The customs of gleaning (Lev 19:9–10; 23:22), levirate marriage (Deut 25:5–10), and kinsman-redemption (Lev 25:25) all function exactly as the Pentateuch prescribes, suggesting an early date for both the customs and the narrative.'
+    },
+    {
       heading: 'Suggested Reading Order',
       content: 'Ruth is only four chapters. Read it in one sitting — it is designed to be experienced as a whole.',
       plan: [
@@ -335,6 +363,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['Kingship and Authority', 'Obedience vs. Sacrifice', 'The Spirit of the LORD', 'Reversal of Expectations', 'Faithful Waiting']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'First Samuel spans roughly 90 years (c.1100–1010 BC), from the birth of Samuel through Saul\'s reign to his death at Gilboa. The period is the Late Bronze to Early Iron Age transition — the Philistines (Sea Peoples) have settled the coastal plain and possess iron-working technology that gives them military superiority (13:19–22). The shift from tribal confederation to monarchy is the book\'s central political tension, and it reflects a broader ancient Near Eastern pattern of state formation under external military pressure.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -375,6 +407,10 @@ window.BOOK_INTROS = [
       themes: ['The Davidic Covenant', 'Power and Its Abuse', 'Sin and Consequence', 'Grace Despite Failure', 'The House of David']
     },
     {
+      heading: 'Historical Context',
+      content: 'Second Samuel covers David\'s reign (c.1010–970 BC). David\'s kingdom is archaeologically attested by the Tel Dan inscription (\"House of David\"), the Mesha Stele, and the stepped-stone structure in the City of David. The book\'s Court History (chs.9–20) is often considered the finest historical narrative in the ancient world — its psychological realism, moral complexity, and refusal to idealise the king are unique in ancient royal literature.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: '2 Sam 5', label: 'David becomes king of all Israel' },
@@ -412,6 +448,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['True vs. False Worship', 'Wisdom and Folly', 'The Temple as God\'s Dwelling', 'Prophetic Authority', 'The Divided Kingdom', 'Covenant Loyalty']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'First Kings covers approximately 120 years: Solomon\'s reign (c.970–930 BC) and the divided monarchy through Ahab\'s death (c.853 BC). Solomon\'s temple, built c.966–959 BC, is described with architectural precision that matches known temple designs from Syria-Palestine. The division of the kingdom (ch.12) is the book\'s pivot: one kingdom becomes two, and the narrative alternates between north (Israel) and south (Judah) for the remainder of Kings. The Elijah cycle (chs.17–19, 21) is set during the Omride dynasty, confirmed by the Mesha Stele and Assyrian records.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -534,6 +574,10 @@ window.BOOK_INTROS = [
     ]},
     {heading:'Key Themes',themes:['Seek God and Prosper','The Temple as Identity','Levitical Worship','Immediate Retribution','Repentance Restores','All Israel United','Hope Beyond Exile']},
     {heading:'Unique Material',content:'2 Chronicles contains substantial material absent from Kings: Abijah\u2019s speech (ch 13), Asa\u2019s prayer (14:11), Jehoshaphat\u2019s judicial reform (19:4\u201311), the \u201cbattle by worship\u201d (20:1\u201330), Manasseh\u2019s repentance (33:10\u201317), and extended accounts of Hezekiah\u2019s Passover (ch 30). These additions reveal the Chronicler\u2019s priorities: prayer, worship, and repentance matter more than politics.'},
+    {
+      heading: 'Historical Context',
+      content: 'The Chronicler writes after the exile (probably 4th century BC), retelling Judah\'s history from David through the fall of Jerusalem. Chronicles is not a neutral repeat of Kings but a theological re-reading: it emphasises the temple, worship, Levitical music, and the Davidic covenant while omitting the northern kingdom almost entirely. The Chronicler\'s audience is the post-exilic community rebuilding in Jerusalem — they need to know: the temple matters, David\'s line endures, and worship is the centre of national life.'
+    },
     {heading:'Suggested Reading Order',plan:[
       {ref:'2 Chr 5\u20137',label:'Temple dedication \u2014 fire from heaven, God\u2019s glory fills the house'},
       {ref:'2 Chr 10',label:'The kingdom divides \u2014 Rehoboam\u2019s folly'},
@@ -568,6 +612,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['The Fear of the LORD', 'Wisdom vs. Folly', 'Speech and Silence', 'Wealth and Poverty', 'Discipline', 'The Heart', 'Lady Wisdom']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Proverbs draws on a wisdom tradition that was international in scope — Egyptian instruction texts (Amenemope, Ptahhotep), Mesopotamian proverb collections, and Edomite wisdom (cf. Job\'s friends) all share vocabulary and forms with Israelite wisdom. The book\'s core (chs.10–29) is attributed to Solomon, whose reign (c.970–930 BC) was Israel\'s golden age of wisdom (1 Kgs 4:29–34). The final compilation occurred under Hezekiah\'s scribes (25:1), roughly 250 years later. The \"fear of the LORD\" framework (1:7) distinguishes Israelite wisdom from its neighbours: all wisdom is theological.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -614,6 +662,10 @@ window.BOOK_INTROS = [
       themes: ['Fulfilment of Scripture', 'Kingdom of Heaven', 'Righteousness', 'Discipleship', 'The New Moses', 'Son of David', 'Church and Community']
     },
     {
+      heading: 'Historical Context',
+      content: 'Matthew was written for a Jewish-Christian community, likely in Antioch of Syria, sometime between AD 50 and 80. The gospel presupposes readers who know the Hebrew Scriptures, Pharisaic debate conventions, and the significance of genealogy. Its five major discourse blocks (chs.5–7, 10, 13, 18, 23–25) may deliberately echo the five books of Moses, presenting Jesus as the new Moses who gives the definitive Torah from a new mountain. The destruction of the temple (AD 70) looms over the Olivet Discourse (chs.24–25).'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Matt 1', label: 'The genealogy — why it matters' },
@@ -650,6 +702,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['The Messianic Secret', 'Suffering Servanthood', 'Discipleship Failure', 'The Way of the Cross', 'Authority and Power', 'Irony']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Mark is the shortest and earliest gospel, likely written in Rome between AD 55 and 68, during or just before the Neronian persecution. Its audience is Gentile (Mark explains Jewish customs and translates Aramaic phrases). The gospel\'s breathless pace — \"immediately\" (euthys) appears over 40 times — and its emphasis on Jesus\' suffering reflect a community under persecution that needs to know: the Messiah himself suffered, and suffering is the path to glory. Early church tradition unanimously attributes it to John Mark, Peter\'s interpreter.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -690,6 +746,10 @@ window.BOOK_INTROS = [
       themes: ['The Holy Spirit', 'Prayer', 'The Poor and Marginalized', 'Women in the Story', 'Table Fellowship', 'Joy', 'Reversal of Status', 'Universal Salvation']
     },
     {
+      heading: 'Historical Context',
+      content: 'Luke is the first volume of a two-part work (Luke-Acts), written by a Gentile physician and companion of Paul, probably between AD 60 and 80. Luke\'s prologue (1:1–4) is the most historiographically self-conscious opening in the NT — he claims to have \"carefully investigated everything from the beginning.\" His gospel emphasises the poor, women, Samaritans, and Gentiles — those at the margins of Jewish society. The birth narratives (chs.1–2) are unique to Luke and steeped in OT allusion, particularly to Hannah\'s prayer (1 Sam 2).'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Luke 1', label: 'The Magnificat — Mary\'s revolutionary song' },
@@ -725,6 +785,10 @@ window.BOOK_INTROS = [
     {
       heading: 'Key Themes to Watch For',
       themes: ['Logos / Word', 'Light vs. Darkness', 'Life and Death', '"I Am" Sayings', 'Signs and Belief', 'The Farewell Discourse', 'Glory Through Suffering']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'John is the last gospel written, probably between AD 85 and 95, traditionally attributed to the apostle John (\"the disciple whom Jesus loved\"). It is deliberately different from the Synoptics: no parables, no exorcisms, no birth narrative, no Last Supper institution. Instead, seven signs, seven \"I am\" statements, and extended theological discourses. The discovery of the Pool of Bethesda (5:2) and the Pool of Siloam (9:7) with precisely the architectural features John describes has confirmed the gospel\'s detailed knowledge of pre-AD 70 Jerusalem.'
     },
     {
       heading: 'Suggested Reading Order',
@@ -767,6 +831,10 @@ window.BOOK_INTROS = [
       themes: ['The Holy Spirit', 'Witness to the Ends of the Earth', 'Jew and Gentile United', 'Prayer', 'Bold Speech (Parrhesia)', 'Suffering for the Gospel', 'The Unstoppable Word']
     },
     {
+      heading: 'Historical Context',
+      content: 'Acts is the second volume of Luke\'s two-part work, covering roughly 30 years from Jesus\' ascension (c.AD 30) to Paul\'s imprisonment in Rome (c.AD 62). The narrative traces the gospel\'s geographic expansion: Jerusalem → Judea → Samaria → the ends of the earth (1:8). Paul\'s missionary journeys are set against a well-documented Roman administrative backdrop — proconsuls, politarchs, and Asiarchs are all confirmed by inscriptions. The book ends abruptly with Paul in Rome, possibly because Luke wrote while events were still unfolding.'
+    },
+    {
       heading: 'Suggested Reading Order',
       plan: [
         { ref: 'Acts 2', label: 'Pentecost — the church is born' },
@@ -775,6 +843,418 @@ window.BOOK_INTROS = [
         { ref: 'Acts 15', label: 'The Jerusalem Council — the critical decision' },
         { ref: 'Acts 17', label: 'Paul in Athens — the gospel meets philosophy' },
         { ref: 'Acts 27', label: 'The shipwreck — Paul\'s faith under pressure' }
+      ]
+    }
+  ]
+}
+
+,
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  POST-EXILIC HISTORY
+// ═══════════════════════════════════════════════════════════════════════════
+
+{
+  book: 'ezra',
+  title: 'How to Read Ezra',
+  subtitle: 'Return from exile, rebuilding the temple, and the painful cost of covenant renewal.',
+  authorship:{author:"Traditionally attributed to Ezra the scribe-priest, possibly compiled from his memoirs (chs.7-10, written in first person) and official Persian documents (chs.1-6, including Aramaic imperial correspondence). Ezra was a descendant of Aaron through Zadok, trained in the law of Moses, and held the title 'scribe skilled in the Law of Moses' — a new kind of religious leader for a post-temple world.",date:"Events span 538-458 BC (the return under Zerubbabel through Ezra's reforms). Final compilation likely 5th-4th century BC.",prompt:"To record the fulfilment of Jeremiah's prophecy: after 70 years, God brought his people home. But return is not restoration — the book wrestles with how to rebuild identity when the temple is smaller, the walls are broken, and the community has intermarried with the surrounding nations."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Ezra is a theological history of return and renewal. It is bilingual (Hebrew and Aramaic) and incorporates official Persian documents — edicts, letters, and administrative records — giving it a documentary quality unique in the OT. The narrative moves in two waves: the first return under Zerubbabel (chs.1-6) and the second under Ezra (chs.7-10), separated by roughly 60 years of silence.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'First Return & Temple Rebuilt', chapters: [1, 6], note: 'Cyrus\'s decree, altar restored, temple completed (516 BC)' },
+        { label: 'Ezra\'s Return & Reform', chapters: [7, 10], note: 'Ezra arrives, discovers intermarriage, leads painful covenant renewal' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Fulfilment of Prophecy', 'The Remnant', 'Covenant Faithfulness', 'The Danger of Assimilation', 'The Word of God as Authority', 'Worship and Temple']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Ezra spans the Persian period (539-458 BC). Cyrus the Great\'s policy of returning captive peoples to their homelands is confirmed by the Cyrus Cylinder. The rebuilt temple (completed 516 BC) was modest compared to Solomon\'s — old men who remembered the first temple wept (3:12). The intermarriage crisis (chs.9-10) reflects the genuine danger of cultural absorption: a tiny community surrounded by larger populations risked losing its distinctive identity. Ezra\'s solution was painful but preserved the community that would eventually produce the Scriptures, the synagogue, and the matrix of early Christianity.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Ezra 1', label: 'Cyrus\'s decree — the exile ends' },
+        { ref: 'Ezra 3', label: 'The altar rebuilt — worship before walls' },
+        { ref: 'Ezra 6', label: 'Temple completed — joy and weeping together' },
+        { ref: 'Ezra 9', label: 'Ezra\'s devastating prayer of confession' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'nehemiah',
+  title: 'How to Read Nehemiah',
+  subtitle: 'Rebuilding walls, renewing covenant, and the faith it takes to work with a sword in one hand and a trowel in the other.',
+  authorship:{author:"Nehemiah son of Hakaliah, cupbearer to the Persian king Artaxerxes I. His memoirs (the 'Nehemiah Memoir') form the backbone of the book, written in vivid first-person prose. The book was likely compiled together with Ezra as a single work in the post-exilic period.",date:"Events span 445-432 BC. Nehemiah arrives in Jerusalem in the 20th year of Artaxerxes I (445 BC) and serves as governor for 12 years.",prompt:"To record the rebuilding of Jerusalem's walls and the renewal of covenant life. Nehemiah shows what faithful leadership looks like under opposition: pray first, plan carefully, work tirelessly, and refuse to be distracted."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Nehemiah is a leadership memoir — one of the most personal books in the OT. Nehemiah narrates in first person, records his prayers in real-time (the famous "arrow prayers" of 2:4, 4:4, 5:19, 6:14), and documents opposition with the precision of an administrator. The book shows that spiritual renewal and practical work are not opposites but partners.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Wall Rebuilt', chapters: [1, 7], note: 'Prayer, planning, construction in 52 days despite opposition' },
+        { label: 'Covenant Renewed', chapters: [8, 10], note: 'Ezra reads the Law, the people weep, the covenant is signed' },
+        { label: 'Community Organized', chapters: [11, 13], note: 'Repopulation, dedication, and Nehemiah\'s final reforms' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Prayer and Action Together', 'Leadership Under Opposition', 'The Word of God Read Publicly', 'Covenant Renewal', 'Social Justice', 'The Danger of Compromise']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Nehemiah arrives in a Jerusalem that has been partially resettled but remains vulnerable — the walls are broken, the population is small, and the surrounding governors (Sanballat, Tobiah, Geshem) actively oppose rebuilding. The Elephantine Papyri from Egypt confirm the names and political dynamics of this period. The 52-day wall construction (6:15) is a feat of emergency engineering, not normal building. The great covenant-renewal ceremony of chs.8-10, where Ezra reads the Torah to the assembled people, may be the origin of the synagogue reading cycle.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Neh 1', label: 'Nehemiah\'s prayer — the model of intercession' },
+        { ref: 'Neh 2', label: 'Night inspection of the walls — leadership begins with seeing' },
+        { ref: 'Neh 4', label: 'Sword and trowel — working under threat' },
+        { ref: 'Neh 8', label: 'Ezra reads the Law — the people weep, then feast' },
+        { ref: 'Neh 9', label: 'The great confession prayer' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'esther',
+  title: 'How to Read Esther',
+  subtitle: 'Providence without miracles — the book where God\'s name never appears but his hand is everywhere.',
+  authorship:{author:"Anonymous. The author knows the Persian court intimately — protocol, architecture, administrative procedures, even the names of Xerxes\' eunuchs (confirmed by Persian records). Possibly Mordecai himself or a court scribe with access to royal records.",date:"Events occur during the reign of Xerxes I (Ahasuerus), 486-465 BC. The story spans approximately 10 years (483-473 BC). Composition likely 5th-4th century BC.",prompt:"To show that God protects his people even when he seems absent. Esther never mentions God by name — the only OT book with this distinction — yet the entire plot turns on 'coincidences' so perfectly timed that no reader can miss the hidden hand."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Esther is a court narrative — a story of political intrigue, ethnic threat, and providential reversal set in the Persian empire. It reads like a thriller: banquets, beauty contests, assassination plots, last-minute rescues, and dramatic reversals. The absence of God\'s name is not absence of God — it is a literary strategy that forces the reader to see providence in the pattern of events rather than in miraculous intervention.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Esther Becomes Queen', chapters: [1, 2], note: 'Vashti deposed, Esther chosen, Mordecai saves the king' },
+        { label: 'Haman\'s Plot', chapters: [3, 5], note: 'Genocide decreed, Esther risks her life, the first banquet' },
+        { label: 'The Great Reversal', chapters: [6, 10], note: 'Haman falls, Jews triumph, Purim established' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Hidden Providence', 'Reversal and Irony', 'Courage in Crisis', 'Jewish Identity in Diaspora', 'The Sovereignty of God Without Naming God', 'Feasting and Fasting']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'The story is set in Susa, the winter capital of the Persian Empire, during the reign of Xerxes I (the biblical Ahasuerus). Xerxes\' massive banquet (ch.1) fits the historical context of his preparations for the Greek campaign (480 BC). The Persian postal system, the irrevocable nature of royal decrees, and the administrative structure of 127 provinces are all confirmed by Greek historians and Persian records. The festival of Purim, established in ch.9, is still celebrated by Jews worldwide — making Esther one of the most practically influential books in the canon.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Est 1', label: 'The banquet and Vashti\'s refusal — the vacancy that creates the opportunity' },
+        { ref: 'Est 3', label: 'Haman\'s plot — genocide by imperial decree' },
+        { ref: 'Est 4', label: '"For such a time as this" — the pivot of the book' },
+        { ref: 'Est 7', label: 'The great reversal — Haman falls on his own gallows' }
+      ]
+    }
+  ]
+},
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  WISDOM & POETRY
+// ═══════════════════════════════════════════════════════════════════════════
+
+{
+  book: 'job',
+  title: 'How to Read Job',
+  subtitle: 'The oldest question in the world — why do the innocent suffer? — answered not with an explanation but with a Person.',
+  authorship:{author:"Anonymous. Jewish tradition suggests Moses; others propose Solomon or an unknown sage. The prose framework (chs.1-2, 42:7-17) may be older than the poetic dialogue (chs.3-41). The author demonstrates mastery of poetry, theology, natural history, and legal procedure.",date:"The setting is patriarchal (no mention of Israel, the law, the temple, or the covenant). Composition dates range from the Solomonic era (10th century BC) to the exile (6th century BC). The archaic Hebrew of the poetry suggests an early date for at least the core material.",prompt:"To wrestle with the problem of innocent suffering — not by providing a tidy answer but by leading the reader into the whirlwind where God himself speaks. Job demolishes the simple equation that suffering = punishment and rebuilds faith on a different foundation: encounter with God."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Job is a dramatic poem framed by a prose narrative. The prose prologue (chs.1-2) and epilogue (42:7-17) surround 39 chapters of poetry — the longest sustained poetic dialogue in the Bible. The genre is unique: part legal trial, part philosophical debate, part worship. Do not read Job as history alone or philosophy alone — it is theological drama, and the drama matters as much as the theology.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Prose Prologue', chapters: [1, 2], note: 'The test — is Job\'s faith transactional?' },
+        { label: 'Dialogue Cycles', chapters: [3, 31], note: 'Three rounds of debate with three friends, increasingly bitter' },
+        { label: 'Elihu\'s Speeches', chapters: [32, 37], note: 'The young man who thinks he has the answer' },
+        { label: 'God Speaks', chapters: [38, 41], note: 'The whirlwind — 77 questions, zero explanations' },
+        { label: 'Prose Epilogue', chapters: [42, 42], note: 'Repentance, restoration, and vindication' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Innocent Suffering', 'The Limits of Human Wisdom', 'God\'s Freedom and Sovereignty', 'The Creation as Argument', 'Lament as Faith', 'Encounter Over Explanation']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Job belongs to the international wisdom tradition — similar suffering-righteous-person texts exist from Mesopotamia (Ludlul bel nemeqi, the "Babylonian Job") and Egypt (the Dispute of a Man with His Ba). But Job goes further than any parallel: the friends\' retribution theology is not just challenged but demolished by God himself (42:7). The land of Uz is probably in Edom or northern Arabia. The absence of Israelite religious markers (no temple, no Torah, no covenant) universalises the story: Job\'s question belongs to humanity, not just Israel.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Job 1-2', label: 'The prologue — the test the reader sees but Job does not' },
+        { ref: 'Job 3', label: 'Job\'s curse — the day he wishes he was never born' },
+        { ref: 'Job 19', label: '"I know that my Redeemer lives" — hope in the ruins' },
+        { ref: 'Job 38-39', label: 'God speaks from the whirlwind — 77 questions' },
+        { ref: 'Job 42', label: 'Repentance, restoration — "now my eyes have seen you"' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'psalms',
+  title: 'How to Read the Psalms',
+  subtitle: 'Israel\'s prayer book and hymnal — 150 poems covering every human emotion from the pit of despair to the peak of praise.',
+  authorship:{author:"Multiple authors across centuries. David is credited with 73 psalms; Asaph with 12; the Sons of Korah with 11; Solomon with 2; Moses with 1 (Ps 90); Ethan and Heman with 1 each. 50 are anonymous. The Psalter was compiled over 500+ years, with its final five-book structure reflecting deliberate editorial arrangement.",date:"Individual psalms span from the time of Moses (c.1400 BC, Ps 90) to the post-exilic period (Ps 137, after 586 BC). The final compilation was likely completed in the 4th-3rd century BC.",prompt:"To give Israel — and the church — a vocabulary for speaking to God in every circumstance: praise, lament, thanksgiving, confession, rage, trust, wonder, and despair. The Psalms do not describe the spiritual life from a distance; they perform it."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'The Psalms are not a book to be read straight through but a library to be lived in. They are poems, prayers, and songs — designed to be spoken aloud, sung in worship, and memorised for crisis. The Hebrew title is Tehillim ("praises"), though nearly a third of the psalms are laments. This is significant: Israel\'s praise-book is full of weeping. Honest grief is a form of worship.'
+    },
+    {
+      heading: 'Literary Structure',
+      content: 'The Psalter is divided into five books, traditionally seen as mirroring the five books of Moses:',
+      outline: [
+        { label: 'Book I (Psalms 1-41)', chapters: [1, 41], note: 'Mostly Davidic — personal faith, enemies, trust' },
+        { label: 'Book II (Psalms 42-72)', chapters: [42, 72], note: 'Korah psalms, Davidic psalms — national concerns' },
+        { label: 'Book III (Psalms 73-89)', chapters: [73, 89], note: 'Asaph and Korah — crisis of faith, covenant questions' },
+        { label: 'Book IV (Psalms 90-106)', chapters: [90, 106], note: 'The LORD reigns — response to exile\'s crisis' },
+        { label: 'Book V (Psalms 107-150)', chapters: [107, 150], note: 'Hallelujah collection — pilgrimage and praise' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Praise and Lament', 'The Kingship of God', 'The Messiah (Royal Psalms)', 'Torah and Wisdom', 'Creation and Creator', 'Zion and the Temple', 'Honest Prayer']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'The Psalms were Israel\'s worship songs — used in the temple, at festivals, during pilgrimages, and in daily prayer. The superscriptions ("To the director of music," "A maskil," "A miktam") are performance instructions, not later additions. The Dead Sea Scrolls contain psalms manuscripts that confirm the Psalter was essentially fixed by the 2nd century BC. Jesus quoted the Psalms more than any other OT book, and the early church sang them as their primary hymnal. The Psalms remain the most-read portion of the OT in Christian devotion worldwide.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Ps 1', label: 'The gateway — two ways of living' },
+        { ref: 'Ps 23', label: 'The shepherd psalm — the most beloved poem in the world' },
+        { ref: 'Ps 22', label: 'The cross psalm — Jesus\' cry and vindication' },
+        { ref: 'Ps 51', label: 'David\'s confession — the model of repentance' },
+        { ref: 'Ps 73', label: 'The crisis psalm — "until I entered the sanctuary"' },
+        { ref: 'Ps 119', label: 'The Torah psalm — the longest chapter in the Bible' },
+        { ref: 'Ps 150', label: 'The finale — everything that has breath praises the LORD' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'ecclesiastes',
+  title: 'How to Read Ecclesiastes',
+  subtitle: 'The most honest book in the Bible — a sage looks at life "under the sun" and finds it meaningless, then finds meaning anyway.',
+  authorship:{author:"'Qoheleth' (the Teacher/Preacher), traditionally identified with Solomon based on 1:1 ('son of David, king in Jerusalem'). Whether Solomon is the author or Qoheleth is a literary persona using Solomon as a thought-experiment ('If the wisest, richest king found life meaningless, what hope for you?') is debated. The Hebrew is late, suggesting post-exilic composition or editing.",date:"If Solomonic: c.935 BC. If post-exilic: 5th-3rd century BC. The late linguistic features favour a later date, though the Solomonic persona is integral to the argument.",prompt:"To confront the reader with life's apparent meaninglessness — and then, having demolished all false certainties, to rebuild on the only foundation that holds: fear God, keep his commandments, receive each day as a gift."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Ecclesiastes is philosophical wisdom literature — the Bible\'s most existential book. The key word is hevel (translated "meaningless," "vanity," or "vapor") — it appears 38 times. Hevel does not mean worthless but fleeting, elusive, unable to be grasped. The book is not nihilistic; it is brutally honest about what life "under the sun" (without transcendent reference) looks like — and then points beyond the sun.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'The Problem', chapters: [1, 2], note: 'Everything is hevel — wisdom, pleasure, toil, achievement' },
+        { label: 'Observations', chapters: [3, 6], note: 'A time for everything, injustice, the dead and the living' },
+        { label: 'Advice', chapters: [7, 11], note: 'Wisdom\'s limits, enjoy life, remember your Creator' },
+        { label: 'Conclusion', chapters: [12, 12], note: 'Remember your Creator in youth; fear God and keep his commandments' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Hevel (Meaninglessness/Vapor)', 'Life Under the Sun', 'The Gift of the Present Moment', 'The Fear of God', 'The Limits of Wisdom', 'Death as the Great Equaliser', 'Joy as Defiance']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Ecclesiastes participates in an ancient conversation about the meaning of life that spanned the Near East. The Egyptian Harper\'s Song ("Make holiday! Follow your heart!") and the Gilgamesh Epic\'s advice to Gilgamesh ("Fill your belly, dance and be merry") offer strikingly similar counsel to Qoheleth\'s "eat, drink, and find satisfaction in your toil" (2:24; 3:13; 5:18). But Qoheleth adds what the pagans lack: "Fear God" (12:13). The enjoyment is not hedonism but gift-reception.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Ecc 1', label: '"Meaningless! Meaningless!" — the opening salvo' },
+        { ref: 'Ecc 3:1-15', label: 'A time for everything — the most quoted passage' },
+        { ref: 'Ecc 5:1-7', label: 'Approaching God — the fear of the Lord' },
+        { ref: 'Ecc 12', label: 'Remember your Creator — the magnificent conclusion' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'song_of_solomon',
+  title: 'How to Read the Song of Solomon',
+  subtitle: 'The Bible\'s love poem — erotic, beautiful, and unapologetically celebrating the goodness of human desire.',
+  authorship:{author:"Attributed to Solomon (1:1), though whether as author, subject, or dedicatee is debated. The poem's female voice dominates (she speaks more than he does), which is unusual for ancient literature. Some scholars see it as a collection of wedding songs; others as a unified dramatic poem.",date:"If Solomonic: c.960 BC. If compiled later: possibly 6th-4th century BC. The language contains both archaic and late features, suggesting a complex compositional history.",prompt:"To celebrate the goodness of erotic love between man and woman as God's gift — and, in the tradition of Jewish and Christian interpretation, to point beyond human love to the passionate covenant love between God and his people."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'The Song is love poetry — the most sensuous text in the Bible. It contains no laws, no prophecy, no history, no explicit theology. God is not mentioned (except possibly 8:6, "a flame of the LORD"). It was debated for inclusion in the canon, and Rabbi Akiva famously defended it: "The whole world is not worth the day on which the Song of Songs was given to Israel; all the Writings are holy, but the Song of Songs is the Holy of Holies." Read it first as love poetry, then as allegory — both layers are real.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Courtship', chapters: [1, 3], note: 'Longing, seeking, finding — "Let him kiss me"' },
+        { label: 'Union', chapters: [4, 5], note: 'The wedding night, the garden, "I am my beloved\'s"' },
+        { label: 'Separation and Reunion', chapters: [5, 8], note: 'Loss, search, and the power of love stronger than death' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['The Goodness of Desire', 'Mutuality and Equality', 'Garden Imagery (Eden Restored)', 'Seeking and Finding', 'Love Stronger Than Death', 'The Allegory of Divine Love']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Love poetry was a well-established genre across the ancient Near East — Egyptian love songs from the New Kingdom period (1550-1070 BC) share the Song\'s vocabulary of gardens, spices, wine, and longing. But the Song is unique in giving the woman an equal and often dominant voice. The allegorical tradition is ancient: the Targum reads the Song as narrating God\'s love for Israel from the Exodus to the messianic age. Christian tradition (Origen, Bernard of Clairvaux) reads it as Christ and the church. Both readings coexist with the literal sense.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Song 1:1-2:7', label: '"Let him kiss me" — the opening desire' },
+        { ref: 'Song 2:8-17', label: '"My beloved is like a gazelle" — spring and invitation' },
+        { ref: 'Song 4:1-5:1', label: 'The garden — union and consummation' },
+        { ref: 'Song 8:6-7', label: '"Love is strong as death" — the theological climax' }
+      ]
+    }
+  ]
+},
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  MAJOR PROPHETS
+// ═══════════════════════════════════════════════════════════════════════════
+
+{
+  book: 'isaiah',
+  title: 'How to Read Isaiah',
+  subtitle: 'The fifth Gospel — 66 chapters spanning judgment, comfort, and the Suffering Servant who bears the sin of the world.',
+  authorship:{author:"Isaiah son of Amoz, prophet to Judah (c.740-680 BC). Ministered through the reigns of Uzziah, Jotham, Ahaz, and Hezekiah. Tradition says he was sawn in two under Manasseh (cf. Heb 11:37). Scholars debate whether chs.40-66 were written by Isaiah or by later disciples ('Deutero-Isaiah,' 'Trito-Isaiah'). The book's theological unity is undeniable regardless of compositional history.",date:"Chapters 1-39: c.740-700 BC (the Assyrian crisis). Chapters 40-55: exilic setting (c.540s BC) whether written by Isaiah predictively or by a later prophet historically. Chapters 56-66: post-exilic setting. The canonical book is a unified theological whole.",prompt:"To proclaim God's holiness, announce judgment on sin, and reveal the plan of salvation through the Suffering Servant — from the throne-room vision of ch.6 through 'Comfort, comfort my people' (ch.40) to 'by his wounds we are healed' (ch.53) to 'new heavens and a new earth' (ch.65). The NT quotes Isaiah more than any other OT book."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Isaiah is prophetic literature at its richest — oracles of judgment, songs of salvation, servant poems, apocalyptic visions, and historical narrative all woven together. The book divides into two great halves: chapters 1-39 (judgment, centred on the Assyrian crisis) and chapters 40-66 (comfort, centred on the return from exile). The shift at chapter 40 is the most dramatic tonal change in the Bible — from indictment to embrace, from wrath to tenderness.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Judgment on Judah & Nations', chapters: [1, 12], note: 'The great arraignment, Immanuel, "For to us a child is born"' },
+        { label: 'Oracles Against Nations', chapters: [13, 23], note: 'Babylon, Moab, Damascus, Egypt, Tyre — all under God\'s sovereignty' },
+        { label: 'The Isaiah Apocalypse', chapters: [24, 27], note: 'Cosmic judgment, death swallowed, Leviathan slain' },
+        { label: 'Woe Oracles & Hezekiah', chapters: [28, 39], note: 'Cornerstone, Sennacherib\'s siege, the bridge to comfort' },
+        { label: 'The Book of Comfort', chapters: [40, 55], note: '"Comfort, comfort" — the Servant Songs, Cyrus, the great invitation' },
+        { label: 'The New Creation', chapters: [56, 66], note: 'House of prayer for all nations, the Suffering Servant\'s fruit, new heavens and new earth' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['The Holy One of Israel', 'The Suffering Servant', 'Comfort and Salvation', 'The Remnant', 'Light and Darkness', 'Justice and Righteousness', 'New Exodus / New Creation']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Isaiah prophesied during the most dangerous period in Judah\'s history: the Assyrian empire was swallowing nations, and the northern kingdom of Israel fell to Assyria in 722 BC. The Sennacherib crisis of 701 BC (chs.36-39) is the historical pivot — Jerusalem survived while every other city fell. The Sennacherib Prism confirms the siege; the Cyrus Cylinder confirms the return prophecy (44:28-45:1). The Great Isaiah Scroll from Qumran (1QIsa-a, c.125 BC) is virtually identical to the text we have today, demonstrating remarkable textual stability across a millennium.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Isa 6', label: '"Holy, holy, holy" — Isaiah\'s call in the throne room' },
+        { ref: 'Isa 9:1-7', label: '"For to us a child is born" — the Christmas text' },
+        { ref: 'Isa 40', label: '"Comfort, comfort my people" — the hinge of the book' },
+        { ref: 'Isa 52:13-53:12', label: 'The Suffering Servant — the theological peak of the OT' },
+        { ref: 'Isa 55', label: '"Come, all you who are thirsty" — the great invitation' },
+        { ref: 'Isa 65:17-25', label: '"New heavens and a new earth" — the final vision' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'daniel',
+  title: 'How to Read Daniel',
+  subtitle: 'Court tales of faithfulness and apocalyptic visions of sovereignty — the God who rules empires and raises the dead.',
+  authorship:{author:"Daniel, a Judean exile who served in the Babylonian and Persian courts from 605 to at least 536 BC. Critical scholars date the final form to the Maccabean period (c.165 BC) based on the detailed prophecies of chs.7-12. Conservative scholars maintain 6th-century authorship. The book is bilingual: Hebrew (1:1-2:4a; 8-12) and Aramaic (2:4b-7:28).",date:"Setting: 605-536 BC (the entire Babylonian exile and into the Persian period). Composition: 6th century BC (traditional) or 2nd century BC (critical). The court tales (chs.1-6) may be older than the visions (chs.7-12).",prompt:"To demonstrate that God is sovereign over every empire and that faithfulness under pressure — whether in a furnace, a lion's den, or a hostile court — is vindicated by the God who deposes kings, raises up kings, and will one day raise the dead."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Daniel is two books in one: court tales (chs.1-6) and apocalyptic visions (chs.7-12). The court tales are straightforward narratives about faithfulness under pagan rule — accessible, dramatic, and beloved by children. The visions are the most complex prophetic material in the OT — dense with symbolism, contested in interpretation, and foundational to the entire book of Revelation. Read the tales first to establish the theology; then let the visions expand it.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Court Tales', chapters: [1, 6], note: 'Resolve, dreams, furnace, writing on the wall, lion\'s den — faith tested and vindicated' },
+        { label: 'Apocalyptic Visions', chapters: [7, 12], note: 'Four beasts, Son of Man, 70 weeks, heavenly warfare, resurrection' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['God\'s Sovereignty Over Empires', 'Faithfulness Under Pressure', 'The Son of Man', 'The Four Kingdoms', 'Prayer and Fasting', 'Resurrection and Final Judgment', 'Heavenly Warfare']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Daniel spans the Neo-Babylonian and early Persian empires (605-536 BC). Nebuchadnezzar\'s Babylon was the ancient world\'s most magnificent city — its Ishtar Gate, hanging gardens, and processional way are archaeologically attested. The Prayer of Nabonidus from the Dead Sea Scrolls parallels Daniel 4. The Cyrus Cylinder confirms the Persian policy of returning captive peoples. Whether the detailed prophecies of chs.7-12 are predictive (6th century) or contemporary (2nd century), the theological message is identical: God controls the sequence of empires, and his kingdom will outlast them all.'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Dan 1', label: 'Daniel\'s resolve — the first test of faith' },
+        { ref: 'Dan 3', label: 'The fiery furnace — "but even if he does not"' },
+        { ref: 'Dan 6', label: 'The lion\'s den — "just as he had done before"' },
+        { ref: 'Dan 7', label: 'The Son of Man — the vision Jesus claims for himself' },
+        { ref: 'Dan 9:1-19', label: 'Daniel\'s prayer — the model of national confession' },
+        { ref: 'Dan 12', label: '"Multitudes will awake" — the resurrection promise' }
+      ]
+    }
+  ]
+},
+
+{
+  book: 'lamentations',
+  title: 'How to Read Lamentations',
+  subtitle: 'Five poems of grief over Jerusalem\'s destruction — where weeping is worship and protest is prayer.',
+  authorship:{author:"Anonymous. Traditionally attributed to Jeremiah based on 2 Chronicles 35:25, but the book itself does not name its author. The poet was almost certainly an eyewitness to Jerusalem's destruction in 586 BC — the visceral detail (starving children, cannibalised infants, burning buildings) is too specific for secondhand report.",date:"Shortly after Jerusalem\'s destruction by Nebuchadnezzar in 586 BC. The grief is raw and immediate — this is not retrospective reflection but real-time agony.",prompt:"To give voice to catastrophic loss — and to show that honest grief, including rage at God, is not the opposite of faith but a form of it. The book sits at the centre of Jewish mourning liturgy (read on Tisha B'Av) because it teaches that the way through grief is through it, not around it."},
+  sections: [
+    {
+      heading: 'What Kind of Book Is This?',
+      content: 'Lamentations is funeral poetry — five acrostic poems mourning the destruction of Jerusalem and its temple. Four of the five chapters follow the Hebrew alphabet (22 letters, 22 verses); chapter 3 is a triple acrostic (66 verses). Chapter 5 has 22 verses but breaks the acrostic pattern — when grief is total, even poetic form fails. The acrostic structure is not decorative but therapeutic: it imposes order on chaos, forces the poet to work through grief letter by letter, A to Z.'
+    },
+    {
+      heading: 'Literary Structure',
+      outline: [
+        { label: 'Poem 1: The Widow City', chapters: [1, 1], note: '"How deserted lies the city!" Jerusalem as a weeping widow' },
+        { label: 'Poem 2: God as Enemy', chapters: [2, 2], note: '"The Lord is like an enemy" — the most theologically shocking chapter' },
+        { label: 'Poem 3: The Centre', chapters: [3, 3], note: 'Triple acrostic — despair, then "His compassions never fail. New every morning"' },
+        { label: 'Poem 4: The Siege', chapters: [4, 4], note: 'Gold lost its lustre, children starving, mothers eating children' },
+        { label: 'Poem 5: The Broken Form', chapters: [5, 5], note: '"Remember, LORD" — the acrostic breaks. Ends unanswered.' }
+      ]
+    },
+    {
+      heading: 'Key Themes to Watch For',
+      themes: ['Grief as Worship', 'God as Both Judge and Hope', 'The Acrostic as Therapy', 'Sin and Its Consequences', 'The Faithfulness of God in Darkness', 'Protest Prayer', 'Hope Inside Grief (Not Instead of It)']
+    },
+    {
+      heading: 'Historical Context',
+      content: 'Jerusalem fell to Nebuchadnezzar in 586 BC after a brutal 18-month siege. The temple Solomon built was burned; the walls were demolished; the population was killed, deported, or scattered. Archaeological evidence from the City of David shows massive destruction layers with arrowheads and burning. The Babylonian Chronicles confirm the siege. Lamentations belongs to the ancient genre of city-laments — Sumerian texts from 2000 BC mourn the destruction of Ur in similar language. But Lamentations is unique in its theological honesty: it names God as the agent of destruction (2:5) while still appealing to his mercy (3:22-23).'
+    },
+    {
+      heading: 'Suggested Reading Order',
+      plan: [
+        { ref: 'Lam 1', label: '"How deserted!" — the opening cry' },
+        { ref: 'Lam 2:18-19', label: '"Pour out your heart like water" — the only instruction' },
+        { ref: 'Lam 3:19-33', label: '"His compassions never fail" — the centre of the centre' },
+        { ref: 'Lam 5', label: '"Restore us" — the book ends unanswered' }
       ]
     }
   ]
