@@ -2,824 +2,515 @@
 
 ## Overview
 
-**Goal:** Build the complete ChapterScreen — the reading experience where 90% of user time is spent. This includes the screen itself, all 17 panel components, the VHL engine, the verse resolver, the button/panel toggle system, Qnav, per-verse notes, thread viewer, cross-ref popups, and every modal triggered from a chapter page.
+**Goal:** Build the complete ChapterScreen experience — the screen where 90% of user time is spent. This includes verse rendering with VHL highlighting, all 17 panel types, the button/panel toggle system, the Qnav overlay, per-verse notes, cross-reference popups, the thread viewer, and all supporting modals.
 
-**Dependencies:** Phase 2 complete. Expo project exists with design system, types, data layer, hooks, navigation skeleton, and placeholder screens.
+**Dependencies:** Phase 2 complete. The design system, TypeScript types, data access layer, hooks, navigation skeleton, and Zustand stores all exist.
 
-**Component count:** 49 distinct components across 8 categories.
+**Component count:** 49 components total, organized into 9 batches.
 
-**Complexity map:**
-
-| Category | Count | Difficulty | Notes |
-|----------|-------|-----------|-------|
-| Utilities (non-visual) | 2 | High | verseResolver is 15KB of ref-parsing logic |
-| Shared components | 3 | Low | CollapsibleSection, LoadingSkeleton, TappableReference |
-| Verse rendering | 5 | High | VHL word-matching + coloring is the hardest component |
-| Button/panel system | 4 | Medium | Animated expand/collapse, single-open policy |
-| Section-level panels | 7+1 | Medium | 7 named + 1 parameterized CommentaryPanel |
-| Chapter-level panels | 10 | Medium | ThemesRadarPanel (SVG) is the hardest one |
-| ChapterScreen + chrome | 7 | Medium | Orchestrator + nav bar + bottom bar + header components |
-| Modals | 11 | Medium | Qnav is the largest (88KB equivalent in PWA) |
+**Batching strategy:** Build from the inside out:
+1. Utilities (verse resolver, reference parser) — no UI dependency
+2. Shared primitives (CollapsibleSection, TappableReference, LoadingSkeleton) — used by everything
+3. Verse rendering (HighlightedText, VerseBlock, NoteIndicator) — the core reading experience
+4. Section-level panels (7 types) — the per-section scholarly content
+5. Chapter-level panels (10 types) + PanelRenderer — the chapter-wide scholarly content
+6. Button/panel system (ButtonRow, PanelContainer, ScholarlyBlock) — the toggle mechanics
+7. ChapterScreen assembly (nav bar, bottom bar, header, scroll layout)
+8. Modals (Qnav, Notes, CrossRef, WordStudy, Scholar, Thread, Authorship)
+9. Integration + polish (progressive loading, pre-fetch, accessibility audit)
 
 ---
 
-## Reference: Button Label Map
+## Button Type → Panel Type → Label Mapping
 
-Every button in the PWA maps a CSS class to a display label and a panel type. The React Native app uses the panel_type from the database to drive both the label and the component.
+This is the Rosetta Stone. The PWA's `btn_row()` maps button CSS classes to panel IDs. The React Native app maps `panel_type` from SQLite to components.
+
+### Section-level buttons
+
+| Button class (PWA) | Panel type (DB) | Display label | Component |
+|-------------------|----------------|---------------|-----------|
+| `hebrew` | `heb` | Hebrew ▾ | HebrewPanel |
+| `history` | `hist` | History ▾ | HistoricalContextPanel |
+| `context` | `ctx` | Context ▾ | ContextPanel |
+| `cross` | `cross` | Cross-Ref ▾ | CrossRefPanel |
+| `macarthur` | `mac` | MacArthur ▾ | CommentaryPanel |
+| `calvin` | `calvin` | Calvin ▾ | CommentaryPanel |
+| `netbible` | `netbible` | NET Notes ▾ | CommentaryPanel |
+| `sarna` | `sarna` | Sarna ▾ | CommentaryPanel |
+| *(any scholar key)* | *(scholar key)* | *(Scholar label) ▾* | CommentaryPanel |
+| `places` | `poi` | Places ▾ | PlacesPanel |
+| `timeline` | `tl` | Timeline ▾ | TimelinePanel |
+
+### Chapter-level buttons
+
+| Button class (PWA) | Panel type (DB) | Display label | Component |
+|-------------------|----------------|---------------|-----------|
+| `literary` | `lit` | Literary Structure | LiteraryStructurePanel |
+| `hebrew-text` | `hebtext` | Hebrew-Rooted Reading | HebrewReadingPanel |
+| `themes` | `themes` | Theological Themes | ThemesRadarPanel |
+| `people` | `ppl` | People | PeoplePanel |
+| `translations` | `trans` | Translations | TranslationPanel |
+| `sources` | `src` | Ancient Sources | SourcesPanel |
+| `reception` | `rec` | Reception History | ReceptionPanel |
+| `threading` | `thread` | Intertextual Threading | ThreadingPanel |
+| `textual` | `textual` | Textual Notes | TextualPanel |
+| `debate` | `debate` | Scholarly Debates | DebatePanel |
+
+### Label resolution utility
 
 ```typescript
-// utils/panelConfig.ts
-
-export const PANEL_CONFIG: Record<string, { label: string; icon?: string }> = {
-  // Section-level
-  heb:      { label: 'Hebrew' },    // or 'Greek' for NT chapters
-  hist:     { label: 'History' },
-  ctx:      { label: 'Context' },
-  cross:    { label: 'Cross-Ref' },
-  poi:      { label: 'Places' },
-  tl:       { label: 'Timeline' },
-  // Chapter-level
-  lit:      { label: 'Literary Structure' },
-  hebtext:  { label: 'Hebrew Reading' },
-  themes:   { label: 'Theological Themes' },
-  ppl:      { label: 'People' },
-  trans:    { label: 'Translations' },
-  src:      { label: 'Ancient Sources' },
-  rec:      { label: 'Reception History' },
-  thread:   { label: 'Intertextual Threading' },
-  textual:  { label: 'Textual Notes' },
-  debate:   { label: 'Scholarly Debates' },
+// utils/panelLabels.ts
+const PANEL_LABELS: Record<string, string> = {
+  heb: 'Hebrew', hist: 'History', ctx: 'Context', cross: 'Cross-Ref',
+  poi: 'Places', tl: 'Timeline', lit: 'Literary Structure',
+  hebtext: 'Hebrew-Rooted Reading', themes: 'Theological Themes',
+  ppl: 'People', trans: 'Translations', src: 'Ancient Sources',
+  rec: 'Reception History', thread: 'Intertextual Threading',
+  textual: 'Textual Notes', debate: 'Scholarly Debates',
 };
-
-// Scholar panels use the scholar's label from the scholars table.
-// Unknown panel types fall through to CommentaryPanel.
-export function getPanelLabel(type: string, scholar?: Scholar): string {
-  if (PANEL_CONFIG[type]) return PANEL_CONFIG[type].label;
-  if (scholar) return scholar.label;
-  return type;  // fallback
+export function getPanelLabel(type: string): string {
+  if (PANEL_LABELS[type]) return PANEL_LABELS[type];
+  const scholar = getScholar(type);
+  return scholar?.label ?? type;
 }
 ```
 
 ---
 
-## Batch 3A: Utilities + Shared Components
-*The foundation everything else depends on: verse resolver, reference auto-linker, and reusable UI primitives.*
+## Batch 3A: Utility Layer (Verse Resolver + Reference Parser)
+*Port verse-resolver.js to TypeScript. Build reference auto-linking.*
 
 ### Prompt for Batch 3A
 
 ```
-Phase 3A: Build utility modules and shared UI components used by
-every panel and the ChapterScreen itself.
+Phase 3A: Port verse-resolver.js to TypeScript and build the reference
+parser for auto-linking scripture references in panel text.
 
 READ _tools/PHASE_3_PLAN.md (Batch 3A section).
 READ _tools/REACT_NATIVE_PLAN.md §3.4 for cross-reference resolution spec.
 
-1. CREATE app/src/utils/verseResolver.ts — Port of verse-resolver.js (15KB):
+The PWA's verse-resolver.js (14KB) parses reference strings like
+"Gen 1:1-3", "1 Cor 13:4-7", "Ps 23" and resolves them to structured
+data. It has a BOOK_TABLE with all 66 books: dir, name, short, testament,
+chapters.
 
-   The PWA's VerseResolver has a BOOK_TABLE with 66 entries:
-   { dir:'genesis', name:'Genesis', short:'Gen', testament:'ot', chapters:50 }
+1. CREATE app/src/utils/verseResolver.ts:
+   BOOK_TABLE: const array of 66 entries:
+   { id: 'genesis', name: 'Genesis', short: 'Gen', testament: 'ot', chapters: 50 }
+   Include ALL standard abbreviations for all 66 books.
 
-   Port these functions to TypeScript:
-   a. parse(refStr: string): ParsedRef | null
-      - Handles: "Gen 1:1", "1 Cor 3:14-16", "Ps 23", "Genesis 1:1–2:3"
-      - The regex pattern: /^(\d?\s*[A-Za-z]+\.?)\s+(\d+)(?::(\d+)(?:\s*[-–]\s*(\d+))?)?/
-      - First resolves book name via _resolveBook (handles abbreviations:
-        Gen, Exod, Lev, Num, Deut, Josh, Judg, 1 Sam, 2 Sam, 1 Kgs, 2 Kgs,
-        1 Chr, 2 Chr, Ps, Prov, Eccl, Song, Isa, Jer, Lam, Ezek, Dan,
-        Matt, Mk, Lk, Jn, Acts, Rom, 1 Cor, 2 Cor, Gal, Eph, Phil, Col,
-        1 Thess, 2 Thess, 1 Tim, 2 Tim, Heb, Jas, 1 Pet, 2 Pet, Rev, etc.)
-      - Returns: { book, name, short, testament, ch, v1, v2, ref }
-   b. toShort(refStr): string — "Genesis 1:1" → "Gen 1:1"
-   c. getBook(key): BookEntry | null
-   d. isLive(bookDir): boolean — checks if book is in the live set
+   Export:
+   a. parseReference(refString: string): ParsedRef | null
+      Handles: "Gen 1:1", "Gen 1:1-3", "Gen 1:1–2:3", "1 Cor 13",
+      "Ps 23", "Genesis 1:1"
+      Returns: { bookId, bookName, chapter, verseStart?, verseEnd? }
 
-   Use the books table from SQLite for the BOOK_TABLE data instead of
-   hardcoding 66 entries. Load once on init, cache in module scope.
+   b. resolveVerseText(ref: ParsedRef, translation: string): string[]
+      Queries SQLite verses table for the actual verse text.
+
+   c. getBookByName(name: string): BookEntry | null
+      Fuzzy matching on name, short, and common variations.
+
+   d. splitMultiRef(refString: string): string[]
+      Splits "Gen 1:1; Ex 3:14; John 1:1" into individual ref strings.
+
+   e. isLive(bookId: string): boolean
+      Checks books table.
 
 2. CREATE app/src/utils/referenceParser.ts:
-   Scans a text string and finds ALL scripture references in it.
-   Returns: Array<{ ref: string; start: number; end: number }>
+   Given a block of text (e.g., commentary note), find ALL embedded
+   scripture references and return their positions for auto-linking.
+   Export: extractReferences(text: string): { ref: string, start: number, end: number }[]
+   Regex patterns for: "See Genesis 3:15", "cf. Rom 8:28-30",
+   "Isaiah 53:4–6 and Psalm 22:1"
 
-   This is used by EVERY panel that contains commentary text — the parser
-   identifies refs like "Gen 1:1" or "cf. Deut 32:1" in free text so
-   they can be wrapped in TappableReference components.
+3. CREATE app/src/utils/panelLabels.ts:
+   PANEL_LABELS map + getPanelLabel(type) function as shown above.
 
-   Regex approach: scan for patterns like
-     /\b(\d?\s*[A-Z][a-z]+\.?)\s+(\d+)(?::(\d+)(?:\s*[-–]\s*\d+)?)/g
-   Then validate each match against verseResolver.parse().
-
-3. CREATE app/src/utils/panelConfig.ts:
-   The PANEL_CONFIG map and getPanelLabel() function as defined in
-   the Reference section of this plan.
-
-4. CREATE app/src/components/CollapsibleSection.tsx:
-   Animated expand/collapse wrapper using react-native-reanimated:
-   - Props: title, initiallyCollapsed, accentColor?, children
-   - Header row: title text + chevron that rotates on toggle
-   - Content area: animated height from 0 → measured height
-   - Uses useAnimatedStyle + withTiming for smooth 250ms animation
-   - This component is reused by: authorship disclosure, panel containers,
-     and chapter-level scholarly block
-
-5. CREATE app/src/components/LoadingSkeleton.tsx:
-   Shimmer placeholder for async-loading content:
-   - Props: width, height, lines?
-   - Animated opacity pulse (0.3 → 0.7 → 0.3) using reanimated
-   - Used when panel content takes >100ms to render
-
-6. CREATE app/src/components/TappableReference.tsx:
-   Wraps scripture reference text so it's tappable → opens CrossRefPopup:
-   - Props: refString, children (the display text)
-   - Parses refString with verseResolver.parse()
-   - If valid: renders as gold-colored Text with onPress → opens CrossRefPopup
-   - If invalid: renders as plain Text (no interactivity)
-   - Used inside: CrossRefPanel, CommentaryPanel, ContextPanel, etc.
-
-7. CREATE app/src/components/AutoLinkedText.tsx:
-   Takes a raw text string, scans it with referenceParser, and renders
-   a mixed Text with TappableReference spans for every found reference
-   and plain Text for everything between.
-   - Props: text: string, style?: TextStyle
-   - Uses referenceParser to find refs, splits text, interleaves
-     plain Text and TappableReference components
-
-8. VERIFY: Write a quick test that:
-   - verseResolver.parse("Gen 1:1") returns genesis ch1 v1
-   - verseResolver.parse("1 Cor 3:14-16") returns 1_corinthians ch3 v14 v2=16
-   - verseResolver.parse("Ps 23") returns psalms ch23
-   - referenceParser finds 2 refs in "See Gen 1:1 and Exod 3:14"
-   - CollapsibleSection renders and toggles
-   Print PASS/FAIL.
+4. TEST all functions with 6+ cases. Print PASS/FAIL.
 ```
 
 ---
 
-## Batch 3B: Verse Rendering Layer
-*VerseBlock, VHL HighlightedText, NoteIndicator, SectionBlock — the core reading components.*
+## Batch 3B: Shared Primitives
+*Reusable components used across all panels and the chapter layout.*
 
 ### Prompt for Batch 3B
 
 ```
-Phase 3B: Build the verse rendering components — the text the user
-actually reads.
+Phase 3B: Build shared primitive components used throughout ChapterScreen.
 
 READ _tools/PHASE_3_PLAN.md (Batch 3B section).
-READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
 
-1. CREATE app/src/components/HighlightedText.tsx:
-   The VHL (Visual Highlight Layer) word-matching engine.
+1. CREATE app/src/components/CollapsibleSection.tsx:
+   Animated expand/collapse using react-native-reanimated.
+   Props: { title: string, initiallyCollapsed?: boolean,
+            accentColor?: string, children: ReactNode }
+   - Title row with rotating chevron
+   - Animated height via useAnimatedStyle + withTiming
+   - accessibilityRole="button", announces expanded/collapsed
 
-   Props:
-   - text: string (the verse text, e.g., "In the beginning God created...")
-   - groups: VHLGroup[] (from getVHLGroups, each has group_name, css_class, words_json)
-   - activeGroups: string[] (which VHL groups are currently enabled)
-   - onWordPress?: (word: string) => void (for word study popup)
+2. CREATE app/src/components/TappableReference.tsx:
+   Auto-links scripture references within any text.
+   Props: { text: string, style?: TextStyle,
+            onRefPress: (ref: ParsedRef) => void }
+   - Uses extractReferences() to find refs
+   - Splits into plain + tappable segments
+   - Tappable spans: gold underline, onPress → CrossRefPopup
+   - No refs found → renders plain text (zero overhead)
 
-   Implementation:
-   a. Parse words_json from each active group into a Set<string> (case-insensitive)
-   b. Split text into words (preserve whitespace and punctuation)
-   c. For each word, check if it matches any active group
-   d. Render as:
-      - Matched word: <Text style={{ color: groupColor }}> with onPress
-      - Unmatched word: plain <Text>
-   e. Group colors map from css_class:
-      vhl-divine → colors.panels.heb.accent (#e890b8)
-      vhl-place  → colors.panels.poi.accent (#30a848)
-      vhl-person → colors.panels.ppl.accent (#e86040)
-      vhl-time   → colors.panels.tl.accent  (#70b8e8)
-      vhl-key    → colors.gold (#c9a84c)
+3. CREATE app/src/components/LoadingSkeleton.tsx:
+   Shimmer placeholder.
+   Props: { lines?: number, width?: DimensionValue, height?: number }
+   - Animated opacity pulse (reanimated)
+   - Dark theme: bgElevated ↔ bgSurface
 
-   Performance: memoize the word→group lookup map. This renders for every
-   verse in the chapter — it must be fast.
+4. CREATE app/src/components/ScholarTag.tsx:
+   Colored name tag for scholars.
+   Props: { scholarId: string, onPress?: () => void }
+   - BG: scholar color at 15% opacity
+   - Text + border: scholar color
+   - Tap → ScholarInfoSheet
 
-2. CREATE app/src/components/NoteIndicator.tsx:
-   Tiny pencil icon at the end of each verse:
-   - Props: verseNum, hasNote, onPress
-   - Renders Pencil icon from lucide-react-native (size 12)
-   - Color: gold if hasNote, textMuted if not
-   - Touch target: 44x44pt (accessibility)
-   - accessibilityLabel: "Edit note on verse {n}" / "Add note to verse {n}"
+5. CREATE app/src/components/BadgeChip.tsx:
+   Generic pill-shaped chip.
+   Props: { label: string, icon?: ReactNode, color?: string,
+            onPress?: () => void }
+   - Used for: thread badges, era tags, "LIVE" badges
 
-3. CREATE app/src/components/VerseBlock.tsx:
-   Renders a section's verses with VHL highlighting and note indicators:
-   - Props: verses: Verse[], vhlGroups, activeVhlGroups, notes: Record<number, UserNote>,
-            onNotePress, onWordPress, fontSize (from settings)
-   - For each verse: render verse number (superscript, Cinzel, gold) +
-     HighlightedText + NoteIndicator
-   - Verse text uses EB Garamond, bodyLg size (scaled by user font preference)
-   - Line height: 1.8x font size for comfortable reading
-
-4. CREATE app/src/components/SectionHeader.tsx:
-   Renders the section header text (e.g., 'Verses 1–13 — "In the Beginning"'):
-   - Props: header: string
-   - Cinzel font, displayMd, gold color
-   - Horizontal rule below
-
-5. CREATE app/src/components/SectionBlock.tsx:
-   The complete section unit: header + verses + button row + panel:
-   - Props: section: Section, panels: SectionPanel[], verses: Verse[],
-            vhlGroups, activeVhlGroups, notes, scholars: Scholar[],
-            activePanel, onPanelToggle, onNotePress, onWordPress
-   - Renders:
-     a. SectionHeader
-     b. VerseBlock (with VHL + notes)
-     c. ButtonRow (from available panels)
-     d. Active panel content (if this section has the open panel)
-
-6. VERIFY with Genesis 1 data:
-   - Load Genesis 1 sections + verses + VHL groups from SQLite
-   - Render SectionBlock for section 1
-   - Confirm VHL highlighting: "God" should be colored (divine group)
-   - Confirm verse numbers render as gold superscripts
-   - Print component render count to check for unnecessary re-renders
+6. VERIFY all 5 in a test screen. Confirm animations, colors, taps.
 ```
 
 ---
 
-## Batch 3C: Button Row + Panel System + Section-Level Panels
-*The panel toggle mechanism and all 8 section-level panel components.*
+## Batch 3C: Verse Rendering Engine
+*HighlightedText, VerseBlock, SectionBlock — the core reading components.*
 
 ### Prompt for Batch 3C
 
 ```
-Phase 3C: Build the panel toggle system and all section-level panel
-components.
+Phase 3C: Build the verse rendering engine — VHL highlighting, per-verse
+note indicators, section layout.
 
-READ _tools/PHASE_3_PLAN.md (Batch 3C section and Reference: Button Label Map).
-READ _tools/REACT_NATIVE_PLAN.md §3.2 for PanelRenderer spec.
-READ _tools/PHASE_1_PLAN.md Data Format Definitions for JSON schemas.
+READ _tools/PHASE_3_PLAN.md (Batch 3C section).
+READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
 
-1. CREATE app/src/components/PanelButton.tsx:
-   Individual toggle button in a button row:
-   - Props: panelType, label, isActive, accentColor, onPress
-   - Renders: Cinzel text (displaySm, letter-spacing 2)
-   - Background: transparent when inactive, accentColor at 15% opacity when active
-   - Border: 1px accentColor at 30% opacity
-   - Minimum width: 44pt (accessibility)
-   - Small ▾ chevron after label text (like PWA's &#9660;)
+1. CREATE app/src/components/HighlightedText.tsx:
+   The VHL engine for verse text.
+   Props: { text, groups: VHLGroup[], activeGroups: string[],
+            onWordPress?, style? }
+   Algorithm:
+   a. Split text into words (preserve attached punctuation)
+   b. For each word, check against active groups' word lists (case-insensitive)
+   c. Matched: colored Text with onPress. Colors by css_class:
+      vhl-divine → panels.heb.accent (#e890b8)
+      vhl-place → panels.poi.accent (#30a848)
+      vhl-person → panels.ppl.accent (#e86040)
+      vhl-time → tl accent (blue)
+      vhl-key → gold (#c9a84c)
+   d. Unmatched: plain Text
+   e. Memoize: only recompute when text or activeGroups change
 
-2. CREATE app/src/components/ButtonRow.tsx:
-   Dynamic horizontal button strip:
-   - Props: panels: SectionPanel[], scholars: Scholar[], activePanel, onToggle
-   - Renders PanelButton for each panel, colored by getPanelColors(type)
-   - For commentary panels (type not in PANEL_CONFIG): use scholar.label
-     as the display text and scholar color from getScholarColor(type)
-   - Horizontal ScrollView if buttons overflow (which they will for
-     enriched chapters with 15+ panels)
-   - Gap: spacing.sm (8pt)
+2. CREATE app/src/components/NoteIndicator.tsx:
+   Per-verse pencil icon.
+   Props: { verseNum, hasNote, onPress }
+   - Pencil: gold if hasNote, textMuted if not
+   - 44pt touch target, accessibilityLabel
 
-3. CREATE app/src/components/PanelContainer.tsx:
-   Animated expand/collapse wrapper for panel content:
-   - Props: isOpen, panelType, children
-   - Uses react-native-reanimated: animated height 0 → measured height
-   - Background: getPanelColors(panelType).bg
-   - Left border: 3px getPanelColors(panelType).accent
-   - 250ms timing animation with easeInOut
-   - Content padding: spacing.md
+3. CREATE app/src/components/VerseBlock.tsx:
+   All verses for one section.
+   Props: { verses, vhlGroups, activeVhlGroups, notedVerses: Set<number>,
+            onWordPress, onNotePress, fontSize }
+   Per verse: superscript number (gold, Cinzel) + HighlightedText + NoteIndicator
+   EB Garamond body text, fontSize from settingsStore.
 
-4. CREATE app/src/components/panels/PanelRenderer.tsx:
-   Central dispatch: given a panel_type and content_json, renders the
-   correct component. Uses the PANEL_COMPONENTS map from the RN plan.
-   Unknown types → CommentaryPanel with scholarId.
+4. CREATE app/src/components/SectionHeader.tsx:
+   Props: { header: string }
+   Cinzel font, gold accent, border-bottom.
 
-5. CREATE SECTION-LEVEL PANEL COMPONENTS in app/src/components/panels/:
+5. CREATE app/src/components/SectionBlock.tsx:
+   Container: header + verses + button row + panel area.
+   Props: { section, panels, verses, vhlGroups, activeVhlGroups,
+            notedVerses, activePanel, onPanelToggle, onWordPress,
+            onNotePress, onRefPress }
 
-   a. HebrewPanel.tsx:
-      Data: HebEntry[] (word, tlit, gloss, text)
-      Renders each entry:
-      - Hebrew/Greek word in accent color (#e890b8 OT / #90c0e8 NT)
-      - Transliteration in italic, goldDim
-      - Gloss in bold gold
-      - Paragraph text in bodyMd
-      Tap on word → onWordPress(tlit) for WordStudyPopup
-
-   b. ContextPanel.tsx:
-      Data: string (paragraph text)
-      Renders with AutoLinkedText (auto-links scripture refs)
-      Uses ctx accent colors
-
-   c. HistoricalContextPanel.tsx:
-      Data: string (paragraph text)
-      Same as ContextPanel but with hist accent colors
-
-   d. CrossRefPanel.tsx:
-      Data: CrossRefEntry[] ({ref, note})
-      Renders each as: TappableReference(ref) + note text
-      Gold bullet separator. Ref in gold, note in bodyMd.
-
-   e. CommentaryPanel.tsx:
-      Data: CommentaryEntry[] ({ref, note}), scholarId: string
-      Header: scholar name from scholars table + tradition + source line
-      Each entry: ref in bold + note paragraph with AutoLinkedText
-      Scholar accent color from getScholarColor(scholarId)
-      Tap scholar name in header → ScholarInfoSheet
-
-   f. PlacesPanel.tsx:
-      Data: PlaceEntry[] ({name, role, text})
-      Renders cards with place name (bold, poi accent) + role + text
-      Tap card → navigate to MapScreen with place pre-selected
-
-   g. TimelinePanel.tsx:
-      Data: TimelineEvent[] ({date, event, text})
-      Renders event cards with date badge + event name + text
-      Tap → navigate to TimelineScreen centered on that event
-
-6. VERIFY with Genesis 1:
-   - Open section 1 panels from database
-   - Render HebrewPanel with the heb data
-   - Render CrossRefPanel with the cross data
-   - Render CommentaryPanel for macarthur
-   - Confirm accent colors match the design system
-   - Confirm TappableReference auto-linking works in CommentaryPanel
+6. VERIFY with Genesis 1: load sections + verses, render first section,
+   confirm VHL colors, note indicators, font rendering.
 ```
 
 ---
 
-## Batch 3D: Chapter-Level Panels
-*The 10 scholarly block panels including the SVG radar chart.*
+## Batch 3D: Section-Level Panel Components (7 types)
+*Hebrew, Context, History, Cross-Ref, Commentary, Places, Timeline.*
 
 ### Prompt for Batch 3D
 
 ```
-Phase 3D: Build all 10 chapter-level panel components (the scholarly block).
+Phase 3D: Build all 7 section-level panel components.
 
-READ _tools/PHASE_3_PLAN.md (Batch 3D section).
-READ _tools/PHASE_1_PLAN.md Data Format Definitions for JSON schemas.
+READ _tools/PHASE_3_PLAN.md (Batch 3D section + Rosetta Stone).
+READ _tools/PHASE_1_PLAN.md "Data Format Definitions" for JSON schemas.
 
-1. CREATE chapter-level panels in app/src/components/panels/:
+All panels share: bg/border/accent from getPanelColors(type),
+3px left border, body in EB Garamond, title in Cinzel 12pt.
 
-   a. LiteraryStructurePanel.tsx:
-      Data: { rows: LitRow[], note: string }
-      Render as a visual outline:
-      - Each row: label (Cinzel displaySm) | range | text
-      - is_key rows get a gold left border + slightly brighter background
-      - Note at bottom in bodySm italic
+1. HebrewPanel: HebEntry[] → word (accent, large) + tlit (gold-dim italic)
+   + gloss (gold bold) + paragraph (bodyMd, TappableReference)
 
-   b. HebrewReadingPanel.tsx:
-      Data: HebEntry[] (same as section-level heb but aggregated)
-      Render each: Hebrew word (accent color) → transliteration →
-      gloss → note. Uses hebText accent colors.
+2. ContextPanel: string → paragraph with TappableReference. ctx green.
 
-   c. ThemesRadarPanel.tsx:
-      Data: { scores: ThemeScore[], note: string }
-      Render an SVG radar chart using react-native-svg:
-      - 10 axes (one per theme), arranged in a circle
-      - Concentric rings at values 2, 4, 6, 8, 10
-      - Polygon connecting the 10 score points, filled gold at 20% opacity
-      - Theme labels around the outside
-      - Tap a theme label → could highlight related content (future)
-      - Note below chart in bodySm
+3. HistoricalContextPanel: string → same as ContextPanel. hist blue.
 
-      SVG rendering:
-      - viewBox="0 0 240 240", center at (120,120), radius 85
-      - Each axis: angle = (i / 10) * 2π - π/2 (start at top)
-      - Point position: center + (score/10 * radius) * (cos(angle), sin(angle))
-      - Use <Polygon>, <Circle>, <Line>, <SvgText> from react-native-svg
+4. CrossRefPanel: CrossRefEntry[] → per entry: ref (accent, tappable →
+   CrossRefPopup) + note (bodyMd, TappableReference)
 
-   d. PeoplePanel.tsx:
-      Data: PersonEntry[] ({name, role, text})
-      Render person cards:
-      - Name in bold, ppl accent color
-      - Role in Cinzel displaySm
-      - Text in bodyMd with AutoLinkedText
-      - Tap name → open PersonSidebar modal
+5. CommentaryPanel: CommentaryEntry[], scholarId → ScholarTag header +
+   source line + per entry: ref (scholar color) + note (TappableReference).
+   Scholar color from getScholarColor(scholarId).
 
-   e. TranslationPanel.tsx:
-      Data: { title: string, rows: TransRow[] }
-      Each row: verse_ref header + table of version→text
-      Render as alternating-shade rows with version labels in bold
+6. PlacesPanel: PlaceEntry[] → place cards. Tap name → MapScreen.
+   poi green (#30a848).
 
-   f. SourcesPanel.tsx:
-      Data: SourceEntry[] ({title, quote, note})
-      Render blocks: title (bold, src accent), quote (italic, bodyMd),
-      note (bodySm). With AutoLinkedText on note.
+7. TimelinePanel: TimelineEvent[] → event cards with date badge.
+   Tap → TimelineScreen. tl blue.
 
-   g. ReceptionPanel.tsx:
-      Data: same structure as SourcesPanel
-      Render identically but with rec accent colors.
-
-   h. ThreadingPanel.tsx:
-      Data: ThreadEntry[] ({anchor, target, direction, type, text})
-      Render: anchor (TappableReference) → arrow → target (TappableReference)
-      Type badge (e.g., "Fulfilment", "Echo") with thread accent color
-      Text below.
-
-   i. TextualPanel.tsx:
-      Data: TextualEntry[] ({ref, title, content, note})
-      Render: ref header + title + content paragraph + note
-      MT/LXX/DSS labels rendered in distinct colors
-      (MT: gold, LXX: blue #70b8e8, DSS: green #70d098)
-
-   j. DebatePanel.tsx:
-      Data: DebateEntry[] ({topic, positions: [{scholar, position}]})
-      Render: topic header + position cards per scholar
-      Scholar names colored by getScholarColor(scholar)
-
-2. CREATE app/src/components/ScholarlyBlock.tsx:
-   The chapter-level panel container:
-   - Props: chapterPanels: ChapterPanel[], scholars: Scholar[],
-            activePanel, onPanelToggle
-   - Header: "Chapter-Level Scholarship" (Cinzel displaySm)
-   - ButtonRow with chapter-level panel buttons
-   - PanelContainer with active panel content
-
-3. VERIFY with Genesis 1:
-   - Load chapter panels from SQLite
-   - Render ThemesRadarPanel with themes data → SVG renders correctly
-   - Render LiteraryStructurePanel → rows display with key highlighting
-   - Render PeoplePanel → person cards render with names
+8. VERIFY: render each with Genesis 1 section panel data.
 ```
 
 ---
 
-## Batch 3E: ChapterScreen Orchestrator
-*The main screen that assembles everything.*
+## Batch 3E: Chapter-Level Panel Components (10 types) + PanelRenderer
+*Literary, HebrewReading, Themes radar, People, Translation, Sources, Reception, Threading, Textual, Debate.*
 
 ### Prompt for Batch 3E
 
 ```
-Phase 3E: Build the ChapterScreen itself plus its nav bar, bottom bar,
-and header components.
+Phase 3E: Build all 10 chapter-level panel components + PanelRenderer.
 
-READ _tools/PHASE_3_PLAN.md (Batch 3E section).
-READ _tools/REACT_NATIVE_PLAN.md §3.1, §3.1a–e for the full layout spec.
+READ _tools/PHASE_3_PLAN.md (Batch 3E section + Rosetta Stone).
+READ _tools/PHASE_1_PLAN.md "Data Format Definitions" for JSON schemas.
 
-1. CREATE app/src/components/ChapterNavBar.tsx:
-   Sticky navigation bar at top of ChapterScreen:
-   - Left: "← Library" back button → navigation.goBack()
-   - Center: book name (Cinzel displaySm) + "Chapter N" (uiSm)
-   - Right: ← arrow | 🔍 (Qnav trigger) | → arrow
-   - Prev/next arrows disabled on first/last chapter (opacity 0.3)
-   - Background: bgElevated with bottom border
-   - Height: ~56pt
+1. LiteraryStructurePanel: { rows: LitRow[], note } → vertical list,
+   is_key rows get gold left border. lit yellow-green.
 
-2. CREATE app/src/components/BottomBar.tsx:
-   Fixed bar at bottom of ChapterScreen:
-   - Left: "← Prev" (disabled on ch.1)
-   - Center: "NIV" / "ESV" toggle button (taps switch translation via settingsStore)
-   - Right: "Next →" (disabled on last chapter)
-   - Background: bgElevated with top border
-   - Safe area padding at bottom (home indicator)
+2. HebrewReadingPanel: HebEntry[] → interlinear list. hebText gold.
 
-3. CREATE app/src/components/ChapterHeader.tsx:
-   The area between nav bar and first section:
-   - Props: chapter: Chapter, noteCount, threads: CrossRefThread[],
-            bookId, chapterNum, navigation
-   - Renders in order:
-     a. Chapter title (h1, Cinzel displayLg)
-     b. Subtitle (chapter.title, EB Garamond bodyItalic)
-     c. ActionBar: [My Notes (N)] button + [About This Book →] link
-     d. DeepLinkBar: timeline link + map story link (conditional, from chapter columns)
-     e. ThreadBadgeBar: thread badges (conditional)
+3. ThemesRadarPanel: { scores: ThemeScore[], note } → SVG radar chart.
+   react-native-svg: 5 concentric Circles, 10 axis Lines from center,
+   gold Polygon connecting scores, SvgText labels at outer edge.
+   Chart 240x240. Note below in bodySm italic.
 
-4. CREATE app/src/components/ThreadBadge.tsx:
-   Small badge chip for a cross-ref thread:
-   - Props: thread: CrossRefThread, onPress
-   - Renders: ✴ icon + thread.theme text
-   - thread accent color background at 15% opacity
-   - Tap → opens ThreadViewerSheet
+4. PeoplePanel: PersonEntry[] → 2-col card grid. Name (accent, tappable
+   → PersonSidebar) + role + text. ppl orange.
 
-5. REPLACE the placeholder ChapterScreen with the real implementation:
+5. TranslationPanel: { title, rows: TransRow[] } → table layout.
+   Version label (uiBold) + text (bodyMd). trans teal.
 
-   app/src/screens/ChapterScreen.tsx:
-   - Uses useChapterData(bookId, chapterNum) hook for ALL data
-   - Uses readerStore for activePanel + qnavOpen + notesOverlayOpen
-   - Uses settingsStore for translation + fontSize + vhlEnabled
+6. SourcesPanel: SourceEntry[] → title (displaySm) + quote (italic)
+   + note (bodySm). src purple.
 
-   Structure:
-   ```
-   <View style={{ flex: 1 }}>
-     <ChapterNavBar ... />
-     <ScrollView>
-       <ChapterHeader ... />
-       {sections.map(section => (
-         <SectionBlock key={section.id}
-           section={section}
-           panels={sectionPanelsMap[section.id]}
-           verses={versesForSection(section)}
-           vhlGroups={vhlGroups}
-           activeVhlGroups={vhlEnabled ? ALL_GROUP_NAMES : []}
-           notes={notesMap}
-           scholars={scholars}
-           activePanel={activePanel}
-           onPanelToggle={handlePanelToggle}
-           onNotePress={handleNotePress}
-           onWordPress={handleWordPress}
-         />
-       ))}
-       <ScholarlyBlock
-         chapterPanels={chapterPanels}
-         scholars={scholars}
-         activePanel={activePanel}
-         onPanelToggle={handlePanelToggle}
-       />
-       <CollapsibleSection title="Authorship & Sources" initiallyCollapsed>
-         <Text>Commentary panels are scholarly paraphrases...</Text>
-       </CollapsibleSection>
-     </ScrollView>
-     <BottomBar ... />
-     <QnavOverlay visible={qnavOpen} ... />
-     <NotesOverlay visible={notesOverlayOpen} ... />
-   </View>
-   ```
+7. ReceptionPanel: same as SourcesPanel. rec pink.
 
-   Key behaviors:
-   - Single-open panel policy: tapping a panel closes any other open panel
-   - Translation toggle re-loads verses from SQLite
-   - Prev/Next navigation: push new ChapterScreen with adjacent chapter
-   - Records visit to reading_progress on mount (§3.8)
-   - Pre-fetches adjacent chapters in background (useEffect)
+8. ThreadingPanel: ThreadEntry[] → anchor→target with arrow + type badge
+   + text with TappableReference. thread purple.
 
-6. PROGRESSIVE LOADING:
-   - Phase 1: Render verse text + section headers immediately
-   - Phase 2: Render button rows after 50ms (InteractionManager.runAfterInteractions)
-   - Phase 3: Panel content loads on-demand when tapped
-   - LoadingSkeleton shown if panel data takes >100ms
+9. TextualPanel: TextualEntry[] → ref header + title + content (with
+   MT:/LXX:/DSS: labels highlighted) + note. tx blue-purple.
 
-7. VERIFY end-to-end:
-   - Navigate to Genesis 1 via ReadTab → BookList → ChapterList → Chapter
-   - Confirm: nav bar shows "← Library | Genesis | Chapter 1 | ← 🔍 →"
-   - Confirm: verse text renders with VHL highlighting
-   - Confirm: button rows appear for each section
-   - Confirm: tapping Hebrew button expands HebrewPanel
-   - Confirm: tapping another button closes Hebrew, opens new one
-   - Confirm: scholarly block renders below sections
-   - Confirm: bottom bar shows translation toggle + prev/next
-   - Confirm: translation toggle switches NIV ↔ ESV
+10. DebatePanel: DebateEntry[] → topic heading + per position: ScholarTag
+    + position text. debate muted-red.
+
+11. PanelRenderer.tsx: dispatch map — PANEL_COMPONENTS Record +
+    fallback to CommentaryPanel for unknown types (scholars).
+
+12. VERIFY: load genesis_1 chapter panels, render each type.
+    Confirm radar chart SVG, people card taps, threading arrows.
 ```
 
 ---
 
-## Batch 3F: Qnav Overlay
-*The full-screen quick-navigation modal — the primary navigation mechanism.*
+## Batch 3F: Button/Panel Toggle System + Scholarly Block
+*The toggle mechanics, animated containers, and scholarly block layout.*
 
 ### Prompt for Batch 3F
 
 ```
-Phase 3F: Build the Qnav (Quick Navigation) overlay.
+Phase 3F: Build button row, panel container, and scholarly block.
 
-READ _tools/PHASE_3_PLAN.md (Batch 3F section).
-READ _tools/REACT_NATIVE_PLAN.md §3.5 for the Qnav spec.
+READ _tools/PHASE_3_PLAN.md (Batch 3F section + Rosetta Stone).
 
-The PWA's qnav.js is 88KB — it's the most complex navigation component.
-It provides instant book/chapter jumping from any chapter page.
+1. PanelButton.tsx: single toggle button.
+   Props: { label, panelType, isActive, scholarId?, onPress }
+   Cinzel 10-11px. Default: border + textDim. Active: accent bg 20% +
+   accent border + accent text. Scholar buttons use getScholarColor().
+   Chevron ▾ for section panels. Min 44pt touch.
 
-1. CREATE app/src/components/BookAccordion.tsx:
-   Expandable book row inside Qnav:
-   - Props: book: Book, expanded: boolean, onToggle, onSelectChapter
-   - Collapsed: book name (Cinzel displaySm) + chapter count + LIVE badge
-   - Expanded: chapter number grid (FlexWrap row of number buttons)
-   - Chapter buttons: 34x34pt, gold border, gold text
-   - Non-live chapters: dimmed (textMuted), not tappable
-   - Animated expand with react-native-reanimated
+2. ButtonRow.tsx: horizontal ScrollView of PanelButtons.
+   Props: { panels, activePanel, onToggle }
+   Button order: section = heb,hist,ctx,cross,[scholars],poi,tl
+   Chapter = lit,hebtext,themes,ppl,trans,src,rec,thread,textual,debate
 
-2. CREATE app/src/components/QnavSearchResults.tsx:
-   Inline mixed search results inside Qnav:
-   - Props: query: string, onSelectChapter, onSelectPerson
-   - Uses useSearch(query) hook (debounced 300ms)
-   - Renders mixed results:
-     * Verse matches: book + chapter + verse snippet (tap → navigate)
-     * People matches: name + role (tap → PersonSidebar)
-   - Max 10 results shown, "See all in Search" link at bottom
+3. PanelContainer.tsx: animated expand/collapse wrapper.
+   Props: { panelType, contentJson, isOpen }
+   Reanimated height animation. Renders PanelRenderer inside.
+   Left border (3px accent) + bg + padding.
 
-3. REPLACE the placeholder QnavOverlay with full implementation:
+4. ScholarlyBlock.tsx: container for chapter-level panels.
+   Props: { chapterPanels, activePanel, onToggle }
+   Divider with "SCHOLARLY BLOCK" label, ButtonRow, PanelContainer.
 
-   app/src/components/QnavOverlay.tsx:
-   - Full-screen modal (animationType="slide")
-   - Header: close button (X) + "Navigate" title
-   - Search bar: TextInput with placeholder "Search verses, people..."
-   - When query >= 2 chars: show QnavSearchResults, hide book list
-   - When query empty: show testament toggle + book accordion list
-   - OT/NT toggle: two buttons, active has gold underline
-   - Book list: FlatList of BookAccordion components
-   - Filtered by active testament
-   - Remember last testament toggle via Zustand (readerStore)
-   - onSelectChapter(bookId, ch): navigate to ChapterScreen + close overlay
+5. UPDATE SectionBlock: wire ButtonRow + PanelContainer.
+   Single-open policy from readerStore: tap section panel → close any
+   open panel (in any section or chapter), open this one.
 
-4. VERIFY:
-   - Open Qnav from ChapterScreen nav bar 🔍 button
-   - OT tab shows OT books, NT tab shows NT books
-   - Expand Genesis → chapter grid appears (1-50)
-   - Tap chapter 12 → navigates to Genesis 12, overlay closes
-   - Type "Abraham" in search → people result appears
-   - Type "In the beginning" → verse result appears
+6. VERIFY Genesis 1: tap Hebrew → expands. Tap Context → Hebrew
+   collapses, Context expands. Tap Context → closes. Chapter-level
+   Literary Structure → opens. Single-open across section+chapter.
 ```
 
 ---
 
-## Batch 3G: Notes System + Reading History
-*Per-verse notes, notes overlay, note editor, and reading history tracking.*
+## Batch 3G: ChapterScreen Assembly + Nav Chrome
+*Assemble ChapterScreen from all sub-components.*
 
 ### Prompt for Batch 3G
 
 ```
-Phase 3G: Build the complete per-verse notes system and reading history.
+Phase 3G: Assemble ChapterScreen with nav bar, header, scroll, bottom bar.
 
 READ _tools/PHASE_3_PLAN.md (Batch 3G section).
-READ _tools/REACT_NATIVE_PLAN.md §3.6 and §3.8.
+READ _tools/REACT_NATIVE_PLAN.md §3.1–3.1e for full layout + specs.
 
-1. CREATE app/src/components/NotesButton.tsx:
-   "My Notes (3)" button in the chapter header action bar:
-   - Props: noteCount: number, onPress
-   - Cinzel displaySm text, gold color
-   - Badge: gold circle with white count number (if > 0)
-   - Tap → opens NotesOverlay modal
+1. ChapterNavBar.tsx (full implementation):
+   ← Library | Book Ch.N | ← 🔍 →
+   Back → BookListScreen. Prev/Next disabled on first/last.
+   Qnav trigger → opens QnavOverlay. Sticky with safe area.
 
-2. CREATE app/src/components/NoteEditor.tsx:
-   Inline editor for creating/editing a verse note:
-   - Props: verseRef, initialText, onSave, onCancel
-   - TextInput with auto-focus, multiline, placeholder "Write a note..."
-   - Save and Cancel buttons below
-   - Background: bgSurface
-   - Saves via db/user.ts saveNote()
+2. BottomBar.tsx:
+   ← Prev | NIV ↔ ESV | Next →
+   Translation toggle: animated pill slider. Sticky bottom.
 
-3. REPLACE the placeholder NotesOverlay with full implementation:
+3. ChapterHeader.tsx:
+   Title (displayLg) + subtitle (bodyMd italic) + action bar
+   (NotesButton + "About This Book →") + timeline deep-link
+   (if not null) + map story deep-link (if not null) + thread
+   badge bar (if threads exist).
 
-   app/src/components/NotesOverlay.tsx:
-   - Full-screen modal
-   - Header: "My Notes — {BookName} {Ch}" + close button
-   - FlatList of NoteCard components
-   - Each NoteCard: verse ref header + note text + timestamp + edit/delete buttons
-   - Empty state: "No notes yet. Tap ✏️ next to any verse to start."
-   - Delete confirmation: Alert.alert before deleting
+4. ChapterScreen.tsx (full implementation):
+   - useChapterData hook for all data
+   - useEffect: recordVisit + prefetch adjacent chapters
+   - useNotedVerses for note indicators
+   - ScrollView with: ChapterHeader → sections.map(SectionBlock) →
+     ScholarlyBlock → Authorship CollapsibleSection
+   - ChapterNavBar sticky top, BottomBar sticky bottom
+   - QnavOverlay + NotesOverlay rendered as children
 
-4. INTEGRATE notes into VerseBlock:
-   - Update VerseBlock: when NoteIndicator is tapped, show inline NoteEditor
-     below that verse (or navigate to the note in NotesOverlay)
-   - After saving a note, the NoteIndicator changes to gold (hasNote=true)
-   - noteCount in ChapterHeader updates reactively
-
-5. INTEGRATE reading history:
-   - In ChapterScreen's useEffect on mount: call recordVisit(bookId, ch)
-   - This feeds the "Continue Reading" chips on HomeScreen (Phase later)
-
-6. VERIFY:
-   - Navigate to Genesis 1
-   - Tap pencil icon on verse 1 → NoteEditor appears
-   - Type "Test note" → save → pencil turns gold
-   - "My Notes (1)" badge appears in header
-   - Tap "My Notes (1)" → NotesOverlay opens with the note
-   - Delete note → pencil returns to muted, badge disappears
+5. VERIFY Genesis 1: nav bar, title, timeline link "See on Timeline —
+   Creation", 5 sections with verses, button rows, scholarly block,
+   bottom bar NIV/ESV toggle, Next navigates to Genesis 2.
 ```
 
 ---
 
-## Batch 3H: Cross-Ref Popup + Word Study Popup + Scholar Sheet
-*The three popups triggered by tapping within panel content.*
+## Batch 3H: All Modals
+*Qnav, Notes, CrossRef, WordStudy, Scholar, Thread, Authorship.*
 
 ### Prompt for Batch 3H
 
 ```
-Phase 3H: Build CrossRefPopup, WordStudyPopup, and ScholarInfoSheet.
+Phase 3H: Build all 7 modal components to full implementation.
 
 READ _tools/PHASE_3_PLAN.md (Batch 3H section).
-READ _tools/REACT_NATIVE_PLAN.md §3.4.
+READ _tools/REACT_NATIVE_PLAN.md §3.5 (Qnav), §3.6 (Notes), §3.7 (Thread).
 
-1. REPLACE placeholder CrossRefPopup with full implementation:
+1. QnavOverlay.tsx (full — replace placeholder):
+   Full-screen Modal. Header: X + "Navigate". Search bar with
+   debounced useSearch. OT/NT toggle (gold underline). FlatList of
+   BookAccordion: tappable book row → expand chapter grid (flexWrap
+   44x44 number buttons). Live chapters gold, non-live muted.
+   Tap chapter → onSelectChapter + close. Remembers testament toggle.
 
-   app/src/components/CrossRefPopup.tsx:
-   - Triggered by: tapping any TappableReference in any panel
-   - Receives: parsedRef (from verseResolver)
-   - Bottom sheet (@gorhom/bottom-sheet) with snapPoints ['40%', '70%']
-   - Content:
-     a. Reference header (e.g., "Genesis 1:1" in Cinzel displayMd gold)
-     b. Verse text loaded from SQLite (getVerses for that book/ch/verse)
-     c. "Go to chapter →" link that navigates to ChapterScreen
-   - If verse range (e.g., Gen 1:1-3): show all verses in range
-   - If chapter-only (e.g., Gen 1): show first 5 verses + "Read full chapter →"
+2. NotesOverlay.tsx (full):
+   Full-screen Modal. Header: book + chapter + close. FlatList of
+   NoteCard (ref, text, date, edit/delete). Empty state message.
+   Edit: inline TextInput, save on blur. Delete: confirm alert.
+   NoteEditor: Modal with TextInput + verse ref + Save/Cancel.
 
-2. REPLACE placeholder WordStudyPopup with full implementation:
+3. CrossRefPopup.tsx (full):
+   Centered Modal (80% width). Reference header, resolved verse text,
+   "Go to chapter" button, close. Triggered by TappableReference.
 
-   app/src/components/WordStudyPopup.tsx:
-   - Triggered by: tapping a VHL-highlighted word in verse text
-   - Receives: word string (transliteration)
-   - Bottom sheet with snapPoints ['35%', '60%']
-   - Looks up word in word_studies table via transliteration match
-   - Content:
-     a. Original script (Hebrew/Greek) in large display
-     b. Transliteration (italic)
-     c. Strong's number (if available)
-     d. Glosses (comma-separated)
-     e. Brief note
-     f. "See full study →" link → navigate to WordStudyDetailScreen
-   - If no match found: show "No word study available for '{word}'"
+4. WordStudyPopup.tsx (full):
+   Bottom sheet ['40%','70%']. Hebrew/Greek word large, tlit, gloss,
+   Strongs, range, note. "See full study →" link. Triggered by VHL tap.
 
-3. REPLACE placeholder ScholarInfoSheet with full implementation:
+5. ScholarInfoSheet.tsx (full):
+   Bottom sheet ['35%','60%']. Name, tradition, era, eyebrow, brief bio.
+   "See full bio →" link. Triggered by ScholarTag tap.
 
-   app/src/components/ScholarInfoSheet.tsx:
-   - Triggered by: tapping a scholar name in CommentaryPanel header
-   - Receives: scholarId
-   - Bottom sheet with snapPoints ['40%']
-   - Loads scholar from SQLite
-   - Content:
-     a. Scholar name (Cinzel displayMd) in scholar's accent color
-     b. Tradition + era (uiSm textDim)
-     c. Brief bio (first section of bio_json, first 200 chars)
-     d. "See full bio →" link → navigate to ScholarBioScreen
-     e. "Books covered: Genesis, Exodus, ..." from scope_json
+6. ThreadViewerSheet.tsx (full):
+   Bottom sheet ['60%','90%']. Thread theme name header. FlatList of
+   ThreadSteps: circle + connecting line + ref (tappable) + type badge
+   + text. Current chapter step highlighted gold. "Go to chapter" per step.
 
-4. CREATE a modal provider context for these popups:
+7. AuthorshipSheet.tsx (full):
+   Bottom sheet ['50%']. Static methodology/attribution content.
 
-   app/src/components/PopupProvider.tsx:
-   - React context that provides: openCrossRef(ref), openWordStudy(word),
-     openScholarInfo(scholarId)
-   - Wraps the app so any component anywhere can trigger these popups
-   - Renders the actual bottom sheet components at the root level
-   - This avoids prop-drilling onPress handlers through every panel
-
-5. WIRE PopupProvider into App.tsx (wrap inside GestureHandlerRootView).
-
-6. UPDATE TappableReference to use PopupProvider context instead of props.
-
-7. UPDATE CommentaryPanel to use PopupProvider for scholar name taps.
-
-8. UPDATE HighlightedText to use PopupProvider for word study taps.
-
-9. VERIFY:
-   - Open Genesis 1, expand MacArthur panel
-   - Tap "John 1:1" reference in text → CrossRefPopup shows John 1:1 verse
-   - Tap "Go to chapter →" → navigates to John 1
-   - Back to Genesis 1, tap a VHL-highlighted word → WordStudyPopup shows
-   - Tap "MacArthur" header text → ScholarInfoSheet shows bio preview
+8. VERIFY: Genesis 1 → Qnav search "Abraham" → results. Notes → empty
+   state → add note → badge updates. Cross-ref tap → popup. VHL tap →
+   word study. ScholarTag tap → bio sheet. Thread badge → step viewer.
 ```
 
 ---
 
-## Batch 3I: Thread Viewer + Authorship Sheet
-*The final modals: step-by-step cross-book journey and methodology disclosure.*
+## Batch 3I: Integration, Progressive Loading, Accessibility
+*Wire everything together. Performance tune. Accessibility audit.*
 
 ### Prompt for Batch 3I
 
 ```
-Phase 3I: Build ThreadViewerSheet and AuthorshipSheet, then final
-integration pass.
+Phase 3I: Integration, progressive loading, pre-fetch, accessibility.
 
 READ _tools/PHASE_3_PLAN.md (Batch 3I section).
-READ _tools/REACT_NATIVE_PLAN.md §3.7 and §3.1d.
 
-1. REPLACE placeholder ThreadViewerSheet with full implementation:
+1. PROGRESSIVE LOADING: ChapterScreen phased rendering:
+   Phase 1 (immediate): verse text + section headers
+   Phase 2 (50ms via InteractionManager): button rows
+   Phase 3 (on tap): panel content from SQLite
 
-   app/src/components/ThreadViewerSheet.tsx:
-   - Triggered by: tapping a ThreadBadge in ChapterHeader
-   - Bottom sheet with snapPoints ['60%', '90%']
-   - Props: thread: CrossRefThread (parsed steps_json), initialStepIndex
-   - Content:
-     a. Thread theme title (Cinzel displayMd, thread accent color)
-     b. Step list (FlatList):
-        Each step: reference (TappableReference) + type badge + text
-        Current step highlighted with gold left border
-        Anchor step marked with ★ icon
-     c. "Go to chapter →" on each step navigates to that chapter
-     d. Step-by-step navigation: previous/next buttons at bottom
-   - Thread type badges: "Fulfilment", "Echo", "Expansion", "Contrast"
-     each with distinct muted color
+2. PRE-FETCH: on mount, load prev/next chapter data into cache Map.
+   On navigate, check cache → instant transition.
 
-2. REPLACE placeholder AuthorshipSheet with full implementation:
+3. SCROLL: reset to top on chapter nav. Restore position after modal.
 
-   app/src/components/AuthorshipSheet.tsx:
-   - Triggered by: tapping "Authorship & Sources ▾" at bottom of chapter
-     OR from SettingsScreen "About the commentary" link
-   - Bottom sheet with snapPoints ['50%']
-   - Static content:
-     * "Commentary panels are scholarly paraphrases, not direct quotes."
-     * "Each scholar's work is cited by name and edition."
-     * "Hebrew/Greek studies are based on standard lexicons (BDB, HALOT, BDAG)."
-     * "Cross-references are curated, not algorithmically generated."
-     * "Verse text is word-for-word NIV (default) or ESV."
-   - Uses bodySm EB Garamond, subdued gold text
+4. ACCESSIBILITY AUDIT:
+   - All buttons: accessibilityLabel + accessibilityRole
+   - Verse numbers announced by VoiceOver
+   - PanelButton: accessibilityState={{ selected: isActive }}
+   - PanelContainer: accessibilityLiveRegion="polite"
+   - Modals: focus trapping, escape to close
+   - Dynamic Type: fontSize from settingsStore scales correctly
+   - Contrast: all text on dark bg meets WCAG AA (4.5:1)
 
-3. FINAL INTEGRATION PASS on ChapterScreen:
-   - Confirm ALL modals are wired:
-     * Qnav: 🔍 button → QnavOverlay ✓
-     * Notes: My Notes button → NotesOverlay ✓
-     * Cross-ref: TappableReference → CrossRefPopup ✓
-     * Word study: VHL word tap → WordStudyPopup ✓
-     * Scholar: scholar name tap → ScholarInfoSheet ✓
-     * Thread: ThreadBadge → ThreadViewerSheet ✓
-     * Authorship: CollapsibleSection → AuthorshipSheet ✓
-   - Confirm progressive loading works (verses render first)
-   - Confirm single-open panel policy works across section AND chapter panels
-   - Confirm prev/next chapter navigation works
-   - Confirm translation toggle re-renders verses
+5. EDGE CASES:
+   - 1-section chapter (some Psalms)
+   - 10-section chapter (scroll performance)
+   - No deep-links → links don't render
+   - No threads → badge bar hidden
+   - Unenriched chapter (7 buttons)
+   - Enriched chapter (15+ buttons — horizontal scroll)
+   - Empty scholarly block
+   - Long panel content (internal scroll)
+   - Rapid prev/next tapping (no stale data)
 
-4. PERFORMANCE CHECK:
-   - Open Genesis 1 (enriched, 5 sections, 18 buttons per section)
-   - Measure: time from navigation start → verse text visible
-   - Target: < 500ms
-   - Measure: scroll FPS through all sections
-   - Target: 60 FPS (no jank)
-   - Measure: panel expand animation
-   - Target: smooth 250ms
+6. PERFORMANCE:
+   - Chapter load < 500ms
+   - Panel expand: 60 FPS
+   - VHL render: no jank on 30-verse sections
+   - Qnav open: < 200ms
+   - Search: < 300ms after debounce
 
-5. ACCESSIBILITY CHECK:
-   - VoiceOver/TalkBack can navigate through verse numbers
-   - Panel buttons are announced with their labels
-   - Note indicators are announced with "Edit note" / "Add note"
-   - Bottom bar buttons are announced
-   - All touch targets >= 44pt
-
-6. Print full component count, integration status for each modal,
-   and performance metrics. Commit everything.
+7. Commit everything. Print component count, test results.
 ```
 
 ---
@@ -828,69 +519,69 @@ READ _tools/REACT_NATIVE_PLAN.md §3.7 and §3.1d.
 
 | Batch | Description | Components | Tool calls |
 |-------|-------------|-----------|-----------|
-| **3A** | Utilities + shared components | 6 | ~12 |
-| **3B** | Verse rendering (VHL, NoteIndicator, SectionBlock) | 5 | ~10 |
-| **3C** | Button row + panel system + 8 section-level panels | 12 | ~14 |
-| **3D** | 10 chapter-level panels + ScholarlyBlock | 11 | ~14 |
-| **3E** | ChapterScreen orchestrator + nav/bottom bars + header | 7 | ~14 |
-| **3F** | Qnav overlay (BookAccordion, search, full modal) | 3 | ~10 |
-| **3G** | Notes system + reading history | 4 | ~10 |
-| **3H** | CrossRefPopup + WordStudyPopup + ScholarInfoSheet + PopupProvider | 4 | ~12 |
-| **3I** | ThreadViewerSheet + AuthorshipSheet + integration + performance | 3 | ~10 |
+| **3A** | Verse resolver + reference parser + panel labels | 3 utils | ~8 |
+| **3B** | Shared primitives (Collapsible, TappableRef, Skeleton, ScholarTag, BadgeChip) | 5 | ~8 |
+| **3C** | Verse rendering (HighlightedText, VerseBlock, NoteIndicator, SectionHeader, SectionBlock) | 5 | ~10 |
+| **3D** | Section-level panels (Hebrew, Context, History, CrossRef, Commentary, Places, Timeline) | 7 | ~10 |
+| **3E** | Chapter-level panels (10 types) + PanelRenderer | 11 | ~12 |
+| **3F** | Button/panel system (PanelButton, ButtonRow, PanelContainer, ScholarlyBlock) | 4 | ~8 |
+| **3G** | ChapterScreen assembly (NavBar, BottomBar, ChapterHeader, full ChapterScreen) | 4 | ~12 |
+| **3H** | All modals (Qnav, Notes, CrossRef, WordStudy, Scholar, Thread, Authorship) | 10+ | ~14 |
+| **3I** | Progressive loading, pre-fetch, scroll, accessibility, edge cases, perf | 0 new | ~10 |
 
-**Total: 9 batches, 55 components, ~106 tool calls, targeting 4-5 sessions.**
+**Total: 9 batches, ~92 tool calls, targeting 4-5 sessions.**
 
 **Dependency graph:**
 ```
 3A ──→ 3B ──→ 3C ──→ 3D ──┐
-                            ├──→ 3E ──→ 3F
-                            │         ├──→ 3G
-                            │         └──→ 3H ──→ 3I
-                            │
+                            ├──→ 3F ──→ 3G ──→ 3H ──→ 3I
+                     3E ────┘
 ```
 
-3A through 3D are strictly linear (each builds on the previous).
-After 3E (the screen exists), 3F/3G/3H can run in any order.
-3I is the final integration pass that requires everything else.
+3D and 3E can run in the same session (independent of each other). Both must complete before 3F.
 
 ---
 
 ## Session Planning
 
-**Session 1:** Batches 3A + 3B (utilities + verse rendering)
-**Session 2:** Batch 3C (button/panel system + section panels — this is the densest batch)
-**Session 3:** Batches 3D + 3E (chapter panels + ChapterScreen orchestrator)
-**Session 4:** Batches 3F + 3G (Qnav + notes)
-**Session 5:** Batches 3H + 3I (popups + integration + performance)
+**Session 1:** Batches 3A + 3B (utilities + primitives)
+**Session 2:** Batch 3C (verse rendering — complex + performance-critical)
+**Session 3:** Batches 3D + 3E (all 17 panel components)
+**Session 4:** Batches 3F + 3G (toggle system + ChapterScreen assembly)
+**Session 5:** Batches 3H + 3I (all modals + integration/polish)
 
 ---
 
 ## Verification Checklist (run after Phase 3 is complete)
 
-- [ ] ChapterScreen renders Genesis 1 with all sections, verses, and VHL highlighting
-- [ ] 18 panel types render correctly (7 section + 10 chapter + 1 parameterized commentary)
-- [ ] Panel button rows show correct labels and scholar colors
-- [ ] Single-open panel policy: only one panel open at a time across entire page
-- [ ] Panel expand/collapse animations are smooth (250ms, 60 FPS)
-- [ ] Verse text uses EB Garamond, verse numbers use Cinzel (gold superscripts)
-- [ ] VHL highlighting colors 5 word groups correctly
-- [ ] Translation toggle switches NIV ↔ ESV and re-renders verses
-- [ ] Prev/Next chapter navigation works, disabled on first/last
-- [ ] Qnav overlay: OT/NT toggle, book accordion, chapter grid, inline search
-- [ ] Qnav: selecting a chapter navigates and closes overlay
-- [ ] Per-verse note indicators (pencil icons) appear on every verse
-- [ ] Creating/editing/deleting notes works via NoteEditor
-- [ ] NotesOverlay shows all notes for current chapter with edit/delete
-- [ ] "My Notes (N)" badge count updates reactively
-- [ ] CrossRefPopup shows verse text when tapping scripture references
-- [ ] WordStudyPopup shows lexicon entry when tapping VHL words
-- [ ] ScholarInfoSheet shows scholar bio preview when tapping scholar names
-- [ ] ThreadBadges appear when chapter has cross-ref threads
-- [ ] ThreadViewerSheet shows step-by-step journey with navigation
-- [ ] "About This Book →" link navigates to BookIntroScreen
-- [ ] Timeline/map deep-links navigate to correct screens (with params)
-- [ ] Authorship disclosure collapses/expands
-- [ ] Reading history recorded on chapter visit
-- [ ] Progressive loading: verses appear first, panels load on demand
-- [ ] Chapter load time < 500ms, scroll 60 FPS, panel animation smooth
-- [ ] All touch targets >= 44pt, VoiceOver navigable, Dynamic Type respected
+- [ ] verseResolver parses all reference formats (6+ test cases pass)
+- [ ] referenceParser extracts refs from prose text
+- [ ] panelLabels maps all 18+ panel types to labels
+- [ ] CollapsibleSection animates expand/collapse
+- [ ] TappableReference auto-links refs in text
+- [ ] HighlightedText colors VHL words (5 group types × 5 colors)
+- [ ] VerseBlock renders verse nums, text, note indicators
+- [ ] All 7 section panels render with correct accent colors
+- [ ] All 10 chapter panels render with correct accent colors
+- [ ] ThemesRadarPanel SVG renders 10 axes correctly
+- [ ] CommentaryPanel renders with scholar-specific colors (42 scholars)
+- [ ] PanelRenderer dispatches to correct component for all types
+- [ ] ButtonRow renders labels and order per section
+- [ ] PanelContainer animates at 60 FPS
+- [ ] Single-open policy works across section AND chapter panels
+- [ ] ChapterNavBar: back, prev/next (disabled states), Qnav trigger
+- [ ] BottomBar: prev/next, NIV↔ESV toggle
+- [ ] ChapterHeader: title, subtitle, notes, intro link, deep-links, badges
+- [ ] QnavOverlay: OT/NT toggle, accordion, chapter grid, search
+- [ ] NotesOverlay: view/edit/delete, empty state, badge updates
+- [ ] CrossRefPopup: verse text + "Go to chapter"
+- [ ] WordStudyPopup: lexicon card from VHL tap
+- [ ] ScholarInfoSheet: quick bio from ScholarTag tap
+- [ ] ThreadViewerSheet: step-by-step journey, current step highlighted
+- [ ] Progressive loading: verses first → buttons → panels on tap
+- [ ] Pre-fetch: prev/next transitions near-instant
+- [ ] Scroll resets on chapter navigation
+- [ ] All elements have accessibility labels
+- [ ] Dynamic Type font scaling works
+- [ ] Chapter load < 500ms, panel expand 60 FPS, search < 300ms
+- [ ] Tested: 1-section, 10-section, unenriched, enriched chapters
