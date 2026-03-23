@@ -141,7 +141,11 @@ CREATE TABLE chapters (
   id TEXT PRIMARY KEY,              -- 'genesis_1'
   book_id TEXT NOT NULL REFERENCES books(id),
   chapter_num INTEGER NOT NULL,
-  title TEXT
+  title TEXT,
+  timeline_link_event TEXT,          -- timeline event ID (e.g., 'creation') or null
+  timeline_link_text TEXT,           -- display text (e.g., 'See on Timeline — Creation') or null
+  map_story_link_id TEXT,            -- map story ID (e.g., 'abram-call') or null
+  map_story_link_text TEXT           -- display text (e.g., 'See on Map — Abraham''s Call') or null
 );
 
 CREATE TABLE sections (
@@ -261,6 +265,20 @@ CREATE TABLE vhl_groups (
 CREATE TABLE genealogy_config (
   key TEXT PRIMARY KEY,
   value_json TEXT NOT NULL
+);
+
+CREATE TABLE cross_ref_threads (
+  id TEXT PRIMARY KEY,               -- 'substitutionary-sacrifice'
+  theme TEXT NOT NULL,                -- 'Substitutionary Sacrifice'
+  tags_json TEXT,                     -- JSON array of tag strings
+  steps_json TEXT NOT NULL            -- JSON array of {ref, text, anchor?, type?}
+);
+
+CREATE TABLE cross_ref_pairs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  from_ref TEXT NOT NULL,
+  to_ref TEXT NOT NULL,
+  note TEXT
 );
 
 -- Full-text search indexes
@@ -668,13 +686,19 @@ export const getRecentChapters = (limit = 5): RecentChapter[] =>
     [limit]);
 
 // ── Timeline / Map deep-links ─────────────────────────────────────────
-export const getTimelineEventForChapter = (bookId: string, ch: number): TimelineEvent | null =>
+// Stored directly on the chapters table (null for chapters without links)
+export const getChapterWithLinks = (bookId: string, ch: number): ChapterWithLinks | null =>
   db.getFirstSync(
-    "SELECT * FROM chapter_panels WHERE chapter_id=? AND panel_type='tl'",
-    [`${bookId}_${ch}`]);
+    'SELECT * FROM chapters WHERE book_id=? AND chapter_num=?',
+    [bookId, ch]);
+// Returns: { id, book_id, chapter_num, title, timeline_link_event, timeline_link_text,
+//            map_story_link_id, map_story_link_text }
 
-export const getMapStoryForChapter = (chapterLink: string): MapStory | null =>
-  db.getFirstSync("SELECT * FROM map_stories WHERE chapter_link LIKE ?", [`%${chapterLink}%`]);
+// ── Cross-ref threads (for thread viewer badges) ─────────────────────
+export const getThreadsForChapter = (bookId: string, ch: number): CrossRefThread[] =>
+  db.getAllSync(
+    "SELECT * FROM cross_ref_threads WHERE steps_json LIKE ?",
+    [`%${bookId}%${ch}%`]);
 ```
 
 ---

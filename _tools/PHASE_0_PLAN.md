@@ -23,6 +23,17 @@
 
 ### What the extractor must parse from each chapter HTML
 
+**Chapter-level metadata** (between `</nav>` and first `<div class="section">`):
+
+| Element | CSS identifier | Extract as |
+|---------|---------------|------------|
+| Chapter title | `<h1>` | `"title": "Genesis 1"` |
+| Subtitle | `<p>` after `<h1>` | `"subtitle": "The Creation of the Heavens..."` |
+| Timeline deep-link | `<a class="tl-event-link" href="...timeline.html#creation">` | `"timeline_link": { "event_id": "creation", "text": "See on Timeline — Creation" }` |
+| Map story deep-link | `<a class="map-story-link" href="...map.html#abram-call">` | `"map_story_link": { "story_id": "abram-call", "text": "See on Map — Abraham's Call" }` |
+
+61 chapters have timeline and/or map deep-links. These are `<a>` tags between the header and the first section — NOT panels, NOT VHL data. They must be extracted as top-level fields in the chapter JSON. Chapters without these links get `null` for both fields.
+
 **Section-level data** (repeats per section, identified by `<div class="section">` blocks):
 
 | Panel | CSS identifier | Internal structure |
@@ -92,8 +103,13 @@ Build a Python script `_tools/extract_to_json.py` with a function
      * tl: timeline entries
 4. Extracts ALL chapter-level panels by ID pattern {cid}-{type}:
    - ppl, trans, src, rec, lit, hebtext, thread, tx (textual), debate, themes
-5. Extracts VHL groups from the IIFE block at the bottom of the file
-6. Returns a dict matching the JSON schema in the React Native plan
+5. Extracts deep-links from between header and first section:
+   - <a class="tl-event-link"> → timeline_link: {event_id, text} (or null)
+   - <a class="map-story-link"> → map_story_link: {story_id, text} (or null)
+   61 chapters have these. Parse the href fragment (#creation, #abram-call)
+   as the event_id / story_id.
+6. Extracts VHL groups from the IIFE block at the bottom of the file
+7. Returns a dict matching the JSON schema in the React Native plan
 
 Include a `extract_all(output_dir)` function that walks ot/ and nt/,
 extracts every chapter, and writes JSON to content/{book}/{ch}.json.
@@ -151,7 +167,7 @@ Do NOT build SQLite yet — that's Batch 0F.
 | 1 | `data/book-intros.js` (233KB) | `content/meta/book-intros.json` | `window.BOOK_INTROS = [` ... `];` |
 | 2 | `js/pages/people-data.js` (196KB) | `content/meta/people.json` | `window.PEOPLE_DATA=[` or similar |
 | 3 | `js/pages/timeline-data.js` (75KB) | `content/meta/timelines.json` | Multiple: `const ERA_HEX = {`, `const ERA_NAMES = {`, event arrays |
-| 4 | `data/cross-refs.js` (17KB) | `content/meta/cross-refs.json` | `window.CROSS_REF_DATA = [` |
+| 4 | `data/cross-refs.js` (17KB) | `content/meta/cross-refs.json` | Contains TWO arrays: `window.CROSS_REF_THREADS = [...]` (themed multi-step threads with id, theme, tags, steps[]) AND `window.CROSS_REF_PAIRS = [...]` (bidirectional verse pairs). Both must be preserved — the thread viewer (§3.7 in the RN plan) needs the full step sequences. |
 | 5 | `data/word-study.js` (18KB) | `content/meta/word-studies.json` | `window.WORD_STUDY_DATA = [` |
 | 6 | `data/synoptic-map.js` (10KB) | `content/meta/synoptic.json` | `window.SYNOPTIC_MAP = [` |
 | 7 | `commentators/scholar-data.js` (21KB) | `content/meta/scholar-data.json` | `window.SCHOLAR_DATA = [` |
@@ -176,6 +192,11 @@ Write _tools/convert_js_to_json.py that:
    - js/pages/people-data.js → content/meta/people.json
    - js/pages/timeline-data.js → content/meta/timelines.json
    - data/cross-refs.js → content/meta/cross-refs.json
+     IMPORTANT: This file has TWO arrays: CROSS_REF_THREADS (themed
+     multi-step threads with {id, theme, tags, steps[]}) and
+     CROSS_REF_PAIRS (bidirectional verse pairs). Output as:
+     { "threads": [...], "pairs": [...] }
+     The thread viewer feature (§3.7) needs the full step sequences.
    - data/word-study.js → content/meta/word-studies.json
    - data/synoptic-map.js → content/meta/synoptic.json
    - commentators/scholar-data.js → content/meta/scholar-data.json
@@ -338,9 +359,14 @@ Write _tools/build_sqlite.py that:
    - content/meta/scholars.json → scholars table (merged with bios + scopes)
    - content/meta/places.json → places table
    - content/meta/map-stories.json → map_stories table
+   - content/meta/cross-refs.json → cross_ref_threads + cross_ref_pairs tables
    - content/meta/word-studies.json → word_studies table
    - content/meta/synoptic.json → synoptic_map table
    - content/meta/genealogy-config.json → genealogy_config table
+
+   Note: chapter JSON files contain timeline_link and map_story_link fields.
+   These populate the timeline_link_* and map_story_link_* columns on the
+   chapters table (null for the ~818 chapters without deep-links).
 
 3. Builds FTS5 indexes for verses and people
 
@@ -382,6 +408,8 @@ Write _tools/validate_sqlite.py that runs these checks against scripture.db:
    - 60+ places
    - 15+ map stories
    - 879 VHL group sets (one per chapter)
+   - ~61 chapters have timeline_link and/or map_story_link (not null)
+   - Cross-ref threads: at least 5 themed threads, each with 3+ steps
 
 2. REFERENTIAL INTEGRITY:
    - Every chapter.book_id exists in books
@@ -389,6 +417,8 @@ Write _tools/validate_sqlite.py that runs these checks against scripture.db:
    - Every section_panel.section_id exists in sections
    - Every chapter_panel.chapter_id exists in chapters
    - Every vhl_groups.chapter_id exists in chapters
+   - Timeline deep-link event_ids match events in timeline data
+   - Map story deep-link story_ids match entries in map_stories table
 
 3. CONTENT QUALITY:
    - No section_panels with empty content_json
@@ -511,9 +541,11 @@ READ _tools/REACT_NATIVE_PLAN.md Phase 1 for save_chapter() spec.
 ## Verification Checklist (run after Phase 0 is complete)
 
 - [ ] `content/` has 30 book directories with JSON files matching chapter counts
-- [ ] `content/meta/` has: books.json, book-intros.json, people.json, timelines.json, cross-refs.json, word-studies.json, synoptic.json, scholars.json, scholar-scopes.json, scholar-data.json, scholar-bios.json, places.json, map-stories.json, genealogy-config.json
+- [ ] `content/meta/` has: books.json, book-intros.json, people.json, timelines.json, cross-refs.json (with threads[] and pairs[]), word-studies.json, synoptic.json, scholars.json, scholar-scopes.json, scholar-data.json, scholar-bios.json, places.json, map-stories.json, genealogy-config.json
 - [ ] `content/verses/` has niv/ and esv/ subdirectories with 66 JSON files each
-- [ ] `scripture.db` exists and passes all validation checks
+- [ ] ~61 chapter JSON files have non-null `timeline_link` and/or `map_story_link` fields
+- [ ] cross-refs.json has both `threads` (themed step sequences) and `pairs` (bidirectional links)
+- [ ] `scripture.db` exists and passes all validation checks (including deep-link and thread integrity)
 - [ ] `_archive/` contains the complete old PWA
 - [ ] `save_chapter()` works and produces valid JSON
 - [ ] `build_sqlite.py` runs cleanly and produces a valid database
