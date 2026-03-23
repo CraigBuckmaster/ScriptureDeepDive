@@ -1154,6 +1154,39 @@ def _auto_src(book_dir, ch, title, all_text):
              'An Egyptian satirical letter describing Canaan\'s geography, roads, and fortified cities.',
              'The detailed Canaanite geography matches Joshua\'s territorial descriptions, confirming the text\'s familiarity with the region\'s actual landscape.'),
         ],
+
+        'daniel': [
+            ('The Prayer of Nabonidus (4Q242, Dead Sea Scrolls)',
+             'A fragmentary Qumran text describes a Babylonian king struck with illness for seven years who is healed by a Jewish exorcist — strikingly parallel to Nebuchadnezzar’s madness in Daniel 4.',
+             'The Prayer of Nabonidus may preserve an older version of the tradition behind Daniel 4, or reflect a common Near Eastern motif of royal humbling. Either way, it confirms the antiquity of the Daniel traditions.'),
+            ('1 Maccabees 1–2 (2nd c. BC)',
+             'Describes the historical desecration of the Jerusalem temple by Antiochus IV Epiphanes in 167 BC — the event Daniel 8:9–14 and 11:31 prophesy as the “abomination of desolation.”',
+             'The fulfilment is documented in non-biblical Jewish sources, confirming Daniel’s prophetic precision whether the prophecy is dated to the 6th or 2nd century BC.'),
+            ('Josephus, Antiquities 10.11 (1st c. AD)',
+             'Josephus records that when Alexander the Great approached Jerusalem (332 BC), the high priest showed him Daniel’s prophecy about a Greek king conquering Persia, and Alexander was so impressed he offered sacrifices at the temple.',
+             'Whether historically accurate or legendary, Josephus’s account shows that Daniel’s prophecies were understood as referring to Greek conquest well before the Christian era.'),
+        ],
+
+        'lamentations': [
+            ('Sumerian City Laments (c.2000 BC)',
+             'The Lamentation over the Destruction of Ur and similar Sumerian texts follow a comparable pattern: the deity abandons the city, enemies destroy it, the population mourns, and a tentative plea for restoration concludes.',
+             'Lamentations participates in an ancient Near Eastern genre of city-lament that predates it by over a millennium. The genre validates public grief as a literary and theological act.'),
+            ('The Babylonian Chronicles',
+             'Cuneiform records document Nebuchadnezzar’s siege and capture of Jerusalem in 597 and 586 BC, confirming the historical catastrophe behind Lamentations.',
+             'The archaeological evidence corroborates the destruction described in the poems, including evidence of massive burning in the City of David excavations.'),
+        ],
+
+        'isaiah': [
+            ('The Cyrus Cylinder (539 BC)',
+             'A clay cylinder in which Cyrus of Persia describes his conquest of Babylon and his policy of returning captive peoples to their homelands — the Persian policy that fulfilled Isaiah 44:28–45:1.',
+             'The cylinder confirms Isaiah’s prophecy of a Persian king who would liberate captives and authorize temple rebuilding, whether the prophecy is dated early (8th c.) or late (6th c.).'),
+            ('The Sennacherib Prism (c.700 BC)',
+             'Sennacherib’s own account of his 701 BC campaign states he shut Hezekiah up “like a bird in a cage” in Jerusalem — but conspicuously does NOT claim to have captured the city.',
+             'The silence confirms Isaiah 36–37: Sennacherib besieged but never conquered Jerusalem. His own records inadvertently verify Isaiah’s narrative of divine deliverance.'),
+            ('The Great Isaiah Scroll (1QIsaᵃ, Dead Sea Scrolls)',
+             'A complete copy of Isaiah found at Qumran, dated c.125 BC. The oldest complete biblical manuscript, it is virtually identical to the Masoretic text 1,000 years later.',
+             'The scroll demonstrates the remarkable textual stability of Isaiah across a millennium. The text the church reads today is essentially the text the Qumran community read.'),
+        ],
     }
     return ane_map.get(book_dir, [])[:3]
 
