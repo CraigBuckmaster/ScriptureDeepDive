@@ -470,15 +470,15 @@ def validate_chapter_json(json_path):
         if not panels:
             issues.append(f"{prefix}: no panels")
         for ptype, content in panels.items():
-            if content is None or content == '' or content == []:
-                issues.append(f"{prefix}: empty panel '{ptype}'")
+            if content is None or content == '':
+                issues.append(f"{prefix}: null/empty-string panel '{ptype}'")
 
     ch_panels = data.get('chapter_panels', {})
     for ptype, content in ch_panels.items():
         if ptype not in known_chapter_types:
             issues.append(f"Unknown chapter panel type: '{ptype}'")
-        if content is None or content == '' or content == []:
-            issues.append(f"Empty chapter panel: '{ptype}'")
+        if content is None or content == '':
+            issues.append(f"Null/empty-string chapter panel: '{ptype}'")
 
     return len(issues) == 0, issues
 
