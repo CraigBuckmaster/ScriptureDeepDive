@@ -18,6 +18,14 @@ META = CONTENT / 'meta'
 VERSES = CONTENT / 'verses'
 
 
+def _src(relpath):
+    """Resolve source path — check _archive/ first, then root."""
+    archived = ROOT / '_archive' / relpath
+    if archived.exists():
+        return archived
+    return ROOT / relpath
+
+
 # ---------------------------------------------------------------------------
 # Core: use Node.js to eval JS objects into JSON
 # ---------------------------------------------------------------------------
@@ -90,7 +98,7 @@ def _extract_js_block(content, pattern):
 # ---------------------------------------------------------------------------
 def convert_book_intros():
     """data/book-intros.js → content/meta/book-intros.json"""
-    src = ROOT / 'data' / 'book-intros.js'
+    src = _src('data/book-intros.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
     # Strip: window.BOOK_INTROS = [...];
@@ -107,7 +115,7 @@ def convert_people_data():
     This file has multiple exports: ERA_COLORS, PEOPLE_ERA_NAMES, PEOPLE.
     We extract all into one combined JSON object.
     """
-    src = ROOT / 'js' / 'pages' / 'people-data.js'
+    src = _src('js/pages/people-data.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
 
@@ -132,7 +140,7 @@ def convert_timeline_data():
     Multiple exports: ERA_HEX, ERA_NAMES, ERA_RANGES, EVENTS,
     TIMELINE_PEOPLE, WORLD_EVENTS.
     """
-    src = ROOT / 'js' / 'pages' / 'timeline-data.js'
+    src = _src('js/pages/timeline-data.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
 
@@ -165,7 +173,7 @@ def convert_cross_refs():
     Two arrays: CROSS_REF_THREADS and CROSS_REF_PAIRS.
     Output as { "threads": [...], "pairs": [...] }
     """
-    src = ROOT / 'data' / 'cross-refs.js'
+    src = _src('data/cross-refs.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
 
@@ -181,7 +189,7 @@ def convert_cross_refs():
 
 def convert_word_study():
     """data/word-study.js → content/meta/word-studies.json"""
-    src = ROOT / 'data' / 'word-study.js'
+    src = _src('data/word-study.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
     block = _extract_js_block(raw, r'window\.WORD_STUDY_DATA\s*=\s*')
@@ -192,7 +200,7 @@ def convert_word_study():
 
 def convert_synoptic():
     """data/synoptic-map.js → content/meta/synoptic.json"""
-    src = ROOT / 'data' / 'synoptic-map.js'
+    src = _src('data/synoptic-map.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
     block = _extract_js_block(raw, r'window\.SYNOPTIC_MAP\s*=\s*')
@@ -203,7 +211,7 @@ def convert_synoptic():
 
 def convert_scholar_data():
     """commentators/scholar-data.js → content/meta/scholar-data.json"""
-    src = ROOT / 'commentators' / 'scholar-data.js'
+    src = _src('commentators/scholar-data.js')
     with open(src, encoding='utf-8') as f:
         raw = f.read()
     block = _extract_js_block(raw, r'window\.SCHOLAR_DATA\s*=\s*')
@@ -229,7 +237,7 @@ def convert_verses():
 
     for translation in ('niv', 'esv'):
         for testament in ('ot', 'nt'):
-            src_dir = ROOT / 'verses' / translation / testament
+            src_dir = _src(f'verses/{translation}/{testament}')
             out_dir = VERSES / translation
             out_dir.mkdir(parents=True, exist_ok=True)
 

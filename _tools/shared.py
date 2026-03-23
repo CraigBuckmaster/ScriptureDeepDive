@@ -32,7 +32,7 @@ Deploy Cycle (after generating chapters):
 See also: _tools/BUILD_CHECKLIST.md for the full 36-step manual reference.
 """
 import glob
-import re, json, math, os
+import re, json, math, os, sys
 
 _REPO = '/home/claude/ScriptureDeepDive'
 
@@ -131,7 +131,164 @@ from config import COMMENTATOR_SCOPE, SCHOLAR_REGISTRY  # noqa: E402
 from config import BOOK_META  # noqa: E402
 
 # ══════════════════════════════════════════════════════════════════════
-#  HTML HELPERS — small utilities for building page fragments
+#  JSON PIPELINE — save_chapter() writes JSON for the React Native app
+# ══════════════════════════════════════════════════════════════════════
+
+ROOT = _REPO
+CONTENT_DIR = os.path.join(ROOT, 'content')
+
+
+def save_chapter(book_dir, ch, data):
+    """Save chapter content as structured JSON for the React Native pipeline.
+
+    This is the NEW authoring function. Generator scripts call this instead
+    of build_chapter(). The data dict format is the same — sections with
+    scholarly panels — but the output is JSON, not HTML.
+
+    Args:
+        book_dir: Book directory name (e.g., 'genesis', 'isaiah')
+        ch: Chapter number (int)
+        data: Dict with keys:
+            Required:
+                title (str): Chapter title
+                sections (list[dict]): 2+ sections, each with:
+                    header (str): Section header
+                    verses (str): Verse range string (e.g., '1-5')
+                    heb (list[tuple]): Hebrew word entries
+                    ... plus any panels: ctx, cross, mac, calvin, etc.
+            Optional (auto-generated in Phase 1 if missing):
+                lit, themes, ppl, trans, src, rec, hebtext, thread, tx, debate
+
+    Output: content/{book_dir}/{ch}.json
+    """
+    # Validate required structure
+    assert 'title' in data, f"Missing 'title' in chapter data"
+    assert 'sections' in data, f"Missing 'sections' in chapter data"
+    assert len(data['sections']) >= 1, f"Need at least 1 section, got {len(data['sections'])}"
+
+    for i, sec in enumerate(data['sections']):
+        assert 'header' in sec, f"Section {i+1} missing 'header'"
+
+    # Build the chapter JSON structure matching the extraction format
+    chapter = {
+        'chapter_id': None,  # Will be set by build_sqlite from book_dir + ch
+        'testament': None,
+        'book_dir': book_dir,
+        'chapter_num': ch,
+        'title': data['title'],
+        'subtitle': data.get('subtitle', ''),
+        'timeline_link': data.get('timeline_link'),
+        'map_story_link': data.get('map_story_link'),
+        'sections': [],
+        'chapter_panels': {},
+        'vhl_groups': data.get('vhl_groups', []),
+    }
+
+    # Process sections
+    for i, sec in enumerate(data['sections'], start=1):
+        # Parse verse range from header or from explicit fields
+        verse_start = sec.get('verse_start')
+        verse_end = sec.get('verse_end')
+        if verse_start is None:
+            # Try parsing from 'verses' key (e.g., '1-5')
+            vr = sec.get('verses', '')
+            if isinstance(vr, str) and '-' in vr:
+                parts = vr.split('-')
+                try:
+                    verse_start, verse_end = int(parts[0]), int(parts[1])
+                except (ValueError, IndexError):
+                    pass
+
+        section_out = {
+            'section_num': i,
+            'header': sec['header'],
+            'verse_start': verse_start,
+            'verse_end': verse_end,
+            'panels': {},
+        }
+
+        # Copy all panel data from the section
+        # Known panel keys to look for
+        skip_keys = {'header', 'verses', 'verse_start', 'verse_end'}
+        for key, value in sec.items():
+            if key in skip_keys:
+                continue
+            # 'heb' is the Hebrew word study panel
+            if key == 'heb' and isinstance(value, list):
+                entries = []
+                for entry in value:
+                    if isinstance(entry, (list, tuple)) and len(entry) >= 4:
+                        entries.append({
+                            'word': entry[0],
+                            'transliteration': entry[1],
+                            'gloss': entry[2],
+                            'paragraph': entry[3],
+                        })
+                    elif isinstance(entry, dict):
+                        entries.append(entry)
+                section_out['panels']['heb'] = entries
+            elif key in ('ctx', 'hist') and isinstance(value, str):
+                section_out['panels'][key] = value
+            elif key == 'cross' and isinstance(value, list):
+                entries = []
+                for ref_entry in value:
+                    if isinstance(ref_entry, (list, tuple)) and len(ref_entry) >= 2:
+                        entries.append({'ref': ref_entry[0], 'note': ref_entry[1]})
+                    elif isinstance(ref_entry, dict):
+                        entries.append(ref_entry)
+                section_out['panels']['cross'] = entries
+            elif key in ('poi', 'tl'):
+                section_out['panels'][key] = value
+            elif isinstance(value, list) and value:
+                # Scholar commentary panel (mac, calvin, net, sarna, etc.)
+                # Format: list of tuples (ref, note) or dicts
+                if isinstance(value[0], (list, tuple)):
+                    section_out['panels'][key] = {
+                        'source': '',
+                        'notes': [{'ref': str(n[0]), 'note': str(n[1])}
+                                  for n in value if len(n) >= 2]
+                    }
+                elif isinstance(value[0], dict):
+                    section_out['panels'][key] = value
+                else:
+                    section_out['panels'][key] = value
+
+        chapter['sections'].append(section_out)
+
+    # Chapter-level panels (passed directly as dicts)
+    ch_panel_keys = {'lit', 'themes', 'ppl', 'trans', 'src', 'rec',
+                     'hebtext', 'thread', 'tx', 'debate'}
+    for key in ch_panel_keys:
+        if key in data:
+            chapter['chapter_panels'][key] = data[key]
+
+    # Write JSON
+    out_dir = os.path.join(CONTENT_DIR, book_dir)
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, f'{ch}.json')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(chapter, f, ensure_ascii=False, indent=2)
+
+    print(f'  ✅ Saved {book_dir} {ch} → {out_path}')
+    return out_path
+
+
+def rebuild_sqlite():
+    """Rebuild scripture.db from all content/ JSON files."""
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, os.path.join(ROOT, '_tools', 'build_sqlite.py')],
+        capture_output=True, text=True,
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print(f"ERROR: {result.stderr}")
+    return result.returncode == 0
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  HTML HELPERS — DEPRECATED: kept for reference during Phase 1 migration
+#  New chapters should use save_chapter() above.
 # ══════════════════════════════════════════════════════════════════════
 
 def auth_sections(text):
