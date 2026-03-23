@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Scripture Deep Dive",
+    "slug": "scripture-deep-dive",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "scripture",
+    "icon": "./assets/images/icon-512.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0c0a07",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0c0a07"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.scripturedeepive.app"
+    },
+    "android": {
+      "package": "com.scripturedeepive.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0c0a07",
+        "foregroundImage": "./assets/images/icon-512.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-font",
+      ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
+    ],
+    "extra": {
+      "eas": { "projectId": "" }
+    },
+    "updates": { "url": "" },
+    "runtimeVersion": { "policy": "appVersion" }
+  }
+}
