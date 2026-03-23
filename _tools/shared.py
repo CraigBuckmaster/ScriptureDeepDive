@@ -731,6 +731,9 @@ def vhl_js(places=None, people=None, time_words=None, key_words=None):
 #  PAGE ASSEMBLY — head, nav, chapter header, final HTML output
 # ══════════════════════════════════════════════════════════════════════
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def head(book_name, book_dir, ch, is_nt=False):
     # Nav arrows are computed at runtime by nav-arrows.js using BOOKS data.
     # HTML emits disabled placeholders; JS upgrades them to <a> tags.
@@ -759,6 +762,9 @@ def head(book_name, book_dir, ch, is_nt=False):
 <body>
 {nav}'''
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def chapter_header(book_name, ch, title, auth_text='', is_nt=False):
     """Build the <header> for a chapter page.
     auth_text is retained for backward compatibility but no longer rendered —
@@ -768,12 +774,18 @@ def chapter_header(book_name, ch, title, auth_text='', is_nt=False):
 <p>{title}</p>
 </header>'''
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def btn_row(*btns):
     inner = ''.join(
         f'<button class="anno-trigger {cls}" onclick="tog(this,\'{pid}\')"><span>{lbl}</span><span class="chev">&#9660;</span></button>'
         for cls, lbl, pid in btns)
     return f'<div class="btn-row">{inner}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def verse(num, text, book='', ch=0):
     """Generate a verse span. If book+ch provided, text is stored in data attrs
     and rendered by translation.js. Otherwise falls back to inline text."""
@@ -796,21 +808,36 @@ def verse_range(start, end):
 #  Each function returns an HTML string for one panel type.
 # ══════════════════════════════════════════════════════════════════════
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def heb_panel(pid, words, is_nt=False):
     label = 'Greek Word Study' if is_nt else 'Hebrew Word Study'
     rows = ''.join(f'<p><span class="hebrew-word">{h}</span> <span class="tlit">{t}</span> — <strong>{g}</strong>: {n}</p>' for h,t,g,n in words)
     return f'<div id="{pid}" class="anno-panel heb-text-panel"><h4>{label}</h4>{rows}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def hist_panel(pid, text):
     return f'<div id="{pid}" class="anno-panel hist"><h4>Historical Context</h4><p>{text}</p></div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def ctx_panel(pid, text):
     return f'<div id="{pid}" class="anno-panel ctx"><h4>Context</h4><p>{text}</p></div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def cross_panel(pid, refs):
     items = ''.join(f'<li><span class="ref-cite">{c}</span><span class="ref-text">{t}</span></li>' for c,t in refs)
     return f'<div id="{pid}" class="anno-panel cross-ref"><h4>Cross-Reference</h4><ul class="cross-ref-list">{items}</ul></div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def poi_panel(pid, entries):
     """Build a Places panel.
 
@@ -859,6 +886,9 @@ TL_CSS = (
     '.tl-caption{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:.4rem;}'
 )
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def tl_panel(pid, items, range_start=None, range_end=None, caption=None):
     """Build a visual proportional timeline panel.
 
@@ -947,6 +977,9 @@ def tl_panel(pid, items, range_start=None, range_end=None, caption=None):
             f'</div>')
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def plan_section_panels(section_header, verse_range, section_text_sample=''):
     """
     PLANNING HELPER: call during chapter design, before writing data.
@@ -1041,6 +1074,9 @@ def plan_section_panels(section_header, verse_range, section_text_sample=''):
     return result
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def plan_chapter(book_name, chapter_num, sections):
     """
     CHAPTER PLANNING HELPER — call at the START of building a new chapter.
@@ -1075,6 +1111,9 @@ def plan_chapter(book_name, chapter_num, sections):
     return results
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def ppl_panel(pid, people):
     cards = ''
     for entry in people:
@@ -1087,20 +1126,32 @@ def ppl_panel(pid, people):
                   f'<div class="person-text">{t}</div></div>')
     return f'<div id="{pid}" class="anno-panel ppl-panel"><h4>People of the Chapter</h4><div class="person-grid">{cards}</div></div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def trans_panel(pid, verse_ref, rows):
     trs = ''.join(f'<tr><td class="t-label">{v}</td><td>{t}</td></tr>' for v,t in rows)
     return (f'<div id="{pid}" class="anno-panel trans-panel"><h4>Translation Comparison</h4>'
             f'<p style="font-family:\'Cinzel\',serif;font-size:.65rem;color:var(--trans-accent);margin-bottom:.5rem;">{verse_ref}</p>'
             f'<table class="trans-table"><tr><th>Version</th><th>Translation</th></tr>{trs}</table></div>')
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def src_panel(pid, blocks):
     inner = ''.join(f'<div class="source-block"><div class="source-title">{t}</div><div class="source-quote">{q}</div><div class="source-note">{n}</div></div>' for t,q,n in blocks)
     return f'<div id="{pid}" class="anno-panel src-panel"><h4>Ancient Sources</h4>{inner}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def rec_panel(pid, blocks):
     inner = ''.join(f'<div class="rec-block"><div class="rec-who">{b[0]}</div><div class="rec-text">{b[1]}</div></div>' for b in blocks)
     return f'<div id="{pid}" class="anno-panel rec-panel"><h4>Reception History</h4>{inner}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def lit_panel(pid, rows, note=''):
     inner = ''
     for row in rows:
@@ -1119,10 +1170,16 @@ def lit_panel(pid, rows, note=''):
         inner += f'<div class="lit-note">{note}</div>'
     return f'<div id="{pid}" class="anno-panel lit-panel"><h4>Literary Structure</h4><div class="lit-diagram">{inner}</div></div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def hebtext_panel(pid, verses_html, is_nt=False):
     label = 'Greek-Rooted Reading' if is_nt else 'Hebrew-Rooted Reading'
     return f'<div id="{pid}" class="anno-panel heb-text-panel"><h4>{label}</h4>{verses_html}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def thread_panel(pid, items):
     inner = ''
     for dc, anch, arr, tgt, tc, tl, txt in items:
@@ -1132,6 +1189,9 @@ def thread_panel(pid, items):
                   f'<div class="thread-text">{txt}</div></div>')
     return f'<div id="{pid}" class="anno-panel thread-panel"><h4>Intertextual Threading</h4>{inner}</div>'
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def commentary_panel(pid, commentator_key, notes):
     """
     Generic commentary panel. commentator_key: 'macarthur' | 'sarna' | 'alter' | 'calvin'
@@ -1174,11 +1234,17 @@ def commentary_panel(pid, commentator_key, notes):
             f'{items}</div>')
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def mac_panel(pid, notes):
     """Backward-compatible wrapper around commentary_panel."""
     return commentary_panel(pid, 'macarthur', notes)
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def textual_panel(pid, items):
     """
     Textual criticism panel. items = list of (verse_ref, issue_title, variants_html, significance).
@@ -1194,6 +1260,9 @@ def textual_panel(pid, items):
     return (f'<div id="{pid}" class="anno-panel tx-panel"><h4>Textual Notes</h4>{inner}</div>')
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def debate_panel(pid, debates):
     """
     Scholarly debate panel. debates = list of (title, positions, synthesis).
@@ -1215,6 +1284,9 @@ def debate_panel(pid, debates):
     return (f'<div id="{pid}" class="anno-panel db-panel"><h4>Scholarly Debates</h4>{inner}</div>')
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def themes_btn_panel(pid, theme_data, chapter_note):
     n = len(theme_data)
     cx, cy, r = 120, 120, 85
@@ -1241,6 +1313,9 @@ def themes_btn_panel(pid, theme_data, chapter_note):
              f'<p style="font-family:\'Source Sans 3\',sans-serif;font-size:.83rem;color:#a090d0;line-height:1.6;">{chapter_note}</p></div>')
     return btn, panel
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn, themes_panel_html,
                     is_nt=False, textual_h='', debate_h=''):
     """Render the chapter-level scholarly block. Any empty string argument suppresses
@@ -1270,6 +1345,9 @@ def scholarly_block(cid, ppl, trans, src, rec, lit, hebtext, thread, themes_btn,
 {all_panels}
 </div>'''
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_html,
          vhl_places=None, vhl_people=None, vhl_time=None, vhl_key=None, is_nt=False):
     sec_count = sections_html.count('<div class="section">')
@@ -1303,6 +1381,9 @@ def page(book_name, book_dir, ch, title, auth_text, sections_html, scholarly_htm
     ensure_tx_book_var(book_name)
     return path
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def ensure_tx_book_var(book_name):
     """Ensure translation.js legacy bookVars list contains VERSES_BOOKNAME for this book.
     Called automatically by build_chapter. Idempotent.
@@ -1352,6 +1433,9 @@ def ensure_tx_book_var(book_name):
 #  (literary structure, Hebrew terms, theological themes, etc.)
 # ══════════════════════════════════════════════════════════════════════
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def auto_scholarly(data, book_dir, ch):
     """
     Auto-generate all 9 chapter-level scholarly panels from section content.
@@ -2000,6 +2084,9 @@ def _auto_debate(book_dir, ch, title, sections):
 #  build_chapter() is called by every gen_{book}.py script.
 # ══════════════════════════════════════════════════════════════════════
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def _build_section_html(sec, sid, in_scope, is_nt, book_name, ch, lang):
     """Build HTML for a single chapter section: verses + buttons + panels."""
     verses_html = ''.join(verse(n, '', book_name, ch) for n, t in sec['verses'])
@@ -2038,6 +2125,9 @@ def _build_section_html(sec, sid, in_scope, is_nt, book_name, ch, lang):
             f'{verses_html}{btn_html}{panels_html}</div>')
 
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def build_chapter(book_dir, ch, data):
     """
     Build a chapter HTML file from a data dict and write it to disk.
@@ -2177,6 +2267,9 @@ def build_chapter(book_dir, ch, data):
 #  Run these after generating chapters. See module docstring for order.
 # ══════════════════════════════════════════════════════════════════════
 
+# DEPRECATED — HTML pipeline retired. Kept for reference only.
+# See save_chapter() + auto_scholarly_json() for the JSON pipeline.
+# This function is NOT called by anything in the active codebase.
 def update_homepage():
     """
     Sync index.html OT/NT library section with the actual state of chapter files on disk.
