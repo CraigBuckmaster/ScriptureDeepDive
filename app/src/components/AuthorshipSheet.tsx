@@ -1,18 +1,48 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { base } from '../theme';
+/**
+ * AuthorshipSheet — Bottom sheet with static methodology/attribution content.
+ */
 
-interface Props { visible: boolean; onClose: () => void; data?: any; }
+import React from 'react';
+import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
+import { base, spacing, radii } from '../theme';
 
-export function AuthorshipSheet({ visible, onClose, data }: Props) {
-  if (!visible) return null;
+interface Props {
+  visible: boolean;
+  onClose: () => void;
+}
+
+export function AuthorshipSheet({ visible, onClose }: Props) {
   return (
-    <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0,
-      backgroundColor: base.bgElevated, borderTopWidth: 1,
-      borderTopColor: base.border, padding: 16, minHeight: 200 }}>
-      <Text style={{ color: base.text, fontSize: 16 }}>AuthorshipSheet</Text>
-      <TouchableOpacity onPress={onClose} style={{ marginTop: 12 }}>
-        <Text style={{ color: base.gold }}>Close</Text>
-      </TouchableOpacity>
-    </View>
+    <Modal visible={visible} transparent animationType="slide">
+      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
+      <SafeAreaView style={{
+        backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
+        borderTopWidth: 1, borderColor: base.border, maxHeight: '50%',
+      }}>
+        <ScrollView contentContainerStyle={{ padding: spacing.md }}>
+          <View style={{ alignSelf: 'center', width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2, marginBottom: spacing.md }} />
+
+          <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 16, marginBottom: spacing.md }}>
+            About This Content
+          </Text>
+
+          <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 24 }}>
+            Scripture Deep Dive presents the Bible text alongside scholarly commentary from multiple traditions —
+            evangelical, reformed, Jewish, critical, and patristic. Each chapter features Hebrew/Greek word studies,
+            historical context, cross-references, and curated notes from recognized scholars.
+          </Text>
+
+          <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 24, marginTop: spacing.md }}>
+            Verse text is from the NIV and ESV translations. Scholarly notes are curated summaries of published
+            commentaries, not direct quotations. The theological themes radar chart uses keyword frequency analysis
+            to visualize emphasis patterns.
+          </Text>
+
+          <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 12, marginTop: spacing.md }}>
+            © Scripture Deep Dive. All rights reserved.
+          </Text>
+        </ScrollView>
+      </SafeAreaView>
+    </Modal>
   );
 }
