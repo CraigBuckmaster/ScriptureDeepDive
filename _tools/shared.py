@@ -141,9 +141,8 @@ CONTENT_DIR = os.path.join(ROOT, 'content')
 def save_chapter(book_dir, ch, data):
     """Save chapter content as structured JSON for the React Native pipeline.
 
-    This is the NEW authoring function. Generator scripts call this instead
-    of build_chapter(). The data dict format is the same — sections with
-    scholarly panels — but the output is JSON, not HTML.
+    Generator scripts call this with tuples/lists. Extracted content passes
+    dicts. This function normalises both into the canonical JSON format.
 
     Args:
         book_dir: Book directory name (e.g., 'genesis', 'isaiah')
@@ -151,27 +150,28 @@ def save_chapter(book_dir, ch, data):
         data: Dict with keys:
             Required:
                 title (str): Chapter title
-                sections (list[dict]): 2+ sections, each with:
+                sections (list[dict]): 1+ sections, each with:
                     header (str): Section header
-                    verses (str): Verse range string (e.g., '1-5')
-                    heb (list[tuple]): Hebrew word entries
-                    ... plus any panels: ctx, cross, mac, calvin, etc.
-            Optional (auto-generated in Phase 1 if missing):
-                lit, themes, ppl, trans, src, rec, hebtext, thread, tx, debate
+                    verses: verse_range() output [(n,''),...] or 'start-end' string
+                    heb (list): 4-tuples (word,tlit,gloss,text) or dicts
+                    + any panel keys: ctx, hist, cross, mac, calvin, poi, tl, etc.
+            Optional chapter-level panels (auto-generated in Phase 1B if missing):
+                lit: (rows_list, note) or {"rows":[...], "note":"..."}
+                themes: (scores_list, note) or {"scores":[...], "note":"..."}
+                ppl, trans, src, rec, hebtext, thread, tx, debate
 
     Output: content/{book_dir}/{ch}.json
     """
-    # Validate required structure
-    assert 'title' in data, f"Missing 'title' in chapter data"
-    assert 'sections' in data, f"Missing 'sections' in chapter data"
+    # ── Validate required structure ──
+    assert 'title' in data and data['title'], f"Missing or empty 'title'"
+    assert 'sections' in data, f"Missing 'sections'"
     assert len(data['sections']) >= 1, f"Need at least 1 section, got {len(data['sections'])}"
-
     for i, sec in enumerate(data['sections']):
         assert 'header' in sec, f"Section {i+1} missing 'header'"
 
-    # Build the chapter JSON structure matching the extraction format
+    # ── Build chapter envelope ──
     chapter = {
-        'chapter_id': None,  # Will be set by build_sqlite from book_dir + ch
+        'chapter_id': None,
         'testament': None,
         'book_dir': book_dir,
         'chapter_num': ch,
@@ -184,20 +184,11 @@ def save_chapter(book_dir, ch, data):
         'vhl_groups': data.get('vhl_groups', []),
     }
 
-    # Process sections
+    # ── Process sections ──
+    skip_keys = {'header', 'verses', 'verse_start', 'verse_end'}
+
     for i, sec in enumerate(data['sections'], start=1):
-        # Parse verse range from header or from explicit fields
-        verse_start = sec.get('verse_start')
-        verse_end = sec.get('verse_end')
-        if verse_start is None:
-            # Try parsing from 'verses' key (e.g., '1-5')
-            vr = sec.get('verses', '')
-            if isinstance(vr, str) and '-' in vr:
-                parts = vr.split('-')
-                try:
-                    verse_start, verse_end = int(parts[0]), int(parts[1])
-                except (ValueError, IndexError):
-                    pass
+        verse_start, verse_end = _parse_verses_field(sec)
 
         section_out = {
             'section_num': i,
@@ -207,70 +198,280 @@ def save_chapter(book_dir, ch, data):
             'panels': {},
         }
 
-        # Copy all panel data from the section
-        # Known panel keys to look for
-        skip_keys = {'header', 'verses', 'verse_start', 'verse_end'}
         for key, value in sec.items():
-            if key in skip_keys:
+            if key in skip_keys or value is None:
                 continue
-            # 'heb' is the Hebrew word study panel
-            if key == 'heb' and isinstance(value, list):
-                entries = []
-                for entry in value:
-                    if isinstance(entry, (list, tuple)) and len(entry) >= 4:
-                        entries.append({
-                            'word': entry[0],
-                            'transliteration': entry[1],
-                            'gloss': entry[2],
-                            'paragraph': entry[3],
-                        })
-                    elif isinstance(entry, dict):
-                        entries.append(entry)
-                section_out['panels']['heb'] = entries
-            elif key in ('ctx', 'hist') and isinstance(value, str):
-                section_out['panels'][key] = value
-            elif key == 'cross' and isinstance(value, list):
-                entries = []
-                for ref_entry in value:
-                    if isinstance(ref_entry, (list, tuple)) and len(ref_entry) >= 2:
-                        entries.append({'ref': ref_entry[0], 'note': ref_entry[1]})
-                    elif isinstance(ref_entry, dict):
-                        entries.append(ref_entry)
-                section_out['panels']['cross'] = entries
-            elif key in ('poi', 'tl'):
-                section_out['panels'][key] = value
-            elif isinstance(value, list) and value:
-                # Scholar commentary panel (mac, calvin, net, sarna, etc.)
-                # Format: list of tuples (ref, note) or dicts
-                if isinstance(value[0], (list, tuple)):
-                    section_out['panels'][key] = {
-                        'source': '',
-                        'notes': [{'ref': str(n[0]), 'note': str(n[1])}
-                                  for n in value if len(n) >= 2]
-                    }
-                elif isinstance(value[0], dict):
-                    section_out['panels'][key] = value
-                else:
-                    section_out['panels'][key] = value
+            section_out['panels'][key] = _normalise_section_panel(key, value)
 
         chapter['sections'].append(section_out)
 
-    # Chapter-level panels (passed directly as dicts)
+    # ── Chapter-level panels ──
     ch_panel_keys = {'lit', 'themes', 'ppl', 'trans', 'src', 'rec',
                      'hebtext', 'thread', 'tx', 'debate'}
     for key in ch_panel_keys:
-        if key in data:
-            chapter['chapter_panels'][key] = data[key]
+        if key in data and data[key] is not None:
+            chapter['chapter_panels'][key] = _normalise_chapter_panel(key, data[key])
 
-    # Write JSON
+    # ── Write JSON ──
     out_dir = os.path.join(CONTENT_DIR, book_dir)
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, f'{ch}.json')
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(chapter, f, ensure_ascii=False, indent=2)
 
-    print(f'  ✅ Saved {book_dir} {ch} → {out_path}')
+    sec_panel_count = sum(len(s['panels']) for s in chapter['sections'])
+    ch_panel_count = len(chapter['chapter_panels'])
+    print(f'  ✅ Saved {book_dir} {ch} → {out_path}  '
+          f'({len(chapter["sections"])} sections, {sec_panel_count} sec panels, '
+          f'{ch_panel_count} ch panels)')
     return out_path
+
+
+# ── Section panel normalisation ──────────────────────────────────────
+
+def _parse_verses_field(sec):
+    """Extract verse_start/verse_end from section dict."""
+    vs = sec.get('verse_start')
+    ve = sec.get('verse_end')
+    if vs is not None:
+        return vs, ve
+
+    vr = sec.get('verses')
+    if vr is None:
+        return None, None
+    # verse_range() returns [(1,''), (2,''), ...] — take min/max
+    if isinstance(vr, list) and vr and isinstance(vr[0], (list, tuple)):
+        nums = [v[0] for v in vr if isinstance(v[0], int)]
+        if nums:
+            return min(nums), max(nums)
+    # String format: '1-5'
+    if isinstance(vr, str) and '-' in vr:
+        parts = vr.split('-')
+        try:
+            return int(parts[0]), int(parts[1])
+        except (ValueError, IndexError):
+            pass
+    return None, None
+
+
+def _normalise_section_panel(key, value):
+    """Normalise a single section panel value from generator or extraction format."""
+    # Hebrew word studies
+    if key == 'heb' and isinstance(value, list):
+        entries = []
+        for e in value:
+            if isinstance(e, (list, tuple)) and len(e) >= 4:
+                entries.append({'word': e[0], 'transliteration': e[1],
+                                'gloss': e[2], 'paragraph': e[3]})
+            elif isinstance(e, dict):
+                entries.append(e)
+        return entries
+
+    # Context / historical — plain strings
+    if key in ('ctx', 'hist') and isinstance(value, str):
+        return value
+
+    # Cross-references
+    if key == 'cross' and isinstance(value, list):
+        entries = []
+        for e in value:
+            if isinstance(e, (list, tuple)) and len(e) >= 2:
+                entries.append({'ref': e[0], 'note': e[1]})
+            elif isinstance(e, dict):
+                entries.append(e)
+        return entries
+
+    # Places / timeline — passthrough
+    if key in ('poi', 'tl'):
+        return value
+
+    # Scholar commentary panels (mac, calvin, net, sarna, oswalt, etc.)
+    if isinstance(value, list) and value:
+        first = value[0]
+        # Generator format: list of 2-tuples (ref, note)
+        if isinstance(first, (list, tuple)) and len(first) >= 2:
+            return {'source': '', 'notes': [
+                {'ref': str(n[0]), 'note': str(n[1])} for n in value if len(n) >= 2
+            ]}
+        # Already-extracted format: dict with 'notes' key
+        if isinstance(first, dict) and 'notes' in first:
+            return value  # Already wrapped
+        # Already normalised list of dicts
+        if isinstance(first, dict):
+            return value
+
+    # Fallback: passthrough
+    return value
+
+
+# ── Chapter panel normalisation ──────────────────────────────────────
+
+def _normalise_chapter_panel(key, value):
+    """Normalise a chapter-level panel value from generator or extraction format."""
+    # lit: generator passes (rows_list, note_string)
+    if key == 'lit':
+        if isinstance(value, (list, tuple)) and len(value) == 2 and isinstance(value[0], list):
+            rows, note = value
+            return {
+                'rows': [_normalise_lit_row(r) for r in rows],
+                'note': note or '',
+            }
+        if isinstance(value, dict):
+            return value  # already normalised
+
+    # themes: generator passes (scores_list, note_string)
+    if key == 'themes':
+        if isinstance(value, (list, tuple)) and len(value) == 2 and isinstance(value[0], list):
+            scores, note = value
+            return {
+                'scores': [{'name': s[0], 'value': s[1]} if isinstance(s, (list, tuple))
+                           else s for s in scores],
+                'note': note or '',
+            }
+        if isinstance(value, dict):
+            return value
+
+    # hebtext: generator passes list of dicts or tuples
+    if key == 'hebtext':
+        if isinstance(value, list):
+            entries = []
+            for e in value:
+                if isinstance(e, (list, tuple)) and len(e) >= 4:
+                    entries.append({'word': e[0], 'tlit': e[1], 'gloss': e[2], 'note': e[3]})
+                elif isinstance(e, dict):
+                    entries.append(e)
+            return entries
+        return value  # might be raw HTML from extraction — Phase 1C handles migration
+
+    # ppl: generator passes list of 3-tuples or dicts
+    if key == 'ppl':
+        if isinstance(value, list) and value:
+            first = value[0]
+            if isinstance(first, (list, tuple)):
+                return [{'name': p[0], 'role': p[1], 'text': p[2] if len(p) > 2 else ''}
+                        for p in value]
+        return value
+
+    # src, rec: list of 3-tuples or dicts
+    if key in ('src', 'rec'):
+        if isinstance(value, list) and value:
+            first = value[0]
+            if isinstance(first, (list, tuple)):
+                return [{'title': s[0], 'quote': s[1], 'note': s[2] if len(s) > 2 else ''}
+                        for s in value]
+        return value
+
+    # thread: list of dicts or tuples
+    if key == 'thread':
+        if isinstance(value, list) and value:
+            first = value[0]
+            if isinstance(first, (list, tuple)):
+                return [{'anchor': t[0], 'target': t[1],
+                         'direction': t[2] if len(t) > 2 else 'forward',
+                         'type': t[3] if len(t) > 3 else '',
+                         'text': t[4] if len(t) > 4 else ''}
+                        for t in value]
+        return value
+
+    # tx (textual): list of 4-tuples or dicts
+    if key == 'tx':
+        if isinstance(value, list) and value:
+            first = value[0]
+            if isinstance(first, (list, tuple)):
+                return [{'ref': t[0], 'title': t[1],
+                         'content': t[2] if len(t) > 2 else '',
+                         'note': t[3] if len(t) > 3 else ''}
+                        for t in value]
+        return value
+
+    # debate: passthrough (already structured)
+    if key == 'debate':
+        return value
+
+    # trans: passthrough (already structured)
+    if key == 'trans':
+        return value
+
+    return value
+
+
+def _normalise_lit_row(row):
+    """Normalise a lit row from tuple or dict."""
+    if isinstance(row, (list, tuple)) and len(row) >= 3:
+        return {
+            'label': row[0],
+            'range': row[1],
+            'text': row[2],
+            'is_key': row[3] if len(row) > 3 else False,
+        }
+    if isinstance(row, dict):
+        return row
+    return {'label': str(row), 'range': '', 'text': '', 'is_key': False}
+
+
+# ── Chapter JSON validator ───────────────────────────────────────────
+
+def validate_chapter_json(json_path):
+    """Validate a chapter JSON file against the schema.
+
+    Returns (is_valid, list_of_issues).
+    """
+    issues = []
+
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        return False, [f"Cannot load: {e}"]
+
+    # Required top-level keys
+    for key in ('book_dir', 'chapter_num', 'title', 'sections'):
+        if key not in data:
+            issues.append(f"Missing required key: {key}")
+
+    if not data.get('title'):
+        issues.append("Empty title")
+
+    sections = data.get('sections', [])
+    if len(sections) < 1:
+        issues.append("No sections")
+
+    known_section_types = {
+        'heb', 'ctx', 'hist', 'cross', 'poi', 'tl', 'places',
+    }
+    # Add all scholar keys from COMMENTATOR_SCOPE
+    try:
+        from config import COMMENTATOR_SCOPE
+        known_section_types.update(COMMENTATOR_SCOPE.keys())
+    except ImportError:
+        pass
+
+    known_chapter_types = {
+        'lit', 'themes', 'ppl', 'trans', 'src', 'rec',
+        'hebtext', 'thread', 'tx', 'debate',
+    }
+
+    for i, sec in enumerate(sections):
+        prefix = f"Section {i+1}"
+        if 'header' not in sec:
+            issues.append(f"{prefix}: missing header")
+        if sec.get('verse_start') is None:
+            issues.append(f"{prefix}: missing verse_start")
+        panels = sec.get('panels', {})
+        if not panels:
+            issues.append(f"{prefix}: no panels")
+        for ptype, content in panels.items():
+            if content is None or content == '' or content == []:
+                issues.append(f"{prefix}: empty panel '{ptype}'")
+
+    ch_panels = data.get('chapter_panels', {})
+    for ptype, content in ch_panels.items():
+        if ptype not in known_chapter_types:
+            issues.append(f"Unknown chapter panel type: '{ptype}'")
+        if content is None or content == '' or content == []:
+            issues.append(f"Empty chapter panel: '{ptype}'")
+
+    return len(issues) == 0, issues
 
 
 def rebuild_sqlite():
