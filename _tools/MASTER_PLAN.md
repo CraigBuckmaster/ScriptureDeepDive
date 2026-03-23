@@ -2,7 +2,11 @@
 
 > **Strategic plan for all remaining books.**
 > Referenced by BUILD_PLAN.md. Read this when deciding what to build next.
-> Last updated: 2026-03-22
+> Last updated: 2026-03-23
+>
+> **PIPELINE CHANGE (Phase 1):** All new content uses `save_chapter()` → JSON.
+> See `WORKFLOW.md` for the new pipeline. Generator scripts use the same data
+> dict format but output JSON instead of HTML. See `GENERATOR_TEMPLATE.py`.
 
 ---
 

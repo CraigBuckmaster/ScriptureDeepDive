@@ -1,7 +1,11 @@
 # Scripture Deep Dive — New Book Build Plan
 
 > **Read this file before starting any new book.**
-> Last updated: 2026-03-22 (after Job completion, 24 books live)
+> Last updated: 2026-03-23 (Phase 1 complete — JSON pipeline active)
+>
+> **PIPELINE CHANGE (Phase 1):** Generator scripts now call `save_chapter()`
+> which writes JSON to `content/`. No HTML is generated. See `WORKFLOW.md`
+> for the complete new pipeline and `GENERATOR_TEMPLATE.py` for the format.
 >
 > **See also:** `_tools/MASTER_PLAN.md` — strategic plan for all remaining books.
 > Contains build wave order, scholar-to-book allocation map, new scholar roster

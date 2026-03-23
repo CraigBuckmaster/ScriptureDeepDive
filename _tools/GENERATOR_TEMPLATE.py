@@ -80,29 +80,29 @@ ch(1, 'The Call of Jeremiah',
           'formation in the womb, a statement of prenatal calling.'),
      ],
 
-     'ctx': ('Jeremiah's call narrative (1:4–10) is the theological '
-             'foundation of the entire book. God's sovereignty over nations '
+     'ctx': ('Jeremiah\'s call narrative (1:4–10) is the theological '
+             'foundation of the entire book. God\'s sovereignty over nations '
              'and his intimate knowledge of the prophet establish the authority '
              'behind every oracle that follows.'),
 
      'cross': [
          ('Isa 49:1', 'The Servant also called from the womb — parallel '
           'prophetic commissioning language.'),
-         ('Gal 1:15', 'Paul echoes Jeremiah's prenatal call: "set apart '
+         ('Gal 1:15', 'Paul echoes Jeremiah\'s prenatal call: "set apart '
           'before I was born."'),
      ],
 
      'mac': [
-         ('1:5', 'God's foreknowledge and predestination are clearly taught '
-          'here. "Before I formed you" indicates God's sovereign purpose '
-          'preceded Jeremiah's existence.'),
+         ('1:5', 'God\'s foreknowledge and predestination are clearly taught '
+          'here. "Before I formed you" indicates God\'s sovereign purpose '
+          'preceded Jeremiah\'s existence.'),
          ('1:9', '"Then the LORD stretched out his hand and touched my '
           'mouth" — the prophetic commissioning, parallel to Isaiah 6:7.'),
      ],
 
      'calvin': [
-         ('1:5', 'Calvin emphasises that Jeremiah's calling was not based '
-          'on merit but on God's free election — a pattern that runs '
+         ('1:5', 'Calvin emphasises that Jeremiah\'s calling was not based '
+          'on merit but on God\'s free election — a pattern that runs '
           'throughout Scripture.'),
      ],
 
@@ -127,7 +127,7 @@ ch(1, 'The Call of Jeremiah',
      ],
 
      'ctx': ('The two visions (almond branch and boiling pot) establish '
-             'the twin themes of Jeremiah's ministry: God's faithfulness '
+             'the twin themes of Jeremiah\'s ministry: God\'s faithfulness '
              'to fulfil his word, and the coming judgment from the north.'),
 
      'cross': [
@@ -137,7 +137,7 @@ ch(1, 'The Call of Jeremiah',
 
      'mac': [
          ('1:11–12', 'The almond tree vision is a divine visual pun '
-          'confirming God's watchfulness over his prophetic word.'),
+          'confirming God\'s watchfulness over his prophetic word.'),
      ],
     },
   ],
@@ -153,7 +153,7 @@ ch(1, 'The Call of Jeremiah',
       ('Sovereignty', 9), ('Worship', 3), ('Holiness', 5),
       ('Prophecy', 10), ('Justice', 6), ('Mission', 7),
   ], 'Prophecy peaks at 10: this is the quintessential call narrative. '
-     'Sovereignty at 9: God's prenatal election of the prophet.'),
+     'Sovereignty at 9: God\'s prenatal election of the prophet.'),
 )
 
 # ── Add more chapters below following the same pattern ──
