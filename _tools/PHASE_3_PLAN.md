@@ -19,6 +19,19 @@
 8. Modals (Qnav, Notes, CrossRef, WordStudy, Scholar, Thread, Authorship)
 9. Integration + polish (progressive loading, pre-fetch, accessibility audit)
 
+**Critical VHL interaction model (corrected):**
+VHL highlighted words in verse text do NOT open popups. They open PANELS.
+Each VHL group has a `btn_types` array mapping to panel types:
+```
+DIVINE btn: ['hebrew','hebrew-text','context']  → opens Hebrew panel
+PLACES btn: ['places','context']                → opens Places panel
+PEOPLE btn: ['people','context']                → opens People panel
+TIME   btn: ['timeline','context']              → opens Timeline panel
+KEY    btn: ['literary','cross']                → opens Literary/Cross-Ref panel
+```
+Tap "LORD" (pink) → walks btn_types → finds first matching panel in that section → opens it.
+The WordStudyPopup is triggered from INSIDE the HebrewPanel (tap a word entry), not from VHL.
+
 ---
 
 ## Button Type → Panel Type → Label Mapping
@@ -196,9 +209,23 @@ READ _tools/PHASE_3_PLAN.md (Batch 3C section).
 READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
 
 1. CREATE app/src/components/HighlightedText.tsx:
-   The VHL engine for verse text.
-   Props: { text, groups: VHLGroup[], activeGroups: string[],
-            onWordPress?, style? }
+   The VHL (Verse Highlight Layer) engine for verse text.
+
+   CRITICAL: VHL tap does NOT open a WordStudyPopup. It opens the
+   matching PANEL in the section's button row. Each VHL group defines
+   a `btn` array of panel types it maps to (e.g., DIVINE maps to
+   ['hebrew','hebrew-text','context']). When a highlighted word is
+   tapped, VHL finds the first matching panel that exists in that
+   section's button row and opens it via tog().
+
+   Props: {
+     text: string,
+     groups: VHLGroup[],                     // from useChapterData
+     activeGroups: string[],                  // which groups toggled on
+     onVhlWordPress?: (btnTypes: string[], sectionId: string) => void,
+     style?: TextStyle
+   }
+
    Algorithm:
    a. Split text into words (preserve attached punctuation)
    b. For each word, check against active groups' word lists (case-insensitive)
@@ -208,8 +235,24 @@ READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
       vhl-person → panels.ppl.accent (#e86040)
       vhl-time → tl accent (blue)
       vhl-key → gold (#c9a84c)
+      On press: pulse animation (opacity flash) + call onVhlWordPress
+      with the group's btn array (e.g., ['hebrew','hebrew-text','context'])
+      and the sectionId. The PARENT component resolves which panel to open.
    d. Unmatched: plain Text
    e. Memoize: only recompute when text or activeGroups change
+
+   VHL group data includes a btn array. In SQLite vhl_groups table,
+   this is stored as part of the group definition. Each group:
+   { group_name: 'divine', css_class: 'vhl-divine',
+     words_json: '["LORD","God"]',
+     btn_types: ['hebrew','hebrew-text','context'] }
+
+   The btn_types array maps VHL group → panel type(s) to open:
+   - DIVINE btn: ['hebrew','hebrew-text','context'] → opens Hebrew panel
+   - PLACES btn: ['places','context'] → opens Places panel
+   - PEOPLE btn: ['people','context'] → opens People panel
+   - TIME btn: ['timeline','context'] → opens Timeline panel
+   - KEY btn: ['literary','cross'] → opens Literary or Cross-Ref panel
 
 2. CREATE app/src/components/NoteIndicator.tsx:
    Per-verse pencil icon.
@@ -220,9 +263,12 @@ READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
 3. CREATE app/src/components/VerseBlock.tsx:
    All verses for one section.
    Props: { verses, vhlGroups, activeVhlGroups, notedVerses: Set<number>,
-            onWordPress, onNotePress, fontSize }
+            sectionId: string,
+            onVhlWordPress: (btnTypes: string[], sectionId: string) => void,
+            onNotePress, fontSize }
    Per verse: superscript number (gold, Cinzel) + HighlightedText + NoteIndicator
    EB Garamond body text, fontSize from settingsStore.
+   Passes sectionId through to HighlightedText so VHL taps carry context.
 
 4. CREATE app/src/components/SectionHeader.tsx:
    Props: { header: string }
@@ -231,11 +277,31 @@ READ _tools/REACT_NATIVE_PLAN.md §3.3 for VHL spec.
 5. CREATE app/src/components/SectionBlock.tsx:
    Container: header + verses + button row + panel area.
    Props: { section, panels, verses, vhlGroups, activeVhlGroups,
-            notedVerses, activePanel, onPanelToggle, onWordPress,
+            notedVerses, activePanel, onPanelToggle,
             onNotePress, onRefPress }
+
+   VHL TAP WIRING (the critical integration):
+   When a VHL word is tapped, HighlightedText fires onVhlWordPress
+   with the group's btn array and sectionId. SectionBlock resolves this:
+   ```
+   handleVhlWordPress = (btnTypes: string[], sectionId: string) => {
+     // Walk the btn array, find the first panel type that exists
+     // in this section's available panels
+     const availableTypes = panels.map(p => p.panel_type);
+     const matchType = btnTypes.find(btn => availableTypes.includes(btn));
+     if (matchType) {
+       onPanelToggle(sectionId, matchType);  // opens that panel
+       // Scroll the panel into view after expand animation
+     }
+   }
+   ```
+   This mirrors the PWA's vhl.js logic exactly: walk btn array,
+   find first matching button in that section's btn-row, call tog().
 
 6. VERIFY with Genesis 1: load sections + verses, render first section,
    confirm VHL colors, note indicators, font rendering.
+   CRITICAL TEST: tap a pink "LORD" word → Hebrew panel should open
+   (not a popup). Tap a green "Jerusalem" → Places panel opens.
 ```
 
 ---
@@ -256,6 +322,12 @@ All panels share: bg/border/accent from getPanelColors(type),
 
 1. HebrewPanel: HebEntry[] → word (accent, large) + tlit (gold-dim italic)
    + gloss (gold bold) + paragraph (bodyMd, TappableReference)
+   WORD STUDY TRIGGER: Tapping a Hebrew/Greek word WITHIN this panel
+   opens the WordStudyPopup (if a matching word-study entry exists in
+   the word_studies table). This is the actual path to the lexicon popup
+   — NOT from VHL highlighting in verse text. VHL taps open panels;
+   tapping entries inside the Hebrew panel opens the word study popup.
+   Props should include: onWordStudyPress?: (word: string) => void
 
 2. ContextPanel: string → paragraph with TappableReference. ctx green.
 
@@ -442,7 +514,12 @@ READ _tools/REACT_NATIVE_PLAN.md §3.5 (Qnav), §3.6 (Notes), §3.7 (Thread).
 
 4. WordStudyPopup.tsx (full):
    Bottom sheet ['40%','70%']. Hebrew/Greek word large, tlit, gloss,
-   Strongs, range, note. "See full study →" link. Triggered by VHL tap.
+   Strongs, range, note. "See full study →" link.
+   TRIGGER: Tapping a word entry INSIDE the HebrewPanel (not from VHL
+   verse highlighting). VHL taps open panels; HebrewPanel word taps
+   open this popup. The flow is:
+     VHL word tap → Hebrew panel opens → tap word entry → WordStudyPopup
+   Only shows if a matching word_studies entry exists in SQLite.
 
 5. ScholarInfoSheet.tsx (full):
    Bottom sheet ['35%','60%']. Name, tradition, era, eyebrow, brief bio.
@@ -457,8 +534,10 @@ READ _tools/REACT_NATIVE_PLAN.md §3.5 (Qnav), §3.6 (Notes), §3.7 (Thread).
    Bottom sheet ['50%']. Static methodology/attribution content.
 
 8. VERIFY: Genesis 1 → Qnav search "Abraham" → results. Notes → empty
-   state → add note → badge updates. Cross-ref tap → popup. VHL tap →
-   word study. ScholarTag tap → bio sheet. Thread badge → step viewer.
+   state → add note → badge updates. Cross-ref tap → popup.
+   VHL word tap → correct panel opens (e.g., "LORD" → Hebrew panel).
+   Inside Hebrew panel, tap word entry → WordStudyPopup opens.
+   ScholarTag tap → bio sheet. Thread badge → step viewer.
 ```
 
 ---
@@ -560,6 +639,8 @@ READ _tools/PHASE_3_PLAN.md (Batch 3I section).
 - [ ] CollapsibleSection animates expand/collapse
 - [ ] TappableReference auto-links refs in text
 - [ ] HighlightedText colors VHL words (5 group types × 5 colors)
+- [ ] VHL word tap opens matching panel (e.g., "LORD" → Hebrew panel, "Jerusalem" → Places panel)
+- [ ] VHL tap walks btn array to find first available panel in that section
 - [ ] VerseBlock renders verse nums, text, note indicators
 - [ ] All 7 section panels render with correct accent colors
 - [ ] All 10 chapter panels render with correct accent colors
@@ -575,7 +656,7 @@ READ _tools/PHASE_3_PLAN.md (Batch 3I section).
 - [ ] QnavOverlay: OT/NT toggle, accordion, chapter grid, search
 - [ ] NotesOverlay: view/edit/delete, empty state, badge updates
 - [ ] CrossRefPopup: verse text + "Go to chapter"
-- [ ] WordStudyPopup: lexicon card from VHL tap
+- [ ] WordStudyPopup: lexicon card from HebrewPanel word entry tap (NOT from VHL tap)
 - [ ] ScholarInfoSheet: quick bio from ScholarTag tap
 - [ ] ThreadViewerSheet: step-by-step journey, current step highlighted
 - [ ] Progressive loading: verses first → buttons → panels on tap
