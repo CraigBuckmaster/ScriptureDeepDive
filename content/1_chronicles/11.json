@@ -1,0 +1,298 @@
+{
+  "chapter_id": "1ch11",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 11,
+  "title": "1 Chronicles 11",
+  "subtitle": "David King Over All Israel; Mighty Warriors",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–9 — All Israel Anoints David at Hebron; Capture of Jerusalem",
+      "verse_start": 1,
+      "verse_end": 9,
+      "panels": {
+        "ctx": "“All Israel came together to David at Hebron.” The Chronicler omits the seven-year reign at Hebron over Judah alone and the civil war with Ish-Bosheth. In his version, David goes directly from Saul’s death to unified kingship. “All Israel” is the Chronicler’s programmatic phrase: the twelve tribes united in worship under David. Then David captures Jerusalem (“the fortress of Zion”) and Joab earns the title of chief commander by leading the assault.",
+        "cross": [
+          {
+            "ref": "2 Sam 5:1–10",
+            "note": "The parallel in Samuel, which includes the seven-year Hebron reign the Chronicler omits."
+          },
+          {
+            "ref": "2 Sam 2:1–4:12",
+            "note": "The civil war between David and Ish-Bosheth — completely absent from Chronicles."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:1",
+              "note": "“We are your own flesh and blood” — the tribes’ appeal to kinship teaches that unity among God’s people is not merely strategic but familial. Division among brothers is a violation of nature as well as covenant."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "11:1",
+              "note": "kol-yisrāʾēl (“all Israel”) is the Chronicler’s signature phrase. Its frequency (40+ occurrences) far exceeds its use in Samuel-Kings, reflecting the Chronicler’s emphasis on national unity."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 10–47 — The Catalogue of David’s Mighty Warriors",
+      "verse_start": 10,
+      "verse_end": 47,
+      "panels": {
+        "ctx": "The mighty warriors list parallels 2 Samuel 23:8–39 with additions. Jashobeam killed 300 (or 800 in Samuel) with his spear. Eleazar stood his ground against the Philistines until his hand froze to the sword. Three warriors broke through Philistine lines to get David water from Bethlehem’s well — and David refused to drink it, pouring it out before the LORD: “Far be it from me to drink the blood of these men who went at the risk of their lives.” The list of warriors extends beyond Samuel’s version, adding names the Chronicler drew from independent military records.",
+        "cross": [
+          {
+            "ref": "2 Sam 23:8–39",
+            "note": "The parallel warriors list. Chronicles adds approximately 16 names not found in Samuel."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:17",
+              "note": "David’s refusal to drink the water teaches that leaders must honour the sacrifices of those who serve them. To consume what others risked their lives to provide would be to treat their devotion with contempt."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "11:11",
+              "note": "The number “300” vs. Samuel’s “800” is a well-known textual variant. The discrepancy may reflect different source documents or scribal transmission errors."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "“All Israel came together to David at Hebron…"
+      },
+      {
+        "name": "Judah",
+        "role": "Key biblical figure",
+        "text": "” The Chronicler omits the seven-year reign at Hebron over Judah alone and the civil war with Ish-Bosheth…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "“All Israel came together to David at Hebron…"
+      },
+      {
+        "name": "Joab",
+        "role": "Key biblical figure",
+        "text": "Then David captures Jerusalem (“the fortress of Zion”) and Joab earns the title of chief commander by leading the assault…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Three warriors broke through Philistine lines to get David water from Bethlehem’s well — and David refused to drink it, pouring it out before the LORD: “Far be it from me to drink the blood of these men who went at the risk of their lives…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>said to David, \\u201cYou will not get in here.\\u201d Nevertheless, David captured the fortress of Zion\\u2014which is the City of David.</td></tr><tr><td class=\"t-label\">ESV</td><td>The inhabitants of Jebus said to David, \\u201cYou will not come in here.\\u201d Nevertheless, David took the stronghold of Zion, that is, the city of David.</td></tr><tr><td class=\"t-label\">NIV</td><td>David and all the Israelites marched to Jerusalem (that is, Jebus). The Jebusites who lived there</td></tr><tr><td class=\"t-label\">ESV</td><td>And David and all Israel went to Jerusalem, that is, Jebus, where the Jebusites were, the inhabitants of the land.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–9 — All Israel Anoints David at Hebron; Capture of Jerusalem",
+          "text": "“All Israel came together to David at Hebron.” The Chronicler omits the seven-year reign at Hebron over Judah alone and…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 10–47 — The Catalogue of David’s Mighty Warriors",
+          "text": "The mighty warriors list parallels 2 Samuel 23:8–39 with additions. Jashobeam killed 300 (or 800 in Samuel) with his spe…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "David King Over All Israel; Mighty Warriors",
+        "target": "2 Sam 5:1–10",
+        "type": "Echo",
+        "text": "The parallel in Samuel, which includes the seven-year Hebron reign the Chronicler omits.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "David King Over All Israel; Mighty Warriors",
+        "target": "2 Sam 2:1–4:12",
+        "type": "Connection",
+        "text": "The civil war between David and Ish-Bosheth — completely absent from Chronicles.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "David King Over All Israel; Mighty Warriors",
+        "target": "2 Sam 23:8–39",
+        "type": "Echo",
+        "text": "The parallel warriors list. Chronicles adds approximately 16 names not found in Samuel.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "David King Over All Israel; Mighty Warriors"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "chapter_id": "1ch22",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 22,
+  "title": "1 Chronicles 22",
+  "subtitle": "David Prepares for the Temple",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–16 — Materials Stockpiled; David’s Charge to Solomon",
+      "verse_start": 1,
+      "verse_end": 16,
+      "panels": {
+        "heb": [
+          {
+            "word": "shālōm",
+            "transliteration": "shalom",
+            "gloss": "peace",
+            "paragraph": "Solomon’s name is derived from shālōm (v.9): “A son who will be born to you will be a man of rest. I will give him rest from all his enemies. His name will be Solomon, and I will grant Israel peace and quiet during his reign.” The temple requires peace — David the warrior cannot build it; Solomon the man of peace will."
+          }
+        ],
+        "ctx": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of gold and 1,000,000 talents of silver. Then he charges Solomon: “Now, my son, the LORD be with you... build the house of the LORD your God, as he told you.” David explains why he cannot build it himself: “You have shed much blood and have fought many wars. You are not to build a house for my Name because you have shed much blood.” The warrior prepares; the peacemaker builds.",
+        "cross": [
+          {
+            "ref": "1 Kgs 5:3–5",
+            "note": "Solomon’s explanation to Hiram: “My father David could not build a temple... because of the wars... But now the LORD my God has given me rest.”"
+          },
+          {
+            "ref": "1 Chr 28:3",
+            "note": "David repeats the reason: “You are not to build a house for my Name, because you are a warrior and have shed blood.”"
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "22:8",
+              "note": "David’s disqualification from temple-building teaches that some forms of service are reserved for specific callings. The warrior cannot build the sanctuary; the builder cannot fight the wars. Both are necessary; neither is sufficient alone."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "22:9",
+              "note": "shĕlōmōh (Solomon) is explicitly derived from shālōm (peace) in a folk etymology. The name encodes the son’s vocation: he is the peace-king who will build the peace-temple."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 17–19 — David Commands the Leaders to Help Solomon",
+      "verse_start": 17,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "David commands all the leaders of Israel to help Solomon: “Is not the LORD your God with you? And has he not granted you rest on every side?” The leaders are enlisted as partners in the project. David doesn’t leave Solomon alone with the burden; he builds a coalition of support. “Now devote your heart and soul to seeking the LORD your God.” The verb darash (“seek”) appears one final time in David’s mouth: seeking God is the prerequisite for building God’s house.",
+        "cross": [
+          {
+            "ref": "1 Chr 28:1–10",
+            "note": "David’s later public charge to the leaders expands on this private commissioning."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "22:19",
+              "note": "“Devote your heart and soul” before “build the sanctuary” teaches that the inner temple must be built before the outer one. God does not dwell in buildings made by uncommitted hands."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "22:19",
+              "note": "The imperative sequence — darash (seek) then banah (build) — establishes a theological priority: devotion before construction. The syntax encodes the Chronicler’s theology."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "David commands all the leaders of Israel to help Solomon: “Is not the LORD your God with you? And has he not granted you rest on every side?” The leaders are enlisted as partners in the project…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of gold and 1,000,000 talents of silver…"
+      },
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Then he charges Solomon: “Now, my son, the LORD be with you…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "build the house of the LORD your God, as he told you…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Then he charges Solomon: “Now, my son, the LORD be with you…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>He also provided more cedar logs than could be counted, for the Sidonians and Tyrians had brought large numbers of them to David.</td></tr><tr><td class=\"t-label\">ESV</td><td>and cedar timbers without number, for the Sidonians and Tyrians brought great quantities of cedar to David.</td></tr><tr><td class=\"t-label\">NIV</td><td>He provided a large amount of iron to make nails for the doors of the gateways and for the fittings, and more bronze than could be weighed.</td></tr><tr><td class=\"t-label\">ESV</td><td>David also provided great quantities of iron for nails for the doors of the gates and for clamps, as well as bronze in quantities beyond weighing,</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–16 — Materials Stockpiled; David’s Charge to Solomon",
+          "text": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 17–19 — David Commands the Leaders to Help Solomon",
+          "text": "David commands all the leaders of Israel to help Solomon: “Is not the LORD your God with you? And has he not granted you…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "shālōm",
+        "tlit": "shalom",
+        "gloss": "peace",
+        "note": "Solomon’s name is derived from shālōm (v.9): “A son who will be born to you will be a man of rest. I will give him rest from all his enemies. His name will be Solomon, and I will grant Israel peace and quiet during his reign.” The temple requires peace — David the warrior cannot build it; Solomon the man of peace will."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "David Prepares for the Temple",
+        "target": "1 Kgs 5:3–5",
+        "type": "Connection",
+        "text": "Solomon’s explanation to Hiram: “My father David could not build a temple... because of the wars... But now the LORD my God has given me rest.”",
+        "direction": "backward"
+      },
+      {
+        "anchor": "David Prepares for the Temple",
+        "target": "1 Chr 28:3",
+        "type": "Connection",
+        "text": "David repeats the reason: “You are not to build a house for my Name, because you are a warrior and have shed blood.”",
+        "direction": "backward"
+      },
+      {
+        "anchor": "David Prepares for the Temple",
+        "target": "1 Chr 28:1–10",
+        "type": "Connection",
+        "text": "David’s later public charge to the leaders expands on this private commissioning.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 6
+        },
+        {
+          "label": "Atonement",
+          "score": 4
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "David Prepares for the Temple"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

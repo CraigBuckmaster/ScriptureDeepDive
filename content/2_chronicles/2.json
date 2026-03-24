@@ -1,0 +1,277 @@
+{
+  "chapter_id": "2ch2",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 2,
+  "title": "2 Chronicles 2",
+  "subtitle": "Preparations with Hiram of Tyre",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–10 — Solomon’s Message to Hiram; Temple Specifications",
+      "verse_start": 1,
+      "verse_end": 10,
+      "panels": {
+        "ctx": "Solomon conscripts 153,600 labourers and sends to Huram (Hiram) of Tyre for materials and a master craftsman. His message to Huram contains a theological statement absent from Kings: “The temple I am going to build will be great, because our God is greater than all other gods.” Solomon acknowledges the temple’s inadequacy: “The heavens, even the highest heavens, cannot contain him. Who then am I to build a temple for him?” Grandeur and humility coexist.",
+        "cross": [
+          {
+            "ref": "1 Kgs 5:1–12",
+            "note": "The Kings parallel. The Chronicler expands Solomon’s theological reasoning and adds specifications."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:6",
+              "note": "“Who am I to build a temple for him?” teaches that awareness of God’s transcendence should accompany every act of worship. We build for God knowing our buildings cannot contain him."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:6",
+              "note": "The rhetorical question echoes Solomon’s later prayer (6:18) and David’s (1 Chr 17:16). The “who am I?” of inadequacy is a persistent Davidic-Solomonic theme."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 11–18 — Huram’s Response; the Labour Force",
+      "verse_start": 11,
+      "verse_end": 18,
+      "panels": {
+        "ctx": "Huram replies with a remarkable confession: “Because the LORD loves his people, he has made you their king.” A pagan king attributes Solomon’s kingship to YHWH’s love. He sends Huram-Abi, a mixed-heritage craftsman (Danite mother, Tyrian father). Solomon organises the alien labour force: 70,000 carriers, 80,000 stonecutters, 3,600 foremen. The numbers match the Exodus workforce — the temple is built by the same scale of organised labour as the tabernacle.",
+        "cross": [
+          {
+            "ref": "Exod 36:1–7",
+            "note": "Bezalel and Oholiab, the tabernacle craftsmen. Huram-Abi is the temple’s equivalent — a divinely skilled artisan for sacred construction."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:11",
+              "note": "A pagan king confessing YHWH teaches that God’s sovereignty is recognised even by those outside the covenant. Divine love for Israel is visible to the watching world."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:14",
+              "note": "The mixed parentage of Huram-Abi differs from 1 Kgs 7:14 (which says his mother was from Naphtali). The discrepancy may reflect different traditions about tribal affiliation after intermarriage."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Solomon conscripts 153,600 labourers and sends to Huram (Hiram) of Tyre for materials and a master craftsman…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "His message to Huram contains a theological statement absent from Kings: “The temple I am going to build will be great, because our God is greater than all other gods…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Huram replies with a remarkable confession: “Because the LORD loves his people, he has made you their king…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But who is able to build a temple for him, since the heavens, even the highest heavens, cannot contain him? Who then am I to build a temple for him, except as a place to burn sacrifices before him?</td></tr><tr><td class=\"t-label\">ESV</td><td>But who is able to build him a house, since heaven, even highest heaven, cannot contain him? Who am I to build a house for him, except as a place to make offerings before him?</td></tr><tr><td class=\"t-label\">NIV</td><td>Now I am about to build a temple for the Name of the Lord my God and to dedicate it to him for burning fragrant incense before him, for setting out the consecrated bread regularly, and for making burnt offerings every morning and evening and on the Sabbaths, at the New Moons and at the appointed festivals of the Lord our God. This is a lasting ordinance for Israel.</td></tr><tr><td class=\"t-label\">ESV</td><td>Behold, I am about to build a house for the name of the LORD my God and dedicate it to him for the burning of incense of sweet spices before him, and for the regular arrangement of the showbread, and for burnt offerings morning and evening, on the Sabbaths and the new moons and the appointed feasts of the LORD our God, as ordained forever for Israel.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–10 — Solomon’s Message to Hiram; Temple Specifications",
+          "text": "Solomon conscripts 153,600 labourers and sends to Huram (Hiram) of Tyre for materials and a master craftsman. His messag…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 11–18 — Huram’s Response; the Labour Force",
+          "text": "Huram replies with a remarkable confession: “Because the LORD loves his people, he has made you their king.” A pagan kin…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Preparations with Hiram of Tyre",
+        "target": "1 Kgs 5:1–12",
+        "type": "Echo",
+        "text": "The Kings parallel. The Chronicler expands Solomon’s theological reasoning and adds specifications.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Preparations with Hiram of Tyre",
+        "target": "Exod 36:1–7",
+        "type": "Connection",
+        "text": "Bezalel and Oholiab, the tabernacle craftsmen. Huram-Abi is the temple’s equivalent — a divinely skilled artisan for sacred construction.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Preparations with Hiram of Tyre"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

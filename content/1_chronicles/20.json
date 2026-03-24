@@ -1,0 +1,299 @@
+{
+  "chapter_id": "1ch20",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 20,
+  "title": "1 Chronicles 20",
+  "subtitle": "More Wars; Philistine Giants",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–3 — Capture of Rabbah; the Great Omission",
+      "verse_start": 1,
+      "verse_end": 3,
+      "panels": {
+        "ctx": "“In the spring, at the time when kings go off to war, Joab led out the armed forces.” In Samuel, this verse (2 Sam 11:1) launches the Bathsheba-Uriah narrative. The Chronicler uses the same opening but skips to the fall of Rabbah. 2 Samuel 11–12 — adultery, murder, Nathan’s confrontation, the dead child — is completely absent. David takes Rabbah’s crown and puts the Ammonites to forced labour. The Chronicler’s David never sins with Bathsheba, never murders Uriah, never hears “You are the man!” This is the most significant omission in the entire book.",
+        "cross": [
+          {
+            "ref": "2 Sam 11:1–12:25",
+            "note": "The Bathsheba affair — entirely absent from Chronicles. The Chronicler’s David is the David of worship and temple, not the David of sin and repentance."
+          },
+          {
+            "ref": "2 Sam 12:26–31",
+            "note": "The capture of Rabbah — which the Chronicler preserves. Only the military conclusion is retained; the moral crisis is erased."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:1",
+              "note": "The Chronicler’s silence on Bathsheba reminds us that the same event can serve different theological purposes. Samuel uses David’s sin to teach about repentance; Chronicles uses David’s worship to teach about proper liturgy. Both are true; both are selective."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:1",
+              "note": "The transition from “Joab led out the armed forces” directly to “Joab attacked Rabbah” compresses an entire year of narrative (2 Sam 11:1–12:26) into a single verse break."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 4–8 — Three Philistine Giants Killed",
+      "verse_start": 4,
+      "verse_end": 8,
+      "panels": {
+        "ctx": "Three Philistine warriors of extraordinary size are killed by David’s men: Sibbecai kills Sippai at Gezer; Elhanan kills Lahmi brother of Goliath (in Samuel: Elhanan kills Goliath himself — a famous textual problem); Jonathan son of Shimea kills a six-fingered giant at Gath. The Chronicler closes: “These were descendants of the giants in Gath, and they fell at the hands of David and his men.” Brief, martial, and uncomplicated.",
+        "cross": [
+          {
+            "ref": "2 Sam 21:18–22",
+            "note": "The parallel. The Elhanan/Goliath discrepancy is one of the most discussed textual problems in the OT."
+          },
+          {
+            "ref": "1 Sam 17:4–51",
+            "note": "David kills Goliath. The Chronicler omits this famous story entirely but preserves these lesser-known giant-killings."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:8",
+              "note": "That giants fell “at the hands of David and his men” teaches that God uses ordinary soldiers to accomplish extraordinary victories. Not every giant requires a David; sometimes a Sibbecai will do."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:5",
+              "note": "The Hebrew of “Lahmi brother of Goliath” (ʾet-lahmî ʾahî golyat) may be a secondary reading derived from misreading bet-hallāhmî (“the Bethlehemite”) in the Samuel parallel."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "David takes Rabbah’s crown and puts the Ammonites to forced labour…"
+      },
+      {
+        "name": "Nathan",
+        "role": "Key biblical figure",
+        "text": "2 Samuel 11–12 — adultery, murder, Nathan’s confrontation, the dead child — is completely absent…"
+      },
+      {
+        "name": "Joab",
+        "role": "Key biblical figure",
+        "text": "“In the spring, at the time when kings go off to war, Joab led out the armed forces…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>These were descendants of Rapha in Gath, and they fell at the hands of David and his men.</td></tr><tr><td class=\"t-label\">ESV</td><td>These were descended from the giants in Gath, and they fell by the hand of David and by the hand of his servants.</td></tr><tr><td class=\"t-label\">NIV</td><td>In another battle with the Philistines, Elhanan son of Jair killed Lahmi the brother of Goliath the Gittite, who had a spear with a shaft like a weaver\\u2019s rod.</td></tr><tr><td class=\"t-label\">ESV</td><td>And there was again war with the Philistines, and Elhanan the son of Jair struck down Lahmi the brother of Goliath the Gittite, the shaft of whose spear was like a weaver\\u2019s beam.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–3 — Capture of Rabbah; the Great Omission",
+          "text": "“In the spring, at the time when kings go off to war, Joab led out the armed forces.” In Samuel, this verse (2 Sam 11:1)…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 4–8 — Three Philistine Giants Killed",
+          "text": "Three Philistine warriors of extraordinary size are killed by David’s men: Sibbecai kills Sippai at Gezer; Elhanan kills…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "More Wars; Philistine Giants",
+        "target": "2 Sam 11:1–12:25",
+        "type": "Connection",
+        "text": "The Bathsheba affair — entirely absent from Chronicles. The Chronicler’s David is the David of worship and temple, not the David of sin and repentance.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "More Wars; Philistine Giants",
+        "target": "2 Sam 12:26–31",
+        "type": "Connection",
+        "text": "The capture of Rabbah — which the Chronicler preserves. Only the military conclusion is retained; the moral crisis is erased.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "More Wars; Philistine Giants",
+        "target": "2 Sam 21:18–22",
+        "type": "Echo",
+        "text": "The parallel. The Elhanan/Goliath discrepancy is one of the most discussed textual problems in the OT.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "More Wars; Philistine Giants",
+        "target": "1 Sam 17:4–51",
+        "type": "Connection",
+        "text": "David kills Goliath. The Chronicler omits this famous story entirely but preserves these lesser-known giant-killings.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "More Wars; Philistine Giants"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

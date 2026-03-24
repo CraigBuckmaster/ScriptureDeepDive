@@ -1,0 +1,267 @@
+{
+  "chapter_id": "1ch7",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 7,
+  "title": "1 Chronicles 7",
+  "subtitle": "Issachar, Benjamin, Naphtali, Manasseh, Ephraim, Asher",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–19 — Issachar, Benjamin, Naphtali, Western Manasseh",
+      "verse_start": 1,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "Six tribes are covered in compressed genealogies. The Chronicler’s interest varies — Issachar gets military census data (87,000 fighting men), Benjamin is listed briefly (expanded in chapter 8), Naphtali gets a single verse, and western Manasseh receives moderate treatment. The uneven coverage reflects the Chronicler’s priorities: tribes relevant to the post-exilic community (Judah, Levi, Benjamin) get detailed treatment; northern tribes get summaries.",
+        "cross": [
+          {
+            "ref": "Gen 49:14–15",
+            "note": "Jacob’s blessing on Issachar: “a rawboned donkey lying down among the sheep pens.” The Chronicler provides the military counterpoint: 87,000 warriors."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "7:1",
+              "note": "The military census figures remind us that Israel was a real nation with real armies. The genealogies are not abstract theology but records of people who lived, fought, and died."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "7:13",
+              "note": "Naphtali’s single-verse genealogy lists Jahziel, Guni, Jezer, and Shallum — matching Gen 46:24 exactly. The Chronicler simply reproduces the Genesis tradition without expansion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 20–40 — Ephraim (Including the Mourning Episode); Asher",
+      "verse_start": 20,
+      "verse_end": 40,
+      "panels": {
+        "ctx": "Ephraim’s genealogy includes a unique mourning episode: men of Gath killed Ezer and Elead (Ephraim’s sons) when they went down to seize livestock. “Their father Ephraim mourned for them many days, and his relatives came to comfort him” (v.22). Then he had another son named Beriah (“because misfortune had come to his family”). This brief narrative — grief, naming, and recovery — humanises the genealogy. The chapter closes with Asher’s genealogy, emphasising military strength (26,000 warriors).",
+        "cross": [
+          {
+            "ref": "Gen 48:13–20",
+            "note": "Jacob blessed Ephraim over Manasseh, giving the younger son precedence. The Chronicler’s Ephraim genealogy includes both blessing and grief."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "7:22",
+              "note": "Ephraim’s mourning teaches that even patriarchs are not immune to grief. The community that gathers to comfort him models the response God desires: shared sorrow, not stoic isolation."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "7:23",
+              "note": "bĕrîʿāh is explained as “in misfortune” (bĕrāʿāh). The folk etymology connects the name to the family’s experience of loss, following the biblical naming pattern where names encode circumstances."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Judah",
+        "role": "Key biblical figure",
+        "text": "The uneven coverage reflects the Chronicler’s priorities: tribes relevant to the post-exilic community (Judah, Levi, Benjamin) get detailed treatment…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Their genealogical record listed the heads of families and 20,200 fighting men.</td></tr><tr><td class=\"t-label\">ESV</td><td>And their enrollment by genealogies, according to their generations, as heads of their fathers\\u2019 houses, mighty warriors, was 20,200.</td></tr><tr><td class=\"t-label\">NIV</td><td>According to their family genealogy, they had 36,000 men ready for battle, for they had many wives and children.</td></tr><tr><td class=\"t-label\">ESV</td><td>And along with them, by their generations, according to their fathers\\u2019 houses, were units of the army for war, 36,000, for they had many wives and sons.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–19 — Issachar, Benjamin, Naphtali, Western Manasseh",
+          "text": "Six tribes are covered in compressed genealogies. The Chronicler’s interest varies — Issachar gets military census data…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 20–40 — Ephraim (Including the Mourning Episode); Asher",
+          "text": "Ephraim’s genealogy includes a unique mourning episode: men of Gath killed Ezer and Elead (Ephraim’s sons) when they wen…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Issachar, Benjamin, Naphtali, Manasseh, Ephraim, Asher",
+        "target": "Gen 49:14–15",
+        "type": "Connection",
+        "text": "Jacob’s blessing on Issachar: “a rawboned donkey lying down among the sheep pens.” The Chronicler provides the military counterpoint: 87,000 warriors.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Issachar, Benjamin, Naphtali, Manasseh, Ephraim, Asher",
+        "target": "Gen 48:13–20",
+        "type": "Connection",
+        "text": "Jacob blessed Ephraim over Manasseh, giving the younger son precedence. The Chronicler’s Ephraim genealogy includes both blessing and grief.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Issachar, Benjamin, Naphtali, Manasseh, Ephraim, Asher"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

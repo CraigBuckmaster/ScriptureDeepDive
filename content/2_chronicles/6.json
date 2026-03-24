@@ -1,0 +1,288 @@
+{
+  "chapter_id": "2ch6",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 6,
+  "title": "2 Chronicles 6",
+  "subtitle": "Solomon’s Prayer of Dedication",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐21 — Solomon’s Address and the Davidic Promise",
+      "verse_start": 1,
+      "verse_end": 21,
+      "panels": {
+        "ctx": "Solomon declares: “The LORD has said that he would dwell in a dark cloud.” He addresses the assembly, recounting God’s choice of Jerusalem and David. Then he mounts a bronze platform (a Chronicler’s addition — absent from Kings), kneels before the assembly, and spreads his hands toward heaven. His prayer begins with covenant theology: “LORD, God of Israel, there is no God like you in heaven or on earth — you who keep your covenant of love.”",
+        "cross": [
+          {
+            "ref": "1 Kgs 8:12–30",
+            "note": "The parallel prayer. The Chronicler adds the bronze platform detail."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "6:18",
+              "note": "The tension between God’s transcendence and his temple-dwelling teaches that worship holds two truths simultaneously: God is everywhere, yet chooses to meet us in specific places."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "6:13",
+              "note": "kiyyōr nĕhōshet (literally “bronze laver/basin”) — an unusual term for a platform. Some scholars suggest a basin-shaped stand or pulpit used for public prayer."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 22‐42 — Seven Petitions; “If My People”",
+      "verse_start": 22,
+      "verse_end": 42,
+      "panels": {
+        "ctx": "Solomon presents seven petitions covering every crisis: oath-disputes, military defeat, drought, famine/plague, individual prayer, the foreigner who comes to worship, and the army going to battle. Each follows the pattern: when this happens, and they pray toward this temple, then hear from heaven and act. The seventh petition addresses exile: “If they sin against you... and you give them over to an enemy who takes them captive... if they turn back to you with all their heart and soul in the land of their captivity and pray toward the land you gave their ancestors... then from heaven hear their prayer.” For the post-exilic Chronicler, this is the operative petition — they are the people who prayed from captivity and were heard.",
+        "cross": [
+          {
+            "ref": "1 Kgs 8:31‐53",
+            "note": "The parallel prayer with minor variations."
+          },
+          {
+            "ref": "Dan 6:10",
+            "note": "Daniel prays toward Jerusalem three times daily — embodying Solomon’s instruction to pray “toward this temple.”"
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "6:36",
+              "note": "“There is no one who does not sin.” Solomon’s assumption of universal sinfulness teaches that the temple exists because humanity is fallen. A sinless race would not need a house of atonement."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "6:42",
+              "note": "The closing quotation of Ps 132:8–10 replaces Kings’ Exodus reference. The Chronicler reframes the dedication from historical commemoration to liturgical act."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Solomon declares: “The LORD has said that he would dwell in a dark cloud…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "” He addresses the assembly, recounting God’s choice of Jerusalem and David…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Solomon declares: “The LORD has said that he would dwell in a dark cloud…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But the Lord said to my father David, \\u2018You did well to have it in your heart to build a temple for my Name.</td></tr><tr><td class=\"t-label\">ESV</td><td>But the LORD said to David my father, \\u2018Whereas it was in your heart to build a house for my name, you did well that it was in your heart.</td></tr><tr><td class=\"t-label\">NIV</td><td>Nevertheless, you are not the one to build the temple, but your son, your own flesh and blood\\u2014he is the one who will build the temple for my Name.\\u2019</td></tr><tr><td class=\"t-label\">ESV</td><td>Nevertheless, it is not you who shall build the house, but your son who shall be born to you shall build the house for my name.\\u2019</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐21 — Solomon’s Address and the Davidic Promise —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 22‐42 — Seven Petitions; “If My People” —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Solomon’s Prayer of Dedication",
+        "target": "1 Kgs 8:12–30",
+        "type": "Echo",
+        "text": "The parallel prayer. The Chronicler adds the bronze platform detail.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Solomon’s Prayer of Dedication",
+        "target": "1 Kgs 8:31‐53",
+        "type": "Echo",
+        "text": "The parallel prayer with minor variations.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Solomon’s Prayer of Dedication",
+        "target": "Dan 6:10",
+        "type": "Connection",
+        "text": "Daniel prays toward Jerusalem three times daily — embodying Solomon’s instruction to pray “toward this temple.”",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "Solomon’s Prayer of Dedication"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "chapter_id": "mt28",
+  "testament": "nt",
+  "book_dir": "matthew",
+  "chapter_num": 28,
+  "title": "Matthew 28",
+  "subtitle": "The Empty Tomb; He Has Risen; The Women Meet Jesus; The Guard's Bribe; The Great Commission",
+  "timeline_link": {
+    "event_id": "resurrection",
+    "text": "See on Timeline — Resurrection"
+  },
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–10 — The Empty Tomb; He Has Risen; The Women Meet Jesus",
+      "verse_start": 1,
+      "verse_end": 10,
+      "panels": {
+        "heb": [],
+        "ctx": "The empty tomb is announced by an angel and confirmed by the risen Jesus himself. The women are the first witnesses -- those who followed to the cross (27:55-56) and to the tomb (27:61) are the first to receive and transmit the resurrection announcement. The risen Jesus's words \"go and tell my brothers\" restore the family relationship the disciples' flight had broken.",
+        "cross": [
+          {
+            "ref": "Matt 16:21; 17:23; 20:19",
+            "note": "He has risen, just as he said (v.6) -- the three passion predictions all promised resurrection. The angel's \"just as he said\" is the confirmation that Jesus's word was trustworthy throughout."
+          },
+          {
+            "ref": "Matt 26:32",
+            "note": "After I have risen, I will go ahead of you into Galilee -- predicted at the Last Supper. The angel (v.7) and Jesus himself (v.10) now fulfil it."
+          }
+        ],
+        "poi": [
+          {
+            "name": "The tomb of Jesus",
+            "coords": "Near Golgotha, Jerusalem",
+            "text": "At dawn on the first day of the week, the women come to the tomb. The earthquake, the rolled stone, the empty tomb — all in the same garden geography as the burial. \"He is not here; he has risen\" is addressed to a specific, visitable, empty location."
+          },
+          {
+            "name": "Galilee",
+            "coords": "Northern Israel; Jesus's ministry base",
+            "text": "\"He is going ahead of you into Galilee. There you will see him.\" The resurrection appearance is directed back to Galilee — where the ministry began. The risen Christ returns to the geography of the mission's start, completing the geographical arc of the Gospel."
+          }
+        ],
+        "tl": [
+          {
+            "date": "c. AD 30",
+            "name": "Crucifixion — Friday",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 30",
+            "name": "Burial — Friday afternoon",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 30",
+            "name": "Resurrection — Sunday dawn — this passage",
+            "text": "\"At dawn on the first day of the week.\" The empty tomb is discovered at the precise moment when Jewish Sabbath rest ends and the new week begins. The resurrection on the first day creates the theological foundation for Sunday as the new creation's day.",
+            "current": true
+          },
+          {
+            "date": "c. AD 30",
+            "name": "Resurrection appearances — 40 days",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 30",
+            "name": "Ascension — 40 days after Resurrection",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 30",
+            "name": "Pentecost — 50 days after Resurrection",
+            "text": "",
+            "current": false
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "28:6",
+              "note": "He is not here; he has risen, just as he said. The resurrection announced with the simplest, most concrete statement. The empty tomb is the spatial argument. \"Just as he said\" points to the three passion predictions -- his word was trustworthy. Come and see: the invitation is to verify, not merely believe on report."
+            },
+            {
+              "ref": "28:9-10",
+              "note": "They clasped his feet and worshiped him. The physical contact is the embodied argument: this is not a vision or ghost but the risen body. \"Go and tell my brothers\" restores the language of family for the disciples who fled. They are still brothers; the resurrection does not revoke belonging."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "28:1-10",
+              "note": "Calvin on the women's commission to tell the disciples: Christ appears first to Mary Magdalene and the other women and sends them as apostles to the apostles. This was divinely ordered: he chose to use the sex most despised to begin his gospel's announcement. The wisdom of God delights to overthrow human pride by choosing what the world despises."
+            },
+            {
+              "ref": "28:18-20",
+              "note": "Calvin on 'I am with you always, even to the end of the age' (v.20b): this promise is the foundation of the church's courage in every age. The command to make disciples of all nations would be terrifying without this assurance. With this assurance it becomes not a burden but an invitation: go because I am already there."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "28:1-10",
+              "note": "The NET note on 'the first day of the week' (tei de miai ton sabbaton, v.1) discusses the theological significance of the day: the resurrection occurred on the first day, beginning a new creation week. Sunday worship in the early church originated in this first-day resurrection."
+            },
+            {
+              "ref": "28:18-20",
+              "note": "The NET note on 'all authority in heaven and on earth has been given to me' (v.18) discusses the background in Dan 7:13-14: the Son of Man is given authority, glory, and sovereign power. The Great Commission follows from this authority claim -- the risen Christ has received the universal authority the Danielic Son of Man was promised."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "28:1-10",
+              "note": "Robertson on the angel's announcement (v.6: ouk estin hode -- he is not here): egerthe (has been raised) is a perfect passive -- raised by the Father and remaining in the state of resurrection. The angel's invitation 'come and see the place where he lay' is an empirical claim: the tomb is empty and inspectable. The first witnesses are women, whose testimony was least credible in the ancient world -- a detail that argues against invented legend."
+            },
+            {
+              "ref": "28:11-20",
+              "note": "Robertson on the Great Commission (v.18-20): edothe moi pasa exousia (all authority has been given to me) is an aorist passive -- the authority was given at the resurrection/ascension. The commission is structured as three participles modifying matheteusate (make disciples): going, baptising, and teaching serve the one goal of disciple-making."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "28:1-10",
+              "note": "Chrysostom: the women who had not fled, who had remained at the cross and the tomb, are given the first announcement. God honours faithfulness with first witness. The apostles who had fled receive the news from those who had stayed -- the gospel's first heralds are those whose love overcame their fear."
+            },
+            {
+              "ref": "28:18-20",
+              "note": "The Catena traces the Trinitarian structure of the baptismal formula (v.19: into the name of the Father and of the Son and of the Holy Spirit) as the earliest explicit Trinitarian formula in Matthew. The singular onoma (name, not names) places all three persons within a single divine name -- the basis for later Trinitarian theology."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 11–20 — The Guard's Bribe; The Great Commission; I Am with You Always",
+      "verse_start": 11,
+      "verse_end": 20,
+      "panels": {
+        "heb": [],
+        "ctx": "The Great Commission (vv.16-20) is the gospel's climax. The guard's bribe (vv.11-15) is Matthew's early apologetic: the officials who sealed the tomb are the first witnesses to its emptiness, and their explanation (theft) was publicly circulated when Matthew wrote. The Commission is built on three foundations: all authority (v.18), all nations (v.19), always with you (v.20).",
+        "cross": [
+          {
+            "ref": "Dan 7:13-14",
+            "note": "All authority given to him -- the Son of Man receiving dominion. The Great Commission is the actualisation of the Danielic vision in the risen Christ."
+          },
+          {
+            "ref": "Matt 1:23",
+            "note": "Immanuel, God with us -- the gospel's opening promise. \"I am with you always\" (v.20) is the closing fulfilment. The bracket is the gospel's central claim."
+          },
+          {
+            "ref": "Gen 12:3",
+            "note": "All peoples on earth blessed through you -- God's promise to Abraham. The Great Commission is its instrument."
+          }
+        ],
+        "poi": [
+          {
+            "name": "Galilee — a mountain",
+            "coords": "Specified mountain in northern Israel",
+            "text": "The Great Commission is given on a mountain in Galilee — the same region where the Sermon on the Mount, the callings, and most healings occurred. The mountain setting is consistent: Moses received the law on a mountain; Jesus delivers the new commission on a mountain."
+          },
+          {
+            "name": "All nations",
+            "coords": "The whole earth",
+            "text": "\"Go and make disciples of all nations\" — the geographical scope expands from the Israel-focused sending of ch.10 to the entire earth. The Galilee mountain is the launch point for a mission with no geographic boundaries."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "28:17",
+              "note": "When they saw him, they worshiped him; but some doubted. The most honest statement in the resurrection account. Doubt and worship coexist. Faith is not the absence of doubt but worship in the presence of it. The Great Commission is given to a group that includes doubters -- which is every group the church has ever comprised."
+            },
+            {
+              "ref": "28:19-20",
+              "note": "Go and make disciples of all nations. The grammar: the main verb is \"make disciples\" -- go, baptise, and teach are the participles that specify how. All nations -- the horizon the gospel has been pointing toward since the Magi (ch.2), the centurion (ch.8), the Canaanite woman (ch.15)."
+            },
+            {
+              "ref": "28:20",
+              "note": "I am with you always, to the very end of the age. The final word of Matthew is presence. Not \"I will return\" but \"I am with you always\" -- continuous present, unlimited duration. Immanuel (1:23) is not a title of the baby Jesus but the permanent condition of the community he is forming."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "28:11-15",
+              "note": "Calvin on the bribery: God permits the lies of the enemies of the gospel so that through those very lies the resurrection might be more firmly established. Every attempt to suppress the news of the resurrection has had the effect of spreading it further: the lie confirms that the tomb was empty."
+            },
+            {
+              "ref": "28:19-20",
+              "note": "Calvin on baptism in the Trinitarian name: the commandment establishes forever that the one God is Father, Son, and Spirit. The singular name encompasses the three -- not three gods but the one God in three persons. The church's baptismal practice from the beginning has been the theological confession of the Trinity."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "28:11-15",
+              "note": "The NET note on 'this story has been widely circulated among the Jews to this day' (v.15) discusses the apologetic context: Matthew is writing for a community in ongoing debate with Jewish interlocutors who know the stolen-body story."
+            },
+            {
+              "ref": "28:19-20",
+              "note": "The NET note on 'teaching them to obey everything I have commanded you' traces the pattern of Matthew's five discourses (chs.5-7; 10; 13; 18; 24-25): the Great Commission's teaching mandate encompasses all five. Matthew's gospel is itself the fulfillment of the teaching mandate -- the written form of what the disciples are commissioned to teach."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "28:11-15",
+              "note": "Robertson on the guard's bribe (arguria hikana, sufficient money, v.12): hikana (sufficient) means an amount adequate to achieve the purpose -- buying the soldiers' silence and their willingness to report a lie. The judicial protection promised ('if the governor hears of this, we will protect you', v.14) is the Sanhedrin's acknowledgment that the story is implausible."
+            },
+            {
+              "ref": "28:18-20",
+              "note": "Robertson on the Great Commission's scope: panta ta ethne (all the nations) is the universal mission that the genealogy (including Gentiles), the narrative (the Magi, the centurion, the Canaanite woman, the sheep-and-goats universal judgment), and now the resurrection commission has been building toward."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "28:11-15",
+              "note": "Chrysostom: if the disciples had stolen the body, the authorities would have produced the evidence -- the body or the disciples who carried it. They did not because they could not. The bribery is the historical admission that the tomb was empty; the story of theft is the alternative theory that the empty tomb required."
+            },
+            {
+              "ref": "28:18-20",
+              "note": "The Catena traces the Great Commission's Trinitarian structure: make disciples (the Father's mission), baptising in the Trinitarian name (the Son's authority over the church), teaching everything I have commanded (the Spirit's role in transmission). 'I am with you always' is the promise of the Spirit's continuing presence -- the risen Christ present through the Spirit until the end of the age."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Mary Magdalene and the other Mary",
+        "role": "First witnesses to the resurrection",
+        "text": "Those who followed to the cross and tomb are the first to receive and transmit the announcement."
+      },
+      {
+        "name": "The eleven",
+        "role": "Worship and doubt",
+        "text": "Great Commission given to a group that includes doubters. Every generation of disciples qualifies."
+      },
+      {
+        "name": "The risen Jesus",
+        "role": "Commissioning the community",
+        "text": "His final words are not a farewell but a permanent promise: I am with you always."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>\"Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.\"</td></tr><tr><td class=\"t-label\">Note</td><td>Main verb: make disciples. Participles: go, baptise, teach. Grounded in all authority (v.18); sealed by always with you (v.20).</td></tr>",
+    "src": [
+      {
+        "title": "The guard's bribe",
+        "quote": "Matthew's early apologetic against the \"stolen body\" theory. The officials who sealed the tomb are the first witnesses to its emptiness. Their explanation was publicly circulating when Matthew wrote.",
+        "note": "The existence of the counter-narrative confirms the empty tomb was not disputed."
+      },
+      {
+        "title": "The Trinitarian formula",
+        "quote": "V.19: baptizing in the name of the Father, Son, and Holy Spirit -- the fullest Trinitarian formula in the Synoptics. Echoes the baptism of Jesus (3:16-17).",
+        "note": "The Trinitarian formula grounds Christian baptism in the Trinitarian self-disclosure of God."
+      }
+    ],
+    "rec": [
+      {
+        "who": "The Great Commission in mission history",
+        "text": "28:18-20 is the founding text of the modern missionary movement. William Carey's 1792 \"Enquiry\" is structured around this passage."
+      },
+      {
+        "who": "Easter and the resurrection",
+        "text": "The resurrection is the central celebration of the Christian calendar. Early Christian worship on the first day of the week (Acts 20:7) commemorated it."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "He Is Not Here: The Empty Tomb",
+          "text": "Come and see the place where he lay. The first witnesses are women whose testimony was least credible in the ancient world -- a detail that argues against legend. The tomb is empty and inspectable.",
+          "is_key": false
+        },
+        {
+          "label": "He Is Not Here: The Empty Tomb",
+          "text": "Come and see the place where he lay. The first witnesses are women whose testimony was least credible in the ancient world -- a detail that argues against legend. The tomb is empty and inspectable.",
+          "is_key": false
+        },
+        {
+          "label": "All Authority; Therefore All Nations — 28:18-20",
+          "text": "The commission follows from the authority claim: the risen Christ who has all authority in heaven and on earth sends to all nations. The universal scope of the mission rests on the universal scope of the resurrection's authority.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "tx": [
+      {
+        "ref": "28:19",
+        "title": "Into the name of the Father and of the Son and of the Holy Spirit",
+        "content": "Singular onoma (name, not names) encompasses all three persons. The Didache (c.AD 100) uses this formula for baptism, confirming its early liturgical use.",
+        "note": "The singular name with three persons is the earliest explicit Trinitarian formula in the NT. The resurrection commission is also the Trinitarian charter."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Was the Resurrected Christ's Body Physical or Spiritual?",
+        "positions": [
+          {
+            "name": "Physical and recognisable, though transformed",
+            "proponents": "Evangelical consensus, most patristic interpreters",
+            "argument": "The women take hold of his feet (v.9); the disciples worship him. The resurrection body is the transformed version of the crucified body -- continuous but glorified, not a ghost."
+          },
+          {
+            "name": "Primarily spiritual/pneumatic",
+            "proponents": "Some liberal interpreters",
+            "argument": "The resurrection appearances are spiritual experiences of the disciples' faith in the living Christ, not physical encounters with a resurrected body."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "The Empty Tomb: Physical Resurrection",
+          "score": 10
+        },
+        {
+          "label": "The Guard's Bribe: Historical Proof",
+          "score": 10
+        },
+        {
+          "label": "The Great Commission: All Authority; All Nations",
+          "score": 10
+        },
+        {
+          "label": "I Am With You Always: The Presence Promise",
+          "score": 10
+        }
+      ],
+      "note": "Matthew 28 is the gospel's resolution: the empty tomb, the risen Lord, and the universal commission. The resurrection answers the dereliction cry; the universal authority grounds the universal mission; the presence promise sustains the community that carries the commission to the end of the age. Matthew ends where it began: Emmanuel, God with us (1:23) -- I am with you always."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Bethany",
+        "Gethsemane",
+        "Golgotha",
+        "temple",
+        "Mount of Olives",
+        "Galilee",
+        "Capernaum",
+        "Nazareth",
+        "Jordan"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "disciples",
+        "Pharisees",
+        "chief priests",
+        "Pilate",
+        "Judas",
+        "Peter",
+        "scribes",
+        "crowd",
+        "elders",
+        "John"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "third day",
+        "hour",
+        "age",
+        "coming",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "kingdom",
+        "covenant",
+        "blood",
+        "resurrection",
+        "Son of Man",
+        "Son of God",
+        "authority",
+        "judgment",
+        "forgive",
+        "fulfil",
+        "law",
+        "gospel"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

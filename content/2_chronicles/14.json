@@ -1,0 +1,251 @@
+{
+  "chapter_id": "2ch14",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 14,
+  "title": "2 Chronicles 14",
+  "subtitle": "Asa’s Early Faithfulness",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–8 — Asa Removes Idols; Ten Years of Peace",
+      "verse_start": 1,
+      "verse_end": 8,
+      "panels": {
+        "ctx": "Asa does “what was good and right.” He removes foreign altars and high places, smashes sacred stones, cuts down Asherah poles. “The land was at peace... because the LORD gave him rest.” Asa builds fortified cities during the peace: “Let us build these towns. The land is still ours because we have sought the LORD.” The seeking → rest → building sequence is the Chronicler’s model for faithful governance.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "14:(1, '')",
+              "note": "Every king’s reign demonstrates the principle that faithfulness produces blessing and unfaithfulness produces judgment."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "14:(1, '')",
+              "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 9‐15 — Asa’s Prayer Against Zerah’s Million-Man Army",
+      "verse_start": 9,
+      "verse_end": 15,
+      "panels": {
+        "ctx": "Zerah the Cushite attacks with a million men and 300 chariots. Asa’s prayer is the Chronicler’s model battle-prayer: “LORD, there is no one like you to help the powerless against the mighty. Help us, LORD our God, for we rely on you, and in your name we have come against this vast army.” God strikes the Cushites. The prayer is unique to Chronicles — absent from Kings — and illustrates the seek/prosper pattern perfectly.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "14:(9, '')",
+              "note": "The outcome of this king’s reign teaches that God’s governance is precise: every action has proportional consequences."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "14:(9, '')",
+              "note": "Key terms in this section connect to the Chronicler’s broader theological framework."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Asa",
+        "role": "Key biblical figure",
+        "text": "” Asa builds fortified cities during the peace: “Let us build these towns…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "Help us, LORD our God, for we rely on you, and in your name we have come against this vast army…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "The land is still ours because we have sought the LORD…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Asa had an army of three hundred thousand men from Judah, equipped with large shields and with spears, and two hundred and eighty thousand from Benjamin, armed with small shields and with bows. All these were brave fighting men.</td></tr><tr><td class=\"t-label\">ESV</td><td>And Asa had an army of 300,000 from Judah, armed with large shields and spears, and 280,000 men from Benjamin that carried shields and drew bows. All these were mighty men of valor.</td></tr><tr><td class=\"t-label\">NIV</td><td>He built up the fortified cities of Judah, since the land was at peace. No one was at war with him during those years, for the Lord gave him rest.</td></tr><tr><td class=\"t-label\">ESV</td><td>He built fortified cities in Judah, for the land had rest. He had no war in those years, for the LORD gave him peace.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–8 — Asa Removes Idols; Ten Years of Peace",
+          "text": "Asa does “what was good and right.” He removes foreign altars and high places, smashes sacred stones, cuts down Asherah…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 9‐15 — Asa’s Prayer Against Zerah’s Million-Man Army —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 6
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "Asa’s Early Faithfulness"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

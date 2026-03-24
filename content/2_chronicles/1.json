@@ -1,0 +1,272 @@
+{
+  "chapter_id": "2ch1",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 1,
+  "title": "2 Chronicles 1",
+  "subtitle": "Solomon at Gibeon — Ask What You Will",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–6 — Solomon Worships at Gibeon",
+      "verse_start": 1,
+      "verse_end": 6,
+      "panels": {
+        "ctx": "Solomon goes to Gibeon where the tabernacle and bronze altar of Bezalel are located. He offers a thousand burnt offerings. The Chronicler emphasises the legitimacy of Gibeon worship — the tabernacle is there, even though the ark is in Jerusalem. Solomon’s first act as king is not political consolidation (as in 1 Kings 2) but worship. The Chronicler’s Solomon begins at the altar, not the throne.",
+        "cross": [
+          {
+            "ref": "1 Kgs 3:4–5",
+            "note": "The Kings parallel. The Chronicler omits Solomon’s dream and the judgment of the two prostitutes, keeping only the divine encounter."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:6",
+              "note": "A thousand offerings teaches that generosity in worship should precede requests from God. Solomon gives extravagantly before asking anything."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:5",
+              "note": "Bezalel’s bronze altar (Exod 38:1–7) provides the direct Mosaic pedigree for Solomon’s worship. The altar at Gibeon is the altar from Sinai."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 7–17 — “Ask for Whatever You Want”; Solomon Chooses Wisdom",
+      "verse_start": 7,
+      "verse_end": 17,
+      "panels": {
+        "ctx": "God appears to Solomon at night: “Ask for whatever you want me to give you.” Solomon asks for wisdom and knowledge to govern. God grants these plus wealth and honour “such as no king who was before you ever had and none after you will have.” Solomon returns to Jerusalem and his wealth is described: 1,400 chariots, 12,000 horses, silver “as common as stones.” The Chronicler’s version omits the dream framework and the famous judgment scene (1 Kgs 3:16–28) — Solomon’s wisdom is asserted, not demonstrated.",
+        "cross": [
+          {
+            "ref": "1 Kgs 3:5–14",
+            "note": "The Kings parallel includes the dream format and is more expansive on God’s pleasure at Solomon’s request."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:10",
+              "note": "Solomon’s choice teaches that the best request is the one that enables service. Wisdom is valuable not for personal advantage but for governing God’s people faithfully."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:10",
+              "note": "hokmah umaddaʿ — “wisdom and knowledge.” The pairing is unique to Chronicles; 1 Kgs 3:9 uses lēb shōmēaʿ (“a discerning heart”). The Chronicler intellectualises the request."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Solomon goes to Gibeon where the tabernacle and bronze altar of Bezalel are located…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "God appears to Solomon at night: “Ask for whatever you want me to give you…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>and Solomon and the whole assembly went to the high place at Gibeon, for God’s tent of meeting was there, which Moses the Lord’s servant had made in the wilderness.</td></tr><tr><td class=\"t-label\">ESV</td><td>And Solomon, and all the assembly with him, went to the high place that was at Gibeon, for the tent of meeting of God, which Moses the servant of the LORD had made in the wilderness, was there.</td></tr><tr><td class=\"t-label\">NIV</td><td>Solomon went up to the bronze altar before the Lord in the tent of meeting and offered a thousand burnt offerings on it.</td></tr><tr><td class=\"t-label\">ESV</td><td>And Solomon went up there to the bronze altar before the LORD, which was at the tent of meeting, and offered a thousand burnt offerings on it.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–6 — Solomon Worships at Gibeon",
+          "text": "Solomon goes to Gibeon where the tabernacle and bronze altar of Bezalel are located. He offers a thousand burnt offering…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 7–17 — “Ask for Whatever You Want”; Solomon Chooses Wisdom",
+          "text": "God appears to Solomon at night: “Ask for whatever you want me to give you.” Solomon asks for wisdom and knowledge to go…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Solomon at Gibeon — Ask What You Will",
+        "target": "1 Kgs 3:4–5",
+        "type": "Echo",
+        "text": "The Kings parallel. The Chronicler omits Solomon’s dream and the judgment of the two prostitutes, keeping only the divine encounter.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Solomon at Gibeon — Ask What You Will",
+        "target": "1 Kgs 3:5–14",
+        "type": "Echo",
+        "text": "The Kings parallel includes the dream format and is more expansive on God’s pleasure at Solomon’s request.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "Solomon at Gibeon — Ask What You Will"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "chapter_id": "2ch5",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 5,
+  "title": "2 Chronicles 5",
+  "subtitle": "The Glory of the LORD Fills the Temple",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐7 — The Ark Brought to the Temple",
+      "verse_start": 1,
+      "verse_end": 7,
+      "panels": {
+        "ctx": "Solomon brings the ark from the City of David into the newly completed temple. The elders carry it, with priests and Levites, during the Festival of Tabernacles in the seventh month. Countless sheep and cattle are sacrificed. The priests place the ark in the Most Holy Place, under the wings of the cherubim. “The poles were so long that their ends could be seen from the Holy Place but not from outside.” The ark has found its permanent home.",
+        "cross": [
+          {
+            "ref": "1 Kgs 8:1‐9",
+            "note": "The parallel. Chronicles adds extensive Levitical musical detail in vv.12–13."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:7",
+              "note": "The ark under the cherubim’s wings teaches that God’s presence is both revealed and concealed — accessible through worship yet beyond human containment."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:7",
+              "note": "The note “they are still there today” reflects the source document’s pre-exilic date, preserved by the post-exilic Chronicler."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 8‐14 — The Cloud of Glory; the Priests Cannot Stand",
+      "verse_start": 8,
+      "verse_end": 14,
+      "panels": {
+        "ctx": "As the musicians and 120 trumpet-playing priests unite “in one voice to give praise and thanks to the LORD,” the temple fills with a cloud. “The priests could not perform their service because of the cloud, for the glory of the LORD filled the temple of God.” The shekinah — God’s visible presence — descends. The Chronicler adds a detail absent from Kings: the musical trigger. In Chronicles, God’s glory arrives in response to unified worship, not merely at the completion of a building.",
+        "cross": [
+          {
+            "ref": "Exod 40:34‐35",
+            "note": "The cloud filled the tabernacle at its dedication, and Moses could not enter. The same pattern: God’s glory overwhelms human capacity."
+          },
+          {
+            "ref": "1 Kgs 8:10‐11",
+            "note": "The Kings parallel. Chronicles adds the musical context."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:14",
+              "note": "When God’s glory fills the temple, the priests cannot serve. This teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:13",
+              "note": "kĕqōl ʾehād (“as one voice”) — the musical unity is the Chronicler’s precondition for theophany. Divided worship does not invoke God’s presence."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Solomon brings the ark from the City of David into the newly completed temple…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "“The priests could not perform their service because of the cloud, for the glory of the LORD filled the temple of God…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "As the musicians and 120 trumpet-playing priests unite “in one voice to give praise and thanks to the LORD,” the temple fills with a cloud…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Then Solomon summoned to Jerusalem the elders of Israel, all the heads of the tribes and the chiefs of the Israelite families, to bring up the ark of the Lord\\u2019s covenant from Zion, the City of David.</td></tr><tr><td class=\"t-label\">ESV</td><td>Then Solomon assembled the elders of Israel and all the heads of the tribes, the leaders of the fathers\\u2019 houses of the people of Israel, in Jerusalem, to bring up the ark of the covenant of the LORD out of the city of David, which is Zion.</td></tr><tr><td class=\"t-label\">NIV</td><td>The cherubim spread their wings over the place of the ark and covered the ark and its carrying poles.</td></tr><tr><td class=\"t-label\">ESV</td><td>The cherubim spread out their wings over the place of the ark, so that the cherubim made a covering above the ark and its poles.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐7 — The Ark Brought to the Temple —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 8‐14 — The Cloud of Glory; the Priests Cannot Stand —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "The Glory of the LORD Fills the Temple",
+        "target": "1 Kgs 8:1‐9",
+        "type": "Echo",
+        "text": "The parallel. Chronicles adds extensive Levitical musical detail in vv.12–13.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Glory of the LORD Fills the Temple",
+        "target": "Exod 40:34‐35",
+        "type": "Connection",
+        "text": "The cloud filled the tabernacle at its dedication, and Moses could not enter. The same pattern: God’s glory overwhelms human capacity.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Glory of the LORD Fills the Temple",
+        "target": "1 Kgs 8:10‐11",
+        "type": "Echo",
+        "text": "The Kings parallel. Chronicles adds the musical context.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "The Glory of the LORD Fills the Temple"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

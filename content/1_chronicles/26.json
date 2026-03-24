@@ -1,0 +1,272 @@
+{
+  "chapter_id": "1ch26",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 26,
+  "title": "1 Chronicles 26",
+  "subtitle": "Gatekeepers and Treasurers",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–19 — Divisions of Gatekeepers",
+      "verse_start": 1,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "The gatekeepers are organised by family and assigned to specific gates: north, south, east, west, and the storehouse. Obed-Edom (whose house was blessed when the ark stayed there, 13:14) serves among the gatekeepers with 62 descendants — the blessing of the ark continues generationally. The gatekeepers cast lots for their posts, “each family alike.” Their role is practical (security) and theological (controlling access to holy space).",
+        "cross": [
+          {
+            "ref": "1 Chr 13:14",
+            "note": "Obed-Edom’s household was blessed during the three months the ark stayed with him. Now his descendants serve as gatekeepers — permanently near the ark."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "26:5",
+              "note": "Obed-Edom’s blessing teaches that hospitality to God’s presence produces generational fruitfulness. Those who make room for God in their homes create a legacy of service."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "26:15",
+              "note": "The “storehouse” (ʾasūppîm) housed both sacred vessels and provisions. Guarding the storehouse was a position of significant trust and responsibility."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 20–32 — Treasury Officials and External Administrators",
+      "verse_start": 20,
+      "verse_end": 32,
+      "panels": {
+        "ctx": "Levites manage both the temple treasury (sacred donations, dedicated gifts) and external administration (officers and judges throughout Israel). The Chronicler maps the Levitical presence across the entire kingdom: they serve not only in the temple but as administrators in every region. The chapter closes with a note about officials west of the Jordan and east — Levitical governance extends to the full territorial reach of “all Israel.”",
+        "cross": [
+          {
+            "ref": "2 Chr 19:8–11",
+            "note": "Jehoshaphat appoints Levites as judges throughout Judah. The administrative role described here persists into the monarchy."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "26:29",
+              "note": "Levites as external administrators teach that knowledge of God’s law should shape public governance. Justice in society flows from the same source as worship in the temple."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "26:29",
+              "note": "The phrase “for outside duties” (lammĕlāʾkāh hahîṣōnāh) distinguishes temple-internal from territory-wide Levitical service. The Levites’ jurisdiction extended beyond the sanctuary walls."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "Levites manage both the temple treasury (sacred donations, dedicated gifts) and external administration (officers and judges throughout Israel)…"
+      },
+      {
+        "name": "Obed-Edom",
+        "role": "Key biblical figure",
+        "text": "Obed-Edom (whose house was blessed when the ark stayed there, 13:14) serves among the gatekeepers with 62 descendants — the blessing of the ark continues generationally…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>All these were descendants of Obed-Edom; they and their sons and their relatives were capable men with the strength to do the work\\u2014descendants of Obed-Edom, 62 in all.</td></tr><tr><td class=\"t-label\">ESV</td><td>All these were of the sons of Obed-edom with their sons and brothers, able men qualified for the service; sixty-two of Obed-edom.</td></tr><tr><td class=\"t-label\">NIV</td><td>Ammiel the sixth, Issachar the seventh and Peullethai the eighth. (For God had blessed Obed-Edom.)</td></tr><tr><td class=\"t-label\">ESV</td><td>Ammiel the sixth, Issachar the seventh, Peullethai the eighth, for God blessed him.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–19 — Divisions of Gatekeepers",
+          "text": "The gatekeepers are organised by family and assigned to specific gates: north, south, east, west, and the storehouse. Ob…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 20–32 — Treasury Officials and External Administrators",
+          "text": "Levites manage both the temple treasury (sacred donations, dedicated gifts) and external administration (officers and ju…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Gatekeepers and Treasurers",
+        "target": "1 Chr 13:14",
+        "type": "Connection",
+        "text": "Obed-Edom’s household was blessed during the three months the ark stayed with him. Now his descendants serve as gatekeepers — permanently near the ark.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Gatekeepers and Treasurers",
+        "target": "2 Chr 19:8–11",
+        "type": "Connection",
+        "text": "Jehoshaphat appoints Levites as judges throughout Judah. The administrative role described here persists into the monarchy.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Gatekeepers and Treasurers"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

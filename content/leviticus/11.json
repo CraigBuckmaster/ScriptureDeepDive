@@ -1,0 +1,492 @@
+{
+  "chapter_id": "lev11",
+  "testament": "ot",
+  "book_dir": "leviticus",
+  "chapter_num": 11,
+  "title": "Leviticus 11",
+  "subtitle": "Clean and Unclean Animals: The Theology of Distinction",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–23 — Land Animals, Sea Creatures, and Birds",
+      "verse_start": 1,
+      "verse_end": 23,
+      "panels": {
+        "heb": [
+          {
+            "word": "ṭāhôr / ṭāmēʾ",
+            "transliteration": "tahor / tame",
+            "gloss": "clean / unclean",
+            "paragraph": "The fundamental binary of Levitical purity. These are ritual-status categories, not moral ones — an unclean animal is not sinful; it simply cannot be eaten or its carcass touched without incurring ritual impurity. The clean/unclean distinction structures Israel's interface with the created world."
+          },
+          {
+            "word": "šereṣ",
+            "transliteration": "sherets",
+            "gloss": "swarming things / teeming creatures",
+            "paragraph": "The lowest category of creatures — those that swarm on the earth (land and water). They generate the highest level of impurity: contact defiles immediately. The category maps roughly to creatures associated with death and decay."
+          }
+        ],
+        "ctx": "The food laws of Lev 11 are not primarily about hygiene (though some unclean animals do carry pathogens) but about boundary maintenance — both theological (Israel distinct from the nations) and ontological (the clean world ordered, complete, whole). Milgrom's influential analysis: clean animals are those fully adapted to their habitat (land animals with cloven hooves that chew the cud; sea creatures with fins AND scales; birds that are not birds of prey). Animals that cross boundaries or occupy ambiguous niches (pigs: hooves but no cud; shellfish: water but no fins-and-scales) are unclean. The dietary laws enact the creation order at every meal.",
+        "cross": [
+          {
+            "ref": "Acts 10:9–16",
+            "note": "Peter's vision — the sheet lowered from heaven, the voice: \"Do not call anything impure that God has made clean.\" The food laws are declared fulfilled in Christ; the barrier between clean and unclean Jew and Gentile is dismantled."
+          },
+          {
+            "ref": "Mark 7:18–19",
+            "note": "\"Don't you see that nothing that enters a person from the outside can defile them?… In saying this, Jesus declared all foods clean.\" The food laws served their pedagogical purpose; their dissolution signals the arrival of the new covenant."
+          },
+          {
+            "ref": "Col 2:16–17",
+            "note": "\"Do not let anyone judge you by what you eat or drink… These are a shadow of the things that were to come; the reality, however, is found in Christ.\""
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:1–8",
+              "note": "MacArthur: The two-part requirement for clean land animals — split hooves AND chews the cud — means no one characteristic is sufficient. The pig (split hoof, no cud) and the camel (chews cud, no split hoof) are equally disqualified. The laws resist simple analogical reading; they demand binary compliance."
+            },
+            {
+              "ref": "11:20–23",
+              "note": "MacArthur: The prohibition on most winged insects is broken by the exception for locusts, katydids, crickets, and grasshoppers — the very insects John the Baptist ate (Matt 3:4). The exception is not arbitrary; these insects walk on their legs (not \"crawl on all fours\") and have jointed rear legs for leaping. They belong fully to their element; they do not cross categories."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:44–45",
+              "note": "Calvin: The food laws teach that God's holiness must permeate every area of life — including the table. What we eat is a theological statement. The Christian is not bound by these specific laws, but the principle remains: our bodies, our appetites, and our daily practices are to be shaped by the holiness of God who indwells us."
+            },
+            {
+              "ref": "11:1",
+              "note": "Calvin: The passage on clean and unclean animals demonstrates that God's commands are never arbitrary but expressions of his character applied to Israel's specific circumstances. What he requires, he also enables — the law reveals both the divine standard and the need for grace."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "11:3",
+              "note": "NET Note: \"Chews the cud\" (maʿăleh gērāh) — ruminants. \"Completely divided hoof\" (parsāh pĕrusāh) — ungulates with cleft hooves. Both conditions must be met. The double requirement prevents extending the category to ambiguous cases — a safeguard against the boundaries being blurred."
+            },
+            {
+              "ref": "11:1",
+              "note": "NET Note: The Hebrew vocabulary in this section on clean and unclean animals employs distinctive covenantal terminology. The syntactical construction reinforces the formal, legal register appropriate to the priestly and Deuteronomic tradition."
+            }
+          ]
+        },
+        "milgrom": {
+          "source": "Jacob Milgrom, Leviticus 1–6 / 17–22 / 23–27, Anchor Bible (1991–2001) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "11:1–23",
+              "note": "Milgrom: The dietary laws encode a theology of creation order. Clean animals are those fully adapted to their ecological niche — defined by their primary mode of locomotion and environment. Animals that \"cheat\" their habitat categories (amphibious creatures, bottom-feeders, carrion birds) are unclean. Eating only clean animals means aligning the diet with creation's structure."
+            },
+            {
+              "ref": "11:44–45",
+              "note": "Milgrom: The dietary laws' theological rationale is stated explicitly: \"Be holy because I, the Lord your God, am holy.\" The clean/unclean distinction is not merely practical but participatory — Israel's diet enacts the divine distinction between holy and common."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 24–47 — Carcass Defilement; Summary: Holy to the Lord",
+      "verse_start": 24,
+      "verse_end": 47,
+      "panels": {
+        "heb": [
+          {
+            "word": "nĕbēlāh",
+            "transliteration": "nevelah",
+            "gloss": "carcass / dead body of an animal",
+            "paragraph": "An animal that died naturally or was killed by another animal — not slaughtered by the prescribed method. Contact with a carcass generates impurity until evening even for clean animals. Death itself carries a kind of impurity in Leviticus."
+          },
+          {
+            "word": "wĕhithqaddištěm",
+            "transliteration": "wehithqadishshem",
+            "gloss": "consecrate yourselves / make yourselves holy",
+            "paragraph": "Hithpael reflexive of qādaš — to make oneself holy. The food laws are not merely prohibitions but positive acts of self-consecration. Every compliant meal is a minor liturgical act."
+          }
+        ],
+        "ctx": "The chapter's second half (vv.24–47) addresses carcass-defilement — touching the carcass of any unclean animal, or even of clean animals that died naturally, generates impurity until evening and requires washing. Vessels that are touched must be cleaned or broken (earthenware). The principle: death is the domain of impurity; holiness is the domain of life. The chapter closes with the explicit theological rationale (vv.44–45): \"Be holy, because I am holy.\" The dietary laws are not arbitrary — they are participatory in God's own holiness.",
+        "cross": [
+          {
+            "ref": "Heb 9:14",
+            "note": "\"How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\" The NT's language of purification from \"dead works\" draws directly on Levitical categories."
+          },
+          {
+            "ref": "1 Pet 1:15–16",
+            "note": "\"Just as he who called you is holy, so be holy in all you do; for it is written: 'Be holy, because I am holy.'\" Peter quotes Lev 11:44–45 as a living NT imperative. The theological core of the dietary laws survives their abrogation."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:44–47",
+              "note": "MacArthur: The summary of chapter 11 states the purpose of the entire purity system: \"to distinguish between the unclean and the clean, between living creatures that may be eaten and those that may not be eaten.\" The dietary laws are a daily, embodied practice of distinction-making — teaching Israel that God is different, that Israel is called to be different, and that the created order reflects the divine holiness."
+            },
+            {
+              "ref": "11:24-28",
+              "note": "MacArthur: Contact with carcasses of unclean animals renders a person unclean until evening. The duration is brief — impurity is not permanent — but the principle is absolute: death contaminates. Every contact with a dead creature is a small reminder that death is the enemy, the intruder in God's good creation."
+            },
+            {
+              "ref": "11:44-45",
+              "note": "MacArthur: \"Be holy, for I am holy.\" This is the theological engine of the entire book. The dietary laws are not arbitrary health codes; they are pedagogy. Every meal becomes an occasion to remember that Israel is set apart. Holiness is not confined to the temple; it extends to the kitchen table, the marketplace, the field."
+            },
+            {
+              "ref": "11:46-47",
+              "note": "MacArthur: The summary distinguishes clean from unclean, edible from inedible. The capacity to make distinctions is the fundamental priestly skill (10:10). Israel must learn to see the world through categories of holy and common, clean and unclean — a moral vision that shapes every dimension of daily life."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "11:24–40",
+              "note": "Calvin: The defilement from carcass contact teaches the believer to maintain separation from spiritual death — the corruption of the world, the deadness of false religion, the decay of sin. Though the specific laws are fulfilled, the principle of avoiding contamination by what is spiritually \"dead\" applies to the Christian life."
+            },
+            {
+              "ref": "11:24",
+              "note": "Calvin: The passage on clean and unclean animals demonstrates that God's commands are never arbitrary but expressions of his character applied to Israel's specific circumstances. What he requires, he also enables — the law reveals both the divine standard and the need for grace."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "11:45",
+              "note": "NET Note: \"I brought you up out of Egypt to be your God\" — the Exodus is cited as the ground of the holiness imperative. Redemption creates obligation. Because YHWH acted to deliver Israel, Israel owes him holy living. The food laws are not a burden but a response to grace."
+            },
+            {
+              "ref": "11:24",
+              "note": "NET Note: The Hebrew vocabulary in this section on clean and unclean animals employs distinctive covenantal terminology. The syntactical construction reinforces the formal, legal register appropriate to the priestly and Deuteronomic tradition."
+            }
+          ]
+        },
+        "milgrom": {
+          "source": "Jacob Milgrom, Leviticus 1–6 / 17–22 / 23–27, Anchor Bible (1991–2001) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "11:24–40",
+              "note": "Milgrom: The carcass-defilement laws reveal an important principle: death generates impurity even in clean animals. The distinction is not clean vs. unclean animal as such, but life-force vs. death-force. Clean animals can be eaten when slaughtered; their carcasses (death-state) still defile. This supports Milgrom's thesis that the purity system fundamentally maps the life-death polarity onto the clean-unclean binary."
+            },
+            {
+              "ref": "11:24",
+              "note": "Milgrom: The ritual prescriptions for clean and unclean animals reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Aaron↗ People",
+        "role": "First high priest of Israel",
+        "text": "Aaron, Moses’s brother, is consecrated as Israel’s first high priest in Lev 8–9. He bears the names of the twelve tribes on his breastplate before God and enters the Most Holy Place once a year on Yom Kippur (Lev 16). His failures — the golden calf (Exod 32), challenging Moses’s authority (Num 12), complicity at Meribah (Num 20) — make him the paradigm of the imperfect priest who prefigures a better high priest (Heb 7:26–28)."
+      },
+      {
+        "name": "Moses↗ People",
+        "role": "Prophet, lawgiver, and covenant mediator",
+        "text": "Moses stands at the centre of the Pentateuch’s narrative — the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him \"faithful in all God’s house\" (Heb 3:5) while distinguishing him from Christ, the Son over the house."
+      },
+      {
+        "name": "Nadab↗ People",
+        "role": "Aaron’s eldest son; died offering unauthorized fire",
+        "text": "Nadab son of Aaron is ordained alongside his father in Lev 8–9, ascending to the summit of Israel’s priestly hierarchy. In Lev 10:1–2 he and his brother Abihu offer \"unauthorized fire\" before the Lord — fire that God had not commanded — and are consumed by divine fire. Aaron’s silence at their death (Lev 10:3) is one of the Torah’s most austere moments. They become the paradigm of presumptuous worship throughout the OT."
+      },
+      {
+        "name": "Abihu↗ People",
+        "role": "Aaron’s second son; died alongside Nadab",
+        "text": "Abihu son of Aaron is ordained with his father and brothers in Lev 8–9 and dies with Nadab in Lev 10 offering unauthorized fire. The incident immediately follows the inaugural divine fire accepting the tabernacle’s first official sacrifice — making the contrast between authorized and unauthorized fire as stark as possible. His death, with Nadab’s, establishes the seriousness of the priestly vocation: proximity to God is privilege and peril simultaneously."
+      },
+      {
+        "name": "Eleazar↗ People",
+        "role": "Aaron’s son; second high priest of Israel",
+        "text": "Eleazar son of Aaron inherits his father’s high-priestly office on Mount Hor (Num 20:28) — the vestment-transfer ceremony that occurs in Aaron’s presence before his death is the Torah’s most solemn succession. Eleazar serves alongside Joshua to administer the land distribution (Num 34:17) and appears throughout the late Numbers narrative as the priestly counterpart to Joshua’s civil authority. His lineage produces Phinehas and eventually Zadok."
+      },
+      {
+        "name": "Ithamar↗ People",
+        "role": "Aaron’s youngest surviving son; coordinates Levitical clans",
+        "text": "Ithamar son of Aaron survives the deaths of Nadab and Abihu to become one of Aaron’s two surviving sons alongside Eleazar. He coordinates the Gershonite and Merarite transport duties (Num 4:28, 33) and receives a significant role in the tabernacle administration. In Lev 10:16–20 Moses initially rebukes him for not eating the sin offering, accepting his explanation."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>“ ‘Of all the creatures living in the water of the seas and the streams you may eat any that have fins and scales.</td></tr><tr><td class=\"t-label\">ESV</td><td>“These you may eat, of all that are in the waters. Everything in the waters that has fins and scales, whether in the seas or in the rivers, you may eat.</td></tr><tr><td class=\"t-label\">NIV</td><td>“Say to the Israelites: ‘Of all the animals that live on land, these are the ones you may eat:</td></tr><tr><td class=\"t-label\">ESV</td><td>“Speak to the people of Israel, saying, These are the living things that you may eat among all the animals that are on the earth.</td></tr>",
+    "src": [
+      {
+        "title": "Ugaritic Sacrifice Texts (KTU 1.40)",
+        "quote": "Ritual texts from Ugarit describe burnt, peace, and purification offerings with comparable priestly procedures and gradations.",
+        "note": "Demonstrates that Israel’s sacrificial vocabulary was shared with the wider ancient Near East, while the theological rationale — holiness, atonement, covenant — was distinctively Israelite."
+      },
+      {
+        "title": "Hittite Ritual Texts",
+        "quote": "Hittite purification rituals describe graduated offerings for different levels of transgression, paralleling the Levitical sin-offering gradations of Lev 4–5.",
+        "note": "The structural parallels illuminate the Levitical system’s ANE context while highlighting Israel’s distinctive theology of intentionality and priestly atonement."
+      },
+      {
+        "title": "Philo of Alexandria, De Specialibus Legibus (1st c. AD)",
+        "quote": "Philo’s allegorical commentary interprets each offering as symbolic of the soul’s approach to God — the burnt offering as total consecration of the rational soul.",
+        "note": "Influential on early Christian interpretation; Origen and Clement drew heavily on Philo’s allegorical reading of the Levitical laws."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Origen, Homilies on Leviticus (c.240 AD)",
+        "text": "\"Origen’s homilies on Leviticus are among the most extensive patristic readings of the book, interpreting the sacrificial system allegorically as prefiguring Christ’s work.\""
+      },
+      {
+        "who": "John MacArthur",
+        "text": "\"MacArthur: The two-part requirement for clean land animals — split hooves AND chews the cud — means no one characteristic is sufficient. The pig (split hoof, no cud) and the camel (chews cud, no split…\""
+      },
+      {
+        "who": "Jacob Milgrom",
+        "text": "\"Milgrom: The dietary laws encode a theology of creation order. Clean animals are those fully adapted to their ecological niche — defined by their primary mode of locomotion and environment. Animals th…\""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–23 — Land Animals, Sea Creatures, and Birds",
+          "text": "The food laws of Lev 11 are not primarily about hygiene (though some unclean animals do carry pathogens) but about bound…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 24–47 — Carcass Defilement; Summary: Holy to the Lord",
+          "text": "The chapter's second half (vv.24–47) addresses carcass-defilement — touching the carcass of any unclean animal, or even…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "ṭāhôr / ṭāmēʾ",
+        "tlit": "tahor / tame",
+        "gloss": "clean / unclean",
+        "note": "The fundamental binary of Levitical purity. These are ritual-status categories, not moral ones — an unclean animal is not sinful; it simply cannot be eaten or its carcass touched without incurring ritual impurity. The clean/unclean distinction structures Israel's interface with the created world."
+      },
+      {
+        "word": "šereṣ",
+        "tlit": "sherets",
+        "gloss": "swarming things / teeming creatures",
+        "note": "The lowest category of creatures — those that swarm on the earth (land and water). They generate the highest level of impurity: contact defiles immediately. The category maps roughly to creatures associated with death and decay."
+      },
+      {
+        "word": "nĕbēlāh",
+        "tlit": "nevelah",
+        "gloss": "carcass / dead body of an animal",
+        "note": "An animal that died naturally or was killed by another animal — not slaughtered by the prescribed method. Contact with a carcass generates impurity until evening even for clean animals. Death itself carries a kind of impurity in Leviticus."
+      },
+      {
+        "word": "wĕhithqaddištěm",
+        "tlit": "wehithqadishshem",
+        "gloss": "consecrate yourselves / make yourselves holy",
+        "note": "Hithpael reflexive of qādaš — to make oneself holy. The food laws are not merely prohibitions but positive acts of self-consecration. Every compliant meal is a minor liturgical act."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Clean and Unclean Animals",
+        "target": "Acts 10:9–16",
+        "type": "Fulfilment",
+        "text": "Peter's vision — the sheet lowered from heaven, the voice: \"Do not call anything impure that God has made clean.\" The food laws are declared fulfilled in Christ; the barrier between clean and unclean Jew and Gentile is dismantled.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Clean and Unclean Animals",
+        "target": "Mark 7:18–19",
+        "type": "Connection",
+        "text": "\"Don't you see that nothing that enters a person from the outside can defile them?… In saying this, Jesus declared all foods clean.\" The food laws served their pedagogical purpose; their dissolution signals the arrival of the new covenant.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Clean and Unclean Animals",
+        "target": "Col 2:16–17",
+        "type": "Connection",
+        "text": "\"Do not let anyone judge you by what you eat or drink… These are a shadow of the things that were to come; the reality, however, is found in Christ.\"",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Clean and Unclean Animals",
+        "target": "Heb 9:14",
+        "type": "Connection",
+        "text": "\"How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\" The NT's language of purification from \"dead works\" draws directly on Levitical …",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Clean and Unclean Animals",
+        "target": "1 Pet 1:15–16",
+        "type": "Fulfilment",
+        "text": "\"Just as he who called you is holy, so be holy in all you do; for it is written: 'Be holy, because I am holy.'\" Peter quotes Lev 11:44–45 as a living NT imperative. The theological core of the dietary laws survives their abrogation.",
+        "direction": "backward"
+      }
+    ],
+    "tx": [
+      {
+        "ref": "Lev 11:1",
+        "title": "LXX rendering of the divine speech formula",
+        "content": "MTwayyiqraʾ(\"and he called\") —LXXkai eklēsenclosely follows MT. The LXX Leviticus is generally a close translation with stylistic smoothing.",
+        "note": "The LXX Leviticus rarely reflects a divergent Hebrew Vorlage; most variants are stylistic. The Qumran Leviticus scrolls (4QLevᵃᵇ) largely confirm the MT tradition."
+      },
+      {
+        "ref": "Lev 11 (general)",
+        "title": "Samaritan Pentateuch variants",
+        "content": "MTis the primary witness;SP(Samaritan Pentateuch) occasionally harmonises with Exodus parallels and preserves some archaic forms absent from MT.",
+        "note": "For Leviticus, the SP variants are minor. The most significant differences involve the location of worship — Gerizim vs Jerusalem — which affects passages relating to the chosen place of sacrifice."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Source and Date of Clean and Unclean Animals",
+        "positions": [
+          {
+            "name": "Documentary hypothesis (Wellhausen, Noth)",
+            "proponents": "Assigns Clean and Unclean Animals to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
+            "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription."
+          },
+          {
+            "name": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
+            "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Clean and Unclean Animals.",
+            "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Clean and Unclean Animals: The Theology of Distinction"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Aaron",
+        "Moses",
+        "Nadab",
+        "Abihu",
+        "Eleazar",
+        "Ithamar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "evening",
+        "year",
+        "years",
+        "month",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "holy",
+        "holiness",
+        "atonement",
+        "offering",
+        "blood",
+        "clean",
+        "unclean",
+        "priest",
+        "sacrifice",
+        "burnt offering",
+        "sin offering",
+        "guilt offering",
+        "fellowship offering",
+        "grain offering",
+        "tabernacle",
+        "tent of meeting"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

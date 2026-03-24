@@ -1,0 +1,287 @@
+{
+  "chapter_id": "1ch14",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 14,
+  "title": "1 Chronicles 14",
+  "subtitle": "David Established — Philistines Defeated",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–7 — Hiram’s Recognition; David’s Family in Jerusalem",
+      "verse_start": 1,
+      "verse_end": 7,
+      "panels": {
+        "ctx": "Between the two ark episodes, the Chronicler places David’s international recognition. Hiram of Tyre sends materials and craftsmen for David’s palace. David takes more wives in Jerusalem and has more sons and daughters. “David knew that the LORD had established him as king over Israel and that his kingdom had been highly exalted for the sake of his people Israel.” The phrase “for the sake of his people” is the Chronicler’s distinctive addition: kingship exists to serve the nation, not the king.",
+        "cross": [
+          {
+            "ref": "2 Sam 5:11–16",
+            "note": "The parallel is close, but the Chronicler adds the theological note about David’s kingdom being “for the sake of his people.”"
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "14:2",
+              "note": "David’s recognition that his kingdom was “for the sake of his people” teaches every leader that authority is stewardship. Power exists for service; the moment it serves itself, it has betrayed its purpose."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "14:2",
+              "note": "The phrase lĕmaʿan ʿammō yisrāʾēl (“for the sake of his people Israel”) is characteristic of the Chronicler’s theology. The king is God’s instrument for Israel’s benefit."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 8–17 — Two Philistine Defeats; David’s Fame Spreads",
+      "verse_start": 8,
+      "verse_end": 17,
+      "panels": {
+        "ctx": "Two Philistine attacks are repelled through divine guidance. David “inquires of God” before each battle (the verb darash again). The first victory at Baal Perazim: “God has broken out against my enemies.” The second: God tells David to circle behind and attack when he hears marching in the balsam trees. Both victories demonstrate the Chronicler’s pattern: inquire of God → obey instructions → receive victory. “So David’s fame spread throughout every land, and the LORD made all the nations fear him.”",
+        "cross": [
+          {
+            "ref": "2 Sam 5:17–25",
+            "note": "The Samuel parallel. The Chronicler follows it closely, emphasising the inquiry pattern."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "14:14",
+              "note": "The sound of marching in the treetops teaches that God’s army is invisible but real. David was commanded to wait for the signal of the heavenly host before engaging. Faith waits for God’s timing."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "14:12",
+              "note": "Samuel says David “carried away” (nasaʾ) the Philistine gods; the Chronicler says he “ordered them burned” (yisraphû). The change aligns David’s action with the Deuteronomic command to destroy idols (Deut 7:5)."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "“David knew that the LORD had established him as king over Israel and that his kingdom had been highly exalted for the sake of his people Israel…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "Between the two ark episodes, the Chronicler places David’s international recognition…"
+      },
+      {
+        "name": "Hiram",
+        "role": "Key biblical figure",
+        "text": "Hiram of Tyre sends materials and craftsmen for David’s palace…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "David “inquires of God” before each battle (the verb darash again)…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "“David knew that the LORD had established him as king over Israel and that his kingdom had been highly exalted for the sake of his people Israel…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Now the Philistines had come and raided the Valley of Rephaim;</td></tr><tr><td class=\"t-label\">ESV</td><td>Now the Philistines had come and made a raid in the Valley of Rephaim.</td></tr><tr><td class=\"t-label\">NIV</td><td>These are the names of the children born to him there: Shammua, Shobab, Nathan, Solomon,</td></tr><tr><td class=\"t-label\">ESV</td><td>These are the names of the children born to him in Jerusalem: Shammua, Shobab, Nathan, Solomon,</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–7 — Hiram’s Recognition; David’s Family in Jerusalem",
+          "text": "Between the two ark episodes, the Chronicler places David’s international recognition. Hiram of Tyre sends materials and…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 8–17 — Two Philistine Defeats; David’s Fame Spreads",
+          "text": "Two Philistine attacks are repelled through divine guidance. David “inquires of God” before each battle (the verb darash…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "David Established — Philistines Defeated",
+        "target": "2 Sam 5:11–16",
+        "type": "Echo",
+        "text": "The parallel is close, but the Chronicler adds the theological note about David’s kingdom being “for the sake of his people.”",
+        "direction": "backward"
+      },
+      {
+        "anchor": "David Established — Philistines Defeated",
+        "target": "2 Sam 5:17–25",
+        "type": "Echo",
+        "text": "The Samuel parallel. The Chronicler follows it closely, emphasising the inquiry pattern.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "David Established — Philistines Defeated"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

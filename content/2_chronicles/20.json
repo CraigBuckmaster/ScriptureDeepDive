@@ -1,0 +1,256 @@
+{
+  "chapter_id": "2ch20",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 20,
+  "title": "2 Chronicles 20",
+  "subtitle": "The Battle Won by Worship",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐13 — Moabites and Ammonites Attack; Jehoshaphat Prays",
+      "verse_start": 1,
+      "verse_end": 13,
+      "panels": {
+        "ctx": "A vast army from Moab, Ammon, and Mount Seir invades. Jehoshaphat is alarmed and “resolved to inquire of the LORD.” He proclaims a national fast. His prayer in the temple is one of the great prayers of Chronicles: “We have no power to face this vast army. We do not know what to do, but our eyes are on you.” All Judah stands before the LORD, with their wives, children, and little ones.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:(1, '')",
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:(1, '')",
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 14‐37 — “The Battle Is God’s”; Singers Lead the Army",
+      "verse_start": 14,
+      "verse_end": 37,
+      "panels": {
+        "ctx": "The Spirit comes on Jahaziel the Levite: “Do not be afraid. The battle is not yours but God’s. You will not have to fight.” Jehoshaphat appoints singers to march ahead of the army: “Give thanks to the LORD, for his love endures forever.” As they sing, the LORD sets ambushes among the enemies, who destroy each other. Judah arrives to find only corpses and plunder. They spend three days collecting it. The Valley of Berakah (“blessing”) is named. The Chronicler’s most spectacular illustration of the worship-wins-battles principle.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:(14, '')",
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:(14, '')",
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Jehoshaphat",
+        "role": "Key biblical figure",
+        "text": "Jehoshaphat is alarmed and “resolved to inquire of the LORD…"
+      },
+      {
+        "name": "Ahaz",
+        "role": "Key biblical figure",
+        "text": "Ahaz is a key figure in The Battle Won by Worship."
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "God is a key figure in The Battle Won by Worship."
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Jehoshaphat is alarmed and “resolved to inquire of the LORD…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Then Jehoshaphat stood up in the assembly of Judah and Jerusalem at the temple of the Lord in the front of the new courtyard</td></tr><tr><td class=\"t-label\">ESV</td><td>And Jehoshaphat stood in the assembly of Judah and Jerusalem, in the house of the LORD, before the new court,</td></tr><tr><td class=\"t-label\">NIV</td><td>The people of Judah came together to seek help from the Lord; indeed, they came from every town in Judah to seek him.</td></tr><tr><td class=\"t-label\">ESV</td><td>And Judah assembled to seek help from the LORD; from all the cities of Judah they came to seek the LORD.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐13 — Moabites and Ammonites Attack; Jehoshaphat Pra —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 14‐37 — “The Battle Is God’s”; Singers Lead the Army —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "The Battle Won by Worship"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}
