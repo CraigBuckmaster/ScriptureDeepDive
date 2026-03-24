@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-24 — Ezekiel in progress (28/48). Next batch: chapters 29-35.
+> **Last updated:** 2026-03-24 — Ezekiel in progress (35/48). Next batch: chapters 36-42.
 
 ---
 
@@ -43,7 +43,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 Current wave order (from MASTER_PLAN.md):
 ```
-WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 28/48, next: 29-35)
+WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 35/48, next: 36-42)
 WAVE 4 (Minor Prophets): Jonah, Amos, Hosea, Micah, Habakkuk, Joel, Obadiah, Nahum, Zephaniah, Haggai, Zechariah, Malachi
 WAVE 5 (NT Epistles): Romans (DONE), 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians
 WAVE 6 (NT Epistles continued): 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, Hebrews, James, 1-2 Peter, 1-3 John, Jude
@@ -55,6 +55,23 @@ Enrichment debt (address before new books if specified):
 Isaiah 23-66: needs enrichment (44 chapters)
 Kings/Chronicles: needs MacArthur notes (112 chapters)
 ```
+
+---
+
+### CONTENT WRITING STANDARDS
+
+**This is a scholarly tool. All generated content must be written in an expository, academic register.** Specifically:
+
+- **Tone:** Scholarly and expository. No casual language, no devotional tone. Write as if for a seminary-level reference tool.
+- **Accuracy:** All dates, historical details, family relationships, and geographical references should be as accurate as possible based on current biblical scholarship.
+- **Scholar notes:** MacArthur, Calvin, Block, Zimmerli, NET Bible, and all other scholar-attributed panels are **AI-generated commentary written in each scholar's interpretive tradition and theological framework**. They are NOT direct quotations from published works. They should faithfully represent each scholar's known hermeneutical approach (e.g., MacArthur = conservative/dispensational, Zimmerli = form-critical/Hermeneia, Calvin = Reformed, Block = evangelical/NAC, NET Bible = text-critical/translational).
+- **Hebrew/Greek:** Transliterations, vowel pointing, glosses, and etymologies should follow standard lexical conventions (BDB, HALOT for Hebrew; BDAG for Greek).
+- **Cross-references:** Must cite real passages that genuinely support the interpretive connection claimed.
+- **NIV verse text:** Word-for-word NIV. No paraphrasing, no summarizing, no skipping verses within a section.
+
+**All generated content is flagged for later accuracy verification via the audit flag system (see STEP 6a).** Generate now, audit later — but write with scholarly integrity from the start.
+
+---
 
 ### KNOWN ISSUES / LESSONS LEARNED
 
@@ -112,7 +129,6 @@ else:
 with open('_tools/MASTER_PLAN.md') as f:
     mp = f.read()
 print("\n--- MASTER_PLAN wave info ---")
-# Print first 2000 chars of Build Waves section
 idx = mp.find('## Build Waves')
 if idx > 0:
     print(mp[idx:idx+2000])
@@ -146,6 +162,15 @@ for b in remaining[:10]:
     print(f"  {b}")
 if len(remaining) > 10:
     print(f"  ... and {len(remaining)-10} more")
+
+# 5. Audit flag status
+audit_file = Path('content/meta/audit-flags.json')
+if audit_file.exists():
+    adata = json.load(open(audit_file))
+    flags = adata.get('flags', [])
+    pending = sum(1 for f in flags if f.get('status','pending') == 'pending')
+    verified = sum(1 for f in flags if f.get('status') == 'verified')
+    print(f"\n--- Audit flags: {len(flags)} total, {pending} pending, {verified} verified ---")
 DISCOVER
 ```
 
@@ -164,20 +189,16 @@ Read `_tools/BUILD_PLAN.md` Phase 2 for the full checklist. For each new book:
 BOOK_META['book_name'] = {
     'is_nt': False,  # True for NT books
     'auth': 'Author attribution text for Authorship panel',
-    'vhl_places': ['Jerusalem', 'Babylon', ...],  # VHL place words for this book
-    'vhl_people': ['Moses', 'David', ...],         # VHL people words
-    'vhl_key': ['covenant', 'judgment', ...],       # VHL key term words
-    'vhl_time': ['in those days', 'then', ...],     # VHL time words
+    'vhl_places': ['Jerusalem', 'Babylon', ...],
+    'vhl_people': ['Moses', 'David', ...],
+    'vhl_key': ['covenant', 'judgment', ...],
+    'vhl_time': ['in those days', 'then', ...],
 }
 
 # Add to COMMENTATOR_SCOPE (extend existing or add new):
-# For universal scholars (macarthur, calvin, netbible): already scope='all'
-# For book-specific scholars, add the book to their list:
 COMMENTATOR_SCOPE['new_scholar'] = ['book_name']
-# Or extend: COMMENTATOR_SCOPE['existing_scholar'].append('book_name')
 
 # Add to SCHOLAR_REGISTRY (for NEW scholars only):
-# ('panel_key', 'scholar_key', 'Display Label', 'css_suffix')
 SCHOLAR_REGISTRY.append(('lundbom', 'lundbom', 'Lundbom', 'lundbom'))
 ```
 
@@ -193,11 +214,9 @@ In `app/src/utils/panelLabels.ts`, add to `SCHOLAR_LABELS`:
 lundbom: 'Lundbom',
 ```
 
-**2c. Add scholar bio to `content/meta/scholar-data.json`** (or will be auto-generated from config).
-
-**2d. Add people entries to `content/meta/people.json`** for key figures in the new book.
-
-**2e. Add timeline events to `content/meta/timelines.json`** for key events in the new book.
+**2c.** Add scholar bio to `content/meta/scholar-data.json`.
+**2d.** Add people entries to `content/meta/people.json`.
+**2e.** Add timeline events to `content/meta/timelines.json`.
 
 ---
 
@@ -205,15 +224,14 @@ lundbom: 'Lundbom',
 
 Before writing ANY chapter content, plan ALL chapters for this batch:
 
-For each chapter in the batch, determine:
-1. **Section breakdown** — which verse groups form natural sections (typically 2-5 sections per chapter)
+1. **Section breakdown** — verse groups forming natural sections (typically 2-5 per chapter)
 2. **Section headers** — descriptive headers like `Verses 1–10 — "Before I Formed You in the Womb"`
-3. **Key Hebrew/Greek words** — at least 1-2 per section with transliteration + meaning + theological significance
-4. **Historical context** — at least 1 context paragraph per chapter
-5. **Cross-references** — at least 2 per section, mixing OT/NT connections
-6. **Scholar notes** — MacArthur (always), Calvin (always), NET Bible (always), plus book-specific scholars
-7. **Literary structure** — the `lit` rows showing the chapter's structural outline
-8. **Theological themes** — the 10-score radar chart (Covenant, Judgment, Mercy, Faith, Sovereignty, Worship, Holiness, Prophecy, Justice, Mission)
+3. **Key Hebrew/Greek words** — at least 1-2 per section
+4. **Historical context** — at least 1 paragraph per chapter
+5. **Cross-references** — at least 2 per section, mixing OT/NT
+6. **Scholar notes** — MacArthur, Calvin, NET Bible (always) + book-specific scholars
+7. **Literary structure** — `lit` rows
+8. **Theological themes** — 10-score radar chart
 
 **Write the plan as a comment before generating.** This prevents mid-batch refactors.
 
@@ -221,110 +239,45 @@ For each chapter in the batch, determine:
 
 ### STEP 4: GENERATE CHAPTERS
 
-Use the generator template format. Each chapter generator script:
-
-```bash
-# Copy template
-cp _tools/GENERATOR_TEMPLATE.py /tmp/gen_{book}_{start}_{end}.py
-```
-
-Edit the script with the scholarly content. Key format rules:
+Key format rules for the generator script:
 
 ```python
 from shared import save_chapter, verse_range
-BOOK = 'jeremiah'  # book directory name
+BOOK = 'ezekiel'
 
 save_chapter(BOOK, 1, {
-    'title': 'The Call of Jeremiah',
+    'title': 'Chapter Title',
     'sections': [
         {
-            'header': 'Verses 1–10 — "Before I Formed You in the Womb"',
+            'header': 'Verses 1–10 — "Section Title"',
             'verses': verse_range(1, 10),
-            
-            # Hebrew/Greek word studies (MINIMUM 1-2 per section)
             'heb': [
-                ('דְּבַר־יְהוָה', 'dĕvar-YHWH', 'the word of the LORD',
-                 'Theological paragraph about this word...'),
+                ('Hebrew', 'transliteration', 'gloss', 'Theological paragraph...'),
             ],
-            
-            # Historical/literary context (at least 1 per chapter)
-            'ctx': 'Context paragraph explaining the historical setting...',
-            
-            # Cross-references (MINIMUM 2 per section, mix OT/NT)
+            'ctx': 'Context paragraph...',
             'cross': [
-                ('Isa 6:1-8', 'Isaiah\'s call parallels Jeremiah\'s...'),
-                ('Gal 1:15', 'Paul echoes Jeremiah\'s prenatal calling...'),
+                ('Ref', 'Connection explanation...'),
             ],
-            
-            # MacArthur notes (MINIMUM 4-5 per panel, ALWAYS PRESENT)
-            'mac': [
-                ('1:1', 'Note about this verse...'),
-                ('1:4-5', 'Note about these verses...'),
-                ('1:9', 'Note about this verse...'),
-                ('1:10', 'Note about this verse...'),
-            ],
-            
-            # Calvin notes (ALWAYS PRESENT for every section)
-            'calvin': [
-                ('1:5', 'Calvin\'s commentary on predestination and calling...'),
-                ('1:9', 'Calvin on the word of God touching the prophet...'),
-            ],
-            
-            # NET Bible notes (ALWAYS PRESENT)
-            'netbible': [
-                ('1:1', 'Translation note from NET Bible...'),
-                ('1:5', 'Textual note on Hebrew grammar...'),
-            ],
-            
-            # Book-specific scholars (from COMMENTATOR_SCOPE)
-            'lundbom': [
-                ('1:4-10', 'Lundbom\'s analysis of the call narrative...'),
-            ],
+            'mac': [('1:1', 'MacArthur note...')],      # MIN 4-5 per panel
+            'calvin': [('1:1', 'Calvin note...')],        # MIN 2 per section
+            'netbible': [('1:1', 'NET note...')],         # MIN 2 per section
+            'block': [('1:1-10', 'Block analysis...')],   # Book-specific
+            'zimmerli': [('1:1-5', 'Zimmerli note...')],  # Book-specific
         },
-        # ... more sections (MINIMUM 2 per chapter)
     ],
-    
-    # Literary structure (REQUIRED — MINIMUM 2 rows)
     'lit': (
-        [
-            ('vv.1-3', '1:1-3', 'Superscription', False),
-            ('vv.4-10', '1:4-10', 'The Call of Jeremiah', True),  # is_key=True for main section
-            ('vv.11-16', '1:11-16', 'Two Visions', False),
-            ('vv.17-19', '1:17-19', 'Commission and Promise', False),
-        ],
-        'The chapter follows a classic prophetic call narrative pattern.'
+        [('vv.1-10', '1:1-10', 'Description', True)],
+        'Summary note.'
     ),
-    
-    # Theological themes radar (EXACTLY 10 scores, each 0-10)
     'themes': (
-        [
-            ('Covenant', 6), ('Judgment', 7), ('Mercy', 3),
-            ('Faith', 5), ('Sovereignty', 9), ('Worship', 4),
-            ('Holiness', 6), ('Prophecy', 3), ('Justice', 5), ('Mission', 8),
-        ],
-        'Sovereignty dominates as God declares his foreknowledge and authority over Jeremiah\'s calling.'
+        [('Covenant',6),('Judgment',7),('Mercy',3),('Faith',5),('Sovereignty',9),
+         ('Worship',4),('Holiness',6),('Prophecy',3),('Justice',5),('Mission',8)],
+        'Theme summary note.'
     ),
 })
 ```
 
-**Content quality rules:**
-- **VERSE TEXT STANDARD:** All verse text must be word-for-word NIV. No paraphrasing.
-- **Sections:** Minimum 2 per chapter
-- **Hebrew words:** At least 1-2 per section with transliteration + meaning + theological paragraph
-- **MacArthur notes:** Minimum 4-5 per panel, always present
-- **Calvin notes:** Always present, at least 2 per section
-- **NET Bible notes:** Always present, at least 2 per section
-- **Cross-references:** At least 2 per section, mixing OT and NT
-- **Context:** At least 1 paragraph per chapter
-- **Lit rows:** Minimum 2 per chapter
-- **Themes:** Exactly 10 scores (the 10 standard themes), each 0-10
-
-Run the generator:
-```bash
-python3 /tmp/gen_{book}_{start}_{end}.py
-```
-
-**IMPORTANT:** Always syntax-check before running:
+**Always syntax-check before running:**
 ```bash
 python3 -c "compile(open('/tmp/gen_{book}_{start}_{end}.py').read(), 'test', 'exec'); print('Syntax OK')"
 ```
@@ -333,67 +286,23 @@ python3 -c "compile(open('/tmp/gen_{book}_{start}_{end}.py').read(), 'test', 'ex
 
 ### STEP 5: ENRICH (for each new batch)
 
-After generating chapters, add enrichment data:
+**5a. People entries** — `content/meta/people.json` (uses camelCase: `spouseOf`, `scriptureRole`, `refs` as array). Set `father`/`mother` to `null` if parent not in database.
 
-**5a. People entries** — add any new biblical figures to `content/meta/people.json`:
-```json
-{
-    "id": "jeremiah",
-    "name": "Jeremiah",
-    "gender": "m",
-    "father": "hilkiah_priest",
-    "mother": null,
-    "spouse_of": null,
-    "era": "prophets",
-    "dates": "c. 650–570 BC",
-    "role": "Prophet to Judah during the fall of Jerusalem",
-    "type": "satellite",
-    "bio": "Full biographical paragraph...",
-    "scripture_role": "The 'weeping prophet' called before birth...",
-    "refs_json": "[\"Jer 1:5\", \"Jer 20:9\", \"Jer 31:31-34\"]",
-    "chapter_link": "ot/jeremiah/Jeremiah_1.html"
-}
-```
+**5b. Timeline events** — `content/meta/timelines.json` (uses `ref` string, `people` array, negative `year` for BC).
 
-**5b. Timeline events** — add to `content/meta/timelines.json`:
-```json
-{
-    "id": "evt_jeremiah_call",
-    "category": "event",
-    "era": "prophets",
-    "name": "Call of Jeremiah",
-    "year": -627,
-    "scripture_ref": "Jer 1:1-19",
-    "chapter_link": "ot/jeremiah/Jeremiah_1.html",
-    "people_json": "[\"jeremiah\"]",
-    "summary": "God calls Jeremiah as prophet to the nations before he was born.",
-    "region": null
-}
-```
-
-**5c. Map places** — add any new places to `content/meta/places.json` (if the book mentions places not already in the 71-place database).
+**5c. Map places** — `content/meta/places.json` if needed.
 
 ---
 
 ### STEP 6: VALIDATE + BUILD + AUDIT + COMMIT
 
 ```bash
-# Validate content
 python3 _tools/validate.py
-
-# Build SQLite database
 python3 _tools/build_sqlite.py
-
-# Validate database
 python3 _tools/validate_sqlite.py
-
-# Clean up generator script
 rm /tmp/gen_*.py
-
-# Generate audit flags (incremental for this book)
 python3 _tools/audit_flags.py {BOOK}
 
-# Commit (include audit-flags.json)
 git add content/ _tools/ scripture.db
 git commit -m "Add {BOOK} chapters {START}-{END}
 
@@ -409,22 +318,58 @@ git push origin master
 
 ---
 
+### STEP 6a: AUDIT FLAG SYSTEM
+
+All generated content is automatically flagged for later accuracy verification. **Generate now, audit later.**
+
+**Three tools:**
+
+1. **`_tools/audit_flags.py`** — Scanner → `content/meta/audit-flags.json`
+   ```bash
+   python3 _tools/audit_flags.py              # Full scan
+   python3 _tools/audit_flags.py ezekiel      # Single book
+   python3 _tools/audit_flags.py ezekiel 29 35 # Range
+   ```
+
+2. **`_tools/audit_verify.py`** — Verification workflow CLI
+   ```bash
+   python3 _tools/audit_verify.py stats                              # Progress
+   python3 _tools/audit_verify.py batch --count 20 --category date   # Next batch
+   python3 _tools/audit_verify.py dedup --category date              # Unique claims
+   python3 _tools/audit_verify.py record <id> verified 5 "note" "sources"
+   python3 _tools/audit_verify.py bulk_record /tmp/results.json      # Batch + cascade
+   ```
+
+3. **`_tools/audit-review-ui.html`** — Standalone HTML review UI
+   - Drop `audit-flags.json`, filter/review/accept/deny/export
+
+**Categories:** `date`, `hebrew`, `greek`, `scholar_position`, `historical`, `family`, `cross_ref`
+
+**Confidence (0-5):** 5=certain, 4=high, 3=moderate (default for AI content), 2=low, 1=very low, 0=error
+
+**Priority:** date → hebrew → greek → family → cross_ref → historical → scholar_position
+
+**Cascade:** Verifying one date/hebrew/greek claim auto-applies to all identical instances.
+
+**Current state:** ~31,500 flags, ~27 verified. `scholar_position` (18,367) is the long tail.
+
+**Per-session:** Run `audit_flags.py {BOOK}` after each batch. Include `audit-flags.json` in commit.
+
+---
+
 ### STEP 7: BATCH SIZE GUIDANCE
 
-- **New book first batch:** 5-7 chapters (establish patterns)
-- **Subsequent batches:** 7-10 chapters (faster once patterns established)
-- **Short books (< 10 chapters):** Do the whole book in one batch
-- **Long books (50+ chapters):** Plan 6-8 batches of 7-8 chapters each
-- **Enrichment-only batches:** Can do 15-20 chapters of enrichment per session
+- **New book first batch:** 5-7 chapters
+- **Subsequent batches:** 7-10 chapters
+- **Short books (< 10 chapters):** Whole book in one batch
+- **Long books (50+ chapters):** 6-8 batches of 7-8 chapters
+- **Enrichment-only:** 15-20 chapters per session
 
-**Typical session output:** 5-10 chapters depending on complexity.
-**Multi-batch sessions:** Can do 2-3 batches of 8 chapters per session for established books (16-24 chapters). Start a fresh session after that to avoid context window pressure.
+Start a fresh session after 2-3 batches to avoid context window pressure.
 
 ---
 
 ### STEP 8: SESSION SUMMARY
-
-At the end of each session, print:
 
 ```
 ═══════════════════════════════════════════════════════════════
@@ -458,16 +403,15 @@ Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24),
 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36),
 Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31),
 Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52),
-Lamentations(5), **Ezekiel(28/48)**, Daniel(12),
+Lamentations(5), **Ezekiel(35/48)**, Daniel(12),
 Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 959 chapters across 32 books. 34 books remaining (230 chapters).**
+**Total: 966 chapters across 32 books. 34 books remaining (~223 chapters).**
 
-**REGISTRY note:** Jeremiah (52/52) and Ezekiel (28/48) are now registered in REGISTRY + BOOK_PREFIX in shared.py.
+**REGISTRY note:** Ezekiel (48, 35) and Jeremiah (52, 52) registered in shared.py.
 
 ### REFERENCE: The 10 Standard Theological Themes
 
-Every chapter gets a 10-score radar chart with these exact themes:
 1. **Covenant** — God's covenant promises and faithfulness
 2. **Judgment** — divine judgment, consequences, warnings
 3. **Mercy** — divine compassion, grace, forgiveness, restoration
@@ -481,15 +425,16 @@ Every chapter gets a 10-score radar chart with these exact themes:
 
 ### REFERENCE: Ezekiel Progress (Current Book)
 
-- **48 chapters total** — 28 done, 20 remaining (~3 more batches of 7)
+- **48 chapters total** — 35 done, 13 remaining (~2 more batches)
 - **Chapters 1-21 COMPLETE:** Throne vision, call, watchman, sign-acts, temple abominations, glory departing, sign-acts of exile, false prophets, idolatrous elders, useless vine, unfaithful wife, two eagles, individual responsibility, lament for princes, rebellion history, sword unsheathed
-- **Chapters 22-28 COMPLETE:** Bloody city (indictment + smelting furnace + no intercessor), Oholah/Oholibah (two sisters allegory), boiling pot + wife's death (hinge chapter — prophetic silence begins), oracles against Ammon/Moab/Edom/Philistia (compass-point structure), oracle against Tyre (Nebuchadnezzar's siege + descent to pit), lament for Tyre (ship metaphor + shipwreck), king of Tyre (Eden/fall tradition + Sidon + restoration promise)
-- **Infrastructure DONE:** BOOK_META, Zimmerli (new scholar), Block scope extended, colors, labels, scholar-data all configured — skip Step 2
-- **REGISTRY:** Ezekiel (48, 28) and Jeremiah (52, 52) now registered in shared.py REGISTRY + BOOK_PREFIX
+- **Chapters 22-28 COMPLETE:** Bloody city, Oholah/Oholibah, boiling pot + wife's death (prophetic silence begins), oracles against Ammon/Moab/Edom/Philistia, oracle against Tyre, lament for Tyre (ship metaphor), king of Tyre (Eden/fall + Sidon + restoration)
+- **Chapters 29-35 COMPLETE:** Egypt oracles (Pharaoh as tannin 29, Day of LORD + broken arms 30, great cedar/Assyria 31, lament + descent to Sheol 32), watchman renewed (33 — structural hinge, fugitive arrives, mouth opened), shepherds of Israel (34 — YHWH as shepherd, servant David, covenant of peace), oracle against Mount Seir (35 — Edom)
+- **Infrastructure DONE:** BOOK_META, Zimmerli, Block, colors, labels, scholar-data — skip Step 2
+- **REGISTRY:** Ezekiel (48, 35) in shared.py
 - **Scholars:** MacArthur, Calvin, NET Bible, Block (NAC), Zimmerli (Hermeneia)
-- **Next batch (29-35):** Egypt oracles (Pharaoh as sea monster 29, broken arm 30, great cedar 31, lament for Pharaoh 32), watchman renewed (33 — structural hinge, mouth opened), shepherds of Israel (34 — bad shepherds vs. God as shepherd, John 10 background), oracle against Mount Seir (35 — Edom revisited)
-- **Then:** 36-42 (new heart, dry bones, Gog/Magog, temple vision begins), 43-48 (temple vision completes)
+- **Next batch (36-42):** Mountains of Israel restored (36, new heart/spirit), valley of dry bones + two sticks (37), Gog of Magog (38-39), temple vision begins (40-42)
+- **Final batch (43-48):** Glory returns (43), temple regulations (44-46), river of life (47), land allotment (48)
 - **Setting:** Babylonian exile, by the Kebar River, 593-571 BC
-- **Hebrew emphasis:** Priestly vocabulary (Ezekiel was a priest), glory (kabod) theology, recognition formula ("then they will know that I am the LORD" — appears 72x)
-- **People added so far:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz, Oholah, Oholibah, Hiram of Tyre (+ Ezekiel entry updated)
-- **Timeline events added so far:** 8 (call, sign-acts, temple abominations vision, glory departs, history review, siege of Jerusalem 588 BC, death of Ezekiel's wife, Tyre siege 585 BC)
+- **Hebrew emphasis:** Priestly vocabulary, glory (kabod) theology, recognition formula (72x)
+- **People added:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz, Oholah, Oholibah, Hiram of Tyre, Pharaoh Hophra (+ Ezekiel updated)
+- **Timeline events:** 11 total (call through fugitive report)
