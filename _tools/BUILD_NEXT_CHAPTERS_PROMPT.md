@@ -375,7 +375,7 @@ After generating chapters, add enrichment data:
 
 ---
 
-### STEP 6: VALIDATE + BUILD + COMMIT
+### STEP 6: VALIDATE + BUILD + AUDIT + COMMIT
 
 ```bash
 # Validate content
@@ -390,7 +390,10 @@ python3 _tools/validate_sqlite.py
 # Clean up generator script
 rm /tmp/gen_*.py
 
-# Commit
+# Generate audit flags (incremental for this book)
+python3 _tools/audit_flags.py {BOOK}
+
+# Commit (include audit-flags.json)
 git add content/ _tools/ scripture.db
 git commit -m "Add {BOOK} chapters {START}-{END}
 
@@ -398,7 +401,8 @@ git commit -m "Add {BOOK} chapters {START}-{END}
 Scholars: MacArthur, Calvin, NET Bible, {book-specific scholars}.
 {X} new people entries, {Y} new timeline events.
 Validated: validate.py {PASS} passed, 0 failed.
-SQLite: {SIZE}MB, validate_sqlite.py {CHECKS}/XX passed."
+SQLite: {SIZE}MB, validate_sqlite.py {CHECKS}/XX passed.
+Audit flags: {FLAG_COUNT} flags generated for {BOOK}."
 
 git push origin master
 ```
@@ -436,6 +440,7 @@ New people: {count}
 New timeline events: {count}
 Validation: {pass_count} passed, {fail_count} failed
 Database: {size}MB
+Audit flags: {flag_count} flags for this batch ({total_flags} total)
 
 Progress:
   {book_name}: {done}/{total} chapters ({percent}%)
