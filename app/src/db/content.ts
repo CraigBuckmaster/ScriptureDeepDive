@@ -317,8 +317,9 @@ export async function getContentStats(): Promise<ContentStats> {
 
 export async function searchVerses(query: string, limit: number = 50): Promise<Verse[]> {
   return getDb().getAllAsync<Verse>(
-    `SELECT v.* FROM verses_fts f
+    `SELECT v.*, b.name as book_name FROM verses_fts f
      JOIN verses v ON v.id = f.rowid
+     JOIN books b ON b.id = v.book_id
      WHERE f.text MATCH ?
      LIMIT ?`,
     [query, limit]

@@ -1,13 +1,25 @@
 /**
- * SettingsScreen — Translation, font size, VHL toggle, about, export.
+ * SettingsScreen — Translation, font size, VHL toggle, about, data management.
+ *
+ * Phase 4E fixes:
+ *   - Dynamic stats from getContentStats() (no hardcoded counts)
+ *   - Clear Reading History actually works (deletes + feedback)
+ *   - Version from expo Constants
  */
 
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Switch, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Switch, Alert, StyleSheet } from 'react-native';
+import { ArrowLeft } from 'lucide-react-native';
+import { useNavigation } from '@react-navigation/native';
 import { useSettingsStore } from '../stores';
-import { base, spacing, radii } from '../theme';
+import { getContentStats, type ContentStats } from '../db/content';
+import { getDb } from '../db/database';
+import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+
+const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
 export default function SettingsScreen() {
+  const navigation = useNavigation<any>();
   const translation = useSettingsStore((s) => s.translation);
   const fontSize = useSettingsStore((s) => s.fontSize);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
@@ -15,37 +27,65 @@ export default function SettingsScreen() {
   const setFontSize = useSettingsStore((s) => s.setFontSize);
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
 
-  const Row = ({ label, children }: { label: string; children: React.ReactNode }) => (
-    <View style={{
-      flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
-      paddingVertical: spacing.md, borderBottomWidth: 1, borderBottomColor: base.border + '40',
-    }}>
-      <Text style={{ color: base.text, fontFamily: 'SourceSans3_500Medium', fontSize: 14 }}>{label}</Text>
-      {children}
-    </View>
-  );
+  const [stats, setStats] = useState<ContentStats | null>(null);
+
+  useEffect(() => {
+    getContentStats().then(setStats);
+  }, []);
+
+  const handleClearHistory = () => {
+    Alert.alert(
+      'Clear History',
+      'This will clear all reading history and streak data. This cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Clear',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await getDb().runAsync('DELETE FROM reading_progress');
+              Alert.alert('Done', 'Reading history cleared.');
+            } catch {
+              Alert.alert('Error', 'Failed to clear history. Please try again.');
+            }
+          },
+        },
+      ]
+    );
+  };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-        <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, marginBottom: spacing.lg }}>
-          Settings
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
+        {/* Header with back button */}
+        <View style={styles.headerRow}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.backButton}
+            accessibilityLabel="Back"
+          >
+            <ArrowLeft size={20} color={base.gold} />
+          </TouchableOpacity>
+          <Text style={styles.title}>Settings</Text>
+        </View>
 
         {/* Translation */}
         <Row label="Default Translation">
-          <View style={{ flexDirection: 'row', backgroundColor: base.bgElevated, borderRadius: radii.pill, borderWidth: 1, borderColor: base.border }}>
+          <View style={styles.pillToggle}>
             {(['niv', 'esv'] as const).map((t) => (
               <TouchableOpacity
                 key={t}
                 onPress={() => setTranslation(t)}
-                style={{
-                  paddingHorizontal: 16, paddingVertical: 6,
-                  backgroundColor: translation === t ? base.gold + '30' : 'transparent',
-                  borderRadius: radii.pill,
-                }}
+                style={[
+                  styles.pillOption,
+                  translation === t && styles.pillOptionActive,
+                ]}
               >
-                <Text style={{ color: translation === t ? base.gold : base.textMuted, fontFamily: 'SourceSans3_600SemiBold', fontSize: 12 }}>
+                <Text style={[
+                  styles.pillLabel,
+                  translation === t && styles.pillLabelActive,
+                ]}>
                   {t.toUpperCase()}
                 </Text>
               </TouchableOpacity>
@@ -55,19 +95,25 @@ export default function SettingsScreen() {
 
         {/* Font Size */}
         <Row label={`Font Size: ${fontSize}pt`}>
-          <View style={{ flexDirection: 'row', gap: spacing.sm, alignItems: 'center' }}>
-            <TouchableOpacity onPress={() => setFontSize(fontSize - 1)} style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: base.bgElevated, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: base.border }}>
-              <Text style={{ color: base.gold, fontSize: 16 }}>−</Text>
+          <View style={styles.sizeControls}>
+            <TouchableOpacity
+              onPress={() => setFontSize(fontSize - 1)}
+              style={styles.sizeButton}
+            >
+              <Text style={styles.sizeButtonText}>−</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => setFontSize(fontSize + 1)} style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: base.bgElevated, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: base.border }}>
-              <Text style={{ color: base.gold, fontSize: 16 }}>+</Text>
+            <TouchableOpacity
+              onPress={() => setFontSize(fontSize + 1)}
+              style={styles.sizeButton}
+            >
+              <Text style={styles.sizeButtonText}>+</Text>
             </TouchableOpacity>
           </View>
         </Row>
 
         {/* Font preview */}
-        <View style={{ paddingVertical: spacing.sm }}>
-          <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize, lineHeight: fontSize * 1.6 }}>
+        <View style={styles.preview}>
+          <Text style={[styles.previewText, { fontSize, lineHeight: fontSize * 1.6 }]}>
             In the beginning God created the heavens and the earth.
           </Text>
         </View>
@@ -83,38 +129,157 @@ export default function SettingsScreen() {
         </Row>
 
         {/* About */}
-        <View style={{ marginTop: spacing.xl }}>
-          <Text style={{ color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
-            ABOUT
+        <View style={styles.section}>
+          <Text style={styles.sectionLabel}>ABOUT</Text>
+          <Text style={styles.aboutText}>
+            {stats
+              ? `Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions. ${stats.scholarCount} scholars across ${stats.liveBooks} books with ${stats.liveChapters} chapters of verse-by-verse analysis.`
+              : 'Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions.'
+            }
           </Text>
-          <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 22 }}>
-            Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical, reformed,
-            Jewish, critical, and patristic traditions. 43 scholars across 30 books with 879 chapters of
-            verse-by-verse analysis.
-          </Text>
-          <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 11, marginTop: spacing.md }}>
-            Version 1.0.0
-          </Text>
+          <Text style={styles.version}>Version {APP_VERSION}</Text>
         </View>
 
         {/* Data */}
-        <View style={{ marginTop: spacing.xl }}>
-          <Text style={{ color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
-            DATA
-          </Text>
-          <TouchableOpacity
-            onPress={() => Alert.alert('Clear History', 'This will clear all reading history. Continue?', [
-              { text: 'Cancel', style: 'cancel' },
-              { text: 'Clear', style: 'destructive', onPress: () => {} },
-            ])}
-            style={{ paddingVertical: spacing.sm }}
-          >
-            <Text style={{ color: '#e05a6a', fontFamily: 'SourceSans3_500Medium', fontSize: 14 }}>
-              Clear Reading History
-            </Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionLabel}>DATA</Text>
+          <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
+            <Text style={styles.dangerText}>Clear Reading History</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+
+// ── Row sub-component ────────────────────────────────────────────
+
+function Row({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <View style={styles.row}>
+      <Text style={styles.rowLabel}>{label}</Text>
+      {children}
+    </View>
+  );
+}
+
+// ── Styles ───────────────────────────────────────────────────────
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  content: {
+    padding: spacing.md,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    marginBottom: spacing.lg,
+  },
+  backButton: {
+    minWidth: MIN_TOUCH_TARGET,
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    color: base.gold,
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 22,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  rowLabel: {
+    color: base.text,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  pillToggle: {
+    flexDirection: 'row',
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: base.border,
+  },
+  pillOption: {
+    paddingHorizontal: 16,
+    paddingVertical: 6,
+    borderRadius: radii.pill,
+  },
+  pillOptionActive: {
+    backgroundColor: base.gold + '30',
+  },
+  pillLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+  pillLabelActive: {
+    color: base.gold,
+  },
+  sizeControls: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+    alignItems: 'center',
+  },
+  sizeButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: base.bgElevated,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: base.border,
+  },
+  sizeButtonText: {
+    color: base.gold,
+    fontSize: 16,
+  },
+  preview: {
+    paddingVertical: spacing.sm,
+  },
+  previewText: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+  },
+  section: {
+    marginTop: spacing.xl,
+  },
+  sectionLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+  },
+  aboutText: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 22,
+  },
+  version: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: spacing.md,
+  },
+  dangerRow: {
+    paddingVertical: spacing.sm,
+  },
+  dangerText: {
+    color: '#e05a6a',
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+});
