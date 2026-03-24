@@ -23,7 +23,12 @@ npx expo start
 
 A QR code appears in your terminal. Scan it with your iPhone camera → opens in Expo Go → app runs on your phone.
 
-**Tip:** Make sure your phone and computer are on the same WiFi network. If the QR code doesn't connect, try `npx expo start --tunnel` (installs `@expo/ngrok` on first run).
+**Tips:**
+- Make sure your phone and computer are on the same WiFi network
+- If the QR code doesn't connect, try `npx expo start --tunnel`
+- For web preview: `npx expo start --web` (opens in browser)
+- Uses Expo SDK 52 — compatible with current Expo Go from App Store
+- The `.npmrc` file auto-handles peer dependency resolution
 
 ## Building the Content Database
 
