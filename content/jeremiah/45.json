@@ -1,0 +1,268 @@
+{
+  "chapter_id": null,
+  "testament": null,
+  "book_dir": "jeremiah",
+  "chapter_num": 45,
+  "title": "Oracle to Baruch",
+  "subtitle": "",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1-5 -- \"Do You Seek Great Things for Yourself?\"",
+      "verse_start": 1,
+      "verse_end": 5,
+      "panels": {
+        "heb": [
+          {
+            "word": "גְּדֹלוֹת",
+            "transliteration": "gedolot",
+            "gloss": "great things",
+            "paragraph": "\"Do you seek great things (gedolot) for yourself? Do not seek them\" (v.5). The prohibition is not against ambition in general but against personal advancement when God is bringing \"disaster on all people.\" In a world under judgment, the appropriate ambition is survival, not greatness. Baruch's lament -- \"Woe to me! The LORD has added sorrow to my pain\" (v.3) -- echoes Jeremiah's confessions: the scribe shares the prophet's suffering."
+          }
+        ],
+        "ctx": "This brief chapter, dated to the fourth year of Jehoiakim (605 BC), is a personal oracle to Baruch. It is placed here as a coda to the narrative section (chs. 26-44) and a bridge to the oracles against the nations (chs. 46-51). Baruch's complaint and God's response encapsulate the entire book in miniature: lament meets divine purpose, and the promise is not comfort but life itself -- \"your life as plunder\" (v.5), the same phrase used for Ebed-Melech (39:18).",
+        "cross": [
+          {
+            "ref": "Jer 39:18",
+            "note": "Ebed-Melech receives the same promise: \"your life as plunder.\" Both the faithful servant and the faithful scribe are promised survival, not prosperity."
+          },
+          {
+            "ref": "Matt 16:25",
+            "note": "\"Whoever wants to save their life will lose it\" -- the NT parallel of the relinquishment ethic."
+          },
+          {
+            "ref": "Jer 20:7-9",
+            "note": "Jeremiah's own confession: Baruch's lament mirrors the prophet's. Master and scribe share the same suffering."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "45:1",
+              "note": "The date -- fourth year of Jehoiakim -- is the year of the scroll dictation (ch. 36). Baruch's grief may stem from the emotional toll of writing down forty years of judgment oracles."
+            },
+            {
+              "ref": "45:3",
+              "note": "\"I am worn out with groaning and find no rest.\" Baruch's confession echoes Jeremiah's confessions: the cost of serving the prophetic word falls on the scribe as well as the prophet."
+            },
+            {
+              "ref": "45:4-5",
+              "note": "God acknowledges his own grief: \"I will overthrow what I have built and uproot what I have planted.\" Even God laments the destruction. In this context, personal ambition is inappropriate -- but life is guaranteed."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "45:5",
+              "note": "Calvin reads this as universal pastoral counsel: \"In times of divine judgment, seek survival, not status. The wise person adjusts ambitions to the season.\""
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "45:5",
+              "note": "\"Your life as plunder\" (nephesh leshallal) -- the same idiom used in 21:9 and 39:18. In military context, \"plunder\" is what a soldier carries away from a battle. Baruch's only spoil will be his own survival."
+            }
+          ]
+        },
+        "lundbom": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "45:1-5",
+              "note": "Lundbom identifies chapter 45 as \"the colophon of the Baruch narrative.\" It serves the same function as a scribal postscript -- authenticating the scribe's role and acknowledging his suffering."
+            }
+          ]
+        },
+        "brueggemann": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "45:4-5",
+              "note": "Brueggemann reads God's self-disclosure as \"the most intimate divine speech in the book.\" God reveals his own grief at destroying what he built. The creator mourns his own creation. In this context, Baruch's personal ambition is gently but firmly relativized."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "themes": {
+      "scores": [
+        {
+          "name": "Covenant",
+          "value": 5
+        },
+        {
+          "name": "Judgment",
+          "value": 7
+        },
+        {
+          "name": "Mercy",
+          "value": 5
+        },
+        {
+          "name": "Faith",
+          "value": 6
+        },
+        {
+          "name": "Sovereignty",
+          "value": 8
+        },
+        {
+          "name": "Worship",
+          "value": 3
+        },
+        {
+          "name": "Holiness",
+          "value": 4
+        },
+        {
+          "name": "Prophecy",
+          "value": 7
+        },
+        {
+          "name": "Justice",
+          "value": 4
+        },
+        {
+          "name": "Mission",
+          "value": 6
+        }
+      ],
+      "note": "Sovereignty at 8 -- God destroys what he built, and the appropriate human response is surrender of ambition. Faith at 6: Baruch trusts despite sorrow."
+    },
+    "lit": {
+      "rows": [
+        {
+          "label": "vv.1",
+          "range": "45:1",
+          "text": "Date and Setting: The Fourth Year",
+          "is_key": false
+        },
+        {
+          "label": "vv.2-3",
+          "range": "45:2-3",
+          "text": "Baruch's Lament",
+          "is_key": false
+        },
+        {
+          "label": "vv.4-5",
+          "range": "45:4-5",
+          "text": "God's Response: Life as Plunder",
+          "is_key": true
+        }
+      ],
+      "note": "The shortest chapter in the section serves as a personal coda and theological summary: in a world under judgment, the promise is life, not greatness."
+    },
+    "hebtext": [
+      {
+        "word": "גְּדֹלוֹת",
+        "tlit": "gedolot",
+        "gloss": "great things",
+        "note": "\"Do you seek great things (gedolot) for yourself? Do not seek them\" (v.5). The prohibition is not against ambition in general but against personal advancement when God is bringing \"disaster on all people.\" In a world under judgment, the appropriate ambition is survival, not greatness. Baruch's lament -- \"Woe to me! The LORD has added sorrow to my pain\" (v.3) -- echoes Jeremiah's confessions: the scribe shares the prophet's suffering."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Jeremiah",
+        "role": "Key biblical figure",
+        "text": "\" Baruch's confession echoes Jeremiah's confessions: the cost of serving the prophetic word falls on the scribe as well as the prophet…"
+      },
+      {
+        "name": "Baruch",
+        "role": "Key biblical figure",
+        "text": "This brief chapter, dated to the fourth year of Jehoiakim (605 BC), is a personal oracle to Baruch…"
+      },
+      {
+        "name": "Jehoiakim",
+        "role": "Key biblical figure",
+        "text": "This brief chapter, dated to the fourth year of Jehoiakim (605 BC), is a personal oracle to Baruch…"
+      },
+      {
+        "name": "Ebed-Melech",
+        "role": "Key biblical figure",
+        "text": "5), the same phrase used for Ebed-Melech (39:18)…"
+      }
+    ],
+    "trans": {
+      "title": "Comparing translations in Oracle to Baruch",
+      "rows": [
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "When Baruch son of Neriah wrote on a scroll the words Jeremiah the prophet dictated in the fourth year of Jehoiakim son of Josiah king of Judah, Jeremiah said this to Baruch:"
+            },
+            {
+              "version": "ESV",
+              "text": "The word that Jeremiah the prophet spoke to Baruch the son of Neriah, when he wrote these words in a book at the dictation of Jeremiah, in the fourth year of Jehoiakim the son of Josiah, king of Judah:"
+            }
+          ]
+        },
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "Should you then seek great things for yourself? Do not seek them. For I will bring disaster on all people, declares the Lord, but wherever you go I will let you escape with your life.’ ”"
+            },
+            {
+              "version": "ESV",
+              "text": "And do you seek great things for yourself? Seek them not, for behold, I am bringing disaster upon all flesh, declares the LORD. But I will give you your life as a prize of war in all places to which you may go.”"
+            }
+          ]
+        }
+      ]
+    },
+    "rec": [
+      {
+        "title": "John MacArthur",
+        "quote": "\"The date -- fourth year of Jehoiakim -- is the year of the scroll dictation (ch. 36). Baruch's grief may stem from the emotional toll of writing down forty years of judgment oracles.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
+      },
+      {
+        "title": "John Calvin",
+        "quote": "\"Calvin reads this as universal pastoral counsel: \"In times of divine judgment, seek survival, not status. The wise person adjusts ambitions to the season.\"\"",
+        "note": "Reformed / Reformation — 16th c."
+      },
+      {
+        "title": "NET Bible translators",
+        "quote": "\"\"Your life as plunder\" (nephesh leshallal) -- the same idiom used in 21:9 and 39:18. In military context, \"plunder\" is what a soldier carries away from a battle. Baruch's only spoil will be his own su…\"",
+        "note": "Text-critical evangelical — 21st c."
+      }
+    ],
+    "thread": [
+      {
+        "direction": "connection",
+        "anchor": "Oracle to Baruch",
+        "target": "Jer 39:18",
+        "type": "Connection",
+        "text": "Ebed-Melech receives the same promise: \"your life as plunder.\" Both the faithful servant and the faithful scribe are promised survival, not prosperity."
+      },
+      {
+        "direction": "echo",
+        "anchor": "Oracle to Baruch",
+        "target": "Matt 16:25",
+        "type": "Echo",
+        "text": "\"Whoever wants to save their life will lose it\" -- the NT parallel of the relinquishment ethic."
+      },
+      {
+        "direction": "echo",
+        "anchor": "Oracle to Baruch",
+        "target": "Jer 20:7-9",
+        "type": "Echo",
+        "text": "Jeremiah's own confession: Baruch's lament mirrors the prophet's. Master and scribe share the same suffering."
+      }
+    ]
+  },
+  "vhl_groups": []
+}
