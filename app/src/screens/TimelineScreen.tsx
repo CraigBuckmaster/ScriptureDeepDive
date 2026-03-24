@@ -11,6 +11,7 @@ import { useRoute } from '@react-navigation/native';
 import { getAllTimelineEntries } from '../db/content';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import {
   yearToX, formatYear, assignLanes, computeTickMarks,
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H, LANE_TOP, LANE_HEIGHT,
@@ -24,11 +25,12 @@ export default function TimelineScreen() {
   const initialEventId = route?.params?.eventId;
 
   const [events, setEvents] = useState<TimelineEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
 
   useEffect(() => {
-    getAllTimelineEntries().then(setEvents);
+    getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
   }, []);
 
   const positioned = useMemo(() => assignLanes(events), [events]);
@@ -47,6 +49,14 @@ export default function TimelineScreen() {
       if (evt) setSelectedEvent(evt);
     }
   }, [initialEventId, positioned.length]);
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
 
   const SVG_HEIGHT = AXIS_Y + 40;
 

@@ -6,11 +6,12 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useScholars } from '../hooks/useScholars';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { getScholarColor, base, spacing, radii } from '../theme';
 
 export default function ScholarBrowseScreen() {
   const navigation = useNavigation<any>();
-  const { scholars } = useScholars();
+  const { scholars, isLoading } = useScholars();
   const [search, setSearch] = useState('');
   const [tradition, setTradition] = useState<string>('all');
 
@@ -31,6 +32,14 @@ export default function ScholarBrowseScreen() {
     }
     return list;
   }, [scholars, tradition, search]);
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>

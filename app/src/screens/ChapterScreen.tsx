@@ -8,7 +8,7 @@
  */
 
 import React, { useCallback, useMemo, useRef, useEffect } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { useChapterData } from '../hooks/useChapterData';
@@ -117,7 +117,7 @@ export default function ChapterScreen() {
 
   if (isLoading) {
     return (
-      <View style={{ flex: 1, backgroundColor: base.bg, padding: spacing.lg }}>
+      <View style={styles.loadingContainer}>
         <LoadingSkeleton lines={8} height={18} />
       </View>
     );
@@ -125,14 +125,14 @@ export default function ChapterScreen() {
 
   if (!chapter) {
     return (
-      <View style={{ flex: 1, backgroundColor: base.bg, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.emptyContainer}>
         <LoadingSkeleton lines={3} />
       </View>
     );
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: base.bg }}>
+    <View style={styles.container}>
       <ChapterNavBar
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}
@@ -146,8 +146,8 @@ export default function ChapterScreen() {
 
       <ScrollView
         ref={scrollRef}
-        style={{ flex: 1 }}
-        contentContainerStyle={{ paddingBottom: spacing.xxl }}
+        style={styles.scroll}
+        contentContainerStyle={styles.scrollContent}
       >
         <ChapterHeader
           chapter={chapter}
@@ -228,3 +228,27 @@ export default function ChapterScreen() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: base.bg,
+    padding: spacing.lg,
+  },
+  emptyContainer: {
+    flex: 1,
+    backgroundColor: base.bg,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scroll: {
+    flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: spacing.xxl,
+  },
+});

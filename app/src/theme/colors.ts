@@ -5,7 +5,7 @@
  * and data files (scholar-data.js, timeline-data.js).
  *
  * Categories:
- *   base    — 11 UI foundation colors
+ *   base    — 14 UI foundation colors
  *   panels  — 17 panel accent sets (bg, border, accent)
  *   scholars — 42 scholar identity colors
  *   eras    — 9 era timeline colors
@@ -15,7 +15,7 @@
 
 export const base = {
   bg: '#0c0a07',
-  bgElevated: '#181410',
+  bgElevated: '#1e1a12',
   bgSurface: '#1f1b14',
   bg3: '#1a1508',
   text: '#f0e8d8',
@@ -26,6 +26,8 @@ export const base = {
   goldBright: '#e8c870',
   border: '#3a2e18',
   borderLight: '#2a2010',
+  verseNum: '#9a8a6a',
+  navText: '#d8ccb0',
 } as const;
 
 // ── Panel Accent Colors ─────────────────────────────────────────────

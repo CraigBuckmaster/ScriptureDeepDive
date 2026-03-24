@@ -2,7 +2,7 @@
 
 **Reference:** `app/UI_UX_AUDIT.md`  
 **Last updated:** 2026-03-24  
-**Status:** Phases 1–4 complete, Phase 5 remaining  
+**Status:** Phases 1–5 complete (5E deferred)  
 
 ---
 
@@ -743,7 +743,7 @@ Currently relies on system back gesture which isn't obvious on iOS.
 
 ---
 
-## Phase 5: Design System Hardening
+## Phase 5: Design System Hardening ✅ COMPLETE (5A–5D, 5E deferred)
 
 This phase is ongoing and can be done incrementally across sessions.
 
