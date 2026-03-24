@@ -15,7 +15,7 @@ phase and have a working, improved app.
 **Phase 1** — Tab bar icons + More menu (2 files new, 2 files modified)  
 **Phase 2** — Home screen redesign (1 file rewritten, 2 files new)  
 **Phase 3** — Chapter screen polish (4 files modified)  
-**Phase 4** — Secondary screen fixes (6 files modified)  
+**Phase 4** — Secondary screen fixes (8 files modified, 1 new component)  
 **Phase 5** — Design system hardening (10+ files, ongoing)  
 
 ---
@@ -178,8 +178,8 @@ export function useHomeData() {
    - Much simpler than the current full book list
 
 **REMOVED from HomeScreen:**
-- OT/NT toggle (lives in Read tab)
-- Full book list (lives in Read tab)
+- OT/NT toggle (moves to BookListScreen as the canonical view mode — see 4B)
+- Full book list (moves to BookListScreen with view selector — see 4B)
 - Search bar (lives in Search tab)
 - Inline search results (lives in Search tab)
 
@@ -303,12 +303,106 @@ Also add:
 - Empty state: "No results found for '{query}'" when results are empty
 - "Load more" button when verses.length === 20 (current slice limit)
 
-### 4B. Book List "LIVE" Badge Inversion
+### 4B. Book List — View Selector (Canonical + Thematic) + Badge Fix
 
-**File:** `src/screens/BookListScreen.tsx`
+**Files:**
+- `src/screens/BookListScreen.tsx` — major update
+- `src/components/ViewModeDropdown.tsx` — new component
 
-When most books are live, the LIVE badge is noise. Invert the logic:
+**Context:** Currently HomeScreen has a canonical view (OT/NT toggle, flat list 
+in Bible order) and BookListScreen has a thematic view (grouped by tradition: 
+Law, History, Poetry, Prophets, etc.). After Phase 2 removes the book list from 
+HomeScreen, both views need to live on BookListScreen.
 
+**New component: ViewModeDropdown**
+
+A compact dropdown selector that shows only the active view label. Tapping it 
+reveals both options; selecting one collapses it back. This is friendlier on 
+mobile than a toggle that shows both options permanently.
+
+```
+┌─────────────────────┐
+│  By Tradition  ▾    │   ← Compact pill, shows active mode only
+└─────────────────────┘
+
+  Tapped ↓
+
+┌─────────────────────┐
+│  By Tradition  ✓    │   ← Highlighted as current
+│  Canonical          │   ← Tap to switch
+└─────────────────────┘
+```
+
+**Implementation — `src/components/ViewModeDropdown.tsx`:**
+
+```tsx
+interface ViewModeDropdownProps {
+  mode: 'canonical' | 'thematic';
+  onModeChange: (mode: 'canonical' | 'thematic') => void;
+}
+```
+
+Design details:
+- **Closed state:** Pill-shaped button (bgElevated, border, radii.md)
+  - Left: mode label in SourceSans3_500Medium, 13pt, base.text
+  - Right: `ChevronDown` Lucide icon, 14px, base.textMuted
+  - Height: 34px (compact but touchable — full pill is the tap target)
+  - Width: auto (fits content)
+- **Open state:** Same pill expands into a small dropdown below
+  - Absolute positioned, same width as pill, bgElevated, border
+  - Two rows, each MIN_TOUCH_TARGET height
+  - Active row: gold text + `Check` icon
+  - Inactive row: base.text, no icon
+  - Tap outside or select → closes
+  - Use a transparent overlay behind the dropdown to capture outside taps
+- **Labels:**
+  - `'canonical'` → "Canonical Order"
+  - `'thematic'` → "By Tradition"
+- **Persist preference:** Store selected mode in settingsStore or user 
+  preferences so it survives app restarts. Add to settingsStore:
+  ```tsx
+  bookListMode: 'canonical' | 'thematic';
+  setBookListMode: (m: 'canonical' | 'thematic') => void;
+  ```
+
+**Implementation — `src/screens/BookListScreen.tsx`:**
+
+State: `const mode = useSettingsStore(s => s.bookListMode);`
+
+The screen renders differently based on mode:
+
+**Thematic mode** (current behavior, becomes default):
+- SectionList with OT_GROUPS + NT_GROUPS headers
+- Groups: Law, History, Poetry & Wisdom, Major Prophets, Minor Prophets, 
+  Gospels & Acts, Pauline Epistles, General Epistles, Apocalypse
+- No OT/NT toggle needed — sections already separate them
+
+**Canonical mode** (moved from HomeScreen):
+- OT/NT toggle at top (the gold underline toggle from current HomeScreen)
+- FlatList of books filtered by testament, in Bible order
+- No section groupings — simple flat list
+- Same row component as thematic mode (book name + chapter count + badge)
+
+**Layout structure:**
+```
+┌──────────────────────────────────────┐
+│  Library          [Canonical Order ▾]│  ← title + dropdown, same line
+├──────────────────────────────────────┤
+│  [OT / NT toggle]                   │  ← only in canonical mode
+├──────────────────────────────────────┤
+│  LAW                                │  ← section headers (thematic only)
+│  Genesis                    50 ch   │
+│  Exodus                     40 ch   │
+│  ...                                │
+└──────────────────────────────────────┘
+```
+
+The title row uses `flexDirection: 'row', justifyContent: 'space-between'` 
+to place "Library" on the left and the dropdown on the right.
+
+**Badge fix (included in this task):**
+
+When most books are live, the LIVE badge is noise. Invert:
 ```tsx
 // Before:
 {!!book.is_live && <BadgeChip label="LIVE" color={base.gold} />}
@@ -317,8 +411,33 @@ When most books are live, the LIVE badge is noise. Invert the logic:
 {!book.is_live && <BadgeChip label="Coming Soon" color={base.textMuted} />}
 ```
 
-Apply same change in `src/screens/HomeScreen.tsx` if any book list remnants 
-remain after Phase 2 rewrite (they shouldn't).
+**Shared book row component:**
+
+Since both views render the same book row (name, chapter count, badge, 
+onPress), extract a `BookRow` component or inline function to avoid 
+duplicating the renderItem code:
+
+```tsx
+const renderBookRow = (book: Book) => (
+  <TouchableOpacity
+    onPress={() => navigation.navigate('ChapterList', { bookId: book.id })}
+    style={bookRowStyle}
+  >
+    <Text style={{ color: book.is_live ? base.text : base.textMuted, ... }}>
+      {book.name}
+    </Text>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+      {!book.is_live && <BadgeChip label="Coming Soon" color={base.textMuted} />}
+      <Text style={{ color: base.textMuted, fontSize: 11 }}>
+        {book.total_chapters} ch
+      </Text>
+    </View>
+  </TouchableOpacity>
+);
+```
+
+Used by both the SectionList renderItem (thematic) and FlatList renderItem 
+(canonical).
 
 ### 4C. Chapter List — Read Progress Indicators
 
@@ -495,11 +614,12 @@ on phones. It may be fine with the horizontal scroll.
 
 ## File Change Summary
 
-### New Files (4)
+### New Files (5)
 | File | Phase | Purpose |
 |------|-------|---------|
 | `src/screens/MoreMenuScreen.tsx` | 1B | More tab landing page |
 | `src/hooks/useHomeData.ts` | 2B | Consolidated home screen data |
+| `src/components/ViewModeDropdown.tsx` | 4B | Canonical/Thematic view selector |
 | (optional) `src/screens/AboutScreen.tsx` | 1B | Extracted from Settings |
 | (optional) `src/components/ScholarButtonGroup.tsx` | 5E | Grouped scholar buttons |
 
@@ -530,7 +650,9 @@ on phones. It may be fine with the horizontal scroll.
 | File | Changes |
 |------|---------|
 | `src/screens/SearchScreen.tsx` | Display names, empty state, load more |
-| `src/screens/BookListScreen.tsx` | Invert LIVE → Coming Soon |
+| `src/screens/BookListScreen.tsx` | View selector (canonical + thematic), badge inversion |
+| `src/components/ViewModeDropdown.tsx` | New — compact dropdown for view mode |
+| `src/stores/settingsStore.ts` | Add bookListMode preference |
 | `src/screens/ChapterListScreen.tsx` | Read progress dots, back button |
 | `src/screens/ExploreMenuScreen.tsx` | Lucide icons, live counts, colors |
 | `src/screens/SettingsScreen.tsx` | Dynamic stats, fix dead button, version |
@@ -555,7 +677,11 @@ Phase 1B (more menu)     — independent, can ship alone
 Phase 2  (home screen)   — depends on Phase 1 being done (so home tab 
                            icon exists), but technically independent
 Phase 3  (chapter polish) — independent
-Phase 4A-F               — each sub-task is independent
+Phase 4A (search fixes)  — independent
+Phase 4B (book list)     — must update settingsStore.ts for view mode 
+                           persistence; depends on Phase 2 completing 
+                           the HomeScreen rewrite (canonical view moves)
+Phase 4C-F               — each sub-task is independent
 Phase 5A (gold reduction) — should come AFTER Phase 2 + 3 so we're not 
                            changing colors while also changing layouts
 Phase 5B (contrast)       — independent
@@ -574,12 +700,12 @@ Phase 5E (button groups)  — defer, evaluate after user testing
 | 1B | 2 | Low | 15 min |
 | 2 | 4 | Medium-High | 30 min |
 | 3 | 4 | Medium | 20 min |
-| 4 | 6 | Medium | 25 min |
+| 4 | 8 | Medium-High | 35 min |
 | 5A-B | 3+ | Low-Medium | 15 min |
 | 5C | 10+ | Low (repetitive) | Ongoing |
 | 5D | 5 | Low | 10 min |
 
-**Phases 1-4 total: ~1.5 hours of Claude session time.**
+**Phases 1-4 total: ~2 hours of Claude session time.**
 
 ---
 
