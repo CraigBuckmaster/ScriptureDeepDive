@@ -1,6 +1,7 @@
 export { useChapterData } from './useChapterData';
 export { useBooks } from './useBooks';
 export { useBookIntro } from './useBookIntro';
+export { useHomeData } from './useHomeData';
 export { usePeople } from './usePeople';
 export { usePersonDetail } from './usePersonDetail';
 export { useScholars } from './useScholars';

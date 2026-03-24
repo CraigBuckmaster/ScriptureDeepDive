@@ -286,6 +286,33 @@ export async function getGenealogyConfig(key: string): Promise<string | null> {
   return row?.value_json ?? null;
 }
 
+// ── Content Stats ──────────────────────────────────────────────────
+
+export interface ContentStats {
+  liveBooks: number;
+  liveChapters: number;
+  scholarCount: number;
+  peopleCount: number;
+  timelineCount: number;
+}
+
+export async function getContentStats(): Promise<ContentStats> {
+  const [books, chapters, scholars, people, timeline] = await Promise.all([
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM books WHERE is_live = 1"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM chapters"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM scholars"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM people"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM timelines"),
+  ]);
+  return {
+    liveBooks: books?.c ?? 0,
+    liveChapters: chapters?.c ?? 0,
+    scholarCount: scholars?.c ?? 0,
+    peopleCount: people?.c ?? 0,
+    timelineCount: timeline?.c ?? 0,
+  };
+}
+
 // ── Full-Text Search ────────────────────────────────────────────────
 
 export async function searchVerses(query: string, limit: number = 50): Promise<Verse[]> {
