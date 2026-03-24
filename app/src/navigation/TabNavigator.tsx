@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Home, Library, Compass, Search, MoreHorizontal } from 'lucide-react-native';
 import { HomeStack } from './HomeStack';
 import { ReadStack } from './ReadStack';
 import { ExploreStack } from './ExploreStack';
@@ -21,35 +22,53 @@ export function TabNavigator() {
         tabBarActiveTintColor: base.gold,
         tabBarInactiveTintColor: base.textMuted,
         tabBarLabelStyle: {
-          fontSize: 10,
+          fontSize: 9,
           letterSpacing: 0.3,
+        },
+        tabBarIconStyle: {
+          marginBottom: -2,
         },
       }}
     >
       <Tab.Screen
         name="HomeTab"
         component={HomeStack}
-        options={{ tabBarLabel: 'Home' }}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
+        }}
       />
       <Tab.Screen
         name="ReadTab"
         component={ReadStack}
-        options={{ tabBarLabel: 'Read' }}
+        options={{
+          tabBarLabel: 'Read',
+          tabBarIcon: ({ color, size }) => <Library color={color} size={size} />,
+        }}
       />
       <Tab.Screen
         name="ExploreTab"
         component={ExploreStack}
-        options={{ tabBarLabel: 'Explore' }}
+        options={{
+          tabBarLabel: 'Explore',
+          tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
+        }}
       />
       <Tab.Screen
         name="SearchTab"
         component={SearchStack}
-        options={{ tabBarLabel: 'Search' }}
+        options={{
+          tabBarLabel: 'Search',
+          tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
+        }}
       />
       <Tab.Screen
         name="MoreTab"
         component={MoreStack}
-        options={{ tabBarLabel: 'More' }}
+        options={{
+          tabBarLabel: 'More',
+          tabBarIcon: ({ color, size }) => <MoreHorizontal color={color} size={size} />,
+        }}
       />
     </Tab.Navigator>
   );

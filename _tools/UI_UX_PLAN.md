@@ -2,7 +2,7 @@
 
 **Reference:** `app/UI_UX_AUDIT.md`  
 **Last updated:** 2026-03-24  
-**Status:** Planning complete, no work started  
+**Status:** Phase 1 complete  
 
 ---
 
@@ -20,11 +20,15 @@ phase and have a working, improved app.
 
 ---
 
-## Phase 1: Tab Bar Icons + More Menu
+## Phase 1: Tab Bar Icons + More Menu ✅ COMPLETE
 
 **Why first:** These are the two most visible "this looks unfinished" problems. 
 Tab icons are on screen 100% of the time. The More menu blocks feature 
 discovery. Both are small, surgical changes.
+
+**Decision:** About info will live on HomeScreen (Phase 2) as a subtle footer
+colophon, not in the More menu. More menu has 4 rows: Bookmarks, Reading 
+History, Reading Plans, Settings.
 
 ### 1A. Tab Bar Icons
 

@@ -1,4 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import MoreMenuScreen from '../screens/MoreMenuScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import BookmarkListScreen from '../screens/BookmarkListScreen';
 import ReadingHistoryScreen from '../screens/ReadingHistoryScreen';
@@ -11,6 +12,7 @@ const Stack = createStackNavigator();
 export function MoreStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
+      <Stack.Screen name="MoreMenu" component={MoreMenuScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Bookmarks" component={BookmarkListScreen} />
       <Stack.Screen name="ReadingHistory" component={ReadingHistoryScreen} />
