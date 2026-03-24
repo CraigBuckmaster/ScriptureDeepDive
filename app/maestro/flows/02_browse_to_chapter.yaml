@@ -1,0 +1,11 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Read"
+- assertVisible: "Library"
+- tapOn: "Genesis"
+- assertVisible: "50 chapters"
+- tapOn:
+    text: "1"
+    index: 0
+- assertVisible: "Genesis 1"

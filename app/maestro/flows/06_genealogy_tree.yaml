@@ -1,0 +1,9 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Explore"
+- tapOn: "People"
+- assertVisible: "Search people..."
+- inputText: "Abraham"
+- tapOn: "Abraham"
+- assertVisible: "Abraham"

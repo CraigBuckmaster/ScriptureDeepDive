@@ -1,0 +1,6 @@
+appId: com.scripturedeepive.app
+---
+# 09_word_study
+# TODO: Implement full flow steps when running on device
+- launchApp
+- assertVisible: "Scripture Deep Dive"

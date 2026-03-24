@@ -1,0 +1,6 @@
+appId: com.scripturedeepive.app
+---
+# 13_tts_and_share
+# TODO: Implement full flow steps when running on device
+- launchApp
+- assertVisible: "Scripture Deep Dive"

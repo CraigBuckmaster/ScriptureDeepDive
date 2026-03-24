@@ -1,0 +1,16 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Read"
+- tapOn: "Genesis"
+- tapOn:
+    text: "1"
+    index: 0
+- tapOn: "Genesis 1"
+- assertVisible: "Navigate"
+- inputText: "Psalm"
+- tapOn: "Psalms"
+- tapOn:
+    text: "23"
+    index: 0
+- assertVisible: "Psalms 23"
