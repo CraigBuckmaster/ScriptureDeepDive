@@ -2,7 +2,7 @@
 
 **Reference:** `app/UI_UX_AUDIT.md`  
 **Last updated:** 2026-03-24  
-**Status:** Phase 1 complete  
+**Status:** Phases 1–4 complete, Phase 5 remaining  
 
 ---
 
@@ -463,7 +463,21 @@ Changes:
 
 ---
 
-## Phase 4: Secondary Screen Fixes
+## Phase 4: Secondary Screen Fixes ✅ COMPLETE
+
+**Implementation notes:**
+- SearchScreen: book_name joined in searchVerses query, display names in
+  results, empty state with Search icon, "Load more" button at 20 results.
+- BookListScreen: ViewModeDropdown (reuses CompactDropdown) in title row.
+  Thematic (default) = SectionList by tradition. Canonical = OT/NT toggle 
+  + FlatList. Shared renderBookRow function. No LIVE badges.
+- ChapterListScreen: ArrowLeft back button, no "· Live" label, read 
+  progress via getProgressForBook() → visited chapters get gold tint.
+- ExploreMenuScreen: Lucide icons replacing emojis, panel accent colors 
+  per card border, live counts from getContentStats().
+- SettingsScreen: dynamic stats from DB, working Clear History with 
+  confirmation + feedback, version from app.json, back button added.
+- settingsStore: bookListMode added (persisted, default 'thematic').
 
 ### 4A. Search Screen Display Names
 
