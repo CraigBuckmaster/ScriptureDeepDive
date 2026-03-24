@@ -35,9 +35,9 @@
     "key": "block",
     "name": "Daniel I. Block",
     "color": "#e0a070",
-    "scope": "Judges",
+    "scope": "Judges, Ezekiel",
     "tradition": "Evangelical · NAC Commentary · 20th–21st Century",
-    "desc": "Gunther H. Knoedler Professor Emeritus of Old Testament at Wheaton College. NAC Judges commentary with deep engagement in ANE covenant forms and Deuteronomistic theology."
+    "desc": "Gunther H. Knoedler Professor Emeritus of Old Testament at Wheaton College. Author of the magisterial two-volume NICOT commentary on Ezekiel and NAC Judges commentary. Deep engagement in ANE covenant forms, Deuteronomistic theology, and priestly traditions."
   },
   {
     "key": "calvin",
@@ -471,5 +471,13 @@
       "isaiah"
     ],
     "buttonCSS": ".anno-trigger.childs"
+  },
+  {
+    "key": "zimmerli",
+    "name": "Walther Zimmerli",
+    "color": "#a8c090",
+    "scope": "Ezekiel",
+    "tradition": "European Critical · Hermeneia Commentary · 20th Century",
+    "desc": "Swiss Old Testament scholar and professor at the University of Göttingen. Author of the two-volume Hermeneia commentary on Ezekiel, widely regarded as the standard critical commentary. Pioneer of form-critical and tradition-historical analysis of Ezekiel, with particular attention to the recognition formula and the theology of divine presence."
   }
 ]
