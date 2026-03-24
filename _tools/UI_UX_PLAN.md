@@ -91,10 +91,19 @@ no navigation path — they're invisible.
 
 ---
 
-## Phase 2: Home Screen Redesign
+## Phase 2: Home Screen Redesign ✅ COMPLETE
 
 **Why second:** The home screen is the first impression. Phase 1 gave us 
 proper navigation chrome; now we fix the content.
+
+**Implementation notes:**
+- About info placed as footer colophon on HomeScreen (book icon + italic 
+  description + version) instead of separate screen or More menu row.
+- 31 curated verses in FEATURED_VERSES array for Verse of the Day.
+- HomeStack now has Chapter, ChapterList, BookList, BookIntro, 
+  ParallelPassage screens for in-tab navigation from home cards.
+- getContentStats() batches 5 COUNT queries with Promise.all.
+- Includes timelineCount for explore link subtitle.
 
 ### 2A. New DB Queries
 
