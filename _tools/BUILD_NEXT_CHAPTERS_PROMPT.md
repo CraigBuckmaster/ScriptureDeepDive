@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-24 — Ezekiel in progress (21/48). Next batch: chapters 22-28.
+> **Last updated:** 2026-03-24 — Ezekiel in progress (28/48). Next batch: chapters 29-35.
 
 ---
 
@@ -43,7 +43,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 Current wave order (from MASTER_PLAN.md):
 ```
-WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 21/48, next: 22-28)
+WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 28/48, next: 29-35)
 WAVE 4 (Minor Prophets): Jonah, Amos, Hosea, Micah, Habakkuk, Joel, Obadiah, Nahum, Zephaniah, Haggai, Zechariah, Malachi
 WAVE 5 (NT Epistles): Romans (DONE), 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians
 WAVE 6 (NT Epistles continued): 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, Hebrews, James, 1-2 Peter, 1-3 John, Jude
@@ -71,6 +71,10 @@ Kings/Chronicles: needs MacArthur notes (112 chapters)
 **GitHub push protection:** GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file — even placeholder files. Provide your token at session start via the chat; Claude will use it in git commands but never write it to disk.
 
 **Root directory cleanliness:** Only these items belong at the repo root: `_archive/`, `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, and `scripture.db`. All plans, prompts, and build docs go in `_tools/`. Generator scripts go in `/tmp/` and are deleted after use. Do not create new files at root.
+
+**Section count verification:** After running the generator, always verify that multi-section chapters (especially those with 3-4 sections like oracles-against-nations chapters) produced the correct number of sections. Run a quick check: `python3 -c "import json; [print(f'Ch {ch}: {len(json.load(open(f\"content/{book}/{ch}.json\"))[\"sections\"])} sections') for ch in range(START, END+1)]"`. If section counts are wrong, regenerate those specific chapters.
+
+**Context window management:** Do NOT `cat` the full `shared.py` — it is ~2500 lines and will consume excessive context. Instead, read only what you need: the REGISTRY section (~30 lines), BOOK_PREFIX (~30 lines), and check a recent chapter JSON for format reference. The `save_chapter()` API is simple: pass `(book_dir, chapter_num, data_dict)` where data_dict has `title`, `sections` (list of dicts with `header`, `verses`, `heb`, `ctx`, `cross`, `mac`, `calvin`, `netbible`, + book scholars), `lit` (tuple), `themes` (tuple). Use `verse_range(start, end)` helper for verse lists.
 
 ---
 
@@ -449,10 +453,12 @@ Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24),
 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36),
 Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31),
 Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52),
-Lamentations(5), **Ezekiel(21/48)**, Daniel(12),
+Lamentations(5), **Ezekiel(28/48)**, Daniel(12),
 Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 952 chapters across 32 books. 34 books remaining (237 chapters).**
+**Total: 959 chapters across 32 books. 34 books remaining (230 chapters).**
+
+**REGISTRY note:** Jeremiah (52/52) and Ezekiel (28/48) are now registered in REGISTRY + BOOK_PREFIX in shared.py.
 
 ### REFERENCE: The 10 Standard Theological Themes
 
@@ -470,13 +476,15 @@ Every chapter gets a 10-score radar chart with these exact themes:
 
 ### REFERENCE: Ezekiel Progress (Current Book)
 
-- **48 chapters total** — 21 done, 27 remaining (~4 more batches of 7)
+- **48 chapters total** — 28 done, 20 remaining (~3 more batches of 7)
 - **Chapters 1-21 COMPLETE:** Throne vision, call, watchman, sign-acts, temple abominations, glory departing, sign-acts of exile, false prophets, idolatrous elders, useless vine, unfaithful wife, two eagles, individual responsibility, lament for princes, rebellion history, sword unsheathed
+- **Chapters 22-28 COMPLETE:** Bloody city (indictment + smelting furnace + no intercessor), Oholah/Oholibah (two sisters allegory), boiling pot + wife's death (hinge chapter — prophetic silence begins), oracles against Ammon/Moab/Edom/Philistia (compass-point structure), oracle against Tyre (Nebuchadnezzar's siege + descent to pit), lament for Tyre (ship metaphor + shipwreck), king of Tyre (Eden/fall tradition + Sidon + restoration promise)
 - **Infrastructure DONE:** BOOK_META, Zimmerli (new scholar), Block scope extended, colors, labels, scholar-data all configured — skip Step 2
-- **Scholars:** MacArthur, Calvin, NET Bible, Block (NICOT), Zimmerli (Hermeneia)
-- **Next batch (22-28):** Bloody city, Oholah/Oholibah, boiling pot + wife's death, oracles against nations (Ammon, Moab, Edom, Philistia, Tyre)
-- **Then:** 29-35 (Egypt oracles, shepherds, new heart), 36-42 (dry bones, Gog/Magog, temple vision begins), 43-48 (temple vision completes)
+- **REGISTRY:** Ezekiel (48, 28) and Jeremiah (52, 52) now registered in shared.py REGISTRY + BOOK_PREFIX
+- **Scholars:** MacArthur, Calvin, NET Bible, Block (NAC), Zimmerli (Hermeneia)
+- **Next batch (29-35):** Egypt oracles (Pharaoh as sea monster 29, broken arm 30, great cedar 31, lament for Pharaoh 32), watchman renewed (33 — structural hinge, mouth opened), shepherds of Israel (34 — bad shepherds vs. God as shepherd, John 10 background), oracle against Mount Seir (35 — Edom revisited)
+- **Then:** 36-42 (new heart, dry bones, Gog/Magog, temple vision begins), 43-48 (temple vision completes)
 - **Setting:** Babylonian exile, by the Kebar River, 593-571 BC
 - **Hebrew emphasis:** Priestly vocabulary (Ezekiel was a priest), glory (kabod) theology, recognition formula ("then they will know that I am the LORD" — appears 72x)
-- **People added so far:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz (+ Ezekiel entry updated)
-- **Timeline events added so far:** 5 (call, sign-acts, temple abominations vision, glory departs, history review)
+- **People added so far:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz, Oholah, Oholibah, Hiram of Tyre (+ Ezekiel entry updated)
+- **Timeline events added so far:** 8 (call, sign-acts, temple abominations vision, glory departs, history review, siege of Jerusalem 588 BC, death of Ezekiel's wife, Tyre siege 585 BC)
