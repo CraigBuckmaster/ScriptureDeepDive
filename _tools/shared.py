@@ -81,7 +81,7 @@ REGISTRY = [
     ('lamentations', 'Lamentations',    5,  5, 'OT', 'ot'),
     ('isaiah',       'Isaiah',         66, 66, 'OT', 'ot'),
     ('jeremiah',     'Jeremiah',       52, 52, 'OT', 'ot'),
-    ('ezekiel',      'Ezekiel',        48, 28, 'OT', 'ot'),
+    ('ezekiel',      'Ezekiel',        48, 35, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
