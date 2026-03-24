@@ -2,6 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
+> **Last updated:** 2026-03-24 — Jeremiah complete (52/52), Ezekiel next.
 
 ---
 
@@ -42,7 +43,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 Current wave order (from MASTER_PLAN.md):
 ```
-WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah (NEXT), Ezekiel
+WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (NEXT)
 WAVE 4 (Minor Prophets): Jonah, Amos, Hosea, Micah, Habakkuk, Joel, Obadiah, Nahum, Zephaniah, Haggai, Zechariah, Malachi
 WAVE 5 (NT Epistles): Romans (DONE), 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians
 WAVE 6 (NT Epistles continued): 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, Hebrews, James, 1-2 Peter, 1-3 John, Jude
@@ -54,6 +55,18 @@ Enrichment debt (address before new books if specified):
 Isaiah 23-66: needs enrichment (44 chapters)
 Kings/Chronicles: needs MacArthur notes (112 chapters)
 ```
+
+### KNOWN ISSUES / LESSONS LEARNED
+
+**String escaping in generator scripts:** When writing Python generator scripts with `create_file`, avoid backslash-apostrophe (`\'`) inside single-quoted strings. Use double-quoted strings for text containing apostrophes, or use simple ASCII apostrophes. Always run `python3 -c "compile(open('/tmp/gen_....py').read(), 'test', 'exec'); print('Syntax OK')"` BEFORE running the generator.
+
+**Validation "failures":** The validator checks against original chapter counts. New chapters will always trigger an expected count-mismatch failure. The actual content integrity checks (schema, panels, cross-refs) are the ones that matter.
+
+**Short chapters:** Very short chapters (under 10 verses) may only produce 1 section. That's acceptable — the minimum-2-sections rule applies to normal-length chapters.
+
+**Multi-batch sessions:** A single session can handle 2-3 batches (16-24 chapters) before context window pressure becomes a concern. For long books (48+ chapters), plan for fresh sessions every 2-3 batches.
+
+**content/ directory:** After first extraction + commit, content/ will exist on all subsequent clones. No need to re-run the extraction pipeline.
 
 ---
 
@@ -192,7 +205,7 @@ For each chapter in the batch, determine:
 5. **Cross-references** — at least 2 per section, mixing OT/NT connections
 6. **Scholar notes** — MacArthur (always), Calvin (always), NET Bible (always), plus book-specific scholars
 7. **Literary structure** — the `lit` rows showing the chapter's structural outline
-8. **Theological themes** — the 10-score radar chart (Covenant, Judgment, Messianic, Faith, Sovereignty, Wisdom, Holiness, Prayer, Justice, Mission)
+8. **Theological themes** — the 10-score radar chart (Covenant, Judgment, Mercy, Faith, Sovereignty, Worship, Holiness, Prophecy, Justice, Mission)
 
 **Write the plan as a comment before generating.** This prevents mid-batch refactors.
 
@@ -277,9 +290,9 @@ save_chapter(BOOK, 1, {
     # Theological themes radar (EXACTLY 10 scores, each 0-10)
     'themes': (
         [
-            ('Covenant', 6), ('Judgment', 7), ('Messianic', 3),
-            ('Faith', 5), ('Sovereignty', 9), ('Wisdom', 4),
-            ('Holiness', 6), ('Prayer', 3), ('Justice', 5), ('Mission', 8),
+            ('Covenant', 6), ('Judgment', 7), ('Mercy', 3),
+            ('Faith', 5), ('Sovereignty', 9), ('Worship', 4),
+            ('Holiness', 6), ('Prophecy', 3), ('Justice', 5), ('Mission', 8),
         ],
         'Sovereignty dominates as God declares his foreknowledge and authority over Jeremiah\'s calling.'
     ),
@@ -301,6 +314,11 @@ save_chapter(BOOK, 1, {
 Run the generator:
 ```bash
 python3 /tmp/gen_{book}_{start}_{end}.py
+```
+
+**IMPORTANT:** Always syntax-check before running:
+```bash
+python3 -c "compile(open('/tmp/gen_{book}_{start}_{end}.py').read(), 'test', 'exec'); print('Syntax OK')"
 ```
 
 ---
@@ -365,7 +383,7 @@ python3 _tools/validate_sqlite.py
 rm /tmp/gen_*.py
 
 # Commit
-git add content/ _tools/
+git add content/ _tools/ scripture.db
 git commit -m "Add {BOOK} chapters {START}-{END}
 
 {N} chapters with {S} sections, {P} section panels, {C} chapter panels.
@@ -388,6 +406,7 @@ git push origin master
 - **Enrichment-only batches:** Can do 15-20 chapters of enrichment per session
 
 **Typical session output:** 5-10 chapters depending on complexity.
+**Multi-batch sessions:** Can do 2-3 batches of 8 chapters per session for established books (16-24 chapters). Start a fresh session after that to avoid context window pressure.
 
 ---
 
@@ -419,27 +438,47 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-### REFERENCE: Current Live Books (30)
+### REFERENCE: Current Live Books (31)
 
 Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34),
 Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24),
 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36),
 Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31),
-Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Lamentations(5),
-Daniel(12), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
+Ecclesiastes(12), Song of Solomon(8), Isaiah(66), **Jeremiah(52)**,
+Lamentations(5), Daniel(12), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 879 chapters across 30 books. 36 books remaining (310 chapters).**
+**Total: 931 chapters across 31 books. 35 books remaining (258 chapters).**
 
 ### REFERENCE: The 10 Standard Theological Themes
 
 Every chapter gets a 10-score radar chart with these exact themes:
 1. **Covenant** — God's covenant promises and faithfulness
 2. **Judgment** — divine judgment, consequences, warnings
-3. **Messianic** — Christological foreshadowing, messianic hope
+3. **Mercy** — divine compassion, grace, forgiveness, restoration
 4. **Faith** — trust, belief, faithfulness of people
 5. **Sovereignty** — God's control, providence, divine will
-6. **Wisdom** — practical wisdom, understanding, discernment
+6. **Worship** — true vs. false worship, idolatry, temple
 7. **Holiness** — purity, separation, sanctification
-8. **Prayer** — prayer, worship, communion with God
+8. **Prophecy** — prophetic speech, visions, fulfillment
 9. **Justice** — social justice, righteousness, equity
 10. **Mission** — calling, purpose, witness, spreading God's word
+
+### REFERENCE: Ezekiel Quick Facts (Next Book)
+
+- **48 chapters** — plan for 6-7 batches of 7-8 chapters
+- **Scholars:** Block (already registered), Zimmerli (already registered) + MacArthur, Calvin, NET Bible
+- **BOOK_META:** Already configured in config.py — verify with discovery script
+- **Key content areas:**
+  - Throne/chariot vision (ch. 1), call and scroll (chs. 2-3)
+  - Sign-acts: lying on side, siege model, shaving head (chs. 4-5, 12, 24)
+  - Temple abominations and glory departing (chs. 8-11)
+  - Allegories: vine, foundling, eagles, cedar (chs. 15-17, 19)
+  - Individual responsibility (ch. 18), lament for princes (ch. 19)
+  - Oholah and Oholibah (ch. 23)
+  - Oracles against nations: Tyre, Egypt, etc. (chs. 25-32)
+  - Shepherds and new heart (chs. 34, 36)
+  - **Valley of dry bones** (ch. 37)
+  - **Gog and Magog** (chs. 38-39)
+  - **Temple vision** (chs. 40-48)
+- **Setting:** Babylonian exile, by the Kebar River, 593-571 BC
+- **Hebrew emphasis:** Priestly vocabulary (Ezekiel was a priest), glory (kabod) theology, recognition formula ("then they will know that I am the LORD" — appears 72x)
