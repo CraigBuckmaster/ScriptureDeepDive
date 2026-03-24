@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-24 — Jeremiah complete (52/52), Ezekiel next.
+> **Last updated:** 2026-03-24 — Ezekiel in progress (21/48). Next batch: chapters 22-28.
 
 ---
 
@@ -43,7 +43,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 Current wave order (from MASTER_PLAN.md):
 ```
-WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (NEXT)
+WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 21/48, next: 22-28)
 WAVE 4 (Minor Prophets): Jonah, Amos, Hosea, Micah, Habakkuk, Joel, Obadiah, Nahum, Zephaniah, Haggai, Zechariah, Malachi
 WAVE 5 (NT Epistles): Romans (DONE), 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians
 WAVE 6 (NT Epistles continued): 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, Hebrews, James, 1-2 Peter, 1-3 John, Jude
@@ -67,6 +67,10 @@ Kings/Chronicles: needs MacArthur notes (112 chapters)
 **Multi-batch sessions:** A single session can handle 2-3 batches (16-24 chapters) before context window pressure becomes a concern. For long books (48+ chapters), plan for fresh sessions every 2-3 batches.
 
 **content/ directory:** After first extraction + commit, content/ will exist on all subsequent clones. No need to re-run the extraction pipeline.
+
+**GitHub push protection:** GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file — even placeholder files. Provide your token at session start via the chat; Claude will use it in git commands but never write it to disk.
+
+**Root directory cleanliness:** Only these items belong at the repo root: `_archive/`, `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, and `scripture.db`. All plans, prompts, and build docs go in `_tools/`. Generator scripts go in `/tmp/` and are deleted after use. Do not create new files at root.
 
 ---
 
@@ -438,16 +442,17 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-### REFERENCE: Current Live Books (31)
+### REFERENCE: Current Live Books (32)
 
 Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34),
 Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24),
 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36),
 Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31),
-Ecclesiastes(12), Song of Solomon(8), Isaiah(66), **Jeremiah(52)**,
-Lamentations(5), Daniel(12), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
+Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52),
+Lamentations(5), **Ezekiel(21/48)**, Daniel(12),
+Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 931 chapters across 31 books. 35 books remaining (258 chapters).**
+**Total: 952 chapters across 32 books. 34 books remaining (237 chapters).**
 
 ### REFERENCE: The 10 Standard Theological Themes
 
@@ -463,22 +468,15 @@ Every chapter gets a 10-score radar chart with these exact themes:
 9. **Justice** — social justice, righteousness, equity
 10. **Mission** — calling, purpose, witness, spreading God's word
 
-### REFERENCE: Ezekiel Quick Facts (Next Book)
+### REFERENCE: Ezekiel Progress (Current Book)
 
-- **48 chapters** — plan for 6-7 batches of 7-8 chapters
-- **Scholars:** Block (already registered), Zimmerli (already registered) + MacArthur, Calvin, NET Bible
-- **BOOK_META:** Already configured in config.py — verify with discovery script
-- **Key content areas:**
-  - Throne/chariot vision (ch. 1), call and scroll (chs. 2-3)
-  - Sign-acts: lying on side, siege model, shaving head (chs. 4-5, 12, 24)
-  - Temple abominations and glory departing (chs. 8-11)
-  - Allegories: vine, foundling, eagles, cedar (chs. 15-17, 19)
-  - Individual responsibility (ch. 18), lament for princes (ch. 19)
-  - Oholah and Oholibah (ch. 23)
-  - Oracles against nations: Tyre, Egypt, etc. (chs. 25-32)
-  - Shepherds and new heart (chs. 34, 36)
-  - **Valley of dry bones** (ch. 37)
-  - **Gog and Magog** (chs. 38-39)
-  - **Temple vision** (chs. 40-48)
+- **48 chapters total** — 21 done, 27 remaining (~4 more batches of 7)
+- **Chapters 1-21 COMPLETE:** Throne vision, call, watchman, sign-acts, temple abominations, glory departing, sign-acts of exile, false prophets, idolatrous elders, useless vine, unfaithful wife, two eagles, individual responsibility, lament for princes, rebellion history, sword unsheathed
+- **Infrastructure DONE:** BOOK_META, Zimmerli (new scholar), Block scope extended, colors, labels, scholar-data all configured — skip Step 2
+- **Scholars:** MacArthur, Calvin, NET Bible, Block (NICOT), Zimmerli (Hermeneia)
+- **Next batch (22-28):** Bloody city, Oholah/Oholibah, boiling pot + wife's death, oracles against nations (Ammon, Moab, Edom, Philistia, Tyre)
+- **Then:** 29-35 (Egypt oracles, shepherds, new heart), 36-42 (dry bones, Gog/Magog, temple vision begins), 43-48 (temple vision completes)
 - **Setting:** Babylonian exile, by the Kebar River, 593-571 BC
 - **Hebrew emphasis:** Priestly vocabulary (Ezekiel was a priest), glory (kabod) theology, recognition formula ("then they will know that I am the LORD" — appears 72x)
+- **People added so far:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz (+ Ezekiel entry updated)
+- **Timeline events added so far:** 5 (call, sign-acts, temple abominations vision, glory departs, history review)
