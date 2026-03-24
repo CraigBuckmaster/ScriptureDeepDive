@@ -1106,3 +1106,19 @@ SCHOLAR_REGISTRY.append(('brueggemann', 'brueggemann', 'Brueggemann', 'brueggema
 
 COMMENTATOR_SCOPE['lundbom'] = ['jeremiah']
 COMMENTATOR_SCOPE['brueggemann'] = ['jeremiah']
+
+# ── Wave 3: Ezekiel ─────────────────────────────────────────────────────
+BOOK_META['ezekiel'] = {
+    'is_nt': False,
+    'auth': 'Attributed to the prophet-priest Ezekiel son of Buzi (Ezek 1:3), a Zadokite priest deported to Babylon in 597 BC with King Jehoiachin. Prophetic ministry spans 593-571 BC, making him a contemporary of Jeremiah (in Jerusalem) and Daniel (in the Babylonian court). The book is notable for its precise date formulae (14 dated oracles) and first-person narration throughout.',
+    'vhl_places': ['Babylon', 'Jerusalem', 'Kebar', 'Chebar', 'Israel', 'Judah', 'Egypt', 'Tyre', 'Sidon', 'Edom', 'Moab', 'Ammon', 'Zion', 'Gog', 'Magog', 'Temple', 'Dead Sea'],
+    'vhl_people': ['Ezekiel', 'Daniel', 'Noah', 'Job', 'David', 'Moses', 'Nebuchadnezzar', 'Pharaoh', 'Jaazaniah', 'Pelatiah', 'Oholah', 'Oholibah', 'Gog', 'Tammuz'],
+    'vhl_key': ['glory', 'kabod', 'know', 'abomination', 'spirit', 'heart', 'flesh', 'idols', 'vision', 'watchman', 'shepherd', 'covenant', 'holiness', 'profane', 'sanctuary', 'dry bones', 'recognition formula'],
+    'vhl_time': ['in the thirtieth year', 'in the fifth year', 'in the sixth year', 'in the seventh year', 'in the ninth year', 'in the tenth year', 'in the eleventh year', 'in the twelfth year', 'in the twenty-fifth year'],
+}
+
+# Wave 3 scholars for Ezekiel
+SCHOLAR_REGISTRY.append(('zimmerli', 'zimmerli', 'Zimmerli', 'zimmerli'))
+
+COMMENTATOR_SCOPE['block'].append('ezekiel')
+COMMENTATOR_SCOPE['zimmerli'] = ['ezekiel']
