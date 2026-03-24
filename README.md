@@ -1,86 +1,73 @@
 # Scripture Deep Dive
 
-A verse-by-verse Bible study PWA with Hebrew/Greek word studies, historical context, scholarly commentary, and interactive tools.
+**Scholarly Bible study with 43 commentators, Hebrew & Greek word studies, an interactive genealogy tree, a biblical world map, and verse-by-verse analysis.**
 
-**Live:** [craigbuckmaster.github.io/ScriptureDeepDive](https://craigbuckmaster.github.io/ScriptureDeepDive/)
+## Features
 
-## Current Status
+- **879 chapters** across 30 books with verse-by-verse scholarly commentary
+- **Dual translation** — NIV and ESV with instant toggle
+- **43 scholar commentaries** — evangelical, reformed, Jewish, critical, patristic
+- **Hebrew & Greek word studies** — original-language roots with glosses and semantic range
+- **Interactive genealogy tree** — 211 biblical figures with pinch-to-zoom and family linking
+- **Biblical world map** — 71 ancient places, 28 narrative journey overlays
+- **Timeline** — 216 events from Creation to Revelation
+- **Parallel passage comparison** — 45 synoptic sets with unique-word highlighting
+- **Personal study tools** — notes, bookmarks, color highlights, reading plans, TTS
+- **Entirely offline** — no internet required after install
+- **Free** — no ads, no subscriptions, no in-app purchases
 
-- **584 chapters** across **23 books** (18 OT, 5 NT)
-- **28 scholars** with per-book scope (MacArthur, Calvin, Sarna, Alter, Jobes, Levenson, etc.)
-- **NIV + ESV** verse text with toggle
-- Offline-capable PWA with service worker
+## Tech Stack
 
-## Architecture
+- **React Native** (Expo SDK 52) — cross-platform iOS + Android
+- **TypeScript** — 136+ source files, strict mode
+- **SQLite** (expo-sqlite) — 33MB content database with FTS5 search
+- **react-native-svg** + **d3-hierarchy** — genealogy tree rendering
+- **react-native-maps** — biblical world map
+- **Zustand** — state management
+- **NativeWind** — Tailwind CSS for React Native
 
-### Content Pipeline
-
-Chapters are built by ephemeral Python generators (live in `/tmp/`, never committed):
-
-```
-/tmp/gen_{book}_b{n}.py  →  build_chapter()  →  ot/{book}/{Book}_{ch}.html
-                                ↓
-                          _tools/shared.py (template engine)
-                          _tools/config.py (COMMENTATOR_SCOPE, BOOK_META, SCHOLAR_REGISTRY)
-```
-
-### Key Files
-
-| File | Purpose |
-|------|---------|
-| `_tools/shared.py` | Build system: `build_chapter()`, `rebuild_*()` functions |
-| `_tools/config.py` | Data constants: scholar scopes, book metadata, scholar registry |
-| `_tools/audit.py` | 22-section structural audit (runs in CI) |
-| `service-worker.js` | SHELL (43 infra files) + PRECACHE (701 content files) |
-| `js/core/books.js` | Book registry for nav-arrows and qnav |
-| `js/core/qnav.js` | Chapter picker overlay with verse search |
-| `js/core/nav-arrows.js` | Prev/next chapter navigation + SW auto-reload |
-| `js/features/feature-loader.js` | 4-phase progressive loader for chapter features |
-
-### Interactive Tools
-
-| Tool | File(s) | Description |
-|------|---------|-------------|
-| Timeline | `timeline.html`, `timeline-data.js` | Interactive SVG with events, people, world history |
-| People | `people.html`, `people-data.js` | 211-person biographical tree |
-| Word Study | `word-study.html`, `data/word-study.js` | Hebrew/Greek vocabulary explorer |
-| Parallel Passages | `synoptic.html`, `data/synoptic-map.js` | Synoptic comparison tool |
-| Cross References | `data/cross-refs.js`, `cross-ref-engine.js` | Intertextual linking |
-| Map | `map.html` | Bible world geography |
-
-### Adding a New Book
-
-1. Add to REGISTRY in `_tools/shared.py`
-2. Add BOOK_PREFIX, BOOK_META, COMMENTATOR_SCOPE entries
-3. Add to BOOK_ROSTER + OT/NT_BOOKS in `_tools/audit.py`
-4. Create intro page in `intro/{book}.html`
-5. Build chapters via ephemeral `/tmp/` generators
-6. Run: `rebuild_homepage()`, `rebuild_qnav_js()`, `rebuild_books_js()`, `rebuild_verses_js()`, `rebuild_sw_js()`
-7. Run: `python3 _tools/audit.py` (0 failures)
-8. Delete generators, commit, push
-
-### Adding a New Scholar
-
-1. Add entry to `SCHOLAR_REGISTRY` in `_tools/config.py`
-2. Add scope to `COMMENTATOR_SCOPE` in `_tools/config.py`
-3. Add CSS in `styles.css` (`.anno-trigger.{key}`)
-4. Add bio page `commentators/{key}.html`
-5. Add entry to `commentators/scholar-data.js`
-
-No changes to `shared.py` needed — the scholar loop is data-driven.
-
-## Development
+## Quick Start
 
 ```bash
-# Run all checks
-python3 _tools/audit.py                    # 22-section structural audit
-python3 _tools/tests/test_regressions.py   # 25 regression tests
-node _tools/tests/test_verse_resolver.js   # 66 verse resolver tests
+git clone https://github.com/CraigBuckmaster/ScriptureDeepDive.git
+cd ScriptureDeepDive/app
+npm install
+npx expo start
 ```
 
-## Service Worker
+Scan the QR code with Expo Go on your phone. See [app/SETUP.md](app/SETUP.md) for detailed setup instructions.
 
-- **SHELL** (43 files): Infrastructure cached on install
-- **PRECACHE** (701 files): Chapters + verses cached on install for offline reading
-- `skipWaiting()` + `clients.claim()` for immediate activation
-- Pages auto-reload via `controllerchange` listener when new SW takes control
+## Project Structure
+
+```
+app/                          React Native (Expo) project
+  src/
+    screens/     (21)         All screens fully implemented
+    components/  (63)         Panels, tree, map, modals, primitives
+    hooks/       (20)         Data loading, state, TTS, gestures
+    db/          (4)          SQLite queries (63 functions)
+    theme/       (5)          81 colors, 13 type presets, spacing
+    stores/      (3)          Settings + reader state
+    utils/       (7)          Verse resolver, tree builder, geo math
+    navigation/  (8)          5 stacks + tab navigator
+    services/    (1)          Push notifications
+    types/       (1)          31 TypeScript interfaces
+  __tests__/                  Unit + integration + component tests
+  maestro/                    16 E2E test flows
+  store-metadata/             App Store + Google Play metadata
+_tools/                       Build tools + content pipeline
+_archive/                     Retired PWA (879 HTML chapters)
+```
+
+## Content Pipeline
+
+```
+GENERATOR_TEMPLATE.py → save_chapter() → content/{book}/{ch}.json
+  → build_sqlite.py → scripture.db → OTA update
+```
+
+See [_tools/WORKFLOW.md](_tools/WORKFLOW.md) for the full authoring pipeline.
+
+## License
+
+© Scripture Deep Dive. All rights reserved.

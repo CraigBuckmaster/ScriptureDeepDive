@@ -4,11 +4,12 @@
     "slug": "scripture-deep-dive",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "scripture",
     "icon": "./assets/images/icon-512.png",
+    "scheme": "scripture",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0c0a07",
     "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -16,14 +17,19 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.scripturedeepive.app"
+      "bundleIdentifier": "com.scripturedeepive.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
-      "package": "com.scripturedeepive.app",
       "adaptiveIcon": {
-        "backgroundColor": "#0c0a07",
-        "foregroundImage": "./assets/images/icon-512.png"
-      }
+        "foregroundImage": "./assets/images/icon-512.png",
+        "backgroundColor": "#0c0a07"
+      },
+      "package": "com.scripturedeepive.app",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -33,8 +39,18 @@
       "expo-font",
       ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
     ],
+    "updates": {
+      "url": "https://u.expo.dev/PLACEHOLDER_PROJECT_ID",
+      "enabled": true,
+      "fallbackToCacheTimeout": 0
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "extra": {
-      "eas": { "projectId": "" }
+      "eas": {
+        "projectId": "PLACEHOLDER_PROJECT_ID"
+      }
     }
   }
 }
