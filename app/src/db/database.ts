@@ -10,7 +10,7 @@
 import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { Asset } from 'expo-asset';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
