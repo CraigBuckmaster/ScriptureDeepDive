@@ -1,0 +1,615 @@
+# UI/UX Implementation Plan
+
+**Reference:** `app/UI_UX_AUDIT.md`  
+**Last updated:** 2026-03-24  
+**Status:** Planning complete, no work started  
+
+---
+
+## Overview
+
+This plan addresses all issues identified in the UI/UX audit, organized into 
+5 phases. Each phase is self-contained and shippable — you can stop after any 
+phase and have a working, improved app.
+
+**Phase 1** — Tab bar icons + More menu (2 files new, 2 files modified)  
+**Phase 2** — Home screen redesign (1 file rewritten, 2 files new)  
+**Phase 3** — Chapter screen polish (4 files modified)  
+**Phase 4** — Secondary screen fixes (6 files modified)  
+**Phase 5** — Design system hardening (10+ files, ongoing)  
+
+---
+
+## Phase 1: Tab Bar Icons + More Menu
+
+**Why first:** These are the two most visible "this looks unfinished" problems. 
+Tab icons are on screen 100% of the time. The More menu blocks feature 
+discovery. Both are small, surgical changes.
+
+### 1A. Tab Bar Icons
+
+**File:** `src/navigation/TabNavigator.tsx`  
+**Dependency:** `lucide-react-native` (already installed)
+
+**Changes:**
+- Import 5 icons from lucide-react-native:
+  - HomeTab → `Home`
+  - ReadTab → `Library`
+  - ExploreTab → `Compass`
+  - SearchTab → `Search`
+  - MoreTab → `MoreHorizontal`
+- Add `tabBarIcon` to each `Tab.Screen` options:
+  ```tsx
+  options={{
+    tabBarLabel: 'Home',
+    tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
+  }}
+  ```
+- Adjust `tabBarLabelStyle` fontSize from 10 → 9 to accommodate icons.
+- Add `tabBarIconStyle: { marginBottom: -2 }` to tighten icon-label spacing.
+
+**No other files affected.**
+
+### 1B. More Menu Screen
+
+**Problem:** The More tab currently lands on SettingsScreen. Bookmarks, 
+Reading History, and Reading Plans are registered in MoreStack but have 
+no navigation path — they're invisible.
+
+**New file:** `src/screens/MoreMenuScreen.tsx`
+
+**Design:**
+- SafeAreaView with dark background
+- "More" title in Cinzel gold (consistent with other tab landing pages)
+- 5 menu rows, each a TouchableOpacity with:
+  - Left: Lucide icon (20px, base.textDim)
+  - Center: Label (SourceSans3_500Medium, 15pt, base.text)
+  - Right: Chevron (ChevronRight icon, base.textMuted)
+  - Full row height: MIN_TOUCH_TARGET (44pt)
+  - Bottom border: base.border + '40'
+
+**Menu items:**
+| Icon | Label | Screen |
+|------|-------|--------|
+| Bookmark | Bookmarks | Bookmarks |
+| Clock | Reading History | ReadingHistory |
+| Calendar | Reading Plans | PlanList |
+| Settings | Settings | Settings |
+| Info | About | About (new — extract from Settings) |
+
+**File modified:** `src/navigation/MoreStack.tsx`
+- Change initial screen from `Settings` to `MoreMenu`
+- Add `<Stack.Screen name="MoreMenu" component={MoreMenuScreen} />`
+- Add `<Stack.Screen name="About" component={AboutScreen} />` (optional, 
+  can remain within Settings for now)
+
+**Data needed:** None — pure navigation screen.
+
+---
+
+## Phase 2: Home Screen Redesign
+
+**Why second:** The home screen is the first impression. Phase 1 gave us 
+proper navigation chrome; now we fix the content.
+
+### 2A. New DB Queries
+
+**File:** `src/db/content.ts` — add these queries:
+
+```typescript
+// Live counts for home screen stats
+export async function getContentStats(): Promise<{
+  liveBooks: number;
+  liveChapters: number;
+  scholarCount: number;
+  peopleCount: number;
+}> {
+  const books = await getDb().getFirstAsync<{c: number}>(
+    "SELECT COUNT(*) as c FROM books WHERE is_live = 1"
+  );
+  const chapters = await getDb().getFirstAsync<{c: number}>(
+    "SELECT COUNT(*) as c FROM chapters"
+  );
+  const scholars = await getDb().getFirstAsync<{c: number}>(
+    "SELECT COUNT(*) as c FROM scholars"
+  );
+  const people = await getDb().getFirstAsync<{c: number}>(
+    "SELECT COUNT(*) as c FROM people"
+  );
+  return {
+    liveBooks: books?.c ?? 0,
+    liveChapters: chapters?.c ?? 0,
+    scholarCount: scholars?.c ?? 0,
+    peopleCount: people?.c ?? 0,
+  };
+}
+```
+
+### 2B. New Hook
+
+**New file:** `src/hooks/useHomeData.ts`
+
+Consolidates all home screen data into one hook:
+```typescript
+export function useHomeData() {
+  // Returns: { stats, recentChapters, readingStats, currentBook, isLoading }
+  // stats = getContentStats()
+  // recentChapters = getRecentChapters(3)  — last 3 chapters, not 5
+  // readingStats = getReadingStats()
+  // currentBook = derived from most recent chapter
+}
+```
+
+### 2C. Rewrite HomeScreen
+
+**File:** `src/screens/HomeScreen.tsx` — full rewrite
+
+**New layout (top to bottom):**
+
+1. **Hero** (keep, modify)
+   - "Scripture Deep Dive" in Cinzel gold, centered
+   - Dynamic subtitle: "{liveChapters} chapters · {scholarCount} scholars"
+   - Pulled from useHomeData().stats
+
+2. **Continue Reading Card** (new, prominent)
+   - Full-width card with bgElevated background, border
+   - Book name + chapter number + chapter title
+   - "Continue →" touchable
+   - Only shows if recentChapters.length > 0
+   - If no history: show a "Start Reading →" card that links to Genesis 1
+   - This replaces the tiny horizontal BadgeChip scroll
+
+3. **Reading Stats Row** (new)
+   - Three stat boxes in a horizontal row (like ReadingHistoryScreen)
+   - Chapters read | Current streak | Books explored
+   - Only shows if totalChapters > 0
+   - Gold numbers, muted labels, Cinzel font
+
+4. **Explore Quick Links** (new)
+   - Horizontal scroll of 4 cards: People, Timeline, Maps, Scholars
+   - Each card: icon + title + count (e.g., "233 figures")
+   - Taps navigate to ExploreTab screens
+   - Uses Lucide icons, not emojis
+
+5. **Recently Read** (simplified)
+   - If 2+ recent chapters, show a "Recently Read" section
+   - Simple vertical list of last 3 chapters with book name + title
+   - Each row tappable → navigates to chapter
+   - Much simpler than the current full book list
+
+**REMOVED from HomeScreen:**
+- OT/NT toggle (lives in Read tab)
+- Full book list (lives in Read tab)
+- Search bar (lives in Search tab)
+- Inline search results (lives in Search tab)
+
+**Files affected:**
+- `src/screens/HomeScreen.tsx` — full rewrite
+- `src/hooks/useHomeData.ts` — new file
+- `src/db/content.ts` — add getContentStats()
+- `src/navigation/HomeStack.tsx` — add Chapter screen to HomeStack so 
+  "Continue Reading" can navigate directly to a chapter without switching 
+  tabs (add same screens as ReadStack: Chapter, ChapterList, BookList)
+
+**Navigation consideration:** HomeStack currently only has HomeMain. For the 
+Continue Reading card to navigate to a chapter without switching tabs, 
+HomeStack needs Chapter (and ideally ChapterList and BookList) as screens. 
+This is a common React Navigation pattern — shared screens across stacks.
+
+---
+
+## Phase 3: Chapter Screen Polish
+
+**Why third:** With the home screen fixed, users will navigate to chapters 
+quickly. Now we polish the 90%-of-time screen.
+
+### 3A. Replace Text Arrows with Lucide Icons
+
+**File:** `src/components/ChapterNavBar.tsx`
+
+Changes:
+- Import `ChevronLeft`, `ChevronRight`, `Grid3x3` from lucide-react-native
+- Replace `← Library` text with `<ChevronLeft>` icon + "Library" text
+- Replace `←` / `→` arrows with `<ChevronLeft>` / `<ChevronRight>` icons
+- Add `▾` or a `ChevronDown` icon after the center book title to indicate 
+  it's tappable for Qnav
+- Consider replacing "Library" with the book name for context: 
+  `< Ezekiel` instead of `< Library`
+
+**File:** `src/components/BottomBar.tsx`
+
+Changes:
+- Remove Prev/Next arrows (duplicates top bar)
+- Keep translation toggle (NIV/ESV)
+- Add: Font size A-/A+ buttons (move from Settings for quick access)
+- Add: Bookmark toggle button (uses addBookmark/removeBookmark from user.ts)
+- Layout: `[A- A+]  [NIV | ESV]  [Bookmark]`
+
+New dependency: needs current verse ref for bookmark. Add a prop:
+```tsx
+interface Props {
+  hasPrev: boolean;
+  hasNext: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+  currentRef: string;  // e.g., "ezekiel 43:1" for bookmark
+}
+```
+
+Actually, keeping Prev/Next in the bottom bar may be fine since some users 
+prefer bottom-of-screen navigation after scrolling through a long chapter. 
+**Decision: keep Prev/Next in bottom bar, but ADD bookmark + font controls.** 
+The duplication is intentional — top bar for "I just arrived," bottom bar for 
+"I just finished reading."
+
+### 3B. Scholarly Block Label
+
+**File:** `src/components/ScholarlyBlock.tsx`
+
+Change:
+```tsx
+// Before:
+"SCHOLARLY BLOCK"
+// After:
+"CHAPTER ANALYSIS"
+```
+
+One-line change.
+
+### 3C. Chapter Header Badge Cleanup
+
+**File:** `src/components/ChapterHeader.tsx`
+
+Changes:
+- Add Lucide icons to deep-link badges:
+  - Timeline badge: prepend `Clock` icon (size 12)
+  - Map badge: prepend `MapPin` icon (size 12)
+- Consider changing "About This Book →" from a badge to a plain text link 
+  to reduce visual noise in the action bar
+- "Notes" badge: add `StickyNote` icon
+
+---
+
+## Phase 4: Secondary Screen Fixes
+
+### 4A. Search Screen Display Names
+
+**File:** `src/screens/SearchScreen.tsx`
+
+Problem: Verse results show `v.book_id` (DB slug like "ezekiel") instead of 
+the display name ("Ezekiel").
+
+Fix options:
+1. Join to books table in the searchVerses query (preferred — fix in DB layer)
+2. Build a book_id → name lookup in the component
+
+**Better fix in `src/db/content.ts`:**
+```typescript
+export async function searchVerses(query: string, limit: number = 50) {
+  return getDb().getAllAsync(
+    `SELECT v.*, b.name as book_name FROM verses_fts f
+     JOIN verses v ON v.id = f.rowid
+     JOIN books b ON b.id = v.book_id
+     WHERE f.text MATCH ?
+     LIMIT ?`,
+    [query, limit]
+  );
+}
+```
+
+Then in SearchScreen, display `v.book_name` instead of `v.book_id`.
+
+Also add:
+- Empty state: "No results found for '{query}'" when results are empty
+- "Load more" button when verses.length === 20 (current slice limit)
+
+### 4B. Book List "LIVE" Badge Inversion
+
+**File:** `src/screens/BookListScreen.tsx`
+
+When most books are live, the LIVE badge is noise. Invert the logic:
+
+```tsx
+// Before:
+{!!book.is_live && <BadgeChip label="LIVE" color={base.gold} />}
+
+// After:
+{!book.is_live && <BadgeChip label="Coming Soon" color={base.textMuted} />}
+```
+
+Apply same change in `src/screens/HomeScreen.tsx` if any book list remnants 
+remain after Phase 2 rewrite (they shouldn't).
+
+### 4C. Chapter List — Read Progress Indicators
+
+**File:** `src/screens/ChapterListScreen.tsx`
+
+Changes:
+- Import `getProgressForBook` from `../db/user`
+- Load progress on mount: `const [visited, setVisited] = useState<Set<number>>(new Set())`
+- In the chapter grid, add a visual indicator for visited chapters:
+  ```tsx
+  backgroundColor: visited.has(ch) ? base.gold + '15' : base.bgElevated,
+  ```
+  Or a small dot indicator below the chapter number.
+
+### 4D. Explore Menu — Replace Emojis with Icons
+
+**File:** `src/screens/ExploreMenuScreen.tsx`
+
+Changes:
+- Import Lucide icons: `Users`, `Map`, `Clock`, `GitCompare`, `BookOpen`, 
+  `GraduationCap`
+- Replace emoji strings with styled icons:
+  ```tsx
+  // Before:
+  { title: 'People', icon: '👥', ... }
+  // After:
+  { title: 'People', icon: Users, ... }
+  ```
+- Render: `<f.icon size={24} color={base.gold} />`
+- Add live counts to subtitles by querying the DB
+- Add subtle accent border colors per card using panel colors
+
+### 4E. Settings Screen — Fix Hardcoded Values + Dead Button
+
+**File:** `src/screens/SettingsScreen.tsx`
+
+Changes:
+- Import `getContentStats` from `../db/content`
+- Load stats on mount, replace hardcoded text:
+  ```tsx
+  // Before:
+  "43 scholars across 30 books with 879 chapters"
+  // After:
+  `${stats.scholarCount} scholars across ${stats.liveBooks} books 
+   with ${stats.liveChapters} chapters`
+  ```
+- Fix "Clear Reading History" — implement the onPress:
+  ```tsx
+  onPress: async () => {
+    await getDb().runAsync("DELETE FROM reading_progress");
+    // Show success feedback
+  }
+  ```
+- Version number: import from app.json or use Constants.expoConfig.version
+
+### 4F. Back Navigation on ChapterListScreen
+
+**File:** `src/screens/ChapterListScreen.tsx`
+
+Add a back button at the top:
+```tsx
+<TouchableOpacity onPress={() => navigation.goBack()}>
+  <ChevronLeft size={20} color={base.gold} />
+</TouchableOpacity>
+```
+
+Currently relies on system back gesture which isn't obvious on iOS.
+
+---
+
+## Phase 5: Design System Hardening
+
+This phase is ongoing and can be done incrementally across sessions.
+
+### 5A. Gold Overuse Reduction
+
+**File:** `src/theme/colors.ts`
+
+Add a new token:
+```typescript
+export const base = {
+  // ... existing ...
+  accent: '#c9a84c',        // primary accent (rename gold → accent in usage)
+  verseNum: '#9a8a6a',      // verse numbers — warmer, less prominent than gold
+  navText: '#d8ccb0',       // navigation text — lighter than gold, less saturated
+} as const;
+```
+
+Then selectively replace `base.gold` usage:
+- Verse numbers in VerseBlock.tsx → `base.verseNum`
+- "← Library" and nav arrows in ChapterNavBar → `base.navText`
+- Keep `base.gold` for: titles, active states, primary buttons, branding
+
+**This is a high-touch change** — grep for `base.gold` across all files and 
+decide per-usage. Do NOT find-and-replace blindly.
+
+### 5B. Elevated Background Contrast
+
+**File:** `src/theme/colors.ts`
+
+```typescript
+// Before:
+bgElevated: '#181410',
+// After:
+bgElevated: '#1e1a12',  // slightly more contrast
+```
+
+Test on a real device screen — dark theme contrast is screen-dependent.
+
+### 5C. StyleSheet Extraction (Incremental)
+
+For each component, extract inline styles to a `StyleSheet.create()` block 
+at the bottom of the file. Priority order:
+1. ChapterScreen.tsx (most complex)
+2. VerseBlock.tsx (rendered per-verse, performance-sensitive)
+3. HomeScreen.tsx (after Phase 2 rewrite)
+4. SectionBlock.tsx
+5. All panel components
+
+Pattern:
+```tsx
+// At bottom of file:
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: base.bg },
+  verseRow: { flexDirection: 'row', marginBottom: 2 },
+  // ...
+});
+```
+
+### 5D. Loading States for Explore Screens
+
+Add LoadingSkeleton to screens that currently show blank while loading:
+- `GenealogyTreeScreen.tsx`
+- `MapScreen.tsx`
+- `TimelineScreen.tsx`
+- `ScholarBrowseScreen.tsx`
+- `WordStudyBrowseScreen.tsx`
+
+Pattern:
+```tsx
+if (isLoading) {
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+      <LoadingSkeleton lines={6} />
+    </SafeAreaView>
+  );
+}
+```
+
+### 5E. Panel Button Grouping (Future — Complex)
+
+This is the most complex UI change and should be deferred until after 
+Phases 1-4 are stable. The idea:
+
+Instead of 8 individual buttons per section:
+`[Hebrew] [Context] [Cross-Ref] [MacArthur] [Calvin] [NET] [Block] [Zimmerli]`
+
+Group scholars:
+`[Hebrew] [Context] [Cross-Ref] [Scholars ▾]`
+
+Tapping "Scholars ▾" expands to show individual scholar buttons. This 
+reduces visual density on the button row.
+
+**Implementation:**
+- New component: `ScholarButtonGroup.tsx`
+- Wraps multiple scholar PanelButtons in a collapsible container
+- ButtonRow detects scholar panels and renders the group instead
+- Requires state management for the group expand/collapse
+
+**Defer this** until user feedback confirms button density is a real problem 
+on phones. It may be fine with the horizontal scroll.
+
+---
+
+## File Change Summary
+
+### New Files (4)
+| File | Phase | Purpose |
+|------|-------|---------|
+| `src/screens/MoreMenuScreen.tsx` | 1B | More tab landing page |
+| `src/hooks/useHomeData.ts` | 2B | Consolidated home screen data |
+| (optional) `src/screens/AboutScreen.tsx` | 1B | Extracted from Settings |
+| (optional) `src/components/ScholarButtonGroup.tsx` | 5E | Grouped scholar buttons |
+
+### Modified Files (by phase)
+
+**Phase 1:**
+| File | Changes |
+|------|---------|
+| `src/navigation/TabNavigator.tsx` | Add Lucide icons to all 5 tabs |
+| `src/navigation/MoreStack.tsx` | Add MoreMenu as initial screen |
+
+**Phase 2:**
+| File | Changes |
+|------|---------|
+| `src/screens/HomeScreen.tsx` | Full rewrite — dashboard layout |
+| `src/db/content.ts` | Add getContentStats() query |
+| `src/navigation/HomeStack.tsx` | Add Chapter + ChapterList screens |
+
+**Phase 3:**
+| File | Changes |
+|------|---------|
+| `src/components/ChapterNavBar.tsx` | Lucide icons, tappable title chevron |
+| `src/components/BottomBar.tsx` | Add bookmark + font size controls |
+| `src/components/ScholarlyBlock.tsx` | Rename label to "CHAPTER ANALYSIS" |
+| `src/components/ChapterHeader.tsx` | Add icons to badges |
+
+**Phase 4:**
+| File | Changes |
+|------|---------|
+| `src/screens/SearchScreen.tsx` | Display names, empty state, load more |
+| `src/screens/BookListScreen.tsx` | Invert LIVE → Coming Soon |
+| `src/screens/ChapterListScreen.tsx` | Read progress dots, back button |
+| `src/screens/ExploreMenuScreen.tsx` | Lucide icons, live counts, colors |
+| `src/screens/SettingsScreen.tsx` | Dynamic stats, fix dead button, version |
+| `src/db/content.ts` | Join book name in searchVerses |
+
+**Phase 5:**
+| File | Changes |
+|------|---------|
+| `src/theme/colors.ts` | New tokens (verseNum, navText), bgElevated bump |
+| `src/components/VerseBlock.tsx` | Use verseNum color |
+| `src/components/ChapterNavBar.tsx` | Use navText color |
+| Multiple panel/screen files | StyleSheet extraction |
+| 5 Explore screen files | Add LoadingSkeleton |
+
+---
+
+## Dependency Order
+
+```
+Phase 1A (tab icons)     — independent, can ship alone
+Phase 1B (more menu)     — independent, can ship alone
+Phase 2  (home screen)   — depends on Phase 1 being done (so home tab 
+                           icon exists), but technically independent
+Phase 3  (chapter polish) — independent
+Phase 4A-F               — each sub-task is independent
+Phase 5A (gold reduction) — should come AFTER Phase 2 + 3 so we're not 
+                           changing colors while also changing layouts
+Phase 5B (contrast)       — independent
+Phase 5C (stylesheets)    — do AFTER all layout changes are finalized
+Phase 5D (loading states) — independent
+Phase 5E (button groups)  — defer, evaluate after user testing
+```
+
+---
+
+## Estimated Effort Per Phase
+
+| Phase | Files | Complexity | Est. Time |
+|-------|-------|-----------|-----------|
+| 1A | 1 | Low | 5 min |
+| 1B | 2 | Low | 15 min |
+| 2 | 4 | Medium-High | 30 min |
+| 3 | 4 | Medium | 20 min |
+| 4 | 6 | Medium | 25 min |
+| 5A-B | 3+ | Low-Medium | 15 min |
+| 5C | 10+ | Low (repetitive) | Ongoing |
+| 5D | 5 | Low | 10 min |
+
+**Phases 1-4 total: ~1.5 hours of Claude session time.**
+
+---
+
+## Testing Checklist (Per Phase)
+
+After each phase, verify on Expo Go:
+
+- [ ] App launches without red screen errors
+- [ ] All 5 tabs render and navigate correctly
+- [ ] Chapter screen loads content with all panels functional
+- [ ] Search returns results with correct display names
+- [ ] Explore features (People, Timeline, Map) load without blank screens
+- [ ] Settings changes persist across app restart
+- [ ] Navigation back buttons work on every screen
+- [ ] No "Text strings must be rendered within a <Text> component" errors
+- [ ] Tab bar icons render at correct size and color
+- [ ] Home screen shows dynamic data (not hardcoded counts)
+
+---
+
+## Notes for Future Sessions
+
+- Always `git pull origin master` before starting work
+- Always `npx expo install --fix` after any dependency changes  
+- Test on Expo Go after each phase — don't batch multiple phases before testing
+- The `!!value &&` pattern must be used for any SQLite boolean field rendered 
+  in JSX (is_live, has_note, etc.) — SQLite returns 0/1, not false/true
+- `lucide-react-native` is already installed — no `npm install` needed for icons
+- The app uses `@react-navigation/stack` (not native-stack) — animations are 
+  JS-based, which is fine for this content-heavy app but means transitions 
+  won't be as buttery as native-stack
+- Color changes in Phase 5A should be tested on multiple phone screens — OLED 
+  dark theme contrast varies significantly between devices
