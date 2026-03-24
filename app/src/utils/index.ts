@@ -6,3 +6,5 @@ export { getPanelLabel, isScholarPanel, SECTION_PANEL_ORDER, CHAPTER_PANEL_ORDER
 export { computeFullLayout, computeSpineIds, TREE_CONSTANTS } from './treeBuilder';
 export type { TreePerson, LayoutNode, MarriageBar, SpouseConnector, TreeLink, TreeLayoutResult } from './treeBuilder';
 export { toLatLng, computeBearing, computeBounds, midpoint, zoomFromDelta, maxPriorityForZoom, labelScale, labelOffset } from './geoMath';
+export { yearToX, formatYear, assignLanes, computeTickMarks, ERA_RANGES, TOTAL_WIDTH, SCALE_BREAKPOINTS } from './timelineLayout';
+export type { PositionedEvent } from './timelineLayout';
