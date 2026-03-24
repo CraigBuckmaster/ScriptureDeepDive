@@ -1,0 +1,8 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "More"
+- assertVisible: "Settings"
+- assertVisible: "Default Translation"
+- assertVisible: "Font Size"
+- assertVisible: "Verse Highlighting"

@@ -1,0 +1,17 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Read"
+- tapOn: "Genesis"
+- tapOn:
+    text: "1"
+    index: 0
+- assertVisible: "Genesis 1"
+- tapOn: "Hebrew ▾"
+- assertVisible:
+    id: "panel-content"
+- tapOn: "Context ▾"
+- scrollUntilVisible:
+    element:
+      text: "SCHOLARLY BLOCK"
+    direction: DOWN

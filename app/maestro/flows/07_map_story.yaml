@@ -1,0 +1,8 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Explore"
+- tapOn: "Map"
+- tapOn: "Patriarchal Period"
+- tapOn: "Abraham's Call"
+- assertVisible: "Abraham's Call"

@@ -1,0 +1,6 @@
+appId: com.scripturedeepive.app
+---
+# 08_timeline
+# TODO: Implement full flow steps when running on device
+- launchApp
+- assertVisible: "Scripture Deep Dive"

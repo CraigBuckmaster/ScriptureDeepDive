@@ -1,0 +1,6 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- tapOn: "Search"
+- inputText: "covenant"
+- assertVisible: "Verses"

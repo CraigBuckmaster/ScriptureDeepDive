@@ -1,0 +1,6 @@
+appId: com.scripturedeepive.app
+---
+- launchApp
+- assertVisible: "Scripture Deep Dive"
+- assertVisible: "Old Testament"
+- assertVisible: "Genesis"
