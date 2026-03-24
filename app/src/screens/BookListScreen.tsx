@@ -71,7 +71,7 @@ export default function BookListScreen() {
               {book.name}
             </Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
-              {book.is_live && <BadgeChip label="LIVE" color={base.gold} />}
+              {!!book.is_live && <BadgeChip label="LIVE" color={base.gold} />}
               <Text style={{ color: base.textMuted, fontSize: 11 }}>{book.total_chapters} ch</Text>
             </View>
           </TouchableOpacity>
