@@ -20,6 +20,7 @@ import { TreeCanvas } from '../components/tree/TreeCanvas';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PersonSearchBar } from '../components/tree/PersonSearchBar';
 import { PersonSidebar } from '../components/PersonSidebar';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
 import type { Person } from '../types';
@@ -27,7 +28,7 @@ import type { TreePerson } from '../utils/treeBuilder';
 
 export default function GenealogyTreeScreen({ route, navigation }: any) {
   const initialPersonId = route?.params?.personId;
-  const { people } = usePeople();
+  const { people, isLoading } = usePeople();
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
@@ -78,6 +79,14 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     },
     [handleFamilyNavigate]
   );
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>

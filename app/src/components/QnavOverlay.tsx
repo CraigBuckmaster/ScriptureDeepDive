@@ -72,7 +72,7 @@ export function QnavOverlay({
             style={styles.closeButton}
             accessibilityLabel="Close navigation"
           >
-            <X size={20} color={base.gold} />
+            <X size={20} color={base.navText} />
           </TouchableOpacity>
         </View>
 

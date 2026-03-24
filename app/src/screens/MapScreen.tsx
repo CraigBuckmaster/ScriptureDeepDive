@@ -21,6 +21,7 @@ import { StoryOverlays } from '../components/map/StoryOverlays';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
 import { FloatingControls } from '../components/map/FloatingControls';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
@@ -36,8 +37,8 @@ export default function MapScreen({ route, navigation }: any) {
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
 
-  const { places } = usePlaces();
-  const { stories } = useMapStories();
+  const { places, isLoading: placesLoading } = usePlaces();
+  const { stories, isLoading: storiesLoading } = useMapStories();
   const { zoomLevel, onRegionChange } = useMapZoom();
   const mapRef = useRef<MapView>(null);
 
@@ -113,6 +114,14 @@ export default function MapScreen({ route, navigation }: any) {
       setShowPanel(false);
     }
   }, [activeStory]);
+
+  if (placesLoading || storiesLoading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>

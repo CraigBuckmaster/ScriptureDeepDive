@@ -49,7 +49,7 @@ export function ChapterNavBar({
           accessibilityLabel={`Back to ${bookName} chapter list. Long press to navigate.`}
           style={styles.backButton}
         >
-          <ArrowLeft size={18} color={base.gold} />
+          <ArrowLeft size={18} color={base.navText} />
           <Text style={styles.bookName} numberOfLines={1}>{bookName}</Text>
         </TouchableOpacity>
 
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bookName: {
-    color: base.text,
+    color: base.navText,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     flexShrink: 1,

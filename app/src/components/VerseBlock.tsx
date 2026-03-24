@@ -4,8 +4,7 @@
  */
 
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
 import { base, spacing } from '../theme';
@@ -28,38 +27,30 @@ export function VerseBlock({
 }: Props) {
   if (!verses.length) return null;
 
+  const lineHeight = fontSize * 1.6;
+  const numSize = Math.max(9, fontSize * 0.6);
+
   return (
-    <View style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+    <View style={styles.container}>
       {verses.map((verse) => (
-        <View
-          key={verse.verse_num}
-          style={{ flexDirection: 'row', marginBottom: 2 }}
-        >
+        <View key={verse.verse_num} style={styles.verseRow}>
           {/* Verse number */}
           <Text
-            style={{
-              color: base.gold,
-              fontFamily: 'Cinzel_400Regular',
-              fontSize: Math.max(9, fontSize * 0.6),
-              lineHeight: fontSize * 1.6,
-              marginRight: 4,
-              minWidth: 20,
-              textAlign: 'right',
-            }}
+            style={[styles.verseNum, { fontSize: numSize, lineHeight }]}
             accessibilityLabel={`Verse ${verse.verse_num}`}
           >
             {verse.verse_num}
           </Text>
 
           {/* Verse text with VHL */}
-          <View style={{ flex: 1 }}>
+          <View style={styles.textWrap}>
             <HighlightedText
               text={verse.text}
               groups={vhlGroups}
               activeGroups={activeVhlGroups}
               sectionId={sectionId}
               onVhlWordPress={onVhlWordPress}
-              style={{ fontSize, lineHeight: fontSize * 1.6 }}
+              style={{ fontSize, lineHeight }}
             />
           </View>
 
@@ -76,3 +67,24 @@ export function VerseBlock({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+  },
+  verseRow: {
+    flexDirection: 'row',
+    marginBottom: 2,
+  },
+  verseNum: {
+    color: base.verseNum,
+    fontFamily: 'Cinzel_400Regular',
+    marginRight: 4,
+    minWidth: 20,
+    textAlign: 'right',
+  },
+  textWrap: {
+    flex: 1,
+  },
+});

@@ -7,7 +7,7 @@
  */
 
 import React, { useCallback } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
 import { base } from '../theme';
@@ -61,7 +61,7 @@ export function SectionBlock({
       : null;
 
   return (
-    <View style={{ borderBottomWidth: 1, borderBottomColor: base.border + '40' }}>
+    <View style={styles.container}>
       <SectionHeader header={section.header} />
 
       <VerseBlock
@@ -83,3 +83,10 @@ export function SectionBlock({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+});

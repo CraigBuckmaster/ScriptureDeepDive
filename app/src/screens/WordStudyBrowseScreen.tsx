@@ -6,11 +6,12 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useWordStudies } from '../hooks/useWordStudies';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, MIN_TOUCH_TARGET } from '../theme';
 
 export default function WordStudyBrowseScreen() {
   const navigation = useNavigation<any>();
-  const { studies } = useWordStudies();
+  const { studies, isLoading } = useWordStudies();
   const [langFilter, setLangFilter] = useState<'all' | 'hebrew' | 'greek'>('all');
   const [search, setSearch] = useState('');
 
@@ -27,6 +28,14 @@ export default function WordStudyBrowseScreen() {
     }
     return list;
   }, [studies, langFilter, search]);
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
