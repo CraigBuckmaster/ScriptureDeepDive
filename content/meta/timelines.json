@@ -1309,6 +1309,42 @@
         "ezekiel"
       ],
       "summary": "In August 591 BC, elders come to inquire of God. He refuses to answer and instead rehearses Israel's entire history as unbroken rebellion from Egypt through the wilderness to the present, revealing that God saved them only 'for the sake of my name.'"
+    },
+    {
+      "id": "evt_siege_jerusalem_588",
+      "category": "event",
+      "era": "prophets",
+      "name": "Siege of Jerusalem Begins",
+      "year": -588,
+      "scripture_ref": "Ezek 24:1-2; 2 Kgs 25:1",
+      "chapter_link": "ot/ezekiel/Ezekiel_24.html",
+      "people_json": "[\"nebuchadnezzar\", \"zedekiah\", \"ezekiel\"]",
+      "summary": "Nebuchadnezzar begins the final siege of Jerusalem on the 10th of Tevet. God reveals the exact date to Ezekiel in Babylon, confirming prophetic authenticity.",
+      "region": "Jerusalem"
+    },
+    {
+      "id": "evt_ezekiel_wife_death",
+      "category": "event",
+      "era": "prophets",
+      "name": "Death of Ezekiel's Wife",
+      "year": -588,
+      "scripture_ref": "Ezek 24:15-27",
+      "chapter_link": "ot/ezekiel/Ezekiel_24.html",
+      "people_json": "[\"ezekiel\"]",
+      "summary": "God commands Ezekiel not to mourn his wife's death as a sign-act: when the Temple falls, the exiles will be unable to mourn properly. Ezekiel's prophetic silence on Jerusalem begins.",
+      "region": "Babylon"
+    },
+    {
+      "id": "evt_tyre_siege_585",
+      "category": "event",
+      "era": "prophets",
+      "name": "Nebuchadnezzar's 13-Year Siege of Tyre",
+      "year": -585,
+      "scripture_ref": "Ezek 26:7-14",
+      "chapter_link": "ot/ezekiel/Ezekiel_26.html",
+      "people_json": "[\"nebuchadnezzar\"]",
+      "summary": "Nebuchadnezzar besieges Tyre for 13 years (585-573 BC), the longest siege in ancient history. He takes the mainland settlement but never fully conquers the island fortress.",
+      "region": "Tyre"
     }
   ],
   "timeline_people": [
