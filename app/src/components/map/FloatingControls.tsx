@@ -1,0 +1,51 @@
+/**
+ * FloatingControls — Overlay buttons above the map.
+ * Ancient/Modern toggle + Centre button.
+ */
+
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { base, spacing, radii, MIN_TOUCH_TARGET } from '../../theme';
+
+interface Props {
+  showModern: boolean;
+  onToggleNames: () => void;
+  onCentre: () => void;
+}
+
+export function FloatingControls({ showModern, onToggleNames, onCentre }: Props) {
+  return (
+    <View style={{
+      position: 'absolute', top: spacing.lg, right: spacing.md,
+      gap: spacing.xs,
+    }}>
+      <TouchableOpacity
+        onPress={onToggleNames}
+        style={{
+          backgroundColor: base.bg + 'CC', borderWidth: 1, borderColor: base.border,
+          borderRadius: radii.md, paddingHorizontal: spacing.sm, minHeight: MIN_TOUCH_TARGET,
+          justifyContent: 'center',
+        }}
+        accessibilityLabel={showModern ? 'Switch to ancient names' : 'Switch to modern names'}
+      >
+        <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 11 }}>
+          {showModern ? 'Ancient' : 'Modern'}
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={onCentre}
+        style={{
+          backgroundColor: base.bg + 'CC', borderWidth: 1, borderColor: base.border,
+          borderRadius: radii.md, paddingHorizontal: spacing.sm, minHeight: MIN_TOUCH_TARGET,
+          justifyContent: 'center',
+        }}
+        accessibilityLabel="Centre map"
+      >
+        <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 11 }}>
+          Centre
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
