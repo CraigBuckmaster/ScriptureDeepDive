@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScriptureDeepDive — Audit Flag Review</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+  h1 { color: #c9a84c; margin-bottom: 4px; font-size: 1.4em; }
+  .subtitle { color: #888; font-size: 0.85em; margin-bottom: 16px; }
+
+  /* Stats bar */
+  .stats-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .stat-card { background: #16213e; border: 1px solid #333; border-radius: 6px; padding: 10px 16px; min-width: 120px; }
+  .stat-card .label { font-size: 0.7em; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-card .value { font-size: 1.4em; font-weight: 700; color: #c9a84c; }
+  .stat-card.verified .value { color: #4caf50; }
+  .stat-card.pending .value { color: #ff9800; }
+  .stat-card.correction .value { color: #f44336; }
+
+  /* Controls */
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; padding: 12px; background: #16213e; border-radius: 6px; border: 1px solid #333; }
+  .controls label { font-size: 0.8em; color: #aaa; }
+  .controls select, .controls input { background: #0f3460; border: 1px solid #444; color: #e0e0e0; padding: 6px 10px; border-radius: 4px; font-size: 0.85em; }
+  .controls select:focus, .controls input:focus { border-color: #c9a84c; outline: none; }
+  .controls button { background: #c9a84c; color: #1a1a2e; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.85em; }
+  .controls button:hover { background: #dbb85c; }
+  .controls button.secondary { background: #333; color: #ccc; }
+  .controls button.secondary:hover { background: #444; }
+
+  /* File drop zone */
+  .drop-zone { border: 2px dashed #444; border-radius: 8px; padding: 40px; text-align: center; margin-bottom: 20px; cursor: pointer; transition: border-color 0.2s; }
+  .drop-zone:hover, .drop-zone.dragover { border-color: #c9a84c; background: rgba(201, 168, 76, 0.05); }
+  .drop-zone input { display: none; }
+  .drop-zone p { color: #888; }
+  .drop-zone .icon { font-size: 2em; margin-bottom: 8px; }
+
+  /* Flag table */
+  .flag-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+  .flag-table th { background: #0f3460; padding: 8px 10px; text-align: left; font-weight: 600; color: #c9a84c; position: sticky; top: 0; z-index: 10; border-bottom: 2px solid #c9a84c; }
+  .flag-table td { padding: 8px 10px; border-bottom: 1px solid #222; vertical-align: top; }
+  .flag-table tr:hover { background: rgba(201, 168, 76, 0.05); }
+  .flag-table tr.verified { opacity: 0.5; }
+  .flag-table tr.needs_correction { background: rgba(244, 67, 54, 0.08); }
+
+  /* Badges */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 0.75em; font-weight: 600; }
+  .badge.cat-date { background: #1a237e; color: #90caf9; }
+  .badge.cat-hebrew { background: #4a148c; color: #ce93d8; }
+  .badge.cat-greek { background: #4a148c; color: #ce93d8; }
+  .badge.cat-scholar_position { background: #004d40; color: #80cbc4; }
+  .badge.cat-historical { background: #bf360c; color: #ffab91; }
+  .badge.cat-family { background: #33691e; color: #aed581; }
+  .badge.cat-cross_ref { background: #1b5e20; color: #a5d6a7; }
+  .badge.conf { background: #333; color: #fff; min-width: 18px; text-align: center; }
+  .badge.conf-5 { background: #2e7d32; }
+  .badge.conf-4 { background: #558b2f; }
+  .badge.conf-3 { background: #f9a825; color: #333; }
+  .badge.conf-2 { background: #e65100; }
+  .badge.conf-1 { background: #b71c1c; }
+  .badge.conf-0 { background: #000; }
+  .badge.status-pending { background: #555; }
+  .badge.status-verified { background: #2e7d32; }
+  .badge.status-needs_correction { background: #c62828; }
+  .badge.status-needs_expert { background: #e65100; }
+  .badge.status-dismissed { background: #333; color: #666; }
+
+  /* Claim text */
+  .claim-text { max-width: 500px; word-break: break-word; line-height: 1.4; }
+  .claim-context { color: #666; font-size: 0.9em; font-style: italic; margin-top: 2px; }
+
+  /* Verification display */
+  .verification { margin-top: 4px; padding: 4px 8px; background: #1a3a1a; border-left: 3px solid #4caf50; border-radius: 2px; font-size: 0.9em; }
+  .verification.unverified { background: transparent; border-left: none; }
+  .verification .v-note { color: #a5d6a7; }
+  .verification .v-source { color: #81c784; font-size: 0.85em; }
+  .verification .v-source a { color: #81c784; }
+
+  /* Action buttons */
+  .actions { display: flex; gap: 4px; flex-direction: column; min-width: 100px; }
+  .actions button { padding: 4px 8px; border: none; border-radius: 3px; cursor: pointer; font-size: 0.75em; font-weight: 600; }
+  .btn-accept { background: #2e7d32; color: #fff; }
+  .btn-accept:hover { background: #388e3c; }
+  .btn-deny { background: #c62828; color: #fff; }
+  .btn-deny:hover { background: #d32f2f; }
+  .btn-expert { background: #e65100; color: #fff; }
+  .btn-expert:hover { background: #ef6c00; }
+  .btn-dismiss { background: #333; color: #999; }
+  .btn-dismiss:hover { background: #444; }
+  .btn-cascade { background: #1565c0; color: #fff; font-size: 0.7em; }
+  .btn-cascade:hover { background: #1976d2; }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+  .modal-overlay.active { display: flex; }
+  .modal { background: #16213e; border: 1px solid #444; border-radius: 8px; padding: 24px; max-width: 500px; width: 90%; }
+  .modal h3 { color: #c9a84c; margin-bottom: 12px; }
+  .modal textarea { width: 100%; background: #0f3460; border: 1px solid #444; color: #e0e0e0; padding: 8px; border-radius: 4px; min-height: 80px; font-family: inherit; }
+  .modal .modal-actions { display: flex; gap: 8px; margin-top: 12px; justify-content: flex-end; }
+
+  /* Pagination */
+  .pagination { display: flex; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding: 12px; }
+  .pagination button { background: #333; color: #ccc; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+  .pagination button:hover { background: #444; }
+  .pagination button.active { background: #c9a84c; color: #1a1a2e; }
+  .pagination span { color: #888; font-size: 0.85em; }
+
+  /* Responsive */
+  .table-wrap { overflow-x: auto; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>ScriptureDeepDive — Audit Flag Review</h1>
+<p class="subtitle">Load audit-flags.json to review, accept, or deny verification flags</p>
+
+<!-- File drop zone -->
+<div class="drop-zone" id="dropZone">
+  <div class="icon">📂</div>
+  <p>Drop <strong>audit-flags.json</strong> here or click to browse</p>
+  <input type="file" id="fileInput" accept=".json">
+</div>
+
+<!-- Main UI (hidden until file loaded) -->
+<div id="mainUI" class="hidden">
+
+  <!-- Stats -->
+  <div class="stats-bar" id="statsBar"></div>
+
+  <!-- Filters -->
+  <div class="controls">
+    <div>
+      <label>Category</label><br>
+      <select id="filterCategory">
+        <option value="">All</option>
+        <option value="date">Date</option>
+        <option value="hebrew">Hebrew</option>
+        <option value="greek">Greek</option>
+        <option value="scholar_position">Scholar Position</option>
+        <option value="historical">Historical</option>
+        <option value="family">Family</option>
+        <option value="cross_ref">Cross-ref</option>
+      </select>
+    </div>
+    <div>
+      <label>Status</label><br>
+      <select id="filterStatus">
+        <option value="pending">Pending</option>
+        <option value="">All</option>
+        <option value="verified">Verified</option>
+        <option value="needs_correction">Needs Correction</option>
+        <option value="needs_expert">Needs Expert</option>
+        <option value="dismissed">Dismissed</option>
+      </select>
+    </div>
+    <div>
+      <label>Book</label><br>
+      <select id="filterBook"><option value="">All</option></select>
+    </div>
+    <div>
+      <label>Confidence</label><br>
+      <select id="filterConfidence">
+        <option value="">All</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label>Search</label><br>
+      <input type="text" id="filterSearch" placeholder="Search claims...">
+    </div>
+    <div style="align-self: flex-end;">
+      <button onclick="applyFilters()">Filter</button>
+      <button class="secondary" onclick="resetFilters()">Reset</button>
+    </div>
+    <div style="margin-left: auto; align-self: flex-end;">
+      <button class="secondary" onclick="exportJSON()">Export JSON</button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table class="flag-table">
+      <thead>
+        <tr>
+          <th style="width:60px">ID</th>
+          <th style="width:80px">Book</th>
+          <th>Ch:Sec</th>
+          <th style="width:90px">Category</th>
+          <th>Conf</th>
+          <th>Claim & Verification</th>
+          <th style="width:65px">Status</th>
+          <th style="width:110px">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="flagTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+</div>
+
+<!-- Correction modal -->
+<div class="modal-overlay" id="denyModal">
+  <div class="modal">
+    <h3>Correction Note</h3>
+    <p style="color:#888; font-size:0.85em; margin-bottom:8px;" id="denyModalClaim"></p>
+    <textarea id="denyNote" placeholder="Describe what's wrong and the correct information..."></textarea>
+    <div class="modal-actions">
+      <button class="secondary" onclick="closeDenyModal()">Cancel</button>
+      <button style="background:#c62828;color:#fff" onclick="confirmDeny()">Mark Needs Correction</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let flagData = null;
+let filtered = [];
+let currentPage = 0;
+const PAGE_SIZE = 50;
+let denyTargetId = null;
+
+// ── File loading ──
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files.length) loadFile(e.target.files[0]); });
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      flagData = JSON.parse(e.target.result);
+      initUI();
+    } catch (err) {
+      alert('Invalid JSON file: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ── UI initialization ──
+function initUI() {
+  document.getElementById('dropZone').classList.add('hidden');
+  document.getElementById('mainUI').classList.remove('hidden');
+
+  // Populate book filter
+  const books = [...new Set(flagData.flags.map(f => f.book))].sort();
+  const bookSelect = document.getElementById('filterBook');
+  bookSelect.innerHTML = '<option value="">All</option>';
+  books.forEach(b => {
+    const opt = document.createElement('option');
+    opt.value = b; opt.textContent = b;
+    bookSelect.appendChild(opt);
+  });
+
+  updateStats();
+  applyFilters();
+}
+
+function updateStats() {
+  const flags = flagData.flags;
+  const total = flags.length;
+  const pending = flags.filter(f => (f.status || 'pending') === 'pending').length;
+  const verified = flags.filter(f => f.status === 'verified').length;
+  const corrections = flags.filter(f => f.status === 'needs_correction').length;
+  const dismissed = flags.filter(f => f.status === 'dismissed').length;
+
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat-card"><div class="label">Total Flags</div><div class="value">${total.toLocaleString()}</div></div>
+    <div class="stat-card pending"><div class="label">Pending</div><div class="value">${pending.toLocaleString()}</div></div>
+    <div class="stat-card verified"><div class="label">Verified</div><div class="value">${verified.toLocaleString()}</div></div>
+    <div class="stat-card correction"><div class="label">Needs Fix</div><div class="value">${corrections.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">Dismissed</div><div class="value">${dismissed.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">Progress</div><div class="value">${total ? ((verified + dismissed) / total * 100).toFixed(1) : 0}%</div></div>
+  `;
+}
+
+// ── Filtering ──
+function applyFilters() {
+  const cat = document.getElementById('filterCategory').value;
+  const status = document.getElementById('filterStatus').value;
+  const book = document.getElementById('filterBook').value;
+  const conf = document.getElementById('filterConfidence').value;
+  const search = document.getElementById('filterSearch').value.toLowerCase();
+
+  filtered = flagData.flags.filter(f => {
+    if (cat && f.category !== cat) return false;
+    if (status && (f.status || 'pending') !== status) return false;
+    if (book && f.book !== book) return false;
+    if (conf !== '' && f.confidence !== parseInt(conf)) return false;
+    if (search && !f.claim.toLowerCase().includes(search) &&
+        !(f.context || '').toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  currentPage = 0;
+  renderTable();
+}
+
+function resetFilters() {
+  document.getElementById('filterCategory').value = '';
+  document.getElementById('filterStatus').value = 'pending';
+  document.getElementById('filterBook').value = '';
+  document.getElementById('filterConfidence').value = '';
+  document.getElementById('filterSearch').value = '';
+  applyFilters();
+}
+
+// ── Table rendering ──
+function renderTable() {
+  const start = currentPage * PAGE_SIZE;
+  const page = filtered.slice(start, start + PAGE_SIZE);
+  const tbody = document.getElementById('flagTableBody');
+
+  tbody.innerHTML = page.map(f => {
+    const status = f.status || 'pending';
+    const v = f.verification || null;
+    const hasVerification = v && v.note;
+
+    let verificationHTML = '';
+    if (hasVerification) {
+      const sourcesHTML = (v.sources || []).map(s =>
+        `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.length > 60 ? s.substring(0, 60) + '...' : s)}</a>`
+      ).join(', ');
+      verificationHTML = `
+        <div class="verification">
+          <div class="v-note">${esc(v.note)}</div>
+          ${sourcesHTML ? `<div class="v-source">Sources: ${sourcesHTML}</div>` : ''}
+        </div>`;
+    }
+
+    const cascadeCount = getCascadeCount(f);
+    const cascadeBtn = cascadeCount > 0
+      ? `<button class="btn-cascade" onclick="cascadeAccept('${f.id}')" title="Apply to ${cascadeCount} identical claims">Cascade (${cascadeCount})</button>`
+      : '';
+
+    return `<tr class="${status}">
+      <td><span style="font-size:0.75em;color:#666">${esc(f.id.replace('flag_', ''))}</span></td>
+      <td>${esc(f.book)}</td>
+      <td>${f.chapter}:${f.section}</td>
+      <td><span class="badge cat-${f.category}">${esc(f.category)}</span></td>
+      <td><span class="badge conf conf-${f.confidence}">${f.confidence}</span></td>
+      <td>
+        <div class="claim-text">${esc(f.claim)}</div>
+        ${f.context ? `<div class="claim-context">${esc(f.context)}</div>` : ''}
+        ${verificationHTML}
+      </td>
+      <td><span class="badge status-${status}">${esc(status)}</span></td>
+      <td class="actions">
+        ${status === 'pending' ? `
+          <button class="btn-accept" onclick="acceptFlag('${f.id}')">Accept</button>
+          <button class="btn-deny" onclick="openDenyModal('${f.id}')">Deny</button>
+          <button class="btn-expert" onclick="markExpert('${f.id}')">Expert</button>
+          <button class="btn-dismiss" onclick="dismissFlag('${f.id}')">Dismiss</button>
+          ${cascadeBtn}
+        ` : status === 'needs_correction' ? `
+          <button class="btn-accept" onclick="acceptFlag('${f.id}')">Accept</button>
+        ` : `
+          <button class="btn-dismiss" onclick="resetFlag('${f.id}')">Reset</button>
+        `}
+      </td>
+    </tr>`;
+  }).join('');
+
+  renderPagination();
+}
+
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+
+function getCascadeCount(flag) {
+  if (!['date', 'hebrew', 'greek'].includes(flag.category)) return 0;
+  const claim = flag.claim.trim();
+  return flagData.flags.filter(f =>
+    f.id !== flag.id &&
+    f.category === flag.category &&
+    f.claim.trim() === claim &&
+    (f.status || 'pending') === 'pending'
+  ).length;
+}
+
+function renderPagination() {
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const pag = document.getElementById('pagination');
+
+  if (totalPages <= 1) {
+    pag.innerHTML = `<span>Showing ${filtered.length} flags</span>`;
+    return;
+  }
+
+  let html = '';
+  html += `<button onclick="goPage(0)" ${currentPage === 0 ? 'disabled' : ''}>First</button>`;
+  html += `<button onclick="goPage(${currentPage - 1})" ${currentPage === 0 ? 'disabled' : ''}>Prev</button>`;
+
+  const start = Math.max(0, currentPage - 3);
+  const end = Math.min(totalPages, currentPage + 4);
+  for (let i = start; i < end; i++) {
+    html += `<button onclick="goPage(${i})" class="${i === currentPage ? 'active' : ''}">${i + 1}</button>`;
+  }
+
+  html += `<button onclick="goPage(${currentPage + 1})" ${currentPage >= totalPages - 1 ? 'disabled' : ''}>Next</button>`;
+  html += `<button onclick="goPage(${totalPages - 1})" ${currentPage >= totalPages - 1 ? 'disabled' : ''}>Last</button>`;
+  html += `<span>${filtered.length.toLocaleString()} flags, page ${currentPage + 1}/${totalPages}</span>`;
+
+  pag.innerHTML = html;
+}
+
+function goPage(n) {
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  currentPage = Math.max(0, Math.min(n, totalPages - 1));
+  renderTable();
+  window.scrollTo(0, 0);
+}
+
+// ── Actions ──
+function findFlag(id) {
+  return flagData.flags.find(f => f.id === id);
+}
+
+function acceptFlag(id) {
+  const flag = findFlag(id);
+  if (!flag) return;
+  flag.status = 'verified';
+  if (!flag.verification) flag.verification = {};
+  flag.verification.reviewed_at = new Date().toISOString();
+  flag.verification.reviewed_by = 'manual_ui';
+  updateStats();
+  renderTable();
+}
+
+function cascadeAccept(id) {
+  const flag = findFlag(id);
+  if (!flag) return;
+  const claim = flag.claim.trim();
+  const matches = flagData.flags.filter(f =>
+    f.category === flag.category &&
+    f.claim.trim() === claim &&
+    (f.status || 'pending') === 'pending'
+  );
+  if (!confirm(`Accept ${matches.length} identical "${flag.category}" claims?\n\nClaim: ${claim.substring(0, 100)}`)) return;
+  matches.forEach(f => {
+    f.status = 'verified';
+    if (!f.verification) f.verification = {};
+    f.verification.reviewed_at = new Date().toISOString();
+    f.verification.reviewed_by = 'manual_ui_cascade';
+    f.verification.cascaded_from = id;
+  });
+  updateStats();
+  renderTable();
+}
+
+function openDenyModal(id) {
+  denyTargetId = id;
+  const flag = findFlag(id);
+  document.getElementById('denyModalClaim').textContent = flag ? flag.claim.substring(0, 200) : '';
+  document.getElementById('denyNote').value = '';
+  document.getElementById('denyModal').classList.add('active');
+}
+
+function closeDenyModal() {
+  document.getElementById('denyModal').classList.remove('active');
+  denyTargetId = null;
+}
+
+function confirmDeny() {
+  if (!denyTargetId) return;
+  const flag = findFlag(denyTargetId);
+  if (!flag) return;
+  const note = document.getElementById('denyNote').value.trim();
+  if (!note) { alert('Please provide a correction note.'); return; }
+  flag.status = 'needs_correction';
+  if (!flag.verification) flag.verification = {};
+  flag.verification.correction_note = note;
+  flag.verification.reviewed_at = new Date().toISOString();
+  flag.verification.reviewed_by = 'manual_ui';
+  closeDenyModal();
+  updateStats();
+  renderTable();
+}
+
+function markExpert(id) {
+  const flag = findFlag(id);
+  if (!flag) return;
+  flag.status = 'needs_expert';
+  if (!flag.verification) flag.verification = {};
+  flag.verification.reviewed_at = new Date().toISOString();
+  flag.verification.reviewed_by = 'manual_ui';
+  updateStats();
+  renderTable();
+}
+
+function dismissFlag(id) {
+  const flag = findFlag(id);
+  if (!flag) return;
+  flag.status = 'dismissed';
+  if (!flag.verification) flag.verification = {};
+  flag.verification.reviewed_at = new Date().toISOString();
+  flag.verification.reviewed_by = 'manual_ui';
+  updateStats();
+  renderTable();
+}
+
+function resetFlag(id) {
+  const flag = findFlag(id);
+  if (!flag) return;
+  flag.status = 'pending';
+  updateStats();
+  renderTable();
+}
+
+// ── Export ──
+function exportJSON() {
+  if (!flagData) return;
+  flagData.last_reviewed = new Date().toISOString();
+  const blob = new Blob([JSON.stringify(flagData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'audit-flags.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── Keyboard shortcut ──
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDenyModal();
+});
+</script>
+</body>
+</html>
