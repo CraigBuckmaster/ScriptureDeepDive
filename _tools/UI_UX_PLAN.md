@@ -14,7 +14,7 @@ phase and have a working, improved app.
 
 **Phase 1** — Tab bar icons + More menu (2 files new, 2 files modified)  
 **Phase 2** — Home screen redesign (1 file rewritten, 2 files new)  
-**Phase 3** — Chapter screen polish (4 files modified)  
+**Phase 3** — Chapter screen polish (6 files modified, 1 new component)  
 **Phase 4** — Secondary screen fixes (8 files modified, 1 new component)  
 **Phase 5** — Design system hardening (10+ files, ongoing)  
 
@@ -203,46 +203,182 @@ This is a common React Navigation pattern — shared screens across stacks.
 **Why third:** With the home screen fixed, users will navigate to chapters 
 quickly. Now we polish the 90%-of-time screen.
 
-### 3A. Replace Text Arrows with Lucide Icons
+### 3A. Chapter Nav Bar — Book Name + Navigator Dropdown
+
+**Files:**
+- `src/components/ChapterNavBar.tsx` — major update
+- `src/components/QnavOverlay.tsx` — kept but refined
+
+**Current state:** The nav bar shows `← Library | Ezekiel 43 | ← →`. 
+Tapping the center title opens a full-screen QnavOverlay modal.
+
+**New behavior:**
+- **Back button:** Replace `← Library` with `‹ Ezekiel` (back to chapter 
+  list for current book, showing the book name for context). Use Lucide 
+  `ChevronLeft` icon instead of text arrow.
+- **Center title:** Keep `Ezekiel 43` but add a `ChevronDown` icon to 
+  signal it's tappable: `Ezekiel 43 ▾`. Tapping opens the QnavOverlay 
+  (already works — just needs the visual chevron affordance).
+- **Prev/Next arrows:** Replace `←` / `→` text with Lucide `ChevronLeft` / 
+  `ChevronRight` icons.
+
+**Props change:**
+```tsx
+interface Props {
+  bookName: string;
+  chapterNum: number;
+  hasPrev: boolean;
+  hasNext: boolean;
+  onBack: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  onQnav: () => void;
+}
+```
+No new props needed — `bookName` already exists.
+
+**Layout:**
+```
+┌──────────────────────────────────────┐
+│ ‹ Ezekiel    Ezekiel 43 ▾    ‹   › │
+│  (back)       (opens qnav)   (±ch) │
+└──────────────────────────────────────┘
+```
+
+**QnavOverlay refinement (optional, same session):**
+
+The existing QnavOverlay is already functional — full-screen modal with 
+search, OT/NT toggle, expandable book → chapter grid. It stays as-is 
+structurally. Optional polish:
+- Auto-expand the current book on open so the user sees their position
+- Highlight the current chapter number in the grid (gold bg instead of 
+  bgElevated)
+- Replace the `✕` close button with Lucide `X` icon
 
 **File:** `src/components/ChapterNavBar.tsx`
 
-Changes:
-- Import `ChevronLeft`, `ChevronRight`, `Grid3x3` from lucide-react-native
-- Replace `← Library` text with `<ChevronLeft>` icon + "Library" text
-- Replace `←` / `→` arrows with `<ChevronLeft>` / `<ChevronRight>` icons
-- Add `▾` or a `ChevronDown` icon after the center book title to indicate 
-  it's tappable for Qnav
-- Consider replacing "Library" with the book name for context: 
-  `< Ezekiel` instead of `< Library`
+```tsx
+import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react-native';
 
-**File:** `src/components/BottomBar.tsx`
+// Back button:
+<TouchableOpacity onPress={onBack} ...>
+  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+    <ChevronLeft size={18} color={base.gold} />
+    <Text style={{ color: base.gold, fontSize: 14 }}>{bookName}</Text>
+  </View>
+</TouchableOpacity>
 
-Changes:
-- Remove Prev/Next arrows (duplicates top bar)
-- Keep translation toggle (NIV/ESV)
-- Add: Font size A-/A+ buttons (move from Settings for quick access)
-- Add: Bookmark toggle button (uses addBookmark/removeBookmark from user.ts)
-- Layout: `[A- A+]  [NIV | ESV]  [Bookmark]`
+// Center title:
+<TouchableOpacity onPress={onQnav} ...>
+  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+    <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
+      {bookName} {chapterNum}
+    </Text>
+    <ChevronDown size={14} color={base.textMuted} />
+  </View>
+</TouchableOpacity>
 
-New dependency: needs current verse ref for bookmark. Add a prop:
+// Prev/Next:
+<ChevronLeft size={20} color={hasPrev ? base.gold : base.textMuted + '40'} />
+<ChevronRight size={20} color={hasNext ? base.gold : base.textMuted + '40'} />
+```
+
+### 3B. Bottom Bar — Translation Dropdown + Controls
+
+**Files:**
+- `src/components/BottomBar.tsx` — major update
+- `src/components/TranslationDropdown.tsx` — new component
+- `src/stores/settingsStore.ts` — widen translation type
+
+**Current state:** Bottom bar has `← Prev | [NIV | ESV] | Next →`. The 
+NIV/ESV toggle shows both options permanently as a pill-shaped segmented 
+control.
+
+**Problem:** A segmented control works for 2 options but won't scale. When 
+we add KJV, NASB, or NLT, the bar runs out of space. The same dropdown 
+pattern used for the view mode selector (Phase 4B) is the right approach.
+
+**New component: `src/components/TranslationDropdown.tsx`**
+
+Same pattern as ViewModeDropdown — compact pill showing only the active 
+translation, expands on tap to show all options.
+
+```tsx
+interface TranslationDropdownProps {
+  active: string;          // 'niv', 'esv', etc.
+  options: string[];       // ['niv', 'esv'] — extensible
+  onSelect: (t: string) => void;
+}
+```
+
+Design:
+- **Closed state:** Compact pill (bgElevated, border, radii.pill)
+  - Label: active translation uppercased ("NIV"), SourceSans3_600SemiBold
+  - Right: `ChevronDown` icon, 12px
+  - Width: auto, height: 30px
+- **Open state:** Dropdown expands UPWARD (since it's in the bottom bar)
+  - Absolute positioned above the pill
+  - Each option: MIN_TOUCH_TARGET height, uppercase label
+  - Active option: gold text + `Check` icon
+  - Inactive: base.text, no icon
+  - Tap outside → closes
+  - Up to 6 options visible without scroll; beyond 6, add scroll
+
+**Labels map** (extensible):
+```tsx
+const TRANSLATION_LABELS: Record<string, string> = {
+  niv: 'NIV',
+  esv: 'ESV',
+  kjv: 'KJV',       // future
+  nasb: 'NASB',     // future
+  nlt: 'NLT',       // future
+  nrsv: 'NRSV',     // future
+};
+```
+
+**Store update — `src/stores/settingsStore.ts`:**
+
+Widen the translation type to support future additions:
+```tsx
+// Before:
+translation: 'niv' | 'esv';
+setTranslation: (t: 'niv' | 'esv') => void;
+
+// After:
+translation: string;
+setTranslation: (t: string) => void;
+```
+
+The hydrate function's fallback remains 'niv' as default. Validation moves 
+to the dropdown component (only shows options that exist in the DB).
+
+**Updated BottomBar layout:**
+
+```
+┌──────────────────────────────────────────┐
+│ ← Prev    [A-] [A+]  [NIV ▾]  Next →    │
+│                        ↑ dropdown        │
+└──────────────────────────────────────────┘
+```
+
+- Keep Prev/Next (users need bottom-of-screen navigation after scrolling)
+- Replace segmented toggle with TranslationDropdown
+- Add font size A-/A+ buttons (compact, 28x28, bgElevated circles)
+- Bookmark button deferred — better suited to a verse long-press action 
+  than a persistent bar button (you'd need to decide WHICH verse to bookmark)
+
+**Props update for BottomBar:**
 ```tsx
 interface Props {
   hasPrev: boolean;
   hasNext: boolean;
   onPrev: () => void;
   onNext: () => void;
-  currentRef: string;  // e.g., "ezekiel 43:1" for bookmark
+  // Translation and font size now read from stores directly — no new props
 }
 ```
 
-Actually, keeping Prev/Next in the bottom bar may be fine since some users 
-prefer bottom-of-screen navigation after scrolling through a long chapter. 
-**Decision: keep Prev/Next in bottom bar, but ADD bookmark + font controls.** 
-The duplication is intentional — top bar for "I just arrived," bottom bar for 
-"I just finished reading."
-
-### 3B. Scholarly Block Label
+### 3C. Scholarly Block Label
 
 **File:** `src/components/ScholarlyBlock.tsx`
 
@@ -614,12 +750,14 @@ on phones. It may be fine with the horizontal scroll.
 
 ## File Change Summary
 
-### New Files (5)
+### New Files (6)
 | File | Phase | Purpose |
 |------|-------|---------|
 | `src/screens/MoreMenuScreen.tsx` | 1B | More tab landing page |
 | `src/hooks/useHomeData.ts` | 2B | Consolidated home screen data |
-| `src/components/ViewModeDropdown.tsx` | 4B | Canonical/Thematic view selector |
+| `src/components/CompactDropdown.tsx` | 3B | Reusable dropdown (up/down direction) |
+| `src/components/TranslationDropdown.tsx` | 3B | Thin wrapper — translation picker |
+| `src/components/ViewModeDropdown.tsx` | 4B | Thin wrapper — canonical/thematic selector |
 | (optional) `src/screens/AboutScreen.tsx` | 1B | Extracted from Settings |
 | (optional) `src/components/ScholarButtonGroup.tsx` | 5E | Grouped scholar buttons |
 
@@ -641,8 +779,11 @@ on phones. It may be fine with the horizontal scroll.
 **Phase 3:**
 | File | Changes |
 |------|---------|
-| `src/components/ChapterNavBar.tsx` | Lucide icons, tappable title chevron |
-| `src/components/BottomBar.tsx` | Add bookmark + font size controls |
+| `src/components/ChapterNavBar.tsx` | Book name back button, Lucide icons, tappable title chevron |
+| `src/components/BottomBar.tsx` | TranslationDropdown replaces toggle, add font size controls |
+| `src/components/TranslationDropdown.tsx` | New — compact upward-expanding dropdown for translations |
+| `src/components/QnavOverlay.tsx` | Optional polish: auto-expand current book, highlight current ch |
+| `src/stores/settingsStore.ts` | Widen translation type from union to string |
 | `src/components/ScholarlyBlock.tsx` | Rename label to "CHAPTER ANALYSIS" |
 | `src/components/ChapterHeader.tsx` | Add icons to badges |
 
@@ -676,11 +817,14 @@ Phase 1A (tab icons)     — independent, can ship alone
 Phase 1B (more menu)     — independent, can ship alone
 Phase 2  (home screen)   — depends on Phase 1 being done (so home tab 
                            icon exists), but technically independent
-Phase 3  (chapter polish) — independent
+Phase 3  (chapter polish) — independent; modifies settingsStore.ts 
+                           (widens translation type)
 Phase 4A (search fixes)  — independent
-Phase 4B (book list)     — must update settingsStore.ts for view mode 
-                           persistence; depends on Phase 2 completing 
-                           the HomeScreen rewrite (canonical view moves)
+Phase 4B (book list)     — modifies settingsStore.ts (adds bookListMode);
+                           depends on Phase 2 completing the HomeScreen 
+                           rewrite (canonical view moves here).
+                           If doing Phase 3 + 4B in same session, 
+                           combine settingsStore changes.
 Phase 4C-F               — each sub-task is independent
 Phase 5A (gold reduction) — should come AFTER Phase 2 + 3 so we're not 
                            changing colors while also changing layouts
@@ -699,13 +843,13 @@ Phase 5E (button groups)  — defer, evaluate after user testing
 | 1A | 1 | Low | 5 min |
 | 1B | 2 | Low | 15 min |
 | 2 | 4 | Medium-High | 30 min |
-| 3 | 4 | Medium | 20 min |
+| 3 | 7 | Medium-High | 30 min |
 | 4 | 8 | Medium-High | 35 min |
 | 5A-B | 3+ | Low-Medium | 15 min |
 | 5C | 10+ | Low (repetitive) | Ongoing |
 | 5D | 5 | Low | 10 min |
 
-**Phases 1-4 total: ~2 hours of Claude session time.**
+**Phases 1-4 total: ~2.5 hours of Claude session time.**
 
 ---
 
@@ -739,3 +883,43 @@ After each phase, verify on Expo Go:
   won't be as buttery as native-stack
 - Color changes in Phase 5A should be tested on multiple phone screens — OLED 
   dark theme contrast varies significantly between devices
+
+### Dropdown Component Architecture
+
+Phases 3B and 4B both introduce dropdown selectors (TranslationDropdown and 
+ViewModeDropdown). They share the same UX pattern:
+- Closed: compact pill showing active option + chevron
+- Open: overlay with options, active item gets checkmark, tap-outside dismisses
+
+**Option A (recommended): Build a generic `CompactDropdown` component** that 
+both use:
+```tsx
+interface CompactDropdownProps {
+  value: string;
+  options: { key: string; label: string }[];
+  onSelect: (key: string) => void;
+  direction?: 'down' | 'up';  // up for bottom bar, down for headers
+}
+```
+
+TranslationDropdown and ViewModeDropdown become thin wrappers:
+```tsx
+// TranslationDropdown.tsx
+export const TranslationDropdown = ({ active, onSelect }) => (
+  <CompactDropdown
+    value={active}
+    options={[{ key: 'niv', label: 'NIV' }, { key: 'esv', label: 'ESV' }]}
+    onSelect={onSelect}
+    direction="up"
+  />
+);
+```
+
+This avoids duplicating the overlay logic, dismiss handling, and animation 
+code across two components. Build CompactDropdown in Phase 3B (first use), 
+reuse in Phase 4B.
+
+**Option B: Two separate components.** Simpler upfront, but the dismiss 
+overlay and positioning logic will be copy-pasted. Acceptable if time is 
+tight, but refactor into a shared component later.
+
