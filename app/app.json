@@ -8,6 +8,7 @@
     "icon": "./assets/images/icon-512.png",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0c0a07",
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -25,17 +26,15 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
-      "expo-sqlite",
       "expo-font",
       ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
     ],
     "extra": {
       "eas": { "projectId": "" }
-    },
-    "updates": { "url": "" },
-    "runtimeVersion": { "policy": "appVersion" }
+    }
   }
 }
