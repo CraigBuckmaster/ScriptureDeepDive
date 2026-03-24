@@ -1,0 +1,428 @@
+{
+  "chapter_id": null,
+  "testament": null,
+  "book_dir": "jeremiah",
+  "chapter_num": 52,
+  "title": "Historical Appendix",
+  "subtitle": "",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1-23 -- The Fall of Jerusalem Retold",
+      "verse_start": 1,
+      "verse_end": 23,
+      "panels": {
+        "heb": [
+          {
+            "word": "נְחֹשֶׁת",
+            "transliteration": "nechoshet",
+            "gloss": "bronze",
+            "paragraph": "The detailed inventory of bronze temple furnishings stripped by Babylon (vv.17-23) -- pillars, sea, movable stands, pots, shovels, wick trimmers -- reads like a funeral inventory. Each item represents centuries of worship infrastructure reduced to scrap metal. The bronze (nechoshet) that Solomon had cast with such care (1 Kgs 7:13-47) is broken up and hauled to Babylon."
+          }
+        ],
+        "ctx": "Chapter 52 is a historical appendix nearly identical to 2 Kings 24:18-25:30, added after the editorial note \"the words of Jeremiah end here\" (51:64b). Its purpose is to validate the prophetic word by documenting its fulfillment: everything Jeremiah prophesied -- the siege, the breach, Zedekiah's capture, the temple's destruction, the deportation -- happened exactly as announced. The chapter serves as historical proof that Jeremiah was a true prophet.",
+        "cross": [
+          {
+            "ref": "2 Kgs 24:18-25:21",
+            "note": "The parallel account -- nearly verbatim in many sections. The shared source demonstrates historical accuracy."
+          },
+          {
+            "ref": "Lam 2:6-7",
+            "note": "\"The LORD has rejected his altar and abandoned his sanctuary\" -- Lamentations is the liturgical response to the events documented here."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:4-7",
+              "note": "The siege timeline: began in the tenth month of year 9, the city breached in the fourth month of year 11 -- eighteen months. The famine was so severe there was no food for the people."
+            },
+            {
+              "ref": "52:10-11",
+              "note": "Zedekiah's sons killed before his eyes, then his eyes put out. The last king of Judah sees his dynasty die and then sees nothing ever again."
+            },
+            {
+              "ref": "52:12-16",
+              "note": "Nebuzaradan burns the temple, the palace, and every important building. The walls are torn down. Only the poorest remain as farmers. The city that David conquered is reduced to rubble."
+            },
+            {
+              "ref": "52:17-23",
+              "note": "The temple inventory: two pillars (Jakin and Boaz), the bronze sea, the movable stands, the ritual vessels. The detail preserves what was lost -- a written memorial of destroyed sacred architecture."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:12-16",
+              "note": "Calvin reads the appendix as \"God's signature on the prophetic word. Every prediction fulfilled proves that the prophet spoke truth. The fall of Jerusalem is the validation of forty years of ministry.\""
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:12",
+              "note": "The date -- \"seventh day of the fifth month in the nineteenth year of Nebuchadnezzar\" -- corresponds to August 586 BC. 2 Kings 25:8 gives the date as the seventh of the month; Jeremiah 52:12 gives the tenth. The discrepancy may reflect different stages of the destruction process."
+            }
+          ]
+        },
+        "lundbom": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:1-23",
+              "note": "Lundbom reads the appendix as \"the historical verification of the prophetic word.\" The editorial decision to append this account after \"the words of Jeremiah end here\" creates a literary frame: prophecy (chs. 1-51) validated by history (ch. 52)."
+            }
+          ]
+        },
+        "brueggemann": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:17-23",
+              "note": "Brueggemann reads the temple inventory as \"an act of liturgical mourning.\" The detailed listing of what was lost -- each pot, each pillar, each decoration -- functions as a funeral register for a dead institution."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 24-34 -- Deportations and Jehoiachin Released",
+      "verse_start": 24,
+      "verse_end": 34,
+      "panels": {
+        "heb": [
+          {
+            "word": "נָשָׂא",
+            "transliteration": "nasa'",
+            "gloss": "to lift up / raise",
+            "paragraph": "Evil-Merodach \"lifted up the head\" (nasa' et-ro'sh) of Jehoiachin from prison (v.31). The idiom means to show favor, to elevate. The same phrase appears in Genesis 40:13 when Joseph interprets Pharaoh's cupbearer's dream. After 37 years in prison, the exiled king is given a seat of honor at the Babylonian table. The book ends not with destruction but with a small, strange act of grace."
+          }
+        ],
+        "ctx": "The book ends with two notes: the exact deportation numbers (4,600 total across three deportations, vv.28-30) and the release of Jehoiachin from prison in the thirty-seventh year of his exile (562 BC, vv.31-34). This final episode is deeply significant: the Davidic king, though in exile, is alive and honored. The dynasty has not been extinguished but preserved in Babylon. The ending mirrors 2 Kings 25:27-30 and creates a note of ambiguous hope -- not triumphant restoration but quiet survival. The seed of David endures.",
+        "cross": [
+          {
+            "ref": "2 Kgs 25:27-30",
+            "note": "The parallel account of Jehoiachin's release -- the same hopeful ending for both books."
+          },
+          {
+            "ref": "Matt 1:11-12",
+            "note": "Jeconiah (Jehoiachin) appears in Jesus's genealogy -- the Davidic line survives through this imprisoned, then released, king."
+          },
+          {
+            "ref": "Gen 40:13",
+            "note": "\"Pharaoh will lift up your head\" -- the same idiom applied to the cupbearer's restoration from prison."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:28-30",
+              "note": "Three deportations totaling 4,600 people: 597 BC (3,023), 586 BC (832), 582 BC (745). These are likely counts of adult males only; total deportees would be much higher."
+            },
+            {
+              "ref": "52:31-33",
+              "note": "Evil-Merodach releases Jehoiachin in the thirty-seventh year of exile (562 BC). The king is given new clothes, eats at the king's table, and receives a regular allowance. Babylonian ration tablets confirm Jehoiachin's presence and provisions."
+            },
+            {
+              "ref": "52:34",
+              "note": "\"Day by day the king of Babylon gave Jehoiachin a regular allowance as long as he lived, till the day of his death.\" The final sentence is not dramatic but quietly hopeful: the Davidic line survives. This is how the book of judgment ends -- not with fire but with bread."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:31-34",
+              "note": "Calvin reads the ending as \"a whisper of providence within the darkness. The Davidic king is alive, fed, and honored. The promise to David has not been voided but reduced to its smallest possible expression -- one man eating bread in a foreign land. But from that seed, the Messiah will come.\""
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:31",
+              "note": "Evil-Merodach (Amel-Marduk) succeeded Nebuchadnezzar in 562 BC and reigned only two years before being assassinated. His release of Jehoiachin may have been a goodwill gesture to consolidate support."
+            },
+            {
+              "ref": "52:34",
+              "note": "The daily allowance ('aruhat tamid) mirrors the temple's daily offering (tamid). The Davidic king receives a form of daily \"provision\" that echoes cultic language."
+            }
+          ]
+        },
+        "lundbom": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:31-34",
+              "note": "Lundbom calls the ending \"the most important four verses in the book for messianic theology.\" The Davidic line survives in exile -- diminished, dependent, but alive. From this survivor, the genealogy leads to Jesus."
+            }
+          ]
+        },
+        "brueggemann": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "52:31-34",
+              "note": "Brueggemann reads the ending as \"hope in its most minimal form.\" Not restoration, not triumph, not even return -- just bread and a seat at the table. But in the world of Jeremiah, where everything has been destroyed, even bread is a miracle. The book ends not with a bang but with a meal."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "lit": {
+      "rows": [
+        {
+          "label": "vv.1-3",
+          "range": "52:1-3",
+          "text": "Zedekiah's Reign Summarized",
+          "is_key": false
+        },
+        {
+          "label": "vv.4-11",
+          "range": "52:4-11",
+          "text": "Siege, Breach, Capture, Blinding",
+          "is_key": false
+        },
+        {
+          "label": "vv.12-16",
+          "range": "52:12-16",
+          "text": "Temple Burned, Walls Demolished",
+          "is_key": false
+        },
+        {
+          "label": "vv.17-23",
+          "range": "52:17-23",
+          "text": "Temple Inventory: What Was Lost",
+          "is_key": false
+        },
+        {
+          "label": "vv.24-30",
+          "range": "52:24-30",
+          "text": "Executions and Deportation Numbers",
+          "is_key": false
+        },
+        {
+          "label": "vv.31-34",
+          "range": "52:31-34",
+          "text": "Jehoiachin Released: Bread and Hope",
+          "is_key": true
+        }
+      ],
+      "note": "The historical appendix validates forty years of prophecy and ends with Jehoiachin's release -- the Davidic line survives in exile. The book ends not with fire but with bread."
+    },
+    "themes": {
+      "scores": [
+        {
+          "name": "Covenant",
+          "value": 6
+        },
+        {
+          "name": "Judgment",
+          "value": 8
+        },
+        {
+          "name": "Mercy",
+          "value": 5
+        },
+        {
+          "name": "Faith",
+          "value": 4
+        },
+        {
+          "name": "Sovereignty",
+          "value": 8
+        },
+        {
+          "name": "Worship",
+          "value": 4
+        },
+        {
+          "name": "Holiness",
+          "value": 5
+        },
+        {
+          "name": "Prophecy",
+          "value": 7
+        },
+        {
+          "name": "Justice",
+          "value": 6
+        },
+        {
+          "name": "Mission",
+          "value": 4
+        }
+      ],
+      "note": "Judgment at 8 with the comprehensive destruction account. Mercy at 5: Jehoiachin's release is a grace note. Sovereignty at 8: God controls both the destroyer and the preserver."
+    },
+    "hebtext": [
+      {
+        "word": "נְחֹשֶׁת",
+        "tlit": "nechoshet",
+        "gloss": "bronze",
+        "note": "The detailed inventory of bronze temple furnishings stripped by Babylon (vv.17-23) -- pillars, sea, movable stands, pots, shovels, wick trimmers -- reads like a funeral inventory. Each item represents centuries of worship infrastructure reduced to scrap metal. The bronze (nechoshet) that Solomon had cast with such care (1 Kgs 7:13-47) is broken up and hauled to Babylon."
+      },
+      {
+        "word": "נָשָׂא",
+        "tlit": "nasa'",
+        "gloss": "to lift up / raise",
+        "note": "Evil-Merodach \"lifted up the head\" (nasa' et-ro'sh) of Jehoiachin from prison (v.31). The idiom means to show favor, to elevate. The same phrase appears in Genesis 40:13 when Joseph interprets Pharaoh's cupbearer's dream. After 37 years in prison, the exiled king is given a seat of honor at the Babylonian table. The book ends not with destruction but with a small, strange act of grace."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Jeremiah",
+        "role": "Key biblical figure",
+        "text": "Chapter 52 is a historical appendix nearly identical to 2 Kings 24:18-25:30, added after the editorial note \"the words of Jeremiah end here\" (51:64b)…"
+      },
+      {
+        "name": "Zedekiah",
+        "role": "Key biblical figure",
+        "text": "Its purpose is to validate the prophetic word by documenting its fulfillment: everything Jeremiah prophesied -- the siege, the breach, Zedekiah's capture, the temple's destruction, the deportation -- happened exactly as announced…"
+      },
+      {
+        "name": "Nebuchadnezzar",
+        "role": "Key biblical figure",
+        "text": "\" The date -- \"seventh day of the fifth month in the nineteenth year of Nebuchadnezzar\" -- corresponds to August 586 BC…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "The city that David conquered is reduced to rubble…"
+      }
+    ],
+    "trans": {
+      "title": "Comparing translations in Historical Appendix",
+      "rows": [
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "He did evil in the eyes of the Lord, just as Jehoiakim had done."
+            },
+            {
+              "version": "ESV",
+              "text": "And he did what was evil in the sight of the LORD, according to all that Jehoiakim had done."
+            }
+          ]
+        },
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "Then the city wall was broken through, and the whole army fled. They left the city at night through the gate between the two walls near the king’s garden, though the Babylonians were surrounding the city. They fled toward the Arabah,"
+            },
+            {
+              "version": "ESV",
+              "text": "Then a breach was made in the city, and all the men of war fled and went out from the city by night by the way of a gate between the two walls, by the king’s garden, and the Chaldeans were around the city. And they went in the direction of the Arabah."
+            }
+          ]
+        }
+      ]
+    },
+    "rec": [
+      {
+        "title": "John MacArthur",
+        "quote": "\"The siege timeline: began in the tenth month of year 9, the city breached in the fourth month of year 11 -- eighteen months. The famine was so severe there was no food for the people.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
+      },
+      {
+        "title": "John Calvin",
+        "quote": "\"Calvin reads the appendix as \"God's signature on the prophetic word. Every prediction fulfilled proves that the prophet spoke truth. The fall of Jerusalem is the validation of forty years of ministry.…\"",
+        "note": "Reformed / Reformation — 16th c."
+      },
+      {
+        "title": "NET Bible translators",
+        "quote": "\"The date -- \"seventh day of the fifth month in the nineteenth year of Nebuchadnezzar\" -- corresponds to August 586 BC. 2 Kings 25:8 gives the date as the seventh of the month; Jeremiah 52:12 gives the…\"",
+        "note": "Text-critical evangelical — 21st c."
+      }
+    ],
+    "debate": [
+      [
+        "Interpretive Question: 52:12",
+        [
+          [
+            "Critical/Analytical scholarship",
+            "The date -- \"seventh day of the fifth month in the nineteenth year of Nebuchadnezzar\" -- corresponds to August 586 BC. 2 Kings 25:8 gives the date as …",
+            "Emphasises historical-critical, literary, or text-critical analysis."
+          ],
+          [
+            "Traditional/Confessional reading",
+            "Reads Historical Appendix within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Represented by Calvin, MacArthur, and the evangelical tradition."
+          ]
+        ],
+        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
+      ],
+      [
+        "Interpretive Question: 52:31",
+        [
+          [
+            "Critical/Analytical scholarship",
+            "Evil-Merodach (Amel-Marduk) succeeded Nebuchadnezzar in 562 BC and reigned only two years before being assassinated. His release of Jehoiachin may hav…",
+            "Emphasises historical-critical, literary, or text-critical analysis."
+          ],
+          [
+            "Traditional/Confessional reading",
+            "Reads Historical Appendix within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Represented by Calvin, MacArthur, and the evangelical tradition."
+          ]
+        ],
+        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
+      ]
+    ],
+    "thread": [
+      {
+        "direction": "echo",
+        "anchor": "Historical Appendix",
+        "target": "2 Kgs 24:18-25:21",
+        "type": "Echo",
+        "text": "The parallel account -- nearly verbatim in many sections. The shared source demonstrates historical accuracy."
+      },
+      {
+        "direction": "connection",
+        "anchor": "Historical Appendix",
+        "target": "Lam 2:6-7",
+        "type": "Connection",
+        "text": "\"The LORD has rejected his altar and abandoned his sanctuary\" -- Lamentations is the liturgical response to the events documented here."
+      },
+      {
+        "direction": "echo",
+        "anchor": "Historical Appendix",
+        "target": "2 Kgs 25:27-30",
+        "type": "Echo",
+        "text": "The parallel account of Jehoiachin's release -- the same hopeful ending for both books."
+      },
+      {
+        "direction": "connection",
+        "anchor": "Historical Appendix",
+        "target": "Matt 1:11-12",
+        "type": "Connection",
+        "text": "Jeconiah (Jehoiachin) appears in Jesus's genealogy -- the Davidic line survives through this imprisoned, then released, king."
+      },
+      {
+        "direction": "connection",
+        "anchor": "Historical Appendix",
+        "target": "Gen 40:13",
+        "type": "Connection",
+        "text": "\"Pharaoh will lift up your head\" -- the same idiom applied to the cupbearer's restoration from prison."
+      }
+    ]
+  },
+  "vhl_groups": []
+}
