@@ -14,7 +14,7 @@ phase and have a working, improved app.
 
 **Phase 1** — Tab bar icons + More menu (2 files new, 2 files modified)  
 **Phase 2** — Home screen redesign (1 file rewritten, 2 files new)  
-**Phase 3** — Chapter screen polish (6 files modified, 1 new component)  
+**Phase 3** — Chapter screen polish (8 files modified, 1 deleted, 1 new)  
 **Phase 4** — Secondary screen fixes (8 files modified, 1 new component)  
 **Phase 5** — Design system hardening (10+ files, ongoing)  
 
@@ -64,7 +64,7 @@ no navigation path — they're invisible.
 - 5 menu rows, each a TouchableOpacity with:
   - Left: Lucide icon (20px, base.textDim)
   - Center: Label (SourceSans3_500Medium, 15pt, base.text)
-  - Right: Chevron (ChevronRight icon, base.textMuted)
+  - Right: Lucide `ArrowRight` icon (14px, base.textMuted)
   - Full row height: MIN_TOUCH_TARGET (44pt)
   - Bottom border: base.border + '40'
 
@@ -144,38 +144,81 @@ export function useHomeData() {
 
 **File:** `src/screens/HomeScreen.tsx` — full rewrite
 
+**Design reference:** YouVersion Bible App home screen — warm, personal, 
+content-forward. Not a library catalog. Adapted to our scholarly dark theme.
+
 **New layout (top to bottom):**
 
-1. **Hero** (keep, modify)
-   - "Scripture Deep Dive" in Cinzel gold, centered
-   - Dynamic subtitle: "{liveChapters} chapters · {scholarCount} scholars"
+1. **Time-Aware Greeting** (new)
+   - "Good Morning" / "Good Afternoon" / "Good Evening" based on device time
+   - Cinzel_600SemiBold, 22pt, base.text
+   - Below: dynamic subtitle in textDim, EB Garamond italic:
+     "{liveBooks} books · {liveChapters} chapters · {scholarCount} scholars"
    - Pulled from useHomeData().stats
 
-2. **Continue Reading Card** (new, prominent)
-   - Full-width card with bgElevated background, border
-   - Book name + chapter number + chapter title
-   - "Continue →" touchable
-   - Only shows if recentChapters.length > 0
-   - If no history: show a "Start Reading →" card that links to Genesis 1
-   - This replaces the tiny horizontal BadgeChip scroll
+2. **Verse of the Day Card** (new, hero-sized — like YouVersion)
+   - Full-width card, generous padding, bgElevated background
+   - Subtle gradient or border accent (gold, very low opacity)
+   - Top: "Verse of the Day" label in Cinzel, textMuted, 10pt
+   - Below: verse reference in gold, Cinzel_500Medium, 16pt 
+     (e.g., "Matthew 7:8")
+   - Body: verse text in EB Garamond, base.text, 20-22pt, generous 
+     line height — the text IS the design, just like YouVersion
+   - Tappable: navigates to the chapter containing the verse
+   - **Verse selection:** deterministic daily rotation — hash the date 
+     string to pick from a curated list of ~365 verses stored in the DB 
+     or a hardcoded array in the hook. Avoids needing a server.
 
-3. **Reading Stats Row** (new)
-   - Three stat boxes in a horizontal row (like ReadingHistoryScreen)
+3. **Continue Reading Card** (like YouVersion's "Guided Scripture" cards)
+   - Full-width card, bgElevated, border
+   - Left side: book name + chapter number + chapter title (stacked)
+   - Right side: subtle arrow or "Continue" label
+   - Only shows if recentChapters.length > 0
+   - If no history: show a "Start Reading" card that links to Genesis 1 
+     with inviting copy: "Begin your journey through Scripture"
+   - Visual style: same card style as Verse of the Day but slightly 
+     smaller, less padding
+
+4. **Reading Stats Row** (compact, below cards)
+   - Three stat boxes in a horizontal row
    - Chapters read | Current streak | Books explored
    - Only shows if totalChapters > 0
-   - Gold numbers, muted labels, Cinzel font
+   - Gold numbers (Cinzel), muted labels (SourceSans3), compact
 
-4. **Explore Quick Links** (new)
-   - Horizontal scroll of 4 cards: People, Timeline, Maps, Scholars
-   - Each card: icon + title + count (e.g., "233 figures")
-   - Taps navigate to ExploreTab screens
-   - Uses Lucide icons, not emojis
+5. **Explore Quick Links** (like YouVersion's bottom cards)
+   - Vertical stack of 2-3 cards, each a touchable row:
+     - Left: section label + title (stacked)
+     - Right: Lucide icon or subtle visual
+   - Cards:
+     - "People" → "233 biblical figures across 9 eras" → GenealogyTree
+     - "Timeline" → "115 events from Creation to Revelation" → Timeline
+     - "Scholars" → "46 commentators across traditions" → ScholarBrowse
+   - Counts pulled from DB via useHomeData().stats
+   - Subdued card style — these are discovery paths, not hero content
 
-5. **Recently Read** (simplified)
-   - If 2+ recent chapters, show a "Recently Read" section
-   - Simple vertical list of last 3 chapters with book name + title
-   - Each row tappable → navigates to chapter
-   - Much simpler than the current full book list
+**REMOVED from HomeScreen:**
+- OT/NT toggle (moves to BookListScreen as the canonical view mode — see 4B)
+- Full book list (moves to BookListScreen with view selector — see 4B)
+- Search bar (lives in Search tab)
+- Inline search results (lives in Search tab)
+- "Scripture Deep Dive" as a hero title (replaced by personal greeting — 
+  the app name lives in the tab bar and splash screen)
+
+**New hook addition — Verse of the Day:**
+
+```typescript
+// Inside useHomeData.ts or a separate useVerseOfDay.ts
+function getVerseOfDay(): { ref: string; bookId: string; chapter: number; text: string } {
+  // Curated array of ~100-365 verse objects
+  // Index = dayOfYear % array.length
+  // Returns the verse text + navigation target
+}
+```
+
+Option A: Hardcoded curated array (simplest, no DB dependency)
+Option B: Query a `verses_featured` table (more maintainable, add later)
+
+Recommend Option A for now — ship fast, migrate to DB later.
 
 **REMOVED from HomeScreen:**
 - OT/NT toggle (moves to BookListScreen as the canonical view mode — see 4B)
@@ -203,26 +246,61 @@ This is a common React Navigation pattern — shared screens across stacks.
 **Why third:** With the home screen fixed, users will navigate to chapters 
 quickly. Now we polish the 90%-of-time screen.
 
-### 3A. Chapter Nav Bar — Book Name + Navigator Dropdown
+### 3A. Chapter Nav Bar — Simplified, No Redundancy
 
 **Files:**
-- `src/components/ChapterNavBar.tsx` — major update
-- `src/components/QnavOverlay.tsx` — kept but refined
+- `src/components/ChapterNavBar.tsx` — major rewrite
+- `src/components/QnavOverlay.tsx` — kept, refined
+- `src/components/TranslationDropdown.tsx` — new, lives in nav bar
+- `src/stores/settingsStore.ts` — widen translation type
 
 **Current state:** The nav bar shows `← Library | Ezekiel 43 | ← →`. 
-Tapping the center title opens a full-screen QnavOverlay modal.
+Tapping the center title opens a full-screen QnavOverlay modal. The chapter 
+page below also shows "Ezekiel 43" as a title — redundant.
 
-**New behavior:**
-- **Back button:** Replace `← Library` with `‹ Ezekiel` (back to chapter 
-  list for current book, showing the book name for context). Use Lucide 
-  `ChevronLeft` icon instead of text arrow.
-- **Center title:** Keep `Ezekiel 43` but add a `ChevronDown` icon to 
-  signal it's tappable: `Ezekiel 43 ▾`. Tapping opens the QnavOverlay 
-  (already works — just needs the visual chevron affordance).
-- **Prev/Next arrows:** Replace `←` / `→` text with Lucide `ChevronLeft` / 
-  `ChevronRight` icons.
+**Principle:** The book picker in the nav bar shows WHERE you are (book name). 
+The chapter content below shows WHAT you're reading (chapter title). No 
+duplication.
 
-**Props change:**
+**New nav bar layout:**
+```
+┌──────────────────────────────────────────┐
+│  ← Ezekiel     [NIV]     ‹  Ch 43  ›   │
+│  (back/picker)  (trans)    (prev/next)  │
+└──────────────────────────────────────────┘
+```
+
+**Left: Book name as back button + picker trigger**
+- Lucide `ArrowLeft` icon (not ChevronLeft — no chevrons anywhere) + 
+  book name text: `← Ezekiel`
+- **Short tap:** Goes back to chapter list for current book
+- **Long press:** Opens QnavOverlay for full book/chapter navigation
+- No chevron, no "▾" — the long-press behavior is a power-user shortcut, 
+  not a visible affordance. The primary tap does the expected thing (back).
+
+**Center: Translation dropdown**
+- CompactDropdown showing active translation: `NIV`
+- Taps to reveal options (NIV, ESV, future additions)
+- Dropdown expands **downward** from the nav bar
+- Compact pill style: bgElevated background, border, radii.pill
+- No chevron on the pill — just the label. The pill shape itself signals 
+  it's interactive.
+- Active option in dropdown: gold text + `Check` icon
+- Inactive options: base.text
+
+**Right: Prev/Next with chapter number**
+- `‹  Ch 43  ›` — Lucide `ArrowLeft` / `ArrowRight` icons flanking the 
+  chapter number
+- Disabled state: icon color fades to `base.textMuted + '40'`
+- The chapter number between the arrows provides context and acts as a 
+  mini position indicator
+
+**What's REMOVED from nav bar:**
+- No "Library" text (replaced by book name which is more contextual)
+- No redundant "Ezekiel 43" center title (chapter page content handles this)
+- No chevrons on anything
+
+**Props:**
 ```tsx
 interface Props {
   bookName: string;
@@ -233,152 +311,107 @@ interface Props {
   onPrev: () => void;
   onNext: () => void;
   onQnav: () => void;
+  // Translation handled internally via settingsStore
 }
 ```
-No new props needed — `bookName` already exists.
 
-**Layout:**
-```
-┌──────────────────────────────────────┐
-│ ‹ Ezekiel    Ezekiel 43 ▾    ‹   › │
-│  (back)       (opens qnav)   (±ch) │
-└──────────────────────────────────────┘
-```
-
-**QnavOverlay refinement (optional, same session):**
-
-The existing QnavOverlay is already functional — full-screen modal with 
-search, OT/NT toggle, expandable book → chapter grid. It stays as-is 
-structurally. Optional polish:
-- Auto-expand the current book on open so the user sees their position
-- Highlight the current chapter number in the grid (gold bg instead of 
-  bgElevated)
-- Replace the `✕` close button with Lucide `X` icon
-
-**File:** `src/components/ChapterNavBar.tsx`
-
+**TranslationDropdown in nav bar** (new component):
 ```tsx
-import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react-native';
-
-// Back button:
-<TouchableOpacity onPress={onBack} ...>
-  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}>
-    <ChevronLeft size={18} color={base.gold} />
-    <Text style={{ color: base.gold, fontSize: 14 }}>{bookName}</Text>
-  </View>
-</TouchableOpacity>
-
-// Center title:
-<TouchableOpacity onPress={onQnav} ...>
-  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-    <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
-      {bookName} {chapterNum}
-    </Text>
-    <ChevronDown size={14} color={base.textMuted} />
-  </View>
-</TouchableOpacity>
-
-// Prev/Next:
-<ChevronLeft size={20} color={hasPrev ? base.gold : base.textMuted + '40'} />
-<ChevronRight size={20} color={hasNext ? base.gold : base.textMuted + '40'} />
-```
-
-### 3B. Bottom Bar — Translation Dropdown + Controls
-
-**Files:**
-- `src/components/BottomBar.tsx` — major update
-- `src/components/TranslationDropdown.tsx` — new component
-- `src/stores/settingsStore.ts` — widen translation type
-
-**Current state:** Bottom bar has `← Prev | [NIV | ESV] | Next →`. The 
-NIV/ESV toggle shows both options permanently as a pill-shaped segmented 
-control.
-
-**Problem:** A segmented control works for 2 options but won't scale. When 
-we add KJV, NASB, or NLT, the bar runs out of space. The same dropdown 
-pattern used for the view mode selector (Phase 4B) is the right approach.
-
-**New component: `src/components/TranslationDropdown.tsx`**
-
-Same pattern as ViewModeDropdown — compact pill showing only the active 
-translation, expands on tap to show all options.
-
-```tsx
+// src/components/TranslationDropdown.tsx
+// Uses CompactDropdown internally (see architecture notes at bottom of plan)
 interface TranslationDropdownProps {
-  active: string;          // 'niv', 'esv', etc.
-  options: string[];       // ['niv', 'esv'] — extensible
-  onSelect: (t: string) => void;
+  active: string;
+  options: { key: string; label: string }[];
+  onSelect: (key: string) => void;
 }
 ```
 
-Design:
-- **Closed state:** Compact pill (bgElevated, border, radii.pill)
-  - Label: active translation uppercased ("NIV"), SourceSans3_600SemiBold
-  - Right: `ChevronDown` icon, 12px
-  - Width: auto, height: 30px
-- **Open state:** Dropdown expands UPWARD (since it's in the bottom bar)
-  - Absolute positioned above the pill
-  - Each option: MIN_TOUCH_TARGET height, uppercase label
-  - Active option: gold text + `Check` icon
-  - Inactive: base.text, no icon
-  - Tap outside → closes
-  - Up to 6 options visible without scroll; beyond 6, add scroll
-
-**Labels map** (extensible):
+Extensible labels map:
 ```tsx
-const TRANSLATION_LABELS: Record<string, string> = {
-  niv: 'NIV',
-  esv: 'ESV',
-  kjv: 'KJV',       // future
-  nasb: 'NASB',     // future
-  nlt: 'NLT',       // future
-  nrsv: 'NRSV',     // future
-};
+const TRANSLATION_OPTIONS = [
+  { key: 'niv', label: 'NIV' },
+  { key: 'esv', label: 'ESV' },
+  // Future: { key: 'kjv', label: 'KJV' }, etc.
+];
 ```
 
 **Store update — `src/stores/settingsStore.ts`:**
-
-Widen the translation type to support future additions:
 ```tsx
-// Before:
-translation: 'niv' | 'esv';
-setTranslation: (t: 'niv' | 'esv') => void;
-
-// After:
-translation: string;
+// Widen translation type:
+translation: string;  // was 'niv' | 'esv'
 setTranslation: (t: string) => void;
 ```
 
-The hydrate function's fallback remains 'niv' as default. Validation moves 
-to the dropdown component (only shows options that exist in the DB).
+**QnavOverlay refinement:**
+- Auto-expand the current book on open
+- Highlight the current chapter number in the grid (gold bg)
+- Replace `✕` text with Lucide `X` icon
 
-**Updated BottomBar layout:**
+### 3B. Remove Bottom Bar Entirely
 
-```
-┌──────────────────────────────────────────┐
-│ ← Prev    [A-] [A+]  [NIV ▾]  Next →    │
-│                        ↑ dropdown        │
-└──────────────────────────────────────────┘
-```
+**Files:**
+- `src/components/BottomBar.tsx` — DELETE this file
+- `src/screens/ChapterScreen.tsx` — remove BottomBar import and usage
 
-- Keep Prev/Next (users need bottom-of-screen navigation after scrolling)
-- Replace segmented toggle with TranslationDropdown
-- Add font size A-/A+ buttons (compact, 28x28, bgElevated circles)
-- Bookmark button deferred — better suited to a verse long-press action 
-  than a persistent bar button (you'd need to decide WHICH verse to bookmark)
+**Current state:** Bottom bar shows `← Prev | [NIV | ESV] | Next →`, 
+duplicating the top bar's prev/next and housing the translation toggle.
 
-**Props update for BottomBar:**
+**Decision:** Bottom bar is removed entirely.
+- Prev/next lives in the nav bar (3A)
+- Translation lives in the nav bar (3A)
+- Font size A-/A+ stays in Settings screen only (it's a set-once preference, 
+  not a per-session toggle)
+- No bookmark bar button — bookmarking is better as a verse long-press action 
+  (future feature)
+
+**ChapterScreen.tsx changes:**
 ```tsx
-interface Props {
-  hasPrev: boolean;
-  hasNext: boolean;
-  onPrev: () => void;
-  onNext: () => void;
-  // Translation and font size now read from stores directly — no new props
-}
+// Remove:
+import { BottomBar } from '../components/BottomBar';
+// Remove the entire <BottomBar ... /> JSX at bottom of the return
+// Remove hasPrev/hasNext/goPrev/goNext props passed to BottomBar
+// (keep them — they're still used by ChapterNavBar)
 ```
 
-### 3C. Scholarly Block Label
+**Note:** The BottomBar.tsx file can be kept in the repo but unused, or 
+deleted outright. Recommend deletion for cleanliness — it's in git history 
+if we ever need it back.
+
+### 3C. Remove All Chevrons from Panel Buttons
+
+**File:** `src/components/PanelButton.tsx`
+
+**Rule: No chevrons anywhere in the app.** This is a global design decision.
+
+Current panel buttons render: `Hebrew ▾`, `Calvin ▾`, `Cross-Ref ▾`, etc.
+
+Change:
+```tsx
+// Before:
+{label} ▾
+
+// After:
+{label}
+```
+
+The active/inactive state is already communicated via background color and 
+text color changes (active = accent bg 20% + accent text; inactive = 
+transparent bg + textDim). The chevron is redundant visual noise.
+
+**Also remove chevrons from:**
+- `src/components/QnavOverlay.tsx` — book expand indicators (`▸` / `▾`)
+  Replace with Lucide `Plus` / `Minus` icons, or simply remove them and 
+  let the expand/collapse animation communicate the state
+- Any other component that uses `▾`, `▸`, `▶`, or `ChevronDown/Right` as 
+  a UI affordance — grep and eliminate
+
+**Grep check before shipping:**
+```bash
+grep -rn '▾\|▸\|▶\|ChevronDown\|ChevronRight\|ChevronUp' src/ --include="*.tsx"
+```
+The only acceptable Chevron usage after this phase is **zero**.
+
+### 3D. Scholarly Block Label
 
 **File:** `src/components/ScholarlyBlock.tsx`
 
@@ -392,7 +425,7 @@ Change:
 
 One-line change.
 
-### 3C. Chapter Header Badge Cleanup
+### 3E. Chapter Header Badge Cleanup
 
 **File:** `src/components/ChapterHeader.tsx`
 
@@ -458,7 +491,7 @@ mobile than a toggle that shows both options permanently.
 
 ```
 ┌─────────────────────┐
-│  By Tradition  ▾    │   ← Compact pill, shows active mode only
+│  By Tradition       │   ← Compact pill, shows active mode only
 └─────────────────────┘
 
   Tapped ↓
@@ -480,8 +513,8 @@ interface ViewModeDropdownProps {
 
 Design details:
 - **Closed state:** Pill-shaped button (bgElevated, border, radii.md)
-  - Left: mode label in SourceSans3_500Medium, 13pt, base.text
-  - Right: `ChevronDown` Lucide icon, 14px, base.textMuted
+  - Label: mode label in SourceSans3_500Medium, 13pt, base.text
+  - No chevron, no icon — pill shape is sufficient affordance
   - Height: 34px (compact but touchable — full pill is the tap target)
   - Width: auto (fits content)
 - **Open state:** Same pill expands into a small dropdown below
@@ -522,7 +555,7 @@ The screen renders differently based on mode:
 **Layout structure:**
 ```
 ┌──────────────────────────────────────┐
-│  Library          [Canonical Order ▾]│  ← title + dropdown, same line
+│  Library        [Canonical Order]   │  ← title + dropdown pill, same line
 ├──────────────────────────────────────┤
 │  [OT / NT toggle]                   │  ← only in canonical mode
 ├──────────────────────────────────────┤
@@ -536,15 +569,33 @@ The screen renders differently based on mode:
 The title row uses `flexDirection: 'row', justifyContent: 'space-between'` 
 to place "Library" on the left and the dropdown on the right.
 
-**Badge fix (included in this task):**
+**Badge removal (included in this task):**
 
-When most books are live, the LIVE badge is noise. Invert:
+Remove ALL "LIVE" badges and status indicators from the book list. The 
+dimmed text color on non-live books is sufficient to communicate status — 
+no badge needed.
+
+**`is_live` dependency audit (completed):**
+
+| File | Usage | Action |
+|------|-------|--------|
+| `BookListScreen.tsx:74` | `BadgeChip label="LIVE"` | **REMOVE** — delete the badge entirely |
+| `HomeScreen.tsx:141` | `BadgeChip label="LIVE"` | **REMOVE** — gone after Phase 2 rewrite anyway |
+| `ChapterListScreen.tsx:32` | `' · Live'` text suffix | **REMOVE** — see 4C below |
+| `BookListScreen.tsx:68` | Dims book name when `!is_live` | **KEEP** — this IS the visual indicator |
+| `QnavOverlay.tsx:110,139` | Dims book/chapter text | **KEEP** — correct behavior |
+| `ChapterListScreen.tsx:50-51` | Disables chapter taps when `!is_live` | **KEEP** — critical navigation guard |
+| `QnavOverlay.tsx:129-130` | Disables chapter selection | **KEEP** — critical navigation guard |
+| `content.ts:32` | `getLiveBooks()` query | **KEEP** — used by hooks |
+| `types/index.ts:18` | `is_live: boolean` type | **KEEP** — field still in DB |
+| `verseResolver.ts:176` | `isLiveBook()` utility | **KEEP** — fast existence check |
+
+The `is_live` field stays in the DB and code — it's doing important work 
+gating navigation and dimming text. We just kill the visual badges.
+
 ```tsx
-// Before:
+// BookListScreen.tsx — REMOVE this entire line:
 {!!book.is_live && <BadgeChip label="LIVE" color={base.gold} />}
-
-// After:
-{!book.is_live && <BadgeChip label="Coming Soon" color={base.textMuted} />}
 ```
 
 **Shared book row component:**
@@ -562,12 +613,9 @@ const renderBookRow = (book: Book) => (
     <Text style={{ color: book.is_live ? base.text : base.textMuted, ... }}>
       {book.name}
     </Text>
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
-      {!book.is_live && <BadgeChip label="Coming Soon" color={base.textMuted} />}
-      <Text style={{ color: base.textMuted, fontSize: 11 }}>
-        {book.total_chapters} ch
-      </Text>
-    </View>
+    <Text style={{ color: base.textMuted, fontSize: 11 }}>
+      {book.total_chapters} ch
+    </Text>
   </TouchableOpacity>
 );
 ```
@@ -575,10 +623,23 @@ const renderBookRow = (book: Book) => (
 Used by both the SectionList renderItem (thematic) and FlatList renderItem 
 (canonical).
 
-### 4C. Chapter List — Read Progress Indicators
+### 4C. Chapter List — Read Progress + Remove "Live" Label
 
 **File:** `src/screens/ChapterListScreen.tsx`
 
+**Remove "· Live" text from subtitle:**
+```tsx
+// Before:
+{book.total_chapters} chapters{book.is_live ? ' · Live' : ''}
+
+// After:
+{book.total_chapters} chapters
+```
+
+The dimmed chapter numbers already communicate non-live status. No label 
+needed.
+
+**Add read progress indicators:**
 Changes:
 - Import `getProgressForBook` from `../db/user`
 - Load progress on mount: `const [visited, setVisited] = useState<Set<number>>(new Set())`
@@ -636,7 +697,7 @@ Changes:
 Add a back button at the top:
 ```tsx
 <TouchableOpacity onPress={() => navigation.goBack()}>
-  <ChevronLeft size={20} color={base.gold} />
+  <ArrowLeft size={20} color={base.gold} />
 </TouchableOpacity>
 ```
 
@@ -732,9 +793,9 @@ Instead of 8 individual buttons per section:
 `[Hebrew] [Context] [Cross-Ref] [MacArthur] [Calvin] [NET] [Block] [Zimmerli]`
 
 Group scholars:
-`[Hebrew] [Context] [Cross-Ref] [Scholars ▾]`
+`[Hebrew] [Context] [Cross-Ref] [Scholars]`
 
-Tapping "Scholars ▾" expands to show individual scholar buttons. This 
+Tapping "Scholars" expands to show individual scholar buttons. This 
 reduces visual density on the button row.
 
 **Implementation:**
@@ -779,10 +840,12 @@ on phones. It may be fine with the horizontal scroll.
 **Phase 3:**
 | File | Changes |
 |------|---------|
-| `src/components/ChapterNavBar.tsx` | Book name back button, Lucide icons, tappable title chevron |
-| `src/components/BottomBar.tsx` | TranslationDropdown replaces toggle, add font size controls |
-| `src/components/TranslationDropdown.tsx` | New — compact upward-expanding dropdown for translations |
-| `src/components/QnavOverlay.tsx` | Optional polish: auto-expand current book, highlight current ch |
+| `src/components/ChapterNavBar.tsx` | Book name back, translation dropdown, ch prev/next, no chevrons |
+| `src/components/TranslationDropdown.tsx` | New — compact dropdown for translations in nav bar |
+| `src/components/BottomBar.tsx` | DELETE — all controls moved to nav bar |
+| `src/screens/ChapterScreen.tsx` | Remove BottomBar import and usage |
+| `src/components/PanelButton.tsx` | Remove ▾ chevron from all button labels |
+| `src/components/QnavOverlay.tsx` | Remove ▸/▾ indicators, polish, auto-expand current book |
 | `src/stores/settingsStore.ts` | Widen translation type from union to string |
 | `src/components/ScholarlyBlock.tsx` | Rename label to "CHAPTER ANALYSIS" |
 | `src/components/ChapterHeader.tsx` | Add icons to badges |
@@ -791,7 +854,7 @@ on phones. It may be fine with the horizontal scroll.
 | File | Changes |
 |------|---------|
 | `src/screens/SearchScreen.tsx` | Display names, empty state, load more |
-| `src/screens/BookListScreen.tsx` | View selector (canonical + thematic), badge inversion |
+| `src/screens/BookListScreen.tsx` | View selector (canonical + thematic), remove LIVE badges |
 | `src/components/ViewModeDropdown.tsx` | New — compact dropdown for view mode |
 | `src/stores/settingsStore.ts` | Add bookListMode preference |
 | `src/screens/ChapterListScreen.tsx` | Read progress dots, back button |
@@ -843,7 +906,7 @@ Phase 5E (button groups)  — defer, evaluate after user testing
 | 1A | 1 | Low | 5 min |
 | 1B | 2 | Low | 15 min |
 | 2 | 4 | Medium-High | 30 min |
-| 3 | 7 | Medium-High | 30 min |
+| 3 | 9 | High | 35 min |
 | 4 | 8 | Medium-High | 35 min |
 | 5A-B | 3+ | Low-Medium | 15 min |
 | 5C | 10+ | Low (repetitive) | Ongoing |
@@ -886,19 +949,26 @@ After each phase, verify on Expo Go:
 
 ### Dropdown Component Architecture
 
-Phases 3B and 4B both introduce dropdown selectors (TranslationDropdown and 
+Phases 3A and 4B both introduce dropdown selectors (TranslationDropdown and 
 ViewModeDropdown). They share the same UX pattern:
-- Closed: compact pill showing active option + chevron
+- Closed: compact pill showing active option label only (NO chevron)
 - Open: overlay with options, active item gets checkmark, tap-outside dismisses
 
-**Option A (recommended): Build a generic `CompactDropdown` component** that 
-both use:
+**Global rule: NO CHEVRONS.** No `▾`, `▸`, `ChevronDown`, `ChevronRight`, 
+or any directional indicator on any interactive element. The pill shape and 
+styling are sufficient affordance. This applies to:
+- Panel buttons (PanelButton.tsx)
+- Dropdown triggers (CompactDropdown.tsx)
+- Book expand/collapse in QnavOverlay
+- Navigation arrows use `ArrowLeft`/`ArrowRight`, NOT `ChevronLeft`/`ChevronRight`
+
+**Build a generic `CompactDropdown` component** that both use:
 ```tsx
 interface CompactDropdownProps {
   value: string;
   options: { key: string; label: string }[];
   onSelect: (key: string) => void;
-  direction?: 'down' | 'up';  // up for bottom bar, down for headers
+  direction?: 'down' | 'up';  // down for nav bar, up if ever used at bottom
 }
 ```
 
@@ -910,16 +980,10 @@ export const TranslationDropdown = ({ active, onSelect }) => (
     value={active}
     options={[{ key: 'niv', label: 'NIV' }, { key: 'esv', label: 'ESV' }]}
     onSelect={onSelect}
-    direction="up"
+    direction="down"
   />
 );
 ```
 
-This avoids duplicating the overlay logic, dismiss handling, and animation 
-code across two components. Build CompactDropdown in Phase 3B (first use), 
-reuse in Phase 4B.
-
-**Option B: Two separate components.** Simpler upfront, but the dismiss 
-overlay and positioning logic will be copy-pasted. Acceptable if time is 
-tight, but refactor into a shared component later.
+Build CompactDropdown in Phase 3A (first use), reuse in Phase 4B.
 
