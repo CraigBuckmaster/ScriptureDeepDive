@@ -1,0 +1,298 @@
+{
+  "chapter_id": null,
+  "testament": null,
+  "book_dir": "jeremiah",
+  "chapter_num": 47,
+  "title": "Oracle Against Philistia",
+  "subtitle": "",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1-7 -- \"Waters Rising in the North\"",
+      "verse_start": 1,
+      "verse_end": 7,
+      "panels": {
+        "heb": [
+          {
+            "word": "מַיִם",
+            "transliteration": "mayim",
+            "gloss": "waters",
+            "paragraph": "\"Waters are rising in the north; they will become an overflowing torrent\" (v.2). The flood metaphor for military invasion is common in prophetic literature (Isa 8:7-8). The \"waters from the north\" are the Babylonian army sweeping southward like a flash flood through the Philistine plain. The imagery captures both the irresistible force and the widespread devastation of the invasion."
+          },
+          {
+            "word": "חֶרֶב",
+            "transliteration": "hereb",
+            "gloss": "sword",
+            "paragraph": "\"You cry out, 'Sword of the LORD, how long till you rest? Return to your sheath; cease and be still'\" (v.6). The personified sword of the LORD refuses to rest because \"the LORD has commanded it\" (v.7). The sword acts not on its own but under divine orders -- even the instrument of destruction is under sovereign control."
+          }
+        ],
+        "ctx": "The oracle against Philistia is brief but intense. The Philistine cities -- Gaza, Ashkelon, and the remnant of their coastland -- face destruction from the north (Babylon). The cities of Tyre and Sidon are also mentioned (v.4), suggesting the invasion sweeps the entire coastal plain. The final image -- the personified sword of the LORD that cannot rest -- is one of the most striking in the oracles against the nations.",
+        "cross": [
+          {
+            "ref": "Isa 14:29-31",
+            "note": "Isaiah's parallel oracle against Philistia: \"Do not rejoice, all you Philistines ... smoke comes from the north.\""
+          },
+          {
+            "ref": "Amos 1:6-8",
+            "note": "Amos announces judgment on Gaza, Ashkelon, Ashdod, and Ekron -- the same Philistine cities."
+          },
+          {
+            "ref": "Zeph 2:4-7",
+            "note": "Zephaniah prophesies the destruction of the Philistine cities and their occupation by the remnant of Judah."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "47:1",
+              "note": "\"Before Pharaoh attacked Gaza\" -- the date may refer to Neco's campaign through Philistia on his way to Carchemish (609 BC) or a later Egyptian incursion."
+            },
+            {
+              "ref": "47:2-3",
+              "note": "The flood from the north: chariots rumbling, hooves pounding, fathers not turning back for children. The invasion is so overwhelming that parental instinct itself fails."
+            },
+            {
+              "ref": "47:4",
+              "note": "Tyre and Sidon lose their \"surviving ally\" -- the Philistines are described as \"the remnant from the coasts of Caphtor\" (Crete), preserving the memory of their Aegean origin."
+            },
+            {
+              "ref": "47:6-7",
+              "note": "The sword of the LORD personified: it cannot rest because \"the LORD has given it a command.\" Even destruction is not random but ordered. The sword has its assignment."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "47:6-7",
+              "note": "Calvin reflects on the personified sword: \"Those who cry 'How long?' to the sword of judgment misunderstand the situation. The sword acts not on its own will but on divine command. It will rest when its commission is complete, not before.\""
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "47:4",
+              "note": "\"The coasts of Caphtor\" refers to Crete or the Aegean region. The Philistines were part of the \"Sea Peoples\" migration from the Aegean world in the 12th century BC (cf. Amos 9:7)."
+            },
+            {
+              "ref": "47:5",
+              "note": "\"Gaza will shave her head\" and \"Ashkelon will be silenced\" -- mourning rituals marking the end of Philistine civilization."
+            }
+          ]
+        },
+        "lundbom": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "47:1-7",
+              "note": "Lundbom reads the oracle as \"a complete destruction poem in miniature.\" The brevity (seven verses) concentrates the force: flood, invasion, mourning, and the relentless sword all compressed into a single devastating poem."
+            }
+          ]
+        },
+        "brueggemann": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "47:6-7",
+              "note": "Brueggemann identifies the personified sword as \"the image of purposeful destruction.\" The sword is not chaos but commission. Judgment is not random violence but directed divine action. This is both terrifying and, paradoxically, reassuring -- destruction has a limit set by the one who commands it."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "themes": {
+      "scores": [
+        {
+          "name": "Covenant",
+          "value": 3
+        },
+        {
+          "name": "Judgment",
+          "value": 10
+        },
+        {
+          "name": "Mercy",
+          "value": 1
+        },
+        {
+          "name": "Faith",
+          "value": 3
+        },
+        {
+          "name": "Sovereignty",
+          "value": 9
+        },
+        {
+          "name": "Worship",
+          "value": 3
+        },
+        {
+          "name": "Holiness",
+          "value": 5
+        },
+        {
+          "name": "Prophecy",
+          "value": 7
+        },
+        {
+          "name": "Justice",
+          "value": 7
+        },
+        {
+          "name": "Mission",
+          "value": 5
+        }
+      ],
+      "note": "Judgment peaks at 10 -- pure destruction poetry. Sovereignty at 9: even the personified sword acts under divine command."
+    },
+    "lit": {
+      "rows": [
+        {
+          "label": "vv.1",
+          "range": "47:1",
+          "text": "Superscription: Before Pharaoh Attacked Gaza",
+          "is_key": false
+        },
+        {
+          "label": "vv.2-4",
+          "range": "47:2-4",
+          "text": "The Flood from the North",
+          "is_key": true
+        },
+        {
+          "label": "vv.5-7",
+          "range": "47:5-7",
+          "text": "The Sword of the LORD",
+          "is_key": false
+        }
+      ],
+      "note": "The shortest oracle against the nations. The flood and sword images bracket the poem -- irresistible invasion from the north and a divine weapon that cannot be sheathed."
+    },
+    "hebtext": [
+      {
+        "word": "מַיִם",
+        "tlit": "mayim",
+        "gloss": "waters",
+        "note": "\"Waters are rising in the north; they will become an overflowing torrent\" (v.2). The flood metaphor for military invasion is common in prophetic literature (Isa 8:7-8). The \"waters from the north\" are the Babylonian army sweeping southward like a flash flood through the Philistine plain. The imagery captures both the irresistible force and the widespread devastation of the invasion."
+      },
+      {
+        "word": "חֶרֶב",
+        "tlit": "hereb",
+        "gloss": "sword",
+        "note": "\"You cry out, 'Sword of the LORD, how long till you rest? Return to your sheath; cease and be still'\" (v.6). The personified sword of the LORD refuses to rest because \"the LORD has commanded it\" (v.7). The sword acts not on its own but under divine orders -- even the instrument of destruction is under sovereign control."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Jeremiah",
+        "role": "Key biblical figure",
+        "text": "Jeremiah is a key figure in Oracle Against Philistia."
+      },
+      {
+        "name": "Baruch",
+        "role": "Key biblical figure",
+        "text": "Baruch is a key figure in Oracle Against Philistia."
+      },
+      {
+        "name": "Josiah",
+        "role": "Key biblical figure",
+        "text": "Josiah is a key figure in Oracle Against Philistia."
+      },
+      {
+        "name": "Jehoiakim",
+        "role": "Key biblical figure",
+        "text": "Jehoiakim is a key figure in Oracle Against Philistia."
+      },
+      {
+        "name": "Zedekiah",
+        "role": "Key biblical figure",
+        "text": "Zedekiah is a key figure in Oracle Against Philistia."
+      },
+      {
+        "name": "Nebuchadnezzar",
+        "role": "Key biblical figure",
+        "text": "Nebuchadnezzar is a key figure in Oracle Against Philistia."
+      }
+    ],
+    "trans": {
+      "title": "Comparing translations in Oracle Against Philistia",
+      "rows": [
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "For the day has come to destroy all the Philistines and to remove all survivors who could help Tyre and Sidon. The Lord is about to destroy the Philistines, the remnant from the coasts of Caphtor."
+            },
+            {
+              "version": "ESV",
+              "text": "because of the day that is coming to destroy all the Philistines, to cut off from Tyre and Sidon every helper that remains. For the LORD is destroying the Philistines, the remnant of the coastland of Caphtor."
+            }
+          ]
+        },
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "at the sound of the hooves of galloping steeds, at the noise of enemy chariots and the rumble of their wheels. Parents will not turn to help their children; their hands will hang limp."
+            },
+            {
+              "version": "ESV",
+              "text": "At the noise of the stamping of the hoofs of his stallions, at the rushing of his chariots, at the rumbling of their wheels, the fathers look not back to their children, so feeble are their hands,"
+            }
+          ]
+        }
+      ]
+    },
+    "rec": [
+      {
+        "title": "John MacArthur",
+        "quote": "\"\"Before Pharaoh attacked Gaza\" -- the date may refer to Neco's campaign through Philistia on his way to Carchemish (609 BC) or a later Egyptian incursion.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
+      },
+      {
+        "title": "John Calvin",
+        "quote": "\"Calvin reflects on the personified sword: \"Those who cry 'How long?' to the sword of judgment misunderstand the situation. The sword acts not on its own will but on divine command. It will rest when i…\"",
+        "note": "Reformed / Reformation — 16th c."
+      },
+      {
+        "title": "NET Bible translators",
+        "quote": "\"\"The coasts of Caphtor\" refers to Crete or the Aegean region. The Philistines were part of the \"Sea Peoples\" migration from the Aegean world in the 12th century BC (cf. Amos 9:7).\"",
+        "note": "Text-critical evangelical — 21st c."
+      }
+    ],
+    "thread": [
+      {
+        "direction": "echo",
+        "anchor": "Oracle Against Philistia",
+        "target": "Isa 14:29-31",
+        "type": "Echo",
+        "text": "Isaiah's parallel oracle against Philistia: \"Do not rejoice, all you Philistines ... smoke comes from the north.\""
+      },
+      {
+        "direction": "connection",
+        "anchor": "Oracle Against Philistia",
+        "target": "Amos 1:6-8",
+        "type": "Connection",
+        "text": "Amos announces judgment on Gaza, Ashkelon, Ashdod, and Ekron -- the same Philistine cities."
+      },
+      {
+        "direction": "connection",
+        "anchor": "Oracle Against Philistia",
+        "target": "Zeph 2:4-7",
+        "type": "Connection",
+        "text": "Zephaniah prophesies the destruction of the Philistine cities and their occupation by the remnant of Judah."
+      }
+    ]
+  },
+  "vhl_groups": []
+}
