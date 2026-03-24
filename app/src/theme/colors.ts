@@ -102,6 +102,8 @@ export const scholars: Record<string, string> = {
   webb: '#90c890',
   williamson: '#90a8c8',
   wiseman: '#b0d8e8',
+  lundbom: '#d0a068',
+  brueggemann: '#88a0c8',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────

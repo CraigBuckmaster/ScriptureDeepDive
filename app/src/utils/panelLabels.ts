@@ -81,6 +81,8 @@ const SCHOLAR_LABELS: Record<string, string> = {
   vangemeren: 'VanGemeren',
   jobes: 'Jobes',
   oconnor: "O'Connor",
+  lundbom: 'Lundbom',
+  brueggemann: 'Brueggemann',
 };
 
 // ── Public API ──────────────────────────────────────────────────────

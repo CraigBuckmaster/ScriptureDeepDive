@@ -1089,3 +1089,20 @@ SCHOLAR_REGISTRY = [
     ('childs',    'childs',    'Childs',    'childs'),
 ]
 
+
+
+BOOK_META['jeremiah'] = {
+    'is_nt': False,
+    'auth': 'Traditionally attributed to the prophet Jeremiah, son of Hilkiah, a priest from Anathoth in Benjamin. The scroll was dictated to his scribe Baruch son of Neriah (Jer 36:4). Composition spans c. 627–570 BC, covering the reigns of Josiah, Jehoiakim, Jehoiachin, and Zedekiah.',
+    'vhl_places': ['Jerusalem', 'Judah', 'Babylon', 'Egypt', 'Anathoth', 'Zion', 'Jordan', 'Euphrates', 'Shiloh', 'Ramah', 'Moab', 'Ammon', 'Edom', 'Philistia', 'Tyre', 'Sidon', 'Damascus'],
+    'vhl_people': ['Jeremiah', 'Baruch', 'Josiah', 'Jehoiakim', 'Zedekiah', 'Nebuchadnezzar', 'Moses', 'David', 'Abraham', 'Rachel', 'Hananiah', 'Ebed-Melech', 'Gedaliah', 'Ishmael'],
+    'vhl_key': ['covenant', 'word', 'heart', 'repent', 'turn', 'forsake', 'wrath', 'remnant', 'new covenant', 'restore', 'pluck up', 'plant', 'destroy', 'build', 'oracle', 'burden'],
+    'vhl_time': ['in those days', 'at that time', 'the days are coming', 'in the reign of', 'in the fourth year', 'in the tenth year'],
+}
+
+# Wave 3 scholars for Jeremiah
+SCHOLAR_REGISTRY.append(('lundbom', 'lundbom', 'Lundbom', 'lundbom'))
+SCHOLAR_REGISTRY.append(('brueggemann', 'brueggemann', 'Brueggemann', 'brueggemann'))
+
+COMMENTATOR_SCOPE['lundbom'] = ['jeremiah']
+COMMENTATOR_SCOPE['brueggemann'] = ['jeremiah']
