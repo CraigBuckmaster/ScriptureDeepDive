@@ -1,0 +1,692 @@
+{
+  "chapter_id": "ex1",
+  "testament": "ot",
+  "book_dir": "exodus",
+  "chapter_num": 1,
+  "title": "Exodus 1",
+  "subtitle": "Israel Multiplies; Oppression; The Midwives' Courage",
+  "timeline_link": null,
+  "map_story_link": {
+    "story_id": "exodus-plagues",
+    "text": "See on Map — The Exodus & Plagues"
+  },
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–7 — Israel's Rapid Growth in Egypt",
+      "verse_start": 1,
+      "verse_end": 7,
+      "panels": {
+        "poi": [
+          {
+            "name": "Egypt / Goshen",
+            "coords": "Nile Delta, northeastern Egypt",
+            "text": "The sons of Israel who \"went to Egypt with Jacob\" settled in Goshen — the best of the land (Gen 47:11). The opening verse bridges the Genesis narrative into the Exodus situation. Egypt's Nile Delta is the setting for the entire opening section."
+          },
+          {
+            "name": "Land of Goshen",
+            "coords": "Eastern Nile Delta",
+            "text": "Goshen is explicitly separated from the rest of Egypt in the plague narratives (8:22). Its position at the eastern edge of Egypt makes the eventual departure geographically logical — the exit route lies directly eastward."
+          }
+        ],
+        "tl": [
+          {
+            "date": "c. 1876 BC",
+            "name": "Jacob's 70 enter Egypt; settle in Goshen",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 1806 BC",
+            "name": "Joseph dies at 110",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 1730 BC",
+            "name": "New king oppresses Israel — this passage",
+            "text": "The \"new king who did not know Joseph\" likely reflects a dynastic change. By traditional chronology this is around 1730 BC, roughly 150 years after Jacob's entry. Israel has grown from 70 to a population large enough to threaten Egypt.",
+            "current": true
+          },
+          {
+            "date": "c. 1526 BC",
+            "name": "Moses born",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 1486 BC",
+            "name": "Moses flees to Midian",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 1446 BC",
+            "name": "The Exodus",
+            "text": "",
+            "current": false
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1-7",
+              "note": "MacArthur: The 70 souls who came to Egypt began fulfilling the Abrahamic promise. The phrase exceedingly fruitful; they multiplied greatly uses creation blessing language (Gen 1:28) -- the covenant people multiply under God's blessing even in Egypt."
+            },
+            {
+              "ref": "1:7",
+              "note": "MacArthur: The land was filled with them. The fruitfulness of Israel in Egypt is the covenant fulfillment that produces the political crisis. God's blessing on his people often provokes the world's hostility."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "שְׁמוֹת",
+            "transliteration": "shemot",
+            "gloss": "Names",
+            "paragraph": "The Hebrew title of Exodus (lit. \"these are the names\"). The book opens by naming the sons of Israel — a counter-genealogy to Pharaoh's nameless empire. Names matter: to be named is to be known by God. The opening echoes Gen 46:8, linking Exodus directly to the Joseph narrative and the promise made to Abraham."
+          },
+          {
+            "word": "וַיִּפְרוּ",
+            "transliteration": "wayyiphrū",
+            "gloss": "were fruitful",
+            "paragraph": "V.7 uses five verbs to describe Israel's explosive growth: fruitful (pārā), increased greatly (shārats), multiplied (rābā), grew very numerous (ʿātsam mĕʾōd), and filled the land. This is the language of Gen 1:28 — the creation mandate — being fulfilled in an unlikely place. Egypt becomes the incubator for the nation God promised Abraham would be \"as numerous as the stars.\""
+          }
+        ],
+        "hist": "The \"store cities\" Pithom and Rameses are attested archaeologically (Tell el-Maskhuta/Tell er-Retaba for Pithom; Pi-Ramesse in the eastern Delta for Rameses). Semitic slave labour in Egyptian building projects is documented in administrative papyri. A \"new king who did not know Joseph\" fits the transition from Hyksos dynasty (sympathetic to Semites) to native Egyptian pharaohs (hostile to them) around 1550 BC, or the rise of Ramesses II (c.1279 BC) in the late-date view.",
+        "ctx": "Exodus 1:7 deliberately echoes the creation mandate of Genesis 1:28 (\"be fruitful and multiply\") and the covenant promises to Abraham (Gen 12:2; 17:2). The very fruitfulness that fulfils the Abrahamic promise triggers Pharaoh's terror. God's blessing produces the crisis that will produce the Exodus. The oppressor's logic is political (v.10: \"lest they join our enemies\") — but the narrative frames it as unwitting preparation for God's mighty acts.",
+        "cross": [
+          {
+            "ref": "Gen 15:13",
+            "note": "God told Abraham: \"your offspring will be sojourners in a land not their own, and they will be servants there, and they will be afflicted for four hundred years.\" Exodus 1 begins the fulfilment."
+          },
+          {
+            "ref": "Gen 46:27",
+            "note": "The seventy who went down are now \"as numerous as the stars of heaven\" (Deut 10:22)."
+          },
+          {
+            "ref": "Acts 7:17–19",
+            "note": "Stephen: \"the time of the promise drew near... there arose another king... who dealt shrewdly with our race.\""
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1–5",
+              "note": "Sarna notes the link between Exodus 1:1 and Genesis 46:8–27 is deliberate and structural. The same list of names, the same seventy, the same descent to Egypt — Exodus opens as the continuation of Genesis, not a new story. The formula \"these are the names\" (we'elleh shemot) appears also in Num 1:5–15 and 13:4–15, always introducing a significant roster. The opening of Exodus insists on continuity with what God has already done."
+            },
+            {
+              "ref": "1:7",
+              "note": "The verse uses five different terms for growth — fruitful (parah), increased (sharat), multiplied (rabah), became very strong (atzam meod), and filled (timale). Sarna counts these as a deliberate echo of Gen 1:28 and 9:1, the creation and post-flood blessing commands. Israel in Egypt is the bearer of the creational blessing. The demographic explosion is not merely political; it is the fulfilment of a divine programme."
+            },
+            {
+              "ref": "1:8",
+              "note": "The phrase \"who did not know Joseph\" is critical. Sarna notes the Egyptian term for \"to know\" (rh) in the relevant sense means to recognise, to acknowledge officially. This Pharaoh does not officially acknowledge the relationship — political, covenantal — that Joseph established. The deliberate not-knowing is the Egyptian form of breaking faith. It removes the obligation created by Joseph's service and opens the door to exploitation."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1–6",
+              "note": "The list of names at the opening is a narrative deceleration before acceleration. Alter notes the technique: the genealogical list establishes weight, rootedness, identity — these are real people with real names — before the narrative skips generations in a single sentence: \"Joseph and all his brothers and all that generation died\" (v.6). The compression of time between v.6 and v.7 is radical. Death, then explosive life. The rhythm is already Exodus-shaped."
+            },
+            {
+              "ref": "1:7",
+              "note": "Five verbs of increase in a single verse is not casual writing. Alter identifies the cascade as stylistic mimesis: the language multiplies just as the people multiply. The verse's breathlessness mirrors the demographic reality. And then Pharaoh's response — the sudden shift from blessing to threat — is all the more jarring for following this life-filled verse."
+            },
+            {
+              "ref": "1:8",
+              "note": "\"There arose a new king over Egypt who did not know Joseph.\" The terseness is deliberate. We are given no name, no background, no transition — just the sudden emergence of a new regime and the erasure of the old relationship. Alter notes the phrase \"did not know\" (lo yada) echoes the sexual \"know\" in Genesis — but here it is the un-knowing of relationship, the wilful ignorance of covenant. The narrative moves from intimacy to estrangement in a clause."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1–5",
+              "note": "Calvin on the opening genealogy: \"Moses begins with the names of the patriarchs in order to show that the Israelites who were to be delivered were the genuine offspring of holy Abraham, the peculiar people of God, separated from the rest of the world.\" The names matter because the covenant matters. These are not just slaves in Egypt; they are the heirs of the promise. Their redemption will be the fulfilment of what God swore to Abraham."
+            },
+            {
+              "ref": "1:7",
+              "note": "On the growth of Israel: \"God, in thus increasing his people, was keeping his promise.\" Calvin will not let the reader separate the demographics from the theology. The fruitfulness of Israel is not natural phenomenon but divine faithfulness in action. The same God who promised a great nation to Abraham is now producing it, in Egypt, under the nose of the oppressor. Providence is not distant — it is working in every birth recorded in this verse."
+            },
+            {
+              "ref": "1:8–9",
+              "note": "Pharaoh's fear of Israel reveals the insecurity of earthly power. Calvin: \"The more powerfully God works, the more does Satan endeavour to destroy.\" Pharaoh's \"let us deal shrewdly\" is the wisdom of the world confronting the wisdom of God — and it will fail. The recurring pattern throughout redemptive history is that worldly power perceives the growth of God's people as a threat and responds with oppression, which God overrules to produce greater growth."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:7",
+              "note": "The NET note on \"filled the land\" (timale ha'aretz otam) observes the echo of Gen 1:28 is unmistakable and intentional. The Abrahamic covenant included the promise of becoming a great nation (Gen 12:2); the creational mandate to fill the earth (Gen 1:28) is being enacted in the specific geography of Goshen. The land — Egyptian land — is being filled with Israel. This is what alarmed Pharaoh and what the narrative presents as God's blessing in operation."
+            },
+            {
+              "ref": "1:8",
+              "note": "The NET note discusses the identity of \"the new king.\" Two main interpretations: (1) a king of a new dynasty — the expulsion of the Hyksos (foreign rulers sympathetic to Semites) and the rise of the native 18th Dynasty c.1550 BC; (2) a new king within a continuing dynasty, specifically Thutmose I who began persecuting Hebrews. The narrative does not require identification; the theological point — a break in the relationship — is what matters."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 8–14 — A New King; Oppression of Israel",
+      "verse_start": 8,
+      "verse_end": 14,
+      "panels": {
+        "poi": [
+          {
+            "name": "Egypt",
+            "coords": "Nile Valley civilization",
+            "text": "The \"new king who did not know Joseph\" reorganizes the relationship between Egypt and Israel. The geographical reality of the Hebrews' location — in the most fertile delta land — becomes the political threat: they occupy prime territory and could join Egypt's enemies."
+          },
+          {
+            "name": "Store cities Pithom and Rameses",
+            "coords": "Eastern Nile Delta; modern Tell el-Maskhuta and Qantir",
+            "text": "The Hebrews build Pithom (likely Tell el-Maskhuta) and Rameses (Pi-Ramesse, modern Qantir) — supply cities in the eastern Delta, close to their Goshen settlement. Archaeological evidence of Semitic slave labor in the Delta supports the historicity of the forced labor."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:11-12",
+              "note": "MacArthur: The harder Pharaoh pressed Israel, the more they multiplied. The oppression designed to diminish the covenant people accelerates their growth -- the same dynamic as the NT church scattered by persecution (Acts 8:1)."
+            },
+            {
+              "ref": "1:14",
+              "note": "MacArthur: The Egyptians made Israel's lives bitter with hard labour in brick and mortar -- the exact materials used for Babel (Gen 11:3). The covenant people are enslaved to build pagan monuments using humanity's greatest act of rebellion against God as their template."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "לֹא-יָדַע",
+            "transliteration": "lōʾ yādaʿ",
+            "gloss": "did not know",
+            "paragraph": "V.8: \"A new king who did not know Joseph.\" The verb yādaʿ (to know) in biblical Hebrew carries relational and covenantal weight, not merely cognitive awareness. A ruler who \"does not know\" Joseph has broken faith with Joseph's saving legacy. This willful forgetting is the political act that turns guest-nation to slave-nation and sets the Exodus in motion."
+          },
+          {
+            "word": "סְבָלֹת",
+            "transliteration": "sebālōt",
+            "gloss": "forced labour / burdens",
+            "paragraph": "V.11: The word for the oppressive work imposed on Israel. Comes from the root sābal (to bear a burden). It appears again in Exod 6:6-7 where God promises to free them \"from under the yoke of the Egyptians.\" The repeated burdens of Israel become the foil for God's redemptive lightening: where Pharaoh added burdens, God removes them."
+          }
+        ],
+        "hist": "None",
+        "ctx": "The midwives' response to Pharaoh is the first act of principled civil disobedience in Scripture — and the first instance of \"we must obey God rather than men\" (Acts 5:29). Their deception is rewarded (v.20–21): God dealt well with them and gave them families. The ethical complexity has generated extensive commentary — but the narrative's verdict is unambiguous: fearing God matters more than obeying Pharaoh.",
+        "cross": [
+          {
+            "ref": "Acts 5:29",
+            "note": "\"We must obey God rather than men\" — the midwives' action is the paradigm case."
+          },
+          {
+            "ref": "Dan 3:16–18",
+            "note": "Shadrach, Meshach, Abednego refuse Nebuchadnezzar: the same structure of loyalty to God over imperial decree."
+          },
+          {
+            "ref": "Exod 1:21",
+            "note": "God gives the midwives families — 'households' — the very thing Pharaoh was trying to prevent Israel from building."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:15",
+              "note": "Sarna notes the names Shiphrah and Puah are Semitic, not Egyptian, suggesting the midwives were themselves Hebrew — \"the Hebrew midwives\" modifying the noun, not the adjective. Egyptian midwives serving Hebrews would be unusual; Hebrew midwives serving their own community is the natural reading. Their ethnic identity makes their courage more personal: they are protecting their own people's children."
+            },
+            {
+              "ref": "1:17",
+              "note": "The fear of God (yirat Elohim) that motivates the midwives appears throughout the Torah in non-Israelite contexts as the basic standard of moral conduct accessible to all peoples (cf. Gen 20:11; 42:18). Sarna notes this is significant: the midwives' moral clarity is not dependent on specific covenant knowledge but on the universal recognition of God's authority. Their piety is pre-Sinai and cross-cultural — a rebuke to any assumption that moral courage requires insider religious knowledge."
+            },
+            {
+              "ref": "1:21",
+              "note": "The reward of \"houses\" (battim) for the midwives is a Hebrew idiom for established families, lineages, households. Sarna notes the term is the same used for \"house of Israel\" — the very thing Pharaoh was trying to eliminate. The midwives who preserved households receive households. The symmetry is too precise to be accidental; it is the narrative enacting the principle that those who preserve life are given life."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:15–17",
+              "note": "The midwife episode is a masterpiece of narrative economy. Alter notes the three-part structure: royal command (v.15-16), act of disobedience (v.17), consequences (v.18-21). The entire story of resistance and reward occupies seven verses. The women are named in v.15 — a significant detail in a narrative that will systematically deprive Pharaoh of his name. The named resist the unnamed; the small defy the great."
+            },
+            {
+              "ref": "1:19",
+              "note": "The midwives' excuse — \"the Hebrew women are vigorous and give birth before we arrive\" — is delivered in dialogue with Pharaoh, the only place in the chapter where anyone speaks directly to him. The exchange is pointed: the most powerful man in the world is fooled by two midwives. The comedy of the scene is not accidental; it is the narrative's first gesture toward the great humiliations Pharaoh will suffer in the plagues. His \"shrewdness\" (v.10) is no match for the women who fear God."
+            },
+            {
+              "ref": "1:20–22",
+              "note": "The narrative structure of v.20-22 is carefully balanced: God rewards the midwives (v.20-21), the people grow more numerous (v.20), and Pharaoh escalates further (v.22). Each escalation on Pharaoh's part produces more growth, not less. The final decree — throw every boy into the Nile — is Pharaoh at his most desperate. The river he controls will shortly be the instrument of his undoing."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:17",
+              "note": "Calvin on the midwives' disobedience: \"When the will of God and the will of man are opposed to each other, we must obey God and leave men.\" He affirms the principle of civil disobedience when divine command and human command directly conflict. But he also notes the midwives' lie was not commended — only the fear of God that motivated their action. The imperfect act of a faithful person is not the same as the faithfulness itself; God rewards the person, not every action they take."
+            },
+            {
+              "ref": "1:20",
+              "note": "The reward given to the midwives — families of their own — is Calvin's evidence for the providential principle that \"those who are faithful in their offices, God will abundantly recompense.\" The specific reward mirrors the specific service: they protected the births of others; God gives them births of their own. Providence is not general and abstract; it is particular and responsive. God sees the exact shape of each person's service and rewards it in kind."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:15",
+              "note": "The NET note on the midwives' names explains Shiphrah means \"beautiful\" or \"brightness\" and Puah may mean \"splendid\" or relates to an Akkadian cognate for \"young girl.\" Both names are attested in Egyptian and Northwest Semitic lists from the period. The note on their identification (Hebrew vs. Egyptian) reviews the grammatical options: \"Hebrew midwives\" can mean midwives who are Hebrew (apposition) or midwives to the Hebrews (attributive). Most scholars prefer the former."
+            },
+            {
+              "ref": "1:19–20",
+              "note": "The NET note on the ethical question of the midwives' deception notes: \"The text commends their fear of God and civil disobedience, not their deception. The story does not suggest that God approved of the lie; rather, He blessed them in spite of their method, because of their underlying loyalty to Him.\" This is the mainstream evangelical position — the moral calculus rewards the orientation of the heart, not every tactical decision made under moral pressure."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 15–22 — The Midwives' Courage; Pharaoh's Decree",
+      "verse_start": 15,
+      "verse_end": 22,
+      "panels": {
+        "poi": [
+          {
+            "name": "Egypt — general",
+            "coords": "Nile Valley",
+            "text": "The midwives Shiphrah and Puah operate across the Hebrew births throughout Egypt. Their civil disobedience on theological grounds (\"they feared God\") takes place in the most intimate domestic geography — the birthing stool — and overturns Pharaoh's decree at that level."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:15-17",
+              "note": "MacArthur: The midwives Shiphrah and Puah feared God rather than Pharaoh -- the first recorded civil disobedience on theological grounds in Scripture. Their disobedience preserved the covenant line."
+            },
+            {
+              "ref": "1:20-21",
+              "note": "MacArthur: Because the midwives feared God, he gave them families of their own. God honours covenant faithfulness with the thing the faithful protected."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "מְיַלְּדֹת",
+            "transliteration": "meyalledōt",
+            "gloss": "midwives",
+            "paragraph": "The Hebrew midwives Shiphrah (\"beautiful/pleasant\") and Puah (\"splendid/girl-child\"). Their names are preserved while Pharaoh is unnamed — a pointed reversal. Their act of civil disobedience is the first act of principled resistance in Scripture and the model for all later resistance to unjust authority."
+          },
+          {
+            "word": "יָרְאוּ הָאֱלֹהִים",
+            "transliteration": "yārĕʾū hāʾĕlōhîm",
+            "gloss": "feared God",
+            "paragraph": "V.17: \"The midwives, however, feared God.\" The fear of God (yiʾrāʾ ʾĕlōhîm) is the moral foundation that enables their courageous refusal. Throughout the OT this phrase denotes practical, covenant-grounded reverence — not terror but orientation toward God's will above human authority. God's response (v.21) is to give them families of their own — the reward of covenant faithfulness."
+          }
+        ],
+        "hist": "None",
+        "ctx": "Pharaoh's final decree turns the entire Egyptian people into instruments of his genocidal policy. The Nile, which Egyptians worshipped as the god Hapi and source of all life, is commanded to be an instrument of death. The narrative irony is acute: the river will shortly run with blood in the first plague (Exod 7:20), and the same water that Pharaoh commands to swallow Hebrew boys will eventually swallow his army (Exod 14:28). The Nile is not his to command.",
+        "cross": [
+          {
+            "ref": "Matt 2:16",
+            "note": "Herod's slaughter of the innocents deliberately echoes Pharaoh's decree — Matthew frames the massacre as the repetition of an ancient pattern: earthly power attempting to destroy God's deliverer."
+          },
+          {
+            "ref": "Acts 7:19",
+            "note": "Stephen: \"He dealt shrewdly with our race... forcing our fathers to expose their infants so that they would not survive.\" The entire oppression compressed into apostolic preaching."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:22",
+              "note": "Sarna notes the use of the Nile as the instrument of destruction is theologically pointed. The Nile was the source of Egyptian national life — the annual inundation (Hapy) was worshipped as divine. By commanding the Nile to be a grave, Pharaoh conscripts the very symbol of Egyptian divine providence against Israel. The narrative's reversal — the Nile that swallows the babies, the sea that swallows the army — is structurally complete by Exodus 14–15."
+            },
+            {
+              "ref": "1:15-21",
+              "note": "The midwives' fear of God overrides Pharaoh's command — the first instance in the Bible of theological conscience overriding royal decree. Sarna notes the midwives are the true heroes of the chapter: they risk their lives to preserve the lives of the Hebrew boys, and God rewards them with households of their own."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:22",
+              "note": "The chapter ends on Pharaoh's decree, not on its execution. We are not shown Hebrew boys drowning; we are shown the order and left with its weight. The compression is deliberate: the narrative moves immediately to a birth (2:1-2), refusing to linger in the darkness. The birth in chapter 2 is the answer to the decree in chapter 1 — structurally, not just narratively. Life responds to the death-decree before the decree can be fully enacted."
+            },
+            {
+              "ref": "1:19-21",
+              "note": "The midwives' explanation — 'Hebrew women are vigorous and give birth before the midwife arrives' — may or may not be true. Alter notes the narrative leaves the question open. Whether truthful or strategic, the explanation achieves its purpose. The midwives are rewarded not for their truthfulness but for their faithfulness to a higher allegiance."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:22",
+              "note": "Calvin reads the decree as the moment of greatest danger and therefore the moment of greatest divine intervention. \"When all hope seemed to be cut off, God prepared a deliverer.\" The pattern is constant in redemptive history: the darkest moment precedes the light. Pharaoh's all-people decree signals the extremity of the danger; the very extremity is what guarantees that what follows will be recognisably divine rescue, not human ingenuity."
+            },
+            {
+              "ref": "1:17-21",
+              "note": "Calvin: God approved of the midwives' act in saving lives but not of their deception. The deception was a defect arising from weakness, not virtue. God rewards the piety behind the act, not the method chosen. The lesson: God judges the heart's orientation even when the means are imperfect."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:22",
+              "note": "The NET note explains \"the Nile\" (literally \"the river,\" hayyeor) is the standard Hebrew term for the Nile throughout Exodus, from Egyptian itrw (the river). The commanded infanticide is parallel to other ancient Near Eastern practices of exposure — unwanted children were left at the mercy of rivers or wild animals. Pharaoh's decree systematises this as state policy, enlisting all Egyptians as enforcers. The verse serves as the narrative hinge that makes Moses' birth story (ch.2) immediately intelligible."
+            },
+            {
+              "ref": "1:20-21",
+              "note": "The NET note on God giving the midwives 'families of their own' (battim, literally 'houses') explains the reward mirrors the act: they preserved the houses of Israel, so God builds their own houses. The narrative's covenant logic is precise — the reward is the exact form of what they protected."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Pharaoh",
+        "role": "Key biblical figure",
+        "text": "The very fruitfulness that fulfils the Abrahamic promise triggers Pharaoh's terror…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">ESV</td><td>\"But the midwives feared God and did not do as the king of Egypt commanded them, but let the male children live.\"</td></tr><tr><td class=\"t-label\">NIV</td><td>\"The midwives, however, feared God and did not do what the king of Egypt had told them to do; they let the boys live.\"</td></tr><tr><td class=\"t-label\">KJV</td><td>\"But the midwives feared God, and did not as the king of Egypt commanded them, but saved the men children alive.\"</td></tr>",
+    "src": [
+      {
+        "title": "Papyrus Brooklyn 35.1446",
+        "quote": "Documents Semitic slaves in Egypt (c.1740 BC), listing their names and occupations — many names correspond to known Semitic/Hebrew patterns, confirming the historical plausibility of Israelites in Egypt.",
+        "note": "The demographic background of Exodus 1 is historically grounded."
+      },
+      {
+        "title": "Ebers Papyrus",
+        "quote": "Egyptian medical text documenting midwifery practices — the role of midwives (yĕlādôt) was a recognised professional category.",
+        "note": "The midwifery reference is culturally authentic."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Questions on Exodus",
+        "text": "Augustine wrestles with the midwives' deception — concluding their lie was imperfect but their motive (fear of God, love of life) was righteous. Their reward is for the moral quality of their action, not the specific method."
+      },
+      {
+        "who": "Martin Luther King Jr.",
+        "text": "Referenced Shiphrah and Puah in his Letter from Birmingham Jail as biblical precedent for civil disobedience against unjust laws — the midwives' action is Scripture's founding example of the principle."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Midwives Over Pharaoh",
+          "text": "The midwives feared God and did not do what the king commanded. This is the OT's first recorded civil disobedience on theological grounds. God rewarded them with households of their own -- the same thing they preserved for Israel.",
+          "is_key": false
+        },
+        {
+          "label": "From Oppression to Infanticide: The Escalation",
+          "text": "Each paragraph escalates: hard labour, overseers, commanded midwives, then the decree to the whole people. The Pharaoh who did not know Joseph moves from political anxiety to demographic policy to attempted genocide.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "שְׁמוֹת",
+        "tlit": "shemot",
+        "gloss": "Names",
+        "note": "The Hebrew title of Exodus (lit. \"these are the names\"). The book opens by naming the sons of Israel — a counter-genealogy to Pharaoh's nameless empire. Names matter: to be named is to be known by God. The opening echoes Gen 46:8, linking Exodus directly to the Joseph narrative and the promise made to Abraham."
+      },
+      {
+        "word": "וַיִּפְרוּ",
+        "tlit": "wayyiphrū",
+        "gloss": "were fruitful",
+        "note": "V.7 uses five verbs to describe Israel's explosive growth: fruitful (pārā), increased greatly (shārats), multiplied (rābā), grew very numerous (ʿātsam mĕʾōd), and filled the land. This is the language of Gen 1:28 — the creation mandate — being fulfilled in an unlikely place. Egypt becomes the incubator for the nation God promised Abraham would be \"as numerous as the stars.\""
+      },
+      {
+        "word": "לֹא-יָדַע",
+        "tlit": "lōʾ yādaʿ",
+        "gloss": "did not know",
+        "note": "V.8: \"A new king who did not know Joseph.\" The verb yādaʿ (to know) in biblical Hebrew carries relational and covenantal weight, not merely cognitive awareness. A ruler who \"does not know\" Joseph has broken faith with Joseph's saving legacy. This willful forgetting is the political act that turns guest-nation to slave-nation and sets the Exodus in motion."
+      },
+      {
+        "word": "סְבָלֹת",
+        "tlit": "sebālōt",
+        "gloss": "forced labour / burdens",
+        "note": "V.11: The word for the oppressive work imposed on Israel. Comes from the root sābal (to bear a burden). It appears again in Exod 6:6-7 where God promises to free them \"from under the yoke of the Egyptians.\" The repeated burdens of Israel become the foil for God's redemptive lightening: where Pharaoh added burdens, God removes them."
+      },
+      {
+        "word": "מְיַלְּדֹת",
+        "tlit": "meyalledōt",
+        "gloss": "midwives",
+        "note": "The Hebrew midwives Shiphrah (\"beautiful/pleasant\") and Puah (\"splendid/girl-child\"). Their names are preserved while Pharaoh is unnamed — a pointed reversal. Their act of civil disobedience is the first act of principled resistance in Scripture and the model for all later resistance to unjust authority."
+      },
+      {
+        "word": "יָרְאוּ הָאֱלֹהִים",
+        "tlit": "yārĕʾū hāʾĕlōhîm",
+        "gloss": "feared God",
+        "note": "V.17: \"The midwives, however, feared God.\" The fear of God (yiʾrāʾ ʾĕlōhîm) is the moral foundation that enables their courageous refusal. Throughout the OT this phrase denotes practical, covenant-grounded reverence — not terror but orientation toward God's will above human authority. God's response (v.21) is to give them families of their own — the reward of covenant faithfulness."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Gen 15:13",
+        "type": "Fulfilment",
+        "text": "God told Abraham: \"your offspring will be sojourners in a land not their own, and they will be servants there, and they will be afflicted for four hundred years.\" Exodus 1 begins the fulfilment.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Gen 46:27",
+        "type": "Connection",
+        "text": "The seventy who went down are now \"as numerous as the stars of heaven\" (Deut 10:22).",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Acts 7:17–19",
+        "type": "Connection",
+        "text": "Stephen: \"the time of the promise drew near... there arose another king... who dealt shrewdly with our race.\"",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Acts 5:29",
+        "type": "Connection",
+        "text": "\"We must obey God rather than men\" — the midwives' action is the paradigm case.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Dan 3:16–18",
+        "type": "Connection",
+        "text": "Shadrach, Meshach, Abednego refuse Nebuchadnezzar: the same structure of loyalty to God over imperial decree.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Exod 1:21",
+        "type": "Connection",
+        "text": "God gives the midwives families — 'households' — the very thing Pharaoh was trying to prevent Israel from building.",
+        "direction": "backward"
+      }
+    ],
+    "tx": [],
+    "debate": [
+      {
+        "title": "The Date of the Exodus",
+        "positions": [
+          {
+            "name": "Early Date: c.1446 BC",
+            "proponents": "Kitchen, Archer, MacArthur",
+            "argument": "1 Kings 6:1 states Solomon's temple was begun 480 years after the Exodus; Solomon's 4th year is c.966 BC, placing the Exodus at c.1446 BC. Judges 11:26 supports a long pre-monarchic period. The Pharaoh of the oppression would be Thutmose I or Thutmose III; the Exodus Pharaoh, Amenhotep II. Jericho's destruction layer (City IV) c.1400 BC fits this chronology."
+          },
+          {
+            "name": "Late Date: c.1270–1250 BC",
+            "proponents": "Noth, de Vaux, Bright",
+            "argument": "The store cities Pithom and Rameses fit Ramesses II's building programme in the Delta (13th century). Archaeological evidence for the conquest of Canaan better fits the late Bronze Age destructions of the 13th–12th centuries. The 480 years of 1 Kings 6:1 may be symbolic (12 generations × 40 years)."
+          },
+          {
+            "name": "Minimalist: No Historical Exodus",
+            "proponents": "Finkelstein, Silberman",
+            "argument": "No Egyptian records of an Israelite sojourn or mass departure; archaeology suggests Israelites emerged from within Canaan; the Exodus narrative is a theological founding myth crystallised in the 7th–6th century BCE. Rejected by most evangelical and many mainstream scholars as methodologically over-reliant on absence of evidence."
+          },
+          {
+            "name": "New Dynasty — Post-Hyksos",
+            "proponents": "Sarna, Cassuto",
+            "argument": "The Hyksos were Semitic rulers sympathetic to Joseph's people. Their expulsion c.1550 BC by Ahmose I created a native dynasty that viewed Semites as a threat. \"Did not know Joseph\" reflects this political rupture — a new regime with no obligation to honour the Semitic administrator's legacy."
+          },
+          {
+            "name": "New King, Same Dynasty",
+            "proponents": "Kitchen, Hoffmeier",
+            "argument": "The term \"new king\" need not mean a new dynasty. It may simply refer to a new reign within a continuing dynasty — the accession of a king who chose to repudiate his predecessor's policies. This allows more flexibility in identifying the specific pharaoh."
+          }
+        ]
+      },
+      {
+        "title": "Identity of the \"New King\"",
+        "positions": [
+          {
+            "name": "New Dynasty — Post-Hyksos",
+            "proponents": "Sarna, Cassuto",
+            "argument": "The Hyksos were Semitic rulers sympathetic to Joseph's people. Their expulsion c.1550 BC by Ahmose I created a native dynasty that viewed Semites as a threat. \"Did not know Joseph\" reflects this political rupture — a new regime with no obligation to honour the Semitic administrator's legacy."
+          },
+          {
+            "name": "New King, Same Dynasty",
+            "proponents": "Kitchen, Hoffmeier",
+            "argument": "The term \"new king\" need not mean a new dynasty. It may simply refer to a new reign within a continuing dynasty — the accession of a king who chose to repudiate his predecessor's policies. This allows more flexibility in identifying the specific pharaoh."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [],
+      "note": ""
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Egypt",
+        "Goshen",
+        "Sinai",
+        "Midian",
+        "wilderness",
+        "Canaan",
+        "mountain",
+        "tabernacle",
+        "Nile"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Moses",
+        "Aaron",
+        "Pharaoh",
+        "LORD",
+        "Miriam",
+        "Joshua",
+        "Bezalel",
+        "Israel",
+        "Israelites"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "year",
+        "generation",
+        "Sabbath",
+        "Passover"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "covenant",
+        "commandment",
+        "law",
+        "holy",
+        "glory",
+        "tabernacle",
+        "sacrifice",
+        "redeem",
+        "deliver",
+        "sign",
+        "wonder",
+        "plague"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

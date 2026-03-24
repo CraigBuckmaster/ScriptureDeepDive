@@ -1,0 +1,253 @@
+{
+  "chapter_id": "psa117",
+  "testament": "ot",
+  "book_dir": "psalms",
+  "chapter_num": 117,
+  "title": "Psalms 117",
+  "subtitle": "Praise the LORD, All You Nations",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–1 — “All You Peoples”",
+      "verse_start": 1,
+      "verse_end": 1,
+      "panels": {
+        "heb": [
+          {
+            "word": "גּוֹיִם",
+            "transliteration": "gōyîm",
+            "gloss": "nations / Gentiles",
+            "paragraph": "\"Praise the LORD, all you nations (gōyîm); extol him, all you peoples\" (v.1). The shortest psalm — two verses. The shortest chapter in the Bible. Paul quotes this in Romans 15:11 for Gentile inclusion. The command goes to ALL nations, ALL peoples. The scope is universal."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "117:1",
+              "note": "\"Praise the LORD, all you nations.\" The universal summons in two verses. Paul uses this in Romans 15:11 as proof that the Gentiles were always meant to praise God."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 2–2 — “His Love Endures Forever”",
+      "verse_start": 2,
+      "verse_end": 2,
+      "panels": {
+        "heb": [
+          {
+            "word": "חֶסֶד",
+            "transliteration": "ḥesed",
+            "gloss": "unfailing love",
+            "paragraph": "\"For great is his love (ḥesed) toward us, and the faithfulness of the LORD endures forever. Praise the LORD\" (v.2). Two reasons for universal praise: great ḥesed and enduring faithfulness. Two verses, two reasons, one hallelujah. The shortest psalm carries the widest scope."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "117:2",
+              "note": "\"Great is his love toward us, and the faithfulness of the LORD endures forever.\" Two attributes: love (great in degree) and faithfulness (endless in duration). Hallelujah."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "Paul uses this in Romans 15:11 as proof that the Gentiles were always meant to praise God…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>For great is his love toward us, and the faithfulness of the Lord endures forever. Praise the Lord.</td></tr><tr><td class=\"t-label\">ESV</td><td>For great is his steadfast love toward us, and the faithfulness of the LORD endures forever. Praise the LORD!</td></tr><tr><td class=\"t-label\">NIV</td><td>Praise the Lord, all you nations; extol him, all you peoples.</td></tr><tr><td class=\"t-label\">ESV</td><td>Praise the LORD, all nations! Extol him, all peoples!</td></tr>",
+    "rec": [
+      {
+        "who": "John MacArthur",
+        "text": "\"\"Praise the LORD, all you nations.\" The universal summons in two verses. Paul uses this in Romans 15:11 as proof that the Gentiles were always meant to praise God.\""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Ḥesed Forever — 117:2",
+          "text": "\"Great is his LOVE. Faithfulness endures FOREVER.\" Two verses, two reasons, one hallelujah.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "גּוֹיִם",
+        "tlit": "gōyîm",
+        "gloss": "nations / Gentiles",
+        "note": "\"Praise the LORD, all you nations (gōyîm); extol him, all you peoples\" (v.1). The shortest psalm — two verses. The shortest chapter in the Bible. Paul quotes this in Romans 15:11 for Gentile inclusion. The command goes to ALL nations, ALL peoples. The scope is universal."
+      },
+      {
+        "word": "חֶסֶד",
+        "tlit": "ḥesed",
+        "gloss": "unfailing love",
+        "note": "\"For great is his love (ḥesed) toward us, and the faithfulness of the LORD endures forever. Praise the LORD\" (v.2). Two reasons for universal praise: great ḥesed and enduring faithfulness. Two verses, two reasons, one hallelujah. The shortest psalm carries the widest scope."
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Judgment",
+          "score": 4
+        },
+        {
+          "label": "Mercy",
+          "score": 10
+        },
+        {
+          "label": "Faith",
+          "score": 10
+        },
+        {
+          "label": "Sovereignty",
+          "score": 10
+        },
+        {
+          "label": "Worship",
+          "score": 10
+        },
+        {
+          "label": "Holiness",
+          "score": 8
+        },
+        {
+          "label": "Prophecy",
+          "score": 10
+        },
+        {
+          "label": "Justice",
+          "score": 6
+        },
+        {
+          "label": "Mission",
+          "score": 10
+        }
+      ],
+      "note": "Mission peaks at 10: the shortest chapter in the Bible commands ALL nations to praise. Prophecy: Paul quotes for Gentile inclusion (Rom 15:11). The universal psalm."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Zion",
+        "Jerusalem",
+        "Israel",
+        "Egypt",
+        "Babylon",
+        "Jordan",
+        "Hermon",
+        "Sinai",
+        "Sheol"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "David",
+        "God",
+        "Moses",
+        "Solomon",
+        "Abraham",
+        "Jacob",
+        "Messiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "night",
+        "morning",
+        "forever",
+        "generations",
+        "eternity"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "LORD",
+        "God",
+        "praise",
+        "mercy",
+        "righteousness",
+        "wicked",
+        "salvation",
+        "trust",
+        "fear",
+        "love",
+        "faithful",
+        "king",
+        "throne",
+        "refuge",
+        "shepherd",
+        "rock",
+        "fortress",
+        "holy",
+        "glory",
+        "prayer"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

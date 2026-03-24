@@ -1,0 +1,585 @@
+{
+  "chapter_id": "ex20",
+  "testament": "ot",
+  "book_dir": "exodus",
+  "chapter_num": 20,
+  "title": "Exodus 20",
+  "subtitle": "The Ten Commandments; the People's Fear; Laws on Altars",
+  "timeline_link": {
+    "event_id": "sinai-covenant",
+    "text": "See on Timeline — Sinai Covenant"
+  },
+  "map_story_link": {
+    "story_id": "sinai",
+    "text": "See on Map — Mount Sinai"
+  },
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–11 — The Ten Commandments: The First Table",
+      "verse_start": 1,
+      "verse_end": 11,
+      "panels": {
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:2",
+              "note": "MacArthur: I am the LORD your God, who brought you out of Egypt -- the commandments begin with grace, not law. The redemption precedes the obligation. Indicative (I have redeemed you) before imperative (therefore obey)."
+            },
+            {
+              "ref": "20:5-6",
+              "note": "MacArthur: Punishing the children to the third and fourth generation... showing love to a thousand generations. The contrast emphasises the overwhelming asymmetry of divine mercy over divine judgment."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "אָנֹכִי",
+            "transliteration": "ʾānōkî",
+            "gloss": "I am (myself)",
+            "paragraph": "V.2: The Ten Commandments begin with ʾānōkî YHWH — \"I am the LORD your God.\" This self-introduction precedes all commands: the imperative is grounded in an indicative. God does not say \"obey these rules and I will be your God\"; he says \"I am your God — therefore.\" The first word of the Decalogue is not a command but a grace: divine identity establishing covenantal relationship as the basis for moral obligation."
+          },
+          {
+            "word": "עֲבֹדָה",
+            "transliteration": "ʿăbôdāh",
+            "gloss": "servitude / worship / work",
+            "paragraph": "V.9: \"Six days you shall labour and do all your work (mĕlaʾkāh).\" The Sabbath command encompasses both work and rest: six days of full engagement, the seventh of complete release. The Hebrew mĕlaʾkāh (work/craft) is the same word used for God's creative work in Gen 2:2-3. Human labor participates in the divine pattern. Sabbath is not reward for sufficient work but the seventh-day structure of creation itself, into which human beings are invited."
+          }
+        ],
+        "hist": "None",
+        "ctx": "The Decalogue's preamble (\"I am the LORD your God who brought you out of Egypt\") is the key to understanding the entire law. The commandments are not a mechanism for earning relationship with God — they are the description of life for those already in relationship. Every commandment assumes the Exodus has already happened. You are free; here is how free people live before God and each other.",
+        "cross": [
+          {
+            "ref": "Deut 5:6–21",
+            "note": "The Decalogue repeated in Moses' farewell sermon — with slight variations, particularly the Sabbath rationale (Exodus: creation; Deuteronomy: redemption from Egypt)."
+          },
+          {
+            "ref": "Matt 22:37–40",
+            "note": "Jesus' summary: love God with all your heart, soul, mind (commandments 1–4) and love your neighbour as yourself (5–10)."
+          },
+          {
+            "ref": "Rom 3:20",
+            "note": "The law reveals sin: \"through the law comes knowledge of sin.\" The Decalogue does not save; it diagnoses."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:2",
+              "note": "The preamble 'I am the LORD your God who brought you out of Egypt' is the covenantal self-identification that grounds all the commandments. Sarna notes its structure matches ancient suzerainty treaty preambles — the great king identifies himself, recites his historical relationship with the vassal, then specifies treaty terms."
+            },
+            {
+              "ref": "20:8-11",
+              "note": "The Sabbath command's grounding in creation (v.11) distinguishes Exodus from Deuteronomy's grounding in the Exodus (Deut 5:15). Sarna notes both grounds are valid and complementary: the Sabbath is rooted in both creation order and covenant redemption. The two versions together establish the Sabbath as simultaneously cosmic and historical."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:2–17",
+              "note": "The Decalogue's structure moves from vertical (God-Israel, commandments 1–4) to horizontal (Israel-neighbour, commandments 5–10). Alter notes this is not a random list but a structured theological architecture: right relationship with God is the foundation; right relationship with neighbour is the expression."
+            },
+            {
+              "ref": "20:8-11",
+              "note": "The fourth commandment is the longest of the ten — the single commandment requiring an extended theological explanation (the creation week foundation). Alter notes the length signals its complexity: unlike the prohibitions, the Sabbath command requires positive description of what constitutes observance and why."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:2",
+              "note": "Calvin: 'Before he lays down the rule of holy and righteous living, God begins with gratuitous adoption... God does not demand of us what is due him until he has first bound us to himself by his blessing.' The law follows grace; obligation follows gift."
+            },
+            {
+              "ref": "20:8-11",
+              "note": "Calvin on the fourth commandment: the Sabbath has a threefold purpose — meditation on creation, rest for servants, and sacred assembly for worship. The first purpose (creation meditation) grounds the day's significance; the second (servants' rest) grounds its social ethics; the third (assembly) grounds its covenant function."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:3",
+              "note": "The NET note on 'before me' (al panai, literally 'before my face') discusses whether this means 'in addition to me' or 'in my presence.' The note favours 'in my presence' — the commandment is relational, not ontological. It does not assert other gods do not exist; it forbids their worship by those in covenant with YHWH."
+            },
+            {
+              "ref": "20:8-11",
+              "note": "The NET note on 'remember the Sabbath day to keep it holy' discusses the verbal nuance: 'remember' (zakhor) implies ongoing cognitive attention, not merely initial compliance. The note traces the Sabbath commandment through its Deuteronomic parallel ('observe,' shamar) and discusses the complementary emphases."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 12–21 — The Second Table; the People's Fear",
+      "verse_start": 12,
+      "verse_end": 21,
+      "panels": {
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:12",
+              "note": "MacArthur: Honor your father and mother. The fifth commandment is the first with a promise (Eph 6:2). The honour of parents is the foundation of social stability; the society that does not honour parents will not survive across generations."
+            },
+            {
+              "ref": "20:17",
+              "note": "MacArthur: You shall not covet -- the last commandment addresses the heart rather than the action. Paul (Rom 7:7-8) identifies this commandment as the one that revealed his sin to him. Coveting is the internal root of every external violation."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "לֹא תִּרְצָח",
+            "transliteration": "lōʾ tirtsāḥ",
+            "gloss": "you shall not murder",
+            "paragraph": "V.13: The sixth commandment uses rātsaḥ — to murder (unlawful killing) — not the broader hārag (to kill). This distinction matters: the commandment does not prohibit all killing but specifically unlawful, premeditated murder. Jesus radicalizes it inward in Matt 5:21-22: anger and contempt are the same root. Paul's \"Do not take revenge; vengeance belongs to God\" (Rom 12:19) is the same commandment applied to the systemic impulse that produces murder."
+          },
+          {
+            "word": "אֶת הַשַּׁבָּת",
+            "transliteration": "ʾet haShabbāt",
+            "gloss": "the Sabbath (object marker)",
+            "paragraph": "V.8: \"Remember (zākor) the Sabbath day and keep it holy.\" The verb zākor (to remember) in Deuteronomy's version becomes shāmor (to observe/guard). Both verbs address the same reality: Sabbath is not self-maintaining. It requires active remembering (cognitive engagement with God's purposes) and active guarding (protection from the intrusion of ordinary life). The Sabbath was made for humanity (Mark 2:27) — a gift that resists being unwrapped without intention."
+          }
+        ],
+        "hist": "None",
+        "ctx": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys.",
+        "cross": [
+          {
+            "ref": "Matt 5:21–48",
+            "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
+          },
+          {
+            "ref": "Rom 13:8–10",
+            "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
+          },
+          {
+            "ref": "James 2:10–11",
+            "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:18–21",
+              "note": "Sarna notes the people's request for Moses as mediator is the constitutive moment of Israelite prophecy. The people cannot sustain direct divine encounter; they need a representative who goes between. Moses accepts: he 'approached the thick darkness where God was.' The mediator enters what the people cannot enter."
+            },
+            {
+              "ref": "20:19-21",
+              "note": "The people's request for mediated revelation constitutes the legal basis of the prophetic office. Sarna notes the theological significance: from this point forward, the divine word comes to Israel through human mediators. The directness of Sinai is immediately qualified by the people's own request — the covenant was too overwhelming for unmediated reception."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:18–21",
+              "note": "The shift from direct divine speech (Decalogue) to mediated speech (Moses) is the chapter's structural pivot. Alter notes the people's request — 'speak to us yourself' — is candid human limitation. Moses' role as mediator is from this point the structure of Israelite covenant life."
+            },
+            {
+              "ref": "20:19-21",
+              "note": "The people's fear and distance from Sinai is the narrative's explanation for why they need a mediator. Alter notes the irony: the God who came down to speak directly with his people (v.20: 'God has come to test you') now speaks through Moses because the people cannot bear direct speech. The Incarnation reverses this: God becomes approachable."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:19",
+              "note": "Calvin: 'God was pleased to accommodate himself to their infirmity, and to supply them with a teacher of their own kind.' The incarnation of Christ is the ultimate fulfilment of this accommodation — God provides a mediator who is fully human, approachable without the terror of direct divine encounter."
+            },
+            {
+              "ref": "20:18-21",
+              "note": "Calvin: The people's request for Moses as mediator was granted because of human weakness, not as a rebuke. God graciously accommodated their inability to sustain direct encounter. The accommodation prefigures the Incarnation: God provides a mediator of human form precisely because humans cannot sustain the direct divine encounter."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:21",
+              "note": "The NET note on 'thick darkness' (araphel) explains it is a more intense darkness than the earlier 'thick cloud' (anan). The note cites Ps 18:11 ('he made darkness his hiding place') — the divine presence is simultaneously light (pillar of fire) and darkness (araphel), transcending both categories."
+            },
+            {
+              "ref": "20:18-21",
+              "note": "The NET note on Moses approaching 'the thick darkness where God was' discusses the paradox: God is light (Ps 27:1) yet Moses enters darkness to meet him. The note traces the tradition of divine hiddenness-in-light through 1 Kgs 8:12 (Solomon: 'the LORD has said he would dwell in thick darkness') and Ps 18:11."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 22–26 — Laws About Altars",
+      "verse_start": 22,
+      "verse_end": 26,
+      "panels": {
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:24-25",
+              "note": "MacArthur: The altar law establishes that the fundamental covenant approach to God requires sacrifice and must avoid human elaboration. Natural uncut stones prevent the altar from becoming a work of human artisanship -- worship must not be a display of human creativity."
+            },
+            {
+              "ref": "20:22-26",
+              "note": "MacArthur: The altar instructions immediately following the Ten Commandments are not supplementary but interpretive. The prohibition of worked stone and steps grounds the worship of YHWH in simplicity and accessibility. The altar must be approachable by all without requiring elaborate craftsmanship — the covenant God meets people where they are."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "פָּנִים",
+            "transliteration": "pānîm",
+            "gloss": "face / presence",
+            "paragraph": "V.3: \"You shall have no other gods before me (ʿal-pānāy — lit. before my face).\" The idiom pānîm (face/presence) is rich: to be \"before the face\" of God is to be in his presence, under his gaze. The first commandment is relational: there is no covenantal space for divided loyalty. The prohibition of idols follows directly (v.4-6) because idols are substitutes for the living presence of the personal God."
+          },
+          {
+            "word": "קִנָּא",
+            "transliteration": "qinnāʾ",
+            "gloss": "jealous / zealous",
+            "paragraph": "V.5: \"I, the LORD your God, am a jealous God (ʾēl qannāʾ).\" The word qinnāʾ (jealousy/zeal) is used exclusively in positive contexts for God in the OT — never in the petty human sense. It denotes the fierce, exclusive love of a covenant partner who will not share his beloved with rivals. In Num 25:11 Phinehas's \"zeal\" (qinnāʾ) for God mirrors this divine attribute. Paul uses the same dynamic in 2 Cor 11:2: \"I am jealous for you with a godly jealousy.\""
+          }
+        ],
+        "hist": "None",
+        "ctx": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys.",
+        "cross": [
+          {
+            "ref": "Matt 5:21–48",
+            "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
+          },
+          {
+            "ref": "Rom 13:8–10",
+            "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
+          },
+          {
+            "ref": "James 2:10–11",
+            "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:25",
+              "note": "The prohibition of cut stone for altars protests against elaboration of religious infrastructure. Sarna notes dressed stone was used in Canaanite high places — the prohibition distinguishes Israelite worship from pagan religious architecture. God does not need elaborate stone monuments; simple altars suffice."
+            },
+            {
+              "ref": "20:24-26",
+              "note": "The altar law immediately following the Decalogue grounds covenant worship in simplicity and locality. Sarna notes the deliberate contrast with Canaanite cultic elaboration: YHWH requires only earth or unhewn stone, not the dressed stone and elaborate architecture of pagan high places. Simplicity in worship honours the worshipped."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "20:24",
+              "note": "The promise 'wherever I cause my name to be remembered' establishes the divine name as the principle of sacred presence — God present wherever his name is legitimately invoked, not confined to a particular geography. This will eventually be centralised (Deut 12) and then universalised (Matt 18:20)."
+            },
+            {
+              "ref": "20:24-26",
+              "note": "The altar instructions close the Decalogue section with immediate practical application. Alter notes the movement from the most abstract (the commandments) to the most concrete (how to build an altar). The covenant is not only heard but enacted; worship is not only commanded but given a physical form, however simple."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "20:24",
+              "note": "Calvin: 'God promises his blessing wherever men legitimately call upon him.' The promise is conditional on legitimate worship but geographically open. Calvin uses this against restricting valid worship to ecclesiastically defined spaces."
+            },
+            {
+              "ref": "20:24-26",
+              "note": "Calvin: The altar law teaches that God is not worshipped by human inventions but by his own prescriptions. The prohibition of dressed stone and steps is not arbitrary: elaboration in worship tends toward showmanship and self-display. God prefers the simple worship that depends entirely on his presence, not on the worshipper's craft."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "20:25",
+              "note": "The NET note explains iron tools were associated with warfare. The prohibition may reflect an ancient taboo against bringing implements of violence into sacred space — consistent with 1 Kgs 6:7 where the temple was built without iron tools heard on site."
+            },
+            {
+              "ref": "20:24-26",
+              "note": "The NET note on 'at every place where I cause my name to be honoured' discusses whether this anticipates the Deuteronomy 12 centralisation or permits pre-centralisation multiple worship sites. The note surveys the scholarly debate and concludes the verse establishes a principle (legitimate altar = where God designates) that Deut 12 will later specify."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Context  The Decalogue's preamble (\"I am the LORD your God who brought you out of Egypt\") is the key to understanding the entire law…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">ESV</td><td>\"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery. You shall have no other gods before me.\"</td></tr><tr><td class=\"t-label\">NIV</td><td>\"I am the LORD your God, who brought you out of Egypt, out of the land of slavery. You shall have no other gods before me.\"</td></tr><tr><td class=\"t-label\">NASB</td><td>\"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery. You shall have no other gods before Me.\"</td></tr>",
+    "src": [
+      {
+        "title": "Hittite Suzerainty Treaty Form",
+        "quote": "The Decalogue precisely follows the Hittite treaty structure: (1) preamble identifying the sovereign; (2) historical prologue of the king's benefits; (3) obligations. The form was known throughout the ANE and gave the Decalogue immediate intelligibility as a covenant document.",
+        "note": "The Decalogue is not just moral philosophy; it is a covenant treaty between the divine King and his redeemed people."
+      },
+      {
+        "title": "The Numbering Question",
+        "quote": "Jewish, Protestant, and Catholic/Lutheran traditions number the commandments differently. The most common Protestant numbering (used above) takes vv.3 and 4–6 as two separate commandments. The Catholic/Lutheran tradition combines them into one and splits the coveting (v.17) into two.",
+        "note": "The content is identical across traditions; only the numbering differs."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, On the Spirit and the Letter",
+        "text": "The Decalogue written on stone vs. the new covenant law written on the heart (Jer 31:33; 2 Cor 3:3) — the stone tablets point toward their own transcendence."
+      },
+      {
+        "who": "Luther, Large Catechism",
+        "text": "The Decalogue as the foundation of Christian ethics — the law that kills (shows sin) in order that grace may give life. The commandments are not abolished but fulfilled in Christ and written on the heart by the Spirit."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "The Preamble: Covenant Identity Before Command",
+          "text": "I am the LORD your God who brought you out of Egypt. The command begins with identity, not obligation. The covenant relationship (I am... your God) precedes and grounds every command that follows. Obedience flows from identity.",
+          "is_key": false
+        },
+        {
+          "label": "The People Request Mediation: The Prophetic Office Founded",
+          "text": "The people draw back and ask Moses to be their mediator. The terrifying directness of the Sinai theophany is immediately qualified by the people's own request -- the prophetic office originates at the people's recognition of their own inability to sustain direct divine encounter.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "אָנֹכִי",
+        "tlit": "ʾānōkî",
+        "gloss": "I am (myself)",
+        "note": "V.2: The Ten Commandments begin with ʾānōkî YHWH — \"I am the LORD your God.\" This self-introduction precedes all commands: the imperative is grounded in an indicative. God does not say \"obey these rules and I will be your God\"; he says \"I am your God — therefore.\" The first word of the Decalogue is not a command but a grace: divine identity establishing covenantal relationship as the basis for moral obligation."
+      },
+      {
+        "word": "עֲבֹדָה",
+        "tlit": "ʿăbôdāh",
+        "gloss": "servitude / worship / work",
+        "note": "V.9: \"Six days you shall labour and do all your work (mĕlaʾkāh).\" The Sabbath command encompasses both work and rest: six days of full engagement, the seventh of complete release. The Hebrew mĕlaʾkāh (work/craft) is the same word used for God's creative work in Gen 2:2-3. Human labor participates in the divine pattern. Sabbath is not reward for sufficient work but the seventh-day structure of creation itself, into which human beings are invited."
+      },
+      {
+        "word": "לֹא תִּרְצָח",
+        "tlit": "lōʾ tirtsāḥ",
+        "gloss": "you shall not murder",
+        "note": "V.13: The sixth commandment uses rātsaḥ — to murder (unlawful killing) — not the broader hārag (to kill). This distinction matters: the commandment does not prohibit all killing but specifically unlawful, premeditated murder. Jesus radicalizes it inward in Matt 5:21-22: anger and contempt are the same root. Paul's \"Do not take revenge; vengeance belongs to God\" (Rom 12:19) is the same commandment applied to the systemic impulse that produces murder."
+      },
+      {
+        "word": "אֶת הַשַּׁבָּת",
+        "tlit": "ʾet haShabbāt",
+        "gloss": "the Sabbath (object marker)",
+        "note": "V.8: \"Remember (zākor) the Sabbath day and keep it holy.\" The verb zākor (to remember) in Deuteronomy's version becomes shāmor (to observe/guard). Both verbs address the same reality: Sabbath is not self-maintaining. It requires active remembering (cognitive engagement with God's purposes) and active guarding (protection from the intrusion of ordinary life). The Sabbath was made for humanity (Mark 2:27) — a gift that resists being unwrapped without intention."
+      },
+      {
+        "word": "פָּנִים",
+        "tlit": "pānîm",
+        "gloss": "face / presence",
+        "note": "V.3: \"You shall have no other gods before me (ʿal-pānāy — lit. before my face).\" The idiom pānîm (face/presence) is rich: to be \"before the face\" of God is to be in his presence, under his gaze. The first commandment is relational: there is no covenantal space for divided loyalty. The prohibition of idols follows directly (v.4-6) because idols are substitutes for the living presence of the personal God."
+      },
+      {
+        "word": "קִנָּא",
+        "tlit": "qinnāʾ",
+        "gloss": "jealous / zealous",
+        "note": "V.5: \"I, the LORD your God, am a jealous God (ʾēl qannāʾ).\" The word qinnāʾ (jealousy/zeal) is used exclusively in positive contexts for God in the OT — never in the petty human sense. It denotes the fierce, exclusive love of a covenant partner who will not share his beloved with rivals. In Num 25:11 Phinehas's \"zeal\" (qinnāʾ) for God mirrors this divine attribute. Paul uses the same dynamic in 2 Cor 11:2: \"I am jealous for you with a godly jealousy.\""
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Deut 5:6–21",
+        "type": "Connection",
+        "text": "The Decalogue repeated in Moses' farewell sermon — with slight variations, particularly the Sabbath rationale (Exodus: creation; Deuteronomy: redemption from Egypt).",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Matt 22:37–40",
+        "type": "Connection",
+        "text": "Jesus' summary: love God with all your heart, soul, mind (commandments 1–4) and love your neighbour as yourself (5–10).",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Rom 3:20",
+        "type": "Connection",
+        "text": "The law reveals sin: \"through the law comes knowledge of sin.\" The Decalogue does not save; it diagnoses.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Matt 5:21–48",
+        "type": "Connection",
+        "text": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Rom 13:8–10",
+        "type": "Connection",
+        "text": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "James 2:10–11",
+        "type": "Connection",
+        "text": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation.",
+        "direction": "backward"
+      }
+    ],
+    "tx": [],
+    "debate": [
+      {
+        "title": "How Many Commandments and How Are They Numbered?",
+        "positions": [
+          {
+            "name": "Protestant/Reformed numbering",
+            "proponents": "Calvin, Reformed tradition",
+            "argument": "Commandment 1: no other gods. Commandment 2: no images. Commandments 3–10 follow sequentially."
+          },
+          {
+            "name": "Catholic/Lutheran numbering",
+            "proponents": "Augustine, Luther",
+            "argument": "Commandments 1 and 2 combined; commandment 10 split into two (coveting wife; coveting property)."
+          },
+          {
+            "name": "Jewish traditional numbering",
+            "proponents": "Philo, Maimonides",
+            "argument": "The preamble 'I am the LORD your God' is Commandment 1. 'No other gods/no images' is Commandment 2."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [],
+      "note": ""
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Egypt",
+        "Goshen",
+        "Sinai",
+        "Midian",
+        "wilderness",
+        "Canaan",
+        "mountain",
+        "tabernacle",
+        "Nile"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Moses",
+        "Aaron",
+        "Pharaoh",
+        "LORD",
+        "Miriam",
+        "Joshua",
+        "Bezalel",
+        "Israel",
+        "Israelites"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "year",
+        "generation",
+        "Sabbath",
+        "Passover"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "covenant",
+        "commandment",
+        "law",
+        "holy",
+        "glory",
+        "tabernacle",
+        "sacrifice",
+        "redeem",
+        "deliver",
+        "sign",
+        "wonder",
+        "plague"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

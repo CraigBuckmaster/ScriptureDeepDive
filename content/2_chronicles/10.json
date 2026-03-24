@@ -1,0 +1,267 @@
+{
+  "chapter_id": "2ch10",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 10,
+  "title": "2 Chronicles 10",
+  "subtitle": "The Kingdom Divides",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐11 — Rehoboam at Shechem; the People’s Demand",
+      "verse_start": 1,
+      "verse_end": 11,
+      "panels": {
+        "ctx": "All Israel gathers at Shechem to make Rehoboam king. Jeroboam returns from Egypt. The people ask for lighter burdens. The elders counsel moderation; the young men counsel harshness. Rehoboam chooses the young men’s advice. The Chronicler follows 1 Kings 12 closely — this disaster is too important to modify.",
+        "cross": [
+          {
+            "ref": "1 Kgs 12:1–15",
+            "note": "The Kings parallel, nearly identical."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "10:8",
+              "note": "Rehoboam’s folly teaches that leadership requires humility to receive counsel from those wiser than yourself. The most dangerous moment for any leader is the moment they stop listening."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "10:11",
+              "note": "“Scorpions” (ʿaqrabbîm) likely refers to whips tipped with metal barbs. The metaphor communicates maximum cruelty."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 12‐19 — Israel Rebels; the Kingdom Splits",
+      "verse_start": 12,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "The ten northern tribes reject Rehoboam: “What share do we have in David?” Adoram (the forced-labour overseer) is stoned to death. Rehoboam flees to Jerusalem. “So Israel has been in rebellion against the house of David to this day.” The Chronicler preserves the formula but his real concern is what happens next: the northern kingdom essentially disappears from his narrative. From here on, “Israel” in Chronicles means Judah.",
+        "cross": [
+          {
+            "ref": "1 Kgs 12:16–19",
+            "note": "The parallel. The Chronicler adds no unique material to the revolt itself."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "10:15",
+              "note": "That the division was “from God” teaches that God accomplishes his purposes even through human folly. Providence is not thwarted by sin; it operates through it."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "10:18",
+              "note": "Adoram (also Adoniram in 1 Kgs 4:6) was the minister of forced labour (mas). His assassination was a targeted political act."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Rehoboam",
+        "role": "Key biblical figure",
+        "text": "All Israel gathers at Shechem to make Rehoboam king…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>When Jeroboam son of Nebat heard this (he was in Egypt, where he had fled from King Solomon), he returned from Egypt.</td></tr><tr><td class=\"t-label\">ESV</td><td>And as soon as Jeroboam the son of Nebat heard of it (for he was in Egypt, where he had fled from King Solomon), then Jeroboam returned from Egypt.</td></tr><tr><td class=\"t-label\">NIV</td><td>Then King Rehoboam consulted the elders who had served his father Solomon during his lifetime. \\u201cHow would you advise me to answer these people?\\u201d he asked.</td></tr><tr><td class=\"t-label\">ESV</td><td>Then King Rehoboam took counsel with the old men, who had stood before Solomon his father while he was yet alive, saying, \\u201cHow do you advise me to answer this people?\\u201d</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐11 — Rehoboam at Shechem; the People’s Demand —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 12‐19 — Israel Rebels; the Kingdom Splits —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "The Kingdom Divides",
+        "target": "1 Kgs 12:1–15",
+        "type": "Echo",
+        "text": "The Kings parallel, nearly identical.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Kingdom Divides",
+        "target": "1 Kgs 12:16–19",
+        "type": "Echo",
+        "text": "The parallel. The Chronicler adds no unique material to the revolt itself.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "The Kingdom Divides"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

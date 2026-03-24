@@ -1,0 +1,298 @@
+{
+  "chapter_id": "1ch27",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 27,
+  "title": "1 Chronicles 27",
+  "subtitle": "Military and Civic Organisation",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–15 — Twelve Monthly Military Divisions",
+      "verse_start": 1,
+      "verse_end": 15,
+      "panels": {
+        "ctx": "David organises the army into twelve monthly divisions of 24,000 men each (total: 288,000). Each division serves one month per year under a named commander. The twelve-month rotation provides a standing army while minimising disruption to civilian life: each soldier serves one month in twelve. The commanders are drawn from David’s mighty warriors (chapter 11) — proven battle leaders now serve as institutional administrators.",
+        "cross": [
+          {
+            "ref": "1 Chr 11:10–47",
+            "note": "The mighty warriors. Several commanders listed here appeared in the chapter 11 roster."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "27:1",
+              "note": "The citizen-soldier model teaches that readiness for service does not require permanent mobilisation. One month in twelve balances duty to the kingdom with duty to family and field."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "27:1",
+              "note": "The phrase kol-dĕbar hammahlĕqōt (“all matters of the divisions”) indicates that the monthly rotation covered all military functions: border patrol, garrison duty, and reserve readiness."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 16–34 — Tribal Officers; David’s Advisors; the Incomplete Census",
+      "verse_start": 16,
+      "verse_end": 34,
+      "panels": {
+        "ctx": "Tribal officers for all twelve tribes are listed, followed by David’s economic administrators (overseers of treasury, agriculture, vineyards, orchting, flocks) and his key advisors: Ahithophel as counsellor, Hushai as “the king’s friend,” Joab as army commander. The chapter closes with a note about the incomplete census: “David did not count those twenty years of age or under, because the LORD had promised to make Israel as numerous as the stars.” The census of chapter 21 is referenced obliquely — its incompleteness is now attributed to faith: why count what God has promised to make uncountable?",
+        "cross": [
+          {
+            "ref": "1 Chr 21:1–7",
+            "note": "The census David should not have taken. The Chronicler now explains that David intentionally left it unfinished."
+          },
+          {
+            "ref": "Gen 15:5",
+            "note": "“Look up at the sky and count the stars — if indeed you can count them... So shall your offspring be.” The Abrahamic promise makes census irrelevant."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "27:23",
+              "note": "Not counting those under twenty because of God’s promise teaches that faith sometimes means not seeking information. When God has made a promise, counting the evidence can be a form of doubt."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "27:23",
+              "note": "The phrase kĕkōkĕbēy hashshāmayim (“like the stars of the heavens”) directly quotes the Abrahamic promise (Gen 15:5; 22:17). The census’s incompleteness becomes a testimony to divine faithfulness."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "The chapter closes with a note about the incomplete census: “David did not count those twenty years of age or under, because the LORD had promised to make Israel as numerous as the stars…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "David organises the army into twelve monthly divisions of 24,000 men each (total: 288,000)…"
+      },
+      {
+        "name": "Joab",
+        "role": "Key biblical figure",
+        "text": "Tribal officers for all twelve tribes are listed, followed by David’s economic administrators (overseers of treasury, agriculture, vineyards, orchting, flocks) and his key advisors: Ahithophel as counsellor, Hushai as “the king’s friend,” J…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "” The census of chapter 21 is referenced obliquely — its incompleteness is now attributed to faith: why count what God has promised to make uncountable?…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "The chapter closes with a note about the incomplete census: “David did not count those twenty years of age or under, because the LORD had promised to make Israel as numerous as the stars…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>In charge of the division for the second month was Dodai the Ahohite; Mikloth was the leader of his division. There were 24,000 men in his division.</td></tr><tr><td class=\"t-label\">ESV</td><td>Dodai the Ahohite was in charge of the division of the second month; in his division were 24,000.</td></tr><tr><td class=\"t-label\">NIV</td><td>The third army commander, for the third month, was Benaiah son of Jehoiada the priest. He was chief and there were 24,000 men in his division.</td></tr><tr><td class=\"t-label\">ESV</td><td>The third commander, for the third month, was Benaiah, the son of Jehoiada the chief priest; in his division were 24,000.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–15 — Twelve Monthly Military Divisions",
+          "text": "David organises the army into twelve monthly divisions of 24,000 men each (total: 288,000). Each division serves one mon…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 16–34 — Tribal Officers; David’s Advisors; the Incomplete Census",
+          "text": "Tribal officers for all twelve tribes are listed, followed by David’s economic administrators (overseers of treasury, ag…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Military and Civic Organisation",
+        "target": "1 Chr 11:10–47",
+        "type": "Connection",
+        "text": "The mighty warriors. Several commanders listed here appeared in the chapter 11 roster.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Military and Civic Organisation",
+        "target": "1 Chr 21:1–7",
+        "type": "Connection",
+        "text": "The census David should not have taken. The Chronicler now explains that David intentionally left it unfinished.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Military and Civic Organisation",
+        "target": "Gen 15:5",
+        "type": "Connection",
+        "text": "“Look up at the sky and count the stars — if indeed you can count them... So shall your offspring be.” The Abrahamic promise makes census irrelevant.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Military and Civic Organisation"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

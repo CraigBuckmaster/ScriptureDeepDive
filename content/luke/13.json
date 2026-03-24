@@ -1,0 +1,621 @@
+{
+  "chapter_id": "lk13",
+  "testament": "nt",
+  "book_dir": "luke",
+  "chapter_num": 13,
+  "title": "Luke 13",
+  "subtitle": "Repentance, Healing, and the Narrow Door",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–17 — Repent or Perish; The Barren Fig Tree; Sabbath Healing",
+      "verse_start": 1,
+      "verse_end": 17,
+      "panels": {
+        "heb": [
+          {
+            "word": "metanoeō",
+            "transliteration": "me-ta-NO-eh-o",
+            "gloss": "repent / change direction",
+            "paragraph": "The twice-repeated call to repentance (vv.3, 5) uses the full word for a turning of mind, will, and direction. Jesus refuses to connect suffering to personal sin but insists that all mortality confronts everyone with the same demand: repent now, before the end."
+          },
+          {
+            "word": "thygatēr Abraam",
+            "transliteration": "thy-GA-tēr ab-ra-AM",
+            "gloss": "daughter of Abraham",
+            "paragraph": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
+          }
+        ],
+        "ctx": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]",
+        "cross": [
+          {
+            "ref": "Job 1-2",
+            "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
+          },
+          {
+            "ref": "Dan 4:12, 21",
+            "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
+          },
+          {
+            "ref": "Mark 3:1-6",
+            "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2-5",
+              "note": "Jesus dismantles two false theological equations: suffering = greater sinfulness, and survival = greater righteousness. Both are wrong. The only conclusion to draw from others' deaths is personal urgency: \"you too will all perish\" unless you repent. The deaths are not punishments but warnings."
+            },
+            {
+              "ref": "13:6-9",
+              "note": "The fig tree parable is Israel in miniature — three years of fruitless expectation (corresponding roughly to Jesus's ministry), the owner's legitimate frustration, the gardener's intercession for one more year. The parable is simultaneously a warning (judgment is coming) and a grace (there is still time). The \"one more year\" is the present moment of opportunity."
+            },
+            {
+              "ref": "13:15-16",
+              "note": "Jesus's Sabbath argument moves from animal to human: if you untie an animal on the Sabbath to water it, how much more should a daughter of Abraham be untied from eighteen years of satanic bondage? The logic is a fortiori and the conclusion is unanswerable. The opponents are humiliated not by force but by the irresistible coherence of the argument."
+            },
+            {
+              "ref": "13:19-21",
+              "note": "Both kingdom parables emphasise hidden, unprepossessing beginnings yielding extraordinary results. The mustard seed is proverbially tiny; the yeast is invisible in the dough. The kingdom does not arrive with observable grandeur (17:20) but permeates all things from within."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:1-5",
+              "note": "Calvin insists that Jesus is not denying all connection between sin and suffering in the broad sense — suffering entered the world through sin — but is denying the specific inference that the degree of suffering indicates the degree of personal guilt. This is the error of Job's comforters, and Jesus corrects it directly."
+            },
+            {
+              "ref": "13:18-21",
+              "note": "The mustard seed and yeast parables answer the same implicit objection: why is the kingdom so unimpressive in its present form? The answer is that the kingdom's greatness is already determined by its origin; its appearance will come. The yeast works invisibly until the whole lump is leavened — the kingdom's hidden work is no less real for being unseen."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "The incident of Galileans killed by Pilate during their Temple sacrifices has no independent historical attestation. However, Pilate's governorship (AD 26-36) is well documented for its violations of Jewish religious sensitivities (cf. Josephus, Ant. 18.55-62; 18.85-89). The incident is historically plausible."
+            },
+            {
+              "ref": "13:4",
+              "note": "\"The tower in Siloam\" — the Siloam pool (John 9:7) was in the southern part of Jerusalem. Building projects in the area were documented; the collapse of a tower there is unattested in other sources but architecturally plausible for a city under frequent construction."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:11",
+              "note": "Syggkyptousa — \"bent double,\" a word that perfectly describes the medical condition: she could not at all (pantelos) straighten herself up. The perfect passive participle suggests a long-established condition, consistent with the eighteen years specified."
+            },
+            {
+              "ref": "13:16",
+              "note": "Edei — imperfect of the divine necessity: \"it was necessary.\" Jesus frames the healing not as a controversy but as an obligation: the Sabbath day is precisely the right day to liberate a daughter of Abraham from satanic bondage."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "13:3",
+              "note": "Origen: \"The word 'unless you repent' is addressed not only to those present but to all who hear it, in all generations. For all of us are subject to the same mortality, and the same call to repentance applies equally to all.\""
+            },
+            {
+              "ref": "13:12",
+              "note": "Ambrose: \"She was bent over by a spirit of infirmity — and Jesus says 'you are set free' before he touches her. The word releases her; the touch confirms the release. Both show that healing comes by authority, not by physical means alone.\""
+            }
+          ]
+        },
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 18–30 — Mustard Seed; Yeast; The Narrow Door",
+      "verse_start": 18,
+      "verse_end": 30,
+      "panels": {
+        "heb": [
+          {
+            "word": "agōnizesthe",
+            "transliteration": "a-gō-NI-zes-the",
+            "gloss": "strive / agonise",
+            "paragraph": "The verb (v.24) is athletic — to compete in the games, to struggle with all one's effort. Entry through the narrow door is not passive; it requires the kind of total effort an athlete brings to competition. The word group gives us the English \"agony.\""
+          },
+          {
+            "word": "alōpēx",
+            "transliteration": "a-LO-pex",
+            "gloss": "fox",
+            "paragraph": "Jesus's term for Herod Antipas (v.32) is uniquely contemptuous in all the Gospels. In Jewish idiom a fox was a cunning but small and destructive animal — the opposite of the lion (noble power). Jesus refuses to dignify Herod's threat with fear."
+          }
+        ],
+        "ctx": "[('The Journey to Jerusalem', 'Luke periodically reminds the reader that Jesus is travelling toward Jerusalem (9:51; 13:22; 17:11; 18:31; 19:28). The journey is both geographical and theological — it is the via crucis, and every teaching along the way is coloured by its destination.'), ('The Jerusalem Lament', \"The lament over Jerusalem (13:34-35) is one of the most emotionally charged passages in Luke. The maternal image — a hen gathering chicks — is remarkable for its vulnerability: Jesus does not describe his desire to protect Jerusalem through power but through sheltering tenderness. Jerusalem's desolation is not God's preference but the consequence of her refusal.\")]",
+        "cross": [
+          {
+            "ref": "Matt 7:13-14",
+            "note": "\"Enter through the narrow gate\" — Matthew's parallel to the narrow door, given in the Sermon on the Mount."
+          },
+          {
+            "ref": "Matt 23:37-39",
+            "note": "The Jerusalem lament in Matthew, placed at the end of the woe-discourse in the Temple courts rather than during the Galilean journey."
+          },
+          {
+            "ref": "Ps 118:26",
+            "note": "\"Blessed is he who comes in the name of the Lord\" — the Hallel verse Jesus quotes as the condition for Jerusalem seeing him again. It echoes the Palm Sunday acclamation (19:38)."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:24",
+              "note": "\"Make every effort\" — agōnizesthe. Salvation is not earned by striving, but entry through the narrow door demands the full engagement of the will. The narrowness of the door is not about the difficulty of meeting God's standard but about the radical self-renunciation that comes through it. Wide doors admit everyone as they are; the narrow door requires leaving self behind."
+            },
+            {
+              "ref": "13:25-27",
+              "note": "\"I don't know you\" — the most chilling words in Luke. Religious familiarity (eating and drinking with Jesus, hearing his teaching in the streets) is not the same as relationship. Many will claim acquaintance; the issue is whether they are known by the one who matters. The door closes; the moment of opportunity ends."
+            },
+            {
+              "ref": "13:32-33",
+              "note": "\"Today and tomorrow and the third day I will reach my goal\" — the three-day pattern foreshadows the passion and resurrection. Jesus's refusal to be deflected by Herod's threat is not defiance for its own sake but the steady movement of one who knows his destination. He will not die in Galilee; he will die in Jerusalem, because that is where prophets die."
+            },
+            {
+              "ref": "13:34",
+              "note": "The maternal image of the hen is one of the most tender in all the Gospels. Christ's desire for Jerusalem is not the desire of power but of love — sheltering, vulnerable, repeatedly extended and repeatedly refused. \"You were not willing\" — the tragedy is not divine abandonment but human refusal."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:23-24",
+              "note": "Calvin insists that the question \"are only a few saved?\" is impious curiosity when it leads to complacency about one's own condition. Jesus redirects from speculative arithmetic to personal urgency: strive to enter. The question about others is replaced by the command to each individual."
+            },
+            {
+              "ref": "13:35",
+              "note": "\"Your house is left to you desolate\" — the abandonment of the Temple by the divine presence, foreshadowed here, was fulfilled in AD 70 when the Temple was destroyed. The phrase echoes Ezek 10-11, where the glory of the Lord departed from the Temple before its first destruction in 587 BC."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:31",
+              "note": "The Pharisees' warning about Herod may have been genuine or may have been an attempt to move Jesus away from his ministry in Peraea/Galilee (which was Herod's territory). Either way, Jesus treats it as an attempt at deflection and refuses to be moved from his course."
+            },
+            {
+              "ref": "13:35",
+              "note": "\"Until you say 'Blessed is he who comes in the name of the Lord'\" — this could refer to the Palm Sunday entry (19:28-40) which immediately follows in the narrative, or to a future eschatological recognition of Jesus at his return. Most scholars see a double reference: the near term (the triumphal entry) and the ultimate (the Parousia)."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:24",
+              "note": "Agōnizesthe — present imperative: keep on striving. The word is from the athletic arena. The present tense implies continuous effort, not a single decisive act."
+            },
+            {
+              "ref": "13:32",
+              "note": "Alōpēx — \"fox.\" A term of contempt in Jewish culture (cf. Neh 4:3, where Tobiah uses a fox as an image of insignificance). Jesus's refusal to fear Herod is expressed through dismissive description rather than confrontation."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "13:24",
+              "note": "Augustine: \"The narrow way is narrow for the sake of those who walk carelessly. For those who walk with care and love, it is wide enough — wide enough, I mean, not in quantity of space, but in the stretching out of the heart.\""
+            },
+            {
+              "ref": "13:34",
+              "note": "Cyril of Alexandria: \"He gathered the children of Israel under the wings of his divine protection through the law and the prophets. But they were not willing. And so at last he came in his own person — and they were still not willing.\""
+            }
+          ]
+        },
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 31–35 — Herod’s Threat; Lament over Jerusalem",
+      "verse_start": 31,
+      "verse_end": 35,
+      "panels": {
+        "heb": [
+          {
+            "word": "metanoeō",
+            "transliteration": "me-ta-NO-eh-o",
+            "gloss": "repent / change direction",
+            "paragraph": "The twice-repeated call to repentance (vv.3, 5) uses the full word for a turning of mind, will, and direction. Jesus refuses to connect suffering to personal sin but insists that all mortality confronts everyone with the same demand: repent now, before the end."
+          },
+          {
+            "word": "thygatēr Abraam",
+            "transliteration": "thy-GA-tēr ab-ra-AM",
+            "gloss": "daughter of Abraham",
+            "paragraph": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
+          }
+        ],
+        "ctx": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]",
+        "cross": [
+          {
+            "ref": "Job 1-2",
+            "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
+          },
+          {
+            "ref": "Dan 4:12, 21",
+            "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
+          },
+          {
+            "ref": "Mark 3:1-6",
+            "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2-5",
+              "note": "Jesus dismantles two false theological equations: suffering = greater sinfulness, and survival = greater righteousness. Both are wrong. The only conclusion to draw from others' deaths is personal urgency: \"you too will all perish\" unless you repent. The deaths are not punishments but warnings."
+            },
+            {
+              "ref": "13:6-9",
+              "note": "The fig tree parable is Israel in miniature — three years of fruitless expectation (corresponding roughly to Jesus's ministry), the owner's legitimate frustration, the gardener's intercession for one more year. The parable is simultaneously a warning (judgment is coming) and a grace (there is still time). The \"one more year\" is the present moment of opportunity."
+            },
+            {
+              "ref": "13:15-16",
+              "note": "Jesus's Sabbath argument moves from animal to human: if you untie an animal on the Sabbath to water it, how much more should a daughter of Abraham be untied from eighteen years of satanic bondage? The logic is a fortiori and the conclusion is unanswerable. The opponents are humiliated not by force but by the irresistible coherence of the argument."
+            },
+            {
+              "ref": "13:19-21",
+              "note": "Both kingdom parables emphasise hidden, unprepossessing beginnings yielding extraordinary results. The mustard seed is proverbially tiny; the yeast is invisible in the dough. The kingdom does not arrive with observable grandeur (17:20) but permeates all things from within."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:1-5",
+              "note": "Calvin insists that Jesus is not denying all connection between sin and suffering in the broad sense — suffering entered the world through sin — but is denying the specific inference that the degree of suffering indicates the degree of personal guilt. This is the error of Job's comforters, and Jesus corrects it directly."
+            },
+            {
+              "ref": "13:18-21",
+              "note": "The mustard seed and yeast parables answer the same implicit objection: why is the kingdom so unimpressive in its present form? The answer is that the kingdom's greatness is already determined by its origin; its appearance will come. The yeast works invisibly until the whole lump is leavened — the kingdom's hidden work is no less real for being unseen."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "The incident of Galileans killed by Pilate during their Temple sacrifices has no independent historical attestation. However, Pilate's governorship (AD 26-36) is well documented for its violations of Jewish religious sensitivities (cf. Josephus, Ant. 18.55-62; 18.85-89). The incident is historically plausible."
+            },
+            {
+              "ref": "13:4",
+              "note": "\"The tower in Siloam\" — the Siloam pool (John 9:7) was in the southern part of Jerusalem. Building projects in the area were documented; the collapse of a tower there is unattested in other sources but architecturally plausible for a city under frequent construction."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:11",
+              "note": "Syggkyptousa — \"bent double,\" a word that perfectly describes the medical condition: she could not at all (pantelos) straighten herself up. The perfect passive participle suggests a long-established condition, consistent with the eighteen years specified."
+            },
+            {
+              "ref": "13:16",
+              "note": "Edei — imperfect of the divine necessity: \"it was necessary.\" Jesus frames the healing not as a controversy but as an obligation: the Sabbath day is precisely the right day to liberate a daughter of Abraham from satanic bondage."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "13:3",
+              "note": "Origen: \"The word 'unless you repent' is addressed not only to those present but to all who hear it, in all generations. For all of us are subject to the same mortality, and the same call to repentance applies equally to all.\""
+            },
+            {
+              "ref": "13:12",
+              "note": "Ambrose: \"She was bent over by a spirit of infirmity — and Jesus says 'you are set free' before he touches her. The word releases her; the touch confirms the release. Both show that healing comes by authority, not by physical means alone.\""
+            }
+          ]
+        },
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Jesus",
+        "role": "Teacher on the Journey",
+        "text": "Luke 13 shows Jesus at his most theologically direct: dismantling false theodicy, healing on the Sabbath in defiance of convention, dismissing Herod with contempt, and weeping over Jerusalem with maternal tenderness. The range is characteristic of Luke's portrait."
+      },
+      {
+        "name": "The Bent Woman",
+        "role": "Daughter of Abraham",
+        "text": "Unnamed, silent until her praise of God (13:13). Her eighteen-year bondage makes her healing the most dramatic Sabbath miracle in Luke. Jesus's designation of her as \"daughter of Abraham\" is the most theologically loaded thing said about any minor character in this chapter."
+      },
+      {
+        "name": "The Synagogue Leader",
+        "role": "Religious authority",
+        "text": "His indignation at the Sabbath healing is addressed to the crowd rather than to Jesus — a rhetorical evasion Jesus immediately exposes and answers with the animal-care argument."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">agōnizesthe (13:24)</td><td>NIV: \"make every effort\"; KJV: \"strive\"; ESV: \"strive\"; NRSV: \"strive\". All major versions agree on the athletic/effort connotation.</td></tr><tr><td class=\"t-label\">alōpēx (13:32)</td><td>All major versions: \"fox.\" The term of contempt is universally rendered literally.</td></tr><tr><td class=\"t-label\">erēmos (13:35)</td><td>NIV: \"desolate\"; KJV: \"desolate\"; ESV: \"desolate\"; NRSV: \"abandoned\". The word refers to abandonment — the divine presence departing — rather than physical ruin, though physical ruin follows.</td></tr>",
+    "src": [
+      {
+        "title": "Ezekiel 10-11",
+        "quote": "The departure of the glory (shekinah) from the Temple before its destruction in 587 BC — the OT background for Jesus's \"your house is left to you desolate\" (13:35). The Temple cannot be destroyed until the divine presence has withdrawn.",
+        "note": "Jesus's lament implies that the same pattern is repeating: divine presence is being refused, and abandonment will follow."
+      },
+      {
+        "title": "Psalm 118:26",
+        "quote": "\"Blessed is he who comes in the name of the Lord\" — the Hallel psalm sung at Passover, which becomes the acclamation of the Palm Sunday crowd. Jesus quotes it as the condition under which Jerusalem will see him again.",
+        "note": "The citation connects the lament to both the immediate triumphal entry (19:38) and the eschatological return of Christ."
+      }
+    ],
+    "rec": [
+      {
+        "who": "The Narrow Door in Christian Asceticism",
+        "text": "The \"narrow door\" became a key text for monastic theology. The desert fathers quoted it as the scriptural basis for the renunciations of the ascetic life — not as earning salvation but as the form that radical self-surrender takes. John Cassian and Benedict of Nursia both invoke it in their writings on the spiritual life."
+      },
+      {
+        "who": "The Jerusalem Lament in Art and Theology",
+        "text": "The image of Christ weeping over Jerusalem (here in 13:34-35; explicitly in 19:41) has inspired sustained theological reflection on divine grief and the possibility of genuine divine sorrow without divine defeat. In art, the Flevit super illam (he wept over it) became a standard iconographic scene in Western Christianity."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Inclusio — vv.22 / 33",
+          "text": "The journey-to-Jerusalem frame brackets the section: \"as he made his way to Jerusalem\" (v.22) and \"no prophet can die outside Jerusalem\" (v.33). The geographical destination and the theological destination are the same.",
+          "is_key": false
+        },
+        {
+          "label": "Reversal — vv.28-30",
+          "text": "The last will be first, the first last. Those who assumed their place at the table (the insiders, those who ate with Jesus) are excluded; those from east, west, north and south (the outsiders, the Gentiles) take their places. Luke's great reversal theme at its starkest.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "metanoeō",
+        "tlit": "me-ta-NO-eh-o",
+        "gloss": "repent / change direction",
+        "note": "The twice-repeated call to repentance (vv.3, 5) uses the full word for a turning of mind, will, and direction. Jesus refuses to connect suffering to personal sin but insists that all mortality confronts everyone with the same demand: repent now, before the end."
+      },
+      {
+        "word": "thygatēr Abraam",
+        "tlit": "thy-GA-tēr ab-ra-AM",
+        "gloss": "daughter of Abraham",
+        "note": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
+      },
+      {
+        "word": "agōnizesthe",
+        "tlit": "a-gō-NI-zes-the",
+        "gloss": "strive / agonise",
+        "note": "The verb (v.24) is athletic — to compete in the games, to struggle with all one's effort. Entry through the narrow door is not passive; it requires the kind of total effort an athlete brings to competition. The word group gives us the English \"agony.\""
+      },
+      {
+        "word": "alōpēx",
+        "tlit": "a-LO-pex",
+        "gloss": "fox",
+        "note": "Jesus's term for Herod Antipas (v.32) is uniquely contemptuous in all the Gospels. In Jewish idiom a fox was a cunning but small and destructive animal — the opposite of the lion (noble power). Jesus refuses to dignify Herod's threat with fear."
+      },
+      {
+        "word": "metanoeō",
+        "tlit": "me-ta-NO-eh-o",
+        "gloss": "repent / change direction",
+        "note": "The twice-repeated call to repentance (vv.3, 5) uses the full word for a turning of mind, will, and direction. Jesus refuses to connect suffering to personal sin but insists that all mortality confronts everyone with the same demand: repent now, before the end."
+      },
+      {
+        "word": "thygatēr Abraam",
+        "tlit": "thy-GA-tēr ab-ra-AM",
+        "gloss": "daughter of Abraham",
+        "note": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "13:35",
+        "title": "\"Your house is left to you desolate\"",
+        "content": "Some MSS (including several important ones) omit \"desolate\" (erēmos), reading simply \"your house is left to you.\" NA28 includes erēmos on the strength of multiple early witnesses.",
+        "note": "The longer reading is well-attested and makes the OT allusion (Ezek 10-11; Jer 22:5) explicit. The shorter reading may reflect scribal haplography."
+      },
+      {
+        "ref": "13:31",
+        "title": "Pharisees' motives",
+        "content": "No textual variation, but interpreters divide on whether the Pharisees are warning Jesus genuinely or attempting to move him away from Herod's territory for other reasons. The ambiguity is in the text, not a manuscript variant.",
+        "note": "Luke presents the warning without evaluating the Pharisees' motives — a characteristic Lukan restraint that leaves the reader to judge."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Does 13:35 refer to the Palm Sunday entry or to the Parousia?",
+        "positions": [
+          {
+            "name": "Palm Sunday",
+            "proponents": "Fitzmyer, Evans",
+            "argument": "The immediate narrative context supports a near-term reference: 19:38 records the crowd's \"Blessed is the king who comes in the name of the Lord!\" as Jesus enters Jerusalem. The saying is fulfilled within the same travel narrative."
+          },
+          {
+            "name": "The Parousia",
+            "proponents": "Marshall, Green",
+            "argument": "The full recognition implied — Jerusalem \"seeing\" Jesus with the Hallel acclamation — was not achieved at the Palm Sunday entry, where Jesus was rejected within days. The ultimate fulfilment is eschatological."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Repentance",
+          "score": 10
+        },
+        {
+          "label": "Kingdom",
+          "score": 10
+        },
+        {
+          "label": "Sabbath",
+          "score": 10
+        },
+        {
+          "label": "Journey",
+          "score": 10
+        },
+        {
+          "label": "Lament",
+          "score": 10
+        },
+        {
+          "label": "Reversal",
+          "score": 10
+        }
+      ],
+      "note": "Luke 13 presses repentance with unusual urgency: not as a response to personal guilt about specific sins but as the only appropriate response to human mortality — all die, therefore all must repent now. The chapter then demonstrates the kingdom's character in miniature: it heals on the Sabbath, grows from invisible beginnings, enters through a narrow door, and welcomes those from every direction while excluding those who assumed their own entry was guaranteed. The Jerusalem lament brings the chapter to its emotional climax: the city that kills the prophets is tenderly, repeatedly, and uselessly wooed by the one it will kill."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Galilee",
+        "Judea",
+        "Samaria",
+        "Nazareth",
+        "Capernaum",
+        "Bethlehem",
+        "Jordan",
+        "temple",
+        "synagogue",
+        "road",
+        "Jericho"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "disciples",
+        "Pharisees",
+        "scribes",
+        "Peter",
+        "John",
+        "James",
+        "crowd",
+        "elders",
+        "chief priests",
+        "Pilate",
+        "Herod",
+        "angel",
+        "women"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "hour",
+        "today",
+        "year",
+        "generation",
+        "coming",
+        "now",
+        "appointed time"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "kingdom",
+        "Son of Man",
+        "salvation",
+        "Spirit",
+        "repent",
+        "forgive",
+        "grace",
+        "glory",
+        "faith",
+        "gospel",
+        "poor",
+        "joy",
+        "covenant",
+        "prophet"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

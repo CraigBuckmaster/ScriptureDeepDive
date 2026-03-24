@@ -1,0 +1,828 @@
+{
+  "chapter_id": "gen5",
+  "testament": "ot",
+  "book_dir": "genesis",
+  "chapter_num": 5,
+  "title": "Genesis 5",
+  "subtitle": "The Genealogy from Adam to Noah",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–5 — The Book of Adam's Descendants",
+      "verse_start": 1,
+      "verse_end": 5,
+      "panels": {
+        "tl": [
+          {
+            "date": "c. 4000 BC",
+            "name": "Adam created",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3700 BC",
+            "name": "Seth born (Adam age 130)",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3300 BC",
+            "name": "Enoch born",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3017 BC",
+            "name": "Enoch taken by God — age 365",
+            "text": "This passage. The only non-death in the genealogy: Enoch walked with God and was no more. The genealogy's formula breaks for the one who most fully embodied its purpose.",
+            "current": true
+          },
+          {
+            "date": "c. 2948 BC",
+            "name": "Methuselah dies (oldest person: 969 yrs)",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 2348 BC",
+            "name": "Noah's flood begins",
+            "text": "",
+            "current": false
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:1-5",
+              "note": "MacArthur: The phrase 'in the likeness of God' (v.1) echoes 1:26-27 and reaffirms human dignity after the Fall. The genealogy introduces the theological pattern: created in God's image, yet subject to death. Adam's line bears both the image and the curse."
+            },
+            {
+              "ref": "5:3",
+              "note": "MacArthur: Adam begat Seth 'in his own likeness, after his image' -- the Fall's effect is transmitted. The divine image is not erased but the likeness now includes a sin nature passed to every descendant."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "sēfer tôledôt",
+            "transliteration": "SAY-fer to-le-DOT",
+            "gloss": "book of generations / written account",
+            "paragraph": "The phrase opening chapter 5 (v.1) deliberately echoes Gen 2:4 and signals a structural unit. Tôledôt (\"generations/account\") is Genesis's organizational spine, appearing ten times to divide the book. Sēfer (\"scroll/book\") is significant: this is presented as a written document, not merely oral tradition — linking it to the broader claim that Moses received and transmitted the patriarchal records."
+          },
+          {
+            "word": "bĕṣelem ʾĕlōhîm",
+            "transliteration": "be-TSEH-lem e-lo-HEEM",
+            "gloss": "in the image of God",
+            "paragraph": "The genealogy re-anchors at v.1 the fundamental dignity of the human race: Adam was made bĕṣelem ʾĕlōhîm. Then Adam's son Seth is born \"in his own likeness, in his own image\" (v.3) — the image passed through human generation. The Imago Dei is not lost at the Fall but transmitted, though now bearing the marks of mortality that the genealogy's refrain (\"and he died\") underlines."
+          },
+          {
+            "word": "wayāmōt",
+            "transliteration": "vai-ya-MOT",
+            "gloss": "and he died",
+            "paragraph": "The drumbeat refrain of Genesis 5 — \"and he died\" — is the theological consequence of the Fall working itself out through history. God had warned Adam: \"dying you will die\" (2:17). Chapter 5 is the documentation: generation after generation, however long-lived, ultimately yielded to the sentence of death. The one exception — Enoch, who \"was not, because God took him\" (v.24) — stands as a promise that death does not have the final word."
+          }
+        ],
+        "hist": "The ten-generation structure of chapter 5 (Adam to Noah) parallels the post-flood genealogy of chapter 11 (Shem to Abraham), also ten generations. Both genealogies use the same formula and both culminate in a figure of decisive redemptive significance (Noah; Abraham). The extremely long lifespans (ranging from Enoch's 365 years to Methuselah's 969) have no parallel in Israel's wider ANE context except the Sumerian King List, which records pre-flood kings reigning for tens of thousands of years. Genesis's lifespans, though long, are dramatically shorter.",
+        "ctx": "The genealogy of chapter 5 performs two functions simultaneously: it bridges the narrative from Adam's expulsion to Noah's flood across centuries of time, and it carries the theological assertion that the image of God — however damaged by the fall — continues to be transmitted in the human line. The repeated refrain \"and he died\" is the most solemn phrase in the chapter: every name ends the same way. Death is the universal consequence of the fall. Enoch alone breaks the pattern.",
+        "cross": [
+          {
+            "ref": "Luke 3:36-38",
+            "note": "Luke's genealogy of Jesus traces back through Noah and the patriarchs to Adam, son of God — connecting the lineage of Gen 5 to the incarnation."
+          },
+          {
+            "ref": "1 Chr 1:1-4",
+            "note": "Chronicles opens with this same genealogy — the OT's confirmation that Gen 5 is the foundational human lineage."
+          },
+          {
+            "ref": "Jude 14",
+            "note": "Enoch, the seventh from Adam, prophesied — Jude quotes an Enochic tradition, treating the Gen 5 figure as a prophet."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:1",
+              "note": "The toledoth formula here (\"This is the written account of Adam's line\") echoes both 2:4 and the broader structural device of Genesis. Sarna: the phrase sefer toledoth Adam — \"the book of the generations of Adam\" — deliberately mirrors the formula of 2:4 for the heavens and earth. The human story is given the same formal introduction as the cosmos itself. Humanity's history is as significant as cosmic history."
+            },
+            {
+              "ref": "5:3",
+              "note": "Wayyoled bademuto ketsalmo — \"and he fathered a son in his own likeness, after his image.\" The identical language of 1:26-27 (God's image and likeness) is now applied to Adam's son Seth. The image of God passes through the generations, but so does the fallen nature. Seth is Adam's image as Adam is God's image — a chain of likeness running through human history, fallen but not erased."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:1",
+              "note": "The genealogy of chapter 5 is the Bible's first formal genealogical list, and Alter notes its structural elegance: each entry follows the same pattern (age at first son's birth, remaining years, death notice) with one exception — Enoch. The repetition creates a drumbeat of mortality: \"and he died... and he died... and he died.\" Against this rhythm, Enoch's translation is a sudden, dissonant break."
+            },
+            {
+              "ref": "5:3-5",
+              "note": "Adam lived 930 years and then he died. The death notice, so formulaic it seems almost bureaucratic, is in fact the fulfilment of God's warning in 2:17: \"in the day you eat of it you shall surely die.\" The deaths come — slowly, at great age, but they come. The genealogy is a long ledger of mortality, the toll of the fall measured out in centuries."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:1-2",
+              "note": "Moses returns to the creation narrative (1:26-28) at the opening of the genealogy to remind us of human dignity before tracing human mortality. Calvin: \"Moses, in order to show that the image of God was not entirely extinguished, recalls to our memory what had been before stated — that God created man in his own image. And then he immediately adds, that Adam begat a son in his own image; meaning that the celestial image, though vitiated and almost obliterated, was yet transmitted from the father to the son.\""
+            },
+            {
+              "ref": "5:5",
+              "note": "Adam lived 930 years, \"and then he died.\" Calvin on the longevity: the long lives of the antediluvians were given by divine providence so that the world might be populated, that experience and knowledge could accumulate across generations, and that the promise of the seed (3:15) might be preserved through the line until its fulfilment. Long life is not reward for virtue but provision for redemptive history."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:1",
+              "note": "The NET note on \"written account\" (sefer) observes this is the only place in Genesis where the toledoth formula is qualified as a sefer — a written document. This may suggest that an actual written source underlies this section, consistent with the ancient tradition of genealogical record-keeping. The note on \"image of God\" observes that the resumption of 1:26-27 language at the opening of the genealogy is a deliberate theological framing device."
+            },
+            {
+              "ref": "5:3",
+              "note": "The NET note on Seth being born \"in his own likeness, after his image\" carefully distinguishes this from the image-of-God language: Adam bore God's image; Seth bears Adam's image. The note asks whether this implies the image of God is transmitted through procreation (Reformed tradition) or whether the reference is to physical resemblance. The NET favours the view that both physical and spiritual likeness are intended."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 6–20 — The Generations: Seth to Jared",
+      "verse_start": 6,
+      "verse_end": 20,
+      "panels": {
+        "tl": [
+          {
+            "date": "c. 4000 BC",
+            "name": "Adam created",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3700 BC",
+            "name": "Seth born",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3300 BC",
+            "name": "Enoch born",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 3100 BC",
+            "name": "Generations: Seth to Jared — this passage",
+            "text": "The ten pre-Flood generations span roughly 1,600 years. Each man lives 700-900+ years; each entry follows the formula: lived X years, had a son, lived Y more years. The unbroken sequence creates the sense of time compressing toward the Flood.",
+            "current": true
+          },
+          {
+            "date": "c. 2948 BC",
+            "name": "Methuselah born (son of Enoch)",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. 2350 BC",
+            "name": "The Flood",
+            "text": "",
+            "current": false
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:6-20",
+              "note": "MacArthur: The repeated formula 'and he died' drives home the consequence of Genesis 3. The genealogy is a mortality register. Each man fulfils the dominion mandate (they had sons and daughters) but the sentence stands."
+            },
+            {
+              "ref": "5:18-20",
+              "note": "MacArthur: Jared's 962 years is the third-longest lifespan in the record. The longevity of the antediluvians reflects the original human potential; the progressive shortening of lifespans after the Flood reflects the cumulative effects of sin and the changed environment."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "qārāʾ šēm",
+            "transliteration": "ka-RAH SHAYM",
+            "gloss": "called his name",
+            "paragraph": "The naming formula that runs through chapter 5 carries theological weight beyond genealogical record. In biblical Hebrew, to name is to identify essence and destiny. The names in the antediluvian genealogy are carefully preserved — Enosh (\"mortal man\"), Kenan (\"lamentation\"?), Mahalalel (\"praise of God\"), Jared (\"descent\"), Lamech — each potentially encoding the period's theological character as the post-Edenic age of spreading mortality."
+          },
+          {
+            "word": "ḥāyāh",
+            "transliteration": "kha-YAH",
+            "gloss": "to live / to be alive",
+            "paragraph": "The astonishing lifespans of the antediluvian patriarchs (Seth: 912 years; Methuselah: 969 years) mark a pre-Flood age when something about human constitution was different. Whatever the explanation — genealogical compression, ancient counting systems, or literal years — the theological point is the same: even these extraordinary lives end with \"and he died.\" The maximum of Methuselah's 969 years still terminates in death; only the divine interruption of Enoch escapes the pattern."
+          },
+          {
+            "word": "ʾāb",
+            "transliteration": "AV",
+            "gloss": "father",
+            "paragraph": "The genealogical formula \"X lived N years and became the father of Y, and after he became the father of Y, X lived N years and had other sons and daughters\" establishes that the listed names are not necessarily sequential but are the chosen link in the covenant chain. \"Father\" (ʾāb) in Hebrew genealogy can mean ancestor several generations removed. The genealogy is selective, theological, and structured — not a complete demographic record but the skeleton of promise-transmission from Adam to Noah."
+          }
+        ],
+        "hist": "The section covers Seth through Jared — six of the ten pre-flood patriarchs. The lifespans range from Kenan's 910 years to Jared's 962 years. The function of these extreme lifespans in the narrative is disputed: they may reflect a genuine pre-flood biological reality, a schematic literary convention (as in Sumerian king lists), symbolic significance of specific numbers, or compressed chronology. What is indisputable is their narrative function: they establish that enormous spans of time passed between creation and the flood, time filled with the multiplication of humanity.",
+        "ctx": "The middle section of the genealogy is structurally unremarkable — it is designed to be unremarkable. The repetitive formula does its work precisely by being monotonous. The reader is meant to feel the weight of generation after generation passing: each person born, each person fathering children, each person dying. The monotony of mortality is itself the theological point. Against this relentless backdrop, Enoch's exception will be all the more arresting.",
+        "cross": [],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:6-20",
+              "note": "The seven names from Seth to Enoch follow the formulaic pattern with no deviation. Sarna notes that the numerical values of the pre-flood lifespans have been the subject of extensive speculation: some see astronomical or calendrical significance, others read them as expressions of primordial dignity before the flood shortened human life. The Septuagint and Samaritan Pentateuch give different numbers for most entries — the three textual traditions diverge significantly here, suggesting the numbers were subject to revision in transmission."
+            },
+            {
+              "ref": "5:21-27",
+              "note": "The Enoch notice breaks the genealogical formula deliberately. Sarna notes the phrase 'walked with God' (hithalekh et haElohim) is shared only with Noah (6:9) — both figures of exceptional piety. Enoch's translation is not an editorial oddity but a theological signal about what covenant faithfulness ultimately leads to."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:6-20",
+              "note": "The genealogy proceeds with mechanical regularity — lived X years, fathered Y, lived Z more years, fathered sons and daughters, died. Alter: the literary effect is cumulative and intentional. The reader is lulled by the repetition, conditioned to expect the death notice, so that when Enoch's entry breaks the pattern (\"and he was not, for God took him\"), the disruption registers with full force. The monotony is a literary device preparing for the exception."
+            },
+            {
+              "ref": "5:29",
+              "note": "Lamech's naming speech is the only extended prose in the genealogy. Alter notes the imprecision of the wordplay — nacham (comfort) does not etymologically derive from Noah — is deliberate: the name is prophetic rather than etymological. Lamech associates his hope with his son rather than explaining it."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:6-20",
+              "note": "Calvin on the antediluvian genealogy: the long lifespans reflect God's blessing on a world that needed to be populated and on a time when the accumulated wisdom of centuries could be transmitted from generation to generation. \"It is also probable that God prolonged the life of those men, in order that the tradition of the creation and the fall might be preserved and handed down with greater certainty.\" The patriarchs as living libraries of primordial knowledge."
+            },
+            {
+              "ref": "5:24",
+              "note": "Calvin on Enoch's translation: God thus provided a pledge that the same grace would be extended to his people when Christ should come. The exception to universal death is not a curiosity but a covenant sign."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:6-20",
+              "note": "The NET notes acknowledge the significant textual variation in the ages between MT, LXX, and Samaritan Pentateuch. The MT consistently gives lower numbers than the LXX for pre-flood figures. The note surveys three explanatory theories: scribal adjustment to avoid making Methuselah survive the flood; symbolic/schematic numbers with no literal intent; genuine preservation of ancient records. The NET translates the MT numbers without resolving the textual question."
+            },
+            {
+              "ref": "5:24",
+              "note": "The NET note on 'God took him' (laqach) traces the same verb used for Elijah's translation (2 Kgs 2:10) and surveys ancient Near Eastern parallels, distinguishing the biblical account by its covenant theological frame."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 21–27 — Enoch Walks with God; Methuselah",
+      "verse_start": 21,
+      "verse_end": 27,
+      "panels": {
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:21-24",
+              "note": "MacArthur: Enoch's 'walking with God' (vv.22,24) signals intimate covenant fellowship -- the same expression used of Noah (6:9) and Abraham (17:1). His translation without death is God's preview that death is not the final word for those who walk with him."
+            },
+            {
+              "ref": "5:24",
+              "note": "MacArthur: 'God took him' -- the Hebrew verb laqach used for divine removal (cf. 2 Kgs 2:3,5,9). The New Testament confirms Enoch was taken up by faith so he would not experience death (Heb 11:5). He is one of two OT individuals translated without death (the other being Elijah)."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "hālak ʾet-hāʾĕlōhîm",
+            "transliteration": "ha-LAK et-ha-e-lo-HEEM",
+            "gloss": "walked with God",
+            "paragraph": "Enoch's epitaph — \"Enoch walked with God\" (vv.22, 24) — appears in a genealogy otherwise dominated by \"and he died.\" The verb hālak with ʾet indicates continuous intimate fellowship and moral conformity: Enoch's life was a journey in step with God's direction and character. The same phrase is used of Noah (6:9) and anticipates the covenant language of walking before God (17:1; 24:40). It is the OT's most compact description of genuine piety."
+          },
+          {
+            "word": "ʾênennû",
+            "transliteration": "ay-NEN-nu",
+            "gloss": "he was not / he was no longer there",
+            "paragraph": "The abrupt \"Enoch was not, because God took him\" (v.24) is Genesis's most compressed theological statement. The verb lāqaḥ (\"took\") is used of God's action — the same word used of Elijah's translation (2 Kgs 2:10). The Septuagint renders: \"God translated him.\" Enoch's departure is not death but a different kind of ending — a sign within the genealogy of death that mortality does not absolutely constrain what God can do with a life fully yielded to him."
+          },
+          {
+            "word": "nāḥam",
+            "transliteration": "na-KHAM",
+            "gloss": "to comfort / to bring relief",
+            "paragraph": "Lamech names his son Noah (Nōaḥ) with a wordplay on nāḥam: \"He will comfort us in the labour and painful toil of our hands caused by the ground the LORD has cursed\" (v.29). The name anticipates Noah's role: the builder of the ark through which human and animal life survives the Flood, and the recipient of the covenant that resets humanity's relationship with a cleansed creation. The play between Nōaḥ and nāḥam will echo in God's \"regret\" (nāḥam) in 6:6."
+          }
+        ],
+        "hist": "Enoch's \"365 years\" is often noted as equal to the solar year. Whether this is significant is disputed. What is undeniable is that his years are the shortest of any patriarch in the chapter — suggesting his \"taking\" was not delayed departure but an early translation at the peak of his walk with God. The post-biblical tradition of Enoch became enormously developed: 1 Enoch (quoted in Jude 14-15) presents him as a prophet and heavenly traveler. The Second Temple period produced extensive Enoch literature.",
+        "ctx": "Enoch's entry breaks the monotonous pattern of the genealogy like a sudden bright note in a sustained minor key. The formula changes, the refrain \"and he died\" is absent, and the explanation is as brief as it is extraordinary: \"God took him.\" The pattern of the chapter has trained the reader to expect death; the absence of death in Enoch's entry is therefore maximally effective. He becomes the great biblical type of those who pass from life to God's presence without death.",
+        "cross": [
+          {
+            "ref": "Heb 11:5",
+            "note": "“By faith Enoch was taken from this life, so that he did not experience death.” The NT reads Enoch’s translation as an act of faith — he pleased God."
+          },
+          {
+            "ref": "Jude 14–15",
+            "note": "Jude quotes Enoch’s prophecy about the coming judgment of the Lord — drawing on the tradition of Enoch as a prophet (from 1 Enoch 1:9)."
+          },
+          {
+            "ref": "2 Kgs 2:11",
+            "note": "Elijah’s translation in a whirlwind parallels Enoch — the two humans in Scripture who bypass death. Both appear at the Transfiguration (Matt 17:3)."
+          },
+          {
+            "ref": "1 Thess 4:17",
+            "note": "“We who are still alive will be caught up” — the eschatological translation of believers echoes the Enoch pattern."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:22-24",
+              "note": "Vayithalech Chanoch et haElohim — \"Enoch walked with God.\" The phrase hithalech et haElohim appears only twice in Genesis: here (5:22,24) and of Noah in 6:9. In both cases it describes a person of exceptional covenant intimacy. Sarna: \"To walk with God\" is the Hebrew idiom for continuous, habitual fellowship with the divine — not a single encounter but a lifetime orientation. The contrast with the surrounding genealogy is total: others are described by what they did (begat, died); Enoch is described by who he was with."
+            },
+            {
+              "ref": "5:27",
+              "note": "Methuselah's lifespan of 969 years is the longest recorded in the Bible. Sarna notes the name Methuselah may mean \"man of the javelin/weapon\" or possibly \"when he dies, it shall come\" — the latter giving rise to the tradition (not in the text itself) that the flood came in the year of Methuselah's death. By the MT chronology, Methuselah dies in the year of the flood, though this is a calculation from the numbers rather than a statement in the text."
+            },
+            {
+              "ref": "5:28-32",
+              "note": "The toledoth of Adam closes with the threshold generation before the Flood. Sarna notes the genealogy's mechanical pace breaks down at the end — the formulaic structure gives way to Lamech's prophetic speech, signalling that Noah requires narrative development rather than formula."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:21-24",
+              "note": "Enoch walked with God for three hundred years, \"and then he was not, for God took him.\" Alter: the three Hebrew words — ve'einennu ki laqach oto Elohim — are among the most compressed and resonant in the entire chapter. \"He was not\" — a statement of absence rather than death. \"For God took him\" — the subject switches from the routine fathering-dying pattern to a direct divine action. The passive \"took\" (laqach) appears in later biblical texts of prophetic rapture (2 Kgs 2:9-10 of Elijah). The genealogy's one exception becomes a window into the possibility of life beyond the death-toll."
+            },
+            {
+              "ref": "5:25-27",
+              "note": "Methuselah's 969 years make him the oldest person in the genealogy. Alter notes his lifespan terminates in the Flood year — a quiet structural fact the text makes no comment on. The genealogy's longest life ends at the moment of destruction: the creation's age ends when judgment comes."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:21-24",
+              "note": "Enoch's translation is a sign and pledge of the resurrection. Calvin: \"The Lord intended by this translation of Enoch to give a proof of immortality to his ancient people, and to console them under the hard necessity of dying, by showing that something better was prepared for them.\" In the midst of the long roll-call of death, God lifts one man bodily out of mortality — not as an escape from the fallen world but as a prophetic sign that the Creator is not done with his creation."
+            },
+            {
+              "ref": "5:27",
+              "note": "Methuselah's extraordinary lifespan is not merely numerical trivia. Calvin: the Lord lengthened the lives of the antediluvians so that the knowledge of creation, the fall, and the promise might be transmitted with greater certainty across the generations before the flood wiped the slate. The patriarchs as living chains of testimony."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:22-24",
+              "note": "The NET note on \"walked with God\" (hithalech et haElohim) observes this is the Hithpael stem — a reflexive or reciprocal action, suggesting habitual or ongoing relationship rather than a single event. The note surveys the translation options for \"God took him\": the LXX reads euērestēsen (\"pleased God\" — cf. Heb 11:5 which quotes this), suggesting a theological reading that God took him because he pleased God. The NET note acknowledges that Hebrews 11:5 explicitly says Enoch did not experience death."
+            },
+            {
+              "ref": "5:23-24",
+              "note": "The NET note on the Hithpael stem of halakh (walk) observes it is the intensive reflexive — one who continually and deliberately walks in covenant relationship. The form appears elsewhere for Lev 26:12 ('I will walk among you') — mutual covenant walking. Enoch's walking is the human parallel to the divine promise of covenant presence."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 4,
+      "header": "Verses 28–32 — Lamech and the Birth of Noah",
+      "verse_start": 28,
+      "verse_end": 32,
+      "panels": {
+        "mac": {
+          "source": "MacArthur Study Bible -- Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:28-29",
+              "note": "MacArthur: Lamech's prophecy about Noah (v.29) -- 'he will comfort us from the painful toil of our hands' -- anticipates the Flood's reset of human civilization and God's covenant with Noah. Lamech sees in his son a source of relief; he names the theology that the Flood and subsequent covenant will fulfil."
+            },
+            {
+              "ref": "5:32",
+              "note": "MacArthur: Noah's three sons Shem, Ham, and Japheth become the progenitors of all post-Flood humanity (ch.10). The structure of Genesis 5 closes with the man God will use to preserve life through judgment -- the book's first extended portrait of covenantal faithfulness."
+            }
+          ]
+        },
+        "heb": [
+          {
+            "word": "nāḥam",
+            "transliteration": "na-KHAM",
+            "gloss": "comfort / console / relent",
+            "paragraph": "Lamech's prophecy at Noah's birth — \"He will comfort us\" (v.29) — uses the same verb the narrator will use in 6:6-7 when \"the LORD was grieved/relented that he had made man on the earth.\" The root nāḥam appears at the pivotal turn from judgment to salvation: God's own \"relenting\" (in 6:6) is the dark mirror of Lamech's hope (in 5:29). Noah becomes the pivot between a world under divine grief and a world under covenant promise."
+          },
+          {
+            "word": "ʾadāmāh",
+            "transliteration": "a-da-MAH",
+            "gloss": "ground / earth / arable soil",
+            "paragraph": "Lamech's reference to \"painful toil... from the ground the LORD has cursed\" (v.29) ties Noah's naming directly to Adam's curse (3:17-19). The ʾadāmāh, from which the ʾādām (human) is formed and to which he returns, has been under curse since the expulsion. Noah's eventual sacrifice (8:21) and the covenant of seasons (8:22) will not remove the curse but will establish a new stability — God will \"never again curse the ground\" beyond what is already in place."
+          },
+          {
+            "word": "yālad bēn",
+            "transliteration": "ya-LAD BAYN",
+            "gloss": "became the father of / begot a son",
+            "paragraph": "The genealogy closes with Noah's three sons (v.32: \"After Noah was 500 years old, he became the father of Shem, Ham and Japheth\"), the names that will dominate the next several chapters. The three sons are the post-Flood starting point for all subsequent humanity (ch.10 — the Table of Nations). The genealogy of ch.5 has done its work: from Adam to Noah in ten names, from Edenic creation to the threshold of the Flood."
+          }
+        ],
+        "hist": "Noah is born in a world already described as filled with violence (the context of chapter 6 will confirm this). Lamech's prophetic naming of Noah — connecting him to the relief of the curse — is the first explicit messianic hope since the protoevangelium of 3:15. The structure of the chapter has been pointing toward Noah: ten generations from Adam, the line of Seth reaching its climax in the one who will survive the judgment and carry the human family through to a new beginning.",
+        "ctx": "The genealogy ends not with death but with birth and hope. Noah's birth, accompanied by Lamech's prophetic naming, reorients the chapter's solemn refrain. The genealogy of mortality (every entry ending \"and he died\") culminates in the birth of the one through whom life will continue. The chapter is bookended by image-bearing (v.1-3) and covenant hope (v.28-32): the image of God and the promise of relief frame the long record of human mortality.",
+        "cross": [
+          {
+            "ref": "Gen 6:9",
+            "note": "“Noah was a righteous man, blameless among the people of his time, and he walked faithfully with God” — the same language used for Enoch, echoing Gen 5’s highest commendation."
+          },
+          {
+            "ref": "Heb 11:7",
+            "note": "“By faith Noah, when warned about things not yet seen, in holy fear built an ark” — Noah joins the great cloud of witnesses traced back to Abel and Enoch in Gen 5."
+          },
+          {
+            "ref": "Luke 3:36–38",
+            "note": "Luke’s genealogy of Jesus passes through Shem, Noah, Methuselah, Enoch, Seth, and Adam — anchoring the incarnation in the Genesis 5 genealogy."
+          },
+          {
+            "ref": "1 Pet 3:20",
+            "note": "Eight people were saved through water in the ark — Peter reads Noah’s survival as a type of baptism and salvation."
+          }
+        ],
+        "sarna": {
+          "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:28-29",
+              "note": "Lamech's naming speech for Noah — \"he will comfort us in the labour and painful toil of our hands\" — is the first naming speech in the genealogy. The name Noah (Noach) is connected to the root nacham (to comfort, to relieve), though the etymology is not straightforward. Sarna notes the naming speech points forward to Noah's role after the flood: the planting of the vineyard (9:20) and the covenant of rest. Lamech's hope for a deliverer from the curse of 3:17-19 is partially fulfilled in Noah."
+            },
+            {
+              "ref": "5:32",
+              "note": "The three sons named at the end of Noah's entry — Shem, Ham, and Japheth — are the structural pivot of the primeval history. Their names will carry the narrative from the flood (chs.6-9) through the Table of Nations (ch.10) and into the beginning of the Abrahamic story. The genealogy of chapter 5 ends by opening the door to the flood narrative."
+            }
+          ]
+        },
+        "alter": {
+          "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "5:29",
+              "note": "Lamech's speech is the only extended prose in the otherwise formulaic genealogy. Alter notes this breaks the pattern at exactly the right moment — the last entry before Noah, the pivot from genealogy to narrative. The naming speech introduces Noah as a figure of hope and relief, setting up the flood narrative with a note of expectation: this is the man through whom something decisive will happen."
+            },
+            {
+              "ref": "5:28-32",
+              "note": "Lamech names his son with the only extended speech in the genealogy. The rhetorical effect marks Noah as different from the outset: he is the one about whom prophecy is spoken before his life begins."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "5:28-30",
+              "note": "Lamech's naming of Noah expresses the eschatological hope of the antediluvian saints: that God will provide relief from the curse of 3:17-19. Calvin: \"Lamech predicts that his son would be an occasion of joy and comfort, and that through him the condition of men would be somewhat improved. He does not speak of his own family only, but of the whole human race.\" Noah does not fulfil the full hope — that awaits the last Adam — but he is the instrument of preservation and partial relief."
+            },
+            {
+              "ref": "5:21-24",
+              "note": "Calvin on Enoch: he walked with God because he ordered his whole life according to the divine standard. The phrase describes not external religious observance but sincere and constant exercise of the inner person wholly oriented toward God."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "5:29",
+              "note": "The NET note on the Noah etymology observes the wordplay is actually imprecise: Noah (Noach) does not derive from nacham (comfort) etymologically — they share similar sounds but different roots. The note calls this a popular etymology — a naming explanation that plays on sound rather than strict derivation, a common biblical convention. The theological point (Noah as one who brings relief) is made through the sound connection regardless of strict etymology."
+            },
+            {
+              "ref": "5:29",
+              "note": "The NET note on 'comfort/relief from toil' explains Lamech's prophecy anticipates Noah as the figure through whom the post-Fall curse (3:17-19) will be addressed. Whether fulfilled in the Flood's cleansing or in Noah's viticulture (9:20), the name is prophetic."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Enoch",
+        "role": "Seventh-generation patriarch; translated without death",
+        "text": "Enoch stands against the genealogy's relentless \"and he died\" as the single exception. He walked with God — the sustained, intimate relationship that was humanity's pre-fall condition — and God took him without death. He becomes the pre-flood type of resurrection hope, the proof that death is not the necessary end of a life walked with God. Second Temple Judaism developed his character extensively; the NT treats him as a genuine prophet (Jude 14) and man of faith (Heb 11:5)."
+      },
+      {
+        "name": "Methuselah",
+        "role": "Longest-lived human in recorded history; 969 years",
+        "text": "Son of Enoch, grandfather of Noah. His extraordinary lifespan (969 years — the longest recorded in Scripture) means he died in the year of the flood, by most calculations. Whether he died just before the flood or in it is not specified. His name, sometimes interpreted as \"when he dies, it shall come\" (in some Semitic readings), may contain a prophetic significance — though this is uncertain. He is remembered primarily as the human whose life spanned the greatest portion of pre-flood history."
+      },
+      {
+        "name": "Noah",
+        "role": "Son of Lamech; bearer of the covenant line",
+        "text": "Born into a world already described as filled with violence, named with prophetic hope by his father. Noah is introduced at the close of the genealogy as the culmination of ten generations of faithful lineage. He will carry the image of God, the memory of creation and the fall, and the hope of the protoevangelium through the flood to a new beginning. The NT treats him as the paradigm of faith-based obedience (Heb 11:7) and as the type of final judgment and salvation (Luke 17:26-27; 1 Pet 3:20)."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\"></td><td><strong style=\"color:#c9a84c;font-family:'Cinzel',serif;font-size:.7rem;\">Enoch's translation — key verbs</strong></td></tr><tr><td class=\"t-label\">MT Hebrew</td><td>וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים — \"he was not, for God took him\"</td></tr><tr><td class=\"t-label\">LXX Greek</td><td>καὶ οὐχ εὑρίσκετο, ὅτι μετέθηκεν αὐτὸν ὁ θεός — \"he was not found, for God transferred him\"</td></tr><tr><td class=\"t-label\">Vulgate</td><td>et non apparuit quia tulit eum Deus — \"he did not appear, for God took him\"</td></tr><tr><td class=\"t-label\">NIV</td><td>then he was no more, because God took him away</td></tr><tr><td class=\"t-label\">ESV</td><td>and he was not, for God took him</td></tr><tr><td class=\"t-label\">Note</td><td>The LXX's \"transferred\" (μετέθηκεν) is the word Hebrews 11:5 quotes — \"by faith Enoch was transferred so that he did not see death.\" The Greek makes explicit what the Hebrew leaves mysterious: a change of location/state rather than death.</td></tr><tr><td class=\"t-label\"></td><td><strong style=\"color:#c9a84c;font-family:'Cinzel',serif;font-size:.7rem;\">Enoch's translation — key verbs</strong></td></tr><tr><td class=\"t-label\">MT Hebrew</td><td>וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים — \"he was not, for God took him\"</td></tr><tr><td class=\"t-label\">LXX Greek</td><td>καὶ οὐχ εὑρίσκετο, ὅτι μετέθηκεν αὐτὸν ὁ θεός — \"he was not found, for God transferred him\"</td></tr><tr><td class=\"t-label\">Vulgate</td><td>et non apparuit quia tulit eum Deus — \"he did not appear, for God took him\"</td></tr><tr><td class=\"t-label\">NIV</td><td>then he was no more, because God took him away</td></tr><tr><td class=\"t-label\">ESV</td><td>and he was not, for God took him</td></tr><tr><td class=\"t-label\">Note</td><td>The LXX's \"transferred\" (μετέθηκεν) is the word Hebrews 11:5 quotes — \"by faith Enoch was transferred so that he did not see death.\" The Greek makes explicit what the Hebrew leaves mysterious: a change of location/state rather than death.</td></tr><tr><td class=\"t-label\"></td><td><strong style=\"color:#c9a84c;font-family:'Cinzel',serif;font-size:.7rem;\">Enoch's translation — key verbs</strong></td></tr><tr><td class=\"t-label\">MT Hebrew</td><td>וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים — \"he was not, for God took him\"</td></tr><tr><td class=\"t-label\">LXX Greek</td><td>καὶ οὐχ εὑρίσκετο, ὅτι μετέθηκεν αὐτὸν ὁ θεός — \"he was not found, for God transferred him\"</td></tr><tr><td class=\"t-label\">Vulgate</td><td>et non apparuit quia tulit eum Deus — \"he did not appear, for God took him\"</td></tr><tr><td class=\"t-label\">NIV</td><td>then he was no more, because God took him away</td></tr><tr><td class=\"t-label\">ESV</td><td>and he was not, for God took him</td></tr><tr><td class=\"t-label\">Note</td><td>The LXX's \"transferred\" (μετέθηκεν) is the word Hebrews 11:5 quotes — \"by faith Enoch was transferred so that he did not see death.\" The Greek makes explicit what the Hebrew leaves mysterious: a change of location/state rather than death.</td></tr><tr><td class=\"t-label\">NIV</td><td>Enoch walked faithfully with God; then he was no more, because God took him away</td></tr><tr><td class=\"t-label\">ESV</td><td>Enoch walked with God, and he was not, for God took him</td></tr><tr><td class=\"t-label\">NASB</td><td>Enoch walked with God; and he was not, for God took him</td></tr><tr><td class=\"t-label\">KJV</td><td>And Enoch walked with God: and he was not; for God took him</td></tr><tr><td class=\"t-label\">LXX</td><td>Enoch was well-pleasing to God, and was not found, for God translated him</td></tr><tr><td class=\"t-label\">Note</td><td>NIV adds 'faithfully' and 'away' — both interpretive additions not in the Hebrew. ESV/NASB/KJV preserve the mystery of 'he was not' (<span class=\"tlit\">einennu</span>). The LXX's 'well-pleasing' (<span class=\"tlit\">euarestesen</span>) is quoted directly in Heb 11:5, making the Greek the exegetical bridge for the NT reading. 'Translated' (LXX) becomes the technical term for Enoch's bodily transference — Heb 11:5 uses <span class=\"tlit\">metatithemi</span>, confirming this is not merely death described differently.</td></tr>",
+    "src": [
+      {
+        "title": "The Sumerian King List — Pre-Flood Kings",
+        "quote": "The Sumerian King List records eight (or ten in some versions) pre-flood kings with reigns ranging from 18,600 to 43,200 years. The seventh king, Enmeduranki of Sippar, was the favourite of the sun-god and moon-god and was taught divination — a possible parallel to Enoch, the seventh from Adam, who walks with God and has prophetic knowledge.",
+        "note": "The parallel is structural (pre-flood list, culminating in a flood) and numerical (seventh figure with special divine relationship), but the theological content is opposite. The Sumerian kings are heroes of culture and civilisation; the Genesis patriarchs are defined by their relationship to God and the transmission of the image. The lifespans in Genesis, though extreme, are dramatically shorter than the Sumerian figures."
+      },
+      {
+        "title": "1 Enoch and the Enoch Literature (3rd c. BCE onwards)",
+        "quote": "The Book of 1 Enoch (found extensively at Qumran) presents Enoch as a heavenly traveler who receives visions of the divine throne, the fallen angels, the flood, and the final judgment. It was enormously influential in Second Temple Judaism and is quoted by Jude (14-15) in the NT.",
+        "note": "The Enoch literature shows how a brief biblical mention (Genesis 5:24) generated an entire theology. What Genesis leaves to mystery, later tradition filled with detail. The NT's use of 1 Enoch (Jude) indicates that some of this tradition was considered authoritative, while the silence of the Gospels and Paul about Enoch suggests the Genesis text itself is the canonical limit."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Origen, On First Principles (c.230 AD)",
+        "text": "Origen reads Enoch's translation as evidence for the soul's capacity for direct union with God — a translation not just of body but of the entire person. Enoch became a key figure in early Christian discussions of deification (theosis): what happened to Enoch is the prototype of what happens to all the redeemed."
+      },
+      {
+        "who": "John Calvin, Institutes and Commentaries",
+        "text": "Calvin uses Enoch as his primary proof text that the pre-Mosaic patriarchs possessed genuine hope of resurrection and eternal life. \"God gave a signal proof of the immortality of man's soul, when He assumed Enoch to Himself, and this example was sufficient to maintain the faith of the pious in a future life.\" Against those who read pre-Mosaic religion as purely earthly, Calvin points to Enoch: the patriarchs knew they were going somewhere beyond death."
+      },
+      {
+        "who": "Josephus, Jewish Antiquities (c.93 AD)",
+        "text": "Josephus interprets Enoch's disappearance as follows: \"He returned to the divinity, whence it is written about him that he disappeared, not having died, God giving him this privilege because of his extraordinary piety.\" Josephus represents the widespread Jewish tradition that Enoch's translation was a reward for righteousness — an early form of what will become the theology of bodily assumption."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "The Enoch Exception",
+          "text": "The genealogy's march halts at Enoch -- 'he walked with God and was no more.' The exception within the pattern signals what life was always meant to be.",
+          "is_key": false
+        },
+        {
+          "label": "Lamech's Prophecy",
+          "text": "The only speech in the genealogy: Lamech names Noah as one who will bring comfort from painful toil. The prophetic naming breaks the formula and anticipates the Flood narrative.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "sēfer tôledôt",
+        "tlit": "SAY-fer to-le-DOT",
+        "gloss": "book of generations / written account",
+        "note": "The phrase opening chapter 5 (v.1) deliberately echoes Gen 2:4 and signals a structural unit. Tôledôt (\"generations/account\") is Genesis's organizational spine, appearing ten times to divide the book. Sēfer (\"scroll/book\") is significant: this is presented as a written document, not merely oral tradition — linking it to the broader claim that Moses received and transmitted the patriarchal records."
+      },
+      {
+        "word": "bĕṣelem ʾĕlōhîm",
+        "tlit": "be-TSEH-lem e-lo-HEEM",
+        "gloss": "in the image of God",
+        "note": "The genealogy re-anchors at v.1 the fundamental dignity of the human race: Adam was made bĕṣelem ʾĕlōhîm. Then Adam's son Seth is born \"in his own likeness, in his own image\" (v.3) — the image passed through human generation. The Imago Dei is not lost at the Fall but transmitted, though now bearing the marks of mortality that the genealogy's refrain (\"and he died\") underlines."
+      },
+      {
+        "word": "wayāmōt",
+        "tlit": "vai-ya-MOT",
+        "gloss": "and he died",
+        "note": "The drumbeat refrain of Genesis 5 — \"and he died\" — is the theological consequence of the Fall working itself out through history. God had warned Adam: \"dying you will die\" (2:17). Chapter 5 is the documentation: generation after generation, however long-lived, ultimately yielded to the sentence of death. The one exception — Enoch, who \"was not, because God took him\" (v.24) — stands as a promise that death does not have the final word."
+      },
+      {
+        "word": "qārāʾ šēm",
+        "tlit": "ka-RAH SHAYM",
+        "gloss": "called his name",
+        "note": "The naming formula that runs through chapter 5 carries theological weight beyond genealogical record. In biblical Hebrew, to name is to identify essence and destiny. The names in the antediluvian genealogy are carefully preserved — Enosh (\"mortal man\"), Kenan (\"lamentation\"?), Mahalalel (\"praise of God\"), Jared (\"descent\"), Lamech — each potentially encoding the period's theological character as the post-Edenic age of spreading mortality."
+      },
+      {
+        "word": "ḥāyāh",
+        "tlit": "kha-YAH",
+        "gloss": "to live / to be alive",
+        "note": "The astonishing lifespans of the antediluvian patriarchs (Seth: 912 years; Methuselah: 969 years) mark a pre-Flood age when something about human constitution was different. Whatever the explanation — genealogical compression, ancient counting systems, or literal years — the theological point is the same: even these extraordinary lives end with \"and he died.\" The maximum of Methuselah's 969 years still terminates in death; only the divine interruption of Enoch escapes the pattern."
+      },
+      {
+        "word": "ʾāb",
+        "tlit": "AV",
+        "gloss": "father",
+        "note": "The genealogical formula \"X lived N years and became the father of Y, and after he became the father of Y, X lived N years and had other sons and daughters\" establishes that the listed names are not necessarily sequential but are the chosen link in the covenant chain. \"Father\" (ʾāb) in Hebrew genealogy can mean ancestor several generations removed. The genealogy is selective, theological, and structured — not a complete demographic record but the skeleton of promise-transmission from Adam to Noah."
+      },
+      {
+        "word": "hālak ʾet-hāʾĕlōhîm",
+        "tlit": "ha-LAK et-ha-e-lo-HEEM",
+        "gloss": "walked with God",
+        "note": "Enoch's epitaph — \"Enoch walked with God\" (vv.22, 24) — appears in a genealogy otherwise dominated by \"and he died.\" The verb hālak with ʾet indicates continuous intimate fellowship and moral conformity: Enoch's life was a journey in step with God's direction and character. The same phrase is used of Noah (6:9) and anticipates the covenant language of walking before God (17:1; 24:40). It is the OT's most compact description of genuine piety."
+      },
+      {
+        "word": "ʾênennû",
+        "tlit": "ay-NEN-nu",
+        "gloss": "he was not / he was no longer there",
+        "note": "The abrupt \"Enoch was not, because God took him\" (v.24) is Genesis's most compressed theological statement. The verb lāqaḥ (\"took\") is used of God's action — the same word used of Elijah's translation (2 Kgs 2:10). The Septuagint renders: \"God translated him.\" Enoch's departure is not death but a different kind of ending — a sign within the genealogy of death that mortality does not absolutely constrain what God can do with a life fully yielded to him."
+      },
+      {
+        "word": "nāḥam",
+        "tlit": "na-KHAM",
+        "gloss": "to comfort / to bring relief",
+        "note": "Lamech names his son Noah (Nōaḥ) with a wordplay on nāḥam: \"He will comfort us in the labour and painful toil of our hands caused by the ground the LORD has cursed\" (v.29). The name anticipates Noah's role: the builder of the ark through which human and animal life survives the Flood, and the recipient of the covenant that resets humanity's relationship with a cleansed creation. The play between Nōaḥ and nāḥam will echo in God's \"regret\" (nāḥam) in 6:6."
+      },
+      {
+        "word": "nāḥam",
+        "tlit": "na-KHAM",
+        "gloss": "comfort / console / relent",
+        "note": "Lamech's prophecy at Noah's birth — \"He will comfort us\" (v.29) — uses the same verb the narrator will use in 6:6-7 when \"the LORD was grieved/relented that he had made man on the earth.\" The root nāḥam appears at the pivotal turn from judgment to salvation: God's own \"relenting\" (in 6:6) is the dark mirror of Lamech's hope (in 5:29). Noah becomes the pivot between a world under divine grief and a world under covenant promise."
+      },
+      {
+        "word": "ʾadāmāh",
+        "tlit": "a-da-MAH",
+        "gloss": "ground / earth / arable soil",
+        "note": "Lamech's reference to \"painful toil... from the ground the LORD has cursed\" (v.29) ties Noah's naming directly to Adam's curse (3:17-19). The ʾadāmāh, from which the ʾādām (human) is formed and to which he returns, has been under curse since the expulsion. Noah's eventual sacrifice (8:21) and the covenant of seasons (8:22) will not remove the curse but will establish a new stability — God will \"never again curse the ground\" beyond what is already in place."
+      },
+      {
+        "word": "yālad bēn",
+        "tlit": "ya-LAD BAYN",
+        "gloss": "became the father of / begot a son",
+        "note": "The genealogy closes with Noah's three sons (v.32: \"After Noah was 500 years old, he became the father of Shem, Ham and Japheth\"), the names that will dominate the next several chapters. The three sons are the post-Flood starting point for all subsequent humanity (ch.10 — the Table of Nations). The genealogy of ch.5 has done its work: from Adam to Noah in ten names, from Edenic creation to the threshold of the Flood."
+      }
+    ],
+    "tx": [],
+    "debate": [
+      {
+        "title": "The Antediluvian Lifespans: Literal, Symbolic, or Alternative Counting?",
+        "positions": [
+          {
+            "name": "Literal",
+            "proponents": "Whitcomb, Morris, Sarfati",
+            "argument": "The numbers are straightforward. Pre-flood conditions (different atmosphere, different diet, different genetic integrity) permitted much longer lifespans. The gradual decline after the flood (traceable through the post-flood genealogy) is consistent with deteriorating conditions."
+          },
+          {
+            "name": "Symbolic/Theological",
+            "proponents": "Cassuto, Westermann, Sarna",
+            "argument": "Ancient Near Eastern king-lists also include extraordinary reigns (tens of thousands of years). The antediluvian patriarchs are presented with dignity and longevity commensurate with their status as the founders of civilization. The numbers communicate theological significance, not biography."
+          },
+          {
+            "name": "Alternative counting",
+            "proponents": "Humphreys, Young",
+            "argument": "Some proposed that the numbers reflect months rather than years (making Methuselah's 969 months = 80 years), but this creates problems with the ages at fatherhood being implausibly young."
+          },
+          {
+            "name": "Divine beings",
+            "proponents": "The dominant ancient reading (1 Enoch, LXX, Philo, Josephus, early Church Fathers)",
+            "argument": "The \"sons of God\" (bene elohim) in 6:2 are divine beings/fallen angels who intermarried with human women — a transgression of the Creator-creature boundary precipitating the flood."
+          },
+          {
+            "name": "Sethite line",
+            "proponents": "Augustine, Calvin, Luther, most Reformed interpreters",
+            "argument": "The sons of God are the godly line of Seth (ch.5); the daughters of men are the ungodly line of Cain (ch.4). The sin is intermarriage between the covenant and non-covenant lines."
+          },
+          {
+            "name": "Rulers/Tyrants",
+            "proponents": "Cassuto, Wenham (tentatively)",
+            "argument": "The sons of God are human rulers (a title used for kings in the ancient Near East) who took multiple wives by force — an abuse of political power."
+          }
+        ]
+      },
+      {
+        "title": "The Sons of God in Chapter 6 — Anticipation",
+        "positions": [
+          {
+            "name": "Divine beings",
+            "proponents": "The dominant ancient reading (1 Enoch, LXX, Philo, Josephus, early Church Fathers)",
+            "argument": "The \"sons of God\" (bene elohim) in 6:2 are divine beings/fallen angels who intermarried with human women — a transgression of the Creator-creature boundary precipitating the flood."
+          },
+          {
+            "name": "Sethite line",
+            "proponents": "Augustine, Calvin, Luther, most Reformed interpreters",
+            "argument": "The sons of God are the godly line of Seth (ch.5); the daughters of men are the ungodly line of Cain (ch.4). The sin is intermarriage between the covenant and non-covenant lines."
+          },
+          {
+            "name": "Rulers/Tyrants",
+            "proponents": "Cassuto, Wenham (tentatively)",
+            "argument": "The sons of God are human rulers (a title used for kings in the ancient Near East) who took multiple wives by force — an abuse of political power."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [],
+      "note": ""
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Egypt",
+        "Canaan",
+        "Goshen",
+        "Bethel",
+        "Beersheba",
+        "Shechem",
+        "Hebron",
+        "Jordan",
+        "Mamre",
+        "Haran"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jacob",
+        "Joseph",
+        "Israel",
+        "Pharaoh",
+        "Judah",
+        "Benjamin",
+        "Reuben",
+        "Simeon",
+        "Isaac",
+        "Abraham",
+        "Sarah",
+        "Rebekah",
+        "Rachel",
+        "Leah",
+        "Laban",
+        "Esau"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "year",
+        "years",
+        "generation",
+        "time",
+        "age"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "covenant",
+        "blessing",
+        "promise",
+        "God",
+        "LORD",
+        "Israel",
+        "faith",
+        "fear",
+        "firstborn",
+        "seed"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

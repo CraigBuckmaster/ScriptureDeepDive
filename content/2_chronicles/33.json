@@ -1,0 +1,251 @@
+{
+  "chapter_id": "2ch33",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 33,
+  "title": "2 Chronicles 33",
+  "subtitle": "Manasseh’s Abomination — and Repentance",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐10 — 55 Years of Every Abomination",
+      "verse_start": 1,
+      "verse_end": 10,
+      "panels": {
+        "ctx": "Manasseh rebuilds high places, erects Baal altars, makes Asherah poles, worships the starry hosts, builds pagan altars in the temple, sacrifices his children, practices sorcery, consults mediums and spiritists. “He did much evil in the eyes of the LORD, arousing his anger.” The catalogue matches 2 Kings 21 closely. But what follows is unique to Chronicles.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "33:(1, '')",
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "33:(1, '')",
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 11‐25 — Exile, Repentance, Restoration — Unique to Chronicles",
+      "verse_start": 11,
+      "verse_end": 25,
+      "panels": {
+        "ctx": "The Assyrians capture Manasseh with hooks, bind him, and take him to Babylon. “In his distress he sought the favour of the LORD his God and humbled himself greatly.” God is moved by his entreaty and brings him back to Jerusalem. Manasseh then removes the foreign gods, rebuilds the altar, and restores worship. This entire episode is ABSENT from Kings. The Chronicler’s Manasseh repents — the worst king experiences the seek/find pattern. If even Manasseh can be restored through repentance, no one is beyond redemption. This is the Chronicler’s most radical theological statement.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "33:(11, '')",
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "33:(11, '')",
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Manasseh",
+        "role": "Key biblical figure",
+        "text": "Manasseh rebuilds high places, erects Baal altars, makes Asherah poles, worships the starry hosts, builds pagan altars in the temple, sacrifices his children, practices sorcery, consults mediums and spiritists…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "“In his distress he sought the favour of the LORD his God and humbled himself greatly…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "“He did much evil in the eyes of the LORD, arousing his anger…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>He sacrificed his children in the fire in the Valley of Ben Hinnom, practiced divination and witchcraft, sought omens, and consulted mediums and spiritists. He did much evil in the eyes of the Lord, arousing his anger.</td></tr><tr><td class=\"t-label\">ESV</td><td>And he burned his sons as an offering in the Valley of the Son of Hinnom, and used fortune-telling and omens and sorcery, and dealt with mediums and with necromancers. He did much evil in the sight of the LORD, provoking him to anger.</td></tr><tr><td class=\"t-label\">NIV</td><td>He did evil in the eyes of the Lord, following the detestable practices of the nations the Lord had driven out before the Israelites.</td></tr><tr><td class=\"t-label\">ESV</td><td>And he did what was evil in the sight of the LORD, according to the abominations of the nations whom the LORD drove out before the people of Israel.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐10 — 55 Years of Every Abomination —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 11‐25 — Exile, Repentance, Restoration — Unique to Ch —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 4
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "Manasseh’s Abomination — and Repentance"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

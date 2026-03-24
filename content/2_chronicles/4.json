@@ -1,0 +1,283 @@
+{
+  "chapter_id": "2ch4",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 4,
+  "title": "2 Chronicles 4",
+  "subtitle": "Temple Furnishings",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–10 — The Bronze Altar, the Sea, the Basins",
+      "verse_start": 1,
+      "verse_end": 10,
+      "panels": {
+        "ctx": "The bronze altar is 20 cubits square and 10 cubits high — four times larger than the tabernacle’s altar. The bronze Sea, 10 cubits in diameter, rests on twelve bronze bulls (three facing each cardinal direction). Ten basins for washing, five on each side. The scale of everything exceeds the tabernacle. The Chronicler presents Solomon’s temple as the tabernacle glorified — same functions, vastly larger scale.",
+        "cross": [
+          {
+            "ref": "1 Kgs 7:23–39",
+            "note": "The Kings parallel with more detailed measurements."
+          },
+          {
+            "ref": "Exod 30:18–21",
+            "note": "The tabernacle’s bronze basin for priestly washing. Solomon multiplies it tenfold."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "4:6",
+              "note": "The washing basins teach that purification precedes sacrifice. Nothing unclean may approach the altar. Holiness is the precondition for worship."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "4:5",
+              "note": "The Sea holds bātîm shĕlōshet ʾalāpîm (“3,000 baths”) — Kings says 2,000. The discrepancy may reflect different measurement standards or the distinction between capacity and normal fill level."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 11–22 — Huram-Abi’s Craftsmanship; Gold Furnishings",
+      "verse_start": 11,
+      "verse_end": 22,
+      "panels": {
+        "ctx": "Huram-Abi completes the bronze work: pots, shovels, bowls. Solomon’s gold furnishings include ten lampstands, ten tables, a hundred gold sprinkling bowls. The altar of gold, the court of the priests, and the great court with bronze doors are completed. The Chronicler provides a compressed but comprehensive inventory. The final note: “The doors of the temple were of gold.” Every threshold between the worshipper and God’s presence is gold — precious, permanent, and gleaming.",
+        "cross": [
+          {
+            "ref": "1 Kgs 7:40–51",
+            "note": "The parallel inventory. Chronicles compresses but preserves the essential items."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "4:22",
+              "note": "Gold doors teach that the approach to God should be through beauty. Sacred architecture is not utilitarian but glorious — the physical space should reflect the spiritual reality."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "4:19",
+              "note": "The multiplication of tables and lampstands from 1 to 10 each may reflect Second Temple practice or the Chronicler’s understanding of the larger temple’s liturgical needs."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "The Chronicler presents Solomon’s temple as the tabernacle glorified — same functions, vastly larger scale…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "” Every threshold between the worshipper and God’s presence is gold — precious, permanent, and gleaming…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>He made ten gold lampstands according to the specifications for them and placed them in the temple, five on the south side and five on the north.</td></tr><tr><td class=\"t-label\">ESV</td><td>And he made ten golden lampstands as prescribed, and set them in the temple, five on the south side and five on the north.</td></tr><tr><td class=\"t-label\">NIV</td><td>The Sea stood on twelve bulls, three facing north, three facing west, three facing south and three facing east. The Sea rested on top of them, and their hindquarters were toward the center.</td></tr><tr><td class=\"t-label\">ESV</td><td>It stood on twelve oxen, three facing north, three facing west, three facing south, and three facing east. The sea was set on them, and all their rear parts were inward.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–10 — The Bronze Altar, the Sea, the Basins",
+          "text": "The bronze altar is 20 cubits square and 10 cubits high — four times larger than the tabernacle’s altar. The bronze Sea,…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 11–22 — Huram-Abi’s Craftsmanship; Gold Furnishings",
+          "text": "Huram-Abi completes the bronze work: pots, shovels, bowls. Solomon’s gold furnishings include ten lampstands, ten tables…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Temple Furnishings",
+        "target": "1 Kgs 7:23–39",
+        "type": "Echo",
+        "text": "The Kings parallel with more detailed measurements.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Temple Furnishings",
+        "target": "Exod 30:18–21",
+        "type": "Connection",
+        "text": "The tabernacle’s bronze basin for priestly washing. Solomon multiplies it tenfold.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Temple Furnishings",
+        "target": "1 Kgs 7:40–51",
+        "type": "Echo",
+        "text": "The parallel inventory. Chronicles compresses but preserves the essential items.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 4
+        }
+      ],
+      "note": "Temple Furnishings"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

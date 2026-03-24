@@ -1,0 +1,732 @@
+{
+  "chapter_id": "jn1",
+  "testament": "nt",
+  "book_dir": "john",
+  "chapter_num": 1,
+  "title": "John 1",
+  "subtitle": "The Word Became Flesh",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–18 — The Prologue: The Word, Life, and Light",
+      "verse_start": 1,
+      "verse_end": 18,
+      "panels": {
+        "heb": [
+          {
+            "word": "logos",
+            "transliteration": "LO-gos",
+            "gloss": "Word / Reason / Discourse",
+            "paragraph": "The opening word of John's Gospel — and of the entire Bible (\"In the beginning\") — deliberately echoes Gen 1:1. Logos in Greek philosophy (Heraclitus, Stoics) denoted the rational principle ordering the universe. In Jewish thought (Philo of Alexandria), it was the divine intermediary between the transcendent God and creation. John takes this widely understood concept and makes the shocking claim: the Logos is a person, has always been in relationship with God, is himself God, and has become flesh."
+          },
+          {
+            "word": "eskēnōsen",
+            "transliteration": "es-KAY-no-sen",
+            "gloss": "dwelt / tabernacled / pitched his tent",
+            "paragraph": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
+          }
+        ],
+        "ctx": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]",
+        "cross": [
+          {
+            "ref": "Gen 1:1-3",
+            "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
+          },
+          {
+            "ref": "Exod 40:34-35",
+            "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
+          },
+          {
+            "ref": "Col 1:15-17",
+            "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
+          },
+          {
+            "ref": "Heb 1:1-3",
+            "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "\"The Word was God\" — the predicate nominative (theos) without the article in Greek is anarthrous but not indefinite. The grammar establishes quality: the Word partakes fully of the divine nature. This is not \"the Word was a god\" (Jehovah's Witnesses) or \"the Word was divine\" (Arianism) but the Word shares the very essence of deity. All three trinitarian persons are simultaneously affirmed: the Word was with God (distinguishing persons) and the Word was God (asserting shared essence)."
+            },
+            {
+              "ref": "1:14",
+              "note": "\"The Word became flesh\" — sarx (flesh) is the most emphatic possible expression of genuine humanity. John does not say the Word appeared in a body or took on human form — he says the Word became flesh, asserting the full reality of the Incarnation against the docetism that would plague the church within a generation. \"Made his dwelling\" (eskēnōsen) — the Tabernacle image: God dwelling in the midst of his people, his glory now visible in a human face."
+            },
+            {
+              "ref": "1:12-13",
+              "note": "\"To all who received him... he gave the right to become children of God.\" The gift of sonship is not natural but supernatural — \"born not of natural descent... but born of God.\" This is John's first statement of what ch 3 will develop as the new birth: regeneration as the precondition for receiving the Word."
+            },
+            {
+              "ref": "1:17-18",
+              "note": "\"Grace and truth came through Jesus Christ\" — the same attributes (hesed and emet) that characterised God's self-revelation to Moses at Sinai (Exod 34:6). Jesus is the personal, embodied, visible manifestation of what Moses was only allowed to see from behind. \"The one and only Son\" (monogenēs) — not merely unique in character but uniquely born of God."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Calvin insists on the eternal pre-existence of the Word against all attempts to read \"in the beginning\" as referring to the beginning of Jesus's earthly ministry. The Word's being \"with God\" (pros ton theon) establishes a personal distinction within the Godhead before creation; the Word's being God establishes the essential unity. The prologue is thus the clearest scriptural foundation for the doctrine of the Trinity."
+            },
+            {
+              "ref": "1:14",
+              "note": "The Word becoming flesh is the single most important event in human history. Calvin stresses that John does not say the Word was clothed with flesh or appeared in flesh but that the Word became flesh — the two natures are united in one person without confusion or conversion. This is the miracle of the Incarnation: the infinite condescending to the finite without ceasing to be infinite."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "The Greek word order is significant: \"and God was the Word\" (kai theos ēn ho logos). The anarthrous (article-less) predicate nominative theos asserts that the Word partakes of divine nature/essence. Colwell's rule in Greek grammar confirms that this construction asserts quality, not identity with the entire Godhead. Jehovah's Witnesses' rendering \"a god\" violates Greek grammar."
+            },
+            {
+              "ref": "1:14",
+              "note": "Eskēnōsen (tabernacled) is a unique occurrence in the NT. The connection to the Tabernacle (skēnē in the LXX) is almost certainly deliberate. The statement that \"we have seen his glory\" echoes Moses's request to see God's glory (Exod 33:18) and the cloud filling the Tabernacle (Exod 40:34). In Jesus, what Moses saw only partially and obliquely has been seen directly."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Augustine: \"In the beginning was the Word — you heard the thunder, now hear the instruction. The Word was with God and the Word was God. How was it with God? As the Son with the Father. How was the Word God? In such a way that he is not the Father, yet is of the same substance as the Father.\""
+            },
+            {
+              "ref": "1:14",
+              "note": "Chrysostom: \"He became flesh — not changed into flesh, for the divine nature cannot be changed; but he assumed flesh while remaining what he was. The sun is not diminished when it shines on mud, nor was the Word polluted when it clothed itself in flesh. He assumed our nature to raise our nature to his own level.\""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 19–28 — John’s Testimony: I Am Not the Messiah",
+      "verse_start": 19,
+      "verse_end": 28,
+      "panels": {
+        "heb": [
+          {
+            "word": "amnos tou theou",
+            "transliteration": "AM-nos tou the-OU",
+            "gloss": "Lamb of God",
+            "paragraph": "The title (vv.29, 36) is John the Baptist's most theologically dense declaration and unique to the Fourth Gospel. The Lamb evokes: the Passover lamb (Exod 12) whose blood protected Israel from the death angel; the scapegoat and burnt offerings of the Day of Atonement (Lev 16); the Suffering Servant who was \"led like a lamb to the slaughter\" (Isa 53:7); and perhaps the apocalyptic \"lamb\" who would triumph over evil (1 Enoch). John's declaration encompasses all these dimensions at once."
+          },
+          {
+            "word": "menō",
+            "transliteration": "ME-no",
+            "gloss": "remain / abide / stay",
+            "paragraph": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
+          }
+        ],
+        "ctx": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]",
+        "cross": [
+          {
+            "ref": "Isa 40:3",
+            "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
+          },
+          {
+            "ref": "Isa 53:7",
+            "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
+          },
+          {
+            "ref": "Gen 28:12",
+            "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "\"Look, the Lamb of God, who takes away the sin of the world!\" — ho airōn tēn hamartian tou kosmou, literally \"the one taking up / carrying away the sin of the world.\" The present participle implies ongoing action: Jesus perpetually carries the world's sin. The singular \"sin\" (hamartian, not \"sins\") points to the root condition of human alienation from God, not merely individual transgressions."
+            },
+            {
+              "ref": "1:42",
+              "note": "\"You will be called Cephas (Peter)\" — Jesus gives Simon a new name before he has done anything to deserve it. The name \"rock\" describes not who Simon is but who he will become through Christ's transformation. Naming in Scripture is an act of divine sovereignty: God renamed Abram, Jacob, and Saul; now the Son of God renames Simon."
+            },
+            {
+              "ref": "1:51",
+              "note": "The Jacob's ladder allusion is staggering: Jesus identifies himself as the stairway connecting heaven and earth. Jacob's ladder was a one-night vision; Jesus is the permanent, personal locus where the divine and human realms meet. He is not merely a pathway to God — he is the pathway (cf. 14:6)."
+            },
+            {
+              "ref": "1:47",
+              "note": "\"An Israelite in whom there is no deceit\" — the contrast with Jacob (whose name means \"deceiver\") is deliberate. Nathanael is the authentic Israel that Jacob aspired to become. Jesus's supernatural knowledge of Nathanael under the fig tree is the first hint of the divine omniscience that John will develop throughout the Gospel."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "Calvin notes that the Baptist's declaration, coming before any of Jesus's miracles or teaching, establishes that the Incarnation's purpose is atoning sacrifice. The title \"Lamb of God\" is not a gentle pastoral metaphor but a precise sacrificial category: Jesus is the one on whom God's judgment falls on behalf of sinners."
+            },
+            {
+              "ref": "1:51",
+              "note": "Calvin takes the Jacob's ladder as the foundational image for mediatorial Christology: there is no direct unmediated access between the holy God and sinful humanity. Christ as the ladder is the sole point of contact between heaven and earth. The \"ascending and descending\" of angels indicates that all divine communication with humanity now passes through the incarnate Son."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:34",
+              "note": "\"God's Chosen One\" (NIV) vs. \"Son of God\" (most other versions). The textual tradition is divided: important manuscripts (including p106 and Sinaiticus) read \"Chosen One\" (ho eklektos); others read \"Son of God\" (ho huios). NA28 adopts \"Chosen One\" as the harder reading, likely original; scribes may have harmonised toward \"Son of God\" which appears frequently in John."
+            },
+            {
+              "ref": "1:51",
+              "note": "\"Very truly I tell you\" — the double \"Amen\" (amēn amēn legō hymin) is a construction unique to John, occurring 25 times. It signals solemn authoritative declaration. Jesus speaks with his own authority, unlike the OT prophets who said \"Thus says the Lord.\" This formula is itself a Christological claim."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "Augustine: \"Behold the Lamb of God who takes away the sin of the world. He did not say the sins of Jews only, or of Romans only, or even of believers only — but of the world. So immense is the grace of Christ: he takes away the sin not of one nation but of all nations, not of the past only but of all time.\""
+            },
+            {
+              "ref": "1:14",
+              "note": "Cyril of Alexandria: \"The Word became flesh — that is, became a complete human being, body and rational soul together. He put on human nature in its entirety in order to heal it in its entirety. What is not assumed is not healed; but what is united to God is saved.\""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 29–34 — The Baptism: The Lamb of God; the Spirit Descends",
+      "verse_start": 29,
+      "verse_end": 34,
+      "panels": {
+        "heb": [
+          {
+            "word": "logos",
+            "transliteration": "LO-gos",
+            "gloss": "Word / Reason / Discourse",
+            "paragraph": "The opening word of John's Gospel — and of the entire Bible (\"In the beginning\") — deliberately echoes Gen 1:1. Logos in Greek philosophy (Heraclitus, Stoics) denoted the rational principle ordering the universe. In Jewish thought (Philo of Alexandria), it was the divine intermediary between the transcendent God and creation. John takes this widely understood concept and makes the shocking claim: the Logos is a person, has always been in relationship with God, is himself God, and has become flesh."
+          },
+          {
+            "word": "eskēnōsen",
+            "transliteration": "es-KAY-no-sen",
+            "gloss": "dwelt / tabernacled / pitched his tent",
+            "paragraph": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
+          }
+        ],
+        "ctx": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]",
+        "cross": [
+          {
+            "ref": "Gen 1:1-3",
+            "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
+          },
+          {
+            "ref": "Exod 40:34-35",
+            "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
+          },
+          {
+            "ref": "Col 1:15-17",
+            "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
+          },
+          {
+            "ref": "Heb 1:1-3",
+            "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "\"The Word was God\" — the predicate nominative (theos) without the article in Greek is anarthrous but not indefinite. The grammar establishes quality: the Word partakes fully of the divine nature. This is not \"the Word was a god\" (Jehovah's Witnesses) or \"the Word was divine\" (Arianism) but the Word shares the very essence of deity. All three trinitarian persons are simultaneously affirmed: the Word was with God (distinguishing persons) and the Word was God (asserting shared essence)."
+            },
+            {
+              "ref": "1:14",
+              "note": "\"The Word became flesh\" — sarx (flesh) is the most emphatic possible expression of genuine humanity. John does not say the Word appeared in a body or took on human form — he says the Word became flesh, asserting the full reality of the Incarnation against the docetism that would plague the church within a generation. \"Made his dwelling\" (eskēnōsen) — the Tabernacle image: God dwelling in the midst of his people, his glory now visible in a human face."
+            },
+            {
+              "ref": "1:12-13",
+              "note": "\"To all who received him... he gave the right to become children of God.\" The gift of sonship is not natural but supernatural — \"born not of natural descent... but born of God.\" This is John's first statement of what ch 3 will develop as the new birth: regeneration as the precondition for receiving the Word."
+            },
+            {
+              "ref": "1:17-18",
+              "note": "\"Grace and truth came through Jesus Christ\" — the same attributes (hesed and emet) that characterised God's self-revelation to Moses at Sinai (Exod 34:6). Jesus is the personal, embodied, visible manifestation of what Moses was only allowed to see from behind. \"The one and only Son\" (monogenēs) — not merely unique in character but uniquely born of God."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Calvin insists on the eternal pre-existence of the Word against all attempts to read \"in the beginning\" as referring to the beginning of Jesus's earthly ministry. The Word's being \"with God\" (pros ton theon) establishes a personal distinction within the Godhead before creation; the Word's being God establishes the essential unity. The prologue is thus the clearest scriptural foundation for the doctrine of the Trinity."
+            },
+            {
+              "ref": "1:14",
+              "note": "The Word becoming flesh is the single most important event in human history. Calvin stresses that John does not say the Word was clothed with flesh or appeared in flesh but that the Word became flesh — the two natures are united in one person without confusion or conversion. This is the miracle of the Incarnation: the infinite condescending to the finite without ceasing to be infinite."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "The Greek word order is significant: \"and God was the Word\" (kai theos ēn ho logos). The anarthrous (article-less) predicate nominative theos asserts that the Word partakes of divine nature/essence. Colwell's rule in Greek grammar confirms that this construction asserts quality, not identity with the entire Godhead. Jehovah's Witnesses' rendering \"a god\" violates Greek grammar."
+            },
+            {
+              "ref": "1:14",
+              "note": "Eskēnōsen (tabernacled) is a unique occurrence in the NT. The connection to the Tabernacle (skēnē in the LXX) is almost certainly deliberate. The statement that \"we have seen his glory\" echoes Moses's request to see God's glory (Exod 33:18) and the cloud filling the Tabernacle (Exod 40:34). In Jesus, what Moses saw only partially and obliquely has been seen directly."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Augustine: \"In the beginning was the Word — you heard the thunder, now hear the instruction. The Word was with God and the Word was God. How was it with God? As the Son with the Father. How was the Word God? In such a way that he is not the Father, yet is of the same substance as the Father.\""
+            },
+            {
+              "ref": "1:14",
+              "note": "Chrysostom: \"He became flesh — not changed into flesh, for the divine nature cannot be changed; but he assumed flesh while remaining what he was. The sun is not diminished when it shines on mud, nor was the Word polluted when it clothed itself in flesh. He assumed our nature to raise our nature to his own level.\""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 4,
+      "header": "Verses 35–51 — The First Disciples: Come and See",
+      "verse_start": 35,
+      "verse_end": 51,
+      "panels": {
+        "heb": [
+          {
+            "word": "amnos tou theou",
+            "transliteration": "AM-nos tou the-OU",
+            "gloss": "Lamb of God",
+            "paragraph": "The title (vv.29, 36) is John the Baptist's most theologically dense declaration and unique to the Fourth Gospel. The Lamb evokes: the Passover lamb (Exod 12) whose blood protected Israel from the death angel; the scapegoat and burnt offerings of the Day of Atonement (Lev 16); the Suffering Servant who was \"led like a lamb to the slaughter\" (Isa 53:7); and perhaps the apocalyptic \"lamb\" who would triumph over evil (1 Enoch). John's declaration encompasses all these dimensions at once."
+          },
+          {
+            "word": "menō",
+            "transliteration": "ME-no",
+            "gloss": "remain / abide / stay",
+            "paragraph": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
+          }
+        ],
+        "ctx": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]",
+        "cross": [
+          {
+            "ref": "Isa 40:3",
+            "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
+          },
+          {
+            "ref": "Isa 53:7",
+            "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
+          },
+          {
+            "ref": "Gen 28:12",
+            "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "\"Look, the Lamb of God, who takes away the sin of the world!\" — ho airōn tēn hamartian tou kosmou, literally \"the one taking up / carrying away the sin of the world.\" The present participle implies ongoing action: Jesus perpetually carries the world's sin. The singular \"sin\" (hamartian, not \"sins\") points to the root condition of human alienation from God, not merely individual transgressions."
+            },
+            {
+              "ref": "1:42",
+              "note": "\"You will be called Cephas (Peter)\" — Jesus gives Simon a new name before he has done anything to deserve it. The name \"rock\" describes not who Simon is but who he will become through Christ's transformation. Naming in Scripture is an act of divine sovereignty: God renamed Abram, Jacob, and Saul; now the Son of God renames Simon."
+            },
+            {
+              "ref": "1:51",
+              "note": "The Jacob's ladder allusion is staggering: Jesus identifies himself as the stairway connecting heaven and earth. Jacob's ladder was a one-night vision; Jesus is the permanent, personal locus where the divine and human realms meet. He is not merely a pathway to God — he is the pathway (cf. 14:6)."
+            },
+            {
+              "ref": "1:47",
+              "note": "\"An Israelite in whom there is no deceit\" — the contrast with Jacob (whose name means \"deceiver\") is deliberate. Nathanael is the authentic Israel that Jacob aspired to become. Jesus's supernatural knowledge of Nathanael under the fig tree is the first hint of the divine omniscience that John will develop throughout the Gospel."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "Calvin notes that the Baptist's declaration, coming before any of Jesus's miracles or teaching, establishes that the Incarnation's purpose is atoning sacrifice. The title \"Lamb of God\" is not a gentle pastoral metaphor but a precise sacrificial category: Jesus is the one on whom God's judgment falls on behalf of sinners."
+            },
+            {
+              "ref": "1:51",
+              "note": "Calvin takes the Jacob's ladder as the foundational image for mediatorial Christology: there is no direct unmediated access between the holy God and sinful humanity. Christ as the ladder is the sole point of contact between heaven and earth. The \"ascending and descending\" of angels indicates that all divine communication with humanity now passes through the incarnate Son."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:34",
+              "note": "\"God's Chosen One\" (NIV) vs. \"Son of God\" (most other versions). The textual tradition is divided: important manuscripts (including p106 and Sinaiticus) read \"Chosen One\" (ho eklektos); others read \"Son of God\" (ho huios). NA28 adopts \"Chosen One\" as the harder reading, likely original; scribes may have harmonised toward \"Son of God\" which appears frequently in John."
+            },
+            {
+              "ref": "1:51",
+              "note": "\"Very truly I tell you\" — the double \"Amen\" (amēn amēn legō hymin) is a construction unique to John, occurring 25 times. It signals solemn authoritative declaration. Jesus speaks with his own authority, unlike the OT prophets who said \"Thus says the Lord.\" This formula is itself a Christological claim."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "1:29",
+              "note": "Augustine: \"Behold the Lamb of God who takes away the sin of the world. He did not say the sins of Jews only, or of Romans only, or even of believers only — but of the world. So immense is the grace of Christ: he takes away the sin not of one nation but of all nations, not of the past only but of all time.\""
+            },
+            {
+              "ref": "1:14",
+              "note": "Cyril of Alexandria: \"The Word became flesh — that is, became a complete human being, body and rational soul together. He put on human nature in its entirety in order to heal it in its entirety. What is not assumed is not healed; but what is united to God is saved.\""
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Jesus",
+        "role": "Key biblical figure",
+        "text": "29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch…"
+      },
+      {
+        "name": "Peter↗ People",
+        "role": "Lead apostle; spokesperson for the Jerusalem church",
+        "text": "Peter (Simon bar Jonah) dominates Acts 1–12 as the church’s primary spokesman and miracle-worker. He preaches at Pentecost (Acts 2), heals at the Beautiful Gate (Acts 3), defends before the Sanhedrin (Acts 4–5), raises Tabitha (Acts 9:36–42), and receives the vision that opens the gospel to Gentiles (Acts 10). His release from Herod’s prison by an angel (Acts 12) closes his narrative in Acts; Paul’s story takes over from ch.13."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">logos (1:1)</td><td>NIV: \"Word\"; KJV: \"Word\"; ESV: \"Word\"; NRSV: \"Word\". Unanimous. Translating logos as \"Word\" is a conventional but inadequate rendering — the Greek encompasses \"Reason, Discourse, Logic, Meaning.\" Some translators have proposed \"Meaning\" (Eugene Peterson: \"the Word\") or \"the eternal Word\" (NLT).</td></tr><tr><td class=\"t-label\">eskēnōsen (1:14)</td><td>NIV: \"made his dwelling\"; KJV: \"dwelt\"; ESV: \"dwelt\"; NRSV: \"lived among\". The Tabernacle resonance (tabernacled/pitched his tent) is lost in most translations. The NEB \"came to dwell among us\" and the NIV's \"made his dwelling\" both capture the idea of temporary residence without the Tabernacle allusion.</td></tr><tr><td class=\"t-label\">monogenēs (1:14, 18)</td><td>NIV: \"one and only\"; KJV: \"only begotten\"; ESV: \"only\"; NRSV: \"only\". KJV's \"only begotten\" preserves the birth/generation nuance; modern translations prefer \"only\" or \"unique.\" The theological weight is the Son's unique relationship to the Father.</td></tr>",
+    "src": [
+      {
+        "title": "Philo of Alexandria, On the Creation",
+        "quote": "\"God, being good, did not grudge a share in his own excellent nature to a substance which had of itself nothing fair and lovely\" — Philo's Logos mediates between the transcendent God and the created world. John takes up the Logos concept and radically personalises it: the Logos is not a principle or a heavenly intermediary but a person who became flesh.",
+        "note": "John's use of Logos engages the most sophisticated philosophical vocabulary of his day — Hellenistic Judaism and Stoic philosophy — to make the claim that the universal Reason behind all things is a person who can be known personally."
+      },
+      {
+        "title": "Targum Onkelos on Genesis 1",
+        "quote": "The Aramaic translation of Genesis 1 uses \"the Word of the Lord\" (Memra de-YHWH) as a reverential circumlocution for God's direct action in the world. \"And the Word of the Lord said, Let there be light.\" This Aramaic tradition provides direct Jewish background for John's \"In the beginning was the Word.\"",
+        "note": "The Memra tradition shows that the Logos concept was not merely Hellenistic but deeply rooted in Jewish interpretive practice, making John's prologue a claim intelligible across both cultural worlds."
+      }
+    ],
+    "rec": [
+      {
+        "who": "The Prologue in Christian Worship",
+        "text": "John 1:1-14 has been read as the concluding Gospel in the Latin Mass since the early medieval period — the \"Last Gospel\" read at the end of every Eucharist in the extraordinary form of the Roman Rite. Luther ordered it read at the end of every German Mass. The prologue's liturgical position at the conclusion of the Mass (rather than the beginning) reflects its theological function: it is the interpretation of everything that has just happened."
+      },
+      {
+        "who": "\"The Word Became Flesh\" in Theology of the Incarnation",
+        "text": "John 1:14 is the single most important verse in the history of Christology. The Council of Nicaea (AD 325), Chalcedon (AD 451), and every subsequent creedal formulation depends on it. The debates of the first four centuries — against Docetism (the Word only appeared to be flesh), Arianism (the Word was a created being), Apollinarianism (the Word replaced the human soul in Christ), and Nestorianism (two persons in Christ) — all turn on the precise meaning of \"the Word became flesh.\""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Inclusio — vv.1-18 / 20:28",
+          "text": "The Gospel opens with \"the Word was God\" (1:1) and reaches its confessional climax with Thomas's \"My Lord and my God!\" (20:28). The whole Gospel is bracketed by divine identity declarations.",
+          "is_key": false
+        },
+        {
+          "label": "The Seven Days — vv.19, 29, 35, 43",
+          "text": "The Baptist section is structured as a series of \"next day\" sequences (1:19, 29, 35, 43) and the wedding at Cana occurs \"on the third day\" (2:1) — possibly mapping the opening chapter onto a week-long sequence echoing the creation week.",
+          "is_key": false
+        },
+        {
+          "label": "Chiasm — vv.1-18",
+          "text": "The Prologue is structured as a descending/ascending arch: the eternal Word → incarnation → witness of John → reception/rejection → the glory revealed. The phrase \"and the Word was God\" (v1) answers to \"we have seen his glory\" (v14), framing all in between.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "logos",
+        "tlit": "LO-gos",
+        "gloss": "Word / Reason / Discourse",
+        "note": "The opening word of John's Gospel — and of the entire Bible (\"In the beginning\") — deliberately echoes Gen 1:1. Logos in Greek philosophy (Heraclitus, Stoics) denoted the rational principle ordering the universe. In Jewish thought (Philo of Alexandria), it was the divine intermediary between the transcendent God and creation. John takes this widely understood concept and makes the shocking claim: the Logos is a person, has always been in relationship with God, is himself God, and has become flesh."
+      },
+      {
+        "word": "eskēnōsen",
+        "tlit": "es-KAY-no-sen",
+        "gloss": "dwelt / tabernacled / pitched his tent",
+        "note": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
+      },
+      {
+        "word": "amnos tou theou",
+        "tlit": "AM-nos tou the-OU",
+        "gloss": "Lamb of God",
+        "note": "The title (vv.29, 36) is John the Baptist's most theologically dense declaration and unique to the Fourth Gospel. The Lamb evokes: the Passover lamb (Exod 12) whose blood protected Israel from the death angel; the scapegoat and burnt offerings of the Day of Atonement (Lev 16); the Suffering Servant who was \"led like a lamb to the slaughter\" (Isa 53:7); and perhaps the apocalyptic \"lamb\" who would triumph over evil (1 Enoch). John's declaration encompasses all these dimensions at once."
+      },
+      {
+        "word": "menō",
+        "tlit": "ME-no",
+        "gloss": "remain / abide / stay",
+        "note": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
+      },
+      {
+        "word": "logos",
+        "tlit": "LO-gos",
+        "gloss": "Word / Reason / Discourse",
+        "note": "The opening word of John's Gospel — and of the entire Bible (\"In the beginning\") — deliberately echoes Gen 1:1. Logos in Greek philosophy (Heraclitus, Stoics) denoted the rational principle ordering the universe. In Jewish thought (Philo of Alexandria), it was the divine intermediary between the transcendent God and creation. John takes this widely understood concept and makes the shocking claim: the Logos is a person, has always been in relationship with God, is himself God, and has become flesh."
+      },
+      {
+        "word": "eskēnōsen",
+        "tlit": "es-KAY-no-sen",
+        "gloss": "dwelt / tabernacled / pitched his tent",
+        "note": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
+      },
+      {
+        "word": "amnos tou theou",
+        "tlit": "AM-nos tou the-OU",
+        "gloss": "Lamb of God",
+        "note": "The title (vv.29, 36) is John the Baptist's most theologically dense declaration and unique to the Fourth Gospel. The Lamb evokes: the Passover lamb (Exod 12) whose blood protected Israel from the death angel; the scapegoat and burnt offerings of the Day of Atonement (Lev 16); the Suffering Servant who was \"led like a lamb to the slaughter\" (Isa 53:7); and perhaps the apocalyptic \"lamb\" who would triumph over evil (1 Enoch). John's declaration encompasses all these dimensions at once."
+      },
+      {
+        "word": "menō",
+        "tlit": "ME-no",
+        "gloss": "remain / abide / stay",
+        "note": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Gen 1:1-3",
+        "type": "Connection",
+        "text": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Exod 40:34-35",
+        "type": "Echo",
+        "text": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14).",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Col 1:15-17",
+        "type": "Echo",
+        "text": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Heb 1:1-3",
+        "type": "Connection",
+        "text": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Isa 40:3",
+        "type": "Connection",
+        "text": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Isa 53:7",
+        "type": "Connection",
+        "text": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes.",
+        "direction": "backward"
+      }
+    ],
+    "tx": [
+      {
+        "ref": "1:18",
+        "title": "\"The one and only Son\" vs \"God the one and only\"",
+        "content": "Significant MSS (P66, P75, Sinaiticus, Vaticanus) read monogenēs theos (\"God the only-begotten\" or \"the one and only, who is himself God\"). Later MSS read ho monogenēs huios (\"the one and only Son\"). NA28 follows the earlier witnesses: \"the one and only Son, who is himself God.\" This is one of the strongest textual statements of the Son's deity in the NT.",
+        "note": "The reading monogenēs theos is almost certainly original — it is harder (scribes would be more likely to soften it toward \"Son\") and better attested. The reading \"Son\" may have been introduced to harmonise with 3:16."
+      },
+      {
+        "ref": "1:34",
+        "title": "\"Son of God\" vs \"Chosen One of God\"",
+        "content": "P5, P106, Sinaiticus, and the Old Latin read ho eklektos (\"the Chosen One\") rather than ho huios (\"the Son\"). NA28 adopts \"Chosen One\" as the harder reading. If original, it connects to Isa 42:1 (\"my chosen one\") and provides a Servant-Song background for the baptism testimony.",
+        "note": "The \"Chosen One\" reading is probably original; \"Son of God\" is a very common Johannine phrase that scribes would naturally introduce."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Is the Prologue a Pre-existing Hymn?",
+        "positions": [
+          {
+            "name": "Yes: hymnic adaptation",
+            "proponents": "Bultmann, Brown, Schnackenburg",
+            "argument": "The prologue has a poetic, rhythmic structure distinct from the surrounding narrative, with prose insertions about John the Baptist (vv.6-8, 15). The original hymn may have been a Johannine community hymn to the Logos that the evangelist adapted."
+          },
+          {
+            "name": "No: unified composition",
+            "proponents": "Carson, Keener, Bauckham",
+            "argument": "The supposed hymnic structure is not consistent enough to identify a discrete pre-existing hymn. The prologue is the evangelist's own introduction, written in elevated prose that reflects the content's grandeur."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Logos",
+          "score": 10
+        },
+        {
+          "label": "Light",
+          "score": 10
+        },
+        {
+          "label": "Witness",
+          "score": 10
+        },
+        {
+          "label": "Incarnation",
+          "score": 10
+        },
+        {
+          "label": "Belief",
+          "score": 10
+        },
+        {
+          "label": "Discipleship",
+          "score": 10
+        }
+      ],
+      "note": "John 1 is the Gospel's theological overture. The prologue (1:1-18) establishes every major theme in miniature: the divine identity of the Son, the creation through him, the entrance of light into darkness, the rejection by his own, and the gift of new birth to those who receive him. The narrative then enacts these themes immediately: the Baptist witnesses, the disciples believe, Nathanael is an Israelite without deceit — the Gospel's ideal receptor of the light. The chapter closes with the Jacob's ladder image, declaring that in Christ the permanent connection between heaven and earth has been established."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Galilee",
+        "Judea",
+        "Samaria",
+        "Bethany",
+        "Cana",
+        "Jordan",
+        "temple",
+        "synagogue",
+        "Capernaum"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "disciples",
+        "Pharisees",
+        "Jews",
+        "Peter",
+        "Thomas",
+        "Philip",
+        "Mary",
+        "Martha",
+        "Lazarus",
+        "Pilate",
+        "Nicodemus",
+        "crowd"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "hour",
+        "now",
+        "today",
+        "third day",
+        "abide",
+        "remain",
+        "eternal",
+        "before Abraham"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Word",
+        "light",
+        "life",
+        "love",
+        "truth",
+        "glory",
+        "believe",
+        "sent",
+        "Father",
+        "Son",
+        "Spirit",
+        "witness",
+        "eternal life",
+        "sign"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

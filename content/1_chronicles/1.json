@@ -1,0 +1,325 @@
+{
+  "chapter_id": "1ch1",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 1,
+  "title": "1 Chronicles 1",
+  "subtitle": "From Adam to Abraham to Edom",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–27 — Adam to Abraham: Compressed World History",
+      "verse_start": 1,
+      "verse_end": 27,
+      "panels": {
+        "heb": [
+          {
+            "word": "ʾadam",
+            "transliteration": "adam",
+            "gloss": "man/humanity",
+            "paragraph": "The Chronicler begins with a single word: “Adam” (v.1). No creation narrative, no garden, no fall — just the name. By starting at Adam rather than Abraham, the Chronicler stakes a universal claim: Israel’s story is humanity’s story. The genealogy that follows compresses Genesis 1–11 into 27 verses."
+          }
+        ],
+        "ctx": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses. This is not history but theology in list form. The Chronicler’s audience — a small post-exilic community — needs to know that their identity stretches back to the beginning of humanity. The selectivity is deliberate: the line runs through Seth (not Cain), Shem (not Ham or Japheth), and Abraham (not his brothers). Election narrows with each generation, but the starting point is all humanity.",
+        "cross": [
+          {
+            "ref": "Gen 5:1–32",
+            "note": "The genealogy from Adam to Noah. The Chronicler compresses ten generations of Genesis 5 into nine verses, omitting birth/death ages — only the line of descent matters."
+          },
+          {
+            "ref": "Luke 3:23–38",
+            "note": "Luke’s genealogy of Jesus also runs back to Adam. Both Chronicles and Luke make the same universal claim: the story of God’s people begins with all people."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Calvin: The Chronicler begins with Adam to teach that the church’s history is coextensive with human history. God’s people did not begin with Abraham but with creation. Every generation is accountable to the Creator."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "The genealogy compresses Gen 5:1–32 into a bare name list. The Chronicler assumes Torah knowledge and provides a reference framework, not a standalone narrative."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 28–54 — Abraham’s Descendants; the Edomite Genealogy",
+      "verse_start": 28,
+      "verse_end": 54,
+      "panels": {
+        "ctx": "The genealogy branches from Abraham through Isaac and Ishmael, then expands into the Edomite kings and chiefs — an unexpectedly detailed treatment of Esau’s line. Why does a post-exilic Israelite author devote 27 verses to Edom? Because in the 5th century BC, Edomites (Idumeans) were Israel’s immediate neighbours and rivals. By tracing Edom’s ancestry, the Chronicler places them within the Abrahamic family — acknowledging their legitimacy while establishing Israel’s priority through Isaac and Jacob.",
+        "cross": [
+          {
+            "ref": "Gen 25:12–18",
+            "note": "Ishmael’s genealogy. The Chronicler reproduces it faithfully — Ishmael is Abraham’s son and receives genealogical recognition."
+          },
+          {
+            "ref": "Gen 36:1–43",
+            "note": "The Edomite genealogy. The Chronicler’s version closely follows Genesis 36, confirming shared source material."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "1:34",
+              "note": "The distinction between Esau and Israel teaches that election is not based on natural descent but on God’s sovereign choice. Both are Abraham’s grandsons; only one carries the promise."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "1:43",
+              "note": "The phrase “before any Israelite king reigned” is identical to Gen 36:31. This cross-reference is significant for dating discussions — it presupposes knowledge of the Israelite monarchy."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Adam",
+        "role": "Key biblical figure",
+        "text": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses…"
+      },
+      {
+        "name": "Abraham",
+        "role": "Key biblical figure",
+        "text": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses…"
+      },
+      {
+        "name": "Isaac",
+        "role": "Key biblical figure",
+        "text": "The genealogy branches from Abraham through Isaac and Ishmael, then expands into the Edomite kings and chiefs — an unexpectedly detailed treatment of Esau’s line…"
+      },
+      {
+        "name": "Jacob",
+        "role": "Key biblical figure",
+        "text": "By tracing Edom’s ancestry, the Chronicler places them within the Abrahamic family — acknowledging their legitimacy while establishing Israel’s priority through Isaac and Jacob…"
+      },
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "Why does a post-exilic Israelite author devote 27 verses to Edom? Because in the 5th century BC, Edomites (Idumeans) were Israel’s immediate neighbours and rivals…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>The sons of Javan: Elishah, Tarshish, the Kittites and the Rodanites.</td></tr><tr><td class=\"t-label\">ESV</td><td>The sons of Javan: Elishah, Tarshish, Kittim, and Rodanim.</td></tr><tr><td class=\"t-label\">NIV</td><td>The sons of Noah: Shem, Ham and Japheth.</td></tr><tr><td class=\"t-label\">ESV</td><td>Noah, Shem, Ham, and Japheth.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–27 — Adam to Abraham: Compressed World History",
+          "text": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses. This is not histo…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 28–54 — Abraham’s Descendants; the Edomite Genealogy",
+          "text": "The genealogy branches from Abraham through Isaac and Ishmael, then expands into the Edomite kings and chiefs — an unexp…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "ʾadam",
+        "tlit": "adam",
+        "gloss": "man/humanity",
+        "note": "The Chronicler begins with a single word: “Adam” (v.1). No creation narrative, no garden, no fall — just the name. By starting at Adam rather than Abraham, the Chronicler stakes a universal claim: Israel’s story is humanity’s story. The genealogy that follows compresses Genesis 1–11 into 27 verses."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "From Adam to Abraham to Edom",
+        "target": "Gen 5:1–32",
+        "type": "Connection",
+        "text": "The genealogy from Adam to Noah. The Chronicler compresses ten generations of Genesis 5 into nine verses, omitting birth/death ages — only the line of descent matters.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "From Adam to Abraham to Edom",
+        "target": "Luke 3:23–38",
+        "type": "Connection",
+        "text": "Luke’s genealogy of Jesus also runs back to Adam. Both Chronicles and Luke make the same universal claim: the story of God’s people begins with all people.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "From Adam to Abraham to Edom",
+        "target": "Gen 25:12–18",
+        "type": "Connection",
+        "text": "Ishmael’s genealogy. The Chronicler reproduces it faithfully — Ishmael is Abraham’s son and receives genealogical recognition.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "From Adam to Abraham to Edom",
+        "target": "Gen 36:1–43",
+        "type": "Connection",
+        "text": "The Edomite genealogy. The Chronicler’s version closely follows Genesis 36, confirming shared source material.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "From Adam to Abraham to Edom"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

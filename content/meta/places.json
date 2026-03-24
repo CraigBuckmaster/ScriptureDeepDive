@@ -1,0 +1,959 @@
+[
+  {
+    "id": "eden",
+    "ancient": "Garden of Eden",
+    "modern": "Near ancient Mesopotamia (trad.)",
+    "lon": 44.4,
+    "lat": 31.5,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "eden"
+    ]
+  },
+  {
+    "id": "ararat",
+    "ancient": "Mt. Ararat",
+    "modern": "Mt. Ararat, Turkey",
+    "lon": 44.5,
+    "lat": 39.7,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "flood"
+    ]
+  },
+  {
+    "id": "babel",
+    "ancient": "Babel",
+    "modern": "Babylon, Iraq",
+    "lon": 44.4,
+    "lat": 32.5,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [
+      "babel",
+      "exile-babylon"
+    ]
+  },
+  {
+    "id": "shinar",
+    "ancient": "Land of Shinar",
+    "modern": "Southern Iraq",
+    "lon": 44.5,
+    "lat": 32,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "babel"
+    ]
+  },
+  {
+    "id": "ur",
+    "ancient": "Ur of the Chaldeans",
+    "modern": "Tell el-Muqayyar, Iraq",
+    "lon": 46.1,
+    "lat": 30.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [
+      "abram-call"
+    ]
+  },
+  {
+    "id": "haran",
+    "ancient": "Haran",
+    "modern": "Harran, Turkey",
+    "lon": 38.9,
+    "lat": 36.8,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "abram-call",
+      "jacob-journey"
+    ]
+  },
+  {
+    "id": "shechem",
+    "ancient": "Shechem",
+    "modern": "Nablus, West Bank",
+    "lon": 35.3,
+    "lat": 32.2,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [
+      "abram-call",
+      "conquest",
+      "judges-cycle"
+    ]
+  },
+  {
+    "id": "bethel",
+    "ancient": "Bethel",
+    "modern": "Beitin, West Bank",
+    "lon": 35.2,
+    "lat": 31.9,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [
+      "abram-call",
+      "jacob-journey"
+    ]
+  },
+  {
+    "id": "hebron",
+    "ancient": "Hebron",
+    "modern": "Hebron, West Bank",
+    "lon": 35.1,
+    "lat": 31.5,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "abram-call",
+      "sodom",
+      "david-rise"
+    ]
+  },
+  {
+    "id": "negev",
+    "ancient": "The Negev",
+    "modern": "Negev Desert, Israel",
+    "lon": 34.8,
+    "lat": 30.8,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "sw",
+    "stories": [
+      "abram-call",
+      "abram-egypt"
+    ]
+  },
+  {
+    "id": "egypt",
+    "ancient": "Egypt",
+    "modern": "Egypt",
+    "lon": 31.2,
+    "lat": 28.5,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "abram-egypt",
+      "joseph-egypt",
+      "exodus-plagues",
+      "nativity"
+    ]
+  },
+  {
+    "id": "nile-delta",
+    "ancient": "Nile Delta",
+    "modern": "Nile Delta, Egypt",
+    "lon": 31,
+    "lat": 31,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "abram-egypt",
+      "exodus-plagues"
+    ]
+  },
+  {
+    "id": "sodom",
+    "ancient": "Sodom",
+    "modern": "S. of Dead Sea (trad.)",
+    "lon": 35.5,
+    "lat": 31,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [
+      "sodom"
+    ]
+  },
+  {
+    "id": "dead-sea",
+    "ancient": "Salt Sea",
+    "modern": "Dead Sea",
+    "lon": 35.5,
+    "lat": 31.4,
+    "type": "water",
+    "priority": 1,
+    "labelDir": "e",
+    "stories": [
+      "sodom",
+      "conquest"
+    ]
+  },
+  {
+    "id": "moriah",
+    "ancient": "Mt. Moriah",
+    "modern": "Temple Mount, Jerusalem",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "mountain",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [
+      "isaac-birth",
+      "solomon-temple"
+    ]
+  },
+  {
+    "id": "beersheba",
+    "ancient": "Beersheba",
+    "modern": "Be'er Sheva, Israel",
+    "lon": 34.8,
+    "lat": 31.2,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [
+      "isaac-birth",
+      "abram-call"
+    ]
+  },
+  {
+    "id": "paddan-aram",
+    "ancient": "Paddan-Aram",
+    "modern": "N. Syria / SE Turkey",
+    "lon": 38.5,
+    "lat": 36.5,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "jacob-journey"
+    ]
+  },
+  {
+    "id": "peniel",
+    "ancient": "Peniel",
+    "modern": "Near Jabbok River, Jordan",
+    "lon": 35.8,
+    "lat": 32.3,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "jacob-journey"
+    ]
+  },
+  {
+    "id": "dothan",
+    "ancient": "Dothan",
+    "modern": "Tell Dothan, West Bank",
+    "lon": 35.2,
+    "lat": 32.4,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [
+      "joseph-egypt"
+    ]
+  },
+  {
+    "id": "goshen",
+    "ancient": "Land of Goshen",
+    "modern": "Nile Delta region, Egypt",
+    "lon": 31.8,
+    "lat": 30.8,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "joseph-egypt"
+    ]
+  },
+  {
+    "id": "memphis",
+    "ancient": "Memphis (Noph)",
+    "modern": "Mit Rahina, Egypt",
+    "lon": 31.2,
+    "lat": 29.8,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "joseph-egypt"
+    ]
+  },
+  {
+    "id": "on",
+    "ancient": "On (Heliopolis)",
+    "modern": "Cairo, Egypt",
+    "lon": 31.3,
+    "lat": 30.1,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [
+      "joseph-egypt"
+    ]
+  },
+  {
+    "id": "rameses",
+    "ancient": "Rameses",
+    "modern": "Tell el-Dab'a, Egypt",
+    "lon": 31.8,
+    "lat": 30.8,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [
+      "exodus-plagues"
+    ]
+  },
+  {
+    "id": "pithom",
+    "ancient": "Pithom",
+    "modern": "Tell el-Maskhuta, Egypt",
+    "lon": 32.1,
+    "lat": 30.6,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [
+      "exodus-plagues"
+    ]
+  },
+  {
+    "id": "red-sea",
+    "ancient": "Red Sea",
+    "modern": "Red Sea / Gulf of Suez",
+    "lon": 32.5,
+    "lat": 29.5,
+    "type": "water",
+    "priority": 1,
+    "labelDir": "w",
+    "stories": [
+      "exodus-plagues",
+      "wilderness"
+    ]
+  },
+  {
+    "id": "sinai",
+    "ancient": "Mt. Sinai (Horeb)",
+    "modern": "Jebel Musa, Sinai Peninsula",
+    "lon": 33.97,
+    "lat": 28.54,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [
+      "sinai",
+      "wilderness"
+    ]
+  },
+  {
+    "id": "kadesh",
+    "ancient": "Kadesh-Barnea",
+    "modern": "'Ein el-Qudeirat, Sinai",
+    "lon": 34.4,
+    "lat": 30.7,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [
+      "wilderness"
+    ]
+  },
+  {
+    "id": "sinai-pen",
+    "ancient": "Wilderness of Sinai",
+    "modern": "Sinai Peninsula, Egypt",
+    "lon": 33.5,
+    "lat": 29.5,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "wilderness",
+      "sinai"
+    ]
+  },
+  {
+    "id": "jordan-r",
+    "ancient": "Jordan River",
+    "modern": "Jordan River",
+    "lon": 35.6,
+    "lat": 32,
+    "type": "water",
+    "priority": 1,
+    "labelDir": "e",
+    "stories": [
+      "conquest",
+      "baptism-temptation"
+    ]
+  },
+  {
+    "id": "jericho",
+    "ancient": "Jericho",
+    "modern": "Jericho, West Bank",
+    "lon": 35.4,
+    "lat": 31.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [
+      "conquest",
+      "final-week"
+    ]
+  },
+  {
+    "id": "ai",
+    "ancient": "Ai",
+    "modern": "Et-Tell, West Bank",
+    "lon": 35.3,
+    "lat": 31.9,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [
+      "conquest"
+    ]
+  },
+  {
+    "id": "gibeon",
+    "ancient": "Gibeon",
+    "modern": "El-Jib, West Bank",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [
+      "conquest"
+    ]
+  },
+  {
+    "id": "hazor",
+    "ancient": "Hazor",
+    "modern": "Tell Hazor, Israel",
+    "lon": 35.6,
+    "lat": 33,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "conquest",
+      "judges-cycle"
+    ]
+  },
+  {
+    "id": "megiddo",
+    "ancient": "Megiddo",
+    "modern": "Tel Megiddo, Israel",
+    "lon": 35.2,
+    "lat": 32.6,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [
+      "judges-cycle"
+    ]
+  },
+  {
+    "id": "jezreel",
+    "ancient": "Valley of Jezreel",
+    "modern": "Jezreel Valley, Israel",
+    "lon": 35.2,
+    "lat": 32.6,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "judges-cycle",
+      "elijah"
+    ]
+  },
+  {
+    "id": "bethlehem",
+    "ancient": "Bethlehem",
+    "modern": "Bethlehem, West Bank",
+    "lon": 35.2,
+    "lat": 31.7,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [
+      "david-rise",
+      "nativity"
+    ]
+  },
+  {
+    "id": "jerusalem",
+    "ancient": "Jerusalem",
+    "modern": "Jerusalem",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [
+      "david-rise",
+      "solomon-temple",
+      "final-week",
+      "exile-babylon"
+    ]
+  },
+  {
+    "id": "ziklag",
+    "ancient": "Ziklag",
+    "modern": "Tell esh-Shari'a, Israel",
+    "lon": 34.6,
+    "lat": 31.5,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [
+      "david-rise"
+    ]
+  },
+  {
+    "id": "gibeah",
+    "ancient": "Gibeah (Saul)",
+    "modern": "Tell el-Ful, W. Bank",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [
+      "david-rise"
+    ]
+  },
+  {
+    "id": "mt-carmel",
+    "ancient": "Mt. Carmel",
+    "modern": "Mt. Carmel, Israel",
+    "lon": 35,
+    "lat": 32.7,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [
+      "elijah"
+    ]
+  },
+  {
+    "id": "zarephath",
+    "ancient": "Zarephath",
+    "modern": "Sarafand, Lebanon",
+    "lon": 35.3,
+    "lat": 33.5,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "elijah"
+    ]
+  },
+  {
+    "id": "samaria",
+    "ancient": "Samaria",
+    "modern": "Sebastiya, West Bank",
+    "lon": 35.2,
+    "lat": 32.3,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "exile-assyria",
+      "elijah"
+    ]
+  },
+  {
+    "id": "nineveh",
+    "ancient": "Nineveh",
+    "modern": "Mosul, Iraq",
+    "lon": 43.1,
+    "lat": 36.4,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "exile-assyria"
+    ]
+  },
+  {
+    "id": "assyria",
+    "ancient": "Assyria",
+    "modern": "N. Iraq / SE Turkey",
+    "lon": 43,
+    "lat": 36.5,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "exile-assyria"
+    ]
+  },
+  {
+    "id": "babylon",
+    "ancient": "Babylon",
+    "modern": "Hillah, Iraq",
+    "lon": 44.4,
+    "lat": 32.5,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "exile-babylon",
+      "ezra-return"
+    ]
+  },
+  {
+    "id": "lachish",
+    "ancient": "Lachish",
+    "modern": "Tell Lachish, Israel",
+    "lon": 34.8,
+    "lat": 31.6,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [
+      "exile-babylon"
+    ]
+  },
+  {
+    "id": "persia",
+    "ancient": "Persia",
+    "modern": "Iran",
+    "lon": 53,
+    "lat": 32,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [
+      "ezra-return"
+    ]
+  },
+  {
+    "id": "susa",
+    "ancient": "Susa",
+    "modern": "Shush, Iran",
+    "lon": 48.2,
+    "lat": 32.2,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "ezra-return"
+    ]
+  },
+  {
+    "id": "nazareth",
+    "ancient": "Nazareth",
+    "modern": "Nazareth, Israel",
+    "lon": 35.3,
+    "lat": 32.7,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "nativity",
+      "galilee-ministry"
+    ]
+  },
+  {
+    "id": "capernaum",
+    "ancient": "Capernaum",
+    "modern": "Kfar Nahum, Israel",
+    "lon": 35.6,
+    "lat": 32.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "galilee-ministry"
+    ]
+  },
+  {
+    "id": "galilee-sea",
+    "ancient": "Sea of Galilee",
+    "modern": "Sea of Galilee (Kinneret)",
+    "lon": 35.6,
+    "lat": 32.8,
+    "type": "water",
+    "priority": 1,
+    "labelDir": "w",
+    "stories": [
+      "galilee-ministry"
+    ]
+  },
+  {
+    "id": "caesarea-p",
+    "ancient": "Caesarea Philippi",
+    "modern": "Banias, Israel",
+    "lon": 35.7,
+    "lat": 33.2,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [
+      "galilee-ministry"
+    ]
+  },
+  {
+    "id": "cana",
+    "ancient": "Cana",
+    "modern": "Kafr Kanna, Israel",
+    "lon": 35.3,
+    "lat": 32.8,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [
+      "galilee-ministry"
+    ]
+  },
+  {
+    "id": "judean-wild",
+    "ancient": "Judean Wilderness",
+    "modern": "Judean Desert, W. Bank",
+    "lon": 35.4,
+    "lat": 31.7,
+    "type": "region",
+    "priority": 1,
+    "labelDir": "w",
+    "stories": [
+      "baptism-temptation"
+    ]
+  },
+  {
+    "id": "gethsemane",
+    "ancient": "Gethsemane",
+    "modern": "Garden of Gethsemane, Jerusalem",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [
+      "final-week"
+    ]
+  },
+  {
+    "id": "golgotha",
+    "ancient": "Golgotha",
+    "modern": "Church of Holy Sepulchre, Jerusalem",
+    "lon": 35.2,
+    "lat": 31.8,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [
+      "final-week"
+    ]
+  },
+  {
+    "id": "antioch-s",
+    "ancient": "Antioch (Syria)",
+    "modern": "Antakya, Turkey",
+    "lon": 36.2,
+    "lat": 36.2,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey1",
+      "paul-journey2",
+      "paul-journey3"
+    ]
+  },
+  {
+    "id": "cyprus",
+    "ancient": "Cyprus",
+    "modern": "Cyprus",
+    "lon": 33.4,
+    "lat": 35.1,
+    "type": "region",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey1"
+    ]
+  },
+  {
+    "id": "lystra",
+    "ancient": "Lystra",
+    "modern": "Hatunsaray, Turkey",
+    "lon": 32.5,
+    "lat": 37.6,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [
+      "paul-journey1"
+    ]
+  },
+  {
+    "id": "derbe",
+    "ancient": "Derbe",
+    "modern": "Kerti Höyük, Turkey",
+    "lon": 33.4,
+    "lat": 37.4,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [
+      "paul-journey1"
+    ]
+  },
+  {
+    "id": "iconium",
+    "ancient": "Iconium",
+    "modern": "Konya, Turkey",
+    "lon": 32.5,
+    "lat": 37.9,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey1"
+    ]
+  },
+  {
+    "id": "antioch-p",
+    "ancient": "Antioch (Pisidia)",
+    "modern": "Yalvaç, Turkey",
+    "lon": 31.2,
+    "lat": 38.3,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey1"
+    ]
+  },
+  {
+    "id": "philippi",
+    "ancient": "Philippi",
+    "modern": "Filippoi, Greece",
+    "lon": 24.3,
+    "lat": 41,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey2"
+    ]
+  },
+  {
+    "id": "thessalonica",
+    "ancient": "Thessalonica",
+    "modern": "Thessaloniki, Greece",
+    "lon": 22.9,
+    "lat": 40.6,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey2"
+    ]
+  },
+  {
+    "id": "athens",
+    "ancient": "Athens",
+    "modern": "Athens, Greece",
+    "lon": 23.7,
+    "lat": 37.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [
+      "paul-journey2"
+    ]
+  },
+  {
+    "id": "corinth",
+    "ancient": "Corinth",
+    "modern": "Corinth, Greece",
+    "lon": 22.9,
+    "lat": 37.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [
+      "paul-journey2",
+      "paul-journey3"
+    ]
+  },
+  {
+    "id": "ephesus",
+    "ancient": "Ephesus",
+    "modern": "Selçuk, Turkey",
+    "lon": 27.3,
+    "lat": 37.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "paul-journey3"
+    ]
+  },
+  {
+    "id": "caesarea-m",
+    "ancient": "Caesarea Maritima",
+    "modern": "Caesarea, Israel",
+    "lon": 34.9,
+    "lat": 32.5,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [
+      "paul-journey3",
+      "paul-rome"
+    ]
+  },
+  {
+    "id": "malta",
+    "ancient": "Melita (Malta)",
+    "modern": "Malta",
+    "lon": 14.4,
+    "lat": 35.9,
+    "type": "region",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [
+      "paul-rome"
+    ]
+  },
+  {
+    "id": "rome",
+    "ancient": "Rome",
+    "modern": "Rome, Italy",
+    "lon": 12.5,
+    "lat": 41.9,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [
+      "paul-rome"
+    ]
+  },
+  {
+    "id": "troas",
+    "ancient": "Troas",
+    "modern": "Dalyan, Turkey",
+    "lon": 26.3,
+    "lat": 39.8,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [
+      "paul-journey2",
+      "paul-journey3"
+    ]
+  }
+]

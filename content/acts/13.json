@@ -1,0 +1,716 @@
+{
+  "chapter_id": "ac13",
+  "testament": "nt",
+  "book_dir": "acts",
+  "chapter_num": 13,
+  "title": "Acts 13",
+  "subtitle": "First Missionary Journey — Cyprus and Pisidian Antioch",
+  "timeline_link": null,
+  "map_story_link": {
+    "story_id": "paul-journey1",
+    "text": "See on Map — Paul's 1st Journey"
+  },
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1—25 — Commissioned from Antioch; Cyprus; Pisidian Antioch",
+      "verse_start": 1,
+      "verse_end": 25,
+      "panels": {
+        "heb": [
+          {
+            "word": "ἀφορίσατε",
+            "transliteration": "aphorisate",
+            "gloss": "set apart",
+            "paragraph": "the divine commission in v.2 uses the same verb Paul uses of himself in Gal 1:15 ('set apart from my mother's womb'). The Antioch commissioning is not the origin of Paul's call but its public deployment — God had set him apart before birth; the church now formally recognizes and releases that calling."
+          },
+          {
+            "word": "Παῦλος",
+            "transliteration": "Paulos",
+            "gloss": "Paul",
+            "paragraph": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antioch on the Orontes</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 46–48",
+            "name": "First Missionary Journey Begins",
+            "text": "Paul and Barnabas are commissioned by the Antioch church and the Holy Spirit, launching the first deliberate apostolic mission to the Gentile world. The journey will take them through Cyprus, Pamphylia, and Galatia.",
+            "current": true
+          },
+          {
+            "date": "c. AD 44",
+            "name": "Antioch Church Established",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 48–49",
+            "name": "Jerusalem Council",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience.",
+        "cross": [
+          {
+            "ref": "Acts 9:15",
+            "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
+          },
+          {
+            "ref": "Galatians 1:15–16",
+            "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
+          },
+          {
+            "ref": "Isaiah 49:6",
+            "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2–3",
+              "note": "MacArthur on the commissioning process: worship and fasting precede the Spirit's direction; prayer and laying on of hands follow it. The sequence is: waiting on God → receiving direction → confirming response. MacArthur uses this as the NT model for missionary commissioning — Spirit-initiated, church-confirmed, prayer-surrounded."
+            },
+            {
+              "ref": "13:10–11",
+              "note": "MacArthur on Paul's confrontation with Elymas: Paul does not debate or negotiate but pronounces prophetic judgment. The blindness inflicted on Elymas mirrors Paul's own blindness at Damascus — a mercy that might lead to sight. MacArthur notes the pattern: God's judgments are often invitations to the very experience that opens eyes."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2",
+              "note": "Calvin on 'While they were worshiping the Lord and fasting': the Spirit speaks through the gathered, attentive community. Calvin uses this to argue that extraordinary callings (missionary commissioning) come through ordinary means (corporate worship) — not through private visions alone. The community's recognition is part of the calling's confirmation."
+            },
+            {
+              "ref": "13:9",
+              "note": "Calvin on Paul filled with the Holy Spirit before confronting Elymas: the filling is not for eloquence or confidence alone but for supernatural discernment. Calvin notes that Paul 'looked straight at him' (atenisas) — the same word used of Stephen's gaze at the Sanhedrin (6:15) and Peter's gaze at the lame man (3:4). The penetrating look precedes the prophetic word."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "The NET notes the significance of Manaen's description as syntrophos (literally 'one brought up with') Herod the tetrarch — a term for a childhood companion raised in the royal household. Manaen's presence in the Antioch church leadership represents the Gospel's penetration of the highest social levels of Jewish society."
+            },
+            {
+              "ref": "13:20",
+              "note": "The NET notes the textual variant in v.20: the 450 years can refer to the period from the patriarchs' entry into Egypt to the division of Canaan, or to the period of the judges. The NET prefers the reading that places the 450 years as the period from the Exodus to the judges, following the Western text tradition."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:2",
+              "note": "\"The Holy Spirit said, Set apart for me Barnabas and Saul\" — Robertson notes the Spirit speaking directly through prophets during corporate worship. The commissioning is initiated by God through the gathered community, not by human administrative decision. The Spirit is the senior partner in every genuine missionary enterprise."
+            },
+            {
+              "ref": "13:9",
+              "note": "The first appearance of \"Paul\" replacing \"Saul\" — Robertson notes this is Luke's way of signalling the shift from Jewish to Gentile mission territory. Paulos was Paul's actual Roman name used in Roman contexts; its adoption here is culturally strategic as well as personally natural."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "Keener notes the remarkable diversity of the Antioch church's leadership: Barnabas (Levite from Cyprus), Simeon Niger (probably African, 'Niger' meaning 'black'), Lucius of Cyrene (North African), Manaen (raised in Herod Antipas's household — connected to the ruling elite), and Saul (diaspora Jew from Tarsus). This team embodies the multicultural community they are about to evangelise."
+            },
+            {
+              "ref": "13:7",
+              "note": "Keener notes that Sergius Paulus as proconsul of Cyprus is corroborated by inscriptions. A Latin inscription from Rome and a Greek inscription from Cyprus both mention a Sergius Paulus as a senior official of the period. This is one of Acts' many historically verifiable details."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 26—41 — Paul’s Sermon: Through Jesus Forgiveness Is Proclaimed",
+      "verse_start": 26,
+      "verse_end": 41,
+      "panels": {
+        "heb": [
+          {
+            "word": "δικαιωθῆναι",
+            "transliteration": "dikaiōthēnai",
+            "gloss": "justified / set free",
+            "paragraph": "v.39 is Paul's earliest recorded statement of justification by faith: 'everyone who believes is set free (justified) from every sin, a justification you were not able to obtain under the law of Moses.' This is the theological thesis of Galatians and Romans, stated in embryonic form in Paul's first synagogue sermon."
+          },
+          {
+            "word": "ὡρισμένοι εἰς ζωὴν αἰώνιον",
+            "transliteration": "hōrismenoi eis zōēn aiōnion",
+            "gloss": "appointed for eternal life",
+            "paragraph": "v.48 — a crucial phrase. The passive participle 'appointed' (hōrismenoi) indicates divine action: those who believed were those whom God had previously appointed. Luke presents the correlation between divine appointment and human faith without explaining their relationship — the mystery Luke preserves intact."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch — Synagogue</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">The synagogue invitation (v.15) gives Paul his first major preaching platform: 'if you have a word of exhortation for the people, please speak.' The formal synagogue service has just included Torah and Prophets readings; Paul builds on them. The sermon structure mirrors the service's own movement from history to contemporary application.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Iconium</div><div class=\"poi-coords\">37.8740° N, 32.4846° E</div><div class=\"poi-text\">Modern Konya in central Turkey — Paul and Barnabas's next stop after expulsion from Pisidian Antioch. A major city on the road network connecting western and eastern Asia Minor. The pattern of synagogue preaching → Jewish opposition → turning to Gentiles → expulsion → moving on will repeat at each city.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 47",
+            "name": "Pisidian Antioch — First Major Sermon",
+            "text": "Paul's synagogue sermon in Pisidian Antioch establishes the pattern for his entire Gentile mission: synagogue first → Israel's rejection → turning to Gentiles → persecution → moving on. This pattern will repeat in every city.",
+            "current": true
+          },
+          {
+            "date": "c. AD 47–48",
+            "name": "Iconium, Lystra, Derbe",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 48",
+            "name": "Return to Antioch",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "Paul's Pisidian Antioch sermon is the fullest account of his synagogue preaching in Acts. It moves through four stages: salvation history survey (vv.17–25) → death and resurrection testimony (vv.26–31) → scriptural proof from Psalms 2, 16, and Isaiah 55 (vv.32–37) → invitation and warning (vv.38–41). The Isaiah 49:6 quotation in v.47 is the programmatic declaration of the Gentile mission: 'I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth.' Paul applies to himself the calling of the Servant of the Lord — the mission given to Israel is now carried by Israel's Messiah through his apostle.",
+        "cross": [
+          {
+            "ref": "Isaiah 49:6",
+            "note": "\"I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth\" — cited in v.47 as the scriptural mandate for turning to the Gentiles. This verse will be cited again in Acts 26:23 and Luke 2:32."
+          },
+          {
+            "ref": "Psalm 2:7",
+            "note": "\"You are my son; today I have become your father\" — cited in v.33 as fulfilled in the resurrection. Paul reads the Psalm as a coronation announcement fulfilled at Christ's resurrection-exaltation."
+          },
+          {
+            "ref": "Habakkuk 1:5",
+            "note": "\"Look, you scoffers, wonder and perish... something you would never believe\" — cited in v.41 as a warning to those who reject the Gospel. Paul applies the prophet's warning about Babylon to those who reject Christ."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:38–39",
+              "note": "MacArthur on Paul's justification statement: this is the earliest recorded Pauline articulation of what will become the theological core of Galatians and Romans. \"Through him everyone who believes is set free (justified) from every sin\" — justification is by faith, not by law-keeping, and it covers sins the Mosaic law's sacrificial system could not permanently address."
+            },
+            {
+              "ref": "13:48",
+              "note": "MacArthur on divine appointment and human faith: both are present and neither cancels the other. Those who were appointed believed; those who believed were appointed. MacArthur uses this to argue that divine sovereignty and human responsibility are not in contradiction but in mysterious cooperation — the Bible asserts both without resolving the tension philosophically."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:46",
+              "note": "Calvin on 'we now turn to the Gentiles': Paul does not abandon the Jewish mission but announces the consequence of deliberate rejection. Calvin notes that 'since you reject it' is the key — the turning to Gentiles is not Plan B but the logically necessitated consequence of Israel's deliberate self-exclusion. The promise remains for Israel; it is they who have set it aside."
+            },
+            {
+              "ref": "13:48",
+              "note": "Calvin on divine appointment and faith: this is one of Calvin's key Acts texts for the doctrine of election. 'As many as were appointed for eternal life believed' — the believing is real and human; the appointment is prior and divine. Calvin reads this as Luke's confirmation that the doctrine of election is not a Pauline speciality but embedded in the narrative of Acts."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:39",
+              "note": "The NET notes that the verb 'justified' (dikaiōthēnai) is used only here in Acts in its full Pauline sense. Luke uses justification language sparingly, but this occurrence confirms that Paul's synagogue preaching already contained the theological core of his later epistles — Acts and the letters are consistent."
+            },
+            {
+              "ref": "13:48",
+              "note": "The NET notes the translation debate over tetagmenoi: 'appointed' (divine appointment, NASB, ESV) vs. 'disposed' (human openness, NET footnote considers this). The NET translates 'appointed' but provides the full textual discussion. The passive voice strongly suggests divine action rather than human self-disposition."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:39",
+              "note": "Robertson on \"justification you were not able to obtain under the law of Moses\" — the first explicit statement of justification by faith in Acts, matching Paul's later Galatians and Romans argument. Robertson notes that Paul states the principle without the full theological elaboration of his letters — the synagogue sermon form requires conciseness, not comprehensive doctrinal treatment."
+            },
+            {
+              "ref": "13:48",
+              "note": "Robertson on \"all who were appointed for eternal life believed\" — the passive participle tetagmenoi (from tassō — to appoint, to ordain) indicates prior divine action. Robertson notes that this does not eliminate the human faith response (they believed) but grounds it in divine appointment. The two are correlated in Luke's account without philosophical resolution."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "13:46",
+              "note": "\"We had to speak the word of God to you first. Since you reject it... we now turn to the Gentiles\" — Keener notes this is not a permanent abandonment of the Jewish mission (Paul will enter the synagogue again at the next city) but a principle: priority does not mean exclusivity. The Jewish community has the first hearing; rejection opens the door to the Gentile community."
+            },
+            {
+              "ref": "13:48",
+              "note": "Keener notes that \"appointed for eternal life\" (tetagmenoi eis zōēn aiōnion) reflects Luke's consistent divine-passive for salvation. The same construction appears in Acts 2:47 (\"the Lord added to their number\") and 11:18 (\"God has granted repentance\"). Salvation throughout Acts is consistently presented as God's initiative and gift."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 42—52 — Jews Reject; Gentiles Rejoice; Paul and Barnabas Expelled",
+      "verse_start": 42,
+      "verse_end": 52,
+      "panels": {
+        "heb": [
+          {
+            "word": "ἀφορίσατε",
+            "transliteration": "aphorisate",
+            "gloss": "set apart",
+            "paragraph": "the divine commission in v.2 uses the same verb Paul uses of himself in Gal 1:15 ('set apart from my mother's womb'). The Antioch commissioning is not the origin of Paul's call but its public deployment — God had set him apart before birth; the church now formally recognizes and releases that calling."
+          },
+          {
+            "word": "Παῦλος",
+            "transliteration": "Paulos",
+            "gloss": "Paul",
+            "paragraph": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antioch on the Orontes</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 46–48",
+            "name": "First Missionary Journey Begins",
+            "text": "Paul and Barnabas are commissioned by the Antioch church and the Holy Spirit, launching the first deliberate apostolic mission to the Gentile world. The journey will take them through Cyprus, Pamphylia, and Galatia.",
+            "current": true
+          },
+          {
+            "date": "c. AD 44",
+            "name": "Antioch Church Established",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 48–49",
+            "name": "Jerusalem Council",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience.",
+        "cross": [
+          {
+            "ref": "Acts 9:15",
+            "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
+          },
+          {
+            "ref": "Galatians 1:15–16",
+            "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
+          },
+          {
+            "ref": "Isaiah 49:6",
+            "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2–3",
+              "note": "MacArthur on the commissioning process: worship and fasting precede the Spirit's direction; prayer and laying on of hands follow it. The sequence is: waiting on God → receiving direction → confirming response. MacArthur uses this as the NT model for missionary commissioning — Spirit-initiated, church-confirmed, prayer-surrounded."
+            },
+            {
+              "ref": "13:10–11",
+              "note": "MacArthur on Paul's confrontation with Elymas: Paul does not debate or negotiate but pronounces prophetic judgment. The blindness inflicted on Elymas mirrors Paul's own blindness at Damascus — a mercy that might lead to sight. MacArthur notes the pattern: God's judgments are often invitations to the very experience that opens eyes."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "13:2",
+              "note": "Calvin on 'While they were worshiping the Lord and fasting': the Spirit speaks through the gathered, attentive community. Calvin uses this to argue that extraordinary callings (missionary commissioning) come through ordinary means (corporate worship) — not through private visions alone. The community's recognition is part of the calling's confirmation."
+            },
+            {
+              "ref": "13:9",
+              "note": "Calvin on Paul filled with the Holy Spirit before confronting Elymas: the filling is not for eloquence or confidence alone but for supernatural discernment. Calvin notes that Paul 'looked straight at him' (atenisas) — the same word used of Stephen's gaze at the Sanhedrin (6:15) and Peter's gaze at the lame man (3:4). The penetrating look precedes the prophetic word."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "The NET notes the significance of Manaen's description as syntrophos (literally 'one brought up with') Herod the tetrarch — a term for a childhood companion raised in the royal household. Manaen's presence in the Antioch church leadership represents the Gospel's penetration of the highest social levels of Jewish society."
+            },
+            {
+              "ref": "13:20",
+              "note": "The NET notes the textual variant in v.20: the 450 years can refer to the period from the patriarchs' entry into Egypt to the division of Canaan, or to the period of the judges. The NET prefers the reading that places the 450 years as the period from the Exodus to the judges, following the Western text tradition."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "13:2",
+              "note": "\"The Holy Spirit said, Set apart for me Barnabas and Saul\" — Robertson notes the Spirit speaking directly through prophets during corporate worship. The commissioning is initiated by God through the gathered community, not by human administrative decision. The Spirit is the senior partner in every genuine missionary enterprise."
+            },
+            {
+              "ref": "13:9",
+              "note": "The first appearance of \"Paul\" replacing \"Saul\" — Robertson notes this is Luke's way of signalling the shift from Jewish to Gentile mission territory. Paulos was Paul's actual Roman name used in Roman contexts; its adoption here is culturally strategic as well as personally natural."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "13:1",
+              "note": "Keener notes the remarkable diversity of the Antioch church's leadership: Barnabas (Levite from Cyprus), Simeon Niger (probably African, 'Niger' meaning 'black'), Lucius of Cyrene (North African), Manaen (raised in Herod Antipas's household — connected to the ruling elite), and Saul (diaspora Jew from Tarsus). This team embodies the multicultural community they are about to evangelise."
+            },
+            {
+              "ref": "13:7",
+              "note": "Keener notes that Sergius Paulus as proconsul of Cyprus is corroborated by inscriptions. A Latin inscription from Rome and a Greek inscription from Cyprus both mention a Sergius Paulus as a senior official of the period. This is one of Acts' many historically verifiable details."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Paul↗ People",
+        "role": "Apostle to the Gentiles; author of thirteen NT letters",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31)."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>While they were worshiping the Lord and fasting, the Holy Spirit said, \\</td></tr><tr><td class=\"t-label\">ESV</td><td>While they were worshiping the Lord and fasting, the Holy Spirit said, “Set apart for me Barnabas and Saul for the work to which I have called them.”</td></tr><tr><td class=\"t-label\">NIV</td><td>who was an attendant of the proconsul, Sergius Paulus. The proconsul, an intelligent man, sent for Barnabas and Saul because he wanted to hear the word of God.</td></tr><tr><td class=\"t-label\">ESV</td><td>He was with the proconsul, Sergius Paulus, a man of intelligence, who summoned Barnabas and Saul and sought to hear the word of God.</td></tr>",
+    "src": [
+      {
+        "title": "Josephus, Antiquities of the Jews (c.93 AD)",
+        "quote": "Josephus provides extensive first-century background for the political, religious, and social conditions described in Acts — the Herodian family, Pharisees and Sadducees, Roman provincial governance.",
+        "note": "Acts’ historical details consistently align with Josephus’s independent account of the same period, supporting the narrative’s historical credibility."
+      },
+      {
+        "title": "Dead Sea Scrolls (1QS, 1QM)",
+        "quote": "The Qumran community texts illuminate the diversity of Second Temple Judaism from which Christianity emerged — their eschatological expectations, community rules, and temple criticism parallel aspects of the early church.",
+        "note": "The Scrolls demonstrate that the early church’s practices (community meals, shared goods, eschatological expectation) were not unprecedented within Jewish renewal movements."
+      },
+      {
+        "title": "Greco-Roman Travel Literature and Epistolary Conventions",
+        "quote": "Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.",
+        "note": "The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography."
+      }
+    ],
+    "rec": [
+      {
+        "who": "John Chrysostom, Homilies on Acts (c.400 AD)",
+        "text": "\"Chrysostom’s 55 homilies on Acts are the most thorough patristic commentary, emphasising the Spirit’s active role and the apostles’ moral example for the church.\""
+      },
+      {
+        "who": "John MacArthur",
+        "text": "\"MacArthur on the commissioning process: worship and fasting precede the Spirit's direction; prayer and laying on of hands follow it. The sequence is: waiting on God → receiving direction → confirming \""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1—25 — Commissioned from Antioch; Cyprus; Pisidian Antioch",
+          "text": "Context  The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks throug…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 26—41 — Paul’s Sermon: Through Jesus Forgiveness Is Proclaimed",
+          "text": "Context  Paul's Pisidian Antioch sermon is the fullest account of his synagogue preaching in Acts. It moves through four…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 42—52 — Jews Reject; Gentiles Rejoice; Paul and Barnabas Expelled",
+          "text": "Context  The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks throug…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "ἀφορίσατε",
+        "tlit": "aphorisate",
+        "gloss": "set apart",
+        "note": "the divine commission in v.2 uses the same verb Paul uses of himself in Gal 1:15 ('set apart from my mother's womb'). The Antioch commissioning is not the origin of Paul's call but its public deployment — God had set him apart before birth; the church now formally recognizes and releases that calling."
+      },
+      {
+        "word": "Παῦλος",
+        "tlit": "Paulos",
+        "gloss": "Paul",
+        "note": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
+      },
+      {
+        "word": "δικαιωθῆναι",
+        "tlit": "dikaiōthēnai",
+        "gloss": "justified / set free",
+        "note": "v.39 is Paul's earliest recorded statement of justification by faith: 'everyone who believes is set free (justified) from every sin, a justification you were not able to obtain under the law of Moses.' This is the theological thesis of Galatians and Romans, stated in embryonic form in Paul's first synagogue sermon."
+      },
+      {
+        "word": "ὡρισμένοι εἰς ζωὴν αἰώνιον",
+        "tlit": "hōrismenoi eis zōēn aiōnion",
+        "gloss": "appointed for eternal life",
+        "note": "v.48 — a crucial phrase. The passive participle 'appointed' (hōrismenoi) indicates divine action: those who believed were those whom God had previously appointed. Luke presents the correlation between divine appointment and human faith without explaining their relationship — the mystery Luke preserves intact."
+      },
+      {
+        "word": "ἀφορίσατε",
+        "tlit": "aphorisate",
+        "gloss": "set apart",
+        "note": "the divine commission in v.2 uses the same verb Paul uses of himself in Gal 1:15 ('set apart from my mother's womb'). The Antioch commissioning is not the origin of Paul's call but its public deployment — God had set him apart before birth; the church now formally recognizes and releases that calling."
+      },
+      {
+        "word": "Παῦλος",
+        "tlit": "Paulos",
+        "gloss": "Paul",
+        "note": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Acts 9:15",
+        "type": "Connection",
+        "text": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Galatians 1:15–16",
+        "type": "Connection",
+        "text": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Isaiah 49:6",
+        "type": "Connection",
+        "text": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Isaiah 49:6",
+        "type": "Connection",
+        "text": "\"I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth\" — cited in v.47 as the scriptural mandate for turning to the Gentiles. This verse will be cited again in Acts 26:23 and Luke 2:32.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Psalm 2:7",
+        "type": "Fulfilment",
+        "text": "\"You are my son; today I have become your father\" — cited in v.33 as fulfilled in the resurrection. Paul reads the Psalm as a coronation announcement fulfilled at Christ's resurrection-exaltation.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Habakkuk 1:5",
+        "type": "Connection",
+        "text": "\"Look, you scoffers, wonder and perish... something you would never believe\" — cited in v.41 as a warning to those who reject the Gospel. Paul applies the prophet's warning about Babylon to those who reject Christ.",
+        "direction": "backward"
+      }
+    ],
+    "tx": [
+      {
+        "ref": "Acts 13",
+        "title": "Western text (Codex Bezae D) vs Alexandrian text",
+        "content": "Alexandrian(P45, P74, א, B) is the primary scholarly text.Western(Codex Bezae D) is 10–15% longer, with additions that appear to expand and harmonise.",
+        "note": "Acts has the most significant NT textual variation. The Western text of Acts is not simply corrupt but may preserve early oral expansions. Most scholars follow the shorter Alexandrian text as more original."
+      },
+      {
+        "ref": "Acts 13 (general)",
+        "title": "P45 and early papyrus witnesses",
+        "content": "The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.",
+        "note": "The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Authorship and Historicity of Scripture Walkthrough",
+        "positions": [
+          {
+            "name": "Traditional Lukan authorship (Hengel, Keener, classical scholarship)",
+            "proponents": "Attributes Acts to Luke the physician (Col 4:14), a companion of Paul, on the basis of the \"we\" passages, historical accuracy, and early church tradition.",
+            "argument": "Luke’s medical vocabulary (noted by Hobart) and the detailed geographical and political accuracy of Acts support the traditional attribution."
+          },
+          {
+            "name": "Anonymous/secondary authorship (Haenchen, Conzelmann)",
+            "proponents": "Questions Lukan authorship on the basis of discrepancies between Acts’ Paul and the Pauline letters, suggesting a later author using Lukan sources.",
+            "argument": "This view notes that Acts does not always match Paul’s letters precisely, and argues the \"we\" passages may be a literary device rather than eyewitness markers."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Kingdom",
+          "score": 2
+        },
+        {
+          "label": "Grace",
+          "score": 2
+        },
+        {
+          "label": "Faith",
+          "score": 4
+        },
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Mission",
+          "score": 2
+        },
+        {
+          "label": "Suffering",
+          "score": 2
+        }
+      ],
+      "note": "Scripture Walkthrough"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Antioch",
+        "Rome",
+        "Ephesus",
+        "Corinth",
+        "Philippi",
+        "Athens",
+        "Caesarea",
+        "Damascus",
+        "Samaria",
+        "Judea",
+        "Galatia",
+        "synagogue",
+        "temple",
+        "Macedonia"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Peter",
+        "Barnabas",
+        "Stephen",
+        "Philip",
+        "James",
+        "Silas",
+        "Timothy",
+        "Apollos",
+        "Herod",
+        "Felix",
+        "Festus",
+        "Agrippa",
+        "disciples",
+        "apostles",
+        "elders",
+        "Ananias",
+        "Cornelius"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "hour",
+        "years",
+        "year",
+        "suddenly",
+        "at once",
+        "three days",
+        "sabbath",
+        "Pentecost"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Spirit",
+        "repentance",
+        "baptized",
+        "believe",
+        "witness",
+        "gospel",
+        "resurrection",
+        "kingdom",
+        "salvation",
+        "Holy Spirit",
+        "boldly",
+        "signs",
+        "wonders",
+        "name",
+        "Word",
+        "grace",
+        "faith",
+        "Gentiles"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

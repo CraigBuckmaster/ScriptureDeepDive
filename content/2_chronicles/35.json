@@ -1,0 +1,251 @@
+{
+  "chapter_id": "2ch35",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 35,
+  "title": "2 Chronicles 35",
+  "subtitle": "Josiah’s Passover and Death",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐19 — The Greatest Passover Since Samuel",
+      "verse_start": 1,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "Josiah celebrates a Passover greater than any since Samuel’s time. The Chronicler devotes 19 verses to the liturgical details: Levitical assignments, priestly stations, sacrifice procedures, singers in position. “The Passover had not been observed like this in Israel since the days of the prophet Samuel.” The Chronicler elevates this Passover above even Hezekiah’s (ch 30). Josiah’s worship is the apex of the monarchy’s liturgical achievement.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "35:(1, '')",
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "35:(1, '')",
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 20‐27 — Josiah Killed at Megiddo; Lamentation",
+      "verse_start": 20,
+      "verse_end": 27,
+      "panels": {
+        "ctx": "Pharaoh Necho marches north. Josiah intercepts him at Megiddo. Necho sends messengers: “God has told me to hurry. Stop opposing God, who is with me, or he will destroy you.” The Chronicler adds this detail absent from Kings: Necho claims divine authority, and Josiah ignores it. “Josiah would not turn away from him, but disguised himself.” He is fatally wounded by archers. “Jeremiah composed laments for Josiah.” The greatest reformer dies because he refused to listen to God’s word — even when it came through a pagan king.",
+        "cross": [],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "35:(20, '')",
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "35:(20, '')",
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Hezekiah",
+        "role": "Key biblical figure",
+        "text": "” The Chronicler elevates this Passover above even Hezekiah’s (ch 30)…"
+      },
+      {
+        "name": "Josiah",
+        "role": "Key biblical figure",
+        "text": "Josiah celebrates a Passover greater than any since Samuel’s time…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "Necho sends messengers: “God has told me to hurry…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>\\u201cStand in the holy place with a group of Levites for each subdivision of the families of your fellow Israelites, the lay people.</td></tr><tr><td class=\"t-label\">ESV</td><td>And stand in the Holy Place according to the groupings of the fathers\\u2019 houses of your brothers the lay people, and according to the division of the Levites by fathers\\u2019 household.</td></tr><tr><td class=\"t-label\">NIV</td><td>Prepare yourselves by families in your divisions, according to the instructions written by David king of Israel and by his son Solomon.</td></tr><tr><td class=\"t-label\">ESV</td><td>Prepare yourselves according to your fathers\\u2019 houses by your divisions, as prescribed in the writing of David king of Israel and the document of Solomon his son.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐19 — The Greatest Passover Since Samuel —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 20‐27 — Josiah Killed at Megiddo; Lamentation —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Josiah’s Passover and Death"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

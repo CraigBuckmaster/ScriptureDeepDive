@@ -1,0 +1,288 @@
+{
+  "chapter_id": "1ch2",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 2,
+  "title": "1 Chronicles 2",
+  "subtitle": "The Sons of Israel; Judah’s Line to David",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–17 — The Twelve Sons; Judah’s Line Through Perez",
+      "verse_start": 1,
+      "verse_end": 17,
+      "panels": {
+        "ctx": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah. The line runs through Perez (born from Judah and Tamar) to Hezron to Ram to Jesse to David. The Chronicler is building a genealogical highway from Israel to the throne. Judah receives more genealogical attention than any other tribe — 55 verses in this chapter alone — because Judah carries the royal promise (Gen 49:10).",
+        "cross": [
+          {
+            "ref": "Gen 49:10",
+            "note": "“The sceptre will not depart from Judah.” The Chronicler’s emphasis on Judah’s genealogy reflects this patriarchal blessing."
+          },
+          {
+            "ref": "Ruth 4:18–22",
+            "note": "The Perez-to-David genealogy at the end of Ruth matches 1 Chr 2:5–16 exactly. Both texts establish the Davidic line through Perez."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:1",
+              "note": "The priority of Judah teaches that God’s purposes follow his own logic, not human expectations. The firstborn (Reuben) is passed over; the fourth son (Judah) carries the promise. Divine election overrides natural order."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:15",
+              "note": "The numbering of David as the “seventh” differs from 1 Sam 16:10–11 and 17:12 (which imply eight sons of Jesse). Various explanations include an early death of one brother or different counting traditions."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 18–55 — Hezron’s Clans; Caleb; Jerahmeel",
+      "verse_start": 18,
+      "verse_end": 55,
+      "panels": {
+        "ctx": "The genealogy expands into the sub-clans of Hezron — Caleb, Jerahmeel, and others — tracing the settlement patterns of Judahite families in the hill country. These verses read like a tribal land registry: family names are attached to towns and territories. For the post-exilic community, this material answers the practical question: which families belong to which territories? The genealogy is a property deed dressed as a family tree.",
+        "cross": [
+          {
+            "ref": "Josh 15:13–19",
+            "note": "Caleb’s allotment in Judah’s territory. The Chronicler traces Caleb’s descendants through their settlements, connecting people to places."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:34",
+              "note": "The inclusion of Jarha the Egyptian within Judah’s genealogy teaches that God’s covenant community has always absorbed outsiders. The genealogy is not a wall but a gate — open to those who join Israel."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:55",
+              "note": "The “Kenites who came from Hammath” are linked to Recab, ancestor of the Recabites (Jer 35). Their inclusion within Judah’s genealogy reflects long-standing alliance and assimilation."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Israel",
+        "role": "Key biblical figure",
+        "text": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah…"
+      },
+      {
+        "name": "Judah",
+        "role": "Key biblical figure",
+        "text": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "The line runs through Perez (born from Judah and Tamar) to Hezron to Ram to Jesse to David…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>The sons of Judah: Er, Onan and Shelah. These three were born to him by a Canaanite woman, the daughter of Shua. (Er, Judah’s firstborn, was wicked in the Lord’s sight; so the Lord put him to death.)</td></tr><tr><td class=\"t-label\">ESV</td><td>The sons of Judah: Er, Onan and Shelah; these three Bath-shua the Canaanite bore to him. Now Er, Judah’s firstborn, was evil in the sight of the LORD, and he put him to death.</td></tr><tr><td class=\"t-label\">NIV</td><td>The sons born to Hezron were: Jerahmeel, Ram and Caleb.</td></tr><tr><td class=\"t-label\">ESV</td><td>The sons of Hezron that were born to him: Jerahmeel, Ram, and Chelubai.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–17 — The Twelve Sons; Judah’s Line Through Perez",
+          "text": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah. The line runs through Perez (born from Ju…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 18–55 — Hezron’s Clans; Caleb; Jerahmeel",
+          "text": "The genealogy expands into the sub-clans of Hezron — Caleb, Jerahmeel, and others — tracing the settlement patterns of J…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "The Sons of Israel; Judah’s Line to David",
+        "target": "Gen 49:10",
+        "type": "Connection",
+        "text": "“The sceptre will not depart from Judah.” The Chronicler’s emphasis on Judah’s genealogy reflects this patriarchal blessing.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Sons of Israel; Judah’s Line to David",
+        "target": "Ruth 4:18–22",
+        "type": "Connection",
+        "text": "The Perez-to-David genealogy at the end of Ruth matches 1 Chr 2:5–16 exactly. Both texts establish the Davidic line through Perez.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Sons of Israel; Judah’s Line to David",
+        "target": "Josh 15:13–19",
+        "type": "Connection",
+        "text": "Caleb’s allotment in Judah’s territory. The Chronicler traces Caleb’s descendants through their settlements, connecting people to places.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "The Sons of Israel; Judah’s Line to David"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

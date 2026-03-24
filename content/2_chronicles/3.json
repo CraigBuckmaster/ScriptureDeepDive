@@ -1,0 +1,315 @@
+{
+  "chapter_id": "2ch3",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 3,
+  "title": "2 Chronicles 3",
+  "subtitle": "The Temple Built on Mount Moriah",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–9 — Foundations on Moriah; the Main Hall",
+      "verse_start": 1,
+      "verse_end": 9,
+      "panels": {
+        "heb": [
+          {
+            "word": "mōriyyāh",
+            "transliteration": "moriyah",
+            "gloss": "Mount Moriah",
+            "paragraph": "Solomon builds the temple on Mount Moriah (v.1) — the only biblical text that identifies the temple site with the place where Abraham nearly sacrificed Isaac (Gen 22:2). The Chronicler connects three events at one location: Abraham’s binding of Isaac, David’s altar at the threshing floor, and Solomon’s temple. Sacrifice upon sacrifice upon sacrifice."
+          }
+        ],
+        "ctx": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan. The Chronicler adds the Moriah identification absent from Kings — connecting the temple to Abraham’s supreme act of faith. Dimensions: 60 cubits long, 20 wide. The portico is 20 cubits wide and 120 cubits high (an enormous figure, perhaps symbolic). The interior is overlaid with gold, decorated with palm trees and chains, and set with precious stones.",
+        "cross": [
+          {
+            "ref": "Gen 22:2",
+            "note": "“Go to the region of Moriah. Sacrifice him there.” Abraham’s near-sacrifice of Isaac. The temple rises where the substitute ram died."
+          },
+          {
+            "ref": "1 Kgs 6:1–10",
+            "note": "The Kings parallel provides more architectural detail; Chronicles adds the Moriah connection."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "3:1",
+              "note": "Building on Moriah teaches that the place of supreme sacrifice becomes the place of perpetual worship. Where Abraham offered Isaac, Solomon builds for God. Obedience creates sacred ground."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "3:1",
+              "note": "har hammōriyyāh is the only occurrence linking the temple mount to Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 10–17 — The Most Holy Place; the Cherubim; the Pillars",
+      "verse_start": 10,
+      "verse_end": 17,
+      "panels": {
+        "ctx": "The Most Holy Place is a perfect 20-cubit cube, overlaid with 600 talents of gold. Two cherubim of olive wood, each with 5-cubit wings, span the entire width of the room (20 cubits wing-tip to wing-tip). They stand facing outward — guarding the entrance to God’s presence. The veil of blue, purple, and crimson separates the holy from the most holy. Two bronze pillars, Jakin and Boaz, stand before the temple — the same pillars Nebuchadnezzar will break up in 2 Kings 25:13.",
+        "cross": [
+          {
+            "ref": "1 Kgs 6:23–28",
+            "note": "The Kings description of the cherubim. Chronicles adds that they face outward, toward the main hall."
+          },
+          {
+            "ref": "Exod 26:31–33",
+            "note": "The tabernacle veil. Solomon’s veil uses the same colours: blue, purple, and crimson."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "3:14",
+              "note": "The veil separating holy from most holy teaches that access to God’s deepest presence is restricted but real. The barrier exists not to exclude but to regulate approach."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "3:17",
+              "note": "yākîn (“he establishes”) and bōʿaz (“in him is strength”) — the names function as theological declarations permanently inscribed at the temple entrance."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan…"
+      },
+      {
+        "name": "Nebuchadnezzar",
+        "role": "Key biblical figure",
+        "text": "Two bronze pillars, Jakin and Boaz, stand before the temple — the same pillars Nebuchadnezzar will break up in 2 Kings 25:13…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "They stand facing outward — guarding the entrance to God’s presence…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>He paneled the main hall with juniper and covered it with fine gold and decorated it with palm tree and chain designs.</td></tr><tr><td class=\"t-label\">ESV</td><td>The nave he lined with cypress and covered it with fine gold and made palms and chains on it.</td></tr><tr><td class=\"t-label\">NIV</td><td>The portico at the front of the temple was twenty cubits long across the width of the building and twenty cubits high. He overlaid the inside with pure gold.</td></tr><tr><td class=\"t-label\">ESV</td><td>The vestibule in front of the nave of the house was twenty cubits long, equal to the width of the house, and its height was 120 cubits. He overlaid it on the inside with pure gold.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–9 — Foundations on Moriah; the Main Hall",
+          "text": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan. The Chronicler adds the Moriah ide…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 10–17 — The Most Holy Place; the Cherubim; the Pillars",
+          "text": "The Most Holy Place is a perfect 20-cubit cube, overlaid with 600 talents of gold. Two cherubim of olive wood, each with…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "mōriyyāh",
+        "tlit": "moriyah",
+        "gloss": "Mount Moriah",
+        "note": "Solomon builds the temple on Mount Moriah (v.1) — the only biblical text that identifies the temple site with the place where Abraham nearly sacrificed Isaac (Gen 22:2). The Chronicler connects three events at one location: Abraham’s binding of Isaac, David’s altar at the threshing floor, and Solomon’s temple. Sacrifice upon sacrifice upon sacrifice."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "The Temple Built on Mount Moriah",
+        "target": "Gen 22:2",
+        "type": "Connection",
+        "text": "“Go to the region of Moriah. Sacrifice him there.” Abraham’s near-sacrifice of Isaac. The temple rises where the substitute ram died.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Temple Built on Mount Moriah",
+        "target": "1 Kgs 6:1–10",
+        "type": "Echo",
+        "text": "The Kings parallel provides more architectural detail; Chronicles adds the Moriah connection.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Temple Built on Mount Moriah",
+        "target": "1 Kgs 6:23–28",
+        "type": "Connection",
+        "text": "The Kings description of the cherubim. Chronicles adds that they face outward, toward the main hall.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Temple Built on Mount Moriah",
+        "target": "Exod 26:31–33",
+        "type": "Connection",
+        "text": "The tabernacle veil. Solomon’s veil uses the same colours: blue, purple, and crimson.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "The Temple Built on Mount Moriah"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

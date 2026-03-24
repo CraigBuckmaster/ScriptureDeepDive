@@ -1,0 +1,524 @@
+{
+  "chapter_id": "mt15",
+  "testament": "nt",
+  "book_dir": "matthew",
+  "chapter_num": 15,
+  "title": "Matthew 15",
+  "subtitle": "Tradition vs Command; What Defiles; The Canaanite Woman; Feeding the Four Thousand",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–20 — What Defiles: Tradition vs Command of God",
+      "verse_start": 1,
+      "verse_end": 20,
+      "panels": {
+        "heb": [],
+        "ctx": "The tradition controversy (vv.1–20) is one of the most significant theological exchanges in Matthew. The Pharisees challenge Jesus over hand-washing; Jesus counter-challenges them over Corban — exposing a tradition that circumvents Torah. The principle that emerges (v.11) is one of the most radical statements in the Sermon-tradition: defilement is moral, not ritual; it comes from the heart, not the hands. This has enormous implications for the Gentile mission that follows immediately in vv.21–28.",
+        "cross": [
+          {
+            "ref": "Isa 29:13",
+            "note": "These people honour me with their lips, but their hearts are far from me — quoted in v.8. Isaiah's critique of empty worship becomes Jesus's diagnosis of tradition-based religion."
+          },
+          {
+            "ref": "Exod 20:12; 21:17",
+            "note": "Honour your father and mother / anyone who curses parents must die — the fifth commandment that the Corban tradition nullified. Jesus defends Torah against its supposed guardians."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:6",
+              "note": "Thus you nullify the word of God for the sake of your tradition. The charge is precise and devastating: the tradition of the elders — meant to build a hedge around Torah — has become the instrument of its circumvention. Human religious tradition, however well-intentioned, can be deployed against the divine command it was meant to protect."
+            },
+            {
+              "ref": "15:11",
+              "note": "What comes out of the mouth — that is what defiles. The most direct assault on the Levitical purity system in the Synoptics. Mark 7:19 adds the explanatory note \"thus he declared all foods clean.\" Matthew's version is implicit but equally clear: external ritual cannot substitute for internal moral transformation."
+            },
+            {
+              "ref": "15:19",
+              "note": "Out of the heart come evil thoughts — murder, adultery, sexual immorality, theft, false testimony, slander. The heart-list is a partial catalogue of Torah violations. The point: the commandments address outward acts because inner corruption produces outward destruction. Ritual cleanliness cannot address the source of the problem."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:3-6",
+              "note": "Calvin on corban: the scribes invented a method by which children could legally abandon their parents under the pretence of religion. Under the mask of piety, natural duty was violated. This is the pattern of all human traditions that conflict with God's law: they release people from genuine obligations under the guise of religious ones."
+            },
+            {
+              "ref": "15:21-28",
+              "note": "Calvin on the Canaanite woman: three times repulsed and three times she persists. This teaches us that when God seems to repulse us, we must not immediately despair. The apparent repulsion is a test of faith, not a final rejection. The faith that will not be denied is the faith that receives what it seeks."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:1-9",
+              "note": "The NET note on the handwashing tradition discusses the distinction between biblical commandments and oral tradition. The Pharisaic handwashing practice was originally applicable only to priests -- the Pharisees had extended it to all Jews as a mark of covenantal identity."
+            },
+            {
+              "ref": "15:22-28",
+              "note": "The NET note on 'I was sent only to the lost sheep of Israel' discusses the apparent limitation of Jesus's mission in its historical context. The universal mission (28:19) is implicit throughout but strategically deployed: the Canaanite woman's healing signals the coming inclusion rather than contradicting the primary mission."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:1-9",
+              "note": "Robertson traces the handwashing controversy as a matter of oral tradition, not Mosaic law. The paradosis ton presbyteron (tradition of the elders) is the oral Torah the rabbis claimed had equal authority with written Torah. Jesus's counter-charge -- you nullify the word of God for the sake of your tradition -- cuts to the heart of the authority dispute."
+            },
+            {
+              "ref": "15:10-20",
+              "note": "Robertson notes the parabolic saying (v.11: not what enters the mouth defiles) is explicitly called a parable by Peter (v.15). On v.17: 'What a revolution this thought would carry!' Jesus is declaring all foods clean (cf. Mark 7:19), though Matthew omits Mark's editorial comment. The full implication unfolds gradually in early church history."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "15:3-9",
+              "note": "The Catena records Chrysostom's treatment of the corban problem: a son could declare his property 'corban' (dedicated to God) and thereby exempt himself from supporting his parents while retaining use of the property. Chrysostom notes the tradition found a religious loophole to void a divine commandment -- piety deployed to avoid responsibility."
+            },
+            {
+              "ref": "15:21-28",
+              "note": "The Catena traces the Fathers' rich engagement with the Canaanite woman. Chrysostom sees her as a model of persistent faith: three times she is discouraged (silence, dismissal, the dogs saying) and three times she presses forward, each time more boldly. Persistence is not presumption but the faith that will not accept a final no from a merciful God."
+            }
+          ]
+        },
+        "poi": [
+          {
+            "name": "Region of Tyre and Sidon",
+            "coords": "Phoenician coast; modern Lebanon",
+            "text": "Jesus withdraws to the region of Tyre and Sidon — the first explicit movement into Gentile territory in Matthew. The Canaanite woman (a Gentile by Matthew's designation) finds him there. The faith that Israel's cities failed to show is found in Phoenician-territory Gentile geography."
+          },
+          {
+            "name": "Sea of Galilee shore",
+            "coords": "Back to Jewish territory",
+            "text": "After the Gentile withdrawal, Jesus returns to the Sea of Galilee and feeds another crowd — 4,000 this time. The two feeding miracles (5,000 in Jewish geography; 4,000 here) bracket the Gentile incursion, suggesting the feedings represent both covenantal communities."
+          }
+        ]
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 21–28 — The Canaanite Woman’s Faith",
+      "verse_start": 21,
+      "verse_end": 28,
+      "panels": {
+        "heb": [],
+        "ctx": "The Canaanite woman episode (vv.21–28) is the structural complement to the tradition controversy (vv.1–20). The debate established that defilement is moral, not ethnic; the healing demonstrates it. Jesus's silence, his apparent restriction to Israel (v.24), and his \"dogs\" response have been much discussed — the exchange reads as a test of the woman's theological persistence rather than a genuine refusal. Her crumb-argument shows she understands the covenant structure better than the Pharisees who opened the chapter.",
+        "cross": [
+          {
+            "ref": "Matt 8:10–11",
+            "note": "I have not found such great faith in Israel — the centurion. The Canaanite woman is the second Gentile to be credited with great faith. Both precede and anticipate 28:19's commission to all nations."
+          },
+          {
+            "ref": "Ruth 2:12",
+            "note": "The Gentile woman who throws herself on the LORD's mercy and receives more than she asked for. Ruth → the Canaanite woman → the Gentile church."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:22",
+              "note": "Lord, Son of David, have mercy on me. A Canaanite woman uses the Jewish messianic title — demonstrating that she understands more about who Jesus is than many Israelites. Her persistence (she keeps crying after them, v.23) is itself the faith that will be commended. She does not accept dismissal as God's final word."
+            },
+            {
+              "ref": "15:27",
+              "note": "Even the dogs eat the crumbs that fall from their master's table. The woman's response is theologically brilliant: she accepts the priority of Israel (\"children\") without conceding Gentile exclusion. She argues from within the metaphor: there are crumbs even at a children's table. This is not clever deflection but genuine faith — she is trusting in the overflow of God's mercy, not its exhaustion."
+            },
+            {
+              "ref": "15:28",
+              "note": "Great is your faith! The commendation contrasts with every previous faith-assessment in Matthew — little faith (disciples), no faith mentioned (scribes and Pharisees). The greatest faith commendation in the gospel goes to the most unexpected recipient. This is the gospel's thesis in miniature: the kingdom's treasure goes to those who recognise they are crumbs-worthy, not those who claim table-rights."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:29-31",
+              "note": "Calvin on the Gentile healings: Christ's compassion does not observe the boundaries that human prejudice erects. He heals the lame, blind, crippled, and mute in Gentile territory with the same power he exercises in Israel. The God of Israel is also the God of all nations."
+            },
+            {
+              "ref": "15:32-38",
+              "note": "Calvin: 'I have compassion on the crowd -- they have now been with me three days.' Christ himself raises the need before anyone else does. This is the pattern of divine mercy: it anticipates the need rather than waiting for the petition. The hunger is acknowledged before anyone asks for bread."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:26-28",
+              "note": "The NET note on kynarion (little dog, household pet) as a diminutive distinct from kyon (dog as insult) discusses whether Jesus is being harsh or testing her faith. The patristic consensus (testing) is supported by the immediate healing once she responds with the crumbs argument."
+            },
+            {
+              "ref": "15:32-39",
+              "note": "The NET note on spyris (basket) in the second feeding -- a larger basket than the kophinos of the first feeding -- identifies this detail as evidence of two distinct events and traces the disciples' apparent forgetfulness of the first feeding (16:9-10) as the narrator's irony."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:29-31",
+              "note": "Robertson on the mountain setting of the second feeding: Matthew places this in Gentile territory (the Decapolis, approached from Tyre and Sidon). The crowd glorifies 'the God of Israel' (v.31) -- a Gentile acclamation, unusual phrasing signalling the crowd's ethnic identity. This prepares for the Gentile mission of chs.28."
+            },
+            {
+              "ref": "15:32-38",
+              "note": "Robertson on splagchnistheis (had compassion, v.32): the characteristic Matthean compassion word, from the Greek term for the entrails -- gut-level, visceral care. Robertson notes Jesus initiates the provision this time without a disciples' prompt: the compassion precedes the request."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "15:32-38",
+              "note": "The Catena notes the feeding of the four thousand in Gentile territory mirrors the feeding of the five thousand in Jewish territory. The Fathers consistently read the two feedings as signs of the double mission: to Jew first and also to Greek (Rom 1:16). The seven baskets remaining -- seven being a universal number -- signal the breadth of the kingdom's provision."
+            },
+            {
+              "ref": "15:21-28",
+              "note": "The Catena records multiple patristic readings of 'even the dogs eat the crumbs that fall from their master's table' (v.27). The woman accepts the diminutive (kynarion, little dogs, household dogs) and turns it into an argument: even household dogs are within the household's provision. Her faith is demonstrated in the creativity of her response, not just its persistence."
+            }
+          ]
+        },
+        "poi": [
+          {
+            "name": "Region of Tyre and Sidon",
+            "coords": "Phoenician coast; modern Lebanon",
+            "text": "Jesus withdraws to the region of Tyre and Sidon — the first explicit movement into Gentile territory in Matthew. The Canaanite woman (a Gentile by Matthew's designation) finds him there. The faith that Israel's cities failed to show is found in Phoenician-territory Gentile geography."
+          },
+          {
+            "name": "Sea of Galilee shore",
+            "coords": "Back to Jewish territory",
+            "text": "After the Gentile withdrawal, Jesus returns to the Sea of Galilee and feeds another crowd — 4,000 this time. The two feeding miracles (5,000 in Jewish geography; 4,000 here) bracket the Gentile incursion, suggesting the feedings represent both covenantal communities."
+          }
+        ]
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 29–39 — Great Crowds Healed; Feeding the Four Thousand",
+      "verse_start": 29,
+      "verse_end": 39,
+      "panels": {
+        "heb": [],
+        "ctx": "The tradition controversy (vv.1–20) is one of the most significant theological exchanges in Matthew. The Pharisees challenge Jesus over hand-washing; Jesus counter-challenges them over Corban — exposing a tradition that circumvents Torah. The principle that emerges (v.11) is one of the most radical statements in the Sermon-tradition: defilement is moral, not ritual; it comes from the heart, not the hands. This has enormous implications for the Gentile mission that follows immediately in vv.21–28.",
+        "cross": [
+          {
+            "ref": "Isa 29:13",
+            "note": "These people honour me with their lips, but their hearts are far from me — quoted in v.8. Isaiah's critique of empty worship becomes Jesus's diagnosis of tradition-based religion."
+          },
+          {
+            "ref": "Exod 20:12; 21:17",
+            "note": "Honour your father and mother / anyone who curses parents must die — the fifth commandment that the Corban tradition nullified. Jesus defends Torah against its supposed guardians."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:6",
+              "note": "Thus you nullify the word of God for the sake of your tradition. The charge is precise and devastating: the tradition of the elders — meant to build a hedge around Torah — has become the instrument of its circumvention. Human religious tradition, however well-intentioned, can be deployed against the divine command it was meant to protect."
+            },
+            {
+              "ref": "15:11",
+              "note": "What comes out of the mouth — that is what defiles. The most direct assault on the Levitical purity system in the Synoptics. Mark 7:19 adds the explanatory note \"thus he declared all foods clean.\" Matthew's version is implicit but equally clear: external ritual cannot substitute for internal moral transformation."
+            },
+            {
+              "ref": "15:19",
+              "note": "Out of the heart come evil thoughts — murder, adultery, sexual immorality, theft, false testimony, slander. The heart-list is a partial catalogue of Torah violations. The point: the commandments address outward acts because inner corruption produces outward destruction. Ritual cleanliness cannot address the source of the problem."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:3-6",
+              "note": "Calvin on corban: the scribes invented a method by which children could legally abandon their parents under the pretence of religion. Under the mask of piety, natural duty was violated. This is the pattern of all human traditions that conflict with God's law: they release people from genuine obligations under the guise of religious ones."
+            },
+            {
+              "ref": "15:21-28",
+              "note": "Calvin on the Canaanite woman: three times repulsed and three times she persists. This teaches us that when God seems to repulse us, we must not immediately despair. The apparent repulsion is a test of faith, not a final rejection. The faith that will not be denied is the faith that receives what it seeks."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:1-9",
+              "note": "The NET note on the handwashing tradition discusses the distinction between biblical commandments and oral tradition. The Pharisaic handwashing practice was originally applicable only to priests -- the Pharisees had extended it to all Jews as a mark of covenantal identity."
+            },
+            {
+              "ref": "15:22-28",
+              "note": "The NET note on 'I was sent only to the lost sheep of Israel' discusses the apparent limitation of Jesus's mission in its historical context. The universal mission (28:19) is implicit throughout but strategically deployed: the Canaanite woman's healing signals the coming inclusion rather than contradicting the primary mission."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:1-9",
+              "note": "Robertson traces the handwashing controversy as a matter of oral tradition, not Mosaic law. The paradosis ton presbyteron (tradition of the elders) is the oral Torah the rabbis claimed had equal authority with written Torah. Jesus's counter-charge -- you nullify the word of God for the sake of your tradition -- cuts to the heart of the authority dispute."
+            },
+            {
+              "ref": "15:10-20",
+              "note": "Robertson notes the parabolic saying (v.11: not what enters the mouth defiles) is explicitly called a parable by Peter (v.15). On v.17: 'What a revolution this thought would carry!' Jesus is declaring all foods clean (cf. Mark 7:19), though Matthew omits Mark's editorial comment. The full implication unfolds gradually in early church history."
+            }
+          ]
+        },
+        "catena": {
+          "source": "Thomas Aquinas (compiler), Catena Aurea — Patristic Commentary, Public Domain",
+          "notes": [
+            {
+              "ref": "15:3-9",
+              "note": "The Catena records Chrysostom's treatment of the corban problem: a son could declare his property 'corban' (dedicated to God) and thereby exempt himself from supporting his parents while retaining use of the property. Chrysostom notes the tradition found a religious loophole to void a divine commandment -- piety deployed to avoid responsibility."
+            },
+            {
+              "ref": "15:21-28",
+              "note": "The Catena traces the Fathers' rich engagement with the Canaanite woman. Chrysostom sees her as a model of persistent faith: three times she is discouraged (silence, dismissal, the dogs saying) and three times she presses forward, each time more boldly. Persistence is not presumption but the faith that will not accept a final no from a merciful God."
+            }
+          ]
+        },
+        "poi": [
+          {
+            "name": "Region of Tyre and Sidon",
+            "coords": "Phoenician coast; modern Lebanon",
+            "text": "Jesus withdraws to the region of Tyre and Sidon — the first explicit movement into Gentile territory in Matthew. The Canaanite woman (a Gentile by Matthew's designation) finds him there. The faith that Israel's cities failed to show is found in Phoenician-territory Gentile geography."
+          },
+          {
+            "name": "Sea of Galilee shore",
+            "coords": "Back to Jewish territory",
+            "text": "After the Gentile withdrawal, Jesus returns to the Sea of Galilee and feeds another crowd — 4,000 this time. The two feeding miracles (5,000 in Jewish geography; 4,000 here) bracket the Gentile incursion, suggesting the feedings represent both covenantal communities."
+          }
+        ]
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "The Pharisees and scribes",
+        "role": "From Jerusalem; challenge hand-washing",
+        "text": "Nullify Torah with their tradition — the irony exposed."
+      },
+      {
+        "name": "The Canaanite woman",
+        "role": "Greatest faith in the gospel",
+        "text": "Excluded by every category; included by her crumb-theology. Faith that argues from God's overflow rather than its exhaustion."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>\"Yes it is, Lord. Even the dogs eat the crumbs that fall from their master's table.\"</td></tr><tr><td class=\"t-label\">Note</td><td>The most theologically precise faith-statement in Matthew. She does not deny the priority of Israel; she argues from within the metaphor: even secondary recipients receive something from the master's table. This is the gospel's logic — salvation overflows from Israel to the nations.</td></tr>",
+    "src": [
+      {
+        "title": "Oral Torah and hand-washing",
+        "quote": "The Pharisaic tradition of hand-washing before meals was part of extending priestly purity rules to everyday life — an admirable impulse. Jesus's objection is not to the practice but to its elevation above explicit Torah commands.",
+        "note": "The conflict is between tradition and Torah, not between piety and impiety."
+      },
+      {
+        "title": "Tyre and Sidon",
+        "quote": "Gentile cities on the Phoenician coast, northwest of Galilee. The Canaanite woman's location outside Israel's territory makes her use of \"Son of David\" all the more remarkable — she is claiming a covenant title from outside the covenant community.",
+        "note": "The geography signals Gentile inclusion before the commission makes it explicit."
+      }
+    ],
+    "rec": [
+      {
+        "who": "The Canaanite woman in feminist theology",
+        "text": "The episode has been central to discussions of how Jesus treats women and Gentiles — simultaneously the most difficult and most affirming passage for both. The woman's theological argument is presented without condescension; her faith is the chapter's highest point."
+      },
+      {
+        "who": "The defilement teaching and Mark 7",
+        "text": "Matthew 15:1–20 is the parallel of Mark 7:1–23. Mark adds the explicit conclusion \"thus he declared all foods clean\" (Mark 7:19b). Matthew's version is implicit, consistent with his Jewish audience for whom the implication would be understood."
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Inside Out: What Truly Defiles",
+          "text": "It is not what enters the mouth that defiles a person but what comes out of the mouth. The ethical revolution: the source of defilement is not external contact but internal character. The inner life is prior to any external act.",
+          "is_key": false
+        },
+        {
+          "label": "Inside Out: What Truly Defiles",
+          "text": "It is not what enters the mouth that defiles a person but what comes out of the mouth. The ethical revolution: the source of defilement is not external contact but internal character. The inner life is prior to any external act.",
+          "is_key": false
+        },
+        {
+          "label": "The Canaanite Woman: Faith That Will Not Be Denied — 15:21-28",
+          "text": "Three apparent repulsions produce three increasingly bold responses. The crumbs argument turns the limitation into a theological claim. Persistent faith is the faith that receives.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "tx": [
+      {
+        "ref": "15:6",
+        "title": "Corban: nullifying God's word",
+        "content": "The Pharisaic practice of declaring property corban (dedicated to God) while retaining use of it -- thereby avoiding the duty to support parents.",
+        "note": "Jesus's accusation is structural: the tradition nullifies a divine commandment by placing human tradition above it. The pattern is the authority problem."
+      }
+    ],
+    "debate": [
+      {
+        "title": "The Canaanite Woman: Is Jesus Harsh or Testing?",
+        "positions": [
+          {
+            "name": "Testing her faith",
+            "proponents": "Chrysostom, Calvin, most evangelical scholars",
+            "argument": "The apparent harshness is pedagogical: Jesus draws out her faith by three apparent repulsions. The healing immediately follows her creative persistence."
+          },
+          {
+            "name": "A real limitation of the first-phase mission",
+            "proponents": "Some historical-critical scholars",
+            "argument": "The restriction to Israel is historically real. The exception is genuine and signals the coming expansion."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Tradition vs Command",
+          "score": 10
+        },
+        {
+          "label": "The Canaanite Woman's Faith",
+          "score": 10
+        },
+        {
+          "label": "Gentile Inclusion in the Kingdom",
+          "score": 8
+        },
+        {
+          "label": "Double Feeding: Double Mission",
+          "score": 8
+        }
+      ],
+      "note": "Matthew 15 moves from the inside-out defilement teaching to the outside-in Canaanite woman to the second Gentile-territory feeding. The chapter's trajectory is the gradual opening of the kingdom's provision beyond Israel's borders -- not by abandoning the covenant but by fulfilling it."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Bethany",
+        "Gethsemane",
+        "Golgotha",
+        "temple",
+        "Mount of Olives",
+        "Galilee",
+        "Capernaum",
+        "Nazareth",
+        "Jordan"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "disciples",
+        "Pharisees",
+        "chief priests",
+        "Pilate",
+        "Judas",
+        "Peter",
+        "scribes",
+        "crowd",
+        "elders",
+        "John"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "third day",
+        "hour",
+        "age",
+        "coming",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "kingdom",
+        "covenant",
+        "blood",
+        "resurrection",
+        "Son of Man",
+        "Son of God",
+        "authority",
+        "judgment",
+        "forgive",
+        "fulfil",
+        "law",
+        "gospel"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

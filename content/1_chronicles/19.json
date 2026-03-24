@@ -1,0 +1,282 @@
+{
+  "chapter_id": "1ch19",
+  "testament": "ot",
+  "book_dir": "1_chronicles",
+  "chapter_num": 19,
+  "title": "1 Chronicles 19",
+  "subtitle": "The Ammonite-Aramean War",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–9 — Ammonites Humiliate David’s Envoys",
+      "verse_start": 1,
+      "verse_end": 9,
+      "panels": {
+        "ctx": "Nahash of Ammon dies; David sends a condolence delegation. The Ammonite princes convince Hanun that the envoys are spies. Hanun shaves them, cuts their garments at the buttocks, and sends them away humiliated. When the Ammonites realise they’ve provoked David, they hire Aramean mercenaries. The Chronicler follows 2 Samuel 10 closely — this is the chapter that leads directly to the Bathsheba affair in Samuel, which the Chronicler will skip entirely.",
+        "cross": [
+          {
+            "ref": "2 Sam 10:1–14",
+            "note": "The parallel. Chronicles follows it closely up to the point where Samuel transitions to the Bathsheba narrative."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "19:2",
+              "note": "Hanun’s advisors teach that cynicism destroys relationships. When kindness is interpreted as conspiracy, trust becomes impossible and conflict inevitable."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "19:4",
+              "note": "Shaving half the beard was an extreme dishonour in ANE culture, where the beard symbolised manhood and status. Combined with the garment cutting, this was calculated maximum humiliation."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 10–19 — Joab and Abishai Defeat the Coalition",
+      "verse_start": 10,
+      "verse_end": 19,
+      "panels": {
+        "ctx": "Joab faces enemies on two fronts: Ammonites before the city, Arameans behind in the field. He divides the army, assigns Abishai the Ammonite front, and takes the Aramean front himself. “Be strong, and let us fight bravely for our people and the cities of our God. The LORD will do what is good in his sight.” The Arameans flee; the Ammonites retreat. Hadadezer’s allies are defeated and make peace with David. The Arameans no longer help the Ammonites.",
+        "cross": [
+          {
+            "ref": "2 Sam 10:9–19",
+            "note": "Parallel account with minimal differences. The Chronicler follows Samuel’s military narrative faithfully."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "19:13",
+              "note": "Joab’s “the LORD will do what is good in his sight” is the battle cry of every believer: we do our duty and leave the outcome to God. The result is not our responsibility; faithfulness is."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "19:18",
+              "note": "The number discrepancy (7,000 vs. 700) is likely a scribal error involving the Hebrew number system, where similar letters represent different orders of magnitude."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "When the Ammonites realise they’ve provoked David, they hire Aramean mercenaries…"
+      },
+      {
+        "name": "Joab",
+        "role": "Key biblical figure",
+        "text": "Joab faces enemies on two fronts: Ammonites before the city, Arameans behind in the field…"
+      },
+      {
+        "name": "God",
+        "role": "Key biblical figure",
+        "text": "“Be strong, and let us fight bravely for our people and the cities of our God…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "The LORD will do what is good in his sight…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>They hired thirty-two thousand chariots and charioteers, as well as the king of Maakah with his troops, who came and camped near Medeba, while the Ammonites were mustered from their towns and moved out for battle.</td></tr><tr><td class=\"t-label\">ESV</td><td>They hired 32,000 chariots and the king of Maacah with his army, who came and encamped before Medeba. And the Ammonites were mustered from their cities and came to battle.</td></tr><tr><td class=\"t-label\">NIV</td><td>David thought, \\u201cI will show kindness to Hanun son of Nahash, because his father showed kindness to me.\\u201d So David sent a delegation to express his sympathy to Hanun concerning his father. When David\\u2019s envoys came to Hanun in the land of the Ammonites to express sympathy to him,</td></tr><tr><td class=\"t-label\">ESV</td><td>And David said, \\u201cI will deal kindly with Hanun the son of Nahash, for his father dealt kindly with me.\\u201d So David sent messengers to console him concerning his father. And David\\u2019s servants came to the land of the Ammonites to Hanun to console him.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1–9 — Ammonites Humiliate David’s Envoys",
+          "text": "Nahash of Ammon dies; David sends a condolence delegation. The Ammonite princes convince Hanun that the envoys are spies…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 10–19 — Joab and Abishai Defeat the Coalition",
+          "text": "Joab faces enemies on two fronts: Ammonites before the city, Arameans behind in the field. He divides the army, assigns…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "The Ammonite-Aramean War",
+        "target": "2 Sam 10:1–14",
+        "type": "Echo",
+        "text": "The parallel. Chronicles follows it closely up to the point where Samuel transitions to the Bathsheba narrative.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Ammonite-Aramean War",
+        "target": "2 Sam 10:9–19",
+        "type": "Echo",
+        "text": "Parallel account with minimal differences. The Chronicler follows Samuel’s military narrative faithfully.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 2
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "The Ammonite-Aramean War"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Hebron",
+        "Zion",
+        "Gibeon",
+        "Kiriath Jearim",
+        "Bethlehem",
+        "Tyre",
+        "Rabbah",
+        "Gath",
+        "temple",
+        "tabernacle",
+        "threshing floor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Adam",
+        "Abraham",
+        "Isaac",
+        "Jacob",
+        "Israel",
+        "Judah",
+        "David",
+        "Solomon",
+        "Nathan",
+        "Joab",
+        "Asaph",
+        "Heman",
+        "Jeduthun",
+        "Zadok",
+        "Hiram",
+        "Jabez",
+        "Uzzah",
+        "Obed-Edom",
+        "Ornan",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "time",
+        "generation",
+        "reign"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "genealogy",
+        "temple",
+        "ark",
+        "Levites",
+        "priest",
+        "worship",
+        "music",
+        "covenant",
+        "all Israel",
+        "faithfulness",
+        "seek",
+        "heart",
+        "offering",
+        "divisions"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

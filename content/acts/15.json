@@ -1,0 +1,741 @@
+{
+  "chapter_id": "ac15",
+  "testament": "nt",
+  "book_dir": "acts",
+  "chapter_num": 15,
+  "title": "Acts 15",
+  "subtitle": "The Jerusalem Council",
+  "timeline_link": {
+    "event_id": "jerusalem-council",
+    "text": "See on Timeline — Jerusalem Council"
+  },
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1—21 — The Jerusalem Council: Peter’s Testimony; James’ Ruling",
+      "verse_start": 1,
+      "verse_end": 21,
+      "panels": {
+        "heb": [
+          {
+            "word": "ζήτημα",
+            "transliteration": "zētēma",
+            "gloss": "question/dispute",
+            "paragraph": "the word in v.2 for the controversy is not simply a 'disagreement' but a formal theological question requiring authoritative resolution (also used in 18:15; 23:29; 25:19; 26:3). The Jerusalem Council is not an informal discussion but a formal theological deliberation — the first church council in history."
+          },
+          {
+            "word": "ἐπέστρεψεν",
+            "transliteration": "epestrepsen",
+            "gloss": "intervened / turned",
+            "paragraph": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Council Setting</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Antioch — The Controversy Origin</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 49",
+            "name": "Jerusalem Council",
+            "text": "The most important theological deliberation in early church history: Is circumcision required for salvation? Peter cites Cornelius; James cites Amos. The Council rules: grace through faith alone, with only four abstentions required of Gentile converts.",
+            "current": true
+          },
+          {
+            "date": "c. AD 48–49",
+            "name": "Galatian Controversy Background",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 49–51",
+            "name": "Second Missionary Journey",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission.",
+        "cross": [
+          {
+            "ref": "Galatians 2:1–10",
+            "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
+          },
+          {
+            "ref": "Amos 9:11–12",
+            "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
+          },
+          {
+            "ref": "Acts 10:44–48",
+            "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:10–11",
+              "note": "MacArthur on Peter's \"yoke\" argument and grace statement: v.11 (\"we believe it is through the grace of our Lord Jesus Christ that we are saved, just as they are\") is one of the clearest statements of salvation by grace alone in Acts. Peter has been transformed by the Cornelius experience — the man who told Jesus \"never, Lord\" about Gentile inclusion now argues most forcefully for their equal standing before God."
+            },
+            {
+              "ref": "15:13–18",
+              "note": "MacArthur on James's Amos citation: James uses Scripture as the decisive argument. Peter's argument was from experience (Cornelius); Barnabas and Paul's was from miracles (signs and wonders); James's is from Scripture. MacArthur notes that James places the scriptural argument last and calls it decisive — experience and miracles are confirmatory, but Scripture is authoritative."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:9",
+              "note": "Calvin on 'purified their hearts by faith': this verse is, for Calvin, the clearest statement in Acts of the doctrine of faith. The heart is purified not by circumcision, ritual, or law-observance but by faith — God's work through the instrument of trust in Christ. Calvin uses this as his summary of what the Council established: the Reformation's sola fide is embedded in the apostolic council's deliberations."
+            },
+            {
+              "ref": "15:10",
+              "note": "Calvin on the 'yoke' argument: Peter is making an argument from Israel's own history of covenant failure. If circumcised Israel could not bear the law's full weight, requiring it of Gentiles is a strategy for their condemnation, not their salvation. Calvin notes that the law is not bad (it is holy, Rom 7:12) but no one can bear it as a means of justification — precisely because all fall short."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:16–17",
+              "note": "The NET notes the LXX/MT discrepancy in the Amos quotation. The MT reads \"so that they may possess the remnant of Edom\" — a prophecy about Israelite territorial expansion. The LXX reads \"so that the rest of humanity may seek the Lord\" — a prophecy of universal seeking. James uses the LXX because it directly supports his argument about Gentile inclusion. This is not text manipulation but the legitimate use of an authoritative translation."
+            },
+            {
+              "ref": "15:20",
+              "note": "The NET notes that the four abstentions (food polluted by idols, sexual immorality, strangled animals, blood) probably reflect the Noachide commandments — the minimal ethical requirements that Jewish tradition held applicable to all humanity (cf. Gen 9:1–7). James frames the Gentile requirements in terms of the minimal standards Judaism expected of righteous Gentiles."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:9",
+              "note": "\"He did not discriminate between us and them, for he purified their hearts by faith\" — Robertson notes the aorist \"purified\" (katharisas): a completed divine action. God cleansed the Gentiles' hearts by faith — the same cleansing the Jews had received. Robertson uses this to argue that the Jerusalem Council's decision was not a concession to Pauline pressure but a recognition of what God had already done."
+            },
+            {
+              "ref": "15:10",
+              "note": "\"A yoke that neither we nor our ancestors have been able to bear\" — Robertson on Peter's remarkable admission: the Torah's requirements are not being met by Jews themselves. The demand to impose them on Gentiles is therefore not only unnecessary but hypocritical. Robertson notes the pastoral courage of this admission in a Jerusalem context."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "15:1–2",
+              "note": "Keener provides background on the 'Judaizers' — Jewish Christians who believed Gentile converts must be circumcised and observe Torah to be fully saved. This position was not unreasonable from a traditional Jewish perspective: proselytes to Judaism were required to be circumcised and observe Torah. The Judaizers were simply applying the standard proselyte requirement to Christian Gentiles."
+            },
+            {
+              "ref": "15:16–17",
+              "note": "Keener notes the significance of James's use of the LXX version of Amos 9:11–12. The MT Amos reads \"so that they may possess\" (the remnant of Edom); the LXX reads \"so that the rest of humanity may seek the Lord.\" James uses the LXX version because it makes the Gentile inclusion point most clearly. This is standard Jewish hermeneutical practice — using the textual tradition that best supports the argument."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 22—35 — The Council’s Letter; Judas and Silas Sent",
+      "verse_start": 22,
+      "verse_end": 35,
+      "panels": {
+        "heb": [
+          {
+            "word": "ἔδοξεν γὰρ τῷ πνεύματι τῷ ἁγίῳ καὶ ἡμῖν",
+            "transliteration": "edoxen gar tō pneumati tō hagiō kai hēmin",
+            "gloss": "it seemed good to the Holy Spirit and to us",
+            "paragraph": "the Council's formula in v.28 — one of the most significant phrases in Acts. The Spirit and the human deliberators are coordinated: the Council does not claim to act independently ('the Spirit told us') but jointly ('the Spirit and we'). This is the model for Spirit-directed church decision-making: attentive to heaven, deliberate on earth."
+          },
+          {
+            "word": "παροξυσμός",
+            "transliteration": "paroxysmos",
+            "gloss": "sharp disagreement",
+            "paragraph": "from paroxynō — to sharpen, to provoke. The disagreement between Paul and Barnabas is described with a medical/physical term for a sharp pain or spasm. Luke does not soften the conflict: two Spirit-filled, proven missionaries have an irreconcilable dispute. The honesty is itself instructive — the Bible's heroes are fully human."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cyprus — Barnabas and Mark</div><div class=\"poi-coords\">35.1264° N, 33.4299° E</div><div class=\"poi-text\">Barnabas takes John Mark back to Cyprus — his homeland (4:36). The rift with Paul opens a second front in the mission: Cyprus receives renewed attention under Barnabas and Mark. What appears to be failure (the split) actually multiplies the mission's reach. God works even through conflict.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Syria and Cilicia</div><div class=\"poi-coords\">36.8000° N, 36.1500° E</div><div class=\"poi-text\">Paul takes Silas through Syria and Cilicia (v.41) — the region he had evangelised during the hidden years after his Damascus conversion (Gal 1:21). He is revisiting and strengthening churches he had founded years earlier, before the Antioch-based mission began.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 49",
+            "name": "The Jerusalem Letter Delivered",
+            "text": "The apostolic letter resolves the circumcision controversy: Gentile converts need not be circumcised. Four abstentions are required for community cohesion. The Antioch church reads it and is glad.",
+            "current": true
+          },
+          {
+            "date": "c. AD 49",
+            "name": "Paul and Barnabas Split",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 49–51",
+            "name": "Second Missionary Journey Begins",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "The Paul-Barnabas split (vv.36–41) is one of Acts' most humanly honest passages. Two proven missionaries, full of the Holy Spirit, cannot agree about a third person's fitness for ministry. Luke offers no verdict: Barnabas proved right (Col 4:10 and 2 Tim 4:11 show Mark's eventual full restoration), and Paul proved right (Silas was an excellent choice, and the mission needed an accountable team member). The split doubles the mission's reach: two teams instead of one. God's sovereignty works even through human disagreement.",
+        "cross": [
+          {
+            "ref": "Colossians 4:10",
+            "note": "\"Mark, the cousin of Barnabas... if he comes to you, welcome him\" — Paul's later commendation of Mark shows the relationship was eventually restored."
+          },
+          {
+            "ref": "2 Timothy 4:11",
+            "note": "\"Get Mark and bring him with you, because he is helpful to me in my ministry\" — Paul's final letter shows complete reconciliation. Barnabas was right about Mark; Paul came to agree."
+          },
+          {
+            "ref": "Philippians 1:15–18",
+            "note": "\"Some preach Christ out of envy and rivalry... but what does it matter? The important thing is that in every way, whether from false motives or true, Christ is preached.\" Paul's mature theology of mission: even imperfect motives and divided teams serve the Gospel's advance."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:28",
+              "note": "MacArthur on \"it seemed good to the Holy Spirit and to us\" — this is, for MacArthur, the constitutional principle of all Spirit-directed church governance. The Spirit does not bypass human deliberation; he guides it. The church is neither a democracy (where majority rules regardless of Spirit) nor a theocracy (where claimed divine voices bypass human accountability) but a Spirit-led community of deliberate discernment."
+            },
+            {
+              "ref": "15:39",
+              "note": "MacArthur on the Paul-Barnabas split: MacArthur is careful not to condemn either. Paul's concern for mission accountability was legitimate; Barnabas's pastoral investment in a struggling disciple was honourable. MacArthur uses this to argue that genuine disagreements between Spirit-filled believers are possible, do not mean one is in sin, and can be providentially used to multiply God's work."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:28",
+              "note": "Calvin on 'it seemed good to the Holy Spirit and to us' — this is Calvin's primary NT text for the authority of church councils. Councils derive their authority not from the bishops assembled but from the Spirit who guides them. However, Calvin is careful: the Council's authority is derivative and conditional — it holds only when its decisions are consistent with Scripture. A council that contradicts Scripture is not speaking for the Holy Spirit."
+            },
+            {
+              "ref": "15:39",
+              "note": "Calvin on the Paul-Barnabas dispute: Calvin does not excuse Paul's severity but does defend his judgment. The mission required accountability; Mark had proven unreliable in the critical moment. Calvin uses this to argue for both grace (Barnabas's patient restoration) and discipline (Paul's principled refusal) as legitimate pastoral postures — neither cancels the other; the church needs both."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:29",
+              "note": "The NET notes that the four abstentions (food sacrificed to idols, blood, strangled animals, sexual immorality) correspond to the Noachide commandments — the minimal ethical requirements Jewish tradition held applicable to righteous Gentiles. The Council is not requiring Torah observance but the minimal standards already expected of God-fearers."
+            },
+            {
+              "ref": "15:34",
+              "note": "The NET notes that v.34 (\"But it seemed good to Silas to remain there\") is absent from the best manuscripts and is considered a later scribal addition to explain how Silas was available for Paul's journey (v.40). The NET omits it from the main text with a footnote."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:28",
+              "note": "\"It seemed good to the Holy Spirit and to us\" — Robertson notes the remarkable coordination of divine and human deliberation in a single phrase. The Council is not claiming direct divine dictation but Spirit-guided human discernment. Robertson uses this as the model for church councils in every age: attentive to the Spirit, responsible in deliberation, humble in formulation."
+            },
+            {
+              "ref": "15:39",
+              "note": "Robertson on the \"sharp disagreement\" (paroxysmos): Robertson notes this is the Greek medical term for a sharp crisis or convulsion of an illness. Luke uses it without editorial comment. Robertson observes that later references (Col 4:10; 2 Tim 4:11) confirm that both Barnabas and Paul were ultimately vindicated — Barnabas in his faith in Mark, Paul in his mission discipline."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "15:28",
+              "note": "Keener notes that \"it seemed good to the Holy Spirit and to us\" is the most explicit statement of Spirit-guided corporate discernment in Acts. The Council deliberated (\"after much discussion,\" v.7; \"the whole assembly became silent,\" v.12; \"James spoke up,\" v.13) and then formulated its conclusion as jointly Spirit-human. This is the biblical model for church governance: neither autocratic authority nor mere democratic consensus, but Spirit-attentive deliberation."
+            },
+            {
+              "ref": "15:36–39",
+              "note": "Keener provides context for the Paul-Barnabas dispute. John Mark's departure at Perga (13:13) may have been for legitimate reasons — illness, family, or theological concerns about the Gentile mission's direction. Paul's refusal to take him reflected a mission discipline standard; Barnabas's willingness to give him another chance reflected pastoral patience. Neither was wrong in the abstract; they were incompatible in this specific team."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 36—41 — Paul and Barnabas Part Ways; Silas Chosen",
+      "verse_start": 36,
+      "verse_end": 41,
+      "panels": {
+        "heb": [
+          {
+            "word": "ζήτημα",
+            "transliteration": "zētēma",
+            "gloss": "question/dispute",
+            "paragraph": "the word in v.2 for the controversy is not simply a 'disagreement' but a formal theological question requiring authoritative resolution (also used in 18:15; 23:29; 25:19; 26:3). The Jerusalem Council is not an informal discussion but a formal theological deliberation — the first church council in history."
+          },
+          {
+            "word": "ἐπέστρεψεν",
+            "transliteration": "epestrepsen",
+            "gloss": "intervened / turned",
+            "paragraph": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
+          }
+        ],
+        "places": {
+          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Council Setting</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Antioch — The Controversy Origin</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing.</div></div>"
+        },
+        "tl": [
+          {
+            "date": "c. AD 49",
+            "name": "Jerusalem Council",
+            "text": "The most important theological deliberation in early church history: Is circumcision required for salvation? Peter cites Cornelius; James cites Amos. The Council rules: grace through faith alone, with only four abstentions required of Gentile converts.",
+            "current": true
+          },
+          {
+            "date": "c. AD 48–49",
+            "name": "Galatian Controversy Background",
+            "text": "",
+            "current": false
+          },
+          {
+            "date": "c. AD 49–51",
+            "name": "Second Missionary Journey",
+            "text": "",
+            "current": false
+          }
+        ],
+        "ctx": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission.",
+        "cross": [
+          {
+            "ref": "Galatians 2:1–10",
+            "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
+          },
+          {
+            "ref": "Amos 9:11–12",
+            "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
+          },
+          {
+            "ref": "Acts 10:44–48",
+            "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:10–11",
+              "note": "MacArthur on Peter's \"yoke\" argument and grace statement: v.11 (\"we believe it is through the grace of our Lord Jesus Christ that we are saved, just as they are\") is one of the clearest statements of salvation by grace alone in Acts. Peter has been transformed by the Cornelius experience — the man who told Jesus \"never, Lord\" about Gentile inclusion now argues most forcefully for their equal standing before God."
+            },
+            {
+              "ref": "15:13–18",
+              "note": "MacArthur on James's Amos citation: James uses Scripture as the decisive argument. Peter's argument was from experience (Cornelius); Barnabas and Paul's was from miracles (signs and wonders); James's is from Scripture. MacArthur notes that James places the scriptural argument last and calls it decisive — experience and miracles are confirmatory, but Scripture is authoritative."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:9",
+              "note": "Calvin on 'purified their hearts by faith': this verse is, for Calvin, the clearest statement in Acts of the doctrine of faith. The heart is purified not by circumcision, ritual, or law-observance but by faith — God's work through the instrument of trust in Christ. Calvin uses this as his summary of what the Council established: the Reformation's sola fide is embedded in the apostolic council's deliberations."
+            },
+            {
+              "ref": "15:10",
+              "note": "Calvin on the 'yoke' argument: Peter is making an argument from Israel's own history of covenant failure. If circumcised Israel could not bear the law's full weight, requiring it of Gentiles is a strategy for their condemnation, not their salvation. Calvin notes that the law is not bad (it is holy, Rom 7:12) but no one can bear it as a means of justification — precisely because all fall short."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "15:16–17",
+              "note": "The NET notes the LXX/MT discrepancy in the Amos quotation. The MT reads \"so that they may possess the remnant of Edom\" — a prophecy about Israelite territorial expansion. The LXX reads \"so that the rest of humanity may seek the Lord\" — a prophecy of universal seeking. James uses the LXX because it directly supports his argument about Gentile inclusion. This is not text manipulation but the legitimate use of an authoritative translation."
+            },
+            {
+              "ref": "15:20",
+              "note": "The NET notes that the four abstentions (food polluted by idols, sexual immorality, strangled animals, blood) probably reflect the Noachide commandments — the minimal ethical requirements that Jewish tradition held applicable to all humanity (cf. Gen 9:1–7). James frames the Gentile requirements in terms of the minimal standards Judaism expected of righteous Gentiles."
+            }
+          ]
+        },
+        "robertson": {
+          "source": "A.T. Robertson, Word Pictures in the New Testament — Public Domain",
+          "notes": [
+            {
+              "ref": "15:9",
+              "note": "\"He did not discriminate between us and them, for he purified their hearts by faith\" — Robertson notes the aorist \"purified\" (katharisas): a completed divine action. God cleansed the Gentiles' hearts by faith — the same cleansing the Jews had received. Robertson uses this to argue that the Jerusalem Council's decision was not a concession to Pauline pressure but a recognition of what God had already done."
+            },
+            {
+              "ref": "15:10",
+              "note": "\"A yoke that neither we nor our ancestors have been able to bear\" — Robertson on Peter's remarkable admission: the Torah's requirements are not being met by Jews themselves. The demand to impose them on Gentiles is therefore not only unnecessary but hypocritical. Robertson notes the pastoral courage of this admission in a Jerusalem context."
+            }
+          ]
+        },
+        "keener": {
+          "source": "Craig S. Keener, Acts: An Exegetical Commentary (4 vols., 2012–2015) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "15:1–2",
+              "note": "Keener provides background on the 'Judaizers' — Jewish Christians who believed Gentile converts must be circumcised and observe Torah to be fully saved. This position was not unreasonable from a traditional Jewish perspective: proselytes to Judaism were required to be circumcised and observe Torah. The Judaizers were simply applying the standard proselyte requirement to Christian Gentiles."
+            },
+            {
+              "ref": "15:16–17",
+              "note": "Keener notes the significance of James's use of the LXX version of Amos 9:11–12. The MT Amos reads \"so that they may possess\" (the remnant of Edom); the LXX reads \"so that the rest of humanity may seek the Lord.\" James uses the LXX version because it makes the Gentile inclusion point most clearly. This is standard Jewish hermeneutical practice — using the textual tradition that best supports the argument."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Paul↗ People",
+        "role": "Apostle to the Gentiles; author of thirteen NT letters",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31)."
+      },
+      {
+        "name": "Peter↗ People",
+        "role": "Lead apostle; spokesperson for the Jerusalem church",
+        "text": "Peter (Simon bar Jonah) dominates Acts 1–12 as the church’s primary spokesman and miracle-worker. He preaches at Pentecost (Acts 2), heals at the Beautiful Gate (Acts 3), defends before the Sanhedrin (Acts 4–5), raises Tabitha (Acts 9:36–42), and receives the vision that opens the gospel to Gentiles (Acts 10). His release from Herod’s prison by an angel (Acts 12) closes his narrative in Acts; Paul’s story takes over from ch.13."
+      },
+      {
+        "name": "Barnabas↗ People",
+        "role": "Paul’s first missionary partner; 'Son of Encouragement'",
+        "text": "Barnabas (Joseph of Cyprus) is introduced as a generous land-seller in Acts 4:36–37 and is the one who vouches for the newly converted Paul to the suspicious Jerusalem church (Acts 9:27). He leads the Antioch church (Acts 11:22–24) and takes Paul as his partner for the first missionary journey (Acts 13–14). Their sharp disagreement over Mark (Acts 15:36–40) ends their partnership but doubles the missionary coverage."
+      },
+      {
+        "name": "James↗ People",
+        "role": "Brother of Jesus; leader of the Jerusalem church",
+        "text": "James the brother of Jesus (not the apostle James son of Zebedee) emerges in Acts as the dominant figure of the Jerusalem church. He is not mentioned in Acts 1–9 but appears decisively in Acts 12:17 (Peter reports to him after his prison release), acts as president at the Jerusalem Council (Acts 15:13–21), and receives Paul’s final Jerusalem report (Acts 21:18). Paul calls him a \"pillar\" of the church (Gal 2:9). He authored the letter of James."
+      },
+      {
+        "name": "Silas↗ People",
+        "role": "Prophet and Paul’s companion on the second missionary journey",
+        "text": "Silas (Silvanus) is a leading figure in the Jerusalem church and a prophet (Acts 15:32) chosen by Paul to replace Barnabas after their split. He accompanies Paul through Macedonia, Philippi (imprisoned together, Acts 16:25–34), Thessalonica, Berea, and Corinth. His Roman citizenship alongside Paul’s creates the legal dynamic at Philippi. He is co-author of both Thessalonian letters."
+      },
+      {
+        "name": "Cornelius↗ People",
+        "role": "Roman centurion; first Gentile convert; pivot of Acts 10",
+        "text": "Cornelius is a God-fearing Roman centurion at Caesarea — devout, generous, and prayerful but uncircumcised. His angel-directed encounter with Peter (Acts 10) is the theological turning point of Acts: the Spirit falls on Gentiles before baptism, demonstrating that God shows no partiality. Peter’s report to Jerusalem (Acts 11) establishes the principle that will be formalized at the Jerusalem Council (Acts 15)."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>After much discussion, Peter got up and addressed them: \\</td></tr><tr><td class=\"t-label\">ESV</td><td>And after there had been much debate, Peter stood up and said to them, “Brothers, you know that in the early days God made a choice among you, that by my mouth the Gentiles should hear the word of the gospel and believe.</td></tr><tr><td class=\"t-label\">NIV</td><td>Then some of the believers who belonged to the party of the Pharisees stood up and said, \\</td></tr><tr><td class=\"t-label\">ESV</td><td>But some believers who belonged to the party of the Pharisees rose up and said, “It is necessary to circumcise them and to order them to keep the law of Moses.”</td></tr>",
+    "src": [
+      {
+        "title": "Josephus, Antiquities of the Jews (c.93 AD)",
+        "quote": "Josephus provides extensive first-century background for the political, religious, and social conditions described in Acts — the Herodian family, Pharisees and Sadducees, Roman provincial governance.",
+        "note": "Acts’ historical details consistently align with Josephus’s independent account of the same period, supporting the narrative’s historical credibility."
+      },
+      {
+        "title": "Dead Sea Scrolls (1QS, 1QM)",
+        "quote": "The Qumran community texts illuminate the diversity of Second Temple Judaism from which Christianity emerged — their eschatological expectations, community rules, and temple criticism parallel aspects of the early church.",
+        "note": "The Scrolls demonstrate that the early church’s practices (community meals, shared goods, eschatological expectation) were not unprecedented within Jewish renewal movements."
+      },
+      {
+        "title": "Greco-Roman Travel Literature and Epistolary Conventions",
+        "quote": "Acts’ travel narrative (ch.13–28) conforms to the conventions of ancient Greek travel literature, and Paul’s speeches follow rhetorical models documented in Greco-Roman oratory.",
+        "note": "The Hellenistic literary conventions confirm Acts’ composition for a sophisticated Greco-Roman audience and support its historical reliability as ancient historiography."
+      }
+    ],
+    "rec": [
+      {
+        "who": "John Chrysostom, Homilies on Acts (c.400 AD)",
+        "text": "\"Chrysostom’s 55 homilies on Acts are the most thorough patristic commentary, emphasising the Spirit’s active role and the apostles’ moral example for the church.\""
+      },
+      {
+        "who": "John MacArthur",
+        "text": "\"MacArthur on Peter's \"yoke\" argument and grace statement: v.11 (\"we believe it is through the grace of our Lord Jesus Christ that we are saved, just as they are\") is one of the clearest statements of \""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1—21 — The Jerusalem Council: Peter’s Testimony; James’ Ruling",
+          "text": "Context  The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 22—35 — The Council’s Letter; Judas and Silas Sent",
+          "text": "Context  The Paul-Barnabas split (vv.36–41) is one of Acts' most humanly honest passages. Two proven missionaries, full…",
+          "is_key": false
+        },
+        {
+          "label": "Verses 36—41 — Paul and Barnabas Part Ways; Silas Chosen",
+          "text": "Context  The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The…",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "ζήτημα",
+        "tlit": "zētēma",
+        "gloss": "question/dispute",
+        "note": "the word in v.2 for the controversy is not simply a 'disagreement' but a formal theological question requiring authoritative resolution (also used in 18:15; 23:29; 25:19; 26:3). The Jerusalem Council is not an informal discussion but a formal theological deliberation — the first church council in history."
+      },
+      {
+        "word": "ἐπέστρεψεν",
+        "tlit": "epestrepsen",
+        "gloss": "intervened / turned",
+        "note": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
+      },
+      {
+        "word": "ἔδοξεν γὰρ τῷ πνεύματι τῷ ἁγίῳ καὶ ἡμῖν",
+        "tlit": "edoxen gar tō pneumati tō hagiō kai hēmin",
+        "gloss": "it seemed good to the Holy Spirit and to us",
+        "note": "the Council's formula in v.28 — one of the most significant phrases in Acts. The Spirit and the human deliberators are coordinated: the Council does not claim to act independently ('the Spirit told us') but jointly ('the Spirit and we'). This is the model for Spirit-directed church decision-making: attentive to heaven, deliberate on earth."
+      },
+      {
+        "word": "παροξυσμός",
+        "tlit": "paroxysmos",
+        "gloss": "sharp disagreement",
+        "note": "from paroxynō — to sharpen, to provoke. The disagreement between Paul and Barnabas is described with a medical/physical term for a sharp pain or spasm. Luke does not soften the conflict: two Spirit-filled, proven missionaries have an irreconcilable dispute. The honesty is itself instructive — the Bible's heroes are fully human."
+      },
+      {
+        "word": "ζήτημα",
+        "tlit": "zētēma",
+        "gloss": "question/dispute",
+        "note": "the word in v.2 for the controversy is not simply a 'disagreement' but a formal theological question requiring authoritative resolution (also used in 18:15; 23:29; 25:19; 26:3). The Jerusalem Council is not an informal discussion but a formal theological deliberation — the first church council in history."
+      },
+      {
+        "word": "ἐπέστρεψεν",
+        "tlit": "epestrepsen",
+        "gloss": "intervened / turned",
+        "note": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Galatians 2:1–10",
+        "type": "Connection",
+        "text": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Amos 9:11–12",
+        "type": "Connection",
+        "text": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew read…",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Acts 10:44–48",
+        "type": "Connection",
+        "text": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Colossians 4:10",
+        "type": "Connection",
+        "text": "\"Mark, the cousin of Barnabas... if he comes to you, welcome him\" — Paul's later commendation of Mark shows the relationship was eventually restored.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "2 Timothy 4:11",
+        "type": "Connection",
+        "text": "\"Get Mark and bring him with you, because he is helpful to me in my ministry\" — Paul's final letter shows complete reconciliation. Barnabas was right about Mark; Paul came to agree.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Scripture Walkthrough",
+        "target": "Philippians 1:15–18",
+        "type": "Connection",
+        "text": "\"Some preach Christ out of envy and rivalry... but what does it matter? The important thing is that in every way, whether from false motives or true, Christ is preached.\" Paul's mature theology of mission: even imperfect motives and divided teams ser…",
+        "direction": "backward"
+      }
+    ],
+    "tx": [
+      {
+        "ref": "Acts 15",
+        "title": "Western text (Codex Bezae D) vs Alexandrian text",
+        "content": "Alexandrian(P45, P74, א, B) is the primary scholarly text.Western(Codex Bezae D) is 10–15% longer, with additions that appear to expand and harmonise.",
+        "note": "Acts has the most significant NT textual variation. The Western text of Acts is not simply corrupt but may preserve early oral expansions. Most scholars follow the shorter Alexandrian text as more original."
+      },
+      {
+        "ref": "Acts 15 (general)",
+        "title": "P45 and early papyrus witnesses",
+        "content": "The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.",
+        "note": "The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation."
+      }
+    ],
+    "debate": [
+      {
+        "title": "Authorship and Historicity of Scripture Walkthrough",
+        "positions": [
+          {
+            "name": "Traditional Lukan authorship (Hengel, Keener, classical scholarship)",
+            "proponents": "Attributes Acts to Luke the physician (Col 4:14), a companion of Paul, on the basis of the \"we\" passages, historical accuracy, and early church tradition.",
+            "argument": "Luke’s medical vocabulary (noted by Hobart) and the detailed geographical and political accuracy of Acts support the traditional attribution."
+          },
+          {
+            "name": "Anonymous/secondary authorship (Haenchen, Conzelmann)",
+            "proponents": "Questions Lukan authorship on the basis of discrepancies between Acts’ Paul and the Pauline letters, suggesting a later author using Lukan sources.",
+            "argument": "This view notes that Acts does not always match Paul’s letters precisely, and argues the \"we\" passages may be a literary device rather than eyewitness markers."
+          }
+        ]
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Kingdom",
+          "score": 2
+        },
+        {
+          "label": "Grace",
+          "score": 4
+        },
+        {
+          "label": "Faith",
+          "score": 4
+        },
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Mission",
+          "score": 2
+        },
+        {
+          "label": "Suffering",
+          "score": 2
+        }
+      ],
+      "note": "Scripture Walkthrough"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "Antioch",
+        "Rome",
+        "Ephesus",
+        "Corinth",
+        "Philippi",
+        "Athens",
+        "Caesarea",
+        "Damascus",
+        "Samaria",
+        "Judea",
+        "Galatia",
+        "synagogue",
+        "temple",
+        "Macedonia"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Peter",
+        "Barnabas",
+        "Stephen",
+        "Philip",
+        "James",
+        "Silas",
+        "Timothy",
+        "Apollos",
+        "Herod",
+        "Felix",
+        "Festus",
+        "Agrippa",
+        "disciples",
+        "apostles",
+        "elders",
+        "Ananias",
+        "Cornelius"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "night",
+        "morning",
+        "hour",
+        "years",
+        "year",
+        "suddenly",
+        "at once",
+        "three days",
+        "sabbath",
+        "Pentecost"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Spirit",
+        "repentance",
+        "baptized",
+        "believe",
+        "witness",
+        "gospel",
+        "resurrection",
+        "kingdom",
+        "salvation",
+        "Holy Spirit",
+        "boldly",
+        "signs",
+        "wonders",
+        "name",
+        "Word",
+        "grace",
+        "faith",
+        "Gentiles"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

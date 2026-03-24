@@ -1,0 +1,598 @@
+{
+  "chapter_id": "ezr2",
+  "testament": "ot",
+  "book_dir": "ezra",
+  "chapter_num": 2,
+  "title": "Ezra 2",
+  "subtitle": "The Register of the Returnees",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–35 — Families by Ancestry",
+      "verse_start": 1,
+      "verse_end": 35,
+      "panels": {
+        "heb": [
+          {
+            "word": "גּוֹלָה",
+            "transliteration": "gôlâ",
+            "gloss": "exile / exiles / captivity",
+            "paragraph": "The returnees are called \"sons of the province\" (bənê hamməḏînâ) — a Persian administrative term. They are also the \"gôlâ\" — the exiled community. The word carries both geographic displacement and theological hope: exile is temporary, not permanent."
+          },
+          {
+            "word": "עָלָה",
+            "transliteration": "ālâ",
+            "gloss": "to go up / ascend",
+            "paragraph": "The return is described as \"going up\" (ālâ) to Jerusalem — the same verb used for pilgrimage. Geography and theology merge: Jerusalem is always \"up\" regardless of which direction you approach from."
+          }
+        ],
+        "hist": "The list parallels Nehemiah 7:6–73 with minor variations — both draw from an official register. Such lists served dual purpose in the Persian period: establishing legal claims to ancestral property, and proving membership in the covenant community. Family identity was the basis for land allocation.",
+        "ctx": "The genealogy is not filler — it is the theological backbone of the chapter. These names prove that God kept his promise: a remnant returned. Every family listed is evidence that the exile did not destroy the covenant community. The structure moves from laypeople (vv.2–35) to religious personnel (vv.36–58) to those with uncertain identity (vv.59–63).",
+        "cross": [
+          {
+            "ref": "Neh 7:6–73",
+            "note": "The parallel register — nearly identical, confirming both draw from an official source."
+          },
+          {
+            "ref": "Isa 10:20–22",
+            "note": "\"A remnant will return\" — the very thing this list documents."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:1–2",
+              "note": "The list names eleven (or twelve) leaders, headed by Zerubbabel (Davidic heir) and Jeshua (high priest). The dual leadership — royal and priestly — mirrors the ideal governance structure of pre-exilic Israel."
+            },
+            {
+              "ref": "2:2",
+              "note": "Zerubbabel means \"seed of Babylon\" — born in exile, named in exile, but returning to rebuild. His Babylonian name cannot erase his Davidic identity (1 Chr 3:19)."
+            },
+            {
+              "ref": "2:3–35",
+              "note": "Families are listed by ancestor. The preservation of genealogical records through 70 years of exile is remarkable — it shows the exilic community maintained its identity with intentional discipline."
+            },
+            {
+              "ref": "2:21–35",
+              "note": "Some families are listed by town of origin rather than ancestor (Bethlehem, Anathoth, etc.). These geographic identifiers show that the returnees intended to reclaim specific ancestral territories."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:1–2",
+              "note": "Calvin: \"God here shows that he is faithful to his promises. He had said a remnant would return, and here they are — named, numbered, accounted for. Not one is missing from God's register.\""
+            },
+            {
+              "ref": "2:3–35",
+              "note": "The preservation of genealogies in exile proves that the Jews maintained their identity under extreme pressure — a sign of God's preserving grace."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:2",
+              "note": "The NET notes that Zerubbabel is a Babylonian name (Zēr-Bābili, \"offspring of Babylon\") used alongside his Hebrew-Davidic lineage. Jeshua (= Joshua) is the high priest who appears prominently in Haggai and Zechariah."
+            },
+            {
+              "ref": "2:1–35",
+              "note": "The NET observes that the list functions as a legal document establishing the returnees' right to their ancestral property and their membership in the restored community."
+            }
+          ]
+        },
+        "williamson": {
+          "source": "williamson",
+          "notes": [
+            {
+              "ref": "2:1",
+              "note": "Williamson notes \"the province\" (məḏînâ) is the Persian administrative term for Judah as a sub-province of the satrapy \"Beyond the River.\" The political reality: Judah is a tiny district in a vast empire."
+            },
+            {
+              "ref": "2:2",
+              "note": "The eleven/twelve leaders debate: some manuscripts list twelve names (matching the tribes). Williamson considers the shorter list original, with scribal harmonisation producing the longer form."
+            }
+          ]
+        },
+        "kidner": {
+          "source": "kidner",
+          "notes": [
+            {
+              "ref": "2:1–2",
+              "note": "Kidner: \"The list is the roll-call of faith. These are the ones who left the security of Babylon for the ruins of Jerusalem. Not all Jews returned — most stayed. These chose the harder road.\""
+            },
+            {
+              "ref": "2:3–35",
+              "note": "The sheer length of the list communicates something no summary could: this was a real community of real families, each one a story of faith and risk."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 36–63 — Priests, Levites, and Those Who Could Not Prove Ancestry",
+      "verse_start": 36,
+      "verse_end": 63,
+      "panels": {
+        "heb": [
+          {
+            "word": "יַחַשׂ",
+            "transliteration": "yaḥaś",
+            "gloss": "genealogy / to reckon by genealogy",
+            "paragraph": "Those who \"searched for their genealogical records but could not find them\" (v.62) were \"excluded from the priesthood as unclean.\" The verb hityaḥēś means to prove one's lineage by documentation. Without proof, no priestly service — identity in Israel is not self-declared but verified."
+          }
+        ],
+        "ctx": "The exclusion of those without genealogical proof (vv.59–63) seems harsh but protects the integrity of the priesthood. The decision is deferred to a future priest with Urim and Thummim (v.63) — acknowledging human limitation and awaiting divine verdict. Mercy and rigour coexist.",
+        "cross": [
+          {
+            "ref": "Num 3:10",
+            "note": "Only verified Aaronides may serve as priests — the principle underlying the genealogical requirement."
+          },
+          {
+            "ref": "Neh 7:64–65",
+            "note": "The parallel account with identical exclusion language."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:36–39",
+              "note": "Four priestly families total 4,289 — nearly 10% of the entire return. The priestly contingent is disproportionately large, reflecting the return's primary purpose: to rebuild the temple and restore worship."
+            },
+            {
+              "ref": "2:40–42",
+              "note": "Only 74 Levites returned (v.40) compared to 4,289 priests. The Levitical shortage will become a recurring problem (cf. 8:15). Levites had less incentive to return: they had no land inheritance and temple service was demanding."
+            },
+            {
+              "ref": "2:59–63",
+              "note": "Those who could not prove their ancestry were excluded from priestly service. The Urim and Thummim reference (v.63) shows the community awaiting divine guidance rather than making final human judgments on ambiguous cases."
+            },
+            {
+              "ref": "2:62–63",
+              "note": "This is not ethnic exclusion but vocational verification. The priesthood required documented lineage because priests handled the holy things. The principle: access to sacred service requires verified calling."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:62–63",
+              "note": "Calvin: \"The purity of the priesthood must be maintained even at the cost of excluding some. God does not ask us to be careless about who serves at his altar. The Urim and Thummim reference teaches patience: what we cannot resolve, we entrust to God.\""
+            },
+            {
+              "ref": "2:59–63",
+              "note": "Calvin sees here a principle for church governance: credentials matter, and when credentials are uncertain, the decision must wait on clearer light from God rather than human presumption."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:59",
+              "note": "The NET notes that Tel Melah, Tel Harsha, Kerub, Addon, and Immer are Babylonian localities — the towns where these families had settled during exile. Their Babylonian addresses could not substitute for Judahite genealogies."
+            },
+            {
+              "ref": "2:63",
+              "note": "The Urim and Thummim had not been used since the early monarchy. The reference implies the community expected a future restoration of prophetic or priestly oracular guidance."
+            }
+          ]
+        },
+        "williamson": {
+          "source": "williamson",
+          "notes": [
+            {
+              "ref": "2:43–58",
+              "note": "The temple servants (nətînîm, \"given ones\") may descend from foreigners dedicated to temple service — similar to the Gibeonites assigned as \"woodcutters and water carriers\" in Josh 9:27. Their inclusion shows the community was broader than ethnic Israel."
+            },
+            {
+              "ref": "2:63",
+              "note": "The tirshatha (Persian governor, likely Sheshbazzar or Zerubbabel) orders the priestly exclusion. The title is Persian (tiršātā, \"his excellency\") — Persian authority enforcing Jewish law."
+            }
+          ]
+        },
+        "kidner": {
+          "source": "kidner",
+          "notes": [
+            {
+              "ref": "2:40–42",
+              "note": "Kidner notes the alarming Levitical shortfall: \"Only 74 Levites for a community of nearly 50,000. The temple would need far more. This deficit foreshadows the recruitment crisis in 8:15.\""
+            },
+            {
+              "ref": "2:62–63",
+              "note": "The decision to wait for the Urim and Thummim is an act of humility. Kidner: \"They refused to resolve ambiguity by human authority alone. Better to wait for God than to guess wrong about the priesthood.\""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 64–70 — Totals and Freewill Offerings",
+      "verse_start": 64,
+      "verse_end": 70,
+      "panels": {
+        "heb": [
+          {
+            "word": "נְדָבָה",
+            "transliteration": "nəḏāḇâ",
+            "gloss": "freewill offering / voluntary gift",
+            "paragraph": "The leaders gave \"according to their ability\" (kəḵōḥām) — freewill offerings for the house of God. The same principle governs NT giving (2 Cor 8:12). Generosity scaled to capacity, not uniformity."
+          }
+        ],
+        "ctx": "The total of 42,360 (v.64) exceeds the sum of individual groups (29,818). The difference likely includes women, children, and/or families counted in the aggregate but not individually listed. The 7,337 servants and 200 singers indicate the community included non-Israelite dependents — the return was not exclusively ethnic.",
+        "cross": [
+          {
+            "ref": "Exod 35:21–29",
+            "note": "The tabernacle freewill offering — the first-exodus parallel to this second-exodus generosity."
+          },
+          {
+            "ref": "2 Cor 8:3‒5",
+            "note": "Giving \"according to their ability, and even beyond\" — Paul echoes the Ezra principle."
+          }
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:64",
+              "note": "The congregation numbered 42,360 — a substantial return, though a fraction of pre-exilic Judah. Most Jews chose to remain in Babylon. The return was voluntary; faith was the filter."
+            },
+            {
+              "ref": "2:65",
+              "note": "7,337 servants and 200 male and female singers. The singers are not Levitical musicians but secular entertainers — even the cultural life of the community survived exile."
+            },
+            {
+              "ref": "2:68–69",
+              "note": "The freewill offerings total 61,000 gold drachmas, 5,000 silver minas, and 100 priestly garments. The generosity echoes the tabernacle offerings of Exodus 35–36 — the second exodus pattern continues."
+            },
+            {
+              "ref": "2:70",
+              "note": "\"The priests, Levites, musicians, gatekeepers, and temple servants settled in their own towns.\" Restoration begins not in Jerusalem but in the ancestral villages — returning to the land means returning to specific places."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:68–69",
+              "note": "Calvin: \"They gave freely, each according to his means. This is the rule of all true giving: not equality of amount but equality of willingness. The widow's mite and the rich man's talent are measured by the same scale — the heart.\""
+            },
+            {
+              "ref": "2:70",
+              "note": "Settlement in ancestral towns shows God's faithfulness to the land promises. Calvin: \"He brought them not merely to Jerusalem but to the very villages from which their fathers had been torn.\""
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "2:69",
+              "note": "The NET notes that \"drachmas\" (darkəmônîm) are Persian gold darics, not Greek drachmas. The coin was minted under Darius I but the term may have been applied retroactively to earlier gold currency."
+            },
+            {
+              "ref": "2:70",
+              "note": "The NET observes the settlement formula echoes Josh 21:43 (\"the LORD gave Israel all the land\") — the return to ancestral towns completes a Joshua-like redistribution."
+            }
+          ]
+        },
+        "williamson": {
+          "source": "williamson",
+          "notes": [
+            {
+              "ref": "2:64",
+              "note": "Williamson discusses the numerical discrepancy at length: the sum of individual groups yields 29,818, not 42,360. He suggests the higher figure includes groups not itemised (women, children, uncategorised families)."
+            },
+            {
+              "ref": "2:69",
+              "note": "The gold drachma (darkəmôn) is a Persian coin — one of the earliest references to coined money in the Bible. The monetary system reflects Persian-period economics."
+            }
+          ]
+        },
+        "kidner": {
+          "source": "kidner",
+          "notes": [
+            {
+              "ref": "2:64–65",
+              "note": "Kidner: \"42,360 is a formidable number for a voluntary migration. These were not refugees but pilgrims — choosing ruins over comfort, promise over security.\""
+            },
+            {
+              "ref": "2:68–69",
+              "note": "The generosity is striking given that these are returnees from exile, not wealthy landowners. They give from what they have, not from surplus."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Zerubbabel",
+        "role": "Davidic heir; leader of the return",
+        "text": "Grandson of King Jehoiachin, born in Babylon. His name (\"seed of Babylon\") marks his exile origin; his lineage (1 Chr 3:19) marks his destiny. Leads the return alongside Jeshua the high priest. Haggai and Zechariah call him God’s \"signet ring\" (Hag 2:23)."
+      },
+      {
+        "name": "Jeshua",
+        "role": "High priest; co-leader of the return",
+        "text": "Grandson of the last pre-exilic high priest Seraiah (executed by Nebuchadnezzar, 2 Kgs 25:18–21). The priestly line survived exile. Jeshua (= Joshua) will feature prominently in Zechariah’s visions (Zech 3:1–9)."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Zakkai 760</td></tr><tr><td class=\"t-label\">ESV</td><td>The sons of Zaccai, 760.</td></tr><tr><td class=\"t-label\">NIV</td><td>Zattu 945</td></tr><tr><td class=\"t-label\">ESV</td><td>The sons of Zattu, 945.</td></tr>",
+    "rec": [
+      {
+        "who": "John MacArthur",
+        "text": "\"The list names eleven (or twelve) leaders, headed by Zerubbabel (Davidic heir) and Jeshua (high priest). The dual leadership — royal and priestly — mirrors the ideal governance structure of pre-exilic…\""
+      }
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "The Leaders — 2:1–2",
+          "text": "Dual leadership: Davidic governor + Aaronic priest. The structure God always intended.",
+          "is_key": false
+        },
+        {
+          "label": "The People — 2:3–58",
+          "text": "Laypeople, priests, Levites, servants — every tier of covenant society represented.",
+          "is_key": false
+        },
+        {
+          "label": "The Excluded — 2:59–63",
+          "text": "Those without proof of identity — the painful cost of lost records.",
+          "is_key": false
+        },
+        {
+          "label": "The Generous — 2:64–70",
+          "text": "Freewill offerings fund the restoration — echoing Exodus 35.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "hebtext": [
+      {
+        "word": "גּוֹלָה",
+        "tlit": "gôlâ",
+        "gloss": "exile / exiles / captivity",
+        "note": "The returnees are called \"sons of the province\" (bənê hamməḏînâ) — a Persian administrative term. They are also the \"gôlâ\" — the exiled community. The word carries both geographic displacement and theological hope: exile is temporary, not permanent."
+      },
+      {
+        "word": "עָלָה",
+        "tlit": "ālâ",
+        "gloss": "to go up / ascend",
+        "note": "The return is described as \"going up\" (ālâ) to Jerusalem — the same verb used for pilgrimage. Geography and theology merge: Jerusalem is always \"up\" regardless of which direction you approach from."
+      },
+      {
+        "word": "יַחַשׂ",
+        "tlit": "yaḥaś",
+        "gloss": "genealogy / to reckon by genealogy",
+        "note": "Those who \"searched for their genealogical records but could not find them\" (v.62) were \"excluded from the priesthood as unclean.\" The verb hityaḥēś means to prove one's lineage by documentation. Without proof, no priestly service — identity in Israel is not self-declared but verified."
+      },
+      {
+        "word": "נְדָבָה",
+        "tlit": "nəḏāḇâ",
+        "gloss": "freewill offering / voluntary gift",
+        "note": "The leaders gave \"according to their ability\" (kəḵōḥām) — freewill offerings for the house of God. The same principle governs NT giving (2 Cor 8:12). Generosity scaled to capacity, not uniformity."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "Neh 7:6–73",
+        "type": "Echo",
+        "text": "The parallel register — nearly identical, confirming both draw from an official source.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "Isa 10:20–22",
+        "type": "Connection",
+        "text": "\"A remnant will return\" — the very thing this list documents.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "Num 3:10",
+        "type": "Connection",
+        "text": "Only verified Aaronides may serve as priests — the principle underlying the genealogical requirement.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "Neh 7:64–65",
+        "type": "Echo",
+        "text": "The parallel account with identical exclusion language.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "Exod 35:21–29",
+        "type": "Echo",
+        "text": "The tabernacle freewill offering — the first-exodus parallel to this second-exodus generosity.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "The Register of the Returnees",
+        "target": "2 Cor 8:3‒5",
+        "type": "Echo",
+        "text": "Giving \"according to their ability, and even beyond\" — Paul echoes the Ezra principle.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Judgment",
+          "score": 4
+        },
+        {
+          "label": "Mercy",
+          "score": 10
+        },
+        {
+          "label": "Faith",
+          "score": 10
+        },
+        {
+          "label": "Sovereignty",
+          "score": 10
+        },
+        {
+          "label": "Worship",
+          "score": 10
+        },
+        {
+          "label": "Holiness",
+          "score": 10
+        },
+        {
+          "label": "Prophecy",
+          "score": 8
+        },
+        {
+          "label": "Justice",
+          "score": 10
+        },
+        {
+          "label": "Mission",
+          "score": 6
+        }
+      ],
+      "note": "The register is a covenant document — proof that God preserved a remnant. Faith scores high: these people chose to leave Babylon for ruins."
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Babylon",
+        "Jerusalem",
+        "Persia",
+        "Judah",
+        "Israel",
+        "Samaria",
+        "Ecbatana",
+        "Susa",
+        "Egypt",
+        "Jordan",
+        "Ahava",
+        "Casiphia",
+        "Zion"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Cyrus",
+        "Sheshbazzar",
+        "Zerubbabel",
+        "Jeshua",
+        "Ezra",
+        "Artaxerxes",
+        "Darius",
+        "Haggai",
+        "Zechariah",
+        "Tattenai",
+        "Nehemiah",
+        "Aaron",
+        "David",
+        "Moses",
+        "Solomon"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "month",
+        "year",
+        "years",
+        "first year",
+        "seventh month",
+        "second year",
+        "first day"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "LORD",
+        "God",
+        "temple",
+        "law",
+        "decree",
+        "covenant",
+        "house",
+        "altar",
+        "offering",
+        "sacrifice",
+        "worship",
+        "exile",
+        "return",
+        "vessels",
+        "foundation",
+        "Passover",
+        "Torah"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}

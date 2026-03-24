@@ -1,0 +1,272 @@
+{
+  "chapter_id": "2ch8",
+  "testament": "ot",
+  "book_dir": "2_chronicles",
+  "chapter_num": 8,
+  "title": "2 Chronicles 8",
+  "subtitle": "Solomon’s Building Projects and Administration",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1‐10 — Cities, Fortresses, and Foreign Labour",
+      "verse_start": 1,
+      "verse_end": 10,
+      "panels": {
+        "ctx": "After twenty years of building (temple + palace), Solomon rebuilds cities, fortifies strategic locations, and uses the surviving non-Israelite populations as forced labour. “But Solomon did not make slaves of the Israelites” — they served as soldiers, officers, and commanders. The Chronicler presents an idealised administration: foreigners work, Israelites lead.",
+        "cross": [
+          {
+            "ref": "1 Kgs 9:10‐23",
+            "note": "The parallel. Kings includes the Cabul incident (Solomon giving Hiram twenty cities) — the Chronicler reverses it: Hiram gives cities to Solomon."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "8:6",
+              "note": "Solomon’s building projects teach that worship and governance are inseparable. The king who builds the temple also builds the infrastructure that sustains the nation."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "8:10",
+              "note": "The 250 chief officers differs from 1 Kgs 9:23’s 550. The discrepancy may reflect different counting of overlapping administrative categories."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 11‐18 — Worship Order; Maritime Trade",
+      "verse_start": 11,
+      "verse_end": 18,
+      "panels": {
+        "ctx": "Solomon moves Pharaoh’s daughter from the City of David: “No woman of mine shall live in the palace of David king of Israel, because the places the ark of the LORD has entered are holy.” The Chronicler reframes a political marriage as a holiness issue. Solomon then establishes the temple’s liturgical calendar: daily, weekly, monthly, and festival offerings “as Moses had ordered.” Maritime trade with Ophir produces 450 talents of gold.",
+        "cross": [
+          {
+            "ref": "1 Kgs 9:24‐28",
+            "note": "The parallel. Kings does not explain why Pharaoh’s daughter was moved; the Chronicler adds the holiness rationale."
+          }
+        ],
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "8:11",
+              "note": "Solomon’s concern for the holiness of David’s palace teaches that sacred spaces require careful boundary management. What is holy must be kept from contamination."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "8:13",
+              "note": "The liturgical calendar (daily, Sabbath, new moon, three festivals) follows the Pentateuchal prescriptions (Num 28–29). Solomon’s worship is Torah-compliant."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "ppl": [
+      {
+        "name": "Solomon",
+        "role": "Key biblical figure",
+        "text": "After twenty years of building (temple + palace), Solomon rebuilds cities, fortifies strategic locations, and uses the surviving non-Israelite populations as forced labour…"
+      },
+      {
+        "name": "LORD",
+        "role": "Key biblical figure",
+        "text": "Solomon moves Pharaoh’s daughter from the City of David: “No woman of mine shall live in the palace of David king of Israel, because the places the ark of the LORD has entered are holy…"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>as well as Baalath and all his store cities, and all the cities for his chariots and for his horses\\u2014whatever he desired to build in Jerusalem, in Lebanon and throughout all the territory he ruled.</td></tr><tr><td class=\"t-label\">ESV</td><td>and Baalath, and all the store cities that Solomon had and all the cities for his chariots and the cities for his horsemen, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion.</td></tr><tr><td class=\"t-label\">NIV</td><td>But Solomon did not make slaves of the Israelites for his work; they were his fighting men, commanders of his captains, and commanders of his chariots and charioteers.</td></tr><tr><td class=\"t-label\">ESV</td><td>But of the people of Israel Solomon made no slaves for his work; they were soldiers, and his officers, the commanders of his chariots, and his horsemen.</td></tr>",
+    "lit": {
+      "rows": [
+        {
+          "label": "Verses 1‐10 — Cities, Fortresses, and Foreign Labour —",
+          "text": "",
+          "is_key": false
+        },
+        {
+          "label": "Verses 11‐18 — Worship Order; Maritime Trade —",
+          "text": "",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    },
+    "thread": [
+      {
+        "anchor": "Solomon’s Building Projects and Administration",
+        "target": "1 Kgs 9:10‐23",
+        "type": "Echo",
+        "text": "The parallel. Kings includes the Cabul incident (Solomon giving Hiram twenty cities) — the Chronicler reverses it: Hiram gives cities to Solomon.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "Solomon’s Building Projects and Administration",
+        "target": "1 Kgs 9:24‐28",
+        "type": "Echo",
+        "text": "The parallel. Kings does not explain why Pharaoh’s daughter was moved; the Chronicler adds the holiness rationale.",
+        "direction": "backward"
+      }
+    ],
+    "themes": {
+      "scores": [
+        {
+          "label": "Holiness",
+          "score": 4
+        },
+        {
+          "label": "Covenant",
+          "score": 2
+        },
+        {
+          "label": "Atonement",
+          "score": 2
+        },
+        {
+          "label": "Judgment",
+          "score": 2
+        },
+        {
+          "label": "Redemption",
+          "score": 2
+        },
+        {
+          "label": "Worship",
+          "score": 2
+        }
+      ],
+      "note": "Solomon’s Building Projects and Administration"
+    }
+  },
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Samaria",
+        "Egypt",
+        "Assyria",
+        "Babylon",
+        "Moriah",
+        "Gibeon",
+        "Megiddo",
+        "Lachish"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Solomon",
+        "Rehoboam",
+        "Abijah",
+        "Asa",
+        "Jehoshaphat",
+        "Joram",
+        "Ahaziah",
+        "Joash",
+        "Amaziah",
+        "Uzziah",
+        "Jotham",
+        "Ahaz",
+        "Hezekiah",
+        "Manasseh",
+        "Josiah",
+        "Zedekiah",
+        "Athaliah",
+        "Jehoiada",
+        "Huldah",
+        "Shishak",
+        "Sennacherib",
+        "Nebuchadnezzar",
+        "God",
+        "LORD"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "month",
+        "reign",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "seek",
+        "forsake",
+        "temple",
+        "altar",
+        "priest",
+        "Levite",
+        "worship",
+        "faithfulness",
+        "unfaithfulness",
+        "prayer",
+        "repentance",
+        "reform",
+        "covenant",
+        "high places"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
+}
