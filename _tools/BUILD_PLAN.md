@@ -149,7 +149,8 @@
 7. Run audit: `python3 _tools/audit.py` (22 sections, 0 failures)
 8. Run tests: `python3 _tools/tests/test_regressions.py` (25+ tests)
 9. Delete generator: `rm /tmp/gen_{book}*.py`
-10. Commit and push: `git add -A && git commit -m "..." && git push origin master`
+10. Run audit flags: `python3 _tools/audit_flags.py {book}` (incremental scan for this book)
+11. Commit and push: `git add -A && git commit -m "..." && git push origin master`
 
 ### Generator syntax gotcha
 Cross-reference tuples that end with a description followed by `)]` often have a missing closing quote. Before running any generator, pre-check syntax:
@@ -213,6 +214,56 @@ Add key events. Two arrays:
 - **Historical context**: At least 1 per chapter
 - **VHL button arrays**: Must resolve in at least one btn-row per group. `context` is always safe fallback.
 - **tog()**: Must query `.anno-panel.open,.themes-panel.open` — both selectors required.
+
+---
+
+## Audit Flag System
+
+All generated content is flagged for later accuracy verification. The scanner
+(`_tools/audit_flags.py`) produces `content/meta/audit-flags.json` with
+machine-parseable flags for every verifiable claim.
+
+### Categories
+| Category | What it catches |
+|----------|----------------|
+| `date` | Chronological claims (regnal years, siege dates, oracle dates) |
+| `hebrew` | Transliterations, vowel pointing, glosses, etymologies |
+| `greek` | Same for NT content |
+| `scholar_position` | Any claim attributed to a specific scholar's published view |
+| `historical` | Archaeological, political, or cultural claims |
+| `family` | Genealogical relationships, identifications |
+| `cross_ref` | Whether cited passages actually support the stated claim |
+
+### Confidence scores (1–5, 0 = zero confidence)
+| Score | Meaning | Example |
+|-------|---------|---------|
+| 5 | Near certain | 586 BC fall of Jerusalem |
+| 4 | High confidence | Standard scholarly consensus |
+| 3 | Moderate | Debated dating, plausible but contested |
+| 2 | Low | Minority scholarly position |
+| 1 | Very low | Speculative reconstruction |
+| 0 | No confidence | Generation error (should never appear) |
+
+### Usage
+```bash
+# Full retroactive scan (all books + metadata)
+python3 _tools/audit_flags.py
+
+# Single book (incremental after new batch)
+python3 _tools/audit_flags.py ezekiel
+
+# Chapter range
+python3 _tools/audit_flags.py ezekiel 29 35
+```
+
+### Important notes
+- **Scholar notes are AI-generated**, not direct quotations. They are written
+  in each scholar's interpretive tradition but are not sourced from published
+  works. All scholar notes receive a baseline confidence of 3.
+- The scanner **preserves status** on re-run: if a flag was previously marked
+  `verified` or `corrected`, it keeps that status on the next scan.
+- Run the scanner on each new batch during the build process (Phase 3, step 10).
+- A full scan across all 966+ chapters takes a few seconds and produces ~31K flags.
 
 ---
 
