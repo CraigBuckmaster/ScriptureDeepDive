@@ -45,7 +45,7 @@ export function PanelButton({ panelType, isActive, onPress }: Props) {
         fontSize: 10,
         letterSpacing: 0.3,
       }}>
-        {label} ▾
+        {label}
       </Text>
     </TouchableOpacity>
   );

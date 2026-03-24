@@ -1,7 +1,7 @@
 /**
  * ScholarlyBlock — Container for chapter-level scholarly panels.
  *
- * Divider with "SCHOLARLY BLOCK" label, ButtonRow, PanelContainer.
+ * Divider with "CHAPTER ANALYSIS" label, ButtonRow, PanelContainer.
  */
 
 import React from 'react';
@@ -43,7 +43,7 @@ export function ScholarlyBlock({
           color: base.textMuted, fontFamily: 'Cinzel_400Regular',
           fontSize: 9, letterSpacing: 1.2, marginHorizontal: spacing.sm,
         }}>
-          SCHOLARLY BLOCK
+          CHAPTER ANALYSIS
         </Text>
         <View style={{ flex: 1, height: 1, backgroundColor: base.border }} />
       </View>

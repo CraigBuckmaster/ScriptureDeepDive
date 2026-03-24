@@ -6,6 +6,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { Plus, Minus } from 'lucide-react-native';
 import { base, spacing } from '../theme';
 
 // Enable LayoutAnimation on Android
@@ -54,9 +55,10 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
         }}>
           {title}
         </Text>
-        <Text style={{ color: base.textMuted, fontSize: 12 }}>
-          {collapsed ? '▸' : '▾'}
-        </Text>
+        {collapsed
+          ? <Plus size={14} color={base.textMuted} />
+          : <Minus size={14} color={base.textMuted} />
+        }
       </TouchableOpacity>
       {!collapsed && (
         <View style={{ paddingHorizontal: spacing.md, paddingBottom: spacing.md }}>

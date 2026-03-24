@@ -2,7 +2,7 @@
  * ChapterScreen — The main reading experience (90% of user time).
  *
  * Layout: ChapterNavBar (sticky top) → ScrollView (ChapterHeader →
- * sections.map(SectionBlock) → ScholarlyBlock) → BottomBar (sticky bottom).
+ * sections.map(SectionBlock) → ScholarlyBlock). QnavOverlay via modal.
  *
  * Data: useChapterData loads everything. readerStore manages panel state.
  */
@@ -24,7 +24,7 @@ import { SectionBlock } from '../components/SectionBlock';
 import { ButtonRow } from '../components/ButtonRow';
 import { PanelContainer } from '../components/PanelContainer';
 import { ScholarlyBlock } from '../components/ScholarlyBlock';
-import { BottomBar } from '../components/BottomBar';
+import { QnavOverlay } from '../components/QnavOverlay';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
@@ -38,6 +38,7 @@ export default function ChapterScreen() {
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
+  const qnavOpen = useReaderStore((s) => s.qnavOpen);
   const toggleQnav = useReaderStore((s) => s.toggleQnav);
   const toggleNotes = useReaderStore((s) => s.toggleNotesOverlay);
 
@@ -211,11 +212,18 @@ export default function ChapterScreen() {
         />
       </ScrollView>
 
-      <BottomBar
-        hasPrev={hasPrev}
-        hasNext={hasNext}
-        onPrev={goPrev}
-        onNext={goNext}
+      <QnavOverlay
+        visible={qnavOpen}
+        currentBookId={bookId}
+        currentChapter={chapterNum}
+        onClose={toggleQnav}
+        onSelectChapter={(bId, ch) => {
+          if (bId === bookId) {
+            navigation.setParams({ chapterNum: ch });
+          } else {
+            navigation.push('Chapter', { bookId: bId, chapterNum: ch });
+          }
+        }}
       />
     </View>
   );
