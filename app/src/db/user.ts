@@ -120,3 +120,148 @@ export async function setPreference(key: string, value: string): Promise<void> {
     [key, value, value]
   );
 }
+
+// ── Highlights ──────────────────────────────────────────────────────
+
+export interface VerseHighlight {
+  id: number;
+  verse_ref: string;
+  color: string;
+  created_at: string;
+}
+
+export async function setHighlight(verseRef: string, color: string): Promise<void> {
+  await getDb().runAsync(
+    `INSERT INTO verse_highlights (verse_ref, color) VALUES (?, ?)
+     ON CONFLICT(verse_ref) DO UPDATE SET color = ?, created_at = datetime('now')`,
+    [verseRef, color, color]
+  );
+}
+
+export async function removeHighlight(verseRef: string): Promise<void> {
+  await getDb().runAsync("DELETE FROM verse_highlights WHERE verse_ref = ?", [verseRef]);
+}
+
+export async function getHighlightsForChapter(bookId: string, ch: number): Promise<VerseHighlight[]> {
+  const prefix = `${bookId} ${ch}:`;
+  return getDb().getAllAsync<VerseHighlight>(
+    "SELECT * FROM verse_highlights WHERE verse_ref LIKE ?",
+    [`${prefix}%`]
+  );
+}
+
+// ── Reading Plans ───────────────────────────────────────────────────
+
+export interface ReadingPlan {
+  id: string;
+  name: string;
+  description: string;
+  total_days: number;
+  chapters_json: string;
+}
+
+export interface PlanProgress {
+  plan_id: string;
+  day_num: number;
+  completed_at: string | null;
+}
+
+export async function getPlans(): Promise<ReadingPlan[]> {
+  return getDb().getAllAsync<ReadingPlan>("SELECT * FROM reading_plans ORDER BY total_days");
+}
+
+export async function startPlan(planId: string): Promise<void> {
+  const plan = await getDb().getFirstAsync<ReadingPlan>(
+    "SELECT * FROM reading_plans WHERE id = ?", [planId]
+  );
+  if (!plan) return;
+  // Clear any existing progress
+  await getDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+  // Insert rows for each day
+  for (let day = 1; day <= plan.total_days; day++) {
+    await getDb().runAsync(
+      "INSERT INTO plan_progress (plan_id, day_num) VALUES (?, ?)",
+      [planId, day]
+    );
+  }
+  await setPreference('active_plan', planId);
+  await setPreference('plan_start_date', new Date().toISOString().slice(0, 10));
+}
+
+export async function completePlanDay(planId: string, dayNum: number): Promise<void> {
+  await getDb().runAsync(
+    "UPDATE plan_progress SET completed_at = datetime('now') WHERE plan_id = ? AND day_num = ?",
+    [planId, dayNum]
+  );
+}
+
+export async function getPlanProgress(planId: string): Promise<PlanProgress[]> {
+  return getDb().getAllAsync<PlanProgress>(
+    "SELECT * FROM plan_progress WHERE plan_id = ? ORDER BY day_num",
+    [planId]
+  );
+}
+
+export async function abandonPlan(planId: string): Promise<void> {
+  await getDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+  await setPreference('active_plan', '');
+}
+
+export async function getActivePlanId(): Promise<string | null> {
+  const id = await getPreference('active_plan');
+  return id && id.length > 0 ? id : null;
+}
+
+// ── Reading Stats ───────────────────────────────────────────────────
+
+export interface ReadingStats {
+  totalChapters: number;
+  currentStreak: number;
+  longestStreak: number;
+  favouriteBook: string | null;
+}
+
+export async function getReadingStats(): Promise<ReadingStats> {
+  const totalRow = await getDb().getFirstAsync<{ count: number }>(
+    "SELECT COUNT(*) as count FROM reading_progress"
+  );
+  const total = totalRow?.count ?? 0;
+
+  // Favourite book
+  const favRow = await getDb().getFirstAsync<{ book_id: string }>(
+    "SELECT book_id, COUNT(*) as c FROM reading_progress GROUP BY book_id ORDER BY c DESC LIMIT 1"
+  );
+
+  // Streak calculation: count consecutive days backwards from today
+  const days = await getDb().getAllAsync<{ day: string }>(
+    "SELECT DISTINCT date(completed_at) as day FROM reading_progress WHERE completed_at IS NOT NULL ORDER BY day DESC"
+  );
+
+  let currentStreak = 0;
+  let longestStreak = 0;
+  let streak = 0;
+  const today = new Date();
+
+  for (let i = 0; i < days.length; i++) {
+    const expected = new Date(today);
+    expected.setDate(expected.getDate() - i);
+    const expectedStr = expected.toISOString().slice(0, 10);
+
+    if (days[i]?.day === expectedStr) {
+      streak++;
+      if (i === 0 || streak > 0) currentStreak = streak;
+    } else {
+      if (streak > longestStreak) longestStreak = streak;
+      if (i === 0) currentStreak = 0;
+      break;
+    }
+  }
+  if (streak > longestStreak) longestStreak = streak;
+
+  return {
+    totalChapters: total,
+    currentStreak,
+    longestStreak,
+    favouriteBook: favRow?.book_id ?? null,
+  };
+}

@@ -18,6 +18,29 @@ export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
   db = await SQLite.openDatabaseAsync('scripture.db');
   // Enable WAL mode for better read performance
   await db.execAsync('PRAGMA journal_mode=WAL');
+  // Run migrations for user tables
+  await db.execAsync(`
+    CREATE TABLE IF NOT EXISTS verse_highlights (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      verse_ref TEXT NOT NULL,
+      color TEXT NOT NULL,
+      created_at TEXT DEFAULT (datetime('now')),
+      UNIQUE(verse_ref)
+    );
+    CREATE TABLE IF NOT EXISTS reading_plans (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      description TEXT NOT NULL,
+      total_days INTEGER NOT NULL,
+      chapters_json TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS plan_progress (
+      plan_id TEXT NOT NULL REFERENCES reading_plans(id),
+      day_num INTEGER NOT NULL,
+      completed_at TEXT,
+      PRIMARY KEY (plan_id, day_num)
+    );
+  `);
   return db;
 }
 
