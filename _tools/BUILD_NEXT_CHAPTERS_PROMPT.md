@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-24 — Ezekiel in progress (35/48). Next batch: chapters 36-42.
+> **Last updated:** 2026-03-24 — Ezekiel in progress (42/48). Next batch: chapters 43-48 (FINAL).
 
 ---
 
@@ -43,7 +43,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 Current wave order (from MASTER_PLAN.md):
 ```
-WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 35/48, next: 36-42)
+WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel (IN PROGRESS — 42/48, next: 43-48 FINAL)
 WAVE 4 (Minor Prophets): Jonah, Amos, Hosea, Micah, Habakkuk, Joel, Obadiah, Nahum, Zephaniah, Haggai, Zechariah, Malachi
 WAVE 5 (NT Epistles): Romans (DONE), 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians
 WAVE 6 (NT Epistles continued): 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, Hebrews, James, 1-2 Peter, 1-3 John, Jude
@@ -403,12 +403,12 @@ Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24),
 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36),
 Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31),
 Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52),
-Lamentations(5), **Ezekiel(35/48)**, Daniel(12),
+Lamentations(5), **Ezekiel(42/48)**, Daniel(12),
 Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 966 chapters across 32 books. 34 books remaining (~223 chapters).**
+**Total: 973 chapters across 32 books. 34 books remaining (~216 chapters).**
 
-**REGISTRY note:** Ezekiel (48, 35) and Jeremiah (52, 52) registered in shared.py.
+**REGISTRY note:** Ezekiel (48, 42) and Jeremiah (52, 52) registered in shared.py.
 
 ### REFERENCE: The 10 Standard Theological Themes
 
@@ -425,16 +425,16 @@ Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
 ### REFERENCE: Ezekiel Progress (Current Book)
 
-- **48 chapters total** — 35 done, 13 remaining (~2 more batches)
+- **48 chapters total** — 42 done, 6 remaining (1 final batch)
 - **Chapters 1-21 COMPLETE:** Throne vision, call, watchman, sign-acts, temple abominations, glory departing, sign-acts of exile, false prophets, idolatrous elders, useless vine, unfaithful wife, two eagles, individual responsibility, lament for princes, rebellion history, sword unsheathed
 - **Chapters 22-28 COMPLETE:** Bloody city, Oholah/Oholibah, boiling pot + wife's death (prophetic silence begins), oracles against Ammon/Moab/Edom/Philistia, oracle against Tyre, lament for Tyre (ship metaphor), king of Tyre (Eden/fall + Sidon + restoration)
 - **Chapters 29-35 COMPLETE:** Egypt oracles (Pharaoh as tannin 29, Day of LORD + broken arms 30, great cedar/Assyria 31, lament + descent to Sheol 32), watchman renewed (33 — structural hinge, fugitive arrives, mouth opened), shepherds of Israel (34 — YHWH as shepherd, servant David, covenant of peace), oracle against Mount Seir (35 — Edom)
+- **Chapters 36-42 COMPLETE:** Mountains of Israel restored (36, new heart/spirit — theological center of book), valley of dry bones + two sticks reunited (37), Gog of Magog invasion + defeat (38-39, cataclysmic divine warfare, sacrificial feast, Spirit-pouring), temple vision begins: outer court/gates (40), inner temple/Most Holy Place (41, no ark — glory itself fills), priests' chambers + outer wall (42, havdalah: separating holy from common)
 - **Infrastructure DONE:** BOOK_META, Zimmerli, Block, colors, labels, scholar-data — skip Step 2
-- **REGISTRY:** Ezekiel (48, 35) in shared.py
+- **REGISTRY:** Ezekiel (48, 42) in shared.py
 - **Scholars:** MacArthur, Calvin, NET Bible, Block (NAC), Zimmerli (Hermeneia)
-- **Next batch (36-42):** Mountains of Israel restored (36, new heart/spirit), valley of dry bones + two sticks (37), Gog of Magog (38-39), temple vision begins (40-42)
 - **Final batch (43-48):** Glory returns (43), temple regulations (44-46), river of life (47), land allotment (48)
 - **Setting:** Babylonian exile, by the Kebar River, 593-571 BC
 - **Hebrew emphasis:** Priestly vocabulary, glory (kabod) theology, recognition formula (72x)
-- **People added:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz, Oholah, Oholibah, Hiram of Tyre, Pharaoh Hophra (+ Ezekiel updated)
-- **Timeline events:** 11 total (call through fugitive report)
+- **People added:** Buzi, Jehoiachin, Pelatiah, Jaazaniah, Zedekiah, Jehoahaz, Oholah, Oholibah, Hiram of Tyre, Pharaoh Hophra, Gog (+ Ezekiel updated)
+- **Timeline events:** 14 total (call through temple vision)
