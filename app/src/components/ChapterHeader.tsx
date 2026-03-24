@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { StickyNote, Clock, MapPin } from 'lucide-react-native';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing } from '../theme';
 import type { Chapter } from '../types';
@@ -46,11 +47,18 @@ export function ChapterHeader({
         <TouchableOpacity onPress={onNotesPress}>
           <BadgeChip
             label={noteCount > 0 ? `${noteCount} Notes` : 'Notes'}
+            icon={<StickyNote size={12} color={noteCount > 0 ? base.gold : base.textMuted} />}
             color={noteCount > 0 ? base.gold : base.textMuted}
           />
         </TouchableOpacity>
         <TouchableOpacity onPress={onIntroPress}>
-          <BadgeChip label="About This Book →" color={base.textMuted} />
+          <Text style={{
+            color: base.textMuted,
+            fontFamily: 'SourceSans3_500Medium',
+            fontSize: 12,
+          }}>
+            About This Book →
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -59,12 +67,20 @@ export function ChapterHeader({
         <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap' }}>
           {chapter.timeline_link_text && onTimelinePress && (
             <TouchableOpacity onPress={onTimelinePress}>
-              <BadgeChip label={chapter.timeline_link_text} color="#70b8e8" />
+              <BadgeChip
+                label={chapter.timeline_link_text}
+                icon={<Clock size={12} color="#70b8e8" />}
+                color="#70b8e8"
+              />
             </TouchableOpacity>
           )}
           {chapter.map_story_link_text && onMapPress && (
             <TouchableOpacity onPress={onMapPress}>
-              <BadgeChip label={chapter.map_story_link_text} color="#30a848" />
+              <BadgeChip
+                label={chapter.map_story_link_text}
+                icon={<MapPin size={12} color="#30a848" />}
+                color="#30a848"
+              />
             </TouchableOpacity>
           )}
         </View>

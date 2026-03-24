@@ -9,12 +9,12 @@ import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
 
 interface SettingsState {
-  translation: 'niv' | 'esv';
+  translation: string;
   fontSize: number;
   vhlEnabled: boolean;
   isHydrated: boolean;
 
-  setTranslation: (t: 'niv' | 'esv') => void;
+  setTranslation: (t: string) => void;
   setFontSize: (s: number) => void;
   setVhlEnabled: (v: boolean) => void;
   hydrate: () => Promise<void>;
@@ -49,7 +49,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const v = await getPreference('vhlEnabled');
 
       set({
-        translation: (t === 'esv' ? 'esv' : 'niv') as 'niv' | 'esv',
+        translation: (t === 'esv' ? 'esv' : 'niv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
         vhlEnabled: v !== '0',
         isHydrated: true,

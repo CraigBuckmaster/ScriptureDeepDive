@@ -1,10 +1,23 @@
 /**
- * ChapterNavBar — Sticky top bar: ← Library | Book Ch.N | ← 🔍 →
+ * ChapterNavBar — Sticky top bar for the chapter reading screen.
+ *
+ * Layout:
+ *   ← BookName     [NIV]     ‹ Ch 43 ›
+ *   (back/qnav)    (trans)   (prev/next)
+ *
+ * Left:   ArrowLeft + book name. Tap = back. Long press = QnavOverlay.
+ * Center: TranslationDropdown (CompactDropdown wrapper).
+ * Right:  Prev/Next arrows flanking the chapter number.
+ *
+ * NO CHEVRONS anywhere.
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
-import { base, spacing, MIN_TOUCH_TARGET } from '../theme';
+import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
+import { ArrowLeft, ArrowRight } from 'lucide-react-native';
+import { TranslationDropdown } from './TranslationDropdown';
+import { useSettingsStore } from '../stores';
+import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   bookName: string;
@@ -21,50 +34,108 @@ export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
   onBack, onPrev, onNext, onQnav,
 }: Props) {
+  const translation = useSettingsStore((s) => s.translation);
+  const setTranslation = useSettingsStore((s) => s.setTranslation);
+
   return (
-    <SafeAreaView style={{ backgroundColor: base.bg }}>
-      <View style={{
-        flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-        paddingHorizontal: spacing.md, height: 48,
-        borderBottomWidth: 1, borderBottomColor: base.border,
-      }}>
-        {/* Left: Back to library */}
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.bar}>
+        {/* Left: Back + Book name (long press → Qnav) */}
         <TouchableOpacity
           onPress={onBack}
+          onLongPress={onQnav}
+          delayLongPress={400}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          accessibilityLabel="Back to library"
-          style={{ minWidth: MIN_TOUCH_TARGET, minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }}
+          accessibilityLabel={`Back to ${bookName} chapter list. Long press to navigate.`}
+          style={styles.backButton}
         >
-          <Text style={{ color: base.gold, fontSize: 16 }}>← Library</Text>
+          <ArrowLeft size={18} color={base.gold} />
+          <Text style={styles.bookName} numberOfLines={1}>{bookName}</Text>
         </TouchableOpacity>
 
-        {/* Center: Book + Chapter (tap → Qnav) */}
-        <TouchableOpacity onPress={onQnav} accessibilityLabel={`${bookName} chapter ${chapterNum}. Tap to navigate.`}>
-          <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
-            {bookName} {chapterNum}
-          </Text>
-        </TouchableOpacity>
+        {/* Center: Translation dropdown */}
+        <TranslationDropdown
+          active={translation}
+          onSelect={(t) => setTranslation(t as any)}
+        />
 
-        {/* Right: Prev/Next arrows */}
-        <View style={{ flexDirection: 'row', gap: spacing.md }}>
+        {/* Right: Prev / Ch N / Next */}
+        <View style={styles.chapterNav}>
           <TouchableOpacity
             onPress={onPrev}
             disabled={!hasPrev}
             accessibilityLabel="Previous chapter"
-            style={{ minWidth: MIN_TOUCH_TARGET, minHeight: MIN_TOUCH_TARGET, justifyContent: 'center', alignItems: 'center' }}
+            style={styles.arrowButton}
           >
-            <Text style={{ color: hasPrev ? base.gold : base.textMuted + '40', fontSize: 18 }}>←</Text>
+            <ArrowLeft
+              size={16}
+              color={hasPrev ? base.gold : base.textMuted + '40'}
+            />
           </TouchableOpacity>
+
+          <Text style={styles.chapterNum}>Ch {chapterNum}</Text>
+
           <TouchableOpacity
             onPress={onNext}
             disabled={!hasNext}
             accessibilityLabel="Next chapter"
-            style={{ minWidth: MIN_TOUCH_TARGET, minHeight: MIN_TOUCH_TARGET, justifyContent: 'center', alignItems: 'center' }}
+            style={styles.arrowButton}
           >
-            <Text style={{ color: hasNext ? base.gold : base.textMuted + '40', fontSize: 18 }}>→</Text>
+            <ArrowRight
+              size={16}
+              color={hasNext ? base.gold : base.textMuted + '40'}
+            />
           </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    backgroundColor: base.bg,
+  },
+  bar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: spacing.md,
+    height: 48,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border,
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    minHeight: MIN_TOUCH_TARGET,
+    flex: 1,
+  },
+  bookName: {
+    color: base.text,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 14,
+    flexShrink: 1,
+  },
+  chapterNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 2,
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  arrowButton: {
+    minWidth: MIN_TOUCH_TARGET,
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  chapterNum: {
+    color: base.textDim,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+    minWidth: 40,
+    textAlign: 'center',
+  },
+});

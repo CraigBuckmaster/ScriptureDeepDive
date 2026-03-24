@@ -254,10 +254,21 @@ This is a common React Navigation pattern — shared screens across stacks.
 
 ---
 
-## Phase 3: Chapter Screen Polish
+## Phase 3: Chapter Screen Polish ✅ COMPLETE
 
 **Why third:** With the home screen fixed, users will navigate to chapters 
 quickly. Now we polish the 90%-of-time screen.
+
+**Implementation notes:**
+- CompactDropdown is fully generic (value/options/onSelect/direction).
+  TranslationDropdown is a thin wrapper. ViewModeDropdown reuses it in Phase 4.
+- ChapterNavBar now owns translation state directly via settingsStore.
+- QnavOverlay wired into ChapterScreen (was orphaned — toggleQnav fired 
+  but nothing rendered). Auto-expands current book, highlights current chapter.
+- BottomBar deleted entirely — all controls live in nav bar now.
+- Zero chevrons remain in codebase (verified via grep). TTS ▶ play icon kept.
+- "About This Book →" converted from BadgeChip to plain text link.
+- settingsStore translation type widened from 'niv'|'esv' to string.
 
 ### 3A. Chapter Nav Bar — Simplified, No Redundancy
 
