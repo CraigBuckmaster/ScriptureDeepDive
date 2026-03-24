@@ -40,6 +40,10 @@ yarn-error.*
 /ios
 /android
 
+# Bundled database asset (canonical copy lives at repo root)
+# Run `npm run setup` to copy it here for metro bundling
+assets/scripture.db
+
 # Secrets
 google-service-account.json
 *.p12
