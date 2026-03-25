@@ -55,8 +55,9 @@ app/                          React Native (Expo) project
   __tests__/                  Unit + integration + component tests
   maestro/                    16 E2E test flows
   store-metadata/             App Store + Google Play metadata
+content/                      Source-of-truth chapter JSON + meta + verse files
 _tools/                       Build tools + content pipeline
-_archive/                     Retired PWA (879 HTML chapters)
+scripture.db                  SQLite database (built from content/)
 ```
 
 ## Content Pipeline

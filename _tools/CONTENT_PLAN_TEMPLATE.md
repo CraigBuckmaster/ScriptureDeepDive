@@ -176,22 +176,18 @@ Last updated: SW 2.150 (16 books, 439 chapters)
 #   □ REGISTRY entry added (live=0)
 #   □ BOOK_META complete (auth, vhl arrays, is_nt)
 #   □ COMMENTATOR_SCOPE updated for new scholars
-#   □ Scholar CSS in styles.css (if new scholars)
-#   □ Scholar bio pages created (if new scholars)
-#   □ audit.py updated (BOOK_ROSTER, SCHOLAR_KEYS, OT/NT_BOOKS)
-#   □ Book intro entry added to data/book-intros.js (with authorship)
-#   □ Intro shell page created at intro/{book}.html
-#   □ Cross-ref threads added to data/cross-refs.js
-#   □ Word study entries added to data/word-study.js
+#   □ Scholar data added to content/meta/scholars.json + scholar-scopes.json
+#   □ Book intro entry added to content/meta/book-intros.json
+#   □ Cross-ref threads added to content/meta/cross-refs.json
+#   □ Word study entries added to content/meta/word-studies.json
 #   □ Plan reviewed and approved
 #
 # After building each batch:
-#   □ python3 _tools/gen_{book}.py (build chapters)
-#   □ Fix nav arrows (within-book chain + cross-book endpoints)
+#   □ python3 /tmp/gen_{book}.py (build chapters)
 #   □ Set REGISTRY live count
-#   □ shared.update_homepage() + rebuild_qnav_js() + rebuild_books_js() + rebuild_sw_js()
-#   □ python3 _tools/audit.py (0 failures)
-#   □ python3 _tools/audit_people.py
-#   □ python3 _tools/audit_search.py
-#   □ python3 _tools/tests/test_regressions.py
-#   □ Bump SW version + git commit + git push
+#   □ python3 _tools/build_sqlite.py
+#   □ python3 _tools/validate.py
+#   □ python3 _tools/validate_sqlite.py
+#   □ rm /tmp/gen_*.py
+#   □ git add -A && commit && push
+#   □ eas update --branch production
