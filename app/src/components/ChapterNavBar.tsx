@@ -2,19 +2,17 @@
  * ChapterNavBar — Sticky top bar for the chapter reading screen.
  *
  * Layout:
- *   ← BookName     [NIV]     ‹ Ch 43 ›
- *   (back/qnav)    (trans)   (prev/next)
+ *   BookName ▾     [NIV]     ‹ Ch 43 ›
+ *   (picker)       (trans)   (prev/next)
  *
- * Left:   ArrowLeft + book name. Tap = back. Long press = QnavOverlay.
+ * Left:   Book name + down indicator. Tap = QnavOverlay (book/chapter picker).
  * Center: TranslationDropdown (CompactDropdown wrapper).
  * Right:  Prev/Next arrows flanking the chapter number.
- *
- * NO CHEVRONS anywhere.
  */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
-import { ArrowLeft, ArrowRight } from 'lucide-react-native';
+import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react-native';
 import { TranslationDropdown } from './TranslationDropdown';
 import { useSettingsStore } from '../stores';
 import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
@@ -24,7 +22,6 @@ interface Props {
   chapterNum: number;
   hasPrev: boolean;
   hasNext: boolean;
-  onBack: () => void;
   onPrev: () => void;
   onNext: () => void;
   onQnav: () => void;
@@ -32,7 +29,7 @@ interface Props {
 
 export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
-  onBack, onPrev, onNext, onQnav,
+  onPrev, onNext, onQnav,
 }: Props) {
   const translation = useSettingsStore((s) => s.translation);
   const setTranslation = useSettingsStore((s) => s.setTranslation);
@@ -40,17 +37,17 @@ export function ChapterNavBar({
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.bar}>
-        {/* Left: Back + Book name (long press → Qnav) */}
+        {/* Left: Book name picker */}
         <TouchableOpacity
-          onPress={onBack}
-          onLongPress={onQnav}
-          delayLongPress={400}
+          onPress={onQnav}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          accessibilityLabel={`Back to ${bookName} chapter list. Long press to navigate.`}
-          style={styles.backButton}
+          accessibilityLabel={`${bookName} chapter ${chapterNum}. Tap to change book or chapter.`}
+          accessibilityRole="button"
+          accessibilityHint="Opens chapter navigator"
+          style={styles.pickerButton}
         >
-          <ArrowLeft size={18} color={base.navText} />
           <Text style={styles.bookName} numberOfLines={1}>{bookName}</Text>
+          <ChevronDown size={14} color={base.navText} />
         </TouchableOpacity>
 
         {/* Center: Translation dropdown */}
@@ -105,10 +102,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: base.border,
   },
-  backButton: {
+  pickerButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: 4,
     minHeight: MIN_TOUCH_TARGET,
     flex: 1,
   },

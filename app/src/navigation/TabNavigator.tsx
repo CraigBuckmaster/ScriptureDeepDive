@@ -37,6 +37,11 @@ export function TabNavigator() {
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            navigation.navigate('HomeTab', { screen: 'HomeMain' });
+          },
+        })}
       />
       <Tab.Screen
         name="ReadTab"
@@ -45,6 +50,11 @@ export function TabNavigator() {
           tabBarLabel: 'Read',
           tabBarIcon: ({ color, size }) => <Library color={color} size={size} />,
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            navigation.navigate('ReadTab', { screen: 'BookList' });
+          },
+        })}
       />
       <Tab.Screen
         name="ExploreTab"
@@ -53,6 +63,11 @@ export function TabNavigator() {
           tabBarLabel: 'Explore',
           tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            navigation.navigate('ExploreTab', { screen: 'ExploreMenu' });
+          },
+        })}
       />
       <Tab.Screen
         name="SearchTab"
@@ -69,6 +84,11 @@ export function TabNavigator() {
           tabBarLabel: 'More',
           tabBarIcon: ({ color, size }) => <MoreHorizontal color={color} size={size} />,
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            navigation.navigate('MoreTab', { screen: 'MoreMenu' });
+          },
+        })}
       />
     </Tab.Navigator>
   );

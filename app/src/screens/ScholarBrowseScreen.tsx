@@ -16,17 +16,26 @@ export default function ScholarBrowseScreen() {
   const [search, setSearch] = useState('');
   const [tradition, setTradition] = useState<string>('all');
 
+  /** Extract broadest tradition category (first word before any delimiter). */
+  const broadTradition = (t: string | null | undefined): string => {
+    if (!t) return '';
+    // Split on common delimiters: dash, en-dash, em-dash, comma, parenthetical
+    const first = t.split(/\s*[–—\-,:(]\s*/)[0].trim();
+    return first;
+  };
+
   const traditions = useMemo(() => {
     const set = new Set<string>();
     for (const s of scholars) {
-      if (s.tradition) set.add(s.tradition);
+      const broad = broadTradition(s.tradition);
+      if (broad) set.add(broad);
     }
     return ['all', ...Array.from(set).sort()];
   }, [scholars]);
 
   const filtered = useMemo(() => {
     let list = scholars;
-    if (tradition !== 'all') list = list.filter((s) => s.tradition === tradition);
+    if (tradition !== 'all') list = list.filter((s) => broadTradition(s.tradition) === tradition);
     if (search.length >= 2) {
       const q = search.toLowerCase();
       list = list.filter((s) => s.name.toLowerCase().includes(q));
