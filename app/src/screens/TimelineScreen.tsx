@@ -30,6 +30,9 @@ export default function TimelineScreen() {
   const [events, setEvents] = useState<TimelineEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
+  const [showEvents, setShowEvents] = useState(true);
+  const [showPeople, setShowPeople] = useState(false);
+  const [showWorld, setShowWorld] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
   const { width: screenWidth } = useWindowDimensions();
@@ -39,7 +42,17 @@ export default function TimelineScreen() {
     getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
   }, []);
 
-  const positioned = useMemo(() => assignLanes(events), [events]);
+  // Filter by active categories
+  const categoryFiltered = useMemo(() => {
+    const cats = new Set<string>();
+    if (showEvents) cats.add('event');
+    if (showPeople) cats.add('person');
+    if (showWorld) cats.add('world');
+    if (cats.size === 0) cats.add('event'); // fallback
+    return events.filter((e) => cats.has(e.category));
+  }, [events, showEvents, showPeople, showWorld]);
+
+  const positioned = useMemo(() => assignLanes(categoryFiltered), [categoryFiltered]);
 
   const filtered = useMemo(() => {
     if (filterEra === 'all') return positioned;
@@ -90,6 +103,34 @@ export default function TimelineScreen() {
     <View style={styles.container}>
       <View style={{ paddingTop: insets.top }}>
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+
+        {/* Category toggles */}
+        <View style={styles.categoryRow}>
+          <TouchableOpacity
+            onPress={() => setShowEvents((v) => !v)}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            style={[styles.categoryChip, showEvents && styles.categoryChipActive]}
+          >
+            <View style={[styles.categoryDot, { backgroundColor: base.gold }]} />
+            <Text style={[styles.categoryLabel, showEvents && { color: base.gold }]}>Events</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setShowPeople((v) => !v)}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            style={[styles.categoryChip, showPeople && styles.categoryChipActive]}
+          >
+            <View style={[styles.categoryDot, { backgroundColor: '#6a9fb5' }]} />
+            <Text style={[styles.categoryLabel, showPeople && { color: '#6a9fb5' }]}>People</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setShowWorld((v) => !v)}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            style={[styles.categoryChip, showWorld && styles.categoryChipActive]}
+          >
+            <View style={[styles.categoryDot, { backgroundColor: '#b07d4f' }]} />
+            <Text style={[styles.categoryLabel, showWorld && { color: '#b07d4f' }]}>World History</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
@@ -129,7 +170,10 @@ export default function TimelineScreen() {
 
           {/* Events */}
           {filtered.map((evt) => {
-            const eraColor = evt.era ? (eras[evt.era] ?? base.gold) : base.gold;
+            // Color by category: events use era color, people are teal, world is amber
+            const catColor = evt.category === 'world' ? '#b07d4f'
+              : evt.category === 'person' ? '#6a9fb5'
+              : evt.era ? (eras[evt.era] ?? base.gold) : base.gold;
             const y = LANE_TOP + evt.lane * LANE_HEIGHT;
             const isSelected = selectedEvent?.id === evt.id;
 
@@ -139,12 +183,12 @@ export default function TimelineScreen() {
                 <Rect x={evt.x - 10} y={y - 14} width={evt.labelWidth} height={28}
                   fill="transparent" />
                 {/* Stem line */}
-                <Line x1={evt.x} y1={y} x2={evt.x} y2={AXIS_Y} stroke={eraColor} strokeWidth={0.5} opacity={0.4} />
+                <Line x1={evt.x} y1={y} x2={evt.x} y2={AXIS_Y} stroke={catColor} strokeWidth={0.5} opacity={0.4} />
                 {/* Circle */}
                 {isSelected && <Circle cx={evt.x} cy={y} r={10} fill={base.gold} opacity={0.3} />}
-                <Circle cx={evt.x} cy={y} r={6} fill={eraColor} />
+                <Circle cx={evt.x} cy={y} r={6} fill={catColor} />
                 {/* Label */}
-                <SvgText x={evt.x + 10} y={y + 5} fontSize={11} fill={eraColor}
+                <SvgText x={evt.x + 10} y={y + 5} fontSize={11} fill={catColor}
                   fontFamily="SourceSans3_400Regular">
                   {evt.name} · {formatYear(evt.year)}
                 </SvgText>
@@ -240,5 +284,38 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     marginTop: spacing.md,
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    paddingHorizontal: spacing.sm,
+    paddingBottom: spacing.xs,
+    gap: spacing.xs,
+  },
+  categoryChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    borderWidth: 1,
+    borderColor: base.border,
+    borderRadius: radii.pill,
+    paddingHorizontal: 8,
+    height: 28,
+    backgroundColor: base.bg + 'EE',
+    opacity: 0.5,
+  },
+  categoryChipActive: {
+    opacity: 1,
+    borderColor: base.gold + '55',
+  },
+  categoryDot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+  },
+  categoryLabel: {
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.3,
+    color: base.textMuted,
   },
 });
