@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { eras, eraNames, base, spacing, radii, MIN_TOUCH_TARGET } from '../../theme';
+import { eras, eraNames, base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 
 interface Props {
   activeEra: string;
@@ -42,7 +42,7 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
             )}
             <Text style={{
               color: isActive ? color : base.textMuted,
-              fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.3,
+              fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.3,
             }}>
               {label}
             </Text>

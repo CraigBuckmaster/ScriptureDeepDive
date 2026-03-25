@@ -7,7 +7,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 import type { Verse, VHLGroup } from '../types';
 
 interface Props {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   verseNum: {
     color: base.verseNum,
-    fontFamily: 'Cinzel_400Regular',
+    fontFamily: fontFamily.display,
     marginRight: 4,
     minWidth: 20,
     textAlign: 'right',

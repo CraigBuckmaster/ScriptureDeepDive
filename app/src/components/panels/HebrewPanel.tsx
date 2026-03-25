@@ -12,7 +12,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing } from '../../theme';
+import { getPanelColors, base, spacing, fontFamily } from '../../theme';
 import type { HebEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -36,14 +36,14 @@ export function HebrewPanel({ entries, onWordStudyPress, onRefPress }: Props) {
               accessibilityRole="button"
               accessibilityLabel={`Word study: ${entry.word}`}
             >
-              <Text style={{ color: colors.accent, fontSize: 18, fontFamily: 'EBGaramond_500Medium' }}>
+              <Text style={{ color: colors.accent, fontSize: 18, fontFamily: fontFamily.bodyMedium }}>
                 {entry.word}
               </Text>
             </TouchableOpacity>
-            <Text style={{ color: base.goldDim, fontSize: 13, fontFamily: 'EBGaramond_400Regular_Italic' }}>
+            <Text style={{ color: base.goldDim, fontSize: 13, fontFamily: fontFamily.bodyItalic }}>
               {entry.transliteration || entry.tlit || ''}
             </Text>
-            <Text style={{ color: base.gold, fontSize: 14, fontFamily: 'EBGaramond_600SemiBold' }}>
+            <Text style={{ color: base.gold, fontSize: 14, fontFamily: fontFamily.bodySemiBold }}>
               — {entry.gloss}
             </Text>
           </View>

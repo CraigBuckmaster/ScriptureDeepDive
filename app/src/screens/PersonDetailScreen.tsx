@@ -4,11 +4,13 @@
  */
 
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { usePersonDetail } from '../hooks/usePersonDetail';
 import { BadgeChip } from '../components/BadgeChip';
-import { base, spacing, eras, eraNames } from '../theme';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { base, spacing, fontFamily, eras, eraNames } from '../theme';
 
 export default function PersonDetailScreen() {
   const navigation = useNavigation<any>();
@@ -17,7 +19,11 @@ export default function PersonDetailScreen() {
   const { person, parents, children, spouses, isLoading } = usePersonDetail(personId);
 
   if (isLoading || !person) {
-    return <View style={{ flex: 1, backgroundColor: base.bg }} />;
+    return (
+      <View style={styles.loading}>
+        <LoadingSkeleton lines={8} height={16} />
+      </View>
+    );
   }
 
   const eraColor = person.era ? (eras[person.era] ?? base.gold) : base.gold;
@@ -26,87 +32,63 @@ export default function PersonDetailScreen() {
   try { refs = person.refs_json ? JSON.parse(person.refs_json) : []; } catch {}
 
   const PersonLink = ({ id, name }: { id: string; name: string }) => (
-    <TouchableOpacity onPress={() => navigation.push('PersonDetail', { personId: id })} style={{ marginRight: 8 }}>
-      <Text style={{ color: eraColor, fontFamily: 'SourceSans3_500Medium', fontSize: 13, textDecorationLine: 'underline' }}>
-        {name}
-      </Text>
+    <TouchableOpacity onPress={() => navigation.push('PersonDetail', { personId: id })} style={styles.personLink}>
+      <Text style={[styles.personLinkText, { color: eraColor }]}>{name}</Text>
     </TouchableOpacity>
   );
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={{ color: base.gold, fontSize: 14, marginBottom: spacing.md }}>← Back</Text>
-        </TouchableOpacity>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <ScreenHeader
+          title={person.name}
+          subtitle={person.dates ?? undefined}
+          titleColor={eraColor}
+          onBack={() => navigation.goBack()}
+        />
 
         {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
-        <Text style={{ color: base.text, fontFamily: 'Cinzel_600SemiBold', fontSize: 24, marginTop: spacing.sm }}>
-          {person.name}
-        </Text>
-        {person.dates && (
-          <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 13, marginTop: 4 }}>
-            {person.dates}
-          </Text>
-        )}
+        <View style={styles.divider} />
 
-        <View style={{ height: 1, backgroundColor: base.border, marginVertical: spacing.md }} />
-
-        <Text style={{ color: base.gold, fontFamily: 'EBGaramond_500Medium', fontSize: 16 }}>
-          {person.role}
-        </Text>
+        <Text style={styles.role}>{person.role}</Text>
 
         {/* Family */}
-        <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+        <View style={styles.familyBlock}>
           {(parents.father || parents.mother) && (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
-                Parents
-              </Text>
+            <View style={styles.familyRow}>
+              <Text style={styles.familyLabel}>Parents</Text>
               {parents.father && <PersonLink id={parents.father.id} name={parents.father.name} />}
               {parents.mother && <PersonLink id={parents.mother.id} name={parents.mother.name} />}
             </View>
           )}
           {spouses.length > 0 && (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
-                {spouses.length > 1 ? 'Spouses' : 'Spouse'}
-              </Text>
+            <View style={styles.familyRow}>
+              <Text style={styles.familyLabel}>{spouses.length > 1 ? 'Spouses' : 'Spouse'}</Text>
               {spouses.map((s) => <PersonLink key={s.id} id={s.id} name={s.name} />)}
             </View>
           )}
           {children.length > 0 && (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
-                Children
-              </Text>
+            <View style={styles.familyRow}>
+              <Text style={styles.familyLabel}>Children</Text>
               {children.slice(0, 15).map((c) => <PersonLink key={c.id} id={c.id} name={c.name} />)}
-              {children.length > 15 && <Text style={{ color: base.textMuted, fontSize: 11 }}>+{children.length - 15} more</Text>}
+              {children.length > 15 && <Text style={styles.moreText}>+{children.length - 15} more</Text>}
             </View>
           )}
         </View>
 
         {/* Bio */}
-        {person.bio && (
-          <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24, marginTop: spacing.lg }}>
-            {person.bio}
-          </Text>
-        )}
+        {person.bio && <Text style={styles.bio}>{person.bio}</Text>}
 
         {person.scripture_role && (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
-              ROLE IN SCRIPTURE
-            </Text>
-            <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24, marginTop: spacing.xs }}>
-              {person.scripture_role}
-            </Text>
+          <View style={styles.scriptureSection}>
+            <Text style={styles.sectionLabel}>ROLE IN SCRIPTURE</Text>
+            <Text style={styles.scriptureBody}>{person.scripture_role}</Text>
           </View>
         )}
 
         {refs.length > 0 && (
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: spacing.lg }}>
+          <View style={styles.refsRow}>
             {refs.map((r, i) => <BadgeChip key={i} label={r} color={base.textMuted} />)}
           </View>
         )}
@@ -114,13 +96,101 @@ export default function PersonDetailScreen() {
         {/* See on Family Tree */}
         <TouchableOpacity
           onPress={() => navigation.navigate('GenealogyTree', { personId: person.id })}
-          style={{ marginTop: spacing.lg, paddingVertical: spacing.sm }}
+          style={styles.treeLink}
         >
-          <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 14 }}>
-            See on Family Tree →
-          </Text>
+          <Text style={styles.treeLinkText}>See on Family Tree →</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: base.bg,
+    padding: spacing.lg,
+  },
+  content: {
+    padding: spacing.md,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: base.border,
+    marginVertical: spacing.md,
+  },
+  role: {
+    color: base.gold,
+    fontFamily: fontFamily.bodyMedium,
+    fontSize: 16,
+  },
+  familyBlock: {
+    marginTop: spacing.md,
+    gap: spacing.sm,
+  },
+  familyRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  familyLabel: {
+    color: base.textMuted,
+    fontSize: 11,
+    fontFamily: fontFamily.uiSemiBold,
+    minWidth: 60,
+  },
+  personLink: {
+    marginRight: 8,
+  },
+  personLinkText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+    textDecorationLine: 'underline',
+  },
+  moreText: {
+    color: base.textMuted,
+    fontSize: 11,
+  },
+  bio: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 15,
+    lineHeight: 24,
+    marginTop: spacing.lg,
+  },
+  scriptureSection: {
+    marginTop: spacing.lg,
+  },
+  sectionLabel: {
+    color: base.gold,
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+    letterSpacing: 0.4,
+  },
+  scriptureBody: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 15,
+    lineHeight: 24,
+    marginTop: spacing.xs,
+  },
+  refsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginTop: spacing.lg,
+  },
+  treeLink: {
+    marginTop: spacing.lg,
+    paddingVertical: spacing.sm,
+  },
+  treeLinkText: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 14,
+  },
+});

@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
 import { getScholar } from '../db/content';
-import { getScholarColor, base, spacing, radii } from '../theme';
+import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import type { Scholar } from '../types';
 
 interface Props {
@@ -44,27 +44,27 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
 
           {scholar ? (
             <>
-              <Text style={{ color, fontFamily: 'Cinzel_600SemiBold', fontSize: 18 }}>
+              <Text style={{ color, fontFamily: fontFamily.displaySemiBold, fontSize: 18 }}>
                 {scholar.name}
               </Text>
               {bio?.eyebrow && (
-                <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 13, marginTop: 4 }}>
+                <Text style={{ color: base.textDim, fontFamily: fontFamily.ui, fontSize: 13, marginTop: 4 }}>
                   {bio.eyebrow}
                 </Text>
               )}
               {scholar.tradition && (
-                <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 12, marginTop: 2 }}>
+                <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 12, marginTop: 2 }}>
                   {scholar.tradition}
                 </Text>
               )}
               {bio?.sections?.[0]?.body && (
-                <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 22, marginTop: spacing.md }} numberOfLines={6}>
+                <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22, marginTop: spacing.md }} numberOfLines={6}>
                   {bio.sections[0].body}
                 </Text>
               )}
               {onGoToFullBio && (
                 <TouchableOpacity onPress={() => { onGoToFullBio(scholarId!); onClose(); }} style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>See full bio →</Text>
+                  <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>See full bio →</Text>
                 </TouchableOpacity>
               )}
             </>

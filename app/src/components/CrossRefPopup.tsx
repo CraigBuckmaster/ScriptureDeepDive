@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { resolveVerseText, type ParsedRef } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -45,22 +45,22 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
           padding: spacing.md,
         }}>
           {/* Header */}
-          <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 15, marginBottom: spacing.sm }}>
+          <Text style={{ color: base.gold, fontFamily: fontFamily.displayMedium, fontSize: 15, marginBottom: spacing.sm }}>
             {refLabel}
           </Text>
 
           {/* Verse text */}
           <ScrollView style={{ maxHeight: 200 }}>
             {loading ? (
-              <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 14 }}>Loading...</Text>
+              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 14 }}>Loading...</Text>
             ) : verseTexts.length > 0 ? (
               verseTexts.map((t, i) => (
-                <Text key={i} style={{ color: base.text, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24, marginBottom: 4 }}>
+                <Text key={i} style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 15, lineHeight: 24, marginBottom: 4 }}>
                   {t}
                 </Text>
               ))
             ) : (
-              <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 14 }}>
+              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 14 }}>
                 Verse not available in current content.
               </Text>
             )}
@@ -70,7 +70,7 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: spacing.md }}>
             {onGoToChapter && (
               <TouchableOpacity onPress={() => { onGoToChapter(reference.bookId, reference.chapter); onClose(); }}>
-                <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>
+                <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
                   Go to chapter →
                 </Text>
               </TouchableOpacity>

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, eras, MIN_TOUCH_TARGET } from '../../theme';
+import { base, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 import type { MapStory } from '../../types';
 
 interface Props {
@@ -17,7 +17,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
   if (stories.length === 0) {
     return (
       <Text style={{
-        color: base.textMuted, fontSize: 12, fontFamily: 'SourceSans3_400Regular',
+        color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui,
         textAlign: 'center', paddingVertical: spacing.xs,
       }}>
         No stories for this era
@@ -50,7 +50,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
           >
             <Text style={{
               color: isActive ? color : base.textDim,
-              fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.3,
+              fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.3,
             }}>
               {story.name}
             </Text>

@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Switch } from 'react-native';
 import { requestPermission, scheduleDailyVerse, cancelAllNotifications } from '../services/notifications';
 import { getPreference, setPreference } from '../db/user';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 
 export function NotificationSettings() {
   const [granted, setGranted] = useState(false);
@@ -35,13 +35,13 @@ export function NotificationSettings() {
 
   return (
     <View style={{ marginTop: spacing.xl }}>
-      <Text style={{ color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
+      <Text style={{ color: base.textMuted, fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
         NOTIFICATIONS
       </Text>
 
       {!granted ? (
         <TouchableOpacity onPress={handleRequestPermission} style={{ paddingVertical: spacing.sm }}>
-          <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 14 }}>
+          <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 14 }}>
             Enable Notifications
           </Text>
           <Text style={{ color: base.textMuted, fontSize: 11, marginTop: 2 }}>
@@ -54,7 +54,7 @@ export function NotificationSettings() {
           paddingVertical: spacing.md,
         }}>
           <View>
-            <Text style={{ color: base.text, fontFamily: 'SourceSans3_500Medium', fontSize: 14 }}>
+            <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 14 }}>
               Daily Verse
             </Text>
             <Text style={{ color: base.textMuted, fontSize: 11 }}>7:00 AM daily</Text>

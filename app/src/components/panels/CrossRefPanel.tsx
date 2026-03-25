@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing } from '../../theme';
+import { getPanelColors, base, spacing, fontFamily } from '../../theme';
 import { parseReference } from '../../utils/verseResolver';
 import type { CrossRefEntry, ParsedRef } from '../../types';
 
@@ -32,7 +32,7 @@ export function CrossRefPanel({ entries, onRefPress }: Props) {
           >
             <Text style={{
               color: colors.accent,
-              fontFamily: 'SourceSans3_600SemiBold',
+              fontFamily: fontFamily.uiSemiBold,
               fontSize: 13,
               minWidth: 70,
             }}>

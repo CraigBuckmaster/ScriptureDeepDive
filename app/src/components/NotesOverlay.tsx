@@ -11,7 +11,7 @@ import {
   FlatList, SafeAreaView, Alert,
 } from 'react-native';
 import { getNotesForChapter, saveNote, updateNote, deleteNote } from '../db/user';
-import { base, spacing, radii, MIN_TOUCH_TARGET } from '../theme';
+import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import type { UserNote } from '../types';
 
 interface Props {
@@ -68,7 +68,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
           paddingHorizontal: spacing.md, height: 48,
           borderBottomWidth: 1, borderBottomColor: base.border,
         }}>
-          <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
+          <Text style={{ color: base.text, fontFamily: fontFamily.displayMedium, fontSize: 14 }}>
             Notes — {bookName ?? bookId} {chapterNum}
           </Text>
           <View style={{ flexDirection: 'row', gap: spacing.md }}>
@@ -89,7 +89,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
               placeholder={`e.g. ${bookName ?? bookId} ${chapterNum}:1`}
               placeholderTextColor={base.textMuted}
               style={{ backgroundColor: base.bgElevated, color: base.text, borderRadius: radii.sm,
-                paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, fontFamily: 'SourceSans3_400Regular',
+                paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, fontFamily: fontFamily.ui,
                 fontSize: 13, borderWidth: 1, borderColor: base.border }}
             />
             <TextInput
@@ -97,12 +97,12 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
               placeholder="Your note..."
               placeholderTextColor={base.textMuted}
               style={{ backgroundColor: base.bgElevated, color: base.text, borderRadius: radii.sm,
-                paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, fontFamily: 'EBGaramond_400Regular',
+                paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, fontFamily: fontFamily.body,
                 fontSize: 14, minHeight: 60, borderWidth: 1, borderColor: base.border, textAlignVertical: 'top' }}
             />
             <View style={{ flexDirection: 'row', gap: spacing.sm }}>
               <TouchableOpacity onPress={handleSave} style={{ backgroundColor: base.gold + '30', borderRadius: radii.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.xs }}>
-                <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>Save</Text>
+                <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>Save</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => setShowAdd(false)} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.xs }}>
                 <Text style={{ color: base.textMuted, fontSize: 13 }}>Cancel</Text>
@@ -118,7 +118,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
           contentContainerStyle={{ padding: spacing.md, gap: spacing.sm }}
           ListEmptyComponent={
             <View style={{ alignItems: 'center', paddingTop: spacing.xxl }}>
-              <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 15 }}>
+              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 15 }}>
                 No notes yet for this chapter.
               </Text>
             </View>
@@ -126,19 +126,19 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
           renderItem={({ item: note }) => (
             <View style={{ backgroundColor: base.bgElevated, borderRadius: radii.md, padding: spacing.sm,
               borderWidth: 1, borderColor: base.border }}>
-              <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 12 }}>
+              <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 12 }}>
                 {note.verse_ref}
               </Text>
               {editingId === note.id ? (
                 <TextInput
                   value={editText} onChangeText={setEditText} multiline autoFocus
                   onBlur={() => handleUpdate(note.id)}
-                  style={{ color: base.text, fontFamily: 'EBGaramond_400Regular', fontSize: 14,
+                  style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 14,
                     marginTop: 4, minHeight: 40, textAlignVertical: 'top' }}
                 />
               ) : (
                 <TouchableOpacity onPress={() => { setEditingId(note.id); setEditText(note.note_text); }}>
-                  <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: 4 }}>
+                  <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
                     {note.note_text}
                   </Text>
                 </TouchableOpacity>

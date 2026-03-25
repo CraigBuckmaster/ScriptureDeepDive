@@ -6,7 +6,7 @@
 import React, { useMemo } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { BadgeChip } from '../BadgeChip';
-import { base, spacing, radii, eras, eraNames } from '../../theme';
+import { base, spacing, radii, eras, eraNames, fontFamily } from '../../theme';
 import type { MapStory, Place } from '../../types';
 
 interface Props {
@@ -35,7 +35,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
 
       {/* Name */}
       <Text style={{
-        color: base.text, fontFamily: 'Cinzel_600SemiBold',
+        color: base.text, fontFamily: fontFamily.displaySemiBold,
         fontSize: 18, marginTop: spacing.sm,
       }}>
         {story.name}
@@ -44,7 +44,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
       {/* Scripture ref */}
       {story.scripture_ref && (
         <Text style={{
-          color: base.gold, fontFamily: 'EBGaramond_500Medium',
+          color: base.gold, fontFamily: fontFamily.bodyMedium,
           fontSize: 14, marginTop: 4,
         }}>
           {story.scripture_ref}
@@ -55,7 +55,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
 
       {/* Summary */}
       <Text style={{
-        color: base.textDim, fontFamily: 'EBGaramond_400Regular',
+        color: base.textDim, fontFamily: fontFamily.body,
         fontSize: 14, lineHeight: 22,
       }}>
         {story.summary}
@@ -65,7 +65,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
       {storyPlaces.length > 0 && (
         <View style={{ marginTop: spacing.md }}>
           <Text style={{
-            color: base.textMuted, fontFamily: 'Cinzel_400Regular',
+            color: base.textMuted, fontFamily: fontFamily.display,
             fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.xs,
           }}>
             KEY PLACES
@@ -79,7 +79,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
                   paddingHorizontal: 10, paddingVertical: 3,
                 }}>
                   <Text style={{
-                    color: eraColor, fontFamily: 'SourceSans3_500Medium', fontSize: 12,
+                    color: eraColor, fontFamily: fontFamily.uiMedium, fontSize: 12,
                   }}>
                     {showModern && p.modern_name ? p.modern_name : p.ancient_name}
                   </Text>
@@ -94,7 +94,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
       {story.chapter_link && (
         <TouchableOpacity onPress={onChapterPress} style={{ marginTop: spacing.md }}>
           <Text style={{
-            color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13,
+            color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13,
           }}>
             Read in Scripture Deep Dive →
           </Text>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import Svg, { Circle, Line, Polygon, SvgText } from 'react-native-svg';
-import { getPanelColors, base, spacing } from '../../theme';
+import { getPanelColors, base, spacing, fontFamily } from '../../theme';
 import type { ThemesPanel } from '../../types';
 
 interface Props { data: ThemesPanel; }
@@ -54,7 +54,7 @@ export function ThemesRadarPanel({ data }: Props) {
           fill={colors.accent + '30'} stroke={colors.accent} strokeWidth={1.5} />
       </Svg>
       {data.note ? (
-        <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic',
+        <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic,
           fontSize: 13, textAlign: 'center', paddingHorizontal: spacing.md }}>
           {data.note}
         </Text>

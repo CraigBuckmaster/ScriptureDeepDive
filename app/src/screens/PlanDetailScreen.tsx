@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay, abandonPlan } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing, radii } from '../theme';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { base, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
 export default function PlanDetailScreen() {
@@ -45,30 +46,30 @@ export default function PlanDetailScreen() {
     ]);
   };
 
-  if (!plan) return <View style={{ flex: 1, backgroundColor: base.bg }} />;
+  if (!plan) {
+    return (
+      <View style={styles.loading}>
+        <LoadingSkeleton lines={6} height={16} />
+      </View>
+    );
+  }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg }}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topSection}>
         <ScreenHeader title={plan.name} onBack={() => navigation.goBack()} />
-        <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: 4 }}>
-          {plan.description}
-        </Text>
+        <Text style={styles.description}>{plan.description}</Text>
 
         {isActive ? (
-          <View style={{ marginTop: spacing.md }}>
+          <View style={styles.progressBlock}>
             <PlanProgressBar completed={completed} total={progress.length} />
-            <TouchableOpacity onPress={handleAbandon} style={{ marginTop: spacing.sm }}>
-              <Text style={{ color: '#e05a6a', fontSize: 12 }}>Abandon plan</Text>
+            <TouchableOpacity onPress={handleAbandon} style={styles.abandonLink}>
+              <Text style={styles.abandonText}>Abandon plan</Text>
             </TouchableOpacity>
           </View>
         ) : (
-          <TouchableOpacity
-            onPress={handleStart}
-            style={{ marginTop: spacing.md, backgroundColor: base.gold + '30', borderRadius: radii.sm,
-              paddingHorizontal: spacing.md, paddingVertical: spacing.sm, alignSelf: 'flex-start' }}
-          >
-            <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 14 }}>Start Plan</Text>
+          <TouchableOpacity onPress={handleStart} style={styles.startButton}>
+            <Text style={styles.startButtonText}>Start Plan</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -76,20 +77,17 @@ export default function PlanDetailScreen() {
       <FlatList
         data={days}
         keyExtractor={(d) => String(d.day)}
-        contentContainerStyle={{ padding: spacing.md }}
+        contentContainerStyle={styles.listContent}
         renderItem={({ item: dayData }) => {
           const dayProgress = progress.find((p) => p.day_num === dayData.day);
           const isDone = !!dayProgress?.completed_at;
 
           return (
-            <View style={{
-              flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-              paddingVertical: spacing.sm, borderBottomWidth: 1, borderBottomColor: base.border + '40',
-            }}>
-              <Text style={{ color: isDone ? '#4a8a5a' : base.textMuted, fontSize: 14, width: 20 }}>
+            <View style={styles.dayRow}>
+              <Text style={[styles.dayNum, isDone && styles.dayDone]}>
                 {isDone ? '✓' : dayData.day}
               </Text>
-              <View style={{ flex: 1 }}>
+              <View style={styles.dayChapters}>
                 {dayData.chapters.map((ch, i) => (
                   <TouchableOpacity
                     key={i}
@@ -100,9 +98,7 @@ export default function PlanDetailScreen() {
                       });
                     }}
                   >
-                    <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 13 }}>
-                      {ch.replace('_', ' ')}
-                    </Text>
+                    <Text style={styles.chapterLabel}>{ch.replace('_', ' ')}</Text>
                   </TouchableOpacity>
                 ))}
               </View>
@@ -113,3 +109,75 @@ export default function PlanDetailScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: base.bg,
+    padding: spacing.lg,
+  },
+  topSection: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+  },
+  description: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+  },
+  progressBlock: {
+    marginTop: spacing.md,
+  },
+  abandonLink: {
+    marginTop: spacing.sm,
+  },
+  abandonText: {
+    color: '#e05a6a',
+    fontSize: 12,
+  },
+  startButton: {
+    marginTop: spacing.md,
+    backgroundColor: base.gold + '30',
+    borderRadius: radii.sm,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    alignSelf: 'flex-start' as const,
+  },
+  startButtonText: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 14,
+  },
+  listContent: {
+    padding: spacing.md,
+  },
+  dayRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    paddingVertical: spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  dayNum: {
+    color: base.textMuted,
+    fontSize: 14,
+    width: 20,
+  },
+  dayDone: {
+    color: '#4a8a5a',
+  },
+  dayChapters: {
+    flex: 1,
+  },
+  chapterLabel: {
+    color: base.textDim,
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+  },
+});

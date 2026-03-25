@@ -4,7 +4,7 @@
 
 import React, { Component, type ErrorInfo, type ReactNode } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 
 interface Props {
   children: ReactNode;
@@ -39,12 +39,12 @@ export class ErrorBoundary extends Component<Props, State> {
           padding: spacing.xl,
         }}>
           <Text style={{
-            color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 18, textAlign: 'center',
+            color: base.gold, fontFamily: fontFamily.displayMedium, fontSize: 18, textAlign: 'center',
           }}>
             Something went wrong
           </Text>
           <Text style={{
-            color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14,
+            color: base.textDim, fontFamily: fontFamily.body, fontSize: 14,
             textAlign: 'center', marginTop: spacing.md, lineHeight: 22,
           }}>
             {this.props.fallbackMessage ?? 'An unexpected error occurred. Please try again.'}
@@ -62,7 +62,7 @@ export class ErrorBoundary extends Component<Props, State> {
               borderRadius: 8,
             }}
           >
-            <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 14 }}>
+            <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 14 }}>
               Retry
             </Text>
           </TouchableOpacity>

@@ -9,7 +9,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
 import { getAllWordStudies } from '../db/content';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 
 interface Props {
@@ -46,10 +46,10 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
 
           {study ? (
             <>
-              <Text style={{ color: '#e890b8', fontSize: 28, fontFamily: 'EBGaramond_500Medium', textAlign: 'center' }}>
+              <Text style={{ color: '#e890b8', fontSize: 28, fontFamily: fontFamily.bodyMedium, textAlign: 'center' }}>
                 {study.original}
               </Text>
-              <Text style={{ color: base.goldDim, fontSize: 14, fontFamily: 'EBGaramond_400Regular_Italic', textAlign: 'center', marginTop: 4 }}>
+              <Text style={{ color: base.goldDim, fontSize: 14, fontFamily: fontFamily.bodyItalic, textAlign: 'center', marginTop: 4 }}>
                 {study.transliteration}
               </Text>
               {study.strongs && (
@@ -61,10 +61,10 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
               {/* Glosses */}
               {study.glosses_json && (
                 <View style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
+                  <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
                     GLOSSES
                   </Text>
-                  <Text style={{ color: base.text, fontFamily: 'EBGaramond_400Regular', fontSize: 15, marginTop: 4 }}>
+                  <Text style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 15, marginTop: 4 }}>
                     {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch { return study.glosses_json; } })()}
                   </Text>
                 </View>
@@ -72,24 +72,24 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
 
               {study.semantic_range && (
                 <View style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
+                  <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
                     SEMANTIC RANGE
                   </Text>
-                  <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: 4 }}>
+                  <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
                     {study.semantic_range}
                   </Text>
                 </View>
               )}
 
               {study.note && (
-                <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: spacing.md, lineHeight: 22 }}>
+                <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: spacing.md, lineHeight: 22 }}>
                   {study.note}
                 </Text>
               )}
 
               {onGoToFullStudy && (
                 <TouchableOpacity onPress={() => { onGoToFullStudy(study.id); onClose(); }} style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>
+                  <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
                     See full study →
                   </Text>
                 </TouchableOpacity>
@@ -97,7 +97,7 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
             </>
           ) : (
             <View style={{ alignItems: 'center', paddingVertical: spacing.lg }}>
-              <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 15 }}>
+              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 15 }}>
                 {word ? `No lexicon entry found for "${word}"` : 'No word selected'}
               </Text>
             </View>

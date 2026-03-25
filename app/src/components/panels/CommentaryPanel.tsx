@@ -9,7 +9,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { ScholarTag } from '../ScholarTag';
-import { getScholarColor, base, spacing } from '../../theme';
+import { getScholarColor, base, spacing, fontFamily } from '../../theme';
 import type { CommentaryNote, ParsedRef } from '../../types';
 
 interface Props {
@@ -30,7 +30,7 @@ export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }
         <View key={i} style={{ gap: 2 }}>
           <Text style={{
             color,
-            fontFamily: 'SourceSans3_600SemiBold',
+            fontFamily: fontFamily.uiSemiBold,
             fontSize: 12,
           }}>
             {note.ref}

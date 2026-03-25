@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, radii } from '../../theme';
+import { getPanelColors, base, spacing, radii, fontFamily } from '../../theme';
 import type { PlaceEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -37,14 +37,14 @@ export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
           >
             <Text style={{
               color: colors.accent,
-              fontFamily: 'Cinzel_500Medium',
+              fontFamily: fontFamily.displayMedium,
               fontSize: 13,
             }}>
               {entry.name}
             </Text>
           </TouchableOpacity>
           {entry.role ? (
-            <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_400Regular', marginTop: 2 }}>
+            <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui, marginTop: 2 }}>
               {entry.role}
             </Text>
           ) : null}

@@ -3,11 +3,12 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useWordStudies } from '../hooks/useWordStudies';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, radii, MIN_TOUCH_TARGET } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 export default function WordStudyBrowseScreen() {
   const navigation = useNavigation<any>();
@@ -31,42 +32,32 @@ export default function WordStudyBrowseScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg }}>
-        <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, marginBottom: spacing.md }}>
-          Word Studies
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topSection}>
+        <ScreenHeader
+          title="Word Studies"
+          onBack={() => navigation.goBack()}
+          style={styles.headerSpacing}
+        />
 
-        {/* Search */}
         <TextInput
           value={search} onChangeText={setSearch}
           placeholder="Search by word or gloss..."
           placeholderTextColor={base.textMuted}
-          style={{
-            backgroundColor: base.bgElevated, color: base.text,
-            fontFamily: 'SourceSans3_400Regular', fontSize: 14,
-            borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
-            borderWidth: 1, borderColor: base.border, marginBottom: spacing.sm,
-          }}
+          style={styles.searchInput}
         />
 
-        {/* Language filter */}
-        <View style={{ flexDirection: 'row', gap: spacing.sm, marginBottom: spacing.md }}>
+        <View style={styles.langRow}>
           {(['all', 'hebrew', 'greek'] as const).map((l) => (
             <TouchableOpacity key={l} onPress={() => setLangFilter(l)}>
-              <Text style={{
-                color: langFilter === l ? base.gold : base.textMuted,
-                fontFamily: 'Cinzel_500Medium', fontSize: 12,
-                borderBottomWidth: langFilter === l ? 2 : 0,
-                borderBottomColor: base.gold, paddingBottom: 4,
-              }}>
+              <Text style={[styles.langLabel, langFilter === l && styles.langLabelActive]}>
                 {l === 'all' ? 'All' : l.charAt(0).toUpperCase() + l.slice(1)}
               </Text>
             </TouchableOpacity>
@@ -77,7 +68,7 @@ export default function WordStudyBrowseScreen() {
       <FlatList
         data={filtered}
         keyExtractor={(w) => w.id}
-        contentContainerStyle={{ paddingHorizontal: spacing.md }}
+        contentContainerStyle={styles.listContent}
         renderItem={({ item: w }) => {
           const accentColor = w.language === 'hebrew' ? '#e890b8' : '#70b8e8';
           let glosses = '';
@@ -86,27 +77,14 @@ export default function WordStudyBrowseScreen() {
           return (
             <TouchableOpacity
               onPress={() => navigation.navigate('WordStudyDetail', { wordId: w.id })}
-              style={{
-                paddingVertical: spacing.md,
-                borderBottomWidth: 1, borderBottomColor: base.border + '40',
-              }}
+              style={styles.row}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: spacing.sm }}>
-                <Text style={{ color: accentColor, fontFamily: 'EBGaramond_500Medium', fontSize: 20 }}>
-                  {w.original}
-                </Text>
-                <Text style={{ color: base.goldDim, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 13 }}>
-                  {w.transliteration}
-                </Text>
+              <View style={styles.wordRow}>
+                <Text style={[styles.original, { color: accentColor }]}>{w.original}</Text>
+                <Text style={styles.transliteration}>{w.transliteration}</Text>
               </View>
-              <Text style={{ color: base.gold, fontFamily: 'EBGaramond_600SemiBold', fontSize: 13, marginTop: 2 }}>
-                {glosses}
-              </Text>
-              {w.strongs && (
-                <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 10, marginTop: 2 }}>
-                  Strong's: {w.strongs}
-                </Text>
-              )}
+              <Text style={styles.glosses}>{glosses}</Text>
+              {w.strongs && <Text style={styles.strongs}>Strong's: {w.strongs}</Text>}
             </TouchableOpacity>
           );
         }}
@@ -114,3 +92,82 @@ export default function WordStudyBrowseScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  topSection: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+  },
+  headerSpacing: {
+    marginBottom: spacing.md,
+  },
+  searchInput: {
+    backgroundColor: base.bgElevated,
+    color: base.text,
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+    borderRadius: radii.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderWidth: 1,
+    borderColor: base.border,
+    marginBottom: spacing.sm,
+  },
+  langRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  langLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 12,
+    paddingBottom: 4,
+  },
+  langLabelActive: {
+    color: base.gold,
+    borderBottomWidth: 2,
+    borderBottomColor: base.gold,
+  },
+  listContent: {
+    paddingHorizontal: spacing.md,
+  },
+  row: {
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  wordRow: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    gap: spacing.sm,
+  },
+  original: {
+    fontFamily: fontFamily.bodyMedium,
+    fontSize: 20,
+  },
+  transliteration: {
+    color: base.goldDim,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 13,
+  },
+  glosses: {
+    color: base.gold,
+    fontFamily: fontFamily.bodySemiBold,
+    fontSize: 13,
+    marginTop: 2,
+  },
+  strongs: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    marginTop: 2,
+  },
+});

@@ -3,11 +3,11 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getBookmarks, removeBookmark } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
 
 export default function BookmarkListScreen() {
@@ -25,21 +25,19 @@ export default function BookmarkListScreen() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       <ScreenHeader
         title="Bookmarks"
         onBack={() => navigation.goBack()}
-        style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}
+        style={styles.header}
       />
       <FlatList
         data={bookmarks}
         keyExtractor={(b) => String(b.id)}
-        contentContainerStyle={{ paddingHorizontal: spacing.md }}
+        contentContainerStyle={styles.listContent}
         ListEmptyComponent={
-          <View style={{ alignItems: 'center', paddingTop: spacing.xxl }}>
-            <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 15 }}>
-              No bookmarks yet. Tap ☆ next to any verse.
-            </Text>
+          <View style={styles.emptyWrap}>
+            <Text style={styles.emptyText}>No bookmarks yet. Tap ☆ next to any verse.</Text>
           </View>
         }
         renderItem={({ item }) => {
@@ -50,15 +48,11 @@ export default function BookmarkListScreen() {
                 screen: 'Chapter', params: { bookId: match[1], chapterNum: parseInt(match[2], 10) },
               })}
               onLongPress={() => handleDelete(item.id)}
-              style={{
-                paddingVertical: spacing.md, borderBottomWidth: 1, borderBottomColor: base.border + '40',
-              }}
+              style={styles.row}
             >
-              <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>
-                {item.verse_ref}
-              </Text>
-              {item.label && <Text style={{ color: base.textDim, fontSize: 12, marginTop: 2 }}>{item.label}</Text>}
-              <Text style={{ color: base.textMuted, fontSize: 10, marginTop: 4 }}>{item.created_at?.slice(0, 10)}</Text>
+              <Text style={styles.verseRef}>{item.verse_ref}</Text>
+              {item.label && <Text style={styles.label}>{item.label}</Text>}
+              <Text style={styles.date}>{item.created_at?.slice(0, 10)}</Text>
             </TouchableOpacity>
           );
         }}
@@ -66,3 +60,47 @@ export default function BookmarkListScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  header: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.md,
+  },
+  listContent: {
+    paddingHorizontal: spacing.md,
+  },
+  emptyWrap: {
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+  emptyText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 15,
+  },
+  row: {
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  verseRef: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+  label: {
+    color: base.textDim,
+    fontSize: 12,
+    marginTop: 2,
+  },
+  date: {
+    color: base.textMuted,
+    fontSize: 10,
+    marginTop: 4,
+  },
+});

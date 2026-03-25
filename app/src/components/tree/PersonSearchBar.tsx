@@ -4,7 +4,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { View, TextInput, Text, TouchableOpacity, FlatList } from 'react-native';
-import { base, spacing, radii, eras, MIN_TOUCH_TARGET } from '../../theme';
+import { base, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 import type { Person } from '../../types';
 
 interface Props {
@@ -35,7 +35,7 @@ export function PersonSearchBar({ people, onSelect }: Props) {
         placeholderTextColor={base.textMuted}
         style={{
           backgroundColor: base.bgElevated, color: base.text,
-          fontFamily: 'SourceSans3_400Regular', fontSize: 13,
+          fontFamily: fontFamily.ui, fontSize: 13,
           borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.xs,
           borderWidth: 1, borderColor: base.border,
         }}
@@ -61,7 +61,7 @@ export function PersonSearchBar({ people, onSelect }: Props) {
                 backgroundColor: p.era ? (eras[p.era] ?? base.textMuted) : base.textMuted,
               }} />
               <View style={{ flex: 1 }}>
-                <Text style={{ color: base.text, fontFamily: 'SourceSans3_500Medium', fontSize: 13 }}>
+                <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 13 }}>
                   {p.name}
                 </Text>
                 <Text style={{ color: base.textMuted, fontSize: 10 }} numberOfLines={1}>

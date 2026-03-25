@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, MIN_TOUCH_TARGET } from '../../theme';
+import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 
 interface Props {
   showModern: boolean;
@@ -28,7 +28,7 @@ export function FloatingControls({ showModern, onToggleNames, onCentre }: Props)
         }}
         accessibilityLabel={showModern ? 'Switch to ancient names' : 'Switch to modern names'}
       >
-        <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 11 }}>
+        <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 11 }}>
           {showModern ? 'Ancient' : 'Modern'}
         </Text>
       </TouchableOpacity>
@@ -42,7 +42,7 @@ export function FloatingControls({ showModern, onToggleNames, onCentre }: Props)
         }}
         accessibilityLabel="Centre map"
       >
-        <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 11 }}>
+        <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 11 }}>
           Centre
         </Text>
       </TouchableOpacity>
