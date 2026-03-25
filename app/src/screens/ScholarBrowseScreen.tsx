@@ -56,6 +56,7 @@ export default function ScholarBrowseScreen() {
           placeholder="Search scholars..."
           placeholderTextColor={base.textMuted}
           style={styles.searchInput}
+            accessibilityLabel="Search"
         />
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}
@@ -88,6 +89,8 @@ export default function ScholarBrowseScreen() {
             <TouchableOpacity
               onPress={() => navigation.navigate('ScholarBio', { scholarId: s.id })}
               style={[styles.card, { backgroundColor: color + '14', borderLeftColor: color }]}
+              accessibilityLabel={`${s.name}${s.tradition ? ", " + s.tradition : ""}`}
+              accessibilityRole="button"
             >
               <Text style={[styles.cardName, { color }]}>{s.name}</Text>
               {s.tradition && <Text style={styles.cardTradition}>{s.tradition}</Text>}

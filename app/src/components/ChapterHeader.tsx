@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { StickyNote, Clock, MapPin } from 'lucide-react-native';
+import { StickyNote, Clock, MapPin, ArrowRight } from 'lucide-react-native';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
@@ -28,7 +28,7 @@ export function ChapterHeader({
       <Text style={{
         color: base.text, fontFamily: fontFamily.displaySemiBold,
         fontSize: 22, lineHeight: 30, letterSpacing: 0.5,
-      }}>
+      }} accessibilityRole="header">
         {chapter.title || `Chapter ${chapter.chapter_num}`}
       </Text>
 
@@ -44,21 +44,31 @@ export function ChapterHeader({
 
       {/* Action bar */}
       <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.md, flexWrap: 'wrap' }}>
-        <TouchableOpacity onPress={onNotesPress}>
+        <TouchableOpacity
+          onPress={onNotesPress}
+          accessibilityLabel={noteCount > 0 ? `${noteCount} notes` : 'Notes'}
+          accessibilityRole="button"
+        >
           <BadgeChip
             label={noteCount > 0 ? `${noteCount} Notes` : 'Notes'}
             icon={<StickyNote size={12} color={noteCount > 0 ? base.gold : base.textMuted} />}
             color={noteCount > 0 ? base.gold : base.textMuted}
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={onIntroPress}>
+        <TouchableOpacity
+          onPress={onIntroPress}
+          style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
+          accessibilityLabel="About this book"
+          accessibilityRole="button"
+        >
           <Text style={{
             color: base.textMuted,
             fontFamily: fontFamily.uiMedium,
             fontSize: 12,
           }}>
-            About This Book →
+            About This Book
           </Text>
+          <ArrowRight size={12} color={base.textMuted} />
         </TouchableOpacity>
       </View>
 

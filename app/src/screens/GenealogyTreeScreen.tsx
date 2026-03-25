@@ -97,7 +97,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
 
       {/* Tree viewport */}
-      <View style={styles.viewport}>
+      <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
           <Animated.View style={[{ flex: 1 }, animatedStyle]}>
             <Svg width="100%" height="100%">

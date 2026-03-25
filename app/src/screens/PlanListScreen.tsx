@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from
 import { useNavigation } from '@react-navigation/native';
 import { getPlans, getActivePlanId, getPlanProgress } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
+import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
@@ -55,12 +56,15 @@ export default function PlanListScreen() {
           <TouchableOpacity
             onPress={() => navigation.navigate('PlanDetail', { planId: item.id })}
             style={styles.row}
+            accessibilityLabel={`${item.name}, ${item.total_days} days`}
+            accessibilityRole="button"
           >
             <Text style={styles.planName}>{item.name}</Text>
             <Text style={styles.planDesc}>{item.description}</Text>
-            <Text style={styles.planMeta}>
-              {item.total_days} days{item.id === activePlanId ? ' · Active' : ''}
-            </Text>
+            <View style={styles.planMetaRow}>
+              <Text style={styles.planMeta}>{item.total_days} days</Text>
+              {item.id === activePlanId && <BadgeChip label="Active" color={base.gold} />}
+            </View>
           </TouchableOpacity>
         )}
       />
@@ -124,6 +128,11 @@ const styles = StyleSheet.create({
   planMeta: {
     color: base.textMuted,
     fontSize: 11,
+  },
+  planMetaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
     marginTop: 4,
   },
 });

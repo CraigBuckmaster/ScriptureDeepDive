@@ -57,10 +57,12 @@ export default function ReadingHistoryScreen() {
         }
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate('ReadTab', {
-              screen: 'Chapter', params: { bookId: item.book_id, chapterNum: item.chapter_num },
+            onPress={() => navigation.push('Chapter', {
+              bookId: item.book_id, chapterNum: item.chapter_num,
             })}
             style={styles.row}
+            accessibilityLabel={`${item.book_name} chapter ${item.chapter_num}`}
+            accessibilityRole="button"
           >
             <Text style={styles.rowTitle}>{item.book_name} {item.chapter_num}</Text>
             {item.title && <Text style={styles.rowSubtitle}>{item.title}</Text>}

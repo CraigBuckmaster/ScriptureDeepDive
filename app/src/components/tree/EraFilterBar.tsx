@@ -29,6 +29,8 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
           <TouchableOpacity
             key={era}
             onPress={() => onSelect(era)}
+            accessibilityRole="button"
+            accessibilityState={{ selected: era === activeEra }}
             style={{
               flexDirection: 'row', alignItems: 'center', gap: 6,
               backgroundColor: isActive ? color + '33' : 'transparent',

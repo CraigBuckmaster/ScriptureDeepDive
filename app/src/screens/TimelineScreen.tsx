@@ -64,7 +64,7 @@ export default function TimelineScreen() {
     <SafeAreaView style={styles.container}>
       <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
 
-      <ScrollView horizontal showsHorizontalScrollIndicator style={{ flex: 1 }}>
+      <ScrollView horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
         <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
           {/* Era bands */}
           {Object.entries(ERA_RANGES).map(([era, [start, end]]) => {

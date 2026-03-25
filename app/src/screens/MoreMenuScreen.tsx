@@ -29,7 +29,7 @@ export default function MoreMenuScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>More</Text>
+      <Text style={styles.title} accessibilityRole="header">More</Text>
 
       <View style={styles.menuList}>
         {MENU_ITEMS.map((item, idx) => (

@@ -72,10 +72,10 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
             Notes — {bookName ?? bookId} {chapterNum}
           </Text>
           <View style={{ flexDirection: 'row', gap: spacing.md }}>
-            <TouchableOpacity onPress={() => setShowAdd(true)} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }}>
+            <TouchableOpacity onPress={() => setShowAdd(true)} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }} accessibilityLabel="Add note" accessibilityRole="button">
               <Text style={{ color: base.gold, fontSize: 20 }}>+</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={onClose} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }}>
+            <TouchableOpacity onPress={onClose} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }} accessibilityLabel="Close notes" accessibilityRole="button">
               <Text style={{ color: base.gold, fontSize: 16 }}>✕</Text>
             </TouchableOpacity>
           </View>

@@ -73,7 +73,7 @@ export default function ExploreMenuScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>Explore</Text>
+        <Text style={styles.title} accessibilityRole="header">Explore</Text>
 
         <View style={styles.grid}>
           {FEATURES.map((f) => (

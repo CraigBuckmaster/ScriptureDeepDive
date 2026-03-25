@@ -32,6 +32,7 @@ export function PersonSearchBar({ people, onSelect }: Props) {
         value={query}
         onChangeText={setQuery}
         placeholder="Search people..."
+          accessibilityLabel="Search people"
         placeholderTextColor={base.textMuted}
         style={{
           backgroundColor: base.bgElevated, color: base.text,
