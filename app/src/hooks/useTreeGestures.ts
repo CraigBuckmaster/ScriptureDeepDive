@@ -4,6 +4,12 @@
  * Uses react-native-gesture-handler v2 + reanimated shared values.
  * Simultaneous pinch + pan. Zoom bounded [0.15, 3].
  * Programmatic animateTo() for search-to-node and era-jump.
+ *
+ * Centering functions:
+ *   jumpToNode           — instant, no animation (initial load)
+ *   centreOnNode         — animated to viewport center
+ *   centreOnNodeTop      — animated to near top of viewport
+ *   centreOnNodeAbovePanel — animated to upper third (for bio panel)
  */
 
 import { useCallback } from 'react';
@@ -14,6 +20,7 @@ import {
   useAnimatedStyle,
   withTiming,
   withDecay,
+  cancelAnimation,
   type SharedValue,
 } from 'react-native-reanimated';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
@@ -26,6 +33,7 @@ interface TreeGestureResult {
   translateY: SharedValue<number>;
   animateTo: (x: number, y: number, targetScale: number, duration?: number) => void;
   centreOnNode: (nodeX: number, nodeY: number) => void;
+  centreOnNodeTop: (nodeX: number, nodeY: number) => void;
   jumpToNode: (nodeX: number, nodeY: number) => void;
   centreOnNodeAbovePanel: (nodeX: number, nodeY: number) => void;
 }
@@ -38,9 +46,10 @@ export function useTreeGestures(): TreeGestureResult {
     ? TREE_CONSTANTS.initialScaleMobile
     : TREE_CONSTANTS.initialScaleTablet;
 
+  // Start off-screen — tree is hidden until jumpToNode positions it
   const scale = useSharedValue(initialScale);
-  const translateX = useSharedValue(SCREEN_W / 2);
-  const translateY = useSharedValue(SCREEN_H * 0.15);
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
 
   const savedScale = useSharedValue(initialScale);
   const savedTranslateX = useSharedValue(0);
@@ -85,28 +94,48 @@ export function useTreeGestures(): TreeGestureResult {
     ],
   }));
 
-  // Programmatic animation
+  /** Cancel any running animations (decay, timing) before programmatic moves. */
+  const cancelAll = useCallback(() => {
+    cancelAnimation(translateX);
+    cancelAnimation(translateY);
+    cancelAnimation(scale);
+  }, []);
+
+  // Programmatic animation — always cancels running animations first
   const animateTo = useCallback((x: number, y: number, targetScale: number, duration = 500) => {
+    cancelAll();
+    console.log(`[Gesture] animateTo tx=${x.toFixed(0)} ty=${y.toFixed(0)} s=${targetScale} (current tx=${translateX.value.toFixed(0)} ty=${translateY.value.toFixed(0)} s=${scale.value.toFixed(2)})`);
     translateX.value = withTiming(x, { duration });
     translateY.value = withTiming(y, { duration });
     scale.value = withTiming(
       Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale)),
       { duration }
     );
-  }, []);
+  }, [cancelAll]);
 
-  // Immediate jump — no animation, sets transform instantly
+  // Immediate jump — cancels animations, sets transform instantly
   const jumpTo = useCallback((x: number, y: number, targetScale: number) => {
+    cancelAll();
+    console.log(`[Gesture] jumpTo tx=${x.toFixed(0)} ty=${y.toFixed(0)} s=${targetScale}`);
     translateX.value = x;
     translateY.value = y;
     scale.value = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale));
-  }, []);
+  }, [cancelAll]);
 
-  // Centre on a specific node
+  // Centre on a specific node (animated, node ends up at viewport center)
   const centreOnNode = useCallback((nodeX: number, nodeY: number) => {
     const targetScale = isMobile ? 0.65 : 0.9;
     const centerX = SCREEN_W / 2 - nodeX * targetScale;
     const centerY = SCREEN_H / 2 - nodeY * targetScale;
+    animateTo(centerX, centerY, targetScale, 550);
+  }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
+
+  // Centre on a node near the top of the viewport (animated)
+  // Used for All/Primeval filters where target is the tree root with nothing above it.
+  const centreOnNodeTop = useCallback((nodeX: number, nodeY: number) => {
+    const targetScale = isMobile ? 0.65 : 0.9;
+    const centerX = SCREEN_W / 2 - nodeX * targetScale;
+    const centerY = SCREEN_H * 0.15 - nodeY * targetScale;
     animateTo(centerX, centerY, targetScale, 550);
   }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
 
@@ -127,5 +156,5 @@ export function useTreeGestures(): TreeGestureResult {
     animateTo(centerX, centerY, targetScale, 550);
   }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode, jumpToNode, centreOnNodeAbovePanel };
+  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode, centreOnNodeTop, jumpToNode, centreOnNodeAbovePanel };
 }
