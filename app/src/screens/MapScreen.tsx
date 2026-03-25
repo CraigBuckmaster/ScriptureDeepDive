@@ -188,6 +188,7 @@ export default function MapScreen({ route, navigation }: any) {
               if (p) panToPlace(p);
             }}
             onChapterPress={() => handleChapterPress(activeStory)}
+            onClose={() => { setActiveStory(null); setShowPanel(false); }}
           />
         </View>
       )}
