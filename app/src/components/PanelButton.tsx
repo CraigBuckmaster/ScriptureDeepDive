@@ -1,13 +1,13 @@
 /**
  * PanelButton — Single toggle button for panel activation.
  *
- * Default: border + textDim. Active: accent bg 20% + accent text.
- * Scholar buttons use getScholarColor(). Cinzel 10-11pt. Min 44pt touch.
+ * Default: solid dark bg + tinted border. Active: accent bg 20% + accent text.
+ * Scholar buttons use getScholarColor(). Cinzel 10pt. 32px height + hitSlop.
  */
 
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { getPanelColors, getScholarColor, base, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { getPanelColors, getScholarColor, base, radii, fontFamily } from '../theme';
 import { getPanelLabel, isScholarPanel } from '../utils/panelLabels';
 
 interface Props {
@@ -25,16 +25,17 @@ export function PanelButton({ panelType, isActive, onPress }: Props) {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
       accessibilityRole="button"
       accessibilityState={{ selected: isActive }}
       accessibilityLabel={`${label} panel${isActive ? ', open' : ''}`}
       style={{
-        backgroundColor: isActive ? accent + '33' : 'transparent',
+        backgroundColor: isActive ? accent + '33' : base.bg + 'EE',
         borderWidth: 1,
-        borderColor: isActive ? accent : base.border,
+        borderColor: isActive ? accent : accent + '40',
         borderRadius: radii.sm,
         paddingHorizontal: 10,
-        minHeight: MIN_TOUCH_TARGET,
+        height: 32,
         justifyContent: 'center',
         alignItems: 'center',
       }}

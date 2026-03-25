@@ -1,12 +1,15 @@
 /**
- * ButtonRow — Horizontal ScrollView of PanelButtons.
+ * ButtonRow — Wrapping grid of PanelButtons.
+ *
+ * Buttons wrap into rows (typically 4-5 per row depending on label width).
+ * All buttons visible at once — no scrolling needed.
  *
  * Button order: section = heb,hist,ctx,cross,[scholars],poi,tl
  * Chapter = lit,hebtext,themes,ppl,trans,src,rec,thread,tx,debate
  */
 
 import React, { useMemo } from 'react';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { PanelButton } from './PanelButton';
 import { SECTION_PANEL_ORDER, CHAPTER_PANEL_ORDER, isScholarPanel } from '../utils/panelLabels';
 import { spacing } from '../theme';
@@ -55,10 +58,10 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel }: Pro
   if (orderedTypes.length === 0) return null;
 
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{
+    <View
+      style={{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         paddingHorizontal: spacing.md,
         paddingVertical: spacing.sm,
         gap: spacing.xs,
@@ -72,6 +75,6 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel }: Pro
           onPress={() => onToggle(type)}
         />
       ))}
-    </ScrollView>
+    </View>
   );
 }

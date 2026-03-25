@@ -1,13 +1,14 @@
 /**
- * PanelContainer — Animated expand/collapse wrapper for panel content.
+ * PanelContainer — Expand/collapse wrapper for panel content.
  *
- * Left border (3px accent) + bg + padding. Renders PanelRenderer inside.
+ * Left border (3px accent) + bg + padding. Close ✕ in top-right.
+ * Renders PanelRenderer inside.
  */
 
 import React from 'react';
-import { View, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { View, TouchableOpacity, Text, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
-import { getPanelColors, spacing } from '../theme';
+import { getPanelColors, base, spacing } from '../theme';
 import type { ParsedRef } from '../types';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -18,6 +19,7 @@ interface Props {
   panelType: string;
   contentJson: string;
   isOpen: boolean;
+  onClose?: () => void;
   onRefPress?: (ref: ParsedRef) => void;
   onWordStudyPress?: (word: string) => void;
   onScholarPress?: (scholarId: string) => void;
@@ -27,7 +29,7 @@ interface Props {
 }
 
 export function PanelContainer({
-  panelType, contentJson, isOpen,
+  panelType, contentJson, isOpen, onClose,
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
 }: Props) {
@@ -43,11 +45,33 @@ export function PanelContainer({
         borderLeftColor: colors.accent,
         paddingHorizontal: spacing.md,
         paddingVertical: spacing.md,
-        marginHorizontal: spacing.sm,
+        marginHorizontal: 4,
         marginBottom: spacing.sm,
       }}
       accessibilityLiveRegion="polite"
     >
+      {/* Close button */}
+      {onClose && (
+        <TouchableOpacity
+          onPress={onClose}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          accessibilityLabel="Close panel"
+          accessibilityRole="button"
+          style={{
+            position: 'absolute',
+            top: 6,
+            right: 6,
+            width: 24,
+            height: 24,
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 10,
+          }}
+        >
+          <Text style={{ color: base.textMuted, fontSize: 16, lineHeight: 18 }}>✕</Text>
+        </TouchableOpacity>
+      )}
+
       <PanelRenderer
         panelType={panelType}
         contentJson={contentJson}

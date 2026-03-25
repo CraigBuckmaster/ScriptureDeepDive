@@ -87,6 +87,6 @@ export function SectionBlock({
 const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
+    borderBottomColor: base.border + '60',
   },
 });

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { StickyNote, Clock, MapPin, ArrowRight } from 'lucide-react-native';
+import { StickyNote, Clock, MapPin, BookOpen } from 'lucide-react-native';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
@@ -57,18 +57,14 @@ export function ChapterHeader({
         </TouchableOpacity>
         <TouchableOpacity
           onPress={onIntroPress}
-          style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
           accessibilityLabel="About this book"
           accessibilityRole="button"
         >
-          <Text style={{
-            color: base.textMuted,
-            fontFamily: fontFamily.uiMedium,
-            fontSize: 12,
-          }}>
-            About This Book
-          </Text>
-          <ArrowRight size={12} color={base.textMuted} />
+          <BadgeChip
+            label="About This Book"
+            icon={<BookOpen size={12} color={base.textMuted} />}
+            color={base.textMuted}
+          />
         </TouchableOpacity>
       </View>
 
