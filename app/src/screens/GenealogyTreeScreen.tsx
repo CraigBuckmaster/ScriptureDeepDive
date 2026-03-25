@@ -1,10 +1,13 @@
 /**
  * GenealogyTreeScreen — Zoomable family tree of 237 biblical people.
  *
- * Two-layer transform (Reduce Motion compatible, no blur):
- *   Outer Animated.View → gesture translate deltas + scale (Reanimated)
- *   Inner View → base translate (React state, always re-renders)
- *   Scale is ONLY on the outer layer — single rasterization pass.
+ * d3-hierarchy layout + react-native-svg rendering + gesture-handler
+ * pinch/pan. Era filtering, person search, bio bottom sheet.
+ * Deep-link: initialPersonId param → auto-centre + open bio.
+ *
+ * Transform architecture (Reduce Motion compatible):
+ *   Outer View  → base transform (React state, set by centering functions)
+ *   Inner Animated.View → gesture deltas (Reanimated, set by pan/pinch worklets)
  */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
@@ -79,7 +82,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     hasCentred.current = true;
     const adam = nodes.find((n) => n.data.id === 'adam');
     if (adam) {
-      console.log('[Tree] Initial position on Adam');
+      console.log(`[Tree] Initial position on Adam`);
       centreNodeTop(adam.x, adam.y);
     }
   }, [nodes.length, centreNodeTop, initialPersonId, offX, offY]);
@@ -162,8 +165,8 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
-          <Animated.View style={[gestureStyle, styles.layer]}>
-            <View style={[baseStyle, styles.layer]}>
+          <Animated.View style={[gestureStyle, styles.transformLayer]}>
+            <View style={[baseStyle, styles.transformLayer]}>
               <Svg
                 width={Math.max(bounds.width, 2000)}
                 height={Math.max(bounds.height, 2000)}
@@ -216,7 +219,8 @@ const styles = StyleSheet.create({
     flex: 1,
     overflow: 'hidden',
   },
-  layer: {
+  transformLayer: {
     overflow: 'visible' as const,
+    transformOrigin: '0% 0%',
   },
 });
