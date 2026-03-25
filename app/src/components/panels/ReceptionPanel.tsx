@@ -2,25 +2,47 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { getPanelColors, base, spacing, fontFamily } from '../../theme';
-import type { RecEntry, ParsedRef } from '../../types';
+import type { ParsedRef } from '../../types';
 
-interface Props { entries: RecEntry[]; onRefPress?: (ref: ParsedRef) => void; }
+interface Props { entries: any[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ReceptionPanel({ entries, onRefPress }: Props) {
   const colors = getPanelColors('rec');
+  if (!entries?.length) {
+    return (
+      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
+        No reception history available.
+      </Text>
+    );
+  }
+
   return (
     <View style={{ gap: spacing.md }}>
-      {entries.map((e, i) => (
-        <View key={i} style={{ gap: 4 }}>
-          <Text style={{ color: colors.accent, fontFamily: fontFamily.display, fontSize: 12 }}>
-            {e.title}
-          </Text>
-          <Text style={{ color: base.textDim, fontFamily: fontFamily.bodyItalic, fontSize: 14, lineHeight: 22 }}>
-            {e.quote}
-          </Text>
-          <TappableReference text={e.note} style={{ color: base.textMuted, fontSize: 13, lineHeight: 20 }} onRefPress={onRefPress} />
-        </View>
-      ))}
+      {entries.map((e: any, i: number) => {
+        // Handle both shapes: { title, quote, note }
+        // and legacy: { who, text }
+        const heading = e.title ?? e.who ?? '';
+        const body = e.quote ?? e.text ?? '';
+        const note = e.note ?? '';
+
+        return (
+          <View key={i} style={{ gap: 4 }}>
+            {heading ? (
+              <Text style={{ color: colors.accent, fontFamily: fontFamily.display, fontSize: 12 }}>
+                {heading}
+              </Text>
+            ) : null}
+            {body ? (
+              <Text style={{ color: base.textDim, fontFamily: fontFamily.bodyItalic, fontSize: 14, lineHeight: 22 }}>
+                {body}
+              </Text>
+            ) : null}
+            {note ? (
+              <TappableReference text={note} style={{ color: base.textMuted, fontSize: 13, lineHeight: 20 }} onRefPress={onRefPress} />
+            ) : null}
+          </View>
+        );
+      })}
     </View>
   );
 }

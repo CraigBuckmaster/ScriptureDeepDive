@@ -1,10 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Svg, { Circle, Line, Polygon, SvgText } from 'react-native-svg';
+import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
 import { getPanelColors, base, spacing, fontFamily } from '../../theme';
-import type { ThemesPanel } from '../../types';
 
-interface Props { data: ThemesPanel; }
+interface ThemeScore {
+  label?: string;
+  name?: string;
+  score?: number;
+  value?: number;
+}
+
+interface Props { data: { scores: ThemeScore[]; note?: string }; }
 
 const SIZE = 240;
 const CENTER = SIZE / 2;
@@ -12,7 +18,9 @@ const MAX_R = 95;
 
 export function ThemesRadarPanel({ data }: Props) {
   const colors = getPanelColors('themes');
-  const n = data.scores.length || 1;
+  if (!data?.scores?.length) return null;
+
+  const n = data.scores.length;
   const angleStep = (2 * Math.PI) / n;
 
   const getPoint = (index: number, value: number): [number, number] => {
@@ -22,7 +30,7 @@ export function ThemesRadarPanel({ data }: Props) {
   };
 
   const polyPoints = data.scores
-    .map((s, i) => getPoint(i, s.value))
+    .map((s, i) => getPoint(i, s.score ?? s.value ?? 0))
     .map(([x, y]) => `${x},${y}`)
     .join(' ');
 
@@ -38,13 +46,14 @@ export function ThemesRadarPanel({ data }: Props) {
         {data.scores.map((s, i) => {
           const [x, y] = getPoint(i, 10);
           const [lx, ly] = getPoint(i, 12.5);
+          const label = s.label ?? s.name ?? '';
           return (
             <React.Fragment key={i}>
               <Line x1={CENTER} y1={CENTER} x2={x} y2={y}
                 stroke={base.border} strokeWidth={0.5} />
               <SvgText x={lx} y={ly + 3} fontSize={8} fill={base.textMuted}
                 textAnchor="middle" fontFamily="SourceSans3_400Regular">
-                {s.name}
+                {label}
               </SvgText>
             </React.Fragment>
           );
