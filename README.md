@@ -6,7 +6,7 @@
 
 ## Features
 
-- **996 chapters** across 34 live books with verse-by-verse scholarly commentary
+- **996 chapters** across 36 live books with verse-by-verse scholarly commentary
 - **Dual translation** — NIV and ESV with instant toggle (61,000+ verses)
 - **47 scholar commentaries** — evangelical, reformed, Jewish, critical, patristic
 - **Hebrew & Greek word studies** — original-language roots with glosses and semantic range
@@ -130,7 +130,7 @@ Generator scripts are ephemeral — created in `/tmp/`, never committed. See `_t
 
 | Table | Rows | Description |
 |-------|------|-------------|
-| books | 66 | All 66 Bible books (34 live, 32 pending) |
+| books | 66 | All 66 Bible books (36 live, 30 pending) |
 | book_intros | 66 | Scholarly introductions for every book |
 | chapters | 996 | Chapter metadata + links |
 | sections | 2,239 | Verse-range sections within chapters |
@@ -150,9 +150,9 @@ Generator scripts are ephemeral — created in `/tmp/`, never committed. See `_t
 
 Plus FTS5 indexes on verses and people, and user tables (notes, bookmarks, preferences, reading progress).
 
-## Live Books (34)
+## Live Books (36)
 
-**Old Testament (29):** Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles, Ezra, Nehemiah, Esther, Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon, Isaiah, Lamentations, Daniel, Joel, Amos, Obadiah, Jonah
+**Old Testament (31):** Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 1 Samuel, 2 Samuel, 1 Kings, 2 Kings, 1 Chronicles, 2 Chronicles, Ezra, Nehemiah, Esther, Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon, Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel, Joel, Amos, Obadiah, Jonah
 
 **New Testament (5):** Matthew, Mark, Luke, John, Acts
 
