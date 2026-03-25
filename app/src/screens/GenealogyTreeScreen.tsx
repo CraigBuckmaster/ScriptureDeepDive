@@ -36,7 +36,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
-  const { nodes, links, marriageBars, spouseConnectors, spineIds } =
+  const { nodes, links, marriageBars, spouseConnectors, spineIds, bounds } =
     useTreeLayout(people, filterEra);
 
   const { gesture, animatedStyle, centreOnNode, centreOnNodeAbovePanel } = useTreeGestures();
@@ -119,7 +119,11 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
           <Animated.View style={[{ flex: 1 }, animatedStyle]}>
-            <Svg width="100%" height="100%">
+            <Svg
+              width={bounds.width}
+              height={bounds.height}
+              viewBox={`${bounds.minX} ${bounds.minY} ${bounds.width} ${bounds.height}`}
+            >
               <TreeCanvas
                 nodes={nodes}
                 links={links}

@@ -21,6 +21,7 @@ export function useTreeLayout(
         marriageBars: [],
         spouseConnectors: [],
         spineIds: new Set<string>(),
+        bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
       };
     }
     return computeFullLayout(people, filterEra === 'all' ? null : filterEra);

@@ -329,12 +329,22 @@ function isDimmed(person: TreePerson | Person, filterEra: string, spineIds: Set<
 
 // ── Full layout pipeline ────────────────────────────────────────────
 
+export interface TreeBounds {
+  minX: number;
+  maxX: number;
+  minY: number;
+  maxY: number;
+  width: number;
+  height: number;
+}
+
 export interface TreeLayoutResult {
   nodes: LayoutNode[];
   links: TreeLink[];
   marriageBars: MarriageBar[];
   spouseConnectors: SpouseConnector[];
   spineIds: Set<string>;
+  bounds: TreeBounds;
 }
 
 export function computeFullLayout(
@@ -345,7 +355,10 @@ export function computeFullLayout(
   const root = buildHierarchy(people, spineIds);
 
   if (!root) {
-    return { nodes: [], links: [], marriageBars: [], spouseConnectors: [], spineIds };
+    return {
+      nodes: [], links: [], marriageBars: [], spouseConnectors: [], spineIds,
+      bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
+    };
   }
 
   const treeNodes = layoutTree(root);
@@ -432,5 +445,26 @@ export function computeFullLayout(
   const marriageBars = computeMarriageBars(allNodes, spineIds, filterEra);
   const spouseConnectors = computeSpouseConnectors(allNodes, spineIds, filterEra);
 
-  return { nodes: allNodes, links, marriageBars, spouseConnectors, spineIds };
+  // Compute bounding box with padding for labels
+  const PAD = 100;
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const n of allNodes) {
+    if (n.x < minX) minX = n.x;
+    if (n.x > maxX) maxX = n.x;
+    if (n.y < minY) minY = n.y;
+    if (n.y > maxY) maxY = n.y;
+  }
+  // Add padding for labels and spouse offsets
+  minX -= PAD;
+  maxX += PAD + TREE_CONSTANTS.spouseXOffset;
+  minY -= PAD;
+  maxY += PAD;
+
+  const bounds: TreeBounds = {
+    minX, maxX, minY, maxY,
+    width: maxX - minX,
+    height: maxY - minY,
+  };
+
+  return { nodes: allNodes, links, marriageBars, spouseConnectors, spineIds, bounds };
 }

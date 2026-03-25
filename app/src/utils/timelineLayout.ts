@@ -6,7 +6,7 @@
  * Piecewise linear scale, swim-lane assignment, tick marks. Pure logic.
  */
 
-export const TOTAL_WIDTH = 9000;
+export const TOTAL_WIDTH = 9400;
 
 // Lane config — events above, people/world below
 const ABOVE_LANE_COUNT = 12;
@@ -30,10 +30,14 @@ export function computeSvgHeight(hasBelow: boolean): number {
 export const LANE_COUNT = ABOVE_LANE_COUNT;
 export const LANE_TOP = ABOVE_LANE_TOP;
 
+/** 200px padding on each end so text isn't clipped at the edges. */
+const PAD_LEFT = 200;
+const PAD_RIGHT = 200;
+
 export const SCALE_BREAKPOINTS: [number, number][] = [
-  [-4000, 0], [-2200, 1400], [-1800, 2000], [-1400, 2800],
-  [-1050, 3700], [-930, 4100], [-722, 4780], [-432, 6500],
-  [0, 8000], [95, 9000],
+  [-4000, PAD_LEFT], [-2200, 1600], [-1800, 2200], [-1400, 3000],
+  [-1050, 3900], [-930, 4300], [-722, 4980], [-432, 6700],
+  [0, 8200], [95, TOTAL_WIDTH - PAD_RIGHT],
 ];
 
 export const ERA_RANGES: Record<string, [number, number]> = {
