@@ -21,6 +21,9 @@
       "buildNumber": "1",
       "infoPlist": {
         "UIBackgroundModes": ["audio"]
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyBIAraIZ1bAOGPpE0_BMX1QJ0CvTRdtiVI"
       }
     },
     "android": {
@@ -29,7 +32,12 @@
         "backgroundColor": "#0c0a07"
       },
       "package": "com.scripturedeepive.app",
-      "versionCode": 1
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBIAraIZ1bAOGPpE0_BMX1QJ0CvTRdtiVI"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/images/icon-192.png",

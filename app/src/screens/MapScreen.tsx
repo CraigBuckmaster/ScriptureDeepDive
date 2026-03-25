@@ -10,12 +10,13 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
+import { ancientMapStyle, modernMapStyle } from '../utils/mapStyles';
 
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
@@ -150,12 +151,13 @@ export default function MapScreen({ route, navigation }: any) {
       <MapView
         ref={mapRef}
         style={StyleSheet.absoluteFill}
+        provider={PROVIDER_GOOGLE}
         mapType="terrain"
+        customMapStyle={showModern ? modernMapStyle : ancientMapStyle}
         initialRegion={INITIAL_REGION}
         onRegionChangeComplete={onRegionChange}
-        showsPointsOfInterest={showModern}
-        showsBuildings={showModern}
         showsTraffic={false}
+        showsIndoors={false}
         accessible
         accessibilityLabel="Biblical world map"
         accessibilityHint="Pinch to zoom, drag to pan"

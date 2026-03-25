@@ -26,10 +26,10 @@ export function FloatingControls({ showModern, onToggleNames, onCentre }: Props)
           borderRadius: radii.md, paddingHorizontal: spacing.sm, minHeight: MIN_TOUCH_TARGET,
           justifyContent: 'center',
         }}
-        accessibilityLabel={showModern ? 'Switch to ancient names' : 'Switch to modern names'}
+        accessibilityLabel={showModern ? 'Switch to biblical view' : 'Switch to modern view'}
       >
         <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 11 }}>
-          {showModern ? 'Ancient' : 'Modern'}
+          {showModern ? 'Biblical' : 'Modern'}
         </Text>
       </TouchableOpacity>
 
