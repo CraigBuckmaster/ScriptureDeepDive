@@ -5,14 +5,14 @@
  * pinch/pan. Era filtering, person search, bio bottom sheet.
  * Deep-link: initialPersonId param → auto-centre + open bio.
  *
- * Centering strategy:
- *   Initial load   → jumpNode (instant, no animation, fires before paint)
- *   All / Primeval → centreNodeTop (animated, Adam near viewport top)
- *   Other eras     → centreNode (animated, target at viewport center)
- *   Deep-link      → centreNodeAbove (animated, offset for bio panel)
+ * Centering strategy (all instant — no withTiming):
+ *   Initial load   → centreNodeTop (Adam near viewport top)
+ *   All / Primeval → centreNodeTop (Adam near viewport top)
+ *   Other eras     → centreNode (target at viewport center)
+ *   Deep-link      → centreNodeAbove (offset for bio panel)
  */
 
-import React, { useState, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
@@ -41,7 +41,6 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   const insets = useSafeAreaInsets();
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
-  const [treeReady, setTreeReady] = useState(false);
 
   const { nodes, links, marriageBars, spouseConnectors, spineIds, bounds } =
     useTreeLayout(people, filterEra);
@@ -53,7 +52,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     }
   }, [isLoading, people.length, nodes.length]);
 
-  const { gesture, animatedStyle, centreOnNode, centreOnNodeTop, jumpToNode, centreOnNodeAbovePanel } = useTreeGestures();
+  const { gesture, animatedStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel } = useTreeGestures();
 
   // Offset applied to shift d3 coordinates into positive SVG space
   const offX = -bounds.minX;
@@ -74,11 +73,6 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     (nodeX: number, nodeY: number) => centreOnNodeAbovePanel(nodeX + offX, nodeY + offY),
     [centreOnNodeAbovePanel, offX, offY],
   );
-  /** Instant jump (no animation). */
-  const jumpNode = useCallback(
-    (nodeX: number, nodeY: number) => jumpToNode(nodeX + offX, nodeY + offY),
-    [jumpToNode, offX, offY],
-  );
 
   /** Filter change — only updates state. Centering is handled by useEffect below. */
   const handleEraChange = useCallback(
@@ -88,23 +82,19 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
   // ── Centering logic ────────────────────────────────────────────────
 
-  // Track whether initial positioning has happened
   const hasCentred = useRef(false);
-  // Track previous era to detect actual changes vs re-renders
   const prevEra = useRef<string>(filterEra);
 
-  // 1. Initial load — instant jump to Adam BEFORE paint (useLayoutEffect)
-  //    Tree stays hidden (opacity 0) until this fires to prevent blank flash.
-  useLayoutEffect(() => {
+  // 1. Initial load — position on Adam
+  useEffect(() => {
     if (initialPersonId || hasCentred.current || nodes.length === 0) return;
     hasCentred.current = true;
     const adam = nodes.find((n) => n.data.id === 'adam');
     if (adam) {
-      console.log(`[Tree] Initial jump to Adam at d3(${adam.x.toFixed(0)}, ${adam.y.toFixed(0)}) svg(${(adam.x + offX).toFixed(0)}, ${(adam.y + offY).toFixed(0)})`);
-      jumpNode(adam.x, adam.y);
+      console.log(`[Tree] Initial position on Adam at d3(${adam.x.toFixed(0)}, ${adam.y.toFixed(0)}) svg(${(adam.x + offX).toFixed(0)}, ${(adam.y + offY).toFixed(0)})`);
+      centreNodeTop(adam.x, adam.y);
     }
-    setTreeReady(true);
-  }, [nodes.length, jumpNode, initialPersonId, offX, offY]);
+  }, [nodes.length, centreNodeTop, initialPersonId, offX, offY]);
 
   // 2. Deep-link — centre on specific person and open sidebar
   useEffect(() => {
@@ -114,29 +104,25 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       const person = people.find((p) => p.id === initialPersonId);
       if (person) setSelectedPerson(person);
       centreNodeAbove(node.x, node.y);
-      if (!treeReady) setTreeReady(true);
     }
   }, [initialPersonId, nodes.length, people, centreNodeAbove]);
 
-  // 3. Era filter change — animate to first node of the selected era.
-  //    For All/Primeval (Adam = tree root), position near TOP of viewport.
-  //    For other eras, CENTER on first matching node.
+  // 3. Era filter change — jump to first node of the selected era.
   useEffect(() => {
     if (!hasCentred.current || nodes.length === 0) return;
-    if (filterEra === prevEra.current) return; // no actual change
+    if (filterEra === prevEra.current) return;
     prevEra.current = filterEra;
 
     if (filterEra === 'all' || filterEra === 'primeval') {
-      // Both target Adam (tree root) — position near top since nothing is above him
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        console.log(`[Tree] Era→${filterEra}: top-centering on Adam at d3(${adam.x.toFixed(0)}, ${adam.y.toFixed(0)})`);
+        console.log(`[Tree] Era→${filterEra}: top-centering on Adam`);
         centreNodeTop(adam.x, adam.y);
       }
     } else {
       const firstMatch = nodes.find((n) => n.data.era === filterEra);
       if (firstMatch) {
-        console.log(`[Tree] Era→${filterEra}: centering on ${firstMatch.data.name} at d3(${firstMatch.x.toFixed(0)}, ${firstMatch.y.toFixed(0)})`);
+        console.log(`[Tree] Era→${filterEra}: centering on ${firstMatch.data.name}`);
         centreNode(firstMatch.x, firstMatch.y);
       }
     }
@@ -191,8 +177,8 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
       </View>
 
-      {/* Tree viewport — hidden until initial centering to prevent blank flash */}
-      <View style={[styles.viewport, !treeReady && styles.hidden]} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
+      {/* Tree viewport */}
+      <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
           <Animated.View style={[animatedStyle, { overflow: 'visible' }]}>
             <Svg
@@ -246,8 +232,5 @@ const styles = StyleSheet.create({
   viewport: {
     flex: 1,
     overflow: 'hidden',
-  },
-  hidden: {
-    opacity: 0,
   },
 });
