@@ -37,6 +37,19 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
   const { gesture, animatedStyle, centreOnNode } = useTreeGestures();
 
+  /** Filter by era and jump the tree to the first matching node. */
+  const handleEraChange = useCallback(
+    (era: string) => {
+      setFilterEra(era);
+      if (era === 'all' || nodes.length === 0) return;
+      const firstMatch = nodes.find((n) => n.data.era === era);
+      if (firstMatch) {
+        setTimeout(() => centreOnNode(firstMatch.x, firstMatch.y), 150);
+      }
+    },
+    [nodes, centreOnNode],
+  );
+
   // Deep-link: centre on initial person
   useEffect(() => {
     if (initialPersonId && nodes.length > 0) {
@@ -94,7 +107,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       <PersonSearchBar people={people} onSelect={handleSearchSelect} />
 
       {/* Era filter */}
-      <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
+      <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
 
       {/* Tree viewport */}
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">

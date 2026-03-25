@@ -136,3 +136,16 @@ export const eraNames: Record<string, string> = {
   intertestamental: 'Intertestamental',
   nt: 'New Testament',
 } as const;
+
+/** Compact labels for filter pills — short enough for single-line chip display. */
+export const eraPillLabels: Record<string, string> = {
+  primeval: 'Primeval',
+  patriarch: 'Patriarchs',
+  exodus: 'Exodus',
+  judges: 'Judges',
+  kingdom: 'Kingdom',
+  prophets: 'Prophets',
+  exile: 'Exile',
+  intertestamental: 'Intertestam.',
+  nt: 'NT',
+} as const;

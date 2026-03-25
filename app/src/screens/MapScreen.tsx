@@ -106,14 +106,25 @@ export default function MapScreen({ route, navigation }: any) {
     }
   }, [navigation]);
 
-  // Era filter change
+  // Era filter change — auto-select the first matching story to jump the map
   const handleEraChange = useCallback((era: string) => {
     setActiveEra(era);
-    if (activeStory && era !== 'all' && activeStory.era !== era) {
+    if (era === 'all') {
+      setActiveStory(null);
+      setShowPanel(false);
+      mapRef.current?.animateToRegion(INITIAL_REGION, 500);
+      return;
+    }
+    // If current story doesn't match the new era, jump to the first matching story
+    if (activeStory?.era === era) return;
+    const firstMatch = stories.find((s) => s.era === era);
+    if (firstMatch) {
+      selectStory(firstMatch);
+    } else {
       setActiveStory(null);
       setShowPanel(false);
     }
-  }, [activeStory]);
+  }, [activeStory, stories, selectStory]);
 
   if (placesLoading || storiesLoading) {
     return (
