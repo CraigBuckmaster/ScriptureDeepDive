@@ -3,10 +3,11 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useWordStudies } from '../hooks/useWordStudies';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily } from '../theme';
 
@@ -47,13 +48,13 @@ export default function WordStudyBrowseScreen() {
           style={styles.headerSpacing}
         />
 
-        <TextInput
-          value={search} onChangeText={setSearch}
-          placeholder="Search by word or gloss..."
-          placeholderTextColor={base.textMuted}
-          style={styles.searchInput}
-            accessibilityLabel="Search"
-        />
+        <View style={{ marginBottom: spacing.sm }}>
+          <SearchInput
+            value={search}
+            onChangeText={setSearch}
+            placeholder="Search by word or gloss..."
+          />
+        </View>
 
         <View style={styles.langRow}>
           {(['all', 'hebrew', 'greek'] as const).map((l) => (
@@ -110,18 +111,6 @@ const styles = StyleSheet.create({
   },
   headerSpacing: {
     marginBottom: spacing.md,
-  },
-  searchInput: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    borderWidth: 1,
-    borderColor: base.border,
-    marginBottom: spacing.sm,
   },
   langRow: {
     flexDirection: 'row',

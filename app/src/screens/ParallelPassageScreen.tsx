@@ -3,12 +3,13 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getSynopticEntries } from '../db/content';
 import { resolveVerseText, parseReference } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
@@ -89,13 +90,13 @@ export default function ParallelPassageScreen() {
             style={styles.headerSpacing}
           />
 
-          <TextInput
-            value={search} onChangeText={setSearch}
-            placeholder="Search passages..."
-            placeholderTextColor={base.textMuted}
-            style={styles.searchInput}
-            accessibilityLabel="Search"
-          />
+          <View style={{ marginBottom: spacing.sm }}>
+            <SearchInput
+              value={search}
+              onChangeText={setSearch}
+              placeholder="Search passages..."
+            />
+          </View>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
             {categories.map((cat) => (
@@ -196,18 +197,6 @@ const styles = StyleSheet.create({
   },
   headerSpacing: {
     marginBottom: spacing.md,
-  },
-  searchInput: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    borderWidth: 1,
-    borderColor: base.border,
-    marginBottom: spacing.sm,
   },
   filterRow: {
     gap: spacing.xs,

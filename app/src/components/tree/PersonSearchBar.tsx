@@ -3,7 +3,8 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, TextInput, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { SearchInput } from '../SearchInput';
 import { base, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 import type { Person } from '../../types';
 
@@ -28,18 +29,11 @@ export function PersonSearchBar({ people, onSelect }: Props) {
 
   return (
     <View style={{ paddingHorizontal: spacing.md, zIndex: 10 }}>
-      <TextInput
+      <SearchInput
         value={query}
         onChangeText={setQuery}
         placeholder="Search people..."
-          accessibilityLabel="Search people"
-        placeholderTextColor={base.textMuted}
-        style={{
-          backgroundColor: base.bgElevated, color: base.text,
-          fontFamily: fontFamily.ui, fontSize: 13,
-          borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.xs,
-          borderWidth: 1, borderColor: base.border,
-        }}
+        compact
       />
       {results.length > 0 && (
         <View style={{
