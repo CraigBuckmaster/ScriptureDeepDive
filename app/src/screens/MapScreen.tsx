@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { View, StyleSheet, useWindowDimensions, UIManager, Platform } from 'react-native';
+import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
 
@@ -19,12 +19,11 @@ import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { ancientMapStyle, modernMapStyle } from '../utils/mapStyles';
 
 /**
- * Detect whether Google Maps native module is available.
- * In Expo Go, only Apple Maps (PROVIDER_DEFAULT) works.
- * In dev builds / production, Google Maps is linked via react-native-maps.
+ * Google Maps is only available in custom dev builds, never in Expo Go.
+ * Set this to true once you have a working dev build with react-native-maps
+ * linked to the Google Maps SDK. Until then, Apple Maps + POI suppression.
  */
-const HAS_GOOGLE_MAPS = Platform.OS === 'android'
-  || UIManager.getViewManagerConfig?.('AIRGoogleMap') != null;
+const USE_GOOGLE_MAPS = false;
 
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
@@ -159,11 +158,11 @@ export default function MapScreen({ route, navigation }: any) {
       <MapView
         ref={mapRef}
         style={StyleSheet.absoluteFill}
-        provider={HAS_GOOGLE_MAPS ? PROVIDER_GOOGLE : PROVIDER_DEFAULT}
+        provider={USE_GOOGLE_MAPS ? PROVIDER_GOOGLE : PROVIDER_DEFAULT}
         mapType="terrain"
-        customMapStyle={HAS_GOOGLE_MAPS ? (showModern ? modernMapStyle : ancientMapStyle) : undefined}
-        showsPointsOfInterest={HAS_GOOGLE_MAPS ? undefined : showModern}
-        showsBuildings={HAS_GOOGLE_MAPS ? undefined : showModern}
+        customMapStyle={USE_GOOGLE_MAPS ? (showModern ? modernMapStyle : ancientMapStyle) : undefined}
+        showsPointsOfInterest={USE_GOOGLE_MAPS ? undefined : showModern}
+        showsBuildings={USE_GOOGLE_MAPS ? undefined : showModern}
         initialRegion={INITIAL_REGION}
         onRegionChangeComplete={onRegionChange}
         showsTraffic={false}

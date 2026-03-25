@@ -49,9 +49,8 @@ export const TreeCanvas = memo(function TreeCanvas({
         <SpouseConnectorSvg key={`sc-${i}`} connector={conn} />
       ))}
 
-      {/* 4. Nodes (front) — skip virtual root */}
+      {/* 4. Nodes (front) */}
       {nodes.map((node) => {
-        if (node.data.id === '__root__') return null;
         const dimmed = filterEra !== null
           && node.data.era !== filterEra
           && !spineIds.has(node.data.id);
