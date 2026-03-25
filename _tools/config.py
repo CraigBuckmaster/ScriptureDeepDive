@@ -1155,3 +1155,29 @@ SCHOLAR_REGISTRY.append(('andersen_freedman', 'andersen_freedman', 'Andersen & F
 
 COMMENTATOR_SCOPE['stuart'].append('amos')
 COMMENTATOR_SCOPE['andersen_freedman'] = ['amos']
+
+# ── Wave 4: Obadiah ────────────────────────────────────────────────
+
+BOOK_META['obadiah'] = {
+    'is_nt': False,
+    'auth': 'Attributed to the prophet Obadiah (Obad 1:1). Nothing else is known about this author; the name means "servant of YHWH" and was common in ancient Israel. Dating is debated: proposals range from the 9th century BC (after an Edomite invasion during Jehoram\'s reign, 2 Chr 21:16-17) to the early 6th century (after Edom\'s collaboration with Babylon in 586 BC). The post-586 date is more widely held.',
+    'vhl_places': ['Edom', 'Esau', 'Zion', 'Jerusalem', 'Teman', 'Negev', 'Seir'],
+    'vhl_people': ['Esau', 'Jacob'],
+    'vhl_key': ['pride', 'day', 'destruction', 'possession', 'kingdom', 'judgment', 'Edom', 'brother', 'violence', 'deliverers'],
+    'vhl_time': ['in the day', 'on that day', 'the day of the LORD'],
+}
+
+COMMENTATOR_SCOPE['stuart'].append('obadiah')
+
+# ── Wave 4: Joel ───────────────────────────────────────────────────
+
+BOOK_META['joel'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Joel son of Pethuel (Joel 1:1). Nothing else is known about this prophet. Dating is debated: proposals range from the 9th century to the post-exilic period (5th-4th century BC). The absence of references to a king, the prominence of priests and elders, and the mention of Greeks (3:6) suggest a post-exilic date, though certainty is impossible.',
+    'vhl_places': ['Zion', 'Jerusalem', 'Judah', 'Valley of Jehoshaphat', 'Egypt', 'Edom', 'Tyre', 'Sidon', 'Philistia'],
+    'vhl_people': ['Joel'],
+    'vhl_key': ['day of the LORD', 'locusts', 'Spirit', 'repent', 'restore', 'rend', 'pour out', 'valley', 'harvest', 'darkness', 'army', 'trumpet', 'refuge'],
+    'vhl_time': ['the day of the LORD', 'in those days', 'at that time', 'afterward'],
+}
+
+COMMENTATOR_SCOPE['stuart'].append('joel')
