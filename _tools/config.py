@@ -1138,3 +1138,20 @@ BOOK_META['jonah'] = {
 SCHOLAR_REGISTRY.append(('stuart', 'stuart', 'Stuart', 'stuart'))
 
 COMMENTATOR_SCOPE['stuart'] = ['jonah']
+
+# ── Wave 4: Amos ───────────────────────────────────────────────────
+
+BOOK_META['amos'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Amos of Tekoa, a shepherd and dresser of sycamore-fig trees (Amos 1:1; 7:14-15) who prophesied during the reigns of Uzziah of Judah and Jeroboam II of Israel (c. 760-750 BC). Amos was not a professional prophet but a layman called directly by God, making him the earliest writing prophet in the canonical collection.',
+    'vhl_places': ['Tekoa', 'Israel', 'Judah', 'Damascus', 'Gaza', 'Tyre', 'Edom', 'Ammon', 'Moab', 'Samaria', 'Bethel', 'Gilgal', 'Beersheba', 'Zion', 'Jerusalem'],
+    'vhl_people': ['Amos', 'Jeroboam II', 'Uzziah', 'Amaziah', 'David'],
+    'vhl_key': ['justice', 'righteousness', 'day of the LORD', 'lion', 'plumb line', 'basket', 'judgment', 'remnant', 'seek', 'woe', 'oracle', 'fire', 'restore', 'exile', 'famine', 'earthquake'],
+    'vhl_time': ['two years before the earthquake', 'in that day', 'the days are coming', 'in those days'],
+}
+
+# Andersen-Freedman — Anchor Bible on Amos/Hosea
+SCHOLAR_REGISTRY.append(('andersen_freedman', 'andersen_freedman', 'Andersen & Freedman', 'andersen_freedman'))
+
+COMMENTATOR_SCOPE['stuart'].append('amos')
+COMMENTATOR_SCOPE['andersen_freedman'] = ['amos']
