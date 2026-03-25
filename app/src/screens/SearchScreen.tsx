@@ -15,6 +15,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
+import { SearchInput } from '../components/SearchInput';
 import { base, spacing, radii, fontFamily, eras } from '../theme';
 
 const INITIAL_VERSE_LIMIT = 20;
