@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MapView from 'react-native-maps';
 
@@ -45,6 +45,7 @@ export default function MapScreen({ route, navigation }: any) {
   const { zoomLevel, onRegionChange } = useMapZoom();
   const mapRef = useRef<MapView>(null);
   const insets = useSafeAreaInsets();
+  const { height: screenHeight } = useWindowDimensions();
 
   const [activeEra, setActiveEra] = useState<string>('all');
   const [activeStory, setActiveStory] = useState<MapStory | null>(null);
@@ -69,9 +70,12 @@ export default function MapScreen({ route, navigation }: any) {
         .filter(Boolean) as Place[];
 
       if (storyPlaces.length && mapRef.current) {
+        // Story panel takes ~40% of screen; centre places in the visible area above it
+        const panelHeight = Math.round(screenHeight * 0.4);
+        const topPad = insets.top + 50; // status bar + era filter
         mapRef.current.fitToCoordinates(
           storyPlaces.map((p) => ({ latitude: p.latitude, longitude: p.longitude })),
-          { edgePadding: { top: 80, right: 40, bottom: 300, left: 40 }, animated: true }
+          { edgePadding: { top: topPad, right: 40, bottom: panelHeight + 20, left: 40 }, animated: true }
         );
       }
     } catch {}
@@ -149,6 +153,9 @@ export default function MapScreen({ route, navigation }: any) {
         mapType="terrain"
         initialRegion={INITIAL_REGION}
         onRegionChangeComplete={onRegionChange}
+        showsPointsOfInterest={showModern}
+        showsBuildings={showModern}
+        showsTraffic={false}
         accessible
         accessibilityLabel="Biblical world map"
         accessibilityHint="Pinch to zoom, drag to pan"

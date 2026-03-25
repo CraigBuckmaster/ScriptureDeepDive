@@ -31,8 +31,8 @@ export default function TimelineScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
   const [showEvents, setShowEvents] = useState(true);
-  const [showPeople, setShowPeople] = useState(false);
-  const [showWorld, setShowWorld] = useState(false);
+  const [showPeople, setShowPeople] = useState(true);
+  const [showWorld, setShowWorld] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
   const { width: screenWidth } = useWindowDimensions();
