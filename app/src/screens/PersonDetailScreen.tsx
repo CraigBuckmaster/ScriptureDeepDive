@@ -10,6 +10,7 @@ import { usePersonDetail } from '../hooks/usePersonDetail';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { ArrowRight } from 'lucide-react-native';
 import { base, spacing, fontFamily, eras, eraNames } from '../theme';
 
 export default function PersonDetailScreen() {
@@ -97,8 +98,11 @@ export default function PersonDetailScreen() {
         <TouchableOpacity
           onPress={() => navigation.navigate('GenealogyTree', { personId: person.id })}
           style={styles.treeLink}
+          accessibilityLabel="See on family tree"
+          accessibilityRole="link"
         >
-          <Text style={styles.treeLinkText}>See on Family Tree →</Text>
+          <Text style={styles.treeLinkText}>See on Family Tree</Text>
+          <ArrowRight size={14} color={base.gold} />
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -185,6 +189,9 @@ const styles = StyleSheet.create({
     marginTop: spacing.lg,
   },
   treeLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
     marginTop: spacing.lg,
     paddingVertical: spacing.sm,
   },

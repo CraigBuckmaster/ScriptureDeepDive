@@ -5,6 +5,8 @@ import BookmarkListScreen from '../screens/BookmarkListScreen';
 import ReadingHistoryScreen from '../screens/ReadingHistoryScreen';
 import PlanListScreen from '../screens/PlanListScreen';
 import PlanDetailScreen from '../screens/PlanDetailScreen';
+import ChapterScreen from '../screens/ChapterScreen';
+import BookIntroScreen from '../screens/BookIntroScreen';
 import { base } from '../theme';
 
 const Stack = createStackNavigator();
@@ -18,6 +20,8 @@ export function MoreStack() {
       <Stack.Screen name="ReadingHistory" component={ReadingHistoryScreen} />
       <Stack.Screen name="PlanList" component={PlanListScreen} />
       <Stack.Screen name="PlanDetail" component={PlanDetailScreen} />
+      <Stack.Screen name="Chapter" component={ChapterScreen} />
+      <Stack.Screen name="BookIntro" component={BookIntroScreen} />
     </Stack.Navigator>
   );
 }

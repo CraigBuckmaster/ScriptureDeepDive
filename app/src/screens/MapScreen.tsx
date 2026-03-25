@@ -129,7 +129,7 @@ export default function MapScreen({ route, navigation }: any) {
       <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
 
       {/* Map */}
-      <View style={styles.mapWrap}>
+      <View style={styles.mapWrap} accessible accessibilityLabel="Biblical world map" accessibilityHint="Pinch to zoom, drag to pan">
         <MapView
           ref={mapRef}
           style={styles.map}

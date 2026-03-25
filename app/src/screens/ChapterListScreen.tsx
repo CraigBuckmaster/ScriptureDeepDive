@@ -12,6 +12,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { getBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { ArrowRight } from 'lucide-react-native';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
@@ -49,8 +50,11 @@ export default function ChapterListScreen() {
         <TouchableOpacity
           onPress={() => navigation.navigate('BookIntro', { bookId })}
           style={styles.introLink}
+          accessibilityLabel="About this book"
+          accessibilityRole="button"
         >
-          <Text style={styles.introLinkText}>About This Book →</Text>
+          <Text style={styles.introLinkText}>About This Book</Text>
+          <ArrowRight size={13} color={base.gold} />
         </TouchableOpacity>
 
         {/* Chapter grid */}
@@ -91,6 +95,9 @@ const styles = StyleSheet.create({
     padding: spacing.md,
   },
   introLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
     marginBottom: spacing.lg,
   },
   introLinkText: {

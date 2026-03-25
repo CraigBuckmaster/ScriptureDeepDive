@@ -9,6 +9,7 @@ import { getSynopticEntries } from '../db/content';
 import { resolveVerseText, parseReference } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
 
@@ -22,6 +23,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 export default function ParallelPassageScreen() {
   const navigation = useNavigation<any>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [catFilter, setCatFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
   const [compareEntry, setCompareEntry] = useState<SynopticEntry | null>(null);
@@ -30,7 +32,7 @@ export default function ParallelPassageScreen() {
   const translation = useSettingsStore((s) => s.translation);
 
   useEffect(() => {
-    getSynopticEntries().then(setEntries);
+    getSynopticEntries().then((e) => { setEntries(e); setIsLoading(false); });
   }, []);
 
   const filtered = useMemo(() => {
@@ -62,6 +64,18 @@ export default function ParallelPassageScreen() {
     loadAll();
   }, [compareEntry, translation]);
 
+  // LOADING
+  if (isLoading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.browseHeader}>
+          <ScreenHeader title="Parallel Passages" onBack={() => navigation.goBack()} />
+        </View>
+        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
+
   // BROWSE MODE
   if (!compareEntry) {
     const categories = ['all', ...new Set(entries.map((e) => e.category).filter(Boolean))];
@@ -80,6 +94,7 @@ export default function ParallelPassageScreen() {
             placeholder="Search passages..."
             placeholderTextColor={base.textMuted}
             style={styles.searchInput}
+            accessibilityLabel="Search"
           />
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>

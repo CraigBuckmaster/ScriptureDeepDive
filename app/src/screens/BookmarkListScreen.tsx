@@ -41,13 +41,16 @@ export default function BookmarkListScreen() {
           </View>
         }
         renderItem={({ item }) => {
-          const match = item.verse_ref.match(/^(\w+)\s+(\d+):(\d+)$/);
+          const match = item.verse_ref.match(/^(\S+)\s+(\d+):(\d+)$/);
           return (
             <TouchableOpacity
-              onPress={() => match && navigation.navigate('ReadTab', {
-                screen: 'Chapter', params: { bookId: match[1], chapterNum: parseInt(match[2], 10) },
+              onPress={() => match && navigation.push('Chapter', {
+                bookId: match[1], chapterNum: parseInt(match[2], 10),
               })}
               onLongPress={() => handleDelete(item.id)}
+              accessibilityLabel={`${item.verse_ref}${item.label ? ', ' + item.label : ''}`}
+              accessibilityHint="Tap to read, long press to remove"
+              accessibilityRole="button"
               style={styles.row}
             >
               <Text style={styles.verseRef}>{item.verse_ref}</Text>

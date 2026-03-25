@@ -52,6 +52,7 @@ export default function WordStudyBrowseScreen() {
           placeholder="Search by word or gloss..."
           placeholderTextColor={base.textMuted}
           style={styles.searchInput}
+            accessibilityLabel="Search"
         />
 
         <View style={styles.langRow}>
@@ -78,6 +79,8 @@ export default function WordStudyBrowseScreen() {
             <TouchableOpacity
               onPress={() => navigation.navigate('WordStudyDetail', { wordId: w.id })}
               style={styles.row}
+              accessibilityLabel={`${w.transliteration}, ${w.language}`}
+              accessibilityRole="button"
             >
               <View style={styles.wordRow}>
                 <Text style={[styles.original, { color: accentColor }]}>{w.original}</Text>

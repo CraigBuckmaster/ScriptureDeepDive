@@ -83,7 +83,7 @@ export default function PlanDetailScreen() {
           const isDone = !!dayProgress?.completed_at;
 
           return (
-            <View style={styles.dayRow}>
+            <View style={styles.dayRow} accessibilityLabel={`Day ${dayData.day}${isDone ? ", completed" : ""}`}>
               <Text style={[styles.dayNum, isDone && styles.dayDone]}>
                 {isDone ? '✓' : dayData.day}
               </Text>
@@ -93,8 +93,8 @@ export default function PlanDetailScreen() {
                     key={i}
                     onPress={() => {
                       const match = ch.match(/^(\w+)_(\d+)$/);
-                      if (match) navigation.navigate('ReadTab', {
-                        screen: 'Chapter', params: { bookId: match[1], chapterNum: parseInt(match[2], 10) },
+                      if (match) navigation.push('Chapter', {
+                        bookId: match[1], chapterNum: parseInt(match[2], 10),
                       });
                     }}
                   >
