@@ -8,7 +8,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { ButtonRow } from './ButtonRow';
 import { PanelContainer } from './PanelContainer';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 import type { ChapterPanel, ParsedRef } from '../types';
 
 interface Props {
@@ -40,7 +40,7 @@ export function ScholarlyBlock({
       }}>
         <View style={{ flex: 1, height: 1, backgroundColor: base.border }} />
         <Text style={{
-          color: base.textMuted, fontFamily: 'Cinzel_400Regular',
+          color: base.textMuted, fontFamily: fontFamily.display,
           fontSize: 9, letterSpacing: 1.2, marginHorizontal: spacing.sm,
         }}>
           CHAPTER ANALYSIS

@@ -15,7 +15,7 @@
 
 import React, { useMemo, useCallback } from 'react';
 import { Text, type TextStyle } from 'react-native';
-import { panels, base } from '../theme';
+import { panels, base, fontFamily } from '../theme';
 import type { VHLGroup } from '../types';
 
 // ── VHL group → color mapping ───────────────────────────────────────
@@ -149,7 +149,7 @@ export function HighlightedText({
 
 const defaultStyle: TextStyle = {
   color: base.text,
-  fontFamily: 'EBGaramond_400Regular',
+  fontFamily: fontFamily.body,
   fontSize: 16,
   lineHeight: 26,
 };

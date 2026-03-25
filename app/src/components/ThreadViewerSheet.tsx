@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
 import { getCrossRefThread } from '../db/content';
 import { BadgeChip } from './BadgeChip';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 import type { CrossRefThread } from '../types';
 
 interface Props {
@@ -46,7 +46,7 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
 
           {thread ? (
             <>
-              <Text style={{ color: '#9090e0', fontFamily: 'Cinzel_500Medium', fontSize: 16, marginBottom: spacing.md }}>
+              <Text style={{ color: '#9090e0', fontFamily: fontFamily.displayMedium, fontSize: 16, marginBottom: spacing.md }}>
                 {thread.theme}
               </Text>
 
@@ -64,10 +64,10 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
                   </View>
                   {/* Content */}
                   <View style={{ flex: 1 }}>
-                    <Text style={{ color: '#9090e0', fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>
+                    <Text style={{ color: '#9090e0', fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
                       {step.ref}
                     </Text>
-                    <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 22, marginTop: 2 }}>
+                    <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22, marginTop: 2 }}>
                       {step.note || step.text || ''}
                     </Text>
                   </View>

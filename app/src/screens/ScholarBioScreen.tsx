@@ -3,11 +3,12 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { getScholarColor, base, spacing, radii } from '../theme';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import type { Scholar } from '../types';
 
 export default function ScholarBioScreen() {
@@ -33,7 +34,13 @@ export default function ScholarBioScreen() {
     [allScholars, scholarId]
   );
 
-  if (!scholar) return <View style={{ flex: 1, backgroundColor: base.bg }} />;
+  if (!scholar) {
+    return (
+      <View style={styles.loading}>
+        <LoadingSkeleton lines={8} height={16} />
+      </View>
+    );
+  }
 
   const color = getScholarColor(scholar.id);
   let scope: string[] | string = 'All books';
@@ -43,9 +50,8 @@ export default function ScholarBioScreen() {
   } catch {}
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-        {/* Header */}
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title={scholar.name}
           subtitle={scholar.tradition ?? undefined}
@@ -53,46 +59,33 @@ export default function ScholarBioScreen() {
           onBack={() => navigation.goBack()}
         />
         {bio?.eyebrow && (
-          <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 13, marginTop: 4 }}>
-            {bio.eyebrow}
-          </Text>
+          <Text style={styles.eyebrow}>{bio.eyebrow}</Text>
         )}
 
-        <View style={{ height: 1, backgroundColor: base.border, marginVertical: spacing.md }} />
+        <View style={styles.divider} />
 
         {/* Bio sections */}
         {bio?.sections?.map((section: any, i: number) => (
-          <View key={i} style={{ marginBottom: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 13, marginBottom: spacing.sm }}>
-              {section.title}
-            </Text>
-            <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24 }}>
-              {section.body}
-            </Text>
+          <View key={i} style={styles.section}>
+            <Text style={styles.sectionTitle}>{section.title}</Text>
+            <Text style={styles.sectionBody}>{section.body}</Text>
           </View>
         ))}
 
         {/* Appears In */}
-        <View style={{ marginBottom: spacing.lg }}>
-          <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 13, marginBottom: spacing.sm }}>
-            Appears In
-          </Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Appears In</Text>
           {typeof scope === 'string' ? (
-            <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 14 }}>{scope}</Text>
+            <Text style={styles.scopeText}>{scope}</Text>
           ) : (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
+            <View style={styles.scopeGrid}>
               {(scope as string[]).map((bookId) => (
                 <TouchableOpacity
                   key={bookId}
                   onPress={() => navigation.navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
-                  style={{
-                    backgroundColor: color + '1A', borderWidth: 1, borderColor: color + '40',
-                    borderRadius: radii.sm, paddingHorizontal: 8, paddingVertical: 3,
-                  }}
+                  style={[styles.scopeChip, { backgroundColor: color + '1A', borderColor: color + '40' }]}
                 >
-                  <Text style={{ color, fontFamily: 'SourceSans3_500Medium', fontSize: 11 }}>
-                    {bookId}
-                  </Text>
+                  <Text style={[styles.scopeChipText, { color }]}>{bookId}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -100,27 +93,19 @@ export default function ScholarBioScreen() {
         </View>
 
         {/* Other Scholars */}
-        <Text style={{ color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
-          OTHER SCHOLARS
-        </Text>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm }}>
+        <Text style={styles.othersLabel}>OTHER SCHOLARS</Text>
+        <View style={styles.othersGrid}>
           {otherScholars.map((s) => {
             const sColor = getScholarColor(s.id);
             return (
               <TouchableOpacity
                 key={s.id}
                 onPress={() => navigation.setParams({ scholarId: s.id })}
-                style={{
-                  width: '48%', backgroundColor: sColor + '14',
-                  borderLeftWidth: 3, borderLeftColor: sColor,
-                  borderRadius: radii.md, padding: spacing.sm,
-                }}
+                style={[styles.otherCard, { backgroundColor: sColor + '14', borderLeftColor: sColor }]}
               >
-                <Text style={{ color: sColor, fontFamily: 'Cinzel_400Regular', fontSize: 11 }}>
-                  {s.name}
-                </Text>
+                <Text style={[styles.otherName, { color: sColor }]}>{s.name}</Text>
                 {s.tradition && (
-                  <Text style={{ color: base.textMuted, fontSize: 9 }}>{s.tradition}</Text>
+                  <Text style={styles.otherTradition}>{s.tradition}</Text>
                 )}
               </TouchableOpacity>
             );
@@ -130,3 +115,90 @@ export default function ScholarBioScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: base.bg,
+    padding: spacing.lg,
+  },
+  content: {
+    padding: spacing.md,
+  },
+  eyebrow: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 13,
+    marginTop: 4,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: base.border,
+    marginVertical: spacing.md,
+  },
+  section: {
+    marginBottom: spacing.lg,
+  },
+  sectionTitle: {
+    color: base.gold,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 13,
+    marginBottom: spacing.sm,
+  },
+  sectionBody: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  scopeText: {
+    color: base.textDim,
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+  },
+  scopeGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+  },
+  scopeChip: {
+    borderWidth: 1,
+    borderRadius: radii.sm,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+  },
+  scopeChipText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+  },
+  othersLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+  },
+  othersGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
+  },
+  otherCard: {
+    width: '48%' as any,
+    borderLeftWidth: 3,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+  },
+  otherName: {
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+  },
+  otherTradition: {
+    color: base.textMuted,
+    fontSize: 9,
+  },
+});

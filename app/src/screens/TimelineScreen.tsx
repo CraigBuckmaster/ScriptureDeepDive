@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Modal, StyleSheet } from 'react-native';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
 import { useRoute } from '@react-navigation/native';
@@ -17,7 +17,7 @@ import {
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H, LANE_TOP, LANE_HEIGHT,
   type PositionedEvent,
 } from '../utils/timelineLayout';
-import { base, spacing, radii, eras, eraNames } from '../theme';
+import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
 export default function TimelineScreen() {
@@ -52,8 +52,8 @@ export default function TimelineScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
@@ -61,7 +61,7 @@ export default function TimelineScreen() {
   const SVG_HEIGHT = AXIS_Y + 40;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
 
       <ScrollView horizontal showsHorizontalScrollIndicator style={{ flex: 1 }}>
@@ -126,27 +126,24 @@ export default function TimelineScreen() {
       {/* Detail panel */}
       {selectedEvent && (
         <Modal visible transparent animationType="slide">
-          <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={() => setSelectedEvent(null)} />
-          <SafeAreaView style={{
-            backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
-            borderTopWidth: 1, borderColor: base.border, maxHeight: '50%',
-          }}>
-            <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-              <View style={{ alignSelf: 'center', width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2, marginBottom: spacing.md }} />
+          <TouchableOpacity style={styles.modalBackdrop} activeOpacity={1} onPress={() => setSelectedEvent(null)} />
+          <SafeAreaView style={styles.detailSheet}>
+            <ScrollView contentContainerStyle={styles.detailContent}>
+              <View style={styles.grabHandle} />
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
-              <Text style={{ color: base.text, fontFamily: 'Cinzel_600SemiBold', fontSize: 18, marginTop: spacing.sm }}>
+              <Text style={styles.detailTitle}>
                 {selectedEvent.name}
               </Text>
-              <Text style={{ color: base.gold, fontFamily: 'SourceSans3_500Medium', fontSize: 13, marginTop: 4 }}>
+              <Text style={styles.detailYear}>
                 {formatYear(selectedEvent.year)}
               </Text>
               {selectedEvent.scripture_ref && (
-                <Text style={{ color: base.goldDim, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 13, marginTop: 4 }}>
+                <Text style={styles.detailRef}>
                   {selectedEvent.scripture_ref}
                 </Text>
               )}
               {selectedEvent.summary && (
-                <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 22, marginTop: spacing.md }}>
+                <Text style={styles.detailSummary}>
                   {selectedEvent.summary}
                 </Text>
               )}
@@ -157,3 +154,60 @@ export default function TimelineScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  modalBackdrop: {
+    flex: 1,
+  },
+  detailSheet: {
+    backgroundColor: base.bgElevated,
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
+    borderTopWidth: 1,
+    borderColor: base.border,
+    maxHeight: '50%',
+  },
+  detailContent: {
+    padding: spacing.md,
+  },
+  grabHandle: {
+    alignSelf: 'center',
+    width: 40,
+    height: 4,
+    backgroundColor: base.textMuted,
+    borderRadius: 2,
+    marginBottom: spacing.md,
+  },
+  detailTitle: {
+    color: base.text,
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 18,
+    marginTop: spacing.sm,
+  },
+  detailYear: {
+    color: base.gold,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+    marginTop: 4,
+  },
+  detailRef: {
+    color: base.goldDim,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 13,
+    marginTop: 4,
+  },
+  detailSummary: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 22,
+    marginTop: spacing.md,
+  },
+});

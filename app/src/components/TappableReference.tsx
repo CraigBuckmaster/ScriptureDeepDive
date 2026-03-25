@@ -9,7 +9,7 @@ import React, { useMemo } from 'react';
 import { Text, type TextStyle } from 'react-native';
 import { extractReferences } from '../utils/referenceParser';
 import { parseReference, type ParsedRef } from '../utils/verseResolver';
-import { base } from '../theme';
+import { base, fontFamily } from '../theme';
 
 interface Props {
   text: string;
@@ -72,7 +72,7 @@ export function TappableReference({ text, style, onRefPress }: Props) {
 
 const defaultStyle: TextStyle = {
   color: base.text,
-  fontFamily: 'EBGaramond_400Regular',
+  fontFamily: fontFamily.body,
   fontSize: 16,
   lineHeight: 26,
 };

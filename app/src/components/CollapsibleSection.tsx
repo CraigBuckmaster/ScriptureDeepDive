@@ -7,7 +7,7 @@
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { Plus, Minus } from 'lucide-react-native';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -49,7 +49,7 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
       >
         <Text style={{
           color: accent,
-          fontFamily: 'Cinzel_400Regular',
+          fontFamily: fontFamily.display,
           fontSize: 12,
           letterSpacing: 0.4,
         }}>

@@ -9,6 +9,7 @@ import React, { memo } from 'react';
 import { View, Text } from 'react-native';
 import { maxPriorityForZoom, labelScale, labelOffset } from '../../utils/geoMath';
 import type { Place } from '../../types';
+import { fontFamily } from '../../theme';
 
 // Label colors by place type
 const TYPE_COLORS: Record<string, string> = {
@@ -61,7 +62,7 @@ export const PlaceLabel = memo(function PlaceLabel({ place, showModern, zoomLeve
       )}
       <Text style={{
         color,
-        fontFamily: 'Cinzel_400Regular',
+        fontFamily: fontFamily.display,
         fontSize,
         fontStyle: isItalic ? 'italic' : 'normal',
         textShadowColor: '#000',

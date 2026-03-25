@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import { base, spacing } from '../../theme';
+import { base, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
 import type { ParsedRef } from '../../types';
 
@@ -53,7 +53,7 @@ export function PanelRenderer({
     data = JSON.parse(contentJson);
   } catch {
     return (
-      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: 'SourceSans3_400Regular' }}>
+      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
         Unable to load panel content.
       </Text>
     );
@@ -108,7 +108,7 @@ export function PanelRenderer({
       // True unknown — render raw
       return (
         <View style={{ padding: spacing.sm }}>
-          <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: 'SourceSans3_400Regular' }}>
+          <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
             Panel type: {panelType}
           </Text>
         </View>

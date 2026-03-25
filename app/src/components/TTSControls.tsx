@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, MIN_TOUCH_TARGET } from '../theme';
+import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 const SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5];
 
@@ -31,7 +31,7 @@ export function TTSControls({
       paddingHorizontal: spacing.md, paddingVertical: spacing.xs,
     }}>
       {/* Verse counter */}
-      <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 10, textAlign: 'center', marginBottom: 4 }}>
+      <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 10, textAlign: 'center', marginBottom: 4 }}>
         Verse {currentVerse + 1} of {totalVerses}
       </Text>
 
@@ -64,7 +64,7 @@ export function TTSControls({
               backgroundColor: speed === s ? base.gold + '30' : 'transparent',
             }}
           >
-            <Text style={{ color: speed === s ? base.gold : base.textMuted, fontSize: 10, fontFamily: 'SourceSans3_500Medium' }}>
+            <Text style={{ color: speed === s ? base.gold : base.textMuted, fontSize: 10, fontFamily: fontFamily.uiMedium }}>
               {s}x
             </Text>
           </TouchableOpacity>

@@ -4,7 +4,7 @@
 
 import React, { forwardRef } from 'react';
 import { View, Text } from 'react-native';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 
 interface Props {
   verseRef: string;
@@ -18,19 +18,19 @@ export const VerseShareCard = forwardRef<View, Props>(({ verseRef, verseText, tr
     justifyContent: 'center', alignItems: 'center',
   }}>
     <Text style={{
-      color: base.text, fontFamily: 'EBGaramond_500Medium', fontSize: 48,
+      color: base.text, fontFamily: fontFamily.bodyMedium, fontSize: 48,
       lineHeight: 72, textAlign: 'center', marginBottom: 60,
     }}>
       "{verseText}"
     </Text>
     <Text style={{
-      color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 28,
+      color: base.gold, fontFamily: fontFamily.displayMedium, fontSize: 28,
       letterSpacing: 1,
     }}>
       — {verseRef} ({translation.toUpperCase()})
     </Text>
     <Text style={{
-      color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 18,
+      color: base.textMuted, fontFamily: fontFamily.display, fontSize: 18,
       letterSpacing: 2, marginTop: 80,
     }}>
       ✦ Scripture Deep Dive

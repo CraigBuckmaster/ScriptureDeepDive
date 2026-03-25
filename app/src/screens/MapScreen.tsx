@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
 
 import { usePlaces } from '../hooks/usePlaces';
@@ -117,22 +117,22 @@ export default function MapScreen({ route, navigation }: any) {
 
   if (placesLoading || storiesLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       {/* Era filter */}
       <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
 
       {/* Map */}
-      <View style={{ flex: 1 }}>
+      <View style={styles.mapWrap}>
         <MapView
           ref={mapRef}
-          style={{ flex: 1 }}
+          style={styles.map}
           mapType="terrain"
           initialRegion={INITIAL_REGION}
           onRegionChangeComplete={onRegionChange}
@@ -178,12 +178,7 @@ export default function MapScreen({ route, navigation }: any) {
 
       {/* Story panel */}
       {showPanel && activeStory && (
-        <View style={{
-          backgroundColor: base.bgElevated,
-          borderTopWidth: 1,
-          borderTopColor: base.border,
-          maxHeight: '40%',
-        }}>
+        <View style={styles.storyPanelWrap}>
           <StoryPanel
             story={activeStory}
             places={places}
@@ -199,3 +194,25 @@ export default function MapScreen({ route, navigation }: any) {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  mapWrap: {
+    flex: 1,
+  },
+  map: {
+    flex: 1,
+  },
+  storyPanelWrap: {
+    backgroundColor: base.bgElevated,
+    borderTopWidth: 1,
+    borderTopColor: base.border,
+    maxHeight: '40%',
+  },
+});

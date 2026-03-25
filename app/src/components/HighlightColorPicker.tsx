@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal } from 'react-native';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 const HIGHLIGHT_COLORS = [
   { name: 'gold', hex: '#c9a84c', label: 'Key verses' },
@@ -33,7 +33,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
           padding: spacing.md, borderWidth: 1, borderColor: base.border,
           width: 260,
         }}>
-          <Text style={{ color: base.textMuted, fontFamily: 'Cinzel_400Regular', fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm, textAlign: 'center' }}>
+          <Text style={{ color: base.textMuted, fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm, textAlign: 'center' }}>
             HIGHLIGHT COLOR
           </Text>
 

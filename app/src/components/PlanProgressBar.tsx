@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 interface Props { completed: number; total: number; }
 
@@ -11,7 +11,7 @@ export function PlanProgressBar({ completed, total }: Props) {
       <View style={{ height: 6, backgroundColor: base.bgSurface, borderRadius: 3, overflow: 'hidden' }}>
         <View style={{ height: 6, width: `${pct}%`, backgroundColor: base.gold, borderRadius: 3 }} />
       </View>
-      <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 11 }}>
+      <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 11 }}>
         {pct}% · Day {completed} of {total}
       </Text>
     </View>

@@ -3,12 +3,13 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing } from '../theme';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { base, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 
 export default function WordStudyDetailScreen() {
@@ -21,7 +22,13 @@ export default function WordStudyDetailScreen() {
     if (wordId) getWordStudy(wordId).then(setWord);
   }, [wordId]);
 
-  if (!word) return <View style={{ flex: 1, backgroundColor: base.bg }} />;
+  if (!word) {
+    return (
+      <View style={styles.loading}>
+        <LoadingSkeleton lines={6} height={16} />
+      </View>
+    );
+  }
 
   const accentColor = word.language === 'hebrew' ? '#e890b8' : '#70b8e8';
   let glosses: string[] = [];
@@ -30,34 +37,27 @@ export default function WordStudyDetailScreen() {
   try { occurrences = word.occurrences_json ? JSON.parse(word.occurrences_json) : []; } catch {}
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <ScrollView contentContainerStyle={{ padding: spacing.md }}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title="Word Study"
           titleColor={accentColor}
           onBack={() => navigation.goBack()}
-          style={{ marginBottom: spacing.md }}
+          style={styles.header}
         />
+
         {/* Original word */}
-        <Text style={{ color: accentColor, fontFamily: 'EBGaramond_500Medium', fontSize: 36, textAlign: 'center' }}>
-          {word.original}
-        </Text>
-        <Text style={{ color: base.goldDim, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 16, textAlign: 'center', marginTop: 4 }}>
-          {word.transliteration}
-        </Text>
+        <Text style={[styles.original, { color: accentColor }]}>{word.original}</Text>
+        <Text style={styles.transliteration}>{word.transliteration}</Text>
         {word.strongs && (
-          <Text style={{ color: base.textMuted, fontSize: 12, textAlign: 'center', marginTop: 4 }}>
-            Strong's: {word.strongs}
-          </Text>
+          <Text style={styles.strongs}>Strong's: {word.strongs}</Text>
         )}
 
         {/* Glosses */}
         {glosses.length > 0 && (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
-              GLOSSES
-            </Text>
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: spacing.xs }}>
+          <View style={styles.section}>
+            <Text style={styles.sectionLabel}>GLOSSES</Text>
+            <View style={styles.chipRow}>
               {glosses.map((g, i) => <BadgeChip key={i} label={g} color={accentColor} />)}
             </View>
           </View>
@@ -65,35 +65,25 @@ export default function WordStudyDetailScreen() {
 
         {/* Semantic range */}
         {word.semantic_range && (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
-              SEMANTIC RANGE
-            </Text>
-            <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24, marginTop: spacing.xs }}>
-              {word.semantic_range}
-            </Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionLabel}>SEMANTIC RANGE</Text>
+            <Text style={styles.bodyText}>{word.semantic_range}</Text>
           </View>
         )}
 
         {/* Note */}
         {word.note && (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
-              THEOLOGICAL NOTE
-            </Text>
-            <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 15, lineHeight: 24, marginTop: spacing.xs }}>
-              {word.note}
-            </Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionLabel}>THEOLOGICAL NOTE</Text>
+            <Text style={styles.bodyText}>{word.note}</Text>
           </View>
         )}
 
         {/* Occurrences */}
         {occurrences.length > 0 && (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
-              KEY OCCURRENCES
-            </Text>
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: spacing.xs }}>
+          <View style={styles.section}>
+            <Text style={styles.sectionLabel}>KEY OCCURRENCES</Text>
+            <View style={styles.chipRow}>
               {occurrences.map((ref, i) => <BadgeChip key={i} label={ref} color={base.textMuted} />)}
             </View>
           </View>
@@ -102,3 +92,61 @@ export default function WordStudyDetailScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: base.bg,
+    padding: spacing.lg,
+  },
+  content: {
+    padding: spacing.md,
+  },
+  header: {
+    marginBottom: spacing.md,
+  },
+  original: {
+    fontFamily: fontFamily.bodyMedium,
+    fontSize: 36,
+    textAlign: 'center',
+  },
+  transliteration: {
+    color: base.goldDim,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  strongs: {
+    color: base.textMuted,
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  section: {
+    marginTop: spacing.lg,
+  },
+  sectionLabel: {
+    color: base.gold,
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+    letterSpacing: 0.4,
+  },
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginTop: spacing.xs,
+  },
+  bodyText: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 15,
+    lineHeight: 24,
+    marginTop: spacing.xs,
+  },
+});

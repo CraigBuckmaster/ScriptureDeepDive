@@ -3,11 +3,11 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getRecentChapters, getReadingStats } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing, radii } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 import type { RecentChapter, ReadingStats } from '../db/user';
 
 export default function ReadingHistoryScreen() {
@@ -21,37 +21,27 @@ export default function ReadingHistoryScreen() {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       <ScreenHeader
         title="Reading History"
         onBack={() => navigation.goBack()}
-        style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}
+        style={styles.header}
       />
 
       {/* Stats */}
       {stats && stats.totalChapters > 0 && (
-        <View style={{
-          flexDirection: 'row', justifyContent: 'space-around',
-          paddingHorizontal: spacing.md, paddingBottom: spacing.md,
-          borderBottomWidth: 1, borderBottomColor: base.border,
-        }}>
-          <View style={{ alignItems: 'center' }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 20 }}>
-              {stats.totalChapters}
-            </Text>
-            <Text style={{ color: base.textMuted, fontSize: 10 }}>Chapters</Text>
+        <View style={styles.statsRow}>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{stats.totalChapters}</Text>
+            <Text style={styles.statLabel}>Chapters</Text>
           </View>
-          <View style={{ alignItems: 'center' }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 20 }}>
-              {stats.currentStreak}
-            </Text>
-            <Text style={{ color: base.textMuted, fontSize: 10 }}>Day streak</Text>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{stats.currentStreak}</Text>
+            <Text style={styles.statLabel}>Day streak</Text>
           </View>
-          <View style={{ alignItems: 'center' }}>
-            <Text style={{ color: base.gold, fontFamily: 'Cinzel_500Medium', fontSize: 20 }}>
-              {stats.longestStreak}
-            </Text>
-            <Text style={{ color: base.textMuted, fontSize: 10 }}>Best streak</Text>
+          <View style={styles.statItem}>
+            <Text style={styles.statValue}>{stats.longestStreak}</Text>
+            <Text style={styles.statLabel}>Best streak</Text>
           </View>
         </View>
       )}
@@ -59,12 +49,10 @@ export default function ReadingHistoryScreen() {
       <FlatList
         data={history}
         keyExtractor={(_, i) => String(i)}
-        contentContainerStyle={{ paddingHorizontal: spacing.md }}
+        contentContainerStyle={styles.listContent}
         ListEmptyComponent={
-          <View style={{ alignItems: 'center', paddingTop: spacing.xxl }}>
-            <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 15 }}>
-              No reading history yet.
-            </Text>
+          <View style={styles.emptyWrap}>
+            <Text style={styles.emptyText}>No reading history yet.</Text>
           </View>
         }
         renderItem={({ item }) => (
@@ -72,20 +60,78 @@ export default function ReadingHistoryScreen() {
             onPress={() => navigation.navigate('ReadTab', {
               screen: 'Chapter', params: { bookId: item.book_id, chapterNum: item.chapter_num },
             })}
-            style={{ paddingVertical: spacing.sm, borderBottomWidth: 1, borderBottomColor: base.border + '40' }}
+            style={styles.row}
           >
-            <Text style={{ color: base.text, fontFamily: 'SourceSans3_500Medium', fontSize: 14 }}>
-              {item.book_name} {item.chapter_num}
-            </Text>
-            {item.title && (
-              <Text style={{ color: base.textDim, fontSize: 12, marginTop: 2 }}>{item.title}</Text>
-            )}
-            <Text style={{ color: base.textMuted, fontSize: 10, marginTop: 2 }}>
-              {item.completed_at?.slice(0, 16)?.replace('T', ' ')}
-            </Text>
+            <Text style={styles.rowTitle}>{item.book_name} {item.chapter_num}</Text>
+            {item.title && <Text style={styles.rowSubtitle}>{item.title}</Text>}
+            <Text style={styles.rowDate}>{item.completed_at?.slice(0, 16)?.replace('T', ' ')}</Text>
           </TouchableOpacity>
         )}
       />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  header: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.md,
+  },
+  statsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border,
+  },
+  statItem: {
+    alignItems: 'center',
+  },
+  statValue: {
+    color: base.gold,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 20,
+  },
+  statLabel: {
+    color: base.textMuted,
+    fontSize: 10,
+  },
+  listContent: {
+    paddingHorizontal: spacing.md,
+  },
+  emptyWrap: {
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+  emptyText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 15,
+  },
+  row: {
+    paddingVertical: spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  rowTitle: {
+    color: base.text,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  rowSubtitle: {
+    color: base.textDim,
+    fontSize: 12,
+    marginTop: 2,
+  },
+  rowDate: {
+    color: base.textMuted,
+    fontSize: 10,
+    marginTop: 2,
+  },
+});

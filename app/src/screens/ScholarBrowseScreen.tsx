@@ -3,11 +3,12 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useScholars } from '../hooks/useScholars';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { getScholarColor, base, spacing, radii } from '../theme';
+import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 
 export default function ScholarBrowseScreen() {
   const navigation = useNavigation<any>();
@@ -35,41 +36,33 @@ export default function ScholarBrowseScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg }}>
-        <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, marginBottom: spacing.md }}>
-          Scholars
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topSection}>
+        <ScreenHeader
+          title="Scholars"
+          onBack={() => navigation.goBack()}
+          style={styles.headerSpacing}
+        />
 
         <TextInput
           value={search} onChangeText={setSearch}
           placeholder="Search scholars..."
           placeholderTextColor={base.textMuted}
-          style={{
-            backgroundColor: base.bgElevated, color: base.text,
-            fontFamily: 'SourceSans3_400Regular', fontSize: 14,
-            borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
-            borderWidth: 1, borderColor: base.border, marginBottom: spacing.sm,
-          }}
+          style={styles.searchInput}
         />
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ gap: spacing.xs, marginBottom: spacing.md }}>
+          contentContainerStyle={styles.filterRow}>
           {traditions.map((t) => (
             <TouchableOpacity key={t} onPress={() => setTradition(t)}>
-              <Text style={{
-                color: tradition === t ? base.gold : base.textMuted,
-                fontFamily: 'SourceSans3_500Medium', fontSize: 11,
-                borderBottomWidth: tradition === t ? 2 : 0,
-                borderBottomColor: base.gold, paddingBottom: 4, paddingHorizontal: 4,
-              }}>
+              <Text style={[styles.filterLabel, tradition === t && styles.filterLabelActive]}>
                 {t === 'all' ? 'All' : t}
               </Text>
             </TouchableOpacity>
@@ -81,8 +74,8 @@ export default function ScholarBrowseScreen() {
         data={filtered}
         keyExtractor={(s) => s.id}
         numColumns={2}
-        contentContainerStyle={{ paddingHorizontal: spacing.md, gap: spacing.sm }}
-        columnWrapperStyle={{ gap: spacing.sm }}
+        contentContainerStyle={styles.gridContent}
+        columnWrapperStyle={styles.gridRow}
         renderItem={({ item: s }) => {
           const color = getScholarColor(s.id);
           let scope = 'All books';
@@ -94,22 +87,11 @@ export default function ScholarBrowseScreen() {
           return (
             <TouchableOpacity
               onPress={() => navigation.navigate('ScholarBio', { scholarId: s.id })}
-              style={{
-                flex: 1, backgroundColor: color + '14', borderLeftWidth: 3,
-                borderLeftColor: color, borderRadius: radii.md, padding: spacing.sm,
-              }}
+              style={[styles.card, { backgroundColor: color + '14', borderLeftColor: color }]}
             >
-              <Text style={{ color, fontFamily: 'Cinzel_500Medium', fontSize: 12 }}>
-                {s.name}
-              </Text>
-              {s.tradition && (
-                <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 10, marginTop: 2 }}>
-                  {s.tradition}
-                </Text>
-              )}
-              <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 10, marginTop: 2 }}>
-                {scope}
-              </Text>
+              <Text style={[styles.cardName, { color }]}>{s.name}</Text>
+              {s.tradition && <Text style={styles.cardTradition}>{s.tradition}</Text>}
+              <Text style={styles.cardScope}>{scope}</Text>
             </TouchableOpacity>
           );
         }}
@@ -117,3 +99,77 @@ export default function ScholarBrowseScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  topSection: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+  },
+  headerSpacing: {
+    marginBottom: spacing.md,
+  },
+  searchInput: {
+    backgroundColor: base.bgElevated,
+    color: base.text,
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+    borderRadius: radii.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderWidth: 1,
+    borderColor: base.border,
+    marginBottom: spacing.sm,
+  },
+  filterRow: {
+    gap: spacing.xs,
+    marginBottom: spacing.md,
+  },
+  filterLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+    paddingBottom: 4,
+    paddingHorizontal: 4,
+  },
+  filterLabelActive: {
+    color: base.gold,
+    borderBottomWidth: 2,
+    borderBottomColor: base.gold,
+  },
+  gridContent: {
+    paddingHorizontal: spacing.md,
+    gap: spacing.sm,
+  },
+  gridRow: {
+    gap: spacing.sm,
+  },
+  card: {
+    flex: 1,
+    borderLeftWidth: 3,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+  },
+  cardName: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 12,
+  },
+  cardTradition: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    marginTop: 2,
+  },
+  cardScope: {
+    color: base.textDim,
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    marginTop: 2,
+  },
+});

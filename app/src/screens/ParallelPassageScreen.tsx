@@ -3,11 +3,13 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { getSynopticEntries } from '../db/content';
 import { resolveVerseText, parseReference } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
-import { base, spacing, radii, MIN_TOUCH_TARGET } from '../theme';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -18,6 +20,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function ParallelPassageScreen() {
+  const navigation = useNavigation<any>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
   const [catFilter, setCatFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
@@ -64,33 +67,28 @@ export default function ParallelPassageScreen() {
     const categories = ['all', ...new Set(entries.map((e) => e.category).filter(Boolean))];
 
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg }}>
-          <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, marginBottom: spacing.md }}>
-            Parallel Passages
-          </Text>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.browseHeader}>
+          <ScreenHeader
+            title="Parallel Passages"
+            onBack={() => navigation.goBack()}
+            style={styles.headerSpacing}
+          />
 
           <TextInput
             value={search} onChangeText={setSearch}
             placeholder="Search passages..."
             placeholderTextColor={base.textMuted}
-            style={{
-              backgroundColor: base.bgElevated, color: base.text,
-              fontFamily: 'SourceSans3_400Regular', fontSize: 14,
-              borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
-              borderWidth: 1, borderColor: base.border, marginBottom: spacing.sm,
-            }}
+            style={styles.searchInput}
           />
 
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.xs, marginBottom: spacing.md }}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
             {categories.map((cat) => (
               <TouchableOpacity key={cat ?? 'all'} onPress={() => setCatFilter(cat ?? 'all')}>
-                <Text style={{
-                  color: catFilter === cat ? base.gold : base.textMuted,
-                  fontFamily: 'Cinzel_400Regular', fontSize: 10,
-                  borderBottomWidth: catFilter === cat ? 2 : 0,
-                  borderBottomColor: base.gold, paddingBottom: 4, paddingHorizontal: 4,
-                }}>
+                <Text style={[
+                  styles.filterLabel,
+                  catFilter === cat && styles.filterLabelActive,
+                ]}>
                   {cat === 'all' ? 'All' : (CATEGORY_LABELS[cat!] ?? cat)}
                 </Text>
               </TouchableOpacity>
@@ -101,7 +99,7 @@ export default function ParallelPassageScreen() {
         <FlatList
           data={filtered}
           keyExtractor={(e) => e.id}
-          contentContainerStyle={{ paddingHorizontal: spacing.md }}
+          contentContainerStyle={styles.listPadding}
           renderItem={({ item }) => {
             let passages: { book: string; ref: string }[] = [];
             try { passages = JSON.parse(item.passages_json); } catch {}
@@ -109,15 +107,10 @@ export default function ParallelPassageScreen() {
             return (
               <TouchableOpacity
                 onPress={() => { setCompareEntry(item); setActiveTab(0); }}
-                style={{
-                  paddingVertical: spacing.md,
-                  borderBottomWidth: 1, borderBottomColor: base.border + '40',
-                }}
+                style={styles.entryRow}
               >
-                <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
-                  {item.title}
-                </Text>
-                <Text style={{ color: base.textMuted, fontFamily: 'SourceSans3_400Regular', fontSize: 11, marginTop: 4 }}>
+                <Text style={styles.entryTitle}>{item.title}</Text>
+                <Text style={styles.entryRefs}>
                   {passages.map((p) => `${p.book} ${p.ref}`).join(' · ')}
                 </Text>
               </TouchableOpacity>
@@ -133,35 +126,26 @@ export default function ParallelPassageScreen() {
   try { passages = JSON.parse(compareEntry.passages_json); } catch {}
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
-      <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.md }}>
-        <TouchableOpacity onPress={() => setCompareEntry(null)}>
-          <Text style={{ color: base.gold, fontSize: 14 }}>← Back</Text>
-        </TouchableOpacity>
-        <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 16, marginTop: spacing.sm }}>
-          {compareEntry.title}
-        </Text>
+      <View style={styles.compareHeader}>
+        <ScreenHeader
+          title={compareEntry.title}
+          onBack={() => setCompareEntry(null)}
+          backLabel="Back to list"
+        />
       </View>
 
       {/* Tabs */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: spacing.md, gap: spacing.xs, paddingVertical: spacing.sm }}>
+        contentContainerStyle={styles.tabRow}>
         {passages.map((p, i) => (
           <TouchableOpacity
             key={i}
             onPress={() => setActiveTab(i)}
-            style={{
-              backgroundColor: activeTab === i ? base.gold + '30' : 'transparent',
-              borderWidth: 1, borderColor: activeTab === i ? base.gold : base.border,
-              borderRadius: radii.sm, paddingHorizontal: 12, minHeight: MIN_TOUCH_TARGET,
-              justifyContent: 'center',
-            }}
+            style={[styles.tab, activeTab === i && styles.tabActive]}
           >
-            <Text style={{
-              color: activeTab === i ? base.gold : base.textMuted,
-              fontFamily: 'Cinzel_400Regular', fontSize: 11,
-            }}>
+            <Text style={[styles.tabLabel, activeTab === i && styles.tabLabelActive]}>
               {p.book}
             </Text>
           </TouchableOpacity>
@@ -169,17 +153,15 @@ export default function ParallelPassageScreen() {
       </ScrollView>
 
       {/* Verse text */}
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: spacing.md }}>
-        <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 12, marginBottom: spacing.sm }}>
+      <ScrollView style={styles.verseScroll} contentContainerStyle={styles.verseContent}>
+        <Text style={styles.verseRef}>
           {passages[activeTab]?.book} {passages[activeTab]?.ref}
         </Text>
         {(resolvedTexts[passages[activeTab]?.book] ?? []).map((text, i) => (
-          <Text key={i} style={{ color: base.text, fontFamily: 'EBGaramond_400Regular', fontSize: 16, lineHeight: 26, marginBottom: 4 }}>
-            {text}
-          </Text>
+          <Text key={i} style={styles.verseText}>{text}</Text>
         ))}
         {!resolvedTexts[passages[activeTab]?.book] && (
-          <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 14 }}>
+          <Text style={styles.versePlaceholder}>
             Loading or not available in current content...
           </Text>
         )}
@@ -187,3 +169,117 @@ export default function ParallelPassageScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  browseHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+  },
+  headerSpacing: {
+    marginBottom: spacing.md,
+  },
+  searchInput: {
+    backgroundColor: base.bgElevated,
+    color: base.text,
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+    borderRadius: radii.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderWidth: 1,
+    borderColor: base.border,
+    marginBottom: spacing.sm,
+  },
+  filterRow: {
+    gap: spacing.xs,
+    marginBottom: spacing.md,
+  },
+  filterLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    paddingBottom: 4,
+    paddingHorizontal: 4,
+  },
+  filterLabelActive: {
+    color: base.gold,
+    borderBottomWidth: 2,
+    borderBottomColor: base.gold,
+  },
+  listPadding: {
+    paddingHorizontal: spacing.md,
+  },
+  entryRow: {
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  entryTitle: {
+    color: base.text,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 14,
+  },
+  entryRefs: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 4,
+  },
+  compareHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+  },
+  tabRow: {
+    paddingHorizontal: spacing.md,
+    gap: spacing.xs,
+    paddingVertical: spacing.sm,
+  },
+  tab: {
+    borderWidth: 1,
+    borderColor: base.border,
+    borderRadius: radii.sm,
+    paddingHorizontal: 12,
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+  },
+  tabActive: {
+    backgroundColor: base.gold + '30',
+    borderColor: base.gold,
+  },
+  tabLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+  },
+  tabLabelActive: {
+    color: base.gold,
+  },
+  verseScroll: {
+    flex: 1,
+  },
+  verseContent: {
+    padding: spacing.md,
+  },
+  verseRef: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+    marginBottom: spacing.sm,
+  },
+  verseText: {
+    color: base.text,
+    fontFamily: fontFamily.body,
+    fontSize: 16,
+    lineHeight: 26,
+    marginBottom: 4,
+  },
+  versePlaceholder: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 14,
+  },
+});

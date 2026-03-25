@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { base, radii, spacing } from '../theme';
+import { base, radii, spacing, fontFamily } from '../theme';
 
 interface Props {
   label: string;
@@ -33,7 +33,7 @@ export function BadgeChip({ label, icon, color, onPress }: Props) {
       {icon}
       <Text style={{
         color: accent,
-        fontFamily: 'SourceSans3_500Medium',
+        fontFamily: fontFamily.uiMedium,
         fontSize: 11,
         letterSpacing: 0.2,
       }}>

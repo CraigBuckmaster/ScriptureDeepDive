@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
 import { BadgeChip } from './BadgeChip';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
-import { base, spacing, radii, eras, eraNames } from '../theme';
+import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
 
 interface Props {
@@ -43,7 +43,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
   const FamilyLink = ({ p }: { p: Person }) => (
     <TouchableOpacity onPress={() => onNavigate(p.id)} style={{ marginRight: 8, marginBottom: 4 }}>
       <Text style={{ color: p.era ? (eras[p.era] ?? base.gold) : base.gold,
-        fontFamily: 'SourceSans3_500Medium', fontSize: 13,
+        fontFamily: fontFamily.uiMedium, fontSize: 13,
         borderBottomWidth: 1, borderBottomColor: (p.era ? (eras[p.era] ?? base.gold) : base.gold) + '40',
       }}>
         {p.name}
@@ -65,13 +65,13 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
           {/* Name */}
-          <Text style={{ color: base.text, fontFamily: 'Cinzel_600SemiBold', fontSize: 20, marginTop: spacing.sm }}>
+          <Text style={{ color: base.text, fontFamily: fontFamily.displaySemiBold, fontSize: 20, marginTop: spacing.sm }}>
             {person.name}
           </Text>
 
           {/* Dates */}
           {person.dates ? (
-            <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 13, marginTop: 2 }}>
+            <Text style={{ color: base.textDim, fontFamily: fontFamily.ui, fontSize: 13, marginTop: 2 }}>
               {person.dates}
             </Text>
           ) : null}
@@ -79,7 +79,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           <View style={{ height: 1, backgroundColor: base.border, marginVertical: spacing.md }} />
 
           {/* Role */}
-          <Text style={{ color: base.gold, fontFamily: 'EBGaramond_500Medium', fontSize: 15 }}>
+          <Text style={{ color: base.gold, fontFamily: fontFamily.bodyMedium, fontSize: 15 }}>
             {person.role}
           </Text>
 
@@ -87,7 +87,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
             {(father || mother) && (
               <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
+                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
                   {father && mother ? 'Parents' : 'Father'}
                 </Text>
                 {father && <FamilyLink p={father} />}
@@ -96,7 +96,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             )}
             {spouses.length > 0 && (
               <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
+                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
                   {spouses.length > 1 ? 'Spouses' : 'Spouse'}
                 </Text>
                 {spouses.map((s) => <FamilyLink key={s.id} p={s} />)}
@@ -104,7 +104,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             )}
             {children.length > 0 && (
               <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: 'SourceSans3_600SemiBold', minWidth: 60 }}>
+                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
                   {children.length > 1 ? 'Children' : 'Child'}
                 </Text>
                 {children.slice(0, 12).map((c) => <FamilyLink key={c.id} p={c} />)}
@@ -115,7 +115,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
 
           {/* Bio */}
           {person.bio ? (
-            <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, lineHeight: 22, marginTop: spacing.md }}>
+            <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22, marginTop: spacing.md }}>
               {person.bio}
             </Text>
           ) : null}
@@ -123,10 +123,10 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           {/* Scripture Role */}
           {person.scripture_role ? (
             <View style={{ marginTop: spacing.md }}>
-              <Text style={{ color: base.gold, fontFamily: 'Cinzel_400Regular', fontSize: 11, letterSpacing: 0.4 }}>
+              <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
                 ROLE IN SCRIPTURE
               </Text>
-              <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: 4 }}>
+              <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
                 {person.scripture_role}
               </Text>
             </View>
@@ -142,7 +142,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           {/* Chapter link */}
           {person.chapter_link && onChapterPress && (
             <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={{ marginTop: spacing.md }}>
-              <Text style={{ color: base.gold, fontFamily: 'SourceSans3_600SemiBold', fontSize: 13 }}>
+              <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
                 Read in Scripture Deep Dive →
               </Text>
             </TouchableOpacity>

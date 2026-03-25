@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { getPanelColors, getScholarColor, base, radii, MIN_TOUCH_TARGET } from '../theme';
+import { getPanelColors, getScholarColor, base, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { getPanelLabel, isScholarPanel } from '../utils/panelLabels';
 
 interface Props {
@@ -41,7 +41,7 @@ export function PanelButton({ panelType, isActive, onPress }: Props) {
     >
       <Text style={{
         color: isActive ? accent : base.textDim,
-        fontFamily: 'Cinzel_400Regular',
+        fontFamily: fontFamily.display,
         fontSize: 10,
         letterSpacing: 0.3,
       }}>

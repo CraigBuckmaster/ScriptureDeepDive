@@ -7,7 +7,7 @@
  */
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 import Svg from 'react-native-svg';
 import Animated from 'react-native-reanimated';
 import { GestureDetector } from 'react-native-gesture-handler';
@@ -82,14 +82,14 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+    <SafeAreaView style={styles.container}>
       {/* Search bar */}
       <PersonSearchBar people={people} onSelect={handleSearchSelect} />
 
@@ -97,7 +97,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
 
       {/* Tree viewport */}
-      <View style={{ flex: 1 }}>
+      <View style={styles.viewport}>
         <GestureDetector gesture={gesture}>
           <Animated.View style={[{ flex: 1 }, animatedStyle]}>
             <Svg width="100%" height="100%">
@@ -135,3 +135,16 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  viewport: {
+    flex: 1,
+  },
+});

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { getScholarColor } from '../theme';
+import { getScholarColor, fontFamily } from '../theme';
 import { getPanelLabel } from '../utils/panelLabels';
 import { radii, spacing } from '../theme';
 
@@ -39,7 +39,7 @@ export function ScholarTag({ scholarId, onPress }: Props) {
     >
       <Text style={{
         color,
-        fontFamily: 'Cinzel_400Regular',
+        fontFamily: fontFamily.display,
         fontSize: 10,
         letterSpacing: 0.3,
       }}>

@@ -6,7 +6,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { StickyNote, Clock, MapPin } from 'lucide-react-native';
 import { BadgeChip } from './BadgeChip';
-import { base, spacing } from '../theme';
+import { base, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
 
 interface Props {
@@ -26,7 +26,7 @@ export function ChapterHeader({
     <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}>
       {/* Title */}
       <Text style={{
-        color: base.text, fontFamily: 'Cinzel_600SemiBold',
+        color: base.text, fontFamily: fontFamily.displaySemiBold,
         fontSize: 22, lineHeight: 30, letterSpacing: 0.5,
       }}>
         {chapter.title || `Chapter ${chapter.chapter_num}`}
@@ -35,7 +35,7 @@ export function ChapterHeader({
       {/* Subtitle */}
       {chapter.subtitle ? (
         <Text style={{
-          color: base.textDim, fontFamily: 'EBGaramond_400Regular_Italic',
+          color: base.textDim, fontFamily: fontFamily.bodyItalic,
           fontSize: 15, marginTop: 4,
         }}>
           {chapter.subtitle}
@@ -54,7 +54,7 @@ export function ChapterHeader({
         <TouchableOpacity onPress={onIntroPress}>
           <Text style={{
             color: base.textMuted,
-            fontFamily: 'SourceSans3_500Medium',
+            fontFamily: fontFamily.uiMedium,
             fontSize: 12,
           }}>
             About This Book →
