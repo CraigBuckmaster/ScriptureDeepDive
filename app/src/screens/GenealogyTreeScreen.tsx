@@ -6,7 +6,7 @@
  * Deep-link: initialPersonId param → auto-centre + open bio.
  */
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
@@ -65,6 +65,18 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       }
     }
   }, [initialPersonId, nodes.length]);
+
+  // Auto-centre on Adam when tree first loads (no deep-link)
+  const hasCentred = useRef(false);
+  useEffect(() => {
+    if (!initialPersonId && !hasCentred.current && nodes.length > 0) {
+      hasCentred.current = true;
+      const adam = nodes.find((n) => n.data.id === 'adam');
+      if (adam) {
+        setTimeout(() => centreOnNode(adam.x, adam.y), 200);
+      }
+    }
+  }, [nodes.length]);
 
   const handleNodePress = useCallback(
     (treePerson: TreePerson) => {

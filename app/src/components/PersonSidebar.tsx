@@ -59,7 +59,20 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
         borderTopWidth: 1, borderColor: base.border, maxHeight: '85%',
       }}>
         <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-          <View style={{ alignSelf: 'center', width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2, marginBottom: spacing.md }} />
+          {/* Grab handle + close button */}
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: spacing.md }}>
+            <View style={{ flex: 1 }} />
+            <View style={{ width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2 }} />
+            <TouchableOpacity
+              onPress={onClose}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+              accessibilityLabel="Close bio panel"
+              accessibilityRole="button"
+              style={{ flex: 1, alignItems: 'flex-end' }}
+            >
+              <Text style={{ color: base.textMuted, fontSize: 18 }}>✕</Text>
+            </TouchableOpacity>
+          </View>
 
           {/* Era badge */}
           {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
