@@ -3,8 +3,8 @@
  * Era-colored bands, swim-lane labels, pan+pinch gestures, detail panel.
  */
 
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Modal, StyleSheet } from 'react-native';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Modal, StyleSheet, Dimensions } from 'react-native';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
 import { useRoute } from '@react-navigation/native';
@@ -28,6 +28,8 @@ export default function TimelineScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
+  const timelineScrollRef = useRef<ScrollView>(null);
+  const screenWidth = Dimensions.get('window').width;
 
   useEffect(() => {
     getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
@@ -39,6 +41,24 @@ export default function TimelineScreen() {
     if (filterEra === 'all') return positioned;
     return positioned.filter((e) => e.era === filterEra);
   }, [positioned, filterEra]);
+
+  /** Select era filter and scroll the timeline to centre on that era's band. */
+  const handleEraChange = useCallback((era: string) => {
+    setFilterEra(era);
+    if (era === 'all') {
+      timelineScrollRef.current?.scrollTo({ x: 0, animated: true });
+      return;
+    }
+    const range = ERA_RANGES[era];
+    if (range) {
+      const x1 = yearToX(range[0]);
+      const x2 = yearToX(range[1]);
+      const centreX = (x1 + x2) / 2;
+      // Scroll so the era midpoint is centred on screen
+      const scrollTarget = Math.max(0, centreX - screenWidth / 2);
+      timelineScrollRef.current?.scrollTo({ x: scrollTarget, animated: true });
+    }
+  }, [screenWidth]);
 
   const ticks = useMemo(() => computeTickMarks(), []);
 
@@ -62,9 +82,9 @@ export default function TimelineScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <EraFilterBar activeEra={filterEra} onSelect={setFilterEra} />
+      <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
 
-      <ScrollView horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
+      <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
         <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
           {/* Era bands */}
           {Object.entries(ERA_RANGES).map(([era, [start, end]]) => {

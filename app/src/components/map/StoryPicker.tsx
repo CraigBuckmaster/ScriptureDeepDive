@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
+import { base, spacing, radii, eras, fontFamily } from '../../theme';
 import type { MapStory } from '../../types';
 
 interface Props {
@@ -12,6 +12,8 @@ interface Props {
   activeStoryId: string | null;
   onSelect: (storyId: string) => void;
 }
+
+const CHIP_HEIGHT = 32;
 
 export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
   if (stories.length === 0) {
@@ -29,7 +31,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ paddingHorizontal: spacing.md, gap: spacing.xs, paddingVertical: spacing.xs }}
+      contentContainerStyle={{ paddingHorizontal: spacing.sm, gap: spacing.xs, paddingVertical: spacing.xs }}
     >
       {stories.map((story) => {
         const isActive = activeStoryId === story.id;
@@ -38,13 +40,14 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
           <TouchableOpacity
             key={story.id}
             onPress={() => onSelect(story.id)}
+            hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
             style={{
               backgroundColor: isActive ? color + '33' : 'transparent',
               borderWidth: 1,
               borderColor: isActive ? color : base.border,
               borderRadius: radii.sm,
-              paddingHorizontal: 10,
-              minHeight: MIN_TOUCH_TARGET,
+              paddingHorizontal: 8,
+              height: CHIP_HEIGHT,
               justifyContent: 'center',
             }}
           >

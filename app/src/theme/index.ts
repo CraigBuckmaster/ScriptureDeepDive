@@ -5,7 +5,7 @@
  *   import { base, panels, getPanelColors, getScholarColor } from '@/theme';
  */
 
-export { base, panels, scholars, eras, eraNames } from './colors';
+export { base, panels, scholars, eras, eraNames, eraPillLabels } from './colors';
 export type { PanelColors } from './colors';
 export { fontFamily, typography, scaledTypography } from './typography';
 export type { TypographyPreset } from './typography';
