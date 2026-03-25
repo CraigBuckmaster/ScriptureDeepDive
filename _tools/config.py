@@ -1122,3 +1122,19 @@ SCHOLAR_REGISTRY.append(('zimmerli', 'zimmerli', 'Zimmerli', 'zimmerli'))
 
 COMMENTATOR_SCOPE['block'].append('ezekiel')
 COMMENTATOR_SCOPE['zimmerli'] = ['ezekiel']
+
+# ── Wave 4: Jonah ──────────────────────────────────────────────────
+
+BOOK_META['jonah'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Jonah son of Amittai (Jonah 1:1; cf. 2 Kings 14:25), a prophet from Gath-hepher in the northern kingdom of Israel during the reign of Jeroboam II (c. 786-746 BC). The third-person narration suggests the book was composed or edited by a later hand, though it preserves the prophet\'s experience.',
+    'vhl_places': ['Nineveh', 'Tarshish', 'Joppa', 'Gath-hepher', 'Israel'],
+    'vhl_people': ['Jonah', 'Jeroboam II', 'Jesus'],
+    'vhl_key': ['flee', 'great', 'appointed', 'compassion', 'angry', 'relent', 'perish', 'pity', 'wind', 'storm', 'fish', 'worm', 'vine', 'repent', 'mercy'],
+    'vhl_time': ['on the first day', 'on the third day', 'forty days', 'at dawn the next day'],
+}
+
+# Stuart — WBC on Hosea-Jonah
+SCHOLAR_REGISTRY.append(('stuart', 'stuart', 'Stuart', 'stuart'))
+
+COMMENTATOR_SCOPE['stuart'] = ['jonah']
