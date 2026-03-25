@@ -8,11 +8,9 @@
 
 ## Executive Summary
 
-Phases 1–5 of the UI/UX plan are complete. The app has gone from "developer
-prototype" to "polished product" across navigation, home screen, chapter
-reading, secondary screens, and design system. The remaining issues are
-P1–P3 quality items — nothing is broken, but there's cleanup debt and a
-batch of orphaned components from features that were wired but never rendered.
+Phases 1–5 of the UI/UX plan are complete. All P0–P3 issues from this
+audit are now **resolved**. The remaining future work items are dynamic
+type integration and screen reader navigation ordering for complex screens.
 
 **Resolved since last audit:**
 - ✅ Tab bar icons (Lucide, all 5 tabs)
@@ -188,29 +186,24 @@ have `isLoading` checks.
 - SectionHeader has `accessibilityRole="header"`
 
 **What's missing:**
-- Zero accessibilityLabel/accessibilityRole on any screen-level elements
-- No accessibilityHint on complex interactive elements (long-press book
-  name for Qnav, swipe gestures on tree/map)
+- ~~Zero accessibilityLabel/accessibilityRole on any screen-level elements~~ ✅ Added
+- ~~No accessibilityHint on complex interactive elements (long-press book
+  name for Qnav, swipe gestures on tree/map)~~ ✅ Added
 - No dynamic type integration — font scaling is manual via Settings slider,
-  not linked to system accessibility font size
+  not linked to system accessibility font size (future work)
 - Screen reader navigation order not explicitly defined for complex screens
-  (ChapterScreen with multiple panels)
+  (ChapterScreen with multiple panels) (future work)
 
 ---
 
 ### 9. MINOR POLISH — P3
 
-- **"About This Book →" text link** in ChapterHeader uses raw arrow `→`.
-  Could use Lucide `ArrowRight` for consistency with the rest of the app.
-- **ParallelPassageScreen** has no loading skeleton for initial data load.
-- **PlanListScreen** "Active" text badge on active plan could be a BadgeChip
-  for visual consistency.
-- **ReadingHistoryScreen** navigates to `ReadTab` stack — if accessed from
-  HomeStack, this switches tabs instead of pushing within current stack.
-- **BookmarkListScreen** verse_ref regex parsing (`/^(\w+)\s+(\d+):(\d+)$/`)
-  doesn't handle book IDs with underscores (e.g., `1_samuel 1:1`). The
-  `\w+` only matches word characters which includes underscores, so it
-  works, but it's fragile.
+- ~~**"About This Book →" text link** in ChapterHeader uses raw arrow `→`.~~ ✅ Lucide ArrowRight
+- ~~**ParallelPassageScreen** has no loading skeleton for initial data load.~~ ✅ Added
+- ~~**PlanListScreen** "Active" text badge on active plan could be a BadgeChip.~~ ✅ BadgeChip
+- ~~**ReadingHistoryScreen** navigates to `ReadTab` stack — if accessed from
+  HomeStack, this switches tabs instead of pushing within current stack.~~ ✅ Pushes within MoreStack
+- ~~**BookmarkListScreen** verse_ref regex parsing~~ ✅ Hardened to `\S+`
 
 ---
 
@@ -225,8 +218,8 @@ have `isLoading` checks.
 | ~~P2~~ | ~~200 font family string literals (#5)~~ | ✅ Resolved — 194 replaced with fontFamily.* tokens, 0 remain |
 | ~~P2~~ | ~~14 screens without StyleSheet (#6)~~ | ✅ Resolved — all 21 screens use StyleSheet.create() |
 | ~~P2~~ | ~~3 detail screens blank while loading (#7)~~ | ✅ Resolved — all show LoadingSkeleton shimmer |
-| P3 | Accessibility gaps (#8) | Inclusion |
-| P3 | Minor polish items (#9) | Quality of life |
+| ~~P3~~ | ~~Accessibility gaps (#8)~~ | ✅ Resolved — 21 roles, 38 labels, 4 hints, 4 states added |
+| ~~P3~~ | ~~Minor polish items (#9)~~ | ✅ Resolved — all 5 items fixed |
 
 ---
 
@@ -237,5 +230,6 @@ have `isLoading` checks.
 - **Total hooks:** 20
 - **Files with StyleSheet:** 14 / 37 components, 21 / 21 screens
 - **Files using fontFamily tokens:** 100% (0 string literals remain)
-- **Loading skeletons:** 13 screens covered, 0 blank
+- **Loading skeletons:** 14 screens covered, 0 blank
 - **Back buttons:** 21 screens have them, 0 do not
+- **Accessibility:** 28 roles, 38 labels, 4 hints, 4 states across screens + components
