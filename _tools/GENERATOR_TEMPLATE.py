@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ═══════════════════════════════════════════════════════════════════════
-GENERATOR TEMPLATE — ScriptureDeepDive Chapter Content Generator
+GENERATOR TEMPLATE — CompanionStudy Chapter Content Generator
 ═══════════════════════════════════════════════════════════════════════
 
 Copy this file to /tmp/gen_{book}_{range}.py, fill in the scholarly

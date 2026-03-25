@@ -1,4 +1,4 @@
-# Scripture Deep Dive — Tests
+# Companion Study — Tests
 
 ## Current Test Infrastructure
 

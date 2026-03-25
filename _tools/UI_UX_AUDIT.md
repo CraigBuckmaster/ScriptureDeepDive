@@ -1,4 +1,4 @@
-# Scripture Deep Dive — UI/UX Audit Report (Post Phase 1–5)
+# Companion Study — UI/UX Audit Report (Post Phase 1–5)
 
 **Last updated:** 2026-03-24
 **Scope:** Full scan of all 130+ source files in `app/src/`

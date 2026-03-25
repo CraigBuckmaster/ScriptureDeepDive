@@ -1,4 +1,4 @@
-# Scripture Deep Dive — Master Plan
+# Companion Study — Master Plan
 
 > **Strategic plan for all remaining books.**
 > Referenced by BUILD_PLAN.md. Read this when deciding what to build next.

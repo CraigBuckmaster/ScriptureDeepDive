@@ -1,5 +1,5 @@
 /**
- * colors.ts — Complete color token system for Scripture Deep Dive.
+ * colors.ts — Complete color token system for Companion Study.
  *
  * All values extracted from the PWA CSS variables (css/base.css, css/styles.css)
  * and data files (scholar-data.js, timeline-data.js).

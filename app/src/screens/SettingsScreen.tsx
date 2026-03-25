@@ -128,8 +128,8 @@ export default function SettingsScreen() {
           <Text style={styles.sectionLabel}>ABOUT</Text>
           <Text style={styles.aboutText}>
             {stats
-              ? `Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions. ${stats.scholarCount} scholars across ${stats.liveBooks} books with ${stats.liveChapters} chapters of verse-by-verse analysis.`
-              : 'Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions.'
+              ? `Companion Study presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions. ${stats.scholarCount} scholars across ${stats.liveBooks} books with ${stats.liveChapters} chapters of verse-by-verse analysis.`
+              : 'Companion Study presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions.'
             }
           </Text>
           <Text style={styles.version}>Version {APP_VERSION}</Text>

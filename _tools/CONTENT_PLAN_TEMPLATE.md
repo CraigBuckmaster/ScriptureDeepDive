@@ -1,5 +1,5 @@
 """
-NEW BOOK CONTENT PLAN TEMPLATE — Scripture Deep Dive
+NEW BOOK CONTENT PLAN TEMPLATE — Companion Study
 ═════════════════════════════════════════════════════
 Run this planning phase BEFORE writing any gen_{book}.py script.
 This produces the content blueprint that the generator implements.

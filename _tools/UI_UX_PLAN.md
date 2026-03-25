@@ -214,7 +214,7 @@ content-forward. Not a library catalog. Adapted to our scholarly dark theme.
 - Full book list (moves to BookListScreen with view selector — see 4B)
 - Search bar (lives in Search tab)
 - Inline search results (lives in Search tab)
-- "Scripture Deep Dive" as a hero title (replaced by personal greeting — 
+- "Companion Study" as a hero title (replaced by personal greeting — 
   the app name lives in the tab bar and splash screen)
 
 **New hook addition — Verse of the Day:**

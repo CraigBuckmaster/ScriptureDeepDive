@@ -1,4 +1,4 @@
-# Scripture Deep Dive — Security Findings
+# Companion Study — Security Findings
 
 **Last updated:** 2026-03-24
 **Scope:** Full scan of all source files in `app/src/`, `app/App.tsx`, `app/app.json`
@@ -9,7 +9,7 @@ secrets exposure, unsafe deserialization, network surface, and code execution.
 
 ## Risk Profile
 
-Scripture Deep Dive is a **fully offline, read-only Bible study app** with
+Companion Study is a **fully offline, read-only Bible study app** with
 no network calls, no authentication, no user accounts, no APIs, and no
 server-side component. The attack surface is minimal. All data comes from
 a bundled SQLite database shipped with the app binary.

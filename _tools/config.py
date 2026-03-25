@@ -1,5 +1,5 @@
 """
-config.py — Data constants for ScriptureDeepDive build system
+config.py — Data constants for CompanionStudy build system
 
 Extracted from shared.py (Batch 5) to separate data from logic.
 These constants are pure data — no functions or side effects.

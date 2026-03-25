@@ -108,7 +108,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
           <Text style={{
             color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13,
           }}>
-            Read in Scripture Deep Dive →
+            Read in Companion Study →
           </Text>
         </TouchableOpacity>
       )}

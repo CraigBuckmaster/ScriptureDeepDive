@@ -143,7 +143,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           {person.chapter_link && onChapterPress && (
             <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={{ marginTop: spacing.md }}>
               <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
-                Read in Scripture Deep Dive →
+                Read in Companion Study →
               </Text>
             </TouchableOpacity>
           )}

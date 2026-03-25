@@ -33,7 +33,7 @@ export const VerseShareCard = forwardRef<View, Props>(({ verseRef, verseText, tr
       color: base.textMuted, fontFamily: fontFamily.display, fontSize: 18,
       letterSpacing: 2, marginTop: 80,
     }}>
-      ✦ Scripture Deep Dive
+      ✦ Companion Study
     </Text>
   </View>
 ));
