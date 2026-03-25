@@ -94,6 +94,13 @@ export function useTreeGestures(): TreeGestureResult {
     );
   }, []);
 
+  // Immediate jump — no animation, sets transform instantly
+  const jumpTo = useCallback((x: number, y: number, targetScale: number) => {
+    translateX.value = x;
+    translateY.value = y;
+    scale.value = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale));
+  }, []);
+
   // Centre on a specific node
   const centreOnNode = useCallback((nodeX: number, nodeY: number) => {
     const targetScale = isMobile ? 0.65 : 0.9;
@@ -101,6 +108,14 @@ export function useTreeGestures(): TreeGestureResult {
     const centerY = SCREEN_H / 2 - nodeY * targetScale;
     animateTo(centerX, centerY, targetScale, 550);
   }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
+
+  // Instant jump to centre on a node (no animation — for initial load)
+  const jumpToNode = useCallback((nodeX: number, nodeY: number) => {
+    const targetScale = isMobile ? 0.65 : 0.9;
+    const centerX = SCREEN_W / 2 - nodeX * targetScale;
+    const centerY = SCREEN_H * 0.15 - nodeY * targetScale;
+    jumpTo(centerX, centerY, targetScale);
+  }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
   // Centre on a node but offset upward so it sits above a bottom panel
   const centreOnNodeAbovePanel = useCallback((nodeX: number, nodeY: number) => {
@@ -111,5 +126,5 @@ export function useTreeGestures(): TreeGestureResult {
     animateTo(centerX, centerY, targetScale, 550);
   }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode, centreOnNodeAbovePanel };
+  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode, jumpToNode, centreOnNodeAbovePanel };
 }
