@@ -11,11 +11,24 @@ interface Props { data: any; }
 
 /**
  * Parse legacy HTML table format: <tr><td class="t-label">NIV</td><td>...</td></tr>
- * into structured rows.
+ * into structured rows. Strips all nested HTML tags.
+ * Rows with empty version + <strong> content become verse_ref headers.
  */
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, '').trim();
+}
+
 function parseHtmlTable(html: string): TransRow[] {
   const rows: TransRow[] = [];
-  const currentTranslations: { version: string; text: string }[] = [];
+  let currentRef: string | undefined;
+  let currentTranslations: { version: string; text: string }[] = [];
+
+  const flushGroup = () => {
+    if (currentTranslations.length > 0) {
+      rows.push({ verse_ref: currentRef, translations: currentTranslations });
+      currentTranslations = [];
+    }
+  };
 
   // Match each <tr>...</tr>
   const trPattern = /<tr>(.*?)<\/tr>/gs;
@@ -29,20 +42,25 @@ function parseHtmlTable(html: string): TransRow[] {
     const cells: string[] = [];
     let tdMatch;
     while ((tdMatch = tdPattern.exec(inner)) !== null) {
-      cells.push(tdMatch[1].trim());
+      cells.push(tdMatch[1]);
     }
-    if (cells.length >= 2) {
-      currentTranslations.push({ version: cells[0], text: cells[1] });
-    }
-  }
+    if (cells.length < 2) continue;
 
-  if (currentTranslations.length > 0) {
-    // Group into pairs (NIV + ESV per verse)
-    for (let i = 0; i < currentTranslations.length; i += 2) {
-      const pair = currentTranslations.slice(i, i + 2);
-      rows.push({ translations: pair });
+    const version = stripHtml(cells[0]);
+    const text = stripHtml(cells[1]);
+
+    // Empty version + text with content = verse header row
+    if (!version && text) {
+      flushGroup();
+      currentRef = text;
+      continue;
+    }
+
+    if (version && text) {
+      currentTranslations.push({ version, text });
     }
   }
+  flushGroup();
 
   return rows;
 }
