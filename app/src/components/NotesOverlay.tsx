@@ -18,10 +18,11 @@ interface Props {
   visible: boolean;
   onClose: () => void;
   bookId: string;
+  bookName?: string;
   chapterNum: number;
 }
 
-export function NotesOverlay({ visible, onClose, bookId, chapterNum }: Props) {
+export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }: Props) {
   const [notes, setNotes] = useState<UserNote[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
@@ -68,7 +69,7 @@ export function NotesOverlay({ visible, onClose, bookId, chapterNum }: Props) {
           borderBottomWidth: 1, borderBottomColor: base.border,
         }}>
           <Text style={{ color: base.text, fontFamily: 'Cinzel_500Medium', fontSize: 14 }}>
-            Notes — {bookId} {chapterNum}
+            Notes — {bookName ?? bookId} {chapterNum}
           </Text>
           <View style={{ flexDirection: 'row', gap: spacing.md }}>
             <TouchableOpacity onPress={() => setShowAdd(true)} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }}>
@@ -85,7 +86,7 @@ export function NotesOverlay({ visible, onClose, bookId, chapterNum }: Props) {
           <View style={{ padding: spacing.md, gap: spacing.sm, borderBottomWidth: 1, borderBottomColor: base.border }}>
             <TextInput
               value={newRef} onChangeText={setNewRef}
-              placeholder={`e.g. ${bookId} ${chapterNum}:1`}
+              placeholder={`e.g. ${bookName ?? bookId} ${chapterNum}:1`}
               placeholderTextColor={base.textMuted}
               style={{ backgroundColor: base.bgElevated, color: base.text, borderRadius: radii.sm,
                 paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, fontFamily: 'SourceSans3_400Regular',

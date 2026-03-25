@@ -4,13 +4,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, SafeAreaView, ScrollView } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing } from '../theme';
 import type { WordStudy } from '../types';
 
 export default function WordStudyDetailScreen() {
+  const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const { wordId } = route.params ?? {};
   const [word, setWord] = useState<WordStudy | null>(null);
@@ -30,6 +32,12 @@ export default function WordStudyDetailScreen() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
       <ScrollView contentContainerStyle={{ padding: spacing.md }}>
+        <ScreenHeader
+          title="Word Study"
+          titleColor={accentColor}
+          onBack={() => navigation.goBack()}
+          style={{ marginBottom: spacing.md }}
+        />
         {/* Original word */}
         <Text style={{ color: accentColor, fontFamily: 'EBGaramond_500Medium', fontSize: 36, textAlign: 'center' }}>
           {word.original}

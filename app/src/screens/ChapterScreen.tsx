@@ -25,6 +25,7 @@ import { ButtonRow } from '../components/ButtonRow';
 import { PanelContainer } from '../components/PanelContainer';
 import { ScholarlyBlock } from '../components/ScholarlyBlock';
 import { QnavOverlay } from '../components/QnavOverlay';
+import { NotesOverlay } from '../components/NotesOverlay';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
@@ -40,6 +41,7 @@ export default function ChapterScreen() {
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
   const qnavOpen = useReaderStore((s) => s.qnavOpen);
   const toggleQnav = useReaderStore((s) => s.toggleQnav);
+  const notesOverlayOpen = useReaderStore((s) => s.notesOverlayOpen);
   const toggleNotes = useReaderStore((s) => s.toggleNotesOverlay);
 
   const {
@@ -224,6 +226,14 @@ export default function ChapterScreen() {
             navigation.push('Chapter', { bookId: bId, chapterNum: ch });
           }
         }}
+      />
+
+      <NotesOverlay
+        visible={notesOverlayOpen}
+        onClose={toggleNotes}
+        bookId={bookId}
+        bookName={bookData?.name ?? bookId}
+        chapterNum={chapterNum}
       />
     </View>
   );

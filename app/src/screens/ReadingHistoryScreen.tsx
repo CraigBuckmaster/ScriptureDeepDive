@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getRecentChapters, getReadingStats } from '../db/user';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, radii } from '../theme';
 import type { RecentChapter, ReadingStats } from '../db/user';
 
@@ -21,9 +22,11 @@ export default function ReadingHistoryScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}>
-        Reading History
-      </Text>
+      <ScreenHeader
+        title="Reading History"
+        onBack={() => navigation.goBack()}
+        style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}
+      />
 
       {/* Stats */}
       {stats && stats.totalChapters > 0 && (

@@ -6,6 +6,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getScholar, getAllScholars } from '../db/content';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { getScholarColor, base, spacing, radii } from '../theme';
 import type { Scholar } from '../types';
 
@@ -45,14 +46,12 @@ export default function ScholarBioScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
       <ScrollView contentContainerStyle={{ padding: spacing.md }}>
         {/* Header */}
-        <Text style={{ color, fontFamily: 'Cinzel_600SemiBold', fontSize: 24 }}>
-          {scholar.name}
-        </Text>
-        {scholar.tradition && (
-          <Text style={{ color: base.textDim, fontFamily: 'SourceSans3_400Regular', fontSize: 14, marginTop: 4 }}>
-            {scholar.tradition}
-          </Text>
-        )}
+        <ScreenHeader
+          title={scholar.name}
+          subtitle={scholar.tradition ?? undefined}
+          titleColor={color}
+          onBack={() => navigation.goBack()}
+        />
         {bio?.eyebrow && (
           <Text style={{ color: base.textMuted, fontFamily: 'EBGaramond_400Regular_Italic', fontSize: 13, marginTop: 4 }}>
             {bio.eyebrow}

@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, FlatList, SafeAreaView } from 'react-nati
 import { useNavigation } from '@react-navigation/native';
 import { getPlans, getActivePlanId, getPlanProgress } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, radii } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
@@ -24,9 +25,11 @@ export default function PlanListScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
-      <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 22, paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}>
-        Reading Plans
-      </Text>
+      <ScreenHeader
+        title="Reading Plans"
+        onBack={() => navigation.goBack()}
+        style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}
+      />
 
       {/* Active plan */}
       {activePlanId && plans.find((p) => p.id === activePlanId) && (
