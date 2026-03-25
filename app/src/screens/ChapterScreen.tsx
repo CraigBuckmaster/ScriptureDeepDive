@@ -43,6 +43,7 @@ export default function ChapterScreen() {
   const toggleQnav = useReaderStore((s) => s.toggleQnav);
   const notesOverlayOpen = useReaderStore((s) => s.notesOverlayOpen);
   const toggleNotes = useReaderStore((s) => s.toggleNotesOverlay);
+  const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
 
   const {
     chapter, sections, verses, vhlGroups,
@@ -248,7 +249,7 @@ export default function ChapterScreen() {
             activePanel={activeSectionPanelType}
             fontSize={fontSize}
             onPanelToggle={handleSectionPanelToggle}
-            onNotePress={(v) => toggleNotes()}
+            onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
             renderButtonRow={(panels, sectionId) => (
               <View onLayout={(e) => {
                 const sectionY = sectionYMap.current[sectionId] ?? 0;
@@ -309,10 +310,11 @@ export default function ChapterScreen() {
 
       <NotesOverlay
         visible={notesOverlayOpen}
-        onClose={toggleNotes}
+        onClose={() => { setNoteVerseNum(null); toggleNotes(); }}
         bookId={bookId}
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}
+        initialVerseNum={noteVerseNum}
       />
     </View>
   );

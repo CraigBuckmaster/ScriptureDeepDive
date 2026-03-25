@@ -3,6 +3,7 @@ import MoreMenuScreen from '../screens/MoreMenuScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import BookmarkListScreen from '../screens/BookmarkListScreen';
 import ReadingHistoryScreen from '../screens/ReadingHistoryScreen';
+import AllNotesScreen from '../screens/AllNotesScreen';
 import PlanListScreen from '../screens/PlanListScreen';
 import PlanDetailScreen from '../screens/PlanDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
@@ -18,6 +19,7 @@ export function MoreStack() {
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Bookmarks" component={BookmarkListScreen} />
       <Stack.Screen name="ReadingHistory" component={ReadingHistoryScreen} />
+      <Stack.Screen name="AllNotes" component={AllNotesScreen} />
       <Stack.Screen name="PlanList" component={PlanListScreen} />
       <Stack.Screen name="PlanDetail" component={PlanDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />

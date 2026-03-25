@@ -42,7 +42,30 @@ export default function BookIntroScreen() {
         {intro.authorship && (
           <View style={styles.authorshipBlock}>
             <Text style={styles.authorshipLabel}>AUTHORSHIP</Text>
-            <Text style={styles.bodyText}>{intro.authorship}</Text>
+            {typeof intro.authorship === 'string' ? (
+              <Text style={styles.bodyText}>{intro.authorship}</Text>
+            ) : (
+              <View style={{ gap: spacing.sm }}>
+                {intro.authorship.author && (
+                  <View>
+                    <Text style={styles.authorshipSubLabel}>Author</Text>
+                    <Text style={styles.bodyText}>{intro.authorship.author}</Text>
+                  </View>
+                )}
+                {intro.authorship.date && (
+                  <View>
+                    <Text style={styles.authorshipSubLabel}>Date</Text>
+                    <Text style={styles.bodyText}>{intro.authorship.date}</Text>
+                  </View>
+                )}
+                {intro.authorship.prompt && (
+                  <View>
+                    <Text style={styles.authorshipSubLabel}>Purpose</Text>
+                    <Text style={styles.bodyText}>{intro.authorship.prompt}</Text>
+                  </View>
+                )}
+              </View>
+            )}
           </View>
         )}
 
@@ -129,6 +152,12 @@ const styles = StyleSheet.create({
     fontSize: 10,
     letterSpacing: 0.5,
     marginBottom: spacing.xs,
+  },
+  authorshipSubLabel: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 11,
+    marginBottom: 2,
   },
   section: {
     marginBottom: spacing.lg,
