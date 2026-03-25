@@ -1181,3 +1181,17 @@ BOOK_META['joel'] = {
 }
 
 COMMENTATOR_SCOPE['stuart'].append('joel')
+
+# ── Wave 4: Hosea ──────────────────────────────────────────────────
+
+BOOK_META['hosea'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Hosea son of Beeri (Hos 1:1). Hosea prophesied in the northern kingdom of Israel during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah of Judah, and Jeroboam II of Israel (ca. 750-715 BC). He is the only writing prophet native to the northern kingdom. The superscription spans roughly four decades, making Hosea one of the longest-serving prophets. His ministry coincided with Israel\'s final years before the Assyrian conquest of Samaria in 722 BC.',
+    'vhl_places': ['Samaria', 'Jezreel', 'Gilead', 'Bethel', 'Gilgal', 'Egypt', 'Assyria', 'Lebanon', 'Ephraim', 'Judah', 'Shechem', 'Tabor', 'Mizpah', 'Baal Peor', 'Admah', 'Zeboiim'],
+    'vhl_people': ['Hosea', 'Gomer', 'Jezreel', 'Lo-Ruhamah', 'Lo-Ammi', 'Jeroboam II'],
+    'vhl_key': ['harlotry', 'return', 'knowledge', 'faithfulness', 'love', 'covenant', 'Ephraim', 'Baal', 'sow', 'reap', 'compassion', 'heal', 'adultery', 'judgment'],
+    'vhl_time': ['in that day', 'in the days of', 'afterward', 'in the last days'],
+}
+
+COMMENTATOR_SCOPE['stuart'].append('hosea')
+COMMENTATOR_SCOPE['andersen_freedman'].append('hosea')
