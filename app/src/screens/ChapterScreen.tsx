@@ -10,7 +10,6 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 
 import { useChapterData } from '../hooks/useChapterData';
 import { useNotedVerses } from '../hooks/useNotedVerses';
@@ -109,21 +108,6 @@ export default function ChapterScreen() {
     if (hasNext) navigation.setParams({ chapterNum: chapterNum + 1 });
   }, [hasNext, chapterNum, navigation]);
 
-  // Horizontal swipe gesture for prev/next chapter
-  const swipeGesture = useMemo(() =>
-    Gesture.Pan()
-      .activeOffsetX([-40, 40])     // must move 40px horizontally to activate
-      .failOffsetY([-20, 20])       // cancel if vertical movement > 20px
-      .onEnd((e) => {
-        if (e.translationX > 60 && hasPrev) {
-          goPrev();
-        } else if (e.translationX < -60 && hasNext) {
-          goNext();
-        }
-      }),
-    [hasPrev, hasNext, goPrev, goNext]
-  );
-
   // Panel toggle — single-open policy
   const handleSectionPanelToggle = useCallback(
     (sectionId: string, panelType: string) => {
@@ -193,8 +177,6 @@ export default function ChapterScreen() {
       <View style={styles.progressTrack}>
         <View style={[styles.progressFill, { width: `${scrollProgress * 100}%` }]} />
       </View>
-
-      <GestureDetector gesture={swipeGesture}>
 
       <ScrollView
         ref={scrollRef}
@@ -282,7 +264,6 @@ export default function ChapterScreen() {
           }}
         />
       </ScrollView>
-      </GestureDetector>
 
       <QnavOverlay
         visible={qnavOpen}
