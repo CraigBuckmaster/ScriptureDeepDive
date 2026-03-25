@@ -5,10 +5,11 @@
   "scripts": {
     "setup": "node scripts/setup.js",
     "prestart": "node scripts/setup.js",
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "node scripts/setup.js && expo start",
+    "dev": "node scripts/setup.js && expo start --clear --go",
+    "android": "node scripts/setup.js && expo start --android",
+    "ios": "node scripts/setup.js && expo start --ios",
+    "web": "node scripts/setup.js && expo start --web"
   },
   "dependencies": {
     "@expo-google-fonts/cinzel": "^0.2.3",
