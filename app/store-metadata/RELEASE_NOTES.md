@@ -1,4 +1,4 @@
-# Release Notes — Scripture Deep Dive
+# Release Notes — Companion Study
 
 ## v1.0.0 (Initial Release)
 

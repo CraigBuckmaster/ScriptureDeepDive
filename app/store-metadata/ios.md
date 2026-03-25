@@ -1,16 +1,16 @@
 # iOS App Store Metadata
 
 ## App Name (30 chars)
-Scripture Deep Dive
+Companion Study
 
 ## Subtitle (30 chars)
-Scholarly Bible Study
+Logos & Letters, verse by verse
 
 ## Promotional Text (170 chars)
 Explore the Bible with 40+ scholars, Hebrew & Greek word studies, an interactive family tree, a biblical world map, and verse-by-verse commentary. Offline. Free.
 
 ## Description
-Scripture Deep Dive is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
+Companion Study is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
 
 Every chapter of every live book features verse-by-verse analysis across up to 15 scholarly panel types — Hebrew and Greek word studies, historical context, cross-references, literary structure analysis, theological theme mapping, translation comparisons, ancient source citations, reception history, and more.
 
@@ -49,7 +49,7 @@ Entirely offline after installation. No account required. No ads. No subscriptio
 bible study,commentary,hebrew,greek,word study,devotional,NIV,ESV,genealogy,map,timeline,scholarly
 
 ## What's New (v1.0.0)
-Welcome to Scripture Deep Dive! Explore 30 books and 879 chapters with verse-by-verse scholarly commentary, Hebrew and Greek word studies, interactive exploration tools, and personal study features.
+Welcome to Companion Study! Explore 30 books and 879 chapters with verse-by-verse scholarly commentary, Hebrew and Greek word studies, interactive exploration tools, and personal study features.
 
 ## Support URL
 https://github.com/CraigBuckmaster/ScriptureDeepDive/issues

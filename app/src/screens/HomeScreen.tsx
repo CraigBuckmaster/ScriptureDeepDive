@@ -143,7 +143,7 @@ export default function HomeScreen() {
         <View style={styles.aboutFooter}>
           <BookOpen size={16} color={base.textMuted} style={styles.aboutIcon} />
           <Text style={styles.aboutText}>
-            Scripture Deep Dive presents the Bible alongside scholarly commentary from evangelical,
+            Companion Study presents the Bible alongside scholarly commentary from evangelical,
             reformed, Jewish, critical, and patristic traditions.
           </Text>
           <Text style={styles.aboutVersion}>Version 1.0.0</Text>

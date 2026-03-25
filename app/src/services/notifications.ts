@@ -19,8 +19,8 @@ export async function requestPermission(): Promise<boolean> {
     ios: { allowAlert: true, allowBadge: true, allowSound: true },
   });
   if (Platform.OS === 'android') {
-    await Notifications.setNotificationChannelAsync('scripture-deep-dive', {
-      name: 'Scripture Deep Dive',
+    await Notifications.setNotificationChannelAsync('companion-study', {
+      name: 'Companion Study',
       importance: Notifications.AndroidImportance.DEFAULT,
     });
   }

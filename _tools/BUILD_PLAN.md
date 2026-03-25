@@ -1,4 +1,4 @@
-# Scripture Deep Dive — New Book Build Plan
+# Companion Study — New Book Build Plan
 
 > **Read this file before starting any new book.**
 > Last updated: 2026-03-24 (PWA retired — JSON/SQLite pipeline only)

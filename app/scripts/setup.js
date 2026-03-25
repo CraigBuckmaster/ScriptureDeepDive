@@ -15,7 +15,7 @@ const path = require('path');
 const SRC = path.resolve(__dirname, '..', '..', 'scripture.db');
 const DST = path.resolve(__dirname, '..', 'assets', 'scripture.db');
 
-console.log('Scripture Deep Dive — Database Setup');
+console.log('Companion Study — Database Setup');
 console.log('====================================');
 
 // Check source exists

@@ -54,7 +54,7 @@ eas --version
 2. Create a new project (or use existing)
 3. Go to **IAM & Admin → Service Accounts**
 4. Click **Create Service Account**
-   - Name: `scripture-deep-dive-play`
+   - Name: `companion-study-play`
    - Role: none needed here
 5. Click the new service account → **Keys** tab → **Add Key → Create New Key → JSON**
 6. Download the JSON file
@@ -169,7 +169,7 @@ Same process. When done:
 Open the installed app and verify:
 - App launches with dark background and gold loading indicator
 - Splash screen transitions to Home screen
-- "Scripture Deep Dive" title visible
+- "Companion Study" title visible
 - Tab bar works (Home, Read, Explore, Search, More)
 - Tap a book → chapter grid → chapter screen with verse text
 - VHL highlighted words visible in colors
@@ -193,10 +193,10 @@ Same verification steps as iPhone.
 2. Click **My Apps → + (New App)**
 3. Fill in:
    - **Platform:** iOS
-   - **Name:** `Scripture Deep Dive`
+   - **Name:** `Companion Study`
    - **Primary Language:** English (U.S.)
    - **Bundle ID:** `com.scripturedeepive.app` (should appear in dropdown after credentials setup)
-   - **SKU:** `scripture-deep-dive-v1`
+   - **SKU:** `companion-study-v1`
 4. Click **Create**
 5. Note the **Apple ID** shown on the app page (a number like `1234567890`)
 6. Go back to `eas.json` and replace `PLACEHOLDER_ASC_APP_ID` with this number
@@ -246,7 +246,7 @@ Explore the Bible with 40+ scholars, Hebrew & Greek word studies, an interactive
 
 **What's New:**
 ```
-Welcome to Scripture Deep Dive! Explore 30 books and 879 chapters with verse-by-verse scholarly commentary, Hebrew and Greek word studies, interactive exploration tools, and personal study features.
+Welcome to Companion Study! Explore 30 books and 879 chapters with verse-by-verse scholarly commentary, Hebrew and Greek word studies, interactive exploration tools, and personal study features.
 ```
 
 **App Review Information:**
@@ -274,7 +274,7 @@ Complete the questionnaire:
 1. Go to [https://play.google.com/console](https://play.google.com/console)
 2. Click **Create app**
 3. Fill in:
-   - **App name:** `Scripture Deep Dive — Bible Study`
+   - **App name:** `Companion Study — Bible Study`
    - **Default language:** English (United States)
    - **App or game:** App
    - **Free or paid:** Free
@@ -350,7 +350,7 @@ If you have access to a Mac:
 You need a 1024×500 banner image. Create one using:
 - [Canva](https://canva.com) (free)
 - Dark background `#0c0a07`
-- App name "Scripture Deep Dive" in gold
+- App name "Companion Study" in gold
 - Tagline "Scholarly Bible Study"
 - Optional: small screenshots or the app icon
 
@@ -450,7 +450,7 @@ This uploads to Google Play's **internal testing** track.
 ### 10.1 Verify Store Listing
 
 Once approved:
-1. Search "Scripture Deep Dive" on the App Store / Google Play
+1. Search "Companion Study" on the App Store / Google Play
 2. Verify the listing looks correct (icon, screenshots, description)
 3. Download on a clean device (one that never had the dev build)
 4. Confirm the app installs and runs correctly from the store

@@ -27,7 +27,7 @@ export function AuthorshipSheet({ visible, onClose }: Props) {
           </Text>
 
           <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 24 }}>
-            Scripture Deep Dive presents the Bible text alongside scholarly commentary from multiple traditions —
+            Companion Study presents the Bible text alongside scholarly commentary from multiple traditions —
             evangelical, reformed, Jewish, critical, and patristic. Each chapter features Hebrew/Greek word studies,
             historical context, cross-references, and curated notes from recognized scholars.
           </Text>
@@ -39,7 +39,7 @@ export function AuthorshipSheet({ visible, onClose }: Props) {
           </Text>
 
           <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 12, marginTop: spacing.md }}>
-            © Scripture Deep Dive. All rights reserved.
+            © Companion Study. All rights reserved.
           </Text>
         </ScrollView>
       </SafeAreaView>

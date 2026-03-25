@@ -1,13 +1,13 @@
 # Google Play Store Metadata
 
 ## App Name (50 chars)
-Scripture Deep Dive — Bible Study
+Companion Study — Bible Study
 
 ## Short Description (80 chars)
 Scholarly Bible study with 40+ commentators, word studies, maps, and timelines.
 
 ## Full Description
-Scripture Deep Dive is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
+Companion Study is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
 
 Every chapter features verse-by-verse analysis across up to 15 scholarly panel types — Hebrew and Greek word studies, historical context, cross-references, literary structure, theological themes, translation comparisons, ancient sources, and more.
 

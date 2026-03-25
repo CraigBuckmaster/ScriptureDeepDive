@@ -16,7 +16,7 @@
 
 ```bash
 git clone https://github.com/CraigBuckmaster/ScriptureDeepDive.git
-cd ScriptureDeepDive\app
+cd CompanionStudy\app
 ```
 
 ### 2. Install dependencies
@@ -106,7 +106,7 @@ Full web support with data is a planned future feature.
 When new chapters are built (by Claude in a session), pull and rebuild:
 
 ```bash
-cd ScriptureDeepDive
+cd CompanionStudy
 git pull origin master
 cd app
 npm run setup

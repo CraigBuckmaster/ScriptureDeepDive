@@ -1,4 +1,4 @@
-# Scripture Deep Dive — Local Development Setup
+# Companion Study — Local Development Setup
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ The app needs `scripture.db` to display content. To generate it:
 
 ```bash
 # From the repo root (not app/)
-cd ScriptureDeepDive
+cd CompanionStudy
 
 # Generate all content JSON from archived HTML
 python3 _tools/convert_js_to_json.py

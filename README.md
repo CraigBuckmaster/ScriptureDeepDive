@@ -1,4 +1,6 @@
-# Scripture Deep Dive
+# Companion Study
+
+*Logos & Letters, verse by verse*
 
 **Scholarly Bible study with 43 commentators, Hebrew & Greek word studies, an interactive genealogy tree, a biblical world map, and verse-by-verse analysis.**
 
@@ -71,4 +73,4 @@ See [_tools/WORKFLOW.md](_tools/WORKFLOW.md) for the full authoring pipeline.
 
 ## License
 
-© Scripture Deep Dive. All rights reserved.
+© Companion Study. All rights reserved.

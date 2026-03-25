@@ -1,5 +1,5 @@
 """
-Scripture Deep Dive — Content Build System
+Companion Study — Content Build System
 ============================================
 
 Architecture:

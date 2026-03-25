@@ -1,4 +1,4 @@
-# Scripture Deep Dive — Test Framework Plan
+# Companion Study — Test Framework Plan
 
 ## Executive Summary
 

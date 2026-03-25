@@ -1,6 +1,6 @@
-# Open Source Licenses — Scripture Deep Dive
+# Open Source Licenses — Companion Study
 
-Scripture Deep Dive uses the following open-source libraries.
+Companion Study uses the following open-source libraries.
 All are permissively licensed (MIT, ISC, or Apache 2.0).
 
 | Package | License | Purpose |

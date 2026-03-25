@@ -1,17 +1,17 @@
-# Privacy Policy — Scripture Deep Dive
+# Privacy Policy — Companion Study
 
 **Effective Date:** March 2026
 **Developer:** Craig Buckmaster
 
 ## Overview
 
-Scripture Deep Dive is a free Bible study application. Your privacy is important to us. This policy explains what data the app collects, stores, and shares.
+Companion Study is a free Bible study application. Your privacy is important to us. This policy explains what data the app collects, stores, and shares.
 
 **Summary: We collect no personal information. All your data stays on your device.**
 
 ## Data Collection
 
-Scripture Deep Dive does **not** collect, transmit, or store any personally identifiable information (PII). Specifically:
+Companion Study does **not** collect, transmit, or store any personally identifiable information (PII). Specifically:
 
 - No account creation or login required
 - No email addresses, names, or phone numbers collected
@@ -55,7 +55,7 @@ If you enable push notifications (optional), the app schedules **local notificat
 
 ## Children's Privacy
 
-Scripture Deep Dive does not knowingly collect data from children under 13 (or the applicable age in your jurisdiction). Since the app collects no personal data from any user, no special provisions for children are necessary.
+Companion Study does not knowingly collect data from children under 13 (or the applicable age in your jurisdiction). Since the app collects no personal data from any user, no special provisions for children are necessary.
 
 ## In-App Purchases and Advertising
 
