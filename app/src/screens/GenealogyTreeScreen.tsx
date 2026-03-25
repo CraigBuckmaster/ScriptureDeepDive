@@ -16,6 +16,7 @@ import { GestureDetector } from 'react-native-gesture-handler';
 import { usePeople } from '../hooks/usePeople';
 import { useTreeLayout } from '../hooks/useTreeLayout';
 import { useTreeGestures } from '../hooks/useTreeGestures';
+import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 
 import { TreeCanvas } from '../components/tree/TreeCanvas';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
@@ -28,6 +29,7 @@ import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
 
 export default function GenealogyTreeScreen({ route, navigation }: any) {
+  useLandscapeUnlock();
   const initialPersonId = route?.params?.personId;
   const { people, isLoading } = usePeople();
   const insets = useSafeAreaInsets();
@@ -37,7 +39,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   const { nodes, links, marriageBars, spouseConnectors, spineIds } =
     useTreeLayout(people, filterEra);
 
-  const { gesture, animatedStyle, centreOnNode } = useTreeGestures();
+  const { gesture, animatedStyle, centreOnNode, centreOnNodeAbovePanel } = useTreeGestures();
 
   /** Filter by era and jump the tree to the first matching node. */
   const handleEraChange = useCallback(
@@ -52,14 +54,14 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     [nodes, centreOnNode],
   );
 
-  // Deep-link: centre on initial person
+  // Deep-link: centre on initial person (sidebar will open)
   useEffect(() => {
     if (initialPersonId && nodes.length > 0) {
       const node = nodes.find((n) => n.data.id === initialPersonId);
       if (node) {
         const person = people.find((p) => p.id === initialPersonId);
         if (person) setSelectedPerson(person);
-        setTimeout(() => centreOnNode(node.x, node.y), 200);
+        setTimeout(() => centreOnNodeAbovePanel(node.x, node.y), 200);
       }
     }
   }, [initialPersonId, nodes.length]);
@@ -70,10 +72,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === person.id);
-        if (node) centreOnNode(node.x, node.y);
+        if (node) centreOnNodeAbovePanel(node.x, node.y);
       }
     },
-    [people, nodes, centreOnNode]
+    [people, nodes, centreOnNodeAbovePanel]
   );
 
   const handleFamilyNavigate = useCallback(
@@ -82,10 +84,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === personId);
-        if (node) centreOnNode(node.x, node.y);
+        if (node) centreOnNodeAbovePanel(node.x, node.y);
       }
     },
-    [people, nodes, centreOnNode]
+    [people, nodes, centreOnNodeAbovePanel]
   );
 
   const handleSearchSelect = useCallback(

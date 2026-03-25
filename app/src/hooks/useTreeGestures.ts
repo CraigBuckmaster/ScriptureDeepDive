@@ -7,7 +7,7 @@
  */
 
 import { useCallback } from 'react';
-import { Dimensions } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 import { Gesture, type GestureType } from 'react-native-gesture-handler';
 import {
   useSharedValue,
@@ -18,9 +18,6 @@ import {
 } from 'react-native-reanimated';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
 
-const { width: SCREEN_W, height: SCREEN_H } = Dimensions.get('window');
-const isMobile = SCREEN_W < 768;
-
 interface TreeGestureResult {
   gesture: GestureType;
   animatedStyle: ReturnType<typeof useAnimatedStyle>;
@@ -29,9 +26,13 @@ interface TreeGestureResult {
   translateY: SharedValue<number>;
   animateTo: (x: number, y: number, targetScale: number, duration?: number) => void;
   centreOnNode: (nodeX: number, nodeY: number) => void;
+  centreOnNodeAbovePanel: (nodeX: number, nodeY: number) => void;
 }
 
 export function useTreeGestures(): TreeGestureResult {
+  const { width: SCREEN_W, height: SCREEN_H } = useWindowDimensions();
+  const isMobile = SCREEN_W < 768;
+
   const initialScale = isMobile
     ? TREE_CONSTANTS.initialScaleMobile
     : TREE_CONSTANTS.initialScaleTablet;
@@ -99,7 +100,16 @@ export function useTreeGestures(): TreeGestureResult {
     const centerX = SCREEN_W / 2 - nodeX * targetScale;
     const centerY = SCREEN_H / 2 - nodeY * targetScale;
     animateTo(centerX, centerY, targetScale, 550);
-  }, [animateTo]);
+  }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode };
+  // Centre on a node but offset upward so it sits above a bottom panel
+  const centreOnNodeAbovePanel = useCallback((nodeX: number, nodeY: number) => {
+    const targetScale = isMobile ? 0.65 : 0.9;
+    const centerX = SCREEN_W / 2 - nodeX * targetScale;
+    // Position node at roughly 25% from top instead of 50%
+    const centerY = SCREEN_H * 0.25 - nodeY * targetScale;
+    animateTo(centerX, centerY, targetScale, 550);
+  }, [animateTo, SCREEN_W, SCREEN_H, isMobile]);
+
+  return { gesture, animatedStyle, scale, translateX, translateY, animateTo, centreOnNode, centreOnNodeAbovePanel };
 }

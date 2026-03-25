@@ -7,10 +7,10 @@
 
 export const TOTAL_WIDTH = 9000;
 export const LANE_COUNT = 12;
-export const AXIS_Y = 280;
+export const AXIS_Y = 380;
 export const ERA_BAR_Y = 5;
 export const ERA_BAR_H = 40;
-export const LANE_HEIGHT = 18;
+export const LANE_HEIGHT = 26;
 export const LANE_TOP = 60;
 
 export const SCALE_BREAKPOINTS: [number, number][] = [
@@ -76,7 +76,7 @@ export function assignLanes(events: { id: string; name: string; year: number; er
 
   return sorted.map((evt) => {
     const x = yearToX(evt.year);
-    const labelWidth = evt.name.length * 6 + 60; // approximate
+    const labelWidth = evt.name.length * 7 + 70; // approximate at fontSize 11
     const leftEdge = x - labelWidth / 2;
 
     let bestLane = 0;

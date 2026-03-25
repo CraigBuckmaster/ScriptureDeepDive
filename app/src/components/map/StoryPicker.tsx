@@ -42,9 +42,9 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
             onPress={() => onSelect(story.id)}
             hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
             style={{
-              backgroundColor: isActive ? color + '33' : 'transparent',
+              backgroundColor: isActive ? color + '33' : base.bg + 'EE',
               borderWidth: 1,
-              borderColor: isActive ? color : base.border,
+              borderColor: isActive ? color : base.gold + '55',
               borderRadius: radii.sm,
               paddingHorizontal: 8,
               height: CHIP_HEIGHT,
@@ -52,7 +52,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
             }}
           >
             <Text style={{
-              color: isActive ? color : base.textDim,
+              color: isActive ? color : base.gold,
               fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.3,
             }}>
               {story.name}
