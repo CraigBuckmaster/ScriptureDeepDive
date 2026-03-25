@@ -46,7 +46,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     }
   }, [isLoading, people.length, nodes.length]);
 
-  const { gesture, animatedStyle, centreOnNode, centreOnNodeAbovePanel } = useTreeGestures();
+  const { gesture, animatedStyle, centreOnNode, jumpToNode, centreOnNodeAbovePanel } = useTreeGestures();
 
   // Offset applied to shift d3 coordinates into positive SVG space
   const offX = -bounds.minX;
@@ -66,7 +66,13 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   const handleEraChange = useCallback(
     (era: string) => {
       setFilterEra(era);
-      if (era === 'all' || nodes.length === 0) return;
+      if (nodes.length === 0) return;
+      if (era === 'all') {
+        // Re-centre on Adam when switching back to all
+        const adam = nodes.find((n) => n.data.id === 'adam');
+        if (adam) setTimeout(() => centreNode(adam.x, adam.y), 150);
+        return;
+      }
       const firstMatch = nodes.find((n) => n.data.era === era);
       if (firstMatch) {
         setTimeout(() => centreNode(firstMatch.x, firstMatch.y), 150);
@@ -87,21 +93,17 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     }
   }, [initialPersonId, nodes.length, centreNodeAbove]);
 
-  // Auto-centre on Adam when tree first loads (no deep-link)
+  // Auto-position on Adam when tree first loads — INSTANT, no animation
   const hasCentred = useRef(false);
   useEffect(() => {
     if (!initialPersonId && !hasCentred.current && nodes.length > 0) {
       hasCentred.current = true;
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        // Use centreOnNode directly with offset applied inline —
-        // avoids stale closure on centreNode callback
-        const x = adam.x + (-bounds.minX);
-        const y = adam.y + (-bounds.minY);
-        setTimeout(() => centreOnNode(x, y), 300);
+        jumpToNode(adam.x + offX, adam.y + offY);
       }
     }
-  }, [nodes.length, bounds.minX, bounds.minY, centreOnNode]);
+  }, [nodes.length, offX, offY, jumpToNode]);
 
   const handleNodePress = useCallback(
     (treePerson: TreePerson) => {
