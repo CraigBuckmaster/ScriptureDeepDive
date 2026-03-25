@@ -17,7 +17,7 @@ VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
 
 # Bump this whenever schema or content changes require a DB replacement on device.
-DB_VERSION = '0.10'
+DB_VERSION = '0.11'
 
 
 # ---------------------------------------------------------------------------

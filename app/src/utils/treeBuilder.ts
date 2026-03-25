@@ -125,48 +125,20 @@ export function buildHierarchy(people: Person[], spineIds: Set<string>): HierNod
     }
   }
 
-  // Find all root nodes: people who are NOT spouses and NOT attached as children
-  const roots: HierNode[] = [];
-  for (const p of people) {
-    if (spouseIds.has(p.id)) continue;
-    if (attached.has(p.id)) continue;
-    const node = byId.get(p.id);
-    if (node) roots.push(node);
-  }
+  return byId.get('adam') ?? null;
+}
 
-  if (roots.length === 0) return null;
-  if (roots.length === 1) return roots[0];
-
-  // Multiple root trees — create a virtual root to hold them all.
-  // Put Adam first (the main spine), then remaining roots sorted by era.
-  const adamIdx = roots.findIndex((r) => r.data.id === 'adam');
-  if (adamIdx > 0) {
-    const [adam] = roots.splice(adamIdx, 1);
-    roots.unshift(adam);
-  }
-
-  const virtualRoot: HierNode = {
-    data: {
-      id: '__root__',
-      name: '',
-      gender: null,
-      era: null,
-      role: '',
-      type: null,
-      bio: null,
-      dates: null,
-      father: null,
-      mother: null,
-      spouse_of: null,
-      scripture_role: null,
-      chapter_link: null,
-      refs_json: null,
-      nodeType: 'satellite',
-    } as TreePerson,
-    children: roots,
-  };
-
-  return virtualRoot;
+/**
+ * Find people who are NOT in Adam's tree and NOT spouses.
+ * These are disconnected figures (prophets, judges, NT figures, etc.)
+ */
+export function findDisconnectedPeople(
+  people: Person[],
+  treeNodeIds: Set<string>,
+): Person[] {
+  return people.filter(
+    (p) => !treeNodeIds.has(p.id) && !p.spouse_of
+  );
 }
 
 // ── d3 layout ───────────────────────────────────────────────────────
@@ -377,7 +349,85 @@ export function computeFullLayout(
   }
 
   const treeNodes = layoutTree(root);
-  const allNodes = positionSpouses(treeNodes, people, spineIds);
+  const allTreeNodes = positionSpouses(treeNodes, people, spineIds);
+
+  // Find the bounding box of the main tree
+  const treeNodeIds = new Set(allTreeNodes.map((n) => n.data.id));
+  let maxTreeY = 0;
+  for (const n of allTreeNodes) {
+    if (n.y > maxTreeY) maxTreeY = n.y;
+  }
+
+  // Position disconnected people below the main tree in era-grouped rows
+  const disconnected = findDisconnectedPeople(people, treeNodeIds);
+
+  // Group by era, maintain a consistent era order
+  const ERA_ORDER = [
+    'primeval', 'patriarch', 'exodus', 'judges',
+    'kingdom', 'united_monarchy', 'monarchy',
+    'prophets', 'divided_kingdom', 'exile',
+    'intertestamental', 'nt',
+  ];
+  const byEra = new Map<string, Person[]>();
+  for (const p of disconnected) {
+    const era = p.era ?? 'unknown';
+    const existing = byEra.get(era) ?? [];
+    existing.push(p);
+    byEra.set(era, existing);
+  }
+
+  const disconnectedNodes: LayoutNode[] = [];
+  const CLUSTER_GAP_Y = 180;   // space between main tree and clusters
+  const NODE_SPACING_X = 120;   // horizontal spacing within a row
+  const ROW_SPACING_Y = 60;     // vertical spacing between rows
+  const COLS_PER_ROW = 8;       // people per row before wrapping
+  let clusterY = maxTreeY + CLUSTER_GAP_Y;
+
+  for (const era of ERA_ORDER) {
+    const group = byEra.get(era);
+    if (!group || group.length === 0) continue;
+
+    // Position this era's people in rows
+    group.forEach((person, i) => {
+      const col = i % COLS_PER_ROW;
+      const row = Math.floor(i / COLS_PER_ROW);
+      const x = col * NODE_SPACING_X;
+      const y = clusterY + row * ROW_SPACING_Y;
+
+      disconnectedNodes.push({
+        data: { ...person, nodeType: 'satellite' },
+        x,
+        y,
+        parent: null,
+        children: [],
+        depth: 0,
+        isSpouse: false,
+      });
+    });
+
+    // Also position spouses of disconnected people
+    for (const p of people) {
+      if (p.spouse_of && group.some((g) => g.id === p.spouse_of)) {
+        const partner = disconnectedNodes.find((n) => n.data.id === p.spouse_of);
+        if (partner && !treeNodeIds.has(p.id)) {
+          disconnectedNodes.push({
+            data: { ...p, nodeType: 'satellite' },
+            x: partner.x + TREE_CONSTANTS.spouseXOffset,
+            y: partner.y,
+            parent: null,
+            children: [],
+            depth: 0,
+            isSpouse: true,
+          });
+        }
+      }
+    }
+
+    const rows = Math.ceil(group.length / COLS_PER_ROW);
+    clusterY += rows * ROW_SPACING_Y + 80; // gap before next era group
+  }
+
+  const allNodes = [...allTreeNodes, ...disconnectedNodes];
   const links = computeLinks(allNodes, spineIds, filterEra);
   const marriageBars = computeMarriageBars(allNodes, spineIds, filterEra);
   const spouseConnectors = computeSpouseConnectors(allNodes, spineIds, filterEra);

@@ -18,7 +18,7 @@ import * as FileSystem from 'expo-file-system/legacy';
  * Bump this when build_sqlite.py's DB_VERSION changes.
  * Must match the value written into db_meta by the build script.
  */
-const EXPECTED_DB_VERSION = '0.10';
+const EXPECTED_DB_VERSION = '0.11';
 
 let db: SQLite.SQLiteDatabase | null = null;
 

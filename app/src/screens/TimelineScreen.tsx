@@ -15,8 +15,8 @@ import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import {
-  yearToX, formatYear, assignLanes, computeTickMarks,
-  ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H, LANE_TOP, LANE_HEIGHT,
+  yearToX, formatYear, assignLanes, computeTickMarks, computeSvgHeight,
+  ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
   type PositionedEvent,
 } from '../utils/timelineLayout';
 import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
@@ -97,7 +97,8 @@ export default function TimelineScreen() {
     );
   }
 
-  const SVG_HEIGHT = AXIS_Y + 40;
+  const hasBelow = showPeople || showWorld;
+  const SVG_HEIGHT = computeSvgHeight(hasBelow);
 
   return (
     <View style={styles.container}>
@@ -174,21 +175,20 @@ export default function TimelineScreen() {
             const catColor = evt.category === 'world' ? '#b07d4f'
               : evt.category === 'person' ? '#6a9fb5'
               : evt.era ? (eras[evt.era] ?? base.gold) : base.gold;
-            const y = LANE_TOP + evt.lane * LANE_HEIGHT;
             const isSelected = selectedEvent?.id === evt.id;
 
             return (
               <G key={evt.id} onPress={() => setSelectedEvent(evt)}>
                 {/* Invisible hit rect — makes the entire label area tappable */}
-                <Rect x={evt.x - 10} y={y - 14} width={evt.labelWidth} height={28}
+                <Rect x={evt.x - 10} y={evt.y - 14} width={evt.labelWidth} height={28}
                   fill="transparent" />
-                {/* Stem line */}
-                <Line x1={evt.x} y1={y} x2={evt.x} y2={AXIS_Y} stroke={catColor} strokeWidth={0.5} opacity={0.4} />
+                {/* Stem line — connects event dot to axis */}
+                <Line x1={evt.x} y1={evt.y} x2={evt.x} y2={AXIS_Y} stroke={catColor} strokeWidth={0.5} opacity={0.4} />
                 {/* Circle */}
-                {isSelected && <Circle cx={evt.x} cy={y} r={10} fill={base.gold} opacity={0.3} />}
-                <Circle cx={evt.x} cy={y} r={6} fill={catColor} />
+                {isSelected && <Circle cx={evt.x} cy={evt.y} r={10} fill={base.gold} opacity={0.3} />}
+                <Circle cx={evt.x} cy={evt.y} r={6} fill={catColor} />
                 {/* Label */}
-                <SvgText x={evt.x + 10} y={y + 5} fontSize={11} fill={catColor}
+                <SvgText x={evt.x + 10} y={evt.y + 5} fontSize={11} fill={catColor}
                   fontFamily="SourceSans3_400Regular">
                   {evt.name} · {formatYear(evt.year)}
                 </SvgText>

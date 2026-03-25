@@ -1,17 +1,34 @@
 /**
  * utils/timelineLayout.ts — Timeline layout math.
  *
- * Piecewise linear scale (SCALE_BREAKPOINTS), swim-lane assignment,
- * year formatting, tick mark computation. Pure logic, no rendering.
+ * Events render ABOVE the axis line (stems drop down to axis).
+ * People + World History render BELOW the axis line (stems rise up to axis).
+ * Piecewise linear scale, swim-lane assignment, tick marks. Pure logic.
  */
 
 export const TOTAL_WIDTH = 9000;
-export const LANE_COUNT = 20;
-export const AXIS_Y = 580;
+
+// Lane config — events above, people/world below
+const ABOVE_LANE_COUNT = 12;
+const BELOW_LANE_COUNT = 8;
+export const LANE_HEIGHT = 26;
+
+// Vertical layout
 export const ERA_BAR_Y = 5;
 export const ERA_BAR_H = 40;
-export const LANE_HEIGHT = 26;
-export const LANE_TOP = 60;
+const ABOVE_LANE_TOP = 60;
+export const AXIS_Y = ABOVE_LANE_TOP + ABOVE_LANE_COUNT * LANE_HEIGHT + 20;
+const BELOW_LANE_TOP = AXIS_Y + 30;
+
+/** Total SVG height based on whether below-axis content exists. */
+export function computeSvgHeight(hasBelow: boolean): number {
+  if (!hasBelow) return AXIS_Y + 40;
+  return BELOW_LANE_TOP + BELOW_LANE_COUNT * LANE_HEIGHT + 30;
+}
+
+// Legacy exports for compatibility
+export const LANE_COUNT = ABOVE_LANE_COUNT;
+export const LANE_TOP = ABOVE_LANE_TOP;
 
 export const SCALE_BREAKPOINTS: [number, number][] = [
   [-4000, 0], [-2200, 1400], [-1800, 2000], [-1400, 2800],
@@ -61,7 +78,7 @@ export interface PositionedEvent {
   year: number;
   era: string | null;
   x: number;
-  lane: number;
+  y: number;
   labelWidth: number;
   scripture_ref: string | null;
   chapter_link: string | null;
@@ -69,34 +86,53 @@ export interface PositionedEvent {
   people_json: string | null;
 }
 
-/** Greedy lane assignment: no label overlap within same lane. */
+/**
+ * Assign lanes and compute y positions.
+ * Events → above axis (stems drop down to axis).
+ * People + World → below axis (stems rise up to axis).
+ */
 export function assignLanes(events: { id: string; category: string; name: string; year: number; era: string | null; scripture_ref: string | null; chapter_link: string | null; summary: string | null; people_json: string | null }[]): PositionedEvent[] {
-  const sorted = [...events].sort((a, b) => yearToX(a.year) - yearToX(b.year));
-  const laneRightEdges = new Array(LANE_COUNT).fill(-Infinity);
-  const GAP = 10;
+  const above = events.filter((e) => e.category === 'event');
+  const below = events.filter((e) => e.category !== 'event');
 
-  return sorted.map((evt) => {
-    const x = yearToX(evt.year);
-    const labelWidth = evt.name.length * 7 + 70; // approximate at fontSize 11
-    const leftEdge = x - labelWidth / 2;
+  const assignGroup = (
+    items: typeof events,
+    laneCount: number,
+    laneTop: number,
+  ): PositionedEvent[] => {
+    const sorted = [...items].sort((a, b) => yearToX(a.year) - yearToX(b.year));
+    const laneRightEdges = new Array(laneCount).fill(-Infinity);
+    const GAP = 10;
 
-    let bestLane = 0;
-    let bestRight = Infinity;
-    for (let lane = 0; lane < LANE_COUNT; lane++) {
-      if (leftEdge > laneRightEdges[lane] + GAP) {
-        bestLane = lane;
-        break;
+    return sorted.map((evt) => {
+      const x = yearToX(evt.year);
+      const labelWidth = evt.name.length * 7 + 70;
+      const leftEdge = x - labelWidth / 2;
+
+      let bestLane = 0;
+      let bestRight = Infinity;
+      for (let lane = 0; lane < laneCount; lane++) {
+        if (leftEdge > laneRightEdges[lane] + GAP) {
+          bestLane = lane;
+          break;
+        }
+        if (laneRightEdges[lane] < bestRight) {
+          bestRight = laneRightEdges[lane];
+          bestLane = lane;
+        }
       }
-      if (laneRightEdges[lane] < bestRight) {
-        bestRight = laneRightEdges[lane];
-        bestLane = lane;
-      }
-    }
 
-    laneRightEdges[bestLane] = x + labelWidth / 2;
+      laneRightEdges[bestLane] = x + labelWidth / 2;
+      const y = laneTop + bestLane * LANE_HEIGHT;
 
-    return { ...evt, x, lane: bestLane, labelWidth };
-  });
+      return { ...evt, x, y, labelWidth };
+    });
+  };
+
+  return [
+    ...assignGroup(above, ABOVE_LANE_COUNT, ABOVE_LANE_TOP),
+    ...assignGroup(below, BELOW_LANE_COUNT, BELOW_LANE_TOP),
+  ];
 }
 
 export function computeTickMarks(): { x: number; label: string; major: boolean }[] {
