@@ -4,14 +4,11 @@
  * Uses react-native-gesture-handler v2 + reanimated shared values.
  * Simultaneous pinch + pan. Zoom bounded [0.15, 3].
  *
- * IMPORTANT: All programmatic centering uses direct shared-value assignment
- * (no withTiming) because iOS Reduce Motion causes withTiming to silently
- * fail to update the native view transform. Direct assignment always works.
- *
- * Centering functions (all instant):
- *   centreOnNode         — center of viewport
- *   centreOnNodeTop      — near top of viewport (for tree root)
- *   centreOnNodeAbovePanel — upper third (for bio panel)
+ * IMPORTANT: All programmatic centering dispatches to the UI thread via
+ * runOnUI. On devices with iOS Reduce Motion enabled, JS-thread shared
+ * value assignments don't reliably trigger useAnimatedStyle re-evaluation.
+ * runOnUI ensures updates happen on the same thread as gesture callbacks
+ * (which always work).
  */
 
 import { useCallback } from 'react';
@@ -22,6 +19,7 @@ import {
   useAnimatedStyle,
   withDecay,
   cancelAnimation,
+  runOnUI,
   ReduceMotion,
   type SharedValue,
 } from 'react-native-reanimated';
@@ -76,7 +74,6 @@ export function useTreeGestures(): TreeGestureResult {
       translateY.value = savedTranslateY.value + e.translationY;
     })
     .onEnd((e) => {
-      // Momentum decay — functional navigation, not decorative
       translateX.value = withDecay({ velocity: e.velocityX, deceleration: 0.997, reduceMotion: ReduceMotion.Never });
       translateY.value = withDecay({ velocity: e.velocityY, deceleration: 0.997, reduceMotion: ReduceMotion.Never });
     });
@@ -91,30 +88,31 @@ export function useTreeGestures(): TreeGestureResult {
     ],
   }));
 
-  /** Cancel running animations and set transform directly. */
+  /** Set transform on UI thread — the only reliable path under Reduce Motion. */
   const jumpTo = useCallback((x: number, y: number, targetScale: number) => {
-    cancelAnimation(translateX);
-    cancelAnimation(translateY);
-    cancelAnimation(scale);
-    console.log(`[Gesture] jumpTo tx=${x.toFixed(0)} ty=${y.toFixed(0)} s=${targetScale.toFixed(2)} (from tx=${translateX.value.toFixed(0)} ty=${translateY.value.toFixed(0)} s=${scale.value.toFixed(2)})`);
-    translateX.value = x;
-    translateY.value = y;
-    scale.value = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale));
+    console.log(`[Gesture] jumpTo tx=${x.toFixed(0)} ty=${y.toFixed(0)} s=${targetScale.toFixed(2)}`);
+    const clampedScale = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale));
+    runOnUI(() => {
+      'worklet';
+      cancelAnimation(translateX);
+      cancelAnimation(translateY);
+      cancelAnimation(scale);
+      translateX.value = x;
+      translateY.value = y;
+      scale.value = clampedScale;
+    })();
   }, []);
 
-  // Centre on a specific node (node ends up at viewport center)
   const centreOnNode = useCallback((nodeX: number, nodeY: number) => {
     const s = isMobile ? 0.65 : 0.9;
     jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H / 2 - nodeY * s, s);
   }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  // Centre on a node near the top of the viewport (for tree root / Adam)
   const centreOnNodeTop = useCallback((nodeX: number, nodeY: number) => {
     const s = isMobile ? 0.65 : 0.9;
     jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H * 0.15 - nodeY * s, s);
   }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  // Centre on a node offset upward so it sits above a bottom panel
   const centreOnNodeAbovePanel = useCallback((nodeX: number, nodeY: number) => {
     const s = isMobile ? 0.65 : 0.9;
     jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H * 0.25 - nodeY * s, s);
