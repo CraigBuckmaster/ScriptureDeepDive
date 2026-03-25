@@ -4,7 +4,8 @@
  */
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Modal, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, Dimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
 import { useRoute } from '@react-navigation/native';
@@ -30,6 +31,7 @@ export default function TimelineScreen() {
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
   const screenWidth = Dimensions.get('window').width;
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
@@ -72,17 +74,21 @@ export default function TimelineScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <View style={[styles.loadingPad, { paddingTop: insets.top + spacing.lg }]}>
+          <LoadingSkeleton lines={6} />
+        </View>
+      </View>
     );
   }
 
   const SVG_HEIGHT = AXIS_Y + 40;
 
   return (
-    <SafeAreaView style={styles.container}>
-      <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+    <View style={styles.container}>
+      <View style={{ paddingTop: insets.top }}>
+        <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+      </View>
 
       <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
         <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
@@ -147,7 +153,7 @@ export default function TimelineScreen() {
       {selectedEvent && (
         <Modal visible transparent animationType="slide">
           <TouchableOpacity style={styles.modalBackdrop} activeOpacity={1} onPress={() => setSelectedEvent(null)} />
-          <SafeAreaView style={styles.detailSheet}>
+          <View style={styles.detailSheet}>
             <ScrollView contentContainerStyle={styles.detailContent}>
               <View style={styles.grabHandle} />
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
@@ -168,10 +174,10 @@ export default function TimelineScreen() {
                 </Text>
               )}
             </ScrollView>
-          </SafeAreaView>
+          </View>
         </Modal>
       )}
-    </SafeAreaView>
+    </View>
   );
 }
 

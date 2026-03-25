@@ -7,7 +7,8 @@
  */
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
 import Animated from 'react-native-reanimated';
 import { GestureDetector } from 'react-native-gesture-handler';
@@ -29,6 +30,7 @@ import type { TreePerson } from '../utils/treeBuilder';
 export default function GenealogyTreeScreen({ route, navigation }: any) {
   const initialPersonId = route?.params?.personId;
   const { people, isLoading } = usePeople();
+  const insets = useSafeAreaInsets();
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
@@ -95,19 +97,21 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <View style={[styles.loadingPad, { paddingTop: insets.top + spacing.lg }]}>
+          <LoadingSkeleton lines={6} />
+        </View>
+      </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      {/* Search bar */}
-      <PersonSearchBar people={people} onSelect={handleSearchSelect} />
-
-      {/* Era filter */}
-      <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+    <View style={styles.container}>
+      {/* Top controls — search + era filter with safe area inset */}
+      <View style={{ paddingTop: insets.top }}>
+        <PersonSearchBar people={people} onSelect={handleSearchSelect} />
+        <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+      </View>
 
       {/* Tree viewport */}
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
@@ -135,7 +139,6 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
         person={selectedPerson}
         onNavigate={handleFamilyNavigate}
         onChapterPress={(link) => {
-          // Parse chapter link: "ot/genesis/Genesis_1.html" → bookId + ch
           const match = link.match(/(\w+)_(\d+)\.html/);
           if (match) {
             navigation.navigate('ReadTab', {
@@ -145,7 +148,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
           }
         }}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 

@@ -8,7 +8,8 @@
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MapView from 'react-native-maps';
 
 import { usePlaces } from '../hooks/usePlaces';
@@ -41,6 +42,7 @@ export default function MapScreen({ route, navigation }: any) {
   const { stories, isLoading: storiesLoading } = useMapStories();
   const { zoomLevel, onRegionChange } = useMapZoom();
   const mapRef = useRef<MapView>(null);
+  const insets = useSafeAreaInsets();
 
   const [activeEra, setActiveEra] = useState<string>('all');
   const [activeStory, setActiveStory] = useState<MapStory | null>(null);
@@ -128,38 +130,45 @@ export default function MapScreen({ route, navigation }: any) {
 
   if (placesLoading || storiesLoading) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <View style={[styles.loadingPad, { paddingTop: insets.top + spacing.lg }]}>
+          <LoadingSkeleton lines={6} />
+        </View>
+      </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      {/* Era filter */}
-      <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
+    <View style={styles.container}>
+      {/* Map fills the entire screen */}
+      <MapView
+        ref={mapRef}
+        style={StyleSheet.absoluteFill}
+        mapType="terrain"
+        initialRegion={INITIAL_REGION}
+        onRegionChangeComplete={onRegionChange}
+        accessible
+        accessibilityLabel="Biblical world map"
+        accessibilityHint="Pinch to zoom, drag to pan"
+      >
+        <PlaceMarkerList
+          places={places}
+          showModern={showModern}
+          zoomLevel={zoomLevel}
+          activeStory={activeStory}
+        />
+        {activeStory && (
+          <StoryOverlays story={activeStory} zoomLevel={zoomLevel} />
+        )}
+      </MapView>
 
-      {/* Map */}
-      <View style={styles.mapWrap} accessible accessibilityLabel="Biblical world map" accessibilityHint="Pinch to zoom, drag to pan">
-        <MapView
-          ref={mapRef}
-          style={styles.map}
-          mapType="terrain"
-          initialRegion={INITIAL_REGION}
-          onRegionChangeComplete={onRegionChange}
-        >
-          <PlaceMarkerList
-            places={places}
-            showModern={showModern}
-            zoomLevel={zoomLevel}
-            activeStory={activeStory}
-          />
-          {activeStory && (
-            <StoryOverlays story={activeStory} zoomLevel={zoomLevel} />
-          )}
-        </MapView>
+      {/* Era filter — overlaid at top below status bar */}
+      <View style={[styles.topControls, { paddingTop: insets.top }]} pointerEvents="box-none">
+        <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
+      </View>
 
-        {/* Floating controls */}
+      {/* Floating controls — offset below era filter */}
+      <View style={[styles.floatingWrap, { top: insets.top + 44 }]} pointerEvents="box-none">
         <FloatingControls
           showModern={showModern}
           onToggleNames={() => setShowModern((v) => !v)}
@@ -170,22 +179,24 @@ export default function MapScreen({ route, navigation }: any) {
         />
       </View>
 
-      {/* Story picker */}
-      <StoryPicker
-        stories={filteredStories}
-        activeStoryId={activeStory?.id ?? null}
-        onSelect={(id) => {
-          const story = stories.find((s) => s.id === id);
-          if (story) {
-            if (activeStory?.id === id) {
-              setActiveStory(null);
-              setShowPanel(false);
-            } else {
-              selectStory(story);
+      {/* Story picker — overlaid at bottom */}
+      <View style={styles.bottomControls} pointerEvents="box-none">
+        <StoryPicker
+          stories={filteredStories}
+          activeStoryId={activeStory?.id ?? null}
+          onSelect={(id) => {
+            const story = stories.find((s) => s.id === id);
+            if (story) {
+              if (activeStory?.id === id) {
+                setActiveStory(null);
+                setShowPanel(false);
+              } else {
+                selectStory(story);
+              }
             }
-          }
-        }}
-      />
+          }}
+        />
+      </View>
 
       {/* Story panel */}
       {showPanel && activeStory && (
@@ -203,7 +214,7 @@ export default function MapScreen({ route, navigation }: any) {
           />
         </View>
       )}
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -215,16 +226,34 @@ const styles = StyleSheet.create({
   loadingPad: {
     padding: spacing.lg,
   },
-  mapWrap: {
-    flex: 1,
+  topControls: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
   },
-  map: {
-    flex: 1,
+  floatingWrap: {
+    position: 'absolute',
+    right: 0,
+    zIndex: 10,
+  },
+  bottomControls: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
   },
   storyPanelWrap: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
     backgroundColor: base.bgElevated,
     borderTopWidth: 1,
     borderTopColor: base.border,
     maxHeight: '40%',
+    zIndex: 20,
   },
 });
