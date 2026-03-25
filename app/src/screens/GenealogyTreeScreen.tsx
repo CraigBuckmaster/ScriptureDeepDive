@@ -85,7 +85,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
         setTimeout(() => centreNodeAbove(node.x, node.y), 200);
       }
     }
-  }, [initialPersonId, nodes.length]);
+  }, [initialPersonId, nodes.length, centreNodeAbove]);
 
   // Auto-centre on Adam when tree first loads (no deep-link)
   const hasCentred = useRef(false);
@@ -94,10 +94,14 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       hasCentred.current = true;
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        setTimeout(() => centreNode(adam.x, adam.y), 200);
+        // Use centreOnNode directly with offset applied inline —
+        // avoids stale closure on centreNode callback
+        const x = adam.x + (-bounds.minX);
+        const y = adam.y + (-bounds.minY);
+        setTimeout(() => centreOnNode(x, y), 300);
       }
     }
-  }, [nodes.length]);
+  }, [nodes.length, bounds.minX, bounds.minY, centreOnNode]);
 
   const handleNodePress = useCallback(
     (treePerson: TreePerson) => {
@@ -143,7 +147,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   return (
     <View style={styles.container}>
       {/* Top controls — search + era filter with safe area inset */}
-      <View style={{ paddingTop: insets.top }}>
+      <View style={{ paddingTop: insets.top, zIndex: 10 }}>
         <PersonSearchBar people={people} onSelect={handleSearchSelect} />
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
       </View>
@@ -151,7 +155,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       {/* Tree viewport */}
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
-          <Animated.View style={animatedStyle}>
+          <Animated.View style={[animatedStyle, { overflow: 'visible' }]}>
             <Svg
               width={Math.max(bounds.width, 2000)}
               height={Math.max(bounds.height, 2000)}
@@ -202,5 +206,6 @@ const styles = StyleSheet.create({
   },
   viewport: {
     flex: 1,
+    overflow: 'hidden',
   },
 });
