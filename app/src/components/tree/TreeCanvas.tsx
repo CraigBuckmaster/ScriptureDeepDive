@@ -20,14 +20,17 @@ interface Props {
   filterEra: string | null;
   spineIds: Set<string>;
   onNodePress: (person: TreePerson) => void;
+  offsetX?: number;
+  offsetY?: number;
 }
 
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
   filterEra, spineIds, onNodePress,
+  offsetX = 0, offsetY = 0,
 }: Props) {
   return (
-    <G>
+    <G transform={`translate(${offsetX}, ${offsetY})`}>
       {/* 1. Links (back) */}
       {links.map((link, i) => (
         <TreeLink
