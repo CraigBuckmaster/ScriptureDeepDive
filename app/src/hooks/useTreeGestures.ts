@@ -1,17 +1,19 @@
 /**
  * hooks/useTreeGestures.ts — Pinch-to-zoom + pan for the tree.
  *
- * Two-layer transform to handle iOS Reduce Motion:
- *   Inner View: translateX/Y only (React state — always re-renders)
- *   Outer Animated.View: translateX/Y deltas + scale (Reanimated, UI thread)
+ * Two-layer transform for iOS Reduce Motion compatibility:
+ *   Outer Animated.View: gesture deltas (Reanimated, UI thread — always works)
+ *   Inner View: base transform (React state — always re-renders)
  *
- * Scale lives ONLY on the Animated.View layer — no nested scaling, no blur.
- * Programmatic centering reads the current scale.value and computes
- * translate to position the target node correctly at whatever zoom level
- * the user is at. Centering never changes scale.
+ * Both layers use transformOrigin '0% 0%' so the centering math is simple:
+ *   screen_position = base_translate + svg_position * base_scale
+ *   (when gesture layer is identity)
+ *
+ * Programmatic centering: sets base via setState, resets gesture to identity.
+ * Pan/zoom: gesture deltas accumulate, composing with frozen base.
  */
 
-import { useState, useCallback, useRef, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef } from 'react';
 import { useWindowDimensions, type ViewStyle } from 'react-native';
 import { Gesture, type GestureType } from 'react-native-gesture-handler';
 import {
@@ -19,19 +21,14 @@ import {
   useAnimatedStyle,
   withDecay,
   cancelAnimation,
+  runOnJS,
   ReduceMotion,
 } from 'react-native-reanimated';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
 
-/** Scale used for centering calculations and initial zoom. */
-const TARGET_SCALE_MOBILE = 0.65;
-const TARGET_SCALE_TABLET = 0.9;
-
 interface TreeGestureResult {
   gesture: GestureType;
-  /** Inner View style — translate only, React state */
   baseStyle: ViewStyle;
-  /** Outer Animated.View style — translate deltas + scale, Reanimated */
   gestureStyle: ReturnType<typeof useAnimatedStyle>;
   centreOnNode: (nodeX: number, nodeY: number) => void;
   centreOnNodeTop: (nodeX: number, nodeY: number) => void;
@@ -41,44 +38,69 @@ interface TreeGestureResult {
 export function useTreeGestures(): TreeGestureResult {
   const { width: SCREEN_W, height: SCREEN_H } = useWindowDimensions();
   const isMobile = SCREEN_W < 768;
-  const targetScale = isMobile ? TARGET_SCALE_MOBILE : TARGET_SCALE_TABLET;
 
-  // ── Layer 1: Base translate (React state) ──────────────────────────
-  const [baseTx, setBaseTx] = useState(0);
-  const [baseTy, setBaseTy] = useState(0);
+  const initialScale = isMobile
+    ? TREE_CONSTANTS.initialScaleMobile
+    : TREE_CONSTANTS.initialScaleTablet;
+
+  // ── Layer 1: Base transform (React state) ──────────────────────────
+  const [base, setBase] = useState({ tx: 0, ty: 0, s: initialScale });
+  const baseRef = useRef(base);
+  baseRef.current = base;
 
   const baseStyle = useMemo<ViewStyle>(() => ({
     transform: [
-      { translateX: baseTx },
-      { translateY: baseTy },
+      { translateX: base.tx },
+      { translateY: base.ty },
+      { scale: base.s },
     ],
-  }), [baseTx, baseTy]);
+  }), [base.tx, base.ty, base.s]);
 
-  // ── Layer 2: Gesture transform (Reanimated shared values) ──────────
-  // Scale starts at TARGET_SCALE so the first centering doesn't need to change it.
+  // ── Layer 2: Gesture offsets (Reanimated shared values) ────────────
   const gestTx = useSharedValue(0);
   const gestTy = useSharedValue(0);
-  const scale = useSharedValue(targetScale);
+  const gestScale = useSharedValue(1);
 
   const savedTx = useSharedValue(0);
   const savedTy = useSharedValue(0);
-  const savedScale = useSharedValue(targetScale);
+  const savedScale = useSharedValue(1);
 
-  // Track base for reading in gesture worklets via ref
-  const baseTxRef = useRef(0);
-  const baseTyRef = useRef(0);
+  /**
+   * Merge current gesture transform into base state, reset gesture to identity.
+   * Combined transform: screen = (x * baseS + baseTx) * gestScale + gestTx
+   * New base: s' = baseS * gestScale, tx' = baseTx * gestScale + gestTx
+   */
+  const commitGesture = useCallback(() => {
+    const { tx, ty, s } = baseRef.current;
+    const gTx = gestTx.value;
+    const gTy = gestTy.value;
+    const gS = gestScale.value;
+    const newS = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, s * gS));
+    const newTx = tx * gS + gTx;
+    const newTy = ty * gS + gTy;
+    // Reset gesture to identity
+    gestTx.value = 0;
+    gestTy.value = 0;
+    gestScale.value = 1;
+    savedTx.value = 0;
+    savedTy.value = 0;
+    savedScale.value = 1;
+    // Commit to base → React re-render → SVG re-rasterizes at new scale
+    setBase({ tx: newTx, ty: newTy, s: newS });
+  }, []);
 
-  // Pinch
   const pinchGesture = Gesture.Pinch()
     .onBegin(() => {
-      savedScale.value = scale.value;
+      savedScale.value = gestScale.value;
     })
     .onUpdate((e) => {
-      const newScale = savedScale.value * e.scale;
-      scale.value = Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, newScale));
+      gestScale.value = savedScale.value * e.scale;
+    })
+    .onEnd(() => {
+      // Commit scale to base so SVG re-rasterizes at the new zoom level
+      runOnJS(commitGesture)();
     });
 
-  // Pan — screen-space pixels, works directly with the Animated.View
   const panGesture = Gesture.Pan()
     .minDistance(5)
     .onBegin(() => {
@@ -106,60 +128,44 @@ export function useTreeGestures(): TreeGestureResult {
 
   const gesture = Gesture.Simultaneous(pinchGesture, panGesture);
 
-  // Outer Animated.View: translate deltas + scale
   const gestureStyle = useAnimatedStyle(() => ({
     transform: [
       { translateX: gestTx.value },
       { translateY: gestTy.value },
-      { scale: scale.value },
+      { scale: gestScale.value },
     ],
   }));
 
   // ── Programmatic centering ─────────────────────────────────────────
-  // Centering formula with nested transforms:
-  //   Outer: translate(gestTx, gestTy) → scale(s)
-  //   Inner: translate(baseTx, baseTy)
-  //   Point (nodeX, nodeY) appears on screen at:
-  //     screenX = gestTx + (baseTx + nodeX) * s
-  //     screenY = gestTy + (baseTy + nodeY) * s
-  //
-  // When centering, reset gestTx/gestTy to 0:
-  //     targetScreenX = (baseTx + nodeX) * s
-  //     baseTx = targetScreenX / s - nodeX
-
-  const jumpTo = useCallback((nodeX: number, nodeY: number, screenX: number, screenY: number) => {
-    const s = scale.value;
-    const newBaseTx = screenX / s - nodeX;
-    const newBaseTy = screenY / s - nodeY;
-    console.log(`[Gesture] jumpTo node=(${nodeX.toFixed(0)},${nodeY.toFixed(0)}) target=(${screenX.toFixed(0)},${screenY.toFixed(0)}) scale=${s.toFixed(2)} → base=(${newBaseTx.toFixed(0)},${newBaseTy.toFixed(0)})`);
-
-    // Cancel running gesture animations
+  const jumpTo = useCallback((tx: number, ty: number, s: number) => {
+    console.log(`[Gesture] jumpTo base tx=${tx.toFixed(0)} ty=${ty.toFixed(0)} s=${s.toFixed(2)}`);
     cancelAnimation(gestTx);
     cancelAnimation(gestTy);
-    // Reset gesture translate to identity
+    cancelAnimation(gestScale);
     gestTx.value = 0;
     gestTy.value = 0;
-    savedTx.value = 0;
-    savedTy.value = 0;
-
-    // Set base translate via React state (guaranteed re-render)
-    baseTxRef.current = newBaseTx;
-    baseTyRef.current = newBaseTy;
-    setBaseTx(newBaseTx);
-    setBaseTy(newBaseTy);
+    gestScale.value = 1;
+    setBase({
+      tx,
+      ty,
+      s: Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, s)),
+    });
   }, []);
 
   const centreOnNode = useCallback((nodeX: number, nodeY: number) => {
-    jumpTo(nodeX, nodeY, SCREEN_W / 2, SCREEN_H / 2);
-  }, [jumpTo, SCREEN_W, SCREEN_H]);
+    const s = isMobile ? 0.65 : 0.9;
+    jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H / 2 - nodeY * s, s);
+  }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
   const centreOnNodeTop = useCallback((nodeX: number, nodeY: number) => {
-    jumpTo(nodeX, nodeY, SCREEN_W / 2, SCREEN_H * 0.15);
-  }, [jumpTo, SCREEN_W, SCREEN_H]);
+    const s = isMobile ? 0.65 : 0.9;
+    jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H * 0.15 - nodeY * s, s);
+  }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
   const centreOnNodeAbovePanel = useCallback((nodeX: number, nodeY: number) => {
-    jumpTo(nodeX, nodeY, SCREEN_W / 2, SCREEN_H * 0.25);
-  }, [jumpTo, SCREEN_W, SCREEN_H]);
+    const s = isMobile ? 0.65 : 0.9;
+    jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H * 0.25 - nodeY * s, s);
+  }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
   return { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel };
 }
