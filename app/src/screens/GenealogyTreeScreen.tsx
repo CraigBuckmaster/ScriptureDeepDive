@@ -5,9 +5,24 @@
  * pinch/pan. Era filtering, person search, bio bottom sheet.
  * Deep-link: initialPersonId param → auto-centre + open bio.
  *
- * Transform architecture (Reduce Motion compatible):
- *   Outer View  → base transform (React state, set by centering functions)
- *   Inner Animated.View → gesture deltas (Reanimated, set by pan/pinch worklets)
+ * ── Transform architecture (iOS Reduce Motion workaround) ───────────
+ *
+ * View hierarchy:
+ *   <GestureDetector>
+ *     <Animated.View style={gestureStyle}>     ← gesture deltas (Reanimated)
+ *       <View style={baseStyle}>                ← base position (React state)
+ *         <Svg>...</Svg>                        ← tree content
+ *
+ * See useTreeGestures.ts for the full story of why this architecture
+ * exists. TL;DR: iOS Reduce Motion breaks Reanimated's ability to
+ * update Animated.View transforms programmatically. React state on
+ * the inner View is the only reliable way to move the viewport from
+ * filter taps / search / deep links. Gestures work on the outer
+ * Animated.View because gesture worklets use a different pipeline.
+ *
+ * Both layers use transformOrigin '0% 0%' (set via styles.transformLayer).
+ * Centering functions only modify the inner View (setBase in the hook).
+ * Pan/pinch only modify the outer Animated.View (shared values).
  */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
@@ -73,6 +88,14 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   );
 
   // ── Centering logic ────────────────────────────────────────────────
+  // All centering uses useEffect (not setTimeout). The original code used
+  // setTimeout(() => centreNode(...), 150) inside handleEraChange, but
+  // setFilterEra triggers a React re-render that creates new nodes/bounds
+  // refs — the setTimeout closure captured stale values. useEffect fires
+  // AFTER re-render with fresh deps, so the centering math is always current.
+  //
+  // prevEra ref prevents spurious re-centering when the component
+  // re-renders for unrelated reasons (sidebar open, etc.).
 
   const hasCentred = useRef(false);
   const prevEra = useRef<string>(filterEra);
@@ -97,6 +120,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     }
   }, [initialPersonId, nodes.length, people, centreNodeAbove]);
 
+  // 3. Era filter change — jump to first node of the selected era.
+  //    All/Primeval both target Adam (tree root). centreNodeTop places him
+  //    near the top of the viewport since there's nothing above him.
+  //    Other eras use centreNode (viewport center) for context in all directions.
   useEffect(() => {
     if (!hasCentred.current || nodes.length === 0) return;
     if (filterEra === prevEra.current) return;
@@ -165,6 +192,9 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
+          {/* Two-layer transform — see useTreeGestures.ts header for why.
+              DO NOT collapse into a single Animated.View. Reduce Motion breaks it.
+              DO NOT put scale on both layers. Causes blurry SVG text. */}
           <Animated.View style={[gestureStyle, styles.transformLayer]}>
             <View style={[baseStyle, styles.transformLayer]}>
               <Svg
