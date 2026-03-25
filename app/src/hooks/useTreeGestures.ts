@@ -21,6 +21,7 @@ import {
   withTiming,
   withDecay,
   cancelAnimation,
+  ReduceMotion,
   type SharedValue,
 } from 'react-native-reanimated';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
@@ -77,9 +78,9 @@ export function useTreeGestures(): TreeGestureResult {
       translateY.value = savedTranslateY.value + e.translationY;
     })
     .onEnd((e) => {
-      // Momentum decay
-      translateX.value = withDecay({ velocity: e.velocityX, deceleration: 0.997 });
-      translateY.value = withDecay({ velocity: e.velocityY, deceleration: 0.997 });
+      // Momentum decay — functional navigation, not decorative
+      translateX.value = withDecay({ velocity: e.velocityX, deceleration: 0.997, reduceMotion: ReduceMotion.Never });
+      translateY.value = withDecay({ velocity: e.velocityY, deceleration: 0.997, reduceMotion: ReduceMotion.Never });
     });
 
   // Compose: simultaneous pinch + pan
@@ -101,15 +102,17 @@ export function useTreeGestures(): TreeGestureResult {
     cancelAnimation(scale);
   }, []);
 
-  // Programmatic animation — always cancels running animations first
+  // Programmatic animation — always cancels running animations first.
+  // Uses ReduceMotion.Never because these are navigational animations
+  // (centering on a node), not decorative — the tree is unusable without them.
   const animateTo = useCallback((x: number, y: number, targetScale: number, duration = 500) => {
     cancelAll();
     console.log(`[Gesture] animateTo tx=${x.toFixed(0)} ty=${y.toFixed(0)} s=${targetScale} (current tx=${translateX.value.toFixed(0)} ty=${translateY.value.toFixed(0)} s=${scale.value.toFixed(2)})`);
-    translateX.value = withTiming(x, { duration });
-    translateY.value = withTiming(y, { duration });
+    translateX.value = withTiming(x, { duration, reduceMotion: ReduceMotion.Never });
+    translateY.value = withTiming(y, { duration, reduceMotion: ReduceMotion.Never });
     scale.value = withTiming(
       Math.min(TREE_CONSTANTS.maxZoom, Math.max(TREE_CONSTANTS.minZoom, targetScale)),
-      { duration }
+      { duration, reduceMotion: ReduceMotion.Never }
     );
   }, [cancelAll]);
 
