@@ -60,13 +60,11 @@ export default function SearchScreen() {
     <SafeAreaView style={styles.container}>
       {/* Search input */}
       <View style={styles.inputWrapper}>
-        <TextInput
+        <SearchInput
           value={query}
           onChangeText={handleQueryChange}
           placeholder="Search verses, people, word studies..."
-          placeholderTextColor={base.textMuted}
           autoFocus
-          style={styles.input}
         />
       </View>
 
@@ -177,17 +175,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingTop: spacing.lg,
     paddingBottom: spacing.sm,
-  },
-  input: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
-    fontFamily: fontFamily.ui,
-    fontSize: 16,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm + 2,
-    borderWidth: 1,
-    borderColor: base.border,
   },
   listContent: {
     paddingHorizontal: spacing.md,

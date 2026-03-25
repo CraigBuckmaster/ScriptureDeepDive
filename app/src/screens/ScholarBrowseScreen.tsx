@@ -3,10 +3,11 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useScholars } from '../hooks/useScholars';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 
@@ -60,13 +61,13 @@ export default function ScholarBrowseScreen() {
           style={styles.headerSpacing}
         />
 
-        <TextInput
-          value={search} onChangeText={setSearch}
-          placeholder="Search scholars..."
-          placeholderTextColor={base.textMuted}
-          style={styles.searchInput}
-            accessibilityLabel="Search"
-        />
+        <View style={{ marginBottom: spacing.sm }}>
+          <SearchInput
+            value={search}
+            onChangeText={setSearch}
+            placeholder="Search scholars..."
+          />
+        </View>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.filterRow}>
@@ -126,18 +127,6 @@ const styles = StyleSheet.create({
   },
   headerSpacing: {
     marginBottom: spacing.md,
-  },
-  searchInput: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    borderWidth: 1,
-    borderColor: base.border,
-    marginBottom: spacing.sm,
   },
   filterRow: {
     gap: spacing.xs,

@@ -10,11 +10,12 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import {
-  Modal, View, Text, TouchableOpacity, TextInput,
+  Modal, View, Text, TouchableOpacity,
   FlatList, SafeAreaView, StyleSheet,
 } from 'react-native';
 import { X } from 'lucide-react-native';
 import { useBooks } from '../hooks/useBooks';
+import { SearchInput } from './SearchInput';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
@@ -78,12 +79,11 @@ export function QnavOverlay({
 
         {/* Search */}
         <View style={styles.searchRow}>
-          <TextInput
+          <SearchInput
             value={search}
             onChangeText={setSearch}
             placeholder="Search books..."
-            placeholderTextColor={base.textMuted}
-            style={styles.searchInput}
+            compact
           />
         </View>
 
@@ -188,17 +188,6 @@ const styles = StyleSheet.create({
   searchRow: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-  },
-  searchInput: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    borderWidth: 1,
-    borderColor: base.border,
   },
   toggleRow: {
     flexDirection: 'row',
