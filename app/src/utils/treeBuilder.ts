@@ -231,10 +231,10 @@ export function computeLinks(
     if (!parent) continue;
 
     const isSpine = spineIds.has(node.data.id) && spineIds.has(parent.data.id);
+    // A link is dimmed only when BOTH endpoints are dimmed
     const dimmed = filterEra !== null
-      && !isDimmed(node.data, filterEra, spineIds)
-      ? false
-      : filterEra !== null && isDimmed(node.data, filterEra, spineIds) && isDimmed(parent.data, filterEra, spineIds);
+      && isDimmed(node.data, filterEra, spineIds)
+      && isDimmed(parent.data, filterEra, spineIds);
 
     links.push({
       source: { x: parent.x, y: parent.y },
@@ -377,8 +377,7 @@ export function computeFullLayout(
   // Group by era, maintain a consistent era order
   const ERA_ORDER = [
     'primeval', 'patriarch', 'exodus', 'judges',
-    'kingdom', 'united_monarchy', 'monarchy',
-    'prophets', 'divided_kingdom', 'exile',
+    'kingdom', 'prophets', 'exile',
     'intertestamental', 'nt',
   ];
   const byEra = new Map<string, Person[]>();

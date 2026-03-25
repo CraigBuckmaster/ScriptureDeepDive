@@ -26,6 +26,7 @@ interface TreeGestureResult {
   translateY: SharedValue<number>;
   animateTo: (x: number, y: number, targetScale: number, duration?: number) => void;
   centreOnNode: (nodeX: number, nodeY: number) => void;
+  jumpToNode: (nodeX: number, nodeY: number) => void;
   centreOnNodeAbovePanel: (nodeX: number, nodeY: number) => void;
 }
 
