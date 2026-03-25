@@ -39,7 +39,28 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
   const { nodes, links, marriageBars, spouseConnectors, spineIds, bounds } =
     useTreeLayout(people, filterEra);
 
+  // Diagnostic — track data flow
+  useEffect(() => {
+    if (!isLoading) {
+      console.log(`[Tree] people=${people.length}, nodes=${nodes.length}, bounds=${JSON.stringify({ w: Math.round(bounds.width), h: Math.round(bounds.height), minX: Math.round(bounds.minX), minY: Math.round(bounds.minY) })}`);
+    }
+  }, [isLoading, people.length, nodes.length]);
+
   const { gesture, animatedStyle, centreOnNode, centreOnNodeAbovePanel } = useTreeGestures();
+
+  // Offset applied to shift d3 coordinates into positive SVG space
+  const offX = -bounds.minX;
+  const offY = -bounds.minY;
+
+  /** Centre on a node accounting for the SVG coordinate offset. */
+  const centreNode = useCallback(
+    (nodeX: number, nodeY: number) => centreOnNode(nodeX + offX, nodeY + offY),
+    [centreOnNode, offX, offY],
+  );
+  const centreNodeAbove = useCallback(
+    (nodeX: number, nodeY: number) => centreOnNodeAbovePanel(nodeX + offX, nodeY + offY),
+    [centreOnNodeAbovePanel, offX, offY],
+  );
 
   /** Filter by era and jump the tree to the first matching node. */
   const handleEraChange = useCallback(
@@ -48,10 +69,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (era === 'all' || nodes.length === 0) return;
       const firstMatch = nodes.find((n) => n.data.era === era);
       if (firstMatch) {
-        setTimeout(() => centreOnNode(firstMatch.x, firstMatch.y), 150);
+        setTimeout(() => centreNode(firstMatch.x, firstMatch.y), 150);
       }
     },
-    [nodes, centreOnNode],
+    [nodes, centreNode],
   );
 
   // Deep-link: centre on initial person (sidebar will open)
@@ -61,7 +82,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (node) {
         const person = people.find((p) => p.id === initialPersonId);
         if (person) setSelectedPerson(person);
-        setTimeout(() => centreOnNodeAbovePanel(node.x, node.y), 200);
+        setTimeout(() => centreNodeAbove(node.x, node.y), 200);
       }
     }
   }, [initialPersonId, nodes.length]);
@@ -73,7 +94,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       hasCentred.current = true;
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        setTimeout(() => centreOnNode(adam.x, adam.y), 200);
+        setTimeout(() => centreNode(adam.x, adam.y), 200);
       }
     }
   }, [nodes.length]);
@@ -84,10 +105,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === person.id);
-        if (node) centreOnNodeAbovePanel(node.x, node.y);
+        if (node) centreNodeAbove(node.x, node.y);
       }
     },
-    [people, nodes, centreOnNodeAbovePanel]
+    [people, nodes, centreNodeAbove]
   );
 
   const handleFamilyNavigate = useCallback(
@@ -96,10 +117,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === personId);
-        if (node) centreOnNodeAbovePanel(node.x, node.y);
+        if (node) centreNodeAbove(node.x, node.y);
       }
     },
-    [people, nodes, centreOnNodeAbovePanel]
+    [people, nodes, centreNodeAbove]
   );
 
   const handleSearchSelect = useCallback(
@@ -130,11 +151,10 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
       {/* Tree viewport */}
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
-          <Animated.View style={[{ flex: 1 }, animatedStyle]}>
+          <Animated.View style={animatedStyle}>
             <Svg
-              width={bounds.width}
-              height={bounds.height}
-              viewBox={`${bounds.minX} ${bounds.minY} ${bounds.width} ${bounds.height}`}
+              width={Math.max(bounds.width, 2000)}
+              height={Math.max(bounds.height, 2000)}
             >
               <TreeCanvas
                 nodes={nodes}
@@ -144,6 +164,8 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
                 filterEra={filterEra === 'all' ? null : filterEra}
                 spineIds={spineIds}
                 onNodePress={handleNodePress}
+                offsetX={-bounds.minX}
+                offsetY={-bounds.minY}
               />
             </Svg>
           </Animated.View>

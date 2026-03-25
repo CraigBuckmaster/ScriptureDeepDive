@@ -7,7 +7,14 @@ export function usePeople() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getAllPeople().then((p) => { setPeople(p); setIsLoading(false); });
+    getAllPeople().then((p) => {
+      console.log(`[usePeople] Loaded ${p.length} people from DB`);
+      setPeople(p);
+      setIsLoading(false);
+    }).catch((err) => {
+      console.error('[usePeople] Error loading people:', err);
+      setIsLoading(false);
+    });
   }, []);
 
   return { people, isLoading };
