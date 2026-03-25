@@ -1,16 +1,62 @@
 /**
- * hooks/useTreeGestures.ts — Pinch-to-zoom + pan for the tree.
+ * hooks/useTreeGestures.ts — Pinch-to-zoom + pan for the genealogy tree.
  *
- * Two-layer transform for iOS Reduce Motion compatibility:
- *   Outer Animated.View: gesture deltas (Reanimated, UI thread — always works)
- *   Inner View: base transform (React state — always re-renders)
- *
- * Both layers use transformOrigin '0% 0%' so the centering math is simple:
- *   screen_position = base_translate + svg_position * base_scale
- *   (when gesture layer is identity)
- *
- * Programmatic centering: sets base via setState, resets gesture to identity.
- * Pan/zoom: gesture deltas accumulate, composing with frozen base.
+ * ╔══════════════════════════════════════════════════════════════════════╗
+ * ║  iOS REDUCE MOTION + REANIMATED 3.16 — THE NIGHTMARE              ║
+ * ╠══════════════════════════════════════════════════════════════════════╣
+ * ║                                                                    ║
+ * ║  When iOS Settings → Accessibility → Motion → "Reduce Motion" is   ║
+ * ║  enabled, Reanimated's useAnimatedStyle SILENTLY STOPS updating    ║
+ * ║  the native view transform for programmatic shared-value changes.  ║
+ * ║  Gesture callbacks (onUpdate/onEnd) still work because they run    ║
+ * ║  through a different Reanimated pipeline on the UI thread.         ║
+ * ║                                                                    ║
+ * ║  The symptom: filter buttons fire, logs show correct coordinates,  ║
+ * ║  shared values update (confirmed by reading .value), but the       ║
+ * ║  Animated.View does not visually move. Pan/pinch gestures work     ║
+ * ║  fine because they go through the gesture pipeline.                ║
+ * ║                                                                    ║
+ * ║  WHAT WE TRIED (AND FAILED):                                      ║
+ * ║  1. Direct .value = x assignment from JS thread — values update    ║
+ * ║     in JS but native view doesn't move.                            ║
+ * ║  2. withTiming + ReduceMotion.Never — Reanimated docs say this     ║
+ * ║     should override, but it doesn't trigger view updates either.   ║
+ * ║  3. cancelAnimation() before setting — no effect.                  ║
+ * ║  4. runOnUI(() => { 'worklet'; sharedVal.value = x })() — runs on  ║
+ * ║     UI thread but STILL doesn't trigger useAnimatedStyle.          ║
+ * ║  5. setRenderTick + useState to force React re-render, hoping      ║
+ * ║     useAnimatedStyle re-evaluates — it doesn't; worklets don't     ║
+ * ║     re-run on React renders.                                       ║
+ * ║  6. Single Animated.View for everything — same problem, the        ║
+ * ║     Reanimated style just won't update from any JS/UI call.        ║
+ * ║                                                                    ║
+ * ║  WHAT WORKS:                                                       ║
+ * ║  Two-layer transform:                                              ║
+ * ║    • Outer Animated.View — gesture deltas (Reanimated).            ║
+ * ║      Updated by gesture worklets → always works.                   ║
+ * ║    • Inner View — base transform (React state via useState).       ║
+ * ║      Updated by setBase() → plain React re-render → always works. ║
+ * ║                                                                    ║
+ * ║  Programmatic centering changes the inner View (React state).      ║
+ * ║  Pan/pinch changes the outer Animated.View (gesture worklets).     ║
+ * ║  Neither relies on programmatic Reanimated style updates.          ║
+ * ║                                                                    ║
+ * ║  KNOWN TRADE-OFF:                                                  ║
+ * ║  The inner View has scale in its transform. Pinch-zooming the      ║
+ * ║  outer Animated.View scales a bitmap already rasterized at the     ║
+ * ║  base scale → blurry SVG text while fingers are down. On pinch     ║
+ * ║  end, commitGesture() merges the scale into base state, triggering ║
+ * ║  React re-render → SVG re-rasterizes at the new zoom → crisp.     ║
+ * ║  Brief blur during active pinch is acceptable.                     ║
+ * ║                                                                    ║
+ * ║  FUTURE FIX OPTIONS:                                               ║
+ * ║  • Upgrade Reanimated — may fix the Reduce Motion bridge bug.      ║
+ * ║  • App-level Reduce Motion override via Reanimated config:         ║
+ * ║      ReducedMotionConfig.setConfig(ReduceMotion.Never)             ║
+ * ║  • Move scale to outer layer only, inner layer translate-only      ║
+ * ║    (attempted, centering broke — needs different coordinate math). ║
+ * ║                                                                    ║
+ * ╚══════════════════════════════════════════════════════════════════════╝
  */
 
 import { useState, useCallback, useMemo, useRef } from 'react';
@@ -44,6 +90,11 @@ export function useTreeGestures(): TreeGestureResult {
     : TREE_CONSTANTS.initialScaleTablet;
 
   // ── Layer 1: Base transform (React state) ──────────────────────────
+  // WHY React state and not Reanimated? Because Reanimated's useAnimatedStyle
+  // does not re-evaluate for programmatic shared-value changes under iOS
+  // Reduce Motion. React state → View style is the ONLY reliable way to
+  // programmatically move the tree viewport. See header comment for the
+  // full list of things we tried.
   const [base, setBase] = useState({ tx: 0, ty: 0, s: initialScale });
   const baseRef = useRef(base);
   baseRef.current = base;
@@ -57,6 +108,16 @@ export function useTreeGestures(): TreeGestureResult {
   }), [base.tx, base.ty, base.s]);
 
   // ── Layer 2: Gesture offsets (Reanimated shared values) ────────────
+  // WHY does Reanimated work here but not in Layer 1? Because gesture
+  // worklets (onBegin/onUpdate/onEnd) run on the Reanimated UI thread
+  // as part of the gesture-handler pipeline, which bypasses the broken
+  // Reduce Motion → useAnimatedStyle bridge. Gestures always produce
+  // visible transform changes. The key insight is that only PROGRAMMATIC
+  // changes from JS are broken — gesture-driven changes work fine.
+  //
+  // These start at identity (0, 0, 1) and accumulate during active
+  // gestures. On pinch end, commitGesture() merges them into base
+  // state and resets back to identity.
   const gestTx = useSharedValue(0);
   const gestTy = useSharedValue(0);
   const gestScale = useSharedValue(1);
@@ -137,6 +198,12 @@ export function useTreeGestures(): TreeGestureResult {
   }));
 
   // ── Programmatic centering ─────────────────────────────────────────
+  // This is the whole reason for the two-layer architecture. Filter taps,
+  // search results, and deep links need to move the viewport to a specific
+  // node. Under iOS Reduce Motion, Reanimated refuses to visually update
+  // the Animated.View for programmatic changes. So we set the position
+  // via React state (setBase) → inner View → guaranteed re-render.
+  // The gesture layer is reset to identity so transforms don't stack.
   const jumpTo = useCallback((tx: number, ty: number, s: number) => {
     console.log(`[Gesture] jumpTo base tx=${tx.toFixed(0)} ty=${ty.toFixed(0)} s=${s.toFixed(2)}`);
     cancelAnimation(gestTx);
