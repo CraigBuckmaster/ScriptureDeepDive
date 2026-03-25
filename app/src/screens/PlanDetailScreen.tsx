@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert } from 'rea
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay, abandonPlan } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, radii } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
@@ -49,7 +50,7 @@ export default function PlanDetailScreen() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
       <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg }}>
-        <Text style={{ color: base.gold, fontFamily: 'Cinzel_600SemiBold', fontSize: 20 }}>{plan.name}</Text>
+        <ScreenHeader title={plan.name} onBack={() => navigation.goBack()} />
         <Text style={{ color: base.textDim, fontFamily: 'EBGaramond_400Regular', fontSize: 14, marginTop: 4 }}>
           {plan.description}
         </Text>

@@ -9,9 +9,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ArrowLeft } from 'lucide-react-native';
 import { getBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
@@ -37,21 +37,13 @@ export default function ChapterListScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         {/* Header with back button */}
-        <View style={styles.headerRow}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={styles.backButton}
-            accessibilityLabel="Back to library"
-          >
-            <ArrowLeft size={20} color={base.gold} />
-          </TouchableOpacity>
-          <View style={styles.headerText}>
-            <Text style={styles.bookTitle}>{book.name}</Text>
-            <Text style={styles.bookSubtitle}>
-              {book.total_chapters} chapters
-            </Text>
-          </View>
-        </View>
+        <ScreenHeader
+          title={book.name}
+          subtitle={`${book.total_chapters} chapters`}
+          onBack={() => navigation.goBack()}
+          backLabel="Back to library"
+          style={{ marginBottom: spacing.xs }}
+        />
 
         {/* About This Book */}
         <TouchableOpacity
@@ -97,31 +89,6 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    marginBottom: spacing.xs,
-  },
-  backButton: {
-    minWidth: MIN_TOUCH_TARGET,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerText: {
-    flex: 1,
-  },
-  bookTitle: {
-    color: base.gold,
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 22,
-  },
-  bookSubtitle: {
-    color: base.textMuted,
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
   },
   introLink: {
     marginBottom: spacing.lg,

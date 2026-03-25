@@ -9,12 +9,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, Switch, Alert, StyleSheet } from 'react-native';
-import { ArrowLeft } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSettingsStore } from '../stores';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getDb } from '../db/database';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
@@ -59,16 +59,11 @@ export default function SettingsScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         {/* Header with back button */}
-        <View style={styles.headerRow}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={styles.backButton}
-            accessibilityLabel="Back"
-          >
-            <ArrowLeft size={20} color={base.gold} />
-          </TouchableOpacity>
-          <Text style={styles.title}>Settings</Text>
-        </View>
+        <ScreenHeader
+          title="Settings"
+          onBack={() => navigation.goBack()}
+          style={{ marginBottom: spacing.lg }}
+        />
 
         {/* Translation */}
         <Row label="Default Translation">
@@ -172,23 +167,6 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    marginBottom: spacing.lg,
-  },
-  backButton: {
-    minWidth: MIN_TOUCH_TARGET,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    color: base.gold,
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 22,
   },
   row: {
     flexDirection: 'row',

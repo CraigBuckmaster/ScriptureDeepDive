@@ -10,6 +10,7 @@ import { FONT_MAP, base } from './src/theme';
 import { initDatabase } from './src/db/database';
 import { useSettingsStore } from './src/stores';
 import { RootNavigator } from './src/navigation';
+import { ErrorBoundary } from './src/components/ErrorBoundary';
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
@@ -62,7 +63,9 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutReady}>
       <NavigationContainer theme={navTheme}>
-        <RootNavigator />
+        <ErrorBoundary>
+          <RootNavigator />
+        </ErrorBoundary>
       </NavigationContainer>
       <StatusBar style="light" />
     </GestureHandlerRootView>
