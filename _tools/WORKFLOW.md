@@ -77,7 +77,7 @@ All content is authored as Python dicts, saved as JSON, assembled into SQLite, a
    - `SCHOLAR_REGISTRY` — (panel_key, scholar_key, label, css_suffix)
    - `COMMENTATOR_SCOPE` — scope: `'all'` or `['book1', 'book2']`
 
-2. **Add bio page** in `_archive/commentators/{key}.html` (for extraction)
+2. **Add bio data** to `content/meta/scholar-bios.json` and `content/meta/scholar-data.json`
 
 3. **Add to `commentators/scholar-data.js`** (or `content/meta/scholar-data.json` directly)
 

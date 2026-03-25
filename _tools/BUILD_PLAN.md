@@ -1,36 +1,15 @@
 # Scripture Deep Dive — New Book Build Plan
 
 > **Read this file before starting any new book.**
-> Last updated: 2026-03-23 (Phase 1 complete — JSON pipeline active)
->
-> **PIPELINE CHANGE (Phase 1):** Generator scripts now call `save_chapter()`
-> which writes JSON to `content/`. No HTML is generated. See `WORKFLOW.md`
-> for the complete new pipeline and `GENERATOR_TEMPLATE.py` for the format.
->
-> **See also:** `_tools/MASTER_PLAN.md` — strategic plan for all remaining books.
-> Contains build wave order, scholar-to-book allocation map, new scholar roster
-> with full scope, and chapter totals per wave. Consult it BEFORE Phase 1 to
-> confirm which wave/book is next and which scholars to add.
+> Last updated: 2026-03-24 (PWA retired — JSON/SQLite pipeline only)
 
----
+## Phase 1: Planning
 
-## Phase 1: Planning (before touching any code)
+Use `_tools/CONTENT_PLAN_TEMPLATE.md` to create a content blueprint before writing any generator script.
 
-0. **Check MASTER_PLAN.md** — confirm this book's wave, scholar assignments, and scope extensions
-1. **Book profile** — testament, total chapters, author, date, setting
-2. **Scholar roster** — which existing scholars cover this book? New scholars needed? (MASTER_PLAN.md has the full allocation map)
-3. **Batch strategy** — group chapters by content arc (5–7 chapters per batch typical)
-4. **DRAFT ALL CHAPTER SECTIONS** — verse ranges + section headers for every chapter
-   - This prevents mid-build refactors
-   - Each section needs: header, verse range, and 1-sentence content summary
-5. **People inventory** — key figures to add to `js/pages/people-data.js`
-6. **Timeline inventory** — key events to add to `js/pages/timeline-data.js`
+## Phase 2: Infrastructure (before first chapter)
 
----
-
-## Phase 2: Infrastructure (before building any chapters)
-
-### Core registry files
+### Config files to update
 
 | File | What to add |
 |------|-------------|
@@ -39,238 +18,61 @@
 | `_tools/config.py` | COMMENTATOR_SCOPE: extend existing scholars + add new |
 | `_tools/config.py` | BOOK_META: `is_nt`, `auth`, `vhl_places`, `vhl_people`, `vhl_key`, `vhl_time` |
 | `_tools/config.py` | SCHOLAR_REGISTRY: new `('key', 'key', 'Label', 'key')` entries |
-| `_tools/audit.py` | BOOK_ROSTER: add book tuple |
-| `_tools/audit.py` | OT_BOOKS or NT_BOOKS regex: add book dir name |
 
-### Frontend files
+### Meta files to update (for new scholars)
 
 | File | What to add |
 |------|-------------|
-| `css/styles.css` | Button CSS for each new scholar: `.anno-trigger.{key}` (color, border, bg, hover, active) |
-| `js/features/translation.js` | Add `'VERSES_{BOOK}'` to `bookVars` array |
+| `content/meta/scholars.json` | Scholar entry (id, name, label, color, tradition) |
+| `content/meta/scholar-scopes.json` | Scope: `"all"` or `["book1", "book2"]` |
+| `content/meta/scholar-bios.json` | Full bio JSON |
+| `content/meta/scholar-data.json` | Commentary metadata |
 
-### Scholar infrastructure (for each NEW scholar)
+### Meta files to update (for new book)
 
-**`commentators/scholar-data.js`** — add entry with ALL fields:
-```javascript
-{
-  key: '{key}',
-  name: 'Full Name',
-  color: '#hexcolor',        // ← REQUIRED for dropdown dot + hub card
-  scope: 'Book1, Book2',     // ← REQUIRED for dropdown + hub card
-  tradition: 'Tradition · Era',
-  desc: 'One-sentence description', // ← REQUIRED for hub card
-  dates: '1900–',
-  photo: '',
-  works: 'Commentary Name (Year)',
-  bio: 'Full bio paragraph.',
-  bookScope: ['book1'],
-  buttonCSS: '.anno-trigger.{key}'
-}
-```
+| File | What to add |
+|------|-------------|
+| `content/meta/books.json` | Book entry (set `is_live: false` initially) |
+| `content/meta/book-intros.json` | Book introduction |
+| `content/meta/people.json` | New people entries |
+| `content/meta/timelines.json` | Timeline events for the book's era |
+| `content/meta/places.json` | New places if needed |
 
-**`commentators/{key}.html`** — bio page with FULL nav infrastructure:
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>{Name} — Scripture Deep Dive</title>
-  <link rel="manifest" href="../manifest.json">
-  <meta name="theme-color" content="#0c0a07">
-  <link rel="apple-touch-icon" href="../assets/icon-192.png">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond..." rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <nav class="com-nav" id="com-nav"></nav>   <!-- dropdown injected by JS -->
-  <div class="bio-wrap">
-    <div class="bio-header">
-      <h1 class="bio-name">{Name}</h1>
-      <p class="bio-tradition">{subtitle}</p>
-    </div>
-    <div class="bio-section">
-      <h2 class="bio-section-title">Biography</h2>
-      <p>...</p>
-    </div>
-    <div class="bio-section">
-      <h2 class="bio-section-title">Key Works</h2>
-      <p>...</p>
-    </div>
-    <div class="bio-section">
-      <h2 class="bio-section-title">Approach</h2>
-      <p>...</p>
-    </div>
-    <div class="bio-others" id="bio-others-target"></div>  <!-- others grid -->
-  </div>
-  <script>window.CURRENT_SCHOLAR="{key}";</script>
-  <script src="scholar-data.js"></script>
-  <script src="commentator-nav.js"></script>
-  <script src="../js/core/site-footer.js"></script>
-</body>
-</html>
-```
-
-**Critical checklist for bio pages:**
-- [ ] `<nav class="com-nav" id="com-nav"></nav>` present
-- [ ] `window.CURRENT_SCHOLAR="{key}"` set before script loads
-- [ ] `scholar-data.js` loaded
-- [ ] `commentator-nav.js` loaded
-- [ ] `<div class="bio-others" id="bio-others-target"></div>` present
-
-### Other infrastructure
-
-| Item | Location |
-|------|----------|
-| Book intro page | `intro/{book}.html` |
-| Chapter directory | `ot/{book}/` or `nt/{book}/` |
-
----
-
-## Phase 3: Build (repeat per batch)
+## Phase 3: Build (repeat per batch of 5-7 chapters)
 
 1. Create generator at `/tmp/gen_{book}_b{n}.py` (NEVER in `_tools/`)
-2. Run generator → produces chapter HTML files
+2. Run generator → produces `content/{book}/{ch}.json` files via `save_chapter()`
 3. Update REGISTRY live count in `shared.py`
-4. Run rebuilds:
-   ```python
-   shared.update_homepage()
-   shared.rebuild_qnav_js()
-   shared.rebuild_books_js()
-   shared.rebuild_sw_js()
+4. Rebuild database: `python3 _tools/build_sqlite.py`
+5. Validate:
+   ```bash
+   python3 _tools/validate.py
+   python3 _tools/validate_sqlite.py
    ```
-5. First and last batch only:
-   ```python
-   shared.rebuild_verses_js('niv')
-   shared.rebuild_verses_js('esv')
-   ```
-6. Bump SW version in `service-worker.js`
-7. Run audit: `python3 _tools/audit.py` (22 sections, 0 failures)
-8. Run tests: `python3 _tools/tests/test_regressions.py` (25+ tests)
-9. Delete generator: `rm /tmp/gen_{book}*.py`
-10. Run audit flags: `python3 _tools/audit_flags.py {book}` (incremental scan for this book)
-11. Commit and push: `git add -A && git commit -m "..." && git push origin master`
+6. Delete generator: `rm /tmp/gen_{book}*.py`
+7. Commit and push: `git add -A && git commit -m "..." && git push`
+8. Deploy: `eas update --branch production`
 
 ### Generator syntax gotcha
 Cross-reference tuples that end with a description followed by `)]` often have a missing closing quote. Before running any generator, pre-check syntax:
 ```python
 compile(open('/tmp/gen_{book}_b{n}.py').read(), 'gen.py', 'exec')
 ```
-Common fix pattern:
-```python
-import re
-c = re.sub(r"(\w)\.\)\],", r"\1.')],", c)
-```
 
----
+## Phase 4: Post-build enrichment
 
-## Phase 4: Post-Build Enrichment
+After all chapters are built, enrich chapter-level panels:
+- **People panel**: auto-generated by `auto_scholarly_json()` but review for accuracy
+- **Translation panel**: auto-generated from `content/verses/` NIV+ESV files
+- **Source panel**: ANE texts, archaeological evidence
+- **Reception panel**: art, music, liturgical usage
+- **Literary structure**: chiasm, inclusio, parallelism
+- **Themes radar**: 10 theological themes scored 1-10
+- **Threading panel**: cross-book narrative connections
 
-### People page (`js/pages/people-data.js`)
+## Quick Reference
 
-Add key figures from the new book. Entry structure:
-```javascript
-{
-  id: "person_id",
-  name: "Display Name",
-  gender: "m" | "f",
-  father: "parent_id" | null,
-  mother: "parent_id" | null,
-  spouseOf: "spouse_id" | null,
-  era: "primeval|patriarch|exodus|judges|kingdom|prophets|exile|nt",
-  dates: "c. 1000 BC",
-  role: "Short role description",
-  bio: "Full biographical paragraph..."
-}
-```
-
-### Timeline (`js/pages/timeline-data.js`)
-
-Add key events. Two arrays:
-- `EVENTS` — biblical events with chapter links:
-  ```javascript
-  { id:'event_id', era:'era', name:'Event Name', year:-1000,
-    ref:'Book 1:1', chapter:'ot/book/Book_1.html',
-    people:['person1','person2'],
-    summary:'One-sentence summary.' }
-  ```
-- `WORLD_EVENTS` — secular history for context:
-  ```javascript
-  { label:'Event Name', year:-1000 }
-  ```
-
----
-
-## Build quality rules
-
-- **VERSE TEXT**: Word-for-word NIV. No paraphrasing. Every verse in a section displayed.
-- **Sections**: Minimum 2 per chapter (build_chapter enforces this)
-- **Lit rows**: Minimum 2 per lit-diagram (audit warns on single)
-- **MacArthur notes**: Minimum 4-5 per panel
-- **Scholar panels**: Minimum 2 entries per section per scholar
-- **Hebrew words**: At least 1-2 per section with transliteration + meaning + theological significance
-- **Cross-references**: At least 2 per section, mixing OT/NT connections
-- **Historical context**: At least 1 per chapter
-- **VHL button arrays**: Must resolve in at least one btn-row per group. `context` is always safe fallback.
-- **tog()**: Must query `.anno-panel.open,.themes-panel.open` — both selectors required.
-
----
-
-## Audit Flag System
-
-All generated content is flagged for later accuracy verification. The scanner
-(`_tools/audit_flags.py`) produces `content/meta/audit-flags.json` with
-machine-parseable flags for every verifiable claim.
-
-### Categories
-| Category | What it catches |
-|----------|----------------|
-| `date` | Chronological claims (regnal years, siege dates, oracle dates) |
-| `hebrew` | Transliterations, vowel pointing, glosses, etymologies |
-| `greek` | Same for NT content |
-| `scholar_position` | Any claim attributed to a specific scholar's published view |
-| `historical` | Archaeological, political, or cultural claims |
-| `family` | Genealogical relationships, identifications |
-| `cross_ref` | Whether cited passages actually support the stated claim |
-
-### Confidence scores (1–5, 0 = zero confidence)
-| Score | Meaning | Example |
-|-------|---------|---------|
-| 5 | Near certain | 586 BC fall of Jerusalem |
-| 4 | High confidence | Standard scholarly consensus |
-| 3 | Moderate | Debated dating, plausible but contested |
-| 2 | Low | Minority scholarly position |
-| 1 | Very low | Speculative reconstruction |
-| 0 | No confidence | Generation error (should never appear) |
-
-### Usage
-```bash
-# Full retroactive scan (all books + metadata)
-python3 _tools/audit_flags.py
-
-# Single book (incremental after new batch)
-python3 _tools/audit_flags.py ezekiel
-
-# Chapter range
-python3 _tools/audit_flags.py ezekiel 29 35
-```
-
-### Important notes
-- **Scholar notes are AI-generated**, not direct quotations. They are written
-  in each scholar's interpretive tradition but are not sourced from published
-  works. All scholar notes receive a baseline confidence of 3.
-- The scanner **preserves status** on re-run: if a flag was previously marked
-  `verified` or `corrected`, it keeps that status on the next scan.
-- Run the scanner on each new batch during the build process (Phase 3, step 10).
-- A full scan across all 966+ chapters takes a few seconds and produces ~31K flags.
-
----
-
-## Current state reference
-
-- **SW versioning**: `scripture-2.{N}` — bump by 1 per push
-- **Rebuild functions**: `update_homepage()`, `rebuild_qnav_js()`, `rebuild_books_js()`, `rebuild_sw_js()`, `rebuild_verses_js(translation)`
-- **Audit**: 22 sections, run with `python3 _tools/audit.py`
-- **Tests**: `python3 _tools/tests/test_regressions.py` (25 tests) + `node _tools/tests/test_verse_resolver.js` (66 tests)
-- **Git config**: `user.email=craig@scripturedeepDive.com`, `user.name=ScriptureDeepDive`, `http.sslVerify=false`
+- **Generator template**: `_tools/GENERATOR_TEMPLATE.py`
+- **Content pipeline**: `save_chapter()` → `content/{book}/{ch}.json` → `build_sqlite.py` → `scripture.db`
+- **Validation**: `validate.py` (JSON schema) + `validate_sqlite.py` (DB integrity)
+- **Wave order**: See `_tools/MASTER_PLAN.md`

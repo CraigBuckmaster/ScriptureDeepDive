@@ -90,9 +90,8 @@ ScriptureDeepDive/
       navigation/         ← Tab navigator + 5 stacks
       utils/              ← Verse resolver, reference parser
   _tools/                 ← Build tools + plans
-  _archive/               ← Retired PWA (879 HTML chapters)
-  content/                ← Generated JSON (not committed)
-  scripture.db            ← Generated SQLite (not committed)
+  content/                ← Source-of-truth chapter JSON + meta + verses
+  scripture.db            ← SQLite database (built from content/)
 ```
 
 ## Troubleshooting

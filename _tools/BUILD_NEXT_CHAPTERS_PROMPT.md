@@ -87,7 +87,7 @@ Kings/Chronicles: needs MacArthur notes (112 chapters)
 
 **GitHub push protection:** GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file — even placeholder files. Provide your token at session start via the chat; Claude will use it in git commands but never write it to disk.
 
-**Root directory cleanliness:** Only these items belong at the repo root: `_archive/`, `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, and `scripture.db`. All plans, prompts, and build docs go in `_tools/`. Generator scripts go in `/tmp/` and are deleted after use. Do not create new files at root.
+**Root directory cleanliness:** Only these items belong at the repo root: `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, and `scripture.db`. All plans, prompts, and build docs go in `_tools/`. Generator scripts go in `/tmp/` and are deleted after use. Do not create new files at root.
 
 **Section count verification:** After running the generator, always verify that multi-section chapters (especially those with 3-4 sections like oracles-against-nations chapters) produced the correct number of sections. Run a quick check: `python3 -c "import json; [print(f'Ch {ch}: {len(json.load(open(f\"content/{book}/{ch}.json\"))[\"sections\"])} sections') for ch in range(START, END+1)]"`. If section counts are wrong, regenerate those specific chapters.
 
@@ -109,11 +109,7 @@ sys.path.insert(0, '_tools')
 content = Path('content')
 if not content.exists():
     print("⚠️  content/ not found — run extraction pipeline first")
-    print("  python3 _tools/convert_js_to_json.py")
-    print("  python3 _tools/extract_inline_data.py")
     print("  python3 _tools/export_config.py")
-    print("  python3 -c \"import sys; sys.path.insert(0,'_tools'); from extract_to_json import extract_all; extract_all('content')\"")
-    print("  python3 _tools/migrate_content.py")
 else:
     live = {}
     for d in sorted(content.iterdir()):
@@ -301,7 +297,6 @@ python3 _tools/validate.py
 python3 _tools/build_sqlite.py
 python3 _tools/validate_sqlite.py
 rm /tmp/gen_*.py
-python3 _tools/audit_flags.py {BOOK}
 
 git add content/ _tools/ scripture.db
 git commit -m "Add {BOOK} chapters {START}-{END}
@@ -324,20 +319,10 @@ All generated content is automatically flagged for later accuracy verification. 
 
 **Three tools:**
 
-1. **`_tools/audit_flags.py`** — Scanner → `content/meta/audit-flags.json`
    ```bash
-   python3 _tools/audit_flags.py              # Full scan
-   python3 _tools/audit_flags.py ezekiel      # Single book
-   python3 _tools/audit_flags.py ezekiel 29 35 # Range
-   ```
+            ```
 
-2. **`_tools/audit_verify.py`** — Verification workflow CLI
    ```bash
-   python3 _tools/audit_verify.py stats                              # Progress
-   python3 _tools/audit_verify.py batch --count 20 --category date   # Next batch
-   python3 _tools/audit_verify.py dedup --category date              # Unique claims
-   python3 _tools/audit_verify.py record <id> verified 5 "note" "sources"
-   python3 _tools/audit_verify.py bulk_record /tmp/results.json      # Batch + cascade
    ```
 
 3. **`_tools/audit-review-ui.html`** — Standalone HTML review UI
@@ -353,7 +338,6 @@ All generated content is automatically flagged for later accuracy verification. 
 
 **Current state:** ~31,500 flags, ~27 verified. `scholar_position` (18,367) is the long tail.
 
-**Per-session:** Run `audit_flags.py {BOOK}` after each batch. Include `audit-flags.json` in commit.
 
 ---
 
@@ -408,7 +392,7 @@ Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
 **Total: 973 chapters across 32 books. 34 books remaining (~216 chapters).**
 
-**REGISTRY note:** Ezekiel (48, 42) and Jeremiah (52, 52) registered in shared.py.
+**REGISTRY note:** Ezekiel (48, 42) and Jeremiah (52, 52) registered in shared.py REGISTRY.
 
 ### REFERENCE: The 10 Standard Theological Themes
 
