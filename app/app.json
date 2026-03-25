@@ -49,7 +49,7 @@
       ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
     ],
     "updates": {
-      "url": "https://u.expo.dev/PLACEHOLDER_PROJECT_ID",
+      "url": "https://u.expo.dev/",
       "enabled": true,
       "fallbackToCacheTimeout": 0
     },
@@ -57,9 +57,7 @@
       "policy": "appVersion"
     },
     "extra": {
-      "eas": {
-        "projectId": "PLACEHOLDER_PROJECT_ID"
-      }
+      "eas": {}
     }
   }
 }
