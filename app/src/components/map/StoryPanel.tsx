@@ -5,8 +5,9 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { X } from 'lucide-react-native';
 import { BadgeChip } from '../BadgeChip';
-import { base, spacing, radii, eras, eraNames, fontFamily } from '../../theme';
+import { base, spacing, radii, eras, eraNames, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import type { MapStory, Place } from '../../types';
 
 interface Props {
@@ -15,9 +16,10 @@ interface Props {
   showModern: boolean;
   onPlaceTap: (placeId: string) => void;
   onChapterPress: () => void;
+  onClose: () => void;
 }
 
-export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPress }: Props) {
+export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPress, onClose }: Props) {
   const eraColor = eras[story.era] ?? base.gold;
   const eraLabel = eraNames[story.era] ?? story.era;
 
@@ -30,8 +32,18 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
 
   return (
     <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-      {/* Era badge */}
-      <BadgeChip label={eraLabel} color={eraColor} />
+      {/* Close button */}
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <BadgeChip label={eraLabel} color={eraColor} />
+        <TouchableOpacity
+          onPress={onClose}
+          style={{ minWidth: MIN_TOUCH_TARGET, minHeight: MIN_TOUCH_TARGET, justifyContent: 'center', alignItems: 'center' }}
+          accessibilityLabel="Close panel"
+          accessibilityRole="button"
+        >
+          <X size={18} color={base.textMuted} />
+        </TouchableOpacity>
+      </View>
 
       {/* Name */}
       <Text style={{

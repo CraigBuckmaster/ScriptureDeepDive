@@ -51,14 +51,17 @@ export default function ChapterScreen() {
 
   const scrollRef = useRef<ScrollView>(null);
   const sectionYMap = useRef<Record<string, number>>({});
+  const btnRowYMap = useRef<Record<string, number>>({});
   const [bookData, setBookData] = React.useState<any>(null);
 
-  // Auto-scroll to section when a panel opens
+  // Auto-scroll to button row when a panel opens
   useEffect(() => {
     if (activePanel && activePanel.sectionId !== '__chapter__') {
-      const y = sectionYMap.current[activePanel.sectionId];
+      // Prefer button row Y (puts buttons + panel in view), fall back to section top
+      const btnY = btnRowYMap.current[activePanel.sectionId];
+      const secY = sectionYMap.current[activePanel.sectionId];
+      const y = btnY ?? secY;
       if (y !== undefined) {
-        // Small delay to let panel render, then scroll section into view
         setTimeout(() => {
           scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
         }, 100);
@@ -201,15 +204,20 @@ export default function ChapterScreen() {
             onPanelToggle={handleSectionPanelToggle}
             onNotePress={(v) => toggleNotes()}
             renderButtonRow={(panels, sectionId) => (
-              <ButtonRow
-                panels={panels}
-                activePanel={
-                  activeSectionPanelType?.sectionId === sectionId
-                    ? activeSectionPanelType.panelType
-                    : null
-                }
-                onToggle={(type) => handleSectionPanelToggle(sectionId, type)}
-              />
+              <View onLayout={(e) => {
+                const sectionY = sectionYMap.current[sectionId] ?? 0;
+                btnRowYMap.current[sectionId] = sectionY + e.nativeEvent.layout.y;
+              }}>
+                <ButtonRow
+                  panels={panels}
+                  activePanel={
+                    activeSectionPanelType?.sectionId === sectionId
+                      ? activeSectionPanelType.panelType
+                      : null
+                  }
+                  onToggle={(type) => handleSectionPanelToggle(sectionId, type)}
+                />
+              </View>
             )}
             renderPanel={(panel) => (
               <PanelContainer
