@@ -1,13 +1,10 @@
 /**
  * GenealogyTreeScreen — Zoomable family tree of 237 biblical people.
  *
- * d3-hierarchy layout + react-native-svg rendering + gesture-handler
- * pinch/pan. Era filtering, person search, bio bottom sheet.
- * Deep-link: initialPersonId param → auto-centre + open bio.
- *
- * Single Animated.View transform — no nested scaling, so SVG stays crisp.
- * Centering uses shared values + React state bump to force style re-eval
- * (workaround for iOS Reduce Motion breaking reactive updates).
+ * Two-layer transform (Reduce Motion compatible, no blur):
+ *   Outer Animated.View → gesture translate deltas + scale (Reanimated)
+ *   Inner View → base translate (React state, always re-renders)
+ *   Scale is ONLY on the outer layer — single rasterization pass.
  */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
@@ -49,7 +46,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     }
   }, [isLoading, people.length, nodes.length]);
 
-  const { gesture, animatedStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel } = useTreeGestures();
+  const { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel } = useTreeGestures();
 
   const offX = -bounds.minX;
   const offY = -bounds.minY;
@@ -165,23 +162,25 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
       <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
         <GestureDetector gesture={gesture}>
-          <Animated.View style={[animatedStyle, { overflow: 'visible' }]}>
-            <Svg
-              width={Math.max(bounds.width, 2000)}
-              height={Math.max(bounds.height, 2000)}
-            >
-              <TreeCanvas
-                nodes={nodes}
-                links={links}
-                marriageBars={marriageBars}
-                spouseConnectors={spouseConnectors}
-                filterEra={filterEra === 'all' ? null : filterEra}
-                spineIds={spineIds}
-                onNodePress={handleNodePress}
-                offsetX={-bounds.minX}
-                offsetY={-bounds.minY}
-              />
-            </Svg>
+          <Animated.View style={[gestureStyle, styles.layer]}>
+            <View style={[baseStyle, styles.layer]}>
+              <Svg
+                width={Math.max(bounds.width, 2000)}
+                height={Math.max(bounds.height, 2000)}
+              >
+                <TreeCanvas
+                  nodes={nodes}
+                  links={links}
+                  marriageBars={marriageBars}
+                  spouseConnectors={spouseConnectors}
+                  filterEra={filterEra === 'all' ? null : filterEra}
+                  spineIds={spineIds}
+                  onNodePress={handleNodePress}
+                  offsetX={-bounds.minX}
+                  offsetY={-bounds.minY}
+                />
+              </Svg>
+            </View>
           </Animated.View>
         </GestureDetector>
       </View>
@@ -216,5 +215,8 @@ const styles = StyleSheet.create({
   viewport: {
     flex: 1,
     overflow: 'hidden',
+  },
+  layer: {
+    overflow: 'visible' as const,
   },
 });
