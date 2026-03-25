@@ -21,19 +21,32 @@ interface Props {
   bookId: string;
   bookName?: string;
   chapterNum: number;
+  initialVerseNum?: number | null;
 }
 
-export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }: Props) {
+export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, initialVerseNum }: Props) {
   const [notes, setNotes] = useState<UserNote[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
   const [newText, setNewText] = useState('');
   const [showAdd, setShowAdd] = useState(false);
+  const [addRef, setAddRef] = useState('');
   const newTextRef = useRef<TextInput>(null);
   const pendingNewText = useRef('');
 
   const displayName = bookName ?? bookId;
-  const defaultRef = `${displayName} ${chapterNum}`;
+
+  /** Build a verse_ref string in the canonical format: bookId:ch or bookId:ch:v */
+  const makeRef = (verseNum?: number | null) =>
+    verseNum ? `${bookId}:${chapterNum}:${verseNum}` : `${bookId}:${chapterNum}`;
+
+  /** Display-friendly version of a stored ref */
+  const formatRef = (ref: string) => {
+    const parts = ref.split(':');
+    if (parts.length === 3) return `${displayName} ${parts[1]}:${parts[2]}`;
+    if (parts.length === 2) return `${displayName} ${parts[1]}`;
+    return ref;
+  };
 
   const reload = useCallback(() => {
     if (bookId && chapterNum) {
@@ -43,10 +56,19 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
 
   useEffect(() => { if (visible) reload(); }, [visible, reload]);
 
+  // When opened for a specific verse, auto-open the add form
+  useEffect(() => {
+    if (visible && initialVerseNum) {
+      setAddRef(makeRef(initialVerseNum));
+      setShowAdd(true);
+      setTimeout(() => newTextRef.current?.focus(), 200);
+    }
+  }, [visible, initialVerseNum]);
+
   // Auto-save pending new note on close
   const handleClose = useCallback(async () => {
     if (pendingNewText.current.trim()) {
-      await saveNote(defaultRef, pendingNewText.current.trim());
+      await saveNote(addRef || makeRef(), pendingNewText.current.trim());
       pendingNewText.current = '';
       setNewText('');
       setShowAdd(false);
@@ -56,19 +78,21 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
       await updateNote(editingId, editText.trim());
       setEditingId(null);
     }
+    setAddRef('');
     onClose();
-  }, [defaultRef, editingId, editText, onClose]);
+  }, [addRef, editingId, editText, onClose, bookId, chapterNum]);
 
   // Auto-save new note on blur
   const handleNewNoteBlur = useCallback(async () => {
     if (pendingNewText.current.trim()) {
-      await saveNote(defaultRef, pendingNewText.current.trim());
+      await saveNote(addRef || makeRef(), pendingNewText.current.trim());
       pendingNewText.current = '';
       setNewText('');
       setShowAdd(false);
+      setAddRef('');
       reload();
     }
-  }, [defaultRef, reload]);
+  }, [addRef, bookId, chapterNum, reload]);
 
   const handleNewTextChange = (text: string) => {
     setNewText(text);
@@ -90,6 +114,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
   };
 
   const handleShowAdd = () => {
+    setAddRef(makeRef());
     setShowAdd(true);
     setTimeout(() => newTextRef.current?.focus(), 100);
   };
@@ -115,7 +140,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
         {/* Add note — just a text area, auto-saves on blur */}
         {showAdd && (
           <View style={styles.addForm}>
-            <Text style={styles.addLabel}>{defaultRef}</Text>
+            <Text style={styles.addLabel}>{formatRef(addRef)}</Text>
             <TextInput
               ref={newTextRef}
               value={newText}
@@ -126,7 +151,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
               placeholderTextColor={base.textMuted}
               style={styles.addInput}
             />
-            <TouchableOpacity onPress={() => { pendingNewText.current = ''; setNewText(''); setShowAdd(false); }} style={styles.cancelButton}>
+            <TouchableOpacity onPress={() => { pendingNewText.current = ''; setNewText(''); setShowAdd(false); setAddRef(''); }} style={styles.cancelButton}>
               <Text style={styles.cancelText}>Cancel</Text>
             </TouchableOpacity>
           </View>
@@ -144,7 +169,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
           }
           renderItem={({ item: note }) => (
             <View style={styles.noteCard}>
-              <Text style={styles.noteRef}>{note.verse_ref}</Text>
+              <Text style={styles.noteRef}>{formatRef(note.verse_ref)}</Text>
               {editingId === note.id ? (
                 <TextInput
                   value={editText} onChangeText={setEditText} multiline autoFocus

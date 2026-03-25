@@ -11,7 +11,7 @@ import type { UserNote, ReadingProgress, Bookmark, RecentChapter } from '../type
 // ── Notes ───────────────────────────────────────────────────────────
 
 export async function getNotesForChapter(bookId: string, ch: number): Promise<UserNote[]> {
-  const prefix = `${bookId} ${ch}:`;
+  const prefix = `${bookId}:${ch}`;
   return getDb().getAllAsync<UserNote>(
     "SELECT * FROM user_notes WHERE verse_ref LIKE ? ORDER BY verse_ref",
     [`${prefix}%`]
@@ -19,7 +19,7 @@ export async function getNotesForChapter(bookId: string, ch: number): Promise<Us
 }
 
 export async function getNoteCount(bookId: string, ch: number): Promise<number> {
-  const prefix = `${bookId} ${ch}:`;
+  const prefix = `${bookId}:${ch}`;
   const row = await getDb().getFirstAsync<{ count: number }>(
     "SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ?",
     [`${prefix}%`]
@@ -44,6 +44,19 @@ export async function updateNote(id: number, text: string): Promise<void> {
 
 export async function deleteNote(id: number): Promise<void> {
   await getDb().runAsync("DELETE FROM user_notes WHERE id = ?", [id]);
+}
+
+export async function getAllNotes(): Promise<UserNote[]> {
+  return getDb().getAllAsync<UserNote>(
+    "SELECT * FROM user_notes ORDER BY verse_ref, updated_at DESC"
+  );
+}
+
+export async function searchNotes(query: string): Promise<UserNote[]> {
+  return getDb().getAllAsync<UserNote>(
+    "SELECT * FROM user_notes WHERE note_text LIKE ? OR verse_ref LIKE ? ORDER BY verse_ref",
+    [`%${query}%`, `%${query}%`]
+  );
 }
 
 // ── Reading Progress ────────────────────────────────────────────────

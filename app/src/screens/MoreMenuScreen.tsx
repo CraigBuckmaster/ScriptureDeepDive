@@ -8,7 +8,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Bookmark, Clock, Calendar, Settings, ArrowRight } from 'lucide-react-native';
+import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote } from 'lucide-react-native';
 import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 interface MenuItem {
@@ -18,10 +18,11 @@ interface MenuItem {
 }
 
 const MENU_ITEMS: MenuItem[] = [
-  { icon: Bookmark,  label: 'Bookmarks',       screen: 'Bookmarks' },
-  { icon: Clock,     label: 'Reading History',  screen: 'ReadingHistory' },
-  { icon: Calendar,  label: 'Reading Plans',    screen: 'PlanList' },
-  { icon: Settings,  label: 'Settings',         screen: 'Settings' },
+  { icon: StickyNote, label: 'All Notes',         screen: 'AllNotes' },
+  { icon: Bookmark,   label: 'Bookmarks',         screen: 'Bookmarks' },
+  { icon: Clock,      label: 'Reading History',    screen: 'ReadingHistory' },
+  { icon: Calendar,   label: 'Reading Plans',      screen: 'PlanList' },
+  { icon: Settings,   label: 'Settings',           screen: 'Settings' },
 ];
 
 export default function MoreMenuScreen() {
