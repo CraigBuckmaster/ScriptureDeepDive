@@ -6,8 +6,8 @@
  */
 
 export const TOTAL_WIDTH = 9000;
-export const LANE_COUNT = 12;
-export const AXIS_Y = 380;
+export const LANE_COUNT = 20;
+export const AXIS_Y = 580;
 export const ERA_BAR_Y = 5;
 export const ERA_BAR_H = 40;
 export const LANE_HEIGHT = 26;
@@ -56,6 +56,7 @@ export function formatYear(year: number): string {
 
 export interface PositionedEvent {
   id: string;
+  category: string;
   name: string;
   year: number;
   era: string | null;
@@ -69,7 +70,7 @@ export interface PositionedEvent {
 }
 
 /** Greedy lane assignment: no label overlap within same lane. */
-export function assignLanes(events: { id: string; name: string; year: number; era: string | null; scripture_ref: string | null; chapter_link: string | null; summary: string | null; people_json: string | null }[]): PositionedEvent[] {
+export function assignLanes(events: { id: string; category: string; name: string; year: number; era: string | null; scripture_ref: string | null; chapter_link: string | null; summary: string | null; people_json: string | null }[]): PositionedEvent[] {
   const sorted = [...events].sort((a, b) => yearToX(a.year) - yearToX(b.year));
   const laneRightEdges = new Array(LANE_COUNT).fill(-Infinity);
   const GAP = 10;

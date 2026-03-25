@@ -84,8 +84,8 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
             style={[
               styles.chip,
               {
-                backgroundColor: isActive ? color + '33' : 'transparent',
-                borderColor: isActive ? color : base.border,
+                backgroundColor: isActive ? color + '33' : base.bg + 'EE',
+                borderColor: isActive ? color : base.gold + '55',
               },
             ]}
           >
@@ -93,7 +93,7 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
               <View style={[styles.dot, { backgroundColor: color }]} />
             )}
             <Text
-              style={[styles.label, { color: isActive ? color : base.textMuted }]}
+              style={[styles.label, { color: isActive ? color : base.gold }]}
               numberOfLines={1}
             >
               {label}

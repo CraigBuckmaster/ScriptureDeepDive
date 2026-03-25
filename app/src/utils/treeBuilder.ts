@@ -109,6 +109,9 @@ export function buildHierarchy(people: Person[], spineIds: Set<string>): HierNod
     });
   }
 
+  // Track who has been attached as a child
+  const attached = new Set<string>();
+
   // Attach children to fathers (or mothers if no father)
   for (const p of people) {
     if (spouseIds.has(p.id)) continue; // spouses handled separately
@@ -118,10 +121,50 @@ export function buildHierarchy(people: Person[], spineIds: Set<string>): HierNod
     const child = byId.get(p.id);
     if (parent && child) {
       parent.children.push(child);
+      attached.add(p.id);
     }
   }
 
-  return byId.get('adam') ?? null;
+  // Find all root nodes: people who are NOT spouses and NOT attached as children
+  const roots: HierNode[] = [];
+  for (const p of people) {
+    if (spouseIds.has(p.id)) continue;
+    if (attached.has(p.id)) continue;
+    const node = byId.get(p.id);
+    if (node) roots.push(node);
+  }
+
+  if (roots.length === 0) return null;
+  if (roots.length === 1) return roots[0];
+
+  // Multiple root trees — create a virtual root to hold them all.
+  // Put Adam first (the main spine), then remaining roots sorted by era.
+  const adamIdx = roots.findIndex((r) => r.data.id === 'adam');
+  if (adamIdx > 0) {
+    const [adam] = roots.splice(adamIdx, 1);
+    roots.unshift(adam);
+  }
+
+  const virtualRoot: HierNode = {
+    data: {
+      id: '__root__',
+      name: '',
+      era: null,
+      role: '',
+      bio: null,
+      dates: null,
+      father: null,
+      mother: null,
+      spouse_of: null,
+      scripture_role: null,
+      chapter_link: null,
+      refs_json: null,
+      nodeType: 'satellite',
+    } as TreePerson,
+    children: roots,
+  };
+
+  return virtualRoot;
 }
 
 // ── d3 layout ───────────────────────────────────────────────────────
