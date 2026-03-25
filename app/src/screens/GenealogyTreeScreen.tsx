@@ -1,9 +1,14 @@
 /**
- * GenealogyTreeScreen — Zoomable family tree of 211 biblical people.
+ * GenealogyTreeScreen — Zoomable family tree of 237 biblical people.
  *
  * d3-hierarchy layout + react-native-svg rendering + gesture-handler
  * pinch/pan. Era filtering, person search, bio bottom sheet.
  * Deep-link: initialPersonId param → auto-centre + open bio.
+ *
+ * Centering strategy:
+ *   Initial load → jumpNode (instant, no animation)
+ *   Era filter   → centreNode (animated, useEffect-driven after re-render)
+ *   Deep-link    → centreNodeAbove (animated, offset for bio panel)
  */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
@@ -61,49 +66,67 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     (nodeX: number, nodeY: number) => centreOnNodeAbovePanel(nodeX + offX, nodeY + offY),
     [centreOnNodeAbovePanel, offX, offY],
   );
-
-  /** Filter by era and jump the tree to the first matching node. */
-  const handleEraChange = useCallback(
-    (era: string) => {
-      setFilterEra(era);
-      if (nodes.length === 0) return;
-      if (era === 'all') {
-        // Re-centre on Adam when switching back to all
-        const adam = nodes.find((n) => n.data.id === 'adam');
-        if (adam) setTimeout(() => centreNode(adam.x, adam.y), 150);
-        return;
-      }
-      const firstMatch = nodes.find((n) => n.data.era === era);
-      if (firstMatch) {
-        setTimeout(() => centreNode(firstMatch.x, firstMatch.y), 150);
-      }
-    },
-    [nodes, centreNode],
+  const jumpNode = useCallback(
+    (nodeX: number, nodeY: number) => jumpToNode(nodeX + offX, nodeY + offY),
+    [jumpToNode, offX, offY],
   );
 
-  // Deep-link: centre on initial person (sidebar will open)
-  useEffect(() => {
-    if (initialPersonId && nodes.length > 0) {
-      const node = nodes.find((n) => n.data.id === initialPersonId);
-      if (node) {
-        const person = people.find((p) => p.id === initialPersonId);
-        if (person) setSelectedPerson(person);
-        setTimeout(() => centreNodeAbove(node.x, node.y), 200);
-      }
-    }
-  }, [initialPersonId, nodes.length, centreNodeAbove]);
+  /** Filter change — only updates state. Centering is handled by useEffect below. */
+  const handleEraChange = useCallback(
+    (era: string) => setFilterEra(era),
+    [],
+  );
 
-  // Auto-position on Adam when tree first loads — INSTANT, no animation
+  // ── Centering logic (useEffect-driven, no setTimeout) ──────────────
+
+  // Track whether initial positioning has happened
   const hasCentred = useRef(false);
+  // Track previous era to detect actual changes vs re-renders
+  const prevEra = useRef<string>(filterEra);
+
+  // 1. Initial load — instant jump to Adam (no animation, no race)
   useEffect(() => {
-    if (!initialPersonId && !hasCentred.current && nodes.length > 0) {
-      hasCentred.current = true;
+    if (initialPersonId || hasCentred.current || nodes.length === 0) return;
+    hasCentred.current = true;
+    const adam = nodes.find((n) => n.data.id === 'adam');
+    if (adam) {
+      console.log('[Tree] Initial jump to Adam');
+      jumpNode(adam.x, adam.y);
+    }
+  }, [nodes.length, jumpNode, initialPersonId]);
+
+  // 2. Deep-link — centre on specific person and open sidebar
+  useEffect(() => {
+    if (!initialPersonId || nodes.length === 0) return;
+    const node = nodes.find((n) => n.data.id === initialPersonId);
+    if (node) {
+      const person = people.find((p) => p.id === initialPersonId);
+      if (person) setSelectedPerson(person);
+      centreNodeAbove(node.x, node.y);
+    }
+  }, [initialPersonId, nodes.length, people, centreNodeAbove]);
+
+  // 3. Era filter change — animate to first node of the selected era
+  //    Runs AFTER React re-renders with the new nodes/bounds, so offsets are fresh.
+  useEffect(() => {
+    if (!hasCentred.current || nodes.length === 0) return;
+    if (filterEra === prevEra.current) return; // no actual change
+    prevEra.current = filterEra;
+
+    if (filterEra === 'all') {
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        jumpToNode(adam.x + offX, adam.y + offY);
+        console.log('[Tree] Era→All: centering on Adam');
+        centreNode(adam.x, adam.y);
+      }
+    } else {
+      const firstMatch = nodes.find((n) => n.data.era === filterEra);
+      if (firstMatch) {
+        console.log(`[Tree] Era→${filterEra}: centering on ${firstMatch.data.name}`);
+        centreNode(firstMatch.x, firstMatch.y);
       }
     }
-  }, [nodes.length, offX, offY, jumpToNode]);
+  }, [filterEra, nodes, centreNode]);
 
   const handleNodePress = useCallback(
     (treePerson: TreePerson) => {
