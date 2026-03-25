@@ -65,6 +65,7 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
       ref={scrollRef}
       horizontal
       showsHorizontalScrollIndicator={false}
+      nestedScrollEnabled
       contentContainerStyle={styles.strip}
     >
       {ERA_LIST.map((era) => {
