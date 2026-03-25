@@ -11,7 +11,7 @@
     "newArchEnabled": true,
     "assetBundlePatterns": ["**/*"],
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/images/icon-512.png",
       "resizeMode": "contain",
       "backgroundColor": "#0c0a07"
     },
@@ -32,7 +32,7 @@
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./assets/images/icon-192.png",
       "bundler": "metro"
     },
     "plugins": [
