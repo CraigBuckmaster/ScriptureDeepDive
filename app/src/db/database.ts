@@ -67,25 +67,15 @@ export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
 
 /**
  * Copy the bundled scripture.db asset to the SQLite directory.
- * Only runs on first launch or if the DB file is missing.
+ * Replaces the existing DB if the bundled version is a different size
+ * (indicates a content update). This ensures OTA updates that include
+ * a rebuilt scripture.db actually take effect.
  */
 async function copyAssetDatabaseIfNeeded(): Promise<void> {
   const sqliteDir = `${FileSystem.documentDirectory}SQLite/`;
   const dbPath = `${sqliteDir}scripture.db`;
 
-  // Check if DB already exists in documents
-  const fileInfo = await FileSystem.getInfoAsync(dbPath);
-  if (fileInfo.exists && fileInfo.size && fileInfo.size > 1000) {
-    // DB exists and has content — skip copy
-    return;
-  }
-
-  console.log('[DB] Copying scripture.db from assets to documents...');
-
-  // Ensure SQLite directory exists
-  await FileSystem.makeDirectoryAsync(sqliteDir, { intermediates: true });
-
-  // Download the asset (resolves the bundled file to a local URI)
+  // Resolve the bundled asset first so we know its size
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const asset = Asset.fromModule(require('../../assets/scripture.db'));
   await asset.downloadAsync();
@@ -93,6 +83,25 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
   if (!asset.localUri) {
     throw new Error('[DB] Failed to resolve scripture.db asset — localUri is null');
   }
+
+  const assetInfo = await FileSystem.getInfoAsync(asset.localUri);
+  const assetSize = assetInfo.exists ? (assetInfo.size ?? 0) : 0;
+
+  // Check if DB already exists in documents
+  const fileInfo = await FileSystem.getInfoAsync(dbPath);
+  if (fileInfo.exists && fileInfo.size && fileInfo.size > 1000) {
+    // DB exists — check if it matches the bundled version
+    if (fileInfo.size === assetSize) {
+      // Same size — skip copy
+      return;
+    }
+    console.log(`[DB] scripture.db size changed (${fileInfo.size} → ${assetSize}) — replacing with updated version`);
+  }
+
+  console.log('[DB] Copying scripture.db from assets to documents...');
+
+  // Ensure SQLite directory exists
+  await FileSystem.makeDirectoryAsync(sqliteDir, { intermediates: true });
 
   // Copy to the SQLite directory where expo-sqlite expects it
   await FileSystem.copyAsync({
