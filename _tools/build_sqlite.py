@@ -16,6 +16,9 @@ META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
 
+# Bump this whenever schema or content changes require a DB replacement on device.
+DB_VERSION = '0.10'
+
 
 # ---------------------------------------------------------------------------
 # Schema
@@ -192,6 +195,12 @@ CREATE TABLE timelines (
   people_json TEXT,
   summary TEXT,
   region TEXT
+);
+
+-- Database version metadata
+CREATE TABLE db_meta (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL
 );
 
 -- Full-text search indexes
@@ -659,6 +668,10 @@ def main():
     # Build FTS
     build_fts(cur)
     print(f"  ✅ FTS5 indexes built")
+
+    # Write DB version
+    cur.execute("INSERT INTO db_meta (key, value) VALUES ('version', ?)", (DB_VERSION,))
+    print(f"  ✅ db_meta: version {DB_VERSION}")
 
     # Re-enable FK enforcement
     cur.execute('PRAGMA foreign_keys=ON')
