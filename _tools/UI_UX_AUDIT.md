@@ -220,11 +220,11 @@ have `isLoading` checks.
 |----------|-------|--------|
 | ~~P1~~ | ~~NotesOverlay wired but never rendered (#1)~~ | ✅ Resolved — rendered in ChapterScreen, bookName prop added |
 | ~~P1~~ | ~~ErrorBoundary not wrapping root (#2)~~ | ✅ Resolved — wraps RootNavigator in App.tsx |
-| ~~P1~~ | ~~6 screens missing back buttons (#3)~~ | ✅ Resolved — ScreenHeader component, 8 screens migrated |
-| P2 | 3 screens with unicode back arrows (#4) | Visual inconsistency |
-| P2 | 200 font family string literals (#5) | Maintenance debt |
-| P2 | 14 screens without StyleSheet (#6) | Performance debt |
-| P2 | 3 detail screens blank while loading (#7) | Flash of empty |
+| ~~P1~~ | ~~6 screens missing back buttons (#3)~~ | ✅ Resolved — ScreenHeader component, 8+ screens migrated |
+| ~~P2~~ | ~~3 screens with unicode back arrows (#4)~~ | ✅ Resolved — all use ScreenHeader with Lucide ArrowLeft |
+| ~~P2~~ | ~~200 font family string literals (#5)~~ | ✅ Resolved — 194 replaced with fontFamily.* tokens, 0 remain |
+| ~~P2~~ | ~~14 screens without StyleSheet (#6)~~ | ✅ Resolved — all 21 screens use StyleSheet.create() |
+| ~~P2~~ | ~~3 detail screens blank while loading (#7)~~ | ✅ Resolved — all show LoadingSkeleton shimmer |
 | P3 | Accessibility gaps (#8) | Inclusion |
 | P3 | Minor polish items (#9) | Quality of life |
 
@@ -232,10 +232,10 @@ have `isLoading` checks.
 
 ## Metrics
 
-- **Total components:** 36 active + 13 orphaned = 49
+- **Total components:** 37 active + 13 orphaned = 50
 - **Total screens:** 21
 - **Total hooks:** 20
-- **Files with StyleSheet:** 14 / 36 components, 8 / 21 screens
-- **Files using fontFamily tokens:** ~30% (remainder use string literals)
-- **Loading skeletons:** 8 screens covered, 3 screens still blank
+- **Files with StyleSheet:** 14 / 37 components, 21 / 21 screens
+- **Files using fontFamily tokens:** 100% (0 string literals remain)
+- **Loading skeletons:** 13 screens covered, 0 blank
 - **Back buttons:** 21 screens have them, 0 do not
