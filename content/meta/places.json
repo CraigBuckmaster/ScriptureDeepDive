@@ -955,5 +955,27 @@
       "paul-journey2",
       "paul-journey3"
     ]
+  },
+  {
+    "id": "tarshish",
+    "ancient": "Tarshish",
+    "modern": "Southwestern Spain (trad.)",
+    "lon": -6.0,
+    "lat": 37.2,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": []
+  },
+  {
+    "id": "joppa",
+    "ancient": "Joppa",
+    "modern": "Jaffa (Tel Aviv), Israel",
+    "lon": 34.75,
+    "lat": 32.05,
+    "type": "port",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": []
   }
 ]

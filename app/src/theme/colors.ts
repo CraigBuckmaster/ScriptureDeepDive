@@ -106,6 +106,7 @@ export const scholars: Record<string, string> = {
   wiseman: '#b0d8e8',
   lundbom: '#d0a068',
   brueggemann: '#88a0c8',
+  stuart: '#8db87c',
   zimmerli: '#a8c090',
 } as const;
 

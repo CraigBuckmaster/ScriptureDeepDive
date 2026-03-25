@@ -86,6 +86,7 @@ const SCHOLAR_LABELS: Record<string, string> = {
   oconnor: "O'Connor",
   lundbom: 'Lundbom',
   brueggemann: 'Brueggemann',
+  stuart: 'Stuart',
   zimmerli: 'Zimmerli',
 };
 
