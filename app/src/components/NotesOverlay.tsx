@@ -1,15 +1,16 @@
 /**
  * NotesOverlay — Full-screen modal for viewing/editing per-chapter notes.
  *
- * FlatList of NoteCards. Empty state. Inline edit on tap.
- * Delete with confirm. Add note from verse ref.
+ * Auto-saves on blur and on close. No explicit Save button.
+ * Verse ref auto-generated from current book/chapter.
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   Modal, View, Text, TouchableOpacity, TextInput,
-  FlatList, SafeAreaView, Alert,
+  FlatList, SafeAreaView, Alert, StyleSheet,
 } from 'react-native';
+import { X, Plus } from 'lucide-react-native';
 import { getNotesForChapter, saveNote, updateNote, deleteNote } from '../db/user';
 import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import type { UserNote } from '../types';
@@ -26,9 +27,13 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
   const [notes, setNotes] = useState<UserNote[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
-  const [newRef, setNewRef] = useState('');
   const [newText, setNewText] = useState('');
   const [showAdd, setShowAdd] = useState(false);
+  const newTextRef = useRef<TextInput>(null);
+  const pendingNewText = useRef('');
+
+  const displayName = bookName ?? bookId;
+  const defaultRef = `${displayName} ${chapterNum}`;
 
   const reload = useCallback(() => {
     if (bookId && chapterNum) {
@@ -38,11 +43,36 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
 
   useEffect(() => { if (visible) reload(); }, [visible, reload]);
 
-  const handleSave = async () => {
-    if (!newRef.trim() || !newText.trim()) return;
-    await saveNote(newRef.trim(), newText.trim());
-    setNewRef(''); setNewText(''); setShowAdd(false);
-    reload();
+  // Auto-save pending new note on close
+  const handleClose = useCallback(async () => {
+    if (pendingNewText.current.trim()) {
+      await saveNote(defaultRef, pendingNewText.current.trim());
+      pendingNewText.current = '';
+      setNewText('');
+      setShowAdd(false);
+    }
+    // Auto-save pending edit
+    if (editingId !== null && editText.trim()) {
+      await updateNote(editingId, editText.trim());
+      setEditingId(null);
+    }
+    onClose();
+  }, [defaultRef, editingId, editText, onClose]);
+
+  // Auto-save new note on blur
+  const handleNewNoteBlur = useCallback(async () => {
+    if (pendingNewText.current.trim()) {
+      await saveNote(defaultRef, pendingNewText.current.trim());
+      pendingNewText.current = '';
+      setNewText('');
+      setShowAdd(false);
+      reload();
+    }
+  }, [defaultRef, reload]);
+
+  const handleNewTextChange = (text: string) => {
+    setNewText(text);
+    pendingNewText.current = text;
   };
 
   const handleUpdate = async (id: number) => {
@@ -59,55 +89,46 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
     ]);
   };
 
+  const handleShowAdd = () => {
+    setShowAdd(true);
+    setTimeout(() => newTextRef.current?.focus(), 100);
+  };
+
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
-      <SafeAreaView style={{ flex: 1, backgroundColor: base.bg }}>
+      <SafeAreaView style={styles.container}>
         {/* Header */}
-        <View style={{
-          flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-          paddingHorizontal: spacing.md, height: 48,
-          borderBottomWidth: 1, borderBottomColor: base.border,
-        }}>
-          <Text style={{ color: base.text, fontFamily: fontFamily.displayMedium, fontSize: 14 }}>
-            Notes — {bookName ?? bookId} {chapterNum}
+        <View style={styles.header}>
+          <Text style={styles.headerTitle}>
+            Notes — {displayName} {chapterNum}
           </Text>
-          <View style={{ flexDirection: 'row', gap: spacing.md }}>
-            <TouchableOpacity onPress={() => setShowAdd(true)} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }} accessibilityLabel="Add note" accessibilityRole="button">
-              <Text style={{ color: base.gold, fontSize: 20 }}>+</Text>
+          <View style={styles.headerActions}>
+            <TouchableOpacity onPress={handleShowAdd} style={styles.headerButton} accessibilityLabel="Add note" accessibilityRole="button">
+              <Plus size={20} color={base.gold} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={onClose} style={{ minHeight: MIN_TOUCH_TARGET, justifyContent: 'center' }} accessibilityLabel="Close notes" accessibilityRole="button">
-              <Text style={{ color: base.gold, fontSize: 16 }}>✕</Text>
+            <TouchableOpacity onPress={handleClose} style={styles.headerButton} accessibilityLabel="Close notes" accessibilityRole="button">
+              <X size={20} color={base.gold} />
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* Add note form */}
+        {/* Add note — just a text area, auto-saves on blur */}
         {showAdd && (
-          <View style={{ padding: spacing.md, gap: spacing.sm, borderBottomWidth: 1, borderBottomColor: base.border }}>
+          <View style={styles.addForm}>
+            <Text style={styles.addLabel}>{defaultRef}</Text>
             <TextInput
-              value={newRef} onChangeText={setNewRef}
-              placeholder={`e.g. ${bookName ?? bookId} ${chapterNum}:1`}
+              ref={newTextRef}
+              value={newText}
+              onChangeText={handleNewTextChange}
+              onBlur={handleNewNoteBlur}
+              multiline
+              placeholder="Type your note — saves automatically..."
               placeholderTextColor={base.textMuted}
-              style={{ backgroundColor: base.bgElevated, color: base.text, borderRadius: radii.sm,
-                paddingHorizontal: spacing.sm, paddingVertical: spacing.xs, fontFamily: fontFamily.ui,
-                fontSize: 13, borderWidth: 1, borderColor: base.border }}
+              style={styles.addInput}
             />
-            <TextInput
-              value={newText} onChangeText={setNewText} multiline
-              placeholder="Your note..."
-              placeholderTextColor={base.textMuted}
-              style={{ backgroundColor: base.bgElevated, color: base.text, borderRadius: radii.sm,
-                paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, fontFamily: fontFamily.body,
-                fontSize: 14, minHeight: 60, borderWidth: 1, borderColor: base.border, textAlignVertical: 'top' }}
-            />
-            <View style={{ flexDirection: 'row', gap: spacing.sm }}>
-              <TouchableOpacity onPress={handleSave} style={{ backgroundColor: base.gold + '30', borderRadius: radii.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.xs }}>
-                <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>Save</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setShowAdd(false)} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.xs }}>
-                <Text style={{ color: base.textMuted, fontSize: 13 }}>Cancel</Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity onPress={() => { pendingNewText.current = ''; setNewText(''); setShowAdd(false); }} style={styles.cancelButton}>
+              <Text style={styles.cancelText}>Cancel</Text>
+            </TouchableOpacity>
           </View>
         )}
 
@@ -115,40 +136,30 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
         <FlatList
           data={notes}
           keyExtractor={(n) => String(n.id)}
-          contentContainerStyle={{ padding: spacing.md, gap: spacing.sm }}
+          contentContainerStyle={styles.listContent}
           ListEmptyComponent={
-            <View style={{ alignItems: 'center', paddingTop: spacing.xxl }}>
-              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 15 }}>
-                No notes yet for this chapter.
-              </Text>
+            <View style={styles.emptyWrap}>
+              <Text style={styles.emptyText}>No notes yet for this chapter.</Text>
             </View>
           }
           renderItem={({ item: note }) => (
-            <View style={{ backgroundColor: base.bgElevated, borderRadius: radii.md, padding: spacing.sm,
-              borderWidth: 1, borderColor: base.border }}>
-              <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 12 }}>
-                {note.verse_ref}
-              </Text>
+            <View style={styles.noteCard}>
+              <Text style={styles.noteRef}>{note.verse_ref}</Text>
               {editingId === note.id ? (
                 <TextInput
                   value={editText} onChangeText={setEditText} multiline autoFocus
                   onBlur={() => handleUpdate(note.id)}
-                  style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 14,
-                    marginTop: 4, minHeight: 40, textAlignVertical: 'top' }}
+                  style={styles.editInput}
                 />
               ) : (
                 <TouchableOpacity onPress={() => { setEditingId(note.id); setEditText(note.note_text); }}>
-                  <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
-                    {note.note_text}
-                  </Text>
+                  <Text style={styles.noteText}>{note.note_text}</Text>
                 </TouchableOpacity>
               )}
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: spacing.xs }}>
-                <Text style={{ color: base.textMuted, fontSize: 10 }}>
-                  {note.updated_at?.slice(0, 10)}
-                </Text>
+              <View style={styles.noteFooter}>
+                <Text style={styles.noteDate}>{note.updated_at?.slice(0, 10)}</Text>
                 <TouchableOpacity onPress={() => handleDelete(note.id)}>
-                  <Text style={{ color: '#e05a6a', fontSize: 11 }}>Delete</Text>
+                  <Text style={styles.deleteText}>Delete</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -158,3 +169,117 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum }:
     </Modal>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: spacing.md,
+    height: 48,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border,
+  },
+  headerTitle: {
+    color: base.text,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 14,
+  },
+  headerActions: {
+    flexDirection: 'row',
+    gap: spacing.md,
+  },
+  headerButton: {
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+  },
+  addForm: {
+    padding: spacing.md,
+    gap: spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border,
+  },
+  addLabel: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+  addInput: {
+    backgroundColor: base.bgElevated,
+    color: base.text,
+    borderRadius: radii.sm,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.sm,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    minHeight: 60,
+    borderWidth: 1,
+    borderColor: base.border,
+    textAlignVertical: 'top',
+  },
+  cancelButton: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    alignSelf: 'flex-start',
+  },
+  cancelText: {
+    color: base.textMuted,
+    fontSize: 13,
+  },
+  listContent: {
+    padding: spacing.md,
+    gap: spacing.sm,
+  },
+  emptyWrap: {
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+  emptyText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 15,
+  },
+  noteCard: {
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+    borderWidth: 1,
+    borderColor: base.border,
+  },
+  noteRef: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+  editInput: {
+    color: base.text,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+    minHeight: 40,
+    textAlignVertical: 'top',
+  },
+  noteText: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+  },
+  noteFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: spacing.xs,
+  },
+  noteDate: {
+    color: base.textMuted,
+    fontSize: 10,
+  },
+  deleteText: {
+    color: '#e05a6a',
+    fontSize: 11,
+  },
+});

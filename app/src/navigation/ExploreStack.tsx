@@ -32,13 +32,14 @@ export function ExploreStack() {
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: base.bg },
+        gestureEnabled: true,
       }}
     >
       <Stack.Screen name="ExploreMenu" component={ExploreMenuScreen} />
-      <Stack.Screen name="GenealogyTree" component={GenealogyTreeScreen} />
+      <Stack.Screen name="GenealogyTree" component={GenealogyTreeScreen} options={{ gestureEnabled: false }} />
       <Stack.Screen name="PersonDetail" component={PersonDetailScreen} />
-      <Stack.Screen name="Map" component={MapScreen} />
-      <Stack.Screen name="Timeline" component={TimelineScreen} />
+      <Stack.Screen name="Map" component={MapScreen} options={{ gestureEnabled: false }} />
+      <Stack.Screen name="Timeline" component={TimelineScreen} options={{ gestureEnabled: false }} />
       <Stack.Screen name="WordStudyBrowse" component={WordStudyBrowseScreen} />
       <Stack.Screen name="WordStudyDetail" component={WordStudyDetailScreen} />
       <Stack.Screen name="ScholarBrowse" component={ScholarBrowseScreen} />

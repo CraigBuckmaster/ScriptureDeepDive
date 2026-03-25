@@ -50,7 +50,21 @@ export default function ChapterScreen() {
   } = useChapterData(bookId, chapterNum);
 
   const scrollRef = useRef<ScrollView>(null);
+  const sectionYMap = useRef<Record<string, number>>({});
   const [bookData, setBookData] = React.useState<any>(null);
+
+  // Auto-scroll to section when a panel opens
+  useEffect(() => {
+    if (activePanel && activePanel.sectionId !== '__chapter__') {
+      const y = sectionYMap.current[activePanel.sectionId];
+      if (y !== undefined) {
+        // Small delay to let panel render, then scroll section into view
+        setTimeout(() => {
+          scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
+        }, 100);
+      }
+    }
+  }, [activePanel]);
 
   // Load book data for nav
   useEffect(() => {
@@ -140,7 +154,6 @@ export default function ChapterScreen() {
         chapterNum={chapterNum}
         hasPrev={hasPrev}
         hasNext={hasNext}
-        onBack={() => navigation.goBack()}
         onPrev={goPrev}
         onNext={goNext}
         onQnav={toggleQnav}
@@ -157,17 +170,26 @@ export default function ChapterScreen() {
           onNotesPress={toggleNotes}
           onIntroPress={() => navigation.navigate('BookIntro', { bookId })}
           onTimelinePress={chapter.timeline_link_event
-            ? () => navigation.navigate('Timeline', { eventId: chapter.timeline_link_event })
+            ? () => navigation.navigate('ExploreTab', {
+                screen: 'Timeline', params: { eventId: chapter.timeline_link_event },
+              })
             : undefined}
           onMapPress={chapter.map_story_link_id
-            ? () => navigation.navigate('Map', { storyId: chapter.map_story_link_id })
+            ? () => navigation.navigate('ExploreTab', {
+                screen: 'Map', params: { storyId: chapter.map_story_link_id },
+              })
             : undefined}
         />
 
         {/* Sections */}
         {sections.map((sec) => (
-          <SectionBlock
+          <View
             key={sec.id}
+            onLayout={(e) => {
+              sectionYMap.current[sec.id] = e.nativeEvent.layout.y;
+            }}
+          >
+          <SectionBlock
             section={sec}
             panels={sec.panels}
             verses={verses}
@@ -201,6 +223,7 @@ export default function ChapterScreen() {
               />
             )}
           />
+          </View>
         ))}
 
         {/* Chapter-level scholarly block */}

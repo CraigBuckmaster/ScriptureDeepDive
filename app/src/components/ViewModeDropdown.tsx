@@ -1,8 +1,8 @@
 /**
  * ViewModeDropdown — Compact view mode picker for the book list.
  *
- * Thin wrapper around CompactDropdown. Two modes:
- *   'thematic'  → "By Tradition" (grouped by genre)
+ * Two modes:
+ *   'thematic'  → "By Genre" (grouped by genre: Law, History, Poetry, etc.)
  *   'canonical' → "Canonical Order" (OT/NT flat list)
  */
 
@@ -10,7 +10,7 @@ import React from 'react';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 
 const VIEW_MODE_OPTIONS: DropdownOption[] = [
-  { key: 'thematic',  label: 'By Tradition' },
+  { key: 'thematic',  label: 'By Genre' },
   { key: 'canonical', label: 'Canonical Order' },
 ];
 
