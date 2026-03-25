@@ -3,7 +3,7 @@
  */
 
 import React, { memo, useCallback } from 'react';
-import { Circle, Text as SvgText, G } from 'react-native-svg';
+import { Circle, Rect, Text as SvgText, G } from 'react-native-svg';
 import { base, eras } from '../../theme';
 import { TREE_CONSTANTS, type LayoutNode, type TreePerson } from '../../utils/treeBuilder';
 
@@ -24,13 +24,24 @@ export const TreeNode = memo(function TreeNode({ node, dimmed, filterEra, onPres
 
   const handlePress = useCallback(() => onPress(data), [data, onPress]);
 
+  // Approximate text width for hit target
+  const labelWidth = data.name.length * (fontSize * 0.6);
+  const labelY = y - r - 4;
+
   return (
-    <G>
-      {/* Invisible touch target (44pt equivalent) */}
+    <G onPress={handlePress}>
+      {/* Invisible hit rect covering the name label */}
+      <Rect
+        x={x - labelWidth / 2}
+        y={labelY - fontSize}
+        width={labelWidth}
+        height={fontSize + 6}
+        fill="transparent"
+      />
+      {/* Invisible touch target around circle */}
       <Circle
         cx={x} cy={y} r={TREE_CONSTANTS.touchTargetRadius}
         fill="transparent"
-        onPress={handlePress}
       />
       {/* Visible circle */}
       <Circle
@@ -42,7 +53,7 @@ export const TreeNode = memo(function TreeNode({ node, dimmed, filterEra, onPres
       />
       {/* Name label */}
       <SvgText
-        x={x} y={y - r - 4}
+        x={x} y={labelY}
         textAnchor="middle"
         fontSize={fontSize}
         fill={isSpine ? '#f0e8d8' : base.textDim}

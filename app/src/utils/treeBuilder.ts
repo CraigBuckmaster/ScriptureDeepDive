@@ -149,8 +149,10 @@ export function buildHierarchy(people: Person[], spineIds: Set<string>): HierNod
     data: {
       id: '__root__',
       name: '',
+      gender: null,
       era: null,
       role: '',
+      type: null,
       bio: null,
       dates: null,
       father: null,
