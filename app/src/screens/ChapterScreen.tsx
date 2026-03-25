@@ -7,9 +7,10 @@
  * Data: useChapterData loads everything. readerStore manages panel state.
  */
 
-import React, { useCallback, useMemo, useRef, useEffect } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
+import { View, ScrollView, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 
 import { useChapterData } from '../hooks/useChapterData';
 import { useNotedVerses } from '../hooks/useNotedVerses';
@@ -53,6 +54,16 @@ export default function ChapterScreen() {
   const sectionYMap = useRef<Record<string, number>>({});
   const btnRowYMap = useRef<Record<string, number>>({});
   const [bookData, setBookData] = React.useState<any>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Scroll progress tracking
+  const handleScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const { contentOffset, contentSize, layoutMeasurement } = e.nativeEvent;
+    const maxScroll = contentSize.height - layoutMeasurement.height;
+    if (maxScroll > 0) {
+      setScrollProgress(Math.min(1, Math.max(0, contentOffset.y / maxScroll)));
+    }
+  }, []);
 
   // Auto-scroll to button row when a panel opens
   useEffect(() => {
@@ -79,10 +90,11 @@ export default function ChapterScreen() {
     if (bookId && chapterNum) recordVisit(bookId, chapterNum);
   }, [bookId, chapterNum]);
 
-  // Scroll to top on chapter change
+  // Scroll to top on chapter change + reset progress
   useEffect(() => {
     scrollRef.current?.scrollTo({ y: 0, animated: false });
     clearActivePanel();
+    setScrollProgress(0);
   }, [bookId, chapterNum]);
 
   const totalChapters = bookData?.total_chapters ?? 1;
@@ -96,6 +108,21 @@ export default function ChapterScreen() {
   const goNext = useCallback(() => {
     if (hasNext) navigation.setParams({ chapterNum: chapterNum + 1 });
   }, [hasNext, chapterNum, navigation]);
+
+  // Horizontal swipe gesture for prev/next chapter
+  const swipeGesture = useMemo(() =>
+    Gesture.Pan()
+      .activeOffsetX([-40, 40])     // must move 40px horizontally to activate
+      .failOffsetY([-20, 20])       // cancel if vertical movement > 20px
+      .onEnd((e) => {
+        if (e.translationX > 60 && hasPrev) {
+          goPrev();
+        } else if (e.translationX < -60 && hasNext) {
+          goNext();
+        }
+      }),
+    [hasPrev, hasNext, goPrev, goNext]
+  );
 
   // Panel toggle — single-open policy
   const handleSectionPanelToggle = useCallback(
@@ -162,10 +189,19 @@ export default function ChapterScreen() {
         onQnav={toggleQnav}
       />
 
+      {/* Reading progress bar */}
+      <View style={styles.progressTrack}>
+        <View style={[styles.progressFill, { width: `${scrollProgress * 100}%` }]} />
+      </View>
+
+      <GestureDetector gesture={swipeGesture}>
+
       <ScrollView
         ref={scrollRef}
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
+        onScroll={handleScroll}
+        scrollEventThrottle={32}
       >
         <ChapterHeader
           chapter={chapter}
@@ -224,6 +260,7 @@ export default function ChapterScreen() {
                 panelType={panel.panel_type}
                 contentJson={panel.content_json}
                 isOpen
+                onClose={clearActivePanel}
                 onRefPress={(ref) => {
                   // Navigate to referenced chapter
                   navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
@@ -239,11 +276,13 @@ export default function ChapterScreen() {
           chapterPanels={chapterPanels}
           activePanel={activeChapterPanelType}
           onToggle={handleChapterPanelToggle}
+          onClose={clearActivePanel}
           onRefPress={(ref) => {
             navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
           }}
         />
       </ScrollView>
+      </GestureDetector>
 
       <QnavOverlay
         visible={qnavOpen}
@@ -286,10 +325,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  progressTrack: {
+    height: 2,
+    backgroundColor: base.border,
+  },
+  progressFill: {
+    height: 2,
+    backgroundColor: base.gold,
+  },
   scroll: {
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: spacing.xxl,
+    paddingBottom: 80,
   },
 });

@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
   },
   verseRow: {
     flexDirection: 'row',
-    marginBottom: 2,
+    marginBottom: 8,
   },
   verseNum: {
     color: base.verseNum,
     fontFamily: fontFamily.display,
     marginRight: 4,
-    minWidth: 20,
+    minWidth: 28,
     textAlign: 'right',
   },
   textWrap: {

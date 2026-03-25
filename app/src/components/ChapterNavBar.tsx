@@ -65,12 +65,19 @@ export function ChapterNavBar({
             style={styles.arrowButton}
           >
             <ArrowLeft
-              size={16}
+              size={20}
               color={hasPrev ? base.gold : base.textMuted + '40'}
             />
           </TouchableOpacity>
 
-          <Text style={styles.chapterNum}>Ch {chapterNum}</Text>
+          <TouchableOpacity
+            onPress={onQnav}
+            hitSlop={{ top: 8, bottom: 8, left: 4, right: 4 }}
+            accessibilityLabel={`Chapter ${chapterNum}. Tap to jump to another chapter.`}
+            accessibilityRole="button"
+          >
+            <Text style={styles.chapterNum}>Ch {chapterNum}</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity
             onPress={onNext}
@@ -79,7 +86,7 @@ export function ChapterNavBar({
             style={styles.arrowButton}
           >
             <ArrowRight
-              size={16}
+              size={20}
               color={hasNext ? base.gold : base.textMuted + '40'}
             />
           </TouchableOpacity>

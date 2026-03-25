@@ -15,6 +15,7 @@ interface Props {
   chapterPanels: ChapterPanel[];
   activePanel: string | null;
   onToggle: (panelType: string) => void;
+  onClose?: () => void;
   onRefPress?: (ref: ParsedRef) => void;
   onWordStudyPress?: (word: string) => void;
   onScholarPress?: (scholarId: string) => void;
@@ -22,7 +23,7 @@ interface Props {
 }
 
 export function ScholarlyBlock({
-  chapterPanels, activePanel, onToggle,
+  chapterPanels, activePanel, onToggle, onClose,
   onRefPress, onWordStudyPress, onScholarPress, onPersonPress,
 }: Props) {
   if (chapterPanels.length === 0) return null;
@@ -62,6 +63,7 @@ export function ScholarlyBlock({
           panelType={activeChapterPanel.panel_type}
           contentJson={activeChapterPanel.content_json}
           isOpen
+          onClose={onClose}
           onRefPress={onRefPress}
           onWordStudyPress={onWordStudyPress}
           onScholarPress={onScholarPress}
