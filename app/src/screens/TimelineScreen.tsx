@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
@@ -13,6 +13,7 @@ import { getAllTimelineEntries } from '../db/content';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import {
   yearToX, formatYear, assignLanes, computeTickMarks,
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H, LANE_TOP, LANE_HEIGHT,
@@ -22,6 +23,7 @@ import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
 export default function TimelineScreen() {
+  useLandscapeUnlock();
   const route = useRoute<any>();
   const initialEventId = route?.params?.eventId;
 
@@ -30,7 +32,7 @@ export default function TimelineScreen() {
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
-  const screenWidth = Dimensions.get('window').width;
+  const { width: screenWidth } = useWindowDimensions();
   const insets = useSafeAreaInsets();
 
   useEffect(() => {
@@ -133,13 +135,16 @@ export default function TimelineScreen() {
 
             return (
               <G key={evt.id} onPress={() => setSelectedEvent(evt)}>
+                {/* Invisible hit rect — makes the entire label area tappable */}
+                <Rect x={evt.x - 10} y={y - 14} width={evt.labelWidth} height={28}
+                  fill="transparent" />
                 {/* Stem line */}
                 <Line x1={evt.x} y1={y} x2={evt.x} y2={AXIS_Y} stroke={eraColor} strokeWidth={0.5} opacity={0.4} />
                 {/* Circle */}
-                {isSelected && <Circle cx={evt.x} cy={y} r={7} fill={base.gold} opacity={0.3} />}
-                <Circle cx={evt.x} cy={y} r={4} fill={eraColor} />
+                {isSelected && <Circle cx={evt.x} cy={y} r={10} fill={base.gold} opacity={0.3} />}
+                <Circle cx={evt.x} cy={y} r={6} fill={eraColor} />
                 {/* Label */}
-                <SvgText x={evt.x + 8} y={y + 4} fontSize={8} fill={eraColor}
+                <SvgText x={evt.x + 10} y={y + 5} fontSize={11} fill={eraColor}
                   fontFamily="SourceSans3_400Regular">
                   {evt.name} · {formatYear(evt.year)}
                 </SvgText>

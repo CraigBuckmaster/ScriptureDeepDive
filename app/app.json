@@ -3,7 +3,7 @@
     "name": "Companion Study",
     "slug": "companion-study",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/images/icon-512.png",
     "scheme": "scripture",
     "userInterfaceStyle": "dark",
@@ -37,6 +37,7 @@
     },
     "plugins": [
       "expo-font",
+      "expo-screen-orientation",
       ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
     ],
     "updates": {

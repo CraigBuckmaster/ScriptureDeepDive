@@ -15,6 +15,7 @@ import MapView from 'react-native-maps';
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
+import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
@@ -35,6 +36,7 @@ const INITIAL_REGION = {
 };
 
 export default function MapScreen({ route, navigation }: any) {
+  useLandscapeUnlock();
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
 
