@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   verseCardLabel: {
     color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
-    fontSize: 10,
+    fontSize: 11,
     letterSpacing: 0.5,
     marginBottom: spacing.sm,
   },

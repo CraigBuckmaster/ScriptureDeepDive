@@ -49,7 +49,7 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
       >
         <Text style={{
           color: accent,
-          fontFamily: fontFamily.display,
+          fontFamily: fontFamily.uiMedium,
           fontSize: 12,
           letterSpacing: 0.4,
         }}>

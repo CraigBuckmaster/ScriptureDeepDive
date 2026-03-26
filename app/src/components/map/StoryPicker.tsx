@@ -53,7 +53,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
           >
             <Text style={{
               color: isActive ? color : base.gold,
-              fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.3,
+              fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 0.3,
             }}>
               {story.name}
             </Text>

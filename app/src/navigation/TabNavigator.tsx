@@ -22,7 +22,7 @@ export function TabNavigator() {
         tabBarActiveTintColor: base.gold,
         tabBarInactiveTintColor: base.textMuted,
         tabBarLabelStyle: {
-          fontSize: 9,
+          fontSize: 10,
           letterSpacing: 0.3,
         },
         tabBarIconStyle: {

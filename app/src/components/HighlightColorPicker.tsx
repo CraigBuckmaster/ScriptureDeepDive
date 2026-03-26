@@ -33,7 +33,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
           padding: spacing.md, borderWidth: 1, borderColor: base.border,
           width: 260,
         }}>
-          <Text style={{ color: base.textMuted, fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm, textAlign: 'center' }}>
+          <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm, textAlign: 'center' }}>
             HIGHLIGHT COLOR
           </Text>
 
