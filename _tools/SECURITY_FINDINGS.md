@@ -1,6 +1,6 @@
 # Companion Study — Security Findings
 
-**Last updated:** 2026-03-24
+**Last updated:** 2026-03-26 (all actionable findings resolved)
 **Scope:** Full scan of all source files in `app/src/`, `app/App.tsx`, `app/app.json`
 **Methodology:** Manual code review of all 130+ source files for injection,
 secrets exposure, unsafe deserialization, network surface, and code execution.
@@ -197,17 +197,19 @@ Zero SQL injection risk.
 
 ## Summary
 
-| ID | Finding | Severity | Action |
+| ID | Finding | Severity | Status |
 |----|---------|----------|--------|
-| SEC-01 | 11 unguarded JSON.parse calls | LOW | Add try/catch or safeParse utility |
-| SEC-02 | FTS5 search input not sanitized | LOW | Sanitize before MATCH |
-| SEC-03 | ErrorBoundary not wired | LOW | Wrap RootNavigator |
-| SEC-04 | Database not encrypted | INFO | No action (public data) |
-| SEC-05 | No network attack surface | INFO | Positive finding |
-| SEC-06 | All SQL parameterized | INFO | Positive finding |
+| SEC-01 | 11 unguarded JSON.parse calls | LOW | ✅ FIXED — `safeParse()` utility added to `logger.ts`, all catch blocks logged. `useBookIntro` was last unguarded site. |
+| SEC-02 | FTS5 search input not sanitized | LOW | ✅ FIXED — `sanitizeFtsQuery()` added to `content.ts`, strips special chars, quotes terms. |
+| SEC-03 | ErrorBoundary not wired | LOW | ✅ FIXED — Was already wired in `App.tsx` at time of audit (finding was stale). |
+| SEC-04 | Database not encrypted | INFO | No action (public data). Note: user.db now holds notes/bookmarks — still low sensitivity. |
+| SEC-05 | No network attack surface | INFO | Positive finding — unchanged. |
+| SEC-06 | All SQL parameterized | INFO | Positive finding — unchanged. |
+
+**All actionable findings resolved as of 2026-03-26.**
 
 **Critical findings: 0**
 **High findings: 0**
 **Medium findings: 0**
-**Low findings: 3**
+**Low findings: 3 (all fixed)**
 **Informational: 3 (2 positive)**

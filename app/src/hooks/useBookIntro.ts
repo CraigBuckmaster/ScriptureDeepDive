@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getBookIntro } from '../db/content';
+import { safeParse } from '../utils/logger';
 
 export function useBookIntro(bookId: string | null) {
   const [intro, setIntro] = useState<any>(null);
@@ -8,7 +9,7 @@ export function useBookIntro(bookId: string | null) {
   useEffect(() => {
     if (!bookId) return;
     getBookIntro(bookId).then((row) => {
-      setIntro(row ? JSON.parse(row.intro_json) : null);
+      setIntro(row ? safeParse(row.intro_json, null, 'useBookIntro') : null);
       setIsLoading(false);
     });
   }, [bookId]);

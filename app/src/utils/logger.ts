@@ -30,3 +30,17 @@ export const logger = {
     // Future: Sentry.captureException(...)
   },
 };
+
+/**
+ * Safely parse a JSON string with a fallback value.
+ * Logs a warning on parse failure instead of throwing.
+ */
+export function safeParse<T>(json: string | null | undefined, fallback: T, tag?: string): T {
+  if (!json) return fallback;
+  try {
+    return JSON.parse(json);
+  } catch (err) {
+    logger.warn(tag ?? 'safeParse', 'JSON parse failed', err);
+    return fallback;
+  }
+}
