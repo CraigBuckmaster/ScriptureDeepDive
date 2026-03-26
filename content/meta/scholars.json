@@ -157,7 +157,8 @@
     "color": "#e8a0b8",
     "tradition": "Evangelical OT Scholar · Reformed",
     "scope": [
-      "proverbs"
+      "proverbs",
+      "micah"
     ],
     "scope_text": "Proverbs",
     "description": "Co-author of the standard Biblical Hebrew grammar and author of the two-volume NICOT Proverbs commentary. Unmatched in Hebrew philology and canonical-theological reading of wisdom literature.",
@@ -265,9 +266,12 @@
       "mark",
       "luke",
       "john",
-      "acts"
+      "acts",
+      "habakkuk",
+      "nahum",
+      "zephaniah"
     ],
-    "scope_text": "Gospels, Acts",
+    "scope_text": "Gospels, Acts, Habakkuk, Nahum, Zephaniah",
     "description": "Southern Baptist Seminary professor and the greatest NT Greek grammarian in American scholarship. His Word Pictures illuminate what the Greek text is actually doing, verse by verse.",
     "eyebrow": "NT Greek Scholarship · Early 20th Century",
     "bio_sections": [
@@ -597,27 +601,27 @@
     ],
     "scope_text": "Joshua",
     "description": "Distinguished Professor of Old Testament at Denver Seminary. TOTC Joshua commentary grounded in ANE archaeology and ancient Near Eastern textual parallels.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "eyebrow": "Evangelical · TOTC · Denver Seminary",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "Richard S. Hess is Distinguished Professor of Old Testament and Semitic Languages at Denver Seminary in Littleton, Colorado. He earned his PhD from the Hebrew University of Jerusalem, giving him deep roots in Israeli biblical scholarship and Semitic epigraphy.\n\nHess's TOTC (Tyndale Old Testament Commentary) volume on Joshua (1996) is one of the most widely used shorter evangelical commentaries on the book. He has also published extensively on ancient Near Eastern backgrounds to the Bible, including 'Israelite Religions: An Archaeological and Biblical Survey' (2007) and studies on personal names in the Amarna letters and other ancient texts."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Hess excels at situating the biblical text within its ancient Near Eastern context. His Joshua commentary consistently draws on archaeological evidence, Late Bronze Age geopolitics, and comparative Near Eastern treaty and conquest literature to illuminate the narrative.\n\nHe pays careful attention to personal names, place names, and geographical details — the kind of concrete textual data that anchors the narrative in historical reality. His work on the Amarna letters and other extra-biblical sources gives him particular authority on Canaanite culture and religion.\n\nWhile his TOTC commentary is concise by design, it packs a remarkable density of historical and textual insight into its compact format."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Hess is an evangelical scholar who combines confessional commitment with serious academic engagement. His Jerusalem training and his involvement in international biblical archaeology give his work a breadth that bridges confessional and academic worlds. He argues for the historical reliability of the biblical narratives while engaging honestly with archaeological evidence that complicates simple reconstructions."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "Joshua (TOTC, 1996) — a concise but historically rich commentary on the conquest narratives.\n\nIsraelite Religions: An Archaeological and Biblical Survey (2007) — a comprehensive study of Israel's religious practices in their ancient Near Eastern context.\n\nStudies in the Personal Names of Genesis 1–11 (1993) — exemplifying his expertise in onomastics and comparative Semitic studies."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Hess notes appear throughout Joshua in this tool.\n\nJosh 1  Josh 2  Josh 3  Josh 4  Josh 5  Josh 6  Josh 7  Josh 8  Josh 9  Josh 10  Josh 11  Josh 12  Josh 13  Josh 14  Josh 15  Josh 16  Josh 17  Josh 18  Josh 19  Josh 20  Josh 21  Josh 22  Josh 23  Josh 24"
       }
     ]
   },
@@ -633,27 +637,27 @@
     ],
     "scope_text": "Joshua",
     "description": "Professor of Old Testament at Bethel Seminary. NAC Joshua commentary with expertise in the historical books and the Deuteronomistic History.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "eyebrow": "Evangelical · NAC · Bethel Seminary",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "David M. Howard Jr. is Professor of Old Testament at Bethel Seminary in St. Paul, Minnesota. He previously taught at Trinity Evangelical Divinity School and New Orleans Baptist Theological Seminary. He earned his PhD from the University of Michigan.\n\nHoward is best known for his NAC (New American Commentary) volume on Joshua (1998), which remains one of the standard evangelical commentaries on the book. He has also written extensively on the Psalms, including 'The Structure of Psalms 93–100' (1997), and has contributed to numerous edited volumes on Old Testament history and theology. He served as president of the Evangelical Theological Society."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Howard reads Joshua as a theological narrative about God's faithfulness in fulfilling the land promises made to the patriarchs. He pays careful attention to the book's literary structure — the movement from conquest narratives to tribal allotments to covenant renewal — and reads each section as contributing to a unified theological argument.\n\nHe is attentive to geographical and historical detail, drawing on archaeological evidence where it illuminates the text. He engages with critical questions about the historicity of the conquest while maintaining that the text presents a reliable account of Israel's entry into the land.\n\nHoward writes with clarity and precision, making his commentary accessible to pastors and students without sacrificing academic rigour."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Howard is a confessional evangelical who treats the biblical text as inspired and authoritative. He engages with the full range of critical scholarship but reads the text within the framework of evangelical faith. His work reflects a concern for the text's relevance to believing communities — not merely its historical background or literary features."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "Joshua (NAC, 1998) — his major commentary, combining historical, literary, and theological analysis of the conquest narratives.\n\nThe Structure of Psalms 93–100 (1997) — a study in the literary and theological coherence of the enthronement psalms.\n\nAn Introduction to the Old Testament Historical Books (1993) — a widely used evangelical textbook."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Howard notes appear throughout Joshua in this tool.\n\nJosh 1  Josh 2  Josh 3  Josh 4  Josh 5  Josh 6  Josh 7  Josh 8  Josh 9  Josh 10  Josh 11  Josh 12  Josh 13  Josh 14  Josh 15  Josh 16  Josh 17  Josh 18  Josh 19  Josh 20  Josh 21  Josh 22  Josh 23  Josh 24"
       }
     ]
   },
@@ -665,31 +669,32 @@
     "color": "#e0a070",
     "tradition": "Evangelical · NAC Commentary · 20th–21st Century",
     "scope": [
-      "judges"
+      "judges",
+      "ezekiel"
     ],
-    "scope_text": "Judges",
-    "description": "Gunther H. Knoedler Professor Emeritus of Old Testament at Wheaton College. NAC Judges commentary with deep engagement in ANE covenant forms and Deuteronomistic theology.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "scope_text": "Judges, Ezekiel",
+    "description": "Gunther H. Knoedler Professor Emeritus of Old Testament at Wheaton College. Author of the magisterial two-volume NICOT commentary on Ezekiel and NAC Judges commentary. Deep engagement in ANE covenant forms, Deuteronomistic theology, and priestly traditions.",
+    "eyebrow": "Evangelical · NAC/NICOT · Wheaton",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "Daniel Isaac Block is the Gunther H. Knoedler Professor Emeritus of Old Testament at Wheaton College, one of the flagship evangelical colleges in North America. Before Wheaton he taught at Southern Baptist Theological Seminary. He earned his doctorate from the University of Liverpool.\n\nBlock is a prolific commentator whose work spans Judges, Ruth, Ezekiel, and Deuteronomy. His two-volume NICOT commentary on Ezekiel (1997–1998) is widely regarded as the definitive evangelical commentary on that book. His NAC commentary on Judges and Ruth brought his characteristic blend of philological precision and theological sensitivity to the historical books. More recently, his NIVAC Deuteronomy commentary (2012) reflects his long engagement with the theology of the Torah."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Block combines careful attention to Hebrew grammar and ancient Near Eastern background with a strong theological reading of the text. He is deeply interested in how Old Testament authors understood the covenant relationship between Yahweh and Israel — the obligations, the blessings, the consequences of infidelity.\n\nIn Ezekiel, Block excels at tracing the prophet's use of existing biblical traditions and theological vocabulary. He reads Ezekiel's visions not as bizarre apocalyptic imagery but as carefully constructed theological arguments rooted in Israel's worship traditions and covenant theology.\n\nIn Judges, Block reads the narratives as theological case studies in covenant failure, showing how each generation's unfaithfulness follows predictable patterns while also introducing new dimensions of degradation. He is attentive to the Deuteronomic theological framework that shapes the book."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Block is a committed evangelical scholar who takes the text's theological claims seriously as divine revelation. He engages substantively with critical scholarship but consistently argues for the coherence and authority of the biblical text. His scholarship is marked by pastoral concern — he writes not merely to inform but to edify believing readers."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "The Book of Ezekiel: Chapters 1–24 (NICOT, 1997) — the first volume of his landmark Ezekiel commentary.\n\nThe Book of Ezekiel: Chapters 25–48 (NICOT, 1998) — completing the most thorough evangelical treatment of Ezekiel.\n\nJudges, Ruth (NAC, 1999) — combining literary analysis with Deuteronomic-theological interpretation.\n\nDeuteronomy (NIVAC, 2012) — applying his covenant-theology expertise to the Torah's theological centre."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Block notes appear throughout Judges and Ezekiel in this tool.\n\nEzek 1  Ezek 2  Ezek 3  Ezek 4  Ezek 5  Ezek 6  Ezek 7  Ezek 8  Ezek 9  Ezek 10  Ezek 11  Ezek 12  Ezek 13  Ezek 14  Ezek 15  Ezek 16  Ezek 17  Ezek 18  Ezek 19  Ezek 20  Ezek 21  Ezek 22  Ezek 23  Ezek 24  Ezek 25  Ezek 26  Ezek 27  Ezek 28  Ezek 29  Ezek 30  Ezek 31  Ezek 32  Ezek 33  Ezek 34  Ezek 35  Ezek 36  Ezek 37  Ezek 38  Ezek 39  Ezek 40  Ezek 41  Ezek 42  Ezek 43  Ezek 44  Ezek 45  Ezek 46  Ezek 47  Ezek 48  Judg 1  Judg 2  Judg 3  Judg 4  Judg 5  Judg 6  Judg 7  Judg 8  Judg 9  Judg 10  Judg 11  Judg 12  Judg 13  Judg 14  Judg 15  Judg 16  Judg 17  Judg 18  Judg 19  Judg 20  Judg 21"
       }
     ]
   },
@@ -705,27 +710,27 @@
     ],
     "scope_text": "Judges",
     "description": "Retired Senior Research Fellow at Moore Theological College, Sydney. NICOT Judges commentary with attention to the book’s literary architecture and theological thesis of progressive deterioration.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "eyebrow": "Evangelical · NICOT · Australia",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "Barry G. Webb is a retired Senior Research Fellow at Moore Theological College in Sydney, Australia, one of the leading evangelical theological institutions in the Anglican world. He earned his PhD from the University of Sheffield with a dissertation on the literary structure and theology of Judges.\n\nWebb's NICOT (New International Commentary on the Old Testament) volume on Judges (2012) is considered one of the finest evangelical commentaries on the book. He also authored an earlier monograph, 'The Book of Judges: An Integrated Reading' (1987), and has contributed to TOTC volumes. His work on the prophets includes 'The Message of Isaiah' in the Bible Speaks Today series."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Webb reads Judges as a carefully crafted literary whole with a deliberate theological argument. His central thesis is that the book traces a pattern of progressive deterioration — not merely cyclical repetition but a downward spiral in Israel's spiritual and moral life from the relatively faithful Othniel to the deeply compromised Samson and the horrifying appendix chapters.\n\nHe pays close attention to the book's literary architecture: its framing devices, its internal cross-references, and the way individual judge narratives echo and subvert one another. He is especially insightful on irony and the gap between what characters say and what the narrative reveals about them.\n\nWebb holds the text together as a unified composition rather than dissecting it into hypothetical source documents. This canonical approach allows him to trace theological themes — the nature of true leadership, the danger of syncretism, the faithfulness of God amid human failure — across the full arc of the book."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Webb writes from within the Reformed evangelical tradition shaped by Moore College's distinctively expository culture. He treats the text as Scripture — authoritative, purposeful, and coherent — while engaging seriously with historical and literary scholarship. His commentary is theologically rich without being polemical, and consistently oriented toward the text's message for believing communities."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "The Book of Judges (NICOT, 2012) — his major commentary, combining literary analysis with theological exposition.\n\nThe Book of Judges: An Integrated Reading (1987) — his doctoral monograph, laying the foundation for his canonical-literary approach.\n\nThe Message of Isaiah (Bible Speaks Today, 1996) — an accessible expository commentary on Isaiah."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Webb notes appear throughout Judges in this tool.\n\nJudg 1  Judg 2  Judg 3  Judg 4  Judg 5  Judg 6  Judg 7  Judg 8  Judg 9  Judg 10  Judg 11  Judg 12  Judg 13  Judg 14  Judg 15  Judg 16  Judg 17  Judg 18  Judg 19  Judg 20  Judg 21"
       }
     ]
   },
@@ -873,27 +878,27 @@
     ],
     "scope_text": "1–2 Samuel",
     "description": "Professor of Old Testament and Biblical Languages at Hannibal-LaGrange University. NAC commentary on 1–2 Samuel with attention to literary structure and theological themes.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "eyebrow": "Evangelical · NAC · Southern Baptist",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "Robert D. Bergen is Professor of Old Testament and Biblical Languages at Hannibal-LaGrange University in Missouri. He earned his PhD from Southwestern Baptist Theological Seminary. Before his academic career he served in pastoral ministry.\n\nBergen's NAC (New American Commentary) volume on 1–2 Samuel (1996) is one of the standard evangelical commentaries on the books. The NAC series is published by Broadman & Holman (now B&H Academic) and is oriented toward pastors, teachers, and serious Bible students within the Southern Baptist tradition and the broader evangelical world."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Bergen reads the Samuel narratives as theological history — carefully crafted accounts that teach theological truths through historical narrative. He is attentive to the text's literary artistry: the contrasts between Saul and David, the narrative function of the Hannah and David psalms, and the way the narrator uses irony and repetition to guide the reader's evaluation of characters and events.\n\nHe writes with pastoral clarity, making the text accessible to non-specialists without avoiding difficult historical and textual questions. His treatment of the David narratives is particularly strong on character development and the theological significance of David's failures and repentance."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Bergen writes from within the Southern Baptist evangelical tradition — confessional, inerrantist, and oriented toward the authority and sufficiency of Scripture. His commentary reflects a concern for practical application alongside scholarly analysis. He treats the Samuel narratives as authoritative Scripture with direct relevance for Christian life and leadership."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "1, 2 Samuel (NAC, 1996) — his major commentary, covering both books in a single volume with attention to narrative theology and pastoral application."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Bergen notes appear throughout 1–2 Samuel in this tool.\n\n1 Sam 1  1 Sam 2  1 Sam 3  1 Sam 4  1 Sam 5  1 Sam 6  1 Sam 7  1 Sam 8  1 Sam 9  1 Sam 10  1 Sam 11  1 Sam 12  1 Sam 13  1 Sam 14  1 Sam 15  1 Sam 16  1 Sam 17  1 Sam 18  1 Sam 19  1 Sam 20  1 Sam 21  1 Sam 22  1 Sam 23  1 Sam 24  1 Sam 25  1 Sam 26  1 Sam 27  1 Sam 28  1 Sam 29  1 Sam 30  1 Sam 31  2 Sam 1  2 Sam 2  2 Sam 3  2 Sam 4  2 Sam 5  2 Sam 6  2 Sam 7  2 Sam 8  2 Sam 9  2 Sam 10  2 Sam 11  2 Sam 12  2 Sam 13  2 Sam 14  2 Sam 15  2 Sam 16  2 Sam 17  2 Sam 18  2 Sam 19  2 Sam 20  2 Sam 21  2 Sam 22  2 Sam 23  2 Sam 24"
       }
     ]
   },
@@ -909,27 +914,27 @@
     ],
     "scope_text": "1 Samuel",
     "description": "Professor Emeritus at Japan Bible Seminary. NICOT 1 Samuel with specialisation in Semitic languages and Ugaritic parallels to the Hebrew text.",
-    "eyebrow": "{data[\"eyebrow\"]}",
+    "eyebrow": "Evangelical · NICOT · Japan",
     "bio_sections": [
       {
         "title": "Biography",
-        "body": "{data[\"bio\"]}"
+        "body": "David Toshio Tsumura is Professor Emeritus at Japan Bible Seminary in Tokyo. He earned his PhD from Brandeis University, where he studied under Cyrus Gordon, one of the great Semitists of the twentieth century. This training gave Tsumura an exceptional command of comparative Semitic philology — Akkadian, Ugaritic, and Northwest Semitic languages alongside Hebrew.\n\nHis NICOT commentary on 1 Samuel (published as 'The First Book of Samuel,' 2007) is noted for its detailed philological work and its engagement with ancient Near Eastern parallels. He has also published significant research on Genesis 1–2, particularly the relationship between the Hebrew creation account and Mesopotamian creation literature."
       },
       {
         "title": "Interpretive Approach",
-        "body": "{data[\"approach\"]}"
+        "body": "Tsumura's distinctive strength is comparative Semitic philology. When a Hebrew word or phrase in 1 Samuel is obscure, he draws on Akkadian, Ugaritic, and other Semitic cognates to illuminate its meaning. This gives his commentary a precision that few others can match on questions of vocabulary and grammar.\n\nHe is also attentive to the narrative artistry of 1 Samuel — the characterisation of Saul, David, Samuel, and Jonathan, the use of irony and foreshadowing, and the theological themes that run through the transition from judgeship to monarchy.\n\nTsumura reads the text as a coherent narrative composition rather than a patchwork of conflicting sources, though he engages seriously with source-critical arguments and explains where he departs from them."
       },
       {
         "title": "Theological Tradition",
-        "body": "{data[\"theological\"]}"
+        "body": "Tsumura writes from an evangelical perspective, treating the biblical text as authoritative Scripture. His Japanese academic context gives his work a distinctive international flavour — he brings a global perspective to English-language Old Testament scholarship. His work is rigorous, precise, and oriented toward the text's meaning rather than toward theological polemic."
       },
       {
         "title": "Key Works",
-        "body": "{data[\"works\"]}"
+        "body": "The First Book of Samuel (NICOT, 2007) — his major commentary, distinguished by its philological depth and ancient Near Eastern parallels.\n\nCreation and Destruction: A Reappraisal of the Chaoskampf Theory in the Old Testament (1994, revised 2005) — an influential study arguing against reading Genesis 1 through the lens of Babylonian combat mythology."
       },
       {
         "title": "Appears In",
-        "body": "{data[\"name\"].split()[-1]} notes appear throughout {data[\"book_label\"]} in this tool.\n\n{ch_links}"
+        "body": "Tsumura notes appear throughout 1 Samuel in this tool.\n\n1 Sam 1  1 Sam 2  1 Sam 3  1 Sam 4  1 Sam 5  1 Sam 6  1 Sam 7  1 Sam 8  1 Sam 9  1 Sam 10  1 Sam 11  1 Sam 12  1 Sam 13  1 Sam 14  1 Sam 15  1 Sam 16  1 Sam 17  1 Sam 18  1 Sam 19  1 Sam 20  1 Sam 21  1 Sam 22  1 Sam 23  1 Sam 24  1 Sam 25  1 Sam 26  1 Sam 27  1 Sam 28  1 Sam 29  1 Sam 30  1 Sam 31"
       }
     ]
   },
@@ -1493,29 +1498,86 @@
     "id": "lundbom",
     "panel_key": "lundbom",
     "label": "Lundbom",
-    "name": "Lundbom",
-    "color": "#888888",
-    "tradition": "",
+    "name": "Jack R. Lundbom",
+    "color": "#c0a8d0",
+    "tradition": "Critical · Anchor Bible Commentary · 20th–21st Century",
     "scope": [
       "jeremiah"
     ],
-    "scope_text": "",
-    "description": "",
-    "eyebrow": "",
-    "bio_sections": []
+    "scope_text": "Jeremiah",
+    "description": "Author of the three-volume Anchor Bible Commentary on Jeremiah, the most comprehensive English-language commentary on the book. Specialist in rhetorical criticism and the structural artistry of Jeremiah’s poetry.",
+    "eyebrow": "Critical · Academic · Anchor Bible · 20th–21st Century",
+    "bio_sections": [
+      {
+        "title": "Biography",
+        "body": "Jack R. Lundbom is an American biblical scholar who has devoted the greater part of his career to the book of Jeremiah. He completed his doctoral work at Union Theological Seminary in New York under James Muilenburg, the scholar who pioneered rhetorical criticism as a method of biblical study. Muilenburg's influence is stamped on everything Lundbom writes — the conviction that the artistry of biblical prose and poetry is not ornament but meaning.\n\nLundbom's three-volume Anchor Bible Commentary on Jeremiah (1999, 2004, 2004) is the most comprehensive English-language commentary on the book. It covers Jeremiah 1–20, 21–36, and 37–52 in exhaustive philological and rhetorical detail. The Anchor Bible series is one of the premier academic commentary series in English, and Lundbom's contribution stands as its definitive treatment of Jeremiah."
+      },
+      {
+        "title": "Interpretive Approach",
+        "body": "Lundbom's primary method is rhetorical criticism — the close analysis of how the text uses repetition, inclusio, chiasm, keyword chains, and other structural devices to communicate meaning. He is especially attentive to the way Jeremiah's poetry works: its parallelism, its sound patterns, its deliberate breaks and resumptions.\n\nHe combines this literary sensitivity with rigorous philological work. His commentary provides detailed analysis of Hebrew grammar, vocabulary, and syntax at every turn. Where textual variants exist between the Masoretic Text and the Septuagint (which is substantially shorter for Jeremiah), Lundbom works through the evidence carefully.\n\nWhile historically informed, Lundbom's approach is primarily text-centred. He is less interested in reconstructing the 'historical Jeremiah' than in understanding how the text in its received form communicates its message. This makes his commentary both scholarly and practically useful for close readers of the biblical text."
+      },
+      {
+        "title": "Theological Tradition",
+        "body": "Lundbom works within the critical-academic tradition, writing for scholars and serious students rather than for a confessional audience. His commentary does not advance a particular theological agenda; it seeks to let the text speak on its own terms through careful literary and philological analysis. He treats the biblical text with respect and seriousness without imposing dogmatic frameworks upon it."
+      },
+      {
+        "title": "Key Works",
+        "body": "Jeremiah 1–20 (Anchor Bible, 1999) — The first volume, establishing his rhetorical-critical method and covering the early oracles and the confessions of Jeremiah.\n\nJeremiah 21–36 (Anchor Bible, 2004) — Covers the prose sermons, the conflict narratives, and the Book of Consolation (chs 30–33).\n\nJeremiah 37–52 and Baruch (Anchor Bible, 2004) — The fall of Jerusalem narratives, the Egyptian flight, and the oracles against the nations.\n\nJeremiah: A Study in Ancient Hebrew Rhetoric (1975, revised 1997) — His foundational rhetorical study that laid the groundwork for the commentary."
+      },
+      {
+        "title": "Appears In",
+        "body": "Lundbom notes appear throughout Jeremiah in this tool.\n\nJer 1  Jer 2  Jer 3  Jer 4  Jer 5  Jer 6  Jer 7  Jer 8  Jer 9  Jer 10  Jer 11  Jer 12  Jer 13  Jer 14  Jer 15  Jer 16  Jer 17  Jer 18  Jer 19  Jer 20  Jer 21  Jer 22  Jer 23  Jer 24  Jer 25  Jer 26  Jer 27  Jer 28  Jer 29  Jer 30  Jer 31  Jer 32  Jer 33  Jer 34  Jer 35  Jer 36  Jer 37  Jer 38  Jer 39  Jer 40  Jer 41  Jer 42  Jer 43  Jer 44  Jer 45  Jer 46  Jer 47  Jer 48  Jer 49  Jer 50  Jer 51  Jer 52"
+      }
+    ]
   },
   {
     "id": "brueggemann",
     "panel_key": "brueggemann",
     "label": "Brueggemann",
-    "name": "Brueggemann",
-    "color": "#888888",
-    "tradition": "",
+    "name": "Walter Brueggemann",
+    "color": "#a8c8e0",
+    "tradition": "Mainline Protestant · Progressive · 20th–21st Century",
     "scope": [
       "jeremiah"
     ],
-    "scope_text": "",
-    "description": "",
+    "scope_text": "Jeremiah",
+    "description": "William Marcellus McPheeters Professor Emeritus at Columbia Theological Seminary. A towering figure in Old Testament theology whose prophetic-imagination framework reshaped how a generation reads Jeremiah.",
+    "eyebrow": "Mainline Protestant · Progressive · 20th–21st Century",
+    "bio_sections": [
+      {
+        "title": "Biography",
+        "body": "Walter Brueggemann (born 1933) is one of the most influential Old Testament scholars of the past half-century. He spent the bulk of his career at Columbia Theological Seminary in Decatur, Georgia, where he held the William Marcellus McPheeters Chair of Old Testament. Before Columbia he taught at Eden Theological Seminary in Missouri.\n\nBrueggemann is extraordinarily prolific, with more than one hundred books to his name. His 1978 work 'The Prophetic Imagination' became foundational reading across mainline Protestant seminaries, and his 'Theology of the Old Testament' (1997) proposed a rhetorical-dialogical approach that reads the Hebrew Bible as a sustained argument between competing testimonies about God. His commentaries on Jeremiah — in the International Theological Commentary and the 'To Build, to Plant' Eerdmans series — bring his theological vision to bear on the prophet whose voice most closely matches his own."
+      },
+      {
+        "title": "Interpretive Approach",
+        "body": "Brueggemann reads the prophets — and Jeremiah above all — as voices of counter-testimony against the dominant ideology of their cultures. His framework distinguishes between 'royal consciousness' (the established power's theology of permanence and divine favour) and 'prophetic consciousness' (the disruptive insistence that God is free, grief-stricken, and active in dismantling unjust arrangements).\n\nHis Jeremiah commentary reads the prophet as an embodiment of this prophetic consciousness: one who simultaneously grieves, accuses, and dares to imagine a future beyond destruction. Brueggemann is attentive to rhetoric and literary form, but his primary interest is theological — what does this text claim about the character of God and the shape of faithful life in an empire?\n\nHe consistently foregrounds the political dimension of prophetic speech, reading Jeremiah's confrontations with kings and priests as models for communities that must speak truth to power. His work is unapologetically pastoral — he writes for preachers, teachers, and communities seeking to live faithfully."
+      },
+      {
+        "title": "Theological Tradition",
+        "body": "Brueggemann stands in the Reformed tradition within mainline Protestantism, shaped by Karl Barth's emphasis on the freedom and sovereignty of God. He is theologically progressive, open to historical-critical methods, and consistently attentive to the social-justice dimensions of the biblical text. His scholarship blends rigorous academic analysis with pastoral and homiletical concern — he writes as a scholar who preaches and a preacher who does serious scholarship."
+      },
+      {
+        "title": "Key Works",
+        "body": "The Prophetic Imagination (1978) — his most famous work, providing the theoretical framework that undergirds all his prophetic commentary.\n\nA Commentary on Jeremiah: Exile and Homecoming (1998) — International Theological Commentary series, combining literary sensitivity with theological depth.\n\nTo Build, to Plant: A Commentary on Jeremiah 26–52 (1991) — Eerdmans series, covering the latter half of Jeremiah with particular attention to the hope oracles.\n\nTheology of the Old Testament: Testimony, Dispute, Advocacy (1997) — his magnum opus, proposing a dialectical reading of Israel's core testimony and counter-testimony about God."
+      },
+      {
+        "title": "Appears In",
+        "body": "Brueggemann notes appear throughout Jeremiah in this tool.\n\nJer 1  Jer 2  Jer 3  Jer 4  Jer 5  Jer 6  Jer 7  Jer 8  Jer 9  Jer 10  Jer 11  Jer 12  Jer 13  Jer 14  Jer 15  Jer 16  Jer 17  Jer 18  Jer 19  Jer 20  Jer 21  Jer 22  Jer 23  Jer 24  Jer 25  Jer 26  Jer 27  Jer 28  Jer 29  Jer 30  Jer 31  Jer 32  Jer 33  Jer 34  Jer 35  Jer 36  Jer 37  Jer 38  Jer 39  Jer 40  Jer 41  Jer 42  Jer 43  Jer 44  Jer 45  Jer 46  Jer 47  Jer 48  Jer 49  Jer 50  Jer 51  Jer 52"
+      }
+    ]
+  },
+  {
+    "id": "zimmerli",
+    "panel_key": "zimmerli",
+    "label": "Zimmerli",
+    "name": "Walther Zimmerli",
+    "color": "#a8c090",
+    "tradition": "European Critical · Hermeneia Commentary · 20th Century",
+    "scope": [
+      "ezekiel"
+    ],
+    "scope_text": "Ezekiel",
+    "description": "Swiss Old Testament scholar and professor at the University of Göttingen. Author of the two-volume Hermeneia commentary on Ezekiel, widely regarded as the standard critical commentary. Pioneer of form-critical and tradition-historical analysis of Ezekiel, with particular attention to the recognition formula and the theology of divine presence.",
     "eyebrow": "",
     "bio_sections": []
   },
@@ -1523,56 +1585,82 @@
     "id": "stuart",
     "panel_key": "stuart",
     "label": "Stuart",
-    "name": "Douglas Stuart",
-    "color": "#8db87c",
-    "tradition": "Evangelical · OT Scholar",
+    "name": "Stuart",
+    "color": "#888888",
+    "tradition": "",
     "scope": [
-      "jonah"
+      "jonah",
+      "amos",
+      "obadiah",
+      "joel",
+      "hosea",
+      "micah"
     ],
-    "scope_text": "Jonah (Wave 4: Minor Prophets)",
-    "description": "WBC commentary on Hosea–Jonah. Combines careful philological analysis with attention to literary structure and theological argument. Particularly strong on ANE treaty parallels and prophetic rhetoric.",
-    "eyebrow": "Evangelical · WBC",
-    "bio_sections": [
-      {
-        "title": "Biography",
-        "body": "Douglas Stuart is Professor of Old Testament at Gordon-Conwell Theological Seminary. He earned his Ph.D. from Harvard University and has spent his career bridging the gap between technical scholarship and accessible biblical exposition. His WBC volume on Hosea–Jonah (1987) is widely regarded as one of the finest evangelical commentaries on the Minor Prophets, combining rigorous philology with theological sensitivity.\n\nStuart is also the co-author (with Gordon Fee) of How to Read the Bible for All Its Worth, one of the most widely used introductory hermeneutics textbooks in evangelical education. His work consistently emphasizes the importance of genre awareness, historical context, and canonical reading."
-      },
-      {
-        "title": "Interpretive Approach",
-        "body": "Stuart's method is grammatical-historical with strong attention to literary form. He is particularly attentive to the covenant-treaty background of prophetic literature, reading the prophets as covenant prosecutors announcing the blessings and curses of the Mosaic covenant. For Jonah specifically, Stuart treats the book as historical narrative with deliberate literary artistry — not allegory or parable — while noting its sophisticated use of irony, repetition, and theological reversal.\n\nHis commentary is notable for detailed text-critical notes and careful attention to the Hebrew, combined with clear theological exposition accessible to pastors and students."
-      },
-      {
-        "title": "Key Works",
-        "body": "Hosea–Jonah (WBC 31, 1987)\nHis major commentary covering six Minor Prophets. Especially strong on Hosea's marriage metaphor and Jonah's literary structure.\n\nHow to Read the Bible for All Its Worth (co-authored with Gordon Fee, 1981)\nThe standard evangelical introduction to biblical hermeneutics, now in its fourth edition.\n\nOld Testament Exegesis (1980)\nA practical guide to OT exegetical method used in seminaries worldwide."
-      }
-    ]
+    "scope_text": "",
+    "description": "",
+    "eyebrow": "",
+    "bio_sections": []
   },
   {
     "id": "andersen_freedman",
     "panel_key": "andersen_freedman",
     "label": "Andersen & Freedman",
-    "name": "Francis I. Andersen & David Noel Freedman",
-    "color": "#b8956c",
-    "tradition": "Critical-Evangelical · Anchor Bible",
+    "name": "Andersen & Freedman",
+    "color": "#888888",
+    "tradition": "",
     "scope": [
-      "amos"
+      "amos",
+      "hosea"
     ],
-    "scope_text": "Amos (Wave 4: Minor Prophets)",
-    "description": "Anchor Bible commentary on Amos and Hosea. Combines meticulous philological analysis with attention to the book's rhetorical structure. Known for their argument that Amos is a carefully composed literary unity rather than a haphazard collection of oracles.",
-    "eyebrow": "Critical-Evangelical · AB",
-    "bio_sections": [
-      {
-        "title": "Biography",
-        "body": "Francis I. Andersen (1925–2020) was an Australian biblical scholar and linguist who held positions at the University of Queensland, the University of Michigan, and the Graduate Theological Union in Berkeley. David Noel Freedman (1922–2008) was one of the foremost biblical scholars of the twentieth century, serving as Professor of Biblical Studies at the University of Michigan and editor-in-chief of the Anchor Bible Dictionary. Their collaborative work on the Anchor Bible volumes for Hosea and Amos is widely regarded as among the finest philological commentaries on the Minor Prophets.\n\nBoth scholars brought deep expertise in Northwest Semitic languages and prosodic analysis. Their work is characterized by painstaking attention to Hebrew grammar, syntax, and poetic structure, combined with a willingness to challenge scholarly consensus when the evidence warrants it."
-      },
-      {
-        "title": "Interpretive Approach",
-        "body": "Andersen and Freedman treat Amos as a sophisticated literary composition rather than a loosely edited anthology. They argue for intentional structural patterns — including the famous oracles-against-nations sequence (chs. 1–2), the three 'hear this' speeches (chs. 3–5), the vision reports (chs. 7–9), and careful chiastic arrangements throughout. Their method combines close philological analysis (word-by-word engagement with the Hebrew) with attention to the book's rhetorical strategy.\n\nTheir commentary is notably independent of theological fashion: they resist both conservative harmonization and liberal fragmentation, letting the text speak on its own terms. Their prosodic analysis of Hebrew poetry remains influential, even where subsequent scholars have modified their conclusions."
-      },
-      {
-        "title": "Key Works",
-        "body": "Amos (Anchor Bible 24A, 1989)\nTheir magisterial commentary on Amos, running to nearly 1,000 pages. Especially strong on the oracles-against-nations and the vision reports.\n\nHosea (Anchor Bible 24, 1980)\nThe companion volume on Hosea, equally detailed and philologically rigorous.\n\nThe Hebrew Bible and Its Interpreters (co-edited by Freedman, 1985)\nA landmark collection of essays on biblical hermeneutics."
-      }
-    ]
+    "scope_text": "",
+    "description": "",
+    "eyebrow": "",
+    "bio_sections": []
+  },
+  {
+    "id": "verhoef",
+    "panel_key": "verhoef",
+    "label": "Verhoef",
+    "name": "Pieter A. Verhoef",
+    "color": "#d0a878",
+    "tradition": "Reformed · NICOT",
+    "scope": [
+      "haggai",
+      "malachi"
+    ],
+    "scope_text": "Haggai, Malachi",
+    "description": "South African Old Testament scholar whose NICOT commentaries on Haggai and Malachi combine careful philological analysis with sensitivity to the post-exilic historical setting, covenant theology, and the canonical shape of the Book of the Twelve.",
+    "eyebrow": "",
+    "bio_sections": []
+  },
+  {
+    "id": "boda",
+    "panel_key": "boda",
+    "label": "Boda",
+    "name": "Mark J. Boda",
+    "color": "#a0b8d0",
+    "tradition": "Evangelical · NICOT",
+    "scope": [
+      "zechariah"
+    ],
+    "scope_text": "Zechariah",
+    "description": "Canadian Old Testament scholar and professor at McMaster Divinity College. Author of the NICOT commentary on Zechariah (2016) and co-editor of several volumes on the Book of the Twelve. Boda integrates form-critical analysis with canonical and theological reading, attending carefully to the inner-biblical connections between Zechariah and earlier prophetic traditions, the role of the priestly-prophetic voice, and the eschatological horizon of chapters 9-14.",
+    "eyebrow": "",
+    "bio_sections": []
+  },
+  {
+    "id": "hill",
+    "panel_key": "hill",
+    "label": "Hill",
+    "name": "Andrew E. Hill",
+    "color": "#c8a8d0",
+    "tradition": "Evangelical · Anchor Yale Bible",
+    "scope": [
+      "malachi"
+    ],
+    "scope_text": "Malachi",
+    "description": "American Old Testament scholar and professor at Wheaton College. Author of the Anchor Yale Bible commentary on Malachi (1998), which combines detailed philological analysis with attention to the book’s rhetorical structure, its disputational style, and its canonical position as the bridge between the prophetic corpus and the New Testament. Hill is attentive to Malachi’s covenant theology, its critique of priestly corruption, and its eschatological horizon.",
+    "eyebrow": "",
+    "bio_sections": []
   }
 ]
