@@ -33,5 +33,5 @@ export function getPanelColors(panelType: string): PanelColors {
  * Returns gold-dim as fallback for unknown scholars.
  */
 export function getScholarColor(scholarId: string): string {
-  return scholars[scholarId] ?? '#8b6914';
+  return scholars[scholarId] ?? '#8a6e1a';
 }

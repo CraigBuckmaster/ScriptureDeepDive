@@ -8,7 +8,7 @@ import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import { base, spacing, radii, fontFamily } from '../theme';
 
 const HIGHLIGHT_COLORS = [
-  { name: 'gold', hex: '#c9a84c', label: 'Key verses' },
+  { name: 'gold', hex: '#bfa050', label: 'Key verses' },
   { name: 'blue', hex: '#5a7ab0', label: 'Commands' },
   { name: 'green', hex: '#4a8a5a', label: 'Prayers' },
   { name: 'pink', hex: '#c04a6a', label: 'Prophecy' },

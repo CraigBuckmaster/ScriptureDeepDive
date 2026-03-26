@@ -25,7 +25,7 @@ const VHL_COLORS: Record<string, string> = {
   'vhl-place': panels.poi.accent,     // #30a848 green
   'vhl-person': panels.ppl.accent,    // #e86040 orange
   'vhl-time': panels.tl.accent,       // #70b8e8 blue
-  'vhl-key': base.gold,               // #c9a84c gold
+  'vhl-key': base.gold,               // #bfa050 gold
 };
 
 // ── BTN TYPE mapping (button CSS class → panel_type in DB) ──────────
