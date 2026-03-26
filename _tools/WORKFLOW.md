@@ -1,6 +1,6 @@
 # Content Authoring Workflow
 
-> See also: `_tools/ARCHITECTURE.md` for app-level conventions (database split,
+> See also: `_tools/DEV_GUIDE.md` for app-level conventions (database split,
 > verse ref format, error handling, navigation typing, theming).
 
 ## Pipeline Overview

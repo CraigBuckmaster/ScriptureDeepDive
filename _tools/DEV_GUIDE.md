@@ -1,10 +1,10 @@
-# Companion Study — Architectural Conventions
+# Companion Study — Developer Guide
 
 > **Read this before writing any app code.**
 > These conventions exist because we hit real bugs. Each rule links to
 > the audit finding that motivated it.
 
-Last updated: 2026-03-26 (post-remediation)
+Last updated: 2026-03-26
 
 ---
 
@@ -244,4 +244,20 @@ try {
 | Add a new color token | `theme/colors.ts` |
 | Construct a verse reference | `utils/verseRef.ts` |
 | Log an error | `utils/logger.ts` |
+| Safely parse a JSON column | `safeParse()` from `utils/logger.ts` |
 | Change the gold color | `theme/colors.ts` → `base.gold` (one place) |
+
+---
+
+## Known Debt & Future Work
+
+Items deferred from completed audits. Not bugs — polish for when bandwidth allows.
+
+**Accessibility:**
+- Dynamic type integration — font scaling is manual via Settings slider, not linked to system accessibility font size. To fix: read the system font scale from `PixelRatio.getFontScale()` and apply it as a multiplier to `fontSize` values.
+- Screen reader navigation order — not explicitly defined for complex screens like `ChapterScreen` with multiple expandable panels. To fix: add `accessibilityOrder` or manual `accessible` grouping so VoiceOver/TalkBack reads in a logical sequence.
+
+**Styling (Phase 4 — ongoing):**
+- 297 inline `style={{ }}` objects remain across components. Migrate to `StyleSheet.create()` opportunistically when editing files.
+- 13 `useNavigation<any>` remain in nav-only screens (no route params to mistype — low risk).
+- 16 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.

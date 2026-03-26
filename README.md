@@ -126,7 +126,7 @@ Generator scripts are ephemeral — created in `/tmp/`, never committed. See `_t
 
 ## Database
 
-Two separate SQLite databases (see `_tools/ARCHITECTURE.md` for conventions):
+Two separate SQLite databases (see `_tools/DEV_GUIDE.md` for conventions):
 
 - **`scripture.db`** (~35 MB) — read-only content, replaced on updates
 - **`user.db`** — user data (notes, bookmarks, highlights, preferences), never replaced, migrated in-place
