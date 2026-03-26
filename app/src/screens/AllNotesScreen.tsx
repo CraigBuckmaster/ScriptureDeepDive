@@ -15,46 +15,23 @@ import { useNavigation } from '@react-navigation/native';
 import { Search, X } from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { getAllNotes, searchNotes, updateNote, deleteNote } from '../db/user';
+import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { UserNote } from '../types';
 
-/** Parse a canonical ref like "genesis:3:16" into parts. */
-function parseRef(ref: string): { bookId: string; ch: number; v?: number } | null {
-  const parts = ref.split(':');
-  if (parts.length >= 2) {
-    return {
-      bookId: parts[0],
-      ch: parseInt(parts[1], 10),
-      v: parts[2] ? parseInt(parts[2], 10) : undefined,
-    };
-  }
-  return null;
-}
-
-/** Format a stored ref for display: "genesis:3:16" → "Genesis 3:16" */
-function formatRef(ref: string): string {
-  const parts = ref.split(':');
-  if (parts.length >= 2) {
-    const book = parts[0].replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-    if (parts[2]) return `${book} ${parts[1]}:${parts[2]}`;
-    return `${book} ${parts[1]}`;
-  }
-  return ref;
-}
-
-/** Group notes by book:chapter key. */
+/** Group notes by book + chapter. */
 function groupNotes(notes: UserNote[]): { key: string; label: string; notes: UserNote[] }[] {
   const map = new Map<string, UserNote[]>();
   for (const n of notes) {
-    const parts = n.verse_ref.split(':');
-    const groupKey = parts.length >= 2 ? `${parts[0]}:${parts[1]}` : n.verse_ref;
+    const parsed = parseVerseRef(n.verse_ref);
+    const groupKey = parsed ? `${parsed.bookId} ${parsed.ch}` : n.verse_ref;
     const existing = map.get(groupKey) ?? [];
     existing.push(n);
     map.set(groupKey, existing);
   }
   const groups: { key: string; label: string; notes: UserNote[] }[] = [];
-  for (const [key, groupNotes] of map) {
-    groups.push({ key, label: formatRef(key), notes: groupNotes });
+  for (const [key, groupedNotes] of map) {
+    groups.push({ key, label: displayRef(key), notes: groupedNotes });
   }
   return groups;
 }
@@ -90,7 +67,7 @@ export default function AllNotesScreen() {
   };
 
   const handleRefPress = (ref: string) => {
-    const parsed = parseRef(ref);
+    const parsed = parseVerseRef(ref);
     if (parsed) {
       navigation.navigate('Chapter', {
         bookId: parsed.bookId,
@@ -149,7 +126,7 @@ export default function AllNotesScreen() {
               <View key={note.id} style={styles.noteCard}>
                 {/* Verse ref (tappable) */}
                 <TouchableOpacity onPress={() => handleRefPress(note.verse_ref)}>
-                  <Text style={styles.noteRef}>{formatRef(note.verse_ref)}</Text>
+                  <Text style={styles.noteRef}>{displayRef(note.verse_ref)}</Text>
                 </TouchableOpacity>
 
                 {/* Note text — tap to edit */}

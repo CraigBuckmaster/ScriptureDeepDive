@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { getHighlightsForChapter, setHighlight, removeHighlight } from '../db/user';
+import { formatVerseRef, extractVerseNum } from '../utils/verseRef';
 
 export function useHighlightsForChapter(bookId: string | null, ch: number) {
   const [highlights, setHighlights] = useState<Map<number, string>>(new Map());
@@ -9,8 +10,8 @@ export function useHighlightsForChapter(bookId: string | null, ch: number) {
     getHighlightsForChapter(bookId, ch).then((hl) => {
       const map = new Map<number, string>();
       for (const h of hl) {
-        const m = h.verse_ref.match(/:(\d+)/);
-        if (m) map.set(parseInt(m[1], 10), h.color);
+        const v = extractVerseNum(h.verse_ref);
+        if (v) map.set(v, h.color);
       }
       setHighlights(map);
     });
@@ -20,7 +21,7 @@ export function useHighlightsForChapter(bookId: string | null, ch: number) {
 
   const toggleHighlight = useCallback(async (verseNum: number, color: string | null) => {
     if (!bookId) return;
-    const ref = `${bookId} ${ch}:${verseNum}`;
+    const ref = formatVerseRef(bookId, ch, verseNum);
     if (color) await setHighlight(ref, color);
     else await removeHighlight(ref);
     reload();
