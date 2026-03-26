@@ -41,8 +41,8 @@ export function ScholarlyBlock({
       }}>
         <View style={{ flex: 1, height: 1, backgroundColor: base.border }} />
         <Text style={{
-          color: base.textMuted, fontFamily: fontFamily.display,
-          fontSize: 9, letterSpacing: 1.2, marginHorizontal: spacing.sm,
+          color: base.textMuted, fontFamily: fontFamily.uiMedium,
+          fontSize: 10, letterSpacing: 1.2, marginHorizontal: spacing.sm,
         }}>
           CHAPTER ANALYSIS
         </Text>

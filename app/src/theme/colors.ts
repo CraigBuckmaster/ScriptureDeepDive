@@ -15,12 +15,12 @@
 
 export const base = {
   bg: '#0c0a07',
-  bgElevated: '#1e1a12',
+  bgElevated: '#252015',
   bgSurface: '#1f1b14',
   bg3: '#1a1508',
   text: '#f0e8d8',
   textDim: '#b8a888',
-  textMuted: '#8a7a58',
+  textMuted: '#908878',
   gold: '#bfa050',
   goldDim: '#8a6e1a',
   goldBright: '#d4b868',

@@ -15,7 +15,7 @@ export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }:
       backgroundColor: base.bgElevated, borderWidth: 1, borderColor: base.gold + '40',
       borderRadius: radii.md, padding: spacing.md, marginHorizontal: spacing.md, marginBottom: spacing.md,
     }}>
-      <Text style={{ color: base.textMuted, fontFamily: fontFamily.display, fontSize: 9, letterSpacing: 0.5 }}>
+      <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 9, letterSpacing: 0.5 }}>
         {planName.toUpperCase()} · DAY {dayNum}
       </Text>
       <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 13, marginTop: 4 }}>

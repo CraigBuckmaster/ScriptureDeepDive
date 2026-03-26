@@ -236,8 +236,8 @@ const styles = StyleSheet.create({
   },
   sectionLabel: {
     color: base.textMuted,
-    fontFamily: fontFamily.display,
-    fontSize: 10,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
     letterSpacing: 0.5,
     marginBottom: spacing.sm,
   },

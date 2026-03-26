@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     borderRadius: DOT_SIZE / 2,
   },
   label: {
-    fontFamily: fontFamily.display,
+    fontFamily: fontFamily.uiMedium,
     fontSize: 10,
     letterSpacing: 0.3,
   },

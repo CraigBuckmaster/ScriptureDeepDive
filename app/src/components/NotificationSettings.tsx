@@ -35,7 +35,7 @@ export function NotificationSettings() {
 
   return (
     <View style={{ marginTop: spacing.xl }}>
-      <Text style={{ color: base.textMuted, fontFamily: fontFamily.display, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
+      <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm }}>
         NOTIFICATIONS
       </Text>
 
