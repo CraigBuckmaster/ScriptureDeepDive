@@ -146,7 +146,7 @@ export default function HomeScreen() {
             Companion Study presents the Bible alongside scholarly commentary from evangelical,
             reformed, Jewish, critical, and patristic traditions.
           </Text>
-          <Text style={styles.aboutVersion}>Version 1.0.0</Text>
+          <Text style={styles.aboutVersion}>Version {require('../../app.json').expo.version}</Text>
         </View>
 
       </ScrollView>

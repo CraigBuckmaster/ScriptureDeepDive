@@ -13,6 +13,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { ArrowRight } from 'lucide-react-native';
 import { base, spacing, fontFamily, eras, eraNames } from '../theme';
+import { logger } from '../utils/logger';
 
 export default function PersonDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'PersonDetail'>>();
@@ -31,7 +32,7 @@ export default function PersonDetailScreen() {
   const eraColor = person.era ? (eras[person.era] ?? base.gold) : base.gold;
   const eraLabel = person.era ? (eraNames[person.era] ?? person.era) : '';
   let refs: string[] = [];
-  try { refs = person.refs_json ? JSON.parse(person.refs_json) : []; } catch {}
+  try { refs = person.refs_json ? JSON.parse(person.refs_json) : []; } catch (err) { logger.warn('PersonDetailScreen', 'Operation failed', err); }
 
   const PersonLink = ({ id, name }: { id: string; name: string }) => (
     <TouchableOpacity onPress={() => navigation.push('PersonDetail', { personId: id })} style={styles.personLink}>

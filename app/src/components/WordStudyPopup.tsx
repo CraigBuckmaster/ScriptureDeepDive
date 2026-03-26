@@ -11,6 +11,7 @@ import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'r
 import { getAllWordStudies } from '../db/content';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
+import { logger } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -65,7 +66,7 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
                     GLOSSES
                   </Text>
                   <Text style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 15, marginTop: 4 }}>
-                    {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch { return study.glosses_json; } })()}
+                    {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch (err) { return study.glosses_json; } })()}
                   </Text>
                 </View>
               )}

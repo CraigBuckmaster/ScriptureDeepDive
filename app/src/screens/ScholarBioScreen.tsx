@@ -11,6 +11,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import type { Scholar } from '../types';
+import { logger } from '../utils/logger';
 
 export default function ScholarBioScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBio'>>();
@@ -24,7 +25,7 @@ export default function ScholarBioScreen() {
     if (scholarId) {
       getScholar(scholarId).then((s) => {
         setScholar(s);
-        if (s?.bio_json) try { setBio(JSON.parse(s.bio_json)); } catch {}
+        if (s?.bio_json) try { setBio(JSON.parse(s.bio_json)); } catch (err) { logger.warn('ScholarBioScreen', 'Operation failed', err); }
       });
     }
     getAllScholars().then(setAllScholars);
@@ -48,7 +49,7 @@ export default function ScholarBioScreen() {
   try {
     const parsed = JSON.parse(scholar.scope_json);
     if (Array.isArray(parsed)) scope = parsed;
-  } catch {}
+  } catch (err) { logger.warn('ScholarBioScreen', 'Operation failed', err); }
 
   return (
     <SafeAreaView style={styles.container}>

@@ -9,6 +9,7 @@ import { X } from 'lucide-react-native';
 import { BadgeChip } from '../BadgeChip';
 import { base, spacing, radii, eras, eraNames, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import type { MapStory, Place } from '../../types';
+import { logger } from '../../utils/logger';
 
 interface Props {
   story: MapStory;
@@ -27,7 +28,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
     try {
       const ids: string[] = JSON.parse(story.places_json ?? '[]');
       return ids.map((id) => places.find((p) => p.id === id)).filter(Boolean) as Place[];
-    } catch { return []; }
+    } catch (err) { return []; }
   }, [story.places_json, places]);
 
   return (

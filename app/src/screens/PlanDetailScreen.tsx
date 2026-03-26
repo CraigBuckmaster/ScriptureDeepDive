@@ -8,6 +8,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
+import { logger } from '../utils/logger';
 
 export default function PlanDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'More', 'PlanDetail'>>();
@@ -23,7 +24,7 @@ export default function PlanDetailScreen() {
     const p = plans.find((x) => x.id === planId);
     setPlan(p ?? null);
     if (p) {
-      try { setDays(JSON.parse(p.chapters_json)); } catch { setDays([]); }
+      try { setDays(JSON.parse(p.chapters_json)); } catch (err) { setDays([]); }
     }
     const activeId = await getActivePlanId();
     setActivePlanId(activeId);

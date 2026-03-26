@@ -12,6 +12,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
+import { logger } from '../utils/logger';
 
 export default function WordStudyDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
@@ -33,9 +34,9 @@ export default function WordStudyDetailScreen() {
 
   const accentColor = word.language === 'hebrew' ? '#e890b8' : '#70b8e8';
   let glosses: string[] = [];
-  try { glosses = JSON.parse(word.glosses_json); } catch {}
+  try { glosses = JSON.parse(word.glosses_json); } catch (err) { logger.warn('WordStudyDetailScreen', 'Operation failed', err); }
   let occurrences: string[] = [];
-  try { occurrences = word.occurrences_json ? JSON.parse(word.occurrences_json) : []; } catch {}
+  try { occurrences = word.occurrences_json ? JSON.parse(word.occurrences_json) : []; } catch (err) { logger.warn('WordStudyDetailScreen', 'Operation failed', err); }
 
   return (
     <SafeAreaView style={styles.container}>
