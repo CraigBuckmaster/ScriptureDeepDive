@@ -127,33 +127,53 @@ export default function HomeScreen() {
         </TouchableOpacity>
 
         {/* ── 4. Contextual Suggestions ─────────────────── */}
-        {mostRecent && (
-          <View style={styles.suggestionsSection}>
-            <Text style={styles.sectionLabel}>FROM YOUR STUDY</Text>
-            <View style={styles.suggestionsRow}>
-              <TouchableOpacity
-                style={styles.suggestionCard}
-                activeOpacity={0.7}
-                onPress={() => navigation.navigate('ExploreTab', { screen: 'GenealogyTree' })}
-              >
-                <Text style={styles.suggestionTitle}>People</Text>
-                <Text style={styles.suggestionSubtitle}>
-                  {stats ? `${stats.peopleCount} biblical figures` : 'Biblical figures'}
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.suggestionCard}
-                activeOpacity={0.7}
-                onPress={() => navigation.navigate('ExploreTab', { screen: 'Timeline' })}
-              >
-                <Text style={styles.suggestionTitle}>Timeline</Text>
-                <Text style={styles.suggestionSubtitle}>
-                  {stats ? `${stats.timelineCount} events` : 'Events & figures'}
-                </Text>
-              </TouchableOpacity>
-            </View>
+        <View style={styles.suggestionsSection}>
+          <Text style={styles.sectionLabel}>
+            {mostRecent ? 'FROM YOUR STUDY' : 'EXPLORE'}
+          </Text>
+          <View style={styles.suggestionsRow}>
+            <TouchableOpacity
+              style={styles.suggestionCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('ExploreTab', { screen: 'GenealogyTree' })}
+            >
+              <Text style={styles.suggestionTitle}>People</Text>
+              <Text style={styles.suggestionSubtitle}>
+                {stats ? `${stats.peopleCount} biblical figures` : 'Biblical figures'}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.suggestionCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('ExploreTab', { screen: 'Timeline' })}
+            >
+              <Text style={styles.suggestionTitle}>Timeline</Text>
+              <Text style={styles.suggestionSubtitle}>
+                {stats ? `${stats.timelineCount} events` : 'Events & figures'}
+              </Text>
+            </TouchableOpacity>
           </View>
-        )}
+          <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
+            <TouchableOpacity
+              style={styles.suggestionCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('ExploreTab', { screen: 'ScholarBrowse' })}
+            >
+              <Text style={styles.suggestionTitle}>Scholars</Text>
+              <Text style={styles.suggestionSubtitle}>
+                {stats ? `${stats.scholarCount} commentators` : 'Commentators'}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.suggestionCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('ExploreTab', { screen: 'WordStudyBrowse' })}
+            >
+              <Text style={styles.suggestionTitle}>Word Studies</Text>
+              <Text style={styles.suggestionSubtitle}>Hebrew & Greek</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
 
         {/* ── 5. Overall Progress ──────────────────────── */}
         {chaptersRead > 0 && pct && (
