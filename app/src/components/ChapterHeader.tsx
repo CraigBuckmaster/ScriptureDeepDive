@@ -1,10 +1,13 @@
 /**
- * ChapterHeader — Title, subtitle, action bar, deep-links, thread badges.
+ * ChapterHeader — Title, subtitle, and inline badge pills.
+ *
+ * Compact layout: title on its own line, subtitle + tappable pills
+ * (timeline, map, notes) flow together on the next line.
+ * "About This Book" moved to ⓘ icon in ChapterNavBar.
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { StickyNote, Clock, MapPin, BookOpen } from 'lucide-react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
@@ -13,80 +16,49 @@ interface Props {
   chapter: Chapter;
   noteCount: number;
   onNotesPress: () => void;
-  onIntroPress: () => void;
   onTimelinePress?: () => void;
   onMapPress?: () => void;
 }
 
 export function ChapterHeader({
-  chapter, noteCount, onNotesPress, onIntroPress,
+  chapter, noteCount, onNotesPress,
   onTimelinePress, onMapPress,
 }: Props) {
+  const hasContextPills = !!(chapter.timeline_link_text || chapter.map_story_link_text || noteCount > 0);
+
   return (
-    <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.lg, paddingBottom: spacing.md }}>
+    <View style={styles.container}>
       {/* Title */}
-      <Text style={{
-        color: base.text, fontFamily: fontFamily.displaySemiBold,
-        fontSize: 22, lineHeight: 30, letterSpacing: 0.5,
-      }} accessibilityRole="header">
+      <Text style={styles.title} accessibilityRole="header">
         {chapter.title || `Chapter ${chapter.chapter_num}`}
       </Text>
 
-      {/* Subtitle */}
-      {chapter.subtitle ? (
-        <Text style={{
-          color: base.textDim, fontFamily: fontFamily.bodyItalic,
-          fontSize: 15, marginTop: 4,
-        }}>
-          {chapter.subtitle}
-        </Text>
-      ) : null}
+      {/* Subtitle + inline pills */}
+      {(chapter.subtitle || hasContextPills) && (
+        <View style={styles.subtitleRow}>
+          {chapter.subtitle ? (
+            <Text style={styles.subtitle}>{chapter.subtitle}</Text>
+          ) : null}
 
-      {/* Action bar */}
-      <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.md, flexWrap: 'wrap' }}>
-        <TouchableOpacity
-          onPress={onNotesPress}
-          accessibilityLabel={noteCount > 0 ? `${noteCount} notes` : 'Notes'}
-          accessibilityRole="button"
-        >
-          <BadgeChip
-            label={noteCount > 0 ? `${noteCount} Notes` : 'Notes'}
-            icon={<StickyNote size={12} color={noteCount > 0 ? base.gold : base.textMuted} />}
-            color={noteCount > 0 ? base.gold : base.textMuted}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onIntroPress}
-          accessibilityLabel="About this book"
-          accessibilityRole="button"
-        >
-          <BadgeChip
-            label="About This Book"
-            icon={<BookOpen size={12} color={base.textMuted} />}
-            color={base.textMuted}
-          />
-        </TouchableOpacity>
-      </View>
-
-      {/* Deep-links */}
-      {(chapter.timeline_link_event || chapter.map_story_link_id) && (
-        <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap' }}>
           {chapter.timeline_link_text && onTimelinePress && (
             <TouchableOpacity onPress={onTimelinePress}>
-              <BadgeChip
-                label={chapter.timeline_link_text}
-                icon={<Clock size={12} color="#70b8e8" />}
-                color="#70b8e8"
-              />
+              <BadgeChip label={chapter.timeline_link_text} color="#70b8e8" />
             </TouchableOpacity>
           )}
+
           {chapter.map_story_link_text && onMapPress && (
             <TouchableOpacity onPress={onMapPress}>
-              <BadgeChip
-                label={chapter.map_story_link_text}
-                icon={<MapPin size={12} color="#30a848" />}
-                color="#30a848"
-              />
+              <BadgeChip label={chapter.map_story_link_text} color="#30a848" />
+            </TouchableOpacity>
+          )}
+
+          {noteCount > 0 && (
+            <TouchableOpacity
+              onPress={onNotesPress}
+              accessibilityLabel={`${noteCount} notes`}
+              accessibilityRole="button"
+            >
+              <BadgeChip label={`${noteCount} Notes`} color={base.gold} />
             </TouchableOpacity>
           )}
         </View>
@@ -94,3 +66,31 @@ export function ChapterHeader({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.md,
+  },
+  title: {
+    color: base.text,
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 22,
+    lineHeight: 30,
+    letterSpacing: 0.5,
+  },
+  subtitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs + 2,
+    marginTop: 6,
+    flexWrap: 'wrap',
+  },
+  subtitle: {
+    color: base.textDim,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 14,
+    marginRight: 2,
+  },
+});

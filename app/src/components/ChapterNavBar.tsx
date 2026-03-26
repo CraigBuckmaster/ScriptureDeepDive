@@ -2,19 +2,16 @@
  * ChapterNavBar — Sticky top bar for the chapter reading screen.
  *
  * Layout:
- *   BookName ▾     [NIV]     ‹ Ch 43 ›
- *   (picker)       (trans)   (prev/next)
+ *   BookName ▾           ‹ 43 ›           ⓘ
+ *   (Qnav picker)     (prev/next)    (book intro)
  *
- * Left:   Book name + down indicator. Tap = QnavOverlay (book/chapter picker).
- * Center: TranslationDropdown (CompactDropdown wrapper).
- * Right:  Prev/Next arrows flanking the chapter number.
+ * Translation toggle has moved to QnavOverlay.
  */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
-import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react-native';
-import { TranslationDropdown } from './TranslationDropdown';
-import { useSettingsStore } from '../stores';
+import { ArrowLeft, ArrowRight, ChevronDown, Info } from 'lucide-react-native';
+import { lightImpact } from '../utils/haptics';
 import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
@@ -25,49 +22,37 @@ interface Props {
   onPrev: () => void;
   onNext: () => void;
   onQnav: () => void;
+  onIntroPress?: () => void;
 }
 
 export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
-  onPrev, onNext, onQnav,
+  onPrev, onNext, onQnav, onIntroPress,
 }: Props) {
-  const translation = useSettingsStore((s) => s.translation);
-  const setTranslation = useSettingsStore((s) => s.setTranslation);
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.bar}>
-        {/* Left: Book name picker */}
+        {/* Left: Book name → Qnav */}
         <TouchableOpacity
           onPress={onQnav}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-          accessibilityLabel={`${bookName} chapter ${chapterNum}. Tap to change book or chapter.`}
+          accessibilityLabel={`${bookName}. Tap to change book or chapter.`}
           accessibilityRole="button"
-          accessibilityHint="Opens chapter navigator"
           style={styles.pickerButton}
         >
           <Text style={styles.bookName} numberOfLines={1}>{bookName}</Text>
           <ChevronDown size={14} color={base.navText} />
         </TouchableOpacity>
 
-        {/* Center: Translation dropdown */}
-        <TranslationDropdown
-          active={translation}
-          onSelect={(t) => setTranslation(t as any)}
-        />
-
-        {/* Right: Prev / Ch N / Next */}
+        {/* Center: ‹ 43 › */}
         <View style={styles.chapterNav}>
           <TouchableOpacity
-            onPress={onPrev}
+            onPress={() => { if (hasPrev) { lightImpact(); onPrev(); } }}
             disabled={!hasPrev}
             accessibilityLabel="Previous chapter"
             style={styles.arrowButton}
           >
-            <ArrowLeft
-              size={20}
-              color={hasPrev ? base.gold : base.textMuted + '40'}
-            />
+            <ArrowLeft size={20} color={hasPrev ? base.gold : base.textMuted + '40'} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -76,21 +61,32 @@ export function ChapterNavBar({
             accessibilityLabel={`Chapter ${chapterNum}. Tap to jump to another chapter.`}
             accessibilityRole="button"
           >
-            <Text style={styles.chapterNum}>Ch {chapterNum}</Text>
+            <Text style={styles.chapterNum}>{chapterNum}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={onNext}
+            onPress={() => { if (hasNext) { lightImpact(); onNext(); } }}
             disabled={!hasNext}
             accessibilityLabel="Next chapter"
             style={styles.arrowButton}
           >
-            <ArrowRight
-              size={20}
-              color={hasNext ? base.gold : base.textMuted + '40'}
-            />
+            <ArrowRight size={20} color={hasNext ? base.gold : base.textMuted + '40'} />
           </TouchableOpacity>
         </View>
+
+        {/* Right: ⓘ Book info */}
+        {onIntroPress ? (
+          <TouchableOpacity
+            onPress={onIntroPress}
+            accessibilityLabel="About this book"
+            accessibilityRole="button"
+            style={styles.infoButton}
+          >
+            <Info size={18} color={base.textMuted} />
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.infoButton} />
+        )}
       </View>
     </SafeAreaView>
   );
@@ -126,8 +122,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 2,
-    flex: 1,
-    justifyContent: 'flex-end',
   },
   arrowButton: {
     minWidth: MIN_TOUCH_TARGET,
@@ -136,10 +130,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   chapterNum: {
-    color: base.textDim,
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-    minWidth: 40,
+    color: base.text,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 16,
+    minWidth: 32,
     textAlign: 'center',
+  },
+  infoButton: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    minHeight: MIN_TOUCH_TARGET,
   },
 });

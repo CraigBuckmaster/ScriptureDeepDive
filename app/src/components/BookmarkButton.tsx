@@ -5,6 +5,7 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 import { base, MIN_TOUCH_TARGET } from '../theme';
+import { mediumImpact } from '../utils/haptics';
 
 interface Props {
   isBookmarked: boolean;
@@ -15,7 +16,7 @@ interface Props {
 export function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
   return (
     <TouchableOpacity
-      onPress={onToggle}
+      onPress={() => { mediumImpact(); onToggle(); }}
       hitSlop={{ top: 8, bottom: 8, left: 4, right: 4 }}
       accessibilityRole="button"
       accessibilityLabel={`${isBookmarked ? 'Remove' : 'Add'} bookmark for verse ${verseNum}`}

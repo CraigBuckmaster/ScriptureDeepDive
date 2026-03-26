@@ -71,7 +71,7 @@ export function VerseBlock({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
   },
   verseRow: {
     flexDirection: 'row',

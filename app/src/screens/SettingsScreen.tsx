@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { getContentStats, type ContentStats } from '../db/content';
-import { getDb } from '../db/database';
+import { getUserDb } from '../db/userDatabase';
 import { base, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
@@ -45,7 +45,7 @@ export default function SettingsScreen() {
           style: 'destructive',
           onPress: async () => {
             try {
-              await getDb().runAsync('DELETE FROM reading_progress');
+              await getUserDb().runAsync('DELETE FROM reading_progress');
               Alert.alert('Done', 'Reading history cleared.');
             } catch (err) {
               Alert.alert('Error', 'Failed to clear history. Please try again.');
