@@ -11,23 +11,22 @@
 
 import { getUserDb } from './userDatabase';
 import { getDb } from './database';
+import { chapterPrefix } from '../utils/verseRef';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter } from '../types';
 
 // ── Notes ───────────────────────────────────────────────────────────
 
 export async function getNotesForChapter(bookId: string, ch: number): Promise<UserNote[]> {
-  const prefix = `${bookId}:${ch}`;
   return getUserDb().getAllAsync<UserNote>(
     "SELECT * FROM user_notes WHERE verse_ref LIKE ? ORDER BY verse_ref",
-    [`${prefix}%`]
+    [`${chapterPrefix(bookId, ch)}%`]
   );
 }
 
 export async function getNoteCount(bookId: string, ch: number): Promise<number> {
-  const prefix = `${bookId}:${ch}`;
   const row = await getUserDb().getFirstAsync<{ count: number }>(
     "SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ?",
-    [`${prefix}%`]
+    [`${chapterPrefix(bookId, ch)}%`]
   );
   return row?.count ?? 0;
 }
@@ -185,10 +184,9 @@ export async function removeHighlight(verseRef: string): Promise<void> {
 }
 
 export async function getHighlightsForChapter(bookId: string, ch: number): Promise<VerseHighlight[]> {
-  const prefix = `${bookId} ${ch}:`;
   return getUserDb().getAllAsync<VerseHighlight>(
     "SELECT * FROM verse_highlights WHERE verse_ref LIKE ?",
-    [`${prefix}%`]
+    [`${chapterPrefix(bookId, ch)}%`]
   );
 }
 

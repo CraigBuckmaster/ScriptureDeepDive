@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { X, Plus } from 'lucide-react-native';
 import { getNotesForChapter, saveNote, updateNote, deleteNote } from '../db/user';
+import { formatVerseRef, displayRef } from '../utils/verseRef';
 import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import type { UserNote } from '../types';
 
@@ -36,16 +37,20 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
 
   const displayName = bookName ?? bookId;
 
-  /** Build a verse_ref string in the canonical format: bookId:ch or bookId:ch:v */
+  /** Build a verse_ref string in canonical format: "genesis 1:3" or "genesis 1" */
   const makeRef = (verseNum?: number | null) =>
-    verseNum ? `${bookId}:${chapterNum}:${verseNum}` : `${bookId}:${chapterNum}`;
+    formatVerseRef(bookId, chapterNum, verseNum ?? undefined);
 
-  /** Display-friendly version of a stored ref */
-  const formatRef = (ref: string) => {
-    const parts = ref.split(':');
-    if (parts.length === 3) return `${displayName} ${parts[1]}:${parts[2]}`;
-    if (parts.length === 2) return `${displayName} ${parts[1]}`;
-    return ref;
+  /** Display-friendly version using the book's display name */
+  const formatNoteRef = (ref: string) => {
+    // Use displayRef for formatting, but substitute the display name if available
+    const displayed = displayRef(ref);
+    if (displayName !== bookId) {
+      // Replace the title-cased bookId with the actual display name
+      const titleBookId = bookId.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      return displayed.replace(titleBookId, displayName);
+    }
+    return displayed;
   };
 
   const reload = useCallback(() => {
@@ -140,7 +145,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
         {/* Add note — just a text area, auto-saves on blur */}
         {showAdd && (
           <View style={styles.addForm}>
-            <Text style={styles.addLabel}>{formatRef(addRef)}</Text>
+            <Text style={styles.addLabel}>{formatNoteRef(addRef)}</Text>
             <TextInput
               ref={newTextRef}
               value={newText}
@@ -169,7 +174,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
           }
           renderItem={({ item: note }) => (
             <View style={styles.noteCard}>
-              <Text style={styles.noteRef}>{formatRef(note.verse_ref)}</Text>
+              <Text style={styles.noteRef}>{formatNoteRef(note.verse_ref)}</Text>
               {editingId === note.id ? (
                 <TextInput
                   value={editText} onChangeText={setEditText} multiline autoFocus

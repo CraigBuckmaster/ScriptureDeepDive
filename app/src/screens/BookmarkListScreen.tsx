@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getBookmarks, removeBookmark } from '../db/user';
+import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
@@ -41,11 +42,11 @@ export default function BookmarkListScreen() {
           </View>
         }
         renderItem={({ item }) => {
-          const match = item.verse_ref.match(/^(\S+)\s+(\d+):(\d+)$/);
+          const parsed = parseVerseRef(item.verse_ref);
           return (
             <TouchableOpacity
-              onPress={() => match && navigation.push('Chapter', {
-                bookId: match[1], chapterNum: parseInt(match[2], 10),
+              onPress={() => parsed && navigation.push('Chapter', {
+                bookId: parsed.bookId, chapterNum: parsed.ch,
               })}
               onLongPress={() => handleDelete(item.id)}
               accessibilityLabel={`${item.verse_ref}${item.label ? ', ' + item.label : ''}`}
@@ -53,7 +54,7 @@ export default function BookmarkListScreen() {
               accessibilityRole="button"
               style={styles.row}
             >
-              <Text style={styles.verseRef}>{item.verse_ref}</Text>
+              <Text style={styles.verseRef}>{displayRef(item.verse_ref)}</Text>
               {item.label && <Text style={styles.label}>{item.label}</Text>}
               <Text style={styles.date}>{item.created_at?.slice(0, 10)}</Text>
             </TouchableOpacity>

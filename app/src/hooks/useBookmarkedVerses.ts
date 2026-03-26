@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { getBookmarks, addBookmark, removeBookmark } from '../db/user';
+import { chapterPrefix, formatVerseRef, extractVerseNum } from '../utils/verseRef';
 
 export function useBookmarkedVerses(bookId: string | null, ch: number) {
   const [bookmarked, setBookmarked] = useState<Set<number>>(new Set());
@@ -8,14 +9,13 @@ export function useBookmarkedVerses(bookId: string | null, ch: number) {
   const reload = useCallback(() => {
     if (!bookId) return;
     getBookmarks().then((all) => {
-      const prefix = `${bookId} ${ch}:`;
+      const prefix = chapterPrefix(bookId, ch);
       const nums = new Set<number>();
       const ids = new Map<number, number>();
       for (const b of all) {
         if (b.verse_ref.startsWith(prefix)) {
-          const m = b.verse_ref.match(/:(\d+)/);
-          if (m) {
-            const num = parseInt(m[1], 10);
+          const num = extractVerseNum(b.verse_ref);
+          if (num) {
             nums.add(num);
             ids.set(num, b.id);
           }
@@ -30,7 +30,7 @@ export function useBookmarkedVerses(bookId: string | null, ch: number) {
 
   const toggleBookmark = useCallback(async (verseNum: number) => {
     if (!bookId) return;
-    const ref = `${bookId} ${ch}:${verseNum}`;
+    const ref = formatVerseRef(bookId, ch, verseNum);
     if (bookmarked.has(verseNum)) {
       const id = bookmarkIds.get(verseNum);
       if (id) await removeBookmark(id);
