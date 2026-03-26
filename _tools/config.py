@@ -1209,3 +1209,16 @@ BOOK_META['micah'] = {
 
 COMMENTATOR_SCOPE['stuart'].append('micah')
 COMMENTATOR_SCOPE['waltke'].append('micah')
+
+# ── Wave 4: Habakkuk ───────────────────────────────────────────────
+
+BOOK_META['habakkuk'] = {
+    'is_nt': False,
+    'auth': 'Attributed to the prophet Habakkuk (Hab 1:1; 3:1). Nothing is known about him outside this book. The name may derive from the Akkadian hambakuku, a garden plant, or from the Hebrew root habaq ("to embrace"). The musical notations in chapter 3 (superscription "on shigionoth," closing "for the director of music, on my stringed instruments") suggest a Levitical connection. The book is dated to the late seventh century BC, between the fall of Assyria (612 BC) and the Babylonian invasion of Judah (605-586 BC), most likely during the reign of Jehoiakim (609-598 BC).',
+    'vhl_places': ['Babylon', 'Jerusalem', 'Judah', 'Lebanon', 'Teman', 'Mount Paran', 'Cushan', 'Midian'],
+    'vhl_people': ['Habakkuk'],
+    'vhl_key': ['violence', 'justice', 'faith', 'righteous', 'woe', 'vision', 'wait', 'glory', 'pride', 'silence', 'rejoice', 'strength'],
+    'vhl_time': ['in your days', 'at the appointed time', 'yet I will wait', 'though'],
+}
+
+COMMENTATOR_SCOPE['robertson'].append('habakkuk')
