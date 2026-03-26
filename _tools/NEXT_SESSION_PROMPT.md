@@ -1,65 +1,82 @@
-# Continue Content Remediation — Batch 2 (panels)
+# Continue Content Remediation — Batch 2I onwards
 
 Clone the repo, then read `_tools/CONTENT_REMEDIATION_PLAN.md` for full context.
 
 ## What's Done
 
-- **Batch 0:** Word Study detail screen crash — fixed (occurrences_json contains objects `{ref, gloss, ctx}`, not strings)
-- **Batch 1:** 8 scholar bios written (Brueggemann, Lundbom, Webb, Block, Howard, Tsumura, Hess, Bergen) in `content/meta/scholar-bios.json` and `scholar-data.json`
-- **Batch 2A:** 168 Psalms ghost panels populated (Ps 24-30, 35-40 — alter, calvin, net, kidner, vangemeren, goldingay, mac)
-- **Batch 2B:** 85 Matthew Greek/Hebrew panels populated (Matt 2-28 — every section now has 2-3 Greek terms with original, transliteration, gloss, paragraph)
-- **Batch 2G:** Exodus hist panels — done in a prior session (1 stragler may remain, verify)
-- **SDK 54 upgrade:** `package.json` pinned to `^54.0.0`, `react-native-worklets` added as permanent dep
-- **Validators:** Counts updated to current (44 live books, 51 scholars, 252 people, 1054 chapters, 378 timelines), live-only chapter counting fix, single-section allowlist for `jeremiah_45`, `jeremiah_47`, `malachi_4`
+- **Batch 0:** Word Study detail screen crash — fixed
+- **Batch 1:** 8 scholar bios written (Brueggemann, Lundbom, Webb, Block, Howard, Tsumura, Hess, Bergen)
+- **Batch 2A:** 168 Psalms ghost panels populated (Ps 24-30, 35-40)
+- **Batch 2B:** 85 Matthew Greek/Hebrew panels populated (Matt 2-28)
+- **Batch 2C:** 2 Matthew cross-ref panels populated (Matt 10 s1, s3)
+- **Batch 2D:** 43 Proverbs Hebrew panels populated (Prov 1,2,5-7,10-17,21-31)
+- **Batch 2E:** 15 Proverbs cross-ref panels populated (Prov 1,2,3,4,5,6,7,8,9,10,31)
+- **Batch 2F:** 52 2 Chronicles cross-ref panels populated (2 Chr 11-36)
+- **Batch 2G:** Exodus hist panels — done
+- **Batch 2H:** All remaining cross-ref panels populated — Exodus (15), Genesis (12), Psalms (12), Ruth (4), plus Exodus 26 s3 heb straggler
+- **SDK 54 upgrade:** complete
+- **Validators:** Counts updated to current (45 live books, 21 pending, 1062 chapters, 253 people, 216 satellite, 51 scholars, 73 places)
+
+### Panel Status: ZERO empty `heb` or `cross` section panels remain in the entire repo.
 
 ## What's Next — Continue in This Order
 
-### Batch 2D — Proverbs Hebrew Panels (43 empty, 24 chapters)
-Chapters: 1, 2, 5, 6, 7, 10-17, 21-31. Panel type: `heb` (empty `[]`).
-Format: array of `{word, transliteration, gloss, paragraph}` — same as Matthew but Hebrew.
-Proverbs is rich in parallelism types, wordplay, and vocabulary. Each section needs 2-3 Hebrew terms.
-**MERGE operation:** read existing JSON, fill only empty `heb` panels, write back.
-
-### Batch 2F — 2 Chronicles Cross-Ref Panels (52 empty, 26 chapters)
-Chapters: 11-36. Panel type: `cross` (empty `[]`).
-Format: array of `{ref, note}` — e.g. `{"ref": "1 Kgs 12:1-24", "note": "Parallel account of Rehoboam's folly..."}`.
-Chronicles parallels Kings heavily — every section needs 2-3 cross-refs (parallel Kings passage, prophetic book refs, NT citations where applicable).
-
-### Batch 2C — Matthew Cross-Ref (2 empty)
-### Batch 2E — Proverbs Cross-Ref (15 empty)  
-### Batch 2H — Remaining small cross-ref batches:
-- Exodus cross-ref: 15 empty
-- Genesis cross-ref: 12 empty
-- Psalms cross-ref: 12 empty
-
 ### Batch 2I — TX (Textual Criticism) Chapter Panels (85 empty)
-Books: Genesis (23ch), Exodus (39ch), Ruth (4ch), Proverbs (19ch).
-Panel type: `tx` in `chapter_panels`. Format: string of textual criticism content.
 
-## After Batch 2, Continue With:
-- **Batch 3:** People enrichment (bios, dates, refs, timelines) — update `config.py` → `export_config.py` → `build_sqlite.py`
-- **Batch 4:** 8 parallel passages → `content/meta/synoptic_map.json`
-- **Batch 5:** 20 new word studies → `content/meta/word_studies.json`
-- **Batch 6:** Thin panel enrichment (lowest priority)
+**Books and counts:**
+- Genesis: 23 chapters empty tx
+- Exodus: 39 chapters empty tx
+- Ruth: 4 chapters empty tx
+- Proverbs: 19 chapters empty tx
 
-## How to Verify Remaining Empty Panels
+**Panel format:** List of objects, NOT a string. Each entry:
+```json
+[
+  {
+    "ref": "4QSamᵃ (Dead Sea Scrolls)",
+    "title": "Significant Qumran witness",
+    "content": "Detailed explanation of the textual variant or witness...",
+    "note": "Brief scholarly takeaway."
+  }
+]
+```
 
+**Key textual witnesses by book:**
+- **Genesis:** Samaritan Pentateuch (SP), Dead Sea Scrolls (4QGen), LXX, Targum Onqelos, Vulgate. SP diverges from MT at creation ages, Gerizim references. LXX has divergent chronologies in ch 5/11.
+- **Exodus:** SP (significant divergences — expanded Decalogue, Gerizim command), 4QExod, 4QpaleoExod, LXX (differs on tabernacle order ch 35-40), Targum Onqelos.
+- **Ruth:** MT is well-attested with minimal variants. LXX adds some clarifying expansions. Targum Ruth has extensive midrashic additions. Note textual stability as itself informative.
+- **Proverbs:** LXX Proverbs differs dramatically from MT — different chapter order (ch 24-31 rearranged), extra material, omissions. This is one of the most textually divergent OT books between MT and LXX. 4QProvᵃ fragments exist.
+
+**For chapters with no meaningful textual variants:** Still populate the panel — note that the text is well-attested with minimal variants. This is itself useful scholarly information. 1-2 entries per chapter minimum; 2-4 for textually rich chapters.
+
+**MERGE operation:** Read existing JSON, check if `chapter_panels.tx` exists and is empty list `[]`, populate it, write back. Do NOT touch chapters that already have populated tx panels.
+
+**Audit command to find empty tx panels:**
 ```python
-# Run this to audit what's left
 import json, glob
-for book in ['proverbs', '2_chronicles', 'matthew', 'exodus', 'genesis', 'psalms']:
-    for f in sorted(glob.glob(f'content/{book}/*.json')):
+for book in ['genesis', 'exodus', 'ruth', 'proverbs']:
+    for f in sorted(glob.glob(f'content/{book}/*.json'), key=lambda x: int(x.split('/')[-1].replace('.json','')) if x.split('/')[-1].replace('.json','').isdigit() else 0):
         ch = f.split('/')[-1].replace('.json','')
         if not ch.isdigit(): continue
         with open(f) as fh:
             data = json.load(fh)
-        for sec in data.get('sections', []):
-            panels = sec.get('panels', {})
-            for ptype in ['heb', 'cross']:
-                p = panels.get(ptype)
-                if p is not None and isinstance(p, list) and len(p) == 0:
-                    print(f"{book} {ch} s{sec['section_num']} {ptype}: EMPTY")
+        tx = data.get('chapter_panels', {}).get('tx')
+        if isinstance(tx, list) and len(tx) == 0:
+            print(f'{book} {ch}')
 ```
+
+**Sub-batch strategy** (85 chapters is too many for one script):
+1. Genesis tx (23 chapters)
+2. Exodus tx part 1 (~20 chapters)
+3. Exodus tx part 2 (~19 chapters)
+4. Ruth tx (4 chapters) + Proverbs tx (19 chapters)
+
+### After Batch 2I, Continue With:
+
+- **Batch 3:** People enrichment — 41 people need expanded bios, dates, refs, timeline connections. Update `config.py` → `export_config.py` → `build_sqlite.py`. See remediation plan §3A-3D.
+- **Batch 4:** 8 parallel passages → `content/meta/synoptic_map.json`
+- **Batch 5:** 20 new word studies → `content/meta/word_studies.json`
+- **Batch 6:** Thin panel enrichment (lowest priority) — ~259 panels with minimal content
 
 ## Pipeline Reminder
 
@@ -71,4 +88,11 @@ for book in ['proverbs', '2_chronicles', 'matthew', 'exodus', 'genesis', 'psalms
 6. `rm /tmp/gen_*.py`
 7. `git add -A && git commit && git push`
 
-Both validators should pass green before pushing. If counts drift (new books going live elsewhere), update the hardcoded counts in both validators.
+Both validators should pass green before pushing. Current validator counts:
+- 45 live books, 21 pending
+- 1062 chapters, 2396 sections
+- 17501 section panels, 8149 chapter panels
+- 253 people (37 spine, 216 satellite), 51 scholars
+- 73 places, 378 timelines
+
+Git config: `user.email "craig@companionstudy.app"`, `user.name "Claude AI"`
