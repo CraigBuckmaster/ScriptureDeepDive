@@ -79,7 +79,7 @@ def main():
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1046 chapters", ch_count == 1046, f"got {ch_count}")
+    check("1054 chapters", ch_count == 1054, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
@@ -154,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("377 timeline entries", tl_count == 377, f"got {tl_count}")
+    check("378 timeline entries", tl_count == 378, f"got {tl_count}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
