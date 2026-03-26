@@ -181,8 +181,9 @@ def main():
                   f"got {actual}")
 
     total_expected = sum(b['total_chapters'] for b in live_books.values())
-    check(f"Total chapters = {total_expected}", total_files == total_expected,
-          f"got {total_files}")
+    total_live_files = sum(books_found.get(bid, 0) for bid in live_books)
+    check(f"Total chapters = {total_expected}", total_live_files == total_expected,
+          f"got {total_live_files}")
 
     # ── 4. Panel distribution ──
     print("\n--- 4. PANEL DISTRIBUTION ---")
