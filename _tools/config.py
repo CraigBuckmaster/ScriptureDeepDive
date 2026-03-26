@@ -1195,3 +1195,17 @@ BOOK_META['hosea'] = {
 
 COMMENTATOR_SCOPE['stuart'].append('hosea')
 COMMENTATOR_SCOPE['andersen_freedman'].append('hosea')
+
+# ── Wave 4: Micah ──────────────────────────────────────────────────
+
+BOOK_META['micah'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Micah of Moresheth (Mic 1:1), a small town in the Judean Shephelah southwest of Jerusalem. He prophesied during the reigns of Jotham, Ahaz, and Hezekiah of Judah (ca. 750-686 BC), making him a contemporary of Isaiah and Hosea. Jeremiah 26:18 confirms his historicity, quoting Micah 3:12 and noting that Hezekiah did not put him to death but instead feared the LORD. Micah is the only prophet whose oracle is cited by name in another prophetic book.',
+    'vhl_places': ['Moresheth', 'Samaria', 'Jerusalem', 'Zion', 'Bethlehem', 'Lachish', 'Assyria', 'Babylon', 'Egypt', 'Gilead', 'Bashan'],
+    'vhl_people': ['Micah', 'Hezekiah', 'Balak', 'Balaam', 'Moses', 'Aaron', 'Miriam'],
+    'vhl_key': ['justice', 'mercy', 'walk humbly', 'remnant', 'shepherd', 'ruler', 'peace', 'Zion', 'oppression', 'idolatry', 'faithfulness', 'pardon', 'inheritance'],
+    'vhl_time': ['in the last days', 'in that day', 'at that time', 'from of old', 'from ancient times'],
+}
+
+COMMENTATOR_SCOPE['stuart'].append('micah')
+COMMENTATOR_SCOPE['waltke'].append('micah')
