@@ -1289,3 +1289,22 @@ BOOK_META['malachi'] = {
 SCHOLAR_REGISTRY.append(('hill', 'hill', 'Hill', 'hill'))
 COMMENTATOR_SCOPE['hill'] = ['malachi']
 COMMENTATOR_SCOPE['verhoef'].append('malachi')
+
+# ══════════════════════════════════════════════════════════════════════
+#  WAVE 5 — NT Epistles
+# ══════════════════════════════════════════════════════════════════════
+
+# ── Romans ───────────────────────────────────────────────────────────
+BOOK_META['romans'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Rom 1:1), formerly Saul of Tarsus, a Pharisee trained under Gamaliel (Acts 22:3). Paul's authorship of Romans is virtually uncontested in scholarship; even the most sceptical critics accept Pauline authorship. The letter's theological depth, autobiographical details, and greeting list (ch.&thinsp;16) all cohere with the Pauline corpus.\n\n<strong>When written:</strong> c.&thinsp;AD&thinsp;57, during Paul's third missionary journey, most likely from Corinth. The mention of Phoebe from Cenchreae (16:1), Gaius as host (16:23; cf. 1&thinsp;Cor 1:14), and Erastus the city director (16:23) all point to Corinth. Paul is about to depart for Jerusalem with the collection (15:25&ndash;28) before his intended visit to Rome and Spain.\n\n<strong>What prompted it:</strong> Paul writes to a church he did not found, introducing himself and his gospel before his planned visit (1:10&ndash;15; 15:22&ndash;29). The letter serves multiple purposes: (1) a comprehensive exposition of the gospel of God's righteousness; (2) pastoral guidance for Jewish-Gentile tensions in the Roman house churches, especially after the return of Jewish Christians following the expiration of Claudius's edict (AD&thinsp;49); (3) a theological foundation for Paul's mission to Spain, seeking Roman support as a base of operations. Romans is the most systematic and theologically comprehensive of Paul's letters.",
+    'vhl_places': ['Rome', 'Jerusalem', 'Spain', 'Corinth', 'Cenchreae', 'Israel', 'Zion'],
+    'vhl_people': ['Paul', 'Abraham', 'Adam', 'Moses', 'Christ', 'David', 'Isaac', 'Jacob', 'Esau', 'Pharaoh', 'Elijah', 'Isaiah', 'Phoebe', 'Priscilla', 'Aquila'],
+    'vhl_key': ['righteousness', 'faith', 'law', 'grace', 'sin', 'justification', 'Spirit', 'flesh', 'gospel', 'wrath', 'glory', 'hope', 'love', 'mercy', 'election', 'predestined', 'sanctification', 'reconciliation', 'redemption', 'adoption'],
+    'vhl_time': ['now', 'at the present time', 'at just the right time', 'from the creation of the world', 'the day of God\u2019s wrath'],
+}
+
+SCHOLAR_REGISTRY.append(('moo', 'moo', 'Moo', 'moo'))
+SCHOLAR_REGISTRY.append(('schreiner', 'schreiner', 'Schreiner', 'schreiner'))
+COMMENTATOR_SCOPE['moo'] = ['romans']
+COMMENTATOR_SCOPE['schreiner'] = ['romans']
