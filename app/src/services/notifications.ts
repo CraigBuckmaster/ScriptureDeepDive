@@ -5,6 +5,7 @@
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 import { getDb } from '../db/database';
+import { logger } from '../utils/logger';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -43,7 +44,7 @@ export async function scheduleDailyVerse(hour: number, minute: number): Promise<
       },
       trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour, minute },
     });
-  } catch {}
+  } catch (err) { logger.warn('notifications', 'Operation failed', err); }
 }
 
 export async function cancelAllNotifications(): Promise<void> {

@@ -10,6 +10,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
+import { logger } from '../utils/logger';
 
 export default function ScholarBrowseScreen() {
   const navigation = useNavigation<any>();
@@ -93,7 +94,7 @@ export default function ScholarBrowseScreen() {
           try {
             const parsed = JSON.parse(s.scope_json);
             if (Array.isArray(parsed)) scope = `${parsed.length} books`;
-          } catch {}
+          } catch (err) { logger.warn('ScholarBrowseScreen', 'Operation failed', err); }
 
           return (
             <TouchableOpacity

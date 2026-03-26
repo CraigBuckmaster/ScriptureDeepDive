@@ -5,10 +5,11 @@
  * Unknown types (scholar panels) fall back to CommentaryPanel.
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text } from 'react-native';
 import { base, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
+import { logger } from '../../utils/logger';
 import type { ParsedRef } from '../../types';
 
 // Section-level panels
@@ -48,10 +49,16 @@ export function PanelRenderer({
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
 }: Props) {
-  let data: any;
-  try {
-    data = JSON.parse(contentJson);
-  } catch {
+  const data = useMemo(() => {
+    try {
+      return JSON.parse(contentJson);
+    } catch (err) {
+      logger.warn('PanelRenderer', `Failed to parse ${panelType} content`, err);
+      return null;
+    }
+  }, [contentJson, panelType]);
+
+  if (data === null) {
     return (
       <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
         Unable to load panel content.

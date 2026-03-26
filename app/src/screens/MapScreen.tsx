@@ -35,6 +35,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
+import { logger } from '../utils/logger';
 
 const INITIAL_REGION = {
   latitude: 30,
@@ -86,7 +87,7 @@ export default function MapScreen({ route, navigation }: any) {
           { edgePadding: { top: topPad, right: 40, bottom: panelHeight + 20, left: 40 }, animated: true }
         );
       }
-    } catch {}
+    } catch (err) { logger.warn('MapScreen', 'Operation failed', err); }
   }, [places]);
 
   // Pan to a specific place

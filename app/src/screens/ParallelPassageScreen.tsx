@@ -13,6 +13,7 @@ import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
+import { logger } from '../utils/logger';
 
 const CATEGORY_LABELS: Record<string, string> = {
   'gospel': 'Synoptic Gospels',
@@ -50,7 +51,7 @@ export default function ParallelPassageScreen() {
   useEffect(() => {
     if (!compareEntry) return;
     let passages: { book: string; ref: string }[] = [];
-    try { passages = JSON.parse(compareEntry.passages_json); } catch {}
+    try { passages = JSON.parse(compareEntry.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
 
     const loadAll = async () => {
       const texts: Record<string, string[]> = {};
@@ -118,7 +119,7 @@ export default function ParallelPassageScreen() {
           contentContainerStyle={styles.listPadding}
           renderItem={({ item }) => {
             let passages: { book: string; ref: string }[] = [];
-            try { passages = JSON.parse(item.passages_json); } catch {}
+            try { passages = JSON.parse(item.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
 
             return (
               <TouchableOpacity
@@ -139,7 +140,7 @@ export default function ParallelPassageScreen() {
 
   // COMPARE MODE (tabbed)
   let passages: { book: string; ref: string }[] = [];
-  try { passages = JSON.parse(compareEntry.passages_json); } catch {}
+  try { passages = JSON.parse(compareEntry.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
 
   return (
     <SafeAreaView style={styles.container}>

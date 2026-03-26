@@ -10,6 +10,7 @@ import { getCrossRefThread } from '../db/content';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { CrossRefThread } from '../types';
+import { logger } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -29,7 +30,7 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
     getCrossRefThread(threadId).then((t) => {
       setThread(t);
       if (t?.steps_json) {
-        try { setSteps(JSON.parse(t.steps_json)); } catch { setSteps([]); }
+        try { setSteps(JSON.parse(t.steps_json)); } catch (err) { setSteps([]); }
       }
     });
   }, [threadId, visible]);

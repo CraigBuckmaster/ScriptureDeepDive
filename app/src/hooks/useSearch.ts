@@ -6,6 +6,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { searchVerses, searchPeople, getAllWordStudies } from '../db/content';
 import type { Verse, Person, WordStudy } from '../types';
+import { logger } from '../utils/logger';
 
 interface SearchResults {
   verses: Verse[];
@@ -51,7 +52,7 @@ export function useSearch(query: string) {
         );
 
         setResults({ verses, people, wordStudies });
-      } catch {
+      } catch (err) {
         setResults({ verses: [], people: [], wordStudies: [] });
       } finally {
         setIsLoading(false);

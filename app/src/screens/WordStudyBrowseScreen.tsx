@@ -10,6 +10,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing, radii, fontFamily } from '../theme';
+import { logger } from '../utils/logger';
 
 export default function WordStudyBrowseScreen() {
   const navigation = useNavigation<any>();
@@ -74,7 +75,7 @@ export default function WordStudyBrowseScreen() {
         renderItem={({ item: w }) => {
           const accentColor = w.language === 'hebrew' ? '#e890b8' : '#70b8e8';
           let glosses = '';
-          try { glosses = JSON.parse(w.glosses_json).join(', '); } catch { glosses = w.glosses_json; }
+          try { glosses = JSON.parse(w.glosses_json).join(', '); } catch (err) { glosses = w.glosses_json; }
 
           return (
             <TouchableOpacity

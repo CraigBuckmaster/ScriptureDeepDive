@@ -14,6 +14,7 @@ import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system/legacy';
+import { logger } from '../utils/logger';
 
 /**
  * Bump this when build_sqlite.py's DB_VERSION changes.
@@ -65,7 +66,7 @@ async function getInstalledDbVersion(dbPath: string): Promise<string | null> {
       "SELECT value FROM db_meta WHERE key = 'version'"
     );
     return row?.value ?? null;
-  } catch {
+  } catch (err) {
     // db_meta table doesn't exist in old DBs — that's fine
     return null;
   } finally {

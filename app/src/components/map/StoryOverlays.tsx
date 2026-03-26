@@ -11,6 +11,7 @@ import { Polygon, Polyline, Marker } from 'react-native-maps';
 import { toLatLng, computeBearing } from '../../utils/geoMath';
 import { eras } from '../../theme';
 import type { MapStory } from '../../types';
+import { logger } from '../../utils/logger';
 
 interface Props {
   story: MapStory;
@@ -27,7 +28,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: P
       return JSON.parse(story.regions_json) as {
         coords: number[][]; color: string; label: string;
       }[];
-    } catch { return []; }
+    } catch (err) { return []; }
   }, [story.regions_json]);
 
   // Parse paths
@@ -37,7 +38,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: P
       return JSON.parse(story.paths_json) as {
         coords: number[][]; dashed?: boolean; label?: string;
       }[];
-    } catch { return []; }
+    } catch (err) { return []; }
   }, [story.paths_json]);
 
   const borderWidth = Math.max(1, Math.min(4, (zoomLevel - 3) * 0.4));

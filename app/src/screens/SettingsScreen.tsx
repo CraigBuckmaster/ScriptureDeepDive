@@ -15,6 +15,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getDb } from '../db/database';
 import { base, spacing, radii, fontFamily } from '../theme';
+import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
@@ -46,7 +47,7 @@ export default function SettingsScreen() {
             try {
               await getDb().runAsync('DELETE FROM reading_progress');
               Alert.alert('Done', 'Reading history cleared.');
-            } catch {
+            } catch (err) {
               Alert.alert('Error', 'Failed to clear history. Please try again.');
             }
           },

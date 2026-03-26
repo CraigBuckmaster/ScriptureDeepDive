@@ -9,6 +9,7 @@ import { Marker } from 'react-native-maps';
 import { PlaceLabel } from './PlaceLabel';
 import { maxPriorityForZoom } from '../../utils/geoMath';
 import type { Place, MapStory } from '../../types';
+import { logger } from '../../utils/logger';
 
 interface Props {
   places: Place[];
@@ -30,7 +31,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
         return places.filter((p) =>
           storyPlaceIds.has(p.id) || p.priority <= maxPriority
         );
-      } catch {}
+      } catch (err) { logger.warn('PlaceMarkerList', 'Operation failed', err); }
     }
 
     return places.filter((p) => p.priority <= maxPriority);

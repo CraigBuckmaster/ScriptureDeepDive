@@ -8,6 +8,7 @@ import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'r
 import { getScholar } from '../db/content';
 import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import type { Scholar } from '../types';
+import { logger } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -25,7 +26,7 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
     getScholar(scholarId).then((s) => {
       setScholar(s);
       if (s?.bio_json) {
-        try { setBio(JSON.parse(s.bio_json)); } catch { setBio(null); }
+        try { setBio(JSON.parse(s.bio_json)); } catch (err) { setBio(null); }
       }
     });
   }, [scholarId, visible]);

@@ -7,6 +7,7 @@
 
 import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
+import { logger } from '../utils/logger';
 
 interface SettingsState {
   translation: string;
@@ -64,7 +65,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
         isHydrated: true,
       });
-    } catch {
+    } catch (err) {
       set({ isHydrated: true });
     }
   },
