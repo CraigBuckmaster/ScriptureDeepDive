@@ -1,8 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import SearchScreen from '../screens/SearchScreen';
 import { base } from '../theme';
+import type { SearchStackParamList } from './types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<SearchStackParamList>();
 
 export function SearchStack() {
   return (

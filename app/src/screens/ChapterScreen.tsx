@@ -10,10 +10,10 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent, type GestureResponderEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 
 import { useChapterData } from '../hooks/useChapterData';
 import { useNotedVerses } from '../hooks/useNotedVerses';
-import { useChapterCache } from '../hooks/useChapterCache';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { getBook } from '../db/content';
@@ -31,8 +31,8 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing } from '../theme';
 
 export default function ChapterScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
+  const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
   const { bookId, chapterNum } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
@@ -162,9 +162,6 @@ export default function ChapterScreen() {
 
   // Noted verses for note indicators
   const notedVerses = useNotedVerses(bookId, chapterNum);
-
-  // Pre-fetch adjacent chapters
-  useChapterCache(bookId, chapterNum, totalChapters);
 
   // All VHL group names active by default
   const activeVhlGroups = useMemo(

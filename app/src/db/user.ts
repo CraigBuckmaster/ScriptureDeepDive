@@ -215,17 +215,40 @@ export async function startPlan(planId: string): Promise<void> {
     "SELECT * FROM reading_plans WHERE id = ?", [planId]
   );
   if (!plan) return;
-  // Clear any existing progress
-  await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
-  // Insert rows for each day
-  for (let day = 1; day <= plan.total_days; day++) {
+
+  await getUserDb().execAsync('BEGIN TRANSACTION');
+  try {
+    await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+
+    // Batch insert — single statement instead of N individual inserts
+    const BATCH_SIZE = 100;
+    for (let start = 1; start <= plan.total_days; start += BATCH_SIZE) {
+      const end = Math.min(start + BATCH_SIZE - 1, plan.total_days);
+      const placeholders: string[] = [];
+      const values: (string | number)[] = [];
+      for (let day = start; day <= end; day++) {
+        placeholders.push('(?, ?)');
+        values.push(planId, day);
+      }
+      await getUserDb().runAsync(
+        `INSERT INTO plan_progress (plan_id, day_num) VALUES ${placeholders.join(',')}`,
+        values
+      );
+    }
+
     await getUserDb().runAsync(
-      "INSERT INTO plan_progress (plan_id, day_num) VALUES (?, ?)",
-      [planId, day]
+      "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', ?)",
+      [planId]
     );
+    await getUserDb().runAsync(
+      "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('plan_start_date', ?)",
+      [new Date().toISOString().slice(0, 10)]
+    );
+    await getUserDb().execAsync('COMMIT');
+  } catch (err) {
+    await getUserDb().execAsync('ROLLBACK');
+    throw err;
   }
-  await setPreference('active_plan', planId);
-  await setPreference('plan_start_date', new Date().toISOString().slice(0, 10));
 }
 
 export async function completePlanDay(planId: string, dayNum: number): Promise<void> {
@@ -243,8 +266,17 @@ export async function getPlanProgress(planId: string): Promise<PlanProgress[]> {
 }
 
 export async function abandonPlan(planId: string): Promise<void> {
-  await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
-  await setPreference('active_plan', '');
+  await getUserDb().execAsync('BEGIN TRANSACTION');
+  try {
+    await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+    await getUserDb().runAsync(
+      "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')"
+    );
+    await getUserDb().execAsync('COMMIT');
+  } catch (err) {
+    await getUserDb().execAsync('ROLLBACK');
+    throw err;
+  }
 }
 
 export async function getActivePlanId(): Promise<string | null> {

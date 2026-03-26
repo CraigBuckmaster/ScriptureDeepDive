@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, TouchableOpacity, FlatList, SafeAreaView, Alert, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay, abandonPlan } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -9,8 +10,8 @@ import { base, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
 export default function PlanDetailScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'PlanDetail'>>();
+  const route = useRoute<ScreenRouteProp<'More', 'PlanDetail'>>();
   const { planId } = route.params ?? {};
   const [plan, setPlan] = useState<ReadingPlan | null>(null);
   const [activePlanId, setActivePlanId] = useState<string | null>(null);

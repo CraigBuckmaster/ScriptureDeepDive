@@ -9,8 +9,9 @@ import PlanDetailScreen from '../screens/PlanDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
 import { base } from '../theme';
+import type { MoreStackParamList } from './types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<MoreStackParamList>();
 
 export function MoreStack() {
   return (

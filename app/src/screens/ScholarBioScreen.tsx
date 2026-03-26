@@ -5,6 +5,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -12,8 +13,8 @@ import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import type { Scholar } from '../types';
 
 export default function ScholarBioScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBio'>>();
+  const route = useRoute<ScreenRouteProp<'Explore', 'ScholarBio'>>();
   const { scholarId } = route.params ?? {};
   const [scholar, setScholar] = useState<Scholar | null>(null);
   const [bio, setBio] = useState<any>(null);

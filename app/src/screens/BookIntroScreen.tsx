@@ -8,6 +8,7 @@
 import React from 'react';
 import { View, Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -15,8 +16,8 @@ import { BadgeChip } from '../components/BadgeChip';
 import { base, spacing, radii, fontFamily } from '../theme';
 
 export default function BookIntroScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Read', 'BookIntro'>>();
+  const route = useRoute<ScreenRouteProp<'Read', 'BookIntro'>>();
   const { bookId } = route.params ?? {};
   const { intro, isLoading } = useBookIntro(bookId);
 

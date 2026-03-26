@@ -10,19 +10,7 @@ import ScholarBrowseScreen from '../screens/ScholarBrowseScreen';
 import ScholarBioScreen from '../screens/ScholarBioScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import { base } from '../theme';
-
-export type ExploreStackParamList = {
-  ExploreMenu: undefined;
-  GenealogyTree: undefined;
-  PersonDetail: { personId: string };
-  Map: { storyId?: string };
-  Timeline: { eventId?: string };
-  WordStudyBrowse: undefined;
-  WordStudyDetail: { wordId: string };
-  ScholarBrowse: undefined;
-  ScholarBio: { scholarId: string };
-  ParallelPassage: { entryId: string };
-};
+import type { ExploreStackParamList } from './types';
 
 const Stack = createStackNavigator<ExploreStackParamList>();
 

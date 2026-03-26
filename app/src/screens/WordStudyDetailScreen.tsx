@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -13,8 +14,8 @@ import { base, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 
 export default function WordStudyDetailScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
+  const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
   const { wordId } = route.params ?? {};
   const [word, setWord] = useState<WordStudy | null>(null);
 

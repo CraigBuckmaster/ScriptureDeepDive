@@ -24,7 +24,7 @@ import type { TimelineEntry } from '../types';
 
 export default function TimelineScreen() {
   useLandscapeUnlock();
-  const route = useRoute<any>();
+  const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
   const initialEventId = route?.params?.eventId;
 
   const [events, setEvents] = useState<TimelineEntry[]>([]);
