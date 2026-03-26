@@ -26,7 +26,7 @@ import { PanelContainer } from '../components/PanelContainer';
 import { ScholarlyBlock } from '../components/ScholarlyBlock';
 import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/NotesOverlay';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { ChapterSkeleton } from '../components/ChapterSkeleton';
 
 import { base, spacing } from '../theme';
 
@@ -177,19 +177,11 @@ export default function ChapterScreen() {
   );
 
   if (isLoading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <LoadingSkeleton lines={8} height={18} />
-      </View>
-    );
+    return <ChapterSkeleton />;
   }
 
   if (!chapter) {
-    return (
-      <View style={styles.emptyContainer}>
-        <LoadingSkeleton lines={3} />
-      </View>
-    );
+    return <ChapterSkeleton />;
   }
 
   return (
@@ -328,17 +320,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: base.bg,
-  },
-  loadingContainer: {
-    flex: 1,
-    backgroundColor: base.bg,
-    padding: spacing.lg,
-  },
-  emptyContainer: {
-    flex: 1,
-    backgroundColor: base.bg,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   progressTrack: {
     height: 2,
