@@ -1,65 +1,56 @@
 /**
- * ExploreMenuScreen — Grid of 6 feature cards with Lucide icons and live counts.
+ * ExploreMenuScreen — Hero cards for top features + grid for the rest.
+ *
+ * People and Timeline get full-width hero cards. Map, Parallel Passages,
+ * Word Studies, Scholars in a 2×2 grid. All gold borders, no icon squares.
  */
 
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
-import { Users, Map, Clock, GitCompare, BookOpen, GraduationCap } from 'lucide-react-native';
 import { getContentStats, type ContentStats } from '../db/content';
-import { base, spacing, radii, fontFamily, panels } from '../theme';
+import { base, spacing, radii, fontFamily } from '../theme';
 
 interface Feature {
   title: string;
   subtitle: (stats: ContentStats | null) => string;
   screen: string;
-  icon: React.ElementType;
-  accent: string;
 }
 
-const FEATURES: Feature[] = [
+const HERO_FEATURES: Feature[] = [
   {
     title: 'People',
-    subtitle: (s) => s ? `${s.peopleCount} biblical figures` : 'Genealogy tree of biblical figures',
+    subtitle: (s) => s ? `${s.peopleCount} biblical figures across eras` : 'Genealogy tree of biblical figures',
     screen: 'GenealogyTree',
-    icon: Users,
-    accent: panels.ppl.accent,
-  },
-  {
-    title: 'Map',
-    subtitle: () => 'Places across narrative journeys',
-    screen: 'Map',
-    icon: Map,
-    accent: panels.poi.accent,
   },
   {
     title: 'Timeline',
-    subtitle: (s) => s ? `${s.timelineCount} events & figures` : 'From Creation to Revelation',
+    subtitle: (s) => s ? `${s.timelineCount} events from Creation to Revelation` : 'Events from Creation to Revelation',
     screen: 'Timeline',
-    icon: Clock,
-    accent: panels.tl.accent,
+  },
+];
+
+const GRID_FEATURES: Feature[] = [
+  {
+    title: 'Map',
+    subtitle: () => 'Places & journeys',
+    screen: 'Map',
   },
   {
     title: 'Parallel Passages',
-    subtitle: () => 'Synoptic comparisons',
+    subtitle: () => 'Synoptic texts',
     screen: 'ParallelPassage',
-    icon: GitCompare,
-    accent: panels.cross.accent,
   },
   {
     title: 'Word Studies',
-    subtitle: () => 'Hebrew & Greek lexicon',
+    subtitle: () => 'Hebrew & Greek',
     screen: 'WordStudyBrowse',
-    icon: BookOpen,
-    accent: panels.heb.accent,
   },
   {
     title: 'Scholars',
     subtitle: (s) => s ? `${s.scholarCount} commentators` : 'Commentators across traditions',
     screen: 'ScholarBrowse',
-    icon: GraduationCap,
-    accent: panels.com.accent,
   },
 ];
 
@@ -78,17 +69,30 @@ export default function ExploreMenuScreen() {
       <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
         <Text style={styles.title} accessibilityRole="header">Explore</Text>
 
+        {/* Hero cards — full width */}
+        {HERO_FEATURES.map((f) => (
+          <TouchableOpacity
+            key={f.screen}
+            onPress={() => navigation.navigate(f.screen)}
+            activeOpacity={0.7}
+            style={styles.heroCard}
+          >
+            <Text style={styles.heroTitle}>{f.title}</Text>
+            <Text style={styles.heroSubtitle}>{f.subtitle(stats)}</Text>
+          </TouchableOpacity>
+        ))}
+
+        {/* Grid cards — 2×2 */}
         <View style={styles.grid}>
-          {FEATURES.map((f) => (
+          {GRID_FEATURES.map((f) => (
             <TouchableOpacity
               key={f.screen}
               onPress={() => navigation.navigate(f.screen)}
               activeOpacity={0.7}
-              style={[styles.card, { borderColor: f.accent + '30' }]}
+              style={styles.gridCard}
             >
-              <f.icon size={24} color={f.accent} style={styles.cardIcon} />
-              <Text style={styles.cardTitle}>{f.title}</Text>
-              <Text style={styles.cardSubtitle}>{f.subtitle(stats)}</Text>
+              <Text style={styles.gridTitle}>{f.title}</Text>
+              <Text style={styles.gridSubtitle}>{f.subtitle(stats)}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -104,6 +108,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
+    paddingBottom: spacing.xxl,
   },
   title: {
     color: base.gold,
@@ -111,32 +116,50 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: spacing.lg,
   },
+  heroCard: {
+    backgroundColor: base.bgElevated,
+    borderWidth: 1,
+    borderColor: base.gold + '20',
+    borderRadius: radii.lg,
+    padding: spacing.md,
+    marginBottom: spacing.sm + 2,
+  },
+  heroTitle: {
+    color: base.text,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 15,
+  },
+  heroSubtitle: {
+    color: base.textDim,
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    marginTop: 3,
+  },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: spacing.sm,
+    marginTop: spacing.xs,
   },
-  card: {
+  gridCard: {
     width: '48%',
     backgroundColor: base.bgElevated,
     borderWidth: 1,
+    borderColor: base.gold + '20',
     borderRadius: radii.md,
     padding: spacing.md,
-    minHeight: 100,
+    minHeight: 72,
     justifyContent: 'center',
   },
-  cardIcon: {
-    marginBottom: spacing.xs,
-  },
-  cardTitle: {
+  gridTitle: {
     color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
-  cardSubtitle: {
+  gridSubtitle: {
     color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
-    marginTop: 2,
+    marginTop: 3,
   },
 });
