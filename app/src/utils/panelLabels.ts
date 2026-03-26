@@ -91,6 +91,7 @@ const SCHOLAR_LABELS: Record<string, string> = {
   zimmerli: 'Zimmerli',
   verhoef: 'Verhoef',
   boda: 'Boda',
+  hill: 'Hill',
 };
 
 // ── Public API ──────────────────────────────────────────────────────
