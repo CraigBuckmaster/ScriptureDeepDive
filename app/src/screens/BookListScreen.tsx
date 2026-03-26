@@ -104,18 +104,18 @@ export default function BookListScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Title */}
-      <Text style={styles.title}>Library</Text>
-
-      {/* Segment toggle */}
-      <View style={styles.segmentRow}>
-        {([['canonical', 'Canonical'], ['thematic', 'By Genre']] as const).map(([key, label]) => (
-          <TouchableOpacity key={key} onPress={() => setMode(key)}>
-            <Text style={[styles.segmentLabel, mode === key && styles.segmentActive]}>
-              {label}
-            </Text>
-          </TouchableOpacity>
-        ))}
+      {/* Title + segment toggle on same row */}
+      <View style={styles.titleRow}>
+        <Text style={styles.title}>Library</Text>
+        <View style={styles.segmentRow}>
+          {([['canonical', 'Canonical'], ['thematic', 'By Genre']] as const).map(([key, label]) => (
+            <TouchableOpacity key={key} onPress={() => setMode(key)}>
+              <Text style={[styles.segmentLabel, mode === key && styles.segmentActive]}>
+                {label}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
 
       {/* OT/NT toggle (canonical mode only, no search) */}
@@ -192,15 +192,18 @@ const styles = StyleSheet.create({
     color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
     paddingHorizontal: spacing.md,
     paddingTop: spacing.lg,
     paddingBottom: spacing.sm,
   },
   segmentRow: {
     flexDirection: 'row',
-    paddingHorizontal: spacing.md,
     gap: spacing.md,
-    marginBottom: spacing.sm,
   },
   segmentLabel: {
     color: base.textMuted,
