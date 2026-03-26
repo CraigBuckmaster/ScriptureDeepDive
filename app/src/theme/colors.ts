@@ -109,6 +109,7 @@ export const scholars: Record<string, string> = {
   brueggemann: '#88a0c8',
   andersen_freedman: '#b8956c',
   boda: '#a0b8d0',
+  hill: '#c8a8d0',
   stuart: '#8db87c',
   zimmerli: '#a8c090',
 } as const;

@@ -1275,3 +1275,17 @@ BOOK_META['zechariah'] = {
 
 SCHOLAR_REGISTRY.append(('boda', 'boda', 'Boda', 'boda'))
 COMMENTATOR_SCOPE['boda'] = ['zechariah']
+
+# ── Malachi ──────────────────────────────────────────────────────────
+BOOK_META['malachi'] = {
+    'is_nt': False,
+    'auth': "Attributed to 'Malachi' (Mal 1:1), though the name may be a title rather than a personal name — mal'akhi means 'my messenger,' the same word used in 3:1 ('I will send my messenger'). If a title, the author is anonymous. The book's historical context points to the mid-fifth century BC (c. 460-430 BC), after the Second Temple was completed (515 BC) but before or during Nehemiah's reforms. The community suffers from spiritual apathy, corrupt priesthood, intermarriage with pagan women, divorce, neglect of tithes, and cynical questioning of God's justice — the same issues Nehemiah confronted (Neh 13). Malachi is the last of the twelve Minor Prophets and, in the Christian canon, the final book of the Old Testament, making its closing promise of Elijah's return (4:5-6) a bridge to the New Testament.",
+    'vhl_places': ['Jerusalem', 'Judah', 'Edom', 'Horeb'],
+    'vhl_people': ['Malachi', 'Jacob', 'Esau', 'Levi', 'Moses', 'Elijah'],
+    'vhl_key': ['messenger', 'covenant', 'tithe', 'curse', 'blessing', 'honor', 'love', 'refiner', 'offering', 'sun of righteousness', 'scroll of remembrance', 'treasured possession', 'return', 'robbing God'],
+    'vhl_time': ['the day is coming', 'on the day when I act', 'before that great and dreadful day'],
+}
+
+SCHOLAR_REGISTRY.append(('hill', 'hill', 'Hill', 'hill'))
+COMMENTATOR_SCOPE['hill'] = ['malachi']
+COMMENTATOR_SCOPE['verhoef'].append('malachi')
