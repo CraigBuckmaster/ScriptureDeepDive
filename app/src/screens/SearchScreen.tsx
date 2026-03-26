@@ -7,12 +7,13 @@
  *   - "Load more" button when verses are sliced at 20
  */
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity,
   SectionList, SafeAreaView, StyleSheet,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useScrollToTop } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
@@ -26,6 +27,8 @@ export default function SearchScreen() {
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
   const { results, isLoading } = useSearch(query);
+  const listRef = useRef<SectionList>(null);
+  useScrollToTop(listRef);
 
   // Reset limit when query changes
   const handleQueryChange = (text: string) => {
@@ -86,6 +89,7 @@ export default function SearchScreen() {
         </View>
       ) : (
         <SectionList
+          ref={listRef}
           sections={sections}
           keyExtractor={(item, i) => `${item.type}-${i}`}
           contentContainerStyle={styles.listContent}

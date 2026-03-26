@@ -1,21 +1,18 @@
 /**
- * QnavOverlay — Full-screen quick navigation modal.
+ * QnavOverlay — Bottom-sheet quick navigation.
  *
- * Header: X + "Navigate". Search bar with inline filter.
- * OT/NT toggle. FlatList of books → expand chapter grid.
- * Auto-expands the current book. Highlights the current chapter in gold.
- * Live chapters gold, non-live muted. Tap chapter → navigate + close.
- * NO CHEVRONS anywhere.
+ * 65%/90% snap points. Drag handle replaces close button.
+ * Search bar + OT/NT toggle + translation toggle (moved from nav bar).
+ * Book list with expandable chapter grids.
  */
 
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import {
-  Modal, View, Text, TouchableOpacity,
-  FlatList, SafeAreaView, StyleSheet,
-} from 'react-native';
-import { X } from 'lucide-react-native';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import { useBooks } from '../hooks/useBooks';
+import { useSettingsStore } from '../stores';
 import { SearchInput } from './SearchInput';
+import { selectionFeedback } from '../utils/haptics';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
@@ -30,23 +27,32 @@ export function QnavOverlay({
   visible, currentBookId, currentChapter,
   onClose, onSelectChapter,
 }: Props) {
+  const sheetRef = useRef<BottomSheet>(null);
   const { books } = useBooks();
+  const translation = useSettingsStore((s) => s.translation);
+  const setTranslation = useSettingsStore((s) => s.setTranslation);
   const [testament, setTestament] = useState<'ot' | 'nt'>('ot');
   const [expandedBook, setExpandedBook] = useState<string | null>(null);
   const [search, setSearch] = useState('');
 
-  // Auto-expand current book and set correct testament when opening
+  const snapPoints = useMemo(() => ['65%', '90%'], []);
+
+  // Auto-expand current book when opening
   useEffect(() => {
     if (visible && currentBookId) {
       setExpandedBook(currentBookId);
       const currentBook = books.find((b) => b.id === currentBookId);
       if (currentBook) setTestament(currentBook.testament);
+      sheetRef.current?.snapToIndex(0);
     }
   }, [visible, currentBookId, books]);
 
   // Clear search when closing
   useEffect(() => {
-    if (!visible) setSearch('');
+    if (!visible) {
+      setSearch('');
+      sheetRef.current?.close();
+    }
   }, [visible]);
 
   const filteredBooks = useMemo(() => {
@@ -62,40 +68,39 @@ export function QnavOverlay({
     onClose();
   }, [onSelectChapter, onClose]);
 
-  return (
-    <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
-      <SafeAreaView style={styles.container}>
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>Navigate</Text>
-          <TouchableOpacity
-            onPress={onClose}
-            style={styles.closeButton}
-            accessibilityLabel="Close navigation"
-          >
-            <X size={20} color={base.navText} />
-          </TouchableOpacity>
-        </View>
+  const handleTranslation = useCallback((t: string) => {
+    selectionFeedback();
+    setTranslation(t);
+  }, [setTranslation]);
 
+  if (!visible) return null;
+
+  return (
+    <BottomSheet
+      ref={sheetRef}
+      index={0}
+      snapPoints={snapPoints}
+      enablePanDownToClose
+      onClose={onClose}
+      backgroundStyle={styles.sheetBg}
+      handleIndicatorStyle={styles.handle}
+    >
+      {/* Controls */}
+      <View style={styles.controls}>
         {/* Search */}
-        <View style={styles.searchRow}>
-          <SearchInput
-            value={search}
-            onChangeText={setSearch}
-            placeholder="Search books..."
-            compact
-          />
-        </View>
+        <SearchInput
+          value={search}
+          onChangeText={setSearch}
+          placeholder="Search books..."
+          compact
+        />
 
         {/* OT/NT toggle */}
         {!search.trim() && (
           <View style={styles.toggleRow}>
             {(['ot', 'nt'] as const).map((t) => (
               <TouchableOpacity key={t} onPress={() => setTestament(t)}>
-                <Text style={[
-                  styles.toggleLabel,
-                  testament === t && styles.toggleLabelActive,
-                ]}>
+                <Text style={[styles.toggleLabel, testament === t && styles.toggleActive]}>
                   {t === 'ot' ? 'Old Testament' : 'New Testament'}
                 </Text>
               </TouchableOpacity>
@@ -103,97 +108,90 @@ export function QnavOverlay({
           </View>
         )}
 
-        {/* Book list */}
-        <FlatList
-          data={filteredBooks}
-          keyExtractor={(b) => b.id}
-          renderItem={({ item: book }) => (
-            <View>
-              {/* Book row */}
-              <TouchableOpacity
-                onPress={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
-                style={styles.bookRow}
-              >
-                <Text style={[
-                  styles.bookName,
-                  !book.is_live && styles.bookNameDim,
-                ]}>
-                  {book.name}
-                </Text>
-                <Text style={styles.bookChapterCount}>
-                  {book.total_chapters} ch
-                </Text>
-              </TouchableOpacity>
+        {/* Translation toggle */}
+        <View style={styles.translationRow}>
+          {(['niv', 'esv'] as const).map((t) => (
+            <TouchableOpacity
+              key={t}
+              onPress={() => handleTranslation(t)}
+              style={[styles.translationPill, translation === t && styles.translationPillActive]}
+            >
+              <Text style={[styles.translationLabel, translation === t && styles.translationLabelActive]}>
+                {t.toUpperCase()}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
 
-              {/* Chapter grid */}
-              {expandedBook === book.id && (
-                <View style={styles.chapterGrid}>
-                  {Array.from({ length: book.total_chapters }, (_, i) => i + 1).map((ch) => {
-                    const isCurrent = book.id === currentBookId && ch === currentChapter;
-                    return (
-                      <TouchableOpacity
-                        key={ch}
-                        onPress={() => book.is_live && handleSelect(book.id, ch)}
-                        disabled={!book.is_live}
-                        style={[
-                          styles.chapterCell,
-                          isCurrent && styles.chapterCellCurrent,
-                        ]}
-                      >
-                        <Text style={[
-                          styles.chapterNum,
-                          !book.is_live && styles.chapterNumDim,
-                          isCurrent && styles.chapterNumCurrent,
-                        ]}>
-                          {ch}
-                        </Text>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </View>
-              )}
-            </View>
-          )}
-        />
-      </SafeAreaView>
-    </Modal>
+      {/* Book list */}
+      <BottomSheetFlatList
+        data={filteredBooks}
+        keyExtractor={(b) => b.id}
+        contentContainerStyle={styles.listContent}
+        renderItem={({ item: book }) => (
+          <View>
+            <TouchableOpacity
+              onPress={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
+              style={styles.bookRow}
+            >
+              <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
+                {book.name}
+              </Text>
+              <Text style={styles.bookChapterCount}>{book.total_chapters} ch</Text>
+            </TouchableOpacity>
+
+            {expandedBook === book.id && (
+              <View style={styles.chapterGrid}>
+                {Array.from({ length: book.total_chapters }, (_, i) => i + 1).map((ch) => {
+                  const isCurrent = book.id === currentBookId && ch === currentChapter;
+                  return (
+                    <TouchableOpacity
+                      key={ch}
+                      onPress={() => book.is_live && handleSelect(book.id, ch)}
+                      disabled={!book.is_live}
+                      style={[styles.chapterCell, isCurrent && styles.chapterCellCurrent]}
+                    >
+                      <Text style={[
+                        styles.chapterNum,
+                        !book.is_live && styles.chapterNumDim,
+                        isCurrent && styles.chapterNumCurrent,
+                      ]}>
+                        {ch}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            )}
+          </View>
+        )}
+      />
+    </BottomSheet>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  sheetBg: {
     backgroundColor: base.bg,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    borderWidth: 1,
+    borderColor: base.border,
+    borderBottomWidth: 0,
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  handle: {
+    backgroundColor: base.textMuted,
+    width: 36,
+  },
+  controls: {
     paddingHorizontal: spacing.md,
-    height: 48,
-    borderBottomWidth: 1,
-    borderBottomColor: base.border,
-  },
-  headerTitle: {
-    color: base.text,
-    fontFamily: fontFamily.displayMedium,
-    fontSize: 16,
-  },
-  closeButton: {
-    minWidth: MIN_TOUCH_TARGET,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-  },
-  searchRow: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingBottom: spacing.sm,
+    gap: spacing.sm,
   },
   toggleRow: {
     flexDirection: 'row',
-    paddingHorizontal: spacing.md,
     gap: spacing.md,
-    marginBottom: spacing.sm,
   },
   toggleLabel: {
     color: base.textMuted,
@@ -201,10 +199,37 @@ const styles = StyleSheet.create({
     fontSize: 13,
     paddingBottom: 4,
   },
-  toggleLabelActive: {
+  toggleActive: {
     color: base.gold,
     borderBottomWidth: 2,
     borderBottomColor: base.gold,
+  },
+  translationRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  translationPill: {
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.pill,
+    paddingHorizontal: 14,
+    paddingVertical: 4,
+    borderWidth: 1,
+    borderColor: base.border,
+  },
+  translationPillActive: {
+    backgroundColor: base.gold + '30',
+    borderColor: base.gold + '60',
+  },
+  translationLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 11,
+  },
+  translationLabelActive: {
+    color: base.gold,
+  },
+  listContent: {
+    paddingBottom: spacing.xxl,
   },
   bookRow: {
     flexDirection: 'row',

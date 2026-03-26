@@ -9,9 +9,10 @@
  *   5. Overall progress bar
  */
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, SafeAreaView, RefreshControl, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useScrollToTop } from '@react-navigation/native';
 import { ArrowRight } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -23,6 +24,8 @@ export default function HomeScreen() {
   const navigation = useNavigation<any>();
   const { greeting, subtitle, stats, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const [refreshing, setRefreshing] = useState(false);
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -47,6 +50,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
+        ref={scrollRef}
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
         refreshControl={

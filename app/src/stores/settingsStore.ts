@@ -27,7 +27,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   translation: 'niv',
   fontSize: 16,
   vhlEnabled: true,
-  bookListMode: 'thematic',
+  bookListMode: 'canonical',
   isHydrated: false,
 
   setTranslation: async (t) => {
