@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-26 — Wave 4 COMPLETE (all 12 Minor Prophets). Next: Wave 5 (NT Epistles), starting with Romans.
+> **Last updated:** 2025-03-26 — Wave 5 IN PROGRESS. Romans COMPLETE (16ch, Moo + Schreiner). Next: 1 Corinthians.
 
 ---
 
@@ -45,7 +45,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 
 - WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel ✓ — **COMPLETE**
 - WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, Nahum ✓, Zephaniah ✓, Haggai ✓, Zechariah ✓, Malachi ✓ — **COMPLETE**
-- WAVE 5 (NT Epistles): **Romans → 1 Corinthians → 2 Corinthians → Galatians → Ephesians → Philippians → Colossians → 1-2 Thessalonians → 1-2 Timothy → Titus → Philemon**
+- WAVE 5 (NT Epistles): Romans ✓, **1 Corinthians → 2 Corinthians → Galatians → Ephesians → Philippians → Colossians → 1-2 Thessalonians → 1-2 Timothy → Titus → Philemon**
 - WAVE 6 (General Epistles): Hebrews, James, 1-2 Peter, 1-3 John, Jude
 - WAVE 7: Revelation
 
@@ -59,7 +59,7 @@ This is a scholarly tool. All generated content must be written in an expository
 
 - **Tone:** Scholarly and expository. No casual language, no devotional tone. Write as if for a seminary-level reference tool.
 - **Accuracy:** All dates, historical details, family relationships, and geographical references should be as accurate as possible based on current biblical scholarship.
-- **Scholar notes:** MacArthur, Calvin, and all other scholar-attributed panels are AI-generated commentary written in each scholar's interpretive tradition and theological framework. They are NOT direct quotations from published works. They should faithfully represent each scholar's known hermeneutical approach (e.g., MacArthur = conservative/dispensational, Calvin = Reformed, Robertson = covenant theology/NICOT, Stuart = WBC/evangelical, NET Bible = text-critical/translational).
+- **Scholar notes:** MacArthur, Calvin, and all other scholar-attributed panels are AI-generated commentary written in each scholar's interpretive tradition and theological framework. They are NOT direct quotations from published works. They should faithfully represent each scholar's known hermeneutical approach (e.g., MacArthur = conservative/dispensational, Calvin = Reformed, Moo = evangelical/NICNT, Schreiner = Reformed Baptist/BECNT, Fee = Pentecostal/NICNT, Robertson = covenant theology/NICOT, Stuart = WBC/evangelical, NET Bible = text-critical/translational).
 - **Hebrew/Greek:** Transliterations, vowel pointing, glosses, and etymologies should follow standard lexical conventions (BDB, HALOT for Hebrew; BDAG for Greek).
 - **Cross-references:** Must cite real passages that genuinely support the interpretive connection claimed.
 - **NIV verse text:** Word-for-word NIV. No paraphrasing, no summarizing, no skipping verses within a section.
@@ -75,9 +75,12 @@ This is a scholarly tool. All generated content must be written in an expository
 - **GitHub push protection:** GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file — even placeholder files. Provide your token at session start via the chat; Claude will use it in git commands but never write it to disk.
 - **Root directory cleanliness:** Only these items belong at the repo root: _tools/, app/, content/, .gitignore, README.md, and scripture.db. All plans, prompts, and build docs go in _tools/. Generator scripts go in /tmp/ and are deleted after use. Do not create new files at root.
 - **Section count verification:** After running the generator, always verify that multi-section chapters produced the correct number of sections. Run: `python3 -c "import json; [print(f'Ch {ch}: {len(json.load(open(f\"content/{book}/{ch}.json\"))[\"sections\"])} sections') for ch in range(START, END+1)]"`.
-- **Context window management:** Do NOT cat the full shared.py — it is ~2500 lines and will consume excessive context. Instead, read only what you need: the REGISTRY section (~30 lines), BOOK_PREFIX (~30 lines), and check a recent chapter JSON for format reference. The save_chapter() API is simple: pass (book_dir, chapter_num, data_dict) where data_dict has title, sections (list of dicts with header, verses, heb, ctx, cross, mac, calvin, netbible, + book scholars), lit (tuple), themes (tuple). Use verse_range(start, end) helper for verse lists.
+- **Context window management:** Do NOT cat the full shared.py — it is ~1,350 lines and will consume excessive context. Instead, read only what you need: the REGISTRY section (~30 lines), BOOK_PREFIX (~30 lines), and check a recent chapter JSON for format reference. The save_chapter() API is simple: pass (book_dir, chapter_num, data_dict) where data_dict has title, sections (list of dicts with header, verses, heb, ctx, cross, mac, calvin, netbible, + book scholars), lit (tuple), themes (tuple). Use verse_range(start, end) helper for verse lists.
 - **People parent refs:** Must use IDs (lowercase, underscored) not display names. Check existing entries for format. Set father/mother to null if parent not in database.
 - **books.json is_live:** After completing a book, you MUST set `is_live: true` in `content/meta/books.json`. This controls whether the book appears in the app's book list. Do this BEFORE the final build_sqlite.py run.
+- **Merge conflicts on scripture.db:** When `git pull --rebase` conflicts on the binary scripture.db, resolve by taking either side (`git checkout --theirs scripture.db`) and then rebuilding (`python3 _tools/build_sqlite.py`), then `git add scripture.db` and `git rebase --continue`. The DB is always regenerated from JSON, so the binary doesn't matter.
+- **Merge conflicts on scholar-data.json:** When upstream adds scholars concurrently, resolve by loading the upstream version (`git show HEAD:content/meta/scholar-data.json > /tmp/scholar_upstream.json`), then appending any missing scholars programmatically. Never hand-edit conflict markers in JSON.
+- **GIT_EDITOR for rebase:** Container has no EDITOR set. Use `GIT_EDITOR="true" git rebase --continue` to accept the existing commit message.
 
 ---
 
@@ -347,20 +350,20 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-## REFERENCE: Current Live Books (44)
+## REFERENCE: Current Live Books (45)
 
-Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
+Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28), Romans(16)
 
-**Total: 1,046 chapters across 44 books. 22 books remaining (~143 chapters).**
+**Total: 1,062 chapters across 45 books. 21 books remaining (~127 chapters).**
 
 ---
 
 ## REFERENCE: Wave 5 Planning (NT Epistles)
 
-| Book | Ch | Status | Suggested Scholars |
-|------|----|--------|--------------------|
-| Romans | 16 | ⬜ NEXT | Moo (NEW), Schreiner (NEW) |
-| 1 Corinthians | 16 | ⬜ TODO | Fee (NEW), Thiselton (NEW) |
+| Book | Ch | Status | Scholars |
+|------|----|--------|----------|
+| Romans | 16 | ✅ DONE | Moo, Schreiner |
+| 1 Corinthians | 16 | ⬜ NEXT | Fee (NEW), Thiselton (NEW) |
 | 2 Corinthians | 13 | ⬜ TODO | Fee (reuse), Harris (NEW) |
 | Galatians | 6 | ⬜ TODO | Moo (reuse), Bruce (NEW) |
 | Ephesians | 6 | ⬜ TODO | Lincoln (NEW), O'Brien (NEW) |
@@ -373,12 +376,12 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 | Titus | 3 | ⬜ TODO | Mounce (reuse), Towner (reuse) |
 | Philemon | 1 | ⬜ TODO | O'Brien (reuse), Bruce (reuse) |
 
-**Total: 13 books, 87 chapters. 0/13 done.**
+**Total: 13 books, 87 chapters. 1/13 done (16/87 chapters, 18%).**
 
 **Session planning for Wave 5:**
-- Session A: Romans ch 1-8 (first batch)
-- Session B: Romans ch 9-16 (complete Romans)
-- Session C: 1 Corinthians ch 1-8
+- ~~Session A: Romans ch 1-8~~ ✅
+- ~~Session B: Romans ch 9-16~~ ✅
+- Session C: 1 Corinthians ch 1-8 ← **NEXT**
 - Session D: 1 Corinthians ch 9-16
 - Session E: 2 Corinthians (13ch, 2 batches)
 - Session F: Galatians(6) + Ephesians(6)
@@ -386,11 +389,12 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 - Session H: 1-2 Thessalonians(8)
 - Session I: 1-2 Timothy(10) + Titus(3)
 
-**Scholar planning notes (Wave 5 NEW scholars — plan before first session):**
-- These are suggested scholars; confirm and research before adding to config.py
-- NT Epistles will need Greek word studies (BDAG conventions) instead of Hebrew (BDB/HALOT)
+**Scholar planning notes (Wave 5):**
+- Romans scholars added: Moo (#7898c0, NICNT), Schreiner (#c09868, BECNT)
+- NT Epistles use Greek word studies (BDAG conventions) instead of Hebrew (BDB/HALOT)
 - Universal scholars (MacArthur, Calvin, NET Bible) continue as always
-- Robertson already covers Gospels/Acts — decide whether to extend to Epistles or not
+- Robertson covers Gospels/Acts only — not extended to Epistles
+- For 1 Corinthians: Gordon Fee (NICNT, Pentecostal evangelical) and Anthony Thiselton (NIGTC, British Anglican) are recommended
 
 **Wave 4 (COMPLETED — all 12 Minor Prophets):**
 
@@ -428,4 +432,4 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 ## REFERENCE: SQLite Database
 
-34+ tables including: books (66), chapters (1046), sections (2360+), section_panels (17200+), chapter_panels (8050+), verses (61000+), people (252), scholars (48), places (73), map_stories (28), word_studies (14), timelines (377), synoptic_map (45), vhl_groups (4500+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~37MB.
+34+ tables including: books (66), chapters (1062), sections (2396), section_panels (17501), chapter_panels (8149), verses (61000+), people (253), scholars (51), places (73), map_stories (28), word_studies (14), timelines (378), synoptic_map (45), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~38MB.
