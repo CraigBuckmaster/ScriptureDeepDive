@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-25 — Wave 4 in progress (7/12 Minor Prophets done). Next: Nahum (3ch).
+> **Last updated:** 2026-03-26 — Wave 4 in progress (10/12 Minor Prophets done). Next: Zechariah (14ch).
 
 ---
 
@@ -44,7 +44,7 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 **Current wave order (from MASTER_PLAN.md):**
 
 - WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel ✓ — **COMPLETE**
-- WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, **Nahum → Zephaniah → Haggai → Zechariah → Malachi**
+- WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, Nahum ✓, Zephaniah ✓, Haggai ✓, **Zechariah → Malachi**
 - WAVE 5 (NT Epistles): Romans, 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon
 - WAVE 6 (General Epistles): Hebrews, James, 1-2 Peter, 1-3 John, Jude
 - WAVE 7: Revelation
@@ -347,11 +347,11 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-## REFERENCE: Current Live Books (39)
+## REFERENCE: Current Live Books (42)
 
-Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Habakkuk(3), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
+Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Matthew(28), Mark(16), Luke(24), John(21), Acts(28)
 
-**Total: 1,020 chapters across 39 books. 27 books remaining (~169 chapters).**
+**Total: 1,028 chapters across 42 books. 24 books remaining (~161 chapters).**
 
 ---
 
@@ -366,22 +366,21 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 | Habakkuk | 3 | ✅ DONE | Robertson |
 | Joel | 3 | ✅ DONE | Stuart |
 | Obadiah | 1 | ✅ DONE | Stuart |
-| Nahum | 3 | ⬜ NEXT | Robertson (extend) |
-| Zephaniah | 3 | ⬜ TODO | Robertson (extend) |
-| Haggai | 2 | ⬜ TODO | Verhoef (NEW) |
-| Zechariah | 14 | ⬜ TODO | Boda (NEW) |
+| Nahum | 3 | ✅ DONE | Robertson |
+| Zephaniah | 3 | ✅ DONE | Robertson |
+| Haggai | 2 | ✅ DONE | Verhoef |
+| Zechariah | 14 | ⬜ NEXT | Boda (NEW) |
 | Malachi | 4 | ⬜ TODO | Verhoef (reuse), Hill (NEW) |
 
-**Done: 7/12 books (41/67 chapters). Remaining: 5 books (26 chapters).**
+**Done: 10/12 books (49/67 chapters). Remaining: 2 books (18 chapters).**
 
 **Session planning for remaining Wave 4:**
-- Session A: Nahum(3) + Zephaniah(3) + Haggai(2) = 8 chapters, fresh context
-- Session B: Zechariah(14) = own session (possibly 2 batches of 7)
+- Session B: Zechariah(14) = own session (2 batches: ch 1-7, ch 8-14)
 - Session C: Malachi(4) = closes Wave 4
 
 **Scholar status for remaining books:**
-- Robertson: already exists with color/label, scoped to habakkuk. Extend to nahum, zephaniah.
-- Verhoef: NEW scholar needed (haggai, malachi). Add to SCHOLAR_REGISTRY, colors, labels, scholar-data.
+- Robertson: exists, scoped to habakkuk/nahum/zephaniah. Color #c8d870.
+- Verhoef: exists, scoped to haggai. Extend to malachi. Color #d0a878.
 - Boda: NEW scholar needed (zechariah). Add to SCHOLAR_REGISTRY, colors, labels, scholar-data.
 - Hill: NEW scholar needed (malachi). Add to SCHOLAR_REGISTRY, colors, labels, scholar-data.
 
@@ -404,4 +403,4 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 ## REFERENCE: SQLite Database
 
-34+ tables including: books (66), chapters (1020+), sections, section_panels, chapter_panels, verses (61000+), people (245), scholars (48), places (71), map_stories (28), word_studies (14), timelines (124), synoptic_map (45), vhl_groups, cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~36MB.
+34+ tables including: books (66), chapters (1028+), sections (2320), section_panels (16925), chapter_panels (7888), verses (61000+), people (250), scholars (47), places (73), map_stories (28), word_studies (14), timelines (375), synoptic_map (45), vhl_groups (4395), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~37MB.
