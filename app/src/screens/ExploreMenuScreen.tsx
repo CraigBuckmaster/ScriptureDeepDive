@@ -2,9 +2,10 @@
  * ExploreMenuScreen — Grid of 6 feature cards with Lucide icons and live counts.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useScrollToTop } from '@react-navigation/native';
 import { Users, Map, Clock, GitCompare, BookOpen, GraduationCap } from 'lucide-react-native';
 import { getContentStats, type ContentStats } from '../db/content';
 import { base, spacing, radii, fontFamily, panels } from '../theme';
@@ -65,6 +66,8 @@ const FEATURES: Feature[] = [
 export default function ExploreMenuScreen() {
   const navigation = useNavigation<any>();
   const [stats, setStats] = useState<ContentStats | null>(null);
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   useEffect(() => {
     getContentStats().then(setStats);
@@ -72,7 +75,7 @@ export default function ExploreMenuScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
         <Text style={styles.title} accessibilityRole="header">Explore</Text>
 
         <View style={styles.grid}>

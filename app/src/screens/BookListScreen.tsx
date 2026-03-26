@@ -1,24 +1,24 @@
 /**
  * BookListScreen — Full library with two view modes.
  *
- * Thematic (default): SectionList grouped by tradition (Law, History, etc.)
- * Canonical: OT/NT toggle with flat list in Bible order.
+ * Canonical (default): OT/NT toggle with flat list in Bible order.
+ * By Genre: SectionList grouped by tradition (Law, History, etc.)
  *
- * ViewModeDropdown in the title row switches between modes.
- * No LIVE badges — dimmed text is sufficient status indicator.
+ * Segment toggle replaces the old dropdown. Search bar filters across
+ * both modes. Per-book progress bars show reading completion.
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, SectionList, FlatList,
-  SafeAreaView, StyleSheet,
+  SafeAreaView, ScrollView, StyleSheet,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useBooks } from '../hooks/useBooks';
+import { useScrollToTop } from '@react-navigation/native';
+import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
-import { ViewModeDropdown } from '../components/ViewModeDropdown';
-import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
-import type { Book } from '../types';
+import { SearchInput } from '../components/SearchInput';
+import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 // ── Tradition groupings (by book_order index) ────────────────────
 
@@ -39,10 +39,21 @@ const NT_GROUPS = [
 
 export default function BookListScreen() {
   const navigation = useNavigation<any>();
+  const scrollRef = useRef<FlatList>(null);
+  useScrollToTop(scrollRef as any);
+
   const { books } = useBooks();
   const mode = useSettingsStore((s) => s.bookListMode);
   const setMode = useSettingsStore((s) => s.setBookListMode);
   const [testament, setTestament] = useState<'ot' | 'nt'>('ot');
+  const [search, setSearch] = useState('');
+
+  // ── Search filter ────────────────────────────────────────────
+  const searchResults = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return null;
+    return books.filter((b) => b.name.toLowerCase().includes(q));
+  }, [books, search]);
 
   // ── Thematic sections ────────────────────────────────────────
   const thematicSections = useMemo(() =>
@@ -62,58 +73,102 @@ export default function BookListScreen() {
   );
 
   // ── Shared book row ──────────────────────────────────────────
-  const renderBookRow = (book: Book) => (
+  const renderBookRow = (book: BookWithProgress) => (
     <TouchableOpacity
       key={book.id}
       onPress={() => navigation.navigate('ChapterList', { bookId: book.id })}
       style={styles.bookRow}
     >
-      <Text style={[
-        styles.bookName,
-        !book.is_live && styles.bookNameDim,
-      ]}>
-        {book.name}
-      </Text>
-      <Text style={styles.chapterCount}>{book.total_chapters} ch</Text>
+      <View style={styles.bookRowContent}>
+        <View style={styles.bookRowHeader}>
+          <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
+            {book.name}
+          </Text>
+          <Text style={styles.chapterCount}>
+            {book.chaptersRead > 0
+              ? `${book.chaptersRead}/${book.total_chapters}`
+              : `${book.total_chapters} ch`}
+          </Text>
+        </View>
+        {book.chaptersRead > 0 && (
+          <View style={styles.progressTrack}>
+            <View style={[
+              styles.progressFill,
+              { width: `${(book.chaptersRead / book.total_chapters) * 100}%` },
+            ]} />
+          </View>
+        )}
+      </View>
     </TouchableOpacity>
   );
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Title row with dropdown */}
-      <View style={styles.titleRow}>
-        <Text style={styles.title}>Library</Text>
-        <ViewModeDropdown mode={mode} onModeChange={setMode} />
+      {/* Title */}
+      <Text style={styles.title}>Library</Text>
+
+      {/* Segment toggle */}
+      <View style={styles.segmentRow}>
+        {([['canonical', 'Canonical'], ['thematic', 'By Genre']] as const).map(([key, label]) => (
+          <TouchableOpacity key={key} onPress={() => setMode(key)}>
+            <Text style={[styles.segmentLabel, mode === key && styles.segmentActive]}>
+              {label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
-      {mode === 'canonical' ? (
-        /* ── Canonical view ───────────────────────────── */
-        <View style={styles.flex1}>
-          {/* OT/NT toggle */}
-          <View style={styles.toggleRow}>
-            {(['ot', 'nt'] as const).map((t) => (
-              <TouchableOpacity key={t} onPress={() => setTestament(t)}>
-                <Text style={[
-                  styles.toggleLabel,
-                  testament === t && styles.toggleLabelActive,
-                ]}>
-                  {t === 'ot' ? 'Old Testament' : 'New Testament'}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          <FlatList
-            data={canonicalBooks}
-            keyExtractor={(b) => b.id}
-            renderItem={({ item }) => renderBookRow(item)}
-          />
+      {/* OT/NT toggle (canonical mode only, no search) */}
+      {mode === 'canonical' && !searchResults && (
+        <View style={styles.testamentRow}>
+          {(['ot', 'nt'] as const).map((t) => (
+            <TouchableOpacity key={t} onPress={() => setTestament(t)}>
+              <Text style={[styles.testamentLabel, testament === t && styles.testamentActive]}>
+                {t === 'ot' ? 'Old Testament' : 'New Testament'}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </View>
+      )}
+
+      {/* Search */}
+      <View style={styles.searchRow}>
+        <SearchInput
+          value={search}
+          onChangeText={setSearch}
+          placeholder="Search books..."
+          compact
+        />
+      </View>
+
+      {/* List */}
+      {searchResults ? (
+        /* Search results — flat list regardless of mode */
+        <FlatList
+          ref={scrollRef}
+          data={searchResults}
+          keyExtractor={(b) => b.id}
+          renderItem={({ item }) => renderBookRow(item)}
+          contentContainerStyle={styles.listContent}
+          ListEmptyComponent={
+            <View style={styles.emptyWrap}>
+              <Text style={styles.emptyText}>No books matching "{search.trim()}"</Text>
+            </View>
+          }
+        />
+      ) : mode === 'canonical' ? (
+        <FlatList
+          ref={scrollRef}
+          data={canonicalBooks}
+          keyExtractor={(b) => b.id}
+          renderItem={({ item }) => renderBookRow(item)}
+          contentContainerStyle={styles.listContent}
+        />
       ) : (
-        /* ── Thematic view ────────────────────────────── */
         <SectionList
           sections={thematicSections}
           keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.listContent}
           renderSectionHeader={({ section }) => (
             <View style={styles.sectionHeader}>
               <Text style={styles.sectionTitle}>
@@ -133,38 +188,54 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: base.bg,
   },
-  flex1: {
-    flex: 1,
-  },
-  titleRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-    paddingBottom: spacing.md,
-  },
   title: {
     color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.sm,
   },
-  toggleRow: {
+  segmentRow: {
     flexDirection: 'row',
     paddingHorizontal: spacing.md,
     gap: spacing.md,
     marginBottom: spacing.sm,
   },
-  toggleLabel: {
+  segmentLabel: {
     color: base.textMuted,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     paddingBottom: 4,
   },
-  toggleLabelActive: {
+  segmentActive: {
     color: base.gold,
     borderBottomWidth: 2,
     borderBottomColor: base.gold,
+  },
+  testamentRow: {
+    flexDirection: 'row',
+    paddingHorizontal: spacing.md,
+    gap: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  testamentLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    paddingBottom: 3,
+  },
+  testamentActive: {
+    color: base.gold,
+    borderBottomWidth: 2,
+    borderBottomColor: base.gold,
+  },
+  searchRow: {
+    paddingHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  listContent: {
+    paddingBottom: spacing.xxl,
   },
   sectionHeader: {
     backgroundColor: base.bg,
@@ -174,18 +245,24 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     color: base.textMuted,
-    fontFamily: fontFamily.display,
-    fontSize: 10,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
     letterSpacing: 0.5,
   },
   bookRow: {
+    paddingHorizontal: spacing.md,
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: base.border + '40',
+  },
+  bookRowContent: {
+    paddingVertical: 6,
+  },
+  bookRowHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: spacing.md,
-    minHeight: MIN_TOUCH_TARGET,
-    borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   bookName: {
     color: base.text,
@@ -199,5 +276,25 @@ const styles = StyleSheet.create({
     color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
+  },
+  progressTrack: {
+    height: 2,
+    backgroundColor: base.border,
+    borderRadius: 1,
+    marginTop: 4,
+  },
+  progressFill: {
+    height: 2,
+    backgroundColor: base.gold + '50',
+    borderRadius: 1,
+  },
+  emptyWrap: {
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+  emptyText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 14,
   },
 });
