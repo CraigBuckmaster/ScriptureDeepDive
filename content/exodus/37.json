@@ -145,7 +145,20 @@
         ],
         "hist": "The seven-branched menorah hammered from a single talent of gold (approximately 34 kg) represents one of the most demanding metalworking feats described in the Bible. The almond-blossom decoration (calyxes, buds, blossoms) on each branch connects to the motif of the sacred tree, ubiquitous in Mesopotamian and Egyptian temple art. The incense altar's construction from acacia overlaid with gold, with a gold moulding (zēr) around the top, mirrors the decorative conventions of Egyptian shrine furniture.",
         "ctx": "The table, lampstand, and incense altar form the Holy Place's complete furnishing. Their construction mirrors the instructions of Exod 25:23–40 and 30:1–10 with precision. The lampstand is particularly noted as hammered from one talent of pure gold — the heaviest investment in a single object. Its seven lamps provided the only light inside the Tabernacle, illuminating the table and its bread directly. The God who is light dwells in a place that is always lit.",
-        "cross": [],
+        "cross": [
+          {
+            "ref": "Exod 25:31–40",
+            "note": "The lampstand instructions in chapter 25 are fulfilled here. The six branches with almond-blossom cups recall the budding of Aaron's rod (Num 17:8) — a tree-of-life motif woven into the tabernacle's light."
+          },
+          {
+            "ref": "Rev 1:12–13, 20",
+            "note": "John sees seven golden lampstands in his vision, identified as the seven churches. The menorah moves from tabernacle furniture to ecclesiological symbol — each church is a lampstand bearing God's light."
+          },
+          {
+            "ref": "Exod 30:1–10, 22–33",
+            "note": "The incense altar and anointing oil constructed here follow the specifications of chapter 30. Bezalel crafts both as a single unit of sacred furniture for the Holy Place."
+          }
+        ],
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
