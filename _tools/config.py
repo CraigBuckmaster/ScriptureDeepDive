@@ -1222,3 +1222,43 @@ BOOK_META['habakkuk'] = {
 }
 
 COMMENTATOR_SCOPE['robertson'].append('habakkuk')
+
+# ── Wave 4: Nahum ──────────────────────────────────────────────────
+
+BOOK_META['nahum'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Nahum the Elkoshite (Nah 1:1). The location of Elkosh is unknown; suggestions include al-Qosh in Assyria, Capernaum (kfar Nahum, "village of Nahum") in Galilee, and a site in Judah near Beit Jibrin. The name Nahum means "comfort" or "consolation" (from the root nkh). The book is dated between the fall of Thebes (663 BC, referenced in 3:8-10) and the fall of Nineveh (612 BC), likely in the late seventh century during the reign of Josiah (640-609 BC).',
+    'vhl_places': ['Nineveh', 'Judah', 'Thebes', 'Bashan', 'Carmel', 'Lebanon'],
+    'vhl_people': ['Nahum'],
+    'vhl_key': ['vengeance', 'wrath', 'jealous', 'refuge', 'flood', 'plunder', 'blood', 'lion', 'fortress', 'destruction', 'comfort', 'decree'],
+    'vhl_time': ['the LORD is slow to anger', 'no more', 'never again'],
+}
+
+COMMENTATOR_SCOPE['robertson'].append('nahum')
+
+# ── Wave 4: Zephaniah ─────────────────────────────────────────────
+
+BOOK_META['zephaniah'] = {
+    'is_nt': False,
+    'auth': 'Attributed to Zephaniah son of Cushi, son of Gedaliah, son of Amariah, son of Hezekiah (Zeph 1:1). The four-generation genealogy is unique among the prophets and likely traces his lineage to King Hezekiah of Judah, making him of royal blood. The name Zephaniah means "the LORD hides/treasures" (from tsaphan + Yah). The superscription dates his ministry to the reign of Josiah (640-609 BC), likely before the reforms of 621 BC given the condemnation of syncretistic worship practices.',
+    'vhl_places': ['Jerusalem', 'Judah', 'Gaza', 'Ashkelon', 'Ashdod', 'Ekron', 'Moab', 'Ammon', 'Cush', 'Nineveh', 'Assyria'],
+    'vhl_people': ['Zephaniah', 'Josiah'],
+    'vhl_key': ['day of the LORD', 'wrath', 'remnant', 'humble', 'seek', 'shelter', 'purify', 'rejoice', 'shame', 'gather', 'restore', 'punishment'],
+    'vhl_time': ['the great day', 'at that time', 'on that day', 'before the day', 'in the morning'],
+}
+
+COMMENTATOR_SCOPE['robertson'].append('zephaniah')
+
+# ── Wave 4: Haggai ─────────────────────────────────────────────────
+
+BOOK_META['haggai'] = {
+    'is_nt': False,
+    'auth': 'Attributed to the prophet Haggai (Hag 1:1; 2:1, 10, 20). The name means "festive" or "my feast" (from hag, "pilgrimage feast"), possibly indicating birth during a festival. Haggai prophesied in the second year of the Persian king Darius I (520 BC), making him a contemporary of Zechariah (Ezra 5:1; 6:14). His ministry is precisely dated across four oracles spanning a three-month period (August-December 520 BC). He is one of only two post-exilic prophets (with Zechariah) whose ministry is confirmed in the historical books (Ezra 5:1; 6:14).',
+    'vhl_places': ['Jerusalem', 'Judah'],
+    'vhl_people': ['Haggai', 'Zerubbabel', 'Joshua son of Jozadak', 'Darius I'],
+    'vhl_key': ['temple', 'build', 'glory', 'signet ring', 'chosen', 'consider', 'blessing', 'drought', 'shake', 'desire', 'covenant', 'remnant'],
+    'vhl_time': ['in the second year of King Darius', 'on the first day', 'on the twenty-first day', 'on the twenty-fourth day', 'from this day on'],
+}
+
+SCHOLAR_REGISTRY.append(('verhoef', 'verhoef', 'Verhoef', 'verhoef'))
+COMMENTATOR_SCOPE['verhoef'] = ['haggai']

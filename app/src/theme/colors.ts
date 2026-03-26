@@ -100,6 +100,7 @@ export const scholars: Record<string, string> = {
   tigay: '#e8d090',
   tsumura: '#88b8d8',
   vangemeren: '#88a8c8',
+  verhoef: '#d0a878',
   waltke: '#e8a0b8',
   webb: '#90c890',
   williamson: '#90a8c8',
