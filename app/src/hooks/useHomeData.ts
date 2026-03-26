@@ -77,10 +77,23 @@ function getGreeting(): string {
   return 'Good Evening';
 }
 
+// ── Personal subtitle ───────────────────────────────────────────
+
+function getSubtitle(readingStats: ReadingStats | null): string {
+  if (!readingStats || readingStats.totalChapters === 0) {
+    return 'Begin your journey through Scripture';
+  }
+  if (readingStats.currentStreak > 1) {
+    return `${readingStats.currentStreak}-day reading streak`;
+  }
+  return `${readingStats.totalChapters} chapters studied`;
+}
+
 // ── Hook ───────────────────────────────────────────────────────────
 
 export interface HomeData {
   greeting: string;
+  subtitle: string;
   stats: ContentStats | null;
   verse: VerseOfDay;
   recentChapters: RecentChapter[];
@@ -116,6 +129,7 @@ export function useHomeData(): HomeData {
 
   return {
     greeting: getGreeting(),
+    subtitle: getSubtitle(readingStats),
     stats,
     verse: getVerseOfDay(),
     recentChapters,
