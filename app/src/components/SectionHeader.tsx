@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: base.border,
     paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
+    paddingTop: 32,
     paddingBottom: spacing.sm,
   },
   text: {

@@ -8,7 +8,7 @@
  */
 
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import { View, ScrollView, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent, type GestureResponderEvent } from 'react-native';
+import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent, type GestureResponderEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 
@@ -29,6 +29,11 @@ import { NotesOverlay } from '../components/NotesOverlay';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
+
+// Enable LayoutAnimation on Android
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 export default function ChapterScreen() {
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
@@ -135,9 +140,10 @@ export default function ChapterScreen() {
     }
   }, [hasPrev, hasNext, goPrev, goNext]);
 
-  // Panel toggle — single-open policy
+  // Panel toggle — single-open policy with animation
   const handleSectionPanelToggle = useCallback(
     (sectionId: string, panelType: string) => {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setActivePanel(sectionId, panelType);
     },
     [setActivePanel]
@@ -145,6 +151,7 @@ export default function ChapterScreen() {
 
   const handleChapterPanelToggle = useCallback(
     (panelType: string) => {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setActivePanel('__chapter__', panelType);
     },
     [setActivePanel]
@@ -195,6 +202,7 @@ export default function ChapterScreen() {
         onPrev={goPrev}
         onNext={goNext}
         onQnav={toggleQnav}
+        onIntroPress={() => navigation.navigate('BookIntro', { bookId })}
       />
 
       {/* Reading progress bar */}
@@ -215,7 +223,6 @@ export default function ChapterScreen() {
           chapter={chapter}
           noteCount={noteCount}
           onNotesPress={toggleNotes}
-          onIntroPress={() => navigation.navigate('BookIntro', { bookId })}
           onTimelinePress={chapter.timeline_link_event
             ? () => navigation.navigate('ExploreTab', {
                 screen: 'Timeline', params: { eventId: chapter.timeline_link_event },

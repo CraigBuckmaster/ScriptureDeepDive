@@ -10,7 +10,7 @@ import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
-import { base } from '../theme';
+import { base, spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup } from '../types';
 
 interface Props {
@@ -88,5 +88,6 @@ const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
     borderBottomColor: base.border + '60',
+    paddingBottom: spacing.sm,
   },
 });
