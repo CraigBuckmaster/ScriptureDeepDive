@@ -1,0 +1,605 @@
+{
+  "chapter_id": null,
+  "testament": null,
+  "book_dir": "romans",
+  "chapter_num": 1,
+  "title": "The Gospel of God",
+  "subtitle": "",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–7 — \"Paul, a Servant of Christ Jesus\"",
+      "verse_start": 1,
+      "verse_end": 7,
+      "panels": {
+        "heb": [
+          {
+            "word": "εὐαγγέλιον",
+            "transliteration": "euangelion",
+            "gloss": "gospel / good news",
+            "paragraph": "The noun euangelion (gospel) appears nine times in Romans. In the Greco-Roman world, the term denoted an imperial proclamation of victory or the accession of a new emperor. Paul co-opts the word for the announcement of God’s saving act in Christ — a counter-imperial claim that the crucified Messiah, not Caesar, is Lord. The genitive construction ‘gospel of God’ (euangelion theou) identifies God as the source and author of this proclamation."
+          },
+          {
+            "word": "κλητός",
+            "transliteration": "klētos",
+            "gloss": "called / appointed",
+            "paragraph": "Paul identifies himself as klētos apostolos (‘called apostle’), using the same term he applies to the Roman believers in v. 6 (klētoi Iēsou Christou, ‘called of Jesus Christ’) and v. 7 (klētois hagiois, ‘called saints’). The vocabulary of divine calling brackets the opening and establishes that both apostle and church exist by God’s initiative, not human decision."
+          }
+        ],
+        "ctx": "Paul’s opening salutation (1:1–7) is the longest and most theologically dense of any Pauline letter. Unlike his other epistles, Paul is writing to a church he did not found, so the extended self-introduction serves as a theological ‘calling card’ — a compressed summary of his gospel. The credal formula in vv. 3–4 (descended from David / declared Son of God by the resurrection) may be a pre-Pauline confession that Paul adopts and affirms, establishing common ground with a church that already confesses Christ.",
+        "cross": [
+          {
+            "ref": "Gal 1:15–16",
+            "note": "Paul similarly describes his apostleship as a divine calling, not a human appointment — ‘set apart from my mother’s womb.’"
+          },
+          {
+            "ref": "2 Tim 2:8",
+            "note": "Paul reiterates the twofold Christological formula: descended from David, raised from the dead."
+          },
+          {
+            "ref": "Acts 9:15",
+            "note": "The Lord identifies Paul as his ‘chosen instrument’ to carry his name before Gentiles, kings, and Israel."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Paul’s self-designation as doulos (slave) of Christ Jesus is not merely metaphorical. It signals absolute ownership and total submission to Christ’s lordship — a voluntary bondage that paradoxically constitutes true freedom."
+            },
+            {
+              "ref": "1:2",
+              "note": "The phrase ‘promised beforehand through his prophets in the Holy Scriptures’ anchors the gospel in Old Testament revelation. The gospel is not an afterthought or a departure from God’s original plan, but its culmination."
+            },
+            {
+              "ref": "1:3–4",
+              "note": "The twofold description of Christ — ‘according to the flesh’ a descendant of David, ‘according to the Spirit of holiness’ declared Son of God — affirms both his true humanity and his divine nature. This is incarnational Christology in compressed form."
+            },
+            {
+              "ref": "1:5",
+              "note": "The phrase ‘obedience of faith’ (hypakoē pisteōs) is programmatic for the entire letter. Faith is not mere intellectual assent but an obedient trust that transforms the whole person."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Calvin notes that Paul calls himself a servant before an apostle, teaching that the highest office in the church is still one of service. No minister is lord over the church — all are servants of the one Lord."
+            },
+            {
+              "ref": "1:4",
+              "note": "The resurrection did not make Christ the Son of God but declared and manifested what he already was from eternity. Calvin insists on the eternal Sonship: the resurrection is a public vindication, not an ontological promotion."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:3–4",
+              "note": "The phrase ‘Spirit of holiness’ (pneumatos hagiōsynēs) is unusual in Pauline usage. Some scholars interpret it as a reference to Christ’s own divine spirit rather than the Holy Spirit, though the two interpretations are not mutually exclusive. The contrast flesh/spirit likely refers to two modes of existence, not two natures."
+            },
+            {
+              "ref": "1:5",
+              "note": "The genitive pisteōs in ‘obedience of faith’ is debated: is it source (‘obedience that springs from faith’), apposition (‘obedience that is faith’), or object (‘obedience to the faith’)? The first two options are most likely in context."
+            }
+          ]
+        },
+        "moo": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1–7",
+              "note": "Moo observes that Paul’s salutation functions as a ‘letter within a letter,’ compressing the entire argument of Romans into miniature. The movement from promise (v. 2) to Christ’s identity (vv. 3–4) to the purpose of apostleship (v. 5) to the recipients’ calling (vv. 6–7) mirrors the letter’s macro-structure: gospel → Christology → mission → ecclesiology."
+            },
+            {
+              "ref": "1:3–4",
+              "note": "Moo argues that the two clauses do not describe successive stages of Christ’s existence but two complementary perspectives on the one person. ‘According to the flesh’ locates Christ in salvation history; ‘according to the Spirit’ identifies the power by which his Sonship was publicly vindicated."
+            }
+          ]
+        },
+        "schreiner": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1",
+              "note": "Schreiner emphasises that doulos and apostolos together capture the twin realities of Paul’s vocation: complete submission to Christ and authoritative commission from Christ. The gospel Paul preaches is not his own but God’s, and Paul’s apostleship is the instrument of its dissemination."
+            },
+            {
+              "ref": "1:5",
+              "note": "Schreiner takes ‘obedience of faith’ as an inclusio with 16:26, framing the entire letter. The phrase indicates that genuine faith always produces obedience — not as a meritorious addition to faith but as its natural fruit."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 8–17 — \"The Righteous Will Live by Faith\"",
+      "verse_start": 8,
+      "verse_end": 17,
+      "panels": {
+        "heb": [
+          {
+            "word": "δικαιοσύνη θεοῦ",
+            "transliteration": "dikaiosynē theou",
+            "gloss": "righteousness of God",
+            "paragraph": "The phrase dikaiosynē theou is the thematic centre of Romans. The genitive theou is debated: does it mean the righteousness that comes from God (objective genitive), the righteousness that God himself possesses (subjective genitive), or God’s saving activity in covenant faithfulness? Most scholars now recognise that Paul holds these senses together — God’s own righteous character is the ground of his saving action, and the gift of righteousness to believers is its effect."
+          },
+          {
+            "word": "πίστις",
+            "transliteration": "pistis",
+            "gloss": "faith / faithfulness / trust",
+            "paragraph": "Pistis occurs over 40 times in Romans. In 1:17 the phrase ‘from faith to faith’ (ek pisteōs eis pistin) is variously interpreted: from the faith of the preacher to the faith of the hearer, from OT faith to NT faith, or as an emphatic idiom meaning ‘entirely by faith.’ The Habakkuk citation that follows (2:4) anchors justification in trust rather than in Torah performance."
+          }
+        ],
+        "ctx": "Romans 1:16–17 is widely regarded as the thesis statement of the entire letter. Paul’s confession that he is ‘not ashamed of the gospel’ gains force from the context of writing to the imperial capital, where the crucifixion of a provincial Jew as a messianic pretender would be scandalous. The citation of Habakkuk 2:4 (‘the righteous will live by faith’) was pivotal in the Protestant Reformation: Luther, Calvin, and the Reformers built their doctrine of sola fide on this verse. Paul’s personal eagerness to visit Rome (vv. 8–15) is not mere pleasantry but a diplomatic introduction to a church he wishes to use as a mission base for Spain (15:24).",
+        "cross": [
+          {
+            "ref": "Hab 2:4",
+            "note": "Paul quotes Habakkuk’s declaration as the Old Testament warrant for justification by faith — a text he also cites in Galatians 3:11."
+          },
+          {
+            "ref": "Gal 3:11",
+            "note": "Paul appeals to the same Habakkuk text in arguing against Judaizers, confirming that justification has never been through law-keeping."
+          },
+          {
+            "ref": "1 Cor 1:18–25",
+            "note": "The ‘foolishness’ of the cross — the gospel is God’s power despite its apparent weakness."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:16",
+              "note": "The gospel is ‘the power of God for salvation.’ Power (dynamis) is not merely potential but active, effectual energy. The gospel does not merely offer salvation; it accomplishes it in those who believe."
+            },
+            {
+              "ref": "1:17",
+              "note": "The revelation of God’s righteousness ‘from faith to faith’ means that righteousness is received by faith from beginning to end. There is no stage of the Christian life where faith is superseded by works."
+            },
+            {
+              "ref": "1:16",
+              "note": "The order ‘first to the Jew, then to the Gentile’ reflects salvation-historical priority, not soteriological superiority. Israel’s precedence is chronological and covenantal, not meritorious."
+            },
+            {
+              "ref": "1:15",
+              "note": "Paul’s eagerness to preach in Rome demonstrates that the gospel is not merely for frontier mission territories but for established urban centres as well."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:16",
+              "note": "Calvin observes that Paul’s declaration ‘I am not ashamed’ is a litotes — he means he glories in the gospel. The qualification ‘to everyone who believes’ excludes no ethnicity but limits salvation to faith alone."
+            },
+            {
+              "ref": "1:17",
+              "note": "The righteousness of God is not the righteousness by which God is righteous in himself, but the righteousness that God freely bestows on sinners through faith. This imputed righteousness is the heart of the gospel."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:16",
+              "note": "The word ‘salvation’ (sōtēria) in Paul encompasses past justification, present sanctification, and future glorification. It is comprehensive, not limited to initial conversion."
+            },
+            {
+              "ref": "1:17",
+              "note": "The phrase ek pisteōs eis pistin has generated numerous interpretations. The NET note favours the emphatic reading: ‘by faith from first to last,’ stressing the exclusive role of faith in receiving righteousness."
+            }
+          ]
+        },
+        "moo": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:16–17",
+              "note": "Moo identifies these verses as the ‘hermeneutical key’ to Romans. The four key concepts — gospel, power, salvation, and righteousness of God — correspond to the four major sections of the letter: 1:18–4:25, 5:1–8:39, 9:1–11:36, and 12:1–15:13."
+            },
+            {
+              "ref": "1:17",
+              "note": "Moo argues that ‘righteousness of God’ here is primarily a gift-righteousness that God bestows, though it is rooted in his own righteous character. He takes ‘from faith to faith’ as emphasising the exclusivity of faith as the means of reception."
+            }
+          ]
+        },
+        "schreiner": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:16–17",
+              "note": "Schreiner sees these verses as establishing a soteriological framework that is simultaneously Christological and anthropological. The gospel reveals God’s saving righteousness (objective) and calls for faith as the sole appropriate human response (subjective). Schreiner emphasises that ‘to everyone who believes’ universalises the scope while ‘by faith’ particularises the means."
+            },
+            {
+              "ref": "1:17",
+              "note": "Schreiner takes the Habakkuk quotation as establishing that the righteous person has always lived by faith, not by works of the law. This is not a Pauline innovation but a recovery of the OT pattern."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 18–32 — \"The Wrath of God Against Ungodliness\"",
+      "verse_start": 18,
+      "verse_end": 32,
+      "panels": {
+        "heb": [
+          {
+            "word": "ἀσέβεια",
+            "transliteration": "asebeia",
+            "gloss": "ungodliness / impiety",
+            "paragraph": "Asebeia denotes the vertical dimension of sin — the refusal to honour God as God. Paul pairs it with adikia (unrighteousness), which is the horizontal dimension: injustice toward others. Together they encompass the totality of human rebellion."
+          },
+          {
+            "word": "παρέδωκεν",
+            "transliteration": "paredōken",
+            "gloss": "he gave over / handed over",
+            "paragraph": "The verb paradidōmi appears three times in this passage (vv. 24, 26, 28), marking three stages of divine judgment. God does not merely permit sin but actively gives humanity over to the consequences of their own rebellion. This is a judicial ‘handing over’ that is itself the outworking of wrath, not merely its prelude."
+          }
+        ],
+        "ctx": "Paul’s description of Gentile idolatry and its moral consequences (1:18–32) draws on standard Jewish apologetic against paganism, especially Wisdom of Solomon 13–14. The argument moves from natural revelation (vv. 19–20) to idolatrous exchange (vv. 21–23) to moral degradation (vv. 24–32) in a deliberate rhetorical descent. However, Paul’s purpose is not simply to condemn Gentiles; the trap springs in 2:1 when the Jewish interlocutor who applauds this indictment discovers that he too stands condemned. The passage establishes the universal need for the gospel announced in 1:16–17.",
+        "cross": [
+          {
+            "ref": "Ps 19:1–4",
+            "note": "Creation declares God’s glory — the basis for Paul’s claim that God’s invisible qualities are ‘clearly seen’ through what has been made."
+          },
+          {
+            "ref": "Wis 13:1–9",
+            "note": "The Wisdom of Solomon contains a parallel argument about the inexcusability of idolatry given creation’s testimony to the Creator."
+          },
+          {
+            "ref": "Acts 14:15–17",
+            "note": "Paul makes a similar natural-theology argument at Lystra: God ‘has not left himself without testimony.’"
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18",
+              "note": "God’s wrath is not capricious anger but his settled, holy antagonism against sin. It is revealed ‘from heaven,’ indicating its divine origin and comprehensive scope."
+            },
+            {
+              "ref": "1:19–20",
+              "note": "Natural revelation renders all humanity ‘without excuse.’ This does not mean that creation provides a full knowledge of salvation, but it provides sufficient knowledge of God’s existence and power to render idolatry culpable."
+            },
+            {
+              "ref": "1:21–23",
+              "note": "The exchange of God’s glory for images recapitulates the pattern of the golden calf (Exod 32). Idolatry is not the absence of worship but misdirected worship."
+            },
+            {
+              "ref": "1:24–28",
+              "note": "The threefold ‘God gave them over’ represents divine judicial abandonment. God’s most severe temporal judgment is to let sinners have what they want."
+            },
+            {
+              "ref": "1:32",
+              "note": "The climax of the passage: not only do they practise evil but they approve of those who do. Communal celebration of sin represents the deepest form of moral corruption."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:20",
+              "note": "Calvin argues that the knowledge of God from creation is real but insufficient for salvation. It leaves humanity without excuse but does not provide the saving knowledge that comes through the gospel. This is the sensus divinitatis that Calvin develops in the Institutes."
+            },
+            {
+              "ref": "1:24",
+              "note": "God’s ‘giving over’ does not make God the author of sin. Rather, God withdraws his restraining grace and allows the sinful heart to follow its own inclinations. The blame lies entirely with the creature."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:20",
+              "note": "The Greek aoratos (‘invisible’) is modified by noumena (‘being understood’ or ‘perceived by the mind’). The paradox is intentional: invisible realities are intellectually perceived through visible creation."
+            },
+            {
+              "ref": "1:26–27",
+              "note": "The phrase ‘natural relations’ (physikēn chrēsin) refers to the created order of sexual complementarity. Paul’s argument is grounded in creation theology, not cultural convention."
+            }
+          ]
+        },
+        "moo": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18–32",
+              "note": "Moo reads this passage not primarily as a phenomenological description of how individuals fall into sin but as a salvation-historical narrative of humanity’s corporate decline. The Adam story lies in the background: the exchange of truth for a lie recapitulates the primal rebellion. Paul is retelling Genesis 3 in universal terms."
+            },
+            {
+              "ref": "1:18",
+              "note": "Moo argues that the present tense ‘is being revealed’ (apokalyptetai) indicates that God’s wrath is an ongoing reality in the present age, not merely a future eschatological event. The wrath-revelation parallels the righteousness-revelation of 1:17."
+            }
+          ]
+        },
+        "schreiner": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18–32",
+              "note": "Schreiner emphasises the theocentric focus of the passage: the fundamental sin is the failure to glorify God and give him thanks (v. 21). All subsequent moral degradation flows from this vertical rupture. The threefold ‘exchange’ pattern (vv. 23, 25, 26) demonstrates that idolatry inevitably distorts the entire created order."
+            },
+            {
+              "ref": "1:20",
+              "note": "Schreiner argues that the knowledge available through creation is genuine and sufficient to establish culpability, but that fallen humanity universally suppresses it. The problem is not epistemic but moral: people know God exists but refuse to honour him."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "lit": {
+      "rows": [
+        {
+          "label": "vv.1–7",
+          "range": "1:1–7",
+          "text": "Salutation: Paul, Apostle of the Gospel",
+          "is_key": true
+        },
+        {
+          "label": "vv.8–15",
+          "range": "1:8–15",
+          "text": "Thanksgiving and Paul’s Desire to Visit Rome",
+          "is_key": false
+        },
+        {
+          "label": "vv.16–17",
+          "range": "1:16–17",
+          "text": "Thesis Statement: The Righteousness of God by Faith",
+          "is_key": true
+        },
+        {
+          "label": "vv.18–32",
+          "range": "1:18–32",
+          "text": "The Wrath of God Against Gentile Ungodliness",
+          "is_key": true
+        }
+      ],
+      "note": "Romans 1 moves from the gospel’s identity (vv.1–7) to its power (vv.16–17) to the universal need it addresses (vv.18–32). The salutation and thesis are the hermeneutical key to the entire letter."
+    },
+    "themes": {
+      "scores": [
+        {
+          "name": "Covenant",
+          "value": 6
+        },
+        {
+          "name": "Judgment",
+          "value": 9
+        },
+        {
+          "name": "Mercy",
+          "value": 3
+        },
+        {
+          "name": "Faith",
+          "value": 8
+        },
+        {
+          "name": "Sovereignty",
+          "value": 8
+        },
+        {
+          "name": "Worship",
+          "value": 7
+        },
+        {
+          "name": "Holiness",
+          "value": 7
+        },
+        {
+          "name": "Prophecy",
+          "value": 4
+        },
+        {
+          "name": "Justice",
+          "value": 8
+        },
+        {
+          "name": "Mission",
+          "value": 6
+        }
+      ],
+      "note": "Judgment dominates (9): God’s wrath against ungodliness is the chapter’s climactic section. Faith and Justice both score 8, reflecting the thesis statement and the forensic categories that will structure the letter."
+    },
+    "hebtext": [
+      {
+        "word": "εὐαγγέλιον",
+        "tlit": "euangelion",
+        "gloss": "gospel / good news",
+        "note": "The noun euangelion (gospel) appears nine times in Romans. In the Greco-Roman world, the term denoted an imperial proclamation of victory or the accession of a new emperor. Paul co-opts the word for the announcement of God’s saving act in Christ — a counter-imperial claim that the crucified Messiah, not Caesar, is Lord. The genitive construction ‘gospel of God’ (euangelion theou) identifies God as the source and author of this proclamation."
+      },
+      {
+        "word": "κλητός",
+        "tlit": "klētos",
+        "gloss": "called / appointed",
+        "note": "Paul identifies himself as klētos apostolos (‘called apostle’), using the same term he applies to the Roman believers in v. 6 (klētoi Iēsou Christou, ‘called of Jesus Christ’) and v. 7 (klētois hagiois, ‘called saints’). The vocabulary of divine calling brackets the opening and establishes that both apostle and church exist by God’s initiative, not human decision."
+      },
+      {
+        "word": "δικαιοσύνη θεοῦ",
+        "tlit": "dikaiosynē theou",
+        "gloss": "righteousness of God",
+        "note": "The phrase dikaiosynē theou is the thematic centre of Romans. The genitive theou is debated: does it mean the righteousness that comes from God (objective genitive), the righteousness that God himself possesses (subjective genitive), or God’s saving activity in covenant faithfulness? Most scholars now recognise that Paul holds these senses together — God’s own righteous character is the ground of his saving action, and the gift of righteousness to believers is its effect."
+      },
+      {
+        "word": "πίστις",
+        "tlit": "pistis",
+        "gloss": "faith / faithfulness / trust",
+        "note": "Pistis occurs over 40 times in Romans. In 1:17 the phrase ‘from faith to faith’ (ek pisteōs eis pistin) is variously interpreted: from the faith of the preacher to the faith of the hearer, from OT faith to NT faith, or as an emphatic idiom meaning ‘entirely by faith.’ The Habakkuk citation that follows (2:4) anchors justification in trust rather than in Torah performance."
+      },
+      {
+        "word": "ἀσέβεια",
+        "tlit": "asebeia",
+        "gloss": "ungodliness / impiety",
+        "note": "Asebeia denotes the vertical dimension of sin — the refusal to honour God as God. Paul pairs it with adikia (unrighteousness), which is the horizontal dimension: injustice toward others. Together they encompass the totality of human rebellion."
+      },
+      {
+        "word": "παρέδωκεν",
+        "tlit": "paredōken",
+        "gloss": "he gave over / handed over",
+        "note": "The verb paradidōmi appears three times in this passage (vv. 24, 26, 28), marking three stages of divine judgment. God does not merely permit sin but actively gives humanity over to the consequences of their own rebellion. This is a judicial ‘handing over’ that is itself the outworking of wrath, not merely its prelude."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Paul",
+        "role": "Apostle to the Gentiles; author of thirteen NT letters",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "timeline_id": "paul"
+      },
+      {
+        "name": "Christ",
+        "role": "Key biblical figure",
+        "text": "3–4 (descended from David / declared Son of God by the resurrection) may be a pre-Pauline confession that Paul adopts and affirms, establishing common ground with a church that already confesses Christ…"
+      },
+      {
+        "name": "David",
+        "role": "Key biblical figure",
+        "text": "3–4 (descended from David / declared Son of God by the resurrection) may be a pre-Pauline confession that Paul adopts and affirms, establishing common ground with a church that already confesses Christ…"
+      }
+    ],
+    "trans": {
+      "title": "Comparing translations in The Gospel of God",
+      "rows": [
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "And you also are among those Gentiles who are called to belong to Jesus Christ."
+            },
+            {
+              "version": "ESV",
+              "text": "including you who are called to belong to Jesus Christ,"
+            }
+          ]
+        },
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "To all in Rome who are loved by God and called to be his holy people: Grace and peace to you from God our Father and from the Lord Jesus Christ."
+            },
+            {
+              "version": "ESV",
+              "text": "To all those in Rome who are loved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus Christ."
+            }
+          ]
+        }
+      ]
+    },
+    "rec": [
+      {
+        "title": "John MacArthur",
+        "quote": "\"Paul’s self-designation as doulos (slave) of Christ Jesus is not merely metaphorical. It signals absolute ownership and total submission to Christ’s lordship — a voluntary bondage that paradoxically c…\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
+      },
+      {
+        "title": "John Calvin",
+        "quote": "\"Calvin notes that Paul calls himself a servant before an apostle, teaching that the highest office in the church is still one of service. No minister is lord over the church — all are servants of the …\"",
+        "note": "Reformed / Reformation — 16th c."
+      },
+      {
+        "title": "NET Bible translators",
+        "quote": "\"The phrase ‘Spirit of holiness’ (pneumatos hagiōsynēs) is unusual in Pauline usage. Some scholars interpret it as a reference to Christ’s own divine spirit rather than the Holy Spirit, though the two …\"",
+        "note": "Text-critical evangelical — 21st c."
+      }
+    ],
+    "debate": [
+      [
+        "Interpretive Question: 1:3–4",
+        [
+          [
+            "Critical/Analytical scholarship",
+            "The phrase ‘Spirit of holiness’ (pneumatos hagiōsynēs) is unusual in Pauline usage. Some scholars interpret it as a reference to Christ’s own divine s…",
+            "Emphasises historical-critical, literary, or text-critical analysis."
+          ],
+          [
+            "Traditional/Confessional reading",
+            "Reads The Gospel of God within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Represented by Calvin, MacArthur, and the evangelical tradition."
+          ]
+        ],
+        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
+      ],
+      [
+        "Interpretive Question: 1:5",
+        [
+          [
+            "Critical/Analytical scholarship",
+            "The genitive pisteōs in ‘obedience of faith’ is debated: is it source (‘obedience that springs from faith’), apposition (‘obedience that is faith’), o…",
+            "Emphasises historical-critical, literary, or text-critical analysis."
+          ],
+          [
+            "Traditional/Confessional reading",
+            "Reads The Gospel of God within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Represented by Calvin, MacArthur, and the evangelical tradition."
+          ]
+        ],
+        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
+      ]
+    ],
+    "thread": [
+      {
+        "direction": "connection",
+        "anchor": "The Gospel of God",
+        "target": "Gal 1:15–16",
+        "type": "Connection",
+        "text": "Paul similarly describes his apostleship as a divine calling, not a human appointment — ‘set apart from my mother’s womb.’"
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Gospel of God",
+        "target": "2 Tim 2:8",
+        "type": "Connection",
+        "text": "Paul reiterates the twofold Christological formula: descended from David, raised from the dead."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Gospel of God",
+        "target": "Acts 9:15",
+        "type": "Connection",
+        "text": "The Lord identifies Paul as his ‘chosen instrument’ to carry his name before Gentiles, kings, and Israel."
+      },
+      {
+        "direction": "fulfilment",
+        "anchor": "The Gospel of God",
+        "target": "Hab 2:4",
+        "type": "Fulfilment",
+        "text": "Paul quotes Habakkuk’s declaration as the Old Testament warrant for justification by faith — a text he also cites in Galatians 3:11."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Gospel of God",
+        "target": "Gal 3:11",
+        "type": "Connection",
+        "text": "Paul appeals to the same Habakkuk text in arguing against Judaizers, confirming that justification has never been through law-keeping."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Gospel of God",
+        "target": "1 Cor 1:18–25",
+        "type": "Connection",
+        "text": "The ‘foolishness’ of the cross — the gospel is God’s power despite its apparent weakness."
+      }
+    ]
+  },
+  "vhl_groups": []
+}
