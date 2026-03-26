@@ -22,12 +22,9 @@ Clone the repo, then read `_tools/CONTENT_REMEDIATION_PLAN.md` for full context.
 ## What's Done (continued)
 
 - **Batch 2I:** 85 tx chapter panels populated — Genesis (23), Exodus (39), Ruth (4), Proverbs (19). Zero empty tx panels remain.
+- **Batch 3:** People enrichment complete — 13 bios expanded, 10 dates added, 3 entries key-normalized (oholah/oholibah/hiram_tyre refs now load in DB), 27 timeline_people entries added.
 
 ## What's Next — Continue in This Order
-
-### Batch 3 — People Enrichment (41 people)
-
-41 people need expanded bios, dates, refs, timeline connections. Update `config.py` → `export_config.py` → `build_sqlite.py`. See remediation plan §3A-3D.
 
 ### Batch 4 — Parallel Passages (8)
 
@@ -56,6 +53,6 @@ Both validators should pass green before pushing. Current validator counts:
 - 1070 chapters, 2418 sections
 - 17677 section panels, 8213 chapter panels
 - 260 people (37 spine, 223 satellite), 51 scholars
-- 73 places, 380 timelines
+- 73 places, 407 timelines
 
 Git config: `user.email "craig@companionstudy.app"`, `user.name "Claude AI"`
