@@ -74,12 +74,12 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("44 live books", live == 44, f"got {live}")
-    check("22 pending books", pending == 22, f"got {pending}")
+    check("45 live books", live == 45, f"got {live}")
+    check("21 pending books", pending == 21, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1054 chapters", ch_count == 1054, f"got {ch_count}")
+    check("1062 chapters", ch_count == 1062, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
@@ -124,7 +124,7 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("252 people", q1(cur, "SELECT COUNT(*) FROM people") == 252)
+    check("253 people", q1(cur, "SELECT COUNT(*) FROM people") == 253)
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
@@ -335,7 +335,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("215 satellite people", sat == 215, f"got {sat}")
+    check("216 satellite people", sat == 216, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
