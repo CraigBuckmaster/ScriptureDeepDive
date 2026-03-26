@@ -15,7 +15,16 @@
       "verse_end": 14,
       "panels": {
         "ctx": "Joash repairs the temple, echoing 2 Kings 12. The Chronicler’s version emphasises Jehoiada’s role: “Joash did what was right in the eyes of the LORD all the years of Jehoiada the priest.” The qualification is ominous — faithfulness depends on the mentor’s presence. Jehoiada dies at 130, buried “in the City of David among the kings” — a priest honoured with royal burial.",
-        "cross": [],
+        "cross": [
+          {
+            "ref": "2 Kgs 12:1–16",
+            "note": "Both accounts record the temple repair, but they differ in details. Kings says the priests initially failed to repair the temple; Chronicles says Joash was the driving force and introduced a collection chest."
+          },
+          {
+            "ref": "Exod 30:11–16",
+            "note": "The 'tax that Moses the servant of God laid on Israel' (v. 6) refers to the half-shekel atonement money from Exodus — Joash revived an ancient Mosaic institution to fund temple restoration."
+          }
+        ],
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -43,7 +52,20 @@
       "verse_end": 27,
       "panels": {
         "ctx": "After Jehoiada’s death, the officials lead Joash astray. Prophets are sent but ignored. Zechariah son of Jehoiada prophesies against them; Joash has him stoned in the temple courtyard. Zechariah’s dying words: “May the LORD see this and call you to account.” Within a year, Aram invades with a small force and defeats Judah’s large army “because Judah had forsaken the LORD.” Joash is assassinated in bed. “He was not buried in the tombs of the kings.” The man the temple saved becomes the man who desecrates it.",
-        "cross": [],
+        "cross": [
+          {
+            "ref": "2 Kgs 12:17–21",
+            "note": "Kings records Hazael's threat and Joash's assassination but omits the apostasy and Zechariah's murder. Chronicles adds the devastating spiritual collapse after Jehoiada's death — the king who restored the temple later desecrated it."
+          },
+          {
+            "ref": "Matt 23:35",
+            "note": "Jesus names 'Zechariah son of Berekiah, whom you murdered between the temple and the altar' — likely referencing this Zechariah (son of Jehoiada). His dying words — 'May the LORD see and avenge' — become a bookend with Abel's blood."
+          },
+          {
+            "ref": "Luke 11:51",
+            "note": "Luke's parallel places the murder 'between the altar and the sanctuary,' matching the Chronicles account precisely and confirming that Jesus saw this event as representative of Israel's pattern of killing prophets."
+          }
+        ],
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
