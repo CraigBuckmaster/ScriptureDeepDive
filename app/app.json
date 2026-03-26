@@ -9,7 +9,9 @@
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0c0a07",
     "newArchEnabled": true,
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "splash": {
       "image": "./assets/images/icon-512.png",
       "resizeMode": "contain",
@@ -20,7 +22,9 @@
       "bundleIdentifier": "com.scripturedeepive.app",
       "buildNumber": "1",
       "infoPlist": {
-        "UIBackgroundModes": ["audio"]
+        "UIBackgroundModes": [
+          "audio"
+        ]
       },
       "config": {
         "googleMapsApiKey": "AIzaSyBIAraIZ1bAOGPpE0_BMX1QJ0CvTRdtiVI"
@@ -46,7 +50,14 @@
     "plugins": [
       "expo-font",
       "expo-screen-orientation",
-      ["expo-splash-screen", { "backgroundColor": "#0c0a07" }]
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0c0a07"
+        }
+      ],
+      "expo-asset",
+      "expo-sqlite"
     ],
     "updates": {
       "url": "https://u.expo.dev/",
