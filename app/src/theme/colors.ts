@@ -114,6 +114,8 @@ export const scholars: Record<string, string> = {
   zimmerli: '#a8c090',
   moo: '#7898c0',
   schreiner: '#c09868',
+  fee: '#6898b8',
+  thiselton: '#a088b8',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────

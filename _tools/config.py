@@ -1308,3 +1308,18 @@ SCHOLAR_REGISTRY.append(('moo', 'moo', 'Moo', 'moo'))
 SCHOLAR_REGISTRY.append(('schreiner', 'schreiner', 'Schreiner', 'schreiner'))
 COMMENTATOR_SCOPE['moo'] = ['romans']
 COMMENTATOR_SCOPE['schreiner'] = ['romans']
+
+# ── 1 Corinthians ────────────────────────────────────────────────────
+BOOK_META['1_corinthians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (1\u2009Cor 1:1), writing with Sosthenes (probably the former synagogue ruler of Acts 18:17). Pauline authorship is universally accepted; the letter\u2019s autobiographical details, theological vocabulary, and cross-references to other Pauline correspondence leave no serious room for doubt.\n\n<strong>When written:</strong> c.\u2009AD\u200955, near the end of Paul\u2019s extended ministry in Ephesus during his third missionary journey (16:8). Paul had already written an earlier (now lost) letter to Corinth (5:9) and had received oral reports from Chloe\u2019s household (1:11) as well as a written letter from the Corinthians raising specific questions (7:1).\n\n<strong>What prompted it:</strong> Multiple crises in the young Corinthian church: factionalism around leaders (chs.\u20091\u20134), sexual immorality (ch.\u20095), lawsuits among believers (6:1\u20138), questions about marriage and celibacy (ch.\u20097), food offered to idols (chs.\u20098\u201310), abuses at the Lord\u2019s Supper (ch.\u200911), spiritual gifts and their regulation (chs.\u200912\u201314), and denial of the bodily resurrection (ch.\u200915). The letter is Paul\u2019s most sustained engagement with the practical outworking of the gospel in a Greco-Roman urban context, addressing how the cross reshapes community life, ethics, worship, and eschatological hope.",
+    'vhl_places': ['Corinth', 'Ephesus', 'Jerusalem', 'Cenchreae', 'Achaia', 'Macedonia', 'Asia'],
+    'vhl_people': ['Paul', 'Apollos', 'Cephas', 'Christ', 'Sosthenes', 'Stephanas', 'Crispus', 'Gaius', 'Chloe', 'Timothy', 'Moses', 'Adam'],
+    'vhl_key': ['wisdom', 'foolishness', 'cross', 'Spirit', 'body', 'temple', 'love', 'resurrection', 'gifts', 'knowledge', 'freedom', 'conscience', 'divisions', 'holiness', 'grace', 'glory', 'power', 'calling', 'church', 'edification'],
+    'vhl_time': ['the time is short', 'the present crisis', 'until he comes', 'the last trumpet', 'the day', 'at the coming of the Lord'],
+}
+
+SCHOLAR_REGISTRY.append(('fee', 'fee', 'Fee', 'fee'))
+SCHOLAR_REGISTRY.append(('thiselton', 'thiselton', 'Thiselton', 'thiselton'))
+COMMENTATOR_SCOPE['fee'] = ['1_corinthians']
+COMMENTATOR_SCOPE['thiselton'] = ['1_corinthians']
