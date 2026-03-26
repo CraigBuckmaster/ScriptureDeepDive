@@ -154,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("380 timeline entries", tl_count == 380, f"got {tl_count}")
+    check("407 timeline entries", tl_count == 407, f"got {tl_count}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
