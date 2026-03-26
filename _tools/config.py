@@ -1262,3 +1262,16 @@ BOOK_META['haggai'] = {
 
 SCHOLAR_REGISTRY.append(('verhoef', 'verhoef', 'Verhoef', 'verhoef'))
 COMMENTATOR_SCOPE['verhoef'] = ['haggai']
+
+# ── Zechariah ────────────────────────────────────────────────────────
+BOOK_META['zechariah'] = {
+    'is_nt': False,
+    'auth': 'Attributed to the prophet Zechariah son of Berekiah, son of Iddo (Zec 1:1; cf. Ezra 5:1; 6:14; Neh 12:16). The name means "Yahweh remembers" (from zakar, "to remember"). Zechariah was both a prophet and a priest of the Iddo clan who returned from Babylonian exile. He began prophesying in the eighth month of the second year of Darius I (October/November 520 BC), two months after Haggai\'s first oracle. His dated visions span from 520 to 518 BC (Zec 1:1; 1:7; 7:1), though chapters 9-14 are widely regarded as later compositions. The book divides into two major sections: chapters 1-8 (dated night visions and oracles encouraging temple rebuilding) and chapters 9-14 (undated oracles of eschatological judgment and restoration). Zechariah is the longest of the Minor Prophets and the most apocalyptic, with symbolic visions rivaling Daniel and Ezekiel in complexity.',
+    'vhl_places': ['Jerusalem', 'Judah', 'Zion', 'Mount of Olives', 'Babylon'],
+    'vhl_people': ['Zechariah', 'Zerubbabel', 'Joshua son of Jozadak', 'Darius I', 'The Branch'],
+    'vhl_key': ['Branch', 'jealous', 'return', 'temple', 'wall of fire', 'lampstand', 'olive trees', 'flying scroll', 'four chariots', 'crown', 'fasting', 'truth', 'cornerstone', 'shepherd', 'pierced', 'fountain', 'holy', 'living water', 'remnant'],
+    'vhl_time': ['in the eighth month of the second year of Darius', 'on the twenty-fourth day of the eleventh month', 'in the fourth year of King Darius', 'on that day'],
+}
+
+SCHOLAR_REGISTRY.append(('boda', 'boda', 'Boda', 'boda'))
+COMMENTATOR_SCOPE['boda'] = ['zechariah']
