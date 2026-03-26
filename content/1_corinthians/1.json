@@ -1,0 +1,692 @@
+{
+  "chapter_id": null,
+  "testament": null,
+  "book_dir": "1_corinthians",
+  "chapter_num": 1,
+  "title": "The Wisdom of the Cross and the Folly of Divisions",
+  "subtitle": "",
+  "timeline_link": null,
+  "map_story_link": null,
+  "sections": [
+    {
+      "section_num": 1,
+      "header": "Verses 1–9 — \"Called to Be Holy\"",
+      "verse_start": 1,
+      "verse_end": 9,
+      "panels": {
+        "heb": [
+          {
+            "word": "κλητός",
+            "transliteration": "klētos",
+            "gloss": "called / invited",
+            "paragraph": "The adjective klētos (called) appears twice in this salutation (vv. 1–2), applied first to Paul as an apostle and then to the Corinthians as saints. In Pauline usage klētos denotes divine election and effectual summons, not merely an invitation that may be declined. The term derives from the verb kaleō (to call), which in the LXX renders Hebrew qārāʾ when God summons individuals to particular service (cf. Isa 49:1). Paul’s theology of calling thus locates both apostleship and sainthood in God’s sovereign initiative."
+          },
+          {
+            "word": "κοινωνία",
+            "transliteration": "koinōnia",
+            "gloss": "fellowship / partnership / sharing",
+            "paragraph": "The noun koinōnia (fellowship) in v. 9 denotes far more than social companionship. In Greco-Roman usage it could designate a business partnership with shared risk and profit. Paul deploys it theologically: believers have been called into koinōnia with God’s Son, a participatory union that entails shared identity, shared mission, and shared destiny. This foundational concept makes the divisions reported in vv. 10–12 all the more scandalous — they fracture a divinely constituted partnership."
+          }
+        ],
+        "ctx": "Paul writes from Ephesus (16:8) around AD 55 to a church he founded during his eighteen-month stay in Corinth (Acts 18:1–18). The salutation follows standard Greco-Roman epistolary conventions — sender, recipients, greeting — but Paul transforms each element theologically. Corinth was a Roman colony refounded by Julius Caesar in 44 BC, strategically located on the isthmus connecting mainland Greece to the Peloponnese. By Paul’s day it was the capital of the province of Achaia, a thriving commercial hub with a diverse population of Roman colonists, Greeks, Jews, and freedpersons. The city’s famous wealth, athletic games (the Isthmian Games), and reputation for moral license all shape the letter’s concerns.",
+        "cross": [
+          {
+            "ref": "Gal 1:1",
+            "note": "Paul similarly emphasises his apostleship as originating not from human appointment but through Jesus Christ and God the Father."
+          },
+          {
+            "ref": "Rom 1:7",
+            "note": "The identical phrase ‘called to be his holy people’ appears in the Romans salutation, linking the two letters’ theology of divine calling."
+          },
+          {
+            "ref": "Phil 1:3–6",
+            "note": "Paul’s confidence that God will complete the good work he began parallels the thanksgiving motif of 1 Cor 1:4–9."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1–3",
+              "note": "Paul’s apostleship is not self-appointed but divinely commissioned ‘by the will of God.’ This assertion of authority is crucial for a letter that will confront serious error. Every correction Paul makes in this epistle rests on this foundational claim: he speaks not as one opinion among many but as Christ’s authorised ambassador."
+            },
+            {
+              "ref": "1:2",
+              "note": "The church is ‘sanctified in Christ Jesus and called to be his holy people.’ The Corinthians’ positional holiness in Christ stands in sharp contrast to their actual behaviour, which the letter will expose. Sanctification is both a completed status and an ongoing demand."
+            },
+            {
+              "ref": "1:4–9",
+              "note": "Paul thanks God for their spiritual gifts (charismata), which will become a major issue in chapters 12–14. His gratitude is genuine but strategic: by acknowledging God as the source of every gift, Paul pre-empts the Corinthian tendency to boast in human leaders or personal endowments. The gifts confirm God’s faithfulness, not human merit."
+            },
+            {
+              "ref": "1:8–9",
+              "note": "God’s faithfulness is the ground of the believer’s perseverance. Paul does not say ‘you will keep yourselves blameless’ but ‘he will also keep you firm to the end.’ Preservation belongs to God’s covenant promise, not human effort."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1–2",
+              "note": "Calvin observes that Paul begins by asserting divine authority precisely because the Corinthians were disposed to follow human personalities. The title ‘apostle’ is not honorific but functional: it designates one sent with delegated authority. Calvin notes that Sosthenes is named not as co-author but as co-sender, lending fraternal weight to the letter’s admonitions."
+            },
+            {
+              "ref": "1:4–9",
+              "note": "Calvin remarks that Paul’s thanksgiving is pedagogically shrewd: by attributing every Corinthian gift to divine grace, Paul ‘cuts off all occasion for boasting.’ The purpose of enrichment in speech and knowledge is not self-display but the confirmation of the gospel testimony. Calvin emphasises that God’s faithfulness (v. 9) is the sole guarantee of final perseverance."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:2",
+              "note": "The phrase ‘together with all those everywhere who call on the name of our Lord Jesus Christ’ expands the letter’s audience beyond Corinth, suggesting Paul intended a wider circulation. The formula ‘call on the name of the Lord’ (epikaleisthai to onoma) echoes Joel 2:32 (LXX 3:5), applying to Christ a title reserved for YHWH."
+            },
+            {
+              "ref": "1:7",
+              "note": "The word apokalypsin (revelation/unveiling) refers to the parousia — the second coming of Christ. The Corinthians are ‘eagerly waiting’ (apekdechomenous), the same verb Paul uses in Rom 8:19, 23, 25 for creation’s groaning expectation."
+            }
+          ]
+        },
+        "fee": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1–3",
+              "note": "Fee notes that Paul’s salutation is comparatively brief for a letter addressing so many problems. The absence of elaboration (contrast Romans 1:1–7) suggests Paul’s relationship with Corinth needs no introduction — these are his own converts. The inclusion of ‘all those everywhere’ (v. 2) may signal that Paul is aware the Corinthians are inclined to see themselves as an autonomous, self-sufficient community; he reminds them they belong to a larger body."
+            },
+            {
+              "ref": "1:4–9",
+              "note": "Fee argues that Paul’s thanksgiving is carefully calibrated: he thanks God for grace given ‘in Christ Jesus’ (not for Corinthian achievement) and specifically for speech (logos) and knowledge (gnōsis) — the very gifts the Corinthians are misusing. Paul thus reframes these gifts as evidence of God’s faithfulness, not grounds for competition."
+            }
+          ]
+        },
+        "thiselton": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:1–2",
+              "note": "Thiselton highlights the speech-act dimension of Paul’s self-designation as klētos apostolos: it is not merely descriptive but performative, constituting the letter’s authority. The phrase ‘the church of God in Corinth’ juxtaposes the eternal (‘of God’) and the local (‘in Corinth’), establishing the tension between divine calling and civic context that pervades the letter."
+            },
+            {
+              "ref": "1:4–9",
+              "note": "Thiselton observes that the thanksgiving functions as a captatio benevolentiae — a rhetorical strategy to secure goodwill before criticism. Paul’s mention of being ‘enriched in every way’ (v. 5) employs the language of Greco-Roman patronage and benefaction, subtly reorienting it: God, not any human patron, is the source of all enrichment."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 2,
+      "header": "Verses 10–17 — \"Is Christ Divided?\"",
+      "verse_start": 10,
+      "verse_end": 17,
+      "panels": {
+        "heb": [
+          {
+            "word": "σχίσματα",
+            "transliteration": "schismata",
+            "gloss": "divisions / tears / rips",
+            "paragraph": "The noun schismata (divisions) derives from the verb schizō, ‘to tear or rip apart.’ In the Gospels it describes the tearing of a garment (Matt 9:16) or the rending of the temple curtain. Paul’s metaphor is visceral: the Corinthian factions are not merely disagreements but lacerations in the body of Christ. The term recurs at 11:18 and 12:25, forming a thematic thread through the entire letter."
+          },
+          {
+            "word": "σταυρός",
+            "transliteration": "stauros",
+            "gloss": "cross / stake",
+            "paragraph": "The noun stauros (cross) in v. 17 introduces the theological centre of chapters 1–2. In the Greco-Roman world the cross was an instrument of shameful execution reserved for slaves and non-citizens. Paul’s assertion that ‘the cross of Christ’ must not be ‘emptied of its power’ (kenōthē) by eloquent wisdom redefines the cross from symbol of degradation to locus of divine power. The verb kenoō (to empty) anticipates the Christ-hymn language of Phil 2:7."
+          }
+        ],
+        "ctx": "The factionalism in Corinth likely reflects the Greco-Roman culture of rhetorical competition and patron-client relationships. Corinthian believers were aligning themselves with the preacher who baptized them or whose rhetorical style they preferred — Paul, Apollos, Cephas, or a ‘Christ party.’ This mirrors the sophistic culture of the Roman East, where itinerant orators attracted devoted followings and cities competed for the most eloquent speakers. Apollos, described in Acts 18:24–28 as ‘a learned man with a thorough knowledge of the Scriptures,’ was likely a more polished speaker than Paul (cf. 2 Cor 10:10), making the rivalry especially acute.",
+        "cross": [
+          {
+            "ref": "John 17:20–23",
+            "note": "Jesus’ high-priestly prayer for unity among believers provides the dominical background for Paul’s appeal against divisions."
+          },
+          {
+            "ref": "Eph 4:3–6",
+            "note": "Paul later articulates the theological basis for unity: one body, one Spirit, one Lord, one faith, one baptism, one God."
+          },
+          {
+            "ref": "Gal 3:27–28",
+            "note": "Baptism into Christ erases the social distinctions — Jew/Gentile, slave/free, male/female — that fuel factionalism."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:10–12",
+              "note": "Paul’s appeal for unity is grounded not in pragmatism but in Christology. The four rhetorical questions of v. 13 — ‘Is Christ divided? Was Paul crucified for you? Were you baptised in the name of Paul?’ — expose the absurdity of personality-centered factions. Christ alone was crucified; therefore Christ alone deserves allegiance."
+            },
+            {
+              "ref": "1:13–16",
+              "note": "Paul’s relief that he baptized so few Corinthians is not a depreciation of baptism but a refusal to let the ordinance become a badge of factional identity. Baptism is into Christ, not into any human leader. The Corinthians had turned a sign of unity into a marker of division."
+            },
+            {
+              "ref": "1:17",
+              "note": "Paul’s statement ‘Christ did not send me to baptise but to preach the gospel’ does not diminish baptism but clarifies apostolic priority. The gospel proclaimed creates the community; baptism ratifies membership in it. Eloquent wisdom (sophia logou) threatens to replace the cross’s offence with human impressiveness."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:10–13",
+              "note": "Calvin notes that Paul does not condemn the ministers themselves but the Corinthians’ misuse of them. Apollos and Cephas are blameless; the fault lies in those who turned servants of Christ into party leaders. Calvin warns that the same error recurs whenever churches elevate pastors above the message they preach."
+            },
+            {
+              "ref": "1:17",
+              "note": "Calvin reads Paul’s contrast between baptizing and preaching not as a ranking of importance but as a distinction of calling. Paul’s unique gift and commission was proclamation; others could administer baptism. The phrase ‘not with wisdom and eloquence’ signals that the gospel’s power resides in its content, not its rhetorical packaging."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:10",
+              "note": "The verb katartizō (translated ‘perfectly united’) was used in medical contexts for setting a broken bone and in fishing for mending nets (Mark 1:19). Paul envisions not superficial agreement but the mending of a fractured community."
+            },
+            {
+              "ref": "1:12",
+              "note": "The ‘Christ party’ (egō de Christou) is debated: some scholars see a genuine faction claiming direct Christ-authority; others view it as Paul’s own position stated as a corrective. The grammar does not clearly distinguish it from the other slogans."
+            }
+          ]
+        },
+        "fee": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:10–12",
+              "note": "Fee argues that the divisions were not doctrinal but sociological, rooted in Greco-Roman patron-client dynamics. The Corinthians were treating Christian teachers as sophistic rhetors whose brilliance conferred status on their adherents. Paul’s response is not to arbitrate between factions but to demolish the entire framework of wisdom-based status."
+            },
+            {
+              "ref": "1:17",
+              "note": "Fee emphasises that ‘not with eloquent wisdom’ is programmatic for the entire letter. Paul is not anti-intellectual; he opposes a mode of proclamation that substitutes rhetorical display for the scandalous content of a crucified Messiah. The cross is both the message and the method."
+            }
+          ]
+        },
+        "thiselton": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:10",
+              "note": "Thiselton draws attention to the rhetorical force of parakalō (I appeal/urge): it is not merely advice but apostolic exhortation carrying the weight of Christ’s name. The phrase ‘that all of you agree with one another’ (to auto legēte pantes) may echo political concord formulas from Greco-Roman diplomacy."
+            },
+            {
+              "ref": "1:13–17",
+              "note": "Thiselton notes that the three rhetorical questions of v. 13 form a chiastic structure centred on the cross: (A) Is Christ divided? (B) Was Paul crucified for you? (B’) Were you baptised in the name of Paul? The cross — not baptism, not preaching style — is the non-negotiable centre."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 18–25 — \"The Message of the Cross\"",
+      "verse_start": 18,
+      "verse_end": 25,
+      "panels": {
+        "heb": [
+          {
+            "word": "μωρία",
+            "transliteration": "mōria",
+            "gloss": "foolishness / folly",
+            "paragraph": "The noun mōria (foolishness) belongs to a word group that Paul deploys with devastating irony throughout chapters 1–2. In Greek philosophical tradition, mōria was the opposite of sophia (wisdom) and designated intellectual deficiency or absurdity. Paul inverts the valuation: the ‘foolishness of God’ (to mōron tou theou, v. 25) is wiser than human wisdom. This rhetorical reversal draws on the prophetic tradition of Isa 29:14 (quoted in v. 19) where God announces the destruction of the wisdom of the wise."
+          }
+        ],
+        "ctx": "Paul’s argument targets the Greco-Roman culture of sophia (wisdom) that dominated Corinthian intellectual life. First-century Corinth was home to itinerant philosophers, sophistic orators, and rhetorical schools. Status accrued to those who displayed eloquence and philosophical sophistication. Against this backdrop, Paul’s proclamation of a crucified Messiah was doubly offensive: to Jews it contradicted the expectation of a triumphant Davidic king (Deut 21:23: ‘cursed is everyone who is hung on a pole’), and to Greeks it was intellectual absurdity — the notion that divine power could be revealed in the shameful death of a provincial artisan.",
+        "cross": [
+          {
+            "ref": "Isa 29:14",
+            "note": "Paul quotes this passage directly in v. 19: God will destroy the wisdom of the wise, a prophetic precedent for the cross’s overturning of human categories."
+          },
+          {
+            "ref": "Rom 1:16",
+            "note": "The parallel declaration that the gospel is ‘the power of God for salvation’ connects Romans and 1 Corinthians as complementary expositions of the cross’s power."
+          },
+          {
+            "ref": "Col 2:3",
+            "note": "All treasures of wisdom and knowledge are hidden in Christ, not in human philosophy — the positive counterpart to the negative argument here."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18",
+              "note": "The word of the cross (ho logos ho tou staurou) is not merely information about the cross but the proclamation of the cross as the definitive act of God. It divides humanity into two categories: those who are perishing, for whom it is foolishness, and those who are being saved, for whom it is the power of God. There is no neutral ground."
+            },
+            {
+              "ref": "1:20–21",
+              "note": "Paul asks three pointed questions: Where is the wise person? Where is the teacher of the law? Where is the philosopher of this age? Each represents a form of human intellectual achievement — Jewish scribal learning, Greek philosophical inquiry, rhetorical disputation — and each has been rendered futile by the cross."
+            },
+            {
+              "ref": "1:22–24",
+              "note": "Jews demand signs (sēmeia) and Greeks look for wisdom (sophia), but Paul preaches Christ crucified. The crucified Messiah satisfies neither expectation and yet transcends both: he is God’s power (answering the Jewish demand for signs) and God’s wisdom (answering the Greek demand for sophia)."
+            },
+            {
+              "ref": "1:25",
+              "note": "The ‘foolishness of God’ and the ‘weakness of God’ are not admissions of divine inadequacy but devastating comparisons: even if one could (absurdly) attribute foolishness or weakness to God, that foolishness would still surpass the greatest human wisdom, and that weakness would overpower the strongest human strength."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18–19",
+              "note": "Calvin argues that the cross exposes the pretension of all autonomous human wisdom. The quotation of Isaiah 29:14 is not incidental but programmatic: God has always operated by overturning human expectations. The prophetic critique of wisdom in Isaiah’s day finds its ultimate fulfilment in the cross."
+            },
+            {
+              "ref": "1:22–25",
+              "note": "Calvin observes that both Jewish and Greek demands for validation reflect the same root error: making human criteria the measure of divine action. The Jew wants miraculous proof; the Greek wants rational demonstration. The cross refuses both and offers instead a wisdom that can only be received by faith."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18",
+              "note": "The present participles apollymenois (‘who are perishing’) and sōzomenois (‘who are being saved’) indicate ongoing processes, not completed states. Paul views salvation and destruction as eschatological realities already in motion."
+            },
+            {
+              "ref": "1:19",
+              "note": "Paul’s citation of Isa 29:14 follows the LXX closely but substitutes athetēsō (‘I will set aside’) for the MT’s tistattēr (‘will be hidden’). The stronger Greek verb intensifies the prophetic verdict on human wisdom."
+            }
+          ]
+        },
+        "fee": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18–21",
+              "note": "Fee argues that this passage is the theological thesis of the entire letter. Every issue Paul addresses — divisions, sexual ethics, lawsuits, idol food, gifts, resurrection — is a failure to grasp the cross’s implications. The Corinthians are trying to live by the old categories of power, status, and wisdom that the cross has destroyed."
+            },
+            {
+              "ref": "1:22–25",
+              "note": "Fee notes that ‘Christ crucified’ is not merely the content of Paul’s preaching but the hermeneutical key to all reality. The cross redefines power as self-giving love and wisdom as divine foolishness. The Corinthians’ problem is that they have accepted the cross for salvation but rejected it as an ongoing paradigm for community life."
+            }
+          ]
+        },
+        "thiselton": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:18",
+              "note": "Thiselton argues that logos tou staurou (word of the cross) is a speech-act that performs what it declares: it effects salvation for those who receive it and pronounces judgment on those who reject it. The cross is not merely an object of intellectual assent but a transformative proclamation."
+            },
+            {
+              "ref": "1:22–25",
+              "note": "Thiselton highlights the rhetorical structure: Paul sets up the Jewish and Greek expectations as foils, then shatters both with the paradox of Christ crucified. The passage deploys the rhetorical figure of antithesis (foolishness/wisdom, weakness/power) to overturn the audience’s assumed categories."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "section_num": 4,
+      "header": "Verses 26–31 — \"God Chose the Foolish Things\"",
+      "verse_start": 26,
+      "verse_end": 31,
+      "panels": {
+        "heb": [
+          {
+            "word": "καύχησις",
+            "transliteration": "kauchēsis",
+            "gloss": "boasting / grounds for boasting",
+            "paragraph": "The noun kauchēsis (boasting) and its cognates pervade the Corinthian correspondence (over 30 occurrences in 1–2 Corinthians). In v. 31 Paul quotes Jer 9:24: ‘Let the one who boasts boast in the Lord.’ Boasting is not eliminated but redirected — from self-congratulation based on social status, wisdom, or spiritual gifts to glorying in God’s counter-intuitive election of the lowly. This redirection of kauchēsis becomes a controlling motif for the entire letter."
+          }
+        ],
+        "ctx": "Paul turns from theological argument to sociological proof. The composition of the Corinthian congregation itself demonstrates the cross’s logic: not many were wise by human standards, not many influential, not many of noble birth. Archaeological and epigraphic evidence from Roman Corinth confirms a socially stratified community: some members like Gaius and Erastus (Rom 16:23) were wealthy enough to host the church and hold civic office, but the majority were of humble or servile origin. Paul uses this social reality as evidence that God’s election operates by inversion, choosing the despised to shame the honoured.",
+        "cross": [
+          {
+            "ref": "Jer 9:23–24",
+            "note": "The direct source of Paul’s quotation in v. 31: true boasting is in knowing the Lord who exercises kindness, justice, and righteousness."
+          },
+          {
+            "ref": "Matt 11:25–26",
+            "note": "Jesus’ thanksgiving that the Father has hidden things from the wise and revealed them to little children parallels Paul’s argument about God’s election of the foolish."
+          },
+          {
+            "ref": "James 2:5",
+            "note": "James makes the same sociological argument: God chose the poor in the world to be rich in faith and heirs of the kingdom."
+          }
+        ],
+        "mac": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:26–28",
+              "note": "Paul says ‘not many’ — not ‘not any.’ Some Corinthian believers were wealthy and influential (cf. Gaius, Erastus, Stephanas), but the majority came from the lower strata of society. God’s elective purpose deliberately bypasses the world’s power structures to display his sovereignty and prevent human boasting."
+            },
+            {
+              "ref": "1:29–31",
+              "note": "The purpose clause ‘so that no one may boast before him’ (v. 29) reveals the theological rationale for God’s counter-cultural election. Salvation must be seen to originate wholly in God, not in any human qualification. Christ himself has become for us wisdom, righteousness, holiness, and redemption — the full spectrum of what the gospel provides."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:26–29",
+              "note": "Calvin emphasises that God’s election of the lowly is not accidental but deliberate: ‘God chose’ (exelexato) is repeated three times. Election is purposive — it aims to nullify (katargeō) human boasting. Calvin warns that the same principle applies in every age: the church must resist the temptation to measure its worth by worldly standards of prestige and influence."
+            },
+            {
+              "ref": "1:30–31",
+              "note": "Calvin reads v. 30 as a summary of the entire gospel: Christ is our wisdom (the answer to human ignorance), our righteousness (the answer to guilt), our holiness (the answer to corruption), and our redemption (the answer to bondage). Each benefit flows from union with Christ, not from human merit."
+            }
+          ]
+        },
+        "netbible": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:26",
+              "note": "The verb blepete (‘consider’ or ‘look at’) functions as an imperative: Paul commands the Corinthians to examine their own community as evidence of God’s elective strategy."
+            },
+            {
+              "ref": "1:30",
+              "note": "The phrase ex autou (‘it is because of him’) locates the Corinthians’ entire existence in Christ in God’s initiative. The four nouns — wisdom, righteousness, holiness, redemption — may form a chiasm or progressive sequence from initial status to final deliverance."
+            }
+          ]
+        },
+        "fee": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:26–28",
+              "note": "Fee stresses that Paul is not romanticising poverty but making a theological argument about divine election. God’s choice of the socially marginal demonstrates that the cross’s logic — power through weakness — is not merely doctrinal but sociologically enacted in the composition of the church."
+            },
+            {
+              "ref": "1:30–31",
+              "note": "Fee argues that v. 30 functions as the christological climax of the chapter: Christ himself is the embodiment of divine wisdom. The Corinthians need not seek sophia from competing teachers; they already possess it in their union with Christ."
+            }
+          ]
+        },
+        "thiselton": {
+          "source": "",
+          "notes": [
+            {
+              "ref": "1:26–29",
+              "note": "Thiselton draws on sociological studies of Roman Corinth to argue that the phrase ‘not many wise, not many influential, not many of noble birth’ accurately reflects the social profile of the early church. He notes that the threefold ‘God chose’ (exelexato ho theos) constitutes a performative declaration of divine sovereignty that relativises all social hierarchies."
+            },
+            {
+              "ref": "1:30–31",
+              "note": "Thiselton reads the Jeremiah quotation (‘Let the one who boasts boast in the Lord’) as the hermeneutical key to the entire argument of chapters 1–4. Authentic boasting is theo-centric, not anthropo-centric."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "chapter_panels": {
+    "themes": {
+      "scores": [
+        {
+          "name": "Covenant",
+          "value": 5
+        },
+        {
+          "name": "Judgment",
+          "value": 4
+        },
+        {
+          "name": "Mercy",
+          "value": 3
+        },
+        {
+          "name": "Faith",
+          "value": 7
+        },
+        {
+          "name": "Sovereignty",
+          "value": 9
+        },
+        {
+          "name": "Worship",
+          "value": 3
+        },
+        {
+          "name": "Holiness",
+          "value": 6
+        },
+        {
+          "name": "Prophecy",
+          "value": 2
+        },
+        {
+          "name": "Justice",
+          "value": 4
+        },
+        {
+          "name": "Mission",
+          "value": 7
+        }
+      ],
+      "note": "Sovereignty dominates as Paul argues that God’s election of the foolish and weak demonstrates divine power operating through the cross. Faith is central as the proper response to the gospel, in contrast to wisdom-based boasting. Mission is prominent: Paul’s apostolic call and the universal scope of the gospel drive the chapter."
+    },
+    "lit": {
+      "rows": [
+        {
+          "label": "vv.1–9",
+          "range": "1:1–9",
+          "text": "Salutation and Thanksgiving",
+          "is_key": true
+        },
+        {
+          "label": "vv.10–17",
+          "range": "1:10–17",
+          "text": "Report of Divisions and Baptism Argument",
+          "is_key": true
+        },
+        {
+          "label": "vv.18–25",
+          "range": "1:18–25",
+          "text": "The Cross as Divine Wisdom and Power",
+          "is_key": true
+        },
+        {
+          "label": "vv.26–31",
+          "range": "1:26–31",
+          "text": "God’s Election of the Lowly",
+          "is_key": false
+        }
+      ],
+      "note": "The chapter moves from epistolary convention (salutation/thanksgiving) to the theological crisis (divisions) and its resolution (the word of the cross). Paul establishes that the cross is not merely the content of the gospel but the epistemological framework by which all reality — including community life — must be evaluated."
+    },
+    "hebtext": [
+      {
+        "word": "κλητός",
+        "tlit": "klētos",
+        "gloss": "called / invited",
+        "note": "The adjective klētos (called) appears twice in this salutation (vv. 1–2), applied first to Paul as an apostle and then to the Corinthians as saints. In Pauline usage klētos denotes divine election and effectual summons, not merely an invitation that may be declined. The term derives from the verb kaleō (to call), which in the LXX renders Hebrew qārāʾ when God summons individuals to particular service (cf. Isa 49:1). Paul’s theology of calling thus locates both apostleship and sainthood in God’s sovereign initiative."
+      },
+      {
+        "word": "κοινωνία",
+        "tlit": "koinōnia",
+        "gloss": "fellowship / partnership / sharing",
+        "note": "The noun koinōnia (fellowship) in v. 9 denotes far more than social companionship. In Greco-Roman usage it could designate a business partnership with shared risk and profit. Paul deploys it theologically: believers have been called into koinōnia with God’s Son, a participatory union that entails shared identity, shared mission, and shared destiny. This foundational concept makes the divisions reported in vv. 10–12 all the more scandalous — they fracture a divinely constituted partnership."
+      },
+      {
+        "word": "σχίσματα",
+        "tlit": "schismata",
+        "gloss": "divisions / tears / rips",
+        "note": "The noun schismata (divisions) derives from the verb schizō, ‘to tear or rip apart.’ In the Gospels it describes the tearing of a garment (Matt 9:16) or the rending of the temple curtain. Paul’s metaphor is visceral: the Corinthian factions are not merely disagreements but lacerations in the body of Christ. The term recurs at 11:18 and 12:25, forming a thematic thread through the entire letter."
+      },
+      {
+        "word": "σταυρός",
+        "tlit": "stauros",
+        "gloss": "cross / stake",
+        "note": "The noun stauros (cross) in v. 17 introduces the theological centre of chapters 1–2. In the Greco-Roman world the cross was an instrument of shameful execution reserved for slaves and non-citizens. Paul’s assertion that ‘the cross of Christ’ must not be ‘emptied of its power’ (kenōthē) by eloquent wisdom redefines the cross from symbol of degradation to locus of divine power. The verb kenoō (to empty) anticipates the Christ-hymn language of Phil 2:7."
+      },
+      {
+        "word": "μωρία",
+        "tlit": "mōria",
+        "gloss": "foolishness / folly",
+        "note": "The noun mōria (foolishness) belongs to a word group that Paul deploys with devastating irony throughout chapters 1–2. In Greek philosophical tradition, mōria was the opposite of sophia (wisdom) and designated intellectual deficiency or absurdity. Paul inverts the valuation: the ‘foolishness of God’ (to mōron tou theou, v. 25) is wiser than human wisdom. This rhetorical reversal draws on the prophetic tradition of Isa 29:14 (quoted in v. 19) where God announces the destruction of the wisdom of the wise."
+      },
+      {
+        "word": "καύχησις",
+        "tlit": "kauchēsis",
+        "gloss": "boasting / grounds for boasting",
+        "note": "The noun kauchēsis (boasting) and its cognates pervade the Corinthian correspondence (over 30 occurrences in 1–2 Corinthians). In v. 31 Paul quotes Jer 9:24: ‘Let the one who boasts boast in the Lord.’ Boasting is not eliminated but redirected — from self-congratulation based on social status, wisdom, or spiritual gifts to glorying in God’s counter-intuitive election of the lowly. This redirection of kauchēsis becomes a controlling motif for the entire letter."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Paul",
+        "role": "Apostle to the Gentiles; author of thirteen NT letters",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "timeline_id": "paul"
+      },
+      {
+        "name": "Apollos",
+        "role": "Eloquent Alexandrian teacher; discipled by Priscilla and Aquila",
+        "text": "Apollos is an Alexandrian Jew who arrives at Ephesus knowing the way of God accurately but only knowing John’s baptism (Acts 18:24–25). After Priscilla and Aquila complete his instruction, he becomes a powerful apologist in Achaia, \"vigorously refuting his Jewish opponents in public debate\" (Acts 18:28). Paul’s Corinthian correspondence shows Apollos became an unintended source of factionalism (1 Cor 1:12), though Paul regards him as a fellow worker.",
+        "timeline_id": "apollos"
+      },
+      {
+        "name": "Cephas",
+        "role": "Key biblical figure",
+        "text": "Corinthian believers were aligning themselves with the preacher who baptized them or whose rhetorical style they preferred — Paul, Apollos, Cephas, or a ‘Christ party…"
+      },
+      {
+        "name": "Christ",
+        "role": "Key biblical figure",
+        "text": "Every correction Paul makes in this epistle rests on this foundational claim: he speaks not as one opinion among many but as Christ’s authorised ambassador…"
+      },
+      {
+        "name": "Sosthenes",
+        "role": "Key biblical figure",
+        "text": "Calvin notes that Sosthenes is named not as co-author but as co-sender, lending fraternal weight to the letter’s admonitions…"
+      },
+      {
+        "name": "Stephanas",
+        "role": "Key biblical figure",
+        "text": "Gaius, Erastus, Stephanas), but the majority came from the lower strata of society…"
+      },
+      {
+        "name": "Gaius",
+        "role": "Key biblical figure",
+        "text": "Archaeological and epigraphic evidence from Roman Corinth confirms a socially stratified community: some members like Gaius and Erastus (Rom 16:23) were wealthy enough to host the church and hold civic office, but the majority were of humbl…"
+      }
+    ],
+    "trans": {
+      "title": "Comparing translations in The Wisdom of the Cross and the Folly of Divisions",
+      "rows": [
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "He will also keep you firm to the end, so that you will be blameless on the day of our Lord Jesus Christ."
+            },
+            {
+              "version": "ESV",
+              "text": "who will sustain you to the end, guiltless in the day of our Lord Jesus Christ."
+            }
+          ]
+        },
+        {
+          "verse_ref": "",
+          "translations": [
+            {
+              "version": "NIV",
+              "text": "I always thank my God for you because of his grace given you in Christ Jesus."
+            },
+            {
+              "version": "ESV",
+              "text": "I give thanks to my God always for you because of the grace of God that was given you in Christ Jesus,"
+            }
+          ]
+        }
+      ]
+    },
+    "rec": [
+      {
+        "title": "John MacArthur",
+        "quote": "\"Paul’s apostleship is not self-appointed but divinely commissioned ‘by the will of God.’ This assertion of authority is crucial for a letter that will confront serious error. Every correction Paul mak…\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
+      },
+      {
+        "title": "John Calvin",
+        "quote": "\"Calvin observes that Paul begins by asserting divine authority precisely because the Corinthians were disposed to follow human personalities. The title ‘apostle’ is not honorific but functional: it de…\"",
+        "note": "Reformed / Reformation — 16th c."
+      },
+      {
+        "title": "NET Bible translators",
+        "quote": "\"The phrase ‘together with all those everywhere who call on the name of our Lord Jesus Christ’ expands the letter’s audience beyond Corinth, suggesting Paul intended a wider circulation. The formula ‘c…\"",
+        "note": "Text-critical evangelical — 21st c."
+      }
+    ],
+    "debate": [
+      [
+        "Interpretive Question: 1:12",
+        [
+          [
+            "Critical/Analytical scholarship",
+            "The ‘Christ party’ (egō de Christou) is debated: some scholars see a genuine faction claiming direct Christ-authority; others view it as Paul’s own po…",
+            "Emphasises historical-critical, literary, or text-critical analysis."
+          ],
+          [
+            "Traditional/Confessional reading",
+            "Reads The Wisdom of the Cross and the Folly of Divisions within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Represented by Calvin, MacArthur, and the evangelical tradition."
+          ]
+        ],
+        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
+      ]
+    ],
+    "thread": [
+      {
+        "direction": "connection",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "Gal 1:1",
+        "type": "Connection",
+        "text": "Paul similarly emphasises his apostleship as originating not from human appointment but through Jesus Christ and God the Father."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "Rom 1:7",
+        "type": "Connection",
+        "text": "The identical phrase ‘called to be his holy people’ appears in the Romans salutation, linking the two letters’ theology of divine calling."
+      },
+      {
+        "direction": "echo",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "Phil 1:3–6",
+        "type": "Echo",
+        "text": "Paul’s confidence that God will complete the good work he began parallels the thanksgiving motif of 1 Cor 1:4–9."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "John 17:20–23",
+        "type": "Connection",
+        "text": "Jesus’ high-priestly prayer for unity among believers provides the dominical background for Paul’s appeal against divisions."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "Eph 4:3–6",
+        "type": "Connection",
+        "text": "Paul later articulates the theological basis for unity: one body, one Spirit, one Lord, one faith, one baptism, one God."
+      },
+      {
+        "direction": "connection",
+        "anchor": "The Wisdom of the Cross and the Folly of Divisions",
+        "target": "Gal 3:27–28",
+        "type": "Connection",
+        "text": "Baptism into Christ erases the social distinctions — Jew/Gentile, slave/free, male/female — that fuel factionalism."
+      }
+    ]
+  },
+  "vhl_groups": []
+}
