@@ -74,20 +74,22 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("39 live books", live == 39, f"got {live}")
-    check("27 pending books", pending == 27, f"got {pending}")
+    check("44 live books", live == 44, f"got {live}")
+    check("22 pending books", pending == 22, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1020 chapters", ch_count == 1020, f"got {ch_count}")
+    check("1046 chapters", ch_count == 1046, f"got {ch_count}")
 
-    # Every chapter has 2+ sections
+    # Every chapter has 2+ sections (except legitimately short chapters)
+    SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
     lonely = q(cur,
         "SELECT c.id, COUNT(s.id) as cnt FROM chapters c "
         "LEFT JOIN sections s ON s.chapter_id = c.id "
         "GROUP BY c.id HAVING cnt < 2")
-    check("Every chapter has 2+ sections", len(lonely) == 0,
-          f"{len(lonely)} chapters have <2 sections: {[r[0] for r in lonely[:5]]}")
+    unexpected = [r for r in lonely if r[0] not in SINGLE_SECTION_OK]
+    check("Every chapter has 2+ sections (or is known-short)", len(unexpected) == 0,
+          f"{len(unexpected)} chapters have <2 sections: {[r[0] for r in unexpected[:5]]}")
 
     # Most sections should have 'heb' panel (some base chapters lack it)
     sections_without_heb = q(cur,
@@ -122,8 +124,8 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("245 people", q1(cur, "SELECT COUNT(*) FROM people") == 245)
-    check("47 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 47)
+    check("252 people", q1(cur, "SELECT COUNT(*) FROM people") == 252)
+    check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 10)
@@ -152,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("371 timeline entries", tl_count == 371, f"got {tl_count}")
+    check("377 timeline entries", tl_count == 377, f"got {tl_count}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
@@ -333,7 +335,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("208 satellite people", sat == 208, f"got {sat}")
+    check("215 satellite people", sat == 215, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
