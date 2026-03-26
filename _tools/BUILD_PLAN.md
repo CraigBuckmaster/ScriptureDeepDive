@@ -1,7 +1,8 @@
 # Companion Study — New Book Build Plan
 
 > **Read this file before starting any new book.**
-> Last updated: 2026-03-24 (PWA retired — JSON/SQLite pipeline only)
+> Also read `_tools/ARCHITECTURE.md` for conventions that prevent data loss and bugs.
+> Last updated: 2026-03-26
 
 ## Phase 1: Planning
 
