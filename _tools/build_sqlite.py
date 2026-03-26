@@ -17,7 +17,7 @@ VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
 
 # Bump this whenever schema or content changes require a DB replacement on device.
-DB_VERSION = '0.11'
+DB_VERSION = '0.12'
 
 
 # ---------------------------------------------------------------------------
@@ -208,35 +208,12 @@ CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=i
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
 
 -- ══════════════════════════════════════════════════════════════
--- USER DATA (local only, never bundled, never overwritten by OTA)
+-- NOTE: User tables (notes, bookmarks, preferences, highlights,
+-- reading progress, plans) live in a separate user.db managed by
+-- the app's userDatabase.ts migration system. They are NOT bundled
+-- in scripture.db so that content updates can safely replace this
+-- file without destroying user data.
 -- ══════════════════════════════════════════════════════════════
-
-CREATE TABLE user_notes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  verse_ref TEXT NOT NULL,
-  note_text TEXT NOT NULL,
-  created_at TEXT DEFAULT (datetime('now')),
-  updated_at TEXT DEFAULT (datetime('now'))
-);
-
-CREATE TABLE reading_progress (
-  book_id TEXT NOT NULL,
-  chapter_num INTEGER NOT NULL,
-  completed_at TEXT,
-  PRIMARY KEY (book_id, chapter_num)
-);
-
-CREATE TABLE bookmarks (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  verse_ref TEXT NOT NULL,
-  label TEXT,
-  created_at TEXT DEFAULT (datetime('now'))
-);
-
-CREATE TABLE user_preferences (
-  key TEXT PRIMARY KEY,
-  value TEXT NOT NULL
-);
 """
 
 

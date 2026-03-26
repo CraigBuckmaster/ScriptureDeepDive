@@ -1,12 +1,13 @@
 /**
- * db/database.ts — Database initialization and singleton access.
+ * db/database.ts — Content database initialization (scripture.db).
  *
- * On native (Expo Go / dev build), copies the pre-bundled scripture.db
- * from app assets to the documents directory, then opens it.
- * Compares the installed DB version to the expected version and replaces
- * the DB when content has been updated.
+ * This database is READ-ONLY content: books, chapters, sections, panels,
+ * verses, scholars, people, places, timelines, etc. It is replaced in
+ * full on every content update (version mismatch → delete + recopy).
  *
- * On web, creates an empty database (full web DB loading is a future task).
+ * User data (notes, bookmarks, highlights, preferences, plans) lives
+ * in a separate user.db managed by userDatabase.ts, which is NEVER
+ * replaced — only migrated in-place.
  */
 
 import { Platform } from 'react-native';
@@ -18,7 +19,7 @@ import * as FileSystem from 'expo-file-system/legacy';
  * Bump this when build_sqlite.py's DB_VERSION changes.
  * Must match the value written into db_meta by the build script.
  */
-const EXPECTED_DB_VERSION = '0.11';
+const EXPECTED_DB_VERSION = '0.12';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -46,29 +47,8 @@ export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
     await db.execAsync('PRAGMA journal_mode=WAL');
   }
 
-  // Run migrations for user tables
-  await db.execAsync(`
-    CREATE TABLE IF NOT EXISTS verse_highlights (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      verse_ref TEXT NOT NULL,
-      color TEXT NOT NULL,
-      created_at TEXT DEFAULT (datetime('now')),
-      UNIQUE(verse_ref)
-    );
-    CREATE TABLE IF NOT EXISTS reading_plans (
-      id TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      description TEXT NOT NULL,
-      total_days INTEGER NOT NULL,
-      chapters_json TEXT NOT NULL
-    );
-    CREATE TABLE IF NOT EXISTS plan_progress (
-      plan_id TEXT NOT NULL REFERENCES reading_plans(id),
-      day_num INTEGER NOT NULL,
-      completed_at TEXT,
-      PRIMARY KEY (plan_id, day_num)
-    );
-  `);
+  // Content DB is read-only — no runtime migrations needed.
+  // User tables live in user.db (see userDatabase.ts).
 
   return db;
 }

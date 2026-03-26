@@ -9,6 +9,7 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 
 import { FONT_MAP, base } from './src/theme';
 import { initDatabase } from './src/db/database';
+import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore } from './src/stores';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
@@ -37,7 +38,8 @@ export default function App() {
       try {
         // Lock to portrait by default — specific screens unlock for landscape
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-        await initDatabase();
+        await initDatabase();        // Content DB (scripture.db) — replaced on updates
+        await initUserDatabase();    // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
       } catch (e) {
         console.error('Init error:', e);
