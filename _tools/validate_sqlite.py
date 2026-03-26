@@ -74,12 +74,12 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("30 live books", live == 30, f"got {live}")
-    check("36 pending books", pending == 36, f"got {pending}")
+    check("39 live books", live == 39, f"got {live}")
+    check("27 pending books", pending == 27, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("879 chapters", ch_count == 879, f"got {ch_count}")
+    check("1020 chapters", ch_count == 1020, f"got {ch_count}")
 
     # Every chapter has 2+ sections
     lonely = q(cur,
@@ -122,8 +122,8 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("211 people", q1(cur, "SELECT COUNT(*) FROM people") == 211)
-    check("43 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 43)
+    check("245 people", q1(cur, "SELECT COUNT(*) FROM people") == 245)
+    check("47 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 47)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 10)
@@ -131,7 +131,7 @@ def main():
 
     # VHL groups: 5 per chapter = 4395
     vhl_count = q1(cur, "SELECT COUNT(*) FROM vhl_groups")
-    check("4395 VHL groups (879×5)", vhl_count == 4395, f"got {vhl_count}")
+    check("4395 VHL groups", vhl_count == 4395, f"got {vhl_count}")
 
     # Deep links
     dl_count = q1(cur,
@@ -152,7 +152,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("216 timeline entries", tl_count == 216, f"got {tl_count}")
+    check("371 timeline entries", tl_count == 371, f"got {tl_count}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
@@ -333,7 +333,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("174 satellite people", sat == 174, f"got {sat}")
+    check("208 satellite people", sat == 208, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
