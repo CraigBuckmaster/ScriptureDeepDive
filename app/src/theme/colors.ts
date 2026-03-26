@@ -21,9 +21,9 @@ export const base = {
   text: '#f0e8d8',
   textDim: '#b8a888',
   textMuted: '#8a7a58',
-  gold: '#c9a84c',
-  goldDim: '#8b6914',
-  goldBright: '#e8c870',
+  gold: '#bfa050',
+  goldDim: '#8a6e1a',
+  goldBright: '#d4b868',
   border: '#3a2e18',
   borderLight: '#2a2010',
   verseNum: '#9a8a6a',
@@ -55,7 +55,7 @@ export const panels: Record<string, PanelColors> = {
   com:     { bg: '#1c0810', border: '#6a1828', accent: '#c04050' },
   tx:      { bg: '#101020', border: '#303060', accent: '#8888d0' },
   debate:  { bg: '#201212', border: '#603030', accent: '#d08080' },
-  themes:  { bg: '#14120e', border: '#3a3010', accent: '#c9a84c' },
+  themes:  { bg: '#14120e', border: '#3a3010', accent: '#bfa050' },
 } as const;
 
 // ── Scholar Colors ──────────────────────────────────────────────────

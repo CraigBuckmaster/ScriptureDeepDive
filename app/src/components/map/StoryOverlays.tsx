@@ -18,7 +18,7 @@ interface Props {
 }
 
 export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: Props) {
-  const eraColor = eras[story.era] ?? '#c9a84c';
+  const eraColor = eras[story.era] ?? '#bfa050';
 
   // Parse regions
   const regions = useMemo(() => {
