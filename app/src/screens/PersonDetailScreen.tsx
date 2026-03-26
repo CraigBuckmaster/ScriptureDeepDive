@@ -6,6 +6,7 @@
 import React from 'react';
 import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { usePersonDetail } from '../hooks/usePersonDetail';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -14,8 +15,8 @@ import { ArrowRight } from 'lucide-react-native';
 import { base, spacing, fontFamily, eras, eraNames } from '../theme';
 
 export default function PersonDetailScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'PersonDetail'>>();
+  const route = useRoute<ScreenRouteProp<'Explore', 'PersonDetail'>>();
   const { personId } = route.params ?? {};
   const { person, parents, children, spouses, isLoading } = usePersonDetail(personId);
 

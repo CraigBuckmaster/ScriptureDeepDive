@@ -5,3 +5,13 @@ export { ReadStack } from './ReadStack';
 export { ExploreStack } from './ExploreStack';
 export { SearchStack } from './SearchStack';
 export { MoreStack } from './MoreStack';
+export type {
+  TabParamList,
+  HomeStackParamList,
+  ReadStackParamList,
+  ExploreStackParamList,
+  MoreStackParamList,
+  SearchStackParamList,
+  ScreenNavProp,
+  ScreenRouteProp,
+} from './types';

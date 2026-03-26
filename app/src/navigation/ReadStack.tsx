@@ -5,14 +5,7 @@ import BookIntroScreen from '../screens/BookIntroScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import { base } from '../theme';
-
-export type ReadStackParamList = {
-  BookList: undefined;
-  ChapterList: { bookId: string };
-  BookIntro: { bookId: string };
-  Chapter: { bookId: string; chapterNum: number };
-  ParallelPassage: { entryId: string };
-};
+import type { ReadStackParamList } from './types';
 
 const Stack = createStackNavigator<ReadStackParamList>();
 

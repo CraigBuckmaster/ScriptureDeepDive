@@ -6,15 +6,7 @@ import BookListScreen from '../screens/BookListScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import { base } from '../theme';
-
-export type HomeStackParamList = {
-  HomeMain: undefined;
-  Chapter: { bookId: string; chapterNum: number };
-  ChapterList: { bookId: string };
-  BookList: undefined;
-  BookIntro: { bookId: string };
-  ParallelPassage: { entryId: string };
-};
+import type { HomeStackParamList } from './types';
 
 const Stack = createStackNavigator<HomeStackParamList>();
 

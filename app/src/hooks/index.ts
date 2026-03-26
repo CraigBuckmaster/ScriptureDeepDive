@@ -11,7 +11,6 @@ export { useWordStudies } from './useWordStudies';
 export { useSearch } from './useSearch';
 export { useRecentChapters } from './useRecentChapters';
 export { useNotedVerses } from './useNotedVerses';
-export { useChapterCache, getCachedChapter } from './useChapterCache';
 export { useTreeLayout } from './useTreeLayout';
 export { useTreeGestures } from './useTreeGestures';
 export { useMapZoom } from './useMapZoom';

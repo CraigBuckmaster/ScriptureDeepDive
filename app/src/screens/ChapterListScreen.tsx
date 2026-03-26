@@ -9,6 +9,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -17,8 +18,8 @@ import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
 export default function ChapterListScreen() {
-  const navigation = useNavigation<any>();
-  const route = useRoute<any>();
+  const navigation = useNavigation<ScreenNavProp<'Read', 'ChapterList'>>();
+  const route = useRoute<ScreenRouteProp<'Read', 'ChapterList'>>();
   const { bookId } = route.params ?? {};
   const [book, setBook] = useState<Book | null>(null);
   const [visited, setVisited] = useState<Set<number>>(new Set());
