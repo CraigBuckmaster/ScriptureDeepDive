@@ -43,7 +43,16 @@
         ],
         "hist": "Portable tent-shrines are well attested in the ancient Near East. An Egyptian portable canopy shrine from Tutankhamun's tomb (c.1325 BC) features similar construction: wooden frames, fabric coverings, and carrying poles. The Tabernacle's portability was essential for the wilderness period — a divine dwelling that could travel with the people.",
         "ctx": "The four layers of covering (fine linen with cherubim, goat hair, ram skins dyed red, durable leather) move from most glorious inside to most durable/protective outside. The invisible glory within; the weather-resistant hide without. The architecture images the theology of the hidden God: his glory is real but veiled, accessible only through the ordained approach.",
-        "cross": [],
+        "cross": [
+          {
+            "ref": "Exod 36:8–19",
+            "note": "The execution narrative in chapter 36 repeats these instructions almost verbatim, confirming exact obedience. The Chronicler-like precision demonstrates that the tabernacle was built exactly as commanded."
+          },
+          {
+            "ref": "Heb 8:5",
+            "note": "Hebrews says Moses was warned to 'make everything according to the pattern shown you on the mountain.' The tabernacle coverings materialise the heavenly blueprint."
+          }
+        ],
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -133,7 +142,16 @@
         ],
         "hist": "The tabernacle's wooden frame construction uses acacia (šiṭṭâ), the primary timber available in the Sinai — a hard, durable wood resistant to insects. The silver bases (ʾădānîm) for each frame, made from the census silver (38:25–28), literally mean 'sockets' or 'pedestals.' Stone pedestals for wooden columns are well attested in Egyptian and Canaanite architecture. The overall frame-and-curtain construction is consistent with portable shrine technology known from Egyptian military campaigns — Ramesses II carried a tent-shrine on his Kadesh campaign (c. 1274 BC).",
         "ctx": "The silver bases are one of the Tabernacle's deepest theological details: they were cast from the silver collected in the census ransom (Exod 30:11–16, 38:25–27). Every Israelite's ransom payment literally became part of the Tabernacle's foundation. God's dwelling rested on the redemption of his people. The connection between atonement and the dwelling is structural, not merely symbolic.",
-        "cross": [],
+        "cross": [
+          {
+            "ref": "Exod 36:20–34",
+            "note": "The parallel execution account in chapter 36 confirms the frames and bases were built exactly as specified. The forty-eight frames and ninety-six silver bases required enormous quantities of donated material."
+          },
+          {
+            "ref": "1 Kgs 6:15–22",
+            "note": "Solomon's temple replaces the portable frame structure with permanent stone walls overlaid with cedar and gold. The tabernacle frames are the architectural ancestor of the temple walls."
+          }
+        ],
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -207,7 +225,26 @@
             }
           ]
         },
-        "heb": [],
+        "heb": [
+          {
+            "word": "פָּרֹכֶת",
+            "transliteration": "pārōket",
+            "gloss": "veil/curtain",
+            "paragraph": "The pārōket separates the Holy Place from the Most Holy Place — the innermost barrier between God's immediate presence and even the priests. Made of blue, purple, and scarlet yarn with cherubim woven into it, the veil represents the boundary between heaven and earth. When Christ died, 'the curtain of the temple was torn in two' (Matt 27:51)."
+          },
+          {
+            "word": "כְּרֻבִים",
+            "transliteration": "kĕrubîm",
+            "gloss": "cherubim",
+            "paragraph": "The cherubim embroidered on the veil are guardian figures — the same beings posted at Eden's gate (Gen 3:24) and atop the ark's cover. Their presence on the veil reinforces that the Most Holy Place is a symbolic Eden: God's immediate presence, accessible only through a boundary that cherubim guard."
+          },
+          {
+            "word": "מָסָךְ",
+            "transliteration": "māsāk",
+            "gloss": "screen/hanging",
+            "paragraph": "The māsāk is the outer screen at the entrance to the tent — less elaborate than the inner veil, marking a lower boundary of holiness. The graduated system (outer court → screen → Holy Place → veil → Most Holy Place) teaches that approach to God involves progressive sanctification, not casual entry."
+          }
+        ],
         "hist": "The inner veil (pārōket) separating the Holy Place from the Most Holy Place — woven with cherubim in blue, purple, and scarlet — functions as a symbolic boundary between the earthly and divine realms. In Mesopotamian temples, the innermost chamber (the 'holy of holies') was similarly restricted; only the high priest entered. The colour scheme (blue = sky/heaven, purple = royalty, scarlet = blood/life) uses the most expensive dyes of the ancient world. Tyrian purple from murex snails was worth more than its weight in gold.",
         "ctx": "The inner veil (v.31–33) and the outer curtain (v.36–37) create two zones of the Tabernacle: the Holy Place (table, lampstand — accessed by priests daily) and the Most Holy Place (ark, mercy seat — accessed by the high priest alone, once a year). The veil is the theological centre of the structure: it marks the point beyond which ordinary human beings cannot go. The torn veil of Matt 27:51 is the Tabernacle's most dramatic moment.",
         "cross": [
