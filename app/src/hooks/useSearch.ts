@@ -39,10 +39,29 @@ export function useSearch(query: string) {
         }
 
         const lower = trimmed.toLowerCase();
-        const [verses, people] = await Promise.all([
+        const [verses, rawPeople] = await Promise.all([
           searchVerses(trimmed, 20),
           searchPeople(trimmed),
         ]);
+
+        // Sort people by relevance: direct name match → name contains → role/bio match
+        const people = rawPeople.sort((a, b) => {
+          const aName = a.name.toLowerCase();
+          const bName = b.name.toLowerCase();
+          const aExact = aName === lower;
+          const bExact = bName === lower;
+          if (aExact && !bExact) return -1;
+          if (!aExact && bExact) return 1;
+          const aStarts = aName.startsWith(lower);
+          const bStarts = bName.startsWith(lower);
+          if (aStarts && !bStarts) return -1;
+          if (!aStarts && bStarts) return 1;
+          const aContains = aName.includes(lower);
+          const bContains = bName.includes(lower);
+          if (aContains && !bContains) return -1;
+          if (!aContains && bContains) return 1;
+          return 0; // both are role/bio matches — keep FTS order
+        });
 
         // Filter word studies client-side (only 14 entries — no FTS needed)
         const wordStudies = wordStudyCache.current.filter((ws) =>
