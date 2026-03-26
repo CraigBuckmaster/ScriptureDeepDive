@@ -68,7 +68,7 @@ REGISTRY = [
     ('amos',         'Amos',            9,  9, 'OT', 'ot'),
     ('obadiah',      'Obadiah',         1,  1, 'OT', 'ot'),
     ('joel',         'Joel',            3,  3, 'OT', 'ot'),
-    ('hosea',        'Hosea',          14,  7, 'OT', 'ot'),
+    ('hosea',        'Hosea',          14, 14, 'OT', 'ot'),
     ('proverbs', 'Proverbs',  31, 31, 'OT', 'ot'),
     ('matthew',  'Matthew',   28, 28, 'NT', 'nt'),
     ('mark',     'Mark',      16, 16, 'NT', 'nt'),
