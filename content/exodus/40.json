@@ -516,7 +516,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "40:17",
+        "title": "Erection date — 'first month of the second year'",
+        "content": "MT dates the tabernacle erection to 'the first day of the first month of the second year.' The LXX agrees precisely. The SP agrees. This chronological notice anchors the entire priestly chronological framework and is textually secure across all witnesses.",
+        "note": "The date's stability is crucial because the priestly chronology of the wilderness period depends on it. Any alteration would cascade through Numbers and beyond."
+      },
+      {
+        "ref": "40:34–38",
+        "title": "Glory filling the tabernacle — narrative conclusion",
+        "content": "MT's conclusion — the glory cloud filling the tabernacle — is preserved identically across MT, SP, and LXX. The parallel in 1 Kings 8:10–11 (Solomon's temple) uses similar language. No textual witness alters the climactic moment. Targum Onqelos adds 'the Glory of the LORD's Shekinah.'",
+        "note": "The narrative arc from Exodus 25:8 ('let them make me a sanctuary that I may dwell among them') to 40:34 ('the glory of the LORD filled the tabernacle') is the theological spine of the book, preserved without variant."
+      }
+    ],
     "debate": [
       {
         "title": "Why Does Exodus End with the Glory and Not with Entry into Canaan?",

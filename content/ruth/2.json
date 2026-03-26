@@ -431,7 +431,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "2:7",
+        "title": "Ruth's request to glean — a textually difficult verse",
+        "content": "MT's Hebrew in v. 7 is notoriously difficult — the sentence structure is broken and the meaning of the final clause ('her sitting in the house was little') is obscure. The LXX renders a smoother text, suggesting either a different Vorlage or interpretive smoothing. Targum Ruth paraphrases freely.",
+        "note": "This is one of the few genuinely difficult textual moments in Ruth. The MT's roughness may preserve colloquial speech patterns that later witnesses cleaned up."
+      },
+      {
+        "ref": "2:20",
+        "title": "Gōʾēl — kinsman-redeemer terminology",
+        "content": "MT's gōʾēl ('kinsman-redeemer') is translated in the LXX as ἀγχιστεύς ('nearest kin'), a technical legal term. The Vulgate uses 'propinquus' ('near relative'). Targum Ruth adds extensive halakhic explanation about the legal responsibilities of the redeemer.",
+        "note": "The legal precision of each version's translation reflects the redeemer institution's centrality to the narrative. The LXX's ἀγχιστεύς is used nowhere else in this sense, showing the translator searched for an exact Greek equivalent."
+      }
+    ],
     "debate": [
       {
         "title": "The Go'el Institution: Levirate Marriage or Property Redemption?",

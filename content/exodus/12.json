@@ -549,7 +549,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "12:40",
+        "title": "430 years in Egypt — the major chronological variant",
+        "content": "MT reads 'the time the Israelites lived in Egypt was 430 years.' The LXX adds 'and in the land of Canaan' (καὶ ἐν γῇ Χανααν), splitting the 430 years between Egypt and Canaan. The SP agrees with the LXX expansion. Galatians 3:17 follows the LXX reckoning, counting 430 years from the Abrahamic promise to Sinai.",
+        "note": "This is one of the most consequential textual variants in the Pentateuch. The MT implies 430 years in Egypt alone; the LXX/SP reduce Egyptian sojourn to roughly 215 years. Josephus follows the shorter reckoning."
+      },
+      {
+        "ref": "12:1–13",
+        "title": "Passover instructions — SP additions",
+        "content": "The SP expands the Passover instructions with material from Deuteronomy 16, harmonizing the two Passover codes. MT preserves the Exodus instructions without cross-referencing Deuteronomy. The LXX follows MT closely. 4QpaleoExodᵐ (a Qumran manuscript in paleo-Hebrew script) shows affinities with the SP expansion.",
+        "note": "The existence of SP-type readings at Qumran shows that the SP's Pentateuchal harmonizations were not a Samaritan innovation but part of a broader pre-Masoretic textual tradition."
+      }
+    ],
     "debate": [
       {
         "title": "Passover and Atonement: Substitution or Apotropaic Sign?",

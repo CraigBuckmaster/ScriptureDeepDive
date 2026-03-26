@@ -235,7 +235,20 @@
       ],
       "note": ""
     },
-    "tx": [],
+    "tx": [
+      {
+        "ref": "30:1–4",
+        "title": "Agur's oracle — the most textually difficult passage in Proverbs",
+        "content": "MT reads 'The oracle of Agur son of Jakeh — the inspired utterance' (hammaśśāʾ). The text of vv. 1–4 is extraordinarily difficult; words like ʾîtîʾēl and ʾûkāl may be names, verbs, or phrases. The LXX interprets rather than translates, producing a substantially different reading. Targum Proverbs paraphrases freely.",
+        "note": "This passage has defeated translators ancient and modern. The names (if they are names) are unattested elsewhere; the syntax is broken; and the relationship between the oracle and the numerical sayings that follow is unclear."
+      },
+      {
+        "ref": "30:1 (placement)",
+        "title": "Position of chapters 30–31 in LXX",
+        "content": "In the LXX, the sayings of Agur (ch. 30) and Lemuel (ch. 31) do not appear at the end of the book as in MT. Instead, they are inserted after 24:22, with the Hezekian collection (25–29) following. This dramatic rearrangement means the LXX and MT present the book's conclusion entirely differently.",
+        "note": "The LXX order places Solomon's proverbs last, ending the book with the king's voice. MT ends with Lemuel's mother and the 'woman of valor' — a deliberately non-royal conclusion. Both arrangements are theologically meaningful."
+      }
+    ],
     "debate": [
       {
         "title": "Agur's Confession and the Theology of Divine Transcendence",

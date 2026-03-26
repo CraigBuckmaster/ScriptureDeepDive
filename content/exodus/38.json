@@ -332,7 +332,14 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "38:24–31",
+        "title": "Metal inventory — numerical precision",
+        "content": "MT provides exact quantities of gold, silver, and bronze used in the tabernacle. The LXX preserves these numbers with only minor differences in certain manuscripts. The SP agrees with MT. The totals are internally consistent within MT, which is remarkable for ancient numerical transmission.",
+        "note": "The internal consistency of the metal totals across different calculations is a textual control — if any number had been corrupted, the totals would not add up. This built-in check preserved the figures."
+      }
+    ],
     "debate": [
       {
         "title": "The Materials Census: Historical Record or Theological Testimony?",

@@ -236,7 +236,20 @@
       ],
       "note": ""
     },
-    "tx": [],
+    "tx": [
+      {
+        "ref": "31:1–9",
+        "title": "King Lemuel's oracle — identity and placement",
+        "content": "MT attributes these sayings to 'King Lemuel, an oracle his mother taught him.' The LXX does not translate 'Lemuel' as a name but renders the entire superscription differently. Targum Proverbs identifies Lemuel as Solomon and the mother as Bathsheba — an interpretive tradition with no textual support.",
+        "note": "The Targum's identification of Lemuel with Solomon is pure midrash but was enormously influential in rabbinic tradition. The MT preserves an otherwise unknown king, which is the harder and more likely original reading."
+      },
+      {
+        "ref": "31:10–31",
+        "title": "ʾĒšet ḥayil acrostic — textual preservation",
+        "content": "The alphabetic acrostic structure of the 'woman of valor' poem powerfully constrained textual transmission — any addition, omission, or rearrangement would break the acrostic. The LXX preserves all 22 lines in order. No witness shows any disruption to the acrostic structure.",
+        "note": "Acrostic poems are self-correcting texts: the alphabetic constraint means scribes could detect and repair errors. This makes the ʾĒšet ḥayil one of the most securely transmitted poems in the Hebrew Bible."
+      }
+    ],
     "debate": [
       {
         "title": "Is the Eshet Chayil Real Woman, Wisdom Personified, or Both?",

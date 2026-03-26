@@ -434,7 +434,14 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "16:15",
+        "title": "Manna — mān hûʾ ('What is it?')",
+        "content": "MT reads 'they said to one another, mān hûʾ, for they did not know what it was.' This is a Hebrew/Aramaic folk etymology — mān is the Aramaic interrogative 'what?' The LXX translates as τί ἐστιν τοῦτο ('what is this?'). Targum Onqelos preserves the Aramaic resonance.",
+        "note": "The wordplay works in Aramaic but not in classical Hebrew, where 'what' is māh. This Aramaism may indicate the antiquity or dialectal origin of the naming tradition."
+      }
+    ],
     "debate": [
       {
         "title": "What Was Manna? Natural Substance or Pure Miracle?",

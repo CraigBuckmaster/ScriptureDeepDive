@@ -300,7 +300,14 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "7:1",
+        "title": "Moses as 'god to Pharaoh'",
+        "content": "MT reads 'I have made you a god (ʾĕlōhîm) to Pharaoh.' The LXX softens to θεόν ('a god'), but some LXX manuscripts add 'as if a god.' Targum Onqelos substantially rewrites: 'I have appointed you as a master (rab) to Pharaoh,' avoiding the theological difficulty entirely.",
+        "note": "The Targum's 'master' for ʾĕlōhîm reflects the strong anti-anthropomorphic tendency in Onqelos. The MT's bold metaphor is the harder reading and almost certainly original."
+      }
+    ],
     "debate": [
       {
         "title": "Natural vs. Supernatural: The Nature of the Plagues",

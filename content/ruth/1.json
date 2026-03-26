@@ -439,7 +439,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "1:1–22",
+        "title": "Ruth — overall textual stability",
+        "content": "The book of Ruth is one of the most textually stable books in the Hebrew Bible. The MT is well-attested with minimal variants across all major witnesses. The LXX follows MT closely throughout, with only minor stylistic differences in Greek translation choices. No Dead Sea Scrolls fragments of Ruth have been identified.",
+        "note": "The absence of Qumran fragments is notable — Ruth may not have been copied at Qumran, or copies have simply not survived. The book's textual stability is itself informative about its early canonization."
+      },
+      {
+        "ref": "1:20–21",
+        "title": "Naomi's name etymology — Mara",
+        "content": "MT records Naomi's self-renaming: 'Call me Mara (bitter), for Shaddai has made my life bitter.' The LXX translates the name rather than transliterating: Πικράν ('Bitter One'). Targum Ruth paraphrases extensively, adding that God brought suffering 'because of the sins of the generation.'",
+        "note": "The Targum's addition of 'sins of the generation' reflects later rabbinic theodicy — explaining suffering through communal sin rather than leaving it as unexplained divine action."
+      }
+    ],
     "debate": [
       {
         "title": "The Date of Ruth: Pre-Exilic or Post-Exilic Composition?",

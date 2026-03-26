@@ -511,7 +511,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "32:1–6",
+        "title": "Golden calf — textual witnesses",
+        "content": "The golden calf narrative is strikingly stable across MT, SP, and LXX. No version softens Aaron's role or diminishes the people's sin. The LXX translates 'gods who brought us up out of Egypt' (ʾĕlōhîm) with θεούς (plural), matching MT's ambiguity about whether one or many gods are intended.",
+        "note": "The narrative's preservation without apologetic softening across all witnesses is remarkable, given the traditions' reverence for Aaron as High Priest. Textual fidelity overcame the impulse to protect reputations."
+      },
+      {
+        "ref": "32:32–33",
+        "title": "Blotting out from the book — Moses' intercession",
+        "content": "MT records Moses asking to be blotted from God's book if God will not forgive Israel. The LXX translates with ἐξάλειψόν με ἐκ τῆς βίβλου σου. Targum Onqelos softens: 'blot me out from the book of merit which you have written.' The Targum adds a limiting qualification absent from MT.",
+        "note": "Moses' willingness to be blotted out for the people's sake — preserved in MT and LXX but softened by Onqelos — foreshadows Paul's similar wish in Romans 9:3."
+      }
+    ],
     "debate": [
       {
         "title": "Why Did Aaron Comply?",

@@ -426,7 +426,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "28:30",
+        "title": "Urim and Thummim — untranslated in most versions",
+        "content": "MT's ʾûrîm wĕhattummîm is transliterated (not translated) in the LXX as τὴν δήλωσιν καὶ τὴν ἀλήθειαν ('Manifestation and Truth'), Vulgate as 'doctrinam et veritatem.' The SP preserves the Hebrew. The LXX's interpretive rendering suggests the translators understood the words as 'Lights and Perfections.'",
+        "note": "The LXX's decision to translate rather than transliterate these cultic objects provides one of our few windows into what the Hellenistic-era Jewish community thought they meant."
+      },
+      {
+        "ref": "28:4–39",
+        "title": "Priestly garments — LXX embellishment",
+        "content": "The LXX's description of the priestly vestments occasionally adds clarifying details absent from MT, particularly regarding colors and materials. Where MT uses terse technical terms, the LXX sometimes expands with descriptive phrases. The SP follows MT closely.",
+        "note": "The LXX expansions may reflect the translators' personal knowledge of Second Temple priestly vestments, updating the text to match contemporary practice."
+      }
+    ],
     "debate": [
       {
         "title": "The Urim and Thummim: Oracle, Lots, or Something Else?",

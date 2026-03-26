@@ -534,7 +534,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "1:5",
+        "title": "Seventy vs seventy-five souls",
+        "content": "MT reads 'seventy persons' (šibʿîm nāpeš) who went down to Egypt. The LXX reads 'seventy-five' (ἑβδομήκοντα πέντε), counting additional descendants of Joseph born in Egypt. A Dead Sea Scrolls fragment (4QExodᵃ) agrees with the LXX reading of seventy-five. Stephen's speech in Acts 7:14 follows the LXX count.",
+        "note": "This is a significant variant because both a Qumran manuscript and the LXX agree against MT, suggesting the seventy-five reading may preserve an older Hebrew text than the MT."
+      },
+      {
+        "ref": "1:15–22",
+        "title": "Midwives narrative — textual stability",
+        "content": "The account of Shiphrah and Puah is remarkably stable across MT, SP, and LXX. The LXX translates the difficult 'Hebrew midwives' (hamyaldōt hāʿibrîyōt) ambiguously — they could be Hebrews or midwives to the Hebrews. Targum Onqelos reads 'midwives of the Hebrew women,' resolving the ambiguity.",
+        "note": "Whether these women were ethnically Hebrew or Egyptian midwives assigned to Hebrew women has been debated since antiquity; the textual witnesses show the question was already live."
+      }
+    ],
     "debate": [
       {
         "title": "The Date of the Exodus",

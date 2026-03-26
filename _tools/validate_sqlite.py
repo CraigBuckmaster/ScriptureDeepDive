@@ -79,7 +79,7 @@ def main():
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1062 chapters", ch_count == 1062, f"got {ch_count}")
+    check("1070 chapters", ch_count == 1070, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
@@ -124,7 +124,7 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("253 people", q1(cur, "SELECT COUNT(*) FROM people") == 253)
+    check("260 people", q1(cur, "SELECT COUNT(*) FROM people") == 260)
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
@@ -154,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("378 timeline entries", tl_count == 378, f"got {tl_count}")
+    check("380 timeline entries", tl_count == 380, f"got {tl_count}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
@@ -335,7 +335,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("216 satellite people", sat == 216, f"got {sat}")
+    check("223 satellite people", sat == 223, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
