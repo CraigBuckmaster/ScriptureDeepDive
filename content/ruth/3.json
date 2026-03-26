@@ -436,7 +436,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "3:3–4",
+        "title": "Naomi's instructions — euphemistic language",
+        "content": "MT uses 'uncover his feet' (wĕgillît margĕlōtāyw), which is widely understood as a euphemism for the genital area (cf. Isa 7:20, 2 Sam 11:8). The LXX translates as ἀποκαλύψεις τὰ πρὸς ποδῶν αὐτοῦ ('uncover the area near his feet'), partially preserving the ambiguity. Targum Ruth removes all ambiguity: 'uncover the covering at his feet.'",
+        "note": "Whether margĕlōt is a genuine euphemism or a literal reference to feet remains debated. The ancient versions split: the LXX hints at more, the Targum insists on less."
+      },
+      {
+        "ref": "3:12",
+        "title": "Ketiv/Qere — 'if' or 'surely'",
+        "content": "MT has a famous ketiv/qere split: the written text (ketiv) reads 'if indeed I am a redeemer' (conditional), while the marginal reading (qere) reads 'indeed I am a redeemer' (declarative — kî ʾāmnām without the conditional ʾim). The LXX reflects the qere reading. The SP is not relevant (Ruth is not in the Samaritan canon).",
+        "note": "The ketiv/qere system itself is a textual-critical apparatus built into the MT tradition. This instance shows how a single consonant changes the emotional tenor of Boaz's entire response."
+      }
+    ],
     "debate": [
       {
         "title": "The Morality of the Threshing Floor Scene: Naomi's Plan and Ruth's Action",

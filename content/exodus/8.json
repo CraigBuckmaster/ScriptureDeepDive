@@ -314,7 +314,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "8:1–6 (MT 7:26–8:2)",
+        "title": "Chapter and verse numbering divergence",
+        "content": "The MT and English versification of Exodus 7–8 differ: what English Bibles call 8:1–4 is 7:26–29 in MT, creating a four-verse offset through much of chapter 8. The LXX follows a versification closer to the English convention. The SP follows MT numbering.",
+        "note": "This versification discrepancy is not a textual variant per se, but it affects all scholarly citations. The MT chapter break falls in a different narrative location than the LXX/English tradition."
+      },
+      {
+        "ref": "8:19 (MT 8:15)",
+        "title": "Finger of God — textual resonance",
+        "content": "MT's 'This is the finger of God' (ʾeṣbaʿ ʾĕlōhîm) is translated literally in the LXX (δάκτυλος θεοῦ). Jesus quotes this tradition in Luke 11:20, while the parallel in Matthew 12:28 substitutes 'Spirit of God' — a New Testament-level textual variant that illuminates how ʾeṣbaʿ was understood.",
+        "note": "The consistency between MT and LXX here, and the later NT variation, shows how a stable OT text generated divergent theological interpretations in reception."
+      }
+    ],
     "debate": [
       {
         "title": "Pharaoh's Hardening: Divine Causation or Human Responsibility?",

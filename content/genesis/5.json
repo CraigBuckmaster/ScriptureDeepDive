@@ -663,7 +663,20 @@
         "note": "The genealogy closes with Noah's three sons (v.32: \"After Noah was 500 years old, he became the father of Shem, Ham and Japheth\"), the names that will dominate the next several chapters. The three sons are the post-Flood starting point for all subsequent humanity (ch.10 — the Table of Nations). The genealogy of ch.5 has done its work: from Adam to Noah in ten names, from Edenic creation to the threshold of the Flood."
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "5:1–32",
+        "title": "Antediluvian chronology: MT vs SP vs LXX",
+        "content": "The lifespans and begetting ages in Genesis 5 diverge dramatically across the three major witnesses. The LXX consistently adds 100 years to the begetting ages (e.g., Adam begets Seth at 230 in LXX vs 130 in MT), while the SP sometimes agrees with MT, sometimes with LXX, and sometimes stands alone. The total years from creation to the Flood differ by centuries: MT yields ~1656 years, LXX ~2242, SP ~1307.",
+        "note": "This is one of the most significant textual divergences in the entire Pentateuch. Whether the MT shortened or the LXX inflated the numbers remains debated; Hendel argues the MT numbers are secondary."
+      },
+      {
+        "ref": "5:24",
+        "title": "Enoch's departure — translation across versions",
+        "content": "MT reads 'he was not, for God took him' (ʾênennû kî-lāqaḥ). LXX renders this as 'he was not found, because God transferred him' (μετέθηκεν αὐτὸν ὁ θεός), using a verb that implies bodily translation. The SP follows MT closely. Targum Onqelos paraphrases: 'he was not with the dwellers of earth, for he was withdrawn.'",
+        "note": "The LXX's metatithēmi shaped later Jewish and Christian traditions of Enoch's heavenly ascent. Hebrews 11:5 quotes the LXX rendering directly."
+      }
+    ],
     "debate": [
       {
         "title": "The Antediluvian Lifespans: Literal, Symbolic, or Alternative Counting?",

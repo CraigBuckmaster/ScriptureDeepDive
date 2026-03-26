@@ -451,7 +451,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "25:1–40",
+        "title": "Tabernacle instructions — MT vs LXX order",
+        "content": "Beginning in chapter 25, the tabernacle instructions follow a specific order in MT: ark → table → lampstand → tabernacle → altar. The LXX follows this order in the instruction chapters (25–31) but rearranges the construction account (35–40) into a different sequence, reflecting a different editorial tradition.",
+        "note": "The LXX's rearrangement of the construction narrative (not the instructions) is one of the largest structural divergences between MT and LXX in the entire Pentateuch."
+      },
+      {
+        "ref": "25:17–22",
+        "title": "Mercy seat — kappōret translation",
+        "content": "MT's kappōret ('cover/atonement-lid') is rendered in the LXX as ἱλαστήριον ('place of propitiation'). This Greek term reappears in Romans 3:25, where Paul calls Christ a ἱλαστήριον. The Vulgate uses 'propitiatorium.' Tyndale coined 'mercy seat' in English, which has no ancient equivalent.",
+        "note": "The theological trajectory from kappōret → hilastērion → 'propitiation' in Romans 3:25 is one of the most important translation chains in biblical theology."
+      }
+    ],
     "debate": [
       {
         "title": "Does the Tabernacle Describe a Historical Structure or a Literary-Theological Construct?",

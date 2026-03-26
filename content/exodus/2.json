@@ -688,7 +688,14 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "2:10",
+        "title": "Moses' name — Egyptian or Hebrew etymology?",
+        "content": "MT gives a Hebrew folk etymology: 'I drew him out (mĕšîtihû) of the water.' The LXX translates literally. However, the name Moses (mōšeh) is almost certainly Egyptian (ms/mose, 'born of'), cognate with names like Thutmose and Rameses. No ancient version acknowledges the Egyptian etymology.",
+        "note": "The biblical text gives an Israelite perspective on an Egyptian name. All ancient versions preserve the Hebrew wordplay, which functions as theological reinterpretation rather than linguistic analysis."
+      }
+    ],
     "debate": [
       {
         "title": "Was Moses' Killing of the Egyptian Morally Justified?",

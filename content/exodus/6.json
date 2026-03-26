@@ -336,7 +336,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "6:2–3",
+        "title": "The divine name revelation — El Shaddai to YHWH",
+        "content": "MT states 'I appeared to Abraham, Isaac, and Jacob as El Shaddai, but by my name YHWH I was not known to them.' This creates a tension with Genesis passages where the patriarchs use YHWH. The LXX translates El Shaddai as θεὸς ὢν αὐτῶν ('being their God'). SP follows MT.",
+        "note": "This verse is a cornerstone of the Documentary Hypothesis (P source). The textual witnesses do not resolve the tension — it is present in all versions, confirming it belongs to the earliest recoverable text."
+      },
+      {
+        "ref": "6:14–25",
+        "title": "Genealogy of Moses and Aaron — minor variants",
+        "content": "The genealogy shows minor name-spelling differences between MT and LXX (e.g., Amram's wife Jochebed appears as Ιωχαβεδ in LXX). The SP agrees with MT on names. The genealogy's placement interrupts the narrative — a feature preserved in all witnesses, suggesting it was embedded early.",
+        "note": "The narrative disruption is a textual datum: no ancient scribe relocated the genealogy to a smoother position, despite the awkward interruption."
+      }
+    ],
     "debate": [
       {
         "title": "Exodus 6:3 and the Documentary Hypothesis",

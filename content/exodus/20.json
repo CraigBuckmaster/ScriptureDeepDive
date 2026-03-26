@@ -452,7 +452,20 @@
         "direction": "backward"
       }
     ],
-    "tx": [],
+    "tx": [
+      {
+        "ref": "20:1–17",
+        "title": "The Decalogue — MT vs SP (Gerizim command)",
+        "content": "The SP inserts a Tenth Commandment after what is the Tenth in MT, commanding the building of an altar on Mount Gerizim. This is the single largest textual divergence in the entire Pentateuch. The LXX follows MT's commandment count. Additionally, the SP harmonizes the Sabbath and parent-honoring commands with the Deuteronomy 5 versions.",
+        "note": "The SP's Gerizim commandment is central to the Samaritan–Jewish theological divide. It is present in every SP manuscript, confirming it was not a late addition but a defining feature of the Samaritan textual tradition."
+      },
+      {
+        "ref": "20:18–21",
+        "title": "People's fear at Sinai — seeing sounds",
+        "content": "MT reads 'the people saw (rōʾîm) the thunder' — synesthesia. The LXX translates with ἑώρα τὴν φωνήν ('saw the voice'), preserving the synesthesia. The Vulgate's 'videbat voces' also maintains it. Targum Onqelos rationalizes: 'the people perceived the thunders,' using a verb of general perception.",
+        "note": "The MT's sensory crossing (seeing sound) is universally attested except in targums. Rabbinic tradition (Mekhilta) embraced the synesthesia as describing a supernatural mode of perception at Sinai."
+      }
+    ],
     "debate": [
       {
         "title": "How Many Commandments and How Are They Numbered?",
