@@ -219,7 +219,7 @@ def main():
         co_data = json.loads(co_path.read_text())
         check("concepts.json is list", isinstance(co_data, list))
         for i, c in enumerate(co_data):
-            for key in ('id', 'name'):
+            for key in ('id', 'title'):
                 check(f"concept [{i}] has '{key}'", key in c,
                       f"concept {c.get('id', f'index {i}')} missing '{key}'")
         print(f"  concepts: {len(co_data)}")

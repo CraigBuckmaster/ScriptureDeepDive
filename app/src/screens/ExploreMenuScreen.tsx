@@ -57,6 +57,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Trace fulfillment from promise to completion',
     screen: 'ProphecyBrowse',
   },
+  {
+    title: 'Concepts',
+    subtitle: 'Explore the grand themes of Scripture',
+    screen: 'ConceptBrowse',
+  },
 ];
 
 export default function ExploreMenuScreen() {
