@@ -187,6 +187,24 @@ export interface UserNote {
   note_text: string;
   created_at: string;
   updated_at: string;
+  tags_json: string;              // JSON array of tag strings
+  collection_id: number | null;   // FK to study_collections
+}
+
+export interface StudyCollection {
+  id: number;
+  name: string;
+  description: string;
+  color: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface NoteLink {
+  id: number;
+  from_note_id: number;
+  to_note_id: number;
+  created_at: string;
 }
 
 export interface ReadingProgress {

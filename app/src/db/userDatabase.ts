@@ -113,15 +113,48 @@ const MIGRATIONS: Migration[] = [
       );
     `,
   },
-  // ────────────────────────────────────────────────────────────
-  // Future migrations go here:
-  //
-  // {
-  //   version: 2,
-  //   description: 'Add foo column to user_notes',
-  //   sql: `ALTER TABLE user_notes ADD COLUMN foo TEXT;`,
-  // },
-  // ────────────────────────────────────────────────────────────
+  {
+    version: 2,
+    description: 'Enhanced notes — tags, collections, note links, FTS',
+    sql: `
+      -- Study collections
+      CREATE TABLE IF NOT EXISTS study_collections (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        description TEXT DEFAULT '',
+        color TEXT DEFAULT '#bfa050',
+        created_at TEXT DEFAULT (datetime('now')),
+        updated_at TEXT DEFAULT (datetime('now'))
+      );
+
+      -- Add columns to user_notes
+      ALTER TABLE user_notes ADD COLUMN tags_json TEXT DEFAULT '[]';
+      ALTER TABLE user_notes ADD COLUMN collection_id INTEGER
+        REFERENCES study_collections(id) ON DELETE SET NULL;
+
+      -- Note links (bidirectional)
+      CREATE TABLE IF NOT EXISTS note_links (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        from_note_id INTEGER NOT NULL REFERENCES user_notes(id) ON DELETE CASCADE,
+        to_note_id INTEGER NOT NULL REFERENCES user_notes(id) ON DELETE CASCADE,
+        created_at TEXT DEFAULT (datetime('now')),
+        UNIQUE(from_note_id, to_note_id)
+      );
+
+      -- Indexes
+      CREATE INDEX IF NOT EXISTS idx_notes_collection ON user_notes(collection_id);
+      CREATE INDEX IF NOT EXISTS idx_note_links_from ON note_links(from_note_id);
+      CREATE INDEX IF NOT EXISTS idx_note_links_to ON note_links(to_note_id);
+
+      -- FTS on notes
+      CREATE VIRTUAL TABLE IF NOT EXISTS notes_fts USING fts5(
+        note_text, content=user_notes, content_rowid=id
+      );
+
+      -- Populate FTS with existing notes
+      INSERT INTO notes_fts(notes_fts) VALUES('rebuild');
+    `,
+  },
 ];
 
 /**

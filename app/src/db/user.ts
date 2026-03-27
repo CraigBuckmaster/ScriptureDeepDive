@@ -12,7 +12,7 @@
 import { getUserDb } from './userDatabase';
 import { getDb } from './database';
 import { chapterPrefix } from '../utils/verseRef';
-import type { UserNote, ReadingProgress, Bookmark, RecentChapter } from '../types';
+import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, NoteLink } from '../types';
 
 // ── Notes ───────────────────────────────────────────────────────────
 
@@ -36,7 +36,13 @@ export async function saveNote(verseRef: string, text: string): Promise<number> 
     "INSERT INTO user_notes (verse_ref, note_text) VALUES (?, ?)",
     [verseRef, text]
   );
-  return result.lastInsertRowId;
+  const noteId = result.lastInsertRowId;
+  // Sync FTS
+  await getUserDb().runAsync(
+    "INSERT INTO notes_fts(rowid, note_text) VALUES (?, ?)",
+    [noteId, text]
+  );
+  return noteId;
 }
 
 export async function updateNote(id: number, text: string): Promise<void> {
@@ -44,10 +50,17 @@ export async function updateNote(id: number, text: string): Promise<void> {
     "UPDATE user_notes SET note_text = ?, updated_at = datetime('now') WHERE id = ?",
     [text, id]
   );
+  // Sync FTS
+  await getUserDb().runAsync(
+    "UPDATE notes_fts SET note_text = ? WHERE rowid = ?",
+    [text, id]
+  );
 }
 
 export async function deleteNote(id: number): Promise<void> {
   await getUserDb().runAsync("DELETE FROM user_notes WHERE id = ?", [id]);
+  // Sync FTS
+  await getUserDb().runAsync("DELETE FROM notes_fts WHERE rowid = ?", [id]);
 }
 
 export async function getAllNotes(): Promise<UserNote[]> {
@@ -336,4 +349,178 @@ export async function getReadingStats(): Promise<ReadingStats> {
     longestStreak,
     favouriteBook: favRow?.book_id ?? null,
   };
+}
+
+// ── Study Collections ──────────────────────────────────────────────
+
+export async function getCollections(): Promise<StudyCollection[]> {
+  return getUserDb().getAllAsync<StudyCollection>(
+    "SELECT * FROM study_collections ORDER BY updated_at DESC"
+  );
+}
+
+export async function getCollection(id: number): Promise<StudyCollection | null> {
+  return getUserDb().getFirstAsync<StudyCollection>(
+    "SELECT * FROM study_collections WHERE id = ?",
+    [id]
+  );
+}
+
+export async function createCollection(
+  name: string,
+  description: string = '',
+  color: string = '#bfa050'
+): Promise<number> {
+  const result = await getUserDb().runAsync(
+    "INSERT INTO study_collections (name, description, color) VALUES (?, ?, ?)",
+    [name, description, color]
+  );
+  return result.lastInsertRowId;
+}
+
+export async function updateCollection(
+  id: number,
+  name: string,
+  description: string,
+  color: string
+): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE study_collections SET name = ?, description = ?, color = ?, updated_at = datetime('now') WHERE id = ?",
+    [name, description, color, id]
+  );
+}
+
+export async function deleteCollection(id: number): Promise<void> {
+  // Notes in this collection will have collection_id set to NULL (ON DELETE SET NULL)
+  await getUserDb().runAsync("DELETE FROM study_collections WHERE id = ?", [id]);
+}
+
+export async function getNotesInCollection(collectionId: number): Promise<UserNote[]> {
+  return getUserDb().getAllAsync<UserNote>(
+    "SELECT * FROM user_notes WHERE collection_id = ? ORDER BY verse_ref, updated_at DESC",
+    [collectionId]
+  );
+}
+
+export async function getCollectionNoteCounts(): Promise<Record<number, number>> {
+  const rows = await getUserDb().getAllAsync<{ collection_id: number; count: number }>(
+    "SELECT collection_id, COUNT(*) as count FROM user_notes WHERE collection_id IS NOT NULL GROUP BY collection_id"
+  );
+  const counts: Record<number, number> = {};
+  for (const row of rows) {
+    counts[row.collection_id] = row.count;
+  }
+  return counts;
+}
+
+// ── Tags ────────────────────────────────────────────────────────────
+
+/**
+ * Get all unique tags across all notes.
+ */
+export async function getAllTags(): Promise<string[]> {
+  const notes = await getUserDb().getAllAsync<{ tags_json: string }>(
+    "SELECT tags_json FROM user_notes WHERE tags_json IS NOT NULL AND tags_json != '[]'"
+  );
+  const tagSet = new Set<string>();
+  for (const note of notes) {
+    try {
+      const tags: string[] = JSON.parse(note.tags_json);
+      tags.forEach((t) => tagSet.add(t));
+    } catch {
+      // Skip malformed JSON
+    }
+  }
+  return Array.from(tagSet).sort();
+}
+
+export async function updateNoteTags(noteId: number, tags: string[]): Promise<void> {
+  const tagsJson = JSON.stringify(tags);
+  await getUserDb().runAsync(
+    "UPDATE user_notes SET tags_json = ?, updated_at = datetime('now') WHERE id = ?",
+    [tagsJson, noteId]
+  );
+}
+
+export async function getNotesByTag(tag: string): Promise<UserNote[]> {
+  // Use JSON LIKE search — fine for small datasets
+  return getUserDb().getAllAsync<UserNote>(
+    "SELECT * FROM user_notes WHERE tags_json LIKE ? ORDER BY verse_ref",
+    [`%"${tag}"%`]
+  );
+}
+
+export async function setNoteCollection(noteId: number, collectionId: number | null): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE user_notes SET collection_id = ?, updated_at = datetime('now') WHERE id = ?",
+    [collectionId, noteId]
+  );
+}
+
+// ── Note Links ──────────────────────────────────────────────────────
+
+export async function linkNotes(fromId: number, toId: number): Promise<void> {
+  await getUserDb().runAsync(
+    "INSERT OR IGNORE INTO note_links (from_note_id, to_note_id) VALUES (?, ?)",
+    [fromId, toId]
+  );
+}
+
+export async function unlinkNotes(fromId: number, toId: number): Promise<void> {
+  await getUserDb().runAsync(
+    "DELETE FROM note_links WHERE from_note_id = ? AND to_note_id = ?",
+    [fromId, toId]
+  );
+}
+
+/**
+ * Get notes that this note links TO.
+ */
+export async function getLinkedNotes(noteId: number): Promise<UserNote[]> {
+  return getUserDb().getAllAsync<UserNote>(
+    `SELECT n.* FROM user_notes n
+     JOIN note_links l ON l.to_note_id = n.id
+     WHERE l.from_note_id = ?
+     ORDER BY n.verse_ref`,
+    [noteId]
+  );
+}
+
+/**
+ * Get notes that link TO this note (backlinks).
+ */
+export async function getReferencingNotes(noteId: number): Promise<UserNote[]> {
+  return getUserDb().getAllAsync<UserNote>(
+    `SELECT n.* FROM user_notes n
+     JOIN note_links l ON l.from_note_id = n.id
+     WHERE l.to_note_id = ?
+     ORDER BY n.verse_ref`,
+    [noteId]
+  );
+}
+
+// ── FTS Search ──────────────────────────────────────────────────────
+
+/**
+ * Full-text search across all notes.
+ * Returns notes matching the query, ranked by relevance.
+ */
+export async function searchNotesFTS(query: string): Promise<UserNote[]> {
+  // Sanitize: wrap each word in quotes for phrase matching
+  const sanitized = query
+    .replace(/["\*\(\)\{\}\[\]^~:]/g, '')
+    .split(/\s+/)
+    .filter((w) => w.length >= 2)
+    .map((w) => `"${w}"`)
+    .join(' ');
+
+  if (!sanitized) return [];
+
+  return getUserDb().getAllAsync<UserNote>(
+    `SELECT n.* FROM notes_fts f
+     JOIN user_notes n ON n.id = f.rowid
+     WHERE f.note_text MATCH ?
+     ORDER BY rank`,
+    [sanitized]
+  );
 }
