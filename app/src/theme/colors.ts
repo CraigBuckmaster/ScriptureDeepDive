@@ -117,6 +117,9 @@ export const scholars: Record<string, string> = {
   fee: '#6898b8',
   thiselton: '#a088b8',
   harris: '#8ab870',
+  bruce: '#a8906c',
+  lincoln: '#7ca898',
+  obrien: '#b89070',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────
