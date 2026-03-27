@@ -1547,3 +1547,9 @@ COMMENTATOR_SCOPE['schreiner'] = ['1_peter', '2_peter']
 COMMENTATOR_SCOPE['jobes'] = ['1_peter']
 COMMENTATOR_SCOPE['davids'] = ['2_peter', 'jude']
 COMMENTATOR_SCOPE['green'] = ['jude', '2_peter']
+
+# Wave 6: 1-3 John scholars
+SCHOLAR_REGISTRY.append(('yarbrough', 'yarbrough', 'Yarbrough', 'yarbrough'))
+SCHOLAR_REGISTRY.append(('kruse', 'kruse', 'Kruse', 'kruse'))
+COMMENTATOR_SCOPE['yarbrough'] = ['1_john', '2_john', '3_john']
+COMMENTATOR_SCOPE['kruse'] = ['1_john', '2_john', '3_john']

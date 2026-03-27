@@ -695,5 +695,29 @@
     "scope": "2 Peter, Jude",
     "tradition": "Evangelical \u00b7 BECNT",
     "desc": "Wheaton College professor. BECNT Jude and 2 Peter with attention to Greco-Roman rhetoric, Jewish apocalyptic, and contemporary application."
+  },
+  {
+    "key": "yarbrough",
+    "name": "Robert Yarbrough",
+    "color": "#a8b8a0",
+    "scope": [
+      "1_john",
+      "2_john",
+      "3_john"
+    ],
+    "tradition": "Evangelical",
+    "desc": "Professor at Covenant Seminary; BECNT 1-3 John; emphasizes Johannine theology and pastoral application."
+  },
+  {
+    "key": "kruse",
+    "name": "Colin Kruse",
+    "color": "#b0a8b8",
+    "scope": [
+      "1_john",
+      "2_john",
+      "3_john"
+    ],
+    "tradition": "Evangelical",
+    "desc": "Australian NT scholar; TNTC/Pillar John and Johannine Epistles; emphasizes historical context and theological coherence."
   }
 ]
