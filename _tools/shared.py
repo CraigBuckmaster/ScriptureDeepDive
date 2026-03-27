@@ -96,6 +96,14 @@ REGISTRY = [
     ('2_timothy',        '2 Timothy',       4,  4, 'NT', 'nt'),
     ('titus',            'Titus',           3,  3, 'NT', 'nt'),
     ('hebrews',          'Hebrews',        13, 13, 'NT', 'nt'),
+    ('james',            'James',           5,  5, 'NT', 'nt'),
+    ('1_peter',          '1 Peter',         5,  5, 'NT', 'nt'),
+    ('2_peter',          '2 Peter',         3,  0, 'NT', 'nt'),
+    ('1_john',           '1 John',          5,  0, 'NT', 'nt'),
+    ('2_john',           '2 John',          1,  0, 'NT', 'nt'),
+    ('3_john',           '3 John',          1,  0, 'NT', 'nt'),
+    ('jude',             'Jude',            1,  0, 'NT', 'nt'),
+    ('revelation',       'Revelation',     22,  0, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -158,6 +166,14 @@ BOOK_PREFIX = {
     '2_timothy':         '2ti',
     'titus':             'tit',
     'hebrews':           'heb',
+    'james':             'jas',
+    '1_peter':           '1pe',
+    '2_peter':           '2pe',
+    '1_john':            '1jn',
+    '2_john':            '2jn',
+    '3_john':            '3jn',
+    'jude':              'jud',
+    'revelation':        'rev',
 }
 
 # COMMENTATOR_SCOPE — moved to config.py (Batch 5)
