@@ -114,8 +114,8 @@ export default function CollectionDetailScreen() {
 
   if (!collection) {
     return (
-      <SafeAreaView style={styles.container}>
-        <ScreenHeader title="Collection" onBack={() => navigation.goBack()} />
+      <SafeAreaView style={styles.container} edges={['top']}>
+        <ScreenHeader title="Collection" onBack={() => navigation.goBack()} style={styles.header} />
         <View style={styles.emptyWrap}>
           <Text style={styles.emptyText}>Collection not found</Text>
         </View>
@@ -124,11 +124,12 @@ export default function CollectionDetailScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <ScreenHeader
         title={collection.name}
         titleColor={collection.color}
         onBack={() => navigation.goBack()}
+        style={styles.header}
       />
 
       {/* Collection header */}
@@ -186,6 +187,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: base.bg,
+  },
+  header: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+    paddingBottom: spacing.sm,
   },
   collectionHeader: {
     flexDirection: 'row',
