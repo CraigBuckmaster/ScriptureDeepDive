@@ -41,7 +41,7 @@ export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backL
       <View style={styles.textWrap}>
         <Text style={[styles.title, titleColor ? { color: titleColor } : undefined]} numberOfLines={1} accessibilityRole="header">{title}</Text>
         {subtitle ? (
-          <Text style={styles.subtitle} numberOfLines={1}>{subtitle}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
         ) : null}
       </View>
     </View>

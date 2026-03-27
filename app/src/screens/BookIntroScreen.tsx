@@ -114,6 +114,18 @@ export default function BookIntroScreen() {
                 ))}
               </View>
             )}
+
+            {/* Reading Plan (ref + label list) */}
+            {section.plan && Array.isArray(section.plan) && (
+              <View style={styles.planBlock}>
+                {section.plan.map((item: any, j: number) => (
+                  <View key={j} style={styles.planItem}>
+                    <Text style={styles.planRef}>{item.ref}</Text>
+                    <Text style={styles.planLabel}>{item.label}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
           </View>
         ))}
 
@@ -214,5 +226,28 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 6,
     marginTop: spacing.sm,
+  },
+  planBlock: {
+    marginTop: spacing.sm,
+    gap: spacing.xs,
+  },
+  planItem: {
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.sm,
+    padding: spacing.sm,
+    borderLeftWidth: 3,
+    borderLeftColor: base.gold + '60',
+  },
+  planRef: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+    marginBottom: 2,
+  },
+  planLabel: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 13,
+    lineHeight: 18,
   },
 });
