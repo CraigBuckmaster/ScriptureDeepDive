@@ -146,10 +146,10 @@ print(f'\nTotal: {total}')
 7. `git add -A && git commit && git push`
 
 Both validators should pass green before pushing. Current validator counts:
-- 45 live books, 21 pending
-- 1070 chapters, 2418 sections
-- 17677 section panels, 8213 chapter panels
-- 260 people (37 spine, 223 satellite), 51 scholars
-- 73 places, 407 timelines, 60 synoptic entries, 35 word studies
+- 57 live books, 9 pending
+- 1133 chapters, 2599 sections
+- 19125 section panels, 8664 chapter panels
+- 281 people (37 spine, 244 satellite), 63 scholars (REGISTRY)
+- 73 places, 420 timelines, 60 synoptic entries, 35 word studies
 
 Git config: `user.email "craig@companionstudy.app"`, `user.name "Claude AI"`
