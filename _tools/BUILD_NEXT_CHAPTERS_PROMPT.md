@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-27 — Wave 5 COMPLETE (all 13 books, 87 chapters). Sessions A–I done. Next: Wave 6 (General Epistles: Hebrews, James, 1-2 Peter, 1-3 John, Jude) or Batch 6 thin-panel enrichment.
+> **Last updated:** 2026-03-27 — Wave 5 COMPLETE. Wave 6 in progress: Hebrews 1–7 done (Session J pt1). Next: Hebrews 8–13 (Session J pt2), then James, 1-2 Peter, 1-3 John, Jude.
 
 ---
 
@@ -37,10 +37,10 @@ pip install beautifulsoup4 --break-system-packages 2>/dev/null
 ### BATCH_TARGET (edit this section to override auto-detection)
 
 Leave blank to auto-detect the next book/chapters in canonical build order:
-- **Book:** hebrews (Session J — Wave 6 start)
-- **Chapters:** Heb 1–13 (13 chapters)
-- **Mode:** new_book
-- **Note:** Need infrastructure for 2–3 NEW scholars for Hebrews. Check MASTER_PLAN.md for scholar allocation. Add SCHOLAR_REGISTRY, colors.ts, panelLabels.ts, scholar-data.json entries. Add BOOK_META. Add REGISTRY + BOOK_PREFIX entries. After completing, set is_live=true.
+- **Book:** hebrews (Session J pt2 — completing Hebrews)
+- **Chapters:** Heb 8–13 (6 chapters remaining)
+- **Mode:** continue_book
+- **Note:** Infrastructure already exists (Lane WBC, Cockerill NICNT, REGISTRY, BOOK_META, colors, labels, scholar-data all in place). Chapters 1–7 are committed. After completing ch 8–13: add people entries (Melchizedek if not exists, etc.), add timeline events, update REGISTRY live count from 0→13, set is_live=true in books.json, validate, build, commit.
 
 **Current wave order (from MASTER_PLAN.md):**
 
@@ -432,7 +432,7 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 | Book | Ch | Status | Scholars (TBD) |
 |------|----|--------|----------------|
-| Hebrews | 13 | ⬜ TODO | NEW scholars needed (e.g., Lane WBC, Attridge Hermeneia) |
+| Hebrews | 13 | 🔶 7/13 | Lane (WBC), Cockerill (NICNT) |
 | James | 5 | ⬜ TODO | NEW scholars needed (e.g., Davids NIGTC, McKnight NICNT) |
 | 1 Peter | 5 | ⬜ TODO | NEW scholars needed (e.g., Jobes BECNT, Achtemeier Hermeneia) |
 | 2 Peter | 3 | ⬜ TODO | NEW scholars needed (e.g., Bauckham WBC, Green BECNT) |
@@ -443,15 +443,16 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 | Revelation | 22 | ⬜ TODO | Wave 7 (separate) |
 
 **Session planning for Wave 6 (tentative):**
-- Session J: Hebrews ch 1-7
-- Session K: Hebrews ch 8-13
-- Session L: James(5) + 1 Peter(5)
-- Session M: 2 Peter(3) + 1-3 John(7) + Jude(1)
+- ~~Session J pt1: Hebrews ch 1-7~~ ✅
+- Session J pt2: Hebrews ch 8-13 ← **NEXT**
+- Session K: James(5) + 1 Peter(5)
+- Session L: 2 Peter(3) + 1-3 John(7) + Jude(1)
 
 **Notes:**
-- Hebrews is the longest remaining book (13 ch) and warrants 2 sessions
+- Hebrews infrastructure DONE: Lane (#b0c0b0, WBC), Cockerill (#a0a8c0, NICNT) — REGISTRY, colors, labels, scholar-data, BOOK_META, COMMENTATOR_SCOPE all in place
+- Hebrews ch 1–7 content committed; ch 8–13 remaining (new covenant, sacrifice, faith hall, discipline, benediction)
 - Several short epistles (2 John, 3 John, Jude = 1 ch each) can be batched
-- Scholar allocation should be finalized in MASTER_PLAN.md before starting
+- Scholar allocation for remaining Wave 6 books per MASTER_PLAN.md: Moo (extend) + McCartney for James; Schreiner (extend) + Jobes for 1 Peter; Schreiner for 2 Peter + Jude; Kruse + Marshall for 1-3 John
 - After Wave 6, only Revelation (22 ch, Wave 7) remains
 
 ---
@@ -473,4 +474,4 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 ## REFERENCE: SQLite Database
 
-34+ tables including: books (66), chapters (1133), sections (2599), section_panels (19125), chapter_panels (8664), verses (61000+), people (281), scholars (63 in REGISTRY, 51 in DB), places (73), map_stories (28), word_studies (35), timelines (420), synoptic_map (60), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~39MB.
+34+ tables including: books (66), chapters (1140), sections (2615), section_panels (19253), chapter_panels (8720), verses (61000+), people (281), scholars (63 in REGISTRY, 51 in DB), places (73), map_stories (28), word_studies (35), timelines (420), synoptic_map (60), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~40MB. 57 live books; Hebrews has content (ch 1-7) but is_live=false pending completion.
