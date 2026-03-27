@@ -11,6 +11,8 @@ import ScholarBioScreen from '../screens/ScholarBioScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import ProphecyBrowseScreen from '../screens/ProphecyBrowseScreen';
 import ProphecyDetailScreen from '../screens/ProphecyDetailScreen';
+import ConceptBrowseScreen from '../screens/ConceptBrowseScreen';
+import ConceptDetailScreen from '../screens/ConceptDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { base } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -38,6 +40,8 @@ export function ExploreStack() {
       <Stack.Screen name="ParallelPassage" component={ParallelPassageScreen} />
       <Stack.Screen name="ProphecyBrowse" component={ProphecyBrowseScreen} />
       <Stack.Screen name="ProphecyDetail" component={ProphecyDetailScreen} />
+      <Stack.Screen name="ConceptBrowse" component={ConceptBrowseScreen} />
+      <Stack.Screen name="ConceptDetail" component={ConceptDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

@@ -1,1 +1,222 @@
-[]
+[
+  {
+    "id": "covenant",
+    "title": "Covenant",
+    "description": "The binding agreements through which God relates to his people. From Noah's rainbow to Abraham's promise to Moses at Sinai to David's throne to the new covenant in Christ's blood, covenant is the structural backbone of biblical theology.",
+    "theme_key": "Covenant",
+    "word_study_ids": ["berith", "hesed"],
+    "thread_ids": ["covenant-thread"],
+    "prophecy_chain_ids": ["abrahamic_covenant", "mosaic_covenant", "noahic_covenant", "davidic_covenant", "new_covenant"],
+    "people_tags": ["abraham", "moses", "david", "noah"],
+    "tags": ["promise", "oath", "faithfulness", "treaty"]
+  },
+  {
+    "id": "sacrifice-atonement",
+    "title": "Sacrifice & Atonement",
+    "description": "The system of blood offerings that addresses human sin and restores relationship with a holy God. From Abel's firstborn lamb through the Levitical system to Christ's once-for-all sacrifice, atonement reveals both the gravity of sin and the depths of divine love.",
+    "theme_key": "Atonement",
+    "word_study_ids": ["kaphar", "hesed"],
+    "thread_ids": ["substitutionary-sacrifice"],
+    "prophecy_chain_ids": ["suffering_servant", "passover_lamb", "day_of_atonement", "isaac_sacrifice"],
+    "people_tags": ["abel", "abraham", "isaac", "aaron"],
+    "tags": ["blood", "propitiation", "forgiveness", "lamb"]
+  },
+  {
+    "id": "kingship",
+    "title": "Kingship & Kingdom",
+    "description": "God's sovereign rule over all creation, delegated through human kings and ultimately embodied in the Messiah. The tension between human kingship and divine kingship drives Israel's history from judges to exile to the coming King of kings.",
+    "theme_key": "Kingdom",
+    "word_study_ids": ["basileia"],
+    "thread_ids": ["kingdom-of-god"],
+    "prophecy_chain_ids": ["davidic_covenant", "scepter_from_judah", "son_of_man", "king_on_donkey", "four_kingdoms"],
+    "people_tags": ["david", "solomon", "saul"],
+    "tags": ["throne", "reign", "messiah", "authority"]
+  },
+  {
+    "id": "holiness",
+    "title": "Holiness",
+    "description": "The 'otherness' of God that sets him apart from all creation, and the call for his people to reflect that separateness. Holiness is not merely moral purity but the very nature of the divine presence that both attracts and terrifies.",
+    "theme_key": "Holiness",
+    "word_study_ids": ["qadosh"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["tabernacle_temple"],
+    "people_tags": ["moses", "isaiah", "aaron"],
+    "tags": ["holy", "set apart", "pure", "sacred"]
+  },
+  {
+    "id": "exile-return",
+    "title": "Exile & Return",
+    "description": "The pattern of displacement and restoration that runs from Eden through Babylon and beyond. Exile is both judgment and refining; return is both geographical and spiritual, pointing to the ultimate homecoming in the new creation.",
+    "theme_key": "Exile & Return",
+    "word_study_ids": ["shalom", "yasha"],
+    "thread_ids": ["exile-return"],
+    "prophecy_chain_ids": ["exile_and_return", "restoration_of_israel", "dry_bones", "new_heart"],
+    "people_tags": ["daniel", "ezekiel", "ezra", "nehemiah"],
+    "tags": ["babylon", "captivity", "restoration", "remnant"]
+  },
+  {
+    "id": "wisdom",
+    "title": "Wisdom",
+    "description": "The skill for living that begins with the fear of the LORD. Biblical wisdom is not abstract philosophy but practical knowledge rooted in covenant relationship — knowing how to navigate life in alignment with the Creator's design.",
+    "theme_key": "Wisdom",
+    "word_study_ids": [],
+    "thread_ids": ["wisdom-thread"],
+    "prophecy_chain_ids": [],
+    "people_tags": ["solomon"],
+    "tags": ["fear of the LORD", "prudence", "understanding", "folly"]
+  },
+  {
+    "id": "spirit-of-god",
+    "title": "Spirit of God",
+    "description": "The divine presence and power at work from creation's first breath to Pentecost's flames. The Spirit empowers prophets and kings, gives life to dry bones, indwells believers, and guarantees the coming resurrection.",
+    "theme_key": "Spirit",
+    "word_study_ids": ["ruach", "pneuma"],
+    "thread_ids": ["spirit-of-god"],
+    "prophecy_chain_ids": ["spirit_poured_out", "new_heart"],
+    "people_tags": ["elijah", "elisha", "ezekiel"],
+    "tags": ["breath", "power", "indwelling", "pentecost"]
+  },
+  {
+    "id": "faith",
+    "title": "Faith",
+    "description": "Trust in God that takes him at his word. Abraham believed and it was credited as righteousness; the righteous live by faith. Biblical faith is not blind assent but confident reliance on the character and promises of God.",
+    "theme_key": "Faith",
+    "word_study_ids": ["pistis", "aman"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["abrahamic_covenant"],
+    "people_tags": ["abraham", "sarah"],
+    "tags": ["trust", "belief", "righteousness", "justification"]
+  },
+  {
+    "id": "mercy-grace",
+    "title": "Mercy & Grace",
+    "description": "God's undeserved favor and compassion toward sinners. Mercy withholds deserved punishment; grace gives undeserved blessing. Together they reveal a God who delights to forgive and restore the broken.",
+    "theme_key": "Mercy",
+    "word_study_ids": ["hesed", "racham", "charis"],
+    "thread_ids": [],
+    "prophecy_chain_ids": [],
+    "people_tags": [],
+    "tags": ["compassion", "lovingkindness", "forgiveness", "favor"]
+  },
+  {
+    "id": "judgment",
+    "title": "Judgment",
+    "description": "God's righteous evaluation and response to human sin. Judgment is not arbitrary anger but the necessary consequence of rebellion against a holy God. Yet even in judgment, God's aim is often redemptive — calling his people back through discipline.",
+    "theme_key": "Judgment",
+    "word_study_ids": ["mishpat"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["day_of_the_lord", "judgment_on_nations", "babylon_judgment"],
+    "people_tags": ["noah", "jonah"],
+    "tags": ["wrath", "justice", "discipline", "day of the LORD"]
+  },
+  {
+    "id": "creation",
+    "title": "Creation & New Creation",
+    "description": "God's sovereign act of bringing all things into existence, and his promise to make all things new. The first creation groans under the curse; the new creation awaits the revealing of the sons of God. What was lost in Eden will be restored and surpassed.",
+    "theme_key": "Creation",
+    "word_study_ids": ["tselem"],
+    "thread_ids": ["creation-new-creation"],
+    "prophecy_chain_ids": ["adam_type_of_christ"],
+    "people_tags": ["adam", "eve"],
+    "tags": ["image of God", "cosmos", "renewal", "restoration"]
+  },
+  {
+    "id": "temple-presence",
+    "title": "Temple & Divine Presence",
+    "description": "The place where heaven meets earth and God dwells among his people. From Eden as the first sanctuary through tabernacle and temple to Christ as the true temple to the church as living stones, God's presence defines sacred space.",
+    "theme_key": "Temple",
+    "word_study_ids": [],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["tabernacle_temple", "temple_rebuilt"],
+    "people_tags": ["solomon", "moses", "ezekiel"],
+    "tags": ["tabernacle", "glory", "shekinah", "dwelling"]
+  },
+  {
+    "id": "redemption",
+    "title": "Redemption",
+    "description": "The act of buying back what was lost or enslaved. Israel was redeemed from Egypt; the kinsman-redeemer restored family land; Christ redeems humanity from bondage to sin and death. The price is always costly — ultimately, the blood of the Lamb.",
+    "theme_key": "Redemption",
+    "word_study_ids": ["gaal", "yasha", "soteria"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["kinsman_redeemer", "passover_lamb", "suffering_servant"],
+    "people_tags": ["moses", "boaz", "ruth"],
+    "tags": ["ransom", "liberation", "exodus", "freedom"]
+  },
+  {
+    "id": "prophecy",
+    "title": "Prophecy & Fulfillment",
+    "description": "God speaking through human messengers to reveal his will and his future. Prophecy is forth-telling (proclamation) as much as foretelling (prediction). The prophetic word creates history, and history vindicates the prophetic word.",
+    "theme_key": "Prophecy",
+    "word_study_ids": ["nabi"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["prophet_like_moses", "prepare_the_way", "anointed_to_preach"],
+    "people_tags": ["moses", "elijah", "isaiah", "jeremiah", "ezekiel", "daniel"],
+    "tags": ["prophet", "oracle", "vision", "word of the LORD"]
+  },
+  {
+    "id": "suffering",
+    "title": "Suffering & Lament",
+    "description": "The experience of pain, loss, and grief that pervades human existence. Scripture neither explains suffering away nor ignores it, but places it within the context of covenant relationship — where lament is itself an act of faith.",
+    "theme_key": "Suffering",
+    "word_study_ids": [],
+    "thread_ids": ["faithful-suffering"],
+    "prophecy_chain_ids": ["suffering_servant", "psalm_22_suffering"],
+    "people_tags": ["job", "jeremiah", "joseph-patriarch"],
+    "tags": ["lament", "grief", "theodicy", "perseverance"]
+  },
+  {
+    "id": "resurrection",
+    "title": "Resurrection",
+    "description": "The restoration of bodily life after death. Foreshadowed in Isaac's near-sacrifice, hinted in the prophets, dramatized in Ezekiel's dry bones, and accomplished in Christ's empty tomb, resurrection is the linchpin of Christian hope.",
+    "theme_key": "Resurrection",
+    "word_study_ids": ["zoe"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["resurrection_foretold", "dry_bones", "jonah_sign"],
+    "people_tags": ["lazarus"],
+    "tags": ["life", "death", "tomb", "firstfruits"]
+  },
+  {
+    "id": "law-torah",
+    "title": "Law & Torah",
+    "description": "God's instruction for covenant life. Torah is not mere legislation but teaching — the revelation of God's character and the path to human flourishing. The law exposes sin, guides conduct, and points forward to Christ who fulfills it.",
+    "theme_key": "Law",
+    "word_study_ids": ["torah", "mishpat"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["mosaic_covenant"],
+    "people_tags": ["moses"],
+    "tags": ["commandment", "instruction", "Sinai", "obedience"]
+  },
+  {
+    "id": "shepherd",
+    "title": "Shepherd & Flock",
+    "description": "The image of God as shepherd caring for his people. From Abel the first shepherd through David the shepherd-king to Christ the Good Shepherd, this metaphor captures divine provision, protection, and intimate knowledge of each sheep.",
+    "theme_key": "Shepherd",
+    "word_study_ids": [],
+    "thread_ids": ["shepherd-motif"],
+    "prophecy_chain_ids": ["david_shepherd_king"],
+    "people_tags": ["david", "abel"],
+    "tags": ["flock", "pasture", "Psalm 23", "care"]
+  },
+  {
+    "id": "mission",
+    "title": "Mission & Witness",
+    "description": "God's purpose to bless all nations through his people. From Abraham's call to be a blessing to Israel as a light to the nations to the Great Commission, mission is not an appendix to Scripture but its heartbeat.",
+    "theme_key": "Mission",
+    "word_study_ids": ["euangelion"],
+    "thread_ids": [],
+    "prophecy_chain_ids": ["abrahamic_covenant", "anointed_to_preach"],
+    "people_tags": ["abraham", "jonah"],
+    "tags": ["nations", "witness", "gospel", "blessing"]
+  },
+  {
+    "id": "word-of-god",
+    "title": "Word of God",
+    "description": "The creative and revelatory speech of God. By his word the heavens were made; by his word the prophets spoke; in the Word made flesh God's fullest self-disclosure arrived. Scripture is the written form of this living, active word.",
+    "theme_key": "Scripture",
+    "word_study_ids": ["logos"],
+    "thread_ids": [],
+    "prophecy_chain_ids": [],
+    "people_tags": ["moses", "isaiah", "jeremiah"],
+    "tags": ["revelation", "inspiration", "truth", "logos"]
+  }
+]

@@ -261,14 +261,14 @@ CREATE TABLE prophecy_chains (
 
 CREATE TABLE concepts (
   id TEXT PRIMARY KEY,
-  name TEXT NOT NULL,
+  title TEXT NOT NULL,
   description TEXT,
   theme_key TEXT,
   word_study_ids_json TEXT,
   thread_ids_json TEXT,
   prophecy_chain_ids_json TEXT,
   people_tags_json TEXT,
-  search_terms_json TEXT
+  tags_json TEXT
 );
 
 CREATE TABLE difficult_passages (
@@ -670,12 +670,12 @@ def populate_concepts(cur):
     for c in concepts:
         cur.execute(
             'INSERT INTO concepts VALUES (?,?,?,?,?,?,?,?,?)',
-            (c['id'], c['name'], c.get('description'),
+            (c['id'], c['title'], c.get('description'),
              c.get('theme_key'), _json_str(c.get('word_study_ids', [])),
              _json_str(c.get('thread_ids', [])),
              _json_str(c.get('prophecy_chain_ids', [])),
              _json_str(c.get('people_tags', [])),
-             _json_str(c.get('search_terms', [])))
+             _json_str(c.get('tags', [])))
         )
     return len(concepts)
 

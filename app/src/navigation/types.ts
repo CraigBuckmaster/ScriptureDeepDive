@@ -41,6 +41,8 @@ export type ExploreStackParamList = {
   ParallelPassage: { entryId: string };
   ProphecyBrowse: undefined;
   ProphecyDetail: { chainId: string };
+  ConceptBrowse: undefined;
+  ConceptDetail: { conceptId: string };
   Chapter: { bookId: string; chapterNum: number };
 };
 
