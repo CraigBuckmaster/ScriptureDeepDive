@@ -1,4 +1,4 @@
-# Companion Study — Session Handoff: Batch 9
+# Companion Study — Session Handoff: Batch 9b
 
 ## Repository Access
 
@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit e9a496c5)
+## Current State (as of commit 8dec5a5e)
 
 ### Batches Complete
 
@@ -28,37 +28,97 @@ git config user.name "Craig Buckmaster"
 | 6 | DiscoursePanel component + wiring | ✅ Complete |
 | 7 | Discourse content for Romans 1-16 | ✅ Complete |
 | 8 | Concept Explorer (20 concepts + screens) | ✅ Complete |
-| **9** | **Difficult Passages content (50-80 entries)** | **NEXT** |
-
-### Key Files Created in Batches 1-8
-
-- `app/src/screens/ProphecyBrowseScreen.tsx` — Category filter + chain cards
-- `app/src/screens/ProphecyDetailScreen.tsx` — Timeline rail view
-- `app/src/hooks/useProphecyChains.ts` — Data hooks
-- `app/src/components/TagChips.tsx` — Tag editing component
-- `app/src/components/CollectionPicker.tsx` — Bottom sheet for collections
-- `app/src/components/NoteLinkSheet.tsx` — Note linking sheet
-- `app/src/screens/CollectionDetailScreen.tsx` — Collection notes view
-- `app/src/components/panels/DiscoursePanel.tsx` — Argument flow panel
-- `app/src/screens/ConceptBrowseScreen.tsx` — Concept browse with search
-- `app/src/screens/ConceptDetailScreen.tsx` — Aggregated concept view
-- `app/src/hooks/useConceptData.ts` — Multi-table aggregation hook
-- `content/romans/*.json` — All 16 chapters have discourse data
-- `content/meta/concepts.json` — 20 theological concepts
+| 9a | Difficult Passages (28 entries — first half) | ✅ Complete |
+| **9b** | **Difficult Passages (25-30 more entries — second half)** | **NEXT** |
 
 ---
 
-## Batch 9: Difficult Passages Content
+## Batch 9a Complete — What's Already There
 
-**Goal:** Create `difficult-passages.json` with 50-80 entries. No UI changes needed (DifficultPassagesBrowse + Detail screens will be Batch 10).
+`content/meta/difficult-passages.json` has 28 entries:
 
-### File to Modify
+### Ethical (8)
+- `canaanite-conquest` — The Conquest of Canaan (major)
+- `slavery-regulations` — Old Testament Slavery Laws (major)
+- `jephthahs-daughter` — Jephthah's Vow and His Daughter (major)
+- `imprecatory-psalms` — The Imprecatory Psalms (moderate)
+- `elishas-bears` — Elisha and the Bears (moderate)
+- `ananias-sapphira` — The Deaths of Ananias and Sapphira (moderate)
+- `concubine-gibeah` — The Levite's Concubine (major)
+- `abraham-wife-sister` — Abraham's Wife-Sister Deceptions (moderate)
 
-| File | Change |
-|------|--------|
-| `content/meta/difficult-passages.json` | Replace empty stub `[]` with full content |
+### Contradiction (5)
+- `judas-death` — How Did Judas Die? (moderate)
+- `census-numbering` — Who Incited David's Census? (moderate)
+- `genealogy-differences` — Matthew and Luke's Genealogies (moderate)
+- `resurrection-accounts` — Resurrection Morning Differences (moderate)
+- `sermon-mount-plain` — Sermon on the Mount vs. Plain (minor)
 
-### Data Structure
+### Theological (5)
+- `hardening-pharaoh` — God Hardening Pharaoh's Heart (major)
+- `unforgivable-sin` — The Unforgivable Sin (major)
+- `hebrews-6-apostasy` — Can Believers Lose Salvation? (major)
+- `problem-of-evil` — The Problem of Suffering (major)
+- `predestination-free-will` — Predestination and Human Choice (major)
+
+### Historical (5)
+- `genesis-long-lifespans` — Long Lifespans in Genesis (moderate)
+- `exodus-dating` — When Did the Exodus Happen? (moderate)
+- `jericho-archaeology` — The Walls of Jericho (moderate)
+- `quirinius-census` — The Census of Quirinius (moderate)
+- `numbers-exodus` — The Large Numbers in Exodus (moderate)
+
+### Textual (5)
+- `marks-ending` — The Ending of Mark's Gospel (moderate)
+- `pericope-adulterae` — The Woman Caught in Adultery (moderate)
+- `johannine-comma` — The Johannine Comma (minor)
+- `lords-prayer-doxology` — The Doxology of the Lord's Prayer (minor)
+- `isaiah-authorship` — The Authorship of Isaiah (moderate)
+
+---
+
+## Batch 9b: Difficult Passages Second Half
+
+**Goal:** Add 25-30 more entries to reach 50-60 total. Aim for gaps not covered in 9a.
+
+### Suggested Entries for 9b
+
+**Ethical (add 5-7):**
+- David & Bathsheba / Uriah's murder
+- Lot offering his daughters
+- Jacob's deception of Isaac
+- God commanding Abraham to sacrifice Isaac (Akedah)
+- Samson's violence and relationships
+- Hosea marrying Gomer
+- Divine command to kill Agag (1 Samuel 15)
+
+**Contradiction (add 3-5):**
+- Different accounts of Saul's death
+- Differing Temple dimensions
+- Who killed Goliath? (Elhanan question)
+- Peter's denials timing
+- Cleansing of the Temple (once or twice?)
+
+**Theological (add 3-5):**
+- Jacob I loved, Esau I hated
+- Restrictive view of women in 1 Timothy 2
+- Head covering in 1 Corinthians 11
+- Nephilim and "sons of God" (Genesis 6)
+- Balaam: prophet or villain?
+
+**Historical (add 3-5):**
+- Belshazzar as king (vs. Nabonidus)
+- Darius the Mede identity
+- Ai and conquest archaeology
+- Daniel's court tales — historicity
+- Jonah's fish — literal?
+
+**Textual (add 2-3):**
+- Matthew's Jeremiah/Zechariah citation
+- OT quotations in NT that don't match
+- Manuscript variants in key verses
+
+### Data Structure (same as 9a)
 
 ```typescript
 interface DifficultPassage {
@@ -66,84 +126,24 @@ interface DifficultPassage {
   title: string;
   category: 'ethical' | 'contradiction' | 'theological' | 'historical' | 'textual';
   severity: 'minor' | 'moderate' | 'major';
-  passage: string;        // e.g., "Joshua 6-11" or "Matthew 27:5 vs Acts 1:18"
-  question: string;       // The actual question being addressed
+  passage: string;
+  question: string;
   responses: Response[];  // 2-3 scholarly responses
   related_chapters: ChapterRef[];
   tags: string[];
 }
-
-interface Response {
-  tradition: string;      // e.g., "Conservative Evangelical", "Critical Scholarship"
-  scholar_id: string;     // Must exist in scholars.json
-  summary: string;        // The response (2-4 sentences)
-}
-
-interface ChapterRef {
-  book_dir: string;
-  chapter_num: number;
-}
 ```
 
-### Category Targets
+### Scholar IDs Available
 
-| Category | Example Entries | Target Count |
-|----------|----------------|-------------|
-| ethical | Canaanite conquest, slavery regulations, Jephthah's daughter, Ananias & Sapphira, imprecatory psalms, genocide language, concubine of Gibeah, Elisha's bears | 15-20 |
-| contradiction | Judas's death (Matt vs Acts), census (2 Sam 24 vs 1 Chr 21), genealogies (Matt vs Luke), Sermon on Mount vs Plain, resurrection chronology, Quirinius census | 10-15 |
-| theological | Hardening Pharaoh's heart, predestination/free will, unforgivable sin, Hebrews 6 — can you lose salvation, problem of evil (Job), limited atonement | 10-15 |
-| historical | Exodus dating, conquest archaeology, Jericho walls, Ai, census numbers, long lifespans in Genesis, Belshazzar, Darius the Mede | 10-15 |
-| textual | Mark's ending, Johannine Comma, Pericope Adulterae, longer ending of Mark, textual variants in key verses | 5-10 |
-
-### Scholar IDs to Use
-
-Check `content/meta/scholars.json` for valid IDs. Key scholars for difficult passages:
-- `mac` (MacArthur) — Conservative evangelical
-- `calvin` — Reformation perspective
-- `moo` — Evangelical NT scholarship
-- `schreiner` — Reformed Baptist
-- `netbible` — Text-critical notes
-- `block` — OT ethical/theological
-- `longman` — OT critical-conservative
-- `collins` — Historical-critical OT
-
-### Example Entry
-
-```json
-{
-  "id": "canaanite-conquest",
-  "title": "The Conquest of Canaan",
-  "category": "ethical",
-  "severity": "major",
-  "passage": "Joshua 6-11; Deuteronomy 7:1-2, 20:16-18",
-  "question": "How can a good God command the destruction of entire peoples, including women and children?",
-  "responses": [
-    {
-      "tradition": "Divine Command Theodicy",
-      "scholar_id": "mac",
-      "summary": "God as the author of life has the sovereign right to take it. The Canaanites had 400 years to repent (Gen 15:16), and their destruction was judicial punishment for extreme wickedness including child sacrifice."
-    },
-    {
-      "tradition": "Hyperbolic Warfare Language",
-      "scholar_id": "longman",
-      "summary": "Ancient Near Eastern conquest accounts routinely used hyperbolic language ('utterly destroyed') that was not meant literally. The continuing presence of Canaanites throughout Judges shows the language was rhetorical, not historical."
-    },
-    {
-      "tradition": "Progressive Revelation",
-      "scholar_id": "block",
-      "summary": "God accommodated himself to the brutal realities of the ancient world, working within those conventions while progressively revealing higher ethical standards. The conquest must be read in redemptive-historical context."
-    }
-  ],
-  "related_chapters": [
-    { "book_dir": "joshua", "chapter_num": 6 },
-    { "book_dir": "joshua", "chapter_num": 11 },
-    { "book_dir": "deuteronomy", "chapter_num": 7 }
-  ],
-  "tags": ["conquest", "genocide", "theodicy", "holy war", "Canaanites"]
-}
+```
+alter, block, brueggemann, calvin, collins, hess, japhet, keener, longman,
+macarthur, oswalt, provan, rhoads, sarna, selman, waltke, and 35 more
 ```
 
-### Generator Script Pattern
+Check `content/meta/scholars.json` for the full list.
+
+### Generator Pattern
 
 ```python
 import json
@@ -151,19 +151,26 @@ from pathlib import Path
 
 CONTENT = Path('/home/claude/ScriptureDeepDive/content')
 
-passages = [
+# Load existing passages
+path = CONTENT / 'meta' / 'difficult-passages.json'
+existing = json.loads(path.read_text())
+print(f'Existing: {len(existing)} passages')
+
+# Add new entries
+new_passages = [
     {
         "id": "...",
         "title": "...",
-        # ... full entry
+        # full entry
     },
-    # ... more entries
+    # ...
 ]
 
-path = CONTENT / 'meta' / 'difficult-passages.json'
+all_passages = existing + new_passages
+
 with open(path, 'w') as f:
-    json.dump(passages, f, indent=2)
-print(f'✓ Wrote {len(passages)} difficult passages')
+    json.dump(all_passages, f, indent=2)
+print(f'Total: {len(all_passages)} passages')
 ```
 
 ### Verification
@@ -172,8 +179,8 @@ print(f'✓ Wrote {len(passages)} difficult passages')
 python3 _tools/build_sqlite.py
 python3 _tools/validate.py
 python3 _tools/validate_sqlite.py
-rm /tmp/gen_difficult_passages.py
-git add -A && git commit -m "feat(content): Batch 9 — 50+ difficult passages" && git push origin master
+rm /tmp/gen_difficult_passages_2.py
+git add -A && git commit -m "feat(content): Batch 9b — 25+ difficult passages (second half)" && git push
 ```
 
 ---
@@ -184,21 +191,13 @@ git add -A && git commit -m "feat(content): Batch 9 — 50+ difficult passages" 
 
 ---
 
-## Key Conventions
-
-- **Generator scripts:** Write to `/tmp/`, delete after use
-- **Content pipeline:** Generator → JSON → build_sqlite.py → validate.py → commit
-- **Scholar IDs:** Must reference existing entries in scholars.json
-- **Related chapters:** Must reference live chapters (book_dir + chapter_num)
-- **Commit pattern:** `feat(content): Batch 9 — description`
-
-## Database Stats (as of Batch 8)
+## Database Stats (as of Batch 9a)
 
 - 58 live books, 1146 chapters
 - 50 prophecy chains
 - 20 concepts
+- 28 difficult passages
 - 16 discourse panels (Romans)
-- 0 difficult passages (to be populated)
 
 ## Deploy
 
