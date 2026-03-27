@@ -8,10 +8,8 @@
  */
 
 import React, { useState, useRef } from 'react';
-import {
-  View, Text, TextInput, TouchableOpacity,
-  SectionList, SafeAreaView, StyleSheet,
-} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';

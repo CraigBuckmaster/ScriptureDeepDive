@@ -6,10 +6,8 @@
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import {
-  Modal, View, Text, TouchableOpacity, TextInput,
-  FlatList, SafeAreaView, Alert, StyleSheet,
-} from 'react-native';
+import { Modal, View, Text, TouchableOpacity, TextInput, FlatList, Alert, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Plus } from 'lucide-react-native';
 import { getNotesForChapter, saveNote, updateNote, deleteNote } from '../db/user';
 import { formatVerseRef, displayRef } from '../utils/verseRef';

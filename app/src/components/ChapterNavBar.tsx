@@ -9,7 +9,8 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ArrowRight, ChevronDown, Info } from 'lucide-react-native';
 import { lightImpact } from '../utils/haptics';
 import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';

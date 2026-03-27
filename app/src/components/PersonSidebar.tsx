@@ -5,7 +5,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { BadgeChip } from './BadgeChip';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
 import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
