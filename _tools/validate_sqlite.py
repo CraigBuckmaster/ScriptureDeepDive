@@ -79,7 +79,7 @@ def main():
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1078 chapters", ch_count == 1078, f"got {ch_count}")
+    check("1085 chapters", ch_count == 1085, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
