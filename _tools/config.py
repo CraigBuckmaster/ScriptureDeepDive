@@ -1366,3 +1366,44 @@ SCHOLAR_REGISTRY.append(('lincoln', 'lincoln', 'Lincoln', 'lincoln'))
 SCHOLAR_REGISTRY.append(('obrien', 'obrien', "O\'Brien", 'obrien'))
 COMMENTATOR_SCOPE['lincoln'] = ['ephesians']
 COMMENTATOR_SCOPE['obrien'] = ['ephesians']
+
+
+# ── Philippians ──────────────────────────────────────────────────────
+BOOK_META['philippians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Phil 1:1), writing with Timothy. Pauline authorship is virtually undisputed. The letter\u2019s autobiographical details, theological vocabulary, and personal warmth are unmistakably Pauline.\n\n<strong>When written:</strong> c.\u2009AD\u200960\u201362, during Paul\u2019s first Roman imprisonment (Acts 28:16\u201331). Some scholars argue for an Ephesian imprisonment (c.\u2009AD\u200954\u201355) based on the frequency of communication between Paul and Philippi implied in the letter, but the traditional Roman provenance remains the majority view.\n\n<strong>What prompted it:</strong> Paul writes to thank the Philippians for their financial gift, delivered by Epaphroditus (4:18), and to update them on his circumstances and Epaphroditus\u2019s recovery from illness (2:25\u201330). The letter also addresses incipient disunity in the congregation (4:2\u20133), warns against Judaizing opponents (3:2\u20134) and libertine tendencies (3:18\u201319), and encourages steadfast joy in the face of suffering. Philippians is Paul\u2019s most personal and warmly affectionate letter, pervaded by the theme of joy (chara/chairein appears sixteen times).",
+    'vhl_places': ['Philippi', 'Rome', 'Macedonia', 'Thessalonica'],
+    'vhl_people': ['Paul', 'Timothy', 'Epaphroditus', 'Christ', 'Euodia', 'Syntyche', 'Clement'],
+    'vhl_key': ['joy', 'gospel', 'fellowship', 'humility', 'mind', 'Christ', 'suffering', 'righteousness', 'knowledge', 'gain', 'loss', 'citizenship', 'pressing on', 'peace', 'contentment', 'power', 'grace', 'servant', 'glory', 'confidence'],
+    'vhl_time': ['the day of Christ Jesus', 'the day of Christ', 'at the name of Jesus', 'from the first day until now', 'to live is Christ, to die is gain'],
+}
+
+SCHOLAR_REGISTRY.append(('silva', 'silva', 'Silva', 'silva'))
+COMMENTATOR_SCOPE['fee'].append('philippians')
+COMMENTATOR_SCOPE['silva'] = ['philippians']
+
+# ── Colossians ───────────────────────────────────────────────────────
+BOOK_META['colossians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Col 1:1), writing with Timothy. Pauline authorship is debated in critical scholarship: the letter\u2019s elevated style, distinctive vocabulary, and developed Christology have led some to classify it as deutero-Pauline. Conservative scholarship defends Pauline authorship, noting the close connections with Philemon (an undisputed letter) and the theological continuity with the acknowledged Pauline corpus.\n\n<strong>When written:</strong> c.\u2009AD\u200960\u201362, during Paul\u2019s first Roman imprisonment, alongside Ephesians and Philemon. Tychicus and Onesimus carried all three letters (Col 4:7\u20139; Eph 6:21\u201322; Phlm 10\u201312).\n\n<strong>What prompted it:</strong> Epaphras, who founded the Colossian church (1:7), reported to Paul about a dangerous teaching infiltrating the community (2:8, 16\u201323). This \u2018Colossian heresy\u2019\u2014likely a syncretistic blend of Jewish mysticism, ascetic practice, and proto-Gnostic speculation\u2014promoted angel worship, dietary regulations, festival observance, and visionary experiences as means of accessing divine fullness. Paul responds with the letter\u2019s central affirmation: in Christ \u2018all the fullness of the Deity lives in bodily form\u2019 (2:9), making all supplementary religious systems unnecessary.",
+    'vhl_places': ['Colossae', 'Laodicea', 'Hierapolis', 'Rome'],
+    'vhl_people': ['Paul', 'Timothy', 'Epaphras', 'Tychicus', 'Onesimus', 'Christ', 'Aristarchus', 'Mark', 'Luke', 'Nympha', 'Archippus'],
+    'vhl_key': ['fullness', 'mystery', 'wisdom', 'knowledge', 'supremacy', 'firstborn', 'reconciliation', 'image', 'head', 'body', 'circumcision', 'philosophy', 'shadow', 'reality', 'hidden', 'above', 'put off', 'put on', 'peace', 'thankfulness'],
+    'vhl_time': ['before all things', 'the hope stored up for you in heaven', 'when Christ appears', 'formerly', 'but now', 'the coming wrath'],
+}
+
+COMMENTATOR_SCOPE['moo'].append('colossians')
+COMMENTATOR_SCOPE['obrien'].append('colossians')
+
+# ── Philemon ─────────────────────────────────────────────────────────
+BOOK_META['philemon'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Phlm 1), writing with Timothy. Pauline authorship is undisputed; even the most sceptical critics accept it. The letter is the shortest of Paul\u2019s surviving correspondence and the most personal, addressed to an individual rather than a congregation.\n\n<strong>When written:</strong> c.\u2009AD\u200960\u201362, during Paul\u2019s first Roman imprisonment, simultaneously with Colossians. Onesimus, the letter\u2019s subject, accompanied Tychicus on the return journey to Colossae (Col 4:9).\n\n<strong>What prompted it:</strong> Onesimus, a slave belonging to Philemon (a wealthy Christian in Colossae and leader of the house church there), had fled\u2014possibly after stealing from his master (v.\u200918)\u2014and made his way to Rome, where he encountered Paul and became a believer (v.\u200910). Paul writes to persuade Philemon to receive Onesimus back \u2018no longer as a slave, but better than a slave, as a dear brother\u2019 (v.\u200916). The letter is a masterpiece of diplomatic rhetoric, deploying friendship, obligation, appeal, and gentle pressure to effect reconciliation. It is the most concrete test case of how the gospel transforms social relationships from within.",
+    'vhl_places': ['Colossae', 'Rome'],
+    'vhl_people': ['Paul', 'Philemon', 'Onesimus', 'Timothy', 'Apphia', 'Archippus', 'Epaphras', 'Mark', 'Aristarchus', 'Demas', 'Luke'],
+    'vhl_key': ['love', 'brother', 'slave', 'freedom', 'useful', 'useless', 'heart', 'refresh', 'partner', 'charge', 'confidence', 'appeal', 'voluntary', 'debt', 'welcome', 'grace', 'fellowship', 'prayer', 'good', 'faith'],
+    'vhl_time': ['formerly', 'now', 'forever', 'for a little while'],
+}
+
+COMMENTATOR_SCOPE['obrien'].append('philemon')
+COMMENTATOR_SCOPE['bruce'].append('philemon')
