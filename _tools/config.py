@@ -1321,5 +1321,18 @@ BOOK_META['1_corinthians'] = {
 
 SCHOLAR_REGISTRY.append(('fee', 'fee', 'Fee', 'fee'))
 SCHOLAR_REGISTRY.append(('thiselton', 'thiselton', 'Thiselton', 'thiselton'))
-COMMENTATOR_SCOPE['fee'] = ['1_corinthians']
+COMMENTATOR_SCOPE['fee'] = ['1_corinthians', '2_corinthians']
 COMMENTATOR_SCOPE['thiselton'] = ['1_corinthians']
+
+# ── 2 Corinthians ────────────────────────────────────────────────────
+BOOK_META['2_corinthians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (2\u2009Cor 1:1), writing with Timothy. Pauline authorship is virtually undisputed, though the letter\u2019s literary unity is debated: some scholars propose that chs.\u20091\u20139 and 10\u201313 were originally separate letters, while others defend the integrity of the canonical form.\n\n<strong>When written:</strong> c.\u2009AD\u200955\u201356, from Macedonia (2:13; 7:5), shortly after 1\u2009Corinthians. Between the two canonical letters Paul made a painful visit to Corinth (2:1; 12:14; 13:1\u20132) and wrote a severe \u2018tearful letter\u2019 (2:3\u20134; 7:8\u201312), now lost.\n\n<strong>What prompted it:</strong> Paul writes in response to Titus\u2019s encouraging report from Corinth (7:6\u20137): the majority have repented following the tearful letter. However, a group of \u2018super-apostles\u2019 (11:5; 12:11) have arrived, challenging Paul\u2019s authority, questioning his credentials, and boasting of their own spiritual superiority. The letter is Paul\u2019s most intensely personal and theologically profound defence of his apostolic ministry, articulating a \u2018theology of weakness\u2019 in which divine power is perfected through human frailty (12:9\u201310).",
+    'vhl_places': ['Corinth', 'Macedonia', 'Jerusalem', 'Troas', 'Asia', 'Achaia', 'Damascus'],
+    'vhl_people': ['Paul', 'Timothy', 'Titus', 'Christ', 'Moses', 'Satan', 'Silvanus'],
+    'vhl_key': ['comfort', 'affliction', 'ministry', 'new covenant', 'reconciliation', 'glory', 'weakness', 'power', 'grace', 'boasting', 'sincerity', 'commendation', 'generosity', 'collection', 'apostle', 'suffering', 'transformation', 'veil', 'treasure', 'temple'],
+    'vhl_time': ['the day of the Lord Jesus', 'now is the time of God\u2019s favour', 'now is the day of salvation', 'at home with the Lord', 'the judgment seat of Christ', 'the third heaven'],
+}
+
+SCHOLAR_REGISTRY.append(('harris', 'harris', 'Harris', 'harris'))
+COMMENTATOR_SCOPE['harris'] = ['2_corinthians']

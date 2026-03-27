@@ -84,6 +84,7 @@ REGISTRY = [
     ('acts',     'Acts',      28, 28, 'NT', 'nt'),
     ('romans',   'Romans',    16, 16, 'NT', 'nt'),
     ('1_corinthians', '1 Corinthians', 16, 16, 'NT', 'nt'),
+    ('2_corinthians', '2 Corinthians', 13, 0, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -134,6 +135,7 @@ BOOK_PREFIX = {
     'acts':     'ac',
     'romans':   'ro',
     '1_corinthians': '1co',
+    '2_corinthians': '2co',
 }
 
 # COMMENTATOR_SCOPE — moved to config.py (Batch 5)
