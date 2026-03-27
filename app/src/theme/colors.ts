@@ -116,6 +116,7 @@ export const scholars: Record<string, string> = {
   schreiner: '#c09868',
   fee: '#6898b8',
   thiselton: '#a088b8',
+  harris: '#8ab870',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────
