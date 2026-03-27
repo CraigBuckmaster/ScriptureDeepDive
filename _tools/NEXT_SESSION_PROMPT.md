@@ -1,155 +1,232 @@
-# Continue Content Remediation — Batch 6
+# Companion Study — Session Handoff: Batch 7
 
-Clone the repo, then read `_tools/CONTENT_REMEDIATION_PLAN.md` for full context.
+## Repository Access
 
-## What's Done
-
-- **Batches 0–5:** ALL COMPLETE.
-  - Zero empty `heb`, `cross`, or `tx` section/chapter panels remain.
-  - 13 people bios expanded, 10 dates added, 3 entries key-normalized.
-  - 27 timeline_people entries added.
-  - 8 parallel passages added (60 total synoptic entries).
-  - 20 word studies added (35 total).
-  - SDK 54 upgrade complete.
-  - Validators updated to current counts.
-
-## What's Next — Batch 6: Thin Panel Enrichment
-
-**173 panels** with content between 50–150 chars (thin but not empty). These are live buttons that deliver shallow content. Goal: expand each to 200+ chars with substantive insight.
-
-### Audit Results (by book → panel type → count)
-
-#### Priority 1: Chapter `ppl` Panels (97 panels)
-
-These have truncated text (often ending in `…`) or a single generic entry like `{"name":"God","role":"Key biblical figure","text":"..."}`. Expand each person entry's `text` field to 150+ chars and add 1–2 more people where the chapter warrants it.
-
-| Book | Count | Chapters |
-|------|-------|----------|
-| Psalms | 56 | 8,14,21,24,29,30,33,34,36,37,38,39,40,42,44,45,46,47,48,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,72,73,74,75,76,77,78,79,80,82,83,84,85,86,87,88 |
-| Isaiah | 11 | 1,3,18,26,31,33,35,36,38,39,44 |
-| Ezekiel | 10 | 3,6,9,10,18,20,24,27,33,43 |
-| Jeremiah | 8 | 4,8,9,10,13,14,23,30 |
-| Amos | 3 | 2,3,5 |
-| Exodus | 2 | 10,35 |
-| Hosea | 2 | 4,10 |
-| Zechariah | 2 | 9,13 |
-| 2 Chronicles | 1 | 10 |
-| Ecclesiastes | 1 | 10 |
-| John | 1 | 2 |
-| Lamentations | 1 | 5 |
-| Nahum | 1 | 2 |
-| Nehemiah | 1 | 9 |
-
-#### Priority 2: Chapter `rec` Panels (23 panels)
-
-Reception History panels with only a sentence fragment. Expand to 2–3 traditions (Jewish, Christian, modern) showing how the passage has been interpreted.
-
-| Book | Count | Chapters |
-|------|-------|----------|
-| Psalms | 8 | 10,11,12,13,16,53,54,86 |
-| Isaiah | 7 | 4,8,15,16,19,20,21 |
-| Job | 4 | 8,15,18,20 |
-| Daniel | 3 | 4,5,6 |
-| Esther | 1 | 7 |
-
-#### Priority 3: Section `cross` Panels (47 panels)
-
-Cross-reference panels with only 1 ref. Add 1–2 more cross-references with explanatory notes.
-
-| Book | Count | Chapters |
-|------|-------|----------|
-| 1 Chronicles | 10 | 8,11,14,16,17,19,20,25,26,27 |
-| Nehemiah | 8 | 2,3,6,7,9,10,12,13 |
-| Psalms | 6 | 11,24,25,26,28,29 |
-| Job | 5 | 2,17,18,25,26 |
-| 2 Chronicles | 6 | 2,4,5,6,10,35 |
-| Esther | 2 | 6 |
-
-#### Priority 4: Misc Small Groups (6 panels)
-
-| Book | Type | Count | Chapters |
-|------|------|-------|----------|
-| Esther | sec:ctx | 2 | 6,7 |
-| Esther | sec:hist | 2 | 7 |
-| Ezekiel | sec:block, sec:calvin, sec:ctx, sec:netbible | 7 | 23,28 |
-| Genesis | sec:ctx | 1 | 2 |
-| Psalms | sec:ctx | 1 | 24 |
-
-### MERGE Strategy
-
-For each panel:
-1. Read existing chapter JSON
-2. Find the thin panel (50–150 char JSON)
-3. Expand content in-place (DO NOT replace existing text — append to it or rewrite richer)
-4. Write back
-
-**For `ppl` panels:** Expand `text` field per person, add missing people.
-**For `rec` panels:** Add reception traditions (string content).
-**For `cross` panels:** Add 1–2 refs to the existing list.
-**For `ctx`/`hist`/scholar panels:** Expand the existing content string.
-
-### Sub-batch Strategy
-
-Split by priority and book to fit within context:
-
-1. **6A:** Psalms `ppl` pt1 (~19 chapters: 8,14,21,24,29,30,33,34,36,37,38,39,40,42,44,45,46,47,48)
-2. **6B:** Psalms `ppl` pt2 (~19 chapters: 50-70)
-3. **6C:** Psalms `ppl` pt3 (~18 chapters: 72-88) + Psalms `rec` (8) + Psalms `cross` (6)
-4. **6D:** Isaiah `ppl` (11) + Isaiah `rec` (7)
-5. **6E:** Ezekiel `ppl` (10) + Ezekiel misc (7)
-6. **6F:** Jeremiah `ppl` (8) + Job `rec` (4) + Job `cross` (5)
-7. **6G:** 1 Chronicles `cross` (10) + 2 Chronicles `cross` (6) + Nehemiah `cross` (8)
-8. **6H:** All remaining — Amos, Hosea, Exodus, Daniel, Esther, Zechariah, misc singles
-
-### Audit Command
-
-```python
-import json, glob
-from collections import defaultdict
-
-thin = defaultdict(lambda: defaultdict(list))
-for book_dir in sorted(glob.glob('content/*/')):
-    book = book_dir.rstrip('/').split('/')[-1]
-    if book in ('meta', 'verses'): continue
-    for f in sorted(glob.glob(f'{book_dir}/*.json'), key=lambda x: int(x.split('/')[-1].replace('.json','')) if x.split('/')[-1].replace('.json','').isdigit() else 0):
-        ch = f.split('/')[-1].replace('.json','')
-        if not ch.isdigit(): continue
-        with open(f) as fh:
-            data = json.load(fh)
-        for sec in data.get('sections', []):
-            for ptype, content in sec.get('panels', {}).items():
-                clen = len(json.dumps(content)) if not isinstance(content, str) else len(content)
-                if 50 <= clen <= 150:
-                    thin[book][f'sec:{ptype}'].append(int(ch))
-        for ptype, content in data.get('chapter_panels', {}).items():
-            clen = len(json.dumps(content)) if not isinstance(content, str) else len(content)
-            if 50 <= clen <= 150:
-                thin[book][f'ch:{ptype}'].append(int(ch))
-
-total = 0
-for book in sorted(thin):
-    for ptype in sorted(thin[book]):
-        count = len(thin[book][ptype])
-        total += count
-        print(f'  {book:20s} {ptype:15s} {count:3d}  ch {thin[book][ptype][:5]}')
-print(f'\nTotal: {total}')
+```
+git clone https://CraigBuckmaster:{YOUR_TOKEN}@github.com/CraigBuckmaster/ScriptureDeepDive.git
 ```
 
-## Pipeline Reminder
+**Git config required:**
+```bash
+git config user.email "craig@companionstudy.app"
+git config user.name "Craig Buckmaster"
+```
 
-1. Write merge script in `/tmp/gen_*.py`
-2. Run it to update `content/{book}/{ch}.json` files
-3. `python3 _tools/build_sqlite.py`
-4. `python3 _tools/validate.py`
-5. `python3 _tools/validate_sqlite.py`
-6. `rm /tmp/gen_*.py`
-7. `git add -A && git commit && git push`
+---
 
-Both validators should pass green before pushing. Current validator counts:
-- 57 live books, 9 pending
-- 1133 chapters, 2599 sections
-- 19125 section panels, 8664 chapter panels
-- 281 people (37 spine, 244 satellite), 63 scholars (REGISTRY)
-- 73 places, 420 timelines, 60 synoptic entries, 35 word studies
+## Current State (as of commit 660d28e0)
 
-Git config: `user.email "craig@companionstudy.app"`, `user.name "Claude AI"`
+### Batches Complete
+
+| Batch | Feature | Status |
+|-------|---------|--------|
+| 1 | Feature 1 infra (prophecy_chains table, types, queries) | ✅ Complete |
+| 2 | Prophecy chains content (50 chains, 283 links) | ✅ Complete |
+| 3 | ProphecyBrowse + ProphecyDetail screens | ✅ Complete |
+| 4 | user.db migration v2 (tags, collections, links, FTS) | ✅ Complete |
+| 5 | Enhanced notes UI (AllNotesScreen 3-tab, CollectionDetail, NotesOverlay) | ✅ Complete |
+| 6 | DiscoursePanel component + wiring | ✅ Complete |
+| **7** | **Discourse content for Romans** | **NEXT** |
+
+### Key Files Created in Batches 1-6
+
+- `app/src/screens/ProphecyBrowseScreen.tsx` — Category filter + chain cards
+- `app/src/screens/ProphecyDetailScreen.tsx` — Timeline rail view
+- `app/src/hooks/useProphecyChains.ts` — Data hooks
+- `app/src/components/TagChips.tsx` — Tag editing component
+- `app/src/components/CollectionPicker.tsx` — Bottom sheet for collections
+- `app/src/components/NoteLinkSheet.tsx` — Note linking sheet
+- `app/src/screens/CollectionDetailScreen.tsx` — Collection notes view
+- `app/src/components/panels/DiscoursePanel.tsx` — Argument flow panel
+
+---
+
+## Batch 7: Discourse Content for Romans
+
+**Goal:** Add `discourse` key to `chapter_panels` for Romans 1-16.
+
+**Files to modify:**
+- `content/romans/1.json` through `content/romans/16.json`
+
+**Approach:**
+1. Create generator script `/tmp/gen_discourse_romans.py`
+2. For each chapter, add discourse data to the existing JSON
+3. Run `python3 _tools/build_sqlite.py`
+4. Validate with `python3 _tools/validate.py`
+5. Delete generator script, commit, push
+
+### DiscourseData Structure
+
+```typescript
+interface DiscourseNode {
+  id: string;
+  type: 'thesis' | 'premise' | 'ground' | 'inference' | 'conclusion' |
+        'contrast' | 'concession' | 'purpose' | 'result' |
+        'illustration' | 'exhortation' | 'doxology';
+  verse_range: string;
+  marker?: string;      // "Therefore", "For", "But", etc.
+  text: string;
+  children?: DiscourseNode[];
+}
+
+interface DiscourseData {
+  thesis: string;
+  nodes: DiscourseNode[];
+  note?: string;
+}
+```
+
+### Romans Chapter-by-Chapter Guide
+
+| Ch | Key Argument | Primary Node Types |
+|----|--------------|-------------------|
+| 1 | Thesis (1:16-17) → Gentile guilt (1:18-32) | thesis, ground, inference |
+| 2 | Jewish guilt — judging others while doing the same | contrast, ground, conclusion |
+| 3 | Universal guilt → righteousness by faith introduced | conclusion, premise, thesis |
+| 4 | Abraham as proof case — faith credited as righteousness | illustration, ground, conclusion |
+| 5 | Results of justification → Adam/Christ parallel | result, contrast, illustration |
+| 6 | Dead to sin, alive in Christ — shall we sin? | inference, contrast, exhortation |
+| 7 | Released from law — the struggle of the flesh | illustration, contrast, concession |
+| 8 | No condemnation → Spirit life → nothing separates | thesis, ground, conclusion, doxology |
+| 9 | God's sovereign election — Israel's rejection | premise, ground, contrast |
+| 10 | Israel's failure — righteousness by faith, not law | contrast, ground, conclusion |
+| 11 | Remnant theology → olive tree → all Israel saved | illustration, premise, doxology |
+| 12 | Therefore → living sacrifice → ethical exhortations | exhortation (throughout) |
+| 13 | Submit to authorities → love fulfills law | exhortation, ground |
+| 14 | Weak/strong conscience — don't judge | exhortation, ground, purpose |
+| 15 | Unity in Christ → Paul's mission plans | exhortation, purpose |
+| 16 | Greetings + final warnings | exhortation, doxology |
+
+**Note:** Chapters 12-16 shift from doctrinal argument to practical exhortation.
+
+### Discourse Markers to Look For
+
+- **Therefore** (οὖν) → inference/conclusion
+- **For** (γάρ) → ground/premise
+- **But** (ἀλλά, δέ) → contrast
+- **Because** → ground
+- **So that / In order that** (ἵνα) → purpose
+- **If...then** → premise + inference
+- **Now** (νῦν) → transition
+- **Just as...so also** → illustration/parallel
+
+### Example: Romans 1 Discourse Data
+
+```json
+{
+  "thesis": "The gospel is the power of God for salvation to everyone who believes, revealing God's righteousness from faith to faith.",
+  "nodes": [
+    {
+      "id": "r1-1",
+      "type": "thesis",
+      "verse_range": "1:16-17",
+      "text": "Paul states his thesis: the gospel reveals God's righteousness through faith, the righteous shall live by faith."
+    },
+    {
+      "id": "r1-2",
+      "type": "ground",
+      "verse_range": "1:18-20",
+      "marker": "For",
+      "text": "God's wrath is revealed because humanity suppresses the truth evident in creation.",
+      "children": [
+        {
+          "id": "r1-2a",
+          "type": "inference",
+          "verse_range": "1:20",
+          "text": "Therefore they are without excuse — God's attributes are clearly seen."
+        }
+      ]
+    },
+    {
+      "id": "r1-3",
+      "type": "result",
+      "verse_range": "1:21-23",
+      "text": "Though they knew God, they did not honor him — futile thinking led to idolatry."
+    },
+    {
+      "id": "r1-4",
+      "type": "conclusion",
+      "verse_range": "1:24-32",
+      "marker": "Therefore",
+      "text": "God gave them over to their desires — the downward spiral of sin and its consequences.",
+      "children": [
+        {
+          "id": "r1-4a",
+          "type": "ground",
+          "verse_range": "1:28",
+          "marker": "Because",
+          "text": "Because they did not see fit to acknowledge God, he gave them up to a debased mind."
+        }
+      ]
+    }
+  ],
+  "note": "Romans 1 establishes the universal problem (sin) that requires the solution (gospel). The 'For' in v.18 grounds the thesis — the gospel is needed because wrath is revealed against ungodliness."
+}
+```
+
+### Generator Script Pattern
+
+Use the standard pattern from `shared.py`:
+
+```python
+import json
+from pathlib import Path
+
+CONTENT = Path('/home/claude/ScriptureDeepDive/content')
+
+def add_discourse_to_chapter(book_dir: str, ch: int, discourse_data: dict):
+    path = CONTENT / book_dir / f'{ch}.json'
+    with open(path) as f:
+        chapter = json.load(f)
+    
+    if 'chapter_panels' not in chapter:
+        chapter['chapter_panels'] = {}
+    
+    chapter['chapter_panels']['discourse'] = discourse_data
+    
+    with open(path, 'w') as f:
+        json.dump(chapter, f, indent=2)
+    print(f'  ✓ {book_dir} {ch}')
+
+# Then call for each chapter:
+add_discourse_to_chapter('romans', 1, { ... })
+```
+
+### Verification
+
+After running the generator:
+
+```bash
+python3 _tools/build_sqlite.py
+python3 _tools/validate.py
+rm /tmp/gen_discourse_romans.py
+git add -A && git commit -m "feat(discourse): Batch 7 — Romans 1-16 argument flow data" && git push origin master
+```
+
+The app should show "Argument Flow" panel button in Romans chapters.
+
+---
+
+## After Batch 7
+
+**Batch 8:** Concept Explorer (concepts.json + ConceptBrowse + ConceptDetail screens)
+
+See `_tools/IMPLEMENTATION_PLAN.md` lines 751-850 for full spec.
+
+---
+
+## Key Conventions
+
+- **Generator scripts:** Write to `/tmp/`, delete after use
+- **Content pipeline:** Generator → JSON → build_sqlite.py → validate.py → commit
+- **Verse text:** Must be word-for-word NIV
+- **Panel types:** discourse is now registered in panelLabels.ts and PanelRenderer.tsx
+- **Commit pattern:** `feat(discourse): Batch 7 — description`
+
+## Deploy
+
+After commit:
+```bash
+cd app
+eas update --branch production
+```
