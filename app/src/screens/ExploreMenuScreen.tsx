@@ -62,6 +62,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Explore the grand themes of Scripture',
     screen: 'ConceptBrowse',
   },
+  {
+    title: 'Difficult Passages',
+    subtitle: 'Wrestling with hard texts',
+    screen: 'DifficultPassagesBrowse',
+  },
 ];
 
 export default function ExploreMenuScreen() {

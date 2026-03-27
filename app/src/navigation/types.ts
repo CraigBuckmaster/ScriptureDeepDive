@@ -43,6 +43,8 @@ export type ExploreStackParamList = {
   ProphecyDetail: { chainId: string };
   ConceptBrowse: undefined;
   ConceptDetail: { conceptId: string };
+  DifficultPassagesBrowse: undefined;
+  DifficultPassageDetail: { passageId: string };
   Chapter: { bookId: string; chapterNum: number };
 };
 

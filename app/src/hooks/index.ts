@@ -18,3 +18,4 @@ export { useMapZoom } from './useMapZoom';
 export { useHighlightsForChapter } from './useHighlights';
 export { useBookmarkedVerses } from './useBookmarkedVerses';
 export { useTTS } from './useTTS';
+export { useDifficultPassages, useDifficultPassage } from './useDifficultPassages';
