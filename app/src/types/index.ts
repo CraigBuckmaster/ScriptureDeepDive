@@ -337,3 +337,66 @@ export interface TransPanel {
   title: string;
   rows: TransRow[];
 }
+
+// ── Feature types (prophecy chains, concepts, difficult passages) ──
+
+/** Parsed from ProphecyChain.links_json */
+export interface ProphecyChainLink {
+  book_dir: string;
+  chapter_num: number;
+  verse_ref: string;
+  label: string;
+  role: string;        // 'origin' | 'development' | 'fulfillment' | 'consummation'
+  summary: string;
+}
+
+/** Raw DB row — JSON columns are unparsed strings */
+export interface ProphecyChain {
+  id: string;
+  title: string;
+  category: string;    // 'messianic' | 'covenant' | 'judgment' | 'restoration' | 'typological'
+  chain_type: string;  // 'prophecy-fulfillment' | 'type-antitype' | 'promise-realization'
+  summary: string | null;
+  tags_json: string | null;
+  links_json: string;
+}
+
+/** Raw DB row */
+export interface Concept {
+  id: string;
+  name: string;
+  description: string | null;
+  theme_key: string | null;
+  word_study_ids_json: string | null;
+  thread_ids_json: string | null;
+  prophecy_chain_ids_json: string | null;
+  people_tags_json: string | null;
+  search_terms_json: string | null;
+}
+
+/** Parsed from DifficultPassage.responses_json */
+export interface DifficultPassageResponse {
+  tradition: string;
+  summary: string;
+  scholars?: string[];
+  key_argument?: string;
+}
+
+/** Parsed from DifficultPassage.related_chapters_json */
+export interface DifficultPassageChapter {
+  book_dir: string;
+  chapter_num: number;
+}
+
+/** Raw DB row — JSON columns are unparsed strings */
+export interface DifficultPassage {
+  id: string;
+  title: string;
+  category: string;    // 'ethical' | 'contradiction' | 'theological' | 'historical' | 'textual'
+  severity: string;    // 'hard' | 'very_hard' | 'notorious'
+  passage: string;
+  question: string;
+  responses_json: string;
+  related_chapters_json: string | null;
+  tags_json: string | null;
+}

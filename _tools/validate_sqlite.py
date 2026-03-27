@@ -74,12 +74,12 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("46 live books", live == 46, f"got {live}")
-    check("20 pending books", pending == 20, f"got {pending}")
+    check("57 live books", live == 57, f"got {live}")
+    check("9 pending books", pending == 9, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1085 chapters", ch_count == 1085, f"got {ch_count}")
+    check("1133 chapters", ch_count == 1133, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
@@ -124,7 +124,7 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("262 people", q1(cur, "SELECT COUNT(*) FROM people") == 262)
+    check("281 people", q1(cur, "SELECT COUNT(*) FROM people") == 281)
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
@@ -154,7 +154,32 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("407 timeline entries", tl_count == 407, f"got {tl_count}")
+    check("420 timeline entries", tl_count == 420, f"got {tl_count}")
+
+    # Feature tables (prophecy chains, concepts, difficult passages)
+    pc_count = q1(cur, "SELECT COUNT(*) FROM prophecy_chains")
+    check("prophecy_chains table exists", pc_count is not None, "table missing")
+    if pc_count:
+        # Every chain has valid links_json
+        bad_links = q(cur,
+            "SELECT id FROM prophecy_chains WHERE links_json IS NULL OR links_json = '[]'")
+        check("All prophecy chains have links", len(bad_links) == 0,
+              f"{len(bad_links)} chains with empty links")
+    print(f"  prophecy_chains: {pc_count or 0}")
+
+    co_count = q1(cur, "SELECT COUNT(*) FROM concepts")
+    check("concepts table exists", co_count is not None, "table missing")
+    print(f"  concepts: {co_count or 0}")
+
+    dp_count = q1(cur, "SELECT COUNT(*) FROM difficult_passages")
+    check("difficult_passages table exists", dp_count is not None, "table missing")
+    if dp_count:
+        # Every passage has responses
+        bad_resp = q(cur,
+            "SELECT id FROM difficult_passages WHERE responses_json IS NULL OR responses_json = '[]'")
+        check("All difficult passages have responses", len(bad_resp) == 0,
+              f"{len(bad_resp)} passages with empty responses")
+    print(f"  difficult_passages: {dp_count or 0}")
 
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
@@ -335,7 +360,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("225 satellite people", sat == 225, f"got {sat}")
+    check("244 satellite people", sat == 244, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")

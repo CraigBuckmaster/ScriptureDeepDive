@@ -245,6 +245,44 @@ CREATE TABLE db_meta (
   value TEXT NOT NULL
 );
 
+-- ══════════════════════════════════════════════════════════════
+-- FEATURE TABLES (prophecy chains, concepts, difficult passages)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE prophecy_chains (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  chain_type TEXT NOT NULL,
+  summary TEXT,
+  tags_json TEXT,
+  links_json TEXT NOT NULL
+);
+
+CREATE TABLE concepts (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT,
+  theme_key TEXT,
+  word_study_ids_json TEXT,
+  thread_ids_json TEXT,
+  prophecy_chain_ids_json TEXT,
+  people_tags_json TEXT,
+  search_terms_json TEXT
+);
+
+CREATE TABLE difficult_passages (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  severity TEXT NOT NULL,
+  passage TEXT NOT NULL,
+  question TEXT NOT NULL,
+  responses_json TEXT NOT NULL,
+  related_chapters_json TEXT,
+  tags_json TEXT
+);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
@@ -609,6 +647,56 @@ def populate_timelines(cur):
     return count
 
 
+def populate_prophecy_chains(cur):
+    path = META / 'prophecy-chains.json'
+    if not path.exists():
+        return 0
+    chains = _load_json(path)
+    for c in chains:
+        cur.execute(
+            'INSERT INTO prophecy_chains VALUES (?,?,?,?,?,?,?)',
+            (c['id'], c['title'], c['category'], c['type'],
+             c.get('summary'), _json_str(c.get('tags', [])),
+             _json_str(c['links']))
+        )
+    return len(chains)
+
+
+def populate_concepts(cur):
+    path = META / 'concepts.json'
+    if not path.exists():
+        return 0
+    concepts = _load_json(path)
+    for c in concepts:
+        cur.execute(
+            'INSERT INTO concepts VALUES (?,?,?,?,?,?,?,?,?)',
+            (c['id'], c['name'], c.get('description'),
+             c.get('theme_key'), _json_str(c.get('word_study_ids', [])),
+             _json_str(c.get('thread_ids', [])),
+             _json_str(c.get('prophecy_chain_ids', [])),
+             _json_str(c.get('people_tags', [])),
+             _json_str(c.get('search_terms', [])))
+        )
+    return len(concepts)
+
+
+def populate_difficult_passages(cur):
+    path = META / 'difficult-passages.json'
+    if not path.exists():
+        return 0
+    passages = _load_json(path)
+    for p in passages:
+        cur.execute(
+            'INSERT INTO difficult_passages VALUES (?,?,?,?,?,?,?,?,?)',
+            (p['id'], p['title'], p['category'], p['severity'],
+             p['passage'], p['question'],
+             _json_str(p['responses']),
+             _json_str(p.get('related_chapters', [])),
+             _json_str(p.get('tags', [])))
+        )
+    return len(passages)
+
+
 def build_fts(cur):
     """Populate FTS5 indexes."""
     cur.execute('INSERT INTO verses_fts(verses_fts) VALUES("rebuild")')
@@ -686,6 +774,15 @@ def main():
 
     n = populate_timelines(cur)
     print(f"  ✅ timelines: {n} rows")
+
+    n = populate_prophecy_chains(cur)
+    print(f"  ✅ prophecy_chains: {n} rows")
+
+    n = populate_concepts(cur)
+    print(f"  ✅ concepts: {n} rows")
+
+    n = populate_difficult_passages(cur)
+    print(f"  ✅ difficult_passages: {n} rows")
 
     # Build FTS
     build_fts(cur)
