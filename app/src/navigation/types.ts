@@ -39,6 +39,9 @@ export type ExploreStackParamList = {
   ScholarBrowse: undefined;
   ScholarBio: { scholarId: string };
   ParallelPassage: { entryId: string };
+  ProphecyBrowse: undefined;
+  ProphecyDetail: { chainId: string };
+  Chapter: { bookId: string; chapterNum: number };
 };
 
 export type MoreStackParamList = {

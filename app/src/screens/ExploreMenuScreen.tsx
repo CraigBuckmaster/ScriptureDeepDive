@@ -53,6 +53,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: (s) => s ? `${s.scholarCount} commentators` : 'Commentators across traditions',
     screen: 'ScholarBrowse',
   },
+  {
+    title: 'Prophecy & Typology',
+    subtitle: (s) => s ? `${s.prophecyChainCount} fulfillment chains` : 'Across the canon',
+    screen: 'ProphecyBrowse',
+  },
 ];
 
 export default function ExploreMenuScreen() {
