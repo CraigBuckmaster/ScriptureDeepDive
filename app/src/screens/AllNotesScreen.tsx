@@ -334,10 +334,11 @@ export default function AllNotesScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <ScreenHeader
         title="Notes"
         onBack={() => navigation.goBack()}
+        style={styles.header}
       />
 
       <TabBar />
@@ -353,6 +354,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: base.bg,
+  },
+  header: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+    paddingBottom: spacing.sm,
   },
   tabBar: {
     flexDirection: 'row',
