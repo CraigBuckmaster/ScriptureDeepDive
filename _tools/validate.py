@@ -169,7 +169,7 @@ def main():
     # ── 3. Completeness ──
     print("\n--- 3. COMPLETENESS ---")
 
-    check(f"{len(live_books)} live books", len(live_books) == 46,
+    check(f"{len(live_books)} live books", len(live_books) == 57,
           f"got {len(live_books)}")
 
     # Every live book has correct chapter count
@@ -193,6 +193,52 @@ def main():
     print("  Chapter panel types:")
     for ptype, count in ch_panel_type_counts.most_common():
         print(f"    {ptype:12s}: {count}")
+
+    # ── 5. Feature meta files ──
+    print("\n--- 5. FEATURE META FILES ---")
+
+    # Prophecy chains
+    pc_path = META / 'prophecy-chains.json'
+    if pc_path.exists():
+        pc_data = json.loads(pc_path.read_text())
+        check("prophecy-chains.json is list", isinstance(pc_data, list))
+        for i, c in enumerate(pc_data):
+            for key in ('id', 'title', 'category', 'type', 'links'):
+                check(f"prophecy chain [{i}] has '{key}'", key in c,
+                      f"chain {c.get('id', f'index {i}')} missing '{key}'")
+            if 'links' in c:
+                for j, link in enumerate(c['links']):
+                    for lk in ('book_dir', 'chapter_num', 'verse_ref'):
+                        check(f"chain {c.get('id','?')} link [{j}] has '{lk}'",
+                              lk in link, f"missing '{lk}'")
+        print(f"  prophecy chains: {len(pc_data)}")
+
+    # Concepts
+    co_path = META / 'concepts.json'
+    if co_path.exists():
+        co_data = json.loads(co_path.read_text())
+        check("concepts.json is list", isinstance(co_data, list))
+        for i, c in enumerate(co_data):
+            for key in ('id', 'name'):
+                check(f"concept [{i}] has '{key}'", key in c,
+                      f"concept {c.get('id', f'index {i}')} missing '{key}'")
+        print(f"  concepts: {len(co_data)}")
+
+    # Difficult passages
+    dp_path = META / 'difficult-passages.json'
+    if dp_path.exists():
+        dp_data = json.loads(dp_path.read_text())
+        check("difficult-passages.json is list", isinstance(dp_data, list))
+        for i, p in enumerate(dp_data):
+            for key in ('id', 'title', 'category', 'severity', 'passage', 'question', 'responses'):
+                check(f"difficult passage [{i}] has '{key}'", key in p,
+                      f"passage {p.get('id', f'index {i}')} missing '{key}'")
+            if 'responses' in p:
+                for j, r in enumerate(p['responses']):
+                    for rk in ('tradition', 'summary'):
+                        check(f"passage {p.get('id','?')} response [{j}] has '{rk}'",
+                              rk in r, f"missing '{rk}'")
+        print(f"  difficult passages: {len(dp_data)}")
 
     # ── Summary ──
     print(f"\n{'='*60}")

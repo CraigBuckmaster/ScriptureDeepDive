@@ -11,6 +11,7 @@ import type {
   Verse, BookIntro, Person, Scholar, Place, MapStory,
   WordStudy, SynopticEntry, VHLGroup, CrossRefThread,
   CrossRefPair, TimelineEntry, GenealogyConfig,
+  ProphecyChain, Concept, DifficultPassage,
 } from '../types';
 
 // ── Books ───────────────────────────────────────────────────────────
@@ -294,15 +295,21 @@ export interface ContentStats {
   scholarCount: number;
   peopleCount: number;
   timelineCount: number;
+  prophecyChainCount: number;
+  conceptCount: number;
+  difficultPassageCount: number;
 }
 
 export async function getContentStats(): Promise<ContentStats> {
-  const [books, chapters, scholars, people, timeline] = await Promise.all([
+  const [books, chapters, scholars, people, timeline, prophecy, concepts, difficult] = await Promise.all([
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM books WHERE is_live = 1"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM chapters"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM scholars"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM people"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM timelines"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM prophecy_chains"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM concepts"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM difficult_passages"),
   ]);
   return {
     liveBooks: books?.c ?? 0,
@@ -310,6 +317,9 @@ export async function getContentStats(): Promise<ContentStats> {
     scholarCount: scholars?.c ?? 0,
     peopleCount: people?.c ?? 0,
     timelineCount: timeline?.c ?? 0,
+    prophecyChainCount: prophecy?.c ?? 0,
+    conceptCount: concepts?.c ?? 0,
+    difficultPassageCount: difficult?.c ?? 0,
   };
 }
 
@@ -350,5 +360,92 @@ export async function searchPeople(query: string): Promise<Person[]> {
      JOIN people p ON p.rowid = f.rowid
      WHERE f.name MATCH ?`,
     [ftsQuery]
+  );
+}
+
+// ── Prophecy Chains ─────────────────────────────────────────────────
+
+export async function getAllProphecyChains(): Promise<ProphecyChain[]> {
+  return getDb().getAllAsync<ProphecyChain>(
+    'SELECT * FROM prophecy_chains ORDER BY title'
+  );
+}
+
+export async function getProphecyChain(id: string): Promise<ProphecyChain | null> {
+  return getDb().getFirstAsync<ProphecyChain>(
+    'SELECT * FROM prophecy_chains WHERE id = ?',
+    [id]
+  );
+}
+
+export async function getProphecyChainsByCategory(category: string): Promise<ProphecyChain[]> {
+  return getDb().getAllAsync<ProphecyChain>(
+    'SELECT * FROM prophecy_chains WHERE category = ? ORDER BY title',
+    [category]
+  );
+}
+
+/**
+ * Find prophecy chains that reference a specific chapter.
+ * Uses LIKE on JSON — fine for <200 rows.
+ */
+export async function getProphecyChainsForChapter(
+  bookDir: string, chapterNum: number
+): Promise<ProphecyChain[]> {
+  return getDb().getAllAsync<ProphecyChain>(
+    `SELECT * FROM prophecy_chains
+     WHERE links_json LIKE ? AND links_json LIKE ?`,
+    [`%"book_dir":"${bookDir}"%`, `%"chapter_num":${chapterNum}%`]
+  );
+}
+
+// ── Concepts ────────────────────────────────────────────────────────
+
+export async function getAllConcepts(): Promise<Concept[]> {
+  return getDb().getAllAsync<Concept>(
+    'SELECT * FROM concepts ORDER BY name'
+  );
+}
+
+export async function getConcept(id: string): Promise<Concept | null> {
+  return getDb().getFirstAsync<Concept>(
+    'SELECT * FROM concepts WHERE id = ?',
+    [id]
+  );
+}
+
+// ── Difficult Passages ──────────────────────────────────────────────
+
+export async function getAllDifficultPassages(): Promise<DifficultPassage[]> {
+  return getDb().getAllAsync<DifficultPassage>(
+    'SELECT * FROM difficult_passages ORDER BY title'
+  );
+}
+
+export async function getDifficultPassage(id: string): Promise<DifficultPassage | null> {
+  return getDb().getFirstAsync<DifficultPassage>(
+    'SELECT * FROM difficult_passages WHERE id = ?',
+    [id]
+  );
+}
+
+export async function getDifficultPassagesByCategory(category: string): Promise<DifficultPassage[]> {
+  return getDb().getAllAsync<DifficultPassage>(
+    'SELECT * FROM difficult_passages WHERE category = ? ORDER BY title',
+    [category]
+  );
+}
+
+/**
+ * Find difficult passages that reference a specific chapter.
+ * Uses LIKE on JSON — fine for <200 rows.
+ */
+export async function getDifficultPassagesForChapter(
+  bookDir: string, chapterNum: number
+): Promise<DifficultPassage[]> {
+  return getDb().getAllAsync<DifficultPassage>(
+    `SELECT * FROM difficult_passages
+     WHERE related_chapters_json LIKE ? AND related_chapters_json LIKE ?`,
+    [`%"book_dir":"${bookDir}"%`, `%"chapter_num":${chapterNum}%`]
   );
 }
