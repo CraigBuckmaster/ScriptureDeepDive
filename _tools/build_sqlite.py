@@ -8,16 +8,58 @@ and populates it from the JSON files produced by Phases 0A-0E.
 Usage:
     python3 _tools/build_sqlite.py
 """
-import os, sys, json, sqlite3, glob
+import os, sys, json, sqlite3, glob, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
+APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
 
 # Bump this whenever schema or content changes require a DB replacement on device.
-DB_VERSION = '0.13'
+# This is auto-incremented by the build script — do not edit manually.
+DB_VERSION = '0.14'
+
+
+def bump_db_version():
+    """Auto-increment DB_VERSION in this file and sync to app/src/db/database.ts."""
+    global DB_VERSION
+    
+    # Parse current version (e.g., "0.13" -> major=0, minor=13)
+    parts = DB_VERSION.split('.')
+    if len(parts) == 2:
+        major, minor = int(parts[0]), int(parts[1])
+        new_version = f"{major}.{minor + 1}"
+    else:
+        # Fallback: just append .1
+        new_version = DB_VERSION + ".1"
+    
+    # Update this file (build_sqlite.py)
+    build_script = Path(__file__)
+    content = build_script.read_text()
+    content = re.sub(
+        r"DB_VERSION = '0.14']+'",
+        f"DB_VERSION = '0.14'",
+        content
+    )
+    build_script.write_text(content)
+    
+    # Update app/src/db/database.ts
+    if APP_DB_TS.exists():
+        ts_content = APP_DB_TS.read_text()
+        ts_content = re.sub(
+            r"const EXPECTED_DB_VERSION = '0.14']+';",
+            f"const EXPECTED_DB_VERSION = '0.14';",
+            ts_content
+        )
+        APP_DB_TS.write_text(ts_content)
+        print(f"  📦 DB version: {DB_VERSION} → {new_version} (auto-incremented)")
+    else:
+        print(f"  ⚠️  DB version: {DB_VERSION} → {new_version} (database.ts not found)")
+    
+    DB_VERSION = new_version
+    return new_version
 
 
 # ---------------------------------------------------------------------------
@@ -577,6 +619,9 @@ def build_fts(cur):
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    # Auto-increment version on every build
+    bump_db_version()
+    
     # Remove existing DB
     if DB_PATH.exists():
         DB_PATH.unlink()
