@@ -77,6 +77,18 @@ function parseTags(json: string | null): string[] {
   }
 }
 
+/** Format book_dir to display name: "1_samuel" → "1 Samuel" */
+function formatBookName(bookDir: string): string {
+  return bookDir
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/** Format link to full ref: "Genesis 3:15" */
+function formatLinkRef(link: ProphecyChainLink): string {
+  return `${formatBookName(link.book_dir)} ${link.verse_ref}`;
+}
+
 export default function ProphecyDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
@@ -92,7 +104,7 @@ export default function ProphecyDetailScreen() {
       });
     } catch (err) {
       logger.warn('ProphecyDetailScreen', 'Navigation failed', err);
-      Alert.alert('Not Available', `${link.verse_ref} — chapter not yet available in app.`);
+      Alert.alert('Not Available', `${formatLinkRef(link)} — chapter not yet available in app.`);
     }
   };
 
@@ -169,7 +181,7 @@ export default function ProphecyDetailScreen() {
                     <View style={styles.railCardHeader}>
                       <TouchableOpacity onPress={() => handleVersePress(link)}>
                         <Text style={[styles.verseRef, { color: dotColor }]}>
-                          {link.verse_ref}
+                          {formatLinkRef(link)}
                         </Text>
                       </TouchableOpacity>
                       {link.role && (
