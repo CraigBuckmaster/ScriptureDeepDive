@@ -156,7 +156,7 @@ export default function DifficultPassageDetailScreen() {
                       <View style={styles.scholarInfo}>
                         <Text style={styles.scholarName}>{scholar.name}</Text>
                         <Text style={styles.scholarMeta}>
-                          {scholar.tradition} • {scholar.era}
+                          {scholar.tradition}
                         </Text>
                       </View>
                       <ChevronLeft
