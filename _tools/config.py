@@ -1395,6 +1395,32 @@ BOOK_META['colossians'] = {
 COMMENTATOR_SCOPE['moo'].append('colossians')
 COMMENTATOR_SCOPE['obrien'].append('colossians')
 
+# ── 1 Thessalonians ─────────────────────────────────────────────────────
+BOOK_META['1_thessalonians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (1 Thess 1:1), writing jointly with Silas (Silvanus) and Timothy. Pauline authorship is virtually undisputed; even critical scholars who reject other Pauline letters accept 1 Thessalonians as authentic. It is likely Paul's earliest surviving letter and possibly the oldest document in the New Testament.\n\n<strong>When written:</strong> c.\u2009AD\u200950–51, from Corinth during Paul's second missionary journey. This dating is anchored by the Gallio inscription, which places Paul in Corinth c.\u2009AD\u200951–52 (Acts 18:12).\n\n<strong>What prompted it:</strong> Paul had been forced to leave Thessalonica abruptly after only a few weeks of ministry due to violent opposition (Acts 17:1–10). Anxious about the young church's survival under persecution, he sent Timothy back to check on them (3:1–5). Timothy returned with encouraging news: the Thessalonians' faith had remained strong (3:6–8). Paul writes to express thanksgiving, defend his ministry against slander (2:1–12), encourage perseverance, and address two pressing concerns: sexual ethics (4:1–8) and the fate of believers who die before Christ's return (4:13–18).",
+    'vhl_places': ['Thessalonica', 'Corinth', 'Macedonia', 'Achaia', 'Athens', 'Philippi'],
+    'vhl_people': ['Paul', 'Silas', 'Timothy', 'Christ', 'Jason'],
+    'vhl_key': ['faith', 'love', 'hope', 'gospel', 'word', 'power', 'Holy Spirit', 'joy', 'persecution', 'affliction', 'example', 'imitation', 'wrath', 'waiting', 'coming', 'return', 'dead in Christ', 'rapture', 'clouds', 'meeting', 'sanctification', 'holiness', 'sexual immorality', 'brotherly love', 'work', 'idleness', 'sleep', 'awake', 'sober', 'armor', 'salvation', 'peace', 'blameless'],
+    'vhl_time': ['the coming of our Lord Jesus', 'the day of the Lord', 'at his coming', 'when he comes', 'the dead in Christ will rise first', 'we who are still alive', 'to meet the Lord in the air', 'forever with the Lord', 'like a thief in the night', 'sudden destruction'],
+}
+
+SCHOLAR_REGISTRY.append(('wanamaker', 'wanamaker', 'Wanamaker', 'wanamaker'))
+COMMENTATOR_SCOPE['fee'].append('1_thessalonians')
+COMMENTATOR_SCOPE['wanamaker'] = ['1_thessalonians', '2_thessalonians']
+
+# ── 2 Thessalonians ─────────────────────────────────────────────────────
+BOOK_META['2_thessalonians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (2 Thess 1:1; 3:17), writing with Silas and Timothy. Pauline authorship is debated in modern scholarship: critics note differences in eschatology (the 'restrainer' and 'man of lawlessness' material has no parallel in undisputed letters), a cooler tone, and possible literary dependence on 1 Thessalonians. Defenders argue the differences reflect a pastoral response to new circumstances and that the letter's vocabulary and theology remain authentically Pauline.\n\n<strong>When written:</strong> c.\u2009AD\u200951–52, from Corinth shortly after 1 Thessalonians, if authentic. Some scholars who accept Pauline authorship place it before 1 Thessalonians.\n\n<strong>What prompted it:</strong> The Thessalonians had become confused about the timing of Christ's return. Some believed 'the day of the Lord has already come' (2:2)—possibly based on a letter falsely attributed to Paul. This eschatological confusion had practical consequences: some believers had stopped working, expecting the imminent end (3:6–12). Paul writes to correct the error with apocalyptic teaching about the 'man of lawlessness' who must appear first (2:3–4), to encourage perseverance under persecution (1:4–10), and to rebuke idleness: 'If anyone is not willing to work, let him not eat' (3:10).",
+    'vhl_places': ['Thessalonica', 'Corinth'],
+    'vhl_people': ['Paul', 'Silas', 'Timothy', 'Christ', 'the man of lawlessness', 'the restrainer'],
+    'vhl_key': ['faith', 'love', 'perseverance', 'persecution', 'affliction', 'relief', 'judgment', 'glory', 'punishment', 'destruction', 'rebellion', 'apostasy', 'man of lawlessness', 'son of destruction', 'restrainer', 'mystery of lawlessness', 'deception', 'delusion', 'lie', 'truth', 'sanctification', 'election', 'calling', 'tradition', 'work', 'idleness', 'busybody', 'discipline', 'warning', 'peace', 'grace'],
+    'vhl_time': ['the day of the Lord', 'when the Lord Jesus is revealed from heaven', 'at his coming', 'the rebellion comes first', 'until he is taken out of the way', 'the Lord will slay with the breath of his mouth', 'the splendor of his coming', 'from the beginning'],
+}
+
+COMMENTATOR_SCOPE['fee'].append('2_thessalonians')
+
 # ── Philemon ─────────────────────────────────────────────────────────
 BOOK_META['philemon'] = {
     'is_nt': True,
