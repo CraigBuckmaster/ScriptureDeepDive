@@ -5,7 +5,8 @@
  * in a single hook with unified loading state.
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getRecentChapters, getReadingStats, type ReadingStats } from '../db/user';
 import type { RecentChapter } from '../types';
@@ -125,7 +126,12 @@ export function useHomeData(): HomeData {
     }
   }, []);
 
-  useEffect(() => { load(); }, [load]);
+  // Reload data every time the screen comes into focus
+  useFocusEffect(
+    useCallback(() => {
+      load();
+    }, [load])
+  );
 
   return {
     greeting: getGreeting(),
