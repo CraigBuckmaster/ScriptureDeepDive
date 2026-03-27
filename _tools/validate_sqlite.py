@@ -74,12 +74,12 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("57 live books", live == 57, f"got {live}")
-    check("9 pending books", pending == 9, f"got {pending}")
+    check("58 live books", live == 58, f"got {live}")
+    check("8 pending books", pending == 8, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1133 chapters", ch_count == 1133, f"got {ch_count}")
+    check("1146 chapters", ch_count == 1146, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}

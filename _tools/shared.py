@@ -95,7 +95,7 @@ REGISTRY = [
     ('1_timothy',        '1 Timothy',       6,  6, 'NT', 'nt'),
     ('2_timothy',        '2 Timothy',       4,  4, 'NT', 'nt'),
     ('titus',            'Titus',           3,  3, 'NT', 'nt'),
-    ('hebrews',          'Hebrews',        13,  0, 'NT', 'nt'),
+    ('hebrews',          'Hebrews',        13, 13, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
