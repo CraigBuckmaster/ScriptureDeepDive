@@ -31,6 +31,7 @@ const PANEL_LABELS: Record<string, string> = {
   tx: 'Textual Notes',
   textual: 'Textual Notes',
   debate: 'Scholarly Debates',
+  discourse: 'Argument Flow',
 };
 
 // ── Scholar label overrides ─────────────────────────────────────────
@@ -144,5 +145,5 @@ export const SECTION_PANEL_ORDER = [
  */
 export const CHAPTER_PANEL_ORDER = [
   'lit', 'hebtext', 'themes', 'ppl', 'trans',
-  'src', 'rec', 'thread', 'tx', 'textual', 'debate',
+  'src', 'rec', 'thread', 'tx', 'textual', 'debate', 'discourse',
 ];
