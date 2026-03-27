@@ -8,6 +8,7 @@ export { useScholars } from './useScholars';
 export { usePlaces } from './usePlaces';
 export { useMapStories } from './useMapStories';
 export { useWordStudies } from './useWordStudies';
+export { useProphecyChains, useProphecyChainDetail } from './useProphecyChains';
 export { useSearch } from './useSearch';
 export { useRecentChapters } from './useRecentChapters';
 export { useNotedVerses } from './useNotedVerses';
