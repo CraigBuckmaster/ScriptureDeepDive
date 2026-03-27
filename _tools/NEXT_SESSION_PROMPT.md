@@ -1,4 +1,4 @@
-# Companion Study — Session Handoff: Batch 7
+# Companion Study — Session Handoff: Batch 8
 
 ## Repository Access
 
@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit 660d28e0)
+## Current State (as of commit 2b714e67)
 
 ### Batches Complete
 
@@ -26,9 +26,10 @@ git config user.name "Craig Buckmaster"
 | 4 | user.db migration v2 (tags, collections, links, FTS) | ✅ Complete |
 | 5 | Enhanced notes UI (AllNotesScreen 3-tab, CollectionDetail, NotesOverlay) | ✅ Complete |
 | 6 | DiscoursePanel component + wiring | ✅ Complete |
-| **7** | **Discourse content for Romans** | **NEXT** |
+| 7 | Discourse content for Romans 1-16 | ✅ Complete |
+| **8** | **Concept Explorer (concepts.json + screens)** | **NEXT** |
 
-### Key Files Created in Batches 1-6
+### Key Files Created in Batches 1-7
 
 - `app/src/screens/ProphecyBrowseScreen.tsx` — Category filter + chain cards
 - `app/src/screens/ProphecyDetailScreen.tsx` — Timeline rail view
@@ -38,180 +39,124 @@ git config user.name "Craig Buckmaster"
 - `app/src/components/NoteLinkSheet.tsx` — Note linking sheet
 - `app/src/screens/CollectionDetailScreen.tsx` — Collection notes view
 - `app/src/components/panels/DiscoursePanel.tsx` — Argument flow panel
+- `content/romans/*.json` — All 16 chapters now have discourse data
 
 ---
 
-## Batch 7: Discourse Content for Romans
+## Batch 8: Concept Explorer
 
-**Goal:** Add `discourse` key to `chapter_panels` for Romans 1-16.
+**Goal:** Populate `concepts.json` with 15-25 theological concepts + build ConceptBrowseScreen + ConceptDetailScreen + Explore card. Feature fully functional after this batch.
 
-**Files to modify:**
-- `content/romans/1.json` through `content/romans/16.json`
+### Files to Create
 
-**Approach:**
-1. Create generator script `/tmp/gen_discourse_romans.py`
-2. For each chapter, add discourse data to the existing JSON
-3. Run `python3 _tools/build_sqlite.py`
-4. Validate with `python3 _tools/validate.py`
-5. Delete generator script, commit, push
+| File | Purpose |
+|------|---------|
+| `app/src/screens/ConceptBrowseScreen.tsx` | Browse all theological concepts |
+| `app/src/screens/ConceptDetailScreen.tsx` | Aggregated detail view |
+| `app/src/hooks/useConceptData.ts` | Hook that runs multi-table aggregation |
 
-### DiscourseData Structure
+### Files to Modify
+
+| File | Change |
+|------|--------|
+| `content/meta/concepts.json` | Replace stub with 15-25 concept entries |
+| `app/src/navigation/types.ts` | Add `ConceptBrowse` + `ConceptDetail` to `ExploreStackParamList` |
+| `app/src/navigation/ExploreStack.tsx` | Register 2 new screens |
+| `app/src/screens/ExploreMenuScreen.tsx` | Add "Concepts" grid card |
+
+### Concept Data Structure
 
 ```typescript
-interface DiscourseNode {
+interface Concept {
   id: string;
-  type: 'thesis' | 'premise' | 'ground' | 'inference' | 'conclusion' |
-        'contrast' | 'concession' | 'purpose' | 'result' |
-        'illustration' | 'exhortation' | 'doxology';
-  verse_range: string;
-  marker?: string;      // "Therefore", "For", "But", etc.
-  text: string;
-  children?: DiscourseNode[];
-}
-
-interface DiscourseData {
-  thesis: string;
-  nodes: DiscourseNode[];
-  note?: string;
+  title: string;
+  description: string;
+  theme_key?: string;          // Links to chapter themes scores
+  word_study_ids: string[];    // Links to word_studies table
+  thread_ids: string[];        // Links to cross_ref_threads table
+  prophecy_chain_ids: string[];// Links to prophecy_chains table
+  people_tags: string[];       // Links to people table
+  tags: string[];
 }
 ```
 
-### Romans Chapter-by-Chapter Guide
+### Target Concepts (15-25)
 
-| Ch | Key Argument | Primary Node Types |
-|----|--------------|-------------------|
-| 1 | Thesis (1:16-17) → Gentile guilt (1:18-32) | thesis, ground, inference |
-| 2 | Jewish guilt — judging others while doing the same | contrast, ground, conclusion |
-| 3 | Universal guilt → righteousness by faith introduced | conclusion, premise, thesis |
-| 4 | Abraham as proof case — faith credited as righteousness | illustration, ground, conclusion |
-| 5 | Results of justification → Adam/Christ parallel | result, contrast, illustration |
-| 6 | Dead to sin, alive in Christ — shall we sin? | inference, contrast, exhortation |
-| 7 | Released from law — the struggle of the flesh | illustration, contrast, concession |
-| 8 | No condemnation → Spirit life → nothing separates | thesis, ground, conclusion, doxology |
-| 9 | God's sovereign election — Israel's rejection | premise, ground, contrast |
-| 10 | Israel's failure — righteousness by faith, not law | contrast, ground, conclusion |
-| 11 | Remnant theology → olive tree → all Israel saved | illustration, premise, doxology |
-| 12 | Therefore → living sacrifice → ethical exhortations | exhortation (throughout) |
-| 13 | Submit to authorities → love fulfills law | exhortation, ground |
-| 14 | Weak/strong conscience — don't judge | exhortation, ground, purpose |
-| 15 | Unity in Christ → Paul's mission plans | exhortation, purpose |
-| 16 | Greetings + final warnings | exhortation, doxology |
+| Concept | theme_key | word_study_ids | thread_ids | prophecy_chain_ids |
+|---------|-----------|---------------|-----------|-------------------|
+| Covenant | Covenant | [berith] | [covenant-thread] | [abrahamic-covenant, new-covenant, ...] |
+| Sacrifice & Atonement | (none) | [hesed, kaphar] | [substitutionary-sacrifice] | [lamb-of-god, ...] |
+| Kingship | (none) | [melek] | [kingdom-of-god] | [messianic-king, son-of-david, ...] |
+| Holiness | Holiness | [qadosh] | [] | [] |
+| Exile & Return | (none) | [] | [exile-return] | [exile-restoration, ...] |
+| Wisdom | (none) | [chokmah] | [wisdom-thread] | [] |
+| Spirit of God | (none) | [ruach] | [spirit-of-god] | [] |
+| Faith | Faith | [emunah, pistis] | [] | [] |
+| Mercy & Grace | Mercy | [hesed, charis] | [] | [] |
+| Judgment | Judgment | [mishpat] | [] | [flood-judgment, ...] |
+| Creation | (none) | [] | [creation-new-creation] | [first-adam-last-adam, ...] |
+| Temple & Presence | (none) | [mishkan] | [] | [tabernacle-incarnation, ...] |
+| Mission | Mission | [] | [] | [] |
+| Suffering | (none) | [] | [faithful-suffering] | [suffering-servant, ...] |
+| Resurrection | (none) | [anastasis] | [] | [] |
 
-**Note:** Chapters 12-16 shift from doctrinal argument to practical exhortation.
+### ConceptDetailScreen Aggregation Logic
 
-### Discourse Markers to Look For
+The hook `useConceptData(conceptId)` runs multiple parallel queries:
 
-- **Therefore** (οὖν) → inference/conclusion
-- **For** (γάρ) → ground/premise
-- **But** (ἀλλά, δέ) → contrast
-- **Because** → ground
-- **So that / In order that** (ἵνα) → purpose
-- **If...then** → premise + inference
-- **Now** (νῦν) → transition
-- **Just as...so also** → illustration/parallel
-
-### Example: Romans 1 Discourse Data
-
-```json
-{
-  "thesis": "The gospel is the power of God for salvation to everyone who believes, revealing God's righteousness from faith to faith.",
-  "nodes": [
-    {
-      "id": "r1-1",
-      "type": "thesis",
-      "verse_range": "1:16-17",
-      "text": "Paul states his thesis: the gospel reveals God's righteousness through faith, the righteous shall live by faith."
-    },
-    {
-      "id": "r1-2",
-      "type": "ground",
-      "verse_range": "1:18-20",
-      "marker": "For",
-      "text": "God's wrath is revealed because humanity suppresses the truth evident in creation.",
-      "children": [
-        {
-          "id": "r1-2a",
-          "type": "inference",
-          "verse_range": "1:20",
-          "text": "Therefore they are without excuse — God's attributes are clearly seen."
-        }
-      ]
-    },
-    {
-      "id": "r1-3",
-      "type": "result",
-      "verse_range": "1:21-23",
-      "text": "Though they knew God, they did not honor him — futile thinking led to idolatry."
-    },
-    {
-      "id": "r1-4",
-      "type": "conclusion",
-      "verse_range": "1:24-32",
-      "marker": "Therefore",
-      "text": "God gave them over to their desires — the downward spiral of sin and its consequences.",
-      "children": [
-        {
-          "id": "r1-4a",
-          "type": "ground",
-          "verse_range": "1:28",
-          "marker": "Because",
-          "text": "Because they did not see fit to acknowledge God, he gave them up to a debased mind."
-        }
-      ]
-    }
-  ],
-  "note": "Romans 1 establishes the universal problem (sin) that requires the solution (gospel). The 'For' in v.18 grounds the thesis — the gospel is needed because wrath is revealed against ungodliness."
+```typescript
+export function useConceptData(conceptId: string) {
+  // 1. Load concept record
+  // 2. Parse JSON arrays from concept
+  // 3. Parallel queries:
+  //    a. Word studies: WHERE id IN (word_study_ids)
+  //    b. Cross-ref threads: WHERE id IN (thread_ids)
+  //    c. Prophecy chains: WHERE id IN (prophecy_chain_ids)
+  //    d. People: WHERE id IN (people_tags)
+  //    e. Top chapters by theme score:
+  //       - Query all chapter_panels WHERE panel_type = 'themes'
+  //       - Parse scores JSON in JS
+  //       - Filter for matching theme_key
+  //       - Sort by score descending, take top 10
+  // 4. Return aggregated result
 }
 ```
 
-### Generator Script Pattern
+### ConceptDetailScreen Sections
 
-Use the standard pattern from `shared.py`:
+1. **Overview** — description text in gold-bordered callout
+2. **Word Studies** — horizontal scroll of word study cards (tap → WordStudyDetail)
+3. **Key Chapters** — top 10 chapters by theme score (tap → Chapter)
+4. **Threads** — cross-ref thread summaries (tap → ThreadViewerSheet)
+5. **Prophecy Chains** — chain cards (tap → ProphecyDetail)
+6. **People** — mini person cards (tap → PersonDetail)
 
-```python
-import json
-from pathlib import Path
+Each section only renders if it has data (no empty section headers).
 
-CONTENT = Path('/home/claude/ScriptureDeepDive/content')
+### Implementation Steps
 
-def add_discourse_to_chapter(book_dir: str, ch: int, discourse_data: dict):
-    path = CONTENT / book_dir / f'{ch}.json'
-    with open(path) as f:
-        chapter = json.load(f)
-    
-    if 'chapter_panels' not in chapter:
-        chapter['chapter_panels'] = {}
-    
-    chapter['chapter_panels']['discourse'] = discourse_data
-    
-    with open(path, 'w') as f:
-        json.dump(chapter, f, indent=2)
-    print(f'  ✓ {book_dir} {ch}')
-
-# Then call for each chapter:
-add_discourse_to_chapter('romans', 1, { ... })
-```
+1. **concepts.json content** — Generate 15-25 entries with proper IDs linking to existing data
+2. **Types** — Add to `ExploreStackParamList` in `navigation/types.ts`
+3. **useConceptData hook** — Multi-table aggregation with parallel queries
+4. **ConceptBrowseScreen** — Grid/list of concept cards with search
+5. **ConceptDetailScreen** — Scrollable sections with conditional rendering
+6. **ExploreStack** — Register both screens
+7. **ExploreMenuScreen** — Add "Concepts" grid card
 
 ### Verification
 
-After running the generator:
-
-```bash
-python3 _tools/build_sqlite.py
-python3 _tools/validate.py
-rm /tmp/gen_discourse_romans.py
-git add -A && git commit -m "feat(discourse): Batch 7 — Romans 1-16 argument flow data" && git push origin master
-```
-
-The app should show "Argument Flow" panel button in Romans chapters.
+- Explore shows "Concepts" card
+- Tapping opens ConceptBrowseScreen with 15-25 concepts
+- Tapping a concept opens ConceptDetailScreen with aggregated data
+- All links (word studies, chapters, threads, chains, people) navigate correctly
 
 ---
 
-## After Batch 7
+## After Batch 8
 
-**Batch 8:** Concept Explorer (concepts.json + ConceptBrowse + ConceptDetail screens)
+**Batch 9:** Difficult Passages content (50-80 entries in `difficult-passages.json`)
 
-See `_tools/IMPLEMENTATION_PLAN.md` lines 751-850 for full spec.
+See `_tools/IMPLEMENTATION_PLAN.md` lines 828-900 for full spec.
 
 ---
 
@@ -220,8 +165,14 @@ See `_tools/IMPLEMENTATION_PLAN.md` lines 751-850 for full spec.
 - **Generator scripts:** Write to `/tmp/`, delete after use
 - **Content pipeline:** Generator → JSON → build_sqlite.py → validate.py → commit
 - **Verse text:** Must be word-for-word NIV
-- **Panel types:** discourse is now registered in panelLabels.ts and PanelRenderer.tsx
-- **Commit pattern:** `feat(discourse): Batch 7 — description`
+- **Commit pattern:** `feat(concepts): Batch 8 — description`
+
+## Database Stats (as of Batch 7)
+
+- 58 live books, 8 pending
+- 1146 chapters
+- 50 prophecy chains
+- 16 discourse panels (Romans)
 
 ## Deploy
 
