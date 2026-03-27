@@ -1,0 +1,272 @@
+/**
+ * CollectionDetailScreen — Notes within a single study collection.
+ *
+ * Shows collection name/description, lists all notes, allows export.
+ */
+
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  Alert,
+  StyleSheet,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import * as Clipboard from 'expo-clipboard';
+import { Copy, Trash2, Edit3 } from 'lucide-react-native';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { TagChips } from '../components/TagChips';
+import {
+  getCollection,
+  getNotesInCollection,
+  deleteCollection,
+  updateNoteTags,
+} from '../db/user';
+import { displayRef, parseVerseRef } from '../utils/verseRef';
+import { base, spacing, radii, fontFamily } from '../theme';
+import type { StudyCollection, UserNote } from '../types';
+import { logger } from '../utils/logger';
+
+export default function CollectionDetailScreen() {
+  const navigation = useNavigation<ScreenNavProp<'More', 'CollectionDetail'>>();
+  const route = useRoute<ScreenRouteProp<'More', 'CollectionDetail'>>();
+  const { collectionId } = route.params ?? {};
+
+  const [collection, setCollection] = useState<StudyCollection | null>(null);
+  const [notes, setNotes] = useState<UserNote[]>([]);
+
+  const reload = useCallback(async () => {
+    if (!collectionId) return;
+    const [col, noteList] = await Promise.all([
+      getCollection(collectionId),
+      getNotesInCollection(collectionId),
+    ]);
+    setCollection(col);
+    setNotes(noteList);
+  }, [collectionId]);
+
+  useEffect(() => {
+    reload();
+  }, [reload]);
+
+  const handleExport = async () => {
+    if (!collection || notes.length === 0) return;
+
+    const lines: string[] = [
+      `# ${collection.name}`,
+      collection.description ? `\n${collection.description}\n` : '',
+      '',
+    ];
+
+    for (const note of notes) {
+      lines.push(`## ${displayRef(note.verse_ref)}`);
+      lines.push(note.note_text);
+      lines.push('');
+    }
+
+    const text = lines.join('\n');
+    await Clipboard.setStringAsync(text);
+    Alert.alert('Copied', 'Collection exported to clipboard');
+  };
+
+  const handleDelete = () => {
+    Alert.alert(
+      'Delete Collection',
+      `Delete "${collection?.name}"? Notes will remain but be unassigned.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: async () => {
+            if (collectionId) {
+              await deleteCollection(collectionId);
+              navigation.goBack();
+            }
+          },
+        },
+      ]
+    );
+  };
+
+  const handleNotePress = (note: UserNote) => {
+    const parsed = parseVerseRef(note.verse_ref);
+    if (parsed) {
+      navigation.navigate('Chapter', {
+        bookId: parsed.bookId,
+        chapterNum: parsed.ch,
+      });
+    }
+  };
+
+  const parseTags = (json: string): string[] => {
+    try {
+      return JSON.parse(json);
+    } catch {
+      return [];
+    }
+  };
+
+  if (!collection) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <ScreenHeader title="Collection" onBack={() => navigation.goBack()} />
+        <View style={styles.emptyWrap}>
+          <Text style={styles.emptyText}>Collection not found</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScreenHeader
+        title={collection.name}
+        titleColor={collection.color}
+        onBack={() => navigation.goBack()}
+      />
+
+      {/* Collection header */}
+      <View style={styles.collectionHeader}>
+        <View style={[styles.colorBar, { backgroundColor: collection.color }]} />
+        <View style={styles.collectionInfo}>
+          {collection.description ? (
+            <Text style={styles.description}>{collection.description}</Text>
+          ) : null}
+          <Text style={styles.noteCount}>{notes.length} notes</Text>
+        </View>
+        <View style={styles.actions}>
+          <TouchableOpacity onPress={handleExport} style={styles.actionButton}>
+            <Copy size={18} color={base.gold} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleDelete} style={styles.actionButton}>
+            <Trash2 size={18} color="#e05a6a" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Notes list */}
+      <FlatList
+        data={notes}
+        keyExtractor={(n) => String(n.id)}
+        contentContainerStyle={styles.listContent}
+        ListEmptyComponent={
+          <View style={styles.emptyWrap}>
+            <Text style={styles.emptyText}>No notes in this collection yet.</Text>
+          </View>
+        }
+        renderItem={({ item: note }) => {
+          const tags = parseTags(note.tags_json);
+          return (
+            <TouchableOpacity style={styles.noteCard} onPress={() => handleNotePress(note)}>
+              <Text style={styles.noteRef}>{displayRef(note.verse_ref)}</Text>
+              <Text style={styles.noteText}>{note.note_text}</Text>
+              {tags.length > 0 && (
+                <View style={styles.tagRow}>
+                  {tags.map((t) => (
+                    <Text key={t} style={styles.tag}>#{t}</Text>
+                  ))}
+                </View>
+              )}
+              <Text style={styles.noteDate}>{note.updated_at?.slice(0, 10)}</Text>
+            </TouchableOpacity>
+          );
+        }}
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: base.bg,
+  },
+  collectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: base.border,
+  },
+  colorBar: {
+    width: 4,
+    height: 40,
+    borderRadius: 2,
+    marginRight: spacing.sm,
+  },
+  collectionInfo: {
+    flex: 1,
+  },
+  description: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  noteCount: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+  },
+  actions: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  actionButton: {
+    padding: spacing.xs,
+  },
+  listContent: {
+    padding: spacing.md,
+    gap: spacing.sm,
+    paddingBottom: spacing.xxl,
+  },
+  emptyWrap: {
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+  emptyText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 15,
+  },
+  noteCard: {
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+    borderWidth: 1,
+    borderColor: base.border,
+  },
+  noteRef: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+  noteText: {
+    color: base.textDim,
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+  },
+  tagRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 4,
+    marginTop: spacing.xs,
+  },
+  tag: {
+    color: base.goldDim,
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+  },
+  noteDate: {
+    color: base.textMuted,
+    fontSize: 10,
+    marginTop: spacing.xs,
+    textAlign: 'right',
+  },
+});

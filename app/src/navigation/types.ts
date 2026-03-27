@@ -50,6 +50,7 @@ export type MoreStackParamList = {
   Bookmarks: undefined;
   ReadingHistory: undefined;
   AllNotes: undefined;
+  CollectionDetail: { collectionId: number };
   PlanList: undefined;
   PlanDetail: { planId: string };
   Chapter: { bookId: string; chapterNum: number };
