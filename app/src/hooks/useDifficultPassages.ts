@@ -45,8 +45,6 @@ export interface Scholar {
   id: string;
   name: string;
   tradition: string;
-  era: string;
-  avatar?: string;
 }
 
 export interface RelatedChapterWithName extends RelatedChapter {
@@ -183,10 +181,8 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
           id: string;
           name: string;
           tradition: string;
-          era: string;
-          avatar: string | null;
         }>(
-          `SELECT id, name, tradition, era, avatar FROM scholars
+          `SELECT id, name, tradition FROM scholars
            WHERE id IN (${placeholders})`,
           scholarIds
         );
@@ -197,8 +193,6 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
             id: s.id,
             name: s.name,
             tradition: s.tradition,
-            era: s.era,
-            avatar: s.avatar ?? undefined,
           });
         }
         setScholars(scholarMap);

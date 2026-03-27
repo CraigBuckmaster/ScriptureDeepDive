@@ -139,7 +139,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
         const placeholders = conceptData.word_study_ids.map(() => '?').join(',');
         queries.push(
           db.getAllAsync<WordStudy>(
-            `SELECT id, language, original, transliteration, strongs, glosses_json as glosses, range, note
+            `SELECT id, language, original, transliteration, strongs, glosses_json as glosses, semantic_range as range, note
              FROM word_studies WHERE id IN (${placeholders})`,
             conceptData.word_study_ids
           ).then((rows) => {
