@@ -1,4 +1,4 @@
-# Companion Study — Session Handoff: Batch 9b
+# Companion Study — Session Handoff: Batch 10
 
 ## Repository Access
 
@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit 8dec5a5e)
+## Current State (as of commit c38c6c76)
 
 ### Batches Complete
 
@@ -29,175 +29,144 @@ git config user.name "Craig Buckmaster"
 | 7 | Discourse content for Romans 1-16 | ✅ Complete |
 | 8 | Concept Explorer (20 concepts + screens) | ✅ Complete |
 | 9a | Difficult Passages (28 entries — first half) | ✅ Complete |
-| **9b** | **Difficult Passages (25-30 more entries — second half)** | **NEXT** |
+| 9b | Difficult Passages (25 entries — second half) | ✅ Complete |
+| **10** | **DifficultPassagesBrowse + DifficultPassageDetail screens** | **NEXT** |
 
 ---
 
-## Batch 9a Complete — What's Already There
+## Difficult Passages Content Complete — 53 Entries
 
-`content/meta/difficult-passages.json` has 28 entries:
-
-### Ethical (8)
-- `canaanite-conquest` — The Conquest of Canaan (major)
-- `slavery-regulations` — Old Testament Slavery Laws (major)
-- `jephthahs-daughter` — Jephthah's Vow and His Daughter (major)
-- `imprecatory-psalms` — The Imprecatory Psalms (moderate)
-- `elishas-bears` — Elisha and the Bears (moderate)
-- `ananias-sapphira` — The Deaths of Ananias and Sapphira (moderate)
-- `concubine-gibeah` — The Levite's Concubine (major)
-- `abraham-wife-sister` — Abraham's Wife-Sister Deceptions (moderate)
-
-### Contradiction (5)
-- `judas-death` — How Did Judas Die? (moderate)
-- `census-numbering` — Who Incited David's Census? (moderate)
-- `genealogy-differences` — Matthew and Luke's Genealogies (moderate)
-- `resurrection-accounts` — Resurrection Morning Differences (moderate)
-- `sermon-mount-plain` — Sermon on the Mount vs. Plain (minor)
-
-### Theological (5)
-- `hardening-pharaoh` — God Hardening Pharaoh's Heart (major)
-- `unforgivable-sin` — The Unforgivable Sin (major)
-- `hebrews-6-apostasy` — Can Believers Lose Salvation? (major)
-- `problem-of-evil` — The Problem of Suffering (major)
-- `predestination-free-will` — Predestination and Human Choice (major)
-
-### Historical (5)
-- `genesis-long-lifespans` — Long Lifespans in Genesis (moderate)
-- `exodus-dating` — When Did the Exodus Happen? (moderate)
-- `jericho-archaeology` — The Walls of Jericho (moderate)
-- `quirinius-census` — The Census of Quirinius (moderate)
-- `numbers-exodus` — The Large Numbers in Exodus (moderate)
-
-### Textual (5)
-- `marks-ending` — The Ending of Mark's Gospel (moderate)
-- `pericope-adulterae` — The Woman Caught in Adultery (moderate)
-- `johannine-comma` — The Johannine Comma (minor)
-- `lords-prayer-doxology` — The Doxology of the Lord's Prayer (minor)
-- `isaiah-authorship` — The Authorship of Isaiah (moderate)
+Distribution:
+- Ethical: 15
+- Contradiction: 10
+- Theological: 10
+- Historical: 10
+- Textual: 8
 
 ---
 
-## Batch 9b: Difficult Passages Second Half
+## Batch 10: Difficult Passages Screens
 
-**Goal:** Add 25-30 more entries to reach 50-60 total. Aim for gaps not covered in 9a.
+**Goal:** Create browse and detail screens for difficult passages, following the pattern established by ProphecyBrowse/ProphecyDetail and ConceptBrowse/ConceptDetail.
 
-### Suggested Entries for 9b
+### Files to Create
 
-**Ethical (add 5-7):**
-- David & Bathsheba / Uriah's murder
-- Lot offering his daughters
-- Jacob's deception of Isaac
-- God commanding Abraham to sacrifice Isaac (Akedah)
-- Samson's violence and relationships
-- Hosea marrying Gomer
-- Divine command to kill Agag (1 Samuel 15)
+| File | Purpose |
+|------|---------|
+| `app/src/hooks/useDifficultPassages.ts` | Data hook for fetching passages from SQLite |
+| `app/src/screens/DifficultPassagesBrowseScreen.tsx` | Browse with category filter + search |
+| `app/src/screens/DifficultPassageDetailScreen.tsx` | Full passage view with responses |
 
-**Contradiction (add 3-5):**
-- Different accounts of Saul's death
-- Differing Temple dimensions
-- Who killed Goliath? (Elhanan question)
-- Peter's denials timing
-- Cleansing of the Temple (once or twice?)
+### Files to Modify
 
-**Theological (add 3-5):**
-- Jacob I loved, Esau I hated
-- Restrictive view of women in 1 Timothy 2
-- Head covering in 1 Corinthians 11
-- Nephilim and "sons of God" (Genesis 6)
-- Balaam: prophet or villain?
+| File | Change |
+|------|--------|
+| `app/src/navigation/types.ts` | Add `DifficultPassagesBrowse` and `DifficultPassageDetail` to ExploreStackParamList |
+| `app/src/navigation/ExploreStack.tsx` | Register new screens |
+| `app/src/screens/ExploreMenuScreen.tsx` | Add grid entry for Difficult Passages |
 
-**Historical (add 3-5):**
-- Belshazzar as king (vs. Nabonidus)
-- Darius the Mede identity
-- Ai and conquest archaeology
-- Daniel's court tales — historicity
-- Jonah's fish — literal?
+### Data Shape (from SQLite)
 
-**Textual (add 2-3):**
-- Matthew's Jeremiah/Zechariah citation
-- OT quotations in NT that don't match
-- Manuscript variants in key verses
+```sql
+-- difficult_passages table
+CREATE TABLE difficult_passages (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,  -- 'ethical' | 'contradiction' | 'theological' | 'historical' | 'textual'
+  severity TEXT NOT NULL,  -- 'minor' | 'moderate' | 'major'
+  passage TEXT NOT NULL,
+  question TEXT NOT NULL,
+  responses_json TEXT,     -- JSON array of Response objects
+  related_chapters_json TEXT,
+  tags_json TEXT
+);
+```
 
-### Data Structure (same as 9a)
-
+Response structure in `responses_json`:
 ```typescript
-interface DifficultPassage {
-  id: string;
-  title: string;
-  category: 'ethical' | 'contradiction' | 'theological' | 'historical' | 'textual';
-  severity: 'minor' | 'moderate' | 'major';
-  passage: string;
-  question: string;
-  responses: Response[];  // 2-3 scholarly responses
-  related_chapters: ChapterRef[];
-  tags: string[];
+interface Response {
+  tradition: string;      // e.g., "Divine Command Theodicy"
+  scholar_id: string;     // Must exist in scholars table
+  summary: string;        // 2-4 sentences
 }
 ```
 
-### Scholar IDs Available
+### Hook Pattern
 
-```
-alter, block, brueggemann, calvin, collins, hess, japhet, keener, longman,
-macarthur, oswalt, provan, rhoads, sarna, selman, waltke, and 35 more
-```
+```typescript
+// useDifficultPassages.ts
+export function useDifficultPassages() {
+  // Fetch all passages, return { passages, loading, error }
+}
 
-Check `content/meta/scholars.json` for the full list.
-
-### Generator Pattern
-
-```python
-import json
-from pathlib import Path
-
-CONTENT = Path('/home/claude/ScriptureDeepDive/content')
-
-# Load existing passages
-path = CONTENT / 'meta' / 'difficult-passages.json'
-existing = json.loads(path.read_text())
-print(f'Existing: {len(existing)} passages')
-
-# Add new entries
-new_passages = [
-    {
-        "id": "...",
-        "title": "...",
-        # full entry
-    },
-    # ...
-]
-
-all_passages = existing + new_passages
-
-with open(path, 'w') as f:
-    json.dump(all_passages, f, indent=2)
-print(f'Total: {len(all_passages)} passages')
+export function useDifficultPassage(passageId: string) {
+  // Fetch single passage + related data (scholars for responses, chapters)
+  // Return { passage, scholars, relatedChapters, loading, error }
+}
 ```
 
-### Verification
+### Browse Screen Features
 
-```bash
-python3 _tools/build_sqlite.py
-python3 _tools/validate.py
-python3 _tools/validate_sqlite.py
-rm /tmp/gen_difficult_passages_2.py
-git add -A && git commit -m "feat(content): Batch 9b — 25+ difficult passages (second half)" && git push
+- Category filter chips (All, Ethical, Contradiction, Theological, Historical, Textual)
+- Search by title/question
+- Cards showing: title, category badge, severity indicator, truncated question
+- Tap navigates to detail
+
+### Detail Screen Features
+
+- Header: title, passage reference, category badge
+- Question section (prominent)
+- Responses section: 2-3 cards, each with:
+  - Tradition name
+  - Scholar avatar + name (tap to ScholarBio)
+  - Summary text
+- Related chapters (horizontal scroll of chapter pills, tap to navigate)
+- Tags at bottom
+
+### Navigation Types
+
+```typescript
+// In ExploreStackParamList
+DifficultPassagesBrowse: undefined;
+DifficultPassageDetail: { passageId: string };
 ```
+
+### ExploreMenuScreen Entry
+
+```typescript
+{
+  title: 'Difficult Passages',
+  subtitle: 'Wrestling with hard texts',
+  screen: 'DifficultPassagesBrowse',
+}
+```
+
+### Style Guidelines
+
+- Follow existing patterns from ConceptBrowseScreen/ConceptDetailScreen
+- Category badges: use distinct colors per category
+- Severity: subtle indicator (dot or small badge)
+- Gold accents for interactive elements
+- bgElevated for cards, textMuted for secondary text
 
 ---
 
-## After Batch 9
-
-**Batch 10:** DifficultPassagesBrowseScreen + DifficultPassageDetailScreen
-
----
-
-## Database Stats (as of Batch 9a)
+## Database Stats (as of Batch 9b)
 
 - 58 live books, 1146 chapters
 - 50 prophecy chains
 - 20 concepts
-- 28 difficult passages
+- 53 difficult passages (Batch 9 complete!)
 - 16 discourse panels (Romans)
+
+---
+
+## After Batch 10
+
+**Batch 11:** Word Study enhancements (expanded content, better linking)
+**Batch 12:** Timeline improvements
+
+---
 
 ## Deploy
 
