@@ -37,11 +37,23 @@ function parseLinks(json: string): ProphecyChainLink[] {
   }
 }
 
+/** Format book_dir to display name: "1_samuel" → "1 Samuel" */
+function formatBookName(bookDir: string): string {
+  return bookDir
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/** Format link to full ref: "Genesis 3:15" */
+function formatLinkRef(link: ProphecyChainLink): string {
+  return `${formatBookName(link.book_dir)} ${link.verse_ref}`;
+}
+
 function getRefRange(links: ProphecyChainLink[]): string {
   if (links.length === 0) return '';
   const first = links[0];
   const last = links[links.length - 1];
-  return `${first.verse_ref} → ${last.verse_ref}`;
+  return `${formatLinkRef(first)} → ${formatLinkRef(last)}`;
 }
 
 export default function ProphecyBrowseScreen() {
