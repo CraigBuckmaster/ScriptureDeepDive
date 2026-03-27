@@ -1474,3 +1474,20 @@ BOOK_META['titus'] = {
     'vhl_key': ['faith', 'truth', 'godliness', 'grace', 'good works', 'sound doctrine', 'elder', 'overseer', 'blameless', 'self-controlled', 'sober-minded', 'silence', 'rebuke', 'myths', 'pure', 'defiled', 'Savior', 'appeared', 'washing', 'renewal', 'Holy Spirit', 'justified', 'heirs', 'eternal life', 'trustworthy saying', 'devoted', 'divisive person'],
     'vhl_time': ['the hope of eternal life', 'before the beginning of time', 'at his appointed season', 'the grace of God has appeared', 'the blessed hope', 'when the kindness and love of God our Savior appeared'],
 }
+
+# ── Wave 6 Session J: Hebrews ────────────────────────────────
+
+SCHOLAR_REGISTRY.append(('lane', 'lane', 'Lane', 'lane'))
+SCHOLAR_REGISTRY.append(('cockerill', 'cockerill', 'Cockerill', 'cockerill'))
+
+BOOK_META['hebrews'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Unknown. Hebrews is the only major NT epistle whose author is not named in the text. Early Eastern tradition attributed it to Paul (reflected in its canonical placement after the Pauline letters), but Western churches were sceptical from the start. Origen famously concluded: \u2018Who wrote the epistle, in truth God knows.\u2019 Modern candidates include Apollos (Luther\u2019s suggestion, supported by the Alexandrian style and OT expertise), Barnabas (Tertullian\u2019s attribution), Priscilla (Harnack\u2019s proposal), and others. The author\u2019s Greek is the most polished in the NT, the rhetorical structure is sophisticated, and the theology of Christ\u2019s high priesthood is unparalleled elsewhere.\n\n<strong>When written:</strong> Before AD 70, since the author speaks of the temple sacrificial system as still functioning (8:4\u20135; 9:6\u20139; 10:1\u20133) and makes no mention of the temple\u2019s destruction\u2014a decisive argument that would have powerfully supported the letter\u2019s thesis that the old covenant is obsolete. Most scholars date it c.\u2009AD\u200964\u201368.\n\n<strong>What prompted it:</strong> A community of Jewish Christians, possibly in Rome (13:24, \u2018those from Italy send greetings\u2019), was in danger of abandoning faith in Christ and reverting to Judaism under pressure of persecution and social ostracism. The author writes to demonstrate the absolute superiority of Christ over every aspect of the old covenant\u2014angels, Moses, Joshua, the Aaronic priesthood, the tabernacle, the sacrifices\u2014and to warn that there is no returning to a system that Christ has rendered obsolete. The letter is at once a theological treatise on Christ\u2019s priesthood, a homiletical exhortation to perseverance, and an urgent pastoral plea not to \u2018drift away\u2019 (2:1) or \u2018shrink back\u2019 (10:39).",
+    'vhl_places': ['Jerusalem', 'Mount Sinai', 'Mount Zion', 'Egypt', 'Canaan', 'Rome'],
+    'vhl_people': ['Jesus', 'Moses', 'Abraham', 'Melchizedek', 'Aaron', 'Abel', 'Enoch', 'Noah', 'Sarah', 'Isaac', 'Jacob', 'Esau', 'Joseph', 'Rahab', 'David', 'Samuel', 'Gideon', 'Barak', 'Samson', 'Jephthah', 'Timothy'],
+    'vhl_key': ['faith', 'better', 'covenant', 'priest', 'high priest', 'Melchizedek', 'sacrifice', 'blood', 'heavenly', 'mediator', 'promise', 'oath', 'rest', 'shadow', 'copy', 'pattern', 'perfection', 'eternal', 'once for all', 'sit down', 'right hand', 'throne', 'grace', 'endurance', 'discipline', 'cloud of witnesses', 'anchor', 'veil', 'tabernacle', 'new covenant', 'obsolete', 'confidence', 'access', 'draw near'],
+    'vhl_time': ['in these last days', 'today', 'once for all', 'at the end of the ages', 'a Sabbath rest remains', 'the day approaching', 'yet a little while', 'he who is coming will come', 'yesterday and today and forever'],
+}
+
+COMMENTATOR_SCOPE['lane'] = ['hebrews']
+COMMENTATOR_SCOPE['cockerill'] = ['hebrews']

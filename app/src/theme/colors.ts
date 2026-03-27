@@ -124,6 +124,8 @@ export const scholars: Record<string, string> = {
   wanamaker: '#7898a8',
   mounce: '#a87888',
   towner: '#78a890',
+  lane: '#b0c0b0',
+  cockerill: '#a0a8c0',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────
