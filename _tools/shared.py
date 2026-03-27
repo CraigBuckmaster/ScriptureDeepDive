@@ -102,7 +102,7 @@ REGISTRY = [
     ('1_john',           '1 John',          5,  0, 'NT', 'nt'),
     ('2_john',           '2 John',          1,  0, 'NT', 'nt'),
     ('3_john',           '3 John',          1,  0, 'NT', 'nt'),
-    ('jude',             'Jude',            1,  0, 'NT', 'nt'),
+    ('jude',             'Jude',            1,  1, 'NT', 'nt'),
     ('revelation',       'Revelation',     22,  0, 'NT', 'nt'),
 ]
 
