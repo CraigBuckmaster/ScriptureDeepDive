@@ -1433,3 +1433,44 @@ BOOK_META['philemon'] = {
 
 COMMENTATOR_SCOPE['obrien'].append('philemon')
 COMMENTATOR_SCOPE['bruce'].append('philemon')
+
+# ── Wave 5 Session I: Pastoral Epistles ──────────────────────
+
+SCHOLAR_REGISTRY.append(('mounce', 'mounce', 'Mounce', 'mounce'))
+SCHOLAR_REGISTRY.append(('towner', 'towner', 'Towner', 'towner'))
+
+# ── 1 Timothy ────────────────────────────────────────────────
+
+BOOK_META['1_timothy'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (1 Tim 1:1), though Pauline authorship of the Pastoral Epistles is one of the most debated questions in NT scholarship. Critics point to vocabulary differences (306 hapax legomena in the Pastorals, over a third not found elsewhere in Paul), a developed ecclesiology (bishops, elders, deacons), and theology that seems to presuppose a post-Pauline setting. Defenders argue for a secretary hypothesis (Luke as amanuensis), a later stage in Paul\u2019s ministry after Acts 28, and the different genre (personal paraenesis vs. community letters) as explaining the differences.\n\n<strong>When written:</strong> c.\u2009AD\u200962\u201365, if authentic, during a period of ministry between a first and second Roman imprisonment not recorded in Acts. If pseudonymous, c.\u2009AD\u200980\u2013100.\n\n<strong>What prompted it:</strong> Paul had left Timothy in Ephesus to combat false teaching that combined Jewish speculation (genealogies, myths, the law) with proto-Gnostic asceticism (forbidding marriage, certain foods). The letter provides Timothy with apostolic authority to organize the church, appoint qualified leaders, refute heresy, and model godly conduct. It is simultaneously a charge to a young pastor, a church order manual, and a polemic against deviant teaching.",
+    'vhl_places': ['Ephesus', 'Macedonia', 'Rome', 'Crete'],
+    'vhl_people': ['Paul', 'Timothy', 'Hymenaeus', 'Alexander', 'Christ Jesus'],
+    'vhl_key': ['faith', 'godliness', 'sound doctrine', 'teaching', 'good conscience', 'love', 'charge', 'command', 'trustworthy saying', 'overseer', 'deacon', 'elder', 'prayer', 'modesty', 'submission', 'myths', 'genealogies', 'law', 'blasphemy', 'shipwreck', 'training', 'piety', 'contentment', 'money', 'fight the good fight', 'eternal life', 'guard the deposit'],
+    'vhl_time': ['later times', 'the last days', 'the appearing of our Lord Jesus Christ', 'in due time', 'the present age'],
+}
+
+COMMENTATOR_SCOPE['mounce'] = ['1_timothy', '2_timothy', 'titus']
+COMMENTATOR_SCOPE['towner'] = ['1_timothy', '2_timothy', 'titus']
+
+# ── 2 Timothy ────────────────────────────────────────────────
+
+BOOK_META['2_timothy'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (2 Tim 1:1). The most personal of the three Pastoral Epistles, 2 Timothy reads as a final testament from an aging apostle facing death. Even some scholars who doubt Pauline authorship of 1 Timothy and Titus concede that 2 Timothy contains genuine Pauline fragments (especially 4:6\u201322), which may have been incorporated into a later pseudonymous composition.\n\n<strong>When written:</strong> c.\u2009AD\u200966\u201367, during Paul\u2019s second Roman imprisonment, shortly before his execution under Nero. If pseudonymous, c.\u2009AD\u200980\u2013100, drawing on genuine Pauline material.\n\n<strong>What prompted it:</strong> Paul writes from prison knowing his death is imminent (\u2018I am already being poured out like a drink offering,\u2019 4:6). He summons Timothy to Rome before winter (4:21), warns him about intensifying opposition and false teaching, and charges him to guard the gospel, preach the word, and endure suffering. The letter is pervaded by themes of perseverance, succession, and the transmission of apostolic tradition to the next generation.",
+    'vhl_places': ['Rome', 'Ephesus', 'Troas', 'Corinth', 'Miletus', 'Antioch', 'Iconium', 'Lystra'],
+    'vhl_people': ['Paul', 'Timothy', 'Lois', 'Eunice', 'Phygelus', 'Hermogenes', 'Onesiphorus', 'Hymenaeus', 'Philetus', 'Demas', 'Luke', 'Mark', 'Tychicus', 'Alexander the coppersmith', 'Priscilla', 'Aquila'],
+    'vhl_key': ['faith', 'love', 'power', 'spirit', 'suffering', 'endurance', 'shame', 'guard', 'deposit', 'entrust', 'soldier', 'athlete', 'farmer', 'worker', 'approved', 'rightly handling', 'word of truth', 'flee', 'pursue', 'righteousness', 'godliness', 'Scripture', 'inspired', 'preach the word', 'sound doctrine', 'crown', 'appearing', 'departure', 'fight', 'finish', 'keep'],
+    'vhl_time': ['the last days', 'that day', 'his appearing and his kingdom', 'the time of my departure has come', 'from childhood'],
+}
+
+# ── Titus ─────────────────────────────────────────────────────
+
+BOOK_META['titus'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Tit 1:1). The letter shares vocabulary, style, and concerns with 1 Timothy and is grouped with it under the \u2018Pastoral Epistles\u2019 label (a designation first used by D. N. Berdot in 1703 and popularized by Paul Anton in 1726). Authorship questions mirror those of 1 Timothy.\n\n<strong>When written:</strong> c.\u2009AD\u200963\u201365, between Paul\u2019s two Roman imprisonments, roughly contemporary with 1 Timothy. Paul had recently visited Crete and left Titus there to complete organizational work (1:5).\n\n<strong>What prompted it:</strong> Paul had left Titus on Crete to appoint elders in every town and combat false teachers\u2014particularly those of \u2018the circumcision group\u2019 (1:10) who were teaching \u2018Jewish myths\u2019 (1:14) and disrupting households for financial gain. The letter provides Titus with criteria for elder appointment, instructions for household conduct organized by social group (older men, older women, young women, young men, slaves), and a theological framework grounding ethical behavior in the grace of God that has appeared in Christ (2:11\u201314; 3:3\u20137).",
+    'vhl_places': ['Crete', 'Nicopolis', 'Dalmatia'],
+    'vhl_people': ['Paul', 'Titus', 'Artemas', 'Tychicus', 'Zenas', 'Apollos', 'Christ Jesus'],
+    'vhl_key': ['faith', 'truth', 'godliness', 'grace', 'good works', 'sound doctrine', 'elder', 'overseer', 'blameless', 'self-controlled', 'sober-minded', 'silence', 'rebuke', 'myths', 'pure', 'defiled', 'Savior', 'appeared', 'washing', 'renewal', 'Holy Spirit', 'justified', 'heirs', 'eternal life', 'trustworthy saying', 'devoted', 'divisive person'],
+    'vhl_time': ['the hope of eternal life', 'before the beginning of time', 'at his appointed season', 'the grace of God has appeared', 'the blessed hope', 'when the kindness and love of God our Savior appeared'],
+}

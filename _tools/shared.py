@@ -92,6 +92,9 @@ REGISTRY = [
     ('1_thessalonians',  '1 Thessalonians', 5,  5, 'NT', 'nt'),
     ('2_thessalonians',  '2 Thessalonians', 3,  3, 'NT', 'nt'),
     ('philemon',         'Philemon',        1,  1, 'NT', 'nt'),
+    ('1_timothy',        '1 Timothy',       6,  6, 'NT', 'nt'),
+    ('2_timothy',        '2 Timothy',       4,  4, 'NT', 'nt'),
+    ('titus',            'Titus',           3,  3, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -150,6 +153,9 @@ BOOK_PREFIX = {
     '1_thessalonians':   '1th',
     '2_thessalonians':   '2th',
     'philemon':          'phm',
+    '1_timothy':         '1ti',
+    '2_timothy':         '2ti',
+    'titus':             'tit',
 }
 
 # COMMENTATOR_SCOPE — moved to config.py (Batch 5)

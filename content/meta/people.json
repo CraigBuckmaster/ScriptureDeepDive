@@ -4966,6 +4966,174 @@
         "Rom 16:21"
       ],
       "chapter": "nt/acts/Acts_17.html"
+    },
+    {
+      "id": "lois",
+      "name": "Lois",
+      "gender": "f",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Timothy’s grandmother; first-generation believer",
+      "bio": "Lois was Timothy’s maternal grandmother, commended by Paul for her sincere faith (2 Tim 1:5). She is mentioned only once in the NT but represents the generational transmission of faith that Paul considers foundational to Timothy’s ministry. Along with her daughter Eunice, she raised Timothy in the knowledge of the sacred Scriptures from childhood (2 Tim 3:15). Her Jewish background is implied by Timothy’s mother being Jewish (Acts 16:1).",
+      "scriptureRole": "grandmother of Timothy",
+      "refs": [
+        "2 Tim 1:5"
+      ],
+      "spine": false
+    },
+    {
+      "id": "eunice",
+      "name": "Eunice",
+      "gender": "f",
+      "father": null,
+      "mother": "lois",
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Timothy’s mother; Jewish believer married to a Greek",
+      "bio": "Eunice was Timothy’s mother, a Jewish woman who had married a Greek man (Acts 16:1). She is praised alongside her mother Lois for sincere faith (2 Tim 1:5). She raised Timothy in the OT Scriptures from infancy (2 Tim 3:15), providing the spiritual formation that prepared him for his later role as Paul’s delegate. Her mixed marriage was unusual but illustrative of the social complexity in diaspora Jewish communities.",
+      "scriptureRole": "mother of Timothy",
+      "refs": [
+        "Acts 16:1",
+        "2 Tim 1:5"
+      ],
+      "spine": false
+    },
+    {
+      "id": "hymenaeus",
+      "name": "Hymenaeus",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "False teacher in Ephesus; taught the resurrection had already occurred",
+      "bio": "Hymenaeus was a false teacher in the Ephesian church whom Paul ‘handed over to Satan’ for discipline (1 Tim 1:20). He reappears in 2 Tim 2:17–18 alongside Philetus, teaching that the resurrection had already taken place—an over-realized eschatology that undermined future hope and likely reflected proto-Gnostic tendencies. His continued influence despite earlier discipline suggests the persistence of the Ephesian heresy.",
+      "scriptureRole": "false teacher",
+      "refs": [
+        "1 Tim 1:20",
+        "2 Tim 2:17"
+      ],
+      "spine": false
+    },
+    {
+      "id": "alexander_coppersmith",
+      "name": "Alexander the Coppersmith",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Opponent of Paul in Ephesus; did Paul great harm",
+      "bio": "Alexander the coppersmith is mentioned in 2 Tim 4:14–15 as having done Paul great harm and strongly opposing his message. He may be the same Alexander mentioned in 1 Tim 1:20 who was handed over to Satan, though identification is uncertain. Paul warns Timothy to be on guard against him, indicating he was still active and dangerous in the Ephesian area.",
+      "scriptureRole": "opponent of Paul",
+      "refs": [
+        "1 Tim 1:20",
+        "2 Tim 4:14-15"
+      ],
+      "spine": false
+    },
+    {
+      "id": "philetus",
+      "name": "Philetus",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "False teacher; associate of Hymenaeus",
+      "bio": "Philetus is mentioned only in 2 Tim 2:17 as a companion of Hymenaeus in teaching that the resurrection had already happened. Their doctrine ‘spread like gangrene’ and was destroying the faith of some believers. The pair represents the specific doctrinal deviance that Paul combats in the Pastoral Epistles: an over-realized eschatology that spiritualized bodily resurrection.",
+      "scriptureRole": "false teacher",
+      "refs": [
+        "2 Tim 2:17"
+      ],
+      "spine": false
+    },
+    {
+      "id": "onesiphorus",
+      "name": "Onesiphorus",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Faithful friend who visited Paul in prison in Rome",
+      "bio": "Onesiphorus was a believer who, unlike many others, was not ashamed of Paul’s imprisonment but diligently searched for Paul in Rome and frequently refreshed him (2 Tim 1:16–18). He had also served the church in Ephesus (2 Tim 1:18). Paul’s greetings to ‘the household of Onesiphorus’ (2 Tim 4:19) rather than to Onesiphorus himself, combined with the prayer for mercy on ‘that day,’ has led some scholars to conclude he had died by the time of writing.",
+      "scriptureRole": "supporter of Paul",
+      "refs": [
+        "2 Tim 1:16-18",
+        "2 Tim 4:19"
+      ],
+      "spine": false
+    },
+    {
+      "id": "demas",
+      "name": "Demas",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Paul’s co-worker who deserted him",
+      "bio": "Demas was a co-worker of Paul mentioned positively in Col 4:14 and Phlm 24. By the time of 2 Timothy, he had deserted Paul ‘because he loved this world’ and gone to Thessalonica (2 Tim 4:10). His defection is presented as a cautionary tale: the contrast between loving ‘this present age’ and loving Christ’s ‘appearing’ (4:8) defines the fundamental choice facing every believer under pressure.",
+      "scriptureRole": "deserter from Paul’s mission",
+      "refs": [
+        "Col 4:14",
+        "Phlm 24",
+        "2 Tim 4:10"
+      ],
+      "spine": false
+    },
+    {
+      "id": "artemas",
+      "name": "Artemas",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Paul’s co-worker; possible replacement for Titus on Crete",
+      "bio": "Artemas is mentioned only in Tit 3:12 as one of two possible replacements Paul planned to send to Crete so that Titus could join him in Nicopolis. Nothing else is known about him from the NT, though later tradition (Pseudo-Dorotheus) identifies him as one of the Seventy disciples and bishop of Lystra.",
+      "scriptureRole": "co-worker of Paul",
+      "refs": [
+        "Tit 3:12"
+      ],
+      "spine": false
+    },
+    {
+      "id": "zenas",
+      "name": "Zenas the Lawyer",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouseOf": null,
+      "parent": null,
+      "era": "nt",
+      "dates": "c. 1st century AD",
+      "role": "Christian lawyer; traveling companion of Apollos",
+      "bio": "Zenas is mentioned only in Tit 3:13, where Paul instructs Titus to help him and Apollos on their journey. His designation as ‘the lawyer’ (τὸν νομικόν) may indicate expertise in either Jewish Torah or Roman law. His pairing with Apollos suggests he was a traveling teacher or missionary in the Pauline network.",
+      "scriptureRole": "lawyer and co-worker",
+      "refs": [
+        "Tit 3:13"
+      ],
+      "spine": false
     }
   ]
 }
