@@ -23,7 +23,7 @@ const TOTAL_BIBLE_CHAPTERS = 1189;
 
 export default function HomeScreen() {
   const navigation = useNavigation<any>();
-  const { greeting, subtitle, stats, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
+  const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const [refreshing, setRefreshing] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
@@ -139,9 +139,7 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate('ExploreTab', { screen: 'GenealogyTree' })}
             >
               <Text style={styles.suggestionTitle}>People</Text>
-              <Text style={styles.suggestionSubtitle}>
-                {stats ? `${stats.peopleCount} biblical figures` : 'Biblical figures'}
-              </Text>
+              <Text style={styles.suggestionSubtitle}>Lives that shaped sacred history</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.suggestionCard}
@@ -149,9 +147,7 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate('ExploreTab', { screen: 'Timeline' })}
             >
               <Text style={styles.suggestionTitle}>Timeline</Text>
-              <Text style={styles.suggestionSubtitle}>
-                {stats ? `${stats.timelineCount} events` : 'Events & figures'}
-              </Text>
+              <Text style={styles.suggestionSubtitle}>The arc of redemption</Text>
             </TouchableOpacity>
           </View>
           <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
@@ -161,9 +157,7 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate('ExploreTab', { screen: 'ScholarBrowse' })}
             >
               <Text style={styles.suggestionTitle}>Scholars</Text>
-              <Text style={styles.suggestionSubtitle}>
-                {stats ? `${stats.scholarCount} commentators` : 'Commentators'}
-              </Text>
+              <Text style={styles.suggestionSubtitle}>Centuries of scholarship</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.suggestionCard}
@@ -171,7 +165,7 @@ export default function HomeScreen() {
               onPress={() => navigation.navigate('ExploreTab', { screen: 'WordStudyBrowse' })}
             >
               <Text style={styles.suggestionTitle}>Word Studies</Text>
-              <Text style={styles.suggestionSubtitle}>Hebrew & Greek</Text>
+              <Text style={styles.suggestionSubtitle}>Meaning in the original languages</Text>
             </TouchableOpacity>
           </View>
         </View>
