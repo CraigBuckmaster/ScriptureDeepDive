@@ -53,7 +53,7 @@ def main():
 
     known_chapter_types = {
         'lit', 'themes', 'ppl', 'trans', 'src', 'rec',
-        'hebtext', 'thread', 'tx', 'debate',
+        'hebtext', 'thread', 'tx', 'debate', 'discourse',
     }
 
     # ── 1. Schema validation per chapter ──
