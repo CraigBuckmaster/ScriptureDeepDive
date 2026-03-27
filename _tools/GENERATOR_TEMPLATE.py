@@ -46,12 +46,26 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__) or '.', '_tools')
 from shared import save_chapter, verse_range
 
 # ── CONFIGURATION ──────────────────────────────────────────────────────
-BOOK = 'jeremiah'  # book directory name (lowercase, underscores for spaces)
+BOOK = 'jeremiah'       # book directory name (lowercase, underscores for spaces)
+BOOK_NAME = 'Jeremiah'  # canonical display name (e.g., "1 Corinthians", "Song of Solomon")
 
 # Helper: shorthand for save_chapter with consistent book
-def ch(num, title, sections, lit=None, themes=None, **kw):
-    """Save one chapter. lit and themes are required for full chapters."""
-    data = {'title': title, 'sections': sections}
+def ch(num, subtitle, sections, lit=None, themes=None, **kw):
+    """Save one chapter. lit and themes are required for full chapters.
+    
+    Args:
+        num: Chapter number
+        subtitle: Descriptive chapter subtitle (e.g., "The Call of Jeremiah")
+        sections: List of section dicts
+        lit: Literary structure panel (optional)
+        themes: Theological themes panel (optional)
+        **kw: Additional chapter-level data
+    """
+    data = {
+        'title': f'{BOOK_NAME} {num}',  # Auto-generated: "Jeremiah 1"
+        'subtitle': subtitle,            # Descriptive content goes here
+        'sections': sections
+    }
     if lit is not None:
         data['lit'] = lit
     if themes is not None:
