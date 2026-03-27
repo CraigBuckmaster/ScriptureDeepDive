@@ -363,9 +363,10 @@ export interface ProphecyChainLink {
   book_dir: string;
   chapter_num: number;
   verse_ref: string;
-  label: string;
-  role: string;        // 'origin' | 'development' | 'fulfillment' | 'consummation'
-  summary: string;
+  label?: string;
+  role?: string;        // 'origin' | 'development' | 'fulfillment' | 'consummation'
+  summary?: string;
+  note?: string;        // Legacy field from initial data generation
 }
 
 /** Raw DB row — JSON columns are unparsed strings */

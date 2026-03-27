@@ -151,8 +151,10 @@ export default function ProphecyDetailScreen() {
             {links.map((link, idx) => {
               const isOT = OT_BOOKS.has(link.book_dir);
               const dotColor = isOT ? '#c8a040' : '#a0c8e0';
-              const roleColor = ROLE_COLORS[link.role] || base.gold;
+              const roleColor = link.role ? (ROLE_COLORS[link.role] || base.gold) : base.gold;
               const isLast = idx === links.length - 1;
+              // Use note as fallback for summary (legacy data)
+              const displaySummary = link.summary || link.note;
 
               return (
                 <View key={idx} style={styles.railItem}>
@@ -170,15 +172,17 @@ export default function ProphecyDetailScreen() {
                           {link.verse_ref}
                         </Text>
                       </TouchableOpacity>
-                      <Text style={[styles.roleLabel, { color: roleColor }]}>
-                        {link.role.toUpperCase()}
-                      </Text>
+                      {link.role && (
+                        <Text style={[styles.roleLabel, { color: roleColor }]}>
+                          {link.role.toUpperCase()}
+                        </Text>
+                      )}
                     </View>
                     {link.label && (
                       <Text style={styles.linkLabel}>{link.label}</Text>
                     )}
-                    {link.summary && (
-                      <Text style={styles.linkSummary}>{link.summary}</Text>
+                    {displaySummary && (
+                      <Text style={styles.linkSummary}>{displaySummary}</Text>
                     )}
                   </View>
                 </View>
