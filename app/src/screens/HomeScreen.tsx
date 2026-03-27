@@ -10,7 +10,8 @@
  */
 
 import React, { useState, useCallback, useRef } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, SafeAreaView, RefreshControl, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, RefreshControl, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
 import { ArrowRight } from 'lucide-react-native';

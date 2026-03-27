@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { base, spacing, radii, fontFamily } from '../theme';
 
 interface Props {

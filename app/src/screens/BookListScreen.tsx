@@ -9,10 +9,8 @@
  */
 
 import React, { useState, useMemo, useRef } from 'react';
-import {
-  View, Text, TouchableOpacity, SectionList, FlatList,
-  SafeAreaView, ScrollView, StyleSheet,
-} from 'react-native';
+import { View, Text, TouchableOpacity, SectionList, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';

@@ -3,7 +3,8 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useWordStudies } from '../hooks/useWordStudies';
 import { ScreenHeader } from '../components/ScreenHeader';

@@ -57,7 +57,8 @@
         }
       ],
       "expo-asset",
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-haptics"
     ],
     "updates": {
       "url": "https://u.expo.dev/",

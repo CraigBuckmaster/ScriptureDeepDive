@@ -7,10 +7,8 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import {
-  View, Text, TextInput, TouchableOpacity, FlatList,
-  SafeAreaView, Alert, StyleSheet,
-} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Alert, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Search, X } from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
