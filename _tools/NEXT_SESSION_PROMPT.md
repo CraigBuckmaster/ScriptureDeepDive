@@ -1,4 +1,4 @@
-# Companion Study — Session Handoff: Batch 11
+# Companion Study — Session Handoff: Batch 12
 
 ## Repository Access
 
@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit 85e88ba9)
+## Current State (as of commit 4d35a0c5)
 
 ### Batches Complete
 
@@ -31,62 +31,63 @@ git config user.name "Craig Buckmaster"
 | 9a | Difficult Passages (28 entries — first half) | ✅ Complete |
 | 9b | Difficult Passages (25 entries — second half) | ✅ Complete |
 | 10 | DifficultPassagesBrowse + DifficultPassageDetail screens | ✅ Complete |
-| **11** | **Word Study enhancements** | **NEXT** |
+| 11 | Word Study expansion (+8 studies, concept links) | ✅ Complete |
+| **12** | **Timeline improvements** | **NEXT** |
 
 ---
 
-## Database Stats (as of Batch 10)
+## Database Stats (as of Batch 11)
 
 - 66 books total (58 live, 1146 chapters)
 - 50 prophecy chains (283 links)
-- 20 concepts
+- 20 concepts (all with word study links now)
 - 53 difficult passages
 - 16 discourse panels (Romans)
-- 35 word studies
+- 43 word studies (26 Hebrew, 17 Greek)
 - 51 scholars
 - 281 people (37 spine, 244 satellite)
+- 420 timeline events
 
 ---
 
-## Batch 11: Word Study Enhancements
+## Batch 12: Timeline Improvements
 
-**Goal:** Expand and improve word study content and linking.
+**Goal:** Enhance timeline content and visualization.
 
 ### Current State
 
-`word_studies` table has 35 entries with:
-- `id`, `language`, `original`, `transliteration`, `strongs`
-- `glosses_json`, `range`, `note`
-
-### Potential Improvements
-
-1. **Content expansion**: Add more word studies (Hebrew/Greek key terms)
-2. **Cross-linking**: Link word studies to chapters where they appear
-3. **Enhanced detail screen**: Show verse usage examples, related words
-4. **Search improvements**: Better FTS integration for word studies
-5. **Concept integration**: Ensure word studies link to related concepts
+`timelines` table has 420 events with:
+- `id`, `name`, `summary`, `year`, `era`, `category`
+- `book_refs_json`, `tags_json`
 
 ### Files to Review
 
-- `app/src/hooks/useWordStudies.ts`
-- `app/src/screens/WordStudyBrowseScreen.tsx`
-- `app/src/screens/WordStudyDetailScreen.tsx`
-- `content/meta/word-studies.json`
+- `app/src/screens/TimelineScreen.tsx`
+- `app/src/hooks/` (no dedicated timeline hook currently)
+- `content/meta/timelines.json`
+
+### Potential Improvements
+
+1. **Content audit**: Check for gaps in major biblical events
+2. **Era coverage**: Ensure balanced coverage across eras (Patriarchs, Exodus, Judges, United Kingdom, Divided Kingdom, Exile, Return, Intertestamental, NT)
+3. **Category enrichment**: Add categories if missing (political, religious, prophetic, etc.)
+4. **Chapter linking**: Ensure events link to relevant chapters
+5. **UI enhancements**: Better filtering, era navigation, event detail view
 
 ### Suggested Approach
 
-1. Audit current word studies for gaps
-2. Identify high-value missing terms (Hebrew: hesed, shalom, torah, etc.)
-3. Add chapter linking if not already present
-4. Enhance UI to show verse examples
-5. Ensure concept->word study links work bidirectionally
+1. Audit current timeline events by era
+2. Identify major gaps (key battles, prophets, kings, NT events)
+3. Add missing high-value events
+4. Enhance chapter linking where weak
+5. Consider UI improvements if time permits
 
 ---
 
-## After Batch 11
+## After Batch 12
 
-**Batch 12:** Timeline improvements (better visualization, event linking)
 **Batch 13:** Cross-reference thread expansion
+**Batch 14:** Map story enhancements
 
 ---
 
