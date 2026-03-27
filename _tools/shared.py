@@ -87,6 +87,9 @@ REGISTRY = [
     ('2_corinthians', '2 Corinthians', 13, 13, 'NT', 'nt'),
     ('galatians',     'Galatians',      6,  6, 'NT', 'nt'),
     ('ephesians',     'Ephesians',      6,  6, 'NT', 'nt'),
+    ('philippians',   'Philippians',    4,  4, 'NT', 'nt'),
+    ('colossians',    'Colossians',     4,  4, 'NT', 'nt'),
+    ('philemon',      'Philemon',       1,  1, 'NT', 'nt'),
 ]
 
 # Short prefix used for auto-generated panel IDs (e.g. gen46-s1-grk)
@@ -140,6 +143,9 @@ BOOK_PREFIX = {
     '2_corinthians': '2co',
     'galatians':     'gal',
     'ephesians':     'eph',
+    'philippians':   'php',
+    'colossians':    'col',
+    'philemon':      'phm',
 }
 
 # COMMENTATOR_SCOPE — moved to config.py (Batch 5)
