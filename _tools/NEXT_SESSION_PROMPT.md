@@ -23,16 +23,10 @@ Clone the repo, then read `_tools/CONTENT_REMEDIATION_PLAN.md` for full context.
 
 - **Batch 2I:** 85 tx chapter panels populated — Genesis (23), Exodus (39), Ruth (4), Proverbs (19). Zero empty tx panels remain.
 - **Batch 3:** People enrichment complete — 13 bios expanded, 10 dates added, 3 entries key-normalized (oholah/oholibah/hiram_tyre refs now load in DB), 27 timeline_people entries added.
+- **Batch 4:** 8 parallel passages added (53 total synoptic entries).
+- **Batch 5:** 20 new word studies added (13 Hebrew, 7 Greek — 34 total).
 
 ## What's Next — Continue in This Order
-
-### Batch 4 — Parallel Passages (8)
-
-8 parallel passages → `content/meta/synoptic_map.json`
-
-### Batch 5 — Word Studies (20)
-
-20 new word studies → `content/meta/word_studies.json`
 
 ### Batch 6 — Thin Panel Enrichment (lowest priority)
 
