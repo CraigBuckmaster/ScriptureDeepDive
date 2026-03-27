@@ -1336,3 +1336,33 @@ BOOK_META['2_corinthians'] = {
 
 SCHOLAR_REGISTRY.append(('harris', 'harris', 'Harris', 'harris'))
 COMMENTATOR_SCOPE['harris'] = ['2_corinthians']
+
+
+# ── Galatians ────────────────────────────────────────────────────────
+BOOK_META['galatians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Gal 1:1), writing with \u2018all the brothers and sisters with me\u2019 (1:2). Pauline authorship is virtually undisputed; the letter\u2019s intensely personal tone, autobiographical narrative (chs.\u20091\u20132), and theological argumentation bear Paul\u2019s unmistakable stamp.\n\n<strong>When written:</strong> c.\u2009AD\u200948\u201355. Dating depends on the identification of the recipients. The \u2018South Galatian\u2019 theory (recipients are churches in Pisidian Antioch, Iconium, Lystra, and Derbe founded on the first missionary journey) permits a date as early as AD\u200948\u201349, making Galatians possibly the earliest Pauline letter. The \u2018North Galatian\u2019 theory (recipients are ethnic Galatians in the northern plateau region) requires a later date, c.\u2009AD\u200953\u201355, during the third missionary journey.\n\n<strong>What prompted it:</strong> After Paul\u2019s departure, rival missionaries arrived among the Galatian churches insisting that Gentile believers must be circumcised and observe the Mosaic law to be fully justified (1:6\u20137; 3:1\u20133; 5:2\u20134; 6:12\u201313). Paul responds with his most passionate and theologically concentrated letter, defending justification by faith apart from works of the law, narrating his apostolic calling and independence, and articulating the freedom of the gospel against legalistic distortion. Galatians has been called the \u2018Magna Carta of Christian liberty.\u2019",
+    'vhl_places': ['Galatia', 'Jerusalem', 'Antioch', 'Syria', 'Cilicia', 'Arabia', 'Damascus'],
+    'vhl_people': ['Paul', 'Abraham', 'Christ', 'Peter', 'James', 'Barnabas', 'Titus', 'Moses', 'Hagar', 'Sarah', 'Isaac'],
+    'vhl_key': ['faith', 'law', 'grace', 'justification', 'freedom', 'Spirit', 'flesh', 'circumcision', 'gospel', 'promise', 'covenant', 'curse', 'righteousness', 'adoption', 'inheritance', 'crucified', 'works', 'fruit', 'love', 'truth'],
+    'vhl_time': ['the present evil age', 'the fullness of time', 'when the set time had fully come', 'formerly', 'now that faith has come', 'the Israel of God'],
+}
+
+SCHOLAR_REGISTRY.append(('bruce', 'bruce', 'Bruce', 'bruce'))
+COMMENTATOR_SCOPE['moo'].append('galatians')
+COMMENTATOR_SCOPE['bruce'] = ['galatians']
+
+# ── Ephesians ────────────────────────────────────────────────────────
+BOOK_META['ephesians'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Paul the apostle (Eph 1:1; 3:1), writing from prison (3:1; 4:1; 6:20). Pauline authorship has been debated since the nineteenth century: the letter\u2019s elevated style, distinctive vocabulary (90+ words not found elsewhere in Paul), lack of personal greetings (unusual for a Pauline letter), and developed ecclesiology have led many critical scholars to regard it as deutero-Pauline. Conservative scholarship maintains Pauline authorship, explaining the differences by the letter\u2019s encyclical nature and liturgical-hymnic style.\n\n<strong>When written:</strong> c.\u2009AD\u200960\u201362, during Paul\u2019s first Roman imprisonment (Acts 28:16\u201331), alongside Colossians, Philemon, and Philippians. The close verbal parallels with Colossians suggest the two letters were composed in close temporal proximity and likely carried by the same messenger, Tychicus (Eph 6:21\u201322; Col 4:7\u20138).\n\n<strong>What prompted it:</strong> Unlike most Pauline letters, Ephesians does not address a specific crisis. It reads as a theological meditation and pastoral exhortation, possibly as a circular letter to multiple churches in Asia Minor. The letter unfolds God\u2019s eternal purpose (\u2018mystery\u2019) to unite all things in Christ (1:9\u201310), emphasising the cosmic scope of redemption, the unity of Jew and Gentile in one body, and the ethical implications of the believer\u2019s new identity in Christ. It is Paul\u2019s most ecclesiological letter, presenting the church as Christ\u2019s body, bride, and temple.",
+    'vhl_places': ['Ephesus', 'Rome', 'Asia Minor'],
+    'vhl_people': ['Paul', 'Christ', 'Tychicus', 'Abraham', 'Moses'],
+    'vhl_key': ['grace', 'mystery', 'unity', 'body', 'Spirit', 'church', 'love', 'faith', 'heavenly realms', 'fullness', 'power', 'inheritance', 'predestined', 'sealed', 'reconciliation', 'armour', 'peace', 'glory', 'wisdom', 'walk'],
+    'vhl_time': ['before the creation of the world', 'the fullness of time', 'the coming ages', 'formerly', 'but now', 'in the last days', 'the evil day'],
+}
+
+SCHOLAR_REGISTRY.append(('lincoln', 'lincoln', 'Lincoln', 'lincoln'))
+SCHOLAR_REGISTRY.append(('obrien', 'obrien', "O\'Brien", 'obrien'))
+COMMENTATOR_SCOPE['lincoln'] = ['ephesians']
+COMMENTATOR_SCOPE['obrien'] = ['ephesians']
