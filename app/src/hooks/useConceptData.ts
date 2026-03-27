@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { getDb } from '../data/database';
+import { getDb } from '../db/database';
 import { logger } from '../utils/logger';
 
 export interface Concept {
