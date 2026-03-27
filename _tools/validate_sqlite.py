@@ -128,8 +128,8 @@ def main():
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
-    check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 10)
-    check("45 synoptic entries", q1(cur, "SELECT COUNT(*) FROM synoptic_map") == 45)
+    check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
+    check("53+ synoptic entries", q1(cur, "SELECT COUNT(*) FROM synoptic_map") >= 53)
 
     # VHL groups: 5 per chapter = 4395
     vhl_count = q1(cur, "SELECT COUNT(*) FROM vhl_groups")

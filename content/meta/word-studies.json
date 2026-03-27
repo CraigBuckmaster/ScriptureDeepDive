@@ -676,5 +676,787 @@
         "ctx": "Uzziah ‘sought God during the days of Zechariah... as long as he sought the LORD, God gave him success.’"
       }
     ]
+  },
+  {
+    "id": "aman",
+    "language": "hebrew",
+    "original": "אמן",
+    "transliteration": "ʾāman",
+    "strongs": "H539",
+    "glosses": [
+      "believe",
+      "trust",
+      "be faithful",
+      "be firm",
+      "confirm"
+    ],
+    "range": "To be firm, reliable, trustworthy. In the hiphil: to believe, put trust in. The root of 'amen' and 'emunah' (faithfulness).",
+    "note": "Used 108 times. Abraham 'believed' (heʾĕmîn) God in Gen 15:6 — the foundational OT text on faith, quoted by Paul in Rom 4:3 and Gal 3:6.",
+    "occurrences": [
+      {
+        "ref": "Gen 15:6",
+        "gloss": "believed",
+        "ctx": "Abram believed the LORD, and he credited it to him as righteousness."
+      },
+      {
+        "ref": "Exod 14:31",
+        "gloss": "trusted",
+        "ctx": "Israel saw the great power and put their trust in the LORD and in Moses."
+      },
+      {
+        "ref": "Isa 7:9",
+        "gloss": "stand firm",
+        "ctx": "If you do not stand firm in your faith, you will not stand at all."
+      },
+      {
+        "ref": "Hab 2:4",
+        "gloss": "faithfulness",
+        "ctx": "The righteous person will live by his faithfulness — quoted in Rom 1:17."
+      }
+    ]
+  },
+  {
+    "id": "qadosh",
+    "language": "hebrew",
+    "original": "קדוש",
+    "transliteration": "qādôš",
+    "strongs": "H6918",
+    "glosses": [
+      "holy",
+      "set apart",
+      "sacred",
+      "consecrated"
+    ],
+    "range": "Fundamentally means 'separate, distinct, other.' Applied to God it denotes his utter otherness; applied to Israel it means set apart for God's purposes.",
+    "note": "Used 116 times. Isaiah's trisagion ('Holy, holy, holy' — Isa 6:3) is the only divine attribute repeated three times in Scripture, emphasizing God's supreme otherness.",
+    "occurrences": [
+      {
+        "ref": "Lev 19:2",
+        "gloss": "holy",
+        "ctx": "Be holy because I, the LORD your God, am holy."
+      },
+      {
+        "ref": "Isa 6:3",
+        "gloss": "holy",
+        "ctx": "Holy, holy, holy is the LORD Almighty; the whole earth is full of his glory."
+      },
+      {
+        "ref": "Ps 99:9",
+        "gloss": "holy",
+        "ctx": "Exalt the LORD our God and worship at his holy mountain, for the LORD our God is holy."
+      },
+      {
+        "ref": "Isa 43:15",
+        "gloss": "Holy One",
+        "ctx": "I am the LORD, your Holy One, Israel's Creator, your King."
+      }
+    ]
+  },
+  {
+    "id": "mishpat",
+    "language": "hebrew",
+    "original": "משפט",
+    "transliteration": "mišpāṭ",
+    "strongs": "H4941",
+    "glosses": [
+      "justice",
+      "judgment",
+      "ordinance",
+      "right",
+      "custom"
+    ],
+    "range": "From the root š-p-ṭ (to judge). Encompasses legal rulings, social justice, proper order, and the rights owed to every person — especially the vulnerable.",
+    "note": "Used 425 times — one of the most frequent words in the OT. Often paired with tsedaqah (righteousness). Micah 6:8 makes it one of God's three core requirements.",
+    "occurrences": [
+      {
+        "ref": "Mic 6:8",
+        "gloss": "justice",
+        "ctx": "What does the LORD require of you? To act justly and to love mercy and to walk humbly."
+      },
+      {
+        "ref": "Isa 1:17",
+        "gloss": "justice",
+        "ctx": "Learn to do right; seek justice. Defend the oppressed."
+      },
+      {
+        "ref": "Ps 89:14",
+        "gloss": "justice",
+        "ctx": "Righteousness and justice are the foundation of your throne."
+      },
+      {
+        "ref": "Deut 16:20",
+        "gloss": "justice",
+        "ctx": "Follow justice and justice alone, so that you may live and possess the land."
+      }
+    ]
+  },
+  {
+    "id": "racham",
+    "language": "hebrew",
+    "original": "רחם",
+    "transliteration": "rāḥam",
+    "strongs": "H7355",
+    "glosses": [
+      "have compassion",
+      "show mercy",
+      "love deeply",
+      "have pity"
+    ],
+    "range": "From the noun reḥem (womb). God's compassion is visceral, maternal — a love rooted in the deepest physical bond humans know.",
+    "note": "Used 47 times in verbal form. The related noun raḥămîm ('compassion') appears 40 times. The womb-connection makes this the most embodied word for divine love in Hebrew.",
+    "occurrences": [
+      {
+        "ref": "Exod 33:19",
+        "gloss": "compassion",
+        "ctx": "I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion."
+      },
+      {
+        "ref": "Isa 49:15",
+        "gloss": "compassion",
+        "ctx": "Can a mother forget the baby at her breast? Though she may forget, I will not forget you."
+      },
+      {
+        "ref": "Ps 103:13",
+        "gloss": "compassion",
+        "ctx": "As a father has compassion on his children, so the LORD has compassion on those who fear him."
+      },
+      {
+        "ref": "Hos 2:23",
+        "gloss": "shown compassion",
+        "ctx": "I will show my love to the one I called 'Not my loved one.' Quoted in Rom 9:25."
+      }
+    ]
+  },
+  {
+    "id": "yara",
+    "language": "hebrew",
+    "original": "ירא",
+    "transliteration": "yārēʾ",
+    "strongs": "H3372",
+    "glosses": [
+      "fear",
+      "revere",
+      "be in awe",
+      "stand in dread"
+    ],
+    "range": "Covers the full spectrum from terror before an enemy to reverent awe before God. 'The fear of the LORD' is not cowering but the orientation of a life that takes God seriously.",
+    "note": "Used 314 times. 'The fear of the LORD is the beginning of wisdom' (Prov 9:10) — the foundational axiom of Israelite wisdom literature.",
+    "occurrences": [
+      {
+        "ref": "Prov 9:10",
+        "gloss": "fear",
+        "ctx": "The fear of the LORD is the beginning of wisdom, and knowledge of the Holy One is understanding."
+      },
+      {
+        "ref": "Gen 22:12",
+        "gloss": "fear",
+        "ctx": "Now I know that you fear God, because you have not withheld your son."
+      },
+      {
+        "ref": "Ps 34:9",
+        "gloss": "fear",
+        "ctx": "Fear the LORD, you his holy people, for those who fear him lack nothing."
+      },
+      {
+        "ref": "Isa 11:2",
+        "gloss": "fear",
+        "ctx": "The Spirit of the LORD will rest on him — the Spirit of knowledge and fear of the LORD."
+      }
+    ]
+  },
+  {
+    "id": "gaal",
+    "language": "hebrew",
+    "original": "גאל",
+    "transliteration": "gāʾal",
+    "strongs": "H1350",
+    "glosses": [
+      "redeem",
+      "act as kinsman-redeemer",
+      "buy back",
+      "avenge"
+    ],
+    "range": "To act as a gōʾēl — the nearest relative who restores what was lost. This could mean buying back property, freeing a slave, avenging blood, or marrying a widow. God himself is Israel's Gōʾēl.",
+    "note": "Used 104 times. The book of Ruth is built on this concept. Isaiah uses gōʾēl for God 13 times. Job's 'I know that my Redeemer lives' (19:25) bridges personal and cosmic redemption.",
+    "occurrences": [
+      {
+        "ref": "Ruth 4:4-6",
+        "gloss": "redeem",
+        "ctx": "Boaz acts as kinsman-redeemer for Naomi's land and Ruth's future."
+      },
+      {
+        "ref": "Isa 44:6",
+        "gloss": "Redeemer",
+        "ctx": "This is what the LORD says — Israel's King and Redeemer, the LORD Almighty."
+      },
+      {
+        "ref": "Job 19:25",
+        "gloss": "Redeemer",
+        "ctx": "I know that my Redeemer lives, and that in the end he will stand on the earth."
+      },
+      {
+        "ref": "Isa 63:16",
+        "gloss": "Redeemer",
+        "ctx": "You, LORD, are our Father, our Redeemer from of old is your name."
+      }
+    ]
+  },
+  {
+    "id": "kaphar",
+    "language": "hebrew",
+    "original": "כפר",
+    "transliteration": "kāpar",
+    "strongs": "H3722",
+    "glosses": [
+      "atone",
+      "make atonement",
+      "cover",
+      "purge",
+      "propitiate"
+    ],
+    "range": "Likely from 'to cover' or 'to wipe clean.' The Day of Atonement (Yom Kippur) derives from this root. The kappōret (mercy seat/atonement cover) sat on the ark.",
+    "note": "Used 102 times. Central to Levitical theology. The LXX translates the kappōret as hilastērion — the same word Paul uses for Christ in Rom 3:25.",
+    "occurrences": [
+      {
+        "ref": "Lev 16:30",
+        "gloss": "atonement",
+        "ctx": "On this day atonement will be made for you, to cleanse you from all your sins before the LORD."
+      },
+      {
+        "ref": "Lev 17:11",
+        "gloss": "atonement",
+        "ctx": "It is the blood that makes atonement for one's life."
+      },
+      {
+        "ref": "Exod 25:17",
+        "gloss": "atonement cover",
+        "ctx": "Make an atonement cover (kappōret) of pure gold."
+      },
+      {
+        "ref": "Dan 9:24",
+        "gloss": "atone",
+        "ctx": "To atone for wickedness, to bring in everlasting righteousness."
+      }
+    ]
+  },
+  {
+    "id": "nabi",
+    "language": "hebrew",
+    "original": "נביא",
+    "transliteration": "nābîʾ",
+    "strongs": "H5030",
+    "glosses": [
+      "prophet",
+      "spokesperson",
+      "one called"
+    ],
+    "range": "One who speaks on behalf of another — specifically, on behalf of God. The nābîʾ receives God's word and delivers it, whether as prediction, exhortation, judgment, or comfort.",
+    "note": "Used 317 times. Moses is the prototypical prophet (Deut 18:15-18). The prophetic office spans from Abraham (Gen 20:7) to Malachi. Jesus is the 'prophet like Moses' (Acts 3:22).",
+    "occurrences": [
+      {
+        "ref": "Deut 18:18",
+        "gloss": "prophet",
+        "ctx": "I will raise up for them a prophet like you from among their fellow Israelites."
+      },
+      {
+        "ref": "Amos 3:7",
+        "gloss": "prophets",
+        "ctx": "Surely the Sovereign LORD does nothing without revealing his plan to his servants the prophets."
+      },
+      {
+        "ref": "1 Sam 9:9",
+        "gloss": "prophet",
+        "ctx": "Formerly in Israel, if someone wanted to inquire of God, they would say, 'Let us go to the seer.'"
+      },
+      {
+        "ref": "Jer 1:5",
+        "gloss": "prophet",
+        "ctx": "Before you were born I set you apart; I appointed you as a prophet to the nations."
+      }
+    ]
+  },
+  {
+    "id": "abad",
+    "language": "hebrew",
+    "original": "עבד",
+    "transliteration": "ʿābad",
+    "strongs": "H5647",
+    "glosses": [
+      "serve",
+      "work",
+      "worship",
+      "till",
+      "be a slave"
+    ],
+    "range": "The same word means to serve a master, work the ground, and worship God. In Hebrew thought, service and worship are not separate categories — to serve God is to worship; to worship is to serve.",
+    "note": "Used 290 times. Adam was placed in Eden 'to work (ʿābad) and keep it' (Gen 2:15) — the same verbs later used for priestly service in the tabernacle (Num 3:7-8).",
+    "occurrences": [
+      {
+        "ref": "Gen 2:15",
+        "gloss": "work",
+        "ctx": "The LORD God took the man and put him in the Garden of Eden to work it and take care of it."
+      },
+      {
+        "ref": "Exod 3:12",
+        "gloss": "worship",
+        "ctx": "When you have brought the people out of Egypt, you will worship God on this mountain."
+      },
+      {
+        "ref": "Josh 24:15",
+        "gloss": "serve",
+        "ctx": "Choose for yourselves this day whom you will serve — as for me and my household, we will serve the LORD."
+      },
+      {
+        "ref": "Ps 100:2",
+        "gloss": "serve",
+        "ctx": "Worship the LORD with gladness; come before him with joyful songs."
+      }
+    ]
+  },
+  {
+    "id": "tsaddiq",
+    "language": "hebrew",
+    "original": "צדיק",
+    "transliteration": "ṣaddîq",
+    "strongs": "H6662",
+    "glosses": [
+      "righteous",
+      "just",
+      "innocent",
+      "upright"
+    ],
+    "range": "One who conforms to the standard of right relationship — with God and with neighbor. Not mere moral perfection but relational fidelity and covenantal integrity.",
+    "note": "Used 206 times. Abraham's debate with God over Sodom (Gen 18:23-25) turns entirely on this word. 'The righteous shall live by his faith' (Hab 2:4) became Paul's anthem in Romans.",
+    "occurrences": [
+      {
+        "ref": "Gen 18:23",
+        "gloss": "righteous",
+        "ctx": "Will you sweep away the righteous with the wicked?"
+      },
+      {
+        "ref": "Hab 2:4",
+        "gloss": "righteous",
+        "ctx": "The righteous person will live by his faithfulness."
+      },
+      {
+        "ref": "Ps 1:6",
+        "gloss": "righteous",
+        "ctx": "The LORD watches over the way of the righteous, but the way of the wicked leads to destruction."
+      },
+      {
+        "ref": "Prov 10:25",
+        "gloss": "righteous",
+        "ctx": "When the storm has swept by, the wicked are gone, but the righteous stand firm forever."
+      }
+    ]
+  },
+  {
+    "id": "shama",
+    "language": "hebrew",
+    "original": "שמע",
+    "transliteration": "šāmaʿ",
+    "strongs": "H8085",
+    "glosses": [
+      "hear",
+      "listen",
+      "obey",
+      "understand",
+      "pay attention"
+    ],
+    "range": "In Hebrew, to truly hear is to obey. The Shema (Deut 6:4) is both a call to listen and a command to respond. There is no hearing without doing.",
+    "note": "Used 1,159 times — one of the most frequent verbs in the OT. The Shema ('Hear, O Israel') is the foundational confession of Jewish faith, recited daily.",
+    "occurrences": [
+      {
+        "ref": "Deut 6:4",
+        "gloss": "hear",
+        "ctx": "Hear, O Israel: The LORD our God, the LORD is one."
+      },
+      {
+        "ref": "1 Sam 15:22",
+        "gloss": "obey",
+        "ctx": "To obey is better than sacrifice, and to heed is better than the fat of rams."
+      },
+      {
+        "ref": "Isa 6:9",
+        "gloss": "hear",
+        "ctx": "Be ever hearing, but never understanding — quoted by Jesus in Matt 13:14."
+      },
+      {
+        "ref": "Ps 81:11",
+        "gloss": "listen",
+        "ctx": "But my people would not listen to me; Israel would not submit to me."
+      }
+    ]
+  },
+  {
+    "id": "chata",
+    "language": "hebrew",
+    "original": "חטא",
+    "transliteration": "ḥāṭāʾ",
+    "strongs": "H2398",
+    "glosses": [
+      "sin",
+      "miss the mark",
+      "fall short",
+      "offend",
+      "err"
+    ],
+    "range": "The basic meaning is to miss a target or deviate from the path. Sin is not merely rule-breaking but a failure to hit the goal God set for human life.",
+    "note": "Used 238 times. First appears in Gen 4:7 where sin 'crouches at the door' — personified as a predator. The 'missing' metaphor shapes all subsequent biblical hamartiology.",
+    "occurrences": [
+      {
+        "ref": "Gen 4:7",
+        "gloss": "sin",
+        "ctx": "If you do not do what is right, sin is crouching at your door; it desires to have you."
+      },
+      {
+        "ref": "Ps 51:4",
+        "gloss": "sinned",
+        "ctx": "Against you, you only, have I sinned and done what is evil in your sight."
+      },
+      {
+        "ref": "Exod 32:30",
+        "gloss": "sinned",
+        "ctx": "You have committed a great sin. But now I will go up to the LORD; perhaps I can make atonement."
+      },
+      {
+        "ref": "Judg 20:16",
+        "gloss": "miss",
+        "ctx": "Among all these soldiers there were 700 who could sling a stone and not miss — literal 'missing' usage."
+      }
+    ]
+  },
+  {
+    "id": "olam",
+    "language": "hebrew",
+    "original": "עולם",
+    "transliteration": "ʿôlām",
+    "strongs": "H5769",
+    "glosses": [
+      "eternal",
+      "everlasting",
+      "forever",
+      "ancient",
+      "long duration"
+    ],
+    "range": "Not abstract infinity but time stretching beyond the horizon in either direction — the remote past or the indefinite future. God's covenant is 'everlasting' (bĕrît ʿôlām).",
+    "note": "Used 439 times. Eccl 3:11 says God 'set eternity in the human heart' — using ʿôlām to describe the restless longing for transcendence that defines humanity.",
+    "occurrences": [
+      {
+        "ref": "Gen 17:7",
+        "gloss": "everlasting",
+        "ctx": "I will establish my covenant as an everlasting covenant between me and you."
+      },
+      {
+        "ref": "Eccl 3:11",
+        "gloss": "eternity",
+        "ctx": "He has also set eternity in the human heart; yet no one can fathom what God has done."
+      },
+      {
+        "ref": "Ps 90:2",
+        "gloss": "everlasting",
+        "ctx": "From everlasting to everlasting you are God."
+      },
+      {
+        "ref": "Isa 40:28",
+        "gloss": "everlasting",
+        "ctx": "The LORD is the everlasting God, the Creator of the ends of the earth."
+      }
+    ]
+  },
+  {
+    "id": "charis",
+    "language": "greek",
+    "original": "χάρις",
+    "transliteration": "charis",
+    "strongs": "G5485",
+    "glosses": [
+      "grace",
+      "favor",
+      "kindness",
+      "gift",
+      "gratitude"
+    ],
+    "range": "Unmerited favor — a gift given freely, not earned. In classical Greek it meant charm or beauty; the NT transforms it into the defining word for God's saving action through Christ.",
+    "note": "Used 155 times in the NT. Paul uses it 100 times. Eph 2:8-9 is the locus classicus: 'by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God.'",
+    "occurrences": [
+      {
+        "ref": "John 1:14",
+        "gloss": "grace",
+        "ctx": "The Word became flesh — full of grace and truth."
+      },
+      {
+        "ref": "Eph 2:8",
+        "gloss": "grace",
+        "ctx": "It is by grace you have been saved, through faith — not from yourselves, it is the gift of God."
+      },
+      {
+        "ref": "Rom 3:24",
+        "gloss": "grace",
+        "ctx": "All are justified freely by his grace through the redemption in Christ Jesus."
+      },
+      {
+        "ref": "2 Cor 12:9",
+        "gloss": "grace",
+        "ctx": "My grace is sufficient for you, for my power is made perfect in weakness."
+      }
+    ]
+  },
+  {
+    "id": "kyrios",
+    "language": "greek",
+    "original": "κύριος",
+    "transliteration": "kyrios",
+    "strongs": "G2962",
+    "glosses": [
+      "lord",
+      "master",
+      "sir",
+      "owner"
+    ],
+    "range": "From kyros (authority, power). Ranges from polite address ('sir') to supreme divine title. The LXX used kyrios to translate YHWH — so when the NT calls Jesus kyrios, it is making a divine claim.",
+    "note": "Used 717 times in the NT. The confession 'Jesus is Lord' (kyrios Iēsous, Rom 10:9) is the earliest Christian creed and a direct claim of deity via the YHWH-kyrios connection.",
+    "occurrences": [
+      {
+        "ref": "Rom 10:9",
+        "gloss": "Lord",
+        "ctx": "If you declare with your mouth, 'Jesus is Lord,' and believe in your heart — you will be saved."
+      },
+      {
+        "ref": "Phil 2:11",
+        "gloss": "Lord",
+        "ctx": "Every tongue acknowledge that Jesus Christ is Lord, to the glory of God the Father."
+      },
+      {
+        "ref": "Acts 2:36",
+        "gloss": "Lord",
+        "ctx": "God has made this Jesus, whom you crucified, both Lord and Messiah."
+      },
+      {
+        "ref": "1 Cor 12:3",
+        "gloss": "Lord",
+        "ctx": "No one can say 'Jesus is Lord' except by the Holy Spirit."
+      }
+    ]
+  },
+  {
+    "id": "soteria",
+    "language": "greek",
+    "original": "σωτηρία",
+    "transliteration": "sōtēria",
+    "strongs": "G4991",
+    "glosses": [
+      "salvation",
+      "deliverance",
+      "preservation",
+      "rescue"
+    ],
+    "range": "From sōzō (to save/deliver). Encompasses physical rescue, spiritual redemption, and eschatological hope. In the NT it covers past justification, present sanctification, and future glorification.",
+    "note": "Used 45 times. The Hebrew equivalent is yĕšûʿāh — the root of the name Jesus (Yēšûaʿ). 'You are to give him the name Jesus, because he will save his people from their sins' (Matt 1:21).",
+    "occurrences": [
+      {
+        "ref": "Acts 4:12",
+        "gloss": "salvation",
+        "ctx": "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved."
+      },
+      {
+        "ref": "Eph 2:5",
+        "gloss": "saved",
+        "ctx": "It is by grace you have been saved."
+      },
+      {
+        "ref": "Phil 2:12",
+        "gloss": "salvation",
+        "ctx": "Continue to work out your salvation with fear and trembling."
+      },
+      {
+        "ref": "Rom 1:16",
+        "gloss": "salvation",
+        "ctx": "The gospel is the power of God that brings salvation to everyone who believes."
+      }
+    ]
+  },
+  {
+    "id": "metanoia",
+    "language": "greek",
+    "original": "μετάνοια",
+    "transliteration": "metanoia",
+    "strongs": "G3341",
+    "glosses": [
+      "repentance",
+      "change of mind",
+      "turning",
+      "conversion"
+    ],
+    "range": "From meta (after/change) + nous (mind). More than regret — a fundamental reorientation of the whole person. The Hebrew equivalent is šûb (to turn/return).",
+    "note": "Used 22 times. Both John the Baptist and Jesus open their ministries with the same word: 'Repent (metanoeite), for the kingdom of heaven has come near' (Matt 3:2, 4:17).",
+    "occurrences": [
+      {
+        "ref": "Matt 3:2",
+        "gloss": "repent",
+        "ctx": "Repent, for the kingdom of heaven has come near."
+      },
+      {
+        "ref": "Acts 2:38",
+        "gloss": "repent",
+        "ctx": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins."
+      },
+      {
+        "ref": "Luke 15:7",
+        "gloss": "repents",
+        "ctx": "There will be more rejoicing in heaven over one sinner who repents than over ninety-nine righteous persons."
+      },
+      {
+        "ref": "2 Cor 7:10",
+        "gloss": "repentance",
+        "ctx": "Godly sorrow brings repentance that leads to salvation and leaves no regret."
+      }
+    ]
+  },
+  {
+    "id": "ekklesia",
+    "language": "greek",
+    "original": "ἐκκλησία",
+    "transliteration": "ekklēsia",
+    "strongs": "G1577",
+    "glosses": [
+      "church",
+      "assembly",
+      "congregation",
+      "gathering"
+    ],
+    "range": "From ek (out) + kaleō (to call). Not a building but a called-out people. In secular Greek it meant a civic assembly of citizens. The LXX used it to translate qāhāl (assembly of Israel).",
+    "note": "Used 114 times. Jesus uses it only twice (Matt 16:18, 18:17). Paul uses it 62 times. The word carries both the local sense (house church) and the universal sense (all believers).",
+    "occurrences": [
+      {
+        "ref": "Matt 16:18",
+        "gloss": "church",
+        "ctx": "On this rock I will build my church, and the gates of Hades will not overcome it."
+      },
+      {
+        "ref": "Acts 2:47",
+        "gloss": "church",
+        "ctx": "The Lord added to their number daily those who were being saved."
+      },
+      {
+        "ref": "Eph 5:25",
+        "gloss": "church",
+        "ctx": "Christ loved the church and gave himself up for her."
+      },
+      {
+        "ref": "1 Cor 12:27",
+        "gloss": "church",
+        "ctx": "Now you are the body of Christ, and each one of you is a part of it."
+      }
+    ]
+  },
+  {
+    "id": "euangelion",
+    "language": "greek",
+    "original": "εὐαγγέλιον",
+    "transliteration": "euangelion",
+    "strongs": "G2098",
+    "glosses": [
+      "gospel",
+      "good news",
+      "glad tidings"
+    ],
+    "range": "From eu (good) + angelos (messenger). In Roman usage it announced imperial victories or a new emperor's accession. The early Christians deliberately used this political word for the news of Christ's kingdom.",
+    "note": "Used 76 times. Mark opens his Gospel: 'The beginning of the euangelion of Jesus Christ, the Son of God' — a direct challenge to Rome's euangelia about Caesar.",
+    "occurrences": [
+      {
+        "ref": "Mark 1:1",
+        "gloss": "gospel",
+        "ctx": "The beginning of the good news about Jesus the Messiah, the Son of God."
+      },
+      {
+        "ref": "Rom 1:16",
+        "gloss": "gospel",
+        "ctx": "I am not ashamed of the gospel, because it is the power of God for salvation."
+      },
+      {
+        "ref": "1 Cor 15:1-4",
+        "gloss": "gospel",
+        "ctx": "The gospel I preached to you: that Christ died for our sins, was buried, and was raised on the third day."
+      },
+      {
+        "ref": "Gal 1:6-7",
+        "gloss": "gospel",
+        "ctx": "I am astonished that you are so quickly deserting the one who called you — there is no other gospel."
+      }
+    ]
+  },
+  {
+    "id": "zoe",
+    "language": "greek",
+    "original": "ζωή",
+    "transliteration": "zōē",
+    "strongs": "G2222",
+    "glosses": [
+      "life",
+      "eternal life",
+      "living"
+    ],
+    "range": "In John's Gospel, zōē is not mere biological existence (bios) but the divine quality of life that comes from knowing God. 'Eternal life' (zōē aiōnios) is not primarily about duration but about participation in God's own life.",
+    "note": "Used 135 times. John uses it 36 times — more than any other NT author. Jesus says 'I am the way, the truth, and the life (zōē)' — identifying himself as the source of this divine quality.",
+    "occurrences": [
+      {
+        "ref": "John 14:6",
+        "gloss": "life",
+        "ctx": "I am the way and the truth and the life. No one comes to the Father except through me."
+      },
+      {
+        "ref": "John 10:10",
+        "gloss": "life",
+        "ctx": "I have come that they may have life, and have it to the full."
+      },
+      {
+        "ref": "John 17:3",
+        "gloss": "eternal life",
+        "ctx": "This is eternal life: that they know you, the only true God, and Jesus Christ."
+      },
+      {
+        "ref": "1 John 5:12",
+        "gloss": "life",
+        "ctx": "Whoever has the Son has life; whoever does not have the Son of God does not have life."
+      }
+    ]
+  },
+  {
+    "id": "yare",
+    "language": "hebrew",
+    "original": "ירא",
+    "transliteration": "yārēʾ",
+    "strongs": "H3372",
+    "glosses": [
+      "fear",
+      "revere",
+      "stand in awe",
+      "be afraid"
+    ],
+    "range": "Covers the full spectrum from terror to reverent awe. 'The fear of the LORD' (yirʾat YHWH) is the beginning of wisdom — not cringing dread but the proper posture before the holy.",
+    "note": "Used over 300 times in the OT. The phrase 'fear not' (ʾal-tîrāʾ) appears 70+ times as a divine reassurance. The same root that commands reverence also comforts against terror — context determines everything.",
+    "occurrences": [
+      {
+        "ref": "Gen 22:12",
+        "gloss": "fear",
+        "ctx": "Now I know that you fear God"
+      },
+      {
+        "ref": "Prov 1:7",
+        "gloss": "fear",
+        "ctx": "The fear of the LORD is the beginning of knowledge"
+      },
+      {
+        "ref": "Ps 111:10",
+        "gloss": "fear",
+        "ctx": "The fear of the LORD is the beginning of wisdom"
+      },
+      {
+        "ref": "Isa 41:10",
+        "gloss": "fear",
+        "ctx": "Do not fear, for I am with you"
+      }
+    ]
   }
 ]
