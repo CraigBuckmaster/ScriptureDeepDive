@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-26 — Wave 5 IN PROGRESS. Romans COMPLETE. 1 Corinthians ch 1–8 COMPLETE (Fee + Thiselton). Next: 1 Corinthians ch 9–16 (Session D).
+> **Last updated:** 2026-03-27 — Wave 5 at 85%. Sessions A–H COMPLETE (Romans, 1-2 Cor, Gal, Eph, Phil, Col, Phm, 1-2 Thess). Next: Session I (1-2 Timothy + Titus).
 
 ---
 
@@ -37,16 +37,16 @@ pip install beautifulsoup4 --break-system-packages 2>/dev/null
 ### BATCH_TARGET (edit this section to override auto-detection)
 
 Leave blank to auto-detect the next book/chapters in canonical build order:
-- **Book:** 1_corinthians (continue_book — infrastructure already done)
-- **Chapters:** 9–16 (Session D)
-- **Mode:** continue_book
-- **Note:** All infrastructure (shared.py, config.py, colors.ts, panelLabels.ts, scholar-data.json, people.json, timelines.json) was completed in Session C. Fee + Thiselton scholars are registered. Skip STEP 2 entirely. Start at STEP 3 (plan chapters 9–16). After ch 16, set is_live=true and update REGISTRY live count to 16.
+- **Book:** 1_timothy, 2_timothy, titus (Session I — Pastoral Epistles)
+- **Chapters:** 1 Tim 1–6, 2 Tim 1–4, Titus 1–3 (13 chapters total)
+- **Mode:** new_book (x3)
+- **Note:** Need infrastructure for 2 NEW scholars: Mounce (WBC) and Towner (NICNT). Add SCHOLAR_REGISTRY, colors.ts, panelLabels.ts, scholar-data.json entries. Add BOOK_META for all three books. Add REGISTRY + BOOK_PREFIX entries. Add people: Titus (if not exists). After completing all three, set is_live=true for each.
 
 **Current wave order (from MASTER_PLAN.md):**
 
 - WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel ✓ — **COMPLETE**
 - WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, Nahum ✓, Zephaniah ✓, Haggai ✓, Zechariah ✓, Malachi ✓ — **COMPLETE**
-- WAVE 5 (NT Epistles): Romans ✓, 1 Corinthians (ch 1–8 ✓, ch 9–16 next) → 2 Corinthians → Galatians → Ephesians → Philippians → Colossians → 1-2 Thessalonians → 1-2 Timothy → Titus → Philemon
+- WAVE 5 (NT Epistles): Romans ✓, 1 Corinthians ✓, 2 Corinthians ✓, Galatians ✓, Ephesians ✓, Philippians ✓, Colossians ✓, 1 Thessalonians ✓, 2 Thessalonians ✓, Philemon ✓ → 1-2 Timothy → Titus
 - WAVE 6 (General Epistles): Hebrews, James, 1-2 Peter, 1-3 John, Jude
 - WAVE 7: Revelation
 
@@ -351,11 +351,11 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-## REFERENCE: Current Live Books (45)
+## REFERENCE: Current Live Books (54)
 
-Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28), Romans(16)
+Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28), Romans(16), 1 Corinthians(16), 2 Corinthians(13), Galatians(6), Ephesians(6), Philippians(4), Colossians(4), 1 Thessalonians(5), 2 Thessalonians(3), Philemon(1)
 
-**Total: 1,062 chapters across 45 live books. 1 Corinthians has 8/16 chapters built (not yet live). 21 books remaining (~119 chapters).**
+**Total: 1,120 chapters across 54 live books. 12 books remaining (~66 chapters: 1-2 Tim, Titus, Heb, Jas, 1-2 Pet, 1-3 John, Jude, Rev).**
 
 ---
 
@@ -364,35 +364,41 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 | Book | Ch | Status | Scholars |
 |------|----|--------|----------|
 | Romans | 16 | ✅ DONE | Moo, Schreiner |
-| 1 Corinthians | 16 | 🔶 IN PROGRESS (ch 1–8 done) | Fee, Thiselton |
-| 2 Corinthians | 13 | ⬜ TODO | Fee (reuse), Harris (NEW) |
-| Galatians | 6 | ⬜ TODO | Moo (reuse), Bruce (NEW) |
-| Ephesians | 6 | ⬜ TODO | Lincoln (NEW), O'Brien (NEW) |
-| Philippians | 4 | ⬜ TODO | Fee (reuse), Silva (NEW) |
-| Colossians | 4 | ⬜ TODO | O'Brien (reuse), Moo (reuse) |
-| 1 Thessalonians | 5 | ⬜ TODO | Fee (reuse), Wanamaker (NEW) |
-| 2 Thessalonians | 3 | ⬜ TODO | Fee (reuse), Wanamaker (reuse) |
+| 1 Corinthians | 16 | ✅ DONE | Fee, Thiselton |
+| 2 Corinthians | 13 | ✅ DONE | Fee (reuse), Harris |
+| Galatians | 6 | ✅ DONE | Moo (reuse), Bruce |
+| Ephesians | 6 | ✅ DONE | Lincoln, O'Brien |
+| Philippians | 4 | ✅ DONE | Fee (reuse), Silva |
+| Colossians | 4 | ✅ DONE | Moo (reuse), O'Brien (reuse) |
+| 1 Thessalonians | 5 | ✅ DONE | Fee (reuse), Wanamaker |
+| 2 Thessalonians | 3 | ✅ DONE | Fee (reuse), Wanamaker (reuse) |
+| Philemon | 1 | ✅ DONE | O'Brien (reuse), Bruce (reuse) |
 | 1 Timothy | 6 | ⬜ TODO | Mounce (NEW), Towner (NEW) |
 | 2 Timothy | 4 | ⬜ TODO | Mounce (reuse), Towner (reuse) |
 | Titus | 3 | ⬜ TODO | Mounce (reuse), Towner (reuse) |
-| Philemon | 1 | ⬜ TODO | O'Brien (reuse), Bruce (reuse) |
 
-**Total: 13 books, 87 chapters. 1/13 complete, 1 in progress (24/87 chapters, 28%).**
+**Total: 13 books, 87 chapters. 10/13 complete (74/87 chapters, 85%).**
 
 **Session planning for Wave 5:**
 - ~~Session A: Romans ch 1-8~~ ✅
 - ~~Session B: Romans ch 9-16~~ ✅
 - ~~Session C: 1 Corinthians ch 1-8~~ ✅
-- Session D: 1 Corinthians ch 9-16 ← **NEXT**
-- Session E: 2 Corinthians (13ch, 2 batches)
-- Session F: Galatians(6) + Ephesians(6)
-- Session G: Philippians(4) + Colossians(4) + Philemon(1)
-- Session H: 1-2 Thessalonians(8)
-- Session I: 1-2 Timothy(10) + Titus(3)
+- ~~Session D: 1 Corinthians ch 9-16~~ ✅
+- ~~Session E: 2 Corinthians ch 1-13~~ ✅
+- ~~Session F: Galatians(6) + Ephesians(6)~~ ✅
+- ~~Session G: Philippians(4) + Colossians(4) + Philemon(1)~~ ✅
+- ~~Session H: 1-2 Thessalonians(8)~~ ✅
+- Session I: 1-2 Timothy(10) + Titus(3) ← **NEXT**
 
 **Scholar planning notes (Wave 5):**
-- Romans scholars added: Moo (#7898c0, NICNT), Schreiner (#c09868, BECNT)
-- 1 Corinthians scholars added: Fee (#6898b8, NICNT, Pentecostal evangelical), Thiselton (#a088b8, NIGTC, British Anglican)
+- Romans scholars: Moo (#7898c0, NICNT), Schreiner (#c09868, BECNT)
+- 1 Corinthians scholars: Fee (#6898b8, NICNT, Pentecostal evangelical), Thiselton (#a088b8, NIGTC, British Anglican)
+- 2 Corinthians scholars: Harris (#8ab870, NIGTC/EBC)
+- Galatians/Philemon scholars: Bruce (#a8906c, NIGTC)
+- Ephesians scholars: Lincoln (#7ca898, WBC), O'Brien (#b89070, PNTC)
+- Philippians scholars: Silva (#9888a8, BECNT)
+- 1-2 Thessalonians scholars: Wanamaker (#7898a8, NIGTC)
+- **Session I needs:** Mounce (WBC Pastorals), Towner (NICNT Pastorals)
 - NT Epistles use Greek word studies (BDAG conventions) instead of Hebrew (BDB/HALOT)
 - Universal scholars (MacArthur, Calvin, NET Bible) continue as always
 - Robertson covers Gospels/Acts only — not extended to Epistles
@@ -433,4 +439,4 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 ## REFERENCE: SQLite Database
 
-34+ tables including: books (66), chapters (1070), sections (2418), section_panels (17677), chapter_panels (8213), verses (61000+), people (260), scholars (53), places (73), map_stories (28), word_studies (14), timelines (380), synoptic_map (45), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~38MB.
+34+ tables including: books (66), chapters (1120), sections (2565), section_panels (18853), chapter_panels (8574), verses (61000+), people (272), scholars (61), places (73), map_stories (28), word_studies (35), timelines (415), synoptic_map (60), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~39MB.
