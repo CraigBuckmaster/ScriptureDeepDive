@@ -12,14 +12,13 @@ import {
   FlatList,
   Alert,
   StyleSheet,
+  Share,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import * as Clipboard from 'expo-clipboard';
-import { Copy, Trash2, Edit3 } from 'lucide-react-native';
+import { Share as ShareIcon, Trash2 } from 'lucide-react-native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { TagChips } from '../components/TagChips';
 import {
   getCollection,
   getNotesInCollection,
@@ -29,7 +28,6 @@ import {
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection, UserNote } from '../types';
-import { logger } from '../utils/logger';
 
 export default function CollectionDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'More', 'CollectionDetail'>>();
@@ -69,8 +67,11 @@ export default function CollectionDetailScreen() {
     }
 
     const text = lines.join('\n');
-    await Clipboard.setStringAsync(text);
-    Alert.alert('Copied', 'Collection exported to clipboard');
+    try {
+      await Share.share({ message: text, title: collection.name });
+    } catch (err) {
+      // User cancelled or share failed
+    }
   };
 
   const handleDelete = () => {
@@ -141,7 +142,7 @@ export default function CollectionDetailScreen() {
         </View>
         <View style={styles.actions}>
           <TouchableOpacity onPress={handleExport} style={styles.actionButton}>
-            <Copy size={18} color={base.gold} />
+            <ShareIcon size={18} color={base.gold} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleDelete} style={styles.actionButton}>
             <Trash2 size={18} color="#e05a6a" />
