@@ -98,7 +98,7 @@ REGISTRY = [
     ('hebrews',          'Hebrews',        13, 13, 'NT', 'nt'),
     ('james',            'James',           5,  5, 'NT', 'nt'),
     ('1_peter',          '1 Peter',         5,  5, 'NT', 'nt'),
-    ('2_peter',          '2 Peter',         3,  0, 'NT', 'nt'),
+    ('2_peter',          '2 Peter',         3,  3, 'NT', 'nt'),
     ('1_john',           '1 John',          5,  0, 'NT', 'nt'),
     ('2_john',           '2 John',          1,  0, 'NT', 'nt'),
     ('3_john',           '3 John',          1,  0, 'NT', 'nt'),
