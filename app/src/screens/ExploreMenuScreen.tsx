@@ -5,29 +5,28 @@
  * Word Studies, Scholars in a 2×2 grid. All gold borders, no icon squares.
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
-import { getContentStats, type ContentStats } from '../db/content';
 import { base, spacing, radii, fontFamily } from '../theme';
 
 interface Feature {
   title: string;
-  subtitle: (stats: ContentStats | null) => string;
+  subtitle: string;
   screen: string;
 }
 
 const HERO_FEATURES: Feature[] = [
   {
     title: 'People',
-    subtitle: (s) => s ? `${s.peopleCount} biblical figures across eras` : 'Genealogy tree of biblical figures',
+    subtitle: 'Lives that shaped sacred history',
     screen: 'GenealogyTree',
   },
   {
     title: 'Timeline',
-    subtitle: (s) => s ? `${s.timelineCount} events from Creation to Revelation` : 'Events from Creation to Revelation',
+    subtitle: 'The arc of redemption through the ages',
     screen: 'Timeline',
   },
 ];
@@ -35,40 +34,35 @@ const HERO_FEATURES: Feature[] = [
 const GRID_FEATURES: Feature[] = [
   {
     title: 'Map',
-    subtitle: () => 'Places & journeys',
+    subtitle: 'Walk the lands of the Bible',
     screen: 'Map',
   },
   {
     title: 'Parallel Passages',
-    subtitle: () => 'Synoptic texts',
+    subtitle: 'Compare accounts side by side',
     screen: 'ParallelPassage',
   },
   {
     title: 'Word Studies',
-    subtitle: () => 'Hebrew & Greek',
+    subtitle: 'Meaning in the original languages',
     screen: 'WordStudyBrowse',
   },
   {
     title: 'Scholars',
-    subtitle: (s) => s ? `${s.scholarCount} commentators` : 'Commentators across traditions',
+    subtitle: 'Insights from centuries of scholarship',
     screen: 'ScholarBrowse',
   },
   {
     title: 'Prophecy & Typology',
-    subtitle: (s) => s ? `${s.prophecyChainCount} fulfillment chains` : 'Across the canon',
+    subtitle: 'Trace fulfillment from promise to completion',
     screen: 'ProphecyBrowse',
   },
 ];
 
 export default function ExploreMenuScreen() {
   const navigation = useNavigation<any>();
-  const [stats, setStats] = useState<ContentStats | null>(null);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
-
-  useEffect(() => {
-    getContentStats().then(setStats);
-  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -84,7 +78,7 @@ export default function ExploreMenuScreen() {
             style={styles.heroCard}
           >
             <Text style={styles.heroTitle}>{f.title}</Text>
-            <Text style={styles.heroSubtitle}>{f.subtitle(stats)}</Text>
+            <Text style={styles.heroSubtitle}>{f.subtitle}</Text>
           </TouchableOpacity>
         ))}
 
@@ -98,7 +92,7 @@ export default function ExploreMenuScreen() {
               style={styles.gridCard}
             >
               <Text style={styles.gridTitle}>{f.title}</Text>
-              <Text style={styles.gridSubtitle}>{f.subtitle(stats)}</Text>
+              <Text style={styles.gridSubtitle}>{f.subtitle}</Text>
             </TouchableOpacity>
           ))}
         </View>
