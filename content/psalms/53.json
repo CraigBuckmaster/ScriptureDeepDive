@@ -66,14 +66,19 @@
   "chapter_panels": {
     "ppl": [
       {
-        "name": "God",
-        "role": "Key biblical figure",
-        "text": "\"  \"God scattered the bones of those who attacked you…"
+        "name": "God (Elohim)",
+        "role": "The one who looks down from heaven to find understanding (vv.2-3)",
+        "text": "This is a near-duplicate of Psalm 14 with one significant change: Elohim replaces Yahweh throughout, and verse 5 diverges dramatically. Where Psalm 14:5-6 mentions the righteous as refuge, Psalm 53:5 describes God scattering the bones of besieging enemies — suggesting a specific military deliverance. The Elohistic revision may reflect liturgical use in northern Israel or a theological emphasis on God's universal sovereignty over his covenant-specific name."
       },
       {
-        "name": "Messiah",
-        "role": "Key biblical figure",
-        "text": "The longing for the Messiah persists through the Psalter…"
+        "name": "The Fool (nabal)",
+        "role": "Practical atheist whose denial corrupts behavior (v.1)",
+        "text": "As in Psalm 14, the nabal denies God 'in his heart' — a volitional moral rejection, not a philosophical position. The corruption flows from belief to behavior: 'they are corrupt, and their ways are vile' (v.1). The Hebrew connects nabal to withering and decay (cf. Nabal in 1 Sam 25:25, whose wife says 'he is just like his name — his name means Fool'). The dual placement of this psalm (14 and 53) in the Psalter underscores its importance as a diagnosis of the human condition."
+      },
+      {
+        "name": "David",
+        "role": "Attributed author voicing the Mahalath tune (superscription)",
+        "text": "The unique superscription adds 'according to Mahalath' — possibly a melancholy tune (related to chalah, 'to be sick/weak') or a musical instrument. David's longing for salvation 'out of Zion' (v.6) makes God's dwelling place the source of deliverance, connecting the psalm's universal diagnosis of human sin to Israel's particular hope in God's presence at the temple."
       }
     ],
     "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Oh, that salvation for Israel would come out of Zion! When God restores his people, let Jacob rejoice and Israel be glad!</td></tr><tr><td class=\"t-label\">ESV</td><td>Oh, that salvation for Israel would come out of Zion! When God restores the fortunes of his people, let Jacob rejoice, let Israel be glad.</td></tr><tr><td class=\"t-label\">NIV</td><td>God looks down from heaven on all mankind to see if there are any who understand, any who seek God.</td></tr><tr><td class=\"t-label\">ESV</td><td>God looks down from heaven on the children of man to see if there are any who understand, who seek after God.</td></tr>",
