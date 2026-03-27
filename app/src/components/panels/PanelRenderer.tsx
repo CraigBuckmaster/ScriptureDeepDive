@@ -32,6 +32,7 @@ import { ReceptionPanel } from './ReceptionPanel';
 import { ThreadingPanel } from './ThreadingPanel';
 import { TextualPanel } from './TextualPanel';
 import { DebatePanel } from './DebatePanel';
+import { DiscoursePanel } from './DiscoursePanel';
 
 interface Props {
   panelType: string;
@@ -104,6 +105,8 @@ export function PanelRenderer({
       return <TextualPanel entries={Array.isArray(data) ? data : []} />;
     case 'debate':
       return <DebatePanel entries={Array.isArray(data) ? data : []} onScholarPress={onScholarPress} />;
+    case 'discourse':
+      return <DiscoursePanel data={data} />;
 
     default:
       // Scholar commentary panels (mac, calvin, sarna, etc.)

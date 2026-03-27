@@ -18,6 +18,7 @@ export { ReceptionPanel } from './ReceptionPanel';
 export { ThreadingPanel } from './ThreadingPanel';
 export { TextualPanel } from './TextualPanel';
 export { DebatePanel } from './DebatePanel';
+export { DiscoursePanel } from './DiscoursePanel';
 
 // Dispatch
 export { PanelRenderer } from './PanelRenderer';
