@@ -82,6 +82,7 @@ This is a scholarly tool. All generated content must be written in an expository
 - **Merge conflicts on scripture.db:** When `git pull --rebase` conflicts on the binary scripture.db, resolve by taking either side (`git checkout --theirs scripture.db`) and then rebuilding (`python3 _tools/build_sqlite.py`), then `git add scripture.db` and `git rebase --continue`. The DB is always regenerated from JSON, so the binary doesn't matter.
 - **Merge conflicts on scholar-data.json:** When upstream adds scholars concurrently, resolve by loading the upstream version (`git show HEAD:content/meta/scholar-data.json > /tmp/scholar_upstream.json`), then appending any missing scholars programmatically. Never hand-edit conflict markers in JSON.
 - **GIT_EDITOR for rebase:** Container has no EDITOR set. Use `GIT_EDITOR="true" git rebase --continue` to accept the existing commit message.
+- **EAS update requires DB copy:** The `scripture.db` at repo root is the source of truth, but the app bundles from `app/assets/scripture.db`. You MUST run `npm run update` (or `npm run setup` + `eas update`) from the `app/` directory after every content change. Without this, users see stale data even after git push. The pre-update script will warn loudly if the DBs don't match.
 
 ---
 
@@ -302,7 +303,14 @@ Validated: validate.py {PASS} passed, {FAIL} failed (stale counts).
 SQLite: {SIZE}MB."
 
 git push origin master
+
+# 8. Deploy OTA update (CRITICAL — don't skip!)
+cd app
+npm run update             # Verifies DB, copies to assets/, runs eas update
+cd ..
 ```
+
+> ⚠️ **CRITICAL:** Step 8 is required for changes to appear in the app. The `scripture.db` at repo root is NOT automatically bundled — it must be copied to `app/assets/` first. `npm run update` handles this automatically and will warn if the DB was stale.
 
 ### STEP 6a: AUDIT FLAG SYSTEM
 
