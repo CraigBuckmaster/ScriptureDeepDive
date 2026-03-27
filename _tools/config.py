@@ -1491,3 +1491,59 @@ BOOK_META['hebrews'] = {
 
 COMMENTATOR_SCOPE['lane'] = ['hebrews']
 COMMENTATOR_SCOPE['cockerill'] = ['hebrews']
+
+# ── Wave 6: James ────────────────────────────────────────────
+
+SCHOLAR_REGISTRY.append(('moo', 'moo', 'Moo', 'moo'))
+SCHOLAR_REGISTRY.append(('mccartney', 'mccartney', 'McCartney', 'mccartney'))
+
+BOOK_META['james'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> James, traditionally identified as James the brother of Jesus (Galatians 1:19), who became the leader of the Jerusalem church (Acts 15:13; 21:18). He was known as 'James the Just' for his rigorous piety and was martyred c. AD 62 according to Josephus. Some scholars question this identification, citing the letter's polished Greek, but a Palestinian Jew writing to diaspora communities would naturally employ competent Greek, possibly with scribal assistance.\\n\\n<strong>When written:</strong> If by James the Lord's brother, before AD 62 (his martyrdom). Many scholars date it c. AD 45–49, making it possibly the earliest NT document—written before the Jerusalem Council (AD 49) resolved the Gentile question, which would explain why the letter addresses only Jewish Christians and does not mention Gentile issues.\\n\\n<strong>What prompted it:</strong> James writes to 'the twelve tribes in the Dispersion' (1:1)—Jewish Christians scattered throughout the Roman world, likely from the Jerusalem church's dispersion after Stephen's martyrdom (Acts 8:1; 11:19). They face trials, economic oppression from wealthy landowners, and the temptation to a faith that is all talk and no action. James calls them back to practical righteousness: authentic faith produces works, controls the tongue, resists worldliness, and cares for the poor. The letter is wisdom literature for the church—a Christian Proverbs.",
+    'vhl_places': ['Jerusalem', 'Dispersion'],
+    'vhl_people': ['James', 'Abraham', 'Rahab', 'Job', 'Elijah', 'Jesus'],
+    'vhl_key': ['faith', 'works', 'wisdom', 'trials', 'temptation', 'double-minded', 'tongue', 'rich', 'poor', 'law', 'royal law', 'perfect', 'patience', 'endurance', 'prayer', 'anointing', 'healing', 'confess', 'righteousness', 'judge', 'humble', 'proud', 'world', 'friendship with the world', 'pure religion', 'orphans', 'widows', 'mirror', 'doer of the word', 'bridle', 'fruit', 'peace', 'quarrels'],
+    'vhl_time': ['last days', 'coming of the Lord', 'the Judge is standing at the door'],
+}
+
+COMMENTATOR_SCOPE['moo'] = ['james']
+COMMENTATOR_SCOPE['mccartney'] = ['james']
+
+# ── Wave 6: 1-2 Peter, Jude ──────────────────────────────────
+
+SCHOLAR_REGISTRY.append(('schreiner', 'schreiner', 'Schreiner', 'schreiner'))
+SCHOLAR_REGISTRY.append(('jobes', 'jobes', 'Jobes', 'jobes'))
+SCHOLAR_REGISTRY.append(('davids', 'davids', 'Davids', 'davids'))
+SCHOLAR_REGISTRY.append(('green', 'green', 'Green', 'green'))
+
+BOOK_META['1_peter'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> The apostle Peter, writing from 'Babylon' (5:13)—almost certainly a cryptic reference to Rome. The letter's polished Greek has led some to question Petrine authorship, but 5:12 names Silvanus (Silas) as the secretary, which would explain the style. Peter writes as an eyewitness of Christ's sufferings (5:1) and a fellow elder.\\n\\n<strong>When written:</strong> c. AD 62–64, during Nero's reign but before the outbreak of systematic persecution (AD 64). The suffering described is social ostracism and slander, not state-sponsored violence.\\n\\n<strong>What prompted it:</strong> Peter writes to Christians scattered across five Roman provinces in Asia Minor (1:1)—predominantly Gentile converts facing hostility from their pagan neighbors. They are 'elect exiles' in a hostile world. Peter encourages them to stand firm, to live holy lives that silence critics, and to follow Christ's example of patient suffering. The letter is profoundly pastoral: suffering is not meaningless but participates in Christ's own path to glory.",
+    'vhl_places': ['Pontus', 'Galatia', 'Cappadocia', 'Asia', 'Bithynia', 'Babylon', 'Rome'],
+    'vhl_people': ['Peter', 'Silvanus', 'Mark', 'Sarah', 'Noah', 'Jesus'],
+    'vhl_key': ['elect', 'exiles', 'dispersion', 'living hope', 'inheritance', 'salvation', 'faith', 'trial', 'tested', 'precious', 'living stone', 'royal priesthood', 'holy nation', 'submit', 'suffering', 'follow', 'example', 'shepherd', 'overseer', 'humble', 'resist', 'devil', 'grace', 'glory', 'called', 'sanctify', 'baptism', 'conscience'],
+    'vhl_time': ['last times', 'the end of all things is at hand', 'when the Chief Shepherd appears'],
+}
+
+BOOK_META['2_peter'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> The apostle Peter (1:1), who explicitly claims eyewitness status at the Transfiguration (1:16–18) and references his first letter (3:1). The style differs markedly from 1 Peter, leading many scholars to question authenticity—though differences may reflect a different secretary, subject matter, or late-life composition. The letter claims to be Peter's final testament before his death (1:14).\\n\\n<strong>When written:</strong> If authentic, c. AD 64–67, shortly before Peter's martyrdom under Nero. Some date it later (AD 80–110) if pseudonymous.\\n\\n<strong>What prompted it:</strong> False teachers have infiltrated the churches, denying Christ's return and promoting moral license. Peter writes urgently to combat this threat, grounding his warning in apostolic authority, OT precedent (fallen angels, Flood, Sodom), and the certainty of divine judgment. The letter is an impassioned defense of apostolic teaching against proto-Gnostic error.",
+    'vhl_places': ['Mount of Transfiguration'],
+    'vhl_people': ['Peter', 'Paul', 'Noah', 'Lot', 'Balaam', 'Jesus'],
+    'vhl_key': ['knowledge', 'godliness', 'divine power', 'promises', 'divine nature', 'virtue', 'self-control', 'steadfastness', 'brotherly affection', 'love', 'false teachers', 'destructive heresies', 'deny', 'judgment', 'ungodly', 'flood', 'Sodom', 'Gomorrah', 'scoffers', 'promise', 'coming', 'day of the Lord', 'new heavens', 'new earth', 'patience', 'salvation'],
+    'vhl_time': ['last days', 'day of judgment', 'day of the Lord', 'one day is as a thousand years'],
+}
+
+BOOK_META['jude'] = {
+    'is_nt': True,
+    'auth': "<strong>Author:</strong> Jude, 'a servant of Jesus Christ and brother of James' (v. 1)—almost certainly the half-brother of Jesus (Mark 6:3). Like James, he identifies himself by his relationship to James rather than to Jesus, demonstrating characteristic humility.\\n\\n<strong>When written:</strong> c. AD 65–80. The relationship to 2 Peter is debated; most scholars believe 2 Peter draws on Jude, though the reverse is possible. The false teaching described is similar to 2 Peter but more developed.\\n\\n<strong>What prompted it:</strong> Jude intended to write about salvation but was compelled to address an urgent crisis: false teachers have 'crept in unnoticed' (v. 4), perverting grace into license and denying Christ. Jude's response is fierce and uncompromising, drawing on OT examples (Cain, Balaam, Korah), Jewish apocalyptic tradition (1 Enoch, Assumption of Moses), and vivid metaphors to expose the intruders and urge the faithful to contend for the faith.",
+    'vhl_places': ['Sodom', 'Gomorrah', 'Egypt'],
+    'vhl_people': ['Jude', 'James', 'Jesus', 'Michael', 'Moses', 'Cain', 'Balaam', 'Korah', 'Enoch', 'Adam'],
+    'vhl_key': ['contend', 'faith', 'ungodly', 'grace', 'license', 'deny', 'judgment', 'angels', 'chains', 'darkness', 'eternal fire', 'dreamers', 'defile', 'reject authority', 'blaspheme', 'woe', 'grumblers', 'malcontents', 'scoffers', 'worldly', 'keep', 'mercy', 'save', 'snatch', 'fire', 'doxology', 'glory', 'majesty', 'dominion', 'authority'],
+    'vhl_time': ['last time', 'eternal fire', 'before all time', 'now and forever'],
+}
+
+COMMENTATOR_SCOPE['schreiner'] = ['1_peter', '2_peter']
+COMMENTATOR_SCOPE['jobes'] = ['1_peter']
+COMMENTATOR_SCOPE['davids'] = ['2_peter', 'jude']
+COMMENTATOR_SCOPE['green'] = ['jude', '2_peter']

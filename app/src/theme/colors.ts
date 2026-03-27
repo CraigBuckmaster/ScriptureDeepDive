@@ -126,6 +126,12 @@ export const scholars: Record<string, string> = {
   towner: '#78a890',
   lane: '#b0c0b0',
   cockerill: '#a0a8c0',
+  moo: '#8fa89f',
+  mccartney: '#9f8fa8',
+  schreiner: '#a0b8a8',
+  jobes: '#b8a8b0',
+  davids: '#a8b0b8',
+  green: '#b0b8a8',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────

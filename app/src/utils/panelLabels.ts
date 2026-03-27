@@ -107,6 +107,12 @@ const SCHOLAR_LABELS: Record<string, string> = {
   towner: 'Towner',
   lane: 'Lane',
   cockerill: 'Cockerill',
+  moo: 'Moo',
+  mccartney: 'McCartney',
+  schreiner: 'Schreiner',
+  jobes: 'Jobes',
+  davids: 'Davids',
+  green: 'Green',
 };
 
 // ── Public API ──────────────────────────────────────────────────────
