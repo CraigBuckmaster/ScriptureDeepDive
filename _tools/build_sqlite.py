@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 """
-build_sqlite.py — Assemble all JSON content into scripture.db.
+build_sqlite.py — Compile all JSON content into scripture.db.
 
-Phase 0F: Creates the full SQLite schema from the React Native plan
-and populates it from the JSON files produced by Phases 0A-0E.
+Reads all content/{book}/{ch}.json files and content/meta/*.json reference
+data, then builds a single SQLite database that the React Native app bundles.
+
+This script is run after every content change (enrichment, new scholars,
+timeline updates, etc.) as part of the standard pipeline:
+    python3 _tools/validate.py       # Check JSON integrity
+    python3 _tools/build_sqlite.py   # ← This script
+    python3 _tools/validate_sqlite.py  # Verify DB integrity
+
+The DB version is auto-incremented on each build and synced to the app's
+database.ts so the app knows to replace the old DB on device.
 
 Usage:
     python3 _tools/build_sqlite.py
@@ -16,50 +25,61 @@ META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
 APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
-
-# Bump this whenever schema or content changes require a DB replacement on device.
-# This is auto-incremented by the build script — do not edit manually.
+# Auto-incremented on every build. Triggers a full DB replacement on user devices
+# when the app detects a version mismatch. This value must stay in sync with
+# EXPECTED_DB_VERSION in app/src/db/database.ts (this function handles that).
 DB_VERSION = '0.14'
 
 
 def bump_db_version():
-    """Auto-increment DB_VERSION in this file and sync to app/src/db/database.ts."""
+    """Auto-increment DB_VERSION in this file and sync to app/src/db/database.ts.
+
+    How it works:
+      1. Parses current DB_VERSION (e.g. '0.14' -> major=0, minor=14)
+      2. Increments minor (-> '0.15')
+      3. Rewrites the DB_VERSION line in THIS file (build_sqlite.py)
+      4. Rewrites the EXPECTED_DB_VERSION line in database.ts to match
+      5. Updates the global DB_VERSION so the current build uses the new value
+    """
     global DB_VERSION
-    
-    # Parse current version (e.g., "0.13" -> major=0, minor=13)
+
+    # Parse current version: "0.14" -> major=0, minor=14
     parts = DB_VERSION.split('.')
     if len(parts) == 2:
         major, minor = int(parts[0]), int(parts[1])
         new_version = f"{major}.{minor + 1}"
     else:
-        # Fallback: just append .1
         new_version = DB_VERSION + ".1"
-    
-    # Update this file (build_sqlite.py)
-    build_script = Path(__file__)
+
+    old_version = DB_VERSION
+
+    # Rewrite the DB_VERSION = '...' line in this file (build_sqlite.py)
+    build_script = Path(__file__).resolve()
     content = build_script.read_text()
     content = re.sub(
-        r"DB_VERSION = '0.14']+'",
-        f"DB_VERSION = '0.14'",
-        content
+        r"DB_VERSION = '[^']+'",
+        f"DB_VERSION = '{new_version}'",
+        content,
+        count=1  # Only replace the first occurrence (the assignment, not usage)
     )
     build_script.write_text(content)
-    
-    # Update app/src/db/database.ts
+
+    # Sync to app/src/db/database.ts so the app knows to replace the old DB
     if APP_DB_TS.exists():
         ts_content = APP_DB_TS.read_text()
         ts_content = re.sub(
-            r"const EXPECTED_DB_VERSION = '0.14']+';",
-            f"const EXPECTED_DB_VERSION = '0.14';",
+            r"const EXPECTED_DB_VERSION = '[^']+';",
+            f"const EXPECTED_DB_VERSION = '{new_version}';",
             ts_content
         )
         APP_DB_TS.write_text(ts_content)
-        print(f"  📦 DB version: {DB_VERSION} → {new_version} (auto-incremented)")
+        print(f"  DB version: {old_version} -> {new_version} (synced to database.ts)")
     else:
-        print(f"  ⚠️  DB version: {DB_VERSION} → {new_version} (database.ts not found)")
-    
+        print(f"  DB version: {old_version} -> {new_version} (database.ts not found)")
+
     DB_VERSION = new_version
     return new_version
+
 
 
 # ---------------------------------------------------------------------------
@@ -326,7 +346,19 @@ def populate_books(cur):
 
 
 def populate_chapters(cur):
-    """Populate chapters, sections, section_panels, chapter_panels, vhl_groups from extracted chapter JSONs."""
+    """Populate chapters, sections, section_panels, chapter_panels, and vhl_groups.
+
+    Walks every content/{book}/*.json file and inserts the nested data:
+      book_dir/
+        └── {ch}.json
+              ├── chapter row (title, subtitle, deep-links)
+              ├── sections[] → section rows (header, verse range)
+              │     └── panels{} → section_panel rows (heb, ctx, cross, scholar notes)
+              ├── chapter_panels{} → chapter_panel rows (lit, themes, ppl, tx, etc.)
+              └── vhl_groups[] → vhl_group rows (highlighted words by category)
+
+    Skips content/meta/ and content/verses/ (those are handled by other functions).
+    """
     chapter_count = 0
     section_count = 0
     sec_panel_count = 0
@@ -591,13 +623,25 @@ def populate_cross_refs(cur):
 
 
 def populate_timelines(cur):
+    """Populate the timelines table from timelines.json.
+
+    timelines.json contains 4 separate arrays that all go into one table:
+      events[]          → biblical events (prefix: evt_)
+      book_events[]     → book authorship dates (prefix: bk_)
+      timeline_people[] → people with date ranges (prefix: ppl_)
+      world_events[]    → secular history markers (prefix: wld_)
+
+    IDs are prefixed by category because the same name can appear in multiple
+    arrays (e.g. 'deborah' as both an event and a person). The prefix makes
+    each row's primary key unique while the 'category' column allows filtering.
+
+    Also stores era metadata (hex colors, names, ranges) in genealogy_config
+    as key-value pairs for the timeline UI to read.
+    """
     data = _load_json(META / 'timelines.json')
     count = 0
 
-    # Some IDs collide across categories (e.g., 'deborah' exists as both
-    # an event and a person). Prefix with category to make unique.
-
-    # Biblical events
+    # --- Biblical events (e.g. "The Exodus", "Fall of Jerusalem") ---
     for ev in data.get('events', []):
         tid = f"evt_{ev['id']}"
         cur.execute(
@@ -611,7 +655,7 @@ def populate_timelines(cur):
         )
         count += 1
 
-    # Book authorship events
+    # --- Book authorship events (e.g. "Genesis written", "Romans written") ---
     for bk in data.get('book_events', []):
         tid = f"bk_{bk['id']}"
         cur.execute(
@@ -625,7 +669,7 @@ def populate_timelines(cur):
         )
         count += 1
 
-    # Timeline people
+    # --- Timeline people (e.g. "Abraham ~2000 BC", "David ~1010 BC") ---
     for tp in data.get('timeline_people', []):
         tid = f"ppl_{tp['id']}"
         cur.execute(
@@ -637,7 +681,7 @@ def populate_timelines(cur):
         )
         count += 1
 
-    # World events
+    # --- World events (e.g. "Fall of Rome", "Cyrus conquers Babylon") ---
     for we in data.get('world_events', []):
         tid = f"wld_{we['id']}"
         cur.execute(
@@ -649,7 +693,10 @@ def populate_timelines(cur):
         )
         count += 1
 
-    # Store era metadata in genealogy_config (reuse the key-value table)
+    # --- Era metadata (colors, names, date ranges) stored in genealogy_config ---
+    # The genealogy_config table is a generic key-value store. Timeline era data
+    # is stored here with 'timeline_' prefixed keys so the app can render era
+    # labels, colors, and filter ranges without hardcoding them.
     for key in ('era_hex', 'era_names', 'era_ranges', 'era_config'):
         if key in data:
             cur.execute(

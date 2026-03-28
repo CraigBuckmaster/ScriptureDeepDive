@@ -1,9 +1,24 @@
 #!/usr/bin/env python3
 """
-validate.py — Comprehensive content JSON validator.
+validate.py — Content JSON validator for Companion Study.
 
-Checks all content/{book}/{ch}.json files for schema conformance,
-cross-referential integrity, and completeness.
+Checks all content/{book}/{ch}.json files and content/meta/*.json reference
+data for schema conformance, cross-referential integrity, and completeness.
+
+Validation sections:
+  1. CHAPTER SCHEMA    — Required keys, section structure, panel types
+  2. CROSS-REFERENCES  — Scholar scopes → valid books, people parent refs → valid IDs
+  3. COMPLETENESS      — 66 live books, correct chapter counts
+  4. PANEL DISTRIBUTION — Section/chapter panel type frequency counts
+  5. FEATURE META      — Prophecy chains, concepts, difficult passages schema
+
+Exit codes:
+  0 = all checks passed
+  1 = one or more checks failed
+
+Note: Count-mismatch failures (e.g. "expected 66 live books") are expected
+when counts drift from hardcoded values. Only schema, panel, cross-ref, and
+parent-ref failures indicate real problems.
 
 Usage:
     python3 _tools/validate.py
@@ -22,6 +37,13 @@ failed = 0
 
 
 def check(label, condition, detail=''):
+    """Record a pass/fail check. Only prints on failure to keep output clean.
+
+    Args:
+        label: Human-readable description of what's being checked
+        condition: True = pass, False = fail
+        detail: Optional extra info shown on failure (e.g. "got 5, expected 10")
+    """
     global passed, failed
     if condition:
         passed += 1
@@ -37,6 +59,10 @@ def check(label, condition, detail=''):
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    """Run all content validation checks and print a summary.
+
+    Returns 0 if all checks pass, 1 if any fail.
+    """
     global passed, failed
 
     print("=" * 60)

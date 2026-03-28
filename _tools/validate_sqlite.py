@@ -1,9 +1,26 @@
 #!/usr/bin/env python3
 """
-validate_sqlite.py — Comprehensive integrity checks for scripture.db.
+validate_sqlite.py — Integrity checker for scripture.db.
 
-Phase 0G: Validates completeness, referential integrity, content quality,
-FTS5 search, and cross-book spot checks.
+Runs after build_sqlite.py to verify the database is complete, referentially
+consistent, and has reasonable content quality.
+
+Validation sections:
+  1. COMPLETENESS          — Row counts, panel coverage, verse counts, deep-links
+  2. REFERENTIAL INTEGRITY — FK relationships (chapters→books, sections→chapters, etc.)
+  3. CONTENT QUALITY       — No empty panels, valid JSON, valid parent refs, VHL sanity
+  4. FTS5 SEARCH           — Full-text search smoke tests (verses + people)
+  5. CROSS-BOOK SPOT CHECKS — Specific chapters verified for expected panel types
+
+IMPORTANT: Many checks use hardcoded expected counts (e.g. "282 people", "51 scholars").
+These counts reflect the current state of the content and WILL drift as content is
+enriched. A count-mismatch failure does NOT necessarily mean the data is broken —
+it may just mean the expected count needs updating. Referential integrity and content
+quality checks (sections 2-3) are the ones that catch real problems.
+
+Exit codes:
+  0 = all checks passed
+  1 = one or more checks failed
 
 Usage:
     python3 _tools/validate_sqlite.py
@@ -20,6 +37,7 @@ warnings = 0
 
 
 def check(label, condition, detail=''):
+    """Record a pass/fail check. Prints result with ✅ or ❌ prefix."""
     global passed, failed
     if condition:
         passed += 1
@@ -33,6 +51,7 @@ def check(label, condition, detail=''):
 
 
 def warn(label, detail=''):
+    """Record a non-fatal warning. Does not affect pass/fail counts."""
     global warnings
     warnings += 1
     print(f"  ⚠️  {label}" + (f" — {detail}" if detail else ''))
@@ -55,6 +74,10 @@ def q1(cur, sql, params=()):
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    """Run all DB integrity checks against scripture.db.
+
+    Returns 0 if all checks pass, 1 if any fail.
+    """
     if not DB_PATH.exists():
         print(f"ERROR: {DB_PATH} not found. Run build_sqlite.py first.")
         sys.exit(1)
@@ -71,17 +94,26 @@ def main():
     # =========================================================
     print("\n--- 1. COMPLETENESS ---")
 
-    # Books
+    # NOTE ON HARDCODED COUNTS:
+    # The expected counts below (282 people, 51 scholars, etc.) reflect a known-good
+    # snapshot. They WILL drift as content is enriched — a count mismatch just means
+    # the expected value here needs updating, not that the data is broken.
+    # The checks that catch real problems are in sections 2 (referential integrity)
+    # and 3 (content quality). Update these counts after intentional content changes.
+
+    # Books — 66 is the Protestant biblical canon, this should never change
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
     check("66 live books", live == 66, f"got {live}")
     check("0 pending books", pending == 0, f"got {pending}")
 
-    # Chapters
+    # Chapters — 1189 is the total across all 66 books (Protestant canon)
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
     check("1189 chapters", ch_count == 1189, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
+    # These chapters are legitimately short enough that 1 section is correct:
+    #   Jeremiah 45 (5 verses), Jeremiah 47 (7 verses), Malachi 4 (6 verses)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
     lonely = q(cur,
         "SELECT c.id, COUNT(s.id) as cnt FROM chapters c "
@@ -123,7 +155,7 @@ def main():
         check(f"{book} NIV = {expected} verses", actual == expected,
               f"got {actual}")
 
-    # Meta tables
+    # Meta tables — these counts drift as content is enriched. Update after changes.
     check("282 people", q1(cur, "SELECT COUNT(*) FROM people") == 282)
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
@@ -131,7 +163,8 @@ def main():
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
     check("53+ synoptic entries", q1(cur, "SELECT COUNT(*) FROM synoptic_map") >= 53)
 
-    # VHL groups: 5 per chapter = 4395
+    # VHL groups: 5 groups per chapter (places, people, time, key, divine) × 879 chapters
+    # This count changes only if chapters are added/removed, which shouldn't happen now.
     vhl_count = q1(cur, "SELECT COUNT(*) FROM vhl_groups")
     check("4395 VHL groups", vhl_count == 4395, f"got {vhl_count}")
 
@@ -141,7 +174,7 @@ def main():
         "WHERE timeline_link_event IS NOT NULL OR map_story_link_id IS NOT NULL")
     check("51+ deep-linked chapters", dl_count >= 40, f"got {dl_count}")
 
-    # Cross-ref threads
+    # Cross-ref threads — update this count when Batch 13 (thread expansion) ships
     thread_count = q1(cur, "SELECT COUNT(*) FROM cross_ref_threads")
     check("31 cross-ref threads", thread_count == 31, f"got {thread_count}")
 
@@ -152,7 +185,7 @@ def main():
     check("All threads have 3+ steps", len(short_threads) == 0,
           f"{len(short_threads)} threads have <3 steps")
 
-    # Timelines
+    # Timelines — 543 = 203 events + 66 books + 250 people + 24 world. Update after enrichment.
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
     check("543 timeline entries", tl_count == 543, f"got {tl_count}")
 
@@ -356,13 +389,15 @@ def main():
         "WHERE s.chapter_id = 'matthew_1'")
     check("Matthew 1 has section panels", mt1_sp and mt1_sp > 5, f"got {mt1_sp}")
 
-    # Spine/satellite people
+    # Spine = people in the main genealogy tree (Adam→Jesus), satellite = everyone else.
+    # The spine count (37) is fixed by the genealogy tree structure.
+    # The satellite count drifts as people are added during enrichment — update as needed.
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
     check("245 satellite people", sat == 245, f"got {sat}")
 
-    # Adam and Jesus both spine
+    # Sanity: the two endpoints of the genealogy tree must always be spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
     jesus_type = q1(cur, "SELECT type FROM people WHERE id='jesus'")
     check("Adam is spine", adam_type == 'spine')
