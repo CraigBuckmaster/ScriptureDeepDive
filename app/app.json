@@ -23,6 +23,7 @@
       "buildNumber": "1",
       "infoPlist": {
         "UIBackgroundModes": [
+          "audio",
           "audio"
         ]
       },
@@ -60,7 +61,7 @@
       "expo-sqlite"
     ],
     "updates": {
-      "url": "https://u.expo.dev/",
+      "url": "https://u.expo.dev/105f31ba-3cfb-4d35-8509-4abbe6ab132d",
       "enabled": true,
       "fallbackToCacheTimeout": 0
     },
@@ -68,7 +69,10 @@
       "policy": "appVersion"
     },
     "extra": {
-      "eas": {}
-    }
+      "eas": {
+        "projectId": "105f31ba-3cfb-4d35-8509-4abbe6ab132d"
+      }
+    },
+    "owner": "skahz"
   }
 }
