@@ -45,10 +45,10 @@ export default function TimelineScreen() {
   // Filter by active categories
   const categoryFiltered = useMemo(() => {
     const cats = new Set<string>();
-    if (showEvents) cats.add('event');
+    if (showEvents) { cats.add('event'); cats.add('book'); }
     if (showPeople) cats.add('person');
     if (showWorld) cats.add('world');
-    if (cats.size === 0) cats.add('event'); // fallback
+    if (cats.size === 0) { cats.add('event'); cats.add('book'); } // fallback
     return events.filter((e) => cats.has(e.category));
   }, [events, showEvents, showPeople, showWorld]);
 
@@ -79,10 +79,15 @@ export default function TimelineScreen() {
 
   const ticks = useMemo(() => computeTickMarks(), []);
 
-  // Deep-link
+  // Deep-link — chapter JSON stores raw IDs (e.g. "creation") while
+  // the timelines table uses prefixed IDs (e.g. "evt_creation", "bk_book-genesis").
   useEffect(() => {
     if (initialEventId && positioned.length) {
-      const evt = positioned.find((e) => e.id === initialEventId);
+      const evt = positioned.find((e) =>
+        e.id === initialEventId ||
+        e.id === `evt_${initialEventId}` ||
+        e.id === `bk_${initialEventId}`
+      );
       if (evt) setSelectedEvent(evt);
     }
   }, [initialEventId, positioned.length]);

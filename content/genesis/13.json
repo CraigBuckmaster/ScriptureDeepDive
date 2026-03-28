@@ -5,7 +5,10 @@
   "chapter_num": 13,
   "title": "Genesis 13",
   "subtitle": "Abram and Lot Separate; the Land Promise Renewed",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "call-abram",
+    "text": "See on Timeline — Call of Abram"
+  },
   "map_story_link": {
     "story_id": "abram-call",
     "text": "See on Map — Abraham's Call"
