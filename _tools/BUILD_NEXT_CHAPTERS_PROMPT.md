@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-27 — Wave 5 COMPLETE. Wave 6 in progress: Hebrews 1–7 done (Session J pt1). Next: Hebrews 8–13 (Session J pt2), then James, 1-2 Peter, 1-3 John, Jude.
+> **Last updated:** 2026-03-28 — Waves 1–6 COMPLETE (65 live books). Wave 7 in progress: Revelation 1–15 done. Next: Revelation 16–22 (7 chapters remaining) + finalization (people, timelines, is_live).
 
 ---
 
@@ -37,18 +37,46 @@ pip install beautifulsoup4 --break-system-packages 2>/dev/null
 ### BATCH_TARGET (edit this section to override auto-detection)
 
 Leave blank to auto-detect the next book/chapters in canonical build order:
-- **Book:** hebrews (Session J pt2 — completing Hebrews)
-- **Chapters:** Heb 8–13 (6 chapters remaining)
+- **Book:** revelation (Wave 7 — completing Revelation, THE FINAL BOOK)
+- **Chapters:** Rev 16–22 (7 chapters remaining)
 - **Mode:** continue_book
-- **Note:** Infrastructure already exists (Lane WBC, Cockerill NICNT, REGISTRY, BOOK_META, colors, labels, scholar-data all in place). Chapters 1–7 are committed. After completing ch 8–13: add people entries (Melchizedek if not exists, etc.), add timeline events, update REGISTRY live count from 0→13, set is_live=true in books.json, validate, build, commit.
+- **Note:** Infrastructure fully in place — Beale (#c0a0b8, NIGTC), Osborne (#a8b0b8, BECNT) already added to REGISTRY, COMMENTATOR_SCOPE, BOOK_META, colors, labels, scholar-data. Chapters 1–15 are committed. After completing ch 16–22: add people entries (John, Antipas, etc.), add timeline events, update REGISTRY live count from 0→22, set is_live=true in books.json, validate, build, commit. This completes ALL 66 books.
+
+**Chapter plan for remaining 7 chapters:**
+
+| Ch | Title | Sections | Key Content |
+|---|---|---|---|
+| 16 | The Seven Bowls | 3 | First four bowls (1-9), Fifth & sixth bowls (10-16), Seventh bowl (17-21) |
+| 17 | Babylon the Great | 2 | Vision of the prostitute (1-6), Angel's interpretation (7-18) |
+| 18 | The Fall of Babylon | 3 | Announcement of fall (1-8), Three laments (9-19), Heaven rejoices (20-24) |
+| 19 | The Rider on the White Horse | 3 | Heavenly hallelujahs (1-5), Marriage supper (6-10), Christ conquers (11-21) |
+| 20 | The Millennium and Final Judgment | 3 | Thousand years (1-6), Satan's defeat (7-10), Great white throne (11-15) |
+| 21 | The New Heaven and New Earth | 3 | New creation (1-8), New Jerusalem described (9-21), No temple needed (22-27) |
+| 22 | The River of Life and Final Words | 3 | River & tree of life (1-5), Testimony & warnings (6-15), Invitation & benediction (16-21) |
+
+**Scholar panels per section:** MacArthur, Calvin, NET Bible, Beale, Osborne (5 per section — same as ch 1-15).
+
+**Interpretive tensions to maintain:**
+- MacArthur: dispensational premillennial (literal 1000 years, pre-trib rapture, literal Babylon/temple)
+- Beale: amillennial, inaugurated eschatology, heavy OT intertextual method
+- Osborne: modified progressive dispensationalism, narrative-theological balance
+- Calvin: amillennial Reformed, covenant theology
+- NET Bible: text-critical, translational notes
+
+**After chapter generation, finalization checklist:**
+1. Add people entries to `content/meta/people.json` (John of Patmos, Antipas, etc.)
+2. Add timeline events to `content/meta/timelines.json`
+3. Update REGISTRY live count: change `('revelation', 'Revelation', 22, 0, 'NT', 'nt')` → `0` to `22`
+4. Set `is_live=true` in `content/meta/books.json` for revelation
+5. Full validate → build → validate_sqlite → commit → push
 
 **Current wave order (from MASTER_PLAN.md):**
 
 - WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel ✓ — **COMPLETE**
 - WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, Nahum ✓, Zephaniah ✓, Haggai ✓, Zechariah ✓, Malachi ✓ — **COMPLETE**
 - WAVE 5 (NT Epistles): Romans ✓, 1 Corinthians ✓, 2 Corinthians ✓, Galatians ✓, Ephesians ✓, Philippians ✓, Colossians ✓, 1 Thessalonians ✓, 2 Thessalonians ✓, Philemon ✓, 1 Timothy ✓, 2 Timothy ✓, Titus ✓ — **COMPLETE**
-- WAVE 6 (General Epistles): Hebrews, James, 1-2 Peter, 1-3 John, Jude ← **NEXT**
-- WAVE 7: Revelation
+- WAVE 6 (General Epistles): Hebrews ✓, James ✓, 1 Peter ✓, 2 Peter ✓, 1 John ✓, 2 John ✓, 3 John ✓, Jude ✓ — **COMPLETE**
+- WAVE 7 (Revelation): Chapters 1–15 ✓, **Chapters 16–22 ← NEXT (FINAL BATCH)**
 
 **Enrichment debt (address before new books if specified):**
 - Isaiah 23-66: needs enrichment (44 chapters)
@@ -359,11 +387,11 @@ Next batch: {book_name} chapters {next_start}-{next_end}
 
 ---
 
-## REFERENCE: Current Live Books (57)
+## REFERENCE: Current Live Books (65)
 
-Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28), Romans(16), 1 Corinthians(16), 2 Corinthians(13), Galatians(6), Ephesians(6), Philippians(4), Colossians(4), 1 Thessalonians(5), 2 Thessalonians(3), 1 Timothy(6), 2 Timothy(4), Titus(3), Philemon(1)
+Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24), Judges(21), Ruth(4), 1 Samuel(31), 2 Samuel(24), 1 Kings(22), 2 Kings(25), 1 Chronicles(29), 2 Chronicles(36), Ezra(10), Nehemiah(13), Esther(10), Job(42), Psalms(150), Proverbs(31), Ecclesiastes(12), Song of Solomon(8), Isaiah(66), Jeremiah(52), Lamentations(5), Ezekiel(48), Daniel(12), Hosea(14), Joel(3), Amos(9), Obadiah(1), Jonah(4), Micah(7), Nahum(3), Habakkuk(3), Zephaniah(3), Haggai(2), Zechariah(14), Malachi(4), Matthew(28), Mark(16), Luke(24), John(21), Acts(28), Romans(16), 1 Corinthians(16), 2 Corinthians(13), Galatians(6), Ephesians(6), Philippians(4), Colossians(4), 1 Thessalonians(5), 2 Thessalonians(3), 1 Timothy(6), 2 Timothy(4), Titus(3), Philemon(1), Hebrews(13), James(5), 1 Peter(5), 2 Peter(3), 1 John(5), 2 John(1), 3 John(1), Jude(1)
 
-**Total: 1,133 chapters across 57 live books. 9 books remaining (~53 chapters: Heb, Jas, 1-2 Pet, 1-3 John, Jude, Rev).**
+**Total: 1,167 chapters across 65 live books. Revelation has content (ch 1-15) but is_live=false pending completion of ch 16-22. This is the FINAL book.**
 
 ---
 
@@ -428,32 +456,38 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 | Zechariah | 14 | Boda |
 | Malachi | 4 | Verhoef, Hill |
 
-**Wave 6 Planning (General Epistles) — 9 books, ~53 chapters:**
+**Wave 6 Planning (General Epistles) — 8 books, 34 chapters — COMPLETE:**
 
-| Book | Ch | Status | Scholars (TBD) |
-|------|----|--------|----------------|
-| Hebrews | 13 | 🔶 7/13 | Lane (WBC), Cockerill (NICNT) |
-| James | 5 | ⬜ TODO | NEW scholars needed (e.g., Davids NIGTC, McKnight NICNT) |
-| 1 Peter | 5 | ⬜ TODO | NEW scholars needed (e.g., Jobes BECNT, Achtemeier Hermeneia) |
-| 2 Peter | 3 | ⬜ TODO | NEW scholars needed (e.g., Bauckham WBC, Green BECNT) |
-| 1 John | 5 | ⬜ TODO | NEW scholars needed (e.g., Smalley WBC, Yarbrough BECNT) |
-| 2 John | 1 | ⬜ TODO | Reuse 1 John scholars |
-| 3 John | 1 | ⬜ TODO | Reuse 1 John scholars |
-| Jude | 1 | ⬜ TODO | Reuse 2 Peter scholars (Bauckham covers Jude too) |
-| Revelation | 22 | ⬜ TODO | Wave 7 (separate) |
+| Book | Ch | Status | Scholars |
+|------|----|--------|----------|
+| Hebrews | 13 | ✅ DONE | Lane (WBC), Cockerill (NICNT) |
+| James | 5 | ✅ DONE | Moo, McCartney |
+| 1 Peter | 5 | ✅ DONE | Schreiner, Jobes |
+| 2 Peter | 3 | ✅ DONE | Schreiner, Davids |
+| 1 John | 5 | ✅ DONE | Yarbrough, Kruse |
+| 2 John | 1 | ✅ DONE | Yarbrough, Kruse |
+| 3 John | 1 | ✅ DONE | Yarbrough, Kruse |
+| Jude | 1 | ✅ DONE | Davids, Green |
+| Revelation | 22 | 🔶 15/22 | Beale (NIGTC), Osborne (BECNT) |
 
-**Session planning for Wave 6 (tentative):**
+**Session planning for Wave 6 — COMPLETE:**
 - ~~Session J pt1: Hebrews ch 1-7~~ ✅
-- Session J pt2: Hebrews ch 8-13 ← **NEXT**
-- Session K: James(5) + 1 Peter(5)
-- Session L: 2 Peter(3) + 1-3 John(7) + Jude(1)
+- ~~Session J pt2: Hebrews ch 8-13~~ ✅
+- ~~Session K: James(5) + 1 Peter(5)~~ ✅
+- ~~Session L: 2 Peter(3) + 1-3 John(7) + Jude(1)~~ ✅
+
+**Wave 7 (Revelation) progress:**
+- Revelation ch 1-5: ✅ (Prologue, 7 Churches, Throne Room, Scroll & Lamb)
+- Revelation ch 6-11: ✅ (Seals, Trumpets, Two Witnesses, Seventh Trumpet)
+- Revelation ch 12-15: ✅ (Woman/Dragon, Two Beasts, Harvest, Bowl Prelude)
+- **Revelation ch 16-22: ← NEXT (FINAL BATCH)**
 
 **Notes:**
-- Hebrews infrastructure DONE: Lane (#b0c0b0, WBC), Cockerill (#a0a8c0, NICNT) — REGISTRY, colors, labels, scholar-data, BOOK_META, COMMENTATOR_SCOPE all in place
-- Hebrews ch 1–7 content committed; ch 8–13 remaining (new covenant, sacrifice, faith hall, discipline, benediction)
-- Several short epistles (2 John, 3 John, Jude = 1 ch each) can be batched
-- Scholar allocation for remaining Wave 6 books per MASTER_PLAN.md: Moo (extend) + McCartney for James; Schreiner (extend) + Jobes for 1 Peter; Schreiner for 2 Peter + Jude; Kruse + Marshall for 1-3 John
-- After Wave 6, only Revelation (22 ch, Wave 7) remains
+- Beale + Osborne infrastructure complete: REGISTRY, colors (#c0a0b8, #a8b0b8), labels, scholar-data, BOOK_META, COMMENTATOR_SCOPE all in place
+- Chapters 1-15 committed across 3 sub-batches with full scholar panels (MacArthur, Calvin, NET Bible, Beale, Osborne)
+- Remaining 7 chapters: Bowls (16), Babylon (17-18), Return (19), Millennium (20), New Creation (21-22)
+- After ch 16-22: add people entries, timeline events, set REGISTRY count to 22, set is_live=true
+- **This is the LAST content generation session. After Revelation, all 66 books are complete.**
 
 ---
 
@@ -474,4 +508,4 @@ Genesis(50), Exodus(40), Leviticus(27), Numbers(36), Deuteronomy(34), Joshua(24)
 
 ## REFERENCE: SQLite Database
 
-34+ tables including: books (66), chapters (1140), sections (2615), section_panels (19253), chapter_panels (8720), verses (61000+), people (281), scholars (63 in REGISTRY, 51 in DB), places (73), map_stories (28), word_studies (35), timelines (420), synoptic_map (60), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~40MB. 57 live books; Hebrews has content (ch 1-7) but is_live=false pending completion.
+34+ tables including: books (66), chapters (1182+), sections (2700+), section_panels (20000+), chapter_panels (9000+), verses (61000+), people (281), scholars (75 in REGISTRY), places (73), map_stories (28), word_studies (35), timelines (420), synoptic_map (60), vhl_groups (4395+), cross_ref_threads (11), genealogy_config (3). FTS5 on verses and people. Current size: ~41MB. 65 live books; Revelation has content (ch 1-15) but is_live=false pending completion of ch 16-22.
