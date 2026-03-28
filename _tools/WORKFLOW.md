@@ -117,3 +117,45 @@ All content is authored as Python dicts, saved as JSON, assembled into SQLite, a
 'lit': ([('vv.1-5', '1:1-5', 'Section title', True), ...], 'Structure note')
 'themes': ([('Covenant',7), ('Judgment',8), ...], 'Theme note')  # 10 scores
 ```
+
+---
+
+## Content Writing Standards
+
+All generated content is a scholarly tool. Write in an expository, academic register.
+
+- **Tone:** Seminary-level. No casual language, no devotional tone.
+- **Accuracy:** Dates, historical details, family relationships, and geography should follow current biblical scholarship.
+- **Scholar notes:** MacArthur, Calvin, and all scholar-attributed panels are AI-generated commentary written in each scholar's interpretive tradition and theological framework — NOT direct quotations. Faithfully represent each scholar's hermeneutical approach (e.g., MacArthur = conservative/dispensational, Calvin = Reformed, Moo = evangelical/NICNT, Fee = Pentecostal/NICNT, NET Bible = text-critical/translational).
+- **Hebrew/Greek:** Transliterations, glosses, and etymologies follow standard lexical conventions (BDB/HALOT for Hebrew; BDAG for Greek).
+- **Cross-references:** Must cite real passages that genuinely support the interpretive connection claimed.
+- All generated content is flagged for later accuracy verification via the audit flag system. Generate now, audit later — but write with scholarly integrity from the start.
+
+---
+
+## The 10 Standard Theological Themes
+
+Every chapter includes a `themes` tuple with exactly these 10 items scored 1–10:
+
+| Theme | Covers |
+|-------|--------|
+| Covenant | God's covenant promises and faithfulness |
+| Judgment | Divine judgment, consequences, warnings |
+| Mercy | Divine compassion, grace, forgiveness, restoration |
+| Faith | Trust, belief, faithfulness of people |
+| Sovereignty | God's control, providence, divine will |
+| Worship | True vs. false worship, idolatry, temple |
+| Holiness | Purity, separation, sanctification |
+| Prophecy | Prophetic speech, visions, fulfillment |
+| Justice | Social justice, righteousness, equity |
+| Mission | Calling, purpose, witness, spreading God's word |
+
+---
+
+## Batch Size Guidance
+
+- **Short books (< 10 chapters):** Whole book in one batch
+- **Medium books (10–30 chapters):** 7–10 chapters per batch
+- **Long books (50+ chapters):** 6–8 chapters per batch
+- **Enrichment-only sessions:** 15–20 chapters
+- **Session capacity:** ~2–3 books or ~24 chapters before context pressure degrades quality. Start a fresh session after that.
