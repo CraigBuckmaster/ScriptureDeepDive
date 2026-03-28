@@ -134,6 +134,8 @@ export const scholars: Record<string, string> = {
   green: '#b0b8a8',
   yarbrough: '#a8b8a0',
   kruse: '#b0a8b8',
+  beale: '#c0a0b8',
+  osborne: '#a8b0b8',
 } as const;
 
 // ── Era Colors ──────────────────────────────────────────────────────
