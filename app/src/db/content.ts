@@ -287,6 +287,25 @@ export async function getGenealogyConfig(key: string): Promise<string | null> {
   return row?.value_json ?? null;
 }
 
+/** Era configuration for timeline display. */
+export interface EraConfig {
+  hex: string;
+  name: string;
+  pill: string;
+  range: [number, number];
+}
+
+/** Fetch era_config from DB (returns null if not present). */
+export async function getTimelineEraConfig(): Promise<Record<string, EraConfig> | null> {
+  const json = await getGenealogyConfig('timeline_era_config');
+  if (!json) return null;
+  try {
+    return JSON.parse(json) as Record<string, EraConfig>;
+  } catch {
+    return null;
+  }
+}
+
 // ── Content Stats ──────────────────────────────────────────────────
 
 export interface ContentStats {

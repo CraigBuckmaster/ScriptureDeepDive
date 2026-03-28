@@ -636,7 +636,7 @@ def populate_timelines(cur):
         count += 1
 
     # Store era metadata in genealogy_config (reuse the key-value table)
-    for key in ('era_hex', 'era_names', 'era_ranges'):
+    for key in ('era_hex', 'era_names', 'era_ranges', 'era_config'):
         if key in data:
             cur.execute(
                 'INSERT OR REPLACE INTO genealogy_config (key, value_json) '
