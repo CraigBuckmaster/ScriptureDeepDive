@@ -1,24 +1,47 @@
 /**
- * SettingsScreen — Translation, font size, VHL toggle, about, data management.
+ * SettingsScreen — Preferences, notifications, about, and data management.
  *
- * Phase 4E fixes:
- *   - Dynamic stats from getContentStats() (no hardcoded counts)
- *   - Clear Reading History actually works (deletes + feedback)
- *   - Version from expo Constants
+ * Sections:
+ *   PREFERENCES  — Translation, font size, verse highlighting
+ *   NOTIFICATIONS — Daily verse (uses existing NotificationSettings component)
+ *   ABOUT        — App description, dynamic stats strip, version
+ *   DATA         — Export study data, clear history/notes/bookmarks
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Switch, Alert, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Switch,
+  Alert,
+  ActivityIndicator,
+  StyleSheet,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { Download } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { NotificationSettings } from '../components/NotificationSettings';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
+import { exportStudyData, ExportError } from '../utils/exportData';
 import { base, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
+
+/* ── About copy ─────────────────────────────────────────────────── */
+
+const ABOUT_PARAGRAPHS = [
+  'Companion Study is a verse-by-verse Bible study app designed for readers who want depth without a seminary library. Every chapter pairs the biblical text with commentary drawn from evangelical, reformed, Jewish, critical, and patristic traditions \u2014 placing multiple scholarly voices side by side so you can see how the text has been understood across centuries and communities.',
+  'Beyond commentary, each chapter surfaces the original Hebrew and Greek, historical context, cross-references, and thematic connections that give Scripture its layered richness. Interactive tools \u2014 a genealogy tree, biblical world map, timeline, word studies, prophecy chains, and concept explorer \u2014 let you trace threads across the entire canon.',
+  'Your study is personal. Highlight verses, take notes, build collections, and bookmark passages \u2014 all stored privately on your device.',
+];
+
+/* ── Component ──────────────────────────────────────────────────── */
 
 export default function SettingsScreen() {
   const navigation = useNavigation<any>();
@@ -30,42 +53,67 @@ export default function SettingsScreen() {
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
+  const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
-    getContentStats().then(setStats);
+    getContentStats().then(setStats).catch(() => {});
   }, []);
 
+  /* ── Data actions ───────────────────────────────────────────── */
+
+  const handleExport = async () => {
+    setExporting(true);
+    try {
+      await exportStudyData();
+    } catch (err) {
+      const message =
+        err instanceof ExportError
+          ? err.message
+          : 'Something went wrong while exporting. Please try again.';
+      Alert.alert('Export', message);
+    } finally {
+      setExporting(false);
+    }
+  };
+
   const handleClearHistory = () => {
-    Alert.alert(
-      'Clear History',
+    confirmClear(
+      'Clear Reading History',
       'This will clear all reading history and streak data. This cannot be undone.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Clear',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              await getUserDb().runAsync('DELETE FROM reading_progress');
-              Alert.alert('Done', 'Reading history cleared.');
-            } catch (err) {
-              Alert.alert('Error', 'Failed to clear history. Please try again.');
-            }
-          },
-        },
-      ]
+      'DELETE FROM reading_progress',
+      'Reading history cleared.',
+    );
+  };
+
+  const handleClearNotes = () => {
+    confirmClear(
+      'Clear All Notes',
+      'This will permanently delete all your notes and note links. Collections will be kept. This cannot be undone.',
+      ['DELETE FROM note_links', 'DELETE FROM notes_fts', 'DELETE FROM user_notes'],
+      'All notes have been deleted.',
+    );
+  };
+
+  const handleClearBookmarks = () => {
+    confirmClear(
+      'Clear All Bookmarks',
+      'This will permanently delete all your bookmarks. This cannot be undone.',
+      'DELETE FROM bookmarks',
+      'All bookmarks have been deleted.',
     );
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        {/* Header with back button */}
         <ScreenHeader
           title="Settings"
           onBack={() => navigation.goBack()}
           style={{ marginBottom: spacing.lg }}
         />
+
+        {/* ── PREFERENCES ──────────────────────────────────────── */}
+        <SectionLabel text="PREFERENCES" />
 
         {/* Translation */}
         <Row label="Default Translation">
@@ -79,10 +127,12 @@ export default function SettingsScreen() {
                   translation === t && styles.pillOptionActive,
                 ]}
               >
-                <Text style={[
-                  styles.pillLabel,
-                  translation === t && styles.pillLabelActive,
-                ]}>
+                <Text
+                  style={[
+                    styles.pillLabel,
+                    translation === t && styles.pillLabelActive,
+                  ]}
+                >
                   {t.toUpperCase()}
                 </Text>
               </TouchableOpacity>
@@ -110,7 +160,12 @@ export default function SettingsScreen() {
 
         {/* Font preview */}
         <View style={styles.preview}>
-          <Text style={[styles.previewText, { fontSize, lineHeight: fontSize * 1.6 }]}>
+          <Text
+            style={[
+              styles.previewText,
+              { fontSize, lineHeight: fontSize * 1.6 },
+            ]}
+          >
             In the beginning God created the heavens and the earth.
           </Text>
         </View>
@@ -125,31 +180,130 @@ export default function SettingsScreen() {
           />
         </Row>
 
-        {/* About */}
+        {/* ── NOTIFICATIONS ────────────────────────────────────── */}
+        <NotificationSettings />
+
+        {/* ── ABOUT ────────────────────────────────────────────── */}
         <View style={styles.section}>
-          <Text style={styles.sectionLabel}>ABOUT</Text>
-          <Text style={styles.aboutText}>
-            {stats
-              ? `Companion Study presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions. ${stats.scholarCount} scholars across ${stats.liveBooks} books with ${stats.liveChapters} chapters of verse-by-verse analysis.`
-              : 'Companion Study presents the Bible alongside scholarly commentary from evangelical, reformed, Jewish, critical, and patristic traditions.'
-            }
-          </Text>
+          <SectionLabel text="ABOUT" />
+
+          {ABOUT_PARAGRAPHS.map((para, idx) => (
+            <Text
+              key={idx}
+              style={[
+                styles.aboutText,
+                idx < ABOUT_PARAGRAPHS.length - 1 && styles.aboutParagraphGap,
+              ]}
+            >
+              {para}
+            </Text>
+          ))}
+
+          {/* Stats strip */}
+          {stats && (
+            <Text style={styles.statsStrip}>
+              {formatStat(stats.liveBooks, 'Book')}
+              {'  \u00B7  '}
+              {formatStat(stats.liveChapters, 'Chapter')}
+              {'  \u00B7  '}
+              {formatStat(stats.scholarCount, 'Scholar')}
+              {'  \u00B7  '}
+              {formatStat(stats.peopleCount, 'Person', 'People')}
+            </Text>
+          )}
+
           <Text style={styles.version}>Version {APP_VERSION}</Text>
         </View>
 
-        {/* Data */}
+        {/* ── DATA ─────────────────────────────────────────────── */}
         <View style={styles.section}>
-          <Text style={styles.sectionLabel}>DATA</Text>
-          <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
-            <Text style={styles.dangerText}>Clear Reading History</Text>
+          <SectionLabel text="DATA" />
+
+          {/* Export */}
+          <TouchableOpacity
+            onPress={handleExport}
+            disabled={exporting}
+            style={styles.exportRow}
+            activeOpacity={0.6}
+          >
+            {exporting ? (
+              <ActivityIndicator size="small" color={base.gold} />
+            ) : (
+              <Download size={16} color={base.gold} />
+            )}
+            <Text style={styles.exportText}>
+              {exporting ? 'Preparing export\u2026' : 'Export Study Data'}
+            </Text>
           </TouchableOpacity>
+          <Text style={styles.exportHint}>
+            Notes, bookmarks, and highlights as JSON
+          </Text>
+
+          {/* Destructive actions */}
+          <View style={styles.dangerZone}>
+            <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
+              <Text style={styles.dangerText}>Clear Reading History</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleClearNotes} style={styles.dangerRow}>
+              <Text style={styles.dangerText}>Clear All Notes</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleClearBookmarks} style={styles.dangerRow}>
+              <Text style={styles.dangerText}>Clear All Bookmarks</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+
+        {/* Bottom breathing room */}
+        <View style={{ height: spacing.xxl }} />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-// ── Row sub-component ────────────────────────────────────────────
+/* ── Helpers ────────────────────────────────────────────────────── */
+
+function formatStat(count: number, singular: string, plural?: string): string {
+  const label = count === 1 ? singular : (plural ?? `${singular}s`);
+  return `${count} ${label}`;
+}
+
+/**
+ * Shared confirmation → delete pattern for all destructive actions.
+ * Accepts a single SQL string or an array of SQL strings to run in sequence.
+ */
+function confirmClear(
+  title: string,
+  message: string,
+  sql: string | string[],
+  successMessage: string,
+) {
+  Alert.alert(title, message, [
+    { text: 'Cancel', style: 'cancel' },
+    {
+      text: 'Delete',
+      style: 'destructive',
+      onPress: async () => {
+        try {
+          const db = getUserDb();
+          const statements = Array.isArray(sql) ? sql : [sql];
+          for (const stmt of statements) {
+            await db.runAsync(stmt);
+          }
+          Alert.alert('Done', successMessage);
+        } catch (err) {
+          logger.error('SettingsScreen', `Failed: ${title}`, err);
+          Alert.alert('Error', 'Something went wrong. Please try again.');
+        }
+      },
+    },
+  ]);
+}
+
+/* ── Sub-components ─────────────────────────────────────────────── */
+
+function SectionLabel({ text }: { text: string }) {
+  return <Text style={styles.sectionLabel}>{text}</Text>;
+}
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -160,7 +314,7 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
   );
 }
 
-// ── Styles ───────────────────────────────────────────────────────
+/* ── Styles ──────────────────────────────────────────────────────── */
 
 const styles = StyleSheet.create({
   container: {
@@ -170,6 +324,20 @@ const styles = StyleSheet.create({
   content: {
     padding: spacing.md,
   },
+
+  /* Section label */
+  sectionLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+  },
+  section: {
+    marginTop: spacing.xl,
+  },
+
+  /* Preference rows */
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -183,6 +351,8 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
+
+  /* Translation pill toggle */
   pillToggle: {
     flexDirection: 'row',
     backgroundColor: base.bgElevated,
@@ -206,6 +376,8 @@ const styles = StyleSheet.create({
   pillLabelActive: {
     color: base.gold,
   },
+
+  /* Font size controls */
   sizeControls: {
     flexDirection: 'row',
     gap: spacing.sm,
@@ -225,6 +397,8 @@ const styles = StyleSheet.create({
     color: base.gold,
     fontSize: 16,
   },
+
+  /* Font preview */
   preview: {
     paddingVertical: spacing.sm,
   },
@@ -232,30 +406,62 @@ const styles = StyleSheet.create({
     color: base.textDim,
     fontFamily: fontFamily.body,
   },
-  section: {
-    marginTop: spacing.xl,
-  },
-  sectionLabel: {
-    color: base.textMuted,
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
-    marginBottom: spacing.sm,
-  },
+
+  /* About */
   aboutText: {
     color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
   },
+  aboutParagraphGap: {
+    marginBottom: spacing.md,
+  },
+  statsStrip: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    marginTop: spacing.lg,
+    textAlign: 'center',
+    letterSpacing: 0.3,
+  },
   version: {
     color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
-    marginTop: spacing.md,
+    marginTop: spacing.sm,
+    textAlign: 'center',
+  },
+
+  /* Export */
+  exportRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
+    gap: spacing.sm,
+  },
+  exportText: {
+    color: base.gold,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  exportHint: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: -spacing.sm,
+    marginBottom: spacing.md,
+  },
+
+  /* Danger zone */
+  dangerZone: {
+    borderTopWidth: 1,
+    borderTopColor: base.border + '40',
+    marginTop: spacing.sm,
+    paddingTop: spacing.sm,
   },
   dangerRow: {
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.sm + 2,
   },
   dangerText: {
     color: '#e05a6a',
