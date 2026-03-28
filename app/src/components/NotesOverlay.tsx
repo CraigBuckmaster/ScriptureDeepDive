@@ -15,6 +15,8 @@ import {
   FlatList,
   Alert,
   StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Plus, ChevronRight, Link, Folder } from 'lucide-react-native';
@@ -141,12 +143,16 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
 
   const handleNewNoteBlur = useCallback(async () => {
     if (pendingNewText.current.trim()) {
-      await saveNote(addRef || makeRef(), pendingNewText.current.trim());
+      const savedText = pendingNewText.current.trim();
+      const newId = await saveNote(addRef || makeRef(), savedText);
       pendingNewText.current = '';
       setNewText('');
       setShowAdd(false);
       setAddRef('');
       reload();
+      // Auto-enter edit mode on the newly created note
+      setEditingId(newId);
+      setEditText(savedText);
     }
   }, [addRef, bookId, chapterNum, reload]);
 
@@ -212,6 +218,10 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
       <SafeAreaView style={styles.container}>
+        <KeyboardAvoidingView
+          style={styles.keyboardView}
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        >
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>
@@ -380,6 +390,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
             onLink={handleLinkNote}
           />
         )}
+        </KeyboardAvoidingView>
       </SafeAreaView>
     </Modal>
   );
@@ -389,6 +400,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: base.bg,
+  },
+  keyboardView: {
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
