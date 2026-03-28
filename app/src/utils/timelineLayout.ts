@@ -99,8 +99,8 @@ export interface PositionedEvent {
  * People + World → below axis (stems rise up to axis).
  */
 export function assignLanes(events: { id: string; category: string; name: string; year: number; era: string | null; scripture_ref: string | null; chapter_link: string | null; summary: string | null; people_json: string | null }[]): PositionedEvent[] {
-  const above = events.filter((e) => e.category === 'event');
-  const below = events.filter((e) => e.category !== 'event');
+  const above = events.filter((e) => e.category === 'event' || e.category === 'book');
+  const below = events.filter((e) => e.category !== 'event' && e.category !== 'book');
 
   const assignGroup = (
     items: typeof events,
