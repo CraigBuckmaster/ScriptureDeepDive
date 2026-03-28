@@ -74,12 +74,12 @@ def main():
     # Books
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
-    check("60 live books", live == 65, f"got {live}")
-    check("6 pending books", pending == 1, f"got {pending}")
+    check("66 live books", live == 66, f"got {live}")
+    check("0 pending books", pending == 0, f"got {pending}")
 
     # Chapters
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1182 chapters", ch_count == 1182, f"got {ch_count}")
+    check("1189 chapters", ch_count == 1189, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     SINGLE_SECTION_OK = {'jeremiah_45', 'jeremiah_47', 'malachi_4'}
@@ -124,7 +124,7 @@ def main():
               f"got {actual}")
 
     # Meta tables
-    check("281 people", q1(cur, "SELECT COUNT(*) FROM people") == 281)
+    check("282 people", q1(cur, "SELECT COUNT(*) FROM people") == 282)
     check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
@@ -154,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("540 timeline entries", tl_count == 540, f"got {tl_count}")
+    check("543 timeline entries", tl_count == 543, f"got {tl_count}")
 
     # Feature tables (prophecy chains, concepts, difficult passages)
     pc_count = q1(cur, "SELECT COUNT(*) FROM prophecy_chains")
@@ -360,7 +360,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("37 spine people", spine == 37, f"got {spine}")
-    check("244 satellite people", sat == 244, f"got {sat}")
+    check("245 satellite people", sat == 245, f"got {sat}")
 
     # Adam and Jesus both spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")

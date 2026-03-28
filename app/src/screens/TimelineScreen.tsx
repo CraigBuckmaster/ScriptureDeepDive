@@ -8,7 +8,7 @@ import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, useWindowD
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { getAllTimelineEntries } from '../db/content';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
@@ -25,12 +25,14 @@ import type { TimelineEntry } from '../types';
 export default function TimelineScreen() {
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
+  const navigation = useNavigation<any>();
   const initialEventId = route?.params?.eventId;
 
   const [events, setEvents] = useState<TimelineEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
   const [showEvents, setShowEvents] = useState(true);
+  const [showBooks, setShowBooks] = useState(true);
   const [showPeople, setShowPeople] = useState(true);
   const [showWorld, setShowWorld] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
@@ -45,12 +47,13 @@ export default function TimelineScreen() {
   // Filter by active categories
   const categoryFiltered = useMemo(() => {
     const cats = new Set<string>();
-    if (showEvents) { cats.add('event'); cats.add('book'); }
+    if (showEvents) cats.add('event');
+    if (showBooks) cats.add('book');
     if (showPeople) cats.add('person');
     if (showWorld) cats.add('world');
     if (cats.size === 0) { cats.add('event'); cats.add('book'); } // fallback
     return events.filter((e) => cats.has(e.category));
-  }, [events, showEvents, showPeople, showWorld]);
+  }, [events, showEvents, showBooks, showPeople, showWorld]);
 
   const positioned = useMemo(() => assignLanes(categoryFiltered), [categoryFiltered]);
 
@@ -121,6 +124,14 @@ export default function TimelineScreen() {
             <Text style={[styles.categoryLabel, showEvents && { color: base.gold }]}>Events</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={() => setShowBooks((v) => !v)}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            style={[styles.categoryChip, showBooks && styles.categoryChipActive]}
+          >
+            <View style={[styles.categoryDot, { backgroundColor: '#7a6b5a' }]} />
+            <Text style={[styles.categoryLabel, showBooks && { color: '#7a6b5a' }]}>Books</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => setShowPeople((v) => !v)}
             hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
             style={[styles.categoryChip, showPeople && styles.categoryChipActive]}
@@ -179,8 +190,10 @@ export default function TimelineScreen() {
             // Color by category: events use era color, people are teal, world is amber
             const catColor = evt.category === 'world' ? '#b07d4f'
               : evt.category === 'person' ? '#6a9fb5'
+              : evt.category === 'book' ? '#7a6b5a'
               : evt.era ? (eras[evt.era] ?? base.gold) : base.gold;
             const isSelected = selectedEvent?.id === evt.id;
+            const isBook = evt.category === 'book';
 
             return (
               <G key={evt.id} onPress={() => setSelectedEvent(evt)}>
@@ -189,9 +202,16 @@ export default function TimelineScreen() {
                   fill="transparent" />
                 {/* Stem line — connects event dot to axis */}
                 <Line x1={evt.x} y1={evt.y} x2={evt.x} y2={AXIS_Y} stroke={catColor} strokeWidth={0.5} opacity={0.4} />
-                {/* Circle */}
-                {isSelected && <Circle cx={evt.x} cy={evt.y} r={10} fill={base.gold} opacity={0.3} />}
-                <Circle cx={evt.x} cy={evt.y} r={6} fill={catColor} />
+                {/* Marker — square for books, circle for everything else */}
+                {isSelected && (
+                  isBook
+                    ? <Rect x={evt.x - 10} y={evt.y - 10} width={20} height={20} rx={3} fill={catColor} opacity={0.3} />
+                    : <Circle cx={evt.x} cy={evt.y} r={10} fill={base.gold} opacity={0.3} />
+                )}
+                {isBook
+                  ? <Rect x={evt.x - 5} y={evt.y - 5} width={10} height={10} rx={2} fill={catColor} />
+                  : <Circle cx={evt.x} cy={evt.y} r={6} fill={catColor} />
+                }
                 {/* Label */}
                 <SvgText x={evt.x + 10} y={evt.y + 5} fontSize={11} fill={catColor}
                   fontFamily="SourceSans3_400Regular">
@@ -227,6 +247,26 @@ export default function TimelineScreen() {
                   {selectedEvent.summary}
                 </Text>
               )}
+              {selectedEvent.chapter_link && (() => {
+                const match = selectedEvent.chapter_link!.match(/(\w+)\/(\w+)_(\d+)\.html/);
+                if (!match) return null;
+                const bookId = match[2].toLowerCase();
+                const chapterNum = parseInt(match[3], 10);
+                return (
+                  <TouchableOpacity
+                    style={styles.chapterButton}
+                    onPress={() => {
+                      setSelectedEvent(null);
+                      navigation.navigate('ReadTab', {
+                        screen: 'Chapter',
+                        params: { bookId, chapterNum },
+                      });
+                    }}
+                  >
+                    <Text style={styles.chapterButtonText}>Go to Chapter →</Text>
+                  </TouchableOpacity>
+                );
+              })()}
             </ScrollView>
           </View>
         </Modal>
@@ -289,6 +329,21 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     marginTop: spacing.md,
+  },
+  chapterButton: {
+    marginTop: spacing.md,
+    backgroundColor: base.gold + '22',
+    borderWidth: 1,
+    borderColor: base.gold + '55',
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    alignSelf: 'flex-start',
+  },
+  chapterButtonText: {
+    color: base.gold,
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
   },
   categoryRow: {
     flexDirection: 'row',

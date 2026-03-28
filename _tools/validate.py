@@ -169,7 +169,7 @@ def main():
     # ── 3. Completeness ──
     print("\n--- 3. COMPLETENESS ---")
 
-    check(f"{len(live_books)} live books", len(live_books) == 65,
+    check(f"{len(live_books)} live books", len(live_books) == 66,
           f"got {len(live_books)}")
 
     # Every live book has correct chapter count
