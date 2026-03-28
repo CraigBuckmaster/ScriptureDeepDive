@@ -143,7 +143,7 @@ def main():
 
     # Cross-ref threads
     thread_count = q1(cur, "SELECT COUNT(*) FROM cross_ref_threads")
-    check("11 cross-ref threads", thread_count == 11, f"got {thread_count}")
+    check("31 cross-ref threads", thread_count == 31, f"got {thread_count}")
 
     # Each thread has 3+ steps
     short_threads = q(cur,
