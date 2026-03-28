@@ -1,10 +1,13 @@
 # Companion Study — Developer Guide
 
-> **Read this before writing any app code.**
+> **Read this before writing any code or content.**
 > These conventions exist because we hit real bugs. Each rule links to
 > the audit finding that motivated it.
+>
+> All 66 books are live. No new books or chapters will be added.
+> Content work is now enrichment, accuracy auditing, and feature development.
 
-Last updated: 2026-03-26
+Last updated: 2026-03-28
 
 ---
 
@@ -78,7 +81,7 @@ const prefix = chapterPrefix(bookId, ch);
 
 **Don't:**
 ```typescript
-// ❌ Never construct refs inline
+// Never construct refs inline
 const ref = `${bookId}:${ch}:${v}`;
 const ref = `${bookId} ${ch}:${v}`;
 const prefix = `${bookId}:${ch}`;
@@ -97,12 +100,12 @@ const prefix = `${bookId}:${ch}`;
 ```typescript
 import { logger } from '../utils/logger';
 
-// ✅ Do
+// Do
 try { ... } catch (err) {
   logger.warn('ComponentName', 'What failed', err);
 }
 
-// ❌ Don't
+// Don't
 try { ... } catch {}
 try { ... } catch { /* ignore */ }
 ```
@@ -127,11 +130,11 @@ try { ... } catch { /* ignore */ }
 ```typescript
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 
-// ✅ Do — TypeScript catches mistyped params at compile time
+// Do — TypeScript catches mistyped params at compile time
 const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
 const { bookId, chapterNum } = route.params; // typed correctly
 
-// ❌ Don't — silent undefined on typos
+// Don't — silent undefined on typos
 const route = useRoute<any>();
 const { bookId, chapterNum } = route.params ?? {}; // compiles but may crash
 ```
@@ -150,11 +153,11 @@ const { bookId, chapterNum } = route.params ?? {}; // compiles but may crash
 **Why:** The gold color swap touched 6 files and cascaded to 100+ usages because everything uses tokens. Hardcoded hex values get left behind and create visual inconsistencies.
 
 ```typescript
-// ✅ Do
+// Do
 import { base } from '../theme';
 color: base.gold
 
-// ❌ Don't
+// Don't
 color: '#bfa050'
 color: '#c9a84c'
 ```
@@ -170,12 +173,12 @@ color: '#c9a84c'
 **Why:** Inline style objects create new references on every render, bypassing React Native's style caching. 297 inline styles were identified in the audit.
 
 ```typescript
-// ✅ Do
+// Do
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: base.bg },
 });
 
-// ❌ Avoid
+// Avoid
 <View style={{ flex: 1, backgroundColor: base.bg }} />
 ```
 
@@ -200,11 +203,11 @@ const styles = StyleSheet.create({
 **Why:** `user.db` and `scripture.db` are separate SQLite files. SQL JOINs across them don't work.
 
 ```typescript
-// ✅ Do — two-step query
+// Do — two-step query
 const progress = await getUserDb().getAllAsync('SELECT * FROM reading_progress ...');
 const bookInfo = await getDb().getFirstAsync('SELECT name FROM books WHERE id = ?', [bookId]);
 
-// ❌ Don't — cross-DB JOIN will fail
+// Don't — cross-DB JOIN will fail
 await getDb().getAllAsync('SELECT * FROM reading_progress JOIN books ...');
 ```
 
@@ -232,6 +235,132 @@ try {
 
 ---
 
+## 10. Content Pipeline
+
+### Pipeline Overview
+
+```
+Enrichment script (/tmp/) -> read existing JSON -> modify target panels
+  -> save_chapter() -> content/{book}/{ch}.json
+    -> build_sqlite.py -> scripture.db
+      -> validate.py + validate_sqlite.py
+        -> eas update --branch production
+```
+
+All content lives as JSON in `content/`, is compiled to SQLite by `build_sqlite.py`, and deployed via OTA updates. Enrichment scripts are merge-safe: they read existing chapter JSON, modify only target empty/thin panels, and write back without regenerating the full chapter.
+
+### Content Enrichment Workflow
+
+1. Write enrichment script to `/tmp/` — read existing JSON, populate target panels, write back via `save_chapter()`
+2. Syntax-check: `python3 -c "compile(open('/tmp/gen_....py').read(), 'test', 'exec'); print('Syntax OK')"`
+3. Run the script
+4. `python3 _tools/validate.py`
+5. `python3 _tools/build_sqlite.py`
+6. `python3 _tools/validate_sqlite.py`
+7. `rm /tmp/gen_*.py`
+8. `git add -A && git commit && git push`
+9. `cd app && eas update --branch production`
+
+### Adding a New Scholar
+
+1. Add to `config.py`: `SCHOLAR_REGISTRY` + `COMMENTATOR_SCOPE`
+2. Add bio data to `content/meta/scholar-bios.json` and `content/meta/scholar-data.json`
+3. Add color to `app/src/theme/colors.ts`
+4. Add label to `app/src/utils/panelLabels.ts`
+5. Run `python3 _tools/build_sqlite.py` to rebuild
+
+### Tool Reference
+
+| Tool | Purpose |
+|------|---------|
+| `save_chapter(book, ch, data)` | Write chapter JSON from generator data |
+| `verse_range(start, end)` | Generate verse number list for sections |
+| `auto_scholarly_json(data, book, ch)` | Auto-generate missing chapter panels |
+| `validate.py` | Check all content JSON for schema/completeness |
+| `build_sqlite.py` | Assemble content/ -> scripture.db |
+| `validate_sqlite.py` | Verify database integrity (51 checks) |
+
+### Data Format Quick Reference
+
+**Section panels** (inside each section dict):
+```python
+'heb': [('word', 'transliteration', 'gloss', 'paragraph about the word')]
+'ctx': 'Historical context paragraph...'
+'cross': [('Ref', 'Cross-reference note...')]
+'mac': [('1:1', 'MacArthur note...')]        # same format for all scholars
+```
+
+**Chapter panels** (top-level in data dict):
+```python
+'lit': ([('vv.1-5', '1:1-5', 'Section title', True), ...], 'Structure note')
+'themes': ([('Covenant',7), ('Judgment',8), ...], 'Theme note')  # 10 scores
+```
+
+---
+
+## 11. Content Writing Standards
+
+All generated content is a scholarly tool. Write in an expository, academic register.
+
+- **Tone:** Seminary-level. No casual language, no devotional tone.
+- **Accuracy:** Dates, historical details, family relationships, and geography should follow current biblical scholarship.
+- **Scholar notes:** MacArthur, Calvin, and all scholar-attributed panels are AI-generated commentary written in each scholar's interpretive tradition and theological framework — NOT direct quotations. Faithfully represent each scholar's hermeneutical approach (e.g., MacArthur = conservative/dispensational, Calvin = Reformed, Moo = evangelical/NICNT, Fee = Pentecostal/NICNT, NET Bible = text-critical/translational).
+- **Hebrew/Greek:** Transliterations, glosses, and etymologies follow standard lexical conventions (BDB/HALOT for Hebrew; BDAG for Greek).
+- **Cross-references:** Must cite real passages that genuinely support the interpretive connection claimed.
+- All generated content is flagged for later accuracy verification via the audit flag system. Generate now, audit later — but write with scholarly integrity from the start.
+
+### The 10 Standard Theological Themes
+
+Every chapter includes a `themes` tuple with exactly these 10 items scored 1-10:
+
+| Theme | Covers |
+|-------|--------|
+| Covenant | God's covenant promises and faithfulness |
+| Judgment | Divine judgment, consequences, warnings |
+| Mercy | Divine compassion, grace, forgiveness, restoration |
+| Faith | Trust, belief, faithfulness of people |
+| Sovereignty | God's control, providence, divine will |
+| Worship | True vs. false worship, idolatry, temple |
+| Holiness | Purity, separation, sanctification |
+| Prophecy | Prophetic speech, visions, fulfillment |
+| Justice | Social justice, righteousness, equity |
+| Mission | Calling, purpose, witness, spreading God's word |
+
+---
+
+## 12. Pipeline Gotchas
+
+Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
+
+**Enrichment scripts:**
+- Write to `/tmp/`, never commit. Delete after use.
+- Avoid backslash-apostrophe inside single-quoted strings. Use double-quoted strings for text with apostrophes.
+- Always syntax-check before running.
+- Enrichment is a MERGE operation: read existing JSON -> modify only target panels -> write back. Never regenerate full chapters.
+
+**Validation:**
+- `validate.py` checks against hardcoded expected counts that drift. Count-mismatch failures are expected and non-blocking. Only schema, panel, cross-ref, and parent-ref failures indicate real problems.
+
+**People entries:**
+- Parent refs (`father`, `mother`, `spouseOf`) must use IDs (lowercase, underscored), not display names. Set to `null` if parent not in database.
+
+**shared.py:**
+- ~1,350 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
+
+**Git / merge conflicts:**
+- `scripture.db` conflicts: `git checkout --theirs scripture.db` -> rebuild via `build_sqlite.py` -> `git add scripture.db` -> `GIT_EDITOR="true" git rebase --continue`
+- `scholar-data.json` conflicts: load upstream version, programmatically merge missing scholars. Never hand-edit conflict markers in JSON.
+- Container has no EDITOR — use `GIT_EDITOR="true" git rebase --continue`.
+- GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file.
+
+**Repo hygiene:**
+- Root directory contains only: `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, `scripture.db`. All plans/docs go in `_tools/`.
+
+**Session capacity:**
+- Enrichment sessions: 15-20 chapters before context pressure degrades quality. Start a fresh session after that.
+
+---
+
 ## Quick Reference: What Goes Where
 
 | I need to... | File |
@@ -245,38 +374,7 @@ try {
 | Construct a verse reference | `utils/verseRef.ts` |
 | Log an error | `utils/logger.ts` |
 | Safely parse a JSON column | `safeParse()` from `utils/logger.ts` |
-| Change the gold color | `theme/colors.ts` → `base.gold` (one place) |
-
----
-
-## 10. Pipeline Gotchas
-
-Hard-won lessons from building 66 books. Read before running generators or pushing.
-
-**Generator scripts:**
-- Write to `/tmp/`, never commit. Delete after use.
-- Avoid `\'` inside single-quoted strings. Use double-quoted strings for text with apostrophes.
-- Always syntax-check before running: `python3 -c "compile(open('/tmp/gen_....py').read(), 'test', 'exec'); print('Syntax OK')"`
-- After running, verify section counts: `python3 -c "import json; [print(f'Ch {ch}: {len(json.load(open(f\"content/{book}/{ch}.json\"))[\"sections\"])} sections') for ch in range(START, END+1)]"`
-- Very short chapters (< 10 verses) may produce only 1 section — that's fine.
-
-**Validation:**
-- `validate.py` checks against hardcoded expected counts that drift. Count-mismatch failures are expected and non-blocking. Only schema, panel, cross-ref, and parent-ref failures indicate real problems.
-
-**People entries:**
-- Parent refs (`father`, `mother`, `spouseOf`) must use IDs (lowercase, underscored), not display names. Set to `null` if parent not in database.
-
-**shared.py:**
-- ~1,350 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
-
-**Git / merge conflicts:**
-- `scripture.db` conflicts: `git checkout --theirs scripture.db` → rebuild via `build_sqlite.py` → `git add scripture.db` → `GIT_EDITOR="true" git rebase --continue`
-- `scholar-data.json` conflicts: load upstream version, programmatically merge missing scholars. Never hand-edit conflict markers in JSON.
-- Container has no EDITOR — use `GIT_EDITOR="true" git rebase --continue`.
-- GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file.
-
-**Repo hygiene:**
-- Root directory contains only: `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, `scripture.db`. All plans/docs go in `_tools/`. Generator scripts go in `/tmp/`.
+| Change the gold color | `theme/colors.ts` -> `base.gold` (one place) |
 
 ---
 
