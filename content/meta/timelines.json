@@ -2403,6 +2403,778 @@
       "summary": "The apostle John is banished to the island of Patmos in the Aegean Sea, likely during the persecution under Emperor Domitian. On the Lord's Day, he receives the apocalyptic visions that comprise the book of Revelation — letters to seven churches, heavenly throne visions, and the consummation of all things. Patmos becomes the setting for the Bible's final literary masterpiece."
     }
   ],
+  "book_events": [
+    {
+      "id": "book-genesis",
+      "name": "Genesis Written",
+      "year": -1445,
+      "era": "exodus",
+      "author": [
+        "moses"
+      ],
+      "ref": "Genesis",
+      "chapter": "ot/genesis/Genesis_1.html",
+      "summary": "Moses compiles and writes Genesis during the wilderness period, drawing on oral traditions, genealogies, and possibly written sources (toledot sections) to record God's creation of the world, the patriarchal narratives, and the origins of Israel from Abraham through Joseph's death in Egypt."
+    },
+    {
+      "id": "book-exodus",
+      "name": "Exodus Written",
+      "year": -1445,
+      "era": "exodus",
+      "author": [
+        "moses"
+      ],
+      "ref": "Exodus",
+      "chapter": "ot/exodus/Exodus_1.html",
+      "summary": "Moses records Israel's deliverance from Egyptian slavery, the revelation at Sinai, the giving of the Law, and the construction of the tabernacle. The book establishes the covenant framework that defines Israel's identity as God's redeemed people."
+    },
+    {
+      "id": "book-leviticus",
+      "name": "Leviticus Written",
+      "year": -1444,
+      "era": "exodus",
+      "author": [
+        "moses"
+      ],
+      "ref": "Leviticus",
+      "chapter": "ot/leviticus/Leviticus_1.html",
+      "summary": "Moses records the holiness code and sacrificial system revealed at Sinai, establishing the priestly regulations that govern Israel's worship, purity, and communal life. The book's central declaration — 'Be holy, because I am holy' — shapes Israel's theological self-understanding."
+    },
+    {
+      "id": "book-numbers",
+      "name": "Numbers Written",
+      "year": -1406,
+      "era": "exodus",
+      "author": [
+        "moses"
+      ],
+      "ref": "Numbers",
+      "chapter": "ot/numbers/Numbers_1.html",
+      "summary": "Moses documents the forty-year wilderness journey from Sinai to the plains of Moab, including census records, the failure at Kadesh, and the second generation's preparation to enter Canaan. The book chronicles both Israel's persistent rebellion and God's faithful sustaining of his covenant people."
+    },
+    {
+      "id": "book-deuteronomy",
+      "name": "Deuteronomy Written",
+      "year": -1406,
+      "era": "exodus",
+      "author": [
+        "moses"
+      ],
+      "ref": "Deuteronomy",
+      "chapter": "ot/deuteronomy/Deuteronomy_1.html",
+      "summary": "Moses delivers his farewell addresses on the plains of Moab, restating the Law for the generation about to enter Canaan. Structured as a covenant renewal treaty, Deuteronomy becomes the theological lens through which Israel's historians later evaluate every king and generation."
+    },
+    {
+      "id": "book-job",
+      "name": "Job Written",
+      "year": -1400,
+      "era": "exodus",
+      "author": [],
+      "ref": "Job",
+      "chapter": "ot/job/Job_1.html",
+      "summary": "An unknown author composes the book of Job, widely considered the oldest extended literary work in the Bible. Set in the patriarchal period, it confronts the problem of innocent suffering through a cosmic drama, poetic dialogues, and God's thunderous response from the whirlwind."
+    },
+    {
+      "id": "book-joshua",
+      "name": "Joshua Written",
+      "year": -1380,
+      "era": "judges",
+      "author": [
+        "joshua"
+      ],
+      "ref": "Joshua",
+      "chapter": "ot/joshua/Joshua_1.html",
+      "summary": "Joshua (with possible later editorial additions) records the conquest and division of Canaan, demonstrating God's faithfulness in fulfilling the land promises made to Abraham. The book serves as both military history and theological testimony."
+    },
+    {
+      "id": "book-judges",
+      "name": "Judges Written",
+      "year": -1050,
+      "era": "judges",
+      "author": [
+        "samuel"
+      ],
+      "ref": "Judges",
+      "chapter": "ot/judges/Judges_1.html",
+      "summary": "Traditionally attributed to Samuel, Judges chronicles the cyclical pattern of apostasy, oppression, repentance, and deliverance that defines the pre-monarchic period. Its refrain — 'everyone did what was right in his own eyes' — makes the theological case for the coming monarchy."
+    },
+    {
+      "id": "book-ruth",
+      "name": "Ruth Written",
+      "year": -1010,
+      "era": "kingdom",
+      "author": [
+        "samuel"
+      ],
+      "ref": "Ruth",
+      "chapter": "ot/ruth/Ruth_1.html",
+      "summary": "Traditionally attributed to Samuel, Ruth tells the story of a Moabite widow whose loyalty to her Israelite mother-in-law Naomi leads to her inclusion in the covenant community. The book concludes with a genealogy linking Ruth to King David, placing a Gentile convert in the messianic line."
+    },
+    {
+      "id": "book-song-of-solomon",
+      "name": "Song of Solomon Written",
+      "year": -960,
+      "era": "kingdom",
+      "author": [
+        "solomon"
+      ],
+      "ref": "Song of Solomon",
+      "chapter": "ot/song_of_solomon/Song_Of_Solomon_1.html",
+      "summary": "Solomon composes the Song of Songs, an extended love poem celebrating the beauty and exclusivity of marital love. Read allegorically as God's love for Israel and Christ's love for the church, and literally as a celebration of human sexuality within covenant, it stands unique among biblical books."
+    },
+    {
+      "id": "book-ecclesiastes",
+      "name": "Ecclesiastes Written",
+      "year": -935,
+      "era": "kingdom",
+      "author": [
+        "solomon"
+      ],
+      "ref": "Ecclesiastes",
+      "chapter": "ot/ecclesiastes/Ecclesiastes_1.html",
+      "summary": "Solomon, writing near the end of his life, reflects on the futility of human striving apart from God. The Preacher's search for meaning through wisdom, pleasure, wealth, and work yields the verdict 'meaningless' — until reoriented toward fearing God and keeping his commandments."
+    },
+    {
+      "id": "book-1-samuel",
+      "name": "1 Samuel Written",
+      "year": -930,
+      "era": "kingdom",
+      "author": [
+        "samuel"
+      ],
+      "ref": "1 Samuel",
+      "chapter": "ot/1_samuel/1_Samuel_1.html",
+      "summary": "Samuel, along with the prophets Nathan and Gad, records the transition from the judges to the monarchy — Samuel's prophetic ministry, Saul's rise and fall, and David's anointing and early career. The book explores the theological tensions inherent in Israel's demand for a king."
+    },
+    {
+      "id": "book-2-samuel",
+      "name": "2 Samuel Written",
+      "year": -930,
+      "era": "kingdom",
+      "author": [
+        "samuel"
+      ],
+      "ref": "2 Samuel",
+      "chapter": "ot/2_samuel/2_Samuel_1.html",
+      "summary": "Compiled by Nathan and Gad using Samuel's records, 2 Samuel chronicles David's reign over united Israel — the Davidic covenant, military victories, the Bathsheba affair, and the internal crises that follow. It presents David as both Israel's greatest king and a deeply flawed human being."
+    },
+    {
+      "id": "book-joel",
+      "name": "Joel Written",
+      "year": -835,
+      "era": "divided_kingdom",
+      "author": [],
+      "ref": "Joel",
+      "chapter": "ot/joel/Joel_1.html",
+      "summary": "Joel transforms a devastating locust plague into an apocalyptic vision of the Day of the LORD, calling Judah to repentance and promising the outpouring of God's Spirit 'on all flesh.' Peter's citation of Joel at Pentecost anchors this prophecy in the church's founding moment."
+    },
+    {
+      "id": "book-amos",
+      "name": "Amos Written",
+      "year": -760,
+      "era": "divided_kingdom",
+      "author": [
+        "amos"
+      ],
+      "ref": "Amos",
+      "chapter": "ot/amos/Amos_1.html",
+      "summary": "Amos, a shepherd from Tekoa in Judah, prophesies against the northern kingdom during Jeroboam II's prosperous but corrupt reign. His oracles against social injustice and empty religiosity establish the prophetic demand that worship without justice is an abomination to God."
+    },
+    {
+      "id": "book-jonah",
+      "name": "Jonah Written",
+      "year": -760,
+      "era": "divided_kingdom",
+      "author": [
+        "jonah"
+      ],
+      "ref": "Jonah",
+      "chapter": "ot/jonah/Jonah_1.html",
+      "summary": "The story of Jonah's reluctant mission to Nineveh challenges Israel's exclusivist tendencies by demonstrating God's compassion for a pagan city. The prophet's anger at Nineveh's repentance reveals the tension between divine justice and mercy that runs through the entire prophetic corpus."
+    },
+    {
+      "id": "book-hosea",
+      "name": "Hosea Written",
+      "year": -725,
+      "era": "divided_kingdom",
+      "author": [
+        "hosea"
+      ],
+      "ref": "Hosea",
+      "chapter": "ot/hosea/Hosea_1.html",
+      "summary": "Hosea writes during the last turbulent decades of the northern kingdom, using his own agonizing marriage to Gomer as a living parable of God's relentless love for unfaithful Israel. The book's marriage metaphor becomes a foundational image for understanding the covenant relationship throughout Scripture."
+    },
+    {
+      "id": "book-proverbs",
+      "name": "Proverbs Compiled",
+      "year": -700,
+      "era": "divided_kingdom",
+      "author": [
+        "solomon"
+      ],
+      "ref": "Proverbs",
+      "chapter": "ot/proverbs/Proverbs_1.html",
+      "summary": "Solomon composes the core collections of Proverbs, with Hezekiah's scribes later copying additional Solomonic sayings and appending the oracles of Agur and Lemuel. The book distills wisdom for navigating life under God's moral order, grounded in the foundational principle that 'the fear of the LORD is the beginning of knowledge.'"
+    },
+    {
+      "id": "book-isaiah",
+      "name": "Isaiah Written",
+      "year": -700,
+      "era": "prophets",
+      "author": [
+        "isaiah"
+      ],
+      "ref": "Isaiah",
+      "chapter": "ot/isaiah/Isaiah_1.html",
+      "summary": "Isaiah composes his prophetic masterwork over a ministry spanning the reigns of Uzziah through Hezekiah. The book moves from judgment oracles against Judah and the nations through the Servant Songs to a vision of cosmic restoration — making Isaiah the most christologically rich book of the Old Testament."
+    },
+    {
+      "id": "book-micah",
+      "name": "Micah Written",
+      "year": -700,
+      "era": "divided_kingdom",
+      "author": [
+        "micah_prophet"
+      ],
+      "ref": "Micah",
+      "chapter": "ot/micah/Micah_1.html",
+      "summary": "Micah, a rural prophet from Moresheth, denounces the corruption of Jerusalem's ruling class while delivering some of the Old Testament's most memorable prophecies — including the Messiah's birth in Bethlehem and the summary of true religion: 'to act justly, love mercy, and walk humbly with your God.'"
+    },
+    {
+      "id": "book-nahum",
+      "name": "Nahum Written",
+      "year": -650,
+      "era": "divided_kingdom",
+      "author": [
+        "nahum"
+      ],
+      "ref": "Nahum",
+      "chapter": "ot/nahum/Nahum_1.html",
+      "summary": "Nahum announces the impending destruction of Nineveh — the same city that repented under Jonah's preaching has returned to its violent ways. The vivid war poetry and theological affirmation that God is slow to anger but will by no means clear the guilty complement Jonah's portrait of divine compassion."
+    },
+    {
+      "id": "book-zephaniah",
+      "name": "Zephaniah Written",
+      "year": -630,
+      "era": "divided_kingdom",
+      "author": [
+        "zephaniah"
+      ],
+      "ref": "Zephaniah",
+      "chapter": "ot/zephaniah/Zephaniah_1.html",
+      "summary": "Zephaniah, a descendant of King Hezekiah, prophesies during Josiah's early reign with a sweeping vision of universal judgment — the Day of the LORD that will consume the whole earth. Yet the book closes with a joyous song of restoration, as God himself rejoices over his remnant people with singing."
+    },
+    {
+      "id": "book-habakkuk",
+      "name": "Habakkuk Written",
+      "year": -608,
+      "era": "divided_kingdom",
+      "author": [
+        "habakkuk"
+      ],
+      "ref": "Habakkuk",
+      "chapter": "ot/habakkuk/Habakkuk_1.html",
+      "summary": "Habakkuk wrestles with God over the use of wicked Babylon to punish Judah. The prophetic dialogue yields the transformative declaration 'the righteous will live by his faith' — a verse that Paul, the Reformers, and centuries of theology elevate into a cornerstone of justification doctrine."
+    },
+    {
+      "id": "book-obadiah",
+      "name": "Obadiah Written",
+      "year": -586,
+      "era": "exile",
+      "author": [],
+      "ref": "Obadiah",
+      "chapter": "ot/obadiah/Obadiah_1.html",
+      "summary": "Obadiah delivers the shortest book in the Old Testament — a single chapter oracle against Edom for its treachery during Jerusalem's fall. The prophecy condemns Edom's pride and gloating, declaring that the Day of the LORD will reverse the fortunes of Jacob and Esau."
+    },
+    {
+      "id": "book-lamentations",
+      "name": "Lamentations Written",
+      "year": -586,
+      "era": "exile",
+      "author": [
+        "jeremiah"
+      ],
+      "ref": "Lamentations",
+      "chapter": "ot/lamentations/Lamentations_1.html",
+      "summary": "Traditionally attributed to Jeremiah, Lamentations is a collection of five acrostic poems mourning Jerusalem's destruction. The raw grief of eyewitness testimony is anchored by the central confession: 'The LORD's compassions never fail; they are new every morning; great is your faithfulness.'"
+    },
+    {
+      "id": "book-jeremiah",
+      "name": "Jeremiah Written",
+      "year": -580,
+      "era": "exile",
+      "author": [
+        "jeremiah"
+      ],
+      "ref": "Jeremiah",
+      "chapter": "ot/jeremiah/Jeremiah_1.html",
+      "summary": "Jeremiah dictates his prophecies to the scribe Baruch over a forty-year ministry spanning Josiah's reforms through Jerusalem's fall. The 'weeping prophet' announces judgment while promising a new covenant written on the heart — a prophecy the New Testament identifies as fulfilled in Christ."
+    },
+    {
+      "id": "book-ezekiel",
+      "name": "Ezekiel Written",
+      "year": -570,
+      "era": "exile",
+      "author": [
+        "ezekiel"
+      ],
+      "ref": "Ezekiel",
+      "chapter": "ot/ezekiel/Ezekiel_1.html",
+      "summary": "Ezekiel prophesies from Babylon among the exiles, employing dramatic sign-acts, bizarre visions, and elaborate allegories. His prophecy arcs from the glory departing the temple through judgment on the nations to the visionary new temple where God's glory returns — a comprehensive theology of divine presence."
+    },
+    {
+      "id": "book-1-kings",
+      "name": "1 Kings Written",
+      "year": -560,
+      "era": "exile",
+      "author": [
+        "jeremiah"
+      ],
+      "ref": "1 Kings",
+      "chapter": "ot/1_kings/1_Kings_1.html",
+      "summary": "Traditionally attributed to Jeremiah, 1 Kings covers Solomon's glorious reign, the kingdom's division, and the northern prophetic contest between Yahweh and Baal culminating in Elijah's ministry. The Deuteronomistic historian evaluates every king by his fidelity to the covenant."
+    },
+    {
+      "id": "book-2-kings",
+      "name": "2 Kings Written",
+      "year": -560,
+      "era": "exile",
+      "author": [
+        "jeremiah"
+      ],
+      "ref": "2 Kings",
+      "chapter": "ot/2_kings/2_Kings_1.html",
+      "summary": "Continuing the Deuteronomistic history, 2 Kings records the decline and fall of both kingdoms — Israel to Assyria in 722 BC and Judah to Babylon in 586 BC. Elisha's miracles, Hezekiah's faith, and Josiah's reforms provide bright moments in an otherwise tragic trajectory toward exile."
+    },
+    {
+      "id": "book-daniel",
+      "name": "Daniel Written",
+      "year": -535,
+      "era": "exile",
+      "author": [
+        "daniel"
+      ],
+      "ref": "Daniel",
+      "chapter": "ot/daniel/Daniel_1.html",
+      "summary": "Daniel records his experiences at the Babylonian and Persian courts alongside apocalyptic visions of successive world empires and God's eternal kingdom. The book's four-kingdom scheme, Son of Man vision, and seventy-weeks prophecy form the primary Old Testament foundation for New Testament eschatology."
+    },
+    {
+      "id": "book-haggai",
+      "name": "Haggai Written",
+      "year": -520,
+      "era": "post-exilic",
+      "author": [
+        "haggai"
+      ],
+      "ref": "Haggai",
+      "chapter": "ot/haggai/Haggai_1.html",
+      "summary": "Haggai delivers four precisely dated oracles over a four-month period, challenging the returned exiles to prioritize rebuilding the temple over their own paneled houses. His preaching, alongside Zechariah's, succeeds in restarting the stalled temple project."
+    },
+    {
+      "id": "book-zechariah",
+      "name": "Zechariah Written",
+      "year": -518,
+      "era": "post-exilic",
+      "author": [],
+      "ref": "Zechariah",
+      "chapter": "ot/zechariah/Zechariah_1.html",
+      "summary": "Zechariah's night visions encourage the post-exilic community during the temple rebuilding, while his later oracles paint vivid messianic portraits — the coming king riding on a donkey, the pierced one whom they will mourn, and the shepherd struck down. The New Testament draws heavily on Zechariah for its Passion narratives."
+    },
+    {
+      "id": "book-esther",
+      "name": "Esther Written",
+      "year": -460,
+      "era": "post-exilic",
+      "author": [],
+      "ref": "Esther",
+      "chapter": "ot/esther/Esther_1.html",
+      "summary": "An unknown author (possibly Mordecai) composes the book of Esther, set during the reign of Ahasuerus (Xerxes I) of Persia. Though God is never mentioned by name, his providential hand guides every 'coincidence' that delivers the Jewish people from Haman's genocide plot, establishing the festival of Purim."
+    },
+    {
+      "id": "book-psalms",
+      "name": "Psalms Compiled",
+      "year": -450,
+      "era": "post-exilic",
+      "author": [
+        "david"
+      ],
+      "ref": "Psalms",
+      "chapter": "ot/psalms/Psalms_1.html",
+      "summary": "The Psalter reaches its final five-book form in the post-exilic period, though individual psalms span from Moses (Psalm 90) through the exile. David is the primary author (73 psalms), with contributions from Asaph, the Sons of Korah, Solomon, and anonymous writers. The collection serves as Israel's hymnbook, prayer book, and theological treasury."
+    },
+    {
+      "id": "book-ezra",
+      "name": "Ezra Written",
+      "year": -440,
+      "era": "post-exilic",
+      "author": [
+        "ezra"
+      ],
+      "ref": "Ezra",
+      "chapter": "ot/ezra/Ezra_1.html",
+      "summary": "Ezra records the return from Babylonian exile in two waves — Zerubbabel's temple rebuilding mission and his own Torah-reform mission. The book documents the community's struggle to reestablish covenant faithfulness in the land, including the controversial dissolution of mixed marriages."
+    },
+    {
+      "id": "book-malachi",
+      "name": "Malachi Written",
+      "year": -435,
+      "era": "post-exilic",
+      "author": [],
+      "ref": "Malachi",
+      "chapter": "ot/malachi/Malachi_1.html",
+      "summary": "Malachi, the last Old Testament prophet, confronts the spiritual lethargy of the post-exilic community through a series of disputations — challenging corrupt priests, unfaithful husbands, and those who rob God of tithes. His promise of Elijah's return before the Day of the LORD bridges the testaments and finds fulfillment in John the Baptist."
+    },
+    {
+      "id": "book-1-chronicles",
+      "name": "1 Chronicles Written",
+      "year": -430,
+      "era": "post-exilic",
+      "author": [
+        "ezra"
+      ],
+      "ref": "1 Chronicles",
+      "chapter": "ot/1_chronicles/1_Chronicles_1.html",
+      "summary": "Traditionally attributed to Ezra, 1 Chronicles retells Israel's history from Adam through David with a priestly focus, emphasizing temple worship, Levitical service, and the Davidic covenant. Written for the post-exilic community, it reconnects the returnees to their theological heritage."
+    },
+    {
+      "id": "book-2-chronicles",
+      "name": "2 Chronicles Written",
+      "year": -430,
+      "era": "post-exilic",
+      "author": [
+        "ezra"
+      ],
+      "ref": "2 Chronicles",
+      "chapter": "ot/2_chronicles/2_Chronicles_1.html",
+      "summary": "Continuing the Chronicler's history, 2 Chronicles covers Solomon's temple through the exile, concluding with Cyrus's decree permitting the return. The book evaluates Judah's kings primarily by their devotion to temple worship, offering the post-exilic community a model for faithful living."
+    },
+    {
+      "id": "book-nehemiah",
+      "name": "Nehemiah Written",
+      "year": -430,
+      "era": "post-exilic",
+      "author": [
+        "nehemiah"
+      ],
+      "ref": "Nehemiah",
+      "chapter": "ot/nehemiah/Nehemiah_1.html",
+      "summary": "Nehemiah's first-person memoir recounts his mission from the Persian court to rebuild Jerusalem's walls, his administrative reforms, and the public Torah reading that catalyzes national repentance. The book demonstrates that political courage and spiritual renewal are complementary rather than competing goods."
+    },
+    {
+      "id": "book-james",
+      "name": "James Written",
+      "year": 48,
+      "era": "nt",
+      "author": [
+        "james-brother"
+      ],
+      "ref": "James",
+      "chapter": "nt/james/James_1.html",
+      "summary": "James, the brother of Jesus and leader of the Jerusalem church, writes one of the earliest New Testament documents — a practical letter demanding that genuine faith produce visible works. His insistence that 'faith without deeds is dead' complements Paul's teaching on justification by faith."
+    },
+    {
+      "id": "book-galatians",
+      "name": "Galatians Written",
+      "year": 49,
+      "era": "nt",
+      "author": [
+        "paul"
+      ],
+      "ref": "Galatians",
+      "chapter": "nt/galatians/Galatians_1.html",
+      "summary": "Paul writes urgently to the Galatian churches to counter Judaizers who demand Gentile circumcision. The letter's passionate defense of justification by faith alone apart from works of the law becomes a manifesto for Christian freedom and a cornerstone of Reformation theology."
+    },
+    {
+      "id": "book-1-thessalonians",
+      "name": "1 Thessalonians Written",
+      "year": 51,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "1 Thessalonians",
+      "chapter": "nt/1_thessalonians/1_Thessalonians_1.html",
+      "summary": "Paul writes to the young Thessalonian church, encouraging their faith under persecution and addressing anxiety about believers who have died before Christ's return. The letter contains the most detailed Pauline description of the resurrection and the Lord's coming."
+    },
+    {
+      "id": "book-2-thessalonians",
+      "name": "2 Thessalonians Written",
+      "year": 51,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "2 Thessalonians",
+      "chapter": "nt/2_thessalonians/2_Thessalonians_1.html",
+      "summary": "Paul follows up with the Thessalonians to correct misunderstandings about the Day of the Lord, teaching that certain events — the rebellion and the man of lawlessness — must precede Christ's return. He also addresses idleness in the community, insisting that believers work for their bread."
+    },
+    {
+      "id": "book-1-corinthians",
+      "name": "1 Corinthians Written",
+      "year": 55,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "1 Corinthians",
+      "chapter": "nt/1_corinthians/1_Corinthians_1.html",
+      "summary": "Paul addresses a fractured church in Corinth, tackling divisions, sexual immorality, lawsuits, idol food, worship disorders, and resurrection doubts. The letter contains the love hymn of chapter 13 and the earliest written account of the Lord's Supper tradition."
+    },
+    {
+      "id": "book-mark",
+      "name": "Mark Written",
+      "year": 55,
+      "era": "nt",
+      "author": [],
+      "ref": "Mark",
+      "chapter": "nt/mark/Mark_1.html",
+      "summary": "John Mark, drawing on Peter's eyewitness testimony, composes the earliest Gospel — a fast-paced narrative that rushes toward the cross, portraying Jesus as the suffering Son of God whose messianic identity is paradoxically revealed through his death. Mark's Gospel establishes the literary genre that Matthew and Luke will later expand."
+    },
+    {
+      "id": "book-2-corinthians",
+      "name": "2 Corinthians Written",
+      "year": 56,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "2 Corinthians",
+      "chapter": "nt/2_corinthians/2_Corinthians_1.html",
+      "summary": "Paul's most autobiographical letter defends his apostolic authority against rival 'super-apostles' while developing a theology of suffering, weakness, and divine power. His catalogue of hardships and the thorn in the flesh reveal a man whose ministry is sustained by grace alone."
+    },
+    {
+      "id": "book-romans",
+      "name": "Romans Written",
+      "year": 57,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Romans",
+      "chapter": "nt/romans/Romans_1.html",
+      "summary": "Paul composes his theological masterwork for the church at Rome, systematically presenting the gospel from humanity's universal sinfulness through justification, sanctification, and glorification to God's purposes for Israel and the nations. Romans has shaped more theological movements than any other single document in Christian history."
+    },
+    {
+      "id": "book-ephesians",
+      "name": "Ephesians Written",
+      "year": 60,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Ephesians",
+      "chapter": "nt/ephesians/Ephesians_1.html",
+      "summary": "From Roman imprisonment, Paul writes a cosmic vision of God's plan to unite all things in Christ, the church as Christ's body, and the practical implications of this new identity. The letter's soaring theology of election, grace, and spiritual warfare makes it one of the densest theological documents in the New Testament."
+    },
+    {
+      "id": "book-colossians",
+      "name": "Colossians Written",
+      "year": 60,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Colossians",
+      "chapter": "nt/colossians/Colossians_1.html",
+      "summary": "Paul counters a syncretistic heresy threatening the Colossian church by asserting the absolute supremacy and sufficiency of Christ — in him 'all the fullness of the Deity lives in bodily form.' The Christ-hymn of chapter 1 ranks among the highest christological statements in Scripture."
+    },
+    {
+      "id": "book-philemon",
+      "name": "Philemon Written",
+      "year": 60,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Philemon",
+      "chapter": "nt/philemon/Philemon_1.html",
+      "summary": "Paul writes a brief personal letter asking Philemon to receive back his runaway slave Onesimus — now a fellow believer — 'no longer as a slave, but as a dear brother.' The letter demonstrates how the gospel transforms social relationships from within, subverting the institution of slavery through the logic of Christian kinship."
+    },
+    {
+      "id": "book-matthew",
+      "name": "Matthew Written",
+      "year": 60,
+      "era": "nt",
+      "author": [
+        "matthew-ap"
+      ],
+      "ref": "Matthew",
+      "chapter": "nt/matthew/Matthew_1.html",
+      "summary": "Matthew, the former tax collector turned apostle, presents Jesus as the long-awaited Jewish Messiah who fulfills Old Testament prophecy. Structured around five major discourses, the Gospel bridges the testaments and provides the early church's most comprehensive account of Jesus' teaching."
+    },
+    {
+      "id": "book-philippians",
+      "name": "Philippians Written",
+      "year": 61,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Philippians",
+      "chapter": "nt/philippians/Philippians_1.html",
+      "summary": "Paul writes a warm letter of joy from prison to his most supportive church, centering on the Christ-hymn that traces Jesus' descent from divine equality to crucifixion and his exaltation as Lord. The letter's repeated call to rejoice in all circumstances models contentment rooted in Christ."
+    },
+    {
+      "id": "book-luke",
+      "name": "Luke Written",
+      "year": 62,
+      "era": "apostolic",
+      "author": [],
+      "ref": "Luke",
+      "chapter": "nt/luke/Luke_1.html",
+      "summary": "Luke, the physician and companion of Paul, composes a carefully researched Gospel for the Gentile patron Theophilus. His account emphasizes Jesus' compassion for outsiders — the poor, women, Samaritans, and sinners — and presents the gospel as God's salvation reaching to the ends of the earth."
+    },
+    {
+      "id": "book-acts",
+      "name": "Acts Written",
+      "year": 62,
+      "era": "apostolic",
+      "author": [],
+      "ref": "Acts",
+      "chapter": "nt/acts/Acts_1.html",
+      "summary": "Luke's second volume traces the Spirit-empowered expansion of the church from Jerusalem to Rome, following Peter's early ministry and Paul's missionary journeys. Acts serves as the indispensable historical bridge between the Gospels and the Epistles."
+    },
+    {
+      "id": "book-1-timothy",
+      "name": "1 Timothy Written",
+      "year": 64,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "1 Timothy",
+      "chapter": "nt/1_timothy/1_Timothy_1.html",
+      "summary": "Paul instructs his young protégé Timothy on church order in Ephesus — qualifications for overseers and deacons, proper worship conduct, and combating false teaching. The Pastoral Epistles provide the earliest blueprint for organized church governance."
+    },
+    {
+      "id": "book-titus",
+      "name": "Titus Written",
+      "year": 64,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "Titus",
+      "chapter": "nt/titus/Titus_1.html",
+      "summary": "Paul writes to Titus, whom he has left on Crete to establish churches and appoint elders. The letter emphasizes sound doctrine producing godly living, and contains one of the New Testament's most concise statements of salvation theology: 'the grace of God has appeared that offers salvation to all people.'"
+    },
+    {
+      "id": "book-1-peter",
+      "name": "1 Peter Written",
+      "year": 64,
+      "era": "apostolic",
+      "author": [
+        "peter"
+      ],
+      "ref": "1 Peter",
+      "chapter": "nt/1_peter/1_Peter_1.html",
+      "summary": "Peter writes from Rome ('Babylon') to scattered believers across Asia Minor, encouraging them to stand firm under persecution by fixing their hope on their living inheritance in Christ. The letter's theology of suffering as participation in Christ's sufferings shapes the church's understanding of faithful endurance."
+    },
+    {
+      "id": "book-2-peter",
+      "name": "2 Peter Written",
+      "year": 67,
+      "era": "apostolic",
+      "author": [
+        "peter"
+      ],
+      "ref": "2 Peter",
+      "chapter": "nt/2_peter/2_Peter_1.html",
+      "summary": "Peter writes his final testament before martyrdom, warning against false teachers who deny the Lord's return and exploit believers with fabricated stories. The letter's description of Scripture as produced by men 'carried along by the Holy Spirit' provides a foundational text for the doctrine of biblical inspiration."
+    },
+    {
+      "id": "book-2-timothy",
+      "name": "2 Timothy Written",
+      "year": 67,
+      "era": "apostolic",
+      "author": [
+        "paul"
+      ],
+      "ref": "2 Timothy",
+      "chapter": "nt/2_timothy/2_Timothy_1.html",
+      "summary": "Paul's final letter, written from a Roman dungeon awaiting execution, charges Timothy to guard the gospel, endure hardship, and preach the word 'in season and out of season.' The letter's declaration that 'all Scripture is God-breathed' anchors the church's doctrine of biblical authority."
+    },
+    {
+      "id": "book-hebrews",
+      "name": "Hebrews Written",
+      "year": 67,
+      "era": "apostolic",
+      "author": [],
+      "ref": "Hebrews",
+      "chapter": "nt/hebrews/Hebrews_1.html",
+      "summary": "An anonymous author composes an elaborate argument for Christ's superiority over angels, Moses, and the Levitical priesthood. Hebrews presents Jesus as the eternal high priest after the order of Melchizedek whose once-for-all sacrifice renders the old covenant obsolete. The hall of faith in chapter 11 provides the Bible's most sustained celebration of believing trust."
+    },
+    {
+      "id": "book-jude",
+      "name": "Jude Written",
+      "year": 68,
+      "era": "apostolic",
+      "author": [],
+      "ref": "Jude",
+      "chapter": "nt/jude/Jude_1.html",
+      "summary": "Jude, the brother of Jesus, writes a brief, urgent letter warning against false teachers who have infiltrated the church, 'turning the grace of our God into a license for immorality.' Drawing on Old Testament examples and extrabiblical traditions, Jude calls believers to contend earnestly for the faith once delivered to the saints."
+    },
+    {
+      "id": "book-1-john",
+      "name": "1 John Written",
+      "year": 90,
+      "era": "apostolic",
+      "author": [
+        "john-ap"
+      ],
+      "ref": "1 John",
+      "chapter": "nt/1_john/1_John_1.html",
+      "summary": "The aged apostle John writes to combat an early proto-Gnostic heresy that denies Jesus came in the flesh. The letter's interlocking tests of faith — doctrinal (confessing Christ), moral (obeying commands), and relational (loving one another) — provide assurance to genuine believers while exposing counterfeit Christianity."
+    },
+    {
+      "id": "book-2-john",
+      "name": "2 John Written",
+      "year": 90,
+      "era": "apostolic",
+      "author": [
+        "john-ap"
+      ],
+      "ref": "2 John",
+      "chapter": "nt/2_john/2_John_1.html",
+      "summary": "John writes a brief letter to 'the elect lady and her children' — likely a house church — warning against deceivers who deny Christ's incarnation and instructing the community not to offer hospitality to false teachers. The letter distills the balance between truth and love that defines Johannine theology."
+    },
+    {
+      "id": "book-3-john",
+      "name": "3 John Written",
+      "year": 90,
+      "era": "apostolic",
+      "author": [
+        "john-ap"
+      ],
+      "ref": "3 John",
+      "chapter": "nt/3_john/3_John_1.html",
+      "summary": "John writes to Gaius, commending his hospitality to traveling missionaries and condemning Diotrephes, who refuses to welcome them and expels those who do. This personal note provides a rare window into the practical dynamics of early church leadership and the tensions between itinerant and settled authority."
+    },
+    {
+      "id": "book-john",
+      "name": "John Written",
+      "year": 90,
+      "era": "apostolic",
+      "author": [
+        "john-ap"
+      ],
+      "ref": "John",
+      "chapter": "nt/john/John_1.html",
+      "summary": "The apostle John composes the last Gospel, offering a deeply theological portrait of Jesus as the eternal Word made flesh. Structured around seven signs and seven 'I am' statements, John's Gospel supplements the Synoptics with extended discourses, the Upper Room teaching, and the high priestly prayer — presenting Jesus as the divine Son who reveals the Father."
+    },
+    {
+      "id": "book-revelation",
+      "name": "Revelation Written",
+      "year": 95,
+      "era": "apostolic",
+      "author": [
+        "john-ap"
+      ],
+      "ref": "Revelation",
+      "chapter": "",
+      "summary": "John receives and records the apocalyptic visions on the island of Patmos — letters to seven churches, heavenly throne scenes, seal and trumpet judgments, the fall of Babylon, and the new heaven and new earth. Revelation brings the biblical narrative to its consummation: 'the dwelling of God is with humanity, and he will live with them.'"
+    }
+  ],
   "timeline_people": [
     {
       "id": "adam",
