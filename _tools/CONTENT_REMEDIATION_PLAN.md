@@ -1,6 +1,7 @@
 # Content Quality Remediation Plan
 
 **Based on:** Content Quality Audit Report (March 26, 2026)
+**Status:** Batches 0–5 + Romans COMPLETE. Batch 6 is next.
 **Principle:** Populate over delete. Every button a user can tap should deliver
 insight that deepens their understanding. No fabrication — only accurate
 scholarly content.
@@ -9,17 +10,17 @@ scholarly content.
 
 ## Work Estimate Summary
 
-| Batch | Items | Effort | Description |
-|-------|-------|--------|-------------|
-| 0 | 1 | 15 min | Word Study bug fix (after error text) |
-| 1 | 8 | 2 hrs | Scholar bio fixes |
-| 2 | ~660 | 3–4 days | Empty/ghost panel population |
-| 3 | 41 | 1 day | People enrichment (bios, dates, refs, timeline) |
-| 4 | 8 | 2 hrs | Missing parallel passages |
-| 5 | 20 | 1 day | New word studies |
-| 6 | ~259 | 2 days | Thin panel enrichment |
+| Batch | Items | Effort | Description | Status |
+|-------|-------|--------|-------------|--------|
+| 0 | 1 | 15 min | Word Study bug fix (after error text) | ✅ DONE |
+| 1 | 8 | 2 hrs | Scholar bio fixes | ✅ DONE |
+| 2 | ~660 | 3–4 days | Empty/ghost panel population | ✅ DONE |
+| 3 | 41 | 1 day | People enrichment (bios, dates, refs, timeline) | ✅ DONE |
+| 4 | 8 | 2 hrs | Missing parallel passages | ✅ DONE |
+| 5 | 20 | 1 day | New word studies | ✅ DONE |
+| 6 | ~259 | 2 days | Thin panel enrichment | ⬜ NEXT |
 
-**Total: ~8–9 working days**
+**Remaining: Batch 6 (~2 days) + enrichment debt (Isaiah 23–66, Kings/Chronicles MacArthur)**
 
 ---
 
@@ -58,7 +59,7 @@ These have the template structure but only 164 chars of section text
 8. Robert D. Bergen — 1-2 Samuel, Hannibal-LaGrange
 
 **Pipeline:** Update bios in config.py SCHOLAR_REGISTRY → run
-export_config.py → build_sqlite.py → validate.
+build_sqlite.py → validate.
 
 **Files:** _tools/config.py, content/meta/scholars.json
 
@@ -267,7 +268,7 @@ Darius I, Joshua son of Jozadak
 Gog, Jaazaniah son of Shaphan, Oholah, Oholibah
 
 **Pipeline:** Update config.py PEOPLE_BIOS and TIMELINE_EVENTS →
-export_config.py → build_sqlite.py → validate.
+build_sqlite.py → validate.
 
 ---
 
@@ -369,30 +370,19 @@ it's just shallow compared to the richer books.
 ## Execution Order
 
 ```
-Batch 0: Word Study bug fix (when error text provided)
+Batch 0: Word Study bug fix ✅
     |
-Batch 1: Scholar bios (quick, high-visibility)
+Batch 1: Scholar bios ✅
     |
-Batch 2: Empty panel population (largest batch, highest UX impact)
-    2G -> Exodus hist "None" (cleanup + populate, 39 chapters)
-    2A -> Psalms ghost buttons (13 chapters x 7 scholars)
-    2B -> Matthew heb panels (27 chapters)
-    2D -> Proverbs heb panels (22 chapters)
-    2F -> 2 Chronicles cross-ref (26 chapters)
-    2C,2E,2H -> Remaining small panel batches
-    2I -> TX chapter panels (85 panels)
+Batch 2: Empty panel population ✅
     |
-Batch 3: People enrichment
-    3B -> Dates (quick data entry)
-    3C -> Refs (quick data entry)
-    3A -> Bio expansion (content writing)
-    3D -> Timeline entries (28 new entries)
+Batch 3: People enrichment ✅
     |
-Batch 4: Parallel passages (data entry)
+Batch 4: Parallel passages ✅
     |
-Batch 5: Word studies (content creation)
+Batch 5: Word studies ✅
     |
-Batch 6: Thin panel enrichment (polish pass)
+Batch 6: Thin panel enrichment (polish pass) ⬜ NEXT
 ```
 
 ---

@@ -66,7 +66,6 @@ All content is authored as Python dicts, saved as JSON, assembled into SQLite, a
 
 2. **Update `content/meta/books.json`:**
    - Set `is_live: true` for the book
-   - Or run `python3 _tools/export_config.py` to regenerate
 
 3. **Write chapters** using `GENERATOR_TEMPLATE.py`
 
@@ -84,7 +83,7 @@ All content is authored as Python dicts, saved as JSON, assembled into SQLite, a
 
 3. **Add to `commentators/scholar-data.js`** (or `content/meta/scholar-data.json` directly)
 
-4. **Run `python3 _tools/export_config.py`** to regenerate `scholars.json`
+4. **Run `python3 _tools/build_sqlite.py`** to rebuild the database
 
 5. Use the scholar key in generator scripts: `'{key}': [('ref', 'note')]`
 
@@ -100,10 +99,6 @@ All content is authored as Python dicts, saved as JSON, assembled into SQLite, a
 | `validate.py` | Check all content JSON for schema/completeness |
 | `build_sqlite.py` | Assemble content/ → scripture.db |
 | `validate_sqlite.py` | Verify database integrity (51 checks) |
-| `migrate_content.py` | One-time migration of HTML→JSON formats |
-| `extract_to_json.py` | Extract chapter HTML→JSON (archive tool) |
-| `convert_js_to_json.py` | Convert JS data files→JSON (archive tool) |
-| `export_config.py` | Export Python config→JSON |
 
 ---
 
