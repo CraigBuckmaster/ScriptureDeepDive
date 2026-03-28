@@ -611,6 +611,20 @@ def populate_timelines(cur):
         )
         count += 1
 
+    # Book authorship events
+    for bk in data.get('book_events', []):
+        tid = f"bk_{bk['id']}"
+        cur.execute(
+            'INSERT INTO timelines (id, category, era, name, year, '
+            'scripture_ref, chapter_link, people_json, summary, region) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (tid, 'book', bk.get('era'), bk['name'], bk['year'],
+             bk.get('ref'), bk.get('chapter'),
+             _json_str(bk.get('author', [])),
+             bk.get('summary'), None)
+        )
+        count += 1
+
     # Timeline people
     for tp in data.get('timeline_people', []):
         tid = f"ppl_{tp['id']}"

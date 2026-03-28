@@ -154,7 +154,7 @@ def main():
 
     # Timelines
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
-    check("474 timeline entries", tl_count == 474, f"got {tl_count}")
+    check("540 timeline entries", tl_count == 540, f"got {tl_count}")
 
     # Feature tables (prophecy chains, concepts, difficult passages)
     pc_count = q1(cur, "SELECT COUNT(*) FROM prophecy_chains")
