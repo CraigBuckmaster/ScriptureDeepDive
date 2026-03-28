@@ -2,7 +2,7 @@
 
 > **Copy everything below this line and paste it as your message to Claude in a new session.**
 > Update the `BATCH_TARGET` section if you want to override the auto-detected next book.
-> **Last updated:** 2026-03-28 — Waves 1–6 COMPLETE (65 live books). Wave 7 in progress: Revelation 1–15 done. Next: Revelation 16–22 (7 chapters remaining) + finalization (people, timelines, is_live).
+> **Last updated:** 2026-03-28 — Waves 1–7 COMPLETE. All 66 books live. Remaining work: content remediation (Batch 6), enrichment debt (Isaiah 23–66, Kings/Chronicles MacArthur), Phase 12B timeline events.
 
 ---
 
@@ -70,13 +70,15 @@ Leave blank to auto-detect the next book/chapters in canonical build order:
 4. Set `is_live=true` in `content/meta/books.json` for revelation
 5. Full validate → build → validate_sqlite → commit → push
 
-**Current wave order (from MASTER_PLAN.md):**
+**Wave status (all complete):**
 
 - WAVE 3 (Major Prophets): Daniel ✓, Lamentations ✓, Isaiah ✓, Jeremiah ✓, Ezekiel ✓ — **COMPLETE**
 - WAVE 4 (Minor Prophets): Jonah ✓, Amos ✓, Hosea ✓, Micah ✓, Habakkuk ✓, Joel ✓, Obadiah ✓, Nahum ✓, Zephaniah ✓, Haggai ✓, Zechariah ✓, Malachi ✓ — **COMPLETE**
 - WAVE 5 (NT Epistles): Romans ✓, 1 Corinthians ✓, 2 Corinthians ✓, Galatians ✓, Ephesians ✓, Philippians ✓, Colossians ✓, 1 Thessalonians ✓, 2 Thessalonians ✓, Philemon ✓, 1 Timothy ✓, 2 Timothy ✓, Titus ✓ — **COMPLETE**
 - WAVE 6 (General Epistles): Hebrews ✓, James ✓, 1 Peter ✓, 2 Peter ✓, 1 John ✓, 2 John ✓, 3 John ✓, Jude ✓ — **COMPLETE**
-- WAVE 7 (Revelation): Chapters 1–15 ✓, **Chapters 16–22 ← NEXT (FINAL BATCH)**
+- WAVE 7 (Revelation): Chapters 1–22 ✓ — **COMPLETE**
+
+**All 66 books live. Remaining work: content remediation + enrichment debt.**
 
 **Enrichment debt (address before new books if specified):**
 - Isaiah 23-66: needs enrichment (44 chapters)
@@ -127,8 +129,7 @@ sys.path.insert(0, '_tools')
 # 1. What books exist in content/
 content = Path('content')
 if not content.exists():
-    print("⚠️  content/ not found — run extraction pipeline first")
-    print("  python3 _tools/export_config.py")
+    print("⚠️  content/ not found — clone the repo first")
 else:
     live = {}
     for d in sorted(content.iterdir()):
@@ -140,13 +141,11 @@ else:
     for book, chs in live.items():
         print(f"  {book}: {len(chs)} ch ({min(chs)}-{max(chs)})")
 
-# 2. Read MASTER_PLAN.md for next wave
-with open('_tools/MASTER_PLAN.md') as f:
-    mp = f.read()
-print("\n--- MASTER_PLAN wave info ---")
-idx = mp.find('## Build Waves')
-if idx > 0:
-    print(mp[idx:idx+2000])
+# 2. Check live book status
+with open('content/meta/books.json') as f:
+    books = json.load(f)
+live_count = sum(1 for b in books if b.get('is_live'))
+print(f"\n--- Book status: {live_count}/{len(books)} live ---")
 
 # 3. Check config.py for existing scholars
 from config import COMMENTATOR_SCOPE, SCHOLAR_REGISTRY, BOOK_META
@@ -195,7 +194,7 @@ Read the output. The next book to build is the first one listed in the wave orde
 
 ## STEP 2: INFRASTRUCTURE (only for NEW books — skip if continuing a book)
 
-Read `_tools/BUILD_PLAN.md` Phase 2 for the full checklist. For each new book:
+Read `_tools/WORKFLOW.md` "Adding a New Book" for the full checklist. For each new book:
 
 **2a. Update `_tools/shared.py`:**
 - Add to REGISTRY: `('dir', 'Name', total_ch, 0, 'OT'/'NT', 'ot'/'nt')`
