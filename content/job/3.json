@@ -5,7 +5,10 @@
   "chapter_num": 3,
   "title": "Job 3",
   "subtitle": "Job Curses the Day of His Birth",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "book-job",
+    "text": "See on Timeline — Job Written"
+  },
   "map_story_link": null,
   "sections": [
     {
