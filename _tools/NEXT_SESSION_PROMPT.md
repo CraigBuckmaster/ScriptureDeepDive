@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit 1a5319ad)
+## Current State (as of commit e2ef5761)
 
 ### Batches Complete
 
@@ -36,7 +36,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Database Stats (as of Batch 11)
+## Database Stats (as of Phase 12A)
 
 - 66 books total (58 live, 1146 chapters)
 - 50 prophecy chains (283 links)
@@ -48,6 +48,7 @@ git config user.name "Craig Buckmaster"
 - 281 people (37 spine, 244 satellite)
 - 420 timeline events (146 biblical events, 250 people, 24 world events)
 - 32 chapters with timeline links
+- 12 eras in era_config (DB version 0.15)
 
 ---
 
@@ -66,57 +67,21 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-### Phase 12A: Data Fixes + Era Metadata Migration
-**Estimated time: 30 min**
+### Phase 12A: Data Fixes + Era Metadata Migration ✅ COMPLETE
+**Commit: e2ef5761**
 
-#### Data Quality Issues to Fix
-
-1. **3 events with NULL era** (need `era: "apostolic"`):
-   - `pauls_mission_to_thessalonica`
-   - `1_thessalonians_written`
-   - `2_thessalonians_written`
-
-2. **3 events with malformed IDs** (double `evt_evt_` prefix, missing `scripture_ref`):
-   - `evt_siege_jerusalem_588` — add ref `Ezekiel 24:1-2`
-   - `evt_ezekiel_wife_death` — add ref `Ezekiel 24:15-27`
-   - `evt_tyre_siege_585` — add ref `Ezekiel 26-28`
-
-#### Era Metadata Migration
-
-Add to `timelines.json`:
-```json
-{
-  "era_config": {
-    "primeval":        { "hex": "#4a3728", "name": "Primeval",        "range": [-4000, -2200] },
-    "patriarch":       { "hex": "#5c4a32", "name": "Patriarchs",      "range": [-2200, -1800] },
-    "exodus":          { "hex": "#6b5a3e", "name": "Exodus",          "range": [-1800, -1400] },
-    "judges":          { "hex": "#5a6b4a", "name": "Judges",          "range": [-1400, -1050] },
-    "kingdom":         { "hex": "#8b7355", "name": "United Kingdom",  "range": [-1050, -930] },
-    "divided_kingdom": { "hex": "#7a6b5a", "name": "Divided Kingdom", "range": [-930, -722] },
-    "prophets":        { "hex": "#6a5a7a", "name": "Prophets",        "range": [-930, -722] },
-    "exile":           { "hex": "#5a4a6a", "name": "Exile",           "range": [-722, -432] },
-    "post-exilic":     { "hex": "#4a5a6a", "name": "Post-Exilic",     "range": [-538, -432] },
-    "intertestamental":{ "hex": "#3a4a5a", "name": "Intertestamental","range": [-432, 0] },
-    "nt":              { "hex": "#6a8a6a", "name": "New Testament",   "range": [0, 70] },
-    "apostolic":       { "hex": "#5a7a7a", "name": "Apostolic",       "range": [30, 95] }
-  }
-}
-```
-
-#### Files to Update
-
-| File | Changes |
-|------|---------|
-| `content/meta/timelines.json` | Fix 6 events, add `era_config` |
-| `_tools/build_sqlite.py` | Store `era_config` in `genealogy_config` table |
-| `app/src/db/content.ts` | Add `getEraConfig()` query |
-| `app/src/utils/timelineLayout.ts` | Accept era config as param, remove hardcoded `ERA_RANGES` |
-| `app/src/screens/TimelineScreen.tsx` | Fetch era config on mount |
-| `app/src/components/tree/EraFilterBar.tsx` | Data-driven era list |
+Completed:
+- Fixed 6 events with malformed IDs (removed double `evt_` prefix)
+- Added `era: apostolic` + chapter links to 3 Thessalonians events
+- Added `era_config` to `timelines.json` (12 eras with hex/name/pill/range)
+- Added `divided_kingdom`, `post-exilic`, `apostolic` to `theme/colors.ts`
+- Updated `ERA_RANGES` in `timelineLayout.ts` with all 12 eras
+- Added `getTimelineEraConfig()` query + `EraConfig` type to `content.ts`
+- `build_sqlite.py` now stores `era_config` in `genealogy_config` table
 
 ---
 
-### Phase 12B: Content — Missing Biblical Events
+### Phase 12B: Content — Missing Biblical Events ← START HERE
 **Estimated time: 2-3 hours**
 
 Target: **+50-80 events** across all eras.
@@ -221,9 +186,9 @@ Expand chapter → timeline event linking from **32 → 400+ chapters**.
 ### Execution Order
 
 ```
-Phase 12A (fixes + architecture)     ← Start here
+Phase 12A (fixes + architecture)     ✅ COMPLETE (e2ef5761)
     ↓
-Phase 12B (missing events)
+Phase 12B (missing events)           ← START HERE
     ↓
 Phase 12C (book authorship)
     ↓
