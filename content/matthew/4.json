@@ -5,7 +5,10 @@
   "chapter_num": 4,
   "title": "Matthew 4",
   "subtitle": "The Temptation of Jesus; The Call of the First Disciples; Ministry in Galilee",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "jesus-temptation",
+    "text": "See on Timeline — Temptation in the Wilderness"
+  },
   "map_story_link": {
     "story_id": "galilee-ministry",
     "text": "See on Map — Galilean Ministry"
