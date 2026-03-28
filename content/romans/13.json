@@ -5,42 +5,45 @@
   "chapter_num": 13,
   "title": "Romans 13",
   "subtitle": "Submission to Authorities and the Day Is Near",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "book-romans",
+    "text": "See on Timeline — Romans Written"
+  },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
-      "header": "Verses 1\u20137 \u2014 \"Let Everyone Be Subject to the Governing Authorities\"",
+      "header": "Verses 1–7 — \"Let Everyone Be Subject to the Governing Authorities\"",
       "verse_start": 1,
       "verse_end": 7,
       "panels": {
         "heb": [
           {
-            "word": "\u1f10\u03be\u03bf\u03c5\u03c3\u03af\u03b1",
+            "word": "ἐξουσία",
             "transliteration": "exousia",
             "gloss": "authority / governing power",
-            "paragraph": "Exousia (vv.\u20091\u20133) denotes delegated authority or power. Paul declares that every governing authority has been \u2018established\u2019 (tetagmenai) by God \u2014 a perfect passive participle indicating a divine arrangement. The term covers all forms of civil government, not merely Roman rule. Paul\u2019s argument is that the structure of governance itself is divinely ordained, even when specific rulers are unjust."
+            "paragraph": "Exousia (vv. 1–3) denotes delegated authority or power. Paul declares that every governing authority has been ‘established’ (tetagmenai) by God — a perfect passive participle indicating a divine arrangement. The term covers all forms of civil government, not merely Roman rule. Paul’s argument is that the structure of governance itself is divinely ordained, even when specific rulers are unjust."
           },
           {
-            "word": "\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2",
+            "word": "διάκονος",
             "transliteration": "diakonos",
             "gloss": "servant / minister",
-            "paragraph": "Diakonos in v.\u20094 describes the governing authority as God\u2019s servant (diakonos theou) \u2014 an agent commissioned to carry out a specific function. The ruler is God\u2019s servant for good and for the punishment of evil. The term carries no connotation of the ruler\u2019s personal holiness but of their functional role in God\u2019s ordering of society."
+            "paragraph": "Diakonos in v. 4 describes the governing authority as God’s servant (diakonos theou) — an agent commissioned to carry out a specific function. The ruler is God’s servant for good and for the punishment of evil. The term carries no connotation of the ruler’s personal holiness but of their functional role in God’s ordering of society."
           }
         ],
-        "ctx": "Romans 13:1\u20137 is the most discussed NT passage on the relationship between Christians and the state. Written to believers living in the imperial capital under Nero (who had not yet begun persecution), Paul calls for submission to governing authorities as divinely established. The passage must be read alongside other NT texts that qualify it: Acts 5:29 (\u2018we must obey God rather than human beings\u2019), Revelation 13 (the beast as a demonic parody of authority), and Paul\u2019s own experience of unjust arrest and beating (Acts 16:37). Paul is not endorsing tyranny but recognising the general principle that ordered government is part of God\u2019s providential care. The historical context may also reflect a concern that Jewish Christians returning to Rome after Claudius\u2019s expulsion (AD 49) might resist Roman authority.",
+        "ctx": "Romans 13:1–7 is the most discussed NT passage on the relationship between Christians and the state. Written to believers living in the imperial capital under Nero (who had not yet begun persecution), Paul calls for submission to governing authorities as divinely established. The passage must be read alongside other NT texts that qualify it: Acts 5:29 (‘we must obey God rather than human beings’), Revelation 13 (the beast as a demonic parody of authority), and Paul’s own experience of unjust arrest and beating (Acts 16:37). Paul is not endorsing tyranny but recognising the general principle that ordered government is part of God’s providential care. The historical context may also reflect a concern that Jewish Christians returning to Rome after Claudius’s expulsion (AD 49) might resist Roman authority.",
         "cross": [
           {
-            "ref": "1 Pet 2:13\u201317",
-            "note": "Peter makes a parallel appeal: submit to every human authority for the Lord\u2019s sake."
+            "ref": "1 Pet 2:13–17",
+            "note": "Peter makes a parallel appeal: submit to every human authority for the Lord’s sake."
           },
           {
             "ref": "Acts 5:29",
-            "note": "Peter and the apostles: \u2018we must obey God rather than human beings\u2019 \u2014 the qualification to unconditional submission."
+            "note": "Peter and the apostles: ‘we must obey God rather than human beings’ — the qualification to unconditional submission."
           },
           {
             "ref": "Dan 2:21",
-            "note": "God removes kings and sets up kings \u2014 the OT precedent for the principle of divine sovereignty over human government."
+            "note": "God removes kings and sets up kings — the OT precedent for the principle of divine sovereignty over human government."
           }
         ],
         "mac": {
@@ -48,19 +51,19 @@
           "notes": [
             {
               "ref": "13:1",
-              "note": "Every existing authority is established by God. This is a theological statement about God\u2019s sovereignty over human government, not a moral endorsement of every government\u2019s actions."
+              "note": "Every existing authority is established by God. This is a theological statement about God’s sovereignty over human government, not a moral endorsement of every government’s actions."
             },
             {
-              "ref": "13:3\u20134",
-              "note": "The ruler is God\u2019s servant to praise good and punish evil. When a government inverts this function \u2014 praising evil and punishing good \u2014 it has forfeited the legitimacy Paul describes."
+              "ref": "13:3–4",
+              "note": "The ruler is God’s servant to praise good and punish evil. When a government inverts this function — praising evil and punishing good — it has forfeited the legitimacy Paul describes."
             },
             {
               "ref": "13:5",
-              "note": "Submission is motivated by both fear of judgment and conscience. The Christian submits not merely to avoid punishment but because it is right to honour God\u2019s ordained structures."
+              "note": "Submission is motivated by both fear of judgment and conscience. The Christian submits not merely to avoid punishment but because it is right to honour God’s ordained structures."
             },
             {
-              "ref": "13:6\u20137",
-              "note": "Paul applies the principle concretely: pay taxes, revenue, respect, and honour. The mundane obligation of tax-paying is elevated to a theological act of recognising God\u2019s providential ordering of society."
+              "ref": "13:6–7",
+              "note": "Paul applies the principle concretely: pay taxes, revenue, respect, and honour. The mundane obligation of tax-paying is elevated to a theological act of recognising God’s providential ordering of society."
             }
           ]
         },
@@ -73,7 +76,7 @@
             },
             {
               "ref": "13:4",
-              "note": "Calvin notes that the ruler bears the sword not in vain \u2014 the state\u2019s power of coercion is a legitimate function of divine governance, necessary in a fallen world."
+              "note": "Calvin notes that the ruler bears the sword not in vain — the state’s power of coercion is a legitimate function of divine governance, necessary in a fallen world."
             }
           ]
         },
@@ -82,11 +85,11 @@
           "notes": [
             {
               "ref": "13:1",
-              "note": "The phrase \u2018there is no authority except that which God has established\u2019 (ou gar estin exousia ei m\u0113 hypo theou) uses a strong negation. The principle is universal but descriptive of the structure of authority, not prescriptive of any specific government\u2019s policies."
+              "note": "The phrase ‘there is no authority except that which God has established’ (ou gar estin exousia ei mē hypo theou) uses a strong negation. The principle is universal but descriptive of the structure of authority, not prescriptive of any specific government’s policies."
             },
             {
               "ref": "13:4",
-              "note": "The word machaira (\u2018sword\u2019) refers to the short Roman sword and metonymically to the power of capital punishment or coercive enforcement."
+              "note": "The word machaira (‘sword’) refers to the short Roman sword and metonymically to the power of capital punishment or coercive enforcement."
             }
           ]
         },
@@ -94,7 +97,7 @@
           "source": "",
           "notes": [
             {
-              "ref": "13:1\u20137",
+              "ref": "13:1–7",
               "note": "Moo reads this passage as addressing a specific pastoral concern: Jewish Christians returning to Rome may have been tempted to resist Roman authority. Paul urges submission not as an absolute principle but as the normal Christian posture toward government in non-exceptional circumstances. The passage does not address situations of fundamental conflict between faith and state demands."
             }
           ]
@@ -103,8 +106,8 @@
           "source": "",
           "notes": [
             {
-              "ref": "13:1\u20137",
-              "note": "Schreiner emphasises that Paul\u2019s command is grounded in creation theology: God established the institution of government as part of his providential ordering of the world. Submission to government is therefore a form of submission to God. However, when government commands what God forbids, Acts 5:29 applies."
+              "ref": "13:1–7",
+              "note": "Schreiner emphasises that Paul’s command is grounded in creation theology: God established the institution of government as part of his providential ordering of the world. Submission to government is therefore a form of submission to God. However, when government commands what God forbids, Acts 5:29 applies."
             }
           ]
         }
@@ -112,33 +115,33 @@
     },
     {
       "section_num": 2,
-      "header": "Verses 8\u201314 \u2014 \"Put On the Armour of Light\"",
+      "header": "Verses 8–14 — \"Put On the Armour of Light\"",
       "verse_start": 8,
       "verse_end": 14,
       "panels": {
         "heb": [
           {
-            "word": "\u03c0\u03bb\u03b7\u03c1\u03cc\u03c9",
-            "transliteration": "pl\u0113ro\u014d",
+            "word": "πληρόω",
+            "transliteration": "plēroō",
             "gloss": "to fulfil / to complete",
-            "paragraph": "Pl\u0113ro\u014d in v.\u200910 (\u2018love is the fulfilment of the law\u2019) echoes Jesus\u2019 teaching that love fulfils the law and the prophets (Matt 22:37\u201340). Paul lists four commandments from the Decalogue and subsumes them all under \u2018love your neighbour as yourself.\u2019 Love does not replace the law but accomplishes its intention."
+            "paragraph": "Plēroō in v. 10 (‘love is the fulfilment of the law’) echoes Jesus’ teaching that love fulfils the law and the prophets (Matt 22:37–40). Paul lists four commandments from the Decalogue and subsumes them all under ‘love your neighbour as yourself.’ Love does not replace the law but accomplishes its intention."
           },
           {
-            "word": "\u03ba\u03b1\u03b9\u03c1\u03cc\u03c2",
+            "word": "καιρός",
             "transliteration": "kairos",
             "gloss": "time / season / critical moment",
-            "paragraph": "Kairos in v.\u200911 denotes the decisive eschatological moment. Paul urges ethical seriousness because \u2018the hour has already come for you to wake up from your slumber.\u2019 The nearness of salvation (v.\u200911) creates urgency: the night is nearly over and the day is about to dawn. This eschatological framing grounds ethics in the expectation of Christ\u2019s return."
+            "paragraph": "Kairos in v. 11 denotes the decisive eschatological moment. Paul urges ethical seriousness because ‘the hour has already come for you to wake up from your slumber.’ The nearness of salvation (v. 11) creates urgency: the night is nearly over and the day is about to dawn. This eschatological framing grounds ethics in the expectation of Christ’s return."
           }
         ],
-        "ctx": "Romans 13:8\u201314 transitions from civil duty to love as the fulfilment of the law, then to eschatological urgency as the motivation for holiness. The command to \u2018put on the Lord Jesus Christ\u2019 (v.\u200914) was famously the verse that triggered Augustine\u2019s conversion (Confessions 8.12). The day/night imagery is common in early Christian paraenesis (cf. 1 Thess 5:1\u201311; Eph 5:8\u201314) and creates a sense of urgency: the eschatological dawn is imminent, so believers must live as children of the day.",
+        "ctx": "Romans 13:8–14 transitions from civil duty to love as the fulfilment of the law, then to eschatological urgency as the motivation for holiness. The command to ‘put on the Lord Jesus Christ’ (v. 14) was famously the verse that triggered Augustine’s conversion (Confessions 8.12). The day/night imagery is common in early Christian paraenesis (cf. 1 Thess 5:1–11; Eph 5:8–14) and creates a sense of urgency: the eschatological dawn is imminent, so believers must live as children of the day.",
         "cross": [
           {
-            "ref": "Matt 22:37\u201340",
-            "note": "Jesus summarises the law in love for God and love for neighbour \u2014 the principle Paul applies."
+            "ref": "Matt 22:37–40",
+            "note": "Jesus summarises the law in love for God and love for neighbour — the principle Paul applies."
           },
           {
-            "ref": "1 Thess 5:4\u20138",
-            "note": "Believers are children of the day, not of the night \u2014 the same day/night eschatological framework."
+            "ref": "1 Thess 5:4–8",
+            "note": "Believers are children of the day, not of the night — the same day/night eschatological framework."
           },
           {
             "ref": "Gal 5:14",
@@ -157,12 +160,12 @@
               "note": "Love is the fulfilment of the law. This does not abrogate the law but identifies love as the animating principle that energises proper law-keeping."
             },
             {
-              "ref": "13:11\u201312",
-              "note": "The eschatological motivation: the night is nearly over, the day is almost here. Ethical urgency is grounded in the imminence of Christ\u2019s return."
+              "ref": "13:11–12",
+              "note": "The eschatological motivation: the night is nearly over, the day is almost here. Ethical urgency is grounded in the imminence of Christ’s return."
             },
             {
               "ref": "13:14",
-              "note": "The command to \u2018put on the Lord Jesus Christ\u2019 is the positive counterpart to \u2018do not think about how to gratify the desires of the flesh.\u2019 Holiness is not merely avoidance but active identification with Christ."
+              "note": "The command to ‘put on the Lord Jesus Christ’ is the positive counterpart to ‘do not think about how to gratify the desires of the flesh.’ Holiness is not merely avoidance but active identification with Christ."
             }
           ]
         },
@@ -171,11 +174,11 @@
           "notes": [
             {
               "ref": "13:10",
-              "note": "Calvin insists that love fulfils the law not by replacing it but by providing the disposition that produces genuine obedience. The law\u2019s commands are not abolished but are obeyed from a heart of love."
+              "note": "Calvin insists that love fulfils the law not by replacing it but by providing the disposition that produces genuine obedience. The law’s commands are not abolished but are obeyed from a heart of love."
             },
             {
               "ref": "13:14",
-              "note": "Calvin notes that \u2018putting on Christ\u2019 means adopting his character, priorities, and way of life. It is the practical outworking of union with Christ."
+              "note": "Calvin notes that ‘putting on Christ’ means adopting his character, priorities, and way of life. It is the practical outworking of union with Christ."
             }
           ]
         },
@@ -184,11 +187,11 @@
           "notes": [
             {
               "ref": "13:11",
-              "note": "The word eggyteron (\u2018nearer\u2019) is a comparative form: salvation is closer now than when the Roman believers first believed. Paul lives with an expectation of the imminent return of Christ."
+              "note": "The word eggyteron (‘nearer’) is a comparative form: salvation is closer now than when the Roman believers first believed. Paul lives with an expectation of the imminent return of Christ."
             },
             {
               "ref": "13:14",
-              "note": "The phrase \u2018make no provision for the flesh\u2019 (pronoian m\u0113 poieisthe) means do not plan ahead to satisfy sinful desires. The command targets premeditated sin, not spontaneous temptation."
+              "note": "The phrase ‘make no provision for the flesh’ (pronoian mē poieisthe) means do not plan ahead to satisfy sinful desires. The command targets premeditated sin, not spontaneous temptation."
             }
           ]
         },
@@ -196,8 +199,8 @@
           "source": "",
           "notes": [
             {
-              "ref": "13:8\u201314",
-              "note": "Moo reads this section as a twofold conclusion to Paul\u2019s ethical instruction: love summarises the law\u2019s demands (vv.\u20098\u201310), and eschatological urgency motivates their fulfilment (vv.\u200911\u201314). The ethical life is lived between the already of justification and the not yet of final salvation."
+              "ref": "13:8–14",
+              "note": "Moo reads this section as a twofold conclusion to Paul’s ethical instruction: love summarises the law’s demands (vv. 8–10), and eschatological urgency motivates their fulfilment (vv. 11–14). The ethical life is lived between the already of justification and the not yet of final salvation."
             }
           ]
         },
@@ -205,12 +208,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "13:8\u201310",
-              "note": "Schreiner argues that love as the fulfilment of the law demonstrates continuity between the Mosaic covenant and the new covenant. The law\u2019s moral content remains authoritative; its demands are now met through Spirit-empowered love."
+              "ref": "13:8–10",
+              "note": "Schreiner argues that love as the fulfilment of the law demonstrates continuity between the Mosaic covenant and the new covenant. The law’s moral content remains authoritative; its demands are now met through Spirit-empowered love."
             },
             {
-              "ref": "13:11\u201314",
-              "note": "Schreiner emphasises the eschatological framework: ethical exhortation in Paul is never divorced from the expectation of Christ\u2019s return. The nearness of the end makes moral urgency perpetual."
+              "ref": "13:11–14",
+              "note": "Schreiner emphasises the eschatological framework: ethical exhortation in Paul is never divorced from the expectation of Christ’s return. The nearness of the end makes moral urgency perpetual."
             }
           ]
         }
@@ -221,25 +224,25 @@
     "lit": {
       "rows": [
         {
-          "label": "vv.1\u20137",
-          "range": "13:1\u20137",
+          "label": "vv.1–7",
+          "range": "13:1–7",
           "text": "Submission to Governing Authorities",
           "is_key": true
         },
         {
-          "label": "vv.8\u201310",
-          "range": "13:8\u201310",
+          "label": "vv.8–10",
+          "range": "13:8–10",
           "text": "Love as the Fulfilment of the Law",
           "is_key": true
         },
         {
-          "label": "vv.11\u201314",
-          "range": "13:11\u201314",
+          "label": "vv.11–14",
+          "range": "13:11–14",
           "text": "Wake Up: The Day Is Near",
           "is_key": true
         }
       ],
-      "note": "Romans 13 applies the living sacrifice to two spheres: civil obedience (vv.\u20091\u20137) and love-driven holiness (vv.\u20098\u201314). The eschatological urgency of vv.\u200911\u201314 undergirds both."
+      "note": "Romans 13 applies the living sacrifice to two spheres: civil obedience (vv. 1–7) and love-driven holiness (vv. 8–14). The eschatological urgency of vv. 11–14 undergirds both."
     },
     "themes": {
       "scores": [
@@ -284,45 +287,45 @@
           "value": 4
         }
       ],
-      "note": "Justice at 8 reflects the dual focus on civil authority and the law of love. Holiness at 8 captures the eschatological call to put on the armour of light. Sovereignty at 7 reflects God\u2019s ordination of governing authorities."
+      "note": "Justice at 8 reflects the dual focus on civil authority and the law of love. Holiness at 8 captures the eschatological call to put on the armour of light. Sovereignty at 7 reflects God’s ordination of governing authorities."
     },
     "hebtext": [
       {
-        "word": "\u1f10\u03be\u03bf\u03c5\u03c3\u03af\u03b1",
+        "word": "ἐξουσία",
         "tlit": "exousia",
         "gloss": "authority / governing power",
-        "note": "Exousia (vv.\u20091\u20133) denotes delegated authority or power. Paul declares that every governing authority has been \u2018established\u2019 (tetagmenai) by God \u2014 a perfect passive participle indicating a divine arrangement. The term covers all forms of civil government, not merely Roman rule. Paul\u2019s argument is that the structure of governance itself is divinely ordained, even when specific rulers are unjust."
+        "note": "Exousia (vv. 1–3) denotes delegated authority or power. Paul declares that every governing authority has been ‘established’ (tetagmenai) by God — a perfect passive participle indicating a divine arrangement. The term covers all forms of civil government, not merely Roman rule. Paul’s argument is that the structure of governance itself is divinely ordained, even when specific rulers are unjust."
       },
       {
-        "word": "\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2",
+        "word": "διάκονος",
         "tlit": "diakonos",
         "gloss": "servant / minister",
-        "note": "Diakonos in v.\u20094 describes the governing authority as God\u2019s servant (diakonos theou) \u2014 an agent commissioned to carry out a specific function. The ruler is God\u2019s servant for good and for the punishment of evil. The term carries no connotation of the ruler\u2019s personal holiness but of their functional role in God\u2019s ordering of society."
+        "note": "Diakonos in v. 4 describes the governing authority as God’s servant (diakonos theou) — an agent commissioned to carry out a specific function. The ruler is God’s servant for good and for the punishment of evil. The term carries no connotation of the ruler’s personal holiness but of their functional role in God’s ordering of society."
       },
       {
-        "word": "\u03c0\u03bb\u03b7\u03c1\u03cc\u03c9",
-        "tlit": "pl\u0113ro\u014d",
+        "word": "πληρόω",
+        "tlit": "plēroō",
         "gloss": "to fulfil / to complete",
-        "note": "Pl\u0113ro\u014d in v.\u200910 (\u2018love is the fulfilment of the law\u2019) echoes Jesus\u2019 teaching that love fulfils the law and the prophets (Matt 22:37\u201340). Paul lists four commandments from the Decalogue and subsumes them all under \u2018love your neighbour as yourself.\u2019 Love does not replace the law but accomplishes its intention."
+        "note": "Plēroō in v. 10 (‘love is the fulfilment of the law’) echoes Jesus’ teaching that love fulfils the law and the prophets (Matt 22:37–40). Paul lists four commandments from the Decalogue and subsumes them all under ‘love your neighbour as yourself.’ Love does not replace the law but accomplishes its intention."
       },
       {
-        "word": "\u03ba\u03b1\u03b9\u03c1\u03cc\u03c2",
+        "word": "καιρός",
         "tlit": "kairos",
         "gloss": "time / season / critical moment",
-        "note": "Kairos in v.\u200911 denotes the decisive eschatological moment. Paul urges ethical seriousness because \u2018the hour has already come for you to wake up from your slumber.\u2019 The nearness of salvation (v.\u200911) creates urgency: the night is nearly over and the day is about to dawn. This eschatological framing grounds ethics in the expectation of Christ\u2019s return."
+        "note": "Kairos in v. 11 denotes the decisive eschatological moment. Paul urges ethical seriousness because ‘the hour has already come for you to wake up from your slumber.’ The nearness of salvation (v. 11) creates urgency: the night is nearly over and the day is about to dawn. This eschatological framing grounds ethics in the expectation of Christ’s return."
       }
     ],
     "ppl": [
       {
         "name": "Paul",
         "role": "Apostle to the Gentiles; author of thirteen NT letters",
-        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen\u2019s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13\u201328 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts\u2019 theological climax: the gospel reaching the empire\u2019s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
         "timeline_id": "paul"
       },
       {
         "name": "Christ",
         "role": "Key biblical figure",
-        "text": "Romans 13:1\u20137 is the most discussed NT passage on the relationship between Christians and the state\u2026"
+        "text": "Romans 13:1–7 is the most discussed NT passage on the relationship between Christians and the state…"
       }
     ],
     "trans": {
@@ -350,7 +353,7 @@
             },
             {
               "version": "ESV",
-              "text": "Therefore one must be in subjection, not only to avoid God\u2019s wrath but also for the sake of conscience."
+              "text": "Therefore one must be in subjection, not only to avoid God’s wrath but also for the sake of conscience."
             }
           ]
         }
@@ -359,18 +362,18 @@
     "rec": [
       {
         "title": "John MacArthur",
-        "quote": "\"Every existing authority is established by God. This is a theological statement about God\u2019s sovereignty over human government, not a moral endorsement of every government\u2019s actions.\"",
-        "note": "Evangelical / Reformed \u2014 20th\u201321st c."
+        "quote": "\"Every existing authority is established by God. This is a theological statement about God’s sovereignty over human government, not a moral endorsement of every government’s actions.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
       },
       {
         "title": "John Calvin",
-        "quote": "\"Calvin develops a theology of civil government that recognises its divine institution while allowing for resistance to tyranny through lower magistrates. The passage establishes the principle; wisdom \u2026\"",
-        "note": "Reformed / Reformation \u2014 16th c."
+        "quote": "\"Calvin develops a theology of civil government that recognises its divine institution while allowing for resistance to tyranny through lower magistrates. The passage establishes the principle; wisdom …\"",
+        "note": "Reformed / Reformation — 16th c."
       },
       {
         "title": "NET Bible translators",
-        "quote": "\"The phrase \u2018there is no authority except that which God has established\u2019 (ou gar estin exousia ei m\u0113 hypo theou) uses a strong negation. The principle is universal but descriptive of the structure of \u2026\"",
-        "note": "Text-critical evangelical \u2014 21st c."
+        "quote": "\"The phrase ‘there is no authority except that which God has established’ (ou gar estin exousia ei mē hypo theou) uses a strong negation. The principle is universal but descriptive of the structure of …\"",
+        "note": "Text-critical evangelical — 21st c."
       }
     ],
     "debate": [
@@ -379,7 +382,7 @@
         [
           [
             "Critical/Analytical scholarship",
-            "The phrase \u2018there is no authority except that which God has established\u2019 (ou gar estin exousia ei m\u0113 hypo theou) uses a strong negation. The principle\u2026",
+            "The phrase ‘there is no authority except that which God has established’ (ou gar estin exousia ei mē hypo theou) uses a strong negation. The principle…",
             "Emphasises historical-critical, literary, or text-critical analysis."
           ],
           [
@@ -395,37 +398,37 @@
       {
         "direction": "echo",
         "anchor": "Submission to Authorities and the Day Is Near",
-        "target": "1 Pet 2:13\u201317",
+        "target": "1 Pet 2:13–17",
         "type": "Echo",
-        "text": "Peter makes a parallel appeal: submit to every human authority for the Lord\u2019s sake."
+        "text": "Peter makes a parallel appeal: submit to every human authority for the Lord’s sake."
       },
       {
         "direction": "connection",
         "anchor": "Submission to Authorities and the Day Is Near",
         "target": "Acts 5:29",
         "type": "Connection",
-        "text": "Peter and the apostles: \u2018we must obey God rather than human beings\u2019 \u2014 the qualification to unconditional submission."
+        "text": "Peter and the apostles: ‘we must obey God rather than human beings’ — the qualification to unconditional submission."
       },
       {
         "direction": "connection",
         "anchor": "Submission to Authorities and the Day Is Near",
         "target": "Dan 2:21",
         "type": "Connection",
-        "text": "God removes kings and sets up kings \u2014 the OT precedent for the principle of divine sovereignty over human government."
+        "text": "God removes kings and sets up kings — the OT precedent for the principle of divine sovereignty over human government."
       },
       {
         "direction": "connection",
         "anchor": "Submission to Authorities and the Day Is Near",
-        "target": "Matt 22:37\u201340",
+        "target": "Matt 22:37–40",
         "type": "Connection",
-        "text": "Jesus summarises the law in love for God and love for neighbour \u2014 the principle Paul applies."
+        "text": "Jesus summarises the law in love for God and love for neighbour — the principle Paul applies."
       },
       {
         "direction": "connection",
         "anchor": "Submission to Authorities and the Day Is Near",
-        "target": "1 Thess 5:4\u20138",
+        "target": "1 Thess 5:4–8",
         "type": "Connection",
-        "text": "Believers are children of the day, not of the night \u2014 the same day/night eschatological framework."
+        "text": "Believers are children of the day, not of the night — the same day/night eschatological framework."
       },
       {
         "direction": "fulfilment",
@@ -448,8 +451,8 @@
               "id": "r13-1a",
               "type": "ground",
               "verse_range": "13:4",
-              "marker": "For (\u03b3\u03ac\u03c1)",
-              "text": "Authority is God's servant (\u03b4\u03b9\u03ac\u03ba\u03bf\u03bd\u03bf\u03c2) for your good \u2014 and an avenger (\u1f14\u03ba\u03b4\u03b9\u03ba\u03bf\u03c2) to bring wrath on evildoers."
+              "marker": "For (γάρ)",
+              "text": "Authority is God's servant (διάκονος) for your good — and an avenger (ἔκδικος) to bring wrath on evildoers."
             }
           ]
         },
@@ -457,20 +460,20 @@
           "id": "r13-2",
           "type": "exhortation",
           "verse_range": "13:6-7",
-          "marker": "For (\u03b4\u03b9\u1f70 \u03c4\u03bf\u1fe6\u03c4\u03bf)",
-          "text": "This is why you pay taxes \u2014 authorities are ministers of God attending to this very thing. Pay to all what is owed: taxes, revenue, respect, honor."
+          "marker": "For (διὰ τοῦτο)",
+          "text": "This is why you pay taxes — authorities are ministers of God attending to this very thing. Pay to all what is owed: taxes, revenue, respect, honor."
         },
         {
           "id": "r13-3",
           "type": "exhortation",
           "verse_range": "13:8-10",
-          "text": "Owe no one anything except to love one another, for the one who loves another has fulfilled the law. 'You shall not commit adultery, murder, steal, covet' \u2014 and any other commandment \u2014 are summed up in this: 'Love your neighbor as yourself.' Love does no wrong to a neighbor; therefore love is the fulfillment of the law.",
+          "text": "Owe no one anything except to love one another, for the one who loves another has fulfilled the law. 'You shall not commit adultery, murder, steal, covet' — and any other commandment — are summed up in this: 'Love your neighbor as yourself.' Love does no wrong to a neighbor; therefore love is the fulfillment of the law.",
           "children": [
             {
               "id": "r13-3a",
               "type": "conclusion",
               "verse_range": "13:10",
-              "text": "Love does no wrong to a neighbor \u2014 therefore love is the \u03c0\u03bb\u03ae\u03c1\u03c9\u03bc\u03b1 (fulfillment) of the law."
+              "text": "Love does no wrong to a neighbor — therefore love is the πλήρωμα (fulfillment) of the law."
             }
           ]
         },
@@ -478,7 +481,7 @@
           "id": "r13-4",
           "type": "exhortation",
           "verse_range": "13:11-14",
-          "text": "Do this knowing the time \u2014 it is the hour to wake from sleep, for salvation is nearer than when we first believed. The night is far gone; the day is at hand. Cast off works of darkness; put on the armor of light. Walk properly as in the daytime \u2014 not in carousing and drunkenness, not in debauchery and sensuality, not in quarreling and jealousy. Put on the Lord Jesus Christ and make no provision for the flesh."
+          "text": "Do this knowing the time — it is the hour to wake from sleep, for salvation is nearer than when we first believed. The night is far gone; the day is at hand. Cast off works of darkness; put on the armor of light. Walk properly as in the daytime — not in carousing and drunkenness, not in debauchery and sensuality, not in quarreling and jealousy. Put on the Lord Jesus Christ and make no provision for the flesh."
         }
       ],
       "note": "Romans 13:1-7 is Paul's most extended treatment of the state. The context is the Roman church under Nero. Verses 11-14 were pivotal in Augustine's conversion ('put on the Lord Jesus Christ')."

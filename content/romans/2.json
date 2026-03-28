@@ -4,43 +4,46 @@
   "book_dir": "romans",
   "chapter_num": 2,
   "title": "Romans 2",
-  "subtitle": "God\u2019s Righteous Judgment",
-  "timeline_link": null,
+  "subtitle": "God’s Righteous Judgment",
+  "timeline_link": {
+    "event_id": "book-romans",
+    "text": "See on Timeline — Romans Written"
+  },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
-      "header": "Verses 1\u201316 \u2014 \"You Who Pass Judgment Have No Excuse\"",
+      "header": "Verses 1–16 — \"You Who Pass Judgment Have No Excuse\"",
       "verse_start": 1,
       "verse_end": 16,
       "panels": {
         "heb": [
           {
-            "word": "\u03ba\u03c1\u03af\u03bd\u03c9",
-            "transliteration": "krin\u014d",
+            "word": "κρίνω",
+            "transliteration": "krinō",
             "gloss": "to judge / to condemn",
-            "paragraph": "Paul uses the verb krin\u014d and its cognates (krima, katakrima) throughout chapters 2\u20133 to establish the forensic framework of his argument. The one who \u2018judges\u2019 (krineis) another condemns himself (katakrineis heauton), because the same standard applies universally. The divine court operates on deeds, not ethnicity."
+            "paragraph": "Paul uses the verb krinō and its cognates (krima, katakrima) throughout chapters 2–3 to establish the forensic framework of his argument. The one who ‘judges’ (krineis) another condemns himself (katakrineis heauton), because the same standard applies universally. The divine court operates on deeds, not ethnicity."
           },
           {
-            "word": "\u03bc\u03b5\u03c4\u03ac\u03bd\u03bf\u03b9\u03b1",
+            "word": "μετάνοια",
             "transliteration": "metanoia",
             "gloss": "repentance / change of mind",
-            "paragraph": "Metanoia in v.\u20094 denotes a comprehensive reorientation of mind and conduct toward God. Paul warns that God\u2019s kindness (chr\u0113stot\u0113s) is designed to lead to repentance, not to confirm complacency. The noun implies not merely regret but a turning from sin to God."
+            "paragraph": "Metanoia in v. 4 denotes a comprehensive reorientation of mind and conduct toward God. Paul warns that God’s kindness (chrēstotēs) is designed to lead to repentance, not to confirm complacency. The noun implies not merely regret but a turning from sin to God."
           }
         ],
-        "ctx": "Paul\u2019s rhetorical strategy in 2:1\u201316 springs the trap set in 1:18\u201332. The imaginary interlocutor (a standard device in Greco-Roman diatribe) who agreed with the condemnation of Gentile idolatry now discovers that he too stands under the same divine judgment. While the interlocutor is not explicitly identified as Jewish until 2:17, the logic of the argument \u2014 moral superiority based on possessing the law \u2014 points in that direction from the outset. Paul\u2019s point is that divine judgment is according to deeds (v.\u20096), impartial (v.\u200911), and penetrates to the secrets of the heart (v.\u200916).",
+        "ctx": "Paul’s rhetorical strategy in 2:1–16 springs the trap set in 1:18–32. The imaginary interlocutor (a standard device in Greco-Roman diatribe) who agreed with the condemnation of Gentile idolatry now discovers that he too stands under the same divine judgment. While the interlocutor is not explicitly identified as Jewish until 2:17, the logic of the argument — moral superiority based on possessing the law — points in that direction from the outset. Paul’s point is that divine judgment is according to deeds (v. 6), impartial (v. 11), and penetrates to the secrets of the heart (v. 16).",
         "cross": [
           {
-            "ref": "Matt 7:1\u20132",
-            "note": "Jesus warns against judging others while guilty of the same sins \u2014 a principle Paul applies to the self-righteous moralist."
+            "ref": "Matt 7:1–2",
+            "note": "Jesus warns against judging others while guilty of the same sins — a principle Paul applies to the self-righteous moralist."
           },
           {
             "ref": "Eccl 12:14",
-            "note": "God will bring every deed into judgment, including every hidden thing \u2014 the OT precedent for Paul\u2019s claim in v.\u200916."
+            "note": "God will bring every deed into judgment, including every hidden thing — the OT precedent for Paul’s claim in v. 16."
           },
           {
             "ref": "Jas 2:13",
-            "note": "Judgment without mercy to those who show no mercy \u2014 the same impartiality principle Paul articulates."
+            "note": "Judgment without mercy to those who show no mercy — the same impartiality principle Paul articulates."
           }
         ],
         "mac": {
@@ -48,19 +51,19 @@
           "notes": [
             {
               "ref": "2:1",
-              "note": "The shift from third person (\u2018they\u2019) to second person (\u2018you\u2019) is rhetorically devastating. The one who condemns pagans for their sins practises the very same things."
+              "note": "The shift from third person (‘they’) to second person (‘you’) is rhetorically devastating. The one who condemns pagans for their sins practises the very same things."
             },
             {
               "ref": "2:4",
-              "note": "God\u2019s patience is not divine indifference. His kindness, forbearance, and patience are purposeful \u2014 they are intended to lead the sinner to repentance, not to embolden further sin."
+              "note": "God’s patience is not divine indifference. His kindness, forbearance, and patience are purposeful — they are intended to lead the sinner to repentance, not to embolden further sin."
             },
             {
-              "ref": "2:6\u201311",
+              "ref": "2:6–11",
               "note": "Judgment according to works does not contradict justification by faith. Paul is describing the principle by which God judges, not the ground of justification. Works reveal the reality of faith."
             },
             {
-              "ref": "2:14\u201315",
-              "note": "Gentiles who \u2018do by nature things required by the law\u2019 demonstrate that moral law is inscribed on the human conscience. This is not a path to salvation but evidence of universal moral accountability."
+              "ref": "2:14–15",
+              "note": "Gentiles who ‘do by nature things required by the law’ demonstrate that moral law is inscribed on the human conscience. This is not a path to salvation but evidence of universal moral accountability."
             }
           ]
         },
@@ -72,8 +75,8 @@
               "note": "Calvin identifies the interlocutor as the hypocritical moralist who claims moral superiority while committing the same sins in secret. The trap is set: knowledge of the law increases guilt rather than conferring immunity."
             },
             {
-              "ref": "2:14\u201315",
-              "note": "Calvin reads the Gentiles who \u2018do by nature\u2019 the law\u2019s requirements as evidence of natural law written on the heart. This does not save them but renders them accountable: even without Moses, the moral law is known."
+              "ref": "2:14–15",
+              "note": "Calvin reads the Gentiles who ‘do by nature’ the law’s requirements as evidence of natural law written on the heart. This does not save them but renders them accountable: even without Moses, the moral law is known."
             }
           ]
         },
@@ -82,11 +85,11 @@
           "notes": [
             {
               "ref": "2:6",
-              "note": "The quotation of Psalm 62:12 / Proverbs 24:12 (\u2018God will repay each according to their deeds\u2019) establishes the OT basis for judgment according to works. Paul is not contradicting grace but affirming divine justice."
+              "note": "The quotation of Psalm 62:12 / Proverbs 24:12 (‘God will repay each according to their deeds’) establishes the OT basis for judgment according to works. Paul is not contradicting grace but affirming divine justice."
             },
             {
               "ref": "2:13",
-              "note": "The word poi\u0113tai (\u2018doers\u2019) of the law anticipates James 1:22\u201325. Paul\u2019s point is not that anyone achieves justification by doing the law, but that merely hearing it confers no advantage."
+              "note": "The word poiētai (‘doers’) of the law anticipates James 1:22–25. Paul’s point is not that anyone achieves justification by doing the law, but that merely hearing it confers no advantage."
             }
           ]
         },
@@ -94,12 +97,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:1\u201316",
-              "note": "Moo argues that Paul\u2019s purpose is not to establish a hypothetical path to salvation through works but to demonstrate the universality of condemnation. The judgment-by-works principle establishes the standard; chapters 3\u20134 will show that no one meets it."
+              "ref": "2:1–16",
+              "note": "Moo argues that Paul’s purpose is not to establish a hypothetical path to salvation through works but to demonstrate the universality of condemnation. The judgment-by-works principle establishes the standard; chapters 3–4 will show that no one meets it."
             },
             {
-              "ref": "2:14\u201315",
-              "note": "Moo takes the \u2018Gentiles who do the law\u2019s requirements\u2019 as Gentile Christians who, through the Spirit, fulfil the law\u2019s intent. This reading avoids the tension with 3:9\u201320 and aligns with 8:4."
+              "ref": "2:14–15",
+              "note": "Moo takes the ‘Gentiles who do the law’s requirements’ as Gentile Christians who, through the Spirit, fulfil the law’s intent. This reading avoids the tension with 3:9–20 and aligns with 8:4."
             }
           ]
         },
@@ -107,12 +110,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:6\u201311",
+              "ref": "2:6–11",
               "note": "Schreiner argues that judgment according to works is hypothetical: if anyone could perfectly obey the law, they would receive eternal life. But the function of the argument is to show that no one does, and therefore all need the gospel."
             },
             {
-              "ref": "2:14\u201316",
-              "note": "Schreiner takes \u2018the law written on their hearts\u2019 as a reference to natural moral knowledge, not the new covenant promise of Jeremiah 31:33. The Gentiles have enough moral awareness to be held accountable, not enough to be saved."
+              "ref": "2:14–16",
+              "note": "Schreiner takes ‘the law written on their hearts’ as a reference to natural moral knowledge, not the new covenant promise of Jeremiah 31:33. The Gentiles have enough moral awareness to be held accountable, not enough to be saved."
             }
           ]
         }
@@ -120,29 +123,29 @@
     },
     {
       "section_num": 2,
-      "header": "Verses 17\u201329 \u2014 \"Circumcision of the Heart\"",
+      "header": "Verses 17–29 — \"Circumcision of the Heart\"",
       "verse_start": 17,
       "verse_end": 29,
       "panels": {
         "heb": [
           {
-            "word": "\u03c0\u03b5\u03c1\u03b9\u03c4\u03bf\u03bc\u03ae",
-            "transliteration": "peritom\u0113",
+            "word": "περιτομή",
+            "transliteration": "peritomē",
             "gloss": "circumcision",
-            "paragraph": "Paul redefines peritom\u0113 from an external ethnic marker to an inward spiritual reality. The \u2018circumcision of the heart\u2019 (peritom\u0113 kardias) draws on Deuteronomy 30:6 and Jeremiah 4:4, where the prophets had already internalised the sign. Paul\u2019s argument anticipates 3:1 \u2014 if circumcision is internalised, what advantage does the Jew retain?"
+            "paragraph": "Paul redefines peritomē from an external ethnic marker to an inward spiritual reality. The ‘circumcision of the heart’ (peritomē kardias) draws on Deuteronomy 30:6 and Jeremiah 4:4, where the prophets had already internalised the sign. Paul’s argument anticipates 3:1 — if circumcision is internalised, what advantage does the Jew retain?"
           },
           {
-            "word": "\u03b3\u03c1\u03ac\u03bc\u03bc\u03b1",
+            "word": "γράμμα",
             "transliteration": "gramma",
             "gloss": "letter / written code",
-            "paragraph": "The contrast gramma / pneuma (letter / Spirit) in v.\u200929 foreshadows the fuller development in 7:6 and 2 Corinthians 3:6. Gramma denotes the external, written form of the law divorced from the Spirit\u2019s transforming power."
+            "paragraph": "The contrast gramma / pneuma (letter / Spirit) in v. 29 foreshadows the fuller development in 7:6 and 2 Corinthians 3:6. Gramma denotes the external, written form of the law divorced from the Spirit’s transforming power."
           }
         ],
-        "ctx": "In 2:17\u201329 Paul directly addresses the Jewish interlocutor by name (\u2018you who call yourself a Jew,\u2019 v.\u200917). The rhetorical force depends on the Jewish boast in the law and in Israel\u2019s covenant status. Paul does not deny the validity of the law or circumcision but insists that external possession without internal transformation is worthless. The Deuteronomic concept of heart-circumcision (Deut 10:16; 30:6) provides the prophetic warrant for Paul\u2019s argument. The passage does not negate Jewish identity but redefines it around faith and the Spirit rather than ethnicity and rite.",
+        "ctx": "In 2:17–29 Paul directly addresses the Jewish interlocutor by name (‘you who call yourself a Jew,’ v. 17). The rhetorical force depends on the Jewish boast in the law and in Israel’s covenant status. Paul does not deny the validity of the law or circumcision but insists that external possession without internal transformation is worthless. The Deuteronomic concept of heart-circumcision (Deut 10:16; 30:6) provides the prophetic warrant for Paul’s argument. The passage does not negate Jewish identity but redefines it around faith and the Spirit rather than ethnicity and rite.",
         "cross": [
           {
             "ref": "Deut 30:6",
-            "note": "Moses promises that God will circumcise Israel\u2019s heart \u2014 the prophetic foundation for Paul\u2019s internalised circumcision."
+            "note": "Moses promises that God will circumcise Israel’s heart — the prophetic foundation for Paul’s internalised circumcision."
           },
           {
             "ref": "Jer 4:4",
@@ -157,16 +160,16 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:17\u201320",
-              "note": "The Jewish boast rested on five privileges: bearing the name \u2018Jew,\u2019 relying on the law, boasting in God, knowing his will, and approving what is superior. Each is a genuine privilege, but none immunises against judgment."
+              "ref": "2:17–20",
+              "note": "The Jewish boast rested on five privileges: bearing the name ‘Jew,’ relying on the law, boasting in God, knowing his will, and approving what is superior. Each is a genuine privilege, but none immunises against judgment."
             },
             {
-              "ref": "2:21\u201324",
-              "note": "Paul\u2019s four rhetorical questions expose the gap between teaching and practice. The one who teaches \u2018do not steal\u2019 steals; the one who teaches \u2018do not commit adultery\u2019 commits adultery. Hypocrisy compounds guilt."
+              "ref": "2:21–24",
+              "note": "Paul’s four rhetorical questions expose the gap between teaching and practice. The one who teaches ‘do not steal’ steals; the one who teaches ‘do not commit adultery’ commits adultery. Hypocrisy compounds guilt."
             },
             {
-              "ref": "2:28\u201329",
-              "note": "True Jewishness is inward, spiritual, and a matter of the heart. Paul does not abolish the category of \u2018Jew\u2019 but redefines it along spiritual lines, anticipating the fuller argument of chapters 9\u201311."
+              "ref": "2:28–29",
+              "note": "True Jewishness is inward, spiritual, and a matter of the heart. Paul does not abolish the category of ‘Jew’ but redefines it along spiritual lines, anticipating the fuller argument of chapters 9–11."
             }
           ]
         },
@@ -175,11 +178,11 @@
           "notes": [
             {
               "ref": "2:17",
-              "note": "Calvin notes that the name \u2018Jew\u2019 was a mark of honour derived from Judah (\u2018praise\u2019). Paul does not repudiate the honour but insists it must be matched by substance."
+              "note": "Calvin notes that the name ‘Jew’ was a mark of honour derived from Judah (‘praise’). Paul does not repudiate the honour but insists it must be matched by substance."
             },
             {
               "ref": "2:29",
-              "note": "The circumcision of the heart is by the Spirit, not by the letter. Calvin sees this as a clear articulation of the Reformed principle: external ordinances without the Spirit\u2019s internal work are empty forms."
+              "note": "The circumcision of the heart is by the Spirit, not by the letter. Calvin sees this as a clear articulation of the Reformed principle: external ordinances without the Spirit’s internal work are empty forms."
             }
           ]
         },
@@ -188,11 +191,11 @@
           "notes": [
             {
               "ref": "2:17",
-              "note": "The verb epanapauo (\u2018rely on\u2019) suggests a false resting or complacent dependence. The Jewish interlocutor treats the law as a security blanket rather than a standard of accountability."
+              "note": "The verb epanapauo (‘rely on’) suggests a false resting or complacent dependence. The Jewish interlocutor treats the law as a security blanket rather than a standard of accountability."
             },
             {
               "ref": "2:24",
-              "note": "Paul cites Isaiah 52:5 / Ezekiel 36:20\u201322 loosely: Israel\u2019s disobedience causes God\u2019s name to be blasphemed among the Gentiles."
+              "note": "Paul cites Isaiah 52:5 / Ezekiel 36:20–22 loosely: Israel’s disobedience causes God’s name to be blasphemed among the Gentiles."
             }
           ]
         },
@@ -200,12 +203,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:17\u201329",
-              "note": "Moo argues that Paul\u2019s argument in this section is not about individual hypocrisy but about a systemic failure: the law, which was given to make Israel a light to the nations (Isa 42:6), has been rendered ineffective by the very people entrusted with it."
+              "ref": "2:17–29",
+              "note": "Moo argues that Paul’s argument in this section is not about individual hypocrisy but about a systemic failure: the law, which was given to make Israel a light to the nations (Isa 42:6), has been rendered ineffective by the very people entrusted with it."
             },
             {
-              "ref": "2:28\u201329",
-              "note": "Moo sees the redefinition of \u2018Jew\u2019 and \u2018circumcision\u2019 as anticipating 9:6 (\u2018not all who are descended from Israel are Israel\u2019). The category is not abolished but redefined around faith and the Spirit."
+              "ref": "2:28–29",
+              "note": "Moo sees the redefinition of ‘Jew’ and ‘circumcision’ as anticipating 9:6 (‘not all who are descended from Israel are Israel’). The category is not abolished but redefined around faith and the Spirit."
             }
           ]
         },
@@ -213,12 +216,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:25\u201329",
-              "note": "Schreiner emphasises that circumcision \u2018has value if you observe the law\u2019 (v.\u200925) is a conditional that no fallen Jew can fulfil. The hypothetical language drives the reader toward the conclusion of 3:9\u201320: no one is righteous."
+              "ref": "2:25–29",
+              "note": "Schreiner emphasises that circumcision ‘has value if you observe the law’ (v. 25) is a conditional that no fallen Jew can fulfil. The hypothetical language drives the reader toward the conclusion of 3:9–20: no one is righteous."
             },
             {
               "ref": "2:29",
-              "note": "Schreiner connects \u2018circumcision of the heart by the Spirit\u2019 to the new covenant promise. The Spirit\u2019s work is what the law could never accomplish \u2014 a theme fully developed in chapter 8."
+              "note": "Schreiner connects ‘circumcision of the heart by the Spirit’ to the new covenant promise. The Spirit’s work is what the law could never accomplish — a theme fully developed in chapter 8."
             }
           ]
         }
@@ -229,19 +232,19 @@
     "lit": {
       "rows": [
         {
-          "label": "vv.1\u201316",
-          "range": "2:1\u201316",
+          "label": "vv.1–16",
+          "range": "2:1–16",
           "text": "The Impartial Judge: Deeds, Not Privilege",
           "is_key": true
         },
         {
-          "label": "vv.17\u201329",
-          "range": "2:17\u201329",
+          "label": "vv.17–29",
+          "range": "2:17–29",
           "text": "The Failure of Jewish Privilege: Circumcision of the Heart",
           "is_key": true
         }
       ],
-      "note": "Romans 2 turns the spotlight from Gentile idolatry (ch.\u20091) to Jewish moral superiority. The chapter is a sustained diatribe against the presumption that covenant status exempts from judgment."
+      "note": "Romans 2 turns the spotlight from Gentile idolatry (ch. 1) to Jewish moral superiority. The chapter is a sustained diatribe against the presumption that covenant status exempts from judgment."
     },
     "themes": {
       "scores": [
@@ -286,66 +289,66 @@
           "value": 4
         }
       ],
-      "note": "Judgment (9) and Justice (9) dominate: the entire chapter concerns God\u2019s impartial judgment. Covenant scores 8, as Paul interrogates what covenant membership truly means."
+      "note": "Judgment (9) and Justice (9) dominate: the entire chapter concerns God’s impartial judgment. Covenant scores 8, as Paul interrogates what covenant membership truly means."
     },
     "hebtext": [
       {
-        "word": "\u03ba\u03c1\u03af\u03bd\u03c9",
-        "tlit": "krin\u014d",
+        "word": "κρίνω",
+        "tlit": "krinō",
         "gloss": "to judge / to condemn",
-        "note": "Paul uses the verb krin\u014d and its cognates (krima, katakrima) throughout chapters 2\u20133 to establish the forensic framework of his argument. The one who \u2018judges\u2019 (krineis) another condemns himself (katakrineis heauton), because the same standard applies universally. The divine court operates on deeds, not ethnicity."
+        "note": "Paul uses the verb krinō and its cognates (krima, katakrima) throughout chapters 2–3 to establish the forensic framework of his argument. The one who ‘judges’ (krineis) another condemns himself (katakrineis heauton), because the same standard applies universally. The divine court operates on deeds, not ethnicity."
       },
       {
-        "word": "\u03bc\u03b5\u03c4\u03ac\u03bd\u03bf\u03b9\u03b1",
+        "word": "μετάνοια",
         "tlit": "metanoia",
         "gloss": "repentance / change of mind",
-        "note": "Metanoia in v.\u20094 denotes a comprehensive reorientation of mind and conduct toward God. Paul warns that God\u2019s kindness (chr\u0113stot\u0113s) is designed to lead to repentance, not to confirm complacency. The noun implies not merely regret but a turning from sin to God."
+        "note": "Metanoia in v. 4 denotes a comprehensive reorientation of mind and conduct toward God. Paul warns that God’s kindness (chrēstotēs) is designed to lead to repentance, not to confirm complacency. The noun implies not merely regret but a turning from sin to God."
       },
       {
-        "word": "\u03c0\u03b5\u03c1\u03b9\u03c4\u03bf\u03bc\u03ae",
-        "tlit": "peritom\u0113",
+        "word": "περιτομή",
+        "tlit": "peritomē",
         "gloss": "circumcision",
-        "note": "Paul redefines peritom\u0113 from an external ethnic marker to an inward spiritual reality. The \u2018circumcision of the heart\u2019 (peritom\u0113 kardias) draws on Deuteronomy 30:6 and Jeremiah 4:4, where the prophets had already internalised the sign. Paul\u2019s argument anticipates 3:1 \u2014 if circumcision is internalised, what advantage does the Jew retain?"
+        "note": "Paul redefines peritomē from an external ethnic marker to an inward spiritual reality. The ‘circumcision of the heart’ (peritomē kardias) draws on Deuteronomy 30:6 and Jeremiah 4:4, where the prophets had already internalised the sign. Paul’s argument anticipates 3:1 — if circumcision is internalised, what advantage does the Jew retain?"
       },
       {
-        "word": "\u03b3\u03c1\u03ac\u03bc\u03bc\u03b1",
+        "word": "γράμμα",
         "tlit": "gramma",
         "gloss": "letter / written code",
-        "note": "The contrast gramma / pneuma (letter / Spirit) in v.\u200929 foreshadows the fuller development in 7:6 and 2 Corinthians 3:6. Gramma denotes the external, written form of the law divorced from the Spirit\u2019s transforming power."
+        "note": "The contrast gramma / pneuma (letter / Spirit) in v. 29 foreshadows the fuller development in 7:6 and 2 Corinthians 3:6. Gramma denotes the external, written form of the law divorced from the Spirit’s transforming power."
       }
     ],
     "ppl": [
       {
         "name": "Paul",
         "role": "Apostle to the Gentiles; author of thirteen NT letters",
-        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen\u2019s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13\u201328 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts\u2019 theological climax: the gospel reaching the empire\u2019s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
         "timeline_id": "paul"
       },
       {
         "name": "Moses",
         "role": "Prophet, lawgiver, and covenant mediator",
-        "text": "Moses stands at the centre of the Pentateuch\u2019s narrative \u2014 the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him \"faithful in all God\u2019s house\" (Heb 3:5) while distinguishing him from Christ, the Son over the house.",
+        "text": "Moses stands at the centre of the Pentateuch’s narrative — the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him \"faithful in all God’s house\" (Heb 3:5) while distinguishing him from Christ, the Son over the house.",
         "timeline_id": "moses"
       },
       {
         "name": "Isaiah",
         "role": "Key biblical figure",
-        "text": "Paul cites Isaiah 52:5 / Ezekiel 36:20\u201322 loosely: Israel\u2019s disobedience causes God\u2019s name to be blasphemed among the Gentiles\u2026"
+        "text": "Paul cites Isaiah 52:5 / Ezekiel 36:20–22 loosely: Israel’s disobedience causes God’s name to be blasphemed among the Gentiles…"
       }
     ],
     "trans": {
-      "title": "Comparing translations in God\u2019s Righteous Judgment",
+      "title": "Comparing translations in God’s Righteous Judgment",
       "rows": [
         {
           "verse_ref": "",
           "translations": [
             {
               "version": "NIV",
-              "text": "But because of your stubbornness and your unrepentant heart, you are storing up wrath against yourself for the day of God\u2019s wrath, when his righteous judgment will be revealed."
+              "text": "But because of your stubbornness and your unrepentant heart, you are storing up wrath against yourself for the day of God’s wrath, when his righteous judgment will be revealed."
             },
             {
               "version": "ESV",
-              "text": "But because of your hard and impenitent heart you are storing up wrath for yourself on the day of wrath when God\u2019s righteous judgment will be revealed."
+              "text": "But because of your hard and impenitent heart you are storing up wrath for yourself on the day of wrath when God’s righteous judgment will be revealed."
             }
           ]
         },
@@ -367,59 +370,59 @@
     "rec": [
       {
         "title": "John MacArthur",
-        "quote": "\"The shift from third person (\u2018they\u2019) to second person (\u2018you\u2019) is rhetorically devastating. The one who condemns pagans for their sins practises the very same things.\"",
-        "note": "Evangelical / Reformed \u2014 20th\u201321st c."
+        "quote": "\"The shift from third person (‘they’) to second person (‘you’) is rhetorically devastating. The one who condemns pagans for their sins practises the very same things.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
       },
       {
         "title": "John Calvin",
-        "quote": "\"Calvin identifies the interlocutor as the hypocritical moralist who claims moral superiority while committing the same sins in secret. The trap is set: knowledge of the law increases guilt rather than\u2026\"",
-        "note": "Reformed / Reformation \u2014 16th c."
+        "quote": "\"Calvin identifies the interlocutor as the hypocritical moralist who claims moral superiority while committing the same sins in secret. The trap is set: knowledge of the law increases guilt rather than…\"",
+        "note": "Reformed / Reformation — 16th c."
       },
       {
         "title": "NET Bible translators",
-        "quote": "\"The quotation of Psalm 62:12 / Proverbs 24:12 (\u2018God will repay each according to their deeds\u2019) establishes the OT basis for judgment according to works. Paul is not contradicting grace but affirming d\u2026\"",
-        "note": "Text-critical evangelical \u2014 21st c."
+        "quote": "\"The quotation of Psalm 62:12 / Proverbs 24:12 (‘God will repay each according to their deeds’) establishes the OT basis for judgment according to works. Paul is not contradicting grace but affirming d…\"",
+        "note": "Text-critical evangelical — 21st c."
       }
     ],
     "thread": [
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
-        "target": "Matt 7:1\u20132",
+        "anchor": "God’s Righteous Judgment",
+        "target": "Matt 7:1–2",
         "type": "Connection",
-        "text": "Jesus warns against judging others while guilty of the same sins \u2014 a principle Paul applies to the self-righteous moralist."
+        "text": "Jesus warns against judging others while guilty of the same sins — a principle Paul applies to the self-righteous moralist."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
+        "anchor": "God’s Righteous Judgment",
         "target": "Eccl 12:14",
         "type": "Connection",
-        "text": "God will bring every deed into judgment, including every hidden thing \u2014 the OT precedent for Paul\u2019s claim in v.\u200916."
+        "text": "God will bring every deed into judgment, including every hidden thing — the OT precedent for Paul’s claim in v. 16."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
+        "anchor": "God’s Righteous Judgment",
         "target": "Jas 2:13",
         "type": "Connection",
-        "text": "Judgment without mercy to those who show no mercy \u2014 the same impartiality principle Paul articulates."
+        "text": "Judgment without mercy to those who show no mercy — the same impartiality principle Paul articulates."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
+        "anchor": "God’s Righteous Judgment",
         "target": "Deut 30:6",
         "type": "Connection",
-        "text": "Moses promises that God will circumcise Israel\u2019s heart \u2014 the prophetic foundation for Paul\u2019s internalised circumcision."
+        "text": "Moses promises that God will circumcise Israel’s heart — the prophetic foundation for Paul’s internalised circumcision."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
+        "anchor": "God’s Righteous Judgment",
         "target": "Jer 4:4",
         "type": "Connection",
         "text": "Jeremiah calls Judah to circumcise their hearts, warning that external ritual without internal reality provokes divine judgment."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Righteous Judgment",
+        "anchor": "God’s Righteous Judgment",
         "target": "Phil 3:3",
         "type": "Connection",
         "text": "Paul identifies true circumcision as those who worship by the Spirit of God, glory in Christ Jesus, and put no confidence in the flesh."
@@ -432,8 +435,8 @@
           "id": "r2-1",
           "type": "inference",
           "verse_range": "2:1",
-          "marker": "Therefore (\u03b4\u03b9\u03cc)",
-          "text": "You who pass judgment have no excuse \u2014 by judging others you condemn yourself, for you do the same things."
+          "marker": "Therefore (διό)",
+          "text": "You who pass judgment have no excuse — by judging others you condemn yourself, for you do the same things."
         },
         {
           "id": "r2-2",
@@ -445,7 +448,7 @@
               "id": "r2-2a",
               "type": "contrast",
               "verse_range": "2:4",
-              "marker": "Or (\u1f24)",
+              "marker": "Or (ἤ)",
               "text": "Do you presume on God's kindness, not realizing it is meant to lead you to repentance?"
             }
           ]
@@ -454,21 +457,21 @@
           "id": "r2-3",
           "type": "ground",
           "verse_range": "2:6-11",
-          "marker": "For (\u1f45\u03c2)",
-          "text": "God will render to each according to works \u2014 eternal life for those who persist in doing good, wrath for those who do not obey truth. No partiality with God."
+          "marker": "For (ὅς)",
+          "text": "God will render to each according to works — eternal life for those who persist in doing good, wrath for those who do not obey truth. No partiality with God."
         },
         {
           "id": "r2-4",
           "type": "ground",
           "verse_range": "2:12-16",
-          "marker": "For (\u03b3\u03ac\u03c1)",
-          "text": "Those who sin without law perish without law; those under law are judged by law. Possession of law does not justify \u2014 only doers will be declared righteous.",
+          "marker": "For (γάρ)",
+          "text": "Those who sin without law perish without law; those under law are judged by law. Possession of law does not justify — only doers will be declared righteous.",
           "children": [
             {
               "id": "r2-4a",
               "type": "illustration",
               "verse_range": "2:14-15",
-              "text": "Gentiles who do not have the law do by nature what the law requires \u2014 the law written on their hearts, their consciences bearing witness."
+              "text": "Gentiles who do not have the law do by nature what the law requires — the law written on their hearts, their consciences bearing witness."
             }
           ]
         },
@@ -476,15 +479,15 @@
           "id": "r2-5",
           "type": "contrast",
           "verse_range": "2:17-24",
-          "marker": "But (\u03b4\u03ad)",
-          "text": "You call yourself a Jew, rely on the law, boast in God \u2014 yet you who teach others, do you teach yourself? God's name is blasphemed among Gentiles because of you."
+          "marker": "But (δέ)",
+          "text": "You call yourself a Jew, rely on the law, boast in God — yet you who teach others, do you teach yourself? God's name is blasphemed among Gentiles because of you."
         },
         {
           "id": "r2-6",
           "type": "conclusion",
           "verse_range": "2:25-29",
-          "marker": "For (\u03b3\u03ac\u03c1)",
-          "text": "Circumcision has value only if you obey the law. True circumcision is of the heart, by the Spirit \u2014 the real Jew is one inwardly."
+          "marker": "For (γάρ)",
+          "text": "Circumcision has value only if you obey the law. True circumcision is of the heart, by the Spirit — the real Jew is one inwardly."
         }
       ],
       "note": "Chapter 2 turns the indictment on the moral person (likely the Jewish interlocutor in Paul's diatribe). The argument exposes the inconsistency of judging others while committing the same sins. The climax redefines Jewish identity: not outward markers but inward transformation."

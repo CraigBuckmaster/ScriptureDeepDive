@@ -4,71 +4,74 @@
   "book_dir": "romans",
   "chapter_num": 9,
   "title": "Romans 9",
-  "subtitle": "God\u2019s Sovereign Choice",
-  "timeline_link": null,
+  "subtitle": "God’s Sovereign Choice",
+  "timeline_link": {
+    "event_id": "book-romans",
+    "text": "See on Timeline — Romans Written"
+  },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
-      "header": "Verses 1\u201318 \u2014 \"God Has Mercy on Whom He Wants\"",
+      "header": "Verses 1–18 — \"God Has Mercy on Whom He Wants\"",
       "verse_start": 1,
       "verse_end": 18,
       "panels": {
         "heb": [
           {
-            "word": "\u1f10\u03ba\u03bb\u03bf\u03b3\u03ae",
-            "transliteration": "eklog\u0113",
+            "word": "ἐκλογή",
+            "transliteration": "eklogē",
             "gloss": "election / choosing / selection",
-            "paragraph": "Eklog\u0113 (v.\u200911) is the noun form of eklego (\u2018to choose out, to select\u2019). Paul\u2019s argument hinges on this term: God\u2019s purpose in election (h\u0113 kat\u2019 eklog\u0113n prothesis) operates apart from works, depending solely on the one who calls. The election of Jacob over Esau before birth and before either had done anything good or bad demonstrates that election is unconditional, grounded in God\u2019s sovereign will rather than human merit."
+            "paragraph": "Eklogē (v. 11) is the noun form of eklego (‘to choose out, to select’). Paul’s argument hinges on this term: God’s purpose in election (hē kat’ eklogēn prothesis) operates apart from works, depending solely on the one who calls. The election of Jacob over Esau before birth and before either had done anything good or bad demonstrates that election is unconditional, grounded in God’s sovereign will rather than human merit."
           },
           {
-            "word": "\u03c3\u03ba\u03bb\u03b7\u03c1\u03cd\u03bd\u03c9",
-            "transliteration": "skl\u0113ryn\u014d",
+            "word": "σκληρύνω",
+            "transliteration": "sklērynō",
             "gloss": "to harden",
-            "paragraph": "Skl\u0113ryn\u014d (v.\u200918) describes God\u2019s hardening of Pharaoh. Paul places mercy and hardening in parallel: God has mercy on whom he wants and hardens whom he wants. The verb does not imply that God creates evil ex nihilo but that he confirms the existing disposition of the rebellious heart. The OT background (Exod 4:21; 7:3; 9:12) shows that Pharaoh first hardened his own heart before God hardened it."
+            "paragraph": "Sklērynō (v. 18) describes God’s hardening of Pharaoh. Paul places mercy and hardening in parallel: God has mercy on whom he wants and hardens whom he wants. The verb does not imply that God creates evil ex nihilo but that he confirms the existing disposition of the rebellious heart. The OT background (Exod 4:21; 7:3; 9:12) shows that Pharaoh first hardened his own heart before God hardened it."
           }
         ],
-        "ctx": "Romans 9 opens with Paul\u2019s anguished confession of grief over Israel\u2019s unbelief (vv.\u20091\u20135). The intensity is remarkable: Paul could wish himself \u2018accursed and cut off from Christ\u2019 (v.\u20093) for the sake of his kinsmen. This emotional outburst is the pastoral prelude to the most sustained theological argument about divine sovereignty in the NT. Paul\u2019s purpose is to demonstrate that God\u2019s word has not failed (v.\u20096) despite Israel\u2019s majority rejection of the gospel. The solution is that God\u2019s promises were never based on physical descent but on sovereign election: \u2018not all who are descended from Israel are Israel\u2019 (v.\u20096). The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening.",
+        "ctx": "Romans 9 opens with Paul’s anguished confession of grief over Israel’s unbelief (vv. 1–5). The intensity is remarkable: Paul could wish himself ‘accursed and cut off from Christ’ (v. 3) for the sake of his kinsmen. This emotional outburst is the pastoral prelude to the most sustained theological argument about divine sovereignty in the NT. Paul’s purpose is to demonstrate that God’s word has not failed (v. 6) despite Israel’s majority rejection of the gospel. The solution is that God’s promises were never based on physical descent but on sovereign election: ‘not all who are descended from Israel are Israel’ (v. 6). The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening.",
         "cross": [
           {
             "ref": "Gen 25:23",
-            "note": "The LORD told Rebekah: \u2018the older will serve the younger\u2019 \u2014 the election of Jacob over Esau before birth."
+            "note": "The LORD told Rebekah: ‘the older will serve the younger’ — the election of Jacob over Esau before birth."
           },
           {
             "ref": "Exod 33:19",
-            "note": "Paul quotes God\u2019s declaration to Moses: \u2018I will have mercy on whom I have mercy\u2019 \u2014 the sovereignty of divine compassion."
+            "note": "Paul quotes God’s declaration to Moses: ‘I will have mercy on whom I have mercy’ — the sovereignty of divine compassion."
           },
           {
-            "ref": "Mal 1:2\u20133",
-            "note": "Paul cites Malachi: \u2018Jacob I loved, Esau I hated\u2019 \u2014 a statement about nations and covenantal choice."
+            "ref": "Mal 1:2–3",
+            "note": "Paul cites Malachi: ‘Jacob I loved, Esau I hated’ — a statement about nations and covenantal choice."
           },
           {
             "ref": "Exod 9:16",
-            "note": "God raised up Pharaoh to display his power and proclaim his name \u2014 even the hardened serve God\u2019s purpose."
+            "note": "God raised up Pharaoh to display his power and proclaim his name — even the hardened serve God’s purpose."
           }
         ],
         "mac": {
           "source": "",
           "notes": [
             {
-              "ref": "9:1\u20133",
-              "note": "Paul\u2019s willingness to be \u2018accursed\u2019 (anathema) for Israel\u2019s sake echoes Moses\u2019 intercession (Exod 32:32). Both leaders would sacrifice themselves for their people."
+              "ref": "9:1–3",
+              "note": "Paul’s willingness to be ‘accursed’ (anathema) for Israel’s sake echoes Moses’ intercession (Exod 32:32). Both leaders would sacrifice themselves for their people."
             },
             {
-              "ref": "9:4\u20135",
-              "note": "Paul catalogues Israel\u2019s eight privileges: adoption, glory, covenants, law, temple worship, promises, patriarchs, and the human ancestry of Christ. These are real and irrevocable (11:29)."
+              "ref": "9:4–5",
+              "note": "Paul catalogues Israel’s eight privileges: adoption, glory, covenants, law, temple worship, promises, patriarchs, and the human ancestry of Christ. These are real and irrevocable (11:29)."
             },
             {
-              "ref": "9:6\u20139",
+              "ref": "9:6–9",
               "note": "The distinction between physical and spiritual Israel is not a new concept but a principle operative since Abraham. Isaac, not Ishmael, was the child of promise."
             },
             {
-              "ref": "9:11\u201313",
-              "note": "Election before birth and before any works: this is the clearest statement of unconditional election in the NT. God\u2019s purpose depends on the caller, not the called."
+              "ref": "9:11–13",
+              "note": "Election before birth and before any works: this is the clearest statement of unconditional election in the NT. God’s purpose depends on the caller, not the called."
             },
             {
-              "ref": "9:14\u201318",
-              "note": "Paul\u2019s defence of God\u2019s justice is not a philosophical argument but a scriptural one: God told Moses he would show mercy as he sees fit. The Creator\u2019s prerogative is not subject to the creature\u2019s approval."
+              "ref": "9:14–18",
+              "note": "Paul’s defence of God’s justice is not a philosophical argument but a scriptural one: God told Moses he would show mercy as he sees fit. The Creator’s prerogative is not subject to the creature’s approval."
             }
           ]
         },
@@ -76,12 +79,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:11\u201313",
-              "note": "Calvin reads this as the locus classicus of predestination. God\u2019s choice of Jacob and rejection of Esau before birth proves that election is entirely gratuitous, resting on God\u2019s inscrutable will rather than foreseen merit."
+              "ref": "9:11–13",
+              "note": "Calvin reads this as the locus classicus of predestination. God’s choice of Jacob and rejection of Esau before birth proves that election is entirely gratuitous, resting on God’s inscrutable will rather than foreseen merit."
             },
             {
               "ref": "9:18",
-              "note": "Calvin affirms the double decree without apology: God has mercy on whom he wills and hardens whom he wills. Both are expressions of God\u2019s sovereign freedom, though mercy displays grace and hardening displays justice."
+              "note": "Calvin affirms the double decree without apology: God has mercy on whom he wills and hardens whom he wills. Both are expressions of God’s sovereign freedom, though mercy displays grace and hardening displays justice."
             }
           ]
         },
@@ -90,11 +93,11 @@
           "notes": [
             {
               "ref": "9:3",
-              "note": "The term anathema means \u2018devoted to destruction\u2019 or \u2018placed under a curse.\u2019 Paul\u2019s hypothetical wish is hyperbolic but reveals the depth of his pastoral anguish."
+              "note": "The term anathema means ‘devoted to destruction’ or ‘placed under a curse.’ Paul’s hypothetical wish is hyperbolic but reveals the depth of his pastoral anguish."
             },
             {
               "ref": "9:13",
-              "note": "The phrase \u2018Jacob I loved, Esau I hated\u2019 uses Semitic comparative language: \u2018hated\u2019 means \u2018loved less\u2019 or \u2018not chosen.\u2019 The context in Malachi refers to nations, not individual eternal destinies."
+              "note": "The phrase ‘Jacob I loved, Esau I hated’ uses Semitic comparative language: ‘hated’ means ‘loved less’ or ‘not chosen.’ The context in Malachi refers to nations, not individual eternal destinies."
             }
           ]
         },
@@ -102,12 +105,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:1\u201318",
-              "note": "Moo reads chapters 9\u201311 as Paul\u2019s theodicy: the defence of God\u2019s faithfulness in light of Israel\u2019s rejection. The argument is not about individual salvation per se but about God\u2019s sovereign right to define the boundaries of his covenant people. The test cases (Isaac, Jacob, Pharaoh) demonstrate that God has always exercised selective mercy within physical Israel."
+              "ref": "9:1–18",
+              "note": "Moo reads chapters 9–11 as Paul’s theodicy: the defence of God’s faithfulness in light of Israel’s rejection. The argument is not about individual salvation per se but about God’s sovereign right to define the boundaries of his covenant people. The test cases (Isaac, Jacob, Pharaoh) demonstrate that God has always exercised selective mercy within physical Israel."
             },
             {
               "ref": "9:6",
-              "note": "Moo takes \u2018not all who are descended from Israel are Israel\u2019 as the thesis statement of chapters 9\u201311. God\u2019s word has not failed because the true Israel has always been defined by election, not ethnicity."
+              "note": "Moo takes ‘not all who are descended from Israel are Israel’ as the thesis statement of chapters 9–11. God’s word has not failed because the true Israel has always been defined by election, not ethnicity."
             }
           ]
         },
@@ -115,12 +118,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:6\u201313",
-              "note": "Schreiner emphasises that Paul\u2019s argument is theocentric: the focus is on God\u2019s purpose, God\u2019s calling, God\u2019s choice. Human response is subordinate to divine initiative. Election does not follow from foreseen faith but precedes and produces it."
+              "ref": "9:6–13",
+              "note": "Schreiner emphasises that Paul’s argument is theocentric: the focus is on God’s purpose, God’s calling, God’s choice. Human response is subordinate to divine initiative. Election does not follow from foreseen faith but precedes and produces it."
             },
             {
-              "ref": "9:14\u201318",
-              "note": "Schreiner argues that the m\u0113 genoito of v.\u200914 answers the charge of divine injustice not by explaining God\u2019s reasons but by asserting God\u2019s prerogative. God\u2019s justice is not measured by human standards of fairness but by his own self-consistent character."
+              "ref": "9:14–18",
+              "note": "Schreiner argues that the mē genoito of v. 14 answers the charge of divine injustice not by explaining God’s reasons but by asserting God’s prerogative. God’s justice is not measured by human standards of fairness but by his own self-consistent character."
             }
           ]
         }
@@ -128,37 +131,37 @@
     },
     {
       "section_num": 2,
-      "header": "Verses 19\u201333 \u2014 \"The Potter and the Clay\"",
+      "header": "Verses 19–33 — \"The Potter and the Clay\"",
       "verse_start": 19,
       "verse_end": 33,
       "panels": {
         "heb": [
           {
-            "word": "\u03ba\u03b5\u03c1\u03b1\u03bc\u03b5\u03cd\u03c2",
+            "word": "κεραμεύς",
             "transliteration": "kerameus",
             "gloss": "potter",
-            "paragraph": "The potter/clay metaphor (vv.\u200920\u201321) draws on Isaiah 29:16, 45:9, and especially Jeremiah 18:1\u201310. Paul uses it to establish the Creator\u2019s absolute right over the creature. The question \u2018does not the potter have the right to make from the same lump of clay some pottery for special purposes and some for common use?\u2019 is rhetorical: the expected answer is emphatically yes."
+            "paragraph": "The potter/clay metaphor (vv. 20–21) draws on Isaiah 29:16, 45:9, and especially Jeremiah 18:1–10. Paul uses it to establish the Creator’s absolute right over the creature. The question ‘does not the potter have the right to make from the same lump of clay some pottery for special purposes and some for common use?’ is rhetorical: the expected answer is emphatically yes."
           },
           {
-            "word": "\u03bb\u03af\u03b8\u03bf\u03c2 \u03c0\u03c1\u03bf\u03c3\u03ba\u03cc\u03bc\u03bc\u03b1\u03c4\u03bf\u03c2",
+            "word": "λίθος προσκόμματος",
             "transliteration": "lithos proskommatos",
             "gloss": "stone of stumbling",
-            "paragraph": "In vv.\u200932\u201333 Paul combines Isaiah 28:16 and 8:14 to describe Christ as both a foundation stone and a stumbling stone. Israel stumbled because they pursued righteousness by works rather than by faith. The stone is the same; the response determines whether it is a foundation or an obstacle."
+            "paragraph": "In vv. 32–33 Paul combines Isaiah 28:16 and 8:14 to describe Christ as both a foundation stone and a stumbling stone. Israel stumbled because they pursued righteousness by works rather than by faith. The stone is the same; the response determines whether it is a foundation or an obstacle."
           }
         ],
-        "ctx": "The potter/clay metaphor in 9:19\u201323 has provoked intense debate since the patristic era. Does Paul teach a strict double predestination where God creates some vessels for wrath and some for mercy? Or is the emphasis on God\u2019s right to show patience with vessels of wrath while preparing vessels of mercy? Paul\u2019s transition in v.\u200924 is crucial: the \u2018vessels of mercy\u2019 include both Jews and Gentiles, demonstrating that God\u2019s sovereign freedom results in the expansion of mercy, not its restriction. The chapter concludes with the irony that Gentiles, who did not pursue righteousness, have obtained it by faith, while Israel, which pursued a law of righteousness, stumbled over the stumbling stone.",
+        "ctx": "The potter/clay metaphor in 9:19–23 has provoked intense debate since the patristic era. Does Paul teach a strict double predestination where God creates some vessels for wrath and some for mercy? Or is the emphasis on God’s right to show patience with vessels of wrath while preparing vessels of mercy? Paul’s transition in v. 24 is crucial: the ‘vessels of mercy’ include both Jews and Gentiles, demonstrating that God’s sovereign freedom results in the expansion of mercy, not its restriction. The chapter concludes with the irony that Gentiles, who did not pursue righteousness, have obtained it by faith, while Israel, which pursued a law of righteousness, stumbled over the stumbling stone.",
         "cross": [
           {
             "ref": "Isa 29:16",
-            "note": "The potter/clay image: \u2018can the pot say of the potter, \u201che knows nothing\u201d?\u2019"
+            "note": "The potter/clay image: ‘can the pot say of the potter, “he knows nothing”?’"
           },
           {
-            "ref": "Jer 18:1\u201310",
+            "ref": "Jer 18:1–10",
             "note": "The extended potter metaphor in Jeremiah, where God shapes and reshapes nations like clay."
           },
           {
             "ref": "Hos 2:23",
-            "note": "Paul quotes Hosea: \u2018I will call them \u201cmy people\u201d who are not my people\u2019 \u2014 applied to Gentile inclusion."
+            "note": "Paul quotes Hosea: ‘I will call them “my people” who are not my people’ — applied to Gentile inclusion."
           },
           {
             "ref": "Isa 28:16",
@@ -169,20 +172,20 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:19\u201321",
-              "note": "The potter/clay analogy does not reduce humans to inanimate objects but establishes the Creator\u2019s sovereign prerogative. The creature has no standing to demand an explanation from the Creator."
+              "ref": "9:19–21",
+              "note": "The potter/clay analogy does not reduce humans to inanimate objects but establishes the Creator’s sovereign prerogative. The creature has no standing to demand an explanation from the Creator."
             },
             {
-              "ref": "9:22\u201323",
-              "note": "God bore with \u2018great patience\u2019 the objects of wrath prepared for destruction. The patience is significant: God does not rush to judgment but endures long, displaying his mercy to the vessels of glory."
+              "ref": "9:22–23",
+              "note": "God bore with ‘great patience’ the objects of wrath prepared for destruction. The patience is significant: God does not rush to judgment but endures long, displaying his mercy to the vessels of glory."
             },
             {
-              "ref": "9:24\u201326",
-              "note": "The vessels of mercy are called from Jews and Gentiles alike. Paul proves this from Hosea: those who were \u2018not my people\u2019 are now called \u2018children of the living God.\u2019"
+              "ref": "9:24–26",
+              "note": "The vessels of mercy are called from Jews and Gentiles alike. Paul proves this from Hosea: those who were ‘not my people’ are now called ‘children of the living God.’"
             },
             {
-              "ref": "9:30\u201333",
-              "note": "The great irony: Gentiles attained righteousness by faith while Israel missed it by pursuing it through works. They stumbled over the stumbling stone \u2014 Christ."
+              "ref": "9:30–33",
+              "note": "The great irony: Gentiles attained righteousness by faith while Israel missed it by pursuing it through works. They stumbled over the stumbling stone — Christ."
             }
           ]
         },
@@ -190,11 +193,11 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:20\u201321",
-              "note": "Calvin uses the potter metaphor to affirm God\u2019s absolute sovereignty over creation. The creature\u2019s complaint against the Creator is not merely inappropriate but absurd. The clay has no rights before the potter."
+              "ref": "9:20–21",
+              "note": "Calvin uses the potter metaphor to affirm God’s absolute sovereignty over creation. The creature’s complaint against the Creator is not merely inappropriate but absurd. The clay has no rights before the potter."
             },
             {
-              "ref": "9:30\u201333",
+              "ref": "9:30–33",
               "note": "Calvin notes the paradox: the Gentiles who did not seek righteousness found it, while Israel who sought it missed it. The difference is the means: faith versus works. This demonstrates that righteousness is a gift received, not a goal achieved."
             }
           ]
@@ -204,7 +207,7 @@
           "notes": [
             {
               "ref": "9:22",
-              "note": "The phrase \u2018prepared for destruction\u2019 (kat\u0113rtismena eis ap\u014dleian) uses a perfect passive participle. Whether the passive implies divine agency (\u2018prepared by God\u2019) or reflexive action (\u2018fit themselves for\u2019) is debated. The context of sovereign potter imagery favours divine agency."
+              "note": "The phrase ‘prepared for destruction’ (katērtismena eis apōleian) uses a perfect passive participle. Whether the passive implies divine agency (‘prepared by God’) or reflexive action (‘fit themselves for’) is debated. The context of sovereign potter imagery favours divine agency."
             },
             {
               "ref": "9:33",
@@ -216,12 +219,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:19\u201329",
-              "note": "Moo argues that the potter metaphor establishes God\u2019s right without exhaustively defining God\u2019s methods. The emphasis falls on v.\u200923: God\u2019s purpose is to \u2018make known the riches of his glory\u2019 to the vessels of mercy. Sovereignty serves mercy, not arbitrary power."
+              "ref": "9:19–29",
+              "note": "Moo argues that the potter metaphor establishes God’s right without exhaustively defining God’s methods. The emphasis falls on v. 23: God’s purpose is to ‘make known the riches of his glory’ to the vessels of mercy. Sovereignty serves mercy, not arbitrary power."
             },
             {
-              "ref": "9:30\u201333",
-              "note": "Moo reads the stumbling stone as the turning point in Paul\u2019s argument: Israel\u2019s failure is not predestinarian fate alone but also culpable unbelief. They \u2018pursued\u2019 righteousness by works rather than receiving it by faith. Chapters 10\u201311 will develop both dimensions."
+              "ref": "9:30–33",
+              "note": "Moo reads the stumbling stone as the turning point in Paul’s argument: Israel’s failure is not predestinarian fate alone but also culpable unbelief. They ‘pursued’ righteousness by works rather than receiving it by faith. Chapters 10–11 will develop both dimensions."
             }
           ]
         },
@@ -229,12 +232,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "9:19\u201323",
-              "note": "Schreiner argues that Paul does teach double predestination in this passage, though the symmetry is not exact: God \u2018endures\u2019 vessels of wrath but \u2018prepares\u2019 vessels of mercy. Wrath is patient; mercy is active."
+              "ref": "9:19–23",
+              "note": "Schreiner argues that Paul does teach double predestination in this passage, though the symmetry is not exact: God ‘endures’ vessels of wrath but ‘prepares’ vessels of mercy. Wrath is patient; mercy is active."
             },
             {
-              "ref": "9:30\u201333",
-              "note": "Schreiner emphasises that Paul holds divine sovereignty (vv.\u20096\u201329) and human responsibility (vv.\u200930\u201333) together without resolving the tension. Israel stumbled because they pursued the wrong means, but this pursuit was itself part of God\u2019s sovereign plan."
+              "ref": "9:30–33",
+              "note": "Schreiner emphasises that Paul holds divine sovereignty (vv. 6–29) and human responsibility (vv. 30–33) together without resolving the tension. Israel stumbled because they pursued the wrong means, but this pursuit was itself part of God’s sovereign plan."
             }
           ]
         }
@@ -285,126 +288,126 @@
           "value": 5
         }
       ],
-      "note": "Sovereignty peaks at 10: this is the NT\u2019s most concentrated argument for divine sovereignty in election. Covenant at 9 reflects the Abrahamic promise that frames the entire argument."
+      "note": "Sovereignty peaks at 10: this is the NT’s most concentrated argument for divine sovereignty in election. Covenant at 9 reflects the Abrahamic promise that frames the entire argument."
     },
     "lit": {
       "rows": [
         {
-          "label": "vv.1\u20135",
-          "range": "9:1\u20135",
-          "text": "Paul\u2019s Anguish Over Israel",
+          "label": "vv.1–5",
+          "range": "9:1–5",
+          "text": "Paul’s Anguish Over Israel",
           "is_key": true
         },
         {
-          "label": "vv.6\u201313",
-          "range": "9:6\u201313",
+          "label": "vv.6–13",
+          "range": "9:6–13",
           "text": "Not All Israel Is Israel: Election Through Isaac and Jacob",
           "is_key": true
         },
         {
-          "label": "vv.14\u201318",
-          "range": "9:14\u201318",
-          "text": "God\u2019s Sovereign Mercy: Moses and Pharaoh",
+          "label": "vv.14–18",
+          "range": "9:14–18",
+          "text": "God’s Sovereign Mercy: Moses and Pharaoh",
           "is_key": true
         },
         {
-          "label": "vv.19\u201329",
-          "range": "9:19\u201329",
+          "label": "vv.19–29",
+          "range": "9:19–29",
           "text": "The Potter and the Clay: Vessels of Wrath and Mercy",
           "is_key": true
         },
         {
-          "label": "vv.30\u201333",
-          "range": "9:30\u201333",
-          "text": "Israel\u2019s Stumbling: Works vs. Faith",
+          "label": "vv.30–33",
+          "range": "9:30–33",
+          "text": "Israel’s Stumbling: Works vs. Faith",
           "is_key": true
         }
       ],
-      "note": "Romans 9 opens the Israel section (chs.\u20099\u201311) with a defence of God\u2019s sovereign election. The argument moves from Paul\u2019s grief to scriptural precedent to prophetic fulfilment to Israel\u2019s failure."
+      "note": "Romans 9 opens the Israel section (chs. 9–11) with a defence of God’s sovereign election. The argument moves from Paul’s grief to scriptural precedent to prophetic fulfilment to Israel’s failure."
     },
     "hebtext": [
       {
-        "word": "\u1f10\u03ba\u03bb\u03bf\u03b3\u03ae",
-        "tlit": "eklog\u0113",
+        "word": "ἐκλογή",
+        "tlit": "eklogē",
         "gloss": "election / choosing / selection",
-        "note": "Eklog\u0113 (v.\u200911) is the noun form of eklego (\u2018to choose out, to select\u2019). Paul\u2019s argument hinges on this term: God\u2019s purpose in election (h\u0113 kat\u2019 eklog\u0113n prothesis) operates apart from works, depending solely on the one who calls. The election of Jacob over Esau before birth and before either had done anything good or bad demonstrates that election is unconditional, grounded in God\u2019s sovereign will rather than human merit."
+        "note": "Eklogē (v. 11) is the noun form of eklego (‘to choose out, to select’). Paul’s argument hinges on this term: God’s purpose in election (hē kat’ eklogēn prothesis) operates apart from works, depending solely on the one who calls. The election of Jacob over Esau before birth and before either had done anything good or bad demonstrates that election is unconditional, grounded in God’s sovereign will rather than human merit."
       },
       {
-        "word": "\u03c3\u03ba\u03bb\u03b7\u03c1\u03cd\u03bd\u03c9",
-        "tlit": "skl\u0113ryn\u014d",
+        "word": "σκληρύνω",
+        "tlit": "sklērynō",
         "gloss": "to harden",
-        "note": "Skl\u0113ryn\u014d (v.\u200918) describes God\u2019s hardening of Pharaoh. Paul places mercy and hardening in parallel: God has mercy on whom he wants and hardens whom he wants. The verb does not imply that God creates evil ex nihilo but that he confirms the existing disposition of the rebellious heart. The OT background (Exod 4:21; 7:3; 9:12) shows that Pharaoh first hardened his own heart before God hardened it."
+        "note": "Sklērynō (v. 18) describes God’s hardening of Pharaoh. Paul places mercy and hardening in parallel: God has mercy on whom he wants and hardens whom he wants. The verb does not imply that God creates evil ex nihilo but that he confirms the existing disposition of the rebellious heart. The OT background (Exod 4:21; 7:3; 9:12) shows that Pharaoh first hardened his own heart before God hardened it."
       },
       {
-        "word": "\u03ba\u03b5\u03c1\u03b1\u03bc\u03b5\u03cd\u03c2",
+        "word": "κεραμεύς",
         "tlit": "kerameus",
         "gloss": "potter",
-        "note": "The potter/clay metaphor (vv.\u200920\u201321) draws on Isaiah 29:16, 45:9, and especially Jeremiah 18:1\u201310. Paul uses it to establish the Creator\u2019s absolute right over the creature. The question \u2018does not the potter have the right to make from the same lump of clay some pottery for special purposes and some for common use?\u2019 is rhetorical: the expected answer is emphatically yes."
+        "note": "The potter/clay metaphor (vv. 20–21) draws on Isaiah 29:16, 45:9, and especially Jeremiah 18:1–10. Paul uses it to establish the Creator’s absolute right over the creature. The question ‘does not the potter have the right to make from the same lump of clay some pottery for special purposes and some for common use?’ is rhetorical: the expected answer is emphatically yes."
       },
       {
-        "word": "\u03bb\u03af\u03b8\u03bf\u03c2 \u03c0\u03c1\u03bf\u03c3\u03ba\u03cc\u03bc\u03bc\u03b1\u03c4\u03bf\u03c2",
+        "word": "λίθος προσκόμματος",
         "tlit": "lithos proskommatos",
         "gloss": "stone of stumbling",
-        "note": "In vv.\u200932\u201333 Paul combines Isaiah 28:16 and 8:14 to describe Christ as both a foundation stone and a stumbling stone. Israel stumbled because they pursued righteousness by works rather than by faith. The stone is the same; the response determines whether it is a foundation or an obstacle."
+        "note": "In vv. 32–33 Paul combines Isaiah 28:16 and 8:14 to describe Christ as both a foundation stone and a stumbling stone. Israel stumbled because they pursued righteousness by works rather than by faith. The stone is the same; the response determines whether it is a foundation or an obstacle."
       }
     ],
     "ppl": [
       {
         "name": "Paul",
         "role": "Apostle to the Gentiles; author of thirteen NT letters",
-        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen\u2019s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13\u201328 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts\u2019 theological climax: the gospel reaching the empire\u2019s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
         "timeline_id": "paul"
       },
       {
         "name": "Abraham",
         "role": "Key biblical figure",
-        "text": "The distinction between physical and spiritual Israel is not a new concept but a principle operative since Abraham\u2026"
+        "text": "The distinction between physical and spiritual Israel is not a new concept but a principle operative since Abraham…"
       },
       {
         "name": "Moses",
         "role": "Prophet, lawgiver, and covenant mediator",
-        "text": "Moses stands at the centre of the Pentateuch\u2019s narrative \u2014 the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him \"faithful in all God\u2019s house\" (Heb 3:5) while distinguishing him from Christ, the Son over the house.",
+        "text": "Moses stands at the centre of the Pentateuch’s narrative — the one man who spoke with God face to face (Exod 33:11; Num 12:8) and mediated the Sinai covenant to Israel. In Leviticus he receives the priestly legislation; in Numbers he leads, intercedes, and ultimately fails at Meribah (Num 20). The writer of Hebrews calls him \"faithful in all God’s house\" (Heb 3:5) while distinguishing him from Christ, the Son over the house.",
         "timeline_id": "moses"
       },
       {
         "name": "Christ",
         "role": "Key biblical figure",
-        "text": "The intensity is remarkable: Paul could wish himself \u2018accursed and cut off from Christ\u2019 (v\u2026"
+        "text": "The intensity is remarkable: Paul could wish himself ‘accursed and cut off from Christ’ (v…"
       },
       {
         "name": "Isaac",
         "role": "Key biblical figure",
-        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening\u2026"
+        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening…"
       },
       {
         "name": "Jacob",
         "role": "Key biblical figure",
-        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening\u2026"
+        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening…"
       },
       {
         "name": "Esau",
         "role": "Key biblical figure",
-        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening\u2026"
+        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening…"
       },
       {
         "name": "Pharaoh",
         "role": "Key biblical figure",
-        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening\u2026"
+        "text": "The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening…"
       }
     ],
     "trans": {
-      "title": "Comparing translations in God\u2019s Sovereign Choice",
+      "title": "Comparing translations in God’s Sovereign Choice",
       "rows": [
         {
           "verse_ref": "",
           "translations": [
             {
               "version": "NIV",
-              "text": "Nor because they are his descendants are they all Abraham\u2019s children. On the contrary, \u201cIt is through Isaac that your offspring will be reckoned.\u201d"
+              "text": "Nor because they are his descendants are they all Abraham’s children. On the contrary, “It is through Isaac that your offspring will be reckoned.”"
             },
             {
               "version": "ESV",
-              "text": "and not all are children of Abraham because they are his offspring, but \u201cThrough Isaac shall your offspring be named.\u201d"
+              "text": "and not all are children of Abraham because they are his offspring, but “Through Isaac shall your offspring be named.”"
             }
           ]
         },
@@ -426,18 +429,18 @@
     "rec": [
       {
         "title": "John MacArthur",
-        "quote": "\"Paul\u2019s willingness to be \u2018accursed\u2019 (anathema) for Israel\u2019s sake echoes Moses\u2019 intercession (Exod 32:32). Both leaders would sacrifice themselves for their people.\"",
-        "note": "Evangelical / Reformed \u2014 20th\u201321st c."
+        "quote": "\"Paul’s willingness to be ‘accursed’ (anathema) for Israel’s sake echoes Moses’ intercession (Exod 32:32). Both leaders would sacrifice themselves for their people.\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
       },
       {
         "title": "John Calvin",
-        "quote": "\"Calvin reads this as the locus classicus of predestination. God\u2019s choice of Jacob and rejection of Esau before birth proves that election is entirely gratuitous, resting on God\u2019s inscrutable will rath\u2026\"",
-        "note": "Reformed / Reformation \u2014 16th c."
+        "quote": "\"Calvin reads this as the locus classicus of predestination. God’s choice of Jacob and rejection of Esau before birth proves that election is entirely gratuitous, resting on God’s inscrutable will rath…\"",
+        "note": "Reformed / Reformation — 16th c."
       },
       {
         "title": "NET Bible translators",
-        "quote": "\"The term anathema means \u2018devoted to destruction\u2019 or \u2018placed under a curse.\u2019 Paul\u2019s hypothetical wish is hyperbolic but reveals the depth of his pastoral anguish.\"",
-        "note": "Text-critical evangelical \u2014 21st c."
+        "quote": "\"The term anathema means ‘devoted to destruction’ or ‘placed under a curse.’ Paul’s hypothetical wish is hyperbolic but reveals the depth of his pastoral anguish.\"",
+        "note": "Text-critical evangelical — 21st c."
       }
     ],
     "debate": [
@@ -446,12 +449,12 @@
         [
           [
             "Critical/Analytical scholarship",
-            "The phrase \u2018prepared for destruction\u2019 (kat\u0113rtismena eis ap\u014dleian) uses a perfect passive participle. Whether the passive implies divine agency (\u2018prepa\u2026",
+            "The phrase ‘prepared for destruction’ (katērtismena eis apōleian) uses a perfect passive participle. Whether the passive implies divine agency (‘prepa…",
             "Emphasises historical-critical, literary, or text-critical analysis."
           ],
           [
             "Traditional/Confessional reading",
-            "Reads God\u2019s Sovereign Choice within the canonical framework of fulfilled prophecy and covenant theology.",
+            "Reads God’s Sovereign Choice within the canonical framework of fulfilled prophecy and covenant theology.",
             "Represented by Calvin, MacArthur, and the evangelical tradition."
           ]
         ],
@@ -461,43 +464,43 @@
     "thread": [
       {
         "direction": "connection",
-        "anchor": "God\u2019s Sovereign Choice",
+        "anchor": "God’s Sovereign Choice",
         "target": "Gen 25:23",
         "type": "Connection",
-        "text": "The LORD told Rebekah: \u2018the older will serve the younger\u2019 \u2014 the election of Jacob over Esau before birth."
+        "text": "The LORD told Rebekah: ‘the older will serve the younger’ — the election of Jacob over Esau before birth."
       },
       {
         "direction": "fulfilment",
-        "anchor": "God\u2019s Sovereign Choice",
+        "anchor": "God’s Sovereign Choice",
         "target": "Exod 33:19",
         "type": "Fulfilment",
-        "text": "Paul quotes God\u2019s declaration to Moses: \u2018I will have mercy on whom I have mercy\u2019 \u2014 the sovereignty of divine compassion."
+        "text": "Paul quotes God’s declaration to Moses: ‘I will have mercy on whom I have mercy’ — the sovereignty of divine compassion."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Sovereign Choice",
-        "target": "Mal 1:2\u20133",
+        "anchor": "God’s Sovereign Choice",
+        "target": "Mal 1:2–3",
         "type": "Connection",
-        "text": "Paul cites Malachi: \u2018Jacob I loved, Esau I hated\u2019 \u2014 a statement about nations and covenantal choice."
+        "text": "Paul cites Malachi: ‘Jacob I loved, Esau I hated’ — a statement about nations and covenantal choice."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Sovereign Choice",
+        "anchor": "God’s Sovereign Choice",
         "target": "Exod 9:16",
         "type": "Connection",
-        "text": "God raised up Pharaoh to display his power and proclaim his name \u2014 even the hardened serve God\u2019s purpose."
+        "text": "God raised up Pharaoh to display his power and proclaim his name — even the hardened serve God’s purpose."
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Sovereign Choice",
+        "anchor": "God’s Sovereign Choice",
         "target": "Isa 29:16",
         "type": "Connection",
-        "text": "The potter/clay image: \u2018can the pot say of the potter, \u201che knows nothing\u201d?\u2019"
+        "text": "The potter/clay image: ‘can the pot say of the potter, “he knows nothing”?’"
       },
       {
         "direction": "connection",
-        "anchor": "God\u2019s Sovereign Choice",
-        "target": "Jer 18:1\u201310",
+        "anchor": "God’s Sovereign Choice",
+        "target": "Jer 18:1–10",
         "type": "Connection",
         "text": "The extended potter metaphor in Jeremiah, where God shapes and reshapes nations like clay."
       }
@@ -509,13 +512,13 @@
           "id": "r9-1",
           "type": "premise",
           "verse_range": "9:1-5",
-          "text": "Paul's anguish for his kinsmen according to the flesh: he could wish himself accursed for their sake. To them belong adoption, glory, covenants, the law, worship, promises, the patriarchs, and from them is the Christ \u2014 God over all, blessed forever."
+          "text": "Paul's anguish for his kinsmen according to the flesh: he could wish himself accursed for their sake. To them belong adoption, glory, covenants, the law, worship, promises, the patriarchs, and from them is the Christ — God over all, blessed forever."
         },
         {
           "id": "r9-2",
           "type": "thesis",
           "verse_range": "9:6-9",
-          "marker": "But (\u03b4\u03ad)",
+          "marker": "But (δέ)",
           "text": "It is not as though God's word has failed. Not all descended from Israel are Israel; not all Abraham's children are his offspring. 'Through Isaac shall your offspring be named.' The children of the promise are counted as offspring.",
           "children": [
             {
@@ -530,13 +533,13 @@
           "id": "r9-3",
           "type": "ground",
           "verse_range": "9:10-13",
-          "text": "Rebecca's twins had one father, yet before they were born or had done anything good or bad \u2014 so that God's purpose in election might stand, not from works but from him who calls \u2014 she was told, 'The elder will serve the younger.' As it is written, 'Jacob I loved, but Esau I hated.'",
+          "text": "Rebecca's twins had one father, yet before they were born or had done anything good or bad — so that God's purpose in election might stand, not from works but from him who calls — she was told, 'The elder will serve the younger.' As it is written, 'Jacob I loved, but Esau I hated.'",
           "children": [
             {
               "id": "r9-3a",
               "type": "purpose",
               "verse_range": "9:11",
-              "text": "Election is based on God's call, not on works \u2014 his purpose stands."
+              "text": "Election is based on God's call, not on works — his purpose stands."
             }
           ]
         },
@@ -544,22 +547,22 @@
           "id": "r9-4",
           "type": "concession",
           "verse_range": "9:14-18",
-          "marker": "What then (\u03c4\u03af \u03bf\u1f56\u03bd)",
+          "marker": "What then (τί οὖν)",
           "text": "Is there injustice with God? By no means! He said to Moses, 'I will have mercy on whom I have mercy.' It does not depend on human will or exertion, but on God who has mercy. Scripture says to Pharaoh: 'I raised you up to show my power.' He has mercy on whom he wills and hardens whom he wills."
         },
         {
           "id": "r9-5",
           "type": "contrast",
           "verse_range": "9:19-21",
-          "marker": "Then (\u03bf\u1f56\u03bd)",
+          "marker": "Then (οὖν)",
           "text": "You will say, 'Why does he still find fault? Who can resist his will?' But who are you, O man, to answer back to God? Will what is molded say to its molder, 'Why have you made me thus?' The potter has authority over the clay."
         },
         {
           "id": "r9-6",
           "type": "premise",
           "verse_range": "9:22-24",
-          "marker": "What if (\u03b5\u1f30 \u03b4\u03ad)",
-          "text": "What if God, desiring to show wrath and make known his power, has endured with much patience vessels of wrath prepared for destruction, in order to make known the riches of his glory for vessels of mercy prepared beforehand for glory \u2014 even us whom he has called, from Jews and from Gentiles?"
+          "marker": "What if (εἰ δέ)",
+          "text": "What if God, desiring to show wrath and make known his power, has endured with much patience vessels of wrath prepared for destruction, in order to make known the riches of his glory for vessels of mercy prepared beforehand for glory — even us whom he has called, from Jews and from Gentiles?"
         },
         {
           "id": "r9-7",
@@ -571,7 +574,7 @@
               "id": "r9-7a",
               "type": "illustration",
               "verse_range": "9:27-29",
-              "text": "The remnant theology of Isaiah 10:22-23 and 1:9 \u2014 if the Lord had not left us offspring, we would have been like Sodom."
+              "text": "The remnant theology of Isaiah 10:22-23 and 1:9 — if the Lord had not left us offspring, we would have been like Sodom."
             }
           ]
         },
@@ -579,8 +582,8 @@
           "id": "r9-8",
           "type": "conclusion",
           "verse_range": "9:30-33",
-          "marker": "What then (\u03c4\u03af \u03bf\u1f56\u03bd)",
-          "text": "Gentiles who did not pursue righteousness have obtained it \u2014 righteousness by faith. Israel, pursuing the law of righteousness, did not attain it. Why? Because they pursued it by works rather than by faith. They stumbled over the stumbling stone. As Isaiah wrote: 'Behold, I am laying in Zion a stone of stumbling, and whoever believes in him will not be put to shame.'"
+          "marker": "What then (τί οὖν)",
+          "text": "Gentiles who did not pursue righteousness have obtained it — righteousness by faith. Israel, pursuing the law of righteousness, did not attain it. Why? Because they pursued it by works rather than by faith. They stumbled over the stumbling stone. As Isaiah wrote: 'Behold, I am laying in Zion a stone of stumbling, and whoever believes in him will not be put to shame.'"
         }
       ],
       "note": "Romans 9-11 addresses the problem of Israel's unbelief: has God's word failed? Paul's answer is rooted in divine sovereignty (ch. 9), human responsibility (ch. 10), and future hope (ch. 11). The potter/clay imagery (9:19-21) echoes Isaiah 29:16, 45:9 and Jeremiah 18."
