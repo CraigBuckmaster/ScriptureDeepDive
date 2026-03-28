@@ -249,6 +249,37 @@ try {
 
 ---
 
+## 10. Pipeline Gotchas
+
+Hard-won lessons from building 66 books. Read before running generators or pushing.
+
+**Generator scripts:**
+- Write to `/tmp/`, never commit. Delete after use.
+- Avoid `\'` inside single-quoted strings. Use double-quoted strings for text with apostrophes.
+- Always syntax-check before running: `python3 -c "compile(open('/tmp/gen_....py').read(), 'test', 'exec'); print('Syntax OK')"`
+- After running, verify section counts: `python3 -c "import json; [print(f'Ch {ch}: {len(json.load(open(f\"content/{book}/{ch}.json\"))[\"sections\"])} sections') for ch in range(START, END+1)]"`
+- Very short chapters (< 10 verses) may produce only 1 section — that's fine.
+
+**Validation:**
+- `validate.py` checks against hardcoded expected counts that drift. Count-mismatch failures are expected and non-blocking. Only schema, panel, cross-ref, and parent-ref failures indicate real problems.
+
+**People entries:**
+- Parent refs (`father`, `mother`, `spouseOf`) must use IDs (lowercase, underscored), not display names. Set to `null` if parent not in database.
+
+**shared.py:**
+- ~1,350 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
+
+**Git / merge conflicts:**
+- `scripture.db` conflicts: `git checkout --theirs scripture.db` → rebuild via `build_sqlite.py` → `git add scripture.db` → `GIT_EDITOR="true" git rebase --continue`
+- `scholar-data.json` conflicts: load upstream version, programmatically merge missing scholars. Never hand-edit conflict markers in JSON.
+- Container has no EDITOR — use `GIT_EDITOR="true" git rebase --continue`.
+- GitHub blocks pushes containing secrets (PATs, API keys). Never commit tokens to any file.
+
+**Repo hygiene:**
+- Root directory contains only: `_tools/`, `app/`, `content/`, `.gitignore`, `README.md`, `scripture.db`. All plans/docs go in `_tools/`. Generator scripts go in `/tmp/`.
+
+---
+
 ## Known Debt & Future Work
 
 Items deferred from completed audits. Not bugs — polish for when bandwidth allows.
