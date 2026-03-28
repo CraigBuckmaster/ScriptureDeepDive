@@ -1,4 +1,4 @@
-# Companion Study — Session Handoff: Batch 12E+
+# Companion Study — Session Handoff: Batch 13+
 
 ## Repository Access
 
@@ -14,7 +14,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Current State (as of commit 0e2bd9d3)
+## Current State (as of commit f5d2b8bb)
 
 ### Batches Complete
 
@@ -36,26 +36,38 @@ git config user.name "Craig Buckmaster"
 | 12B | Timeline: +54 missing biblical events (146→200) | ✅ Complete |
 | 12C | Timeline: +66 book authorship events (new category) | ✅ Complete |
 | 12D | Timeline: chapter links (32→1032 chapters linked) | ✅ Complete |
-| **12E** | **Timeline: UI enhancements** | **← START HERE** |
+| 12E | Timeline: UI enhancements | ✅ Complete |
+| **13** | **Cross-reference thread expansion** | **← START HERE** |
 
-### Bug Fixes This Session
+### Batch 12 Delivered (This Session)
 
-- **Notes overlay keyboard bug:** `KeyboardAvoidingView` added so header stays below status bar when keyboard opens
-- **Notes auto-edit on create:** New notes now auto-enter edit mode so tags/collections/links are immediately visible
-- **Timeline deep-link bug:** Chapter JSON stores raw IDs (`creation`) but timelines DB uses prefixed IDs (`evt_creation`). `TimelineScreen` now checks both forms.
-- **Book events filter:** `'book'` category included in events toggle so book authorship events render on timeline.
+**Content:**
+- +54 biblical events across all 12 eras (146→200)
+- +66 book authorship events (new `book_events` array, `category='book'`)
+- Chapter timeline links expanded from 32→1,032 (87% coverage)
+
+**UI:**
+- Books category toggle (parchment brown #7a6b5a, separate from Events)
+- Square markers for book events, circles for regular events
+- "Go to Chapter →" button in event detail panel
+- Book events render above axis alongside regular events
+
+**Bug Fixes:**
+- Notes overlay: `KeyboardAvoidingView` prevents header from sliding behind status bar
+- Notes: auto-enter edit mode on create so tags/collections/links are immediately visible
+- Timeline deep-link: now handles `evt_`/`bk_` prefix mismatch between chapter JSON and DB
+- Validator counts synced for Revelation completion (66 live books)
 
 ---
 
 ## Database Stats
 
-- **66 books** (ALL 66 LIVE — Revelation completed)
+- **66 books** (ALL 66 LIVE)
 - **1,189 chapters** in DB
 - **543 timeline entries** (203 events + 66 books + 250 people + 24 world)
 - **1,032 chapters** with timeline deep-links (87% coverage)
 - 50 prophecy chains (283 links)
-- 20 concepts
-- 53 difficult passages
+- 20 concepts, 53 difficult passages
 - 16 discourse panels (Romans)
 - 43 word studies (26 Hebrew, 17 Greek)
 - 51 scholars, 282 people, 73 places
@@ -63,50 +75,7 @@ git config user.name "Craig Buckmaster"
 
 ---
 
-## Phase 12E: Timeline UI Enhancements ← START HERE
-
-**Estimated time: 2 hours**
-
-### 1. Add "Books" category toggle
-- New chip in category filter row: 📖 Books
-- Color: `#7a6b5a` (parchment brown)
-- Add `showBooks` state alongside `showEvents`, `showPeople`, `showWorld`
-- Book events already in DB with `category='book'` — just need UI toggle
-- **Note:** Currently books are bundled with events toggle (added in 12D-1). Separate them into their own toggle.
-
-### 2. Data-driven era rendering
-- `EraFilterBar` should read era config from DB (`getTimelineEraConfig()`) instead of hardcoded constants
-- `timelineLayout.ts` should accept passed config instead of `ERA_RANGES` constant
-- Era config already stored in `genealogy_config` table under key `timeline_era_config`
-
-### 3. Event detail → chapter navigation
-- If a timeline event has `chapter_link`, show "Go to Chapter" button in the event detail popup/card
-- Parse chapter_link format: `{testament}/{book_id}/{DisplayName}_{ch}.html`
-- Navigate to `ChapterScreen` with `{ bookId, chapterNum }`
-- Reference: `MapScreen.tsx` lines 115-124 already has this parsing logic
-
-### 4. Visual distinction for book events
-- Different marker shape (square or book icon) vs circle for regular events
-- Use `category` field to distinguish: `'event'` = circle, `'book'` = square/book
-
----
-
-## Key Files Reference
-
-| File | Purpose |
-|------|---------|
-| `content/meta/timelines.json` | Source of truth — events, book_events, timeline_people, world_events, era_config |
-| `_tools/build_sqlite.py` | Lines 593-660: `populate_timelines()` — processes all 4 arrays |
-| `app/src/screens/TimelineScreen.tsx` | Main timeline UI |
-| `app/src/utils/timelineLayout.ts` | Layout math, `ERA_RANGES`, positioning |
-| `app/src/components/tree/EraFilterBar.tsx` | Era filter chips |
-| `app/src/db/content.ts` | Timeline queries + `getTimelineEraConfig()` |
-| `app/src/types/index.ts` | `TimelineEntry`, `EraConfig` interfaces |
-| `app/src/components/NotesOverlay.tsx` | Notes modal (recently fixed) |
-
----
-
-## After Batch 12
+## What's Next
 
 **Batch 13:** Cross-reference thread expansion
 **Batch 14:** Map story enhancements
@@ -115,6 +84,19 @@ git config user.name "Craig Buckmaster"
 - Isaiah 23-66 (44 chapters) — thin panels
 - Kings/Chronicles MacArthur panels (112 chapters)
 - ~134 Psalms without timeline links (no natural narrative anchors)
+
+---
+
+## Key Files Reference
+
+| File | Purpose |
+|------|---------|
+| `content/meta/timelines.json` | Timeline source of truth (events, book_events, people, world, era_config) |
+| `_tools/build_sqlite.py` | JSON→SQLite compiler |
+| `app/src/screens/TimelineScreen.tsx` | Timeline UI (category toggles, SVG canvas, detail modal) |
+| `app/src/utils/timelineLayout.ts` | Layout math, ERA_RANGES, lane assignment |
+| `app/src/components/tree/EraFilterBar.tsx` | Era filter pills |
+| `app/src/components/NotesOverlay.tsx` | Notes modal (KeyboardAvoidingView, auto-edit) |
 
 ---
 
