@@ -5,7 +5,10 @@
   "chapter_num": 27,
   "title": "Acts 27",
   "subtitle": "The Voyage and Shipwreck",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "pauls-shipwreck",
+    "text": "See on Timeline — Paul's Shipwreck"
+  },
   "map_story_link": {
     "story_id": "paul-rome",
     "text": "See on Map — Paul's Journey to Rome"

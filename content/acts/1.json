@@ -5,7 +5,10 @@
   "chapter_num": 1,
   "title": "Acts 1",
   "subtitle": "The Ascension and Matthias",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "ascension",
+    "text": "See on Timeline — The Ascension"
+  },
   "map_story_link": null,
   "sections": [
     {
