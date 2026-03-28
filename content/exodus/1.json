@@ -5,7 +5,10 @@
   "chapter_num": 1,
   "title": "Exodus 1",
   "subtitle": "Israel Multiplies; Oppression; The Midwives' Courage",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "moses-born",
+    "text": "See on Timeline — Moses Born"
+  },
   "map_story_link": {
     "story_id": "exodus-plagues",
     "text": "See on Map — The Exodus & Plagues"

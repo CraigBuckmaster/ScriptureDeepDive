@@ -5,7 +5,10 @@
   "chapter_num": 19,
   "title": "Genesis 19",
   "subtitle": "The Destruction of Sodom; Lot's Escape",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "sodom-destroyed",
+    "text": "See on Timeline — Sodom Destroyed"
+  },
   "map_story_link": {
     "story_id": "sodom",
     "text": "See on Map — Destruction of Sodom"
