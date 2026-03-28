@@ -144,10 +144,13 @@ export const eras: Record<string, string> = {
   exodus: '#26472e',
   judges: '#503d18',
   kingdom: '#304153',
+  divided_kingdom: '#5a4535',
   prophets: '#653030',
   exile: '#29444d',
+  'post-exilic': '#3a5a4a',
   intertestamental: '#4a3e27',
   nt: '#46370f',
+  apostolic: '#3a4a5a',
 } as const;
 
 export const eraNames: Record<string, string> = {
@@ -156,10 +159,13 @@ export const eraNames: Record<string, string> = {
   exodus: 'Egypt & Exodus',
   judges: 'Conquest & Judges',
   kingdom: 'United Kingdom',
-  prophets: 'Divided Kingdom & Prophets',
-  exile: 'Exile & Return',
+  divided_kingdom: 'Divided Kingdom',
+  prophets: 'Prophets',
+  exile: 'Exile',
+  'post-exilic': 'Post-Exilic',
   intertestamental: 'Intertestamental',
   nt: 'New Testament',
+  apostolic: 'Apostolic Age',
 } as const;
 
 /** Compact labels for filter pills — short enough for single-line chip display. */
@@ -169,8 +175,11 @@ export const eraPillLabels: Record<string, string> = {
   exodus: 'Exodus',
   judges: 'Judges',
   kingdom: 'Kingdom',
+  divided_kingdom: 'Divided',
   prophets: 'Prophets',
   exile: 'Exile',
+  'post-exilic': 'Return',
   intertestamental: 'Intertestam.',
   nt: 'NT',
+  apostolic: 'Apostolic',
 } as const;

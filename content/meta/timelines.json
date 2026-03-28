@@ -1254,40 +1254,48 @@
       "summary": "In August 591 BC, elders come to inquire of God. He refuses to answer and instead rehearses Israel's entire history as unbroken rebellion from Egypt through the wilderness to the present, revealing that God saved them only 'for the sake of my name.'"
     },
     {
-      "id": "evt_siege_jerusalem_588",
+      "id": "siege_jerusalem_588",
       "era": "prophets",
       "name": "Siege of Jerusalem Begins",
       "year": -588,
-      "scripture_ref": "Ezek 24:1-2; 2 Kgs 25:1",
-      "chapter_link": "ot/ezekiel/Ezekiel_24.html",
-      "people_json": "[\"nebuchadnezzar\", \"zedekiah\", \"ezekiel\"]",
       "summary": "Nebuchadnezzar begins the final siege of Jerusalem on the 10th of Tevet. God reveals the exact date to Ezekiel in Babylon, confirming prophetic authenticity.",
-      "region": "Jerusalem"
+      "region": "Jerusalem",
+      "ref": "Ezek 24:1-2; 2 Kgs 25:1",
+      "chapter": "ot/ezekiel/Ezekiel_24.html",
+      "people": [
+        "nebuchadnezzar",
+        "zedekiah",
+        "ezekiel"
+      ]
     },
     {
-      "id": "evt_ezekiel_wife_death",
+      "id": "ezekiel_wife_death",
       "era": "prophets",
       "name": "Death of Ezekiel's Wife",
       "year": -588,
-      "scripture_ref": "Ezek 24:15-27",
-      "chapter_link": "ot/ezekiel/Ezekiel_24.html",
-      "people_json": "[\"ezekiel\"]",
       "summary": "God commands Ezekiel not to mourn his wife's death as a sign-act: when the Temple falls, the exiles will be unable to mourn properly. Ezekiel's prophetic silence on Jerusalem begins.",
-      "region": "Babylon"
+      "region": "Babylon",
+      "ref": "Ezek 24:15-27",
+      "chapter": "ot/ezekiel/Ezekiel_24.html",
+      "people": [
+        "ezekiel"
+      ]
     },
     {
-      "id": "evt_tyre_siege_585",
+      "id": "tyre_siege_585",
       "era": "prophets",
       "name": "Nebuchadnezzar's 13-Year Siege of Tyre",
       "year": -585,
-      "scripture_ref": "Ezek 26:7-14",
-      "chapter_link": "ot/ezekiel/Ezekiel_26.html",
-      "people_json": "[\"nebuchadnezzar\"]",
       "summary": "Nebuchadnezzar besieges Tyre for 13 years (585-573 BC), the longest siege in ancient history. He takes the mainland settlement but never fully conquers the island fortress.",
-      "region": "Tyre"
+      "region": "Tyre",
+      "ref": "Ezek 26:7-14",
+      "chapter": "ot/ezekiel/Ezekiel_26.html",
+      "people": [
+        "nebuchadnezzar"
+      ]
     },
     {
-      "id": "evt_egypt_oracle_587",
+      "id": "egypt_oracle_587",
       "era": "exile",
       "name": "Ezekiel's Oracle Against Egypt",
       "year": -587,
@@ -1300,7 +1308,7 @@
       "summary": "Ezekiel portrays Pharaoh Hophra as a sea monster in the Nile and pronounces 40 years of desolation for Egypt. Delivered during the Babylonian siege of Jerusalem."
     },
     {
-      "id": "evt_egypt_wages_571",
+      "id": "egypt_wages_571",
       "era": "exile",
       "name": "Egypt Given as Wages to Nebuchadnezzar",
       "year": -571,
@@ -1313,7 +1321,7 @@
       "summary": "Ezekiel's latest dated oracle. After Nebuchadnezzar's inconclusive siege of Tyre, God compensates him with Egypt's wealth. A horn of hope sprouts for Israel."
     },
     {
-      "id": "evt_jerusalem_fall_news",
+      "id": "jerusalem_fall_news",
       "era": "exile",
       "name": "Fugitive Reports Jerusalem's Fall",
       "year": -585,
@@ -1701,7 +1709,9 @@
         "jason_thessalonica"
       ],
       "summary": "Paul, Silas, and Timothy arrive in Thessalonica during the second missionary journey. Paul reasons in the synagogue for three Sabbaths, persuading some Jews and many God-fearing Greeks. Opposition from jealous Jews forces them to flee to Berea after Jason posts bond.",
-      "id": "pauls_mission_to_thessalonica"
+      "id": "pauls_mission_to_thessalonica",
+      "era": "apostolic",
+      "chapter": "nt/acts/Acts_17.html"
     },
     {
       "name": "1 Thessalonians Written",
@@ -1713,7 +1723,9 @@
         "timothy"
       ],
       "summary": "Paul writes 1 Thessalonians from Corinth after Timothy returns with news of the church's steadfast faith. This is likely Paul's earliest surviving letter and possibly the oldest document in the New Testament. The letter addresses concerns about sexual ethics and the fate of believers who die before Christ's return.",
-      "id": "1_thessalonians_written"
+      "id": "1_thessalonians_written",
+      "era": "apostolic",
+      "chapter": "nt/1_thessalonians/1_Thessalonians_1.html"
     },
     {
       "name": "2 Thessalonians Written",
@@ -1725,7 +1737,9 @@
         "timothy"
       ],
       "summary": "Paul writes 2 Thessalonians from Corinth shortly after 1 Thessalonians to correct confusion about Christ's return. Some Thessalonians believed 'the day of the Lord has already come,' possibly based on a forged letter. Paul introduces the 'man of lawlessness' who must appear first and rebukes idleness among those who stopped working.",
-      "id": "2_thessalonians_written"
+      "id": "2_thessalonians_written",
+      "era": "apostolic",
+      "chapter": "nt/2_thessalonians/2_Thessalonians_1.html"
     },
     {
       "name": "Paul writes 1 Timothy from Macedonia",
@@ -3462,5 +3476,115 @@
       "region": "Italy",
       "summary": "Mount Vesuvius buries Pompeii and Herculaneum. Paul's letters to Roman churches were already circulating; early Christianity grows even as nature reshapes the landscape."
     }
-  ]
+  ],
+  "era_config": {
+    "primeval": {
+      "hex": "#523d0b",
+      "name": "Primeval History",
+      "pill": "Primeval",
+      "range": [
+        -4000,
+        -2200
+      ]
+    },
+    "patriarch": {
+      "hex": "#4b395f",
+      "name": "Patriarchal Period",
+      "pill": "Patriarchs",
+      "range": [
+        -2200,
+        -1800
+      ]
+    },
+    "exodus": {
+      "hex": "#26472e",
+      "name": "Egypt & Exodus",
+      "pill": "Exodus",
+      "range": [
+        -1800,
+        -1400
+      ]
+    },
+    "judges": {
+      "hex": "#503d18",
+      "name": "Conquest & Judges",
+      "pill": "Judges",
+      "range": [
+        -1400,
+        -1050
+      ]
+    },
+    "kingdom": {
+      "hex": "#304153",
+      "name": "United Kingdom",
+      "pill": "Kingdom",
+      "range": [
+        -1050,
+        -930
+      ]
+    },
+    "divided_kingdom": {
+      "hex": "#5a4535",
+      "name": "Divided Kingdom",
+      "pill": "Divided",
+      "range": [
+        -930,
+        -722
+      ]
+    },
+    "prophets": {
+      "hex": "#653030",
+      "name": "Prophets",
+      "pill": "Prophets",
+      "range": [
+        -930,
+        -586
+      ]
+    },
+    "exile": {
+      "hex": "#29444d",
+      "name": "Exile",
+      "pill": "Exile",
+      "range": [
+        -586,
+        -538
+      ]
+    },
+    "post-exilic": {
+      "hex": "#3a5a4a",
+      "name": "Post-Exilic",
+      "pill": "Return",
+      "range": [
+        -538,
+        -432
+      ]
+    },
+    "intertestamental": {
+      "hex": "#4a3e27",
+      "name": "Intertestamental",
+      "pill": "Intertestam.",
+      "range": [
+        -432,
+        -4
+      ]
+    },
+    "nt": {
+      "hex": "#46370f",
+      "name": "New Testament",
+      "pill": "NT",
+      "range": [
+        -4,
+        70
+      ]
+    },
+    "apostolic": {
+      "hex": "#3a4a5a",
+      "name": "Apostolic Age",
+      "pill": "Apostolic",
+      "range": [
+        30,
+        100
+      ]
+    }
+  }
 }

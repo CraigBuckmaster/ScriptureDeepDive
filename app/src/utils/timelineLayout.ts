@@ -46,10 +46,13 @@ export const ERA_RANGES: Record<string, [number, number]> = {
   exodus: [-1800, -1400],
   judges: [-1400, -1050],
   kingdom: [-1050, -930],
-  prophets: [-930, -722],
-  exile: [-722, -432],
-  intertestamental: [-432, 0],
-  nt: [0, 95],
+  divided_kingdom: [-930, -722],
+  prophets: [-930, -586],
+  exile: [-586, -538],
+  'post-exilic': [-538, -432],
+  intertestamental: [-432, -4],
+  nt: [-4, 70],
+  apostolic: [30, 100],
 };
 
 /** Piecewise linear interpolation: year → x pixel position (0–9000). */
