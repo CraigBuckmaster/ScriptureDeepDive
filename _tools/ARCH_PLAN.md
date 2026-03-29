@@ -20,9 +20,11 @@
 | 5 | Content data layer decomposition | 1–2 hrs | Low |
 | 6 | NotesOverlay decomposition | 2–3 hrs | Medium |
 | 7 | Inline style migration | 3–4 hrs | Low |
-| 8 | Test coverage foundation | 2–3 days | None |
+| 8A | Test coverage foundation (DB, stores, hooks) | 2–3 days | None |
+| 8B | CI/CD pipeline (GitHub Actions) | 0.5 day | None |
+| 8C | Branch protection + PR workflow | 30 min | Workflow change |
 
-**Total: ~5–6 working days**
+**Total: ~6–7 working days**
 
 ---
 
@@ -392,18 +394,36 @@ const styles = StyleSheet.create({
 
 ---
 
-## Batch 8 — Test Coverage Foundation (2–3 days)
+## Batch 8 — Test Coverage, CI/CD Pipeline, and Branch Protection (3–4 days)
 
-### Current State
+This is the "grow up" batch. Stop pushing straight to master, automate quality
+gates, and make regressions impossible to ship silently.
+
+### 8A. Test Coverage Foundation (2–3 days)
+
+#### Current State
 
 6 unit tests covering pure utility functions. Zero tests for:
 hooks, components, screens, database layer, stores, navigation.
 
-### Target Coverage (Phase 1)
+#### Target Coverage (Phase 1)
 
 Focus on the layers that break silently and are hardest to catch manually.
 
-**Tier 1 — Database layer (highest ROI)**
+**Tier 1 — Content pipeline validation (highest ROI, already exists)**
+
+The Python validators (`validate.py`, `validate_sqlite.py`) are the most
+comprehensive test suite in the project — 3,000+ checks. They just aren't
+wired into CI yet. This is free coverage.
+
+```yaml
+# CI will run:
+python3 _tools/build_sqlite.py
+python3 _tools/validate.py
+python3 _tools/validate_sqlite.py
+```
+
+**Tier 2 — Database layer**
 
 The `content.ts` and `user.ts` functions are the foundation everything else
 depends on. Test them against a test fixture database.
@@ -424,7 +444,7 @@ __tests__/db/
 - `recordVisit()` → `getRecentChapters()` round-trip
 - User DB migration runs cleanly on fresh database
 
-**Tier 2 — Stores**
+**Tier 3 — Stores**
 
 Test `settingsStore` hydration and persistence:
 - Default values before hydration
@@ -435,19 +455,19 @@ Test `readerStore` single-open policy:
 - `setActivePanel('s1', 'heb')` → `setActivePanel('s1', 'heb')` → clears
 - `setActivePanel('s1', 'heb')` → `setActivePanel('s2', 'mac')` → switches
 
-**Tier 3 — Hooks**
+**Tier 4 — Hooks**
 
 Test `useChapterData` with mock DB:
 - Returns loading state initially
 - Returns chapter + sections + panels after load
 - Cancels on unmount (no state updates after unmount)
 
-**Tier 4 — Components (deferred)**
+**Tier 5 — Components (deferred)**
 
 Component tests require `@testing-library/react-native` and render mocking.
-Defer until Tiers 1–3 are solid.
+Defer until Tiers 1–4 are solid.
 
-### Setup
+#### Setup
 
 ```bash
 cd app
@@ -456,7 +476,244 @@ npm install --save-dev @testing-library/react-native @testing-library/jest-nativ
 
 Update `jest.config.js` to include DB test setup (in-memory SQLite).
 
+Add test scripts to `app/package.json`:
+```json
+"scripts": {
+  "test": "jest --passWithNoTests",
+  "test:ci": "jest --ci --coverage --passWithNoTests"
+}
+```
+
 **Commit:** `test: add database + store + hook test foundation`
+
+---
+
+### 8B. CI/CD Pipeline — GitHub Actions (0.5 day)
+
+#### Problem
+
+No automated checks on any push or PR. Every bug caught is caught by a human
+manually testing on a phone. The Python validators run 3,000+ checks but only
+when someone remembers to run them.
+
+#### Architecture
+
+Two CI workflows. Both trigger on PRs to `master` and on pushes to `master`.
+
+**Workflow 1: `content-pipeline.yml` — Python content validation**
+
+Runs the full content pipeline to verify JSON integrity and DB consistency.
+This catches: broken chapter JSON, orphaned references, malformed panels,
+schema violations, FTS index corruption.
+
+```yaml
+# .github/workflows/content-pipeline.yml
+name: Content Pipeline
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - '_tools/**'
+  push:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - '_tools/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build SQLite database
+        run: python3 _tools/build_sqlite.py
+
+      - name: Validate content JSON
+        run: python3 _tools/validate.py
+
+      - name: Validate SQLite integrity
+        run: python3 _tools/validate_sqlite.py
+```
+
+**Workflow 2: `app-tests.yml` — TypeScript tests + type checking**
+
+Runs the Jest test suite and TypeScript type-check. This catches: type errors,
+broken imports, logic regressions in hooks/stores/utils.
+
+```yaml
+# .github/workflows/app-tests.yml
+name: App Tests
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'app/**'
+  push:
+    branches: [master]
+    paths:
+      - 'app/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript type-check
+        run: npx tsc --noEmit
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: app/coverage/
+```
+
+#### Design Decisions
+
+**Path-based triggering:** Content changes only run the Python pipeline.
+App changes only run TS tests. This keeps CI fast — content PRs don't wait
+for `npm ci`, and app PRs don't wait for `build_sqlite.py`. If a PR touches
+both, both workflows run.
+
+**No EAS build in CI (yet).** `eas build` requires Expo credentials and takes
+10+ minutes. Defer until the Apple Developer account is established and there's
+a reason to build native binaries on every PR. OTA updates via `eas update`
+remain a manual deploy step after merge.
+
+**Coverage as artifact, not gate.** Upload coverage reports for visibility but
+don't block PRs on coverage thresholds yet. The test suite is too young —
+enforcing 80% coverage when you have 6 tests would just force people to skip CI.
+Add thresholds once Tiers 1–3 are complete.
+
+**Commit:** `ci: add GitHub Actions for content pipeline + app tests`
+
+---
+
+### 8C. Branch Protection + PR Workflow (30 min)
+
+#### Problem
+
+All development currently pushes directly to `master`. There's no review gate,
+no automated checks before merge, and no way to catch a broken build before it
+ships to users via `eas update`.
+
+#### Branch Strategy
+
+```
+master (protected)
+  ↑
+  PR (required: CI passes, 0 conflicts)
+  ↑
+feature/batch-4-type-safety    ← development happens here
+fix/notes-overlay-keyboard
+chore/remove-ghost-deps
+```
+
+**Branch naming convention:**
+- `feat/description` — new features or content
+- `fix/description` — bug fixes
+- `chore/description` — cleanup, deps, docs
+- `refactor/description` — structural changes (no behavior change)
+- `test/description` — test additions
+
+#### GitHub Branch Protection Rules
+
+Configure via GitHub → Settings → Branches → Add rule for `master`:
+
+| Setting | Value | Why |
+|---------|-------|-----|
+| Require a pull request before merging | ✅ | No more direct pushes |
+| Required approvals | 0 | Solo developer — self-merge is fine |
+| Require status checks to pass | ✅ | CI must pass before merge |
+| Required checks | `validate` (content) + `test` (app) | Both workflows must pass |
+| Require branches to be up to date | ✅ | No stale branches merging |
+| Require conversation resolution | ❌ | No reviewers to resolve |
+| Require linear history | ✅ | Clean `git log`, no merge commits |
+| Allow force pushes | ❌ | Protect history (except Batch 2 one-time purge) |
+| Allow deletions | ❌ | Can't delete master |
+
+**Required approvals = 0** is the key decision for a solo developer. The branch
+protection isn't about code review — it's about forcing every change through
+CI. You can still merge your own PRs, but only after the checks pass.
+
+#### Workflow for Claude Sessions
+
+Claude sessions will need to adapt to the PR workflow:
+
+```bash
+# Start of session
+git checkout -b feat/batch-13-cross-refs
+
+# ... do work, commit as usual ...
+git push -u origin feat/batch-13-cross-refs
+
+# Create PR (via GitHub CLI or web UI)
+gh pr create --title "feat: Batch 13 — cross-ref thread expansion" --body "..."
+
+# Wait for CI → merge via GitHub UI or CLI
+gh pr merge --squash
+```
+
+For multi-commit sessions, squash-merge keeps `master` history clean. Each PR
+becomes one commit on master with the full description.
+
+**Alternative for rapid iteration:** If CI wait times become a bottleneck during
+content generation sessions (which touch hundreds of files), consider a
+`content-staging` branch that allows direct push, with a separate PR to merge
+into `master` after the session. This keeps the safety net without slowing
+down batch content work.
+
+#### Claude Session Instructions Update
+
+Add to `_tools/NEXT_SESSION_PROMPT.md`:
+
+```markdown
+## Git Workflow
+
+All changes go through PRs. Never push directly to master.
+
+\`\`\`bash
+# Create a feature branch
+git checkout -b feat/description
+
+# ... work and commit ...
+git push -u origin feat/description
+
+# Create PR
+gh pr create --title "feat: description" --body "summary"
+
+# After CI passes, merge
+gh pr merge --squash
+\`\`\`
+```
+
+**Commit:** `ci: add branch protection rules + PR workflow docs`
 
 ---
 
@@ -477,8 +734,15 @@ Batch 6: NotesOverlay decomposition               ← Maintainability
     |
 Batch 7: Inline style migration                   ← Performance (do opportunistically)
     |
-Batch 8: Test coverage                             ← Ongoing
+Batch 8A: Test coverage foundation                ← Required before 8B
+    |
+Batch 8B: CI/CD pipeline (GitHub Actions)          ← Requires 8A
+    |
+Batch 8C: Branch protection + PR workflow          ← Requires 8B
 ```
+
+Batches 8A→8B→8C are sequential — you need tests before CI can run them,
+and you need CI before branch protection has checks to require.
 
 ---
 
@@ -494,8 +758,13 @@ These were identified in the review but are not included in this plan:
   DEV_GUIDE.md Known Debt. Requires design decisions about which screens
   to prioritize.
 
-- **CI/CD pipeline.** No GitHub Actions, no automated testing on push.
-  Depends on Batch 8 (test foundation) being complete first.
+- **Native builds in CI.** `eas build` requires Expo credentials and takes
+  10+ minutes. Defer until Apple Developer account is established. OTA updates
+  remain a manual deploy step.
 
 - **App Store submission.** Requires Apple Developer account (not yet
   established) and `expo-haptics` enablement. Separate workstream.
+
+- **Coverage thresholds.** Don't enforce minimum coverage percentages until
+  the test suite matures past Tiers 1–3. Premature gates just encourage
+  skipping CI.
