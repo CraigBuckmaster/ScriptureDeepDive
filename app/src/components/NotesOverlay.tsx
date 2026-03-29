@@ -18,7 +18,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { X, Plus, ChevronRight, Link, Folder } from 'lucide-react-native';
 import {
   getNotesForChapter,
@@ -222,6 +222,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
 
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
+      <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         {/* Header — OUTSIDE KeyboardAvoidingView so it never moves when keyboard opens */}
         <View style={styles.header}>
@@ -400,6 +401,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
           />
         )}
       </SafeAreaView>
+      </SafeAreaProvider>
     </Modal>
   );
 }

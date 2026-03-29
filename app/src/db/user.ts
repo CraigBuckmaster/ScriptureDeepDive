@@ -11,22 +11,27 @@
 
 import { getUserDb } from './userDatabase';
 import { getDb } from './database';
-import { chapterPrefix } from '../utils/verseRef';
+import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, NoteLink } from '../types';
 
 // ── Notes ───────────────────────────────────────────────────────────
 
 export async function getNotesForChapter(bookId: string, ch: number): Promise<UserNote[]> {
+  // Match both verse-level refs ("genesis 1:3") and chapter-level refs ("genesis 1")
+  const prefix = chapterPrefix(bookId, ch);
+  const chapterRef = formatVerseRef(bookId, ch);
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes WHERE verse_ref LIKE ? ORDER BY verse_ref",
-    [`${chapterPrefix(bookId, ch)}%`]
+    "SELECT * FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ? ORDER BY verse_ref",
+    [`${prefix}%`, chapterRef]
   );
 }
 
 export async function getNoteCount(bookId: string, ch: number): Promise<number> {
+  const prefix = chapterPrefix(bookId, ch);
+  const chapterRef = formatVerseRef(bookId, ch);
   const row = await getUserDb().getFirstAsync<{ count: number }>(
-    "SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ?",
-    [`${chapterPrefix(bookId, ch)}%`]
+    "SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ?",
+    [`${prefix}%`, chapterRef]
   );
   return row?.count ?? 0;
 }
