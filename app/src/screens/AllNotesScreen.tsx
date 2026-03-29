@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { Search, X, Plus, Folder, Tag, FileText } from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
 import {
@@ -64,7 +65,7 @@ function parseTags(json: string): string[] {
 }
 
 export default function AllNotesScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'AllNotes'>>();
   const [activeTab, setActiveTab] = useState<TabKey>('all');
 
   // All tab state

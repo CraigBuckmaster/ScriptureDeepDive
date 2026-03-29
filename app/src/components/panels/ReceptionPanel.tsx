@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { getPanelColors, base, spacing, fontFamily } from '../../theme';
-import type { ParsedRef } from '../../types';
+import type { ParsedRef, RecEntry } from '../../types';
 
-interface Props { entries: any[]; onRefPress?: (ref: ParsedRef) => void; }
+interface Props { entries: RecEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ReceptionPanel({ entries, onRefPress }: Props) {
   const colors = getPanelColors('rec');
@@ -18,11 +18,9 @@ export function ReceptionPanel({ entries, onRefPress }: Props) {
 
   return (
     <View style={{ gap: spacing.md }}>
-      {entries.map((e: any, i: number) => {
-        // Handle both shapes: { title, quote, note }
-        // and legacy: { who, text }
-        const heading = e.title ?? e.who ?? '';
-        const body = e.quote ?? e.text ?? '';
+      {entries.map((e, i: number) => {
+        const heading = e.title ?? '';
+        const body = e.quote ?? '';
         const note = e.note ?? '';
 
         return (

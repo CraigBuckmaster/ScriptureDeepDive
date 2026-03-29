@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import type { DebateEntry } from '../../types';
 
-interface Props { entries: any[]; onScholarPress?: (scholarId: string) => void; }
+interface Props { entries: DebateEntry[]; onScholarPress?: (scholarId: string) => void; }
 
 export function DebatePanel({ entries, onScholarPress }: Props) {
   const colors = getPanelColors('debate');
@@ -13,17 +14,17 @@ export function DebatePanel({ entries, onScholarPress }: Props) {
       {entries.map((d, i) => {
         // Handle both shapes: { topic, positions: [{scholar, position}] }
         // and legacy: { title, positions: [{name, proponents, argument}] }
-        const heading = d.topic ?? d.title ?? 'Debate';
-        const positions: any[] = d.positions ?? [];
+        const heading = d.topic ?? 'Debate';
+        const positions = d.positions ?? [];
 
         return (
           <View key={i} style={{ gap: spacing.sm }}>
             <Text style={{ color: colors.accent, fontFamily: fontFamily.displayMedium, fontSize: 13 }}>
               {heading}
             </Text>
-            {positions.map((p: any, j: number) => {
-              const label = p.scholar ?? p.name ?? 'Scholar';
-              const body = p.position ?? p.argument ?? p.proponents ?? '';
+            {positions.map((p, j: number) => {
+              const label = p.scholar ?? 'Scholar';
+              const body = p.position ?? '';
 
               return (
                 <View key={j} style={{ gap: 4, paddingLeft: spacing.sm }}>

@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Alert, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { getBookmarks, removeBookmark } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -13,7 +14,7 @@ import { base, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
 
 export default function BookmarkListScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'Bookmarks'>>();
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
   const reload = () => getBookmarks().then(setBookmarks);

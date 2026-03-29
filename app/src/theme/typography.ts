@@ -60,7 +60,7 @@ export { presets as typography };
 // ── Dynamic Type scaling ────────────────────────────────────────────
 
 export function scaledTypography(scale: number): Record<keyof typeof presets, TypographyPreset> {
-  const result: any = {};
+  const result = {} as Record<keyof typeof presets, TypographyPreset>;
   for (const [key, preset] of Object.entries(presets)) {
     result[key] = {
       ...preset,

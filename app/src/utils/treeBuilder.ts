@@ -10,7 +10,7 @@
  *   spouseYSpread: 58
  */
 
-import { hierarchy, tree } from 'd3-hierarchy';
+import { hierarchy, tree, type HierarchyPointNode } from 'd3-hierarchy';
 import type { Person } from '../types';
 
 // ── Constants ───────────────────────────────────────────────────────
@@ -153,13 +153,13 @@ export function layoutTree(root: HierNode): LayoutNode[] {
 
   // Flatten to array
   const nodes: LayoutNode[] = [];
-  d3Root.each((d: any) => {
+  d3Root.each((d: HierarchyPointNode<HierNode>) => {
     nodes.push({
       data: d.data.data,
       x: d.x,
       y: d.y,
-      parent: d.parent ? { ...d.parent, data: d.parent.data.data } as any : null,
-      children: d.children?.map((c: any) => c) ?? [],
+      parent: d.parent ? { data: d.parent.data.data, x: d.parent.x, y: d.parent.y } as LayoutNode : null,
+      children: d.children?.map((c) => ({ data: c.data.data, x: c.x, y: c.y }) as LayoutNode) ?? [],
       depth: d.depth,
       isSpouse: false,
     });

@@ -3,7 +3,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, type DimensionValue } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -11,7 +11,7 @@ import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
-import type { Scholar } from '../types';
+import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
 
 export default function ScholarBioScreen() {
@@ -19,7 +19,7 @@ export default function ScholarBioScreen() {
   const route = useRoute<ScreenRouteProp<'Explore', 'ScholarBio'>>();
   const { scholarId } = route.params ?? {};
   const [scholar, setScholar] = useState<Scholar | null>(null);
-  const [bio, setBio] = useState<any>(null);
+  const [bio, setBio] = useState<ScholarBio | null>(null);
   const [allScholars, setAllScholars] = useState<Scholar[]>([]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function ScholarBioScreen() {
         <View style={styles.divider} />
 
         {/* Bio sections */}
-        {bio?.sections?.map((section: any, i: number) => (
+        {bio?.sections?.map((section: ScholarBio['sections'][number], i: number) => (
           <View key={i} style={styles.section}>
             <Text style={styles.sectionTitle}>{section.title}</Text>
             <Text style={styles.sectionBody}>{section.body}</Text>
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   otherCard: {
-    width: '48%' as any,
+    width: '48%' as DimensionValue,
     borderLeftWidth: 3,
     borderRadius: radii.md,
     padding: spacing.sm,

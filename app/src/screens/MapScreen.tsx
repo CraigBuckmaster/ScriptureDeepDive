@@ -35,6 +35,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { base, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
 
 const INITIAL_REGION = {
@@ -44,7 +45,10 @@ const INITIAL_REGION = {
   longitudeDelta: 30,
 };
 
-export default function MapScreen({ route, navigation }: any) {
+export default function MapScreen({ route, navigation }: {
+  route: ScreenRouteProp<'Explore', 'Map'>;
+  navigation: ScreenNavProp<'Explore', 'Map'>;
+}) {
   useLandscapeUnlock();
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;

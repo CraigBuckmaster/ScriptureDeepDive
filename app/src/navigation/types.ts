@@ -30,9 +30,9 @@ export type HomeStackParamList = {
 
 export type ExploreStackParamList = {
   ExploreMenu: undefined;
-  GenealogyTree: undefined;
+  GenealogyTree: { personId?: string } | undefined;
   PersonDetail: { personId: string };
-  Map: { storyId?: string };
+  Map: { storyId?: string; placeId?: string };
   Timeline: { eventId?: string };
   WordStudyBrowse: undefined;
   WordStudyDetail: { wordId: string };

@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { Download } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -44,7 +45,7 @@ const ABOUT_PARAGRAPHS = [
 /* ── Component ──────────────────────────────────────────────────── */
 
 export default function SettingsScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const translation = useSettingsStore((s) => s.translation);
   const fontSize = useSettingsStore((s) => s.fontSize);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);

@@ -231,7 +231,7 @@ export interface RecentChapter extends ReadingProgress {
 
 /** Section with its panels pre-loaded and parsed. */
 export interface SectionWithPanels extends Section {
-  panels: Record<string, any>;
+  panels: Record<string, unknown>;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -418,4 +418,47 @@ export interface DifficultPassage {
   responses_json: string;
   related_chapters_json: string | null;
   tags_json: string | null;
+}
+
+// ══════════════════════════════════════════════════════════════
+// PARSED BIO / INTRO TYPES
+// ══════════════════════════════════════════════════════════════
+
+export interface ScholarBio {
+  eyebrow?: string;
+  sections: { title: string; body: string }[];
+}
+
+export interface BookIntroOutlineItem {
+  label: string;
+  chapters?: [number, number];
+  note?: string;
+}
+
+export interface BookIntroPlanItem {
+  ref: string;
+  label: string;
+}
+
+export interface BookIntroSection {
+  heading?: string;
+  content?: string;
+  body?: string;
+  outline?: BookIntroOutlineItem[];
+  themes?: string[];
+  plan?: BookIntroPlanItem[];
+}
+
+export interface BookIntroAuthorship {
+  author?: string;
+  date?: string;
+  prompt?: string;
+}
+
+export interface ParsedBookIntro {
+  title?: string;
+  subtitle?: string;
+  authorship?: string | BookIntroAuthorship;
+  sections?: BookIntroSection[];
+  text?: string;
 }

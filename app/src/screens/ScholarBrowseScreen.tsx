@@ -6,6 +6,7 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, FlatList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useScholars } from '../hooks/useScholars';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
@@ -14,7 +15,7 @@ import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function ScholarBrowseScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBrowse'>>();
   const { scholars, isLoading } = useScholars();
   const [search, setSearch] = useState('');
   const [tradition, setTradition] = useState<string>('all');

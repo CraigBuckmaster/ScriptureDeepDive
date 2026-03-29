@@ -9,6 +9,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote } from 'lucide-react-native';
 import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
@@ -27,7 +28,7 @@ const MENU_ITEMS: MenuItem[] = [
 ];
 
 export default function MoreMenuScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'MoreMenu'>>();
 
   return (
     <SafeAreaView style={styles.container}>

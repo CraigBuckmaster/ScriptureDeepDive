@@ -11,7 +11,7 @@ import { View, StyleSheet } from 'react-native';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
 import { base, spacing } from '../theme';
-import type { Section, SectionPanel, Verse, VHLGroup } from '../types';
+import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
 
 interface Props {
   section: Section;
@@ -24,7 +24,7 @@ interface Props {
   fontSize?: number;
   onPanelToggle: (sectionId: string, panelType: string) => void;
   onNotePress?: (verseNum: number) => void;
-  onRefPress?: (ref: any) => void;
+  onRefPress?: (ref: ParsedRef) => void;
   /** Render prop for button row — injected by parent to avoid circular deps */
   renderButtonRow?: (panels: SectionPanel[], sectionId: string) => React.ReactNode;
   /** Render prop for active panel content */
