@@ -49,7 +49,7 @@ def check(label, condition, detail=''):
         passed += 1
     else:
         failed += 1
-        msg = f"  ❌ {label}"
+        msg = f"  [FAIL] {label}"
         if detail:
             msg += f" — {detail}"
         print(msg)
@@ -270,9 +270,9 @@ def main():
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed")
     if failed == 0:
-        print("✅ ALL CONTENT CHECKS PASSED")
+        print("[OK] ALL CONTENT CHECKS PASSED")
     else:
-        print(f"❌ {failed} CHECKS FAILED")
+        print(f"[FAIL] {failed} CHECKS FAILED")
     print(f"{'='*60}")
 
     return 0 if failed == 0 else 1

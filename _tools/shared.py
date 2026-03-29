@@ -280,7 +280,7 @@ def save_chapter(book_dir, ch, data):
             if key not in chapter['chapter_panels']:
                 chapter['chapter_panels'][key] = value
     except Exception as e:
-        print(f'  ⚠ auto_scholarly_json failed (non-fatal): {e}')
+        print(f'  [WARN] auto_scholarly_json failed (non-fatal): {e}')
 
     # ── Write JSON ──
     out_dir = os.path.join(CONTENT_DIR, book_dir)
@@ -291,7 +291,7 @@ def save_chapter(book_dir, ch, data):
 
     sec_panel_count = sum(len(s['panels']) for s in chapter['sections'])
     ch_panel_count = len(chapter['chapter_panels'])
-    print(f'  ✅ Saved {book_dir} {ch} → {out_path}  '
+    print(f'  [OK] Saved {book_dir} {ch} → {out_path}  '
           f'({len(chapter["sections"])} sections, {sec_panel_count} sec panels, '
           f'{ch_panel_count} ch panels)')
     return out_path

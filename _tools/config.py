@@ -54,7 +54,7 @@ COMMENTATOR_SCOPE = {
     # ── OT commentators ──────────────────────────────────────────────────────
     # Nahum Sarna — JPS Torah Commentary (Genesis & Exodus volumes only)
     # SCOPE: Pentateuch only. Ruth included with scholarly-paraphrase caveat.
-    # ⚠ Does NOT cover: Proverbs, Psalms, Job, or any non-Torah book.
+    # [WARN] Does NOT cover: Proverbs, Psalms, Job, or any non-Torah book.
     'sarna':     ['genesis', 'exodus'],   # JPS Torah — Genesis & Exodus only
 
     # Robert Alter — The Hebrew Bible: A Translation with Commentary (2019)
@@ -64,12 +64,12 @@ COMMENTATOR_SCOPE = {
 
     # Robert Hubbard — NICOT Commentary on Ruth (1988)
     # SCOPE: Ruth only. The standard evangelical-scholarly Ruth commentary.
-    # ⚠ Does NOT cover any other book.
+    # [WARN] Does NOT cover any other book.
     'hubbard':   ['ruth'],
 
     # Bruce K. Waltke — NICOT Commentary on Proverbs (2 vols, 2004–2005)
     # SCOPE: Proverbs only. The gold-standard evangelical-scholarly Proverbs commentary.
-    # ⚠ Does NOT cover any other book. For Psalms/Job use a different scholar.
+    # [WARN] Does NOT cover any other book. For Psalms/Job use a different scholar.
     'waltke':    ['proverbs'],
     # Future: if we add Psalms, consider Goldingay or Craigie (WBC)
 

@@ -37,14 +37,14 @@ warnings = 0
 
 
 def check(label, condition, detail=''):
-    """Record a pass/fail check. Prints result with ✅ or ❌ prefix."""
+    """Record a pass/fail check. Prints result with [OK] or [FAIL] prefix."""
     global passed, failed
     if condition:
         passed += 1
-        print(f"  ✅ {label}")
+        print(f"  [OK] {label}")
     else:
         failed += 1
-        msg = f"  ❌ {label}"
+        msg = f"  [FAIL] {label}"
         if detail:
             msg += f" — {detail}"
         print(msg)
@@ -54,7 +54,7 @@ def warn(label, detail=''):
     """Record a non-fatal warning. Does not affect pass/fail counts."""
     global warnings
     warnings += 1
-    print(f"  ⚠️  {label}" + (f" — {detail}" if detail else ''))
+    print(f"  [WARN]  {label}" + (f" — {detail}" if detail else ''))
 
 
 def q(cur, sql, params=()):
@@ -411,9 +411,9 @@ def main():
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed, {warnings} warnings")
     if failed == 0:
-        print("✅ ALL CHECKS PASSED")
+        print("[OK] ALL CHECKS PASSED")
     else:
-        print(f"❌ {failed} CHECKS FAILED — review above")
+        print(f"[FAIL] {failed} CHECKS FAILED — review above")
     print(f"{'='*60}")
 
     return 0 if failed == 0 else 1

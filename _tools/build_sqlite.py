@@ -788,65 +788,65 @@ def main():
 
     # Populate
     n = populate_books(cur)
-    print(f"  ✅ books: {n} rows")
+    print(f"  [OK] books: {n} rows")
 
     ch, sec, sp, cp, vh = populate_chapters(cur)
-    print(f"  ✅ chapters: {ch} rows")
-    print(f"  ✅ sections: {sec} rows")
-    print(f"  ✅ section_panels: {sp} rows")
-    print(f"  ✅ chapter_panels: {cp} rows")
-    print(f"  ✅ vhl_groups: {vh} rows")
+    print(f"  [OK] chapters: {ch} rows")
+    print(f"  [OK] sections: {sec} rows")
+    print(f"  [OK] section_panels: {sp} rows")
+    print(f"  [OK] chapter_panels: {cp} rows")
+    print(f"  [OK] vhl_groups: {vh} rows")
 
     n = populate_verses(cur)
-    print(f"  ✅ verses: {n} rows")
+    print(f"  [OK] verses: {n} rows")
 
     n = populate_book_intros(cur)
-    print(f"  ✅ book_intros: {n} rows")
+    print(f"  [OK] book_intros: {n} rows")
 
     n = populate_people(cur)
-    print(f"  ✅ people: {n} rows")
+    print(f"  [OK] people: {n} rows")
 
     n = populate_scholars(cur)
-    print(f"  ✅ scholars: {n} rows")
+    print(f"  [OK] scholars: {n} rows")
 
     n = populate_places(cur)
-    print(f"  ✅ places: {n} rows")
+    print(f"  [OK] places: {n} rows")
 
     n = populate_map_stories(cur)
-    print(f"  ✅ map_stories: {n} rows")
+    print(f"  [OK] map_stories: {n} rows")
 
     n = populate_word_studies(cur)
-    print(f"  ✅ word_studies: {n} rows")
+    print(f"  [OK] word_studies: {n} rows")
 
     n = populate_synoptic(cur)
-    print(f"  ✅ synoptic_map: {n} rows")
+    print(f"  [OK] synoptic_map: {n} rows")
 
     n = populate_genealogy_config(cur)
-    print(f"  ✅ genealogy_config: {n} rows")
+    print(f"  [OK] genealogy_config: {n} rows")
 
     t, p = populate_cross_refs(cur)
-    print(f"  ✅ cross_ref_threads: {t} rows")
-    print(f"  ✅ cross_ref_pairs: {p} rows")
+    print(f"  [OK] cross_ref_threads: {t} rows")
+    print(f"  [OK] cross_ref_pairs: {p} rows")
 
     n = populate_timelines(cur)
-    print(f"  ✅ timelines: {n} rows")
+    print(f"  [OK] timelines: {n} rows")
 
     n = populate_prophecy_chains(cur)
-    print(f"  ✅ prophecy_chains: {n} rows")
+    print(f"  [OK] prophecy_chains: {n} rows")
 
     n = populate_concepts(cur)
-    print(f"  ✅ concepts: {n} rows")
+    print(f"  [OK] concepts: {n} rows")
 
     n = populate_difficult_passages(cur)
-    print(f"  ✅ difficult_passages: {n} rows")
+    print(f"  [OK] difficult_passages: {n} rows")
 
     # Build FTS
     build_fts(cur)
-    print(f"  ✅ FTS5 indexes built")
+    print(f"  [OK] FTS5 indexes built")
 
     # Write DB version
     cur.execute("INSERT INTO db_meta (key, value) VALUES ('version', ?)", (DB_VERSION,))
-    print(f"  ✅ db_meta: version {DB_VERSION}")
+    print(f"  [OK] db_meta: version {DB_VERSION}")
 
     # Re-enable FK enforcement
     cur.execute('PRAGMA foreign_keys=ON')
