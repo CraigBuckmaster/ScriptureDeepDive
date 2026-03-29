@@ -10,6 +10,7 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import type { BookIntroSection, BookIntroOutlineItem, BookIntroPlanItem } from '../types';
 import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -72,7 +73,7 @@ export default function BookIntroScreen() {
         )}
 
         {/* Sections */}
-        {intro.sections?.map((section: any, i: number) => (
+        {intro.sections?.map((section: BookIntroSection, i: number) => (
           <View key={i} style={styles.section}>
             {section.heading && (
               <Text style={styles.sectionHeading}>{section.heading}</Text>
@@ -88,7 +89,7 @@ export default function BookIntroScreen() {
             {/* Outline (structured list with label + chapters + note) */}
             {section.outline && Array.isArray(section.outline) && (
               <View style={styles.outlineBlock}>
-                {section.outline.map((item: any, j: number) => (
+                {section.outline.map((item: BookIntroOutlineItem, j: number) => (
                   <View key={j} style={styles.outlineItem}>
                     <View style={styles.outlineRow}>
                       <Text style={styles.outlineLabel}>{item.label}</Text>
@@ -118,7 +119,7 @@ export default function BookIntroScreen() {
             {/* Reading Plan (ref + label list) */}
             {section.plan && Array.isArray(section.plan) && (
               <View style={styles.planBlock}>
-                {section.plan.map((item: any, j: number) => (
+                {section.plan.map((item: BookIntroPlanItem, j: number) => (
                   <View key={j} style={styles.planItem}>
                     <Text style={styles.planRef}>{item.ref}</Text>
                     <Text style={styles.planLabel}>{item.label}</Text>

@@ -6,13 +6,14 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { getRecentChapters, getReadingStats } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { base, spacing, fontFamily } from '../theme';
 import type { RecentChapter, ReadingStats } from '../db/user';
 
 export default function ReadingHistoryScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'ReadingHistory'>>();
   const [history, setHistory] = useState<RecentChapter[]>([]);
   const [stats, setStats] = useState<ReadingStats | null>(null);
 

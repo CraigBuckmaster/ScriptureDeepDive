@@ -12,6 +12,7 @@ import React, { useState, useMemo, useRef } from 'react';
 import { View, Text, TouchableOpacity, SectionList, FlatList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
@@ -36,9 +37,9 @@ const NT_GROUPS = [
 ];
 
 export default function BookListScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Read', 'BookList'>>();
   const scrollRef = useRef<FlatList>(null);
-  useScrollToTop(scrollRef as any);
+  useScrollToTop(scrollRef);
 
   const { books } = useBooks();
   const mode = useSettingsStore((s) => s.bookListMode);

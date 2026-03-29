@@ -9,6 +9,7 @@ import React, { useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
 import { base, spacing, radii, fontFamily } from '../theme';
 
@@ -70,7 +71,7 @@ const GRID_FEATURES: Feature[] = [
 ];
 
 export default function ExploreMenuScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'ExploreMenu'>>();
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
 

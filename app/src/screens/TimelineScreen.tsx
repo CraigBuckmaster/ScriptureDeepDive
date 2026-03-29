@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
 import { useRoute, useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { getAllTimelineEntries } from '../db/content';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
@@ -25,7 +26,7 @@ import type { TimelineEntry } from '../types';
 export default function TimelineScreen() {
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'Timeline'>>();
   const initialEventId = route?.params?.eventId;
 
   const [events, setEvents] = useState<TimelineEntry[]>([]);

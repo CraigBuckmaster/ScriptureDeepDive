@@ -13,6 +13,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, RefreshControl, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
 import { ArrowRight } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
@@ -22,7 +23,7 @@ import { base, spacing, radii, fontFamily } from '../theme';
 const TOTAL_BIBLE_CHAPTERS = 1189;
 
 export default function HomeScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const [refreshing, setRefreshing] = useState(false);
   const scrollRef = useRef<ScrollView>(null);

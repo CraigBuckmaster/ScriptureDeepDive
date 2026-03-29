@@ -7,7 +7,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, type ViewStyle, type DimensionValue } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -17,15 +17,15 @@ import Animated, {
 import { base, spacing, radii } from '../theme';
 
 function Bone({ width, height = 14, style }: {
-  width: number | string;
+  width: DimensionValue;
   height?: number;
-  style?: any;
+  style?: ViewStyle;
 }) {
   return (
     <View
       style={[
         {
-          width: width as any,
+          width,
           height,
           backgroundColor: base.bgSurface,
           borderRadius: radii.sm,

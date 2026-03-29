@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getBookIntro } from '../db/content';
 import { safeParse } from '../utils/logger';
+import type { ParsedBookIntro } from '../types';
 
 export function useBookIntro(bookId: string | null) {
-  const [intro, setIntro] = useState<any>(null);
+  const [intro, setIntro] = useState<ParsedBookIntro | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

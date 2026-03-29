@@ -6,6 +6,7 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useWordStudies } from '../hooks/useWordStudies';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
@@ -14,7 +15,7 @@ import { base, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function WordStudyBrowseScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyBrowse'>>();
   const { studies, isLoading } = useWordStudies();
   const [langFilter, setLangFilter] = useState<'all' | 'hebrew' | 'greek'>('all');
   const [search, setSearch] = useState('');
