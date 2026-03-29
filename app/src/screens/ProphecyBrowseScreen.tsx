@@ -6,6 +6,7 @@ import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useProphecyChains } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -57,7 +58,7 @@ function getRefRange(links: ProphecyChainLink[]): string {
 }
 
 export default function ProphecyBrowseScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyBrowse'>>();
   const { chains, isLoading } = useProphecyChains();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import type { TransPanel } from '../../types';
 
 interface TransRow {
   verse_ref?: string;
   translations: { version: string; text: string }[];
 }
 
-interface Props { data: any; }
+interface Props { data: string | TransPanel; }
 
 /**
  * Parse legacy HTML table format: <tr><td class="t-label">NIV</td><td>...</td></tr>

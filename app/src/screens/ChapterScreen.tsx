@@ -11,6 +11,7 @@ import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react'
 import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent, type GestureResponderEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import type { Book } from '../types';
 
 import { useChapterData } from '../hooks/useChapterData';
 import { useNotedVerses } from '../hooks/useNotedVerses';
@@ -58,7 +59,7 @@ export default function ChapterScreen() {
   const scrollRef = useRef<ScrollView>(null);
   const sectionYMap = useRef<Record<string, number>>({});
   const btnRowYMap = useRef<Record<string, number>>({});
-  const [bookData, setBookData] = React.useState<any>(null);
+  const [bookData, setBookData] = React.useState<Book | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Scroll progress tracking

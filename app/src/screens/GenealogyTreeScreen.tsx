@@ -47,8 +47,12 @@ import { base, spacing } from '../theme';
 import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
 import { logger } from '../utils/logger';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 
-export default function GenealogyTreeScreen({ route, navigation }: any) {
+export default function GenealogyTreeScreen({ route, navigation }: {
+  route: ScreenRouteProp<'Explore', 'GenealogyTree'>;
+  navigation: ScreenNavProp<'Explore', 'GenealogyTree'>;
+}) {
   useLandscapeUnlock();
   const initialPersonId = route?.params?.personId;
   const { people, isLoading } = usePeople();

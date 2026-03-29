@@ -11,17 +11,19 @@ import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { base, spacing, radii, fontFamily, eras } from '../theme';
+import type { Person, WordStudy, Verse } from '../types';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
 
 export default function SearchScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Search', 'SearchMain'>>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
   const { results, isLoading } = useSearch(query);
@@ -110,7 +112,7 @@ export default function SearchScreen() {
               );
             }
             if (type === 'person') {
-              const p = item as any;
+              const p = item as Person;
               return (
                 <TouchableOpacity
                   onPress={() => navigation.navigate('ExploreTab', {
@@ -131,7 +133,7 @@ export default function SearchScreen() {
               );
             }
             if (type === 'word') {
-              const w = item as any;
+              const w = item as WordStudy;
               return (
                 <TouchableOpacity
                   onPress={() => navigation.navigate('ExploreTab', {
@@ -146,7 +148,7 @@ export default function SearchScreen() {
               );
             }
             // Verse
-            const v = item as any;
+            const v = item as Verse;
             const displayName = v.book_name ?? v.book_id;
             return (
               <TouchableOpacity

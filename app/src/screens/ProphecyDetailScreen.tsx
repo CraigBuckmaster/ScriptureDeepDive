@@ -98,7 +98,7 @@ export default function ProphecyDetailScreen() {
   const handleVersePress = (link: ProphecyChainLink) => {
     // Navigate to Chapter screen in ExploreStack
     try {
-      (navigation as any).navigate('Chapter', {
+      navigation.navigate('Chapter', {
         bookId: link.book_dir,
         chapterNum: link.chapter_num,
       });

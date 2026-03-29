@@ -11,6 +11,12 @@ import { getCrossRefThread } from '../db/content';
 import { BadgeChip } from './BadgeChip';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { CrossRefThread } from '../types';
+
+interface CrossRefStep {
+  ref: string;
+  note?: string;
+  text?: string;
+}
 import { logger } from '../utils/logger';
 
 interface Props {
@@ -24,7 +30,7 @@ interface Props {
 
 export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, currentChapter, onGoToRef }: Props) {
   const [thread, setThread] = useState<CrossRefThread | null>(null);
-  const [steps, setSteps] = useState<any[]>([]);
+  const [steps, setSteps] = useState<CrossRefStep[]>([]);
 
   useEffect(() => {
     if (!threadId || !visible) return;

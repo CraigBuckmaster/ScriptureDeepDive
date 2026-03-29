@@ -6,6 +6,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, TouchableOpacity, FlatList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
 import { getSynopticEntries } from '../db/content';
 import { resolveVerseText, parseReference } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
@@ -24,7 +25,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function ParallelPassageScreen() {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Read', 'ParallelPassage'>>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [catFilter, setCatFilter] = useState<string>('all');
