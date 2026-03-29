@@ -11,8 +11,9 @@ timeline updates, etc.) as part of the standard pipeline:
     python3 _tools/build_sqlite.py   # ← This script
     python3 _tools/validate_sqlite.py  # Verify DB integrity
 
-The DB version is auto-incremented on each build and synced to the app's
-database.ts so the app knows to replace the old DB on device.
+The DB version lives in _tools/db_version.json (single source of truth).
+It is auto-incremented on each build and synced to the app's database.ts
+so the app knows to replace the old DB on device.
 
 Usage:
     python3 _tools/build_sqlite.py
@@ -25,19 +26,21 @@ META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
 APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
-# Auto-incremented on every build. Triggers a full DB replacement on user devices
-# when the app detects a version mismatch. This value must stay in sync with
-# EXPECTED_DB_VERSION in app/src/db/database.ts (this function handles that).
-DB_VERSION = '0.14'
+VERSION_FILE = ROOT / '_tools' / 'db_version.json'
+
+# Read from db_version.json — the single source of truth for the DB version.
+# Auto-incremented on every build by bump_db_version(). Triggers a full DB
+# replacement on user devices when the app detects a version mismatch.
+DB_VERSION = json.loads(VERSION_FILE.read_text())['version']
 
 
 def bump_db_version():
-    """Auto-increment DB_VERSION in this file and sync to app/src/db/database.ts.
+    """Auto-increment DB_VERSION and sync to database.ts.
 
     How it works:
-      1. Parses current DB_VERSION (e.g. '0.14' -> major=0, minor=14)
+      1. Reads current version from _tools/db_version.json (e.g. '0.14')
       2. Increments minor (-> '0.15')
-      3. Rewrites the DB_VERSION line in THIS file (build_sqlite.py)
+      3. Writes the new version back to db_version.json
       4. Rewrites the EXPECTED_DB_VERSION line in database.ts to match
       5. Updates the global DB_VERSION so the current build uses the new value
     """
@@ -53,16 +56,8 @@ def bump_db_version():
 
     old_version = DB_VERSION
 
-    # Rewrite the DB_VERSION = '...' line in this file (build_sqlite.py)
-    build_script = Path(__file__).resolve()
-    content = build_script.read_text()
-    content = re.sub(
-        r"DB_VERSION = '[^']+'",
-        f"DB_VERSION = '{new_version}'",
-        content,
-        count=1  # Only replace the first occurrence (the assignment, not usage)
-    )
-    build_script.write_text(content)
+    # Write new version to db_version.json (single source of truth)
+    VERSION_FILE.write_text(json.dumps({"version": new_version}, indent=2) + '\n')
 
     # Sync to app/src/db/database.ts so the app knows to replace the old DB
     if APP_DB_TS.exists():
