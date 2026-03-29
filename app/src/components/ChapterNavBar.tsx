@@ -31,7 +31,7 @@ export function ChapterNavBar({
   onPrev, onNext, onQnav, onIntroPress,
 }: Props) {
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView edges={['top']} style={styles.safeArea}>
       <View style={styles.bar}>
         {/* Left: Book name → Qnav */}
         <TouchableOpacity
