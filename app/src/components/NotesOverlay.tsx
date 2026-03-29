@@ -88,10 +88,13 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
     return displayed;
   };
 
-  const reload = useCallback(() => {
+  const reload = useCallback(async () => {
     if (bookId && chapterNum) {
-      getNotesForChapter(bookId, chapterNum).then(setNotes);
+      const fetched = await getNotesForChapter(bookId, chapterNum);
+      setNotes(fetched);
+      return fetched;
     }
+    return [];
   }, [bookId, chapterNum]);
 
   useEffect(() => { if (visible) reload(); }, [visible, reload]);
@@ -149,7 +152,9 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
       setNewText('');
       setShowAdd(false);
       setAddRef('');
-      reload();
+      // Await reload so the notes array contains the new note BEFORE
+      // we enter edit mode — otherwise the editingId effect can't find it
+      await reload();
       // Auto-enter edit mode on the newly created note
       setEditingId(newId);
       setEditText(savedText);
@@ -218,11 +223,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
       <SafeAreaView style={styles.container}>
-        <KeyboardAvoidingView
-          style={styles.keyboardView}
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        >
-        {/* Header */}
+        {/* Header — OUTSIDE KeyboardAvoidingView so it never moves when keyboard opens */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>
             Notes — {displayName} {chapterNum}
@@ -236,6 +237,13 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
             </TouchableOpacity>
           </View>
         </View>
+
+        {/* Scrollable content — keyboard avoidance only applies here */}
+        <KeyboardAvoidingView
+          style={styles.keyboardView}
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
+        >
 
         {/* Add note form */}
         {showAdd && (
@@ -261,6 +269,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
         <FlatList
           data={notes}
           keyExtractor={(n) => String(n.id)}
+          keyboardShouldPersistTaps="handled"
           contentContainerStyle={styles.listContent}
           ListEmptyComponent={
             <View style={styles.emptyWrap}>
@@ -371,8 +380,9 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
             );
           }}
         />
+        </KeyboardAvoidingView>
 
-        {/* Collection picker sheet */}
+        {/* Sub-modals — outside KAV, they manage their own keyboard handling */}
         <CollectionPicker
           visible={showCollectionPicker}
           onClose={() => setShowCollectionPicker(false)}
@@ -380,7 +390,6 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
           onSelect={handleCollectionSelect}
         />
 
-        {/* Note link sheet */}
         {editingId !== null && (
           <NoteLinkSheet
             visible={showLinkSheet}
@@ -390,7 +399,6 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
             onLink={handleLinkNote}
           />
         )}
-        </KeyboardAvoidingView>
       </SafeAreaView>
     </Modal>
   );
