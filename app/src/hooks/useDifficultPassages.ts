@@ -20,8 +20,23 @@ export type DifficultPassageSeverity = 'minor' | 'moderate' | 'major';
 
 export interface DifficultPassageResponse {
   tradition: string;
+  tradition_family?: string;
   scholar_id: string;
   summary: string;
+  key_verses?: string[];
+  strengths?: string;
+  weaknesses?: string;
+}
+
+export interface KeyVerse {
+  ref: string;
+  text: string;
+}
+
+export interface FurtherReading {
+  author: string;
+  title: string;
+  year: number;
 }
 
 export interface RelatedChapter {
@@ -36,8 +51,12 @@ export interface DifficultPassage {
   severity: DifficultPassageSeverity;
   passage: string;
   question: string;
+  context?: string;
+  consensus?: string;
+  key_verses: KeyVerse[];
   responses: DifficultPassageResponse[];
   related_chapters: RelatedChapter[];
+  further_reading: FurtherReading[];
   tags: string[];
 }
 
@@ -78,12 +97,18 @@ export function useDifficultPassages() {
           severity: string;
           passage: string;
           question: string;
+          context: string | null;
+          consensus: string | null;
+          key_verses_json: string | null;
           responses_json: string;
           related_chapters_json: string | null;
+          further_reading_json: string | null;
           tags_json: string | null;
         }>(
           `SELECT id, title, category, severity, passage, question,
-                  responses_json, related_chapters_json, tags_json
+                  context, consensus, key_verses_json,
+                  responses_json, related_chapters_json,
+                  further_reading_json, tags_json
            FROM difficult_passages
            ORDER BY title`
         );
@@ -95,8 +120,12 @@ export function useDifficultPassages() {
           severity: row.severity as DifficultPassageSeverity,
           passage: row.passage,
           question: row.question,
+          context: row.context ?? undefined,
+          consensus: row.consensus ?? undefined,
+          key_verses: JSON.parse(row.key_verses_json || '[]'),
           responses: JSON.parse(row.responses_json || '[]'),
           related_chapters: JSON.parse(row.related_chapters_json || '[]'),
+          further_reading: JSON.parse(row.further_reading_json || '[]'),
           tags: JSON.parse(row.tags_json || '[]'),
         }));
 
@@ -144,12 +173,18 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
         severity: string;
         passage: string;
         question: string;
+        context: string | null;
+        consensus: string | null;
+        key_verses_json: string | null;
         responses_json: string;
         related_chapters_json: string | null;
+        further_reading_json: string | null;
         tags_json: string | null;
       }>(
         `SELECT id, title, category, severity, passage, question,
-                responses_json, related_chapters_json, tags_json
+                context, consensus, key_verses_json,
+                responses_json, related_chapters_json,
+                further_reading_json, tags_json
          FROM difficult_passages WHERE id = ?`,
         [passageId]
       );
@@ -167,8 +202,12 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
         severity: row.severity as DifficultPassageSeverity,
         passage: row.passage,
         question: row.question,
+        context: row.context ?? undefined,
+        consensus: row.consensus ?? undefined,
+        key_verses: JSON.parse(row.key_verses_json || '[]'),
         responses: JSON.parse(row.responses_json || '[]'),
         related_chapters: JSON.parse(row.related_chapters_json || '[]'),
+        further_reading: JSON.parse(row.further_reading_json || '[]'),
         tags: JSON.parse(row.tags_json || '[]'),
       };
       setPassage(passageData);

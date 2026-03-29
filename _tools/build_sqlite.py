@@ -293,8 +293,12 @@ CREATE TABLE difficult_passages (
   severity TEXT NOT NULL,
   passage TEXT NOT NULL,
   question TEXT NOT NULL,
+  context TEXT,
+  consensus TEXT,
+  key_verses_json TEXT,
   responses_json TEXT NOT NULL,
   related_chapters_json TEXT,
+  further_reading_json TEXT,
   tags_json TEXT
 );
 
@@ -743,11 +747,15 @@ def populate_difficult_passages(cur):
     passages = _load_json(path)
     for p in passages:
         cur.execute(
-            'INSERT INTO difficult_passages VALUES (?,?,?,?,?,?,?,?,?)',
+            'INSERT INTO difficult_passages VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
             (p['id'], p['title'], p['category'], p['severity'],
              p['passage'], p['question'],
+             p.get('context'),
+             p.get('consensus'),
+             _json_str(p.get('key_verses', [])),
              _json_str(p['responses']),
              _json_str(p.get('related_chapters', [])),
+             _json_str(p.get('further_reading', [])),
              _json_str(p.get('tags', [])))
         )
     return len(passages)
