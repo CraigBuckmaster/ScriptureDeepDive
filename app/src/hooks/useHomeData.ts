@@ -10,6 +10,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getRecentChapters, getReadingStats, type ReadingStats } from '../db/user';
 import type { RecentChapter } from '../types';
+import { logger } from '../utils/logger';
 
 // ── Verse of the Day ───────────────────────────────────────────────
 
@@ -120,7 +121,7 @@ export function useHomeData(): HomeData {
       setRecentChapters(recent);
       setReadingStats(rs);
     } catch (err) {
-      console.warn('useHomeData load error:', err);
+      logger.warn('useHomeData', 'Load error', err);
     } finally {
       setIsLoading(false);
     }

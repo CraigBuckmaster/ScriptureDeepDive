@@ -35,8 +35,8 @@ export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (Platform.OS !== 'web') {
     await copyAssetDatabaseIfNeeded();
   } else {
-    console.warn(
-      '[DB] Web platform detected — scripture.db cannot be loaded from assets on web. ' +
+    logger.warn('DB',
+      'Web platform detected — scripture.db cannot be loaded from assets on web. ' +
       'The database will be empty. Use Expo Go on a phone for the full experience.'
     );
   }
@@ -91,18 +91,18 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
     // DB exists — check its version
     const installedVersion = await getInstalledDbVersion(dbPath);
     if (installedVersion === EXPECTED_DB_VERSION) {
-      console.log(`[DB] scripture.db v${installedVersion} is current — skipping copy`);
+      logger.info('DB', `scripture.db v${installedVersion} is current — skipping copy`);
       return;
     }
-    console.log(
-      `[DB] scripture.db version mismatch (installed: ${installedVersion ?? 'none'}, ` +
+    logger.info('DB',
+      `scripture.db version mismatch (installed: ${installedVersion ?? 'none'}, ` +
       `expected: ${EXPECTED_DB_VERSION}) — replacing`
     );
     // Delete the stale DB so the copy succeeds cleanly
     await FileSystem.deleteAsync(dbPath, { idempotent: true });
   }
 
-  console.log('[DB] Copying scripture.db from assets to documents...');
+  logger.info('DB', 'Copying scripture.db from assets to documents...');
 
   // Ensure SQLite directory exists
   await FileSystem.makeDirectoryAsync(sqliteDir, { intermediates: true });
@@ -123,9 +123,8 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
   });
 
   const copied = await FileSystem.getInfoAsync(dbPath);
-  console.log(
-    `[DB] Copied scripture.db v${EXPECTED_DB_VERSION} ` +
-    `(${((copied.size || 0) / 1024 / 1024).toFixed(1)} MB)`
+  logger.info('DB',
+    `Copied scripture.db v${EXPECTED_DB_VERSION} (${((copied.size || 0) / 1024 / 1024).toFixed(1)} MB)`
   );
 }
 

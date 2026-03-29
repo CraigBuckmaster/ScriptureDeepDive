@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAllPeople } from '../db/content';
 import type { Person } from '../types';
+import { logger } from '../utils/logger';
 
 export function usePeople() {
   const [people, setPeople] = useState<Person[]>([]);
@@ -8,11 +9,11 @@ export function usePeople() {
 
   useEffect(() => {
     getAllPeople().then((p) => {
-      console.log(`[usePeople] Loaded ${p.length} people from DB`);
+      logger.info('usePeople', `Loaded ${p.length} people from DB`);
       setPeople(p);
       setIsLoading(false);
     }).catch((err) => {
-      console.error('[usePeople] Error loading people:', err);
+      logger.error('usePeople', 'Error loading people', err);
       setIsLoading(false);
     });
   }, []);

@@ -2,9 +2,12 @@
  * utils/perfMonitor.ts — Performance measurement utilities.
  *
  * Add markers to measure app launch, chapter load, search speed.
- * Results logged to console in __DEV__ mode.
+ * Results logged via logger.info (suppressed in production).
  */
 
+import { logger } from './logger';
+
+const TAG = 'PERF';
 const markers = new Map<string, number>();
 
 export function markStart(label: string): void {
@@ -16,13 +19,11 @@ export function markEnd(label: string): number {
   if (!start) return -1;
   const elapsed = Date.now() - start;
   markers.delete(label);
-  if (__DEV__) {
-    const status = getTarget(label);
-    const pass = status === null || elapsed <= status;
-    console.log(
-      `[PERF] ${label}: ${elapsed}ms ${pass ? '✅' : `❌ (target: ${status}ms)`}`
-    );
-  }
+  const target = getTarget(label);
+  const pass = target === null || elapsed <= target;
+  logger.info(TAG,
+    `${label}: ${elapsed}ms ${pass ? '✅' : `❌ (target: ${target}ms)`}`
+  );
   return elapsed;
 }
 
@@ -37,13 +38,13 @@ function getTarget(label: string): number | null {
   return targets[label] ?? null;
 }
 
-/** Log all current performance targets and their status. */
+/** Log all current performance targets. */
 export function printTargets(): void {
-  console.log('[PERF] Targets:');
-  console.log('  App launch → HomeScreen: < 2000ms');
-  console.log('  Chapter load (cold): < 500ms');
-  console.log('  Panel expand: 60 FPS (< 16ms/frame)');
-  console.log('  FTS5 search: < 200ms');
-  console.log('  Map markers (71): < 100ms');
-  console.log('  Database size: < 25MB');
+  logger.info(TAG, 'Targets:');
+  logger.info(TAG, '  App launch → HomeScreen: < 2000ms');
+  logger.info(TAG, '  Chapter load (cold): < 500ms');
+  logger.info(TAG, '  Panel expand: 60 FPS (< 16ms/frame)');
+  logger.info(TAG, '  FTS5 search: < 200ms');
+  logger.info(TAG, '  Map markers (71): < 100ms');
+  logger.info(TAG, '  Database size: < 25MB');
 }

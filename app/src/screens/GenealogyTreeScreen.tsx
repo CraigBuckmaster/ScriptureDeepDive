@@ -46,6 +46,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { base, spacing } from '../theme';
 import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
+import { logger } from '../utils/logger';
 
 export default function GenealogyTreeScreen({ route, navigation }: any) {
   useLandscapeUnlock();
@@ -60,7 +61,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
 
   useEffect(() => {
     if (!isLoading) {
-      console.log(`[Tree] people=${people.length}, nodes=${nodes.length}, bounds=${JSON.stringify({ w: Math.round(bounds.width), h: Math.round(bounds.height), minX: Math.round(bounds.minX), minY: Math.round(bounds.minY) })}`);
+      logger.info('Tree', `people=${people.length}, nodes=${nodes.length}, bounds=${JSON.stringify({ w: Math.round(bounds.width), h: Math.round(bounds.height), minX: Math.round(bounds.minX), minY: Math.round(bounds.minY) })}`);
     }
   }, [isLoading, people.length, nodes.length]);
 
@@ -105,7 +106,7 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     hasCentred.current = true;
     const adam = nodes.find((n) => n.data.id === 'adam');
     if (adam) {
-      console.log(`[Tree] Initial position on Adam`);
+      logger.info('Tree', 'Initial position on Adam');
       centreNodeTop(adam.x, adam.y);
     }
   }, [nodes.length, centreNodeTop, initialPersonId, offX, offY]);
@@ -132,13 +133,13 @@ export default function GenealogyTreeScreen({ route, navigation }: any) {
     if (filterEra === 'all' || filterEra === 'primeval') {
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
-        console.log(`[Tree] Era→${filterEra}: top-centering on Adam`);
+        logger.info('Tree', `Era→${filterEra}: top-centering on Adam`);
         centreNodeTop(adam.x, adam.y);
       }
     } else {
       const firstMatch = nodes.find((n) => n.data.era === filterEra);
       if (firstMatch) {
-        console.log(`[Tree] Era→${filterEra}: centering on ${firstMatch.data.name}`);
+        logger.info('Tree', `Era→${filterEra}: centering on ${firstMatch.data.name}`);
         centreNode(firstMatch.x, firstMatch.y);
       }
     }
