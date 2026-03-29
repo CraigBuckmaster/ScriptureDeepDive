@@ -71,6 +71,7 @@ import {
   ReduceMotion,
 } from 'react-native-reanimated';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
+import { logger } from '../utils/logger';
 
 interface TreeGestureResult {
   gesture: GestureType;
@@ -205,7 +206,7 @@ export function useTreeGestures(): TreeGestureResult {
   // via React state (setBase) → inner View → guaranteed re-render.
   // The gesture layer is reset to identity so transforms don't stack.
   const jumpTo = useCallback((tx: number, ty: number, s: number) => {
-    console.log(`[Gesture] jumpTo base tx=${tx.toFixed(0)} ty=${ty.toFixed(0)} s=${s.toFixed(2)}`);
+    logger.info('Gesture', `jumpTo base tx=${tx.toFixed(0)} ty=${ty.toFixed(0)} s=${s.toFixed(2)}`);
     cancelAnimation(gestTx);
     cancelAnimation(gestTy);
     cancelAnimation(gestScale);

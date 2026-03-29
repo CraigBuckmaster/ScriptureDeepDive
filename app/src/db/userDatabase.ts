@@ -12,6 +12,7 @@
 
 import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
+import { logger } from '../utils/logger';
 
 // ── Singleton ──────────────────────────────────────────────────
 
@@ -180,7 +181,7 @@ async function runMigrations(db: SQLite.SQLiteDatabase): Promise<void> {
   for (const migration of MIGRATIONS) {
     if (appliedSet.has(migration.version)) continue;
 
-    console.log(`[UserDB] Running migration v${migration.version}: ${migration.description}`);
+    logger.info('UserDB', `Running migration v${migration.version}: ${migration.description}`);
 
     await db.execAsync('BEGIN TRANSACTION');
     try {
@@ -190,10 +191,10 @@ async function runMigrations(db: SQLite.SQLiteDatabase): Promise<void> {
         [migration.version, migration.description]
       );
       await db.execAsync('COMMIT');
-      console.log(`[UserDB] ✅ Migration v${migration.version} applied`);
+      logger.info('UserDB', `Migration v${migration.version} applied`);
     } catch (err) {
       await db.execAsync('ROLLBACK');
-      console.error(`[UserDB] ❌ Migration v${migration.version} failed:`, err);
+      logger.error('UserDB', `Migration v${migration.version} failed`, err);
       throw err; // Halt startup — don't leave user in a half-migrated state
     }
   }
