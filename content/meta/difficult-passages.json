@@ -133,19 +133,74 @@
     "question": "Why does the Bible regulate slavery rather than condemn it outright?",
     "responses": [
       {
-        "tradition": "Redemptive Movement Hermeneutic",
+        "tradition": "Regulation, Not Endorsement",
+        "tradition_family": "jewish",
+        "scholar_id": "milgrom",
+        "summary": "Milgrom argues that the Torah's slave laws must be read against their Ancient Near Eastern context, where they represent significant humanitarian reform. The Laws of Hammurabi prescribed death for harboring a runaway slave; Deuteronomy 23:15-16 forbids returning runaways — a provision unique in the ancient world. The six-year limit on Hebrew debt bondage, the mandatory provision of resources upon release (Deut 15:13-14), the prohibition against returning a freed slave to poverty, and the Jubilee release (Lev 25) all restrict an institution that every surrounding culture practiced without limitation. Milgrom emphasizes that the Torah is legislating for a real society, not writing utopian philosophy. Abolition was economically impossible in the Bronze Age; regulation that protected the vulnerable was the maximum achievable reform. The trajectory — from unrestricted chattel slavery in surrounding cultures to heavily regulated, time-limited servitude in Israel — points toward eventual abolition.",
+        "key_verses": [
+          "Deuteronomy 23:15-16",
+          "Deuteronomy 15:12-15",
+          "Leviticus 25:39-43",
+          "Exodus 21:26-27"
+        ],
+        "strengths": "Rigorous ANE comparative analysis demonstrates the reforming intent of Israelite law. The emphasis on trajectory — regulation as a step toward abolition — is historically and hermeneutically sophisticated. Accounts for why the Torah doesn't abolish an institution it cannot eliminate.",
+        "weaknesses": "The 'regulation is reform' argument, while historically accurate, does not fully address Leviticus 25:44-46, which permits permanent foreign slavery. Saying the laws were an improvement over Hammurabi does not make them morally unproblematic by modern standards."
+      },
+      {
+        "tradition": "Ancient Near Eastern Context",
+        "tradition_family": "jewish",
+        "scholar_id": "sarna",
+        "summary": "Sarna emphasizes that the English word 'slavery' is misleading when applied to the Hebrew ʿebed system. The Hebrew term covers a range from court official (Joseph was Pharaoh's ʿebed) to debt bondsservant to prisoner of war. Most Israelite 'slavery' was debt bondage — a person pledging labor to pay off debts, with legal protections including Sabbath rest, festival participation, protection from bodily harm (Ex 21:26-27 — if a master knocks out a slave's tooth, the slave goes free), and automatic release. Sarna notes that the Exodus narrative itself — Israel enslaved in Egypt, liberated by God — makes slavery fundamentally incompatible with Israel's foundational identity. The Torah's slave laws are transitional legislation: they regulate what cannot yet be abolished while embedding the theological conviction that all humans belong to God, not to other humans (Lev 25:42: 'they are my servants, whom I brought out of Egypt; they must not be sold as slaves').",
+        "key_verses": [
+          "Exodus 21:2-6",
+          "Exodus 21:26-27",
+          "Leviticus 25:42",
+          "Leviticus 25:55"
+        ],
+        "strengths": "Linguistically precise about the range of meaning in Hebrew ʿebed. The Exodus-identity argument is powerful — a people defined by liberation from slavery cannot ultimately endorse slavery. Attends to the legal protections that distinguish Israelite servitude from modern chattel slavery.",
+        "weaknesses": "The distinction between 'debt bondage' and 'slavery' is more fluid than the argument suggests — the foreign-slave provisions (Lev 25:44-46) approach chattel slavery. The argument that 'it's not really slavery' can minimize the real suffering involved."
+      },
+      {
+        "tradition": "Redemptive-Movement Hermeneutic",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann argues that the Bible contains an internal trajectory on slavery that moves from regulation toward abolition — and that faithful interpretation follows the trajectory, not any single frozen point along it. The Torah regulates slavery (Ex 21); the prophets challenge economic exploitation of the vulnerable (Amos 2:6; Isa 58:6); Jesus proclaims liberty for captives (Luke 4:18); Paul declares that in Christ there is 'neither slave nor free' (Gal 3:28) and subtly undermines slavery in Philemon by calling Onesimus a 'dear brother' rather than property. Brueggemann contends that the abolitionists, not the pro-slavery defenders, correctly read the Bible's trajectory. The slaveholders quoted individual verses; the abolitionists discerned the direction of the whole canon. This hermeneutical principle — follow the trajectory, not the snapshot — applies to other ethical issues as well, though discerning the trajectory requires communal wisdom and careful exegesis.",
+        "key_verses": [
+          "Galatians 3:28",
+          "Philemon 16",
+          "Luke 4:18",
+          "Isaiah 58:6"
+        ],
+        "strengths": "Accounts for the Bible's internal development on slavery without dismissing any part of the canon. The trajectory hermeneutic is historically validated — the abolitionists were right, and they read the Bible this way. Provides a principled method for applying ancient texts to modern ethical questions.",
+        "weaknesses": "The trajectory hermeneutic requires judgment about which direction the trajectory points — a judgment that can be contested. Critics argue it can be used to override specific biblical commands in ways that undermine biblical authority. Who determines where the trajectory leads?"
+      },
+      {
+        "tradition": "Progressive Revelation",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay argues that God accommodated his revelation to the realities of ancient Israelite society while progressively revealing higher ethical standards. Slavery was a universal institution in the ancient world — no culture questioned it, and demanding its immediate abolition would have been socially unintelligible. God met Israel where they were and moved them in a better direction: limiting the duration of servitude, protecting slaves from abuse, requiring provision at release, and grounding human dignity in the image of God (Gen 1:27). Goldingay contends this is the same pattern visible throughout Scripture: God works within imperfect human structures while transforming them from within. The Bible does not endorse slavery — it endures slavery temporarily while creating the theological conditions (imago Dei, Exodus liberation, Galatians 3:28) for its eventual abolition. The moral logic of the Bible leads inexorably away from slavery, even where individual texts regulate it.",
+        "key_verses": [
+          "Genesis 1:27",
+          "Exodus 21:2",
+          "Deuteronomy 15:15",
+          "Galatians 3:28"
+        ],
+        "strengths": "Preserves biblical authority while acknowledging ethical development. The accommodation model is consistent with how Jesus himself handled OT provisions (Matt 19:8 — Moses permitted divorce 'because your hearts were hard'). Accounts for the gap between the Bible's regulation of slavery and its ultimate moral vision.",
+        "weaknesses": "The progressive revelation model can imply that the OT is morally inferior to the NT, raising questions about the authority of the Hebrew Bible in its own right. Critics ask: if God accommodated on slavery, what else was accommodation rather than revelation?"
+      },
+      {
+        "tradition": "Pauline Subversion",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Biblical legislation moved dramatically toward human dignity compared to surrounding cultures. The trajectory points toward abolition even if the destination wasn't reached in the text itself. We follow the direction, not freeze at the snapshot."
-      },
-      {
-        "tradition": "Contextual Reframing",
-        "scholar_id": "block",
-        "summary": "Hebrew 'ebed' denotes a range of service relationships unlike antebellum chattel slavery. Israelite 'slavery' was closer to indentured servitude with protections, release provisions, and dignity requirements unknown in the ancient world."
-      },
-      {
-        "tradition": "Divine Accommodation",
-        "scholar_id": "calvin",
-        "summary": "God condescends to human weakness, legislating restraint where immediate abolition would have been socially impossible. The Mosaic law controlled and humanized an existing institution while planting seeds for its eventual overthrow."
+        "summary": "Longman focuses on Paul's letter to Philemon as the key NT text on slavery. Rather than commanding abolition — which would have been socially catastrophic and would have exposed the tiny Christian community to Roman persecution — Paul subverts the institution from within. By calling Onesimus a 'dear brother' and asking Philemon to receive him 'no longer as a slave' (Phlm 16), Paul dissolves the master-slave relationship into a sibling relationship in Christ. Longman argues this is characteristically Pauline: Paul transforms social structures by redefining the identities of the people within them. The same logic operates in Galatians 3:28 and Ephesians 6:5-9, where masters are reminded that they share the same Master in heaven. Longman contends that Paul's approach was more revolutionary than direct abolition: it planted the seeds of a worldview in which slavery was morally incoherent, even if the social institution persisted for centuries before Christians fully drew the logical conclusion.",
+        "key_verses": [
+          "Philemon 15-16",
+          "Galatians 3:28",
+          "Ephesians 6:9",
+          "1 Corinthians 7:21-23"
+        ],
+        "strengths": "Close reading of Philemon as a subtle but radical text. The 'subversion from within' model explains why Paul didn't directly command abolition without implying he endorsed slavery. Historically accurate about the social constraints on the early church.",
+        "weaknesses": "The 'seeds of abolition' argument took eighteen centuries to bear fruit — critics argue a clearer command would have been more merciful. The NT household codes (Eph 6:5; Col 3:22) seem to accept the institution more comfortably than the 'subversion' reading suggests."
       }
     ],
     "related_chapters": [
@@ -168,6 +223,43 @@
       "ancient Near East",
       "progressive revelation",
       "social justice"
+    ],
+    "context": "The Torah does not abolish slavery but regulates it (Exodus 21:1-11; Leviticus 25:39-55; Deuteronomy 15:12-18). Hebrew debt-slaves were released after six years; foreign slaves could be held permanently (Lev 25:44-46). Paul's letter to Philemon returns a runaway slave without demanding abolition. These texts were used to defend chattel slavery in the antebellum American South, making their interpretation an urgent moral and hermeneutical question.",
+    "key_verses": [
+      {
+        "ref": "Exodus 21:2",
+        "text": "If you buy a Hebrew servant, he is to serve you for six years. But in the seventh year, he shall go free, without paying anything."
+      },
+      {
+        "ref": "Leviticus 25:44-46",
+        "text": "Your male and female slaves are to come from the nations around you; from them you may buy slaves. You may also buy some of the temporary residents living among you and members of their clans born in your country, and they will become your property."
+      },
+      {
+        "ref": "Deuteronomy 15:12-15",
+        "text": "If any of your people — Hebrew men or women — sell themselves to you and serve you six years, in the seventh year you must let them go free. And when you release them, do not send them away empty-handed. Supply them liberally from your flock, your threshing floor and your winepress."
+      },
+      {
+        "ref": "Philemon 15-16",
+        "text": "Perhaps the reason he was separated from you for a little while was that you might have him back forever — no longer as a slave, but better than a slave, as a dear brother."
+      }
+    ],
+    "consensus": "Most scholars distinguish ancient Israelite servitude from modern chattel slavery — ANE 'slavery' was primarily debt bondage with legal protections, not race-based ownership. Virtually all scholars agree the Bible's trajectory moves toward liberation: the Exodus narrative itself subverts slavery by making God the liberator of slaves. The NT 'household codes' (Eph 6:5-9; Col 3:22-4:1) regulate existing institutions while planting seeds (Gal 3:28; Philemon) that would eventually undermine them.",
+    "further_reading": [
+      {
+        "author": "William J. Webb",
+        "title": "Slaves, Women & Homosexuals: Exploring the Hermeneutics of Cultural Analysis",
+        "year": 2001
+      },
+      {
+        "author": "Murray Harris",
+        "title": "Slave of Christ: A New Testament Metaphor for Total Devotion to Christ",
+        "year": 1999
+      },
+      {
+        "author": "Jacob Milgrom",
+        "title": "Leviticus 23-27 (Anchor Bible)",
+        "year": 2001
+      }
     ]
   },
   {
@@ -179,19 +271,74 @@
     "question": "Did Jephthah actually sacrifice his daughter, and if so, why didn't God intervene?",
     "responses": [
       {
-        "tradition": "Literal Sacrifice View",
+        "tradition": "Literal Sacrifice, Narrative Judgment",
+        "tradition_family": "evangelical",
         "scholar_id": "block",
-        "summary": "The text presents a tragic fulfillment of a rash vow. Jephthah, influenced by Canaanite culture, made and kept a horrific promise. The narrative records without endorsing—a pattern throughout Judges showing Israel's moral deterioration."
+        "summary": "Block reads the sacrifice as literal — Jephthah killed his daughter as a burnt offering. The text leaves no real ambiguity: 'he did to her as he had vowed,' and his vow was explicitly 'a burnt offering' (ʿōlâ, 11:31). Block argues that the narrative's theological function is to illustrate the moral degeneracy of the Judges period. Jephthah, raised outside Israel and influenced by Ammonite culture, has absorbed pagan ideas about deity — he treats Yahweh as a god who can be bribed with human sacrifice, which the Torah explicitly condemns (Lev 18:21; Deut 12:31; 18:10). The text's silence — God does not intervene as he did with Abraham's sacrifice of Isaac — is itself theological: in the absence of faithful leadership and covenant knowledge, horrifying things happen. Block emphasizes that the narrator does not approve; the story is part of the Judges' downward spiral from Othniel to the Levite's concubine, each episode more disturbing than the last.",
+        "key_verses": [
+          "Judges 11:31",
+          "Judges 11:39",
+          "Deuteronomy 12:31",
+          "Judges 21:25"
+        ],
+        "strengths": "Takes the Hebrew text at face value — ʿōlâ means 'burnt offering' without ambiguity. Reads the story within the Judges' literary architecture of escalating chaos. The contrast with the Akedah (God intervenes for Isaac, not for Jephthah's daughter) is theologically powerful.",
+        "weaknesses": "The literal reading creates a troubling implication: God accepted a victory brought about under the conditions of a human sacrifice vow. Some argue the text's silence signals disapproval, but silence is inherently ambiguous."
       },
       {
-        "tradition": "Perpetual Virginity View",
-        "scholar_id": "macarthur",
-        "summary": "The daughter's mourning for her virginity (not her life), the absence of explicit sacrifice language, and the establishment of a memorial custom suggest she was devoted to lifelong tabernacle service, not killed."
+        "tradition": "Literary-Feminist Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the narrative as a literary tragedy in which the victim is rendered with extraordinary sympathy while the perpetrator is exposed as morally bankrupt. The daughter's courage — she accepts her fate and asks only for time to mourn her virginity — contrasts sharply with her father's self-pity ('You have brought me very low! You are among those who trouble me!', 11:35). Alter notes that Jephthah blames his daughter for his own rash vow. The narrative technique is deliberately sparse: no divine commentary, no prophetic condemnation, no resolution. This silence is not endorsement but literary judgment — the narrator trusts the reader to recognize the horror. Alter observes that the annual mourning ritual (11:40) memorializes the daughter, not the father — the community remembers her suffering, not his victory. The nameless daughter joins a series of nameless women in Judges whose suffering exposes the moral failure of Israel's male leadership.",
+        "key_verses": [
+          "Judges 11:35",
+          "Judges 11:36-37",
+          "Judges 11:39-40",
+          "Judges 19:1"
+        ],
+        "strengths": "Brilliant literary attention to the narrative's sympathies — the daughter is the moral center, not Jephthah. The contrast between her courage and his self-pity is textually demonstrable. Connects the story to the larger pattern of nameless, victimized women in Judges.",
+        "weaknesses": "A purely literary reading may not fully engage with the theological questions the text raises for believing communities. The observation that the text sympathizes with the victim, while accurate, does not resolve the underlying ethical problem."
       },
       {
-        "tradition": "Cautionary Tale Reading",
-        "scholar_id": "longman",
-        "summary": "Judges deliberately presents escalating moral chaos. Whether literal or figurative, the vow demonstrates syncretistic corruption. The author condemns by showing, not telling—'everyone did what was right in his own eyes.'"
+        "tradition": "Trauma and Lament",
+        "tradition_family": "mainline",
+        "scholar_id": "oconnor",
+        "summary": "O'Connor reads the passage through the lens of trauma studies, arguing that the text preserves a communal memory of violence against a woman — and that its preservation in Scripture functions not as endorsement but as testimony. The Bible does not sanitize human history; it includes texts of terror that demand response. O'Connor contends that the annual ritual of mourning (11:40) is itself a form of communal lament — the daughters of Israel refuse to let this death be forgotten or normalized. The text resists theological closure: there is no explanation, no justification, no silver lining. This refusal to provide meaning is itself theologically significant — it honors the reality of innocent suffering without domesticating it. O'Connor argues that these 'texts of terror' (Trible's term) serve a prophetic function in the canon: they confront readers with the consequences of patriarchal violence and demand moral reckoning rather than pious evasion.",
+        "key_verses": [
+          "Judges 11:39-40",
+          "Judges 21:25",
+          "Lamentations 1:12",
+          "Psalm 137:1"
+        ],
+        "strengths": "Takes the victim's experience seriously rather than treating the text as a theological problem to be solved. The trauma-studies lens provides language for what the text is doing — testifying, not endorsing. The connection to communal lament practices is culturally and textually appropriate.",
+        "weaknesses": "The trauma-studies framework is a modern category applied to an ancient text. Some readers may find this approach more therapeutic than theological. Does not directly address why this text is in Scripture or what it teaches about God."
+      },
+      {
+        "tradition": "Women in Biblical Narrative",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes reads Jephthah's daughter within the broader pattern of women's experience in Israel's narrative. She notes that the daughter's response — 'My father, you have given your word to the LORD. Do to me just as you promised' (11:36) — has been read as passive acceptance, but Jobes argues it is an act of extraordinary faith and agency. The daughter trusts Yahweh even when Yahweh's servant (her father) has catastrophically failed. She requests two months not for escape but for lament — the culturally appropriate response to the death of hope (her virginity means no descendants, the ultimate loss in Israelite culture). Jobes contends that the text preserves the daughter's voice and agency precisely because the narrator considers them important. The broader evangelical takeaway is not that God endorses the sacrifice (the Torah condemns it) but that faithfulness can exist even within systems of terrible injustice — and that Scripture records both the injustice and the faithfulness.",
+        "key_verses": [
+          "Judges 11:36",
+          "Judges 11:37-38",
+          "Judges 11:40",
+          "Proverbs 31:8-9"
+        ],
+        "strengths": "Recovers the daughter's agency rather than reducing her to a passive victim. The reading of her response as faith rather than fatalism is pastorally powerful. Balances feminist attention to women's experience with evangelical commitment to the text's authority.",
+        "weaknesses": "Reading the daughter's acceptance as 'faith' risks valorizing submission to unjust authority. The text itself does not characterize her response as exemplary — the narrator is characteristically silent about evaluation."
+      },
+      {
+        "tradition": "Consecration, Not Sacrifice",
+        "tradition_family": "jewish",
+        "scholar_id": "sarna",
+        "summary": "A minority reading, represented in some Jewish and early Christian interpretation, argues that Jephthah dedicated his daughter to perpetual virginity rather than killing her. The evidence cited: the Hebrew of 11:31 can be translated 'will be the LORD's, or I will offer it as a burnt offering' (reading the waw as disjunctive rather than conjunctive); the emphasis on virginity (11:37-39) suggests her mourning is about lifelong celibacy, not death; and the Torah so thoroughly condemns human sacrifice (Lev 18:21; Deut 18:10) that a judge of Israel could not have committed it. The annual commemorative ritual (11:40) would then parallel practices of mourning for women consecrated to temple service. While Sarna presents this reading fairly, he notes that most scholars find it less persuasive than the literal reading, given the straightforward meaning of ʿōlâ ('burnt offering') and the Judges narrative's persistent theme of moral chaos.",
+        "key_verses": [
+          "Judges 11:31",
+          "Judges 11:37-39",
+          "Leviticus 27:1-8",
+          "1 Samuel 1:11"
+        ],
+        "strengths": "Avoids the theological scandal of a judge committing human sacrifice. The grammatical argument about the disjunctive waw has some linguistic support. Consistent with the Torah's absolute prohibition of human sacrifice.",
+        "weaknesses": "The word ʿōlâ ('burnt offering') is extremely specific — it always refers to an animal sacrifice consumed by fire in the OT. The consecration reading requires reading against the grain of the text's plain meaning. The Judges narrative explicitly portrays moral chaos (21:25), making a horrific act entirely in character."
       }
     ],
     "related_chapters": [
@@ -206,6 +353,43 @@
       "vows",
       "Judges",
       "moral decline"
+    ],
+    "context": "Judges 11 records Jephthah vowing to sacrifice 'whatever comes out of the door of my house to meet me' if God gives him victory. His daughter emerges first. The text says he 'did to her as he had vowed' (11:39) without explicitly stating she was killed, generating debate about whether the sacrifice was literal or metaphorical (perpetual virginity/consecration). The narrative is sparse and unsettling, offering no divine commentary on the act.",
+    "key_verses": [
+      {
+        "ref": "Judges 11:30-31",
+        "text": "And Jephthah made a vow to the LORD: 'If you give the Ammonites into my hands, whatever comes out of the door of my house to meet me when I return in triumph from the Ammonites will be the LORD's, and I will sacrifice it as a burnt offering.'"
+      },
+      {
+        "ref": "Judges 11:34-35",
+        "text": "When Jephthah returned to his home in Mizpah, who should come out to meet him but his daughter, dancing to the sound of timbrels! She was an only child. Except for her he had neither son nor daughter. When he saw her, he tore his clothes and cried, 'Oh no, my daughter! You have brought me very low! You are among those who trouble me! I have made a vow to the LORD that I cannot break.'"
+      },
+      {
+        "ref": "Judges 11:39",
+        "text": "After the two months, she returned to her father, and he did to her as he had vowed. And she was a virgin."
+      },
+      {
+        "ref": "Leviticus 18:21",
+        "text": "Do not give any of your children to be sacrificed to Molek, for you must not profane the name of your God. I am the LORD."
+      }
+    ],
+    "consensus": "Most critical and evangelical scholars read the sacrifice as literal — Jephthah actually killed his daughter. The narrative's emphasis on her virginity (mourning what she will never have) and the establishment of an annual mourning custom (11:40) point to death, not consecration. The text narrates without approving — consistent with Judges' theme of escalating moral chaos when 'everyone did as they saw fit' (21:25).",
+    "further_reading": [
+      {
+        "author": "Barry G. Webb",
+        "title": "The Book of Judges (NICOT)",
+        "year": 2012
+      },
+      {
+        "author": "Phyllis Trible",
+        "title": "Texts of Terror: Literary-Feminist Readings of Biblical Narratives",
+        "year": 1984
+      },
+      {
+        "author": "David Janzen",
+        "title": "The Violent Gift: Trauma's Subversion of the Deuteronomistic History's Narrative (LHBOTS)",
+        "year": 2012
+      }
     ]
   },
   {
@@ -218,18 +402,73 @@
     "responses": [
       {
         "tradition": "Covenant Curse Framework",
-        "scholar_id": "waltke",
-        "summary": "These prayers invoke covenant curses against covenant breakers. The psalmists call on God to fulfill his own promises to judge the wicked. They express zeal for God's justice, not personal vendetta."
+        "tradition_family": "reformed",
+        "scholar_id": "vangemeren",
+        "summary": "VanGemeren argues that the imprecatory psalms invoke the covenant curses God himself pronounced against covenant violators (Deut 28:15-68). The psalmists are not venting personal rage but appealing to God's own commitments — asking him to fulfill his covenant promises, which include judgment on the wicked. The imprecations are theologically grounded in the doctrine of divine justice: if God is just, he must act against evil. VanGemeren notes that the psalms consistently hand vengeance to God rather than taking it personally — 'It is mine to avenge; I will repay' (Deut 32:35, quoted in Rom 12:19). The psalmists' anger is not sinful; it is the proper response of those who take God's holiness seriously. These prayers model how to channel rage through prayer rather than through personal violence. By crying out to God rather than striking back, the psalmists enact the very principle Jesus teaches in the Sermon on the Mount — they refuse to take vengeance themselves.",
+        "key_verses": [
+          "Deuteronomy 28:15-20",
+          "Deuteronomy 32:35",
+          "Psalm 94:1-2",
+          "Romans 12:19"
+        ],
+        "strengths": "Grounds the imprecations in the covenant framework rather than treating them as raw emotion. The observation that they channel anger toward God rather than toward personal retaliation is consistent with Jesus's teaching. Preserves the theological seriousness of the prayers.",
+        "weaknesses": "The covenant-curse argument works better for some psalms than others — Psalm 137:9 (dashing infants) is difficult to read as a measured theological appeal. The distinction between 'asking God to act' and 'wishing harm' may be thinner than the argument suggests."
       },
       {
-        "tradition": "Emotional Honesty Model",
+        "tradition": "Honest Prayer Before God",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay argues that the imprecatory psalms model radical honesty before God. The psalmists bring their most violent emotions — rage, desire for revenge, hatred of enemies — directly into God's presence rather than suppressing them or acting on them. This is not a failure of faith but an expression of it: the psalmists trust God enough to be completely honest. Goldingay contends that the alternative to imprecatory prayer is not serene forgiveness but suppressed rage that festers or erupts in violence. The psalms provide a liturgical container for emotions that would otherwise be destructive. They do not command the worshiper to act on the imprecations but to pray them — to hand the desire for vengeance to God and leave it there. Goldingay notes that Psalm 137:9 is spoken by exiles who watched Babylonian soldiers kill their children — the prayer is not abstract theological speculation but a cry from the depths of trauma. The appropriate response to this text is not moral condemnation of the psalmist but compassion for the suffering that produced it.",
+        "key_verses": [
+          "Psalm 137:1-4",
+          "Psalm 62:8",
+          "Psalm 73:13-17",
+          "Psalm 142:1-2"
+        ],
+        "strengths": "Psychologically and pastorally powerful — the 'honest prayer' model resonates with human experience of suffering. Avoids the twin errors of endorsing violence and dismissing the text. The trauma context of Psalm 137 is historically grounded and humanizes the psalmist.",
+        "weaknesses": "The 'honesty before God' reading can become a justification for any prayer content, no matter how ethically troubling. If dashing infants against rocks is 'honest prayer,' where is the ethical boundary? The reading may prioritize pastoral usefulness over theological evaluation."
+      },
+      {
+        "tradition": "Prophetic Justice",
+        "tradition_family": "mainline",
         "scholar_id": "brueggemann",
-        "summary": "The psalms model bringing raw emotions to God rather than acting on them. By voicing rage in prayer, the psalmist surrenders vengeance to God. This is healthier than suppression or vigilante action."
+        "summary": "Brueggemann argues that the imprecatory psalms are acts of prophetic imagination — they envision a world where God's justice prevails over oppressive power. To suppress these psalms is to silence the voice of the oppressed and to protect the comfortable from hearing the cries of those who suffer. Brueggemann contends that the modern Western church, situated within structures of power, finds these psalms embarrassing because they voice the perspective of victims — a perspective that challenges the status quo. When Psalm 137 imagines Babylon's destruction, it is not abstract cruelty but the cry of a colonized people imagining the end of their oppressor's power. Brueggemann notes that we sanitize these texts at our peril: a faith that cannot contain rage at injustice is a faith that has made peace with injustice. The imprecatory psalms keep alive the insistence that God cares about justice and will finally act — an insistence that the powerful would prefer to mute.",
+        "key_verses": [
+          "Psalm 137:1-9",
+          "Psalm 10:17-18",
+          "Psalm 72:12-14",
+          "Luke 1:51-53"
+        ],
+        "strengths": "Powerful socio-political reading that centers the experience of the oppressed. The connection to Mary's Magnificat (Luke 1:51-53) shows that the NT itself contains 'imprecatory' language. Challenges the comfortable church to hear uncomfortable texts.",
+        "weaknesses": "The liberation-theology framework, while valuable, may not fully address the moral difficulty — even oppressed people's prayers for violence against children require ethical evaluation. The reading can romanticize rage as inherently prophetic."
       },
       {
-        "tradition": "Typological Reading",
-        "scholar_id": "macarthur",
-        "summary": "The imprecations are prophetic of divine judgment on those who oppose God's Messiah and people. They anticipate the final separation of wheat and tares, expressing longing for ultimate justice."
+        "tradition": "Typological-Christological Reading",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin read the imprecatory psalms as inspired prayers against the enemies of God and his kingdom, not expressions of personal vendetta. The psalmists speak as representatives of the covenant community, and their enemies are ultimately God's enemies. Calvin distinguished between personal revenge (forbidden) and zeal for God's glory (commended). The imprecations anticipate God's final judgment — what Revelation 6:10 voices when the martyrs cry, 'How long, Sovereign Lord, holy and true, until you judge the inhabitants of the earth?' Calvin also read these psalms typologically: they point forward to Christ's victory over spiritual enemies and to the final judgment when God will vindicate his people. The prayers are not models for interpersonal ethics but liturgical expressions of confidence in God's coming justice. Calvin acknowledged the emotional intensity but argued it was directed by the Spirit, not merely human passion.",
+        "key_verses": [
+          "Psalm 69:22-28",
+          "Acts 1:20",
+          "Revelation 6:10",
+          "2 Thessalonians 1:6-8"
+        ],
+        "strengths": "Deep theological grounding in the distinction between personal ethics and eschatological justice. The NT's own use of imprecatory psalms (Acts 1:20 cites Ps 69; Rom 11:9 cites Ps 69:22) supports the reading. The typological dimension connects these prayers to the broader biblical narrative.",
+        "weaknesses": "The distinction between 'personal' and 'representative' speech is easier to state than to maintain — the psalmists' emotions are intensely personal. The typological reading can spiritualize away the concrete violence of the language."
+      },
+      {
+        "tradition": "Pastoral Engagement",
+        "tradition_family": "evangelical",
+        "scholar_id": "kidner",
+        "summary": "Kidner takes a pastoral approach, acknowledging the difficulty while offering practical guidance. He argues that the imprecatory psalms serve at least four legitimate functions in the life of faith: (1) they give permission to be honest about anger, which is healthier than suppression; (2) they hand vengeance to God rather than taking it personally; (3) they express a genuine hatred of evil, which is morally appropriate even if the expression is shocking; and (4) they remind us that God takes sin seriously — a truth the modern church often softens. Kidner is honest about the difficulty: Psalm 137:9 cannot be prayed literally by Christians shaped by Jesus's teaching. But he argues that dismissing the text entirely is equally wrong. The solution is to pray these psalms with awareness of the full canonical context — including Jesus's command to love enemies — allowing the tension to produce maturity rather than demanding premature resolution.",
+        "key_verses": [
+          "Psalm 137:8-9",
+          "Psalm 139:19-22",
+          "Matthew 5:44",
+          "Romans 12:17-21"
+        ],
+        "strengths": "Practically useful for believers who encounter these texts in personal or liturgical reading. The four functions provide a framework for engagement without endorsement. Honest about the tension rather than offering a tidy resolution.",
+        "weaknesses": "The 'cannot be prayed literally by Christians' concession raises the question of canonical authority — if these are inspired Scripture, what does it mean that Christians cannot pray them? The pastoral approach may avoid the deeper theological issues."
       }
     ],
     "related_chapters": [
@@ -253,6 +492,43 @@
       "vengeance",
       "justice",
       "enemies"
+    ],
+    "context": "Several psalms contain prayers for God to violently destroy enemies — including the infamous Psalm 137:9 ('Happy is the one who seizes your infants and dashes them against the rocks'). Other imprecatory psalms include 35, 69, 109, and 139:19-22. These texts are jarring for modern readers and create tension with Jesus's command to love enemies (Matt 5:44). Yet they are canonical Scripture, prayed by Israel and quoted in the NT.",
+    "key_verses": [
+      {
+        "ref": "Psalm 137:8-9",
+        "text": "Daughter Babylon, doomed to destruction, happy is the one who repays you according to what you have done to us. Happy is the one who seizes your infants and dashes them against the rocks."
+      },
+      {
+        "ref": "Psalm 139:19-22",
+        "text": "If only you, God, would slay the wicked! Away from me, you who are bloodthirsty! They speak of you with evil intent; your adversaries misuse your name. Do I not hate those who hate you, LORD, and abhor those who are in rebellion against you? I have nothing but hatred for them; I count them my enemies."
+      },
+      {
+        "ref": "Psalm 109:8-10",
+        "text": "May his days be few; may another take his place of leadership. May his children be fatherless and his wife a widow. May his children be wandering beggars; may they be driven from their ruined homes."
+      },
+      {
+        "ref": "Matthew 5:44",
+        "text": "But I tell you, love your enemies and pray for those who persecute you."
+      }
+    ],
+    "consensus": "No single interpretation commands consensus. Most scholars recognize multiple dimensions: the psalms as honest expressions of pain, as appeals to divine rather than human vengeance, as corporate/national rather than personal prayers, and as part of a canonical trajectory that culminates in enemy-love. The church has struggled with these texts throughout its history — some traditions omit them from liturgical use; others retain them as prayers of lament.",
+    "further_reading": [
+      {
+        "author": "C.S. Lewis",
+        "title": "Reflections on the Psalms",
+        "year": 1958
+      },
+      {
+        "author": "Erich Zenger",
+        "title": "A God of Vengeance? Understanding the Psalms of Divine Wrath",
+        "year": 1996
+      },
+      {
+        "author": "John Goldingay",
+        "title": "Psalms, Volume 3: Psalms 90-150 (Baker Commentary)",
+        "year": 2008
+      }
     ]
   },
   {
@@ -264,19 +540,74 @@
     "question": "Why would God send bears to maul youths for mocking a prophet?",
     "responses": [
       {
-        "tradition": "Theological Significance View",
+        "tradition": "Prophetic Authority Vindication",
+        "tradition_family": "evangelical",
         "scholar_id": "provan",
-        "summary": "The 'youths' (na'arim) were likely young men, not children. 'Go up, baldhead' mocked both Elisha's person and Elijah's ascension, rejecting prophetic authority at a critical transition. The curse invoked covenant judgment on Bethel's idolatrous culture."
+        "summary": "Provan argues that the incident must be read within its narrative context: Elisha has just received the mantle of Elijah, Israel's greatest prophet. The mockery at Bethel is not random playground taunting but a deliberate challenge to Elisha's prophetic authority by residents of a city known for its idolatrous worship (the golden calf, 1 Kings 12:28-29). 'Go up, baldy!' may echo 'go up' as a taunt referencing Elijah's ascension — 'go up to heaven like your master and leave us alone.' The Hebrew nĕʿārîm can refer to young men of military age (the same word describes soldiers in 1 Sam 30:17; 1 Kings 20:14-15), not small children. Provan contends that forty-two organized mockers from Bethel represent a coordinated rejection of prophetic authority at a critical moment in Elisha's ministry. The judgment vindicates Elisha's legitimacy as God's spokesman in a hostile territory. Deuteronomy 18:19 explicitly warns that God will hold accountable those who do not listen to his prophet.",
+        "key_verses": [
+          "2 Kings 2:23-24",
+          "1 Kings 12:28-29",
+          "Deuteronomy 18:18-19",
+          "2 Kings 1:9-12"
+        ],
+        "strengths": "Strong contextual reading — Bethel's significance and the political-religious dynamics are historically important. The Hebrew lexical argument about nĕʿārîm is linguistically sound. The connection to Deuteronomy 18:19 provides a theological framework for prophetic vindication.",
+        "weaknesses": "Even if they are young men rather than children, the severity of the punishment (mauling by bears) for verbal mockery remains disproportionate by most ethical standards. The arguments about age and organized opposition, while textually defensible, can appear to be special pleading."
       },
       {
-        "tradition": "Prophetic Authority Reading",
-        "scholar_id": "macarthur",
-        "summary": "This established Elisha's credentials as Elijah's successor. Mockery of God's prophet was mockery of God himself. The severe response demonstrated that the prophetic office carried divine weight and demanded respect."
+        "tradition": "Historical-Cultural Context",
+        "tradition_family": "evangelical",
+        "scholar_id": "wiseman",
+        "summary": "Wiseman provides historical context for the incident, noting several factors that mitigate the apparent severity. First, the word nĕʿārîm is used of Joseph at age 17 (Gen 37:2), of military soldiers (1 Sam 30:17), and of King Rehoboam's young advisors (1 Kings 12:8) — these are not infants but youths or young adults. Second, the verb 'mauled' (tābaʿ) does not necessarily mean 'killed' — it can indicate wounding or mauling. The text does not say any of them died. Third, forty-two is a large, organized group, suggesting a mob action rather than a casual encounter. Fourth, Bethel was a center of Jeroboam's golden-calf worship — the mockery may have been orchestrated by opponents of Yahwistic prophecy. Wiseman acknowledges the text remains difficult but argues that the modern reader's instinctive horror is partly based on inaccurate assumptions about the age of the mockers and the severity of the outcome.",
+        "key_verses": [
+          "2 Kings 2:23-25",
+          "Genesis 37:2",
+          "1 Kings 12:28",
+          "1 Samuel 30:17"
+        ],
+        "strengths": "Careful lexical and historical analysis corrects common misconceptions. The observation that 'mauled' does not necessarily mean 'killed' is textually important. The Bethel context provides a plausible setting for organized anti-prophetic action.",
+        "weaknesses": "Even with all contextual qualifications, the passage describes God's prophet cursing people and bears attacking them for words. The mitigating arguments, while individually sound, can cumulatively appear defensive. Some readers will find the 'they were young men, not children' argument unpersuasive — the text calls them qĕṭannîm (small/young)."
       },
       {
-        "tradition": "Covenant Context",
-        "scholar_id": "block",
-        "summary": "Wild animal attacks were explicit covenant curses (Leviticus 26:22). These youths from Bethel, center of Jeroboam's calf worship, embodied Israel's apostasy. The narrative shows covenant consequences operating in real time."
+        "tradition": "Covenant Enforcement",
+        "tradition_family": "evangelical",
+        "scholar_id": "longman",
+        "summary": "Longman reads the incident within the Deuteronomic framework of covenant blessings and curses. Leviticus 26:21-22 explicitly warns that disobedience will bring wild animals as agents of divine judgment: 'I will send wild animals against you, and they will rob you of your children.' The bears are not a random divine overreaction but the fulfillment of a specific covenant curse. Elisha's prophetic curse invokes the covenant — 'in the name of the LORD' — and God enforces it according to his own stated terms. Longman notes that the severity reflects the seriousness of rejecting God's appointed prophetic representative at a critical historical moment: Elisha is beginning his ministry, Israel is deep in idolatry, and Bethel is the epicenter of that idolatry. The judgment is not about hurt feelings over baldness but about the covenant community's corporate rejection of God's messenger.",
+        "key_verses": [
+          "Leviticus 26:21-22",
+          "2 Kings 2:23-24",
+          "Deuteronomy 28:15",
+          "Hosea 13:8"
+        ],
+        "strengths": "The Leviticus 26:22 connection is precise and textually compelling — wild animals as agents of covenant judgment are explicitly part of the Deuteronomic framework. Situates the incident within Israel's covenantal obligations rather than treating it as an isolated anecdote.",
+        "weaknesses": "The covenant-curse framework explains the theological logic but may not resolve the moral difficulty — even if God warned about wild animals, the application to a group of mockers strikes many readers as excessive. The reading assumes the audience will accept the Deuteronomic framework as morally adequate."
+      },
+      {
+        "tradition": "Ancient Near Eastern Prophetic Authority",
+        "tradition_family": "jewish",
+        "scholar_id": "sarna",
+        "summary": "Sarna places the incident within the broader ANE understanding of prophetic authority. In the ancient world, a prophet was not merely a preacher but God's authorized representative — to insult the prophet was to insult the God who sent him. The mockery at Bethel was an act of defiance against divine authority, comparable to assaulting a royal ambassador. Sarna notes that the phrase 'in the name of the LORD' is a formal prophetic authorization formula — Elisha acts not on his own behalf but as God's agent, invoking divine authority. The judgment functions as a legitimation narrative: it establishes Elisha as Elijah's true successor with the full backing of divine power. Similar legitimation acts appear throughout the prophetic literature — Moses and the earth swallowing Korah (Num 16), Elijah and the fire from heaven (1 Kings 18:38; 2 Kings 1:10-12). The pattern is consistent: challenge to prophetic authority is met with demonstrative divine response.",
+        "key_verses": [
+          "2 Kings 2:24",
+          "Numbers 16:31-33",
+          "1 Kings 18:36-38",
+          "2 Kings 1:10-12"
+        ],
+        "strengths": "Places the passage in its ANE cultural and literary context. The legitimation-narrative pattern is well established in prophetic literature. The ambassador analogy effectively communicates the severity of insulting a divine representative in ancient thought.",
+        "weaknesses": "The ANE context explains the ancient perspective but does not resolve the ethical question for modern readers operating with different moral assumptions. The legitimation-narrative reading may normalize divine violence as a means of establishing authority."
+      },
+      {
+        "tradition": "Patristic Allegorical Reading",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "The church fathers typically read this passage allegorically. Origen interpreted the bears as symbols of spiritual judgment and the youths as representatives of childish unbelief that refuses to grow into mature faith. Augustine read the 'baldness' of Elisha as a type of the cross — the exposed head representing Christ's humiliation, and the mockery representing those who scorn the crucified Lord. The forty-two youths were sometimes connected to the forty-two months of tribulation (Rev 11:2) or the forty-two stations of Israel's wilderness wandering. The patristic reading acknowledged the literal difficulty but redirected attention to the spiritual meaning: those who mock God's anointed servants will face divine judgment, and the appropriate response to prophetic authority is reverence, not contempt. While modern exegesis has largely moved away from this allegorical method, the fathers' instinct that the text's primary function is theological rather than historical remains influential.",
+        "key_verses": [
+          "2 Kings 2:23-24",
+          "Matthew 10:40",
+          "Luke 10:16",
+          "Galatians 6:7"
+        ],
+        "strengths": "The allegorical tradition offered the ancient church a way to engage a troubling text without reducing it to a morality tale about respecting elders. The christological reading (baldness as humiliation) is creative and theologically generative. The principle that mocking God's messenger has consequences is broadly biblical.",
+        "weaknesses": "Modern hermeneutics rightly insists on the historical-grammatical meaning as primary. The allegorical readings, while creative, do not address the ethical difficulty of the literal event. The method allows virtually any meaning to be extracted from any text."
       }
     ],
     "related_chapters": [
@@ -291,6 +622,39 @@
       "prophets",
       "covenant curses",
       "Bethel"
+    ],
+    "context": "In 2 Kings 2:23-25, shortly after Elisha succeeds Elijah, a group of boys from Bethel mock him, shouting 'Get out of here, baldy!' Elisha curses them 'in the name of the LORD,' and two bears emerge from the woods and maul forty-two of them. The passage is frequently cited as an example of disproportionate divine violence — God apparently sends bears to kill children for name-calling.",
+    "key_verses": [
+      {
+        "ref": "2 Kings 2:23-24",
+        "text": "From there Elisha went up to Bethel. As he was walking along the road, some boys came out of the town and jeered at him. 'Get out of here, baldy!' they said. 'Get out of here, baldy!' He turned around, looked at them and called down a curse on them in the name of the LORD. Then two bears came out of the woods and mauled forty-two of the boys."
+      },
+      {
+        "ref": "2 Kings 2:25",
+        "text": "And he went on to Mount Carmel and from there returned to Samaria."
+      },
+      {
+        "ref": "Deuteronomy 18:18-19",
+        "text": "I will raise up for them a prophet like you from among their fellow Israelites, and I will put my words in his mouth. He will tell them everything I command him. I myself will call to account anyone who does not listen to my words that the prophet speaks in my name."
+      }
+    ],
+    "consensus": "Most scholars argue the passage is more serious than it first appears. The Hebrew nĕʿārîm qĕṭannîm can mean 'young men' rather than small children, and their mockery was not casual teasing but a deliberate challenge to Elisha's prophetic authority and, by extension, to God himself. The incident occurs at Bethel, a center of idolatrous calf worship, suggesting organized opposition. Still, the severity of the response remains troubling to modern readers.",
+    "further_reading": [
+      {
+        "author": "Iain Provan, V. Philips Long, and Tremper Longman III",
+        "title": "A Biblical History of Israel",
+        "year": 2003
+      },
+      {
+        "author": "T.R. Hobbs",
+        "title": "2 Kings (Word Biblical Commentary)",
+        "year": 1985
+      },
+      {
+        "author": "Donald Wiseman",
+        "title": "1 and 2 Kings (Tyndale OT Commentary)",
+        "year": 1993
+      }
     ]
   },
   {
@@ -302,19 +666,74 @@
     "question": "Why did God kill Ananias and Sapphira for what seems like a minor deception?",
     "responses": [
       {
-        "tradition": "Inaugural Judgment View",
+        "tradition": "Inaugurative Judgment",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Like Achan at the conquest's start or Nadab and Abihu at the tabernacle's inauguration, this judgment at the church's founding established holy standards. Initial violations require severe response to set precedent."
+        "summary": "Keener argues that the severity of the judgment is explained by the inaugurative context — the early church is in its foundational moment, paralleling the inauguration of the covenant at Sinai and the conquest of Canaan. In each case, the first major violation of the new community's integrity brings severe divine judgment: the golden calf (Ex 32), Achan's theft (Josh 7), and now Ananias and Sapphira's deception (Acts 5). Keener notes that these inaugurative judgments are not the norm but exceptions — they establish the seriousness of the community's covenant obligations at the moment of foundation. The sin is not stinginess (Peter says the money was theirs) but lying to the Holy Spirit — pretending to greater generosity than they practiced. In a community defined by the Spirit's presence and truthfulness, deception is not merely a personal failing but an assault on the community's foundational reality. Keener draws on Greco-Roman parallels where founding moments of communities required exemplary punishment to establish norms.",
+        "key_verses": [
+          "Acts 5:3-4",
+          "Joshua 7:1-5",
+          "Exodus 32:25-28",
+          "Acts 5:11"
+        ],
+        "strengths": "The inaugurative-judgment pattern is well established across the biblical canon. Explains the severity without making it normative — this is a foundational moment, not everyday church discipline. The Achan parallel is textually compelling.",
+        "weaknesses": "The 'inaugurative' category, while helpful, is imposed on the text — Luke does not explicitly signal that this judgment is exceptional. If the severity is non-normative, the passage's function as a warning to later readers is complicated."
       },
       {
-        "tradition": "Sin Against the Spirit",
-        "scholar_id": "macarthur",
-        "summary": "Their sin was lying to the Holy Spirit (v. 3), not mere financial dishonesty. In the Spirit-saturated early church, deliberate deception was an assault on God's presence. The severity matched the offense's spiritual weight."
+        "tradition": "Lying to the Holy Spirit",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner focuses on the specific nature of the sin: Ananias and Sapphira lied to the Holy Spirit (5:3), which Peter equates with lying to God (5:4). The sin is not financial but spiritual — it is an attempt to deceive God, which reveals a heart that does not genuinely fear or believe in God's omniscience. Schreiner argues that the severity of the punishment is proportionate to the severity of the sin when properly understood: this is not merely social dishonesty but an attempt to manipulate the God who searches hearts. The death functions as a revelation of spiritual reality — those who treat the Holy Spirit as manipulable reveal that they do not actually believe in the Spirit's presence. Schreiner connects this to the broader biblical principle that proximity to God's presence increases rather than decreases the danger of sin (Lev 10:1-3 — Nadab and Abihu; 2 Sam 6:6-7 — Uzzah). Greater privilege brings greater accountability.",
+        "key_verses": [
+          "Acts 5:3-4",
+          "Leviticus 10:1-3",
+          "2 Samuel 6:6-7",
+          "Hebrews 12:29"
+        ],
+        "strengths": "Identifies the real nature of the sin — deception of God, not mere financial dishonesty — which changes the proportionality calculus. The connections to Nadab/Abihu and Uzzah demonstrate a consistent biblical pattern. Takes the holiness of God seriously as the context for understanding severity.",
+        "weaknesses": "The 'proximity to holiness increases danger' principle, while biblically grounded, creates pastoral difficulty — it implies that Spirit-filled communities should expect occasional divine fatalities, which is not the church's experience."
       },
       {
-        "tradition": "Community Protection",
-        "scholar_id": "block",
-        "summary": "Unchecked hypocrisy would have poisoned the nascent community's integrity. God's dramatic intervention preserved the church's purity at a vulnerable moment. The fear that followed (v. 11) was a protective gift."
+        "tradition": "Community Integrity",
+        "tradition_family": "pentecostal",
+        "scholar_id": "fee",
+        "summary": "Fee reads the passage through the lens of the Spirit's role in forming and protecting the new covenant community. The early church was a community constituted by the Spirit's presence (Acts 2:1-4) and characterized by radical generosity (Acts 2:44-45; 4:32-37). Ananias and Sapphira's deception threatened the community's identity at its core — not because they kept money (which was their right) but because they pretended to be something they were not. Fee, as a Pentecostal scholar, emphasizes that the Spirit is not merely a theological concept but a living, active presence who will not be mocked. The deaths are not Peter's doing — Peter merely exposes the deception; God executes judgment. Fee argues that the passage warns against treating the Spirit's community as a stage for performance rather than a context for authentic life. The sin is hypocrisy in the presence of the Holy Spirit — appearing generous while being secretly calculating.",
+        "key_verses": [
+          "Acts 5:3-5",
+          "Acts 2:42-47",
+          "Acts 4:32-37",
+          "Galatians 6:7"
+        ],
+        "strengths": "Centers the Spirit's active role in the early church, consistent with Luke's pneumatology throughout Acts. The distinction between Peter's exposure and God's judgment is textually precise. The emphasis on community integrity resonates with the social dynamics of the early church.",
+        "weaknesses": "The Pentecostal emphasis on the Spirit's immediate, dramatic action may be difficult to apply in contexts where the Spirit does not act with such visible severity. The passage, if taken as normative, would make church membership terrifyingly dangerous."
+      },
+      {
+        "tradition": "Patristic Interpretation",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "The church fathers were deeply attentive to this passage. Chrysostom argued that the severity served a merciful purpose — by judging Ananias and Sapphira, God prevented the spread of hypocrisy that would have destroyed the infant church. The 'great fear' (5:11) that resulted purified the community and protected its integrity. Augustine interpreted the deaths as both judgment and mercy — judgment on Ananias and Sapphira, mercy on the church that was warned by their example. He noted that God did not strike them for keeping money but for lying about it — the sin was the pretense. Clement of Alexandria emphasized that the deaths were physical, not spiritual — there was hope that Ananias and Sapphira might yet be saved eschatologically, since physical death in the NT can be disciplinary rather than final (compare 1 Cor 5:5; 11:30-32). The patristic reading consistently sees the passage as protecting the community rather than displaying arbitrary power.",
+        "key_verses": [
+          "Acts 5:5",
+          "Acts 5:11",
+          "1 Corinthians 5:5",
+          "1 Corinthians 11:30-32"
+        ],
+        "strengths": "The 'mercy to the community' reading provides a coherent theological rationale for the severity. The connection to 1 Corinthians 5:5 and 11:30-32 (physical judgment as discipline, not damnation) is exegetically productive. Deep historical tradition across multiple church fathers.",
+        "weaknesses": "The 'physical death, not spiritual damnation' distinction, while theologically possible, is not explicit in the text. The argument that killing two people is merciful to the community requires a particular theological framework to be persuasive."
+      },
+      {
+        "tradition": "Narrative-Theological Reading",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo reads Acts 5 within Luke's larger narrative theology. Luke has carefully established the early church as a community of radical truthfulness and generosity (2:42-47; 4:32-37), climaxing in Barnabas's exemplary gift (4:36-37). Ananias and Sapphira are the anti-Barnabas: where Barnabas gave freely and honestly, they gave deceptively for social capital. Moo argues that Luke structures the narrative to echo the Achan story: both involve deception about property in a new community, both bring swift divine judgment, and both result in corporate fear that purifies the community. The theological lesson is not 'give everything or die' but 'do not pretend to be what you are not before the God who knows hearts.' Moo notes that the passage functions in Acts as a hinge: the 'great fear' (5:11) transitions the narrative from the internal life of the church to its external witness (5:12-16), suggesting that the church's integrity is the foundation for its mission. Compromise of integrity compromises witness.",
+        "key_verses": [
+          "Acts 4:36-37",
+          "Acts 5:1-4",
+          "Acts 5:11-12",
+          "Psalm 139:1-4"
+        ],
+        "strengths": "Reads the passage within Luke's careful narrative structure rather than isolating it. The Barnabas contrast is textually grounded and illuminating. The connection between community integrity and mission effectiveness is a significant theological insight.",
+        "weaknesses": "The narrative-theological reading explains Luke's literary purpose but may not fully resolve the moral question of proportionality. The modern reader still faces the question: was death a proportionate response to financial deception, however serious?"
       }
     ],
     "related_chapters": [
@@ -330,6 +749,43 @@
       "judgment",
       "early church",
       "hypocrisy"
+    ],
+    "context": "In Acts 5:1-11, Ananias and Sapphira sell property, secretly keep back part of the proceeds while claiming to donate the full amount, and both die immediately after Peter confronts their deception. The passage raises questions about proportionality (death for financial dishonesty?), the nature of the sin (lying, greed, or something more?), and the role of divine judgment in the New Testament era.",
+    "key_verses": [
+      {
+        "ref": "Acts 5:3-4",
+        "text": "Then Peter said, 'Ananias, how is it that Satan has so filled your heart that you have lied to the Holy Spirit and have kept for yourself some of the money you received for the land? Didn't it belong to you before it was sold? And after it was sold, wasn't the money at your disposal? What made you think of doing such a thing? You have not lied just to human beings but to God.'"
+      },
+      {
+        "ref": "Acts 5:5",
+        "text": "When Ananias heard this, he fell down and died. And great fear seized all who heard what had happened."
+      },
+      {
+        "ref": "Acts 5:11",
+        "text": "Great fear seized the whole church and all who heard about these events."
+      },
+      {
+        "ref": "Joshua 7:1",
+        "text": "But the Israelites were unfaithful in regard to the devoted things; Achan son of Karmi, the son of Zimri, the son of Zerah, of the tribe of Judah, took some of them. So the LORD's anger burned against Israel."
+      }
+    ],
+    "consensus": "Most scholars identify the sin as lying to the Holy Spirit — not the withholding itself (Peter explicitly says the money was theirs to keep) but the deception of claiming total generosity. The passage is widely compared to Achan's sin (Joshua 7), where deception at the inauguration of a new era of God's work brings severe judgment. The severity signals the seriousness of integrity in the Spirit-filled community.",
+    "further_reading": [
+      {
+        "author": "Craig S. Keener",
+        "title": "Acts: An Exegetical Commentary (4 vols.)",
+        "year": 2012
+      },
+      {
+        "author": "Darrell Bock",
+        "title": "Acts (Baker Exegetical Commentary)",
+        "year": 2007
+      },
+      {
+        "author": "Ben Witherington III",
+        "title": "The Acts of the Apostles: A Socio-Rhetorical Commentary",
+        "year": 1998
+      }
     ]
   },
   {
@@ -341,19 +797,74 @@
     "question": "Why is this horrific story of rape and dismemberment in the Bible?",
     "responses": [
       {
-        "tradition": "Moral Nadir Interpretation",
+        "tradition": "Narrative Judgment / Judges' Downward Spiral",
+        "tradition_family": "evangelical",
+        "scholar_id": "webb",
+        "summary": "Webb reads Judges 19 as the literary and moral nadir of a carefully structured narrative of descent. The book of Judges moves from the relative faithfulness of Othniel through increasingly compromised judges to the total moral chaos of chapters 17-21. The concubine's story is the final and most horrifying installment — Israel has become Sodom. The deliberate echoes of Genesis 19 (men demanding sexual access to a male guest, the offering of women as substitutes) are not coincidental but devastating: the covenant community has replicated the worst sins of the cities God destroyed. Webb argues that the narrator's silence is not moral indifference but literary strategy — the story is told in a way that forces the reader to judge what the narrator refuses to evaluate. The refrain 'everyone did as they saw fit' (21:25) is the narrator's only commentary, and it is damning. Webb contends the passage serves a theological purpose: without God-ordained leadership, even the covenant people are capable of the worst imaginable evil.",
+        "key_verses": [
+          "Judges 19:22-25",
+          "Genesis 19:4-8",
+          "Judges 21:25",
+          "Judges 2:16-19"
+        ],
+        "strengths": "Rigorous literary reading that situates the passage within Judges' overall architecture. The Sodom parallel is textually undeniable and theologically devastating. The narrator's silence is read as a sophisticated literary device rather than moral failure.",
+        "weaknesses": "The literary reading may not adequately address the pastoral question of why this story is in the Bible and how it should be preached or taught. Identifying the text's literary function does not resolve the emotional and ethical impact on readers, especially survivors of sexual violence."
+      },
+      {
+        "tradition": "Literary-Feminist Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter observes that the narrative technique renders the concubine's suffering with devastating sparseness — she has no name, almost no dialogue, and her death is described in a single sentence. This is not negligence but literary art: the text forces the reader to see her as the men of the story see her — as an object to be used, discarded, and dismembered. Alter notes that the Levite's behavior is portrayed as morally monstrous throughout: he sends her out to the mob, sleeps while she is raped, and addresses her corpse with callous efficiency ('Get up; let's go,' 19:28). The dismemberment is the final objectification — she becomes a political message rather than a person. Alter argues that the narrative indicts the entire social system, not just the rapists: the host who offers women to protect a male guest, the Levite who sacrifices his concubine for his own safety, and the subsequent civil war that kills thousands while treating the woman as a mere catalyst. Every male character in the story fails completely.",
+        "key_verses": [
+          "Judges 19:25",
+          "Judges 19:28",
+          "Judges 19:29",
+          "Judges 20:1-2"
+        ],
+        "strengths": "Penetrating literary analysis that reveals the text's own moral judgments embedded in its narrative technique. The observation about the concubine's objectification is textually precise. Holds all the male characters accountable, not just the rapists.",
+        "weaknesses": "The literary approach may seem insufficient to readers looking for explicit theological condemnation. Some critics argue that identifying literary artistry in a text about gang rape risks aestheticizing violence."
+      },
+      {
+        "tradition": "Trauma Testimony",
+        "tradition_family": "mainline",
+        "scholar_id": "oconnor",
+        "summary": "O'Connor reads Judges 19 as preserved testimony to sexual violence — a text that refuses to let the reader look away from what happens when social structures collapse and men exercise unchecked power over women's bodies. The text's inclusion in Scripture functions not as endorsement but as witness: this happened, and it matters. O'Connor argues that these texts serve survivors by naming violence as violence rather than sanitizing it. The canonical placement is significant — the horror of Judges 19 creates the urgency for the transition to monarchy, but the monarchy will eventually produce its own horrors (David and Bathsheba, Amnon and Tamar). The cycle of violence is not resolved by political structures but only by the justice God promises and the redemption the canon moves toward. O'Connor contends that the church has a responsibility to read these texts honestly — not skipping them in lectionaries, not allegorizing away their violence, but sitting with the discomfort and letting it generate compassion and commitment to justice.",
+        "key_verses": [
+          "Judges 19:25-26",
+          "Judges 21:25",
+          "2 Samuel 13:1-15",
+          "Isaiah 61:1-3"
+        ],
+        "strengths": "Centers the experience of the victim in a way that most traditional interpretations do not. The canonical-placement argument is theologically sophisticated — the text creates the need for what follows. The pastoral call to not skip difficult texts is prophetically important.",
+        "weaknesses": "The trauma-testimony framework is a modern category that may not fully capture the ancient text's own purposes. The reading may be more relevant for pastoral and homiletical contexts than for exegetical scholarship."
+      },
+      {
+        "tradition": "Women's Perspective in Biblical Narrative",
+        "tradition_family": "evangelical",
+        "scholar_id": "berlin",
+        "summary": "Berlin reads Judges 19 alongside other narratives of violence against women in the Hebrew Bible — the parallel Sodom story (Gen 19), Dinah's rape (Gen 34), Tamar's rape by Amnon (2 Sam 13). She observes a pattern: in each case, the violence against the woman triggers a larger conflict among men, and the woman herself disappears from the narrative once she has served as the catalyst. Berlin argues this pattern reveals a deep structural problem in the ancient Israelite social world — women's bodies function as the territory on which male honor conflicts are fought. The text is aware of this dynamic even if it cannot fully escape it. Berlin notes that the concubine's placement on the doorstep (19:26-27) — half inside, half outside — is a spatial metaphor for women's status in Israelite society: present but liminal, essential but expendable. The passage demands not just literary appreciation but ethical response from modern readers who share the Bible's theological convictions about human dignity.",
+        "key_verses": [
+          "Judges 19:25-27",
+          "Genesis 34:1-2",
+          "2 Samuel 13:14-15",
+          "Genesis 1:27"
+        ],
+        "strengths": "Illuminating comparison across multiple biblical narratives reveals a structural pattern rather than an isolated incident. The spatial metaphor of the doorstep is a brilliant literary observation. Connects the ancient text to ongoing ethical concerns about gender violence.",
+        "weaknesses": "The structural-critique approach may suggest the Bible is complicit in the very dynamics it narrates, which raises questions about canonical authority for evangelical readers. The comparative method, while illuminating, risks treating distinct narratives as interchangeable."
+      },
+      {
+        "tradition": "Canonical-Theological Framework",
+        "tradition_family": "evangelical",
         "scholar_id": "block",
-        "summary": "This narrative is the book's climax of depravity, deliberately echoing Sodom (Genesis 19) to show Israel had become worse than the cities God destroyed. It's recorded to horrify, not to model."
-      },
-      {
-        "tradition": "Cautionary Testimony",
-        "scholar_id": "longman",
-        "summary": "Scripture includes what humans do, not only what they should do. The Levite's cowardice, the men's brutality, and the subsequent civil war demonstrate where covenant abandonment leads. The text condemns through unflinching depiction."
-      },
-      {
-        "tradition": "Canonical Function",
-        "scholar_id": "provan",
-        "summary": "Judges ends with this horror specifically to prepare readers for the monarchy. 'In those days there was no king'—the refrain cries out for righteous leadership. The story explains why Israel demanded a king."
+        "summary": "Block reads the passage within the Deuteronomistic framework of covenant unfaithfulness and its consequences. Israel's descent into Sodom-like behavior is the direct result of covenant abandonment — 'everyone did as they saw fit' (21:25) is the theological diagnosis. Block argues that the passage is not about one woman's suffering but about the total moral disintegration of a society that has abandoned God's covenant. Every aspect of the narrative involves covenant violation: hospitality norms (a fundamental covenant obligation) are perverted, sexual violence (explicitly condemned in Deut 22:25-27) is committed by Israelites against an Israelite, and the Levite — who should be a guardian of Torah — betrays his own concubine. Block contends that the text functions as a negative exemplum: this is what happens when the covenant people forget their God. The violence is not gratuitous — it is the consequence of covenant abandonment, and the narrator expects the reader to be horrified.",
+        "key_verses": [
+          "Judges 19:22-25",
+          "Judges 21:25",
+          "Deuteronomy 22:25-27",
+          "Judges 2:10-12"
+        ],
+        "strengths": "Grounds the narrative in the Deuteronomistic framework, providing a theological explanation for the moral chaos. The observation about multiple covenant violations is exegetically precise. The reading explains why the text is in the canon — it illustrates the consequences of abandoning God.",
+        "weaknesses": "The Deuteronomistic framework explains the theological purpose but can seem to reduce the concubine's suffering to an illustration in a larger argument. The 'consequences of covenant abandonment' reading may inadvertently blame the community rather than the perpetrators."
       }
     ],
     "related_chapters": [
@@ -368,6 +879,43 @@
       "sexual assault",
       "moral decline",
       "Gibeah"
+    ],
+    "context": "Judges 19 describes a Levite traveling with his concubine through Gibeah (a Benjaminite town). The men of Gibeah demand to rape the Levite; instead, the concubine is thrown outside and gang-raped all night. She dies on the doorstep. The Levite dismembers her body and sends the pieces throughout Israel, provoking a civil war (Judges 20-21). The passage is the nadir of the Judges narrative — a deliberate echo of the Sodom story (Gen 19) set within Israel itself.",
+    "key_verses": [
+      {
+        "ref": "Judges 19:22",
+        "text": "While they were enjoying themselves, some of the wicked men of the city surrounded the house. Pounding on the door, they shouted to the old man who owned the house, 'Bring out the man who came to your house so we can have sex with him.'"
+      },
+      {
+        "ref": "Judges 19:25-26",
+        "text": "But the men would not listen to him. So the man took his concubine and sent her outside to them, and they raped her and abused her throughout the night, and at dawn they let her go. At daybreak the woman went back to the house where her master was staying, fell down at the door and lay there until daylight."
+      },
+      {
+        "ref": "Judges 19:29",
+        "text": "When he reached home, he took a knife and cut up his concubine, limb by limb, into twelve pieces, and sent them into all the areas of Israel."
+      },
+      {
+        "ref": "Judges 21:25",
+        "text": "In those days Israel had no king; everyone did as they saw fit."
+      }
+    ],
+    "consensus": "Virtually all scholars agree the text narrates without approving. The passage is the climax of Judges' downward spiral — demonstrating that Israel has become indistinguishable from Sodom. The narrator's silence is a literary device, not moral endorsement. The passage functions as the ultimate argument for the failure of the pre-monarchic period and, within the Deuteronomistic History, as justification for kingship.",
+    "further_reading": [
+      {
+        "author": "Phyllis Trible",
+        "title": "Texts of Terror: Literary-Feminist Readings of Biblical Narratives",
+        "year": 1984
+      },
+      {
+        "author": "Barry G. Webb",
+        "title": "The Book of Judges (NICOT)",
+        "year": 2012
+      },
+      {
+        "author": "Susan Niditch",
+        "title": "Judges (OTL)",
+        "year": 2008
+      }
     ]
   },
   {
@@ -379,19 +927,74 @@
     "question": "Why does God bless Abraham despite his repeated lies about Sarah?",
     "responses": [
       {
-        "tradition": "Descriptive Not Prescriptive",
-        "scholar_id": "waltke",
-        "summary": "Genesis records the patriarchs' failures without endorsing them. Abraham's faith coexisted with moral weakness. God's faithfulness despite human failure is precisely the point—grace, not merit, drives the covenant."
-      },
-      {
-        "tradition": "Half-Truth Analysis",
+        "tradition": "Faith Under Pressure",
+        "tradition_family": "jewish",
         "scholar_id": "sarna",
-        "summary": "Sarah was Abraham's half-sister (20:12), so technically he didn't lie. However, the intent to deceive remains culpable. The narrative shows Abraham's faith journey was genuinely progressive, not instantaneously perfect."
+        "summary": "Sarna notes that Abraham's deception, while morally compromised, occurs in a context of genuine danger — a foreign land where a powerful ruler could kill a man for his wife. The 'sister' claim was a half-truth (Gen 20:12 reveals Sarah was his half-sister) that served as a survival strategy in a lawless world. Sarna emphasizes that the narrative does not excuse Abraham — Pharaoh's rebuke (12:18-19) and Abimelech's confrontation (20:9-10) are presented as justified, and the foreign rulers emerge as more righteous than the patriarch. This is deliberate irony: the man of faith fails morally while the 'pagan' kings demonstrate integrity. Sarna argues the narrative teaches that even the covenant bearer is a flawed human being whose election depends entirely on God's grace, not on personal merit. God protects Sarah (and the covenant promises through her) despite Abraham's failure, demonstrating that the divine plan does not depend on human virtue.",
+        "key_verses": [
+          "Genesis 12:17-19",
+          "Genesis 20:9-10",
+          "Genesis 20:12",
+          "Genesis 15:6"
+        ],
+        "strengths": "Historically grounded in ANE social realities where the danger was genuine. The ironic reversal (pagan kings more righteous than the patriarch) is textually clear. Preserves both the patriarch's humanity and God's sovereignty.",
+        "weaknesses": "The 'half-truth' defense does not resolve the fundamental moral problem — Abraham endangers Sarah's sexual honor to save himself. The danger argument, while valid, does not explain why Abraham could not trust the God who called him."
       },
       {
-        "tradition": "Promise Preservation",
-        "scholar_id": "macarthur",
-        "summary": "God protected Sarah and the promise line despite Abraham's scheming. This demonstrates that covenant fulfillment depends on God's sovereignty, not human righteousness. Abraham's failures magnify God's faithfulness."
+        "tradition": "Literary Irony and Pattern",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the triple repetition (Gen 12, 20, 26) as a sophisticated literary technique — a type-scene that the narrator uses to expose the patriarch's recurring weakness. Each iteration develops the theme: Abraham begins as a raw deceiver (Gen 12), then offers a legalistic defense (Gen 20 — 'she really is my sister'), and Isaac inherits the pattern in Gen 26, showing moral failure passed across generations. Alter argues that the literary effect is deliberately unflattering to the patriarchs — the reader is meant to notice that Abraham, the father of faith, is also a habitual liar who sacrifices his wife's safety for his own. The foreign rulers function as a narrative mirror: their integrity reflects the patriarch's failure. Alter contends that the biblical narrative refuses to idealize its heroes — this is not hagiography but realistic narrative that presents human beings in their full moral complexity. The effect is theological: if God works through these people, it is despite them, not because of them.",
+        "key_verses": [
+          "Genesis 12:12-13",
+          "Genesis 20:2",
+          "Genesis 26:7",
+          "Genesis 12:17"
+        ],
+        "strengths": "Masterful literary analysis that explains the triple repetition as intentional rather than accidental or the result of source combination. The type-scene analysis is a well-established literary method. The observation about inherited moral failure is theologically productive.",
+        "weaknesses": "The literary approach may not fully engage with the theological question: why does God reward Abraham (12:16) in the midst of his deception? Identifying literary artistry does not resolve the moral difficulty for readers who take these as historical events."
+      },
+      {
+        "tradition": "Divine Faithfulness Despite Human Failure",
+        "tradition_family": "evangelical",
+        "scholar_id": "waltke",
+        "summary": "Waltke reads the wife-sister narratives as illustrations of a fundamental biblical principle: God's covenant faithfulness is not contingent on human obedience. Abraham's deception threatens to destroy the very covenant promises God has made — if Sarah is taken into a foreign harem, the promised seed through her is imperiled. God intervenes (plagues on Pharaoh, the dream warning to Abimelech) not because Abraham deserves rescue but because the covenant cannot fail. Waltke argues this pattern establishes a theological principle that runs through the entire biblical narrative: God protects his promises through the failures of his people, not only through their obedience. This does not excuse Abraham — the narrative's moral evaluation is clear in the rebukes he receives — but it demonstrates that God's saving purposes are secured by God's own faithfulness. The theological lesson is grace: election is based on God's character, not the character of the elect.",
+        "key_verses": [
+          "Genesis 12:2-3",
+          "Genesis 12:17",
+          "Genesis 20:3-7",
+          "2 Timothy 2:13"
+        ],
+        "strengths": "Powerful theological reading that connects the narrative to the broader biblical theme of grace. The observation that Abraham's failure threatens the covenant promises adds genuine dramatic tension. The principle — God's faithfulness despite human failure — is central to both Testaments.",
+        "weaknesses": "The 'grace despite failure' reading, while theologically rich, can inadvertently minimize the moral seriousness of Abraham's actions. If God always protects the covenant despite human sin, the incentive for obedience seems diminished."
+      },
+      {
+        "tradition": "Patriarchal Critique",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin was characteristically honest about Abraham's failure: the patriarch sinned by trusting in deception rather than in God's protection. Calvin argued that Abraham's fear was understandable but not excusable — the very God who called him out of Ur and promised him descendants was surely capable of protecting his wife. The deception revealed a failure of faith that is all the more shocking given Abraham's stature as the father of the faithful. Calvin emphasized that Sarah's silence in the narrative should not be misread as consent — she was placed in an impossible position by her husband's cowardice. Calvin drew a pastoral lesson: even the greatest saints are capable of the worst sins, and the awareness of our own capacity for moral failure should produce humility rather than self-righteousness. He noted that God's protection of Sarah despite Abraham's failure is a demonstration of unmerited grace — God honors his promises even when his servants dishonor them.",
+        "key_verses": [
+          "Genesis 12:12-13",
+          "Genesis 20:11",
+          "Genesis 12:17",
+          "Romans 4:3"
+        ],
+        "strengths": "Unflinching moral evaluation of Abraham's actions. The attention to Sarah's position is pastorally sensitive and ahead of Calvin's time. The pastoral application — even great saints fail — is classic Calvinist realism.",
+        "weaknesses": "Calvin's reading can lean toward moralism — extracting a lesson about personal piety from a narrative whose theological concerns are broader. The emphasis on individual sin may underemphasize the structural and cultural dimensions of the patriarch's behavior."
+      },
+      {
+        "tradition": "Women's Experience in the Narrative",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes reads the wife-sister narratives from Sarah's perspective — a perspective the text does not give voice to, which is itself significant. Sarah is spoken about but never speaks in these episodes; she is traded, taken, and returned as an object of male negotiation. Jobes argues that the narrator's silence about Sarah's experience is itself a form of testimony — it mirrors the powerlessness of women in patriarchal cultures, where wives were property subject to their husbands' decisions. Yet God's intervention on Sarah's behalf (plagues, dreams, confrontations) demonstrates that God sees and protects women even when their husbands fail them. Jobes notes that God speaks to Abimelech in defense of Sarah (20:3-7), effectively acting as her advocate when Abraham will not. This pattern — God defending vulnerable women when human systems fail — recurs throughout Scripture (Hagar, Tamar, Ruth) and reaches its fullest expression in Jesus's treatment of women.",
+        "key_verses": [
+          "Genesis 12:15",
+          "Genesis 20:3-7",
+          "Genesis 16:7-13",
+          "Luke 7:36-50"
+        ],
+        "strengths": "Recovers the absent perspective of Sarah — a critical gap in most interpretations. The observation that God acts as Sarah's advocate is textually grounded and theologically significant. Connects the narrative to a broader biblical pattern of divine concern for vulnerable women.",
+        "weaknesses": "Reading Sarah's silence as meaningful requires interpretive judgment — the narrator may simply not be interested in her perspective because the story's focus is Abraham's faith. The broader pattern of 'God defends women' may be more selectively applied than the argument suggests."
       }
     ],
     "related_chapters": [
@@ -414,6 +1017,43 @@
       "deception",
       "patriarchs",
       "faith journey"
+    ],
+    "context": "Abraham twice passes off Sarah as his sister — to Pharaoh (Gen 12:10-20) and to Abimelech (Gen 20:1-18). Isaac repeats the pattern with Rebekah (Gen 26:6-11). In each case, the patriarch endangers his wife to protect himself, and God intervenes to rescue her. The stories raise questions about the moral character of the patriarchs, the treatment of women as property, and why God rewards deception.",
+    "key_verses": [
+      {
+        "ref": "Genesis 12:12-13",
+        "text": "When the Egyptians see you, they will say, 'This is his wife.' Then they will kill me but will let you live. Say you are my sister, so that I will be treated well for your sake and my life will be spared because of you."
+      },
+      {
+        "ref": "Genesis 20:2",
+        "text": "and there Abraham said of his wife Sarah, 'She is my sister.' Then Abimelek king of Gerar sent for Sarah and took her."
+      },
+      {
+        "ref": "Genesis 20:12",
+        "text": "Besides, she is indeed my sister, the daughter of my father though not of my mother; and she became my wife."
+      },
+      {
+        "ref": "Genesis 12:17",
+        "text": "But the LORD inflicted serious diseases on Pharaoh and his household because of Abram's wife Sarai."
+      }
+    ],
+    "consensus": "Most scholars recognize the wife-sister narratives as deliberately troubling — the narrator does not commend Abraham's deception, and the pagan rulers (Pharaoh, Abimelech) emerge as more honorable than the patriarch. The episodes illustrate that God's promises do not depend on human virtue but on divine faithfulness. Critical scholars often see the three accounts as variant traditions of a single story; canonical readers see them as a recurring pattern that exposes patriarchal weakness.",
+    "further_reading": [
+      {
+        "author": "Nahum Sarna",
+        "title": "Genesis (JPS Torah Commentary)",
+        "year": 1989
+      },
+      {
+        "author": "Robert Alter",
+        "title": "Genesis: Translation and Commentary",
+        "year": 1996
+      },
+      {
+        "author": "Gordon Wenham",
+        "title": "Genesis 1-15 (Word Biblical Commentary)",
+        "year": 1987
+      }
     ]
   },
   {
@@ -2855,19 +3495,74 @@
     "question": "How could a loving God command a father to sacrifice his son?",
     "responses": [
       {
-        "tradition": "Testing Not Intent",
-        "scholar_id": "waltke",
-        "summary": "God never intended Isaac to die; the test was of Abraham's faith and obedience. God stopped the sacrifice, revealing His opposition to child sacrifice—the opposite of Canaanite practice. The test demonstrated Abraham's total devotion."
+        "tradition": "Death and Resurrection of the Beloved Son",
+        "tradition_family": "jewish",
+        "scholar_id": "levenson",
+        "summary": "Levenson reads the Akedah within the broader ANE and biblical context of the first-born son. Throughout the ancient world, the firstborn belonged to the deity; in Israel, this principle is expressed in the redemption of the firstborn (Ex 13:13-15) and in the broader pattern of divine claims on beloved children (Jephthah, Samuel). Levenson argues that the Akedah dramatizes the foundational tension of Israelite theology: God demands everything — including what is most precious — and then, at the moment of total surrender, provides an alternative. The ram substituted for Isaac prefigures the entire sacrificial system: God provides the sacrifice that God requires. Levenson's most provocative claim is that the 'death and resurrection of the beloved son' is a pattern that structures both Jewish and Christian theology — from Isaac through Israel (the 'son' who dies in exile and is resurrected in return) to Jesus. The Akedah is not a single story but a paradigm that generates meaning across the entire canon.",
+        "key_verses": [
+          "Genesis 22:2",
+          "Genesis 22:8",
+          "Genesis 22:13-14",
+          "Exodus 13:13-15"
+        ],
+        "strengths": "Extraordinary breadth — connects the Akedah to the sacrificial system, the exodus, exile and return, and christology. The 'beloved son' paradigm is textually grounded across both Testaments. Treats the passage as theological foundation rather than isolated moral problem.",
+        "weaknesses": "The paradigmatic reading may overshadow the specific moral difficulty of the narrative — the command to kill a child. The connection to Christian theology, while illuminating, risks appropriating a Jewish text in ways that may not honor its original context."
       },
       {
-        "tradition": "Typological Reading",
-        "scholar_id": "macarthur",
-        "summary": "The Akedah prefigures the Father offering His Son. Abraham believed God would raise Isaac (Hebrews 11:19). The ram substituting for Isaac pictures Christ as our substitute. The horror serves the gospel's greater glory."
-      },
-      {
-        "tradition": "Ancient Context",
+        "tradition": "Supreme Test of Faith",
+        "tradition_family": "jewish",
         "scholar_id": "sarna",
-        "summary": "In a world where child sacrifice was common, this narrative dramatically repudiates the practice. God demonstrates He does not desire human sacrifice while affirming covenant faithfulness. Abraham's obedience marks Israel's departure from surrounding religions."
+        "summary": "Sarna reads the Akedah as the culminating test in a series of ten trials that demonstrate Abraham's absolute trust in God. The command is the ultimate test because it demands that Abraham sacrifice not only his son but his entire future — Isaac is the sole carrier of the covenant promises. If Isaac dies, God's promises cannot be fulfilled (by any human reckoning). Abraham's obedience therefore requires faith that transcends logic: he must trust that the God who promised descendants through Isaac will somehow fulfill that promise even through death. Sarna emphasizes the Hebrew word nissah ('tested,' 22:1) — this is explicitly a test, not a genuine demand for human sacrifice. God never intended for Isaac to die; the point was Abraham's willingness. Sarna also notes the anti-sacrifice polemic embedded in the narrative: at the climactic moment, God provides a ram (22:13) and declares that he does not require what the surrounding cultures demand. The Akedah simultaneously tests Abraham's faith and reveals God's character — a God who demands total devotion but rejects human sacrifice.",
+        "key_verses": [
+          "Genesis 22:1",
+          "Genesis 22:8",
+          "Genesis 22:12",
+          "Genesis 22:14"
+        ],
+        "strengths": "Reads the narrative within the canonical context of Abraham's progressive testing. The anti-sacrifice reading is historically significant — the Akedah differentiates Israelite religion from Canaanite child sacrifice. The emphasis on nissah ('test') provides a clear interpretive framework.",
+        "weaknesses": "The 'it was always a test' reading may minimize the genuine horror of what Abraham was willing to do. If God never intended Isaac to die, the test seems cruel — what kind of God demands that a father psychologically endure killing his son?"
+      },
+      {
+        "tradition": "Typological — Prefiguring the Cross",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin read the Akedah as a prefiguration of the cross — the beloved son offered by the father on a mountain, the provision of a substitute, and the 'resurrection' of the son (Heb 11:19). Calvin argued that Abraham's willingness to sacrifice Isaac reveals the depth of genuine faith: it obeys God even when God's command contradicts God's promise. This is not irrational obedience but the highest rationality — trusting that God can reconcile what appears irreconcilable. Calvin was characteristically honest about the difficulty: Abraham's three-day journey to Moriah was three days of anguish, not serene certainty. The test was real, the suffering was real, and the faith was tested to its limits. Calvin drew the christological connection explicitly: what Abraham was willing to do, God the Father actually did — he did not spare his own Son (Rom 8:32). The Akedah thus reveals both the nature of faith (total surrender to God) and the nature of God (the one who ultimately provides the sacrifice himself).",
+        "key_verses": [
+          "Genesis 22:2",
+          "Genesis 22:8",
+          "Hebrews 11:17-19",
+          "Romans 8:32"
+        ],
+        "strengths": "Theologically rich — the christological typology is deeply embedded in Christian tradition. Calvin's insistence on the reality of Abraham's suffering adds emotional and pastoral depth. The connection between Genesis 22:8 ('God himself will provide') and John 1:29 ('the Lamb of God') is canonically powerful.",
+        "weaknesses": "The typological reading can too quickly move past the moral difficulty to the theological payoff. The christological lens may impose a Christian framework on a text that has its own Jewish theological integrity. The question of whether God should test people this way is not fully addressed."
+      },
+      {
+        "tradition": "Literary-Narrative Analysis",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the Akedah as the supreme achievement of biblical narrative art. The economy of the prose is devastating: 'Take your son, your only son, whom you love — Isaac' builds suspense with each narrowing specification. Abraham's silence — he never protests, never questions, never negotiates (contrast his intercession for Sodom in Gen 18) — is the most eloquent silence in literature. The phrase 'and the two of them went on together' (22:6, 8) is repeated with the weight of everything unsaid between father and son. Isaac's one question — 'where is the lamb?' — and Abraham's answer — 'God himself will provide' — condense the entire theology of the passage into a single exchange. Alter argues that the narrative's power lies precisely in what it withholds: Abraham's emotions, Sarah's absence, Isaac's interior life. The reader must supply what the narrator refuses to provide, and that act of imagination creates the passage's enduring force. Alter contends this is narrative theology at its purest — the meaning is not stated but enacted.",
+        "key_verses": [
+          "Genesis 22:2",
+          "Genesis 22:6-8",
+          "Genesis 22:10-12",
+          "Genesis 22:19"
+        ],
+        "strengths": "Unparalleled attention to the narrative's literary artistry. The observation about Abraham's silence (contrast with Gen 18) is one of the most important in biblical literary criticism. The 'enacted theology' concept captures how narrative can convey what proposition cannot.",
+        "weaknesses": "The literary approach, while illuminating, may not fully engage with the ethical question: is it morally praiseworthy to obey a command to kill your child? Literary admiration and moral evaluation are different operations."
+      },
+      {
+        "tradition": "The God Who Provides",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay focuses on the name Abraham gives the place: Yahweh Yireh — 'The LORD Will Provide' (22:14). He argues this is the theological center of the narrative: the test reveals not only Abraham's faith but God's character as the one who provides. The ram caught in the thicket (22:13) is not an afterthought but the climax — God provides the sacrifice that God requires. Goldingay reads this as the foundational statement of biblical soteriology: God does not demand what God does not supply. This principle runs from the Akedah through the Passover lamb, the sacrificial system, the Suffering Servant of Isaiah 53, and ultimately to the cross. Goldingay is careful to hold the moral difficulty and the theological insight together: the story is genuinely terrifying, and it is meant to be. Abraham's faith is praiseworthy precisely because what God asked was unreasonable by any human standard. Faith is not trust that God will make sense; it is trust that God will provide even when nothing makes sense.",
+        "key_verses": [
+          "Genesis 22:8",
+          "Genesis 22:13-14",
+          "Isaiah 53:7",
+          "John 1:29"
+        ],
+        "strengths": "Centers the narrative on its own stated theological conclusion (22:14). The 'God provides what God requires' principle is both exegetically grounded and theologically profound. Holds difficulty and faith together without resolving either away.",
+        "weaknesses": "The 'God will provide' reading can be heard as 'everything works out in the end,' which may minimize the genuine anguish of the story. Not all biblical stories end with provision — the daughters of Jephthah and the concubine of Gibeah have no ram in the thicket."
       }
     ],
     "related_chapters": [
@@ -2883,6 +3578,43 @@
       "faith",
       "testing",
       "Akedah"
+    ],
+    "context": "Genesis 22 describes God commanding Abraham to sacrifice Isaac — the son of promise, the child of miraculous birth, the sole heir of the covenant. Abraham obeys without recorded protest, binding Isaac on an altar and raising the knife before God stops him. The passage (the Akedah, 'the Binding') is among the most theologically rich and morally disturbing texts in the Bible. It has generated vastly different readings across Jewish, Christian, and philosophical traditions.",
+    "key_verses": [
+      {
+        "ref": "Genesis 22:1-2",
+        "text": "Some time later God tested Abraham. He said to him, 'Abraham!' 'Here I am,' he replied. Then God said, 'Take your son, your only son, whom you love — Isaac — and go to the region of Moriah. Sacrifice him there as a burnt offering on one of the mountains I will tell you about.'"
+      },
+      {
+        "ref": "Genesis 22:8",
+        "text": "Abraham answered, 'God himself will provide the lamb for the burnt offering, my son.' And the two of them went on together."
+      },
+      {
+        "ref": "Genesis 22:12",
+        "text": "Do not lay a hand on the boy,' he said. 'Do not do anything to him. Now I know that you fear God, because you have not withheld from me your son, your only son.'"
+      },
+      {
+        "ref": "Hebrews 11:17-19",
+        "text": "By faith Abraham, when God tested him, offered Isaac as a sacrifice. He who had embraced the promises was about to sacrifice his one and only son, even though God had said to him, 'It is through Isaac that your offspring will be reckoned.' Abraham reasoned that God could even raise the dead, and so in a figurative sense he did receive Isaac back from death."
+      }
+    ],
+    "consensus": "The text is universally acknowledged as one of Scripture's most profound and disturbing passages. Jewish and Christian traditions generally affirm Abraham's response as exemplary faith while recognizing the moral difficulty. Critical scholars often read the story as a polemic against child sacrifice — demonstrating that Israel's God ultimately refuses human sacrifice. The narrative's theological depth has generated more commentary than almost any other biblical passage.",
+    "further_reading": [
+      {
+        "author": "Jon D. Levenson",
+        "title": "The Death and Resurrection of the Beloved Son: The Transformation of Child Sacrifice in Judaism and Christianity",
+        "year": 1993
+      },
+      {
+        "author": "R.W.L. Moberly",
+        "title": "The Bible, Theology, and Faith: A Study of Abraham and Jesus",
+        "year": 2000
+      },
+      {
+        "author": "Søren Kierkegaard",
+        "title": "Fear and Trembling",
+        "year": 1843
+      }
     ]
   },
   {
@@ -2894,19 +3626,74 @@
     "question": "Why did Lot offer his virgin daughters to the mob, and why isn't he condemned?",
     "responses": [
       {
-        "tradition": "Hospitality Desperation",
-        "scholar_id": "waltke",
-        "summary": "Lot's offer reflects the extreme weight of hospitality obligations in the ancient Near East—protecting guests was a sacred duty. His offer was desperately wrong, and the text records without endorsing. Lot is no moral hero."
+        "tradition": "Polemical Origin Story",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the passage primarily as an etiological narrative explaining the origin of the Moabites and Ammonites in the most unflattering terms possible. The names themselves carry the polemic: 'Moab' sounds like the Hebrew mēʾāb ('from father'), making the incestuous origin a permanent etymological insult. Alter notes the narrative irony: Lot, who offered his daughters to the Sodom mob (19:8), is now used by those same daughters. The reversal is deliberate — the man who traded his daughters' bodies is now objectified by them. Alter argues the passage functions on multiple levels: as national polemic (Israel's enemies have shameful origins), as narrative justice (Lot reaps what he sowed), and as another episode in Genesis's unflinching portrait of a family line distinguished more by dysfunction than by virtue. The narrative's moral silence is not indifference but literary strategy — the reader is trusted to evaluate without being instructed.",
+        "key_verses": [
+          "Genesis 19:32-36",
+          "Genesis 19:8",
+          "Genesis 19:37-38",
+          "Deuteronomy 23:3"
+        ],
+        "strengths": "The etymological analysis of 'Moab' is linguistically sound and devastating. The reversal of Lot's earlier treatment of his daughters is a brilliant literary observation. The multi-level reading (polemic, narrative justice, family dysfunction) does justice to the text's complexity.",
+        "weaknesses": "The polemical reading may be too comfortable with the text's use of sexual violence as a national insult. Reading the daughters' actions as 'narrative justice' against Lot risks treating sexual assault symmetrically — what Lot did to his daughters and what they do to him are not morally equivalent."
       },
       {
-        "tradition": "Narrative Critique",
-        "scholar_id": "longman",
-        "summary": "Genesis 19 shows Lot's moral deterioration from proximity to Sodom. His offer, his daughters' later actions, and his entire trajectory are cautionary. The text condemns by depicting, not by explicit editorial commentary."
-      },
-      {
-        "tradition": "Lesser Evil Logic",
+        "tradition": "Desperation and Moral Ambiguity",
+        "tradition_family": "jewish",
         "scholar_id": "sarna",
-        "summary": "Lot wrongly calculated a 'lesser evil.' The angels' intervention shows God's rejection of both evils. Scripture records human moral failures realistically. Lot's presence among the righteous (2 Peter 2:7) refers to his faith, not his ethics."
+        "summary": "Sarna emphasizes the daughters' stated motivation: 'there is no man around here to give us children — as is the custom all over the earth' (19:31). They believe the world has ended — a not unreasonable conclusion given the apocalyptic destruction they just witnessed. Sarna argues their actions, while morally wrong, are driven by a primal impulse to preserve human life and their family line in what they perceive as an extinction-level event. The narrative does not condemn them explicitly, which Sarna reads as an acknowledgment of the moral complexity of their situation. Sarna notes that the Torah later explicitly prohibits incest (Lev 18:6-18), suggesting that the patriarchal narratives predate the Mosaic legislation and are not evaluated by its standards within the text. The narrative occupies a moral gray zone: the act is wrong, the motivation is understandable, and the narrator presents both without forcing a verdict.",
+        "key_verses": [
+          "Genesis 19:31",
+          "Genesis 19:32",
+          "Leviticus 18:6-7",
+          "Genesis 19:37-38"
+        ],
+        "strengths": "Takes the daughters' stated motivation seriously rather than simply condemning them. The observation about pre-Mosaic moral frameworks is historically important. The 'moral gray zone' reading honest about the text's own ambiguity.",
+        "weaknesses": "The 'they thought the world had ended' reading may be contradicted by the text — they left Zoar, a surviving city (19:30). The emphasis on their motivation can minimize the gravity of what they did — however desperate, they intoxicated and assaulted their father."
+      },
+      {
+        "tradition": "Canonical Irony — Moabite Redemption",
+        "tradition_family": "evangelical",
+        "scholar_id": "waltke",
+        "summary": "Waltke reads the passage within its broader canonical arc. The immediate function is polemical — Moab and Ammon, born of incest, are Israel's adversaries. But the canonical trajectory subverts the polemic: Ruth the Moabite becomes an ancestor of David and, ultimately, of Jesus (Ruth 4:17-22; Matt 1:5). The nation born of shame produces the woman whose loyalty to Naomi and faith in Yahweh become exemplary in Israel. Waltke argues this canonical irony is theologically significant: God's redemptive purposes cannot be confined by human categories of shame and honor. The incestuous origin of Moab, which should permanently disqualify the nation (Deut 23:3), is overridden by God's sovereign inclusion of Ruth in the messianic line. The passage thus illustrates both human depravity and divine grace — the Lot narratives show what happens when faith deteriorates (contrast Lot with Abraham), while Ruth shows that God redeems even what begins in disgrace.",
+        "key_verses": [
+          "Genesis 19:37",
+          "Ruth 1:16-17",
+          "Ruth 4:17",
+          "Matthew 1:5"
+        ],
+        "strengths": "The canonical arc from Moab's incestuous origin to Ruth's inclusion in the messianic line is theologically powerful. Reads the passage within the broader Genesis theme of election and grace. The contrast between Lot and Abraham illuminates both characters.",
+        "weaknesses": "The canonical reading, while theologically rich, may move too quickly past the moral difficulty of the passage itself. Ruth's redemption of Moab's reputation does not retroactively justify or explain what happened in the cave."
+      },
+      {
+        "tradition": "Women's Agency in a Patriarchal World",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes reads the daughters' actions as a deeply problematic exercise of agency within a system that offered them no legitimate options. In the patriarchal world of Genesis, women without husbands and without sons had no social standing, no economic security, and no future. The daughters take initiative — a recurring theme in Genesis, where women like Rebekah, Tamar, and Ruth act decisively when patriarchal systems fail them. Jobes argues the narrator does not approve of the action but understands the desperation: these women have just lost their mother, their home, their community, and (as they see it) their future. Their solution is morally wrong but humanly comprehensible. Jobes draws a careful distinction: understanding is not endorsement. The passage joins a series of Genesis narratives (Hagar, Tamar, Dinah) where women's moral choices are conditioned by a system that denies them autonomy, and the narrator presents their actions with more nuance than later interpreters typically allow.",
+        "key_verses": [
+          "Genesis 19:30-32",
+          "Genesis 38:14-18",
+          "Ruth 3:1-9",
+          "Genesis 16:1-4"
+        ],
+        "strengths": "Contextualizes the daughters' actions within the social realities of the ancient world without excusing them. The comparison to other women who take decisive action (Tamar, Ruth) illuminates a literary pattern. Avoids both simplistic condemnation and inappropriate sympathy.",
+        "weaknesses": "The 'agency within patriarchy' framework is a modern analytical category that may not fully capture the ancient text's own concerns. The comparison to Tamar and Ruth risks flattening significant moral differences between those narratives."
+      },
+      {
+        "tradition": "Theological-Narrative Analysis",
+        "tradition_family": "evangelical",
+        "scholar_id": "block",
+        "summary": "Block reads the Lot narratives (Gen 13, 14, 18-19) as a sustained contrast with Abraham. Where Abraham chose faith and the promised land, Lot chose the well-watered plain near Sodom (13:10-11). Where Abraham interceded for Sodom (18:22-33), Lot could barely be dragged out of it (19:16). Where Abraham received the covenant son through faith, Lot's 'sons' come through incest and deception. Block argues the passage is a case study in spiritual and moral deterioration: Lot began as Abraham's kinsman but ended as a drunken cave-dweller whose legacy is Israel's enemies. The daughters' actions are the culmination of Lot's trajectory — they mirror the moral world of Sodom, where sexual boundaries are meaningless. Block notes the devastating detail: Lot 'was not aware' of his daughters' actions (19:33, 35), echoing his earlier moral obliviousness in Sodom. The entire Lot cycle illustrates the consequences of choosing proximity to the world over faithfulness to God.",
+        "key_verses": [
+          "Genesis 13:10-12",
+          "Genesis 19:16",
+          "Genesis 19:33-35",
+          "Genesis 19:37-38"
+        ],
+        "strengths": "Reads the passage within the larger Lot-Abraham contrast, which is central to Genesis's narrative architecture. The moral deterioration arc is convincingly traced. The observation about Lot's repeated obliviousness is textually sharp.",
+        "weaknesses": "The emphasis on Lot's moral decline can obscure the daughters' own agency and responsibility. Treating the passage primarily as an illustration of Lot's failure risks reducing the women to functions of his story rather than agents in their own narrative."
       }
     ],
     "related_chapters": [
@@ -2921,6 +3708,39 @@
       "hospitality",
       "moral failure",
       "daughters"
+    ],
+    "context": "After the destruction of Sodom, Lot's two daughters, believing they are the last survivors, get their father drunk on successive nights and conceive children by him (Gen 19:30-38). The sons born — Moab and Ben-Ammi — become the ancestors of Israel's enemies, the Moabites and Ammonites. The text narrates without explicit moral commentary, leaving the reader to evaluate the actions of the daughters and the significance of the origin story.",
+    "key_verses": [
+      {
+        "ref": "Genesis 19:30-31",
+        "text": "Lot and his two daughters left Zoar and settled in the mountains, for he was afraid to stay in Zoar. He and his two daughters lived in a cave. One day the older daughter said to the younger, 'Our father is old, and there is no man around here to give us children — as is the custom all over the earth.'"
+      },
+      {
+        "ref": "Genesis 19:32",
+        "text": "Let's get our father to drink wine and then sleep with him and preserve our family line through our father."
+      },
+      {
+        "ref": "Genesis 19:36-38",
+        "text": "So both of Lot's daughters became pregnant by their father. The older daughter had a son, and she named him Moab; he is the father of the Moabites of today. The younger daughter also had a son, and she named him Ben-Ammi; he is the father of the Ammonites of today."
+      }
+    ],
+    "consensus": "Most scholars read the passage primarily as an origin story for the Moabites and Ammonites — Israel's persistent enemies — with the incestuous origin serving as a polemical slur. Some scholars note the daughters' desperation (they believe the world has ended) as a mitigating factor. The narrative's moral silence is characteristic of Genesis — the narrator presents and lets the reader judge.",
+    "further_reading": [
+      {
+        "author": "Robert Alter",
+        "title": "Genesis: Translation and Commentary",
+        "year": 1996
+      },
+      {
+        "author": "Nahum Sarna",
+        "title": "Genesis (JPS Torah Commentary)",
+        "year": 1989
+      },
+      {
+        "author": "Tikva Frymer-Kensky",
+        "title": "Reading the Women of the Bible",
+        "year": 2002
+      }
     ]
   },
   {
@@ -2932,19 +3752,74 @@
     "question": "How could David—a man after God's heart—commit adultery and murder, yet remain blessed?",
     "responses": [
       {
-        "tradition": "Grace Despite Sin",
-        "scholar_id": "macarthur",
-        "summary": "David's restoration after genuine repentance (Psalm 51) demonstrates grace, not divine approval of sin. David suffered severe consequences: the child's death, family dysfunction, Absalom's rebellion. Grace forgives; it doesn't erase consequences."
+        "tradition": "Power, Abuse, and Consent",
+        "tradition_family": "critical",
+        "scholar_id": "anderson",
+        "summary": "Anderson draws attention to the verbs in 11:4: David 'sent messengers to get her' — this is royal commandeering, not romantic courtship. Bathsheba's consent is never mentioned; the text describes royal power exercised over a subject. Anderson argues that modern readers must attend to the power differential: David is the king with absolute authority; Bathsheba is the wife of a soldier fighting David's war. The narrative technique is significant: the verbs are active (David sees, sends, takes, sleeps) while Bathsheba is entirely passive until she 'sent word' about the pregnancy — her only act of agency in the chapter. Anderson contends the text presents a case study in the abuse of power, not a love affair. Nathan's parable (12:1-6) frames it exactly this way: a powerful man taking what belongs to a powerless man. The Hebrew tradition's later veneration of David does not erase the text's own clear moral judgment — 'the thing David had done displeased the LORD' (11:27).",
+        "key_verses": [
+          "2 Samuel 11:4",
+          "2 Samuel 11:27",
+          "2 Samuel 12:1-6",
+          "2 Samuel 12:9"
+        ],
+        "strengths": "Close attention to the text's verb structure reveals power dynamics that traditional readings often overlook. Nathan's parable confirms the 'abuse of power' reading — it is about a powerful man taking from a powerless one. The observation about Bathsheba's passivity is textually precise.",
+        "weaknesses": "The degree to which modern concepts of consent can be applied to ancient texts is debated. Some interpreters argue the text leaves Bathsheba's agency more ambiguous than the power-abuse reading allows."
       },
       {
-        "tradition": "Covenant Faithfulness",
-        "scholar_id": "block",
-        "summary": "God's commitment to the Davidic covenant didn't depend on David's moral perfection. The narrative's unflinching honesty about David's failure actually strengthens its historical credibility. Scripture shows heroes with clay feet."
+        "tradition": "Literary-Psychological Portrait",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads 2 Samuel 11-12 as the turning point of the David narrative — the moment when the gifted, charismatic hero becomes a calculating tyrant. The literary artistry is extraordinary: the opening note that 'kings go off to war' (11:1) establishes David's dereliction before the sin begins. The sequence of verbs in 11:2-4 — saw, sent, inquired, sent, took, slept — traces a progression from passive observation to active power abuse, each step escalating the offense. Alter notes that David's attempt to cover up the pregnancy (summoning Uriah home, getting him drunk) reveals a calculating intelligence directed toward evil — this is not a moment of passion but a sustained campaign of deception. The ironic climax is Uriah's greater honor than the king: even drunk, Uriah refuses to go home to his wife while his comrades are in the field (11:11). The loyal soldier out-virtues the anointed king. Nathan's parable then traps David in his own moral judgment — the greatest literary ambush in the Bible.",
+        "key_verses": [
+          "2 Samuel 11:1",
+          "2 Samuel 11:2-4",
+          "2 Samuel 11:11",
+          "2 Samuel 12:7"
+        ],
+        "strengths": "Unmatched literary analysis that reveals the narrative's extraordinary sophistication. The verb-sequence observation is exegetically precise. The Uriah-David contrast is one of the most devastating ironic reversals in ancient literature.",
+        "weaknesses": "The literary approach, while brilliant, can aestheticize a narrative about sexual abuse and murder. The emphasis on David's psychology may inadvertently center the perpetrator rather than the victim."
       },
       {
-        "tradition": "Prophetic Confrontation",
+        "tradition": "Prophetic Confrontation and Power",
+        "tradition_family": "mainline",
         "scholar_id": "brueggemann",
-        "summary": "Nathan's confrontation models prophetic accountability. David's 'I have sinned against the LORD' (12:13) shows genuine repentance. The narrative is about the possibility of restoration through confession, not the permissibility of sin."
+        "summary": "Brueggemann reads the David-Bathsheba narrative as a paradigm of how prophetic truth confronts royal power. David has become exactly what Samuel warned Israel a king would be (1 Sam 8:11-18) — a ruler who 'takes' (the verb is repeated) whatever he desires. Nathan's confrontation is the prophetic tradition at its most courageous: speaking truth to absolute power at personal risk. Brueggemann argues that the narrative establishes a permanent biblical principle: no human authority is above God's moral law, and the prophetic voice exists to hold power accountable. David's repentance is genuine and significant — he accepts Nathan's word rather than killing the prophet (as other ancient kings would have done) — but it does not undo the consequences. Brueggemann notes the theological sophistication: God forgives David's sin (12:13) but does not remove its consequences (12:10-14). Grace and accountability coexist. The sword 'will never depart from your house' (12:10) — the rest of 2 Samuel is the outworking of this judgment through Amnon, Absalom, and Adonijah.",
+        "key_verses": [
+          "2 Samuel 12:7",
+          "2 Samuel 12:10-14",
+          "1 Samuel 8:11-18",
+          "Psalm 51:4"
+        ],
+        "strengths": "Situates the narrative within the broader prophetic tradition of holding power accountable. The connection to Samuel's warning about kings is textually compelling. The 'grace and consequences coexist' insight is theologically mature and pastorally relevant.",
+        "weaknesses": "The focus on David and Nathan, while important, can marginalize Bathsheba's experience and Uriah's murder. The prophetic-confrontation framework centers male actors (prophet and king) while the woman remains a supporting character."
+      },
+      {
+        "tradition": "Trauma and Recovery of Voice",
+        "tradition_family": "mainline",
+        "scholar_id": "oconnor",
+        "summary": "O'Connor reads the narrative from Bathsheba's perspective, noting how thoroughly the text silences her. She is seen, sent for, taken, impregnated — all in passive voice. Her only words in the chapter are 'I am pregnant' (11:5). The text never records her feelings about David's actions or Uriah's murder. O'Connor argues that this silence is itself the point: the narrative mirrors the experience of women subjected to powerful men — their interiority is erased, their consent is irrelevant, their grief is unrecorded. Yet Bathsheba survives — she eventually becomes a political force in 1 Kings 1-2, securing Solomon's succession. O'Connor reads this as a recovery narrative: the woman who was objectified by royal power eventually wields royal power herself. The canonical arc from silent victim (2 Sam 11) to strategic queen mother (1 Kings 1) does not erase the trauma but demonstrates that the traumatized are not defined by their worst experience. Scripture preserves both the trauma and the recovery.",
+        "key_verses": [
+          "2 Samuel 11:4-5",
+          "2 Samuel 12:24",
+          "1 Kings 1:15-21",
+          "1 Kings 2:19"
+        ],
+        "strengths": "Powerfully recovers the absent perspective of Bathsheba. The canonical arc from victim to queen mother is textually grounded and pastorally significant. Avoids both sentimentalizing and moralizing the trauma.",
+        "weaknesses": "The recovery narrative may impose a modern therapeutic framework on ancient texts. Bathsheba's later political agency does not necessarily mean she 'recovered' from the trauma in any modern psychological sense. The text may not intend the trajectory O'Connor identifies."
+      },
+      {
+        "tradition": "Sin, Repentance, and Consequences",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin read the David-Bathsheba narrative as both warning and comfort. The warning: even the greatest saint can commit the worst sins. David was a man after God's own heart who became an adulterer and murderer. No believer is immune to catastrophic moral failure, and David's fall should produce humility in every reader. The comfort: David's genuine repentance (Psalm 51) was met with genuine forgiveness ('The LORD has taken away your sin,' 12:13). Calvin argued that David's repentance was exemplary — immediate, unconditional, and without self-justification. Yet Calvin equally stressed that forgiveness did not eliminate consequences: the child died, the sword never departed from David's house, and the public disgrace endured. Calvin drew the pastoral principle that God's forgiveness restores the sinner's relationship with God but does not necessarily remove the temporal consequences of sin. This distinction — between judicial forgiveness and experiential consequences — has been foundational for Reformed pastoral theology.",
+        "key_verses": [
+          "2 Samuel 12:13",
+          "2 Samuel 12:14",
+          "Psalm 51:1-4",
+          "Psalm 51:10-12"
+        ],
+        "strengths": "Balances warning and comfort with characteristic Calvinist pastoral wisdom. The distinction between forgiveness and consequences is theologically precise and practically important. David's repentance as a model for genuine contrition is deeply embedded in Christian devotional tradition.",
+        "weaknesses": "The focus on David's repentance and spiritual restoration can center the perpetrator at the expense of the victims (Bathsheba, Uriah, the child). The pastoral tradition built on Psalm 51, while valuable, may too easily move from 'David sinned and repented' to 'David was restored,' bypassing the ongoing suffering of those he harmed."
       }
     ],
     "related_chapters": [
@@ -2964,6 +3839,47 @@
       "adultery",
       "murder",
       "repentance"
+    ],
+    "context": "2 Samuel 11 recounts David's adultery with Bathsheba and murder of her husband Uriah. At a time when 'kings go off to war' (11:1), David stays in Jerusalem, sees Bathsheba bathing, sends for her, and sleeps with her. When she becomes pregnant, David orchestrates Uriah's death by placing him in the front lines. The prophet Nathan confronts David with a parable (2 Sam 12), and David repents. The text raises questions about the nature of consent (given the power differential), the severity of consequences, and the meaning of David's continued favor with God.",
+    "key_verses": [
+      {
+        "ref": "2 Samuel 11:2-4",
+        "text": "One evening David got up from his bed and walked around on the roof of the palace. From the roof he saw a woman bathing. The woman was very beautiful, and David sent someone to find out about her. The man said, 'She is Bathsheba, the daughter of Eliam and the wife of Uriah the Hittite.' Then David sent messengers to get her. She came to him, and he slept with her."
+      },
+      {
+        "ref": "2 Samuel 11:15",
+        "text": "In it he wrote, 'Put Uriah out in front where the fighting is fiercest. Then withdraw from him so he will be struck down and die.'"
+      },
+      {
+        "ref": "2 Samuel 12:7-9",
+        "text": "Then Nathan said to David, 'You are the man! This is what the LORD, the God of Israel, says: \"I anointed you king over Israel, and I delivered you from the hand of Saul... Why did you despise the word of the LORD by doing what is evil in his eyes?\"'"
+      },
+      {
+        "ref": "2 Samuel 12:13",
+        "text": "Then David said to Nathan, 'I have sinned against the LORD.' Nathan replied, 'The LORD has taken away your sin. You are not going to die.'"
+      },
+      {
+        "ref": "Psalm 51:1-2",
+        "text": "Have mercy on me, O God, according to your unfailing love; according to your great compassion blot out my transgressions. Wash away all my iniquity and cleanse me from my sin."
+      }
+    ],
+    "consensus": "All traditions condemn David's actions. The narrative is widely recognized as one of the most psychologically sophisticated in ancient literature. Modern scholarship increasingly recognizes the power dynamics involved — David is the king, Bathsheba is a subject, and 'sent messengers to get her' (11:4) implies royal command. The text explicitly calls the act evil (12:9) and traces severe consequences through the rest of David's life.",
+    "further_reading": [
+      {
+        "author": "Robert Alter",
+        "title": "The David Story: A Translation with Commentary of 1 and 2 Samuel",
+        "year": 1999
+      },
+      {
+        "author": "Walter Brueggemann",
+        "title": "First and Second Samuel (Interpretation Commentary)",
+        "year": 1990
+      },
+      {
+        "author": "A.A. Anderson",
+        "title": "2 Samuel (Word Biblical Commentary)",
+        "year": 1989
+      }
     ]
   },
   {
@@ -2975,19 +3891,74 @@
     "question": "Why does God bless Jacob despite his deception of his blind father?",
     "responses": [
       {
-        "tradition": "Consequences View",
+        "tradition": "Narrative Justice — The Deceiver Deceived",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads Jacob's story as a sustained literary exploration of deception and its consequences. The narrative is structured around poetic justice: Jacob deceives his father with goatskins and animal meat; Laban deceives Jacob with the wrong bride on the wedding night (29:23-25); Jacob's own sons later deceive him with Joseph's blood-soaked coat of goatskins (37:31-33). The verb 'recognize' (haker-na) becomes a narrative keyword — Jacob tells Isaac 'recognize me' through the deception (implied in 27:21-23); Judah tells Jacob 'recognize' Joseph's coat (37:32); Tamar tells Judah 'recognize' his own pledge items (38:25). The deceiver is repeatedly deceived by his own method. Alter argues this is not divine punishment but narrative architecture: the text traces how deception ripples through generations, teaching through story rather than sermon. Jacob is not condemned in a legal sense — his election stands — but the consequences of his deception follow him relentlessly. The literary artistry ensures the reader cannot miss the pattern.",
+        "key_verses": [
+          "Genesis 27:19",
+          "Genesis 29:25",
+          "Genesis 37:32-33",
+          "Genesis 38:25-26"
+        ],
+        "strengths": "Extraordinary literary analysis connecting deception motifs across the entire Jacob cycle. The haker-na keyword connection is one of the most celebrated observations in biblical literary criticism. Demonstrates how narrative accomplishes what legal condemnation cannot — teaching through consequence rather than decree.",
+        "weaknesses": "The literary reading may obscure the moral urgency for readers who want a clear verdict: was Jacob wrong? Identifying narrative patterns does not necessarily tell us what the text evaluates as right or wrong."
+      },
+      {
+        "tradition": "Sovereign Election Despite Human Failure",
+        "tradition_family": "evangelical",
         "scholar_id": "waltke",
-        "summary": "Jacob paid dearly: exile from home, Laban's deceptions, family strife, Joseph's 'death.' God blessed him despite, not because of, his methods. The blessing was already promised (25:23); the deception was unnecessary and costly."
+        "summary": "Waltke argues that the Jacob narrative illustrates a foundational biblical principle: God accomplishes his sovereign purposes through flawed human agents without endorsing their methods. God had already declared that 'the older will serve the younger' (25:23) — Jacob's election was settled before birth. Jacob's deception was therefore unnecessary — God would have fulfilled his word without it. The deception reveals Jacob's failure to trust God's promise, not God's need for human scheming. Waltke notes that the entire family is complicit and morally compromised: Isaac favors Esau for selfish reasons (the taste of game, 25:28), Rebekah manipulates her son to execute the deception, Jacob lies to his father and invokes God's name in the lie, and Esau had already despised his birthright (25:34). No one emerges with moral credit. Yet God's purpose prevails — not because of human virtue but despite human failure. The theological lesson is that election is unconditional: God chose Jacob not because Jacob deserved it but because God's purpose required it.",
+        "key_verses": [
+          "Genesis 25:23",
+          "Genesis 25:34",
+          "Genesis 27:20",
+          "Romans 9:11-12"
+        ],
+        "strengths": "Correctly identifies that God's oracle preceded and did not require the deception. The observation that the entire family is morally compromised distributes blame appropriately. The theological principle — God works through failure, not just through obedience — is deeply biblical.",
+        "weaknesses": "The 'election despite failure' reading can minimize the seriousness of Jacob's sin by making it theologically irrelevant. If God would have accomplished his purpose anyway, the deception seems pointless rather than sinful — it becomes a strategic error rather than a moral offense."
       },
       {
-        "tradition": "Rebekah's Role",
-        "scholar_id": "sarna",
-        "summary": "Rebekah, who received the oracle about the younger serving the elder, orchestrated the deception. She may have felt she was fulfilling divine promise by human means—a recurring biblical error. Her motives were mixed, not pure manipulation."
+        "tradition": "Transformation Narrative — Jacob to Israel",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay reads the Jacob cycle as a transformation narrative: the deceiver (yaʿăqōb, 'he grasps the heel / he supplants') becomes Israel ('he struggles with God'). The deception of Isaac is the low point of a character arc that moves through exile, labor, suffering, and encounter with God toward genuine transformation. The pivotal moment is the Jabbok wrestling (32:22-32), where Jacob — for the first time — cannot deceive or manipulate his way to victory. He is forced to struggle honestly, is wounded, and receives a new name that reflects his new character. Goldingay argues that the renaming does not erase the past but transforms it: the same tenacity that drove Jacob's deception becomes, when redirected by encounter with God, the persistence that defines Israel's relationship with the divine. The narrative teaches that God does not choose finished products but works with raw material — even morally questionable raw material — and shapes it over a lifetime of struggle.",
+        "key_verses": [
+          "Genesis 25:26",
+          "Genesis 32:24-28",
+          "Genesis 33:4",
+          "Hosea 12:3-4"
+        ],
+        "strengths": "Reads the entire Jacob cycle as a coherent character arc rather than isolating individual episodes. The Jabbok wrestling as the moment of honest encounter is theologically profound. The wordplay between Jacob and Israel captures the transformation at the narrative's heart.",
+        "weaknesses": "The transformation reading may be too optimistic about Jacob's change — even after Peniel, Jacob's behavior is not uniformly virtuous (Gen 34; 37). The narrative may be more ambiguous about Jacob's transformation than the reading suggests."
       },
       {
-        "tradition": "Transformation Narrative",
-        "scholar_id": "longman",
-        "summary": "Jacob's character arc leads to Peniel where he's broken and renamed Israel. His early deceptions set up his later transformation. Scripture traces moral development, not instant perfection. The deceiver becomes the limping patriarch."
+        "tradition": "Patriarchal Critique",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin condemned Jacob's deception straightforwardly: lying is sin, and using God's name in a lie compounds the offense. Calvin argued that Rebekah bore primary responsibility for devising the scheme, but Jacob was fully culpable for executing it. The fact that God had promised Jacob the blessing (25:23) made the deception not only sinful but faithless — Jacob tried to accomplish by fraud what God had already guaranteed by promise. Calvin drew a sharp distinction between God's decree (which is always righteous) and human means of pursuing it (which may be sinful). God's sovereign purpose to bless Jacob does not justify Jacob's methods of obtaining the blessing. Calvin noted the immediate consequences: Jacob must flee his home, never sees his mother again, serves Laban for twenty years, and lives in constant fear of Esau's vengeance. These are not random misfortunes but the providential consequences of his deception. God honors his promise to Jacob while disciplining Jacob for how he pursued it.",
+        "key_verses": [
+          "Genesis 27:19-20",
+          "Genesis 27:41-45",
+          "Genesis 31:38-42",
+          "Proverbs 12:22"
+        ],
+        "strengths": "Unflinching moral evaluation that does not excuse the patriarch. The distinction between God's decree and human methods is theologically precise. The catalog of consequences provides a clear narrative of divine discipline.",
+        "weaknesses": "Calvin's moralistic reading, while ethically clear, may underappreciate the narrative's own ambiguity — the text never explicitly condemns Jacob, and the blessing stands. The sharp moral categories may not capture the literary sophistication of the Genesis narrator."
+      },
+      {
+        "tradition": "Women's Agency — Rebekah's Initiative",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes centers Rebekah in the narrative, noting that she — not Jacob — is the driving force behind the deception. Rebekah received the oracle directly (25:23), recognized that Isaac's preference for Esau was working against God's stated purpose, and devised the plan to ensure the right son received the blessing. Jobes argues that Rebekah acts out of theological conviction, not mere maternal favoritism: she knows God chose Jacob and believes she must act to fulfill that purpose when Isaac, blinded by both cataracts and partiality, prepares to bless the wrong son. This puts Rebekah in a morally complex position — she uses deception to accomplish what she believes is God's will. Jobes draws a comparison to other biblical women who use unconventional means to advance God's purposes (the Hebrew midwives in Ex 1:15-21, Rahab in Josh 2). The narrative neither fully condemns nor fully commends Rebekah — she achieves her goal but never sees Jacob again. Jobes notes that the text preserves the moral complexity rather than simplifying it into a lesson.",
+        "key_verses": [
+          "Genesis 25:23",
+          "Genesis 27:5-10",
+          "Genesis 27:42-46",
+          "Exodus 1:15-21"
+        ],
+        "strengths": "Recovers Rebekah as the narrative's central agent — she drives the plot, not Jacob. The comparison to other women who deceive for righteous purposes is textually grounded. The moral complexity is handled with nuance rather than forced into categories.",
+        "weaknesses": "Framing Rebekah's deception as potentially justified by theological conviction raises difficult questions about when lying for God's purposes is acceptable. The comparison to the midwives and Rahab, while illuminating, may overstate the parallels — those women protected innocent life, while Rebekah secured social advantage."
       }
     ],
     "related_chapters": [
@@ -3003,6 +3974,43 @@
       "deception",
       "blessing",
       "birthright"
+    ],
+    "context": "Jacob deceives his blind father Isaac to steal Esau's blessing (Gen 27), following his earlier purchase of Esau's birthright for a bowl of stew (Gen 25:29-34). The deception is elaborate — Jacob wears goatskins to mimic Esau's hairy arms, lies directly ('I am Esau your firstborn,' 27:19), and invokes God's name in the lie ('The LORD your God gave me success,' 27:20). Yet God's prior oracle had designated Jacob as the chosen son (25:23), and the stolen blessing stands. The narrative raises sharp questions about divine election, the morality of deception, and whether God's purposes justify human deceit.",
+    "key_verses": [
+      {
+        "ref": "Genesis 25:23",
+        "text": "The LORD said to her, 'Two nations are in your womb, and two peoples from within you will be separated; one people will be stronger than the other, and the older will serve the younger.'"
+      },
+      {
+        "ref": "Genesis 27:18-19",
+        "text": "He went to his father and said, 'My father.' 'Yes, my son,' he answered. 'Who is it?' Jacob said to his father, 'I am Esau your firstborn. I have done as you told me. Please sit up and eat some of my game, so that you may give me your blessing.'"
+      },
+      {
+        "ref": "Genesis 27:35-36",
+        "text": "But he said, 'Your brother came deceitfully and took your blessing.' Esau said, 'Isn't he rightly named Jacob? This is the second time he has taken advantage of me: He took my birthright, and now he's taken my blessing!'"
+      },
+      {
+        "ref": "Genesis 32:28",
+        "text": "Then the man said, 'Your name will no longer be Jacob, but Israel, because you have struggled with God and with humans and have overcome.'"
+      }
+    ],
+    "consensus": "Most scholars agree the narrative does not endorse Jacob's deception — his subsequent life of exile, fear, and being deceived by Laban (Gen 29:23-25) functions as narrative justice. The text presents a morally complex character whose election depends on God's sovereign purpose, not on personal virtue. The renaming to Israel (32:28) marks a transformation, not a vindication of earlier behavior.",
+    "further_reading": [
+      {
+        "author": "Robert Alter",
+        "title": "Genesis: Translation and Commentary",
+        "year": 1996
+      },
+      {
+        "author": "Nahum Sarna",
+        "title": "Genesis (JPS Torah Commentary)",
+        "year": 1989
+      },
+      {
+        "author": "Bruce K. Waltke",
+        "title": "Genesis: A Commentary",
+        "year": 2001
+      }
     ]
   },
   {
@@ -3014,19 +4022,74 @@
     "question": "Why would God command a prophet to marry an unfaithful woman?",
     "responses": [
       {
-        "tradition": "Prophetic Symbolism",
-        "scholar_id": "macarthur",
-        "summary": "Hosea's marriage enacted Israel's spiritual adultery against Yahweh. The prophet's pain mirrored God's anguish. Redemptive love pursuing the unfaithful pictures God's relentless grace. The scandal was precisely the point."
-      },
-      {
-        "tradition": "Proleptically Unfaithful",
+        "tradition": "Historical Prophetic Act",
+        "tradition_family": "evangelical",
         "scholar_id": "stuart",
-        "summary": "'Wife of whoredom' may describe what Gomer would become, not her initial state. Hebrew idiom can express eventual character. Hosea married a woman who would prove unfaithful, making the tragedy unfold gradually as Israel's did."
+        "summary": "Stuart argues that the marriage was a real, historical prophetic act — not allegory. Prophets regularly performed symbolic actions that embodied their message (Isaiah walked naked for three years, Isa 20:3; Jeremiah wore a yoke, Jer 27:2; Ezekiel lay on his side for 390 days, Ezek 4:4-6). Hosea's marriage to Gomer was the most extreme of these enacted parables: by living in a marriage marked by betrayal and redemption, Hosea experienced God's own pain at Israel's unfaithfulness. Stuart contends that 'wife of whoredom' (1:2) is a prospective description — Gomer would become unfaithful, not that she was a prostitute at the time of marriage. God did not command Hosea to marry someone already immoral but forewarned him of what would happen. The marriage's agony — loving someone who keeps leaving — is the theological point: this is how God feels about Israel. The command to buy Gomer back (3:1-2) embodies God's relentless, costly, and humiliating love that pursues the unfaithful at personal expense.",
+        "key_verses": [
+          "Hosea 1:2",
+          "Hosea 3:1-2",
+          "Isaiah 20:3",
+          "Ezekiel 4:4-6"
+        ],
+        "strengths": "The prophetic-act reading is consistent with a well-documented prophetic practice. The prospective interpretation of 'wife of whoredom' resolves the ethical difficulty of God commanding a marriage to a known adulteress. The experiential dimension — Hosea feels what God feels — adds pastoral and theological depth.",
+        "weaknesses": "The prospective reading ('she would become unfaithful') is a possible but not obvious translation of the Hebrew. If taken literally, the marriage subjects both Hosea and Gomer to extraordinary suffering for a theological lesson — which raises questions about God's treatment of the individuals involved."
       },
       {
-        "tradition": "Metaphorical Reading",
+        "tradition": "Covenant Love as Theological Center",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Some scholars read Hosea's marriage as extended metaphor rather than biography. The theological message—God's persistent love for faithless Israel—doesn't require historical marriage. Literary prophecy can be as true as literal."
+        "summary": "Longman reads Hosea's marriage as a lens into the nature of divine ḥesed — covenant love that persists through betrayal. The theological center is not the marriage's dysfunction but its redemption: Hosea 2:14-23 describes God wooing Israel back to himself, speaking tenderly in the wilderness, restoring the covenant, and declaring 'I will betroth you to me forever' (2:19). Longman argues that Hosea reveals a God who is not stoically indifferent to Israel's unfaithfulness but passionately, painfully invested — 'My heart is changed within me; all my compassion is aroused' (11:8). This is not the distant deity of philosophical theism but a God who grieves, pursues, and redeems at personal cost. The marriage metaphor works because marriage in Israel was the closest human analogy to the covenant relationship — total commitment, mutual obligation, and devastating consequence when broken. Longman acknowledges the metaphor's limitations but argues its theological insight — that divine love is tenacious, costly, and ultimately irresistible — is among the most profound in the OT.",
+        "key_verses": [
+          "Hosea 2:14-15",
+          "Hosea 2:19-20",
+          "Hosea 11:8-9",
+          "Hosea 14:4"
+        ],
+        "strengths": "Centers the passage's theological contribution — the nature of divine love — rather than getting mired only in the ethical difficulties. The emphasis on ḥesed as costly, tenacious love is exegetically grounded and theologically powerful. Reads Hosea as a unified theological statement, not just chapters 1-3.",
+        "weaknesses": "The celebration of divine love can minimize the real human suffering the metaphor involves — Gomer's perspective is entirely absent. The 'theological center' emphasis may bypass the ethical questions too quickly."
+      },
+      {
+        "tradition": "Feminist Critique of the Marriage Metaphor",
+        "tradition_family": "mainline",
+        "scholar_id": "oconnor",
+        "summary": "O'Connor raises critical questions about the marriage metaphor's implications for real women. In Hosea 2, God-as-husband threatens Israel-as-wife with public humiliation: 'I will strip her naked and make her as bare as on the day she was born' (2:3), 'I will punish her for the days she burned incense to the Baals' (2:13). The metaphor uses the language and logic of domestic violence — a husband controlling, punishing, stripping, and isolating a wife who has been unfaithful. O'Connor contends that however powerful the theological point about divine love, the metaphor normalizes male violence against women by casting God in the role of the punishing husband. This does not mean the text should be excised from the canon, but it must be read with awareness of its potential to legitimize abuse. O'Connor argues that the prophetic marriage metaphor (also in Ezekiel 16, 23; Jeremiah 2-3) requires feminist critique precisely because it is so theologically influential — its power to shape images of God also shapes images of marriage and gender.",
+        "key_verses": [
+          "Hosea 2:3",
+          "Hosea 2:10-13",
+          "Ezekiel 16:37-42",
+          "Hosea 2:14-15"
+        ],
+        "strengths": "Identifies a genuine ethical problem that most traditional readings overlook. The connection between divine metaphor and human behavior is real — how we imagine God shapes how we treat each other. The call for critical awareness is pastorally responsible.",
+        "weaknesses": "The critique may conflate metaphor and reality — God is not literally a husband, and the metaphor's logic operates on a different plane than human marriage. The feminist reading, taken to its conclusion, may render prophetic judgment-language unusable, since nearly all biblical metaphors for divine judgment involve some form of violence."
+      },
+      {
+        "tradition": "Literary-Theological Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads Hosea 1-3 as literary poetry of extraordinary emotional range, moving from grief to rage to tenderness to hope within a few verses. The poetry's power lies in its compression: the shift from 'she is not my wife, and I am not her husband' (2:2) to 'I will betroth you to me forever' (2:19) traverses the entire emotional landscape of betrayal and reconciliation in seventeen verses. Alter notes that the prophetic literature's use of the marriage metaphor is not unique to Israel but takes on distinctive theological weight because of Israel's covenant theology — unfaithfulness to God is not merely disobedience but adultery, a betrayal of the most intimate relationship. The naming of the children (Jezreel, Lo-Ruhamah, Lo-Ammi) is a poetic device that makes the prophetic message incarnate — these are real names for real children who embody judgment in their daily existence. Alter argues that the literary genius of Hosea is its capacity to make the reader feel God's pain rather than merely understand God's judgment — it transforms theology from proposition to pathos.",
+        "key_verses": [
+          "Hosea 1:4-9",
+          "Hosea 2:2",
+          "Hosea 2:19-20",
+          "Hosea 11:1-4"
+        ],
+        "strengths": "Attends to the poetry's extraordinary emotional and literary power. The observation about naming as incarnate prophecy is brilliant. The movement from proposition to pathos captures what makes Hosea distinctive among the prophets.",
+        "weaknesses": "The literary approach may aestheticize what is, at its core, a narrative of marital dysfunction and theological violence. Appreciation of literary craft does not resolve the ethical questions the feminist critique raises."
+      },
+      {
+        "tradition": "Allegory, Not History",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "Several church fathers — notably Jerome and some later Jewish interpreters — argued that the marriage to Gomer was purely allegorical, not historical. The reasoning: God would not command a prophet to marry an immoral woman, since this would contradict the Torah's standards for priestly purity (Lev 21:7) and undermine the prophet's credibility. On this reading, 'wife of whoredom' describes Israel's spiritual condition, not a literal woman named Gomer. The marriage, children, betrayal, and redemption are an extended parable — a literary device rather than a biographical report. Jerome argued that reading the story literally would make God complicit in immorality, which is theologically impossible. The allegorical reading gained significant support in medieval Judaism and Christianity, though it has lost ground in modern scholarship. Proponents note that other prophetic books use marriage imagery without literal marriage (Ezek 16; Jer 2-3) and that Hosea's literary structure supports a parabolic reading.",
+        "key_verses": [
+          "Hosea 1:2",
+          "Hosea 2:2-5",
+          "Ezekiel 16:1-14",
+          "Jeremiah 2:2"
+        ],
+        "strengths": "Resolves the ethical difficulty of God commanding a marriage to a promiscuous woman. Has deep roots in patristic and medieval interpretation. Consistent with the observation that other prophets use marriage metaphor without literal marriage.",
+        "weaknesses": "The allegorical reading weakens the prophetic act's power — lived experience carries a force that literary metaphor alone cannot match. The trend in modern scholarship strongly favors the historical reading. The text's biographical details (Gomer named, children named, price paid for redemption) resist purely allegorical interpretation."
       }
     ],
     "related_chapters": [
@@ -3046,6 +4109,43 @@
       "prostitution",
       "Israel",
       "unfaithfulness"
+    ],
+    "context": "God commands Hosea to marry Gomer, described as an 'adulterous wife' or 'wife of whoredom' (Hos 1:2). She bears children whose names are prophetic judgments: Jezreel ('God scatters'), Lo-Ruhamah ('not loved'), Lo-Ammi ('not my people'). She apparently leaves Hosea for other lovers, and God commands Hosea to buy her back (Hos 3:1-2). The marriage functions as a living parable of God's relationship with unfaithful Israel. The difficulties: Did God really command a prophet to marry a promiscuous woman? Is the story literal or allegorical? What does it say about women and marriage?",
+    "key_verses": [
+      {
+        "ref": "Hosea 1:2",
+        "text": "When the LORD began to speak through Hosea, the LORD said to him, 'Go, marry a promiscuous woman and have children with her, for like an adulterous wife this land is guilty of unfaithfulness to the LORD.'"
+      },
+      {
+        "ref": "Hosea 2:19-20",
+        "text": "I will betroth you to me forever; I will betroth you in righteousness and justice, in love and compassion. I will betroth you in faithfulness, and you will acknowledge the LORD."
+      },
+      {
+        "ref": "Hosea 3:1-2",
+        "text": "The LORD said to me, 'Go, show your love to your wife again, though she is loved by another man and is an adulteress. Love her as the LORD loves the Israelites, though they turn to other gods and love the sacred raisin cakes.' So I bought her for fifteen shekels of silver and about a homer and a lethek of barley."
+      },
+      {
+        "ref": "Hosea 11:8-9",
+        "text": "How can I give you up, Ephraim? How can I hand you over, Israel? ... My heart is changed within me; all my compassion is aroused. I will not carry out my fierce anger, nor will I devastate Ephraim again. For I am God, and not a man — the Holy One among you."
+      }
+    ],
+    "consensus": "Most scholars take the marriage as historically real rather than purely allegorical — the prophetic act loses its force if it is merely a thought experiment. Whether Gomer was promiscuous before or after the marriage is debated. All traditions recognize the passage as a profound metaphor for divine love that pursues the unfaithful, though feminist scholars raise legitimate concerns about the metaphor's implications for human marriage.",
+    "further_reading": [
+      {
+        "author": "Francis I. Andersen and David Noel Freedman",
+        "title": "Hosea (Anchor Bible)",
+        "year": 1980
+      },
+      {
+        "author": "Gale Yee",
+        "title": "Poor Banished Children of Eve: Woman as Evil in the Hebrew Bible",
+        "year": 2003
+      },
+      {
+        "author": "Douglas Stuart",
+        "title": "Hosea-Jonah (Word Biblical Commentary)",
+        "year": 1987
+      }
     ]
   },
   {
@@ -3057,19 +4157,74 @@
     "question": "How is Samson a hero of faith when he broke his vows and was morally reckless?",
     "responses": [
       {
-        "tradition": "Faith at the End",
+        "tradition": "Anti-Hero in God's Service",
+        "tradition_family": "evangelical",
+        "scholar_id": "webb",
+        "summary": "Webb reads Samson as a deliberate anti-hero — a figure whose extraordinary gifts are consistently misused, whose victories are accidental byproducts of personal vendettas, and whose life illustrates the Judges theme that Israel's deliverers are increasingly unworthy of the role. Samson never leads an army, never rallies Israel, and never acts from patriotic or religious motivation — he fights Philistines when they personally offend him. The Spirit of the LORD empowers his physical exploits (14:6, 19; 15:14), but the Spirit's empowerment does not imply moral approval of what Samson does with the power. Webb argues this is precisely the point: God uses Samson to 'begin the deliverance of Israel' (13:5) despite Samson's complete indifference to that mission. The theological lesson is simultaneously humbling and hopeful — God's purposes advance through catastrophically flawed agents, which says more about God's sovereignty than about Samson's virtue.",
+        "key_verses": [
+          "Judges 13:5",
+          "Judges 14:4",
+          "Judges 14:19",
+          "Judges 16:28-30"
+        ],
+        "strengths": "Reads Samson within the Judges literary framework of declining judges. The distinction between Spirit-empowerment and moral endorsement is theologically important and prevents naive hero-worship. The 'accidental deliverer' observation is textually precise — Samson never intends to save Israel.",
+        "weaknesses": "The 'anti-hero in God's service' reading may be too charitable — at what point does God's use of a violent, self-interested person become morally problematic rather than theologically instructive? The reading works as literary analysis but may not fully address the ethical questions."
+      },
+      {
+        "tradition": "Narrative Irony and Satire",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the Samson narrative as a comic-tragic masterpiece built on sustained irony. Every element of Samson's Nazirite identity is systematically violated: he touches a dead lion (violating corpse-contact, Num 6:6), feasts in a vineyard (probable wine context, Num 6:3), and loses his hair to Delilah (the final and most literal violation). The strong man who tears apart lions and defeats armies cannot resist a woman's nagging — the repeated 'How can you say, \"I love you,\" when you won't confide in me?' (16:15) is almost comic in its domestic banality. Alter argues the narrative inverts the typical hero story: where Odysseus is clever, Samson is stupid; where David is strategic, Samson is impulsive; where other judges lead armies, Samson works alone in a series of increasingly absurd personal vendettas. The irony reaches its climax in Samson's final prayer — blind, enslaved, and humiliated, he finds genuine faith for the first time, and his greatest victory comes in his death.",
+        "key_verses": [
+          "Judges 14:8-9",
+          "Judges 16:15-17",
+          "Judges 16:21-22",
+          "Judges 16:28-30"
+        ],
+        "strengths": "Brilliant literary analysis that captures the narrative's distinctive tone. The systematic Nazirite-violation pattern is textually demonstrable. The observation that Samson's greatest faith appears in his death adds genuine theological depth to the comedy.",
+        "weaknesses": "Reading the narrative as comic or satirical may understate the real violence — people die in Samson's escapades, and treating their deaths as elements of a literary pattern can appear callous."
+      },
+      {
+        "tradition": "Charismatic Empowerment Without Sanctification",
+        "tradition_family": "evangelical",
         "scholar_id": "block",
-        "summary": "Hebrews 11:32 credits Samson's faith, not his lifestyle. His final prayer (16:28) shows faith emerging from failure. Samson illustrates that God uses flawed instruments. His biography is cautionary, not exemplary."
+        "summary": "Block emphasizes the theological significance of the Spirit's role in Samson's story. The Spirit 'comes powerfully upon' Samson four times (13:25; 14:6, 19; 15:14), each time enabling physical feats. But the Spirit never transforms Samson's character, never redirects his motivations, and never produces the 'fruit of the Spirit' that the NT associates with genuine spiritual maturity. Block argues that Samson illustrates a principle visible throughout the OT: charismatic empowerment for a task does not entail personal sanctification. Saul prophesied and still descended into madness; Balaam spoke God's words and was condemned for his heart; Samson performed mighty deeds and was morally bankrupt. This pattern serves as a permanent warning against equating spiritual power with spiritual maturity — a warning the NT reinforces (Matt 7:22-23; 1 Cor 13:1-3). Block reads Hebrews 11:32's inclusion of Samson as pointing to his final, genuine act of faith (16:28) rather than validating his entire biography.",
+        "key_verses": [
+          "Judges 14:6",
+          "Judges 14:19",
+          "Judges 15:14-15",
+          "Matthew 7:22-23"
+        ],
+        "strengths": "The distinction between empowerment and sanctification is theologically precise and pastorally urgent. The cross-biblical pattern (Saul, Balaam, Samson) is well established. The reading of Hebrews 11 as pointing to the final act of faith is exegetically responsible.",
+        "weaknesses": "The empowerment/sanctification distinction may create a too-neat theological framework — the Spirit's involvement in violence (14:19 — the Spirit comes upon Samson and he kills thirty men) raises its own moral questions that the distinction alone does not resolve."
       },
       {
-        "tradition": "Judge Not Example",
-        "scholar_id": "longman",
-        "summary": "Judges presents increasingly flawed leaders to show Israel's decline. Samson represents rock bottom before 'no king' chaos. He delivered Israel (mission accomplished) while personally failing (warning issued). He's a judge, not a role model."
+        "tradition": "Violence and Masculinity",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann reads Samson as a narrative exploration of destructive masculinity. Samson embodies a model of manhood defined entirely by physical power, sexual conquest, and violent domination — and the narrative systematically exposes this model as self-destructive. Samson's strength does not protect him; it isolates him. His sexuality does not fulfill him; it enslaves him. His violence does not liberate Israel; it entangles him in an escalating cycle of revenge. Brueggemann argues that the narrator's ironic treatment of Samson — the strongman who is weak, the Nazirite who is profane, the deliverer who delivers only himself — constitutes a critique of power that operates without wisdom, covenant, or community. The Samson story is the Judges narrative's most sustained meditation on what happens when power is disconnected from character. Brueggemann contends that the final prayer (16:28) represents the first moment in Samson's life when strength and dependence on God coincide — and significantly, it is the moment of his death.",
+        "key_verses": [
+          "Judges 14:19",
+          "Judges 15:4-5",
+          "Judges 16:1",
+          "Judges 16:28"
+        ],
+        "strengths": "Perceptive analysis of how the narrative critiques power divorced from wisdom. The observation that Samson's strength isolates rather than protects is thematically consistent. The reading of the final prayer as strength-meets-dependence is theologically compelling.",
+        "weaknesses": "The 'destructive masculinity' framework is a modern category that may not fully correspond to the ancient text's own concerns. The narrative may also be celebrating elements of Samson's strength even while critiquing its misuse — ancient audiences likely found his exploits exciting, not just cautionary."
       },
       {
-        "tradition": "Sovereign Use",
-        "scholar_id": "macarthur",
-        "summary": "God sovereignly used even Samson's sinful desires to accomplish judgment on the Philistines (14:4). Divine providence doesn't excuse human sin but works through it. Samson's weakness displays God's strength."
+        "tradition": "Typological Reading — Strength in Weakness",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin read Samson as a deeply flawed type of Christ — not in his moral character but in the pattern of his final act: achieving victory through death. Samson's greatest deliverance came when he was blind, enslaved, humiliated, and dying — a reversal that anticipates the cross, where God's greatest victory came through apparent defeat. Calvin was characteristically severe about Samson's moral failures: his self-indulgence, his sexual compulsions, and his misuse of divine gifts. But Calvin argued that God's inclusion of Samson in the redemptive story demonstrates that grace operates in spite of human failure, not because of human virtue. The Hebrews 11:32 reference validates not Samson's life but his death — the moment when, stripped of everything he had misused, he finally depended on God alone. Calvin drew the pastoral lesson that God can redeem even a wasted life through a final act of genuine faith, without this serving as an excuse for a lifetime of disobedience.",
+        "key_verses": [
+          "Judges 16:28-30",
+          "Hebrews 11:32-34",
+          "2 Corinthians 12:9-10",
+          "1 Corinthians 1:25"
+        ],
+        "strengths": "The typological reading (victory through death) connects Samson to the broader narrative of redemption. The 'redeemed death after a wasted life' reading is pastorally powerful without excusing the waste. Calvin's balance between condemnation and hope is characteristic.",
+        "weaknesses": "The Samson-Christ typology requires significant qualification — Samson's final act is vengeance ('let me get revenge for my two eyes'), not self-sacrifice for others. The typological reading may impose a Christian framework that the Judges narrative does not invite."
       }
     ],
     "related_chapters": [
@@ -3089,6 +4244,43 @@
       "Delilah",
       "Philistines",
       "violence"
+    ],
+    "context": "Samson is the most morally ambiguous judge in a book full of morally ambiguous judges. He kills thirty men to pay a bet (Judg 14:19), burns Philistine fields using foxes tied to torches (15:4-5), slaughters a thousand men with a donkey's jawbone (15:15), and tears a lion apart with his bare hands (14:6). He frequents prostitutes (16:1), is undone by Delilah (16:4-21), and dies killing more Philistines in his suicide attack than he killed in his life (16:30). Yet Hebrews 11:32 lists him among the heroes of faith.",
+    "key_verses": [
+      {
+        "ref": "Judges 14:6",
+        "text": "The Spirit of the LORD came powerfully upon him so that he tore the lion apart with his bare hands as he might have torn a young goat. But he told neither his father nor his mother what he had done."
+      },
+      {
+        "ref": "Judges 14:19",
+        "text": "Then the Spirit of the LORD came powerfully upon him. He went down to Ashkelon, struck down thirty of their men, stripped them of everything and gave their garments to those who had explained the riddle. Burning with anger, he returned to his father's home."
+      },
+      {
+        "ref": "Judges 16:28-30",
+        "text": "Then Samson prayed to the LORD, 'Sovereign LORD, remember me. Please, God, strengthen me just once more, and let me with one blow get revenge on the Philistines for my two eyes.' ... Then Samson reached toward the two central pillars on which the temple stood. ... Samson said, 'Let me die with the Philistines!' ... Thus he killed many more when he died than while he lived."
+      },
+      {
+        "ref": "Hebrews 11:32-34",
+        "text": "And what more shall I say? I do not have time to tell about Gideon, Barak, Samson, Jephthah, David, Samuel and the prophets, who through faith conquered kingdoms, administered justice, and gained what was promised; who shut the mouths of lions..."
+      }
+    ],
+    "consensus": "Most scholars read Samson as a deeply ironic figure — a Nazirite who violates every element of his vow, a strongman who cannot control himself, a deliverer whose methods are indistinguishable from the violence he is supposed to oppose. The Spirit's empowerment of Samson is widely seen as God using a flawed instrument for his purposes, not as divine endorsement of Samson's character. Hebrews 11:32's inclusion of Samson is typically read as affirming his final act of faith, not his entire career.",
+    "further_reading": [
+      {
+        "author": "Barry G. Webb",
+        "title": "The Book of Judges (NICOT)",
+        "year": 2012
+      },
+      {
+        "author": "J. Cheryl Exum",
+        "title": "Was the Woman Really There? Judges 13-16 as Satire",
+        "year": 1993
+      },
+      {
+        "author": "Daniel Block",
+        "title": "Judges, Ruth (New American Commentary)",
+        "year": 1999
+      }
     ]
   },
   {
@@ -3100,19 +4292,74 @@
     "question": "Why did God reject Saul for showing mercy to King Agag?",
     "responses": [
       {
-        "tradition": "Herem Warfare",
-        "scholar_id": "block",
-        "summary": "The Amalekites were under herem—total devotion to destruction—for attacking Israel's vulnerable in Exodus 17. Saul's 'mercy' was actually disobedience masking greed (he kept the best livestock). The issue was obedience, not cruelty versus kindness."
+        "tradition": "Divine Judgment on a Uniquely Wicked Nation",
+        "tradition_family": "evangelical",
+        "scholar_id": "bergen",
+        "summary": "Bergen argues that the Amalekite command must be read within its redemptive-historical context. The Amalekites were not randomly targeted; they had a unique history of predatory violence against Israel. Exodus 17:8-16 records their unprovoked attack on Israel's vulnerable stragglers during the wilderness journey — targeting the weak and exhausted at the rear of the column (Deut 25:17-18). God's judgment on Amalek was explicitly connected to this attack and announced generations before Saul (Ex 17:14). Bergen contends the command represents the execution of a long-standing divine sentence, not an arbitrary act of violence. The four-hundred-year delay between Exodus 17 and 1 Samuel 15 demonstrates divine patience, not divine impulsiveness. Bergen notes that Saul's disobedience — sparing Agag and the best livestock — was condemned not because God delights in killing but because Saul substituted his own judgment for God's. Samuel's declaration ('to obey is better than sacrifice,' 15:22) makes the passage about the nature of obedience, not the ethics of violence.",
+        "key_verses": [
+          "Deuteronomy 25:17-19",
+          "Exodus 17:8-16",
+          "1 Samuel 15:3",
+          "1 Samuel 15:22-23"
+        ],
+        "strengths": "Provides the historical context that explains the specific targeting of Amalek. The long delay between the Amalekite attack and the judgment demonstrates patience. The focus on obedience captures Samuel's own stated concern in the passage.",
+        "weaknesses": "The 'divine judgment' framework does not resolve the inclusion of infants, who could not have participated in ancestral attacks on Israel. Collective punishment across generations — punishing descendants for ancestors' crimes — is ethically problematic by most moral frameworks."
       },
       {
-        "tradition": "Obedience Over Sacrifice",
-        "scholar_id": "macarthur",
-        "summary": "Samuel's point: religious activity cannot substitute for obedience. Saul's partial compliance revealed a heart that elevated his judgment above God's command. The Agag incident exposed Saul's fundamental unfitness to lead God's people."
+        "tradition": "Hyperbolic Warfare Language",
+        "tradition_family": "evangelical",
+        "scholar_id": "hess",
+        "summary": "Hess applies the same hyperbolic-warfare-language argument to 1 Samuel 15 that scholars like Longman apply to the conquest narratives. Ancient Near Eastern military accounts routinely used totalistic language — 'utterly destroy,' 'leave nothing alive' — as rhetorical convention rather than literal reportage. Egyptian, Assyrian, and Moabite inscriptions use identical language (the Merneptah Stele claims 'Israel is laid waste, its seed is no more' — obviously hyperbolic, since Israel continued to exist). Hess argues that 1 Samuel 15:3 reflects this convention: the command to destroy 'men and women, children and infants' is comprehensive warfare rhetoric, not a specific operational order for infanticide. The later appearance of Amalekites in the biblical narrative (1 Sam 27:8; 30:1-18; 2 Sam 1:1-16) demonstrates they were not in fact completely destroyed, supporting the hyperbolic reading. The theological point is total commitment to God's cause — holding nothing back — expressed in the conventional language of ANE warfare.",
+        "key_verses": [
+          "1 Samuel 15:3",
+          "1 Samuel 27:8",
+          "1 Samuel 30:1",
+          "2 Samuel 1:8"
+        ],
+        "strengths": "Strong ANE comparative evidence for totalistic warfare language as convention. The continued Amalekite presence in the narrative directly supports the hyperbolic reading. Relieves the text of its most troubling literal implications while preserving its theological force.",
+        "weaknesses": "Even if the language is hyperbolic, God still commands warfare with devastating consequences. The hyperbolic reading can appear as special pleading — softening the text to make it more palatable. Samuel's literal execution of Agag complicates the 'it's just rhetoric' argument."
       },
       {
-        "tradition": "ANE Royal Ideology",
-        "scholar_id": "longman",
-        "summary": "Saul preserved Agag as a trophy—standard ANE royal practice. He acted like a Canaanite king, not an Israelite servant-leader. His 'mercy' was self-glorification disguised as compassion. The narrative critiques kingship that serves self."
+        "tradition": "Unique and Unrepeatable Command",
+        "tradition_family": "evangelical",
+        "scholar_id": "oswalt",
+        "summary": "Oswalt argues that the ḥerem commands are unique, historically specific divine judgments that cannot be generalized into a principle of holy war. The commands were directed at specific peoples (Amalekites, Canaanites) at specific moments in redemptive history and were never intended as a permanent model for warfare. Israel was explicitly warned that the same judgment could fall on them if they adopted the practices of the nations (Deut 8:19-20) — they were executors of judgment, not morally superior agents. Oswalt contends that the NT explicitly repudiates violence as a means of advancing God's kingdom (Matt 26:52; John 18:36; 2 Cor 10:4), and that the OT ḥerem represents an earlier stage of God's self-revelation that was fulfilled and superseded by Christ's teaching on enemy-love. The passage is in Scripture not as a model to follow but as a record of God's justice in a particular historical moment — a justice that Jesus reinterprets through the lens of the cross.",
+        "key_verses": [
+          "1 Samuel 15:3",
+          "Deuteronomy 8:19-20",
+          "Matthew 26:52",
+          "2 Corinthians 10:4"
+        ],
+        "strengths": "The 'unique and unrepeatable' framing prevents the passage from being used to justify contemporary violence. The observation that Israel could face the same judgment preserves moral consistency. The NT repudiation of violence provides a canonical trajectory.",
+        "weaknesses": "Declaring the commands 'unique and unrepeatable' is a theological judgment not explicit in the OT text. The progressive-revelation framework risks making the OT morally disposable. If God commanded it then, the ethical question remains regardless of whether it is repeatable."
+      },
+      {
+        "tradition": "Literary-Theological Analysis of Obedience",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads 1 Samuel 15 primarily as a narrative about obedience and its failure. The passage's literary focus is not on the violence itself but on Saul's progressive self-deception: he claims to have obeyed (15:13, 20) while standing among the evidence of his disobedience (the spared livestock, the living Agag). Samuel's devastating response — 'What then is this bleating of sheep in my ears?' (15:14) — is one of the most rhetorically powerful lines in the Hebrew Bible. Alter notes that the narrative is structured as a trial: Samuel as prosecutor, Saul as defendant, God as judge. The verdict (Saul's rejection as king) hinges not on the ethics of warfare but on Saul's inability to obey fully and his tendency to substitute his own judgment for God's command. The passage's theological lesson is about the nature of obedience, not the ethics of ḥerem — Samuel's declaration ('to obey is better than sacrifice') becomes the interpretive key. Alter acknowledges that the violence remains morally troubling but argues the narrator's interest lies elsewhere.",
+        "key_verses": [
+          "1 Samuel 15:13-14",
+          "1 Samuel 15:20-22",
+          "1 Samuel 15:26",
+          "1 Samuel 15:33"
+        ],
+        "strengths": "Identifies the passage's own literary and theological focus — obedience, not the ethics of violence. The trial-structure reading is textually convincing. Samuel's rhetorical question is rightly identified as the passage's dramatic center.",
+        "weaknesses": "Focusing on obedience as the passage's 'real concern' can function as an evasion of the ethical difficulty — the question of whether the command was moral cannot be bypassed by noting the narrative focuses on whether it was obeyed. The 'narrator's interest lies elsewhere' argument does not resolve the reader's interest, which is in the violence."
+      },
+      {
+        "tradition": "Ḥerem as Ancient Ideology, Not Divine Command",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann argues that the ḥerem tradition reflects ancient Israelite warrior ideology projected onto God — the conviction that God fights for Israel and demands total commitment in war. He contends that attributing the command to God reflects the ancient practice of sacralizing military action, a practice shared across ANE cultures. This does not mean the text is theologically worthless — it witnesses to God's absolute claim on Israel's loyalty and the seriousness of covenant betrayal — but it means the specific command to kill women, children, and animals reflects human ideology, not divine character. Brueggemann argues that reading the text as a literal divine command contradicts the broader biblical witness about God's character (Jonah — God's compassion extends to Israel's enemies; Isa 2:4 — God turns swords into plowshares; Matt 5:44 — love your enemies). Responsible interpretation requires canonical discernment: some texts witness to God's character more clearly than others, and the ḥerem commands represent Israel's understanding of God at a particular developmental stage, not God's final self-revelation in Christ.",
+        "key_verses": [
+          "1 Samuel 15:2-3",
+          "Jonah 4:10-11",
+          "Isaiah 2:4",
+          "Matthew 5:44"
+        ],
+        "strengths": "Takes the ethical difficulty seriously without special pleading. The canonical-trajectory argument (from ḥerem to enemy-love) is compelling. Provides an honest framework for reading morally troubling texts without abandoning them.",
+        "weaknesses": "The claim that the command reflects human ideology rather than divine will undermines the text's own claim to report God's words. This hermeneutical move — deciding which 'thus says the LORD' statements are authentic — requires criteria that Brueggemann's framework does not fully provide. Many evangelicals will find this approach incompatible with biblical authority."
       }
     ],
     "related_chapters": [
@@ -3128,6 +4375,43 @@
       "obedience",
       "herem",
       "rejection"
+    ],
+    "context": "In 1 Samuel 15, God commands Saul through Samuel to destroy the Amalekites completely — 'put to death men and women, children and infants, cattle and sheep, camels and donkeys' (15:3). Saul spares King Agag and the best livestock. Samuel condemns Saul's disobedience and personally executes Agag: 'Samuel put Agag to death before the LORD at Gilgal' (15:33). The passage raises the severest form of the divine violence question: God commanding the killing of infants and personally sanctioning the execution of a prisoner.",
+    "key_verses": [
+      {
+        "ref": "1 Samuel 15:2-3",
+        "text": "This is what the LORD Almighty says: 'I will punish the Amalekites for what they did to Israel when they waylaid them as they came up from Egypt. Now go, attack the Amalekites and totally destroy all that belongs to them. Do not spare them; put to death men and women, children and infants, cattle and sheep, camels and donkeys.'"
+      },
+      {
+        "ref": "1 Samuel 15:22-23",
+        "text": "But Samuel replied: 'Does the LORD delight in burnt offerings and sacrifices as much as in obeying the LORD? To obey is better than sacrifice, and to heed is better than the fat of rams. For rebellion is like the sin of divination, and arrogance like the evil of idolatry.'"
+      },
+      {
+        "ref": "1 Samuel 15:33",
+        "text": "But Samuel said, 'As your sword has made women childless, so will your mother be childless among women.' And Samuel put Agag to death before the LORD at Gilgal."
+      },
+      {
+        "ref": "Exodus 17:14",
+        "text": "Then the LORD said to Moses, 'Write this on a scroll as something to be remembered and make sure that Joshua hears it, because I will completely blot out the name of Amalek from under heaven.'"
+      }
+    ],
+    "consensus": "This passage is among the most difficult in the OT. Most evangelical scholars affirm God's sovereign right to judge while acknowledging the profound moral difficulty. Critical scholars generally read the ḥerem (total destruction) command as reflecting ancient Israelite ideology rather than a literal divine mandate. The passage has been used historically to justify violence, making responsible interpretation particularly urgent.",
+    "further_reading": [
+      {
+        "author": "Robert D. Bergen",
+        "title": "1, 2 Samuel (New American Commentary)",
+        "year": 1996
+      },
+      {
+        "author": "V. Philips Long",
+        "title": "1 & 2 Samuel (Tyndale Commentary)",
+        "year": 2020
+      },
+      {
+        "author": "Paul Copan and Matthew Flannagan",
+        "title": "Did God Really Command Genocide? Coming to Terms with the Justice of God",
+        "year": 2014
+      }
     ]
   },
   {
