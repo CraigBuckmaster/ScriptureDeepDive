@@ -26,7 +26,7 @@ import { ButtonRow } from '../components/ButtonRow';
 import { PanelContainer } from '../components/PanelContainer';
 import { ScholarlyBlock } from '../components/ScholarlyBlock';
 import { QnavOverlay } from '../components/QnavOverlay';
-import { NotesOverlay } from '../components/NotesOverlay';
+import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
 
 import { base, spacing } from '../theme';
