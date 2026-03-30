@@ -1004,18 +1004,73 @@
     "responses": [
       {
         "tradition": "Judicial Hardening View",
-        "scholar_id": "macarthur",
-        "summary": "Pharaoh first hardened his own heart (Exodus 8:15, 32); God's hardening confirmed Pharaoh's chosen direction. Divine hardening is judgment on prior rebellion, not causation of innocent sin. God gives people over to what they've chosen."
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that God's hardening of Pharaoh is judicial — a divine response to Pharaoh's prior, voluntary rebellion. The narrative sequence matters: Pharaoh hardens his own heart through the first five plagues (Ex 7:13, 22; 8:15, 19, 32) before the text says God hardened him (Ex 9:12). God's hardening confirms and intensifies a direction Pharaoh freely chose. This pattern — God giving sinners over to the consequences of their own choices — recurs throughout Scripture (Romans 1:24, 26, 28). Paul's citation in Romans 9 does not introduce a new theology of arbitrary coercion but appeals to a case where God's sovereignty operated through, not against, human moral agency. Pharaoh was culpable because he was never an innocent victim; he was a ruthless tyrant whom God used to display redemptive power.",
+        "key_verses": [
+          "Exodus 8:15",
+          "Exodus 8:32",
+          "Exodus 9:12",
+          "Romans 1:24",
+          "Romans 9:17-18"
+        ],
+        "strengths": "Accounts for the narrative sequence where Pharaoh's self-hardening precedes divine hardening. Integrates the Exodus account with Paul's broader theology of divine 'giving over' in Romans 1. Preserves both sovereignty and responsibility.",
+        "weaknesses": "The pre-narrative announcement in Exodus 4:21 ('I will harden his heart') complicates the 'Pharaoh first' reading — God declares the hardening before it begins. Does not fully address whether God's prior decree removes genuine freedom."
       },
       {
-        "tradition": "Sovereignty-Responsibility Tension",
+        "tradition": "Sovereignty-Responsibility Paradox",
+        "tradition_family": "reformed",
         "scholar_id": "calvin",
-        "summary": "Scripture affirms both divine sovereignty and human responsibility without resolving the tension philosophically. Pharaoh was culpable for his sin; God was sovereign in using it. We accept the mystery rather than dissolve either pole."
+        "summary": "Calvin insists that Scripture affirms both poles without offering philosophical resolution: God is sovereign over Pharaoh's will, and Pharaoh is fully culpable for his sin. Calvin rejects the idea that God merely permitted Pharaoh's stubbornness — the Hebrew verbs are active and causative, and Paul's argument in Romans 9 would lose its force if reduced to mere permission. Yet Calvin equally insists Pharaoh sinned voluntarily; no one is compelled to evil against their nature. The mystery is not a contradiction but a limitation of creaturely understanding. Calvin warns that demanding a philosophical reconciliation betrays the same presumption Paul rebukes in Romans 9:20 — 'Who are you, a human being, to talk back to God?' We are called to worship, not to resolve what God has left unresolved.",
+        "key_verses": [
+          "Exodus 4:21",
+          "Romans 9:19-21",
+          "Isaiah 45:7",
+          "Proverbs 21:1"
+        ],
+        "strengths": "Takes the strongest biblical language seriously without softening it. Historically grounded in the Reformed confessional tradition. Rightly identifies the hubris in demanding that divine action conform to human philosophical categories.",
+        "weaknesses": "Can appear to shut down legitimate moral inquiry by appealing to mystery. Critics argue that 'mystery' becomes a refuge from a genuine ethical problem rather than an honest theological posture."
       },
       {
         "tradition": "Occasionalist Reading",
+        "tradition_family": "jewish",
         "scholar_id": "sarna",
-        "summary": "God 'hardened' by providing occasions (plagues) that Pharaoh responded to with stubbornness. The Hebrew idiom assigns to God what He occasions, not what He forces. Pharaoh's response remained genuinely his own."
+        "summary": "Sarna argues that the Hebrew idiom attributes to God what God occasions or permits, not what God directly coerces. The plagues themselves were the 'hardening' mechanism — confronted with unmistakable divine power, Pharaoh chose defiance rather than submission. God 'hardened' Pharaoh's heart by creating the conditions (escalating plagues) that provoked Pharaoh's characteristic response. This reflects a broader Hebrew linguistic pattern in which causation is expressed in terms of the ultimate rather than the proximate agent. Sarna notes that the three different Hebrew verbs (ḥāzaq, kābēd, qāšâ) suggest strengthening, making heavy, and making obstinate — a spectrum that resists reduction to simple coercion. Pharaoh's response was genuinely his own, shaped by his character and pride.",
+        "key_verses": [
+          "Exodus 7:3",
+          "Exodus 9:34",
+          "Exodus 10:1-2"
+        ],
+        "strengths": "Rooted in careful attention to Hebrew idiom and Ancient Near Eastern literary conventions. Avoids imposing later theological categories on the Exodus narrative. Explains the alternating agency naturally.",
+        "weaknesses": "May not fully account for the pre-narrative declaration in Exodus 4:21 where God announces the hardening as his own action before any plagues occur. Paul's use in Romans 9 seems to press beyond mere occasionalism."
+      },
+      {
+        "tradition": "Liberation-Theological Reading",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann reads the hardening narrative as a theological commentary on empire. Pharaoh represents the imperial system that resists God's liberating purpose — a system so committed to its own power that it becomes incapable of recognizing or yielding to divine authority. The 'hardening' is not primarily about an individual's psychological state but about the way oppressive structures calcify against justice. God's hardening of Pharaoh functions narratively to demonstrate that no earthly power, however entrenched, can finally resist the God who liberates the enslaved. The text is less interested in Pharaoh's moral accountability than in Yahweh's sovereignty over all rival claims to power. The narrative invites readers to ask not 'Was Pharaoh free?' but 'What power can withstand the God of the Exodus?'",
+        "key_verses": [
+          "Exodus 5:2",
+          "Exodus 9:16",
+          "Exodus 14:4",
+          "Exodus 15:1-2"
+        ],
+        "strengths": "Reads the text in its narrative context as a confrontation between Yahweh and Pharaoh-as-system. Captures the text's rhetorical force — the Exodus is about divine power over empire, not a philosophy seminar on free will. Resonates with the text's own emphasis on God's name and reputation.",
+        "weaknesses": "Can minimize the genuine philosophical and theological difficulty the text raises about individual moral agency. May read modern liberation theology back into an ancient text that does not share its conceptual framework."
+      },
+      {
+        "tradition": "Compatibilist Exegesis",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo argues that Paul's use of the Pharaoh episode in Romans 9 should govern how Christians read Exodus. Paul presents God's hardening as an exercise of sovereign prerogative — 'God has mercy on whom he wants to have mercy, and he hardens whom he wants to harden' (9:18). Yet Paul immediately anticipates the objection ('Then why does God still blame us?', 9:19) and responds not by denying the tension but by asserting God's sovereign right as Creator. Moo contends that Paul holds a compatibilist position: divine determination and human responsibility coexist without one canceling the other. The 'hardening' operates within the broader argument of Romans 9-11, which culminates not in arbitrary judgment but in God's mercy to all (11:32). The Pharaoh case is not the whole story — it is one movement in a symphony that ends in mercy.",
+        "key_verses": [
+          "Romans 9:18-20",
+          "Romans 9:22-23",
+          "Romans 11:32",
+          "Exodus 9:16"
+        ],
+        "strengths": "Reads Exodus through Paul's own interpretive lens, which is theologically appropriate for a Christian study tool. Situates the hardening within the full Romans 9-11 arc rather than isolating it. Handles the tension honestly without dissolving either pole.",
+        "weaknesses": "Compatibilism is a philosophical framework not explicitly named in the text — critics argue it is being imported. The appeal to Romans 11:32 may not fully resolve the particular case of Pharaoh, whose destruction is the point of the illustration."
       }
     ],
     "related_chapters": [
@@ -1043,6 +1098,43 @@
       "free will",
       "Exodus",
       "Romans"
+    ],
+    "context": "Exodus records a sequence where Pharaoh's heart is 'hardened' — sometimes by God (Ex 4:21; 7:3; 9:12; 10:1, 20, 27; 11:10; 14:4, 8), sometimes by Pharaoh himself (Ex 8:15, 32; 9:34). Three different Hebrew verbs are used: ḥāzaq (strengthen), kābēd (make heavy), and qāšâ (make obstinate). Paul cites the episode in Romans 9:17-18 to illustrate divine sovereignty. The difficulty: if God hardened Pharaoh's heart, how is Pharaoh morally culpable for refusing to let Israel go?",
+    "key_verses": [
+      {
+        "ref": "Exodus 4:21",
+        "text": "The LORD said to Moses, 'When you return to Egypt, see that you perform before Pharaoh all the wonders I have given you the power to do. But I will harden his heart so that he will not let the people go.'"
+      },
+      {
+        "ref": "Exodus 8:15",
+        "text": "But when Pharaoh saw that there was relief, he hardened his heart and would not listen to Moses and Aaron, just as the LORD had said."
+      },
+      {
+        "ref": "Exodus 9:12",
+        "text": "But the LORD hardened Pharaoh's heart and he would not listen to Moses and Aaron, just as the LORD had said to Moses."
+      },
+      {
+        "ref": "Romans 9:17-18",
+        "text": "For Scripture says to Pharaoh: 'I raised you up for this very purpose, that I might display my power in you and that my name might be proclaimed in all the earth.' Therefore God has mercy on whom he wants to have mercy, and he hardens whom he wants to harden."
+      }
+    ],
+    "consensus": "Most scholars note the alternating agency — Pharaoh hardens himself first (Ex 7:13–8:32) before God confirms that hardening (Ex 9:12 onward). The text presents both divine sovereignty and human responsibility without philosophical resolution. The three Hebrew verbs suggest a complex process, not simple coercion.",
+    "further_reading": [
+      {
+        "author": "Brevard Childs",
+        "title": "The Book of Exodus: A Critical, Theological Commentary (OTL)",
+        "year": 1974
+      },
+      {
+        "author": "Terence Fretheim",
+        "title": "Exodus (Interpretation Commentary)",
+        "year": 1991
+      },
+      {
+        "author": "Thomas Schreiner",
+        "title": "Romans (Baker Exegetical Commentary)",
+        "year": 1998
+      }
     ]
   },
   {
@@ -1054,19 +1146,74 @@
     "question": "What is the unforgivable sin, and can a Christian commit it?",
     "responses": [
       {
-        "tradition": "Pharisees' Specific Sin",
-        "scholar_id": "macarthur",
-        "summary": "Blasphemy against the Spirit was the Pharisees' specific act of attributing Christ's Spirit-empowered miracles to Satan, despite knowing better. This particular sin was possible only during Jesus's earthly ministry. Those who fear committing it almost certainly haven't."
+        "tradition": "Specific Historical Act",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that the blasphemy against the Spirit was the Pharisees' specific act of attributing Jesus's Spirit-empowered miracles to Satan — a deliberate, informed rejection of the Spirit's testimony to Christ. What makes this sin uniquely unforgivable is not its severity in isolation but its nature: it rejects the very agent (the Holy Spirit) through whom conviction, repentance, and faith come. If one permanently rejects the Spirit's witness, there is no alternative path to forgiveness. Schreiner stresses that this was not a momentary doubt or even a serious failure but a settled, willful attribution of divine work to demonic power by people who had sufficient evidence to know better. Christians troubled by this passage should note that their very anxiety demonstrates the Spirit is still active in their conscience — the unforgivable sin, by definition, involves no such concern.",
+        "key_verses": [
+          "Matthew 12:24",
+          "Matthew 12:28",
+          "Matthew 12:31-32",
+          "John 16:8-11"
+        ],
+        "strengths": "Grounds the sin in its specific narrative context rather than abstracting it into a general category. The logic — rejecting the Spirit removes the only means of repentance — is theologically coherent. Directly addresses pastoral anxiety.",
+        "weaknesses": "If the sin is entirely situation-specific (the earthly ministry of Jesus), it becomes irrelevant as a present-day warning, which seems to undercut the seriousness with which Jesus issues it."
       },
       {
-        "tradition": "Final Impenitence View",
-        "scholar_id": "calvin",
-        "summary": "The unforgivable sin is persistent, final rejection of the Spirit's testimony about Christ. It's not a single act but a settled disposition of hardened unbelief maintained until death. By definition, those worried about it haven't committed it."
+        "tradition": "Settled Disposition of Rejection",
+        "tradition_family": "pentecostal",
+        "scholar_id": "fee",
+        "summary": "Fee emphasizes the ongoing nature implied by the Greek present tense — this is not a single act but a persistent stance of attributing the Spirit's work to evil. The unforgivable sin is not a discrete moment but a hardened disposition: a settled, sustained, and willful rejection of the Holy Spirit's testimony about Christ. Fee, as a Pentecostal scholar deeply committed to the Spirit's ongoing activity, argues that blasphemy against the Spirit means fundamentally and finally setting oneself against the Spirit's work — not merely doubting, questioning, or even temporarily resisting, but permanently and knowingly opposing what one recognizes as the Spirit's activity. This is why it is unforgivable: not because God's grace is limited, but because the person has permanently closed the only door through which forgiveness can come.",
+        "key_verses": [
+          "Mark 3:29-30",
+          "Matthew 12:32",
+          "1 John 5:16",
+          "Hebrews 10:29"
+        ],
+        "strengths": "The emphasis on disposition rather than a single act relieves pastoral anxiety without trivializing the warning. The Pentecostal framework takes the Spirit's ongoing work seriously, making the sin a present-day possibility without making it a source of constant fear.",
+        "weaknesses": "The appeal to Greek tense can be overpressed — present tense does not always indicate ongoing action. Defining the sin as 'settled disposition' makes it nearly impossible to identify in any concrete case, which could weaken its force as a genuine warning."
       },
       {
-        "tradition": "Hebrews Integration",
+        "tradition": "Socio-Rhetorical Context",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Hebrews 6 warns against apostasy after full knowledge—publicly renouncing Christ. The 'impossibility' is that such apostates won't repent, not that God couldn't forgive them. True believers are preserved from this final rejection."
+        "summary": "Keener situates the saying in its Jewish rhetorical context. In Second Temple Judaism, blasphemy carried specific connotations of reviling God's name and work. The Pharisees' accusation was not ignorant — they were the theological elite, personally witnessing Jesus's exorcisms, and they attributed this manifest divine power to Beelzebul. Keener notes that in the ancient Mediterranean honor-shame culture, this was a deliberate public shaming of God's Spirit. The sin's unforgivability lies in its social and spiritual dynamics: it publicly defames the Spirit's work with full knowledge, poisoning the community's ability to recognize God's action. Keener argues this was a historically specific warning aimed at the religious leaders of Jesus's day, though the principle — that one can so persistently resist the Spirit's clear witness as to become unreachable — remains applicable.",
+        "key_verses": [
+          "Matthew 12:22-24",
+          "Matthew 12:28",
+          "Mark 3:22",
+          "Acts 7:51"
+        ],
+        "strengths": "Rich historical and cultural contextualization. Explains why the Pharisees' particular act was uniquely culpable. Balances historical specificity with ongoing applicability.",
+        "weaknesses": "Heavy emphasis on socio-historical context may leave systematic theologians wanting a more precise doctrinal definition. The principle of 'persistent resistance' is broader than the specific act Jesus addresses."
+      },
+      {
+        "tradition": "Patristic Consensus",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "The church fathers generally interpreted the blasphemy against the Spirit as final impenitence — the refusal to repent that persists until death. Augustine argued that this sin is not a single act but the comprehensive rejection of divine grace that endures to the end of life. Athanasius distinguished between speaking against Jesus in his humble human form (forgivable because of its ambiguity) and speaking against the Spirit's manifest power (unforgivable because it rejects unambiguous divine testimony). Chrysostom emphasized that the Pharisees had no excuse — they witnessed the miracles firsthand and could not claim ignorance. The patristic consensus held that this sin is not committed by those who sin and repent, nor by those who fall into doubt or fear, but only by those who permanently and knowingly set themselves against the Spirit. Augustine's formulation proved most influential: the sin against the Spirit is impenitence itself — the one sin that by definition excludes the possibility of forgiveness.",
+        "key_verses": [
+          "Matthew 12:31-32",
+          "Mark 3:29",
+          "1 John 1:9",
+          "Acts 5:3"
+        ],
+        "strengths": "Draws on centuries of careful theological reflection. Augustine's formulation elegantly explains why this sin alone is unforgivable — it is the refusal of forgiveness itself. Provides historical depth and pastoral comfort.",
+        "weaknesses": "The 'final impenitence' reading may stretch beyond what Jesus's words in their original context specifically meant. It risks transforming a concrete warning about a specific sin into a tautology — the unforgivable sin is unforgiveness."
+      },
+      {
+        "tradition": "Pastoral-Theological Integration",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo integrates the Synoptic passages with Hebrews 6:4-6 and 10:26-31, arguing that all three address the same fundamental reality from different angles: the possibility of so thoroughly rejecting the Spirit's witness that repentance becomes impossible — not because God withdraws the offer, but because the person has destroyed their own capacity to respond. In the Synoptics, this takes the form of attributing the Spirit to Satan; in Hebrews, it takes the form of apostasy after full enlightenment. Moo argues the common thread is not a specific act but a spiritual trajectory — a progressive hardening that moves from resistance to rejection to inability. This trajectory is visible only to God; no human observer can definitively identify it in another person. Pastorally, Moo emphasizes that the very existence of the warning functions as a means of grace: it shocks readers into self-examination and renewed dependence on the Spirit, which is precisely the opposite of the hardened disposition the warning describes.",
+        "key_verses": [
+          "Matthew 12:31-32",
+          "Hebrews 6:4-6",
+          "Hebrews 10:26-29",
+          "2 Timothy 2:25"
+        ],
+        "strengths": "Synthesizes the relevant passages rather than treating them in isolation. The 'trajectory' model accounts for why this sin seems to be both a specific act and a general disposition. Strong pastoral application — the warning itself functions as a safeguard.",
+        "weaknesses": "The integration of Hebrews with the Synoptics assumes a unified theology across different authors, which some scholars question. The 'trajectory' model makes the sin essentially unidentifiable, which may weaken its function as a genuine warning."
       }
     ],
     "related_chapters": [
@@ -1089,6 +1236,39 @@
       "Holy Spirit",
       "apostasy",
       "assurance"
+    ],
+    "context": "Jesus warns that 'blasphemy against the Spirit will not be forgiven' (Matt 12:31-32; Mark 3:28-30), spoken after the Pharisees attributed his Spirit-empowered exorcisms to Beelzebul. This has generated centuries of pastoral anxiety — countless Christians have feared they may have committed this sin. The parallel in Hebrews 6:4-6 raises related questions about apostasy and the limits of repentance.",
+    "key_verses": [
+      {
+        "ref": "Matthew 12:31-32",
+        "text": "And so I tell you, every kind of sin and slander can be forgiven, but blasphemy against the Spirit will not be forgiven. Anyone who speaks a word against the Son of Man will be forgiven, but anyone who speaks against the Holy Spirit will not be forgiven, either in this age or in the age to come."
+      },
+      {
+        "ref": "Mark 3:28-30",
+        "text": "Truly I tell you, people can be forgiven all their sins and every slander they utter, but whoever blasphemes against the Holy Spirit will never be forgiven; they are guilty of an eternal sin. He said this because they were saying, 'He has an impure spirit.'"
+      },
+      {
+        "ref": "Hebrews 6:4-6",
+        "text": "It is impossible for those who have once been enlightened, who have tasted the heavenly gift, who have shared in the Holy Spirit, who have tasted the goodness of the word of God and the powers of the coming age and who have fallen away, to be brought back to repentance."
+      }
+    ],
+    "consensus": "Nearly all traditions agree that those who genuinely fear they have committed this sin almost certainly have not — the very concern demonstrates a responsive conscience incompatible with the settled, defiant rejection the passages describe. The historical context (Pharisees willfully attributing Christ's work to Satan) is widely recognized as the paradigmatic instance.",
+    "further_reading": [
+      {
+        "author": "D.A. Carson",
+        "title": "Matthew (Expositor's Bible Commentary)",
+        "year": 1984
+      },
+      {
+        "author": "Craig S. Keener",
+        "title": "The Gospel of Matthew: A Socio-Rhetorical Commentary",
+        "year": 2009
+      },
+      {
+        "author": "Gareth Lee Cockerill",
+        "title": "The Epistle to the Hebrews (NICNT)",
+        "year": 2012
+      }
     ]
   },
   {
@@ -1100,19 +1280,74 @@
     "question": "Does Hebrews teach that genuine Christians can fall away and be lost forever?",
     "responses": [
       {
-        "tradition": "Warning to False Professors",
-        "scholar_id": "macarthur",
-        "summary": "Those described experienced external blessings (enlightenment, tasting, participation) without genuine regeneration. They were in the covenant community but not truly converted. The warning reveals their state; it doesn't describe true believers losing salvation."
+        "tradition": "Warning to Unregenerate Professors",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that the descriptions in 6:4-5 — enlightenment, tasting the heavenly gift, sharing in the Spirit — can describe genuine spiritual experiences that fall short of saving regeneration. The Israelites in the wilderness experienced God's miraculous power, tasted manna from heaven, and shared in the Spirit's presence — yet most were not saved (1 Cor 10:1-5; Heb 3:7-19). Schreiner notes that the author himself distinguishes these people from genuine believers in 6:9: 'we are convinced of better things in your case — the things that have to do with salvation.' The warning is real — these people experienced genuine spiritual realities and are in genuine danger — but what they lacked was saving faith that perseveres. The function of the warning is to provoke genuine believers to examine themselves and press forward, while exposing those who were never truly regenerate.",
+        "key_verses": [
+          "Hebrews 6:4-6",
+          "Hebrews 6:9",
+          "1 Corinthians 10:1-5",
+          "Hebrews 3:12-14"
+        ],
+        "strengths": "Takes the warning seriously without abandoning perseverance of the saints. The wilderness generation parallel is textually grounded — Hebrews 3 explicitly draws it. The distinction in 6:9 provides internal evidence for the reading.",
+        "weaknesses": "The cumulative weight of five participial descriptions ('enlightened,' 'tasted,' 'shared,' 'tasted,' 'tasted') makes the 'not really saved' reading strained — these are remarkably strong terms for mere external experience. Critics argue this empties the warning of its force for genuine believers."
       },
       {
-        "tradition": "Hypothetical Warning",
-        "scholar_id": "calvin",
-        "summary": "The passage warns what would be true IF genuine believers fell away—it would be impossible to renew them. But this very severity shows God prevents it from happening. Warnings are means God uses to keep His people persevering."
+        "tradition": "Genuine Warning, Genuine Danger",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Karen Jobes reads the warning as addressing genuine believers facing genuine danger — not as a hypothetical scenario but as a real possibility the author urgently wants to prevent. The descriptors in 6:4-5 are too strong and too numerous to describe mere external participation; they describe people who have genuinely experienced the new covenant realities of the Spirit. Jobes argues the warning functions prospectively — it describes what would happen if believers abandon Christ, precisely so that they will not. The author's confidence in 6:9 is not that apostasy is impossible but that his readers will heed the warning. This reading takes both the warning and the assurance seriously: the warning is a genuine means God uses to keep genuine believers persevering. Jobes notes that the original audience — Jewish Christians considering return to Judaism under social pressure — would have heard this not as an abstract theological puzzle but as a life-or-death pastoral appeal.",
+        "key_verses": [
+          "Hebrews 6:4-6",
+          "Hebrews 6:9-12",
+          "Hebrews 10:32-36",
+          "Hebrews 12:1-3"
+        ],
+        "strengths": "Takes the full force of both the warning language and the assurance in 6:9. Attends to the pastoral context — real people under real pressure. The prospective reading preserves the warning's urgency without requiring that believers actually fall away.",
+        "weaknesses": "The prospective/preventative reading can become functionally identical to the hypothetical view — if the warning always prevents what it warns against, is the danger genuinely real? Some argue this domesticates the text."
       },
       {
-        "tradition": "Real Danger, Preserved Outcome",
+        "tradition": "Loss of Salvation Possible",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The danger is real and the warning genuine—intended to provoke perseverance. God secures final salvation through means, including warnings. True believers heed warnings and prove their genuineness by continuing. Apostates reveal they were never truly Christ's."
+        "summary": "Keener argues that the most natural reading of the Greek text is that genuinely converted people can genuinely apostatize. The five participial phrases in 6:4-5 describe authentic Christian experience — the language closely parallels how Hebrews describes believers elsewhere. The 'impossibility' of renewal is not about God's power but about the apostate's condition: having fully experienced and then fully rejected Christ, they have nowhere else to turn. Keener notes that the broader NT contains numerous warnings to believers about falling away (Gal 5:4; 2 Pet 2:20-22; Rev 2-3), and that the Reformed tradition's reinterpretation of these texts as addressing non-believers systematically neutralizes a category of biblical teaching. He argues the Arminian-Wesleyan reading preserves the genuine tension the NT maintains between assurance and warning — a tension that motivates both confidence and vigilance.",
+        "key_verses": [
+          "Hebrews 6:4-6",
+          "Galatians 5:4",
+          "2 Peter 2:20-22",
+          "Hebrews 10:29"
+        ],
+        "strengths": "Reads the text at face value without requiring the strong participial descriptions to mean less than they appear to. Accounts for the broader NT pattern of warnings to genuine believers. Preserves the pastoral urgency of the passage.",
+        "weaknesses": "Creates tension with passages that affirm perseverance (John 10:28-29; Rom 8:38-39; Phil 1:6). If genuine believers can fall away, the basis for Christian assurance becomes uncertain. Must explain why the author expresses confidence in 6:9 if the danger is so real."
+      },
+      {
+        "tradition": "Means of Preservation",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo charts a middle course: the warning describes a real danger for people in a genuine relationship with God, and the warning itself is one of the means God uses to ensure that his people persevere. This is not a logical trick but a robust biblical pattern — God accomplishes his sovereign purposes through secondary means, including warnings, exhortations, and the community's pastoral care. The descriptions in 6:4-5 are genuine — these people have truly experienced the Spirit — and the danger is genuine — apostasy would be irrevocable. But the warning functions precisely to prevent the outcome it describes. Moo argues that 6:9 is the interpretive key: the author has just given the most severe warning imaginable, and then immediately says, 'We are convinced of better things in your case.' This is not contradiction but pastoral strategy — maximum warning followed by maximum encouragement.",
+        "key_verses": [
+          "Hebrews 6:4-6",
+          "Hebrews 6:9-12",
+          "Philippians 2:12-13",
+          "1 Corinthians 10:12-13"
+        ],
+        "strengths": "Preserves the genuine force of the warning without abandoning perseverance. The 'means of preservation' framework is theologically coherent — God uses warnings to keep people faithful. The reading of 6:9 as pastoral strategy is compelling.",
+        "weaknesses": "The 'warning as means' reading can seem like having it both ways — the danger is real, but it never actually happens to genuine believers. Critics from both Reformed and Arminian camps find this unsatisfying as a final resolution."
+      },
+      {
+        "tradition": "Hypothetical Warning View",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin argued that the passage describes what would be the case if genuine believers fell away — but the very severity of the consequence demonstrates that God will not allow it to happen. The 'impossibility' of restoration reveals God's purpose in preserving his people: since apostasy would be irrecoverable (crucifying Christ afresh), God ensures that those truly united to Christ never reach that point. Calvin distinguished between temporary believers who experience spiritual gifts externally and the elect who receive the 'special inner call' that permanently transforms. He was less concerned with parsing the participial phrases than with affirming the theological conclusion: God's election is irrevocable (Rom 11:29), and those whom God genuinely saves are genuinely kept. The warning is genuine in its severity — it shows what is at stake — but its function is to terrify the complacent into renewed faith, not to describe the actual fate of any elect person.",
+        "key_verses": [
+          "Hebrews 6:4-6",
+          "Romans 8:29-30",
+          "Romans 11:29",
+          "John 6:39-40"
+        ],
+        "strengths": "Consistent with Calvin's broader soteriology and the Reformed confessional tradition. Takes the severity of the warning seriously as a spur to perseverance. The distinction between 'temporary' and 'genuine' faith has precedent in the parable of the sower (Mark 4:16-17).",
+        "weaknesses": "The hypothetical reading ('if they could fall away, which they can't') risks making the warning toothless. Critics argue Calvin imports his systematic theology rather than reading Hebrews on its own terms. The participial descriptions seem to describe actual, not hypothetical, experience."
       }
     ],
     "related_chapters": [
@@ -1135,6 +1370,43 @@
       "eternal security",
       "Hebrews",
       "salvation"
+    ],
+    "context": "Hebrews 6:4-6 describes people who have been 'enlightened,' 'tasted the heavenly gift,' 'shared in the Holy Spirit,' and 'tasted the goodness of the word of God' — and then 'fallen away.' The author declares it 'impossible' to bring them back to repentance. This passage is the most debated text in the perseverance/apostasy debate, with the central question being whether those described were genuinely saved.",
+    "key_verses": [
+      {
+        "ref": "Hebrews 6:4-6",
+        "text": "It is impossible for those who have once been enlightened, who have tasted the heavenly gift, who have shared in the Holy Spirit, who have tasted the goodness of the word of God and the powers of the coming age and who have fallen away, to be brought back to repentance. To their loss they are crucifying the Son of God all over again and subjecting him to public disgrace."
+      },
+      {
+        "ref": "Hebrews 6:9",
+        "text": "Even though we speak like this, dear friends, we are convinced of better things in your case — the things that have to do with salvation."
+      },
+      {
+        "ref": "John 10:28-29",
+        "text": "I give them eternal life, and they shall never perish; no one will snatch them out of my hand. My Father, who has given them to me, is greater than all; no one can snatch them out of my Father's hand."
+      },
+      {
+        "ref": "Hebrews 10:26-27",
+        "text": "If we deliberately keep on sinning after we have received the knowledge of the truth, no sacrifice for sins is left, but only a fearful expectation of judgment and of raging fire that will consume the enemies of God."
+      }
+    ],
+    "consensus": "Scholars universally acknowledge the passage describes genuine spiritual experience. The primary debate is whether these experiences necessarily constitute regeneration. Most evangelical interpreters affirm perseverance of genuine believers while taking the warning's force seriously. Arminian and Wesleyan scholars read the passage as a genuine warning that salvation can be forfeited.",
+    "further_reading": [
+      {
+        "author": "Gareth Lee Cockerill",
+        "title": "The Epistle to the Hebrews (NICNT)",
+        "year": 2012
+      },
+      {
+        "author": "Thomas Schreiner and Ardel Caneday",
+        "title": "The Race Set Before Us: A Biblical Theology of Perseverance and Assurance",
+        "year": 2001
+      },
+      {
+        "author": "Ben Witherington III",
+        "title": "Letters and Homilies for Jewish Christians: A Socio-Rhetorical Commentary on Hebrews, James and Jude",
+        "year": 2007
+      }
     ]
   },
   {
@@ -1146,19 +1418,74 @@
     "question": "If God is all-powerful and all-good, why does He allow innocent suffering?",
     "responses": [
       {
-        "tradition": "Greater Good Theodicy",
-        "scholar_id": "macarthur",
-        "summary": "God permits suffering to accomplish greater goods we can't always see: soul-making, eternal glory, the defeat of evil, the display of grace. Romans 8:28 affirms that God works all things—including suffering—for ultimate good."
+        "tradition": "Relational Resolution (Job's Answer)",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay argues that the book of Job deliberately deconstructs every neat theodicy — the friends' retribution theology, Elihu's disciplinary model, even Job's demand for a legal hearing — and replaces them all with encounter. When God finally speaks (Job 38-41), he offers no explanation for Job's suffering. Instead, he overwhelms Job with the vastness, complexity, and wildness of creation — a creation that includes Behemoth and Leviathan, forces of chaos that God controls but does not eliminate. Job's response is not intellectual satisfaction but worship: 'My ears had heard of you but now my eyes have seen you' (42:5). Goldingay contends that the book's genius is its refusal to answer the question on its own terms. The question 'Why do the innocent suffer?' presupposes a world in which God owes us explanations. Job's encounter reveals that God is not a moral accountant but a sovereign Creator whose ways exceed human comprehension. The answer to suffering is not a theory but a Person.",
+        "key_verses": [
+          "Job 38:1-4",
+          "Job 42:5",
+          "Job 42:7-8",
+          "Psalm 73:16-17"
+        ],
+        "strengths": "Reads Job on its own literary and theological terms rather than extracting propositions from it. Honest about the limits of human understanding. The relational resolution honors the experience of sufferers who find comfort in God's presence, not in explanations.",
+        "weaknesses": "Critics argue that 'encounter instead of explanation' can function as an evasion — sufferers deserve more than 'trust me.' The relational answer may not satisfy those facing extreme, prolonged, or seemingly pointless suffering."
       },
       {
-        "tradition": "Job's Resolution",
+        "tradition": "Redemptive Suffering",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Job receives no theoretical answer but encounters God himself. The book teaches that relationship with God, not intellectual explanation, is the proper response to suffering. We live by trust, not by understanding everything."
+        "summary": "Longman argues that while Job offers no systematic theodicy, the broader canon provides a framework: suffering can be — though is not always — a means through which God accomplishes redemptive purposes. Romans 8:28-29 does not say suffering is good but that God works through all things, including suffering, for the ultimate good of conforming believers to Christ's image. The cross is the supreme example: the worst evil in human history became the means of salvation for the world. Longman is careful to distinguish this from the friends' retribution theology (which God rejects) and from glib pastoral platitudes. Not all suffering has a discernible purpose in this life, and claiming otherwise adds cruelty to pain. But the Christian hope is that God is not absent from suffering and that the final chapter has not been written — a hope grounded in the resurrection, which demonstrates God's power to bring life from death.",
+        "key_verses": [
+          "Romans 8:28-29",
+          "Romans 5:3-5",
+          "2 Corinthians 4:16-18",
+          "1 Peter 1:6-7"
+        ],
+        "strengths": "Canonical breadth — integrates Job with Paul, Peter, and the cross. Avoids both glib answers and nihilistic despair. The cross as paradigm is theologically powerful — God enters suffering rather than explaining it away.",
+        "weaknesses": "The 'redemptive suffering' framework can be misused to glorify suffering or to tell sufferers their pain has a purpose they should appreciate. Does not adequately address suffering that appears to serve no redemptive purpose at all."
       },
       {
-        "tradition": "Free Will Defense",
-        "scholar_id": "calvin",
-        "summary": "God created beings capable of genuine love, which requires freedom, which permits misuse. Much suffering stems from creaturely rebellion. God will finally and eternally defeat evil, but permits its temporary existence for purposes including the display of mercy."
+        "tradition": "Protest Theology",
+        "tradition_family": "critical",
+        "scholar_id": "habel",
+        "summary": "Habel reads Job as a profound act of theological protest. Job refuses to accept the friends' explanations, refuses to curse God as his wife suggests, and instead demands an audience with God — insisting on his innocence and God's accountability. Habel argues that God's speech from the whirlwind does not silence Job's protest but redirects it: the world is more complex than any human moral framework can contain. Crucially, God vindicates Job ('my servant Job has spoken the truth about me,' 42:7) and condemns the friends' tidy theology. Habel contends that the Bible legitimizes protest against suffering — the Psalms of lament, Habakkuk's complaints, and Job's lawsuit against God are all canonical. Faith is not passive acceptance but active engagement with a God who can handle our rage, grief, and accusation. The book's resolution is not an answer but a relationship restored through honest struggle.",
+        "key_verses": [
+          "Job 13:3",
+          "Job 13:15",
+          "Job 23:3-7",
+          "Job 42:7"
+        ],
+        "strengths": "Takes the lament tradition seriously as a genuine theological mode, not a failure of faith. Honors Job's refusal to accept false comfort. The vindication of Job's 'honest speech' over the friends' pious platitudes is textually grounded and pastorally powerful.",
+        "weaknesses": "Can overemphasize the protest at the expense of Job's final submission (42:6). Some argue Habel's reading is shaped more by modern sensibilities about divine accountability than by the text's ancient context, where questioning God's justice is a far more radical act than modern readers appreciate."
+      },
+      {
+        "tradition": "Lament as Theology",
+        "tradition_family": "critical",
+        "scholar_id": "clines",
+        "summary": "Clines approaches Job as literature and argues that the book's power lies in its refusal to resolve the tension it creates. The prose framework (chs. 1-2, 42:7-17) offers one theology — patient Job is tested and restored. The poetic dialogue (chs. 3-41) offers another — angry Job challenges God and receives an overwhelming but non-explanatory divine response. Clines contends that these two theologies coexist in deliberate, unresolved tension. The book does not answer the problem of evil; it dramatizes the impossibility of answering it within the frameworks available to its characters. Clines pushes further: the divine speeches do not actually address Job's suffering at all — they redirect attention to the natural world's beauty and terror, implying that Job's moral framework is too small, not that it is wrong. The book leaves readers with a God who is present, powerful, and unfathomable — but not a God who explains.",
+        "key_verses": [
+          "Job 3:1-3",
+          "Job 38:2-4",
+          "Job 40:1-5",
+          "Job 42:5-6"
+        ],
+        "strengths": "Rigorous literary reading that honors the book's complexity. Avoids forcing a resolution the text itself does not provide. The observation about the divine speeches' content — creation, not suffering — is textually acute.",
+        "weaknesses": "The purely literary approach may strip the text of its theological authority for believing communities. If Job offers no answer at all, its canonical function as wisdom literature is diminished. The emphasis on irresolution may reflect modern literary theory more than ancient wisdom conventions."
+      },
+      {
+        "tradition": "Eschatological Hope",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann reads the problem of evil through the lens of Israel's lament traditions and the eschatological horizon of the canon. He argues that the Bible does not offer a philosophical theodicy but a narrative one: the story moves from creation through fall, exile, and suffering toward a promised restoration in which God will finally and completely defeat evil, wipe away tears, and make all things new (Rev 21:4). In the meantime, the faithful are invited into lament — the honest, anguished cry to God that refuses both passive resignation and atheistic despair. Lament is itself a form of faith: it addresses God as the one responsible and capable of action. Brueggemann contends that the modern church has largely lost the practice of lament, replacing it with triumphalism that cannot sustain people through genuine suffering. The biblical witness insists that the present is marked by real evil and real pain, and that faith means holding this reality together with the eschatological promise that God will prevail.",
+        "key_verses": [
+          "Psalm 13:1-2",
+          "Habakkuk 1:2-4",
+          "Romans 8:18-25",
+          "Revelation 21:3-4"
+        ],
+        "strengths": "Recovers the neglected biblical practice of lament as a legitimate theological and pastoral response. The eschatological framework provides genuine hope without minimizing present suffering. Avoids both glib answers and despair.",
+        "weaknesses": "The eschatological answer — 'God will fix it later' — may not satisfy those suffering now. The emphasis on lament, while valuable, does not directly address the philosophical argument. Some critics find Brueggemann's theology insufficiently robust on God's sovereignty."
       }
     ],
     "related_chapters": [
@@ -1190,6 +1517,47 @@
       "Job",
       "sovereignty",
       "faith"
+    ],
+    "context": "The 'problem of evil' — if God is omnipotent and omnibenevolent, why does suffering exist? — is both a philosophical argument against theism and a deeply personal existential crisis. Scripture does not present a single systematic answer but engages the question through narrative (Job), lament (Psalms, Habakkuk), and theological argument (Romans 8). The book of Job is the Bible's most sustained treatment: Job's friends offer tidy theodicies that God himself ultimately rejects (Job 42:7-8).",
+    "key_verses": [
+      {
+        "ref": "Job 1:21",
+        "text": "Naked I came from my mother's womb, and naked I will depart. The LORD gave and the LORD has taken away; may the name of the LORD be praised."
+      },
+      {
+        "ref": "Job 42:7",
+        "text": "After the LORD had said these things to Job, he said to Eliphaz the Temanite, 'I am angry with you and your two friends, because you have not spoken the truth about me, as my servant Job has.'"
+      },
+      {
+        "ref": "Romans 8:28",
+        "text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose."
+      },
+      {
+        "ref": "Habakkuk 1:13",
+        "text": "Your eyes are too pure to look on evil; you cannot tolerate wrongdoing. Why then do you tolerate the treacherous? Why are you silent while the wicked swallow up those more righteous than themselves?"
+      },
+      {
+        "ref": "Revelation 21:4",
+        "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away."
+      }
+    ],
+    "consensus": "Scripture does not offer a single systematic theodicy. Job's resolution is relational rather than intellectual — encounter with God rather than explanation from God. Most Christian traditions affirm that suffering is real, God is good, evil will ultimately be defeated, and complete understanding is beyond human capacity in the present age.",
+    "further_reading": [
+      {
+        "author": "D.A. Carson",
+        "title": "How Long, O Lord? Reflections on Suffering and Evil",
+        "year": 1990
+      },
+      {
+        "author": "Norman Habel",
+        "title": "The Book of Job: A Commentary (OTL)",
+        "year": 1985
+      },
+      {
+        "author": "Alvin Plantinga",
+        "title": "God, Freedom, and Evil",
+        "year": 1974
+      }
     ]
   },
   {
@@ -1201,19 +1569,74 @@
     "question": "How can God predestine some for salvation while desiring all to be saved?",
     "responses": [
       {
-        "tradition": "Reformed/Calvinist View",
-        "scholar_id": "macarthur",
-        "summary": "God's decretive will (what He ordains) differs from His preceptive will (what He commands/desires). God genuinely desires all to repent while sovereignly choosing to save some. The tension is real but not contradictory—it reflects divine complexity."
+        "tradition": "Unconditional Election (Calvinist)",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that Romans 9 teaches unconditional election — God's choice of individuals for salvation based on his sovereign purpose, not foreseen faith or merit. Paul's argument moves deliberately: God chose Jacob over Esau before birth, before either had done anything good or bad (9:11), 'so that God's purpose in election might stand: not by works but by him who calls' (9:11-12). Schreiner contends that Paul anticipates the objection of unfairness (9:14) and responds not by softening the doctrine but by asserting God's sovereign freedom: 'I will have mercy on whom I have mercy' (9:15). The 2 Peter 3:9 and 1 Timothy 2:4 texts, Schreiner argues, use 'all' in context to mean 'all kinds of people' or 'all of the elect,' not every individual without exception. God genuinely desires the salvation of all whom he has chosen, and his sovereign purpose ensures they will come.",
+        "key_verses": [
+          "Romans 9:10-13",
+          "Romans 9:15-16",
+          "Ephesians 1:4-5",
+          "Romans 8:29-30"
+        ],
+        "strengths": "Takes Romans 9 at face value in its immediate context. Paul's argument structure — objection, response, further elaboration — is best explained by unconditional election. Exegetically strong on the Romans 9 passage specifically.",
+        "weaknesses": "Must reinterpret the 'all' passages (1 Tim 2:4, 2 Pet 3:9) in non-obvious ways. Creates theological tension with God's expressed love for the world (John 3:16) and the universal offer of the gospel. Can appear to make God the author of reprobation."
       },
       {
-        "tradition": "Corporate Election",
+        "tradition": "Corporate Election / Conditional View",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Election is primarily corporate—God chose the church in Christ. Individuals enter the elect community by faith. Predestination describes the destiny of those in Christ, not the selection of which individuals will believe."
+        "summary": "Keener argues that Paul's primary concern in Romans 9 is not individual soteriological predestination but God's sovereign right to redefine the people of God — to include Gentiles and exclude unbelieving Israel. Jacob and Esau represent nations (as in Malachi 1:2-3), not individuals in eternity. Paul is defending God's faithfulness (9:6: 'It is not as though God's word had failed') by showing that God has always worked through chosen lines — and his current work through Christ is consistent with that pattern. Individual election, for Keener, is 'in Christ' — God chose the church as a body, and individuals enter the elect community by faith. This reading takes 2 Peter 3:9 and 1 Timothy 2:4 at face value: God genuinely desires all individuals to be saved, and faith is a genuine human response enabled by prevenient grace.",
+        "key_verses": [
+          "Romans 9:6-8",
+          "Romans 9:30-32",
+          "Romans 10:9-13",
+          "Romans 11:23"
+        ],
+        "strengths": "Reads Romans 9 within the broader argument of Romans 9-11, which concerns Israel and the Gentiles as groups. Accounts for the universal salvation passages without reinterpretation. The corporate reading has strong support from the OT background of the Jacob/Esau texts.",
+        "weaknesses": "Romans 9:15 ('I will have mercy on whom I have mercy') and 9:18 ('he hardens whom he wants') use singular language that seems to address individuals. The corporate reading may underemphasize the individual dimension of Paul's argument."
       },
       {
-        "tradition": "Mystery Affirmation",
+        "tradition": "Sovereignty and Responsibility in Tension",
+        "tradition_family": "reformed",
         "scholar_id": "calvin",
-        "summary": "Scripture teaches both divine sovereignty and human responsibility. Attempts to resolve the tension sacrifice one truth for another. We should affirm what Scripture affirms without demanding a philosophical reconciliation it doesn't provide."
+        "summary": "Calvin insisted that Scripture teaches both divine sovereignty and human responsibility without offering a philosophical resolution. God genuinely commands all people to repent and believe; God also sovereignly determines who will respond. For Calvin, this is not a contradiction but a mystery that transcends human logic. He vigorously opposed the Arminian move of grounding election in foreseen faith — this, he argued, empties Romans 9 of its force, since Paul's whole point is that election precedes and causes faith, not the reverse. Calvin was equally insistent that God is not unjust: the reprobate are condemned for their own sin, not for a mere decree. Double predestination is a 'horrible decree' (decretum horribile) that Calvin affirmed with trembling, not with glib satisfaction. He counseled believers to look to Christ — not to the hidden decree — for assurance of election.",
+        "key_verses": [
+          "Romans 9:14-18",
+          "Romans 9:19-21",
+          "Ephesians 1:11",
+          "John 6:37"
+        ],
+        "strengths": "Historically foundational for the Reformed tradition and deeply influential across five centuries. Takes both sets of texts seriously without domesticating either. Calvin's pastoral counsel — look to Christ, not the decree — addresses the existential anxiety the doctrine creates.",
+        "weaknesses": "Affirming a 'horrible decree' while insisting God is just requires more philosophical apparatus than Calvin acknowledged. The appeal to mystery can function as a conversation-stopper that leaves the Arminian objection unanswered. Does not adequately resolve the tension between God's expressed desire for all to be saved and the doctrine of reprobation."
+      },
+      {
+        "tradition": "Moderate Calvinist / Amyraldian",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo takes a moderate Calvinist position, arguing that Romans 9 teaches genuine divine election but that this must be read within the full arc of Romans 9-11, which culminates in the astonishing declaration that 'God has bound everyone over to disobedience so that he may have mercy on them all' (11:32). Moo argues that election and universal mercy are not contradictory themes but sequential movements in God's plan — election is the means by which God extends mercy to the world. He is cautious about pressing beyond what the text says: Paul affirms election, Paul affirms God's desire for all to be saved, and Paul refuses to resolve the tension neatly. Moo suggests that the resolution lies in the eschatological dimension — God's plan is still unfolding, and our present theological categories may not be adequate to comprehend its final shape. In the meantime, believers should proclaim the gospel to all while trusting God's sovereign purpose.",
+        "key_verses": [
+          "Romans 9:15-16",
+          "Romans 11:32",
+          "Romans 10:12-13",
+          "1 Timothy 2:4"
+        ],
+        "strengths": "Reads Romans 9 within its broader context rather than isolating it. Takes both election and universal mercy passages seriously. Moo's exegetical caution — letting the tension stand rather than forcing a system — models good hermeneutical practice.",
+        "weaknesses": "The 'moderate' position can feel unsatisfying to those who want clear resolution. Deferring to eschatological mystery may appear to avoid the question rather than answer it. Both strong Calvinists and strong Arminians find this position insufficiently committed."
+      },
+      {
+        "tradition": "Liberation-Contextual Reading",
+        "tradition_family": "mainline",
+        "scholar_id": "brueggemann",
+        "summary": "Brueggemann approaches the predestination question not through systematic theology but through Israel's lived experience of divine election. God's choice of Israel was never about individual eternal destinies but about vocation — God chose a people to be a vehicle of blessing to the world (Gen 12:1-3). Election in the OT is always for service, not for privilege. Paul's argument in Romans 9-11 extends this: God has the sovereign right to expand, reshape, and redirect his chosen instrument — which is precisely what he does by incorporating Gentiles and redefining the people of God around Christ. Brueggemann contends that the predestination debate in Western theology has been distorted by Augustine's individualistic framing, which the biblical text does not support. The real question is not 'Am I elect?' but 'What is God doing in history, and how is my community called to participate?' This reframes the debate from anxiety about personal destiny to responsibility for corporate mission.",
+        "key_verses": [
+          "Genesis 12:1-3",
+          "Romans 9:4-5",
+          "Romans 11:25-26",
+          "Isaiah 49:6"
+        ],
+        "strengths": "Recovers the vocational dimension of election that systematic theology often neglects. Grounds the discussion in Israel's story rather than abstract philosophy. Challenges the individualistic framing that generates so much pastoral anxiety.",
+        "weaknesses": "Does not adequately engage with the individual language in Romans 9 and Ephesians 1. The move from 'election is corporate/vocational' to 'individual predestination is a distortion' is a theological judgment, not an exegetical conclusion. May undermine the genuine pastoral questions about personal assurance that the tradition addresses."
       }
     ],
     "related_chapters": [
@@ -1232,6 +1655,43 @@
       "free will",
       "Calvinism",
       "sovereignty"
+    ],
+    "context": "Romans 9 is Paul's most sustained treatment of divine election. He argues that God's choice of Jacob over Esau, and his hardening of Pharaoh, demonstrate that salvation depends on God's mercy rather than human effort (9:16). Yet other passages affirm God's desire for all to be saved (1 Tim 2:4; 2 Pet 3:9) and present faith as a genuine human response. This tension has generated the most enduring theological debate in Christian history — between Calvinist and Arminian soteriologies.",
+    "key_verses": [
+      {
+        "ref": "Romans 9:15-16",
+        "text": "For he says to Moses, 'I will have mercy on whom I have mercy, and I will have compassion on whom I have compassion.' It does not, therefore, depend on human desire or effort, but on God's mercy."
+      },
+      {
+        "ref": "Ephesians 1:4-5",
+        "text": "For he chose us in him before the creation of the world to be holy and blameless in his sight. In love he predestined us for adoption to sonship through Jesus Christ, in accordance with his pleasure and will."
+      },
+      {
+        "ref": "2 Peter 3:9",
+        "text": "The Lord is not slow in keeping his promise, as some understand slowness. Instead he is patient with you, not wanting anyone to perish, but everyone to come to repentance."
+      },
+      {
+        "ref": "1 Timothy 2:3-4",
+        "text": "This is good, and pleases God our Savior, who wants all people to be saved and to come to a knowledge of the truth."
+      }
+    ],
+    "consensus": "Both Calvinist and Arminian positions have deep roots in Scripture, church history, and careful exegesis. Neither can be dismissed as obviously wrong. Most scholars acknowledge genuine tension in the biblical data and differ on how to resolve it. The debate is over which set of texts is given hermeneutical priority.",
+    "further_reading": [
+      {
+        "author": "Thomas Schreiner",
+        "title": "Still Sovereign: Contemporary Perspectives on Election, Foreknowledge, and Grace",
+        "year": 2000
+      },
+      {
+        "author": "Jack Cottrell",
+        "title": "Perspectives on Election: Five Views",
+        "year": 2006
+      },
+      {
+        "author": "Roger Olson",
+        "title": "Against Calvinism",
+        "year": 2011
+      }
     ]
   },
   {
@@ -3248,19 +3708,74 @@
     "question": "Did God predetermine to hate Esau before birth? Is this fair?",
     "responses": [
       {
-        "tradition": "Comparative Idiom",
-        "scholar_id": "longman",
-        "summary": "'Love/hate' is Semitic idiom for preference, not emotional hatred. 'Hate' means 'love less' (compare Genesis 29:31; Luke 14:26). God chose Jacob's line for covenant purposes; Esau was still blessed (Genesis 36), not cursed."
+        "tradition": "Comparative Idiom / National Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "sarna",
+        "summary": "Sarna reads the love/hate language through the lens of Ancient Near Eastern covenant terminology, where 'love' and 'hate' function as diplomatic terms meaning 'choose as covenant partner' and 'not choose as covenant partner.' This is well attested in Hittite treaties and other ANE texts. Malachi is addressing nations — Israel and Edom — not the individual patriarchs. Edom's 'hatred' is evidenced by the desolation of its territory, while Israel's 'love' is demonstrated by God's ongoing covenant faithfulness despite Israel's unfaithfulness. Sarna notes that Esau the individual was not cursed — Genesis 33 shows a reconciled Esau, and Genesis 36 records his prosperous descendants. The 'hatred' refers to Edom's later history of hostility toward Israel and consequent divine judgment (see Obadiah). Reading eternal individual predestination into this text imports categories foreign to both Malachi and Genesis.",
+        "key_verses": [
+          "Malachi 1:2-5",
+          "Genesis 33:4",
+          "Genesis 36:1-8",
+          "Obadiah 1:10"
+        ],
+        "strengths": "Grounded in ANE linguistic evidence and the OT context. Correctly identifies the national referents in Malachi. Accounts for Genesis's own portrayal of Esau as blessed, not cursed. Avoids reading systematic theology back into a prophetic oracle.",
+        "weaknesses": "Does not fully address Paul's appropriation of the text in Romans 9, where the individual dimension seems more prominent. Even as a comparative idiom, the language of 'hate' directed at an entire nation before birth raises its own theological questions."
       },
       {
-        "tradition": "Sovereign Election",
-        "scholar_id": "macarthur",
-        "summary": "Paul uses Jacob/Esau to illustrate unconditional election. God's choice preceded any works, demonstrating that salvation depends on divine mercy, not human effort. The Potter has rights over the clay (Romans 9:21)."
+        "tradition": "Unconditional Individual Election",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that Paul's use of the Jacob/Esau text in Romans 9 presses beyond Malachi's national reference to make a point about individual election. Paul's explicit emphasis — 'before the twins were born or had done anything good or bad, in order that God's purpose in election might stand' (9:11) — is designed to exclude human merit as the basis of divine choice. If Paul merely meant that God chose Israel as a nation, the argument would not serve his purpose in Romans 9, which is to explain why some individual Israelites are saved and others are not (9:6: 'not all who are descended from Israel are Israel'). Schreiner contends that 'hate' here means 'not choose for salvation' — a strong term, but Paul does not shrink from it. The 'before birth' emphasis makes the unconditional nature of election unavoidable. God's choice is free, sovereign, and not based on foreseen faith or works.",
+        "key_verses": [
+          "Romans 9:11-13",
+          "Romans 9:6",
+          "Romans 9:16",
+          "Ephesians 1:4-5"
+        ],
+        "strengths": "Takes Paul's argument in Romans 9 on its own terms rather than reading it back through Malachi. The 'before birth' emphasis is Paul's own addition to the OT text and must be accounted for. Consistent with Paul's broader argument in Romans 9:6-29.",
+        "weaknesses": "The individual reading must explain why Paul uses a text that in its OT context clearly refers to nations. The word 'hated' applied to an individual before birth creates severe theological difficulties that the Reformed tradition has wrestled with for centuries."
       },
       {
-        "tradition": "Corporate/Historical Reading",
+        "tradition": "Corporate / Salvation-Historical Election",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Malachi refers to nations (Israel/Edom), not individuals in eternity. Paul's application concerns roles in salvation history, not individual eternal destinies. Esau-Edom's judgment came from centuries of hostility, not prenatal decree."
+        "summary": "Keener argues that Paul uses the Jacob/Esau typology to make a salvation-historical point, not an individual soteriological one. Paul's argument in Romans 9 begins with the question of why ethnic Israel has largely rejected the Messiah. His answer: God has always worked through chosen lines (Isaac over Ishmael, Jacob over Esau), and his current work through Christ — incorporating Gentiles and redefining Israel — is consistent with that pattern. Jacob and Esau represent two trajectories of covenant history, not two individual eternal destinies. Keener notes that Romans 9:30-10:21 shifts to language of human responsibility — Israel 'stumbled' and 'did not submit' — which would be incoherent if individual predestination were the sole explanation. The full argument of Romans 9-11 culminates in corporate mercy: 'God has bound everyone over to disobedience so that he may have mercy on them all' (11:32).",
+        "key_verses": [
+          "Romans 9:6",
+          "Romans 9:30-32",
+          "Romans 10:3",
+          "Romans 11:32"
+        ],
+        "strengths": "Reads Romans 9 within its literary context (chs. 9-11) rather than in isolation. Accounts for the shift to human responsibility language in 9:30ff. The corporate reading is consistent with the OT background and with Paul's pastoral purpose.",
+        "weaknesses": "Paul's specific emphasis on the individual twins ('before the twins were born') seems to press beyond a purely corporate reading. If Paul only means God chose Israel as a nation, why does he anticipate the objection 'Is God unjust?' — an objection that only makes sense if individual destinies are in view."
+      },
+      {
+        "tradition": "Literary-Theological Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the Genesis narrative of Jacob and Esau as a masterpiece of literary ambiguity. The text does not present Jacob as morally superior to Esau — Jacob is a deceiver who cheats his brother twice (birthright, blessing), while Esau is portrayed with genuine pathos ('he burst out with a loud and bitter cry,' Gen 27:34). The narrative subverts the reader's moral expectations: the 'chosen' brother is morally worse than the 'unchosen' one. Alter argues this is precisely the point — God's choice is not based on human merit, and the narrative forces the reader to confront the scandal of election. The literary artistry of Genesis resists systematic extraction: every attempt to turn Jacob/Esau into a tidy doctrine of predestination or a simple morality tale runs aground on the text's own complexity. The narrative holds divine sovereignty and human moral ambiguity in tension without resolving either.",
+        "key_verses": [
+          "Genesis 25:29-34",
+          "Genesis 27:34-38",
+          "Genesis 32:24-30",
+          "Genesis 33:4"
+        ],
+        "strengths": "Attends to the narrative's own moral complexity rather than flattening it into a doctrinal proof-text. The observation that Jacob is not morally superior to Esau is textually undeniable and theologically important. Captures the unsettling quality of the election narrative.",
+        "weaknesses": "A purely literary reading does not engage with Paul's theological appropriation of the text in Romans 9. The literary ambiguity Alter identifies may not be the ambiguity Paul is interested in. Stops short of theological conclusions that Christian readers need."
+      },
+      {
+        "tradition": "Moderate Evangelical Synthesis",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo argues that Paul uses Jacob/Esau to establish a specific principle: God's electing purpose precedes and is independent of human works. Whether 'hate' means 'reject for salvation' or 'not choose for covenant role' is less important than the principle Paul extracts — 'not by works but by him who calls' (9:12). Moo contends that both the corporate and individual dimensions are present in Paul's argument: Jacob and Esau are individuals who represent nations, and Paul's point works on both levels simultaneously. The crucial interpretive move is not to isolate Romans 9:13 but to read it within the full arc of 9-11, which moves from election (ch. 9) through human responsibility (ch. 10) to universal mercy (ch. 11). Moo cautions against building an entire soteriology on one verse in one chapter of one letter — Paul's theology of election is complex, pastoral, and ultimately doxological ('Oh, the depth of the riches,' 11:33).",
+        "key_verses": [
+          "Romans 9:11-13",
+          "Romans 9:16",
+          "Romans 10:9-13",
+          "Romans 11:33-36"
+        ],
+        "strengths": "Avoids the false choice between corporate and individual readings. Reads the verse within its broader literary and theological context. The pastoral and doxological emphasis reflects Paul's own rhetorical movement in Romans 9-11.",
+        "weaknesses": "The 'both/and' approach, while hermeneutically responsible, may leave partisans on both sides unsatisfied. Some argue that Moo's moderation avoids the hard edge of Paul's argument in Romans 9, which seems designed to provoke exactly the strong reactions it receives."
       }
     ],
     "related_chapters": [
@@ -3279,6 +3794,43 @@
       "election",
       "predestination",
       "sovereignty"
+    ],
+    "context": "Malachi 1:2-3 declares 'Jacob I loved, but Esau I hated,' referring to the nations of Israel and Edom. Paul quotes this in Romans 9:13 to illustrate God's sovereign election — a choice made 'before the twins were born or had done anything good or bad' (Rom 9:11). The difficulty lies in the apparent injustice of divine preference before birth, the meaning of 'hated,' and whether the text addresses individuals or nations, temporal roles or eternal destinies.",
+    "key_verses": [
+      {
+        "ref": "Malachi 1:2-3",
+        "text": "'I have loved you,' says the LORD. 'But you ask, \"How have you loved us?\" \"Was not Esau Jacob's brother?\" declares the LORD. \"Yet I have loved Jacob, but Esau I have hated, and I have turned his hill country into a wasteland and left his inheritance to the desert jackals.\"'"
+      },
+      {
+        "ref": "Romans 9:10-13",
+        "text": "Not only that, but Rebekah's children were conceived at the same time by our father Isaac. Yet, before the twins were born or had done anything good or bad — in order that God's purpose in election might stand: not by works but by him who calls — she was told, 'The older will serve the younger.' Just as it is written: 'Jacob I loved, but Esau I hated.'"
+      },
+      {
+        "ref": "Genesis 25:23",
+        "text": "The LORD said to her, 'Two nations are in your womb, and two peoples from within you will be separated; one people will be stronger than the other, and the older will serve the younger.'"
+      },
+      {
+        "ref": "Luke 14:26",
+        "text": "If anyone comes to me and does not hate father and mother, wife and children, brothers and sisters — yes, even their own life — such a person cannot be my disciple."
+      }
+    ],
+    "consensus": "Most scholars recognize that 'love/hate' in Semitic usage often means 'choose/not choose' or 'prefer/set aside.' Malachi clearly refers to nations (Israel and Edom), not the individual patriarchs. The debate centers on how Paul applies this national text to individual election in Romans 9 — whether he intends the same corporate meaning or extends it to individual soteriological predestination.",
+    "further_reading": [
+      {
+        "author": "Thomas Schreiner",
+        "title": "Romans (Baker Exegetical Commentary)",
+        "year": 1998
+      },
+      {
+        "author": "Pieter Verhoef",
+        "title": "The Books of Haggai and Malachi (NICOT)",
+        "year": 1987
+      },
+      {
+        "author": "Douglas Moo",
+        "title": "The Epistle to the Romans (NICNT)",
+        "year": 1996
+      }
     ]
   },
   {
@@ -3290,19 +3842,74 @@
     "question": "Does Paul universally forbid women from teaching or speaking in church?",
     "responses": [
       {
-        "tradition": "Complementarian View",
-        "scholar_id": "macarthur",
-        "summary": "Paul grounds the prohibition in creation order (1 Tim 2:13), not culture. Women exercise many ministries but not authoritative teaching over men in the gathered church. This reflects God's design for male headship, not female inferiority."
+        "tradition": "Complementarian — Transcultural Restriction",
+        "tradition_family": "reformed",
+        "scholar_id": "schreiner",
+        "summary": "Schreiner argues that Paul's prohibition is grounded not in culture but in creation: 'Adam was formed first, then Eve' (1 Tim 2:13). Because the appeal is to the creation order — which precedes the fall, transcends culture, and reflects God's original design — the restriction on women teaching or exercising authority over men in the gathered church is permanent and universal. Schreiner carefully distinguishes this from a claim of female inferiority: complementarity means different roles, not different value. Women exercise vital ministries — teaching other women and children, prophesying, serving as deacons (Rom 16:1), exercising hospitality, and contributing to church life in every way except authoritative doctrinal teaching over men. Schreiner notes that the key Greek word authentein (1 Tim 2:12) is rare and debated, but argues that the most natural translation in context is 'exercise authority' — a function Paul reserves for qualified male elders.",
+        "key_verses": [
+          "1 Timothy 2:12-14",
+          "1 Corinthians 11:8-9",
+          "Titus 2:3-5",
+          "1 Timothy 3:1-7"
+        ],
+        "strengths": "Takes Paul's creation-order argument at face value. Consistent with the historical position of the majority of the church for most of its history. The distinction between role and value is hermeneutically careful.",
+        "weaknesses": "Paul's appeal to Eve's deception (1 Tim 2:14) is puzzling as a universal principle — does it imply women are inherently more susceptible to deception? Does not adequately account for Deborah, Huldah, Priscilla, Junia, and other women who exercised significant authority in Scripture."
       },
       {
-        "tradition": "Egalitarian View",
+        "tradition": "Egalitarian — Situational Restriction",
+        "tradition_family": "pentecostal",
+        "scholar_id": "fee",
+        "summary": "Fee argues that Paul's restrictions in 1 Timothy and 1 Corinthians address specific problems in specific churches, not universal ecclesiology. In Ephesus (1 Timothy), women were being deceived by false teachers (1 Tim 5:13-15; 2 Tim 3:6-7) and were themselves spreading false teaching — Paul's prohibition targets this situation, not women's ministry in principle. Fee notes that 1 Corinthians 11:5 explicitly assumes women will prophesy in church — just ten chapters before the supposed universal silence command. He argues that 1 Corinthians 14:34-35 may be a Corinthian slogan Paul is quoting and correcting (as in 6:12 and 7:1), or that it addresses a specific disruption (uneducated wives interrupting with questions). The same Paul who praised Phoebe as a deacon (Rom 16:1) and Junia as 'outstanding among the apostles' (Rom 16:7) could not have intended a blanket ban on women's ministry. The creation-order argument is culturally conditioned application, like Paul's argument for head coverings in 1 Corinthians 11.",
+        "key_verses": [
+          "1 Corinthians 11:5",
+          "Romans 16:1-2",
+          "Romans 16:7",
+          "Acts 18:26"
+        ],
+        "strengths": "Accounts for the tension between Paul's restrictions and his own practice of commending women leaders. The situational reading resolves the contradiction between 1 Cor 11:5 (women praying/prophesying) and 14:34 (women silent). Attends to the specific problems in Ephesus and Corinth.",
+        "weaknesses": "The creation-order argument (1 Tim 2:13-14) is difficult to dismiss as merely situational — Paul seems to ground the restriction in something pre-cultural. The 'Corinthian slogan' theory for 14:34-35 is speculative and lacks textual markers. May underestimate the weight of Paul's appeal to creation."
+      },
+      {
+        "tradition": "Socio-Rhetorical Context",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Paul addresses specific situations: uneducated women disrupting with questions (Corinth) and women teaching false doctrine (Ephesus). The same Paul praised women coworkers (Romans 16). The restrictions were circumstantial, not universal."
+        "summary": "Keener provides extensive socio-historical analysis showing that most women in the first-century Greco-Roman world were uneducated, which is precisely the background Paul addresses. When Paul says women should 'learn in quietness' (1 Tim 2:11), the emphasis falls on 'learn' — a revolutionary command in a culture that did not educate women. The 'quietness' (hēsychia, not sigē/total silence) describes the posture of a student, not a permanent muzzle. Keener argues that Paul restricts uneducated women from teaching because they were not yet equipped, not because they were women. As women became educated — as the gospel itself demanded — the restriction would naturally fall away, just as the parallel restrictions on Gentiles becoming leaders were temporary. Keener's extensive prosopographic research in Romans 16 demonstrates that Paul's actual practice included women in leadership: Phoebe the deacon, Priscilla the teacher (Acts 18:26), and Junia the apostle (Rom 16:7, reading the accusative as feminine, which most current scholarship supports).",
+        "key_verses": [
+          "1 Timothy 2:11",
+          "Acts 18:24-26",
+          "Romans 16:1-7",
+          "Galatians 3:28"
+        ],
+        "strengths": "Deep historical research grounds the interpretation in first-century realities. The emphasis on 'learn' as revolutionary for women is historically accurate and theologically significant. Paul's own practice of commissioning women leaders is hard to reconcile with a universal prohibition.",
+        "weaknesses": "The education-gap argument assumes Paul's restriction was pragmatic rather than principled, which the creation-order appeal (2:13-14) seems to contradict. Historical reconstruction, however careful, involves some speculation about the specific situation in Ephesus."
       },
       {
-        "tradition": "Mediating Position",
-        "scholar_id": "longman",
-        "summary": "Paul's principle (order, learning) may be expressed differently across cultures. Some restrictions were cultural applications; others reflect creation design. Discerning which requires careful hermeneutics and charitable disagreement."
+        "tradition": "Mediating / Third-Wave Feminist Evangelical",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes approaches the texts as a woman scholar within the evangelical tradition, attending to both the authority of the text and the experience of women in ministry. She argues that the key hermeneutical question is not whether Paul's words are authoritative (they are) but what Paul was actually prohibiting. The Greek word authentein (1 Tim 2:12) is extremely rare — it appears only here in the entire NT — and its range of meaning includes 'domineer,' 'usurp authority,' or even 'originate' in addition to 'exercise authority.' Jobes contends that Paul may be prohibiting a specific kind of inappropriate, domineering behavior rather than women's teaching ministry in general. She notes that complementarians and egalitarians share far more common ground than the debate suggests: both affirm the authority of Scripture, the dignity of women, and the importance of orderly worship. The disagreement is over the application of specific texts, not over biblical authority itself. Jobes calls for charitable dialogue and mutual respect between positions.",
+        "key_verses": [
+          "1 Timothy 2:12",
+          "Proverbs 31:26",
+          "Acts 21:9",
+          "Philippians 4:2-3"
+        ],
+        "strengths": "Models charitable engagement with a divisive issue. The lexical analysis of authentein is linguistically responsible — the word's rarity makes confident translation difficult. Correctly identifies the common ground that the debate often obscures.",
+        "weaknesses": "The mediating position can appear to avoid a definitive stance. The authentein argument, while linguistically valid, has been used by both sides, and the complementarian translation ('exercise authority') has strong contextual support. Some readers may want a clearer conclusion."
+      },
+      {
+        "tradition": "Moderate Complementarian with Nuance",
+        "tradition_family": "evangelical",
+        "scholar_id": "moo",
+        "summary": "Moo holds a complementarian position but with significant nuance. He argues that Paul's creation-order appeal (1 Tim 2:13) gives the restriction a transcultural dimension that cannot be dismissed as purely situational. However, Moo is careful about what exactly is restricted: the prohibition targets the specific function of authoritative doctrinal teaching in the gathered church, not all forms of ministry, leadership, or speech. Women may teach in parachurch settings, write theological works, instruct men in informal contexts, prophesy, pray publicly, and exercise spiritual gifts. Moo acknowledges the difficulty of Paul's appeal to Eve's deception (2:14), which he reads as an illustrative example of role reversal rather than a claim about female gullibility. He is also honest about the complexity: the evidence is not as one-sided as either camp sometimes suggests, and faithful Christians can disagree on the application of these texts while affirming their authority.",
+        "key_verses": [
+          "1 Timothy 2:12-14",
+          "1 Corinthians 14:34-35",
+          "1 Corinthians 11:5",
+          "Romans 16:1-2"
+        ],
+        "strengths": "Distinguishes between the specific restriction (authoritative teaching in the gathered church) and the broader scope of women's ministry. Honest about interpretive difficulty and the legitimacy of disagreement. The nuanced complementarian position avoids the extremes of both blanket prohibition and wholesale dismissal.",
+        "weaknesses": "The distinction between 'authoritative teaching in the gathered assembly' and other forms of teaching may be more precise than Paul's language warrants. Drawing the line of what women may and may not do requires interpretive decisions the text does not make explicit."
       }
     ],
     "related_chapters": [
@@ -3318,6 +3925,47 @@
       "complementarian",
       "egalitarian",
       "Paul"
+    ],
+    "context": "Paul instructs that women should 'learn in quietness and full submission' and should 'not teach or assume authority over a man' (1 Tim 2:11-12), grounding this in the creation order (2:13-14). In 1 Corinthians 14:34-35, he says women should 'remain silent in the churches.' Yet the same Paul commends women as coworkers (Rom 16:1-7), acknowledges women prophesying in church (1 Cor 11:5), and declares 'there is neither male nor female' in Christ (Gal 3:28). The tension between these texts is the central battleground of the complementarian-egalitarian debate.",
+    "key_verses": [
+      {
+        "ref": "1 Timothy 2:11-12",
+        "text": "A woman should learn in quietness and full submission. I do not permit a woman to teach or to assume authority over a man; she must be quiet."
+      },
+      {
+        "ref": "1 Timothy 2:13-14",
+        "text": "For Adam was formed first, then Eve. And Adam was not the one deceived; it was the woman who was deceived and became a sinner."
+      },
+      {
+        "ref": "1 Corinthians 14:34-35",
+        "text": "Women should remain silent in the churches. They are not allowed to speak, but must be in submission, as the law says. If they want to inquire about something, they should ask their own husbands at home; for it is disgraceful for a woman to speak in the church."
+      },
+      {
+        "ref": "Romans 16:1-2",
+        "text": "I commend to you our sister Phoebe, a deacon of the church in Cenchreae. I ask you to receive her in the Lord in a way worthy of his people and to give her any help she may need from you, for she has been the benefactor of many people, including me."
+      },
+      {
+        "ref": "Galatians 3:28",
+        "text": "There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus."
+      }
+    ],
+    "consensus": "Both complementarian and egalitarian positions are held by serious evangelical scholars who affirm biblical authority. The debate centers on hermeneutical method: whether Paul's creation-order argument makes the restriction transcultural, or whether the specific situations in Ephesus and Corinth explain the prohibitions as culturally conditioned applications of a broader principle.",
+    "further_reading": [
+      {
+        "author": "Craig S. Keener",
+        "title": "Paul, Women, and Wives: Marriage and Women's Ministry in the Letters of Paul",
+        "year": 1992
+      },
+      {
+        "author": "Thomas Schreiner",
+        "title": "Women in the Church: An Interpretation and Application of 1 Timothy 2:9-15 (co-edited with Andreas Köstenberger)",
+        "year": 2005
+      },
+      {
+        "author": "Gordon D. Fee",
+        "title": "The First Epistle to the Corinthians (NICNT)",
+        "year": 1987
+      }
     ]
   },
   {
@@ -3329,19 +3977,73 @@
     "question": "Should women today cover their heads in church? Is Paul's teaching cultural or universal?",
     "responses": [
       {
-        "tradition": "Cultural Symbol",
+        "tradition": "Cultural Symbol, Abiding Principle",
+        "tradition_family": "pentecostal",
+        "scholar_id": "fee",
+        "summary": "Fee argues that head covering was a Greco-Roman cultural convention signifying sexual propriety and social status, not a divinely mandated garment. In Roman Corinth, respectable married women covered their heads in public; uncovering was associated with loose women, prostitutes, or women repudiating their marital status. Paul's concern is that Christian women not communicate sexual impropriety or social rebellion through their worship behavior. The underlying principle — honoring appropriate gender distinctions and maintaining orderly worship — is transcultural; the specific practice (covering) is cultural and may legitimately vary. Fee notes that Paul's own argumentation is unusually tangled, mixing appeals to creation, custom, nature, and angels in a way that suggests he is struggling to articulate a principle he feels strongly about but cannot ground in a single definitive argument. The concluding appeal to church custom (11:16) signals that Paul himself recognizes this is not on the same level as his clearest doctrinal pronouncements.",
+        "key_verses": [
+          "1 Corinthians 11:5-6",
+          "1 Corinthians 11:13-15",
+          "1 Corinthians 11:16"
+        ],
+        "strengths": "Rich cultural analysis of Roman Corinth. The cultural-symbol reading explains why virtually no Protestant church requires literal head coverings today without claiming to disobey Paul. Honest about the difficulty of Paul's argumentation.",
+        "weaknesses": "The creation-order appeal (11:7-9) and the reference to angels (11:10) suggest Paul is reaching for something more than cultural convention. If the practice is merely cultural, the theological arguments Paul marshals seem disproportionate."
+      },
+      {
+        "tradition": "Socio-Historical Analysis",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Head covering was a Greco-Roman honor symbol. Paul required Corinthian women to observe local propriety. The principle (respecting gender distinctions, avoiding shame) remains; the specific practice was cultural and may vary."
+        "summary": "Keener provides detailed analysis of head-covering customs across the ancient Mediterranean world, noting significant variation: Jewish women typically covered their heads, Greek customs varied by region and context, and Roman customs differed by social class. In Corinth — a Roman colony with a diverse population — the conventions were contested. Keener argues that some Corinthian women, experiencing the freedom of the Spirit in Christian worship (they are praying and prophesying — activities Paul assumes, not prohibits), were discarding head coverings as symbols of their old social constraints. Paul pushes back not because the covering is intrinsically sacred but because removing it in that cultural context communicated rejection of marital bonds and gender propriety. The key interpretive clue is 11:10: 'a woman ought to have authority (exousia) over her own head' — this is positive language about women's authority, not submission. Paul affirms women's participation in worship while asking them to exercise their freedom in culturally sensitive ways.",
+        "key_verses": [
+          "1 Corinthians 11:5",
+          "1 Corinthians 11:10",
+          "1 Corinthians 11:13",
+          "1 Corinthians 8:9"
+        ],
+        "strengths": "Thorough cultural contextualization supported by archaeological and literary evidence. The positive reading of exousia in 11:10 has strong lexical support. Explains the passage within Paul's broader principle of limiting freedom for the sake of others (1 Cor 8-10).",
+        "weaknesses": "Cultural reconstruction of Corinthian customs involves some uncertainty — the evidence is not as clear-cut as the analysis implies. The theological arguments Paul uses (creation, angels) may not be fully explained by a purely cultural reading."
       },
       {
-        "tradition": "Creational Principle",
-        "scholar_id": "macarthur",
-        "summary": "Paul appeals to creation and angels (vv. 8-10), not merely culture. Some symbol of gender distinction and submission remains appropriate. Whether literal covering or other cultural markers is debated, but the underlying principle stands."
+        "tradition": "Textual-Grammatical Analysis",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson's close grammatical analysis of the Greek text reveals several interpretive cruxes. The word kephalē ('head') in 11:3 is debated — it can mean 'authority over' (traditional) or 'source/origin' (egalitarian). Robertson notes that the 'source' meaning has ancient attestation (Chrysostom) and fits the creation-order argument: man is the source (origin) of woman as God is the source of Christ — a statement about derivation, not subordination. The phrase 'because of the angels' (11:10) is notoriously obscure — proposed explanations include guardian angels observing worship, the creation narrative where angels were present, or fallen angels attracted to uncovered women (connecting to the Genesis 6 tradition). Robertson observes that Paul's argument moves in an unusual progression: he begins with what appears to be a strong hierarchical statement (11:3) but qualifies it substantially (11:11-12: 'woman is not independent of man, nor is man independent of woman... everything comes from God'). The mutual dependence language in 11:11-12 may be Paul's own correction of an overly hierarchical reading of his opening statement.",
+        "key_verses": [
+          "1 Corinthians 11:3",
+          "1 Corinthians 11:10",
+          "1 Corinthians 11:11-12",
+          "1 Corinthians 11:16"
+        ],
+        "strengths": "Rigorous attention to the Greek text, including the ambiguity of kephalē and the qualification in 11:11-12. Identifies the internal tension in Paul's argument rather than smoothing it over. The observation about Paul self-correcting is textually perceptive.",
+        "weaknesses": "The 'source' meaning of kephalē, while possible, is disputed — many lexicographers argue 'authority' is the primary meaning in Paul. Textual analysis alone does not resolve the practical question of application. The 'angels' reference remains genuinely obscure."
       },
       {
-        "tradition": "Hair as Covering",
-        "scholar_id": "longman",
-        "summary": "Verse 15 says 'her hair is given to her for a covering.' Paul may be discussing hairstyles, not veils. Women should have feminine hair; men should not have effeminate styles. The issue is gender-appropriate appearance."
+        "tradition": "Feminist Evangelical Hermeneutics",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes reads the passage through the lens of women's actual experience in worship, noting that Paul's starting assumption is significant: women are praying and prophesying publicly (11:5). This is not a passage about silencing women — it is about how women should present themselves while exercising vocal ministry. Jobes argues that Paul's concern is propriety, not hierarchy: women should participate fully in worship while respecting cultural markers that signal their identity and commitments. The practical application varies across cultures — what signals 'respectability' in one context may be meaningless in another. Jobes notes that women throughout church history have debated among themselves about the right application, and that this diversity of practice is itself evidence that the specific form is cultural while the principle is enduring. She cautions against both extremes: dismissing the passage as irrelevant (which disrespects its canonical authority) and mandating a specific practice (which collapses principle into cultural form).",
+        "key_verses": [
+          "1 Corinthians 11:5",
+          "1 Corinthians 11:10",
+          "1 Corinthians 11:15",
+          "1 Peter 3:3-4"
+        ],
+        "strengths": "Centers the fact that Paul affirms women's public worship participation — the passage is about how, not whether, women pray and prophesy. Practical wisdom about distinguishing principle from cultural form. Models evangelical feminist engagement that takes the text seriously.",
+        "weaknesses": "The principle-versus-form distinction, while helpful, requires interpretive judgment about where to draw the line — and Paul's own appeals to creation and nature may resist the distinction. Some readers will find the 'cultural variability' approach insufficiently grounded."
+      },
+      {
+        "tradition": "Abiding Creational Principle",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin argued that Paul's appeal to creation order (11:7-9) and 'nature itself' (11:14) grounds the instruction in something more than local custom. The covering symbolizes a theological reality — the creational distinction between male and female and the relational order God established. Calvin did not insist that the specific garment was universally binding but maintained that some visible expression of gender distinction and propriety in worship is a permanent obligation. He read 'the head of the woman is man' (11:3) as reflecting the creation hierarchy without implying inferiority — just as 'the head of Christ is God' does not imply the Son is inferior to the Father. Calvin was characteristically practical: the specific form of the covering is secondary to what it signifies. What remains non-negotiable is the principle that worship should visibly reflect the created order rather than abolish it. His reading has been influential in Reformed traditions that maintain some form of head-covering practice.",
+        "key_verses": [
+          "1 Corinthians 11:3",
+          "1 Corinthians 11:7-9",
+          "1 Corinthians 11:14-15",
+          "Genesis 2:21-23"
+        ],
+        "strengths": "Takes Paul's theological arguments seriously rather than reducing them to cultural accommodation. The analogy between man-woman and Christ-God preserves complementarity without inferiority. Historically influential and consistent with Reformed hermeneutical principles.",
+        "weaknesses": "The 'nature itself' argument (11:14) is the weakest in Paul's chain — what counts as 'natural' hair length varies dramatically across cultures and eras. If the principle is permanent but the form variable, determining the right modern form requires the same cultural judgment Calvin wanted to avoid."
       }
     ],
     "related_chapters": [
@@ -3357,6 +4059,43 @@
       "culture",
       "creation",
       "Corinth"
+    ],
+    "context": "In 1 Corinthians 11:2-16, Paul argues that women should cover their heads during prayer and prophecy. His reasoning draws on creation (11:7-9), angelic presence (11:10), and nature (11:14-15), yet concludes with an appeal to church custom (11:16). The passage is one of the most hermeneutically challenging in Paul's letters because it interweaves theological principle, cultural convention, and argumentation that is difficult to follow even in Greek.",
+    "key_verses": [
+      {
+        "ref": "1 Corinthians 11:3",
+        "text": "But I want you to realize that the head of every man is Christ, and the head of the woman is man, and the head of Christ is God."
+      },
+      {
+        "ref": "1 Corinthians 11:5-6",
+        "text": "But every woman who prays or prophesies with her head uncovered dishonors her head — it is the same as having her head shaved. For if a woman does not cover her head, she might as well have her hair cut off; but if it is a disgrace for a woman to have her hair cut off or her head shaved, then she should cover her head."
+      },
+      {
+        "ref": "1 Corinthians 11:10",
+        "text": "It is for this reason that a woman ought to have authority over her own head, because of the angels."
+      },
+      {
+        "ref": "1 Corinthians 11:15",
+        "text": "but that if a woman has long hair, it is her glory? For long hair is given to her as a covering."
+      }
+    ],
+    "consensus": "Most scholars agree that Paul is addressing culturally appropriate expressions of gender distinction in worship. The debate is whether the underlying principle (gender distinction, headship) requires a specific modern practice (literal covering) or whether the principle can be expressed through culturally appropriate means. The vast majority of Protestant churches today do not require head coverings.",
+    "further_reading": [
+      {
+        "author": "Gordon D. Fee",
+        "title": "The First Epistle to the Corinthians (NICNT)",
+        "year": 1987
+      },
+      {
+        "author": "Anthony Thiselton",
+        "title": "The First Epistle to the Corinthians (NIGTC)",
+        "year": 2000
+      },
+      {
+        "author": "Craig S. Keener",
+        "title": "Paul, Women, and Wives",
+        "year": 1992
+      }
     ]
   },
   {
@@ -3368,19 +4107,75 @@
     "question": "Who were the 'sons of God' who married 'daughters of men,' and what were the Nephilim?",
     "responses": [
       {
-        "tradition": "Angelic Beings",
+        "tradition": "Angelic Beings / Supernatural Interpretation",
+        "tradition_family": "evangelical",
         "scholar_id": "waltke",
-        "summary": "'Sons of God' elsewhere means angels (Job 1:6; 2:1). Ancient Jewish interpretation (1 Enoch, Jude 6-7, 2 Peter 2:4) supports angelic intrusion. This demonic corruption explains the flood's cosmic scope and severity."
+        "summary": "Waltke argues that the term bĕnê hāʾĕlōhîm ('sons of God') has a consistent meaning in the Hebrew Bible: it refers to members of the divine council — angelic or supernatural beings (Job 1:6; 2:1; 38:7; Psalm 29:1; 82:1, 6). There is no clear instance where the phrase means 'godly human men' in the OT. The angelic interpretation was dominant in Second Temple Judaism — 1 Enoch 6-36 elaborates the story extensively, and both Jude 6-7 and 2 Peter 2:4 appear to reference this tradition, describing angels who 'abandoned their proper dwelling' and were imprisoned. Waltke contends the passage describes a fundamental boundary violation: supernatural beings transgressing the divinely established order by taking human wives. This cosmic rebellion explains why the Flood narrative follows immediately — the corruption described is not merely human sinfulness but a cosmic disorder that threatens the integrity of creation itself. The Nephilim are the monstrous offspring of this transgression, not merely tall warriors.",
+        "key_verses": [
+          "Genesis 6:1-4",
+          "Job 1:6",
+          "Job 38:7",
+          "Jude 6-7",
+          "2 Peter 2:4"
+        ],
+        "strengths": "Strongest linguistic argument — bĕnê hāʾĕlōhîm consistently means divine/angelic beings in the OT. Supported by Second Temple Jewish tradition (1 Enoch, Jubilees) and apparently by Jude and 2 Peter. Explains the extreme divine response (universal Flood) as proportionate to cosmic boundary violation.",
+        "weaknesses": "Jesus says angels 'neither marry nor are given in marriage' (Matt 22:30), which seems to preclude angel-human procreation — though this may describe angels' normal state, not what happens when they transgress. The concept of angel-human offspring raises metaphysical questions the text does not address."
       },
       {
-        "tradition": "Sethite/Cainite Lines",
-        "scholar_id": "macarthur",
-        "summary": "'Sons of God' = godly Sethite line; 'daughters of men' = ungodly Cainite line. This explains spiritual decline through intermarriage without requiring angel-human procreation. The Nephilim were mighty warriors, not demigods."
+        "tradition": "Sethite-Cainite Intermarriage",
+        "tradition_family": "jewish",
+        "scholar_id": "sarna",
+        "summary": "Sarna presents the view that 'sons of God' refers to the godly line of Seth and 'daughters of men' to the ungodly line of Cain. Genesis 4-5 establishes two genealogical lines: Cain's, characterized by violence and cultural achievement without God (4:17-24), and Seth's, characterized by calling on the name of the Lord (4:26). The 'intermarriage' describes the spiritual corruption that occurs when the faithful community abandons its distinctiveness by intermarrying with the faithless. This reading fits the immediate literary context: Genesis traces the spread of sin from Adam's fall through Cain's murder, Lamech's vengeance, and finally the total corruption that provokes the Flood. The Nephilim, on this reading, are mighty warriors — 'heroes of old, men of renown' — not supernatural beings, and the phrase gĕbōrîm (mighty ones) is used elsewhere of human warriors. Sarna notes that the Hebrew word nĕfîlîm may derive from nāfal ('to fall'), suggesting 'fallen ones' in a moral rather than supernatural sense.",
+        "key_verses": [
+          "Genesis 4:26",
+          "Genesis 5:1-3",
+          "Genesis 6:1-4",
+          "Genesis 6:5"
+        ],
+        "strengths": "Reads the passage within the literary flow of Genesis 4-5 without introducing supernatural elements the text does not explicitly describe. Consistent with the broader biblical theme of covenant community corrupted by intermarriage with the ungodly (Deut 7:3-4; Ezra 9-10). Avoids the metaphysical difficulties of angel-human procreation.",
+        "weaknesses": "The term bĕnê hāʾĕlōhîm is never used for human beings elsewhere in the OT — the linguistic evidence strongly favors the angelic reading. The Sethite view was not prominent until Augustine; earlier Jewish tradition overwhelmingly favored the angelic interpretation. Does not adequately explain why Jude and 2 Peter seem to reference the angelic tradition."
       },
       {
-        "tradition": "Royal Tyrants",
-        "scholar_id": "longman",
-        "summary": "'Sons of God' could mean ancient kings who claimed divine status (common ANE practice). They built harems from common women. The Nephilim were their warrior offspring. This fits the violence context leading to the flood."
+        "tradition": "Royal/Dynastic Interpretation",
+        "tradition_family": "critical",
+        "scholar_id": "collins",
+        "summary": "Collins presents the view that 'sons of God' refers to ancient kings or rulers who claimed divine status — a well-attested practice throughout the Ancient Near East, where kings were routinely called 'sons of god' (compare Psalm 2:7; 2 Samuel 7:14). These royal tyrants, exercising unchecked power, took wives from the common population by force — 'they married any of them they chose' (6:2) suggests the exercise of tyrannical power (ius primae noctis), not romantic courtship. The Nephilim were their warrior-class offspring — mighty men whose violence and domination fill the earth and provoke the Flood. Collins notes that this reading fits the Ancient Near Eastern literary context, where Mesopotamian flood narratives (Atrahasis, Gilgamesh) also connect divine-human boundary violations with the flood. The passage serves as a theological polemic against the cult of divine kingship: the God of Israel judges rather than endorses royal pretensions to divinity.",
+        "key_verses": [
+          "Genesis 6:1-4",
+          "Psalm 2:7",
+          "2 Samuel 7:14",
+          "Genesis 10:8-9"
+        ],
+        "strengths": "Strong ANE comparative evidence for kings as 'sons of god.' Explains the violence emphasis that connects to the Flood narrative ('the earth was filled with violence,' 6:11). Avoids both the supernatural metaphysics of the angelic view and the linguistic weakness of the Sethite view.",
+        "weaknesses": "The Hebrew phrase bĕnê hāʾĕlōhîm in Job clearly refers to supernatural beings, not human kings. The royal interpretation requires assuming a meaning for the phrase that is not attested in its other OT occurrences. This view has less support in Jewish and Christian interpretive tradition than either the angelic or Sethite readings."
+      },
+      {
+        "tradition": "Literary-Canonical Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter approaches the passage as a literary critic, noting that it functions as a narrative bridge between the genealogies of chapters 4-5 and the Flood story of chapters 6-9. The passage is deliberately cryptic — it preserves a fragment of ancient mythological tradition that the biblical author has incorporated and partially demythologized. Alter observes that the text is remarkably sparse: four verses to cover what 1 Enoch expands into thirty-six chapters. This compression is itself theologically significant — the biblical author does not want to dwell on the mythological details but uses the tradition to make a single point: the boundary between the divine and human realms was violated, and this violation is part of the cascade of corruption leading to the Flood. Alter notes the ironic echo of Genesis 3: the 'seeing that they were beautiful/good' and 'taking' mirrors Eve's action with the fruit. The passage depicts desire transgressing divinely established boundaries — a theme that runs from Eden through the Flood to Babel.",
+        "key_verses": [
+          "Genesis 6:1-4",
+          "Genesis 3:6",
+          "Genesis 6:5",
+          "Genesis 11:4"
+        ],
+        "strengths": "Sensitive to the text's literary artistry and its function within the larger narrative of Genesis 1-11. The Eden parallel is textually compelling and theologically productive. Avoids premature systematization of a deliberately enigmatic passage.",
+        "weaknesses": "A purely literary approach may leave readers wanting a definitive answer about what actually happened — which the text may not intend to provide. Does not directly engage with the theological traditions that have shaped Jewish and Christian readings for millennia."
+      },
+      {
+        "tradition": "ANE Demythologization",
+        "tradition_family": "evangelical",
+        "scholar_id": "block",
+        "summary": "Block reads Genesis 6:1-4 within the context of Ancient Near Eastern mythology, where stories of divine-human sexual unions and their semi-divine offspring (Gilgamesh, the Apkallu sages) were common. The biblical author, Block argues, deliberately takes up this tradition and subverts it: whereas Mesopotamian literature celebrates the offspring of gods and humans as culture-heroes, Genesis presents them as part of the corruption that provokes divine judgment. The passage functions as a theological polemic — not a neutral report of events but a reinterpretation of widely known traditions through the lens of Yahwistic theology. Block favors the angelic interpretation on linguistic grounds (bĕnê hāʾĕlōhîm = divine beings) but emphasizes that the author's point is not to provide an angelology but to demonstrate that every boundary violation — from Eden to Babel — comes under God's judgment. The Nephilim represent the fruit of transgression, not a race to be admired, regardless of their 'renown.'",
+        "key_verses": [
+          "Genesis 6:1-4",
+          "Genesis 6:5-7",
+          "Genesis 6:11-13",
+          "Numbers 13:33"
+        ],
+        "strengths": "Situates the passage within its ANE literary world while maintaining the distinctiveness of the biblical author's theological perspective. Accounts for both the mythological resonance and the judgmental framing. The polemic reading explains why the author includes the tradition at all.",
+        "weaknesses": "The degree to which the biblical author is directly engaging Mesopotamian mythology is debated — some scholars see less direct literary dependence. The polemic reading may over-determine authorial intent in a text that is genuinely enigmatic."
       }
     ],
     "related_chapters": [
@@ -3396,6 +4191,47 @@
       "flood",
       "Genesis",
       "fallen angels"
+    ],
+    "context": "Genesis 6:1-4 describes the 'sons of God' (bĕnê hāʾĕlōhîm) taking wives from the 'daughters of men,' producing the Nephilim — 'heroes of old, men of renown.' This cryptic passage, positioned immediately before the Flood narrative, has generated three major interpretive traditions since antiquity. The identity of the 'sons of God,' the nature of the Nephilim, and the theological significance of the episode remain among the most debated questions in Genesis scholarship.",
+    "key_verses": [
+      {
+        "ref": "Genesis 6:1-2",
+        "text": "When human beings began to increase in number on the earth and daughters were born to them, the sons of God saw that the daughters of humans were beautiful, and they married any of them they chose."
+      },
+      {
+        "ref": "Genesis 6:4",
+        "text": "The Nephilim were on the earth in those days — and also afterward — when the sons of God went to the daughters of humans and had children by them. They were the heroes of old, men of renown."
+      },
+      {
+        "ref": "Job 1:6",
+        "text": "One day the angels came to present themselves before the LORD, and Satan also came with them."
+      },
+      {
+        "ref": "Jude 6-7",
+        "text": "And the angels who did not keep their positions of authority but abandoned their proper dwelling — these he has kept in darkness, bound with everlasting chains for judgment on the great Day. In a similar way, Sodom and Gomorrah and the surrounding towns gave themselves up to sexual immorality and perversion."
+      },
+      {
+        "ref": "2 Peter 2:4",
+        "text": "For if God did not spare angels when they sinned, but sent them to hell, putting them in chains of darkness to be held for judgment..."
+      }
+    ],
+    "consensus": "No scholarly consensus exists. The angelic interpretation dominated Second Temple Judaism and the early church. The Sethite view became dominant after Augustine. Modern evangelical scholarship is divided, with a growing number returning to the angelic reading based on the Hebrew term bĕnê hāʾĕlōhîm and its consistent usage elsewhere (Job 1:6; 2:1; 38:7). All three views have serious advocates.",
+    "further_reading": [
+      {
+        "author": "Michael S. Heiser",
+        "title": "The Unseen Realm: Recovering the Supernatural Worldview of the Bible",
+        "year": 2015
+      },
+      {
+        "author": "John H. Walton",
+        "title": "Genesis (NIV Application Commentary)",
+        "year": 2001
+      },
+      {
+        "author": "Nahum Sarna",
+        "title": "Genesis (JPS Torah Commentary)",
+        "year": 1989
+      }
     ]
   },
   {
@@ -3407,19 +4243,74 @@
     "question": "Was Balaam a true prophet who blessed Israel, or a greedy villain? The Bible seems to say both.",
     "responses": [
       {
-        "tradition": "Mixed Character",
+        "tradition": "Mixed Character — Prophet Who Fell",
+        "tradition_family": "evangelical",
         "scholar_id": "ashley",
-        "summary": "Balaam genuinely prophesied under God's control (Numbers 22-24) but later counseled Moab to seduce Israel into idolatry (Numbers 31:16). True prophetic gifts don't guarantee moral character. He began well but ended disastrously."
+        "summary": "Ashley reads Balaam as a genuinely gifted prophet who progressively compromised his integrity. In Numbers 22-24, Balaam is under God's direct control — his oracles are genuine, his prophetic gift is real, and his initial obedience ('I could not go beyond the command of the LORD,' 22:18) is sincere. But Ashley notes warning signs even in the blessing narrative: Balaam goes to Balak after God said 'do not go' (22:12 vs. 22:20 — God's permission in 22:20 reads as a concession, not an enthusiastic endorsement), he is rebuked by his own donkey, and the angel of the Lord blocks his path. The later revelation (31:16) that Balaam counseled Moab to use sexual enticement against Israel is not a sudden reversal but the culmination of a gradual moral trajectory: a man who spoke God's words but loved Balak's wages. Ashley sees Balaam as a paradigm of the prophet who has the gift but lacks the character — whose ministry is genuine but whose heart is divided.",
+        "key_verses": [
+          "Numbers 22:12",
+          "Numbers 22:18-20",
+          "Numbers 22:31-33",
+          "Numbers 31:16"
+        ],
+        "strengths": "Reads the narrative holistically, noting the warning signs within the blessing story. The gradual compromise reading accounts for both the genuine oracles and the later treachery. The paradigm of gifted-but-compromised ministry has enduring pastoral relevance.",
+        "weaknesses": "The tension between Numbers 22:12 ('do not go') and 22:20 ('go with them') is difficult to read as straightforward progressive compromise — it looks more like conflicting traditions. The 'mixed character' reading may impose modern psychological categories on an ancient narrative."
       },
       {
-        "tradition": "Pagan Diviner Used by God",
-        "scholar_id": "longman",
-        "summary": "Balaam was a renowned pagan seer whom God sovereignly overruled. His blessings came despite his intent, demonstrating God's control over even hostile forces. His later treachery revealed his true heart once divine restraint lifted."
+        "tradition": "Pagan Diviner Overruled by Yahweh",
+        "tradition_family": "jewish",
+        "scholar_id": "milgrom",
+        "summary": "Milgrom argues that Balaam was a well-known international diviner — not a Yahwistic prophet but a pagan professional seer for hire. Archaeological evidence supports this: the Deir Alla inscription (c. 840 BCE) from Jordan preserves an oracle of 'Balaam son of Beor,' confirming his historical reputation as a non-Israelite seer. Milgrom contends that God sovereignly commandeered this foreign diviner to bless Israel, overruling Balaam's professional inclination to serve his employer Balak. The donkey episode is theologically pointed: the pagan diviner, supposedly the expert in divine communication, cannot see what his donkey sees — an angel of the Lord. God's use of Balaam demonstrates not Balaam's virtue but Yahweh's sovereignty: even the most renowned pagan seer is powerless to curse those whom God has blessed. The later treachery (31:16) reveals Balaam's true character once the divine restraint is removed — he reverts to his professional instincts, offering Balak practical advice since spiritual weaponry failed.",
+        "key_verses": [
+          "Numbers 22:5-6",
+          "Numbers 22:23-30",
+          "Numbers 23:12",
+          "Numbers 24:13"
+        ],
+        "strengths": "Grounded in archaeological evidence (Deir Alla inscription). Accounts for the tension between the oracles and the later treachery without requiring internal psychological reconstruction. The theological point — Yahweh controls even foreign diviners — is consistent with the OT's broader claims about divine sovereignty over the nations.",
+        "weaknesses": "The 'pagan diviner' reading may underestimate Balaam's genuine engagement with Yahweh — he builds altars, receives visions, and claims to speak only what the Lord tells him. If Balaam was purely mercenary, the narrative's dramatic tension (will he bless or curse?) is reduced."
       },
       {
-        "tradition": "Cautionary Figure",
-        "scholar_id": "macarthur",
-        "summary": "The NT uniformly condemns Balaam: his error (Jude 11), way (2 Peter 2:15), and teaching (Revelation 2:14). Despite speaking truth under compulsion, his heart loved wages of wickedness. He's a warning against merchandising spiritual gifts."
+        "tradition": "Literary-Ironic Reading",
+        "tradition_family": "jewish",
+        "scholar_id": "alter",
+        "summary": "Alter reads the Balaam narrative as a masterpiece of biblical irony. The great seer cannot see what his donkey sees. The hired curser becomes an unstoppable blesser. The foreign diviner delivers Israel's most beautiful poetic oracles. Every element of the story subverts expectation. Alter notes that the narrative technique is sophisticated: Balaam's oracles grow progressively more magnificent — from reluctant acknowledgment (23:7-10) to enthusiastic blessing (24:3-9) to messianic prophecy (24:15-19) — as if the divine Spirit overwhelms his resistance incrementally. The donkey episode, far from being a naive folktale, functions as a devastating literary comment on Balaam's prophetic pretensions: the man who claims to 'hear the words of God' and 'see a vision from the Almighty' (24:4) needed a donkey to teach him to see. Alter contends that the 'villain' tradition (31:16; NT) represents a later reinterpretation that flattens the narrative's original ambiguity into a simple moral lesson. The literary genius of Numbers 22-24 lies precisely in its refusal to reduce Balaam to a single category.",
+        "key_verses": [
+          "Numbers 22:28-31",
+          "Numbers 23:7-10",
+          "Numbers 24:3-4",
+          "Numbers 24:15-19"
+        ],
+        "strengths": "Exceptional attention to the narrative's literary artistry. The irony motif is pervasive and clearly intentional. The observation about progressively magnificent oracles is textually demonstrable. Resists premature moralization.",
+        "weaknesses": "The literary reading may resist theological appropriation — preachers and study tools need to draw conclusions the text's irony deliberately complicates. If 31:16 and the NT tradition are 'later reinterpretations,' this raises questions about canonical coherence that literary criticism alone cannot resolve."
+      },
+      {
+        "tradition": "Narrative-Theological Synthesis",
+        "tradition_family": "evangelical",
+        "scholar_id": "block",
+        "summary": "Block synthesizes the narrative and theological dimensions of the Balaam tradition. He argues that the canonical portrait is intentionally composite: Numbers 22-24 presents Balaam under divine compulsion, 25:1-9 shows the consequences of his later counsel (without naming him), and 31:16 retrospectively connects the two. The NT passages (2 Pet 2:15; Jude 11; Rev 2:14) crystallize the tradition into a cautionary paradigm. Block contends that the composite portrait teaches a coherent theological lesson: prophetic gifting does not guarantee prophetic character. God can and does use compromised instruments — Balaam's oracles are genuine Scripture, quoted by Jesus's own genealogical tradition (the 'star' prophecy, 24:17, is associated with messianic expectation) — but the instrument's moral failure is not excused by the genuineness of the message. Block sees this as a consistent biblical pattern: Samson's strength did not validate his character; Saul's early prophecy did not prevent his later rejection; Judas performed miracles with the Twelve before his betrayal.",
+        "key_verses": [
+          "Numbers 24:17",
+          "Numbers 31:16",
+          "Jude 11",
+          "Revelation 2:14"
+        ],
+        "strengths": "Integrates the narrative, theological, and canonical dimensions without privileging one over the others. The 'gifting does not equal character' principle is consistent with multiple biblical examples. Treats the composite portrait as intentional rather than accidental.",
+        "weaknesses": "The synthesis may smooth over genuine tensions between the Numbers 22-24 portrait and the later tradition. The comparison with Samson and Saul, while illuminating, may flatten the unique features of Balaam's case."
+      },
+      {
+        "tradition": "Socio-Historical Context",
+        "tradition_family": "evangelical",
+        "scholar_id": "keener",
+        "summary": "Keener focuses on how the NT authors use the Balaam tradition as a type for false teachers in the early church. Peter, Jude, and John (Revelation) all invoke Balaam to warn against a specific pattern: teachers who possess genuine spiritual knowledge but corrupt their ministry for profit and lead God's people into sexual immorality and idolatry. The 'way of Balaam' (2 Pet 2:15) is the monetization of spiritual authority — prophesying for pay rather than conviction. The 'error of Balaam' (Jude 11) is the assumption that God's people can be harmed through spiritual means when moral corruption is the real weapon. The 'teaching of Balaam' (Rev 2:14) is the strategy of compromising the community's holiness from within through cultural accommodation. Keener argues that the NT authors are not interested in adjudicating the historical Balaam's character but in deploying him as a paradigm: beware of those who speak truth and live lies, who prophesy accurately and counsel wickedly.",
+        "key_verses": [
+          "2 Peter 2:15-16",
+          "Jude 11",
+          "Revelation 2:14",
+          "Matthew 7:22-23"
+        ],
+        "strengths": "Illuminates the NT's use of the OT tradition as typological rather than biographical. Directly applicable to contemporary church life — the 'Balaam pattern' is perennially relevant. Connects the three NT references into a coherent paradigm.",
+        "weaknesses": "Focuses on the NT reception rather than the OT narrative itself. Does not fully address the literary and theological richness of Numbers 22-24 on its own terms. The typological approach may flatten historical complexity into moral instruction."
       }
     ],
     "related_chapters": [
@@ -3447,6 +4338,47 @@
       "greed",
       "Balak",
       "divination"
+    ],
+    "context": "Balaam son of Beor is one of the Bible's most paradoxical figures. In Numbers 22-24, he delivers four magnificent oracles blessing Israel — including the messianic prophecy 'a star will come out of Jacob' (24:17) — apparently under genuine divine compulsion. Yet Numbers 31:16 reveals he later counseled Moab to seduce Israel into idolatry at Baal Peor (Num 25). The NT condemns him uniformly: his 'way' (2 Pet 2:15), his 'error' (Jude 11), and his 'teaching' (Rev 2:14). The difficulty is reconciling the genuine prophet of Numbers 22-24 with the villain of Numbers 31 and the NT.",
+    "key_verses": [
+      {
+        "ref": "Numbers 22:12",
+        "text": "But God said to Balaam, 'Do not go with them. You must not put a curse on those people, because they are blessed.'"
+      },
+      {
+        "ref": "Numbers 24:17",
+        "text": "I see him, but not now; I behold him, but not near. A star will come out of Jacob; a scepter will rise out of Israel. He will crush the foreheads of Moab, the skulls of all the people of Sheth."
+      },
+      {
+        "ref": "Numbers 31:16",
+        "text": "They were the ones who followed Balaam's advice and enticed the Israelites to be unfaithful to the LORD in the Peor incident, so that a plague struck the LORD's people."
+      },
+      {
+        "ref": "2 Peter 2:15-16",
+        "text": "They have left the straight way and wandered off to follow the way of Balaam son of Bezer, who loved the wages of wickedness. But he was rebuked for his wrongdoing by a donkey — an animal without speech — who spoke with a human voice and restrained the prophet's madness."
+      },
+      {
+        "ref": "Revelation 2:14",
+        "text": "Nevertheless, I have a few things against you: There are some among you who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin so that they ate food sacrificed to idols and committed sexual immorality."
+      }
+    ],
+    "consensus": "Most scholars recognize that the biblical portrait of Balaam is intentionally complex. The narrative in Numbers 22-24 presents a genuine prophetic figure who is compelled by God to bless rather than curse. The later tradition (Num 31:16; NT references) reinterprets his earlier cooperation as externally compelled rather than internally genuine. The developing portrait illustrates a biblical principle: prophetic gifts and moral character are separable.",
+    "further_reading": [
+      {
+        "author": "Timothy R. Ashley",
+        "title": "The Book of Numbers (NICOT)",
+        "year": 1993
+      },
+      {
+        "author": "Jacob Milgrom",
+        "title": "Numbers (JPS Torah Commentary)",
+        "year": 1990
+      },
+      {
+        "author": "Baruch Levine",
+        "title": "Numbers 21-36 (Anchor Bible)",
+        "year": 2000
+      }
     ]
   },
   {
