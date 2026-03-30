@@ -52,8 +52,8 @@ Content work is now enrichment, accuracy auditing, and feature development.
 | 15A | Difficult Passages enrichment — Textual (8 passages) | Done |
 | 15B | Difficult Passages enrichment — Historical (10 passages) | Done |
 | 15C | Difficult Passages enrichment — Contradiction (10 passages) | Done |
-| **15D** | **Difficult Passages enrichment — Theological (10 passages)** | **START HERE** |
-| 15E | Difficult Passages enrichment — Ethical (14 passages, 1 done) | Planned |
+| 15D | Difficult Passages enrichment — Theological (10 passages) | Done |
+| 15E | Difficult Passages enrichment — Ethical (14 passages) | Done |
 
 ### Content Remediation Complete
 
@@ -76,106 +76,48 @@ Content work is now enrichment, accuracy auditing, and feature development.
 - **543 timeline entries** (203 events + 66 books + 250 people + 24 world)
 - **1,032 chapters** with timeline deep-links (87% coverage)
 - 50 prophecy chains (283 links)
-- 20 concepts, 53 difficult passages (**29 enriched**, 24 pending)
+- 20 concepts, 53 difficult passages (**ALL 53 enriched**, 243 responses across 35+ scholars)
+- 3 new NT scholars added: Schreiner, Moo, Fee (54 total)
 - 16 discourse panels (Romans)
 - 43 word studies (26 Hebrew, 17 Greek)
 - 51 scholars, 282 people, 73 places
-- DB version 0.18
+- DB version 0.20
 
 ---
 
-## What's Next — Difficult Passages Enrichment (Batch 15D + 15E)
+## Difficult Passages Enrichment — COMPLETE
 
-### Overview
+All 53 difficult passages are fully enriched with:
+- context (200-400+ chars)
+- key_verses (2-5 NIV verses with ref and text)
+- consensus (150-300 chars)
+- further_reading (1-3 published works)
+- 4-6 responses each with tradition_family, key_verses, strengths, weaknesses, 500-1000 char summaries
 
-The schema, UI, and pipeline are already built and shipped. The DifficultPassageDetailScreen
-supports: context, key_verses, consensus, further_reading at the passage level, and
-tradition_family, key_verses, strengths, weaknesses at the response level. All new fields
-are optional — un-enriched entries render gracefully with the old layout.
+Scholar distribution rebalanced: MacArthur 9.1%, Keener 9.1%, Longman 8.2%. No scholar >10%.
+3 new scholars added: Schreiner (Reformed Baptist NT), Moo (moderate evangelical NT), Fee (Pentecostal NT).
+Total: 54 scholars, 243 responses.
 
-29/53 passages are enriched. Use the enriched entries (especially `canaanite-conquest` and
-`marks-ending`) as quality/depth templates for all remaining entries.
+---
 
-### Enrichment Targets Per Passage
+## What's Next
 
-- `context`: 200-400 chars framing the difficulty (what the text says, why it's a problem)
-- `key_verses`: 2-5 NIV verses with ref and text
-- `consensus`: 150-300 chars noting where scholarship broadly lands
-- `further_reading`: 1-3 real, citable published works
-- 4-6 responses (variable per passage, based on how many legitimate positions exist)
-- Each response `summary`: 500-1000 chars (current average is 229 for unenriched — need 2-4x expansion)
-- Each response: `tradition_family`, `key_verses`, `strengths`, `weaknesses`
+### Priority options for next session:
 
-### Content Principles
+1. **Remediation Batch 6: Thin Panel Enrichment** (~259 panels)
+   - 138 section panels (mostly cross-ref in Chronicles, Nehemiah, Esther — enrich to 2-3 refs with notes)
+   - 121 chapter panels (mostly ppl/rec in prophets — expand from minimal text)
 
-- **Lean evangelical but represent other views fairly.** This is an evangelical study app.
-- **Present all views but note scholarly consensus where it exists.**
-- **Never fabricate scholar positions.** Attribute interpretive positions scholars genuinely hold
-  based on their published works. Summaries are paraphrased positions, not direct quotes.
-- **Diversify scholar attribution.** Use the full roster of 51 scholars in the app.
+2. **Architecture Batch 6: NotesOverlay Decomposition**
+   - See `_tools/ARCH_PLAN.md` for full plan
 
-### Scholar Distribution (Current — 195 total responses)
+3. **Batch 13: Cross-reference thread expansion**
 
-MacArthur is at 21.5% and Longman at 15.4%. Both need to come DOWN. Target: no scholar >15%.
-Use MacArthur 0-1 times per batch of 10 passages in 15D/15E. Lean into underused scholars.
+4. **Batch 14: Map story enhancements**
 
-**Top 10 current:**
-macarthur: 42 (21.5%), longman: 30 (15.4%), keener: 21 (10.8%), block: 13 (6.7%),
-calvin: 12 (6.2%), collins: 10 (5.1%), waltke: 8 (4.1%), marcus: 8 (4.1%),
-provan: 6 (3.1%), sarna: 5 (2.6%)
+5. **Isaiah 23-66 enrichment debt** (44 chapters)
 
-**Underused scholars to prioritize in 15D/15E:**
-NT specialists: moo, schreiner, fee (NOT YET IN scholars.json — add if needed)
-OT specialists: goldingay (2), brueggemann (2), milgrom (0), fox (0), garrett (0)
-Jewish: sarna (5), alter (0 in DP), levenson (0)
-Patristic/Reformed: catena (2), calvin (12 — good)
-Text-critical: netbible (5), robertson (5)
-Women scholars: jobes (1), berlin (0), oconnor (0)
-
-### Batch 15D — Theological (10 passages, START HERE)
-
-These need careful tradition-balancing. Multiple confessional traditions have strong,
-well-defined positions. Be especially careful with Calvinist/Arminian, egalitarian/complementarian.
-
-**Passage IDs:**
-`hardening-pharaoh`, `unforgivable-sin`, `hebrews-6-apostasy`, `problem-of-evil`,
-`predestination-free-will`, `jacob-esau-loved-hated`, `women-silence`, `head-covering`,
-`nephilim-sons-of-god`, `balaam-prophet-villain`
-
-**Scholar allocation guidance for 15D:**
-- Calvinist/Arminian passages: Use schreiner (Calvinist), moo (moderate), keener or longman (Arminian-leaning), block or waltke (Reformed OT)
-- Women's role passages: Use keener, jobes, fee (egalitarian voices), macarthur or schreiner (complementarian), calvin (historical)
-- OT theological: sarna, alter, milgrom (Jewish), block, waltke (evangelical OT), brueggemann (mainline)
-- Nephilim/Balaam: sarna, alter, ashley, block, collins
-
-### Batch 15E — Ethical (14 passages remaining, `canaanite-conquest` already done)
-
-Highest scrutiny — do after 15D with full pattern established.
-
-**Passage IDs:**
-`slavery-regulations`, `jephthahs-daughter`, `imprecatory-psalms`, `elishas-bears`,
-`ananias-sapphira`, `concubine-gibeah`, `abraham-wife-sister`, `akedah-isaac`,
-`lot-daughters`, `david-bathsheba`, `jacob-deception`, `hosea-gomer`,
-`samson-violence`, `kill-agag`
-
-### How to Enrich a Passage
-
-1. Open `content/meta/difficult-passages.json`
-2. Find the entry by `id`
-3. Add `context`, `key_verses`, `consensus`, `further_reading` fields
-4. Expand `responses` array: increase to 4-6 entries, add `tradition_family`, `key_verses`,
-   `strengths`, `weaknesses` to each response, expand `summary` to 500-1000 chars
-5. Reference the enriched entries for format/depth
-6. Run pipeline: `python3 _tools/build_sqlite.py` → `cp scripture.db app/assets/scripture.db`
-7. `git add -A && git commit && git push`
-
-### Enrichment Script Pattern
-
-The proven pattern from 15A-C: write a Python script at `/tmp/enrich_15d.py` that contains
-a dict of ENRICHMENTS keyed by passage ID, loads the JSON file, patches matching entries,
-and writes it back. Run it, verify with a stats check, build, commit, push, delete the script.
-
-Split into two scripts if context gets heavy (5 passages per script).
+6. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
 
 ---
 
