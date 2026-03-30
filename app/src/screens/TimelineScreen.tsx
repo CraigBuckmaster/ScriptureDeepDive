@@ -3,13 +3,13 @@
  * Era-colored bands, swim-lane labels, pan+pinch gestures, detail panel.
  */
 
-import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef, useReducer } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
 
 import { useRoute, useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getAllTimelineEntries } from '../db/content';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
@@ -23,6 +23,21 @@ import {
 import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
+interface CategoryFilters {
+  event: boolean;
+  book: boolean;
+  person: boolean;
+  world: boolean;
+}
+
+type FilterAction = { type: 'toggle'; category: keyof CategoryFilters };
+
+function filterReducer(state: CategoryFilters, action: FilterAction): CategoryFilters {
+  return { ...state, [action.category]: !state[action.category] };
+}
+
+const INITIAL_FILTERS: CategoryFilters = { event: true, book: true, person: true, world: true };
+
 export default function TimelineScreen() {
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
@@ -32,10 +47,7 @@ export default function TimelineScreen() {
   const [events, setEvents] = useState<TimelineEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterEra, setFilterEra] = useState<string>('all');
-  const [showEvents, setShowEvents] = useState(true);
-  const [showBooks, setShowBooks] = useState(true);
-  const [showPeople, setShowPeople] = useState(true);
-  const [showWorld, setShowWorld] = useState(true);
+  const [filters, dispatchFilter] = useReducer(filterReducer, INITIAL_FILTERS);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
   const { width: screenWidth } = useWindowDimensions();
@@ -48,13 +60,13 @@ export default function TimelineScreen() {
   // Filter by active categories
   const categoryFiltered = useMemo(() => {
     const cats = new Set<string>();
-    if (showEvents) cats.add('event');
-    if (showBooks) cats.add('book');
-    if (showPeople) cats.add('person');
-    if (showWorld) cats.add('world');
+    if (filters.event) cats.add('event');
+    if (filters.book) cats.add('book');
+    if (filters.person) cats.add('person');
+    if (filters.world) cats.add('world');
     if (cats.size === 0) { cats.add('event'); cats.add('book'); } // fallback
     return events.filter((e) => cats.has(e.category));
-  }, [events, showEvents, showBooks, showPeople, showWorld]);
+  }, [events, filters]);
 
   const positioned = useMemo(() => assignLanes(categoryFiltered), [categoryFiltered]);
 
@@ -106,7 +118,7 @@ export default function TimelineScreen() {
     );
   }
 
-  const hasBelow = showPeople || showWorld;
+  const hasBelow = filters.person || filters.world;
   const SVG_HEIGHT = computeSvgHeight(hasBelow);
 
   return (
@@ -116,38 +128,22 @@ export default function TimelineScreen() {
 
         {/* Category toggles */}
         <View style={styles.categoryRow}>
-          <TouchableOpacity
-            onPress={() => setShowEvents((v) => !v)}
-            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            style={[styles.categoryChip, showEvents && styles.categoryChipActive]}
-          >
-            <View style={[styles.categoryDot, { backgroundColor: base.gold }]} />
-            <Text style={[styles.categoryLabel, showEvents && { color: base.gold }]}>Events</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => setShowBooks((v) => !v)}
-            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            style={[styles.categoryChip, showBooks && styles.categoryChipActive]}
-          >
-            <View style={[styles.categoryDot, { backgroundColor: '#7a6b5a' }]} />
-            <Text style={[styles.categoryLabel, showBooks && { color: '#7a6b5a' }]}>Books</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => setShowPeople((v) => !v)}
-            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            style={[styles.categoryChip, showPeople && styles.categoryChipActive]}
-          >
-            <View style={[styles.categoryDot, { backgroundColor: '#6a9fb5' }]} />
-            <Text style={[styles.categoryLabel, showPeople && { color: '#6a9fb5' }]}>People</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => setShowWorld((v) => !v)}
-            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-            style={[styles.categoryChip, showWorld && styles.categoryChipActive]}
-          >
-            <View style={[styles.categoryDot, { backgroundColor: '#b07d4f' }]} />
-            <Text style={[styles.categoryLabel, showWorld && { color: '#b07d4f' }]}>World History</Text>
-          </TouchableOpacity>
+          {([
+            { key: 'event' as const, label: 'Events', color: base.gold },
+            { key: 'book' as const, label: 'Books', color: '#7a6b5a' },
+            { key: 'person' as const, label: 'People', color: '#6a9fb5' },
+            { key: 'world' as const, label: 'World History', color: '#b07d4f' },
+          ]).map(({ key, label, color }) => (
+            <TouchableOpacity
+              key={key}
+              onPress={() => dispatchFilter({ type: 'toggle', category: key })}
+              hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+              style={[styles.categoryChip, filters[key] && styles.categoryChipActive]}
+            >
+              <View style={[styles.categoryDot, { backgroundColor: color }]} />
+              <Text style={[styles.categoryLabel, filters[key] && { color }]}>{label}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
 

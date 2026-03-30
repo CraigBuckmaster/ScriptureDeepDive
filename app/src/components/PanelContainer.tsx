@@ -5,8 +5,8 @@
  * Renders PanelRenderer inside.
  */
 
-import React from 'react';
-import { View, TouchableOpacity, Text, LayoutAnimation, Platform, UIManager } from 'react-native';
+import React, { useMemo } from 'react';
+import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
 import { getPanelColors, base, spacing } from '../theme';
 import type { ParsedRef } from '../types';
@@ -36,18 +36,14 @@ export function PanelContainer({
   if (!isOpen) return null;
 
   const colors = getPanelColors(panelType);
+  const panelStyle = useMemo(() => ({
+    backgroundColor: colors.bg,
+    borderLeftColor: colors.accent,
+  }), [colors.bg, colors.accent]);
 
   return (
     <View
-      style={{
-        backgroundColor: colors.bg,
-        borderLeftWidth: 3,
-        borderLeftColor: colors.accent,
-        paddingHorizontal: spacing.md,
-        paddingVertical: spacing.md,
-        marginHorizontal: 4,
-        marginBottom: spacing.sm,
-      }}
+      style={[styles.panel, panelStyle]}
       accessibilityLiveRegion="polite"
     >
       {/* Close button */}
@@ -57,18 +53,9 @@ export function PanelContainer({
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
           accessibilityLabel="Close panel"
           accessibilityRole="button"
-          style={{
-            position: 'absolute',
-            top: 6,
-            right: 6,
-            width: 24,
-            height: 24,
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 10,
-          }}
+          style={styles.closeButton}
         >
-          <Text style={{ color: base.textMuted, fontSize: 16, lineHeight: 18 }}>✕</Text>
+          <Text style={styles.closeText}>✕</Text>
         </TouchableOpacity>
       )}
 
@@ -85,3 +72,28 @@ export function PanelContainer({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  panel: {
+    borderLeftWidth: 3,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md,
+    marginHorizontal: 4,
+    marginBottom: spacing.sm,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 6,
+    right: 6,
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 10,
+  },
+  closeText: {
+    color: base.textMuted,
+    fontSize: 16,
+    lineHeight: 18,
+  },
+});

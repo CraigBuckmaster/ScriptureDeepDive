@@ -8,12 +8,13 @@
  */
 
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent, type GestureResponderEvent } from 'react-native';
+import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { Book } from '../types';
 
 import { useChapterData } from '../hooks/useChapterData';
+import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
@@ -115,31 +116,11 @@ export default function ChapterScreen() {
     if (hasNext) navigation.setParams({ chapterNum: chapterNum + 1 });
   }, [hasNext, chapterNum, navigation]);
 
-  // Swipe-to-navigate via simple touch tracking (no gesture-handler needed)
-  const touchStart = useRef<{ x: number; y: number; t: number } | null>(null);
-
-  const onTouchStart = useCallback((e: GestureResponderEvent) => {
-    const { pageX, pageY } = e.nativeEvent;
-    touchStart.current = { x: pageX, y: pageY, t: Date.now() };
-  }, []);
-
-  const onTouchEnd = useCallback((e: GestureResponderEvent) => {
-    if (!touchStart.current) return;
-    const { pageX, pageY } = e.nativeEvent;
-    const dx = pageX - touchStart.current.x;
-    const dy = pageY - touchStart.current.y;
-    const dt = Date.now() - touchStart.current.t;
-    touchStart.current = null;
-
-    const absDx = Math.abs(dx);
-    const absDy = Math.abs(dy);
-
-    // Must be: fast (<500ms), horizontal (>80px), clearly horizontal (2:1 ratio)
-    if (dt < 500 && absDx > 80 && absDx > absDy * 2) {
-      if (dx > 0 && hasPrev) goPrev();
-      else if (dx < 0 && hasNext) goNext();
-    }
-  }, [hasPrev, hasNext, goPrev, goNext]);
+  // Swipe-to-navigate
+  const { onTouchStart, onTouchEnd } = useSwipeNavigation(
+    hasPrev ? goPrev : undefined,
+    hasNext ? goNext : undefined,
+  );
 
   // Panel toggle — single-open policy with animation
   const handleSectionPanelToggle = useCallback(
