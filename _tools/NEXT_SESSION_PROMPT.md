@@ -49,7 +49,11 @@ Content work is now enrichment, accuracy auditing, and feature development.
 | 10 | DifficultPassagesBrowse + DifficultPassageDetail screens | Done |
 | 11 | Word Study expansion (+8 studies, concept links) | Done |
 | 12A-E | Timeline: data, events, book authorship, chapter links, UI | Done |
-| **15** | **Difficult Passages enrichment** | **START HERE** |
+| 15A | Difficult Passages enrichment — Textual (8 passages) | Done |
+| 15B | Difficult Passages enrichment — Historical (10 passages) | Done |
+| 15C | Difficult Passages enrichment — Contradiction (10 passages) | Done |
+| **15D** | **Difficult Passages enrichment — Theological (10 passages)** | **START HERE** |
+| 15E | Difficult Passages enrichment — Ethical (14 passages, 1 done) | Planned |
 
 ### Content Remediation Complete
 
@@ -72,25 +76,25 @@ Content work is now enrichment, accuracy auditing, and feature development.
 - **543 timeline entries** (203 events + 66 books + 250 people + 24 world)
 - **1,032 chapters** with timeline deep-links (87% coverage)
 - 50 prophecy chains (283 links)
-- 20 concepts, 53 difficult passages (2 enriched, 51 pending)
+- 20 concepts, 53 difficult passages (**29 enriched**, 24 pending)
 - 16 discourse panels (Romans)
 - 43 word studies (26 Hebrew, 17 Greek)
 - 51 scholars, 282 people, 73 places
-- DB version 0.17
+- DB version 0.18
 
 ---
 
-## What's Next — Difficult Passages Enrichment (Batch 15)
+## What's Next — Difficult Passages Enrichment (Batch 15D + 15E)
 
 ### Overview
 
 The schema, UI, and pipeline are already built and shipped. The DifficultPassageDetailScreen
-now supports: context, key_verses, consensus, further_reading at the passage level, and
+supports: context, key_verses, consensus, further_reading at the passage level, and
 tradition_family, key_verses, strengths, weaknesses at the response level. All new fields
 are optional — un-enriched entries render gracefully with the old layout.
 
-Two entries are fully enriched as proof-of-concept: `canaanite-conquest` and `mark-ending`.
-Use these as the quality/depth template for all remaining entries.
+29/53 passages are enriched. Use the enriched entries (especially `canaanite-conquest` and
+`marks-ending`) as quality/depth templates for all remaining entries.
 
 ### Enrichment Targets Per Passage
 
@@ -99,9 +103,8 @@ Use these as the quality/depth template for all remaining entries.
 - `consensus`: 150-300 chars noting where scholarship broadly lands
 - `further_reading`: 1-3 real, citable published works
 - 4-6 responses (variable per passage, based on how many legitimate positions exist)
-- Each response `summary`: 500-1000 chars (current average is 229 — need 2-4x expansion)
+- Each response `summary`: 500-1000 chars (current average is 229 for unenriched — need 2-4x expansion)
 - Each response: `tradition_family`, `key_verses`, `strengths`, `weaknesses`
-- No single scholar in more than 15% of total responses
 
 ### Content Principles
 
@@ -109,21 +112,51 @@ Use these as the quality/depth template for all remaining entries.
 - **Present all views but note scholarly consensus where it exists.**
 - **Never fabricate scholar positions.** Attribute interpretive positions scholars genuinely hold
   based on their published works. Summaries are paraphrased positions, not direct quotes.
-- **Diversify scholar attribution.** Use the full roster of 51 scholars in the app. Reduce
-  MacArthur from 28% to <15%. Add Jewish (Sarna, Alter), patristic (Calvin, Catena),
-  and NT-specific (Moo, Schreiner, Fee, Keener) voices where appropriate.
+- **Diversify scholar attribution.** Use the full roster of 51 scholars in the app.
 
-### Batch Order (by category)
+### Scholar Distribution (Current — 195 total responses)
 
-Work through in this order — each category has similar research patterns:
+MacArthur is at 21.5% and Longman at 15.4%. Both need to come DOWN. Target: no scholar >15%.
+Use MacArthur 0-1 times per batch of 10 passages in 15D/15E. Lean into underused scholars.
 
-| Batch | Category | Count | Notes |
-|-------|----------|-------|-------|
-| 15A | Textual | 8 passages | Most factual, lowest controversy, good warm-up |
-| 15B | Historical | 10 passages | Archaeological/dating evidence is concrete |
-| 15C | Contradiction | 10 passages | Harmonization patterns are well-established |
-| 15D | Theological | 10 passages | Need careful tradition-balancing |
-| 15E | Ethical | 15 passages | Highest scrutiny, do last with full pattern established |
+**Top 10 current:**
+macarthur: 42 (21.5%), longman: 30 (15.4%), keener: 21 (10.8%), block: 13 (6.7%),
+calvin: 12 (6.2%), collins: 10 (5.1%), waltke: 8 (4.1%), marcus: 8 (4.1%),
+provan: 6 (3.1%), sarna: 5 (2.6%)
+
+**Underused scholars to prioritize in 15D/15E:**
+NT specialists: moo, schreiner, fee (NOT YET IN scholars.json — add if needed)
+OT specialists: goldingay (2), brueggemann (2), milgrom (0), fox (0), garrett (0)
+Jewish: sarna (5), alter (0 in DP), levenson (0)
+Patristic/Reformed: catena (2), calvin (12 — good)
+Text-critical: netbible (5), robertson (5)
+Women scholars: jobes (1), berlin (0), oconnor (0)
+
+### Batch 15D — Theological (10 passages, START HERE)
+
+These need careful tradition-balancing. Multiple confessional traditions have strong,
+well-defined positions. Be especially careful with Calvinist/Arminian, egalitarian/complementarian.
+
+**Passage IDs:**
+`hardening-pharaoh`, `unforgivable-sin`, `hebrews-6-apostasy`, `problem-of-evil`,
+`predestination-free-will`, `jacob-esau-loved-hated`, `women-silence`, `head-covering`,
+`nephilim-sons-of-god`, `balaam-prophet-villain`
+
+**Scholar allocation guidance for 15D:**
+- Calvinist/Arminian passages: Use schreiner (Calvinist), moo (moderate), keener or longman (Arminian-leaning), block or waltke (Reformed OT)
+- Women's role passages: Use keener, jobes, fee (egalitarian voices), macarthur or schreiner (complementarian), calvin (historical)
+- OT theological: sarna, alter, milgrom (Jewish), block, waltke (evangelical OT), brueggemann (mainline)
+- Nephilim/Balaam: sarna, alter, ashley, block, collins
+
+### Batch 15E — Ethical (14 passages remaining, `canaanite-conquest` already done)
+
+Highest scrutiny — do after 15D with full pattern established.
+
+**Passage IDs:**
+`slavery-regulations`, `jephthahs-daughter`, `imprecatory-psalms`, `elishas-bears`,
+`ananias-sapphira`, `concubine-gibeah`, `abraham-wife-sister`, `akedah-isaac`,
+`lot-daughters`, `david-bathsheba`, `jacob-deception`, `hosea-gomer`,
+`samson-violence`, `kill-agag`
 
 ### How to Enrich a Passage
 
@@ -132,38 +165,17 @@ Work through in this order — each category has similar research patterns:
 3. Add `context`, `key_verses`, `consensus`, `further_reading` fields
 4. Expand `responses` array: increase to 4-6 entries, add `tradition_family`, `key_verses`,
    `strengths`, `weaknesses` to each response, expand `summary` to 500-1000 chars
-5. Reference the two completed entries (`canaanite-conquest`, `mark-ending`) for format/depth
+5. Reference the enriched entries for format/depth
 6. Run pipeline: `python3 _tools/build_sqlite.py` → `cp scripture.db app/assets/scripture.db`
-7. Verify on device
+7. `git add -A && git commit && git push`
 
-### Passage IDs by Batch
+### Enrichment Script Pattern
 
-**15A — Textual (8):**
-`mark-ending` (DONE), `woman-adultery`, `johannine-comma`, `lords-prayer-doxology`,
-`isaiah-authorship`, `matthew-jeremiah-citation`, `ot-quotation-mismatch`,
-`significant-manuscript-variants`
+The proven pattern from 15A-C: write a Python script at `/tmp/enrich_15d.py` that contains
+a dict of ENRICHMENTS keyed by passage ID, loads the JSON file, patches matching entries,
+and writes it back. Run it, verify with a stats check, build, commit, push, delete the script.
 
-**15B — Historical (10):**
-`long-lifespans`, `exodus-date`, `jericho-walls`, `quirinius-census`,
-`large-numbers-exodus`, `belshazzar-king`, `darius-mede`, `conquest-ai`,
-`daniel-court-tales`, `jonah-fish`
-
-**15C — Contradiction (10):**
-`judas-death`, `david-census`, `genealogies-matthew-luke`, `resurrection-differences`,
-`sermon-mount-plain`, `saul-death`, `goliath-killer`, `temple-cleansing`,
-`peter-denials`, `temple-dimensions`
-
-**15D — Theological (10):**
-`pharaoh-heart`, `unforgivable-sin`, `lose-salvation`, `problem-of-suffering`,
-`predestination-choice`, `jacob-esau-hated`, `women-silent`, `head-coverings`,
-`nephilim-sons-of-god`, `balaam-prophet-villain`
-
-**15E — Ethical (15):**
-`canaanite-conquest` (DONE), `slavery-laws`, `jephthah-daughter`,
-`imprecatory-psalms`, `elisha-bears`, `ananias-sapphira`, `levite-concubine`,
-`abraham-wife-sister`, `abraham-sacrifice-isaac`, `lot-daughters`,
-`david-bathsheba-uriah`, `jacob-deceiving-isaac`, `hosea-prostitute`,
-`samson-violence`, `saul-kill-agag`
+Split into two scripts if context gets heavy (5 passages per script).
 
 ---
 
@@ -228,7 +240,7 @@ See `_tools/ARCH_PLAN.md` for full plan.
 - Expand summaries to 500-1000 chars with specific verse citations inline
 - Include tradition_family, key_verses, strengths, and weaknesses
 - Never fabricate quotes or positions — paraphrase known scholarly arguments
-- Use the enriched `canaanite-conquest` and `mark-ending` as quality templates
+- Use the enriched entries as quality templates
 
 ---
 
