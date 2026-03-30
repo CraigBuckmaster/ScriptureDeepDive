@@ -1102,19 +1102,56 @@
     "question": "Is Mark 16:9-20 original, or does the Gospel end at verse 8?",
     "responses": [
       {
-        "tradition": "Later Addition View",
+        "tradition": "Non-Markan Addition",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The earliest manuscripts (Sinaiticus, Vaticanus) end at 16:8. The vocabulary, style, and content of vv. 9-20 differ markedly from Mark. Most scholars conclude it was added later to provide a 'proper' ending. This doesn't affect any unique doctrine."
+        "summary": "The external evidence is decisive: Sinaiticus and Vaticanus, our two most important uncial manuscripts, both end Mark at 16:8. The internal evidence confirms it: the vocabulary of vv. 9–20 includes at least seventeen words or phrases that appear nowhere else in Mark, and the transition from v. 8 to v. 9 is jarring — Mary Magdalene is reintroduced as though she has not already been mentioned in the preceding narrative. Keener notes that the passage reads as a summary compilation drawn from the other Gospels (the Magdalene appearance from John 20, the Emmaus road from Luke 24, the Great Commission from Matthew 28) rather than as fresh Markan narrative. The early church evidently felt that ending at 16:8 was too abrupt and composed a summary ending to provide closure. This does not affect any doctrine, as every event described in vv. 9–20 is narrated independently in the other Gospels.",
+        "key_verses": [
+          "Mark 16:8",
+          "Mark 16:9",
+          "John 20:14-16"
+        ],
+        "strengths": "Follows the overwhelming weight of manuscript evidence. The vocabulary analysis is objective and compelling. The dependence on other Gospel accounts explains the passage's content without requiring Markan authorship.",
+        "weaknesses": "Does not fully explain how such an early addition (known to Irenaeus c. 180 AD) could have originated so quickly. The abruptness of ending at 16:8 remains a puzzle that this view must address."
       },
       {
-        "tradition": "Authentic but Detached",
+        "tradition": "Lost Original Ending",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "The longer ending may be genuine but became detached from early copies, then reattached from other manuscripts or memory. Alternatively, Mark wrote it but it was lost early. Either way, the content aligns with other Gospel accounts."
+        "summary": "MacArthur considers it plausible that Mark wrote an original ending beyond 16:8 that was lost early in the manuscript tradition — perhaps through physical damage to the scroll or codex. The Greek of 16:8 ends with the conjunction gar ('for'), which is grammatically unusual as a sentence-ending and virtually unprecedented as a book-ending in Greek literature. This suggests the text was interrupted rather than intentionally concluded. The longer ending (vv. 9–20) may represent an early attempt to restore or replace what was lost, drawing on authentic apostolic tradition preserved in the other Gospels. MacArthur notes that the content of vv. 9–20 is entirely orthodox and consistent with the other resurrection accounts, and that the passage has been part of the church's received text for the vast majority of Christian history. For preaching purposes, he treats the content as reliable testimony to events also attested elsewhere in Scripture.",
+        "key_verses": [
+          "Mark 16:8",
+          "Mark 16:15-16",
+          "Matthew 28:18-20"
+        ],
+        "strengths": "The gar-ending is genuinely unusual and suggests possible incompleteness. Preserves the passage's homiletical value by grounding its content in other Gospel accounts. Accounts for the early appearance of the longer ending as a restoration attempt.",
+        "weaknesses": "The 'lost ending' theory is inherently speculative — we cannot verify what no longer exists. Some scholars have identified other examples of sentences and even books ending with gar in Greek, weakening the grammatical argument."
       },
       {
         "tradition": "Intentional Abrupt Ending",
+        "tradition_family": "critical",
         "scholar_id": "rhoads",
-        "summary": "Mark may have intentionally ended at 16:8—'they were afraid'—leaving readers to complete the story themselves. The abrupt ending creates dramatic tension and invites response. This literary reading honors the text we have."
+        "summary": "Rhoads, reading Mark as a carefully crafted literary work, argues that 16:8 is the intentional and original ending of the Gospel. The abrupt conclusion — 'they said nothing to anyone, because they were afraid' — is not a defect but a deliberate rhetorical strategy. Mark's entire Gospel is structured around the 'messianic secret' and the failure of the disciples to understand. The women's silence at the tomb is the climactic instance of this pattern: even the announcement of the resurrection is met with fear and failure. This open ending forces the reader to complete the story — to become the one who proclaims what the women did not. Rhoads compares it to modern literary techniques of open or ambiguous endings that invite reader participation. The Gospel's theology of discipleship failure, combined with Jesus' promise to meet them in Galilee (14:28, 16:7), assures the reader that the story continues beyond the text, but Mark refuses to narrate the resolution, leaving it to the reader's faith and obedience.",
+        "key_verses": [
+          "Mark 16:7-8",
+          "Mark 14:28",
+          "Mark 9:9"
+        ],
+        "strengths": "Takes Mark seriously as a sophisticated literary artist. The messianic secret theme does create a pattern that 16:8 climactically extends. Growing scholarly support for intentional open endings in ancient narrative.",
+        "weaknesses": "No other ancient biography or Gospel ends this way — the literary parallel may be anachronistic. The gar-ending remains grammatically awkward even if thematically intentional. Early readers and scribes clearly found 16:8 unsatisfying, suggesting the original audience did not read it as a deliberate artistic choice."
+      },
+      {
+        "tradition": "Shorter Ending and Multiple Supplements",
+        "tradition_family": "critical",
+        "scholar_id": "netbible",
+        "summary": "The NET Bible notes observe that the manuscript tradition preserves not one but several attempts to supplement Mark 16:8. In addition to the 'Longer Ending' (vv. 9–20), some manuscripts contain a 'Shorter Ending' that reads: 'They reported briefly to those around Peter all that they had been commanded. After these things Jesus himself also sent out through them, from east to west, the sacred and imperishable proclamation of eternal salvation. Amen.' A few manuscripts include both the Shorter and Longer endings. This multiplicity of supplements is itself powerful evidence that the original Gospel ended at 16:8: if an authoritative original ending had been in circulation, there would have been no need for multiple communities to independently compose replacements. The Longer Ending became dominant because it was the most detailed and theologically satisfying supplement, but its late and varied attestation confirms it was not part of Mark's composition.",
+        "key_verses": [
+          "Mark 16:8",
+          "Mark 16:9",
+          "Mark 16:20"
+        ],
+        "strengths": "The existence of multiple different endings is strong evidence that none is original. Engages the full manuscript evidence including the often-overlooked Shorter Ending. The logic is straightforward: multiple supplements imply a perceived gap.",
+        "weaknesses": "The Shorter Ending is very poorly attested and may be a late scribal creation rather than evidence of an independent tradition. Does not resolve whether the original ending was lost or 16:8 was intentional."
       }
     ],
     "related_chapters": [
@@ -1129,6 +1166,39 @@
       "ending",
       "manuscripts",
       "resurrection"
+    ],
+    "context": "Mark 16:9–20, known as the 'Longer Ending of Mark,' describes Jesus' post-resurrection appearances and his Great Commission. These twelve verses are absent from the two earliest and most important Greek manuscripts (Codex Sinaiticus and Codex Vaticanus, both 4th century), and early church fathers Clement and Origen show no knowledge of them. Eusebius and Jerome both note that the passage was missing from most Greek copies known to them. The vocabulary and style differ sharply from the rest of Mark — over a dozen words appear here that Mark never uses elsewhere. Yet the passage was known to Irenaeus (c. 180 AD) and is included in the majority of later manuscripts.",
+    "key_verses": [
+      {
+        "ref": "Mark 16:8",
+        "text": "Trembling and bewildered, the women went out and fled from the tomb. They said nothing to anyone, because they were afraid."
+      },
+      {
+        "ref": "Mark 16:15",
+        "text": "He said to them, “Go into all the world and preach the gospel to all creation.”"
+      },
+      {
+        "ref": "Mark 16:19-20",
+        "text": "After the Lord Jesus had spoken to them, he was taken up into heaven and he sat at the right hand of God. Then the disciples went out and preached everywhere, and the Lord worked with them and confirmed his word by the signs that accompanied it."
+      }
+    ],
+    "consensus": "The near-universal scholarly consensus is that Mark 16:9–20 was not written by Mark and was not part of the original Gospel. Most scholars believe Mark either intended to end at 16:8 or that the original ending was lost. The passage is retained in most Bibles with brackets and a note. No unique Christian doctrine depends on it.",
+    "further_reading": [
+      {
+        "author": "James A. Kelhoffer",
+        "title": "Miracle and Mission: The Authentication of Missionaries and Their Message in the Longer Ending of Mark",
+        "year": 2000
+      },
+      {
+        "author": "Bruce M. Metzger",
+        "title": "A Textual Commentary on the Greek New Testament",
+        "year": 1994
+      },
+      {
+        "author": "N. Clayton Croy",
+        "title": "The Mutilation of Mark's Gospel",
+        "year": 2003
+      }
     ]
   },
   {
@@ -1140,19 +1210,69 @@
     "question": "Is the story of the woman caught in adultery original to John's Gospel?",
     "responses": [
       {
-        "tradition": "Non-Johannine Origin",
+        "tradition": "Non-Johannine Insertion",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The earliest manuscripts lack this passage, and its style differs from John. It likely circulated as an independent tradition, later inserted here. However, most scholars accept it as an authentic early tradition about Jesus, even if not originally in John."
+        "summary": "The manuscript evidence is decisive: the passage is absent from P66, P75, Sinaiticus, and Vaticanus — our four earliest and best witnesses to the Gospel of John. When it does appear in later manuscripts, it migrates between locations, which is a hallmark of a floating tradition rather than fixed text. The vocabulary includes terms John never uses elsewhere (such as the Mount of Olives, the scribes, and the phrase 'early in the morning'), while key Johannine vocabulary is absent. Keener notes that the story's narrative style more closely resembles Luke-Acts than John. None of this means the event did not happen — the story almost certainly preserves a genuine memory of Jesus — but it was not written by the Fourth Evangelist and was inserted into the Gospel at a later stage of transmission.",
+        "key_verses": [
+          "John 8:1-2",
+          "Luke 21:37-38",
+          "John 7:52"
+        ],
+        "strengths": "Follows the overwhelming consensus of textual criticism. Explains the passage's migration between manuscript locations. Accounts for the stylistic differences from John without dismissing the story's historicity.",
+        "weaknesses": "Can be heard as undermining the authority of a beloved passage. Does not explain how such an early and widely known tradition failed to find a stable home in the manuscripts for so long."
       },
       {
-        "tradition": "Authentic Tradition",
+        "tradition": "Authentic Oral Tradition",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson acknowledged that the passage lacks strong manuscript support in the Johannine tradition but emphasized that the story bears all the marks of genuine historical memory. The scene is vivid, particular, and psychologically complex in ways that resist invention. Papias (early 2nd century, as reported by Eusebius) refers to a story about Jesus and a woman accused of many sins that circulated in the 'Gospel according to the Hebrews,' which may be this tradition or one closely related to it. Robertson argued that the story was likely suppressed in some early communities because of anxiety that it could be taken as condoning adultery — a concern Ambrose and Augustine both mention. Its eventual inclusion in the canonical text reflects the church's recognition that it preserves authentic teaching of Jesus, even if its textual pedigree is irregular.",
+        "key_verses": [
+          "John 8:7",
+          "John 8:11",
+          "John 3:17"
+        ],
+        "strengths": "Accounts for early patristic references to the tradition. Explains why the story might have been omitted (fear of moral laxity) before being reincorporated. Honors the story's historical texture and psychological realism.",
+        "weaknesses": "The Papias reference is ambiguous and may refer to a different incident entirely. Arguing from suppression is speculative — we cannot confirm why particular scribes omitted it."
+      },
+      {
+        "tradition": "Canonical Authority",
+        "tradition_family": "canonical",
+        "scholar_id": "childs",
+        "summary": "Childs's canonical approach shifts the question from textual prehistory to the passage's function within the received form of Scripture. Whatever its origin, John 7:53–8:11 has been part of the church's canonical text for over a millennium and has shaped Christian moral theology, preaching, and pastoral practice in profound ways. The canonical approach does not require resolving every text-critical question before a passage can function as Scripture — the church's reception of the text as authoritative is itself a theological datum. The passage offers a theologically coherent portrait of Jesus that is consistent with his character across the Gospels: he upholds the law's standard ('Go now and leave your life of sin') while extending mercy that none of the woman's accusers can match. Removing it from the canon would be a more drastic theological act than explaining its unusual transmission history.",
+        "key_verses": [
+          "John 8:10-11",
+          "John 3:17",
+          "Romans 8:1"
+        ],
+        "strengths": "Avoids reducing Scripture's authority to text-critical reconstruction. Takes the church's long reception history seriously as theologically meaningful. Preserves the passage's pastoral and ethical power.",
+        "weaknesses": "Can appear to sidestep legitimate text-critical evidence. Does not fully engage with the historical question of authorship. May conflate liturgical familiarity with textual authenticity."
+      },
+      {
+        "tradition": "Displaced Lukan Tradition",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Several features of the pericope — its vocabulary, narrative style, and theological emphases — more closely resemble Luke-Acts than John. The opening phrase 'early in the morning' and the setting on the Mount of Olives recall Luke 21:37–38 precisely. Some manuscripts actually place the passage after Luke 21:38, suggesting that some scribes recognized the Lukan affinity. Marcus and other historical-critical scholars propose that the story circulated as an independent unit of oral tradition (perhaps connected to the Papias reference) and was eventually inserted into John at a seam in the narrative (between Jesus' debate with the Pharisees and the 'light of the world' discourse) where it fit thematically. Its displacement from Luke, if that is its origin, may have occurred when Luke's text was standardized without it and scribes needed somewhere to place a tradition they knew to be authentic.",
+        "key_verses": [
+          "Luke 21:37-38",
+          "John 7:52",
+          "John 8:12"
+        ],
+        "strengths": "Strong linguistic parallels to Lukan style. Manuscript evidence for Lukan placement supports the theory. Explains both the non-Johannine features and the story's persistence in the tradition.",
+        "weaknesses": "Remains speculative — no manuscript of Luke contains the passage in its earliest witnesses either. The theory requires multiple editorial decisions for which we have no direct evidence."
+      },
+      {
+        "tradition": "Johannine Authenticity",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Though manuscript evidence is complicated, the story bears marks of genuine eyewitness tradition. It may have been omitted early due to perceived leniency toward adultery, then restored from reliable memory. The account reflects Jesus's character accurately."
-      },
-      {
-        "tradition": "Canonical Status",
-        "scholar_id": "longman",
-        "summary": "Whatever its compositional history, the church received this passage as Scripture. It teaches nothing contrary to Jesus's known character and message. Canonical authority doesn't require modern critical certainty about every verse's origin."
+        "summary": "While acknowledging the textual difficulties, MacArthur maintains that the passage may well record an authentic event from Jesus' ministry and that its inclusion in the canonical text is warranted. The story is consistent with Jesus' known character and teaching — his confrontation of religious hypocrisy, his refusal to condemn while still calling for repentance, and his masterful handling of a trap set by his opponents. MacArthur notes that the passage was known to early church fathers including Jerome, who stated that it was found 'in many Greek and Latin codices.' The fact that some scribes omitted it may reflect discomfort with its content rather than genuine doubt about its authenticity. For preaching and teaching purposes, the passage reliably communicates the truth about Jesus' posture toward sinners and toward those who weaponize the law.",
+        "key_verses": [
+          "John 8:7",
+          "John 8:11",
+          "Romans 2:1"
+        ],
+        "strengths": "Preserves the passage's homiletical and pastoral value. Jerome's testimony suggests wide early distribution. The content is fully consistent with Jesus' character across the Gospels.",
+        "weaknesses": "Does not adequately address the absence from the earliest manuscripts. Jerome's 4th-century testimony is far later than the manuscript evidence. Wide distribution does not equal original composition."
       }
     ],
     "related_chapters": [
@@ -1167,6 +1287,39 @@
       "adultery",
       "manuscripts",
       "pericope"
+    ],
+    "context": "John 7:53–8:11 tells the story of a woman caught in adultery whom Jesus declines to condemn, instead challenging her accusers: 'Let any one of you who is without sin be the first to throw a stone.' The passage is absent from the earliest and most reliable Greek manuscripts (P66, P75, Sinaiticus, Vaticanus), and when it does appear in later manuscripts it is placed at different locations — after John 7:36, after John 21:25, or even in Luke's Gospel after 21:38. Its vocabulary and style differ from John's, yet its content has shaped Christian ethics and devotion for centuries.",
+    "key_verses": [
+      {
+        "ref": "John 8:7",
+        "text": "When they kept on questioning him, he straightened up and said to them, “Let any one of you who is without sin be the first to throw a stone at her.”"
+      },
+      {
+        "ref": "John 8:10-11",
+        "text": "Jesus straightened up and asked her, “Woman, where are they? Has no one condemned you?” “No one, sir,” she said. “Then neither do I condemn you,” Jesus declared. “Go now and leave your life of sin.”"
+      },
+      {
+        "ref": "John 7:53",
+        "text": "Then everyone went home."
+      }
+    ],
+    "consensus": "There is near-universal scholarly agreement that the passage was not part of the original Gospel of John. However, most scholars also regard it as preserving an authentic early tradition about Jesus. Modern translations typically retain it with brackets and a note explaining its textual status.",
+    "further_reading": [
+      {
+        "author": "Chris Keith",
+        "title": "The Pericope Adulterae, the Gospel of John, and the Literacy of Jesus",
+        "year": 2009
+      },
+      {
+        "author": "Bruce M. Metzger",
+        "title": "A Textual Commentary on the Greek New Testament",
+        "year": 1994
+      },
+      {
+        "author": "Jennifer Knust & Tommy Wasserman",
+        "title": "To Cast the First Stone: The Transmission of a Gospel Story",
+        "year": 2018
+      }
     ]
   },
   {
@@ -1178,19 +1331,56 @@
     "question": "Is the Trinitarian formula 'the Father, the Word, and the Holy Spirit' original to 1 John?",
     "responses": [
       {
-        "tradition": "Later Insertion",
+        "tradition": "Later Marginal Gloss",
+        "tradition_family": "critical",
+        "scholar_id": "netbible",
+        "summary": "The NET Bible notes provide a thorough textual apparatus showing that the Comma Johanneum is absent from every Greek manuscript prior to the 16th century. The earliest Greek witnesses (P74, Sinaiticus, Alexandrinus, Vaticanus, and over 300 additional manuscripts) all lack the passage. It is absent from the Old Latin in its earliest form, from the Vulgate as Jerome originally produced it, and from every Eastern version. No Greek church father cites it — not even during the Trinitarian controversies of the 4th century, when it would have been the single most decisive proof-text available. The passage first appears in Latin manuscripts of the 5th century, likely as a marginal Trinitarian gloss on the 'three witnesses' of the Spirit, water, and blood. It entered the main text of some Vulgate manuscripts through scribal incorporation and was eventually back-translated into Greek for Erasmus's 1522 edition.",
+        "key_verses": [
+          "1 John 5:6",
+          "1 John 5:9",
+          "1 John 4:2"
+        ],
+        "strengths": "Reflects the unanimous consensus of modern textual criticism. The evidence is clear and overwhelming — no early manuscript in any language contains the Comma. The silence of the Greek fathers during the Arian controversy is particularly telling.",
+        "weaknesses": "The argument from silence (no church father cited it) is strong but not logically airtight — absence of citation does not guarantee absence from all manuscripts. However, the cumulative manuscript evidence makes this objection academic rather than substantive."
+      },
+      {
+        "tradition": "Erasmus and the Manuscript Tradition",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson traced the complicated history of how the Comma entered the printed Greek NT. Erasmus omitted it from his first (1516) and second (1519) editions because he found it in no Greek manuscript. He reportedly stated he would include it if a single Greek manuscript could be produced containing it. A manuscript was then produced — Codex Montfortianus (Gregory 61), now widely regarded as having been created specifically to meet Erasmus's challenge. Under pressure, Erasmus included the Comma in his third edition (1522) with a lengthy annotation expressing his doubts. From there it entered the Textus Receptus and thus the King James Version. Robertson viewed this as a cautionary tale about the difference between the transmitted text and the original text, emphasizing that the science of textual criticism exists precisely to identify and correct such accretions.",
+        "key_verses": [
+          "1 John 5:7-8",
+          "2 Timothy 3:16",
+          "Revelation 22:18-19"
+        ],
+        "strengths": "Provides concrete historical narrative showing how the passage entered the Greek tradition. Demonstrates the importance of text-critical methodology. Well-documented from Erasmus's own annotations.",
+        "weaknesses": "The 'Erasmus's promise' story may be apocryphal or at least embellished — the exact details are debated among historians. Focuses on transmission history rather than theological significance."
+      },
+      {
+        "tradition": "Trinitarian Doctrine Unaffected",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The Comma Johanneum appears in no Greek manuscript before the 14th century and in no early church father. It entered the Latin tradition as a marginal gloss that was later incorporated. Modern translations rightly omit it."
+        "summary": "Keener emphasizes the critical pastoral point: the removal of the Comma Johanneum does not weaken the biblical basis for Trinitarian theology in any way. The doctrine of the Trinity is built on a vast scriptural foundation — the baptismal formula of Matthew 28:19, the Pauline benediction of 2 Corinthians 13:14, the prologue of John's Gospel, the Spirit's role in Romans 8, and dozens of other passages that are textually uncontested. The Comma's absence from 1 John actually demonstrates the strength of the church's Trinitarian confession: the doctrine was formulated and defended through the great councils without reference to this text, because it was unknown to the Greek-speaking theologians who did the formulating. If anything, this case study should increase confidence in the text-critical process rather than undermine it.",
+        "key_verses": [
+          "Matthew 28:19",
+          "2 Corinthians 13:14",
+          "John 1:1-3"
+        ],
+        "strengths": "Directly addresses the pastoral concern that removing text undermines doctrine. Shows that Trinitarian theology does not depend on any single proof-text. Models healthy engagement with textual criticism for evangelical audiences.",
+        "weaknesses": "May not fully satisfy those who hold to a particular view of providential preservation of the Textus Receptus. Does not engage with the theological significance of the Comma's content in its own right."
       },
       {
-        "tradition": "Doctrinal Impact",
-        "scholar_id": "macarthur",
-        "summary": "While the passage should not be used to defend the Trinity, the doctrine doesn't depend on it. The Trinity is abundantly established elsewhere (Matthew 28:19; 2 Corinthians 13:14). Removing the Comma removes no essential doctrine."
-      },
-      {
-        "tradition": "Historical Context",
-        "scholar_id": "longman",
-        "summary": "Erasmus reluctantly included it in his Greek NT under pressure after a likely forged manuscript appeared. Its presence in the KJV reflects this history, not its authenticity. Textual criticism serves, not threatens, Scripture."
+        "tradition": "Patristic Witness and Liturgical Use",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "The patristic evidence, carefully compiled, reveals that while no Greek father cites the Comma in its full Trinitarian form, several Latin fathers from the 4th century onward (including Priscillian, Fulgentius, and possibly Cyprian) allude to or cite language resembling it. The Catena tradition preserves the observation that Cyprian (d. 258) in De Unitate Ecclesiae writes 'the Lord says, I and the Father are one; and again it is written of the Father, and of the Son, and of the Holy Spirit, and these three are one.' This pre-dates the earliest Latin manuscripts containing the Comma and may indicate that the theological sentiment, if not the exact wording, was circulating in North African Latin Christianity quite early. The passage's subsequent incorporation into the Vulgate and its centuries of liturgical use gave it a weight in Western Christianity that the manuscript evidence alone does not support.",
+        "key_verses": [
+          "1 John 5:7-8",
+          "John 10:30",
+          "John 14:26"
+        ],
+        "strengths": "Takes the Latin patristic evidence seriously rather than dismissing it entirely. Explains how the tradition gained momentum in the West. Acknowledges the liturgical significance of the passage in Christian worship history.",
+        "weaknesses": "The Cyprian citation is ambiguous and may not refer to 1 John at all. Latin patristic evidence cannot override the unanimous testimony of the Greek manuscripts and fathers. Liturgical use does not establish textual authenticity."
       }
     ],
     "related_chapters": [],
@@ -1200,6 +1390,39 @@
       "1 John",
       "manuscripts",
       "KJV"
+    ],
+    "context": "The traditional text of 1 John 5:7–8 in the KJV reads: 'For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood.' The italicized words (the 'Johannine Comma') are absent from every known Greek manuscript before the 16th century, from all early translations (Syriac, Coptic, Ethiopic, Armenian, Arabic, Slavonic), and from every Greek church father — even those arguing strenuously for the Trinity against Arians. The passage first appears in Latin manuscripts of the 5th century and entered the Greek tradition through Erasmus's third edition of his Greek NT (1522) under pressure from the Catholic Church.",
+    "key_verses": [
+      {
+        "ref": "1 John 5:7-8 (KJV)",
+        "text": "For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood: and these three agree in one."
+      },
+      {
+        "ref": "1 John 5:7-8 (NIV)",
+        "text": "For there are three that testify: the Spirit, the water and the blood; and the three are in agreement."
+      },
+      {
+        "ref": "Matthew 28:19",
+        "text": "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
+      }
+    ],
+    "consensus": "The scholarly consensus is virtually unanimous: the Comma Johanneum is a later addition to the text, likely originating as a Latin marginal gloss in the 4th or 5th century that eventually entered the Latin Vulgate text and from there was back-translated into Greek. No modern critical edition of the Greek NT includes it.",
+    "further_reading": [
+      {
+        "author": "Bruce M. Metzger",
+        "title": "A Textual Commentary on the Greek New Testament",
+        "year": 1994
+      },
+      {
+        "author": "Grantley R. McDonald",
+        "title": "Biblical Criticism in Early Modern Europe: Erasmus, the Johannine Comma and Trinitarian Debate",
+        "year": 2016
+      },
+      {
+        "author": "Daniel B. Wallace",
+        "title": "Revisiting the Corruption of the New Testament",
+        "year": 2011
+      }
     ]
   },
   {
@@ -1212,18 +1435,55 @@
     "responses": [
       {
         "tradition": "Liturgical Addition",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The doxology is absent from the earliest manuscripts and Luke's parallel. It likely originated in early Christian worship, was added to liturgical texts, then incorporated into later Matthew manuscripts. The Didache (c. AD 100) shows this liturgical form."
+        "summary": "Keener explains that the doxology's absence from the earliest manuscripts and its presence in the Didache (a late 1st/early 2nd century church manual) strongly suggests it originated as a congregational response added when the Lord's Prayer was used in worship. Ancient Jewish prayers typically concluded with a doxology — it would have felt incomplete to leave the prayer ending with 'deliver us from evil.' The language echoes David's prayer in 1 Chronicles 29:11-13, suggesting the early church drew on existing scriptural doxological language to provide a fitting conclusion. This is not a case of corruption but of liturgical enrichment: the worshiping community framed Jesus' prayer with biblically rooted praise. The prayer as Jesus taught it likely ended where Luke 11:4 ends, without the doxology.",
+        "key_verses": [
+          "1 Chronicles 29:11-13",
+          "Luke 11:2-4",
+          "Didache 8:2"
+        ],
+        "strengths": "Accounts for the manuscript evidence and the Didache parallel. Explains the addition as natural liturgical development rather than deliberate falsification. Luke's shorter version confirms Matthew's prayer originally ended without it.",
+        "weaknesses": "Some argue the Didache may have known Matthew's text with the doxology and is therefore not independent evidence for its secondary character. The absence from early manuscripts could theoretically reflect omission rather than addition."
       },
       {
-        "tradition": "Appropriate Conclusion",
+        "tradition": "OT Doxological Precedent",
+        "tradition_family": "patristic",
+        "scholar_id": "catena",
+        "summary": "The patristic tradition offers a nuanced perspective. While Origen, Tertullian, and Cyprian all cite the Lord's Prayer without the doxology — strong evidence it was not in their copies of Matthew — later Eastern fathers (Chrysostom, the Apostolic Constitutions) include it as a matter of course. The Catena compilation shows that the church came to understand the doxology as a theologically appropriate conclusion drawn from David's prayer in 1 Chronicles 29:11. The early church saw no tension between liturgical development and textual fidelity: worship shaped how texts were transmitted, and the church trusted the Spirit's guidance in both composition and reception. The doxology entered the Byzantine text through this liturgical channel and became the standard form in Eastern worship, eventually passing through the Textus Receptus into the KJV.",
+        "key_verses": [
+          "1 Chronicles 29:11",
+          "Matthew 6:9",
+          "2 Timothy 4:18"
+        ],
+        "strengths": "Explains the Eastern/Western divergence in transmission. Takes the liturgical life of the early church seriously as a factor in textual history. Correctly identifies the OT source of the doxology's language.",
+        "weaknesses": "The patristic silence in the first three centuries is difficult to explain if the doxology were original. Liturgical appropriateness does not establish textual authenticity."
+      },
+      {
+        "tradition": "Textual Evidence Assessment",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson's grammatical and textual work on the passage noted that the doxology exists in several different forms across the manuscripts that include it — some read 'the kingdom and the power and the glory,' others add 'of the Father and the Son and the Holy Spirit,' and still others have shorter variations. This multiplicity of forms is a classic indicator of secondary addition: original text tends to be stable across manuscript families, while additions vary because they enter the tradition independently at different points. The earliest and most geographically diverse manuscripts (Alexandrian, Western) agree in omitting the doxology, while it appears primarily in the later Byzantine tradition. Robertson concluded that the text-critical evidence points clearly to the doxology as a later supplement, though one that is entirely orthodox in content and drawn from legitimate scriptural precedent.",
+        "key_verses": [
+          "Matthew 6:13",
+          "1 Chronicles 29:11",
+          "Psalm 72:19"
+        ],
+        "strengths": "The variability of the doxology's form across manuscripts is strong evidence for secondary origin. Engages the evidence at the level of text-critical methodology rather than theological presupposition.",
+        "weaknesses": "Does not address whether Jesus himself might have used doxological language that Matthew chose not to record. Variability could theoretically reflect liturgical adaptation of an original rather than invention."
+      },
+      {
+        "tradition": "Appropriate Canonical Conclusion",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Whether original or early liturgical addition, the doxology expresses proper theology and fitting closure. Early Christians rightly concluded prayer with praise. Its antiquity and doctrinal soundness commend it even if not penned by Matthew."
-      },
-      {
-        "tradition": "Textual Transparency",
-        "scholar_id": "longman",
-        "summary": "Modern translations that bracket or omit the doxology aren't 'removing Scripture' but accurately representing our earliest evidence. This transparency about the text honors truth more than artificially harmonizing manuscript traditions."
+        "summary": "MacArthur acknowledges the textual questions surrounding the doxology but emphasizes its theological fitness. Whether or not Matthew originally included it, the doxology expresses truth that is entirely consistent with biblical theology: God's kingdom is ultimate, his power is sovereign, and his glory is eternal. The language comes directly from Scripture (1 Chronicles 29:11), and the impulse to conclude prayer with praise reflects a pattern found throughout the Psalter and in Paul's letters (Romans 11:36, Ephesians 3:20-21). For devotional and liturgical purposes, MacArthur considers the doxology a valuable and appropriate conclusion to the prayer, noting that its content is beyond theological dispute even if its placement in Matthew's autograph is uncertain. He continues to use it in teaching and worship.",
+        "key_verses": [
+          "1 Chronicles 29:11",
+          "Romans 11:36",
+          "Ephesians 3:20-21"
+        ],
+        "strengths": "Correctly notes that the doxology's content is biblically grounded regardless of its textual status. Provides pastoral guidance for congregations that use the traditional form. Avoids creating unnecessary alarm over a non-doctrinal textual question.",
+        "weaknesses": "Does not fully engage with the manuscript evidence. The argument from theological appropriateness does not address the historical question. Can appear to minimize the importance of textual criticism."
       }
     ],
     "related_chapters": [
@@ -1238,6 +1498,39 @@
       "doxology",
       "manuscripts",
       "liturgy"
+    ],
+    "context": "The familiar ending of the Lord's Prayer — 'For yours is the kingdom and the power and the glory forever. Amen' — appears in the KJV but is absent from most modern translations of Matthew 6:13. The doxology is missing from the earliest and best Greek manuscripts (Sinaiticus, Vaticanus, D, Z, 0170), the Old Latin, the Vulgate, and from the Matthean text as cited by church fathers including Tertullian, Cyprian, and Origen. It appears in later Byzantine manuscripts and in the Didache (late 1st/early 2nd century), likely reflecting early liturgical practice rather than the original text of Matthew.",
+    "key_verses": [
+      {
+        "ref": "Matthew 6:13 (KJV)",
+        "text": "And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen."
+      },
+      {
+        "ref": "Matthew 6:13 (NIV)",
+        "text": "And lead us not into temptation, but deliver us from the evil one."
+      },
+      {
+        "ref": "1 Chronicles 29:11",
+        "text": "Yours, LORD, is the greatness and the power and the glory and the majesty and the splendor, for everything in heaven and earth is yours. Yours, LORD, is the kingdom; you are exalted as head over all."
+      }
+    ],
+    "consensus": "The majority of scholars and all modern critical editions omit the doxology from the text of Matthew, regarding it as a liturgical addition drawn from 1 Chronicles 29:11 that entered the manuscript tradition through worship practice. The doxology is theologically orthodox and reflects genuinely biblical language, but it was almost certainly not part of Matthew's original composition.",
+    "further_reading": [
+      {
+        "author": "Bruce M. Metzger",
+        "title": "A Textual Commentary on the Greek New Testament",
+        "year": 1994
+      },
+      {
+        "author": "W.D. Davies & Dale C. Allison",
+        "title": "The Gospel According to Saint Matthew (ICC), Vol. 1",
+        "year": 1988
+      },
+      {
+        "author": "Nicholas Ayo",
+        "title": "The Lord's Prayer: A Survey Theological and Literary",
+        "year": 1992
+      }
     ]
   },
   {
@@ -1250,18 +1543,69 @@
     "responses": [
       {
         "tradition": "Single Authorship",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "The New Testament attributes material from all sections to 'Isaiah' (Matthew 3:3 cites Isaiah 40; John 12:38-41 cites both Isaiah 53 and Isaiah 6). Predictive prophecy explains knowledge of Cyrus. Unity of themes and vocabulary supports single authorship."
+        "summary": "MacArthur defends the traditional view that Isaiah son of Amoz wrote the entire book. He argues that the naming of Cyrus in 44:28 and 45:1 — over a century before Cyrus's birth — is precisely the kind of specific predictive prophecy that distinguishes biblical revelation from human speculation. If God can foretell the future, there is no reason to deny that Isaiah could have written about events that would occur after his lifetime. The NT authors consistently attribute material from all sections of the book to 'Isaiah the prophet' (Matthew 3:3 citing Isaiah 40:3; John 12:38-41 citing both Isaiah 53:1 and 6:10 and ascribing both to the same Isaiah). The theological unity of the book — its sustained interest in the 'Holy One of Israel' title (used 25 times, rare outside Isaiah) and its consistent eschatological vision — argues for a single prophetic mind behind the whole.",
+        "key_verses": [
+          "Isaiah 44:28",
+          "Isaiah 45:1",
+          "John 12:38-41",
+          "Matthew 3:3"
+        ],
+        "strengths": "Takes the NT's attribution to Isaiah at face value. The 'Holy One of Israel' title does create genuine literary unity. If predictive prophecy is granted as possible, the argument from Cyrus's naming loses its force.",
+        "weaknesses": "The NT authors may be using 'Isaiah' as a book title rather than making authorship claims. The shift in historical setting, vocabulary, and theological emphasis between sections 1–39 and 40–66 requires explanation beyond appeal to divine foreknowledge."
       },
       {
-        "tradition": "Multiple Authors",
+        "tradition": "Multiple Authors (Deutero-Isaiah)",
+        "tradition_family": "critical",
         "scholar_id": "collins",
-        "summary": "Chapters 40-55 presuppose the exile as present reality, not future prophecy. Chapters 56-66 reflect post-exilic conditions. Different vocabulary, theology, and historical settings suggest multiple authors in the Isaianic tradition. This doesn't diminish inspiration."
+        "summary": "Collins presents the standard critical position that the book of Isaiah reflects at least two major authorial voices. Chapters 40–55 presuppose the Babylonian exile as a present reality rather than a future event: the prophet addresses exiles, comforts those in captivity, and names Cyrus as God's instrument for imminent deliverance. The vocabulary, style, and theological themes of these chapters differ markedly from chapters 1–39: where First Isaiah emphasizes judgment and the Davidic monarchy, Deutero-Isaiah focuses on comfort, the servant figure, and monotheistic polemic against Babylonian idols. Collins argues that the prophetic books were living traditions maintained by disciples and schools, and that an anonymous 6th-century prophet working in the Isaianic tradition produced chapters 40–55. Chapters 56–66 likely reflect yet another hand, addressing post-exilic concerns like temple rebuilding and community boundaries.",
+        "key_verses": [
+          "Isaiah 40:1-2",
+          "Isaiah 44:28",
+          "Isaiah 56:1-2"
+        ],
+        "strengths": "Accounts for the dramatic shift in historical setting, audience, and theological concerns. Consistent with what we know about prophetic schools and the growth of prophetic literature. Widely accepted across the scholarly spectrum.",
+        "weaknesses": "The book has been transmitted as a unity since at least the 2nd century BC (1QIsaᵃ). The 'Holy One of Israel' title and other thematic threads do create genuine continuity. The theory relies partly on a presupposition that specific predictive prophecy does not occur."
       },
       {
-        "tradition": "Mediating Position",
+        "tradition": "Unified Prophetic Tradition",
+        "tradition_family": "evangelical",
         "scholar_id": "oswalt",
-        "summary": "Even if disciples compiled later material, the book presents unified theological vision. The question is whether predictive prophecy is possible, not whether the evidence demands multiple authors. Canonical Isaiah functions as a unified prophetic witness."
+        "summary": "Oswalt offers a mediating evangelical position that takes the critical observations seriously while defending the book's essential unity. He acknowledges the shift in tone, vocabulary, and setting between the major sections but argues these are best explained by the different rhetorical situations Isaiah addresses rather than by positing different authors. A prophet addressing 8th-century Judah about imminent Assyrian invasion would naturally use different language and imagery than when addressing the theological implications of a future exile and return. Oswalt emphasizes the book's remarkable theological coherence: the servant theme develops progressively from Israel as servant (41:8) to the individual suffering servant (52:13–53:12), a trajectory that suggests a single theological vision. He also notes that no manuscript tradition preserves the supposed component parts as separate documents.",
+        "key_verses": [
+          "Isaiah 41:8",
+          "Isaiah 52:13",
+          "Isaiah 53:1-12"
+        ],
+        "strengths": "Takes the literary and theological unity seriously without dismissing critical observations. No manuscript evidence for the book ever circulating in parts. The progressive development of the servant theme is a strong argument for intentional compositional unity.",
+        "weaknesses": "The shift in historical setting from pre-exilic to exilic remains difficult to explain without either predictive prophecy or multiple authors. 'Unified tradition' can become a way to accept the critical data without its natural conclusion."
+      },
+      {
+        "tradition": "Canonical Unity",
+        "tradition_family": "canonical",
+        "scholar_id": "childs",
+        "summary": "Childs approaches the question from his canonical perspective, arguing that the authorship debate, while legitimate at the historical level, should not determine how the book functions theologically. The canonical form of Isaiah is a unified 66-chapter book, and this is the form the Jewish and Christian communities have received as Scripture. Childs acknowledges the likelihood of multiple voices behind the text but insists that the final canonical shape creates a theological whole that transcends its compositional history. The first section establishes judgment and the need for deliverance; the second provides the comfort and restoration promised in response; the third addresses the challenges of living faithfully in the restored community. This canonical architecture produces a coherent theological narrative from judgment through salvation to eschatological hope that no authorship theory can dismantle.",
+        "key_verses": [
+          "Isaiah 1:1",
+          "Isaiah 40:1",
+          "Isaiah 61:1-2"
+        ],
+        "strengths": "Moves the discussion beyond the authorship impasse to the text's theological function. Honors both critical observations and the book's received unity. Provides a framework for reading Isaiah theologically without requiring a position on authorship.",
+        "weaknesses": "Can appear to dodge the historical question. Not all scholars accept the canonical approach as a legitimate alternative to historical-critical analysis. May be unsatisfying to those who want a clear answer on who wrote what."
+      },
+      {
+        "tradition": "Literary Unity with Editorial Expansion",
+        "tradition_family": "evangelical",
+        "scholar_id": "goldingay",
+        "summary": "Goldingay proposes that the book of Isaiah grew through a process of inspired editorial expansion within a continuous prophetic tradition. The core of chapters 1–39 derives from the 8th-century prophet, but later disciples and followers within the Isaianic school extended his message to address new situations — the exile and the return. This is not a secular 'multiple author' theory but a theological account of how prophetic traditions developed: the Spirit who inspired Isaiah also inspired those who faithfully extended his vision. Goldingay compares this to the Psalter, where individual psalms from different periods were collected into a unified book with its own canonical shape. The result is a document that is both historically diverse in origin and theologically unified in its canonical form. This view allows evangelicals to affirm the book's authority while engaging honestly with the literary and historical evidence.",
+        "key_verses": [
+          "Isaiah 8:16",
+          "Isaiah 40:1-2",
+          "Isaiah 61:1-3"
+        ],
+        "strengths": "Engages the critical evidence honestly while maintaining a high view of inspiration. Isaiah 8:16 ('Bind up this testimony of warning and seal up God's instruction among my disciples') may itself point to a continuing school. Provides a model for understanding prophetic book formation.",
+        "weaknesses": "The concept of 'inspired editorial expansion' is not clearly defined and may be difficult to distinguish in practice from the critical multiple-author view. Conservative evangelicals may see this as conceding too much."
       }
     ],
     "related_chapters": [
@@ -1280,6 +1624,39 @@
       "prophecy",
       "Cyrus",
       "criticism"
+    ],
+    "context": "Since the late 18th century, scholars have debated whether the book of Isaiah was written by a single 8th-century prophet or represents the work of multiple authors spanning several centuries. The traditional view attributes the entire book to Isaiah son of Amoz (active c. 740–700 BC). Critical scholarship generally identifies at least two major sections: chapters 1–39 ('First Isaiah'), addressing 8th-century Judah, and chapters 40–66 ('Second Isaiah' or 'Deutero-Isaiah'), which presuppose the Babylonian exile (6th century). Some scholars further distinguish chapters 56–66 as 'Third Isaiah' (Trito-Isaiah), reflecting post-exilic concerns. The debate touches fundamental questions about prophecy, divine foreknowledge, and the nature of biblical authorship.",
+    "key_verses": [
+      {
+        "ref": "Isaiah 1:1",
+        "text": "The vision concerning Judah and Jerusalem that Isaiah son of Amoz saw during the reigns of Uzziah, Jotham, Ahaz and Hezekiah, kings of Judah."
+      },
+      {
+        "ref": "Isaiah 44:28",
+        "text": "who says of Cyrus, ‘He is my shepherd and will accomplish all that I please; he will say of Jerusalem, \"Let it be rebuilt,\" and of the temple, \"Let its foundations be laid.\"’"
+      },
+      {
+        "ref": "Isaiah 53:5",
+        "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed."
+      }
+    ],
+    "consensus": "The majority of critical scholars accept some form of the multiple-author hypothesis, particularly the distinction between First Isaiah (1–39) and Deutero-Isaiah (40–55). Evangelical scholarship is divided: some defend single authorship on theological grounds, while others accept multiple contributors within a unified Isaianic tradition. The Dead Sea Scrolls (1QIsaᵃ) show the book was transmitted as a unified document by the 2nd century BC but do not resolve the authorship question.",
+    "further_reading": [
+      {
+        "author": "John N. Oswalt",
+        "title": "The Book of Isaiah, Chapters 1–39 / 40–66 (NICOT)",
+        "year": 1986
+      },
+      {
+        "author": "Brevard S. Childs",
+        "title": "Isaiah: A Commentary (OTL)",
+        "year": 2001
+      },
+      {
+        "author": "John Goldingay",
+        "title": "The Message of Isaiah 40–55: A Literary-Theological Commentary",
+        "year": 2005
+      }
     ]
   },
   {
@@ -2216,19 +2593,69 @@
     "question": "Matthew attributes a prophecy to Jeremiah, but it comes from Zechariah 11:12-13.",
     "responses": [
       {
-        "tradition": "Scroll Collection Name",
+        "tradition": "Prophetic Scroll Collection",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Jeremiah headed the prophetic scroll collection in some Jewish arrangements. Citing 'Jeremiah' could reference the whole prophetic corpus, similar to 'Psalms' for the entire Writings. This was acceptable citation practice."
+        "summary": "MacArthur explains the attribution by noting that in the Jewish arrangement of the prophetic books, Jeremiah stood at the head of the prophetic collection (the Latter Prophets). Just as the entire book of Psalms was sometimes referred to as 'David' even though not all psalms are Davidic, and as Jesus referred to the entire OT writings division as 'the Psalms' (Luke 24:44), so 'Jeremiah' could function as a shorthand for the prophetic corpus that included Zechariah. This convention is attested in the Talmud (Baba Bathra 14b), which lists Jeremiah first among the Latter Prophets. Matthew is not making an error but using a recognized bibliographic convention of his time to reference a passage within the prophetic collection by the name of its lead book.",
+        "key_verses": [
+          "Matthew 27:9-10",
+          "Luke 24:44",
+          "Mark 1:2-3"
+        ],
+        "strengths": "Provides a culturally plausible explanation that preserves Matthew's accuracy. The Talmudic evidence for Jeremiah heading the prophetic collection is real. Parallels to 'David' for Psalms and 'Moses' for the Pentateuch strengthen the analogy.",
+        "weaknesses": "The evidence for this specific ordering convention is late (Talmudic) and may not reflect 1st-century practice. Matthew names prophets precisely elsewhere (12:17, 13:35), making a generic 'collection name' usage here unusual."
       },
       {
-        "tradition": "Combined Quotation",
+        "tradition": "Composite Prophetic Quotation",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Matthew blends Zechariah 11:12-13 with Jeremiah themes (32:6-9, potter; 18:1-4, field). Ancient citation attributed blended quotes to the more prominent source. Matthew saw both prophets contributing to the fulfillment."
+        "summary": "Keener argues that Matthew is deliberately fusing material from multiple prophetic sources into a single composite quotation — a practice well attested in Jewish exegetical tradition. The thirty pieces of silver and the potter come from Zechariah 11:12–13; the purchase of a field comes from Jeremiah 32:6–9; and the potter's workshop comes from Jeremiah 18:2–3. By attributing the combined quotation to Jeremiah (the more prominent prophet), Matthew signals that the dominant theological framework is Jeremianic: the theme of covenant betrayal, Israel's rejection of God's provision, and the purchase of a field as a sign of both judgment and future hope. This is sophisticated biblical theology, not careless citation. Matthew sees the Judas narrative as fulfilling a typological pattern that runs through both Jeremiah and Zechariah, and he names the prophet whose themes dominate the theological meaning.",
+        "key_verses": [
+          "Zechariah 11:12-13",
+          "Jeremiah 18:2-3",
+          "Jeremiah 32:6-9"
+        ],
+        "strengths": "Accounts for the genuine presence of both Jeremianic and Zecharian elements in the quotation. Composite quotations are well-documented in Jewish and early Christian practice (see Mark 1:2–3). Treats Matthew as a sophisticated exegete rather than a careless copyist.",
+        "weaknesses": "The convention of attributing composite quotations to the more prominent source is attested but not universally acknowledged. Some argue it is a modern harmonization imposed on the text."
+      },
+      {
+        "tradition": "Oral Torah and Memory Citation",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus and other historical-critical scholars note that 1st-century Jewish citation practices did not operate with modern standards of verbatim accuracy. Texts were frequently cited from memory, and prophetic traditions were transmitted in oral as well as written form. In this context, an attribution to Jeremiah for material primarily from Zechariah is not the kind of 'error' modern readers might assume. It may reflect the way Matthew (or his source) recalled the tradition — the theological association with Jeremiah's potter and field motifs was strong enough to override the specific textual provenance from Zechariah. Ancient audiences would have recognized the allusions to both prophets and would not have been troubled by the attribution in the way modern readers are. The phenomenon parallels Mark 1:2–3, which attributes a composite quotation from Malachi and Isaiah to 'Isaiah the prophet.'",
+        "key_verses": [
+          "Mark 1:2-3",
+          "Matthew 27:9-10",
+          "Acts 7:14-16"
+        ],
+        "strengths": "Grounded in documented 1st-century citation practices. The Mark 1:2–3 parallel demonstrates the convention is not unique to this passage. Does not require elaborate harmonization theories.",
+        "weaknesses": "Can be heard as conceding error in Scripture, which is problematic for those who hold to inerrancy. The analogy to Mark 1:2–3 is imperfect because many manuscripts of Mark correct the attribution."
+      },
+      {
+        "tradition": "Typological Fulfillment",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin addressed this difficulty directly in his commentary on Matthew, acknowledging it as a genuine textual puzzle while maintaining that the underlying theological point is sound. Calvin suggested that the attribution to Jeremiah may reflect a focus on the typological pattern rather than the specific verbal source: Jeremiah's life and ministry embodied the theme of a prophet rejected by his own people, whose warnings were ignored and whose symbolic actions (buying a field, visiting a potter) foreshadowed the consequences of that rejection. Calvin argued that Matthew sees Judas's betrayal of Jesus as the ultimate fulfillment of this Jeremianic pattern of covenant rejection and prophetic suffering. The thirty silver pieces from Zechariah fit within this larger Jeremianic framework. For Calvin, prophetic fulfillment operates at the level of theological pattern, not proof-text citation.",
+        "key_verses": [
+          "Jeremiah 19:1-11",
+          "Jeremiah 32:6-9",
+          "Matthew 26:14-16"
+        ],
+        "strengths": "Acknowledges the textual difficulty honestly without resorting to strained harmonization. Grounds the attribution in genuine thematic connections between Jeremiah's ministry and the passion narrative. Reflects a sophisticated understanding of typological fulfillment.",
+        "weaknesses": "Does not fully resolve why Matthew would name Jeremiah specifically rather than Zechariah or simply 'the prophet.' Can appear to spiritualize away a concrete textual discrepancy."
       },
       {
         "tradition": "Textual Variant Theory",
-        "scholar_id": "longman",
-        "summary": "Some suggest early manuscripts had 'Zechariah' that was corrupted to 'Jeremiah.' However, no manuscript evidence supports this. The text as received requires explanation, not emendation."
+        "tradition_family": "critical",
+        "scholar_id": "netbible",
+        "summary": "The NET Bible notes observe that some early manuscripts omit 'Jeremiah' entirely, reading simply 'the prophet' (without a name), while others substitute 'Zechariah.' These variants suggest that early scribes and readers were aware of the difficulty and attempted to resolve it through textual emendation. One hypothesis is that the original text of Matthew read 'the prophet' without specifying a name, and 'Jeremiah' was added by a later scribe who associated the potter and field imagery with the Jeremiah tradition. Alternatively, 'Jeremiah' may be original and the variants represent scribal corrections. The NET notes favor the reading 'Jeremiah' as original (it is the harder reading, since scribes would more likely remove or correct a difficult attribution than introduce one), but they present the full range of manuscript evidence and note that the source of the quotation is primarily Zechariah 11:12–13.",
+        "key_verses": [
+          "Matthew 27:9",
+          "Zechariah 11:12-13",
+          "Matthew 2:17"
+        ],
+        "strengths": "Engages directly with the manuscript evidence. The 'harder reading' principle is a well-established criterion in textual criticism. Presents multiple possibilities without dogmatism.",
+        "weaknesses": "Cannot definitively resolve whether 'Jeremiah' is original or secondary. If 'Jeremiah' is secondary, the original text contained no error at all — but this solution may feel like it avoids the problem rather than solving it."
       }
     ],
     "related_chapters": [
@@ -2244,6 +2671,39 @@
       "Matthew",
       "prophecy",
       "potter"
+    ],
+    "context": "In Matthew 27:9–10, the evangelist quotes a prophecy about thirty pieces of silver being used to purchase a potter's field and attributes it to 'Jeremiah the prophet.' However, the quoted material comes primarily from Zechariah 11:12–13, with possible echoes of Jeremiah 18:2–3 (the potter) and 32:6–9 (the field purchase). This apparent misattribution has generated extensive discussion. Ancient readers would have noticed the discrepancy, and some early manuscripts actually omit the name 'Jeremiah' or substitute 'Zechariah,' suggesting scribes were aware of the problem. The issue touches broader questions about how NT authors used and cited the OT.",
+    "key_verses": [
+      {
+        "ref": "Matthew 27:9-10",
+        "text": "Then what was spoken by Jeremiah the prophet was fulfilled: “They took the thirty pieces of silver, the price set on him by the people of Israel, and they used them to buy the potter’s field, as the Lord commanded me.”"
+      },
+      {
+        "ref": "Zechariah 11:12-13",
+        "text": "I told them, “If you think it best, give me my pay; but if not, keep it.” So they paid me thirty pieces of silver. And the LORD said to me, “Throw it to the potter” — the handsome price at which they valued me! So I took the thirty pieces of silver and threw them to the potter at the house of the LORD."
+      },
+      {
+        "ref": "Jeremiah 32:6-9",
+        "text": "Jeremiah said, “The word of the LORD came to me: Hanamel son of Shallum your uncle is going to come to you and say, ‘Buy my field at Anathoth, because as nearest relative it is your right and duty to buy it.’ Then, just as the LORD had said, my cousin Hanamel came to me... and I bought the field.”"
+      }
+    ],
+    "consensus": "No single explanation has achieved consensus, but most scholars recognize that Matthew is weaving together multiple prophetic traditions rather than making a simple citation error. The 'scroll collection' and 'composite quotation' views are the most widely held among evangelical scholars, while critical scholars tend to see a lapse in attribution or a deliberate rhetorical strategy.",
+    "further_reading": [
+      {
+        "author": "Craig L. Blomberg",
+        "title": "Matthew (NAC)",
+        "year": 1992
+      },
+      {
+        "author": "R.T. France",
+        "title": "The Gospel of Matthew (NICNT)",
+        "year": 2007
+      },
+      {
+        "author": "Maarten J.J. Menken",
+        "title": "Matthew's Bible: The Old Testament Text of the Evangelist",
+        "year": 2004
+      }
     ]
   },
   {
@@ -2255,19 +2715,69 @@
     "question": "Why do NT authors sometimes quote the OT differently than our Hebrew text reads?",
     "responses": [
       {
-        "tradition": "Septuagint Usage",
+        "tradition": "Septuagint as Authoritative Translation",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "NT authors often quoted the Greek Septuagint (LXX), which sometimes differs from the Hebrew Masoretic text. The LXX was the Bible of Greek-speaking Jews and early Christians. Both textual traditions have ancient authority."
+        "summary": "Keener emphasizes that the Septuagint (LXX) was the Bible of the early church. Greek-speaking Jews and Christians read, memorized, and cited from the LXX as their authoritative Scripture, just as English-speaking Christians today cite from the NIV, ESV, or KJV. When NT authors quote the OT in forms that differ from the Hebrew Masoretic Text, they are usually following the LXX — the Greek translation produced in the 3rd–2nd centuries BC. In many cases (like Hebrews 10:5 / Psalm 40:6), the LXX reflects a different Hebrew source text (Vorlage) that may predate the Masoretic Text. The Dead Sea Scrolls have confirmed that the pre-Masoretic Hebrew textual tradition was more diverse than previously thought, and the LXX often preserves readings that are older than the Masoretic standardization. The NT authors were not being careless; they were using the authoritative translation available to them.",
+        "key_verses": [
+          "Hebrews 10:5-7",
+          "Acts 15:16-18",
+          "Romans 3:10-18"
+        ],
+        "strengths": "Grounded in the historical reality of LXX usage in the early church. Dead Sea Scrolls evidence confirms the existence of diverse Hebrew text forms. Explains the majority of OT/NT divergences straightforwardly.",
+        "weaknesses": "Not all NT divergences from the Hebrew can be explained by the LXX — some quotations match neither the LXX nor the Masoretic Text. Does not address cases where NT authors appear to quote from memory or paraphrase freely."
       },
       {
-        "tradition": "Interpretive Paraphrase",
-        "scholar_id": "longman",
-        "summary": "Ancient citation practices allowed interpretive rendering. Authors quoted the 'sense' of a passage, not always exact words. Targums show Jewish interpretation embedded in translation. NT authors followed similar conventions."
+        "tradition": "Jewish Interpretive Traditions (Pesher and Midrash)",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus and other scholars situate the NT's use of the OT within the broader context of Second Temple Jewish interpretive methods. Pesher interpretation (from the Qumran scrolls) applied prophetic texts directly to the interpreter's own community as the 'true' fulfillment: 'This is that which was spoken' — a formula virtually identical to Peter's speech in Acts 2:16. Midrashic exposition freely combined, rearranged, and adapted scriptural texts to address new situations, often linking passages by shared vocabulary (gezerah shavah) or thematic analogy. Paul's extended argument in Galatians 3–4 and Matthew's formula quotations both employ these recognized Jewish methods. The NT authors were not violating their own community's standards of citation; they were employing the full toolkit of contemporary Jewish biblical interpretation, which prioritized theological meaning and communal application over verbatim reproduction.",
+        "key_verses": [
+          "Acts 2:16-21",
+          "Galatians 3:16",
+          "Matthew 2:15"
+        ],
+        "strengths": "Grounded in documented Second Temple Jewish practice (Dead Sea Scrolls, rabbinic literature). Explains the most creative and unexpected NT uses of the OT. Avoids anachronistically imposing modern citation standards.",
+        "weaknesses": "Some conservative evangelicals are uncomfortable with the comparison to pesher/midrash, fearing it reduces NT quotations to arbitrary proof-texting. The line between legitimate Jewish interpretive method and eisegesis can be difficult to draw."
+      },
+      {
+        "tradition": "Christological Re-Reading",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin understood the NT's use of the OT through the lens of Christ as the interpretive key to all of Scripture. When Matthew applies Hosea 11:1 ('Out of Egypt I called my son') to Jesus, he is not claiming that Hosea was making a prediction about the Messiah in the modern sense. Rather, he is reading the entire OT narrative typologically: Israel is the 'son' who was called out of Egypt, and Jesus is the true Son who recapitulates and fulfills Israel's story. Calvin saw this Christological re-reading as legitimate because Christ is the telos to which all Scripture points (Luke 24:27, 44). The apparent 'misquotations' are actually instances of the NT authors reading Scripture at a deeper level than its original historical referent — seeing in it patterns, types, and trajectories that find their completion in Christ. This is not arbitrary but follows from the conviction that the same God speaks throughout Scripture.",
+        "key_verses": [
+          "Luke 24:27",
+          "Luke 24:44",
+          "Hosea 11:1"
+        ],
+        "strengths": "Provides a coherent theological framework for the NT's creative use of the OT. Rooted in Jesus' own hermeneutic as presented in Luke 24. Has deep roots in patristic and Reformed exegesis.",
+        "weaknesses": "Can appear circular: the NT use of the OT is legitimate because Christ fulfills the OT, and we know this because of the NT's use of the OT. Does not address cases where the divergence is purely textual rather than interpretive."
+      },
+      {
+        "tradition": "Pre-Masoretic Textual Diversity",
+        "tradition_family": "evangelical",
+        "scholar_id": "jobes",
+        "summary": "Jobes's work on the Septuagint highlights a crucial fact often overlooked in the inerrancy debate: the Hebrew text was not standardized until well after the NT was written. Before the Masoretic standardization (completed by the 10th century AD, though with roots in the 1st–2nd century), multiple Hebrew text forms circulated in Jewish communities. The Dead Sea Scrolls demonstrate this dramatically — some biblical scrolls from Qumran agree with the Masoretic Text, others agree with the LXX, and still others represent a third textual tradition. When a NT quotation differs from our Masoretic Text, it may well be following a Hebrew text form that was equally authoritative in the 1st century but was not the form that survived the later standardization. This shifts the question entirely: the NT authors may not be 'misquoting' at all but citing a legitimate text that simply differs from the one that became standard.",
+        "key_verses": [
+          "Hebrews 10:5",
+          "Psalm 40:6",
+          "Isaiah 7:14"
+        ],
+        "strengths": "Grounded in the Dead Sea Scrolls evidence for pre-Masoretic textual plurality. Removes the assumption that the Masoretic Text is always the 'correct' original. Directly addresses the most troubling textual divergences.",
+        "weaknesses": "Cannot account for all divergences — some NT citations match neither the Masoretic Text, the LXX, nor any known text form. The theory works for specific cases but does not explain the full range of phenomena."
       },
       {
         "tradition": "Inspired Application",
-        "scholar_id": "macarthur",
-        "summary": "The Holy Spirit who inspired the OT guided NT authors' application. Verbal variations sometimes draw out fuller meaning (pesher interpretation). Divine authorship of both Testaments ensures coherent canonical witness."
+        "tradition_family": "evangelical",
+        "scholar_id": "longman",
+        "summary": "Longman emphasizes that the NT authors, writing under the guidance of the Holy Spirit, had a unique authority to interpret and apply the OT that goes beyond any human interpretive method. When Paul finds a Christological meaning in a passage that Hosea intended as a reference to the Exodus, or when Matthew sees a fulfillment pattern that is not immediately apparent in the original text, they are not making exegetical errors but exercising inspired interpretive authority. This does not mean their methods are arbitrary — they consistently follow recognizable patterns (typology, analogy, fulfillment) — but it does mean that their interpretive conclusions carry divine authority even when modern exegetes would not arrive at the same reading through grammatical-historical method alone. The NT authors model a way of reading the OT that is Christologically centered, theologically rich, and ultimately authorized by the Spirit who inspired both testaments.",
+        "key_verses": [
+          "2 Timothy 3:16",
+          "2 Peter 1:20-21",
+          "1 Corinthians 10:11"
+        ],
+        "strengths": "Affirms the NT authors' unique interpretive authority. Explains why the NT's use of the OT cannot simply be replicated as a modern hermeneutical method. Consistent with a high view of inspiration.",
+        "weaknesses": "Risks becoming a conversation-stopper that avoids engaging with the historical and textual evidence. If only inspired authors can read the OT this way, the hermeneutical model has limited applicability for the modern reader."
       }
     ],
     "related_chapters": [],
@@ -2277,6 +2787,39 @@
       "Masoretic",
       "hermeneutics",
       "citation"
+    ],
+    "context": "The NT contains approximately 300 direct quotations of the OT, and many of these differ — sometimes significantly — from the Hebrew text (Masoretic Text) as we have it. Some follow the Greek Septuagint (LXX) translation, which itself sometimes diverges from the Hebrew. Others appear to paraphrase freely, combine multiple OT texts, or apply passages in ways that seem disconnected from their original context. Examples include Hebrews 10:5 quoting Psalm 40:6 ('a body you prepared for me' vs. 'my ears you have opened'), Matthew 2:15 applying Hosea 11:1 to Jesus when the original refers to Israel, and the numerous 'fulfillment' citations whose connection to the OT source is not immediately obvious.",
+    "key_verses": [
+      {
+        "ref": "Hebrews 10:5",
+        "text": "Therefore, when Christ came into the world, he said: “Sacrifice and offering you did not desire, but a body you prepared for me.”"
+      },
+      {
+        "ref": "Psalm 40:6 (Hebrew)",
+        "text": "Sacrifice and offering you did not desire — but my ears you have opened — burnt offerings and sin offerings you did not require."
+      },
+      {
+        "ref": "Matthew 2:15",
+        "text": "where he stayed until the death of Herod. And so was fulfilled what the Lord had said through the prophet: “Out of Egypt I called my son.”"
+      }
+    ],
+    "consensus": "Scholars broadly agree that the NT authors operated with different citation conventions than modern writers. Most evangelical and critical scholars recognize the role of the Septuagint, Jewish interpretive traditions (pesher, midrash, typology), and the early church's Christological re-reading of the OT as legitimate factors explaining the divergences. The question is not whether the NT authors cited accurately by modern standards, but whether their interpretive methods were legitimate within their own historical and theological context.",
+    "further_reading": [
+      {
+        "author": "G.K. Beale & D.A. Carson (eds.)",
+        "title": "Commentary on the New Testament Use of the Old Testament",
+        "year": 2007
+      },
+      {
+        "author": "Richard B. Hays",
+        "title": "Echoes of Scripture in the Letters of Paul",
+        "year": 1989
+      },
+      {
+        "author": "Karen H. Jobes & Moisés Silva",
+        "title": "Invitation to the Septuagint",
+        "year": 2000
+      }
     ]
   },
   {
@@ -2288,19 +2831,69 @@
     "question": "With so many variant readings in manuscripts, how can we trust the Bible's text?",
     "responses": [
       {
-        "tradition": "Overwhelming Agreement",
+        "tradition": "Overwhelming Textual Agreement",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "The vast majority of variants are spelling differences, word order, or obvious scribal slips. No Christian doctrine depends on a disputed reading. The NT is the best-attested document from antiquity by far—5,800+ Greek manuscripts."
+        "summary": "MacArthur emphasizes the extraordinary reliability of the NT text by placing the variants in perspective. Of the approximately 138,000 words in the Greek NT, roughly 99.5% of the text is not in question. The remaining 0.5% involves variants that potentially affect meaning, and none of these touch any major doctrine. By comparison, Homer's Iliad — the next best-attested ancient text — survives in fewer than 2,000 manuscripts with a 5% variation rate. The sheer volume of NT manuscripts (5,800+ in Greek alone, plus 10,000+ Latin, plus thousands in other languages) means we can reconstruct the original text with a degree of confidence unmatched by any other document from the ancient world. The large number of variants is actually evidence of abundance, not corruption: the more manuscripts you have, the more trivial variations you will find, but the easier it becomes to identify the original reading.",
+        "key_verses": [
+          "Isaiah 40:8",
+          "Matthew 24:35",
+          "1 Peter 1:25"
+        ],
+        "strengths": "Effective at placing the raw variant count in meaningful context. The comparison to other ancient texts is legitimate and powerful. The abundance-produces-variants principle is sound.",
+        "weaknesses": "The 99.5% figure is sometimes challenged as oversimplified. Does not address specific high-profile variants (Mark 16, John 7:53–8:11, 1 John 5:7) in detail. Can minimize the complexity of actual text-critical decisions."
       },
       {
-        "tradition": "Text-Critical Confidence",
-        "scholar_id": "keener",
-        "summary": "Textual criticism is a mature science. Scholars can trace manuscript families and identify likely original readings. More manuscripts mean more evidence for reconstruction. Variants demonstrate copying independence, not corruption."
+        "tradition": "Text-Critical Methodology",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson's foundational work in NT Greek textual criticism established many of the principles still used today. He demonstrated that manuscript variants fall into identifiable categories: unintentional errors (homoeoteleuton, dittography, haplography), intentional harmonizations (scribes making one Gospel account match another), theological corrections (scribes modifying theologically ambiguous passages), and liturgical additions (scribes inserting familiar worship language). Each category has predictable patterns that trained critics can recognize and evaluate. Robertson argued that text-critical methodology — comparing readings across manuscript families, evaluating internal evidence (which reading explains the origin of the others?), and assessing external evidence (which reading has the earliest and most diverse support?) — allows scholars to reconstruct the original text with high confidence. The existence of variants is not a crisis but a solvable problem, and the tools to solve it have been well-developed over two centuries of scholarship.",
+        "key_verses": [
+          "John 1:18",
+          "1 Timothy 3:16",
+          "Hebrews 2:9"
+        ],
+        "strengths": "Provides the actual methodology for evaluating variants rather than just asserting reliability. The categorization of variant types is still standard in textual criticism. Empowers informed engagement with the evidence.",
+        "weaknesses": "The methodology involves judgment calls, and scholars sometimes disagree on which reading is original. Some variants resist easy resolution even with sophisticated methodology. Requires technical knowledge that most lay readers lack."
       },
       {
         "tradition": "Providential Preservation",
-        "scholar_id": "longman",
-        "summary": "God providentially preserved His word through the manuscript tradition. The abundance of witnesses (including translations, patristic quotations) ensures the original text is recoverable. We have substantially what the apostles wrote."
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin affirmed that God's providence ensured the faithful transmission of Scripture across the centuries. This is not a claim that every manuscript is perfect or that scribes never erred, but that God superintended the process so that his Word would never be lost or fatally corrupted. Calvin noted that the very existence of multiple manuscript traditions serves providence: where one tradition has a scribal error, another preserves the original reading, so that through comparison the text can be recovered. This view does not bypass textual criticism but provides a theological framework for it: text-critical work is the means by which God's providential preservation is recognized and realized. The Reformed confessional tradition (Westminster Confession I.8) affirms that the OT in Hebrew and the NT in Greek were 'kept pure in all ages' — not in any single manuscript, but in the manuscript tradition as a whole.",
+        "key_verses": [
+          "Psalm 12:6-7",
+          "Isaiah 40:8",
+          "Matthew 5:18"
+        ],
+        "strengths": "Provides a theological framework that affirms both God's sovereignty and the legitimacy of textual criticism. Avoids the error of equating any single manuscript or edition with the 'perfectly preserved' text. Has deep confessional roots in Reformed theology.",
+        "weaknesses": "Can be misused to claim perfect preservation in a specific text form (e.g., the Textus Receptus or the KJV). The concept of providence is difficult to verify empirically. Some see it as a theological assertion masquerading as a historical argument."
+      },
+      {
+        "tradition": "Quantitative Insignificance",
+        "tradition_family": "critical",
+        "scholar_id": "netbible",
+        "summary": "The NET Bible notes address major textual variants throughout the NT with detailed technical apparatus. Their cumulative testimony confirms what the broader discipline of textual criticism has demonstrated: the variants that meaningfully affect the text's meaning are extraordinarily few relative to the total. The NET notes categorize variants by significance — those that affect translation, those that are theologically interesting but do not change doctrine, and those that are trivial. In each case, the notes present the evidence and explain the editorial decision. Major 'test cases' like Mark 16:9–20, John 7:53–8:11, and 1 John 5:7–8 are significant not because they represent a pattern of unreliability but precisely because they are so unusual: they are the well-known exceptions in a text that is otherwise remarkably stable. The fact that scholars can identify and bracket these passages demonstrates the method's effectiveness, not the text's fragility.",
+        "key_verses": [
+          "Mark 16:9-20",
+          "John 7:53-8:11",
+          "1 John 5:7-8"
+        ],
+        "strengths": "Engages specific variant passages rather than speaking in generalities. The 'exceptions prove the method works' argument is logically sound. Backed by detailed textual apparatus that readers can examine for themselves.",
+        "weaknesses": "The selection of 'significant' vs. 'insignificant' variants involves judgment. Critics like Bart Ehrman argue that the theological significance of some variants is underestimated. The reassurance may not satisfy those for whom any variant is theologically troubling."
+      },
+      {
+        "tradition": "Multiple Attestation as Strength",
+        "tradition_family": "evangelical",
+        "scholar_id": "keener",
+        "summary": "Keener reframes the variant problem by comparing the NT's textual situation to other ancient documents. The NT has more manuscripts, earlier manuscripts, and manuscripts from more diverse geographic regions than any other ancient text. Most classical texts survive in fewer than 20 manuscripts, with the earliest copies dating 700–1,400 years after composition. The NT has manuscripts within decades of the originals (P52 for John, c. 125 AD; P46 for Paul, c. 200 AD). This wealth of evidence means scholars can cross-check readings across independent manuscript families in ways that are impossible for Homer, Plato, or Tacitus. Keener argues that the question should not be 'Why are there so many variants?' but 'Why do we expect perfection from manuscript transmission when we accept less from every other ancient document?' The NT's textual situation is not a weakness but a unique strength among ancient literature.",
+        "key_verses": [
+          "John 20:31",
+          "2 Timothy 3:16",
+          "Luke 1:1-4"
+        ],
+        "strengths": "Powerful comparative argument — if we trust any ancient text, we should trust the NT more. Early papyri (P52, P46, P66, P75) provide exceptional time-proximity to the originals. Accessible argument that resonates with non-specialists.",
+        "weaknesses": "The comparison to classical texts is somewhat asymmetrical — no one claims divine inspiration for Homer. The argument from abundance addresses reliability but not inerrancy in the strictest sense. Early papyri are fragmentary and do not cover the entire NT."
       }
     ],
     "related_chapters": [],
@@ -2310,6 +2903,39 @@
       "variants",
       "preservation",
       "transmission"
+    ],
+    "context": "The NT text is preserved in approximately 5,800 Greek manuscripts, 10,000 Latin manuscripts, and thousands more in Syriac, Coptic, Armenian, and other languages. No two manuscripts agree in every detail, and scholars have identified between 300,000 and 400,000 textual variants among them. This staggering number is often cited by critics as evidence that the Bible's text is unreliable. However, the vast majority of variants are trivial (spelling differences, word order, scribal slips), and the sheer number reflects the extraordinary abundance of manuscripts rather than the corruption of the text. The question is whether the significant variants — those that affect meaning — undermine confidence in the NT text as a whole.",
+    "key_verses": [
+      {
+        "ref": "Matthew 5:22",
+        "text": "But I tell you that anyone who is angry with a brother or sister will be subject to judgment."
+      },
+      {
+        "ref": "Romans 5:1",
+        "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ."
+      },
+      {
+        "ref": "1 Timothy 3:16",
+        "text": "Beyond all question, the mystery from which true godliness springs is great: He appeared in the flesh, was vindicated by the Spirit, was seen by angels, was preached among the nations, was believed on in the world, was taken up in glory."
+      }
+    ],
+    "consensus": "There is broad scholarly agreement — across evangelical, mainline, and critical traditions — that the NT text is the best-attested document from antiquity and that its essential message has been reliably transmitted. Scholars like Bruce Metzger, Daniel Wallace, and Bart Ehrman (despite their very different theological conclusions) agree that no cardinal doctrine of Christianity depends on a textually disputed passage. The discipline of textual criticism has produced a Greek text that scholars across traditions regard as highly reliable.",
+    "further_reading": [
+      {
+        "author": "Bruce M. Metzger & Bart D. Ehrman",
+        "title": "The Text of the New Testament: Its Transmission, Corruption, and Restoration (4th ed.)",
+        "year": 2005
+      },
+      {
+        "author": "Daniel B. Wallace",
+        "title": "Revisiting the Corruption of the New Testament",
+        "year": 2011
+      },
+      {
+        "author": "Philip Comfort",
+        "title": "New Testament Text and Translation Commentary",
+        "year": 2008
+      }
     ]
   }
 ]
