@@ -20,11 +20,10 @@ All books are live. Content work is enrichment, accuracy auditing, and feature d
 
 ### Architecture Remediation
 
-Batches 1–5 complete (ghost deps, git history purge, DB version externalization, type safety, content layer decomposition).
+Batches 1–6 complete (ghost deps, git history purge, DB version externalization, type safety, content layer decomposition, NotesOverlay decomposition).
 
 | Batch | Description | Status |
 |-------|-------------|--------|
-| 6 | NotesOverlay decomposition | Planned |
 | 7 | Inline style migration | Planned |
 | 8A-C | Test foundation, CI/CD, branch protection | Planned |
 
@@ -45,7 +44,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 ## What's Next
 
 1. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
-2. **NotesOverlay Decomposition** — see `_tools/ARCH_PLAN.md`
+2. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 3. **Cross-reference thread expansion** (Batch 13)
 4. **Map story enhancements** (Batch 14)
 5. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)

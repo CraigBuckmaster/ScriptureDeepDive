@@ -18,7 +18,7 @@
 | 3 | Externalize DB_VERSION (stop self-modifying builds) | 30 min | Low |
 | 4 | Type safety pass (eliminate all `any` types) | 2–3 hrs | Low |
 | 5 | Content data layer decomposition | 1–2 hrs | Low |
-| 6 | NotesOverlay decomposition | 2–3 hrs | Medium |
+| 6 | NotesOverlay decomposition (**DONE**) | 2–3 hrs | Medium |
 | 7 | Inline style migration | 3–4 hrs | Low |
 | 8A | Test coverage foundation (DB, stores, hooks) | 2–3 days | None |
 | 8B | CI/CD pipeline (GitHub Actions) | 0.5 day | None |
