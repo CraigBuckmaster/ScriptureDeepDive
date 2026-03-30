@@ -426,18 +426,55 @@
     "responses": [
       {
         "tradition": "Sequential Harmonization",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Judas hanged himself (Matthew), and later the rope broke or was cut, causing his decomposing body to fall and rupture (Acts). Both accounts are true, describing different moments in the same event sequence."
+        "summary": "MacArthur argues that the two accounts describe different stages of the same event. Judas hanged himself (Matthew), and at some point afterward — whether because the rope broke, the branch gave way, or the body was cut down — the corpse fell and burst open (Acts). In the climate of the Judean hill country, a body left hanging would quickly bloat and become distended; a fall from height onto rocks would produce exactly the result Acts describes. The field purchase is attributed to Judas in Acts because the money was technically his — the priests bought the field with Judas's returned blood money, and Luke attributes the purchase to Judas in the sense that it was done with his funds and on his account. This type of compressed attribution is common in ancient narrative. MacArthur notes that neither account claims to give a complete picture; each selects details relevant to its theological purpose.",
+        "key_verses": [
+          "Matthew 27:5",
+          "Acts 1:18",
+          "Matthew 27:6-8"
+        ],
+        "strengths": "Provides a plausible physical sequence that accounts for both descriptions. The indirect attribution of the field purchase to Judas is linguistically defensible. Neither author claims comprehensiveness.",
+        "weaknesses": "The harmonization requires adding details present in neither text. The sequence of hanging → falling → bursting is possible but not stated. The different attributions of the field purchase remain awkward even with the explanation."
       },
       {
-        "tradition": "Different Emphases",
+        "tradition": "Complementary Perspectives",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Matthew focuses on Judas's act of suicide; Luke (in Acts) focuses on God's judgment evident in the gruesome aftermath. Ancient authors commonly selected details serving their theological purposes without intending exhaustive reportage."
+        "summary": "Keener emphasizes that ancient historians routinely selected different details from the same event to serve their narrative purposes. Matthew focuses on Judas's remorse and the fulfillment of Jeremiah/Zechariah's prophecy about the thirty silver coins — his interest is in the money and what happened to it. Luke in Acts focuses on Judas's gruesome end as divine judgment — his interest is in the fate of the betrayer and the need to replace him among the Twelve. These are not competing accounts but different angles on a complex event, comparable to how modern news reports of the same incident can emphasize different details and appear contradictory when read side by side. Keener notes that the verb in Acts 1:18 (prēnēs genomenos, 'falling headlong') could describe the aftermath of a hanging rather than an independent cause of death. The apparent contradictions arise from modern expectations of comprehensive, synchronized reporting that ancient writers did not share.",
+        "key_verses": [
+          "Matthew 27:3-5",
+          "Acts 1:15-20",
+          "Acts 1:18-19"
+        ],
+        "strengths": "Grounded in documented ancient historiographic practice. The different narrative purposes are clearly identifiable. Avoids forcing either text to say more than it claims.",
+        "weaknesses": "The 'different perspectives' explanation can become a universal harmonization tool that prevents any genuine contradiction from being recognized. The differences in this case are more substantial than typical complementary reporting."
       },
       {
-        "tradition": "Metaphorical Reading",
-        "scholar_id": "longman",
-        "summary": "Acts may use 'falling headlong' metaphorically for Judas's spiritual ruin, echoing OT judgment language. The 'bursting' describes divine judgment, not necessarily physical mechanics. Genre awareness resolves apparent conflict."
+        "tradition": "Independent Traditions",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus argues that Matthew and Acts preserve independent traditions about Judas's death that cannot be harmonized without importing details from outside both texts. The differences are not merely perspectival but substantive: in Matthew, the priests buy the field; in Acts, Judas buys it. In Matthew, Judas hangs himself; in Acts, he falls and bursts. In Matthew, the field is named because it was bought with blood money; in Acts, because of the blood spilled on it. These are different etiologies for 'the Field of Blood,' suggesting two separate traditions developed to explain the same place name. Marcus notes that the death of a traitor was a common topos in ancient literature (cf. the deaths of Ahithophel, Antiochus IV, Nadan in the Story of Ahiqar), and different communities could develop distinct narrative traditions about such a death. Both versions serve the same theological purpose: the betrayer came to a terrible end, and even his death fulfilled Scripture.",
+        "key_verses": [
+          "Matthew 27:5-8",
+          "Acts 1:18-19",
+          "2 Samuel 17:23"
+        ],
+        "strengths": "Takes the differences at face value without forcing harmonization. The comparison to Ahithophel's death (also hanging, 2 Samuel 17:23) suggests Matthew draws on biblical typology. The two different etiologies for 'Field of Blood' are genuinely distinct.",
+        "weaknesses": "The 'independent traditions' conclusion does not prove the accounts are irreconcilable — they could still describe different aspects of the same event. The theological agreement (divine judgment on the betrayer) may indicate a common historical core beneath the variant traditions."
+      },
+      {
+        "tradition": "Typological Narration",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin addressed this discrepancy in his commentary on Acts, acknowledging the apparent contradiction while arguing that both accounts are truthful reports shaped by different rhetorical purposes. Calvin noted that Matthew's account draws on the typology of Ahithophel — David's trusted counselor who betrayed him and hanged himself (2 Samuel 17:23) — presenting Judas as the antitype of the archetypical traitor. Luke's account in Acts emphasizes the physical horror of divine judgment, employing language reminiscent of the deaths of the wicked in the OT (cf. the death of the Judean king Jehoram in 2 Chronicles 21:18–19). Calvin argued that both writers selected details that connected Judas's death to established scriptural patterns of judgment, and that the apparent contradictions arise because each writer prioritized typological resonance over comprehensive physical description. The theological truth — that God judged the betrayer — is the point both texts are making.",
+        "key_verses": [
+          "2 Samuel 17:23",
+          "Acts 1:18",
+          "Matthew 27:5"
+        ],
+        "strengths": "Identifies genuine scriptural typologies behind both accounts. Takes both texts seriously as theological narration. The Ahithophel parallel in Matthew is widely recognized.",
+        "weaknesses": "Typological analysis explains why the writers chose their details but does not resolve whether the details are historically compatible. The approach may seem to prioritize theological meaning over historical accuracy."
       }
     ],
     "related_chapters": [
@@ -455,6 +492,39 @@
       "death",
       "harmonization",
       "apparent contradiction"
+    ],
+    "context": "Matthew 27:3–5 reports that Judas, seized with remorse after betraying Jesus, returned the thirty silver coins to the chief priests and then 'went away and hanged himself.' Acts 1:18–19 gives a strikingly different account: 'With the payment he received for his wickedness, Judas bought a field; there he fell headlong, his body burst open and all his intestines spilled out.' The accounts differ on who purchased the field (the priests in Matthew, Judas in Acts), how Judas died (hanging vs. falling), and the circumstances of his death. This is one of the most frequently cited contradictions in the NT.",
+    "key_verses": [
+      {
+        "ref": "Matthew 27:5",
+        "text": "So Judas threw the money into the temple and left. Then he went away and hanged himself."
+      },
+      {
+        "ref": "Acts 1:18",
+        "text": "With the payment he received for his wickedness, Judas bought a field; there he fell headlong, his body burst open and all his intestines spilled out."
+      },
+      {
+        "ref": "Matthew 27:7",
+        "text": "So they decided to use the money to buy the potter’s field as a burial place for foreigners."
+      }
+    ],
+    "consensus": "Evangelical scholars generally harmonize the accounts as complementary (e.g., Judas hanged himself and the body later fell and burst). Critical scholars typically view the accounts as independent, irreconcilable traditions. Most scholars on both sides agree that the theological point — Judas's terrible end as judgment for betrayal — is the primary concern of both writers.",
+    "further_reading": [
+      {
+        "author": "Craig L. Blomberg",
+        "title": "The Historical Reliability of the New Testament",
+        "year": 2016
+      },
+      {
+        "author": "Darrell L. Bock",
+        "title": "Acts (Baker Exegetical Commentary)",
+        "year": 2007
+      },
+      {
+        "author": "Richard Bauckham",
+        "title": "The Fate of the Dead: Studies on the Jewish and Christian Apocalypses",
+        "year": 1998
+      }
     ]
   },
   {
@@ -466,19 +536,56 @@
     "question": "Did God or Satan incite David to number Israel?",
     "responses": [
       {
-        "tradition": "Dual Agency View",
+        "tradition": "Dual Causation / Primary and Secondary Agency",
+        "tradition_family": "evangelical",
         "scholar_id": "selman",
-        "summary": "Both are true at different levels of causation. God sovereignly permitted what Satan instigated. Compare Job 1-2 where Satan acts, but only within divine permission. Secondary causes operate under primary sovereignty."
+        "summary": "Selman argues that both texts are correct because they describe different levels of causation operating simultaneously. In the biblical worldview, God's sovereign will and creaturely agency are not mutually exclusive: God can accomplish his purposes through secondary agents, including adversarial ones. The parallel with Job is exact: God permits Satan to act, and the resulting events are attributed to both God (who permitted them) and Satan (who executed them). In 2 Samuel, the author focuses on God's sovereign permission — the census happened because God's anger against Israel required a vehicle for judgment. In Chronicles, the author focuses on the immediate agent — Satan was the one who directly incited David. Selman notes that this is not a contradiction but a complementary perspective on a single event viewed from two legitimate theological angles. Reformed theology has formalized this as the distinction between God's decretive will and his permissive will.",
+        "key_verses": [
+          "Job 1:12",
+          "Job 2:6",
+          "1 Kings 22:19-23"
+        ],
+        "strengths": "The Job parallel provides an exact canonical model for dual causation. Consistent with the biblical pattern of divine sovereignty working through secondary agents. Preserves the truthfulness of both accounts.",
+        "weaknesses": "The 2 Samuel text says God 'incited' David directly, not merely 'permitted' Satan — the language is stronger than the Job parallel suggests. The dual-causation framework may impose a systematic theology on texts that are making different theological points."
       },
       {
-        "tradition": "Theological Development",
+        "tradition": "Theological Development in Israel's Understanding",
+        "tradition_family": "critical",
         "scholar_id": "japhet",
-        "summary": "The Chronicler, writing later, makes explicit what Samuel left implicit. Post-exilic theology more clearly distinguished Satan's role in temptation. Samuel's 'the LORD' refers to permissive will, Chronicles to proximate cause."
+        "summary": "Japhet identifies this as a clear case of theological reinterpretation by the Chronicler. In earlier Israelite theology, all events — including calamities and evil impulses — were attributed directly to God as the sole ultimate cause (cf. Isaiah 45:7, 'I form the light and create darkness, I bring prosperity and create disaster'). By the post-exilic period when Chronicles was written, Israel's theology had developed a more differentiated understanding of evil's agency, influenced partly by Persian dualism and partly by internal theological reflection. The Chronicler was uncomfortable attributing the incitement to evil directly to God and substituted 'Satan' (with or without the definite article — the Hebrew is ambiguous) as the proximate cause. Japhet argues this is not a 'correction' of Samuel but a legitimate theological restatement: the Chronicler preserves the historical event while updating the theological framework through which it is understood.",
+        "key_verses": [
+          "2 Samuel 24:1",
+          "1 Chronicles 21:1",
+          "Isaiah 45:7"
+        ],
+        "strengths": "Accounts for the change as intentional theological reinterpretation, not scribal error. Well-grounded in the documented development of Israelite angelology and demonology. Takes the Chronicler seriously as a theologian, not just a copyist.",
+        "weaknesses": "The 'development' language can imply that earlier theology was wrong or primitive. The Persian influence on Israelite Satan-theology is debated. Evangelical readers may resist the implication that Scripture's theology 'evolved.'"
       },
       {
-        "tradition": "Hebrew Usage Clarification",
+        "tradition": "Divine Permission Framework",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "2 Samuel's 'he incited' could have 'anger' (God's anger at Israel) as its subject, not God himself. Reading 'God's anger incited David' removes the difficulty while staying grammatically valid."
+        "summary": "MacArthur resolves the difficulty by appealing to God's sovereign governance of all events, including those accomplished through adversarial agents. When 2 Samuel says God incited David, it reflects the comprehensive biblical principle that nothing happens outside God's sovereign will — even Satan operates only within divinely established boundaries (Job 1–2). When Chronicles says Satan incited David, it identifies the immediate spiritual agent who planted the desire in David's heart. MacArthur draws the analogy to 1 Kings 22:19–23, where God sends a 'deceiving spirit' to accomplish his purposes through Ahab's false prophets — an event simultaneously attributed to God's decree and the spirit's agency. The census was sinful because David acted out of pride and self-reliance rather than trust in God, but God used David's sin to bring about the revelation of the temple site (2 Samuel 24:18–25) — turning judgment into redemptive provision.",
+        "key_verses": [
+          "2 Samuel 24:1",
+          "1 Chronicles 21:1",
+          "1 Kings 22:19-23"
+        ],
+        "strengths": "Consistent with the broader biblical pattern of divine sovereignty over evil. The 1 Kings 22 parallel is directly relevant. The redemptive outcome (temple site) provides a theological framework for God's involvement.",
+        "weaknesses": "The distinction between God 'causing' and 'permitting' evil is theologically important but may not resolve the tension in the text itself. 2 Samuel's language ('he incited') is active, not permissive."
+      },
+      {
+        "tradition": "The Chronicler as Interpretive Theologian",
+        "tradition_family": "evangelical",
+        "scholar_id": "block",
+        "summary": "Block reads the Chronicler not as contradicting Samuel but as offering an authoritative theological interpretation of the earlier text. The Chronicler, writing for a post-exilic audience, had access to Samuel-Kings and deliberately chose to present the same event through a different theological lens. By attributing the incitement to 'Satan' (or 'an adversary' — the Hebrew satan can mean either the supernatural figure or simply 'an opponent'), the Chronicler shifts the emphasis from God's inscrutable sovereignty to the reality of spiritual opposition that God's people face. Block notes that this interpretive practice is not unique: the NT similarly reinterprets OT events through new theological categories (Hebrews 11 reframes numerous OT narratives). The Chronicler's restatement does not contradict Samuel any more than Hebrews contradicts Genesis — both are authoritative interpretations of the same events from different vantage points within the canonical tradition.",
+        "key_verses": [
+          "1 Chronicles 21:1",
+          "2 Samuel 24:1",
+          "Hebrews 11:17-19"
+        ],
+        "strengths": "Takes the Chronicler's theological agency seriously. The analogy to NT reinterpretation of OT events is insightful. Preserves the authority of both texts without forcing mechanical harmonization.",
+        "weaknesses": "The comparison to Hebrews is imperfect — Hebrews adds theological interpretation, while Chronicles appears to change the agent of the action. The 'interpretive theologian' label may not satisfy those who expect historical narratives to report the same facts consistently."
       }
     ],
     "related_chapters": [
@@ -497,6 +604,39 @@
       "Satan",
       "sovereignty",
       "Chronicles"
+    ],
+    "context": "2 Samuel 24:1 states: 'Again the anger of the LORD burned against Israel, and he incited David against them, saying, \"Go and take a census of Israel and Judah.\"' But 1 Chronicles 21:1 records the same event differently: 'Satan rose up against Israel and incited David to take a census of Israel.' The same event is attributed to two different agents — God and Satan. This is perhaps the clearest example of a theological development between the earlier and later historical books, and it raises fundamental questions about divine sovereignty, secondary causation, and how Israel's understanding of evil developed over time.",
+    "key_verses": [
+      {
+        "ref": "2 Samuel 24:1",
+        "text": "Again the anger of the LORD burned against Israel, and he incited David against them, saying, “Go and take a census of Israel and Judah.”"
+      },
+      {
+        "ref": "1 Chronicles 21:1",
+        "text": "Satan rose up against Israel and incited David to take a census of Israel."
+      },
+      {
+        "ref": "Job 1:12",
+        "text": "The LORD said to Satan, “Very well, then, everything he has is in your power, but on the man himself do not lay a finger.”"
+      }
+    ],
+    "consensus": "Most scholars — evangelical and critical — recognize that the Chronicler's substitution of 'Satan' for 'the LORD' reflects a theological development in Israel's understanding of evil's agency. The dominant evangelical reading sees this as complementary (God permitted what Satan instigated), while critical scholars emphasize the theological evolution between the two texts.",
+    "further_reading": [
+      {
+        "author": "Sara Japhet",
+        "title": "I & II Chronicles: A Commentary (OTL)",
+        "year": 1993
+      },
+      {
+        "author": "Martin J. Selman",
+        "title": "1 Chronicles (TOTC)",
+        "year": 1994
+      },
+      {
+        "author": "Peggy L. Day (ed.)",
+        "title": "The Old Testament in the Book of Chronicles (article collection)",
+        "year": 2004
+      }
     ]
   },
   {
@@ -508,19 +648,56 @@
     "question": "Why are Jesus's genealogies in Matthew and Luke so different?",
     "responses": [
       {
-        "tradition": "Joseph vs. Mary Lines",
+        "tradition": "Joseph's Line vs. Mary's Line",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Matthew traces Joseph's legal lineage (royal succession rights); Luke traces Mary's biological descent. 'Son of Heli' (Luke 3:23) means son-in-law. Jesus is legally David's heir through Joseph, biologically through Mary."
+        "summary": "MacArthur presents the most widely held evangelical solution: Matthew gives Joseph's legal genealogy (the royal line through Solomon, establishing Jesus' legal right to the throne of David), while Luke gives Mary's biological lineage (through Nathan, establishing Jesus' physical descent from David). Under this view, 'Heli' in Luke 3:23 is Mary's father, and Joseph is called 'son of Heli' because he became Heli's legal son through marriage — a recognized convention in Jewish practice where a man without sons could adopt his son-in-law into his genealogical line. Luke's parenthetical 'so it was thought' (Luke 3:23) signals that he is aware of the virgin birth and is tracing the biological line through Mary rather than the legal line through Joseph. This explains why the two genealogies diverge after David: they follow different branches of David's descendants, converging again at Joseph and Mary.",
+        "key_verses": [
+          "Luke 3:23",
+          "Matthew 1:16",
+          "Luke 1:32"
+        ],
+        "strengths": "Explains the divergence cleanly — two different lines of descent from David. Consistent with the theological purposes of each Gospel (Matthew: royal legitimacy; Luke: universal humanity through Adam). The 'so it was thought' parenthetical in Luke may signal awareness of the distinction.",
+        "weaknesses": "Luke explicitly names Joseph, not Mary, as the genealogical subject. No ancient source identifies the Luke genealogy as Mary's. The son-in-law convention, while plausible, is not clearly attested for genealogical usage in this period."
       },
       {
         "tradition": "Levirate Marriage Solution",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Levirate marriage (Deuteronomy 25:5-6) created complex family trees where legal and biological fathers differed. Both genealogies could trace Joseph through different ancestral paths—legal through one, biological through another."
+        "summary": "Keener presents the levirate marriage theory, which has roots in Julius Africanus (3rd century AD). Under Jewish levirate law (Deuteronomy 25:5–6), if a man died without sons, his brother was obligated to marry the widow and produce an heir who would legally be counted as the deceased man's son. If Jacob (Matthew's name for Joseph's father) and Heli (Luke's name) were half-brothers who shared a mother but had different fathers, and if one died childless, the other would have married his widow. Joseph would then have been the biological son of one man and the legal heir of the other — explaining why both genealogies legitimately name different fathers. Julius Africanus claimed this tradition came from Jesus' own relatives (the desposynoi), giving it early provenance. Keener notes that the theory is complex but has the virtue of taking both genealogies at face value as lines through Joseph.",
+        "key_verses": [
+          "Deuteronomy 25:5-6",
+          "Matthew 1:16",
+          "Luke 3:23"
+        ],
+        "strengths": "Takes both genealogies at face value as Joseph's lineage. Has ancient attestation from Julius Africanus (c. 220 AD). Levirate marriage was a genuine institution in Jewish practice.",
+        "weaknesses": "The theory requires a specific and unattested family situation (half-brothers with a shared mother). Julius Africanus's source (the desposynoi) cannot be independently verified. The complexity of the solution may suggest it is more ingenious than historical."
       },
       {
-        "tradition": "Theological Purposes",
+        "tradition": "Theological Genealogies",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Matthew's genealogy serves his Jewish audience (Abraham-David-Christ); Luke's serves his universal vision (Adam-God). Selective genealogies were normal—Matthew explicitly skips generations. Different purposes, not errors."
+        "summary": "Longman argues that both genealogies are primarily theological documents, not biological records, and should be interpreted in light of their respective Gospels' purposes. Matthew structures his genealogy into three sets of fourteen generations (Abraham→David, David→Exile, Exile→Christ) — a numerological scheme that requires selective inclusion and omission of known kings (Ahaziah, Joash, and Amaziah are skipped between Jehoram and Uzziah). Luke extends his genealogy back to 'Adam, the son of God,' emphasizing Jesus' connection to all humanity. Both evangelists are making theological arguments about who Jesus is: Matthew presents him as the climax of Israel's royal-covenantal history; Luke presents him as the new Adam, the representative of the human race. Longman suggests that attempting to harmonize every name in the two lists may miss the point — these are curated theological statements, not census records.",
+        "key_verses": [
+          "Matthew 1:17",
+          "Luke 3:38",
+          "Matthew 1:8"
+        ],
+        "strengths": "Correctly identifies the theological structuring in both genealogies. Matthew's omission of known kings proves he is curating, not transcribing. The different endpoints (Abraham vs. Adam) reveal different theological purposes.",
+        "weaknesses": "Theological purpose does not exclude historical accuracy — the genealogies could be both structured and factual. This view may not explain why the names diverge so sharply after David. Can be perceived as avoiding the harmonization question."
+      },
+      {
+        "tradition": "Royal vs. Natural Line",
+        "tradition_family": "evangelical",
+        "scholar_id": "waltke",
+        "summary": "Waltke proposes a variation of the traditional view: Matthew traces the royal (legal) line of succession to David's throne, while Luke traces the natural (biological) line. These need not be identical — royal succession does not always follow strict primogeniture, and adoptions, lateral successions, and dynastic disruptions (like the exile) could produce two legitimate but different lines. Matthew's interest in the kingship theme (he begins 'the son of David, the son of Abraham' and structures his genealogy around David and the exile) explains why he follows the royal line through Solomon and the kings of Judah. Luke, writing for a Gentile audience and emphasizing Jesus' full humanity, follows the biological line that may have passed through non-royal branches of David's family. Waltke notes that both lines converge on the critical theological point: Jesus is a descendant of David, and thus qualified to be the Messiah.",
+        "key_verses": [
+          "Matthew 1:1",
+          "Matthew 1:6",
+          "Luke 3:31"
+        ],
+        "strengths": "Explains the divergence through a recognized distinction between royal succession and biological descent. Both lines establish Davidic lineage, which is the essential theological claim. Consistent with the known complexity of ancient Near Eastern royal genealogies.",
+        "weaknesses": "The theory is somewhat speculative — neither Gospel explicitly identifies its line as 'royal' vs. 'natural.' The sharp divergence after David still requires explanation for each individual name. The distinction may not account for all the differences."
       }
     ],
     "related_chapters": [
@@ -541,6 +718,39 @@
       "David",
       "Mary",
       "Joseph"
+    ],
+    "context": "Matthew 1:1–17 traces Jesus' ancestry from Abraham through David and the royal line to Joseph. Luke 3:23–38 traces it from Jesus back through David to Adam. The genealogies diverge sharply after David: Matthew follows the royal line through Solomon, while Luke follows a different line through Nathan (another son of David). The names from David to Joseph are almost entirely different in the two lists. Both claim to give Joseph's lineage, yet they name different fathers for Joseph — Matthew says Jacob, Luke says Heli. The number of generations also differs: Matthew lists 28 generations from David to Jesus, Luke lists 43.",
+    "key_verses": [
+      {
+        "ref": "Matthew 1:16",
+        "text": "and Jacob the father of Joseph, the husband of Mary, and Mary was the mother of Jesus who is called the Messiah."
+      },
+      {
+        "ref": "Luke 3:23",
+        "text": "Now Jesus himself was about thirty years old when he began his ministry. He was the son, so it was thought, of Joseph, the son of Heli."
+      },
+      {
+        "ref": "Matthew 1:1",
+        "text": "This is the genealogy of Jesus the Messiah the son of David, the son of Abraham."
+      }
+    ],
+    "consensus": "No single solution has achieved consensus. The 'Mary's line in Luke' theory is the most popular evangelical explanation but faces the difficulty that Luke explicitly names Joseph. The levirate marriage theory and the theological-purpose view each have scholarly support. Most scholars agree that the genealogies serve primarily theological purposes — establishing Jesus' Davidic credentials and messianic legitimacy.",
+    "further_reading": [
+      {
+        "author": "Richard Bauckham",
+        "title": "Jude and the Relatives of Jesus in the Early Church",
+        "year": 1990
+      },
+      {
+        "author": "Raymond E. Brown",
+        "title": "The Birth of the Messiah",
+        "year": 1993
+      },
+      {
+        "author": "Ben Witherington III",
+        "title": "Matthew (Smyth & Helwys Commentary)",
+        "year": 2006
+      }
     ]
   },
   {
@@ -552,19 +762,57 @@
     "question": "Why do the four Gospels tell the resurrection story so differently?",
     "responses": [
       {
-        "tradition": "Witness Variation View",
+        "tradition": "Eyewitness Variation",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "Multiple witnesses to the same event naturally emphasize different details. The variations actually support authenticity—identical accounts would suggest collusion. Core facts agree: empty tomb, angelic announcement, risen Christ."
+        "summary": "Keener argues that the differences among the resurrection accounts are precisely what one would expect from independent eyewitness testimony about a confusing, emotionally overwhelming event. Modern forensic research consistently shows that multiple witnesses to the same event will report different details, emphasize different moments, and even disagree on specifics like the number of people present or the exact sequence of events — while agreeing on the core facts. The resurrection accounts exhibit exactly this pattern: the core narrative (empty tomb, angelic announcement, risen Jesus) is consistent, while peripheral details (how many angels, which women, exact timing) vary. Keener notes that ancient biographers understood this principle: Thucydides, Polybius, and other historians expected accounts to differ in detail while agreeing in substance. The variations actually strengthen the case for historicity, because fabricated accounts would be harmonized.",
+        "key_verses": [
+          "Matthew 28:1-7",
+          "Mark 16:1-8",
+          "John 20:1-18"
+        ],
+        "strengths": "Well-grounded in modern research on eyewitness testimony. The 'fabricated stories would agree' argument is logically sound. The core agreement amid peripheral variation matches genuine testimony patterns.",
+        "weaknesses": "Some differences go beyond peripheral detail — the sequence of appearances and the women's responses differ substantially. The eyewitness analogy assumes the accounts derive from direct testimony, which not all scholars accept. At what point do 'variations' become 'contradictions'?"
       },
       {
         "tradition": "Compositional Selectivity",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Each evangelist selected from a complex morning's events for his theological purpose. Women made multiple trips; disciples visited repeatedly. No Gospel claims comprehensiveness. The accounts are complementary, not contradictory."
+        "summary": "MacArthur argues that each Gospel writer selected details from the full resurrection narrative that served his particular theological purpose and audience. Matthew, writing for a Jewish audience, emphasizes the earthquake, the angel's dramatic descent, and the guards' report — elements that address the Jewish objection that the disciples stole the body. Mark, characteristically terse, focuses on the women's fear and the command to tell the disciples — consistent with his messianic secret theme. Luke emphasizes the two men's reminder of Jesus' Galilean predictions and the road to Emmaus — connecting the resurrection to Jesus' teaching ministry. John focuses on Mary Magdalene's personal encounter with the risen Lord — consistent with his Gospel's emphasis on individual faith. No writer claims to give a complete account; each contributes a facet of a complex event that no single narrative could fully capture.",
+        "key_verses": [
+          "Matthew 28:11-15",
+          "Mark 16:7-8",
+          "John 20:16-18"
+        ],
+        "strengths": "Each Gospel's selection is demonstrably consistent with its broader themes and audience. The 'no writer claims completeness' principle is textually warranted. Explains apparent omissions without positing contradiction.",
+        "weaknesses": "Selectivity explains omissions but does not fully address cases where the accounts seem to conflict (e.g., the number of angels). The theological-purpose argument can become a catch-all that prevents any detail from being assessed historically."
       },
       {
-        "tradition": "Genre Expectations",
+        "tradition": "Multiple Independent Traditions",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus views the resurrection accounts as preserving multiple independent traditions about the events of Easter morning that were transmitted and shaped within different early Christian communities before being incorporated into the written Gospels. The variations — different women named, different numbers of angels, different sequences of appearances — reflect the oral transmission process, in which different communities remembered and emphasized different aspects of the tradition. Marcus notes that the independence of the traditions is actually evidence for the historicity of the empty tomb claim: multiple independent attestation is a standard criterion of historical reliability, and the fact that traditions that developed separately all converge on the empty tomb and the angelic announcement strongly suggests a historical core. The variations are the expected result of oral tradition, not evidence of fabrication.",
+        "key_verses": [
+          "1 Corinthians 15:3-8",
+          "Mark 16:1-8",
+          "Luke 24:1-12"
+        ],
+        "strengths": "Multiple independent attestation is a recognized historical criterion. The 1 Corinthians 15 tradition is very early (within 5 years of the crucifixion). Takes oral tradition seriously as a factor in textual variation.",
+        "weaknesses": "The 'independent traditions' model does not easily explain the literary relationships between the Synoptic accounts (Mark as a source for Matthew and Luke). The model may underestimate the degree of early Christian coordination and communication."
+      },
+      {
+        "tradition": "Theological Portraiture",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Ancient biographical conventions allowed flexibility in sequence and selection. Demanding modern journalistic precision misreads the genre. The Gospels agree on what matters: Christ is risen, the tomb is empty, witnesses encountered him."
+        "summary": "Longman reads the resurrection accounts as theological portraits — each evangelist painting the same event with different artistic emphases, much as four painters depicting the same landscape would produce recognizably different works. The number of angels is a classic example: mentioning one angel (Matthew, Mark) does not exclude the presence of two (Luke, John) — ancient writers frequently focused on the primary speaker or actor. The different women named at the tomb likely reflect each writer's relationship to different witnesses: John features Mary Magdalene prominently because she was his primary source for these events, while Mark names Mary Magdalene, Mary mother of James, and Salome. Longman argues that the theological framing is primary: Matthew's resurrection establishes Jesus as king, Mark's creates awe, Luke's fulfills prophecy, and John's restores relationship. The historical event is refracted through four theological lenses.",
+        "key_verses": [
+          "Matthew 28:18",
+          "Mark 16:6",
+          "Luke 24:6-7",
+          "John 20:17"
+        ],
+        "strengths": "The 'four painters' analogy communicates the principle effectively. The 'mentioning one does not exclude two' principle is logically sound. Each Gospel's theological emphasis is genuinely distinctive.",
+        "weaknesses": "The 'one does not exclude two' argument can feel like special pleading if applied too broadly. Not all differences reduce to emphasis — some involve sequence and content. The approach works better for some differences than others."
       }
     ],
     "related_chapters": [
@@ -591,6 +839,39 @@
       "Gospels",
       "harmonization",
       "empty tomb"
+    ],
+    "context": "The four Gospels agree on the essential facts of the resurrection: women went to the tomb early Sunday morning, found it empty, and received angelic announcement that Jesus had risen. But the details diverge significantly. Matthew mentions one angel; Mark mentions a young man; Luke mentions two men; John mentions two angels. The women present differ across accounts. The sequence of appearances varies. The disciples' reactions are described differently. These differences have been cited both as evidence of fabrication (why can't the accounts agree?) and as evidence of authenticity (fabricated stories would be more consistent).",
+    "key_verses": [
+      {
+        "ref": "Matthew 28:5-6",
+        "text": "The angel said to the women, “Do not be afraid, for I know that you are looking for Jesus, who was crucified. He is not here; he has risen, just as he said. Come and see the place where he lay.”"
+      },
+      {
+        "ref": "Mark 16:5",
+        "text": "As they entered the tomb, they saw a young man dressed in a white robe sitting on the right side, and they were alarmed."
+      },
+      {
+        "ref": "John 20:1-2",
+        "text": "Early on the first day of the week, while it was still dark, Mary Magdalene went to the tomb and saw that the stone had been removed from the entrance. So she came running to Simon Peter and the other disciple."
+      }
+    ],
+    "consensus": "Most scholars — whether they accept the historicity of the resurrection or not — agree that the diversity of the accounts argues against simple fabrication. If the early church invented the resurrection story, the accounts would likely be more harmonized. Evangelical scholars generally view the differences as complementary perspectives on a complex, chaotic morning. Critical scholars tend to see them as evidence of multiple independent traditions about a transformative experience.",
+    "further_reading": [
+      {
+        "author": "N.T. Wright",
+        "title": "The Resurrection of the Son of God",
+        "year": 2003
+      },
+      {
+        "author": "Michael R. Licona",
+        "title": "The Resurrection of Jesus: A New Historiographical Approach",
+        "year": 2010
+      },
+      {
+        "author": "Craig S. Keener",
+        "title": "The Historical Jesus of the Gospels",
+        "year": 2009
+      }
     ]
   },
   {
@@ -602,19 +883,56 @@
     "question": "Did Jesus preach this sermon on a mountain (Matthew) or a level place (Luke)?",
     "responses": [
       {
-        "tradition": "Same Sermon, Different Vantage",
+        "tradition": "Same Event, Different Perspectives",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "A mountain plateau ('level place on the mountain') satisfies both descriptions. Jesus could have taught from a level area on a mountainside. The 'contradiction' assumes mutually exclusive geography that doesn't exist."
+        "summary": "Keener argues that Matthew and Luke record the same event from different angles and with different editorial selection. The apparent location difference is easily resolved: a 'level place' on a mountainside is not a contradiction — a plateau or terrace on a hill would be both 'on a mountain' (Matthew's broader description of the setting) and 'a level place' (Luke's specific description of where Jesus stood). Ancient teachers regularly taught on hillsides where a natural amphitheater provided acoustics for large crowds. The differences in wording reflect each evangelist's editorial style and theological emphasis: Matthew's 'poor in spirit' makes explicit the spiritual dimension that Luke's 'poor' leaves implicit, while Luke's more concrete language reflects his consistent concern for the materially disadvantaged. Both versions faithfully represent Jesus' teaching; each writer has shaped the presentation for his audience.",
+        "key_verses": [
+          "Matthew 5:1",
+          "Luke 6:17",
+          "Luke 6:20"
+        ],
+        "strengths": "The 'level place on a mountainside' solution is geographically plausible and elegant. Both Gospels' editorial tendencies are well-documented. Itinerant teachers naturally repeat material — a single sermon could produce variant reports.",
+        "weaknesses": "Luke's version is much shorter (30 verses vs. Matthew's 107), suggesting significant editorial shaping by one or both writers. The differences in the Beatitudes go beyond style to substance ('poor' vs. 'poor in spirit'). The 'same event' theory must account for substantial content differences."
       },
       {
         "tradition": "Two Different Occasions",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Itinerant teachers repeated core material. Jesus likely delivered similar teaching multiple times in different settings. Matthew and Luke may record distinct occasions, not conflicting accounts of one event."
+        "summary": "MacArthur argues that Jesus preached similar sermons on at least two occasions — once on a mountainside (Matthew) and once on a level place (Luke). As an itinerant teacher who traveled throughout Galilee, Judea, and beyond for approximately three years, Jesus would naturally have repeated his core teachings many times, adapting emphasis and illustration to different audiences and settings. Modern pastors preach the same essential message repeatedly with variations; there is no reason to assume Jesus taught each lesson only once. The overlapping content reflects a common body of teaching, while the differences reflect distinct occasions. MacArthur notes that the surrounding narrative contexts differ: Matthew places the sermon early in the Galilean ministry as a programmatic statement; Luke places it after the selection of the Twelve, as instruction for the newly formed apostolic band.",
+        "key_verses": [
+          "Matthew 5:1-2",
+          "Luke 6:12-17",
+          "Matthew 4:23"
+        ],
+        "strengths": "Avoids forcing the accounts into artificial harmony. An itinerant teacher repeating core material is entirely natural. The different narrative contexts support distinct occasions.",
+        "weaknesses": "The high degree of verbal overlap suggests literary dependence rather than independent reports of separate events. If Jesus preached two nearly identical sermons, the 'two occasions' theory begins to resemble the 'one event' theory. Occam's razor favors one sermon over two."
+      },
+      {
+        "tradition": "Composite Discourse",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus and other scholars following the two-source hypothesis argue that Matthew's Sermon on the Mount is a composite discourse: Matthew has gathered Jesus' sayings from multiple occasions and sources (Q, M, and his own editorial work) into a single literary sermon, much as a modern editor might compile a speaker's 'greatest hits' into a single address. Luke's shorter Sermon on the Plain preserves a version closer to the Q source that both evangelists shared. This editorial practice was entirely conventional in ancient biography and historiography — Thucydides composed speeches for his historical figures based on 'what was appropriate to the occasion,' and ancient biographers regularly gathered their subjects' memorable sayings into set-piece discourses. Matthew's sermon is not a stenographic transcript but a carefully structured theological composition that faithfully represents the substance of Jesus' teaching even if it combines material from different settings.",
+        "key_verses": [
+          "Matthew 5:1",
+          "Luke 6:17",
+          "Matthew 7:28-29"
+        ],
+        "strengths": "Explains the length difference (Matthew compiled more material). Consistent with ancient biographical composition practices. The Q hypothesis provides a concrete mechanism for the shared and divergent material.",
+        "weaknesses": "The Q hypothesis, while widely held, is not universally accepted. The composite discourse theory may imply that Matthew created a fictional narrative setting. Some find the conclusion that Jesus never actually preached this specific sermon troubling."
       },
       {
         "tradition": "Theological Geography",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "Matthew's 'mountain' evokes Moses on Sinai—Jesus as new lawgiver. Luke's 'plain' emphasizes accessibility to all. These may be theological framings more than GPS coordinates. Both communicate truth about Jesus's teaching."
+        "summary": "Longman draws attention to the theological significance of the settings in each Gospel. Matthew's 'mountainside' is a deliberate Moses typology: just as Moses received the law on Mount Sinai, Jesus — the new and greater Moses — delivers the new covenant teaching from a mountain. This Mosaic typology pervades Matthew's Gospel (five major discourse blocks echoing the five books of Moses, infancy narrative paralleling Moses' birth narrative). Luke's 'level place' reflects his theology of reversal and equality: Jesus stands among the people, accessible to the crowd, delivering blessings and woes that overturn social hierarchies. Longman argues that both evangelists may be describing the same event but framing the setting in language that serves their respective theological portraits of Jesus. The question 'Was it a mountain or a plain?' may impose a false choice on texts that are using geography symbolically as well as descriptively.",
+        "key_verses": [
+          "Matthew 5:1",
+          "Luke 6:17",
+          "Exodus 19:20"
+        ],
+        "strengths": "The Mosaic typology in Matthew is well-documented and widely recognized. Luke's theology of reversal is a genuine literary pattern. Demonstrates how ancient writers could describe the same reality through different theological lenses.",
+        "weaknesses": "Theological symbolism does not exclude geographical specificity — the setting could be both literal and symbolic. If the geography is primarily symbolic, the question of historicity is sidestepped rather than answered. The argument works better if there was one event; if two, the theological geography is coincidental."
       }
     ],
     "related_chapters": [
@@ -641,6 +959,39 @@
       "Matthew",
       "Luke",
       "harmonization"
+    ],
+    "context": "Matthew 5–7 records the Sermon on the Mount, introduced with 'he went up on a mountainside and sat down' (5:1). Luke 6:17–49 records a shorter parallel sermon, introduced with 'He went down with them and stood on a level place' (6:17). The sermons share much content (the Beatitudes, the Golden Rule, the parable of the wise builder) but differ in setting, length, and specific wording. Matthew's Beatitudes are spiritual ('poor in spirit,' 'hunger and thirst for righteousness'); Luke's are more physical ('you who are poor,' 'you who hunger now'). Were these the same sermon, different sermons, or composite teachings?",
+    "key_verses": [
+      {
+        "ref": "Matthew 5:1-2",
+        "text": "Now when Jesus saw the crowds, he went up on a mountainside and sat down. His disciples came to him, and he began to teach them."
+      },
+      {
+        "ref": "Luke 6:17",
+        "text": "He went down with them and stood on a level place. A large crowd of his disciples was there and a great number of people from all Judea, from Jerusalem, and from the coastal region around Tyre and Sidon."
+      },
+      {
+        "ref": "Matthew 5:3",
+        "text": "Blessed are the poor in spirit, for theirs is the kingdom of heaven."
+      }
+    ],
+    "consensus": "Evangelical scholars are divided between the 'two different sermons' and 'same sermon, different versions' views. Critical scholars generally regard them as different literary compositions based on a common tradition of Jesus' teachings. All sides agree that Jesus, as an itinerant teacher, would have repeated and adapted his core teachings in different settings.",
+    "further_reading": [
+      {
+        "author": "D.A. Carson",
+        "title": "The Sermon on the Mount: An Evangelical Exposition of Matthew 5–7",
+        "year": 1978
+      },
+      {
+        "author": "Craig S. Keener",
+        "title": "The Gospel of Matthew: A Socio-Rhetorical Commentary",
+        "year": 2009
+      },
+      {
+        "author": "Joel B. Green",
+        "title": "The Gospel of Luke (NICNT)",
+        "year": 1997
+      }
     ]
   },
   {
@@ -2328,19 +2679,56 @@
     "question": "Did Saul fall on his sword (1 Samuel 31), or did an Amalekite kill him (2 Samuel 1)?",
     "responses": [
       {
-        "tradition": "Lying Reporter",
-        "scholar_id": "macarthur",
-        "summary": "The Amalekite lied to curry favor with David, hoping for reward. His story contradicts the earlier narrative (1 Samuel 31), which is the accurate account. David executed him for claiming to kill the LORD's anointed—regardless of whether he actually did."
+        "tradition": "The Amalekite Lied",
+        "tradition_family": "evangelical",
+        "scholar_id": "bergen",
+        "summary": "Bergen argues that the resolution is straightforward: the Amalekite is lying. The narrator of 1 Samuel 31 provides the authoritative, omniscient account of how Saul actually died — he fell on his own sword and died before the Philistines reached him. The Amalekite in 2 Samuel 1 is a character within the story whose words are reported but not endorsed by the narrator. He found Saul's body on the battlefield, took the crown and armband, and fabricated a story in which he played a heroic role, expecting David to reward him for dispatching his rival. Ancient readers would have recognized this immediately: the Amalekite is an unreliable speaker, and his story contradicts what the reader already knows from the previous chapter. David's execution of the Amalekite is deeply ironic — the man's lie about killing God's anointed becomes the grounds for his own death. The text is not contradicting itself; it is using a lying character to create dramatic irony.",
+        "key_verses": [
+          "1 Samuel 31:4-6",
+          "2 Samuel 1:10",
+          "2 Samuel 1:15-16"
+        ],
+        "strengths": "The narrator of 1 Samuel 31 has omniscient authority; the Amalekite is a character whose words can be evaluated. The irony of the Amalekite's self-incrimination is a recognized literary device. This is the majority view among scholars.",
+        "weaknesses": "The theory requires the Amalekite to have fabricated a detailed and plausible story on the spot. Some details (the crown and armband) suggest he was genuinely present on the battlefield, though this does not prove his story is true."
       },
       {
         "tradition": "Coup de Grâce Theory",
+        "tradition_family": "evangelical",
         "scholar_id": "tsumura",
-        "summary": "Saul's suicide attempt was unsuccessful; he was mortally wounded but lingering. The Amalekite found him dying and finished him off. Both accounts are true: Saul fell on his sword (failed), then the Amalekite killed him (completed)."
+        "summary": "Tsumura considers the possibility that both accounts contain truthful elements: Saul fell on his sword (1 Samuel 31) but did not die immediately, and the Amalekite came upon him while he was mortally wounded and delivered the final blow at Saul's request. Under this reading, 1 Samuel 31's statement that Saul 'died' after falling on his sword reflects the narrator's summary of the outcome, while the Amalekite's account in 2 Samuel 1 fills in additional detail about Saul's final moments. Tsumura notes that the Hebrew verb for 'die' in 1 Samuel 31:5 (wayyamot) could describe the process of dying rather than the instant of death — the armor-bearer sees Saul fall on his sword and assumes he is dead, but Saul lingers. The Amalekite then stumbles upon the dying king. This reading harmonizes the accounts without requiring anyone to be lying.",
+        "key_verses": [
+          "1 Samuel 31:4-5",
+          "2 Samuel 1:9",
+          "1 Samuel 31:6"
+        ],
+        "strengths": "Accounts for both texts without dismissing either. The Hebrew allows the 'process of dying' reading. The Amalekite's possession of the crown and armband suggests genuine battlefield access.",
+        "weaknesses": "1 Samuel 31:5 says the armor-bearer saw that Saul 'was dead' (met) — this is a statement of accomplished fact, not a process. 1 Samuel 31:6 explicitly states 'So Saul and his three sons and his armor-bearer and all his men died together that same day.' The lying-Amalekite theory has stronger textual support."
       },
       {
-        "tradition": "Narrative Perspective",
+        "tradition": "Narrative Perspective and Reader Competence",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "1 Samuel 31 gives the omniscient narrator's report; 2 Samuel 1 gives an unverified character's claim. The text invites readers to compare and evaluate. The Amalekite's possession of the crown proves presence but not honesty."
+        "summary": "Longman reads the discrepancy as a deliberate narrative technique that expects the reader to exercise judgment. The author of Samuel-Kings composed the two chapters in sequence, fully aware of the apparent contradiction. This is not carelessness but art: the reader who has just read 1 Samuel 31 knows the truth about Saul's death, and this knowledge creates dramatic irony when the Amalekite tells his fabricated version. The reader is invited to judge the Amalekite's credibility — just as David does — and to draw conclusions about the dangers of political opportunism and the seriousness of touching God's anointed. Longman notes that the narrative does not resolve the contradiction explicitly because the resolution is the reader's responsibility: the text trusts its audience to read competently. This is sophisticated storytelling, not sloppy editing.",
+        "key_verses": [
+          "1 Samuel 31:4-6",
+          "2 Samuel 1:6-16",
+          "2 Samuel 4:10"
+        ],
+        "strengths": "Takes the text seriously as deliberate literary art. The dramatic irony is genuinely effective and recognized by narrative critics. David's later reference to the incident (2 Samuel 4:10) confirms the Amalekite is the one who 'thought he was bringing good news.'",
+        "weaknesses": "The literary sophistication argument assumes an ancient reader who reads the text sequentially and remembers the previous chapter — a reasonable but not universal assumption. The theory does not address whether there is any historical basis for the Amalekite's presence on the battlefield."
+      },
+      {
+        "tradition": "Source-Critical Analysis",
+        "tradition_family": "critical",
+        "scholar_id": "anderson",
+        "summary": "Anderson identifies the two accounts as deriving from different sources within the composition of Samuel. The 1 Samuel 31 account belongs to a source (possibly related to the Philistine cycle) that narrated Saul's final battle from an omniscient perspective. The 2 Samuel 1 account belongs to the 'History of David's Rise,' a distinct narrative source focused on David's ascent to power. Under this view, the two sources preserved independent traditions about Saul's death that were not fully harmonized when combined into the composite book of Samuel. Anderson notes, however, that the final editor was likely aware of the tension and may have included the Amalekite's version precisely because it served the narrative's characterization of David: David refuses to benefit from Saul's death and punishes anyone who claims to have harmed the anointed king. Whether the Amalekite's account is historically true or a literary fiction within the source, it functions narratively to demonstrate David's legitimacy.",
+        "key_verses": [
+          "1 Samuel 31:1-6",
+          "2 Samuel 1:1-16",
+          "2 Samuel 2:1-4"
+        ],
+        "strengths": "Grounded in recognized source-critical analysis of the books of Samuel. Explains the tension as a result of editorial composition. Acknowledges the narrative function of the Amalekite's account regardless of its historicity.",
+        "weaknesses": "Source theories for Samuel are debated and not universally accepted. The 'unharmonized sources' explanation may underestimate the editor's literary sophistication. Most scholars, including many critical ones, prefer the lying-Amalekite reading as the simpler explanation."
       }
     ],
     "related_chapters": [
@@ -2359,6 +2747,39 @@
       "Amalekite",
       "suicide",
       "harmonization"
+    ],
+    "context": "1 Samuel 31:4–6 gives a clear account of Saul's death: wounded by Philistine archers and fearing capture, Saul asks his armor-bearer to kill him; when the armor-bearer refuses, Saul falls on his own sword and dies. But in 2 Samuel 1:6–10, an Amalekite stranger arrives at David's camp claiming to have found Saul leaning on his spear, still alive, and to have killed him at Saul's request. The Amalekite brings Saul's crown and armband as proof. David's response is to execute the Amalekite for 'destroying the LORD's anointed.' The two accounts appear to contradict each other directly.",
+    "key_verses": [
+      {
+        "ref": "1 Samuel 31:4",
+        "text": "Saul said to his armor-bearer, “Draw your sword and run me through, or these uncircumcised fellows will come and run me through and abuse me.” But his armor-bearer was terrified and would not do it; so Saul took his own sword and fell on it."
+      },
+      {
+        "ref": "2 Samuel 1:9-10",
+        "text": "Then he said to me, “Stand here by me and kill me! I’m in the throes of death, but I’m still alive.” So I stood beside him and killed him, because I knew that after he had fallen he could not survive. And I took the crown that was on his head and the band on his arm and have brought them here to my lord."
+      },
+      {
+        "ref": "2 Samuel 1:16",
+        "text": "For David had said to him, “Your blood be on your own head. Your own mouth testified against you when you said, ‘I killed the LORD’s anointed.’”"
+      }
+    ],
+    "consensus": "The overwhelming majority of scholars — evangelical and critical — read the Amalekite's account as a lie told to curry favor with David. The narrator of 1 Samuel 31 gives the authoritative account; the Amalekite in 2 Samuel 1 is an unreliable character within the narrative. This is one of the clearest cases where the 'contradiction' is actually a deliberate narrative technique.",
+    "further_reading": [
+      {
+        "author": "Robert D. Bergen",
+        "title": "1, 2 Samuel (NAC)",
+        "year": 1996
+      },
+      {
+        "author": "David T. Tsumura",
+        "title": "The First Book of Samuel (NICOT)",
+        "year": 2007
+      },
+      {
+        "author": "A.A. Anderson",
+        "title": "2 Samuel (WBC)",
+        "year": 1989
+      }
     ]
   },
   {
@@ -2370,19 +2791,56 @@
     "question": "1 Samuel says David killed Goliath, but 2 Samuel 21:19 says Elhanan did. Who actually killed him?",
     "responses": [
       {
-        "tradition": "Scribal Error",
+        "tradition": "Scribal Corruption in 2 Samuel",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "1 Chronicles 20:5 clarifies: Elhanan killed 'the brother of Goliath.' The 2 Samuel text suffered scribal corruption—'brother of' was lost. David killed Goliath; Elhanan killed Lahmi, Goliath's brother. Chronicles preserves the original reading."
+        "summary": "MacArthur argues that 2 Samuel 21:19 contains a scribal copying error and that 1 Chronicles 20:5 preserves the correct reading. The Hebrew text of 2 Samuel 21:19 is widely acknowledged to be difficult — the name 'Jaare-Oregim' is suspicious because 'oregim' means 'weavers,' which also appears in the description of the spear shaft in the same verse, suggesting a scribal duplication. The word 'et' (the Hebrew direct object marker) before 'Goliath' could be a corruption of 'ahi' ('brother of'), and 'Bethlehemite' (bet hallahmi) could be a corruption of 'Lahmi' — both of which are exactly what Chronicles reads. This is a recognized type of scribal error: similar-looking Hebrew letters and words become confused during manual copying. The Chronicler, working from a better manuscript or from knowledge of the correct tradition, preserves the original reading: Elhanan killed Lahmi, the brother of Goliath.",
+        "key_verses": [
+          "2 Samuel 21:19",
+          "1 Chronicles 20:5",
+          "1 Samuel 17:50"
+        ],
+        "strengths": "The specific scribal errors proposed are linguistically plausible and follow recognized patterns of Hebrew manuscript corruption. The Chronicler's reading makes better sense of the Hebrew. Preserves the consistency of David killing Goliath in 1 Samuel 17.",
+        "weaknesses": "It is unusual to assume Samuel (the earlier text) is corrupt while Chronicles (the later text, often dependent on Samuel) is correct. Some scholars argue the Chronicler deliberately harmonized a difficulty he found in Samuel. The proposed corruption requires multiple simultaneous copying errors."
       },
       {
-        "tradition": "Different Goliath",
+        "tradition": "Elhanan as David's Birth Name",
+        "tradition_family": "evangelical",
         "scholar_id": "tsumura",
-        "summary": "'Goliath' may have been a Philistine title or common warrior name, like 'Pharaoh' or 'Abimelech.' David killed the famous Goliath of Gath in 1 Samuel 17; Elhanan killed another giant also called Goliath later. Two different individuals."
+        "summary": "Tsumura mentions an older theory that Elhanan was David's birth name, and 'David' was a throne name adopted upon becoming king — a practice well attested in ancient Near Eastern royalty. Under this reading, 2 Samuel 21:19 and 1 Samuel 17 describe the same event: Elhanan (= David) killed Goliath. The difficulty is that 2 Samuel 21:19 identifies Elhanan as 'son of Jair' (or 'Jaare-Oregim') while David's father throughout the narrative is Jesse. Tsumura notes that the patronymic discrepancy could reflect a textual corruption in 2 Samuel 21:19 (Jair being a corruption of Jesse) or could indicate that 'son of Jair' uses a different genealogical convention. While this theory has fallen out of favor with most scholars, it remains a logical possibility that eliminates the contradiction entirely by identifying the two killers as the same person under different names.",
+        "key_verses": [
+          "2 Samuel 21:19",
+          "1 Samuel 17:12",
+          "1 Samuel 16:10-13"
+        ],
+        "strengths": "Eliminates the contradiction entirely. Throne names are well-attested in ANE royal practice. Some Hebrew names could plausibly be alternative forms (David may mean 'beloved' or 'chieftain').",
+        "weaknesses": "The patronymic (Jair vs. Jesse) is a significant obstacle. No biblical text identifies David as Elhanan. The theory has little support in modern scholarship."
       },
       {
-        "tradition": "Textual Priority",
-        "scholar_id": "longman",
-        "summary": "The 1 Samuel 17 narrative is too detailed and central to be wrong. Either 2 Samuel 21:19 has textual corruption or refers to a different event. The weight of canonical evidence supports David as Goliath's slayer."
+        "tradition": "Legendary Accretion",
+        "tradition_family": "critical",
+        "scholar_id": "collins",
+        "summary": "Collins and other critical scholars propose that the David-Goliath story in 1 Samuel 17 may represent a legendary accretion: a famous deed originally attributed to the lesser-known warrior Elhanan was later transferred to the more famous king David in the course of oral tradition. This type of heroic transfer is well documented in folklore and epic tradition worldwide — famous figures attract the deeds of lesser-known ones. Under this reading, 2 Samuel 21:19 preserves the older tradition (Elhanan killed Goliath), while 1 Samuel 17 preserves the later, elaborated version (David killed Goliath, with the famous sling-and-stone detail). The Chronicler, aware of the problem, harmonized by introducing 'Lahmi the brother of Goliath.' Collins notes that the LXX version of 1 Samuel 17 is significantly shorter than the MT, suggesting the story grew over time in the Hebrew tradition.",
+        "key_verses": [
+          "2 Samuel 21:19",
+          "1 Samuel 17:1-54",
+          "1 Chronicles 20:5"
+        ],
+        "strengths": "Heroic transfer is a documented literary phenomenon. The shorter LXX version of 1 Samuel 17 suggests textual growth. Explains the discrepancy without requiring scribal error.",
+        "weaknesses": "The theory requires dismissing or subordinating 1 Samuel 17, one of the best-known narratives in the Bible. The David-Goliath story is deeply integrated into its narrative context — it is not easily detachable as a late addition. The LXX shortness could reflect abbreviation rather than an earlier version."
+      },
+      {
+        "tradition": "Two Different Giants Named Goliath",
+        "tradition_family": "evangelical",
+        "scholar_id": "bergen",
+        "summary": "Bergen considers the possibility that 'Goliath' was not a unique personal name but a title, a clan name, or a name shared by multiple Philistine warriors — much as 'Pharaoh,' 'Abimelech,' and 'Ben-Hadad' refer to different individuals in different biblical contexts. Under this reading, David killed a Goliath (1 Samuel 17) and Elhanan later killed a different Goliath (2 Samuel 21:19), both from Gath. The context of 2 Samuel 21:15–22 supports this: the passage lists four Philistine warriors from Gath's giant clan (the Rephaim), each killed by a different Israelite hero. If Goliath was a family or clan designation rather than a unique personal name, the contradiction disappears. Bergen acknowledges this is speculative but notes that it takes both texts at face value without requiring textual emendation.",
+        "key_verses": [
+          "2 Samuel 21:15-22",
+          "1 Samuel 17:4",
+          "2 Samuel 21:19"
+        ],
+        "strengths": "Takes both texts at face value. The Rephaim clan context in 2 Samuel 21 does describe multiple Gittite giants. Shared names/titles for warriors are attested in ancient cultures.",
+        "weaknesses": "The text gives no indication that 'Goliath' is a title rather than a personal name. The detailed description of Goliath's spear shaft in both passages suggests the same individual. Most scholars find this solution ad hoc."
       }
     ],
     "related_chapters": [
@@ -2401,6 +2859,39 @@
       "Elhanan",
       "Philistines",
       "textual criticism"
+    ],
+    "context": "1 Samuel 17 famously recounts David's victory over Goliath the Gittite. But 2 Samuel 21:19 states: 'In another battle with the Philistines at Gob, Elhanan son of Jair the Bethlehemite killed the brother of Goliath the Gittite, who had a spear with a shaft like a weaver’s rod' (NIV). The phrase 'the brother of' is italicized in the NIV because it does not appear in the Hebrew text of 2 Samuel 21:19, which literally reads 'Elhanan son of Jaare-Oregim the Bethlehemite killed Goliath the Gittite.' The parallel in 1 Chronicles 20:5 resolves the difficulty by reading 'Elhanan son of Jair killed Lahmi the brother of Goliath.' This is a classic textual-critical problem.",
+    "key_verses": [
+      {
+        "ref": "1 Samuel 17:50",
+        "text": "So David triumphed over the Philistine with a sling and a stone; without a sword in his hand he struck down the Philistine and killed him."
+      },
+      {
+        "ref": "2 Samuel 21:19",
+        "text": "In another battle with the Philistines at Gob, Elhanan son of Jair the Bethlehemite killed the brother of Goliath the Gittite, who had a spear with a shaft like a weaver’s rod."
+      },
+      {
+        "ref": "1 Chronicles 20:5",
+        "text": "In another battle with the Philistines, Elhanan son of Jair killed Lahmi the brother of Goliath the Gittite, who had a spear with a shaft like a weaver’s rod."
+      }
+    ],
+    "consensus": "Most scholars agree that the text of 2 Samuel 21:19 contains some form of corruption or that the Chronicles parallel preserves a clarifying reading. The main debate is whether the corruption is purely scribal (a copyist error in Samuel) or whether the David-Goliath story grew in the telling and was secondarily attributed to David. Evangelical scholars generally favor scribal error; critical scholars are more open to legendary development.",
+    "further_reading": [
+      {
+        "author": "David T. Tsumura",
+        "title": "The First Book of Samuel (NICOT)",
+        "year": 2007
+      },
+      {
+        "author": "Ralph W. Klein",
+        "title": "1 Samuel (WBC)",
+        "year": 1983
+      },
+      {
+        "author": "A. Graeme Auld",
+        "title": "I & II Samuel: A Commentary (OTL)",
+        "year": 2011
+      }
     ]
   },
   {
@@ -2412,19 +2903,56 @@
     "question": "Did Jesus cleanse the temple once (at the end of his ministry) or twice (John puts it early)?",
     "responses": [
       {
-        "tradition": "Two Cleansings",
+        "tradition": "Two Separate Cleansings",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Jesus cleansed the temple twice: once at his ministry's beginning (John 2) and once at the end (Synoptics). This bookends his public ministry with prophetic action. Temple corruption was persistent enough to warrant repeated intervention."
+        "summary": "MacArthur argues for two distinct temple cleansings: one early in Jesus' ministry (John 2) and one during the final week (the Synoptics). The differences in the accounts support this: the words Jesus speaks are different (John: 'Stop turning my Father's house into a market'; Synoptics: 'den of robbers'), the descriptions of his actions differ (John mentions a whip and sheep/cattle; the Synoptics do not), and the narrative contexts are entirely distinct. A three-year ministry is long enough for two confrontations with the temple establishment, and the escalation from 'market' (an economic complaint) to 'den of robbers' (an accusation of criminal corruption) reflects a progressive intensification consistent with Jesus' growing conflict with the authorities. MacArthur notes that ancient Jewish sources describe ongoing corruption in the temple commerce system, making repeated prophetic protests historically plausible.",
+        "key_verses": [
+          "John 2:16",
+          "Mark 11:17",
+          "Malachi 3:1-3"
+        ],
+        "strengths": "The verbal and circumstantial differences are genuine and resist easy harmonization. The escalation from 'market' to 'den of robbers' is narratively compelling. No ancient source states that Jesus cleansed the temple only once.",
+        "weaknesses": "Two cleansings strain credulity — it is difficult to imagine the temple authorities allowing Jesus to repeat such a provocative act. The Synoptics' omission of an early cleansing and John's omission of a late one are both surprising if both occurred. Occam's razor favors one event."
       },
       {
-        "tradition": "Johannine Theology",
+        "tradition": "Johannine Theological Relocation",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "John placed the cleansing early for theological reasons, introducing temple replacement themes that develop throughout his Gospel. Ancient biographers arranged material thematically, not strictly chronologically. One event, two placements."
+        "summary": "Keener argues that John relocated the temple cleansing from its chronological position (during the final week, as in the Synoptics) to the beginning of Jesus' ministry for theological reasons. John's Gospel is organized thematically rather than strictly chronologically — the author states his editorial principle in John 20:31 ('these are written that you may believe') and freely arranges material to serve this purpose. By placing the cleansing early, John establishes from the outset that Jesus' ministry represents a fundamental challenge to the temple system. The cleansing also introduces the temple-replacement motif that runs through the entire Gospel: Jesus' body is the new temple (2:21), true worship will not be limited to Jerusalem (4:21–24), and Jesus himself is the Passover lamb. Keener notes that ancient biographical writing did not require strict chronological order — topical or thematic arrangement was equally legitimate.",
+        "key_verses": [
+          "John 2:19-21",
+          "John 4:21-24",
+          "John 20:31"
+        ],
+        "strengths": "Consistent with John's documented thematic arrangement. The temple-replacement motif in John is genuine and powerful. Ancient biographical conventions permitted thematic rearrangement.",
+        "weaknesses": "If John relocated the event, his Gospel contains a deliberate chronological inaccuracy. Some argue this undermines John's historical reliability. The 'thematic rearrangement' explanation can become a universal tool for dismissing any Johannine chronological difficulty."
       },
       {
-        "tradition": "Complementary Accounts",
-        "scholar_id": "longman",
-        "summary": "Neither position undermines historicity. If one cleansing, John's placement serves his theological architecture. If two, Jesus's repeated action intensifies his critique. Either way, Jesus opposed temple commercialization."
+        "tradition": "Prophetic Sign-Act",
+        "tradition_family": "reformed",
+        "scholar_id": "calvin",
+        "summary": "Calvin considered the temple cleansing a prophetic sign-act in the tradition of the OT prophets — Isaiah walking naked, Jeremiah breaking a pot, Ezekiel lying on his side. Such acts were inherently repeatable and their power lay in their symbolic message, not their singularity. Calvin noted that if Jesus cleansed the temple twice, the two acts frame his entire ministry as a sustained prophetic confrontation with Israel's corrupt worship: the first act announces the theme ('my Father's house'), and the final act brings it to climactic judgment ('den of robbers'). Calvin drew the typological connection to Malachi 3:1–3: 'Then suddenly the Lord you are seeking will come to his temple... But who can endure the day of his coming? He will be like a refiner's fire.' Jesus fulfills this prophecy by entering the temple and purifying it — an act that Calvin saw as legitimately occurring both at the beginning and end of the ministry, bookending Jesus' public work.",
+        "key_verses": [
+          "Malachi 3:1-3",
+          "John 2:16",
+          "Mark 11:17"
+        ],
+        "strengths": "The OT prophetic sign-act framework is historically grounded. The bookending structure is theologically elegant. Malachi 3:1–3 provides canonical warrant for temple purification as a messianic act.",
+        "weaknesses": "The prophetic sign-act category may not fully apply — Jesus' cleansing involved physical confrontation, not just symbolic action. The bookending structure may be imposed on the text rather than derived from it. The question of historicity is not directly addressed."
+      },
+      {
+        "tradition": "Single Event, Different Tradition Streams",
+        "tradition_family": "critical",
+        "scholar_id": "marcus",
+        "summary": "Marcus argues for a single temple cleansing that occurred during the final week of Jesus' ministry (as the Synoptics report) and was relocated by John to the beginning of his narrative for programmatic theological purposes. The event was too dramatic and consequential to have happened twice — the first cleansing would have provoked immediate arrest or at minimum heightened surveillance that would make a second act impossible. Marcus notes that John's placement creates a narrative problem the evangelist himself addresses: in John 2:18, the authorities demand a sign to justify Jesus' action, but do not arrest him — an implausible response to a violent disruption of temple commerce during Passover, the most sensitive time of year. The Synoptic placement, where the cleansing triggers the authorities' decision to arrest Jesus (Mark 11:18), is historically more credible. John's relocation serves his theology of replacement: the old temple system is challenged from the very beginning of Jesus' public work.",
+        "key_verses": [
+          "Mark 11:18",
+          "John 2:18",
+          "John 2:21"
+        ],
+        "strengths": "The practical implausibility of two cleansings is a strong argument. The Synoptic placement (cleansing → arrest decision) is historically coherent. John's theological motivation for relocation is well-documented.",
+        "weaknesses": "The assumption that the authorities would have arrested Jesus after a first cleansing is speculative — they may have been unable or unwilling to act during a festival. The differences in wording suggest the evangelists may have been drawing on independent traditions, not just relocating a single event."
       }
     ],
     "related_chapters": [
@@ -2444,6 +2972,39 @@
       "chronology",
       "John",
       "Synoptics"
+    ],
+    "context": "The Synoptic Gospels (Matthew 21:12–13; Mark 11:15–17; Luke 19:45–46) place the temple cleansing during the final week of Jesus' ministry, immediately after his triumphal entry into Jerusalem. John 2:13–17 places a temple cleansing at the beginning of Jesus' ministry, during his first Passover visit. Jesus' words differ: the Synoptics have him quoting Isaiah 56:7 and Jeremiah 7:11 ('My house will be called a house of prayer... you are making it a den of robbers'), while John records him saying 'Stop turning my Father's house into a market.' The question is whether there were two separate cleansings or one event that John relocated for theological reasons.",
+    "key_verses": [
+      {
+        "ref": "John 2:15-16",
+        "text": "So he made a whip out of cords, and drove all from the temple courts, both sheep and cattle; he scattered the coins of the money changers and overturned their tables. To those who sold doves he said, “Get these out of here! Stop turning my Father’s house into a market!”"
+      },
+      {
+        "ref": "Mark 11:17",
+        "text": "And as he taught them, he said, “Is it not written: ‘My house will be called a house of prayer for all nations’? But you have made it ‘a den of robbers.’”"
+      },
+      {
+        "ref": "Matthew 21:12",
+        "text": "Jesus entered the temple courts and drove out all who were buying and selling there. He overturned the tables of the money changers and the benches of those selling doves."
+      }
+    ],
+    "consensus": "Evangelical scholars are divided: some argue for two separate cleansings (one early, one late), while others argue John repositioned a single event for theological reasons. Critical scholars almost universally regard it as one event that John relocated. The theological significance of the cleansing is not in dispute — all agree it was a prophetic act of judgment against temple corruption.",
+    "further_reading": [
+      {
+        "author": "Craig S. Keener",
+        "title": "The Gospel of John: A Commentary",
+        "year": 2003
+      },
+      {
+        "author": "D.A. Carson",
+        "title": "The Gospel According to John (Pillar NT Commentary)",
+        "year": 1991
+      },
+      {
+        "author": "E.P. Sanders",
+        "title": "Jesus and Judaism",
+        "year": 1985
+      }
     ]
   },
   {
@@ -2455,19 +3016,56 @@
     "question": "The four Gospels give different details about Peter's denials—who questioned him, where, when.",
     "responses": [
       {
-        "tradition": "Multiple Questioners",
+        "tradition": "Multiple Questioners in a Chaotic Setting",
+        "tradition_family": "evangelical",
         "scholar_id": "macarthur",
-        "summary": "Peter was questioned by multiple people over an extended period. Each Gospel selects from this longer sequence. A servant girl could have been backed by bystanders; group accusations explain 'variations' in who challenged Peter."
+        "summary": "MacArthur argues that the differences are fully explained by the chaotic setting of the high priest's courtyard on the night of Jesus' arrest. Multiple people were present — servant girls, guards, bystanders, relatives of those involved in the arrest — and Peter was challenged repeatedly over a period of several hours. Each evangelist reports the questioner(s) most prominent in his source's memory. In a crowded courtyard with firelight, accusations would overlap: one servant girl might speak up, another echo her, bystanders join in. The four accounts each capture a slice of this prolonged confrontation, not a complete transcript. The one-crow-vs-two-crow difference in Mark is a matter of specificity, not contradiction: Mark (traditionally associated with Peter's own testimony) includes the detail of the second crow, while the other evangelists mention only the final, decisive cock-crow that triggered Peter's memory.",
+        "key_verses": [
+          "Matthew 26:69-75",
+          "Mark 14:66-72",
+          "Luke 22:54-62"
+        ],
+        "strengths": "The chaotic-courtyard scenario is historically plausible. Multiple overlapping accusations over hours naturally produce variant reports. Mark's additional cock-crow detail is consistent with his reputation for Petrine specificity.",
+        "weaknesses": "Some of the differences (male vs. female questioners in Luke vs. Matthew) are more than peripheral. The harmonization requires constructing a composite scenario from four sources — a process that risks creating a fifth account not found in any text."
       },
       {
-        "tradition": "Night of Chaos",
+        "tradition": "Independent Testimony Convergence",
+        "tradition_family": "evangelical",
         "scholar_id": "keener",
-        "summary": "The chaotic night—courtyard, firelight, danger, multiple conversations—created overlapping confrontations. The Gospels preserve genuine memories of a confusing night, not verbatim transcripts. Core fact: Peter denied Jesus three times."
+        "summary": "Keener frames the Peter denials as a textbook case of independent testimony converging on core facts while diverging in peripheral details. Modern forensic and psychological research consistently shows that eyewitnesses to the same event will describe different questioners, different physical locations within the same space, and different sequences — while agreeing on the fundamental shape of what happened. The four Gospels agree that Peter followed Jesus to the high priest's courtyard, that he was confronted three times about his association with Jesus, that he denied it each time with increasing vehemence, that a rooster crowed, and that Peter wept bitterly. This level of core agreement with peripheral variation is the signature of genuine testimony, not fabrication. Keener notes that John's unique detail — that one accuser was a relative of Malchus, whose ear Peter cut off — has the ring of insider knowledge that could only come from someone present.",
+        "key_verses": [
+          "John 18:26",
+          "Mark 14:72",
+          "Luke 22:61-62"
+        ],
+        "strengths": "Well-grounded in modern research on eyewitness memory. The Malchus-relative detail in John is strikingly specific. The core-agreement/peripheral-variation pattern is a recognized marker of authentic independent testimony.",
+        "weaknesses": "The 'independent testimony' model assumes the Gospels are not literarily dependent — but most scholars accept some form of Synoptic interdependence. If Matthew and Luke used Mark, the variations may be editorial rather than from independent testimony."
       },
       {
-        "tradition": "Essential Unity",
+        "tradition": "Petrine Source and Narrative Shaping",
+        "tradition_family": "evangelical",
+        "scholar_id": "robertson",
+        "summary": "Robertson, drawing on his deep knowledge of the Greek text, argued that Mark's account — with its unique detail of two cock-crows and its unflinching portrayal of Peter's progressive collapse — preserves Peter's own testimony. The early church unanimously identified Mark as Peter's interpreter (Papias, Irenaeus, Clement of Alexandria), and the denial narrative's vivid, self-incriminating detail supports this tradition. The other evangelists drew on different sources or on Mark's account itself, each shaping the material for his audience. Matthew, writing for Jewish Christians, emphasizes the public nature of the denial ('before them all'). Luke, the careful historian, arranges the three denials in a clear sequence with distinct questioners. John, the eyewitness, adds the specific detail about Malchus's relative that only someone present could know. Robertson viewed the variations as evidence of a rich, multi-sourced tradition about an event that was central to the apostolic kerygma.",
+        "key_verses": [
+          "Mark 14:66-72",
+          "Matthew 26:70",
+          "John 18:26"
+        ],
+        "strengths": "The early church tradition connecting Mark to Peter is well-attested. Mark's extra detail (two crows) fits Petrine recollection. John's Malchus detail suggests independent eyewitness knowledge.",
+        "weaknesses": "The Papias tradition about Mark and Peter is not universally accepted by modern scholars. Even if Mark preserves Petrine testimony, the other Gospels' variations still require explanation. The theory explains Mark's priority but not the full range of differences."
+      },
+      {
+        "tradition": "Theological Characterization",
+        "tradition_family": "evangelical",
         "scholar_id": "longman",
-        "summary": "All four agree: Peter denied Jesus three times before the rooster crowed, then wept bitterly. The variations in questioners and timing are exactly what we'd expect from independent witnesses to the same traumatic event."
+        "summary": "Longman emphasizes that each evangelist shapes the denial narrative to serve his broader characterization of Peter and the theme of discipleship failure. Mark, whose Gospel is structured around the theme of radical discipleship, presents the denials as the climactic failure of Jesus' closest follower — the man who vowed to die with Jesus collapses at the challenge of a servant girl. Matthew intensifies the public dimension: Peter denies Jesus 'before them all,' making his restoration later (John 21) even more dramatic. Luke uniquely includes the devastating detail that 'the Lord turned and looked straight at Peter' (22:61) — a moment of personal confrontation that fits Luke's emphasis on Jesus' compassion. John weaves the denials into the intercalated narrative of Jesus' trial, creating a literary counterpoint: as Jesus boldly testifies to the truth, Peter crumbles under questioning. The details vary because each writer is painting a theological portrait, not writing a police report.",
+        "key_verses": [
+          "Mark 14:31",
+          "Luke 22:61",
+          "John 18:15-18"
+        ],
+        "strengths": "Each Gospel's distinctive details genuinely serve its broader theological themes. Luke's 'Jesus looked at Peter' is one of the most powerful moments in the Gospels. The intercalation in John is a recognized literary technique.",
+        "weaknesses": "Theological shaping does not explain whether the underlying events match any one account more closely than the others. The approach may minimize the historical question. If the details are shaped for theological effect, which (if any) are historically prior?"
       }
     ],
     "related_chapters": [
@@ -2494,6 +3092,39 @@
       "rooster",
       "trial",
       "harmonization"
+    ],
+    "context": "All four Gospels record Peter's three denials of Jesus on the night of his arrest, but the details differ in ways that are difficult to harmonize precisely. The questioners differ: Matthew has a servant girl, then another servant girl, then bystanders; Mark has a servant girl (the same one) twice, then bystanders; Luke has a servant girl, then a man, then another man; John has a servant girl, then unnamed people, then a relative of Malchus. The locations vary (courtyard fire vs. gateway). The cock crows once (Matthew, Luke, John) or twice (Mark). The exact timing and sequence of the three denials resist neat synchronization across the four accounts.",
+    "key_verses": [
+      {
+        "ref": "Matthew 26:69-70",
+        "text": "Now Peter was sitting out in the courtyard, and a servant girl came to him. “You also were with Jesus of Galilee,” she said. But he denied it before them all. “I don’t know what you’re talking about,” he said."
+      },
+      {
+        "ref": "Mark 14:72",
+        "text": "Immediately the rooster crowed the second time. Then Peter remembered the word Jesus had spoken to him: “Before the rooster crows twice you will disown me three times.” And he broke down and wept."
+      },
+      {
+        "ref": "John 18:26-27",
+        "text": "One of the high priest’s servants, a relative of the man whose ear Peter had cut off, challenged him, “Didn’t I see you with him in the garden?” Again Peter denied it, and at that moment a rooster began to crow."
+      }
+    ],
+    "consensus": "Most scholars treat the variations as exactly what one would expect from four independent accounts of a chaotic nighttime event. The core narrative is consistent: Peter denied Jesus three times before the cock crowed. The peripheral details (who asked, exact words, one crow or two) vary because each evangelist drew on different sources or remembered different facets of the tradition. Very few scholars regard this as a genuine contradiction.",
+    "further_reading": [
+      {
+        "author": "Craig S. Keener",
+        "title": "The Gospel of John: A Commentary",
+        "year": 2003
+      },
+      {
+        "author": "Robert H. Gundry",
+        "title": "Mark: A Commentary on His Apology for the Cross",
+        "year": 1993
+      },
+      {
+        "author": "Darrell L. Bock",
+        "title": "Luke 9:51–24:53 (Baker Exegetical Commentary)",
+        "year": 1996
+      }
     ]
   },
   {
@@ -2505,19 +3136,56 @@
     "question": "Kings and Chronicles give different measurements for Solomon's temple. Which is correct?",
     "responses": [
       {
-        "tradition": "Different Elements",
+        "tradition": "Different Elements Measured",
+        "tradition_family": "critical",
         "scholar_id": "japhet",
-        "summary": "Many apparent discrepancies involve different parts of the structure. The pillars, for instance, may be measured with or without capitals. Interior vs. exterior measurements, foundations vs. superstructure account for numerical differences."
+        "summary": "Japhet proposes that some discrepancies arise because the two texts are measuring different aspects of the same structures. The pillar height difference (18 cubits in Kings vs. 35 cubits in Chronicles) may reflect different measurement conventions: Kings gives the height of each individual pillar shaft (18 cubits), while Chronicles gives the combined height of both pillars together (2 × 18 = 36, rounded or corrupted to 35) or includes the capitals and bases. The bronze Sea capacity (2,000 vs. 3,000 baths) may reflect the difference between working capacity and full capacity — a vessel can 'hold' more than it comfortably contains for practical use. Japhet notes that ancient architectural descriptions frequently varied depending on what was included in the measurement (with or without foundations, capitals, decorative elements) and that modern blueprints distinguish between overall height and structural height in exactly the same way.",
+        "key_verses": [
+          "1 Kings 7:15-16",
+          "2 Chronicles 3:15",
+          "1 Kings 7:26"
+        ],
+        "strengths": "Provides plausible explanations for specific discrepancies without requiring textual corruption. The working-capacity vs. full-capacity distinction is practical and sensible. Ancient measurement conventions were genuinely variable.",
+        "weaknesses": "The explanations are somewhat ad hoc — each discrepancy requires a different solution. The 18-to-35 cubit difference is large and difficult to resolve through measurement conventions alone. The proposals cannot be verified against the no-longer-extant structure."
       },
       {
-        "tradition": "Textual Transmission",
+        "tradition": "Scribal Transmission Errors",
+        "tradition_family": "evangelical",
         "scholar_id": "selman",
-        "summary": "Numbers are prone to scribal errors in manuscript transmission. The Chronicler had access to records we don't have. Small numerical discrepancies don't undermine the accounts' essential reliability about the temple's grandeur."
+        "summary": "Selman argues that the numerical discrepancies are best explained by scribal copying errors that occurred during the long manuscript transmission of both Kings and Chronicles. Numbers were particularly vulnerable to corruption in Hebrew manuscripts because Hebrew used alphabetic letters as numerals, and certain letters are easily confused: yod (10) and kaf (20), resh (200) and dalet (4), he (5) and het (8). A single misread letter could change a number significantly. Selman notes that the LXX (Greek translation) and other ancient versions sometimes preserve different numbers from the Masoretic Text for the same passages, confirming that numerical variation was common in manuscript transmission. The 18-vs-35 cubit pillar height is almost certainly a textual corruption in one or both texts — the most likely original reading being 18 cubits per pillar, as this is consistent with the archaeological evidence from comparable ANE temple architecture.",
+        "key_verses": [
+          "1 Kings 7:15",
+          "2 Chronicles 3:15",
+          "2 Chronicles 4:5"
+        ],
+        "strengths": "The vulnerability of numbers to scribal error is well-documented and universally acknowledged. Hebrew alphabetic numerals are genuinely prone to confusion. The LXX variant readings confirm numerical instability in transmission.",
+        "weaknesses": "Appeals to scribal error can become a catch-all that prevents engagement with the theological differences between Kings and Chronicles. Not all discrepancies are easily attributed to letter confusion. The theory does not explain which text preserves the correct number."
       },
       {
-        "tradition": "Idealized Numbers",
+        "tradition": "Idealized Temple Description",
+        "tradition_family": "evangelical",
         "scholar_id": "provan",
-        "summary": "Both accounts may use stylized numbers emphasizing the temple's perfection and sacred dimensions. Ancient architectural descriptions weren't blueprints but theological statements. The numbers communicate meaning more than engineering specs."
+        "summary": "Provan suggests that the Chronicler's temple description reflects a degree of theological idealization. Writing in the post-exilic period when the second temple was a modest structure compared to Solomon's, the Chronicler presents the first temple in deliberately grand terms to inspire his audience with the glory of Israel's worship heritage. This does not mean the Chronicler fabricated details, but that he may have rounded numbers upward, selected the most impressive measurements, or drawn on traditions that emphasized the temple's magnificence. The 3,000-bath capacity for the bronze Sea (vs. Kings' 2,000) could reflect this tendency toward enhancement. Provan notes that ancient architectural descriptions were rarely concerned with engineering precision — they were acts of praise and national identity, celebrating the grandeur of sacred space. Both Kings and Chronicles aim to glorify God's temple, but the Chronicler, writing from a position of loss, has additional motivation to emphasize its former splendor.",
+        "key_verses": [
+          "2 Chronicles 4:5",
+          "2 Chronicles 2:5",
+          "Ezra 3:12"
+        ],
+        "strengths": "The Chronicler's post-exilic context and theological purposes are well-documented. Ancient architectural descriptions routinely combined precision with rhetorical enhancement. The second temple comparison provides a plausible motivation for idealization.",
+        "weaknesses": "Attributing 'idealization' to Chronicles can undermine its historical reliability on other matters. The line between idealization and error is thin. Kings itself may also contain idealized elements, making it unclear which text to trust."
+      },
+      {
+        "tradition": "Comparative Architectural Analysis",
+        "tradition_family": "evangelical",
+        "scholar_id": "wiseman",
+        "summary": "Wiseman, drawing on his Assyriological expertise, compared the temple descriptions in Kings and Chronicles with known ANE temple-building inscriptions. Mesopotamian, Egyptian, and Syro-Palestinian temple descriptions routinely contain discrepancies when the same structure is described in multiple texts — not because the scribes were careless, but because architectural descriptions served different purposes (foundation deposits vs. royal annals vs. religious dedications) and used different conventions. The temple at 'Ain Dara in Syria, the closest architectural parallel to Solomon's temple, has been described with slightly different measurements in different scholarly publications based on where exactly measurements are taken. Wiseman argued that holding ancient texts to the precision of modern blueprints is anachronistic — these are literary and liturgical descriptions, not construction specifications. The discrepancies between Kings and Chronicles fall well within the range of variation found in comparable ANE texts.",
+        "key_verses": [
+          "1 Kings 6:2",
+          "2 Chronicles 3:3-4",
+          "1 Kings 6:20"
+        ],
+        "strengths": "Grounded in comparative ANE evidence. The 'Ain Dara parallel is archaeologically well-documented. Corrects the anachronistic assumption that ancient texts should function like modern blueprints.",
+        "weaknesses": "Comparative evidence shows the phenomenon is normal but does not resolve which numbers are correct. The approach may appear to lower expectations for biblical accuracy. Not all readers are satisfied with 'ancient texts were less precise' as an explanation."
       }
     ],
     "related_chapters": [
@@ -2536,6 +3204,39 @@
       "dimensions",
       "Kings",
       "Chronicles"
+    ],
+    "context": "1 Kings 6–7 and 2 Chronicles 3–4 both describe Solomon's temple, but their measurements and descriptions diverge at several points. The height of the two pillars (Jachin and Boaz) is 18 cubits in 1 Kings 7:15 but 35 cubits in 2 Chronicles 3:15. The capacity of the bronze Sea is 2,000 baths in 1 Kings 7:26 but 3,000 baths in 2 Chronicles 4:5. Other architectural details differ between the accounts. These discrepancies are particularly challenging because both texts describe the same physical structure, leaving little room for the 'different perspective' explanation that works for narrative differences.",
+    "key_verses": [
+      {
+        "ref": "1 Kings 7:15",
+        "text": "He cast two bronze pillars, each eighteen cubits high and twelve cubits in circumference."
+      },
+      {
+        "ref": "2 Chronicles 3:15",
+        "text": "In the front of the temple he made two pillars, which together were thirty-five cubits long, each with a capital on top measuring five cubits."
+      },
+      {
+        "ref": "1 Kings 7:26",
+        "text": "It was a handbreadth in thickness, and its rim was like the rim of a cup, like a lily blossom. It held two thousand baths."
+      }
+    ],
+    "consensus": "Most scholars attribute the discrepancies to a combination of textual corruption, different measurement standards or rounding conventions, and the Chronicler's tendency to idealize Solomon's temple. The pillar height difference is widely regarded as a scribal error in one or both texts. No single explanation resolves all the differences, but the discrepancies are well within the range of variation found in ancient architectural descriptions.",
+    "further_reading": [
+      {
+        "author": "Victor Hurowitz",
+        "title": "I Have Built You an Exalted House: Temple Building in the Bible in Light of Mesopotamian and NW Semitic Writings",
+        "year": 1992
+      },
+      {
+        "author": "John Monson",
+        "title": "The New 'Ain Dara Temple: Closest Solomonic Parallel (Biblical Archaeology Review)",
+        "year": 2000
+      },
+      {
+        "author": "Sara Japhet",
+        "title": "I & II Chronicles: A Commentary (OTL)",
+        "year": 1993
+      }
     ]
   },
   {
