@@ -993,11 +993,11 @@ The phase produces `_tools/SYNC_ARCHITECTURE.md` covering:
 
 ---
 
-## Phase 15 — AI-Powered Contextual Q&A (Architecture Phase)
+## Phase 15 — AI-Powered Contextual Q&A (Future Enhancement — Deferred)
 
-**Goal:** Produce an architecture document — NOT shipping code. This phase requires API and cost decisions.
+**Status: DEFERRED.** This is a future enhancement that deserves thoughtful planning and will incur ongoing API costs. Not part of the current execution roadmap. Revisit after user base growth validates the investment.
 
-**⚠ This is a PLANNING phase.** Claude Code produces `_tools/AI_QA_ARCHITECTURE.md`, not implementation.
+**Goal:** When ready, produce an architecture document. Implementation follows only after cost modeling and premium tier revenue can support it.
 
 ### What makes CS's AI different from Bible Chat / ChatGPT
 
@@ -1103,7 +1103,7 @@ PART 2 — Competitive Gap Features
   Phase 12 (Multi-Translation)    — Session H (KJV first, data sourcing)
   Phase 13 (Interlinear)          — Session I + J (data sourcing + UI)
   Phase 14 (Accounts/Sync)        — Session K (architecture doc only)
-  Phase 15 (AI Q&A)               — Session L (architecture doc only)
+  Phase 15 (AI Q&A)               — DEFERRED (future enhancement, revisit post-launch)
   Phase 16 (Streaks/Engagement)   — Session G (pairs well with sharing)
 ```
 
@@ -1118,7 +1118,7 @@ feat(share): Phase 11 — verse copy/share functionality
 feat(translations): Phase 12 — KJV translation + translation picker
 feat(interlinear): Phase 13 — verse-level Hebrew/Greek interlinear viewer
 docs(sync): Phase 14 — cloud sync architecture document
-docs(ai): Phase 15 — AI Q&A architecture document
+# Phase 15 (AI Q&A) — DEFERRED
 feat(engagement): Phase 16 — reading streaks and weekly summary
 ```
 
