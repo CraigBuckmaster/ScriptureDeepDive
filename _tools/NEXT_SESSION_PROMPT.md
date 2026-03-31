@@ -55,7 +55,8 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 18 | Search Filters (OT/NT/Book) | **Complete** |
 | 19 | Highlight UX Polish (6 colors, collections, migration 5) | **Complete** |
 | 20 | Personalized Recommendations (heuristic engine) | **Complete** |
-| 21-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 21 | Concordance Search (Strong's number lookup) | **Complete** |
+| 22-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
 
@@ -69,7 +70,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 21** — Concordance Search (depends on Phase 13) — Session O
+1. **Deep Study Features Phase 22** — Discourse Analysis Expansion (Galatians, Ephesians, Hebrews, 1 Corinthians)
 2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 4. **Cross-reference thread expansion** (Batch 13)

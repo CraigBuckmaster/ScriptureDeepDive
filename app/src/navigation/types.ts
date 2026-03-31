@@ -45,6 +45,12 @@ export type ExploreStackParamList = {
   ConceptDetail: { conceptId: string };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
+  Concordance: {
+    strongs?: string;
+    original?: string;
+    transliteration?: string;
+    gloss?: string;
+  } | undefined;
   Chapter: { bookId: string; chapterNum: number };
 };
 

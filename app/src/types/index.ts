@@ -202,6 +202,19 @@ export interface TimelineEntry {
   region: string | null;
 }
 
+// ── Concordance (Phase 21) ───────────────────────────────────
+
+export interface ConcordanceResult {
+  book_id: string;
+  chapter_num: number;
+  verse_num: number;
+  original: string;
+  transliteration: string;
+  gloss: string | null;
+  text: string;
+  book_name: string;
+}
+
 // ══════════════════════════════════════════════════════════════
 // USER DATA TYPES
 // ══════════════════════════════════════════════════════════════
