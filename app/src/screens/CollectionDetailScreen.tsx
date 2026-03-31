@@ -26,10 +26,11 @@ import {
   updateNoteTags,
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection, UserNote } from '../types';
 
 export default function CollectionDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'CollectionDetail'>>();
   const route = useRoute<ScreenRouteProp<'More', 'CollectionDetail'>>();
   const { collectionId } = route.params ?? {};
@@ -114,17 +115,17 @@ export default function CollectionDetailScreen() {
 
   if (!collection) {
     return (
-      <SafeAreaView style={styles.container} edges={['top']}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
         <ScreenHeader title="Collection" onBack={() => navigation.goBack()} style={styles.header} />
         <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>Collection not found</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>Collection not found</Text>
         </View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       <ScreenHeader
         title={collection.name}
         titleColor={collection.color}
@@ -133,13 +134,13 @@ export default function CollectionDetailScreen() {
       />
 
       {/* Collection header */}
-      <View style={styles.collectionHeader}>
+      <View style={[styles.collectionHeader, { borderBottomColor: base.border }]}>
         <View style={[styles.colorBar, { backgroundColor: collection.color }]} />
         <View style={styles.collectionInfo}>
           {collection.description ? (
-            <Text style={styles.description}>{collection.description}</Text>
+            <Text style={[styles.description, { color: base.textDim }]}>{collection.description}</Text>
           ) : null}
-          <Text style={styles.noteCount}>{notes.length} notes</Text>
+          <Text style={[styles.noteCount, { color: base.textMuted }]}>{notes.length} notes</Text>
         </View>
         <View style={styles.actions}>
           <TouchableOpacity onPress={handleExport} style={styles.actionButton}>
@@ -158,23 +159,23 @@ export default function CollectionDetailScreen() {
         contentContainerStyle={styles.listContent}
         ListEmptyComponent={
           <View style={styles.emptyWrap}>
-            <Text style={styles.emptyText}>No notes in this collection yet.</Text>
+            <Text style={[styles.emptyText, { color: base.textMuted }]}>No notes in this collection yet.</Text>
           </View>
         }
         renderItem={({ item: note }) => {
           const tags = parseTags(note.tags_json);
           return (
-            <TouchableOpacity style={styles.noteCard} onPress={() => handleNotePress(note)}>
-              <Text style={styles.noteRef}>{displayRef(note.verse_ref)}</Text>
-              <Text style={styles.noteText}>{note.note_text}</Text>
+            <TouchableOpacity style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: base.border }]} onPress={() => handleNotePress(note)}>
+              <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
+              <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
               {tags.length > 0 && (
                 <View style={styles.tagRow}>
                   {tags.map((t) => (
-                    <Text key={t} style={styles.tag}>#{t}</Text>
+                    <Text key={t} style={[styles.tag, { color: base.goldDim }]}>#{t}</Text>
                   ))}
                 </View>
               )}
-              <Text style={styles.noteDate}>{note.updated_at?.slice(0, 10)}</Text>
+              <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
             </TouchableOpacity>
           );
         }}
@@ -186,7 +187,6 @@ export default function CollectionDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     paddingHorizontal: spacing.md,
@@ -198,7 +198,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   colorBar: {
     width: 4,
@@ -210,13 +209,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   description: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginBottom: 4,
   },
   noteCount: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
@@ -237,24 +234,19 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
   },
   noteCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     borderWidth: 1,
-    borderColor: base.border,
   },
   noteRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   noteText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
@@ -266,12 +258,10 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   tag: {
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 10,
   },
   noteDate: {
-    color: base.textMuted,
     fontSize: 10,
     marginTop: spacing.xs,
     textAlign: 'right',
