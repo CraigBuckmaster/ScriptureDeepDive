@@ -1,13 +1,14 @@
 /**
  * ScholarlyBlock — Container for chapter-level scholarly panels.
  *
- * Divider with "CHAPTER ANALYSIS" label, ButtonRow, PanelContainer.
+ * Divider with "CHAPTER ANALYSIS" label, categorized ButtonRow, PanelContainer.
  */
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { ButtonRow } from './ButtonRow';
 import { PanelContainer } from './PanelContainer';
+import { CHAPTER_PANEL_CATEGORIES } from '../utils/panelLabels';
 import { base, spacing, fontFamily } from '../theme';
 import type { ChapterPanel, ParsedRef } from '../types';
 
@@ -33,28 +34,21 @@ export function ScholarlyBlock({
     : null;
 
   return (
-    <View style={{ marginTop: spacing.lg }}>
+    <View style={styles.container}>
       {/* Divider */}
-      <View style={{
-        flexDirection: 'row', alignItems: 'center',
-        paddingHorizontal: spacing.md, marginBottom: spacing.xs,
-      }}>
-        <View style={{ flex: 1, height: 1, backgroundColor: base.border }} />
-        <Text style={{
-          color: base.textMuted, fontFamily: fontFamily.uiMedium,
-          fontSize: 10, letterSpacing: 1.2, marginHorizontal: spacing.sm,
-        }}>
-          CHAPTER ANALYSIS
-        </Text>
-        <View style={{ flex: 1, height: 1, backgroundColor: base.border }} />
+      <View style={styles.dividerRow}>
+        <View style={styles.dividerLine} />
+        <Text style={styles.dividerLabel}>CHAPTER ANALYSIS</Text>
+        <View style={styles.dividerLine} />
       </View>
 
-      {/* Button row */}
+      {/* Button row with category grouping */}
       <ButtonRow
         panels={chapterPanels}
         activePanel={activePanel}
         onToggle={onToggle}
         isChapterLevel
+        categories={CHAPTER_PANEL_CATEGORIES}
       />
 
       {/* Active panel */}
@@ -73,3 +67,27 @@ export function ScholarlyBlock({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: spacing.lg,
+  },
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: spacing.md,
+    marginBottom: spacing.xs,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: base.border,
+  },
+  dividerLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 10,
+    letterSpacing: 1.2,
+    marginHorizontal: spacing.sm,
+  },
+});
