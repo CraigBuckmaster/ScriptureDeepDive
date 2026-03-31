@@ -448,7 +448,8 @@ def populate_chapters(cur):
 
 def populate_verses(cur):
     count = 0
-    for translation in ('niv', 'esv'):
+    translations = sorted(d.name for d in VERSES_DIR.iterdir() if d.is_dir())
+    for translation in translations:
         trans_dir = VERSES_DIR / translation
         if not trans_dir.is_dir():
             continue

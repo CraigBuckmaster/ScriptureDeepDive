@@ -75,7 +75,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const sc = await getPreference('studyCoachEnabled');
 
       set({
-        translation: (t === 'esv' ? 'esv' : 'niv'),
+        translation: (t === 'esv' || t === 'kjv' ? t : 'niv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
         vhlEnabled: v !== '0',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',

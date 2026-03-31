@@ -33,6 +33,7 @@ import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
 import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
+import { TranslationPicker } from '../components/TranslationPicker';
 
 import { base, spacing } from '../theme';
 
@@ -47,6 +48,8 @@ export default function ChapterScreen() {
   const { bookId, chapterNum } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
+  const translation = useSettingsStore((s) => s.translation);
+  const setTranslation = useSettingsStore((s) => s.setTranslation);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
@@ -221,6 +224,9 @@ export default function ChapterScreen() {
       <View style={styles.progressTrack}>
         <View style={[styles.progressFill, { width: `${scrollProgress * 100}%` }]} />
       </View>
+
+      {/* Translation picker */}
+      <TranslationPicker selected={translation} onSelect={setTranslation} />
 
       <ScrollView
         ref={scrollRef}
