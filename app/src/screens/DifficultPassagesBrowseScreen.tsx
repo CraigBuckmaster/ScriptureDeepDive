@@ -27,7 +27,7 @@ import {
   DifficultPassage,
   DifficultPassageCategory,
 } from '../hooks/useDifficultPassages';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
@@ -64,6 +64,7 @@ const SEVERITY_DOT: Record<string, string> = {
 };
 
 export default function DifficultPassagesBrowseScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const { passages, loading, error } = useDifficultPassages();
   const [search, setSearch] = useState('');
@@ -95,13 +96,13 @@ export default function DifficultPassagesBrowseScreen() {
 
   const renderItem = ({ item }: { item: DifficultPassage }) => (
     <TouchableOpacity
-      style={styles.card}
+      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
       activeOpacity={0.7}
       onPress={() => navigation.navigate('DifficultPassageDetail', { passageId: item.id })}
     >
       {/* Header row: title + severity dot */}
       <View style={styles.cardHeader}>
-        <Text style={styles.cardTitle} numberOfLines={1}>
+        <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={1}>
           {item.title}
         </Text>
         <View style={[styles.severityDot, { backgroundColor: SEVERITY_DOT[item.severity] }]} />
@@ -115,19 +116,19 @@ export default function DifficultPassagesBrowseScreen() {
       </View>
 
       {/* Passage reference */}
-      <Text style={styles.passage} numberOfLines={1}>
+      <Text style={[styles.passage, { color: base.gold }]} numberOfLines={1}>
         {item.passage}
       </Text>
 
       {/* Question preview */}
-      <Text style={styles.question} numberOfLines={2}>
+      <Text style={[styles.question, { color: base.textDim }]} numberOfLines={2}>
         {item.question}
       </Text>
     </TouchableOpacity>
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity
@@ -136,17 +137,17 @@ export default function DifficultPassagesBrowseScreen() {
         >
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={styles.title}>Difficult Passages</Text>
+        <Text style={[styles.title, { color: base.gold }]}>Difficult Passages</Text>
         <View style={{ width: 24 }} />
       </View>
 
       {/* Search */}
       <View style={styles.searchRow}>
-        <View style={styles.searchBox}>
+        <View style={[styles.searchBox, { backgroundColor: base.bgElevated }]}>
           <Search size={16} color={base.textMuted} />
           <TextInput
             ref={inputRef}
-            style={styles.searchInput}
+            style={[styles.searchInput, { color: base.text }]}
             placeholder="Search passages…"
             placeholderTextColor={base.textMuted}
             value={search}
@@ -173,11 +174,19 @@ export default function DifficultPassagesBrowseScreen() {
           return (
             <TouchableOpacity
               key={cat.key}
-              style={[styles.chip, isActive && styles.chipActive]}
+              style={[
+                styles.chip,
+                { backgroundColor: base.bgElevated, borderColor: base.gold + '20' },
+                isActive && { backgroundColor: base.gold, borderColor: base.gold },
+              ]}
               onPress={() => setActiveCategory(cat.key)}
               activeOpacity={0.7}
             >
-              <Text style={[styles.chipText, isActive && styles.chipTextActive]}>
+              <Text style={[
+                styles.chipText,
+                { color: base.textMuted },
+                isActive && { color: base.bg, fontFamily: fontFamily.uiMedium },
+              ]}>
                 {cat.label}
               </Text>
             </TouchableOpacity>
@@ -192,11 +201,11 @@ export default function DifficultPassagesBrowseScreen() {
         </View>
       ) : error ? (
         <View style={styles.center}>
-          <Text style={styles.emptyText}>{error}</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>{error}</Text>
         </View>
       ) : filtered.length === 0 ? (
         <View style={styles.center}>
-          <Text style={styles.emptyText}>No passages found</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>No passages found</Text>
         </View>
       ) : (
         <FlatList
@@ -214,7 +223,6 @@ export default function DifficultPassagesBrowseScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     flexDirection: 'row',
@@ -224,7 +232,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
   },
@@ -235,7 +242,6 @@ const styles = StyleSheet.create({
   searchBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     paddingHorizontal: spacing.sm,
     height: 40,
@@ -243,7 +249,6 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     paddingVertical: 0,
@@ -257,32 +262,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs + 2,
     borderRadius: radii.full,
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     marginRight: spacing.xs,
   },
-  chipActive: {
-    backgroundColor: base.gold,
-    borderColor: base.gold,
-  },
   chipText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
-  },
-  chipTextActive: {
-    color: base.bg,
-    fontFamily: fontFamily.uiMedium,
   },
   list: {
     padding: spacing.md,
     paddingTop: spacing.xs,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.sm,
@@ -295,7 +287,6 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
     marginRight: spacing.sm,
@@ -318,13 +309,11 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   passage: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     marginBottom: spacing.xs,
   },
   question: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 18,
@@ -335,7 +324,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },

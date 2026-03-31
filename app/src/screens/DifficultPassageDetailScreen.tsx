@@ -37,7 +37,7 @@ import {
   DifficultPassageCategory,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
@@ -84,6 +84,7 @@ function ResponseCard({
   defaultExpanded: boolean;
   onScholarPress: (id: string) => void;
 }) {
+  const { base } = useTheme();
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   const toggleExpanded = useCallback(() => {
@@ -96,10 +97,10 @@ function ResponseCard({
     (response.key_verses && response.key_verses.length > 0);
 
   return (
-    <View style={styles.responseCard}>
+    <View style={[styles.responseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}>
       {/* Tradition label + family badge */}
       <View style={styles.traditionRow}>
-        <Text style={styles.traditionText}>{response.tradition}</Text>
+        <Text style={[styles.traditionText, { color: base.gold }]}>{response.tradition}</Text>
         {response.tradition_family && (
           <View style={[styles.familyBadge, { backgroundColor: familyColor + '20' }]}>
             <Text style={[styles.familyText, { color: familyColor }]}>
@@ -112,16 +113,16 @@ function ResponseCard({
       {/* Scholar row */}
       {scholar && (
         <TouchableOpacity
-          style={styles.scholarRow}
+          style={[styles.scholarRow, { backgroundColor: base.bg }]}
           onPress={() => onScholarPress(scholar.id)}
           activeOpacity={0.7}
         >
-          <View style={styles.scholarAvatar}>
+          <View style={[styles.scholarAvatar, { backgroundColor: base.gold + '20' }]}>
             <User size={14} color={base.gold} />
           </View>
           <View style={styles.scholarInfo}>
-            <Text style={styles.scholarName}>{scholar.name}</Text>
-            <Text style={styles.scholarMeta}>{scholar.tradition}</Text>
+            <Text style={[styles.scholarName, { color: base.text }]}>{scholar.name}</Text>
+            <Text style={[styles.scholarMeta, { color: base.textMuted }]}>{scholar.tradition}</Text>
           </View>
           <ChevronLeft
             size={14}
@@ -132,7 +133,7 @@ function ResponseCard({
       )}
 
       {/* Summary */}
-      <Text style={styles.summaryText}>{response.summary}</Text>
+      <Text style={[styles.summaryText, { color: base.textDim }]}>{response.summary}</Text>
 
       {/* Expand/Collapse toggle */}
       {hasAnalysis && (
@@ -146,7 +147,7 @@ function ResponseCard({
           ) : (
             <ChevronDown size={14} color={base.gold} />
           )}
-          <Text style={styles.expandText}>
+          <Text style={[styles.expandText, { color: base.gold }]}>
             {expanded ? 'Hide analysis' : 'See analysis'}
           </Text>
         </TouchableOpacity>
@@ -154,14 +155,14 @@ function ResponseCard({
 
       {/* Expanded analysis */}
       {expanded && hasAnalysis && (
-        <View style={styles.analysisSection}>
+        <View style={[styles.analysisSection, { borderTopColor: base.border }]}>
           {response.key_verses && response.key_verses.length > 0 && (
             <View style={styles.analysisBlock}>
-              <Text style={styles.analysisLabel}>Key Verses</Text>
+              <Text style={[styles.analysisLabel, { color: base.textMuted }]}>Key Verses</Text>
               <View style={styles.verseChipRow}>
                 {response.key_verses.map((v, i) => (
-                  <View key={i} style={styles.verseChip}>
-                    <Text style={styles.verseChipText}>{v}</Text>
+                  <View key={i} style={[styles.verseChip, { backgroundColor: base.gold + '15' }]}>
+                    <Text style={[styles.verseChipText, { color: base.gold }]}>{v}</Text>
                   </View>
                 ))}
               </View>
@@ -171,14 +172,14 @@ function ResponseCard({
           {response.strengths && (
             <View style={styles.analysisBlock}>
               <Text style={[styles.analysisLabel, { color: '#81C784' }]}>Strengths</Text>
-              <Text style={styles.analysisBody}>{response.strengths}</Text>
+              <Text style={[styles.analysisBody, { color: base.textDim }]}>{response.strengths}</Text>
             </View>
           )}
 
           {response.weaknesses && (
             <View style={styles.analysisBlock}>
               <Text style={[styles.analysisLabel, { color: '#E57373' }]}>Weaknesses</Text>
-              <Text style={styles.analysisBody}>{response.weaknesses}</Text>
+              <Text style={[styles.analysisBody, { color: base.textDim }]}>{response.weaknesses}</Text>
             </View>
           )}
         </View>
@@ -190,6 +191,7 @@ function ResponseCard({
 /* ── Main Screen ── */
 
 export default function DifficultPassageDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { passageId } = route.params;
@@ -212,7 +214,7 @@ export default function DifficultPassageDetailScreen() {
 
   if (loading) {
     return (
-      <SafeAreaView style={styles.container} edges={['top']}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
         <View style={styles.center}>
           <ActivityIndicator color={base.gold} />
         </View>
@@ -222,16 +224,16 @@ export default function DifficultPassageDetailScreen() {
 
   if (error || !passage) {
     return (
-      <SafeAreaView style={styles.container} edges={['top']}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>Difficult Passage</Text>
+          <Text style={[styles.headerTitle, { color: base.gold }]}>Difficult Passage</Text>
           <View style={{ width: 24 }} />
         </View>
         <View style={styles.center}>
-          <Text style={styles.errorText}>{error || 'Passage not found'}</Text>
+          <Text style={[styles.errorText, { color: base.textMuted }]}>{error || 'Passage not found'}</Text>
         </View>
       </SafeAreaView>
     );
@@ -240,7 +242,7 @@ export default function DifficultPassageDetailScreen() {
   const severityInfo = SEVERITY_INFO[passage.severity];
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity
@@ -249,7 +251,7 @@ export default function DifficultPassageDetailScreen() {
         >
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle} numberOfLines={1}>
+        <Text style={[styles.headerTitle, { color: base.gold }]} numberOfLines={1}>
           {passage.title}
         </Text>
         <View style={{ width: 24 }} />
@@ -257,8 +259,8 @@ export default function DifficultPassageDetailScreen() {
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         {/* Meta Card */}
-        <View style={styles.metaCard}>
-          <Text style={styles.passageRef}>{passage.passage}</Text>
+        <View style={[styles.metaCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+          <Text style={[styles.passageRef, { color: base.gold }]}>{passage.passage}</Text>
           <View style={styles.badgeRow}>
             <View
               style={[
@@ -283,10 +285,10 @@ export default function DifficultPassageDetailScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <HelpCircle size={16} color={base.gold} />
-            <Text style={styles.sectionTitle}>The Question</Text>
+            <Text style={[styles.sectionTitle, { color: base.gold }]}>The Question</Text>
           </View>
-          <View style={styles.questionCard}>
-            <Text style={styles.questionText}>{passage.question}</Text>
+          <View style={[styles.questionCard, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
+            <Text style={[styles.questionText, { color: base.text }]}>{passage.question}</Text>
           </View>
         </View>
 
@@ -295,10 +297,10 @@ export default function DifficultPassageDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <BookOpen size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Context</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Context</Text>
             </View>
-            <View style={styles.contextBlock}>
-              <Text style={styles.contextText}>{passage.context}</Text>
+            <View style={[styles.contextBlock, { borderLeftColor: base.border }]}>
+              <Text style={[styles.contextText, { color: base.textDim }]}>{passage.context}</Text>
             </View>
           </View>
         ) : null}
@@ -308,12 +310,12 @@ export default function DifficultPassageDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <Quote size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Key Verses</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Key Verses</Text>
             </View>
             {passage.key_verses.map((v, i) => (
-              <View key={i} style={styles.keyVerseCard}>
-                <Text style={styles.keyVerseRef}>{v.ref}</Text>
-                <Text style={styles.keyVerseText}>{v.text}</Text>
+              <View key={i} style={[styles.keyVerseCard, { backgroundColor: base.bgElevated }]}>
+                <Text style={[styles.keyVerseRef, { color: base.gold }]}>{v.ref}</Text>
+                <Text style={[styles.keyVerseText, { color: base.textDim }]}>{v.text}</Text>
               </View>
             ))}
           </View>
@@ -321,12 +323,12 @@ export default function DifficultPassageDetailScreen() {
 
         {/* Scholarly Consensus */}
         {passage.consensus ? (
-          <View style={styles.consensusBanner}>
+          <View style={[styles.consensusBanner, { backgroundColor: base.bgElevated, borderLeftColor: base.textMuted }]}>
             <View style={styles.consensusHeader}>
               <Target size={12} color={base.textMuted} />
-              <Text style={styles.consensusLabel}>Scholarly Consensus</Text>
+              <Text style={[styles.consensusLabel, { color: base.textMuted }]}>Scholarly Consensus</Text>
             </View>
-            <Text style={styles.consensusText}>{passage.consensus}</Text>
+            <Text style={[styles.consensusText, { color: base.textMuted }]}>{passage.consensus}</Text>
           </View>
         ) : null}
 
@@ -335,8 +337,8 @@ export default function DifficultPassageDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <User size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Scholarly Responses</Text>
-              <Text style={styles.responseCount}>({passage.responses.length})</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Scholarly Responses</Text>
+              <Text style={[styles.responseCount, { color: base.textMuted }]}>({passage.responses.length})</Text>
             </View>
             {passage.responses.map((response, index) => (
               <ResponseCard
@@ -355,7 +357,7 @@ export default function DifficultPassageDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <BookOpen size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Related Chapters</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Related Chapters</Text>
             </View>
             <ScrollView
               horizontal
@@ -365,11 +367,11 @@ export default function DifficultPassageDetailScreen() {
               {relatedChapters.map((ch, idx) => (
                 <TouchableOpacity
                   key={`${ch.book_dir}-${ch.chapter_num}-${idx}`}
-                  style={styles.chapterPill}
+                  style={[styles.chapterPill, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
                   onPress={() => handleChapterPress(ch.book_dir, ch.chapter_num)}
                   activeOpacity={0.7}
                 >
-                  <Text style={styles.chapterText}>
+                  <Text style={[styles.chapterText, { color: base.text }]}>
                     {ch.book_name} {ch.chapter_num}
                   </Text>
                 </TouchableOpacity>
@@ -383,12 +385,12 @@ export default function DifficultPassageDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <BookMarked size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Further Reading</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Further Reading</Text>
             </View>
             {passage.further_reading.map((r, i) => (
-              <View key={i} style={styles.readingItem}>
-                <Text style={styles.readingTitle}>{r.title}</Text>
-                <Text style={styles.readingMeta}>{r.author} ({r.year})</Text>
+              <View key={i} style={[styles.readingItem, { borderLeftColor: base.border }]}>
+                <Text style={[styles.readingTitle, { color: base.text }]}>{r.title}</Text>
+                <Text style={[styles.readingMeta, { color: base.textMuted }]}>{r.author} ({r.year})</Text>
               </View>
             ))}
           </View>
@@ -398,8 +400,8 @@ export default function DifficultPassageDetailScreen() {
         {passage.tags.length > 0 && (
           <View style={styles.tagsSection}>
             {passage.tags.map((tag) => (
-              <View key={tag} style={styles.tag}>
-                <Text style={styles.tagText}>{tag}</Text>
+              <View key={tag} style={[styles.tag, { backgroundColor: base.gold + '15' }]}>
+                <Text style={[styles.tagText, { color: base.gold }]}>{tag}</Text>
               </View>
             ))}
           </View>
@@ -414,7 +416,6 @@ export default function DifficultPassageDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     flexDirection: 'row',
@@ -425,7 +426,6 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     flex: 1,
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
     textAlign: 'center',
@@ -440,22 +440,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   errorText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
 
   // Meta Card
   metaCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '30',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.lg,
   },
   passageRef: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
     marginBottom: spacing.sm,
@@ -504,12 +500,10 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   sectionTitle: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
   responseCount: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     marginLeft: spacing.xs,
@@ -517,14 +511,11 @@ const styles = StyleSheet.create({
 
   // Question
   questionCard: {
-    backgroundColor: base.bgElevated,
     borderLeftWidth: 3,
-    borderLeftColor: base.gold,
     borderRadius: radii.md,
     padding: spacing.md,
   },
   questionText: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 15,
     lineHeight: 24,
@@ -535,10 +526,8 @@ const styles = StyleSheet.create({
   contextBlock: {
     paddingLeft: spacing.sm,
     borderLeftWidth: 2,
-    borderLeftColor: base.border,
   },
   contextText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 21,
@@ -546,19 +535,16 @@ const styles = StyleSheet.create({
 
   // Key Verses
   keyVerseCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm + 2,
     marginBottom: spacing.xs,
   },
   keyVerseRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
     marginBottom: spacing.xs,
   },
   keyVerseText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 20,
@@ -567,9 +553,7 @@ const styles = StyleSheet.create({
 
   // Consensus
   consensusBanner: {
-    backgroundColor: base.bgElevated,
     borderLeftWidth: 3,
-    borderLeftColor: base.textMuted,
     borderRadius: radii.md,
     padding: spacing.sm + 2,
     marginBottom: spacing.lg,
@@ -581,14 +565,12 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   consensusLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
   consensusText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     lineHeight: 18,
@@ -596,9 +578,7 @@ const styles = StyleSheet.create({
 
   // Responses
   responseCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.sm,
@@ -610,7 +590,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   traditionText: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     flex: 1,
@@ -628,7 +607,6 @@ const styles = StyleSheet.create({
   scholarRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bg,
     borderRadius: radii.md,
     padding: spacing.sm,
     marginBottom: spacing.sm,
@@ -637,7 +615,6 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: base.gold + '20',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -646,17 +623,14 @@ const styles = StyleSheet.create({
     marginLeft: spacing.sm,
   },
   scholarName: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
   scholarMeta: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
   summaryText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 21,
@@ -668,7 +642,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing.sm,
   },
   expandText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
@@ -677,14 +650,12 @@ const styles = StyleSheet.create({
   analysisSection: {
     marginTop: spacing.sm,
     borderTopWidth: 1,
-    borderTopColor: base.border,
     paddingTop: spacing.sm,
   },
   analysisBlock: {
     marginBottom: spacing.sm,
   },
   analysisLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     textTransform: 'uppercase',
@@ -692,7 +663,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   analysisBody: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     lineHeight: 18,
@@ -703,13 +673,11 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   verseChip: {
-    backgroundColor: base.gold + '15',
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
     borderRadius: radii.full,
   },
   verseChipText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -720,16 +688,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
   },
   chapterPill: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '30',
     borderRadius: radii.full,
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs + 2,
     marginRight: spacing.xs,
   },
   chapterText: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
@@ -738,16 +703,13 @@ const styles = StyleSheet.create({
   readingItem: {
     paddingLeft: spacing.sm,
     borderLeftWidth: 2,
-    borderLeftColor: base.border,
     marginBottom: spacing.sm,
   },
   readingTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
   readingMeta: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -760,13 +722,11 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   tag: {
-    backgroundColor: base.gold + '15',
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
     borderRadius: radii.md,
   },
   tagText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
