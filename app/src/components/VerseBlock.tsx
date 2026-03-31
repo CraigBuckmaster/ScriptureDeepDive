@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
 import { base, spacing, fontFamily } from '../theme';
@@ -19,11 +19,12 @@ interface Props {
   fontSize?: number;
   onVhlWordPress?: (panelTypes: string[], sectionId: string) => void;
   onNotePress?: (verseNum: number) => void;
+  onVerseLongPress?: (verseNum: number, text: string) => void;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
-  fontSize = 16, onVhlWordPress, onNotePress,
+  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress,
 }: Props) {
   if (!verses.length) return null;
 
@@ -33,7 +34,13 @@ export const VerseBlock = React.memo(function VerseBlock({
   return (
     <View style={styles.container}>
       {verses.map((verse) => (
-        <View key={verse.verse_num} style={styles.verseRow}>
+        <TouchableOpacity
+          key={verse.verse_num}
+          style={styles.verseRow}
+          onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}
+          activeOpacity={onVerseLongPress ? 0.7 : 1}
+          delayLongPress={400}
+        >
           {/* Verse number */}
           <Text
             style={[styles.verseNum, { fontSize: numSize, lineHeight }]}
@@ -62,7 +69,7 @@ export const VerseBlock = React.memo(function VerseBlock({
               onPress={onNotePress}
             />
           )}
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );

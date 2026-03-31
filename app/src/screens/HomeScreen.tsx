@@ -15,9 +15,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
-import { ArrowRight } from 'lucide-react-native';
+import { ArrowRight, Share2 } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
+import { useStreakData } from '../hooks/useStreakData';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { StreakBadge } from '../components/StreakBadge';
+import { WeeklySummary } from '../components/WeeklySummary';
+import { MilestoneToast } from '../components/MilestoneToast';
+import { useSettingsStore } from '../stores';
+import { shareVerse } from '../utils/shareVerse';
 import { base, spacing, radii, fontFamily } from '../theme';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
@@ -25,6 +31,8 @@ const TOTAL_BIBLE_CHAPTERS = 1189;
 export default function HomeScreen() {
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
+  const translation = useSettingsStore((s) => s.translation);
+  const { currentStreak, weeklyChapters, weeklyBookNames, pendingMilestone, markMilestoneSeen } = useStreakData();
   const [refreshing, setRefreshing] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
@@ -69,6 +77,7 @@ export default function HomeScreen() {
         <View style={styles.greetingSection}>
           <Text style={styles.greetingText}>{greeting}</Text>
           <Text style={styles.greetingSubtitle}>{subtitle}</Text>
+          <StreakBadge streak={currentStreak} />
         </View>
 
         {/* ── 2. Continue Reading (primary action) ──────── */}
@@ -123,12 +132,23 @@ export default function HomeScreen() {
           })}
           style={styles.verseCard}
         >
-          <Text style={styles.verseCardLabel}>VERSE OF THE DAY</Text>
+          <View style={styles.verseCardHeader}>
+            <Text style={styles.verseCardLabel}>VERSE OF THE DAY</Text>
+            <TouchableOpacity
+              onPress={(e) => { e.stopPropagation(); shareVerse(verse.text, verse.ref, translation); }}
+              hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
+            >
+              <Share2 size={15} color={base.textMuted} />
+            </TouchableOpacity>
+          </View>
           <Text style={styles.verseCardRef}>{verse.ref}</Text>
           <Text style={styles.verseCardText}>{verse.text}</Text>
         </TouchableOpacity>
 
-        {/* ── 4. Contextual Suggestions ─────────────────── */}
+        {/* ── 4. Weekly Summary ────────────────────────── */}
+        <WeeklySummary chapters={weeklyChapters} bookNames={weeklyBookNames} />
+
+        {/* ── 5. Contextual Suggestions ─────────────────── */}
         <View style={styles.suggestionsSection}>
           <Text style={styles.sectionLabel}>
             {mostRecent ? 'FROM YOUR STUDY' : 'EXPLORE'}
@@ -171,7 +191,7 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* ── 5. Overall Progress ──────────────────────── */}
+        {/* ── 6. Overall Progress ──────────────────────── */}
         {chaptersRead > 0 && pct && (
           <View style={styles.progressCard}>
             <View style={styles.progressHeader}>
@@ -185,6 +205,8 @@ export default function HomeScreen() {
         )}
 
       </ScrollView>
+
+      <MilestoneToast message={pendingMilestone} onDismiss={markMilestoneSeen} />
     </SafeAreaView>
   );
 }
@@ -257,6 +279,12 @@ const styles = StyleSheet.create({
   },
 
   // Verse of the Day
+  verseCardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.sm,
+  },
   verseCard: {
     backgroundColor: base.bgElevated,
     borderRadius: radii.lg,
@@ -270,7 +298,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     letterSpacing: 0.5,
-    marginBottom: spacing.sm,
   },
   verseCardRef: {
     color: base.gold,

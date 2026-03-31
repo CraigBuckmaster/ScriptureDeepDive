@@ -32,6 +32,7 @@ import { ScholarlyBlock } from '../components/ScholarlyBlock';
 import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
+import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
 
 import { base, spacing } from '../theme';
 
@@ -55,6 +56,7 @@ export default function ChapterScreen() {
   const notesOverlayOpen = useReaderStore((s) => s.notesOverlayOpen);
   const toggleNotes = useReaderStore((s) => s.toggleNotesOverlay);
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
+  const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
 
   const {
     chapter, sections, verses, vhlGroups,
@@ -181,6 +183,10 @@ export default function ChapterScreen() {
       ? activePanel.panelType
       : null;
 
+  const handleVerseLongPress = useCallback((verseNum: number, text: string) => {
+    setLongPress({ verseNum, text });
+  }, []);
+
   // Noted verses for note indicators
   const notedVerses = useNotedVerses(bookId, chapterNum);
 
@@ -268,6 +274,7 @@ export default function ChapterScreen() {
               fontSize={fontSize}
               onPanelToggle={handleSectionPanelToggle}
               onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
+              onVerseLongPress={handleVerseLongPress}
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
               onDepthRecord={recordOpen}
@@ -352,6 +359,17 @@ export default function ChapterScreen() {
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}
         initialVerseNum={noteVerseNum}
+      />
+
+      <VerseLongPressMenu
+        visible={longPress !== null}
+        verseText={longPress?.text ?? ''}
+        verseRef={longPress ? `${bookData?.name ?? bookId} ${chapterNum}:${longPress.verseNum}` : ''}
+        onClose={() => setLongPress(null)}
+        onAddNote={longPress ? () => {
+          setNoteVerseNum(longPress.verseNum);
+          toggleNotes();
+        } : undefined}
       />
     </View>
   );
