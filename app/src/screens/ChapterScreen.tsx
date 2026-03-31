@@ -34,6 +34,7 @@ import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
 import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
 import { TranslationPicker } from '../components/TranslationPicker';
+import { InterlinearSheet } from '../components/InterlinearSheet';
 
 import { base, spacing } from '../theme';
 
@@ -60,6 +61,7 @@ export default function ChapterScreen() {
   const toggleNotes = useReaderStore((s) => s.toggleNotesOverlay);
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
   const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
+  const [interlinearVerse, setInterlinearVerse] = useState<number | null>(null);
 
   const {
     chapter, sections, verses, vhlGroups,
@@ -281,6 +283,7 @@ export default function ChapterScreen() {
               onPanelToggle={handleSectionPanelToggle}
               onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
               onVerseLongPress={handleVerseLongPress}
+              onVerseNumPress={setInterlinearVerse}
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
               onDepthRecord={recordOpen}
@@ -365,6 +368,19 @@ export default function ChapterScreen() {
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}
         initialVerseNum={noteVerseNum}
+      />
+
+      <InterlinearSheet
+        visible={interlinearVerse !== null}
+        bookId={bookId}
+        chapter={chapterNum}
+        verse={interlinearVerse ?? 1}
+        verseRef={interlinearVerse ? `${bookData?.name ?? bookId} ${chapterNum}:${interlinearVerse}` : ''}
+        onClose={() => setInterlinearVerse(null)}
+        onWordStudyPress={(wsId) => {
+          setInterlinearVerse(null);
+          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { id: wsId } });
+        }}
       />
 
       <VerseLongPressMenu

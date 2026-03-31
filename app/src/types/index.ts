@@ -147,6 +147,20 @@ export interface SynopticEntry {
   diff_annotations_json: string | null;
 }
 
+export interface InterlinearWord {
+  id: number;
+  book_id: string;
+  chapter_num: number;
+  verse_num: number;
+  word_position: number;
+  original: string;
+  transliteration: string;
+  strongs: string | null;
+  morphology: string | null;
+  gloss: string | null;
+  word_study_id: string | null;
+}
+
 export interface VHLGroup {
   id: number;
   chapter_id: string;

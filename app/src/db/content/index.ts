@@ -9,7 +9,7 @@ export { getBooks, getBook, getLiveBooks, getBookIntro } from './books';
 export {
   getChapter, getChapterById, getSections, getSectionPanels,
   getSectionPanelsByType, getChapterPanels, getChapterPanelByType,
-  getVerses, getVerse, getVHLGroups,
+  getVerses, getVerse, getInterlinearWords, getVHLGroups,
 } from './chapters';
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
 export { getAllPeople, getPerson, getPersonChildren, getSpousesOf } from './people';

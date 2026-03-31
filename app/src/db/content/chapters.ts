@@ -4,7 +4,7 @@
 
 import { getDb } from '../database';
 import type {
-  Chapter, Section, SectionPanel, ChapterPanel, Verse, VHLGroup,
+  Chapter, Section, SectionPanel, ChapterPanel, Verse, VHLGroup, InterlinearWord,
 } from '../../types';
 
 export async function getChapter(bookId: string, ch: number): Promise<Chapter | null> {
@@ -74,6 +74,15 @@ export async function getVerse(
   return getDb().getFirstAsync<Verse>(
     'SELECT * FROM verses WHERE book_id = ? AND chapter_num = ? AND verse_num = ? AND translation = ?',
     [bookId, ch, verse, translation]
+  );
+}
+
+export async function getInterlinearWords(
+  bookId: string, ch: number, verse: number
+): Promise<InterlinearWord[]> {
+  return getDb().getAllAsync<InterlinearWord>(
+    'SELECT * FROM interlinear_words WHERE book_id = ? AND chapter_num = ? AND verse_num = ? ORDER BY word_position',
+    [bookId, ch, verse]
   );
 }
 

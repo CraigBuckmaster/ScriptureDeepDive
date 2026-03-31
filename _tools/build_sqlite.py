@@ -308,6 +308,21 @@ CREATE TABLE difficult_passages (
   tags_json TEXT
 );
 
+CREATE TABLE interlinear_words (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  book_id TEXT NOT NULL,
+  chapter_num INTEGER NOT NULL,
+  verse_num INTEGER NOT NULL,
+  word_position INTEGER NOT NULL,
+  original TEXT NOT NULL,
+  transliteration TEXT NOT NULL,
+  strongs TEXT,
+  morphology TEXT,
+  gloss TEXT,
+  word_study_id TEXT
+);
+CREATE INDEX idx_interlinear_verse ON interlinear_words(book_id, chapter_num, verse_num);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
@@ -362,7 +377,7 @@ def populate_chapters(cur):
               ├── chapter_panels{} → chapter_panel rows (lit, themes, ppl, tx, etc.)
               └── vhl_groups[] → vhl_group rows (highlighted words by category)
 
-    Skips content/meta/ and content/verses/ (those are handled by other functions).
+    Skips content/meta/, content/verses/, and content/interlinear/ (handled separately).
     """
     chapter_count = 0
     section_count = 0
@@ -372,7 +387,7 @@ def populate_chapters(cur):
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
             continue
         book_id = book_dir.name
         for json_file in sorted(book_dir.glob('*.json')):
@@ -463,6 +478,36 @@ def populate_verses(cur):
                     (book_id, v['ch'], v['v'], translation, v['text'])
                 )
                 count += 1
+    return count
+
+
+def populate_interlinear(cur):
+    interlinear_dir = ROOT / 'content' / 'interlinear'
+    if not interlinear_dir.is_dir():
+        return 0
+    count = 0
+    # Map Strong's H/G numbers to existing word_study IDs
+    cur.execute('SELECT id, strongs FROM word_studies WHERE strongs IS NOT NULL')
+    strongs_to_ws = {}
+    for row in cur.fetchall():
+        if row[1]:
+            strongs_to_ws[row[1]] = row[0]
+
+    for json_file in sorted(interlinear_dir.glob('*.json')):
+        book_id = json_file.stem
+        words = _load_json(json_file)
+        for w in words:
+            ws_id = strongs_to_ws.get(w.get('strongs', ''))
+            cur.execute(
+                'INSERT INTO interlinear_words '
+                '(book_id, chapter_num, verse_num, word_position, original, '
+                'transliteration, strongs, morphology, gloss, word_study_id) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                (book_id, w['ch'], w['v'], w['pos'], w['original'],
+                 w.get('transliteration', ''), w.get('strongs', ''),
+                 w.get('morphology', ''), w.get('gloss', ''), ws_id)
+            )
+            count += 1
     return count
 
 
@@ -861,6 +906,9 @@ def main():
 
     n = populate_difficult_passages(cur)
     print(f"  [OK] difficult_passages: {n} rows")
+
+    n = populate_interlinear(cur)
+    print(f"  [OK] interlinear_words: {n} rows")
 
     # Build FTS
     build_fts(cur)

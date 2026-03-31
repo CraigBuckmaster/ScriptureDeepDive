@@ -20,11 +20,12 @@ interface Props {
   onVhlWordPress?: (panelTypes: string[], sectionId: string) => void;
   onNotePress?: (verseNum: number) => void;
   onVerseLongPress?: (verseNum: number, text: string) => void;
+  onVerseNumPress?: (verseNum: number) => void;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
-  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress,
+  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress,
 }: Props) {
   if (!verses.length) return null;
 
@@ -41,10 +42,11 @@ export const VerseBlock = React.memo(function VerseBlock({
           activeOpacity={onVerseLongPress ? 0.7 : 1}
           delayLongPress={400}
         >
-          {/* Verse number */}
+          {/* Verse number (tap for interlinear) */}
           <Text
             style={[styles.verseNum, { fontSize: numSize, lineHeight }]}
             accessibilityLabel={`Verse ${verse.verse_num}`}
+            onPress={onVerseNumPress ? () => onVerseNumPress(verse.verse_num) : undefined}
           >
             {verse.verse_num}
           </Text>
