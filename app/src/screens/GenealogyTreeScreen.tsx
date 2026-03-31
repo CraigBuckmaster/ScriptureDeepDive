@@ -43,7 +43,7 @@ import { PersonSearchBar } from '../components/tree/PersonSearchBar';
 import { PersonSidebar } from '../components/PersonSidebar';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
-import { base, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
 import { logger } from '../utils/logger';
@@ -53,6 +53,7 @@ export default function GenealogyTreeScreen({ route, navigation }: {
   route: ScreenRouteProp<'Explore', 'GenealogyTree'>;
   navigation: ScreenNavProp<'Explore', 'GenealogyTree'>;
 }) {
+  const { base } = useTheme();
   useLandscapeUnlock();
   const initialPersonId = route?.params?.personId;
   const { people, isLoading } = usePeople();
@@ -245,7 +246,6 @@ export default function GenealogyTreeScreen({ route, navigation }: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
