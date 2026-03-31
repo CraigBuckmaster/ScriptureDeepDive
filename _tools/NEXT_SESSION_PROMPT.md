@@ -84,7 +84,8 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 21** — Concordance Search (depends on Phase 13) — Session O
+1. **Theme Batch T6** — Legacy cleanup (remove static base export, update DEV_GUIDE)
+2. **Deep Study Features Phase 21** — Concordance Search (depends on Phase 13) — Session O
 2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 4. **Cross-reference thread expansion** (Batch 13)
