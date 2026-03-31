@@ -53,7 +53,7 @@ export function ChapterNavBar({
             accessibilityLabel="Previous chapter"
             style={styles.arrowButton}
           >
-            <ArrowLeft size={20} color={hasPrev ? base.gold : base.textMuted + '40'} />
+            <ArrowLeft size={20} color={hasPrev ? base.gold : base.textMuted} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -71,7 +71,7 @@ export function ChapterNavBar({
             accessibilityLabel="Next chapter"
             style={styles.arrowButton}
           >
-            <ArrowRight size={20} color={hasNext ? base.gold : base.textMuted + '40'} />
+            <ArrowRight size={20} color={hasNext ? base.gold : base.textMuted} />
           </TouchableOpacity>
         </View>
 

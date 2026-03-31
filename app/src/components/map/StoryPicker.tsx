@@ -5,6 +5,7 @@
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import { base, spacing, radii, eras, fontFamily } from '../../theme';
+import { lightImpact } from '../../utils/haptics';
 import type { MapStory } from '../../types';
 
 interface Props {
@@ -39,7 +40,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
         return (
           <TouchableOpacity
             key={story.id}
-            onPress={() => onSelect(story.id)}
+            onPress={() => { lightImpact(); onSelect(story.id); }}
             hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
             style={{
               backgroundColor: isActive ? color + '33' : base.bg + 'EE',

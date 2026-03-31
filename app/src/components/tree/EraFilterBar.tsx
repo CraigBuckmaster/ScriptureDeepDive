@@ -16,6 +16,7 @@ import {
   type LayoutChangeEvent,
 } from 'react-native';
 import { eras, eraPillLabels, base, spacing, radii, fontFamily } from '../../theme';
+import { lightImpact } from '../../utils/haptics';
 
 interface Props {
   activeEra: string;
@@ -46,6 +47,7 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
   /** Select an era and scroll the strip to keep the pill visible. */
   const handlePress = useCallback(
     (era: string) => {
+      lightImpact();
       onSelect(era);
       requestAnimationFrame(() => {
         const layout = chipLayouts.current[era];

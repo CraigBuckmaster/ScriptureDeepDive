@@ -20,7 +20,7 @@ import {
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
   type PositionedEvent,
 } from '../utils/timelineLayout';
-import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
+import { base, spacing, radii, eras, eraNames, fontFamily, categoryColors } from '../theme';
 import type { TimelineEntry } from '../types';
 
 interface CategoryFilters {
@@ -129,10 +129,10 @@ export default function TimelineScreen() {
         {/* Category toggles */}
         <View style={styles.categoryRow}>
           {([
-            { key: 'event' as const, label: 'Events', color: base.gold },
-            { key: 'book' as const, label: 'Books', color: '#7a6b5a' },
-            { key: 'person' as const, label: 'People', color: '#6a9fb5' },
-            { key: 'world' as const, label: 'World History', color: '#b07d4f' },
+            { key: 'event' as const, label: 'Events', color: categoryColors.event },
+            { key: 'book' as const, label: 'Books', color: categoryColors.book },
+            { key: 'person' as const, label: 'People', color: categoryColors.person },
+            { key: 'world' as const, label: 'World History', color: categoryColors.world },
           ]).map(({ key, label, color }) => (
             <TouchableOpacity
               key={key}
@@ -185,10 +185,10 @@ export default function TimelineScreen() {
           {/* Events */}
           {filtered.map((evt) => {
             // Color by category: events use era color, people are teal, world is amber
-            const catColor = evt.category === 'world' ? '#b07d4f'
-              : evt.category === 'person' ? '#6a9fb5'
-              : evt.category === 'book' ? '#7a6b5a'
-              : evt.era ? (eras[evt.era] ?? base.gold) : base.gold;
+            const catColor = evt.category === 'world' ? categoryColors.world
+              : evt.category === 'person' ? categoryColors.person
+              : evt.category === 'book' ? categoryColors.book
+              : evt.era ? (eras[evt.era] ?? categoryColors.event) : categoryColors.event;
             const isSelected = selectedEvent?.id === evt.id;
             const isBook = evt.category === 'book';
 

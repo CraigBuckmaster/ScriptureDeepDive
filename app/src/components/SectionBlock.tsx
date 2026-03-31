@@ -64,6 +64,9 @@ export function SectionBlock({
     <View style={styles.container}>
       <SectionHeader header={section.header} />
 
+      {/* Panel button row above verses — primary discovery point */}
+      {renderButtonRow?.(panels, section.id)}
+
       <VerseBlock
         verses={sectionVerses}
         vhlGroups={vhlGroups}
@@ -74,9 +77,6 @@ export function SectionBlock({
         onVhlWordPress={handleVhlWordPress}
         onNotePress={onNotePress}
       />
-
-      {/* Button row — rendered by parent to avoid circular deps with panel components */}
-      {renderButtonRow?.(panels, section.id)}
 
       {/* Active panel content */}
       {activeSectionPanel && renderPanel?.(activeSectionPanel)}
