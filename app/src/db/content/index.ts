@@ -10,6 +10,7 @@ export {
   getChapter, getChapterById, getSections, getSectionPanels,
   getSectionPanelsByType, getChapterPanels, getChapterPanelByType,
   getVerses, getVerse, getInterlinearWords, getVHLGroups,
+  getConcordanceResults, getConcordanceCount,
 } from './chapters';
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
 export { getAllPeople, getPerson, getPersonChildren, getSpousesOf } from './people';

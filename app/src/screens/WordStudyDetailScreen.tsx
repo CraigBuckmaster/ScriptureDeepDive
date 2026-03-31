@@ -3,7 +3,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { BookOpen } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -61,6 +62,25 @@ export default function WordStudyDetailScreen() {
         <Text style={styles.transliteration}>{word.transliteration}</Text>
         {word.strongs && (
           <Text style={styles.strongs}>Strong's: {word.strongs}</Text>
+        )}
+
+        {/* Concordance link */}
+        {word.strongs && (
+          <TouchableOpacity
+            style={styles.concordanceBtn}
+            onPress={() => navigation.navigate('Concordance', {
+              strongs: word.strongs!,
+              original: word.original,
+              transliteration: word.transliteration,
+              gloss: glosses[0] ?? null,
+            })}
+            activeOpacity={0.7}
+          >
+            <BookOpen size={14} color={base.gold} />
+            <Text style={styles.concordanceBtnText}>
+              See every occurrence in Scripture
+            </Text>
+          </TouchableOpacity>
         )}
 
         {/* Glosses */}
@@ -142,6 +162,19 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     marginTop: 4,
+  },
+  concordanceBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    marginTop: spacing.sm,
+    paddingVertical: spacing.xs,
+  },
+  concordanceBtnText: {
+    color: base.gold,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
   },
   section: {
     marginTop: spacing.lg,

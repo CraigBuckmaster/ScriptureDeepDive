@@ -17,6 +17,13 @@ import { LoadingSkeleton } from './LoadingSkeleton';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { InterlinearWord } from '../types';
 
+interface ConcordanceParams {
+  strongs: string;
+  original: string;
+  transliteration: string;
+  gloss: string | null;
+}
+
 interface Props {
   visible: boolean;
   bookId: string;
@@ -25,11 +32,12 @@ interface Props {
   verseRef: string;
   onClose: () => void;
   onWordStudyPress?: (wordStudyId: string) => void;
+  onConcordancePress?: (params: ConcordanceParams) => void;
 }
 
 export function InterlinearSheet({
   visible, bookId, chapter, verse, verseRef,
-  onClose, onWordStudyPress,
+  onClose, onWordStudyPress, onConcordancePress,
 }: Props) {
   const [words, setWords] = useState<InterlinearWord[]>([]);
   const [loading, setLoading] = useState(true);
@@ -112,14 +120,29 @@ export function InterlinearSheet({
                       {/* Transliteration */}
                       <Text style={styles.transliteration}>{w.transliteration}</Text>
 
-                      {/* Strong's number */}
+                      {/* Strong's number + concordance link */}
                       {w.strongs ? (
-                        <Text style={[
-                          styles.strongs,
-                          w.word_study_id ? styles.strongsLinked : null,
-                        ]}>
-                          {w.strongs}
-                        </Text>
+                        <TouchableOpacity
+                          onPress={onConcordancePress
+                            ? () => onConcordancePress({
+                                strongs: w.strongs!,
+                                original: w.original,
+                                transliteration: w.transliteration,
+                                gloss: w.gloss,
+                              })
+                            : undefined}
+                          activeOpacity={onConcordancePress ? 0.6 : 1}
+                        >
+                          <Text style={[
+                            styles.strongs,
+                            onConcordancePress ? styles.strongsLinked : null,
+                          ]}>
+                            {w.strongs}
+                          </Text>
+                          {onConcordancePress ? (
+                            <Text style={styles.concordanceLink}>All occurrences</Text>
+                          ) : null}
+                        </TouchableOpacity>
                       ) : null}
 
                       {/* Morphology */}
@@ -232,6 +255,13 @@ const styles = StyleSheet.create({
   },
   strongsLinked: {
     color: base.gold,
+  },
+  concordanceLink: {
+    color: base.gold,
+    fontFamily: fontFamily.ui,
+    fontSize: 9,
+    textAlign: 'center',
+    marginTop: 1,
   },
   morphology: {
     color: base.textMuted,

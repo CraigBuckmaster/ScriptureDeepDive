@@ -5,6 +5,7 @@
 import { getDb } from '../database';
 import type {
   Chapter, Section, SectionPanel, ChapterPanel, Verse, VHLGroup, InterlinearWord,
+  ConcordanceResult,
 } from '../../types';
 
 export async function getChapter(bookId: string, ch: number): Promise<Chapter | null> {
@@ -84,6 +85,32 @@ export async function getInterlinearWords(
     'SELECT * FROM interlinear_words WHERE book_id = ? AND chapter_num = ? AND verse_num = ? ORDER BY word_position',
     [bookId, ch, verse]
   );
+}
+
+export async function getConcordanceResults(strongs: string): Promise<ConcordanceResult[]> {
+  return getDb().getAllAsync<ConcordanceResult>(
+    `SELECT DISTINCT iw.book_id, iw.chapter_num, iw.verse_num,
+       iw.original, iw.transliteration, iw.gloss,
+       v.text, b.name as book_name
+     FROM interlinear_words iw
+     JOIN verses v ON v.book_id = iw.book_id
+       AND v.chapter_num = iw.chapter_num
+       AND v.verse_num = iw.verse_num
+       AND v.translation = 'niv'
+     JOIN books b ON b.id = iw.book_id
+     WHERE iw.strongs = ?
+     ORDER BY b.book_order, iw.chapter_num, iw.verse_num`,
+    [strongs]
+  );
+}
+
+export async function getConcordanceCount(strongs: string): Promise<number> {
+  const row = await getDb().getFirstAsync<{ cnt: number }>(
+    `SELECT COUNT(DISTINCT book_id || ':' || chapter_num || ':' || verse_num) as cnt
+     FROM interlinear_words WHERE strongs = ?`,
+    [strongs]
+  );
+  return row?.cnt ?? 0;
 }
 
 export async function getVHLGroups(chapterId: string): Promise<VHLGroup[]> {

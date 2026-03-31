@@ -68,6 +68,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Wrestling with hard texts',
     screen: 'DifficultPassagesBrowse',
   },
+  {
+    title: 'Concordance',
+    subtitle: 'Every occurrence of a word in Scripture',
+    screen: 'Concordance',
+  },
 ];
 
 export default function ExploreMenuScreen() {

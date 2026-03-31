@@ -419,6 +419,10 @@ export default function ChapterScreen() {
           setInterlinearVerse(null);
           navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { id: wsId } });
         }}
+        onConcordancePress={(params) => {
+          setInterlinearVerse(null);
+          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+        }}
       />
 
       <VerseLongPressMenu
