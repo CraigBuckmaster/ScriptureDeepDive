@@ -49,7 +49,8 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 11 | Verse Sharing & Copy (VerseLongPressMenu + VOTD share) | **Complete** |
 | 16 | Reading Streaks & Engagement Hooks | **Complete** |
 | 12 | Multi-Translation Support (KJV added, TranslationPicker) | **Complete** |
-| 13-23 (excl. 16) | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 13 | Interlinear Viewer (444K words, Hebrew + Greek) | **Complete** |
+| 14-23 (excl. 16) | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
 
@@ -63,7 +64,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 13** — Interlinear Viewer (data sourcing + UI) — Session I/J
+1. **Deep Study Features Phase 14** — User Accounts & Cloud Sync (architecture doc only) — Session K
 2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 4. **Cross-reference thread expansion** (Batch 13)
@@ -103,4 +104,6 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.29 · 54 scholars · 3 translations (NIV, ESV, KJV)
+DB version: 0.32 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words
+
+**Note:** scripture.db is now ~107MB (interlinear data). DB files excluded from git (exceed 100MB limit). Rebuild locally before deploy: `python _tools/build_sqlite.py && cp scripture.db app/assets/scripture.db`
