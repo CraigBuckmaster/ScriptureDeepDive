@@ -16,6 +16,7 @@ import { useScrollToTop } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
+import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
 import { base, spacing, radii, fontFamily, eras } from '../theme';
 import type { Person, WordStudy, Verse } from '../types';
 
@@ -26,7 +27,9 @@ export default function SearchScreen() {
   const navigation = useNavigation<ScreenNavProp<'Search', 'SearchMain'>>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
-  const { results, isLoading } = useSearch(query);
+  const [filter, setFilter] = useState<SearchFilter>({ testament: 'all', bookId: null, bookName: null });
+  const testament = filter.testament === 'all' ? null : filter.testament;
+  const { results, isLoading } = useSearch(query, testament, filter.bookId);
   const listRef = useRef<SectionList>(null);
   useScrollToTop(listRef);
 
@@ -71,6 +74,18 @@ export default function SearchScreen() {
           autoFocus
         />
       </View>
+
+      {/* Filter chips (show when query is active) */}
+      {query.trim().length >= 2 && (
+        <SearchFilterChips
+          filter={filter}
+          onFilterChange={(f) => { setFilter(f); setVerseLimit(INITIAL_VERSE_LIMIT); }}
+          onBookPickerOpen={() => {
+            // For now, cycle through a simple book picker approach
+            // A full book picker modal can be added in a future iteration
+          }}
+        />
+      )}
 
       {trimmed.length < 2 ? (
         /* Idle state */

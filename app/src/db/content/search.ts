@@ -19,17 +19,33 @@ function sanitizeFtsQuery(query: string): string {
     .join(' ');
 }
 
-export async function searchVerses(query: string, limit: number = 50): Promise<Verse[]> {
+export async function searchVerses(
+  query: string,
+  limit: number = 50,
+  testament?: 'ot' | 'nt' | null,
+  bookId?: string | null,
+): Promise<Verse[]> {
   const ftsQuery = sanitizeFtsQuery(query);
   if (!ftsQuery) return [];
-  return getDb().getAllAsync<Verse>(
-    `SELECT v.*, b.name as book_name FROM verses_fts f
+
+  let sql = `SELECT v.*, b.name as book_name FROM verses_fts f
      JOIN verses v ON v.id = f.rowid
      JOIN books b ON b.id = v.book_id
-     WHERE f.text MATCH ?
-     LIMIT ?`,
-    [ftsQuery, limit]
-  );
+     WHERE f.text MATCH ?`;
+  const params: (string | number)[] = [ftsQuery];
+
+  if (bookId) {
+    sql += ' AND v.book_id = ?';
+    params.push(bookId);
+  } else if (testament === 'ot' || testament === 'nt') {
+    sql += ' AND b.testament = ?';
+    params.push(testament);
+  }
+
+  sql += ' LIMIT ?';
+  params.push(limit);
+
+  return getDb().getAllAsync<Verse>(sql, params);
 }
 
 export async function searchPeople(query: string): Promise<Person[]> {

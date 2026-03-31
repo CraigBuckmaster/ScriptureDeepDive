@@ -14,7 +14,11 @@ interface SearchResults {
   wordStudies: WordStudy[];
 }
 
-export function useSearch(query: string) {
+export function useSearch(
+  query: string,
+  testament?: 'ot' | 'nt' | null,
+  bookId?: string | null,
+) {
   const [results, setResults] = useState<SearchResults>({ verses: [], people: [], wordStudies: [] });
   const [isLoading, setIsLoading] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -40,7 +44,7 @@ export function useSearch(query: string) {
 
         const lower = trimmed.toLowerCase();
         const [verses, rawPeople] = await Promise.all([
-          searchVerses(trimmed, 20),
+          searchVerses(trimmed, 20, testament, bookId),
           searchPeople(trimmed),
         ]);
 
@@ -81,7 +85,7 @@ export function useSearch(query: string) {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [query]);
+  }, [query, testament, bookId]);
 
   return { results, isLoading };
 }
