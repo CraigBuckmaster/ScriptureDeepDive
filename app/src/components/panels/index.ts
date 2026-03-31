@@ -20,5 +20,9 @@ export { TextualPanel } from './TextualPanel';
 export { DebatePanel } from './DebatePanel';
 export { DiscoursePanel } from './DiscoursePanel';
 
+// Infrastructure
+export { TabbedPanelRenderer } from './TabbedPanelRenderer';
+export type { TabConfig } from './TabbedPanelRenderer';
+
 // Dispatch
 export { PanelRenderer } from './PanelRenderer';

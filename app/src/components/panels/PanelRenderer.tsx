@@ -67,6 +67,28 @@ export function PanelRenderer({
     );
   }
 
+  /**
+   * COMPOSITE PANEL PATTERN (Phases 2-4, 8):
+   *
+   * Several panel types will evolve from single-view to tabbed composites.
+   * Detection is based on data shape, not panel_type:
+   *
+   *   hist: string → legacy single view
+   *   hist: { historical, context?, audience?, ane? } → CompositeContextPanel
+   *
+   *   cross: array → legacy single view
+   *   cross: { refs, echoes? } → CompositeConnectionsPanel
+   *
+   *   lit: { rows, note } → legacy single view
+   *   lit: { rows, note, chiasm? } → adds Chiasm View tab
+   *
+   *   tx: array → legacy single view
+   *   tx: { notes, stories? } → adds Manuscript Stories tab
+   *
+   * This pattern ensures full backward compatibility — old data renders
+   * unchanged, new data lights up additional tabs automatically.
+   */
+
   // ── Section-level panels ──
   switch (panelType) {
     case 'heb':
