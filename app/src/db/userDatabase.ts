@@ -184,6 +184,22 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_reading_streaks_date ON reading_streaks(date);
     `,
   },
+  {
+    version: 5,
+    description: 'Highlight collections and extended highlight columns',
+    sql: `
+      CREATE TABLE IF NOT EXISTS highlight_collections (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        color TEXT NOT NULL,
+        created_at TEXT DEFAULT (datetime('now')),
+        sort_order INTEGER DEFAULT 0
+      );
+
+      ALTER TABLE verse_highlights ADD COLUMN collection_id TEXT;
+      ALTER TABLE verse_highlights ADD COLUMN note TEXT;
+    `,
+  },
 ];
 
 /**

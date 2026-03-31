@@ -1,22 +1,21 @@
 /**
- * HighlightColorPicker — 5 color circles + remove option.
- * Triggered by long-pressing verse text.
+ * HighlightColorPicker — 6 color circles + remove option.
+ * Modal popup triggered by long-press → Highlight action.
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { base, spacing, radii, fontFamily } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
-const HIGHLIGHT_COLORS = [
+export const HIGHLIGHT_COLORS = [
   { name: 'gold', hex: '#bfa050', label: 'Key verses' },
-  { name: 'blue', hex: '#5a7ab0', label: 'Commands' },
-  { name: 'green', hex: '#4a8a5a', label: 'Prayers' },
-  { name: 'pink', hex: '#c04a6a', label: 'Prophecy' },
-  { name: 'purple', hex: '#8a5ab0', label: 'Study later' },
+  { name: 'blue', hex: '#5b8fb9', label: 'Commands' },
+  { name: 'green', hex: '#5fa87a', label: 'Prayers' },
+  { name: 'purple', hex: '#8b7cb8', label: 'Study later' },
+  { name: 'coral', hex: '#c47a6a', label: 'Prophecy' },
+  { name: 'teal', hex: '#5ba8a0', label: 'Themes' },
 ];
-
-export { HIGHLIGHT_COLORS };
 
 interface Props {
   visible: boolean;
@@ -28,38 +27,36 @@ interface Props {
 export function HighlightColorPicker({ visible, currentColor, onSelect, onClose }: Props) {
   return (
     <Modal visible={visible} transparent animationType="fade">
-      <TouchableOpacity style={{ flex: 1, backgroundColor: '#00000066', justifyContent: 'center', alignItems: 'center' }} activeOpacity={1} onPress={onClose}>
-        <View style={{
-          backgroundColor: base.bgElevated, borderRadius: radii.lg,
-          padding: spacing.md, borderWidth: 1, borderColor: base.border,
-          width: 260,
-        }}>
-          <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 0.5, marginBottom: spacing.sm, textAlign: 'center' }}>
-            HIGHLIGHT COLOR
-          </Text>
+      <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose}>
+        <View style={styles.card}>
+          <Text style={styles.label}>HIGHLIGHT COLOR</Text>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'center', gap: spacing.md, marginBottom: spacing.md }}>
-            {HIGHLIGHT_COLORS.map((c) => (
-              <TouchableOpacity
-                key={c.name}
-                onPress={() => { selectionFeedback(); onSelect(c.name); onClose(); }}
-                style={{
-                  width: 36, height: 36, borderRadius: 18,
-                  backgroundColor: c.hex + '60',
-                  borderWidth: currentColor === c.name ? 3 : 1,
-                  borderColor: currentColor === c.name ? c.hex : c.hex + '40',
-                  justifyContent: 'center', alignItems: 'center',
-                }}
-                accessibilityLabel={`${c.label} (${c.name})`}
-              >
-                {currentColor === c.name && <Text style={{ color: '#fff', fontSize: 14 }}>✓</Text>}
-              </TouchableOpacity>
-            ))}
+          <View style={styles.colorRow}>
+            {HIGHLIGHT_COLORS.map((c) => {
+              const isActive = currentColor === c.name;
+              return (
+                <TouchableOpacity
+                  key={c.name}
+                  onPress={() => { selectionFeedback(); onSelect(c.name); onClose(); }}
+                  style={[
+                    styles.circle,
+                    { backgroundColor: c.hex + '60', borderColor: isActive ? c.hex : c.hex + '40' },
+                    isActive && styles.circleActive,
+                  ]}
+                  accessibilityLabel={`${c.label} (${c.name})`}
+                >
+                  {isActive && <Text style={styles.checkmark}>✓</Text>}
+                </TouchableOpacity>
+              );
+            })}
           </View>
 
           {currentColor && (
-            <TouchableOpacity onPress={() => { onSelect(null); onClose(); }} style={{ alignSelf: 'center' }}>
-              <Text style={{ color: base.textMuted, fontSize: 12 }}>Remove highlight</Text>
+            <TouchableOpacity
+              onPress={() => { onSelect(null); onClose(); }}
+              style={styles.removeButton}
+            >
+              <Text style={styles.removeLabel}>Remove highlight</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -67,3 +64,57 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
     </Modal>
   );
 }
+
+const styles = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.lg,
+    padding: spacing.md,
+    borderWidth: 1,
+    borderColor: base.border,
+    width: 280,
+  },
+  label: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 10,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+    textAlign: 'center',
+  },
+  colorRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: spacing.sm + 2,
+    marginBottom: spacing.md,
+  },
+  circle: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circleActive: {
+    borderWidth: 3,
+  },
+  checkmark: {
+    color: '#fff',
+    fontSize: 14,
+  },
+  removeButton: {
+    alignSelf: 'center',
+  },
+  removeLabel: {
+    color: base.textMuted,
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+  },
+});

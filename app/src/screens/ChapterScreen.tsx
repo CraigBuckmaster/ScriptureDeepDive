@@ -33,6 +33,8 @@ import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
 import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
+import { HighlightColorPicker, HIGHLIGHT_COLORS } from '../components/HighlightColorPicker';
+import { setHighlight, removeHighlight, getHighlightsForChapter, type VerseHighlight } from '../db/user';
 import { TranslationPicker } from '../components/TranslationPicker';
 import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
@@ -64,6 +66,8 @@ export default function ChapterScreen() {
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
   const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
   const [interlinearVerse, setInterlinearVerse] = useState<number | null>(null);
+  const [colorPickerOpen, setColorPickerOpen] = useState(false);
+  const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
 
   const {
     chapter, sections, verses, vhlGroups,
@@ -128,6 +132,12 @@ export default function ChapterScreen() {
   useEffect(() => {
     if (bookId && chapterNum) recordVisit(bookId, chapterNum);
   }, [bookId, chapterNum]);
+
+  // Load highlights
+  const loadHighlights = useCallback(() => {
+    if (bookId) getHighlightsForChapter(bookId, chapterNum).then(setHighlights);
+  }, [bookId, chapterNum]);
+  useEffect(() => { loadHighlights(); }, [loadHighlights]);
 
   // Scroll to top on chapter change + reset progress + stop TTS
   useEffect(() => {
@@ -420,6 +430,33 @@ export default function ChapterScreen() {
           setNoteVerseNum(longPress.verseNum);
           toggleNotes();
         } : undefined}
+        onHighlight={() => setColorPickerOpen(true)}
+        highlightColor={longPress
+          ? HIGHLIGHT_COLORS.find((c) => c.name === highlights.find(
+              (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
+            )?.color)?.hex ?? null
+          : null}
+      />
+
+      <HighlightColorPicker
+        visible={colorPickerOpen}
+        currentColor={longPress
+          ? highlights.find(
+              (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
+            )?.color ?? null
+          : null}
+        onSelect={async (color) => {
+          if (!longPress) return;
+          const ref = `${bookId}_${chapterNum}:${longPress.verseNum}`;
+          if (color) {
+            await setHighlight(ref, color);
+          } else {
+            await removeHighlight(ref);
+          }
+          loadHighlights();
+          setLongPress(null);
+        }}
+        onClose={() => setColorPickerOpen(false)}
       />
     </View>
   );

@@ -187,13 +187,28 @@ export interface VerseHighlight {
   verse_ref: string;
   color: string;
   created_at: string;
+  collection_id: string | null;
+  note: string | null;
 }
 
-export async function setHighlight(verseRef: string, color: string): Promise<void> {
+export interface HighlightCollection {
+  id: string;
+  name: string;
+  color: string;
+  created_at: string;
+  sort_order: number;
+}
+
+export async function setHighlight(
+  verseRef: string,
+  color: string,
+  collectionId?: string | null,
+  note?: string | null,
+): Promise<void> {
   await getUserDb().runAsync(
-    `INSERT INTO verse_highlights (verse_ref, color) VALUES (?, ?)
-     ON CONFLICT(verse_ref) DO UPDATE SET color = ?, created_at = datetime('now')`,
-    [verseRef, color, color]
+    `INSERT INTO verse_highlights (verse_ref, color, collection_id, note) VALUES (?, ?, ?, ?)
+     ON CONFLICT(verse_ref) DO UPDATE SET color = ?, collection_id = ?, note = ?, created_at = datetime('now')`,
+    [verseRef, color, collectionId ?? null, note ?? null, color, collectionId ?? null, note ?? null]
   );
 }
 
@@ -206,6 +221,37 @@ export async function getHighlightsForChapter(bookId: string, ch: number): Promi
     "SELECT * FROM verse_highlights WHERE verse_ref LIKE ?",
     [`${chapterPrefix(bookId, ch)}%`]
   );
+}
+
+export async function getAllHighlights(): Promise<VerseHighlight[]> {
+  return getUserDb().getAllAsync<VerseHighlight>(
+    "SELECT * FROM verse_highlights ORDER BY created_at DESC"
+  );
+}
+
+// ── Highlight Collections ────────────────────────────────────────────
+
+export async function getHighlightCollections(): Promise<HighlightCollection[]> {
+  return getUserDb().getAllAsync<HighlightCollection>(
+    "SELECT * FROM highlight_collections ORDER BY sort_order, name"
+  );
+}
+
+export async function createHighlightCollection(
+  id: string, name: string, color: string
+): Promise<void> {
+  await getUserDb().runAsync(
+    "INSERT INTO highlight_collections (id, name, color) VALUES (?, ?, ?)",
+    [id, name, color]
+  );
+}
+
+export async function deleteHighlightCollection(id: string): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE verse_highlights SET collection_id = NULL WHERE collection_id = ?",
+    [id]
+  );
+  await getUserDb().runAsync("DELETE FROM highlight_collections WHERE id = ?", [id]);
 }
 
 // ── Reading Plans ───────────────────────────────────────────────────

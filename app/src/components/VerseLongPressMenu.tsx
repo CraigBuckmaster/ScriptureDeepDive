@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
 } from 'react-native';
-import { Copy, Share2, BookOpen } from 'lucide-react-native';
+import { Copy, Share2, BookOpen, Highlighter } from 'lucide-react-native';
 import { base, spacing, radii, fontFamily } from '../theme';
 import { copyVerse, shareVerse } from '../utils/shareVerse';
 import { logger } from '../utils/logger';
@@ -26,10 +26,12 @@ interface Props {
   translation?: string;
   onClose: () => void;
   onAddNote?: () => void;
+  onHighlight?: () => void;
+  highlightColor?: string | null;
 }
 
 export function VerseLongPressMenu({
-  visible, verseText, verseRef, translation, onClose, onAddNote,
+  visible, verseText, verseRef, translation, onClose, onAddNote, onHighlight, highlightColor,
 }: Props) {
   const [copyFeedback, setCopyFeedback] = useState(false);
 
@@ -91,6 +93,13 @@ export function VerseLongPressMenu({
                 <Share2 size={18} color={base.textDim} />
                 <Text style={styles.actionText}>Share</Text>
               </TouchableOpacity>
+
+              {onHighlight && (
+                <TouchableOpacity style={styles.action} onPress={() => { onClose(); onHighlight(); }} activeOpacity={0.7}>
+                  <Highlighter size={18} color={highlightColor ? highlightColor : base.textDim} />
+                  <Text style={styles.actionText}>{highlightColor ? 'Change Highlight' : 'Highlight'}</Text>
+                </TouchableOpacity>
+              )}
 
               {onAddNote && (
                 <TouchableOpacity style={styles.action} onPress={handleNote} activeOpacity={0.7}>
