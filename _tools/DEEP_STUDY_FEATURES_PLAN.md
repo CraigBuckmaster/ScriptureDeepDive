@@ -1723,9 +1723,153 @@ ORDER BY ...                    -- relevance or book_order + chapter + verse
 
 ---
 
+# PREMIUM INFRASTRUCTURE — Phase P (Companion+)
+
+> **EXECUTE THIS PHASE BEFORE Phase 19.** All prior deep study features (Phases 0-18) have shipped.
+> This phase wires the premium subscription system and gates features per the "Taste the Depth" strategy.
+> Full spec: `_tools/PREMIUM_TIER_SPEC.md`
+
+## Strategy Summary
+
+**Free tier:** 2 curated scholars per section + hist + heb + cross panels + all Explore tools (browse-level) + maps/timeline/genealogy (full) + 3 highlight colors + 5 reading plans + basic TTS + full offline.
+
+**Companion+ ($4.99/mo · $39.99/yr · $99.99 lifetime):** All 54 scholars + interlinear + concordance + cross-ref threading + difficult passage responses + chiasm + discourse + genre guidance + study coaching + study depth + allusion mapping + manuscript stories + progressive revelation depth + unlimited highlights + all 10 plans + sync + premium TTS + PDF export + verse image cards.
+
+**No free trial.** The free tier is the trial.
+
+---
+
+## Phase P1 — Premium Store & Prompt Infrastructure
+
+**Session: Dedicated session before Phase 19. ~1 full session.**
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/stores/premiumStore.ts` | Zustand store: `isPremium`, `purchaseType`, `expiresAt`, `checkPremiumStatus()`, `restorePurchase()` |
+| `app/src/services/purchases.ts` | RevenueCat SDK wrapper (or expo-in-app-purchases). Configure 3 products: monthly, annual, lifetime. Handle purchase flow, receipt validation, status restore. |
+| `app/src/hooks/usePremium.ts` | `const { isPremium, showUpgrade } = usePremium()` — single hook consumed everywhere. `showUpgrade(variant)` triggers the prompt with the correct copy. |
+| `app/src/components/UpgradePrompt.tsx` | Reusable bottom-sheet modal. Props: `variant` ('scholar' \| 'feature' \| 'personal' \| 'explore'), `featureName`, `featureDescription`. Gold accent, Cinzel header, 3 plan buttons, restore link, dismiss button. See `_tools/PREMIUM_TIER_SPEC.md` §4 for prompt wireframes. |
+| `app/src/screens/SubscriptionScreen.tsx` | Full subscription management screen. Plan selection (monthly/annual/lifetime highlighted), feature list, subscribe button, restore purchases, cancellation info. Accessible from Settings and from UpgradePrompt "Learn more." |
+| `app/src/utils/scholarSelection.ts` | `selectFreeScholars(panels: Record<string, any>): string[]` — returns the 2 scholar IDs that are free for a given section. Algorithm: pick one evangelical (priority: `mac` > `net` > `netbible`) + one diverse (priority: `sarna` > `alter` > `calvin` > `chrysostom` > `robertson`). If section has ≤2 scholar panels, all are free. |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/screens/SettingsScreen.tsx` | Add "Companion+" row showing subscription status. Tap → SubscriptionScreen. |
+| `app/src/stores/index.ts` | Export premiumStore |
+| `app/src/navigation/types.ts` | Add Subscription route to MoreStack |
+
+### Dependencies to install
+
+```bash
+cd app
+npx expo install react-native-purchases  # RevenueCat SDK
+```
+
+RevenueCat is free until $2.5K MRR, then 1%. Handles receipt validation, subscription status, analytics, cross-platform.
+
+**Alternative:** `expo-in-app-purchases` (free, but requires manual receipt validation and status management).
+
+### Implementation steps
+
+1. Install RevenueCat SDK
+2. Create `premiumStore.ts` with Zustand — persist premium status locally, sync with RevenueCat on app launch
+3. Create `usePremium.ts` hook
+4. Create `UpgradePrompt.tsx` bottom-sheet with 4 variant layouts (scholar, feature, personal, explore)
+5. Create `SubscriptionScreen.tsx` with plan selection
+6. Create `scholarSelection.ts` with the 2-scholar algorithm
+7. Add Companion+ row to SettingsScreen
+8. Add Subscription route to navigation
+9. Test: mock `isPremium = false`, verify prompt appears. Mock `isPremium = true`, verify full access.
+
+### Effort: 1 full session
+
+---
+
+## Phase P2 — Gate Wiring (Retroactive + Forward)
+
+**Session: Same session as P1 or immediately following. ~1 session.**
+
+This phase adds premium checks to ALL features that are gated. Most of these features already exist (Phases 0-18 shipped). This phase adds the `isPremium` checks.
+
+### Scholar gating (the conversion engine)
+
+| File | Change |
+|------|--------|
+| `app/src/components/PanelButton.tsx` | Add `locked` prop. When `locked=true`: show small 🔒 icon overlay, tap triggers `showUpgrade('scholar')` instead of panel toggle. Visual: same pill shape, same scholar color, but dimmed with lock icon. |
+| `app/src/components/SectionBlock.tsx` | Import `usePremium` + `selectFreeScholars`. For each section, compute free scholars. Pass `locked={!isPremium && !freeScholars.includes(scholarId)}` to scholar PanelButtons. |
+| `app/src/components/ScholarlyBlock.tsx` | Same pattern for chapter-level scholar panels. |
+
+### Feature gating (completed features)
+
+| Feature (Phase) | File to modify | Gate logic |
+|---|---|---|
+| Interlinear (P13) | `InterlinearSheet.tsx` or wherever interlinear triggers | If `!isPremium`, show UpgradePrompt('feature') with name "Interlinear Hebrew & Greek" instead of opening interlinear. |
+| Cross-ref threading (P3) | `CompositeConnectionsPanel.tsx` | If `!isPremium`, hide the "Threads" tab or show upgrade prompt on tab tap. Basic cross-refs panel stays free. |
+| Chiasm view (P4) | `ChiasmView.tsx` or `LiteraryStructurePanel.tsx` | If `!isPremium`, show UpgradePrompt('feature') instead of rendering chiasm. Basic literary structure stays free. |
+| Genre banner (P5) | `GenreBanner.tsx` | If `!isPremium`, don't render GenreBanner. (It's an ambient premium perk, not a blocking gate.) |
+| Study depth dots (P6) | `DepthDots.tsx` | If `!isPremium`, don't render DepthDots. |
+| Study coaching (P7) | `StudyCoachCard.tsx` | If `!isPremium`, don't render StudyCoachCards. |
+| Textual / manuscript (P8) | `TextualPanel.tsx` | If `!isPremium`, show UpgradePrompt('feature') for manuscript stories tab. Basic textual notes stay free. |
+| Progressive revelation (P9) | `ConceptDetailScreen.tsx` | If `!isPremium`, show concept overview (free) but gate the journey/progression view. |
+| Allusion mapping (P3) | `EchoesView.tsx` | If `!isPremium`, show UpgradePrompt('feature'). |
+| Discourse analysis | `DiscoursePanel.tsx` | If `!isPremium`, show UpgradePrompt('feature'). |
+| Difficult passages | `DifficultPassageDetailScreen.tsx` | If `!isPremium`, show question + consensus (free) but gate scholarly responses section. |
+
+### Explore tool gating
+
+| Feature | Free experience | Premium gate |
+|---|---|---|
+| Prophecy chains | Browse all 50, see chain overview | Detail view (per-link analysis) gated |
+| Word studies | Browse all 43, see basic definition | Full lexicon + occurrence map gated |
+| Concept explorer | Browse all 20, see description + key verses | Journey/progression view gated |
+| Difficult passages | Browse all 53, see question + consensus | Scholarly responses gated |
+
+### Personal feature gating
+
+| File | Change |
+|------|--------|
+| `HighlightColorPicker.tsx` | Show 3 colors free. Colors 4-5+ show lock icon. Tap → UpgradePrompt('personal'). |
+| (Phase 23 plans) | 5 plans free, 5 premium. PlanListScreen shows premium plans with lock. |
+| `TTSControls.tsx` | Basic voice free. Premium voice selector gated. |
+
+### HomeScreen upsell (subtle)
+
+| File | Change |
+|------|--------|
+| `useHomeData.ts` | After `readingStats.totalChapters >= 5` AND `!isPremium`, include a `companionPlusCard` in home data. |
+| `HomeScreen.tsx` | Render a subtle gold-bordered card: "Unlock all 54 scholars and every study tool — Companion+" with dismiss. Show max once per session. |
+
+### Implementation steps
+
+1. Wire scholar gating in SectionBlock + ScholarlyBlock + PanelButton
+2. Wire feature gates for each completed phase (interlinear, chiasm, threading, etc.)
+3. Wire Explore depth gates (prophecy detail, word study detail, concept journey, difficult passage responses)
+4. Wire personal gates (highlight colors, plans, TTS)
+5. Add HomeScreen upsell card logic
+6. Test all gates with `isPremium = false`: verify every gate shows appropriate UpgradePrompt
+7. Test with `isPremium = true`: verify all features fully accessible, no prompts shown
+8. Verify free tier still delivers: 2 scholars per section, hist/heb/cross panels, all Explore browse, maps/timeline/genealogy full, search, notes, bookmarks
+
+### Effort: 1 full session
+
+### Commit convention
+
+```
+feat(premium): Phase P1 — subscription infrastructure (store, hooks, RevenueCat, prompts)
+feat(premium): Phase P2 — gate wiring for scholars, study tools, explore depth, personal features
+```
+
+---
+
 ## Phase 19 — Highlight UX Polish
 
 **Goal:** Enhance verse highlighting with multi-color management, organized collections, and export.
+
+**⚠ PREMIUM GATE:** Free users get 3 highlight colors. Companion+ unlocks unlimited colors + collections + export. The `HighlightColorPicker` must check `isPremium` from Phase P2 — colors beyond the first 3 show a lock icon and tap triggers UpgradePrompt('personal'). The HighlightBrowseScreen and export features are Companion+ only.
 
 **Current state:** 5 named colors (gold/Key verses, blue/Commands, green/Prayers, pink/Prophecy, purple/Study later). HighlightColorPicker is a modal with color circles. Highlights stored in `verse_highlights` table in user.db. No way to view all highlights by color, no export.
 
@@ -1855,6 +1999,8 @@ interface Recommendation {
 
 **⚠ Depends on Phase 13.** Cannot be implemented until interlinear_words table exists.
 
+**⚠ PREMIUM GATE:** Concordance search is a Companion+ feature. The ConcordanceScreen entry point (from Explore menu or from interlinear word tap) must check `isPremium`. If `!isPremium`, show `UpgradePrompt('feature')` with name "Concordance Search" and description "Find every verse where a Hebrew or Greek word appears across the entire Bible."
+
 ### Integration with Phase 13
 
 Phase 13 gives us a `interlinear_words` table with Strong's numbers per word. Concordance search queries this table:
@@ -1914,6 +2060,8 @@ ORDER BY b.book_order, iw.chapter_num, iw.verse_num
 
 **Current state:** DiscoursePanel exists with data for Romans 1-16. The component is done — this is a pure content generation phase.
 
+**⚠ PREMIUM GATE:** Discourse analysis is a Companion+ feature (gated in Phase P2 via DiscoursePanel). New content generated here is automatically premium — no additional gating code needed.
+
 ### Content scope
 
 | Book | Chapters | Priority |
@@ -1964,24 +2112,28 @@ chapter_panels['discourse'] = {
 
 ## Phase 23 — Curated Study Plans
 
-**Goal:** Create 5-10 reading plans that leverage CS's unique features, and seed them into the reading_plans table.
+**Goal:** Create 10 reading plans that leverage CS's unique features, and seed them into the reading_plans table.
 
 **Current state:** `reading_plans` table exists in user.db (migration 1) but is empty. PlanListScreen and PlanDetailScreen UI exists and works. No plans are seeded.
 
+**⚠ PREMIUM GATE:** 5 plans are free, 5 are Companion+. Plans that leverage premium features (all scholars, discourse, prophecy chain depth, difficult passage responses) are premium. PlanListScreen must show premium plans with a lock icon and "Companion+" badge. Tapping a locked plan → UpgradePrompt('feature') with name "Premium Reading Plans."
+
 ### Plan concepts (leveraging CS differentiators)
 
-| Plan | Days | Unique angle |
-|------|------|-------------|
-| Genesis Deep Dive | 14 | Each day: read chapter + explore one panel type (Day 1: Gen 1 + ANE parallels, Day 2: Gen 2 + word study) |
-| Covenant Journey | 10 | Traces covenant concept progressively: Gen 9 → Gen 15 → Exod 19 → 2 Sam 7 → Jer 31 → Heb 8 |
-| Prophecy Fulfilled | 12 | Follows 12 prophecy chains from OT promise to NT fulfillment |
-| The Difficult Questions | 10 | 10 difficult passages, one per day, with all scholarly perspectives |
-| Paul's Arguments | 14 | Romans + Galatians with discourse panels — learn how Paul builds an argument |
-| Psalms of Lament | 7 | 7 lament psalms with genre guidance and literary structure |
-| The Life of David | 10 | 1-2 Samuel chapters with people bios, maps, and timeline links |
-| Creation to Covenant | 21 | Genesis 1-50 at ~2.5 chapters/day with full panel exploration |
-| Meet the Scholars | 7 | 7 chapters, each day featuring a different scholar tradition |
-| Hebrew Word Treasures | 10 | 10 chapters paired with key Hebrew word studies |
+| Plan | Days | Unique angle | Tier |
+|------|------|-------------|------|
+| Genesis Deep Dive | 14 | Each day: read chapter + explore one panel type | **Free** |
+| Covenant Journey | 10 | Traces covenant concept: Gen 9 → Gen 15 → Exod 19 → 2 Sam 7 → Jer 31 → Heb 8 | **Free** |
+| Psalms of Lament | 7 | 7 lament psalms with literary structure | **Free** |
+| The Life of David | 10 | 1-2 Samuel with people bios, maps, and timeline | **Free** |
+| Creation to Covenant | 21 | Genesis 1-50 at ~2.5 chapters/day | **Free** |
+| Prophecy Fulfilled | 12 | Follows 12 prophecy chains from OT promise to NT fulfillment | **Companion+** |
+| The Difficult Questions | 10 | 10 difficult passages, one per day, with all scholarly perspectives | **Companion+** |
+| Paul's Arguments | 14 | Romans + Galatians with discourse panels | **Companion+** |
+| Meet the Scholars | 7 | 7 chapters, each featuring a different scholar tradition (all 54 unlocked) | **Companion+** |
+| Hebrew Word Treasures | 10 | 10 chapters paired with deep word studies + interlinear | **Companion+** |
+
+Add `is_premium: boolean` field to reading plan seed data. PlanListScreen reads this field to show lock/badge.
 
 ### Data shape
 
