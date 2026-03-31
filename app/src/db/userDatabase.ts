@@ -171,6 +171,19 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_study_depth_chapter ON study_depth(chapter_id);
     `,
   },
+  {
+    version: 4,
+    description: 'Reading streaks table for daily engagement tracking',
+    sql: `
+      CREATE TABLE IF NOT EXISTS reading_streaks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        date TEXT NOT NULL UNIQUE,
+        chapters_read INTEGER NOT NULL DEFAULT 0,
+        books_touched TEXT
+      );
+      CREATE INDEX IF NOT EXISTS idx_reading_streaks_date ON reading_streaks(date);
+    `,
+  },
 ];
 
 /**
