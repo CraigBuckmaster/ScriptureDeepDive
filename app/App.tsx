@@ -7,7 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 
-import { FONT_MAP, base } from './src/theme';
+import { FONT_MAP, base, ThemeProvider } from './src/theme';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore } from './src/stores';
@@ -67,12 +67,14 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutReady}>
-      <NavigationContainer theme={navTheme}>
-        <ErrorBoundary>
-          <RootNavigator />
-        </ErrorBoundary>
-      </NavigationContainer>
-      <StatusBar style="light" />
+      <ThemeProvider>
+        <NavigationContainer theme={navTheme}>
+          <ErrorBoundary>
+            <RootNavigator />
+          </ErrorBoundary>
+        </NavigationContainer>
+        <StatusBar style="light" />
+      </ThemeProvider>
     </GestureHandlerRootView>
   );
 }

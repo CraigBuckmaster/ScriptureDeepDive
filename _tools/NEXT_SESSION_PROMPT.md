@@ -68,6 +68,21 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ---
 
+### Theme System
+
+| Batch | Description | Status |
+|-------|-------------|--------|
+| T1 | Infrastructure (provider, hook, palettes, transforms) | **Complete** |
+| T2 | Navigation + chrome migration (~8 files) | **Complete** |
+| T3 | Screens migration (~30 files) | **Complete** |
+| T4 | Components migration (~82 files) | **Complete** |
+| T5 | Settings UI (ThemePicker) | **Complete** |
+| T6 | Legacy cleanup | Planned |
+
+**T1–T5 complete.** Full theme system is live. All 128+ files migrated to `useTheme()`. ThemePicker in Settings allows switching between Dark/Sepia/Light/System. Next: T6 (remove legacy static `base` export, internalize `colors.ts`).
+
+---
+
 ## What's Next
 
 1. **Deep Study Features Phase 22** — Discourse Analysis Expansion (Galatians, Ephesians, Hebrews, 1 Corinthians)
