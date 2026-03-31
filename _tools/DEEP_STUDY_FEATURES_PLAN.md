@@ -48,6 +48,45 @@ This plan is **purely additive**. Every existing feature on the chapter page is 
 
 ---
 
+## PRE-LAUNCH DEPENDENCY — Translation Licensing
+
+**Status: BLOCKING for premium tier launch. Must be resolved before any paid features go live.**
+
+CS currently displays NIV and ESV verse text in a free app. Once a paid tier (Companion+) exists, the app is considered **commercial** regardless of whether translations are in the free tier.
+
+### NIV (Biblica)
+
+Biblica's General Use Guidelines explicitly state non-commercial means: *"no sales, subscriptions, advertising, monetization, or commercial exploitation of any kind."* A freemium app with a paid tier does NOT qualify as non-commercial.
+
+**Action required:**
+1. Submit a Permission Request Form at `biblica.com/permissions/`
+2. Full-text digital licensing requires a **registered legal entity** (not an individual)
+3. Royalty fees are case-by-case — expect a response within 10 business days
+4. Alternative: API.Bible (American Bible Society) offers express commercial licensing starting at **$10/month per translation**
+
+### ESV (Crossway)
+
+ESV API terms state "free for non-commercial use." Commercial use requires separate permission.
+
+**Action required:**
+1. Contact Crossway permissions for commercial app licensing
+2. Or use API.Bible's express licensing ($10/month)
+
+### Options
+
+| Option | NIV Cost | ESV Cost | Complexity |
+|--------|----------|----------|------------|
+| Direct publisher licenses | Case-by-case royalty | Case-by-case | Requires legal entity, negotiation |
+| API.Bible commercial tier | ~$10/month | ~$10/month | Simpler — express licensing, API integration |
+| Move NIV/ESV to premium only | $0 (not distributed in free tier) | $0 | Weakens free tier significantly |
+| Keep free tier, launch premium WITHOUT translations change | ⚠ Risk | ⚠ Risk | May violate current license terms |
+
+**Recommendation:** Apply to Biblica and Crossway directly first. If the process is slow or costly, API.Bible at $20/month total for both translations is a clean fallback. Do NOT launch a paid tier without resolving this — the publishers actively enforce licensing terms.
+
+**Timeline:** Start this process NOW. It can take 2-4 weeks for responses. Don't let it become the bottleneck when the code is ready.
+
+---
+
 ## Phase 0 — Chapter Panel Categorization
 
 **Goal:** Group the existing 10-11 chapter-level buttons into 3 labeled categories. Zero functionality change, pure UX improvement.
