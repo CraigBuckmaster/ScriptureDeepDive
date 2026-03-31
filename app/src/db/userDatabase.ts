@@ -156,6 +156,21 @@ const MIGRATIONS: Migration[] = [
       INSERT INTO notes_fts(notes_fts) VALUES('rebuild');
     `,
   },
+  {
+    version: 3,
+    description: 'Study depth tracking — records which panels a user has opened per section',
+    sql: `
+      CREATE TABLE IF NOT EXISTS study_depth (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        chapter_id TEXT NOT NULL,
+        section_id TEXT NOT NULL,
+        panel_type TEXT NOT NULL,
+        first_opened_at TEXT NOT NULL DEFAULT (datetime('now')),
+        UNIQUE(section_id, panel_type)
+      );
+      CREATE INDEX IF NOT EXISTS idx_study_depth_chapter ON study_depth(chapter_id);
+    `,
+  },
 ];
 
 /**

@@ -40,8 +40,8 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 2 | Context Hub (hist+ctx merge → tabbed composite) | **Complete** |
 | 3 | Connections Hub (cross → tabbed with echoes slot) | **Complete** |
 | 4 | Literary Structure upgrade (chiasm view) | **Complete** |
-| 5 | Genre Guidance Banner | Next |
-| 6 | Depth Indicator Dots | Next |
+| 5 | Genre Guidance Banner | **Complete** |
+| 6 | Depth Indicator Dots | **Complete** |
 | 7-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
@@ -56,7 +56,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 5 + 6** — Genre Guidance Banner + Depth Indicator Dots
+1. **Deep Study Features Phase 7+** — See `_tools/DEEP_STUDY_FEATURES_PLAN.md` for next phases
 3. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 4. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 5. **Cross-reference thread expansion** (Batch 13)

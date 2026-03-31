@@ -16,6 +16,9 @@ export interface Book {
   total_chapters: number;
   book_order: number;
   is_live: boolean;
+  genre?: string;
+  genre_label?: string;
+  genre_guidance?: string;
 }
 
 export interface Chapter {

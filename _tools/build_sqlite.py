@@ -91,7 +91,10 @@ CREATE TABLE books (
   testament TEXT NOT NULL,
   total_chapters INTEGER NOT NULL,
   book_order INTEGER NOT NULL,
-  is_live BOOLEAN DEFAULT 0
+  is_live BOOLEAN DEFAULT 0,
+  genre TEXT,
+  genre_label TEXT,
+  genre_guidance TEXT
 );
 
 CREATE TABLE chapters (
@@ -336,10 +339,10 @@ def populate_books(cur):
     books = _load_json(META / 'books.json')
     for b in books:
         cur.execute(
-            'INSERT INTO books (id, name, testament, total_chapters, book_order, is_live) '
-            'VALUES (?, ?, ?, ?, ?, ?)',
+            'INSERT INTO books (id, name, testament, total_chapters, book_order, is_live, genre, genre_label, genre_guidance) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (b['id'], b['name'], b['testament'], b['total_chapters'],
-             b['book_order'], b['is_live'])
+             b['book_order'], b['is_live'], b.get('genre'), b.get('genre_label'), b.get('genre_guidance'))
         )
     return len(books)
 

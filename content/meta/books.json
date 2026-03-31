@@ -5,7 +5,10 @@
     "testament": "ot",
     "total_chapters": 50,
     "book_order": 1,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Structured around toledot formulas · ANE counter-narrative · Focus on who and why, not how and when"
   },
   {
     "id": "exodus",
@@ -13,7 +16,10 @@
     "testament": "ot",
     "total_chapters": 40,
     "book_order": 2,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Liberation and covenant formation · Tabernacle instructions mirror creation · God dwelling with his people"
   },
   {
     "id": "leviticus",
@@ -21,7 +27,10 @@
     "testament": "ot",
     "total_chapters": 27,
     "book_order": 3,
-    "is_live": true
+    "is_live": true,
+    "genre": "law",
+    "genre_label": "Ritual Law",
+    "genre_guidance": "Holiness code for covenant life · Symbolic actions with theological meaning · Access to God through prescribed means"
   },
   {
     "id": "numbers",
@@ -29,7 +38,10 @@
     "testament": "ot",
     "total_chapters": 36,
     "book_order": 4,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Census frames and wilderness journey · Rebellion and consequence cycles · God's faithfulness despite Israel's failure"
   },
   {
     "id": "deuteronomy",
@@ -37,7 +49,10 @@
     "testament": "ot",
     "total_chapters": 34,
     "book_order": 5,
-    "is_live": true
+    "is_live": true,
+    "genre": "law",
+    "genre_label": "Covenant Law",
+    "genre_guidance": "Treaty-form structure (ANE suzerainty pattern) · Moses' farewell sermons · Blessings and curses as covenant sanctions"
   },
   {
     "id": "joshua",
@@ -45,7 +60,10 @@
     "testament": "ot",
     "total_chapters": 24,
     "book_order": 6,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Conquest and land distribution · Fulfillment of promise theology · Holy war genre conventions"
   },
   {
     "id": "judges",
@@ -53,7 +71,10 @@
     "testament": "ot",
     "total_chapters": 21,
     "book_order": 7,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Cyclical decline pattern · Anti-hero narratives · \"No king in Israel\" refrain signals theological crisis"
   },
   {
     "id": "ruth",
@@ -61,7 +82,10 @@
     "testament": "ot",
     "total_chapters": 4,
     "book_order": 8,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Compact narrative art · Hesed (covenant loyalty) as central theme · Legal customs embedded in story"
   },
   {
     "id": "1_samuel",
@@ -69,7 +93,10 @@
     "testament": "ot",
     "total_chapters": 31,
     "book_order": 9,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Kingship transition narrative · Prophetic history genre · Character contrast as theological argument"
   },
   {
     "id": "2_samuel",
@@ -77,7 +104,10 @@
     "testament": "ot",
     "total_chapters": 24,
     "book_order": 10,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Davidic covenant narrative · Court history with raw honesty · Succession narrative genre"
   },
   {
     "id": "1_kings",
@@ -85,7 +115,10 @@
     "testament": "ot",
     "total_chapters": 22,
     "book_order": 11,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Regnal formula structure · Prophetic evaluation of kings · Temple as theological center"
   },
   {
     "id": "2_kings",
@@ -93,7 +126,10 @@
     "testament": "ot",
     "total_chapters": 25,
     "book_order": 12,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Regnal formula structure · Prophetic evaluation continues · Exile as covenant consequence"
   },
   {
     "id": "1_chronicles",
@@ -101,7 +137,10 @@
     "testament": "ot",
     "total_chapters": 29,
     "book_order": 13,
-    "is_live": true
+    "is_live": true,
+    "genre": "history",
+    "genre_label": "Theological History",
+    "genre_guidance": "Post-exilic retelling · Genealogies establish continuity · Temple worship and Davidic hope emphasized"
   },
   {
     "id": "2_chronicles",
@@ -109,7 +148,10 @@
     "testament": "ot",
     "total_chapters": 36,
     "book_order": 14,
-    "is_live": true
+    "is_live": true,
+    "genre": "history",
+    "genre_label": "Theological History",
+    "genre_guidance": "Temple-centered history · Retribution theology prominent · Ends with hope (Cyrus decree)"
   },
   {
     "id": "ezra",
@@ -117,7 +159,10 @@
     "testament": "ot",
     "total_chapters": 10,
     "book_order": 15,
-    "is_live": true
+    "is_live": true,
+    "genre": "history",
+    "genre_label": "Theological History",
+    "genre_guidance": "Return and rebuilding narrative · Official documents embedded · Torah obedience as restoration theme"
   },
   {
     "id": "nehemiah",
@@ -125,7 +170,10 @@
     "testament": "ot",
     "total_chapters": 13,
     "book_order": 16,
-    "is_live": true
+    "is_live": true,
+    "genre": "history",
+    "genre_label": "Theological History",
+    "genre_guidance": "First-person memoir genre · Wall-building as national renewal · Covenant renewal ceremony"
   },
   {
     "id": "esther",
@@ -133,7 +181,10 @@
     "testament": "ot",
     "total_chapters": 10,
     "book_order": 17,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Court tale genre · Providence without naming God · Reversal as literary and theological pattern"
   },
   {
     "id": "job",
@@ -141,7 +192,10 @@
     "testament": "ot",
     "total_chapters": 42,
     "book_order": 18,
-    "is_live": true
+    "is_live": true,
+    "genre": "wisdom",
+    "genre_label": "Wisdom Literature",
+    "genre_guidance": "Prose frame + poetic dialogue · Legal metaphors and theophany · Challenges retribution theology"
   },
   {
     "id": "psalms",
@@ -149,7 +203,10 @@
     "testament": "ot",
     "total_chapters": 150,
     "book_order": 19,
-    "is_live": true
+    "is_live": true,
+    "genre": "poetry",
+    "genre_label": "Hebrew Poetry",
+    "genre_guidance": "Parallelism, not rhyme, drives structure · Superscriptions provide context · Five-book division mirrors Torah"
   },
   {
     "id": "proverbs",
@@ -157,7 +214,10 @@
     "testament": "ot",
     "total_chapters": 31,
     "book_order": 20,
-    "is_live": true
+    "is_live": true,
+    "genre": "wisdom",
+    "genre_label": "Wisdom Literature",
+    "genre_guidance": "Proverbial sayings are observations, not promises · Fear of the Lord as organizing principle · Two-way theology (wisdom vs. folly)"
   },
   {
     "id": "ecclesiastes",
@@ -165,7 +225,10 @@
     "testament": "ot",
     "total_chapters": 12,
     "book_order": 21,
-    "is_live": true
+    "is_live": true,
+    "genre": "wisdom",
+    "genre_label": "Wisdom Literature",
+    "genre_guidance": "Philosophical reflection genre · Hebel (\"vapor\") as key metaphor · Frame narrator + Qoheleth's voice"
   },
   {
     "id": "song_of_solomon",
@@ -173,7 +236,10 @@
     "testament": "ot",
     "total_chapters": 8,
     "book_order": 22,
-    "is_live": true
+    "is_live": true,
+    "genre": "love_poetry",
+    "genre_label": "Love Poetry",
+    "genre_guidance": "Lyric poetry with dramatic voices · Allegory and literal readings both ancient · Celebration of embodied love"
   },
   {
     "id": "isaiah",
@@ -181,7 +247,10 @@
     "testament": "ot",
     "total_chapters": 66,
     "book_order": 23,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Judgment and salvation oracles · Servant Songs as literary peaks · Three major sections reflect different historical contexts"
   },
   {
     "id": "jeremiah",
@@ -189,7 +258,10 @@
     "testament": "ot",
     "total_chapters": 52,
     "book_order": 24,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Prose sermons + poetic oracles · Confessions reveal prophetic cost · New covenant promise as theological center"
   },
   {
     "id": "lamentations",
@@ -197,7 +269,10 @@
     "testament": "ot",
     "total_chapters": 5,
     "book_order": 25,
-    "is_live": true
+    "is_live": true,
+    "genre": "lament",
+    "genre_label": "Lament Poetry",
+    "genre_guidance": "Acrostic structures impose order on chaos · Communal grief genre · Theological honesty about suffering"
   },
   {
     "id": "ezekiel",
@@ -205,7 +280,10 @@
     "testament": "ot",
     "total_chapters": 48,
     "book_order": 26,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Vision reports + symbolic actions · Priestly perspective shapes imagery · Glory departure and return as arc"
   },
   {
     "id": "daniel",
@@ -213,7 +291,10 @@
     "testament": "ot",
     "total_chapters": 12,
     "book_order": 27,
-    "is_live": true
+    "is_live": true,
+    "genre": "apocalyptic",
+    "genre_label": "Apocalyptic",
+    "genre_guidance": "Court tales (1-6) + apocalyptic visions (7-12) · Symbolic numbers and beasts · Sovereignty of God over empires"
   },
   {
     "id": "hosea",
@@ -221,7 +302,10 @@
     "testament": "ot",
     "total_chapters": 14,
     "book_order": 28,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Marriage metaphor as theological argument · Covenant lawsuit genre · Judgment aims at restoration"
   },
   {
     "id": "joel",
@@ -229,7 +313,10 @@
     "testament": "ot",
     "total_chapters": 3,
     "book_order": 29,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Locust plague as Day of the Lord preview · Call to repentance · Spirit-outpouring promise"
   },
   {
     "id": "amos",
@@ -237,7 +324,10 @@
     "testament": "ot",
     "total_chapters": 9,
     "book_order": 30,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Social justice oracles · Oracles against nations build to Israel · Visions of judgment with restoration coda"
   },
   {
     "id": "obadiah",
@@ -245,7 +335,10 @@
     "testament": "ot",
     "total_chapters": 1,
     "book_order": 31,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Shortest OT book · Oracle against Edom · Brother-nation judgment"
   },
   {
     "id": "jonah",
@@ -253,7 +346,10 @@
     "testament": "ot",
     "total_chapters": 4,
     "book_order": 32,
-    "is_live": true
+    "is_live": true,
+    "genre": "theological_narrative",
+    "genre_label": "Theological Narrative",
+    "genre_guidance": "Prophetic narrative, not oracle collection · Satire and irony drive theology · God's compassion beyond Israel"
   },
   {
     "id": "micah",
@@ -261,7 +357,10 @@
     "testament": "ot",
     "total_chapters": 7,
     "book_order": 33,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Judgment-salvation alternation · Bethlehem oracle · \"What does the Lord require?\" as summary"
   },
   {
     "id": "nahum",
@@ -269,7 +368,10 @@
     "testament": "ot",
     "total_chapters": 3,
     "book_order": 34,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Theophanic hymn + taunt song · Oracle against Nineveh · Divine warrior imagery"
   },
   {
     "id": "habakkuk",
@@ -277,7 +379,10 @@
     "testament": "ot",
     "total_chapters": 3,
     "book_order": 35,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Prophetic dialogue with God · Complaint-and-response structure · \"The righteous shall live by faith\""
   },
   {
     "id": "zephaniah",
@@ -285,7 +390,10 @@
     "testament": "ot",
     "total_chapters": 3,
     "book_order": 36,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Day of the Lord as cosmic judgment · Universal scope then Judah focus · Remnant hope"
   },
   {
     "id": "haggai",
@@ -293,7 +401,10 @@
     "testament": "ot",
     "total_chapters": 2,
     "book_order": 37,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Dated oracles format · Temple rebuilding motivation · Present faithfulness, future glory"
   },
   {
     "id": "zechariah",
@@ -301,7 +412,10 @@
     "testament": "ot",
     "total_chapters": 14,
     "book_order": 38,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Night visions (1-8) + oracles (9-14) · Messianic imagery · Apocalyptic elements in later chapters"
   },
   {
     "id": "malachi",
@@ -309,7 +423,10 @@
     "testament": "ot",
     "total_chapters": 4,
     "book_order": 39,
-    "is_live": true
+    "is_live": true,
+    "genre": "prophecy",
+    "genre_label": "Prophecy",
+    "genre_guidance": "Disputation speech genre · Covenant faithfulness challenged · Elijah promise closes OT canon"
   },
   {
     "id": "matthew",
@@ -317,7 +434,10 @@
     "testament": "nt",
     "total_chapters": 28,
     "book_order": 40,
-    "is_live": true
+    "is_live": true,
+    "genre": "gospel",
+    "genre_label": "Gospel",
+    "genre_guidance": "Five discourse blocks mirror Torah · Fulfillment citations · Jesus as new Moses and Son of David"
   },
   {
     "id": "mark",
@@ -325,7 +445,10 @@
     "testament": "nt",
     "total_chapters": 16,
     "book_order": 41,
-    "is_live": true
+    "is_live": true,
+    "genre": "gospel",
+    "genre_label": "Gospel",
+    "genre_guidance": "Shortest, most urgent gospel · Messianic secret motif · Discipleship failure as teaching device"
   },
   {
     "id": "luke",
@@ -333,7 +456,10 @@
     "testament": "nt",
     "total_chapters": 24,
     "book_order": 42,
-    "is_live": true
+    "is_live": true,
+    "genre": "gospel",
+    "genre_label": "Gospel",
+    "genre_guidance": "Historical preface signals Greco-Roman historiography · Journey narrative to Jerusalem · Outsiders and marginalized emphasized"
   },
   {
     "id": "john",
@@ -341,7 +467,10 @@
     "testament": "nt",
     "total_chapters": 21,
     "book_order": 43,
-    "is_live": true
+    "is_live": true,
+    "genre": "gospel",
+    "genre_label": "Gospel",
+    "genre_guidance": "Seven signs structure · \"I AM\" sayings · High christology from prologue · Symbolic and theological throughout"
   },
   {
     "id": "acts",
@@ -349,7 +478,10 @@
     "testament": "nt",
     "total_chapters": 28,
     "book_order": 44,
-    "is_live": true
+    "is_live": true,
+    "genre": "history",
+    "genre_label": "Theological History",
+    "genre_guidance": "Sequel to Luke · Speeches as theological summaries · Geographic expansion: Jerusalem to Rome"
   },
   {
     "id": "romans",
@@ -357,7 +489,10 @@
     "testament": "nt",
     "total_chapters": 16,
     "book_order": 45,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Theological treatise format · Diatribe style (imagined objector) · Righteousness of God as central theme"
   },
   {
     "id": "1_corinthians",
@@ -365,7 +500,10 @@
     "testament": "nt",
     "total_chapters": 16,
     "book_order": 46,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Pastoral letter addressing specific problems · \"Now concerning\" marks topic shifts · Cross as wisdom"
   },
   {
     "id": "2_corinthians",
@@ -373,7 +511,10 @@
     "testament": "nt",
     "total_chapters": 13,
     "book_order": 47,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Most personal of Paul's letters · Apostolic defense · Strength in weakness theology"
   },
   {
     "id": "galatians",
@@ -381,7 +522,10 @@
     "testament": "nt",
     "total_chapters": 6,
     "book_order": 48,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Polemical letter · Law vs. grace argument · Autobiographical sections establish authority"
   },
   {
     "id": "ephesians",
@@ -389,7 +533,10 @@
     "testament": "nt",
     "total_chapters": 6,
     "book_order": 49,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Cosmic ecclesiology · Prayer-praise-instruction pattern · Church as body and temple"
   },
   {
     "id": "philippians",
@@ -397,7 +544,10 @@
     "testament": "nt",
     "total_chapters": 4,
     "book_order": 50,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Joy in suffering · Christ hymn (2:6-11) as theological center · Partnership in the gospel"
   },
   {
     "id": "colossians",
@@ -405,7 +555,10 @@
     "testament": "nt",
     "total_chapters": 4,
     "book_order": 51,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Christ hymn opens theology · Countering syncretistic teaching · Cosmic Christ and ethical living"
   },
   {
     "id": "1_thessalonians",
@@ -413,7 +566,10 @@
     "testament": "nt",
     "total_chapters": 5,
     "book_order": 52,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Earliest Pauline letter · Eschatological comfort · Faith, love, hope triad"
   },
   {
     "id": "2_thessalonians",
@@ -421,7 +577,10 @@
     "testament": "nt",
     "total_chapters": 3,
     "book_order": 53,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Corrects eschatological misunderstanding · Day of the Lord not yet · Apocalyptic imagery"
   },
   {
     "id": "1_timothy",
@@ -429,7 +588,10 @@
     "testament": "nt",
     "total_chapters": 6,
     "book_order": 54,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Pastoral letter to church leader · Church order and sound doctrine · Household codes"
   },
   {
     "id": "2_timothy",
@@ -437,7 +599,10 @@
     "testament": "nt",
     "total_chapters": 4,
     "book_order": 55,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Paul's final letter · Personal exhortation · Guard the deposit of faith"
   },
   {
     "id": "titus",
@@ -445,7 +610,10 @@
     "testament": "nt",
     "total_chapters": 3,
     "book_order": 56,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Church organization in Crete · Sound doctrine produces godly living · Grace as teacher"
   },
   {
     "id": "philemon",
@@ -453,7 +621,10 @@
     "testament": "nt",
     "total_chapters": 1,
     "book_order": 57,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Shortest Pauline letter · Personal appeal · Social implications of the gospel"
   },
   {
     "id": "hebrews",
@@ -461,7 +632,10 @@
     "testament": "nt",
     "total_chapters": 13,
     "book_order": 58,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Sermon in letter form · Superiority argument structure · Old covenant shadows, new covenant reality"
   },
   {
     "id": "james",
@@ -469,7 +643,10 @@
     "testament": "nt",
     "total_chapters": 5,
     "book_order": 59,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Wisdom epistle · Faith and works integration · Prophetic social ethics"
   },
   {
     "id": "1_peter",
@@ -477,7 +654,10 @@
     "testament": "nt",
     "total_chapters": 5,
     "book_order": 60,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Suffering and hope · Baptismal imagery · Exiles and aliens identity"
   },
   {
     "id": "2_peter",
@@ -485,7 +665,10 @@
     "testament": "nt",
     "total_chapters": 3,
     "book_order": 61,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Testament genre · False teachers warning · Eschatological patience"
   },
   {
     "id": "1_john",
@@ -493,7 +676,10 @@
     "testament": "nt",
     "total_chapters": 5,
     "book_order": 62,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Spiral argument style · Tests of authentic faith · Light, love, life"
   },
   {
     "id": "2_john",
@@ -501,7 +687,10 @@
     "testament": "nt",
     "total_chapters": 1,
     "book_order": 63,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Brief pastoral warning · Truth and love · Hospitality boundaries"
   },
   {
     "id": "3_john",
@@ -509,7 +698,10 @@
     "testament": "nt",
     "total_chapters": 1,
     "book_order": 64,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Personal commendation letter · Church leadership conflict · Hospitality to missionaries"
   },
   {
     "id": "jude",
@@ -517,7 +709,10 @@
     "testament": "nt",
     "total_chapters": 1,
     "book_order": 65,
-    "is_live": true
+    "is_live": true,
+    "genre": "epistle",
+    "genre_label": "Epistle",
+    "genre_guidance": "Polemical letter · Jewish apocalyptic allusions · Contend for the faith"
   },
   {
     "id": "revelation",
@@ -525,6 +720,9 @@
     "testament": "nt",
     "total_chapters": 22,
     "book_order": 66,
-    "is_live": true
+    "is_live": true,
+    "genre": "apocalyptic",
+    "genre_label": "Apocalyptic",
+    "genre_guidance": "Letter + prophecy + apocalypse fusion · Symbolic numbers and imagery · Throne room visions frame cosmic conflict"
   }
 ]

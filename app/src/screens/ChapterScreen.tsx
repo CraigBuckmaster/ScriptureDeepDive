@@ -18,6 +18,8 @@ import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
+import { GenreBanner } from '../components/GenreBanner';
+import { useStudyDepth } from '../hooks/useStudyDepth';
 import { getBook } from '../db/content';
 
 import { ChapterNavBar } from '../components/ChapterNavBar';
@@ -122,13 +124,25 @@ export default function ChapterScreen() {
     hasNext ? goNext : undefined,
   );
 
+  // Study depth tracking
+  const sectionPanelMap = useMemo(() => {
+    const map = new Map<string, typeof sections[0]['panels']>();
+    for (const sec of sections) {
+      map.set(sec.id, sec.panels);
+    }
+    return map;
+  }, [sections]);
+
+  const { depthMap, recordOpen } = useStudyDepth(chapter?.id, sectionPanelMap);
+
   // Panel toggle — single-open policy with animation
   const handleSectionPanelToggle = useCallback(
     (sectionId: string, panelType: string) => {
       LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setActivePanel(sectionId, panelType);
+      recordOpen(sectionId, panelType);
     },
-    [setActivePanel]
+    [setActivePanel, recordOpen]
   );
 
   const handleChapterPanelToggle = useCallback(
@@ -209,6 +223,13 @@ export default function ChapterScreen() {
             : undefined}
         />
 
+        {bookData?.genre_label && bookData?.genre_guidance ? (
+          <GenreBanner
+            genreLabel={bookData.genre_label}
+            genreGuidance={bookData.genre_guidance}
+          />
+        ) : null}
+
         {/* Sections */}
         {sections.map((sec) => (
           <View
@@ -228,6 +249,9 @@ export default function ChapterScreen() {
             fontSize={fontSize}
             onPanelToggle={handleSectionPanelToggle}
             onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
+            depthExplored={depthMap.get(sec.id)?.explored}
+            depthTotal={depthMap.get(sec.id)?.total}
+            onDepthRecord={recordOpen}
             renderButtonRow={(panels, sectionId) => (
               <View onLayout={(e) => {
                 const sectionY = sectionYMap.current[sectionId] ?? 0;
