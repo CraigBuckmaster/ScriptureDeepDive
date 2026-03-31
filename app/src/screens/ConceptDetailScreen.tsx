@@ -3,9 +3,10 @@
  *
  * Sections: Overview, Word Studies, Key Chapters, Threads, Prophecy Chains, People.
  * Each section only renders if it has data.
+ * Journey tab: progressive revelation timeline (Phase 9) when journey_stops exist.
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,6 +19,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin } from 'lucide-react-native';
 import { useConceptData } from '../hooks/useConceptData';
+import ConceptJourney from '../components/ConceptJourney';
 import { base, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
@@ -41,6 +43,9 @@ export default function ConceptDetailScreen() {
     error,
   } = useConceptData(conceptId);
 
+  const hasJourney = (concept?.journey_stops?.length ?? 0) > 0;
+  const [activeTab, setActiveTab] = useState<'overview' | 'journey'>('overview');
+
   if (loading) {
     return (
       <SafeAreaView style={styles.container}>
@@ -59,7 +64,7 @@ export default function ConceptDetailScreen() {
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
           <Text style={styles.title}>Concept</Text>
-          <View style={{ width: 24 }} />
+          <View style={styles.headerSpacer} />
         </View>
         <View style={styles.center}>
           <Text style={styles.errorText}>{error || 'Concept not found'}</Text>
@@ -76,9 +81,43 @@ export default function ConceptDetailScreen() {
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
         <Text style={styles.title} numberOfLines={1}>{concept.title}</Text>
-        <View style={{ width: 24 }} />
+        <View style={styles.headerSpacer} />
       </View>
 
+      {/* Tab bar — only shown when journey data exists */}
+      {hasJourney && (
+        <View style={styles.tabBar}>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === 'overview' && styles.tabActive]}
+            onPress={() => setActiveTab('overview')}
+          >
+            <Text style={[styles.tabText, activeTab === 'overview' && styles.tabTextActive]}>
+              Overview
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === 'journey' && styles.tabActive]}
+            onPress={() => setActiveTab('journey')}
+          >
+            <Text style={[styles.tabText, activeTab === 'journey' && styles.tabTextActive]}>
+              Journey
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {/* Journey tab */}
+      {activeTab === 'journey' && hasJourney ? (
+        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+          <ConceptJourney
+            stops={concept.journey_stops}
+            onNavigate={(book, chapter) =>
+              navigation.navigate('Chapter', { bookId: book, chapterNum: chapter })
+            }
+          />
+          <View style={styles.bottomSpacer} />
+        </ScrollView>
+      ) : (
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         {/* Overview */}
         <View style={styles.overviewCard}>
@@ -218,8 +257,9 @@ export default function ConceptDetailScreen() {
           </View>
         )}
 
-        <View style={{ height: spacing.xxl }} />
+        <View style={styles.bottomSpacer} />
       </ScrollView>
+      )}
     </SafeAreaView>
   );
 }
@@ -256,6 +296,39 @@ const styles = StyleSheet.create({
     color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
+  },
+  headerSpacer: {
+    width: 24,
+  },
+
+  // Tab bar
+  tabBar: {
+    flexDirection: 'row',
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+    backgroundColor: base.bgElevated,
+    borderRadius: radii.md,
+    padding: 2,
+  },
+  tab: {
+    flex: 1,
+    paddingVertical: spacing.xs + 2,
+    alignItems: 'center',
+    borderRadius: radii.sm + 2,
+  },
+  tabActive: {
+    backgroundColor: base.gold + '25',
+  },
+  tabText: {
+    color: base.textMuted,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+  },
+  tabTextActive: {
+    color: base.gold,
+  },
+  bottomSpacer: {
+    height: spacing.xxl,
   },
 
   // Overview

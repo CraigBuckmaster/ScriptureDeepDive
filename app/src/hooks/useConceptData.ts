@@ -9,6 +9,15 @@ import { useState, useEffect, useCallback } from 'react';
 import { getDb } from '../db/database';
 import { logger } from '../utils/logger';
 
+export interface JourneyStop {
+  ref: string;
+  book: string;
+  chapter: number;
+  label: string;
+  development: string;
+  what_changes: string;
+}
+
 export interface Concept {
   id: string;
   title: string;
@@ -19,6 +28,7 @@ export interface Concept {
   prophecy_chain_ids: string[];
   people_tags: string[];
   tags: string[];
+  journey_stops: JourneyStop[];
 }
 
 export interface WordStudy {
@@ -104,10 +114,12 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
         prophecy_chain_ids_json: string;
         people_tags_json: string;
         tags_json: string;
+        journey_stops_json: string | null;
       }>(
         `SELECT id, title, description, theme_key,
                 word_study_ids_json, thread_ids_json,
-                prophecy_chain_ids_json, people_tags_json, tags_json
+                prophecy_chain_ids_json, people_tags_json, tags_json,
+                journey_stops_json
          FROM concepts WHERE id = ?`,
         [conceptId]
       );
@@ -128,6 +140,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
         prophecy_chain_ids: JSON.parse(conceptRow.prophecy_chain_ids_json || '[]'),
         people_tags: JSON.parse(conceptRow.people_tags_json || '[]'),
         tags: JSON.parse(conceptRow.tags_json || '[]'),
+        journey_stops: JSON.parse(conceptRow.journey_stops_json || '[]'),
       };
       setConcept(conceptData);
 
@@ -294,10 +307,12 @@ export function useConcepts() {
           prophecy_chain_ids_json: string;
           people_tags_json: string;
           tags_json: string;
+          journey_stops_json: string | null;
         }>(
           `SELECT id, title, description, theme_key,
                   word_study_ids_json, thread_ids_json,
-                  prophecy_chain_ids_json, people_tags_json, tags_json
+                  prophecy_chain_ids_json, people_tags_json, tags_json,
+                  journey_stops_json
            FROM concepts ORDER BY title`
         );
 
@@ -312,6 +327,7 @@ export function useConcepts() {
             prophecy_chain_ids: JSON.parse(r.prophecy_chain_ids_json || '[]'),
             people_tags: JSON.parse(r.people_tags_json || '[]'),
             tags: JSON.parse(r.tags_json || '[]'),
+            journey_stops: JSON.parse(r.journey_stops_json || '[]'),
           }))
         );
       } catch (err) {

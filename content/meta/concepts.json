@@ -29,6 +29,88 @@
       "oath",
       "faithfulness",
       "treaty"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 9:8-17",
+        "book": "genesis",
+        "chapter": 9,
+        "label": "Noahic Covenant",
+        "development": "First covenant: universal scope, unilateral, with all creation. No conditions imposed on humanity.",
+        "what_changes": "God binds himself never to destroy by flood again. The rainbow serves as the covenant sign visible to both parties."
+      },
+      {
+        "ref": "Genesis 15:1-21",
+        "book": "genesis",
+        "chapter": 15,
+        "label": "Abrahamic Covenant",
+        "development": "Narrows from universal to one family. Still unilateral: God alone passes between the severed pieces.",
+        "what_changes": "Land, offspring, and blessing are promised. The covenant family that will mediate blessing to all nations begins here."
+      },
+      {
+        "ref": "Genesis 17:1-14",
+        "book": "genesis",
+        "chapter": 17,
+        "label": "Covenant Sign: Circumcision",
+        "development": "The Abrahamic covenant receives a bodily sign. Every male bears the mark of belonging to the covenant community.",
+        "what_changes": "Covenant identity becomes physically inscribed. The sign distinguishes Abraham's line from the nations."
+      },
+      {
+        "ref": "Exodus 19:1-6",
+        "book": "exodus",
+        "chapter": 19,
+        "label": "Sinai Covenant Proposal",
+        "development": "Shifts from family to nation. Bilateral: 'if you obey... you will be my treasured possession.' Conditions are introduced.",
+        "what_changes": "Israel becomes a 'kingdom of priests and a holy nation.' National identity is now covenantal identity."
+      },
+      {
+        "ref": "Exodus 24:1-8",
+        "book": "exodus",
+        "chapter": 24,
+        "label": "Covenant Ratification by Blood",
+        "development": "The Sinai covenant is ratified with sacrificial blood sprinkled on both altar and people.",
+        "what_changes": "Blood becomes the medium of covenant ratification, establishing a pattern that persists through the entire sacrificial system."
+      },
+      {
+        "ref": "2 Samuel 7:8-16",
+        "book": "2_samuel",
+        "chapter": 7,
+        "label": "Davidic Covenant",
+        "development": "Narrows further: one family within the nation. Unconditional promise of an eternal dynasty.",
+        "what_changes": "The throne of David is promised permanence. Messianic expectation is anchored to a specific royal line."
+      },
+      {
+        "ref": "Jeremiah 31:31-34",
+        "book": "jeremiah",
+        "chapter": 31,
+        "label": "New Covenant Promised",
+        "development": "Declares the Mosaic covenant broken and announces a new one. Law will be internalized, not externally imposed.",
+        "what_changes": "The problem of covenant-breaking is addressed at its root: the human heart. Universal knowledge of God is promised."
+      },
+      {
+        "ref": "Ezekiel 36:25-27",
+        "book": "ezekiel",
+        "chapter": 36,
+        "label": "Spirit and New Heart",
+        "development": "Expands the new covenant vision: God will replace hearts of stone with hearts of flesh and put his Spirit within his people.",
+        "what_changes": "The mechanism of covenant obedience shifts from external law to internal transformation by the Spirit."
+      },
+      {
+        "ref": "Luke 22:19-20",
+        "book": "luke",
+        "chapter": 22,
+        "label": "New Covenant in Christ's Blood",
+        "development": "Jesus identifies the cup as 'the new covenant in my blood.' All prior covenants converge in his sacrificial death.",
+        "what_changes": "The new covenant is inaugurated. The pattern of blood ratification from Exodus 24 reaches its fulfillment."
+      },
+      {
+        "ref": "Hebrews 8:6-13",
+        "book": "hebrews",
+        "chapter": 8,
+        "label": "Better Covenant, Better Mediator",
+        "development": "Systematic argument that the new covenant is superior to the old. Christ is mediator of a 'better covenant, enacted on better promises.'",
+        "what_changes": "The old covenant is declared 'obsolete.' The new covenant is shown to fulfill, not merely replace, what preceded it."
+      }
     ]
   },
   {
@@ -60,6 +142,72 @@
       "propitiation",
       "forgiveness",
       "lamb"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 3:21",
+        "book": "genesis",
+        "chapter": 3,
+        "label": "First Animal Covering",
+        "development": "God provides garments of skin for Adam and Eve after the fall. An animal dies to cover human shame.",
+        "what_changes": "The pattern of substitutionary covering is introduced. Sin requires a death to address its consequences."
+      },
+      {
+        "ref": "Genesis 22:1-14",
+        "book": "genesis",
+        "chapter": 22,
+        "label": "The Binding of Isaac",
+        "development": "Abraham is tested to offer Isaac, but God provides a ram as substitute. 'On the mountain of the LORD it shall be provided.'",
+        "what_changes": "The principle of divine provision of the sacrifice is established. God himself will supply what he demands."
+      },
+      {
+        "ref": "Exodus 12:1-13",
+        "book": "exodus",
+        "chapter": 12,
+        "label": "Passover Lamb",
+        "development": "A lamb without blemish is slain; its blood on the doorposts causes the destroyer to pass over. Deliverance through substitutionary blood.",
+        "what_changes": "Sacrifice becomes communal and commemorative. The annual Passover ritualizes Israel's foundational experience of redemption through blood."
+      },
+      {
+        "ref": "Leviticus 16:1-34",
+        "book": "leviticus",
+        "chapter": 16,
+        "label": "Day of Atonement",
+        "development": "The high priest enters the Most Holy Place once a year with blood for the sins of the nation. The scapegoat carries sins away.",
+        "what_changes": "National atonement is systematized. Two goats illustrate two aspects: propitiation (blood sprinkled) and expiation (sins removed)."
+      },
+      {
+        "ref": "Leviticus 17:11",
+        "book": "leviticus",
+        "chapter": 17,
+        "label": "Blood is the Life",
+        "development": "The theological rationale for blood sacrifice is stated explicitly: 'The life of the flesh is in the blood, and I have given it to you on the altar to make atonement.'",
+        "what_changes": "Sacrifice is grounded in theology, not mere ritual. Blood represents life given in place of life forfeited."
+      },
+      {
+        "ref": "Isaiah 53:4-12",
+        "book": "isaiah",
+        "chapter": 53,
+        "label": "Suffering Servant",
+        "development": "The Servant bears the sins of many, is pierced for transgressions, crushed for iniquities. His suffering is vicarious and voluntary.",
+        "what_changes": "Sacrifice becomes personal and prophetic. A single figure, not an animal, will accomplish what the entire sacrificial system pointed toward."
+      },
+      {
+        "ref": "John 1:29",
+        "book": "john",
+        "chapter": 1,
+        "label": "Lamb of God",
+        "development": "John the Baptist identifies Jesus as 'the Lamb of God who takes away the sin of the world.' All prior sacrificial imagery converges.",
+        "what_changes": "The sacrifice is no longer prospective but present. The one to whom all lambs pointed has arrived."
+      },
+      {
+        "ref": "Hebrews 9:11-14",
+        "book": "hebrews",
+        "chapter": 9,
+        "label": "Once for All",
+        "development": "Christ entered the heavenly sanctuary 'not with the blood of goats and calves but with his own blood, thus securing an eternal redemption.'",
+        "what_changes": "The repetitive cycle of animal sacrifice ends. A single, unrepeatable sacrifice accomplishes what countless offerings could only anticipate."
+      }
     ]
   },
   {
@@ -90,6 +238,80 @@
       "reign",
       "messiah",
       "authority"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 49:10",
+        "book": "genesis",
+        "chapter": 49,
+        "label": "Scepter from Judah",
+        "development": "Jacob's deathbed oracle assigns royal destiny to Judah: 'The scepter shall not depart from Judah... until tribute comes to him.'",
+        "what_changes": "Kingship is linked to a specific tribe. The royal line is narrowed before Israel even becomes a nation."
+      },
+      {
+        "ref": "Deuteronomy 17:14-20",
+        "book": "deuteronomy",
+        "chapter": 17,
+        "label": "The Law of the King",
+        "development": "Moses anticipates monarchy and provides constitutional limits: the king must not multiply horses, wives, or silver, and must write out the Torah.",
+        "what_changes": "Israelite kingship is defined as fundamentally different from pagan models. The king is under the law, not above it."
+      },
+      {
+        "ref": "1 Samuel 8:4-22",
+        "book": "1_samuel",
+        "chapter": 8,
+        "label": "Israel Demands a King",
+        "development": "Israel requests a king 'like all the nations.' God tells Samuel they have rejected divine kingship, but permits the request.",
+        "what_changes": "The tension between divine and human kingship becomes explicit. Human monarchy is both concession and vehicle for God's purposes."
+      },
+      {
+        "ref": "2 Samuel 7:12-16",
+        "book": "2_samuel",
+        "chapter": 7,
+        "label": "Davidic Covenant",
+        "development": "God promises David an eternal dynasty. His son will build the temple, and the throne will be established forever.",
+        "what_changes": "Kingship becomes covenantal. The Davidic line carries the weight of messianic expectation from this point forward."
+      },
+      {
+        "ref": "1 Kings 11:9-13",
+        "book": "1_kings",
+        "chapter": 11,
+        "label": "Kingdom Torn",
+        "development": "Solomon's idolatry triggers the division of the kingdom. Yet God preserves one tribe for David's sake.",
+        "what_changes": "The failure of human kingship begins. Even the wisest king falls, yet the Davidic promise is not annulled."
+      },
+      {
+        "ref": "Isaiah 9:6-7",
+        "book": "isaiah",
+        "chapter": 9,
+        "label": "Ideal King Prophesied",
+        "development": "A child will sit on David's throne with the government on his shoulders. His titles exceed any human monarch: Mighty God, Prince of Peace.",
+        "what_changes": "The messianic king is described in terms that transcend human categories. Divine and human kingship converge in one figure."
+      },
+      {
+        "ref": "Daniel 7:13-14",
+        "book": "daniel",
+        "chapter": 7,
+        "label": "Son of Man Receives Dominion",
+        "development": "One 'like a son of man' approaches the Ancient of Days and receives universal, everlasting dominion over all peoples and nations.",
+        "what_changes": "The kingdom vision becomes cosmic. The coming king's reign is not merely Israelite but universal and eternal."
+      },
+      {
+        "ref": "Matthew 21:1-11",
+        "book": "matthew",
+        "chapter": 21,
+        "label": "Triumphal Entry",
+        "development": "Jesus enters Jerusalem on a donkey, fulfilling Zechariah 9:9. The crowds proclaim him 'Son of David.'",
+        "what_changes": "The messianic king arrives, but on a donkey, not a war horse. Kingship is redefined through humility."
+      },
+      {
+        "ref": "Revelation 19:11-16",
+        "book": "revelation",
+        "chapter": 19,
+        "label": "King of Kings",
+        "development": "Christ returns as conquering king, wearing many crowns, with 'King of Kings and Lord of Lords' written on his robe.",
+        "what_changes": "All royal imagery reaches its climax. The humble king of the triumphal entry is revealed as the sovereign ruler of all creation."
+      }
     ]
   },
   {
@@ -114,6 +336,72 @@
       "set apart",
       "pure",
       "sacred"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Exodus 3:1-6",
+        "book": "exodus",
+        "chapter": 3,
+        "label": "Holy Ground",
+        "development": "Moses encounters the burning bush. God commands: 'Take off your sandals, for the place where you are standing is holy ground.'",
+        "what_changes": "Holiness is revealed as the fundamental attribute of God's presence. It creates a boundary that requires human response."
+      },
+      {
+        "ref": "Exodus 19:10-25",
+        "book": "exodus",
+        "chapter": 19,
+        "label": "Holy Mountain",
+        "development": "Mount Sinai is consecrated; boundaries are set. Touching the mountain means death. The people must consecrate themselves.",
+        "what_changes": "Holiness is shown to be dangerous to the unprepared. Separation and consecration become prerequisites for approaching God."
+      },
+      {
+        "ref": "Leviticus 11:44-45",
+        "book": "leviticus",
+        "chapter": 11,
+        "label": "Be Holy, for I Am Holy",
+        "development": "The central command of Leviticus: Israel's holiness is to mirror God's holiness. Purity laws are the practical outworking.",
+        "what_changes": "Holiness becomes a calling, not just a divine attribute. Israel's entire way of life — food, clothing, agriculture — is shaped by the holiness imperative."
+      },
+      {
+        "ref": "Isaiah 6:1-7",
+        "book": "isaiah",
+        "chapter": 6,
+        "label": "Holy, Holy, Holy",
+        "development": "Isaiah sees the LORD in the temple; seraphim cry 'Holy, holy, holy.' The prophet is undone: 'I am a man of unclean lips.'",
+        "what_changes": "The threefold repetition intensifies the concept to its absolute degree. Holiness produces both terror and cleansing."
+      },
+      {
+        "ref": "Ezekiel 36:22-23",
+        "book": "ezekiel",
+        "chapter": 36,
+        "label": "Sanctifying the Name",
+        "development": "God will vindicate his holy name, profaned among the nations through Israel's exile. Restoration serves his holiness, not Israel's merit.",
+        "what_changes": "Holiness becomes the driving motive of redemptive history. God acts 'for the sake of my holy name,' not for human deserving."
+      },
+      {
+        "ref": "Matthew 5:48",
+        "book": "matthew",
+        "chapter": 5,
+        "label": "Be Perfect",
+        "development": "Jesus reframes the holiness command: 'Be perfect, as your heavenly Father is perfect.' The standard is not merely ritual purity but character.",
+        "what_changes": "Holiness is internalized. External purity codes give way to holiness of heart and motive."
+      },
+      {
+        "ref": "1 Peter 1:15-16",
+        "book": "1_peter",
+        "chapter": 1,
+        "label": "Holy in All Conduct",
+        "development": "Peter quotes Leviticus 11:44 to the church: 'Be holy in all your conduct.' The Levitical call extends to all believers.",
+        "what_changes": "The holiness imperative crosses the covenant boundary. What was Israel's distinctive calling becomes the universal mark of God's people."
+      },
+      {
+        "ref": "Revelation 4:8",
+        "book": "revelation",
+        "chapter": 4,
+        "label": "Eternal Holy, Holy, Holy",
+        "development": "The four living creatures ceaselessly declare 'Holy, holy, holy is the Lord God Almighty.' Isaiah's vision becomes eternal reality.",
+        "what_changes": "Holiness is revealed as the eternal atmosphere of heaven. The story that began at the burning bush culminates in ceaseless worship."
+      }
     ]
   },
   {
@@ -145,6 +433,72 @@
       "captivity",
       "restoration",
       "remnant"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 3:23-24",
+        "book": "genesis",
+        "chapter": 3,
+        "label": "Exile from Eden",
+        "development": "Adam and Eve are driven from the garden; cherubim and a flaming sword guard the way to the tree of life.",
+        "what_changes": "The primal exile establishes the pattern: sin leads to separation from God's presence. All subsequent exiles echo this first expulsion."
+      },
+      {
+        "ref": "Genesis 12:1-3",
+        "book": "genesis",
+        "chapter": 12,
+        "label": "Abraham's Call from Exile",
+        "development": "God calls Abraham out of Ur to a promised land. The journey from exile to homeland begins with a single family.",
+        "what_changes": "Return from exile becomes linked to promise and faith. The land is both gift and destination."
+      },
+      {
+        "ref": "Exodus 14:21-31",
+        "book": "exodus",
+        "chapter": 14,
+        "label": "Exodus from Egypt",
+        "development": "Israel crosses the Red Sea, escaping 400 years of Egyptian bondage. The paradigmatic deliverance event of the Old Testament.",
+        "what_changes": "Exodus becomes the controlling metaphor for all future deliverances. Every return from exile is a 'new exodus.'"
+      },
+      {
+        "ref": "2 Kings 17:6-23",
+        "book": "2_kings",
+        "chapter": 17,
+        "label": "Northern Exile to Assyria",
+        "development": "The ten northern tribes are deported to Assyria in 722 BC. The text gives a theological autopsy: they sinned, were warned, refused to listen.",
+        "what_changes": "Exile is shown to be covenant consequence, not arbitrary punishment. The prophetic warnings are vindicated."
+      },
+      {
+        "ref": "2 Kings 25:8-21",
+        "book": "2_kings",
+        "chapter": 25,
+        "label": "Babylonian Exile",
+        "development": "Jerusalem falls in 586 BC. The temple is burned, the walls broken down, the people deported. The Davidic dynasty is interrupted.",
+        "what_changes": "The unthinkable happens: God's own house is destroyed. Every theological certainty — temple, monarchy, land — is removed."
+      },
+      {
+        "ref": "Isaiah 40:1-5",
+        "book": "isaiah",
+        "chapter": 40,
+        "label": "Comfort, Comfort My People",
+        "development": "The voice cries: 'In the wilderness prepare the way of the LORD.' A new exodus through the desert is announced.",
+        "what_changes": "The exile is not the final word. God's return to his people is described in language that echoes and surpasses the first exodus."
+      },
+      {
+        "ref": "Ezra 1:1-4",
+        "book": "ezra",
+        "chapter": 1,
+        "label": "Cyrus Decree — Return Begins",
+        "development": "Cyrus of Persia issues the decree permitting Jews to return and rebuild the temple. Jeremiah's 70-year prophecy is fulfilled.",
+        "what_changes": "Physical return begins, but the spiritual restoration promised by the prophets remains incomplete. The second temple lacks the glory of the first."
+      },
+      {
+        "ref": "Luke 15:11-24",
+        "book": "luke",
+        "chapter": 15,
+        "label": "The Prodigal Returns",
+        "development": "Jesus tells of a son who squanders his inheritance in a 'far country' and returns to his father's embrace. Israel's exile story in miniature.",
+        "what_changes": "Exile and return become personal and universal. The father's welcome redefines what homecoming means: not merit but grace."
+      }
     ]
   },
   {
@@ -168,6 +522,72 @@
       "prudence",
       "understanding",
       "folly"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Proverbs 1:7",
+        "book": "proverbs",
+        "chapter": 1,
+        "label": "Fear of the LORD",
+        "development": "The programmatic statement of Israel's wisdom tradition: 'The fear of the LORD is the beginning of knowledge.'",
+        "what_changes": "Wisdom is anchored in theology, not mere pragmatism. True knowledge begins with right relationship to God."
+      },
+      {
+        "ref": "Proverbs 8:22-31",
+        "book": "proverbs",
+        "chapter": 8,
+        "label": "Wisdom Personified at Creation",
+        "development": "Wisdom speaks as a person present at creation: 'Before the mountains were settled... I was there.' She was 'beside him, like a master workman.'",
+        "what_changes": "Wisdom is elevated from practical skill to cosmic principle. The created order itself embodies divine wisdom."
+      },
+      {
+        "ref": "Job 28:12-28",
+        "book": "job",
+        "chapter": 28,
+        "label": "Where Is Wisdom Found?",
+        "development": "A hymn to wisdom's inaccessibility. No human effort can discover it; 'God understands the way to it.' The conclusion: fear the LORD.",
+        "what_changes": "The limits of human wisdom are exposed. True wisdom is not achievable by human striving but received as divine gift."
+      },
+      {
+        "ref": "Ecclesiastes 1:1-11",
+        "book": "ecclesiastes",
+        "chapter": 1,
+        "label": "Vanity of Vanities",
+        "development": "Qoheleth declares all things 'hevel' — vapor, breath, meaningless under the sun. The wisdom tradition confronts its own limits.",
+        "what_changes": "Wisdom literature gains its necessary counterpoint. Conventional wisdom cannot explain all of life's inequities."
+      },
+      {
+        "ref": "Ecclesiastes 12:13-14",
+        "book": "ecclesiastes",
+        "chapter": 12,
+        "label": "The Whole Duty of Humanity",
+        "development": "After exhaustive investigation, the conclusion: 'Fear God and keep his commandments, for this is the whole duty of man.'",
+        "what_changes": "Skeptical wisdom circles back to faith. Even the most rigorous questioning ends at the same starting point as Proverbs 1:7."
+      },
+      {
+        "ref": "Matthew 12:42",
+        "book": "matthew",
+        "chapter": 12,
+        "label": "Greater Than Solomon",
+        "development": "Jesus declares that 'something greater than Solomon is here.' The queen of the South came for Solomon's wisdom; a greater wisdom is now present.",
+        "what_changes": "Wisdom is no longer merely a tradition or a body of teaching but a person. Christological wisdom supersedes sapiential wisdom."
+      },
+      {
+        "ref": "1 Corinthians 1:18-25",
+        "book": "1_corinthians",
+        "chapter": 1,
+        "label": "Foolishness of God",
+        "development": "The cross is 'foolishness to those who are perishing' but 'the power of God' to those being saved. God's wisdom inverts human categories.",
+        "what_changes": "The cross redefines wisdom entirely. What appears as ultimate folly — a crucified Messiah — is revealed as ultimate wisdom."
+      },
+      {
+        "ref": "Colossians 2:2-3",
+        "book": "colossians",
+        "chapter": 2,
+        "label": "All Treasures of Wisdom in Christ",
+        "development": "In Christ 'are hidden all the treasures of wisdom and knowledge.' Proverbs 8's personified Wisdom finds its ultimate referent.",
+        "what_changes": "The entire wisdom tradition is christologically fulfilled. The search for wisdom ends in a person, not a principle."
+      }
     ]
   },
   {
@@ -196,6 +616,72 @@
       "power",
       "indwelling",
       "pentecost"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 1:2",
+        "book": "genesis",
+        "chapter": 1,
+        "label": "Spirit over the Waters",
+        "development": "The Spirit of God hovers over the face of the deep. The first act of creation begins with the Spirit's brooding presence.",
+        "what_changes": "The Spirit is associated with creation and the bringing of order from chaos. Creative power is pneumatological from the beginning."
+      },
+      {
+        "ref": "Judges 3:10",
+        "book": "judges",
+        "chapter": 3,
+        "label": "Spirit upon the Judges",
+        "development": "The Spirit of the LORD comes upon Othniel, and he judges Israel. A recurring pattern: the Spirit empowers specific leaders for specific tasks.",
+        "what_changes": "The Spirit's work becomes charismatic — given for a task, then withdrawn. Empowerment is temporary and functional."
+      },
+      {
+        "ref": "1 Samuel 16:13-14",
+        "book": "1_samuel",
+        "chapter": 16,
+        "label": "Spirit Transferred to David",
+        "development": "Samuel anoints David; the Spirit rushes upon him 'from that day forward.' Simultaneously, the Spirit departs from Saul.",
+        "what_changes": "The Spirit is linked to anointing and kingship. The transfer marks divine election and rejection."
+      },
+      {
+        "ref": "Isaiah 11:1-3",
+        "book": "isaiah",
+        "chapter": 11,
+        "label": "Spirit upon the Branch",
+        "development": "The coming Davidic ruler will be endowed with the Spirit in fullness: wisdom, understanding, counsel, might, knowledge, fear of the LORD.",
+        "what_changes": "The messianic king will not merely receive the Spirit temporarily but will be permanently characterized by the Spirit's sevenfold endowment."
+      },
+      {
+        "ref": "Ezekiel 37:1-14",
+        "book": "ezekiel",
+        "chapter": 37,
+        "label": "Valley of Dry Bones",
+        "development": "The Spirit breathes life into dead bones. National resurrection is accomplished through the Spirit's creative, life-giving power.",
+        "what_changes": "The Spirit's role expands from individual empowerment to corporate, national resurrection. The Spirit recreates what death has destroyed."
+      },
+      {
+        "ref": "Joel 2:28-29",
+        "book": "joel",
+        "chapter": 2,
+        "label": "Spirit Poured Out on All Flesh",
+        "development": "God promises to pour out his Spirit on all flesh — sons, daughters, old, young, servants. No social or gender limitation.",
+        "what_changes": "The Spirit's work will no longer be restricted to select leaders. Universal outpouring replaces occasional charismatic endowment."
+      },
+      {
+        "ref": "Acts 2:1-4",
+        "book": "acts",
+        "chapter": 2,
+        "label": "Pentecost",
+        "development": "The Spirit descends as tongues of fire. All present are filled. Peter identifies this as Joel's prophecy fulfilled.",
+        "what_changes": "The age of the Spirit begins. What was promised through the prophets becomes the permanent, universal experience of the church."
+      },
+      {
+        "ref": "Romans 8:9-11",
+        "book": "romans",
+        "chapter": 8,
+        "label": "Spirit of Life in Christ Jesus",
+        "development": "Paul declares that anyone who does not have the Spirit of Christ does not belong to him. The Spirit who raised Jesus will also give life to mortal bodies.",
+        "what_changes": "The Spirit becomes the defining mark of belonging to Christ. Indwelling, not occasional empowerment, is the new normal."
+      }
     ]
   },
   {
@@ -220,6 +706,72 @@
       "belief",
       "righteousness",
       "justification"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 15:6",
+        "book": "genesis",
+        "chapter": 15,
+        "label": "Abraham Believed",
+        "development": "Abraham 'believed the LORD, and he counted it to him as righteousness.' The paradigmatic act of faith in the Hebrew Bible.",
+        "what_changes": "Faith is established as the basis of right standing with God. Righteousness is credited, not earned."
+      },
+      {
+        "ref": "Exodus 14:31",
+        "book": "exodus",
+        "chapter": 14,
+        "label": "Israel Believed at the Sea",
+        "development": "After the Red Sea crossing, 'the people feared the LORD, and they believed in the LORD and in his servant Moses.'",
+        "what_changes": "Faith becomes communal and responsive to divine action. The pattern is established: God acts, the people believe."
+      },
+      {
+        "ref": "Habakkuk 2:4",
+        "book": "habakkuk",
+        "chapter": 2,
+        "label": "The Righteous Shall Live by Faith",
+        "development": "In the face of Babylonian invasion and apparent divine silence, the prophet receives the foundational principle: faithfulness is the path of life.",
+        "what_changes": "Faith is defined against the backdrop of crisis. Trust in God persists even when circumstances contradict the promises."
+      },
+      {
+        "ref": "Matthew 8:5-13",
+        "book": "matthew",
+        "chapter": 8,
+        "label": "Centurion's Faith",
+        "development": "A Gentile centurion demonstrates faith that amazes Jesus: 'I have not found such great faith even in Israel.'",
+        "what_changes": "Faith crosses ethnic boundaries. The expected people lack what an outsider possesses, foreshadowing the Gentile mission."
+      },
+      {
+        "ref": "Mark 9:24",
+        "book": "mark",
+        "chapter": 9,
+        "label": "Help My Unbelief",
+        "development": "A desperate father cries: 'I believe; help my unbelief!' Jesus heals his son despite the father's mixed faith.",
+        "what_changes": "Faith is shown to be compatible with doubt. Honest struggling faith, not perfect certainty, is sufficient."
+      },
+      {
+        "ref": "Romans 4:18-25",
+        "book": "romans",
+        "chapter": 4,
+        "label": "Faith of Abraham Revisited",
+        "development": "Paul holds up Abraham as the exemplar of justifying faith: 'against hope he believed in hope.' His faith was counted as righteousness.",
+        "what_changes": "Genesis 15:6 becomes the cornerstone of Pauline soteriology. Faith, not works of the law, is the instrument of justification."
+      },
+      {
+        "ref": "Hebrews 11:1-3",
+        "book": "hebrews",
+        "chapter": 11,
+        "label": "Faith Defined",
+        "development": "Faith is 'the assurance of things hoped for, the conviction of things not seen.' The great catalog of faith heroes follows.",
+        "what_changes": "Faith receives its most concentrated theological definition. It bridges the gap between promise and fulfillment, visible and invisible."
+      },
+      {
+        "ref": "James 2:14-26",
+        "book": "james",
+        "chapter": 2,
+        "label": "Faith and Works",
+        "development": "James insists that 'faith without works is dead.' Abraham's faith was 'completed by his works' when he offered Isaac.",
+        "what_changes": "The faith tradition receives its necessary complement. Genuine faith produces visible action; mere intellectual assent is insufficient."
+      }
     ]
   },
   {
@@ -240,6 +792,72 @@
       "lovingkindness",
       "forgiveness",
       "favor"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Exodus 34:6-7",
+        "book": "exodus",
+        "chapter": 34,
+        "label": "The LORD, Merciful and Gracious",
+        "development": "God proclaims his own name: 'merciful and gracious, slow to anger, abounding in steadfast love and faithfulness.' The definitive self-revelation.",
+        "what_changes": "God's character is revealed as fundamentally merciful. This formula becomes the most frequently quoted creed in the Old Testament."
+      },
+      {
+        "ref": "Numbers 14:17-20",
+        "book": "numbers",
+        "chapter": 14,
+        "label": "Pardon in the Wilderness",
+        "development": "After the golden calf rebellion and the spies' report, Moses appeals to Exodus 34:6. God pardons, but with consequences.",
+        "what_changes": "Mercy is shown to coexist with judgment. Pardon does not eliminate consequences but preserves the covenant relationship."
+      },
+      {
+        "ref": "2 Samuel 12:13",
+        "book": "2_samuel",
+        "chapter": 12,
+        "label": "David Pardoned",
+        "development": "After David's confession of adultery and murder, Nathan declares: 'The LORD has put away your sin; you shall not die.'",
+        "what_changes": "Grace reaches into the most grievous moral failure. Even the king who should die by his own law receives mercy."
+      },
+      {
+        "ref": "Psalm 103:8-14",
+        "book": "psalms",
+        "chapter": 103,
+        "label": "As a Father Shows Compassion",
+        "development": "Echoing Exodus 34:6: 'As far as the east is from the west, so far does he remove our transgressions.' The image of a tender father.",
+        "what_changes": "Mercy becomes intimate and parental. God's compassion is grounded in his knowledge of human frailty: 'He knows our frame.'"
+      },
+      {
+        "ref": "Hosea 11:1-9",
+        "book": "hosea",
+        "chapter": 11,
+        "label": "How Can I Give You Up?",
+        "development": "God agonizes over Israel: 'My heart recoils within me; my compassion grows warm and tender.' Divine love wrestles with divine justice.",
+        "what_changes": "Grace is revealed as costly to God himself. Mercy is not indifference to sin but the triumph of love over just wrath."
+      },
+      {
+        "ref": "Jonah 4:2",
+        "book": "jonah",
+        "chapter": 4,
+        "label": "Grace to the Enemy",
+        "development": "Jonah quotes Exodus 34:6 as a complaint: God's mercy extends even to Israel's worst enemy, Nineveh.",
+        "what_changes": "Grace shatters national boundaries. The prophet who knows God's character resents its implications for the ungodly."
+      },
+      {
+        "ref": "Luke 15:1-7",
+        "book": "luke",
+        "chapter": 15,
+        "label": "Seeking the Lost",
+        "development": "Jesus tells of a shepherd who leaves ninety-nine sheep to find the one that is lost. Heaven rejoices over one sinner who repents.",
+        "what_changes": "Grace becomes active and seeking. God does not merely wait for the sinner's return but pursues the lost."
+      },
+      {
+        "ref": "Ephesians 2:4-9",
+        "book": "ephesians",
+        "chapter": 2,
+        "label": "By Grace Through Faith",
+        "development": "Paul gives the definitive statement: 'By grace you have been saved through faith. And this is not your own doing; it is the gift of God.'",
+        "what_changes": "Grace is defined as the entire mechanism of salvation. Human contribution is excluded; even faith itself is gift."
+      }
     ]
   },
   {
@@ -265,6 +883,72 @@
       "justice",
       "discipline",
       "day of the LORD"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 6:5-7",
+        "book": "genesis",
+        "chapter": 6,
+        "label": "The Flood",
+        "development": "God sees that human wickedness is great and 'every intention of the thoughts of his heart was only evil continually.' He resolves to destroy.",
+        "what_changes": "The first comprehensive judgment establishes the pattern: divine patience has limits, and persistent evil calls forth devastating response."
+      },
+      {
+        "ref": "Genesis 19:24-25",
+        "book": "genesis",
+        "chapter": 19,
+        "label": "Sodom and Gomorrah",
+        "development": "Fire and sulfur rain from heaven, overthrowing the cities of the plain. Even Abraham's intercession could not find ten righteous.",
+        "what_changes": "Judgment becomes localized and specific. Particular communities bear the consequences of their particular sins."
+      },
+      {
+        "ref": "Exodus 7-12",
+        "book": "exodus",
+        "chapter": 7,
+        "label": "The Ten Plagues",
+        "development": "Systematic judgments fall on Egypt, each targeting an Egyptian deity. Pharaoh's hardened heart escalates the severity.",
+        "what_changes": "Judgment serves liberation. The plagues are not purposeless wrath but targeted acts that accomplish redemption."
+      },
+      {
+        "ref": "Amos 5:18-24",
+        "book": "amos",
+        "chapter": 5,
+        "label": "Day of the LORD — Darkness",
+        "development": "Israel expected the Day of the LORD as vindication. Amos inverts it: 'It is darkness, and not light.' God demands justice, not empty worship.",
+        "what_changes": "Judgment turns inward toward God's own people. Covenant privilege does not exempt from covenant accountability."
+      },
+      {
+        "ref": "Isaiah 10:5-12",
+        "book": "isaiah",
+        "chapter": 10,
+        "label": "Assyria as God's Rod",
+        "development": "God uses Assyria as 'the rod of my anger' against Israel, then judges Assyria for its arrogance. Even instruments of judgment are accountable.",
+        "what_changes": "Divine sovereignty encompasses pagan empires. God's use of nations does not excuse their moral culpability."
+      },
+      {
+        "ref": "Jeremiah 25:8-11",
+        "book": "jeremiah",
+        "chapter": 25,
+        "label": "Seventy Years of Exile",
+        "development": "Judah's refusal to heed prophetic warning results in 70 years of Babylonian exile. The covenant curses of Deuteronomy 28 are enacted.",
+        "what_changes": "Judgment is shown to be neither arbitrary nor disproportionate. The covenant spelled out the consequences in advance; judgment is covenant enforcement."
+      },
+      {
+        "ref": "Matthew 25:31-46",
+        "book": "matthew",
+        "chapter": 25,
+        "label": "Sheep and Goats",
+        "development": "The Son of Man separates the nations. The criterion is not ritual observance but treatment of 'the least of these.'",
+        "what_changes": "Final judgment is christological and ethical. Care for the vulnerable is care for Christ himself; neglect is rejection of him."
+      },
+      {
+        "ref": "Revelation 20:11-15",
+        "book": "revelation",
+        "chapter": 20,
+        "label": "Great White Throne",
+        "development": "The dead stand before the great white throne. Books are opened. Anyone not found in the book of life is cast into the lake of fire.",
+        "what_changes": "Judgment reaches its absolute and final form. All human history stands before the throne; the distinction between the righteous and the wicked is made permanent."
+      }
     ]
   },
   {
@@ -290,6 +974,72 @@
       "cosmos",
       "renewal",
       "restoration"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 1:1-2:3",
+        "book": "genesis",
+        "chapter": 1,
+        "label": "Creation in Seven Days",
+        "development": "God creates by speaking. Light, sky, land, vegetation, luminaries, creatures, and humanity emerge in ordered sequence. 'It was very good.'",
+        "what_changes": "The world is established as purposeful, ordered, and good. God is sovereign over all that exists; nothing rivals him."
+      },
+      {
+        "ref": "Genesis 2:7-9",
+        "book": "genesis",
+        "chapter": 2,
+        "label": "Humanity Formed from Dust",
+        "development": "God forms adam from the adamah, breathes life into his nostrils. Human dignity and creaturely dependence are simultaneously established.",
+        "what_changes": "Humanity is distinct: made of earth yet animated by divine breath. Image-bearing and dust-origin coexist."
+      },
+      {
+        "ref": "Job 38:1-11",
+        "book": "job",
+        "chapter": 38,
+        "label": "God Answers from the Whirlwind",
+        "development": "God challenges Job: 'Where were you when I laid the foundation of the earth?' Creation's mystery silences human complaint.",
+        "what_changes": "Creation serves as theodicy. The incomprehensibility of the created order mirrors the incomprehensibility of divine governance."
+      },
+      {
+        "ref": "Psalm 19:1-6",
+        "book": "psalms",
+        "chapter": 19,
+        "label": "Heavens Declare God's Glory",
+        "development": "The firmament speaks without words. Day pours forth speech to day; night reveals knowledge to night. Creation is revelation.",
+        "what_changes": "The created order becomes a mode of divine communication. General revelation through nature complements special revelation through Torah."
+      },
+      {
+        "ref": "Isaiah 65:17-25",
+        "book": "isaiah",
+        "chapter": 65,
+        "label": "New Heavens and New Earth",
+        "development": "God declares: 'Behold, I create new heavens and a new earth.' The first creation will be surpassed, not merely restored.",
+        "what_changes": "Creation theology gains an eschatological dimension. The original 'very good' will be exceeded by a new creation free from curse."
+      },
+      {
+        "ref": "John 1:1-3",
+        "book": "john",
+        "chapter": 1,
+        "label": "All Things through the Word",
+        "development": "The Word who was with God and was God is identified as the agent of creation: 'All things were made through him.'",
+        "what_changes": "Creation is christologically grounded. The one who will become incarnate is the same one through whom all things came into being."
+      },
+      {
+        "ref": "Romans 8:19-22",
+        "book": "romans",
+        "chapter": 8,
+        "label": "Creation Groans",
+        "development": "The whole creation 'has been groaning together in the pains of childbirth.' It waits with eager longing for the redemption of God's children.",
+        "what_changes": "Creation is not static but participates in the drama of redemption. The fall affected the entire created order; redemption will restore it."
+      },
+      {
+        "ref": "Revelation 21:1-5",
+        "book": "revelation",
+        "chapter": 21,
+        "label": "New Creation Realized",
+        "development": "A new heaven and new earth appear. God dwells with humanity; death, mourning, and pain are no more. 'Behold, I am making all things new.'",
+        "what_changes": "The arc from Genesis 1 to Revelation 21 is completed. Creation's trajectory is not dissolution but transformation and consummation."
+      }
     ]
   },
   {
@@ -316,6 +1066,72 @@
       "glory",
       "shekinah",
       "dwelling"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 28:16-17",
+        "book": "genesis",
+        "chapter": 28,
+        "label": "Bethel — House of God",
+        "development": "Jacob awakens from his ladder vision: 'Surely the LORD is in this place, and I did not know it.' He names it Bethel — house of God.",
+        "what_changes": "Sacred space is first experienced as surprising encounter. God's presence is localized but unpredictable."
+      },
+      {
+        "ref": "Exodus 25:8-9",
+        "book": "exodus",
+        "chapter": 25,
+        "label": "Tabernacle Blueprint",
+        "development": "God commands: 'Let them make me a sanctuary, that I may dwell in their midst.' The tabernacle is built according to a heavenly pattern.",
+        "what_changes": "God's presence becomes architecturally structured. The tabernacle is a portable Eden, mediating divine presence within the camp."
+      },
+      {
+        "ref": "Exodus 40:34-35",
+        "book": "exodus",
+        "chapter": 40,
+        "label": "Glory Fills the Tabernacle",
+        "development": "The cloud covers the tent of meeting, and the glory of the LORD fills the tabernacle. Even Moses cannot enter.",
+        "what_changes": "The promise of Exodus 25:8 is fulfilled. God's kavod — his weighty, luminous presence — takes up residence among his people."
+      },
+      {
+        "ref": "1 Kings 8:10-13",
+        "book": "1_kings",
+        "chapter": 8,
+        "label": "Glory Fills Solomon's Temple",
+        "development": "The cloud fills the temple so that the priests cannot stand to minister. Solomon dedicates the house with prayer and sacrifice.",
+        "what_changes": "The tabernacle's portability gives way to permanence. Jerusalem becomes the fixed center of God's earthly presence."
+      },
+      {
+        "ref": "Ezekiel 10:18-19",
+        "book": "ezekiel",
+        "chapter": 10,
+        "label": "Glory Departs",
+        "development": "Ezekiel watches the glory of the LORD leave the temple threshold and ascend from the city. The ichabod moment of Israel's history.",
+        "what_changes": "The temple without the glory is merely a building. God's presence is shown to be free, not captive to a structure."
+      },
+      {
+        "ref": "John 1:14",
+        "book": "john",
+        "chapter": 1,
+        "label": "The Word Became Flesh",
+        "development": "The Word 'tabernacled' (eskenosen) among us, 'and we have seen his glory.' The incarnation is the new temple.",
+        "what_changes": "God's presence is no longer mediated through a building but through a person. Jesus himself is the locus of divine glory."
+      },
+      {
+        "ref": "1 Corinthians 6:19",
+        "book": "1_corinthians",
+        "chapter": 6,
+        "label": "Your Body Is a Temple",
+        "development": "Paul declares that the believer's body is 'a temple of the Holy Spirit.' The temple concept is radically individualized.",
+        "what_changes": "Every believer becomes a sacred space. The Spirit who filled tabernacle and temple now indwells each member of Christ's body."
+      },
+      {
+        "ref": "Revelation 21:22",
+        "book": "revelation",
+        "chapter": 21,
+        "label": "No Temple Needed",
+        "development": "The new Jerusalem has no temple, 'for its temple is the Lord God the Almighty and the Lamb.' The mediation of sacred space is transcended.",
+        "what_changes": "The temple trajectory reaches its telos: unmediated presence. The building that pointed to the person gives way to the person himself."
+      }
     ]
   },
   {
@@ -344,6 +1160,64 @@
       "liberation",
       "exodus",
       "freedom"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Exodus 6:6-7",
+        "book": "exodus",
+        "chapter": 6,
+        "label": "I Will Redeem You",
+        "development": "God uses four 'I will' declarations to Moses, including 'I will redeem you with an outstretched arm.' The root ga'al — kinsman-redeemer — is invoked.",
+        "what_changes": "Redemption is first defined in terms of deliverance from slavery. God acts as kinsman-redeemer for an enslaved people."
+      },
+      {
+        "ref": "Ruth 4:1-10",
+        "book": "ruth",
+        "chapter": 4,
+        "label": "Boaz the Kinsman-Redeemer",
+        "development": "Boaz exercises his right as go'el, redeeming Naomi's land and taking Ruth as wife. Law, love, and lineage converge.",
+        "what_changes": "Redemption takes on personal and relational dimensions. The redeemer acts out of loyalty and love, not mere legal obligation."
+      },
+      {
+        "ref": "Isaiah 43:1-3",
+        "book": "isaiah",
+        "chapter": 43,
+        "label": "I Have Redeemed You",
+        "development": "God declares: 'Fear not, for I have redeemed you; I have called you by name, you are mine.' A new exodus is promised.",
+        "what_changes": "Redemption becomes intimate and named. God redeems not a faceless mass but individuals known by name."
+      },
+      {
+        "ref": "Isaiah 52:3",
+        "book": "isaiah",
+        "chapter": 52,
+        "label": "Redeemed Without Money",
+        "development": "God will redeem Israel 'without money.' No purchase price is paid to Babylon; God's sovereign power alone effects the release.",
+        "what_changes": "Redemption is shown to be purely gracious. No exchange is required; God's authority alone is sufficient."
+      },
+      {
+        "ref": "Mark 10:45",
+        "book": "mark",
+        "chapter": 10,
+        "label": "Ransom for Many",
+        "development": "Jesus declares that the Son of Man came 'to give his life as a ransom for many.' The kinsman-redeemer concept is christologically fulfilled.",
+        "what_changes": "Redemption acquires its ultimate price. The redeemer pays not with silver or authority but with his own life."
+      },
+      {
+        "ref": "Galatians 3:13-14",
+        "book": "galatians",
+        "chapter": 3,
+        "label": "Redeemed from the Curse",
+        "development": "Christ 'redeemed us from the curse of the law by becoming a curse for us.' The exchange is explicit: he takes the curse, we receive the blessing.",
+        "what_changes": "Redemption addresses the deepest bondage: not Egypt or Babylon but the curse of the law itself. The scope of redemption reaches its fullest extent."
+      },
+      {
+        "ref": "Revelation 5:9-10",
+        "book": "revelation",
+        "chapter": 5,
+        "label": "Purchased by Blood",
+        "development": "The Lamb is worthy because 'by your blood you ransomed people for God from every tribe and language and people and nation.'",
+        "what_changes": "Redemption is revealed as universal in scope. The redeemed community encompasses every human category; the ransoming blood has unlimited reach."
+      }
     ]
   },
   {
@@ -373,6 +1247,72 @@
       "oracle",
       "vision",
       "word of the LORD"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 3:15",
+        "book": "genesis",
+        "chapter": 3,
+        "label": "Protoevangelium",
+        "development": "God declares to the serpent: 'He shall bruise your head, and you shall bruise his heel.' The first prophetic promise in Scripture.",
+        "what_changes": "The prophetic trajectory begins. A coming figure will defeat evil, though at personal cost. Redemptive history has a goal."
+      },
+      {
+        "ref": "Deuteronomy 18:15-19",
+        "book": "deuteronomy",
+        "chapter": 18,
+        "label": "A Prophet Like Moses",
+        "development": "God promises to raise up a prophet like Moses from among the people. This figure will speak God's own words with full divine authority.",
+        "what_changes": "Prophetic office is institutionalized. The pattern is set: God communicates through appointed human mediators."
+      },
+      {
+        "ref": "1 Kings 18:20-40",
+        "book": "1_kings",
+        "chapter": 18,
+        "label": "Elijah on Carmel",
+        "development": "Elijah confronts 450 prophets of Baal. Fire falls from heaven, vindicating YHWH. 'The LORD, he is God!'",
+        "what_changes": "The prophet becomes a public figure who confronts national apostasy. Prophetic ministry is not merely predictive but confrontational."
+      },
+      {
+        "ref": "Isaiah 7:14",
+        "book": "isaiah",
+        "chapter": 7,
+        "label": "Immanuel Prophecy",
+        "development": "Isaiah declares: 'The virgin shall conceive and bear a son, and shall call his name Immanuel.' A sign given to the house of David.",
+        "what_changes": "Prophecy becomes explicitly messianic. The coming figure is not merely a leader but 'God with us' in the most literal sense."
+      },
+      {
+        "ref": "Daniel 9:24-27",
+        "book": "daniel",
+        "chapter": 9,
+        "label": "Seventy Weeks",
+        "development": "Gabriel reveals a timeline: seventy weeks are decreed for the people and the holy city. An anointed one will be 'cut off.'",
+        "what_changes": "Prophecy acquires temporal specificity. The divine plan operates on a revealed timeline, not arbitrary timing."
+      },
+      {
+        "ref": "Micah 5:2",
+        "book": "micah",
+        "chapter": 5,
+        "label": "Ruler from Bethlehem",
+        "development": "From Bethlehem Ephrathah, 'too little to be among the clans of Judah,' shall come a ruler whose origin is 'from of old, from ancient days.'",
+        "what_changes": "Prophecy pinpoints geography. The specificity of Bethlehem will become a criterion for identifying the Messiah."
+      },
+      {
+        "ref": "Luke 24:25-27",
+        "book": "luke",
+        "chapter": 24,
+        "label": "All the Scriptures Concerning Himself",
+        "development": "The risen Jesus walks with the Emmaus disciples, interpreting 'in all the Scriptures the things concerning himself.' Moses and all the prophets are christological.",
+        "what_changes": "The entire prophetic corpus is revealed as christocentric. Every prophecy finds its coherence in one person."
+      },
+      {
+        "ref": "Revelation 19:10",
+        "book": "revelation",
+        "chapter": 19,
+        "label": "Testimony of Jesus Is the Spirit of Prophecy",
+        "development": "The angel declares that 'the testimony of Jesus is the spirit of prophecy.' Prophecy's essential content and goal is Christ.",
+        "what_changes": "The prophetic tradition receives its definitive hermeneutical key. Prophecy is not about predictions but about a person."
+      }
     ]
   },
   {
@@ -401,6 +1341,72 @@
       "grief",
       "theodicy",
       "perseverance"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 3:16-19",
+        "book": "genesis",
+        "chapter": 3,
+        "label": "Curse and Toil",
+        "development": "Pain in childbirth, conflict in marriage, thorns in the ground, death as the final horizon. Suffering enters human experience as consequence of the fall.",
+        "what_changes": "Suffering is established as universal and connected to human rebellion. The world as experienced is not the world as originally designed."
+      },
+      {
+        "ref": "Job 1:1-2:10",
+        "book": "job",
+        "chapter": 1,
+        "label": "Job's Undeserved Suffering",
+        "development": "A blameless man loses everything. The retribution principle — the righteous prosper, the wicked suffer — is shattered.",
+        "what_changes": "Suffering is revealed to be irreducible to simple moral calculus. The question 'Why do the righteous suffer?' is posed with full force."
+      },
+      {
+        "ref": "Psalm 22:1-18",
+        "book": "psalms",
+        "chapter": 22,
+        "label": "My God, Why Have You Forsaken Me?",
+        "development": "The psalmist cries out in abandonment. Surrounded by enemies, mocked, physically broken. Yet the psalm turns to praise in its second half.",
+        "what_changes": "Suffering becomes liturgical and prophetic. Lament is given a canonical form that later generations will use, including Jesus himself."
+      },
+      {
+        "ref": "Isaiah 53:3-6",
+        "book": "isaiah",
+        "chapter": 53,
+        "label": "Man of Sorrows",
+        "development": "The Servant is 'despised and rejected, a man of sorrows.' He bears griefs, carries sorrows, is wounded for others' transgressions.",
+        "what_changes": "Suffering becomes vicarious and redemptive. One person's suffering can accomplish atonement for many."
+      },
+      {
+        "ref": "Lamentations 3:21-33",
+        "book": "lamentations",
+        "chapter": 3,
+        "label": "Hope in the Midst of Suffering",
+        "development": "In the ashes of Jerusalem: 'The steadfast love of the LORD never ceases; his mercies never come to an end.' Hope surfaces from the deepest grief.",
+        "what_changes": "Suffering does not have the last word. Even in the worst imaginable circumstances, divine faithfulness endures."
+      },
+      {
+        "ref": "Mark 8:31-34",
+        "book": "mark",
+        "chapter": 8,
+        "label": "The Way of the Cross",
+        "development": "Jesus begins teaching that the Son of Man must suffer, be rejected, and be killed. He calls disciples to take up their cross.",
+        "what_changes": "Suffering becomes volitional and paradigmatic. The Messiah's suffering is not failure but divine necessity, and discipleship means following the same path."
+      },
+      {
+        "ref": "Romans 8:18-25",
+        "book": "romans",
+        "chapter": 8,
+        "label": "Present Suffering, Future Glory",
+        "development": "Paul declares that 'the sufferings of this present time are not worth comparing with the glory that is to be revealed.'",
+        "what_changes": "Suffering is set within an eschatological framework. Present pain is real but penultimate; glory is the final reality."
+      },
+      {
+        "ref": "1 Peter 4:12-13",
+        "book": "1_peter",
+        "chapter": 4,
+        "label": "Sharing Christ's Sufferings",
+        "development": "Believers are told not to be surprised by suffering but to 'rejoice insofar as you share Christ's sufferings.' Suffering is participation in Christ.",
+        "what_changes": "Suffering acquires christological meaning for every believer. Union with Christ includes union in his suffering."
+      }
     ]
   },
   {
@@ -425,6 +1431,72 @@
       "death",
       "tomb",
       "firstfruits"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Job 19:25-27",
+        "book": "job",
+        "chapter": 19,
+        "label": "My Redeemer Lives",
+        "development": "Job declares: 'I know that my Redeemer lives, and at the last he will stand upon the earth. In my flesh I shall see God.'",
+        "what_changes": "The first explicit hope of bodily vindication after death appears. Even before resurrection theology develops, the seed is planted."
+      },
+      {
+        "ref": "Isaiah 25:6-8",
+        "book": "isaiah",
+        "chapter": 25,
+        "label": "Death Swallowed Up",
+        "development": "On the mountain of the LORD, God 'will swallow up death forever' and 'wipe away tears from all faces.'",
+        "what_changes": "Death is declared temporary, not permanent. The prophetic vision includes the reversal of death itself."
+      },
+      {
+        "ref": "Ezekiel 37:1-14",
+        "book": "ezekiel",
+        "chapter": 37,
+        "label": "Dry Bones Live",
+        "development": "The valley of dry bones is reconstituted: bones, sinews, flesh, breath. 'I will open your graves and raise you from your graves, O my people.'",
+        "what_changes": "Resurrection imagery is applied to national restoration, but the language transcends metaphor. Death's reversal becomes thinkable."
+      },
+      {
+        "ref": "Daniel 12:2-3",
+        "book": "daniel",
+        "chapter": 12,
+        "label": "Many Who Sleep Shall Awake",
+        "development": "The most explicit OT resurrection text: 'Many of those who sleep in the dust of the earth shall awake, some to everlasting life.'",
+        "what_changes": "Individual, bodily resurrection becomes an explicit eschatological expectation. The righteous and the wicked face different destinies."
+      },
+      {
+        "ref": "Luke 24:1-12",
+        "book": "luke",
+        "chapter": 24,
+        "label": "The Empty Tomb",
+        "development": "The women find the stone rolled away and the tomb empty. Two angels declare: 'He is not here, but has risen.'",
+        "what_changes": "Resurrection moves from prophecy to event. The hope of centuries becomes historical reality on the third day."
+      },
+      {
+        "ref": "1 Corinthians 15:3-8",
+        "book": "1_corinthians",
+        "chapter": 15,
+        "label": "The Resurrection Tradition",
+        "development": "Paul transmits the earliest resurrection creed: Christ died, was buried, was raised on the third day, and appeared to Cephas, the Twelve, and over 500.",
+        "what_changes": "The resurrection is documented as tradition received and transmitted. Multiple witnesses establish its historicity."
+      },
+      {
+        "ref": "1 Corinthians 15:20-28",
+        "book": "1_corinthians",
+        "chapter": 15,
+        "label": "Firstfruits of Those Who Sleep",
+        "development": "Christ's resurrection is 'the firstfruits of those who have fallen asleep.' As in Adam all die, so in Christ shall all be made alive.",
+        "what_changes": "Christ's resurrection guarantees the future resurrection of all believers. His rising is not an isolated event but the beginning of a harvest."
+      },
+      {
+        "ref": "Revelation 20:4-6",
+        "book": "revelation",
+        "chapter": 20,
+        "label": "First Resurrection",
+        "development": "Those who had been faithful 'came to life and reigned with Christ.' The first resurrection anticipates the final transformation.",
+        "what_changes": "Resurrection is the gateway to co-reign with Christ. The hope of bodily rising is inseparable from the hope of sharing in Christ's kingdom."
+      }
     ]
   },
   {
@@ -448,6 +1520,72 @@
       "instruction",
       "Sinai",
       "obedience"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Exodus 20:1-17",
+        "book": "exodus",
+        "chapter": 20,
+        "label": "The Ten Commandments",
+        "development": "God speaks directly to the assembled people. The Decalogue establishes the moral foundation: duties to God (1-4) and neighbor (5-10).",
+        "what_changes": "Divine will is codified. Israel receives not merely guidance but binding covenant stipulations from the mouth of God."
+      },
+      {
+        "ref": "Deuteronomy 6:4-9",
+        "book": "deuteronomy",
+        "chapter": 6,
+        "label": "The Shema",
+        "development": "'Hear, O Israel: The LORD our God, the LORD is one.' Love God with all heart, soul, and might. Teach diligently to your children.",
+        "what_changes": "Torah observance is rooted in love, not mere obedience. The law is relational before it is regulatory."
+      },
+      {
+        "ref": "Psalm 19:7-11",
+        "book": "psalms",
+        "chapter": 19,
+        "label": "Torah as Delight",
+        "development": "The law is 'perfect, reviving the soul.' It is sweeter than honey, more desired than gold. Torah is not burden but gift.",
+        "what_changes": "Torah piety is expressed as joy and desire. The psalmist celebrates the law rather than enduring it."
+      },
+      {
+        "ref": "Psalm 119:97-104",
+        "book": "psalms",
+        "chapter": 119,
+        "label": "Oh How I Love Your Law",
+        "development": "The longest psalm is an acrostic meditation on Torah. 'Your word is a lamp to my feet and a light to my path.'",
+        "what_changes": "Torah devotion reaches its literary peak. Every letter of the alphabet is pressed into service to praise God's instruction."
+      },
+      {
+        "ref": "Jeremiah 31:33",
+        "book": "jeremiah",
+        "chapter": 31,
+        "label": "Law Written on Hearts",
+        "development": "In the new covenant, God declares: 'I will put my law within them, and I will write it on their hearts.' External code becomes internal reality.",
+        "what_changes": "Torah is not abolished but internalized. The problem was never the law itself but the human heart's inability to keep it."
+      },
+      {
+        "ref": "Matthew 5:17-20",
+        "book": "matthew",
+        "chapter": 5,
+        "label": "Not to Abolish but to Fulfill",
+        "development": "Jesus declares he came not to abolish the Law but to fulfill it. Not the smallest letter will pass away until all is accomplished.",
+        "what_changes": "The law finds its intended goal in Christ. Fulfillment is neither abolition nor mere continuation but the realization of what Torah pointed toward."
+      },
+      {
+        "ref": "Romans 7:7-12",
+        "book": "romans",
+        "chapter": 7,
+        "label": "The Law Is Holy",
+        "development": "Paul insists: 'The law is holy, and the commandment is holy and righteous and good.' The problem is sin, not Torah.",
+        "what_changes": "The law is defended against antinomian misreading. Torah remains good; the diagnosis of failure lies in the human condition, not the divine instruction."
+      },
+      {
+        "ref": "Galatians 3:23-25",
+        "book": "galatians",
+        "chapter": 3,
+        "label": "The Law as Pedagogue",
+        "development": "The law was a 'guardian' (paidagogos) until Christ came. Now that faith has come, believers are no longer under the custodian.",
+        "what_changes": "Torah's role is revealed as preparatory and temporary in its supervisory function. Christ's arrival marks the transition from pedagogy to sonship."
+      }
     ]
   },
   {
@@ -474,6 +1612,72 @@
       "pasture",
       "Psalm 23",
       "care"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 48:15",
+        "book": "genesis",
+        "chapter": 48,
+        "label": "God Who Has Shepherded Me",
+        "development": "Jacob blesses Joseph's sons, naming God as 'the God who has been my shepherd all my life long to this day.'",
+        "what_changes": "The shepherd metaphor is applied to God for the first time. Divine care is described in terms of the most familiar occupation in the ancient world."
+      },
+      {
+        "ref": "Psalm 23:1-6",
+        "book": "psalms",
+        "chapter": 23,
+        "label": "The LORD Is My Shepherd",
+        "development": "David's psalm of complete trust: green pastures, still waters, the valley of the shadow of death, the overflowing cup, goodness and mercy.",
+        "what_changes": "The shepherd image becomes Israel's defining expression of divine care. Every element of pastoral provision is theologized."
+      },
+      {
+        "ref": "Psalm 78:70-72",
+        "book": "psalms",
+        "chapter": 78,
+        "label": "David Shepherds Israel",
+        "development": "God chose David from the sheepfolds to shepherd his people. 'With upright heart he shepherded them and guided them with his skillful hand.'",
+        "what_changes": "Human kingship is described as shepherding. The good king mirrors the divine shepherd's care for the flock."
+      },
+      {
+        "ref": "Ezekiel 34:1-10",
+        "book": "ezekiel",
+        "chapter": 34,
+        "label": "Woe to the False Shepherds",
+        "development": "Israel's leaders are condemned as shepherds who feed themselves instead of the flock. The sheep are scattered and devoured.",
+        "what_changes": "The shepherd metaphor becomes a standard of judgment for leaders. Failed shepherding is covenant-breaking with the most vulnerable."
+      },
+      {
+        "ref": "Ezekiel 34:11-16",
+        "book": "ezekiel",
+        "chapter": 34,
+        "label": "God Will Shepherd His Flock",
+        "development": "God himself declares: 'I myself will search for my sheep... I will rescue them... I will feed them with good pasture.'",
+        "what_changes": "God replaces failed human shepherds with himself. The divine shepherd will do what human leaders refused to do."
+      },
+      {
+        "ref": "John 10:11-18",
+        "book": "john",
+        "chapter": 10,
+        "label": "The Good Shepherd",
+        "development": "Jesus declares: 'I am the good shepherd. The good shepherd lays down his life for the sheep.' He knows his sheep by name.",
+        "what_changes": "Ezekiel 34's promise of God shepherding his flock is fulfilled christologically. The good shepherd is simultaneously divine and self-sacrificing."
+      },
+      {
+        "ref": "1 Peter 2:25",
+        "book": "1_peter",
+        "chapter": 2,
+        "label": "Shepherd and Overseer of Souls",
+        "development": "Believers who were 'straying like sheep have now returned to the Shepherd and Overseer of your souls.'",
+        "what_changes": "The shepherd image extends to spiritual oversight. Christ shepherds not merely bodies and communities but souls."
+      },
+      {
+        "ref": "Revelation 7:17",
+        "book": "revelation",
+        "chapter": 7,
+        "label": "The Lamb Will Shepherd Them",
+        "development": "The Lamb at the center of the throne 'will be their shepherd, and he will guide them to springs of living water.'",
+        "what_changes": "The paradox is complete: the Lamb who was sacrificed becomes the eternal shepherd. Vulnerability and authority merge in the final vision."
+      }
     ]
   },
   {
@@ -498,6 +1702,72 @@
       "witness",
       "gospel",
       "blessing"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 12:1-3",
+        "book": "genesis",
+        "chapter": 12,
+        "label": "Blessed to Be a Blessing",
+        "development": "God calls Abraham and promises: 'In you all the families of the earth shall be blessed.' Election is for mission, not privilege.",
+        "what_changes": "The purpose of Israel's calling is defined from the outset. Blessing is centrifugal: received in order to be given."
+      },
+      {
+        "ref": "Exodus 19:5-6",
+        "book": "exodus",
+        "chapter": 19,
+        "label": "Kingdom of Priests",
+        "development": "Israel is called to be a 'kingdom of priests and a holy nation.' Priests mediate between God and others; Israel mediates for the world.",
+        "what_changes": "National identity is missional. Israel exists not for its own sake but as a priestly bridge between God and the nations."
+      },
+      {
+        "ref": "Isaiah 49:6",
+        "book": "isaiah",
+        "chapter": 49,
+        "label": "Light to the Nations",
+        "development": "God declares: 'I will make you as a light for the nations, that my salvation may reach to the end of the earth.'",
+        "what_changes": "Mission's scope becomes explicitly universal. The Servant's task is not merely to restore Israel but to bring salvation to the ends of the earth."
+      },
+      {
+        "ref": "Jonah 3:1-10",
+        "book": "jonah",
+        "chapter": 3,
+        "label": "Nineveh Repents",
+        "development": "Jonah reluctantly preaches; Nineveh repents in sackcloth and ashes. God relents from the disaster he had declared.",
+        "what_changes": "Mission to the nations is shown to be effective, even when the messenger is reluctant. Gentile repentance is genuine and accepted."
+      },
+      {
+        "ref": "Matthew 28:18-20",
+        "book": "matthew",
+        "chapter": 28,
+        "label": "The Great Commission",
+        "development": "'Go therefore and make disciples of all nations, baptizing them... teaching them to observe all that I have commanded you.'",
+        "what_changes": "Mission becomes the church's defining task. The Abrahamic promise of blessing to all families takes its final commissioning form."
+      },
+      {
+        "ref": "Acts 1:8",
+        "book": "acts",
+        "chapter": 1,
+        "label": "Witnesses to the Ends of the Earth",
+        "development": "Jesus maps the mission: 'You will be my witnesses in Jerusalem, in all Judea and Samaria, and to the end of the earth.'",
+        "what_changes": "Mission has a geographic and demographic trajectory: from center to periphery, from familiar to foreign, from Jew to Gentile."
+      },
+      {
+        "ref": "Acts 13:47",
+        "book": "acts",
+        "chapter": 13,
+        "label": "Paul Turns to the Gentiles",
+        "development": "Paul and Barnabas quote Isaiah 49:6: 'I have made you a light for the Gentiles.' The Servant's mission is taken up by the apostolic church.",
+        "what_changes": "Isaiah's vision is enacted. The prophetic promise of universal mission becomes apostolic practice."
+      },
+      {
+        "ref": "Revelation 7:9-10",
+        "book": "revelation",
+        "chapter": 7,
+        "label": "Every Nation, Tribe, Tongue",
+        "development": "A great multitude from every nation stands before the throne, crying 'Salvation belongs to our God!' The mission is accomplished.",
+        "what_changes": "The arc from Genesis 12:3 reaches its fulfillment. Every family of the earth is represented in the redeemed community."
+      }
     ]
   },
   {
@@ -520,6 +1790,72 @@
       "inspiration",
       "truth",
       "logos"
+    ],
+    "journey_stops": [
+      {
+        "ref": "Genesis 1:3",
+        "book": "genesis",
+        "chapter": 1,
+        "label": "God Said, 'Let There Be Light'",
+        "development": "The first recorded speech of God. Creation happens through divine speech: God says, and reality conforms.",
+        "what_changes": "The word of God is established as performative and creative. What God speaks, exists. Language and reality are linked at the deepest level."
+      },
+      {
+        "ref": "Deuteronomy 8:3",
+        "book": "deuteronomy",
+        "chapter": 8,
+        "label": "Man Lives by Every Word",
+        "development": "Moses reminds Israel: God humbled them with manna 'that he might make you know that man does not live by bread alone, but by every word from the mouth of the LORD.'",
+        "what_changes": "The word of God is established as life-sustaining. Physical provision is secondary to the sustenance of divine speech."
+      },
+      {
+        "ref": "1 Kings 19:11-13",
+        "book": "1_kings",
+        "chapter": 19,
+        "label": "The Still Small Voice",
+        "development": "God is not in the wind, earthquake, or fire, but in the 'still small voice.' Elijah wraps his face and listens.",
+        "what_changes": "The word of God is shown to come in unexpected modes. Divine communication need not be spectacular to be authoritative."
+      },
+      {
+        "ref": "Isaiah 55:10-11",
+        "book": "isaiah",
+        "chapter": 55,
+        "label": "My Word Shall Not Return Empty",
+        "development": "God's word goes out and accomplishes its purpose, like rain that waters the earth and makes it bring forth and sprout.",
+        "what_changes": "The word of God is declared effective and irrevocable. It cannot fail to accomplish what it was sent to do."
+      },
+      {
+        "ref": "Jeremiah 23:29",
+        "book": "jeremiah",
+        "chapter": 23,
+        "label": "Fire and Hammer",
+        "development": "'Is not my word like fire, declares the LORD, and like a hammer that breaks the rock in pieces?'",
+        "what_changes": "The word of God has destructive and transformative power. It cannot be domesticated or made comfortable."
+      },
+      {
+        "ref": "John 1:1-5",
+        "book": "john",
+        "chapter": 1,
+        "label": "The Word Was God",
+        "development": "'In the beginning was the Word, and the Word was with God, and the Word was God.' The logos of Genesis 1 is a person.",
+        "what_changes": "The word of God is revealed as personal and divine. The concept that began as divine speech becomes incarnate in Christ."
+      },
+      {
+        "ref": "Hebrews 4:12",
+        "book": "hebrews",
+        "chapter": 4,
+        "label": "Living and Active",
+        "development": "The word of God is 'living and active, sharper than any two-edged sword, piercing to the division of soul and spirit.'",
+        "what_changes": "The word of God penetrates and judges the inner person. It is not merely informational but transformationally incisive."
+      },
+      {
+        "ref": "Revelation 19:13",
+        "book": "revelation",
+        "chapter": 19,
+        "label": "His Name Is the Word of God",
+        "development": "The returning Christ is named 'The Word of God.' The creative word of Genesis, the prophetic word of the OT, and the incarnate Word of John 1 converge.",
+        "what_changes": "The word of God reaches its eschatological climax. The one who spoke creation into being returns to speak the final word over all creation."
+      }
     ]
   }
 ]

@@ -287,7 +287,8 @@ CREATE TABLE concepts (
   thread_ids_json TEXT,
   prophecy_chain_ids_json TEXT,
   people_tags_json TEXT,
-  tags_json TEXT
+  tags_json TEXT,
+  journey_stops_json TEXT
 );
 
 CREATE TABLE difficult_passages (
@@ -738,13 +739,14 @@ def populate_concepts(cur):
     concepts = _load_json(path)
     for c in concepts:
         cur.execute(
-            'INSERT INTO concepts VALUES (?,?,?,?,?,?,?,?,?)',
+            'INSERT INTO concepts VALUES (?,?,?,?,?,?,?,?,?,?)',
             (c['id'], c['title'], c.get('description'),
              c.get('theme_key'), _json_str(c.get('word_study_ids', [])),
              _json_str(c.get('thread_ids', [])),
              _json_str(c.get('prophecy_chain_ids', [])),
              _json_str(c.get('people_tags', [])),
-             _json_str(c.get('tags', [])))
+             _json_str(c.get('tags', [])),
+             _json_str(c.get('journey_stops', [])))
         )
     return len(concepts)
 
