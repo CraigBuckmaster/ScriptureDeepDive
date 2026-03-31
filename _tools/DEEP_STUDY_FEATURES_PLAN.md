@@ -741,6 +741,389 @@ feat(parallel): Phase 10 — synoptic diff highlighting
 
 ---
 
+---
+
+# PART 2 — Competitive Gap Features (Phases 11–16)
+
+These phases address features where competitors outperform CS. Phases 11–13 are directly executable by Claude Code. Phases 14–16 require architectural decisions from Craig before implementation can begin — those phases produce architecture docs, not shipping code.
+
+---
+
+## Phase 11 — Verse Sharing & Copy
+
+**Goal:** Let users copy and share verse text from anywhere verses appear.
+
+**Current state:** VOTD exists on HomeScreen but has no share action. No sharing or clipboard functionality exists anywhere in the app.
+
+### Capability
+
+- Long-press a verse in VerseBlock → copy text to clipboard (toast confirmation)
+- Share button on VOTD card (HomeScreen) → system share sheet with verse text + reference
+- Share action available in verse context menu or long-press menu
+- Format: `"In the beginning God created the heavens and the earth." — Genesis 1:1 (NIV)\n\nCompanion Study`
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/utils/shareVerse.ts` | Utility: format verse text + ref, call RN Share API |
+| `app/src/components/VerseLongPressMenu.tsx` | Context menu on long-press: Copy / Share / Add Note |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/components/VerseBlock.tsx` | Add long-press handler to verse text spans |
+| `app/src/screens/HomeScreen.tsx` | Add share icon/button to VOTD card |
+
+### Dependencies
+
+- `react-native` `Share` API (built-in, no install needed)
+- `expo-clipboard` for copy (`npx expo install expo-clipboard`)
+
+### Implementation steps
+
+1. `npx expo install expo-clipboard` from `app/` directory
+2. Create `shareVerse.ts` — export `copyVerse(text, ref)` and `shareVerse(text, ref, translation)`
+3. Create `VerseLongPressMenu.tsx` — a small popup with Copy / Share / Note options
+4. Add `onLongPress` handler to verse text in `VerseBlock.tsx`
+5. Add share icon to VOTD card in `HomeScreen.tsx`
+6. Test: long-press verse → copy works, share sheet opens with formatted text
+
+### Effort: Small (1 session or less)
+
+---
+
+## Phase 12 — Multi-Translation Support
+
+**Goal:** Add KJV as a third translation (public domain, no licensing). Architecture supports future paid translations.
+
+**Current state:** NIV + ESV verse files in `content/verses/{niv|esv}/`. Reader shows one translation. TranslationPanel exists as a chapter-level panel for comparison notes.
+
+### ⚠ Licensing note
+
+KJV is public domain — no licensing required. NASB, NLT, CSB, and ESV all have commercial licensing terms that may change if the app charges money. **Start with KJV only.** Additional translations can be added later once licensing is investigated for the paid tier.
+
+### Data changes
+
+```
+content/verses/kjv/          # NEW — KJV verse files, same shape as niv/esv
+  genesis.json
+  exodus.json
+  ... (all 66 books)
+```
+
+Verse file shape is identical: `[{ ref, short, text, url, book, ch, v }]`
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/components/TranslationPicker.tsx` | Small pill toggle: NIV / ESV / KJV |
+| `content/verses/kjv/*.json` | KJV verse files for all 66 books |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/stores/settingsStore.ts` or preferences | Persist selected translation |
+| `app/src/hooks/useChapterData.ts` | Load verses for the selected translation |
+| `app/src/db/database.ts` | Query verses by translation |
+| `app/src/screens/ChapterScreen.tsx` | Render TranslationPicker in ChapterHeader area |
+| `_tools/build_sqlite.py` | Ingest KJV verse files into verses table with translation column |
+| `_tools/validate.py` | Validate KJV verse files |
+
+### Database schema change
+
+```sql
+-- Add translation column to verses table:
+ALTER TABLE verses ADD COLUMN translation TEXT NOT NULL DEFAULT 'niv';
+-- Existing NIV/ESV data gets tagged during build
+-- KJV data inserted with translation='kjv'
+```
+
+### Architecture for future translations
+
+The translation picker, verse query, and settings persistence are all designed to support N translations. Adding NASB/NLT later means: (1) add verse files to `content/verses/{translation}/`, (2) update the picker options, (3) rebuild. The code doesn't hardcode translation names — it reads available translations from the DB.
+
+### Content generation
+
+KJV text is public domain and widely available in structured JSON format. Source from OpenScriptures or a similar open dataset. Write an ingestion script to normalize into CS's verse file shape.
+
+### Implementation steps
+
+1. Source KJV verse data, normalize into `content/verses/kjv/*.json`
+2. Add `translation` column to verses table in `build_sqlite.py`
+3. Tag existing NIV/ESV data during build
+4. Create `TranslationPicker.tsx` — horizontal pill row (NIV / ESV / KJV)
+5. Add translation preference to settings store
+6. Update `useChapterData` to query by selected translation
+7. Render picker in ChapterScreen (below nav bar or in ChapterHeader)
+8. Validate, build, test: switch translations, verify verse text changes
+
+### Effort: Medium (1-2 sessions — mostly data sourcing)
+
+---
+
+## Phase 13 — Interlinear Viewer
+
+**Goal:** Tap any verse to see the underlying Hebrew (OT) or Greek (NT) with word-level data: original word, transliteration, Strong's number, morphology, and gloss.
+
+**Current state:** CS has 43 curated word studies and a HebrewPanel per section. But no verse-level interlinear — users can't tap a word in the text and see its original language form.
+
+### ⚠ Data sourcing note
+
+Open-source interlinear datasets exist:
+- **OpenScriptures Hebrew Bible** (OSHB) — morphology-tagged Hebrew with Strong's numbers, MIT license
+- **Berean Interlinear Bible** — Greek/Hebrew with glosses, CC-BY-SA
+- **STEP Bible data** (Tyndale House) — tagged Greek/Hebrew, CC-BY license
+
+Claude Code can build the viewer component and data pipeline, but the raw interlinear data needs to be sourced and ingested first. This is a data acquisition phase + UI phase.
+
+### Data shape
+
+```json
+// New table: interlinear_words
+{
+  "book_id": "genesis",
+  "chapter": 1,
+  "verse": 1,
+  "word_position": 1,
+  "original": "\u05D1\u05B0\u05BC\u05E8\u05B5\u05D0\u05E9\u05B4\u05C1\u05D9\u05EA",
+  "transliteration": "bereshit",
+  "strongs": "H7225",
+  "morphology": "Prep-b | N-fs-c",
+  "gloss": "In [the] beginning",
+  "word_study_id": "bereshit"    // Links to existing CS word study if available
+}
+```
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/components/InterlinearSheet.tsx` | Bottom sheet showing word-level interlinear data for a verse |
+| `app/src/components/InterlinearWord.tsx` | Single word card: original, transliteration, Strong's, gloss |
+| `_tools/ingest_interlinear.py` | Script to convert source data into interlinear_words table format |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/components/VerseBlock.tsx` | Add tap handler on verse text to open InterlinearSheet |
+| `app/src/db/database.ts` | Add `getInterlinearWords(bookId, chapter, verse)` query |
+| `_tools/build_sqlite.py` | Add `interlinear_words` table, ingest data |
+| `app/src/types/index.ts` | Add `InterlinearWord` interface |
+
+### Database schema
+
+```sql
+CREATE TABLE interlinear_words (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  book_id TEXT NOT NULL,
+  chapter_num INTEGER NOT NULL,
+  verse_num INTEGER NOT NULL,
+  word_position INTEGER NOT NULL,
+  original TEXT NOT NULL,
+  transliteration TEXT NOT NULL,
+  strongs TEXT,
+  morphology TEXT,
+  gloss TEXT NOT NULL,
+  word_study_id TEXT    -- FK to word_studies if CS has a matching study
+);
+CREATE INDEX idx_interlinear_verse ON interlinear_words(book_id, chapter_num, verse_num);
+```
+
+### InterlinearSheet design
+
+- Bottom sheet (gorhom/bottom-sheet) triggered by tapping a verse number or a dedicated interlinear icon
+- Shows verse text at top, then a horizontal-scrollable row of InterlinearWord cards
+- Each card: original language text (large, centered), transliteration (smaller), Strong's number (tappable — links to word study if available), morphology code, English gloss
+- Right-to-left layout for Hebrew, left-to-right for Greek
+- Cards are tappable — if a matching word_study_id exists, navigates to WordStudyDetailScreen
+
+### Integration with existing word studies
+
+CS has 43 word studies. Where a Strong's number maps to an existing word study, the interlinear card shows a gold indicator and tapping navigates to the full word study. This connects the new interlinear viewer to CS's existing curated content — a differentiator vs. BLB's raw data approach.
+
+### Implementation steps
+
+1. Source and download interlinear dataset (OSHB for OT, Berean/STEP for NT)
+2. Write `_tools/ingest_interlinear.py` to normalize into CS schema
+3. Add `interlinear_words` table to `build_sqlite.py`
+4. Create `InterlinearWord.tsx` component
+5. Create `InterlinearSheet.tsx` bottom sheet
+6. Add verse tap handler in `VerseBlock.tsx`
+7. Map Strong's numbers to existing word_study IDs where applicable
+8. Build, test: tap verse → sheet opens with word-level data
+
+### Effort: Large (2-3 sessions — data sourcing is the bottleneck)
+
+---
+
+## Phase 14 — User Accounts & Cloud Sync (Architecture Phase)
+
+**Goal:** Produce an architecture document — NOT shipping code. This phase requires backend provider decisions.
+
+**⚠ This is a PLANNING phase.** Claude Code produces `_tools/SYNC_ARCHITECTURE.md`, not implementation.
+
+### Decisions Craig must make before implementation
+
+| Decision | Options | Implications |
+|----------|---------|--------------|
+| Auth provider | Supabase Auth / Firebase Auth / Clerk | Supabase = open-source, PostgreSQL, generous free tier. Firebase = Google ecosystem, proven scale. Clerk = developer-friendly, pricier. |
+| Backend hosting | Supabase (hosted) / Firebase / Custom (Fly.io + Postgres) | Supabase is the simplest path for a solo dev. Firebase is heavier but more battle-tested. |
+| What syncs | Notes, bookmarks, highlights, reading progress, preferences, study depth | All user.db data. Sync = full table replication or per-record merge? |
+| Conflict resolution | Last-write-wins / CRDT / Manual merge | Last-write-wins is simplest. CRDTs are overkill for this use case. |
+| Account creation UX | Email/password / Apple Sign-In / Google Sign-In | Apple Sign-In is required by App Store if you offer ANY social login. |
+| Cost ceiling | Free tier limits, when to start paying | Supabase free: 50K MAU, 500MB DB, 1GB storage. Likely sufficient for early growth. |
+
+### Architecture doc output
+
+The phase produces `_tools/SYNC_ARCHITECTURE.md` covering:
+- Auth flow (sign up, sign in, sign out, account deletion)
+- Data model (which tables sync, sync direction, conflict resolution)
+- API design (REST vs. realtime subscriptions)
+- Offline-first strategy (local-first with background sync)
+- Migration path (existing user.db data → cloud on first sign-in)
+- Security model (row-level security, data isolation)
+- Cost projections at 1K / 10K / 100K users
+
+### Effort: 1 session to produce architecture doc. Implementation is a multi-session effort after decisions are made.
+
+---
+
+## Phase 15 — AI-Powered Contextual Q&A (Architecture Phase)
+
+**Goal:** Produce an architecture document — NOT shipping code. This phase requires API and cost decisions.
+
+**⚠ This is a PLANNING phase.** Claude Code produces `_tools/AI_QA_ARCHITECTURE.md`, not implementation.
+
+### What makes CS's AI different from Bible Chat / ChatGPT
+
+CS has structured scholarly commentary data for every section of every chapter — 45+ scholars with tradition family labels. An AI Q&A feature grounded in this data would be fundamentally different from generic Bible chatbots:
+- Answers cite specific scholars by name with tradition family context
+- Responses reference CS's own panel content (cross-refs, historical context, word studies)
+- The AI doesn't make up theology — it synthesizes from CS's curated scholar data
+- Users can tap citations to navigate to the actual panel content
+
+### Decisions Craig must make
+
+| Decision | Options | Implications |
+|----------|---------|--------------|
+| LLM provider | Anthropic Claude API / OpenAI / Local model | Claude API is the natural fit. Cost: ~$3-15 per 1M tokens depending on model. |
+| Model choice | Claude Haiku (cheap, fast) / Sonnet (balanced) / Opus (expensive, best) | Haiku for simple lookups, Sonnet for synthesis. Could use routing. |
+| Context injection | Full section panel data / RAG over scholar DB / Hybrid | RAG is most cost-effective. Full context gives best answers but costs more per query. |
+| Rate limiting | Queries per day per user / Token budget per user | Premium tier: 20-50 queries/day. Free tier: 3-5 queries/day or none. |
+| Premium gating | Premium-only / Free with limits / Free trial | Aligns with pricing strategy: premium feature with API cost justification. |
+
+### Architecture doc output
+
+The phase produces `_tools/AI_QA_ARCHITECTURE.md` covering:
+- Prompt engineering strategy (system prompt, context injection, citation format)
+- RAG pipeline design (embedding scholar data, retrieval strategy)
+- API integration (request/response flow, error handling, streaming)
+- Cost modeling (tokens per query × queries per user × user base)
+- UI design (where does the Q&A surface? Inline? Dedicated screen? Bottom sheet?)
+- Content grounding (how to ensure answers reference CS data, not hallucinate)
+- Premium gating implementation
+
+### Effort: 1 session to produce architecture doc. Implementation is multi-session after decisions.
+
+---
+
+## Phase 16 — Reading Streaks & Engagement Hooks
+
+**Goal:** Subtle engagement features that drive daily return without feeling gamified.
+
+**Current state:** HomeScreen has VOTD and Continue Reading card. ReadingHistoryScreen exists. No streak tracking.
+
+### Features
+
+1. **Reading streak counter** — "5-day streak" badge on HomeScreen. Tracks consecutive days with at least one chapter read. Stored in user.db.
+2. **Weekly summary** — "This week: 12 chapters across 3 books" card on HomeScreen.
+3. **Milestone celebrations** — Subtle gold toast when user hits milestones: 10 chapters, 50 chapters, full book completed, 30-day streak.
+
+### Database change (user.db migration 4)
+
+```sql
+CREATE TABLE IF NOT EXISTS reading_streaks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL UNIQUE,           -- ISO date (YYYY-MM-DD)
+  chapters_read INTEGER NOT NULL DEFAULT 0,
+  books_touched TEXT                    -- comma-separated book IDs
+);
+```
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/components/StreakBadge.tsx` | Flame/streak counter for HomeScreen |
+| `app/src/components/WeeklySummary.tsx` | "This week" card for HomeScreen |
+| `app/src/components/MilestoneToast.tsx` | Subtle celebration toast |
+| `app/src/hooks/useStreakData.ts` | Hook to calculate current streak, weekly stats |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/db/userDatabase.ts` | Add migration 4 (or 3/4 depending on study depth ordering) |
+| `app/src/screens/HomeScreen.tsx` | Add StreakBadge and WeeklySummary |
+| `app/src/hooks/useHomeData.ts` | Include streak data in home screen payload |
+
+### Design notes
+
+- Streak badge: small, gold, understated — NOT a flaming gamification widget. Think: `📖 5-day streak` in muted gold.
+- Weekly summary: 1-2 lines, factual, not congratulatory. "This week: 8 chapters across Genesis and Romans."
+- Milestones: gold toast that auto-dismisses after 3 seconds. "You've read 50 chapters." No confetti, no fireworks.
+
+### Effort: Small-Medium (1 session)
+
+---
+
+## Updated Execution Order
+
+```
+PART 1 — Differentiation Features
+  Phase 0  (categorization)       — Session A
+  Phase 1  (tabbed infra)         — Session A
+  Phase 2  (Context Hub)          — Session B
+  Phase 3  (Connections Hub)      — Session B
+  Phase 4  (Chiasm View)          — Session C
+  Phase 5  (Genre Banner)         — Session D
+  Phase 6  (Study Depth)          — Session D
+  Phase 7  (Study Coach)          — Session E
+  Phase 8  (Textual Enrichment)   — Session F
+  Phase 9  (Concept Journey)      — Session F
+  Phase 10 (Synoptic Diffs)       — Session F
+
+PART 2 — Competitive Gap Features
+  Phase 11 (Verse Sharing)        — Session G (quick win, do early)
+  Phase 12 (Multi-Translation)    — Session H (KJV first, data sourcing)
+  Phase 13 (Interlinear)          — Session I + J (data sourcing + UI)
+  Phase 14 (Accounts/Sync)        — Session K (architecture doc only)
+  Phase 15 (AI Q&A)               — Session L (architecture doc only)
+  Phase 16 (Streaks/Engagement)   — Session G (pairs well with sharing)
+```
+
+**Recommended quick wins to front-load:** Phases 11 + 16 (sharing + streaks) can be done in a single session and provide immediate user-facing value. Consider running Session G before or alongside Session A.
+
+---
+
+## Updated Commit Convention (Phases 11-16)
+
+```
+feat(share): Phase 11 — verse copy/share functionality
+feat(translations): Phase 12 — KJV translation + translation picker
+feat(interlinear): Phase 13 — verse-level Hebrew/Greek interlinear viewer
+docs(sync): Phase 14 — cloud sync architecture document
+docs(ai): Phase 15 — AI Q&A architecture document
+feat(engagement): Phase 16 — reading streaks and weekly summary
+```
+
+---
+
 ## Validation Checklist Per Phase
 
 - [ ] `python3 _tools/validate.py` passes (content integrity)
