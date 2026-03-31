@@ -18,6 +18,7 @@ import { useScrollToTop } from '@react-navigation/native';
 import { ArrowRight, Share2 } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
 import { useStreakData } from '../hooks/useStreakData';
+import { useRecommendations, type Recommendation } from '../hooks/useRecommendations';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
 import { WeeklySummary } from '../components/WeeklySummary';
@@ -33,6 +34,7 @@ export default function HomeScreen() {
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const translation = useSettingsStore((s) => s.translation);
   const { currentStreak, weeklyChapters, weeklyBookNames, pendingMilestone, markMilestoneSeen } = useStreakData();
+  const recommendations = useRecommendations();
   const [refreshing, setRefreshing] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
@@ -151,44 +153,79 @@ export default function HomeScreen() {
         {/* ── 5. Contextual Suggestions ─────────────────── */}
         <View style={styles.suggestionsSection}>
           <Text style={styles.sectionLabel}>
-            {mostRecent ? 'FROM YOUR STUDY' : 'EXPLORE'}
+            {recommendations.length > 0 ? 'FROM YOUR STUDY' : 'EXPLORE'}
           </Text>
-          <View style={styles.suggestionsRow}>
-            <TouchableOpacity
-              style={styles.suggestionCard}
-              activeOpacity={0.7}
-              onPress={() => navigation.navigate('ExploreTab', { screen: 'GenealogyTree' })}
-            >
-              <Text style={styles.suggestionTitle}>People</Text>
-              <Text style={styles.suggestionSubtitle}>Lives that shaped sacred history</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.suggestionCard}
-              activeOpacity={0.7}
-              onPress={() => navigation.navigate('ExploreTab', { screen: 'Timeline' })}
-            >
-              <Text style={styles.suggestionTitle}>Timeline</Text>
-              <Text style={styles.suggestionSubtitle}>The arc of redemption</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
-            <TouchableOpacity
-              style={styles.suggestionCard}
-              activeOpacity={0.7}
-              onPress={() => navigation.navigate('ExploreTab', { screen: 'ScholarBrowse' })}
-            >
-              <Text style={styles.suggestionTitle}>Scholars</Text>
-              <Text style={styles.suggestionSubtitle}>Centuries of scholarship</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.suggestionCard}
-              activeOpacity={0.7}
-              onPress={() => navigation.navigate('ExploreTab', { screen: 'WordStudyBrowse' })}
-            >
-              <Text style={styles.suggestionTitle}>Word Studies</Text>
-              <Text style={styles.suggestionSubtitle}>Meaning in the original languages</Text>
-            </TouchableOpacity>
-          </View>
+          {recommendations.length > 0 ? (
+            <>
+              <View style={styles.suggestionsRow}>
+                {recommendations.slice(0, 2).map((rec) => (
+                  <TouchableOpacity
+                    key={rec.id}
+                    style={styles.suggestionCard}
+                    activeOpacity={0.7}
+                    onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                  >
+                    <Text style={styles.suggestionTitle}>{rec.title}</Text>
+                    <Text style={styles.suggestionSubtitle}>{rec.subtitle}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+              {recommendations.length > 2 && (
+                <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
+                  {recommendations.slice(2, 4).map((rec) => (
+                    <TouchableOpacity
+                      key={rec.id}
+                      style={styles.suggestionCard}
+                      activeOpacity={0.7}
+                      onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                    >
+                      <Text style={styles.suggestionTitle}>{rec.title}</Text>
+                      <Text style={styles.suggestionSubtitle}>{rec.subtitle}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              )}
+            </>
+          ) : (
+            <>
+              <View style={styles.suggestionsRow}>
+                <TouchableOpacity
+                  style={styles.suggestionCard}
+                  activeOpacity={0.7}
+                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'GenealogyTree' })}
+                >
+                  <Text style={styles.suggestionTitle}>People</Text>
+                  <Text style={styles.suggestionSubtitle}>Lives that shaped sacred history</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.suggestionCard}
+                  activeOpacity={0.7}
+                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'Timeline' })}
+                >
+                  <Text style={styles.suggestionTitle}>Timeline</Text>
+                  <Text style={styles.suggestionSubtitle}>The arc of redemption</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
+                <TouchableOpacity
+                  style={styles.suggestionCard}
+                  activeOpacity={0.7}
+                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'ScholarBrowse' })}
+                >
+                  <Text style={styles.suggestionTitle}>Scholars</Text>
+                  <Text style={styles.suggestionSubtitle}>Centuries of scholarship</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.suggestionCard}
+                  activeOpacity={0.7}
+                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'WordStudyBrowse' })}
+                >
+                  <Text style={styles.suggestionTitle}>Word Studies</Text>
+                  <Text style={styles.suggestionSubtitle}>Meaning in the original languages</Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
         </View>
 
         {/* ── 6. Overall Progress ──────────────────────── */}
