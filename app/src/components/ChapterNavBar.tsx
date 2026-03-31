@@ -11,7 +11,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ArrowLeft, ArrowRight, ChevronDown, Info } from 'lucide-react-native';
+import { ArrowLeft, ArrowRight, ChevronDown, Info, Volume2 } from 'lucide-react-native';
 import { lightImpact } from '../utils/haptics';
 import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
@@ -24,11 +24,13 @@ interface Props {
   onNext: () => void;
   onQnav: () => void;
   onIntroPress?: () => void;
+  onTTSPress?: () => void;
+  ttsActive?: boolean;
 }
 
 export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
-  onPrev, onNext, onQnav, onIntroPress,
+  onPrev, onNext, onQnav, onIntroPress, onTTSPress, ttsActive,
 }: Props) {
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
@@ -75,19 +77,29 @@ export function ChapterNavBar({
           </TouchableOpacity>
         </View>
 
-        {/* Right: ⓘ Book info */}
-        {onIntroPress ? (
-          <TouchableOpacity
-            onPress={onIntroPress}
-            accessibilityLabel="About this book"
-            accessibilityRole="button"
-            style={styles.infoButton}
-          >
-            <Info size={18} color={base.textMuted} />
-          </TouchableOpacity>
-        ) : (
-          <View style={styles.infoButton} />
-        )}
+        {/* Right: TTS + ⓘ */}
+        <View style={styles.rightActions}>
+          {onTTSPress ? (
+            <TouchableOpacity
+              onPress={onTTSPress}
+              accessibilityLabel={ttsActive ? 'Stop reading aloud' : 'Read aloud'}
+              accessibilityRole="button"
+              style={styles.actionButton}
+            >
+              <Volume2 size={18} color={ttsActive ? base.gold : base.textMuted} />
+            </TouchableOpacity>
+          ) : null}
+          {onIntroPress ? (
+            <TouchableOpacity
+              onPress={onIntroPress}
+              accessibilityLabel="About this book"
+              accessibilityRole="button"
+              style={styles.actionButton}
+            >
+              <Info size={18} color={base.textMuted} />
+            </TouchableOpacity>
+          ) : null}
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -137,10 +149,17 @@ const styles = StyleSheet.create({
     minWidth: 32,
     textAlign: 'center',
   },
-  infoButton: {
+  rightActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
     flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
+    gap: spacing.xs,
+  },
+  actionButton: {
+    minWidth: MIN_TOUCH_TARGET,
     minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

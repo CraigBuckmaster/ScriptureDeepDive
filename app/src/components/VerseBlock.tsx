@@ -21,11 +21,12 @@ interface Props {
   onNotePress?: (verseNum: number) => void;
   onVerseLongPress?: (verseNum: number, text: string) => void;
   onVerseNumPress?: (verseNum: number) => void;
+  activeVerseNum?: number;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
-  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress,
+  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
 }: Props) {
   if (!verses.length) return null;
 
@@ -37,7 +38,7 @@ export const VerseBlock = React.memo(function VerseBlock({
       {verses.map((verse) => (
         <TouchableOpacity
           key={verse.verse_num}
-          style={styles.verseRow}
+          style={[styles.verseRow, activeVerseNum === verse.verse_num && styles.verseRowActive]}
           onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}
           activeOpacity={onVerseLongPress ? 0.7 : 1}
           delayLongPress={400}
@@ -85,6 +86,12 @@ const styles = StyleSheet.create({
   verseRow: {
     flexDirection: 'row',
     marginBottom: 8,
+  },
+  verseRowActive: {
+    backgroundColor: base.gold + '15',
+    borderRadius: 4,
+    marginHorizontal: -4,
+    paddingHorizontal: 4,
   },
   verseNum: {
     color: base.verseNum,

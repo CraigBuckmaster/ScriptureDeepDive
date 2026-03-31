@@ -35,6 +35,8 @@ import { ChapterSkeleton } from '../components/ChapterSkeleton';
 import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
 import { TranslationPicker } from '../components/TranslationPicker';
 import { InterlinearSheet } from '../components/InterlinearSheet';
+import { TTSControls } from '../components/TTSControls';
+import { useTTS } from '../hooks/useTTS';
 
 import { base, spacing } from '../theme';
 
@@ -67,6 +69,9 @@ export default function ChapterScreen() {
     chapter, sections, verses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
+
+  const tts = useTTS(verses);
+  const [ttsActive, setTtsActive] = useState(false);
 
   const scrollRef = useRef<ScrollView>(null);
   const sectionYMap = useRef<Record<string, number>>({});
@@ -124,11 +129,13 @@ export default function ChapterScreen() {
     if (bookId && chapterNum) recordVisit(bookId, chapterNum);
   }, [bookId, chapterNum]);
 
-  // Scroll to top on chapter change + reset progress
+  // Scroll to top on chapter change + reset progress + stop TTS
   useEffect(() => {
     scrollRef.current?.scrollTo({ y: 0, animated: false });
     clearActivePanel();
     setScrollProgress(0);
+    tts.stop();
+    setTtsActive(false);
   }, [bookId, chapterNum]);
 
   const totalChapters = bookData?.total_chapters ?? 1;
@@ -220,6 +227,11 @@ export default function ChapterScreen() {
         onNext={goNext}
         onQnav={toggleQnav}
         onIntroPress={() => navigation.navigate('BookIntro', { bookId })}
+        onTTSPress={() => {
+          if (ttsActive) { tts.stop(); setTtsActive(false); }
+          else { setTtsActive(true); tts.play(); }
+        }}
+        ttsActive={ttsActive}
       />
 
       {/* Reading progress bar */}
@@ -284,6 +296,7 @@ export default function ChapterScreen() {
               onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
               onVerseLongPress={handleVerseLongPress}
               onVerseNumPress={setInterlinearVerse}
+              activeVerseNum={ttsActive ? verses[tts.currentVerse]?.verse_num : undefined}
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
               onDepthRecord={recordOpen}
@@ -346,6 +359,21 @@ export default function ChapterScreen() {
           }}
         />
       </ScrollView>
+
+      {ttsActive && (
+        <TTSControls
+          isPlaying={tts.isPlaying}
+          currentVerse={tts.currentVerse}
+          totalVerses={verses.length}
+          speed={tts.speed}
+          onPlay={tts.play}
+          onPause={tts.pause}
+          onStop={() => { tts.stop(); setTtsActive(false); }}
+          onSkipNext={tts.skipNext}
+          onSkipPrev={tts.skipPrev}
+          onSetSpeed={tts.setSpeed}
+        />
+      )}
 
       <QnavOverlay
         visible={qnavOpen}

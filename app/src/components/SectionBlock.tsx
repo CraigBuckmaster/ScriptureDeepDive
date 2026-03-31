@@ -27,6 +27,7 @@ interface Props {
   onRefPress?: (ref: ParsedRef) => void;
   onVerseLongPress?: (verseNum: number, text: string) => void;
   onVerseNumPress?: (verseNum: number) => void;
+  activeVerseNum?: number;
   /** Render prop for button row — injected by parent to avoid circular deps */
   renderButtonRow?: (panels: SectionPanel[], sectionId: string) => React.ReactNode;
   /** Render prop for active panel content */
@@ -40,7 +41,7 @@ interface Props {
 export function SectionBlock({
   section, panels, verses, vhlGroups, activeVhlGroups,
   notedVerses, activePanel, fontSize,
-  onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress,
+  onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
 }: Props) {
@@ -83,6 +84,7 @@ export function SectionBlock({
         onNotePress={onNotePress}
         onVerseLongPress={onVerseLongPress}
         onVerseNumPress={onVerseNumPress}
+        activeVerseNum={activeVerseNum}
       />
 
       {/* Panel button row after verses */}
