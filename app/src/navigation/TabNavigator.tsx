@@ -5,11 +5,13 @@ import { ReadStack } from './ReadStack';
 import { ExploreStack } from './ExploreStack';
 import { SearchStack } from './SearchStack';
 import { MoreStack } from './MoreStack';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
+  const { base } = useTheme();
+
   return (
     <Tab.Navigator
       screenOptions={{
